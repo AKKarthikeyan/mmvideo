@@ -449,7 +449,63 @@ const XFall: React.FC<P> = ({s, n, T}) => {
   );
 };
 
+// ---------- x-tank: the salad-oil tank — looks full of oil; a cut-away reveals water under a thin oil layer ----------
+// s.dip_at (dipstick goes in, comes up oily), s.reveal_at (cut-away), s.stamp = {text, at}
+const XTank: React.FC<P> = ({s, n, T}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const dip = T(s.dip_at), rev = T(s.reveal_at);
+  const fill = interpolate(f, [0, 40], [0, 1], {extrapolateRight: "clamp", easing: Easing.out(Easing.cubic)});
+  const cut = f < rev ? 0 : spring({frame: f - rev, fps, config: {damping: 18, stiffness: 90}});
+  const sink = f < dip ? 0 : Math.min(1, (f - dip) / 20) - (f > dip + 45 ? Math.min(1, (f - dip - 45) / 20) : 0);
+  const x0 = 620, w = 680, top = 250, bot = 930, H = bot - top, lvl = top + 40 + (1 - fill) * (H - 40);
+  const oilB = lvl + 90; const wave = (y: number) => `M${x0} ${y} q85 ${-10 + 6 * Math.sin(f / 8)} 170 0 t170 0 t170 0 t170 0`;
+  return (
+    <Wrap n={n} illus>
+      <ellipse cx={x0 + w / 2} cy={bot} rx={w / 2} ry={40} fill={C.ink} opacity={0.25}/>
+      <rect x={x0} y={top} width={w} height={H} fill={C.paper} stroke={C.ink} strokeWidth={8}/>
+      {/* oil everywhere before the cut; after it, water fills below the oil band from the left */}
+      <path d={`${wave(lvl)} V${bot} H${x0} Z`} fill={C.mustard} opacity={0.95}/>
+      <clipPath id="tankcut"><rect x={x0} y={top} width={w * cut} height={H}/></clipPath>
+      <g clipPath="url(#tankcut)">
+        <rect x={x0} y={oilB} width={w} height={bot - oilB} fill={WATER}/>
+        {Array.from({length: 14}, (_, i) => <circle key={i} cx={x0 + 40 + (i * 53) % (w - 80)} cy={bot - ((f * 2 + i * 47) % (bot - oilB - 20))} r={6 + (i % 3) * 3} fill="#FFFFFF" opacity={0.5}/>)}
+        <line x1={x0} y1={oilB} x2={x0 + w} y2={oilB} stroke={C.ink} strokeWidth={3} strokeDasharray="14 10"/>
+      </g>
+      {[0, 1, 2, 3, 4, 5].map((i) => <line key={i} x1={x0} y1={top + 40 + i * 120} x2={x0 + 30} y2={top + 40 + i * 120} stroke={C.ink} strokeWidth={4}/>)}
+      <path d={`M${x0 - 20} ${top} h${w + 40} l-40 -60 h${-w + 40} z`} fill={C.gray} stroke={C.ink} strokeWidth={6}/>
+      {/* the inspector's dipstick: only ever reaches the oil layer */}
+      <g transform={`translate(0 ${sink * 150})`}>
+        <rect x={x0 + w - 150} y={top - 260} width={18} height={260} fill="#8A6A3A" stroke={C.ink} strokeWidth={3}/>
+        {f > dip + 30 && <rect x={x0 + w - 150} y={top - 40} width={18} height={40} fill={C.mustard}/>}
+      </g>
+      <Strip x={330} y={330} start={dip} text="DIPSTICK: OIL ✓" size={50} fill={C.white} rot={-2}/>
+      <Strip x={330} y={500} start={rev} text="OIL: A THIN LAYER" size={46} fill={C.mustard} color={C.ink} rot={1.5}/>
+      <Strip x={330} y={680} start={rev + 12} text="BELOW IT: WATER" size={56} fill={C.red} color={C.white} rot={-2}/>
+      {s.stamp && <Stamp x={s.stamp.x ?? 1600} y={s.stamp.y ?? 220} start={T(s.stamp.at)} text={s.stamp.text} size={54} rot={-8}/>}
+    </Wrap>
+  );
+};
+
+// ---------- x-chain: boxes joined by arrows, each arriving on its phrase (e.g. tank → receipt → loan) ----------
+// s.heading, s.nodes = [{t, at, dark}], s.label = {text, at}, s.stamp = {text, at}
+const XChain: React.FC<P> = ({s, n, T}) => {
+  const nodes = s.nodes as any[]; const k = nodes.length; const gap = 1380 / Math.max(1, k - 1); const y = 540;
+  const xs = nodes.map((_, i) => 270 + i * gap);
+  return (
+    <Wrap n={n}>
+      <Strip x={960} y={120} start={0} text={s.heading} size={60}/>
+      {nodes.map((nd, i) => { const at = T(nd.at); return <React.Fragment key={i}>
+        {i > 0 && <Pop at={at} x={(xs[i - 1] + xs[i]) / 2} y={y}>{arrow(xs[i - 1] + 215, xs[i] - 215, y)}</Pop>}
+        <Pop at={at} x={xs[i]} y={y}>{box(xs[i], y, nd.t, !!nd.dark, 420, nd.t.length > 12 ? 36 : 46)}</Pop>
+      </React.Fragment>; })}
+      {s.label && <TypeLabel x={210} y={760} start={T(s.label.at)} text={s.label.text} size={34} cps={99}/>}
+      {s.stamp && <Stamp x={s.stamp.x ?? 1450} y={s.stamp.y ?? 900} start={T(s.stamp.at)} text={s.stamp.text} size={56} rot={-6}/>}
+    </Wrap>
+  );
+};
+
 export const CASE_SCENES: Record<string, React.FC<any>> = {
+  "x-tank": XTank, "x-chain": XChain,
   "x-door": XDoor, "x-case": XCase, "x-act": XAct, "x-founder": XFounder, "x-middleman": XMiddleman, "x-mango": XMango,
   "x-crime": XCrime, "x-biryani": XBiryani, "x-ekg": XEkg, "x-line": XLine, "x-verdict": XVerdict, "x-castle": XCastle, "x-photo": XPhoto, "x-race": XRace,
   "x-tiptoe": XTiptoe, "x-fall": XFall,

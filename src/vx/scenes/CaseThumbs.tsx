@@ -118,5 +118,8 @@ export const PhotoThumbStills: React.FC = () => (
     <Still id="MFT-mf003-textile-1" component={PhotoThumb as any} defaultProps={{vid: "mf003-textile", img: "mill_town", l1: "HE BOUGHT IT", l2: "IN ANGER", tag: "“MONUMENTALLY STUPID”"}} width={1280} height={720}/>
     <Still id="MFT-mf003-textile-2" component={PhotoThumb as any} defaultProps={{vid: "mf003-textile", img: "scrap", l1: "$5,000", l2: "→ $26", tag: "SOLD FOR SCRAP"}} width={1280} height={720}/>
     <Still id="MFT-mf003-textile-3" component={PhotoThumb as any} defaultProps={{vid: "mf003-textile", img: "cigar", l1: "A 12.5¢", l2: "GRUDGE", tag: "BUFFETT, 1964"}} width={1280} height={720}/>
+    <Still id="MFT-mf004-amex-1" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "tank_farm", l1: "FULL OF", l2: "WATER?", tag: "THE $180M SWINDLE"}} width={1280} height={720}/>
+    <Still id="MFT-mf004-amex-2" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "steakhouse", l1: "HE WATCHED", l2: "DINERS", tag: "BUFFETT'S STAKEOUT"}} width={1280} height={720}/>
+    <Still id="MFT-mf004-amex-3" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "partner_letter", l1: "40% IN", l2: "ONE STOCK", tag: "RIGHT AFTER A SCANDAL"}} width={1280} height={720}/>
   </>
 );

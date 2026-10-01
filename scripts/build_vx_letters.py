@@ -80,11 +80,18 @@ CLIPS.update({
   "t79_turn": (BRK/"1979.pdf", "seldom turn, and that the same", 2, 1, 5),
   "t85_faulted": (BRK/"1985.pdf", "faulted for not quitting sooner", 3, 3, 7),
   "t85_row": (BRK/"1985.pdf", "how effectively you row", 2, 2, 8),
+  # Case File 004: 1980/1994 typeset from the berkshirehathaway.com letter text; bpl.pdf = Buffett Partnership letters 1957-1970
+  "a80_blow": (BRK/"1980.pdf", "a fiscal blow that did not destroy", 3, 3, 9),
+  "a94_forty": (BRK/"1994.pdf", "we put about 40% of Buffett Partnership", 2, 4, 15),
+  "a23_trust": (BRK/"2023.pdf", "unquestioned financial trust", 2, 0, 7),
+  "b66_rule7": (BRK/"bpl.pdf", "Ground Rule 7 in November", 2, 2, 105),
+  "b68_limit": (BRK/"bpl.pdf", "hit our 40% limit", 2, 2, 118),
+  "b67_insight": (BRK/"bpl.pdf", "high-probability", 2, 3, 111),
 })
 _docs = {}
 # Pronunciation fixes for the TTS voice only (captions keep the real spelling). AK 30 Sep: "GEICO" was read 3 ways.
 PRON = {"GEICO's": "Guyco's", "GEICO": "Guyco", "See's": "Sees", "Nebraska Furniture Mart": "Nebraska Furniture Mart",
-        "Waumbec": "Wombeck", "Chace": "Chase"}
+        "Waumbec": "Wombeck", "Chace": "Chase", "Bayonne": "Bay-own", "Amex": "Am-Ex"}
 def pron(s):
     for a, b in PRON.items(): s = s.replace(a, b)
     return s

@@ -467,8 +467,8 @@ const League: React.FC<SP> = ({s, n, T}) => {
   const sp = f < sortT ? 0 : spring({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
   const maxV = Math.max(...rows.map((r) => Math.abs(r.v)), 1);
   const land = L.land;
-  const rh = land ? Math.min(130, 620 / k) : Math.min(190, 1000 / k);
-  const y0 = land ? 250 : 430;
+  const rh = land ? Math.min(130, 620 / k) : Math.min(300, 1000 / k);
+  const y0 = land ? 250 : 470;
   const nameW = land ? 470 : 900, barX = land ? 640 : 90, barMax = land ? 820 : 640;
   return (
     <Svg n={n}>
@@ -490,7 +490,7 @@ const League: React.FC<SP> = ({s, n, T}) => {
           {g > 0.85 && <Big x={barX + bw + 22} y={barY + barH * 0.74} text={lab} size={barH * 0.72} anchor="start" color={r.v < 0 ? C.red : C.ink}/>}
         </g>;
       })}
-      {s.stamp && f >= sortT + 12 && <Stamp x={land ? 1500 : 760} y={land ? y0 + k * rh + 60 : y0 - 70} start={sortT + 12} text={s.stamp} size={fit(s.stamp, land ? 64 : 56, land ? 420 : 520, 0.56)} rot={-8}/>}
+      {s.stamp && f >= sortT + 12 && <Stamp x={land ? 1500 : 540} y={land ? y0 + k * rh + 60 : y0 + k * rh + 90} start={sortT + 12} text={s.stamp} size={fit(s.stamp, land ? 64 : 56, land ? 420 : 520, 0.56)} rot={-8}/>}
       {s.note && <TypeLabel x={land ? 120 : 70} y={land ? 940 : 1520} start={10} text={s.note} size={land ? 26 : 24} cps={4}/>}
       <Stamps s={s} T={T}/>
     </Svg>

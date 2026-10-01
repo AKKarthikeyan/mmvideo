@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -51,6 +51,9 @@ CLIPS = {
   "kpi_seci": (KG/"KPIGLOBAL_30092026102112_8_KPI_Green_Acquire_Alfanar_Press_Release_30092026_Signed.pdf", "25-year power purchase agreements", 1, 3),
   "kpi_debt": (KG/"KPIGLOBAL_18082026195034_20_Intimation_Transcript_of_Earning_Conference_Call_to_Exchange_Signed.pdf", "debt to equity will be in the comfortable position of 3:1", 2, 1),
   "kpi_bs": (KG/"KPIGLOBAL_18082026195034_20_Intimation_Transcript_of_Earning_Conference_Call_to_Exchange_Signed.pdf", "We prepare the balance sheet in the half yearly only", 1, 1),
+  "aq_gst": (AQ/"ESCORTS2_01102026090533_EKL_Sept2026_volume_F_Signed.pdf", "high base following the GST rate reduction in September 2025", 1, 2),
+  "aq_tataev": (AQ/"TATAMOTORSSJS_01102026131705_NSEBSEQ2FY27.pdf", "EV penetration in our portfolio rising sharply to 23%", 1, 1),
+  "aq_re": (AQ/"EICHERMOT_01102026111841_EMLMonthlyBusinessUpdate1stOctober2026Signed__1_.pdf", "Models with engine capacity exceeding 350cc", 3, 2),
 }
 
 def crop(name, pdf, phrase, up, dn, outdir, last=None, col=False):

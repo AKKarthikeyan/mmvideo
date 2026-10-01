@@ -7,7 +7,7 @@ import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
 
 export const FPS = 30;
 export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
-export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string}[];
+export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
   timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
 
 const isTitle = (b: Beat) => b.scene.type === "title";
@@ -455,8 +455,50 @@ const Kinetic: React.FC<SP> = ({s, n, T}) => {
   );
 };
 
+// League-table race (Q2 scoreboards, 1 Oct 2026): rows land in reveal order with their bars, then re-sort into rank
+// order at `sortAt`; the leader turns mustard and gets the stamp. rows: {name, v (growth %), vol?, at}.
+const League: React.FC<SP> = ({s, n, T}) => {
+  const L = useL(); const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const rows: any[] = s.rows; const k = rows.length;
+  const times = rows.map((r) => T(r.at));
+  const sortT = s.sortAt ? T(s.sortAt) : 1e9;
+  const order = rows.map((_, i) => i).sort((a, b) => rows[b].v - rows[a].v);
+  const rank = rows.map((_, i) => order.indexOf(i));
+  const sp = f < sortT ? 0 : spring({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
+  const maxV = Math.max(...rows.map((r) => Math.abs(r.v)), 1);
+  const land = L.land;
+  const rh = land ? Math.min(130, 620 / k) : Math.min(190, 1000 / k);
+  const y0 = land ? 250 : 430;
+  const nameW = land ? 470 : 900, barX = land ? 640 : 90, barMax = land ? 820 : 640;
+  return (
+    <Svg n={n}>
+      <Heading text={s.heading}/>
+      {rows.map((r, i) => {
+        if (f < times[i]) return null;
+        const g = spring({frame: f - times[i], fps, config: {damping: 16, stiffness: 120}});
+        const pos = i + (rank[i] - i) * sp;
+        const y = y0 + pos * rh;
+        const lead = sp > 0.6 && rank[i] === 0;
+        const bw = Math.max(6, barMax * Math.abs(r.v) / maxV) * g;
+        const lab = `${r.v >= 0 ? "+" : "−"}${Math.abs(r.v).toFixed(1)}%`;
+        const barY = land ? y + rh * 0.12 : y + rh * 0.36, barH = land ? rh * 0.62 : rh * 0.42;
+        return <g key={i}>
+          {sp > 0.6 && <Big x={land ? 70 : 60} y={land ? y + rh * 0.62 : y + rh * 0.3} text={`#${rank[i] + 1}`} size={land ? rh * 0.42 : rh * 0.22} color={lead ? C.red : C.gray} anchor="start"/>}
+          <Big x={land ? 140 + nameW - 20 : (sp > 0.6 ? 150 : 90)} y={land ? y + rh * (r.vol ? 0.46 : 0.55) : y + rh * 0.28} text={r.name} size={fit(r.name, land ? rh * 0.34 : rh * 0.22, land ? nameW - 40 : nameW - 160, 0.5)} anchor={land ? "end" : "start"}/>
+          {r.vol && g > 0.85 && <Big x={land ? 140 + nameW - 20 : 990} y={land ? y + rh * 0.76 : y + rh * 0.28} text={r.vol} size={land ? rh * 0.2 : rh * 0.16} anchor="end" color={C.gray}/>}
+          <rect x={barX} y={barY} width={bw} height={barH} fill={lead ? C.mustard : r.v < 0 ? C.red : C.ink} style={{filter: "url(#vshadow)"}}/>
+          {g > 0.85 && <Big x={barX + bw + 22} y={barY + barH * 0.74} text={lab} size={barH * 0.72} anchor="start" color={r.v < 0 ? C.red : C.ink}/>}
+        </g>;
+      })}
+      {s.stamp && f >= sortT + 12 && <Stamp x={land ? 1500 : 760} y={land ? y0 + k * rh + 60 : y0 - 70} start={sortT + 12} text={s.stamp} size={fit(s.stamp, land ? 64 : 56, land ? 420 : 520, 0.56)} rot={-8}/>}
+      {s.note && <TypeLabel x={land ? 120 : 70} y={land ? 940 : 1520} start={10} text={s.note} size={land ? 26 : 24} cps={4}/>}
+      <Stamps s={s} T={T}/>
+    </Svg>
+  );
+};
+
 const SCENES: Record<string, React.FC<SP>> = {title: Title, strips: Strips, counter: Counter, cards: Cards, clip: Clip, quote: Quote,
-  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, kinetic: Kinetic};
+  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic};
 
 // ---------- captions & furniture ----------
 const cueTimes = (b: Beat) => {
@@ -501,7 +543,7 @@ const BeatSeq: React.FC<{D: VData; b: Beat; from: number; n: number; captions?: 
   return (
     <Sequence from={from} durationInFrames={n}>
       <AbsoluteFill><Scene s={b.scene} n={n} T={makeT(b)} b={b} D={D}/></AbsoluteFill>
-      {captions && b.scene.type !== "end" && <Captions b={b}/>}
+      {captions && b.scene.type !== "end" && !b.scene.nocap && <Captions b={b}/>}
       <Audio src={staticFile(`vx/${D.id}/${b.key}.mp3`)}/>
     </Sequence>
   );
@@ -526,10 +568,11 @@ export const VoxLong: React.FC<{D: VData}> = ({D}) => {
 
 const SHORT_END = 4 * FPS;
 // YouTube Guide (AK, 30 Sep 2026): Shorts with a `hook` get the hook on screen from frame 1 and a short 2 s end card (loop-friendly).
-const shortEnd = (D: VData, idx: number) => (D.shorts[idx].hook ? 2 * FPS : SHORT_END);
+// Loop Shorts (AK's Shorts formula, 1 Oct 2026): no end card, tight 0.12 s gaps, last line runs back into the first.
+const shortEnd = (D: VData, idx: number) => (D.shorts[idx].loop ? 0 : D.shorts[idx].hook ? 2 * FPS : SHORT_END);
 export const shortLayout = (D: VData, idx: number) => {
   const bs = D.shorts[idx].beats.map((k) => D.beats.find((b) => b.key === k)!);
-  const frames = bs.map((b) => Math.ceil((b.sec + 0.35) * FPS));
+  const frames = bs.map((b) => Math.ceil((b.sec + (D.shorts[idx].loop ? 0.12 : 0.35)) * FPS));
   return {bs, frames, total: frames.reduce((a, b) => a + b, 0) + shortEnd(D, idx)};
 };
 const ShortHook: React.FC<{text: string; n: number}> = ({text, n}) => {
@@ -573,12 +616,13 @@ export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
     <AbsoluteFill style={{background: C.tan}}>
       <Fonts/>
       {bs.map((b, i) => { const el = <BeatSeq key={b.key} D={D} b={b} from={from} n={frames[i]}/>; from += frames[i]; return el; })}
-      {D.shorts[idx].hook ? <Sequence from={from} durationInFrames={shortEnd(D, idx)}><AbsoluteFill><ShortEndLoop/></AbsoluteFill></Sequence>
+      {D.shorts[idx].loop ? null : D.shorts[idx].hook ? <Sequence from={from} durationInFrames={shortEnd(D, idx)}><AbsoluteFill><ShortEndLoop/></AbsoluteFill></Sequence>
         : <Sequence from={from} durationInFrames={SHORT_END}><AbsoluteFill><ShortEnd title={D.shorts[idx].title}/></AbsoluteFill></Sequence>}
-      {D.shorts[idx].hook && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
+      {D.shorts[idx].hook && !D.shorts[idx].loop && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
       <svg width={1080} height={1920} style={{position: "absolute"}}>
         <text x={540} y={140} fontFamily={COND} fontWeight={700} fontSize={40} textAnchor="middle" fill={C.ink}>{D.shorts[idx].title.toUpperCase()}</text>
         <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">Moat &amp; Margin · from the filings</text>
+        {D.shorts[idx].loop && <text x={540} y={1898} fontFamily={TYPE} fontSize={22} fill={C.ink} opacity={0.6} textAnchor="middle">Educational research, not investment advice · not SEBI-registered</text>}
       </svg>
     </AbsoluteFill>
   );

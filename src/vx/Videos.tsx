@@ -10,8 +10,10 @@ import anupam from "../../public/vx/anupam/data.json";
 import welspun from "../../public/vx/welspun/data.json";
 import adani from "../../public/vx/adani/data.json";
 import kpigreen from "../../public/vx/kpigreen/data.json";
+import autoq2 from "../../public/vx/autoq2/data.json";
+import autoq2s from "../../public/vx/autoq2s/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},
@@ -39,6 +41,11 @@ const THUMBG: Record<string, {words: string; badge: string; badgeSub: string; cl
 
 // Vox-format thumbnails (same look as the video). clipMeta is inlined for clips not used by any beat (data.json is rebuilt).
 const THUMBV: Record<string, any[]> = {
+  autoq2: [
+    {kicker: "AUTO SALES · Q2 FY27", big: "+40%", bigSub: "TATA MOTORS PV · Q2 GROWTH", stamp: "TATA ON TOP", clip: "aq_t_tata", clipMeta: {"w": 1448, "h": 156, "hl": [[0.6076, 0.3819, 0.0853, 0.2901], [0.8766, 0.3819, 0.0569, 0.2898]]}},
+    {kicker: "AUTO SALES · SEPTEMBER 2026", big: "−12%", bigSub: "BAJAJ · TWO-WHEELERS IN INDIA", stamp: "TVS: +17%", clip: "aq_t_bajaj", clipMeta: {"w": 932, "h": 236, "hl": [[0.8621, 0.5702, 0.0571, 0.1388]]}},
+    {kicker: "AUTO SALES · Q2 FY27", big: "+0.9%", bigSub: "ESCORTS · LAST ON GROWTH", stamp: "TOP MOAT?", clip: "aq_t_escorts", clipMeta: {"w": 1551, "h": 129, "hl": [[0.6318, 0.3902, 0.0493, 0.3098]]}},
+  ],
   kpigreen: [
     {kicker: "KPI GREEN ENERGY", big: "₹2,410 CR", bigSub: "ENTERPRISE VALUE · ALL CASH", stamp: "FUNDED HOW?", clip: "kpi_ev"},
     {kicker: "KPI GREEN ENERGY", big: "₹277 CR", bigSub: "THE TWO WIND FARMS · FY25", stamp: "OUT-EARNS KPI?", clip: "kpi_turn", clipMeta: {"w": 1148, "h": 399, "hl": [[0.6718, 0.2942, 0.1008, 0.1168], [0.6718, 0.8003, 0.1008, 0.1168]]}},

@@ -1,0 +1,225 @@
+{
+ "id": "sleep_s1_lightbulb",
+ "title": "The Light Bulb Problem",
+ "beats": [
+  {
+   "key": "a",
+   "say": "Nick Sleep spent years hunting for the one big thing that makes a company unbeatable. A brand. A location. A patent. He admits he was looking for a vivid smoking gun.",
+   "scene": {
+    "type": "quote",
+    "head": "THE WRONG PLACE TO LOOK",
+    "clip": "smoking",
+    "q": "a vivid smoking gun such as a brand name, a location, a clever re-insurance contract, or a patent",
+    "src": "Nomad letter, period ended 30 Jun 2010 · p.174",
+    "qat": "vivid smoking gun",
+    "at": "smoking gun"
+   },
+   "cap": "Nick Sleep spent years hunting for the one big thing that makes a company unbeatable. A brand. A location. A patent. He admits he was looking for a vivid smoking gun.",
+   "sec": 11.34,
+   "cues": [
+    "Nick Sleep spent years hunting for the one big thing that makes a company",
+    "unbeatable.",
+    "A brand.",
+    "A location.",
+    "A patent.",
+    "He admits he was looking for a vivid smoking gun."
+   ]
+  },
+  {
+   "key": "b",
+   "say": "But one big thing is fragile. A drug company with a patent can be displaced at any time by a better chemical.",
+   "scene": {
+    "type": "quote",
+    "head": "ONE BIG THING IS FRAGILE",
+    "clip": "chem",
+    "q": "A rival could displace it at any time with a better chemical",
+    "src": "Nomad letter, period ended 30 Jun 2010 · p.175",
+    "qat": "displaced at any time",
+    "at": "better chemical"
+   },
+   "cap": "But one big thing is fragile. A drug company with a patent can be displaced at any time by a better chemical.",
+   "sec": 6.76,
+   "cues": [
+    "But one big thing is fragile.",
+    "A drug company with a patent can be displaced at any time by a better",
+    "chemical."
+   ]
+  },
+  {
+   "key": "c",
+   "say": "Now flip it. To beat a business that shares its scale savings, a rival would need to be better at not one thing, but a million little actions.",
+   "scene": {
+    "type": "quote",
+    "head": "NOW FLIP IT",
+    "clip": "million",
+    "q": "a million little actions",
+    "src": "Nomad letter, period ended 30 Jun 2010 · p.175",
+    "qat": "a million little actions",
+    "at": "million little actions"
+   },
+   "cap": "Now flip it. To beat a business that shares its scale savings, a rival would need to be better at not one thing, but a million little actions.",
+   "sec": 7.84,
+   "cues": [
+    "Now flip it.",
+    "To beat a business that shares its scale savings,",
+    "a rival would need to be better at not one thing,",
+    "but a million little actions."
+   ]
+  },
+  {
+   "key": "d",
+   "say": "Amazon's shareholder letter that year listed four hundred and fifty-two detailed goals, each with an owner and a target date.",
+   "scene": {
+    "type": "dots",
+    "head": "AMAZON, 2010",
+    "clip": "goals",
+    "src": "Amazon shareholder letter, quoted in the Nomad letter, period ended 30 Jun 2010 · p.175",
+    "at": "four hundred and fifty-two"
+   },
+   "cap": "Amazon's shareholder letter that year listed four hundred and fifty-two detailed goals, each with an owner and a target date.",
+   "sec": 6.63,
+   "cues": [
+    "Amazon's shareholder letter that year listed four hundred and fifty-two",
+    "detailed goals, each with an owner and a target date."
+   ]
+  },
+  {
+   "key": "e",
+   "say": "And one employee idea: take the light bulbs out of the vending machines. Really. It saves the firm twenty thousand dollars a year.",
+   "scene": {
+    "type": "bulb",
+    "head": "ONE OF THE 452",
+    "clip": "bulb",
+    "src": "Nomad letter, period ended 30 Jun 2010 · p.175",
+    "at": "take the light bulbs out",
+    "off": "twenty thousand dollars"
+   },
+   "cap": "And one employee idea: take the light bulbs out of the vending machines. Really. It saves the firm twenty thousand dollars a year.",
+   "sec": 9.72,
+   "cues": [
+    "And one employee idea:",
+    "take the light bulbs out of the vending machines.",
+    "Really.",
+    "It saves the firm twenty thousand dollars a year."
+   ]
+  },
+  {
+   "key": "f",
+   "say": "Sleep's conclusion: firms that do many things a little better than their rivals are simply harder to beat.",
+   "scene": {
+    "type": "quote",
+    "head": "HARDER TO BEAT",
+    "clip": "harder",
+    "q": "They are simply harder to beat.",
+    "src": "Nomad letter, period ended 30 Jun 2010 · p.175",
+    "qat": "simply harder to beat",
+    "at": "harder to beat"
+   },
+   "cap": "Sleep's conclusion: firms that do many things a little better than their rivals are simply harder to beat.",
+   "sec": 6.22,
+   "cues": [
+    "Sleep's conclusion:",
+    "firms that do many things a little better than their rivals are simply harder",
+    "to beat."
+   ]
+  }
+ ],
+ "clips": {
+  "smoking": {
+   "w": 1442,
+   "h": 250,
+   "hl": [
+    [
+     0.7935,
+     0.323,
+     0.1789,
+     0.1847
+    ],
+    [
+     0.0271,
+     0.4922,
+     0.8273,
+     0.1847
+    ]
+   ],
+   "page": 174,
+   "quote": "a vivid smoking gun such as a brand name, a location, a clever re- insurance contract, or a patent"
+  },
+  "chem": {
+   "w": 1442,
+   "h": 267,
+   "hl": [
+    [
+     0.5477,
+     0.3671,
+     0.4249,
+     0.1726
+    ],
+    [
+     0.0271,
+     0.5254,
+     0.1811,
+     0.1726
+    ]
+   ],
+   "page": 175,
+   "quote": "A rival could displace it at any time with a better chemical"
+  },
+  "million": {
+   "w": 1442,
+   "h": 208,
+   "hl": [
+    [
+     0.5258,
+     0.3909,
+     0.2369,
+     0.2214
+    ]
+   ],
+   "page": 175,
+   "quote": "a million little actions"
+  },
+  "goals": {
+   "w": 1359,
+   "h": 166,
+   "hl": [
+    [
+     0.2259,
+     0.2377,
+     0.7274,
+     0.2772
+    ]
+   ],
+   "page": 175,
+   "quote": "we have 452 detailed goals, with owners, deliverables and targeted"
+  },
+  "bulb": {
+   "w": 1442,
+   "h": 208,
+   "hl": [
+    [
+     0.1171,
+     0.3911,
+     0.3823,
+     0.2215
+    ]
+   ],
+   "page": 175,
+   "quote": "saves the firm U$20,000 per annum"
+  },
+  "harder": {
+   "w": 1442,
+   "h": 207,
+   "hl": [
+    [
+     0.0271,
+     0.388,
+     0.317,
+     0.2218
+    ]
+   ],
+   "page": 175,
+   "quote": "They are simply harder to beat"
+  }
+ }
+}

@@ -1,0 +1,1684 @@
+{
+ "id": "mf001-geico",
+ "title": "GEICO's Moat: The Company That Almost Died Twice",
+ "chapters": [
+  "GEICO's moat: the locked door",
+  "The motive",
+  "The rise",
+  "The crime",
+  "The rescue",
+  "The second life",
+  "Case reopened",
+  "Defence and verdict",
+  "India lens and next case"
+ ],
+ "shorts": [
+  {
+   "title": "Buffett pounded on a locked door",
+   "hook": "He pounded on a locked door|It paid billions",
+   "beats": [
+    "k00",
+    "k01",
+    "k02"
+   ]
+  },
+  {
+   "title": "Who almost killed GEICO?",
+   "hook": "Who almost killed GEICO?|Not a competitor",
+   "beats": [
+    "k31",
+    "k32",
+    "k33"
+   ]
+  },
+  {
+   "title": "Buffett sold GEICO for $15,259",
+   "hook": "He sold for $15,259|Big mistake",
+   "beats": [
+    "k21",
+    "k22",
+    "k23"
+   ]
+  }
+ ],
+ "engine": "case",
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "k00",
+   "say": "It's a cold Saturday in January, nineteen fifty one. A skinny twenty year old gets off an early train in Washington, and walks to the head office of an insurance company. The building is locked. Nobody's there. So he does something most people wouldn't. He pounds on the door. And keeps pounding.",
+   "cap": "It's a cold Saturday in January 1951. A skinny 20-year-old gets off an early train in Washington, and walks to the head office of an insurance company. The building is locked. Nobody's there. So he does something most people wouldn't. He pounds on the door. And keeps pounding.",
+   "scene": {
+    "type": "x-door",
+    "stamp_at": "January",
+    "knocks": [
+     "He pounds",
+     "And keeps",
+     "keeps pounding"
+    ]
+   },
+   "spoken": "It's a cold Saturday in January, nineteen fifty one. A skinny twenty year old gets off an early train in Washington, and walks to the head office of an insurance company. The building is locked. Nobody's there. So he does something most people wouldn't. He pounds on the door. And keeps pounding.",
+   "sec": 18.18,
+   "cues": [
+    "It's a cold Saturday in January 1951.",
+    "A skinny 20-year-old gets off an early train in Washington,",
+    "and walks to the head office of an insurance company.",
+    "The building is locked.",
+    "Nobody's there.",
+    "So he does something most people wouldn't.",
+    "He pounds on the door.",
+    "And keeps pounding."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "k01",
+   "say": "Finally, a janitor opens it. The kid asks if there's anyone inside he could talk to. The janitor says he's seen one man, working on the sixth floor.",
+   "cap": "Finally, a janitor opens it. The kid asks if there's anyone inside he could talk to. The janitor says he's seen one man, working on the sixth floor.",
+   "scene": {
+    "type": "clip",
+    "clip": "g95_door",
+    "heading": "BERKSHIRE LETTER · 1995",
+    "hl": [
+     "a janitor opens"
+    ],
+    "stamps": [
+     {
+      "text": "6TH FLOOR: ONE MAN",
+      "at": "sixth floor"
+     }
+    ]
+   },
+   "spoken": "Finally, a janitor opens it. The kid asks if there's anyone inside he could talk to. The janitor says he's seen one man, working on the sixth floor.",
+   "sec": 9.66,
+   "cues": [
+    "Finally, a janitor opens it.",
+    "The kid asks if there's anyone inside he could talk to.",
+    "The janitor says he's seen one man, working on the sixth floor."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "k02",
+   "say": "That kid was Warren Buffett. The company was GEICO. And this is the story of GEICO's moat.",
+   "cap": "That kid was Warren Buffett. The company was GEICO. And this is the story of GEICO's moat.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "THAT KID: WARREN BUFFETT.",
+      "at": "That kid",
+      "em": [
+       "BUFFETT"
+      ]
+     },
+     {
+      "t": "THE COMPANY: GEICO.",
+      "at": "The company",
+      "em": [
+       "GEICO"
+      ]
+     },
+     {
+      "t": "THIS IS THE STORY OF ITS MOAT.",
+      "at": "this is the story",
+      "em": [
+       "MOAT"
+      ]
+     }
+    ]
+   },
+   "spoken": "That kid was Warren Buffett. The company was Guyco. And this is the story of Guyco's moat.",
+   "sec": 6.14,
+   "cues": [
+    "That kid was Warren Buffett.",
+    "The company was GEICO.",
+    "And this is the story of GEICO's moat."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "k03",
+   "say": "The four hours he spent on that sixth floor would one day be worth billions to him. But this isn't a story about a lucky knock. It's a crime story.",
+   "cap": "The four hours he spent on that sixth floor would one day be worth billions to him. But this isn't a story about a lucky knock. It's a crime story.",
+   "scene": {
+    "type": "x-photo",
+    "img": "office1951",
+    "move": "in",
+    "fx": 0.7,
+    "fy": 0.45,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "FOUR HOURS ON THE 6TH FLOOR",
+      "at": "four hours",
+      "x": 620,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "WORTH BILLIONS",
+      "at": "worth billions",
+      "x": 520,
+      "y": 340
+     },
+     {
+      "kind": "stamp",
+      "text": "A CRIME STORY",
+      "at": "crime story",
+      "x": 1450,
+      "y": 880,
+      "size": 64
+     }
+    ]
+   },
+   "spoken": "The four hours he spent on that sixth floor would one day be worth billions to him. But this isn't a story about a lucky knock. It's a crime story.",
+   "sec": 8.44,
+   "cues": [
+    "The four hours he spent on that sixth floor would one day be worth billions",
+    "to him.",
+    "But this isn't a story about a lucky knock.",
+    "It's a crime story."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "k04",
+   "say": "Because twenty five years after that Saturday, GEICO was nearly dead, its stock down more than ninety five percent. And the killer was never a competitor. The killer was inside the building.",
+   "cap": "Because 25 years after that Saturday, GEICO was nearly dead, its stock down more than 95%. And the killer was never a competitor. The killer was inside the building.",
+   "scene": {
+    "type": "counter",
+    "heading": "GEICO STOCK · MID-1970s",
+    "to": 95,
+    "prefix": "−",
+    "suffix": "%",
+    "at": "ninety five",
+    "sub": "FROM ITS PEAK · BUFFETT, 2010 LETTER",
+    "stamps": [
+     {
+      "text": "INSIDE JOB",
+      "at": "inside the building"
+     }
+    ]
+   },
+   "spoken": "Because twenty five years after that Saturday, Guyco was nearly dead, its stock down more than ninety five percent. And the killer was never a competitor. The killer was inside the building.",
+   "sec": 11.05,
+   "cues": [
+    "Because 25 years after that Saturday, GEICO was nearly dead,",
+    "its stock down more than 95%.",
+    "And the killer was never a competitor.",
+    "The killer was inside the building."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "k05",
+   "say": "This is The Moat Files, where we investigate one company's moat like a detective. Today, GEICO. What was its moat? Who almost killed it, not once, but twice? And is it safe today? By the end, you'll have a three question test, to spot the same kind of moat in India.",
+   "cap": "This is The Moat Files, where we investigate one company's moat like a detective. Today, GEICO. What was its moat? Who almost killed it, not once, but twice? And is it safe today? By the end, you'll have a three question test, to spot the same kind of moat in India.",
+   "scene": {
+    "type": "x-case",
+    "name": "GEICO",
+    "sub": "SUBJECT: THE MOAT",
+    "lines": [
+     {
+      "t": "WHAT WAS THE MOAT?",
+      "at": "What was its moat"
+     },
+     {
+      "t": "WHO ALMOST KILLED IT, TWICE?",
+      "at": "Who almost killed"
+     },
+     {
+      "t": "IS IT SAFE TODAY?",
+      "at": "is it safe today"
+     }
+    ]
+   },
+   "spoken": "This is The Moat Files, where we investigate one company's moat like a detective. Today, Guyco. What was its moat? Who almost killed it, not once, but twice? And is it safe today? By the end, you'll have a three question test, to spot the same kind of moat in India.",
+   "sec": 19.23,
+   "cues": [
+    "This is The Moat Files, where we investigate one company's moat like a",
+    "detective.",
+    "Today, GEICO.",
+    "What was its moat?",
+    "Who almost killed it, not once, but twice?",
+    "And is it safe today?",
+    "By the end, you'll have a three question test,",
+    "to spot the same kind of moat in India."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k10",
+   "say": "Act 1. The motive.",
+   "cap": "Act 1. The motive.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 1",
+    "title": "THE MOTIVE"
+   },
+   "spoken": "Act 1. The motive.",
+   "sec": 2.04,
+   "cues": [
+    "Act 1.",
+    "The motive."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k11",
+   "say": "Let's go back to the beginning. In nineteen thirty six, a man named Leo Goodwin started GEICO with a skimpy two hundred thousand dollars. That's Buffett's word. Skimpy. And he had one idea.",
+   "cap": "Let's go back to the beginning. In 1936, a man named Leo Goodwin started GEICO with a skimpy $200,000. That's Buffett's word. Skimpy. And he had one idea.",
+   "scene": {
+    "type": "x-founder",
+    "cash_at": "two hundred thousand",
+    "stamp_at": "Buffett's word"
+   },
+   "spoken": "Let's go back to the beginning. In nineteen thirty six, a man named Leo Goodwin started Guyco with a skimpy two hundred thousand dollars. That's Buffett's word. Skimpy. And he had one idea.",
+   "sec": 11.26,
+   "cues": [
+    "Let's go back to the beginning.",
+    "In 1936, a man named Leo Goodwin started GEICO with a skimpy $200,000.",
+    "That's Buffett's word.",
+    "Skimpy.",
+    "And he had one idea."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k12",
+   "say": "Back then, car insurance was sold by agents. You'd visit the agent, the agent would sell you the policy, and the agent took a cut. Every policy paid for a middleman.",
+   "cap": "Back then, car insurance was sold by agents. You'd visit the agent, the agent would sell you the policy, and the agent took a cut. Every policy paid for a middleman.",
+   "scene": {
+    "type": "x-middleman",
+    "old_at": "sold by agents",
+    "coins_at": "took a cut"
+   },
+   "spoken": "Back then, car insurance was sold by agents. You'd visit the agent, the agent would sell you the policy, and the agent took a cut. Every policy paid for a middleman.",
+   "sec": 9.66,
+   "cues": [
+    "Back then, car insurance was sold by agents.",
+    "You'd visit the agent, the agent would sell you the policy,",
+    "and the agent took a cut.",
+    "Every policy paid for a middleman."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k13",
+   "say": "Goodwin asked a simple question. Car insurance is compulsory, and people know what they need. So why pay a middleman at all? GEICO would sell directly to the customer. First by post, later by phone, and later still, online.",
+   "cap": "Goodwin asked a simple question. Car insurance is compulsory, and people know what they need. So why pay a middleman at all? GEICO would sell directly to the customer. First by post, later by phone, and later still, online.",
+   "scene": {
+    "type": "x-middleman",
+    "heading": "GOODWIN'S IDEA",
+    "old_at": 0,
+    "new_at": "sell directly"
+   },
+   "spoken": "Goodwin asked a simple question. Car insurance is compulsory, and people know what they need. So why pay a middleman at all? Guyco would sell directly to the customer. First by post, later by phone, and later still, online.",
+   "sec": 14.08,
+   "cues": [
+    "Goodwin asked a simple question.",
+    "Car insurance is compulsory, and people know what they need.",
+    "So why pay a middleman at all?",
+    "GEICO would sell directly to the customer.",
+    "First by post, later by phone, and later still, online."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k14",
+   "say": "Think of buying mangoes. One way is straight from the farmer. The other passes through three middlemen, each adding their margin. Same mango. Very different price.",
+   "cap": "Think of buying mangoes. One way is straight from the farmer. The other passes through three middlemen, each adding their margin. Same mango. Very different price.",
+   "scene": {
+    "type": "x-mango",
+    "farm_at": "straight from the farmer",
+    "chain_at": "three middlemen",
+    "same_at": "Same mango"
+   },
+   "spoken": "Think of buying mangoes. One way is straight from the farmer. The other passes through three middlemen, each adding their margin. Same mango. Very different price.",
+   "sec": 8.72,
+   "cues": [
+    "Think of buying mangoes.",
+    "One way is straight from the farmer.",
+    "The other passes through three middlemen, each adding their margin.",
+    "Same mango.",
+    "Very different price."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k15",
+   "say": "This is what Davidson explained to young Buffett on that sixth floor. Selling direct gave GEICO an enormous cost advantage, over rivals that sold through agents.",
+   "cap": "This is what Davidson explained to young Buffett on that sixth floor. Selling direct gave GEICO an enormous cost advantage, over rivals that sold through agents.",
+   "scene": {
+    "type": "clip",
+    "clip": "g95_direct",
+    "heading": "BERKSHIRE LETTER · 1995",
+    "hl": [
+     "enormous cost advantage"
+    ]
+   },
+   "spoken": "This is what Davidson explained to young Buffett on that sixth floor. Selling direct gave Guyco an enormous cost advantage, over rivals that sold through agents.",
+   "sec": 9.17,
+   "cues": [
+    "This is what Davidson explained to young Buffett on that sixth floor.",
+    "Selling direct gave GEICO an enormous cost advantage,",
+    "over rivals that sold through agents."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k16",
+   "say": "And the big insurers couldn't copy it. Their whole business ran on agents. If they started selling directly, their agents would revolt. Buffett wrote that it was impossible for them to give that system up.",
+   "cap": "And the big insurers couldn't copy it. Their whole business ran on agents. If they started selling directly, their agents would revolt. Buffett wrote that it was impossible for them to give that system up.",
+   "scene": {
+    "type": "x-middleman",
+    "heading": "WHY RIVALS COULDN'T COPY GEICO",
+    "old_at": 0,
+    "new_at": 0,
+    "revolt_at": "agents would revolt"
+   },
+   "spoken": "And the big insurers couldn't copy it. Their whole business ran on agents. If they started selling directly, their agents would revolt. Buffett wrote that it was impossible for them to give that system up.",
+   "sec": 10.95,
+   "cues": [
+    "And the big insurers couldn't copy it.",
+    "Their whole business ran on agents.",
+    "If they started selling directly, their agents would revolt.",
+    "Buffett wrote that it was impossible for them to give that system up."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "k17",
+   "say": "So that's the motive for everything that follows. GEICO's moat wasn't a secret recipe. It was a cost advantage its rivals couldn't copy without hurting themselves. Remember that word. Cost. Because twenty five years later, getting its own costs wrong nearly killed GEICO.",
+   "cap": "So that's the motive for everything that follows. GEICO's moat wasn't a secret recipe. It was a cost advantage its rivals couldn't copy without hurting themselves. Remember that word. Cost. Because 25 years later, getting its own costs wrong nearly killed GEICO.",
+   "scene": {
+    "type": "strips",
+    "heading": "CLUE 1",
+    "items": [
+     {
+      "text": "LOW COST, BUILT INTO HOW IT SELLS",
+      "at": "a cost advantage"
+     },
+     {
+      "text": "RIVALS CAN'T COPY WITHOUT SELF-HARM",
+      "at": "without hurting"
+     },
+     {
+      "text": "REMEMBER: COST",
+      "at": "Remember that word",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "So that's the motive for everything that follows. Guyco's moat wasn't a secret recipe. It was a cost advantage its rivals couldn't copy without hurting themselves. Remember that word. Cost. Because twenty five years later, getting its own costs wrong nearly killed Guyco.",
+   "sec": 16.61,
+   "cues": [
+    "So that's the motive for everything that follows.",
+    "GEICO's moat wasn't a secret recipe.",
+    "It was a cost advantage its rivals couldn't copy without hurting themselves.",
+    "Remember that word.",
+    "Cost.",
+    "Because 25 years later, getting its own costs wrong nearly killed GEICO."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k20",
+   "say": "Act 2. The rise.",
+   "cap": "Act 2. The rise.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 2",
+    "title": "THE RISE"
+   },
+   "spoken": "Act 2. The rise.",
+   "sec": 2.12,
+   "cues": [
+    "Act 2.",
+    "The rise."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k21",
+   "say": "Buffett went home to Omaha, and fell in love. During nineteen fifty one, he bought GEICO shares four times. Three hundred and fifty shares, for ten thousand two hundred and eighty two dollars. By the end of the year, that was more than sixty five percent of everything he owned.",
+   "cap": "Buffett went home to Omaha, and fell in love. During 1951, he bought GEICO shares four times. 350 shares, for $10,282. By the end of the year, that was more than 65% of everything he owned.",
+   "scene": {
+    "type": "cards",
+    "heading": "BUFFETT'S GEICO BUYS · 1951",
+    "cards": [
+     {
+      "top": "PURCHASES",
+      "big": "4",
+      "at": "four times"
+     },
+     {
+      "top": "SHARES",
+      "big": "350",
+      "at": "Three hundred and fifty"
+     },
+     {
+      "top": "COST",
+      "big": "$10,282",
+      "at": "ten thousand"
+     },
+     {
+      "top": "OF HIS NET WORTH",
+      "big": ">65%",
+      "at": "sixty five",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "Buffett went home to Omaha, and fell in love. During nineteen fifty one, he bought Guyco shares four times. Three hundred and fifty shares, for ten thousand two hundred and eighty two dollars. By the end of the year, that was more than sixty five percent of everything he owned.",
+   "sec": 17.0,
+   "cues": [
+    "Buffett went home to Omaha, and fell in love.",
+    "During 1951, he bought GEICO shares four times.",
+    "350 shares, for $10,282.",
+    "By the end of the year, that was more than 65% of everything he owned."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k22",
+   "say": "Then in nineteen fifty two, he did what most of us would do. He sold, for fifteen thousand two hundred and fifty nine dollars. Twenty years later, the shares he sold were worth about one point three million dollars.",
+   "cap": "Then in 1952, he did what most of us would do. He sold, for $15,259. Twenty years later, the shares he sold were worth about $1.3 million.",
+   "scene": {
+    "type": "bars",
+    "heading": "THE GEICO SHARES BUFFETT SOLD",
+    "rows": [
+     {
+      "name": "SOLD FOR, 1952",
+      "v": 15259,
+      "label": "$15,259",
+      "at": "He sold"
+     },
+     {
+      "name": "WORTH 20 YEARS LATER",
+      "v": 1300000,
+      "label": "~$1.3 MILLION",
+      "at": "one point three",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Then in nineteen fifty two, he did what most of us would do. He sold, for fifteen thousand two hundred and fifty nine dollars. Twenty years later, the shares he sold were worth about one point three million dollars.",
+   "sec": 11.99,
+   "cues": [
+    "Then in 1952, he did what most of us would do.",
+    "He sold, for $15,259.",
+    "Twenty years later, the shares he sold were worth about $1.3 million."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k23",
+   "say": "Even the great detective got this one wrong. He called it a lesson, about selling a stake in an identifiably wonderful company.",
+   "cap": "Even the great detective got this one wrong. He called it a lesson, about selling a stake in an identifiably wonderful company.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "EVEN THE DETECTIVE",
+      "at": "Even the great",
+      "em": []
+     },
+     {
+      "t": "GOT THIS ONE WRONG.",
+      "at": "got this one wrong",
+      "em": [
+       "WRONG"
+      ]
+     }
+    ]
+   },
+   "spoken": "Even the great detective got this one wrong. He called it a lesson, about selling a stake in an identifiably wonderful company.",
+   "sec": 8.04,
+   "cues": [
+    "Even the great detective got this one wrong.",
+    "He called it a lesson, about selling a stake in an identifiably wonderful",
+    "company."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k24",
+   "say": "Meanwhile, GEICO kept growing. From nineteen thirty six to nineteen seventy five, it went from nothing to four percent of the American car insurance market. The fourth largest insurer in the country. Buffett wrote that it looked unstoppable. Looked. Hold that thought.",
+   "cap": "Meanwhile, GEICO kept growing. From 1936 to 1975, it went from nothing to 4% of the American car insurance market. The fourth-largest insurer in the country. Buffett wrote that it looked unstoppable. Looked. Hold that thought.",
+   "scene": {
+    "type": "x-line",
+    "heading": "GEICO'S SHARE OF US CAR INSURANCE",
+    "domain": [
+     1934,
+     2013
+    ],
+    "ymax": 10,
+    "points": [
+     {
+      "x": 1936,
+      "y": 0,
+      "at": 0
+     },
+     {
+      "x": 1975,
+      "y": 4.0,
+      "label": "4.0%",
+      "at": "four percent"
+     }
+    ],
+    "stamp": {
+     "text": "“LOOKED UNSTOPPABLE”",
+     "at": "looked unstoppable"
+    }
+   },
+   "spoken": "Meanwhile, Guyco kept growing. From nineteen thirty six to nineteen seventy five, it went from nothing to four percent of the American car insurance market. The fourth largest insurer in the country. Buffett wrote that it looked unstoppable. Looked. Hold that thought.",
+   "sec": 15.36,
+   "cues": [
+    "Meanwhile, GEICO kept growing.",
+    "From 1936 to 1975, it went from nothing to 4% of the American car insurance",
+    "market.",
+    "The fourth-largest insurer in the country.",
+    "Buffett wrote that it looked unstoppable.",
+    "Looked.",
+    "Hold that thought."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "k30",
+   "say": "Act 3. The crime.",
+   "cap": "Act 3. The crime.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 3",
+    "title": "THE CRIME"
+   },
+   "spoken": "Act 3. The crime.",
+   "sec": 2.64,
+   "cues": [
+    "Act 3.",
+    "The crime."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "k31",
+   "say": "In nineteen seventy, Davidson retired as CEO. And within a few years, the unstoppable company was bleeding. So, let's play detective. Who's the suspect? Competitors? No. Nobody had copied the model. Regulators? No. The economy? It didn't help. But it wasn't the cause, either.",
+   "cap": "In 1970, Davidson retired as CEO. And within a few years, the unstoppable company was bleeding. So, let's play detective. Who's the suspect? Competitors? No. Nobody had copied the model. Regulators? No. The economy? It didn't help. But it wasn't the cause, either.",
+   "scene": {
+    "type": "x-crime",
+    "victim": {
+     "big": "GEICO",
+     "red": "−95%",
+     "sub": "stock · by 1976"
+    },
+    "suspects": [
+     {
+      "t": "COMPETITORS?",
+      "at": "Competitors?",
+      "cross": "Nobody had copied"
+     },
+     {
+      "t": "REGULATORS?",
+      "at": "Regulators?",
+      "cross": "Regulators? No"
+     },
+     {
+      "t": "THE ECONOMY?",
+      "at": "The economy?",
+      "cross": "wasn't the cause"
+     },
+     {
+      "t": "???",
+      "at": "Who's the suspect"
+     }
+    ]
+   },
+   "spoken": "In nineteen seventy, Davidson retired as CEO. And within a few years, the unstoppable company was bleeding. So, let's play detective. Who's the suspect? Competitors? No. Nobody had copied the model. Regulators? No. The economy? It didn't help. But it wasn't the cause, either.",
+   "sec": 19.8,
+   "cues": [
+    "In 1970, Davidson retired as CEO.",
+    "And within a few years, the unstoppable company was bleeding.",
+    "So, let's play detective.",
+    "Who's the suspect?",
+    "Competitors?",
+    "No.",
+    "Nobody had copied the model.",
+    "Regulators?",
+    "No.",
+    "The economy?",
+    "It didn't help.",
+    "But it wasn't the cause, either."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "k32",
+   "say": "Buffett names the real culprit in his two thousand four letter. The new managers made a huge mistake. They under reserved for losses. In simple words, they didn't set aside enough money for the claims that were coming. So their cost numbers were wrong. And because the costs were wrong, their prices were too low.",
+   "cap": "Buffett names the real culprit in his 2004 letter. The new managers made a huge mistake. They under-reserved for losses. In simple words, they didn't set aside enough money for the claims that were coming. So their cost numbers were wrong. And because the costs were wrong, their prices were too low.",
+   "scene": {
+    "type": "clip",
+    "clip": "g04_reserve",
+    "heading": "BERKSHIRE LETTER · 2004",
+    "hl": [
+     "under reserved"
+    ],
+    "stamps": [
+     {
+      "text": "THE CULPRIT WAS INSIDE",
+      "at": "real culprit"
+     }
+    ]
+   },
+   "spoken": "Buffett names the real culprit in his two thousand four letter. The new managers made a huge mistake. They under reserved for losses. In simple words, they didn't set aside enough money for the claims that were coming. So their cost numbers were wrong. And because the costs were wrong, their prices were too low.",
+   "sec": 16.59,
+   "cues": [
+    "Buffett names the real culprit in his 2004 letter.",
+    "The new managers made a huge mistake.",
+    "They under-reserved for losses.",
+    "In simple words, they didn't set aside enough money for the claims that were",
+    "coming.",
+    "So their cost numbers were wrong.",
+    "And because the costs were wrong, their prices were too low."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "k33",
+   "say": "Imagine a biryani shop owner, who thinks each plate costs him sixty rupees to make, when it really costs ninety. He prices it at eighty, and feels rich. The more he sells, the faster he goes broke.",
+   "cap": "Imagine a biryani shop owner, who thinks each plate costs him ₹60 to make, when it really costs ₹90. He prices it at ₹80, and feels rich. The more he sells, the faster he goes broke.",
+   "scene": {
+    "type": "x-biryani",
+    "thinks_at": "sixty rupees",
+    "real_at": "really costs ninety",
+    "price_at": "prices it at eighty",
+    "broke_at": "goes broke"
+   },
+   "spoken": "Imagine a biryani shop owner, who thinks each plate costs him sixty rupees to make, when it really costs ninety. He prices it at eighty, and feels rich. The more he sells, the faster he goes broke.",
+   "sec": 12.96,
+   "cues": [
+    "Imagine a biryani shop owner, who thinks each plate costs him ₹60 to make,",
+    "when it really costs ₹90.",
+    "He prices it at ₹80, and feels rich.",
+    "The more he sells, the faster he goes broke."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "k34",
+   "say": "That's exactly what happened to GEICO. By nineteen seventy six, it was on the brink of failure. The murder weapon was the company's own numbers. The moat didn't fail. The people guarding it did.",
+   "cap": "That's exactly what happened to GEICO. By 1976, it was on the brink of failure. The murder weapon was the company's own numbers. The moat didn't fail. The people guarding it did.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "1976: ON THE BRINK OF FAILURE",
+      "at": "brink of failure"
+     },
+     {
+      "text": "MURDER WEAPON: ITS OWN NUMBERS",
+      "at": "murder weapon",
+      "red": true
+     },
+     {
+      "text": "THE MOAT DIDN'T FAIL",
+      "at": "The moat didn't fail"
+     }
+    ]
+   },
+   "spoken": "That's exactly what happened to Guyco. By nineteen seventy six, it was on the brink of failure. The murder weapon was the company's own numbers. The moat didn't fail. The people guarding it did.",
+   "sec": 11.62,
+   "cues": [
+    "That's exactly what happened to GEICO.",
+    "By 1976, it was on the brink of failure.",
+    "The murder weapon was the company's own numbers.",
+    "The moat didn't fail.",
+    "The people guarding it did."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k40",
+   "say": "Act 4. The rescue.",
+   "cap": "Act 4. The rescue.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 4",
+    "title": "THE RESCUE"
+   },
+   "spoken": "Act 4. The rescue.",
+   "sec": 2.46,
+   "cues": [
+    "Act 4.",
+    "The rescue."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k41",
+   "say": "In nineteen seventy six, a new CEO arrives. Jack Byrne. He does the painful thing: big price increases. It works, and the company survives. But customers leave in droves. By nineteen eighty, GEICO's market share has fallen from four percent, to one point eight.",
+   "cap": "In 1976, a new CEO arrives. Jack Byrne. He does the painful thing: big price increases. It works, and the company survives. But customers leave in droves. By 1980, GEICO's market share has fallen from 4%, to 1.8%.",
+   "scene": {
+    "type": "x-line",
+    "heading": "GEICO'S SHARE OF US CAR INSURANCE",
+    "domain": [
+     1934,
+     2013
+    ],
+    "ymax": 10,
+    "points": [
+     {
+      "x": 1936,
+      "y": 0,
+      "at": 0
+     },
+     {
+      "x": 1975,
+      "y": 4.0,
+      "label": "4.0%",
+      "at": 0
+     },
+     {
+      "x": 1980,
+      "y": 1.8,
+      "label": "1.8%",
+      "at": "one point eight"
+     }
+    ],
+    "stamp": {
+     "text": "CUSTOMERS FLED",
+     "at": "leave in droves"
+    }
+   },
+   "spoken": "In nineteen seventy six, a new CEO arrives. Jack Byrne. He does the painful thing: big price increases. It works, and the company survives. But customers leave in droves. By nineteen eighty, Guyco's market share has fallen from four percent, to one point eight.",
+   "sec": 17.27,
+   "cues": [
+    "In 1976, a new CEO arrives.",
+    "Jack Byrne.",
+    "He does the painful thing:",
+    "big price increases.",
+    "It works, and the company survives.",
+    "But customers leave in droves.",
+    "By 1980, GEICO's market share has fallen from 4%, to 1.8%."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k42",
+   "say": "And now, the plot twist. In the second half of nineteen seventy six, while GEICO was still on the operating table, Berkshire Hathaway started buying its shares. By nineteen eighty, Buffett had put in forty five point seven million dollars, and owned a third of the company.",
+   "cap": "And now, the plot twist. In the second half of 1976, while GEICO was still on the operating table, Berkshire Hathaway started buying its shares. By 1980, Buffett had put in $45.7 million, and owned a third of the company.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE PLOT TWIST · 1976–1980",
+    "cards": [
+     {
+      "top": "BERKSHIRE INVESTED",
+      "big": "$45.7M",
+      "at": "forty five point seven"
+     },
+     {
+      "top": "IT OWNED",
+      "big": "33.3%",
+      "at": "a third",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "BUYING A DYING COMPANY?",
+      "at": "operating table"
+     }
+    ]
+   },
+   "spoken": "And now, the plot twist. In the second half of nineteen seventy six, while Guyco was still on the operating table, Berkshire Hathaway started buying its shares. By nineteen eighty, Buffett had put in forty five point seven million dollars, and owned a third of the company.",
+   "sec": 16.51,
+   "cues": [
+    "And now, the plot twist.",
+    "In the second half of 1976, while GEICO was still on the operating table,",
+    "Berkshire Hathaway started buying its shares.",
+    "By 1980, Buffett had put in $45.7 million, and owned a third of the company."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k43",
+   "say": "Why buy a company that had just nearly died? Buffett explained it in his nineteen eighty letter. He compared GEICO to American Express, after its famous salad oil scandal of nineteen sixty four.",
+   "cap": "Why buy a company that had just nearly died? Buffett explained it in his 1980 letter. He compared GEICO to American Express, after its famous salad oil scandal of 1964.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "WHY BUY A DYING COMPANY?",
+      "at": "Why buy",
+      "em": [
+       "DYING"
+      ]
+     },
+     {
+      "t": "GEICO 1976 = AMEX 1964",
+      "at": "He compared",
+      "em": [
+       "AMEX"
+      ]
+     }
+    ]
+   },
+   "spoken": "Why buy a company that had just nearly died? Buffett explained it in his nineteen eighty letter. He compared Guyco to American Express, after its famous salad oil scandal of nineteen sixty four.",
+   "sec": 11.34,
+   "cues": [
+    "Why buy a company that had just nearly died?",
+    "Buffett explained it in his 1980 letter.",
+    "He compared GEICO to American Express,",
+    "after its famous salad oil scandal of 1964."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k44",
+   "say": "Both, he said, were one of a kind companies, reeling from a blow that hadn't destroyed their exceptional underlying economics. In plain words, the patient was badly injured, but the heart was fine. The damage came from bad management, and management can be changed.",
+   "cap": "Both, he said, were one of a kind companies, reeling from a blow that hadn't destroyed their exceptional underlying economics. In plain words, the patient was badly injured, but the heart was fine. The damage came from bad management, and management can be changed.",
+   "scene": {
+    "type": "x-ekg",
+    "patient": "PATIENT: GEICO · 1976",
+    "cards": [
+     {
+      "t": "INJURY: BAD MANAGEMENT",
+      "at": "badly injured"
+     },
+     {
+      "t": "HEART: THE MOAT",
+      "at": "the heart was fine"
+     },
+     {
+      "t": "MANAGEMENT CAN CHANGE",
+      "at": "can be changed"
+     }
+    ]
+   },
+   "spoken": "Both, he said, were one of a kind companies, reeling from a blow that hadn't destroyed their exceptional underlying economics. In plain words, the patient was badly injured, but the heart was fine. The damage came from bad management, and management can be changed.",
+   "sec": 17.68,
+   "cues": [
+    "Both, he said, were one of a kind companies,",
+    "reeling from a blow that hadn't destroyed their exceptional underlying",
+    "economics.",
+    "In plain words, the patient was badly injured, but the heart was fine.",
+    "The damage came from bad management, and management can be changed."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "k45",
+   "say": "That salad oil scandal is a crime story of its own. It's case file four. But GEICO's recovery was slow. The company wandered into unwise diversification. For more than a decade, its market share was stuck around two percent. Zombie years.",
+   "cap": "That salad oil scandal is a crime story of its own. It's Case File 004. But GEICO's recovery was slow. The company wandered into unwise diversification. For more than a decade, its market share was stuck around 2%. Zombie years.",
+   "scene": {
+    "type": "x-line",
+    "heading": "GEICO'S SHARE OF US CAR INSURANCE",
+    "domain": [
+     1934,
+     2013
+    ],
+    "ymax": 10,
+    "points": [
+     {
+      "x": 1936,
+      "y": 0,
+      "at": 0
+     },
+     {
+      "x": 1975,
+      "y": 4.0,
+      "label": "4.0%",
+      "at": 0
+     },
+     {
+      "x": 1980,
+      "y": 1.8,
+      "label": "1.8%",
+      "at": 0
+     },
+     {
+      "x": 1993,
+      "y": 2.0,
+      "label": "2.0%",
+      "at": "stuck around two percent"
+     }
+    ],
+    "stamp": {
+     "text": "ZOMBIE YEARS",
+     "at": "Zombie years",
+     "x": 1150,
+     "y": 520
+    }
+   },
+   "spoken": "That salad oil scandal is a crime story of its own. It's case file four. But Guyco's recovery was slow. The company wandered into unwise diversification. For more than a decade, its market share was stuck around two percent. Zombie years.",
+   "sec": 13.69,
+   "cues": [
+    "That salad oil scandal is a crime story of its own.",
+    "It's Case File 004.",
+    "But GEICO's recovery was slow.",
+    "The company wandered into unwise diversification.",
+    "For more than a decade, its market share was stuck around 2%.",
+    "Zombie years."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k50",
+   "say": "Act 5. The second life.",
+   "cap": "Act 5. The second life.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 5",
+    "title": "THE SECOND LIFE"
+   },
+   "spoken": "Act 5. The second life.",
+   "sec": 2.46,
+   "cues": [
+    "Act 5.",
+    "The second life."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k51",
+   "say": "Then, in nineteen ninety three, a man named Tony Nicely took charge. He'd joined GEICO at eighteen. He knew the moat better than anyone, and he went back to the one thing that mattered. Saving customers money. And growing.",
+   "cap": "Then, in 1993, a man named Tony Nicely took charge. He'd joined GEICO at 18. He knew the moat better than anyone, and he went back to the one thing that mattered. Saving customers money. And growing.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "1993: TONY NICELY TAKES CHARGE",
+      "at": "Then, in",
+      "em": [
+       "NICELY"
+      ]
+     },
+     {
+      "t": "JOINED GEICO AT 18",
+      "at": "joined GEICO at eighteen",
+      "em": [
+       "18"
+      ]
+     },
+     {
+      "t": "SAVE CUSTOMERS MONEY. GROW.",
+      "at": "Saving customers",
+      "em": [
+       "SAVE",
+       "GROW"
+      ]
+     }
+    ]
+   },
+   "spoken": "Then, in nineteen ninety three, a man named Tony Nicely took charge. He'd joined Guyco at eighteen. He knew the moat better than anyone, and he went back to the one thing that mattered. Saving customers money. And growing.",
+   "sec": 14.08,
+   "cues": [
+    "Then, in 1993, a man named Tony Nicely took charge.",
+    "He'd joined GEICO at 18.",
+    "He knew the moat better than anyone, and he went back to the one thing that",
+    "mattered.",
+    "Saving customers money.",
+    "And growing."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k52",
+   "say": "In nineteen ninety five, Berkshire agreed to buy the half of GEICO it didn't own, for two point three billion dollars. Buffett later explained what he was really paying for. The customers. He valued them at about ninety seven percent of what they paid GEICO in a single year. Expensive, he admitted. But GEICO's customers were loyal and profitable, precisely because GEICO was cheap to run.",
+   "cap": "In 1995, Berkshire agreed to buy the half of GEICO it didn't own, for $2.3 billion. Buffett later explained what he was really paying for. The customers. He valued them at about 97% of what they paid GEICO in a single year. Expensive, he admitted. But GEICO's customers were loyal and profitable, precisely because GEICO was cheap to run.",
+   "scene": {
+    "type": "cards",
+    "heading": "1995–96 · BUYING THE OTHER HALF",
+    "cards": [
+     {
+      "top": "PRICE",
+      "big": "$2.3B",
+      "at": "two point three"
+     },
+     {
+      "top": "CUSTOMERS VALUED AT",
+      "big": "~97%",
+      "sub": "OF ONE YEAR'S PREMIUMS",
+      "at": "ninety seven",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "LOYAL BECAUSE CHEAP",
+      "at": "cheap to run"
+     }
+    ]
+   },
+   "spoken": "In nineteen ninety five, Berkshire agreed to buy the half of Guyco it didn't own, for two point three billion dollars. Buffett later explained what he was really paying for. The customers. He valued them at about ninety seven percent of what they paid Guyco in a single year. Expensive, he admitted. But Guyco's customers were loyal and profitable, precisely because Guyco was cheap to run.",
+   "sec": 22.07,
+   "cues": [
+    "In 1995, Berkshire agreed to buy the half of GEICO it didn't own,",
+    "for $2.3 billion.",
+    "Buffett later explained what he was really paying for.",
+    "The customers.",
+    "He valued them at about 97% of what they paid GEICO in a single year.",
+    "Expensive, he admitted.",
+    "But GEICO's customers were loyal and profitable,",
+    "precisely because GEICO was cheap to run."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k53",
+   "say": "And cheap it was. In nineteen ninety five, GEICO's underwriting and claims handling expenses fell to twenty three point six percent of premiums. Buffett wrote that GEICO's moat widened that year.",
+   "cap": "And cheap it was. In 1995, GEICO's underwriting and claims-handling expenses fell to 23.6% of premiums. Buffett wrote that GEICO's moat widened that year.",
+   "scene": {
+    "type": "counter",
+    "heading": "GEICO'S EXPENSES · 1995",
+    "to": 23.6,
+    "decimals": 1,
+    "suffix": "%",
+    "at": "twenty three point six",
+    "sub": "OF PREMIUMS · BUFFETT, 1995 LETTER",
+    "stamps": [
+     {
+      "text": "THE MOAT WIDENED",
+      "at": "moat widened"
+     }
+    ]
+   },
+   "spoken": "And cheap it was. In nineteen ninety five, Guyco's underwriting and claims handling expenses fell to twenty three point six percent of premiums. Buffett wrote that Guyco's moat widened that year.",
+   "sec": 11.83,
+   "cues": [
+    "And cheap it was.",
+    "In 1995, GEICO's underwriting and claims-handling expenses fell to 23.6% of",
+    "premiums.",
+    "Buffett wrote that GEICO's moat widened that year."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k54",
+   "say": "Then the numbers took off. Market share: about six percent by two thousand five. Eight point eight percent by twenty ten, America's third largest car insurer. Nine point three percent in twenty eleven. And in two thousand four, Buffett estimated customers saved about a billion dollars, compared with what they'd have paid elsewhere.",
+   "cap": "Then the numbers took off. Market share: about 6% by 2005. 8.8% by 2010, America's third-largest car insurer. 9.3% in 2011. And in 2004, Buffett estimated customers saved about $1 billion, compared with what they'd have paid elsewhere.",
+   "scene": {
+    "type": "x-line",
+    "heading": "GEICO'S SHARE OF US CAR INSURANCE",
+    "domain": [
+     1934,
+     2013
+    ],
+    "ymax": 10,
+    "points": [
+     {
+      "x": 1936,
+      "y": 0,
+      "at": 0
+     },
+     {
+      "x": 1975,
+      "y": 4.0,
+      "at": 0
+     },
+     {
+      "x": 1980,
+      "y": 1.8,
+      "at": 0
+     },
+     {
+      "x": 1993,
+      "y": 2.0,
+      "label": "2.0%",
+      "at": 0
+     },
+     {
+      "x": 2005,
+      "y": 6.0,
+      "label": "~6%",
+      "at": "about six percent"
+     },
+     {
+      "x": 2010,
+      "y": 8.8,
+      "label": "8.8%",
+      "dx": -80,
+      "at": "Eight point eight",
+      "noYear": true
+     },
+     {
+      "x": 2011,
+      "y": 9.3,
+      "label": "9.3%",
+      "dx": 70,
+      "at": "Nine point three"
+     }
+    ],
+    "stamp": {
+     "text": "CUSTOMERS SAVED ~$1B (2004)",
+     "at": "saved about a billion",
+     "x": 900,
+     "y": 330
+    }
+   },
+   "spoken": "Then the numbers took off. Market share: about six percent by two thousand five. Eight point eight percent by twenty ten, America's third largest car insurer. Nine point three percent in twenty eleven. And in two thousand four, Buffett estimated customers saved about a billion dollars, compared with what they'd have paid elsewhere.",
+   "sec": 19.51,
+   "cues": [
+    "Then the numbers took off.",
+    "Market share:",
+    "about 6% by 2005.",
+    "8.8% by 2010, America's third-largest car insurer.",
+    "9.3% in 2011.",
+    "And in 2004, Buffett estimated customers saved about $1 billion,",
+    "compared with what they'd have paid elsewhere."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k55",
+   "say": "Buffett even did the maths on what Nicely was worth. If GEICO's market share had stayed stuck, its twenty eleven premiums would have been about three point three billion dollars. Instead, they were fifteen point four billion.",
+   "cap": "Buffett even did the maths on what Nicely was worth. If GEICO's market share had stayed stuck, its 2011 premiums would have been about $3.3 billion. Instead, they were $15.4 billion.",
+   "scene": {
+    "type": "bars",
+    "heading": "GEICO PREMIUMS · 2011",
+    "rows": [
+     {
+      "name": "IF SHARE HAD STAYED STUCK",
+      "v": 3.3,
+      "label": "$3.3B",
+      "at": "three point three"
+     },
+     {
+      "name": "ACTUAL",
+      "v": 15.4,
+      "label": "$15.4B",
+      "at": "fifteen point four",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Buffett even did the maths on what Nicely was worth. If Guyco's market share had stayed stuck, its twenty eleven premiums would have been about three point three billion dollars. Instead, they were fifteen point four billion.",
+   "sec": 11.83,
+   "cues": [
+    "Buffett even did the maths on what Nicely was worth.",
+    "If GEICO's market share had stayed stuck,",
+    "its 2011 premiums would have been about $3.3 billion.",
+    "Instead, they were $15.4 billion."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "k56",
+   "say": "And Davy, the man on the sixth floor? When Berkshire bought the whole company, he was ninety five. He recorded a video, saying how happy he was, and ended it with a line for his old student. Next time, Warren, please make an appointment.",
+   "cap": "And Davy, the man on the sixth floor? When Berkshire bought the whole company, he was ninety five. He recorded a video, saying how happy he was, and ended it with a line for his old student. Next time, Warren, please make an appointment.",
+   "scene": {
+    "type": "quote",
+    "text": "“Next time, Warren, please make an appointment.”",
+    "who": "LORIMER DAVIDSON, AT 95 · VIA BUFFETT'S 2010 LETTER",
+    "at": "Next time"
+   },
+   "spoken": "And Davy, the man on the sixth floor? When Berkshire bought the whole company, he was ninety five. He recorded a video, saying how happy he was, and ended it with a line for his old student. Next time, Warren, please make an appointment.",
+   "sec": 15.1,
+   "cues": [
+    "And Davy, the man on the sixth floor?",
+    "When Berkshire bought the whole company, he was ninety five.",
+    "He recorded a video, saying how happy he was,",
+    "and ended it with a line for his old student.",
+    "Next time, Warren, please make an appointment."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "k60",
+   "say": "Case. Reopened.",
+   "cap": "Case. Reopened.",
+   "scene": {
+    "type": "x-act",
+    "act": "CASE",
+    "title": "REOPENED"
+   },
+   "spoken": "Case. Reopened.",
+   "sec": 2.04,
+   "cues": [
+    "Case.",
+    "Reopened."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "k61",
+   "say": "You'd think the story ends there. It doesn't. In his twenty twenty four letter, Buffett said something surprising about his first love. GEICO, he wrote, was a long held gem that needed major repolishing. Todd Combs had spent five years reshaping it, making it more efficient, and bringing its underwriting up to date.",
+   "cap": "You'd think the story ends there. It doesn't. In his 2024 letter, Buffett said something surprising about his first love. GEICO, he wrote, was a long-held gem that needed major repolishing. Todd Combs had spent five years reshaping it, making it more efficient, and bringing its underwriting up to date.",
+   "scene": {
+    "type": "clip",
+    "clip": "g24_gem",
+    "heading": "BERKSHIRE LETTER · 2024",
+    "hl": [
+     "long held gem"
+    ],
+    "stamps": [
+     {
+      "text": "CASE REOPENED",
+      "at": "It doesn't"
+     }
+    ]
+   },
+   "spoken": "You'd think the story ends there. It doesn't. In his twenty twenty four letter, Buffett said something surprising about his first love. Guyco, he wrote, was a long held gem that needed major repolishing. Todd Combs had spent five years reshaping it, making it more efficient, and bringing its underwriting up to date.",
+   "sec": 18.34,
+   "cues": [
+    "You'd think the story ends there.",
+    "It doesn't.",
+    "In his 2024 letter, Buffett said something surprising about his first love.",
+    "GEICO, he wrote, was a long-held gem that needed major repolishing.",
+    "Todd Combs had spent five years reshaping it, making it more efficient,",
+    "and bringing its underwriting up to date."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "k62",
+   "say": "Underwriting means pricing risk correctly. That's the very thing that went wrong in the nineteen seventies. Different decade. Same weak spot.",
+   "cap": "Underwriting means pricing risk correctly. That's the very thing that went wrong in the 1970s. Different decade. Same weak spot.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "UNDERWRITING = PRICING RISK",
+      "at": "Underwriting means"
+     },
+     {
+      "text": "WHAT FAILED IN THE 1970s",
+      "at": "went wrong"
+     },
+     {
+      "text": "SAME WEAK SPOT",
+      "at": "Same weak spot",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Underwriting means pricing risk correctly. That's the very thing that went wrong in the nineteen seventies. Different decade. Same weak spot.",
+   "sec": 8.57,
+   "cues": [
+    "Underwriting means pricing risk correctly.",
+    "That's the very thing that went wrong in the 1970s.",
+    "Different decade.",
+    "Same weak spot."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "k63",
+   "say": "And in Greg Abel's first letter as Berkshire's CEO, for twenty twenty five, the story continues. Price increases restored GEICO's margins, but cost it customers. Competitors are cutting prices. And GEICO is investing in technology, while trying to stay the industry's low cost provider.",
+   "cap": "And in Greg Abel's first letter as Berkshire's CEO, for 2025, the story continues. Price increases restored GEICO's margins, but cost it customers. Competitors are cutting prices. And GEICO is investing in technology, while trying to stay the industry's low-cost provider.",
+   "scene": {
+    "type": "clip",
+    "clip": "g25_retention",
+    "heading": "BERKSHIRE LETTER · 2025 (GREG ABEL)",
+    "hl": [
+     "cost it customers"
+    ]
+   },
+   "spoken": "And in Greg Abel's first letter as Berkshire's CEO, for twenty twenty five, the story continues. Price increases restored Guyco's margins, but cost it customers. Competitors are cutting prices. And Guyco is investing in technology, while trying to stay the industry's low cost provider.",
+   "sec": 18.08,
+   "cues": [
+    "And in Greg Abel's first letter as Berkshire's CEO, for 2025,",
+    "the story continues.",
+    "Price increases restored GEICO's margins, but cost it customers.",
+    "Competitors are cutting prices.",
+    "And GEICO is investing in technology,",
+    "while trying to stay the industry's low-cost provider."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "k64",
+   "say": "So, has the killer come back? Let's hear the defence first.",
+   "cap": "So, has the killer come back? Let's hear the defence first.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "HAS THE KILLER COME BACK?",
+      "at": "has the killer",
+      "em": [
+       "KILLER"
+      ]
+     }
+    ]
+   },
+   "spoken": "So, has the killer come back? Let's hear the defence first.",
+   "sec": 3.97,
+   "cues": [
+    "So, has the killer come back?",
+    "Let's hear the defence first."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "k70",
+   "say": "The. Defence.",
+   "cap": "The. Defence.",
+   "scene": {
+    "type": "x-act",
+    "act": "THE",
+    "title": "DEFENCE"
+   },
+   "spoken": "The. Defence.",
+   "sec": 1.75,
+   "cues": [
+    "The.",
+    "Defence."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "k71",
+   "say": "Here's the fairest case against GEICO's moat. One. Direct selling isn't new any more. Rivals have had decades to build their own direct channels. Two. A low cost moat must be earned again every single year. It isn't a patent. Three. The moat has now needed rescuing twice, and both times, the damage came from pricing. And four. The latest letter admits GEICO lost customers while it fixed its prices.",
+   "cap": "Here's the fairest case against GEICO's moat. One. Direct selling isn't new any more. Rivals have had decades to build their own direct channels. Two. A low cost moat must be earned again every single year. It isn't a patent. Three. The moat has now needed rescuing twice, and both times, the damage came from pricing. And four. The latest letter admits GEICO lost customers while it fixed its prices.",
+   "scene": {
+    "type": "list",
+    "heading": "THE CASE AGAINST THE MOAT",
+    "items": [
+     {
+      "text": "DIRECT SELLING IS NO LONGER RARE",
+      "at": "Direct selling"
+     },
+     {
+      "text": "LOW COST MUST BE RE-EARNED YEARLY",
+      "at": "earned again"
+     },
+     {
+      "text": "RESCUED TWICE, BOTH TIMES PRICING",
+      "at": "rescuing twice"
+     },
+     {
+      "text": "CUSTOMERS LOST IN THE FIX",
+      "at": "lost customers"
+     }
+    ]
+   },
+   "spoken": "Here's the fairest case against Guyco's moat. One. Direct selling isn't new any more. Rivals have had decades to build their own direct channels. Two. A low cost moat must be earned again every single year. It isn't a patent. Three. The moat has now needed rescuing twice, and both times, the damage came from pricing. And four. The latest letter admits Guyco lost customers while it fixed its prices.",
+   "sec": 28.13,
+   "cues": [
+    "Here's the fairest case against GEICO's moat.",
+    "One.",
+    "Direct selling isn't new any more.",
+    "Rivals have had decades to build their own direct channels.",
+    "Two.",
+    "A low cost moat must be earned again every single year.",
+    "It isn't a patent.",
+    "Three.",
+    "The moat has now needed rescuing twice, and both times,",
+    "the damage came from pricing.",
+    "And four.",
+    "The latest letter admits GEICO lost customers while it fixed its prices."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "k72",
+   "say": "So, here's our verdict. GEICO's moat is real. A cost advantage, built into how it sells. It has lasted nearly ninety years, but it has never protected GEICO from GEICO. Both near deaths were inside jobs. Pricing mistakes that no competitor could have caused. Whether today's GEICO is still the low cost winner, is being decided right now, in its price lists.",
+   "cap": "So, here's our verdict. GEICO's moat is real. A cost advantage, built into how it sells. It has lasted nearly ninety years, but it has never protected GEICO from GEICO. Both near deaths were inside jobs. Pricing mistakes that no competitor could have caused. Whether today's GEICO is still the low cost winner, is being decided right now, in its price lists.",
+   "scene": {
+    "type": "x-verdict",
+    "caseName": "CASE FILE 001 · GEICO",
+    "rows": [
+     {
+      "k": "THE MOAT",
+      "v": "LOW-COST DIRECT MODEL, ~90 YEARS",
+      "at": "moat is real"
+     },
+     {
+      "k": "THE THREAT",
+      "v": "ITS OWN PRICING, NOT ITS RIVALS",
+      "at": "inside jobs"
+     },
+     {
+      "k": "STATUS",
+      "v": "UNDER REPAIR · BERKSHIRE 2024–25",
+      "at": "being decided right now"
+     }
+    ]
+   },
+   "spoken": "So, here's our verdict. Guyco's moat is real. A cost advantage, built into how it sells. It has lasted nearly ninety years, but it has never protected Guyco from Guyco. Both near deaths were inside jobs. Pricing mistakes that no competitor could have caused. Whether today's Guyco is still the low cost winner, is being decided right now, in its price lists.",
+   "sec": 21.6,
+   "cues": [
+    "So, here's our verdict.",
+    "GEICO's moat is real.",
+    "A cost advantage, built into how it sells.",
+    "It has lasted nearly ninety years, but it has never protected GEICO from",
+    "GEICO.",
+    "Both near deaths were inside jobs.",
+    "Pricing mistakes that no competitor could have caused.",
+    "Whether today's GEICO is still the low cost winner,",
+    "is being decided right now, in its price lists."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "k80",
+   "say": "In India, a lot of insurance is still sold through agents and bank branches, each taking a commission. So Goodwin's question still matters. When you study any company that claims to be the low cost player, in any industry, open a case file with three questions. One. Is the low cost built into how it sells, or is it just a discount? Two. Could rivals copy it, without hurting their own business? Three. Are its costs and reserves reported honestly? A wrong cost number is how GEICO nearly died.",
+   "cap": "In India, a lot of insurance is still sold through agents and bank branches, each taking a commission. So Goodwin's question still matters. When you study any company that claims to be the low cost player, in any industry, open a case file with three questions. One. Is the low cost built into how it sells, or is it just a discount? Two. Could rivals copy it, without hurting their own business? Three. Are its costs and reserves reported honestly? A wrong cost number is how GEICO nearly died.",
+   "scene": {
+    "type": "hand",
+    "title": "Your case file:",
+    "items": [
+     {
+      "text": "Built into how it sells, or a discount?",
+      "at": "One. Is the"
+     },
+     {
+      "text": "Can rivals copy it without self-harm?",
+      "at": "Two. Could"
+     },
+     {
+      "text": "Costs and reserves reported honestly?",
+      "at": "Three. Are"
+     }
+    ]
+   },
+   "spoken": "In India, a lot of insurance is still sold through agents and bank branches, each taking a commission. So Goodwin's question still matters. When you study any company that claims to be the low cost player, in any industry, open a case file with three questions. One. Is the low cost built into how it sells, or is it just a discount? Two. Could rivals copy it, without hurting their own business? Three. Are its costs and reserves reported honestly? A wrong cost number is how Guyco nearly died.",
+   "sec": 30.9,
+   "cues": [
+    "In India, a lot of insurance is still sold through agents and bank branches,",
+    "each taking a commission.",
+    "So Goodwin's question still matters.",
+    "When you study any company that claims to be the low cost player,",
+    "in any industry, open a case file with three questions.",
+    "One.",
+    "Is the low cost built into how it sells, or is it just a discount?",
+    "Two.",
+    "Could rivals copy it, without hurting their own business?",
+    "Three.",
+    "Are its costs and reserves reported honestly?",
+    "A wrong cost number is how GEICO nearly died."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "k81",
+   "say": "We're not saying any Indian company has this moat. You do the detective work.",
+   "cap": "We're not saying any Indian company has this moat. You do the detective work.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NO COMPANY IS NAMED OR RECOMMENDED",
+    "lines": [
+     {
+      "t": "YOU DO THE DETECTIVE WORK.",
+      "at": "You do the",
+      "em": [
+       "DETECTIVE"
+      ]
+     }
+    ]
+   },
+   "spoken": "We're not saying any Indian company has this moat. You do the detective work.",
+   "sec": 4.18,
+   "cues": [
+    "We're not saying any Indian company has this moat.",
+    "You do the detective work."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "k82",
+   "say": "One line for your friend over chai. A moat keeps rivals out. But it can't stop the owners from setting the castle on fire.",
+   "cap": "One line for your friend over chai. A moat keeps rivals out. But it can't stop the owners from setting the castle on fire.",
+   "scene": {
+    "type": "x-photo",
+    "img": "fort",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.45,
+    "fx_particles": "embers",
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE CHAI TEST",
+      "at": 0,
+      "x": 120,
+      "y": 160,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "A MOAT KEEPS RIVALS OUT",
+      "at": "keeps rivals out",
+      "x": 560,
+      "y": 820
+     },
+     {
+      "kind": "strip",
+      "text": "…BUT NOT OWNERS WITH MATCHES",
+      "at": "setting the castle",
+      "x": 1320,
+      "y": 950,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "One line for your friend over chai. A moat keeps rivals out. But it can't stop the owners from setting the castle on fire.",
+   "sec": 8.52,
+   "cues": [
+    "One line for your friend over chai.",
+    "A moat keeps rivals out.",
+    "But it can't stop the owners from setting the castle on fire."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "k83",
+   "say": "Every clue here comes from Warren Buffett's letters, and Greg Abel's. The sources are in the description.",
+   "cap": "Every clue here comes from Warren Buffett's letters, and Greg Abel's. The sources are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "Berkshire Hathaway letters · 1980, 1995, 2004, 2010, 2011, 2024",
+     "Berkshire Hathaway letter · 2025 (Greg Abel)",
+     "The Moat Files · Case File 001 · every figure on the fact sheet"
+    ]
+   },
+   "spoken": "Every clue here comes from Warren Buffett's letters, and Greg Abel's. The sources are in the description.",
+   "sec": 6.14,
+   "cues": [
+    "Every clue here comes from Warren Buffett's letters, and Greg Abel's.",
+    "The sources are in the description."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "k84",
+   "say": "Next case. A candy shop Buffett almost walked away from, over five million dollars. It went on to earn his company more than one and a half billion. Case file two. See's Candies. Subscribe, and I'll see you at the crime scene.",
+   "cap": "Next case. A candy shop Buffett almost walked away from, over five million dollars. It went on to earn his company more than one and a half billion. Case file two. See's Candies. Subscribe, and I'll see you at the crime scene.",
+   "scene": {
+    "type": "end"
+   },
+   "spoken": "Next case. A candy shop Buffett almost walked away from, over five million dollars. It went on to earn his company more than one and a half billion. Case file two. Sees Candies. Subscribe, and I'll see you at the crime scene.",
+   "sec": 13.09,
+   "cues": [
+    "Next case.",
+    "A candy shop Buffett almost walked away from, over five million dollars.",
+    "It went on to earn his company more than one and a half billion.",
+    "Case file two.",
+    "See's Candies.",
+    "Subscribe, and I'll see you at the crime scene."
+   ]
+  }
+ ],
+ "clips": {
+  "g95_door": {
+   "w": 1225,
+   "h": 225,
+   "hl": [
+    [
+     0.0318,
+     0.4457,
+     0.3778,
+     0.1855
+    ]
+   ],
+   "page": 6,
+   "quote": "until a custodian appeared"
+  },
+  "g95_direct": {
+   "w": 1225,
+   "h": 173,
+   "hl": [
+    [
+     0.0318,
+     0.3794,
+     0.7967,
+     0.2411
+    ]
+   ],
+   "page": 7,
+   "quote": "of selling - direct marketing - gave it an enormous cost"
+  },
+  "g04_reserve": {
+   "w": 1400,
+   "h": 174,
+   "hl": [
+    [
+     0.0279,
+     0.3864,
+     0.522,
+     0.2276
+    ]
+   ],
+   "page": 8,
+   "quote": "reserving for losses. This produced faulty cost information"
+  },
+  "g24_gem": {
+   "w": 1420,
+   "h": 187,
+   "hl": [
+    [
+     0.0275,
+     0.4516,
+     0.3584,
+     0.2258
+    ]
+   ],
+   "page": 4,
+   "quote": "gem that needed major repolishing"
+  },
+  "g25_retention": {
+   "w": 1545,
+   "h": 205,
+   "hl": [
+    [
+     0.5135,
+     0.3824,
+     0.4555,
+     0.2058
+    ]
+   ],
+   "page": 10,
+   "quote": "restored margins but come at the cost of lower"
+  }
+ }
+}

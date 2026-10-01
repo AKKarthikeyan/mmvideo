@@ -1,0 +1,1667 @@
+{
+ "id": "mf002-sees",
+ "title": "See's Candies: The $25 Million Shop That Paid Back Billions",
+ "chapters": [
+  "See's Candies: the $5 million gulp",
+  "The recipe",
+  "The clue",
+  "The danger",
+  "The twist",
+  "The lineup",
+  "The lesson",
+  "Case reopened",
+  "Defence and verdict",
+  "India lens and next case"
+ ],
+ "shorts": [
+  {
+   "title": "Buffett almost walked away over $5M",
+   "hook": "He almost walked away|over $5 million",
+   "beats": [
+    "s00",
+    "s01",
+    "s02"
+   ]
+  },
+  {
+   "title": "The See's clue: pounds vs dollars",
+   "hook": "Pounds ×1.9|Dollars ×12.8",
+   "beats": [
+    "s21",
+    "s22",
+    "s23"
+   ]
+  },
+  {
+   "title": "How pricing power backfires",
+   "hook": "Raise prices every year?|Watch this",
+   "beats": [
+    "s32",
+    "s33",
+    "s34"
+   ]
+  }
+ ],
+ "engine": "case",
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "s00",
+   "say": "It's nineteen seventy two. Warren Buffett and Charlie Munger are trying to buy a small candy company from California. The seller wants thirty million dollars. Charlie thinks it's worth it. But Buffett refuses to go above twenty five million.",
+   "cap": "It's 1972. Warren Buffett and Charlie Munger are trying to buy a small candy company from California. The seller wants $30 million. Charlie thinks it's worth it. But Buffett refuses to go above $25 million.",
+   "scene": {
+    "type": "x-photo",
+    "img": "boardroom1972",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.55,
+    "over": [
+     {
+      "kind": "stamp",
+      "text": "1972",
+      "at": "nineteen seventy two",
+      "x": 260,
+      "y": 200,
+      "size": 90
+     },
+     {
+      "kind": "card",
+      "top": "THE SELLER WANTS",
+      "text": "$30M",
+      "at": "thirty million",
+      "x": 1180,
+      "y": 160
+     },
+     {
+      "kind": "card",
+      "top": "BUFFETT'S LIMIT",
+      "text": "$25M",
+      "red": true,
+      "at": "twenty five million",
+      "x": 1180,
+      "y": 420
+     }
+    ]
+   },
+   "spoken": "It's nineteen seventy two. Warren Buffett and Charlie Munger are trying to buy a small candy company from California. The seller wants thirty million dollars. Charlie thinks it's worth it. But Buffett refuses to go above twenty five million.",
+   "sec": 14.08,
+   "cues": [
+    "It's 1972.",
+    "Warren Buffett and Charlie Munger are trying to buy a small candy company",
+    "from California.",
+    "The seller wants $30 million.",
+    "Charlie thinks it's worth it.",
+    "But Buffett refuses to go above $25 million."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s01",
+   "say": "The price was three times the company's net tangible assets, and Buffett later admitted it made him gulp. He was ready to walk away, over five million dollars.",
+   "cap": "The price was 3× the company's net tangible assets, and Buffett later admitted it made him gulp. He was ready to walk away, over $5 million.",
+   "scene": {
+    "type": "x-photo",
+    "img": "chocolates_box",
+    "move": "left",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "3× NET TANGIBLE ASSETS",
+      "at": "three times",
+      "x": 640,
+      "y": 220
+     },
+     {
+      "kind": "stamp",
+      "text": "GULP",
+      "at": "gulp",
+      "x": 1420,
+      "y": 420,
+      "size": 110
+     },
+     {
+      "kind": "strip",
+      "text": "READY TO WALK AWAY",
+      "at": "walk away",
+      "x": 620,
+      "y": 860,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "The price was three times the company's net tangible assets, and Buffett later admitted it made him gulp. He was ready to walk away, over five million dollars.",
+   "sec": 10.27,
+   "cues": [
+    "The price was 3× the company's net tangible assets,",
+    "and Buffett later admitted it made him gulp.",
+    "He was ready to walk away, over $5 million."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s02",
+   "say": "Then the seller gave in. And that little candy company went on to earn Berkshire one point nine billion dollars, before tax.",
+   "cap": "Then the seller gave in. And that little candy company went on to earn Berkshire $1.9 billion, before tax.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "THE SELLER GAVE IN.",
+      "at": "the seller gave in",
+      "em": []
+     },
+     {
+      "t": "$25M → $1.9 BILLION",
+      "at": "one point nine billion",
+      "em": [
+       "BILLION"
+      ]
+     }
+    ]
+   },
+   "spoken": "Then the seller gave in. And that little candy company went on to earn Berkshire one point nine billion dollars, before tax.",
+   "sec": 7.44,
+   "cues": [
+    "Then the seller gave in.",
+    "And that little candy company went on to earn Berkshire $1.9 billion,",
+    "before tax."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s03",
+   "say": "This is the story of the See's Candies moat, and it's a strange case. Why was a candy shop, in a boring industry that doesn't grow, worth so much? What almost spoiled it? And what did it teach Buffett, that changed Berkshire forever?",
+   "cap": "This is the story of the See's Candies moat, and it's a strange case. Why was a candy shop, in a boring industry that doesn't grow, worth so much? What almost spoiled it? And what did it teach Buffett, that changed Berkshire forever?",
+   "scene": {
+    "type": "x-case",
+    "name": "SEE'S",
+    "sub": "SUBJECT: THE MOAT",
+    "lines": [
+     {
+      "t": "WHY WAS IT WORTH SO MUCH?",
+      "at": "Why was a candy shop"
+     },
+     {
+      "t": "WHAT ALMOST SPOILED IT?",
+      "at": "What almost spoiled"
+     },
+     {
+      "t": "WHAT DID IT TEACH BUFFETT?",
+      "at": "what did it teach"
+     }
+    ]
+   },
+   "spoken": "This is the story of the Sees Candies moat, and it's a strange case. Why was a candy shop, in a boring industry that doesn't grow, worth so much? What almost spoiled it? And what did it teach Buffett, that changed Berkshire forever?",
+   "sec": 14.29,
+   "cues": [
+    "This is the story of the See's Candies moat, and it's a strange case.",
+    "Why was a candy shop, in a boring industry that doesn't grow, worth so much?",
+    "What almost spoiled it?",
+    "And what did it teach Buffett, that changed Berkshire forever?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s10",
+   "say": "Act 1. The recipe.",
+   "cap": "Act 1. The recipe.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 1",
+    "title": "THE RECIPE"
+   },
+   "spoken": "Act 1. The recipe.",
+   "sec": 2.43,
+   "cues": [
+    "Act 1.",
+    "The recipe."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s11",
+   "say": "The story starts about a hundred years ago, with a woman named Mary See. Buffett wrote that she took an age old product, and reinvented it with special recipes. Then she added quaint little shops, staffed by friendly salespeople. Her first small shop was in Los Angeles.",
+   "cap": "The story starts about a hundred years ago, with a woman named Mary See. Buffett wrote that she took an age old product, and reinvented it with special recipes. Then she added quaint little shops, staffed by friendly salespeople. Her first small shop was in Los Angeles.",
+   "scene": {
+    "type": "x-photo",
+    "img": "shop1921",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.55,
+    "over": [
+     {
+      "kind": "label",
+      "text": "LOS ANGELES · ABOUT A CENTURY AGO",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 36
+     },
+     {
+      "kind": "strip",
+      "text": "SPECIAL RECIPES",
+      "at": "special recipes",
+      "x": 460,
+      "y": 330
+     },
+     {
+      "kind": "strip",
+      "text": "QUAINT SHOPS, FRIENDLY STAFF",
+      "at": "quaint",
+      "x": 620,
+      "y": 470
+     }
+    ]
+   },
+   "spoken": "The story starts about a hundred years ago, with a woman named Mary See. Buffett wrote that she took an age old product, and reinvented it with special recipes. Then she added quaint little shops, staffed by friendly salespeople. Her first small shop was in Los Angeles.",
+   "sec": 17.68,
+   "cues": [
+    "The story starts about a hundred years ago, with a woman named Mary See.",
+    "Buffett wrote that she took an age old product,",
+    "and reinvented it with special recipes.",
+    "Then she added quaint little shops, staffed by friendly salespeople.",
+    "Her first small shop was in Los Angeles."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s11b",
+   "say": "When Blue Chip Stamps, a company Buffett and Munger controlled, bought See's early in nineteen seventy two, they put a manager named Chuck Huggins in charge on day one. Buffett later called his record simply extraordinary.",
+   "cap": "When Blue Chip Stamps, a company Buffett and Munger controlled, bought See's early in 1972, they put a manager named Chuck Huggins in charge on day one. Buffett later called his record simply extraordinary.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "1972: CHUCK HUGGINS IN CHARGE",
+      "at": "Chuck Huggins",
+      "em": [
+       "HUGGINS"
+      ]
+     },
+     {
+      "t": "“SIMPLY EXTRAORDINARY”",
+      "at": "simply extraordinary",
+      "em": [
+       "EXTRAORDINARY"
+      ]
+     }
+    ]
+   },
+   "spoken": "When Blue Chip Stamps, a company Buffett and Munger controlled, bought Sees early in nineteen seventy two, they put a manager named Chuck Huggins in charge on day one. Buffett later called his record simply extraordinary.",
+   "sec": 12.07,
+   "cues": [
+    "When Blue Chip Stamps, a company Buffett and Munger controlled,",
+    "bought See's early in 1972, they put a manager named Chuck Huggins in charge",
+    "on day one.",
+    "Buffett later called his record simply extraordinary."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s12",
+   "say": "But here's the strange part. Buffett called the boxed chocolate industry unexciting. Americans eat very little of it, and that doesn't grow. Many famous brands disappeared. And over forty years, only three companies earned more than token profits.",
+   "cap": "But here's the strange part. Buffett called the boxed-chocolate industry unexciting. Americans eat very little of it, and that doesn't grow. Many famous brands disappeared. And over 40 years, only 3 companies earned more than token profits.",
+   "scene": {
+    "type": "x-photo",
+    "img": "candy_factory",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "dust",
+    "over": [
+     {
+      "kind": "strip",
+      "text": "AN UNEXCITING INDUSTRY",
+      "at": "unexciting",
+      "x": 560,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "CONSUMPTION DOESN'T GROW",
+      "at": "doesn't grow",
+      "x": 600,
+      "y": 340
+     },
+     {
+      "kind": "stamp",
+      "text": "ONLY 3 PROFITABLE IN 40 YEARS",
+      "at": "only three",
+      "x": 1250,
+      "y": 880,
+      "size": 54
+     }
+    ]
+   },
+   "spoken": "But here's the strange part. Buffett called the boxed chocolate industry unexciting. Americans eat very little of it, and that doesn't grow. Many famous brands disappeared. And over forty years, only three companies earned more than token profits.",
+   "sec": 15.39,
+   "cues": [
+    "But here's the strange part.",
+    "Buffett called the boxed-chocolate industry unexciting.",
+    "Americans eat very little of it, and that doesn't grow.",
+    "Many famous brands disappeared.",
+    "And over 40 years, only 3 companies earned more than token profits."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s13",
+   "say": "Yet See's, selling mostly in just a few states, earned nearly half of the entire industry's profits.",
+   "cap": "Yet See's, selling mostly in just a few states, earned nearly half of the entire industry's profits.",
+   "scene": {
+    "type": "counter",
+    "heading": "SEE'S SHARE OF THE INDUSTRY'S EARNINGS",
+    "to": 50,
+    "prefix": "~",
+    "suffix": "%",
+    "at": "nearly half",
+    "sub": "FROM ONLY A FEW STATES · BUFFETT, 2007"
+   },
+   "spoken": "Yet Sees, selling mostly in just a few states, earned nearly half of the entire industry's profits.",
+   "sec": 6.95,
+   "cues": [
+    "Yet See's, selling mostly in just a few states,",
+    "earned nearly half of the entire industry's profits."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "s14",
+   "say": "Buffett called it the prototype of a dream business. So what was the secret ingredient?",
+   "cap": "Buffett called it the prototype of a dream business. So what was the secret ingredient?",
+   "scene": {
+    "type": "clip",
+    "clip": "s07_dream",
+    "heading": "BERKSHIRE LETTER · 2007",
+    "hl": [
+     "prototype of a dream business"
+    ]
+   },
+   "spoken": "Buffett called it the prototype of a dream business. So what was the secret ingredient?",
+   "sec": 5.46,
+   "cues": [
+    "Buffett called it the prototype of a dream business.",
+    "So what was the secret ingredient?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s20",
+   "say": "Act 2. The clue.",
+   "cap": "Act 2. The clue.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 2",
+    "title": "THE CLUE"
+   },
+   "spoken": "Act 2. The clue.",
+   "sec": 2.12,
+   "cues": [
+    "Act 2.",
+    "The clue."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s21",
+   "say": "Here's the clue, in two numbers. In nineteen seventy two, See's sold sixteen million pounds of candy. By two thousand seven, it sold thirty one million pounds. Only about two percent more each year. But sales? They went from thirty million dollars, to three hundred and eighty three million. Look at that gap.",
+   "cap": "Here's the clue, in two numbers. In 1972, See's sold 16 million pounds of candy. By 2007, it sold 31 million pounds. Only about 2% more each year. But sales? They went from $30 million, to $383 million. Look at that gap.",
+   "scene": {
+    "type": "x-race",
+    "heading": "SEE'S · 1972 → 2007 · BUFFETT, 2007 LETTER",
+    "rows": [
+     {
+      "label": "POUNDS OF CANDY SOLD",
+      "from": 16,
+      "to": 31,
+      "unit": "M LBS",
+      "at": "sixteen million"
+     },
+     {
+      "label": "SALES",
+      "from": 30,
+      "to": 383,
+      "prefix": "$",
+      "unit": "M",
+      "at": "thirty million dollars",
+      "red": true
+     }
+    ],
+    "stamp": {
+     "text": "THE CLUE",
+     "at": "Look at that gap",
+     "x": 1500,
+     "y": 930
+    }
+   },
+   "spoken": "Here's the clue, in two numbers. In nineteen seventy two, Sees sold sixteen million pounds of candy. By two thousand seven, it sold thirty one million pounds. Only about two percent more each year. But sales? They went from thirty million dollars, to three hundred and eighty three million. Look at that gap.",
+   "sec": 20.51,
+   "cues": [
+    "Here's the clue, in two numbers.",
+    "In 1972, See's sold 16 million pounds of candy.",
+    "By 2007, it sold 31 million pounds.",
+    "Only about 2% more each year.",
+    "But sales?",
+    "They went from $30 million, to $383 million.",
+    "Look at that gap."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s22",
+   "say": "Do the simple maths. In nineteen seventy two, that's about one dollar ninety a pound. By two thousand seven, about twelve dollars forty. People kept paying more, and kept coming back.",
+   "cap": "Do the simple maths. In 1972, that's about $1.90 a pound. By 2007, about $12.40. People kept paying more, and kept coming back.",
+   "scene": {
+    "type": "x-photo",
+    "img": "scale",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "PRICE PER POUND · 1972",
+      "text": "~$1.90",
+      "at": "one dollar ninety",
+      "x": 160,
+      "y": 180,
+      "w": 460
+     },
+     {
+      "kind": "card",
+      "top": "PRICE PER POUND · 2007",
+      "text": "~$12.40",
+      "red": true,
+      "at": "twelve dollars forty",
+      "x": 1300,
+      "y": 180,
+      "w": 460
+     },
+     {
+      "kind": "label",
+      "text": "our arithmetic from Buffett's figures",
+      "at": "twelve dollars forty",
+      "x": 160,
+      "y": 950,
+      "size": 28
+     }
+    ]
+   },
+   "spoken": "Do the simple maths. In nineteen seventy two, that's about one dollar ninety a pound. By two thousand seven, about twelve dollars forty. People kept paying more, and kept coming back.",
+   "sec": 11.76,
+   "cues": [
+    "Do the simple maths.",
+    "In 1972, that's about $1.90 a pound.",
+    "By 2007, about $12.40.",
+    "People kept paying more, and kept coming back."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s23",
+   "say": "Every Indian town has a mithai shop like this. On Diwali, the queue goes round the block, and nobody asks what the kaju katli costs this year. That's pricing power. The customer isn't just buying sweets. He's buying the gift, the memory, and the promise that it will taste exactly like last year.",
+   "cap": "Every Indian town has a mithai shop like this. On Diwali, the queue goes round the block, and nobody asks what the kaju katli costs this year. That's pricing power. The customer isn't just buying sweets. He's buying the gift, the memory, and the promise that it will taste exactly like last year.",
+   "scene": {
+    "type": "x-photo",
+    "img": "mithai_diwali",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "dust",
+    "over": [
+     {
+      "kind": "strip",
+      "text": "THE DIWALI QUEUE",
+      "at": "On Diwali",
+      "x": 440,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "NOBODY ASKS THE PRICE",
+      "at": "nobody asks",
+      "x": 560,
+      "y": 340
+     },
+     {
+      "kind": "stamp",
+      "text": "PRICING POWER",
+      "at": "That's pricing power",
+      "x": 1450,
+      "y": 880,
+      "size": 70
+     }
+    ]
+   },
+   "spoken": "Every Indian town has a mithai shop like this. On Diwali, the queue goes round the block, and nobody asks what the kaju katli costs this year. That's pricing power. The customer isn't just buying sweets. He's buying the gift, the memory, and the promise that it will taste exactly like last year.",
+   "sec": 18.7,
+   "cues": [
+    "Every Indian town has a mithai shop like this.",
+    "On Diwali, the queue goes round the block,",
+    "and nobody asks what the kaju katli costs this year.",
+    "That's pricing power.",
+    "The customer isn't just buying sweets.",
+    "He's buying the gift, the memory, and the promise that it will taste exactly",
+    "like last year."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s24",
+   "say": "Buffett said it plainly in nineteen eighty three. Dollar sales kept rising, because See's had raised prices significantly.",
+   "cap": "Buffett said it plainly in 1983. Dollar sales kept rising, because See's had raised prices significantly.",
+   "scene": {
+    "type": "clip",
+    "clip": "s83_prices",
+    "heading": "BERKSHIRE LETTER · 1983",
+    "hl": [
+     "raised prices significantly"
+    ]
+   },
+   "spoken": "Buffett said it plainly in nineteen eighty three. Dollar sales kept rising, because Sees had raised prices significantly.",
+   "sec": 8.44,
+   "cues": [
+    "Buffett said it plainly in 1983.",
+    "Dollar sales kept rising, because See's had raised prices significantly."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "s25",
+   "say": "And profits? In nineteen seventy two, See's made about two million dollars after tax. By nineteen eighty three, almost fourteen million.",
+   "cap": "And profits? In 1972, See's made about $2 million after tax. By 1983, almost $14 million.",
+   "scene": {
+    "type": "bars",
+    "heading": "SEE'S PROFIT AFTER TAX · BUFFETT'S 1983 TABLE",
+    "rows": [
+     {
+      "name": "1972",
+      "v": 2.08,
+      "label": "$2.1M",
+      "at": "nineteen seventy two"
+     },
+     {
+      "name": "1983",
+      "v": 13.7,
+      "label": "$13.7M",
+      "at": "almost fourteen",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "And profits? In nineteen seventy two, Sees made about two million dollars after tax. By nineteen eighty three, almost fourteen million.",
+   "sec": 10.4,
+   "cues": [
+    "And profits?",
+    "In 1972, See's made about $2 million after tax.",
+    "By 1983, almost $14 million."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "s30",
+   "say": "Act 3. The danger.",
+   "cap": "Act 3. The danger.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 3",
+    "title": "THE DANGER"
+   },
+   "spoken": "Act 3. The danger.",
+   "sec": 2.46,
+   "cues": [
+    "Act 3.",
+    "The danger."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "s31",
+   "say": "But in that same nineteen eighty three letter, there's a warning. For four years, the pounds sold in See's shops had barely moved, even though it kept opening new shops. So, who's the suspect? Raw materials? No. Buffett said See's buys the finest ingredients whatever they cost, because quality is sacred. The industry? It had the same problem, but See's used to beat the industry. So what was it?",
+   "cap": "But in that same 1983 letter, there's a warning. For four years, the pounds sold in See's shops had barely moved, even though it kept opening new shops. So, who's the suspect? Raw materials? No. Buffett said See's buys the finest ingredients whatever they cost, because quality is sacred. The industry? It had the same problem, but See's used to beat the industry. So what was it?",
+   "scene": {
+    "type": "x-crime",
+    "victim": {
+     "big": "SEE'S",
+     "red": "POUNDS: FLAT",
+     "sub": "4 years to 1983"
+    },
+    "suspects": [
+     {
+      "t": "RAW MATERIALS?",
+      "at": "Raw materials?",
+      "cross": "quality is sacred"
+     },
+     {
+      "t": "THE INDUSTRY?",
+      "at": "The industry?",
+      "cross": "used to beat"
+     },
+     {
+      "t": "TOO FEW SHOPS?",
+      "at": "opening new shops",
+      "cross": "who's the suspect"
+     },
+     {
+      "t": "???",
+      "at": "So what was it"
+     }
+    ]
+   },
+   "spoken": "But in that same nineteen eighty three letter, there's a warning. For four years, the pounds sold in Sees shops had barely moved, even though it kept opening new shops. So, who's the suspect? Raw materials? No. Buffett said Sees buys the finest ingredients whatever they cost, because quality is sacred. The industry? It had the same problem, but Sees used to beat the industry. So what was it?",
+   "sec": 24.95,
+   "cues": [
+    "But in that same 1983 letter, there's a warning.",
+    "For four years, the pounds sold in See's shops had barely moved,",
+    "even though it kept opening new shops.",
+    "So, who's the suspect?",
+    "Raw materials?",
+    "No.",
+    "Buffett said See's buys the finest ingredients whatever they cost,",
+    "because quality is sacred.",
+    "The industry?",
+    "It had the same problem, but See's used to beat the industry.",
+    "So what was it?"
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "s32",
+   "say": "Look at the table in Buffett's letter. From nineteen seventy nine to nineteen eighty three, pounds sold stayed around twenty four million. But revenue climbed from eighty seven million dollars, to a hundred and thirty three million.",
+   "cap": "Look at the table in Buffett's letter. From 1979 to 1983, pounds sold stayed around 24 million. But revenue climbed from $87 million, to $133 million.",
+   "scene": {
+    "type": "table",
+    "heading": "SEE'S · BUFFETT'S 1983 TABLE",
+    "cols": [
+     "YEAR",
+     "POUNDS SOLD",
+     "REVENUE"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "1979",
+       "24.0M",
+       "$87.3M"
+      ],
+      "at": "From nineteen seventy nine"
+     },
+     {
+      "cells": [
+       "1981",
+       "24.1M",
+       "$112.6M"
+      ],
+      "at": "stayed around"
+     },
+     {
+      "cells": [
+       "1983",
+       "24.7M",
+       "$133.5M"
+      ],
+      "at": "a hundred and thirty three"
+     }
+    ]
+   },
+   "spoken": "Look at the table in Buffett's letter. From nineteen seventy nine to nineteen eighty three, pounds sold stayed around twenty four million. But revenue climbed from eighty seven million dollars, to a hundred and thirty three million.",
+   "sec": 13.09,
+   "cues": [
+    "Look at the table in Buffett's letter.",
+    "From 1979 to 1983, pounds sold stayed around 24 million.",
+    "But revenue climbed from $87 million, to $133 million."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "s33",
+   "say": "That's the danger with pricing power. Think of your local chaiwala raising his price every few months. The regulars keep coming, for a while. Then one day, they quietly start making tea at home. Push prices too hard, and you can drain the very moat that gave you the power.",
+   "cap": "That's the danger with pricing power. Think of your local chaiwala raising his price every few months. The regulars keep coming, for a while. Then one day, they quietly start making tea at home. Push prices too hard, and you can drain the very moat that gave you the power.",
+   "scene": {
+    "type": "x-photo",
+    "img": "chai_stall",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "₹10 → ₹12 → ₹15 → ₹18",
+      "at": "raising his price",
+      "x": 620,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "THE REGULARS KEEP COMING…",
+      "at": "keep coming",
+      "x": 600,
+      "y": 340
+     },
+     {
+      "kind": "stamp",
+      "text": "…UNTIL THEY DON'T",
+      "at": "quietly start",
+      "x": 1400,
+      "y": 880,
+      "size": 66
+     }
+    ]
+   },
+   "spoken": "That's the danger with pricing power. Think of your local chaiwala raising his price every few months. The regulars keep coming, for a while. Then one day, they quietly start making tea at home. Push prices too hard, and you can drain the very moat that gave you the power.",
+   "sec": 15.6,
+   "cues": [
+    "That's the danger with pricing power.",
+    "Think of your local chaiwala raising his price every few months.",
+    "The regulars keep coming, for a while.",
+    "Then one day, they quietly start making tea at home.",
+    "Push prices too hard, and you can drain the very moat that gave you the power."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "s34",
+   "say": "Buffett said the measure that mattered most wasn't dollars. It was units sold per store. And on that measure, same store pounds fell in nineteen eighty three. So for nineteen eighty four, See's raised prices much more gently than before.",
+   "cap": "Buffett said the measure that mattered most wasn't dollars. It was units sold per store. And on that measure, same-store pounds fell in 1983. So for 1984, See's raised prices much more gently than before.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "WHAT MATTERS: UNITS PER STORE",
+      "at": "units sold per store"
+     },
+     {
+      "text": "1983: SAME-STORE POUNDS FELL",
+      "at": "pounds fell"
+     },
+     {
+      "text": "1984: A GENTLER PRICE RISE",
+      "at": "much more gently",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Buffett said the measure that mattered most wasn't dollars. It was units sold per store. And on that measure, same store pounds fell in nineteen eighty three. So for nineteen eighty four, Sees raised prices much more gently than before.",
+   "sec": 13.97,
+   "cues": [
+    "Buffett said the measure that mattered most wasn't dollars.",
+    "It was units sold per store.",
+    "And on that measure, same-store pounds fell in 1983.",
+    "So for 1984, See's raised prices much more gently than before."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s40",
+   "say": "Act 4. The twist.",
+   "cap": "Act 4. The twist.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 4",
+    "title": "THE TWIST"
+   },
+   "spoken": "Act 4. The twist.",
+   "sec": 2.38,
+   "cues": [
+    "Act 4.",
+    "The twist."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s41",
+   "say": "Now the plot twist. Accounting rules said the extra price Berkshire paid for See's, the goodwill, was losing value every year, and had to be written down. Buffett said that was wrong. In nineteen eighty three, See's earned thirteen million dollars after tax, on only about twenty million dollars of tangible assets.",
+   "cap": "Now the plot twist. Accounting rules said the extra price Berkshire paid for See's, the goodwill, was losing value every year, and had to be written down. Buffett said that was wrong. In 1983, See's earned $13 million after tax, on only about $20 million of tangible assets.",
+   "scene": {
+    "type": "x-photo",
+    "img": "ledger",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "ACCOUNTING SAID",
+      "text": "IT'S SHRINKING",
+      "at": "Accounting rules",
+      "x": 160,
+      "y": 170,
+      "w": 560
+     },
+     {
+      "kind": "card",
+      "top": "1983 REALITY",
+      "text": "$13M ON $20M",
+      "red": true,
+      "at": "thirteen million",
+      "x": 1200,
+      "y": 170,
+      "w": 560
+     },
+     {
+      "kind": "stamp",
+      "text": "ACCOUNTING GOT IT WRONG",
+      "at": "that was wrong",
+      "x": 960,
+      "y": 880,
+      "size": 60
+     }
+    ]
+   },
+   "spoken": "Now the plot twist. Accounting rules said the extra price Berkshire paid for Sees, the goodwill, was losing value every year, and had to be written down. Buffett said that was wrong. In nineteen eighty three, Sees earned thirteen million dollars after tax, on only about twenty million dollars of tangible assets.",
+   "sec": 18.91,
+   "cues": [
+    "Now the plot twist.",
+    "Accounting rules said the extra price Berkshire paid for See's, the goodwill,",
+    "was losing value every year, and had to be written down.",
+    "Buffett said that was wrong.",
+    "In 1983, See's earned $13 million after tax,",
+    "on only about $20 million of tangible assets."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s42",
+   "say": "And here's the real magic. See's hardly needed any extra money to grow. Candy is sold for cash, and made quickly. By twenty fourteen, it had earned one point nine billion dollars before tax, while needing only forty million dollars of added investment.",
+   "cap": "And here's the real magic. See's hardly needed any extra money to grow. Candy is sold for cash, and made quickly. By 2014, it had earned $1.9 billion before tax, while needing only $40 million of added investment.",
+   "scene": {
+    "type": "cards",
+    "heading": "SEE'S · 1972 → 2014",
+    "cards": [
+     {
+      "top": "PRICE PAID",
+      "big": "$25M",
+      "at": "See's hardly"
+     },
+     {
+      "top": "EXTRA INVESTMENT",
+      "big": "$40M",
+      "at": "forty million"
+     },
+     {
+      "top": "PRE-TAX EARNINGS",
+      "big": "$1.9B",
+      "at": "one point nine billion",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "SOLD FOR CASH",
+      "at": "sold for cash"
+     }
+    ]
+   },
+   "spoken": "And here's the real magic. Sees hardly needed any extra money to grow. Candy is sold for cash, and made quickly. By twenty fourteen, it had earned one point nine billion dollars before tax, while needing only forty million dollars of added investment.",
+   "sec": 15.78,
+   "cues": [
+    "And here's the real magic.",
+    "See's hardly needed any extra money to grow.",
+    "Candy is sold for cash, and made quickly.",
+    "By 2014, it had earned $1.9 billion before tax,",
+    "while needing only $40 million of added investment."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s43",
+   "say": "So where did all that money go? Buffett used it to buy other businesses, which then made their own profits. The little candy shop became a money pump for Berkshire. Year after year, the moat kept paying.",
+   "cap": "So where did all that money go? Buffett used it to buy other businesses, which then made their own profits. The little candy shop became a money pump for Berkshire. Year after year, the moat kept paying.",
+   "scene": {
+    "type": "x-photo",
+    "img": "money_river",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "THE CASH BOUGHT OTHER BUSINESSES",
+      "at": "other businesses",
+      "x": 700,
+      "y": 200
+     },
+     {
+      "kind": "stamp",
+      "text": "A MONEY PUMP",
+      "at": "money pump",
+      "x": 1450,
+      "y": 880,
+      "size": 70
+     }
+    ]
+   },
+   "spoken": "So where did all that money go? Buffett used it to buy other businesses, which then made their own profits. The little candy shop became a money pump for Berkshire. Year after year, the moat kept paying.",
+   "sec": 13.24,
+   "cues": [
+    "So where did all that money go?",
+    "Buffett used it to buy other businesses, which then made their own profits.",
+    "The little candy shop became a money pump for Berkshire.",
+    "Year after year, the moat kept paying."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s44",
+   "say": "By twenty eleven, See's needed so little capital that, at year end, the money tied up in it, net of cash, was less than zero.",
+   "cap": "By 2011, See's needed so little capital that, at year end, the money tied up in it, net of cash, was less than zero.",
+   "scene": {
+    "type": "clip",
+    "clip": "s11_zero",
+    "heading": "BERKSHIRE LETTER · 2011",
+    "hl": [
+     "less than zero"
+    ]
+   },
+   "spoken": "By twenty eleven, Sees needed so little capital that, at year end, the money tied up in it, net of cash, was less than zero.",
+   "sec": 9.32,
+   "cues": [
+    "By 2011, See's needed so little capital that, at year end,",
+    "the money tied up in it, net of cash, was less than zero."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "s45",
+   "say": "Act 5. The lineup.",
+   "cap": "Act 5. The lineup.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 5",
+    "title": "THE LINEUP"
+   },
+   "spoken": "Act 5. The lineup.",
+   "sec": 2.25,
+   "cues": [
+    "Act 5.",
+    "The lineup."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "s46",
+   "say": "In that two thousand seven letter, Buffett lined up three kinds of businesses. The great, the good, and the gruesome. See's is the great one. A typical company that grows profits from five million to eighty two million dollars, he said, needs something like four hundred million dollars of new capital. See's needed thirty two million.",
+   "cap": "In that 2007 letter, Buffett lined up three kinds of businesses. The great, the good, and the gruesome. See's is the great one. A typical company that grows profits from $5 million to $82 million, he said, needs something like $400 million of new capital. See's needed $32 million.",
+   "scene": {
+    "type": "cards",
+    "heading": "GROWING PROFITS FROM $5M TO $82M · BUFFETT, 2007",
+    "cards": [
+     {
+      "top": "A TYPICAL COMPANY NEEDS",
+      "big": "~$400M",
+      "at": "four hundred million"
+     },
+     {
+      "top": "SEE'S NEEDED",
+      "big": "$32M",
+      "at": "thirty two million",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "THE GREAT",
+      "at": "the great one"
+     }
+    ]
+   },
+   "spoken": "In that two thousand seven letter, Buffett lined up three kinds of businesses. The great, the good, and the gruesome. Sees is the great one. A typical company that grows profits from five million to eighty two million dollars, he said, needs something like four hundred million dollars of new capital. Sees needed thirty two million.",
+   "sec": 20.43,
+   "cues": [
+    "In that 2007 letter, Buffett lined up three kinds of businesses.",
+    "The great, the good, and the gruesome.",
+    "See's is the great one.",
+    "A typical company that grows profits from $5 million to $82 million, he said,",
+    "needs something like $400 million of new capital.",
+    "See's needed $32 million."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "s47",
+   "say": "The good one is FlightSafety, which trains pilots. Buffett said choosing any trainer but the best is like taking the lowest bid on surgery. A real moat. But it keeps buying new flight simulators, each costing more than twelve million dollars. Put up more money, to earn more money.",
+   "cap": "The good one is FlightSafety, which trains pilots. Buffett said choosing any trainer but the best is like taking the lowest bid on surgery. A real moat. But it keeps buying new flight simulators, each costing more than $12 million. Put up more money, to earn more money.",
+   "scene": {
+    "type": "x-photo",
+    "img": "simulator",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE GOOD · FLIGHTSAFETY",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "A REAL MOAT",
+      "at": "A real moat",
+      "x": 460,
+      "y": 330
+     },
+     {
+      "kind": "card",
+      "top": "ONE SIMULATOR",
+      "text": ">$12M",
+      "at": "twelve million",
+      "x": 1250,
+      "y": 170,
+      "w": 500
+     },
+     {
+      "kind": "stamp",
+      "text": "PUT UP MORE TO EARN MORE",
+      "at": "Put up more",
+      "x": 1250,
+      "y": 880,
+      "size": 56
+     }
+    ]
+   },
+   "spoken": "The good one is FlightSafety, which trains pilots. Buffett said choosing any trainer but the best is like taking the lowest bid on surgery. A real moat. But it keeps buying new flight simulators, each costing more than twelve million dollars. Put up more money, to earn more money.",
+   "sec": 17.29,
+   "cues": [
+    "The good one is FlightSafety, which trains pilots.",
+    "Buffett said choosing any trainer but the best is like taking the lowest bid",
+    "on surgery.",
+    "A real moat.",
+    "But it keeps buying new flight simulators, each costing more than $12 million.",
+    "Put up more money, to earn more money."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "s48",
+   "say": "And the gruesome one? Airlines. Buffett joked that if a far sighted capitalist had been at Kitty Hawk, he'd have done everyone a huge favour by shooting Orville Wright down. Growth that swallows capital, and earns little or nothing.",
+   "cap": "And the gruesome one? Airlines. Buffett joked that if a far sighted capitalist had been at Kitty Hawk, he'd have done everyone a huge favour by shooting Orville Wright down. Growth that swallows capital, and earns little or nothing.",
+   "scene": {
+    "type": "x-photo",
+    "img": "early_plane",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE GRUESOME · AIRLINES",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "stamp",
+      "text": "GROWTH THAT SWALLOWS CAPITAL",
+      "at": "swallows capital",
+      "x": 1200,
+      "y": 880,
+      "size": 56
+     }
+    ]
+   },
+   "spoken": "And the gruesome one? Airlines. Buffett joked that if a far sighted capitalist had been at Kitty Hawk, he'd have done everyone a huge favour by shooting Orville Wright down. Growth that swallows capital, and earns little or nothing.",
+   "sec": 13.56,
+   "cues": [
+    "And the gruesome one?",
+    "Airlines.",
+    "Buffett joked that if a far sighted capitalist had been at Kitty Hawk,",
+    "he'd have done everyone a huge favour by shooting Orville Wright down.",
+    "Growth that swallows capital, and earns little or nothing."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "s49",
+   "say": "And Buffett admitted he'd done it himself. In nineteen eighty nine, Berkshire bought into an airline. As the ink was drying on the cheque, the company went into a tailspin.",
+   "cap": "And Buffett admitted he'd done it himself. In 1989, Berkshire bought into an airline. As the ink was drying on the cheque, the company went into a tailspin.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "1989: BERKSHIRE BUYS INTO AN AIRLINE",
+      "at": "nineteen eighty nine",
+      "em": [
+       "AIRLINE"
+      ]
+     },
+     {
+      "t": "…THE INK DRIES. TAILSPIN.",
+      "at": "tailspin",
+      "em": [
+       "TAILSPIN"
+      ]
+     }
+    ]
+   },
+   "spoken": "And Buffett admitted he'd done it himself. In nineteen eighty nine, Berkshire bought into an airline. As the ink was drying on the cheque, the company went into a tailspin.",
+   "sec": 9.74,
+   "cues": [
+    "And Buffett admitted he'd done it himself.",
+    "In 1989, Berkshire bought into an airline.",
+    "As the ink was drying on the cheque, the company went into a tailspin."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "s50",
+   "say": "Act 6. The lesson.",
+   "cap": "Act 6. The lesson.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 6",
+    "title": "THE LESSON"
+   },
+   "spoken": "Act 6. The lesson.",
+   "sec": 2.04,
+   "cues": [
+    "Act 6.",
+    "The lesson."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "s51",
+   "say": "So what was the lesson? In his twenty fourteen letter, Buffett said the most important thing Charlie Munger ever designed was Berkshire itself. And the blueprint came down to one line.",
+   "cap": "So what was the lesson? In his 2014 letter, Buffett said the most important thing Charlie Munger ever designed was Berkshire itself. And the blueprint came down to one line.",
+   "scene": {
+    "type": "x-photo",
+    "img": "blueprint",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "CHARLIE MUNGER'S BLUEPRINT",
+      "at": "blueprint",
+      "x": 120,
+      "y": 170,
+      "size": 40
+     }
+    ]
+   },
+   "spoken": "So what was the lesson? In his twenty fourteen letter, Buffett said the most important thing Charlie Munger ever designed was Berkshire itself. And the blueprint came down to one line.",
+   "sec": 11.55,
+   "cues": [
+    "So what was the lesson?",
+    "In his 2014 letter, Buffett said the most important thing Charlie Munger ever",
+    "designed was Berkshire itself.",
+    "And the blueprint came down to one line."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "s52",
+   "say": "Forget buying fair businesses at wonderful prices. Instead, buy wonderful businesses at fair prices.",
+   "cap": "Forget buying fair businesses at wonderful prices. Instead, buy wonderful businesses at fair prices.",
+   "scene": {
+    "type": "quote",
+    "text": "“…instead, buy wonderful businesses at fair prices.”",
+    "who": "BUFFETT, 2014 LETTER · MUNGER'S BLUEPRINT",
+    "at": "Forget buying"
+   },
+   "spoken": "Forget buying fair businesses at wonderful prices. Instead, buy wonderful businesses at fair prices.",
+   "sec": 6.14,
+   "cues": [
+    "Forget buying fair businesses at wonderful prices.",
+    "Instead, buy wonderful businesses at fair prices."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "s52b",
+   "say": "Buffett admitted it wasn't easy to change. Why should he listen to a lawyer who had never spent a day in business school, he joked, when he himself had attended three?",
+   "cap": "Buffett admitted it wasn't easy to change. Why should he listen to a lawyer who had never spent a day in business school, he joked, when he himself had attended three?",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "MUNGER: NEVER SPENT A DAY IN BUSINESS SCHOOL",
+      "at": "never spent a day",
+      "em": []
+     },
+     {
+      "t": "BUFFETT: ATTENDED THREE",
+      "at": "attended three",
+      "em": [
+       "THREE"
+      ]
+     }
+    ]
+   },
+   "spoken": "Buffett admitted it wasn't easy to change. Why should he listen to a lawyer who had never spent a day in business school, he joked, when he himself had attended three?",
+   "sec": 8.44,
+   "cues": [
+    "Buffett admitted it wasn't easy to change.",
+    "Why should he listen to a lawyer who had never spent a day in business",
+    "school, he joked, when he himself had attended three?"
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "s53",
+   "say": "See's was where Buffett learned it. He nearly walked away to save five million dollars. And if the seller hadn't given in, all those billions would have gone to somebody else.",
+   "cap": "See's was where Buffett learned it. He nearly walked away to save $5 million. And if the seller hadn't given in, all those billions would have gone to somebody else.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "TO SAVE $5 MILLION…",
+      "at": "save five million",
+      "em": []
+     },
+     {
+      "t": "…HE NEARLY LOST BILLIONS.",
+      "at": "somebody else",
+      "em": [
+       "BILLIONS"
+      ]
+     }
+    ]
+   },
+   "spoken": "Sees was where Buffett learned it. He nearly walked away to save five million dollars. And if the seller hadn't given in, all those billions would have gone to somebody else.",
+   "sec": 8.72,
+   "cues": [
+    "See's was where Buffett learned it.",
+    "He nearly walked away to save $5 million.",
+    "And if the seller hadn't given in, all those billions would have gone to",
+    "somebody else."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "s60",
+   "say": "Case. Reopened.",
+   "cap": "Case. Reopened.",
+   "scene": {
+    "type": "x-act",
+    "act": "CASE",
+    "title": "REOPENED"
+   },
+   "spoken": "Case. Reopened.",
+   "sec": 2.46,
+   "cues": [
+    "Case.",
+    "Reopened."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "s61",
+   "say": "Is the moat still there? Buffett kept checking. In twenty eleven, See's posted record pre-tax earnings of eighty three million dollars. And in twenty twenty, a full century after Mary See started, Buffett was still telling her story in his letter.",
+   "cap": "Is the moat still there? Buffett kept checking. In 2011, See's posted record pre-tax earnings of $83 million. And in 2020, a full century after Mary See started, Buffett was still telling her story in his letter.",
+   "scene": {
+    "type": "x-photo",
+    "img": "christmas_queue",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "snow",
+    "over": [
+     {
+      "kind": "card",
+      "top": "RECORD PRE-TAX EARNINGS · 2011",
+      "text": "$83M",
+      "at": "eighty three million",
+      "x": 160,
+      "y": 170,
+      "w": 620
+     },
+     {
+      "kind": "stamp",
+      "text": "A CENTURY LATER",
+      "at": "full century",
+      "x": 1450,
+      "y": 880,
+      "size": 66
+     }
+    ]
+   },
+   "spoken": "Is the moat still there? Buffett kept checking. In twenty eleven, Sees posted record pre-tax earnings of eighty three million dollars. And in twenty twenty, a full century after Mary See started, Buffett was still telling her story in his letter.",
+   "sec": 17.58,
+   "cues": [
+    "Is the moat still there?",
+    "Buffett kept checking.",
+    "In 2011, See's posted record pre-tax earnings of $83 million.",
+    "And in 2020, a full century after Mary See started,",
+    "Buffett was still telling her story in his letter."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "s62",
+   "say": "But remember the nineteen eighty three table. This moat's weak spot is its own price list. Push too hard, and people simply eat less candy.",
+   "cap": "But remember the 1983 table. This moat's weak spot is its own price list. Push too hard, and people simply eat less candy.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "THE WEAK SPOT:",
+      "at": "weak spot",
+      "em": []
+     },
+     {
+      "t": "ITS OWN PRICE LIST.",
+      "at": "own price list",
+      "em": [
+       "PRICE"
+      ]
+     }
+    ]
+   },
+   "spoken": "But remember the nineteen eighty three table. This moat's weak spot is its own price list. Push too hard, and people simply eat less candy.",
+   "sec": 8.36,
+   "cues": [
+    "But remember the 1983 table.",
+    "This moat's weak spot is its own price list.",
+    "Push too hard, and people simply eat less candy."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "s70",
+   "say": "The. Defence.",
+   "cap": "The. Defence.",
+   "scene": {
+    "type": "x-act",
+    "act": "THE",
+    "title": "DEFENCE"
+   },
+   "spoken": "The. Defence.",
+   "sec": 2.25,
+   "cues": [
+    "The.",
+    "Defence."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "s71",
+   "say": "Here's the case against the See's moat. One. Growth is slow. Pounds sold grew only about two percent a year. Two. It sells mostly in a few states, so the moat is local. Three. Pricing power has limits. In nineteen eighty three, pounds stalled. And four. Tastes change, and many famous chocolate brands have already disappeared.",
+   "cap": "Here's the case against the See's moat. One. Growth is slow. Pounds sold grew only about 2% a year. Two. It sells mostly in a few states, so the moat is local. Three. Pricing power has limits. In 1983, pounds stalled. And four. Tastes change, and many famous chocolate brands have already disappeared.",
+   "scene": {
+    "type": "list",
+    "heading": "THE CASE AGAINST THE MOAT",
+    "items": [
+     {
+      "text": "SLOW GROWTH: ~2% MORE POUNDS A YEAR",
+      "at": "Growth is slow"
+     },
+     {
+      "text": "A LOCAL MOAT: A FEW STATES",
+      "at": "a few states"
+     },
+     {
+      "text": "PRICING POWER HAS LIMITS",
+      "at": "has limits"
+     },
+     {
+      "text": "TASTES CHANGE; BRANDS DISAPPEAR",
+      "at": "Tastes change"
+     }
+    ]
+   },
+   "spoken": "Here's the case against the Sees moat. One. Growth is slow. Pounds sold grew only about two percent a year. Two. It sells mostly in a few states, so the moat is local. Three. Pricing power has limits. In nineteen eighty three, pounds stalled. And four. Tastes change, and many famous chocolate brands have already disappeared.",
+   "sec": 24.11,
+   "cues": [
+    "Here's the case against the See's moat.",
+    "One.",
+    "Growth is slow.",
+    "Pounds sold grew only about 2% a year.",
+    "Two.",
+    "It sells mostly in a few states, so the moat is local.",
+    "Three.",
+    "Pricing power has limits.",
+    "In 1983, pounds stalled.",
+    "And four.",
+    "Tastes change, and many famous chocolate brands have already disappeared."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "s72",
+   "say": "So, here's our verdict. The See's moat is real. A gift people trust, and a habit they'll pay a little more for every year. Its biggest threat isn't a rival. It's the temptation to push prices too hard. And its status? A business that needed almost no extra money, and helped pay for much of Berkshire.",
+   "cap": "So, here's our verdict. The See's moat is real. A gift people trust, and a habit they'll pay a little more for every year. Its biggest threat isn't a rival. It's the temptation to push prices too hard. And its status? A business that needed almost no extra money, and helped pay for much of Berkshire.",
+   "scene": {
+    "type": "x-verdict",
+    "caseName": "CASE FILE 002 · SEE'S CANDIES",
+    "rows": [
+     {
+      "k": "THE MOAT",
+      "v": "A TRUSTED GIFT, A HABIT PEOPLE PAY FOR",
+      "at": "moat is real"
+     },
+     {
+      "k": "THE THREAT",
+      "v": "PUSHING PRICES TOO HARD",
+      "at": "biggest threat"
+     },
+     {
+      "k": "STATUS",
+      "v": "TINY CAPITAL, HUGE CASH · 1972–2014",
+      "at": "its status"
+     }
+    ]
+   },
+   "spoken": "So, here's our verdict. The Sees moat is real. A gift people trust, and a habit they'll pay a little more for every year. Its biggest threat isn't a rival. It's the temptation to push prices too hard. And its status? A business that needed almost no extra money, and helped pay for much of Berkshire.",
+   "sec": 19.59,
+   "cues": [
+    "So, here's our verdict.",
+    "The See's moat is real.",
+    "A gift people trust, and a habit they'll pay a little more for every year.",
+    "Its biggest threat isn't a rival.",
+    "It's the temptation to push prices too hard.",
+    "And its status?",
+    "A business that needed almost no extra money,",
+    "and helped pay for much of Berkshire."
+   ]
+  },
+  {
+   "ch": 9,
+   "key": "s80",
+   "say": "When you study any Indian company with a much loved brand, open a case file with three questions. One. Is it selling more units, or just raising prices? Two. How much extra money does each extra rupee of profit need? Three. If prices went up ten percent, would customers still come back?",
+   "cap": "When you study any Indian company with a much loved brand, open a case file with three questions. One. Is it selling more units, or just raising prices? Two. How much extra money does each extra rupee of profit need? Three. If prices went up ten percent, would customers still come back?",
+   "scene": {
+    "type": "hand",
+    "title": "Your case file:",
+    "items": [
+     {
+      "text": "More units, or just higher prices?",
+      "at": "One. Is it"
+     },
+     {
+      "text": "Capital needed per extra rupee?",
+      "at": "Two. How much"
+     },
+     {
+      "text": "Would they come back at +10%?",
+      "at": "Three. If prices"
+     }
+    ]
+   },
+   "spoken": "When you study any Indian company with a much loved brand, open a case file with three questions. One. Is it selling more units, or just raising prices? Two. How much extra money does each extra rupee of profit need? Three. If prices went up ten percent, would customers still come back?",
+   "sec": 19.17,
+   "cues": [
+    "When you study any Indian company with a much loved brand,",
+    "open a case file with three questions.",
+    "One.",
+    "Is it selling more units, or just raising prices?",
+    "Two.",
+    "How much extra money does each extra rupee of profit need?",
+    "Three.",
+    "If prices went up ten percent, would customers still come back?"
+   ]
+  },
+  {
+   "ch": 9,
+   "key": "s81",
+   "say": "We're not saying any Indian company has this moat. You do the detective work.",
+   "cap": "We're not saying any Indian company has this moat. You do the detective work.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NO COMPANY IS NAMED OR RECOMMENDED",
+    "lines": [
+     {
+      "t": "YOU DO THE DETECTIVE WORK.",
+      "at": "You do the",
+      "em": [
+       "DETECTIVE"
+      ]
+     }
+    ]
+   },
+   "spoken": "We're not saying any Indian company has this moat. You do the detective work.",
+   "sec": 4.26,
+   "cues": [
+    "We're not saying any Indian company has this moat.",
+    "You do the detective work."
+   ]
+  },
+  {
+   "ch": 9,
+   "key": "s82",
+   "say": "One line for your friend over chai. The best business doesn't need more money, to make more money.",
+   "cap": "One line for your friend over chai. The best business doesn't need more money, to make more money.",
+   "scene": {
+    "type": "x-photo",
+    "img": "chocolates_box",
+    "move": "out",
+    "fx": 0.5,
+    "fy": 0.5,
+    "shade": 0.25,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE CHAI TEST",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "THE BEST BUSINESS DOESN'T NEED MORE MONEY",
+      "at": "doesn't need",
+      "x": 960,
+      "y": 780
+     },
+     {
+      "kind": "strip",
+      "text": "TO MAKE MORE MONEY",
+      "at": "to make more",
+      "x": 960,
+      "y": 900,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "One line for your friend over chai. The best business doesn't need more money, to make more money.",
+   "sec": 5.46,
+   "cues": [
+    "One line for your friend over chai.",
+    "The best business doesn't need more money, to make more money."
+   ]
+  },
+  {
+   "ch": 9,
+   "key": "s83",
+   "say": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "cap": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "Berkshire Hathaway letters · 1983, 2007, 2011, 2014, 2020",
+     "The Moat Files · Case File 002 · every figure on the fact sheet"
+    ]
+   },
+   "spoken": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "sec": 5.46,
+   "cues": [
+    "Every clue here comes from Warren Buffett's letters.",
+    "The sources are in the description."
+   ]
+  },
+  {
+   "ch": 9,
+   "key": "s84",
+   "say": "Next case. A price cut of an eighth of a point insulted Buffett, and he bought control of a dying textile mill out of anger. He later called it a monumental mistake. Case file three. Subscribe, and I'll see you at the crime scene.",
+   "cap": "Next case. A price cut of an eighth of a point insulted Buffett, and he bought control of a dying textile mill out of anger. He later called it a monumental mistake. Case file three. Subscribe, and I'll see you at the crime scene.",
+   "scene": {
+    "type": "end"
+   },
+   "spoken": "Next case. A price cut of an eighth of a point insulted Buffett, and he bought control of a dying textile mill out of anger. He later called it a monumental mistake. Case file three. Subscribe, and I'll see you at the crime scene.",
+   "sec": 14.24,
+   "cues": [
+    "Next case.",
+    "A price cut of an eighth of a point insulted Buffett,",
+    "and he bought control of a dying textile mill out of anger.",
+    "He later called it a monumental mistake.",
+    "Case file three.",
+    "Subscribe, and I'll see you at the crime scene."
+   ]
+  }
+ ],
+ "clips": {
+  "s07_dream": {
+   "w": 1400,
+   "h": 139,
+   "hl": [
+    [
+     0.2629,
+     0.2332,
+     0.2824,
+     0.2845
+    ]
+   ],
+   "page": 6,
+   "quote": "prototype of a dream business"
+  },
+  "s83_prices": {
+   "w": 1225,
+   "h": 260,
+   "hl": [
+    [
+     0.7999,
+     0.453,
+     0.1264,
+     0.1608
+    ],
+    [
+     0.0318,
+     0.5863,
+     0.3917,
+     0.1608
+    ]
+   ],
+   "page": 12,
+   "quote": "we have raised prices significantly"
+  },
+  "s11_zero": {
+   "w": 1345,
+   "h": 220,
+   "hl": [
+    [
+     0.1109,
+     0.418,
+     0.1667,
+     0.1639
+    ]
+   ],
+   "page": 13,
+   "quote": "of less than zero"
+  }
+ }
+}

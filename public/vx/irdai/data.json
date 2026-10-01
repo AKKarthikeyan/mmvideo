@@ -1,0 +1,942 @@
+{
+ "id": "irdai",
+ "title": "IRDAI's Distribution Reset: Who Loses Margin, Who Keeps the Moat",
+ "chapters": [
+  "Cold open",
+  "What went wrong",
+  "What IRDAI proposes",
+  "The margin",
+  "The moat",
+  "MoatSCORE",
+  "Sources"
+ ],
+ "shorts": [
+  {
+   "title": "Distributor pay grew 4–5× faster",
+   "beats": [
+    "i11",
+    "i12",
+    "i13"
+   ]
+  },
+  {
+   "title": "The new commission caps",
+   "beats": [
+    "i23",
+    "i24"
+   ]
+  },
+  {
+   "title": "Who keeps the moat",
+   "beats": [
+    "i41",
+    "i42",
+    "i43"
+   ]
+  }
+ ],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "i00",
+   "say": "On the twenty third of September, IRDAI proposed the biggest change to how insurance is sold in India since commission caps were removed in twenty twenty three. Hard caps on commissions. Lower expense limits. And no more forcing insurance on borrowers.",
+   "cap": "On 23 September, IRDAI proposed the biggest change to how insurance is sold in India since commission caps were removed in 2023. Hard caps on commissions. Lower expense limits. And no more forcing insurance on borrowers.",
+   "scene": {
+    "type": "strips",
+    "heading": "IRDAI · 23 SEP 2026",
+    "items": [
+     {
+      "text": "HARD COMMISSION CAPS",
+      "at": "Hard caps"
+     },
+     {
+      "text": "LOWER EXPENSE LIMITS",
+      "at": "Lower expense"
+     },
+     {
+      "text": "NO FORCED BUNDLING WITH LOANS",
+      "at": "no more forcing",
+      "red": true
+     }
+    ]
+   },
+   "sec": 14.65,
+   "cues": [
+    "On 23 September, IRDAI proposed the biggest change to how insurance is sold",
+    "in India since commission caps were removed in 2023.",
+    "Hard caps on commissions.",
+    "Lower expense limits.",
+    "And no more forcing insurance on borrowers."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "i01",
+   "say": "Its own data explains why: payments to distributors have been growing four to five times faster than premiums. If the proposals stand, margin moves from distributors to policyholders, and the moat moves to insurers that already sell cheaply.",
+   "cap": "Its own data explains why: payments to distributors have been growing four to five times faster than premiums. If the proposals stand, margin moves from distributors to policyholders, and the moat moves to insurers that already sell cheaply.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "DISTRIBUTOR PAY: 4–5× FASTER",
+      "at": "four to five"
+     },
+     {
+      "text": "MARGIN → POLICYHOLDERS",
+      "at": "margin moves"
+     },
+     {
+      "text": "MOAT → THE CHEAPEST SELLERS",
+      "at": "the moat moves",
+      "red": true
+     }
+    ]
+   },
+   "sec": 13.4,
+   "cues": [
+    "Its own data explains why:",
+    "payments to distributors have been growing four to five times faster than",
+    "premiums.",
+    "If the proposals stand, margin moves from distributors to policyholders,",
+    "and the moat moves to insurers that already sell cheaply."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "i10",
+   "say": "Chapter one. What went wrong.",
+   "cap": "Chapter one. What went wrong.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHAT WENT",
+     "WRONG"
+    ],
+    "red": false
+   },
+   "sec": 2.85,
+   "cues": [
+    "Chapter one.",
+    "What went wrong."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "i11",
+   "say": "Private life insurers' total expenses fell from twenty one point three percent of premium in twenty fifteen to sixteen point five percent in twenty twenty one, then rose back to twenty point two percent last year. Private general insurers reached thirty two point one percent.",
+   "cap": "Private life insurers' total expenses fell from 21.3% of premium in FY15 to 16.5% in FY21, then rose back to 20.2% in FY26. Private general insurers reached 32.1% in FY26.",
+   "scene": {
+    "type": "bars",
+    "heading": "PRIVATE INSURERS' TOTAL EXPENSES, % OF PREMIUM",
+    "rows": [
+     {
+      "name": "LIFE · FY15",
+      "v": 21.3,
+      "label": "21.3%",
+      "at": "twenty one point"
+     },
+     {
+      "name": "LIFE · FY21",
+      "v": 16.5,
+      "label": "16.5%",
+      "at": "sixteen point"
+     },
+     {
+      "name": "LIFE · FY26",
+      "v": 20.2,
+      "label": "20.2%",
+      "at": "rose back"
+     },
+     {
+      "name": "GENERAL · FY26",
+      "v": 32.1,
+      "label": "32.1%",
+      "at": "thirty two",
+      "red": true
+     }
+    ]
+   },
+   "sec": 15.7,
+   "cues": [
+    "Private life insurers' total expenses fell from 21.3% of premium in FY15 to",
+    "16.5% in FY21, then rose back to 20.2% in FY26.",
+    "Private general insurers reached 32.1% in FY26."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "i12",
+   "say": "In IRDAI's own words: the discipline achieved over a decade has been unwound in the space of a few years, and it is policyholders who have funded the reversal.",
+   "cap": "In IRDAI's own words: \"The discipline achieved over a decade has been unwound in the space of a few years and it is policyholders who have funded the reversal.\"",
+   "scene": {
+    "type": "clip",
+    "clip": "irdai_unwound",
+    "heading": "IRDAI CONSULTATION PAPER · BOX 1",
+    "hl": [
+     "discipline achieved"
+    ]
+   },
+   "sec": 10.37,
+   "cues": [
+    "In IRDAI's own words:",
+    "\"The discipline achieved over a decade has been unwound in the space of a few",
+    "years and it is policyholders who have funded the reversal.\""
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "i13",
+   "say": "In the life corporate agency channel, new business premium grew twenty eight percent in two years, while distributor pay grew one hundred and twenty five percent. It is now nearly twenty seven percent of first year premium.",
+   "cap": "In the life corporate agency channel, new business premium grew 28% from FY23 to FY25, while distributor remuneration grew 125%. It is now \"nearly 27% of first-year premium\".",
+   "scene": {
+    "type": "bars",
+    "heading": "LIFE CORPORATE AGENTS · GROWTH FY23–FY25",
+    "rows": [
+     {
+      "name": "NEW BUSINESS PREMIUM",
+      "v": 28,
+      "label": "+28%",
+      "at": "twenty eight"
+     },
+     {
+      "name": "DISTRIBUTOR PAY",
+      "v": 125,
+      "label": "+125%",
+      "at": "one hundred and twenty five",
+      "red": true
+     }
+    ],
+    "stamps": [
+     {
+      "text": "≈ 27% OF FIRST-YEAR PREMIUM",
+      "at": "twenty seven"
+     }
+    ]
+   },
+   "sec": 13.69,
+   "cues": [
+    "In the life corporate agency channel,",
+    "new business premium grew 28% from FY23 to FY25,",
+    "while distributor remuneration grew 125%.",
+    "It is now \"nearly 27% of first-year premium\"."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "i14",
+   "say": "Broker commissions in general insurance rose one hundred and seventy three percent, against thirty seven percent premium growth. And in credit linked insurance sold with loans, payouts average around forty two percent.",
+   "cap": "Broker commissions in general insurance rose 173%, against 37% premium growth. And in the NBFC channel, where 93% of business is credit life sold with loans, payouts average around 42%.",
+   "scene": {
+    "type": "cards",
+    "heading": "WHERE THE MONEY WENT",
+    "cards": [
+     {
+      "top": "BROKER PREMIUM",
+      "big": "+37%",
+      "at": "thirty seven"
+     },
+     {
+      "top": "BROKER COMMISSION",
+      "big": "+173%",
+      "at": "one hundred and seventy three",
+      "fill": "mustard"
+     },
+     {
+      "top": "NBFC CREDIT-LINKED PAYOUTS",
+      "big": "≈ 42%",
+      "at": "forty two"
+     }
+    ]
+   },
+   "sec": 12.54,
+   "cues": [
+    "Broker commissions in general insurance rose 173%, against 37% premium growth.",
+    "And in the NBFC channel, where 93% of business is credit life sold with",
+    "loans, payouts average around 42%."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "i20",
+   "say": "Chapter two. What IRDAI proposes.",
+   "cap": "Chapter two. What IRDAI proposes.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHAT IRDAI",
+     "PROPOSES"
+    ],
+    "red": false
+   },
+   "sec": 3.87,
+   "cues": [
+    "Chapter two.",
+    "What IRDAI proposes."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "i21",
+   "say": "First, lower expense limits. Life insurers must reach fifteen percent of premium in two years, and twelve and a half percent in five. General insurers, twenty five percent and then twenty. Twenty twenty seven twenty eight is year one.",
+   "cap": "First, lower expense limits. Life insurers must reach 15% of premium in two years, and 12.5% in five. General insurers, 25% and then 20%. FY2027-28 is Year 1.",
+   "scene": {
+    "type": "table",
+    "heading": "EXPENSE LIMITS (EoM)",
+    "cols": [
+     "",
+     "IN 2 YEARS",
+     "IN 5 YEARS"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Life insurers",
+       "15%",
+       "12.5%"
+      ],
+      "at": "Life insurers"
+     },
+     {
+      "cells": [
+       "General insurers",
+       "25%",
+       "20%"
+      ],
+      "at": "General insurers"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "YEAR 1 = FY2027-28",
+      "at": "year one"
+     }
+    ]
+   },
+   "sec": 13.84,
+   "cues": [
+    "First, lower expense limits.",
+    "Life insurers must reach 15% of premium in two years, and 12.5% in five.",
+    "General insurers, 25% and then 20%.",
+    "FY2027-28 is Year 1."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "i22",
+   "say": "Miss the path, and IRDAI can restrict new product launches, dividends, and in extreme cases new business through the channel responsible.",
+   "cap": "Miss the path, and IRDAI can impose \"restrictions on new product launches, restrictions on dividend distribution\", and in extreme cases on new business through the channel responsible.",
+   "scene": {
+    "type": "clip",
+    "clip": "irdai_consequences",
+    "heading": "IF INSURERS MISS THE PATH",
+    "hl": [
+     "new product"
+    ]
+   },
+   "sec": 9.04,
+   "cues": [
+    "Miss the path, and IRDAI can impose \"restrictions on new product launches,",
+    "restrictions on dividend distribution\",",
+    "and in extreme cases on new business through the channel responsible."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "i23",
+   "say": "Second, hard commission caps. For individual health insurance, distributors such as brokers and banks can earn fifteen percent on a first sale, and only five percent on renewals. Agents get twenty and ten. On single premium savings policies, distributors get one percent.",
+   "cap": "Second, hard commission caps. For individual health insurance, distributors such as brokers and banks can earn 15% on a first sale, and only 5% on renewals. Agents get 20% and 10%. On single-premium savings policies, distributors get 1%.",
+   "scene": {
+    "type": "table",
+    "heading": "PROPOSED COMMISSION CAPS",
+    "cols": [
+     "PRODUCT",
+     "DISTRIBUTORS",
+     "AGENTS"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Health: first sale",
+       "15%",
+       "20%"
+      ],
+      "at": "first sale"
+     },
+     {
+      "cells": [
+       "Health: renewal",
+       "5%",
+       "10%"
+      ],
+      "at": "renewals"
+     },
+     {
+      "cells": [
+       "Single-premium savings",
+       "1%",
+       "2%"
+      ],
+      "at": "single premium"
+     }
+    ]
+   },
+   "sec": 17.0,
+   "cues": [
+    "Second, hard commission caps.",
+    "For individual health insurance, distributors such as brokers and banks can",
+    "earn 15% on a first sale, and only 5% on renewals.",
+    "Agents get 20% and 10%.",
+    "On single-premium savings policies, distributors get 1%."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "i24",
+   "say": "Third, banks. No more making a loan conditional on buying insurance, and no volume linked or reward linked incentives for bank staff selling insurance. IRDAI says mis-selling is more prevalent in banks.",
+   "cap": "Third, banks. No more making a loan conditional on buying insurance, and no \"volume linked or reward linked incentive for bank or NBFC staff selling insurance\". IRDAI says mis-selling \"is more prevalent in banks\".",
+   "scene": {
+    "type": "clip",
+    "clip": "irdai_staff",
+    "heading": "BANKS AND NBFCs",
+    "hl": [
+     "volume linked"
+    ],
+    "stamps": [
+     {
+      "text": "NO FORCED BUNDLING",
+      "at": "conditional"
+     }
+    ]
+   },
+   "sec": 13.97,
+   "cues": [
+    "Third, banks.",
+    "No more making a loan conditional on buying insurance,",
+    "and no \"volume linked or reward linked incentive for bank or NBFC staff",
+    "selling insurance\".",
+    "IRDAI says mis-selling \"is more prevalent in banks\"."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "i30",
+   "say": "Chapter three. Who gives up margin.",
+   "cap": "Chapter three. Who gives up margin.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHO GIVES UP",
+     "MARGIN"
+    ],
+    "red": false
+   },
+   "sec": 3.19,
+   "cues": [
+    "Chapter three.",
+    "Who gives up margin."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "i31",
+   "say": "High commission insurers first. Last year, private life insurers paid nine percent of premium as commission on average, in a range from three to thirty nine percent. Private general insurers paid over twenty percent. Public sector general insurers paid eleven.",
+   "cap": "High-commission insurers first. In FY26, private life insurers paid 9% of premium as commission on average, in a range from 3% to 39%. Private general insurers paid \"over 20%\". Public-sector general insurers paid 11%.",
+   "scene": {
+    "type": "bars",
+    "heading": "COMMISSION, % OF PREMIUM · FY26",
+    "rows": [
+     {
+      "name": "PRIVATE LIFE · AVERAGE",
+      "v": 9,
+      "label": "9%",
+      "at": "nine percent"
+     },
+     {
+      "name": "PRIVATE LIFE · HIGHEST",
+      "v": 39,
+      "label": "39%",
+      "at": "thirty nine",
+      "red": true
+     },
+     {
+      "name": "PRIVATE GENERAL · AVERAGE",
+      "v": 20,
+      "label": "> 20%",
+      "at": "over twenty"
+     },
+     {
+      "name": "PUBLIC GENERAL · AVERAGE",
+      "v": 11,
+      "label": "11%",
+      "at": "eleven"
+     }
+    ]
+   },
+   "sec": 14.65,
+   "cues": [
+    "High-commission insurers first.",
+    "In FY26, private life insurers paid 9% of premium as commission on average,",
+    "in a range from 3% to 39%.",
+    "Private general insurers paid \"over 20%\".",
+    "Public-sector general insurers paid 11%."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "i32",
+   "say": "Standalone health insurers, IRDAI says, have largely channelled underwriting margins into commissions and operating expenses rather than lower premiums. A five percent cap on distributors' renewals goes straight at that model.",
+   "cap": "Standalone health insurers, IRDAI says, \"have largely channelled underwriting margins into commissions and operating expenses rather than lower premiums\". A 5% cap on distributors' renewals goes straight at that model.",
+   "scene": {
+    "type": "clip",
+    "clip": "irdai_health",
+    "heading": "STANDALONE HEALTH INSURERS",
+    "hl": [
+     "largely channelled"
+    ]
+   },
+   "sec": 15.1,
+   "cues": [
+    "Standalone health insurers, IRDAI says,",
+    "\"have largely channelled underwriting margins into commissions and operating",
+    "expenses rather than lower premiums\".",
+    "A 5% cap on distributors' renewals goes straight at that model."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "i33",
+   "say": "And banks. They account for nearly sixty eight thousand crore rupees of the sampled life premium sold through corporate agents. Capped commissions, no bundling and no staff incentives all cut the fee income banks earn from insurance. No bank has filed an estimate.",
+   "cap": "And banks. They account for nearly ₹68,000 crore of the sampled life premium sold through corporate agents. Capped commissions, no bundling and no staff incentives all cut the fee income banks earn from insurance. No bank has filed an estimate.",
+   "scene": {
+    "type": "counter",
+    "heading": "BANKS' SAMPLED LIFE PREMIUM",
+    "to": 68000,
+    "prefix": "₹",
+    "suffix": " CR",
+    "at": "sixty eight",
+    "sub": "SOLD AS CORPORATE AGENTS",
+    "stamps": [
+     {
+      "text": "NO BANK ESTIMATE FILED",
+      "at": "No bank"
+     }
+    ]
+   },
+   "sec": 15.23,
+   "cues": [
+    "And banks.",
+    "They account for nearly ₹68,000 crore of the sampled life premium sold",
+    "through corporate agents.",
+    "Capped commissions, no bundling and no staff incentives all cut the fee",
+    "income banks earn from insurance.",
+    "No bank has filed an estimate."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "i40",
+   "say": "Chapter four. Who keeps the moat.",
+   "cap": "Chapter four. Who keeps the moat.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHO KEEPS",
+     "THE MOAT"
+    ],
+    "red": false
+   },
+   "sec": 2.53,
+   "cues": [
+    "Chapter four.",
+    "Who keeps the moat."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "i41",
+   "say": "The focus moat is cost advantage. The largest private life insurer paid only four percent commission. The only public sector life insurer paid five percent. These insurers are already inside the proposed limits. For them, the reform is not a cost. It is a constraint on their competitors.",
+   "cap": "The focus moat is cost advantage. The largest private life insurer paid only 4% commission in FY26. The only public-sector life insurer paid 5%. These insurers are already inside the proposed limits. For them, the reform is not a cost. It is a constraint on their competitors.",
+   "scene": {
+    "type": "bars",
+    "heading": "LIFE COMMISSION, % OF PREMIUM · FY26",
+    "rows": [
+     {
+      "name": "LARGEST PRIVATE LIFE INSURER",
+      "v": 4,
+      "label": "4%",
+      "at": "only four"
+     },
+     {
+      "name": "PUBLIC-SECTOR LIFE INSURER",
+      "v": 5,
+      "label": "5%",
+      "at": "five percent"
+     },
+     {
+      "name": "PRIVATE LIFE AVERAGE",
+      "v": 9,
+      "label": "9%",
+      "at": "already inside",
+      "red": true
+     }
+    ],
+    "stamps": [
+     {
+      "text": "FOCUS MOAT: D3 COST ADVANTAGE",
+      "at": "focus moat|10"
+     }
+    ]
+   },
+   "sec": 17.42,
+   "cues": [
+    "The focus moat is cost advantage.",
+    "The largest private life insurer paid only 4% commission in FY26.",
+    "The only public-sector life insurer paid 5%.",
+    "These insurers are already inside the proposed limits.",
+    "For them, the reform is not a cost.",
+    "It is a constraint on their competitors."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "i42",
+   "say": "What weakens is control over the point of sale. The bank branch, the loan desk and the car dealer earned high commissions, in IRDAI's words, from control over customer access.",
+   "cap": "What weakens is control over the point of sale. The bank branch, the loan desk and the car dealer earned high commissions, in IRDAI's words, from \"control over customer access\".",
+   "scene": {
+    "type": "clip",
+    "clip": "irdai_access",
+    "heading": "IRDAI · CHALLENGES OF THE SECTOR",
+    "hl": [
+     "control over customer access"
+    ]
+   },
+   "sec": 11.55,
+   "cues": [
+    "What weakens is control over the point of sale.",
+    "The bank branch, the loan desk and the car dealer earned high commissions,",
+    "in IRDAI's words, from \"control over customer access\"."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "i43",
+   "say": "One number cuts the other way. Only forty eight percent of life policies are still running at the sixty first month. For policies bought online, it is seventy one percent.",
+   "cap": "One number cuts the other way. Only 48% of life policies are still running at the 61st month. For policies bought online, it is 71%.",
+   "scene": {
+    "type": "cards",
+    "heading": "LIFE PERSISTENCY · 61ST MONTH",
+    "cards": [
+     {
+      "top": "ALL POLICIES",
+      "big": "48%",
+      "at": "forty eight"
+     },
+     {
+      "top": "BOUGHT ONLINE",
+      "big": "71%",
+      "at": "seventy one",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 10.37,
+   "cues": [
+    "One number cuts the other way.",
+    "Only 48% of life policies are still running at the 61st month.",
+    "For policies bought online, it is 71%."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "i50",
+   "say": "Chapter five. The MoatSCORE board.",
+   "cap": "Chapter five. The MoatSCORE board.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "MOATSCORE BOARD"
+    ],
+    "red": false
+   },
+   "sec": 3.32,
+   "cues": [
+    "Chapter five.",
+    "The MoatSCORE board."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "i51",
+   "say": "Here are the published MoatSCOREs for the banks and insurers involved. They have not been re-scored, and the paper does not name insurers in its comparisons.",
+   "cap": "Here are the published MoatSCOREs for the banks and insurers involved. They have not been re-scored, and the paper does not name insurers in its comparisons.",
+   "scene": {
+    "type": "scores",
+    "rows": [
+     [
+      "ICICI Bank",
+      6.05
+     ],
+     [
+      "HDFC Bank",
+      6.04
+     ],
+     [
+      "LIC",
+      5.94
+     ],
+     [
+      "Star Health",
+      5.59
+     ],
+     [
+      "State Bank of India",
+      5.53
+     ],
+     [
+      "HDFC Life",
+      5.34
+     ],
+     [
+      "ICICI Lombard",
+      5.32
+     ],
+     [
+      "SBI Life",
+      5.29
+     ],
+     [
+      "Niva Bupa",
+      5.27
+     ],
+     [
+      "ICICI Prudential Life",
+      5.19
+     ]
+    ],
+    "note": "AS PUBLISHED 28 SEP 2026 · NOT RE-SCORED"
+   },
+   "sec": 8.36,
+   "cues": [
+    "Here are the published MoatSCOREs for the banks and insurers involved.",
+    "They have not been re-scored, and the paper does not name insurers in its",
+    "comparisons."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "i52",
+   "say": "The bear case. It is a draft, and comments close on the twenty fifth of October. Lower commissions may mean lower sales. The margin may go to policyholders rather than insurers. And banks have other levers.",
+   "cap": "The bear case. It is a draft, and comments close on 25 October 2026. Lower commissions may mean lower sales. The margin may go to policyholders rather than insurers. And banks have other levers.",
+   "scene": {
+    "type": "list",
+    "heading": "THE BEAR CASE",
+    "items": [
+     {
+      "text": "A DRAFT: COMMENTS TO 25 OCT",
+      "at": "It is a draft"
+     },
+     {
+      "text": "LOWER COMMISSIONS, LOWER SALES",
+      "at": "Lower commissions"
+     },
+     {
+      "text": "MARGIN TO POLICYHOLDERS",
+      "at": "The margin may"
+     },
+     {
+      "text": "BANKS HAVE OTHER LEVERS",
+      "at": "other levers"
+     }
+    ]
+   },
+   "sec": 11.94,
+   "cues": [
+    "The bear case.",
+    "It is a draft, and comments close on 25 October 2026.",
+    "Lower commissions may mean lower sales.",
+    "The margin may go to policyholders rather than insurers.",
+    "And banks have other levers."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "i53",
+   "say": "Watch four things. The caps after the twenty fifth of October. Whether renewals of existing policies are covered. Insurers' commission ratios in the next two quarters. And Bima Sugam.",
+   "cap": "Watch four things. The caps after 25 October. Whether renewals of existing policies are covered. Insurers' commission ratios in the next two quarters. And Bima Sugam.",
+   "scene": {
+    "type": "hand",
+    "title": "Watch:",
+    "items": [
+     {
+      "text": "The caps after 25 Oct",
+      "at": "The caps after"
+     },
+     {
+      "text": "Old policies' renewals?",
+      "at": "Whether renewals"
+     },
+     {
+      "text": "Commission ratios",
+      "at": "commission ratios"
+     },
+     {
+      "text": "Bima Sugam",
+      "at": "Bima Sugam"
+     }
+    ]
+   },
+   "sec": 10.45,
+   "cues": [
+    "Watch four things.",
+    "The caps after 25 October.",
+    "Whether renewals of existing policies are covered.",
+    "Insurers' commission ratios in the next two quarters.",
+    "And Bima Sugam."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "i60",
+   "say": "Every fact in this video comes from IRDAI's public consultation paper of the twenty third of September. The link is in the description.",
+   "cap": "Every fact in this video comes from IRDAI's public consultation paper of 23 September 2026. The link is in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "IRDAI · Recalibrating Economics of Insurance Distribution · Part 1 · 23 Sep 2026",
+     "IRDAI · Consultation paper · Part 2 (analysis)",
+     "Moat & Margin · Moat Screener (MoatSCORE)"
+    ]
+   },
+   "sec": 8.15,
+   "cues": [
+    "Every fact in this video comes from IRDAI's public consultation paper of 23",
+    "September 2026.",
+    "The link is in the description."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "i61",
+   "say": "This is educational research, not investment advice. Moat and Margin is not a SEBI registered research analyst or investment adviser.",
+   "cap": "This is educational research, not investment advice. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser.",
+   "scene": {
+    "type": "end"
+   },
+   "sec": 7.55,
+   "cues": [
+    "This is educational research, not investment advice.",
+    "Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser."
+   ]
+  }
+ ],
+ "clips": {
+  "irdai_unwound": {
+   "w": 1427,
+   "h": 300,
+   "hl": [
+    [
+     0.7076,
+     0.485,
+     0.2647,
+     0.1435
+    ],
+    [
+     0.0274,
+     0.6365,
+     0.9453,
+     0.1435
+    ],
+    [
+     0.0274,
+     0.7893,
+     0.2677,
+     0.1435
+    ]
+   ],
+   "page": 42,
+   "quote": "The discipline achieved over a decade has been unwound in the space of a few years and it is policyholders who have funded the reversal"
+  },
+  "irdai_consequences": {
+   "w": 1460,
+   "h": 202,
+   "hl": [
+    [
+     0.5658,
+     0.2795,
+     0.4072,
+     0.2145
+    ],
+    [
+     0.0267,
+     0.5061,
+     0.3766,
+     0.2145
+    ]
+   ],
+   "page": 44,
+   "quote": "restrictions on new product launches, restrictions on dividend distribution"
+  },
+  "irdai_staff": {
+   "w": 1460,
+   "h": 237,
+   "hl": [
+    [
+     0.188,
+     0.4288,
+     0.7846,
+     0.1813
+    ],
+    [
+     0.0267,
+     0.6204,
+     0.2494,
+     0.1813
+    ]
+   ],
+   "page": 63,
+   "quote": "prohibit any volume linked or reward linked incentive for bank or NBFC staff selling insurance"
+  },
+  "irdai_health": {
+   "w": 1459,
+   "h": 246,
+   "hl": [
+    [
+     0.8224,
+     0.1906,
+     0.1509,
+     0.1747
+    ],
+    [
+     0.0267,
+     0.3766,
+     0.9465,
+     0.1747
+    ],
+    [
+     0.0267,
+     0.5612,
+     0.1118,
+     0.1747
+    ]
+   ],
+   "page": 27,
+   "quote": "have largely channelled underwriting margins into commissions and operating expenses rather than lower premiums"
+  },
+  "irdai_access": {
+   "w": 1460,
+   "h": 206,
+   "hl": [
+    [
+     0.4624,
+     0.5182,
+     0.3117,
+     0.2096
+    ]
+   ],
+   "page": 25,
+   "quote": "control over customer access"
+  }
+ }
+}

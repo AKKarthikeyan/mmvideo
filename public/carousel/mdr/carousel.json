@@ -1,0 +1,147 @@
+{
+ "id": "mdr",
+ "vid": "mdr",
+ "kicker": "UPI MDR · 28 SEP 2026",
+ "slides": [
+  {
+   "type": "cover",
+   "lines": [
+    "UPI GETS",
+    "A PRICE:",
+    "0.4% MDR"
+   ],
+   "clip": "npci_example",
+   "stamp": "FROM 15 OCT 2026"
+  },
+  {
+   "type": "stat",
+   "heading": "UPI PAYMENTS ABOVE ₹2,000",
+   "was": "FREE",
+   "big": "0.4%",
+   "sub": "PAID BY THE MERCHANT · CAPPED AT ₹300",
+   "body": "Up to ₹2,000 stays free. Consumers pay nothing, and apps may not add a platform fee."
+  },
+  {
+   "type": "bars",
+   "heading": "WHAT THE MERCHANT PAYS (₹)",
+   "rows": [
+    {
+     "name": "₹3,000 PURCHASE",
+     "v": 12,
+     "label": "₹12"
+    },
+    {
+     "name": "₹50,000 PURCHASE",
+     "v": 200,
+     "label": "₹200"
+    },
+    {
+     "name": "₹1,00,000 PURCHASE (CAP)",
+     "v": 300,
+     "label": "₹300",
+     "red": true
+    }
+   ],
+   "body": "NPCI's own examples. Without the cap, ₹1 lakh would cost ₹400."
+  },
+  {
+   "type": "quote",
+   "heading": "WHO GETS THE 0.4%?",
+   "text": "“The operational parameters, fee distribution models, and category caps are decided by the UPI and Services Steering Committee”",
+   "who": "NPCI FAQ · 15 SEP 2026",
+   "clip": "npci_committee"
+  },
+  {
+   "type": "stat",
+   "heading": "PAYTM'S MARGIN TODAY",
+   "big": "4 BPS+",
+   "sub": "THE NEW MDR: 40 BPS GROSS",
+   "body": "Payment processing margin was 'comfortably above 4bps' in Q1 FY27. Even a small share of 0.4% is large next to that."
+  },
+  {
+   "type": "quote",
+   "heading": "THE RACE FOR MERCHANTS",
+   "text": "“With new monetization levers emerging, we want to walk the talk by investing back into the ecosystem”",
+   "who": "PINE LABS CEO · 10 LAKH SOUNDBOXES",
+   "clip": "pine_quote"
+  },
+  {
+   "type": "moat",
+   "heading": "THE MOAT QUESTION",
+   "label": "FOCUS MOAT · D2 SWITCHING COSTS",
+   "focus": "OWN THE MERCHANT",
+   "body": "Every provider earns the same regulated rate. The moat is how many merchants you hold, and how hard it is for them to leave.",
+   "score": "PAYTM 5.51 · PINE LABS 5.20"
+  },
+  {
+   "type": "list",
+   "heading": "THE BEAR CASE",
+   "items": [
+    "A COMMITTEE SET THE RATE; ONE CAN CHANGE IT",
+    "PAYMENTS UP TO ₹2,000 STAY FREE",
+    "NEW REVENUE SPENT ON ACQUIRING MERCHANTS",
+    "THE SPLIT MAY FAVOUR BANKS"
+   ],
+   "lastRed": true
+  },
+  {
+   "type": "end",
+   "sources": [
+    "NPCI, FAQs on MDR on select UPI (P2M) payments, 15 Sep 2026",
+    "Paytm: NPCI disclosure 15 Sep; Q1 FY27 release, 20 Jul 2026",
+    "Pine Labs press release, 24 Sep 2026",
+    "MoatSCOREs: Moat Screener, 28 Sep 2026"
+   ]
+  }
+ ],
+ "clips": {
+  "pine_quote": {
+   "w": 1508,
+   "h": 202,
+   "hl": [
+    [
+     0.0352,
+     0.4022,
+     0.9334,
+     0.1943
+    ]
+   ],
+   "page": 2,
+   "quote": "With new monetization levers emerging, we want to walk the talk by investing back into the ecosystem"
+  },
+  "npci_committee": {
+   "w": 1465,
+   "h": 229,
+   "hl": [
+    [
+     0.1215,
+     0.2804,
+     0.8518,
+     0.1885
+    ],
+    [
+     0.0266,
+     0.5302,
+     0.4626,
+     0.1885
+    ]
+   ],
+   "page": 2,
+   "quote": "The operational parameters, fee distribution models, and category caps are decided by the UPI and Services Steering Committee"
+  },
+  "npci_example": {
+   "w": 1465,
+   "h": 229,
+   "hl": [
+    [
+     0.1438,
+     0.2808,
+     0.7741,
+     0.1886
+    ]
+   ],
+   "page": 8,
+   "quote": "For a ₹3,000 purchase, applying the 0.4% rate results in an MDR fee of ₹12"
+  }
+ }
+}

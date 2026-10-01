@@ -1,0 +1,18 @@
+# MMVideo — track source, scripts, scene data and images; not renders or regenerable media
+node_modules/
+out/
+video_tests/
+voice_tests/
+# source PDFs (public filings, letters) stay on DarwinSSD, not in git
+sources/
+
+# generated voice / music / video (rebuilt by scripts; voice comes from MiniMax TTS)
+*.mp3
+*.wav
+*.mp4
+*.mov
+
+# local backups and OS files
+*.bak*
+.DS_Store
+.remotion/

@@ -1,0 +1,179 @@
+{
+ "id": "sleep_s3_walmart",
+ "title": "Forty Years of Watching the Wrong Number",
+ "beats": [
+  {
+   "key": "a",
+   "say": "For forty years, investors sat on conference calls and cheered: great quarter, Wal-Mart.",
+   "scene": {
+    "type": "quote",
+    "head": "THE WRONG NUMBER",
+    "clip": "cheer",
+    "q": "great quarter, Wal-Mart",
+    "src": "Nomad letter, period ended 30 Jun 2009 · p.162",
+    "qat": "great quarter",
+    "at": "great quarter"
+   },
+   "cap": "For forty years, investors sat on conference calls and cheered: great quarter, Wal-Mart.",
+   "sec": 5.83,
+   "cues": [
+    "For forty years, investors sat on conference calls and cheered:",
+    "great quarter, Wal-Mart."
+   ]
+  },
+  {
+   "key": "b",
+   "say": "But Sleep says they incorrectly weighed the information. They leaned on valuation, margin trends and revenue growth.",
+   "scene": {
+    "type": "quote",
+    "head": "WEIGHED WRONG",
+    "clip": "weigh",
+    "q": "they incorrectly weigh the information",
+    "src": "Nomad letter, period ended 30 Jun 2009 · p.162",
+    "qat": "incorrectly weighed",
+    "at": "incorrectly weighed"
+   },
+   "cap": "But Sleep says they incorrectly weighed the information. They leaned on valuation, margin trends and revenue growth.",
+   "sec": 7.37,
+   "cues": [
+    "But Sleep says they incorrectly weighed the information.",
+    "They leaned on valuation, margin trends and revenue growth."
+   ]
+  },
+  {
+   "key": "c",
+   "say": "The real engine was simpler: a thrift orientation, fueling growth, with the savings shared with the customer.",
+   "scene": {
+    "type": "quote",
+    "head": "THE REAL ENGINE",
+    "clip": "engine",
+    "q": "a thrift orientation fueling growth with the savings shared with the customer",
+    "src": "Nomad letter, period ended 30 Jun 2009 · p.162",
+    "qat": "a thrift orientation",
+    "at": "thrift orientation"
+   },
+   "cap": "The real engine was simpler: a thrift orientation, fueling growth, with the savings shared with the customer.",
+   "sec": 7.0,
+   "cues": [
+    "The real engine was simpler:",
+    "a thrift orientation, fueling growth,",
+    "with the savings shared with the customer."
+   ]
+  },
+  {
+   "key": "d",
+   "say": "Investors recognise success step by step. The factors behind it, he says, may be constant.",
+   "scene": {
+    "type": "quote",
+    "head": "THE ENGINE NEVER MOVED",
+    "clip": "const",
+    "q": "the factors that lead to success ... may be constant",
+    "src": "Nomad letter, period ended 30 Jun 2009 · p.163",
+    "qat": "may be constant",
+    "at": "may be constant"
+   },
+   "cap": "Investors recognise success step by step. The factors behind it, he says, may be constant.",
+   "sec": 6.48,
+   "cues": [
+    "Investors recognise success step by step.",
+    "The factors behind it, he says, may be constant."
+   ]
+  },
+  {
+   "key": "e",
+   "say": "Average companies, he wrote, are more like GM than Wal-Mart.",
+   "scene": {
+    "type": "quote",
+    "head": "THE PUNCHLINE",
+    "clip": "gm",
+    "q": "average companies are more like GM than Wal-Mart!",
+    "src": "Nomad letter, period ended 30 Jun 2009 · p.163",
+    "qat": "more like GM",
+    "at": "more like GM"
+   },
+   "cap": "Average companies, he wrote, are more like GM than Wal-Mart.",
+   "sec": 4.26,
+   "cues": [
+    "Average companies, he wrote, are more like GM than Wal-Mart."
+   ]
+  }
+ ],
+ "clips": {
+  "cheer": {
+   "w": 1443,
+   "h": 212,
+   "hl": [
+    [
+     0.6431,
+     0.4007,
+     0.1449,
+     0.2167
+    ]
+   ],
+   "page": 162,
+   "quote": "great quarter"
+  },
+  "weigh": {
+   "w": 1443,
+   "h": 208,
+   "hl": [
+    [
+     0.2335,
+     0.3861,
+     0.3514,
+     0.222
+    ]
+   ],
+   "page": 162,
+   "quote": "incorrectly weigh the information"
+  },
+  "engine": {
+   "w": 1441,
+   "h": 208,
+   "hl": [
+    [
+     0.129,
+     0.3891,
+     0.785,
+     0.2214
+    ]
+   ],
+   "page": 162,
+   "quote": "a thrift orientation fueling growth with the savings shared with the customer"
+  },
+  "const": {
+   "w": 1442,
+   "h": 166,
+   "hl": [
+    [
+     0.5329,
+     0.4875,
+     0.1785,
+     0.2771
+    ]
+   ],
+   "page": 163,
+   "quote": "may be constant"
+  },
+  "gm": {
+   "w": 1443,
+   "h": 249,
+   "hl": [
+    [
+     0.8752,
+     0.3242,
+     0.0967,
+     0.1844
+    ],
+    [
+     0.027,
+     0.4901,
+     0.4658,
+     0.1844
+    ]
+   ],
+   "page": 163,
+   "quote": "average companies are more like GM than Wal-Mart"
+  }
+ }
+}

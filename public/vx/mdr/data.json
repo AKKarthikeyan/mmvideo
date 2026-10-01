@@ -1,0 +1,866 @@
+{
+ "id": "mdr",
+ "title": "UPI Gets a Price: What 0.4% MDR Means for Banks and Fintechs",
+ "chapters": [
+  "Cold open",
+  "What NPCI announced",
+  "The margin",
+  "The moat",
+  "Banks",
+  "MoatSCORE",
+  "Sources"
+ ],
+ "shorts": [
+  {
+   "title": "UPI gets a price",
+   "beats": [
+    "m00",
+    "m11",
+    "m13"
+   ]
+  },
+  {
+   "title": "Who earns the 0.4%?",
+   "beats": [
+    "m21",
+    "m23",
+    "m24"
+   ]
+  },
+  {
+   "title": "The margin is not the moat",
+   "beats": [
+    "m31",
+    "m32",
+    "m33"
+   ]
+  }
+ ],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "m00",
+   "say": "From the fifteenth of October, UPI gets a price. Merchants will pay a merchant discount rate of zero point four percent on UPI payments above two thousand rupees, capped at three hundred rupees a payment.",
+   "cap": "From 15 October, UPI gets a price. Merchants will pay a Merchant Discount Rate of 0.4% on UPI payments above ₹2,000, capped at ₹300 a payment.",
+   "scene": {
+    "type": "counter",
+    "heading": "UPI MDR · FROM 15 OCT 2026",
+    "to": 0.4,
+    "decimals": 1,
+    "suffix": "%",
+    "at": "zero point four",
+    "sub": "ON MERCHANT PAYMENTS ABOVE ₹2,000",
+    "stamps": [
+     {
+      "text": "CAPPED AT ₹300",
+      "at": "capped"
+     }
+    ]
+   },
+   "sec": 11.47,
+   "cues": [
+    "From 15 October, UPI gets a price.",
+    "Merchants will pay a Merchant Discount Rate of 0.4% on UPI payments above",
+    "₹2,000, capped at ₹300 a payment."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "m01",
+   "say": "Banks and payment companies will earn a margin on part of the largest flow of payments in the country. But a margin set by a committee is not a moat. The moat is whoever owns the merchant.",
+   "cap": "Banks and payment companies will earn a margin on part of the largest flow of payments in the country. But a margin set by a committee is not a moat. The moat is whoever owns the merchant.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "A MARGIN SET BY A COMMITTEE",
+      "at": "a margin set"
+     },
+     {
+      "text": "IS NOT A MOAT",
+      "at": "is not a moat",
+      "red": true
+     },
+     {
+      "text": "THE MOAT: OWNING THE MERCHANT",
+      "at": "The moat is"
+     }
+    ]
+   },
+   "sec": 9.53,
+   "cues": [
+    "Banks and payment companies will earn a margin on part of the largest flow of",
+    "payments in the country.",
+    "But a margin set by a committee is not a moat.",
+    "The moat is whoever owns the merchant."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m10",
+   "say": "Chapter one. What NPCI announced.",
+   "cap": "Chapter one. What NPCI announced.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHAT NPCI",
+     "ANNOUNCED"
+    ],
+    "red": false
+   },
+   "sec": 2.85,
+   "cues": [
+    "Chapter one.",
+    "What NPCI announced."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m11",
+   "say": "NPCI's F A Q of the fifteenth of September sets it out. Payments up to two thousand rupees stay free. Above that, the merchant pays zero point four percent. From seventy five thousand rupees, the fee is capped at three hundred rupees.",
+   "cap": "NPCI's FAQ of 15 September sets it out. Payments up to ₹2,000 stay free. Above that, the merchant pays 0.4%. From ₹75,000, the fee is capped at ₹300.",
+   "scene": {
+    "type": "table",
+    "heading": "NPCI FRAMEWORK",
+    "cols": [
+     "PAYMENT",
+     "MDR PAID BY MERCHANT"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Up to ₹2,000",
+       "Nil"
+      ],
+      "at": "stay free"
+     },
+     {
+      "cells": [
+       "Above ₹2,000",
+       "0.4%"
+      ],
+      "at": "Above that"
+     },
+     {
+      "cells": [
+       "₹75,000 and above",
+       "Capped at ₹300"
+      ],
+      "at": "seventy five"
+     }
+    ]
+   },
+   "sec": 13.97,
+   "cues": [
+    "NPCI's FAQ of 15 September sets it out.",
+    "Payments up to ₹2,000 stay free.",
+    "Above that, the merchant pays 0.4%.",
+    "From ₹75,000, the fee is capped at ₹300."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m12",
+   "say": "Insurance premiums, fuel, utilities, railways and telecom pay a flat five rupees. Capital market payments pay zero point zero two percent. Person to person payments, AutoPay mandates and small merchants stay free.",
+   "cap": "Insurance premiums, fuel, utilities, railways and telecom pay a flat ₹5. Capital market payments pay 0.02%, capped at ₹300. Person-to-person payments, AutoPay mandates and small merchants stay free.",
+   "scene": {
+    "type": "table",
+    "heading": "SPECIAL CATEGORIES",
+    "cols": [
+     "CATEGORY",
+     "MDR"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Insurance, fuel, utilities, rail, telecom",
+       "₹5 flat"
+      ],
+      "at": "Insurance"
+     },
+     {
+      "cells": [
+       "Capital markets",
+       "0.02%"
+      ],
+      "at": "Capital market"
+     },
+     {
+      "cells": [
+       "P2P, AutoPay, small P2PM merchants",
+       "Nil"
+      ],
+      "at": "Person to person"
+     }
+    ]
+   },
+   "sec": 12.49,
+   "cues": [
+    "Insurance premiums, fuel, utilities, railways and telecom pay a flat ₹5.",
+    "Capital market payments pay 0.02%, capped at ₹300.",
+    "Person-to-person payments, AutoPay mandates and small merchants stay free."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m13",
+   "say": "In NPCI's own example, a three thousand rupee purchase costs the merchant twelve rupees. Consumers pay nothing, merchants may not pass the charge on, and payment apps may not add a platform fee.",
+   "cap": "In NPCI's own example, a ₹3,000 purchase costs the merchant ₹12. Consumers pay nothing, merchants may not pass the charge on, and payment apps may not add a platform fee.",
+   "scene": {
+    "type": "clip",
+    "clip": "npci_example",
+    "heading": "NPCI FAQ · 15 SEP 2026",
+    "hl": [
+     "three thousand"
+    ],
+    "stamps": [
+     {
+      "text": "CONSUMERS PAY NOTHING",
+      "at": "Consumers pay"
+     }
+    ]
+   },
+   "sec": 12.25,
+   "cues": [
+    "In NPCI's own example, a ₹3,000 purchase costs the merchant ₹12.",
+    "Consumers pay nothing, merchants may not pass the charge on,",
+    "and payment apps may not add a platform fee."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m14",
+   "say": "The scale is huge. In August alone, UPI processed two thousand four hundred and fifty one crore transactions, worth twenty nine point nine lakh crore rupees. Payments up to two thousand rupees are more than ninety five percent of merchant transactions by volume. NPCI does not publish their share by value.",
+   "cap": "The scale is huge. In August 2026 alone, UPI processed 2,451 crore transactions, worth ₹29.9 lakh crore. Payments up to ₹2,000 are more than 95% of merchant (P2M) transactions by volume. NPCI does not publish their share by value.",
+   "scene": {
+    "type": "cards",
+    "heading": "UPI · AUGUST 2026",
+    "cards": [
+     {
+      "top": "TRANSACTIONS",
+      "big": "2,451 CR",
+      "at": "two thousand four hundred"
+     },
+     {
+      "top": "VALUE",
+      "big": "₹29.9 L CR",
+      "at": "worth"
+     },
+     {
+      "top": "P2M ≤ ₹2,000 BY VOLUME",
+      "big": ">95%",
+      "sub": "BY VALUE: NOT PUBLISHED",
+      "at": "more than ninety",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 19.98,
+   "cues": [
+    "The scale is huge.",
+    "In August 2026 alone, UPI processed 2,451 crore transactions,",
+    "worth ₹29.9 lakh crore.",
+    "Payments up to ₹2,000 are more than 95% of merchant (P2M) transactions by",
+    "volume.",
+    "NPCI does not publish their share by value."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "m20",
+   "say": "Chapter two. The margin.",
+   "cap": "Chapter two. The margin.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "MARGIN"
+    ],
+    "red": false
+   },
+   "sec": 2.12,
+   "cues": [
+    "Chapter two.",
+    "The margin."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "m21",
+   "say": "NPCI says the fee is distributed only amongst the UPI ecosystem, and cites an industry estimate that running UPI costs about twenty thousand crore rupees a year. But it does not say who gets what. A steering committee headed by NPCI decides the split.",
+   "cap": "NPCI says the MDR \"is distributed only amongst the UPI ecosystem\", and cites an industry estimate that running UPI costs \"around ~₹20,000 crore annually\". But it does not say who gets what. A steering committee headed by NPCI decides the split.",
+   "scene": {
+    "type": "clip",
+    "clip": "npci_committee",
+    "heading": "WHO DECIDES THE SPLIT",
+    "hl": [
+     "steering committee"
+    ],
+    "stamps": [
+     {
+      "text": "SPLIT: NOT PUBLISHED",
+      "at": "does not say"
+     }
+    ]
+   },
+   "sec": 13.82,
+   "cues": [
+    "NPCI says the MDR \"is distributed only amongst the UPI ecosystem\",",
+    "and cites an industry estimate that running UPI costs \"around ~₹20,000 crore",
+    "annually\".",
+    "But it does not say who gets what.",
+    "A steering committee headed by NPCI decides the split."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "m22",
+   "say": "Paytm told the exchanges the change will generate additional revenue from payments that were free earlier.",
+   "cap": "Paytm told the exchanges the change \"will generate additional revenue from the merchant business for many of the payment transactions that were free earlier\".",
+   "scene": {
+    "type": "clip",
+    "clip": "paytm_rev",
+    "heading": "PAYTM · FILING OF 15 SEP 2026",
+    "hl": [
+     "additional revenue"
+    ]
+   },
+   "sec": 6.06,
+   "cues": [
+    "Paytm told the exchanges the change \"will generate additional revenue from",
+    "the merchant business for many of the payment transactions that were free",
+    "earlier\"."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "m23",
+   "say": "Compare that with Paytm's economics. In the June quarter, its merchant payment value was seven point one lakh crore rupees, and its payment processing margin was just above four basis points. The new fee is forty basis points gross. Even a small share of it matters.",
+   "cap": "Compare that with Paytm's economics. In Q1 FY27, its merchant GMV was ₹7.1 lakh crore, and its payment processing margin was \"comfortably above 4bps\". The new MDR is 40 basis points gross. Even a small share of it matters.",
+   "scene": {
+    "type": "bars",
+    "heading": "BASIS POINTS",
+    "rows": [
+     {
+      "name": "PAYTM PROCESSING MARGIN (Q1)",
+      "v": 4,
+      "label": "> 4 bps",
+      "at": "payment processing margin"
+     },
+     {
+      "name": "NEW UPI MDR (GROSS)",
+      "v": 40,
+      "label": "40 bps",
+      "at": "forty basis",
+      "red": true
+     }
+    ]
+   },
+   "sec": 15.12,
+   "cues": [
+    "Compare that with Paytm's economics.",
+    "In Q1 FY27, its merchant GMV was ₹7.1 lakh crore,",
+    "and its payment processing margin was \"comfortably above 4bps\".",
+    "The new MDR is 40 basis points gross.",
+    "Even a small share of it matters."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "m24",
+   "say": "Management has not counted on it. On the July earnings call, Vijay Shekhar Sharma said: our life won't change materially. Whatever will come will come in the bottom line.",
+   "cap": "Management has not counted on it. On the July earnings call, Vijay Shekhar Sharma said: \"Our life won't change materially. Whatever will come will come in the bottom line.\"",
+   "scene": {
+    "type": "quote",
+    "text": "“Our life won't change materially. Whatever will come will come in the bottom line.”",
+    "who": "VIJAY SHEKHAR SHARMA · PAYTM · CALL OF 21 JUL 2026",
+    "at": "our life"
+   },
+   "sec": 10.68,
+   "cues": [
+    "Management has not counted on it.",
+    "On the July earnings call, Vijay Shekhar Sharma said:",
+    "\"Our life won't change materially.",
+    "Whatever will come will come in the bottom line.\""
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "m30",
+   "say": "Chapter three. Why the margin is not the moat.",
+   "cap": "Chapter three. Why the margin is not the moat.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHY THE MARGIN",
+     "IS NOT THE MOAT"
+    ],
+    "red": false
+   },
+   "sec": 3.47,
+   "cues": [
+    "Chapter three.",
+    "Why the margin is not the moat."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "m31",
+   "say": "MoatSCORE asks whether a company controls its own price. Here, nobody does. The rate is set centrally, the split by a committee, merchants cannot pass it on, and apps cannot add fees. What a committee grants, a committee can change. MoatSCORE tracks that as ungoverned risk, and never scores it.",
+   "cap": "MoatSCORE asks whether a company controls its own price. Here, nobody does. The rate is set centrally, the split by a committee, merchants cannot pass it on, and apps cannot add fees. What a committee grants, a committee can change. MoatSCORE tracks that as Ungoverned Risk (D8), and never scores it.",
+   "scene": {
+    "type": "list",
+    "heading": "WHO CONTROLS THE PRICE?",
+    "items": [
+     {
+      "text": "RATE: SET CENTRALLY",
+      "at": "set centrally"
+     },
+     {
+      "text": "SPLIT: SET BY A COMMITTEE",
+      "at": "the split"
+     },
+     {
+      "text": "MERCHANTS: CANNOT PASS IT ON",
+      "at": "merchants cannot"
+     },
+     {
+      "text": "APPS: NO PLATFORM FEE",
+      "at": "apps cannot"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "D8 · UNGOVERNED RISK",
+      "at": "ungoverned"
+     }
+    ]
+   },
+   "sec": 18.62,
+   "cues": [
+    "MoatSCORE asks whether a company controls its own price.",
+    "Here, nobody does.",
+    "The rate is set centrally, the split by a committee,",
+    "merchants cannot pass it on, and apps cannot add fees.",
+    "What a committee grants, a committee can change.",
+    "MoatSCORE tracks that as Ungoverned Risk (D8), and never scores it."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "m32",
+   "say": "The focus moat is switching costs: the merchant relationship. Every provider earns the same regulated rate. What differs is how many merchants each has signed up, and how hard it is for them to leave. Paytm has one point five seven crore merchants on subscription plans, including devices.",
+   "cap": "The focus moat is switching costs: the merchant relationship. Every provider earns the same regulated rate. What differs is how many merchants each has signed up, and how hard it is for them to leave. Paytm has 1.57 crore merchants on subscription plans, including devices.",
+   "scene": {
+    "type": "cards",
+    "heading": "FOCUS MOAT",
+    "cards": [
+     {
+      "top": "MOATSCORE D2",
+      "big": "SWITCHING COSTS",
+      "at": "focus moat",
+      "fill": "mustard"
+     },
+     {
+      "top": "PAYTM SUBSCRIPTION MERCHANTS",
+      "big": "1.57 CR",
+      "sub": "INCLUDING DEVICES",
+      "at": "one point five seven"
+     }
+    ]
+   },
+   "sec": 18.29,
+   "cues": [
+    "The focus moat is switching costs:",
+    "the merchant relationship.",
+    "Every provider earns the same regulated rate.",
+    "What differs is how many merchants each has signed up,",
+    "and how hard it is for them to leave.",
+    "Paytm has 1.57 crore merchants on subscription plans, including devices."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "m33",
+   "say": "Pine Labs has just committed to deploy ten lakh soundboxes, and its C E O tied the plan directly to the new economics.",
+   "cap": "Pine Labs has just committed to deploy 10 lakh soundboxes, and its CEO tied the plan directly to the new economics.",
+   "scene": {
+    "type": "clip",
+    "clip": "pine_quote",
+    "heading": "PINE LABS · 24 SEP 2026",
+    "hl": [
+     "tied the plan"
+    ]
+   },
+   "sec": 7.97,
+   "cues": [
+    "Pine Labs has just committed to deploy 10 lakh soundboxes,",
+    "and its CEO tied the plan directly to the new economics."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "m34",
+   "say": "The fee does not create a moat. It raises the value of one that already exists, the installed merchant base, and funds the race to build it.",
+   "cap": "The MDR does not create a moat. It raises the value of one that already exists, the installed merchant base, and funds the race to build it.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "MDR DOES NOT CREATE A MOAT",
+      "at": "does not create"
+     },
+     {
+      "text": "IT RAISES THE VALUE OF ONE",
+      "at": "raises the value",
+      "red": true
+     },
+     {
+      "text": "THE INSTALLED MERCHANT BASE",
+      "at": "installed"
+     }
+    ]
+   },
+   "sec": 7.76,
+   "cues": [
+    "The MDR does not create a moat.",
+    "It raises the value of one that already exists, the installed merchant base,",
+    "and funds the race to build it."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "m40",
+   "say": "Chapter four. What it means for banks.",
+   "cap": "Chapter four. What it means for banks.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHAT IT MEANS",
+     "FOR BANKS"
+    ],
+    "red": false
+   },
+   "sec": 3.73,
+   "cues": [
+    "Chapter four.",
+    "What it means for banks."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "m41",
+   "say": "Banks sit on both sides of every UPI payment. For them, the fee is mainly cost recovery, replacing government subsidy that NPCI calls short term bridge funding.",
+   "cap": "Banks sit on both sides of every UPI payment. For them, the MDR is mainly cost recovery, replacing government subsidy that NPCI calls \"short-term bridge funding\".",
+   "scene": {
+    "type": "cards",
+    "heading": "BANKS ON BOTH SIDES",
+    "cards": [
+     {
+      "top": "PAYER'S BANK",
+      "big": "SENDS",
+      "at": "both sides"
+     },
+     {
+      "top": "MERCHANT'S BANK",
+      "big": "RECEIVES",
+      "at": "every UPI"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "COST RECOVERY",
+      "at": "cost recovery"
+     }
+    ]
+   },
+   "sec": 9.85,
+   "cues": [
+    "Banks sit on both sides of every UPI payment.",
+    "For them, the MDR is mainly cost recovery,",
+    "replacing government subsidy that NPCI calls \"short-term bridge funding\"."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "m42",
+   "say": "Credit on UPI is separate. RuPay credit cards on UPI stay under card rules, where fees are one and a half to two and a half percent. Even at zero point four percent, UPI stays cheaper than a debit card, at up to zero point nine percent.",
+   "cap": "Credit on UPI is separate. RuPay credit cards on UPI stay under card rules, where MDRs are 1.5% to 2.5%. Even at 0.4%, UPI stays cheaper than a debit card, at up to 0.90%.",
+   "scene": {
+    "type": "bars",
+    "heading": "MERCHANT FEE, % OF PAYMENT",
+    "rows": [
+     {
+      "name": "UPI ABOVE ₹2,000",
+      "v": 0.4,
+      "label": "0.4%",
+      "at": "Even at",
+      "red": true
+     },
+     {
+      "name": "DEBIT CARD (CAP)",
+      "v": 0.9,
+      "label": "up to 0.90%",
+      "at": "debit card"
+     },
+     {
+      "name": "CREDIT CARD",
+      "v": 2.5,
+      "label": "1.5–2.5%",
+      "at": "credit cards"
+     }
+    ]
+   },
+   "sec": 15.36,
+   "cues": [
+    "Credit on UPI is separate.",
+    "RuPay credit cards on UPI stay under card rules, where MDRs are 1.5% to 2.5%.",
+    "Even at 0.4%, UPI stays cheaper than a debit card, at up to 0.90%."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "m50",
+   "say": "Chapter five. The MoatSCORE board.",
+   "cap": "Chapter five. The MoatSCORE board.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "MOATSCORE BOARD"
+    ],
+    "red": false
+   },
+   "sec": 2.53,
+   "cues": [
+    "Chapter five.",
+    "The MoatSCORE board."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "m51",
+   "say": "Here are the published MoatSCOREs for the listed companies most exposed. They have not been re-scored for this change.",
+   "cap": "Here are the published MoatSCOREs for the listed companies most exposed. They have not been re-scored for this change.",
+   "scene": {
+    "type": "scores",
+    "rows": [
+     [
+      "ICICI Bank",
+      6.05
+     ],
+     [
+      "HDFC Bank",
+      6.04
+     ],
+     [
+      "Kotak Mahindra Bank",
+      6.03
+     ],
+     [
+      "SBI Cards",
+      5.57
+     ],
+     [
+      "State Bank of India",
+      5.53
+     ],
+     [
+      "Paytm (One 97)",
+      5.51
+     ],
+     [
+      "Pine Labs",
+      5.2
+     ]
+    ],
+    "note": "AS PUBLISHED 28 SEP 2026 · NOT RE-SCORED"
+   },
+   "sec": 6.48,
+   "cues": [
+    "Here are the published MoatSCOREs for the listed companies most exposed.",
+    "They have not been re-scored for this change."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "m52",
+   "say": "The bear case. The rate can move. Merchants may route around it by staying below two thousand rupees. The money may be competed away on devices. And if banks take most of the split, apps may see little of it.",
+   "cap": "The bear case. The rate can move. Merchants may route around it by staying below ₹2,000. The money may be competed away on devices. And if banks take most of the split, apps may see little of it.",
+   "scene": {
+    "type": "list",
+    "heading": "THE BEAR CASE",
+    "items": [
+     {
+      "text": "THE RATE CAN MOVE",
+      "at": "rate can move"
+     },
+     {
+      "text": "MERCHANTS ROUTE AROUND IT",
+      "at": "route around"
+     },
+     {
+      "text": "COMPETED AWAY ON DEVICES",
+      "at": "competed away"
+     },
+     {
+      "text": "BANKS MAY TAKE THE SPLIT",
+      "at": "if banks"
+     }
+    ]
+   },
+   "sec": 11.34,
+   "cues": [
+    "The bear case.",
+    "The rate can move.",
+    "Merchants may route around it by staying below ₹2,000.",
+    "The money may be competed away on devices.",
+    "And if banks take most of the split, apps may see little of it."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "m53",
+   "say": "Watch four things. The committee's decision on the split. Paytm's payment margin in the October to December quarter. Merchant device growth. And the small merchant fund, due within three months.",
+   "cap": "Watch four things. The committee's decision on the split. Paytm's payment margin in the October–December quarter. Merchant device growth. And the small-merchant fund, due \"within the next three months\".",
+   "scene": {
+    "type": "hand",
+    "title": "Watch:",
+    "items": [
+     {
+      "text": "Who gets the split?",
+      "at": "decision on the split"
+     },
+     {
+      "text": "Paytm margin, Oct–Dec",
+      "at": "Paytm's payment"
+     },
+     {
+      "text": "Merchant device growth",
+      "at": "device growth"
+     },
+     {
+      "text": "Small-merchant fund",
+      "at": "small merchant"
+     }
+    ]
+   },
+   "sec": 11.18,
+   "cues": [
+    "Watch four things.",
+    "The committee's decision on the split.",
+    "Paytm's payment margin in the October–December quarter.",
+    "Merchant device growth.",
+    "And the small-merchant fund, due \"within the next three months\"."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "m60",
+   "say": "Every fact in this video comes from NPCI's published F A Q and the companies' own filings. The links are in the description.",
+   "cap": "Every fact in this video comes from NPCI's published FAQ and the companies' own filings. The links are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "NPCI · FAQs on MDR on select UPI (P2M) · 15 Sep 2026",
+     "Paytm · disclosure on the NPCI circular · 15 Sep 2026",
+     "Paytm · Q1 FY27 earnings release · 20 Jul 2026",
+     "Paytm · Q1 FY27 earnings call · 21 Jul 2026",
+     "Pine Labs · 10 lakh soundboxes · 24 Sep 2026",
+     "Moat & Margin · Moat Screener (MoatSCORE)"
+    ]
+   },
+   "sec": 8.28,
+   "cues": [
+    "Every fact in this video comes from NPCI's published FAQ and the companies'",
+    "own filings.",
+    "The links are in the description."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "m61",
+   "say": "This is educational research, not investment advice. Moat and Margin is not a SEBI registered research analyst or investment adviser.",
+   "cap": "This is educational research, not investment advice. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser.",
+   "scene": {
+    "type": "end"
+   },
+   "sec": 8.44,
+   "cues": [
+    "This is educational research, not investment advice.",
+    "Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser."
+   ]
+  }
+ ],
+ "clips": {
+  "npci_example": {
+   "w": 1465,
+   "h": 229,
+   "hl": [
+    [
+     0.1438,
+     0.2808,
+     0.7741,
+     0.1886
+    ]
+   ],
+   "page": 8,
+   "quote": "For a ₹3,000 purchase, applying the 0.4% rate results in an MDR fee of ₹12"
+  },
+  "npci_committee": {
+   "w": 1465,
+   "h": 229,
+   "hl": [
+    [
+     0.1215,
+     0.2804,
+     0.8518,
+     0.1885
+    ],
+    [
+     0.0266,
+     0.5302,
+     0.4626,
+     0.1885
+    ]
+   ],
+   "page": 2,
+   "quote": "The operational parameters, fee distribution models, and category caps are decided by the UPI and Services Steering Committee"
+  },
+  "paytm_rev": {
+   "w": 1494,
+   "h": 315,
+   "hl": [
+    [
+     0.0261,
+     0.5308,
+     0.9475,
+     0.1242
+    ],
+    [
+     0.0261,
+     0.6783,
+     0.2136,
+     0.1242
+    ]
+   ],
+   "page": 1,
+   "quote": "This will generate additional revenue from the merchant business for many of the payment transactions that were free earlier"
+  },
+  "pine_quote": {
+   "w": 1508,
+   "h": 202,
+   "hl": [
+    [
+     0.0352,
+     0.4022,
+     0.9334,
+     0.1943
+    ]
+   ],
+   "page": 2,
+   "quote": "With new monetization levers emerging, we want to walk the talk by investing back into the ecosystem"
+  }
+ }
+}

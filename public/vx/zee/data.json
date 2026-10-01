@@ -1,0 +1,865 @@
+{
+ "id": "zee",
+ "title": "Zee Learn: The Guarantee Comes Due",
+ "chapters": [
+  "Cold open",
+  "A year of withdrawals",
+  "Why the guarantee matters",
+  "What the auditor said",
+  "The case both ways",
+  "Sources"
+ ],
+ "shorts": [
+  {
+   "title": "The ₹818 crore guarantee",
+   "beats": [
+    "z00",
+    "z01",
+    "z22",
+    "z23"
+   ]
+  },
+  {
+   "title": "The auditor already warned",
+   "beats": [
+    "z31",
+    "z32",
+    "z33"
+   ]
+  },
+  {
+   "title": "A year of withdrawals, reversed",
+   "beats": [
+    "z14",
+    "z15",
+    "z16"
+   ]
+  }
+ ],
+ "timelines": {
+  "ZTL": [
+   [
+    "JUL 2021",
+    "YES BANK CLAIM"
+   ],
+   [
+    "AUG 2023",
+    "₹285 CR SETTLEMENT"
+   ],
+   [
+    "OCT 2024",
+    "SETTLEMENT ENDED"
+   ],
+   [
+    "MAR 2025",
+    "AXIS LOANS → ACRE"
+   ],
+   [
+    "DEC 2025",
+    "DVPL CASE WITHDRAWN"
+   ],
+   [
+    "MAR 2026",
+    "AXIS CASE WITHDRAWN"
+   ],
+   [
+    "JUN 2026",
+    "\"DECIDED TO WITHDRAW\""
+   ],
+   [
+    "SEP 2026",
+    "₹818 CR DEMAND"
+   ]
+  ]
+ },
+ "beats": [
+  {
+   "ch": 0,
+   "key": "z00",
+   "say": "On the twenty sixth of September, an asset reconstruction company served notice on Zee Learn. It has asked the insolvency tribunal to start insolvency proceedings against the company and its subsidiary, alleging a default of about eight hundred and twenty one crore rupees.",
+   "cap": "On 26 September, an asset reconstruction company served notice on Zee Learn. It has asked the insolvency tribunal to start insolvency proceedings against the company and its subsidiary, alleging a default of about ₹821 crore.",
+   "scene": {
+    "type": "clip",
+    "clip": "zl_petition",
+    "heading": "27 SEP 2026 · ZEE LEARN",
+    "hl": [
+     "alleging"
+    ],
+    "stamps": [
+     {
+      "text": "≈ ₹821 CR DEFAULT ALLEGED",
+      "at": "alleging|20"
+     }
+    ]
+   },
+   "sec": 17.06,
+   "cues": [
+    "On 26 September, an asset reconstruction company served notice on Zee Learn.",
+    "It has asked the insolvency tribunal to start insolvency proceedings against",
+    "the company and its subsidiary, alleging a default of about ₹821 crore."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "z01",
+   "say": "Ten days earlier, the same creditor had invoked Zee Learn's corporate guarantee and demanded eight hundred and eighteen crore rupees. For most of the previous year, Zee Learn's filings had reported the opposite: lenders withdrawing cases.",
+   "cap": "Ten days earlier, the same creditor had invoked Zee Learn's corporate guarantee and demanded ₹818.23 crore. For most of the previous year, Zee Learn's filings had reported the opposite: lenders withdrawing cases.",
+   "scene": {
+    "type": "counter",
+    "heading": "GUARANTEE INVOKED · 16 SEP 2026",
+    "to": 818.23,
+    "decimals": 2,
+    "prefix": "₹",
+    "suffix": " CR",
+    "at": "demanded",
+    "stamps": [
+     {
+      "text": "AFTER A YEAR OF WITHDRAWALS",
+      "at": "the opposite"
+     }
+    ]
+   },
+   "sec": 14.55,
+   "cues": [
+    "Ten days earlier, the same creditor had invoked Zee Learn's corporate",
+    "guarantee and demanded ₹818.23 crore.",
+    "For most of the previous year, Zee Learn's filings had reported the opposite:",
+    "lenders withdrawing cases."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "z02",
+   "say": "This is the story of a guarantee that became larger than the company that gave it, told only from Zee Learn's own filings.",
+   "cap": "This is the story of a guarantee that became larger than the company that gave it, told only from Zee Learn's own filings.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "A GUARANTEE",
+      "at": "a guarantee"
+     },
+     {
+      "text": "LARGER THAN THE COMPANY",
+      "at": "larger than",
+      "red": true
+     },
+     {
+      "text": "FROM ITS OWN FILINGS",
+      "at": "told only"
+     }
+    ]
+   },
+   "sec": 6.87,
+   "cues": [
+    "This is the story of a guarantee that became larger than the company that",
+    "gave it, told only from Zee Learn's own filings."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z10",
+   "say": "Chapter one. A year of withdrawals.",
+   "cap": "Chapter one. A year of withdrawals.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "A YEAR OF",
+     "WITHDRAWALS"
+    ],
+    "red": false
+   },
+   "sec": 2.92,
+   "cues": [
+    "Chapter one.",
+    "A year of withdrawals."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z11",
+   "say": "The debts are not Zee Learn's own operating loans. They come from guarantees that Zee Learn and its subsidiary Digital Ventures gave for loans taken by others: four trusts or entities that the filings never name.",
+   "cap": "The debts are not Zee Learn's own operating loans. They come from guarantees that Zee Learn and its subsidiary Digital Ventures gave for loans taken by others: \"four trusts/entity\" that the filings never name.",
+   "scene": {
+    "type": "cards",
+    "cards": [
+     {
+      "top": "ZEE LEARN",
+      "big": "GUARANTOR",
+      "at": "guarantees"
+     },
+     {
+      "top": "DIGITAL VENTURES",
+      "big": "GUARANTOR",
+      "at": "subsidiary Digital"
+     },
+     {
+      "top": "FOUR TRUSTS / ENTITY",
+      "big": "BORROWERS",
+      "sub": "NEVER NAMED",
+      "at": "four trusts",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 12.12,
+   "cues": [
+    "The debts are not Zee Learn's own operating loans.",
+    "They come from guarantees that Zee Learn and its subsidiary Digital Ventures",
+    "gave for loans taken by others:",
+    "\"four trusts/entity\" that the filings never name."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z12",
+   "say": "Yes Bank invoked those guarantees, with a claim of about four hundred and fifty crore rupees including interest to July twenty twenty one. In twenty twenty three, a settlement of two hundred and eighty five crore rupees was agreed with J C Flowers, which had bought the debt. It was terminated in October twenty twenty four, due to delays in payments.",
+   "cap": "Yes Bank invoked those guarantees, with a claim of ₹449.63 crore including interest to July 2021. In 2023, a ₹285 crore settlement was agreed with J.C. Flowers, which had bought the debt. It was terminated in October 2024, \"due to delays in payments\".",
+   "scene": {
+    "type": "timeline",
+    "events": "ZTL",
+    "show": 0,
+    "add": [
+     "Yes Bank",
+     "settlement",
+     "terminated"
+    ]
+   },
+   "sec": 19.77,
+   "cues": [
+    "Yes Bank invoked those guarantees, with a claim of ₹449.63 crore including",
+    "interest to July 2021.",
+    "In 2023, a ₹285 crore settlement was agreed with J.C.",
+    "Flowers, which had bought the debt.",
+    "It was terminated in October 2024, \"due to delays in payments\"."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z13",
+   "say": "The debt then passed to Assets Care and Reconstruction Enterprise, known as ACRE. In March twenty twenty five, Axis Bank's loans to the subsidiary were also assigned to ACRE. One creditor now held both sets of claims.",
+   "cap": "The debt then passed to Assets Care & Reconstruction Enterprise (ACRE). In March 2025, Axis Bank's loans to the subsidiary were also assigned to ACRE. One creditor now held both sets of claims.",
+   "scene": {
+    "type": "timeline",
+    "events": "ZTL",
+    "show": 3,
+    "add": [
+     "Axis Bank"
+    ],
+    "stamps": [
+     {
+      "text": "ONE CREDITOR: ACRE",
+      "at": "One creditor"
+     }
+    ]
+   },
+   "sec": 13.48,
+   "cues": [
+    "The debt then passed to Assets Care & Reconstruction Enterprise (ACRE).",
+    "In March 2025, Axis Bank's loans to the subsidiary were also assigned to ACRE.",
+    "One creditor now held both sets of claims."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z14",
+   "say": "Then came a run of withdrawals. The subsidiary's insolvency process was withdrawn in December twenty twenty five, approved by ninety six percent of its creditors. Axis Bank's petition against Zee Learn was dismissed as withdrawn in March. And in June, the lenders told the tribunal they had decided to withdraw the remaining petition.",
+   "cap": "Then came a run of withdrawals. The subsidiary's insolvency process was withdrawn in December 2025, approved by 96.05% of its creditors. Axis Bank's petition against Zee Learn was dismissed as withdrawn in March 2026. And in June, the lenders told the tribunal they had decided to withdraw the remaining petition.",
+   "scene": {
+    "type": "timeline",
+    "events": "ZTL",
+    "show": 4,
+    "add": [
+     "December",
+     "March",
+     "June"
+    ]
+   },
+   "sec": 19.07,
+   "cues": [
+    "Then came a run of withdrawals.",
+    "The subsidiary's insolvency process was withdrawn in December 2025,",
+    "approved by 96.05% of its creditors.",
+    "Axis Bank's petition against Zee Learn was dismissed as withdrawn in March",
+    "2026.",
+    "And in June, the lenders told the tribunal they had decided to withdraw the",
+    "remaining petition."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z15",
+   "say": "The June filing recorded it plainly: the lender has decided to withdraw the Company Petition.",
+   "cap": "The June filing recorded it plainly: \"the lender has decided to withdraw the Company Petition\".",
+   "scene": {
+    "type": "clip",
+    "clip": "zl_june",
+    "heading": "NCLT ORDER · RECORDED 17 JUN 2026",
+    "hl": [
+     "the lender"
+    ]
+   },
+   "sec": 5.25,
+   "cues": [
+    "The June filing recorded it plainly:",
+    "\"the lender has decided to withdraw the Company Petition\"."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "z16",
+   "say": "Three months later, the direction reversed. On the sixteenth of September, ACRE invoked the guarantee and demanded eight hundred and eighteen point two three crore rupees. On the twenty sixth, it served notice of fresh insolvency petitions.",
+   "cap": "Three months later, the direction reversed. On 16 September, ACRE invoked the guarantee and demanded ₹818.23 crore. On 26 September, it served notice of fresh insolvency petitions.",
+   "scene": {
+    "type": "timeline",
+    "events": "ZTL",
+    "show": 7,
+    "add": [
+     "sixteenth"
+    ],
+    "stamps": [
+     {
+      "text": "REVERSED",
+      "at": "reversed"
+     }
+    ]
+   },
+   "sec": 13.69,
+   "cues": [
+    "Three months later, the direction reversed.",
+    "On 16 September, ACRE invoked the guarantee and demanded ₹818.23 crore.",
+    "On 26 September, it served notice of fresh insolvency petitions."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "z20",
+   "say": "Chapter two. Why the guarantee matters.",
+   "cap": "Chapter two. Why the guarantee matters.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHY THE GUARANTEE",
+     "MATTERS"
+    ],
+    "red": false
+   },
+   "sec": 3.45,
+   "cues": [
+    "Chapter two.",
+    "Why the guarantee matters."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "z21",
+   "say": "Zee Learn's own business is modest and profitable. In the last financial year, standalone revenue was three hundred and twelve point six crore rupees, and profit after tax ninety point six crore, including a one off write back of forty point six crore.",
+   "cap": "Zee Learn's own business is modest and profitable. In FY26, standalone revenue was ₹312.57 crore, and profit after tax ₹90.57 crore, including a one-off write-back of ₹40.58 crore.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE BUSINESS · FY26",
+    "cards": [
+     {
+      "top": "REVENUE",
+      "big": "₹312.6 CR",
+      "at": "standalone revenue"
+     },
+     {
+      "top": "PROFIT AFTER TAX",
+      "big": "₹90.6 CR",
+      "sub": "INCL. ₹40.6 CR ONE-OFF",
+      "at": "profit after tax"
+     }
+    ]
+   },
+   "sec": 14.97,
+   "cues": [
+    "Zee Learn's own business is modest and profitable.",
+    "In FY26, standalone revenue was ₹312.57 crore,",
+    "and profit after tax ₹90.57 crore, including a one-off write-back of ₹40.58",
+    "crore."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "z22",
+   "say": "The guarantee is on a different scale. At the end of June, the accounts put the amount payable to ACRE at six hundred and sixty seven crore rupees. Against that, Zee Learn records almost eight hundred crore rupees as recoverable from the four trusts or entities.",
+   "cap": "The guarantee is on a different scale. At 30 June 2026, the accounts put the amount payable to ACRE at ₹667.46 crore. Against that, Zee Learn records ₹799.93 crore as recoverable from the four trusts/entity.",
+   "scene": {
+    "type": "bars",
+    "heading": "₹ CRORE · 30 JUN 2026",
+    "unit": "",
+    "rows": [
+     {
+      "name": "PAYABLE TO ACRE",
+      "v": 667.46,
+      "label": "667.5",
+      "at": "payable"
+     },
+     {
+      "name": "RECOVERABLE FROM TRUSTS",
+      "v": 799.93,
+      "label": "799.9",
+      "at": "recoverable",
+      "red": true
+     }
+    ]
+   },
+   "sec": 16.74,
+   "cues": [
+    "The guarantee is on a different scale.",
+    "At 30 June 2026, the accounts put the amount payable to ACRE at ₹667.46 crore.",
+    "Against that, Zee Learn records ₹799.93 crore as recoverable from the four",
+    "trusts/entity."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "z23",
+   "say": "Zee Learn's standalone equity in March was two hundred and fifty four crore rupees. The amount it expects to recover from others is more than three times its equity.",
+   "cap": "Zee Learn's standalone equity at 31 March 2026 was ₹253.85 crore. The amount it expects to recover from others is more than three times its equity.",
+   "scene": {
+    "type": "bars",
+    "heading": "₹ CRORE",
+    "rows": [
+     {
+      "name": "RECOVERABLE FROM TRUSTS",
+      "v": 799.93,
+      "label": "799.9",
+      "at": -1,
+      "red": true
+     },
+     {
+      "name": "ZEE LEARN EQUITY (MAR)",
+      "v": 253.85,
+      "label": "253.9",
+      "at": "equity"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "MORE THAN 3× EQUITY",
+      "at": "more than three"
+     }
+    ]
+   },
+   "sec": 9.32,
+   "cues": [
+    "Zee Learn's standalone equity at 31 March 2026 was ₹253.85 crore.",
+    "The amount it expects to recover from others is more than three times its",
+    "equity."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "z24",
+   "say": "Management's view is that the debt will be paid through monetising assets. And the company has been paying: fifty three crore rupees towards the guarantee last year, after thirty seven crore the year before.",
+   "cap": "Management's view is that the debt will be paid through monetising assets. And the company has been paying: ₹53 crore towards the guarantee in FY26, after ₹37 crore in FY25.",
+   "scene": {
+    "type": "cards",
+    "heading": "PAYMENTS TOWARDS THE GUARANTEE",
+    "cards": [
+     {
+      "top": "FY25",
+      "big": "₹37 CR",
+      "at": "thirty seven|-40"
+     },
+     {
+      "top": "FY26",
+      "big": "₹53 CR",
+      "at": "fifty three",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 12.49,
+   "cues": [
+    "Management's view is that the debt will be paid through monetising assets.",
+    "And the company has been paying:",
+    "₹53 crore towards the guarantee in FY26, after ₹37 crore in FY25."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "z30",
+   "say": "Chapter three. What the auditor said.",
+   "cap": "Chapter three. What the auditor said.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHAT THE",
+     "AUDITOR SAID"
+    ],
+    "red": false
+   },
+   "sec": 2.77,
+   "cues": [
+    "Chapter three.",
+    "What the auditor said."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "z31",
+   "say": "The auditor gave a qualified review of the June quarter. First, the eight hundred crore recoverable has not been assessed for impairment, so the auditor said it was unable to comment on the adjustments needed.",
+   "cap": "The auditor gave a qualified review of the June quarter. First, the ₹799.93 crore recoverable has not been assessed for impairment, so the auditor said it was \"unable to comment upon adjustments\".",
+   "scene": {
+    "type": "clip",
+    "clip": "zl_impair",
+    "heading": "AUDITOR · Q1 FY27 REVIEW",
+    "hl": [
+     "not been assessed"
+    ],
+    "stamps": [
+     {
+      "text": "QUALIFIED",
+      "at": "qualified"
+     }
+    ]
+   },
+   "sec": 11.83,
+   "cues": [
+    "The auditor gave a qualified review of the June quarter.",
+    "First, the ₹799.93 crore recoverable has not been assessed for impairment,",
+    "so the auditor said it was \"unable to comment upon adjustments\"."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "z32",
+   "say": "Second, despite two lenders invoking guarantees, the company has not provided for any liability against them.",
+   "cap": "Second, despite two lenders invoking guarantees, \"the Company has not provided for any liability\" against them.",
+   "scene": {
+    "type": "clip",
+    "clip": "zl_noprov",
+    "heading": "AUDITOR · Q1 FY27 REVIEW",
+    "hl": [
+     "has not provided"
+    ]
+   },
+   "sec": 7.24,
+   "cues": [
+    "Second, despite two lenders invoking guarantees,",
+    "\"the Company has not provided for any liability\" against them."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "z33",
+   "say": "And separately, the auditor flagged a material uncertainty relating to going concern. All of this was written before September's demand and petitions.",
+   "cap": "And separately, the auditor flagged a material uncertainty relating to going concern. All of this was written before September's demand and petitions.",
+   "scene": {
+    "type": "clip",
+    "clip": "zl_gc",
+    "heading": "MATERIAL UNCERTAINTY · GOING CONCERN",
+    "hl": [
+     "material uncertainty"
+    ],
+    "stamps": [
+     {
+      "text": "WRITTEN BEFORE SEPTEMBER",
+      "at": "All of this"
+     }
+    ]
+   },
+   "sec": 9.32,
+   "cues": [
+    "And separately, the auditor flagged a material uncertainty relating to going",
+    "concern.",
+    "All of this was written before September's demand and petitions."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "z40",
+   "say": "Chapter four. The case both ways.",
+   "cap": "Chapter four. The case both ways.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE CASE",
+     "BOTH WAYS"
+    ],
+    "red": false
+   },
+   "sec": 2.53,
+   "cues": [
+    "Chapter four.",
+    "The case both ways."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "z41",
+   "say": "The record so far favours settlement. Every earlier insolvency action in these filings was reversed, withdrawn, or the lender said it would withdraw. The new petitions have not yet been admitted, and the operating business grew last quarter.",
+   "cap": "The record so far favours settlement. Every earlier insolvency action in these filings was reversed, withdrawn, or the lender said it would withdraw. The new petitions have not yet been admitted, and the operating business grew last quarter.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE RECORD SO FAR",
+    "cards": [
+     {
+      "top": "2023 ADMISSION",
+      "big": "SET ASIDE",
+      "at": "reversed"
+     },
+     {
+      "top": "DVPL + AXIS CASES",
+      "big": "WITHDRAWN",
+      "at": "withdrawn,"
+     },
+     {
+      "top": "NEW PETITIONS",
+      "big": "NOT ADMITTED",
+      "at": "not yet been admitted",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 13.56,
+   "cues": [
+    "The record so far favours settlement.",
+    "Every earlier insolvency action in these filings was reversed, withdrawn,",
+    "or the lender said it would withdraw.",
+    "The new petitions have not yet been admitted,",
+    "and the operating business grew last quarter."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "z42",
+   "say": "Now the bear case. One creditor now holds every claim. The June signal was reversed. The balance sheet depends on others paying. A settlement has failed before. And if a petition is admitted, a resolution professional takes charge and the board's powers are suspended.",
+   "cap": "Now the bear case. One creditor now holds every claim. The June signal was reversed. The balance sheet depends on others paying. A settlement has failed before. And if a petition is admitted, a resolution professional takes charge and the board's powers are suspended.",
+   "scene": {
+    "type": "list",
+    "heading": "THE BEAR CASE",
+    "items": [
+     {
+      "text": "ONE CREDITOR HOLDS EVERY CLAIM",
+      "at": "One creditor"
+     },
+     {
+      "text": "THE JUNE SIGNAL WAS REVERSED",
+      "at": "June signal"
+     },
+     {
+      "text": "EQUITY RESTS ON OTHERS PAYING",
+      "at": "depends on"
+     },
+     {
+      "text": "A SETTLEMENT HAS FAILED BEFORE",
+      "at": "has failed"
+     },
+     {
+      "text": "ADMISSION SUSPENDS THE BOARD",
+      "at": "if a petition"
+     }
+    ]
+   },
+   "sec": 17.21,
+   "cues": [
+    "Now the bear case.",
+    "One creditor now holds every claim.",
+    "The June signal was reversed.",
+    "The balance sheet depends on others paying.",
+    "A settlement has failed before.",
+    "And if a petition is admitted, a resolution professional takes charge and the",
+    "board's powers are suspended."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "z43",
+   "say": "Watch four things. Whether the tribunal admits the petitions. Any settlement with ACRE. The next auditor's report. And any impairment of the eight hundred crore recoverable.",
+   "cap": "Watch four things. Whether the tribunal admits the petitions. Any settlement with ACRE. The next auditor's report. And any impairment of the ₹799.93 crore recoverable.",
+   "scene": {
+    "type": "hand",
+    "title": "Watch:",
+    "items": [
+     {
+      "text": "Tribunal admits the petitions?",
+      "at": "Whether the tribunal"
+     },
+     {
+      "text": "Any settlement with ACRE",
+      "at": "Any settlement"
+     },
+     {
+      "text": "The next auditor's report",
+      "at": "next auditor"
+     },
+     {
+      "text": "Impairment of the ₹800 cr",
+      "at": "any impairment"
+     }
+    ]
+   },
+   "sec": 12.12,
+   "cues": [
+    "Watch four things.",
+    "Whether the tribunal admits the petitions.",
+    "Any settlement with ACRE.",
+    "The next auditor's report.",
+    "And any impairment of the ₹799.93 crore recoverable."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "z44",
+   "say": "Zee Learn shows that a company's risk can sit entirely outside its operations. The schools earn money. But the guarantees are now larger than the company itself. Zee Learn is not yet in the MoatSCORE universe, so there is no score to show.",
+   "cap": "Zee Learn shows that a company's risk can sit entirely outside its operations. The business earns money. But the guarantees are now larger than the company itself. Zee Learn is not yet in the MoatSCORE universe, so there is no score to show.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "THE RISK SITS",
+      "at": "risk can sit"
+     },
+     {
+      "text": "OUTSIDE THE BUSINESS",
+      "at": "entirely outside",
+      "red": true
+     },
+     {
+      "text": "MOATSCORE: NOT YET SCORED",
+      "at": "not yet in"
+     }
+    ]
+   },
+   "sec": 13.82,
+   "cues": [
+    "Zee Learn shows that a company's risk can sit entirely outside its operations.",
+    "The business earns money.",
+    "But the guarantees are now larger than the company itself.",
+    "Zee Learn is not yet in the MoatSCORE universe, so there is no score to show."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "z50",
+   "say": "Every fact in this video comes from Zee Learn's own filings and financial results. The links are in the description.",
+   "cap": "Every fact in this video comes from Zee Learn's own filings and financial results. The links are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "Insolvency petitions served · 27 Sep 2026",
+     "Guarantee invoked by ACRE · 16 Sep 2026",
+     "Q1 FY27 results & auditor's review · 29 Jul 2026",
+     "FY26 audited results · 22 May 2026",
+     "NCLT order on withdrawal · 17 Jun 2026",
+     "Axis petition withdrawn · 20 Mar 2026",
+     "DVPL process withdrawn · 6 Jan 2026"
+    ]
+   },
+   "sec": 6.27,
+   "cues": [
+    "Every fact in this video comes from Zee Learn's own filings and financial",
+    "results.",
+    "The links are in the description."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "z51",
+   "say": "This is educational research, not investment advice. Moat and Margin is not a SEBI registered research analyst or investment adviser.",
+   "cap": "This is educational research, not investment advice. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser.",
+   "scene": {
+    "type": "end"
+   },
+   "sec": 7.55,
+   "cues": [
+    "This is educational research, not investment advice.",
+    "Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser."
+   ]
+  }
+ ],
+ "clips": {
+  "zl_petition": {
+   "w": 1352,
+   "h": 206,
+   "hl": [
+    [
+     0.4925,
+     0.776,
+     0.325,
+     0.247
+    ]
+   ],
+   "page": 2,
+   "quote": "approximately Rs. 821 crores"
+  },
+  "zl_june": {
+   "w": 1459,
+   "h": 206,
+   "hl": [
+    [
+     0.6834,
+     0.3767,
+     0.2898,
+     0.2467
+    ],
+    [
+     0.0267,
+     0.5767,
+     0.3379,
+     0.2467
+    ]
+   ],
+   "page": 1,
+   "quote": "the lender has decided to withdraw the Company Petition"
+  },
+  "zl_impair": {
+   "w": 1423,
+   "h": 219,
+   "hl": [
+    [
+     0.3438,
+     0.3806,
+     0.6271,
+     0.2216
+    ],
+    [
+     0.0274,
+     0.5534,
+     0.7758,
+     0.2216
+    ]
+   ],
+   "page": 6,
+   "quote": "In the absence of assessment of impairment of the recoverable amount of Rs. 79,993.47 lakhs, we are unable to comment upon adjustments"
+  },
+  "zl_noprov": {
+   "w": 1400,
+   "h": 145,
+   "hl": [
+    [
+     0.1006,
+     0.2027,
+     0.8653,
+     0.3361
+    ]
+   ],
+   "page": 7,
+   "quote": "the Company has not provided for any liability against the above Corporate Guarantee"
+  },
+  "zl_gc": {
+   "w": 1400,
+   "h": 145,
+   "hl": [
+    [
+     0.6036,
+     0.2057,
+     0.3685,
+     0.3348
+    ],
+    [
+     0.0284,
+     0.4595,
+     0.5679,
+     0.3348
+    ]
+   ],
+   "page": 8,
+   "quote": "These conditions indicate existence of material uncertainty which may cast significant doubt"
+  }
+ }
+}

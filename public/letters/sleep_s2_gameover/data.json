@@ -1,0 +1,192 @@
+{
+ "id": "sleep_s2_gameover",
+ "title": "The Game Is Over",
+ "beats": [
+  {
+   "key": "a",
+   "say": "December 2008. Nick Sleep's fund has just lost forty-five point three percent in a year. The world index lost forty point seven.",
+   "scene": {
+    "type": "stat",
+    "head": "THE WORST YEAR IN THE TABLE",
+    "clip": "table",
+    "src": "Nomad letter, period ended 31 Dec 2008 · p.147 · unaudited, before fees",
+    "at": "forty-five point three",
+    "at2": "forty point seven",
+    "n1": 45.3,
+    "n2": 40.7,
+    "l1": "NOMAD",
+    "l2": "MSCI WORLD"
+   },
+   "cap": "December 2008. Nick Sleep's fund has just lost forty-five point three percent in a year. The world index lost forty point seven.",
+   "sec": 9.17,
+   "cues": [
+    "December 2008.",
+    "Nick Sleep's fund has just lost forty-five point three percent in a year.",
+    "The world index lost forty point seven."
+   ]
+  },
+  {
+   "key": "b",
+   "say": "In that same letter he writes about a shop. Amazon's operating costs, plus its operating margin, are less than some of its high street rivals' costs.",
+   "scene": {
+    "type": "bars",
+    "head": "THE ARITHMETIC",
+    "clip": "less",
+    "src": "Nomad letter, period ended 31 Dec 2008 · p.151",
+    "at": "operating costs",
+    "at2": "less than some"
+   },
+   "cap": "In that same letter he writes about a shop. Amazon's operating costs, plus its operating margin, are less than some of its high street rivals' costs.",
+   "sec": 9.66,
+   "cues": [
+    "In that same letter he writes about a shop.",
+    "Amazon's operating costs, plus its operating margin,",
+    "are less than some of its high street rivals' costs."
+   ]
+  },
+  {
+   "key": "c",
+   "say": "So a rival could price at breakeven and still not undercut Amazon. His words: for these high street competitors, the game is over.",
+   "scene": {
+    "type": "quote",
+    "head": "THE TURN",
+    "clip": "over",
+    "q": "For these high street competitors the game is over.",
+    "src": "Nomad letter, period ended 31 Dec 2008 · p.151",
+    "qat": "the game is over",
+    "at": "game is over"
+   },
+   "cap": "So a rival could price at breakeven and still not undercut Amazon. His words: for these high street competitors, the game is over.",
+   "sec": 10.19,
+   "cues": [
+    "So a rival could price at breakeven and still not undercut Amazon.",
+    "His words:",
+    "for these high street competitors, the game is over."
+   ]
+  },
+  {
+   "key": "d",
+   "say": "He named three that had already gone. Circuit City. Woolworths. Zavvi.",
+   "scene": {
+    "type": "quote",
+    "head": "ALREADY GONE",
+    "clip": "gone",
+    "q": "Circuit City, Woolworths, Zavvi",
+    "src": "Nomad letter, period ended 31 Dec 2008 · p.152",
+    "qat": "Circuit City",
+    "at": "Circuit City"
+   },
+   "cap": "He named three that had already gone. Circuit City. Woolworths. Zavvi.",
+   "sec": 4.81,
+   "cues": [
+    "He named three that had already gone.",
+    "Circuit City.",
+    "Woolworths.",
+    "Zavvi."
+   ]
+  },
+  {
+   "key": "e",
+   "say": "The engine is a loop. Scale savings are given back to the customer as lower prices. The customer buys more. The scale grows again.",
+   "scene": {
+    "type": "loop",
+    "head": "THE LOOP",
+    "clip": "shared",
+    "src": "Nomad letter, period ended 31 Dec 2008 · p.151",
+    "at": "given back"
+   },
+   "cap": "The engine is a loop. Scale savings are given back to the customer as lower prices. The customer buys more. The scale grows again.",
+   "sec": 9.04,
+   "cues": [
+    "The engine is a loop.",
+    "Scale savings are given back to the customer as lower prices.",
+    "The customer buys more.",
+    "The scale grows again."
+   ]
+  }
+ ],
+ "clips": {
+  "table": {
+   "w": 1442,
+   "h": 1209,
+   "hl": [
+    [
+     0.5469,
+     0.0317,
+     0.0853,
+     0.038
+    ],
+    [
+     0.497,
+     0.8615,
+     0.0853,
+     0.038
+    ]
+   ],
+   "page": 147,
+   "quote": "-45.3%"
+  },
+  "less": {
+   "w": 1443,
+   "h": 208,
+   "hl": [
+    [
+     0.3444,
+     0.3873,
+     0.4194,
+     0.2214
+    ]
+   ],
+   "page": 151,
+   "quote": "are less than some of its high street peers"
+  },
+  "over": {
+   "w": 1443,
+   "h": 190,
+   "hl": [
+    [
+     0.315,
+     0.4283,
+     0.1731,
+     0.2425
+    ]
+   ],
+   "page": 151,
+   "quote": "the game is over"
+  },
+  "gone": {
+   "w": 1442,
+   "h": 208,
+   "hl": [
+    [
+     0.2152,
+     0.3912,
+     0.3467,
+     0.2214
+    ]
+   ],
+   "page": 152,
+   "quote": "Circuit City, Woolworths, Zavvi"
+  },
+  "shared": {
+   "w": 1442,
+   "h": 250,
+   "hl": [
+    [
+     0.8228,
+     0.3232,
+     0.1492,
+     0.1846
+    ],
+    [
+     0.027,
+     0.4893,
+     0.5848,
+     0.1846
+    ]
+   ],
+   "page": 151,
+   "quote": "scale savings are given back to the customer in the form of lower prices"
+  }
+ }
+}

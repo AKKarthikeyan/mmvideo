@@ -121,5 +121,23 @@ export const PhotoThumbStills: React.FC = () => (
     <Still id="MFT-mf004-amex-1" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "tank_farm", l1: "FULL OF", l2: "WATER?", tag: "THE $180M SWINDLE"}} width={1280} height={720}/>
     <Still id="MFT-mf004-amex-2" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "steakhouse", l1: "HE WATCHED", l2: "DINERS", tag: "BUFFETT'S STAKEOUT"}} width={1280} height={720}/>
     <Still id="MFT-mf004-amex-3" component={PhotoThumb as any} defaultProps={{vid: "mf004-amex", img: "partner_letter", l1: "40% IN", l2: "ONE STOCK", tag: "RIGHT AFTER A SCANDAL"}} width={1280} height={720}/>
+    <Still id="MFT-mf005-nfm-1" component={PhotoThumb as any} defaultProps={{vid: "mf005-nfm", img: "carpet_rolls", l1: "$500 VS", l2: "EVERYONE", tag: "NO RIVAL LEFT STANDING"}} width={1280} height={720}/>
+    <Still id="MFT-mf005-nfm-2" component={PhotoThumb as any} defaultProps={{vid: "mf005-nfm", img: "court_omaha", l1: "ON TRIAL", l2: "FOR CHEAP", tag: "THEN SOLD THE JUDGE CARPET"}} width={1280} height={720}/>
+    <Still id="MFT-mf005-nfm-3" component={PhotoThumb as any} defaultProps={{vid: "mf005-nfm", img: "mega_store", l1: "WRESTLE", l2: "GRIZZLIES?", tag: "BUFFETT ON MRS. B"}} width={1280} height={720}/>
+    <Still id="MFT-mf006-buffalo-1" component={PhotoThumb as any} defaultProps={{vid: "mf006-buffalo", img: "two_trucks", l1: "ONLY ONE", l2: "SURVIVES", tag: "BUFFETT'S NEWSPAPER WAR"}} width={1280} height={720}/>
+    <Still id="MFT-mf006-buffalo-2" component={PhotoThumb as any} defaultProps={{vid: "mf006-buffalo", img: "court_appeal", l1: "17 MONTHS", l2: "OF HELL", tag: "“ALL HELL BROKE LOOSE”"}} width={1280} height={720}/>
+    <Still id="MFT-mf006-buffalo-3" component={PhotoThumb as any} defaultProps={{vid: "mf006-buffalo", img: "tv_glow", l1: "WON THE WAR", l2: "LOST THE ERA", tag: "THE MOAT THAT DISSOLVED"}} width={1280} height={720}/>
+    <Still id="MFT-mf007-coke-1" component={PhotoThumb as any} defaultProps={{vid: "mf007-coke", img: "boy_bottles", l1: "52 YEARS", l2: "TOO LATE?", tag: "THEN $1 BILLION"}} width={1280} height={720}/>
+    <Still id="MFT-mf007-coke-2" component={PhotoThumb as any} defaultProps={{vid: "mf007-coke", img: "castle_moat", l1: "THE MOAT", l2: "SENTENCE", tag: "BUFFETT ON COKE, 1993"}} width={1280} height={720}/>
+    <Still id="MFT-mf007-coke-3" component={PhotoThumb as any} defaultProps={{vid: "mf007-coke", img: "analyst_1938", l1: "“TOO LATE”", l2: "IN 1938?", tag: "THEN IT GREW 50×"}} width={1280} height={720}/>
+    <Still id="MFT-mf008-costco-1" component={PhotoThumb as any} defaultProps={{vid: "mf008-costco", img: "jeans_stack", l1: "HE SAID", l2: "NO.", tag: "TO AN EASY 50% MARK-UP"}} width={1280} height={720}/>
+    <Still id="MFT-mf008-costco-2" component={PhotoThumb as any} defaultProps={{vid: "mf008-costco", img: "warehouse_aisle", l1: "$5 FOR YOU", l2: "$1 FOR IT", tag: "THE COSTCO MOAT"}} width={1280} height={720}/>
+    <Still id="MFT-mf008-costco-3" component={PhotoThumb as any} defaultProps={{vid: "mf008-costco", img: "framed_memo", l1: "THE 1967", l2: "MEMO", tag: "FRAMED ON A FUND'S WALL"}} width={1280} height={720}/>
+    <Still id="MFT-mf009-walmart-1" component={PhotoThumb as any} defaultProps={{vid: "mf009-walmart", img: "fund_office", l1: "THEY SOLD", l2: "WAL-MART", tag: "THEIR BIGGEST MISTAKE?"}} width={1280} height={720}/>
+    <Still id="MFT-mf009-walmart-2" component={PhotoThumb as any} defaultProps={{vid: "mf009-walmart", img: "store_night", l1: "1,500×", l2: "STILL CHEAP", tag: "WAL-MART, 1972"}} width={1280} height={720}/>
+    <Still id="MFT-mf009-walmart-3" component={PhotoThumb as any} defaultProps={{vid: "mf009-walmart", img: "two_paths", l1: "SOLD", l2: "TOO EARLY", tag: "WHY SMART PEOPLE DO IT"}} width={1280} height={720}/>
+    <Still id="MFT-mf010-dexter-1" component={PhotoThumb as any} defaultProps={{vid: "mf010-dexter", img: "shoe_factory", l1: "$433M →", l2: "$6 BILLION", tag: "BUFFETT'S WORST DEAL"}} width={1280} height={720}/>
+    <Still id="MFT-mf010-dexter-2" component={PhotoThumb as any} defaultProps={{vid: "mf010-dexter", img: "share_certificate", l1: "HE PAID", l2: "IN SHARES", tag: "THE $6 BILLION MISTAKE"}} width={1280} height={720}/>
+    <Still id="MFT-mf010-dexter-3" component={PhotoThumb as any} defaultProps={{vid: "mf010-dexter", img: "maine_town", l1: "“DIDN'T SEE", l2: "IT COMING”", tag: "WARREN BUFFETT, 2014"}} width={1280} height={720}/>
   </>
 );

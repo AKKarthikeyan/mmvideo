@@ -1,0 +1,1480 @@
+{
+ "id": "mf008-costco",
+ "title": "Costco's Moat: The Jeans It Refused to Profit From",
+ "chapters": [
+  "Costco: the jeans",
+  "The contract",
+  "The machine",
+  "The flywheel",
+  "The doubters",
+  "The ratio",
+  "Case reopened",
+  "Defence and verdict",
+  "India lens and next case"
+ ],
+ "shorts": [
+  {
+   "title": "Costco refused an easy 50% markup",
+   "hook": "2 million jeans|and an easy profit",
+   "beats": [
+    "o00",
+    "o01",
+    "o02"
+   ]
+  },
+  {
+   "title": "Why Costco cuts prices when it grows",
+   "hook": "It grows by|giving more back",
+   "beats": [
+    "o31",
+    "o32",
+    "o33"
+   ]
+  },
+  {
+   "title": "The robustness ratio",
+   "hook": "$5 saved for you|for every $1 kept",
+   "beats": [
+    "o51",
+    "o52",
+    "o53"
+   ]
+  }
+ ],
+ "engine": "case",
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "o00",
+   "say": "A buyer at Costco has found a steal. Two million pairs of designer jeans. Shipped out into international waters, and brought back in, for about twenty two dollars a pair, all in. That's ten dollars below the price Costco used to sell them at. And half what most other stores pay.",
+   "cap": "A buyer at Costco has found a steal. 2 million pairs of designer jeans. Shipped out into international waters, and brought back in, for about $22 a pair, all in. That's $10 below the price Costco used to sell them at. And half what most other stores pay.",
+   "scene": {
+    "type": "x-photo",
+    "img": "jeans_stack",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "DESIGNER JEANS",
+      "text": "2,000,000",
+      "at": "Two million pairs",
+      "x": 160,
+      "y": 170,
+      "w": 560
+     },
+     {
+      "kind": "card",
+      "top": "ALL-IN COST, PER PAIR",
+      "text": "~$22",
+      "red": true,
+      "at": "twenty two dollars",
+      "x": 1240,
+      "y": 170,
+      "w": 480
+     },
+     {
+      "kind": "stamp",
+      "text": "$10 BELOW COSTCO'S OLD PRICE",
+      "at": "ten dollars below",
+      "x": 1250,
+      "y": 900,
+      "size": 58
+     }
+    ]
+   },
+   "spoken": "A buyer at Costco has found a steal. Two million pairs of designer jeans. Shipped out into international waters, and brought back in, for about twenty two dollars a pair, all in. That's ten dollars below the price Costco used to sell them at. And half what most other stores pay.",
+   "sec": 17.14,
+   "cues": [
+    "A buyer at Costco has found a steal.",
+    "2 million pairs of designer jeans.",
+    "Shipped out into international waters, and brought back in,",
+    "for about $22 a pair, all in.",
+    "That's $10 below the price Costco used to sell them at.",
+    "And half what most other stores pay."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "o01",
+   "say": "Costco's usual markup is about fourteen percent. Sell at the old price instead, and that's a fifty percent markup. One buyer said, let's take the bigger margin this time. No one would know.",
+   "cap": "Costco's usual markup is about 14%. Sell at the old price instead, and that's a 50% markup. One buyer said, let's take the bigger margin this time. No one would know.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE TEMPTATION",
+    "cards": [
+     {
+      "top": "USUAL COSTCO MARK-UP",
+      "big": "14%",
+      "at": "fourteen percent"
+     },
+     {
+      "top": "AT THE OLD PRICE",
+      "big": "~50%",
+      "at": "fifty percent markup",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "“NO ONE WOULD KNOW”",
+      "at": "No one would know"
+     }
+    ]
+   },
+   "spoken": "Costco's usual markup is about fourteen percent. Sell at the old price instead, and that's a fifty percent markup. One buyer said, let's take the bigger margin this time. No one would know.",
+   "sec": 10.66,
+   "cues": [
+    "Costco's usual markup is about 14%.",
+    "Sell at the old price instead, and that's a 50% markup.",
+    "One buyer said, let's take the bigger margin this time.",
+    "No one would know."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "o02",
+   "say": "The founder, Jim Sinegal, said no. Fourteen percent, as always. His reason? If I let you do it this time, you will do it again.",
+   "cap": "The founder, Jim Sinegal, said no. Fourteen percent, as always. His reason? If I let you do it this time, you will do it again.",
+   "scene": {
+    "type": "clip",
+    "clip": "o02_jeans",
+    "heading": "NOMAD LETTER · ANNUAL 2002",
+    "hl": [
+     "let you do it this time"
+    ]
+   },
+   "spoken": "The founder, Jim Sin-eh-gal, said no. Fourteen percent, as always. His reason? If I let you do it this time, you will do it again.",
+   "sec": 8.91,
+   "cues": [
+    "The founder, Jim Sinegal, said no.",
+    "Fourteen percent, as always.",
+    "His reason?",
+    "If I let you do it this time, you will do it again."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "o03",
+   "say": "This is the case of Costco. Why would a company refuse easy profit? Is that a moat, or just charity? And why did a famous fund manager make it his largest holding?",
+   "cap": "This is the case of Costco. Why would a company refuse easy profit? Is that a moat, or just charity? And why did a famous fund manager make it his largest holding?",
+   "scene": {
+    "type": "x-case",
+    "name": "COSTCO",
+    "sub": "SUBJECT: THE MOAT",
+    "lines": [
+     {
+      "t": "WHY REFUSE EASY PROFIT?",
+      "at": "refuse easy profit"
+     },
+     {
+      "t": "MOAT, OR CHARITY?",
+      "at": "just charity"
+     },
+     {
+      "t": "WHY HIS LARGEST HOLDING?",
+      "at": "largest holding"
+     }
+    ]
+   },
+   "spoken": "This is the case of Costco. Why would a company refuse easy profit? Is that a moat, or just charity? And why did a famous fund manager make it his largest holding?",
+   "sec": 10.27,
+   "cues": [
+    "This is the case of Costco.",
+    "Why would a company refuse easy profit?",
+    "Is that a moat, or just charity?",
+    "And why did a famous fund manager make it his largest holding?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "o10",
+   "say": "Act 1. The contract.",
+   "cap": "Act 1. The contract.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 1",
+    "title": "THE CONTRACT"
+   },
+   "spoken": "Act 1. The contract.",
+   "sec": 2.17,
+   "cues": [
+    "Act 1.",
+    "The contract."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "o11",
+   "say": "Our detective here is Nick Sleep, who ran the Nomad Investment Partnership with Qais Zakaria. In their letter for two thousand two, they explained how Costco works. You pay a membership fee, then forty five dollars, just to get in for a year.",
+   "cap": "Our detective here is Nick Sleep, who ran the Nomad Investment Partnership with Qais Zakaria. In their letter for 2002, they explained how Costco works. You pay a membership fee, then $45, just to get in for a year.",
+   "scene": {
+    "type": "x-photo",
+    "img": "warehouse_aisle",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE DETECTIVE: NICK SLEEP, NOMAD",
+      "at": "Nick Sleep",
+      "x": 120,
+      "y": 170,
+      "size": 36
+     },
+     {
+      "kind": "card",
+      "top": "ANNUAL MEMBERSHIP (2002)",
+      "text": "$45",
+      "red": true,
+      "at": "forty five dollars",
+      "x": 1240,
+      "y": 170,
+      "w": 520
+     }
+    ]
+   },
+   "spoken": "Our detective here is Nick Sleep, who ran the Nomad Investment Partnership with Qais Zak-uh-ree-uh. In their letter for two thousand two, they explained how Costco works. You pay a membership fee, then forty five dollars, just to get in for a year.",
+   "sec": 14.29,
+   "cues": [
+    "Our detective here is Nick Sleep, who ran the Nomad Investment Partnership",
+    "with Qais Zakaria.",
+    "In their letter for 2002, they explained how Costco works.",
+    "You pay a membership fee, then $45, just to get in for a year."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "o12",
+   "say": "In return, Costco marks up everything by a fixed amount. About fourteen percent on brands, fifteen on its own label. The fee is almost all profit. The goods are sold at just above cost. Sleep called it a very simple and honest deal with the customer.",
+   "cap": "In return, Costco marks up everything by a fixed amount. About 14% on brands, 15% on its own label. The fee is almost all profit. The goods are sold at just above cost. Sleep called it a very simple and honest deal with the customer.",
+   "scene": {
+    "type": "x-chain",
+    "heading": "THE COSTCO CONTRACT · NOMAD, 2002",
+    "nodes": [
+     {
+      "t": "YOU PAY THE FEE",
+      "at": "The fee is almost"
+     },
+     {
+      "t": "FIXED 14–15% MARK-UP",
+      "at": "fixed amount",
+      "dark": true
+     },
+     {
+      "t": "VERY LOW PRICES",
+      "at": "just above cost"
+     }
+    ],
+    "stamp": {
+     "text": "“SIMPLE AND HONEST”",
+     "at": "simple and honest"
+    }
+   },
+   "spoken": "In return, Costco marks up everything by a fixed amount. About fourteen percent on brands, fifteen on its own label. The fee is almost all profit. The goods are sold at just above cost. Sleep called it a very simple and honest deal with the customer.",
+   "sec": 15.26,
+   "cues": [
+    "In return, Costco marks up everything by a fixed amount.",
+    "About 14% on brands, 15% on its own label.",
+    "The fee is almost all profit.",
+    "The goods are sold at just above cost.",
+    "Sleep called it a very simple and honest deal with the customer."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "o13",
+   "say": "Compare that with most shops. They push prices up and down to pull in traffic. Is a bottle of shampoo worth two dollars, if it's sometimes one dollar with a coupon? At Costco, Sleep wrote, the customer knows the price is fourteen or fifteen percent above wholesale. Period.",
+   "cap": "Compare that with most shops. They push prices up and down to pull in traffic. Is a bottle of shampoo worth $2, if it's sometimes $1 with a coupon? At Costco, Sleep wrote, the customer knows the price is 14 or 15% above wholesale. Period.",
+   "scene": {
+    "type": "x-fall",
+    "heading": "HIGH-LOW PRICING · NOMAD'S EXAMPLE",
+    "steps": [
+     {
+      "top": "THIS WEEK",
+      "big": "$2",
+      "at": "worth two dollars"
+     },
+     {
+      "top": "WITH A COUPON",
+      "big": "$1",
+      "at": "one dollar with a coupon"
+     },
+     {
+      "top": "AT COSTCO",
+      "big": "+14%",
+      "at": "Period"
+     }
+    ],
+    "stamp": {
+     "text": "NO GAMES",
+     "at": "Period"
+    }
+   },
+   "spoken": "Compare that with most shops. They push prices up and down to pull in traffic. Is a bottle of shampoo worth two dollars, if it's sometimes one dollar with a coupon? At Costco, Sleep wrote, the customer knows the price is fourteen or fifteen percent above wholesale. Period.",
+   "sec": 16.93,
+   "cues": [
+    "Compare that with most shops.",
+    "They push prices up and down to pull in traffic.",
+    "Is a bottle of shampoo worth $2, if it's sometimes $1 with a coupon?",
+    "At Costco, Sleep wrote, the customer knows the price is 14 or 15% above",
+    "wholesale.",
+    "Period."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "o14",
+   "say": "That's why the jeans mattered so much. One secret markup, and the deal is broken. Costco's own managers described the strategy as easy to understand, and hard to operate.",
+   "cap": "That's why the jeans mattered so much. One secret markup, and the deal is broken. Costco's own managers described the strategy as easy to understand, and hard to operate.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "COSTCO MANAGEMENT, VIA NOMAD 2002",
+    "lines": [
+     {
+      "t": "“EASY TO UNDERSTAND",
+      "at": "easy to understand",
+      "em": [
+       "EASY"
+      ]
+     },
+     {
+      "t": "AND HARD TO OPERATE.”",
+      "at": "hard to operate",
+      "em": [
+       "HARD"
+      ]
+     }
+    ]
+   },
+   "spoken": "That's why the jeans mattered so much. One secret markup, and the deal is broken. Costco's own managers described the strategy as easy to understand, and hard to operate.",
+   "sec": 10.66,
+   "cues": [
+    "That's why the jeans mattered so much.",
+    "One secret markup, and the deal is broken.",
+    "Costco's own managers described the strategy as easy to understand,",
+    "and hard to operate."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "o20",
+   "say": "Act 2. The machine.",
+   "cap": "Act 2. The machine.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 2",
+    "title": "THE MACHINE"
+   },
+   "spoken": "Act 2. The machine.",
+   "sec": 2.17,
+   "cues": [
+    "Act 2.",
+    "The machine."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "o21",
+   "say": "So how do you make money at such tiny margins? Sleep found three things. First, costs are low. Very low. Costco measures its costs in basis points. That's hundredths of a percent.",
+   "cap": "So how do you make money at such tiny margins? Sleep found three things. First, costs are low. Very low. Costco measures its costs in basis points. That's hundredths of a percent.",
+   "scene": {
+    "type": "x-photo",
+    "img": "calculator_desk",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "1. COSTS: VERY, VERY LOW",
+      "at": "costs are low",
+      "x": 560,
+      "y": 200
+     },
+     {
+      "kind": "stamp",
+      "text": "MEASURED IN BASIS POINTS",
+      "at": "basis points",
+      "x": 1300,
+      "y": 900,
+      "size": 60
+     }
+    ]
+   },
+   "spoken": "So how do you make money at such tiny margins? Sleep found three things. First, costs are low. Very low. Costco measures its costs in basis points. That's hundredths of a percent.",
+   "sec": 12.54,
+   "cues": [
+    "So how do you make money at such tiny margins?",
+    "Sleep found three things.",
+    "First, costs are low.",
+    "Very low.",
+    "Costco measures its costs in basis points.",
+    "That's hundredths of a percent."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "o22",
+   "say": "Second, the cheapest possible buying. A store carries only about four thousand products. And each of those spots goes to whichever supplier offers customers the best value. Costco even told suppliers that any vendor who doesn't always quote its lowest price, will be permanently dropped. Sleep's reaction? Grief. One strike and you're out.",
+   "cap": "Second, the cheapest possible buying. A store carries only about 4,000 products. And each of those spots goes to whichever supplier offers customers the best value. Costco even told suppliers that any vendor who doesn't always quote its lowest price, will be permanently dropped. Sleep's reaction? Grief. One strike and you're out.",
+   "scene": {
+    "type": "clip",
+    "clip": "o04_grief",
+    "heading": "NOMAD LETTER · ANNUAL 2004",
+    "hl": [
+     "One strike"
+    ]
+   },
+   "spoken": "Second, the cheapest possible buying. A store carries only about four thousand products. And each of those spots goes to whichever supplier offers customers the best value. Costco even told suppliers that any vendor who doesn't always quote its lowest price, will be permanently dropped. Sleep's reaction? Grief. One strike and you're out.",
+   "sec": 20.11,
+   "cues": [
+    "Second, the cheapest possible buying.",
+    "A store carries only about 4,000 products.",
+    "And each of those spots goes to whichever supplier offers customers the best",
+    "value.",
+    "Costco even told suppliers that any vendor who doesn't always quote its",
+    "lowest price, will be permanently dropped.",
+    "Sleep's reaction?",
+    "Grief.",
+    "One strike and you're out."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "o23",
+   "say": "Compare that with a normal supermarket. It acts like a landlord, renting shelf space to the highest bidding supplier. Sleep put it simply. Many supermarkets make their money from buying from the supplier. Costco makes money from selling to the consumer.",
+   "cap": "Compare that with a normal supermarket. It acts like a landlord, renting shelf space to the highest bidding supplier. Sleep put it simply. Many supermarkets make their money from buying from the supplier. Costco makes money from selling to the consumer.",
+   "scene": {
+    "type": "cards",
+    "heading": "WHO DOES THE STORE WORK FOR? · NOMAD, 2004",
+    "cards": [
+     {
+      "top": "NORMAL SUPERMARKET",
+      "big": "LANDLORD",
+      "at": "like a landlord"
+     },
+     {
+      "top": "COSTCO",
+      "big": "BUYER'S AGENT",
+      "at": "selling to the consumer",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "Compare that with a normal supermarket. It acts like a landlord, renting shelf space to the highest bidding supplier. Sleep put it simply. Many supermarkets make their money from buying from the supplier. Costco makes money from selling to the consumer.",
+   "sec": 14.21,
+   "cues": [
+    "Compare that with a normal supermarket.",
+    "It acts like a landlord, renting shelf space to the highest bidding supplier.",
+    "Sleep put it simply.",
+    "Many supermarkets make their money from buying from the supplier.",
+    "Costco makes money from selling to the consumer."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "o24",
+   "say": "And third, huge sales. Costco's sales per square foot ran about fifty percent above its closest rival, Wal-Mart's Sam's Club.",
+   "cap": "And third, huge sales. Costco's sales per square foot ran about 50% above its closest rival, Wal-Mart's Sam's Club.",
+   "scene": {
+    "type": "bars",
+    "heading": "SALES PER SQ FT · NOMAD, 2004",
+    "rows": [
+     {
+      "name": "SAM'S CLUB",
+      "v": 100,
+      "label": "1×",
+      "at": "closest rival"
+     },
+     {
+      "name": "COSTCO",
+      "v": 150,
+      "label": "~1.5×",
+      "at": "fifty percent above",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "And third, huge sales. Costco's sales per square foot ran about fifty percent above its closest rival, Wal-Mart's Sam's Club.",
+   "sec": 9.25,
+   "cues": [
+    "And third, huge sales.",
+    "Costco's sales per square foot ran about 50% above its closest rival,",
+    "Wal-Mart's Sam's Club."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "o30",
+   "say": "Act 3. The flywheel.",
+   "cap": "Act 3. The flywheel.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 3",
+    "title": "THE FLYWHEEL"
+   },
+   "spoken": "Act 3. The flywheel.",
+   "sec": 2.22,
+   "cues": [
+    "Act 3.",
+    "The flywheel."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "o31",
+   "say": "Here's the real secret. When Costco gets bigger and buys cheaper, it doesn't keep the savings. It cuts prices. Lower prices bring more shoppers. More shoppers mean bigger volumes. Bigger volumes mean cheaper buying. And round again. Even the shoppers at the oldest stores benefit, every time a new one opens.",
+   "cap": "Here's the real secret. When Costco gets bigger and buys cheaper, it doesn't keep the savings. It cuts prices. Lower prices bring more shoppers. More shoppers mean bigger volumes. Bigger volumes mean cheaper buying. And round again. Even the shoppers at the oldest stores benefit, every time a new one opens.",
+   "scene": {
+    "type": "x-loop",
+    "heading": "SCALE EFFICIENCIES SHARED",
+    "nodes": [
+     {
+      "t": "BIGGER",
+      "at": "gets bigger"
+     },
+     {
+      "t": "CHEAPER BUYING",
+      "at": "buys cheaper"
+     },
+     {
+      "t": "LOWER PRICES",
+      "at": "It cuts prices"
+     },
+     {
+      "t": "MORE SHOPPERS",
+      "at": "more shoppers"
+     },
+     {
+      "t": "BIGGER VOLUMES",
+      "at": "bigger volumes"
+     }
+    ],
+    "center": {
+     "text": "THE MOAT",
+     "at": "round again"
+    },
+    "stamp": {
+     "text": "OLD STORES BENEFIT TOO",
+     "at": "oldest stores"
+    }
+   },
+   "spoken": "Here's the real secret. When Costco gets bigger and buys cheaper, it doesn't keep the savings. It cuts prices. Lower prices bring more shoppers. More shoppers mean bigger volumes. Bigger volumes mean cheaper buying. And round again. Even the shoppers at the oldest stores benefit, every time a new one opens.",
+   "sec": 19.23,
+   "cues": [
+    "Here's the real secret.",
+    "When Costco gets bigger and buys cheaper, it doesn't keep the savings.",
+    "It cuts prices.",
+    "Lower prices bring more shoppers.",
+    "More shoppers mean bigger volumes.",
+    "Bigger volumes mean cheaper buying.",
+    "And round again.",
+    "Even the shoppers at the oldest stores benefit, every time a new one opens."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "o32",
+   "say": "Sleep had a whiteboard in his office, listing the very few investment models he believed in. Costco was his best example of one of them. Scale efficiencies shared. Most companies pursue scale efficiencies, he wrote, but few share them.",
+   "cap": "Sleep had a whiteboard in his office, listing the very few investment models he believed in. Costco was his best example of one of them. Scale efficiencies shared. Most companies pursue scale efficiencies, he wrote, but few share them.",
+   "scene": {
+    "type": "clip",
+    "clip": "o04_share",
+    "heading": "NOMAD LETTER · ANNUAL 2004",
+    "hl": [
+     "few share them"
+    ]
+   },
+   "spoken": "Sleep had a whiteboard in his office, listing the very few investment models he believed in. Costco was his best example of one of them. Scale efficiencies shared. Most companies pursue scale efficiencies, he wrote, but few share them.",
+   "sec": 12.96,
+   "cues": [
+    "Sleep had a whiteboard in his office,",
+    "listing the very few investment models he believed in.",
+    "Costco was his best example of one of them.",
+    "Scale efficiencies shared.",
+    "Most companies pursue scale efficiencies, he wrote, but few share them."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "o33",
+   "say": "And he spotted the paradox at its heart. The company grows by giving more back. Ask most companies what they'd do with windfall profits, and they'll spend it, or return it to shareholders. Almost no one replies, give it back to customers. That, he wrote, is why competing with Costco is so hard.",
+   "cap": "And he spotted the paradox at its heart. The company grows by giving more back. Ask most companies what they'd do with windfall profits, and they'll spend it, or return it to shareholders. Almost no one replies, give it back to customers. That, he wrote, is why competing with Costco is so hard.",
+   "scene": {
+    "type": "x-photo",
+    "img": "checkout",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "WINDFALL PROFITS?",
+      "at": "windfall profits",
+      "x": 460,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "MOST: SPEND IT, OR PAY SHAREHOLDERS",
+      "at": "spend it",
+      "x": 700,
+      "y": 330
+     },
+     {
+      "kind": "stamp",
+      "text": "COSTCO: GIVE IT TO CUSTOMERS",
+      "at": "give it back to customers",
+      "x": 1200,
+      "y": 900,
+      "size": 58
+     }
+    ]
+   },
+   "spoken": "And he spotted the paradox at its heart. The company grows by giving more back. Ask most companies what they'd do with windfall profits, and they'll spend it, or return it to shareholders. Almost no one replies, give it back to customers. That, he wrote, is why competing with Costco is so hard.",
+   "sec": 17.66,
+   "cues": [
+    "And he spotted the paradox at its heart.",
+    "The company grows by giving more back.",
+    "Ask most companies what they'd do with windfall profits,",
+    "and they'll spend it, or return it to shareholders.",
+    "Almost no one replies, give it back to customers.",
+    "That, he wrote, is why competing with Costco is so hard."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o40",
+   "say": "Act 4. The doubters.",
+   "cap": "Act 4. The doubters.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 4",
+    "title": "THE DOUBTERS"
+   },
+   "spoken": "Act 4. The doubters.",
+   "sec": 2.3,
+   "cues": [
+    "Act 4.",
+    "The doubters."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o41",
+   "say": "So why was the stock cheap? Wall Street saw three problems. Low margins. Costco kept just one point seven cents of every sales dollar as profit, against three point six at Wal-Mart, and four point two at Target. It looked expensive, at twenty four times earnings. And costs were rising.",
+   "cap": "So why was the stock cheap? Wall Street saw three problems. Low margins. Costco kept just 1.7 cents of every sales dollar as profit, against 3.6 at Wal-Mart, and 4.2 at Target. It looked expensive, at 24 times earnings. And costs were rising.",
+   "scene": {
+    "type": "x-crime",
+    "victim": {
+     "big": "COSTCO",
+     "red": "“CHEAP”",
+     "sub": "as Wall Street saw it, 2004"
+    },
+    "suspects": [
+     {
+      "t": "LOW MARGINS?",
+      "at": "Low margins"
+     },
+     {
+      "t": "EXPENSIVE AT 24×?",
+      "at": "twenty four times"
+     },
+     {
+      "t": "RISING COSTS?",
+      "at": "costs were rising"
+     },
+     {
+      "t": "???",
+      "at": "costs were rising"
+     }
+    ]
+   },
+   "spoken": "So why was the stock cheap? Wall Street saw three problems. Low margins. Costco kept just one point seven cents of every sales dollar as profit, against three point six at Wal-Mart, and four point two at Target. It looked expensive, at twenty four times earnings. And costs were rising.",
+   "sec": 18.96,
+   "cues": [
+    "So why was the stock cheap?",
+    "Wall Street saw three problems.",
+    "Low margins.",
+    "Costco kept just 1.7 cents of every sales dollar as profit,",
+    "against 3.6 at Wal-Mart, and 4.2 at Target.",
+    "It looked expensive, at 24 times earnings.",
+    "And costs were rising."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o42",
+   "say": "Sleep turned each one around. Low margins? That's the point. Costco defers profit today, to extend the life of the franchise. Expensive? If it simply raised prices to Wal-Mart's margins, it would trade at about eleven times earnings. But would it be a better business? We think not, he wrote.",
+   "cap": "Sleep turned each one around. Low margins? That's the point. Costco defers profit today, to extend the life of the franchise. Expensive? If it simply raised prices to Wal-Mart's margins, it would trade at about 11 times earnings. But would it be a better business? We think not, he wrote.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "LOW MARGINS? “THAT'S THE POINT”",
+      "at": "That's the point"
+     },
+     {
+      "text": "AT WAL-MART MARGINS: ~11× EARNINGS",
+      "at": "eleven times"
+     },
+     {
+      "text": "A BETTER BUSINESS? “WE THINK NOT”",
+      "at": "We think not",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Sleep turned each one around. Low margins? That's the point. Costco defers profit today, to extend the life of the franchise. Expensive? If it simply raised prices to Wal-Mart's margins, it would trade at about eleven times earnings. But would it be a better business? We think not, he wrote.",
+   "sec": 19.51,
+   "cues": [
+    "Sleep turned each one around.",
+    "Low margins?",
+    "That's the point.",
+    "Costco defers profit today, to extend the life of the franchise.",
+    "Expensive?",
+    "If it simply raised prices to Wal-Mart's margins,",
+    "it would trade at about 11 times earnings.",
+    "But would it be a better business?",
+    "We think not, he wrote."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o43",
+   "say": "The share price had fallen from a high of fifty five dollars in two thousand, to about thirty, where Nomad bought. Sleep called Costco as perfect a growth stock as we have analysed, available at close to half price.",
+   "cap": "The share price had fallen from a high of $55 in 2000, to about $30, where Nomad bought. Sleep called Costco as perfect a growth stock as we have analysed, available at close to half price.",
+   "scene": {
+    "type": "clip",
+    "clip": "o02_half",
+    "heading": "NOMAD LETTER · ANNUAL 2002",
+    "hl": [
+     "close to half price"
+    ]
+   },
+   "spoken": "The share price had fallen from a high of fifty five dollars in two thousand, to about thirty, where Nomad bought. Sleep called Costco as perfect a growth stock as we have analysed, available at close to half price.",
+   "sec": 12.46,
+   "cues": [
+    "The share price had fallen from a high of $55 in 2000, to about $30,",
+    "where Nomad bought.",
+    "Sleep called Costco as perfect a growth stock as we have analysed,",
+    "available at close to half price."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o44",
+   "say": "And there's a twist. One famous investor, a man Sleep called an industry hero, owned Costco, but kept it to just one percent of his fund. He said labour and customers were getting too much of the rewards. Sleep disagreed. Our investment hero was mistaken, he wrote, by about twenty dollars a share so far.",
+   "cap": "And there's a twist. One famous investor, a man Sleep called an industry hero, owned Costco, but kept it to just 1% of his fund. He said labour and customers were getting too much of the rewards. Sleep disagreed. Our investment hero was mistaken, he wrote, by about $20 a share so far.",
+   "scene": {
+    "type": "clip",
+    "clip": "o04_hero",
+    "heading": "NOMAD LETTER · ANNUAL 2004",
+    "hl": [
+     "investment hero was mistaken"
+    ]
+   },
+   "spoken": "And there's a twist. One famous investor, a man Sleep called an industry hero, owned Costco, but kept it to just one percent of his fund. He said labour and customers were getting too much of the rewards. Sleep disagreed. Our investment hero was mistaken, he wrote, by about twenty dollars a share so far.",
+   "sec": 19.59,
+   "cues": [
+    "And there's a twist.",
+    "One famous investor, a man Sleep called an industry hero, owned Costco,",
+    "but kept it to just 1% of his fund.",
+    "He said labour and customers were getting too much of the rewards.",
+    "Sleep disagreed.",
+    "Our investment hero was mistaken, he wrote, by about $20 a share so far."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "o45",
+   "say": "Sleep was just as hard on himself. He'd started with only about three percent of the fund in Costco. Already, he wrote, your manager may have made his first mistake investing in Costco. From not buying enough.",
+   "cap": "Sleep was just as hard on himself. He'd started with only about 3% of the fund in Costco. Already, he wrote, your manager may have made his first mistake investing in Costco. From not buying enough.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NICK SLEEP, 2004",
+    "lines": [
+     {
+      "t": "STARTING WEIGHT: ~3%",
+      "at": "about three percent",
+      "em": [
+       "3%"
+      ]
+     },
+     {
+      "t": "“MY FIRST MISTAKE… NOT BUYING ENOUGH.”",
+      "at": "not buying enough",
+      "em": [
+       "ENOUGH"
+      ]
+     }
+    ]
+   },
+   "spoken": "Sleep was just as hard on himself. He'd started with only about three percent of the fund in Costco. Already, he wrote, your manager may have made his first mistake investing in Costco. From not buying enough.",
+   "sec": 13.16,
+   "cues": [
+    "Sleep was just as hard on himself.",
+    "He'd started with only about 3% of the fund in Costco.",
+    "Already, he wrote, your manager may have made his first mistake investing in",
+    "Costco.",
+    "From not buying enough."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "o50",
+   "say": "Act 5. The ratio.",
+   "cap": "Act 5. The ratio.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 5",
+    "title": "THE RATIO"
+   },
+   "spoken": "Act 5. The ratio.",
+   "sec": 2.72,
+   "cues": [
+    "Act 5.",
+    "The ratio."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "o51",
+   "say": "Then Sleep invented a way to measure this kind of moat. He called it the robustness ratio. How much does the customer save, for every dollar the company keeps?",
+   "cap": "Then Sleep invented a way to measure this kind of moat. He called it the robustness ratio. How much does the customer save, for every dollar the company keeps?",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NOMAD, 2005",
+    "lines": [
+     {
+      "t": "THE ROBUSTNESS RATIO:",
+      "at": "robustness ratio",
+      "em": [
+       "ROBUSTNESS"
+      ]
+     },
+     {
+      "t": "CUSTOMER SAVES ÷ COMPANY KEEPS",
+      "at": "every dollar the company keeps",
+      "em": [
+       "SAVES"
+      ]
+     }
+    ]
+   },
+   "spoken": "Then Sleep invented a way to measure this kind of moat. He called it the robustness ratio. How much does the customer save, for every dollar the company keeps?",
+   "sec": 9.74,
+   "cues": [
+    "Then Sleep invented a way to measure this kind of moat.",
+    "He called it the robustness ratio.",
+    "How much does the customer save, for every dollar the company keeps?"
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "o52",
+   "say": "Remember case file one? Sleep used GEICO. Its customers saved about a billion dollars against the next cheapest insurer. And GEICO earned about a billion. One dollar saved, for every dollar kept. At Costco, he estimated five dollars saved for customers, for every dollar the company kept.",
+   "cap": "Remember case file one? Sleep used GEICO. Its customers saved about $1 billion against the next cheapest insurer. And GEICO earned about $1 billion. One dollar saved, for every dollar kept. At Costco, he estimated $5 saved for customers, for every dollar the company kept.",
+   "scene": {
+    "type": "x-race",
+    "heading": "THE ROBUSTNESS RATIO · NOMAD INTERIM 2005",
+    "rows": [
+     {
+      "label": "GEICO: SAVED PER $1 KEPT",
+      "from": 1,
+      "to": 1,
+      "prefix": "$",
+      "dec": 0,
+      "at": "One dollar saved"
+     },
+     {
+      "label": "COSTCO: SAVED PER $1 KEPT",
+      "from": 1,
+      "to": 5,
+      "prefix": "$",
+      "dec": 0,
+      "at": "five dollars saved",
+      "red": true
+     }
+    ],
+    "stamp": {
+     "text": "A WIDER MOAT",
+     "at": "every dollar the company kept",
+     "x": 1500,
+     "y": 900
+    }
+   },
+   "spoken": "Remember case file one? Sleep used Guyco. Its customers saved about a billion dollars against the next cheapest insurer. And Guyco earned about a billion. One dollar saved, for every dollar kept. At Costco, he estimated five dollars saved for customers, for every dollar the company kept.",
+   "sec": 17.08,
+   "cues": [
+    "Remember case file one?",
+    "Sleep used GEICO.",
+    "Its customers saved about $1 billion against the next cheapest insurer.",
+    "And GEICO earned about $1 billion.",
+    "One dollar saved, for every dollar kept.",
+    "At Costco, he estimated $5 saved for customers,",
+    "for every dollar the company kept."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "o53",
+   "say": "He even did the shopping maths. A typical cardholder spent about eleven hundred dollars a year at Costco, saving around a hundred and seventy five dollars, for a fee of about twenty three dollars. Look around you, he wrote. How many companies save five dollars for their customers, for every one dollar they keep?",
+   "cap": "He even did the shopping maths. A typical cardholder spent about $1,100 a year at Costco, saving around $175, for a fee of about $23. Look around you, he wrote. How many companies save five dollars for their customers, for every one dollar they keep?",
+   "scene": {
+    "type": "cards",
+    "heading": "ONE COSTCO CARDHOLDER, PER YEAR · NOMAD 2005",
+    "cards": [
+     {
+      "top": "SPENDS",
+      "big": "~$1,100",
+      "at": "eleven hundred dollars"
+     },
+     {
+      "top": "SAVES VS SUPERMARKETS",
+      "big": "~$175",
+      "at": "hundred and seventy five"
+     },
+     {
+      "top": "FEE",
+      "big": "~$23",
+      "at": "twenty three dollars",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "He even did the shopping maths. A typical cardholder spent about eleven hundred dollars a year at Costco, saving around a hundred and seventy five dollars, for a fee of about twenty three dollars. Look around you, he wrote. How many companies save five dollars for their customers, for every one dollar they keep?",
+   "sec": 17.89,
+   "cues": [
+    "He even did the shopping maths.",
+    "A typical cardholder spent about $1,100 a year at Costco, saving around $175,",
+    "for a fee of about $23.",
+    "Look around you, he wrote.",
+    "How many companies save five dollars for their customers,",
+    "for every one dollar they keep?"
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "o60",
+   "say": "Case. Reopened.",
+   "cap": "Case. Reopened.",
+   "scene": {
+    "type": "x-act",
+    "act": "CASE",
+    "title": "REOPENED"
+   },
+   "spoken": "Case. Reopened.",
+   "sec": 1.91,
+   "cues": [
+    "Case.",
+    "Reopened."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "o61",
+   "say": "So was it a moat, or charity? By two thousand five, Costco was Nomad's largest holding. Sleep explained why. Costco's obsession with sharing made its future more predictable, and less risky, than the average business.",
+   "cap": "So was it a moat, or charity? By 2005, Costco was Nomad's largest holding. Sleep explained why. Costco's obsession with sharing made its future more predictable, and less risky, than the average business.",
+   "scene": {
+    "type": "clip",
+    "clip": "o05_largest",
+    "heading": "NOMAD LETTER · INTERIM 2005",
+    "hl": [
+     "more predictable"
+    ]
+   },
+   "spoken": "So was it a moat, or charity? By two thousand five, Costco was Nomad's largest holding. Sleep explained why. Costco's obsession with sharing made its future more predictable, and less risky, than the average business.",
+   "sec": 15.7,
+   "cues": [
+    "So was it a moat, or charity?",
+    "By 2005, Costco was Nomad's largest holding.",
+    "Sleep explained why.",
+    "Costco's obsession with sharing made its future more predictable,",
+    "and less risky, than the average business."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "o62",
+   "say": "In twenty ten, Sleep found where the low costs really came from. Not cheap land. Not cheap wages. From a thousand daily decisions to save money, made by a hundred and forty seven thousand employees, across five hundred and sixty six warehouses.",
+   "cap": "In 2010, Sleep found where the low costs really came from. Not cheap land. Not cheap wages. From a thousand daily decisions to save money, made by 147,000 employees, across 566 warehouses.",
+   "scene": {
+    "type": "cards",
+    "heading": "WHERE THE LOW COST COMES FROM · NOMAD 2010",
+    "cards": [
+     {
+      "top": "EMPLOYEES",
+      "big": "147,000",
+      "at": "hundred and forty seven thousand"
+     },
+     {
+      "top": "WAREHOUSES",
+      "big": "566",
+      "at": "five hundred and sixty six"
+     },
+     {
+      "top": "DECISIONS",
+      "big": "1,000s DAILY",
+      "at": "thousand daily decisions",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "In twenty ten, Sleep found where the low costs really came from. Not cheap land. Not cheap wages. From a thousand daily decisions to save money, made by a hundred and forty seven thousand employees, across five hundred and sixty six warehouses.",
+   "sec": 16.3,
+   "cues": [
+    "In 2010, Sleep found where the low costs really came from.",
+    "Not cheap land.",
+    "Not cheap wages.",
+    "From a thousand daily decisions to save money, made by 147,000 employees,",
+    "across 566 warehouses."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "o63",
+   "say": "And then, mid sentence, Jim Sinegal jumped up and pulled out an old memo from nineteen sixty seven, written by Sol Price, the founder of Fed-Mart, the company Costco's story grew out of. Sleep framed a copy on his office wall. Its key line? Let us concentrate on how cheap we can bring things to the people, rather than how much the traffic will bear.",
+   "cap": "And then, mid-sentence, Jim Sinegal jumped up and pulled out an old memo from 1967, written by Sol Price, the founder of Fed-Mart, the company Costco's story grew out of. Sleep framed a copy on his office wall. Its key line? Let us concentrate on how cheap we can bring things to the people, rather than how much the traffic will bear.",
+   "scene": {
+    "type": "clip",
+    "clip": "o10_solprice",
+    "heading": "NOMAD LETTER · INTERIM 2010 (SOL PRICE MEMO, 1967)",
+    "hl": [
+     "how cheap we can bring things"
+    ]
+   },
+   "spoken": "And then, mid sentence, Jim Sin-eh-gal jumped up and pulled out an old memo from nineteen sixty seven, written by Sol Price, the founder of Fed-Mart, the company Costco's story grew out of. Sleep framed a copy on his office wall. Its key line? Let us concentrate on how cheap we can bring things to the people, rather than how much the traffic will bear.",
+   "sec": 21.6,
+   "cues": [
+    "And then, mid-sentence, Jim Sinegal jumped up and pulled out an old memo from",
+    "1967, written by Sol Price, the founder of Fed-Mart,",
+    "the company Costco's story grew out of.",
+    "Sleep framed a copy on his office wall.",
+    "Its key line?",
+    "Let us concentrate on how cheap we can bring things to the people,",
+    "rather than how much the traffic will bear."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "o64",
+   "say": "Forty three years after that memo, Sleep noted, Costco had become the most valuable retailer of its type in the world. And when Nomad wound down, Costco was still in the portfolio. Sleep called it one of the two grandparents, along with Berkshire Hathaway.",
+   "cap": "Forty-three years after that memo, Sleep noted, Costco had become the most valuable retailer of its type in the world. And when Nomad wound down, Costco was still in the portfolio. Sleep called it one of the two grandparents, along with Berkshire Hathaway.",
+   "scene": {
+    "type": "x-photo",
+    "img": "framed_memo",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "43 YEARS AFTER THE MEMO",
+      "at": "Forty three years",
+      "x": 520,
+      "y": 200
+     },
+     {
+      "kind": "stamp",
+      "text": "MOST VALUABLE OF ITS TYPE",
+      "at": "most valuable retailer",
+      "x": 1300,
+      "y": 880,
+      "size": 62
+     },
+     {
+      "kind": "label",
+      "text": "ONE OF NOMAD'S “TWO GRANDPARENTS”",
+      "at": "two grandparents",
+      "x": 120,
+      "y": 1000,
+      "size": 30
+     }
+    ]
+   },
+   "spoken": "Forty three years after that memo, Sleep noted, Costco had become the most valuable retailer of its type in the world. And when Nomad wound down, Costco was still in the portfolio. Sleep called it one of the two grandparents, along with Berkshire Hathaway.",
+   "sec": 15.1,
+   "cues": [
+    "Forty-three years after that memo, Sleep noted,",
+    "Costco had become the most valuable retailer of its type in the world.",
+    "And when Nomad wound down, Costco was still in the portfolio.",
+    "Sleep called it one of the two grandparents, along with Berkshire Hathaway."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "o70",
+   "say": "The. Defence.",
+   "cap": "The. Defence.",
+   "scene": {
+    "type": "x-act",
+    "act": "THE",
+    "title": "DEFENCE"
+   },
+   "spoken": "The. Defence.",
+   "sec": 1.75,
+   "cues": [
+    "The.",
+    "Defence."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "o71",
+   "say": "Now the defence. One. Thin margins leave very little room for mistakes. Two. The contract lives only as long as management resists temptation. One greedy boss, and it's gone. Three. Sleep himself warned that a low share price could invite a buyout at a bad price. And four. This kind of culture is very hard to build later. It usually has to be there from day one.",
+   "cap": "Now the defence. One. Thin margins leave very little room for mistakes. Two. The contract lives only as long as management resists temptation. One greedy boss, and it's gone. Three. Sleep himself warned that a low share price could invite a buyout at a bad price. And four. This kind of culture is very hard to build later. It usually has to be there from day one.",
+   "scene": {
+    "type": "list",
+    "heading": "THE CASE AGAINST THE MOAT",
+    "items": [
+     {
+      "text": "THIN MARGINS, LITTLE ROOM FOR ERROR",
+      "at": "Thin margins"
+     },
+     {
+      "text": "ONE GREEDY BOSS BREAKS THE CONTRACT",
+      "at": "One greedy boss"
+     },
+     {
+      "text": "A CHEAP STOCK INVITES A BUYOUT",
+      "at": "buyout"
+     },
+     {
+      "text": "CULTURE IS HARD TO BUILD LATER",
+      "at": "day one"
+     }
+    ]
+   },
+   "spoken": "Now the defence. One. Thin margins leave very little room for mistakes. Two. The contract lives only as long as management resists temptation. One greedy boss, and it's gone. Three. Sleep himself warned that a low share price could invite a buyout at a bad price. And four. This kind of culture is very hard to build later. It usually has to be there from day one.",
+   "sec": 24.32,
+   "cues": [
+    "Now the defence.",
+    "One.",
+    "Thin margins leave very little room for mistakes.",
+    "Two.",
+    "The contract lives only as long as management resists temptation.",
+    "One greedy boss, and it's gone.",
+    "Three.",
+    "Sleep himself warned that a low share price could invite a buyout at a bad",
+    "price.",
+    "And four.",
+    "This kind of culture is very hard to build later.",
+    "It usually has to be there from day one."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "o72",
+   "say": "So, here's our verdict. The Costco moat is scale efficiencies shared, and a customer who trusts that the markup will never secretly change. Its biggest threat is the temptation to take a little more. And its status? Nomad's biggest bet, and still held when the partnership closed.",
+   "cap": "So, here's our verdict. The Costco moat is scale efficiencies shared, and a customer who trusts that the markup will never secretly change. Its biggest threat is the temptation to take a little more. And its status? Nomad's biggest bet, and still held when the partnership closed.",
+   "scene": {
+    "type": "x-verdict",
+    "caseName": "CASE FILE 008 · COSTCO",
+    "rows": [
+     {
+      "k": "THE MOAT",
+      "v": "SCALE EFFICIENCIES SHARED + TRUST",
+      "at": "moat is scale"
+     },
+     {
+      "k": "THE THREAT",
+      "v": "THE TEMPTATION TO TAKE MORE",
+      "at": "biggest threat"
+     },
+     {
+      "k": "STATUS",
+      "v": "NOMAD'S LARGEST HOLDING · KEPT TO THE END",
+      "at": "its status"
+     }
+    ]
+   },
+   "spoken": "So, here's our verdict. The Costco moat is scale efficiencies shared, and a customer who trusts that the markup will never secretly change. Its biggest threat is the temptation to take a little more. And its status? Nomad's biggest bet, and still held when the partnership closed.",
+   "sec": 18.31,
+   "cues": [
+    "So, here's our verdict.",
+    "The Costco moat is scale efficiencies shared,",
+    "and a customer who trusts that the markup will never secretly change.",
+    "Its biggest threat is the temptation to take a little more.",
+    "And its status?",
+    "Nomad's biggest bet, and still held when the partnership closed."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o80",
+   "say": "When you study any Indian company that claims to give customers the best value, open a case file with three questions.",
+   "cap": "When you study any Indian company that claims to give customers the best value, open a case file with three questions.",
+   "scene": {
+    "type": "x-photo",
+    "img": "india_wholesale",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "stamp",
+      "text": "OPEN A CASE FILE",
+      "at": "open a case file",
+      "x": 1400,
+      "y": 880,
+      "size": 70
+     }
+    ]
+   },
+   "spoken": "When you study any Indian company that claims to give customers the best value, open a case file with three questions.",
+   "sec": 6.87,
+   "cues": [
+    "When you study any Indian company that claims to give customers the best",
+    "value, open a case file with three questions."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o81",
+   "say": "One. When its costs fall, do its prices fall too? Two. Roughly how much does a customer save, for every rupee the company keeps? Three. If it had a windfall, would management give some back to customers?",
+   "cap": "One. When its costs fall, do its prices fall too? Two. Roughly how much does a customer save, for every rupee the company keeps? Three. If it had a windfall, would management give some back to customers?",
+   "scene": {
+    "type": "hand",
+    "title": "Your case file:",
+    "items": [
+     {
+      "text": "Costs fall → prices fall?",
+      "at": "One. When its"
+     },
+     {
+      "text": "Customer saves per ₹1 kept?",
+      "at": "Two. Roughly"
+     },
+     {
+      "text": "Windfall → back to customers?",
+      "at": "Three. If it had"
+     }
+    ]
+   },
+   "spoken": "One. When its costs fall, do its prices fall too? Two. Roughly how much does a customer save, for every rupee the company keeps? Three. If it had a windfall, would management give some back to customers?",
+   "sec": 14.11,
+   "cues": [
+    "One.",
+    "When its costs fall, do its prices fall too?",
+    "Two.",
+    "Roughly how much does a customer save, for every rupee the company keeps?",
+    "Three.",
+    "If it had a windfall, would management give some back to customers?"
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o82",
+   "say": "We're not saying any Indian company has this moat. You do the detective work.",
+   "cap": "We're not saying any Indian company has this moat. You do the detective work.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NO COMPANY IS NAMED OR RECOMMENDED",
+    "lines": [
+     {
+      "t": "YOU DO THE DETECTIVE WORK.",
+      "at": "You do the",
+      "em": [
+       "DETECTIVE"
+      ]
+     }
+    ]
+   },
+   "spoken": "We're not saying any Indian company has this moat. You do the detective work.",
+   "sec": 4.31,
+   "cues": [
+    "We're not saying any Indian company has this moat.",
+    "You do the detective work."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o83",
+   "say": "One line for your friend over chai. The shop that shares its savings, keeps its customers.",
+   "cap": "One line for your friend over chai. The shop that shares its savings, keeps its customers.",
+   "scene": {
+    "type": "x-photo",
+    "img": "chai_bulk",
+    "move": "out",
+    "fx": 0.5,
+    "fy": 0.5,
+    "shade": 0.25,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE CHAI TEST",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "THE SHOP THAT SHARES ITS SAVINGS",
+      "at": "shares its savings",
+      "x": 960,
+      "y": 780
+     },
+     {
+      "kind": "strip",
+      "text": "KEEPS ITS CUSTOMERS",
+      "at": "keeps its customers",
+      "x": 960,
+      "y": 900,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "One line for your friend over chai. The shop that shares its savings, keeps its customers.",
+   "sec": 6.35,
+   "cues": [
+    "One line for your friend over chai.",
+    "The shop that shares its savings, keeps its customers."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o84",
+   "say": "Every clue here comes from Nick Sleep's letters to his partners. The sources are in the description.",
+   "cap": "Every clue here comes from Nick Sleep's letters to his partners. The sources are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "Nomad letters · annual 2002, annual 2004, interim 2005, interim 2010, interim 2013",
+     "Nomad Investment Partnership letters (Nick Sleep & Qais Zakaria) · compiled edition",
+     "The Moat Files · Case File 008 · every figure on the fact sheet"
+    ]
+   },
+   "spoken": "Every clue here comes from Nick Sleep's letters to his partners. The sources are in the description.",
+   "sec": 6.06,
+   "cues": [
+    "Every clue here comes from Nick Sleep's letters to his partners.",
+    "The sources are in the description."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "o85",
+   "say": "Next case. A store chain that looked expensive for forty years, and kept getting sold too early by smart investors. How do you value a moat that keeps growing? Case file nine. Subscribe, and I'll see you at the crime scene.",
+   "cap": "Next case. A store chain that looked expensive for forty years, and kept getting sold too early by smart investors. How do you value a moat that keeps growing? Case file nine. Subscribe, and I'll see you at the crime scene.",
+   "scene": {
+    "type": "end"
+   },
+   "spoken": "Next case. A store chain that looked expensive for forty years, and kept getting sold too early by smart investors. How do you value a moat that keeps growing? Case file nine. Subscribe, and I'll see you at the crime scene.",
+   "sec": 13.09,
+   "cues": [
+    "Next case.",
+    "A store chain that looked expensive for forty years,",
+    "and kept getting sold too early by smart investors.",
+    "How do you value a moat that keeps growing?",
+    "Case file nine.",
+    "Subscribe, and I'll see you at the crime scene."
+   ]
+  }
+ ],
+ "clips": {
+  "o02_jeans": {
+   "w": 1442,
+   "h": 291,
+   "hl": [
+    [
+     0.1992,
+     0.564,
+     0.2259,
+     0.1581
+    ]
+   ],
+   "page": 18,
+   "quote": "let you do it this time"
+  },
+  "o04_grief": {
+   "w": 1443,
+   "h": 249,
+   "hl": [
+    [
+     0.027,
+     0.6554,
+     0.2224,
+     0.1855
+    ]
+   ],
+   "page": 49,
+   "quote": "Grief. One strike and"
+  },
+  "o04_share": {
+   "w": 1442,
+   "h": 208,
+   "hl": [
+    [
+     0.7146,
+     0.3912,
+     0.205,
+     0.2214
+    ]
+   ],
+   "page": 50,
+   "quote": "but few share them"
+  },
+  "o02_half": {
+   "w": 1442,
+   "h": 208,
+   "hl": [
+    [
+     0.5739,
+     0.5905,
+     0.1905,
+     0.2214
+    ]
+   ],
+   "page": 18,
+   "quote": "close to half price"
+  },
+  "o04_hero": {
+   "w": 1442,
+   "h": 249,
+   "hl": [
+    [
+     0.5567,
+     0.6582,
+     0.3686,
+     0.1847
+    ]
+   ],
+   "page": 50,
+   "quote": "Our investment hero was mistaken"
+  },
+  "o05_largest": {
+   "w": 1443,
+   "h": 208,
+   "hl": [
+    [
+     0.4356,
+     0.3913,
+     0.3064,
+     0.2214
+    ]
+   ],
+   "page": 60,
+   "quote": "future much more predictable"
+  },
+  "o10_solprice": {
+   "w": 1276,
+   "h": 249,
+   "hl": [
+    [
+     0.4851,
+     0.4906,
+     0.4365,
+     0.1847
+    ]
+   ],
+   "page": 174,
+   "quote": "how cheap we can bring things to the"
+  }
+ }
+}

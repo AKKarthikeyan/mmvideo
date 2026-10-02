@@ -87,11 +87,58 @@ CLIPS.update({
   "b66_rule7": (BRK/"bpl.pdf", "Ground Rule 7 in November", 2, 2, 105),
   "b68_limit": (BRK/"bpl.pdf", "hit our 40% limit", 2, 2, 118),
   "b67_insight": (BRK/"bpl.pdf", "high-probability", 2, 3, 111),
+  # Case File 005 (typeset via scripts/typeset_letters.py)
+  "m13_fifty": (BRK/"2013.pdf", "no zeros omitted", 2, 1, 14),
+  "m84_levitz": (BRK/"1984.pdf", "gross margin of 44.4%", 2, 3, 6),
+  "m83_grizzly": (BRK/"1983.pdf", "rather wrestle grizzlies", 2, 3, 4),
+  "m93_word": (BRK/"1993.pdf", "her word was good enough for us", 3, 1, 20),
+  "m89_carpet": (BRK/"1989.pdf", "carpet sales declined by 17%", 3, 2, 7),
+  "m92_partner": (BRK/"1992.pdf", "partner is better", 3, 2, 19),
+  "m20_three": (BRK/"2020.pdf", "three largest home-furnishings stores", 2, 1, 8),
+  # Case File 006
+  "c12_hell": (BRK/"2012.pdf", "And then all hell broke loose", 2, 3, 17),
+  "c84_third": (BRK/"1984.pdf", "third-rate papers are as good or better", 3, 2, 10),
+  "c83_penetration": (BRK/"1983.pdf", "number one in weekday penetration", 3, 2, 9),
+  "c91_franchise": (BRK/"1991.pdf", "begun to resemble businesses more than franchises", 1, 2, 5),
+  "c06_lush": (BRK/"2006.pdf", "the days of lush profits", 3, 0, 11),
+  # Case File 007
+  "k89_railway": (BRK/"1989.pdf", "street railway companies", 3, 2, 15),
+  "k89_eyes": (BRK/"1989.pdf", "establish contact with my eyes", 2, 1, 15),
+  "k94_syrup": (BRK/"1994.pdf", "It took only fifty years before I finally got it", 2, 1, 15),
+  "k93_moat": (BRK/"1993.pdf", "protective moat around their economic", 3, 2, 14),
+  "k96_inevitables": (BRK/"1996.pdf", "might well be labeled", 0, 6, 15),
+  "k93_fifty": (BRK/"1993.pdf", "50-fold increase", 3, 4, 12),
+  "k03_mistake": (BRK/"2003.pdf", "big mistake in not selling", 2, 2, 19),
+  # Case File 008 (Nomad)
+  "o02_jeans": (NOMAD, "let you do it this time", 4, 2, 18),
+  "o04_grief": (NOMAD, "Grief. One strike and", 4, 1, 49),
+  "o04_share": (NOMAD, "but few share them", 2, 2, 50),
+  "o02_half": (NOMAD, "close to half price", 3, 1, 18),
+  "o04_hero": (NOMAD, "Our investment hero was mistaken", 4, 1, 50),
+  "o05_largest": (NOMAD, "future much more predictable", 2, 2, 60),
+  "o10_solprice": (NOMAD, "how cheap we can bring things to the", 3, 2, 174),
+  # Case File 009
+  "w09_ibm": (NOMAD, "their sale of IBM thirty years earlier", 2, 3, 160),
+  "w09_engine": (NOMAD, "a thrift orientation fueling growth", 2, 2, 162),
+  "w09_150": (NOMAD, "over one hundred and fifty times the prevailing share price", 2, 3, 162),
+  "w09_active": (NOMAD, "Active fund managers have to look active", 0, 3, 161),
+  "w07_biggest": (NOMAD, "the biggest error an investor can make is the sale of a Wal-Mart", 1, 3, 120),
+  "w03_handshake": (BRK/"2003.pdf", "single meeting of about two hours", 2, 2, 5),
+  "w09_foresight": (NOMAD, "greatness may be knowable in", 2, 1, 163),
+  # Case File 010
+  "d14_guinness": (BRK/"2014.pdf", "Guinness Book of World Records", 3, 1, 26),
+  "d93_best": (BRK/"1993.pdf", "best-managed companies Charlie and I have seen", 3, 2, 3),
+  "d93_song": (BRK/"1993.pdf", "No Business Like Shoe Business", 3, 1, 4),
+  "d99_imports": (BRK/"1999.pdf", "approximately 93% of the 1.3 billion", 3, 3, 25),
+  "d00_mistake": (BRK/"2000.pdf", "I clearly made a mistake in paying what I did for Dexter", 1, 3, 14),
+  "d07_worst": (BRK/"2007.pdf", "To date, Dexter is the worst deal", 6, 0, 8),
+  "d15_town": (BRK/"2015.pdf", "putting 1,600 employees in a small Maine town", 1, 3, 23),
+  "d16_wreck": (BRK/"2016.pdf", "That wreck was followed by", 2, 3, 3),
 })
 _docs = {}
 # Pronunciation fixes for the TTS voice only (captions keep the real spelling). AK 30 Sep: "GEICO" was read 3 ways.
 PRON = {"GEICO's": "Guyco's", "GEICO": "Guyco", "See's": "Sees", "Nebraska Furniture Mart": "Nebraska Furniture Mart",
-        "Waumbec": "Wombeck", "Chace": "Chase", "Bayonne": "Bay-own", "Amex": "Am-Ex"}
+        "Waumbec": "Wombeck", "Chace": "Chase", "Bayonne": "Bay-own", "Amex": "Am-Ex", "Blumkin": "Blum-kin", "Levitz": "Leh-vits", "Goizueta": "Goy-sweta", "Keough": "Kee-oh", "Sinegal": "Sin-eh-gal", "Zakaria": "Zak-uh-ree-uh", "Alfond": "Al-fond", "Lunder": "Lun-der"}
 def pron(s):
     for a, b in PRON.items(): s = s.replace(a, b)
     return s

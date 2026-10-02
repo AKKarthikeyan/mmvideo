@@ -1,0 +1,1761 @@
+{
+ "id": "mf005-nfm",
+ "title": "Nebraska Furniture Mart: Mrs. B, $500 and No Rival Left Standing",
+ "chapters": [
+  "Nebraska Furniture Mart: the woman on trial",
+  "The immigrant",
+  "The war",
+  "The machine",
+  "The deal",
+  "The twist",
+  "Case reopened",
+  "Defence and verdict",
+  "India lens and next case"
+ ],
+ "shorts": [
+  {
+   "title": "She sold the judge $1,400 of carpet",
+   "hook": "On trial for|selling too cheap",
+   "beats": [
+    "n00",
+    "n01",
+    "n02"
+   ]
+  },
+  {
+   "title": "I'd rather wrestle grizzlies",
+   "hook": "Buffett: I'd rather|wrestle grizzlies",
+   "beats": [
+    "n33",
+    "n34",
+    "n36"
+   ]
+  },
+  {
+   "title": "The founder who attacked her own moat",
+   "hook": "She quit at 96|and opened next door",
+   "beats": [
+    "n51",
+    "n53",
+    "n54"
+   ]
+  }
+ ],
+ "engine": "case",
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "n00",
+   "say": "It's a courtroom in Omaha. On trial, a furniture seller who never spent a single day in school. Her crime? Selling too cheap. Her rivals said she was breaking the law on prices.",
+   "cap": "It's a courtroom in Omaha. On trial, a furniture seller who never spent a single day in school. Her crime? Selling too cheap. Her rivals said she was breaking the law on prices.",
+   "scene": {
+    "type": "x-photo",
+    "img": "court_omaha",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "OMAHA · A COURTROOM",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "NEVER A DAY IN SCHOOL",
+      "at": "never spent",
+      "x": 560,
+      "y": 760
+     },
+     {
+      "kind": "stamp",
+      "text": "CHARGE: SELLING TOO CHEAP",
+      "at": "Selling too cheap",
+      "x": 1300,
+      "y": 900,
+      "size": 60
+     }
+    ]
+   },
+   "spoken": "It's a courtroom in Omaha. On trial, a furniture seller who never spent a single day in school. Her crime? Selling too cheap. Her rivals said she was breaking the law on prices.",
+   "sec": 13.16,
+   "cues": [
+    "It's a courtroom in Omaha.",
+    "On trial, a furniture seller who never spent a single day in school.",
+    "Her crime?",
+    "Selling too cheap.",
+    "Her rivals said she was breaking the law on prices."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "n01",
+   "say": "She proved she could sell carpet at a huge discount, and still make a profit. She won. And then, Warren Buffett wrote, she sold the judge fourteen hundred dollars' worth of carpet.",
+   "cap": "She proved she could sell carpet at a huge discount, and still make a profit. She won. And then, Warren Buffett wrote, she sold the judge $1,400 worth of carpet.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": null,
+    "lines": [
+     {
+      "t": "SHE WON.",
+      "at": "She won",
+      "em": [
+       "WON."
+      ]
+     },
+     {
+      "t": "THEN SHE SOLD THE JUDGE $1,400 OF CARPET.",
+      "at": "sold the judge",
+      "em": [
+       "$1,400"
+      ]
+     }
+    ]
+   },
+   "spoken": "She proved she could sell carpet at a huge discount, and still make a profit. She won. And then, Warren Buffett wrote, she sold the judge fourteen hundred dollars' worth of carpet.",
+   "sec": 11.05,
+   "cues": [
+    "She proved she could sell carpet at a huge discount, and still make a profit.",
+    "She won.",
+    "And then, Warren Buffett wrote, she sold the judge $1,400 worth of carpet."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "n02",
+   "say": "Her name was Rose Blumkin. Omaha called her Mrs. B. She started with five hundred dollars. And every rival who fought her, lost.",
+   "cap": "Her name was Rose Blumkin. Omaha called her Mrs. B. She started with $500. And every rival who fought her, lost.",
+   "scene": {
+    "type": "x-photo",
+    "img": "carpet_rolls",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "ROSE BLUMKIN",
+      "text": "“MRS. B”",
+      "at": "Mrs. B",
+      "x": 160,
+      "y": 170,
+      "w": 560
+     },
+     {
+      "kind": "card",
+      "top": "STARTING CAPITAL",
+      "text": "$500",
+      "red": true,
+      "at": "five hundred dollars",
+      "x": 1200,
+      "y": 170,
+      "w": 520
+     },
+     {
+      "kind": "stamp",
+      "text": "EVERY RIVAL LOST",
+      "at": "every rival",
+      "x": 1300,
+      "y": 900,
+      "size": 70
+     }
+    ]
+   },
+   "spoken": "Her name was Rose Blum-kin. Omaha called her Mrs. B. She started with five hundred dollars. And every rival who fought her, lost.",
+   "sec": 9.38,
+   "cues": [
+    "Her name was Rose Blumkin.",
+    "Omaha called her Mrs.",
+    "B.",
+    "She started with $500.",
+    "And every rival who fought her, lost."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "n03",
+   "say": "This is the case of Nebraska Furniture Mart. How did a woman with no money and no schooling build a moat that rich rivals couldn't cross? What exactly was the moat? And can a moat be just one person?",
+   "cap": "This is the case of Nebraska Furniture Mart. How did a woman with no money and no schooling build a moat that rich rivals couldn't cross? What exactly was the moat? And can a moat be just one person?",
+   "scene": {
+    "type": "x-case",
+    "name": "NFM",
+    "sub": "SUBJECT: THE MOAT",
+    "lines": [
+     {
+      "t": "HOW DID $500 WIN?",
+      "at": "How did a woman"
+     },
+     {
+      "t": "WHAT WAS THE MOAT?",
+      "at": "What exactly"
+     },
+     {
+      "t": "CAN A MOAT BE ONE PERSON?",
+      "at": "just one person"
+     }
+    ]
+   },
+   "spoken": "This is the case of Nebraska Furniture Mart. How did a woman with no money and no schooling build a moat that rich rivals couldn't cross? What exactly was the moat? And can a moat be just one person?",
+   "sec": 11.26,
+   "cues": [
+    "This is the case of Nebraska Furniture Mart.",
+    "How did a woman with no money and no schooling build a moat that rich rivals",
+    "couldn't cross?",
+    "What exactly was the moat?",
+    "And can a moat be just one person?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "n10",
+   "say": "Act 1. The immigrant.",
+   "cap": "Act 1. The immigrant.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 1",
+    "title": "THE IMMIGRANT"
+   },
+   "spoken": "Act 1. The immigrant.",
+   "sec": 2.17,
+   "cues": [
+    "Act 1.",
+    "The immigrant."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "n11",
+   "say": "Buffett told her story many times. At twenty three, she talked her way past a border guard to leave Russia for America. She knew no English. She learned it in the evenings, from her daughter, who taught her the words she'd learned at school that day.",
+   "cap": "Buffett told her story many times. At 23, she talked her way past a border guard to leave Russia for America. She knew no English. She learned it in the evenings, from her daughter, who taught her the words she'd learned at school that day.",
+   "scene": {
+    "type": "x-photo",
+    "img": "border_snow",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "snow",
+    "over": [
+     {
+      "kind": "label",
+      "text": "RUSSIA → AMERICA",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "PAST THE BORDER GUARD",
+      "at": "border guard",
+      "x": 560,
+      "y": 760
+     },
+     {
+      "kind": "strip",
+      "text": "NO ENGLISH. NO SCHOOLING.",
+      "at": "knew no English",
+      "x": 620,
+      "y": 890,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "Buffett told her story many times. At twenty three, she talked her way past a border guard to leave Russia for America. She knew no English. She learned it in the evenings, from her daughter, who taught her the words she'd learned at school that day.",
+   "sec": 13.9,
+   "cues": [
+    "Buffett told her story many times.",
+    "At 23, she talked her way past a border guard to leave Russia for America.",
+    "She knew no English.",
+    "She learned it in the evenings, from her daughter,",
+    "who taught her the words she'd learned at school that day."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "n12",
+   "say": "For years she sold used clothing. Then, in his early letters, Buffett says that in nineteen thirty seven she had saved five hundred dollars, and opened a furniture store. She named it Nebraska Furniture Mart.",
+   "cap": "For years she sold used clothing. Then, in his early letters, Buffett says that in 1937 she had saved $500, and opened a furniture store. She named it Nebraska Furniture Mart.",
+   "scene": {
+    "type": "x-photo",
+    "img": "first_store",
+    "move": "left",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "label",
+      "text": "OMAHA · 1937",
+      "at": "nineteen thirty seven",
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "card",
+      "top": "HER SAVINGS",
+      "text": "$500",
+      "red": true,
+      "at": "five hundred dollars",
+      "x": 1240,
+      "y": 170,
+      "w": 480
+     },
+     {
+      "kind": "stamp",
+      "text": "NEBRASKA FURNITURE MART",
+      "at": "named it",
+      "x": 1100,
+      "y": 900,
+      "size": 56
+     }
+    ]
+   },
+   "spoken": "For years she sold used clothing. Then, in his early letters, Buffett says that in nineteen thirty seven she had saved five hundred dollars, and opened a furniture store. She named it Nebraska Furniture Mart.",
+   "sec": 13.63,
+   "cues": [
+    "For years she sold used clothing.",
+    "Then, in his early letters, Buffett says that in 1937 she had saved $500,",
+    "and opened a furniture store.",
+    "She named it Nebraska Furniture Mart."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "n13",
+   "say": "A detective note. In his twenty twenty letter, Buffett gives a different figure. Two thousand five hundred dollars, saved by nineteen thirty six. The amount changed. The point didn't. She started small, against rich and long entrenched rivals.",
+   "cap": "A detective note. In his 2020 letter, Buffett gives a different figure. $2,500, saved by 1936. The amount changed. The point didn't. She started small, against rich and long-entrenched rivals.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE STARTING MONEY · TWO VERSIONS",
+    "cards": [
+     {
+      "top": "LETTERS 1983–2013",
+      "big": "$500 · 1937",
+      "at": "A detective note"
+     },
+     {
+      "top": "LETTER 2020",
+      "big": "$2,500 · 1936",
+      "at": "Two thousand five hundred",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "EITHER WAY: TINY",
+      "at": "started small"
+     }
+    ]
+   },
+   "spoken": "A detective note. In his twenty twenty letter, Buffett gives a different figure. Two thousand five hundred dollars, saved by nineteen thirty six. The amount changed. The point didn't. She started small, against rich and long entrenched rivals.",
+   "sec": 14.65,
+   "cues": [
+    "A detective note.",
+    "In his 2020 letter, Buffett gives a different figure.",
+    "$2,500, saved by 1936.",
+    "The amount changed.",
+    "The point didn't.",
+    "She started small, against rich and long-entrenched rivals."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n20",
+   "say": "Act 2. The war.",
+   "cap": "Act 2. The war.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 2",
+    "title": "THE WAR"
+   },
+   "spoken": "Act 2. The war.",
+   "sec": 1.96,
+   "cues": [
+    "Act 2.",
+    "The war."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n21",
+   "say": "Her rivals saw the danger quickly. She offered customers far better deals than they did. So they pressured furniture and carpet makers to refuse to sell to her.",
+   "cap": "Her rivals saw the danger quickly. She offered customers far better deals than they did. So they pressured furniture and carpet makers to refuse to sell to her.",
+   "scene": {
+    "type": "x-chain",
+    "heading": "THE RIVALS' COUNTER-ATTACK",
+    "nodes": [
+     {
+      "t": "RIVAL STORES",
+      "at": "Her rivals"
+     },
+     {
+      "t": "PRESSURE",
+      "at": "So they pressured"
+     },
+     {
+      "t": "MAKERS REFUSE",
+      "at": "refuse to sell",
+      "dark": true
+     }
+    ],
+    "stamp": {
+     "text": "CUT OFF HER SUPPLY",
+     "at": "refuse to sell"
+    }
+   },
+   "spoken": "Her rivals saw the danger quickly. She offered customers far better deals than they did. So they pressured furniture and carpet makers to refuse to sell to her.",
+   "sec": 9.66,
+   "cues": [
+    "Her rivals saw the danger quickly.",
+    "She offered customers far better deals than they did.",
+    "So they pressured furniture and carpet makers to refuse to sell to her."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n22",
+   "say": "She found the goods anyway, by various strategies, and cut prices sharply. That's when they took her to court, under the old Fair Trade laws. She won every case. And the publicity was priceless.",
+   "cap": "She found the goods anyway, by various strategies, and cut prices sharply. That's when they took her to court, under the old Fair Trade laws. She won every case. And the publicity was priceless.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "SHE FOUND THE GOODS ANYWAY",
+      "at": "found the goods"
+     },
+     {
+      "text": "CUT PRICES SHARPLY",
+      "at": "cut prices sharply"
+     },
+     {
+      "text": "HAULED INTO COURT — WON EVERY CASE",
+      "at": "won every case",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "She found the goods anyway, by various strategies, and cut prices sharply. That's when they took her to court, under the old Fair Trade laws. She won every case. And the publicity was priceless.",
+   "sec": 13.16,
+   "cues": [
+    "She found the goods anyway, by various strategies, and cut prices sharply.",
+    "That's when they took her to court, under the old Fair Trade laws.",
+    "She won every case.",
+    "And the publicity was priceless."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n23",
+   "say": "Once, when her money ran out, she did something no business school teaches. She sold the furniture and appliances from her own home, to pay her creditors exactly as she had promised.",
+   "cap": "Once, when her money ran out, she did something no business school teaches. She sold the furniture and appliances from her own home, to pay her creditors exactly as she had promised.",
+   "scene": {
+    "type": "x-photo",
+    "img": "empty_home",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "MONEY RAN OUT",
+      "at": "money ran out",
+      "x": 520,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "SHE SOLD HER OWN FURNITURE",
+      "at": "from her own home",
+      "x": 640,
+      "y": 330,
+      "red": true
+     },
+     {
+      "kind": "stamp",
+      "text": "PAID EXACTLY AS PROMISED",
+      "at": "exactly as she had promised",
+      "x": 1300,
+      "y": 900,
+      "size": 60
+     }
+    ]
+   },
+   "spoken": "Once, when her money ran out, she did something no business school teaches. She sold the furniture and appliances from her own home, to pay her creditors exactly as she had promised.",
+   "sec": 9.85,
+   "cues": [
+    "Once, when her money ran out, she did something no business school teaches.",
+    "She sold the furniture and appliances from her own home,",
+    "to pay her creditors exactly as she had promised."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n24",
+   "say": "And look how thin it got. At the end of nineteen forty six, the company's net worth was seventy two thousand, two hundred and sixty four dollars. Cash in the till and the bank? Fifty dollars. Buffett added, no zeros omitted.",
+   "cap": "And look how thin it got. At the end of 1946, the company's net worth was $72,264. Cash in the till and the bank? $50. Buffett added, no zeros omitted.",
+   "scene": {
+    "type": "clip",
+    "clip": "m13_fifty",
+    "heading": "BERKSHIRE LETTER · 2013",
+    "hl": [
+     "no zeros omitted"
+    ]
+   },
+   "spoken": "And look how thin it got. At the end of nineteen forty six, the company's net worth was seventy two thousand, two hundred and sixty four dollars. Cash in the till and the bank? Fifty dollars. Buffett added, no zeros omitted.",
+   "sec": 13.4,
+   "cues": [
+    "And look how thin it got.",
+    "At the end of 1946, the company's net worth was $72,264.",
+    "Cash in the till and the bank?",
+    "$50.",
+    "Buffett added, no zeros omitted."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "n25",
+   "say": "Around then, her son Louie came home from the war. He had fought at Omaha Beach after D-Day, and earned a Purple Heart in the Battle of the Bulge. Once mother and son were together, Buffett wrote, there was no stopping them.",
+   "cap": "Around then, her son Louie came home from the war. He had fought at Omaha Beach after D-Day, and earned a Purple Heart in the Battle of the Bulge. Once mother and son were together, Buffett wrote, there was no stopping them.",
+   "scene": {
+    "type": "x-photo",
+    "img": "soldier_home",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "HOME FROM THE WAR",
+      "text": "LOUIE BLUMKIN",
+      "at": "her son Louie",
+      "x": 160,
+      "y": 170,
+      "w": 600,
+      "size": 64
+     },
+     {
+      "kind": "strip",
+      "text": "OMAHA BEACH · PURPLE HEART",
+      "at": "Purple Heart",
+      "x": 1200,
+      "y": 760
+     },
+     {
+      "kind": "stamp",
+      "text": "NO STOPPING THEM",
+      "at": "no stopping them",
+      "x": 1300,
+      "y": 900,
+      "size": 66
+     }
+    ]
+   },
+   "spoken": "Around then, her son Louie came home from the war. He had fought at Omaha Beach after D-Day, and earned a Purple Heart in the Battle of the Bulge. Once mother and son were together, Buffett wrote, there was no stopping them.",
+   "sec": 12.7,
+   "cues": [
+    "Around then, her son Louie came home from the war.",
+    "He had fought at Omaha Beach after D-Day,",
+    "and earned a Purple Heart in the Battle of the Bulge.",
+    "Once mother and son were together, Buffett wrote, there was no stopping them."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n30",
+   "say": "Act 3. The machine.",
+   "cap": "Act 3. The machine.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 3",
+    "title": "THE MACHINE"
+   },
+   "spoken": "Act 3. The machine.",
+   "sec": 1.75,
+   "cues": [
+    "Act 3.",
+    "The machine."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n31",
+   "say": "By nineteen eighty three, that one store sold over a hundred million dollars a year, from a single two hundred thousand square foot building. No other home furnishings store in America came close. It sold more furniture, carpets and appliances than all its Omaha competitors combined.",
+   "cap": "By 1983, that one store sold over $100 million a year, from a single 200,000-square-foot building. No other home furnishings store in America came close. It sold more furniture, carpets and appliances than all its Omaha competitors combined.",
+   "scene": {
+    "type": "x-photo",
+    "img": "mega_store",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "dust",
+    "over": [
+     {
+      "kind": "card",
+      "top": "SALES, ONE STORE · 1983",
+      "text": "> $100M",
+      "at": "hundred million",
+      "x": 160,
+      "y": 170,
+      "w": 560
+     },
+     {
+      "kind": "strip",
+      "text": "ONE 200,000 SQ FT STORE",
+      "at": "square foot",
+      "x": 1200,
+      "y": 760
+     },
+     {
+      "kind": "stamp",
+      "text": "MORE THAN ALL OMAHA RIVALS COMBINED",
+      "at": "all its Omaha competitors",
+      "x": 960,
+      "y": 920,
+      "size": 52
+     }
+    ]
+   },
+   "spoken": "By nineteen eighty three, that one store sold over a hundred million dollars a year, from a single two hundred thousand square foot building. No other home furnishings store in America came close. It sold more furniture, carpets and appliances than all its Omaha competitors combined.",
+   "sec": 17.29,
+   "cues": [
+    "By 1983, that one store sold over $100 million a year,",
+    "from a single 200,000-square-foot building.",
+    "No other home furnishings store in America came close.",
+    "It sold more furniture, carpets and appliances than all its Omaha competitors",
+    "combined."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n32",
+   "say": "So what was the secret? Buffett compared it with Levitz, the biggest furniture chain in the country. Levitz's gross margin was forty four percent. Nebraska Furniture Mart's was not much more than half of that.",
+   "cap": "So what was the secret? Buffett compared it with Levitz, the biggest furniture chain in the country. Levitz's gross margin was 44%. Nebraska Furniture Mart's was not much more than half of that.",
+   "scene": {
+    "type": "clip",
+    "clip": "m84_levitz",
+    "heading": "BERKSHIRE LETTER · 1984",
+    "hl": [
+     "gross margin"
+    ]
+   },
+   "spoken": "So what was the secret? Buffett compared it with Leh-vits, the biggest furniture chain in the country. Leh-vits's gross margin was forty four percent. Nebraska Furniture Mart's was not much more than half of that.",
+   "sec": 13.04,
+   "cues": [
+    "So what was the secret?",
+    "Buffett compared it with Levitz, the biggest furniture chain in the country.",
+    "Levitz's gross margin was 44%.",
+    "Nebraska Furniture Mart's was not much more than half of that."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n32b",
+   "say": "And remember, she had never been to school. In nineteen eighty four, New York University gave her an honorary doctorate in commercial science. Buffett joked she was a fast track student. Not one day in a classroom, before the doctorate.",
+   "cap": "And remember, she had never been to school. In 1984, New York University gave her an honorary doctorate in commercial science. Buffett joked she was a fast-track student. Not one day in a classroom, before the doctorate.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "A FAST-TRACK STUDENT",
+    "lines": [
+     {
+      "t": "SCHOOLING: 0 DAYS",
+      "at": "never been to school",
+      "em": [
+       "0"
+      ]
+     },
+     {
+      "t": "1984: HONORARY DOCTORATE, NYU",
+      "at": "honorary doctorate",
+      "em": [
+       "DOCTORATE"
+      ]
+     }
+    ]
+   },
+   "spoken": "And remember, she had never been to school. In nineteen eighty four, New York University gave her an honorary doctorate in commercial science. Buffett joked she was a fast track student. Not one day in a classroom, before the doctorate.",
+   "sec": 15.78,
+   "cues": [
+    "And remember, she had never been to school.",
+    "In 1984, New York University gave her an honorary doctorate in commercial",
+    "science.",
+    "Buffett joked she was a fast-track student.",
+    "Not one day in a classroom, before the doctorate."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n33",
+   "say": "How could it charge so little and still earn excellent returns? Look at running costs. Levitz spent about thirty six cents of every sales dollar on wages, rent and advertising. Nebraska Furniture Mart spent about sixteen and a half.",
+   "cap": "How could it charge so little and still earn excellent returns? Look at running costs. Levitz spent about 36 cents of every sales dollar on wages, rent and advertising. Nebraska Furniture Mart spent about 16.5.",
+   "scene": {
+    "type": "bars",
+    "heading": "OPERATING COSTS AS % OF SALES · BUFFETT, 1984",
+    "rows": [
+     {
+      "name": "LEVITZ",
+      "v": 35.6,
+      "label": "35.6%",
+      "at": "thirty six cents"
+     },
+     {
+      "name": "NFM",
+      "v": 16.5,
+      "label": "16.5%",
+      "at": "sixteen and a half",
+      "red": true
+     }
+    ]
+   },
+   "spoken": "How could it charge so little and still earn excellent returns? Look at running costs. Leh-vits spent about thirty six cents of every sales dollar on wages, rent and advertising. Nebraska Furniture Mart spent about sixteen and a half.",
+   "sec": 14.79,
+   "cues": [
+    "How could it charge so little and still earn excellent returns?",
+    "Look at running costs.",
+    "Levitz spent about 36 cents of every sales dollar on wages,",
+    "rent and advertising.",
+    "Nebraska Furniture Mart spent about 16.5."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n34",
+   "say": "That's the moat. Lowest costs mean lowest prices. Lowest prices bring huge crowds. Huge crowds mean huge volumes. Huge volumes mean the shrewdest buying from suppliers. And that means even lower costs. Round and round.",
+   "cap": "That's the moat. Lowest costs mean lowest prices. Lowest prices bring huge crowds. Huge crowds mean huge volumes. Huge volumes mean the shrewdest buying from suppliers. And that means even lower costs. Round and round.",
+   "scene": {
+    "type": "x-loop",
+    "heading": "THE NFM FLYWHEEL",
+    "nodes": [
+     {
+      "t": "LOWEST COSTS",
+      "at": "Lowest costs"
+     },
+     {
+      "t": "LOWEST PRICES",
+      "at": "mean lowest prices"
+     },
+     {
+      "t": "HUGE CROWDS",
+      "at": "bring huge crowds"
+     },
+     {
+      "t": "HUGE VOLUMES",
+      "at": "huge volumes"
+     },
+     {
+      "t": "SHREWDEST BUYING",
+      "at": "shrewdest buying"
+     }
+    ],
+    "center": {
+     "text": "THE MOAT",
+     "at": "even lower costs"
+    },
+    "stamp": {
+     "text": "ROUND AND ROUND",
+     "at": "Round and round"
+    }
+   },
+   "spoken": "That's the moat. Lowest costs mean lowest prices. Lowest prices bring huge crowds. Huge crowds mean huge volumes. Huge volumes mean the shrewdest buying from suppliers. And that means even lower costs. Round and round.",
+   "sec": 15.65,
+   "cues": [
+    "That's the moat.",
+    "Lowest costs mean lowest prices.",
+    "Lowest prices bring huge crowds.",
+    "Huge crowds mean huge volumes.",
+    "Huge volumes mean the shrewdest buying from suppliers.",
+    "And that means even lower costs.",
+    "Round and round."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n34b",
+   "say": "Buffett later wrote the formula down, in five parts. The widest choice of goods, in one place. The lowest operating costs in the business. The shrewdest buying, helped by huge volumes. Prices far below competitors'. And friendly service, with family members always on hand.",
+   "cap": "Buffett later wrote the formula down, in five parts. The widest choice of goods, in one place. The lowest operating costs in the business. The shrewdest buying, helped by huge volumes. Prices far below competitors'. And friendly service, with family members always on hand.",
+   "scene": {
+    "type": "list",
+    "heading": "THE FORMULA · BUFFETT, 1989",
+    "items": [
+     {
+      "text": "WIDEST CHOICE, ONE PLACE",
+      "at": "widest choice"
+     },
+     {
+      "text": "LOWEST OPERATING COSTS",
+      "at": "lowest operating costs"
+     },
+     {
+      "text": "SHREWDEST BUYING, HUGE VOLUMES",
+      "at": "shrewdest buying"
+     },
+     {
+      "text": "PRICES FAR BELOW RIVALS",
+      "at": "Prices far below"
+     },
+     {
+      "text": "FAMILY ALWAYS ON HAND",
+      "at": "family members"
+     }
+    ]
+   },
+   "spoken": "Buffett later wrote the formula down, in five parts. The widest choice of goods, in one place. The lowest operating costs in the business. The shrewdest buying, helped by huge volumes. Prices far below competitors'. And friendly service, with family members always on hand.",
+   "sec": 18.81,
+   "cues": [
+    "Buffett later wrote the formula down, in five parts.",
+    "The widest choice of goods, in one place.",
+    "The lowest operating costs in the business.",
+    "The shrewdest buying, helped by huge volumes.",
+    "Prices far below competitors'.",
+    "And friendly service, with family members always on hand."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n35",
+   "say": "And here's the part rivals hated most. The family passed the savings on. Buffett estimated customers saved at least thirty million dollars a year, compared with buying the same goods at normal markups.",
+   "cap": "And here's the part rivals hated most. The family passed the savings on. Buffett estimated customers saved at least $30 million a year, compared with buying the same goods at normal markups.",
+   "scene": {
+    "type": "counter",
+    "heading": "WHAT NFM SAVED ITS CUSTOMERS · PER YEAR · BUFFETT, 1984",
+    "to": 30,
+    "prefix": "$",
+    "suffix": "M+",
+    "at": "thirty million",
+    "sub": "VS BUYING AT TYPICAL MARK-UPS"
+   },
+   "spoken": "And here's the part rivals hated most. The family passed the savings on. Buffett estimated customers saved at least thirty million dollars a year, compared with buying the same goods at normal markups.",
+   "sec": 11.26,
+   "cues": [
+    "And here's the part rivals hated most.",
+    "The family passed the savings on.",
+    "Buffett estimated customers saved at least $30 million a year,",
+    "compared with buying the same goods at normal markups."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "n36",
+   "say": "Then Buffett asked his favourite question. If he had plenty of money and skilled people, how would he like to compete with this business? His answer. I'd rather wrestle grizzlies than compete with Mrs. B and her progeny.",
+   "cap": "Then Buffett asked his favourite question. If he had plenty of money and skilled people, how would he like to compete with this business? His answer. I'd rather wrestle grizzlies than compete with Mrs. B and her progeny.",
+   "scene": {
+    "type": "clip",
+    "clip": "m83_grizzly",
+    "heading": "BERKSHIRE LETTER · 1983",
+    "hl": [
+     "wrestle grizzlies"
+    ]
+   },
+   "spoken": "Then Buffett asked his favourite question. If he had plenty of money and skilled people, how would he like to compete with this business? His answer. I'd rather wrestle grizzlies than compete with Mrs. B and her progeny.",
+   "sec": 12.75,
+   "cues": [
+    "Then Buffett asked his favourite question.",
+    "If he had plenty of money and skilled people,",
+    "how would he like to compete with this business?",
+    "His answer.",
+    "I'd rather wrestle grizzlies than compete with Mrs.",
+    "B and her progeny."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n40",
+   "say": "Act 4. The deal.",
+   "cap": "Act 4. The deal.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 4",
+    "title": "THE DEAL"
+   },
+   "spoken": "Act 4. The deal.",
+   "sec": 2.04,
+   "cues": [
+    "Act 4.",
+    "The deal."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n41",
+   "say": "On August the thirtieth, nineteen eighty three, his own birthday, Buffett went to see Mrs. B. He carried a purchase offer he'd drafted himself. One and a quarter pages long. She accepted it without changing a word.",
+   "cap": "On August 30, 1983, his own birthday, Buffett went to see Mrs. B. He carried a purchase offer he'd drafted himself. 1¼ pages long. She accepted it without changing a word.",
+   "scene": {
+    "type": "x-photo",
+    "img": "handshake_store",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "stamp",
+      "text": "AUG 30, 1983",
+      "at": "August the thirtieth",
+      "x": 420,
+      "y": 220,
+      "size": 74
+     },
+     {
+      "kind": "card",
+      "top": "THE OFFER",
+      "text": "1¼ PAGES",
+      "at": "One and a quarter",
+      "x": 1240,
+      "y": 170,
+      "w": 480
+     },
+     {
+      "kind": "strip",
+      "text": "ACCEPTED WITHOUT CHANGING A WORD",
+      "at": "without changing a word",
+      "x": 960,
+      "y": 900,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "On August the thirtieth, nineteen eighty three, his own birthday, Buffett went to see Mrs. B. He carried a purchase offer he'd drafted himself. One and a quarter pages long. She accepted it without changing a word.",
+   "sec": 13.27,
+   "cues": [
+    "On August 30, 1983, his own birthday, Buffett went to see Mrs.",
+    "B.",
+    "He carried a purchase offer he'd drafted himself.",
+    "1¼ pages long.",
+    "She accepted it without changing a word."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n42",
+   "say": "No investment bankers. No lawyers. No audited accounts. No checking of property records. No warranties. Buffett's explanation? Her word was good enough for us.",
+   "cap": "No investment bankers. No lawyers. No audited accounts. No checking of property records. No warranties. Buffett's explanation? Her word was good enough for us.",
+   "scene": {
+    "type": "clip",
+    "clip": "m93_word",
+    "heading": "BERKSHIRE LETTER · 1993",
+    "hl": [
+     "her word was good enough"
+    ]
+   },
+   "spoken": "No investment bankers. No lawyers. No audited accounts. No checking of property records. No warranties. Buffett's explanation? Her word was good enough for us.",
+   "sec": 10.27,
+   "cues": [
+    "No investment bankers.",
+    "No lawyers.",
+    "No audited accounts.",
+    "No checking of property records.",
+    "No warranties.",
+    "Buffett's explanation?",
+    "Her word was good enough for us."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n43",
+   "say": "Berkshire bought eighty percent of the business. The family kept the rest, and kept running it. And Mrs. B, then eighty nine, didn't retire. She stayed on the sales floor seven days a week, selling carpet.",
+   "cap": "Berkshire bought 80% of the business. The family kept the rest, and kept running it. And Mrs. B, then 89, didn't retire. She stayed on the sales floor seven days a week, selling carpet.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE 1983 DEAL",
+    "cards": [
+     {
+      "top": "BERKSHIRE'S STAKE",
+      "big": "80%",
+      "at": "eighty percent"
+     },
+     {
+      "top": "MRS. B'S AGE",
+      "big": "89",
+      "at": "eighty nine"
+     },
+     {
+      "top": "DAYS A WEEK AT WORK",
+      "big": "7",
+      "at": "seven days a week",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "Berkshire bought eighty percent of the business. The family kept the rest, and kept running it. And Mrs. B, then eighty nine, didn't retire. She stayed on the sales floor seven days a week, selling carpet.",
+   "sec": 11.76,
+   "cues": [
+    "Berkshire bought 80% of the business.",
+    "The family kept the rest, and kept running it.",
+    "And Mrs.",
+    "B, then 89, didn't retire.",
+    "She stayed on the sales floor seven days a week, selling carpet."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n43b",
+   "say": "And the family? Her son Louie was, in Buffett's words, widely seen as the shrewdest buyer of furniture and appliances in the country. Louie said he had the best teacher. Mrs. B said she had the best student. Buffett said they were both right.",
+   "cap": "And the family? Her son Louie was, in Buffett's words, widely seen as the shrewdest buyer of furniture and appliances in the country. Louie said he had the best teacher. Mrs. B said she had the best student. Buffett said they were both right.",
+   "scene": {
+    "type": "x-photo",
+    "img": "warehouse_buyer",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "MRS. B'S SON",
+      "text": "LOUIE",
+      "at": "Her son Louie",
+      "x": 160,
+      "y": 170,
+      "w": 480
+     },
+     {
+      "kind": "strip",
+      "text": "“THE SHREWDEST BUYER IN THE COUNTRY”",
+      "at": "shrewdest buyer",
+      "x": 1000,
+      "y": 760
+     },
+     {
+      "kind": "stamp",
+      "text": "BEST TEACHER · BEST STUDENT",
+      "at": "best student",
+      "x": 1250,
+      "y": 900,
+      "size": 56
+     }
+    ]
+   },
+   "spoken": "And the family? Her son Louie was, in Buffett's words, widely seen as the shrewdest buyer of furniture and appliances in the country. Louie said he had the best teacher. Mrs. B said she had the best student. Buffett said they were both right.",
+   "sec": 15.57,
+   "cues": [
+    "And the family?",
+    "Her son Louie was, in Buffett's words,",
+    "widely seen as the shrewdest buyer of furniture and appliances in the country.",
+    "Louie said he had the best teacher.",
+    "Mrs.",
+    "B said she had the best student.",
+    "Buffett said they were both right."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "n44",
+   "say": "Buffett even joked that he'd persuaded the board to scrap its rule of mandatory retirement at one hundred. Because at ninety four, she seemed to be just gathering speed.",
+   "cap": "Buffett even joked that he'd persuaded the board to scrap its rule of mandatory retirement at 100. Because at 94, she seemed to be just gathering speed.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "BUFFETT, 1987",
+    "lines": [
+     {
+      "t": "MANDATORY RETIREMENT AT 100?",
+      "at": "mandatory retirement",
+      "em": [
+       "100?"
+      ]
+     },
+     {
+      "t": "SCRAPPED.",
+      "at": "just gathering speed",
+      "em": [
+       "SCRAPPED."
+      ]
+     }
+    ]
+   },
+   "spoken": "Buffett even joked that he'd persuaded the board to scrap its rule of mandatory retirement at one hundred. Because at ninety four, she seemed to be just gathering speed.",
+   "sec": 10.13,
+   "cues": [
+    "Buffett even joked that he'd persuaded the board to scrap its rule of",
+    "mandatory retirement at 100.",
+    "Because at 94, she seemed to be just gathering speed."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n50",
+   "say": "Act 5. The twist.",
+   "cap": "Act 5. The twist.",
+   "scene": {
+    "type": "x-act",
+    "act": "ACT 5",
+    "title": "THE TWIST"
+   },
+   "spoken": "Act 5. The twist.",
+   "sec": 2.3,
+   "cues": [
+    "Act 5.",
+    "The twist."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n51",
+   "say": "Now the twist. In nineteen eighty nine, at ninety six, Mrs. B fell out with her own family over how to run the carpet department. And she quit.",
+   "cap": "Now the twist. In 1989, at 96, Mrs. B fell out with her own family over how to run the carpet department. And she quit.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "AGE 96",
+    "lines": [
+     {
+      "t": "1989: MRS. B QUITS.",
+      "at": "she quit",
+      "em": [
+       "QUITS."
+      ]
+     }
+    ]
+   },
+   "spoken": "Now the twist. In nineteen eighty nine, at ninety six, Mrs. B fell out with her own family over how to run the carpet department. And she quit.",
+   "sec": 9.98,
+   "cues": [
+    "Now the twist.",
+    "In 1989, at 96, Mrs.",
+    "B fell out with her own family over how to run the carpet department.",
+    "And she quit."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n52",
+   "say": "Buffett wrote that Mrs. B had probably made more smart business decisions than any living American. But this time, he sided with the family. Over three years, the store's other departments had grown sales by twenty four percent. Carpet sales had fallen seventeen percent.",
+   "cap": "Buffett wrote that Mrs. B had probably made more smart business decisions than any living American. But this time, he sided with the family. Over three years, the store's other departments had grown sales by 24%. Carpet sales had fallen 17%.",
+   "scene": {
+    "type": "clip",
+    "clip": "m89_carpet",
+    "heading": "BERKSHIRE LETTER · 1989",
+    "hl": [
+     "seventeen percent"
+    ]
+   },
+   "spoken": "Buffett wrote that Mrs. B had probably made more smart business decisions than any living American. But this time, he sided with the family. Over three years, the store's other departments had grown sales by twenty four percent. Carpet sales had fallen seventeen percent.",
+   "sec": 16.67,
+   "cues": [
+    "Buffett wrote that Mrs.",
+    "B had probably made more smart business decisions than any living American.",
+    "But this time, he sided with the family.",
+    "Over three years, the store's other departments had grown sales by 24%.",
+    "Carpet sales had fallen 17%."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n53",
+   "say": "So what did she do? She opened a brand new store, right next door, selling, what else? Carpet and furniture. Buffett had never asked her to sign a non compete agreement. The moat's builder was now attacking it.",
+   "cap": "So what did she do? She opened a brand new store, right next door, selling, what else? Carpet and furniture. Buffett had never asked her to sign a non-compete agreement. The moat's builder was now attacking it.",
+   "scene": {
+    "type": "x-photo",
+    "img": "next_door",
+    "move": "right",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "strip",
+      "text": "A NEW STORE — RIGHT NEXT DOOR",
+      "at": "right next door",
+      "x": 640,
+      "y": 200
+     },
+     {
+      "kind": "strip",
+      "text": "NO NON-COMPETE SIGNED",
+      "at": "non compete",
+      "x": 560,
+      "y": 330,
+      "red": true
+     },
+     {
+      "kind": "stamp",
+      "text": "THE BUILDER ATTACKS HER OWN MOAT",
+      "at": "attacking it",
+      "x": 1150,
+      "y": 900,
+      "size": 52
+     }
+    ]
+   },
+   "spoken": "So what did she do? She opened a brand new store, right next door, selling, what else? Carpet and furniture. Buffett had never asked her to sign a non compete agreement. The moat's builder was now attacking it.",
+   "sec": 13.69,
+   "cues": [
+    "So what did she do?",
+    "She opened a brand new store, right next door, selling, what else?",
+    "Carpet and furniture.",
+    "Buffett had never asked her to sign a non-compete agreement.",
+    "The moat's builder was now attacking it."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n54",
+   "say": "And the moat held. By the end of nineteen eighty nine, Nebraska Furniture Mart's carpet department had seventy five percent of the Omaha market. Six times its nearest competitor.",
+   "cap": "And the moat held. By the end of 1989, Nebraska Furniture Mart's carpet department had 75% of the Omaha market. Six times its nearest competitor.",
+   "scene": {
+    "type": "counter",
+    "heading": "NFM CARPET · OMAHA MARKET SHARE · Q4 1989",
+    "to": 75.3,
+    "decimals": 1,
+    "suffix": "%",
+    "at": "seventy five percent",
+    "sub": "OVER 6× THE NEAREST COMPETITOR · BUFFETT, 1989"
+   },
+   "spoken": "And the moat held. By the end of nineteen eighty nine, Nebraska Furniture Mart's carpet department had seventy five percent of the Omaha market. Six times its nearest competitor.",
+   "sec": 10.13,
+   "cues": [
+    "And the moat held.",
+    "By the end of 1989, Nebraska Furniture Mart's carpet department had 75% of",
+    "the Omaha market.",
+    "Six times its nearest competitor."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "n55",
+   "say": "Three years later, at ninety nine, Mrs. B sold her building to Nebraska Furniture Mart, and joined up again. This time, she offered to sign a non compete. Buffett admitted he'd been incautious when she was eighty nine, and snapped it up. Partner, he wrote, is better.",
+   "cap": "Three years later, at 99, Mrs. B sold her building to Nebraska Furniture Mart, and joined up again. This time, she offered to sign a non-compete. Buffett admitted he'd been incautious when she was 89, and snapped it up. Partner, he wrote, is better.",
+   "scene": {
+    "type": "clip",
+    "clip": "m92_partner",
+    "heading": "BERKSHIRE LETTER · 1992",
+    "hl": [
+     "Partner, he wrote, is better"
+    ]
+   },
+   "spoken": "Three years later, at ninety nine, Mrs. B sold her building to Nebraska Furniture Mart, and joined up again. This time, she offered to sign a non compete. Buffett admitted he'd been incautious when she was eighty nine, and snapped it up. Partner, he wrote, is better.",
+   "sec": 16.67,
+   "cues": [
+    "Three years later, at 99, Mrs.",
+    "B sold her building to Nebraska Furniture Mart, and joined up again.",
+    "This time, she offered to sign a non-compete.",
+    "Buffett admitted he'd been incautious when she was 89, and snapped it up.",
+    "Partner, he wrote, is better."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "n60",
+   "say": "Case. Reopened.",
+   "cap": "Case. Reopened.",
+   "scene": {
+    "type": "x-act",
+    "act": "CASE",
+    "title": "REOPENED"
+   },
+   "spoken": "Case. Reopened.",
+   "sec": 1.57,
+   "cues": [
+    "Case.",
+    "Reopened."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "n61",
+   "say": "So, did the moat need Mrs. B? Look what happened next. Sales went from about a hundred million in nineteen eighty three, to two hundred million in nineteen ninety three. By twenty eleven, earnings were more than ten times what they were when Berkshire bought in.",
+   "cap": "So, did the moat need Mrs. B? Look what happened next. Sales went from about $100 million in 1983, to $200 million in 1993. By 2011, earnings were more than ten times what they were when Berkshire bought in.",
+   "scene": {
+    "type": "cards",
+    "heading": "NEBRASKA FURNITURE MART · BUFFETT'S LETTERS",
+    "cards": [
+     {
+      "top": "SALES · 1983",
+      "big": "~$100M",
+      "at": "about a hundred million"
+     },
+     {
+      "top": "SALES · 1993",
+      "big": "$200M",
+      "at": "two hundred million"
+     },
+     {
+      "top": "EARNINGS 2011 VS 1983",
+      "big": "> 10×",
+      "at": "more than ten times",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "So, did the moat need Mrs. B? Look what happened next. Sales went from about a hundred million in nineteen eighty three, to two hundred million in nineteen ninety three. By twenty eleven, earnings were more than ten times what they were when Berkshire bought in.",
+   "sec": 15.72,
+   "cues": [
+    "So, did the moat need Mrs.",
+    "B?",
+    "Look what happened next.",
+    "Sales went from about $100 million in 1983, to $200 million in 1993.",
+    "By 2011, earnings were more than ten times what they were when Berkshire",
+    "bought in."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "n62",
+   "say": "The flywheel travelled. A store in Kansas City. Then a giant one near Dallas. By twenty twenty, Buffett wrote, NFM owned the three largest home furnishings stores in America, and each set a sales record that year.",
+   "cap": "The flywheel travelled. A store in Kansas City. Then a giant one near Dallas. By 2020, Buffett wrote, NFM owned the three largest home furnishings stores in America, and each set a sales record that year.",
+   "scene": {
+    "type": "clip",
+    "clip": "m20_three",
+    "heading": "BERKSHIRE LETTER · 2020",
+    "hl": [
+     "three largest home furnishings stores"
+    ]
+   },
+   "spoken": "The flywheel travelled. A store in Kansas City. Then a giant one near Dallas. By twenty twenty, Buffett wrote, NFM owned the three largest home furnishings stores in America, and each set a sales record that year.",
+   "sec": 12.56,
+   "cues": [
+    "The flywheel travelled.",
+    "A store in Kansas City.",
+    "Then a giant one near Dallas.",
+    "By 2020, Buffett wrote, NFM owned the three largest home furnishings stores",
+    "in America, and each set a sales record that year."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "n62b",
+   "say": "By twenty eleven, the Omaha store and a newer one in Kansas City each sold more than four hundred million dollars a year. And Nebraska Furniture Mart bought a four hundred and thirty three acre site north of Dallas, for what Buffett predicted would be the highest volume home furnishings store in the country.",
+   "cap": "By 2011, the Omaha store and a newer one in Kansas City each sold more than $400 million a year. And Nebraska Furniture Mart bought a 433-acre site north of Dallas, for what Buffett predicted would be the highest-volume home furnishings store in the country.",
+   "scene": {
+    "type": "cards",
+    "heading": "NFM · BUFFETT, 2011",
+    "cards": [
+     {
+      "top": "OMAHA STORE SALES",
+      "big": "> $400M",
+      "at": "the Omaha store"
+     },
+     {
+      "top": "KANSAS CITY STORE",
+      "big": "> $400M",
+      "at": "Kansas City"
+     },
+     {
+      "top": "NEW TEXAS SITE",
+      "big": "433 ACRES",
+      "at": "four hundred and thirty three",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "spoken": "By twenty eleven, the Omaha store and a newer one in Kansas City each sold more than four hundred million dollars a year. And Nebraska Furniture Mart bought a four hundred and thirty three acre site north of Dallas, for what Buffett predicted would be the highest volume home furnishings store in the country.",
+   "sec": 18.34,
+   "cues": [
+    "By 2011, the Omaha store and a newer one in Kansas City each sold more than",
+    "$400 million a year.",
+    "And Nebraska Furniture Mart bought a 433-acre site north of Dallas,",
+    "for what Buffett predicted would be the highest-volume home furnishings store",
+    "in the country."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "n63",
+   "say": "And Mrs. B? She worked until she was one hundred and three. On her hundredth birthday, the store was due to be open in the evening. So she simply moved her party to a night when it was closed.",
+   "cap": "And Mrs. B? She worked until she was 103. On her 100th birthday, the store was due to be open in the evening. So she simply moved her party to a night when it was closed.",
+   "scene": {
+    "type": "x-photo",
+    "img": "birthday_cake",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "over": [
+     {
+      "kind": "card",
+      "top": "WORKED UNTIL AGE",
+      "text": "103",
+      "red": true,
+      "at": "one hundred and three",
+      "x": 160,
+      "y": 170,
+      "w": 480
+     },
+     {
+      "kind": "stamp",
+      "text": "PARTY POSTPONED: STORE OPEN",
+      "at": "moved her party",
+      "x": 1250,
+      "y": 900,
+      "size": 58
+     }
+    ]
+   },
+   "spoken": "And Mrs. B? She worked until she was one hundred and three. On her hundredth birthday, the store was due to be open in the evening. So she simply moved her party to a night when it was closed.",
+   "sec": 10.32,
+   "cues": [
+    "And Mrs.",
+    "B?",
+    "She worked until she was 103.",
+    "On her 100th birthday, the store was due to be open in the evening.",
+    "So she simply moved her party to a night when it was closed."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "n70",
+   "say": "The. Defence.",
+   "cap": "The. Defence.",
+   "scene": {
+    "type": "x-act",
+    "act": "THE",
+    "title": "DEFENCE"
+   },
+   "spoken": "The. Defence.",
+   "sec": 1.83,
+   "cues": [
+    "The.",
+    "Defence."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "n71",
+   "say": "Now the defence. One. A moat built on a founder's energy is fragile, and even Mrs. B got the carpet department wrong. Two. Furniture retail is local, so every new city means huge new stores and land. Three. Low cost moats need constant discipline. One lazy generation, and costs creep up. And four. People now shop in new ways, not just in giant stores.",
+   "cap": "Now the defence. One. A moat built on a founder's energy is fragile, and even Mrs. B got the carpet department wrong. Two. Furniture retail is local, so every new city means huge new stores and land. Three. Low cost moats need constant discipline. One lazy generation, and costs creep up. And four. People now shop in new ways, not just in giant stores.",
+   "scene": {
+    "type": "list",
+    "heading": "THE CASE AGAINST THE MOAT",
+    "items": [
+     {
+      "text": "FOUNDER-DEPENDENT; EVEN MRS. B ERRED",
+      "at": "founder's energy"
+     },
+     {
+      "text": "LOCAL: EVERY CITY NEEDS A GIANT STORE",
+      "at": "retail is local"
+     },
+     {
+      "text": "LOW COST NEEDS ENDLESS DISCIPLINE",
+      "at": "constant discipline"
+     },
+     {
+      "text": "NEW WAYS TO SHOP",
+      "at": "new ways"
+     }
+    ]
+   },
+   "spoken": "Now the defence. One. A moat built on a founder's energy is fragile, and even Mrs. B got the carpet department wrong. Two. Furniture retail is local, so every new city means huge new stores and land. Three. Low cost moats need constant discipline. One lazy generation, and costs creep up. And four. People now shop in new ways, not just in giant stores.",
+   "sec": 24.71,
+   "cues": [
+    "Now the defence.",
+    "One.",
+    "A moat built on a founder's energy is fragile, and even Mrs.",
+    "B got the carpet department wrong.",
+    "Two.",
+    "Furniture retail is local, so every new city means huge new stores and land.",
+    "Three.",
+    "Low cost moats need constant discipline.",
+    "One lazy generation, and costs creep up.",
+    "And four.",
+    "People now shop in new ways, not just in giant stores."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "n72",
+   "say": "So, here's our verdict. The Nebraska Furniture Mart moat is the lowest cost in the business, turned into the lowest prices, at a scale no rival could match. Its threat is losing the family's discipline. And its status? Nearly forty years after Berkshire bought it, three record breaking stores.",
+   "cap": "So, here's our verdict. The Nebraska Furniture Mart moat is the lowest cost in the business, turned into the lowest prices, at a scale no rival could match. Its threat is losing the family's discipline. And its status? Nearly forty years after Berkshire bought it, three record breaking stores.",
+   "scene": {
+    "type": "x-verdict",
+    "caseName": "CASE FILE 005 · NEBRASKA FURNITURE MART",
+    "rows": [
+     {
+      "k": "THE MOAT",
+      "v": "LOWEST COST → LOWEST PRICE, AT SCALE",
+      "at": "lowest cost in the business"
+     },
+     {
+      "k": "THE THREAT",
+      "v": "LOSING THE FAMILY'S DISCIPLINE",
+      "at": "Its threat"
+     },
+     {
+      "k": "STATUS",
+      "v": "3 RECORD-BREAKING STORES · 2020",
+      "at": "its status"
+     }
+    ]
+   },
+   "spoken": "So, here's our verdict. The Nebraska Furniture Mart moat is the lowest cost in the business, turned into the lowest prices, at a scale no rival could match. Its threat is losing the family's discipline. And its status? Nearly forty years after Berkshire bought it, three record breaking stores.",
+   "sec": 19.36,
+   "cues": [
+    "So, here's our verdict.",
+    "The Nebraska Furniture Mart moat is the lowest cost in the business,",
+    "turned into the lowest prices, at a scale no rival could match.",
+    "Its threat is losing the family's discipline.",
+    "And its status?",
+    "Nearly forty years after Berkshire bought it, three record breaking stores."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n80",
+   "say": "When you study any Indian retailer that claims to be the cheapest, open a case file with three questions.",
+   "cap": "When you study any Indian retailer that claims to be the cheapest, open a case file with three questions.",
+   "scene": {
+    "type": "x-photo",
+    "img": "india_market",
+    "move": "in",
+    "fx": 0.5,
+    "fy": 0.5,
+    "fx_particles": "dust",
+    "over": [
+     {
+      "kind": "stamp",
+      "text": "OPEN A CASE FILE",
+      "at": "open a case file",
+      "x": 1400,
+      "y": 880,
+      "size": 70
+     }
+    ]
+   },
+   "spoken": "When you study any Indian retailer that claims to be the cheapest, open a case file with three questions.",
+   "sec": 6.27,
+   "cues": [
+    "When you study any Indian retailer that claims to be the cheapest,",
+    "open a case file with three questions."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n81",
+   "say": "One. Are its running costs, as a share of sales, far below its rivals'? Two. Does it pass the savings to customers, or keep them? Three. Would the machine keep running without its founder?",
+   "cap": "One. Are its running costs, as a share of sales, far below its rivals'? Two. Does it pass the savings to customers, or keep them? Three. Would the machine keep running without its founder?",
+   "scene": {
+    "type": "hand",
+    "title": "Your case file:",
+    "items": [
+     {
+      "text": "Costs as % of sales vs rivals?",
+      "at": "One. Are its"
+     },
+     {
+      "text": "Savings passed to customers?",
+      "at": "Two. Does it"
+     },
+     {
+      "text": "Runs without the founder?",
+      "at": "Three. Would"
+     }
+    ]
+   },
+   "spoken": "One. Are its running costs, as a share of sales, far below its rivals'? Two. Does it pass the savings to customers, or keep them? Three. Would the machine keep running without its founder?",
+   "sec": 12.67,
+   "cues": [
+    "One.",
+    "Are its running costs, as a share of sales, far below its rivals'?",
+    "Two.",
+    "Does it pass the savings to customers, or keep them?",
+    "Three.",
+    "Would the machine keep running without its founder?"
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n82",
+   "say": "We're not saying any Indian company has this moat. You do the detective work.",
+   "cap": "We're not saying any Indian company has this moat. You do the detective work.",
+   "scene": {
+    "type": "kinetic",
+    "kicker": "NO COMPANY IS NAMED OR RECOMMENDED",
+    "lines": [
+     {
+      "t": "YOU DO THE DETECTIVE WORK.",
+      "at": "You do the",
+      "em": [
+       "DETECTIVE"
+      ]
+     }
+    ]
+   },
+   "spoken": "We're not saying any Indian company has this moat. You do the detective work.",
+   "sec": 3.73,
+   "cues": [
+    "We're not saying any Indian company has this moat.",
+    "You do the detective work."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n83",
+   "say": "One line for your friend over chai. The lowest cost seller, who shares the savings, wins the war.",
+   "cap": "One line for your friend over chai. The lowest cost seller, who shares the savings, wins the war.",
+   "scene": {
+    "type": "x-photo",
+    "img": "chai_shop",
+    "move": "out",
+    "fx": 0.5,
+    "fy": 0.5,
+    "shade": 0.25,
+    "over": [
+     {
+      "kind": "label",
+      "text": "THE CHAI TEST",
+      "at": 0,
+      "x": 120,
+      "y": 170,
+      "size": 40
+     },
+     {
+      "kind": "strip",
+      "text": "LOWEST COST + SHARE THE SAVINGS",
+      "at": "lowest cost seller",
+      "x": 960,
+      "y": 780
+     },
+     {
+      "kind": "strip",
+      "text": "= WINS THE WAR",
+      "at": "wins the war",
+      "x": 960,
+      "y": 900,
+      "red": true
+     }
+    ]
+   },
+   "spoken": "One line for your friend over chai. The lowest cost seller, who shares the savings, wins the war.",
+   "sec": 5.83,
+   "cues": [
+    "One line for your friend over chai.",
+    "The lowest cost seller, who shares the savings, wins the war."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n84",
+   "say": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "cap": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "Berkshire Hathaway letters · 1983, 1984, 1987, 1989, 1992, 1993, 2011, 2013, 2020",
+     "The Moat Files · Case File 005 · every figure on the fact sheet"
+    ]
+   },
+   "spoken": "Every clue here comes from Warren Buffett's letters. The sources are in the description.",
+   "sec": 4.94,
+   "cues": [
+    "Every clue here comes from Warren Buffett's letters.",
+    "The sources are in the description."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "n85",
+   "say": "Next case. A city that could only keep one newspaper. Two papers went to war, and one of them lost millions a year. Then the moat that won the war began to dissolve. Case file six. Subscribe, and I'll see you at the crime scene.",
+   "cap": "Next case. A city that could only keep one newspaper. Two papers went to war, and one of them lost millions a year. Then the moat that won the war began to dissolve. Case file six. Subscribe, and I'll see you at the crime scene.",
+   "scene": {
+    "type": "end"
+   },
+   "spoken": "Next case. A city that could only keep one newspaper. Two papers went to war, and one of them lost millions a year. Then the moat that won the war began to dissolve. Case file six. Subscribe, and I'll see you at the crime scene.",
+   "sec": 15.93,
+   "cues": [
+    "Next case.",
+    "A city that could only keep one newspaper.",
+    "Two papers went to war, and one of them lost millions a year.",
+    "Then the moat that won the war began to dissolve.",
+    "Case file six.",
+    "Subscribe, and I'll see you at the crime scene."
+   ]
+  }
+ ],
+ "clips": {
+  "m13_fifty": {
+   "w": 1492,
+   "h": 180,
+   "hl": [
+    [
+     0.1676,
+     0.5,
+     0.1487,
+     0.2
+    ]
+   ],
+   "page": 14,
+   "quote": "no zeros omitted"
+  },
+  "m84_levitz": {
+   "w": 1208,
+   "h": 208,
+   "hl": [
+    [
+     0.4288,
+     0.3162,
+     0.3123,
+     0.2009
+    ]
+   ],
+   "page": 6,
+   "quote": "gross margin of 44.4%"
+  },
+  "m83_grizzly": {
+   "w": 1225,
+   "h": 225,
+   "hl": [
+    [
+     0.5345,
+     0.3688,
+     0.3498,
+     0.1855
+    ]
+   ],
+   "page": 4,
+   "quote": "rather wrestle grizzlies"
+  },
+  "m93_word": {
+   "w": 1242,
+   "h": 208,
+   "hl": [
+    [
+     0.5134,
+     0.4829,
+     0.4414,
+     0.2009
+    ]
+   ],
+   "page": 20,
+   "quote": "her word was good enough for us"
+  },
+  "m89_carpet": {
+   "w": 1225,
+   "h": 225,
+   "hl": [
+    [
+     0.1436,
+     0.4457,
+     0.4057,
+     0.1855
+    ]
+   ],
+   "page": 7,
+   "quote": "carpet sales declined by 17%"
+  },
+  "m92_partner": {
+   "w": 1225,
+   "h": 260,
+   "hl": [
+    [
+     0.0318,
+     0.453,
+     0.2521,
+     0.1608
+    ]
+   ],
+   "page": 19,
+   "quote": "partner is better"
+  },
+  "m20_three": {
+   "w": 1500,
+   "h": 191,
+   "hl": [
+    [
+     0.264,
+     0.5418,
+     0.3097,
+     0.1893
+    ]
+   ],
+   "page": 8,
+   "quote": "three largest home-furnishings stores"
+  }
+ }
+}

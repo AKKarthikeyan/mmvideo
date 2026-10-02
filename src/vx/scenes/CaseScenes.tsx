@@ -504,8 +504,60 @@ const XChain: React.FC<P> = ({s, n, T}) => {
   );
 };
 
+// ---------- x-loop: a flywheel — nodes around a circle, arrows between them, a spark that keeps circling ----------
+// s.heading, s.nodes = [{t, at}], s.center = {text, at}, s.stamp = {text, at}
+const XLoop: React.FC<P> = ({s, n, T}) => {
+  const f = useCurrentFrame(); const nodes = s.nodes as any[]; const k = nodes.length;
+  const cx = 960, cy = 590, R = 330;
+  const pos = nodes.map((_, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / k; return [cx + Math.cos(a) * R * 1.35, cy + Math.sin(a) * R]; });
+  const last = T(nodes[k - 1].at); const spin = f < last ? 0 : (f - last) / 40;
+  const sa = -Math.PI / 2 + spin * 2 * Math.PI;
+  return (
+    <Wrap n={n}>
+      <Strip x={960} y={110} start={0} text={s.heading} size={58}/>
+      <ellipse cx={cx} cy={cy} rx={R * 1.35} ry={R} fill="none" stroke={C.ink} strokeWidth={5} strokeDasharray="22 16" opacity={0.45}/>
+      {f >= last && <circle cx={cx + Math.cos(sa) * R * 1.35} cy={cy + Math.sin(sa) * R} r={22} fill={C.red} stroke={C.ink} strokeWidth={4}/>}
+      {nodes.map((nd, i) => { const at = T(nd.at); const [x, y] = pos[i];
+        return <Pop key={i} at={at} x={x} y={y}>{box(x, y, nd.t, i === k - 1, 400, nd.t.length > 14 ? 34 : 42)}</Pop>; })}
+      {s.center && <Pop at={T(s.center.at)} x={cx} y={cy}><text x={cx} y={cy + 20} textAnchor="middle" fontFamily={COND} fontWeight={700} fontSize={s.center.text.length > 10 ? 48 : 70} fill={C.red}>{s.center.text}</text></Pop>}
+      {s.stamp && <Stamp x={s.stamp.x ?? 1650} y={s.stamp.y ?? 960} start={T(s.stamp.at)} text={s.stamp.text} size={50} rot={-6}/>}
+    </Wrap>
+  );
+};
+
+// ---------- x-gap: stylised "cheap for decades" chart — what it was worth (red) vs the share price (ink), drawn over time ----------
+// s.heading, s.years [start, end], s.price_at, s.value_at, s.stamp = {text, at}, s.note (source caption). Shapes are illustrative, not data.
+const XGap: React.FC<P> = ({s, n, T}) => {
+  const f = useCurrentFrame();
+  const [y0, y1] = s.years as [number, number];
+  const X = (u: number) => 220 + u * 1480, Y = (v: number) => 900 - v * 640;
+  const pts = (fn: (u: number) => number, p: number) => Array.from({length: 61}, (_, i) => i / 60).filter((u) => u <= p).map((u) => `${X(u)},${Y(fn(u))}`).join(" ");
+  const val = (u: number) => 0.04 + 0.92 * Math.pow(u, 1.6);
+  const price = (u: number) => 0.012 + 0.55 * Math.pow(u, 2.4) + 0.012 * Math.sin(u * 40);
+  const pa = T(s.price_at), va = T(s.value_at);
+  const pp = interpolate(f, [pa, pa + 60], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  const vp = interpolate(f, [va, va + 60], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  return (
+    <Wrap n={n}>
+      <Strip x={960} y={110} start={0} text={s.heading} size={56}/>
+      <line x1={220} y1={900} x2={1720} y2={900} stroke={C.ink} strokeWidth={4}/>
+      <line x1={220} y1={900} x2={220} y2={240} stroke={C.ink} strokeWidth={4}/>
+      {[0, 0.25, 0.5, 0.75, 1].map((u) => <text key={u} x={X(u)} y={950} textAnchor="middle" fontFamily={TYPE} fontSize={28} fill={C.ink}>{Math.round(y0 + u * (y1 - y0))}</text>)}
+      {vp > 0 && pp > 0 && <polygon points={`${pts(val, Math.min(vp, pp))} ${Array.from({length: 61}, (_, i) => (60 - i) / 60).filter((u) => u <= Math.min(vp, pp)).map((u) => `${X(u)},${Y(price(u))}`).join(" ")}`} fill={C.red} opacity={0.12}/>}
+      {vp > 0 && <polyline points={pts(val, vp)} fill="none" stroke={C.red} strokeWidth={9} strokeLinejoin="round"/>}
+      {pp > 0 && <polyline points={pts(price, pp)} fill="none" stroke={C.ink} strokeWidth={7} strokeLinejoin="round"/>}
+      <TypeLabel x={260} y={300} start={va} text="WHAT IT WAS WORTH (10% A YEAR FROM HERE)" size={30} cps={99}/>
+      <TypeLabel x={260} y={345} start={pa} text="THE SHARE PRICE" size={30} cps={99}/>
+      <line x1={232} y1={290} x2={252} y2={290} stroke={C.red} strokeWidth={8} opacity={vp > 0 ? 1 : 0}/>
+      <line x1={232} y1={335} x2={252} y2={335} stroke={C.ink} strokeWidth={8} opacity={pp > 0 ? 1 : 0}/>
+      {s.note && <TypeLabel x={220} y={1010} start={0} text={s.note} size={24} cps={99}/>}
+      {s.stamp && <Stamp x={s.stamp.x ?? 1350} y={s.stamp.y ?? 620} start={T(s.stamp.at)} text={s.stamp.text} size={58} rot={-6}/>}
+    </Wrap>
+  );
+};
+
 export const CASE_SCENES: Record<string, React.FC<any>> = {
-  "x-tank": XTank, "x-chain": XChain,
+  "x-tank": XTank, "x-chain": XChain, "x-loop": XLoop, "x-gap": XGap,
   "x-door": XDoor, "x-case": XCase, "x-act": XAct, "x-founder": XFounder, "x-middleman": XMiddleman, "x-mango": XMango,
   "x-crime": XCrime, "x-biryani": XBiryani, "x-ekg": XEkg, "x-line": XLine, "x-verdict": XVerdict, "x-castle": XCastle, "x-photo": XPhoto, "x-race": XRace,
   "x-tiptoe": XTiptoe, "x-fall": XFall,

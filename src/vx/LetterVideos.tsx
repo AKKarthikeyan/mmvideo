@@ -12,6 +12,12 @@ import mf001 from "../../public/vx/mf001-geico/data.json";
 import mf002 from "../../public/vx/mf002-sees/data.json";
 import mf003 from "../../public/vx/mf003-textile/data.json";
 import mf004 from "../../public/vx/mf004-amex/data.json";
+import mf005 from "../../public/vx/mf005-nfm/data.json";
+import mf006 from "../../public/vx/mf006-buffalo/data.json";
+import mf007 from "../../public/vx/mf007-coke/data.json";
+import mf008 from "../../public/vx/mf008-costco/data.json";
+import mf009 from "../../public/vx/mf009-walmart/data.json";
+import mf010 from "../../public/vx/mf010-dexter/data.json";
 import * as CE from "./CaseEngine";
 import {CaseThumbStills, PhotoThumbStills} from "./scenes/CaseThumbs";
 
@@ -41,7 +47,7 @@ const THUMBG: Record<string, {words: string; badge: string; badgeSub: string; cl
   ],
 };
 
-const CASES = [mf001, mf002, mf003, mf004] as unknown as VData[];
+const CASES = [mf001, mf002, mf003, mf004, mf005, mf006, mf007, mf008, mf009, mf010] as unknown as VData[];
 const CASE_THUMBG: Record<string, {words: string; badge: string; badgeSub: string; clip: string}[]> = {
   "mf001-geico": [
     {words: "Died twice?", badge: "−95%", badgeSub: "GEICO STOCK|1970s", clip: "g04_reserve"},

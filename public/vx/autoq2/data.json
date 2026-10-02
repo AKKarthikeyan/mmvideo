@@ -67,16 +67,16 @@
   {
    "ch": 0,
    "key": "q00",
-   "say": "Auto sales for September twenty twenty six are out, and they close the quarter. So we ranked ten listed automakers on one number: how fast their sales in India grew from July to September, using only their own filings. Maruti won September. It didn't win the quarter. And the fastest grower has one of the weaker Moat Scores on the list.",
-   "cap": "Auto sales for September 2026 are out, and they close the quarter. So we ranked 10 listed automakers on one number: how fast their sales in India grew from July to September, using only their own filings. Maruti won September. It didn't win the quarter. And the fastest grower has one of the weaker Moat Scores on the list.",
+   "say": "Auto sales for September twenty twenty six are out, and they close the quarter. So we ranked eleven listed automakers on one number: how fast their sales in India grew from July to September, using only their own filings. Maruti won September. It didn't win the quarter. And the fastest grower has one of the weaker Moat Scores on the list.",
+   "cap": "Auto sales for September 2026 are out, and they close the quarter. So we ranked 11 listed automakers on one number: how fast their sales in India grew from July to September, using only their own filings. Maruti won September. It didn't win the quarter. And the fastest grower has one of the weaker Moat Scores on the list.",
    "scene": {
     "type": "cards",
     "heading": "AUTO SALES · Q2 FY27 SCOREBOARD",
     "cards": [
      {
       "top": "LISTED AUTOMAKERS",
-      "big": "10",
-      "at": "ten listed automakers"
+      "big": "11",
+      "at": "eleven listed automakers"
      },
      {
       "top": "ONE NUMBER",
@@ -93,10 +93,10 @@
      }
     ]
    },
-   "sec": 19.8,
+   "sec": 20.64,
    "cues": [
     "Auto sales for September 2026 are out, and they close the quarter.",
-    "So we ranked 10 listed automakers on one number:",
+    "So we ranked 11 listed automakers on one number:",
     "how fast their sales in India grew from July to September,",
     "using only their own filings.",
     "Maruti won September.",
@@ -190,30 +190,29 @@
   {
    "ch": 1,
    "key": "q12",
-   "say": "Two caveats. Hyundai only reports monthly growth rates, so its base is worked back from those. And Hero MotoCorp hasn't filed monthly sales with the exchange this quarter, so it isn't on the board.",
-   "cap": "Two caveats. Hyundai only reports monthly growth rates, so its base is worked back from those. And Hero MotoCorp hasn't filed monthly sales with the exchange this quarter, so it isn't on the board.",
+   "say": "One caveat. Hyundai only reports monthly growth rates, so its base is worked back from those. Every other number is exact, straight from the filings.",
+   "cap": "One caveat. Hyundai only reports monthly growth rates, so its base is worked back from those. Every other number is exact, straight from the filings.",
    "scene": {
     "type": "list",
-    "heading": "TWO CAVEATS",
+    "heading": "ONE CAVEAT",
     "items": [
      {
       "text": "HYUNDAI: BASE FROM ITS GROWTH RATES",
-      "at": "Hyundai only"
+      "at": "Hyundai only",
+      "red": true
      },
      {
-      "text": "HERO MOTOCORP: NO EXCHANGE FILING",
-      "at": "Hero MotoCorp",
-      "red": true
+      "text": "ALL OTHERS: EXACT, FROM THE FILINGS",
+      "at": "Every other"
      }
     ]
    },
-   "sec": 10.58,
+   "sec": 9.53,
    "cues": [
-    "Two caveats.",
+    "One caveat.",
     "Hyundai only reports monthly growth rates,",
     "so its base is worked back from those.",
-    "And Hero MotoCorp hasn't filed monthly sales with the exchange this quarter,",
-    "so it isn't on the board."
+    "Every other number is exact, straight from the filings."
    ]
   },
   {
@@ -473,8 +472,8 @@
   {
    "ch": 3,
    "key": "q31",
-   "say": "Round two, two wheelers. Bajaj Auto grew just one point eight percent in India. Royal Enfield, sixteen point four. And TVS Motor, twenty four point one percent. TVS wins the round, by a distance.",
-   "cap": "Round two, two-wheelers. Bajaj Auto grew just 1.8% in India. Royal Enfield, 16.4%. And TVS Motor, 24.1%. TVS wins the round, by a distance.",
+   "say": "Round two, two wheelers. Bajaj Auto grew just one point eight percent in India. Hero MotoCorp, the biggest seller on the board, twelve point nine. Royal Enfield, sixteen point four. And TVS Motor, twenty four point one percent. TVS wins the round, by a distance.",
+   "cap": "Round two, two-wheelers. Bajaj Auto grew just 1.8% in India. Hero MotoCorp, the biggest seller on the board, 12.9%. Royal Enfield, 16.4%. And TVS Motor, 24.1%. TVS wins the round, by a distance.",
    "scene": {
     "type": "league",
     "heading": "TWO-WHEELERS · DOMESTIC SALES GROWTH · Q2 FY27",
@@ -486,6 +485,12 @@
       "v": 1.8,
       "vol": "6,07,416 units",
       "at": "Bajaj Auto grew"
+     },
+     {
+      "name": "Hero MotoCorp",
+      "v": 12.9,
+      "vol": "17,82,726 units",
+      "at": "Hero MotoCorp, the"
      },
      {
       "name": "Royal Enfield",
@@ -500,12 +505,13 @@
       "at": "And TVS Motor"
      }
     ],
-    "note": "HERO MOTOCORP NOT ON THE BOARD: NO EXCHANGE FILING THIS QUARTER"
+    "note": "HERO AND ROYAL ENFIELD REPORT DISPATCHES · ALL DOMESTIC"
    },
-   "sec": 14.99,
+   "sec": 21.0,
    "cues": [
     "Round two, two-wheelers.",
     "Bajaj Auto grew just 1.8% in India.",
+    "Hero MotoCorp, the biggest seller on the board, 12.9%.",
     "Royal Enfield, 16.4%.",
     "And TVS Motor, 24.1%.",
     "TVS wins the round, by a distance."
@@ -717,11 +723,11 @@
   {
    "ch": 5,
    "key": "q51",
-   "say": "Here's the full board. Tata Motors' cars first, then Maruti, Ashok Leyland, Tata's trucks, Mahindra, TVS, Hyundai, Royal Enfield, Bajaj, and Escorts last.",
-   "cap": "Here's the full board. Tata Motors' cars first, then Maruti, Ashok Leyland, Tata's trucks, Mahindra, TVS, Hyundai, Royal Enfield, Bajaj, and Escorts last.",
+   "say": "Here's the full board. Tata Motors' cars first, then Maruti, Ashok Leyland, Tata's trucks, Mahindra, TVS, Hyundai, Royal Enfield, Hero, Bajaj, and Escorts last.",
+   "cap": "Here's the full board. Tata Motors' cars first, then Maruti, Ashok Leyland, Tata's trucks, Mahindra, TVS, Hyundai, Royal Enfield, Hero, Bajaj, and Escorts last.",
    "scene": {
     "type": "league",
-    "heading": "ALL 10 · DOMESTIC SALES GROWTH · Q2 FY27",
+    "heading": "ALL 11 · DOMESTIC SALES GROWTH · Q2 FY27",
     "rows": [
      {
       "name": "Tata Motors PV",
@@ -761,7 +767,12 @@
      {
       "name": "Royal Enfield",
       "v": 16.4,
-      "at": "Royal Enfield, Bajaj"
+      "at": "Royal Enfield, Hero"
+     },
+     {
+      "name": "Hero MotoCorp",
+      "v": 12.9,
+      "at": "Hero, Bajaj"
      },
      {
       "name": "Bajaj Auto",
@@ -779,14 +790,14 @@
    "cues": [
     "Here's the full board.",
     "Tata Motors' cars first, then Maruti, Ashok Leyland, Tata's trucks, Mahindra,",
-    "TVS, Hyundai, Royal Enfield, Bajaj, and Escorts last."
+    "TVS, Hyundai, Royal Enfield, Hero, Bajaj, and Escorts last."
    ]
   },
   {
    "ch": 5,
    "key": "q52",
-   "say": "Now the promise from the start. Here are their published Moat Scores. Escorts, last on growth, has the highest score of the ten, five point seven eight. Tata Motors' car business, first on growth, scores five point zero eight. And Tata's truck business has the lowest, four point eight two.",
-   "cap": "Now the promise from the start. Here are their published MoatSCOREs. Escorts, last on growth, has the highest score of the ten, 5.78. Tata Motors' car business, first on growth, scores 5.08. And Tata's truck business has the lowest, 4.82.",
+   "say": "Now the promise from the start. Here are their published Moat Scores. Escorts, last on growth, has the highest score of the eleven, five point seven eight. Tata Motors' car business, first on growth, scores five point zero eight. And Tata's truck business has the lowest, four point eight two.",
+   "cap": "Now the promise from the start. Here are their published MoatSCOREs. Escorts, last on growth, has the highest score of the eleven, 5.78. Tata Motors' car business, first on growth, scores 5.08. And Tata's truck business has the lowest, 4.82.",
    "scene": {
     "type": "scores",
     "rows": [
@@ -811,6 +822,10 @@
       5.21
      ],
      [
+      "Hero MotoCorp",
+      5.14
+     ],
+     [
       "Maruti Suzuki",
       5.11
      ],
@@ -833,11 +848,11 @@
     ],
     "note": "AS PUBLISHED ON THE MOAT SCREENER · 1 OCT 2026 · FIRST PASS"
    },
-   "sec": 19.12,
+   "sec": 20.69,
    "cues": [
     "Now the promise from the start.",
     "Here are their published MoatSCOREs.",
-    "Escorts, last on growth, has the highest score of the ten, 5.78.",
+    "Escorts, last on growth, has the highest score of the eleven, 5.78.",
     "Tata Motors' car business, first on growth, scores 5.08.",
     "And Tata's truck business has the lowest, 4.82."
    ]
@@ -894,8 +909,8 @@
   {
    "ch": 6,
    "key": "q61",
-   "say": "The bear case on this whole table. The base is low, because last July and August came before the GST cut. Company sales can include stock sent to dealers before the festive season; Royal Enfield even calls its September number dispatches. It's one quarter. And Hero MotoCorp isn't on the board.",
-   "cap": "The bear case on this whole table. The base is low, because last July and August came before the GST cut. Company sales can include stock sent to dealers before the festive season; Royal Enfield even calls its September number \"dispatches\". It's one quarter. And Hero MotoCorp isn't on the board.",
+   "say": "The bear case on this whole table. The base is low, because last July and August came before the GST cut. Company sales can include stock sent to dealers before the festive season; Royal Enfield even calls its September number dispatches. It's one quarter. And it's eleven listed makers, not the whole industry.",
+   "cap": "The bear case on this whole table. The base is low, because last July and August came before the GST cut. Company sales can include stock sent to dealers before the festive season; Royal Enfield even calls its September number \"dispatches\". It's one quarter. And it's eleven listed makers, not the whole industry.",
    "scene": {
     "type": "list",
     "heading": "THE BEAR CASE",
@@ -913,27 +928,27 @@
       "at": "It's one quarter"
      },
      {
-      "text": "HERO MOTOCORP NOT ON THE BOARD",
-      "at": "Hero MotoCorp isn't",
+      "text": "11 MAKERS, NOT THE INDUSTRY",
+      "at": "eleven listed makers",
       "red": true
      }
     ]
    },
-   "sec": 18.0,
+   "sec": 21.05,
    "cues": [
     "The bear case on this whole table.",
     "The base is low, because last July and August came before the GST cut.",
     "Company sales can include stock sent to dealers before the festive season;",
     "Royal Enfield even calls its September number \"dispatches\".",
     "It's one quarter.",
-    "And Hero MotoCorp isn't on the board."
+    "And it's eleven listed makers, not the whole industry."
    ]
   },
   {
    "ch": 6,
    "key": "q62",
-   "say": "What we'll watch next: October's festive sales, Hero MotoCorp's numbers, and the quarterly results, which show whether all this growth came with better margins.",
-   "cap": "What we'll watch next: October's festive sales, Hero MotoCorp's numbers, and the Q2 results, which show whether all this growth came with better margins.",
+   "say": "What we'll watch next: October's festive sales, and the quarterly results, which show whether all this growth came with better margins, and better moats.",
+   "cap": "What we'll watch next: October's festive sales, and the Q2 results, which show whether all this growth came with better margins, and better moats.",
    "scene": {
     "type": "hand",
     "title": "Watch:",
@@ -943,20 +958,20 @@
       "at": "festive sales"
      },
      {
-      "text": "Hero MotoCorp's numbers",
-      "at": "Hero MotoCorp's"
-     },
-     {
       "text": "Q2 margins",
       "at": "better margins"
+     },
+     {
+      "text": "Q2 moats",
+      "at": "better moats"
      }
     ]
    },
-   "sec": 9.09,
+   "sec": 8.38,
    "cues": [
     "What we'll watch next:",
-    "October's festive sales, Hero MotoCorp's numbers, and the Q2 results,",
-    "which show whether all this growth came with better margins."
+    "October's festive sales, and the Q2 results,",
+    "which show whether all this growth came with better margins, and better moats."
    ]
   },
   {
@@ -967,7 +982,7 @@
    "scene": {
     "type": "sources",
     "items": [
-     "Sales releases filed on NSE: Maruti Suzuki, Tata Motors PV & CV, Mahindra, Hyundai, TVS, Bajaj, Eicher, Ashok Leyland, Escorts Kubota",
+     "Sales releases filed on NSE: Maruti Suzuki, Tata Motors PV & CV, Mahindra, Hyundai, TVS, Hero MotoCorp, Bajaj, Eicher, Ashok Leyland, Escorts Kubota",
      "Monthly filings of 1–3 Jul, 1–3 Aug, 1 Sep and 1 Oct 2026",
      "Q2 = Apr–Sep minus Apr–Jun where only year-to-date is filed",
      "Moat & Margin · Moat Screener (MoatSCORE), 1 Oct 2026"

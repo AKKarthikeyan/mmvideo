@@ -412,9 +412,10 @@ const Sources: React.FC<SP> = ({s, n}) => {
   );
 };
 
-const End: React.FC<SP> = ({n}) => {
+// plain (AK, 3 Oct 2026): long videos without notes or warnings — brand + site only; the disclaimer lives in the description.
+const End: React.FC<SP> = ({s, n}) => {
   const L = useL();
-  const lines = ["Educational research, not investment advice.", "Not a SEBI-registered Research Analyst", "or Investment Adviser.", "moatmarginresearch.com"];
+  const lines = s.plain ? ["moatmarginresearch.com"] : ["Educational research, not investment advice.", "Not a SEBI-registered Research Analyst", "or Investment Adviser.", "moatmarginresearch.com"];
   return (
     <Svg n={n}>
       <Strip x={L.cx} y={L.land ? 300 : 700} start={0} text="MOAT & MARGIN" size={L.land ? 120 : 100}/>

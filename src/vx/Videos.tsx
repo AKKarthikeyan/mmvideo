@@ -12,8 +12,13 @@ import adani from "../../public/vx/adani/data.json";
 import kpigreen from "../../public/vx/kpigreen/data.json";
 import autoq2 from "../../public/vx/autoq2/data.json";
 import autoq2s from "../../public/vx/autoq2s/data.json";
+import shyam from "../../public/vx/shyam/data.json";
+import shyams from "../../public/vx/shyams/data.json";
+import ceos from "../../public/vx/ceos/data.json";
+import banksq2 from "../../public/vx/banksq2/data.json";
+import jlrs from "../../public/vx/jlrs/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},
@@ -45,6 +50,16 @@ const THUMBV: Record<string, any[]> = {
     {kicker: "AUTO SALES · Q2 FY27", big: "+40%", bigSub: "TATA MOTORS PV · Q2 GROWTH", stamp: "TATA ON TOP", clip: "aq_t_tata", clipMeta: {"w": 1448, "h": 156, "hl": [[0.6076, 0.3819, 0.0853, 0.2901], [0.8766, 0.3819, 0.0569, 0.2898]]}},
     {kicker: "AUTO SALES · SEPTEMBER 2026", big: "−12%", bigSub: "BAJAJ · TWO-WHEELERS IN INDIA", stamp: "TVS: +17%", clip: "aq_t_bajaj", clipMeta: {"w": 932, "h": 236, "hl": [[0.8621, 0.5702, 0.0571, 0.1388]]}},
     {kicker: "AUTO SALES · Q2 FY27", big: "+0.9%", bigSub: "ESCORTS · LAST ON GROWTH", stamp: "TOP MOAT?", clip: "aq_t_escorts", clipMeta: {"w": 1551, "h": 129, "hl": [[0.6318, 0.3902, 0.0493, 0.3098]]}},
+  ],
+  banksq2: [
+    {kicker: "UNION BANK · Q2 FY27", big: "6.87%", bigSub: "DEPOSIT GROWTH · LOANS +18.53%", stamp: "THE GAP", clip: "bk_union"},
+    {kicker: "J&K BANK · CASA RATIO", big: "−388 BPS", bigSub: "CHEAP DEPOSITS · ONE YEAR", stamp: "SLIPPING", clip: "bk_jk"},
+    {kicker: "UJJIVAN SFB · LOAN BOOK", big: "+32.1%", bigSub: "#1 OF 22 BANKS ON LOAN GROWTH", stamp: "TOO FAST?", clip: "bk_ujjivan"},
+  ],
+  shyam: [
+    {kicker: "SHYAM METALICS · MoU", big: "₹50,000 CR", bigSub: "ONE STEEL PLANT · CHANDRAPUR", stamp: "NON-BINDING", clip: "sm_invest"},
+    {kicker: "SHYAM METALICS", big: "₹9,500 CR", bigSub: "ITS OWN 4–5 YEAR CAPEX PLAN", stamp: "WHO PAYS?", clip: "sm_capex"},
+    {kicker: "SHYAM METALICS · MoU", big: "9 MTPA", bigSub: "GREENFIELD STEEL · VIDARBHA", stamp: "ON PAPER", clip: "sm_purpose"},
   ],
   kpigreen: [
     {kicker: "KPI GREEN ENERGY", big: "₹2,410 CR", bigSub: "ENTERPRISE VALUE · ALL CASH", stamp: "FUNDED HOW?", clip: "kpi_ev"},

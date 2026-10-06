@@ -1,0 +1,275 @@
+{
+ "id": "jlrs",
+ "title": "JLR Q2 Shorts",
+ "chapters": [
+  "Shorts"
+ ],
+ "shorts": [
+  {
+   "title": "JLR shipped more. Sold fewer. Why?",
+   "beats": [
+    "j1",
+    "j2",
+    "j3",
+    "j4",
+    "j5",
+    "j6",
+    "j7",
+    "j8"
+   ],
+   "loop": true
+  }
+ ],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "j1",
+   "say": "JLR shipped twenty five percent more cars.",
+   "cap": "JLR shipped 24.5% more cars.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "JLR SHIPPED",
+      "at": "JLR shipped"
+     },
+     {
+      "t": "+24.5% MORE CARS",
+      "at": "JLR shipped|8",
+      "em": [
+       "245"
+      ]
+     }
+    ]
+   },
+   "sec": 2.46,
+   "cues": [
+    "JLR shipped 24.5% more cars."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j2",
+   "say": "But customers bought seven percent fewer.",
+   "cap": "But customers bought 7.5% fewer.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "CUSTOMERS BOUGHT",
+      "at": "customers bought"
+     },
+     {
+      "t": "7.5% FEWER",
+      "at": "seven percent",
+      "em": [
+       "75"
+      ]
+     }
+    ]
+   },
+   "sec": 2.25,
+   "cues": [
+    "But customers bought 7.5% fewer."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j3",
+   "say": "Eighty two thousand four hundred shipped to dealers. Seventy nine thousand sold to buyers.",
+   "cap": "82,400 shipped to dealers. 79,000 sold to buyers.",
+   "scene": {
+    "type": "cards",
+    "heading": "JLR · Q2 FY27",
+    "cards": [
+     {
+      "top": "WHOLESALES (TO DEALERS)",
+      "big": "82,400",
+      "at": "Eighty two",
+      "fill": "mustard"
+     },
+     {
+      "top": "RETAIL (TO BUYERS)",
+      "big": "79,000",
+      "at": "Seventy nine"
+     }
+    ]
+   },
+   "sec": 4.26,
+   "cues": [
+    "82,400 shipped to dealers.",
+    "79,000 sold to buyers."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j4",
+   "say": "So where did the buyers go? China.",
+   "cap": "So where did the buyers go? China.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "WHERE DID",
+      "at": "So where"
+     },
+     {
+      "t": "THE BUYERS GO?",
+      "at": "the buyers"
+     },
+     {
+      "t": "CHINA.",
+      "at": "China",
+      "em": [
+       "CHINA"
+      ]
+     }
+    ]
+   },
+   "sec": 2.64,
+   "cues": [
+    "So where did the buyers go?",
+    "China."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j5",
+   "say": "China retail fell from ten thousand six hundred to six thousand three hundred. And cars built in China, from seven thousand four hundred to nine hundred.",
+   "cap": "China retail fell from 10,604 to 6,300. And cars built in China (CJLR), from 7,417 to 900.",
+   "scene": {
+    "type": "bars",
+    "heading": "JLR RETAIL · Q2 FY26 → Q2 FY27",
+    "rows": [
+     {
+      "name": "CHINA REGION · Q2 FY26",
+      "v": 10604,
+      "label": "10,604",
+      "at": "China retail"
+     },
+     {
+      "name": "CHINA REGION · Q2 FY27",
+      "v": 6300,
+      "label": "6,300",
+      "at": "six thousand three",
+      "red": true
+     },
+     {
+      "name": "CJLR (MADE IN CHINA) · Q2 FY26",
+      "v": 7417,
+      "label": "7,417",
+      "at": "built in China"
+     },
+     {
+      "name": "CJLR · Q2 FY27",
+      "v": 900,
+      "label": "900",
+      "at": "to nine hundred",
+      "red": true
+     }
+    ]
+   },
+   "sec": 10.06,
+   "cues": [
+    "China retail fell from 10,604 to 6,300.",
+    "And cars built in China (CJLR), from 7,417 to 900."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j6",
+   "say": "Then Jaguar. Eight hundred cars. A year ago, nearly seven thousand.",
+   "cap": "Then Jaguar. Eight hundred cars. A year ago, nearly seven thousand.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": "RETAIL · Q2 FY27 · TYPE 01 LAUNCHES 6 OCT",
+    "lines": [
+     {
+      "t": "JAGUAR:",
+      "at": "Then Jaguar"
+     },
+     {
+      "t": "800 CARS.",
+      "at": "Eight hundred",
+      "em": [
+       "800"
+      ]
+     },
+     {
+      "t": "A YEAR AGO: 6,910",
+      "at": "A year ago"
+     }
+    ]
+   },
+   "sec": 5.2,
+   "cues": [
+    "Then Jaguar.",
+    "Eight hundred cars.",
+    "A year ago, nearly seven thousand."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j7",
+   "say": "Meanwhile Range Rover and Defender are now seventy seven point six percent of what JLR ships.",
+   "cap": "Meanwhile Range Rover, Range Rover Sport and Defender are now 77.6% of what JLR ships.",
+   "scene": {
+    "type": "counter",
+    "heading": "RANGE ROVER + RR SPORT + DEFENDER · SHARE OF WHOLESALES",
+    "to": 77.6,
+    "decimals": 1,
+    "suffix": "%",
+    "at": "Meanwhile",
+    "sub": "FROM 76.7% A YEAR AGO"
+   },
+   "sec": 6.76,
+   "cues": [
+    "Meanwhile Range Rover, Range Rover Sport and Defender are now 77.6% of what",
+    "JLR ships."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "j8",
+   "say": "Fewer cars, richer mix. Is that a stronger JLR? Because",
+   "cap": "Fewer cars, richer mix. Is that a stronger JLR? Because",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "FEWER CARS.",
+      "at": "Fewer cars"
+     },
+     {
+      "t": "RICHER MIX.",
+      "at": "richer mix",
+      "em": [
+       "RICHER"
+      ]
+     },
+     {
+      "t": "A STRONGER JLR?",
+      "at": "a stronger"
+     }
+    ]
+   },
+   "sec": 5.75,
+   "cues": [
+    "Fewer cars, richer mix.",
+    "Is that a stronger JLR?",
+    "Because"
+   ]
+  }
+ ],
+ "clips": {}
+}

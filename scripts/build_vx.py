@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs")
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -54,6 +54,21 @@ CLIPS = {
   "aq_gst": (AQ/"ESCORTS2_01102026090533_EKL_Sept2026_volume_F_Signed.pdf", "high base following the GST rate reduction in September 2025", 1, 2),
   "aq_tataev": (AQ/"TATAMOTORSSJS_01102026131705_NSEBSEQ2FY27.pdf", "EV penetration in our portfolio rising sharply to 23%", 1, 1),
   "aq_re": (AQ/"EICHERMOT_01102026111841_EMLMonthlyBusinessUpdate1stOctober2026Signed__1_.pdf", "Models with engine capacity exceeding 350cc", 3, 2),
+  "sm_purpose": (SM/"SHYAMMETL_02102026135130_SMELIntimationofMOU02102026.pdf", "9 MTPA Greenfield Integrated Steel Complex", 1, 1),
+  "sm_invest": (SM/"SHYAMMETL_02102026135130_SMELIntimationofMOU02102026.pdf", "Estimated investment of ₹50,000 Crore", 1, 1),
+  "sm_init": (SM/"SHYAMMETL_02102026135130_SMELIntimationofMOU02102026.pdf", "Initiation in FY 2026-27", 0, 2),
+  "sm_nonbinding": (SM/"SHYAMMETL_02102026135130_SMELIntimationofMOU02102026.pdf", "Non-binding Memorandum of Understanding (MoU).", 1, 1),
+  "sm_capex": (SM/"SHYAMMETL_20072026173013_SMELInvestorsPresentation20072026.pdf", "~₹9,500 Cr", 0, 4, None, True),
+  "sm_cap": (SM/"SHYAMMETL_20072026173013_SMELInvestorsPresentation20072026.pdf", "Debt to Equity capped at 0.5x", 3, 0, None, True),
+  "sm_ed": (SM/"SHYAMMETL_11052026132148_OutcomeofBM__2_.pdf", "Provisional Attachment Order by", 1, 3),
+  "ceo_bagchi": (CE/"HDFCBANK3_01102026182319_SE_Intimation-_Anup_Bagchi.pdf", "A member of the ICICI Group since 1992", 1, 1),
+  "ceo_mishra": (JD/"NSE_106806060.pdf", "will be transferred from ICICI Bank Limited", 1, 1),
+  "ceo_saha": (CE/"KMBLTAB_01102026080559_SEIntimation.pdf", "14 years at ICICI Bank", 1, 1, 1),
+  "bk_union": (BQ/"UNIONBANK_01102026223208_ProvFinancialResults30092026.pdf", "6.87%", 1, 0),
+  "bk_jk": (JD/"NSE_106806242.pdf", "(388 bps)", 1, 0),
+  "bk_bandhan": (JD/"NSE_106806404.pdf", "26.71%", 0, 0),
+  "bk_au": (JD/"NSE_106806399.pdf", "29.1%", 0, 1),
+  "bk_ujjivan": (JD/"NSE_106806279.pdf", "32.1%", 0, 0, 1),
 }
 
 def crop(name, pdf, phrase, up, dn, outdir, last=None, col=False):

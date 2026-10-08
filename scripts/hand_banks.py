@@ -115,6 +115,20 @@ SHORTS = {
   ("o4", "The twist. Thirteen of twenty two lent more than they raised. That works, until deposits get expensive."),
   ("o5", "Find your bank. Pause the video. Back to the napkin."),
  ],
+ "bkp": [
+  ("p1", "This bank's bad loans fell by more than half in ninety days."),
+  ("p2", "Clue one. Suryoday Small Finance Bank. Bad loans, six point five percent in June. Two point nine percent in September."),
+  ("p3", "Clue two. In the same quarter, it wrote off five hundred and ninety one crore of loans."),
+  ("p4", "The twist. Put the write off back, and bad loans are about six point six percent. Right where they were in June."),
+  ("p5", "And provisions cover just thirty one percent of what's left. Cleaner book, or cleaner number? Back to the napkin."),
+ ],
+ "bkq": [
+  ("q1", "Angel One's commodity trading doubled. So why did its share drop twenty one points?"),
+  ("q2", "Clue one. Today: two thousand four hundred and thirty eight billion a day. Forty four percent."),
+  ("q3", "Clue two. A year ago, eleven eighty seven billion. Sixty five point one percent."),
+  ("q4", "The twist. Divide turnover by share. The market went from eighteen hundred to fifty five hundred billion a day. It tripled."),
+  ("q5", "Its futures and options share held. New commodity traders went elsewhere. Back to the napkin."),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

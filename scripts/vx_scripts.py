@@ -1073,3 +1073,310 @@ JLS = dict(id="jlrs", title="JLR Q2 Shorts", chapters=["Shorts"], beats=[
 JLS["timelines"] = {}
 JLS["shorts"] = [dict(title="JLR shipped more. Sold fewer. Why?", beats=["j1","j2","j3","j4","j5","j6","j7","j8"], loop=True)]
 VIDEOS.append(JLS)
+
+
+# FCNR(B) deposits across seven banks (6 Oct 2026, from the 5 Oct digest + article). Long video ends with
+# "Today's top 10 filings" and points to the full digest on the blog (AK 6 Oct). Facts: each bank's Q2 FY27
+# business update (4-5 Oct 2026); totals/matched shares are our arithmetic (article: /fcnr-deposits-seven-banks-leveraged/).
+FCN = dict(id="fcnr", title="₹3.4 Lakh Crore of Bank Deposits, Mostly Borrowed: The FCNR Loop",
+  chapters=["Q2's hidden deposit story", "The RBI window", "The loop", "Bank by bank", "What it does to growth", "The cheap money", "The moat question", "Today's top 10 filings", "Sources"],
+  beats=[
+  T(0,"f00","Seven private banks just told us something the headline numbers hide. Between June and August, they raised foreign currency deposits. The five that give amounts raised about three point four lakh crore rupees. And about seventy percent of it was matched by loans against the same deposits.",
+    "Seven private banks just told us something the headline numbers hide. Between June and August, they raised foreign-currency deposits. The five that give amounts raised about ₹3.4 lakh crore. And about 70% of it was matched by loans against the same deposits.",
+    dict(type="cards", heading="FCNR(B) DEPOSITS · Q2 FY27 · BANKS' OWN FILINGS", cards=[dict(top="BANKS DISCLOSING", big="7", at="Seven private"), dict(top="RAISED (5 BANKS)", big="₹3.4 LAKH CR", at="three point four", fill="mustard"), dict(top="MATCHED BY LOANS", big="~70%", sub="OUR ARITHMETIC", at="seventy percent")])),
+  T(0,"f01","By the end of this video, you'll know how the loop works, what it does to the growth numbers, and which bank says it plainly. And at the end, today's top ten filings.",
+    "By the end of this video, you'll know how the loop works, what it does to the growth numbers, and which bank says it plainly. And at the end, today's top 10 filings.",
+    dict(type="strips", items=[dict(text="HOW THE LOOP WORKS", at="how the loop"), dict(text="WHAT IT DOES TO GROWTH", at="growth numbers"), dict(text="TODAY'S TOP 10 FILINGS", at="top ten", red=True)])),
+  title(1,"f10",["THE RBI", "WINDOW"], "Chapter one. The RBI window."),
+  T(1,"f11","F C N R B deposits are foreign currency term deposits, usually from non resident Indians. From June eighth to August thirty first, the RBI offered banks a concessional swap on them. Banks could turn those dollars into rupees on easy terms.",
+    "FCNR(B) deposits are foreign-currency term deposits, usually from non-resident Indians. From 8 June to 31 August, the RBI offered banks a concessional swap on them. Banks could turn those dollars into rupees on easy terms.",
+    dict(type="hand", title="The FCNR(B) window", items=[dict(text="Foreign-currency term deposits", at="foreign currency term"), dict(text="8 June to 31 August 2026", at="June eighth"), dict(text="Concessional USD/INR swap with RBI", at="concessional swap")])),
+  T(1,"f12","Yes Bank went further. It published its numbers with and without these deposits.",
+    "Yes Bank went further. It published its numbers with and without these deposits.",
+    dict(type="clip", clip="fc_yes", heading="YES BANK · Q2 FY27 PRE-RESULTS DISCLOSURE", hl=["with and without"], stamps=[dict(text="+19.5% → +13.2%", at="with and without")])),
+  title(2,"f20",["THE", "LOOP"], "Chapter two. The loop."),
+  T(2,"f21","Here's the loop. A bank's overseas branch lends dollars to a customer. The customer places them as a deposit in India. The bank swaps those dollars with the RBI. Deposits go up. Loans go up. By about the same amount.",
+    "Here's the loop. A bank's overseas branch lends dollars to a customer. The customer places them as a deposit in India. The bank swaps those dollars with the RBI. Deposits go up. Loans go up. By about the same amount.",
+    dict(type="hand", title="The loop", items=[dict(text="Bank lends dollars to a customer", at="lends dollars"), dict(text="Customer deposits them in India", at="places them"), dict(text="Bank swaps the dollars with RBI", at="swaps those"), dict(text="Deposits ↑ and loans ↑ together", at="Deposits go up")])),
+  T(2,"f22","IDFC First Bank says it plainly. It lent twenty four thousand eight hundred and eighty five crore to N R I customers, and that money was in turn booked as deposits.",
+    "IDFC First Bank says it plainly. It lent ₹24,885 crore to NRI customers, and that money \"was in turn booked as FCNR (B) deposits\".",
+    dict(type="clip", clip="fc_idfc", heading="IDFC FIRST BANK · Q2 FY27 PROVISIONAL RELEASE", hl=["in turn booked"], stamps=[dict(text="₹24,885 CR LENT · BOOKED AS DEPOSITS", at="in turn booked")])),
+  title(3,"f30",["BANK BY", "BANK"], "Chapter three. Bank by bank."),
+  T(3,"f31","HDFC Bank raised the most: eleven and a half billion dollars, about one lakh ten thousand crore. Axis, ten point six billion. Kotak, five point eight. IDFC First and IndusInd, about three and a half each.",
+    "HDFC Bank raised the most: US$11.5 billion, about ₹1.10 lakh crore. Axis, US$10.62 billion. Kotak, US$5.78 billion. IDFC First and IndusInd, about US$3.5 billion each.",
+    dict(type="bars", heading="FCNR(B) DEPOSITS RAISED · ₹ CRORE (BANKS' OWN CONVERSION)", rows=[dict(name="HDFC BANK", v=110340, label="1,10,340", at="HDFC Bank raised"), dict(name="AXIS BANK", v=101800, label="1,01,800", at="Axis"), dict(name="KOTAK", v=55344, label="55,344", at="Kotak"), dict(name="IDFC FIRST", v=34390, label="34,390", at="IDFC First and"), dict(name="INDUSIND", v=33627, label="33,627", at="IndusInd")])),
+  T(3,"f32","HDFC Bank's filing: eleven point five billion raised. Its overseas branches lent five point seven billion against these deposits, and it guaranteed another three point one billion of loans by other banks.",
+    "HDFC Bank's filing: US$11.5 billion raised. Its overseas branches lent US$5.7 billion against these deposits, and it guaranteed another US$3.1 billion of loans by other banks.",
+    dict(type="clip", clip="fc_hdfc", heading="HDFC BANK · Q2 FY27 BUSINESS UPDATE", hl=["eleven point five"], stamps=[dict(text="$5.7 BN LENT + $3.1 BN GUARANTEED", at="five point seven")])),
+  T(3,"f33","At Axis, loans and guarantees against the deposits add up to about eighty seven percent of the ten point six two billion it raised.",
+    "At Axis, loans and guarantees against the deposits add up to about 87% of the US$10.62 billion it raised (our arithmetic).",
+    dict(type="clip", clip="fc_axis", heading="AXIS BANK · Q2 FY27 BUSINESS UPDATE", hl=["ten point six two"], stamps=[dict(text="~87% MATCHED", at="eighty seven")])),
+  T(3,"f34","Across the five banks, about seventy percent was matched by loans, or guarantees for loans, against the same deposits.",
+    "Across the five banks, about 70% was matched by loans, or guarantees for loans, against the same deposits (our arithmetic).",
+    dict(type="counter", heading="MATCHED BY LOANS OR GUARANTEES · 5 BANKS", to=70, decimals=0, suffix="%", at="seventy percent", sub="OUR ARITHMETIC ON FILED FIGURES")),
+  title(4,"f40",["WHAT IT DOES", "TO GROWTH"], "Chapter four. What it does to growth."),
+  T(4,"f41","Strip it out, and deposit growth drops. Yes Bank, from nineteen and a half percent to thirteen point two. IDFC First, from twenty six to seventeen. Axis, from about twenty one to seventeen. And HDFC Bank, by our estimate, from nineteen to about fifteen.",
+    "Strip it out, and deposit growth drops. Yes Bank, from 19.5% to 13.2%. IDFC First, from 25.9% to 17.0%. Axis, from 20.7% to 17.0%. And HDFC Bank, by our estimate, from 18.8% to about 14.8%.",
+    dict(type="table", heading="DEPOSIT GROWTH · YoY · REPORTED vs WITHOUT FCNR", cols=["BANK", "REPORTED", "WITHOUT"], rows=[dict(cells=["Yes Bank", "+19.5%", "+13.2%"], at="Yes Bank"), dict(cells=["IDFC First Bank", "+25.9%", "+17.0%"], at="IDFC First, from"), dict(cells=["Axis Bank", "+20.7%", "+17.0%"], at="Axis, from"), dict(cells=["HDFC Bank*", "+18.8%", "~+14.8%"], at="HDFC Bank, by")])),
+  T(4,"f42","The window closed on August thirty first. So this is a one time boost, and it can run off as the deposits mature.",
+    "The window closed on 31 August. So this is a one-time boost, and it can run off as the deposits mature.",
+    dict(type="strips", items=[dict(text="ONE-TIME WINDOW", at="one time"), dict(text="CLOSED 31 AUGUST", at="August thirty"), dict(text="CAN RUN OFF", at="run off", red=True)])),
+  title(5,"f50",["THE CHEAP", "MONEY"], "Chapter five. The cheap money."),
+  T(5,"f51","Meanwhile, the cheapest deposits grew slower than the balance sheet. Kotak's current and savings share fell from forty two to thirty eight percent. Axis, from forty to thirty six and a half. HDFC Bank, from thirty four to thirty one and a half.",
+    "Meanwhile, the cheapest deposits grew slower than the balance sheet. Kotak's current and savings (CASA) share fell from 42.3% to 38.2%. Axis, from 39.8% to 36.5%. HDFC Bank, from 33.9% to 31.6% (our arithmetic).",
+    dict(type="table", heading="CASA SHARE OF DEPOSITS · SEP 2025 → SEP 2026 · OUR ARITHMETIC", cols=["BANK", "THEN", "NOW"], rows=[dict(cells=["Kotak Mahindra Bank", "42.3%", "38.2%"], at="Kotak's"), dict(cells=["Axis Bank", "39.8%", "36.5%"], at="Axis, from"), dict(cells=["HDFC Bank", "33.9%", "31.6%"], at="HDFC Bank, from")])),
+  title(6,"f60",["THE MOAT", "QUESTION"], "Chapter six. The moat question."),
+  T(6,"f61","A bank's moat is cheap, sticky deposits. Money placed with the bank's own loan isn't that. It's balance sheet size, bought through a window.",
+    "A bank's moat is cheap, sticky deposits. Money placed with the bank's own loan isn't that. It's balance-sheet size, bought through a window.",
+    dict(type="strips", items=[dict(text="MOAT = CHEAP, STICKY DEPOSITS", at="cheap, sticky"), dict(text="LOOP MONEY ISN'T THAT", at="isn't that"), dict(text="SIZE, BOUGHT THROUGH A WINDOW", at="bought through", red=True)])),
+  T(6,"f62","On our Moat Screener, these seven range from HDFC Bank at six point zero four, to IndusInd at four point four four.",
+    "On our Moat Screener, these seven range from HDFC Bank at 6.04 to IndusInd at 4.44.",
+    dict(type="scores", rows=[["HDFC Bank", 6.04], ["Kotak Mahindra Bank", 6.03], ["IDFC First Bank", 5.91], ["RBL Bank", 5.65], ["Yes Bank", 5.60], ["Axis Bank", 5.14], ["IndusInd Bank", 4.44]], note="MOATSCORES AS PUBLISHED 6 OCT 2026")),
+  T(6,"f63","So watch three things. What these deposits cost, in the Q2 results. How fast they run off. And whether SBI and ICICI disclose the same window.",
+    "So watch three things. What these deposits cost, in the Q2 results. How fast they run off. And whether SBI and ICICI disclose the same window.",
+    dict(type="hand", title="What to watch:", items=[dict(text="The cost, in Q2 results", at="What these"), dict(text="How fast they run off", at="run off"), dict(text="SBI and ICICI's filings", at="SBI and ICICI")])),
+  title(7,"f70",["TODAY'S TOP", "10 FILINGS"], "Chapter seven. Today's top ten filings."),
+  T(7,"f71","One: the F C N R story you just saw. Two: Suryoday's bad loans fell to two point nine percent, after a five hundred and ninety one crore write off. Three: Marico paid one thousand and twelve crore for twenty four percent of Plix. Four: Trent's revenue grew twenty three percent, with its thousandth Zudio store. Five: Apollo Micro Systems made an open offer for twenty six percent of Premier Explosives.",
+    "1: the FCNR story you just saw. 2: Suryoday's bad loans fell to 2.9%, after a ₹591 crore write-off. 3: Marico paid ₹1,012 crore for 24% of Plix. 4: Trent's revenue grew 23%, with its 1,000th Zudio store. 5: Apollo Micro Systems made an open offer for 26% of Premier Explosives.",
+    dict(type="list", heading="TODAY'S TOP 10 FILINGS · 5 OCT 2026 · 1–5", items=[dict(text="FCNR: ₹3.4 LAKH CR, ~70% SELF-FUNDED", at="One:"), dict(text="SURYODAY: GNPA 2.9% AFTER ₹591 CR WRITE-OFF", at="Two:"), dict(text="MARICO: ₹1,012 CR FOR 24% OF PLIX", at="Three:"), dict(text="TRENT: REVENUE +23%, 1,000TH ZUDIO", at="Four:"), dict(text="APOLLO MICRO: OPEN OFFER, PREMIER EXPLOSIVES", at="Five:")])),
+  T(7,"f72","Six: Central Bank of India grew loans thirty percent, and deposits fourteen. Seven: BGR Energy restructured three thousand seven hundred and thirty six crore of debt with NARCL. Eight: a Granules promoter bought nine percent of the company in the open market. Nine: Godrej Consumer expects high teens revenue growth. Ten: Juniper Hotels is buying Novotel Imagicaa, for two hundred and forty eight crore.",
+    "6: Central Bank of India grew loans 29.8%, and deposits 14.4%. 7: BGR Energy restructured ₹3,736 crore of debt with NARCL. 8: a Granules promoter bought 9.12% of the company in the open market. 9: Godrej Consumer expects high-teens revenue growth. 10: Juniper Hotels is buying Novotel Imagicaa, for ₹248 crore.",
+    dict(type="list", start=6, heading="TODAY'S TOP 10 FILINGS · 5 OCT 2026 · 6–10", items=[dict(text="CENTRAL BANK: LOANS +29.8%, DEPOSITS +14.4%", at="Six:"), dict(text="BGR ENERGY: ₹3,736 CR DEBT RESTRUCTURED", at="Seven:"), dict(text="GRANULES: PROMOTER BUYS 9.12%", at="Eight:"), dict(text="GODREJ CONSUMER: HIGH-TEENS GROWTH", at="Nine:"), dict(text="JUNIPER: NOVOTEL IMAGICAA, ₹248 CR", at="Ten:")])),
+  T(7,"f73","Every one of these, with a link to the filing, is in today's digest on moatmarginresearch dot com. The link is in the description.",
+    "Every one of these, with a link to the filing, is in today's digest on moatmarginresearch.com. The link is in the description.",
+    dict(type="strips", items=[dict(text="FULL DIGEST + FILING LINKS", at="Every one"), dict(text="MOATMARGINRESEARCH.COM", at="moatmarginresearch"), dict(text="LINK IN THE DESCRIPTION", at="description", red=True)])),
+  T(8,"f80","Every number here comes from the banks' own filings. Links are in the description.",
+    "Every number here comes from the banks' own filings. Links are in the description.",
+    dict(type="sources", items=["HDFC Bank, Yes Bank Q2 FY27 updates · 4 Oct 2026", "Axis, Kotak, IDFC First, IndusInd, RBL Q2 FY27 updates · 5 Oct 2026", "Totals and matched shares: our arithmetic on filed figures", "Moat & Margin · Moat Screener · 6 Oct 2026"])),
+  T(8,"f81","Subscribe for the filings that matter, every day.",
+    "Subscribe for the filings that matter, every day.",
+    dict(type="end", plain=True)),
+])
+FCN["timelines"] = {}
+FCN["shorts"] = []
+VIDEOS.append(FCN)
+
+# FCNR loop Short (Vox/kinetic format, loop ending). Pair Short (napkin) is HAND-bkp (Suryoday) in BankNapkins2.
+FCS = dict(id="fcnrs", title="FCNR loop Short", chapters=["Shorts"], beats=[
+  K("s1", "Three point four lakh crore of new bank deposits.", [dict(t="₹3.4 LAKH CR", at="Three point", em=["₹34"]), dict(t="OF NEW BANK DEPOSITS.", at="new bank")], cap="₹3.4 lakh crore of new bank deposits."),
+  K("s2", "Most of it, the banks lent out first.", [dict(t="MOST OF IT,", at="Most of it"), dict(t="THE BANKS LENT OUT FIRST.", at="lent out", em=["LENT"])]),
+  K("s3", "The bank lends a customer dollars. The customer deposits them back.", [dict(t="BANK LENDS DOLLARS.", at="The bank lends"), dict(t="CUSTOMER DEPOSITS THEM BACK.", at="The customer", em=["BACK"])]),
+  T(0, "s4", "IDFC First says it plainly. The money was in turn booked as deposits.", "IDFC First says it plainly. The money \"was in turn booked as FCNR (B) deposits\".",
+    dict(type="clip", clip="fc_idfc", heading="IDFC FIRST BANK · Q2 FY27", hl=["in turn booked"], stamps=[dict(text="BOOKED AS DEPOSITS", at="in turn booked")])),
+  T(0, "s5", "Across five banks, about seventy percent was matched like that.", "Across five banks, about 70% was matched like that (our arithmetic).",
+    dict(type="counter", heading="MATCHED BY LOANS OR GUARANTEES", to=70, decimals=0, suffix="%", at="seventy percent", sub="5 BANKS · OUR ARITHMETIC")),
+  K("s6", "Yes Bank's deposit growth: nineteen and a half percent. Without it: thirteen.", [dict(t="YES BANK DEPOSITS:", at="Yes Bank's"), dict(t="+19.5%", at="nineteen", em=["195"]), dict(t="WITHOUT IT: +13.2%", at="Without it", em=["132"])]),
+  K("s7", "So is it deposit growth, or a deposit loop? Because", [dict(t="DEPOSIT GROWTH?", at="deposit growth"), dict(t="OR A DEPOSIT LOOP?", at="deposit loop", em=["LOOP"])]),
+])
+FCS["timelines"] = {}
+FCS["shorts"] = [dict(title="₹3.4 lakh crore of deposits, mostly borrowed", beats=["s1","s2","s3","s4","s5","s6","s7"], loop=True)]
+VIDEOS.append(FCS)
+
+# Pictures (AK 6 Oct 2026 "use picture more", MiniMax image-01 via scripts/pics_gen.py). Text-free; text drawn in code.
+FCN["pics"] = {
+  "p_vault": ("An open bank vault door revealing neat stacks of US dollar banknotes and Indian rupee coins, golden light spilling out", "land"),
+  "t_window": ("US dollar banknotes and Indian rupee notes being exchanged across a polished bank counter, close-up of hands' shadows only", "land"),
+  "p_swap": ("Two glowing streams of coins, green dollar-coloured and gold rupee-coloured, swapping places through a ring, dark background", "land"),
+  "t_loop": ("Gold coins arranged in a perfect circular loop on a dark slate table, seen from above, one bright highlight travelling around the ring", "land"),
+  "t_banks": ("A row of generic modern glass bank towers in a fictional financial district at blue hour, reflections, no signage", "land"),
+  "t_growth": ("Stacks of coins forming a rising bar chart on a dark desk, one stack visibly hollow inside", "land"),
+  "p_hourglass": ("A large glass hourglass with gold coins flowing instead of sand, half run through, dark background", "land"),
+  "t_cheap": ("A ceramic piggy bank on a wooden desk with only a few coins left beside it, moody window light", "land"),
+  "t_moat": ("A miniature stone castle built from gold coins, surrounded by a still water moat, dramatic side light", "land"),
+  "p_moat": ("A castle made of coins whose moat is being filled by a pipe of borrowed coins from outside, surreal, dramatic light", "land"),
+  "t_top10": ("A neat fan of printed financial filings and folders on a dark desk with a magnifying glass, soft spotlight", "land"),
+  "p_digest": ("A laptop on a tidy desk at sunrise showing an abstract blurred news page layout, coffee cup, notebook, warm light", "land"),
+}
+for _b in FCN["beats"]:
+    _k = _b["key"]
+    if _b["scene"]["type"] == "title":
+        _b["scene"]["pic"] = {"f10": "t_window", "f20": "t_loop", "f30": "t_banks", "f40": "t_growth", "f50": "t_cheap", "f60": "t_moat", "f70": "t_top10"}.get(_k)
+_PIC = {
+  "f01": dict(type="pic", pic="p_vault", items=[dict(text="HOW THE LOOP WORKS", at="how the loop"), dict(text="WHAT IT DOES TO GROWTH", at="growth numbers"), dict(text="TODAY'S TOP 10 FILINGS", at="top ten", red=True)]),
+  "f11": dict(type="pic", pic="p_swap", heading="THE RBI FCNR(B) SWAP WINDOW", items=[dict(text="FOREIGN-CURRENCY TERM DEPOSITS", at="foreign currency term"), dict(text="8 JUNE → 31 AUGUST 2026", at="June eighth"), dict(text="CONCESSIONAL USD/INR SWAP", at="concessional swap", red=True)]),
+  "f42": dict(type="pic", pic="p_hourglass", items=[dict(text="ONE-TIME WINDOW", at="one time"), dict(text="CLOSED 31 AUGUST", at="August thirty"), dict(text="CAN RUN OFF", at="run off", red=True)]),
+  "f61": dict(type="pic", pic="p_moat", items=[dict(text="MOAT = CHEAP, STICKY DEPOSITS", at="cheap, sticky"), dict(text="LOOP MONEY ISN'T THAT", at="isn't that"), dict(text="SIZE, BOUGHT THROUGH A WINDOW", at="bought through", red=True)]),
+  "f73": dict(type="pic", pic="p_digest", items=[dict(text="FULL DIGEST + FILING LINKS", at="Every one"), dict(text="MOATMARGINRESEARCH.COM", at="moatmarginresearch"), dict(text="LINK IN THE DESCRIPTION", at="description", red=True)]),
+}
+for _b in FCN["beats"]:
+    if _b["key"] in _PIC: _b["scene"] = _PIC[_b["key"]]
+
+FCS["pics"] = {
+  "s_hand": ("A hand passing US dollar banknotes across a bank counter to another hand that slides them back, close-up, vertical composition, dark background", "vert"),
+  "s_ring": ("Gold coins arranged in a circular loop on a dark slate surface, seen from above, vertical composition", "vert"),
+}
+for _b in FCS["beats"]:
+    if _b["key"] == "s3":
+        _b["scene"] = dict(type="pic", pic="s_hand", items=[dict(text="BANK LENDS DOLLARS.", at="The bank lends"), dict(text="CUSTOMER DEPOSITS THEM BACK.", at="The customer", red=True)])
+    if _b["key"] == "s7":
+        _b["scene"] = dict(type="pic", pic="s_ring", items=[dict(text="DEPOSIT GROWTH?", at="deposit growth"), dict(text="OR A DEPOSIT LOOP?", at="deposit loop", red=True)])
+
+
+# Angel One commodity share (7 Oct 2026, from the 6 Oct digest + article /angel-one-commodity-market-share/).
+# First long video built to STRUCTURE.md (5 Oct): gate, spine, marks, ledger (scripts/ledger/angelone.csv).
+# Facts: Angel One monthly business updates Jan 2021-Sep 2026 (NSE), Q1 FY27 presentation (15 Jul 2026), Q1 call transcript.
+# Series: ~/jev_full/research/angelone/commodity_share_series.json. Narrator: FEMALE (FCNR long video was MALE).
+AOC = dict(id="angelone", title="Angel One's Commodity Share Is Back to 2022 Levels", voice="English_captivating_female1",
+  keyword="Angel One",
+  spine="Is Angel One losing its grip on India's commodity traders, and does it matter?",
+  gate=dict(
+    changed="Angel One Q2 FY27 business update (6 Oct 2026, p.2): commodity ADTO +105.5% YoY but commodity market share 44.0% vs 65.1%; September 41.7%, the lowest in its monthly filings since January 2022 (41.6%).",
+    care="Market share is how a broker's scale moat shows. Commodity broking is ~6% of gross revenue and F&O ~45% (Q1 FY27 presentation p.30), so the question is whether the slip reaches the core.",
+    added="A monthly series from Angel One's own filings since 2021 (27.8% Sep 2021 -> 67.6% Aug 2025 -> 41.7% Sep 2026); implied MCX retail market ~3.0x vs Angel One 2.05x; about two-thirds of the 2021-2025 climb given back (our arithmetic).",
+    invalidate="Share of turnover is not share of profit; commodity turnover still doubled and its share of revenue rose from ~3% to ~6% in two years; a tripling market dilutes any leader; F&O share held at 22.1%.",
+    monitor="Board meeting 15 Oct 2026 (Q2 results, interim dividend); October business update in early November: does the commodity share hold above 40%?"),
+  next_video="Angel One's Q2 Results: Did Revenue Double Too?",
+  chapters=["Angel One's commodity share", "The number", "The arithmetic", "Five years", "The core business", "The other reading", "The verdict", "Today's top 10 filings", "Sources"],
+  beats=[
+  T(0,"a00","Angel One just handled more commodity trading than ever. And its share of that market fell to the lowest since January twenty twenty two. Is Angel One losing its grip on commodity traders? And does it matter?",
+    "Angel One just handled more commodity trading than ever. And its share of that market fell to the lowest since January 2022. Is Angel One losing its grip on commodity traders? And does it matter?",
+    dict(type="cards", heading="ANGEL ONE · COMMODITY · SEPTEMBER 2026 · OWN FILING", cards=[dict(top="TRADING", big="RECORD", at="more commodity trading"), dict(top="MARKET SHARE", big="LOWEST", sub="SINCE JAN 2022", at="lowest since", fill="mustard"), dict(top="THE QUESTION", big="GRIP?", at="losing its grip")])),
+  T(0,"a01","In September, Angel One's commodity turnover averaged about two thousand six hundred billion rupees a day. Its market share: forty one point seven percent.",
+    "In September, Angel One's commodity turnover averaged about ₹2,600 billion a day. Its market share: 41.7%.",
+    dict(type="clip", clip="ao_sep26", heading="ANGEL ONE · SEPTEMBER 2026 · BUSINESS UPDATE", hl=["forty one point seven"], stamps=[dict(text="SEP 2026: 41.7%", at="forty one point seven")])),
+  T(0,"a02","Five years ago, Angel One had about twenty eight percent of this market. Keep that number in mind.",
+    "Five years ago, Angel One had about 28% of this market. Keep that number in mind.",
+    dict(type="counter", heading="ANGEL ONE · COMMODITY SHARE · SEPTEMBER 2021", to=27.8, decimals=1, suffix="%", at="twenty eight percent", sub="KEEP THIS NUMBER IN MIND")),
+  T(0,"a03","By the end, you'll know how big the fall really is, whether it reaches the business that pays the bills, and what to watch. And then, today's top ten filings.",
+    "By the end, you'll know how big the fall really is, whether it reaches the business that pays the bills, and what to watch. And then, today's top 10 filings.",
+    dict(type="strips", items=[dict(text="HOW BIG IS THE FALL?", at="how big the fall"), dict(text="DOES IT REACH THE CORE?", at="pays the bills"), dict(text="TODAY'S TOP 10 FILINGS", at="top ten", red=True)])),
+  title(1,"a10",["THE", "NUMBER"], "Chapter one. The number."),
+  T(1,"a11","Here's the quarter, in Angel One's own filing. Commodity turnover, up one hundred and five point five percent. Commodity market share, forty four percent, down from sixty five point one a year ago.",
+    "Here's the quarter, in Angel One's own filing. Commodity turnover, up 105.5%. Commodity market share, 44.0%, down from 65.1% a year ago.",
+    dict(type="clip", clip="ao_q2", heading="ANGEL ONE · Q2 FY27 BUSINESS UPDATE · 6 OCT 2026", hl=["forty four percent"], stamps=[dict(text="SHARE 65.1% → 44.0%", at="sixty five point one")])),
+  T(1,"a12","The share is Angel One's turnover divided by the retail turnover on M C X, the commodity exchange. Same yardstick, every month.",
+    "The share is Angel One's turnover divided by the retail turnover on MCX, the commodity exchange. Same yardstick, every month.",
+    dict(type="clip", clip="ao_def", heading="ANGEL ONE · Q1 FY27 INVESTOR PRESENTATION · DEFINITION", hl=["retail turnover"], stamps=[dict(text="SHARE = ANGEL ÷ MCX RETAIL", at="divided by")])),
+  title(2,"a20",["THE", "ARITHMETIC"], "Chapter two. The arithmetic."),
+  T(2,"a21","How can turnover double while share falls? Only if the market grew faster. Divide Angel One's turnover by its share, and the market works out at about five thousand five hundred billion rupees a day. A year ago, about one thousand eight hundred.",
+    "How can turnover double while share falls? Only if the market grew faster. Divide Angel One's turnover by its share, and the market works out at about ₹5,541 billion a day. A year ago, about ₹1,823 billion (our arithmetic).",
+    dict(type="bars", heading="IMPLIED MCX RETAIL TURNOVER · ₹ BN A DAY · OUR ARITHMETIC", rows=[dict(name="Q2 FY26", v=1823, label="1,823", at="A year ago"), dict(name="Q2 FY27", v=5541, label="5,541", at="five thousand five hundred")])),
+  T(2,"a22","So the market roughly tripled in a year. Angel One grew about two times. Most of the new trading went to other brokers. For a market leader, that's a warning sign.",
+    "So the market roughly tripled in a year. Angel One grew about 2 times. Most of the new trading went to other brokers. For a market leader, that's a warning sign.",
+    dict(type="table", heading="ONE YEAR · GROWTH MULTIPLE · OUR ARITHMETIC", cols=["", "Q2 FY26 → Q2 FY27"], rows=[dict(cells=["Commodity market (implied)", "~3.0×"], at="roughly tripled"), dict(cells=["Angel One", "2.05×"], at="about two times")])),
+  T(2,"a23","But a year ago was Angel One's best quarter ever. So is this a collapse, or a peak coming back to normal? For that, we need five years.",
+    "But a year ago was Angel One's best quarter ever. So is this a collapse, or a peak coming back to normal? For that, we need five years.",
+    dict(type="strips", items=[dict(text="A YEAR AGO = THE PEAK", at="best quarter"), dict(text="COLLAPSE?", at="a collapse"), dict(text="OR BACK TO NORMAL?", at="back to normal", red=True)])),
+  title(3,"a30",["FIVE", "YEARS"], "Chapter three. Five years."),
+  T(3,"a31","Here's September twenty twenty one, from Angel One's filing at the time. Commodity share: twenty seven point eight percent.",
+    "Here's September 2021, from Angel One's filing at the time. Commodity share: 27.8%.",
+    dict(type="clip", clip="ao_sep21", heading="ANGEL BROKING · BUSINESS UPDATE · 5 OCT 2021", hl=["twenty seven point eight"], stamps=[dict(text="SEP 2021: 27.8%", at="twenty seven point eight")])),
+  T(3,"a32","Then the climb. Fifty three percent in twenty twenty two. Fifty six in twenty twenty three. Nearly sixty two in twenty twenty four. Sixty four in twenty twenty five. And now, forty one point seven.",
+    "Then the climb. 53.3% in 2022. 56.3% in 2023. 61.8% in 2024. 64.3% in 2025. And now, 41.7%.",
+    dict(type="bars", heading="COMMODITY MARKET SHARE · EACH SEPTEMBER · ANGEL ONE FILINGS", rows=[dict(name="SEP 2021", v=27.8, label="27.8%", at="the climb"), dict(name="SEP 2022", v=53.3, label="53.3%", at="Fifty three"), dict(name="SEP 2023", v=56.3, label="56.3%", at="Fifty six"), dict(name="SEP 2024", v=61.8, label="61.8%", at="Nearly sixty two"), dict(name="SEP 2025", v=64.3, label="64.3%", at="Sixty four"), dict(name="SEP 2026", v=41.7, label="41.7%", at="And now")])),
+  T(3,"a33","The peak came in August twenty twenty five: sixty seven point six percent.",
+    "The peak came in August 2025: 67.6%.",
+    dict(type="clip", clip="ao_peak", heading="ANGEL ONE · BUSINESS UPDATE · 4 SEP 2025", hl=["sixty seven point six"], stamps=[dict(text="AUG 2025: 67.6% · THE PEAK", at="sixty seven point six")])),
+  T(3,"a34","Since then, the share has been below the same month a year earlier in ten of twelve months. And forty one point seven is lower than every month from February twenty twenty two onward.",
+    "Since then, the share has been below the same month a year earlier in 10 of 12 months. And 41.7% is lower than every month from February 2022 onward.",
+    dict(type="hand", title="Since the peak:", items=[dict(text="Below a year earlier: 10 of 12 months", at="ten of twelve"), dict(text="41.7%: lowest since January 2022", at="every month from")])),
+  T(3,"a35","So the literal answer is yes. This isn't just a peak coming back to normal. It's the lowest in more than four years. But the bigger question isn't the commodity share at all. It's whether the same thing is happening in the business that actually pays Angel One's bills.",
+    "So the literal answer is yes. This isn't just a peak coming back to normal. It's the lowest in more than four years. But the bigger question isn't the commodity share at all. It's whether the same thing is happening in the business that actually pays Angel One's bills.",
+    dict(type="strips", items=[dict(text="COMMODITY LEAD: SLIPPING", at="literal answer"), dict(text="LOWEST IN 4+ YEARS", at="more than four years"), dict(text="THE REAL QUESTION: THE CORE?", at="pays Angel One's bills", red=True)])),
+  title(4,"a40",["THE CORE", "BUSINESS"], "Chapter four. The core business."),
+  T(4,"a41","Angel One's own presentation splits its revenue. Futures and options broking, about forty five percent. Interest income, about a third. Commodity broking, about six percent.",
+    "Angel One's own presentation splits its revenue. Futures and options (F&O) broking, about 45%. Interest income, about a third (32.6%). Commodity broking, about 6%.",
+    dict(type="bars", heading="SHARE OF GROSS REVENUE · Q1 FY27 · ANGEL ONE PRESENTATION", rows=[dict(name="F&O BROKING", v=45, label="~45%", at="Futures and options"), dict(name="INTEREST INCOME", v=32.6, label="32.6%", at="Interest income"), dict(name="CASH BROKING", v=9, label="~9%", at="splits its revenue"), dict(name="COMMODITY BROKING", v=6, label="~6%", at="Commodity broking")])),
+  T(4,"a42","And in futures and options, the share held. Twenty one point seven percent a year ago. Twenty two point one now. Cash trading slipped, from eighteen point seven to sixteen point eight.",
+    "And in F&O, the share held. 21.7% a year ago. 22.1% now. Cash trading slipped, from 18.7% to 16.8%.",
+    dict(type="table", heading="RETAIL MARKET SHARE · Q2 FY26 → Q2 FY27 · ANGEL ONE FILING", cols=["SEGMENT", "THEN", "NOW"], rows=[dict(cells=["F&O (option premium)", "21.7%", "22.1%"], at="the share held"), dict(cells=["Cash", "18.7%", "16.8%"], at="Cash trading"), dict(cells=["Commodity", "65.1%", "44.0%"], at="sixteen point eight")])),
+  T(4,"a43","So, is Angel One losing its grip? On commodity traders, yes. On its core, no. Which opens the real question: if commodity is only six percent of revenue, why should anyone care?",
+    "So, is Angel One losing its grip? On commodity traders, yes. On its core, no. Which opens the real question: if commodity is only 6% of revenue, why should anyone care?",
+    dict(type="strips", items=[dict(text="COMMODITY GRIP: SLIPPING", at="On commodity traders"), dict(text="CORE (F&O): INTACT", at="On its core"), dict(text="ONLY 6% OF REVENUE. SO?", at="why should anyone care", red=True)])),
+  title(5,"a50",["THE OTHER", "READING"], "Chapter five. The other reading."),
+  T(5,"a51","Here's the strongest case that it doesn't matter. Commodity's share of Angel One's revenue doubled in two years, from about three percent to six. Its commodity turnover doubled in a year. When a market triples, new brokers pile in, and a leader can lose share and still grow.",
+    "Here's the strongest case that it doesn't matter. Commodity's share of Angel One's revenue doubled in two years, from about 3% to 6%. Its commodity turnover doubled in a year. When a market triples, new brokers pile in, and a leader can lose share and still grow.",
+    dict(type="table", heading="THE CASE THAT IT DOESN'T MATTER · ANGEL ONE FILINGS", cols=["", "THEN", "NOW"], rows=[dict(cells=["Commodity, % of gross revenue", "~3% (Q1 FY25)", "~6% (Q1 FY27)"], at="doubled in two years"), dict(cells=["Commodity turnover, ₹ bn/day", "1,187", "2,438"], at="turnover doubled")])),
+  T(5,"a52","And this is a share of turnover, not of profit. Angel One doesn't disclose what it earns on a commodity trade. A lower share doesn't have to mean lower earnings.",
+    "And this is a share of turnover, not of profit. Angel One doesn't disclose what it earns on a commodity trade. A lower share doesn't have to mean lower earnings.",
+    dict(type="strips", items=[dict(text="SHARE OF TURNOVER", at="share of turnover"), dict(text="NOT SHARE OF PROFIT", at="not of profit"), dict(text="EARNINGS PER TRADE: NOT DISCLOSED", at="doesn't disclose", red=True)])),
+  T(5,"a53","But the fall isn't slowing. Forty eight percent in July. Forty three point seven in August. Forty one point seven in September. And new clients are down fourteen percent from a year ago.",
+    "But the fall isn't slowing. 48.0% in July. 43.7% in August. 41.7% in September. And new clients are down 14.1% from a year ago.",
+    dict(type="table", heading="LAST THREE MONTHS · ANGEL ONE FILINGS", cols=["", "SHARE"], rows=[dict(cells=["July 2026", "48.0%"], at="in July"), dict(cells=["August 2026", "43.7%"], at="in August"), dict(cells=["September 2026", "41.7%"], at="in September"), dict(cells=["New clients, Q2 YoY", "−14.1%"], at="new clients")])),
+  T(5,"a54","So who's taking the share? The filings don't say. None of the other listed brokers we checked discloses a commodity share. And on its July earnings call, management didn't explain it.",
+    "So who's taking the share? The filings don't say. None of the other listed brokers we checked discloses a commodity share. And on its July earnings call, management didn't explain it.",
+    dict(type="hand", title="Not in the filings:", items=[dict(text="Who gained the share", at="who's taking"), dict(text="No listed peer discloses it", at="None of the other"), dict(text="Not explained on the July call", at="July earnings call")])),
+  title(6,"a60",["THE", "VERDICT"], "Chapter six. The verdict."),
+  T(6,"a61","Remember twenty eight percent? That's where Angel One stood in twenty twenty one. It climbed to sixty seven point six. It's now at forty one point seven. By our arithmetic, it has given back about two thirds of that climb.",
+    "Remember 28%? That's where Angel One stood in 2021. It climbed to 67.6%. It's now at 41.7%. By our arithmetic, it has given back about two-thirds of that climb.",
+    dict(type="cards", heading="THE CLIMB AND THE GIVE-BACK · OUR ARITHMETIC", cards=[dict(top="SEP 2021", big="27.8%", at="twenty twenty one"), dict(top="AUG 2025 PEAK", big="67.6%", at="climbed to"), dict(top="SEP 2026", big="41.7%", at="now at"), dict(top="CLIMB GIVEN BACK", big="~65%", sub="(67.6−41.7)÷(67.6−27.8)", at="two thirds", fill="mustard")])),
+  T(6,"a62","Moat verdict: the commodity lead is weakening, and the core moat in futures and options is holding. Angel One's moat is scale in retail trading. In commodities, other brokers are now winning most of the new traders.",
+    "Moat verdict: the commodity lead is weakening, and the core moat in F&O is holding. Angel One's moat is scale in retail trading. In commodities, other brokers are now winning most of the new trading.",
+    dict(type="strips", items=[dict(text="MOAT: COMMODITY LEAD WEAKER", at="commodity lead is weakening"), dict(text="CORE F&O MOAT: HOLDING", at="is holding"), dict(text="NEW TRADING GOING ELSEWHERE", at="other brokers", red=True)])),
+  T(6,"a63","Margin verdict: limited, for now. Commodity is about six percent of revenue, and its turnover still doubled. The filings don't show what each trade earns, so whether margins move can't be measured.",
+    "Margin verdict: limited, for now. Commodity is about 6% of revenue, and its turnover still doubled. The filings don't show what each trade earns, so whether margins move can't be measured.",
+    dict(type="strips", items=[dict(text="MARGIN: LIMITED EFFECT, FOR NOW", at="limited, for now"), dict(text="~6% OF REVENUE", at="six percent of revenue"), dict(text="EARNINGS PER TRADE: UNKNOWN", at="can't be measured", red=True)])),
+  T(6,"a64","On our Moat Screener, Angel One scores five point six four. Motilal Oswal, five point five six. Nuvama, five point five two. IIFL Capital, five point one three. And Groww's parent, Billionbrains, four point seven nine.",
+    "On our Moat Screener, Angel One scores 5.64. Motilal Oswal, 5.56. Nuvama, 5.52. IIFL Capital, 5.13. And Groww's parent, Billionbrains, 4.79.",
+    dict(type="scores", rows=[["Angel One", 5.64], ["Motilal Oswal", 5.56], ["Nuvama Wealth", 5.52], ["IIFL Capital", 5.13], ["Billionbrains (Groww)", 4.79]], note="MOATSCORES AS PUBLISHED 7 OCT 2026")),
+  T(6,"a65","What we know: Angel One's commodity share is at its lowest since January twenty twenty two, while its share in futures and options held.",
+    "What we know: Angel One's commodity share is at its lowest since January 2022, while its share in F&O held.",
+    dict(type="hand", title="Known:", items=[dict(text="Commodity share: lowest since Jan 2022", at="lowest since"), dict(text="F&O share: held at 22.1%", at="futures and options held")])),
+  T(6,"a66","What we don't know: who gained the share, why, and what it costs Angel One in profit.",
+    "What we don't know: who gained the share, why, and what it costs Angel One in profit.",
+    dict(type="hand", title="Unknown:", items=[dict(text="Who gained it", at="who gained"), dict(text="Why", at="why, and"), dict(text="The cost in profit", at="costs Angel One")])),
+  T(6,"a67","What to watch: the board meeting on October fifteenth, and the October business update in early November. If the share keeps sliding, this stops being a blip.",
+    "What to watch: the board meeting on 15 October, and the October business update in early November. If the share keeps sliding, this stops being a blip.",
+    dict(type="hand", title="What to watch:", items=[dict(text="Board meeting, 15 Oct 2026", at="October fifteenth"), dict(text="October update, early November", at="early November"), dict(text="Does the commodity share stop falling?", at="keeps sliding")])),
+  title(7,"a70",["TODAY'S TOP", "10 FILINGS"], "Chapter seven. Today's top ten filings."),
+  T(7,"a71","One: the Angel One story you just saw. Two: the corporate affairs ministry opened an investigation into Zee Entertainment. Three: the telecom department terminated Reliance Communications' spectrum. Four: Titan's consumer businesses grew about twenty five percent. Five: Max Estates pre-sold about two thousand one hundred crore of homes in the quarter, against one hundred and fifty six crore a year ago.",
+    "1: the Angel One story you just saw. 2: the corporate affairs ministry opened an investigation into Zee Entertainment. 3: the telecom department terminated Reliance Communications' spectrum. 4: Titan's consumer businesses grew about 25%. 5: Max Estates pre-sold about ₹2,100 crore of homes in the quarter, against ₹156 crore a year ago.",
+    dict(type="list", heading="TODAY'S TOP 10 FILINGS · 6 OCT 2026 · 1–5", items=[dict(text="ANGEL ONE: COMMODITY SHARE 41.7%", at="One:"), dict(text="ZEE: MCA INVESTIGATION (SEC. 210)", at="Two:"), dict(text="RCOM: DOT TERMINATES SPECTRUM", at="Three:"), dict(text="TITAN: CONSUMER BUSINESSES ~+25%", at="Four:"), dict(text="MAX ESTATES: ~₹2,100 CR PRE-SALES", at="Five:")])),
+  T(7,"a72","Six: I E X traded twelve point seven percent more power, and day ahead prices rose forty six percent. Seven: K N R Constructions sold a road project for five hundred and forty nine crore, after investing two hundred and twenty six. Eight: Adani Power and Druk Green Power signed for a seven hundred and seventy megawatt hydro project in Bhutan. Nine: the Supreme Court protected Tata Chemicals from coercive action at Mithapur. Ten: Jupiter Capital sold ten point eight six percent of AXISCADES.",
+    "6: IEX traded 12.7% more power, and day-ahead prices rose 46%. 7: KNR Constructions sold a road project for ₹549.14 crore, after investing ₹225.72 crore. 8: Adani Power and Druk Green Power signed for a 770 MW hydro project in Bhutan. 9: the Supreme Court protected Tata Chemicals from coercive action at Mithapur. 10: Jupiter Capital sold 10.86% of AXISCADES.",
+    dict(type="list", start=6, heading="TODAY'S TOP 10 FILINGS · 6 OCT 2026 · 6–10", items=[dict(text="IEX: VOLUME +12.7%, DAY-AHEAD PRICE +46%", at="Six:"), dict(text="KNR: ₹549 CR SALE, ₹226 CR INVESTED", at="Seven:"), dict(text="ADANI POWER + DRUK: 770 MW, BHUTAN", at="Eight:"), dict(text="TATA CHEMICALS: SC RELIEF, MITHAPUR", at="Nine:"), dict(text="AXISCADES: JUPITER SELLS 10.86%", at="Ten:")])),
+  T(7,"a73","Every one of these, with a link to the filing, is in today's digest on moatmarginresearch dot com. The link is in the description.",
+    "Every one of these, with a link to the filing, is in today's digest on moatmarginresearch.com. The link is in the description.",
+    dict(type="strips", items=[dict(text="FULL DIGEST + FILING LINKS", at="Every one"), dict(text="MOATMARGINRESEARCH.COM", at="moatmarginresearch"), dict(text="LINK IN THE DESCRIPTION", at="description", red=True)])),
+  T(8,"a80","Every number here comes from Angel One's own filings. Links are in the description.",
+    "Every number here comes from Angel One's own filings. Links are in the description.",
+    dict(type="sources", items=["Angel One business updates, Sep 2021 to Sep 2026 · NSE", "Angel One Q1 FY27 presentation and call · Jul 2026", "Implied market, multiples, give-back: our arithmetic", "Moat & Margin · Moat Screener · 7 Oct 2026"])),
+  T(8,"a81","Next: Angel One's Q2 results. Turnover doubled. We'll see whether revenue did too. That video starts where this one stops.",
+    "Next: Angel One's Q2 results. Turnover doubled. We'll see whether revenue did too. That video starts where this one stops.",
+    dict(type="strips", items=[dict(text="NEXT VIDEO", at="Next"), dict(text="ANGEL ONE'S Q2 RESULTS", at="Q2 results"), dict(text="DID REVENUE DOUBLE TOO?", at="whether revenue", red=True)])),
+  T(8,"a82","Subscribe for the filings that matter, every day.",
+    "Subscribe for the filings that matter, every day.",
+    dict(type="end", plain=True)),
+])
+AOC["marks"] = dict(hook=["a00"], rehooks=["a23", "a35", "a43", "a53"], turn="a43", counter=["a51", "a52"],
+                    plants=[("a02", "a61")], moat="a62", margin="a63", known="a65", unknown="a66", monitor="a67", handoff="a81")
+AOC["timelines"] = {}
+AOC["shorts"] = []
+AOC["pics"] = {
+  "t_number": ("Gold bars, a coil of copper wire and a small barrel of crude oil arranged on a dark trading desk, soft spotlight, cinematic", "land"),
+  "t_math": ("An old brass balance scale on a dark desk, one pan heavy with gold coins and the other pan holding three times as many, dramatic side light", "land"),
+  "t_years": ("A long row of hourglasses on a dark shelf, each one fuller of gold sand than the last, the final one nearly empty, moody light", "land"),
+  "t_core": ("The inside of a precise mechanical watch movement made of gold gears, the large central gear glowing, dark background", "land"),
+  "t_other": ("A chessboard seen from a low angle, a single gold king surrounded by many advancing silver pawns, dramatic light", "land"),
+  "t_verdict": ("A judge's wooden gavel resting beside a stack of gold coins on a dark desk, warm side light", "land"),
+  "t_top10": ("A neat fan of printed financial filings and folders on a dark desk with a magnifying glass, soft spotlight", "land"),
+  "p_crowd": ("Many small glowing trading screens in a dark room seen from behind empty chairs, abstract candlestick-like light patterns, no readable text", "land"),
+  "p_digest": ("A laptop on a tidy desk at sunrise showing an abstract blurred news page layout, coffee cup, notebook, warm light", "land"),
+}
+for _b in AOC["beats"]:
+    if _b["scene"]["type"] == "title":
+        _b["scene"]["pic"] = {"a10": "t_number", "a20": "t_math", "a30": "t_years", "a40": "t_core", "a50": "t_other", "a60": "t_verdict", "a70": "t_top10"}.get(_b["key"])
+    if _b["key"] == "a03":
+        _b["scene"] = dict(type="pic", pic="p_crowd", items=[dict(text="HOW BIG IS THE FALL?", at="how big the fall"), dict(text="DOES IT REACH THE CORE?", at="pays the bills"), dict(text="TODAY'S TOP 10 FILINGS", at="top ten", red=True)])
+    if _b["key"] == "a73":
+        _b["scene"] = dict(type="pic", pic="p_digest", items=[dict(text="FULL DIGEST + FILING LINKS", at="Every one"), dict(text="MOATMARGINRESEARCH.COM", at="moatmarginresearch"), dict(text="LINK IN THE DESCRIPTION", at="description", red=True)])
+VIDEOS.append(AOC)
+
+# Angel One Vox loop Short (pair Short = napkin HAND-bkq in BankNapkins2). Own script (STRUCTURE §6).
+AOS = dict(id="angelones", title="Angel One commodity Short", voice="English_captivating_female1", chapters=["Shorts"], beats=[
+  K("s1", "Angel One's commodity trading doubled.", [dict(t="ANGEL ONE'S", at="Angel One's"), dict(t="COMMODITY TRADING", at="commodity trading"), dict(t="DOUBLED.", at="doubled", em=["DOUBLED"])]),
+  K("s2", "Its market share fell to forty one point seven percent.", [dict(t="ITS SHARE FELL TO", at="market share fell"), dict(t="41.7%", at="forty one point seven", em=["417"])]),
+  K("s3", "How? The market tripled. Angel One only doubled.", [dict(t="THE MARKET: ×3", at="The market tripled", em=["3"]), dict(t="ANGEL ONE: ×2", at="only doubled", em=["2"])], cap="How? The market tripled (our arithmetic). Angel One only doubled."),
+  T(0, "s4", "In twenty twenty one, it had twenty eight percent. It built that to sixty seven point six.", "In 2021, it had 27.8%. It built that to 67.6%.",
+    dict(type="bars", heading="ANGEL ONE · COMMODITY SHARE", rows=[dict(name="SEP 2021", v=27.8, label="27.8%", at="In twenty twenty one"), dict(name="AUG 2025", v=67.6, label="67.6%", at="sixty seven point six")])),
+  K("s5", "Now about two thirds of that climb is gone.", [dict(t="~2/3 OF THE CLIMB", at="two thirds", em=["23"]), dict(t="GONE.", at="is gone", em=["GONE"])], cap="Now about two-thirds of that climb is gone (our arithmetic)."),
+  K("s6", "Its futures and options share? Held at twenty two percent.", [dict(t="F&O SHARE?", at="futures and options"), dict(t="HELD: 22.1%", at="twenty two", em=["221"])], cap="Its F&O share? Held at 22.1%."),
+  K("s7", "So it's losing the new traders, not the old ones. Because", [dict(t="LOSING THE NEW TRADERS,", at="losing the new"), dict(t="NOT THE OLD ONES.", at="not the old", em=["OLD"])]),
+])
+AOS["timelines"] = {}
+AOS["shorts"] = [dict(title="Angel One doubled. Its share fell anyway.", beats=["s1","s2","s3","s4","s5","s6","s7"], loop=True)]
+AOS["pics"] = {"s_screens": ("Many small glowing trading screens in a dark room seen from behind, abstract light patterns, no readable text, vertical composition", "vert")}
+for _b in AOS["beats"]:
+    if _b["key"] == "s7":
+        _b["scene"] = dict(type="pic", pic="s_screens", items=[dict(text="LOSING THE NEW TRADERS,", at="losing the new"), dict(text="NOT THE OLD ONES.", at="not the old", red=True)])
+VIDEOS.append(AOS)

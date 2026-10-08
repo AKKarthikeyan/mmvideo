@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs")
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -64,11 +64,22 @@ CLIPS = {
   "ceo_bagchi": (CE/"HDFCBANK3_01102026182319_SE_Intimation-_Anup_Bagchi.pdf", "A member of the ICICI Group since 1992", 1, 1),
   "ceo_mishra": (JD/"NSE_106806060.pdf", "will be transferred from ICICI Bank Limited", 1, 1),
   "ceo_saha": (CE/"KMBLTAB_01102026080559_SEIntimation.pdf", "14 years at ICICI Bank", 1, 1, 1),
+  "fc_idfc": (JD/"NSE_106806963.pdf", "was in turn booked as FCNR (B) deposits", 1, 1),
+  "fc_axis": (JD/"NSE_106807265.pdf", "USD 10.62 billion", 1, 2),
+  "fc_hdfc": (JD/"NSE_106806485.pdf", "11.5 billion", 1, 2),
+  "fc_kotak": (JD/"NSE_106807054.pdf", "USD 5.78 billion", 1, 2),
+  "fc_yes": (JD/"NSE_106806445.pdf", "Deposits growth normalised for FCNR(B)", 1, 1),
+  "sy_wo": (JD/"NSE_106806622.pdf", "after considering a write-off of ₹591 Crore", 1, 1),
   "bk_union": (BQ/"UNIONBANK_01102026223208_ProvFinancialResults30092026.pdf", "6.87%", 1, 0),
   "bk_jk": (JD/"NSE_106806242.pdf", "(388 bps)", 1, 0),
   "bk_bandhan": (JD/"NSE_106806404.pdf", "26.71%", 0, 0),
   "bk_au": (JD/"NSE_106806399.pdf", "29.1%", 0, 1),
   "bk_ujjivan": (JD/"NSE_106806279.pdf", "32.1%", 0, 0, 1),
+  "ao_q2": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "44.0%", 3, 0),
+  "ao_sep26": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "41.7%", 2, 0, 1),
+  "ao_sep21": (AO/"ANGELBRKG_05102021082516_October052021Intimationofmonthlybusinessupdate.pdf", "27.8%", 2, 0),
+  "ao_peak": (AO/"ANGEL8896_04092025071949_September042025_Intimation_of_Business_Update_August_2025.pdf", "67.6%", 1, 1),
+  "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
 
 def crop(name, pdf, phrase, up, dn, outdir, last=None, col=False):
@@ -168,7 +179,7 @@ def main():
             o = old.get(b["key"])
             if mp3.exists() and o and o.get("say") == b["say"]: b["sec"] = o["sec"]
             elif notts: b["sec"] = max(3.0, len(b["say"]) / 15)
-            else: b["sec"] = round(tts(b["say"], mp3), 2); print(" voiced", b["key"], b["sec"])
+            else: b["sec"] = round(tts(b["say"], mp3, V.get("voice", "English_Diligent_Man")), 2); print(" voiced", b["key"], b["sec"])
             b["cues"] = chunks(b["cap"])
         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
         data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips

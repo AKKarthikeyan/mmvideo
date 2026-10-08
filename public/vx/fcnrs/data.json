@@ -1,0 +1,231 @@
+{
+ "id": "fcnrs",
+ "title": "FCNR loop Short",
+ "chapters": [
+  "Shorts"
+ ],
+ "shorts": [
+  {
+   "title": "₹3.4 lakh crore of deposits, mostly borrowed",
+   "beats": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7"
+   ],
+   "loop": true
+  }
+ ],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "s1",
+   "say": "Three point four lakh crore of new bank deposits.",
+   "cap": "₹3.4 lakh crore of new bank deposits.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "₹3.4 LAKH CR",
+      "at": "Three point",
+      "em": [
+       "₹34"
+      ]
+     },
+     {
+      "t": "OF NEW BANK DEPOSITS.",
+      "at": "new bank"
+     }
+    ]
+   },
+   "sec": 3.73,
+   "cues": [
+    "₹3.4 lakh crore of new bank deposits."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s2",
+   "say": "Most of it, the banks lent out first.",
+   "cap": "Most of it, the banks lent out first.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "MOST OF IT,",
+      "at": "Most of it"
+     },
+     {
+      "t": "THE BANKS LENT OUT FIRST.",
+      "at": "lent out",
+      "em": [
+       "LENT"
+      ]
+     }
+    ]
+   },
+   "sec": 2.25,
+   "cues": [
+    "Most of it, the banks lent out first."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s3",
+   "say": "The bank lends a customer dollars. The customer deposits them back.",
+   "cap": "The bank lends a customer dollars. The customer deposits them back.",
+   "scene": {
+    "type": "pic",
+    "pic": "s_hand",
+    "items": [
+     {
+      "text": "BANK LENDS DOLLARS.",
+      "at": "The bank lends"
+     },
+     {
+      "text": "CUSTOMER DEPOSITS THEM BACK.",
+      "at": "The customer",
+      "red": true
+     }
+    ]
+   },
+   "sec": 4.05,
+   "cues": [
+    "The bank lends a customer dollars.",
+    "The customer deposits them back."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s4",
+   "say": "IDFC First says it plainly. The money was in turn booked as deposits.",
+   "cap": "IDFC First says it plainly. The money \"was in turn booked as FCNR (B) deposits\".",
+   "scene": {
+    "type": "clip",
+    "clip": "fc_idfc",
+    "heading": "IDFC FIRST BANK · Q2 FY27",
+    "hl": [
+     "in turn booked"
+    ],
+    "stamps": [
+     {
+      "text": "BOOKED AS DEPOSITS",
+      "at": "in turn booked"
+     }
+    ]
+   },
+   "sec": 5.07,
+   "cues": [
+    "IDFC First says it plainly.",
+    "The money \"was in turn booked as FCNR (B) deposits\"."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s5",
+   "say": "Across five banks, about seventy percent was matched like that.",
+   "cap": "Across five banks, about 70% was matched like that (our arithmetic).",
+   "scene": {
+    "type": "counter",
+    "heading": "MATCHED BY LOANS OR GUARANTEES",
+    "to": 70,
+    "decimals": 0,
+    "suffix": "%",
+    "at": "seventy percent",
+    "sub": "5 BANKS · OUR ARITHMETIC"
+   },
+   "sec": 3.97,
+   "cues": [
+    "Across five banks, about 70% was matched like that (our arithmetic)."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s6",
+   "say": "Yes Bank's deposit growth: nineteen and a half percent. Without it: thirteen.",
+   "cap": "Yes Bank's deposit growth: nineteen and a half percent. Without it: thirteen.",
+   "scene": {
+    "type": "kinetic",
+    "nocap": true,
+    "kicker": null,
+    "lines": [
+     {
+      "t": "YES BANK DEPOSITS:",
+      "at": "Yes Bank's"
+     },
+     {
+      "t": "+19.5%",
+      "at": "nineteen",
+      "em": [
+       "195"
+      ]
+     },
+     {
+      "t": "WITHOUT IT: +13.2%",
+      "at": "Without it",
+      "em": [
+       "132"
+      ]
+     }
+    ]
+   },
+   "sec": 5.28,
+   "cues": [
+    "Yes Bank's deposit growth:",
+    "nineteen and a half percent.",
+    "Without it:",
+    "thirteen."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "s7",
+   "say": "So is it deposit growth, or a deposit loop? Because",
+   "cap": "So is it deposit growth, or a deposit loop? Because",
+   "scene": {
+    "type": "pic",
+    "pic": "s_ring",
+    "items": [
+     {
+      "text": "DEPOSIT GROWTH?",
+      "at": "deposit growth"
+     },
+     {
+      "text": "OR A DEPOSIT LOOP?",
+      "at": "deposit loop",
+      "red": true
+     }
+    ]
+   },
+   "sec": 4.44,
+   "cues": [
+    "So is it deposit growth, or a deposit loop?",
+    "Because"
+   ]
+  }
+ ],
+ "clips": {
+  "fc_idfc": {
+   "w": 1657,
+   "h": 135,
+   "hl": [
+    [
+     0.1086,
+     0.2505,
+     0.322,
+     0.3628
+    ]
+   ],
+   "page": 1,
+   "quote": "was in turn booked as FCNR (B) deposits"
+  }
+ }
+}

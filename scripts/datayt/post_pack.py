@@ -35,6 +35,8 @@ rx = f"{ratio:.1f}".rstrip("0").rstrip(".") if ratio else ""
 vs = f"{rx}× India's {f(D['india'])}" if ratio and ratio >= 2 else f"vs India {f(D['india'])}"
 top = "\n".join(f"{i + 1}. {t['name']}: {f(t['v'])}" for i, t in enumerate(D["top"]))
 tags = "#DataKadai #India #Shorts #IndiaData #NFHS6"
+voice_check = ("- [ ] Voice is MiniMax English_Diligent_Man (Moat & Margin male)\n" if D.get("voiceEngine") == "minimax" else
+               "- [ ] **PLACEHOLDER VOICE (Kokoro): re-voice with MiniMax before posting** (`MINIMAX_API_KEY=... python3 scripts/datayt/build_india_shorts.py " + sid + "`, then post_pack)\n")
 cap = f"""# Post pack: {sid} · {date}
 
 Status: DRAFT, waiting for AK's approval. Not posted.
@@ -63,7 +65,7 @@ Source: {D['source']}
 {hook} It's {ans}: {f(D['value'])}, {vs}. Top 5 in the chart 👇 Source: NFHS-6 (2023-24). #DataKadai #India
 
 ## Checks before posting
-- [ ] Numbers match `public/datayt/shorts/{sid}/data.json` and the source table
+{voice_check}- [ ] Numbers match `public/datayt/shorts/{sid}/data.json` and the source table
 - [ ] Watched the video end to end; audio OK
 - [ ] AK approved
 """

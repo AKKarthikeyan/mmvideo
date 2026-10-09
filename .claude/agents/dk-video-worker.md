@@ -12,8 +12,9 @@ You make ONE Data Kadai Short per run, as a **draft**. Never publish.
    `scripts/datayt/build_india_shorts.py` (keys: id, ind, answer, decoys, side, hook, q, optional states_only).
 2. Run `python3 scripts/datayt/build_india_shorts.py <id>`. It asserts the #1 claim against the data; if the assert
    fails, **fix the story** (reword, use `states_only`, or pick another answer) — never the data.
-   Narration: the build voices every section with the local Kokoro male voice (`scripts/datayt/voice_dk.py`,
-   default am_michael; needs `pip install kokoro-onnx soundfile`, model downloads once to ~/.cache). Section lengths
+   Narration: the build voices every section with the Moat & Margin male voice (MiniMax English_Diligent_Man,
+   `scripts/datayt/voice_dk.py`, needs MINIMAX_API_KEY). With no key it uses a Kokoro placeholder (needs
+   `pip install kokoro-onnx soundfile`) and the pack must say "placeholder voice" in your report. Section lengths
    grow by whole bars to fit each line. Check the `vo` lines in data.json read naturally and say the same numbers as
    the screen; a story can override a line with `"vo": {"hold": "..."}`.
 3. Render check stills: `npx remotion still src/index.ts DATA-<id> out/datakadai/check/<id>_<f>.png --frame=<f>` for

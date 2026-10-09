@@ -70,8 +70,9 @@ until Tamil launches.
 
 ## 3c. Narration (AK 9 Oct 2026)
 
-English male narrator on every Short: Kokoro-82M (Apache-2.0, runs locally, free, no API key), voice `am_michael`
-(switch with `DK_VOICE` or a story's `"voice"`). Script per section from `vo_script()` in
+English male narrator on every Short: the **Moat & Margin male voice**, MiniMax `English_Diligent_Man`
+(speech-2.6-hd, Indian-accent English; AK 9 Oct 2026). Needs `MINIMAX_API_KEY`. Without the key the build falls back
+to a free local placeholder (Kokoro `am_michael`) and the captions checklist flags "re-voice before posting". Script per section from `vo_script()` in
 `scripts/datayt/build_india_shorts.py`: hook → "Which state? A, B, or C?" → "It's X!" → value → "N times India's Y" →
 second place → "Where does your state rank?". Music ducks under the voice. No source line on the video itself (AK);
 the source stays in the description, pinned comment and chart posts. The full-colour India map now holds 2 extra bars

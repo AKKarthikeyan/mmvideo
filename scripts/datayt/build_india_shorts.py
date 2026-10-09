@@ -112,8 +112,11 @@ def build(sh, idx=0):
     d = f"public/datayt/shorts/{sh['id']}"
     os.makedirs(d, exist_ok=True)
     lines = vo_script(sh, nm, vals, india, ranked, unit, opts)
-    vo = {sec: {"text": tx, "file": f"vo_{sec}.wav", "sec": V.say(tx, f"{d}/vo_{sec}.wav", sh.get("voice"))}
-          for sec, tx in lines.items() if tx}
+    vo = {}
+    for sec, tx in lines.items():
+        if tx:
+            fn, dur = V.say(tx, f"{d}/vo_{sec}", sh.get("voice"))
+            vo[sec] = {"text": tx, "file": fn, "sec": dur}
     T, t = {}, 0.0
     for name, nb in BARS:
         need = vo[name]["sec"] + VO_LEAD + 0.3 if name in vo else 0
@@ -134,7 +137,7 @@ def build(sh, idx=0):
            "bandLabels": [f"< {cuts[0]:g}{unit}"] + [f"{cuts[i]:g}–{cuts[i + 1]:g}{unit}" for i in range(3)] + [f"{cuts[3]:g}{unit}+"],
            "top": [{"name": nm(s), "key": s, "v": v} for v, s in ranked[:5]],
            "other": {"name": nm(ranked[-1][1]), "v": ranked[-1][0]}, "side": sh["side"], "statesOnly": bool(sh.get("states_only")),
-           "t": T, "total": total, "vo": list(vo.values()), "fillAt": fill_at, "fps": 30,
+           "t": T, "total": total, "vo": list(vo.values()), "voiceEngine": V.ENGINE, "voice": sh.get("voice") or V.VOICE, "fillAt": fill_at, "fps": 30,
            "source": "NFHS-6 (2023-24), IIPS · state fact sheets"}
     for sec, x in vo.items():
         x["sec_name"] = sec

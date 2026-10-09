@@ -11,6 +11,18 @@ What AK has fixed. Change these only when AK says so. Ops status and the log liv
 - Fonts: Oswald 700 (headlines, wordmark), Inter (body), Noto Sans Tamil 700 (Tamil logo variant only).
 - Source of truth for the brand is code: `src/datayt/Brand.tsx`. Rendered copies are in `brand/`.
 
+## Accounts (AK, 10 Oct 2026)
+| Where | Handle |
+| --- | --- |
+| Brand Google account | datakadaiahq@gmail.com |
+| YouTube | @datakadai |
+| X | @DataKadai |
+| Instagram | data.kadai |
+| Domains | not bought yet (datakadai.com / .in planned) |
+
+Passwords and recovery details are never written in this repo. Until the domain is bought, captions and channel
+copy must not print a datakadai.com link or the hello@datakadai.com address.
+
 ## Brand assets (`docs/datakadai/brand/`)
 | File | Use | Size |
 | --- | --- | --- |
@@ -41,6 +53,16 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   1. `.venv/bin/python scripts/datayt/build_india_shorts.py <id>`
   2. `.venv/bin/python scripts/datayt/post_pack.py <id> <YYYY-MM-DD>`
   3. Pack lands in `out/datakadai/daily/<date>/<id>/`: `short.mp4`, `ig.png`, `x.png`, `captions.md`.
+
+## Serve it hot (AK, 10 Oct 2026)
+- Goal: put official data out while it is fresh, to own the "India's numbers" mind space.
+- `scripts/datayt/hot_scan.py` reads the day's releases from PIB (all ministries, incl. MoSPI), the RBI and SEBI
+  feeds and the newest Lok Sabha questions, scores them for data content, pulls the key figures and tables, and
+  writes `docs/datakadai/hot/<date>.md` and `public/datayt/hot/<date>.json`. A release with a state-wise table gets an
+  automatic Guess the State draft.
+- The scan drafts; it never publishes. A hot story is used only after its numbers are checked against the release.
+- At most one hot story a day jumps the queue. Otherwise the daily Short comes from `ops/QUEUE.md`.
+- Evergreen scripts: `scripts/datayt/make_scripts.py` writes review batches to `docs/datakadai/scripts/`.
 
 ## Posting
 - Nothing is posted or uploaded by any agent. AK approves each pack and posts it.

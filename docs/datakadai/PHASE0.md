@@ -30,9 +30,10 @@ Trademark: search IP India for "Data Kadai" (classes 41, 9, 16, 35). It's distin
 
 ## 2. Accounts to create (AK)
 
-- [ ] Google account for the brand, kept separate from personal and Moat & Margin; 2-step verification on
-- [ ] YouTube channel @DataKadai: profile, banner, About text (below), links to the site and Instagram
-- [ ] Instagram @datakadai, Facebook page, X @DataKadai, Threads, LinkedIn page (claim the names even if idle)
+- [x] Google account for the brand: datakadaiahq@gmail.com (AK, 10 Oct 2026). Still to confirm: 2-step verification on
+- [x] YouTube channel @datakadai created (AK, 10 Oct 2026). Still to add: profile, banner, About text (below), links
+- [x] Instagram `data.kadai` and X @DataKadai created (AK, 10 Oct 2026)
+- [ ] Facebook page, Threads, LinkedIn page (claim the names even if idle)
 - [ ] Email: hello@datakadai.com (forwarding is enough at first)
 - [ ] Newsletter tool account (Phase 2)
 
@@ -141,7 +142,8 @@ money (Phase 3) `#IndianEconomy #Investing101`.
 | --- | --- | --- |
 | Name shortlist + availability check | Claude | Done (above) |
 | Choose final name | AK | Done: Data Kadai |
-| Buy domains, create accounts, check Instagram handle | AK | Open |
+| Create accounts (Google, YouTube, X, Instagram) | AK | Done 10 Oct 2026 |
+| Buy domains | AK | Open: to be purchased |
 | Brand kit (profile, logo, banner, chips, end card) | Claude | Done, awaiting AK review |
 | Channel copy, title/description/pinned templates | Claude | Done (above) |
 | Analytics log template | Claude | Done: `docs/datakadai/analytics_log.csv` |

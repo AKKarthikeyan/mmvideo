@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Data Kadai hot scan on the Mac Mini: 07:00, 13:00 and 18:00 local time, every day.
+     Install:  cp ops/launchd/com.datakadai.hotscan.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.datakadai.hotscan.plist
+     Remove:   launchctl unload ~/Library/LaunchAgents/com.datakadai.hotscan.plist && rm ~/Library/LaunchAgents/com.datakadai.hotscan.plist
+     It only reads public web pages and writes docs/datakadai/hot/ and public/datayt/hot/. It posts nothing. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.datakadai.hotscan</string>
+  <key>WorkingDirectory</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/akkarthikeyan/Projects/mmvideo-dk/.venv/bin/python</string>
+    <string>scripts/datayt/hot_scan.py</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk/out/hotscan.log</string>
+  <key>StandardErrorPath</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk/out/hotscan.log</string>
+</dict>
+</plist>

@@ -3,7 +3,7 @@
 Maintained by dk-planner (append-only log at the bottom).
 
 ## Current status (9 Oct 2026)
-- Brand: Data Kadai; domains bought by AK (to confirm: datakadai.com/.in, indiastatewise.com/.in).
+- Brand: Data Kadai. Accounts live (10 Oct 2026): datakadaiahq@gmail.com, YouTube @datakadai, X @DataKadai, Instagram data.kadai. Domains not bought yet.
 - Production: **STARTED 9 Oct 2026** (AK's go), English only, no Tamil lines anywhere. Publishing/uploads still need AK's explicit go each time.
 - Site: not built yet (next: one-page "coming soon" with newsletter sign-up, preview only).
 - Datasets ready: NFHS-6 state (`public/datayt/nfhs6/nfhs6_states.json`, verified).
@@ -21,3 +21,4 @@ Maintained by dk-planner (append-only log at the bottom).
 - 2026-10-09: agents created (dk-planner Opus, dk-data-worker Sonnet, dk-ops-worker Haiku) and the maintenance skill.
 - 2026-10-09: production started (AK lifted the hold), English only. Plan `plan-2026-10-09.md`: gts01 (Meghalaya, NFHS-6 ind. 10) assigned to dk-video-worker. Queue checked; gts11 held (thin margin), gts15 added.
 - 2026-10-09: gts01 re-voiced with MiniMax English_Diligent_Man and approved by AK. Production moved to the Mac Mini. Fixed settings and brand assets saved in `docs/datakadai/PREFERENCES.md` and `docs/datakadai/brand/`.
+- 2026-10-10: AK created the accounts (domains still to buy). `make_scripts.py` wrote batch-001: 100 draft scripts from NFHS-6 for AK's review (`docs/datakadai/scripts/batch-001.md`); only the Guess the State template exists, the other 8 series need templates. `hot_scan.py` built (PIB, RBI, SEBI, Lok Sabha); first run over 3-9 Oct scored 380 items, 19 shortlisted, 8 hot scripts drafted (`docs/datakadai/scripts/hot-2026-10-10.md`). No videos or charts made: waiting for AK's script review.

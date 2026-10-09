@@ -7,6 +7,10 @@ description: Make today's Data Kadai post pack (one Short video + Instagram and 
 
 You (the main session) dispatch; agents can't start each other. Today = the date in IST.
 
+0. **Hot scan:** run `python3 scripts/datayt/hot_scan.py` (PIB, RBI, SEBI, Lok Sabha). Read
+   `docs/datakadai/hot/<date>.md`. If an item scores 8+ and is a clear, checkable number story, tell `dk-planner` to
+   consider it: the planner opens the linked release, confirms every figure, period and unit, and writes the script
+   from the release itself. At most one hot story a day; it replaces the queue story for that day.
 1. **Pick:** start `dk-planner`: "Pick today's story from docs/datakadai/ops/QUEUE.md (first `queued`), confirm its
    facts against public/datayt/nfhs6/nfhs6_states.json, top the queue up to 14, and write the task to
    docs/datakadai/ops/plan-<date>.md."

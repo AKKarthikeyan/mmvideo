@@ -23,3 +23,19 @@ Built and saved, **not in production; do not render or upload until AK says go.*
 - Data: `scripts/datayt/build_india_shorts.py` (8 Shorts configured; asserts each #1 claim against the data).
 - To produce later: `python3 scripts/datayt/build_india_shorts.py` then
   `npx remotion render src/index.ts DATA-gts01 out/datayt/gts/GTS-01.mp4` (and so on).
+
+## Chosen Shorts format (decided 9 Oct 2026; template not yet changed, production ON HOLD)
+
+Mix: ~70% **Map Reveal**, ~20% **5-Question Quiz**, ~10% **Top 10 Countdown** (only when #1 is a genuine surprise).
+
+**Map Reveal** (main format, 25-30 s): the answer is the *last* state to light up, so the question stays open to the end.
+1. 0-2 s: question on screen ("In one Indian state, *women own the land*. Which one?").
+2. 2-5 s: grey India map draws in; A/B/C options at the bottom.
+3. 5-20 s: states fill band by band, lowest first, one band every 2 beats; counter "18 states left… 9… 3…"; options
+   drop out as their states fill.
+4. 20-24 s: last band; music drops; the answer glows gold, the number counts up, India's figure beside it.
+5. 24-28 s: "Where's your state? Comment below", with the full map held for screenshots; the last frame loops to the question.
+
+**5-Question Quiz** (weekly, 45-60 s): 5 questions about 8 s each, the map flashes each answer, then a score card
+("Comment your score /5").
+**Top 10 Countdown**: 10→1 bars over the map, for surprising #1s only (e.g. child marriage: West Bengal, not Bihar).

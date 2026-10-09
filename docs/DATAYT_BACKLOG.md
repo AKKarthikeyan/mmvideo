@@ -1,6 +1,7 @@
 # Data YT: video backlog
 
-Saved 9 Oct 2026. Style for all new Data YT videos: fast pace, cuts on a 150 BPM grid, chase-style score
+Saved 9 Oct 2026. **Data YT is Shorts only (no long videos).** Full NFHS-6 Shorts plan: `docs/DATAYT_SHORTS_PLAN.md`.
+Style for all new Data YT videos: fast pace, cuts on a 150 BPM grid, chase-style score
 (see `scripts/datayt/tn_alcohol_build.py` for the timeline and music template).
 
 | # | Idea | Data needed | Status |

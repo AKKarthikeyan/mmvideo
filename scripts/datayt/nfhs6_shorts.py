@@ -10,7 +10,7 @@ import csv, json, math, os, sys, itertools
 sys.path.insert(0, os.path.dirname(__file__))
 from nfhs6_meta import META, GENDER_PAIRS, RIVALS, SOUTH, SHORT_NAME
 
-RAW = json.load(open("public/datayt/nfhs6/nfhs6_states.json"))
+RAW = json.load(open("public/datayt/nfhs6/nfhs6_states.json"))["states"]
 # Lakshadweep (tiny sample, ~65k people) and starred/bracketed cells are kept out of rankings
 SKIP_RANK = {"India", "Lakshadweep"}
 

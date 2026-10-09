@@ -70,13 +70,26 @@ until Tamil launches.
 
 ## 4. Channel copy
 
-**About (YouTube, about 900 characters):**
-> India's numbers, served fresh. Every day we turn official Indian data into one map or chart you can understand in 30 seconds:
-> which state drinks the most, where women own land, who's getting heavier, where India is changing fastest.
-> Every number comes from an official source, shown on screen: NFHS, Census, RBI, MoSPI, NPCI and more. No opinions
-> dressed up as data, no stock tips.
-> New Shorts daily. Comment your state; we read every one.
-> Business: hello@datakadai.com
+**About (YouTube, about 820 characters; final, 9 Oct 2026):**
+```
+India's numbers, served fresh.
+
+Every day, Data Kadai turns official Indian data into one map or chart you can understand in 30 seconds. Which state drinks the most? Where do women own the land? Who is getting heavier? Where is India changing fastest?
+
+What you'll find here:
+• Guess the State: a quiz, then the map reveals the answer
+• Ranked and Mapped: every state, side by side
+• Then vs Now: how India has changed
+• India vs World: where we stand
+
+Every number comes from an official source, named on screen: NFHS, Census, RBI, MoSPI, NPCI and more. No opinions dressed up as data. No stock tips or investment advice.
+
+New Shorts every day. Comment your state; we read every one.
+
+Business and sponsorships: hello@datakadai.com
+```
+**Channel keywords:** data kadai, india data, india map, indian states, state ranking, NFHS, india statistics, data
+visualization, guess the state, india vs world, indian economy, shorts
 
 **Short title formula** (≤ 60 characters, question or shock, state names in it):
 `Which state's women own the land? 🗺️ #Shorts` · `Arunachal women drink 21× India's rate` ·

@@ -4,7 +4,7 @@
 Usage (repo root): python3 scripts/datayt/post_pack.py <short_id> [YYYY-MM-DD] [--no-video]
 Writes out/datakadai/daily/<date>/<id>/ : short.mp4 (YouTube Shorts / Reels), ig.png (Instagram 4:5), x.png (X 16:9),
 captions.md (YouTube title + description, Instagram caption, X post, pinned comment). captions.md is also copied to
-docs/datakadai/posts/<date>-<id>.md as the record. Tamil lines are left as TODO-TA for the data worker to write.
+docs/datakadai/posts/<date>-<id>.md as the record.
 Nothing is posted: posting needs AK's go.
 """
 import json, os, subprocess, sys, datetime, shutil
@@ -55,7 +55,6 @@ Top 5:
 {top}
 
 Source: {D['source']}
-TODO-TA: one-line Tamil caption
 {tags} #IndianStates
 
 ## X (`x.png`)
@@ -64,7 +63,6 @@ TODO-TA: one-line Tamil caption
 ## Checks before posting
 - [ ] Numbers match `public/datayt/shorts/{sid}/data.json` and the source table
 - [ ] Watched the video end to end; audio OK
-- [ ] Tamil line written and checked
 - [ ] AK approved
 """
 open(f"{out}/captions.md", "w").write(cap)

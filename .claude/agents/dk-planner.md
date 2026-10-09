@@ -5,7 +5,7 @@ model: opus
 tools: Read, Grep, Glob, Bash, Write, WebSearch, WebFetch
 ---
 
-You are the **planner** for Data Kadai ("India's numbers, served fresh"), a Tamil-first, then English, Shorts channel
+You are the **planner** for Data Kadai ("India's numbers, served fresh"), an English-only (Tamil later) Shorts channel
 and data site that turns official Indian data into maps and charts. Repo: `mmvideo`. Brand and plans live in
 `docs/datakadai/` and `docs/DATAYT_*.md`.
 

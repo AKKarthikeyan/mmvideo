@@ -4,7 +4,8 @@
 
 **Chosen: Data Kadai** (AK, 9 Oct 2026). The project covers more than state comparisons (economy, markets, companies,
 trends, India vs the world), so a broad master brand beats "India Statewise". "Kadai" = shop (Tamil): a "data
-tea-shop", warm and Tamil-first. Tagline for non-Tamil viewers: *India's numbers, served fresh.* (In Hindi "kadhai" is a
+tea-shop", warm and local. **Language: English only at launch (AK, 9 Oct 2026); Tamil comes later as a second
+channel or track.** Tagline: *India's numbers, served fresh.* (In Hindi "kadhai" is a
 wok; the tagline and logo carry the meaning.)
 History: IndianData (taken) → India Charted (dropped: reads as Chartered Accountant) → India Statewise (too narrow;
 kept as a series name) → **Data Kadai**.
@@ -59,6 +60,14 @@ Compositions in `src/datayt/Brand.tsx`. Render with `npx remotion still src/inde
 - **Type:** Oswald 700 (headlines, numbers), Inter (labels, body).
 - **Music:** original code-composed 124 BPM score per Short (`scripts/datayt/music_shorts.py`); never third-party tracks.
 
+## 3b. Logo (final, AK 9 Oct 2026)
+
+**Primary logo** = tea-glass mark (amber glass and bars, maroon tallest bar and steam) + "DATA KADAI" wordmark
+(KADAI in maroon) on the cream ground. Files from `src/datayt/Brand.tsx`: `DK-logo` (2400x800, with tagline),
+`DK-profile` (800², mark only, for YouTube/Instagram/X profile pictures), `DK-banner`. The other variants on
+`DK-logo-sheet` (reversed, one-colour) are for dark posts and print only. The Tamil lockup (`DK-logo-ta`) is parked
+until Tamil launches.
+
 ## 4. Channel copy
 
 **About (YouTube, about 900 characters):**
@@ -66,7 +75,7 @@ Compositions in `src/datayt/Brand.tsx`. Render with `npx remotion still src/inde
 > which state drinks the most, where women own land, who's getting heavier, where India is changing fastest.
 > Every number comes from an official source, shown on screen: NFHS, Census, RBI, MoSPI, NPCI and more. No opinions
 > dressed up as data, no stock tips.
-> New Shorts daily, in Tamil and English. Comment your state; we read every one.
+> New Shorts daily. Comment your state; we read every one.
 > Business: hello@datakadai.com
 
 **Short title formula** (≤ 60 characters, question or shock, state names in it):
@@ -95,7 +104,7 @@ money (Phase 3) `#IndianEconomy #Investing101`.
 
 ## 6. Sponsor one-pager (draft for Phase 1 end)
 
-> **Data Kadai** · India, in charts. Daily data Shorts in Tamil and English, built from official sources.
+> **Data Kadai** · India, in charts. Daily data Shorts in English, built from official sources.
 > **Audience:** {subs} subscribers, {avg views} average views per Short, {avg % viewed}% average viewed, top states {…}.
 > **Formats:** "This map is presented by {brand}" (logo on the end card + pinned comment), sponsored series of 4
 > Shorts, newsletter slot (Phase 2).

@@ -5,7 +5,7 @@ checkable evidence (cite links and dates). Say "unknown" where you can't verify 
 
 ## The idea
 **Data Kadai** ("kadai" = shop in Tamil; tagline "India's numbers, served fresh") is a faceless YouTube Shorts
-channel (Tamil-first, then English) that turns official Indian data into 25-35-second animated map and chart videos:
+channel (English at launch, Tamil later) that turns official Indian data into 25-35-second animated map and chart videos:
 state comparisons first (a "Statewise" series), then the economy, markets, companies and India vs the world. Example: "In one Indian state,
 women own the land. Which one?" The India map fills band by band and the answer (Meghalaya, 65% vs India 19%,
 NFHS-6) lights up last. Later phases: a website, a weekly visual newsletter, licensing graphics, and investing
@@ -37,7 +37,7 @@ Capitalist (not a clone: own brand, design and data).
 1. **Demand:** Is there real, measurable demand for Indian state-wise data Shorts? Find comparable channels
    (Indian and global: data, map and ranking Shorts) with subscriber and view numbers and growth over time. Which
    formats and topics perform best?
-2. **Competition:** Who already does this in India (YouTube, Instagram, X), especially in Tamil? How crowded is it,
+2. **Competition:** Who already does this in India (YouTube, Instagram, X), in English, and in Tamil for a later second track? How crowded is it,
    and what gap remains?
 3. **Monetisation reality:** Check the RPM assumption for Indian Shorts, the YPP thresholds, and realistic
    sponsorship rates for 10K-500K-subscriber data and education channels in India. Is licensing to coaching centres

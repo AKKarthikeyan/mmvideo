@@ -1,7 +1,7 @@
 // Data YT "Guess the State" Short (1080x1920): India state map, quiz, zoom reveal, colour fill, top-5 bars, loop.
 // Data and score per Short: public/datayt/shorts/<id>/ (scripts/datayt/build_india_shorts.py). Map: public/datayt/india/geo.json.
 import React from "react";
-import {AbsoluteFill, Audio, Easing, interpolate, spring, staticFile, useCurrentFrame} from "remotion";
+import {AbsoluteFill, Audio, Easing, interpolate, Sequence, spring, staticFile, useCurrentFrame} from "remotion";
 import {COND, VoxFonts} from "../voxkit";
 import geo from "../../public/datayt/india/geo.json";
 
@@ -16,7 +16,8 @@ export type ShortData = {id: string; series: string; ind: number; label: string;
   answer: string; answerName: string; options: string[]; optionKeys: string[]; answerIndex: number; value: number;
   india: number; india5: number; values: Record<string, number>; band: Record<string, number>; bands: string[];
   bandLabels: string[]; palette?: string; paletteName?: string; accent?: string; accent2?: string; top: {name: string; key: string; v: number}[]; other: {name: string; v: number}; side: string;
-  statesOnly: boolean; t: Record<string, [number, number]>; total: number; fillAt: Record<string, number>; fps: number; source: string};
+  statesOnly: boolean; t: Record<string, [number, number]>; total: number; fillAt: Record<string, number>; fps: number; source: string;
+  vo?: {sec_name: string; text: string; file: string; sec: number; at: number}[]};
 
 type G = {name: string; d: string; lx: number; ly: number; r: number; bbox: number[]};
 const STATES = geo.states as G[];
@@ -102,8 +103,9 @@ const Quiz: React.FC<{D: ShortData}> = ({D}) => {
   const q0 = F(D.t.quiz[0]), rev0 = F(D.t.reveal[0]), fill0 = F(D.t.fill[0]);
   if (f < q0 || f >= fill0) return null;
   const out = ease(f, fill0 - 8, fill0, 1, 0);
-  const n = Math.max(1, 3 - Math.floor((f - q0 - F(BEAT * 4)) / F(BEAT)));
-  const timerOn = f >= q0 + F(BEAT * 4) && f < rev0;
+  const c0 = rev0 - F(BEAT * 3);
+  const n = Math.max(1, 3 - Math.floor((f - c0) / F(BEAT)));
+  const timerOn = f >= c0 && f < rev0;
   return <div style={{position: "absolute", left: 60, top: 1130, width: 880, opacity: out}}>
     {D.options.map((o, i) => {
       const p = ease(f, q0 + i * F(BEAT), q0 + i * F(BEAT) + 7);
@@ -119,16 +121,16 @@ const Quiz: React.FC<{D: ShortData}> = ({D}) => {
     {timerOn && <div style={{position: "absolute", right: 0, top: -620, width: 170, height: 170, borderRadius: 85,
       border: `8px solid ${(D.accent2 ?? P.cyan)}`, display: "flex", alignItems: "center", justifyContent: "center", background: P.bg + "cc",
       fontFamily: COND, fontWeight: 700, fontSize: 110, color: P.ink,
-      transform: `scale(${1 + 0.12 * (1 - ((f - q0 - F(BEAT * 4)) % F(BEAT)) / F(BEAT))})`}}>{n}</div>}
+      transform: `scale(${1 + 0.12 * (1 - ((f - c0) % F(BEAT)) / F(BEAT))})`}}>{n}</div>}
   </div>;
 };
 
 const Reveal: React.FC<{D: ShortData}> = ({D}) => {
   const f = useCurrentFrame();
-  const r0 = F(D.t.reveal[0]), fill0 = F(D.t.fill[0]);
-  if (f < r0 || f >= fill0 + F(BEAT * 6)) return null;
+  const r0 = F(D.t.reveal[0]), top0 = F(D.t.top[0]);
+  if (f < r0 || f >= top0) return null;
   const p = ease(f, r0 + 4, r0 + 26);
-  const out = ease(f, fill0 + F(BEAT * 5), fill0 + F(BEAT * 6), 1, 0);
+  const out = ease(f, top0 - F(BEAT), top0, 1, 0);
   return <div style={{position: "absolute", left: 60, top: 190, width: 900, opacity: out}}>
     <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, color: (D.accent2 ?? P.cyan), opacity: ease(f, r0, r0 + 6)}}>IT'S</div>
     <div style={{fontFamily: COND, fontWeight: 700, fontSize: 112, lineHeight: 1, color: (D.accent ?? P.gold),
@@ -205,9 +207,16 @@ const Chrome: React.FC<{D: ShortData}> = ({D}) => {
       <div style={{background: (D.accent2 ?? P.cyan), color: P.bg, fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: 3, padding: "8px 16px", borderRadius: 8}}>{D.series.toUpperCase()}</div>
       <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 26, color: P.mute}}>NFHS-6 · 2023-24</div>
     </div>
-    <div style={{position: "absolute", left: 60, top: 1620, width: 880, fontFamily: SANS, fontSize: 22, color: P.mute, opacity: 0.8}}>Source: {D.source}</div>
     <div style={{position: "absolute", left: 0, top: 0, height: 10, width: 1080 * (f / total), background: (D.accent ?? P.gold)}}/>
   </>;
+};
+
+// Music ducks to 0.14 while the narrator speaks (fades over ~0.2 s), 0.45 in between; full level when a Short has no voice.
+const musicVol = (D: ShortData, fr: number) => {
+  if (!D.vo?.length) return 1;
+  const t = fr / FPS;
+  const near = Math.min(...D.vo.map((v) => t < v.at ? v.at - t : t > v.at + v.sec ? t - v.at - v.sec : 0));
+  return 0.14 + 0.31 * Math.min(1, near / 0.2);
 };
 
 export const IndiaShort: React.FC<{D: ShortData}> = ({D}) => {
@@ -228,6 +237,8 @@ export const IndiaShort: React.FC<{D: ShortData}> = ({D}) => {
     <Top5 D={D}/>
     <End D={D}/>
     <Chrome D={D}/>
-    <Audio src={staticFile(`datayt/shorts/${D.id}/music.wav`)}/>
+    <Audio src={staticFile(`datayt/shorts/${D.id}/music.wav`)} volume={(fr) => musicVol(D, fr)}/>
+    {(D.vo ?? []).map((v) => <Sequence key={v.file} from={F(v.at)}>
+      <Audio src={staticFile(`datayt/shorts/${D.id}/${v.file}`)}/></Sequence>)}
   </AbsoluteFill>;
 };

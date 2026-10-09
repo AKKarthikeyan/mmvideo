@@ -154,66 +154,121 @@
  "t": {
   "hook": [
    0.0,
-   3.871
+   5.806
   ],
   "quiz": [
-   3.871,
-   7.742
-  ],
-  "reveal": [
-   7.742,
+   5.806,
    11.613
   ],
-  "fill": [
+  "reveal": [
    11.613,
    15.484
   ],
-  "top": [
+  "fill": [
    15.484,
-   21.29
+   19.355
+  ],
+  "hold": [
+   19.355,
+   23.226
+  ],
+  "top": [
+   23.226,
+   29.032
   ],
   "end": [
-   21.29,
-   25.161
+   29.032,
+   32.903
   ]
  },
- "total": 25.761,
+ "total": 33.503,
+ "vo": [
+  {
+   "text": "In one state, 2 in 3 homes have a woman who owns a house or land.",
+   "file": "vo_hook.wav",
+   "sec": 4.352,
+   "at": 0.15,
+   "sec_name": "hook"
+  },
+  {
+   "text": "Which state? Kerala, Meghalaya, or Goa?",
+   "file": "vo_quiz.wav",
+   "sec": 2.688,
+   "at": 5.956,
+   "sec_name": "quiz"
+  },
+  {
+   "text": "It's Meghalaya!",
+   "file": "vo_reveal.wav",
+   "sec": 1.323,
+   "at": 11.763,
+   "sec_name": "reveal"
+  },
+  {
+   "text": "65.3 percent.",
+   "file": "vo_fill.wav",
+   "sec": 1.749,
+   "at": 15.634,
+   "sec_name": "fill"
+  },
+  {
+   "text": "3.5 times India's 18.8 percent.",
+   "file": "vo_hold.wav",
+   "sec": 3.029,
+   "at": 19.505,
+   "sec_name": "hold"
+  },
+  {
+   "text": "Second is Kerala, far behind at 34.3 percent.",
+   "file": "vo_top.wav",
+   "sec": 3.499,
+   "at": 23.376,
+   "sec_name": "top"
+  },
+  {
+   "text": "Where does your state rank? Tell us in the comments.",
+   "file": "vo_end.wav",
+   "sec": 2.645,
+   "at": 29.182,
+   "sec_name": "end"
+  }
+ ],
  "fillAt": {
-  "Jammu and Kashmir": 11.855,
-  "Ladakh": 11.921,
-  "Sikkim": 11.988,
-  "Assam": 12.054,
-  "Nagaland": 12.12,
-  "Dadra & Nagar Haveli and Daman & Diu": 12.187,
-  "West Bengal": 12.253,
-  "Andaman and Nicobar Islands": 12.319,
-  "Punjab": 12.386,
-  "Odisha": 12.452,
-  "Chandigarh": 12.519,
-  "Rajasthan": 12.585,
-  "Jharkhand": 12.651,
-  "Haryana": 12.718,
-  "Arunachal Pradesh": 12.784,
-  "Bihar": 12.85,
-  "Gujarat": 12.917,
-  "Mizoram": 12.983,
-  "Tamil Nadu": 13.049,
-  "Madhya Pradesh": 13.116,
-  "Chhattisgarh": 13.182,
-  "NCT of Delhi": 13.248,
-  "Tripura": 13.315,
-  "Maharashtra": 13.381,
-  "Himachal Pradesh": 13.448,
-  "Uttar Pradesh": 13.514,
-  "Goa": 13.58,
-  "Puducherry": 13.647,
-  "Uttarakhand": 13.713,
-  "Karnataka": 13.779,
-  "Telangana": 13.846,
-  "Andhra Pradesh": 13.912,
-  "Kerala": 13.978,
-  "Lakshadweep": 14.045,
-  "Meghalaya": 14.111
+  "Jammu and Kashmir": 15.726,
+  "Ladakh": 15.792,
+  "Sikkim": 15.859,
+  "Assam": 15.925,
+  "Nagaland": 15.991,
+  "Dadra & Nagar Haveli and Daman & Diu": 16.058,
+  "West Bengal": 16.124,
+  "Andaman and Nicobar Islands": 16.19,
+  "Punjab": 16.257,
+  "Odisha": 16.323,
+  "Chandigarh": 16.39,
+  "Rajasthan": 16.456,
+  "Jharkhand": 16.522,
+  "Haryana": 16.589,
+  "Arunachal Pradesh": 16.655,
+  "Bihar": 16.721,
+  "Gujarat": 16.788,
+  "Mizoram": 16.854,
+  "Tamil Nadu": 16.92,
+  "Madhya Pradesh": 16.987,
+  "Chhattisgarh": 17.053,
+  "NCT of Delhi": 17.119,
+  "Tripura": 17.186,
+  "Maharashtra": 17.252,
+  "Himachal Pradesh": 17.319,
+  "Uttar Pradesh": 17.385,
+  "Goa": 17.451,
+  "Puducherry": 17.518,
+  "Uttarakhand": 17.584,
+  "Karnataka": 17.65,
+  "Telangana": 17.717,
+  "Andhra Pradesh": 17.783,
+  "Kerala": 17.849,
+  "Lakshadweep": 17.916,
+  "Meghalaya": 17.982
  },
  "fps": 30,
  "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"

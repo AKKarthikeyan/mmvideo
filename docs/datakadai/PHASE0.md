@@ -68,6 +68,15 @@ Compositions in `src/datayt/Brand.tsx`. Render with `npx remotion still src/inde
 `DK-logo-sheet` (reversed, one-colour) are for dark posts and print only. The Tamil lockup (`DK-logo-ta`) is parked
 until Tamil launches.
 
+## 3c. Narration (AK 9 Oct 2026)
+
+English male narrator on every Short: Kokoro-82M (Apache-2.0, runs locally, free, no API key), voice `am_michael`
+(switch with `DK_VOICE` or a story's `"voice"`). Script per section from `vo_script()` in
+`scripts/datayt/build_india_shorts.py`: hook → "Which state? A, B, or C?" → "It's X!" → value → "N times India's Y" →
+second place → "Where does your state rank?". Music ducks under the voice. No source line on the video itself (AK);
+the source stays in the description, pinned comment and chart posts. The full-colour India map now holds 2 extra bars
+(about 3.9 s) before the top 5.
+
 ## 4. Channel copy
 
 **About (YouTube, about 820 characters; final, 9 Oct 2026):**

@@ -6,10 +6,11 @@ Reads public/datayt/nfhs6/nfhs6_states.json and writes, for each Short in SHORTS
   public/datayt/shorts/<id>/music.wav   code-composed score (scripts/datayt/music_shorts.py) synced to the beats
 Run from the repo root: python3 scripts/datayt/build_india_shorts.py [id ...]
 """
-import json, os, sys
+import json, math, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from nfhs6_meta import META, SHORT_NAME
 import music_shorts as M
+import voice_dk as V
 
 DATA = json.load(open("public/datayt/nfhs6/nfhs6_states.json"))["states"]
 NO_RANK = {"India", "Lakshadweep"}
@@ -37,8 +38,36 @@ SHORTS = [
          hook=["*3 in 10 men* here marry", "before 21."], q="Which state?"),
 ]
 
-# Beat grid (bars at 124 BPM): hook, quiz, reveal, fill, top5, end
-BARS = [("hook", 2), ("quiz", 2), ("reveal", 2), ("fill", 2), ("top", 3), ("end", 2)]
+# Beat grid (bars at 124 BPM): hook, quiz, reveal, fill, hold (full India map, AK 9 Oct: +3-4 s), top5, end.
+# These are minimums: a section grows by whole bars when its narration line is longer, so music stays on the grid.
+BARS = [("hook", 2), ("quiz", 2), ("reveal", 2), ("fill", 2), ("hold", 2), ("top", 3), ("end", 2)]
+VO_LEAD = 0.15      # narration starts this long after its section starts
+QUIZ_TAIL = 3       # beats of 3-2-1 countdown at the end of the quiz, kept clear of narration
+
+
+def spoken(v, unit):
+    return f"{v:g} percent" if unit == "%" else f"{v:g}"
+
+
+def vo_script(sh, nm, vals, india, ranked, unit, opts):
+    """One English line per section; a story can override any of them with "vo": {section: text}."""
+    ans, v = nm(sh["answer"]), vals[sh["answer"]]
+    ratio = v / india if india else None
+    second = ranked[1]
+    o = [nm(x) for x in opts]
+    lines = {
+        "hook": " ".join(sh["hook"]).replace("*", ""),
+        "quiz": f"Which state? {o[0]}, {o[1]}, or {o[2]}?",
+        "reveal": f"It's {ans}!",
+        "fill": f"{spoken(v, unit)}.",
+        "hold": (f"{ratio:.1f} times India's {spoken(india, unit)}." if ratio and ratio >= 1.5 else
+                 f"The India average is {spoken(india, unit)}."),
+        "top": (f"Second is {nm(second[1])}, far behind at {spoken(second[0], unit)}." if abs(v - second[0]) >= 10 else
+                f"Second is {nm(second[1])}, at {spoken(second[0], unit)}."),
+        "end": "Where does your state rank? Tell us in the comments.",
+    }
+    lines.update(sh.get("vo", {}))
+    return lines
 # Map palettes (low -> high). A is the brand palette (logo, chrome, default). Shorts rotate A -> E -> D -> C -> O
 # (O = AK's original reference map) in queue order; a config can pin one with "palette": "E".
 # A, E, D, C pass the dataviz ordinal checks (one hue, monotone lightness, light end >= 2:1 on the ground).
@@ -77,15 +106,26 @@ def build(sh, idx=0):
     srt = sorted(vals.values())
     cuts = [srt[int(len(srt) * q)] for q in (0.2, 0.4, 0.6, 0.8)]
     band = lambda v: sum(v >= c for c in cuts)
-    T, t = {}, 0.0
-    for name, nb in BARS:
-        T[name] = [round(t, 3), round(t + nb * M.BAR, 3)]; t += nb * M.BAR
-    total = round(t + 0.6, 3)
-    order = sorted(vals, key=lambda s: vals[s])
-    fill_at = {s: round(T["fill"][0] + M.BEAT * 0.5 + i * (M.BAR * 1.2 / len(order)), 3) for i, s in enumerate(order)}
     opts = [sh["answer"]] + sh["decoys"]
     opts = [opts[i] for i in ((1, 0, 2) if sh["id"][-1] in "13579" else (2, 1, 0) if sh["id"][-1] in "24" else (0, 2, 1))]
     nm = lambda s: SHORT_NAME.get(s, s)
+    d = f"public/datayt/shorts/{sh['id']}"
+    os.makedirs(d, exist_ok=True)
+    lines = vo_script(sh, nm, vals, india, ranked, unit, opts)
+    vo = {sec: {"text": tx, "file": f"vo_{sec}.wav", "sec": V.say(tx, f"{d}/vo_{sec}.wav", sh.get("voice"))}
+          for sec, tx in lines.items() if tx}
+    T, t = {}, 0.0
+    for name, nb in BARS:
+        need = vo[name]["sec"] + VO_LEAD + 0.3 if name in vo else 0
+        if name == "quiz":
+            need += QUIZ_TAIL * M.BEAT
+        nb = max(nb, math.ceil(need / M.BAR))
+        T[name] = [round(t, 3), round(t + nb * M.BAR, 3)]; t += nb * M.BAR
+    for sec in vo:
+        vo[sec]["at"] = round(T[sec][0] + VO_LEAD, 3)
+    total = round(t + 0.6, 3)
+    order = sorted(vals, key=lambda s: vals[s])
+    fill_at = {s: round(T["fill"][0] + M.BEAT * 0.5 + i * (M.BAR * 1.2 / len(order)), 3) for i, s in enumerate(order)}
     out = {"id": sh["id"], "series": "Guess the State", "ind": k, "label": lab, "unit": unit, "hook": sh["hook"], "q": sh["q"],
            "title": sh.get("title"), "answer": sh["answer"], "answerName": nm(sh["answer"]), "options": [nm(o) for o in opts], "optionKeys": opts,
            "answerIndex": opts.index(sh["answer"]), "value": vals[sh["answer"]], "india": india, "india5": india5,
@@ -94,13 +134,14 @@ def build(sh, idx=0):
            "bandLabels": [f"< {cuts[0]:g}{unit}"] + [f"{cuts[i]:g}–{cuts[i + 1]:g}{unit}" for i in range(3)] + [f"{cuts[3]:g}{unit}+"],
            "top": [{"name": nm(s), "key": s, "v": v} for v, s in ranked[:5]],
            "other": {"name": nm(ranked[-1][1]), "v": ranked[-1][0]}, "side": sh["side"], "statesOnly": bool(sh.get("states_only")),
-           "t": T, "total": total, "fillAt": fill_at, "fps": 30,
+           "t": T, "total": total, "vo": list(vo.values()), "fillAt": fill_at, "fps": 30,
            "source": "NFHS-6 (2023-24), IIPS · state fact sheets"}
-    d = f"public/datayt/shorts/{sh['id']}"
-    os.makedirs(d, exist_ok=True)
+    for sec, x in vo.items():
+        x["sec_name"] = sec
     json.dump(out, open(f"{d}/data.json", "w"), indent=1)
     beat = lambda s, n: T[s][0] + n * M.BEAT
-    ticks = [beat("quiz", i) for i in (0, 1, 2)] + [beat("quiz", 4), beat("quiz", 5), beat("quiz", 6)] + \
+    qend = T["quiz"][1]
+    ticks = [beat("quiz", i) for i in (0, 1, 2)] + [qend - M.BEAT * (QUIZ_TAIL - i) for i in range(QUIZ_TAIL)] + \
             list(fill_at.values())[::2] + [beat("top", 1 + i) for i in range(5)]
     seed = int(sh["id"][-2:])
     M.make(f"{d}/music.wav", total, seed=seed, hits=[T["reveal"][0], T["end"][0]], ticks=ticks,

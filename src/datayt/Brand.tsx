@@ -1,4 +1,4 @@
-// India Charted brand kit (Data YT): logo mark, wordmark, YouTube profile + banner, title chips, end card.
+// India Statewise brand kit (Data YT): logo mark, wordmark, YouTube profile + banner, title chips, end card.
 // Same palette as the Shorts (IndiaShort.tsx P). No map in the logo: India's outline is legally sensitive, a mark is not.
 import React from "react";
 import {AbsoluteFill, Still} from "remotion";
@@ -6,7 +6,7 @@ import {COND, VoxFonts} from "../voxkit";
 import {P} from "./IndiaShort";
 
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
-export const BRAND = {name: "India Charted", handle: "@IndiaCharted", tagline: "India, in charts. Every number from an official source."};
+export const BRAND = {name: "India Statewise", handle: "@IndiaStatewise", tagline: "Every state, by the numbers. From official sources."};
 
 // Mark: three rising bars, the tallest in gold with a data dot above it.
 export const Mark: React.FC<{size: number}> = ({size}) => (
@@ -20,7 +20,7 @@ export const Mark: React.FC<{size: number}> = ({size}) => (
 
 const Wordmark: React.FC<{size: number}> = ({size}) => (
   <div style={{fontFamily: COND, fontWeight: 700, fontSize: size, letterSpacing: size * 0.02, color: P.ink, lineHeight: 1}}>
-    INDIA <span style={{color: P.gold}}>CHARTED</span>
+    INDIA <span style={{color: P.gold}}>STATEWISE</span>
   </div>
 );
 
@@ -54,7 +54,7 @@ export const YTBannerIC: React.FC = () => (
         <Mark size={260}/>
         <div>
           <Wordmark size={150}/>
-          <div style={{fontFamily: SANS, fontSize: 40, color: P.ink, marginTop: 18}}>India, in charts. A new map every day.</div>
+          <div style={{fontFamily: SANS, fontSize: 40, color: P.ink, marginTop: 18}}>Every state, by the numbers. A new map every day.</div>
           <div style={{fontFamily: SANS, fontSize: 30, color: P.mute, marginTop: 10}}>Every number from an official source · NFHS · RBI · MoSPI · NPCI</div>
         </div>
       </div>
@@ -89,9 +89,9 @@ export const EndCard: React.FC = () => (
 );
 
 export const BrandStills: React.FC = () => <>
-  <Still id="IC-profile" component={Profile} width={800} height={800}/>
-  <Still id="IC-logo" component={Logo} width={2400} height={800}/>
-  <Still id="IC-banner" component={YTBannerIC} width={2560} height={1440}/>
-  <Still id="IC-chips" component={ChipSheet} width={1080} height={1080}/>
-  <Still id="IC-endcard" component={EndCard} width={1080} height={1920}/>
+  <Still id="IS-profile" component={Profile} width={800} height={800}/>
+  <Still id="IS-logo" component={Logo} width={2400} height={800}/>
+  <Still id="IS-banner" component={YTBannerIC} width={2560} height={1440}/>
+  <Still id="IS-chips" component={ChipSheet} width={1080} height={1080}/>
+  <Still id="IS-endcard" component={EndCard} width={1080} height={1920}/>
 </>;

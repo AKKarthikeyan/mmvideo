@@ -1,7 +1,7 @@
 // Data Kadai brand kit (Data YT): logo mark, wordmark, YouTube profile + banner, title chips, end card.
 // Same palette as the Shorts (IndiaShort.tsx P). No map in the logo: India's outline is legally sensitive, a mark is not.
 import React from "react";
-import {AbsoluteFill, Still} from "remotion";
+import {AbsoluteFill, Still, staticFile} from "remotion";
 import {COND, VoxFonts} from "../voxkit";
 import {P} from "./IndiaShort";
 
@@ -9,21 +9,27 @@ const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 export const BRAND = {name: "Data Kadai", handle: "@DataKadai", tagline: "India's numbers, served fresh. From official sources."};
 
 // Mark: a tea-kadai glass (cutting-chai tumbler) holding three rising bars, steam rising from the tallest.
-export const Mark: React.FC<{size: number}> = ({size}) => (
+// c = glass + bars, h = tallest bar + steam (defaults: brand amber + maroon).
+export const Mark: React.FC<{size: number; c?: string; h?: string}> = ({size, c = P.cyan, h = P.gold}) => (
   <svg width={size} height={size} viewBox="0 0 100 100">
-    <path d="M18 34 L82 34 L75 92 Q74 96 70 96 L30 96 Q26 96 25 92 Z" fill="none" stroke={P.cyan} strokeWidth="4.5" strokeLinejoin="round"/>
-    <line x1="21" y1="46" x2="79" y2="46" stroke={P.cyan} strokeWidth="2.5" opacity={0.5}/>
-    <rect x="31" y="70" width="10" height="18" rx="2.5" fill={P.cyan} opacity={0.6}/>
-    <rect x="45" y="60" width="10" height="28" rx="2.5" fill={P.cyan}/>
-    <rect x="59" y="50" width="10" height="38" rx="2.5" fill={P.gold}/>
-    <path d="M58 26 Q53 19 58 13 Q63 7 58 2" fill="none" stroke={P.gold} strokeWidth="4" strokeLinecap="round"/>
-    <path d="M70 26 Q66 20 70 15" fill="none" stroke={P.gold} strokeWidth="3.5" strokeLinecap="round" opacity={0.7}/>
+    <path d="M18 34 L82 34 L75 92 Q74 96 70 96 L30 96 Q26 96 25 92 Z" fill="none" stroke={c} strokeWidth="4.5" strokeLinejoin="round"/>
+    <line x1="21" y1="46" x2="79" y2="46" stroke={c} strokeWidth="2.5" opacity={0.5}/>
+    <rect x="31" y="70" width="10" height="18" rx="2.5" fill={c} opacity={0.6}/>
+    <rect x="45" y="60" width="10" height="28" rx="2.5" fill={c}/>
+    <rect x="59" y="50" width="10" height="38" rx="2.5" fill={h}/>
+    <path d="M58 26 Q53 19 58 13 Q63 7 58 2" fill="none" stroke={h} strokeWidth="4" strokeLinecap="round"/>
+    <path d="M70 26 Q66 20 70 15" fill="none" stroke={h} strokeWidth="3.5" strokeLinecap="round" opacity={0.7}/>
   </svg>
 );
 
-const Wordmark: React.FC<{size: number}> = ({size}) => (
-  <div style={{fontFamily: COND, fontWeight: 700, fontSize: size, letterSpacing: size * 0.02, color: P.ink, lineHeight: 1}}>
-    DATA <span style={{color: P.gold}}>KADAI</span>
+const TAMIL = "'Noto Sans Tamil', sans-serif";
+const TamilFont: React.FC = () => (
+  <style>{`@font-face{font-family:'Noto Sans Tamil';font-weight:700;src:url(${staticFile("fonts/NotoSansTamil-700.woff2")}) format("woff2");}`}</style>
+);
+
+const Wordmark: React.FC<{size: number; ink?: string; acc?: string}> = ({size, ink = P.ink, acc = P.gold}) => (
+  <div style={{fontFamily: COND, fontWeight: 700, fontSize: size, letterSpacing: size * 0.02, color: ink, lineHeight: 1}}>
+    DATA <span style={{color: acc}}>KADAI</span>
   </div>
 );
 
@@ -98,6 +104,9 @@ export const BrandStills: React.FC = () => <>
   <Still id="DK-chips" component={ChipSheet} width={1080} height={1080}/>
   <Still id="DK-endcard" component={EndCard} width={1080} height={1920}/>
   <Still id="DK-palettes" component={PaletteSheet} width={2400} height={1200}/>
+  <Still id="DK-logo-sheet" component={LogoSheet} width={2400} height={1500}/>
+  <Still id="DK-icon" component={AppIcon} width={1024} height={1024}/>
+  <Still id="DK-logo-ta" component={LogoTamil} width={2400} height={800}/>
 </>;
 
 // Palette options for AK (each ramp passes the dataviz ordinal checks: one hue, monotone lightness, light end >= 2:1).
@@ -139,3 +148,58 @@ export const PaletteSheet: React.FC = () => {
     </div>)}
   </AbsoluteFill>;
 };
+
+// Logo variants for AK: primary, stacked bilingual, app icon tile, reversed, one-colour, small-size check.
+const CREAM = "#F7F4EE";
+const TamilLine: React.FC<{size: number; color?: string}> = ({size, color = P.ink}) => (
+  <div style={{fontFamily: TAMIL, fontWeight: 700, fontSize: size, color, lineHeight: 1.2}}>டேட்டா <span style={{color: P.gold}}>கடை</span></div>
+);
+export const AppIcon: React.FC = () => (
+  <AbsoluteFill style={{background: P.gold, alignItems: "center", justifyContent: "center"}}><Mark size={760} c={CREAM} h="#E9B36A"/></AbsoluteFill>
+);
+export const LogoTamil: React.FC = () => (
+  <Ground><TamilFont/>
+    <AbsoluteFill style={{alignItems: "center", justifyContent: "center", flexDirection: "row", gap: 60}}>
+      <Mark size={300}/>
+      <div><Wordmark size={150}/><div style={{marginTop: 28}}><TamilLine size={92}/></div>
+        <div style={{fontFamily: SANS, fontSize: 40, color: P.mute, marginTop: 16}}>{BRAND.tagline}</div></div>
+    </AbsoluteFill>
+  </Ground>
+);
+const Cell: React.FC<{label: string; bg: string; children: React.ReactNode; ink?: string}> = ({label, bg, children, ink = P.mute}) => (
+  <div style={{background: bg, borderRadius: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+    position: "relative", border: `2px solid ${P.empty}`}}>
+    <div style={{position: "absolute", top: 18, left: 24, fontFamily: SANS, fontWeight: 700, fontSize: 24, color: ink, letterSpacing: 2}}>{label}</div>
+    {children}
+  </div>
+);
+export const LogoSheet: React.FC = () => (
+  <AbsoluteFill style={{background: "#FFFFFF", padding: 40, display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 28}}>
+    <VoxFonts/><TamilFont/>
+    <Cell label="1 · PRIMARY" bg={CREAM}>
+      <div style={{display: "flex", alignItems: "center", gap: 32}}><Mark size={210}/><Wordmark size={112}/></div>
+    </Cell>
+    <Cell label="2 · STACKED + TAMIL" bg={CREAM}>
+      <Mark size={230}/><Wordmark size={92}/><div style={{marginTop: 20}}><TamilLine size={56}/></div>
+    </Cell>
+    <Cell label="3 · APP ICON / PROFILE" bg={CREAM}>
+      <div style={{width: 300, height: 300, borderRadius: 150, background: P.gold, display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <Mark size={220} c={CREAM} h="#E9B36A"/></div>
+    </Cell>
+    <Cell label="4 · REVERSED (dark posts)" bg={P.ink} ink="#B9A898">
+      <div style={{display: "flex", alignItems: "center", gap: 36}}><Mark size={210} c="#E9B36A" h={CREAM}/><Wordmark size={112} ink={CREAM} acc="#E9B36A"/></div>
+    </Cell>
+    <Cell label="5 · ONE COLOUR (print, stamps)" bg={CREAM}>
+      <div style={{display: "flex", alignItems: "center", gap: 24}}><Mark size={170} c={P.ink} h={P.ink}/><Wordmark size={90} acc={P.ink}/></div>
+    </Cell>
+    <Cell label="6 · SMALL SIZES" bg={CREAM}>
+      <div style={{display: "flex", alignItems: "flex-end", gap: 40}}>
+        {[128, 64, 32].map((z) => <div key={z} style={{display: "flex", flexDirection: "column", alignItems: "center", gap: 8}}>
+          <div style={{width: z, height: z, borderRadius: z / 2, background: P.gold, display: "flex", alignItems: "center", justifyContent: "center"}}>
+            <Mark size={z * 0.74} c={CREAM} h="#E9B36A"/></div>
+          <div style={{fontFamily: SANS, fontSize: 20, color: P.mute}}>{z}px</div></div>)}
+        <Mark size={64}/>
+      </div>
+    </Cell>
+  </AbsoluteFill>
+);

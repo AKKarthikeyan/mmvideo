@@ -1,8 +1,8 @@
 """Tamil Nadu district map for the NFHS-6 alcohol video: GeoJSON -> simplified SVG paths + label anchors.
 
-Usage: python3 scripts/tn_alcohol_geo.py <TAMIL_NADU_DISTRICTS.geojson>
+Usage: python3 scripts/datayt/tn_alcohol_geo.py <TAMIL_NADU_DISTRICTS.geojson>
 Source geometry: github.com/datta07/INDIAN-SHAPEFILES (STATES/TAMIL NADU/TAMIL NADU_DISTRICTS.geojson, 38 districts).
-Writes public/tnmap/geo.json in a W x H unit box (equirectangular, longitude scaled by cos(mid-lat)).
+Writes public/datayt/tn_alcohol/geo.json in a W x H unit box (equirectangular, longitude scaled by cos(mid-lat)).
 """
 import json, math, sys, os
 
@@ -118,9 +118,9 @@ def main(src):
         ax, ay, rad = anchor(big[1])
         out.append({"name": name, "d": d, "lx": round(ax, 1), "ly": round(ay, 1), "r": round(rad, 1), "area": round(big[0])})
         print(f"{name:18s} rings={len(polys):2d} pts={sum(len(r) for r in polys):5d} anchor=({ax:.0f},{ay:.0f}) r={rad:.0f}")
-    os.makedirs("public/tnmap", exist_ok=True)
-    json.dump({"w": W, "h": H, "districts": out}, open("public/tnmap/geo.json", "w"), separators=(",", ":"))
-    print("bytes", os.path.getsize("public/tnmap/geo.json"))
+    os.makedirs("public/datayt/tn_alcohol", exist_ok=True)
+    json.dump({"w": W, "h": H, "districts": out}, open("public/datayt/tn_alcohol/geo.json", "w"), separators=(",", ":"))
+    print("bytes", os.path.getsize("public/datayt/tn_alcohol/geo.json"))
 
 
 if __name__ == "__main__":

@@ -11,6 +11,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Daily-filings videos (Vox engine) | `src/vx/VoxEngine.tsx`, `src/vx/Videos.tsx`, `scripts/vx_scripts.py`, `scripts/build_vx.py` |
 | Letters and Moat Files (Case engine) | `src/vx/LetterVideos.tsx`, `src/vx/CaseEngine.tsx`, `src/vx/scenes/`, `scripts/vx_letters.py`, `scripts/build_vx_letters.py`, `scripts/qa_vx.py`, `scripts/render_vx_letters.sh` |
 | Regional audio tracks (Tamil, Hindi; English stays original) | `scripts/audio_tracks.py`, `scripts/translations/`, `docs/AUDIO_TRACKS.md` |
+| Data YT Videos (separate series: data maps and rankings, ids `DATA-*`) | `src/datayt/`, `scripts/datayt/`, `public/datayt/<id>/` |
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits

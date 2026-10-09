@@ -17,7 +17,7 @@ import {MoatVerticalComposition} from "./explainer/MoatVertical";
 import {CarouselCompositions} from "./carousel/Carousels";
 import {Banner} from "./banner/Banner";
 import {ChannelIntro, introTotal, IFPS} from "./intro/ChannelIntro";
-import {TnAlcoholCompositions} from "./tnmap/TnAlcohol";
+import {DataVideoCompositions} from "./datayt/DataVideos";
 import {ShyamNapkin, nTotal, NFPS} from "./hand/ShyamNapkin";
 import {HalNapkin, halTotal, HFPS2} from "./hand/HalNapkin";
 import {VogNapkin, vogTotal, VFPS} from "./hand/VogNapkin";
@@ -61,7 +61,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bkm" component={BankNapkin2 as any} defaultProps={{sid: "bkm", label: "Canara + PNB · Q2"}} durationInFrames={bkTotal2(BK2.bkm)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkn" component={BankNapkin2 as any} defaultProps={{sid: "bkn", label: "Karnataka Bank · Q2"}} durationInFrames={bkTotal2(BK2.bkn)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bko" component={BankNapkin2 as any} defaultProps={{sid: "bko", label: "22 banks · Q2"}} durationInFrames={bkTotal2(BK2.bko)} fps={BFPS2} width={1080} height={1920}/>
-    <TnAlcoholCompositions/>
+    <DataVideoCompositions/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
   </>
 );

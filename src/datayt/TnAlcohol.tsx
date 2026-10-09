@@ -1,24 +1,24 @@
 // NFHS-6 "Alcohol use among men in Tamil Nadu": animated district choropleth, 16:9 long and 9:16 Short.
-// Geometry: public/tnmap/geo.json (scripts/tn_alcohol_geo.py). Values, buckets, timeline: public/tnmap/data.json
-// (scripts/tn_alcohol_build.py, which also writes the synced sound bed public/tnmap/bed.wav).
+// Geometry: public/datayt/tn_alcohol/geo.json (scripts/datayt/tn_alcohol_geo.py). Values, buckets, timeline: public/datayt/tn_alcohol/data.json
+// (scripts/datayt/tn_alcohol_build.py, which also writes the synced sound bed public/datayt/tn_alcohol/bed.wav).
 import React from "react";
-import {AbsoluteFill, Audio, Composition, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
+import {AbsoluteFill, Audio, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
 import {C, COND, VoxFonts} from "../voxkit";
-import geo from "../../public/tnmap/geo.json";
-import data from "../../public/tnmap/data.json";
+import geo from "../../public/datayt/tn_alcohol/geo.json";
+import data from "../../public/datayt/tn_alcohol/data.json";
 
 const FPS = data.fps;
 const TOTAL = Math.ceil(data.total * FPS);
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 const BG = "#EFE7D6", EMPTY = "#DDD4C2", EDGE = "#3B3027", INK = C.ink;
-const BRAND = "Moat & Margin";
+const BRAND = "";  // Data YT series: no channel brand on frame; set a channel name here if wanted
 
 type D = {name: string; v: number; label: string; bucket: number; at: number; nudge: number[]};
 type G = {name: string; d: string; lx: number; ly: number; r: number};
 const DS = data.districts as D[];
 const GEO = Object.fromEntries((geo.districts as G[]).map((g) => [g.name, g]));
 const BY = Object.fromEntries(DS.map((d) => [d.name, d]));
-const T = data.t as Record<string, [number, number]>;
+const T = data.t as unknown as Record<string, [number, number]>;
 const F = (s: number) => Math.round(s * FPS);
 const sceneAt = (f: number) => Object.keys(T).find((k) => f >= F(T[k][0]) && f < F(T[k][1])) ?? "end";
 const ease = (f: number, a: number, b: number, from = 0, to = 1) =>
@@ -48,19 +48,20 @@ const MapLayer: React.FC = () => {
   const t0 = F(T.draw[0]);
   const focus: string[] | null =
     sc === "top" ? data.top : sc === "bottom" ? data.bottom : sc === "gap" ? [data.hi, data.lo] : null;
-  const focusP = focus ? ease(f, F(T[sc][0]), F(T[sc][0]) + 18) : 0;
+  const focusP = focus ? ease(f, F(T[sc][0]), F(T[sc][0]) + 10) : 0;
   const title = f < t0;
-  const mapOp = title ? ease(f, 20, 70, 0, 0.16) : sc === "end" ? ease(f, F(T.end[0]), F(T.end[0]) + 20, 1, 0.22) : 1;
-  const zoom = 1 + 0.015 * Math.sin((f / TOTAL) * Math.PI);
+  const mapOp = title ? ease(f, 10, 40, 0, 0.16) : sc === "end" ? ease(f, F(T.end[0]), F(T.end[0]) + 12, 1, 0.22) : 1;
+  // slow drift plus a small punch on every cut (cuts sit on the music's downbeats)
+  const zoom = 1 + 0.015 * Math.sin((f / TOTAL) * Math.PI) + 0.012 * Math.max(0, 1 - (f - F(T[sc][0])) / 8);
   const ordered = [...DS].sort((a, b) => GEO[a.name].ly - GEO[b.name].ly);
 
   const labels: {d: D; mode: "pill" | "value"; op: number}[] = [];
   for (const d of DS) {
     const at = F(d.at);
     const bk = `b${d.bucket}`;
-    if (sc === bk) labels.push({d, mode: "pill", op: ease(f, at, at + 8) * ease(f, F(T[bk][1]) - 8, F(T[bk][1]), 1, 0)});
-    if (sc === "all") labels.push({d, mode: "value", op: ease(f, F(T.all[0]) + d.bucket * 4, F(T.all[0]) + d.bucket * 4 + 10)});
-    if (focus && focus.includes(d.name) && sc !== "end") labels.push({d, mode: "pill", op: ease(f, F(T[sc][0]) + 6 + focus.indexOf(d.name) * 5, F(T[sc][0]) + 18 + focus.indexOf(d.name) * 5)});
+    if (sc === bk) labels.push({d, mode: "pill", op: ease(f, at, at + 5) * ease(f, F(T[bk][1]) - 5, F(T[bk][1]), 1, 0)});
+    if (sc === "all") labels.push({d, mode: "value", op: ease(f, F(T.all[0]) + d.bucket * 3, F(T.all[0]) + d.bucket * 3 + 6)});
+    if (focus && focus.includes(d.name) && sc !== "end") labels.push({d, mode: "pill", op: ease(f, F(T[sc][0]) + 3 + focus.indexOf(d.name) * 3, F(T[sc][0]) + 10 + focus.indexOf(d.name) * 3)});
   }
 
   return (
@@ -74,12 +75,12 @@ const MapLayer: React.FC = () => {
         <g filter="url(#mshadow)">
           {ordered.map((d, i) => {
             const g = GEO[d.name];
-            const dStart = t0 + 4 + i * 2;
-            const draw = title ? 1 : ease(f, dStart, dStart + 26);
-            const base = ease(f, dStart + 20, dStart + 34);
-            const fillP = ease(f, F(d.at), F(d.at) + 10);
+            const dStart = t0 + 2 + i;
+            const draw = title ? 1 : ease(f, dStart, dStart + 18);
+            const base = ease(f, dStart + 14, dStart + 24);
+            const fillP = ease(f, F(d.at), F(d.at) + 6);
             const col = mix(EMPTY, data.buckets[d.bucket].color, fillP);
-            const pop = spring({frame: f - F(d.at), fps: FPS, config: {damping: 12, stiffness: 180}, durationInFrames: 14});
+            const pop = spring({frame: f - F(d.at), fps: FPS, config: {damping: 12, stiffness: 180}, durationInFrames: 9});
             const lift = fillP > 0 && fillP < 1 ? 1 : 0;
             const dim = focus && !focus.includes(d.name) ? 1 - 0.7 * focusP : 1;
             const sc2 = 1 + 0.06 * Math.sin(pop * Math.PI) * (f >= F(d.at) ? 1 : 0);
@@ -134,7 +135,7 @@ const Kicker: React.FC<{children: React.ReactNode; color?: string}> = ({children
 
 const In: React.FC<{at: number; children: React.ReactNode; dy?: number; style?: React.CSSProperties}> = ({at, children, dy = 24, style}) => {
   const f = useCurrentFrame();
-  const p = ease(f, at, at + 14);
+  const p = ease(f, at, at + 8);
   return <div style={{opacity: p, transform: `translateY(${(1 - p) * dy}px)`, ...style}}>{children}</div>;
 };
 
@@ -161,9 +162,9 @@ const Bars: React.FC<{names: string[]; start: number; title: string; sub: string
     <In at={start + 8}><div style={{fontFamily: SANS, fontSize: L.land ? 28 : 26, color: "#4a4a4a", margin: "14px 0 30px"}}>{sub}</div></In>
     {names.map((n, i) => {
       const d = BY[n];
-      const a = start + 14 + i * 6;
-      const p = ease(f, a, a + 22);
-      return <div key={n} style={{display: "flex", alignItems: "center", marginBottom: L.land ? 18 : 12, opacity: ease(f, a, a + 8)}}>
+      const a = start + 8 + i * 4;
+      const p = ease(f, a, a + 14);
+      return <div key={n} style={{display: "flex", alignItems: "center", marginBottom: L.land ? 18 : 12, opacity: ease(f, a, a + 5)}}>
         <div style={{width: L.land ? 250 : 240, fontFamily: SANS, fontWeight: 600, fontSize: L.land ? 28 : 26, color: INK}}>{i + 1}. {n}</div>
         <div style={{flex: 1, height: L.land ? 46 : 40, position: "relative"}}>
           <div style={{position: "absolute", inset: 0, background: "#00000010", borderRadius: 4}}/>
@@ -184,7 +185,7 @@ const Panel: React.FC = () => {
   const sc = sceneAt(f);
   if (sc === "title") return null;
   const s0 = F(T[sc][0]), s1 = F(T[sc][1]);
-  const out = sc === "end" ? 1 : ease(f, s1 - 10, s1, 1, 0);
+  const out = sc === "end" ? 1 : ease(f, s1 - 5, s1, 1, 0);
   const big = L.land ? 92 : 72;
   let body: React.ReactNode = null;
 
@@ -192,7 +193,7 @@ const Panel: React.FC = () => {
     body = <div>
       <In at={s0 + 6}><Kicker>NFHS-6 · Tamil Nadu</Kicker></In>
       <In at={s0 + 10}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 120 : 92, lineHeight: 1, color: INK}}>38 districts.</div></In>
-      <In at={s0 + 30}><div style={{fontFamily: SANS, fontSize: L.land ? 34 : 30, lineHeight: 1.35, color: "#3a3a3a", marginTop: 22, maxWidth: 820}}>
+      <In at={s0 + 16}><div style={{fontFamily: SANS, fontSize: L.land ? 34 : 30, lineHeight: 1.35, color: "#3a3a3a", marginTop: 22, maxWidth: 820}}>
         Each one coloured by the share of men who drink alcohol, from the latest National Family Health Survey.</div></In>
     </div>;
   } else if (/^b\d$/.test(sc)) {
@@ -219,7 +220,7 @@ const Panel: React.FC = () => {
       <In at={s0}><Kicker>The pattern</Kicker></In>
       <In at={s0 + 4}><div style={{fontFamily: COND, fontWeight: 700, fontSize: big, lineHeight: 1.05, color: INK}}>
         Darkest in the north and the <span style={{color: "#6B1E35"}}>delta coast</span>.</div></In>
-      <In at={s0 + 40}><div style={{fontFamily: COND, fontWeight: 700, fontSize: big * 0.8, lineHeight: 1.05, color: "#9a8a6a", marginTop: 26}}>
+      <In at={s0 + 24}><div style={{fontFamily: COND, fontWeight: 700, fontSize: big * 0.8, lineHeight: 1.05, color: "#9a8a6a", marginTop: 26}}>
         Palest in Chennai and the deep south.</div></In>
     </div>;
   } else if (sc === "top") {
@@ -228,12 +229,12 @@ const Panel: React.FC = () => {
     body = <Bars names={data.bottom} start={s0} kicker="Lowest" title="Bottom 5 districts" sub="Share of men who drink alcohol"/>;
   } else if (sc === "gap") {
     const hi = BY[data.hi], lo = BY[data.lo];
-    const n = ease(f, s0 + 20, s0 + 50, 1, data.ratio);
+    const n = ease(f, s0 + 4, s0 + 26, 1, data.ratio);
     body = <div>
       <In at={s0}><Kicker>The gap</Kicker></In>
-      <In at={s0 + 10}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 260 : 200, lineHeight: 0.9, color: "#6B1E35"}}>
+      <In at={s0 + 2}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 260 : 200, lineHeight: 0.9, color: "#6B1E35"}}>
         {data.approx ? "~" : ""}{n.toFixed(1)}×</div></In>
-      <In at={s0 + 34}><div style={{fontFamily: SANS, fontSize: L.land ? 34 : 29, lineHeight: 1.4, color: INK, marginTop: 18, maxWidth: 840}}>
+      <In at={s0 + 20}><div style={{fontFamily: SANS, fontSize: L.land ? 34 : 29, lineHeight: 1.4, color: INK, marginTop: 18, maxWidth: 840}}>
         A man in <b>{hi.name}</b> ({hi.label}) is about twice as likely to drink as a man in <b>{lo.name}</b> ({lo.label}).</div></In>
     </div>;
   } else if (sc === "end") {
@@ -242,9 +243,9 @@ const Panel: React.FC = () => {
       <In at={s0 + 4}><div style={{fontFamily: SANS, fontSize: L.land ? 32 : 28, lineHeight: 1.45, color: INK, maxWidth: 840}}>
         National Family Health Survey (NFHS-6), Tamil Nadu district estimates: men who consume alcohol.
         {data.approx ? " Thiruvarur shown as 32%+ (exact figure pending)." : ""}</div></In>
-      <In at={s0 + 12}><div style={{fontFamily: SANS, fontSize: L.land ? 22 : 20, color: "#6a6a6a", marginTop: 18}}>
+      <In at={s0 + 8}><div style={{fontFamily: SANS, fontSize: L.land ? 22 : 20, color: "#6a6a6a", marginTop: 18}}>
         District boundaries: 38 districts, datta07/INDIAN-SHAPEFILES.</div></In>
-      <In at={s0 + 24}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 64 : 56, color: C.red, marginTop: 44}}>Which district surprised you?</div>
+      <In at={s0 + 14}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 64 : 56, color: C.red, marginTop: 44}}>Which district surprised you?</div>
         <div style={{fontFamily: SANS, fontSize: L.land ? 28 : 26, color: INK, marginTop: 8}}>Tell us in the comments.</div></In>
     </div>;
   }
@@ -256,7 +257,7 @@ const Panel: React.FC = () => {
     display: "flex", flexDirection: "column", justifyContent: L.land ? "center" : "flex-start"}}>
     {body}
     {showLegend && <div style={{position: L.land ? "absolute" : "relative", bottom: L.land ? 10 : undefined, left: 0, right: 0, marginTop: L.land ? 0 : 30,
-      opacity: ease(f, F(T.draw[0]) + 40, F(T.draw[0]) + 60)}}><Legend active={active} upto={upto}/></div>}
+      opacity: ease(f, F(T.draw[0]) + 24, F(T.draw[0]) + 36)}}><Legend active={active} upto={upto}/></div>}
   </div>;
 };
 
@@ -265,12 +266,12 @@ const Title: React.FC = () => {
   const L = useL();
   const e = F(T.title[1]);
   if (f >= e) return null;
-  const out = ease(f, e - 10, e, 1, 0);
+  const out = ease(f, e - 5, e, 1, 0);
   return <AbsoluteFill style={{justifyContent: "center", padding: L.land ? "0 140px" : "0 80px", opacity: out}}>
-    <In at={4}><Kicker>NFHS-6 · District by district</Kicker></In>
-    <In at={10}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 150 : 128, lineHeight: 0.98, color: INK, maxWidth: 1400}}>
+    <In at={2}><Kicker>NFHS-6 · District by district</Kicker></In>
+    <In at={6}><div style={{fontFamily: COND, fontWeight: 700, fontSize: L.land ? 150 : 128, lineHeight: 0.98, color: INK, maxWidth: 1400}}>
       How many men drink in <span style={{color: "#6B1E35"}}>Tamil Nadu</span>?</div></In>
-    <In at={34}><div style={{fontFamily: SANS, fontSize: L.land ? 38 : 34, color: "#3a3a3a", marginTop: 30}}>Every district, mapped. The answer ranges from 16% to over 32%.</div></In>
+    <In at={20}><div style={{fontFamily: SANS, fontSize: L.land ? 38 : 34, color: "#3a3a3a", marginTop: 30}}>Every district, mapped. The answer ranges from 16% to over 32%.</div></In>
   </AbsoluteFill>;
 };
 
@@ -282,7 +283,7 @@ const Chrome: React.FC = () => {
     <div style={{position: "absolute", left: L.land ? L.panel.x : 70, top: L.land ? 40 : 90, fontFamily: SANS, fontWeight: 700, fontSize: L.land ? 22 : 30,
       letterSpacing: 3, color: INK, opacity: 0.55 * op, textTransform: "uppercase"}}>Alcohol use among men · Tamil Nadu</div>
     <div style={{position: "absolute", right: 60, bottom: L.land ? 34 : 60, fontFamily: SANS, fontSize: L.land ? 20 : 24, color: INK, opacity: 0.5}}>
-      Source: NFHS-6 · {BRAND}</div>
+      Source: NFHS-6{BRAND ? ` · ${BRAND}` : ""}</div>
   </>;
 };
 
@@ -301,11 +302,8 @@ export const TnAlcohol: React.FC = () => (
     <Panel/>
     <Chrome/>
     <Progress/>
-    <Audio src={staticFile("tnmap/bed.wav")} volume={0.9}/>
+    <Audio src={staticFile("datayt/tn_alcohol/bed.wav")} volume={0.9}/>
   </AbsoluteFill>
 );
 
-export const TnAlcoholCompositions: React.FC = () => <>
-  <Composition id="TN-alcohol" component={TnAlcohol} durationInFrames={TOTAL} fps={FPS} width={1920} height={1080}/>
-  <Composition id="TN-alcohol-short" component={TnAlcohol} durationInFrames={TOTAL} fps={FPS} width={1080} height={1920}/>
-</>;
+export const TN_ALCOHOL_FRAMES = TOTAL, TN_ALCOHOL_FPS = FPS;

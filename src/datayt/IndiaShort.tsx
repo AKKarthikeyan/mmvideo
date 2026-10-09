@@ -6,8 +6,10 @@ import {COND, VoxFonts} from "../voxkit";
 import geo from "../../public/datayt/india/geo.json";
 
 // Data YT palette (dark, phone-first): navy ground, gold highlight, cyan accent, plasma-like bands
-export const P = {bg: "#0B1020", bg2: "#131A30", ink: "#F5F7FF", mute: "#8C95AD", line: "#3A4360", empty: "#1E2540",
-  gold: "#FFC15E", cyan: "#33D1FF", good: "#3DDC97", bad: "#FF4D6D"};
+// Data Kadai palette, taken from AK's reference map (warm, light): off-white ground, cream -> maroon bands,
+// maroon as the brand accent (answer, highlights) and amber as the second accent (chips, timer).
+export const P = {bg: "#F7F4EE", bg2: "#FFFFFF", ink: "#1F1A17", mute: "#7A6F66", line: "#B9A898", empty: "#E7DFD3",
+  gold: "#7A2340", cyan: "#C9822F", good: "#2F8F5B", bad: "#B3584D"};
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 
 export type ShortData = {id: string; series: string; ind: number; label: string; unit: string; hook: string[]; q: string;

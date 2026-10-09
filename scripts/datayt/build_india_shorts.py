@@ -38,7 +38,17 @@ SHORTS = [
 
 # Beat grid (bars at 124 BPM): hook, quiz, reveal, fill, top5, end
 BARS = [("hook", 2), ("quiz", 2), ("reveal", 2), ("fill", 2), ("top", 3), ("end", 2)]
-BANDS = ["#FBEFD9", "#EFC97A", "#D79A4A", "#B3584D", "#6D2238"]   # low -> high, from the reference map
+# Map palettes (low -> high). A is the brand palette (logo, chrome, default). Shorts rotate A -> E -> D -> C -> O
+# (O = AK's original reference map) in queue order; a config can pin one with "palette": "E".
+# A, E, D, C pass the dataviz ordinal checks (one hue, monotone lightness, light end >= 2:1 on the ground).
+PALETTES = {
+    "A": dict(name="Kadai Chai", bands=["#DA996A", "#C67447", "#AD512F", "#8C352A", "#662125"], accent="#7A2340", accent2="#C9822F"),
+    "E": dict(name="Saffron Kumkum", bands=["#DD9942", "#CC7300", "#B84900", "#9C2200", "#740A00"], accent="#740A00", accent2="#2F8F5B"),
+    "D": dict(name="Indigo Ink", bands=["#9AA7D6", "#7788C9", "#586AB6", "#3F4E97", "#2A366F"], accent="#2A366F", accent2="#E8604C"),
+    "C": dict(name="Monsoon Teal", bands=["#69BAB4", "#3D9E98", "#13817C", "#00635F", "#034643"], accent="#034643", accent2="#E8A33D"),
+    "O": dict(name="Original", bands=["#FBEFD9", "#EFC97A", "#D79A4A", "#B3584D", "#6D2238"], accent="#6D2238", accent2="#D79A4A"),
+}
+ROTATION = ["A", "E", "D", "C", "O"]
 
 
 def num(x):
@@ -51,8 +61,10 @@ def num(x):
         return None
 
 
-def build(sh):
+def build(sh, idx=0):
     k = sh["ind"]; lab = META[k][0]
+    pk = sh.get("palette") or ROTATION[idx % len(ROTATION)]
+    pal = PALETTES[pk]
     unit = "" if k == 18 else "%"
     vals = {s: num(r.get(str(k), [None] * 3)[2]) for s, r in DATA.items() if s != "India"}
     vals = {s: v for s, v in vals.items() if v is not None}
@@ -76,7 +88,8 @@ def build(sh):
     out = {"id": sh["id"], "series": "Guess the State", "ind": k, "label": lab, "unit": unit, "hook": sh["hook"], "q": sh["q"],
            "answer": sh["answer"], "answerName": nm(sh["answer"]), "options": [nm(o) for o in opts], "optionKeys": opts,
            "answerIndex": opts.index(sh["answer"]), "value": vals[sh["answer"]], "india": india, "india5": india5,
-           "values": vals, "band": {s: band(v) for s, v in vals.items()}, "bands": BANDS,
+           "values": vals, "band": {s: band(v) for s, v in vals.items()}, "bands": pal["bands"],
+           "palette": pk, "paletteName": pal["name"], "accent": pal["accent"], "accent2": pal["accent2"],
            "bandLabels": [f"< {cuts[0]:g}{unit}"] + [f"{cuts[i]:g}–{cuts[i + 1]:g}{unit}" for i in range(3)] + [f"{cuts[3]:g}{unit}+"],
            "top": [{"name": nm(s), "key": s, "v": v} for v, s in ranked[:5]],
            "other": {"name": nm(ranked[-1][1]), "v": ranked[-1][0]}, "side": sh["side"], "statesOnly": bool(sh.get("states_only")),
@@ -114,9 +127,13 @@ def write_registry(ids):
 if __name__ == "__main__":
     want = set(sys.argv[1:])
     reg = []
-    for sh in load_queue():
+    # palette rotation follows posting order in docs/datakadai/ops/QUEUE.md (so consecutive posts never share a palette)
+    import re
+    qtxt = open("docs/datakadai/ops/QUEUE.md").read() if os.path.exists("docs/datakadai/ops/QUEUE.md") else ""
+    order = re.findall(r"^\|\s*\d+\s*\|\s*(\w+)\s*\|", qtxt, re.M)
+    for i, sh in enumerate(load_queue()):
         if not want or sh["id"] in want:
-            build(sh)
+            build(sh, order.index(sh["id"]) if sh["id"] in order else i)
         reg.append({"id": sh["id"]})
     json.dump(reg, open("public/datayt/shorts/index.json", "w"))
     write_registry([r["id"] for r in reg if os.path.exists(f"public/datayt/shorts/{r['id']}/data.json")])

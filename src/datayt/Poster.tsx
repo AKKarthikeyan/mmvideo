@@ -19,7 +19,7 @@ const MapStill: React.FC<{D: ShortData; w: number}> = ({D, w}) => (
     {STATES.map((g) => {
       const v = D.values[g.name];
       const isA = g.name === D.answer;
-      return <path key={g.name} d={g.d} fillRule="evenodd" fill={isA ? P.gold : v === undefined ? P.empty : D.bands[D.band[g.name]]}
+      return <path key={g.name} d={g.d} fillRule="evenodd" fill={isA ? (D.accent ?? P.gold) : v === undefined ? P.empty : D.bands[D.band[g.name]]}
         stroke={isA ? P.ink : P.line} strokeWidth={isA ? 4 : 1} strokeLinejoin="round"/>;
     })}
   </svg>
@@ -32,13 +32,13 @@ const Bars: React.FC<{D: ShortData; size: number}> = ({D, size}) => {
     {rows.map((r) => {
       const isA = r.key === D.answer, isI = r.key === "India";
       return <div key={r.key} style={{display: "flex", alignItems: "center", gap: 12, height: size * 1.9}}>
-        <div style={{width: size * 1.2, fontFamily: COND, fontWeight: 700, fontSize: size, color: isA ? P.gold : P.mute}}>{r.rank}</div>
-        <div style={{width: size * 8.5, fontFamily: SANS, fontWeight: 700, fontSize: size * 0.82, color: isA ? P.gold : P.ink}}>{r.name}</div>
+        <div style={{width: size * 1.2, fontFamily: COND, fontWeight: 700, fontSize: size, color: isA ? (D.accent ?? P.gold) : P.mute}}>{r.rank}</div>
+        <div style={{width: size * 8.5, fontFamily: SANS, fontWeight: 700, fontSize: size * 0.82, color: isA ? (D.accent ?? P.gold) : P.ink}}>{r.name}</div>
         <div style={{flex: 1, position: "relative", height: size * 1.3}}>
           <div style={{position: "absolute", left: 0, top: 0, bottom: 0, width: `${(r.v / max) * 100}%`, borderRadius: 8,
-            background: isA ? P.gold : isI ? P.line : D.bands[3]}}/>
+            background: isA ? (D.accent ?? P.gold) : isI ? P.line : D.bands[3]}}/>
           <div style={{position: "absolute", left: `calc(${(r.v / max) * 100}% + 10px)`, top: "50%", transform: "translateY(-50%)",
-            fontFamily: COND, fontWeight: 700, fontSize: size, color: isA ? P.gold : P.ink}}>{fmt(r.v, D.unit)}</div>
+            fontFamily: COND, fontWeight: 700, fontSize: size, color: isA ? (D.accent ?? P.gold) : P.ink}}>{fmt(r.v, D.unit)}</div>
         </div>
       </div>;
     })}
@@ -58,14 +58,14 @@ const Footer: React.FC<{D: ShortData; size: number}> = ({D, size}) => (
 const Head: React.FC<{D: ShortData; size: number}> = ({D, size}) => (
   <div>
     <div style={{display: "flex", gap: 12, alignItems: "center", marginBottom: size * 0.5}}>
-      <div style={{background: P.cyan, color: P.bg, fontFamily: SANS, fontWeight: 800, fontSize: size * 0.45, letterSpacing: 3,
+      <div style={{background: (D.accent2 ?? P.cyan), color: P.bg, fontFamily: SANS, fontWeight: 800, fontSize: size * 0.45, letterSpacing: 3,
         padding: "6px 14px", borderRadius: 8}}>{D.series.toUpperCase()}</div>
       <div style={{fontFamily: SANS, fontWeight: 600, fontSize: size * 0.45, color: P.mute}}>NFHS-6 · 2023-24</div>
     </div>
     <div style={{fontFamily: COND, fontWeight: 700, fontSize: size, lineHeight: 1.05, color: P.ink}}>
-      {plain(D.hook.join(" "))} <span style={{color: P.gold}}>It's {D.answerName}.</span></div>
+      {plain(D.hook.join(" "))} <span style={{color: (D.accent ?? P.gold)}}>It's {D.answerName}.</span></div>
     <div style={{fontFamily: SANS, fontSize: size * 0.46, color: P.mute, marginTop: size * 0.3}}>
-      {D.label}: <b style={{color: P.gold}}>{fmt(D.value, D.unit)}</b> vs India {fmt(D.india, D.unit)}</div>
+      {D.label}: <b style={{color: (D.accent ?? P.gold)}}>{fmt(D.value, D.unit)}</b> vs India {fmt(D.india, D.unit)}</div>
   </div>
 );
 

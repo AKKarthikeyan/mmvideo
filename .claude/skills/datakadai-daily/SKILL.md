@@ -24,6 +24,10 @@ You (the main session) dispatch; agents can't start each other. Today = the date
 Facebook via Meta Business Suite (Reel + `ig.png` carousel), X (post `x.png` with the X text). Auto-posting needs
 AK to connect a scheduler (e.g. Buffer or Meta API) and say so explicitly; until then, drafts only.
 
+## Palette
+The build script picks the map palette from the story's position in QUEUE.md (A → E → D → C → Original, repeating);
+workers never hand-pick colours unless the story pins one.
+
 ## Rules
 Quality and compliance rules: `.claude/agents/dk-planner.md`. Palette and brand: `src/datayt/IndiaShort.tsx` (P) and
 `src/datayt/Brand.tsx`. Official India map only.

@@ -15,7 +15,7 @@ const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 export type ShortData = {id: string; series: string; ind: number; label: string; unit: string; hook: string[]; q: string;
   answer: string; answerName: string; options: string[]; optionKeys: string[]; answerIndex: number; value: number;
   india: number; india5: number; values: Record<string, number>; band: Record<string, number>; bands: string[];
-  bandLabels: string[]; top: {name: string; key: string; v: number}[]; other: {name: string; v: number}; side: string;
+  bandLabels: string[]; palette?: string; paletteName?: string; accent?: string; accent2?: string; top: {name: string; key: string; v: number}[]; other: {name: string; v: number}; side: string;
   statesOnly: boolean; t: Record<string, [number, number]>; total: number; fillAt: Record<string, number>; fps: number; source: string};
 
 type G = {name: string; d: string; lx: number; ly: number; r: number; bbox: number[]};
@@ -35,14 +35,14 @@ const hexMix = (a: string, b: string, p: number) => {
 const MB = {x: 70, y: 470, w: 860};
 const MS = MB.w / geo.w;
 
-const Hook: React.FC<{lines: string[]; at: number; size?: number}> = ({lines, at, size = 86}) => {
+const Hook: React.FC<{lines: string[]; at: number; size?: number; acc?: string}> = ({lines, at, size = 86, acc = P.gold}) => {
   const f = useCurrentFrame();
   return <div style={{position: "absolute", left: 60, top: 190, width: 900}}>
     {lines.map((l, i) => {
       const p = ease(f, at + i * 4, at + i * 4 + 8);
       return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: size, lineHeight: 1.08, color: P.ink,
         opacity: p, transform: `translateY(${(1 - p) * 30}px)`}}>
-        {l.split(/(\*[^*]+\*)/).map((s, j) => s.startsWith("*") ? <span key={j} style={{color: P.gold}}>{s.slice(1, -1)}</span> : <span key={j}>{s}</span>)}
+        {l.split(/(\*[^*]+\*)/).map((s, j) => s.startsWith("*") ? <span key={j} style={{color: acc}}>{s.slice(1, -1)}</span> : <span key={j}>{s}</span>)}
       </div>;
     })}
   </div>;
@@ -77,11 +77,11 @@ const IndiaMap: React.FC<{D: ShortData}> = ({D}) => {
         const fp = has ? ease(f, at, at + 6) : 0;
         const col = has ? hexMix(P.empty, D.bands[D.band[g.name]], fp) : P.empty;
         const revealed = f >= rev0;
-        const ansCol = revealed && f < fill0 ? hexMix(P.empty, P.gold, ease(f, rev0, rev0 + 8)) : col;
+        const ansCol = revealed && f < fill0 ? hexMix(P.empty, (D.accent ?? P.gold), ease(f, rev0, rev0 + 8)) : col;
         const pop = spring({frame: f - at, fps: FPS, config: {damping: 11, stiffness: 200}, durationInFrames: 10});
         const sc = has && f >= at && f < at + 12 ? 1 + 0.08 * Math.sin(pop * Math.PI) : 1;
         return <g key={g.name} transform={`translate(${g.lx},${g.ly}) scale(${sc}) translate(${-g.lx},${-g.ly})`}>
-          <path d={g.d} fillRule="evenodd" fill={isAns ? ansCol : col} stroke={isAns && revealed ? P.gold : P.line}
+          <path d={g.d} fillRule="evenodd" fill={isAns ? ansCol : col} stroke={isAns && revealed ? (D.accent ?? P.gold) : P.line}
                 strokeWidth={(isAns && revealed ? 2.4 : 1) / Math.max(1, s * 0.7)} strokeLinejoin="round"
                 pathLength={1} strokeDasharray={1} strokeDashoffset={1 - draw}
                 filter={isAns && revealed && f < fill0 ? "url(#glow)" : undefined}/>
@@ -89,7 +89,7 @@ const IndiaMap: React.FC<{D: ShortData}> = ({D}) => {
       })}
       {/* question mark pin on the hidden answer during the quiz */}
       {f >= F(T.quiz[0]) && f < rev0 && <g transform={`translate(${ans.lx},${ans.ly})`} opacity={0.6 + 0.4 * pulse}>
-        <circle r={22} fill={P.cyan} opacity={0.25}/><circle r={12} fill={P.cyan}/>
+        <circle r={22} fill={(D.accent2 ?? P.cyan)} opacity={0.25}/><circle r={12} fill={(D.accent2 ?? P.cyan)}/>
         <text y={7} textAnchor="middle" fontFamily={COND} fontWeight={700} fontSize={20} fill={P.bg}>?</text></g>}
     </g>
   </svg>;
@@ -109,13 +109,13 @@ const Quiz: React.FC<{D: ShortData}> = ({D}) => {
       return <div key={o} style={{display: "flex", alignItems: "center", gap: 22, height: 96, marginBottom: 16, padding: "0 28px",
         borderRadius: 18, background: right ? P.good : P.bg2, border: `3px solid ${right ? P.good : P.line}`,
         opacity: p * (wrong ? 0.35 : 1), transform: `translateX(${(1 - p) * -60}px) scale(${right ? 1.03 : 1})`}}>
-        <div style={{width: 54, height: 54, borderRadius: 27, background: right ? P.bg : P.cyan, color: right ? P.good : P.bg,
+        <div style={{width: 54, height: 54, borderRadius: 27, background: right ? P.bg : (D.accent2 ?? P.cyan), color: right ? P.good : P.bg,
           fontFamily: COND, fontWeight: 700, fontSize: 34, display: "flex", alignItems: "center", justifyContent: "center"}}>{"ABC"[i]}</div>
         <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 46, color: right ? P.bg : P.ink}}>{o}</div>
       </div>;
     })}
     {timerOn && <div style={{position: "absolute", right: 0, top: -620, width: 170, height: 170, borderRadius: 85,
-      border: `8px solid ${P.cyan}`, display: "flex", alignItems: "center", justifyContent: "center", background: P.bg + "cc",
+      border: `8px solid ${(D.accent2 ?? P.cyan)}`, display: "flex", alignItems: "center", justifyContent: "center", background: P.bg + "cc",
       fontFamily: COND, fontWeight: 700, fontSize: 110, color: P.ink,
       transform: `scale(${1 + 0.12 * (1 - ((f - q0 - F(BEAT * 4)) % F(BEAT)) / F(BEAT))})`}}>{n}</div>}
   </div>;
@@ -128,8 +128,8 @@ const Reveal: React.FC<{D: ShortData}> = ({D}) => {
   const p = ease(f, r0 + 4, r0 + 26);
   const out = ease(f, fill0 + F(BEAT * 5), fill0 + F(BEAT * 6), 1, 0);
   return <div style={{position: "absolute", left: 60, top: 190, width: 900, opacity: out}}>
-    <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, color: P.cyan, opacity: ease(f, r0, r0 + 6)}}>IT'S</div>
-    <div style={{fontFamily: COND, fontWeight: 700, fontSize: 112, lineHeight: 1, color: P.gold,
+    <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, color: (D.accent2 ?? P.cyan), opacity: ease(f, r0, r0 + 6)}}>IT'S</div>
+    <div style={{fontFamily: COND, fontWeight: 700, fontSize: 112, lineHeight: 1, color: (D.accent ?? P.gold),
       transform: `scale(${ease(f, r0, r0 + 8, 0.7, 1)})`, transformOrigin: "left center"}}>{D.answerName.toUpperCase()}</div>
     <div style={{display: "flex", alignItems: "baseline", gap: 24, marginTop: 8}}>
       <div style={{fontFamily: COND, fontWeight: 700, fontSize: 132, color: P.ink}}>{fmt(D.value * p, D.unit)}</div>
@@ -163,20 +163,20 @@ const Top5: React.FC<{D: ShortData}> = ({D}) => {
   const max = Math.max(...D.top.map((x) => x.v), D.india) / 0.74;   // leave room for the value after the bar
   const rows = [...D.top.map((x, i) => ({...x, rank: `${i + 1}`})), {name: "India", key: "India", v: D.india, rank: "—"}];
   return <div style={{position: "absolute", left: 60, top: 560, width: 880, opacity: out}}>
-    <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, color: P.cyan}}>{D.side === "top" ? "TOP 5" : "LOWEST 5"}{D.statesOnly ? " STATES" : ""}</div>
+    <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, color: (D.accent2 ?? P.cyan)}}>{D.side === "top" ? "TOP 5" : "LOWEST 5"}{D.statesOnly ? " STATES" : ""}</div>
     <div style={{fontFamily: COND, fontWeight: 700, fontSize: 64, color: P.ink, marginBottom: 30, lineHeight: 1.05}}>{D.label}</div>
     {rows.map((r, i) => {
       const a = t0 + F(BEAT) * (i + 1) - 6;
       const p = ease(f, a, a + 12);
       const isA = r.key === D.answer, isI = r.key === "India";
       return <div key={r.key} style={{display: "flex", alignItems: "center", gap: 18, height: 88, marginBottom: 12, opacity: ease(f, a, a + 5)}}>
-        <div style={{width: 46, fontFamily: COND, fontWeight: 700, fontSize: 44, color: isA ? P.gold : P.mute}}>{r.rank}</div>
-        <div style={{width: 300, fontFamily: SANS, fontWeight: 700, fontSize: r.name.length > 14 ? 30 : 36, color: isA ? P.gold : P.ink, lineHeight: 1.05}}>{r.name}</div>
+        <div style={{width: 46, fontFamily: COND, fontWeight: 700, fontSize: 44, color: isA ? (D.accent ?? P.gold) : P.mute}}>{r.rank}</div>
+        <div style={{width: 300, fontFamily: SANS, fontWeight: 700, fontSize: r.name.length > 14 ? 30 : 36, color: isA ? (D.accent ?? P.gold) : P.ink, lineHeight: 1.05}}>{r.name}</div>
         <div style={{flex: 1, position: "relative", height: 64}}>
           <div style={{position: "absolute", left: 0, top: 0, bottom: 0, width: `${(r.v / max) * 100 * p}%`, borderRadius: 12,
-            background: isA ? P.gold : isI ? P.line : D.bands[3], minWidth: 8}}/>
+            background: isA ? (D.accent ?? P.gold) : isI ? P.line : D.bands[3], minWidth: 8}}/>
           <div style={{position: "absolute", left: `calc(${(r.v / max) * 100 * p}% + 14px)`, top: "50%", transform: "translateY(-50%)",
-            fontFamily: COND, fontWeight: 700, fontSize: 44, color: isA ? P.gold : P.ink}}>{fmt(r.v * p, D.unit)}</div>
+            fontFamily: COND, fontWeight: 700, fontSize: 44, color: isA ? (D.accent ?? P.gold) : P.ink}}>{fmt(r.v * p, D.unit)}</div>
         </div>
       </div>;
     })}
@@ -189,8 +189,8 @@ const End: React.FC<{D: ShortData}> = ({D}) => {
   if (f < e0) return null;
   const p = ease(f, e0, e0 + 10);
   return <div style={{position: "absolute", left: 60, top: 640, width: 880, opacity: p, transform: `translateY(${(1 - p) * 30}px)`}}>
-    <div style={{fontFamily: COND, fontWeight: 700, fontSize: 96, lineHeight: 1.05, color: P.ink}}>Where does <span style={{color: P.gold}}>your</span> state rank?</div>
-    <div style={{fontFamily: SANS, fontSize: 40, color: P.cyan, marginTop: 26}}>Comment it below ↓</div>
+    <div style={{fontFamily: COND, fontWeight: 700, fontSize: 96, lineHeight: 1.05, color: P.ink}}>Where does <span style={{color: (D.accent ?? P.gold)}}>your</span> state rank?</div>
+    <div style={{fontFamily: SANS, fontSize: 40, color: (D.accent2 ?? P.cyan), marginTop: 26}}>Comment it below ↓</div>
     <div style={{fontFamily: SANS, fontSize: 30, color: P.mute, marginTop: 40, opacity: ease(f, e0 + 12, e0 + 20)}}>Follow for the next state</div>
   </div>;
 };
@@ -200,11 +200,11 @@ const Chrome: React.FC<{D: ShortData}> = ({D}) => {
   const total = F(D.total);
   return <>
     <div style={{position: "absolute", left: 60, top: 110, display: "flex", gap: 14, alignItems: "center"}}>
-      <div style={{background: P.cyan, color: P.bg, fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: 3, padding: "8px 16px", borderRadius: 8}}>{D.series.toUpperCase()}</div>
+      <div style={{background: (D.accent2 ?? P.cyan), color: P.bg, fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: 3, padding: "8px 16px", borderRadius: 8}}>{D.series.toUpperCase()}</div>
       <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 26, color: P.mute}}>NFHS-6 · 2023-24</div>
     </div>
     <div style={{position: "absolute", left: 60, top: 1620, width: 880, fontFamily: SANS, fontSize: 22, color: P.mute, opacity: 0.8}}>Source: {D.source}</div>
-    <div style={{position: "absolute", left: 0, top: 0, height: 10, width: 1080 * (f / total), background: P.gold}}/>
+    <div style={{position: "absolute", left: 0, top: 0, height: 10, width: 1080 * (f / total), background: (D.accent ?? P.gold)}}/>
   </>;
 };
 
@@ -216,8 +216,8 @@ export const IndiaShort: React.FC<{D: ShortData}> = ({D}) => {
     <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 45%, ${P.bg2} 0%, ${P.bg} 70%)`}}/>
     <IndiaMap D={D}/>
     {f < F(D.t.reveal[0]) && <div style={{opacity: f < q0 ? 1 : ease(f, F(D.t.reveal[0]) - 6, F(D.t.reveal[0]), 1, 0)}}>
-      <Hook lines={D.hook} at={0}/>
-      {f >= q0 && <div style={{position: "absolute", left: 60, top: 400, fontFamily: COND, fontWeight: 700, fontSize: 56, color: P.cyan,
+      <Hook lines={D.hook} at={0} acc={D.accent ?? (D.accent ?? P.gold)}/>
+      {f >= q0 && <div style={{position: "absolute", left: 60, top: 400, fontFamily: COND, fontWeight: 700, fontSize: 56, color: (D.accent2 ?? P.cyan),
         opacity: ease(f, q0, q0 + 6)}}>{D.q}</div>}
     </div>}
     <Quiz D={D}/>

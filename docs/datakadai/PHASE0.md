@@ -49,8 +49,13 @@ Compositions in `src/datayt/Brand.tsx`. Render with `npx remotion still src/inde
 
 - **Mark:** a tea-kadai glass (cutting-chai tumbler) holding three rising bars, steam rising from the gold bar. No India
   outline in the logo, because the outline is legally sensitive.
-- **Palette:** navy #0B1020 / #131A30, text #F5F7FF, muted #8C95AD, gold #FFC15E (answer, highlight), cyan #33D1FF (accent).
-  Map bands: #26306B → #5A3D9E → #A8429A → #EE5D6C → #FFC15E.
+- **Palette (decided 9 Oct 2026):** brand palette **A, Kadai Chai**, used for the logo, banner, chips, background and
+  default map: ground #F7F4EE, ink #1F1A17, accent maroon #7A2340, second accent amber #C9822F, map bands #DA996A →
+  #C67447 → #AD512F → #8C352A → #662125. Daily Shorts and chart posts **rotate map palettes in posting order
+  A → E (Saffron Kumkum) → D (Indigo Ink) → C (Monsoon Teal) → O (Original reference map)**, then repeat, so
+  consecutive posts never share a look. A story can pin one with `"palette": "E"`. A, E, D and C pass the dataviz
+  ordinal checks; O is AK's original reference ramp (its lightest band is faint, so it relies on map outlines). All
+  palettes are defined in `scripts/datayt/build_india_shorts.py` (PALETTES).
 - **Type:** Oswald 700 (headlines, numbers), Inter (labels, body).
 - **Music:** original code-composed 124 BPM score per Short (`scripts/datayt/music_shorts.py`); never third-party tracks.
 

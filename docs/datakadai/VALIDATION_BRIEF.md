@@ -1,11 +1,12 @@
-# Validation brief: India Statewise (for an independent AI reviewer)
+# Validation brief: Data Kadai (for an independent AI reviewer)
 
 You are an independent reviewer. Your job is to stress-test a project idea, not to encourage it. Be blunt. Use current,
 checkable evidence (cite links and dates). Say "unknown" where you can't verify something. Don't invent numbers.
 
 ## The idea
-**India Statewise** is a faceless YouTube Shorts channel (Tamil-first, then English) that turns official Indian
-government data into 25-35-second animated map and ranking videos, state by state. Example: "In one Indian state,
+**Data Kadai** ("kadai" = shop in Tamil; tagline "India's numbers, served fresh") is a faceless YouTube Shorts
+channel (Tamil-first, then English) that turns official Indian data into 25-35-second animated map and chart videos:
+state comparisons first (a "Statewise" series), then the economy, markets, companies and India vs the world. Example: "In one Indian state,
 women own the land. Which one?" The India map fills band by band and the answer (Meghalaya, 65% vs India 19%,
 NFHS-6) lights up last. Later phases: a website, a weekly visual newsletter, licensing graphics, and investing
 *education* (data only, no stock tips) feeding the owner's finance channel, Moat & Margin. Inspiration: Visual
@@ -17,7 +18,7 @@ Capitalist (not a clone: own brand, design and data).
 - A verified NFHS-6 (2023-24) dataset: 101 indicators × 36 states/UTs (3,518 cells, 0 errors in 316 spot checks).
 - A source scout: RBI state handbook, SRS, PLFS, HCES, NCRB, AMFI, NSE, GSTN, Vahan, NITI indices, and Lok Sabha
   answers (about 1 in 8 answers carries a full state-wise table, roughly 500 tables a session).
-- Domains free at the time of checking: indiastatewise.com / .in; YouTube @IndiaStatewise free.
+- Domains free at the time of checking: datakadai.com / .in and @DataKadai on YouTube (plus indiastatewise.com / .in as a protective buy).
 
 ## Plan and assumptions to test
 - Format mix: 70% Map Reveal, 20% weekly 5-question quiz, 10% Top 10. 1 Short a day.
@@ -44,7 +45,7 @@ Capitalist (not a clone: own brand, design and data).
 4. **Platform risk:** How is YouTube enforcing the inauthentic-content rule against templated data Shorts in
    2025-26? What makes such channels safe or unsafe? Any examples of demonetised data channels?
 5. **Legal risk in India:** Map depiction rules (and penalties), use of government data (licence terms, e.g. the
-   NDSAP / GODL licence), the SEBI rules for the investing phase, and brand or trademark issues with "India Statewise".
+   NDSAP / GODL licence), the SEBI rules for the investing phase, and brand or trademark issues with "Data Kadai" (including how "kadai"/"kadhai" reads outside Tamil Nadu).
 6. **Our odds:** Are the year-1 scenarios and 5-year odds too optimistic, too pessimistic, or about right? Give
    your own numbers and say why.
 7. **Biggest weakness:** What single thing is most likely to make this fail, and what would you change in the plan?

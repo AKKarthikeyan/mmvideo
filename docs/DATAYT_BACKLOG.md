@@ -12,7 +12,7 @@ Style for all new Data YT videos: fast pace, cuts on a 150 BPM grid, chase-style
 | 4 | TASMAC revenue by year as a racing bar chart (fits the chase music). | TASMAC / TN budget revenue series | Needs data |
 | 5 | District rank "battles": two districts head to head in a Short, ending with "Which is yours?" | District values (TN alcohol map data has 38 districts) | Ready for alcohol; other topics need district data |
 
-## Status: India-map Shorts template (saved 9 Oct 2026, production ON HOLD)
+## Status: India-map Shorts template (saved 9 Oct 2026; production started 9 Oct 2026, English only)
 
 Built and saved, **not in production; do not render or upload until AK says go.**
 - Template: `src/datayt/IndiaShort.tsx` (Guess the State: hook → A/B/C quiz + 3-2-1 → zoom reveal → colour fill →
@@ -24,7 +24,7 @@ Built and saved, **not in production; do not render or upload until AK says go.*
 - To produce later: `python3 scripts/datayt/build_india_shorts.py` then
   `npx remotion render src/index.ts DATA-gts01 out/datayt/gts/GTS-01.mp4` (and so on).
 
-## Chosen Shorts format (decided 9 Oct 2026; template not yet changed, production ON HOLD)
+## Chosen Shorts format (decided 9 Oct 2026; template not yet changed; production started 9 Oct 2026, English only)
 
 Mix: ~70% **Map Reveal**, ~20% **5-Question Quiz**, ~10% **Top 10 Countdown** (only when #1 is a genuine surprise).
 

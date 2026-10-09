@@ -1,4 +1,4 @@
-# Data Kadai: Phase 0 kit (prepared 9 Oct 2026, production ON HOLD)
+# Data Kadai: Phase 0 kit (prepared 9 Oct 2026; production started 9 Oct 2026, English only)
 
 ## 1. Name and domains
 

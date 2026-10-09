@@ -19,11 +19,11 @@ UTS = {"Andaman and Nicobar Islands", "Chandigarh", "Dadra & Nagar Haveli and Da
 # Guess the State series. side = which end of the ranking the answer sits at.
 SHORTS = [
     dict(id="gts01", ind=10, answer="Meghalaya", decoys=["Kerala", "Goa"], side="top",
-         hook=["In one Indian state,", "*women* own the land."], q="Which state?"),
+         hook=["In one state, *2 in 3 homes*", "have a woman who owns a house or land."], q="Which state?"),
     dict(id="gts02", ind=100, answer="Arunachal Pradesh", decoys=["Goa", "Kerala"], side="top",
-         hook=["In one state,", "*1 in 4 women* drink alcohol."], q="Which state?"),
+         hook=["In one state, nearly", "*1 in 4 women* drink alcohol."], q="Which state?"),
     dict(id="gts03", ind=99, answer="Mizoram", decoys=["Bihar", "Uttar Pradesh"], side="top",
-         hook=["In one state,", "*3 in 4 men* use tobacco."], q="Which state?"),
+         hook=["In one state, nearly", "*3 in 4 men* use tobacco."], q="Which state?"),
     dict(id="gts04", ind=98, answer="Mizoram", decoys=["Tripura", "Bihar"], side="top",
          hook=["Here, *6 in 10 women*", "use tobacco."], q="Which state?"),
     dict(id="gts05", ind=18, answer="Sikkim", decoys=["Kerala", "Goa"], side="bottom", states_only=True,

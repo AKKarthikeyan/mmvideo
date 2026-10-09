@@ -37,7 +37,9 @@ const MS = MB.w / geo.w;
 
 const Hook: React.FC<{lines: string[]; at: number; size?: number; acc?: string}> = ({lines, at, size = 86, acc = P.gold}) => {
   const f = useCurrentFrame();
-  return <div style={{position: "absolute", left: 60, top: 190, width: 900}}>
+  const longest = Math.max(...lines.map((l) => l.replace(/\*/g, "").length));
+  if (longest > 30) size = Math.min(size, 72);
+  return <div style={{position: "absolute", left: 60, top: 190, width: 960}}>
     {lines.map((l, i) => {
       const p = ease(f, at + i * 4, at + i * 4 + 8);
       return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: size, lineHeight: 1.08, color: P.ink,
@@ -217,7 +219,7 @@ export const IndiaShort: React.FC<{D: ShortData}> = ({D}) => {
     <IndiaMap D={D}/>
     {f < F(D.t.reveal[0]) && <div style={{opacity: f < q0 ? 1 : ease(f, F(D.t.reveal[0]) - 6, F(D.t.reveal[0]), 1, 0)}}>
       <Hook lines={D.hook} at={0} acc={D.accent ?? (D.accent ?? P.gold)}/>
-      {f >= q0 && <div style={{position: "absolute", left: 60, top: 400, fontFamily: COND, fontWeight: 700, fontSize: 56, color: (D.accent2 ?? P.cyan),
+      {f >= q0 && <div style={{position: "absolute", left: 60, top: D.hook.some((l) => l.replace(/\*/g, "").length > 30) ? 428 : 400, fontFamily: COND, fontWeight: 700, fontSize: 56, color: (D.accent2 ?? P.cyan),
         opacity: ease(f, q0, q0 + 6)}}>{D.q}</div>}
     </div>}
     <Quiz D={D}/>

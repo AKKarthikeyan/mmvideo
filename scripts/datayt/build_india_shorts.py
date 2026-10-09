@@ -19,7 +19,8 @@ UTS = {"Andaman and Nicobar Islands", "Chandigarh", "Dadra & Nagar Haveli and Da
 # Guess the State series. side = which end of the ranking the answer sits at.
 SHORTS = [
     dict(id="gts01", ind=10, answer="Meghalaya", decoys=["Kerala", "Goa"], side="top",
-         hook=["In one state, *2 in 3 homes*", "have a woman who owns a house or land."], q="Which state?"),
+         hook=["In one state, *2 in 3 homes*", "have a woman who owns a house or land."], q="Which state?",
+         title="Where 2 in 3 homes have a woman who owns home or land 🗺️"),
     dict(id="gts02", ind=100, answer="Arunachal Pradesh", decoys=["Goa", "Kerala"], side="top",
          hook=["In one state, nearly", "*1 in 4 women* drink alcohol."], q="Which state?"),
     dict(id="gts03", ind=99, answer="Mizoram", decoys=["Bihar", "Uttar Pradesh"], side="top",
@@ -86,7 +87,7 @@ def build(sh, idx=0):
     opts = [opts[i] for i in ((1, 0, 2) if sh["id"][-1] in "13579" else (2, 1, 0) if sh["id"][-1] in "24" else (0, 2, 1))]
     nm = lambda s: SHORT_NAME.get(s, s)
     out = {"id": sh["id"], "series": "Guess the State", "ind": k, "label": lab, "unit": unit, "hook": sh["hook"], "q": sh["q"],
-           "answer": sh["answer"], "answerName": nm(sh["answer"]), "options": [nm(o) for o in opts], "optionKeys": opts,
+           "title": sh.get("title"), "answer": sh["answer"], "answerName": nm(sh["answer"]), "options": [nm(o) for o in opts], "optionKeys": opts,
            "answerIndex": opts.index(sh["answer"]), "value": vals[sh["answer"]], "india": india, "india5": india5,
            "values": vals, "band": {s: band(v) for s, v in vals.items()}, "bands": pal["bands"],
            "palette": pk, "paletteName": pal["name"], "accent": pal["accent"], "accent2": pal["accent2"],

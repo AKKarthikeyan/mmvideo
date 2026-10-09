@@ -28,9 +28,11 @@ if video:
 
 u = D["unit"]; f = lambda v: f"{v:.1f}{u}"
 hook = " ".join(D["hook"]).replace("*", "")
+title = D.get("title") or (hook if len(hook) <= 60 else hook[:58].rsplit(" ", 1)[0] + "…")
 ans, lab = D["answerName"], D["label"]
 ratio = D["value"] / D["india"] if D["india"] else None
-vs = f"{ratio:.0f}× India's {f(D['india'])}" if ratio and ratio >= 2 else f"vs India {f(D['india'])}"
+rx = f"{ratio:.1f}".rstrip("0").rstrip(".") if ratio else ""
+vs = f"{rx}× India's {f(D['india'])}" if ratio and ratio >= 2 else f"vs India {f(D['india'])}"
 top = "\n".join(f"{i + 1}. {t['name']}: {f(t['v'])}" for i, t in enumerate(D["top"]))
 tags = "#DataKadai #India #Shorts #IndiaData #NFHS6"
 cap = f"""# Post pack: {sid} · {date}
@@ -38,7 +40,7 @@ cap = f"""# Post pack: {sid} · {date}
 Status: DRAFT, waiting for AK's approval. Not posted.
 
 ## YouTube Shorts
-**Title** (≤ 60 chars): {hook[:58]}
+**Title** (≤ 60 chars): {title}
 **Description:**
 {hook} Watch to the end for the answer.
 Data: {lab}, every state. Source: {D['source']}.

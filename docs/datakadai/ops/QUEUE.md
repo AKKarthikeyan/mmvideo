@@ -6,7 +6,7 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 
 | # | id | Story (hook) | Indicator | Answer | Status |
 | --- | --- | --- | --- | --- | --- |
-| 1 | gts01 | In one state, 2 in 3 homes have a woman who owns a house or land | 10 | Meghalaya | in production (2026-10-09) |
+| 1 | gts01 | In one state, 2 in 3 homes have a woman who owns a house or land | 10 | Meghalaya | drafted (2026-10-09) |
 | 2 | gts02 | In one state, nearly 1 in 4 women drink alcohol | 100 | Arunachal Pradesh | queued |
 | 3 | gts03 | In one state, nearly 3 in 4 men use tobacco | 99 | Mizoram | queued |
 | 4 | gts05 | Of 28 states, in one the average woman has just 1 child | 18 | Sikkim | queued |

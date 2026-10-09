@@ -13,6 +13,7 @@ type G = {name: string; d: string};
 const STATES = geo.states as G[];
 const fmt = (v: number, unit: string) => `${v.toFixed(1)}${unit}`;
 const plain = (l: string) => l.replace(/\*/g, "");
+const noData = (D: ShortData) => STATES.map((g) => g.name).filter((n) => D.values[n] === undefined);
 
 const MapStill: React.FC<{D: ShortData; w: number}> = ({D, w}) => (
   <svg width={w} height={w * geo.h / geo.w} viewBox={`0 0 ${geo.w} ${geo.h}`}>
@@ -25,15 +26,15 @@ const MapStill: React.FC<{D: ShortData; w: number}> = ({D, w}) => (
   </svg>
 );
 
-const Bars: React.FC<{D: ShortData; size: number}> = ({D, size}) => {
+const Bars: React.FC<{D: ShortData; size: number; nameW?: number}> = ({D, size, nameW = 8.5}) => {
   const rows = [...D.top.map((x, i) => ({...x, rank: `${i + 1}`})), {name: "India", key: "India", v: D.india, rank: "—"}];
-  const max = Math.max(...rows.map((r) => r.v)) / 0.62;
+  const max = Math.max(...rows.map((r) => r.v)) / 0.72;
   return <div>
     {rows.map((r) => {
       const isA = r.key === D.answer, isI = r.key === "India";
       return <div key={r.key} style={{display: "flex", alignItems: "center", gap: 12, height: size * 1.9}}>
         <div style={{width: size * 1.2, fontFamily: COND, fontWeight: 700, fontSize: size, color: isA ? (D.accent ?? P.gold) : P.mute}}>{r.rank}</div>
-        <div style={{width: size * 8.5, fontFamily: SANS, fontWeight: 700, fontSize: size * 0.82, color: isA ? (D.accent ?? P.gold) : P.ink}}>{r.name}</div>
+        <div style={{width: size * nameW, fontFamily: SANS, fontWeight: 700, fontSize: size * 0.82, color: isA ? (D.accent ?? P.gold) : P.ink}}>{r.name}</div>
         <div style={{flex: 1, position: "relative", height: size * 1.3}}>
           <div style={{position: "absolute", left: 0, top: 0, bottom: 0, width: `${(r.v / max) * 100}%`, borderRadius: 8,
             background: isA ? (D.accent ?? P.gold) : isI ? P.line : D.bands[3]}}/>
@@ -47,7 +48,10 @@ const Bars: React.FC<{D: ShortData; size: number}> = ({D, size}) => {
 
 const Footer: React.FC<{D: ShortData; size: number}> = ({D, size}) => (
   <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-    <div style={{fontFamily: SANS, fontSize: size, color: P.mute}}>Source: {D.source}</div>
+    <div style={{fontFamily: SANS, fontSize: size, color: P.mute}}>Source: {D.source}
+      {noData(D).length > 0 && <div style={{marginTop: 4}}>
+        <span style={{display: "inline-block", width: size * 0.8, height: size * 0.8, background: P.empty, borderRadius: 3, marginRight: 8, verticalAlign: "middle"}}/>
+        No data: {noData(D).join(", ")}</div>}</div>
     <div style={{display: "flex", alignItems: "center", gap: 10}}>
       <Mark size={size * 2.4}/>
       <div style={{fontFamily: COND, fontWeight: 700, fontSize: size * 1.5, color: P.ink}}>DATA <span style={{color: P.gold}}>KADAI</span></div>
@@ -74,8 +78,8 @@ export const PostIG: React.FC<{D: ShortData}> = ({D}) => (
     <VoxFonts/>
     <Head D={D} size={64}/>
     <div style={{display: "flex", gap: 24, alignItems: "center"}}>
-      <MapStill D={D} w={500}/>
-      <div style={{flex: 1}}><Bars D={D} size={30}/></div>
+      <MapStill D={D} w={440}/>
+      <div style={{flex: 1}}><Bars D={D} size={28} nameW={6.6}/></div>
     </div>
     <Footer D={D} size={22}/>
   </AbsoluteFill>

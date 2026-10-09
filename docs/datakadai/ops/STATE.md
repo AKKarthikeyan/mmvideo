@@ -20,3 +20,4 @@ Maintained by dk-planner (append-only log at the bottom).
 ## Log
 - 2026-10-09: agents created (dk-planner Opus, dk-data-worker Sonnet, dk-ops-worker Haiku) and the maintenance skill.
 - 2026-10-09: production started (AK lifted the hold), English only. Plan `plan-2026-10-09.md`: gts01 (Meghalaya, NFHS-6 ind. 10) assigned to dk-video-worker. Queue checked; gts11 held (thin margin), gts15 added.
+- 2026-10-09: gts01 re-voiced with MiniMax English_Diligent_Man and approved by AK. Production moved to the Mac Mini. Fixed settings and brand assets saved in `docs/datakadai/PREFERENCES.md` and `docs/datakadai/brand/`.

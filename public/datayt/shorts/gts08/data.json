@@ -1,0 +1,200 @@
+{
+ "id": "gts08",
+ "series": "Guess the State",
+ "ind": 17,
+ "label": "Men married before 21",
+ "unit": "%",
+ "hook": [
+  "*3 in 10 men* here marry",
+  "before 21."
+ ],
+ "q": "Which state?",
+ "answer": "Bihar",
+ "answerName": "Bihar",
+ "options": [
+  "Bihar",
+  "Uttar Pradesh",
+  "Rajasthan"
+ ],
+ "optionKeys": [
+  "Bihar",
+  "Uttar Pradesh",
+  "Rajasthan"
+ ],
+ "answerIndex": 0,
+ "value": 29.6,
+ "india": 15.9,
+ "india5": 17.7,
+ "values": {
+  "Arunachal Pradesh": 11.4,
+  "Assam": 17.5,
+  "Bihar": 29.6,
+  "Chhattisgarh": 14.1,
+  "Gujarat": 24.3,
+  "Haryana": 13.3,
+  "Himachal Pradesh": 11.5,
+  "Jharkhand": 18.7,
+  "Karnataka": 4.4,
+  "Kerala": 1.7,
+  "Madhya Pradesh": 25.0,
+  "Maharashtra": 9.2,
+  "Meghalaya": 18.4,
+  "Mizoram": 7.1,
+  "Nagaland": 10.2,
+  "Odisha": 12.5,
+  "Punjab": 7.7,
+  "Jammu and Kashmir": 8.5,
+  "NCT of Delhi": 8.1,
+  "Puducherry": 2.4,
+  "Andhra Pradesh": 9.7,
+  "Rajasthan": 28.5,
+  "Sikkim": 6.2,
+  "Tamil Nadu": 3.7,
+  "Telangana": 5.7,
+  "Tripura": 16.5,
+  "Uttar Pradesh": 19.5,
+  "Uttarakhand": 10.1,
+  "West Bengal": 12.4,
+  "Dadra & Nagar Haveli and Daman & Diu": 18.8
+ },
+ "band": {
+  "Arunachal Pradesh": 2,
+  "Assam": 3,
+  "Bihar": 4,
+  "Chhattisgarh": 3,
+  "Gujarat": 4,
+  "Haryana": 3,
+  "Himachal Pradesh": 2,
+  "Jharkhand": 3,
+  "Karnataka": 0,
+  "Kerala": 0,
+  "Madhya Pradesh": 4,
+  "Maharashtra": 1,
+  "Meghalaya": 3,
+  "Mizoram": 1,
+  "Nagaland": 2,
+  "Odisha": 2,
+  "Punjab": 1,
+  "Jammu and Kashmir": 1,
+  "NCT of Delhi": 1,
+  "Puducherry": 0,
+  "Andhra Pradesh": 1,
+  "Rajasthan": 4,
+  "Sikkim": 0,
+  "Tamil Nadu": 0,
+  "Telangana": 0,
+  "Tripura": 3,
+  "Uttar Pradesh": 4,
+  "Uttarakhand": 2,
+  "West Bengal": 2,
+  "Dadra & Nagar Haveli and Daman & Diu": 4
+ },
+ "bands": [
+  "#26306B",
+  "#5A3D9E",
+  "#A8429A",
+  "#EE5D6C",
+  "#FFC15E"
+ ],
+ "bandLabels": [
+  "< 7.1%",
+  "7.1\u201310.1%",
+  "10.1\u201313.3%",
+  "13.3\u201318.8%",
+  "18.8%+"
+ ],
+ "top": [
+  {
+   "name": "Bihar",
+   "key": "Bihar",
+   "v": 29.6
+  },
+  {
+   "name": "Rajasthan",
+   "key": "Rajasthan",
+   "v": 28.5
+  },
+  {
+   "name": "Madhya Pradesh",
+   "key": "Madhya Pradesh",
+   "v": 25.0
+  },
+  {
+   "name": "Gujarat",
+   "key": "Gujarat",
+   "v": 24.3
+  },
+  {
+   "name": "Uttar Pradesh",
+   "key": "Uttar Pradesh",
+   "v": 19.5
+  }
+ ],
+ "other": {
+  "name": "Kerala",
+  "v": 1.7
+ },
+ "side": "top",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   3.871
+  ],
+  "quiz": [
+   3.871,
+   7.742
+  ],
+  "reveal": [
+   7.742,
+   11.613
+  ],
+  "fill": [
+   11.613,
+   15.484
+  ],
+  "top": [
+   15.484,
+   21.29
+  ],
+  "end": [
+   21.29,
+   25.161
+  ]
+ },
+ "total": 25.761,
+ "fillAt": {
+  "Kerala": 11.855,
+  "Puducherry": 11.932,
+  "Tamil Nadu": 12.01,
+  "Karnataka": 12.087,
+  "Telangana": 12.165,
+  "Sikkim": 12.242,
+  "Mizoram": 12.319,
+  "Punjab": 12.397,
+  "NCT of Delhi": 12.474,
+  "Jammu and Kashmir": 12.552,
+  "Maharashtra": 12.629,
+  "Andhra Pradesh": 12.707,
+  "Uttarakhand": 12.784,
+  "Nagaland": 12.861,
+  "Arunachal Pradesh": 12.939,
+  "Himachal Pradesh": 13.016,
+  "West Bengal": 13.094,
+  "Odisha": 13.171,
+  "Haryana": 13.248,
+  "Chhattisgarh": 13.326,
+  "Tripura": 13.403,
+  "Assam": 13.481,
+  "Meghalaya": 13.558,
+  "Jharkhand": 13.636,
+  "Dadra & Nagar Haveli and Daman & Diu": 13.713,
+  "Uttar Pradesh": 13.79,
+  "Gujarat": 13.868,
+  "Madhya Pradesh": 13.945,
+  "Rajasthan": 14.023,
+  "Bihar": 14.1
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

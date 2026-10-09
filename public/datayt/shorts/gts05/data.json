@@ -1,0 +1,215 @@
+{
+ "id": "gts05",
+ "series": "Guess the State",
+ "ind": 18,
+ "label": "Children per woman (fertility rate)",
+ "unit": "",
+ "hook": [
+  "Of 28 states, in one the average",
+  "woman has just *1 child*."
+ ],
+ "q": "Which state?",
+ "answer": "Sikkim",
+ "answerName": "Sikkim",
+ "options": [
+  "Kerala",
+  "Sikkim",
+  "Goa"
+ ],
+ "optionKeys": [
+  "Kerala",
+  "Sikkim",
+  "Goa"
+ ],
+ "answerIndex": 1,
+ "value": 1.0,
+ "india": 2.0,
+ "india5": 2.0,
+ "values": {
+  "Arunachal Pradesh": 1.5,
+  "Assam": 1.6,
+  "Bihar": 2.7,
+  "Chhattisgarh": 1.9,
+  "Goa": 1.6,
+  "Gujarat": 1.9,
+  "Haryana": 2.0,
+  "Himachal Pradesh": 1.8,
+  "Jharkhand": 2.2,
+  "Karnataka": 1.8,
+  "Kerala": 1.8,
+  "Madhya Pradesh": 2.1,
+  "Maharashtra": 1.8,
+  "Meghalaya": 2.2,
+  "Mizoram": 1.6,
+  "Nagaland": 2.0,
+  "Odisha": 1.7,
+  "Punjab": 1.6,
+  "Chandigarh": 1.8,
+  "Jammu and Kashmir": 1.8,
+  "NCT of Delhi": 1.6,
+  "Puducherry": 1.6,
+  "Andhra Pradesh": 1.8,
+  "Rajasthan": 2.1,
+  "Sikkim": 1.0,
+  "Tamil Nadu": 1.7,
+  "Telangana": 1.9,
+  "Tripura": 1.7,
+  "Uttar Pradesh": 2.2,
+  "Uttarakhand": 1.9,
+  "West Bengal": 1.6,
+  "Andaman and Nicobar Islands": 0.9,
+  "Dadra & Nagar Haveli and Daman & Diu": 1.7,
+  "Ladakh": 1.6,
+  "Lakshadweep": 2.2
+ },
+ "band": {
+  "Arunachal Pradesh": 0,
+  "Assam": 1,
+  "Bihar": 4,
+  "Chhattisgarh": 3,
+  "Goa": 1,
+  "Gujarat": 3,
+  "Haryana": 3,
+  "Himachal Pradesh": 3,
+  "Jharkhand": 4,
+  "Karnataka": 3,
+  "Kerala": 3,
+  "Madhya Pradesh": 4,
+  "Maharashtra": 3,
+  "Meghalaya": 4,
+  "Mizoram": 1,
+  "Nagaland": 3,
+  "Odisha": 2,
+  "Punjab": 1,
+  "Chandigarh": 3,
+  "Jammu and Kashmir": 3,
+  "NCT of Delhi": 1,
+  "Puducherry": 1,
+  "Andhra Pradesh": 3,
+  "Rajasthan": 4,
+  "Sikkim": 0,
+  "Tamil Nadu": 2,
+  "Telangana": 3,
+  "Tripura": 2,
+  "Uttar Pradesh": 4,
+  "Uttarakhand": 3,
+  "West Bengal": 1,
+  "Andaman and Nicobar Islands": 0,
+  "Dadra & Nagar Haveli and Daman & Diu": 2,
+  "Ladakh": 1,
+  "Lakshadweep": 4
+ },
+ "bands": [
+  "#26306B",
+  "#5A3D9E",
+  "#A8429A",
+  "#EE5D6C",
+  "#FFC15E"
+ ],
+ "bandLabels": [
+  "< 1.6",
+  "1.6\u20131.7",
+  "1.7\u20131.8",
+  "1.8\u20132.1",
+  "2.1+"
+ ],
+ "top": [
+  {
+   "name": "Sikkim",
+   "key": "Sikkim",
+   "v": 1.0
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "key": "Arunachal Pradesh",
+   "v": 1.5
+  },
+  {
+   "name": "Assam",
+   "key": "Assam",
+   "v": 1.6
+  },
+  {
+   "name": "Goa",
+   "key": "Goa",
+   "v": 1.6
+  },
+  {
+   "name": "Mizoram",
+   "key": "Mizoram",
+   "v": 1.6
+  }
+ ],
+ "other": {
+  "name": "Bihar",
+  "v": 2.7
+ },
+ "side": "bottom",
+ "statesOnly": true,
+ "t": {
+  "hook": [
+   0.0,
+   3.871
+  ],
+  "quiz": [
+   3.871,
+   7.742
+  ],
+  "reveal": [
+   7.742,
+   11.613
+  ],
+  "fill": [
+   11.613,
+   15.484
+  ],
+  "top": [
+   15.484,
+   21.29
+  ],
+  "end": [
+   21.29,
+   25.161
+  ]
+ },
+ "total": 25.761,
+ "fillAt": {
+  "Andaman and Nicobar Islands": 11.855,
+  "Sikkim": 11.921,
+  "Arunachal Pradesh": 11.988,
+  "Assam": 12.054,
+  "Goa": 12.12,
+  "Mizoram": 12.187,
+  "Punjab": 12.253,
+  "NCT of Delhi": 12.319,
+  "Puducherry": 12.386,
+  "West Bengal": 12.452,
+  "Ladakh": 12.519,
+  "Odisha": 12.585,
+  "Tamil Nadu": 12.651,
+  "Tripura": 12.718,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.784,
+  "Himachal Pradesh": 12.85,
+  "Karnataka": 12.917,
+  "Kerala": 12.983,
+  "Maharashtra": 13.049,
+  "Chandigarh": 13.116,
+  "Jammu and Kashmir": 13.182,
+  "Andhra Pradesh": 13.248,
+  "Chhattisgarh": 13.315,
+  "Gujarat": 13.381,
+  "Telangana": 13.448,
+  "Uttarakhand": 13.514,
+  "Haryana": 13.58,
+  "Nagaland": 13.647,
+  "Madhya Pradesh": 13.713,
+  "Rajasthan": 13.779,
+  "Jharkhand": 13.846,
+  "Meghalaya": 13.912,
+  "Uttar Pradesh": 13.978,
+  "Lakshadweep": 14.045,
+  "Bihar": 14.111
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

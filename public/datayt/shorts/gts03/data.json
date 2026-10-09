@@ -1,0 +1,215 @@
+{
+ "id": "gts03",
+ "series": "Guess the State",
+ "ind": 99,
+ "label": "Men who use tobacco",
+ "unit": "%",
+ "hook": [
+  "In one state,",
+  "*3 in 4 men* use tobacco."
+ ],
+ "q": "Which state?",
+ "answer": "Mizoram",
+ "answerName": "Mizoram",
+ "options": [
+  "Bihar",
+  "Mizoram",
+  "Uttar Pradesh"
+ ],
+ "optionKeys": [
+  "Bihar",
+  "Mizoram",
+  "Uttar Pradesh"
+ ],
+ "answerIndex": 1,
+ "value": 73.6,
+ "india": 36.3,
+ "india5": 38.0,
+ "values": {
+  "Arunachal Pradesh": 51.4,
+  "Assam": 45.2,
+  "Bihar": 45.8,
+  "Chhattisgarh": 45.3,
+  "Goa": 17.1,
+  "Gujarat": 38.4,
+  "Haryana": 27.5,
+  "Himachal Pradesh": 28.9,
+  "Jharkhand": 45.2,
+  "Karnataka": 24.2,
+  "Kerala": 15.9,
+  "Madhya Pradesh": 47.7,
+  "Maharashtra": 31.3,
+  "Meghalaya": 57.8,
+  "Mizoram": 73.6,
+  "Nagaland": 51.2,
+  "Odisha": 48.3,
+  "Punjab": 13.9,
+  "Chandigarh": 15.1,
+  "Jammu and Kashmir": 30.1,
+  "NCT of Delhi": 21.3,
+  "Puducherry": 11.4,
+  "Andhra Pradesh": 18.8,
+  "Rajasthan": 37.6,
+  "Sikkim": 39.3,
+  "Tamil Nadu": 17.7,
+  "Telangana": 21.1,
+  "Tripura": 52.1,
+  "Uttar Pradesh": 45.2,
+  "Uttarakhand": 33.8,
+  "West Bengal": 46.2,
+  "Andaman and Nicobar Islands": 52.1,
+  "Dadra & Nagar Haveli and Daman & Diu": 31.1,
+  "Ladakh": 18.9,
+  "Lakshadweep": 29.5
+ },
+ "band": {
+  "Arunachal Pradesh": 4,
+  "Assam": 3,
+  "Bihar": 3,
+  "Chhattisgarh": 3,
+  "Goa": 0,
+  "Gujarat": 2,
+  "Haryana": 1,
+  "Himachal Pradesh": 1,
+  "Jharkhand": 3,
+  "Karnataka": 1,
+  "Kerala": 0,
+  "Madhya Pradesh": 3,
+  "Maharashtra": 2,
+  "Meghalaya": 4,
+  "Mizoram": 4,
+  "Nagaland": 4,
+  "Odisha": 4,
+  "Punjab": 0,
+  "Chandigarh": 0,
+  "Jammu and Kashmir": 2,
+  "NCT of Delhi": 1,
+  "Puducherry": 0,
+  "Andhra Pradesh": 0,
+  "Rajasthan": 2,
+  "Sikkim": 2,
+  "Tamil Nadu": 0,
+  "Telangana": 1,
+  "Tripura": 4,
+  "Uttar Pradesh": 3,
+  "Uttarakhand": 2,
+  "West Bengal": 3,
+  "Andaman and Nicobar Islands": 4,
+  "Dadra & Nagar Haveli and Daman & Diu": 2,
+  "Ladakh": 1,
+  "Lakshadweep": 1
+ },
+ "bands": [
+  "#26306B",
+  "#5A3D9E",
+  "#A8429A",
+  "#EE5D6C",
+  "#FFC15E"
+ ],
+ "bandLabels": [
+  "< 18.9%",
+  "18.9\u201330.1%",
+  "30.1\u201345.2%",
+  "45.2\u201348.3%",
+  "48.3%+"
+ ],
+ "top": [
+  {
+   "name": "Mizoram",
+   "key": "Mizoram",
+   "v": 73.6
+  },
+  {
+   "name": "Meghalaya",
+   "key": "Meghalaya",
+   "v": 57.8
+  },
+  {
+   "name": "Tripura",
+   "key": "Tripura",
+   "v": 52.1
+  },
+  {
+   "name": "Andaman & Nicobar",
+   "key": "Andaman and Nicobar Islands",
+   "v": 52.1
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "key": "Arunachal Pradesh",
+   "v": 51.4
+  }
+ ],
+ "other": {
+  "name": "Puducherry",
+  "v": 11.4
+ },
+ "side": "top",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   3.871
+  ],
+  "quiz": [
+   3.871,
+   7.742
+  ],
+  "reveal": [
+   7.742,
+   11.613
+  ],
+  "fill": [
+   11.613,
+   15.484
+  ],
+  "top": [
+   15.484,
+   21.29
+  ],
+  "end": [
+   21.29,
+   25.161
+  ]
+ },
+ "total": 25.761,
+ "fillAt": {
+  "Puducherry": 11.855,
+  "Punjab": 11.921,
+  "Chandigarh": 11.988,
+  "Kerala": 12.054,
+  "Goa": 12.12,
+  "Tamil Nadu": 12.187,
+  "Andhra Pradesh": 12.253,
+  "Ladakh": 12.319,
+  "Telangana": 12.386,
+  "NCT of Delhi": 12.452,
+  "Karnataka": 12.519,
+  "Haryana": 12.585,
+  "Himachal Pradesh": 12.651,
+  "Lakshadweep": 12.718,
+  "Jammu and Kashmir": 12.784,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.85,
+  "Maharashtra": 12.917,
+  "Uttarakhand": 12.983,
+  "Rajasthan": 13.049,
+  "Gujarat": 13.116,
+  "Sikkim": 13.182,
+  "Assam": 13.248,
+  "Jharkhand": 13.315,
+  "Uttar Pradesh": 13.381,
+  "Chhattisgarh": 13.448,
+  "Bihar": 13.514,
+  "West Bengal": 13.58,
+  "Madhya Pradesh": 13.647,
+  "Odisha": 13.713,
+  "Nagaland": 13.779,
+  "Arunachal Pradesh": 13.846,
+  "Tripura": 13.912,
+  "Andaman and Nicobar Islands": 13.978,
+  "Meghalaya": 14.045,
+  "Mizoram": 14.111
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

@@ -1,0 +1,206 @@
+{
+ "id": "gts07",
+ "series": "Guess the State",
+ "ind": 39,
+ "label": "C-sections in private hospitals",
+ "unit": "%",
+ "hook": [
+  "*9 in 10* private-hospital births",
+  "here are C-sections."
+ ],
+ "q": "Which state?",
+ "answer": "Jammu and Kashmir",
+ "answerName": "J&K",
+ "options": [
+  "Telangana",
+  "J&K",
+  "Kerala"
+ ],
+ "optionKeys": [
+  "Telangana",
+  "Jammu and Kashmir",
+  "Kerala"
+ ],
+ "answerIndex": 1,
+ "value": 90.0,
+ "india": 54.1,
+ "india5": 47.4,
+ "values": {
+  "Arunachal Pradesh": 62.1,
+  "Assam": 81.4,
+  "Bihar": 49.3,
+  "Chhattisgarh": 64.9,
+  "Goa": 69.7,
+  "Gujarat": 39.8,
+  "Haryana": 40.2,
+  "Himachal Pradesh": 63.7,
+  "Jharkhand": 54.1,
+  "Karnataka": 63.8,
+  "Kerala": 42.5,
+  "Madhya Pradesh": 61.7,
+  "Maharashtra": 48.5,
+  "Meghalaya": 36.2,
+  "Mizoram": 35.2,
+  "Nagaland": 32.5,
+  "Odisha": 76.8,
+  "Punjab": 63.3,
+  "Jammu and Kashmir": 90.0,
+  "NCT of Delhi": 50.9,
+  "Puducherry": 62.4,
+  "Andhra Pradesh": 66.2,
+  "Rajasthan": 35.0,
+  "Sikkim": 67.8,
+  "Tamil Nadu": 60.3,
+  "Telangana": 83.9,
+  "Tripura": 78.3,
+  "Uttar Pradesh": 47.3,
+  "Uttarakhand": 47.7,
+  "West Bengal": 87.7,
+  "Dadra & Nagar Haveli and Daman & Diu": 43.6,
+  "Lakshadweep": 75.0
+ },
+ "band": {
+  "Arunachal Pradesh": 2,
+  "Assam": 4,
+  "Bihar": 1,
+  "Chhattisgarh": 3,
+  "Goa": 3,
+  "Gujarat": 0,
+  "Haryana": 0,
+  "Himachal Pradesh": 3,
+  "Jharkhand": 2,
+  "Karnataka": 3,
+  "Kerala": 1,
+  "Madhya Pradesh": 2,
+  "Maharashtra": 1,
+  "Meghalaya": 0,
+  "Mizoram": 0,
+  "Nagaland": 0,
+  "Odisha": 4,
+  "Punjab": 2,
+  "Jammu and Kashmir": 4,
+  "NCT of Delhi": 2,
+  "Puducherry": 2,
+  "Andhra Pradesh": 3,
+  "Rajasthan": 0,
+  "Sikkim": 3,
+  "Tamil Nadu": 2,
+  "Telangana": 4,
+  "Tripura": 4,
+  "Uttar Pradesh": 1,
+  "Uttarakhand": 1,
+  "West Bengal": 4,
+  "Dadra & Nagar Haveli and Daman & Diu": 1,
+  "Lakshadweep": 4
+ },
+ "bands": [
+  "#26306B",
+  "#5A3D9E",
+  "#A8429A",
+  "#EE5D6C",
+  "#FFC15E"
+ ],
+ "bandLabels": [
+  "< 42.5%",
+  "42.5\u201350.9%",
+  "50.9\u201363.7%",
+  "63.7\u201375%",
+  "75%+"
+ ],
+ "top": [
+  {
+   "name": "J&K",
+   "key": "Jammu and Kashmir",
+   "v": 90.0
+  },
+  {
+   "name": "West Bengal",
+   "key": "West Bengal",
+   "v": 87.7
+  },
+  {
+   "name": "Telangana",
+   "key": "Telangana",
+   "v": 83.9
+  },
+  {
+   "name": "Assam",
+   "key": "Assam",
+   "v": 81.4
+  },
+  {
+   "name": "Tripura",
+   "key": "Tripura",
+   "v": 78.3
+  }
+ ],
+ "other": {
+  "name": "Nagaland",
+  "v": 32.5
+ },
+ "side": "top",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   3.871
+  ],
+  "quiz": [
+   3.871,
+   7.742
+  ],
+  "reveal": [
+   7.742,
+   11.613
+  ],
+  "fill": [
+   11.613,
+   15.484
+  ],
+  "top": [
+   15.484,
+   21.29
+  ],
+  "end": [
+   21.29,
+   25.161
+  ]
+ },
+ "total": 25.761,
+ "fillAt": {
+  "Nagaland": 11.855,
+  "Rajasthan": 11.928,
+  "Mizoram": 12.0,
+  "Meghalaya": 12.073,
+  "Gujarat": 12.145,
+  "Haryana": 12.218,
+  "Kerala": 12.29,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.363,
+  "Uttar Pradesh": 12.436,
+  "Uttarakhand": 12.508,
+  "Maharashtra": 12.581,
+  "Bihar": 12.653,
+  "NCT of Delhi": 12.726,
+  "Jharkhand": 12.798,
+  "Tamil Nadu": 12.871,
+  "Madhya Pradesh": 12.944,
+  "Arunachal Pradesh": 13.016,
+  "Puducherry": 13.089,
+  "Punjab": 13.161,
+  "Himachal Pradesh": 13.234,
+  "Karnataka": 13.307,
+  "Chhattisgarh": 13.379,
+  "Andhra Pradesh": 13.452,
+  "Sikkim": 13.524,
+  "Goa": 13.597,
+  "Lakshadweep": 13.669,
+  "Odisha": 13.742,
+  "Tripura": 13.815,
+  "Assam": 13.887,
+  "Telangana": 13.96,
+  "West Bengal": 14.032,
+  "Jammu and Kashmir": 14.105
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

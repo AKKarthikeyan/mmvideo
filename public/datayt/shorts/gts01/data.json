@@ -1,0 +1,215 @@
+{
+ "id": "gts01",
+ "series": "Guess the State",
+ "ind": 10,
+ "label": "Homes where a woman owns house/land",
+ "unit": "%",
+ "hook": [
+  "In one Indian state,",
+  "*women* own the land."
+ ],
+ "q": "Which state?",
+ "answer": "Meghalaya",
+ "answerName": "Meghalaya",
+ "options": [
+  "Kerala",
+  "Meghalaya",
+  "Goa"
+ ],
+ "optionKeys": [
+  "Kerala",
+  "Meghalaya",
+  "Goa"
+ ],
+ "answerIndex": 1,
+ "value": 65.3,
+ "india": 18.8,
+ "india5": 14.0,
+ "values": {
+  "Arunachal Pradesh": 14.8,
+  "Assam": 9.9,
+  "Bihar": 14.9,
+  "Chhattisgarh": 17.5,
+  "Goa": 21.4,
+  "Gujarat": 16.0,
+  "Haryana": 14.7,
+  "Himachal Pradesh": 18.7,
+  "Jharkhand": 14.5,
+  "Karnataka": 29.5,
+  "Kerala": 34.3,
+  "Madhya Pradesh": 17.3,
+  "Maharashtra": 18.6,
+  "Meghalaya": 65.3,
+  "Mizoram": 16.8,
+  "Nagaland": 11.6,
+  "Odisha": 13.5,
+  "Punjab": 13.4,
+  "Chandigarh": 13.7,
+  "Jammu and Kashmir": 5.0,
+  "NCT of Delhi": 17.7,
+  "Puducherry": 22.8,
+  "Andhra Pradesh": 31.9,
+  "Rajasthan": 13.9,
+  "Sikkim": 9.4,
+  "Tamil Nadu": 17.2,
+  "Telangana": 31.1,
+  "Tripura": 17.7,
+  "Uttar Pradesh": 20.1,
+  "Uttarakhand": 23.7,
+  "West Bengal": 13.0,
+  "Andaman and Nicobar Islands": 13.1,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.1,
+  "Ladakh": 7.1,
+  "Lakshadweep": 53.6
+ },
+ "band": {
+  "Arunachal Pradesh": 2,
+  "Assam": 0,
+  "Bihar": 2,
+  "Chhattisgarh": 2,
+  "Goa": 3,
+  "Gujarat": 2,
+  "Haryana": 1,
+  "Himachal Pradesh": 3,
+  "Jharkhand": 1,
+  "Karnataka": 4,
+  "Kerala": 4,
+  "Madhya Pradesh": 2,
+  "Maharashtra": 3,
+  "Meghalaya": 4,
+  "Mizoram": 2,
+  "Nagaland": 0,
+  "Odisha": 1,
+  "Punjab": 1,
+  "Chandigarh": 1,
+  "Jammu and Kashmir": 0,
+  "NCT of Delhi": 3,
+  "Puducherry": 3,
+  "Andhra Pradesh": 4,
+  "Rajasthan": 1,
+  "Sikkim": 0,
+  "Tamil Nadu": 2,
+  "Telangana": 4,
+  "Tripura": 3,
+  "Uttar Pradesh": 3,
+  "Uttarakhand": 4,
+  "West Bengal": 0,
+  "Andaman and Nicobar Islands": 1,
+  "Dadra & Nagar Haveli and Daman & Diu": 0,
+  "Ladakh": 0,
+  "Lakshadweep": 4
+ },
+ "bands": [
+  "#26306B",
+  "#5A3D9E",
+  "#A8429A",
+  "#EE5D6C",
+  "#FFC15E"
+ ],
+ "bandLabels": [
+  "< 13.1%",
+  "13.1\u201314.8%",
+  "14.8\u201317.7%",
+  "17.7\u201323.7%",
+  "23.7%+"
+ ],
+ "top": [
+  {
+   "name": "Meghalaya",
+   "key": "Meghalaya",
+   "v": 65.3
+  },
+  {
+   "name": "Kerala",
+   "key": "Kerala",
+   "v": 34.3
+  },
+  {
+   "name": "Andhra Pradesh",
+   "key": "Andhra Pradesh",
+   "v": 31.9
+  },
+  {
+   "name": "Telangana",
+   "key": "Telangana",
+   "v": 31.1
+  },
+  {
+   "name": "Karnataka",
+   "key": "Karnataka",
+   "v": 29.5
+  }
+ ],
+ "other": {
+  "name": "J&K",
+  "v": 5.0
+ },
+ "side": "top",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   3.871
+  ],
+  "quiz": [
+   3.871,
+   7.742
+  ],
+  "reveal": [
+   7.742,
+   11.613
+  ],
+  "fill": [
+   11.613,
+   15.484
+  ],
+  "top": [
+   15.484,
+   21.29
+  ],
+  "end": [
+   21.29,
+   25.161
+  ]
+ },
+ "total": 25.761,
+ "fillAt": {
+  "Jammu and Kashmir": 11.855,
+  "Ladakh": 11.921,
+  "Sikkim": 11.988,
+  "Assam": 12.054,
+  "Nagaland": 12.12,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.187,
+  "West Bengal": 12.253,
+  "Andaman and Nicobar Islands": 12.319,
+  "Punjab": 12.386,
+  "Odisha": 12.452,
+  "Chandigarh": 12.519,
+  "Rajasthan": 12.585,
+  "Jharkhand": 12.651,
+  "Haryana": 12.718,
+  "Arunachal Pradesh": 12.784,
+  "Bihar": 12.85,
+  "Gujarat": 12.917,
+  "Mizoram": 12.983,
+  "Tamil Nadu": 13.049,
+  "Madhya Pradesh": 13.116,
+  "Chhattisgarh": 13.182,
+  "NCT of Delhi": 13.248,
+  "Tripura": 13.315,
+  "Maharashtra": 13.381,
+  "Himachal Pradesh": 13.448,
+  "Uttar Pradesh": 13.514,
+  "Goa": 13.58,
+  "Puducherry": 13.647,
+  "Uttarakhand": 13.713,
+  "Karnataka": 13.779,
+  "Telangana": 13.846,
+  "Andhra Pradesh": 13.912,
+  "Kerala": 13.978,
+  "Lakshadweep": 14.045,
+  "Meghalaya": 14.111
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

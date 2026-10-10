@@ -7,10 +7,10 @@
 <plist version="1.0">
 <dict>
   <key>Label</key><string>com.datakadai.hotscan</string>
-  <key>WorkingDirectory</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk</string>
+  <key>WorkingDirectory</key><string>/Volumes/DarwinSSD/DataKadai/mmvideo-dk</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/akkarthikeyan/Projects/mmvideo-dk/.venv/bin/python</string>
+    <string>/Volumes/DarwinSSD/DataKadai/mmvideo-dk/.venv/bin/python</string>
     <string>scripts/datayt/hot_scan.py</string>
   </array>
   <key>StartCalendarInterval</key>
@@ -19,7 +19,7 @@
     <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
   </array>
-  <key>StandardOutPath</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk/out/hotscan.log</string>
-  <key>StandardErrorPath</key><string>/Users/akkarthikeyan/Projects/mmvideo-dk/out/hotscan.log</string>
+  <key>StandardOutPath</key><string>/Volumes/DarwinSSD/DataKadai/mmvideo-dk/out/hotscan.log</string>
+  <key>StandardErrorPath</key><string>/Volumes/DarwinSSD/DataKadai/mmvideo-dk/out/hotscan.log</string>
 </dict>
 </plist>

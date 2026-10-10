@@ -44,11 +44,16 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - Kokoro is a placeholder only. A Short marked `"voiceEngine": "kokoro"` must be re-voiced before it goes to AK.
 - Code: `scripts/datayt/voice_dk.py`. It uses MiniMax whenever `MINIMAX_API_KEY` is set.
 
-## Production machine (fixed 9 Oct 2026)
-- Production runs on the **Mac Mini** (`ssh mini-ts`), repo at `~/Projects/mmvideo-dk`, Python venv at `.venv` (3.13).
+## Production machine and storage (fixed 9 Oct 2026; moved to DarwinSSD 10 Oct 2026)
+- Everything Data Kadai lives on **DarwinSSD**, attached to the Mac Mini: `/Volumes/DarwinSSD/DataKadai/`.
+  - `mmvideo-dk/` is the working repo (code, data, docs, and the git-ignored audio, video and `out/` packs).
+  - `videos/` holds loose copies of finished Shorts.
+- Production runs on the **Mac Mini** (`ssh mini-ts`) from that folder; Python venv at `.venv` (3.13).
+- Nothing Data Kadai is kept on the MacBook Air (AK, 10 Oct 2026).
 - `MINIMAX_API_KEY` lives in the Mini's login shell. Never copy it to another machine, a file or a log.
-- The Mini can't reach GitHub. Commit and push from the MacBook Air clone (`~/Projects/mmvideo-dk`): copy changed
-  tracked files Mini → Air, commit there, push the working branch (never `main`).
+- The Mini can't reach GitHub. Commit on the SSD repo, then on the Air run
+  `ssh mini-ts cat /Volumes/DarwinSSD/DataKadai/mmvideo-dk/scripts/datayt/push_from_air.sh | zsh`
+  (it fetches the branch from the SSD over SSH, pushes it to GitHub and keeps nothing on the Air). Never `main`.
 - Build one Short (on the Mini, from the repo root):
   1. `.venv/bin/python scripts/datayt/build_india_shorts.py <id>`
   2. `.venv/bin/python scripts/datayt/post_pack.py <id> <YYYY-MM-DD>`

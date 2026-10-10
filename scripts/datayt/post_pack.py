@@ -55,7 +55,7 @@ Where does your state rank? Comment below 👇
 {hook} 🤔
 It's {ans}: {f(D['value'])}, {vs}.
 
-Top 5:
+{"Top 5" if D.get("side", "top") == "top" else "Lowest 5"}:
 {top}
 
 Source: {D['source']}

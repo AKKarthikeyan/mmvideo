@@ -21,5 +21,6 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 13 | gts13 | Teen mothers: 18% of girls here | 19 | Tripura | queued (config to write) |
 | 14 | gts14 | The state with India's oldest population | 3 | Kerala | queued (config to write) |
 | 15 | gts15 | Only 6 in 10 babies here are born in a health facility | 35 (lowest) | Nagaland | queued (config to write; decoys Bihar, Jharkhand) |
+| 16 | gts16 | In one state, fewer than half of women have ever used the internet | 14 (lowest) | Tripura | drafted (2026-10-10; hot: satellite-internet news; decoys Bihar, Odisha) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

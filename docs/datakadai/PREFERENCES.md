@@ -76,6 +76,12 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - At most one hot story a day jumps the queue. Otherwise the daily Short comes from `ops/QUEUE.md`.
 - Evergreen scripts: `scripts/datayt/make_scripts.py` writes review batches to `docs/datakadai/scripts/`.
 
+## Sources (AK, 11 Oct 2026)
+- Map the source now, milk the data when required: keep `SOURCE_MAP.md` current, and pull the latest figures from a
+  source only when a story needs them. Do not bulk-download data "just in case".
+- `SOURCE_MAP.md` lists each source with its tier and whether a script can fetch it; `SOURCES_CATALOG.md` lists what is
+  already collected.
+
 ## Posting
 - Nothing is posted or uploaded by any agent. AK approves each pack and posts it.
 - Generated audio and video are git-ignored and stay out of the repo.

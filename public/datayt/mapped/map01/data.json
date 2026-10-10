@@ -1,0 +1,637 @@
+{
+ "id": "map01",
+ "series": "Mapped",
+ "chip": "MAPPED",
+ "sourceShort": "Lok Sabha answer · Feb 2026",
+ "source": "Department of Telecommunications, reply to Lok Sabha Starred Question 470 (25 March 2026). Villages without mobile coverage, as on 28 February 2026.",
+ "title": [
+  "*8,748* villages",
+  "in India have no",
+  "mobile signal."
+ ],
+ "titleSub": "Where are they? Every state, mapped.",
+ "headline": [
+  "Villages with",
+  "*no mobile signal*"
+ ],
+ "sub": "8,748 across India · as on 28 Feb 2026",
+ "unit": "",
+ "bands": [
+  {
+   "label": "Zero",
+   "color": "#FBEFD9",
+   "count": 5
+  },
+  {
+   "label": "1 to 50",
+   "color": "#EFC97A",
+   "count": 10
+  },
+  {
+   "label": "51 to 250",
+   "color": "#D79A4A",
+   "count": 10
+  },
+  {
+   "label": "251 to 600",
+   "color": "#B3584D",
+   "count": 5
+  },
+  {
+   "label": "Above 600",
+   "color": "#6D2238",
+   "count": 5
+  }
+ ],
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "palette": "O",
+ "states": [
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "short": "DNH & Daman Diu",
+   "v": 0,
+   "label": "0",
+   "bucket": 0,
+   "at": 10.161,
+   "nudge": [
+    -84,
+    16
+   ]
+  },
+  {
+   "name": "Kerala",
+   "short": "Kerala",
+   "v": 0,
+   "label": "0",
+   "bucket": 0,
+   "at": 10.403,
+   "nudge": [
+    -72,
+    30
+   ]
+  },
+  {
+   "name": "Lakshadweep",
+   "short": "Lakshadweep",
+   "v": 0,
+   "label": "0",
+   "bucket": 0,
+   "at": 10.645,
+   "nudge": [
+    -30,
+    -62
+   ]
+  },
+  {
+   "name": "NCT of Delhi",
+   "short": "Delhi",
+   "v": 0,
+   "label": "0",
+   "bucket": 0,
+   "at": 10.887,
+   "nudge": [
+    -215,
+    -35
+   ]
+  },
+  {
+   "name": "Puducherry",
+   "short": "Puducherry",
+   "v": 0,
+   "label": "0",
+   "bucket": 0,
+   "at": 11.129,
+   "nudge": [
+    96,
+    0
+   ]
+  },
+  {
+   "name": "Haryana",
+   "short": "Haryana",
+   "v": 1,
+   "label": "1",
+   "bucket": 1,
+   "at": 15.968,
+   "nudge": [
+    -8,
+    6
+   ]
+  },
+  {
+   "name": "Punjab",
+   "short": "Punjab",
+   "v": 2,
+   "label": "2",
+   "bucket": 1,
+   "at": 16.21,
+   "nudge": [
+    -6,
+    0
+   ]
+  },
+  {
+   "name": "Tamil Nadu",
+   "short": "Tamil Nadu",
+   "v": 3,
+   "label": "3",
+   "bucket": 1,
+   "at": 16.452,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Sikkim",
+   "short": "Sikkim",
+   "v": 6,
+   "label": "6",
+   "bucket": 1,
+   "at": 16.694,
+   "nudge": [
+    0,
+    -62
+   ]
+  },
+  {
+   "name": "Tripura",
+   "short": "Tripura",
+   "v": 7,
+   "label": "7",
+   "bucket": 1,
+   "at": 16.936,
+   "nudge": [
+    -32,
+    72
+   ]
+  },
+  {
+   "name": "West Bengal",
+   "short": "West Bengal",
+   "v": 9,
+   "label": "9",
+   "bucket": 1,
+   "at": 17.178,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ladakh",
+   "short": "Ladakh",
+   "v": 10,
+   "label": "10",
+   "bucket": 1,
+   "at": 17.419,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Uttar Pradesh",
+   "short": "Uttar Pradesh",
+   "v": 36,
+   "label": "36",
+   "bucket": 1,
+   "at": 17.661,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Goa",
+   "short": "Goa",
+   "v": 37,
+   "label": "37",
+   "bucket": 1,
+   "at": 17.903,
+   "nudge": [
+    -82,
+    0
+   ]
+  },
+  {
+   "name": "Bihar",
+   "short": "Bihar",
+   "v": 43,
+   "label": "43",
+   "bucket": 1,
+   "at": 18.145,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Mizoram",
+   "short": "Mizoram",
+   "v": 52,
+   "label": "52",
+   "bucket": 2,
+   "at": 21.774,
+   "nudge": [
+    72,
+    56
+   ]
+  },
+  {
+   "name": "Uttarakhand",
+   "short": "Uttarakhand",
+   "v": 57,
+   "label": "57",
+   "bucket": 2,
+   "at": 22.016,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Nagaland",
+   "short": "Nagaland",
+   "v": 107,
+   "label": "107",
+   "bucket": 2,
+   "at": 22.258,
+   "nudge": [
+    78,
+    8
+   ]
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "short": "Andaman & Nicobar",
+   "v": 127,
+   "label": "127",
+   "bucket": 2,
+   "at": 22.5,
+   "nudge": [
+    -78,
+    0
+   ]
+  },
+  {
+   "name": "Meghalaya",
+   "short": "Meghalaya",
+   "v": 141,
+   "label": "141",
+   "bucket": 2,
+   "at": 22.742,
+   "nudge": [
+    -76,
+    52
+   ]
+  },
+  {
+   "name": "Assam",
+   "short": "Assam",
+   "v": 163,
+   "label": "163",
+   "bucket": 2,
+   "at": 22.984,
+   "nudge": [
+    -26,
+    -10
+   ]
+  },
+  {
+   "name": "Manipur",
+   "short": "Manipur",
+   "v": 189,
+   "label": "189",
+   "bucket": 2,
+   "at": 23.225,
+   "nudge": [
+    88,
+    24
+   ]
+  },
+  {
+   "name": "Gujarat",
+   "short": "Gujarat",
+   "v": 212,
+   "label": "212",
+   "bucket": 2,
+   "at": 23.467,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Telangana",
+   "short": "Telangana",
+   "v": 227,
+   "label": "227",
+   "bucket": 2,
+   "at": 23.709,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "short": "J&K",
+   "v": 248,
+   "label": "248",
+   "bucket": 2,
+   "at": 23.951,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Jharkhand",
+   "short": "Jharkhand",
+   "v": 302,
+   "label": "302",
+   "bucket": 3,
+   "at": 25.645,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Andhra Pradesh",
+   "short": "Andhra Pradesh",
+   "v": 382,
+   "label": "382",
+   "bucket": 3,
+   "at": 25.887,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Karnataka",
+   "short": "Karnataka",
+   "v": 458,
+   "label": "458",
+   "bucket": 3,
+   "at": 26.129,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Himachal Pradesh",
+   "short": "Himachal",
+   "v": 504,
+   "label": "504",
+   "bucket": 3,
+   "at": 26.371,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Rajasthan",
+   "short": "Rajasthan",
+   "v": 522,
+   "label": "522",
+   "bucket": 3,
+   "at": 26.613,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Chhattisgarh",
+   "short": "Chhattisgarh",
+   "v": 752,
+   "label": "752",
+   "bucket": 4,
+   "at": 29.516,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Maharashtra",
+   "short": "Maharashtra",
+   "v": 868,
+   "label": "868",
+   "bucket": 4,
+   "at": 29.758,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Madhya Pradesh",
+   "short": "Madhya Pradesh",
+   "v": 930,
+   "label": "930",
+   "bucket": 4,
+   "at": 30.0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "short": "Arunachal",
+   "v": 1176,
+   "label": "1,176",
+   "bucket": 4,
+   "at": 30.242,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Odisha",
+   "short": "Odisha",
+   "v": 1177,
+   "label": "1,177",
+   "bucket": 4,
+   "at": 30.484,
+   "nudge": [
+    0,
+    0
+   ]
+  }
+ ],
+ "nodata": [
+  "Chandigarh"
+ ],
+ "t": {
+  "title": [
+   0.0,
+   7.742
+  ],
+  "draw": [
+   7.742,
+   9.677
+  ],
+  "b0": [
+   9.677,
+   15.484
+  ],
+  "b1": [
+   15.484,
+   21.29
+  ],
+  "b2": [
+   21.29,
+   25.161
+  ],
+  "b3": [
+   25.161,
+   29.032
+  ],
+  "b4": [
+   29.032,
+   32.903
+  ],
+  "all": [
+   32.903,
+   36.774
+  ],
+  "top": [
+   36.774,
+   42.581
+  ],
+  "insight": [
+   42.581,
+   48.387
+  ],
+  "end": [
+   48.387,
+   52.258
+  ]
+ },
+ "total": 52.758,
+ "fps": 30,
+ "top": [
+  "Odisha",
+  "Arunachal Pradesh",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Chhattisgarh"
+ ],
+ "topText": {
+  "kicker": "Most uncovered villages",
+  "title": "Top 5 states",
+  "sub": "Villages with no mobile coverage"
+ },
+ "max": 1177,
+ "insight": {
+  "kicker": "The real gap",
+  "big": "1 in 5",
+  "text": "In *Arunachal Pradesh*, 1,176 of 5,993 villages have no mobile signal. Across India it is about 1 in 74.",
+  "focus": [
+   "Arunachal Pradesh"
+  ]
+ },
+ "end": {
+  "q": "Is your village covered?",
+  "sub": "Comment below."
+ },
+ "draw": {
+  "big": "Every state and UT.",
+  "text": "Each one coloured by how many of its villages have no mobile coverage at all."
+ },
+ "all": {
+  "line1": "Five states hold *more than half* of them.",
+  "line2": "4,903 of India's 8,748 uncovered villages."
+ },
+ "bandNotes": [
+  "Fully covered",
+  "Almost there",
+  "A few hundred left",
+  "Hill and forest belts",
+  "The big five"
+ ],
+ "vo": [
+  {
+   "sec_name": "title",
+   "text": "8,748 Indian villages have no mobile signal. Where?",
+   "file": "vo_title.mp3",
+   "sec": 5.929,
+   "at": 0.15
+  },
+  {
+   "sec_name": "b0",
+   "text": "Zero: Kerala, Delhi and three union territories.",
+   "file": "vo_b0.mp3",
+   "sec": 4.31,
+   "at": 9.827
+  },
+  {
+   "sec_name": "b1",
+   "text": "Under 50: ten more, like Tamil Nadu and Punjab.",
+   "file": "vo_b1.mp3",
+   "sec": 3.578,
+   "at": 15.634
+  },
+  {
+   "sec_name": "b2",
+   "text": "Up to 250: most of the north-east.",
+   "file": "vo_b2.mp3",
+   "sec": 3.317,
+   "at": 21.44
+  },
+  {
+   "sec_name": "b3",
+   "text": "Up to 600: five states.",
+   "file": "vo_b3.mp3",
+   "sec": 2.847,
+   "at": 25.311
+  },
+  {
+   "sec_name": "b4",
+   "text": "Above 600: just five.",
+   "file": "vo_b4.mp3",
+   "sec": 3.03,
+   "at": 29.182
+  },
+  {
+   "sec_name": "all",
+   "text": "Those five hold over half of them.",
+   "file": "vo_all.mp3",
+   "sec": 1.959,
+   "at": 33.053
+  },
+  {
+   "sec_name": "top",
+   "text": "Odisha and Arunachal lead, almost tied.",
+   "file": "vo_top.mp3",
+   "sec": 4.466,
+   "at": 36.924
+  },
+  {
+   "sec_name": "insight",
+   "text": "But in Arunachal, that's 1 in 5 villages.",
+   "file": "vo_insight.mp3",
+   "sec": 3.578,
+   "at": 42.731
+  },
+  {
+   "sec_name": "end",
+   "text": "Is your village covered? Comment below.",
+   "file": "vo_end.mp3",
+   "sec": 2.455,
+   "at": 48.537
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "8,748 Indian villages have no mobile signal. Where? 🗺️"
+}

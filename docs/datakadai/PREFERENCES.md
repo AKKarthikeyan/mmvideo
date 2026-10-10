@@ -54,6 +54,13 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   2. `.venv/bin/python scripts/datayt/post_pack.py <id> <YYYY-MM-DD>`
   3. Pack lands in `out/datakadai/daily/<date>/<id>/`: `short.mp4`, `ig.png`, `x.png`, `captions.md`.
 
+## Video format rules (AK, 10 Oct 2026)
+- Don't make every Short a Guess the State quiz. Rotate templates.
+- Show every state's number on the map in motion, not only the top 5, the way the Tamil Nadu alcohol map does
+  (`src/datayt/TnAlcohol.tsx`). The all-India version is the MAPPED template: `src/datayt/IndiaMapped.tsx`, built by
+  `scripts/datayt/build_mapped.py` from one config per story in `public/datayt/mapped/configs/`.
+- The map and the text above it must never overlap. MAPPED keeps three fixed strips: header, map, panel.
+
 ## Serve it hot (AK, 10 Oct 2026)
 - Goal: put official data out while it is fresh, to own the "India's numbers" mind space.
 - `scripts/datayt/hot_scan.py` reads the day's releases from PIB (all ministries, incl. MoSPI), the RBI and SEBI

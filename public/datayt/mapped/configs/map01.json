@@ -1,0 +1,82 @@
+{
+ "id": "map01",
+ "chip": "MAPPED",
+ "source_short": "Lok Sabha answer · Feb 2026",
+ "source": "Department of Telecommunications, reply to Lok Sabha Starred Question 470 (25 March 2026). Villages without mobile coverage, as on 28 February 2026.",
+ "dataset": {
+  "file": "public/datayt/coverage/mobile_coverage_2026-02-28.json",
+  "key": "uncovered"
+ },
+ "check_total": 8748,
+ "unit": "",
+ "bands": [
+  0,
+  50,
+  250,
+  600
+ ],
+ "band_labels": [
+  "Zero",
+  "1 to 50",
+  "51 to 250",
+  "251 to 600",
+  "Above 600"
+ ],
+ "palette": "O",
+ "title": [
+  "*8,748* villages",
+  "in India have no",
+  "mobile signal."
+ ],
+ "title_sub": "Where are they? Every state, mapped.",
+ "headline": [
+  "Villages with",
+  "*no mobile signal*"
+ ],
+ "sub": "8,748 across India · as on 28 Feb 2026",
+ "draw": {
+  "big": "Every state and UT.",
+  "text": "Each one coloured by how many of its villages have no mobile coverage at all."
+ },
+ "band_notes": [
+  "Fully covered",
+  "Almost there",
+  "A few hundred left",
+  "Hill and forest belts",
+  "The big five"
+ ],
+ "all": {
+  "line1": "Five states hold *more than half* of them.",
+  "line2": "4,903 of India's 8,748 uncovered villages."
+ },
+ "top": {
+  "kicker": "Most uncovered villages",
+  "title": "Top 5 states",
+  "sub": "Villages with no mobile coverage"
+ },
+ "insight": {
+  "kicker": "The real gap",
+  "big": "1 in 5",
+  "text": "In *Arunachal Pradesh*, 1,176 of 5,993 villages have no mobile signal. Across India it is about 1 in 74.",
+  "focus": [
+   "Arunachal Pradesh"
+  ]
+ },
+ "end": {
+  "q": "Is your village covered?",
+  "sub": "Comment below."
+ },
+ "yt_title": "8,748 Indian villages have no mobile signal. Where? 🗺️",
+ "vo": {
+  "title": "8,748 Indian villages have no mobile signal. Where?",
+  "b0": "Zero: Kerala, Delhi and three union territories.",
+  "b1": "Under 50: ten more, like Tamil Nadu and Punjab.",
+  "b2": "Up to 250: most of the north-east.",
+  "b3": "Up to 600: five states.",
+  "b4": "Above 600: just five.",
+  "all": "Those five hold over half of them.",
+  "top": "Odisha and Arunachal lead, almost tied.",
+  "insight": "But in Arunachal, that's 1 in 5 villages.",
+  "end": "Is your village covered? Comment below."
+ }
+}

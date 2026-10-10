@@ -2,7 +2,7 @@
 """6 Oct 2026 kit: FCNR long video (with top-10 filings + blog link), FCNR Vox Short, Suryoday napkin Short."""
 import json, math, re, pathlib, sys
 sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from package_shyam import srt, split
+from srt_util import srt, split
 FPS = 30; OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx"); VX = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 D = json.load(open(VX / "fcnr/data.json")); t = 0; ent = []; chap = {}
 for b in D["beats"]:

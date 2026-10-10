@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -76,9 +76,21 @@ CLIPS = {
   "bk_au": (JD/"NSE_106806399.pdf", "29.1%", 0, 1),
   "bk_ujjivan": (JD/"NSE_106806279.pdf", "32.1%", 0, 0, 1),
   "ao_q2": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "44.0%", 3, 0),
+  "jw_gold": (JD/"NSE_106810081.pdf", "~28% higher YoY", 1, 1),
+  "jw_diam": (JD/"NSE_106810081.pdf", "Diamond Jewellery Growth (Volume)", 2, 1),
+  "jw_kal": (JD/"NSE_106809136.pdf", "same-store-sales-growth of approximately 20%", 1, 1),
+  "jw_sen25": (JW/"Sencogold_08102025174001_BusinessUpdateQ2H1FY26.pdf", "43% YoY on average", 0, 1),
+  "jw_ttn25": (JW/"TITAN_07102025164635_Q2update202526.pdf", "marginal YoY declines", 1, 1),
+  "jw_ttn27": (JD/"NSE_106808719.pdf", "mid-single digits", 1, 0),
   "ao_sep26": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "41.7%", 2, 0, 1),
   "ao_sep21": (AO/"ANGELBRKG_05102021082516_October052021Intimationofmonthlybusinessupdate.pdf", "27.8%", 2, 0),
   "ao_peak": (AO/"ANGEL8896_04092025071949_September042025_Intimation_of_Business_Update_August_2025.pdf", "67.6%", 1, 1),
+  "tc_q2": (JD/"NSE_106811193.pdf", "Q2 Revenue at", 0, 1),
+  "tc_q2fy26": (TQ/"TCS_CORPCS_09102025155609_PressReleaseletter.pdf", "- 3.3", 10, 0),
+  "tc_fy26": (TQ/"TCS_CORPCS_09042026155806_PressReleaseletter_signed.pdf", "-2.4% in CC", 1, 1),
+  "tc_opm": (JD/"NSE_106811193.pdf", "Operating Margin at 24.0%", 2, 1),
+  "tc_opex": (JD/"NSE_106811193.pdf", "Other Operating expenses", 4, 2),
+  "tc_bby": (TQ/"TCS_CORPCS_01102026182634_Signed_SE_Letter.pdf", "INR 1 Lakh", 2, 1),
   "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
 

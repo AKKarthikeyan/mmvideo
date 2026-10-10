@@ -129,6 +129,33 @@ SHORTS = {
   ("q4", "The twist. Divide turnover by share. The market went from eighteen hundred to fifty five hundred billion a day. It tripled."),
   ("q5", "Its futures and options share held. New commodity traders went elsewhere. Back to the napkin."),
  ],
+ "bkr": [
+  ("r1", "Angel One's commodity trading doubled."),
+  ("r2", "Its market share fell to forty one point seven percent."),
+  ("r3", "How? The market tripled. Angel One only doubled."),
+  ("r4", "In twenty twenty one, it had twenty eight percent. It built that to sixty seven point six."),
+  ("r5", "Now about two thirds of that climb is gone."),
+  ("r6", "Its futures and options share? Held at twenty two percent."),
+  ("r7", "So it's losing the new traders, not the old ones. Because"),
+ ],
+ "bks": [
+  ("s1", "India's jewellers grew up to twenty nine percent."),
+  ("s2", "Gold prices rose twenty eight percent."),
+  ("s3", "So the same grams, at higher prices."),
+  ("s4", "Existing stores grew less than gold did."),
+  ("s5", "So who's actually growing? Diamonds. Seven percent, by volume."),
+  ("s6", "Last year gold rose forty three percent. Senco grew six and a half."),
+  ("s7", "So is it demand, or just the price of gold? Because"),
+ ],
+ "bkt": [
+  ("t1", "T C S grew eleven percent last quarter."),
+  ("t2", "Take out the weaker rupee: two point eight."),
+  ("t3", "Its A I revenue? Three point one billion dollars a year."),
+  ("t4", "Up seventy percent in nine months."),
+  ("t5", "So why did total revenue barely move?"),
+  ("t6", "Its own C E O: there is a deflation because of the productivity benefit."),
+  ("t7", "So is A I growing T C S, or shrinking it? Because"),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

@@ -17,8 +17,15 @@ import shyams from "../../public/vx/shyams/data.json";
 import ceos from "../../public/vx/ceos/data.json";
 import banksq2 from "../../public/vx/banksq2/data.json";
 import jlrs from "../../public/vx/jlrs/data.json";
+import fcnr from "../../public/vx/fcnr/data.json";
+import fcnrs from "../../public/vx/fcnrs/data.json";
+import angelone from "../../public/vx/angelone/data.json";
+import angelones from "../../public/vx/angelones/data.json";
+import jewels from "../../public/vx/jewels/data.json";
+import tcsq2 from "../../public/vx/tcsq2/data.json";
+import tcsq2s from "../../public/vx/tcsq2s/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},
@@ -50,6 +57,11 @@ const THUMBV: Record<string, any[]> = {
     {kicker: "AUTO SALES · Q2 FY27", big: "+40%", bigSub: "TATA MOTORS PV · Q2 GROWTH", stamp: "TATA ON TOP", clip: "aq_t_tata", clipMeta: {"w": 1448, "h": 156, "hl": [[0.6076, 0.3819, 0.0853, 0.2901], [0.8766, 0.3819, 0.0569, 0.2898]]}},
     {kicker: "AUTO SALES · SEPTEMBER 2026", big: "−12%", bigSub: "BAJAJ · TWO-WHEELERS IN INDIA", stamp: "TVS: +17%", clip: "aq_t_bajaj", clipMeta: {"w": 932, "h": 236, "hl": [[0.8621, 0.5702, 0.0571, 0.1388]]}},
     {kicker: "AUTO SALES · Q2 FY27", big: "+0.9%", bigSub: "ESCORTS · LAST ON GROWTH", stamp: "TOP MOAT?", clip: "aq_t_escorts", clipMeta: {"w": 1551, "h": 129, "hl": [[0.6318, 0.3902, 0.0493, 0.3098]]}},
+  ],
+  fcnr: [
+    {kicker: "IDFC FIRST BANK · Q2 FY27", big: "₹24,885 CR", bigSub: "LENT, THEN BOOKED AS DEPOSITS", stamp: "THE LOOP", clip: "fc_idfc"},
+    {kicker: "HDFC BANK · FCNR(B)", big: "$11.5 BN", bigSub: "RAISED IN THE RBI WINDOW", stamp: "BORROWED?", clip: "fc_hdfc"},
+    {kicker: "AXIS BANK · FCNR(B)", big: "$10.62 BN", bigSub: "~87% MATCHED BY LOANS", stamp: "THE LOOP", clip: "fc_axis"},
   ],
   banksq2: [
     {kicker: "UNION BANK · Q2 FY27", big: "6.87%", bigSub: "DEPOSIT GROWTH · LOANS +18.53%", stamp: "THE GAP", clip: "bk_union"},

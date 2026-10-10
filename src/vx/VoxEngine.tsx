@@ -80,11 +80,13 @@ const wrap = (text: string, max: number) => {
 // ---------- scenes ----------
 type SP = {s: any; n: number; T: TFn; b: Beat; D: VData};
 
-const Title: React.FC<SP> = ({s, n, b}) => {
+const Title: React.FC<SP> = ({s, n, b, D}) => {
   const L = useL();
   const lines: string[] = s.lines;
   return (
     <Svg n={n}>
+      {s.pic ? <><image href={staticFile(`vx/${D.id}/pics/${s.pic}.png`)} x={0} y={0} width={L.W} height={L.H} preserveAspectRatio="xMidYMid slice" opacity={0.55}/>
+        <rect width={L.W} height={L.H} fill="#000" opacity={0.15}/></> : null}
       {L.land ? <>
         <Big x={430} y={760} text={String(b.ch)} size={560} color={C.mustard}/>
         <TypeLabel x={760} y={330} start={0} text={`CHAPTER ${b.ch}`} size={40} cps={3}/>
@@ -344,7 +346,7 @@ const List: React.FC<SP> = ({s, n, T}) => {
         const on = i === cur;
         return <g key={i} transform={`translate(${(1 - sp) * -500} 0)`}>
           <rect x={x0} y={y0 + i * rh} width={w} height={rh - 22} fill={on ? C.red : C.white} style={{filter: "url(#vshadow)"}}/>
-          <Big x={x0 + 55} y={y0 + i * rh + (rh - 22) * 0.7} text={String(i + 1)} size={(rh - 22) * 0.6} color={on ? C.white : C.gray}/>
+          <Big x={x0 + 55} y={y0 + i * rh + (rh - 22) * 0.7} text={String((s.start ?? 1) + i)} size={(rh - 22) * 0.6} color={on ? C.white : C.gray}/>
           <Big x={x0 + 110} y={y0 + i * rh + (rh - 22) * 0.68} text={it.text} size={fit(it.text, (rh - 22) * 0.5, w - 150)} anchor="start" color={on ? C.white : C.ink}/>
         </g>;
       })}
@@ -498,8 +500,33 @@ const League: React.FC<SP> = ({s, n, T}) => {
   );
 };
 
+// Picture scene (AK 6 Oct 2026: "use picture more", MiniMax image-01). Text-free AI image, slow zoom,
+// text strips drawn in code. Image: public/vx/<id>/pics/<pic>.png (scripts/pics_gen.py).
+const Pic: React.FC<SP> = ({s, n, T, D}) => {
+  const L = useL(); const f = useCurrentFrame();
+  const z = interpolate(f, [0, Math.max(1, n)], [1.0, 1.09]);
+  const items = s.items || []; const k = items.length;
+  const gap = L.land ? 150 : 175, fs = L.land ? 78 : 66;
+  const y0 = L.land ? L.H * 0.62 - ((k - 1) * gap) / 2 : L.H * 0.56 - ((k - 1) * gap) / 2;
+  return (
+    <svg width={L.W} height={L.H} viewBox={`0 0 ${L.W} ${L.H}`} style={{position: "absolute"}}>
+      <VoxDefs/>
+      <rect width={L.W} height={L.H} fill={C.ink}/>
+      <g transform={`translate(${L.W / 2} ${L.H / 2}) scale(${z}) translate(${-L.W / 2} ${-L.H / 2})`}>
+        <image href={staticFile(`vx/${D.id}/pics/${s.pic}.png`)} x={0} y={0} width={L.W} height={L.H} preserveAspectRatio="xMidYMid slice"/>
+      </g>
+      <rect width={L.W} height={L.H} fill="#000" opacity={0.22}/>
+      {s.heading ? <Strip x={L.W / 2} y={L.land ? 120 : 260} start={0} text={s.heading} size={L.land ? 44 : 40} fill={C.ink} color={C.white} font={TYPE}/> : null}
+      {items.map((it: any, i: number) => (
+        <Strip key={i} x={L.W / 2} y={y0 + i * gap} start={T(it.at)} text={it.text} size={fit(it.text, fs, L.land ? 1500 : 960)} fill={it.red ? C.red : C.white} color={it.red ? C.white : C.ink}/>
+      ))}
+      <Stamps s={s} T={T}/>
+    </svg>
+  );
+};
+
 const SCENES: Record<string, React.FC<SP>> = {title: Title, strips: Strips, counter: Counter, cards: Cards, clip: Clip, quote: Quote,
-  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic};
+  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic, pic: Pic};
 
 // ---------- captions & furniture ----------
 const cueTimes = (b: Beat) => {

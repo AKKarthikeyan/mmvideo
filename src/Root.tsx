@@ -15,6 +15,7 @@ import {LetterVxCompositions} from "./vx/LetterVideos";
 import {ExplainerCompositions} from "./explainer/MoatExplainer";
 import {MoatVerticalComposition} from "./explainer/MoatVertical";
 import {CarouselCompositions} from "./carousel/Carousels";
+import {NapkinCompositions} from "./napkin/NapkinVideos";
 import {Banner} from "./banner/Banner";
 import {ChannelIntro, introTotal, IFPS} from "./intro/ChannelIntro";
 import {ShyamNapkin, nTotal, NFPS} from "./hand/ShyamNapkin";
@@ -41,6 +42,7 @@ export const RemotionRoot: React.FC = () => (
     <ExplainerCompositions/>
     <MoatVerticalComposition/>
     <CarouselCompositions/>
+    <NapkinCompositions/>
     <Still id="YTBanner" component={Banner} width={2560} height={1440}/>
     <Composition id="HAND-shyam" component={ShyamNapkin} durationInFrames={nTotal} fps={NFPS} width={1080} height={1920}/>
     <Composition id="HAND-hal" component={HalNapkin} durationInFrames={halTotal} fps={HFPS2} width={1080} height={1920}/>
@@ -60,6 +62,11 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bkm" component={BankNapkin2 as any} defaultProps={{sid: "bkm", label: "Canara + PNB · Q2"}} durationInFrames={bkTotal2(BK2.bkm)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkn" component={BankNapkin2 as any} defaultProps={{sid: "bkn", label: "Karnataka Bank · Q2"}} durationInFrames={bkTotal2(BK2.bkn)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bko" component={BankNapkin2 as any} defaultProps={{sid: "bko", label: "22 banks · Q2"}} durationInFrames={bkTotal2(BK2.bko)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkp" component={BankNapkin2 as any} defaultProps={{sid: "bkp", label: "Suryoday SFB · Q2"}} durationInFrames={bkTotal2(BK2.bkp)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkq" component={BankNapkin2 as any} defaultProps={{sid: "bkq", label: "Angel One · commodity"}} durationInFrames={bkTotal2(BK2.bkq)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkr" component={BankNapkin2 as any} defaultProps={{sid: "bkr", label: "Angel One · commodity"}} durationInFrames={bkTotal2(BK2.bkr)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bks" component={BankNapkin2 as any} defaultProps={{sid: "bks", label: "Jewellers vs gold"}} durationInFrames={bkTotal2(BK2.bks)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkt" component={BankNapkin2 as any} defaultProps={{sid: "bkt", label: "TCS Q2"}} durationInFrames={bkTotal2(BK2.bkt)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
   </>
 );

@@ -23,6 +23,7 @@ import bkr from "../../public/hand/bkr/beats.json";
 import bks from "../../public/hand/bks/beats.json";
 import bkt from "../../public/hand/bkt/beats.json";
 import bku from "../../public/hand/bku/beats.json";
+import bkv from "../../public/hand/bkv/beats.json";
 import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
 
 export const BFPS2 = 30;
@@ -30,7 +31,7 @@ const PAD = 0.15;
 type B = {key: string; text: string; sec: number};
 const frames = (bs: B[]) => bs.map((b) => Math.ceil((b.sec + PAD) * BFPS2));
 export const bkTotal2 = (bs: B[]) => frames(bs).reduce((a, b) => a + b, 0);
-export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku} as Record<string, B[]>;
+export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku, bkv} as Record<string, B[]>;
 
 const GOLD = "#b8860b", AMBER = "#e67700", GREY = "#555";
 const FILL: Record<string, string> = {[GREEN]: "rgba(43,138,62,0.18)", [RED]: "rgba(217,72,15,0.18)", [BLUE]: "rgba(28,100,184,0.18)",
@@ -1073,6 +1074,62 @@ const PN7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
   </Canvas>
 );};
 
+// ---------------- bkv: DMart Q2 FY27, napkin twin of the Vox Short (same seven lines; 11 Oct 2026) ----------------
+const DMN1: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <T y={470} size={64}>DMart · sales, Q2 FY27</T>
+    <HWrite x={540} y={760} start={at("eighteen percent")} size={210} anchor="middle" color={GREEN}>+18%</HWrite>
+    <Note y={960} start={at("eighteen percent")}>revenue +18.4% · filing of 10 Oct 2026</Note>
+  </Canvas>
+);};
+const DMN2: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="BUT" color={RED}/>
+    <HWrite x={540} y={600} start={at("its profit")} size={80} anchor="middle" color={GREY}>profit after tax</HWrite>
+    <HWrite x={540} y={800} start={at("seven point six")} size={190} anchor="middle" color={RED}>+7.6%</HWrite>
+  </Canvas>
+);};
+const DMN3: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="PRICES?"/><Napkin>
+    <HWrite x={140} y={600} start={at("gross margin")} size={80}>gross margin</HWrite>
+    <HWrite x={140} y={780} start={at("gross margin", 8)} size={92} color={BLUE}>14.24% → 14.15%</HWrite>
+    <HWrite x={140} y={960} start={at("barely moved")} size={80} color={GREEN}>barely moved</HWrite>
+  </Napkin></Canvas>
+);};
+const DMN4: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="STORES" color={BLUE}/><Napkin>
+    <HWrite x={140} y={600} start={at("last year")} size={80}>last year:</HWrite>
+    <HWrite x={620} y={600} start={at("eighty five")} size={130} color={RED}>85</HWrite>
+    <HDraw shape={sh.line(120, 700, 960, 700, {strokeWidth: 7, seed: 191})} start={at("It used to")} dur={8}/>
+    <HWrite x={140} y={880} start={at("It used to")} size={80} color={GREY}>before:</HWrite>
+    <HWrite x={620} y={880} start={at("about fifty")} size={110} color={GREY}>~50</HWrite>
+  </Napkin></Canvas>
+);};
+const DMN5: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="SO"/>
+    <HWrite x={540} y={580} start={at("depreciation")} size={80} anchor="middle" color={GREY}>depreciation</HWrite>
+    <HWrite x={540} y={720} start={at("twenty six")} size={130} anchor="middle" color={BLUE}>+26%</HWrite>
+    <HWrite x={540} y={900} start={at("interest")} size={80} anchor="middle" color={GREY}>interest</HWrite>
+    <HWrite x={540} y={1040} start={at("eighty seven")} size={130} anchor="middle" color={RED}>+87%</HWrite>
+  </Canvas>
+);};
+const DMN6: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="DEBT" color={RED}/><Napkin>
+    <HWrite x={140} y={600} start={at("nearly tripled")} size={76} color={GREY}>March:</HWrite>
+    <HWrite x={500} y={600} start={at("nearly tripled", 6)} size={90}>₹965 cr</HWrite>
+    <HWrite x={140} y={800} start={at("two thousand")} size={76} color={GREY}>Sept:</HWrite>
+    <HWrite x={500} y={800} start={at("two thousand", 6)} size={100} color={RED}>₹2,629 cr</HWrite>
+    <HWrite x={140} y={960} start={at("crore rupees")} size={64} color={GREY}>in six months</HWrite>
+  </Napkin></Canvas>
+);};
+const DMN7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <HWrite x={540} y={560} start={at("low price engine")} size={84} anchor="middle">low-price engine</HWrite>
+    <HWrite x={540} y={700} start={at("broken")} size={110} anchor="middle" color={RED}>broken?</HWrite>
+    <Verdict pick="WATCH" start={at("No.", 4)} y={900}/>
+    <Loop start={at("Because")}/>
+  </Canvas>
+);};
+
 const SCENES: Record<string, React.FC<SceneP>> = {
   d1: D1, d2: D2, d3: D3, d4: D4, d5: D5, d6: D6, e1: E1, e2: E2, e3: E3, e4: E4, e5: E5,
   f1: F1, f2: F2, f3: F3, f4: F4, f5: F5, g1: G1, g2: G2, g3: G3, g4: G4, g5: G5,
@@ -1081,7 +1138,8 @@ const SCENES: Record<string, React.FC<SceneP>> = {
   l1: L1, l2: L2, l3: L3, l4: L4, l5: L5, m1: M1, m2: M2, m3: M3, m4: M4, m5: M5,
   n1: N1, n2: N2, n3: N3, n4: N4, n5: N5, o1: O1, o2: O2, o3: O3, o4: O4, o5: O5,
   p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, q1: Q1, q2: Q2, q3: Q3, q4: Q4, q5: Q5, r1: R1, r2: R2, r3: R3, r4: R4, r5: R5, r6: R6, r7: R7, s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6, s7: S7, t1: TC1, t2: TC2, t3: TC3, t4: TC4, t5: TC5, t6: TC6, t7: TC7,
-  u1: PN1, u2: PN2, u3: PN3, u4: PN4, u5: PN5, u6: PN6, u7: PN7};
+  u1: PN1, u2: PN2, u3: PN3, u4: PN4, u5: PN5, u6: PN6, u7: PN7,
+  v1: DMN1, v2: DMN2, v3: DMN3, v4: DMN4, v5: DMN5, v6: DMN6, v7: DMN7};
 
 const Furniture: React.FC<{label: string}> = ({label}) => (
   <Canvas>

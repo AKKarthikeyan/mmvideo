@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"; DM = R / "dmart"; RP = R / "retailpeers"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -99,6 +99,13 @@ CLIPS = {
   "pe_cash": (PE/"PERSISTENTUSER1_12092026122147_PersistentEGMNoticeSE_IntimationSigned.pdf", "limited access to the cash-flows", 2, 1),
   "pe_cdo": (JD/"NSE_106813060.pdf", "Chief Delivery Officer", 2, 2, 1),
   "pe_icra": (JD/"NSE_106813119.pdf", "Rating Watch with Negative Implications", 1, 1),
+  "dm_pr": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Standalone PAT up by 7.6%", 1, 4),
+  "dm_lfl": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Two years and older DMart stores", 1, 1),
+  "dm_wage": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Wage inflation at entry-level", 1, 0),
+  "dm_borrow": (DM/"DMART_10102026151828_ASLOutcomeofBM10102026.pdf", "2,628.66", 2, 2),
+  "dm_cp": (DM/"DMART_10102026151828_ASLOutcomeofBM10102026.pdf", "Proceeds of commercial papers", 1, 2),
+  "dm_psf": (DM/"DMART_24072026191836_PresentationforAnalystInvestorMeet2026.pdf", "33,422", 2, 1),
+  "vm_festive": (RP/"VMART_01102026185733_BusinessUpdateQ2FY27.pdf", "Navratri", 1, 1),
   "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
 

@@ -166,6 +166,16 @@ SHORTS = {
   ("u6", "And for two years, Nagarro's cash stays in Nagarro."),
   ("u7", "So who pays for this deal? Because"),
  ],
+ # DMart Q2 FY27 (11 Oct 2026): napkin twin of the Vox Short, same seven lines.
+ "bkv": [
+  ("v1", "D Mart sold eighteen percent more last quarter."),
+  ("v2", "But its profit grew only seven point six percent."),
+  ("v3", "Did it cut prices? No. The gross margin barely moved."),
+  ("v4", "But last year it opened eighty five stores. It used to open about fifty."),
+  ("v5", "So depreciation is up twenty six percent, and interest is up eighty seven."),
+  ("v6", "And borrowings nearly tripled in six months, to two thousand six hundred and twenty nine crore rupees."),
+  ("v7", "So is the low price engine broken? No. Because"),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

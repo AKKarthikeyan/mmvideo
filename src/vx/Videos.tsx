@@ -24,8 +24,10 @@ import angelones from "../../public/vx/angelones/data.json";
 import jewels from "../../public/vx/jewels/data.json";
 import tcsq2 from "../../public/vx/tcsq2/data.json";
 import tcsq2s from "../../public/vx/tcsq2s/data.json";
+import persistent from "../../public/vx/persistent/data.json";
+import persistents from "../../public/vx/persistents/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},

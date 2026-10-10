@@ -67,6 +67,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bkr" component={BankNapkin2 as any} defaultProps={{sid: "bkr", label: "Angel One · commodity"}} durationInFrames={bkTotal2(BK2.bkr)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bks" component={BankNapkin2 as any} defaultProps={{sid: "bks", label: "Jewellers vs gold"}} durationInFrames={bkTotal2(BK2.bks)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkt" component={BankNapkin2 as any} defaultProps={{sid: "bkt", label: "TCS Q2"}} durationInFrames={bkTotal2(BK2.bkt)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bku" component={BankNapkin2 as any} defaultProps={{sid: "bku", label: "Persistent · Nagarro"}} durationInFrames={bkTotal2(BK2.bku)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
   </>
 );

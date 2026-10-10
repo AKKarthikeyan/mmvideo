@@ -156,6 +156,16 @@ SHORTS = {
   ("t6", "Its own C E O: there is a deflation because of the productivity benefit."),
   ("t7", "So is A I growing T C S, or shrinking it? Because"),
  ],
+ # Persistent / Nagarro (10 Oct 2026): napkin twin of the Vox Short, same seven lines.
+ "bku": [
+  ("u1", "Persistent has secured ninety four percent of Nagarro."),
+  ("u2", "The price values it at about one point two seven billion euros."),
+  ("u3", "In June, its chief executive said: no share sale."),
+  ("u4", "In October, shareholders approved up to four hundred and fifty million dollars of equity."),
+  ("u5", "Why? The loan behind the deal runs just eighteen months."),
+  ("u6", "And for two years, Nagarro's cash stays in Nagarro."),
+  ("u7", "So who pays for this deal? Because"),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

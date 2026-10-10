@@ -22,6 +22,7 @@ import bkq from "../../public/hand/bkq/beats.json";
 import bkr from "../../public/hand/bkr/beats.json";
 import bks from "../../public/hand/bks/beats.json";
 import bkt from "../../public/hand/bkt/beats.json";
+import bku from "../../public/hand/bku/beats.json";
 import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
 
 export const BFPS2 = 30;
@@ -29,7 +30,7 @@ const PAD = 0.15;
 type B = {key: string; text: string; sec: number};
 const frames = (bs: B[]) => bs.map((b) => Math.ceil((b.sec + PAD) * BFPS2));
 export const bkTotal2 = (bs: B[]) => frames(bs).reduce((a, b) => a + b, 0);
-export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt} as Record<string, B[]>;
+export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku} as Record<string, B[]>;
 
 const GOLD = "#b8860b", AMBER = "#e67700", GREY = "#555";
 const FILL: Record<string, string> = {[GREEN]: "rgba(43,138,62,0.18)", [RED]: "rgba(217,72,15,0.18)", [BLUE]: "rgba(28,100,184,0.18)",
@@ -1019,6 +1020,59 @@ const TC7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
   </Canvas>
 );};
 
+// ---------------- bku: Persistent / Nagarro, napkin twin of the Vox Short (same seven lines; 10 Oct 2026) ----------------
+const PN1: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <T y={470} size={64}>Persistent · share of Nagarro</T>
+    <HWrite x={540} y={760} start={at("ninety four")} size={210} anchor="middle" color={GREEN}>94%</HWrite>
+    <Note y={960} start={at("ninety four")}>94.04% secured · filing of 9 Oct 2026</Note>
+  </Canvas>
+);};
+const PN2: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="THE PRICE"/><Napkin>
+    <HWrite x={140} y={600} start={0} size={80}>Nagarro valued at</HWrite>
+    <HWrite x={140} y={800} start={at("one point two seven")} size={130} color={BLUE}>~€1.27 bn</HWrite>
+    <HWrite x={140} y={960} start={at("billion euros")} size={64} color={GREY}>debt included · all cash</HWrite>
+  </Napkin></Canvas>
+);};
+const PN3: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="JUNE" color={BLUE}/>
+    <HWrite x={540} y={600} start={at("chief executive")} size={70} anchor="middle" color={GREY}>the chief executive:</HWrite>
+    <HWrite x={540} y={780} start={at("no share sale")} size={120} anchor="middle" color={GREEN}>no share sale</HWrite>
+    <Note y={940} start={at("no share sale")}>“We don't intend doing any QIP” · call, 28 Jun</Note>
+  </Canvas>
+);};
+const PN4: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="OCTOBER" color={RED}/>
+    <HWrite x={540} y={600} start={at("shareholders approved")} size={70} anchor="middle" color={GREY}>shareholders approved</HWrite>
+    <HWrite x={540} y={780} start={at("four hundred")} size={130} anchor="middle" color={RED}>up to $450 M</HWrite>
+    <HWrite x={540} y={920} start={at("of equity")} size={70} anchor="middle">of equity</HWrite>
+  </Canvas>
+);};
+const PN5: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="WHY?"/><Napkin>
+    <HWrite x={140} y={600} start={at("The loan")} size={80}>the bridge loan:</HWrite>
+    <HWrite x={140} y={760} start={at("The loan", 8)} size={80} color={BLUE}>€1.4 bn</HWrite>
+    <HDraw shape={sh.line(120, 820, 960, 820, {strokeWidth: 7, seed: 181})} start={at("eighteen months")} dur={8}/>
+    <HWrite x={140} y={960} start={at("eighteen months", 6)} size={96} color={RED}>18 months</HWrite>
+  </Napkin></Canvas>
+);};
+const PN6: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="CLUE"/>
+    <HWrite x={540} y={580} start={at("two years")} size={90} anchor="middle" color={BLUE}>for 2 years:</HWrite>
+    <HWrite x={540} y={760} start={at("Nagarro's cash")} size={84} anchor="middle" color={RED}>Nagarro's cash</HWrite>
+    <HWrite x={540} y={900} start={at("stays in Nagarro")} size={84} anchor="middle" color={RED}>stays in Nagarro</HWrite>
+    <Note y={1040} start={at("stays in Nagarro")}>“limited access to the cash-flows of Nagarro” · EGM notice</Note>
+  </Canvas>
+);};
+const PN7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <HWrite x={540} y={600} start={at("who pays")} size={110} anchor="middle" color={RED}>so who pays?</HWrite>
+    <Verdict pick="WATCH" start={at("this deal", 6)} y={860}/>
+    <Loop start={at("Because")}/>
+  </Canvas>
+);};
+
 const SCENES: Record<string, React.FC<SceneP>> = {
   d1: D1, d2: D2, d3: D3, d4: D4, d5: D5, d6: D6, e1: E1, e2: E2, e3: E3, e4: E4, e5: E5,
   f1: F1, f2: F2, f3: F3, f4: F4, f5: F5, g1: G1, g2: G2, g3: G3, g4: G4, g5: G5,
@@ -1026,7 +1080,8 @@ const SCENES: Record<string, React.FC<SceneP>> = {
   j1: J1, j2: J2, j3: J3, j4: J4, j5: J5, k1: K1, k2: K2, k3: K3, k4: K4, k5: K5,
   l1: L1, l2: L2, l3: L3, l4: L4, l5: L5, m1: M1, m2: M2, m3: M3, m4: M4, m5: M5,
   n1: N1, n2: N2, n3: N3, n4: N4, n5: N5, o1: O1, o2: O2, o3: O3, o4: O4, o5: O5,
-  p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, q1: Q1, q2: Q2, q3: Q3, q4: Q4, q5: Q5, r1: R1, r2: R2, r3: R3, r4: R4, r5: R5, r6: R6, r7: R7, s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6, s7: S7, t1: TC1, t2: TC2, t3: TC3, t4: TC4, t5: TC5, t6: TC6, t7: TC7};
+  p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, q1: Q1, q2: Q2, q3: Q3, q4: Q4, q5: Q5, r1: R1, r2: R2, r3: R3, r4: R4, r5: R5, r6: R6, r7: R7, s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6, s7: S7, t1: TC1, t2: TC2, t3: TC3, t4: TC4, t5: TC5, t6: TC6, t7: TC7,
+  u1: PN1, u2: PN2, u3: PN3, u4: PN4, u5: PN5, u6: PN6, u7: PN7};
 
 const Furniture: React.FC<{label: string}> = ({label}) => (
   <Canvas>

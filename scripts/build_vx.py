@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -91,6 +91,14 @@ CLIPS = {
   "tc_opm": (JD/"NSE_106811193.pdf", "Operating Margin at 24.0%", 2, 1),
   "tc_opex": (JD/"NSE_106811193.pdf", "Other Operating expenses", 4, 2),
   "tc_bby": (TQ/"TCS_CORPCS_01102026182634_Signed_SE_Letter.pdf", "INR 1 Lakh", 2, 1),
+  "pe_94": (JD/"NSE_106812808.pdf", "94.04%", 4, 1),
+  "pe_bridge": (PE/"PERSISTENTUSER1_27062026030030_PSLFinalSEOutcomeoftheBMJune272026Signed.pdf", "EUR 1,400,000,000", 2, 3),
+  "pe_qip": (PE/"PERSISTENTUSER1_03072026121301_PSLInvestorCallTranscriptSubmissionSd.pdf", "intend doing any QIP", 0, 1),
+  "pe_450": (PE/"PERSISTENTUSER1_02092026221625_PersistentSEOutcomeoftheBMSeptember22026signed.pdf", "USD 450 million", 1, 2),
+  "pe_egm": (PE/"PERSISTENTUSER1_12092026122147_PersistentEGMNoticeSE_IntimationSigned.pdf", "18-month arrangement", 1, 0),
+  "pe_cash": (PE/"PERSISTENTUSER1_12092026122147_PersistentEGMNoticeSE_IntimationSigned.pdf", "limited access to the cash-flows", 2, 1),
+  "pe_cdo": (JD/"NSE_106813060.pdf", "Chief Delivery Officer", 2, 2, 1),
+  "pe_icra": (JD/"NSE_106813119.pdf", "Rating Watch with Negative Implications", 1, 1),
   "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
 

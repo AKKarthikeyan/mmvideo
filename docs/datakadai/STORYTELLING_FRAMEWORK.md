@@ -56,12 +56,12 @@ numbers already in the repo; each must be re-checked against its source before u
 | # | Type | The question it answers | Use when the data has | Example | Template |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **The Outlier** | Who is nothing like the rest? | One value far from all others | Homes where a woman owns a house or land: Meghalaya 65.3%, India 18.8% (NFHS-6) | Guess the State (built) |
-| 2 | **The Ranking** | Who is first, who is last? | A clear order with real gaps between places | Villages with no mobile signal: Odisha 1,177, Arunachal Pradesh 1,176, Madhya Pradesh 930 (DoT, Feb 2026) | Ranked countdown (to build) |
-| 3 | **The Change** | What moved, and how fast? | Two or more points in time | Women who have used the internet, India: 33.3% → 64.3% in four years (NFHS-5 to NFHS-6) | Then vs Now (to build) |
-| 4 | **The Face-off** | Which of two is ahead, and by how much? | Two comparable things: states, sexes, village and city | Men who have used the internet 80.5%, women 64.3% (NFHS-6) | State vs State, Women vs Men (to build) |
+| 2 | **The Ranking** | Who is first, who is last? | A clear order with real gaps between places | Villages with no mobile signal: Odisha 1,177, Arunachal Pradesh 1,176, Madhya Pradesh 930 (DoT, Feb 2026) | Ranking: league table of every state (built) |
+| 3 | **The Change** | What moved, and how fast? | Two or more points in time | Women who have used the internet, India: 33.3% → 64.3% in four years (NFHS-5 to NFHS-6) | Change: before-and-after for every state (built) |
+| 4 | **The Face-off** | Which of two is ahead, and by how much? | Two comparable things: states, sexes, village and city | Men who have used the internet 80.5%, women 64.3% (NFHS-6) | Face-off: two bars, then the gap for every state (built) |
 | 5 | **The Map** | Where is it concentrated? | A value for every state, with a regional pattern | Five states hold 4,903 of India's 8,748 uncovered villages | Mapped (built) |
-| 6 | **The Breakdown** | What is the whole made of? | Parts that add up to a total | How India gets to work: two-wheeler 42.6%, walking 28.3%, bus 6.7%, car 3.0% (NSO travel survey) | Share bars (to build) |
-| 7 | **The Myth-buster** | What does everyone believe that the data does not support? | A result that contradicts a common assumption, or two facts that seem to clash | Highest share of women married before 18 is West Bengal (36.4%), not Bihar (34.6%) (NFHS-6) | Paradox, or Guess the State with the "obvious" answer as a decoy |
+| 6 | **The Breakdown** | What is the whole made of? | Parts that add up to a total | How India gets to work: two-wheeler 42.6%, walking 28.3%, bus 6.7%, car 3.0% (NSO travel survey) | Breakdown: 100-square grid (built) |
+| 7 | **The Myth-buster** | What does everyone believe that the data does not support? | A result that contradicts a common assumption, or two facts that seem to clash | Highest share of women married before 18 is West Bengal (36.4%), not Bihar (34.6%) (NFHS-6) | Myth-buster: the usual guess, then the full league table (built) |
 
 Two tools that work inside any type, both from VC2:
 - **Scale made literal.** Turn a number into something a person can picture: "1 in 5 villages in Arunachal Pradesh",
@@ -79,3 +79,11 @@ Two tools that work inside any type, both from VC2:
 6. Is there a value for every state? → Map if the pattern is regional, Ranking if the order is the story.
 
 Rotate types through the week so the channel does not look templated (AK's rule, 10 Oct 2026).
+
+## Templates (built 11 Oct 2026)
+All seven types now have a template. Types 2, 3, 4, 6 and 7 share one file, `src/datayt/DataStory.tsx`, built by
+`scripts/datayt/build_story.py` from one config per story in `public/datayt/stories/configs/`. Sample stories:
+`rank01` (unemployment rate, PLFS 2025), `chg01` (women online, NFHS-5 to NFHS-6), `face01` (women vs men online),
+`brk01` (how India gets to work), `myth01` (men who drink: not Goa). Every one shows all states or all parts, and
+keeps the header, chart and caption in separate strips. The builder refuses a #1 claim with a lead under 1 point and
+a "myth" answer that is actually in the top three.

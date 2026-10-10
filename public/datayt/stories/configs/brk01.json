@@ -1,0 +1,95 @@
+{
+ "id": "brk01",
+ "type": "breakdown",
+ "chip": "BREAKDOWN",
+ "source_short": "NSO travel survey · 2025-26",
+ "unit": "%",
+ "source": "National Household Travel Survey, July 2025 to June 2026 (NSO, MoSPI), Table 4. Workers age 15+ who made a same-day trip to work, by main mode. Other modes (about 1.4%) not shown; each square is about 1% of workers.",
+ "parts": [
+  {
+   "name": "Two-wheeler",
+   "v": 42.6
+  },
+  {
+   "name": "Walk",
+   "v": 28.3
+  },
+  {
+   "name": "Bicycle",
+   "v": 10.7
+  },
+  {
+   "name": "Bus",
+   "v": 6.7
+  },
+  {
+   "name": "Auto-rickshaw",
+   "v": 6.4
+  },
+  {
+   "name": "Car",
+   "v": 3.0
+  },
+  {
+   "name": "Train, metro, tram",
+   "v": 2.1
+  }
+ ],
+ "colors": [
+  "#7A2340",
+  "#C9822F",
+  "#2F8F5B",
+  "#2A366F",
+  "#E8A33D",
+  "#B3584D",
+  "#7A6F66"
+ ],
+ "palette": "A",
+ "title": [
+  "How does",
+  "India get",
+  "*to work?*"
+ ],
+ "title_sub": "100 workers, 100 squares.",
+ "headline": [
+  "How India",
+  "*gets to work*"
+ ],
+ "sub": "Workers age 15+ · main mode of travel",
+ "panels": {
+  "parts": {
+   "kicker": "Each square is 1 worker in 100",
+   "line": "Seven ways to get there."
+  },
+  "big": {
+   "kicker": "Number one",
+   "line": "*Two-wheelers: 42.6%.*",
+   "sub": "Walking is second, at 28.3%."
+  },
+  "small": {
+   "kicker": "And the car?",
+   "line": "Just *3 in 100.*",
+   "sub": "Trains, metros and trams together: 2.1%."
+  }
+ },
+ "focus": {
+  "big": [
+   "Two-wheeler"
+  ],
+  "small": [
+   "Car"
+  ]
+ },
+ "end": {
+  "q": "How do you get to work?",
+  "sub": "Comment below."
+ },
+ "yt_title": "How India gets to work: 100 workers in 100 squares 🛵",
+ "vo": {
+  "title": "How does India get to work?",
+  "parts": "Picture 100 workers. 43 ride a two-wheeler. 28 walk. 11 cycle. 7 take the bus. 6 take an auto.",
+  "big": "The two-wheeler is number one, at 42.6 percent.",
+  "small": "And the car? Just 3 in 100.",
+  "end": "How do you get to work? Comment below."
+ }
+}

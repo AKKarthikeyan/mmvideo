@@ -7,6 +7,8 @@ import {IndiaShort} from "./IndiaShort";
 import {SHORTS} from "./shortsData";
 import {IndiaMapped} from "./IndiaMapped";
 import {MAPPED} from "./mappedData";
+import {DataStory} from "./DataStory";
+import {STORIES} from "./storyData";
 import {BrandStills} from "./Brand";
 import {PosterStills} from "./Poster";
 
@@ -18,5 +20,7 @@ export const DataVideoCompositions: React.FC = () => <>
   {SHORTS.map((d) => <Composition key={d.id} {...({id: `DATA-${d.id}`, component: IndiaShort, defaultProps: {D: d},
     durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1080, height: 1920} as any)}/>)}
   {MAPPED.map((d) => <Composition key={d.id} {...({id: `DATA-${d.id}`, component: IndiaMapped, defaultProps: {D: d},
+    durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1080, height: 1920} as any)}/>)}
+  {STORIES.map((d) => <Composition key={d.id} {...({id: `DATA-${d.id}`, component: DataStory, defaultProps: {D: d},
     durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1080, height: 1920} as any)}/>)}
 </>;

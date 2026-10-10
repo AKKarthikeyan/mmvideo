@@ -87,3 +87,10 @@ All seven types now have a template. Types 2, 3, 4, 6 and 7 share one file, `src
 `brk01` (how India gets to work), `myth01` (men who drink: not Goa). Every one shows all states or all parts, and
 keeps the header, chart and caption in separate strips. The builder refuses a #1 claim with a lead under 1 point and
 a "myth" answer that is actually in the top three.
+
+## Map in the video, list in the post (AK, 11 Oct 2026)
+- In a state story the video shows the hook, then the India map filling from the lowest value to the highest with a
+  number on every state, then only the top five and bottom five as bars. The full 36-row table is not in the video.
+- Each state story gets two chart posts, each in 4:5 (Instagram) and 16:9 (X): the finished map, and the full ranked
+  list. Remotion stills: `DK-story-<id>-map-ig`, `-map-x`, `-list-ig`, `-list-x` (`src/datayt/StoryPosts.tsx`).
+- The map component is shared: `src/datayt/StateMap.tsx`. Breakdown stories have no states and keep the 100-square grid.

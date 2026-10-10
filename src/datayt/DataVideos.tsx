@@ -9,12 +9,14 @@ import {IndiaMapped} from "./IndiaMapped";
 import {MAPPED} from "./mappedData";
 import {DataStory} from "./DataStory";
 import {STORIES} from "./storyData";
+import {StoryPostStills} from "./StoryPosts";
 import {BrandStills} from "./Brand";
 import {PosterStills} from "./Poster";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
   <PosterStills/>
+  <StoryPostStills/>
   <Composition id="DATA-tn-alcohol" component={TnAlcohol} durationInFrames={TN_ALCOHOL_FRAMES} fps={TN_ALCOHOL_FPS} width={1920} height={1080}/>
   <Composition id="DATA-tn-alcohol-short" component={TnAlcohol} durationInFrames={TN_ALCOHOL_FRAMES} fps={TN_ALCOHOL_FPS} width={1080} height={1920}/>
   {SHORTS.map((d) => <Composition key={d.id} {...({id: `DATA-${d.id}`, component: IndiaShort, defaultProps: {D: d},

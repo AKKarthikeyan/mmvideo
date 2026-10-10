@@ -35,24 +35,20 @@
    "line": "Men *80.5%.* Women *64.3%.*",
    "sub": "A gap of 16 points."
   },
-  "rows": {
-   "kicker": "Sorted by size of the gap",
-   "line": "Men lead in *32 of 34.*",
-   "sub": "The number is the gap in percentage points."
+  "map": {
+   "kicker": "Gap in percentage points",
+   "line": "Men lead in *32 of 34.*"
   },
-  "gap": {
-   "kicker": "Widest and the exceptions",
-   "line": "Widest gap: *Karnataka, 26 points.*",
-   "sub": "Women lead in only two: Goa and Sikkim."
+  "top": {
+   "kicker": "Widest gaps",
+   "line": "Top 5"
+  },
+  "bottom": {
+   "kicker": "Narrowest gaps",
+   "line": "Women lead in *Goa and Sikkim*"
   }
  },
- "focus": {
-  "gap": [
-   "Karnataka",
-   "Goa",
-   "Sikkim"
-  ]
- },
+ "focus": {},
  "end": {
   "q": "Is the gap closing where you live?",
   "sub": "Comment below."
@@ -61,8 +57,9 @@
  "vo": {
   "title": "Who is more online in India: women or men?",
   "duel": "Men: 80.5 percent. Women: 64.3.",
-  "rows": "Men lead in 32 of 34 states and union territories.",
-  "gap": "The widest gap is in Karnataka: 26 points. Women lead only in Goa and Sikkim.",
+  "map": "Men lead in 32 of 34 states and union territories.",
+  "top": "The widest gap is in Karnataka: 26 points.",
+  "bottom": "Women lead in only two: Goa and Sikkim.",
   "end": "Is the gap closing where you live? Comment below."
  }
 }

@@ -18,17 +18,18 @@ sys.path.insert(0, os.path.dirname(__file__))
 import music_shorts as M
 import voice_dk as V
 from build_india_shorts import PALETTES
+from build_mapped import ALIAS as GEO_ALIAS, NUDGE, GEO
 
 SHORT = {"Andaman and Nicobar Islands": "A&N Islands", "Dadra & Nagar Haveli and Daman & Diu": "DNH & DD",
          "Dadra and Nagar Haveli and Daman and Diu": "DNH & DD", "NCT of Delhi": "Delhi", "Jammu and Kashmir": "J&K",
          "Arunachal Pradesh": "Arunachal", "Himachal Pradesh": "Himachal", "Madhya Pradesh": "Madhya Pradesh", "Uttar Pradesh": "Uttar Pradesh"}
 VO_LEAD, FPS = 0.15, 30
-SCENES = {"ranking": [("title", 2), ("table", 4), ("top", 2), ("context", 2), ("end", 2)],
-          "change": [("title", 2), ("india", 2), ("rows", 4), ("movers", 2), ("end", 2)],
-          "faceoff": [("title", 2), ("duel", 2), ("rows", 4), ("gap", 2), ("end", 2)],
+SCENES = {"ranking": [("title", 2), ("map", 4), ("top", 2), ("bottom", 2), ("end", 2)],
+          "change": [("title", 2), ("india", 2), ("map", 4), ("top", 2), ("bottom", 2), ("end", 2)],
+          "faceoff": [("title", 2), ("duel", 2), ("map", 4), ("top", 2), ("bottom", 2), ("end", 2)],
           "breakdown": [("title", 2), ("parts", 4), ("big", 2), ("small", 2), ("end", 2)],
-          "myth": [("title", 2), ("guess", 2), ("table", 4), ("truth", 2), ("end", 2)]}
-MAIN = {"ranking": "table", "change": "rows", "faceoff": "rows", "breakdown": "parts", "myth": "table"}      # the scene where every row appears
+          "myth": [("title", 2), ("guess", 2), ("map", 4), ("top", 2), ("truth", 2), ("end", 2)]}
+MAIN = {"ranking": "map", "change": "map", "faceoff": "map", "breakdown": "parts", "myth": "map"}      # the scene where every state or part appears
 _cache = {}
 
 
@@ -102,6 +103,49 @@ def build(cfg):
     else:
         raise SystemExit(f"{sid}: unknown type {typ}")
 
+    geo = lambda x: GEO_ALIAS.get(x, x)
+    focus_geo = {k: [geo(x) for x in v] for k, v in cfg.get("focus", {}).items()}
+    if typ != "breakdown":
+        # one number per state for the map, and the five at each end for the bars under it
+        if typ in ("ranking", "myth"):
+            metric = dict(vals); lab = lambda s_: fmt(vals[s_], unit); det = lambda s_: ""
+            maplab = lambda s_: fmt(vals[s_], "")       # the unit is in the header; bare numbers keep small states readable
+        else:
+            metric = {s_: (b[s_] - a[s_]) if typ == "change" else abs(b[s_] - a[s_]) for s_ in common}
+            lab = (lambda s_: f"{b[s_] - a[s_]:+.1f}") if typ == "change" else (lambda s_: f"{abs(b[s_] - a[s_]):.1f}")
+            det = (lambda s_: f"{fmt(a[s_], unit)} → {fmt(b[s_], unit)}") if typ == "change" else \
+                  (lambda s_: f"{cfg['a']['name']} {fmt(a[s_], unit)} · {cfg['b']['name']} {fmt(b[s_], unit)}")
+        if typ not in ("ranking", "myth"):
+            maplab = lab
+        missing = {geo(s_) for s_ in metric} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        asc = sorted(metric, key=lambda s_: (metric[s_], s_))
+        n = len(asc)
+        bucket = {s_: min(4, i * 5 // n) for i, s_ in enumerate(asc)}
+        edges = [asc[min(n - 1, (k * n + 4) // 5)] for k in range(1, 5)]
+        cuts = [metric[e] for e in edges]
+        pm = "+" if typ == "change" else ""
+        body["map"] = [{"name": geo(s_), "short": nm(s_), "label": maplab(s_), "bucket": bucket[s_], "nudge": NUDGE.get(geo(s_), (0, 0)),
+                        "alt": typ == "faceoff" and b[s_] < a[s_]} for s_ in asc]
+        body["mapBands"] = [{"label": f"under {pm}{cuts[0]:g}", "color": pal["bands"][0]}] + \
+                           [{"label": f"{pm}{cuts[i]:g} to {pm}{cuts[i + 1]:g}", "color": pal["bands"][i + 1]} for i in range(3)] + \
+                           [{"label": f"{pm}{cuts[3]:g} and over", "color": pal["bands"][4]}]
+        body["nodata"] = sorted(set(GEO) - {geo(s_) for s_ in metric})
+        desc = asc[::-1]
+        if typ in ("ranking", "myth") and cfg.get("order", "high") == "low":
+            desc = asc
+        row = lambda s_: {"name": nm(s_), "geo": geo(s_), "v": abs(metric[s_]), "label": lab(s_), "detail": det(s_), "bucket": bucket[s_]}
+        body["top5"] = [row(s_) for s_ in desc[:5]]
+        body["bottom5"] = [row(s_) for s_ in desc[::-1][:5]]
+        body["barMax"] = max(abs(v) for v in metric.values())
+        if typ in ("ranking", "myth") and india is not None:
+            body["indiaRow"] = {"name": "India", "v": india, "label": fmt(india, unit)}
+        focus_geo.setdefault("top", [r["geo"] for r in body["top5"]])
+        focus_geo.setdefault("bottom", [r["geo"] for r in body["bottom5"]])
+        if typ == "myth":
+            focus_geo.setdefault("truth", [geo(rk[0][0]), geo(cfg["myth"]["state"])])
+            body["myth"]["geo"] = geo(cfg["myth"]["state"]); body["truth"]["geo"] = geo(rk[0][0])
+
     vo = {}
     for sec, tx in cfg.get("vo", {}).items():
         fn, dur = V.say(tx, f"{d}/vo_{sec}")
@@ -116,17 +160,17 @@ def build(cfg):
     total = round(t + 0.5, 3)
     # every row or part gets its own beat inside the main scene
     main = MAIN[typ]
-    items = body.get("rows") or body.get("parts")
+    items = body.get("map") or body.get("parts")
     span = T[main][1] - T[main][0] - 2.5 * M.BEAT
     step = min(M.BEAT / 2, span / max(1, len(items)))
-    order = list(range(len(items)))[::-1] if typ in ("ranking", "myth") else list(range(len(items)))      # league tables fill from the bottom
+    order = list(range(len(items)))      # the map fills from the lowest value to the highest; parts in the order given
     ticks = []
     for k, i in enumerate(order):
         items[i]["at"] = round(T[main][0] + M.BEAT + k * step, 3); ticks.append(items[i]["at"])
     out = {"id": sid, "type": typ, "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "title": cfg["title"],
            "titleSub": cfg.get("title_sub", ""), "headline": cfg["headline"], "sub": cfg.get("sub", ""), "unit": unit, "accent": pal["accent"],
            "accent2": pal["accent2"], "bands": pal["bands"], "t": T, "total": total, "fps": FPS, "end": cfg["end"], **body,
-           "panels": cfg.get("panels", {}), "focus": {k: [nm(x) for x in v] for k, v in cfg.get("focus", {}).items()},
+           "panels": cfg.get("panels", {}), "focus": {k: [nm(x) for x in v] for k, v in cfg.get("focus", {}).items()}, "focusGeo": focus_geo,
            "vo": list(vo.values()), "voiceEngine": V.ENGINE, "voice": V.VOICE, "ytTitle": cfg.get("yt_title", "")}
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     names = [n for n, _ in SCENES[typ]]

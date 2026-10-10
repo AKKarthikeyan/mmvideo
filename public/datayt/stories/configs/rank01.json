@@ -27,31 +27,20 @@
  ],
  "sub": "Age 15+, usual status · India 3.1%",
  "panels": {
-  "table": {
-   "kicker": "From last place to first",
-   "line": "36 states and UTs.",
-   "sub": "The longer the bar, the higher the share of the labour force without work."
+  "map": {
+   "kicker": "From the lowest rate to the highest",
+   "line": "36 states and UTs, *mapped.*"
   },
   "top": {
-   "kicker": "Highest",
-   "line": "*Andaman & Nicobar: 10%.* Goa is next at 8.3%."
+   "kicker": "Highest unemployment",
+   "line": "Top 5"
   },
-  "context": {
-   "kicker": "The other end",
-   "line": "Gujarat: *0.9%.* India: 3.1%.",
-   "sub": "The black line marks the India rate."
+  "bottom": {
+   "kicker": "Lowest unemployment",
+   "line": "Bottom 5"
   }
  },
- "focus": {
-  "top": [
-   "Andaman and Nicobar Islands",
-   "Goa"
-  ],
-  "context": [
-   "Gujarat",
-   "Madhya Pradesh"
-  ]
- },
+ "focus": {},
  "end": {
   "q": "Where does your state rank?",
   "sub": "Comment below."
@@ -59,9 +48,9 @@
  "yt_title": "Unemployment rate: every Indian state ranked 📊",
  "vo": {
   "title": "Where is unemployment highest in India?",
-  "table": "Here is every state and union territory, from the lowest rate to the highest.",
+  "map": "Here is every state and union territory, from the lowest rate to the highest.",
   "top": "Highest: Andaman and Nicobar, at 10 percent. Then Goa, at 8.3.",
-  "context": "Lowest: Gujarat, at 0.9 percent. The India rate is 3.1.",
+  "bottom": "Lowest: Gujarat, at 0.9 percent. The India rate is 3.1.",
   "end": "Where does your state rank? Comment below."
  }
 }

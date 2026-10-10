@@ -28,12 +28,12 @@ TOP10 = [
  ("Avenue Supermarts (DMart): Q2 sales +18.4%, profit +7.6%", ART),
  ("Jain Irrigation: CRISIL reaffirms BBB-/Negative; about ₹449 crore due in March 2027", B + "JISLJALEQS_10102026125113_SE_Letter_Credit_Ratings_Crisil_10102026_.pdf"),
  ("Oswal Pumps: subsidiary to build a 1.2 GW solar cell plant for about ₹456 crore", B + "OSWALPUMPS_10102026180647_SE_LetterPressReleaseOPL10102026.pdf"),
- ("Western Capital Advisors: about ₹18.96 crore of unauthorised transfers disclosed", "https://nsearchives.nseindia.com/content/debt/WDM/WCAPLcompliance_10102026112503_Intimationo_of_cyber_fraud.pdf"),
+ ("Western Capital Advisors (debt-listed): about ₹18.96 crore of unauthorised transfers disclosed", "https://nsearchives.nseindia.com/content/debt/WDM/WCAPLcompliance_10102026112503_Intimationo_of_cyber_fraud.pdf"),
  ("Signature Global: Q2 pre-sales ₹18.3 billion, against ₹20.2 billion a year ago", B + "SGLOBAL_10102026185842_PressRelease.pdf"),
  ("Authum Investment: ₹350 crore paid under the Wind World (India) resolution plan", B + "Authum123_10102026191402_Acquisitondis.pdf"),
  ("KEC International: ₹1,014 crore of transmission orders", B + "KEC_10102026144951_PressRelease.pdf"),
  ("Viviana Power Tech: contracts of ₹466.74 crore from Madhya Gujarat Vij Company", B + "VIVIANA_10102026133007_VIVIANA__Intimation_of_Receiving_Order_MGVCL_10102026.pdf"),
- ("Milky Mist Dairy Food: says it has received no notice from FSSAI about its paneer", B + "MILKYMIST_10102026124100_intimationonclarificationofnewsreports10102026.pdf"),
+ ("Milky Mist Dairy Food: says it has received no specific notice from FSSAI directing an inquiry into its paneer", B + "MILKYMIST_10102026124100_intimationonclarificationofnewsreports10102026.pdf"),
  ("Kesoram Industries: CFO resigns, leaves on 2 January 2027", B + "KESORAMIND_10102026153232_Reg30.pdf"),
 ]
 DISC = "Educational research, not investment advice. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser. No buy/sell recommendations, no price targets."

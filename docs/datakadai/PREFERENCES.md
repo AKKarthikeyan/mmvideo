@@ -65,6 +65,8 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   (`src/datayt/TnAlcohol.tsx`). The all-India version is the MAPPED template: `src/datayt/IndiaMapped.tsx`, built by
   `scripts/datayt/build_mapped.py` from one config per story in `public/datayt/mapped/configs/`.
 - The map and the text above it must never overlap. MAPPED keeps three fixed strips: header, map, panel.
+- Two video families, both kept (AK, 11 Oct 2026): the all-states templates, and "beat" Shorts that show one thing at
+  a time (`BeatStory.tsx`: clue quiz, top-five countdown, state vs state). See `SHORTS_BENCHMARK.md`.
 - Map in the video, list in the post (AK, 11 Oct 2026): state stories show the map with every state's number, then
   top five and bottom five as bars; the full ranked list goes out as a chart post beside the finished map.
 

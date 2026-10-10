@@ -1,0 +1,469 @@
+{
+ "id": "cnt01",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "NFHS-6 · 2023-24",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets. Births in the five years before the survey delivered by caesarean section.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Where are",
+    "*C-sections*",
+    "most common?"
+   ],
+   "vo": "Where in India are C-section births most common?",
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "big": "46.9%",
+   "frac": 0.7540192926045015,
+   "label": "of births are by C-section",
+   "vo": "Five: Tamil Nadu, 46.9.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "J&K",
+   "geo": "Jammu and Kashmir",
+   "big": "51.0%",
+   "frac": 0.8199356913183279,
+   "label": "of births are by C-section",
+   "vo": "Four: Jammu and Kashmir, 51.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Sikkim",
+   "geo": "Sikkim",
+   "big": "51.1%",
+   "frac": 0.8215434083601286,
+   "label": "of births are by C-section",
+   "vo": "Three: Sikkim, 51.1.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "big": "52.2%",
+   "frac": 0.8392282958199357,
+   "label": "of births are by C-section",
+   "vo": "Two: Andhra Pradesh, 52.2.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Telangana",
+   "geo": "Telangana",
+   "big": "62.2%",
+   "frac": 1.0,
+   "label": "of births are by C-section",
+   "vo": "Number one: Telangana, 62.2 percent.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "C-section births, *every state*",
+   "sub": "India 27.2%",
+   "vo": "Every state, mapped. India: 27.2 percent.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "kind": "end",
+   "q": "Is your state in the top five?",
+   "sub": "Comment below.",
+   "vo": "Is your state in the top five? Comment below.",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Meghalaya",
+   "label": "6.4",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ]
+  },
+  {
+   "name": "Nagaland",
+   "label": "9.9",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ]
+  },
+  {
+   "name": "Bihar",
+   "label": "13.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Mizoram",
+   "label": "13.5",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ]
+  },
+  {
+   "name": "Rajasthan",
+   "label": "15.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Jharkhand",
+   "label": "15.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "16.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "17.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "19.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "20.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Assam",
+   "label": "22.9",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ]
+  },
+  {
+   "name": "Haryana",
+   "label": "25.6",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ]
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "25.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "27.4",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ]
+  },
+  {
+   "name": "Ladakh",
+   "label": "27.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "28.6",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ]
+  },
+  {
+   "name": "Gujarat",
+   "label": "29.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Odisha",
+   "label": "29.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "29.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tripura",
+   "label": "30.1",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ]
+  },
+  {
+   "name": "Maharashtra",
+   "label": "33.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "35.0",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ]
+  },
+  {
+   "name": "Chandigarh",
+   "label": "36.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ]
+  },
+  {
+   "name": "Kerala",
+   "label": "41.3",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ]
+  },
+  {
+   "name": "Puducherry",
+   "label": "43.2",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ]
+  },
+  {
+   "name": "West Bengal",
+   "label": "44.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Karnataka",
+   "label": "45.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Goa",
+   "label": "46.2",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ]
+  },
+  {
+   "name": "Punjab",
+   "label": "46.6",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ]
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "46.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "51.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Sikkim",
+   "label": "51.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ]
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "52.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Telangana",
+   "label": "62.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ]
+  }
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.448,
+   "at": 0.12,
+   "text": "Where in India are C-section births most common?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.265,
+   "at": 3.991,
+   "text": "Five: Tamil Nadu, 46.9."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 2.899,
+   "at": 7.862,
+   "text": "Four: Jammu and Kashmir, 51."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.526,
+   "at": 11.733,
+   "text": "Three: Sikkim, 51.1."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.97,
+   "at": 17.539,
+   "text": "Two: Andhra Pradesh, 52.2."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.866,
+   "at": 23.346,
+   "text": "Number one: Telangana, 62.2 percent."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.519,
+   "at": 29.152,
+   "text": "Every state, mapped. India: 27.2 percent."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.847,
+   "at": 34.959,
+   "text": "Is your state in the top five? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "C-section births: India's top 5 states 🏥"
+}

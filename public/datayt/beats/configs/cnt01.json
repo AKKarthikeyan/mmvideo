@@ -1,0 +1,25 @@
+{
+ "id": "cnt01",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "source_short": "NFHS-6 · 2023-24",
+ "palette": "E",
+ "data": {
+  "nfhs": 38
+ },
+ "unit": "%",
+ "label": "of births are by C-section",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets. Births in the five years before the survey delivered by caesarean section.",
+ "hook": [
+  "Where are",
+  "*C-sections*",
+  "most common?"
+ ],
+ "hook_vo": "Where in India are C-section births most common?",
+ "map_title": "C-section births, *every state*",
+ "end": {
+  "q": "Is your state in the top five?",
+  "sub": "Comment below."
+ },
+ "yt_title": "C-section births: India's top 5 states 🏥"
+}

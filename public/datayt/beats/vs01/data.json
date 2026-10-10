@@ -1,0 +1,174 @@
+{
+ "id": "vs01",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "NFHS-6 · 2023-24",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "hook",
+   "lines": [
+    "*Tamil Nadu*",
+    "vs *Kerala.*",
+    "5 rounds."
+   ],
+   "vo": "Tamil Nadu versus Kerala. Five rounds.",
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "versus",
+   "label": "Women online",
+   "note": "higher is better",
+   "a": "59.5%",
+   "b": "87.3%",
+   "win": "b",
+   "sa": 0,
+   "sb": 1,
+   "vo": "Round 1, women online: Kerala.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "versus",
+   "label": "Women with 10+ years of school",
+   "note": "higher is better",
+   "a": "64.2%",
+   "b": "86.6%",
+   "win": "b",
+   "sa": 0,
+   "sb": 2,
+   "vo": "Round 2, women with ten years of school: Kerala.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "kind": "versus",
+   "label": "Stunted children",
+   "note": "lower is better",
+   "a": "20.7%",
+   "b": "20.1%",
+   "win": "b",
+   "sa": 0,
+   "sb": 3,
+   "vo": "Round 3, stunted children, lower is better: Kerala.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "versus",
+   "label": "Homes with health insurance",
+   "note": "higher is better",
+   "a": "61.1%",
+   "b": "57.1%",
+   "win": "a",
+   "sa": 1,
+   "sb": 3,
+   "vo": "Round 4, health insurance: Tamil Nadu.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "versus",
+   "label": "Women with their own phone",
+   "note": "higher is better",
+   "a": "76.8%",
+   "b": "89.1%",
+   "win": "b",
+   "sa": 1,
+   "sb": 4,
+   "vo": "Round 5, women with their own phone: Kerala.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "score",
+   "sa": 1,
+   "sb": 4,
+   "vo": "Final score: Kerala 4, Tamil Nadu 1.",
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "kind": "end",
+   "q": "Which two states next?",
+   "sub": "Comment below.",
+   "vo": "Which two states next? Comment below.",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Tamil Nadu",
+  "geo": "Tamil Nadu"
+ },
+ "b": {
+  "name": "Kerala",
+  "geo": "Kerala"
+ },
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 2.716,
+   "at": 0.12,
+   "text": "Tamil Nadu versus Kerala. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.056,
+   "at": 3.991,
+   "text": "Round 1, women online: Kerala."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.787,
+   "at": 7.862,
+   "text": "Round 2, women with ten years of school: Kerala."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.12,
+   "at": 13.668,
+   "text": "Round 3, stunted children, lower is better: Kerala."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.657,
+   "at": 19.475,
+   "text": "Round 4, health insurance: Tamil Nadu."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.84,
+   "at": 25.281,
+   "text": "Round 5, women with their own phone: Kerala."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.395,
+   "at": 31.088,
+   "text": "Final score: Kerala 4, Tamil Nadu 1."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.533,
+   "at": 34.959,
+   "text": "Which two states next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Tamil Nadu vs Kerala: 5 rounds of data ⚔️"
+}

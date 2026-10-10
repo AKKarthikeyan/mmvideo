@@ -75,3 +75,16 @@ not adjusted for that, so read the table as direction, not proof. Frames were lo
   (4) "If this state were a country" (needs World Bank data); (5) "Why is X number one?" short explainer.
 - This is a benchmark of other channels, not a test of ours. The honest check is to post both styles and compare
   "viewed vs swiped away" and average percentage viewed in YouTube Studio.
+
+## Decision (AK, 11 Oct 2026): keep both styles
+- The all-states templates stay (Mapped, Ranking, Change, Face-off, Myth-buster, Breakdown, Guess the State).
+- A second family, "beat" Shorts, sits beside them: one thing on screen at a time, very large type, a cut every bar or
+  two. Template `src/datayt/BeatStory.tsx`, builder `scripts/datayt/build_beats.py`, one config per story in
+  `public/datayt/beats/configs/`. Three types so far:
+  - `clues`: guess the state from five clues, then a 3-2-1 and the reveal (sample `clue01`, Kerala)
+  - `countdown`: top five, one state per beat, with the all-states map as the closing beat (sample `cnt01`, C-section births)
+  - `versus`: state against state over five categories with a running score (sample `vs01`, Tamil Nadu vs Kerala)
+- The builder checks every "highest" or "lowest" clue against the data and refuses a tied category.
+- Not built: "If this state were a country" (needs World Bank data and a sound way to convert state GDP) and the
+  "Why is X number one?" explainer.
+- Compare the two families in YouTube Studio on viewed vs swiped away and average percentage viewed.

@@ -59,6 +59,12 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   2. `.venv/bin/python scripts/datayt/post_pack.py <id> <YYYY-MM-DD>`
   3. Pack lands in `out/datakadai/daily/<date>/<id>/`: `short.mp4`, `ig.png`, `x.png`, `captions.md`.
 
+## What we optimise for (AK, 11 Oct 2026)
+- Virality is the most important criterion when choosing and ranking video ideas: will people share it, argue in the
+  comments, tag someone, watch it twice. It carries the most weight in any idea scoring.
+- Virality must come from the data. No rage-bait, no mocking a state or community, no claim the numbers cannot carry.
+  Accuracy and the hard rules still gate every idea.
+
 ## Video format rules (AK, 10 Oct 2026)
 - Don't make every Short a Guess the State quiz. Rotate templates.
 - Show every state's number on the map in motion, not only the top 5, the way the Tamil Nadu alcohol map does

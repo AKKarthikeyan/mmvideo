@@ -1,0 +1,617 @@
+{
+ "id": "rc01",
+ "type": "race",
+ "chip": "THEN vs NOW",
+ "sourceShort": "Fisheries Ministry · to 2023-24",
+ "source": "Ministry of Fisheries, Handbook on Fisheries Statistics, as published in the RBI Handbook of Statistics on Indian States, Table 93: fish production in lakh tonnes, sea and inland together. 2023-24 is provisional. Andhra Pradesh includes Telangana until 2013-14. State figures may not add up to the all-India total.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "2010-11: two states",
+    "*level* on fish.",
+    "Then one *took off.*"
+   ],
+   "vo": "In twenty ten-eleven, West Bengal and Andhra Pradesh were level in fish production.",
+   "spots": [
+    {
+     "geo": "West Bengal",
+     "also": [],
+     "name": "West Bengal",
+     "big": "14.4",
+     "note": "lakh tonnes",
+     "tone": "b",
+     "at": [
+      742,
+      596
+     ]
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "also": [
+      "Telangana"
+     ],
+     "name": "Andhra Pradesh",
+     "big": "13.7",
+     "note": "lakh tonnes, with Telangana",
+     "tone": "a",
+     "at": [
+      556,
+      842
+     ]
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "race",
+   "mode": "run",
+   "kicker": "FISH PRODUCTION · LAKH TONNES",
+   "vo": "Then Andhra Pradesh took off: by twenty twenty-three twenty-four, over twice West Bengal's output.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "stack",
+   "lines": [
+    "In 2023-24, *Andhra Pradesh*",
+    "produced more than any",
+    "*three* other states combined."
+   ],
+   "vo": "In fact, it produced more than any three other states combined.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "West Bengal",
+    "*did not shrink.*",
+    "It grew *1.5 times.*",
+    "Andhra Pradesh: *3.8 times.*"
+   ],
+   "note": "2010-11 to 2023-24 (provisional). The 2010-11 figure for Andhra Pradesh included Telangana. The table shows how much, not why.",
+   "vo": "West Bengal did not shrink: it grew by more than half. Andhra Pradesh grew almost fourfold.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Fish production, *state by state*",
+   "sub": "lakh tonnes · 2023-24 (provisional) · India 184.0",
+   "note": "Fish produced (sea and inland), not fish eaten. 2023-24 is provisional and may be revised.",
+   "anim": true,
+   "ring": [
+    "Andhra Pradesh",
+    "West Bengal"
+   ],
+   "vo": "Each state's figure: fish produced, sea and inland together, not fish eaten.",
+   "t0": 27.097,
+   "t1": 34.839
+  },
+  {
+   "note": "Fish produced (sea and inland), not fish eaten. 2023-24 is provisional and may be revised.",
+   "ring": [
+    "Andhra Pradesh",
+    "West Bengal"
+   ],
+   "q": "Which state on this map *surprised you?*",
+   "sub": "",
+   "kind": "mapend",
+   "vo": "Which state on this map surprised you?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "race": {
+  "years": [
+   "2006-07",
+   "2007-08",
+   "2008-09",
+   "2009-10",
+   "2010-11",
+   "2011-12",
+   "2012-13",
+   "2013-14",
+   "2014-15",
+   "2015-16",
+   "2016-17",
+   "2017-18",
+   "2018-19",
+   "2019-20",
+   "2020-21",
+   "2021-22",
+   "2022-23",
+   "2023-24"
+  ],
+  "cut": 4,
+  "note": "Andhra Pradesh includes Telangana to 2013-14. 2023-24 is provisional.",
+  "a": {
+   "name": "Andhra Pradesh",
+   "v": [
+    8.57,
+    10.1,
+    12.53,
+    13.06,
+    13.68,
+    16.03,
+    18.08,
+    20.18,
+    19.79,
+    23.52,
+    27.66,
+    34.5,
+    39.91,
+    41.74,
+    46.23,
+    48.13,
+    51.06,
+    51.58
+   ],
+   "sub": "3.8× since 2010-11"
+  },
+  "b": {
+   "name": "West Bengal",
+   "v": [
+    13.59,
+    14.47,
+    15.1,
+    15.17,
+    14.43,
+    14.72,
+    14.9,
+    15.81,
+    16.17,
+    16.71,
+    17.02,
+    17.42,
+    17.82,
+    17.82,
+    18.24,
+    18.43,
+    20.45,
+    22.02
+   ],
+   "sub": "1.5× since 2010-11"
+  },
+  "marks": [
+   {
+    "i": 8,
+    "text": "Telangana counted|separately"
+   }
+  ]
+ },
+ "stack": {
+  "a": {
+   "name": "Andhra Pradesh",
+   "v": 51.58,
+   "label": "51.6"
+  },
+  "parts": [
+   {
+    "name": "West Bengal",
+    "v": 22.02,
+    "label": "22.0"
+   },
+   {
+    "name": "Uttar Pradesh",
+    "v": 11.6,
+    "label": "11.6"
+   },
+   {
+    "name": "Karnataka",
+    "v": 11.31,
+    "label": "11.3"
+   }
+  ],
+  "sum": "44.9",
+  "sumName": "Next three states",
+  "note": "Lakh tonnes, 2023-24 (provisional). Odisha, at 11.2, is next."
+ },
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Sikkim",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Mizoram",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "0.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "Meghalaya",
+   "label": "0.2",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "0.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Manipur",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "Puducherry",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "Tripura",
+   "label": "0.9",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Rajasthan",
+   "label": "0.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Goa",
+   "label": "1.4",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Punjab",
+   "label": "1.8",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Haryana",
+   "label": "2.1",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Jharkhand",
+   "label": "3.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "3.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Telangana",
+   "label": "4.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Assam",
+   "label": "5.0",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Maharashtra",
+   "label": "7.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "7.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Kerala",
+   "label": "8.3",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Bihar",
+   "label": "8.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "8.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Gujarat",
+   "label": "9.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Odisha",
+   "label": "11.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "Karnataka",
+   "label": "11.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.076
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "11.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.197
+  },
+  {
+   "name": "West Bengal",
+   "label": "22.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "51.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.439
+  }
+ ],
+ "checked": [
+  "West Bengal is the largest in every year from 2006-07 to 2010-11, Andhra Pradesh in every year after, among all states in the table",
+  "Andhra Pradesh 51.58 is above the next 3 together (West Bengal, Uttar Pradesh, Karnataka: 44.93)",
+  "Andhra Pradesh grew 3.77 times and West Bengal 1.53 times from 2010-11 to 2023-24",
+  "level in 2010-11: the gap is under 1 point of India's total: 0.91",
+  "over twice West Bengal's output in 2023-24: 2.34",
+  "West Bengal grew by more than half since 2010-11: 1.53",
+  "Andhra Pradesh grew almost fourfold since 2010-11: 3.77",
+  "Odisha, at 11.2, is next: 112.40"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "In twenty ten-eleven, West Bengal and Andhra Pradesh were level in fish production."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.825,
+   "at": 5.926,
+   "text": "Then Andhra Pradesh took off: by twenty twenty-three twenty-four, over twice West Bengal's output."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.257,
+   "at": 13.668,
+   "text": "In fact, it produced more than any three other states combined."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 7.157,
+   "at": 19.475,
+   "text": "West Bengal did not shrink: it grew by more than half. Andhra Pradesh grew almost fourfold."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.668,
+   "at": 27.217,
+   "text": "Each state's figure: fish produced, sea and inland together, not fish eaten."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.115,
+   "at": 34.959,
+   "text": "Which state on this map surprised you?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Andhra Pradesh: More Fish Than Any 3 Other States Combined"
+}

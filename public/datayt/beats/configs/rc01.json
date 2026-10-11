@@ -1,0 +1,237 @@
+{
+ "id": "rc01",
+ "type": "race",
+ "chip": "THEN vs NOW",
+ "source_short": "Fisheries Ministry · to 2023-24",
+ "palette": "D",
+ "table": 93,
+ "a": "Andhra Pradesh",
+ "b": "West Bengal",
+ "from": "2006-07",
+ "cut": "2010-11",
+ "to": "2023-24 (P)",
+ "source": "Ministry of Fisheries, Handbook on Fisheries Statistics, as published in the RBI Handbook of Statistics on Indian States, Table 93: fish production in lakh tonnes, sea and inland together. 2023-24 is provisional. Andhra Pradesh includes Telangana until 2013-14. State figures may not add up to the all-India total.",
+ "hook": [
+  "2010-11: two states",
+  "*level* on fish.",
+  "Then one *took off.*"
+ ],
+ "hook_vo": "In twenty ten-eleven, West Bengal and Andhra Pradesh were level in fish production.",
+ "spots": [
+  {
+   "state": "West Bengal",
+   "tone": "b",
+   "name": "West Bengal",
+   "big": "{b_cut}",
+   "note": "lakh tonnes",
+   "at": [
+    742,
+    596
+   ]
+  },
+  {
+   "state": "Andhra Pradesh",
+   "also": [
+    "Telangana"
+   ],
+   "tone": "a",
+   "name": "Andhra Pradesh",
+   "big": "{a_cut}",
+   "note": "lakh tonnes, with Telangana",
+   "at": [
+    556,
+    842
+   ]
+  }
+ ],
+ "run": {
+  "kicker": "FISH PRODUCTION · LAKH TONNES",
+  "note": "Andhra Pradesh includes Telangana to 2013-14. 2023-24 is provisional.",
+  "marks": [
+   {
+    "year": "2014-15",
+    "text": "Telangana counted|separately"
+   }
+  ],
+  "vo": "Then Andhra Pradesh took off: by twenty twenty-three twenty-four, over twice West Bengal's output."
+ },
+ "stack": {
+  "n": 3,
+  "name": "Next three states",
+  "note": "Lakh tonnes, 2023-24 (provisional). Odisha, at 11.2, is next.",
+  "lines": [
+   "In 2023-24, *Andhra Pradesh*",
+   "produced more than any",
+   "*three* other states combined."
+  ],
+  "vo": "In fact, it produced more than any three other states combined."
+ },
+ "says": [
+  {
+   "lines": [
+    "West Bengal",
+    "*did not shrink.*",
+    "It grew *{b_x} times.*",
+    "Andhra Pradesh: *{a_x} times.*"
+   ],
+   "note": "2010-11 to 2023-24 (provisional). The 2010-11 figure for Andhra Pradesh included Telangana. The table shows how much, not why.",
+   "vo": "West Bengal did not shrink: it grew by more than half. Andhra Pradesh grew almost fourfold."
+  }
+ ],
+ "tests": [
+  {
+   "says": "level in 2010-11: the gap is under 1 point of India's total",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          93,
+          "2010-11"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "rbi": [
+          93,
+          "2010-11"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2010-11"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 0,
+   "max": 0.99
+  },
+  {
+   "says": "over twice West Bengal's output in 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2023-24 (P)"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2023-24 (P)"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 2.05,
+   "max": 2.6
+  },
+  {
+   "says": "West Bengal grew by more than half since 2010-11",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2023-24 (P)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2010-11"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.6
+  },
+  {
+   "says": "Andhra Pradesh grew almost fourfold since 2010-11",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2023-24 (P)"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        93,
+        "2010-11"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 3.6,
+   "max": 4.0
+  },
+  {
+   "says": "Odisha, at 11.2, is next",
+   "value": {
+    "data": {
+     "rbi": [
+      93,
+      "2023-24 (P)"
+     ]
+    },
+    "state": "Odisha",
+    "scale": 10
+   },
+   "equals": 112
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   10,
+   20
+  ],
+  "title": "Fish production, *state by state*",
+  "sub": "lakh tonnes · 2023-24 (provisional) · India {india}",
+  "note": "Fish produced (sea and inland), not fish eaten. 2023-24 is provisional and may be revised.",
+  "ring": [
+   "Andhra Pradesh",
+   "West Bengal"
+  ],
+  "vo": "Each state's figure: fish produced, sea and inland together, not fish eaten."
+ },
+ "end": {
+  "q": "Which state on this map *surprised you?*",
+  "sub": "",
+  "vo": "Which state on this map surprised you?"
+ },
+ "yt_title": "Andhra Pradesh: More Fish Than Any 3 Other States Combined"
+}

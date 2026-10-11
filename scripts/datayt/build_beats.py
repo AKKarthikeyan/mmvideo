@@ -9,6 +9,8 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
               numbers have to do with each other across all states, then every state on the map
   share       One state's share of a national total on a 100-square grid, the reveal, the split among the leading
               states, one or two cards on why, then every state's share on the map
+  race        Two states' lines over the years: the old leader ahead, then the run to the latest year, what changed,
+              the new leader against a stack of the next largest, then every state on the map
 
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table and
@@ -27,7 +29,7 @@ from build_story import series as base_series, fmt, SHORT
 
 FPS, VO_LEAD = 30, 0.12
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
-            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2}
+            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3}
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
 PCT = {"g5_pct": ("g5", "total"), "uncovered_pct": ("uncovered", "total")}
 geo = lambda s: GEO_ALIAS.get(s, s)
@@ -84,10 +86,12 @@ def spearman(a, b):
 
 def value(q, st):
     """A number from a small spec: a state's figure ({"data": spec}), its share of the all-India figure in percent
-    ({"share": spec}), or the ratio of two such specs ({"ratio": [a, b]}). "state" overrides the story's state ("India" for
+    ({"share": spec}), or the ratio or difference of two such specs ({"ratio": [a, b]}, {"diff": [a, b]}). "state" overrides the story's state ("India" for
     the all-India row) and "scale" multiplies the result."""
     if "ratio" in q:
-        return value(q["ratio"][0], st) / value(q["ratio"][1], st)
+        return value(q["ratio"][0], st) / value(q["ratio"][1], st) * q.get("scale", 1)
+    if "diff" in q:
+        return (value(q["diff"][0], st) - value(q["diff"][1], st)) * q.get("scale", 1)
     spec = q.get("share") or q["data"]
     vals, india = series(spec); s = q.get("state", st)
     v = india if s == "India" else find(vals, s)
@@ -246,6 +250,53 @@ def build(cfg):
         ring = [geo(x) for x in m.get("ring", [])]
         beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", ""), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
         extra["checked"] = [f"state rows add up to the all-India row ({sum(vals.values()) / india:.4f})", f"{st0} is first with {sh[st0]:.2f}% of the all-India figure"] + run_checks(sid, cfg, st0)
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "race":
+        t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(cfg['table']):03d}.json"))
+        yr = lambda c: c.split("|")[-1].strip()
+        years = [yr(c) for c in t["columns"]]
+        use = [c for c in t["columns"][years.index(cfg["from"]):years.index(cfg["to"]) + 1] if yr(c) not in cfg.get("skip", [])]
+        a, b = cfg["a"], cfg["b"]; cut = [yr(c) for c in use].index(cfg["cut"])
+        va, vb = [t["states"][a][c] for c in use], [t["states"][b][c] for c in use]
+        assert all(v is not None for v in va + vb), f"{sid}: a year is missing for {a} or {b}"
+        for i, c in enumerate(use):      # the story says who was largest each year: check it against every state
+            col = {s_: r[c] for s_, r in t["states"].items() if s_ != "India" and r.get(c) is not None}
+            first = max(col, key=col.get); want = b if i <= cut else a
+            assert first == want, f"{sid}: in {yr(c)} the largest is {first}, not {want}"
+        clean = lambda y: y.replace(" (P)", "")
+        ylab = [clean(yr(c)) for c in use]
+        extra["race"] = {"years": ylab, "cut": cut, "note": cfg["run"].get("note", ""),
+                         "a": {"name": nm(a), "v": va, "sub": f"{va[-1] / va[cut]:.1f}× since {ylab[cut]}"},
+                         "b": {"name": nm(b), "v": vb, "sub": f"{vb[-1] / vb[cut]:.1f}× since {ylab[cut]}"},
+                         "marks": [{"i": ylab.index(m_["year"]), "text": m_["text"]} for m_ in cfg["run"].get("marks", [])]}
+        last = {s_: r[use[-1]] for s_, r in t["states"].items() if s_ != "India" and r.get(use[-1]) is not None}
+        india = t["states"]["India"][use[-1]]
+        nxt = sorted((s_ for s_ in last if s_ != a), key=lambda s_: -last[s_])[:cfg["stack"]["n"]]
+        tot = sum(last[s_] for s_ in nxt)
+        assert last[a] > tot, f"{sid}: {a} ({last[a]}) is not above the next {len(nxt)} together ({tot:.2f})"
+        extra["stack"] = {"a": {"name": nm(a), "v": last[a], "label": f"{last[a]:.1f}"}, "parts": [{"name": nm(s_), "v": last[s_], "label": f"{last[s_]:.1f}"} for s_ in nxt],
+                          "sum": f"{tot:.1f}", "sumName": cfg["stack"]["name"], "note": cfg["stack"].get("note", "")}
+        ctx = {"a_x": f"{va[-1] / va[cut]:.1f}", "b_pct": f"{100 * (vb[-1] / vb[cut] - 1):.0f}", "a_now": f"{va[-1]:.1f}", "b_now": f"{vb[-1]:.1f}", "india": f"{india:.1f}",
+               "share": f"{100 * va[-1] / india:.0f}", "ratio": f"{va[-1] / vb[-1]:.1f}", "a_cut": f"{va[cut]:.1f}", "b_cut": f"{vb[cut]:.1f}", "b_x": f"{vb[-1] / vb[cut]:.1f}"}
+        if "spots" in cfg:      # open on the map with both states lit and their figures at the cut year
+            beats[0].update({"kind": "spot", "spots": [{"geo": geo(x["state"]), "also": [geo(y_) for y_ in x.get("also", [])], "name": x["name"], "big": x["big"].format(**ctx),
+                                                         "note": x.get("note", ""), "tone": x["tone"], "at": x["at"]} for x in cfg["spots"]]})
+        else:
+            beats[0].update({"kind": "race", "mode": "lead"})
+        beats.append({"kind": "race", "mode": "run", "kicker": cfg["run"]["kicker"], "vo": cfg["run"]["vo"]})
+        beats.append({"kind": "stack", "lines": cfg["stack"]["lines"], "vo": cfg["stack"]["vo"]})
+        for c in cfg.get("says", []):
+            beats.append({"kind": "say", "lines": [l.format(**ctx) for l in c["lines"]], "note": c.get("note", ""), "vo": c["vo"]})
+        m = cfg["map"]; cuts = m["bands"]
+        asc = sorted(last, key=lambda s_: (last[s_], s_))
+        extra["map"] = [{"name": geo(s_), "label": "<0.1" if last[s_] < 0.05 else f"{last[s_]:.1f}", "bucket": sum(last[s_] >= c for c in cuts), "nudge": NUDGE.get(geo(s_), (0, 0))} for s_ in asc]
+        missing = {x["name"] for x in extra["map"]} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        ring = [geo(x) for x in m.get("ring", [])]
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
+        extra["checked"] = [f"{b} is the largest in every year from {cfg['from']} to {cfg['cut']}, {a} in every year after, among all states in the table",
+                            f"{a} {last[a]:.2f} is above the next {len(nxt)} together ({', '.join(nxt)}: {tot:.2f})",
+                            f"{a} grew {va[-1] / va[cut]:.2f} times and {b} {vb[-1] / vb[cut]:.2f} times from {cfg['cut']} to {clean(cfg['to'])}"] + run_checks(sid, cfg, a)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
     else:
         raise SystemExit(f"{sid}: unknown type {typ}")

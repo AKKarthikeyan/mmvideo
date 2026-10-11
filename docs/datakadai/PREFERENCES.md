@@ -83,7 +83,7 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   needs its own story, its own script and a narrated "why this matters". Never read out a release or a table.
 - Description says how the video was made: data analysed and animated by Data Kadai from the named source; AI voice.
 - Audience setting: not made for kids. Every number in a title or thumbnail appears in the video.
-- Voice text spells financial years out ("twenty twenty-three twenty-four"); the digits stay on screen. The voice reads "2023-24" unpredictably.
+- Voice text spells financial years out ("twenty twenty-three twenty-four"); the digits stay on screen. How the voice reads "2023-24" has not been checked by ear; the spelled-out line came back 0.6 s shorter, so the two are read differently.
 
 ## Serve it hot (AK, 10 Oct 2026)
 - Goal: put official data out while it is fresh, to own the "India's numbers" mind space.

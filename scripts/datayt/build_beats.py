@@ -25,6 +25,9 @@ One story = one config, public/datayt/beats/configs/<id>.json. Data specs are th
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
 Run from the repo root: python3 scripts/datayt/build_beats.py <id> [...]
+Add --check to test scripts without voicing them: every data check runs, spoken lengths are estimated from the word
+count, nothing is sent to the voice service, and the result goes to out/datakadai/bank_check/ (configs are then read
+from public/datayt/bank/scripts/ as well as the beats folder).
 """
 import glob, json, math, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -35,6 +38,7 @@ from build_mapped import ALIAS as GEO_ALIAS, NUDGE, GEO
 from build_story import series as base_series, fmt, SHORT
 
 FPS, VO_LEAD = 30, 0.12
+BASE = "public/datayt/beats"      # --check writes under out/ instead
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
             "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2, "event": 2, "line100": 3}
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
@@ -134,7 +138,7 @@ def find(vals, state):
 def build(cfg):
     sid, typ = cfg["id"], cfg["type"]
     pal = PALETTES[cfg.get("palette", "A")]
-    d = f"public/datayt/beats/{sid}"; os.makedirs(d, exist_ok=True)
+    d = f"{BASE}/{sid}"; os.makedirs(d, exist_ok=True)
     beats = [{"kind": "hook", "lines": cfg.get("hook", []), "vo": cfg.get("hook_vo") or " ".join(cfg.get("hook", [])).replace("*", "")}]
     extra = {}
     if typ == "clues":
@@ -444,9 +448,25 @@ def write_registry():
 
 
 if __name__ == "__main__":
-    want = set(sys.argv[1:])
-    for f in sorted(glob.glob("public/datayt/beats/configs/*.json")):
+    check = "--check" in sys.argv
+    want = set(a for a in sys.argv[1:] if not a.startswith("--"))
+    files = sorted(glob.glob("public/datayt/beats/configs/*.json"))
+    if check:      # no voice, no music: estimate the spoken length (about 0.43 s a word for this narrator) and run every data check
+        BASE = "out/datakadai/bank_check"
+        V.say = lambda text, stem, voice=None: ("check.mp3", round(0.43 * len(text.replace("-", " ").split()) + 0.5, 2))
+        M.make = lambda *a, **k: None
+        files += sorted(glob.glob("public/datayt/bank/scripts/*.json"))
+    ok, bad = 0, []
+    for f in files:
         cfg = json.load(open(f))
         if not want or cfg["id"] in want:
-            build(cfg)
-    write_registry()
+            if not check:
+                build(cfg); continue
+            try:
+                build(cfg); ok += 1
+            except (AssertionError, SystemExit, KeyError, ValueError, TypeError, ZeroDivisionError, StopIteration) as e:
+                bad.append(cfg["id"]); print(f"{cfg['id']}: FAILED: {type(e).__name__}: {e}")
+    if check:
+        print(f"check: {ok} passed, {len(bad)} failed" + (": " + ", ".join(bad) if bad else ""))
+    else:
+        write_registry()

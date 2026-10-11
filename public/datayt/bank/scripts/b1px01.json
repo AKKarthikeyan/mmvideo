@@ -1,0 +1,166 @@
+{
+ "id": "b1px01",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "source_short": "NFHS-6 · RBI · 2023-24",
+ "palette": "A",
+ "state": "Jammu and Kashmir",
+ "source": "Health cover: International Institute for Population Sciences (IIPS), National Family Health Survey NFHS-6 (2023-24), state fact sheets: households with any usual member covered under a health insurance or financing scheme. Income: RBI Handbook of Statistics on Indian States, per-capita net state domestic product, current prices, 2023-24 (33 states and UTs with data; Gujarat has no figure for that year). Jammu and Kashmir income is for the Union Territory.",
+ "hook": [
+  "*J&K:* low income,",
+  "yet *health cover*",
+  "in 96 of",
+  "100 homes."
+ ],
+ "hook_vo": "Jammu and Kashmir: low income, but health cover in ninety-six percent of homes.",
+ "facts": [
+  {
+   "state": "Jammu and Kashmir",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "text": "a year. Below most of the {n} states and UTs with data.",
+   "sub": "Per-capita net state domestic product, current prices. RBI.",
+   "vo": "One lakh forty thousand rupees a year, below most of the {n} states."
+  },
+  {
+   "state": "Jammu and Kashmir",
+   "kicker": "HOMES WITH HEALTH COVER · 2023-24",
+   "data": {
+    "nfhs": 7
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of homes have a member with health insurance or a health scheme",
+   "sub": "Any usual member covered. NFHS-6.",
+   "vo": "Yet ninety-six of every hundred homes have a member with health cover."
+  },
+  {
+   "state": "NCT of Delhi",
+   "kicker": "HOMES WITH HEALTH COVER · 2023-24",
+   "data": {
+    "nfhs": 7
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of homes. Delhi's income per person: over 3 times J&K's.",
+   "vo": "Delhi: over three times the income, under a third of the cover."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Jammu and Kashmir",
+   "data": {
+    "nfhs": 7
+   },
+   "equals": 96
+  },
+  {
+   "kind": "round",
+   "state": "NCT of Delhi",
+   "data": {
+    "nfhs": 7
+   },
+   "equals": 29
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 7
+   },
+   "equals": 60
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Jammu and Kashmir",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Jammu and Kashmir",
+    "data": {
+     "nfhs": 7
+    }
+   },
+   "den": {
+    "state": "NCT of Delhi",
+    "data": {
+     "nfhs": 7
+    }
+   },
+   "min": 3.0
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "b": {
+    "nfhs": 7
+   },
+   "max_abs": 0.3
+  },
+  "lines": [
+   "Across {n} states,",
+   "income and health cover",
+   "are only",
+   "*weakly linked.*"
+  ],
+  "vo": "Across {n} states, income and health cover are only weakly linked."
+ },
+ "map": {
+  "data": {
+   "nfhs": 7
+  },
+  "unit": "%",
+  "title": "Homes with *health cover*, every state",
+  "sub": "% of homes · India {india} · NFHS-6 2023-24",
+  "note": "Counts homes with any member covered. Not the size of the cover.",
+  "ring": [
+   "Jammu and Kashmir",
+   "NCT of Delhi"
+  ],
+  "vo": "Here is every state. This counts homes with any member covered."
+ },
+ "end": {
+  "q": "Where does *your state* stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "J&K: Low Income Per Person, Health Cover in 96% of Homes"
+}

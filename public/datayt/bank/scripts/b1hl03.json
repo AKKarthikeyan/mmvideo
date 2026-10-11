@@ -1,0 +1,114 @@
+{
+ "id": "b1hl03",
+ "type": "pick",
+ "chip": "WHICH IS HIGHER?",
+ "source_short": "Official figures · 4 rounds",
+ "palette": "A",
+ "think": 0.8,
+ "source": "RBI Handbook of Statistics on Indian States. Agriculture credit, March 2025: Basic Statistical Returns of Scheduled Commercial Banks, Reserve Bank of India (Table 157). Oilseeds, 2024-25: Ministry of Agriculture and Farmers' Welfare (Table 63). Factory net value added, 2023-24: Annual Survey of Industries, Ministry of Statistics and Programme Implementation (Table 127). Net irrigated area, 2023-24 provisional: Land Use Statistics, Ministry of Agriculture and Farmers' Welfare (Table 56). State totals, not per person.",
+ "rounds": [
+  {
+   "pair": [
+    "Kerala",
+    "West Bengal"
+   ],
+   "data": {
+    "rbi": [
+     157,
+     "2025"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state has more",
+    "*bank credit for agriculture?*"
+   ],
+   "measure": "Agriculture credit outstanding, March 2025, ₹ thousand crore",
+   "says": [
+    2.05,
+    2.15
+   ],
+   "ask": "Which state has more bank credit for agriculture: Kerala, or West Bengal?",
+   "tell": "Kerala. Just over double."
+  },
+  {
+   "pair": [
+    "Rajasthan",
+    "Uttar Pradesh"
+   ],
+   "data": {
+    "rbi": [
+     63,
+     "2024-25"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state grows",
+    "*more oilseeds?*"
+   ],
+   "measure": "Oilseeds production, total, 2024-25, million tonnes",
+   "says": [
+    2.9,
+    2.995
+   ],
+   "ask": "Which state grows more oilseeds: Rajasthan, or Uttar Pradesh?",
+   "tell": "Rajasthan. Almost three times."
+  },
+  {
+   "pair": [
+    "Bihar",
+    "Uttarakhand"
+   ],
+   "data": {
+    "rbi": [
+     127,
+     "2023-24"
+    ]
+   },
+   "scale": 1e-05,
+   "q": [
+    "Which state's factories",
+    "*add more value?*"
+   ],
+   "measure": "Factory net value added, 2023-24, ₹ thousand crore",
+   "says": [
+    3.95,
+    4.15
+   ],
+   "ask": "Which state's factories add more value: Bihar, or Uttarakhand?",
+   "tell": "Uttarakhand. Four times as much."
+  },
+  {
+   "pair": [
+    "Tamil Nadu",
+    "Gujarat"
+   ],
+   "data": {
+    "rbi": [
+     56,
+     "2023-24 (p)"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state has more",
+    "*irrigated farmland?*"
+   ],
+   "measure": "Net irrigated area, 2023-24 (provisional), million hectares",
+   "says": [
+    2.1,
+    2.25
+   ],
+   "ask": "Which state has more irrigated farmland: Tamil Nadu, or Gujarat?",
+   "tell": "Gujarat. More than double."
+  }
+ ],
+ "end": {
+  "q": "How many did *you* get?",
+  "sub": "Which round fooled you?",
+  "note": "State totals, not per person. Pairs, not full rankings.",
+  "vo": "Totals, not per person. Which round fooled you?"
+ },
+ "yt_title": "Kerala or West Bengal: Which Has More Farm Credit? 4 Rounds"
+}

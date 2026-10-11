@@ -1,0 +1,114 @@
+{
+ "id": "b1hl01",
+ "type": "pick",
+ "chip": "WHICH IS HIGHER?",
+ "source_short": "Official figures · 4 rounds",
+ "palette": "A",
+ "think": 0.8,
+ "source": "RBI Handbook of Statistics on Indian States. Foreign tourist visits, 2024: India Tourism Statistics, Ministry of Tourism (Table 182). Meat, 2023-24: Basic Animal Husbandry Statistics (Table 90). Goods exports, 2023-24: NIRYAT portal, Department of Commerce (Table 181). Forest cover, 2023: India State of Forest Report 2023, Forest Survey of India (Table 99). State totals, not per person.",
+ "rounds": [
+  {
+   "pair": [
+    "Rajasthan",
+    "West Bengal"
+   ],
+   "data": {
+    "rbi": [
+     182,
+     "2024"
+    ]
+   },
+   "scale": 1,
+   "q": [
+    "Which state had more",
+    "*foreign tourist visits?*"
+   ],
+   "measure": "Foreign tourist visits, total, 2024, lakh",
+   "says": [
+    1.45,
+    1.55
+   ],
+   "ask": "Foreign tourist visits, twenty twenty-four: Rajasthan, or West Bengal?",
+   "tell": "West Bengal. About fifty percent more."
+  },
+  {
+   "pair": [
+    "Haryana",
+    "Karnataka"
+   ],
+   "data": {
+    "rbi": [
+     90,
+     "2023-24"
+    ]
+   },
+   "scale": 0.01,
+   "q": [
+    "Which state produces",
+    "*more meat?*"
+   ],
+   "measure": "Meat production, total, 2023-24, lakh tonnes",
+   "says": [
+    1.45,
+    1.6
+   ],
+   "ask": "Which state produces more meat: Haryana, or Karnataka?",
+   "tell": "Haryana. One and a half times."
+  },
+  {
+   "pair": [
+    "Andhra Pradesh",
+    "Madhya Pradesh"
+   ],
+   "data": {
+    "rbi": [
+     181,
+     "2023-24"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state exports",
+    "*more goods?*"
+   ],
+   "measure": "Goods exports, 2023-24, US$ billion",
+   "says": [
+    2.4,
+    2.6
+   ],
+   "ask": "Which state exports more goods: Andhra Pradesh, or Madhya Pradesh?",
+   "tell": "Andhra Pradesh. Two and a half times."
+  },
+  {
+   "pair": [
+    "Maharashtra",
+    "Arunachal Pradesh"
+   ],
+   "data": {
+    "rbi": [
+     99,
+     "2023*"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state has",
+    "*more forest cover?*"
+   ],
+   "measure": "Forest cover, total, 2023, thousand sq km",
+   "says": [
+    1.25,
+    1.35
+   ],
+   "ask": "Which state has more forest cover: Maharashtra, or Arunachal Pradesh?",
+   "tell": "Arunachal Pradesh. About thirty percent more."
+  }
+ ],
+ "end": {
+  "q": "How many did *you* get?",
+  "sub": "Which round fooled you?",
+  "note": "State totals, not per person. Pairs, not full rankings.",
+  "vo": "State totals, not per person. Which round fooled you?"
+ },
+ "yt_title": "West Bengal or Rajasthan: More Foreign Tourists? 4 Rounds"
+}

@@ -1,0 +1,524 @@
+{
+ "K0028": {
+  "why": "Gujarat exports (T181): state rows add up to only 87.9% of the India row in 2024-25 and 97.1% in 2023-24; the share builder asserts rows within 0.5% of the India row, so it cannot build, and Gujarat's share moves 32.7, 30.8, 26.6% across 2022-23 to 2024-25 partly because the latest column is incomplete.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Gujarat has 27% of India's total: State-wise Exports (2024-25)"
+ },
+ "K0037": {
+  "why": "Telangana afforestation (T100): unstable. Telangana's share is 43.7% (2019-20), 33.8% (2020-21), 22.2% (2021-22) and the runners-up change every year; only 18-19 states report, and it is an annual scheme flow. The lead year is also out of column order in the file.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Telangana has 22% of India's total: State-wise Afforestation under different schemes (2021-22)"
+ },
+ "K0200": {
+  "why": "Maharashtra credit to industry (T158): the numbers are stable (25.3% vs Delhi 16.5%) but the Handbook does not say whether this series is booked by place of sanction or utilisation, and Delhi's large share would be misread as industry in Delhi. No stated basis, no cause allowed, and it duplicates the b1sh07 bank credit story.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra has 25% of India's total: State-wise Credit to Industry by Scheduled Commercial Banks (2025)"
+ },
+ "K0229": {
+  "why": "UP domestic tourist visits (T013): size effect that cannot be ruled out (visits include residents' trips inside their own state and no population table exists to test against), and the table note says 2024 is partly estimated from the all-India growth rate (UP's share jumps 19.1% to 21.9% in that year). Visit counting methods also differ by state.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh has 22% of India's total: State-wise Domestic Tourist Visits (2024)"
+ },
+ "K1583": {
+  "why": "UP tourist visits above the next 2 states (T013): fails in 2023 (UP 19.07% vs Tamil Nadu 11.40% + Karnataka 11.32% = 22.72%), so it is not a pattern across the last three years; also rests on the partly estimated 2024 column.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh is above the next 2 states together: State-wise Domestic Tourist Visits (2024)"
+ },
+ "K0763": {
+  "why": "Gujarat medium and small scale industries, Fourth Census (T135): stale, 2006-07.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Gujarat has 24% of India's total: State-wise Medium & Small Scale Industries - Total Investments [Fourth Census] (Fourth Census (2006-07))"
+ },
+ "K1626": {
+  "why": "Maharashtra medium and small scale industries, First Census (T136): stale, 1972-73.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra has 20% of India's total: State-wise Medium & Small Scale Industries - Total Production [First Census] (First Census (1972-73))"
+ },
+ "K0374": {
+  "why": "Maharashtra deposits 22.3% (T155): not scripted separately, it is the same state and table family as b1sh07; deposits appear as a bar on the b1sh07 offices card instead, to avoid two near-identical banking Shorts.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra has 22% of India's total: State-wise Deposits by Scheduled Commercial Banks in India (2025)"
+ },
+ "K1587": {
+  "why": "Maharashtra deposits above the next 2 states (T155): valid (22.3% vs Delhi 8.8% + Uttar Pradesh 8.1%) but folded into b1sh07, whose next-two card uses credit (T156) with the same structure.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra is above the next 2 states together: State-wise Deposits by Scheduled Commercial Banks in India (2025)"
+ },
+ "K1589": {
+  "why": "Maharashtra personal loans above the next 2 (T159): Maharashtra 19.9% vs Karnataka 9.2% + Tamil Nadu 8.7% = 17.8%, a 2.1-point lead and a fourth banking script in one batch; held in reserve, not rejected on data.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra is above the next 2 states together: State-wise Personal Loans by Scheduled Commercial Banks (2025)"
+ },
+ "K1590": {
+  "why": "UP regional rural bank deposits (T160): UP 19.4% is strong, but third place is a tie (Andhra Pradesh 7.66% vs Rajasthan 7.64% in 2025, 7.41 vs 7.37 in 2024) and the parts must be named in order; b1sh08 uses the branch table (T163), where the top three are clear.",
+  "by": "batch-1 share writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh is above the next 2 states together: State-wise Deposits of Regional Rural Banks (2025)"
+ },
+ "K0034": {
+  "why": "Domestic tourist visits (T013): the leader flips Tamil Nadu 2013-18, Uttar Pradesh 2019, Tamil Nadu 2020-21, Uttar Pradesh 2022-24, so the builder's rule (b largest every year to the cut, a every year after) cannot hold without dropping the pandemic years. The 2024 column is, per the table note, 2023 grown by the all-India rate, so it is not an independent year. The stack test passes only on that estimated column (2024: 646.81 vs 306.84+304.56=611.40; 2023: 478.53 vs 286.01+284.12=570.13 fails). The note also says 2017 figures were repeated for 2018.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Tamil Nadu led in 2014; Uttar Pradesh leads in 2024: State-wise Domestic Tourist Visits"
+ },
+ "K0035": {
+  "why": "Afforestation (T100): a boundary artifact, not a race. Telangana is 0.0 for 2004-05 to 2012-13, missing in 2013-14, then 80.4 in 2014-15, while Andhra Pradesh included it before the split. Andhra Pradesh has no figure for 2020-21. States reporting fall from 28 to 18 over the run. The columns are also out of order (2021-22 sits before 2020-21). The stack fails in the latest column 2021-22: Telangana 294.8 vs Gujarat 224.1 + Uttarakhand 222.5 = 446.6. It only passes (407.1 vs 396.7) if you cherry-pick 2020-21 as the end year.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Andhra Pradesh led in 2011-12; Telangana leads in 2021-22: State-wise Afforestation under different schemes"
+ },
+ "K0036": {
+  "why": "Foreign tourist visits (T182): the leader flips almost every year (Maharashtra, Tamil Nadu, Maharashtra, Tamil Nadu 2014-16, Maharashtra 2017, Tamil Nadu 2018-19, Maharashtra 2020, Punjab 2021, Gujarat 2022, Maharashtra 2023-24). The pandemic columns are distorted (2021: India 10.5 lakh vs 313 lakh in 2019), and the 2024 column is an all-India growth estimate per the table note. No stable handover exists.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Tamil Nadu led in 2014; Maharashtra leads in 2024: State-Wise Foreign Tourist Visits"
+ },
+ "K0424": {
+  "why": "Pulses area (T070): the pattern flips in the last three columns. Rajasthan leads 2023-24 and 2024-25, but Madhya Pradesh leads 2022-23 (5622.0 vs 5498.0), and Maharashtra led 2007-08 on a 30 kha margin. The stack fails: in 2024-25 Rajasthan has 5406.0 against Maharashtra 4986.7 + Madhya Pradesh 4439.0 = 9425.7, a ratio of 0.57.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh led in 2014-15; Rajasthan leads in 2024-25: State-wise Area of Foodgrains - Pulses"
+ },
+ "K0443": {
+  "why": "Rice production (T058): the last three columns disagree. Uttar Pradesh leads 2022-23 by only 265.9 kt (1.7% relative, 0.2 points of India), Telangana leads 2023-24, and Uttar Pradesh leads 2024-25. That is a thin lead and a flip, so the lead is dropped. The stack also fails: Uttar Pradesh 20758.7 vs Telangana 17445.7 + West Bengal 16019.4 = 33465.1, a ratio of 0.62.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "West Bengal led in 2014-15; Uttar Pradesh leads in 2024-25: State-wise Production of Foodgrains - Rice"
+ },
+ "K0577": {
+  "why": "Oilseeds (T063): the handover is clean (Madhya Pradesh largest every year 2014-15 to 2018-19, Rajasthan largest every year 2019-20 to 2024-25, state rows 100% of India), but the stack beat is impossible. In 2024-25 Rajasthan has 9202.9 against Madhya Pradesh 8250.9 + Maharashtra 7793.1 = 16044.0, a ratio of 0.57, and n=2 is the floor, so the builder would stop. The 2013-14 year (Gujarat first) rules out starting earlier than 2014-15.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh led in 2014-15; Rajasthan leads in 2024-25: State-wise Production of Non-Foodgrains - Oilseeds"
+ },
+ "K0936": {
+  "why": "National highways (T144): the stack fails in 2024 (Maharashtra 18462 vs Uttar Pradesh 12123 + Rajasthan 10733 = 22856, a ratio of 0.81). The cut is also a series jump, not growth: Maharashtra goes from 7435 km (2016) to 16239 km (2017), up 8804 km in one year and 45% of India's whole rise that year (101011 to 120493). The notes give no reason. The column for 2020 is missing and the 2022-24 columns are marked as running only to December.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh led in 2011; Maharashtra leads in 2021: State-wise Length of National Highways"
+ },
+ "K1289": {
+  "why": "Vegetables (T075): the leader flips repeatedly (Uttar Pradesh 2006-07, West Bengal 2007-08, Uttar Pradesh 2009-10, West Bengal 2010-15, Uttar Pradesh 2015-19, West Bengal 2019-21, Uttar Pradesh 2021 on), so the only clean handover is 2 years of West Bengal then Uttar Pradesh. The stack fails (Uttar Pradesh 38322.4 vs West Bengal 29133.6 + Madhya Pradesh 24222.5 = 53356.1, a ratio of 0.72). The latest column 2024-25 is a third advance estimate.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "West Bengal led in 2013-14; Uttar Pradesh leads in 2023-24: State-wise Production of Total Vegetables"
+ },
+ "K1334": {
+  "why": "Fruits (T074): Andhra Pradesh has led every year since 2016-17, but before that the leader flips (Maharashtra, Tamil Nadu, Andhra Pradesh, Maharashtra, Uttar Pradesh in 2015-16), so there is no single old leader to race against. The stack fails: 2024-25 Andhra Pradesh 19350.1 vs Maharashtra 16840.7 + Uttar Pradesh 14716.0 = 31556.7, a ratio of 0.61. The latest column is a third advance estimate.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra led in 2013-14; Andhra Pradesh leads in 2023-24: State-wise Production of Total Fruits"
+ },
+ "K0165": {
+  "why": "Telangana afforestation share (T100): the same boundary artifact as K0035. Telangana reads 0.0 before the 2014 split because it was part of Andhra Pradesh, so a rise from 0% to 22% is a reporting change, not a climb. The number of reporting states falls from 28 to 19, and the stack fails in 2021-22.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Telangana's share of India's total rose from 0% to 22%: State-wise Afforestation under different schemes (2011-12 to 2021-22)"
+ },
+ "K0371": {
+  "why": "Gujarat foreign tourist visits (T182): the share path is 1.05% in 2014, 1.9% in 2019, 2.9% in 2020, 1.07% in 2021, then 20.7% in 2022, 14.6% in 2023 and 10.9% in 2024. It peaked in the pandemic recovery and then fell, so it is not a rise. Gujarat is third in 2024 (22.74 lakh behind Maharashtra 37.05 and West Bengal 31.24), so the race builder's requirement that state a is largest in every year after the cut cannot be met.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Gujarat's share of India's total rose from 1% to 11%: State-Wise Foreign Tourist Visits (2014 to 2024)"
+ },
+ "K0532": {
+  "why": "Rajasthan wool (T094): wrong type, not a race. Rajasthan is the largest state in every column from 2004-05 to 2023-24, so there is no leader change. The share rise from 31.37% to 47.53% (2013-14 to 2023-24) is mostly others falling, not Rajasthan climbing: Rajasthan's output goes from 15027 to 16014 thousand kg (+6.6%) while India falls from 47909 to 33689 (-29.7%) and Karnataka from 7755 to 659. This is a better fit for a share or paradox script; check the Karnataka drop at the publisher first.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan's share of India's total rose from 31% to 48%: State-wise Wool Production (2013-14 to 2023-24)"
+ },
+ "K0583": {
+  "why": "Uttar Pradesh domestic tourists (T013): the share path is 14.25%, 14.31%, 13.22%, 14.12%, 15.38% (2018), 23.08% (2019), 14.11% (2020), 16.19%, 18.37%, 19.07%, 21.94% (2024). The 2019 spike and the 2024 estimated column (2023 grown by the all-India rate) make the climb unstable. The leader also flips Tamil Nadu/Uttar Pradesh across 2019-2022, so the race builder's rule fails.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh's share of India's total rose from 14% to 22%: State-wise Domestic Tourist Visits (2014 to 2024)"
+ },
+ "K0584": {
+  "why": "Maharashtra pulses production (T061): base-year artifact. The 11.94% starting share is the 2014-15 drought dip (2053 kt). Maharashtra was at 16.46% in 2013-14, 16.99% in 2010-11 and 16.23% in 2019-20, so the rise to 19.61% (2024-25) is mostly recovery from a low base. Maharashtra is also second behind Madhya Pradesh in 2024-25 (5035.2 vs 5237.9, a thin 4% gap), so it never becomes the largest state.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra's share of India's total rose from 12% to 20%: State-wise Production of Foodgrains - Pulses (2014-15 to 2024-25)"
+ },
+ "K0610": {
+  "why": "Maharashtra oilseeds (T063): base-year artifact. The 10.68% starting share is the drought year 2014-15 (2850 kt); the share was 16.16% in 2013-14 and 16.44% in 2012-13, and it is 18.13% in 2024-25, so the net climb is about 2 points. Maharashtra is third in 2024-25 (7793.1 behind Rajasthan 9202.9 and Madhya Pradesh 8250.9), so it cannot be state a in a race.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Maharashtra's share of India's total rose from 11% to 18%: State-wise Production of Non-Foodgrains - Oilseeds (2014-15 to 2024-25)"
+ },
+ "K0617": {
+  "why": "Telangana rice (T058): the climb is real (share 2.92% in 2015-16, 4.72% in 2016-17, 8.22% in 2020-21, 12.24% in 2023-24, 11.62% in 2024-25), but Telangana is the largest state only in 2023-24 (16874.1 vs Uttar Pradesh 15990.4). It is second in 2024-25 (17445.7 vs 20758.7), so the race builder's rule fails. The 2014-15 start (4.24%) is also its first year as a state. Better suited to a share or paradox script.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Telangana's share of India's total rose from 4% to 12%: State-wise Production of Foodgrains - Rice (2014-15 to 2024-25)"
+ },
+ "K0998": {
+  "why": "Uttar Pradesh wheat (T059): base-year artifact. The share is 25.21% in 2014-15 (22417 kt, a bad year) against 31.19% in 2013-14, 31.93% in 2011-12 and 32.40% in 2020-21. It sits at 30.2% to 31.2% in the last three years, so there is no rise. Uttar Pradesh is first in every column, so there is no handover for a race.",
+  "by": "batch-1 race writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh's share of India's total rose from 25% to 30%: State-wise Production of Foodgrains - Wheat (2014-15 to 2024-25)"
+ },
+ "K0426": {
+  "why": "Bihar children per woman (NFHS-6 #18): neutral measure with no 'better' direction, and the link with income is real (-0.39 to -0.44 over the three income years; T006 fertility -0.62 to -0.69). High fertility with low income is the expected pattern, not a paradox, and a fertility story about one state is better framed on a group of states.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: Children per woman (fertility rate) (NFHS-6)"
+ },
+ "K0491": {
+  "why": "Telangana FCI storage utilisation (T097): Telangana is 12th, 10th and 3rd from the bottom of 32 in 2023, 2024, 2025 (51%, 64%, 59%), so the pattern is unstable; it is an agency's storage use, not a per-person measure.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Telangana: high income per person, but at the bottom end on: Storage Capacity for Foodgrains and Utilisation under FCI [Utilisation Percentage] (2025 | Utilisation Percentage)"
+ },
+ "K0492": {
+  "why": "Uttar Pradesh construction value added: a rupee total for the most populous state, a size effect.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh: low income per person, but at the top end on: Net State Value Added by Economic Activity - Construction (Constant Prices) (Base: 2011-12 | 2024-25)"
+ },
+ "K0494": {
+  "why": "Uttar Pradesh gross construction value added: a rupee total for the most populous state, a size effect.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh: low income per person, but at the top end on: Gross State Value Added by Economic Activity - Construction (Constant Prices) (Base: 2011-12 | 2024-25)"
+ },
+ "K0496": {
+  "why": "Uttar Pradesh agriculture net value added: a rupee total for the most populous state, a size effect.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh: low income per person, but at the top end on: Net State Value Added by Economic Activity - Agriculture (Constant Prices) (Base: 2011-12 | 2024-25)"
+ },
+ "K0497": {
+  "why": "Uttar Pradesh agriculture gross value added: a rupee total for the most populous state, a size effect.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh: low income per person, but at the top end on: Gross State Value Added by Economic Activity - Agriculture (Constant Prices) (Base: 2011-12 | 2024-25)"
+ },
+ "K0499": {
+  "why": "Karnataka wheat yield (T081): Karnataka is 23rd, 24th, 24th of 25 wheat states (1,255 kg/ha against 3,595 for India in 2024-25) because wheat is a marginal crop there; a crop-mix effect, and yield per hectare is not a per-person figure.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Karnataka: high income per person, but at the bottom end on: State-wise Estimates of Yield - Wheat (2024-25)"
+ },
+ "K0556": {
+  "why": "Uttar Pradesh peak power met (T142, megawatts): a total for the most populous state, a size effect.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Uttar Pradesh: low income per person, but at the top end on: State-wise Actual Power Supply Position in terms of Peak Demand vis-à-vis Peak Met [Peak Met | (Megawatt] (2024-25 | Peak Met | (Megawatt))"
+ },
+ "K0601": {
+  "why": "Tamil Nadu pulses yield (T083): bottom of the table every year (27th, 30th, 30th of 31) but pulses are a small rainfed crop there; one crop's yield per hectare is not a per-person series and invites a motive reading about the state.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Tamil Nadu: high income per person, but at the bottom end on: State-wise Estimates of Yield - Pulses (2024-25)"
+ },
+ "K0737": {
+  "why": "Telangana market-borrowing repayments (T178): a rupee total (892 crore), a size and debt-timing item with no per-person form.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Telangana: high income per person, but at the bottom end on: Market Borrowings of State Governments [Repayments] (2023-24 | Repayments)"
+ },
+ "K0738": {
+  "why": "Electricity T&D losses (T148): the link with income is real (-0.53 in 2022-23, -0.54 to -0.71 over earlier years) and Telangana (12.2%, high income) follows it, so there is no paradox.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Telangana: high income per person, but at the bottom end on: State-wise Electricity Transmission & Distribution Losses (2022-23)"
+ },
+ "K0739": {
+  "why": "Electricity T&D losses (T148): Bihar (25.8%, lowest income) follows the real negative link with income, so there is no paradox.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Electricity Transmission & Distribution Losses (2022-23)"
+ },
+ "K0740": {
+  "why": "Telangana CPI inflation (T108): unstable (highest of 33 at 8.6% in 2022-23, 4th highest in 2023-24, 7th lowest at 3.7% in 2024-25) and the correlation with income changes sign (-0.43 to +0.13); also no 'better' direction.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Telangana: high income per person, but at the bottom end on: State-wise Average Inflation (CPI) - General (2024-25)"
+ },
+ "K0741": {
+  "why": "Bihar urban male unemployment (T009): 4th, 7th, 6th highest of 35 over the last three years and the link with income is -0.37 to -0.46, so high unemployment with the lowest income follows the pattern; the series is a per-thousand sample estimate.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Unemployment Rate: Usual Status (Adjusted) (Urban) (2023-24)"
+ },
+ "K0742": {
+  "why": "Bihar total fertility rate 2023 (T006): rank correlation with income -0.62 to -0.69, so it follows the pattern; neutral measure.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Total Fertility Rate (2023)"
+ },
+ "K0743": {
+  "why": "Bihar birth rate 2023 (T002): rank correlation with income -0.56 to -0.66, so it follows the pattern; neutral measure.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Birth Rate (2023)"
+ },
+ "K0746": {
+  "why": "Telangana rotavirus (NFHS-6 #53): NFHS-5 shows 5.3% and NFHS-6 63.8%, so cross-state gaps reflect the state-by-state vaccine roll-out, not a lasting contrast; the Chandigarh cell is flagged unreliable.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Telangana: high income per person, but at the bottom end on: Rotavirus (3 doses) (NFHS-6)"
+ },
+ "K0747": {
+  "why": "Bihar improved drinking water (NFHS-6 #5): rank correlation is +0.30 to +0.33 (not weak), the measure is near its ceiling (Bihar 99.8, Delhi 99.8, Puducherry 99.8, Chandigarh 99.9, leads under 1 point), and 'improved source' counts hand pumps and is not a water-quality test.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: Clean drinking water (NFHS-6)"
+ },
+ "K0891": {
+  "why": "Bihar urban housing CPI inflation (T111): 9th, 11th, 5th from the top over the last three years, so unstable; no 'better' direction.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Average Inflation (CPI) - Housing (Urban) (2024-25)"
+ },
+ "K0892": {
+  "why": "Bihar CPI inflation (T108): ranks 26th, 7th, 2nd from the top over the last three years, so it flips; no 'better' direction.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Average Inflation (CPI) - General (2024-25)"
+ },
+ "K0893": {
+  "why": "Bihar coarse-cereal yield (T082): stable 3rd, 2nd, 2nd of 30 (6,015 kg/ha in 2024-25) but coarse cereals are a crop mix (mostly maize in Bihar, millets elsewhere), a per-hectare figure, not per person, and it would be a second Bihar-versus-income story.",
+  "by": "batch-1 paradox writer",
+  "date": "2026-10-11",
+  "title": "Bihar: low income per person, but at the top end on: State-wise Estimates of Yield - Coarse Cereals (2024-25)"
+ },
+ "K0247": {
+  "why": "Uses 2022-23, not the latest column. In 2023-24 (p) Maharashtra's gross irrigated area jumps from 5,926 to 10,457 thousand ha and the ratio falls from 2.86 to 1.74, so the lead does not hold on the latest column.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh is higher than Maharashtra: State-wise Pattern of Land Use - Gross Irrigated Area (2022-23)"
+ },
+ "K0248": {
+  "why": "Same problem: with the 2023-24 (p) column Rajasthan vs Maharashtra gross irrigated area falls from x2.12 to x1.24 and the gap from 5.4 to 1.9 points. Unstable.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Maharashtra: State-wise Pattern of Land Use - Gross Irrigated Area (2022-23)"
+ },
+ "K0249": {
+  "why": "Same problem on net irrigated area: Rajasthan vs Maharashtra falls from x3.07 (2022-23) to x1.47 in 2023-24 (p) as Maharashtra's figure doubles.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Maharashtra: State-wise Pattern of Land Use - Net Irrigated Area (2022-23)"
+ },
+ "K0250": {
+  "why": "Same problem: Madhya Pradesh vs Maharashtra net irrigated area falls from x4.18 (2022-23) to x1.96 in 2023-24 (p). Stale year and unstable.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh is higher than Maharashtra: State-wise Pattern of Land Use - Net Irrigated Area (2022-23)"
+ },
+ "K0251": {
+  "why": "Rice is already a subject of hl01 and Chhattisgarh's rice standing is widely known, so few people would guess wrong.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Chhattisgarh is higher than Maharashtra: State-wise Production of Foodgrains - Rice (2024-25)"
+ },
+ "K0252": {
+  "why": "Rice is hl01's subject and Punjab already appears in hl01's rice round; the pair is also an obvious one.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Maharashtra: State-wise Production of Foodgrains - Rice (2024-25)"
+ },
+ "K0253": {
+  "why": "Obvious: the wheat belt against a state with little wheat (x7 to x9). Nobody guesses wrong.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Maharashtra: State-wise Production of Foodgrains - Wheat (2024-25)"
+ },
+ "K0254": {
+  "why": "Obvious for the same reason: Haryana wheat against Maharashtra.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Haryana is higher than Maharashtra: State-wise Production of Foodgrains - Wheat (2024-25)"
+ },
+ "K0255": {
+  "why": "Size effect in reverse: Bihar has about 1.7 times Gujarat's population and wins coarse cereals as expected; ratio swings x1.98 to x2.56.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Bihar is higher than Gujarat: State-wise Production of Foodgrains - Coarse Cereals (2024-25)"
+ },
+ "K0256": {
+  "why": "Obvious: Rajasthan is the large bajra state and far bigger than Gujarat; no one would pick Gujarat.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Gujarat: State-wise Production of Foodgrains - Coarse Cereals (2024-25)"
+ },
+ "K0257": {
+  "why": "Unstable: gap is 0.99 point in 2022-23 and 1.56 in 2023-24, and the ratio jumps from 1.51 to 2.65 only in the latest year.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Jharkhand is higher than Tamil Nadu: State-wise Production of Foodgrains - Pulses (2024-25)"
+ },
+ "K0258": {
+  "why": "Unstable: Jharkhand over West Bengal in pulses has gaps of 1.19, 1.37 and 2.11 points; only the latest year clears 1.5 and the ratio jumps from 1.76 to 2.29.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Jharkhand is higher than West Bengal: State-wise Production of Foodgrains - Pulses (2024-25)"
+ },
+ "K0259": {
+  "why": "Punjab as the granary is well known, ratio swings x1.81, x2.24, x1.77, and Punjab already appears in hl01's rice round.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Maharashtra: State-wise Production of Total Foodgrains (2024-25)"
+ },
+ "K0260": {
+  "why": "Obvious: Punjab foodgrains against Gujarat, a small foodgrain producer.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Gujarat: State-wise Production of Total Foodgrains (2024-25)"
+ },
+ "K0262": {
+  "why": "Valid (Madhya Pradesh over Uttar Pradesh in oilseeds, x2.67) but the same subject as K0261; K0261 was used and this is held as a spare for a later episode. Ratio is also narrowing (x4.44 to x2.67).",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh is higher than Uttar Pradesh: State-wise Production of Non-Foodgrains - Oilseeds (2024-25)"
+ },
+ "K0263": {
+  "why": "Uttar Pradesh grows almost no cotton (39.5 thousand bales, which would print as 0.0 million bales); the ratio swings from x105 to x21, so it is a trick, not a fair game.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Odisha is higher than Uttar Pradesh: State-wise Production of Non-Foodgrains - Cotton (Lint) (2024-25)"
+ },
+ "K0264": {
+  "why": "Same as K0263: Haryana against a state with negligible cotton; ratio x150 to x30 and the card would show 0.0.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Haryana is higher than Uttar Pradesh: State-wise Production of Non-Foodgrains - Cotton (Lint) (2024-25)"
+ },
+ "K0265": {
+  "why": "Rice again (hl01 subject) and Chhattisgarh as the rice bowl is obvious; area version of K0251.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Chhattisgarh is higher than Maharashtra: State-wise Area of Foodgrains - Rice (2024-25)"
+ },
+ "K0266": {
+  "why": "Rice again (hl01 subject); area version of the Odisha rice story.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Odisha is higher than Maharashtra: State-wise Area of Foodgrains - Rice (2024-25)"
+ },
+ "K0267": {
+  "why": "Obvious: Punjab wheat area against Maharashtra.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Maharashtra: State-wise Area of Foodgrains - Wheat (2024-25)"
+ },
+ "K0268": {
+  "why": "Obvious: Haryana wheat area against Maharashtra.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Haryana is higher than Maharashtra: State-wise Area of Foodgrains - Wheat (2024-25)"
+ },
+ "K0269": {
+  "why": "Rajasthan's bajra and coarse cereals lead is well known and the ratio swings x2.27 to x3.05; weak surprise.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Uttar Pradesh: State-wise Area of Foodgrains - Coarse Cereals (2024-25)"
+ },
+ "K0270": {
+  "why": "Obvious: Rajasthan is much larger and a bajra state; ratio x6 against Gujarat.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Gujarat: State-wise Area of Foodgrains - Coarse Cereals (2024-25)"
+ },
+ "K0271": {
+  "why": "Unstable: Jharkhand over West Bengal in pulses area has gaps of 0.94, 0.97 and 1.68 points; only the latest year clears 1.5.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Jharkhand is higher than West Bengal: State-wise Area of Foodgrains - Pulses (2024-25)"
+ },
+ "K0272": {
+  "why": "Unstable: Jharkhand over Telangana pulses area has gaps 0.99, 1.38, 1.97 and the ratio goes x1.64 to x2.54.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Jharkhand is higher than Telangana: State-wise Area of Foodgrains - Pulses (2024-25)"
+ },
+ "K0273": {
+  "why": "Size effect: Rajasthan is much larger in area than Gujarat, so a total area lead is expected; not a surprise.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Gujarat: State-wise Area of Total Foodgrains (2024-25)"
+ },
+ "K0274": {
+  "why": "Duplicate of the oilseeds production story (area version); ratio narrowing fast, x4.8 to x3.0.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Madhya Pradesh is higher than Uttar Pradesh: State-wise Area of Non-Foodgrains - Oilseeds (2024-25)"
+ },
+ "K0275": {
+  "why": "Duplicate of K0261 in area terms; ratio narrowing x3.98 to x2.36.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Rajasthan is higher than Uttar Pradesh: State-wise Area of Non-Foodgrains - Oilseeds (2024-25)"
+ },
+ "K0276": {
+  "why": "Uttar Pradesh cotton area is only 20 thousand ha; ratio x72 to x12, unstable, and a trick comparison.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Odisha is higher than Uttar Pradesh: State-wise Area of Non-Foodgrains - Cotton (Lint) (2024-25)"
+ },
+ "K0277": {
+  "why": "Same as K0276: Haryana against negligible Uttar Pradesh cotton; ratio x192 to x20.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Haryana is higher than Uttar Pradesh: State-wise Area of Non-Foodgrains - Cotton (Lint) (2024-25)"
+ },
+ "K0280": {
+  "why": "Valid and stable (Telangana over Uttar Pradesh in eggs, x4.1 to x3.1) but eggs is already hl01's subject; held for a later pick episode.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Telangana is higher than Uttar Pradesh: State-wise Egg Production (2023-24)"
+ },
+ "K0281": {
+  "why": "Valid and very stable (x2.38, x2.39, x2.36, gap 7.4 points) but eggs is hl01's subject; held for a later pick episode.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Telangana is higher than Maharashtra: State-wise Egg Production (2023-24)"
+ },
+ "K0284": {
+  "why": "Chhattisgarh's forest standing is well known, so few guess wrong; forest is covered by the Arunachal Pradesh against Maharashtra round, which is a better surprise.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Chhattisgarh is higher than Tamil Nadu: State-wise Forest Cover [*] (2023*)"
+ },
+ "K0285": {
+  "why": "Same as K0284: Chhattisgarh forest cover against Telangana is expected, and forest is already used in b1hl01.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Chhattisgarh is higher than Telangana: State-wise Forest Cover [*] (2023*)"
+ },
+ "K0287": {
+  "why": "Afforestation by scheme is an annual flow with columns out of order (2021-22 listed before 2020-21), and Maharashtra has no figure in the two earlier columns, so the three-year hold cannot be shown.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Uttarakhand is higher than Maharashtra: State-wise Afforestation under different schemes (2021-22)"
+ },
+ "K0288": {
+  "why": "Same as K0287: Maharashtra is missing in the earlier columns and the Telangana flow swings from 565 to 295 thousand ha.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Telangana is higher than Maharashtra: State-wise Afforestation under different schemes (2021-22)"
+ },
+ "K0291": {
+  "why": "Fails the 95% rule: state rows add up to only 90.5% of the India factories count in 2023-24 (91.4% and 91.9% in the two years before).",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Punjab is higher than Madhya Pradesh: State-wise Number of Factories (2023-24)"
+ },
+ "K0293": {
+  "why": "Valid and strong (Tamil Nadu over Maharashtra, bank credit to agriculture, x2.2 to x2.5, gap 8.7 to 9.6 points) but Maharashtra is already the lower state in two rounds of this batch and K0292 covers bank credit to agriculture; held as a spare for a later episode.",
+  "by": "batch-1 pick writer",
+  "date": "2026-10-11",
+  "title": "Tamil Nadu is higher than Maharashtra: State-wise Credit to Agriculture by Scheduled Commercial Banks (2025)"
+ }
+}

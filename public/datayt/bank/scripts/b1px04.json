@@ -1,0 +1,193 @@
+{
+ "id": "b1px04",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "source_short": "Labour Bureau · RBI · 2024-25",
+ "palette": "C",
+ "state": "Kerala",
+ "source": "Wages: Average daily wage rates in rural India, men, construction workers, 2024-25, Labour Bureau (Indian Labour Journal), as published in the RBI Handbook of Statistics on Indian States (Table 112; 20 states with data). Income: per-capita net state domestic product, current prices, 2024-25 (25 states and UTs with data), same Handbook.",
+ "hook": [
+  "*Kerala, Maharashtra:*",
+  "same income per person.",
+  "*Rural construction wage:*",
+  "Kerala over *2x*."
+ ],
+ "hook_vo": "Same income per person, but Kerala's rural construction wage is over double Maharashtra's.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "INCOME PER PERSON · 2024-25",
+   "data": {
+    "rbi": [
+     19,
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Maharashtra"
+   ],
+   "text": "a year. Maharashtra: ₹3,09,340. Level.",
+   "sub": "Per-capita net state domestic product, current prices. RBI. {n} states and UTs with data.",
+   "vo": "Three lakh eight thousand rupees a year, level with Maharashtra's."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2024-25",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 1000,
+   "text": "a day for men in rural construction. The highest of {n} states and UTs with data.",
+   "sub": "Average daily wage rate. Labour Bureau, via RBI.",
+   "vo": "Kerala's rural construction wage: nine hundred and twenty-three rupees a day, the highest."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2024-25",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 1000,
+   "text": "a day. Less than half of Kerala's, at the same income per person.",
+   "vo": "Maharashtra, same income: four hundred and eight rupees. Kerala's is over double."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "equals": 923
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "equals": 408
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 2.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.98
+  }
+ ],
+ "so": {
+  "lines": [
+   "Across states, income and",
+   "rural wage rates tend",
+   "to rise together.",
+   "*Kerala* sits far above."
+  ],
+  "vo": "Income and rural wages tend to rise together. Kerala sits far above that."
+ },
+ "map": {
+  "data": {
+   "rbi": [
+    112,
+    "2024-25"
+   ]
+  },
+  "unit": "",
+  "title": "Rural construction wage, *states with data*",
+  "sub": "₹ a day · India ₹{india} · 2024-25",
+  "note": "Men, rural construction workers only. Not all jobs. Not income.",
+  "ring": [
+   "Kerala",
+   "Maharashtra"
+  ],
+  "vo": "Here are the twenty states and UTs with data. Daily wages, men, rural construction."
+ },
+ "end": {
+  "q": "Where does *your state* stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "Kerala vs Maharashtra: Same Income Per Head, 2x Rural Wage"
+}

@@ -1,0 +1,472 @@
+{
+ "id": "b1sh07",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "RBI · end-March 2025",
+ "palette": "D",
+ "state": "Maharashtra",
+ "data": {
+  "rbi": [
+   156,
+   "2025"
+  ]
+ },
+ "parts": [
+  "Maharashtra",
+  "Delhi",
+  "Tamil Nadu"
+ ],
+ "source": "Reserve Bank of India, Basic Statistical Returns of Scheduled Commercial Banks in India, as published in the RBI Handbook of Statistics on Indian States: credit (Table 156), deposits (Table 155) and number of bank offices (Table 152), all as at end-March 2025. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* has",
+  "nearly a *quarter* of",
+  "India's bank credit."
+ ],
+ "hook_vo": "One state has nearly a quarter of India's bank credit.",
+ "grid_caption": "100 squares = all bank credit in India, March 2025",
+ "reveal": {
+  "sub": "has {share} of India's bank credit: ₹44.8 lakh crore, end-March 2025",
+  "vo": "Maharashtra. Forty-five lakh crore rupees at the end of March twenty twenty-five."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S BANK CREDIT · MARCH 2025",
+  "vo": "Delhi ten in a hundred, Tamil Nadu nine, all other states fifty-seven.",
+  "rest_rounds": 57
+ },
+ "facts": [
+  {
+   "kicker": "SHARE OF CREDIT VS SHARE OF OFFICES",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of India's bank offices",
+   "bars": [
+    {
+     "name": "Credit",
+     "share": {
+      "rbi": [
+       156,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Deposits",
+     "share": {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Bank offices",
+     "share": {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Scheduled commercial banks, end-March 2025.",
+   "vo": "That is over two and a half times its share of bank offices."
+  },
+  {
+   "kicker": "MAHARASHTRA VS THE NEXT TWO STATES",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      },
+      "state": "Delhi"
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "share": {
+           "rbi": [
+            156,
+            "2025"
+           ]
+          },
+          "state": "Tamil Nadu"
+         },
+         {
+          "share": {
+           "rbi": [
+            156,
+            "2025"
+           ]
+          },
+          "state": "Tamil Nadu"
+         }
+        ]
+       },
+       {
+        "share": {
+         "rbi": [
+          156,
+          "2025"
+         ]
+        },
+        "state": "Tamil Nadu"
+       }
+      ]
+     }
+    ]
+   },
+   "unit": "%",
+   "text": "Delhi and Tamil Nadu together",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "share": {
+      "rbi": [
+       156,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Next two",
+     "diff": [
+      {
+       "share": {
+        "rbi": [
+         156,
+         "2025"
+        ]
+       },
+       "state": "Delhi"
+      },
+      {
+       "diff": [
+        {
+         "diff": [
+          {
+           "share": {
+            "rbi": [
+             156,
+             "2025"
+            ]
+           },
+           "state": "Tamil Nadu"
+          },
+          {
+           "share": {
+            "rbi": [
+             156,
+             "2025"
+            ]
+           },
+           "state": "Tamil Nadu"
+          }
+         ]
+        },
+        {
+         "share": {
+          "rbi": [
+           156,
+           "2025"
+          ]
+         },
+         "state": "Tamil Nadu"
+        }
+       ]
+      }
+     ],
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Credit: ₹44.8 lakh crore against ₹35.9 lakh crore.",
+   "vo": "More than Delhi and Tamil Nadu put together."
+  }
+ ],
+ "tests": [
+  {
+   "says": "nearly a quarter of India's bank credit",
+   "value": {
+    "share": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    }
+   },
+   "min": 23,
+   "max": 24.99
+  },
+  {
+   "says": "₹44.8 lakh crore (₹ crore / 10,000, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    },
+    "scale": 0.0001
+   },
+   "equals": 448
+  },
+  {
+   "says": "forty-five lakh crore rupees",
+   "value": {
+    "data": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    },
+    "scale": 1e-05
+   },
+   "equals": 45
+  },
+  {
+   "says": "Delhi ten in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    },
+    "state": "Delhi"
+   },
+   "equals": 10
+  },
+  {
+   "says": "Tamil Nadu nine",
+   "value": {
+    "share": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    },
+    "state": "Tamil Nadu"
+   },
+   "equals": 9
+  },
+  {
+   "says": "over two and a half times its share of bank offices",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 2.9
+  },
+  {
+   "says": "more than Delhi and Tamil Nadu put together (points)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      }
+     },
+     {
+      "diff": [
+       {
+        "share": {
+         "rbi": [
+          156,
+          "2025"
+         ]
+        },
+        "state": "Delhi"
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "share": {
+             "rbi": [
+              156,
+              "2025"
+             ]
+            },
+            "state": "Tamil Nadu"
+           },
+           {
+            "share": {
+             "rbi": [
+              156,
+              "2025"
+             ]
+            },
+            "state": "Tamil Nadu"
+           }
+          ]
+         },
+         {
+          "share": {
+           "rbi": [
+            156,
+            "2025"
+           ]
+          },
+          "state": "Tamil Nadu"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1,
+   "max": 15
+  },
+  {
+   "says": "next two together ₹35.9 lakh crore (₹ crore / 10,000)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      },
+      "state": "Delhi"
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "data": {
+           "rbi": [
+            156,
+            "2025"
+           ]
+          },
+          "state": "Tamil Nadu"
+         },
+         {
+          "data": {
+           "rbi": [
+            156,
+            "2025"
+           ]
+          },
+          "state": "Tamil Nadu"
+         }
+        ]
+       },
+       {
+        "data": {
+         "rbi": [
+          156,
+          "2025"
+         ]
+        },
+        "state": "Tamil Nadu"
+       }
+      ]
+     }
+    ],
+    "scale": 0.0001
+   },
+   "equals": 359
+  },
+  {
+   "says": "size check, not spoken: credit share far above the share of offices",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        156,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 4.0
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   8,
+   15
+  ],
+  "title": "Share of India's bank credit, *every state*",
+  "sub": "% of credit · end-March 2025",
+  "note": "State totals, not per person. Credit by scheduled commercial banks.",
+  "ring": [
+   "Maharashtra"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "What share of credit is in *your state*?",
+  "sub": "Comment below.",
+  "vo": "What share of credit is in your state?"
+ },
+ "yt_title": "Maharashtra Has Nearly a Quarter of India's Bank Credit"
+}

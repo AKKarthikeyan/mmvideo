@@ -1,0 +1,328 @@
+{
+ "id": "b1sh03",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "Agriculture Ministry · 2024-25",
+ "palette": "D",
+ "state": "Madhya Pradesh",
+ "data": {
+  "rbi": [
+   76,
+   "2024-25"
+  ]
+ },
+ "parts": [
+  "Madhya Pradesh",
+  "Rajasthan",
+  "Maharashtra"
+ ],
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States: oilseeds (nine oilseeds combined) area (Table 76), production (Table 63) and yield (Table 85), and total foodgrains area (Table 71), all 2024-25. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* has",
+  "a *quarter* of India's",
+  "oilseed area."
+ ],
+ "hook_vo": "One state has a quarter of India's oilseed area.",
+ "grid_caption": "100 squares = India's oilseed area, 2024-25",
+ "reveal": {
+  "sub": "has {share} of India's oilseed area: 7.7 million hectares in 2024-25",
+  "vo": "Madhya Pradesh. Nearly eight million hectares in twenty twenty-four twenty-five."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S OILSEED AREA · 2024-25",
+  "vo": "Rajasthan twenty in a hundred, Maharashtra eighteen, all other states thirty-seven.",
+  "rest_rounds": 37
+ },
+ "facts": [
+  {
+   "kicker": "MADHYA PRADESH'S SHARE OF INDIA'S LAND",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        76,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        71,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of India's foodgrain area",
+   "bars": [
+    {
+     "name": "Oilseeds",
+     "share": {
+      "rbi": [
+       76,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Foodgrains",
+     "share": {
+      "rbi": [
+       71,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Area shares, 2024-25. Nine oilseeds combined.",
+   "vo": "That is nearly twice its share of India's foodgrain area."
+  },
+  {
+   "kicker": "SHARE OF AREA VS SHARE OF CROP",
+   "value": {
+    "share": {
+     "rbi": [
+      63,
+      "2024-25"
+     ]
+    }
+   },
+   "unit": "%",
+   "text": "of India's oilseed crop",
+   "bars": [
+    {
+     "name": "Area",
+     "share": {
+      "rbi": [
+       76,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Crop",
+     "share": {
+      "rbi": [
+       63,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Yield: 1,065 kg a hectare. India: 1,412.",
+   "vo": "But its share of the harvest is nineteen in a hundred."
+  }
+ ],
+ "tests": [
+  {
+   "says": "a quarter of India's oilseed area",
+   "value": {
+    "share": {
+     "rbi": [
+      76,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 24.5,
+   "max": 26.5
+  },
+  {
+   "says": "7.7 million hectares (thousand ha / 100, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      76,
+      "2024-25"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 77
+  },
+  {
+   "says": "nearly eight million hectares",
+   "value": {
+    "data": {
+     "rbi": [
+      76,
+      "2024-25"
+     ]
+    },
+    "scale": 0.001
+   },
+   "min": 7.5,
+   "max": 7.99
+  },
+  {
+   "says": "Rajasthan twenty in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      76,
+      "2024-25"
+     ]
+    },
+    "state": "Rajasthan"
+   },
+   "equals": 20
+  },
+  {
+   "says": "Maharashtra eighteen",
+   "value": {
+    "share": {
+     "rbi": [
+      76,
+      "2024-25"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 18
+  },
+  {
+   "says": "nearly twice its share of foodgrain area",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        76,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        71,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.7,
+   "max": 1.99
+  },
+  {
+   "says": "harvest share nineteen in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      63,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 19
+  },
+  {
+   "says": "crop share is below area share (ratio of the two shares)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        76,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.7,
+   "max": 0.8
+  },
+  {
+   "says": "yield 1,065 kg a hectare",
+   "value": {
+    "data": {
+     "rbi": [
+      85,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 1065
+  },
+  {
+   "says": "India yield 1,412 kg a hectare",
+   "value": {
+    "data": {
+     "rbi": [
+      85,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 1412
+  },
+  {
+   "says": "yield below India's average (ratio)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        85,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        85,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.72,
+   "max": 0.78
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   10,
+   20
+  ],
+  "title": "Share of India's oilseed area, *every state*",
+  "sub": "% of India's area · 2024-25",
+  "note": "State totals, not per person. Nine oilseeds combined.",
+  "ring": [
+   "Madhya Pradesh"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "Does *your state* grow oilseeds?",
+  "sub": "Comment below.",
+  "vo": "Does your state grow oilseeds?"
+ },
+ "yt_title": "Madhya Pradesh Has a Quarter of India's Oilseed Area"
+}

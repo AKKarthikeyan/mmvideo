@@ -1,0 +1,306 @@
+{
+ "id": "b1sh04",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "Agriculture Ministry · 2024-25",
+ "palette": "C",
+ "state": "Rajasthan",
+ "data": {
+  "rbi": [
+   69,
+   "2024-25"
+  ]
+ },
+ "parts": [
+  "Rajasthan",
+  "Maharashtra",
+  "Karnataka"
+ ],
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States: coarse cereals area (Table 69), production (Table 60) and yield (Table 82), and total foodgrains area (Table 71), all 2024-25. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* has",
+  "a *quarter* of India's",
+  "coarse cereal area."
+ ],
+ "hook_vo": "One state has a quarter of India's coarse cereal area.",
+ "grid_caption": "100 squares = India's coarse cereal area, 2024-25",
+ "reveal": {
+  "sub": "has {share} of India's coarse cereal area: 6.4 million hectares",
+  "vo": "Rajasthan. Over six million hectares in twenty twenty-four twenty-five."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S COARSE CEREAL AREA · 2024-25",
+  "vo": "Maharashtra fifteen in a hundred, Karnataka fourteen, all other states forty-six.",
+  "rest_rounds": 46
+ },
+ "facts": [
+  {
+   "kicker": "SHARE OF AREA VS SHARE OF CROP",
+   "value": {
+    "share": {
+     "rbi": [
+      60,
+      "2024-25"
+     ]
+    }
+   },
+   "unit": "%",
+   "text": "of India's coarse cereal crop",
+   "bars": [
+    {
+     "name": "Area",
+     "share": {
+      "rbi": [
+       69,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Crop",
+     "share": {
+      "rbi": [
+       60,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Crop in tonnes, 2024-25.",
+   "vo": "But its share of the harvest is under fifteen in a hundred."
+  },
+  {
+   "kicker": "YIELD VS INDIA'S AVERAGE",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        82,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        82,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "India's average yield per hectare",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "data": {
+      "rbi": [
+       82,
+       "2024-25"
+      ]
+     },
+     "unit": " kg"
+    },
+    {
+     "name": "India",
+     "data": {
+      "rbi": [
+       82,
+       "2024-25"
+      ]
+     },
+     "state": "India",
+     "unit": " kg"
+    }
+   ],
+   "bar_max": 3000,
+   "sub": "Yield in kg per hectare, 2024-25.",
+   "vo": "Its yield is about three-fifths of India's average."
+  }
+ ],
+ "tests": [
+  {
+   "says": "a quarter of India's coarse cereal area",
+   "value": {
+    "share": {
+     "rbi": [
+      69,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 24,
+   "max": 26
+  },
+  {
+   "says": "6.4 million hectares (thousand ha / 100, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      69,
+      "2024-25"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 64
+  },
+  {
+   "says": "over six million hectares",
+   "value": {
+    "data": {
+     "rbi": [
+      69,
+      "2024-25"
+     ]
+    },
+    "scale": 0.001
+   },
+   "min": 6.0,
+   "max": 6.5
+  },
+  {
+   "says": "Maharashtra fifteen in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      69,
+      "2024-25"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 15
+  },
+  {
+   "says": "Karnataka fourteen",
+   "value": {
+    "share": {
+     "rbi": [
+      69,
+      "2024-25"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 14
+  },
+  {
+   "says": "harvest share under fifteen in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      60,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 14,
+   "max": 14.99
+  },
+  {
+   "says": "crop share is well below area share (ratio of the two shares)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        60,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        69,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.55,
+   "max": 0.65
+  },
+  {
+   "says": "yield about three-fifths of India's average",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        82,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        82,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.57,
+   "max": 0.63
+  },
+  {
+   "says": "size check, not spoken: area share about twice Rajasthan's share of foodgrain area",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        69,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        71,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.8,
+   "max": 2.6
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   10,
+   20
+  ],
+  "title": "Share of India's coarse cereal area, *every state*",
+  "sub": "% of India's area · 2024-25",
+  "note": "State totals, not per person. Blank: not available.",
+  "ring": [
+   "Rajasthan"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "Does *your state* grow coarse cereals?",
+  "sub": "Comment below.",
+  "vo": "Does your state grow coarse cereals?"
+ },
+ "yt_title": "Rajasthan Has a Quarter of India's Coarse Cereal Area"
+}

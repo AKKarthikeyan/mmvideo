@@ -1,0 +1,340 @@
+{
+ "id": "sh01",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "Agriculture Ministry · 2024-25",
+ "palette": "E",
+ "state": "Uttar Pradesh",
+ "data": {
+  "rbi": [
+   65,
+   "2024-25"
+  ]
+ },
+ "parts": [
+  "Uttar Pradesh",
+  "Maharashtra",
+  "Karnataka"
+ ],
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States: sugarcane production (Table 65), area (Table 78) and yield (Table 87), and total foodgrains (Table 62), all 2024-25. Milk: Basic Animal Husbandry Statistics (Table 91), 2023-24. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* grows",
+  "nearly *half* of",
+  "India's sugarcane."
+ ],
+ "hook_vo": "One state grows nearly half of India's sugarcane.",
+ "grid_caption": "100 squares = all the sugarcane India grew in 2024-25",
+ "reveal": {
+  "sub": "grows {share} of India's sugarcane: 220.8 million tonnes in 2024-25",
+  "vo": "Uttar Pradesh. Two hundred and twenty-one million tonnes in 2024-25."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S SUGARCANE · 2024-25",
+  "vo": "Maharashtra grows twenty-four in a hundred, Karnataka eleven, all other states seventeen.",
+  "rest_rounds": 17
+ },
+ "facts": [
+  {
+   "kicker": "UP'S SHARE OF INDIA'S OUTPUT",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        65,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of India's foodgrains",
+   "bars": [
+    {
+     "name": "Sugarcane",
+     "share": {
+      "rbi": [
+       65,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Foodgrains",
+     "share": {
+      "rbi": [
+       62,
+       "2024-25"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Milk",
+     "share": {
+      "rbi": [
+       91,
+       "2023-24"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Foodgrains 2024-25, milk 2023-24.",
+   "vo": "That is nearly three times its share of India's foodgrains or milk."
+  },
+  {
+   "kicker": "WHY? LAND, NOT YIELD",
+   "value": {
+    "share": {
+     "rbi": [
+      78,
+      "2024-25"
+     ]
+    }
+   },
+   "unit": "%",
+   "text": "of India's sugarcane area. Yield: just under India's average.",
+   "bars": [
+    {
+     "name": "UP yield",
+     "data": {
+      "rbi": [
+       87,
+       "2024-25"
+      ]
+     },
+     "scale": 0.001,
+     "unit": " t"
+    },
+    {
+     "name": "India",
+     "data": {
+      "rbi": [
+       87,
+       "2024-25"
+      ]
+     },
+     "state": "India",
+     "scale": 0.001,
+     "unit": " t"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Yield in tonnes per hectare. Area: 2,720 of 5,450 thousand hectares.",
+   "vo": "The reason is land: half of India's cane area is in Uttar Pradesh."
+  }
+ ],
+ "tests": [
+  {
+   "says": "nearly half of India's sugarcane",
+   "value": {
+    "share": {
+     "rbi": [
+      65,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 45,
+   "max": 49.99
+  },
+  {
+   "says": "220.8 million tonnes (thousand tonnes / 100, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      65,
+      "2024-25"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 2208
+  },
+  {
+   "says": "two hundred and twenty-one million tonnes",
+   "value": {
+    "data": {
+     "rbi": [
+      65,
+      "2024-25"
+     ]
+    },
+    "scale": 0.001
+   },
+   "equals": 221
+  },
+  {
+   "says": "Maharashtra twenty-four in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      65,
+      "2024-25"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 24
+  },
+  {
+   "says": "Karnataka eleven",
+   "value": {
+    "share": {
+     "rbi": [
+      65,
+      "2024-25"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 11
+  },
+  {
+   "says": "nearly three times its share of foodgrains",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        65,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.6,
+   "max": 3.05
+  },
+  {
+   "says": "nearly three times its share of milk",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        65,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        91,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.6,
+   "max": 3.05
+  },
+  {
+   "says": "half of India's cane area",
+   "value": {
+    "share": {
+     "rbi": [
+      78,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 50
+  },
+  {
+   "says": "area 2,720 thousand hectares",
+   "value": {
+    "data": {
+     "rbi": [
+      78,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 2720
+  },
+  {
+   "says": "India area 5,450 thousand hectares",
+   "value": {
+    "data": {
+     "rbi": [
+      78,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 5450
+  },
+  {
+   "says": "yield just under India's average (ratio)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        87,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        87,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.95,
+   "max": 0.999
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   15,
+   30
+  ],
+  "title": "Share of India's sugarcane, *every state*",
+  "sub": "% of India's production · 2024-25",
+  "note": "Tonnes grown, not per person or per hectare. Figures for 2024-25 as published by the RBI.",
+  "ring": [
+   "Uttar Pradesh"
+  ],
+  "vo": "Here is every state's share. These are tonnes grown, not per person or per hectare."
+ },
+ "end": {
+  "q": "How much does *your state* grow?",
+  "sub": "Comment below.",
+  "vo": "How much does your state grow?"
+ },
+ "yt_title": "Uttar Pradesh Grows Nearly Half of India's Sugarcane"
+}

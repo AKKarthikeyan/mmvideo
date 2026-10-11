@@ -1,0 +1,511 @@
+{
+ "id": "sh01",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "sourceShort": "Agriculture Ministry · 2024-25",
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States: sugarcane production (Table 65), area (Table 78) and yield (Table 87), and total foodgrains (Table 62), all 2024-25. Milk: Basic Animal Husbandry Statistics (Table 91), 2023-24. Each share is of the all-India figure in the same table.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "grid",
+   "lines": [
+    "*One state* grows",
+    "nearly *half* of",
+    "India's sugarcane."
+   ],
+   "vo": "One state grows nearly half of India's sugarcane.",
+   "mode": "hook",
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "reveal",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "sub": "grows 48.6% of India's sugarcane: 220.8 million tonnes in 2024-25",
+   "vo": "Uttar Pradesh. Two hundred and twenty-one million tonnes in 2024-25.",
+   "t0": 3.871,
+   "t1": 9.677
+  },
+  {
+   "kind": "grid",
+   "mode": "split",
+   "kicker": "% OF INDIA'S SUGARCANE · 2024-25",
+   "vo": "Maharashtra grows twenty-four in a hundred, Karnataka eleven, all other states seventeen.",
+   "t0": 9.677,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "UP'S SHARE OF INDIA'S OUTPUT",
+   "big": "2.7×",
+   "text": "its share of India's foodgrains",
+   "sub": "Foodgrains 2024-25, milk 2023-24.",
+   "bars": [
+    {
+     "name": "Sugarcane",
+     "label": "48.6%",
+     "frac": 0.9713856461898195
+    },
+    {
+     "name": "Foodgrains",
+     "label": "17.8%",
+     "frac": 0.3569608774384861
+    },
+    {
+     "name": "Milk",
+     "label": "16.2%",
+     "frac": 0.32411334773651373
+    }
+   ],
+   "vo": "That is nearly three times its share of India's foodgrains or milk.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "WHY? LAND, NOT YIELD",
+   "big": "49.9%",
+   "text": "of India's sugarcane area. Yield: just under India's average.",
+   "sub": "Yield in tonnes per hectare. Area: 2,720 of 5,450 thousand hectares.",
+   "bars": [
+    {
+     "name": "UP yield",
+     "label": "81.2 t",
+     "frac": 0.8116500000000001
+    },
+    {
+     "name": "India",
+     "label": "83.4 t",
+     "frac": 0.83416
+    }
+   ],
+   "vo": "The reason is land: half of India's cane area is in Uttar Pradesh.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Share of India's sugarcane, *every state*",
+   "sub": "% of India's production · 2024-25",
+   "note": "Tonnes grown, not per person or per hectare. Figures for 2024-25 as published by the RBI.",
+   "anim": true,
+   "ring": [
+    "Uttar Pradesh"
+   ],
+   "vo": "Here is every state's share. These are tonnes grown, not per person or per hectare.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Tonnes grown, not per person or per hectare. Figures for 2024-25 as published by the RBI.",
+   "ring": [
+    "Uttar Pradesh"
+   ],
+   "q": "How much does *your state* grow?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "How much does your state grow?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "grid": {
+  "parts": [
+   {
+    "name": "Uttar Pradesh",
+    "v": 48.569,
+    "label": "48.6",
+    "color": "#740A00"
+   },
+   {
+    "name": "Maharashtra",
+    "v": 24.19,
+    "label": "24.2",
+    "color": "#B84900"
+   },
+   {
+    "name": "Karnataka",
+    "v": 10.572,
+    "label": "10.6",
+    "color": "#DD9942"
+   },
+   {
+    "name": "All other states",
+    "v": 16.669,
+    "label": "16.7",
+    "color": "#B9A898"
+   }
+  ],
+  "caption": "100 squares = all the sugarcane India grew in 2024-25"
+ },
+ "map": [
+  {
+   "name": "Jammu and Kashmir",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Meghalaya",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Kerala",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Mizoram",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Goa",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Tripura",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Jharkhand",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "Nagaland",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Puducherry",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Manipur",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "Rajasthan",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Odisha",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "West Bengal",
+   "label": "0.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Assam",
+   "label": "0.3",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Telangana",
+   "label": "0.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "0.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Haryana",
+   "label": "1.3",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "1.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Punjab",
+   "label": "1.6",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Bihar",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "2.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Gujarat",
+   "label": "3.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Karnataka",
+   "label": "10.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Maharashtra",
+   "label": "24.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "48.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  }
+ ],
+ "checked": [
+  "state rows add up to the all-India row (1.0000)",
+  "Uttar Pradesh is first with 48.57% of the all-India figure",
+  "nearly half of India's sugarcane: 48.57",
+  "220.8 million tonnes (thousand tonnes / 100, one decimal): 2208.01",
+  "two hundred and twenty-one million tonnes: 220.80",
+  "Maharashtra twenty-four in a hundred: 24.19",
+  "Karnataka eleven: 10.57",
+  "nearly three times its share of foodgrains: 2.72",
+  "nearly three times its share of milk: 3.00",
+  "half of India's cane area: 49.92",
+  "area 2,720 thousand hectares: 2720.40",
+  "India area 5,450 thousand hectares: 5449.90",
+  "yield just under India's average (ratio): 0.97"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.056,
+   "at": 0.12,
+   "text": "One state grows nearly half of India's sugarcane."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.355,
+   "at": 3.991,
+   "text": "Uttar Pradesh. Two hundred and twenty-one million tonnes in 2024-25."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.067,
+   "at": 9.797,
+   "text": "Maharashtra grows twenty-four in a hundred, Karnataka eleven, all other states seventeen."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.623,
+   "at": 15.604,
+   "text": "That is nearly three times its share of India's foodgrains or milk."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.97,
+   "at": 21.41,
+   "text": "The reason is land: half of India's cane area is in Uttar Pradesh."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.146,
+   "at": 27.217,
+   "text": "Here is every state's share. These are tonnes grown, not per person or per hectare."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.037,
+   "at": 33.023,
+   "text": "How much does your state grow?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Uttar Pradesh Grows Nearly Half of India's Sugarcane"
+}

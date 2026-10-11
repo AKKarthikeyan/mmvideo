@@ -7,6 +7,8 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
   versus      State against state across five categories, with a running score
   paradox     Two official numbers about one state that seem to disagree, a second state for contrast, what the two
               numbers have to do with each other across all states, then every state on the map
+  share       One state's share of a national total on a 100-square grid, the reveal, the split among the leading
+              states, one or two cards on why, then every state's share on the map
 
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table and
@@ -25,7 +27,7 @@ from build_story import series as base_series, fmt, SHORT
 
 FPS, VO_LEAD = 30, 0.12
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
-            "spot": 2, "fact": 2, "say": 2, "mapend": 2}
+            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2}
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
 PCT = {"g5_pct": ("g5", "total"), "uncovered_pct": ("uncovered", "total")}
 geo = lambda s: GEO_ALIAS.get(s, s)
@@ -78,6 +80,32 @@ def spearman(a, b):
     mx, my = sum(x) / len(x), sum(y) / len(y)
     cov = sum((p - mx) * (q - my) for p, q in zip(x, y))
     return cov / math.sqrt(sum((p - mx) ** 2 for p in x) * sum((q - my) ** 2 for q in y)), len(ks)
+
+
+def value(q, st):
+    """A number from a small spec: a state's figure ({"data": spec}), its share of the all-India figure in percent
+    ({"share": spec}), or the ratio of two such specs ({"ratio": [a, b]}). "state" overrides the story's state ("India" for
+    the all-India row) and "scale" multiplies the result."""
+    if "ratio" in q:
+        return value(q["ratio"][0], st) / value(q["ratio"][1], st)
+    spec = q.get("share") or q["data"]
+    vals, india = series(spec); s = q.get("state", st)
+    v = india if s == "India" else find(vals, s)
+    assert v is not None and ("share" not in q or india), f"no value for {s} in {spec}"
+    return (100 * v / india if "share" in q else v) * q.get("scale", 1)
+
+
+def run_checks(sid, cfg, st):
+    """Recompute every spoken or printed comparison listed under "tests"; a failed one stops the build."""
+    done = []
+    for k in cfg.get("tests", []):
+        v = value(k["value"], st)
+        if "equals" in k:
+            assert round(v) == k["equals"], f"{sid}: '{k['says']}' fails: {v:g} does not round to {k['equals']}"
+        else:
+            assert k["min"] <= v <= k["max"], f"{sid}: '{k['says']}' fails: {v:g} is outside {k['min']} to {k['max']}"
+        done.append(f"{k['says']}: {v:.2f}")
+    return done
 
 
 def find(vals, state):
@@ -185,6 +213,39 @@ def build(cfg):
         ring = [geo(x) for x in m.get("ring", [])]
         beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"].format(**ctx)})
         extra["checked"] = checked
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "share":
+        st0 = cfg["state"]
+        vals, india = series(cfg["data"])
+        assert india, f"{sid}: the table has no all-India row"
+        assert abs(sum(vals.values()) / india - 1) < 0.005, f"{sid}: state rows do not add up to the all-India row"
+        sh = {s_: 100 * v / india for s_, v in vals.items()}
+        named = cfg["parts"]; rk = sorted(sh, key=lambda s_: -sh[s_])
+        assert named[0] == st0 and rk[:len(named)] == named, f"{sid}: the named parts are not the top {len(named)} in order ({rk[:4]})"
+        cols = [pal["accent"], pal["bands"][2], pal["bands"][0]]
+        rest = 100 - sum(sh[s_] for s_ in named)
+        assert round(rest) == cfg["split"].get("rest_rounds", round(rest)), f"{sid}: the rest is {rest:.2f}, not {cfg['split']['rest_rounds']}"
+        extra["grid"] = {"parts": [{"name": nm(s_), "v": round(sh[s_], 3), "label": f"{sh[s_]:.1f}", "color": cols[i]} for i, s_ in enumerate(named)] +
+                                  [{"name": cfg.get("rest_name", "All other states"), "v": round(rest, 3), "label": f"{rest:.1f}", "color": "#B9A898"}],
+                         "caption": cfg["grid_caption"]}
+        ctx = {"share": f"{sh[st0]:.1f}%", "n": len(vals)}
+        beats[0].update({"kind": "grid", "mode": "hook"})
+        beats.append({"kind": "reveal", "name": nm(st0), "geo": geo(st0), "sub": cfg["reveal"]["sub"].format(**ctx), "vo": cfg["reveal"]["vo"]})
+        beats.append({"kind": "grid", "mode": "split", "kicker": cfg["split"]["kicker"], "vo": cfg["split"]["vo"]})
+        for c in cfg.get("facts", []):
+            st = c.get("state", st0); u = c.get("unit", "%")
+            bars = [{"name": b["name"], "v": value(b, st), "unit": b.get("unit", u)} for b in c.get("bars", [])]
+            top = c.get("bar_max") or max([b["v"] for b in bars] or [1])
+            beats.append({"kind": "fact", "name": nm(st), "geo": geo(st), "kicker": c["kicker"], "big": show(value(c["value"], st), u), "text": c.get("text", ""), "sub": c.get("sub", ""),
+                          "bars": [{"name": b["name"], "label": show(b["v"], b["unit"]), "frac": min(1, b["v"] / top)} for b in bars], "vo": c["vo"]})
+        m = cfg["map"]; cuts = m["bands"]
+        asc = sorted(sh, key=lambda s_: (sh[s_], s_))
+        extra["map"] = [{"name": geo(s_), "label": "<0.1" if sh[s_] < 0.05 else f"{sh[s_]:.1f}", "bucket": sum(sh[s_] >= c for c in cuts), "nudge": NUDGE.get(geo(s_), (0, 0))} for s_ in asc]
+        missing = {x["name"] for x in extra["map"]} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        ring = [geo(x) for x in m.get("ring", [])]
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", ""), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
+        extra["checked"] = [f"state rows add up to the all-India row ({sum(vals.values()) / india:.4f})", f"{st0} is first with {sh[st0]:.2f}% of the all-India figure"] + run_checks(sid, cfg, st0)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
     else:
         raise SystemExit(f"{sid}: unknown type {typ}")

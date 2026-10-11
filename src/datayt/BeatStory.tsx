@@ -118,6 +118,7 @@ const Spot: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
         </>}
       </g>
     </svg>
+    {b.note && <div style={{position: "absolute", left: 60, right: 330, top: 1800, fontFamily: SANS, fontWeight: 600, fontSize: 24, lineHeight: 1.3, color: P.mute}}>{b.note}</div>}
   </AbsoluteFill>;
 };
 

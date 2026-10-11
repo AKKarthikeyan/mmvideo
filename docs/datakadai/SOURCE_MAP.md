@@ -1,12 +1,12 @@
 # Data Kadai: source map
 
-Mapped 2026-10-10. 212 sources. This is a map of where reliable data lives, not the data itself:
+Mapped 2026-10-10; nine law, gazette and treaty sources added 2026-10-11. 221 sources. This is a map of where reliable data lives, not the data itself:
 pull the latest figures from a source only when a story needs them.
 
 - **Tier 1** = the official or primary publisher. **Tier 2** = a research institution. **Tier 3** = industry body, NGO or private
   compiler: name it on screen and cross-check against a Tier 1 source where one exists.
-- **Access** was tested from the MacBook Air on the mapping date: 172 open to scripts, 33 open only in a browser
-  (the site blocks automated requests), 7 gave no response and need a second look.
+- **Access** was tested from the MacBook Air on the mapping date: 179 open to scripts, 34 open only in a browser
+  (the site blocks automated requests), 8 gave no response and need a second look.
 - Descriptions of what each source offers are from general knowledge of the publisher, not from reading each site today.
 - Machine-readable copy: `public/datayt/sources/source_map.json`. Already-collected tables: `SOURCES_CATALOG.md`.
 
@@ -128,6 +128,20 @@ pull the latest figures from a source only when a story needs them.
 | [Ports, Shipping and Waterways](https://shipmin.gov.in) | Port traffic, basic port statistics | State-wise | monthly | 1 | Script can fetch |
 | [UIDAI](https://uidai.gov.in) | Aadhaar saturation by state *(The specific section link did not open; this is the site's home page.)* | State-wise | daily | 1 | Script can fetch |
 | [India Brand Equity Foundation](https://www.ibef.org) | Sector and state summaries compiled from official data | State-wise | monthly | 3 | Browser only |
+
+## India: law, gazettes and treaties (9)
+
+| Source | What it gives | Level | Frequency | Tier | Access |
+| --- | --- | --- | --- | --- | --- |
+| [India Code](https://www.indiacode.gov.in) | Text of every Central Act, with footnotes giving commencement dates and notifications | National | ongoing | 1 | Script can fetch |
+| [Legislative Department: Constitution and amendment Acts](https://www.legislative.gov.in) | The Constitution as amended, and each amendment Act with its statement of objects | National | ongoing | 1 | Script can fetch |
+| [Gazette of India (e-Gazette)](https://egazette.gov.in) | Notifications: appointed days, commencement dates, statutory orders | National | daily | 1 | No response |
+| [Goa Government Printing Press (gazette archive)](https://goaprintingpress.gov.in) | Goa, Daman and Diu gazettes back to the 1960s (scanned) | State-wise | ongoing | 1 | Script can fetch |
+| [MEA bilateral briefs and treaties](https://www.mea.gov.in) | Country briefs with dated milestones; treaty list | National | ongoing | 1 | Script can fetch |
+| [UN Treaty Collection](https://treaties.un.org) | Registered treaty texts (UN Treaty Series), scanned | Global, incl. India | ongoing | 1 | Script can fetch |
+| [UN Yearbook and Security Council records](https://research.un.org/en/docs/sc/quick) | Meeting dates, draft resolutions and votes; Yearbook of the United Nations | Global, incl. India | annual | 1 | Script can fetch |
+| [International Court of Justice](https://www.icj-cij.org) | Judgments and case summaries | Global, incl. India | ongoing | 1 | Script can fetch |
+| [Central Ground Water Board](https://cgwb.gov.in) | Dynamic Ground Water Resources of India (annual assessment), state reports. The site gave certificate errors on 11 Oct 2026; the state-wise table is also laid in Parliament and released by PIB | State-wise | annual | 1 | Browser only |
 
 ## India: universities, research institutions and think tanks (28)
 
@@ -309,6 +323,7 @@ These block automated requests or need an account. Open the link in a browser an
 | State Department visa statistics | https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics.html | Visas issued by nationality and post |
 | USGS minerals: India | https://www.usgs.gov/centers/national-minerals-information-center/asia-and-pacific | Mineral production yearbook |
 | Congressional Research Service | https://crsreports.congress.gov | Briefs on India-US relations and trade |
+| Central Ground Water Board | https://cgwb.gov.in | Annual Dynamic Ground Water Resources report and state reports (the state-wise table is also in the Ministry's replies in Parliament, on PIB) |
 
 ## No response on the mapping date
 
@@ -321,3 +336,4 @@ These block automated requests or need an account. Open the link in a browser an
 | IIT Bombay research | https://www.iitb.ac.in/en/research-and-development |
 | Trivedi Centre for Political Data | https://tcpd.ashoka.edu.in |
 | FRED (St. Louis Fed) | https://fred.stlouisfed.org/tags/series?t=india |
+| Gazette of India (e-Gazette) | https://egazette.gov.in |

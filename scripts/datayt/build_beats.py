@@ -356,7 +356,7 @@ def build(cfg):
         import datetime as _dt
         st0 = cfg["state"]
         assert geo(st0) in GEO, f"{sid}: {st0} is not on the map"
-        beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})
+        beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0), "note": cfg.get("map_note", "")})
         day = lambda x: _dt.date(*[int(p_) for p_ in (x.split("-") + ["1", "1"])[:3]])
         checked = []
         for k in cfg.get("spans", []):      # every "N years" in the script is recomputed from its two dates
@@ -365,11 +365,19 @@ def build(cfg):
             want = k.get("full_years", k.get("about_years"))
             assert got == want, f"{sid}: '{k['says']}' fails: {k['from']} to {k['to']} is {yrs:.2f} years"
             checked.append(f"{k['says']}: {k['from']} to {k['to']} = {yrs:.2f} years")
-        extra["timeline"] = [{"label": e["tick"]} for e in cfg["events"] if e.get("tick")]
-        ticks = [e["tick"] for e in cfg["events"] if e.get("tick")]
+        ctx = {}
+        if "poll" in cfg:      # a vote: the parts must add up to the votes cast; shares are of valid votes
+            q_ = cfg["poll"]; valid = q_["a"] + q_["b"]
+            assert valid + q_["invalid"] == q_["voted"], f"{sid}: the poll counts do not add up to the votes cast"
+            grp = lambda n_: inr(n_)[1:]
+            ctx = {"a_pct": f"{100 * q_['a'] / valid:.1f}", "b_pct": f"{100 * q_['b'] / valid:.1f}", "turnout": f"{100 * q_['voted'] / q_['electors']:.1f}",
+                   "a_n": grp(q_["a"]), "b_n": grp(q_["b"]), "electors": grp(q_["electors"])}
+            checked.append(f"poll: {q_['a']} + {q_['b']} + {q_['invalid']} invalid = {q_['voted']} votes cast; {ctx['a_pct']}% and {ctx['b_pct']}% of valid votes; turnout {ctx['turnout']}%")
+        ticks = list(cfg.get("timeline_lead", [])) + [e["tick"] for e in cfg["events"] if e.get("tick")]      # the lead ticks come before the first event (the hook's year)
+        extra["timeline"] = [{"label": t_} for t_ in ticks]
         for e in cfg["events"]:
-            beats.append({"kind": "event", "kicker": e["date"], "big": e["year"], "lines": e["head"], "text": e.get("cite", ""), "sub": e.get("stat_label", ""),
-                          "label": e.get("stat", ""), "n": ticks.index(e["tick"]) if e.get("tick") else -1, "geo": geo(st0), "vo": e["vo"]})
+            beats.append({"kind": "event", "kicker": e["date"], "big": e["year"], "lines": e["head"], "text": e.get("cite", "").format(**ctx), "sub": e.get("stat_label", "").format(**ctx),
+                          "label": e.get("stat", "").format(**ctx), "n": ticks.index(e["tick"]) if e.get("tick") else -1, "geo": geo(st0), "vo": e["vo"]})
         extra["checked"] = checked
     elif typ == "pick":
         beats.clear()      # no intro: the first frame is round one's question

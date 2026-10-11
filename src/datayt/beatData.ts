@@ -3,10 +3,11 @@ import clue01 from "../../public/datayt/beats/clue01/data.json";
 import cnt01 from "../../public/datayt/beats/cnt01/data.json";
 import gw01 from "../../public/datayt/beats/gw01/data.json";
 import hl01 from "../../public/datayt/beats/hl01/data.json";
+import pl01 from "../../public/datayt/beats/pl01/data.json";
 import px01 from "../../public/datayt/beats/px01/data.json";
 import rc01 from "../../public/datayt/beats/rc01/data.json";
 import sh01 from "../../public/datayt/beats/sh01/data.json";
 import vs01 from "../../public/datayt/beats/vs01/data.json";
 import type {BeatData} from "./BeatStory";
 
-export const BEATS = [clue01, cnt01, gw01, hl01, px01, rc01, sh01, vs01] as unknown as BeatData[];
+export const BEATS = [clue01, cnt01, gw01, hl01, pl01, px01, rc01, sh01, vs01] as unknown as BeatData[];

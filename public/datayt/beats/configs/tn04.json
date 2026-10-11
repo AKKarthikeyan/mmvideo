@@ -1,0 +1,246 @@
+{
+ "id": "tn04",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "NFHS-5 (2019-21) and NFHS-6 (2023-24)",
+ "palette": "C",
+ "state": "Jammu and Kashmir",
+ "points": [
+  {
+   "data": {
+    "nfhs": 7,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 7
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "HOMES WITH HEALTH INSURANCE",
+ "expect": {
+  "rank_then": 33,
+  "rank_now": 1,
+  "n": 34
+ },
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Households with any usual member covered under a health insurance or financing scheme.",
+ "hook": [
+  "*Jammu and Kashmir*: 14% of",
+  "homes had health cover.",
+  "Next survey: *96%.*"
+ ],
+ "hook_vo": "Jammu and Kashmir: one home in seven had health cover. Then nearly all.",
+ "then": {
+  "text": "of homes with *any member* covered",
+  "vo": "In the twenty nineteen to twenty-one survey: fourteen percent of homes."
+ },
+ "now": {
+  "text": "India: 41.0% to 60.2% over the same two surveys.",
+  "vo": "Next survey: ninety-six percent. Seven times the share."
+ },
+ "facts": [
+  {
+   "kicker": "THE RISE, IN PERCENTAGE POINTS",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 7
+      }
+     },
+     {
+      "data": {
+       "nfhs": 7,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "unit": "",
+   "text": "points: Jammu and Kashmir's rise",
+   "bars": [
+    {
+     "name": "J & K",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 7
+       }
+      },
+      {
+       "data": {
+        "nfhs": 7,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 7
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 7,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 90,
+   "sub": "India: 41.0% to 60.2%.",
+   "vo": "India rose nineteen points. Jammu and Kashmir rose over eighty-two."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "From *among the lowest*",
+    "of 34 states and UTs",
+    "to *among the highest.*"
+   ],
+   "note": "Homes where any usual member has health insurance or a health scheme. Survey estimates. The survey shows how many, not why.",
+   "vo": "It went from among the lowest in India to among the highest."
+  }
+ ],
+ "tests": [
+  {
+   "says": "one home in seven; 14% in NFHS-5",
+   "value": {
+    "data": {
+     "nfhs": 7,
+     "col": 3
+    }
+   },
+   "equals": 14
+  },
+  {
+   "says": "nearly all; 96% in NFHS-6",
+   "value": {
+    "data": {
+     "nfhs": 7
+    }
+   },
+   "equals": 96
+  },
+  {
+   "says": "seven times the share",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 7
+      }
+     },
+     {
+      "data": {
+       "nfhs": 7,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 6.6,
+   "max": 7.4
+  },
+  {
+   "says": "India 41.0% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 7,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 410
+  },
+  {
+   "says": "India 60.2% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 7
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 602
+  },
+  {
+   "says": "India rose nineteen points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 7
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 7,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 19
+  },
+  {
+   "says": "Jammu and Kashmir rose over eighty-two points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 7
+      }
+     },
+     {
+      "data": {
+       "nfhs": 7,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 82.01,
+   "max": 82.99
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -3,
+   -1,
+   10,
+   30
+  ],
+  "title": "Health cover: *each state's change*",
+  "sub": "percentage points · NFHS-5 to NFHS-6 · India +19.2",
+  "note": "Homes where any usual member has health insurance or a health scheme. Survey estimates.",
+  "vo": "Every state's change between the two surveys, in percentage points."
+ },
+ "end": {
+  "q": "Did health cover rise in *your state?*",
+  "sub": "Find it on the map.",
+  "vo": "Did health cover rise in your state?"
+ },
+ "yt_title": "Jammu and Kashmir: Health Cover From 14% of Homes to 96%"
+}

@@ -1,0 +1,493 @@
+{
+ "id": "tn02",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Agriculture Ministry · 2014-15 to 2024-25",
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 58: production of rice, thousand tonnes, shown here in lakh tonnes. Each share is of the all-India figure in the same table.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#E8604C",
+  "#F0AA9D",
+  "#DDD5C8",
+  "#868CA8",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Telangana*: 10th in rice",
+    "in 2014-15.",
+    "*2nd* in 2024-25."
+   ],
+   "vo": "Telangana ranked tenth in rice. Ten years on, second.",
+   "geo": "Telangana",
+   "name": "Telangana",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Telangana",
+   "name": "Telangana",
+   "kicker": "SHARE OF INDIA'S RICE PRODUCTION",
+   "big": "+7.4 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "4.2%",
+    "frac": 0.36478946071317064
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "11.6%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of India's rice: *44 lakh tonnes*",
+   "vo": "Its share of India's rice then: about four percent. Forty-four lakh tonnes.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Telangana",
+   "name": "Telangana",
+   "kicker": "SHARE OF INDIA'S RICE PRODUCTION",
+   "big": "+7.4 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "4.2%",
+    "frac": 0.36478946071317064
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "11.6%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "174 lakh tonnes: almost four times the 2014-15 harvest.",
+   "vo": "Ten years on, nearly twelve percent. Almost four times the harvest.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "RICE OUTPUT · 2014-15 TO 2024-25",
+   "big": "3.9×",
+   "text": "Telangana's rice harvest",
+   "sub": "India: 1,048 to 1,502 lakh tonnes.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "3.9×",
+     "frac": 0.8730008607057788
+    },
+    {
+     "name": "India",
+     "label": "1.4×",
+     "frac": 0.3184615131789948
+    }
+   ],
+   "vo": "India's rice harvest grew by less than half. Telangana's almost quadrupled.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Over a *quarter* of India's",
+    "extra rice came from",
+    "*one state.*"
+   ],
+   "note": "Rice produced, not rice eaten. Uttar Pradesh is first in 2024-25. The table shows how much, not why.",
+   "vo": "More than a quarter of India's extra rice came from this one state.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Share of India's rice: *each state's change*",
+   "sub": "points of India's production · 2014-15 to 2024-25",
+   "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh). Rice produced, not rice eaten.",
+   "anim": true,
+   "ring": [
+    "Telangana"
+   ],
+   "vo": "Here is every state's change in share. Rice produced, not rice eaten.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh). Rice produced, not rice eaten.",
+   "ring": [
+    "Telangana"
+   ],
+   "q": "Where does *your state* stand on this map?",
+   "sub": "Comment your state.",
+   "kind": "mapend",
+   "vo": "Where does your state stand on this map?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "West Bengal",
+   "label": "−3.3",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Assam",
+   "label": "−1.7",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Odisha",
+   "label": "−1.6",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "−1.5",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Jharkhand",
+   "label": "−1.4",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Punjab",
+   "label": "−1.0",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Karnataka",
+   "label": "−0.7",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "−0.7",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Bihar",
+   "label": "−0.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Maharashtra",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Tripura",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Nagaland",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Kerala",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "Gujarat",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.076
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.197
+  },
+  {
+   "name": "Meghalaya",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.317
+  },
+  {
+   "name": "Goa",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.438
+  },
+  {
+   "name": "Manipur",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.559
+  },
+  {
+   "name": "Mizoram",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.68
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.801
+  },
+  {
+   "name": "Puducherry",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.922
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.043
+  },
+  {
+   "name": "Sikkim",
+   "label": "−0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.164
+  },
+  {
+   "name": "Haryana",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.285
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+0.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.406
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+0.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.527
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+2.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.648
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+2.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.769
+  },
+  {
+   "name": "Telangana",
+   "label": "+7.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.89
+  }
+ ],
+ "checked": [
+  "Telangana: 4.24 in 2014-15, 11.62 in 2024-25: +7.38, 2.74 times",
+  "the years just before 2014-15 do not make it a freak year: measured from 5.40 the change is still +6.22",
+  "the change holds in each of 2022-23, 2023-24, 2024-25: 11.70, 12.24, 11.62",
+  "years = 10",
+  "rank_then = 10",
+  "rank_now = 2",
+  "about four percent of India's rice in 2014-15: 4.24",
+  "44 lakh tonnes in 2014-15 (thousand tonnes / 100): 44.41",
+  "nearly twelve percent in 2024-25: 11.62",
+  "174 lakh tonnes in 2024-25: 174.46",
+  "almost four times the harvest: 3.93",
+  "India's rice harvest grew by less than half: 1.43",
+  "India 1,048 lakh tonnes in 2014-15: 1047.99",
+  "India 1,502 lakh tonnes in 2024-25: 1501.84",
+  "more than a quarter of India's extra rice came from Telangana: 28.65",
+  "Uttar Pradesh is first in 2024-25, by more than a point of India's total: 2.21"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "Telangana: 10th in Rice in 2014-15, 2nd in 2024-25"
+}

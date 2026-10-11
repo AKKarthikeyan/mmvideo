@@ -1,5 +1,5 @@
 // Data Kadai "beat" Shorts (1080x1920): one thing on screen at a time, very large type, a cut every bar or two.
-// Eight story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race, higher-or-lower, place story. Beats and timing come
+// Nine story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race, higher-or-lower, place story, then and now. Beats and timing come
 // from public/datayt/beats/<id>/data.json (scripts/datayt/build_beats.py). The all-states map appears only as a closing beat.
 import React from "react";
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame} from "remotion";
@@ -15,7 +15,8 @@ type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number;
   items?: {big: string; text: string}[]; rank?: number; frac?: number; label?: string; note?: string; a?: string; b?: string; win?: string; sa?: number; sb?: number;
   title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
   spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[];
-  measure?: string; pa?: {name: string; geo: string; label: string}; pb?: {name: string; geo: string; label: string}};
+  measure?: string; pa?: {name: string; geo: string; label: string}; pb?: {name: string; geo: string; label: string};
+  p0?: {period: string; label: string; frac: number}; p1?: {period: string; label: string; frac: number}};
 export type BeatData = {id: string; type: string; chip: string; sourceShort: string; source: string; accent: string; accent2: string; bands: string[];
   beats: Beat[]; total: number; beat: number; map?: MapState[]; grid?: {parts: {name: string; v: number; label: string; color: string}[]; caption: string};
   race?: {years: string[]; cut: number; note: string; a: {name: string; v: number[]; sub?: string}; b: {name: string; v: number[]; sub?: string}; marks?: {i: number; text: string}[]};
@@ -282,12 +283,50 @@ const Stack: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
       acc += p.v;
       return <div key={k} style={{position: "absolute", left: XB, width: BW, top: BASE - h(y0 + p.v * pp), height: h(p.v * pp), background: cols[k % cols.length],
         borderTop: `4px solid ${P.bg}`, borderRadius: k === S_.parts.length - 1 ? "18px 18px 0 0" : 0, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden"}}>
-        <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 32, color: "#FFFFFF", opacity: ease(f, at + 8, at + 14), textAlign: "center", lineHeight: 1.2}}>{p.name}<br/>{p.label}</div>
+        {S_.parts.length > 1 && <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 32, color: "#FFFFFF", opacity: ease(f, at + 8, at + 14), textAlign: "center", lineHeight: 1.2}}>{p.name}<br/>{p.label}</div>}
       </div>;
     })}
     <div style={{...num, left: XB, top: BASE - h(total) - 124, color: P.ink, opacity: ease(f, done, done + 8)}}>{S_.sum}</div>
     <div style={{...cap, left: XB}}>{S_.sumName}</div>
     {S_.note && <div style={{position: "absolute", left: 60, right: 60, top: BASE + 78, textAlign: "center", fontFamily: SANS, fontWeight: 600, fontSize: 30, lineHeight: 1.3, color: P.mute}}>{S_.note}</div>}
+  </AbsoluteFill>;
+};
+
+// One number at two dates. "then" shows the earlier figure alone; "now" moves it up and brings in the later figure, a bar
+// under each and the change between them. Each figure sits under its own period as the table prints it: no figure is called "now".
+const Shift: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const A = b.p0, B = b.p1;
+  if (!A || !B) return null;
+  const later = b.mode === "now";
+  const k = later ? ease(f, f0, f0 + 8) : 0;      // 0: the earlier figure fills the frame; 1: it has made room for the later one
+  const p = pop(f, f0), q = pop(f, f0 + 8);
+  const sa = fit(A.label, 330, 960, 0.56), sizeA = sa - (sa - Math.min(sa, 210)) * k;
+  const sizeB = fit(B.label, 290, 960, 0.56);
+  const period: React.CSSProperties = {position: "absolute", left: 60, fontFamily: SANS, fontWeight: 800, fontSize: 44, letterSpacing: 3};
+  const bar = (top: number, frac: number, col: string, from: number) => <div style={{position: "absolute", left: 60, width: 960, top, height: 34, borderRadius: 17, background: P.empty}}>
+    <div style={{height: 34, borderRadius: 17, width: `${frac * 100 * ease(f, from, from + 18)}%`, background: col}}/></div>;
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 172, fontFamily: SANS, fontWeight: 800, fontSize: 38, letterSpacing: 4, color: D.accent2}}>{b.kicker}</div>
+    <Shape name={b.geo ?? ""} x={60} y={244} w={300} h={330} fill={D.accent}/>
+    <div style={{position: "absolute", left: 400, right: 50, top: 244, height: 330, display: "flex", alignItems: "center", fontFamily: COND, fontWeight: 700,
+      fontSize: fit(b.name ?? "", 150, 620, 0.5), lineHeight: 1, color: P.ink}}>{b.name}</div>
+    <div style={{...period, top: 640, color: P.mute}}>{A.period}</div>
+    <div style={{position: "absolute", left: 60, top: 690, fontFamily: COND, fontWeight: 700, fontSize: sizeA, lineHeight: 1, color: later ? P.mute : D.accent,
+      transform: later ? undefined : `scale(${0.7 + 0.3 * p})`, transformOrigin: "left center", opacity: later ? 1 : Math.min(1, p * 1.5)}}>{A.label}</div>
+    {bar(690 + sizeA + 14, A.frac, P.line, later ? f0 - 30 : f0 + 6)}
+    {!later && <div style={{position: "absolute", left: 60, right: 60, top: 690 + sizeA + 90, fontFamily: COND, fontWeight: 700, fontSize: 70, lineHeight: 1.1, color: P.ink,
+      opacity: ease(f, f0 + 12, f0 + 20)}}><Rich text={b.text ?? ""} acc={D.accent}/></div>}
+    {later && <>
+      <div style={{...period, top: 1010, color: D.accent, opacity: ease(f, f0 + 4, f0 + 10)}}>{B.period}</div>
+      <div style={{position: "absolute", right: 60, top: 1000, background: D.accent2, color: "#FFFFFF", fontFamily: SANS, fontWeight: 800, fontSize: 40, padding: "8px 22px", borderRadius: 12,
+        opacity: ease(f, f0 + 26, f0 + 32), transform: `scale(${0.8 + 0.2 * pop(f, f0 + 26)})`, transformOrigin: "right center"}}>{b.big}</div>
+      <div style={{position: "absolute", left: 60, top: 1062, fontFamily: COND, fontWeight: 700, fontSize: sizeB, lineHeight: 1, color: D.accent,
+        transform: `scale(${0.7 + 0.3 * q})`, transformOrigin: "left center", opacity: Math.min(1, q * 1.5)}}>{B.label}</div>
+      {bar(1062 + sizeB + 14, B.frac, D.accent, f0 + 12)}
+      <div style={{position: "absolute", left: 60, right: 60, top: 1062 + sizeB + 70, fontFamily: SANS, fontWeight: 600, fontSize: 34, lineHeight: 1.3, color: P.ink,
+        opacity: ease(f, f0 + 34, f0 + 42)}}>{b.text}</div>
+    </>}
   </AbsoluteFill>;
 };
 
@@ -584,7 +623,7 @@ const End: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
 };
 
 const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End,
-  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally, event: EventBeat, line100: Line100};
+  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally, event: EventBeat, line100: Line100, shift: Shift};
 const DARK = (b: Beat) => b.kind === "count" || b.kind === "reveal" || (b.kind === "rank" && b.rank === 1);
 
 const musicVol = (D: BeatData, fr: number) => {

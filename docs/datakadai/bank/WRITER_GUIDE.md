@@ -43,3 +43,34 @@ paradox, `hl01.json` pick, `gw01.json` over) and read the matching branch of `bu
 - Every spoken comparison ("nearly half", "almost double", "about a third") has an entry under "tests" (or "says" in
   a pick round) with a numeric range that the phrase honestly covers.
 - Title: at most 60 characters, claiming only what the video shows.
+
+## House rules the builder enforces (added 11 Oct 2026, from VIDEO_TEMPLATES_AND_YT_RULES.md)
+A script in the bank stops in `build_beats.py --check` if it breaks one of these, before anything is voiced:
+- The hook is on the map: the place lit on the India outline, with the surprise, in the first frame. At most 12 words
+  on screen. A share script opens this way with `"open": "map"` (the state is named at once; there is no reveal beat).
+- Three to five beats between the hook and the map, one thing on screen at a time, each with its unit and period.
+- The story closes on every state's number on the map, then a last card with one question and the source.
+- Screen lines at most 8 words; voice lines at most 13 words, numbers and years spelled out (`5G` is allowed).
+- None of: today, currently, right now, best, worst, No. 1, #1, number one, truth, reality, secret, exposed, shocking,
+  backward, failed.
+- The title is at most 60 characters and every number in it appears on screen.
+- The source chip names the publisher and the period. At least one computed finding is carried as a test.
+- Built length 30 to 45 seconds.
+A game (`pick`) and a place story keep their own openings and endings.
+
+## Two more types
+- `then`: one number at two dates (example `new/tn02.json`; two survey rounds: `new/tn03.json`). With `"table"`,
+  `"from"`, `"to"` the builder also tests the years around both dates: the start must not be a dip or spike against
+  the two years before it, the change must be there in each of the last three years, and the figure must not have
+  fallen back from a recent peak. A state split between the two dates (Andhra Pradesh and Telangana in 2014, Jammu
+  and Kashmir and Ladakh in 2019) is left blank on the map of changes and must be named in the map note.
+  Never print or say "now": each figure sits under its own period.
+- `race` with `"stack": {"n": 1}`: a handover told without the stack (example `new/rc02.json`). The new leader must be
+  ahead of the next state by at least 1 point of the all-India total and 3%, and must have led for three years.
+
+## Freshness, from the first reviews
+Animal husbandry tables (milk, eggs, meat, wool) in our Handbook copy stop at 2023-24; the Ministry's Basic Animal
+Husbandry Statistics 2025 has 2024-25. Do not voice a script on those tables until the newer year has been read.
+Crop tables: the 2024-25 column is the Ministry's final estimate (released 21 Nov 2025); 2025-26 exists only as
+advance estimates. Say "final estimates" in the source line.
+

@@ -6,8 +6,12 @@ import hl01 from "../../public/datayt/beats/hl01/data.json";
 import pl01 from "../../public/datayt/beats/pl01/data.json";
 import px01 from "../../public/datayt/beats/px01/data.json";
 import rc01 from "../../public/datayt/beats/rc01/data.json";
+import rc02 from "../../public/datayt/beats/rc02/data.json";
 import sh01 from "../../public/datayt/beats/sh01/data.json";
+import tn01 from "../../public/datayt/beats/tn01/data.json";
+import tn02 from "../../public/datayt/beats/tn02/data.json";
+import tn03 from "../../public/datayt/beats/tn03/data.json";
 import vs01 from "../../public/datayt/beats/vs01/data.json";
 import type {BeatData} from "./BeatStory";
 
-export const BEATS = [clue01, cnt01, gw01, hl01, pl01, px01, rc01, sh01, vs01] as unknown as BeatData[];
+export const BEATS = [clue01, cnt01, gw01, hl01, pl01, px01, rc01, rc02, sh01, tn01, tn02, tn03, vs01] as unknown as BeatData[];

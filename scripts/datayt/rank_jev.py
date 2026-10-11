@@ -53,7 +53,11 @@ SHAPE = {"share": "one state's share of the all-India total", "ls_share": "one s
          "nfhs_extreme": "the highest or lowest state on a family health survey measure", "nfhs_india_change": "how an all-India family health survey figure changed between two rounds",
          "nfhs_state_change": "how a family health survey figure changed in one state between two rounds", "nfhs_urban_rural": "urban India against rural India on one measure"}
 # what the builder can make today (scripts/datayt/build_beats.py): leads on other templates wait for a format
-FORMAT = {"share": "share", "race": "race", "paradox": "paradox", "pick": "pick", "ranking": "countdown", "faceoff": "versus"}
+FORMAT = {"share": "share", "race": "race", "paradox": "paradox", "pick": "pick", "ranking": "countdown", "change": "then"}      # face-offs are long-form material
+# How many of each format a month may hold, as a share of its videos. From docs/datakadai/VIDEO_TEMPLATES_AND_YT_RULES.md and
+# YOUTUBE_IDEAS.md: lead with paradoxes, use then-and-now often, the 100-square share at most twice in 60 days, a game once a
+# fortnight as a test, a plain ranking only with a surprise in the hook. Place stories are researched by hand, outside this list.
+MIX = {"paradox": 0.30, "then": 0.30, "race": 0.12, "countdown": 0.10, "share": 0.034, "pick": 0.034}
 # flags that keep a lead out of a month until someone has dealt with them; the lead stays in the ranked list
 HOLD = {"stale year": "stale year", "thin lead": "thin lead", "read the answer: column meaning not parsed": "column not read yet",
         "sensitive topic": "sensitive: AK sign-off", "AK sign-off: sensitive subject": "sensitive: AK sign-off",
@@ -243,7 +247,7 @@ def pick_month(R, n, cache, key, spare=0.25):
     """The month's leads, best first, with caps so no table, measure, state, subject or format repeats too often. A game Short uses four pick leads."""
     want = round(n * (1 + spare))
     cap_state, cap_topic = max(4, want // 10), max(6, want // 6)
-    cap_fmt = {"share": want // 4, "race": want // 4, "paradox": want // 5, "countdown": want // 5, "versus": want // 8, "pick": 4 * (want // 8)}
+    cap_fmt = {k: max(1, round(v * want)) * (4 if k == "pick" else 1) for k, v in MIX.items()}
     fmt = lambda r: "countdown" if r["kind"] == "gap" else FORMAT.get(r["template"])
     held, waiting, pool = collections.Counter(), collections.Counter(), []
     for r in R:
@@ -280,9 +284,15 @@ def rank_scripts(cache, key, path):
         cache[f"{x['title']}|{QSET}"] = flat(ask({"finding": x["title"], "comparison": kinds.get(x["type"], x["type"])}, key))
     json.dump(cache, open(path, "w"), indent=0, ensure_ascii=False)
     rows = sorted(({**x, **cache[f"{x['title']}|{QSET}"]} for x in S), key=lambda x: -rank_of({"score": 6}, x))
+    order, left = [], list(rows)      # the order to post in: best first, but never the same format twice running (the research's checklist, item 2)
+    while left:
+        nxt = next((x for x in left if not order or x["type"] != order[-1]["type"]), left[0])
+        order.append(nxt); left.remove(nxt)
+    rows = order
     L = ["# Data Kadai: scripts in hand, in Jev's order", "",
          f"Made by `scripts/datayt/rank_jev.py --scripts` with `{MODEL}`. The rank is Jev's reading of the title alone (0 to 100, same weights as `RANKED.md`); "
-         "it says nothing about whether the numbers stand, which the builder's checks and the script review cover.", "",
+         "it says nothing about whether the numbers stand, which the builder's checks and the script review cover. "
+         "The order is best first, except that no format runs twice in a row.", "",
          "| # | ID | Type | Title | Rank | Surprise | Everyday | Clear | Talk | Status |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     L += [f"| {n} | {x['id']} | {x['type']} | {x['title']} | {rank_of({'score': 6}, x)} | {x['surprise']:.2f} | {x['everyday']:.2f} | {x['clear']:.2f} | {x['talk']:.2f} | "
           f"{x.get('status', '')}{'; sensitive: AK sign-off' if x['sensitive'] >= 0.5 else ''}{'; reads as running a state down' if x['shaming'] >= 0.5 else ''} |" for n, x in enumerate(rows, 1)]

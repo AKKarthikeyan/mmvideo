@@ -6,7 +6,7 @@ import {COND} from "../voxkit";
 import geo from "../../public/datayt/india/geo.json";
 import {P} from "./IndiaShort";
 
-export type MapState = {name: string; short?: string; label: string; bucket: number; at?: number; nudge: number[]; alt?: boolean};
+export type MapState = {name: string; short?: string; label: string; bucket: number; at?: number; nudge: number[]; alt?: boolean; dark?: boolean};
 type G = {name: string; d: string; lx: number; ly: number};
 const GEO = Object.fromEntries((geo.states as G[]).map((g) => [g.name, g]));
 const ORDER = [...(geo.states as G[])].sort((a, b) => a.ly - b.ly);
@@ -53,7 +53,7 @@ export const StateMap: React.FC<{states: MapState[]; colors: string[]; x: number
         const out = !!(nx || ny);
         const lx = g.lx + nx, ly = g.ly + ny;
         const size = (hot ? fs * 1.35 : d.bucket >= 3 ? fs * 1.12 : fs) * k;
-        const dark = d.bucket >= 2 && !out;
+        const dark = (d.dark ?? d.bucket >= 2) && !out;      // a map whose bands are not light-to-dark says which fills are dark
         return <g key={d.name} opacity={op}>
           {out && <line x1={g.lx} y1={g.ly} x2={lx} y2={ly} stroke={P.ink} strokeWidth={1.3 * k} opacity={0.55}/>}
           {out && <circle cx={g.lx} cy={g.ly} r={3 * k} fill={P.ink} opacity={0.7}/>}

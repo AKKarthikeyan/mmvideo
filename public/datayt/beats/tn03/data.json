@@ -1,0 +1,531 @@
+{
+ "id": "tn03",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "NFHS-5 (2019-21) and NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 who have ever used the internet.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Andhra Pradesh*: 21% of",
+    "women had used the internet.",
+    "Next survey: *64%.*"
+   ],
+   "vo": "A fifth of Andhra Pradesh's women had used the internet. Then three-fifths.",
+   "geo": "Andhra Pradesh",
+   "name": "Andhra Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Andhra Pradesh",
+   "name": "Andhra Pradesh",
+   "kicker": "WOMEN WHO HAVE USED THE INTERNET",
+   "big": "+42.6 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "21.0%",
+    "frac": 0.330188679245283
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "63.6%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of women aged 15 to 49",
+   "vo": "In the twenty nineteen to twenty-one survey: twenty-one percent.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Andhra Pradesh",
+   "name": "Andhra Pradesh",
+   "kicker": "WOMEN WHO HAVE USED THE INTERNET",
+   "big": "+42.6 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "21.0%",
+    "frac": 0.330188679245283
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "63.6%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "India: 33.3% to 64.3% over the same two surveys.",
+   "vo": "Next survey: sixty-four percent. Three times the share.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "kicker": "THE RISE, IN PERCENTAGE POINTS",
+   "big": "42.6",
+   "text": "points: Andhra Pradesh's rise",
+   "sub": "India: 33.3% to 64.3%.",
+   "bars": [
+    {
+     "name": "Andhra Pradesh",
+     "label": "42.6",
+     "frac": 0.852
+    },
+    {
+     "name": "India",
+     "label": "31.0",
+     "frac": 0.62
+    }
+   ],
+   "vo": "India rose thirty-one points. Andhra Pradesh rose almost forty-three.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "In NFHS-5: *12 points*",
+    "below India.",
+    "In NFHS-6: *level.*"
+   ],
+   "note": "Women aged 15 to 49 who have ever used the internet. A survey estimate: small gaps are not differences.",
+   "vo": "It started twelve points below India. It ended level.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Women online: *each state's rise*",
+   "sub": "percentage points · NFHS-5 to NFHS-6 · India +31.0",
+   "note": "Share of women aged 15 to 49 who have ever used the internet. Survey estimates.",
+   "anim": true,
+   "ring": [
+    "Andhra Pradesh"
+   ],
+   "vo": "Every state's rise between the two surveys, in percentage points.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Share of women aged 15 to 49 who have ever used the internet. Survey estimates.",
+   "ring": [
+    "Andhra Pradesh"
+   ],
+   "q": "How many points did *your state* rise?",
+   "sub": "Find it on the map.",
+   "kind": "mapend",
+   "vo": "How many points did your state rise?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Puducherry",
+   "label": "+4.2",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+8.7",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 29.494
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+12.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.606
+  },
+  {
+   "name": "Sikkim",
+   "label": "+13.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.718
+  },
+  {
+   "name": "Mizoram",
+   "label": "+14.9",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.83
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+18.2",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.942
+  },
+  {
+   "name": "Punjab",
+   "label": "+19.7",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.054
+  },
+  {
+   "name": "Goa",
+   "label": "+20.3",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+20.3",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.278
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+20.5",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.39
+  },
+  {
+   "name": "Ladakh",
+   "label": "+22.5",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.502
+  },
+  {
+   "name": "Karnataka",
+   "label": "+22.9",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.614
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+24.3",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.726
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+24.6",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.838
+  },
+  {
+   "name": "Assam",
+   "label": "+25.3",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.95
+  },
+  {
+   "name": "Haryana",
+   "label": "+25.6",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.062
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+25.7",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.174
+  },
+  {
+   "name": "Tripura",
+   "label": "+25.9",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Kerala",
+   "label": "+26.2",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.397
+  },
+  {
+   "name": "Nagaland",
+   "label": "+26.7",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.509
+  },
+  {
+   "name": "Odisha",
+   "label": "+26.9",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.621
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+27.7",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.733
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+29.4",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.845
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+31.8",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.957
+  },
+  {
+   "name": "West Bengal",
+   "label": "+33.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.069
+  },
+  {
+   "name": "Gujarat",
+   "label": "+34.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.181
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+35.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.293
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+37.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.405
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+37.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.517
+  },
+  {
+   "name": "Bihar",
+   "label": "+37.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.629
+  },
+  {
+   "name": "Telangana",
+   "label": "+38.3",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.741
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+39.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.853
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "+41.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 32.965
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+42.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.077
+  }
+ ],
+ "checked": [
+  "Andhra Pradesh: 21.00 in NFHS-5 (2019-21), 63.60 in NFHS-6 (2023-24): +42.60, 3.03 times",
+  "a fifth; 21% in NFHS-5: 21.00",
+  "three-fifths; 64% in NFHS-6: 63.60",
+  "three times the share: 3.03",
+  "India 33.3% in NFHS-5 (tenths): 333.00",
+  "India 64.3% in NFHS-6 (tenths): 643.00",
+  "India rose thirty-one points: 31.00",
+  "Andhra Pradesh rose almost forty-three points: 42.60",
+  "twelve points below India in NFHS-5: 12.30",
+  "level with India in NFHS-6: under one point apart: 0.70"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "Andhra Pradesh: Women Online Went From 21% to 64%"
+}

@@ -1,0 +1,322 @@
+{
+ "id": "tn01",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Animal Husbandry Ministry · 2013-14 to 2023-24",
+ "palette": "C",
+ "state": "West Bengal",
+ "table": 92,
+ "from": "2013-14",
+ "to": "2023-24",
+ "measure": "share",
+ "kicker": "SHARE OF INDIA'S EGG PRODUCTION",
+ "expect": {
+  "years": 10
+ },
+ "source": "Ministry of Fisheries, Animal Husbandry and Dairying, Basic Animal Husbandry Statistics, as published in the RBI Handbook of Statistics on Indian States, Table 92: egg production. Each share is of the all-India figure in the same table. Andhra Pradesh's 2013-14 figure included Telangana.",
+ "hook": [
+  "*West Bengal*: {then} of",
+  "India's eggs in 2013-14.",
+  "*{now}* ten years later."
+ ],
+ "hook_vo": "West Bengal produced six percent of India's eggs. Ten years later, eleven percent.",
+ "then": {
+  "text": "about *475 crore* eggs that year",
+  "vo": "In twenty thirteen-fourteen, that was about four hundred seventy-five crore eggs."
+ },
+ "now": {
+  "text": "About 1,624 crore eggs: 3.4 times the 2013-14 count.",
+  "vo": "Ten years later: over sixteen hundred crore eggs, more than triple."
+ },
+ "facts": [
+  {
+   "kicker": "EGG OUTPUT · 2013-14 TO 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2013-14"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "West Bengal's egg output",
+   "bars": [
+    {
+     "name": "West Bengal",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         92,
+         "2023-24"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         92,
+         "2013-14"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         92,
+         "2023-24"
+        ]
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "rbi": [
+         92,
+         "2013-14"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 4,
+   "sub": "India: 7,475 crore to 14,277 crore eggs.",
+   "vo": "India's egg output nearly doubled. West Bengal's more than tripled."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Of every 100 *extra* eggs",
+    "India produced, *17* came",
+    "from West Bengal."
+   ],
+   "note": "Eggs produced in the state, not eggs eaten there. The table shows how much, not why.",
+   "vo": "Of every hundred extra eggs India produced, seventeen came from West Bengal."
+  }
+ ],
+ "tests": [
+  {
+   "says": "six percent of India's eggs in 2013-14",
+   "value": {
+    "share": {
+     "rbi": [
+      92,
+      "2013-14"
+     ]
+    }
+   },
+   "equals": 6
+  },
+  {
+   "says": "eleven percent in 2023-24",
+   "value": {
+    "share": {
+     "rbi": [
+      92,
+      "2023-24"
+     ]
+    }
+   },
+   "equals": 11
+  },
+  {
+   "says": "about 475 crore eggs in 2013-14 (lakh / 100)",
+   "value": {
+    "data": {
+     "rbi": [
+      92,
+      "2013-14"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 475
+  },
+  {
+   "says": "1,624 crore eggs in 2023-24",
+   "value": {
+    "data": {
+     "rbi": [
+      92,
+      "2023-24"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 1624
+  },
+  {
+   "says": "more than triple; 3.4 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2013-14"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 3.35,
+   "max": 3.449
+  },
+  {
+   "says": "India's egg output nearly doubled",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        92,
+        "2013-14"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.85,
+   "max": 1.999
+  },
+  {
+   "says": "India 7,475 crore eggs in 2013-14",
+   "value": {
+    "data": {
+     "rbi": [
+      92,
+      "2013-14"
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 7475
+  },
+  {
+   "says": "India 14,277 crore eggs in 2023-24",
+   "value": {
+    "data": {
+     "rbi": [
+      92,
+      "2023-24"
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 14277
+  },
+  {
+   "says": "of every 100 extra eggs, 17 came from West Bengal",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          92,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          92,
+          "2013-14"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          92,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          92,
+          "2013-14"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 17
+  }
+ ],
+ "map": {
+  "bands": [
+   -1,
+   -0.25,
+   0.25,
+   1
+  ],
+  "title": "Share of India's eggs: *each state's change*",
+  "sub": "points of India's production · {from} to {to}",
+  "note": "Blank: boundary changed (Andhra Pradesh, Telangana, Jammu and Kashmir). Eggs produced, not eggs eaten.",
+  "vo": "Here is every state's change. This is eggs produced, not eggs eaten."
+ },
+ "end": {
+  "q": "Did *your state's* share go up or down?",
+  "sub": "Tell us in the comments.",
+  "vo": "Did your state's share go up or down?"
+ },
+ "yt_title": "West Bengal's Share of India's Eggs: 6% to 11% in 10 Years"
+}

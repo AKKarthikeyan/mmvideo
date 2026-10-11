@@ -10,7 +10,11 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
   share       One state's share of a national total on a 100-square grid, the reveal, the split among the leading
               states, one or two cards on why, then every state's share on the map
   race        Two states' lines over the years: the old leader ahead, then the run to the latest year, what changed,
-              the new leader against a stack of the next largest, then every state on the map
+              the new leader against a stack of the next largest (or, with "n": 1, against the next state alone when
+              the lead is clear and three years old), then every state on the map
+  then        One number at two dates: the place on the map, the earlier figure, the later figure and the change,
+              one or two cards on why, our own reading of it, then every state's change on the map. The years around
+              both dates are tested, so a freak starting year or a rise that has since reversed stops the build
   pick        Higher or lower: a few rounds, each one question about two states with a pause to decide before the
               numbers appear, then a card with every answer
   over        A ratio that passes 100: 100 squares for the whole and the extra squares spilling out below, the states
@@ -28,8 +32,16 @@ Run from the repo root: python3 scripts/datayt/build_beats.py <id> [...]
 Add --check to test scripts without voicing them: every data check runs, spoken lengths are estimated from the word
 count, nothing is sent to the voice service, and the result goes to out/datakadai/bank_check/ (configs are then read
 from public/datayt/bank/scripts/ as well as the beats folder).
+Add --mute to build the text-led cut of a script: music and timing as usual, estimated line lengths, no narration.
+
+House rules. The Short skeleton and the checklist in docs/datakadai/VIDEO_TEMPLATES_AND_YT_RULES.md, and the limits in
+docs/datakadai/bank/WRITER_GUIDE.md, are tested by house_rules() before a line is voiced: the hook is on the map,
+three to five beats follow, every state's number closes the story, the last card carries the source and one question,
+the title claims only numbers the video shows, the length is 30 to 45 seconds. A script written under these rules
+("rules": 2, the default for the script bank) stops when it breaks one; the Shorts approved before them only list what
+they would break.
 """
-import glob, json, math, os, sys
+import glob, json, math, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import music_shorts as M
 import voice_dk as V
@@ -40,7 +52,12 @@ from build_story import series as base_series, fmt, SHORT
 FPS, VO_LEAD = 30, 0.12
 BASE = "public/datayt/beats"      # --check writes under out/ instead
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
-            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2, "event": 2, "line100": 3}
+            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2, "event": 2, "line100": 3, "shift": 2}
+MUTE = False      # --mute: the text-led cut, no narration
+SPLITS = {"Telangana": 2014, "Andhra Pradesh": 2014, "Ladakh": 2019, "Jammu and Kashmir": 2019}      # a figure from before a state was split covers a different area
+PAGE = "#F7F4EE"
+BANNED = re.compile(r"\b(truth|reality|secret|exposed|shocking|worst|best|backward|failed|no\.? ?1|number one|today|currently|right now|independent country)\b|#1", re.I)
+NUMBER_WORDS = dict(zip("1 2 3 4 5 6 7 8 9 10 11 12".split(), "one two three four five six seven eight nine ten eleven twelve".split()))
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
 GROUNDWATER = "public/datayt/groundwater/gw_2025.json"
 PCT = {"g5_pct": ("g5", "total"), "uncovered_pct": ("uncovered", "total")}
@@ -66,6 +83,24 @@ def series(spec):
         v = {s: r[col[0]] for s, r in t["states"].items() if r.get(col[0]) is not None}      # states with no figure that year are left out
         return v, v.pop("India", None)
     return base_series(spec)
+
+
+def tint(c, p, to=PAGE):
+    """A colour moved the fraction p toward the page colour."""
+    h = lambda x, i: int(x[1 + 2 * i:3 + 2 * i], 16)
+    return "#" + "".join(f"{round(h(c, i) + (h(to, i) - h(c, i)) * p):02X}" for i in range(3))
+
+
+def is_dark(c):
+    return (0.299 * int(c[1:3], 16) + 0.587 * int(c[3:5], 16) + 0.114 * int(c[5:7], 16)) / 255 < 0.56
+
+
+signed = lambda v, dec=1: f"{v:+.{dec}f}".replace("-", "−") if round(v, dec) else f"{0:.{dec}f}"      # a change that rounds to nothing carries no sign
+
+
+def spoken(text):
+    """Seconds this narrator takes for a line, fitted on the 67 lines voiced by 11 Oct 2026 (typical error 0.5 s)."""
+    return round(0.24 * len(text.replace("-", " ").split()) + 0.60 * max(1, len(re.findall(r"[.!?:;]+(?:\s|$)", text))) + 0.65 * text.count(",") + 0.26, 2)
 
 
 def inr(v):
@@ -120,11 +155,78 @@ def run_checks(sid, cfg, st):
     for k in cfg.get("tests", []):
         v = value(k["value"], st)
         if "equals" in k:
-            assert round(v) == k["equals"], f"{sid}: '{k['says']}' fails: {v:g} does not round to {k['equals']}"
+            assert math.floor(v + 0.5) == k["equals"], f"{sid}: '{k['says']}' fails: {v:g} does not round to {k['equals']}"      # halves round up, as a reader would
         else:
             assert k["min"] <= v <= k["max"], f"{sid}: '{k['says']}' fails: {v:g} is outside {k['min']} to {k['max']}"
         done.append(f"{k['says']}: {v:.2f}")
     return done
+
+
+def fact_beats(cfg, st0):
+    """The "why" cards of the share and then stories: a state's outline, one computed number, a line of meaning and bars to compare."""
+    out = []
+    for c in cfg.get("facts", []):
+        st = c.get("state", st0); u = c.get("unit", "%")
+        bars = [{"name": b["name"], "v": value(b, st), "unit": b.get("unit", u)} for b in c.get("bars", [])]
+        top = c.get("bar_max") or max([b["v"] for b in bars] or [1])
+        out.append({"kind": "fact", "name": nm(st), "geo": geo(st), "kicker": c["kicker"], "big": show(value(c["value"], st), u), "text": c.get("text", ""), "sub": c.get("sub", ""),
+                    "bars": [{"name": b["name"], "label": show(b["v"], b["unit"]), "frac": min(1, b["v"] / top)} for b in bars], "vo": c["vo"]})
+    return out
+
+
+def house_rules(sid, cfg, beats, extra):
+    """What the research and the writer's guide ask of every Short, as far as code can test it. Returns the rules broken."""
+    typ, kinds, bad = cfg["type"], [b["kind"] for b in beats], []
+    seen = []      # every string a viewer can read
+    def walk(x):
+        if isinstance(x, str):
+            seen.append(x)
+        elif isinstance(x, dict):
+            for k, v in x.items():
+                if k not in ("vo", "color", "geo"):
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    walk(beats); walk({k: v for k, v in extra.items() if k != "checked"}); walk([cfg["chip"], cfg["source_short"]])
+    screen = " ".join(seen).replace("*", "").lower()
+    words = lambda t: len(t.replace("*", "").split())
+    hook = " ".join(beats[0].get("lines") or [])
+    if words(hook) > 12:
+        bad.append(f"the hook is {words(hook)} words on screen (at most 12)")
+    for b in beats:
+        for l in b.get("lines") or []:
+            if words(l) > 8:
+                bad.append(f"a screen line is {words(l)} words (at most 8): '{l}'")
+        v = b.get("vo") or ""
+        if len(v.split()) > 13:
+            bad.append(f"a voice line is {len(v.split())} words (at most 13): '{v}'")
+        if re.search(r"\d", re.sub(r"\b[2-6]G\b", "", v)):      # "5G" is a name, not a number to spell out
+            bad.append(f"a voice line has digits (spell numbers and years out): '{v}'")
+    title = cfg.get("yt_title", "")
+    for where, text in [("title", title)] + [("screen", x) for x in seen] + [("voice", b.get("vo") or "") for b in beats]:
+        m = BANNED.search(text.replace("*", ""))
+        if m:
+            bad.append(f"'{m.group(0)}' in the {where}: '{text[:70]}'")
+    if not 0 < len(title) <= 60:
+        bad.append(f"the title is {len(title)} characters (1 to 60)")
+    for n in re.findall(r"\d+(?:\.\d+)?", title):      # a number in the title must be shown in the video
+        if n not in screen and NUMBER_WORDS.get(n, "\0") not in screen:
+            bad.append(f"the title says {n}, which never appears on screen")
+    if not re.search(r"(19|20)\d\d", cfg["source_short"]) or not cfg.get("source"):
+        bad.append("the source line needs the publisher and the period")
+    if "?" not in (beats[-1].get("q") or ""):
+        bad.append("the last card needs one question to answer in the comments")
+    if typ != "pick" and kinds[0] != "spot":
+        bad.append("the hook is not on the map: open on the place, lit on the India map (share scripts: \"open\": \"map\")")
+    if typ not in ("pick", "place"):
+        if kinds[-2:] != ["map", "mapend"]:
+            bad.append("the story does not close on every state's number on the map")
+        if not 3 <= len(kinds) - 3 <= 5:
+            bad.append(f"{len(kinds) - 3} beats between the hook and the map (three to five)")
+    if not extra.get("checked"):
+        bad.append("no computed finding is carried as a test")
+    return bad
 
 
 def find(vals, state):
@@ -248,15 +350,13 @@ def build(cfg):
                                   [{"name": cfg.get("rest_name", "All other states"), "v": round(rest, 3), "label": f"{rest:.1f}", "color": "#B9A898"}],
                          "caption": cfg["grid_caption"]}
         ctx = {"share": f"{sh[st0]:.1f}%", "n": len(vals)}
-        beats[0].update({"kind": "grid", "mode": "hook"})
-        beats.append({"kind": "reveal", "name": nm(st0), "geo": geo(st0), "sub": cfg["reveal"]["sub"].format(**ctx), "vo": cfg["reveal"]["vo"]})
+        if cfg.get("open") == "map":      # the place and the surprise on the map in the first frame; the squares follow
+            beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})
+        else:      # the first two Shorts of this type: the squares first, then the state revealed
+            beats[0].update({"kind": "grid", "mode": "hook"})
+            beats.append({"kind": "reveal", "name": nm(st0), "geo": geo(st0), "sub": cfg["reveal"]["sub"].format(**ctx), "vo": cfg["reveal"]["vo"]})
         beats.append({"kind": "grid", "mode": "split", "kicker": cfg["split"]["kicker"], "vo": cfg["split"]["vo"]})
-        for c in cfg.get("facts", []):
-            st = c.get("state", st0); u = c.get("unit", "%")
-            bars = [{"name": b["name"], "v": value(b, st), "unit": b.get("unit", u)} for b in c.get("bars", [])]
-            top = c.get("bar_max") or max([b["v"] for b in bars] or [1])
-            beats.append({"kind": "fact", "name": nm(st), "geo": geo(st), "kicker": c["kicker"], "big": show(value(c["value"], st), u), "text": c.get("text", ""), "sub": c.get("sub", ""),
-                          "bars": [{"name": b["name"], "label": show(b["v"], b["unit"]), "frac": min(1, b["v"] / top)} for b in bars], "vo": c["vo"]})
+        beats += fact_beats(cfg, st0)
         m = cfg["map"]; cuts = m["bands"]
         asc = sorted(sh, key=lambda s_: (sh[s_], s_))
         extra["map"] = [{"name": geo(s_), "label": "<0.1" if sh[s_] < 0.05 else f"{sh[s_]:.1f}", "bucket": sum(sh[s_] >= c for c in cuts), "nudge": NUDGE.get(geo(s_), (0, 0))} for s_ in asc]
@@ -274,6 +374,8 @@ def build(cfg):
         a, b = cfg["a"], cfg["b"]; cut = [yr(c) for c in use].index(cfg["cut"])
         va, vb = [t["states"][a][c] for c in use], [t["states"][b][c] for c in use]
         assert all(v is not None for v in va + vb), f"{sid}: a year is missing for {a} or {b}"
+        sc = cfg.get("scale", 1)      # the table's unit to the unit shown (thousand tonnes to lakh tonnes is 0.01)
+        va, vb = [v * sc for v in va], [v * sc for v in vb]
         for i, c in enumerate(use):      # the story says who was largest each year: check it against every state
             col = {s_: r[c] for s_, r in t["states"].items() if s_ != "India" and r.get(c) is not None}
             first = max(col, key=col.get); want = b if i <= cut else a
@@ -284,22 +386,28 @@ def build(cfg):
                          "a": {"name": nm(a), "v": va, "sub": f"{va[-1] / va[cut]:.1f}× since {ylab[cut]}"},
                          "b": {"name": nm(b), "v": vb, "sub": f"{vb[-1] / vb[cut]:.1f}× since {ylab[cut]}"},
                          "marks": [{"i": ylab.index(m_["year"]), "text": m_["text"]} for m_ in cfg["run"].get("marks", [])]}
-        last = {s_: r[use[-1]] for s_, r in t["states"].items() if s_ != "India" and r.get(use[-1]) is not None}
-        india = t["states"]["India"][use[-1]]
+        last = {s_: r[use[-1]] * sc for s_, r in t["states"].items() if s_ != "India" and r.get(use[-1]) is not None}
+        india = t["states"]["India"][use[-1]] * sc
         nxt = sorted((s_ for s_ in last if s_ != a), key=lambda s_: -last[s_])[:cfg["stack"]["n"]]
         tot = sum(last[s_] for s_ in nxt)
         assert last[a] > tot, f"{sid}: {a} ({last[a]}) is not above the next {len(nxt)} together ({tot:.2f})"
-        extra["stack"] = {"a": {"name": nm(a), "v": last[a], "label": f"{last[a]:.1f}"}, "parts": [{"name": nm(s_), "v": last[s_], "label": f"{last[s_]:.1f}"} for s_ in nxt],
-                          "sum": f"{tot:.1f}", "sumName": cfg["stack"]["name"], "note": cfg["stack"].get("note", "")}
+        gap, rel = 100 * (last[a] - last[nxt[0]]) / india, last[a] / last[nxt[0]] - 1      # a lead under 1 point of the all-India total, or under 3%, is level
+        assert gap >= 1 and rel >= 0.03, f"{sid}: {a} is ahead of {nxt[0]} by {gap:.2f} points of the all-India total ({100 * rel:.1f}%): level, not a lead"
+        led = len(use) - 1 - cut
+        if len(nxt) == 1:      # with no stack behind it, the lead itself has to be three years old
+            assert led >= 3, f"{sid}: {a} has led for {led} years since {cfg['cut']}; a handover told without a stack needs three"
         ctx = {"a_x": f"{va[-1] / va[cut]:.1f}", "b_pct": f"{100 * (vb[-1] / vb[cut] - 1):.0f}", "a_now": f"{va[-1]:.1f}", "b_now": f"{vb[-1]:.1f}", "india": f"{india:.1f}",
-               "share": f"{100 * va[-1] / india:.0f}", "ratio": f"{va[-1] / vb[-1]:.1f}", "a_cut": f"{va[cut]:.1f}", "b_cut": f"{vb[cut]:.1f}", "b_x": f"{vb[-1] / vb[cut]:.1f}"}
+               "share": f"{100 * va[-1] / india:.0f}", "ratio": f"{va[-1] / vb[-1]:.1f}", "a_cut": f"{va[cut]:.1f}", "b_cut": f"{vb[cut]:.1f}", "b_x": f"{vb[-1] / vb[cut]:.1f}",
+               "gap": f"{gap:.1f}", "next": nm(nxt[0]), "next_now": f"{last[nxt[0]]:.1f}", "led": led}
+        extra["stack"] = {"a": {"name": nm(a), "v": last[a], "label": f"{last[a]:.1f}"}, "parts": [{"name": nm(s_), "v": last[s_], "label": f"{last[s_]:.1f}"} for s_ in nxt],
+                          "sum": f"{tot:.1f}", "sumName": cfg["stack"].get("name") or nm(nxt[0]), "note": cfg["stack"].get("note", "").format(**ctx)}
         if "spots" in cfg:      # open on the map with both states lit and their figures at the cut year
             beats[0].update({"kind": "spot", "spots": [{"geo": geo(x["state"]), "also": [geo(y_) for y_ in x.get("also", [])], "name": x["name"], "big": x["big"].format(**ctx),
                                                          "note": x.get("note", ""), "tone": x["tone"], "at": x["at"]} for x in cfg["spots"]]})
         else:
             beats[0].update({"kind": "race", "mode": "lead"})
         beats.append({"kind": "race", "mode": "run", "kicker": cfg["run"]["kicker"], "vo": cfg["run"]["vo"]})
-        beats.append({"kind": "stack", "lines": cfg["stack"]["lines"], "vo": cfg["stack"]["vo"]})
+        beats.append({"kind": "stack", "lines": [l.format(**ctx) for l in cfg["stack"]["lines"]], "vo": cfg["stack"]["vo"]})
         for c in cfg.get("says", []):
             beats.append({"kind": "say", "lines": [l.format(**ctx) for l in c["lines"]], "note": c.get("note", ""), "vo": c["vo"]})
         m = cfg["map"]; cuts = m["bands"]
@@ -311,7 +419,101 @@ def build(cfg):
         beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
         extra["checked"] = [f"{b} is the largest in every year from {cfg['from']} to {cfg['cut']}, {a} in every year after, among all states in the table",
                             f"{a} {last[a]:.2f} is above the next {len(nxt)} together ({', '.join(nxt)}: {tot:.2f})",
+                            f"{a} is ahead of {nxt[0]} by {gap:.2f} points of the all-India total ({100 * rel:.1f}%), and has been largest for {led} years",
                             f"{a} grew {va[-1] / va[cut]:.2f} times and {b} {vb[-1] / vb[cut]:.2f} times from {cfg['cut']} to {clean(cfg['to'])}"] + run_checks(sid, cfg, a)
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "then":
+        st0 = cfg["state"]; share = cfg["measure"] == "share"; sc = cfg.get("scale", 1); unit = cfg.get("unit", "%" if share else "")
+        clean = lambda y: y.replace(" (P)", "").replace(" (p)", "")
+        def measured(vals, india, what):      # one column as the measure: each state's share of the all-India row, or the figure itself
+            if not share:
+                return {s_: v * sc for s_, v in vals.items()}, (india * sc if india is not None else None)
+            assert india, f"{sid}: no all-India figure for {what}"
+            cover = sum(vals.values()) / india
+            assert abs(cover - 1) < 0.05, f"{sid}: in {what} the state rows add up to {100 * cover:.0f}% of the all-India row"
+            return {s_: 100 * v / india for s_, v in vals.items()}, 100.0
+        if "table" in cfg:      # a table with a column a year: the years around both dates are tested below
+            t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(cfg['table']):03d}.json"))
+            years = [c.split("|")[-1].strip() for c in t["columns"]]
+            assert len(set(years)) == len(years), f"{sid}: the table has more than one column a year; use 'points' with two data specs"
+            col = lambda i: ({s_: r[t["columns"][i]] for s_, r in t["states"].items() if s_ != "India" and r.get(t["columns"][i]) is not None}, t["states"].get("India", {}).get(t["columns"][i]))
+            at = lambda i: find(measured(*col(i), years[i])[0], st0)
+            i0, i1 = years.index(cfg["from"]), years.index(cfg["to"]); p0, p1 = cfg["from"], cfg["to"]
+            (M0, I0), (M1, I1) = measured(*col(i0), p0), measured(*col(i1), p1)
+        else:      # two survey rounds or two separate tables: nothing lies between them to test
+            a_, b_ = cfg["points"]; p0, p1 = a_["period"], b_["period"]
+            (M0, I0), (M1, I1) = measured(*series(a_["data"]), p0), measured(*series(b_["data"]), p1)
+        then, now = find(M0, st0), find(M1, st0); ch = now - then
+        assert then > 0, f"{sid}: {st0} has nothing above zero in {p0}: a start from nothing is a change in reporting, not a rise"
+        times = now / then
+        if share:
+            assert abs(ch) >= cfg.get("min_change", 1.0), f"{sid}: the change is {ch:+.2f} points of the all-India total: level, not a change"
+        else:
+            assert abs(times - 1) >= cfg.get("min_change", 0.1), f"{sid}: the change is {100 * (times - 1):+.1f}%: level, not a change"
+        checked = [f"{st0}: {then:.2f} in {p0}, {now:.2f} in {p1}: {ch:+.2f}, {times:.2f} times"]
+        if "table" in cfg:
+            before = []
+            for i in (i0 - 2, i0 - 1):      # the two years before the start, where the table has them
+                try:
+                    before.append(at(i) if i >= 0 else None)
+                except (AssertionError, SystemExit):
+                    before.append(None)
+            base = (max if ch > 0 else min)([then] + [v for v in before if v is not None])      # the start must not be a dip (or a spike) against the years just before it
+            assert (now - base) * ch > 0 and abs(now - base) >= 0.6 * abs(ch), \
+                f"{sid}: {p0} is an unusual year for {st0} ({then:.2f}, against {base:.2f} just before): most of the change comes from the starting year"
+            late = [at(i) for i in range(i1 - 2, i1 + 1)]
+            for i, v in zip(range(i1 - 2, i1 + 1), late):      # the change must be there in each of the last three years
+                assert (v - then) * ch > 0 and abs(v - then) >= abs(ch) / 3, f"{sid}: the change does not hold in {years[i]} ({v:.2f} against {then:.2f} in {p0})"
+            assert abs(ch) >= 0.6 * max(abs(v - then) for v in late), f"{sid}: {st0} has fallen back from a recent peak ({', '.join(f'{v:.2f}' for v in late)}): not a change that holds"
+            checked += [f"the years just before {p0} do not make it a freak year: measured from {base:.2f} the change is still {now - base:+.2f}",
+                        f"the change holds in each of {', '.join(years[i1 - 2:i1 + 1])}: " + ", ".join(f"{v:.2f}" for v in late)]
+        y0, y1 = (int(re.search(r"\d{4}", x).group()) for x in (p0, p1))
+        if SPLITS.get(st0) and y0 < SPLITS[st0]:
+            assert cfg.get("boundary_note"), f"{sid}: {st0} was split in {SPLITS[st0]}, so its {p0} figure covers a different area: start later, or say so on screen in 'boundary_note'"
+        m = cfg["map"]
+        if "(P)" in p1.upper():
+            assert "provisional" in (m.get("note", "") + cfg["source"]).lower(), f"{sid}: {p1} is provisional: say so on screen"
+        rank = lambda M, v: 1 + sum(x > v for s_, x in M.items() if s_ in M0 and s_ in M1)
+        lab = lambda v: f"{v:.1f}%" if share else show(v, unit)
+        kind = cfg.get("delta", "points" if share else "times")
+        delta = {"points": f"{signed(ch)} points", "times": f"{times:.1f}×", "percent": f"{signed(100 * (times - 1), 0)}%"}[kind]
+        ctx = {"then": lab(then), "now": lab(now), "change": signed(ch), "times": f"{times:.1f}", "years": y1 - y0, "from": clean(p0), "to": clean(p1),
+               "rank_then": rank(M0, then), "rank_now": rank(M1, now), "n": len(set(M0) & set(M1)),
+               "india_then": lab(I0) if I0 is not None and not share else "", "india_now": lab(I1) if I1 is not None and not share else ""}
+        for k, want in cfg.get("expect", {}).items():      # figures the script states in words (a rank, a span of years)
+            assert str(ctx[k]) == str(want), f"{sid}: the script expects {k} = {want}; the table gives {ctx[k]}"
+            checked.append(f"{k} = {ctx[k]}")
+        cfg["chip"] = cfg["chip"].format(**ctx)
+        beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0), "lines": [l.format(**ctx) for l in cfg["hook"]]})
+        pair = {"geo": geo(st0), "name": nm(st0), "kicker": cfg["kicker"], "big": delta, "p0": {"period": clean(p0), "label": lab(then), "frac": then / max(then, now)},
+                "p1": {"period": clean(p1), "label": lab(now), "frac": now / max(then, now)}}
+        beats.append({**pair, "kind": "shift", "mode": "then", "text": cfg["then"].get("text", "").format(**ctx), "vo": cfg["then"]["vo"]})
+        beats.append({**pair, "kind": "shift", "mode": "now", "text": cfg["now"].get("text", "").format(**ctx), "vo": cfg["now"]["vo"]})
+        beats += fact_beats(cfg, st0)
+        assert cfg.get("says"), f"{sid}: a then-and-now script needs one card of our own reading of the change, under 'says'"
+        for c in cfg["says"]:
+            beats.append({"kind": "say", "lines": [l.format(**ctx) for l in c["lines"]], "note": c.get("note", "").format(**ctx), "vo": c["vo"]})
+        as_ = m.get("as", "points" if share else "percent")      # every state's change: in points, or in percent of where it started
+        apart = {s_ for s_, y_ in SPLITS.items() if y0 < y_ <= y1}      # split between the two dates: the two figures cover different areas, so no change is shown
+        chg = {s_: (M1[s_] - M0[s_] if as_ == "points" else 100 * (M1[s_] / M0[s_] - 1)) for s_ in M1 if M0.get(s_, 0) > 0 and s_ not in apart}
+        for s_ in sorted(apart & set(M0) & set(M1)):
+            assert s_ in m.get("note", ""), f"{sid}: {s_} is left off the map (its boundary changed in {SPLITS[s_]}): say so in the map note"
+        cuts = m["bands"]
+        assert len(cuts) == 4 and cuts == sorted(cuts), f"{sid}: the map needs four rising cuts"
+        if min(chg.values()) >= 0 or max(chg.values()) <= 0:      # every state moved the same way: one ramp, light to dark
+            bands = pal["bands"]
+        else:      # falls in one colour, rises in the other, level in between
+            assert cuts[1] < 0 < cuts[2], f"{sid}: some states rose and some fell, so the map needs its cuts around zero (fell a lot, fell, level, rose, rose a lot)"
+            bands = [pal["accent2"], tint(pal["accent2"], 0.5), "#DDD5C8", tint(pal["accent"], 0.45), pal["accent"]]
+        asc = sorted(chg, key=lambda s_: (chg[s_], s_))
+        extra["map"] = [{"name": geo(s_), "label": signed(chg[s_], 1 if as_ == "points" else 0), "bucket": sum(chg[s_] >= c for c in cuts),
+                         "dark": is_dark(bands[sum(chg[s_] >= c for c in cuts)]), "nudge": NUDGE.get(geo(s_), (0, 0))} for s_ in asc]
+        missing = {x["name"] for x in extra["map"]} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        ring = [geo(x) for x in [st0] + m.get("ring", [])]
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
+        extra["bands_override"] = bands
+        extra["checked"] = checked + run_checks(sid, cfg, st0)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
     elif typ == "over":
         stage, india = series(cfg["stage"]); res, ires = series(cfg["whole"]); ext, iext = series(cfg["drawn"]); rech, _ = series(cfg["recharge"])
@@ -413,6 +615,11 @@ def build(cfg):
     for bt in beats:
         g = bt.get("geo")
         assert g is None or g in GEO, f"{sid}: {g} is not on the map"
+    broken = house_rules(sid, cfg, beats, extra)      # before anything is voiced
+    if cfg.get("rules", 1) >= 2:
+        assert not broken, f"{sid}: breaks the house rules: " + "; ".join(broken)
+    for x in broken:
+        print(f"{sid}: approved before the rules, would break: {x}")
 
     t, vo = 0.0, []
     for i, bt in enumerate(beats):
@@ -424,19 +631,24 @@ def build(cfg):
         nb = max(MIN_BARS[bt["kind"]], math.ceil(need / M.BAR))
         bt["t0"], bt["t1"] = round(t, 3), round(t + nb * M.BAR, 3); t += nb * M.BAR
     total = round(t + 0.4, 3)
+    if not 30 <= total <= 45:      # the research's band for a Short; an estimate (--check, --mute) only warns
+        msg = f"{sid}: {total:.1f} s is outside 30 to 45 seconds"
+        assert ESTIMATE or cfg.get("rules", 1) < 2, msg
+        print(msg + (" (estimated)" if ESTIMATE else ""))
     for bt in beats:      # an animated map fills state by state, lowest value first, then holds
         if bt["kind"] == "map" and bt.get("anim"):
             step = min(M.BEAT / 4, (bt["t1"] - bt["t0"] - 2.0) / len(extra["map"]))
             for k, s_ in enumerate(extra["map"]):
                 s_["at"] = round(bt["t0"] + 0.35 + k * step, 3)
     out = {"id": sid, "type": typ, "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "accent": pal["accent"], "accent2": pal["accent2"],
-           "bands": extra.pop("bands_override", pal["bands"]), "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": vo, "voiceEngine": V.ENGINE, "voice": V.VOICE,
+           "bands": extra.pop("bands_override", pal["bands"]), "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": [] if MUTE else vo,
+           "voiceEngine": "none" if MUTE else V.ENGINE, "voice": "" if MUTE else V.VOICE,
            "ytTitle": cfg.get("yt_title", "")}
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     hits = [bt["t0"] for bt in beats if bt["kind"] in ("reveal", "score", "map") or (bt["kind"] == "rank" and bt["rank"] == 1) or (bt["kind"] == "pick" and bt["mode"] == "tell")]
     drop_at = hits[0] if hits else beats[-1]["t0"]
     M.make(f"{d}/music.wav", total, seed=sum(map(ord, sid)) % 50, hits=hits, ticks=[bt["t0"] for bt in beats], drop=(drop_at - M.BEAT * 2, drop_at))
-    print(f"{sid}: {typ} · {len(beats)} beats · {total:.1f}s · voice {V.ENGINE}")
+    print(f"{sid}: {typ} · {len(beats)} beats · {total:.1f}s · voice {'none (text-led cut)' if MUTE else V.ENGINE}")
 
 
 def write_registry():
@@ -447,18 +659,24 @@ def write_registry():
     open("src/datayt/beatData.ts", "w").write("\n".join(lines))
 
 
+ESTIMATE = False      # line lengths are estimated, not voiced
+
+
 if __name__ == "__main__":
-    check = "--check" in sys.argv
+    check, MUTE = "--check" in sys.argv, "--mute" in sys.argv
+    ESTIMATE = check or MUTE
     want = set(a for a in sys.argv[1:] if not a.startswith("--"))
     files = sorted(glob.glob("public/datayt/beats/configs/*.json"))
-    if check:      # no voice, no music: estimate the spoken length (about 0.43 s a word for this narrator) and run every data check
+    if ESTIMATE:      # nothing is sent to the voice service
+        V.say = lambda text, stem, voice=None: ("check.mp3", spoken(text))
+    if check:      # no music either: every data check and every house rule runs, and the result goes under out/
         BASE = "out/datakadai/bank_check"
-        V.say = lambda text, stem, voice=None: ("check.mp3", round(0.43 * len(text.replace("-", " ").split()) + 0.5, 2))
         M.make = lambda *a, **k: None
         files += sorted(glob.glob("public/datayt/bank/scripts/*.json"))
     ok, bad = 0, []
     for f in files:
         cfg = json.load(open(f))
+        cfg.setdefault("rules", 2 if "/bank/scripts/" in f else 1)      # the script bank is written under the house rules
         if not want or cfg["id"] in want:
             if not check:
                 build(cfg); continue

@@ -76,6 +76,14 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - Map in the video, list in the post (AK, 11 Oct 2026): state stories show the map with every state's number, then
   top five and bottom five as bars; the full ranked list goes out as a chart post beside the finished map.
 
+## YouTube rules (11 Oct 2026)
+- Templates that work and the YouTube rules that apply are in `VIDEO_TEMPLATES_AND_YT_RULES.md`. Every pack passes
+  its ten-point checklist before AK posts it.
+- The rule that matters most: YouTube does not pay for videos that look template-made and mass-produced. Each video
+  needs its own story, its own script and a narrated "why this matters". Never read out a release or a table.
+- Description says how the video was made: data analysed and animated by Data Kadai from the named source; AI voice.
+- Audience setting: not made for kids. Every number in a title or thumbnail appears in the video.
+
 ## Serve it hot (AK, 10 Oct 2026)
 - Goal: put official data out while it is fresh, to own the "India's numbers" mind space.
 - `scripts/datayt/hot_scan.py` reads the day's releases from PIB (all ministries, incl. MoSPI), the RBI and SEBI

@@ -4,6 +4,7 @@ import React from "react";
 import {AbsoluteFill, Audio, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing} from "remotion";
 import {C, COND, TYPE, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
 import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
+import {ILLUS} from "./illus";
 
 export const FPS = 30;
 export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
@@ -526,7 +527,7 @@ const Pic: React.FC<SP> = ({s, n, T, D}) => {
 };
 
 const SCENES: Record<string, React.FC<SP>> = {title: Title, strips: Strips, counter: Counter, cards: Cards, clip: Clip, quote: Quote,
-  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic, pic: Pic};
+  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic, pic: Pic, ...ILLUS};
 
 // ---------- captions & furniture ----------
 const cueTimes = (b: Beat) => {

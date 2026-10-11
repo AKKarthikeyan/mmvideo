@@ -23,6 +23,8 @@ import {HalNapkin, halTotal, HFPS2} from "./hand/HalNapkin";
 import {VogNapkin, vogTotal, VFPS} from "./hand/VogNapkin";
 import {BankNapkin, bkTotal, BK, BFPS} from "./hand/BankNapkins";
 import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
+import {IllusDev, IllusIcon} from "./vx/illus/Dev";
+import {IllusThumb} from "./vx/illus/Thumb";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -69,6 +71,9 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bkt" component={BankNapkin2 as any} defaultProps={{sid: "bkt", label: "TCS Q2"}} durationInFrames={bkTotal2(BK2.bkt)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bku" component={BankNapkin2 as any} defaultProps={{sid: "bku", label: "Persistent · Nagarro"}} durationInFrames={bkTotal2(BK2.bku)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkv" component={BankNapkin2 as any} defaultProps={{sid: "bkv", label: "DMart Q2"}} durationInFrames={bkTotal2(BK2.bkv)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="ILLUS-dev" component={IllusDev as any} defaultProps={{scene: {type: "kitdemo"}, say: "", sec: 8}} durationInFrames={1800} fps={30} width={1920} height={1080}/>
+    <Composition id="ILLUS-icon" component={IllusIcon as any} defaultProps={{name: "store"}} durationInFrames={1} fps={30} width={512} height={512}/>
+    <Composition id="ILLUS-thumb" component={IllusThumb as any} defaultProps={{v: 1}} durationInFrames={1} fps={30} width={1280} height={720}/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
   </>
 );

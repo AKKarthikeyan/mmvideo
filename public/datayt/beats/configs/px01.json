@@ -1,0 +1,158 @@
+{
+ "id": "px01",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "source_short": "DoT · 28 Feb 2026",
+ "palette": "C",
+ "state": "Bihar",
+ "source": "5G: Dept of Telecommunications, Lok Sabha Starred Q. 470 (25 Mar 2026), Annex II: villages brought under 5G services, as on 28 Feb 2026; villages as per the Registrar General of India. Income: RBI Handbook of Statistics on Indian States, per-capita net state domestic product, current prices, 2024-25 (25 states and UTs with data).",
+ "hook": [
+  "*Bihar:* lowest",
+  "income per person.",
+  "*5G* in 96 of",
+  "100 villages."
+ ],
+ "hook_vo": "Bihar: lowest income per person, yet 5G in ninety-six of a hundred villages.",
+ "facts": [
+  {
+   "state": "Bihar",
+   "kicker": "INCOME PER PERSON · 2024-25",
+   "data": {
+    "rbi": [
+     19,
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "claim": "lowest",
+   "text": "a year. The lowest of the {n} states and UTs with data.",
+   "sub": "Per-capita net state domestic product, current prices. RBI.",
+   "vo": "Sixty-nine thousand rupees a year, the lowest of the {n} states and territories with data."
+  },
+  {
+   "state": "Bihar",
+   "kicker": "VILLAGES WITH 5G · 28 FEB 2026",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "unit": "%",
+   "counts": [
+    "g5",
+    "total"
+   ],
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of villages brought under 5G services",
+   "vo": "Yet 5G service has reached ninety-six of every hundred villages there."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "VILLAGES WITH 5G · 28 FEB 2026",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "unit": "%",
+   "counts": [
+    "g5",
+    "total"
+   ],
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of villages. Income per person: over 5 times Bihar's.",
+   "vo": "Telangana: five times the income, 5G in nineteen of a hundred."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "equals": 96
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "equals": 57
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "equals": 19
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 5.0
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "rbi": [
+     19,
+     "2024-25"
+    ]
+   },
+   "b": {
+    "coverage": "g5_pct"
+   },
+   "max_abs": 0.3
+  },
+  "lines": [
+   "Across {n} states,",
+   "income and 5G reach",
+   "are only",
+   "*weakly linked.*"
+  ],
+  "vo": "Income and 5G reach are only weakly linked."
+ },
+ "map": {
+  "data": {
+   "coverage": "g5_pct"
+  },
+  "unit": "%",
+  "title": "Villages with 5G, *every state*",
+  "sub": "% of villages · India {india} · 28 Feb 2026",
+  "note": "Counts villages brought under 5G services. Not speed. Not how many people use it.",
+  "ring": [
+   "Bihar",
+   "Telangana"
+  ],
+  "vo": "Here is every state. This counts villages brought under 5G service, not speed or how many people use it."
+ },
+ "end": {
+  "q": "Where does *your state* stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "Bihar: Lowest Income Per Person, 5G in 96 of 100 Villages"
+}

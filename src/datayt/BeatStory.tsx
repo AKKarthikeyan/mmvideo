@@ -1,6 +1,6 @@
 // Data Kadai "beat" Shorts (1080x1920): one thing on screen at a time, very large type, a cut every bar or two.
-// Three story types share this file: clue quiz, top-five countdown, state vs state. Beats and timing come from
-// public/datayt/beats/<id>/data.json (scripts/datayt/build_beats.py). The all-states map appears only as a closing beat.
+// Four story types share this file: clue quiz, top-five countdown, state vs state, data paradox. Beats and timing come
+// from public/datayt/beats/<id>/data.json (scripts/datayt/build_beats.py). The all-states map appears only as a closing beat.
 import React from "react";
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame} from "remotion";
 import {COND, VoxFonts} from "../voxkit";
@@ -13,10 +13,10 @@ const FPS = 30, W = 1080, H = 1920;
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number; of?: number; big?: string; text?: string; name?: string; geo?: string; sub?: string;
   items?: {big: string; text: string}[]; rank?: number; frac?: number; label?: string; note?: string; a?: string; b?: string; win?: string; sa?: number; sb?: number;
-  title?: string; q?: string};
+  title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number}[]; note?: string; anim?: boolean; ring?: string[]};
 export type BeatData = {id: string; type: string; chip: string; sourceShort: string; source: string; accent: string; accent2: string; bands: string[];
   beats: Beat[]; total: number; beat: number; map?: MapState[]; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
-type G = {name: string; d: string; bbox: number[]};
+type G = {name: string; d: string; bbox: number[]; lx: number; ly: number};
 const GEO = Object.fromEntries((geo.states as G[]).map((g) => [g.name, g]));
 
 const F = (s: number) => Math.round(s * FPS);
@@ -66,6 +66,61 @@ const Hook: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
       return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 168, 940, 0.47), lineHeight: 1.02, color: P.ink,
         opacity: Math.min(1, p * 1.4), transform: `translateY(${(1 - p) * 60}px)`}}><Rich text={l} acc={D.accent}/></div>;
     })}
+  </AbsoluteFill>;
+};
+
+// The hook above the outline of India with one state lit: the place and the surprise are both in the first frame.
+const Spot: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const h = 1010, S = h / geo.h, w = geo.w * S;
+  const g = GEO[b.geo ?? ""];
+  const p = pop(f, f0 - 6);      // the lit state and the first lines are already there on frame 0
+  const pulse = ((f - f0) % 30) / 30;
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 160}}>
+      {(b.lines ?? []).map((l, i) => {
+        const q = pop(f, f0 - 10 + i * 5);
+        return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 132, 960, 0.47), lineHeight: 1.04, color: P.ink,
+          opacity: Math.min(1, q * 1.4), transform: `translateY(${(1 - q) * 40}px)`}}><Rich text={l} acc={D.accent}/></div>;
+      })}
+    </div>
+    <svg width={w} height={h} style={{position: "absolute", left: (W - w) / 2, top: 770, overflow: "visible"}}>
+      <g transform={`scale(${S})`}>
+        {(geo.states as G[]).map((s_) => <path key={s_.name} d={s_.d} fillRule="evenodd" fill={s_.name === b.geo ? D.accent : P.empty} stroke={P.ink}
+          strokeOpacity={s_.name === b.geo ? 1 : 0.4} strokeWidth={s_.name === b.geo ? 2.4 : 1.1} strokeLinejoin="round"/>)}
+        {g && <>
+          <circle cx={g.lx} cy={g.ly} r={46 + 54 * pulse} fill="none" stroke={D.accent2} strokeWidth={7} opacity={(1 - pulse) * p}/>
+          <text x={g.lx} y={g.ly - 74} textAnchor="middle" fontFamily={COND} fontWeight={700} fontSize={66} fill={D.accent} stroke={P.bg} strokeWidth={9}
+            paintOrder="stroke" opacity={p}>{b.name}</text>
+        </>}
+      </g>
+    </svg>
+  </AbsoluteFill>;
+};
+
+// One state, one number: its outline, the figure, one line of meaning, and a bar against India when there is one.
+const Fact: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const p = pop(f, f0);
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 172, fontFamily: SANS, fontWeight: 800, fontSize: 38, letterSpacing: 4, color: D.accent2}}>{b.kicker}</div>
+    <Shape name={b.geo ?? ""} x={60} y={260} w={380} h={430} fill={D.accent} scale={0.6 + 0.4 * p}/>
+    <div style={{position: "absolute", left: 480, right: 50, top: 260, height: 430, display: "flex", alignItems: "center", fontFamily: COND, fontWeight: 700,
+      fontSize: fit(b.name ?? "", 170, 540, 0.5), lineHeight: 1, color: P.ink}}>{b.name}</div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 730, display: "flex", flexDirection: "column"}}>
+      <div style={{fontFamily: COND, fontWeight: 700, fontSize: fit(b.big ?? "", 330, 960, 0.56), lineHeight: 1, color: D.accent, transform: `scale(${0.7 + 0.3 * p})`,
+        transformOrigin: "left center", opacity: Math.min(1, p * 1.5)}}>{b.big}</div>
+      <div style={{fontFamily: COND, fontWeight: 700, fontSize: 74, lineHeight: 1.1, color: P.ink, marginTop: 22, opacity: ease(f, f0 + 6, f0 + 14)}}>{b.text}</div>
+      {(b.bars ?? []).length > 0 && <div style={{marginTop: 44, display: "flex", flexDirection: "column", gap: 22}}>
+        {(b.bars ?? []).map((r, i) => <div key={i} style={{display: "flex", alignItems: "center", gap: 20, opacity: ease(f, f0 + 10 + i * 5, f0 + 16 + i * 5)}}>
+          <div style={{width: 230, fontFamily: SANS, fontWeight: 700, fontSize: 38, color: P.ink}}>{r.name}</div>
+          <div style={{flex: 1, height: 36, borderRadius: 18, background: P.empty}}>
+            <div style={{height: 36, borderRadius: 18, width: `${r.frac * 100 * ease(f, f0 + 12 + i * 5, f0 + 30 + i * 5)}%`, background: i ? P.mute : D.accent}}/></div>
+          <div style={{width: 170, textAlign: "right", fontFamily: COND, fontWeight: 700, fontSize: 56, color: i ? P.mute : D.accent}}>{r.label}</div>
+        </div>)}
+      </div>}
+      {b.sub && <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 36, lineHeight: 1.3, color: P.mute, marginTop: 34, opacity: ease(f, f0 + 12, f0 + 20)}}>{b.sub}</div>}
+    </div>
   </AbsoluteFill>;
 };
 
@@ -187,13 +242,21 @@ const Score: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   </AbsoluteFill>;
 };
 
+// Every state's number on the map. With `anim` the states fill one by one; "mapend" holds the finished map under the
+// closing question, with the caution line and the source below it. Header, map and footer are fixed strips: nothing overlaps.
 const MapBeat: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const f = useCurrentFrame();
-  const h = 1150, w = h * MAP_RATIO;
+  const end = b.kind === "mapend", foot = !!b.note || end;
+  const h = foot ? 1000 : 1150, w = h * MAP_RATIO;      // with a footer the map is shorter, so the caution line stays clear of the Shorts overlay
+  const ring = Object.fromEntries((b.ring ?? []).map((n) => [n, P.ink]));
   return <AbsoluteFill>
-    <div style={{position: "absolute", left: 60, right: 60, top: 150, fontFamily: COND, fontWeight: 700, fontSize: 84, lineHeight: 1.05, color: P.ink}}><Rich text={b.title ?? ""} acc={D.accent}/></div>
-    <div style={{position: "absolute", left: 60, top: 350, fontFamily: SANS, fontSize: 36, color: P.mute}}>{b.sub}</div>
-    <div style={{opacity: ease(f, f0, f0 + 8)}}><StateMap states={D.map ?? []} colors={D.bands} x={(W - w) / 2} y={440} h={h} fs={24}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 150, fontFamily: COND, fontWeight: 700, fontSize: 84, lineHeight: 1.05, color: P.ink}}><Rich text={(end ? b.q : b.title) ?? ""} acc={D.accent}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 350, fontFamily: SANS, fontWeight: end ? 700 : 400, fontSize: end ? 44 : 36, color: end ? D.accent2 : P.mute}}>{b.sub}</div>
+    <div style={{opacity: end ? 1 : ease(f, f0, f0 + 8)}}><StateMap states={D.map ?? []} colors={D.bands} x={(W - w) / 2} y={440} h={h} fs={24}
+      frame={b.anim ? f : null} t0={f0} ring={ring}/></div>
+    {b.note && <div style={{position: "absolute", left: 60, right: 60, top: 1468, fontFamily: SANS, fontWeight: 600, fontSize: 34, lineHeight: 1.3, color: P.ink,
+      opacity: end ? 1 : ease(f, Math.min(f0 + 135, F(b.t1) - 75), Math.min(f0 + 147, F(b.t1) - 63))}}>{b.note}</div>}
+    {end && <div style={{position: "absolute", left: 60, right: 330, top: 1612, fontFamily: SANS, fontSize: 23, lineHeight: 1.3, color: P.mute}}>Source: {D.source}</div>}
   </AbsoluteFill>;
 };
 
@@ -207,7 +270,8 @@ const End: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   </AbsoluteFill>;
 };
 
-const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End};
+const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End,
+  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat};
 const DARK = (b: Beat) => b.kind === "count" || b.kind === "reveal" || (b.kind === "rank" && b.rank === 1);
 
 const musicVol = (D: BeatData, fr: number) => {

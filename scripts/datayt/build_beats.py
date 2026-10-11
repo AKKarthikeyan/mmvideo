@@ -11,6 +11,8 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
               states, one or two cards on why, then every state's share on the map
   race        Two states' lines over the years: the old leader ahead, then the run to the latest year, what changed,
               the new leader against a stack of the next largest, then every state on the map
+  pick        Higher or lower: a few rounds, each one question about two states with a pause to decide before the
+              numbers appear, then a card with every answer
 
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table and
@@ -29,7 +31,7 @@ from build_story import series as base_series, fmt, SHORT
 
 FPS, VO_LEAD = 30, 0.12
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
-            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3}
+            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2}
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
 PCT = {"g5_pct": ("g5", "total"), "uncovered_pct": ("uncovered", "total")}
 geo = lambda s: GEO_ALIAS.get(s, s)
@@ -124,7 +126,7 @@ def build(cfg):
     sid, typ = cfg["id"], cfg["type"]
     pal = PALETTES[cfg.get("palette", "A")]
     d = f"public/datayt/beats/{sid}"; os.makedirs(d, exist_ok=True)
-    beats = [{"kind": "hook", "lines": cfg["hook"], "vo": cfg.get("hook_vo") or " ".join(cfg["hook"]).replace("*", "")}]
+    beats = [{"kind": "hook", "lines": cfg.get("hook", []), "vo": cfg.get("hook_vo") or " ".join(cfg.get("hook", [])).replace("*", "")}]
     extra = {}
     if typ == "clues":
         st = cfg["state"]
@@ -298,6 +300,29 @@ def build(cfg):
                             f"{a} {last[a]:.2f} is above the next {len(nxt)} together ({', '.join(nxt)}: {tot:.2f})",
                             f"{a} grew {va[-1] / va[cut]:.2f} times and {b} {vb[-1] / vb[cut]:.2f} times from {cfg['cut']} to {clean(cfg['to'])}"] + run_checks(sid, cfg, a)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "pick":
+        beats.clear()      # no intro: the first frame is round one's question
+        checked, tally = [], []
+        for i, r in enumerate(cfg["rounds"]):
+            vals, india = series(r["data"]); a, b = r["pair"]; va, vb = find(vals, a), find(vals, b); sc = r.get("scale", 1)
+            assert india, f"{sid} round {i + 1}: the table has no all-India row"
+            gap, ratio = 100 * abs(va - vb) / india, max(va, vb) / min(va, vb)
+            assert gap >= r.get("min_gap", 1.5), f"{sid} round {i + 1}: the gap is only {gap:.2f} points of the all-India figure; too thin for a round"
+            lo, hi = r["says"]
+            assert lo <= ratio <= hi, f"{sid} round {i + 1}: the spoken comparison needs a ratio of {lo} to {hi}; it is {ratio:.2f}"
+            win = "a" if va > vb else "b"
+            lab = lambda v: f"{v * sc:,.1f}"
+            side = lambda s_, v: {"name": nm(s_), "geo": geo(s_), "label": lab(v)}
+            assert geo(a) in GEO and geo(b) in GEO, f"{sid} round {i + 1}: a state is not on the map"
+            base = {"n": i + 1, "of": len(cfg["rounds"]), "lines": r["q"], "measure": r["measure"], "pa": side(a, va), "pb": side(b, vb), "win": win,
+                    "big": f"+{100 * (ratio - 1):.0f}%"}
+            beats.append({**base, "kind": "pick", "mode": "ask", "pause": r.get("think", cfg.get("think", 0.8)), "vo": r["ask"]})
+            beats.append({**base, "kind": "pick", "mode": "tell", "vo": r["tell"]})
+            w, l_ = (a, b) if win == "a" else (b, a)
+            tally.append({"q": r["measure"], "win": nm(w), "wl": lab(max(va, vb)), "lose": nm(l_), "ll": lab(min(va, vb))})
+            checked.append(f"round {i + 1}: {w} {max(va, vb):g} against {l_} {min(va, vb):g}: {ratio:.2f} times, a gap of {gap:.2f} points of the all-India figure")
+        extra["tally"] = tally; extra["checked"] = checked
+        cfg["end"] = {"kind": "tally", **cfg["end"]}
     else:
         raise SystemExit(f"{sid}: unknown type {typ}")
     e = cfg["end"]
@@ -312,7 +337,7 @@ def build(cfg):
         if bt.get("vo"):
             fn, dur = V.say(bt["vo"], f"{d}/vo_{i:02d}")
             vo.append({"file": fn, "sec": dur, "at": round(t + VO_LEAD, 3), "text": bt["vo"]})
-            need = dur + VO_LEAD + 0.3
+            need = dur + VO_LEAD + 0.3 + bt.get("pause", 0)      # a "pause" is thinking time after the voice stops
         nb = max(MIN_BARS[bt["kind"]], math.ceil(need / M.BAR))
         bt["t0"], bt["t1"] = round(t, 3), round(t + nb * M.BAR, 3); t += nb * M.BAR
     total = round(t + 0.4, 3)
@@ -325,7 +350,7 @@ def build(cfg):
            "bands": pal["bands"], "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": vo, "voiceEngine": V.ENGINE, "voice": V.VOICE,
            "ytTitle": cfg.get("yt_title", "")}
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
-    hits = [bt["t0"] for bt in beats if bt["kind"] in ("reveal", "score", "map") or (bt["kind"] == "rank" and bt["rank"] == 1)]
+    hits = [bt["t0"] for bt in beats if bt["kind"] in ("reveal", "score", "map") or (bt["kind"] == "rank" and bt["rank"] == 1) or (bt["kind"] == "pick" and bt["mode"] == "tell")]
     drop_at = hits[0] if hits else beats[-1]["t0"]
     M.make(f"{d}/music.wav", total, seed=sum(map(ord, sid)) % 50, hits=hits, ticks=[bt["t0"] for bt in beats], drop=(drop_at - M.BEAT * 2, drop_at))
     print(f"{sid}: {typ} · {len(beats)} beats · {total:.1f}s · voice {V.ENGINE}")

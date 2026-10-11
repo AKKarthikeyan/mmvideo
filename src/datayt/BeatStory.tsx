@@ -1,5 +1,5 @@
 // Data Kadai "beat" Shorts (1080x1920): one thing on screen at a time, very large type, a cut every bar or two.
-// Six story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race. Beats and timing come
+// Seven story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race, higher-or-lower. Beats and timing come
 // from public/datayt/beats/<id>/data.json (scripts/datayt/build_beats.py). The all-states map appears only as a closing beat.
 import React from "react";
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame} from "remotion";
@@ -14,11 +14,13 @@ const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number; of?: number; big?: string; text?: string; name?: string; geo?: string; sub?: string;
   items?: {big: string; text: string}[]; rank?: number; frac?: number; label?: string; note?: string; a?: string; b?: string; win?: string; sa?: number; sb?: number;
   title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
-  spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[]};
+  spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[];
+  measure?: string; pa?: {name: string; geo: string; label: string}; pb?: {name: string; geo: string; label: string}};
 export type BeatData = {id: string; type: string; chip: string; sourceShort: string; source: string; accent: string; accent2: string; bands: string[];
   beats: Beat[]; total: number; beat: number; map?: MapState[]; grid?: {parts: {name: string; v: number; label: string; color: string}[]; caption: string};
   race?: {years: string[]; cut: number; note: string; a: {name: string; v: number[]; sub?: string}; b: {name: string; v: number[]; sub?: string}; marks?: {i: number; text: string}[]};
-  stack?: {a: {name: string; v: number; label: string}; parts: {name: string; v: number; label: string}[]; sum: string; sumName: string; note?: string}; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
+  stack?: {a: {name: string; v: number; label: string}; parts: {name: string; v: number; label: string}[]; sum: string; sumName: string; note?: string};
+  tally?: {q: string; win: string; wl: string; lose: string; ll: string}[]; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
 type G = {name: string; d: string; bbox: number[]; lx: number; ly: number};
 const GEO = Object.fromEntries((geo.states as G[]).map((g) => [g.name, g]));
 
@@ -275,6 +277,61 @@ const Stack: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   </AbsoluteFill>;
 };
 
+// Higher or lower: two states, one question. "ask" shows the question and a bar that runs down once the voice stops;
+// "tell" keeps the same frame, brings in both numbers and lifts the higher card.
+const Pick: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const tell = b.mode === "tell";
+  const show = tell ? ease(f, f0 + 1, f0 + 10) : 0;
+  const vo = (D.vo ?? []).find((v) => v.at >= b.t0 - 0.01 && v.at < b.t1);
+  const t0 = vo ? F(vo.at + vo.sec) : f0, t1 = F(b.t1) - 2;
+  const left = tell ? 0 : interpolate(f, [t0, Math.max(t0 + 1, t1)], [1, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  const card = (who: "a" | "b", top: number) => {
+    const S_ = who === "a" ? b.pa : b.pb, win = b.win === who, col = who === "a" ? D.accent : D.accent2;
+    const p = pop(f, f0 + 1);
+    return <div style={{position: "absolute", left: 50, right: 50, top, height: 420, borderRadius: 36, background: tell && win ? `${col}26` : `${col}0F`,
+      border: `4px solid ${tell && win ? col : "transparent"}`, opacity: tell && !win ? 1 - 0.4 * show : 1, transform: `scale(${tell && win ? 1 + 0.02 * p : 1})`}}>
+      <Shape name={S_?.geo ?? ""} x={30} y={40} w={300} h={340} fill={col}/>
+      <div style={{position: "absolute", left: 370, right: 30, top: tell ? 46 : 130, fontFamily: COND, fontWeight: 700, fontSize: fit(S_?.name ?? "", tell ? 96 : 124, 580, 0.5), lineHeight: 1, color: P.ink}}>{S_?.name}</div>
+      {tell && <div style={{position: "absolute", left: 370, right: 30, top: 140, fontFamily: COND, fontWeight: 700, fontSize: fit(S_?.label ?? "", 178, 560, 0.56), lineHeight: 1, color: col,
+        opacity: show, transform: `translateY(${(1 - show) * 30}px)`}}>{S_?.label}</div>}
+      {tell && win && <div style={{position: "absolute", left: 370, top: 326, display: "flex", alignItems: "center", gap: 18, opacity: show}}>
+        <div style={{background: col, color: "#FFFFFF", fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 4, padding: "8px 18px", borderRadius: 10}}>HIGHER</div>
+        <div style={{fontFamily: COND, fontWeight: 700, fontSize: 52, color: col}}>{b.big}</div>
+      </div>}
+    </div>;
+  };
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 172, fontFamily: SANS, fontWeight: 800, fontSize: 36, letterSpacing: 4, color: D.accent2}}>ROUND {b.n} OF {b.of}</div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 232}}>
+      {(b.lines ?? []).map((l, i) => <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 124, 960, 0.47), lineHeight: 1.04, color: P.ink}}><Rich text={l} acc={D.accent}/></div>)}
+    </div>
+    {card("a", 540)}
+    {card("b", 990)}
+    <div style={{position: "absolute", left: 50, right: 50, top: 1436, height: 14, borderRadius: 7, background: tell ? "transparent" : P.empty}}>
+      <div style={{height: 14, borderRadius: 7, width: `${left * 100}%`, background: D.accent2}}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 1466, fontFamily: SANS, fontWeight: 600, fontSize: 32, color: P.mute}}>{b.measure}</div>
+  </AbsoluteFill>;
+};
+
+// The closing card of a game: every answer with both numbers, so a viewer can check their score.
+const Tally: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 165, fontFamily: COND, fontWeight: 700, fontSize: 118, lineHeight: 1.03, color: P.ink}}><Rich text={b.q ?? ""} acc={D.accent}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 470}}>
+      {(D.tally ?? []).map((r, i) => <div key={i} style={{marginBottom: 34, opacity: ease(f, f0 + 4 + i * 5, f0 + 12 + i * 5)}}>
+        <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 28, color: P.mute}}>{r.q}</div>
+        <div style={{fontFamily: COND, fontWeight: 700, fontSize: fit(`${r.win} ${r.wl}   ${r.lose} ${r.ll}`, 70, 960, 0.44), lineHeight: 1.15, color: P.ink}}>
+          <span style={{color: D.accent}}>{r.win} {r.wl}</span><span style={{color: P.mute}}>{"  ·  "}{r.lose} {r.ll}</span></div>
+      </div>)}
+    </div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 1180, fontFamily: SANS, fontWeight: 700, fontSize: 46, color: D.accent2}}>{b.sub}</div>
+    {b.note && <div style={{position: "absolute", left: 60, right: 60, top: 1256, fontFamily: SANS, fontWeight: 600, fontSize: 32, color: P.ink}}>{b.note}</div>}
+    <div style={{position: "absolute", left: 60, right: 330, top: 1330, fontFamily: SANS, fontSize: 23, lineHeight: 1.3, color: P.mute}}>Source: {D.source}</div>
+  </AbsoluteFill>;
+};
+
 // One state, one number: its outline, the figure, one line of meaning, and a bar against India when there is one.
 const Fact: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const f = useCurrentFrame();
@@ -449,7 +506,7 @@ const End: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
 };
 
 const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End,
-  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack};
+  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally};
 const DARK = (b: Beat) => b.kind === "count" || b.kind === "reveal" || (b.kind === "rank" && b.rank === 1);
 
 const musicVol = (D: BeatData, fr: number) => {

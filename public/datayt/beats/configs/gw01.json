@@ -1,0 +1,154 @@
+{
+ "id": "gw01",
+ "type": "over",
+ "chip": "GROUNDWATER",
+ "source_short": "Ground Water Board · 2025",
+ "palette": "C",
+ "stage": {
+  "gw": "stage"
+ },
+ "whole": {
+  "gw": "extractable"
+ },
+ "drawn": {
+  "gw": "extraction"
+ },
+ "recharge": {
+  "gw": "recharge"
+ },
+ "over": [
+  "Punjab",
+  "Rajasthan",
+  "Haryana"
+ ],
+ "ranges": {
+  "whole_share": [
+   8.8,
+   9.7
+  ],
+  "drawn_share": [
+   22.2,
+   23.2
+  ],
+  "group": [
+   148.0,
+   149.5
+  ]
+ },
+ "source": "Central Ground Water Board and State Governments, Dynamic Ground Water Resources of India, 2025: state-wise table laid in Lok Sabha by the Ministry of Jal Shakti on 18 December 2025. Estimates for one assessment year. Extractable resource = annual recharge minus natural discharge.",
+ "hook": [
+  "*Punjab, Haryana, Rajasthan:*",
+  "more groundwater is taken out",
+  "in a year than *goes back in.*"
+ ],
+ "hook_vo": "Three states take out more groundwater in a year than goes back in.",
+ "grid": {
+  "whole": "estimated extractable in a year",
+  "extra": "taken out beyond it",
+  "lines": [
+   "The three together:",
+   "for every *100* extractable,",
+   "*{v}* were taken out."
+  ],
+  "caption": "The three states together, 2025 assessment: {gx} billion cubic metres taken out, {gr} estimated as extractable (recharge minus natural discharge). Estimates. Not a forecast.",
+  "vo": "Together, for every hundred extractable, one forty-nine were taken out."
+ },
+ "bars": {
+  "states": [
+   "Punjab",
+   "Rajasthan",
+   "Haryana",
+   "Delhi"
+  ],
+  "max": 172,
+  "line": "100",
+  "lines": [
+   "Each against its own",
+   "line of *100*"
+  ],
+  "note": "Taken out per 100 estimated extractable, 2025. {next} is the next highest, at {next_v}.",
+  "vo": "All three are far above the line. India as a whole is at sixty-one."
+ },
+ "says": [
+  {
+   "lines": [
+    "Together, these 3 have",
+    "about *{res}%* of India's",
+    "extractable groundwater",
+    "and *{ext}%* of what is taken out."
+   ],
+   "note": "Our sum from the same table. It shows how much, not why.",
+   "vo": "They have nine percent of India's extractable groundwater, and twenty-three percent of what is taken out."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Punjab one fifty-six",
+   "value": {
+    "data": {
+     "gw": "stage"
+    },
+    "state": "Punjab"
+   },
+   "equals": 156
+  },
+  {
+   "says": "Rajasthan one forty-seven",
+   "value": {
+    "data": {
+     "gw": "stage"
+    },
+    "state": "Rajasthan"
+   },
+   "equals": 147
+  },
+  {
+   "says": "Haryana one thirty-seven",
+   "value": {
+    "data": {
+     "gw": "stage"
+    },
+    "state": "Haryana"
+   },
+   "equals": 137
+  },
+  {
+   "says": "India as a whole sixty-one",
+   "value": {
+    "data": {
+     "gw": "stage"
+    },
+    "state": "India"
+   },
+   "equals": 61
+  },
+  {
+   "says": "Delhi 92",
+   "value": {
+    "data": {
+     "gw": "stage"
+    },
+    "state": "Delhi"
+   },
+   "equals": 92
+  }
+ ],
+ "map": {
+  "bands": [
+   25,
+   50,
+   70,
+   100
+  ],
+  "title": "Groundwater taken out, *every state*",
+  "sub": "per 100 estimated extractable in a year · 2025 · India {india}",
+  "note": "State-wide estimates for one year; areas inside a state differ. Not a forecast.",
+  "vo": "Every state. How much, not why, and not a forecast."
+ },
+ "end": {
+  "q": "Find *your state.* What is its number?",
+  "sub": "",
+  "vo": "Find your state. What is its number?"
+ },
+ "yt_title": "In 3 States, More Groundwater Is Taken Out Than Goes Back In"
+}

@@ -13,9 +13,14 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
               the new leader against a stack of the next largest, then every state on the map
   pick        Higher or lower: a few rounds, each one question about two states with a pause to decide before the
               numbers appear, then a card with every answer
+  over        A ratio that passes 100: 100 squares for the whole and the extra squares spilling out below, the states
+              above the line as bars against it, a finding, then every state on the map
+  place       How a place became part of India: the hook on the map, then one dated event per beat on a timeline,
+              each naming the Act, treaty or record it comes from. Every span of years in the script is recomputed
+              from the dates in the config
 
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
-({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table and
+({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table and
 {"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States.
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
@@ -31,8 +36,9 @@ from build_story import series as base_series, fmt, SHORT
 
 FPS, VO_LEAD = 30, 0.12
 MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2, "map": 2, "versus": 2, "score": 2, "end": 2,
-            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2}
+            "spot": 2, "fact": 2, "say": 2, "mapend": 2, "grid": 2, "race": 2, "stack": 3, "pick": 2, "tally": 2, "event": 2, "line100": 3}
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
+GROUNDWATER = "public/datayt/groundwater/gw_2025.json"
 PCT = {"g5_pct": ("g5", "total"), "uncovered_pct": ("uncovered", "total")}
 geo = lambda s: GEO_ALIAS.get(s, s)
 nm = lambda s: SHORT.get(s, s)
@@ -45,6 +51,9 @@ def series(spec):
         d = json.load(open(COVERAGE)); k = spec["coverage"]; tot = d["published_total_row"]
         india = round(100 * tot[PCT[k][0]] / tot[PCT[k][1]], 1) if k in PCT else tot.get(k)
         return {s: r[k] for s, r in d["states"].items()}, india
+    if "gw" in spec:      # the 2025 ground water assessment table: recharge, extractable, extraction, stage
+        d = json.load(open(GROUNDWATER)); k = spec["gw"]
+        return {s: r[k] for s, r in d["states"].items()}, d["published_total_row"][k]
     if "rbi" in spec:
         no, year = spec["rbi"]
         t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(no):03d}.json"))
@@ -300,6 +309,68 @@ def build(cfg):
                             f"{a} {last[a]:.2f} is above the next {len(nxt)} together ({', '.join(nxt)}: {tot:.2f})",
                             f"{a} grew {va[-1] / va[cut]:.2f} times and {b} {vb[-1] / vb[cut]:.2f} times from {cfg['cut']} to {clean(cfg['to'])}"] + run_checks(sid, cfg, a)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "over":
+        stage, india = series(cfg["stage"]); res, ires = series(cfg["whole"]); ext, iext = series(cfg["drawn"]); rech, _ = series(cfg["recharge"])
+        over = sorted((s_ for s_ in stage if stage[s_] > 100), key=lambda s_: -stage[s_])
+        assert over == cfg["over"], f"{sid}: the states above 100 are {over}, not {cfg['over']}"
+        for s_ in over:      # "more is taken out in a year than goes back in" must hold for each named state, against total recharge
+            assert ext[s_] > rech[s_], f"{sid}: {s_}: extraction {ext[s_]} is not above recharge {rech[s_]}"
+            assert abs(100 * ext[s_] / res[s_] - stage[s_]) < 0.5, f"{sid}: {s_}: the ratio of the two columns is not {stage[s_]}"
+        assert not [s_ for s_ in stage if s_ not in over and ext[s_] > rech[s_]], f"{sid}: another state also takes out more than its recharge"
+        gr, gx = sum(res[s_] for s_ in over), sum(ext[s_] for s_ in over)
+        v0, rs, es = 100 * gx / gr, 100 * gr / ires, 100 * gx / iext
+        for key, got in (("whole_share", rs), ("drawn_share", es), ("group", v0)):
+            lo, hi = cfg["ranges"][key]
+            assert lo <= got <= hi, f"{sid}: {key} is {got:.2f}, outside {lo} to {hi}"
+        nxt = max((stage[s_], s_) for s_ in stage if s_ not in over)
+        ctx = {"v": f"{v0:.0f}", "extra": f"{v0 - 100:.0f}", "res": f"{rs:.0f}", "ext": f"{es:.0f}", "india": f"{india:.0f}", "n": len(over), "gx": f"{gx:.2f}", "gr": f"{gr:.2f}",
+               "next": nm(nxt[1]), "next_v": f"{nxt[0]:.0f}"}
+        bands = pal["bands"][:4] + [pal["accent2"]]      # one ramp for everyone under 100, one accent for those above it
+        extra["bands_override"] = bands
+        extra["grid"] = {"parts": [{"name": cfg["grid"]["whole"], "v": 100, "label": "100", "color": pal["bands"][2]},
+                                  {"name": cfg["grid"]["extra"], "v": round(v0 - 100, 2), "label": f"+{v0 - 100:.0f}", "color": pal["accent2"]}],
+                         "caption": cfg["grid"]["caption"].format(**ctx)}
+        beats[0].update({"kind": "spot", "spots": [{"geo": geo(s_), "name": nm(s_), "tone": "b"} for s_ in over]})
+        beats.append({"kind": "grid", "mode": "over", "lines": [l.format(**ctx) for l in cfg["grid"]["lines"]], "vo": cfg["grid"]["vo"]})
+        b_ = cfg["bars"]
+        extra["line100"] = {"rows": [{"name": nm(s_), "v": find(stage, s_), "label": f"{find(stage, s_):.0f}"} for s_ in b_["states"]] +
+                                    [{"name": "India", "v": india, "label": f"{india:.0f}", "india": True}],
+                            "max": b_.get("max", 170), "note": b_.get("note", "").format(**ctx), "line": b_.get("line", "100")}
+        beats.append({"kind": "line100", "lines": b_["lines"], "vo": b_["vo"]})
+        for c in cfg.get("says", []):
+            beats.append({"kind": "say", "lines": [l.format(**ctx) for l in c["lines"]], "note": c.get("note", "").format(**ctx), "vo": c["vo"]})
+        m = cfg["map"]; cuts = m["bands"]
+        asc = sorted(stage, key=lambda s_: (stage[s_], s_))
+        extra["map"] = [{"name": geo(s_), "label": "<1" if stage[s_] < 0.5 else f"{stage[s_]:.0f}", "bucket": sum(stage[s_] >= c for c in cuts), "nudge": NUDGE.get(geo(s_), (0, 0))} for s_ in asc]
+        missing = {x["name"] for x in extra["map"]} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        ring = [geo(x) for x in over]
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
+        extra["checked"] = [f"above 100: {', '.join(f'{s_} {stage[s_]}' for s_ in over)}; next highest {nxt[1]} {nxt[0]}; all-India {india}",
+                            "in each of them the year's extraction is above the year's total recharge: " + ", ".join(f"{s_} {ext[s_]} against {rech[s_]}" for s_ in over) + "; in no other state",
+                            f"together: {gx:.2f} taken out against {gr:.2f} extractable = {v0:.2f} per 100",
+                            f"together they have {rs:.2f}% of the all-India extractable resource and {es:.2f}% of the all-India extraction",
+                            f"{len(stage)} states and UTs in the table"] + run_checks(sid, cfg, over[0])
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "place":
+        import datetime as _dt
+        st0 = cfg["state"]
+        assert geo(st0) in GEO, f"{sid}: {st0} is not on the map"
+        beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})
+        day = lambda x: _dt.date(*[int(p_) for p_ in (x.split("-") + ["1", "1"])[:3]])
+        checked = []
+        for k in cfg.get("spans", []):      # every "N years" in the script is recomputed from its two dates
+            yrs = (day(k["to"]) - day(k["from"])).days / 365.2425
+            got = int(yrs) if "full_years" in k else round(yrs)
+            want = k.get("full_years", k.get("about_years"))
+            assert got == want, f"{sid}: '{k['says']}' fails: {k['from']} to {k['to']} is {yrs:.2f} years"
+            checked.append(f"{k['says']}: {k['from']} to {k['to']} = {yrs:.2f} years")
+        extra["timeline"] = [{"label": e["tick"]} for e in cfg["events"] if e.get("tick")]
+        ticks = [e["tick"] for e in cfg["events"] if e.get("tick")]
+        for e in cfg["events"]:
+            beats.append({"kind": "event", "kicker": e["date"], "big": e["year"], "lines": e["head"], "text": e.get("cite", ""), "sub": e.get("stat_label", ""),
+                          "label": e.get("stat", ""), "n": ticks.index(e["tick"]) if e.get("tick") else -1, "geo": geo(st0), "vo": e["vo"]})
+        extra["checked"] = checked
     elif typ == "pick":
         beats.clear()      # no intro: the first frame is round one's question
         checked, tally = [], []
@@ -347,7 +418,7 @@ def build(cfg):
             for k, s_ in enumerate(extra["map"]):
                 s_["at"] = round(bt["t0"] + 0.35 + k * step, 3)
     out = {"id": sid, "type": typ, "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "accent": pal["accent"], "accent2": pal["accent2"],
-           "bands": pal["bands"], "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": vo, "voiceEngine": V.ENGINE, "voice": V.VOICE,
+           "bands": extra.pop("bands_override", pal["bands"]), "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": vo, "voiceEngine": V.ENGINE, "voice": V.VOICE,
            "ytTitle": cfg.get("yt_title", "")}
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     hits = [bt["t0"] for bt in beats if bt["kind"] in ("reveal", "score", "map") or (bt["kind"] == "rank" and bt["rank"] == 1) or (bt["kind"] == "pick" and bt["mode"] == "tell")]

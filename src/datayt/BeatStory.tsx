@@ -1,5 +1,5 @@
 // Data Kadai "beat" Shorts (1080x1920): one thing on screen at a time, very large type, a cut every bar or two.
-// Seven story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race, higher-or-lower. Beats and timing come
+// Eight story types share this file: clue quiz, top-five countdown, state vs state, data paradox, share of India, race, higher-or-lower, place story. Beats and timing come
 // from public/datayt/beats/<id>/data.json (scripts/datayt/build_beats.py). The all-states map appears only as a closing beat.
 import React from "react";
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame} from "remotion";
@@ -20,7 +20,9 @@ export type BeatData = {id: string; type: string; chip: string; sourceShort: str
   beats: Beat[]; total: number; beat: number; map?: MapState[]; grid?: {parts: {name: string; v: number; label: string; color: string}[]; caption: string};
   race?: {years: string[]; cut: number; note: string; a: {name: string; v: number[]; sub?: string}; b: {name: string; v: number[]; sub?: string}; marks?: {i: number; text: string}[]};
   stack?: {a: {name: string; v: number; label: string}; parts: {name: string; v: number; label: string}[]; sum: string; sumName: string; note?: string};
-  tally?: {q: string; win: string; wl: string; lose: string; ll: string}[]; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
+  tally?: {q: string; win: string; wl: string; lose: string; ll: string}[];
+  timeline?: {label: string}[];
+  line100?: {rows: {name: string; v: number; label: string; india?: boolean}[]; max: number; note: string; line: string}; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
 type G = {name: string; d: string; bbox: number[]; lx: number; ly: number};
 const GEO = Object.fromEntries((geo.states as G[]).map((g) => [g.name, g]));
 
@@ -125,12 +127,14 @@ const Spot: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
 const Grid: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const f = useCurrentFrame();
   const parts = D.grid?.parts ?? [];
-  const hook = b.mode === "hook";
-  const C = 78, GAP = 8, SZ = 10 * C + 9 * GAP, x0 = (W - SZ) / 2, y0 = hook ? 600 : 622;
-  const start = (k: number) => hook ? f0 - 4 : f0 + 6 + (k - 1) * 20;
+  const over = b.mode === "over";      // 100 squares for the whole, then the extra squares below a gap
+  const hook = b.mode === "hook" || over;
+  const C = over ? 54 : 78, GAP = over ? 6 : 8, SZ = 10 * C + 9 * GAP, x0 = over ? 70 : (W - SZ) / 2, y0 = over ? 566 : hook ? 600 : 622;
+  const cells = over ? Math.ceil(parts.reduce((t, p) => t + p.v, 0) / 10) * 10 : 100, SPLIT = 26;
+  const start = (k: number) => over ? f0 - 6 + k * 34 : hook ? f0 - 4 : f0 + 6 + (k - 1) * 20;
   let from = 0;
   const seg = parts.map((p, k) => {
-    const prog = hook ? (k === 0 ? ease(f, start(0), start(0) + 34) : 0) : (k === 0 ? 1 : ease(f, start(k), start(k) + 16));
+    const prog = over ? ease(f, start(k), start(k) + 30) : hook ? (k === 0 ? ease(f, start(0), start(0) + 34) : 0) : (k === 0 ? 1 : ease(f, start(k), start(k) + 16));
     const s_ = {from, to: from + p.v * prog, color: p.color};
     from += p.v;
     return s_;
@@ -156,15 +160,24 @@ const Grid: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
       </div>
     </>}
     <div style={{position: "absolute", left: x0, top: y0, width: SZ, height: SZ}}>
-      {Array.from({length: 100}).map((_, i) => <div key={i} style={{position: "absolute", left: (i % 10) * (C + GAP), top: Math.floor(i / 10) * (C + GAP), width: C, height: C,
-        borderRadius: 12, background: P.empty, overflow: "hidden"}}>
+      {Array.from({length: cells}).map((_, i) => <div key={i} style={{position: "absolute", left: (i % 10) * (C + GAP), top: Math.floor(i / 10) * (C + GAP) + (i >= 100 ? SPLIT : 0), width: C, height: C,
+        borderRadius: over ? 9 : 12, background: i >= 100 ? "transparent" : P.empty, overflow: "hidden"}}>
         {seg.map((s_, k) => {
           const lo = Math.max(i, s_.from), hi = Math.min(i + 1, s_.to);
           return hi > lo ? <div key={k} style={{position: "absolute", left: (lo - i) * C, top: 0, width: (hi - lo) * C, height: C, background: s_.color}}/> : null;
         })}
       </div>)}
     </div>
-    <div style={{position: "absolute", left: x0, width: SZ, top: y0 + SZ + 18, fontFamily: SANS, fontWeight: 600, fontSize: 30, color: P.mute}}>{D.grid?.caption}</div>
+    {over ? <>
+      {parts.map((p, k) => {
+        const top = k === 0 ? y0 + 5 * (C + GAP) - 120 : y0 + 10 * (C + GAP) + SPLIT + 10;
+        return <div key={k} style={{position: "absolute", left: x0 + SZ + 40, right: 40, top, opacity: ease(f, start(k) + 14, start(k) + 24)}}>
+          <div style={{fontFamily: COND, fontWeight: 700, fontSize: 170, lineHeight: 1, color: p.color}}>{p.label}</div>
+          <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 34, lineHeight: 1.2, color: P.ink, marginTop: 6}}>{p.name}</div>
+        </div>;
+      })}
+      <div style={{position: "absolute", left: 60, right: 60, top: y0 + (cells / 10) * (C + GAP) + SPLIT + 14, fontFamily: SANS, fontWeight: 600, fontSize: 28, lineHeight: 1.3, color: P.mute}}>{D.grid?.caption}</div>
+    </> : <div style={{position: "absolute", left: x0, width: SZ, top: y0 + SZ + 18, fontFamily: SANS, fontWeight: 600, fontSize: 30, color: P.mute}}>{D.grid?.caption}</div>}
   </AbsoluteFill>;
 };
 
@@ -274,6 +287,70 @@ const Stack: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
     <div style={{...num, left: XB, top: BASE - h(total) - 124, color: P.ink, opacity: ease(f, done, done + 8)}}>{S_.sum}</div>
     <div style={{...cap, left: XB}}>{S_.sumName}</div>
     {S_.note && <div style={{position: "absolute", left: 60, right: 60, top: BASE + 78, textAlign: "center", fontFamily: SANS, fontWeight: 600, fontSize: 30, lineHeight: 1.3, color: P.mute}}>{S_.note}</div>}
+  </AbsoluteFill>;
+};
+
+// Bars against a line at 100: the states above it, and the country for scale.
+const Line100: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const L_ = D.line100;
+  if (!L_) return null;
+  const X0 = 60, X1 = 860, top = 500, RH = 158;
+  const x = (v: number) => X0 + (X1 - X0) * v / L_.max;
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 165}}>
+      {(b.lines ?? []).map((l, i) => <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 116, 960, 0.47), lineHeight: 1.05, color: P.ink}}><Rich text={l} acc={D.accent}/></div>)}
+    </div>
+    {L_.rows.map((r, i) => {
+      const at = f0 + 4 + i * 7, w = (x(r.v) - X0) * ease(f, at, at + 18), col = r.india ? P.mute : D.accent;
+      return <div key={i} style={{position: "absolute", left: 0, right: 0, top: top + i * RH, opacity: ease(f, at, at + 6)}}>
+        <div style={{position: "absolute", left: X0, top: 0, fontFamily: COND, fontWeight: 700, fontSize: 60, lineHeight: 1, color: r.india ? P.mute : P.ink}}>{r.name}</div>
+        <div style={{position: "absolute", left: X0, top: 70, width: w, height: 46, borderRadius: 10, background: col, overflow: "hidden"}}>
+          {r.v > 100 && <div style={{position: "absolute", left: x(100) - X0, top: 0, right: 0, height: 46, background: D.accent2}}/>}
+        </div>
+        <div style={{position: "absolute", left: X0 + w + 18, top: 52, fontFamily: COND, fontWeight: 700, fontSize: 84, lineHeight: 1, color: r.v > 100 ? D.accent2 : col}}>{r.label}</div>
+      </div>;
+    })}
+    <div style={{position: "absolute", left: x(100) - 2, top: top - 46, width: 0, height: L_.rows.length * RH + 20, borderLeft: `4px dashed ${P.ink}`, opacity: 0.75}}/>
+    <div style={{position: "absolute", left: x(100) - 60, width: 120, top: top - 96, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 36, color: P.ink}}>{L_.line}</div>
+    <div style={{position: "absolute", left: 60, right: 60, top: top + L_.rows.length * RH + 6, fontFamily: SANS, fontWeight: 600, fontSize: 32, lineHeight: 1.3, color: P.mute}}>{L_.note}</div>
+  </AbsoluteFill>;
+};
+
+// One dated event in a place's story: the date, the year in very large type, what happened in plain words, the Act,
+// treaty or record it comes from, an optional count of years, and a timeline along the bottom with this event lit.
+const EventBeat: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
+  const f = useCurrentFrame();
+  const p = pop(f, f0);
+  const T_ = D.timeline ?? [], n = b.n ?? -1;
+  const X0 = 110, X1 = 970, TY = 1392;
+  const tx = (i: number) => T_.length > 1 ? X0 + (X1 - X0) * i / (T_.length - 1) : (X0 + X1) / 2;
+  const run = n < 0 ? 0 : ease(f, f0, f0 + 10, Math.max(0, n - 1), n);      // the lit part of the line reaches this event as the beat starts
+  return <AbsoluteFill>
+    <div style={{position: "absolute", left: 60, right: 60, top: 172, fontFamily: SANS, fontWeight: 800, fontSize: 38, letterSpacing: 4, color: D.accent2}}>{b.kicker}</div>
+    <div style={{position: "absolute", left: 56, top: 214, fontFamily: COND, fontWeight: 700, fontSize: fit(b.big ?? "", 320, 640, 0.5), lineHeight: 1, color: D.accent,
+      transform: `scale(${0.8 + 0.2 * p})`, transformOrigin: "left center"}}>{b.big}</div>
+    <Shape name={b.geo ?? ""} x={740} y={236} w={270} h={270} fill={D.accent2} stroke={P.ink}/>
+    <div style={{position: "absolute", left: 60, right: 60, top: 560}}>
+      {(b.lines ?? []).map((l, i) => <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 96, 960, 0.46), lineHeight: 1.08, color: P.ink,
+        opacity: ease(f, f0 + 4 + i * 4, f0 + 12 + i * 4)}}><Rich text={l} acc={D.accent}/></div>)}
+      {b.text && <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 31, lineHeight: 1.3, color: P.mute, marginTop: 26, opacity: ease(f, f0 + 14, f0 + 22)}}>{b.text}</div>}
+      {b.label && <div style={{display: "flex", alignItems: "baseline", gap: 22, marginTop: 44, opacity: ease(f, f0 + 16, f0 + 24)}}>
+        <div style={{fontFamily: COND, fontWeight: 700, fontSize: 190, lineHeight: 1, color: D.accent2}}>{b.label}</div>
+        <div style={{flex: 1, fontFamily: COND, fontWeight: 700, fontSize: 58, lineHeight: 1.08, color: P.ink}}>{b.sub}</div>
+      </div>}
+    </div>
+    <svg width={W} height={H} style={{position: "absolute", left: 0, top: 0}}>
+      <line x1={X0} y1={TY} x2={X1} y2={TY} stroke={P.line} strokeWidth={6} strokeLinecap="round"/>
+      {n >= 0 && <line x1={X0} y1={TY} x2={tx(run)} y2={TY} stroke={D.accent} strokeWidth={6} strokeLinecap="round"/>}
+      {T_.map((t, i) => {
+        const on = i === n, past = i < n;
+        return <g key={i}>
+          <circle cx={tx(i)} cy={TY} r={on ? 20 : 12} fill={on || past ? D.accent : P.bg} stroke={on || past ? D.accent : P.line} strokeWidth={5}/>
+          <text x={tx(i)} y={TY + 62} textAnchor="middle" fontFamily={SANS} fontWeight={on ? 800 : 600} fontSize={on ? 36 : 30} fill={on ? D.accent : P.mute}>{t.label}</text>
+        </g>;
+      })}
+    </svg>
   </AbsoluteFill>;
 };
 
@@ -506,7 +583,7 @@ const End: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
 };
 
 const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End,
-  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally};
+  spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally, event: EventBeat, line100: Line100};
 const DARK = (b: Beat) => b.kind === "count" || b.kind === "reveal" || (b.kind === "rank" && b.rank === 1);
 
 const musicVol = (D: BeatData, fr: number) => {

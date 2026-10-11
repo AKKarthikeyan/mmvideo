@@ -1,0 +1,578 @@
+{
+ "id": "gw01",
+ "type": "over",
+ "chip": "GROUNDWATER",
+ "sourceShort": "Ground Water Board · 2025",
+ "source": "Central Ground Water Board and State Governments, Dynamic Ground Water Resources of India, 2025: state-wise table laid in Lok Sabha by the Ministry of Jal Shakti on 18 December 2025. Estimates for one assessment year. Extractable resource = annual recharge minus natural discharge.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#E8A33D"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Punjab, Haryana, Rajasthan:*",
+    "more groundwater is taken out",
+    "in a year than *goes back in.*"
+   ],
+   "vo": "Three states take out more groundwater in a year than goes back in.",
+   "spots": [
+    {
+     "geo": "Punjab",
+     "name": "Punjab",
+     "tone": "b"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "Rajasthan",
+     "tone": "b"
+    },
+    {
+     "geo": "Haryana",
+     "name": "Haryana",
+     "tone": "b"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "grid",
+   "mode": "over",
+   "lines": [
+    "The three together:",
+    "for every *100* extractable,",
+    "*149* were taken out."
+   ],
+   "vo": "Together, for every hundred extractable, one forty-nine were taken out.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "line100",
+   "lines": [
+    "Each against its own",
+    "line of *100*"
+   ],
+   "vo": "All three are far above the line. India as a whole is at sixty-one.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Together, these 3 have",
+    "about *9%* of India's",
+    "extractable groundwater",
+    "and *23%* of what is taken out."
+   ],
+   "note": "Our sum from the same table. It shows how much, not why.",
+   "vo": "They have nine percent of India's extractable groundwater, and twenty-three percent of what is taken out.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "map",
+   "title": "Groundwater taken out, *every state*",
+   "sub": "per 100 estimated extractable in a year · 2025 · India 61",
+   "note": "State-wide estimates for one year; areas inside a state differ. Not a forecast.",
+   "anim": true,
+   "ring": [
+    "Punjab",
+    "Rajasthan",
+    "Haryana"
+   ],
+   "vo": "Every state. How much, not why, and not a forecast.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "note": "State-wide estimates for one year; areas inside a state differ. Not a forecast.",
+   "ring": [
+    "Punjab",
+    "Rajasthan",
+    "Haryana"
+   ],
+   "q": "Find *your state.* What is its number?",
+   "sub": "",
+   "kind": "mapend",
+   "vo": "Find your state. What is its number?",
+   "t0": 30.968,
+   "t1": 34.839
+  }
+ ],
+ "total": 35.239,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "grid": {
+  "parts": [
+   {
+    "name": "estimated extractable in a year",
+    "v": 100,
+    "label": "100",
+    "color": "#13817C"
+   },
+   {
+    "name": "taken out beyond it",
+    "v": 48.7,
+    "label": "+49",
+    "color": "#E8A33D"
+   }
+  ],
+  "caption": "The three states together, 2025 assessment: 56.09 billion cubic metres taken out, 37.72 estimated as extractable (recharge minus natural discharge). Estimates. Not a forecast."
+ },
+ "line100": {
+  "rows": [
+   {
+    "name": "Punjab",
+    "v": 156.36,
+    "label": "156"
+   },
+   {
+    "name": "Rajasthan",
+    "v": 147.11,
+    "label": "147"
+   },
+   {
+    "name": "Haryana",
+    "v": 136.75,
+    "label": "137"
+   },
+   {
+    "name": "Delhi",
+    "v": 92.1,
+    "label": "92"
+   },
+   {
+    "name": "India",
+    "v": 60.63,
+    "label": "61",
+    "india": true
+   }
+  ],
+  "max": 172,
+  "note": "Taken out per 100 estimated extractable, 2025. Delhi is the next highest, at 92.",
+  "line": "100"
+ },
+ "map": [
+  {
+   "name": "Arunachal Pradesh",
+   "label": "<1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.511
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "2",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 25.617
+  },
+  {
+   "name": "Mizoram",
+   "label": "4",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 25.723
+  },
+  {
+   "name": "Nagaland",
+   "label": "5",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 25.828
+  },
+  {
+   "name": "Meghalaya",
+   "label": "5",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 25.934
+  },
+  {
+   "name": "Sikkim",
+   "label": "6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 26.04
+  },
+  {
+   "name": "Manipur",
+   "label": "9",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 26.146
+  },
+  {
+   "name": "Tripura",
+   "label": "10",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 26.251
+  },
+  {
+   "name": "Assam",
+   "label": "14",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 26.357
+  },
+  {
+   "name": "Goa",
+   "label": "23",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 26.463
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "25",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.569
+  },
+  {
+   "name": "Ladakh",
+   "label": "31",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.674
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "32",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.78
+  },
+  {
+   "name": "Jharkhand",
+   "label": "33",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.886
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "38",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.992
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "40",
+   "bucket": 1,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 27.097
+  },
+  {
+   "name": "West Bengal",
+   "label": "45",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.203
+  },
+  {
+   "name": "Bihar",
+   "label": "46",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.309
+  },
+  {
+   "name": "Telangana",
+   "label": "47",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.415
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "48",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.52
+  },
+  {
+   "name": "Odisha",
+   "label": "49",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.626
+  },
+  {
+   "name": "Kerala",
+   "label": "50",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 27.732
+  },
+  {
+   "name": "Maharashtra",
+   "label": "52",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.838
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "54",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.943
+  },
+  {
+   "name": "Gujarat",
+   "label": "56",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.049
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "58",
+   "bucket": 2,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 28.155
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "59",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.261
+  },
+  {
+   "name": "Karnataka",
+   "label": "66",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.366
+  },
+  {
+   "name": "Chandigarh",
+   "label": "67",
+   "bucket": 2,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 28.472
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "70",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.578
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "74",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.684
+  },
+  {
+   "name": "Puducherry",
+   "label": "76",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 28.789
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "92",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 28.895
+  },
+  {
+   "name": "Haryana",
+   "label": "137",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.001
+  },
+  {
+   "name": "Rajasthan",
+   "label": "147",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.107
+  },
+  {
+   "name": "Punjab",
+   "label": "156",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.212
+  }
+ ],
+ "checked": [
+  "above 100: Punjab 156.36, Rajasthan 147.11, Haryana 136.75; next highest Delhi 92.1; all-India 60.63",
+  "in each of them the year's extraction is above the year's total recharge: Punjab 26.27 against 18.6, Rajasthan 17.1 against 12.87, Haryana 12.72 against 10.27; in no other state",
+  "together: 56.09 taken out against 37.72 extractable = 148.70 per 100",
+  "together they have 9.25% of the all-India extractable resource and 22.69% of the all-India extraction",
+  "36 states and UTs in the table",
+  "Punjab one fifty-six: 156.36",
+  "Rajasthan one forty-seven: 147.11",
+  "Haryana one thirty-seven: 136.75",
+  "India as a whole sixty-one: 60.63",
+  "Delhi 92: 92.10"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.866,
+   "at": 0.12,
+   "text": "Three states take out more groundwater in a year than goes back in."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.937,
+   "at": 5.926,
+   "text": "Together, for every hundred extractable, one forty-nine were taken out."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.97,
+   "at": 11.733,
+   "text": "All three are far above the line. India as a whole is at sixty-one."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 6.06,
+   "at": 17.539,
+   "text": "They have nine percent of India's extractable groundwater, and twenty-three percent of what is taken out."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.257,
+   "at": 25.281,
+   "text": "Every state. How much, not why, and not a forecast."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.847,
+   "at": 31.088,
+   "text": "Find your state. What is its number?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "In 3 States, More Groundwater Is Taken Out Than Goes Back In"
+}

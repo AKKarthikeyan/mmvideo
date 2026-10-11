@@ -26,5 +26,6 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 18 | sh01 | Uttar Pradesh grows nearly half of India's sugarcane (Share of India, idea SG08) | RBI T065, T078, T087, T062, T091 | n/a | drafted (2026-10-11; beat template `share`; narrated and text-led cuts) |
 | 19 | rc01 | Andhra Pradesh: more fish than any 3 other states combined (Then vs Now, idea S032) | RBI T093 | n/a | drafted (2026-10-11; beat template `race`; script reviewed before voicing) |
 | 20 | hl01 | Gujarat or Rajasthan: which produces more milk? 4 rounds (game, idea S008) | RBI T091, T058, T092, T181 | n/a | drafted (2026-10-11; beat template `pick`; a test of the game format) |
+| 21 | gw01 | In 3 states, more groundwater is taken out than goes back in (idea S006) | Central Ground Water Board 2025, via Lok Sabha reply | n/a | drafted (2026-10-11; beat template `over`; needs AK's sign-off on wording; narrated and text-led cuts) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

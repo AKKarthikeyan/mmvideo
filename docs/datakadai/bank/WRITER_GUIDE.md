@@ -74,3 +74,34 @@ Husbandry Statistics 2025 has 2024-25. Do not voice a script on those tables unt
 Crop tables: the 2024-25 column is the Ministry's final estimate (released 21 Nov 2025); 2025-26 exists only as
 advance estimates. Say "final estimates" in the source line.
 
+
+## One state, one fact (`fact`)
+The same cards as a paradox with one measure: the place lit on the map with the fact, the state's figure with the
+country or the next state for scale, one more card that adds a number (the other end of the ranking, or the same
+state in the earlier survey), a card of our own reading under `so`, then every state on the map. Copy the schema of
+`beats/configs/px02.json` and set `"type": "fact"`. A `"claim": "highest"` or `"lowest"` needs a clear lead: at least
+3% and, for a percentage, at least one point over the next state, or the builder stops.
+
+## What the week-one reviews caught (12 Oct 2026): do not repeat these
+1. Rounding words. "Nearly twelve" for 11.6 and "three-fifths" for 63.6 were rejected. Say the number, or use a word
+   whose honest range you put in the test.
+2. Ranks. "2nd" was rejected because the third state was 0.95 points behind. A rank needs the same clear gap to its
+   neighbour as a lead does; otherwise say "top three" or "among".
+3. A low starting year. If the start is below the year before it, print that earlier figure on a card.
+4. Say what the table counts, in the first frame and the title: output not "rice", "have ever used the internet" not
+   "online", "any member covered" not "covered", "available" not "used", "rural", "men", "per person".
+5. Put the year in the first frame when the figure is specific to that year. No present tense about a past year.
+6. On a map of changes, say that a lower share can come with more of the thing, and give the map a `key`.
+7. Read the table notes on the all-India row. A pooled average of the reporting states is not "India".
+8. Each beat adds a new number. Do not voice the same fact on two cards.
+9. Compare like with like on a card: two states on one measure, or one state on two measures.
+10. The closing question must invite a real answer and fit two lines: at most seven words.
+11. Hook: at most 12 words on screen in three short lines (about 28 characters a line), and a voice line of about ten
+    words, so the hook beat stays under six seconds.
+12. Do not put two Shorts with the same opening line in one week. Vary the hook: a rank, a multiple, two figures.
+13. Fair to the state named: lead with what rose or what is highest; give the comparison without "only" or "but".
+14. Freshness. Do not build on milk, eggs, meat or wool (tables 90 to 94): a newer edition exists. Crop tables: the
+    2024-25 column is the final estimate; say "final estimates" in `source_short`. NFHS-6 figures came from the fact
+    sheets; list the exact cells for a person to re-read in the PDF.
+15. Run `python3 scripts/datayt/build_beats.py --check <id>` from the repo folder until it passes. It runs the number
+    tests and the house rules and estimates the length (30 to 45 seconds; aim for 35 to 41).

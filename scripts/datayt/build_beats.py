@@ -7,6 +7,8 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
   versus      State against state across five categories, with a running score
   paradox     Two official numbers about one state that seem to disagree, a second state for contrast, what the two
               numbers have to do with each other across all states, then every state on the map
+  fact        One state, one fact: the same cards as a paradox with one measure (the state's figure, the country or
+              the next state for scale, our own reading), then every state on the map
   share       One state's share of a national total on a 100-square grid, the reveal, the split among the leading
               states, one or two cards on why, then every state's share on the map
   race        Two states' lines over the years: the old leader ahead, then the run to the latest year, what changed,
@@ -284,7 +286,7 @@ def build(cfg):
         lead = a if sa > sb else b
         beats.append({"kind": "score", "sa": sa, "sb": sb, "vo": f"Final score: {say(lead)} {max(sa, sb)}, {say(b if lead == a else a)} {min(sa, sb)}."})
         extra["a"] = {"name": nm(a), "geo": geo(a)}; extra["b"] = {"name": nm(b), "geo": geo(b)}
-    elif typ == "paradox":
+    elif typ in ("paradox", "fact"):      # "fact": one state, one fact, told on the same cards without a second measure
         st0 = cfg["state"]; checked = []
         beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})
         for i, c in enumerate(cfg["facts"]):
@@ -292,6 +294,9 @@ def build(cfg):
             if c.get("claim") in ("highest", "lowest"):
                 rk = sorted(vals.values(), reverse=c["claim"] == "highest")
                 assert rk[0] == v and rk[0] != rk[1], f"{sid} fact {i + 1}: {st} is not the {c['claim']} ({v} vs {rk[:3]})"
+                lead = abs(rk[0] - rk[1])      # under the house rules a "highest" or "lowest" needs a clear lead over the next state
+                assert cfg.get("rules", 1) < 2 or (lead >= 0.03 * abs(rk[1]) and (u != "%" or lead >= 1)), \
+                    f"{sid} fact {i + 1}: {st} leads the next state by only {lead:g}: level, not the {c['claim']}"
                 checked.append(f"{st} is the {c['claim']} of {len(vals)} with data ({show(v, u)})")
             ctx = {"n": len(vals), "v": show(v, u)}
             bars = [{"name": nm(st), "label": show(v, u), "v": v}]

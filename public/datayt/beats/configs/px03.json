@@ -9,10 +9,10 @@
  "source": "Electricity: per capita availability of power, kilowatt-hours, 2023-24, Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138 (34 states and UTs). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs; Gujarat has no figure).",
  "hook": [
   "Same income per person.",
-  "*Goa*: four times *Sikkim's*",
-  "electricity available."
+  "*Goa*: *four times* Sikkim's",
+  "electricity available per person."
  ],
- "hook_vo": "Same income per person, yet Goa has four times Sikkim's electricity available.",
+ "hook_vo": "Same income, yet Goa has four times Sikkim's electricity available per person.",
  "facts": [
   {
    "state": "Sikkim",
@@ -28,7 +28,7 @@
     "Goa"
    ],
    "text": "a year. Goa: ₹5,85,953. Level.",
-   "sub": "State output per person (net state domestic product), current prices. {n} states and UTs with data.",
+   "sub": "State output per person (net state domestic product), current prices. Output booked in the state, not what residents earn. {n} states and UTs with data.",
    "vo": "Five lakh eighty-eight thousand rupees a year, level with Goa's."
   },
   {
@@ -45,8 +45,8 @@
     "India"
    ],
    "bar_max": 3500,
-   "text": "kilowatt-hours a year available per person. Below India.",
-   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not use.",
+   "text": "kilowatt-hours a year available per person. Below India's average.",
+   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not what people use.",
    "vo": "Electricity available per person: seven hundred and eighty-four kilowatt-hours, below India's."
   },
   {
@@ -60,12 +60,13 @@
    },
    "unit": "",
    "compare": [
-    "India"
+    "Sikkim"
    ],
    "bar_max": 3500,
-   "text": "kilowatt-hours a year. Four times Sikkim's, at the same income.",
-   "sub": "2023-24. In 2022-23: 3.5 times.",
-   "vo": "Goa, same income: three thousand two hundred and forty-four. Four times as much."
+   "text": "kilowatt-hours a year: the highest of {n} states and UTs. Four times Sikkim's, at the same income.",
+   "sub": "2022-23: 3.5 times. 2024-25: 4.2 times.",
+   "vo": "Goa, same income: three thousand two hundred and forty-four. Four times as much.",
+   "claim": "highest"
   }
  ],
  "checks": [
@@ -189,6 +190,28 @@
     }
    },
    "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Goa",
+    "data": {
+     "rbi": [
+      138,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Sikkim",
+    "data": {
+     "rbi": [
+      138,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 4.15
   }
  ],
  "so": {

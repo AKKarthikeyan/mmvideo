@@ -20,15 +20,15 @@
  ],
  "source": "Ministry of Agriculture and Farmers' Welfare, 2024-25 final estimates, as published in the RBI Handbook of Statistics on Indian States: cotton (lint) area (Table 77) and production in bales of 170 kg (Table 64). Each share is of the all-India figure in the same table.",
  "hook": [
-  "*Maharashtra*: 36% of India's",
-  "cotton area,",
+  "*Maharashtra*: *36%* of India's",
+  "cotton area, 2024-25:",
   "*25%* of the crop."
  ],
  "hook_vo": "Maharashtra: over a third of India's cotton area, a quarter of the crop.",
  "grid_caption": "100 squares = India's cotton area, 2024-25",
  "split": {
   "kicker": "% OF INDIA'S COTTON AREA · 2024-25",
-  "vo": "Gujarat twenty-one in a hundred, Telangana sixteen, all others twenty-eight.",
+  "vo": "Gujarat about a fifth, Telangana nearly a sixth, all others twenty-eight percent.",
   "rest_rounds": 28
  },
  "facts": [
@@ -67,8 +67,8 @@
     }
    ],
    "bar_max": 50,
-   "sub": "Crop in bales of 170 kg, 2024-25 final estimates.",
-   "vo": "Its share of the crop is a quarter."
+   "sub": "Crop in bales of 170 kg, 2024-25 final estimates. The table shows how much, not why.",
+   "vo": "Per hectare, that is about two-thirds of India's average."
   },
   {
    "state": "Gujarat",
@@ -106,7 +106,7 @@
     }
    ],
    "bar_max": 50,
-   "sub": "Crop in bales of 170 kg, 2024-25.",
+   "sub": "Crop in bales of 170 kg, 2024-25. Gujarat's share was higher in 2022-23 and 2023-24.",
    "vo": "Gujarat has less area but a similar share of the crop."
   }
  ],
@@ -263,6 +263,111 @@
    },
    "min": 3,
    "max": 6
+  },
+  {
+   "says": "per hectare about two-thirds of India's average: crop share over area share",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        64,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        77,
+        "2024-25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.66,
+   "max": 0.72
+  },
+  {
+   "says": "Gujarat about a fifth of the area",
+   "value": {
+    "share": {
+     "rbi": [
+      77,
+      "2024-25"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "min": 19.5,
+   "max": 21.5
+  },
+  {
+   "says": "Telangana nearly a sixth of the area",
+   "value": {
+    "share": {
+     "rbi": [
+      77,
+      "2024-25"
+     ]
+    },
+    "state": "Telangana"
+   },
+   "min": 15,
+   "max": 16.6
+  },
+  {
+   "says": "Gujarat's crop share was higher in 2022-23",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        64,
+        "2022-23"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "share": {
+       "rbi": [
+        64,
+        "2022-23"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 6
+  },
+  {
+   "says": "Gujarat's crop share was higher in 2023-24",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        64,
+        "2023-24"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "share": {
+       "rbi": [
+        64,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 6
   }
  ],
  "map": {
@@ -281,9 +386,9 @@
   "vo": "Every state's share of India's cotton area. State totals, not per person."
  },
  "end": {
-  "q": "Does *your state* grow cotton?",
-  "sub": "Comment below.",
-  "vo": "Does your state grow cotton?"
+  "q": "How much cotton area does *your state* have?",
+  "sub": "Find it on the map.",
+  "vo": "How much cotton area does your state have?"
  },
  "yt_title": "Maharashtra: 36% of India's Cotton Area, 25% of the Crop"
 }

@@ -28,5 +28,12 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 20 | hl01 | Gujarat or Rajasthan: which produces more milk? 4 rounds (game, idea S008) | RBI T091, T058, T092, T181 | n/a | drafted (2026-10-11; beat template `pick`; a test of the game format) |
 | 21 | gw01 | In 3 states, more groundwater is taken out than goes back in (idea S006) | Central Ground Water Board 2025, via Lok Sabha reply | n/a | drafted (2026-10-11; beat template `over`; needs AK's sign-off on wording; narrated and text-led cuts) |
 | 22 | pl01 | How Goa became part of India: 1947 to 1987 (place story, idea S015) | Acts, Gazette 1967, treaty 1974 | n/a | drafted (2026-10-11; beat template `place`; sources read first) |
+| 23 | tn02 | Telangana: 10th in Rice in 2014-15, Top Three in 2024-25 | RBI T058 | n/a | drafted (2026-10-12; beat template `then`; script reviewed before voicing; week one) |
+| 24 | tn03 | Andhra Pradesh: Women Who Used the Internet, 21% to 64% | NFHS-6 fact sheets, indicator 14 | n/a | drafted (2026-10-12; beat template `then`; script reviewed before voicing; week one) |
+| 25 | rc02 | Rajasthan Has Led India in Oilseed Output Since 2020-21 | RBI T063 | n/a | drafted (2026-10-12; beat template `race`; script reviewed before voicing; week one) |
+| 26 | px02 | Kerala, Maharashtra: Same Income, 2x Rural Construction Wage | RBI T112, T019 | n/a | drafted (2026-10-12; beat template `paradox`; script reviewed before voicing; week one) |
+| 27 | px03 | Sikkim vs Goa: Same Income, 4x the Electricity Available | RBI T138, T019 | n/a | drafted (2026-10-12; beat template `paradox`; script reviewed before voicing; week one) |
+| 28 | sh02 | Maharashtra: 36% of India's Cotton Area, 25% of the Crop | RBI T077, T064 | n/a | drafted (2026-10-12; beat template `share`; script reviewed before voicing; week one) |
+| 29 | tn05 | Chhattisgarh Grew 60% More Rice per Hectare in 10 Years | RBI T080 | n/a | drafted (2026-10-12; beat template `then`; script reviewed before voicing; week one) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

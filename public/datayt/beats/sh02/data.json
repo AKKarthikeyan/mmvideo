@@ -17,8 +17,8 @@
   {
    "kind": "spot",
    "lines": [
-    "*Maharashtra*: 36% of India's",
-    "cotton area,",
+    "*Maharashtra*: *36%* of India's",
+    "cotton area, 2024-25:",
     "*25%* of the crop."
    ],
    "vo": "Maharashtra: over a third of India's cotton area, a quarter of the crop.",
@@ -31,9 +31,9 @@
    "kind": "grid",
    "mode": "split",
    "kicker": "% OF INDIA'S COTTON AREA · 2024-25",
-   "vo": "Gujarat twenty-one in a hundred, Telangana sixteen, all others twenty-eight.",
+   "vo": "Gujarat about a fifth, Telangana nearly a sixth, all others twenty-eight percent.",
    "t0": 5.806,
-   "t1": 11.613
+   "t1": 13.548
   },
   {
    "kind": "fact",
@@ -42,7 +42,7 @@
    "kicker": "SHARE OF AREA VS SHARE OF CROP",
    "big": "24.8%",
    "text": "of India's cotton crop, in bales",
-   "sub": "Crop in bales of 170 kg, 2024-25 final estimates.",
+   "sub": "Crop in bales of 170 kg, 2024-25 final estimates. The table shows how much, not why.",
    "bars": [
     {
      "name": "Area",
@@ -55,9 +55,9 @@
      "frac": 0.49608736315863844
     }
    ],
-   "vo": "Its share of the crop is a quarter.",
-   "t0": 11.613,
-   "t1": 15.484
+   "vo": "Per hectare, that is about two-thirds of India's average.",
+   "t0": 13.548,
+   "t1": 19.355
   },
   {
    "kind": "fact",
@@ -66,7 +66,7 @@
    "kicker": "GUJARAT: AREA VS CROP",
    "big": "24.1%",
    "text": "of India's cotton crop. Maharashtra: 24.8%.",
-   "sub": "Crop in bales of 170 kg, 2024-25.",
+   "sub": "Crop in bales of 170 kg, 2024-25. Gujarat's share was higher in 2022-23 and 2023-24.",
    "bars": [
     {
      "name": "Area",
@@ -80,8 +80,8 @@
     }
    ],
    "vo": "Gujarat has less area but a similar share of the crop.",
-   "t0": 15.484,
-   "t1": 21.29
+   "t0": 19.355,
+   "t1": 23.226
   },
   {
    "kind": "map",
@@ -93,23 +93,23 @@
     "Maharashtra"
    ],
    "vo": "Every state's share of India's cotton area. State totals, not per person.",
-   "t0": 21.29,
-   "t1": 27.097
+   "t0": 23.226,
+   "t1": 30.968
   },
   {
    "note": "State totals, not per person. Blank: no figure in the table.",
    "ring": [
     "Maharashtra"
    ],
-   "q": "Does *your state* grow cotton?",
-   "sub": "Comment below.",
+   "q": "How much cotton area does *your state* have?",
+   "sub": "Find it on the map.",
    "kind": "mapend",
-   "vo": "Does your state grow cotton?",
-   "t0": 27.097,
-   "t1": 30.968
+   "vo": "How much cotton area does your state have?",
+   "t0": 30.968,
+   "t1": 34.839
   }
  ],
- "total": 31.368,
+ "total": 35.239,
  "fps": 30,
  "beat": 0.4838709677419355,
  "grid": {
@@ -150,7 +150,7 @@
     -72,
     30
    ],
-   "at": 21.64
+   "at": 23.576
   },
   {
    "name": "Nagaland",
@@ -160,7 +160,7 @@
     78,
     8
    ],
-   "at": 21.761
+   "at": 23.697
   },
   {
    "name": "West Bengal",
@@ -170,7 +170,7 @@
     0,
     0
    ],
-   "at": 21.882
+   "at": 23.818
   },
   {
    "name": "Tripura",
@@ -180,7 +180,7 @@
     -32,
     72
    ],
-   "at": 22.003
+   "at": 23.939
   },
   {
    "name": "Assam",
@@ -190,7 +190,7 @@
     -26,
     -10
    ],
-   "at": 22.124
+   "at": 24.06
   },
   {
    "name": "Puducherry",
@@ -200,7 +200,7 @@
     96,
     0
    ],
-   "at": 22.245
+   "at": 24.181
   },
   {
    "name": "Meghalaya",
@@ -210,7 +210,7 @@
     -76,
     52
    ],
-   "at": 22.366
+   "at": 24.302
   },
   {
    "name": "Chhattisgarh",
@@ -220,7 +220,7 @@
     0,
     0
    ],
-   "at": 22.487
+   "at": 24.423
   },
   {
    "name": "Uttar Pradesh",
@@ -230,7 +230,7 @@
     0,
     0
    ],
-   "at": 22.608
+   "at": 24.544
   },
   {
    "name": "Tamil Nadu",
@@ -240,7 +240,7 @@
     0,
     0
    ],
-   "at": 22.729
+   "at": 24.665
   },
   {
    "name": "Punjab",
@@ -250,7 +250,7 @@
     -6,
     0
    ],
-   "at": 22.85
+   "at": 24.786
   },
   {
    "name": "Odisha",
@@ -260,7 +260,7 @@
     0,
     0
    ],
-   "at": 22.971
+   "at": 24.907
   },
   {
    "name": "Haryana",
@@ -270,7 +270,7 @@
     -8,
     6
    ],
-   "at": 23.092
+   "at": 25.028
   },
   {
    "name": "Andhra Pradesh",
@@ -280,7 +280,7 @@
     0,
     0
    ],
-   "at": 23.213
+   "at": 25.149
   },
   {
    "name": "Madhya Pradesh",
@@ -290,7 +290,7 @@
     0,
     0
    ],
-   "at": 23.334
+   "at": 25.27
   },
   {
    "name": "Rajasthan",
@@ -300,7 +300,7 @@
     0,
     0
    ],
-   "at": 23.455
+   "at": 25.391
   },
   {
    "name": "Karnataka",
@@ -310,7 +310,7 @@
     0,
     0
    ],
-   "at": 23.575
+   "at": 25.511
   },
   {
    "name": "Telangana",
@@ -320,7 +320,7 @@
     0,
     0
    ],
-   "at": 23.696
+   "at": 25.632
   },
   {
    "name": "Gujarat",
@@ -330,7 +330,7 @@
     0,
     0
    ],
-   "at": 23.817
+   "at": 25.753
   },
   {
    "name": "Maharashtra",
@@ -340,7 +340,7 @@
     0,
     0
    ],
-   "at": 23.938
+   "at": 25.874
   }
  ],
  "checked": [
@@ -354,10 +354,52 @@
   "Telangana sixteen: 15.78",
   "Gujarat has a similar share of the crop: under one point apart: 0.73",
   "Gujarat has less area: at least ten points less: 15.25",
-  "size check, not spoken: cotton-area share is far above Maharashtra's share of foodgrain area: 4.21"
+  "size check, not spoken: cotton-area share is far above Maharashtra's share of foodgrain area: 4.21",
+  "per hectare about two-thirds of India's average: crop share over area share: 0.69",
+  "Gujarat about a fifth of the area: 20.65",
+  "Telangana nearly a sixth of the area: 15.78",
+  "Gujarat's crop share was higher in 2022-23: 1.42",
+  "Gujarat's crop share was higher in 2023-24: 3.11"
  ],
- "vo": [],
- "voiceEngine": "none",
- "voice": "",
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.623,
+   "at": 0.12,
+   "text": "Maharashtra: over a third of India's cotton area, a quarter of the crop."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.955,
+   "at": 5.926,
+   "text": "Gujarat about a fifth, Telangana nearly a sixth, all others twenty-eight percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.866,
+   "at": 13.668,
+   "text": "Per hectare, that is about two-thirds of India's average."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.16,
+   "at": 19.475,
+   "text": "Gujarat has less area but a similar share of the crop."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.825,
+   "at": 23.346,
+   "text": "Every state's share of India's cotton area. State totals, not per person."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.768,
+   "at": 31.088,
+   "text": "How much cotton area does your state have?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
  "ytTitle": "Maharashtra: 36% of India's Cotton Area, 25% of the Crop"
 }

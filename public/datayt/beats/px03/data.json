@@ -18,10 +18,10 @@
    "kind": "spot",
    "lines": [
     "Same income per person.",
-    "*Goa*: four times *Sikkim's*",
-    "electricity available."
+    "*Goa*: *four times* Sikkim's",
+    "electricity available per person."
    ],
-   "vo": "Same income per person, yet Goa has four times Sikkim's electricity available.",
+   "vo": "Same income, yet Goa has four times Sikkim's electricity available per person.",
    "geo": "Sikkim",
    "name": "Sikkim",
    "t0": 0.0,
@@ -34,7 +34,7 @@
    "kicker": "INCOME PER PERSON · 2023-24",
    "big": "₹5,87,743",
    "text": "a year. Goa: ₹5,85,953. Level.",
-   "sub": "State output per person (net state domestic product), current prices. 33 states and UTs with data.",
+   "sub": "State output per person (net state domestic product), current prices. Output booked in the state, not what residents earn. 33 states and UTs with data.",
    "bars": [
     {
      "name": "Sikkim",
@@ -57,8 +57,8 @@
    "geo": "Sikkim",
    "kicker": "POWER AVAILABLE PER PERSON",
    "big": "783.7",
-   "text": "kilowatt-hours a year available per person. Below India.",
-   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not use.",
+   "text": "kilowatt-hours a year available per person. Below India's average.",
+   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not what people use.",
    "bars": [
     {
      "name": "Sikkim",
@@ -73,7 +73,7 @@
    ],
    "vo": "Electricity available per person: seven hundred and eighty-four kilowatt-hours, below India's.",
    "t0": 11.613,
-   "t1": 17.419
+   "t1": 19.355
   },
   {
    "kind": "fact",
@@ -81,8 +81,8 @@
    "geo": "Goa",
    "kicker": "POWER AVAILABLE PER PERSON",
    "big": "3,244.4",
-   "text": "kilowatt-hours a year. Four times Sikkim's, at the same income.",
-   "sub": "2023-24. In 2022-23: 3.5 times.",
+   "text": "kilowatt-hours a year: the highest of 34 states and UTs. Four times Sikkim's, at the same income.",
+   "sub": "2022-23: 3.5 times. 2024-25: 4.2 times.",
    "bars": [
     {
      "name": "Goa",
@@ -90,13 +90,13 @@
      "frac": 0.9269714285714286
     },
     {
-     "name": "India",
-     "label": "1,168.5",
-     "frac": 0.33385714285714285
+     "name": "Sikkim",
+     "label": "783.7",
+     "frac": 0.22391428571428573
     }
    ],
    "vo": "Goa, same income: three thousand two hundred and forty-four. Four times as much.",
-   "t0": 17.419,
+   "t0": 19.355,
    "t1": 25.161
   },
   {
@@ -123,7 +123,7 @@
    ],
    "vo": "Here is every state. This counts electricity available, not what people use.",
    "t0": 30.968,
-   "t1": 36.774
+   "t1": 38.71
   },
   {
    "note": "Power available to the state, industry included. Not what people use.",
@@ -135,11 +135,11 @@
    "sub": "Comment below.",
    "kind": "mapend",
    "vo": "Is your state above or below India?",
-   "t0": 36.774,
-   "t1": 40.645
+   "t0": 38.71,
+   "t1": 42.581
   }
  ],
- "total": 41.045,
+ "total": 42.981,
  "fps": 30,
  "beat": 0.4838709677419355,
  "map": [
@@ -161,7 +161,7 @@
     0,
     0
    ],
-   "at": 31.43
+   "at": 31.439
   },
   {
    "name": "Assam",
@@ -171,7 +171,7 @@
     -26,
     -10
    ],
-   "at": 31.542
+   "at": 31.56
   },
   {
    "name": "Jharkhand",
@@ -181,7 +181,7 @@
     0,
     0
    ],
-   "at": 31.654
+   "at": 31.681
   },
   {
    "name": "Tripura",
@@ -191,7 +191,7 @@
     -32,
     72
    ],
-   "at": 31.766
+   "at": 31.802
   },
   {
    "name": "Nagaland",
@@ -201,7 +201,7 @@
     78,
     8
    ],
-   "at": 31.878
+   "at": 31.923
   },
   {
    "name": "Mizoram",
@@ -211,7 +211,7 @@
     72,
     56
    ],
-   "at": 31.99
+   "at": 32.044
   },
   {
    "name": "Meghalaya",
@@ -221,7 +221,7 @@
     -76,
     52
    ],
-   "at": 32.102
+   "at": 32.165
   },
   {
    "name": "Uttar Pradesh",
@@ -231,7 +231,7 @@
     0,
     0
    ],
-   "at": 32.214
+   "at": 32.286
   },
   {
    "name": "Arunachal Pradesh",
@@ -241,7 +241,7 @@
     0,
     0
    ],
-   "at": 32.325
+   "at": 32.407
   },
   {
    "name": "West Bengal",
@@ -251,7 +251,7 @@
     0,
     0
    ],
-   "at": 32.437
+   "at": 32.528
   },
   {
    "name": "Sikkim",
@@ -261,7 +261,7 @@
     0,
     -62
    ],
-   "at": 32.549
+   "at": 32.649
   },
   {
    "name": "Kerala",
@@ -271,7 +271,7 @@
     -72,
     30
    ],
-   "at": 32.661
+   "at": 32.77
   },
   {
    "name": "Lakshadweep",
@@ -281,7 +281,7 @@
     -30,
     -62
    ],
-   "at": 32.773
+   "at": 32.891
   },
   {
    "name": "Odisha",
@@ -291,7 +291,7 @@
     0,
     0
    ],
-   "at": 32.885
+   "at": 33.012
   },
   {
    "name": "Andaman and Nicobar Islands",
@@ -301,7 +301,7 @@
     -78,
     0
    ],
-   "at": 32.997
+   "at": 33.133
   },
   {
    "name": "Madhya Pradesh",
@@ -311,7 +311,7 @@
     0,
     0
    ],
-   "at": 33.109
+   "at": 33.253
   },
   {
    "name": "Rajasthan",
@@ -321,7 +321,7 @@
     0,
     0
    ],
-   "at": 33.221
+   "at": 33.374
   },
   {
    "name": "Chhattisgarh",
@@ -331,7 +331,7 @@
     0,
     0
    ],
-   "at": 33.333
+   "at": 33.495
   },
   {
    "name": "Uttarakhand",
@@ -341,7 +341,7 @@
     0,
     0
    ],
-   "at": 33.445
+   "at": 33.616
   },
   {
    "name": "Karnataka",
@@ -351,7 +351,7 @@
     0,
     0
    ],
-   "at": 33.557
+   "at": 33.737
   },
   {
    "name": "Jammu and Kashmir",
@@ -361,7 +361,7 @@
     0,
     0
    ],
-   "at": 33.669
+   "at": 33.858
   },
   {
    "name": "Chandigarh",
@@ -371,7 +371,7 @@
     130,
     -75
    ],
-   "at": 33.781
+   "at": 33.979
   },
   {
    "name": "Andhra Pradesh",
@@ -381,7 +381,7 @@
     0,
     0
    ],
-   "at": 33.893
+   "at": 34.1
   },
   {
    "name": "Maharashtra",
@@ -391,7 +391,7 @@
     0,
     0
    ],
-   "at": 34.005
+   "at": 34.221
   },
   {
    "name": "Tamil Nadu",
@@ -401,7 +401,7 @@
     0,
     0
    ],
-   "at": 34.117
+   "at": 34.342
   },
   {
    "name": "NCT of Delhi",
@@ -411,7 +411,7 @@
     -215,
     -35
    ],
-   "at": 34.228
+   "at": 34.463
   },
   {
    "name": "Himachal Pradesh",
@@ -421,7 +421,7 @@
     0,
     0
    ],
-   "at": 34.34
+   "at": 34.584
   },
   {
    "name": "Gujarat",
@@ -431,7 +431,7 @@
     0,
     0
    ],
-   "at": 34.452
+   "at": 34.705
   },
   {
    "name": "Puducherry",
@@ -441,7 +441,7 @@
     96,
     0
    ],
-   "at": 34.564
+   "at": 34.826
   },
   {
    "name": "Haryana",
@@ -451,7 +451,7 @@
     -8,
     6
    ],
-   "at": 34.676
+   "at": 34.947
   },
   {
    "name": "Telangana",
@@ -461,7 +461,7 @@
     0,
     0
    ],
-   "at": 34.788
+   "at": 35.068
   },
   {
    "name": "Punjab",
@@ -471,7 +471,7 @@
     -6,
     0
    ],
-   "at": 34.9
+   "at": 35.189
   },
   {
    "name": "Goa",
@@ -481,20 +481,65 @@
     -82,
     0
    ],
-   "at": 35.012
+   "at": 35.31
   }
  ],
  "checked": [
+  "Goa is the highest of 34 with data (3,244.4)",
   "Sikkim 783.7 rounds to 784",
   "Goa 3244.4 rounds to 3244",
   "Goa 585953 rounds to 585953",
   "Goa / Sikkim = 4.14 (at least 4.0)",
   "Goa / Sikkim = 3.45 (at least 3.4)",
   "Sikkim / Goa = 1.00 (at least 0.98)",
-  "Goa / Sikkim = 1.00 (at least 0.98)"
+  "Goa / Sikkim = 1.00 (at least 0.98)",
+  "Goa / Sikkim = 4.17 (at least 4.15)"
  ],
- "vo": [],
- "voiceEngine": "none",
- "voice": "",
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.545,
+   "at": 0.12,
+   "text": "Same income, yet Goa has four times Sikkim's electricity available per person."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.97,
+   "at": 5.926,
+   "text": "Five lakh eighty-eight thousand rupees a year, level with Goa's."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.485,
+   "at": 11.733,
+   "text": "Electricity available per person: seven hundred and eighty-four kilowatt-hours, below India's."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.623,
+   "at": 19.475,
+   "text": "Goa, same income: three thousand two hundred and forty-four. Four times as much."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.858,
+   "at": 25.281,
+   "text": "Income and electricity available tend to rise together. Sikkim is an exception."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.668,
+   "at": 31.088,
+   "text": "Here is every state. This counts electricity available, not what people use."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.533,
+   "at": 38.83,
+   "text": "Is your state above or below India?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
  "ytTitle": "Sikkim vs Goa: Same Income, 4x the Electricity Available"
 }

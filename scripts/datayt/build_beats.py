@@ -504,6 +504,7 @@ def build(cfg):
             bands = pal["bands"]
         else:      # falls in one colour, rises in the other, level in between
             assert cuts[1] < 0 < cuts[2], f"{sid}: some states rose and some fell, so the map needs its cuts around zero (fell a lot, fell, level, rose, rose a lot)"
+            assert len(m.get("key", [])) == 3, f"{sid}: a map of rises and falls needs a three-word key in the map block: fell, level, rose"
             bands = [pal["accent2"], tint(pal["accent2"], 0.5), "#DDD5C8", tint(pal["accent"], 0.45), pal["accent"]]
         asc = sorted(chg, key=lambda s_: (chg[s_], s_))
         extra["map"] = [{"name": geo(s_), "label": signed(chg[s_], 1 if as_ == "points" else 0), "bucket": sum(chg[s_] >= c for c in cuts),
@@ -511,10 +512,12 @@ def build(cfg):
         missing = {x["name"] for x in extra["map"]} - set(GEO)
         assert not missing, f"{sid}: states not on the map: {missing}"
         ring = [geo(x) for x in [st0] + m.get("ring", [])]
-        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"]})
+        legend = [{"color": bands[i], "label": l} for i, l in zip((0, 2, 4), m["key"]) if l] if m.get("key") else None      # what the colours mean: low end, middle, high end
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"],
+                      **({"legend": legend} if legend else {})})
         extra["bands_override"] = bands
         extra["checked"] = checked + run_checks(sid, cfg, st0)
-        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **({"legend": legend} if legend else {}), **cfg["end"]}
     elif typ == "over":
         stage, india = series(cfg["stage"]); res, ires = series(cfg["whole"]); ext, iext = series(cfg["drawn"]); rech, _ = series(cfg["recharge"])
         over = sorted((s_ for s_ in stage if stage[s_] > 100), key=lambda s_: -stage[s_])

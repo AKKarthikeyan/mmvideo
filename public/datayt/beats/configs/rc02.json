@@ -3,7 +3,7 @@
  "type": "race",
  "rules": 2,
  "chip": "LEAD CHANGE",
- "source_short": "Agriculture Ministry · 2014-15 to 2024-25",
+ "source_short": "Agriculture Ministry · 2014-15 to 2024-25, final estimates",
  "palette": "E",
  "table": 63,
  "scale": 0.01,
@@ -12,20 +12,20 @@
  "from": "2014-15",
  "cut": "2018-19",
  "to": "2024-25",
- "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 63: production of nine oilseeds, thousand tonnes, shown here in lakh tonnes.",
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 63: production of nine oilseeds, thousand tonnes, shown here in lakh tonnes. The 2024-25 column is the Ministry's final estimate.",
  "hook": [
-  "*Madhya Pradesh* led India",
-  "in oilseeds until 2018-19.",
-  "Then *Rajasthan* did."
+  "*Madhya Pradesh* led oilseeds,",
+  "2014-15 to 2018-19.",
+  "Then *Rajasthan* moved ahead."
  ],
- "hook_vo": "Madhya Pradesh led India in oilseeds. Then Rajasthan took over.",
+ "hook_vo": "Madhya Pradesh led India in oilseeds. Then Rajasthan moved ahead.",
  "spots": [
   {
    "state": "Madhya Pradesh",
    "tone": "b",
    "name": "Madhya Pradesh",
    "big": "{b_cut}",
-   "note": "lakh tonnes",
+   "note": "lakh tonnes, 2018-19",
    "at": [
     640,
     660
@@ -36,38 +36,43 @@
    "tone": "a",
    "name": "Rajasthan",
    "big": "{a_cut}",
-   "note": "lakh tonnes",
+   "note": "lakh tonnes, 2018-19",
    "at": [
-    10,
-    120
+    0,
+    70
    ]
   }
  ],
  "run": {
   "kicker": "OILSEED PRODUCTION · LAKH TONNES",
-  "note": "Nine oilseeds together, from groundnut and soya bean to rapeseed-mustard.",
-  "marks": [],
-  "vo": "Since twenty nineteen-twenty, Rajasthan has been the largest every single year."
+  "note": "Nine oilseeds together, from groundnut and soya bean to rapeseed-mustard. 2014-15 state figures add up to 103% of the India row.",
+  "marks": [
+   {
+    "year": "2019-20",
+    "text": "near|tie"
+   }
+  ],
+  "vo": "Twenty nineteen-twenty was a near tie. Since then, Rajasthan's lead has been clear."
  },
  "stack": {
   "n": 1,
   "note": "Lakh tonnes, 2024-25. India: {india}.",
   "lines": [
    "2024-25: Rajasthan ahead",
-   "by *{gap} points* of",
+   "by *{gap}%* of",
    "India's oilseed output."
   ],
-  "vo": "In twenty twenty-four twenty-five, it led by about two points of India's output."
+  "vo": "In twenty twenty-four twenty-five, it led by two percent of India's output."
  },
  "says": [
   {
    "lines": [
-    "Madhya Pradesh is *about*",
-    "*where it was* in 2018-19.",
-    "Rajasthan grew by *a third.*"
+    "India's oilseeds: *+36%*",
+    "since 2018-19. Rajasthan: *+33%*.",
+    "Madhya Pradesh: *level.*"
    ],
-   "note": "2018-19 to 2024-25. The table shows how much, not why.",
-   "vo": "Madhya Pradesh's output is about where it was. Rajasthan's grew by a third."
+   "note": "2018-19 to 2024-25. Madhya Pradesh fell 22% in 2019-20, then recovered. The table shows how much, not why.",
+   "vo": "India's oilseeds grew over a third. Madhya Pradesh's stayed level."
   }
  ],
  "tests": [
@@ -162,6 +167,242 @@
    },
    "min": 0.97,
    "max": 1.03
+  },
+  {
+   "says": "India's oilseeds +36% since 2018-19",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2018-19"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.355,
+   "max": 1.3649
+  },
+  {
+   "says": "Rajasthan +33%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2018-19"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.325,
+   "max": 1.3349
+  },
+  {
+   "says": "Madhya Pradesh fell 22% in 2019-20",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2018-19"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 0.775,
+   "max": 0.785
+  },
+  {
+   "says": "2019-20 was close: Rajasthan ahead of Gujarat by under 0.6 points of India's total",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      },
+      "state": "Gujarat"
+     }
+    ]
+   },
+   "min": 0.2,
+   "max": 0.6
+  },
+  {
+   "says": "Gujarat was between them in 2019-20",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1,
+   "max": 3000
+  },
+  {
+   "says": "top four within 3.6 points in 2024-25: Rajasthan minus Gujarat",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2024-25"
+       ]
+      },
+      "state": "Gujarat"
+     }
+    ]
+   },
+   "min": 3.4,
+   "max": 3.7
+  },
+  {
+   "says": "2019-20 was a near tie: Rajasthan under one point of India's total ahead of Madhya Pradesh",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2019-20"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 0.999
+  },
+  {
+   "says": "since then the lead has been clear: the thinnest year, 2023-24, is about two points",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2023-24"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.1
+  },
+  {
+   "says": "clear lead in 2020-21: over three points ahead of the next state, Maharashtra",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2020-21"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        63,
+        "2020-21"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": 3.0,
+   "max": 4.0
   }
  ],
  "map": {
@@ -173,7 +414,7 @@
   ],
   "title": "Oilseed production, *state by state*",
   "sub": "lakh tonnes · 2024-25 · India {india}",
-  "note": "Nine oilseeds together. State totals, not per person.",
+  "note": "Nine oilseeds together. State totals, not per person. Top four within 3.6 points. Blank: not in the table.",
   "ring": [
    "Rajasthan",
    "Madhya Pradesh"
@@ -185,5 +426,5 @@
   "sub": "",
   "vo": "Groundnut, mustard or soya: which grows near you?"
  },
- "yt_title": "Rajasthan Overtook Madhya Pradesh in Oilseeds in 2019-20"
+ "yt_title": "Rajasthan Has Led India in Oilseed Output Since 2020-21"
 }

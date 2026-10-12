@@ -1,0 +1,226 @@
+{
+ "id": "px03",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "CEA · RBI · 2023-24",
+ "palette": "A",
+ "state": "Sikkim",
+ "source": "Electricity: per capita availability of power, kilowatt-hours, 2023-24, Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138 (34 states and UTs). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs; Gujarat has no figure).",
+ "hook": [
+  "Same income per person.",
+  "*Goa*: four times *Sikkim's*",
+  "electricity available."
+ ],
+ "hook_vo": "Same income per person, yet Goa has four times Sikkim's electricity available.",
+ "facts": [
+  {
+   "state": "Sikkim",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Goa"
+   ],
+   "text": "a year. Goa: ₹5,85,953. Level.",
+   "sub": "State output per person (net state domestic product), current prices. {n} states and UTs with data.",
+   "vo": "Five lakh eighty-eight thousand rupees a year, level with Goa's."
+  },
+  {
+   "state": "Sikkim",
+   "kicker": "POWER AVAILABLE PER PERSON",
+   "data": {
+    "rbi": [
+     138,
+     "2023-24"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 3500,
+   "text": "kilowatt-hours a year available per person. Below India.",
+   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not use.",
+   "vo": "Electricity available per person: seven hundred and eighty-four kilowatt-hours, below India's."
+  },
+  {
+   "state": "Goa",
+   "kicker": "POWER AVAILABLE PER PERSON",
+   "data": {
+    "rbi": [
+     138,
+     "2023-24"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 3500,
+   "text": "kilowatt-hours a year. Four times Sikkim's, at the same income.",
+   "sub": "2023-24. In 2022-23: 3.5 times.",
+   "vo": "Goa, same income: three thousand two hundred and forty-four. Four times as much."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Sikkim",
+   "data": {
+    "rbi": [
+     138,
+     "2023-24"
+    ]
+   },
+   "equals": 784
+  },
+  {
+   "kind": "round",
+   "state": "Goa",
+   "data": {
+    "rbi": [
+     138,
+     "2023-24"
+    ]
+   },
+   "equals": 3244
+  },
+  {
+   "kind": "round",
+   "state": "Goa",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 585953
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Goa",
+    "data": {
+     "rbi": [
+      138,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Sikkim",
+    "data": {
+     "rbi": [
+      138,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 4.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Goa",
+    "data": {
+     "rbi": [
+      138,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Sikkim",
+    "data": {
+     "rbi": [
+      138,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 3.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Sikkim",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Goa",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Goa",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Sikkim",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  }
+ ],
+ "so": {
+  "lines": [
+   "Across states, income and",
+   "electricity available",
+   "tend to rise together.",
+   "*Sikkim* is an exception."
+  ],
+  "vo": "Income and electricity available tend to rise together. Sikkim is an exception."
+ },
+ "map": {
+  "data": {
+   "rbi": [
+    138,
+    "2023-24"
+   ]
+  },
+  "unit": "",
+  "title": "Electricity available per person, *every state*",
+  "sub": "kWh a year · India {india} · 2023-24",
+  "note": "Power available to the state, industry included. Not what people use.",
+  "ring": [
+   "Sikkim",
+   "Goa"
+  ],
+  "vo": "Here is every state. This counts electricity available, not what people use."
+ },
+ "end": {
+  "q": "Is *your state* above or below India?",
+  "sub": "Comment below.",
+  "vo": "Is your state above or below India?"
+ },
+ "yt_title": "Sikkim vs Goa: Same Income, 4x the Electricity Available"
+}

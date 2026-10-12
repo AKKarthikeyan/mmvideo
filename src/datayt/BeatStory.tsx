@@ -16,7 +16,7 @@ type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number;
   title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
   spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[];
   measure?: string; pa?: {name: string; geo: string; label: string}; pb?: {name: string; geo: string; label: string};
-  p0?: {period: string; label: string; frac: number}; p1?: {period: string; label: string; frac: number}};
+  p0?: {period: string; label: string; frac: number}; p1?: {period: string; label: string; frac: number}; legend?: {color: string; label: string}[]};
 export type BeatData = {id: string; type: string; chip: string; sourceShort: string; source: string; accent: string; accent2: string; bands: string[];
   beats: Beat[]; total: number; beat: number; map?: MapState[]; grid?: {parts: {name: string; v: number; label: string; color: string}[]; caption: string};
   race?: {years: string[]; cut: number; note: string; a: {name: string; v: number[]; sub?: string}; b: {name: string; v: number[]; sub?: string}; marks?: {i: number; text: string}[]};
@@ -604,7 +604,12 @@ const MapBeat: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   return <AbsoluteFill>
     <div style={{position: "absolute", left: 60, right: 60, top: 150, fontFamily: COND, fontWeight: 700, fontSize: 84, lineHeight: 1.05, color: P.ink}}><Rich text={(end ? b.q : b.title) ?? ""} acc={D.accent}/></div>
     <div style={{position: "absolute", left: 60, right: 60, top: 350, fontFamily: SANS, fontWeight: end ? 700 : 400, fontSize: end ? 44 : 36, color: end ? D.accent2 : P.mute}}>{b.sub}</div>
-    <div style={{opacity: end ? 1 : ease(f, f0, f0 + 8)}}><StateMap states={D.map ?? []} colors={D.bands} x={(W - w) / 2} y={440} h={h} fs={24}
+    {b.legend && <div style={{position: "absolute", left: 60, right: 60, top: 404, display: "flex", gap: 30, alignItems: "center", opacity: end ? 1 : ease(f, f0 + 6, f0 + 14)}}>
+      {b.legend.map((k) => <div key={k.label} style={{display: "flex", alignItems: "center", gap: 10}}>
+        <div style={{width: 28, height: 28, borderRadius: 7, background: k.color, border: `1.5px solid ${P.line}`}}/>
+        <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 27, color: P.ink}}>{k.label}</div></div>)}
+    </div>}
+    <div style={{opacity: end ? 1 : ease(f, f0, f0 + 8)}}><StateMap states={D.map ?? []} colors={D.bands} x={(W - w) / 2} y={b.legend ? 452 : 440} h={b.legend ? h - 12 : h} fs={24}
       frame={b.anim ? f : null} t0={f0} ring={ring}/></div>
     {b.note && <div style={{position: "absolute", left: 60, right: 60, top: 1468, fontFamily: SANS, fontWeight: 600, fontSize: 34, lineHeight: 1.3, color: P.ink,
       opacity: end ? 1 : ease(f, Math.min(f0 + 135, F(b.t1) - 75), Math.min(f0 + 147, F(b.t1) - 63))}}>{b.note}</div>}

@@ -10,11 +10,12 @@
   "claim": "Rajasthan produced 47.5% of India's wool in 2023-24 (16.0 of 33.7 million kg), which is 3.3 times its share of milk, 19.6 times its share of meat, and more than the next three states together (34.0%).",
   "numbers_checked": "T094 wool, thousand kg, 2023-24: Rajasthan 16,014 of India 33,689 = 47.53%; Jammu and Kashmir 7,770 = 23.06%; Gujarat 2,084 = 6.19%; Maharashtra 4.75%; rest after the three named = 23.22% (rounds to 23). 19 state rows sum to 33,688 = 1.0000 of the India row. Last three years: Rajasthan 46.20, 47.98, 47.53%; Jammu and Kashmir 23.34, 22.55, 23.06%; Rajasthan/J&K 1.98, 2.13, 2.06x (order of the top three identical in all three). Next three (J&K + Gujarat + Maharashtra) = 11,455 thousand kg = 34.00%; Rajasthan leads them by 13.5 points (11.9 and 14.7 in the two earlier years, so it holds each year). Rajasthan shares in 2023-24: milk (T091) 14.51% so wool is 3.28x; meat (T090) 2.42% so wool is 19.6x (earlier years 3.08-3.32x and 19.4-19.5x). Voice-line figures all carried as tests (23, 6, 16 million kg, 16.0, 11.5).",
   "verify_before_voicing": "Read the wool table of Basic Animal Husbandry Statistics (Ministry of Fisheries, Animal Husbandry and Dairying) for 2023-24: Rajasthan 16,014, Jammu and Kashmir 7,770, India 33,689 thousand kg. Check that Andhra Pradesh is blank (not available) and not zero, and read the publisher's definition of wool (the Handbook table gives none). A 2024-25 edition of the publication is likely out or due soon; if so, rebuild on that year (the Handbook copy stops at 2023-24).",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
   "lead_titles": [
    "Rajasthan has 48% of India's total: State-wise Wool Production (2023-24)",
    "Rajasthan is above the next 3 states together: State-wise Wool Production (2023-24)"
-  ]
+  ],
+  "review_title": "Rajasthan Reports Nearly Half of India's Wool"
  },
  {
   "id": "b1sh02",
@@ -26,10 +27,11 @@
   "claim": "Maharashtra has 35.9% of India's cotton area in 2024-25 but only 24.8% of the crop, because its yield (304 kg per hectare) is 69% of India's (440).",
   "numbers_checked": "T077 cotton area, thousand ha, 2024-25: Maharashtra 4,123.0 of India 11,483.6 = 35.90%; Gujarat 20.65%; Telangana 15.78%; rest after the three named = 27.66% (rounds to 28). 20 state rows sum to 11,483.8 = 1.0000. Last three years: Maharashtra 32.35, 33.38, 35.90% (first each year, ahead of Gujarat by 13.1, 12.2, 15.3 points; same top three in the same order). 'Over a third' holds only for 2024-25 (33.38% in 2023-24, 32.35% in 2022-23), so the year is stated. Production T064: Maharashtra 7,372.9 of 29,724.2 thousand bales = 24.80% (24.70, 24.74 in the two earlier years); crop share / area share = 0.69. Yield T086: 304 vs India 440 kg/ha = 0.691 (0.763 and 0.741 earlier). Production and area tables each sum to 1.0000. Size check: area share is 4.2x Maharashtra's share of foodgrain area (T071), so it is not a size effect.",
   "verify_before_voicing": "Read the 2024-25 cotton area, production and yield for Maharashtra and India at the Ministry of Agriculture and Farmers' Welfare (area 4,123.0 and 11,483.6 thousand ha; production 7,372.9 and 29,724.2 thousand bales of 170 kg; yield 304 and 440 kg/ha) and whether those are advance or final estimates; the Handbook table does not say. A 2025-26 estimate is likely already published by the ministry; if so, rebuild on it. The table shows how much, not why: do not add a cause for the low yield.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "rewritten as sh02 after review",
   "lead_titles": [
    "Maharashtra has 36% of India's total: State-wise Area of Non-Foodgrains - Cotton (Lint) (2024-25)"
-  ]
+  ],
+  "review_title": "Maharashtra: 36% of Cotton Area, 25% of the Crop"
  },
  {
   "id": "b1sh03",
@@ -41,10 +43,11 @@
   "claim": "Madhya Pradesh has 25.5% of India's oilseed area in 2024-25, 1.85 times its share of foodgrain area, but only 19.2% of the oilseed crop, because its yield (1,065 kg per hectare) is 75% of India's (1,412).",
   "numbers_checked": "T076 oilseed area, thousand ha, 2024-25: Madhya Pradesh 7,747.0 of India 30,439.8 = 25.45%; Rajasthan 19.96%; Maharashtra 17.91%; rest after the three named = 36.68% (rounds to 37). 31 state rows sum to 30,439.9 = 1.0000. Last three years: Madhya Pradesh 25.62, 27.07, 25.45%; ahead of Rajasthan by 4.4, 6.4, 5.5 points (1.21-1.31x); same top three in the same order each year. Size check: share of foodgrain area (T071) 13.73%, so oilseed share is 1.85x (1.86x, 1.96x earlier), not a size effect. Crop T063: 8,250.9 of 42,988.6 thousand t = 19.19% (20.05, 21.62 earlier). Yield T085: 1,065 vs India 1,412 kg/ha = 0.754 (0.782, 0.799 earlier).",
   "verify_before_voicing": "Read the 2024-25 oilseed area, production and yield at the Ministry of Agriculture and Farmers' Welfare (area 7,747.0 and 30,439.8 thousand ha; production 8,250.9 and 42,988.6 thousand t; yield 1,065 and 1,412 kg/ha) and whether they are advance or final estimates; the Handbook table does not say. Confirm which nine oilseeds the total covers. A 2025-26 estimate is likely already published; if so, rebuild on it. 'Nearly eight million hectares' is 7.75, so keep 'nearly'.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
   "lead_titles": [
    "Madhya Pradesh has 25% of India's total: State-wise Area of Non-Foodgrains - Oilseeds (2024-25)"
-  ]
+  ],
+  "review_title": "Madhya Pradesh Leads Oilseed Area, Rajasthan the Crop"
  },
  {
   "id": "b1sh04",
@@ -56,10 +59,11 @@
   "claim": "Rajasthan has 24.7% of India's coarse cereal area in 2024-25 but only 14.8% of the harvest, because its yield (1,485 kg per hectare) is 60% of India's (2,482).",
   "numbers_checked": "T069 coarse cereal area, thousand ha, 2024-25: Rajasthan 6,364.6 of India 25,754.9 = 24.71%; Maharashtra 15.06%; Karnataka 14.02%; rest after the three named = 46.21% (rounds to 46). 30 state rows sum to 25,743.8 = 0.9996 (inside the builder's 0.5%). Last three years: Rajasthan 27.00, 23.92, 24.71%; ahead of the second state by 12.7, 8.8, 9.7 points (1.89x, 1.58x, 1.64x). Maharashtra and Karnataka swap places across the years (Karnataka 14.29 vs Maharashtra 14.04; Karnataka 15.09 vs 14.43; Maharashtra 15.06 vs Karnataka 14.02), so the script gives only their figures and makes no ranking claim between them. Size check: area share is 2.22x Rajasthan's share of foodgrain area (11.12%, T071). Crop T060: 9,451.5 of 63,920.9 thousand t = 14.79% (15.66, 14.21 earlier). Yield T082: 1,485 vs India 2,482 kg/ha = 0.598 (0.580, 0.594 earlier).",
   "verify_before_voicing": "Read the 2024-25 coarse cereal area, production and yield at the Ministry of Agriculture and Farmers' Welfare (area 6,364.6 and 25,754.9 thousand ha; production 9,451.5 and 63,920.9 thousand t; yield 1,485 and 2,482 kg/ha) and whether they are advance or final estimates. Read the publisher's definition of which cereals 'coarse cereals' covers (the Handbook table does not list them) before saying anything about them. A 2025-26 estimate is likely already published; if so, rebuild on it. Do not give a cause for the low yield.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (3 must-fix); not voiced",
   "lead_titles": [
    "Rajasthan has 25% of India's total: State-wise Area of Foodgrains - Coarse Cereals (2024-25)"
-  ]
+  ],
+  "review_title": "Rajasthan Has 1 in 4 Hectares of India's Coarse Cereals"
  },
  {
   "id": "b1sh05",
@@ -71,10 +75,11 @@
   "claim": "Uttar Pradesh grows 30.2% of India's wheat in 2024-25, 1.7 times its share of all foodgrains, and the share matches its 29.3% of wheat area because its yield is within 3% of India's.",
   "numbers_checked": "T059 wheat production, thousand t, 2024-25: Uttar Pradesh 35,652.9 of India 117,944.5 = 30.23%; Madhya Pradesh 20.78%; Punjab 15.26%; rest after the three named = 33.74% (rounds to 34). 25 state rows sum to 117,933.3 = 0.9999. Last three years: Uttar Pradesh 30.40, 31.19, 30.23%; ahead of Madhya Pradesh by 9.8, 11.3, 9.5 points (1.48x, 1.57x, 1.45x); same top three in the same order each year. Foodgrains T062: Uttar Pradesh 17.85% so wheat share is 1.69x (1.74x, 1.72x earlier); rice T058 13.82%. Area T068: 9,598.8 of 32,804.4 thousand ha = 29.26% (30.31, 29.94 earlier). Yield T081: 3,714 vs India 3,595 kg/ha = 1.033 (1.003, 1.042 earlier). Production share / area share = 1.03.",
   "verify_before_voicing": "Read the 2024-25 wheat production, area and yield at the Ministry of Agriculture and Farmers' Welfare (production 35,652.9 and 117,944.5 thousand t; area 9,598.8 and 32,804.4 thousand ha; yield 3,714 and 3,595 kg/ha) and whether they are advance or final estimates. A 2025-26 wheat estimate is likely already published; if so, rebuild on it. This is the least surprising state-and-crop pairing in the batch (Uttar Pradesh is large), so keep the foodgrains comparison card in.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (1 must-fix); not voiced",
   "lead_titles": [
    "Uttar Pradesh has 30% of India's total: State-wise Production of Foodgrains - Wheat (2024-25)"
-  ]
+  ],
+  "review_title": "3 States Grow 66% of India's Wheat"
  },
  {
   "id": "b1sh06",
@@ -87,11 +92,12 @@
   "claim": "Uttar Pradesh has 38.9% of India's cold storage capacity (2022), 2.2 times its share of foodgrains and 2.4 times its share of vegetables, and more than the next three states together (32.1%).",
   "numbers_checked": "T098 cold storage capacity, tonnes, 2022: Uttar Pradesh 14,875,987 of India 38,224,006 = 38.92%; West Bengal 15.56%; Gujarat 10.17%; rest after the three named = 35.35% (rounds to 35). 34 state rows sum exactly to the India row (1.0000). Last three columns: Uttar Pradesh 39.32 (2020), 38.95 (2021), 38.92 (2022)%; ahead of West Bengal by 23.4, 23.3, 23.4 points (2.5x); same top three in the same order each year. Next three (West Bengal + Gujarat + Punjab) = 12,288,242 t = 32.15% in 2022 (32.29 in 2020, 32.20 in 2021); Uttar Pradesh leads them by 6.8, 7.0, 6.8 points. Comparators for 2022-23: Uttar Pradesh share of foodgrains (T062) 17.44% so cold storage share is 2.23x; vegetables (T075) 16.36% so 2.38x; fruit (T074) 10.74% so 3.6x. Table note: 2022 means 30 November 2022; 2020 and 2021 are other dates.",
   "verify_before_voicing": "Read the cold storage table in Agriculture Statistics at a Glance (Ministry of Agriculture and Farmers' Welfare) for 2022 (Uttar Pradesh 14,875,987, West Bengal 5,948,316, Gujarat 3,888,425, India 38,224,006 tonnes) and confirm the reading date of 30 November 2022 and that the unit is metric tonnes of capacity, not stock. A newer edition (2023 or 2024 reading) is likely published since 2022 is the Handbook's last column; if so, rebuild on it. The table shows how much, not why: do not say what is stored.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (3 must-fix); not voiced",
   "lead_titles": [
    "Uttar Pradesh has 39% of India's total: State-wise Cold Storage Capacity (2022)",
    "Uttar Pradesh is above the next 3 states together: State-wise Cold Storage Capacity (2022)"
-  ]
+  ],
+  "review_title": "Uttar Pradesh Has 39% of India's Cold Storage"
  },
  {
   "id": "b1sh07",
@@ -106,13 +112,14 @@
   "claim": "Maharashtra has 23.9% of India's bank credit at end-March 2025 but 8.8% of bank offices (2.7 times), and its credit is more than Delhi and Tamil Nadu together (19.1%).",
   "numbers_checked": "T156 credit, Rs crore, end-March 2025: Maharashtra 44,83,171 of India 1,87,86,865 = 23.86%; Delhi 9.71%; Tamil Nadu 9.38%; rest after the three named = 57.05% (rounds to 57). 35 state rows sum to 0.9995 of the India row. Last three years: Maharashtra 23.47, 23.83, 23.86%; Delhi 10.82, 10.07, 9.71%; Tamil Nadu 9.33, 9.36, 9.38% (same top three, same order). Next two (Delhi + Tamil Nadu) 20.15, 19.43, 19.09%, so Maharashtra leads them by 3.3, 4.4, 4.8 points. Bank offices T152: Maharashtra 14,832 of 167,806 = 8.84% (8.81, 8.83 earlier), so credit share is 2.70x (2.66x, 2.70x earlier); deposits T155 22.32%. Basis check: T156 / T155 gives Maharashtra 85.66, Delhi 88.06, Uttar Pradesh 54.01, India 80.11, which equals the Handbook's credit-deposit ratio by place of UTILISATION (T154: 85.7, 88.1, 54.0, 80.1) and not the place-of-sanction table (T153: 98.1, 91.8, 50.9). Lakh crore conversions: 44.83 and Delhi + Tamil Nadu 35.86 lakh crore.",
   "verify_before_voicing": "Read the Basic Statistical Returns of Scheduled Commercial Banks in India (RBI) for March 2025 and confirm the credit series is classified by place of utilisation (our check against Table 154 says so; the Handbook credit table does not say). Confirm 44,83,171 and 1,87,86,865 Rs crore, and that bank offices are scheduled commercial bank offices as at end-March 2025. The March 2026 return is likely out or due within weeks; if so, rebuild on it. Banking education and data only: no advice.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
   "lead_titles": [
    "Maharashtra has 24% of India's total: State-wise Credit by Scheduled Commercial Banks in India (2025)",
    "Maharashtra is above the next 2 states together: State-wise Credit by Scheduled Commercial Banks in India (2025)",
    "Maharashtra has 22% of India's total: State-wise Deposits by Scheduled Commercial Banks in India (2025)",
    "Maharashtra is above the next 2 states together: State-wise Deposits by Scheduled Commercial Banks in India (2025)"
-  ]
+  ],
+  "review_title": "3 States Hold 43% of India's Bank Credit"
  },
  {
   "id": "b1sh08",
@@ -125,11 +132,12 @@
   "claim": "Uttar Pradesh has 19.5% of India's regional rural bank branches (4,373 of 22,481), 1.7 times its share of all bank offices and about twice Bihar's share.",
   "numbers_checked": "T163 regional rural bank branches, end-March 2025: Uttar Pradesh 4,373 of India 22,481 = 19.45%; Bihar 2,118 = 9.42%; Karnataka 1,755 = 7.81%; rest after the three named = 63.32% (rounds to 63). 29 state rows sum exactly to the India row (1.0000). Last three years: Uttar Pradesh 19.49, 19.53, 19.45%; Bihar 9.51, 9.45, 9.42%; Karnataka 7.87, 7.82, 7.81% (same top three, same order); Uttar Pradesh / Bihar 2.05x, 2.07x, 2.06x. Next two (Bihar + Karnataka) = 17.23%, so Uttar Pradesh leads them by 2.2 points (12.9% relative; not thin). All scheduled commercial bank offices T152: Uttar Pradesh 19,436 of 167,806 = 11.58%, so the regional rural share is 1.68x (1.68x, 1.69x earlier). Also seen: Uttar Pradesh share of regional rural bank deposits (T160) 19.44% vs 8.14% of all-bank deposits (T155), 2.4x.",
   "verify_before_voicing": "Read the branch statistics in the RBI Basic Statistical Returns for March 2025 (Uttar Pradesh 4,373 regional rural bank branches of 22,481; Bihar 2,118; Karnataka 1,755) and confirm that 'offices of scheduled commercial banks' in Table 152 includes the regional rural bank branches (the comparison is the same either way, but the wording 'all bank offices' depends on it). We did not test against population share (the Handbook has no population table), so check Uttar Pradesh's share of India's population before voicing, and keep 'state totals, not per person' on screen. The March 2026 return is likely out or due; if so, rebuild on it.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "dropped at review 12 Oct 2026 (a population effect)",
   "lead_titles": [
    "Uttar Pradesh is above the next 2 states together: State-wise Number of Branches of Regional Rural Banks (2025)",
    "Uttar Pradesh is above the next 2 states together: State-wise Deposits of Regional Rural Banks (2025)"
-  ]
+  ],
+  "review_title": "Regional Rural Banks Run 22% of UP's Bank Branches"
  },
  {
   "id": "b1px01",
@@ -139,8 +147,9 @@
   "claim": "Delhi's income per person is over three times Jammu and Kashmir's (3.28x, 2023-24), while the share of J&K homes with a member covered by health insurance or a scheme is over three times Delhi's (96.3% against 29.3%, NFHS-6); across 31 states the two are only weakly linked (rank correlation -0.18).",
   "numbers_checked": "All with python3 -I from T019 and nfhs6_states.json (total column, index 2). Income 2023-24, 33 states and UTs (Gujarat has no figure): J&K 1,40,051 is the 6th lowest of 33, so below 27 states ('below most' holds); it is 7th, 6th, 6th lowest in 2021-22, 2022-23, 2023-24. Delhi 4,59,408; Delhi/J&K = 3.28 (3.28, 3.38, 3.28 over the three years; builder min 3.0). NFHS-6 indicator 7 (homes with any member covered by insurance or a financing scheme): J&K 96.3, Delhi (NCT of Delhi) 29.3, India 60.2 (round checks 96, 29, 60); J&K/Delhi = 3.29 (min 3.0), so Delhi's cover is 0.304 of J&K's, under a third. Ladakh 96.0 is level with J&K, so no 'highest' claim is made. Rank correlation income vs cover, exact-name match as the builder does it: -0.18 over 31 states (2023-24 income), -0.20 over 32 (2022-23), -0.02 over 24 (2024-25); with Delhi matched by alias -0.23 over 32; the builder cap of 0.3 passes. NFHS-5 (4th cell) in our file: J&K 13.8, Delhi 25.0, India 41.0, so the pattern is an NFHS-6 finding only. Map: 35 states and UTs have a figure.",
   "verify_before_voicing": "Read the NFHS-6 fact sheets (IIPS) for Jammu and Kashmir, NCT of Delhi and India: row 'households with any usual member covered under a health insurance/financing scheme' = 96.3, 29.3, 60.2; our label 'Homes with health insurance' is a short form. NFHS-5 in our file has J&K at 13.8 (Ladakh 17.1), so 96.3 is a seven-fold jump in one round: confirm it is not an extraction slip (Ladakh moves the same way, 96.0) and say nothing about cause. Check whether RBI Handbook T019 2023-24 income for J&K (1,40,051) is provisional or a quick estimate; the next Handbook (about Dec 2026) will likely revise 2023-24 and add 2024-25 for more states. Confirm the builder's {'nfhs': 7} reads the TOTAL column and that 'NCT of Delhi' lines up with the RBI row 'Delhi'.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "superseded by tn04 (same fact told as then-and-now)",
+  "lead_titles": [],
+  "review_title": "J&K: Low Income, Yet 96 in 100 Homes Have a Member Covered"
  },
  {
   "id": "b1px02",
@@ -152,10 +161,11 @@
   "claim": "Telangana's income per person is 5.6 times Bihar's (2023-24), yet 64.1% of Bihar's women and girls aged 6 and over ever attended school against 60.2% in Telangana, a share 6.5% higher (NFHS-6); Telangana has the largest rank gap of the 25 states with both figures.",
   "numbers_checked": "Income T019: Telangana 3,47,714, Bihar 62,201 (2023-24), ratio 5.59 (5.69, 5.71, 5.59 over 2021-22 to 2023-24; Telangana is 5th highest of 33 each year; builder min 5.0); Bihar/Telangana = 0.179, so 'under a fifth' holds. NFHS-6 indicator 9 (female population aged 6+ who ever attended school): Telangana 60.2, Bihar 64.1, India 73.7 (round checks 60, 64, 74); Bihar/Telangana = 1.065 (min 1.05); gap 3.9 points = 5.3% of the India figure and 6.5% relative, above the 1-point and 3% thin-lead floors. A figure exists for 28 states and UTs; Telangana is the lowest of those 28 and Bihar the second lowest (Jharkhand 68.0 next) but no 'lowest' claim is put on screen. NFHS-5: Telangana 60.9, Bihar 61.1, India 71.8. Rank correlation income vs schooling (exact-name match): 0.45 over 25 states (2023-24), 0.39 over 26 (2022-23), 0.34 over 20 (2024-25). That is a real moderate link, so no weak_link is used and the line is 'tend to rise together ... exception'. Telangana's income rank is 23 of 25 from the bottom and its schooling rank is last (1), a 22-place gap, the largest of the 25 (Haryana 12 and Karnataka 11 next).",
   "verify_before_voicing": "Read the NFHS-6 fact sheets for Telangana and Bihar, row 'female population age 6 years and above who ever attended school (%)' (60.2, 64.1, India 73.7); our method note says some Telangana cells came from an OpenCity CSV, so read the primary sheet. The cell is blank in our copy for Uttar Pradesh, Rajasthan, Andhra Pradesh, Tripura, Sikkim, Ladakh and Lakshadweep: fill them from the sheets and re-run; Telangana-below-Bihar is unaffected but the 'exception' line and map change if another state sits lower. In NFHS-5 the gap was only 0.2 points (60.9 vs 61.1), so the 3.9-point gap is an NFHS-6 finding. Check T019 2023-24 for provisional status; a newer Handbook (about Dec 2026) is likely. Confirm {'nfhs': 9} reads the total column.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
   "lead_titles": [
    "Telangana: high income per person, but at the bottom end on: Women & girls who ever went to school (NFHS-6)"
-  ]
+  ],
+  "review_title": "Telangana: 5x Bihar's Income, Fewer Women Ever at School"
  },
  {
   "id": "b1px03",
@@ -165,8 +175,9 @@
   "claim": "Himachal Pradesh and Andhra Pradesh have incomes per person within 1.4% of each other (2023-24), yet at end-March 2024 banks used 158.9 rupees of credit per 100 rupees of deposits in Andhra Pradesh against 36.8 in Himachal Pradesh, 4.3 times as much; across 33 states income and the credit-deposit ratio are only weakly linked (rank correlation 0.18).",
   "numbers_checked": "T154 credit-deposit ratio, place of utilisation, end-March 2022/2023/2024: Andhra Pradesh 142.7/149.2/158.9, Himachal Pradesh 33.1/34.2/36.8, ratio 4.31/4.36/4.32 (builder min 4.0), India 72.1/75.8/79.6; round checks 37, 159, 80. March 2025: 157.2 and 39.2, ratio 4.01. Himachal is the 4th lowest of 35, Andhra the highest. Income T019, Himachal vs Andhra: 1,93,016 vs 1,93,703 (-0.4%, 2021-22), 2,14,952 vs 2,19,917 (-2.3%, 2022-23), 2,34,721 vs 2,37,951 (-1.4%, 2023-24): all under 3%, so 'same' holds in the last three columns; builder checks both directions at 0.98 (0.9864 and 1.0138). The 2024-25 gap is 3.8%, so March 2025 is not paired with 2024-25. Rank correlation income vs ratio: 0.175 over 33 states (2023-24 with March 2024, the builder pair), 0.267 over 34 (2022-23 with March 2023), 0.298 over 33 (2021-22 with March 2022): under 0.3 in all three but the last is at the edge. No size effect: ratios, not totals.",
   "verify_before_voicing": "Read RBI's Basic Statistical Returns (BSR-1) state-wise credit-deposit ratios by place of utilisation at end-March 2024: Himachal 36.8, Andhra 158.9, India 79.6 (T154 note: Dadra and Nagar Haveli figures include Daman and Diu from 2020). The end-March 2025 column is already published (36.8 becomes 39.2, 158.9 becomes 157.2, ratio 4.01), so 'four times' sits at its lower edge on the newest data; keep the pair at 2023-24 and March 2024 because the 2024-25 incomes are not level (3.8%). Check the place-of-sanction series (T153: 35.7 and 153.5, 4.30x) says the same. Say nothing about why; the table shows how much, not why. T019 2023-24 may be provisional; next Handbook about Dec 2026.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
+  "lead_titles": [],
+  "review_title": "Andhra vs Himachal: Same Income, 4x Credit per ₹ Deposited"
  },
  {
   "id": "b1px04",
@@ -176,8 +187,9 @@
   "claim": "Kerala and Maharashtra have the same income per person (within 0.4%, 2024-25), yet Kerala's average rural construction wage for men, 923 rupees a day, is 2.26 times Maharashtra's 408 rupees and 58% above the next state; across states the two measures rise together (rank correlation 0.58) and Kerala sits about 376 rupees a day above the fitted line.",
   "numbers_checked": "T112 (men, rural construction workers, rupees a day, 20 states), 2024-25: Kerala 922.6, Maharashtra 407.9, J&K 584.5 (next), India 441.1; Kerala is the highest (claim test passes), 58% above the next state; round checks 923 and 408. Kerala/Maharashtra wage 2.30, 2.29, 2.26 in 2022-23, 2023-24, 2024-25 (builder min 2.2); Kerala is first in every year 2021-22 to 2024-25. Same gap in the other two wage tables for 2024-25: T113 farm labourers 2.53x, T115 non-farm labourers 2.31x, Kerala first in both. Income T019: Kerala 3,08,338 and Maharashtra 3,09,340 in 2024-25 (25 states and UTs with data), gap 0.32%; 0.9% in 2023-24 and 2.0% in 2022-23, so level in each of the last three columns; builder checks both ratios at 0.98 (0.9968, 1.0032). Rank correlation wage vs income: 0.58 over 18 states (2024-25), 0.59 over 19 (2023-24), 0.41 over 20 (2022-23): a real link, so no weak_link and the line is 'tend to rise together ... Kerala sits far above'. Least-squares fit of wage on income over the 18 states: Kerala residual +376 rupees a day (3.3 standard deviations); next is J&K at +159.",
   "verify_before_voicing": "Read the Labour Bureau's Wage Rates in Rural India (Indian Labour Journal) for 2024-25, construction workers (men): Kerala 922.6, Maharashtra 407.9, and how annual figures are built (T112 notes: yearly averages come from monthly averages; the all-India row is total wages over number of quotations). It is a wage rate from sampled villages, not earnings, so say 'wage rate'. The 'same income' line rests on a 0.3% gap in a thin 25-state 2024-25 column that is probably provisional or a quick estimate: a revision of about 3% either way breaks it, so re-read NSO state per-capita NSDP before voicing. The title says 'Rural Wage' for brevity; the video is men's rural construction wage only. A 2025-26 Labour Bureau update and the Dec 2026 Handbook are likely.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "rewritten as px02 after review",
+  "lead_titles": [],
+  "review_title": "Kerala, Maharashtra: Same Income, 2x Rural Construction Wage"
  },
  {
   "id": "b1px05",
@@ -187,8 +199,9 @@
   "claim": "Sikkim and Goa have the same income per person (within 0.3%, 2023-24), yet Goa has 4.14 times Sikkim's electricity available per person (3,244 against 784 kWh a year); across 32 states income and electricity per person rise together (rank correlation 0.65) and Sikkim is an exception.",
   "numbers_checked": "T138 per capita availability of power (kWh), 2023-24 (34 states and UTs): Sikkim 783.7, Goa 3,244.4, India 1,168.5; round checks 784 and 3244; Goa is the highest in every year. Goa/Sikkim 3.17, 3.45, 4.14 in 2021-22, 2022-23, 2023-24 (builder min 4.0; 2024-25 gives 4.17). Sikkim is 16th, 13th, 12th lowest of 34 over those years, with the top-two income each year. Income T019 Sikkim vs Goa: 4,66,518 vs 4,59,094 (+1.6%), 5,20,466 vs 5,32,854 (-2.3%), 5,87,743 vs 5,85,953 (+0.3%): all under 3%; builder checks both ratios at 0.98 (1.0031, 0.9970); no 'highest' claim because the lead over Goa is 0.3%. Rank correlation income vs electricity: 0.65 over 32 states (2023-24), 0.66 over 33 (2022-23), 0.68 over 33 (2021-22): a real link, so no weak_link; the line is 'tend to rise together ... exception'. Per person, not totals.",
   "verify_before_voicing": "Read the Central Electricity Authority per-capita availability table for 2023-24 (Sikkim 783.7, Goa 3,244.4, India 1,168.5). T138 notes say the per-capita figures use projected populations, and 'availability' is energy available to the state, not use, so keep 'Not use' on screen and give no reason (hydro exports, industry, tourism): the table shows how much, not why. The 'same income' line rests on a 0.3% gap; Sikkim and Goa have no 2024-25 income yet, so re-check when the next Handbook (about Dec 2026) fills that column. 2024-25 power figures already exist (Sikkim 820.1, Goa 3,417.6, 4.17x) if a newer year is wanted.",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "rewritten as px03 after review",
+  "lead_titles": [],
+  "review_title": "Sikkim vs Goa: Same Income, 4x the Electricity Available"
  },
  {
   "id": "b1hl01",
@@ -198,8 +211,9 @@
   "claim": "In 2023-24 Andhra Pradesh exported 2.51 times as much as Madhya Pradesh (4.5% of India's goods exports against 1.8%), and in 2024 West Bengal had 1.51 times Rajasthan's foreign tourist visits (14.9% of India's against 9.9%), with Haryana's meat output (1.52x Karnataka's) and Arunachal Pradesh's forest cover (1.30x Maharashtra's) also ahead of larger rivals.",
   "numbers_checked": "Replicated the builder's pick checks with python3 -I (exact column match, India row present, gap >= 1.5 points, ratio inside 'says'); all four rounds pass, and the winner is in the top card in two rounds and the bottom card in two (bottom, top, top, bottom). Winner zones (official zonal councils): Eastern, Northern, Southern, North-Eastern. Lower states all different. T182 foreign tourist visits (lakh, state rows = 100.0% of India in all three years): 2022 West Bengal 10.37 vs Rajasthan 3.97 (x2.61, gap 7.45 pts); 2023 27.07 vs 17.00 (x1.59, 5.23 pts); 2024 31.24 vs 20.72 (x1.508, 5.02 pts of India 209.42; shares 14.92% vs 9.89%). Growth test: West Bengal x1.154 and Rajasthan x1.219 against all-India x1.088, so neither 2024 figure is the 'all-India growth' estimate (Maharashtra, Delhi and Ladakh are, and are avoided). T090 meat (thousand t, rows = 100.0%): 641/665/691 Haryana vs 396/433/454 Karnataka; x1.62/1.54/1.522; gaps 2.64/2.37/2.31 pts; shares 6.74% vs 4.43%. T181 exports (US$ m, rows/India 97.9%/96.5%/97.1%; 2024-25 only 87.9% so not used): Andhra Pradesh 19,244/19,843/19,760 vs Madhya Pradesh 7,795/8,218/7,880; x2.47/2.41/2.508; gaps 2.74/2.60/2.72 pts; shares 4.52% vs 1.80%; same order in the thin 2024-25 column (20,782 vs 7,825). T099 forest cover (sq km, rows = 100.0%): 2019 66,688 vs 50,778 (x1.313), 2021* 65,973 vs 50,913 (x1.296), 2023* 65,882 vs 50,859 (x1.2954, gap 2.10 pts; shares 9.21% vs 7.11%). Displayed figures (one decimal): 31.2 vs 20.7 lakh; 6.9 vs 4.5 lakh t; 19.8 vs 7.9 US$ bn; 65.9 vs 50.9 thousand sq km. Voice lines all <= 13 words with no digits; screen lines <= 8 words; title 57 characters.",
   "verify_before_voicing": "Read at the publishers, not only the RBI Handbook. (1) India Tourism Statistics, Ministry of Tourism, 2024 edition: confirm West Bengal 31.24 and Rajasthan 20.72 lakh foreign tourist visits and read the footnote saying 2024 figures for some states are estimated by applying the all-India growth rate; our growth-rate test says West Bengal and Rajasthan are reported, not estimated, but the publisher must confirm. Say 'visits', never 'tourists' or 'people'. The lead is narrowing every year (x2.61, x1.59, x1.51), so a newer edition with 2025 data is likely and could narrow it again; re-run before publishing. (2) Basic Animal Husbandry Statistics (Dept of Animal Husbandry and Dairying): Haryana 691 vs Karnataka 454 thousand tonnes, 2023-24; a BAHS issue with 2024-25 data is likely already out. (3) Niryat portal, Department of Commerce: 2023-24 is used because the 2024-25 state split covers only 88% of India (Haryana, Delhi and Punjab collapse there), so check whether Niryat has re-issued state data and whether Andhra Pradesh still leads Madhya Pradesh. (4) India State of Forest Report 2023, Forest Survey of India: Arunachal Pradesh 65,882 vs Maharashtra 50,859 sq km; the 2023 figures are 'without normalisation factor' per the table note and the next biennial report (2025) is likely out or imminent, so confirm the order. Also confirm Arunachal Pradesh, Haryana and all eight state names are on the official-boundary map used by the builder (the map file was not available here to test).",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "reviewed 12 Oct 2026: fix first (3 must-fix); not voiced",
+  "lead_titles": [],
+  "review_title": "West Bengal or Rajasthan: More Foreign Visits? 4 Rounds"
  },
  {
   "id": "b1hl02",
@@ -209,8 +223,9 @@
   "claim": "Madhya Pradesh grew 20.4% of India's pulses in 2024-25 against Uttar Pradesh's 10.2% (1.99 times, held for three years), Punjab had 4.6% of the power available in 2024-25 against Bihar's 2.6% (1.75 times), Telangana grew 2.55 times Karnataka's cotton and Odisha produced 1.60 times Maharashtra's fish.",
   "numbers_checked": "Replicated the builder's pick checks with python3 -I; all four rounds pass; winner card position top, bottom, bottom, top. Winner zones: Northern (Punjab), Central (Madhya Pradesh), Eastern (Odisha), Southern (Telangana). Lower states all different (Bihar, Uttar Pradesh, Maharashtra, Karnataka). T139 power available (net crore units; state rows = 95.8%/95.8%/95.9% of the India row, just above the 95% rule): 2022-23 Punjab 6,922 vs Bihar 3,876 (x1.79, gap 2.02 pts); 2023-24 6,953 vs 4,092 (x1.70, 1.76 pts); 2024-25 7,742 vs 4,422 (x1.751, gap 1.96 pts of India 169,237; shares 4.57% vs 2.61%); scale 0.01 gives 77.4 vs 44.2 billion units. T061 pulses (thousand t, rows = 100.0%): Madhya Pradesh 6,267.4/5,974.2/5,237.9 vs Uttar Pradesh 2,842.6/3,114.5/2,631.1; x2.20/1.92/1.991; gaps 13.14/11.79/10.15 pts; shares 20.39% vs 10.24%; displayed 5.2 vs 2.6 million t. T093 fish (lakh t, rows = 99.8%, 2023-24 marked P): Odisha 9.90/10.52/11.24 vs Maharashtra 5.89/5.90/7.02; x1.68/1.78/1.601; gaps 2.47/2.63/2.29 pts; shares 6.11% vs 3.81%. T064 cotton (thousand bales of 170 kg, rows = 100.0%): Telangana 5,744.6/5,079.7/5,788.7 vs Karnataka 2,567.9/2,058.6/2,273.3; x2.24/2.47/2.546; gaps 9.44/9.29/11.83 pts; shares 19.47% vs 7.65%; displayed 5.8 vs 2.3 million bales. 'says' ranges: 1.7-1.8 (three quarters more), 1.9-2.1 (about double), 1.55-1.65 (sixty percent more), 2.4-2.7 (two and a half times). Voice lines <= 13 words, no digits; screen lines <= 8 words; title 57 characters.",
   "verify_before_voicing": "(1) Central Electricity Authority power supply position (Ministry of Power), 2024-25: confirm Punjab 7,742 and Bihar 4,422 net crore units (77.4 and 44.2 billion units). The table note is cut off in our copy and the source line was inferred from the sister table (T140); read the original note ('state totals may not tally with All India', DVC excluded). This is energy available for supply, not consumption and not per person. State rows are only 95.9% of the India row, which just clears the 95% rule. Data for 2025-26 is likely published by now; check whether Punjab still leads. (2) Ministry of Agriculture and Farmers' Welfare estimates for pulses and cotton, 2024-25: confirm they are the final estimates and not advance estimates; newer 2025-26 advance estimates likely exist. Cotton is in bales of 170 kg. Pulses lead of Madhya Pradesh over Uttar Pradesh swung x2.20, x1.92, x1.99 so keep the phrase 'about double'. (3) Handbook on Fisheries Statistics / Agricultural Statistics at a Glance: 2023-24 fish figures are provisional (P) and are marked so on screen; a revised 2023-24 or a 2024-25 figure is likely out, so recheck Odisha 11.24 vs Maharashtra 7.02 lakh t (Maharashtra was 5.90 the year before). (4) Confirm Punjab, Bihar, Odisha, Telangana and the other names are on the builder's map (not testable here).",
-  "status": "script written, number checks passed, not reviewed, not voiced",
-  "lead_titles": []
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
+  "lead_titles": [],
+  "review_title": "Telangana or Karnataka: Which Grows More Cotton? 4 Rounds"
  },
  {
   "id": "b1hl03",
@@ -223,11 +238,12 @@
   "claim": "In 2024-25 Rajasthan grew 21.4% of India's oilseeds against Uttar Pradesh's 7.2% (2.98 times), and in 2023-24 Uttarakhand's factories added 2.7% of India's factory net value added against Bihar's 0.7% (4.05 times), while Kerala held 2.10 times West Bengal's bank credit to agriculture in March 2025.",
   "numbers_checked": "Replicated the builder's pick checks with python3 -I; all four rounds pass; winner card position top, top, bottom, bottom. Winner zones: Southern (Kerala), Northern (Rajasthan), Central (Uttarakhand), Western (Gujarat). Lower states all different (West Bengal, Uttar Pradesh, Bihar, Tamil Nadu). T157 credit to agriculture (₹ crore, rows = 100.0%): 2023 Kerala 105,186 vs West Bengal 47,472 (x2.22, gap 3.03 pts); 2024 123,436 vs 58,452 (x2.11, 2.90 pts); 2025 131,050 vs 62,421 (x2.099, gap 2.84 pts of India 2,420,223; shares 5.41% vs 2.58%); displayed 131.1 vs 62.4 ₹ thousand crore. T063 oilseeds (thousand t, rows = 100.0%): Rajasthan 9,420.3/9,365.0/9,202.9 vs Uttar Pradesh 1,868.2/2,232.9/3,085.8; x5.04/4.19/2.982; gaps 18.26/17.98/14.23 pts; shares 21.41% vs 7.18%; displayed 9.2 vs 3.1 million t (ratio is narrowing as Uttar Pradesh rises, ordering unchanged). T127 factory net value added (₹ lakh, rows/India 98.4%/98.5%/98.6%): Uttarakhand 4,749,800/5,335,570/5,643,460 vs Bihar 1,129,830/1,439,410/1,394,120; x4.20/3.71/4.048; gaps 2.07/2.07/2.02 pts; shares 2.68% vs 0.66%; displayed 56.4 vs 13.9 ₹ thousand crore. T056 net irrigated area (thousand ha, rows = 100.0%, 2023-24 marked p): Gujarat 5,796/6,186/6,273 vs Tamil Nadu 2,930/2,921/2,885; x1.98/2.12/2.174; gaps 3.68/4.12/4.11 pts; displayed 6.3 vs 2.9 million ha. 'says' ranges: 2.05-2.15 (just over double), 2.9-2.995 (almost three times), 3.95-4.15 (four times), 2.1-2.25 (more than double). Voice lines <= 13 words, no digits; screen lines <= 8 words; title 59 characters.",
   "verify_before_voicing": "(1) Reserve Bank of India, Basic Statistical Returns of Scheduled Commercial Banks, March 2025: confirm Kerala 1,31,050 and West Bengal 62,421 ₹ crore agriculture credit outstanding, and read how the return assigns credit to a state (by location of the bank office versus place of utilisation); say nothing about why a state's figure is high. The March 2026 return may already be published, so recheck. (2) Ministry of Agriculture and Farmers' Welfare, oilseeds 2024-25 (nine oilseeds): Rajasthan 9,202.9 vs Uttar Pradesh 3,085.8 thousand t; the gap has narrowed three years running (x5.04, x4.19, x2.98), so a 2025-26 estimate could change 'almost three times'. (3) Annual Survey of Industries, MoSPI, 2023-24: net value added covers registered factories only; confirm Uttarakhand and Bihar figures and that the table's ASI note (reference period, Arunachal Pradesh inclusion) does not touch them; the result is sensitive to the measure (gap vs Assam is only 1.5 pts on net value added and 1.3 on gross value added, which is why Assam was not used). The next ASI release is likely. (4) Land Use Statistics at a Glance: 2023-24 is provisional (p) and is marked so on screen; confirm Gujarat 6,273 vs Tamil Nadu 2,885 thousand ha and look for a final figure or a 2024-25 column. (5) Bihar is the lower state here and in b1hl02 round 1; consider spacing the two episodes apart or swapping this factory round. (6) Confirm Uttarakhand, Kerala and the other names exist on the builder's map (not testable here).",
-  "status": "script written, number checks passed, not reviewed, not voiced",
+  "status": "reviewed 12 Oct 2026: fix first (2 must-fix); not voiced",
   "lead_titles": [
    "Rajasthan is higher than Uttar Pradesh: State-wise Production of Non-Foodgrains - Oilseeds (2024-25)",
    "Kerala is higher than West Bengal: State-wise Credit to Agriculture by Scheduled Commercial Banks (2025)"
-  ]
+  ],
+  "review_title": "Kerala or West Bengal: Bank Credit for Farming? 4 Rounds"
  },
  {
   "id": "px01",
@@ -239,7 +255,7 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": [
    "Bihar: low income per person, but at the top end on: Villages with 5G (%) (Feb 2026)"
   ]
@@ -255,7 +271,7 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": [
    "Uttar Pradesh has 49% of India's total: State-wise Production of Non-Foodgrains - Sugarcane (2024-25)",
    "Uttar Pradesh is above the next 3 states together: State-wise Production of Non-Foodgrains - Sugarcane (2024-25)"
@@ -273,7 +289,7 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": [
    "Andhra Pradesh has 28% of India's total: State-wise Fish Production (2023-24 (P))",
    "Andhra Pradesh is above the next 3 states together: State-wise Fish Production (2023-24 (P))",
@@ -290,7 +306,7 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": [
    "Rajasthan is higher than Gujarat: State-wise Milk Production (2023-24)"
   ]
@@ -303,7 +319,7 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": []
  },
  {
@@ -314,7 +330,136 @@
   "claim": null,
   "numbers_checked": null,
   "verify_before_voicing": null,
-  "status": "draft video built 11 Oct 2026, waiting for AK to watch",
+  "status": "week 1: draft video built 11 Oct 2026, waiting for AK to watch",
   "lead_titles": []
+ },
+ {
+  "id": "tn01",
+  "type": "then",
+  "lead_ids": [
+   "K0999"
+  ],
+  "title": "West Bengal's Share of India's Eggs: 6% to 11% in 10 Years",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "held: the Ministry's 2024-25 edition (BAHS 2025) must be read first",
+  "lead_titles": [
+   "West Bengal's share of India's total rose from 6% to 11%: State-wise Egg Production (2013-14 to 2023-24)"
+  ]
+ },
+ {
+  "id": "tn02",
+  "type": "then",
+  "lead_ids": [
+   "K0778"
+  ],
+  "title": "Telangana: 10th in Rice Output in 2014-15, 2nd in 2024-25",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Telangana's share of India's total rose from 3% to 9%: State-wise Area of Foodgrains - Rice (2014-15 to 2024-25)"
+  ]
+ },
+ {
+  "id": "tn03",
+  "type": "then",
+  "lead_ids": [
+   "K1035"
+  ],
+  "title": "Andhra Pradesh: Women Who Used the Internet, 21% to 64%",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Andhra Pradesh moved by +42.6 points: Women who have used the internet (NFHS-5 to NFHS-6; India +31.0)"
+  ]
+ },
+ {
+  "id": "tn04",
+  "type": "then",
+  "lead_ids": [
+   "K1034"
+  ],
+  "title": "Jammu and Kashmir: Homes With a Member Insured, 14% to 96%",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Jammu and Kashmir moved by +82.5 points: Homes with health insurance (NFHS-5 to NFHS-6; India +19.2)"
+  ]
+ },
+ {
+  "id": "tn05",
+  "type": "then",
+  "lead_ids": [
+   "K0967",
+   "K0607"
+  ],
+  "title": "Chhattisgarh's Rice Yield: Up 60% in 10 Years",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Chhattisgarh rose 1.6 times; the typical state 1.2 times: State-wise Estimates of Yield - Rice (2014-15 to 2024-25)",
+   "Chhattisgarh moved from rank 21 to 11 of 21: State-wise Estimates of Yield - Rice (2014-15 to 2024-25)"
+  ]
+ },
+ {
+  "id": "rc02",
+  "type": "race",
+  "lead_ids": [
+   "K0577"
+  ],
+  "title": "Rajasthan Took the Oilseed Lead From Madhya Pradesh",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Madhya Pradesh led in 2014-15; Rajasthan leads in 2024-25: State-wise Production of Non-Foodgrains - Oilseeds"
+  ]
+ },
+ {
+  "id": "px02",
+  "type": "paradox",
+  "lead_ids": [],
+  "title": "Kerala, Maharashtra: Same Income, 2x Rural Construction Wage",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": []
+ },
+ {
+  "id": "px03",
+  "type": "paradox",
+  "lead_ids": [],
+  "title": "Sikkim vs Goa: Same Income, 4x the Electricity Available",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": []
+ },
+ {
+  "id": "sh02",
+  "type": "share",
+  "lead_ids": [
+   "K0024"
+  ],
+  "title": "Maharashtra: 36% of India's Cotton Area, 25% of the Crop",
+  "claim": null,
+  "numbers_checked": null,
+  "verify_before_voicing": null,
+  "status": "week 1",
+  "lead_titles": [
+   "Maharashtra has 36% of India's total: State-wise Area of Non-Foodgrains - Cotton (Lint) (2024-25)"
+  ]
  }
 ]

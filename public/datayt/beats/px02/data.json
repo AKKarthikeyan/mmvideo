@@ -1,0 +1,361 @@
+{
+ "id": "px02",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "Labour Bureau · RBI · 2023-24",
+ "source": "Wages: average daily wage rates in rural India, men, construction workers, 2023-24, Labour Bureau (Indian Labour Journal), as published in the RBI Handbook of Statistics on Indian States, Table 112 (20 states with data). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs with data).",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Same income per person.",
+    "*Kerala's* construction wage:",
+    "*over double* Maharashtra's."
+   ],
+   "vo": "Same income per person, yet Kerala's rural construction wage is over double Maharashtra's.",
+   "geo": "Kerala",
+   "name": "Kerala",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹2,81,269",
+   "text": "a year. Maharashtra: ₹2,78,681. Level.",
+   "sub": "State output per person (net state domestic product), current prices. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "₹2,81,269",
+     "frac": 1.0
+    },
+    {
+     "name": "Maharashtra",
+     "label": "₹2,78,681",
+     "frac": 0.9907988438114403
+    }
+   ],
+   "vo": "Two lakh eighty-one thousand rupees a year, level with Maharashtra's.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2023-24",
+   "big": "₹894",
+   "text": "a day for men in rural construction. The highest of 20 states with data.",
+   "sub": "Average daily wage rate. Labour Bureau, via RBI.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "₹894",
+     "frac": 0.8936000000000001
+    },
+    {
+     "name": "India",
+     "label": "₹417",
+     "frac": 0.4173
+    }
+   ],
+   "vo": "Kerala's rural construction wage for men: eight hundred and ninety-four rupees a day.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2023-24",
+   "big": "₹390",
+   "text": "a day. Kerala's is 2.3 times that, at the same income per person.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "₹390",
+     "frac": 0.3896
+    },
+    {
+     "name": "India",
+     "label": "₹417",
+     "frac": 0.4173
+    }
+   ],
+   "vo": "Maharashtra, same income: three hundred and ninety rupees. Kerala's is over double.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across states, income and",
+    "rural wage rates tend",
+    "to rise together.",
+    "*Kerala* sits far above."
+   ],
+   "vo": "Income and rural wages tend to rise together. Kerala sits far above.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Rural construction wage, *20 states*",
+   "sub": "₹ a day, men · 2023-24 · all 20 together: ₹417.3",
+   "note": "Men in rural construction only. A wage rate, not income. Other states have no figure.",
+   "anim": true,
+   "ring": [
+    "Kerala",
+    "Maharashtra"
+   ],
+   "vo": "Twenty states have data. Daily wage rates, men, rural construction.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Men in rural construction only. A wage rate, not income. Other states have no figure.",
+   "ring": [
+    "Kerala",
+    "Maharashtra"
+   ],
+   "q": "Is *your state* on the map?",
+   "sub": "20 states have data. Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state on the map?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Madhya Pradesh",
+   "label": "292.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Tripura",
+   "label": "322.2",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Gujarat",
+   "label": "344.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Manipur",
+   "label": "350",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Odisha",
+   "label": "355.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "West Bengal",
+   "label": "356.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Bihar",
+   "label": "365.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "376.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Meghalaya",
+   "label": "388.2",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Maharashtra",
+   "label": "389.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Assam",
+   "label": "398.4",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Punjab",
+   "label": "424.8",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Rajasthan",
+   "label": "432.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Karnataka",
+   "label": "457.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Haryana",
+   "label": "493",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "524.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "526.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "539.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "552.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Kerala",
+   "label": "893.6",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.616
+  }
+ ],
+ "checked": [
+  "Kerala is the highest of 20 with data (₹894)",
+  "Kerala 893.6 rounds to 894",
+  "Maharashtra 389.6 rounds to 390",
+  "Maharashtra 278681 rounds to 278681",
+  "Kerala / Maharashtra = 2.29 (at least 2.2)",
+  "Kerala / Jammu and Kashmir = 1.62 (at least 1.5)",
+  "Kerala / Maharashtra = 1.01 (at least 0.98)",
+  "Maharashtra / Kerala = 0.99 (at least 0.98)"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "Kerala, Maharashtra: Same Income, 2x Rural Construction Wage"
+}

@@ -1,0 +1,500 @@
+{
+ "id": "px03",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "CEA · RBI · 2023-24",
+ "source": "Electricity: per capita availability of power, kilowatt-hours, 2023-24, Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138 (34 states and UTs). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs; Gujarat has no figure).",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Same income per person.",
+    "*Goa*: four times *Sikkim's*",
+    "electricity available."
+   ],
+   "vo": "Same income per person, yet Goa has four times Sikkim's electricity available.",
+   "geo": "Sikkim",
+   "name": "Sikkim",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Sikkim",
+   "geo": "Sikkim",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹5,87,743",
+   "text": "a year. Goa: ₹5,85,953. Level.",
+   "sub": "State output per person (net state domestic product), current prices. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Sikkim",
+     "label": "₹5,87,743",
+     "frac": 1.0
+    },
+    {
+     "name": "Goa",
+     "label": "₹5,85,953",
+     "frac": 0.9969544511801927
+    }
+   ],
+   "vo": "Five lakh eighty-eight thousand rupees a year, level with Goa's.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Sikkim",
+   "geo": "Sikkim",
+   "kicker": "POWER AVAILABLE PER PERSON",
+   "big": "783.7",
+   "text": "kilowatt-hours a year available per person. Below India.",
+   "sub": "Per capita availability of power, 2023-24. CEA, via RBI. Not use.",
+   "bars": [
+    {
+     "name": "Sikkim",
+     "label": "783.7",
+     "frac": 0.22391428571428573
+    },
+    {
+     "name": "India",
+     "label": "1,168.5",
+     "frac": 0.33385714285714285
+    }
+   ],
+   "vo": "Electricity available per person: seven hundred and eighty-four kilowatt-hours, below India's.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Goa",
+   "geo": "Goa",
+   "kicker": "POWER AVAILABLE PER PERSON",
+   "big": "3,244.4",
+   "text": "kilowatt-hours a year. Four times Sikkim's, at the same income.",
+   "sub": "2023-24. In 2022-23: 3.5 times.",
+   "bars": [
+    {
+     "name": "Goa",
+     "label": "3,244.4",
+     "frac": 0.9269714285714286
+    },
+    {
+     "name": "India",
+     "label": "1,168.5",
+     "frac": 0.33385714285714285
+    }
+   ],
+   "vo": "Goa, same income: three thousand two hundred and forty-four. Four times as much.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across states, income and",
+    "electricity available",
+    "tend to rise together.",
+    "*Sikkim* is an exception."
+   ],
+   "vo": "Income and electricity available tend to rise together. Sikkim is an exception.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Electricity available per person, *every state*",
+   "sub": "kWh a year · India 1,168.5 · 2023-24",
+   "note": "Power available to the state, industry included. Not what people use.",
+   "anim": true,
+   "ring": [
+    "Sikkim",
+    "Goa"
+   ],
+   "vo": "Here is every state. This counts electricity available, not what people use.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Power available to the state, industry included. Not what people use.",
+   "ring": [
+    "Sikkim",
+    "Goa"
+   ],
+   "q": "Is *your state* above or below India?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state above or below India?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Manipur",
+   "label": "313.4",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Bihar",
+   "label": "322.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.43
+  },
+  {
+   "name": "Assam",
+   "label": "345.5",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.542
+  },
+  {
+   "name": "Jharkhand",
+   "label": "351.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.654
+  },
+  {
+   "name": "Tripura",
+   "label": "407.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.766
+  },
+  {
+   "name": "Nagaland",
+   "label": "412",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.878
+  },
+  {
+   "name": "Mizoram",
+   "label": "549.3",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.99
+  },
+  {
+   "name": "Meghalaya",
+   "label": "618.1",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.102
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "629.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.214
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "646.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.325
+  },
+  {
+   "name": "West Bengal",
+   "label": "681.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.437
+  },
+  {
+   "name": "Sikkim",
+   "label": "783.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.549
+  },
+  {
+   "name": "Kerala",
+   "label": "864.8",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.661
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "869.6",
+   "bucket": 1,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 32.773
+  },
+  {
+   "name": "Odisha",
+   "label": "893.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.885
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "918.1",
+   "bucket": 2,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.997
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "1,145.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.109
+  },
+  {
+   "name": "Rajasthan",
+   "label": "1,318.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "1,321.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.333
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1,334.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.445
+  },
+  {
+   "name": "Karnataka",
+   "label": "1,387.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.557
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "1,452.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.669
+  },
+  {
+   "name": "Chandigarh",
+   "label": "1,454.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 33.781
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "1,507.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.893
+  },
+  {
+   "name": "Maharashtra",
+   "label": "1,637.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.005
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "1,641.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.117
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "1,662.1",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.228
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "1,710",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.34
+  },
+  {
+   "name": "Gujarat",
+   "label": "2,038.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.452
+  },
+  {
+   "name": "Puducherry",
+   "label": "2,102.1",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.564
+  },
+  {
+   "name": "Haryana",
+   "label": "2,106.7",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.676
+  },
+  {
+   "name": "Telangana",
+   "label": "2,221.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.788
+  },
+  {
+   "name": "Punjab",
+   "label": "2,262.6",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.9
+  },
+  {
+   "name": "Goa",
+   "label": "3,244.4",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 35.012
+  }
+ ],
+ "checked": [
+  "Sikkim 783.7 rounds to 784",
+  "Goa 3244.4 rounds to 3244",
+  "Goa 585953 rounds to 585953",
+  "Goa / Sikkim = 4.14 (at least 4.0)",
+  "Goa / Sikkim = 3.45 (at least 3.4)",
+  "Sikkim / Goa = 1.00 (at least 0.98)",
+  "Goa / Sikkim = 1.00 (at least 0.98)"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "Sikkim vs Goa: Same Income, 4x the Electricity Available"
+}

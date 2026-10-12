@@ -1,0 +1,226 @@
+{
+ "id": "px02",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "Labour Bureau · RBI · 2023-24",
+ "palette": "C",
+ "state": "Kerala",
+ "source": "Wages: average daily wage rates in rural India, men, construction workers, 2023-24, Labour Bureau (Indian Labour Journal), as published in the RBI Handbook of Statistics on Indian States, Table 112 (20 states with data). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs with data).",
+ "hook": [
+  "Same income per person.",
+  "*Kerala's* construction wage:",
+  "*over double* Maharashtra's."
+ ],
+ "hook_vo": "Same income per person, yet Kerala's rural construction wage is over double Maharashtra's.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Maharashtra"
+   ],
+   "text": "a year. Maharashtra: ₹2,78,681. Level.",
+   "sub": "State output per person (net state domestic product), current prices. {n} states and UTs with data.",
+   "vo": "Two lakh eighty-one thousand rupees a year, level with Maharashtra's."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2023-24",
+   "data": {
+    "rbi": [
+     112,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 1000,
+   "text": "a day for men in rural construction. The highest of {n} states with data.",
+   "sub": "Average daily wage rate. Labour Bureau, via RBI.",
+   "vo": "Kerala's rural construction wage for men: eight hundred and ninety-four rupees a day."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "RURAL CONSTRUCTION WAGE · 2023-24",
+   "data": {
+    "rbi": [
+     112,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 1000,
+   "text": "a day. Kerala's is 2.3 times that, at the same income per person.",
+   "vo": "Maharashtra, same income: three hundred and ninety rupees. Kerala's is over double."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     112,
+     "2023-24"
+    ]
+   },
+   "equals": 894
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "rbi": [
+     112,
+     "2023-24"
+    ]
+   },
+   "equals": 390
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 278681
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 2.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Jammu and Kashmir",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 1.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  }
+ ],
+ "so": {
+  "lines": [
+   "Across states, income and",
+   "rural wage rates tend",
+   "to rise together.",
+   "*Kerala* sits far above."
+  ],
+  "vo": "Income and rural wages tend to rise together. Kerala sits far above."
+ },
+ "map": {
+  "data": {
+   "rbi": [
+    112,
+    "2023-24"
+   ]
+  },
+  "unit": "",
+  "title": "Rural construction wage, *20 states*",
+  "sub": "₹ a day, men · 2023-24 · all 20 together: ₹{india}",
+  "note": "Men in rural construction only. A wage rate, not income. Other states have no figure.",
+  "ring": [
+   "Kerala",
+   "Maharashtra"
+  ],
+  "vo": "Twenty states have data. Daily wage rates, men, rural construction."
+ },
+ "end": {
+  "q": "Is *your state* on the map?",
+  "sub": "20 states have data. Comment below.",
+  "vo": "Is your state on the map?"
+ },
+ "yt_title": "Kerala, Maharashtra: Same Income, 2x Rural Construction Wage"
+}

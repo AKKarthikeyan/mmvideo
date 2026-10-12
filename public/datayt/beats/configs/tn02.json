@@ -3,7 +3,7 @@
  "type": "then",
  "rules": 2,
  "chip": "{years} YEARS ON",
- "source_short": "Agriculture Ministry · 2014-15 to 2024-25",
+ "source_short": "Agriculture Ministry · 2014-15 to 2024-25 final estimates",
  "palette": "D",
  "state": "Telangana",
  "table": 58,
@@ -16,20 +16,20 @@
   "rank_then": 10,
   "rank_now": 2
  },
- "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 58: production of rice, thousand tonnes, shown here in lakh tonnes. Each share is of the all-India figure in the same table.",
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 58: production of rice, thousand tonnes, shown here in lakh tonnes. Each share is of the all-India figure in the same table. The 2024-25 column is the Ministry's final estimate.",
  "hook": [
-  "*Telangana*: 10th in rice",
+  "*Telangana*: 10th in rice output",
   "in 2014-15.",
-  "*2nd* in 2024-25."
+  "*Top three* in 2024-25."
  ],
- "hook_vo": "Telangana ranked tenth in rice. Ten years on, second.",
+ "hook_vo": "Telangana ranked tenth in rice output. Ten years on, top three.",
  "then": {
   "text": "of India's rice: *44 lakh tonnes*",
   "vo": "Its share of India's rice then: about four percent. Forty-four lakh tonnes."
  },
  "now": {
-  "text": "174 lakh tonnes: almost four times the 2014-15 harvest.",
-  "vo": "Ten years on, nearly twelve percent. Almost four times the harvest."
+  "text": "of India's rice: *174 lakh tonnes*",
+  "vo": "Ten years on, over eleven percent. A hundred seventy-four lakh tonnes."
  },
  "facts": [
   {
@@ -105,7 +105,7 @@
     }
    ],
    "bar_max": 4.5,
-   "sub": "India: 1,048 to 1,502 lakh tonnes.",
+   "sub": "India: 1,048 to 1,502 lakh tonnes. Telangana, 2013-14: 58.",
    "vo": "India's rice harvest grew by less than half. Telangana's almost quadrupled."
   }
  ],
@@ -113,11 +113,11 @@
   {
    "lines": [
     "Over a *quarter* of India's",
-    "extra rice came from",
-    "*one state.*"
+    "extra rice since 2014-15",
+    "came from *Telangana*."
    ],
-   "note": "Rice produced, not rice eaten. Uttar Pradesh is first in 2024-25. The table shows how much, not why.",
-   "vo": "More than a quarter of India's extra rice came from this one state."
+   "note": "Uttar Pradesh is first in 2024-25; Telangana was first in 2023-24. The table shows how much, not why.",
+   "vo": "More than a quarter of India's extra rice came from Telangana."
   }
  ],
  "tests": [
@@ -147,7 +147,7 @@
    "equals": 44
   },
   {
-   "says": "nearly twelve percent in 2024-25",
+   "says": "over eleven percent in 2024-25",
    "value": {
     "share": {
      "rbi": [
@@ -156,7 +156,7 @@
      ]
     }
    },
-   "min": 11.5,
+   "min": 11.0,
    "max": 11.99
   },
   {
@@ -329,6 +329,256 @@
    },
    "min": 1.0,
    "max": 5
+  },
+  {
+   "says": "Telangana was first in 2023-24: above Uttar Pradesh",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2023-24"
+       ]
+      },
+      "state": "Uttar Pradesh"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 3
+  },
+  {
+   "says": "West Bengal grew its harvest, 2014-15 to 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2014-15"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 1.05,
+   "max": 1.13
+  },
+  {
+   "says": "Andhra Pradesh grew its harvest, 2014-15 to 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2014-15"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     }
+    ]
+   },
+   "min": 1.1,
+   "max": 1.16
+  },
+  {
+   "says": "Odisha grew its harvest, 2014-15 to 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      },
+      "state": "Odisha"
+     },
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2014-15"
+       ]
+      },
+      "state": "Odisha"
+     }
+    ]
+   },
+   "min": 1.12,
+   "max": 1.18
+  },
+  {
+   "says": "Punjab grew its harvest, 2014-15 to 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2014-15"
+       ]
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.25,
+   "max": 1.33
+  },
+  {
+   "says": "top three in 2024-25: at least 1.8 points of India's total ahead of the fourth state, Punjab",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.8,
+   "max": 2.3
+  },
+  {
+   "says": "top three in 2023-24 as well: ahead of Punjab",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2023-24"
+       ]
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 4
+  },
+  {
+   "says": "top three in 2022-23 as well: ahead of Punjab",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        58,
+        "2022-23"
+       ]
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 4
+  },
+  {
+   "says": "Telangana, 2013-14: 58 lakh tonnes",
+   "value": {
+    "data": {
+     "rbi": [
+      58,
+      "2013-14"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 58
+  },
+  {
+   "says": "from 2013-14 the harvest is about three times, not four",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        58,
+        "2013-14"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.9,
+   "max": 3.1
   }
  ],
  "map": {
@@ -338,15 +588,20 @@
    0.3,
    1
   ],
-  "title": "Share of India's rice: *each state's change*",
+  "title": "Share of India's rice: *who gained, who lost*",
   "sub": "points of India's production · {from} to {to}",
-  "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh). Rice produced, not rice eaten.",
-  "vo": "Here is every state's change in share. Rice produced, not rice eaten."
+  "note": "A lower share can come with more tonnes. State totals, not per person. Blank: Jammu and Kashmir (boundary changed) or not in the table.",
+  "vo": "Every state's change in share. Lower share can mean more tonnes.",
+  "key": [
+   "lost share",
+   "within 0.3 points",
+   "gained share"
+  ]
  },
  "end": {
-  "q": "Where does *your state* stand on this map?",
-  "sub": "Comment your state.",
-  "vo": "Where does your state stand on this map?"
+  "q": "Did *your state* gain or lose rice share?",
+  "sub": "Comment its number.",
+  "vo": "Did your state gain or lose rice share?"
  },
- "yt_title": "Telangana: 10th in Rice in 2014-15, 2nd in 2024-25"
+ "yt_title": "Telangana: 10th in Rice in 2014-15, Top Three in 2024-25"
 }

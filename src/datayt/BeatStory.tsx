@@ -325,7 +325,7 @@ const Shift: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
         transform: `scale(${0.7 + 0.3 * q})`, transformOrigin: "left center", opacity: Math.min(1, q * 1.5)}}>{B.label}</div>
       {bar(1062 + sizeB + 14, B.frac, D.accent, f0 + 12)}
       <div style={{position: "absolute", left: 60, right: 60, top: 1062 + sizeB + 70, fontFamily: SANS, fontWeight: 600, fontSize: 34, lineHeight: 1.3, color: P.ink,
-        opacity: ease(f, f0 + 34, f0 + 42)}}>{b.text}</div>
+        opacity: ease(f, f0 + 34, f0 + 42)}}><Rich text={b.text ?? ""} acc={D.accent}/></div>
     </>}
   </AbsoluteFill>;
 };

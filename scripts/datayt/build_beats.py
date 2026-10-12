@@ -26,8 +26,8 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
               from the dates in the config
 
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
-({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table and
-{"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States.
+({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table,
+{"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States and {"ls": [table id, column]} for a state table from a Lok Sabha answer.
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
 Run from the repo root: python3 scripts/datayt/build_beats.py <id> [...]
@@ -77,6 +77,12 @@ def series(spec):
     if "gw" in spec:      # the 2025 ground water assessment table: recharge, extractable, extraction, stage
         d = json.load(open(GROUNDWATER)); k = spec["gw"]
         return {s: r[k] for s, r in d["states"].items()}, d["published_total_row"][k]
+    if "ls" in spec:      # a state table parsed from a Lok Sabha answer (scripts/datayt/parse_loksabha.py): [table id, column number from 0]
+        tid, col = spec["ls"]
+        t = next(x for x in json.load(open(f"public/datayt/sources/loksabha/tables/{tid.split('-')[1]}.json"))["tables"] if x["id"] == tid)
+        v = {s: r[col] for s, r in t["rows"].items() if col < len(r) and isinstance(r[col], (int, float))}
+        tot = (t.get("total") or [None] * (col + 1))[col] if t.get("total") and col < len(t["total"]) else None
+        return v, tot if tot is not None else (sum(v.values()) if spec.get("sum") else None)      # "sum": the answer prints no total row, and its rows are the whole country
     if "rbi" in spec:
         no, year = spec["rbi"]
         t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(no):03d}.json"))
@@ -295,7 +301,11 @@ def build(cfg):
         st0 = cfg["state"]; checked = []
         beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})
         for i, c in enumerate(cfg["facts"]):
-            vals, india = series(c["data"]); st = c["state"]; v = find(vals, st); u = c.get("unit", "%")
+            vals, india = series(c["data"]); st = c["state"]; u = c.get("unit", "%")
+            if c.get("as") == "share":      # each state's share of the all-India figure, in percent
+                assert india, f"{sid} fact {i + 1}: no all-India figure to take a share of"
+                vals, india = {s_: 100 * x / india for s_, x in vals.items()}, 100.0
+            v = find(vals, st)
             if c.get("claim") in ("highest", "lowest"):
                 rk = sorted(vals.values(), reverse=c["claim"] == "highest")
                 assert rk[0] == v and rk[0] != rk[1], f"{sid} fact {i + 1}: {st} is not the {c['claim']} ({v} vs {rk[:3]})"
@@ -336,6 +346,9 @@ def build(cfg):
             ctx = {"n": n, "rho": f"{rho:.2f}"}; checked.append(f"rank correlation across {n} states = {rho:.2f}")
         beats.append({"kind": "say", "lines": [l.format(**ctx) for l in so["lines"]], "vo": so["vo"].format(**ctx)})
         m = cfg["map"]; vals, india = series(m["data"]); unit = m.get("unit", "%")
+        if m.get("as") == "share":
+            assert india, f"{sid}: the map has no all-India figure to take a share of"
+            vals, india = {s_: 100 * x / india for s_, x in vals.items()}, None
         asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
         extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], ""), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
         missing = {x["name"] for x in extra["map"]} - set(GEO)

@@ -105,3 +105,17 @@ state in the earlier survey), a card of our own reading under `so`, then every s
     sheets; list the exact cells for a person to re-read in the PDF.
 15. Run `python3 scripts/datayt/build_beats.py --check <id>` from the repo folder until it passes. It runs the number
     tests and the house rules and estimates the length (30 to 45 seconds; aim for 35 to 41).
+
+## Lok Sabha answers as a source
+- The state tables parsed from answers are in `public/datayt/sources/loksabha/tables/s<N>.json`: each has `id`, `ministry`,
+  `subject`, `date`, `url`, `title_lines`, `header_lines`, `rows` ({state: [values]}) and `total`. Code parsed them and does
+  not know what a column means. Read the answer's own text before using a table: what was asked, what each column counts,
+  the unit, the period, the footnotes, whether the rows are the whole country and whether a total row is printed.
+- Data spec: `{"ls": ["<table id>", <column number from 0>]}`. Add `"sum": true` only when the answer prints no total and the
+  rows cover every state and UT. For a state's share of the all-India figure on a fact card or the map, add `"as": "share"`.
+- Look for a newer answer on the same subject with `python3 scripts/datayt/ls_find.py <words>` and use the newest one that
+  has the table.
+- Say whose figure it is and when: `source_short` is "Ministry of X · Lok Sabha answer, <date>", and the period is the one
+  the table states. A count kept by a ministry (registered, sanctioned, reported by states) is said as that, not as a census.
+- Scheme tables (funds released, beneficiaries, posts, projects sanctioned) are not stories. Use answers that count something
+  a viewer can picture.

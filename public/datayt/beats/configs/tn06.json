@@ -1,0 +1,185 @@
+{
+  "id": "tn06",
+  "type": "then",
+  "rules": 2,
+  "chip": "{years} YEARS ON",
+  "source_short": "Central Electricity Authority · 2014-15 to 2024-25",
+  "palette": "A",
+  "state": "Bihar",
+  "table": 138,
+  "from": "2014-15",
+  "to": "2024-25",
+  "measure": "value",
+  "unit": " kWh",
+  "delta": "times",
+  "kicker": "POWER AVAILABLE PER PERSON · KWH A YEAR",
+  "expect": {
+    "years": 10
+  },
+  "source": "Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138: per capita availability of power, kilowatt-hours a year. This is power available (net units), not power used. Per-person figures use the population projections the Handbook cites.",
+  "hook": [
+    "*Bihar*: electricity available",
+    "per person *doubled*,",
+    "2014-15 to 2024-25."
+  ],
+  "hook_vo": "Bihar's electricity available per person doubled in ten years.",
+  "then": {
+    "text": "a year for each person. *1 kWh* is one unit on a bill.",
+    "vo": "In twenty fourteen-fifteen: about one hundred seventy units a year for each person."
+  },
+  "now": {
+    "text": "a year for each person: *{times} times* the 2014-15 figure.",
+    "vo": "Ten years on: about three hundred forty-four units."
+  },
+  "facts": [
+    {
+      "kicker": "POWER PER PERSON · 2014-15 TO 2024-25",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [138, "2024-25"]}},
+          {"data": {"rbi": [138, "2014-15"]}}
+        ]
+      },
+      "unit": "×",
+      "text": "Bihar's electricity per person",
+      "bars": [
+        {
+          "name": "Bihar",
+          "ratio": [
+            {"data": {"rbi": [138, "2024-25"]}},
+            {"data": {"rbi": [138, "2014-15"]}}
+          ],
+          "unit": "×"
+        },
+        {
+          "name": "India",
+          "ratio": [
+            {"data": {"rbi": [138, "2024-25"]}, "state": "India"},
+            {"data": {"rbi": [138, "2014-15"]}, "state": "India"}
+          ],
+          "unit": "×"
+        }
+      ],
+      "bar_max": 2.5,
+      "sub": "India: 819 to 1,208 kWh a year. +48% against Bihar's +102%.",
+      "vo": "India's figure rose forty-eight percent. Bihar's rose a hundred and two percent."
+    }
+  ],
+  "says": [
+    {
+      "lines": [
+        "Bihar as a share of India's figure:",
+        "*21%* in 2014-15,",
+        "*28%* in 2024-25."
+      ],
+      "note": "Available power per person, not use. Single years: 2022-23 to 2024-25 were 310, 323 and 344 kWh. The table shows how much, not why.",
+      "vo": "Measured against India's figure, Bihar rose from twenty-one percent to twenty-eight."
+    }
+  ],
+  "tests": [
+    {
+      "says": "about 170 units (kWh) a person in 2014-15",
+      "value": {"data": {"rbi": [138, "2014-15"]}},
+      "equals": 170
+    },
+    {
+      "says": "about 344 units (kWh) a person in 2024-25",
+      "value": {"data": {"rbi": [138, "2024-25"]}},
+      "equals": 344
+    },
+    {
+      "says": "doubled: 2.0 times",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [138, "2024-25"]}},
+          {"data": {"rbi": [138, "2014-15"]}}
+        ]
+      },
+      "min": 1.95,
+      "max": 2.1
+    },
+    {
+      "says": "India 819 kWh in 2014-15",
+      "value": {"data": {"rbi": [138, "2014-15"]}, "state": "India"},
+      "equals": 819
+    },
+    {
+      "says": "India 1,208 kWh in 2024-25",
+      "value": {"data": {"rbi": [138, "2024-25"]}, "state": "India"},
+      "equals": 1208
+    },
+    {
+      "says": "India's figure rose forty-eight percent",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"rbi": [138, "2024-25"]}, "state": "India"},
+            {"data": {"rbi": [138, "2014-15"]}, "state": "India"}
+          ]},
+          {"data": {"rbi": [138, "2014-15"]}, "state": "India"}
+        ],
+        "scale": 100
+      },
+      "equals": 48
+    },
+    {
+      "says": "Bihar's figure rose a hundred and two percent",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"rbi": [138, "2024-25"]}},
+            {"data": {"rbi": [138, "2014-15"]}}
+          ]},
+          {"data": {"rbi": [138, "2014-15"]}}
+        ],
+        "scale": 100
+      },
+      "equals": 102
+    },
+    {
+      "says": "21% of India's figure in 2014-15",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [138, "2014-15"]}},
+          {"data": {"rbi": [138, "2014-15"]}, "state": "India"}
+        ],
+        "scale": 100
+      },
+      "equals": 21
+    },
+    {
+      "says": "28% of India's figure in 2024-25",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [138, "2024-25"]}},
+          {"data": {"rbi": [138, "2024-25"]}, "state": "India"}
+        ],
+        "scale": 100
+      },
+      "equals": 28
+    },
+    {
+      "says": "2022-23: 310 kWh",
+      "value": {"data": {"rbi": [138, "2022-23"]}},
+      "equals": 310
+    },
+    {
+      "says": "2023-24: 323 kWh",
+      "value": {"data": {"rbi": [138, "2023-24"]}},
+      "equals": 323
+    }
+  ],
+  "map": {
+    "bands": [25, 40, 55, 80],
+    "title": "Power per person: *each state's change*",
+    "sub": "% change in kWh a person · {from} to {to} · India +48%",
+    "note": "Available power per person, not use. Blank: Jammu and Kashmir (boundary changed); Ladakh and Dadra, Nagar Haveli, Daman and Diu (not in the table).",
+    "vo": "Here is every state's change over the ten years."
+  },
+  "end": {
+    "q": "Did *your state* double too?",
+    "sub": "Find it on the map.",
+    "vo": "Did your state double too?"
+  },
+  "yt_title": "Bihar: Electricity Available per Person Doubled in 10 Years"
+}

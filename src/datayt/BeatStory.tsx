@@ -93,7 +93,7 @@ const Spot: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
     <div style={{position: "absolute", left: 60, right: 60, top: 160}}>
       {(b.lines ?? []).map((l, i) => {
         const q = pop(f, f0 - 10 + i * 5);
-        return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 132, 960, 0.47), lineHeight: 1.04, color: P.ink,
+        return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 132, 960, 0.5), lineHeight: 1.04, color: P.ink,
           opacity: Math.min(1, q * 1.4), transform: `translateY(${(1 - q) * 40}px)`}}><Rich text={l} acc={D.accent}/></div>;
       })}
     </div>

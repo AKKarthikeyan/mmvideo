@@ -1,0 +1,564 @@
+{
+ "id": "fa05",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "RBI · Handbook · end-March 2025",
+ "source": "Reserve Bank of India, Basic Statistical Returns of Scheduled Commercial Banks in India, as published in the RBI Handbook of Statistics on Indian States, Table 154: credit-deposit ratio of scheduled commercial banks by place of utilisation, as at end-March 2019 to 2025 (credit used in the state as a percentage of deposits held in the state).",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Andhra Pradesh*: bank loans",
+    "*157%* of deposits, 2025:",
+    "*1.3×* the next state's."
+   ],
+   "vo": "Andhra Pradesh: loans used were one hundred fifty-seven percent of deposits.",
+   "geo": "Andhra Pradesh",
+   "name": "Andhra Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "kicker": "LOANS AS A SHARE OF DEPOSITS · END-MARCH 2025",
+   "big": "157.2%",
+   "text": "credit-deposit ratio: ₹157 of loans used in the state per ₹100 of deposits held there. The highest of 35 states and UTs with data.",
+   "sub": "Scheduled commercial banks, by place of utilisation. A ratio, not a verdict on lending.",
+   "bars": [
+    {
+     "name": "Andhra Pradesh",
+     "label": "157.2%",
+     "frac": 0.7859999999999999
+    },
+    {
+     "name": "India",
+     "label": "80.1%",
+     "frac": 0.40049999999999997
+    }
+   ],
+   "vo": "Highest credit-deposit ratio of thirty-five states and territories. India's was eighty.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "THE NEXT STATES · END-MARCH 2025",
+   "big": "120.5%",
+   "text": "is Tamil Nadu's ratio, level with Telangana's: the next highest after Andhra Pradesh.",
+   "sub": "Credit-deposit ratio, by place of utilisation.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "120.5%",
+     "frac": 0.6025
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "157.2%",
+     "frac": 0.7859999999999999
+    }
+   ],
+   "vo": "Tamil Nadu and Telangana come next, level with each other.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "kicker": "AT END-MARCH 2019",
+   "big": "124.3%",
+   "text": "in 2019: also the highest, ahead of Chandigarh.",
+   "sub": "Credit-deposit ratio, by place of utilisation. At end-March 2018 it was 114%, level with Chandigarh and Telangana.",
+   "bars": [
+    {
+     "name": "Andhra Pradesh",
+     "label": "124.3%",
+     "frac": 0.6214999999999999
+    },
+    {
+     "name": "Chandigarh",
+     "label": "114.1%",
+     "frac": 0.5705
+    }
+   ],
+   "vo": "At end-March twenty nineteen it was already the highest: one hundred twenty-four.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Andhra Pradesh was *the highest*",
+    "in each of the *seven years*,",
+    "end-March 2019 to 2025."
+   ],
+   "vo": "Highest in each of the seven years, twenty nineteen to twenty twenty-five.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Loans as a share of deposits, *every state*",
+   "sub": "% · India 80.1% · end-March 2025",
+   "note": "Credit-deposit ratio by place of utilisation: 100 means loans equal deposits. Not a verdict on lending. Blank: no figure.",
+   "anim": true,
+   "ring": [
+    "Andhra Pradesh",
+    "Tamil Nadu"
+   ],
+   "vo": "Every state's loans as a share of deposits held.",
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "note": "Credit-deposit ratio by place of utilisation: 100 means loans equal deposits. Not a verdict on lending. Blank: no figure.",
+   "ring": [
+    "Andhra Pradesh",
+    "Tamil Nadu"
+   ],
+   "q": "Which side of *100* is your state?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which side of one hundred is your state?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "12.7",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Goa",
+   "label": "28.6",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.435
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "32.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.489
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "39.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.542
+  },
+  {
+   "name": "Meghalaya",
+   "label": "40.7",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 29.596
+  },
+  {
+   "name": "Jharkhand",
+   "label": "41.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.649
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "43.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.703
+  },
+  {
+   "name": "Sikkim",
+   "label": "43.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.756
+  },
+  {
+   "name": "Ladakh",
+   "label": "44.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.81
+  },
+  {
+   "name": "Tripura",
+   "label": "45.4",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.863
+  },
+  {
+   "name": "Odisha",
+   "label": "51.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.917
+  },
+  {
+   "name": "Mizoram",
+   "label": "51.8",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.97
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "52.5",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.023
+  },
+  {
+   "name": "Bihar",
+   "label": "53.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.077
+  },
+  {
+   "name": "Nagaland",
+   "label": "53.5",
+   "bucket": 2,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.13
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "54.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.184
+  },
+  {
+   "name": "West Bengal",
+   "label": "54.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.237
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "60.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.291
+  },
+  {
+   "name": "Punjab",
+   "label": "61.3",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.344
+  },
+  {
+   "name": "Assam",
+   "label": "66.0",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.398
+  },
+  {
+   "name": "Kerala",
+   "label": "70.8",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.451
+  },
+  {
+   "name": "Karnataka",
+   "label": "72.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.505
+  },
+  {
+   "name": "Puducherry",
+   "label": "74.6",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.558
+  },
+  {
+   "name": "Chandigarh",
+   "label": "75.0",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.612
+  },
+  {
+   "name": "Haryana",
+   "label": "76.2",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.665
+  },
+  {
+   "name": "Manipur",
+   "label": "79.7",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.718
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "81.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.772
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "83.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.825
+  },
+  {
+   "name": "Maharashtra",
+   "label": "85.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.879
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "88.1",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 30.932
+  },
+  {
+   "name": "Gujarat",
+   "label": "88.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.986
+  },
+  {
+   "name": "Rajasthan",
+   "label": "94.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.039
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "120.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.093
+  },
+  {
+   "name": "Telangana",
+   "label": "120.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.146
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "157.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.2
+  }
+ ],
+ "checked": [
+  "Andhra Pradesh is the highest of 35 with data (157.2%)",
+  "Andhra Pradesh is the highest of 34 with data (124.3%)",
+  "Andhra Pradesh 157.2 rounds to 157",
+  "India 80.1 rounds to 80",
+  "Andhra Pradesh 124.3 rounds to 124",
+  "Tamil Nadu / Telangana = 1.00 (at least 0.999)",
+  "Telangana / Tamil Nadu = 1.00 (at least 0.999)",
+  "Andhra Pradesh / Tamil Nadu = 1.30 (at least 1.3)",
+  "Andhra Pradesh / Telangana = 1.30 (at least 1.3)",
+  "Andhra Pradesh / Chandigarh = 1.09 (at least 1.05)",
+  "Andhra Pradesh / Delhi = 1.16 (at least 1.05)",
+  "Andhra Pradesh / Tamil Nadu = 1.30 (at least 1.05)",
+  "Andhra Pradesh / Tamil Nadu = 1.38 (at least 1.05)",
+  "Andhra Pradesh / Telangana = 1.33 (at least 1.05)",
+  "Andhra Pradesh / Telangana = 1.33 (at least 1.05)",
+  "Andhra Pradesh / Tamil Nadu = 1.30 (at least 1.05)",
+  "Andhra Pradesh 114.1 rounds to 114",
+  "Andhra Pradesh / Chandigarh = 0.99 (at least 0.98)",
+  "Andhra Pradesh / Telangana = 0.99 (at least 0.98)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Andhra Pradesh: loans used were one hundred fifty-seven percent of deposits."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.25,
+   "at": 5.926,
+   "text": "Highest credit-deposit ratio of thirty-five states and territories. India's was eighty."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.31,
+   "at": 11.733,
+   "text": "Tamil Nadu and Telangana come next, level with each other."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.675,
+   "at": 17.539,
+   "text": "At end-March twenty nineteen it was already the highest: one hundred twenty-four."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.858,
+   "at": 23.346,
+   "text": "Highest in each of the seven years, twenty nineteen to twenty twenty-five."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.847,
+   "at": 29.152,
+   "text": "Every state's loans as a share of deposits held."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.455,
+   "at": 33.023,
+   "text": "Which side of one hundred is your state?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Andhra Pradesh: Bank Loans Used Were 157% of Deposits, 2025"
+}

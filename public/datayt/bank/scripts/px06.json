@@ -1,0 +1,353 @@
+{
+ "id": "px06",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "IIPS · NFHS-6 · RBI · 2023-24",
+ "palette": "A",
+ "state": "Odisha",
+ "source": "Pre-school: share of children aged 2 to 4 (24 to 59 months) attending pre-school / early childhood education, as labelled in the NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences (total, urban and rural columns; the NFHS-5 (2019-21) figure is printed beside it). 34 states and UTs ranked; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 fact sheet yet. Income: per-capita net state domestic product, current prices, 2023-24, Reserve Bank of India, Handbook of Statistics on Indian States, Table 19 (33 states and UTs with data; Nagaland has no 2024-25 figure).",
+ "hook": [
+  "*Odisha*: *over 3×* Nagaland's",
+  "pre-school attendance, ages 2-4,",
+  "2023-24, similar income."
+ ],
+ "hook_vo": "Odisha's pre-school attendance was over three times Nagaland's at similar income.",
+ "facts": [
+  {
+   "state": "Odisha",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Nagaland"
+   ],
+   "text": "a year. Nagaland: ₹1,54,828, 2.9% higher.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. 2022-23: Nagaland 3.2% higher; no 2024-25 figure for Nagaland. {n} states and UTs with data.",
+   "vo": "One lakh fifty thousand rupees; Nagaland's was two point nine percent higher."
+  },
+  {
+   "state": "Odisha",
+   "kicker": "CHILDREN AGED 2 TO 4 IN PRE-SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 11
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of children aged 2 to 4 attended pre-school. Above India's 47%.",
+   "sub": "Survey estimate. Earlier survey, 2019-21: Odisha 57%, India 40%. IIPS, NFHS-6 state fact sheets. {n} ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "vo": "Above India's forty-seven percent, and fifty-seven in the earlier survey."
+  },
+  {
+   "state": "Nagaland",
+   "kicker": "CHILDREN AGED 2 TO 4 IN PRE-SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 11
+   },
+   "unit": "%",
+   "compare": [
+    "Odisha"
+   ],
+   "bar_max": 100,
+   "text": "of children. Odisha's was over 3 times that, at a similar income.",
+   "sub": "Survey estimate. Earlier survey, 2019-21: over 3 times, with Nagaland's income higher. Rural children: Odisha 56%, Nagaland 14%.",
+   "vo": "Nagaland: fifteen percent; in the earlier survey, sixteen."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "nfhs": 11
+   },
+   "equals": 55
+  },
+  {
+   "kind": "round",
+   "state": "Nagaland",
+   "data": {
+    "nfhs": 11
+   },
+   "equals": 15
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 11
+   },
+   "equals": 47
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "nfhs": 11,
+    "col": 3
+   },
+   "equals": 57
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 11,
+    "col": 3
+   },
+   "equals": 40
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "nfhs": 11,
+    "col": 1
+   },
+   "equals": 56
+  },
+  {
+   "kind": "round",
+   "state": "Nagaland",
+   "data": {
+    "nfhs": 11,
+    "col": 1
+   },
+   "equals": 14
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 150414
+  },
+  {
+   "kind": "round",
+   "state": "Nagaland",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 154828
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.9714
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 1.0285
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 1.0315
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.9686
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Nagaland",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "nfhs": 11
+    }
+   },
+   "den": {
+    "state": "Nagaland",
+    "data": {
+     "nfhs": 11
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "nfhs": 11,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Nagaland",
+    "data": {
+     "nfhs": 11,
+     "col": 3
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "round",
+   "state": "Nagaland",
+   "data": {
+    "nfhs": 11,
+    "col": 3
+   },
+   "equals": 16
+  }
+ ],
+ "so": {
+  "lines": [
+   "State by state, pre-school",
+   "attendance tended to rise",
+   "alongside income in 2023-24.",
+   "*Odisha* sat above that line."
+  ],
+  "vo": "Pre-school attendance tended to rise alongside income. Odisha sat above that line."
+ },
+ "map": {
+  "data": {
+   "nfhs": 11
+  },
+  "unit": "%",
+  "title": "Children aged 2 to 4 in pre-school, *every state*",
+  "sub": "% of children · India {india} · 2023-24",
+  "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+  "ring": [
+   "Odisha",
+   "Nagaland"
+  ],
+  "vo": "Here is every state: children aged two to four in pre-school."
+ },
+ "end": {
+  "q": "Did you go to *pre-school*?",
+  "sub": "Comment below.",
+  "vo": "Did you go to pre-school?"
+ },
+ "yt_title": "Children Aged 2-4 in Pre-School: Odisha 55%, Nagaland 15%"
+}

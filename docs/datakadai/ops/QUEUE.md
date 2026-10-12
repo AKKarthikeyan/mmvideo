@@ -35,5 +35,15 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 27 | px03 | Sikkim vs Goa: Same Income, 4x the Electricity Available | RBI T138, T019 | n/a | drafted (2026-10-12; beat template `paradox`; script reviewed before voicing; week one) |
 | 28 | sh02 | Maharashtra: 36% of India's Cotton Area, 25% of the Crop | RBI T077, T064 | n/a | drafted (2026-10-12; beat template `share`; script reviewed before voicing; week one) |
 | 29 | tn05 | Chhattisgarh Grew 60% More Rice per Hectare in 10 Years | RBI T080 | n/a | drafted (2026-10-12; beat template `then`; script reviewed before voicing; week one) |
+| 30 | fa04 | Telangana 2023-24: 53% of Women Paid in Cash for Work | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week two) |
+| 31 | tn07 | Gujarat: Share of India's Pulses Crop, 3% to 8% in 10 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; week two) |
+| 32 | fa03 | Punjab: Highest Foodgrain Yield, 18% Above Haryana, 2024-25 | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week two) |
+| 33 | px05 | Women With Own Phone: Meghalaya 81%, Madhya Pradesh 48.5% | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; week two) |
+| 34 | tn06 | Bihar: Electricity Available per Person Doubled in 10 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; week two) |
+| 35 | fa02 | Rural Kerala 2023-24: 85% of Women Had 10+ Years of School | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week two) |
+| 36 | tn09 | West Bengal: Women's Own Bank Accounts Up 19 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; week two) |
+| 37 | fa05 | Andhra Pradesh: Bank Loans Used Were 157% of Deposits, 2025 | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week two) |
+| 38 | px04 | Power Available per Person: Chhattisgarh 1.9x West Bengal | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; banked for a later week) |
+| 39 | tn10 | Odisha: Women With 10+ Years of School Up 11 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked for a later week) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

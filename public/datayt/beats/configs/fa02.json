@@ -1,0 +1,221 @@
+{
+ "id": "fa02",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "IIPS · NFHS-6 (2023-24)",
+ "palette": "E",
+ "state": "Kerala",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicator: women aged 15 to 49 with 10 or more years of schooling. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet.",
+ "hook": [
+  "Rural *Kerala* women, 2023-24:",
+  "*85%* had 10+ years schooling.",
+  "*Above urban* elsewhere."
+ ],
+ "hook_vo": "Rural Kerala topped every other state's urban women on ten-plus years of school.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "WOMEN WITH 10+ YEARS OF SCHOOL · NFHS-6",
+   "data": {
+    "nfhs": 12
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Puducherry"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15 to 49, 2023-24. Highest of {n} ranked states and UTs. Next: Puducherry, 75%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. Lakshadweep (small sample) is not ranked.",
+   "vo": "Eighty-seven percent of women. Highest of thirty-four ranked states and territories."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "NFHS-5 (2019-21), SAME QUESTION",
+   "data": {
+    "nfhs": 12,
+    "col": 3
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women: Kerala led then too. India: 41%.",
+   "sub": "Survey estimate. NFHS-5 figure as printed in the NFHS-6 fact sheets.",
+   "vo": "Kerala led the earlier survey too at seventy-seven percent. India was forty-one."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "RURAL WOMEN · NFHS-6",
+   "data": {
+    "nfhs": 12,
+    "col": 1
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of rural women aged 15 to 49, 2023-24. Highest of {n} ranked states and UTs with rural data. India's rural figure: 40%.",
+   "sub": "Survey estimate, rural column of the NFHS-6 fact sheets.",
+   "vo": "In rural Kerala it was eighty-five percent. India's rural figure was forty."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 12
+   },
+   "equals": 87
+  },
+  {
+   "kind": "round",
+   "state": "Puducherry",
+   "data": {
+    "nfhs": 12
+   },
+   "equals": 75
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 12,
+    "col": 3
+   },
+   "equals": 77
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 12,
+    "col": 3
+   },
+   "equals": 41
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 12,
+    "col": 1
+   },
+   "equals": 85
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 12,
+    "col": 1
+   },
+   "equals": 40
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "nfhs": 12,
+    "col": 0
+   },
+   "equals": 78
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 12
+   },
+   "equals": 46
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 12,
+     "col": 1
+    }
+   },
+   "den": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "nfhs": 12,
+     "col": 0
+    }
+   },
+   "min": 1.08
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 12,
+     "col": 1
+    }
+   },
+   "den": {
+    "state": "Puducherry",
+    "data": {
+     "nfhs": 12,
+     "col": 0
+    }
+   },
+   "min": 1.08
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 12,
+     "col": 1
+    }
+   },
+   "den": {
+    "state": "Andaman and Nicobar Islands",
+    "data": {
+     "nfhs": 12,
+     "col": 0
+    }
+   },
+   "min": 1.14
+  }
+ ],
+ "so": {
+  "lines": [
+   "Rural *Kerala* women: *85%*.",
+   "Urban women in any other",
+   "state or UT with data: 78% or less."
+  ],
+  "vo": "Rural Kerala at eighty-five percent was above urban women anywhere else."
+ },
+ "map": {
+  "data": {
+   "nfhs": 12
+  },
+  "unit": "%",
+  "title": "Women with 10+ years of school, *every state*",
+  "sub": "% of women aged 15 to 49 · India {india} · NFHS-6 (2023-24)",
+  "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+  "ring": [
+   "Kerala",
+   "Puducherry"
+  ],
+  "vo": "Here is every state, for all women aged fifteen to forty-nine."
+ },
+ "end": {
+  "q": "*Rural* or *urban*: where did you study?",
+  "sub": "Comment below.",
+  "vo": "Rural or urban: where did you study?"
+ },
+ "yt_title": "Rural Kerala 2023-24: 85% of Women Had 10+ Years of School"
+}

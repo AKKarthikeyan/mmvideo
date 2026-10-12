@@ -1,0 +1,308 @@
+{
+ "id": "px05",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "IIPS · NFHS-6 · RBI · 2023-24",
+ "palette": "E",
+ "state": "Meghalaya",
+ "source": "Phones: share of women aged 15 to 49 who have a mobile phone that they themselves use, NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences (total, urban and rural columns; the NFHS-5 (2019-21) figure is printed beside it). 34 states and UTs ranked; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 fact sheet yet. Income: per-capita net state domestic product, current prices, 2023-24, Reserve Bank of India, Handbook of Statistics on Indian States, Table 19 (33 states and UTs with data; National Statistical Office series).",
+ "hook": [
+  "Women's own phones, 2023-24:",
+  "*Meghalaya 81%*; Madhya Pradesh,",
+  "same income: *48.5%*."
+ ],
+ "hook_vo": "Women's own phones: Meghalaya one point seven times Madhya Pradesh at level income.",
+ "facts": [
+  {
+   "state": "Meghalaya",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Madhya Pradesh"
+   ],
+   "text": "a year. Madhya Pradesh: ₹1,39,713. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. {n} states and UTs with data.",
+   "vo": "One lakh forty-one thousand rupees a year, level with Madhya Pradesh."
+  },
+  {
+   "state": "Meghalaya",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "data": {
+    "nfhs": 93
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15 to 49 had a mobile phone they themselves used. India: 64%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. {n} ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "vo": "Eighty-one percent of Meghalaya's women used a phone themselves; India's was sixty-four."
+  },
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "data": {
+    "nfhs": 93
+   },
+   "unit": "%",
+   "compare": [
+    "Meghalaya"
+   ],
+   "bar_max": 100,
+   "text": "of women. Meghalaya's was 1.7 times that, at the same income.",
+   "sub": "Survey estimate. Rural women: Meghalaya 78%, Madhya Pradesh 41%. Earlier survey, 2019-21: 1.8 times, with Meghalaya's income lower.",
+   "vo": "Madhya Pradesh, same income: forty-eight and a half percent."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "nfhs": 93
+   },
+   "equals": 81
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 93
+   },
+   "equals": 64
+  },
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "nfhs": 93,
+    "col": 1
+   },
+   "equals": 78
+  },
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "nfhs": 93,
+    "col": 1
+   },
+   "equals": 41
+  },
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 141195
+  },
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 139713
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Meghalaya",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "min": 1.65
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "min": 0.572
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "min": 1.75
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "min": 0.54
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 1.1
+  }
+ ],
+ "so": {
+  "lines": [
+   "Across states in 2023-24,",
+   "income and women with a phone",
+   "tended to rise together.",
+   "*Meghalaya* sat above the trend."
+  ],
+  "vo": "Income and women's phones tended to rise together. Meghalaya sat above the trend."
+ },
+ "map": {
+  "data": {
+   "nfhs": 93
+  },
+  "unit": "%",
+  "title": "Women with a phone they use, *every state*",
+  "sub": "% of women aged 15 to 49 · India {india} · 2023-24",
+  "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+  "ring": [
+   "Meghalaya",
+   "Madhya Pradesh"
+  ],
+  "vo": "Here is every state: women with a mobile phone they use."
+ },
+ "end": {
+  "q": "Does your *mother* have her own phone?",
+  "sub": "Comment below.",
+  "vo": "Does your mother have her own phone?"
+ },
+ "yt_title": "Women With Own Phone: Meghalaya 81%, Madhya Pradesh 48.5%"
+}

@@ -228,6 +228,11 @@ def house_rules(sid, cfg, beats, extra):
             bad.append(f"{len(kinds) - 3} beats between the hook and the map (three to five)")
     if not extra.get("checked"):
         bad.append("no computed finding is carried as a test")
+    for b in beats:
+        if b["kind"] in ("map", "mapend") and len(b.get("note") or "") > 165:      # three lines hold about 165 characters
+            bad.append(f"the map note is {len(b['note'])} characters (at most 165, or it runs into the source line)"); break
+    if 22 * len(cfg["chip"]) + 13 * len(cfg["source_short"]) > 1000:
+        bad.append("the chip and the source line together are too wide for the top row: shorten the source line")
     return bad
 
 

@@ -1,0 +1,238 @@
+{
+  "id": "tn10",
+  "type": "then",
+  "rules": 2,
+  "chip": "TWO SURVEYS",
+  "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+  "palette": "C",
+  "state": "Odisha",
+  "points": [
+    {
+      "data": {"nfhs": 12, "col": 3},
+      "period": "NFHS-5 (2019-21)"
+    },
+    {
+      "data": {"nfhs": 12},
+      "period": "NFHS-6 (2023-24)"
+    }
+  ],
+  "measure": "value",
+  "unit": "%",
+  "delta": "points",
+  "kicker": "WOMEN WITH 10+ YEARS OF SCHOOLING",
+  "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 with 10 or more years of schooling; the men's card uses the matching men's indicator.",
+  "hook": [
+    "*Odisha*: women with 10+ years",
+    "schooling up *11 points*,",
+    "*twice* India's rise."
+  ],
+  "hook_vo": "Odisha women with ten-plus years of school rose twice as much as India's.",
+  "then": {
+    "text": "of women aged 15 to 49. India: *41.0%*.",
+    "vo": "Twenty nineteen to twenty-one: thirty-three percent. India, forty-one."
+  },
+  "now": {
+    "text": "of women aged 15 to 49. India: *46.4%*.",
+    "vo": "Next survey: forty-four percent. India, forty-six."
+  },
+  "facts": [
+    {
+      "kicker": "WOMEN'S RISE, ODISHA AGAINST INDIA",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"nfhs": 12}},
+            {"data": {"nfhs": 12, "col": 3}}
+          ]},
+          {"diff": [
+            {"data": {"nfhs": 12}, "state": "India"},
+            {"data": {"nfhs": 12, "col": 3}, "state": "India"}
+          ]}
+        ]
+      },
+      "unit": "×",
+      "text": "India's rise: 5.4 points",
+      "bars": [
+        {
+          "name": "Odisha",
+          "diff": [
+            {"data": {"nfhs": 12}},
+            {"data": {"nfhs": 12, "col": 3}}
+          ],
+          "unit": ""
+        },
+        {
+          "name": "India",
+          "diff": [
+            {"data": {"nfhs": 12}, "state": "India"},
+            {"data": {"nfhs": 12, "col": 3}, "state": "India"}
+          ],
+          "unit": ""
+        }
+      ],
+      "bar_max": 14,
+      "sub": "Percentage points between the two surveys: Odisha +10.9, India +5.4.",
+      "vo": "Odisha rose ten point nine points. India rose five point four."
+    }
+  ],
+  "says": [
+    {
+      "lines": [
+        "The same for men with 10+ years:",
+        "Odisha *+10.5* points,",
+        "India *+4.4*."
+      ],
+      "note": "Men: Odisha 38.6% to 49.1%. Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+      "vo": "Odisha's men rose ten point five points. India's men rose four point four."
+    }
+  ],
+  "tests": [
+    {
+      "says": "thirty-three percent in NFHS-5",
+      "value": {"data": {"nfhs": 12, "col": 3}},
+      "equals": 33
+    },
+    {
+      "says": "forty-four percent in NFHS-6",
+      "value": {"data": {"nfhs": 12}},
+      "equals": 44
+    },
+    {
+      "says": "India 41.0% in NFHS-5 (tenths)",
+      "value": {"data": {"nfhs": 12, "col": 3}, "state": "India", "scale": 10},
+      "equals": 410
+    },
+    {
+      "says": "India 46.4% in NFHS-6 (tenths)",
+      "value": {"data": {"nfhs": 12}, "state": "India", "scale": 10},
+      "equals": 464
+    },
+    {
+      "says": "India forty-one in NFHS-5",
+      "value": {"data": {"nfhs": 12, "col": 3}, "state": "India"},
+      "equals": 41
+    },
+    {
+      "says": "India forty-six in NFHS-6",
+      "value": {"data": {"nfhs": 12}, "state": "India"},
+      "equals": 46
+    },
+    {
+      "says": "Odisha rose 10.9 points (tenths)",
+      "value": {
+        "diff": [
+          {"data": {"nfhs": 12}},
+          {"data": {"nfhs": 12, "col": 3}}
+        ],
+        "scale": 10
+      },
+      "equals": 109
+    },
+    {
+      "says": "Odisha rose eleven points (10.9 rounds to 11), the hook and the title",
+      "value": {
+        "diff": [
+          {"data": {"nfhs": 12}},
+          {"data": {"nfhs": 12, "col": 3}}
+        ]
+      },
+      "equals": 11
+    },
+    {
+      "says": "India rose 5.4 points (tenths)",
+      "value": {
+        "diff": [
+          {"data": {"nfhs": 12}, "state": "India"},
+          {"data": {"nfhs": 12, "col": 3}, "state": "India"}
+        ],
+        "scale": 10
+      },
+      "equals": 54
+    },
+    {
+      "says": "Odisha's rise is twice India's",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"nfhs": 12}},
+            {"data": {"nfhs": 12, "col": 3}}
+          ]},
+          {"diff": [
+            {"data": {"nfhs": 12}, "state": "India"},
+            {"data": {"nfhs": 12, "col": 3}, "state": "India"}
+          ]}
+        ]
+      },
+      "min": 1.95,
+      "max": 2.1
+    },
+    {
+      "says": "men: Odisha rose 10.5 points (tenths)",
+      "value": {
+        "diff": [
+          {"data": {"nfhs": 13}},
+          {"data": {"nfhs": 13, "col": 3}}
+        ],
+        "scale": 10
+      },
+      "equals": 105
+    },
+    {
+      "says": "men: India rose 4.4 points (tenths)",
+      "value": {
+        "diff": [
+          {"data": {"nfhs": 13}, "state": "India"},
+          {"data": {"nfhs": 13, "col": 3}, "state": "India"}
+        ],
+        "scale": 10
+      },
+      "equals": 44
+    },
+    {
+      "says": "men: Odisha's rise is more than twice India's",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"nfhs": 13}},
+            {"data": {"nfhs": 13, "col": 3}}
+          ]},
+          {"diff": [
+            {"data": {"nfhs": 13}, "state": "India"},
+            {"data": {"nfhs": 13, "col": 3}, "state": "India"}
+          ]}
+        ]
+      },
+      "min": 2.1,
+      "max": 2.6
+    },
+    {
+      "says": "men: Odisha 38.6% in NFHS-5 (tenths)",
+      "value": {"data": {"nfhs": 13, "col": 3}, "scale": 10},
+      "equals": 386
+    },
+    {
+      "says": "men: Odisha 49.1% in NFHS-6 (tenths)",
+      "value": {"data": {"nfhs": 13}, "scale": 10},
+      "equals": 491
+    }
+  ],
+  "map": {
+    "as": "points",
+    "bands": [-4, -1, 1, 8],
+    "title": "Women with 10+ years of school: *each state's change*",
+    "sub": "percentage points · darker = bigger rise · India +5.4",
+    "note": "Women aged 15 to 49 with 10 or more years of schooling. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+    "vo": "Every state's change in women's schooling between the two surveys.",
+    "key": [
+      "fell",
+      "within 1 point",
+      "rose"
+    ]
+  },
+  "end": {
+    "q": "Did *you* study ten or more years?",
+    "sub": "Find your state on the map.",
+    "vo": "Did you study ten or more years?"
+  },
+  "yt_title": "Odisha: Women With 10+ Years of School Up 11 Points"
+}

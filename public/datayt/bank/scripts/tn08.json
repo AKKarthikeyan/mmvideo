@@ -1,0 +1,256 @@
+{
+  "id": "tn08",
+  "type": "then",
+  "rules": 2,
+  "chip": "{years} YEARS ON",
+  "source_short": "Agriculture Ministry · 2014-15 to 2023-24",
+  "palette": "O",
+  "state": "Madhya Pradesh",
+  "table": 75,
+  "from": "2014-15",
+  "to": "2023-24",
+  "measure": "share",
+  "kicker": "SHARE OF INDIA'S VEGETABLE PRODUCTION",
+  "expect": {
+    "years": 9
+  },
+  "source": "Ministry of Agriculture and Farmers' Welfare (horticulture statistics), as published in the RBI Handbook of Statistics on Indian States, Table 75: production of vegetables, thousand tonnes, shown here in million tonnes. Each share is of the all-India figure in the same table. Area is Table 73. The table's 2024-25 column is an advance estimate, so the story ends at 2023-24. Left blank on the map: Jammu and Kashmir (boundary changed in 2019); not in the table: Goa, Ladakh, Delhi, Chandigarh, Puducherry, Lakshadweep, Andaman and Nicobar Islands, Dadra and Nagar Haveli and Daman and Diu.",
+  "hook": [
+    "*Madhya Pradesh*: over a *fifth*",
+    "of India's extra vegetables,",
+    "2014-15 to 2023-24."
+  ],
+  "hook_vo": "Madhya Pradesh grew over a fifth of India's extra vegetables.",
+  "then": {
+    "text": "of India's vegetables: *14 million tonnes*",
+    "vo": "In twenty fourteen-fifteen: eight percent of India's vegetables. Fourteen million tonnes."
+  },
+  "now": {
+    "text": "of India's vegetables: *24 million tonnes*",
+    "vo": "Nine years on: twelve percent. Twenty-four million tonnes."
+  },
+  "facts": [
+    {
+      "kicker": "VEGETABLES ADDED · MILLION TONNES",
+      "value": {
+        "diff": [
+          {"data": {"rbi": [75, "2023-24"]}},
+          {"data": {"rbi": [75, "2014-15"]}}
+        ],
+        "scale": 0.001
+      },
+      "unit": "",
+      "text": "million tonnes: Madhya Pradesh's gain",
+      "bars": [
+        {
+          "name": "Madhya Pradesh",
+          "diff": [
+            {"data": {"rbi": [75, "2023-24"]}},
+            {"data": {"rbi": [75, "2014-15"]}}
+          ],
+          "scale": 0.001,
+          "unit": ""
+        },
+        {
+          "name": "India",
+          "diff": [
+            {"data": {"rbi": [75, "2023-24"]}, "state": "India"},
+            {"data": {"rbi": [75, "2014-15"]}, "state": "India"}
+          ],
+          "scale": 0.001,
+          "unit": ""
+        }
+      ],
+      "bar_max": 40,
+      "sub": "India's output: 169 to 207 million tonnes.",
+      "vo": "India added thirty-eight million tonnes. Madhya Pradesh alone added ten."
+    }
+  ],
+  "says": [
+    {
+      "lines": [
+        "Madhya Pradesh vegetable area:",
+        "*1.9 times* in nine years.",
+        "Harvest: *1.7 times*."
+      ],
+      "note": "India's vegetable area grew 1.2 times. Output ending 2022-23 or 2024-25 (advance estimate) instead: still over a fifth of the gain. The table shows how much, not why.",
+      "vo": "Area: one point nine times. Harvest: one point seven times."
+    }
+  ],
+  "tests": [
+    {
+      "says": "eight percent of India's vegetables in 2014-15",
+      "value": {"share": {"rbi": [75, "2014-15"]}},
+      "equals": 8
+    },
+    {
+      "says": "twelve percent in 2023-24",
+      "value": {"share": {"rbi": [75, "2023-24"]}},
+      "equals": 12
+    },
+    {
+      "says": "fourteen million tonnes in 2014-15",
+      "value": {"data": {"rbi": [75, "2014-15"]}, "scale": 0.001},
+      "equals": 14
+    },
+    {
+      "says": "twenty-four million tonnes in 2023-24",
+      "value": {"data": {"rbi": [75, "2023-24"]}, "scale": 0.001},
+      "equals": 24
+    },
+    {
+      "says": "over a fifth of India's extra vegetables: Madhya Pradesh's gain / India's gain, 2014-15 to 2023-24 (percent)",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"rbi": [75, "2023-24"]}},
+            {"data": {"rbi": [75, "2014-15"]}}
+          ]},
+          {"diff": [
+            {"data": {"rbi": [75, "2023-24"]}, "state": "India"},
+            {"data": {"rbi": [75, "2014-15"]}, "state": "India"}
+          ]}
+        ],
+        "scale": 100
+      },
+      "min": 20.5,
+      "max": 30
+    },
+    {
+      "says": "still over a fifth ending 2022-23",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"rbi": [75, "2022-23"]}},
+            {"data": {"rbi": [75, "2014-15"]}}
+          ]},
+          {"diff": [
+            {"data": {"rbi": [75, "2022-23"]}, "state": "India"},
+            {"data": {"rbi": [75, "2014-15"]}, "state": "India"}
+          ]}
+        ],
+        "scale": 100
+      },
+      "min": 20.5,
+      "max": 30
+    },
+    {
+      "says": "still over a fifth ending 2024-25 (advance estimate)",
+      "value": {
+        "ratio": [
+          {"diff": [
+            {"data": {"rbi": [75, "2024-25*"]}},
+            {"data": {"rbi": [75, "2014-15"]}}
+          ]},
+          {"diff": [
+            {"data": {"rbi": [75, "2024-25*"]}, "state": "India"},
+            {"data": {"rbi": [75, "2014-15"]}, "state": "India"}
+          ]}
+        ],
+        "scale": 100
+      },
+      "min": 20.5,
+      "max": 30
+    },
+    {
+      "says": "India added 38 million tonnes (2014-15 to 2023-24)",
+      "value": {
+        "diff": [
+          {"data": {"rbi": [75, "2023-24"]}, "state": "India"},
+          {"data": {"rbi": [75, "2014-15"]}, "state": "India"}
+        ],
+        "scale": 0.001
+      },
+      "equals": 38
+    },
+    {
+      "says": "Madhya Pradesh added 10 million tonnes",
+      "value": {
+        "diff": [
+          {"data": {"rbi": [75, "2023-24"]}},
+          {"data": {"rbi": [75, "2014-15"]}}
+        ],
+        "scale": 0.001
+      },
+      "equals": 10
+    },
+    {
+      "says": "India's output 169 million tonnes in 2014-15",
+      "value": {"data": {"rbi": [75, "2014-15"]}, "state": "India", "scale": 0.001},
+      "equals": 169
+    },
+    {
+      "says": "India's output 207 million tonnes in 2023-24",
+      "value": {"data": {"rbi": [75, "2023-24"]}, "state": "India", "scale": 0.001},
+      "equals": 207
+    },
+    {
+      "says": "vegetable area one point nine times (Table 73), tenths",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [73, "2023-24"]}},
+          {"data": {"rbi": [73, "2014-15"]}}
+        ],
+        "scale": 10
+      },
+      "equals": 19
+    },
+    {
+      "says": "harvest one point seven times, tenths",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [75, "2023-24"]}},
+          {"data": {"rbi": [75, "2014-15"]}}
+        ],
+        "scale": 10
+      },
+      "equals": 17
+    },
+    {
+      "says": "India's vegetable area grew 1.2 times, tenths",
+      "value": {
+        "ratio": [
+          {"data": {"rbi": [73, "2023-24"]}, "state": "India"},
+          {"data": {"rbi": [73, "2014-15"]}, "state": "India"}
+        ],
+        "scale": 10
+      },
+      "equals": 12
+    },
+    {
+      "says": "Madhya Pradesh's share gain is the largest of any state: more than 2 points ahead of Uttar Pradesh",
+      "value": {
+        "diff": [
+          {"diff": [
+            {"share": {"rbi": [75, "2023-24"]}},
+            {"share": {"rbi": [75, "2014-15"]}}
+          ]},
+          {"diff": [
+            {"share": {"rbi": [75, "2023-24"]}, "state": "Uttar Pradesh"},
+            {"share": {"rbi": [75, "2014-15"]}, "state": "Uttar Pradesh"}
+          ]}
+        ]
+      },
+      "min": 2.0,
+      "max": 3
+    }
+  ],
+  "map": {
+    "bands": [-1.5, -0.3, 0.3, 1.5],
+    "title": "Share of India's vegetables: *who gained, who lost*",
+    "sub": "points of India's production · {from} to {to}",
+    "note": "Lower share can mean more tonnes. State totals, not per person. Blank: Jammu and Kashmir (boundary changed); Goa, Ladakh, Delhi, five small UTs (not in table).",
+    "vo": "Here is every state's change in vegetable share, Madhya Pradesh marked.",
+    "key": [
+      "lost share",
+      "within 0.3 points",
+      "gained share"
+    ]
+  },
+  "end": {
+    "q": "Which vegetable do you *buy most*?",
+    "sub": "Then find your state on the map.",
+    "vo": "Which vegetable do you buy most?"
+  },
+  "yt_title": "Madhya Pradesh Grew Over a Fifth of India's Extra Vegetables"
+}

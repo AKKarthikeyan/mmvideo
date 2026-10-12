@@ -1,0 +1,431 @@
+{
+ "id": "tn09",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "D",
+ "state": "West Bengal",
+ "points": [
+  {
+   "data": {
+    "nfhs": 92,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 92
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "WOMEN WITH THEIR OWN BANK ACCOUNT",
+ "expect": {
+  "rank_then": 25,
+  "rank_now": 2,
+  "n": 34
+ },
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 who have a bank or savings account that they themselves use. Ranks are among the 34 states and union territories with a figure in both surveys (Manipur has no NFHS-6 fact sheet; Lakshadweep is not ranked).",
+ "hook": [
+  "*West Bengal*: women's own",
+  "bank accounts up *19 points*,",
+  "2019-21 to 2023-24."
+ ],
+ "hook_vo": "West Bengal's women with own bank accounts rose nineteen points.",
+ "then": {
+  "text": "of women aged 15 to 49. India: *78.6%*.",
+  "vo": "Twenty nineteen to twenty-one: seventy-six point five percent. India, seventy-eight point six."
+ },
+ "now": {
+  "text": "of women aged 15 to 49. India: *89.0%*.",
+  "vo": "Next survey: ninety-five point three percent. India: eighty-nine."
+ },
+ "facts": [
+  {
+   "kicker": "WEST BENGAL'S RISE, AGAINST INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 92
+        }
+       },
+       {
+        "data": {
+         "nfhs": 92,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 92
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 92,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "India's rise: 10.4 points",
+   "bars": [
+    {
+     "name": "West Bengal",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 92
+       }
+      },
+      {
+       "data": {
+        "nfhs": 92,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 92
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 92,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 25,
+   "sub": "Percentage points between the two surveys: West Bengal +18.8, India +10.4.",
+   "vo": "India rose ten point four points. West Bengal, one point eight times that."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Top three in NFHS-6:",
+    "*Ladakh 95.5%*, *West Bengal 95.3%*,",
+    "*Karnataka 94.7%*."
+   ],
+   "note": "NFHS-5: lower half of 34 states and union territories. NFHS-6 fourth: Mizoram, 93.6%. Survey estimates: small gaps are not differences.",
+   "vo": "West Bengal moved from lower half to top three, with Ladakh and Karnataka."
+  }
+ ],
+ "tests": [
+  {
+   "says": "seventy-six point five percent in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 765
+  },
+  {
+   "says": "ninety-five point three percent in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "scale": 10
+   },
+   "equals": 953
+  },
+  {
+   "says": "India 78.6% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 786
+  },
+  {
+   "says": "India 89.0% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 890
+  },
+  {
+   "says": "India eighty-nine in NFHS-6",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "state": "India"
+   },
+   "equals": 89
+  },
+  {
+   "says": "India rose ten point four points, also +10.4 on the map (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 92,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 104
+  },
+  {
+   "says": "West Bengal rose 18.8 points, the bar on the card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92
+      }
+     },
+     {
+      "data": {
+       "nfhs": 92,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 188
+  },
+  {
+   "says": "West Bengal's bank accounts rose nineteen points (18.8 rounds to 19), the hook and the title",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92
+      }
+     },
+     {
+      "data": {
+       "nfhs": 92,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 19
+  },
+  {
+   "says": "West Bengal's rise was one point eight times India's (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 92
+        }
+       },
+       {
+        "data": {
+         "nfhs": 92,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 92
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 92,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 18
+  },
+  {
+   "says": "NFHS-5: West Bengal below India (lower half is also in the rank expectation)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92,
+       "col": 3
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 92,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 4
+  },
+  {
+   "says": "top three: ahead of the fourth state, Mizoram, by at least a point (NFHS-6)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92
+      }
+     },
+     {
+      "data": {
+       "nfhs": 92
+      },
+      "state": "Mizoram"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 3
+  },
+  {
+   "says": "Mizoram 93.6% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "state": "Mizoram",
+    "scale": 10
+   },
+   "equals": 936
+  },
+  {
+   "says": "Ladakh 95.5% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "state": "Ladakh",
+    "scale": 10
+   },
+   "equals": 955
+  },
+  {
+   "says": "West Bengal 95.3% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "scale": 10
+   },
+   "equals": 953
+  },
+  {
+   "says": "Karnataka 94.7% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 92
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 947
+  },
+  {
+   "says": "Karnataka is behind West Bengal and ahead of Mizoram: the three ahead of the rest are Ladakh, West Bengal, Karnataka",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 92
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "nfhs": 92
+      },
+      "state": "Mizoram"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 3
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -5,
+   -3,
+   3,
+   15
+  ],
+  "title": "Women's bank accounts: *each state's change*",
+  "sub": "percentage points · darker = bigger rise · India +10.4",
+  "note": "Women aged 15 to 49 with a bank account they use. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+  "vo": "Here is each state's change in women's own bank accounts.",
+  "key": [
+   "fell",
+   "within 3 points",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Do you use your *own* bank account?",
+  "sub": "Comment yes or no.",
+  "vo": "Do you use your own bank account?"
+ },
+ "yt_title": "West Bengal: Women's Own Bank Accounts Up 19 Points"
+}

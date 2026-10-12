@@ -1,0 +1,608 @@
+{
+ "id": "tn10",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 with 10 or more years of schooling; the men's card uses the matching men's indicator.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#E8A33D",
+  "#F0CC96",
+  "#DDD5C8",
+  "#719490",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Odisha*: women with 10+ years",
+    "schooling up *11 points*,",
+    "*twice* India's rise."
+   ],
+   "vo": "Odisha women with ten-plus years of school rose twice as much as India's.",
+   "geo": "Odisha",
+   "name": "Odisha",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN WITH 10+ YEARS OF SCHOOLING",
+   "big": "+10.9 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "33.0%",
+    "frac": 0.7517084282460137
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "43.9%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of women aged 15 to 49. India: *41.0%*.",
+   "vo": "Twenty nineteen to twenty-one: thirty-three percent. India, forty-one.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN WITH 10+ YEARS OF SCHOOLING",
+   "big": "+10.9 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "33.0%",
+    "frac": 0.7517084282460137
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "43.9%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of women aged 15 to 49. India: *46.4%*.",
+   "vo": "Next survey: forty-four percent. India, forty-six.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Odisha",
+   "geo": "Odisha",
+   "kicker": "WOMEN'S RISE, ODISHA AGAINST INDIA",
+   "big": "2.0×",
+   "text": "India's rise: 5.4 points",
+   "sub": "Percentage points between the two surveys: Odisha +10.9, India +5.4.",
+   "bars": [
+    {
+     "name": "Odisha",
+     "label": "10.9",
+     "frac": 0.7785714285714285
+    },
+    {
+     "name": "India",
+     "label": "5.4",
+     "frac": 0.3857142857142856
+    }
+   ],
+   "vo": "Odisha rose ten point nine points. India rose five point four.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "The same for men with 10+ years:",
+    "Odisha *+10.5* points,",
+    "India *+4.4*."
+   ],
+   "note": "Men: Odisha 38.6% to 49.1%. Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "Odisha's men rose ten point five points. India's men rose four point four.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Women with 10+ years of school: *each state's change*",
+   "sub": "percentage points · darker = bigger rise · India +5.4",
+   "note": "Women aged 15 to 49 with 10 or more years of schooling. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Odisha"
+   ],
+   "vo": "Every state's change in women's schooling between the two surveys.",
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "note": "Women aged 15 to 49 with 10 or more years of schooling. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "ring": [
+    "Odisha"
+   ],
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "q": "Did *you* study ten or more years?",
+   "sub": "Find your state on the map.",
+   "kind": "mapend",
+   "vo": "Did you study ten or more years?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Goa",
+   "label": "−5.0",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "−1.2",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.437
+  },
+  {
+   "name": "Nagaland",
+   "label": "+1.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 29.492
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+2.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 29.547
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+3.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.602
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+4.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.657
+  },
+  {
+   "name": "Bihar",
+   "label": "+4.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.712
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+4.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.767
+  },
+  {
+   "name": "Punjab",
+   "label": "+4.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.822
+  },
+  {
+   "name": "Mizoram",
+   "label": "+4.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.877
+  },
+  {
+   "name": "Gujarat",
+   "label": "+4.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.932
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+5.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+5.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.042
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+5.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.097
+  },
+  {
+   "name": "Telangana",
+   "label": "+5.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.152
+  },
+  {
+   "name": "Haryana",
+   "label": "+5.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.207
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+5.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.262
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+6.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.318
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+6.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.373
+  },
+  {
+   "name": "West Bengal",
+   "label": "+7.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.428
+  },
+  {
+   "name": "Karnataka",
+   "label": "+7.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.483
+  },
+  {
+   "name": "Assam",
+   "label": "+7.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.538
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+7.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.593
+  },
+  {
+   "name": "Ladakh",
+   "label": "+8.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.648
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+8.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.703
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "+9.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 30.758
+  },
+  {
+   "name": "Sikkim",
+   "label": "+9.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.813
+  },
+  {
+   "name": "Kerala",
+   "label": "+9.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.868
+  },
+  {
+   "name": "Puducherry",
+   "label": "+9.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.923
+  },
+  {
+   "name": "Tripura",
+   "label": "+9.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.978
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+10.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.033
+  },
+  {
+   "name": "Odisha",
+   "label": "+10.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.088
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+11.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.143
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+12.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.198
+  }
+ ],
+ "checked": [
+  "Odisha: 33.00 in NFHS-5 (2019-21), 43.90 in NFHS-6 (2023-24): +10.90, 1.33 times",
+  "thirty-three percent in NFHS-5: 33.00",
+  "forty-four percent in NFHS-6: 43.90",
+  "India 41.0% in NFHS-5 (tenths): 410.00",
+  "India 46.4% in NFHS-6 (tenths): 464.00",
+  "India forty-one in NFHS-5: 41.00",
+  "India forty-six in NFHS-6: 46.40",
+  "Odisha rose 10.9 points (tenths): 109.00",
+  "Odisha rose eleven points (10.9 rounds to 11), the hook and the title: 10.90",
+  "India rose 5.4 points (tenths): 54.00",
+  "Odisha's rise is twice India's: 2.02",
+  "men: Odisha rose 10.5 points (tenths): 105.00",
+  "men: India rose 4.4 points (tenths): 44.00",
+  "men: Odisha's rise is more than twice India's: 2.39",
+  "men: Odisha 38.6% in NFHS-5 (tenths): 386.00",
+  "men: Odisha 49.1% in NFHS-6 (tenths): 491.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.466,
+   "at": 0.12,
+   "text": "Odisha women with ten-plus years of school rose twice as much as India's."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.675,
+   "at": 5.926,
+   "text": "Twenty nineteen to twenty-one: thirty-three percent. India, forty-one."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.709,
+   "at": 11.733,
+   "text": "Next survey: forty-four percent. India, forty-six."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 17.539,
+   "text": "Odisha rose ten point nine points. India rose five point four."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.257,
+   "at": 23.346,
+   "text": "Odisha's men rose ten point five points. India's men rose four point four."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 29.152,
+   "text": "Every state's change in women's schooling between the two surveys."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.037,
+   "at": 33.023,
+   "text": "Did you study ten or more years?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Odisha: Women With 10+ Years of School Up 11 Points"
+}

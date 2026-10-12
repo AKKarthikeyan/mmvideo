@@ -1,0 +1,550 @@
+{
+ "id": "px05",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "IIPS · NFHS-6 · RBI · 2023-24",
+ "source": "Phones: share of women aged 15 to 49 who have a mobile phone that they themselves use, NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences (total, urban and rural columns; the NFHS-5 (2019-21) figure is printed beside it). 34 states and UTs ranked; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 fact sheet yet. Income: per-capita net state domestic product, current prices, 2023-24, Reserve Bank of India, Handbook of Statistics on Indian States, Table 19 (33 states and UTs with data; National Statistical Office series).",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Women's own phones, 2023-24:",
+    "*Meghalaya 81%*; Madhya Pradesh,",
+    "same income: *48.5%*."
+   ],
+   "vo": "Women's own phones: Meghalaya one point seven times Madhya Pradesh at level income.",
+   "geo": "Meghalaya",
+   "name": "Meghalaya",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Meghalaya",
+   "geo": "Meghalaya",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹1,41,195",
+   "text": "a year. Madhya Pradesh: ₹1,39,713. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Meghalaya",
+     "label": "₹1,41,195",
+     "frac": 1.0
+    },
+    {
+     "name": "Madhya Pradesh",
+     "label": "₹1,39,713",
+     "frac": 0.9895038776160628
+    }
+   ],
+   "vo": "One lakh forty-one thousand rupees a year, level with Madhya Pradesh.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Meghalaya",
+   "geo": "Meghalaya",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "big": "80.6%",
+   "text": "of women aged 15 to 49 had a mobile phone they themselves used. India: 64%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. 34 ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "bars": [
+    {
+     "name": "Meghalaya",
+     "label": "80.6%",
+     "frac": 0.8059999999999999
+    },
+    {
+     "name": "India",
+     "label": "63.6%",
+     "frac": 0.636
+    }
+   ],
+   "vo": "Eighty-one percent of Meghalaya's women used a phone themselves; India's was sixty-four.",
+   "t0": 13.548,
+   "t1": 21.29
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "big": "48.5%",
+   "text": "of women. Meghalaya's was 1.7 times that, at the same income.",
+   "sub": "Survey estimate. Rural women: Meghalaya 78%, Madhya Pradesh 41%. Earlier survey, 2019-21: 1.8 times, with Meghalaya's income lower.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "48.5%",
+     "frac": 0.485
+    },
+    {
+     "name": "Meghalaya",
+     "label": "80.6%",
+     "frac": 0.8059999999999999
+    }
+   ],
+   "vo": "Madhya Pradesh, same income: forty-eight and a half percent.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across states in 2023-24,",
+    "income and women with a phone",
+    "tended to rise together.",
+    "*Meghalaya* sat above the trend."
+   ],
+   "vo": "Income and women's phones tended to rise together. Meghalaya sat above the trend.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Women with a phone they use, *every state*",
+   "sub": "% of women aged 15 to 49 · India 63.6% · 2023-24",
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Meghalaya",
+    "Madhya Pradesh"
+   ],
+   "vo": "Here is every state: women with a mobile phone they use.",
+   "t0": 32.903,
+   "t1": 36.774
+  },
+  {
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+   "ring": [
+    "Meghalaya",
+    "Madhya Pradesh"
+   ],
+   "q": "Does your *mother* have her own phone?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Does your mother have her own phone?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chhattisgarh",
+   "label": "47.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "48.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.308
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "56.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.363
+  },
+  {
+   "name": "Jharkhand",
+   "label": "58.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.418
+  },
+  {
+   "name": "Gujarat",
+   "label": "58.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.473
+  },
+  {
+   "name": "Rajasthan",
+   "label": "61.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.528
+  },
+  {
+   "name": "Bihar",
+   "label": "62.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.583
+  },
+  {
+   "name": "Maharashtra",
+   "label": "63.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.638
+  },
+  {
+   "name": "Odisha",
+   "label": "63.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.693
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "64.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.748
+  },
+  {
+   "name": "Haryana",
+   "label": "64.9",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.803
+  },
+  {
+   "name": "West Bengal",
+   "label": "65.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Tripura",
+   "label": "65.5",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.913
+  },
+  {
+   "name": "Telangana",
+   "label": "65.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.968
+  },
+  {
+   "name": "Assam",
+   "label": "66.8",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 34.023
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "68.3",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 34.078
+  },
+  {
+   "name": "Karnataka",
+   "label": "72.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.133
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "72.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.189
+  },
+  {
+   "name": "Punjab",
+   "label": "72.6",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.244
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "76.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.299
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "76.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.354
+  },
+  {
+   "name": "Meghalaya",
+   "label": "80.6",
+   "bucket": 3,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.409
+  },
+  {
+   "name": "Puducherry",
+   "label": "82.4",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.464
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "83.3",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.519
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "84.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.574
+  },
+  {
+   "name": "Chandigarh",
+   "label": "84.4",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 34.629
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "86.7",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.684
+  },
+  {
+   "name": "Nagaland",
+   "label": "88.5",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.739
+  },
+  {
+   "name": "Ladakh",
+   "label": "89.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.794
+  },
+  {
+   "name": "Kerala",
+   "label": "89.1",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.849
+  },
+  {
+   "name": "Goa",
+   "label": "89.9",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 34.904
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "90.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.959
+  },
+  {
+   "name": "Mizoram",
+   "label": "90.9",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 35.014
+  },
+  {
+   "name": "Sikkim",
+   "label": "91.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 35.069
+  }
+ ],
+ "checked": [
+  "Meghalaya 80.6 rounds to 81",
+  "India 63.6 rounds to 64",
+  "Meghalaya 78.2 rounds to 78",
+  "Madhya Pradesh 40.6 rounds to 41",
+  "Meghalaya 141195 rounds to 141195",
+  "Madhya Pradesh 139713 rounds to 139713",
+  "Meghalaya / Madhya Pradesh = 1.01 (at least 0.98)",
+  "Madhya Pradesh / Meghalaya = 0.99 (at least 0.98)",
+  "Meghalaya / Madhya Pradesh = 1.66 (at least 1.65)",
+  "Madhya Pradesh / Meghalaya = 0.60 (at least 0.572)",
+  "Meghalaya / Madhya Pradesh = 1.75 (at least 1.75)",
+  "Madhya Pradesh / Meghalaya = 0.57 (at least 0.54)",
+  "Madhya Pradesh / Meghalaya = 1.07 (at least 1.05)",
+  "Madhya Pradesh / Meghalaya = 1.12 (at least 1.1)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 6.217,
+   "at": 0.12,
+   "text": "Women's own phones: Meghalaya one point seven times Madhya Pradesh at level income."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.937,
+   "at": 7.862,
+   "text": "One lakh forty-one thousand rupees a year, level with Madhya Pradesh."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.955,
+   "at": 13.668,
+   "text": "Eighty-one percent of Meghalaya's women used a phone themselves; India's was sixty-four."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.597,
+   "at": 21.41,
+   "text": "Madhya Pradesh, same income: forty-eight and a half percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.623,
+   "at": 27.217,
+   "text": "Income and women's phones tended to rise together. Meghalaya sat above the trend."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 33.023,
+   "text": "Here is every state: women with a mobile phone they use."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 36.894,
+   "text": "Does your mother have her own phone?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Women With Own Phone: Meghalaya 81%, Madhya Pradesh 48.5%"
+}

@@ -4,6 +4,7 @@ What AK has fixed. Change these only when AK says so. Ops status and the log liv
 
 ## Brand
 - Name: **Data Kadai** (handle `@DataKadai`). Tagline: "India's numbers, served fresh. From official sources."
+  AK kept this name over "Data Chai" on 13 Oct 2026; the channel intro explains it on screen as "Kadai = shop".
 - Language: English only, no Tamil lines in videos or captions.
 - Mark: tea-kadai glass holding three rising bars with steam. No India map in the logo.
 - Palette (`src/datayt/IndiaShort.tsx`, `P`): cream `#F7F4EE`, ink `#1F1A17`, maroon `#7A2340`, amber `#C9822F`,
@@ -43,6 +44,9 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - MiniMax `speech-2.6-hd`, voice `English_Diligent_Man` (the Moat & Margin male voice), speed 1.0.
 - Kokoro is a placeholder only. A Short marked `"voiceEngine": "kokoro"` must be re-voiced before it goes to AK.
 - Code: `scripts/datayt/voice_dk.py`. It uses MiniMax whenever `MINIMAX_API_KEY` is set.
+- Tamil words (AK, 13 Oct 2026, after hearing the English voice say "Kadai" in the intro): a Tamil word in the narration is
+  spoken by Sarvam Bulbul v3, speaker `vijay`, from Tamil script (`voice_dk.say_tamil`, needs `SARVAM_API_KEY`). The clip is trimmed and
+  set level with the English lines. No English line may contain the word; the Tamil script is voice text only, never on screen.
 
 ## Production machine and storage (fixed 9 Oct 2026; moved to DarwinSSD 10 Oct 2026)
 - Everything Data Kadai lives on **DarwinSSD**, attached to the Mac Mini: `/Volumes/DarwinSSD/DataKadai/`.

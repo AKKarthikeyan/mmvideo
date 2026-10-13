@@ -14,11 +14,14 @@ import {BeatStory} from "./BeatStory";
 import {BEATS} from "./beatData";
 import {BrandStills} from "./Brand";
 import {PosterStills} from "./Poster";
+import {Intro, INTRO} from "./Intro";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
   <PosterStills/>
   <StoryPostStills/>
+  <Composition id="DATA-intro" component={Intro} durationInFrames={Math.ceil(INTRO.total * 30)} fps={30} width={1080} height={1920}/>
+  <Composition {...({id: "DATA-intro-long", component: Intro, defaultProps: {wide: true}, durationInFrames: Math.ceil(INTRO.total * 30), fps: 30, width: 1920, height: 1080} as any)}/>
   <Composition id="DATA-tn-alcohol" component={TnAlcohol} durationInFrames={TN_ALCOHOL_FRAMES} fps={TN_ALCOHOL_FPS} width={1920} height={1080}/>
   <Composition id="DATA-tn-alcohol-short" component={TnAlcohol} durationInFrames={TN_ALCOHOL_FRAMES} fps={TN_ALCOHOL_FPS} width={1080} height={1920}/>
   {SHORTS.map((d) => <Composition key={d.id} {...({id: `DATA-${d.id}`, component: IndiaShort, defaultProps: {D: d},

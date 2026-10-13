@@ -1,0 +1,177 @@
+{
+ "id": "intro",
+ "total": 40.161,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "scenes": [
+  {
+   "kind": "tease",
+   "t0": 0.0,
+   "t1": 5.806,
+   "cues": [
+    0.12,
+    3.689
+   ]
+  },
+  {
+   "kind": "second",
+   "t0": 5.806,
+   "t1": 11.613,
+   "cues": [
+    5.926
+   ]
+  },
+  {
+   "kind": "tables",
+   "t0": 11.613,
+   "t1": 16.935,
+   "cues": [
+    11.733,
+    14.989
+   ]
+  },
+  {
+   "kind": "logo",
+   "t0": 16.935,
+   "t1": 24.677,
+   "cues": [
+    17.055,
+    18.326,
+    19.465,
+    21.101
+   ]
+  },
+  {
+   "kind": "promise",
+   "t0": 24.677,
+   "t1": 30.0,
+   "cues": [
+    24.797
+   ]
+  },
+  {
+   "kind": "shelf",
+   "t0": 30.0,
+   "t1": 35.323,
+   "cues": [
+    30.12
+   ]
+  },
+  {
+   "kind": "end",
+   "t0": 35.323,
+   "t1": 40.161,
+   "cues": [
+    35.443
+   ]
+  }
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 3.369,
+   "text": "One state grows nearly half of India's sugarcane."
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 3.689,
+   "sec": 1.436,
+   "text": "Uttar Pradesh."
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 5.926,
+   "sec": 5.25,
+   "text": "Bihar: lowest income per person, yet 5G in ninety-six of a hundred villages."
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 11.733,
+   "sec": 3.056,
+   "text": "India's official tables are full of numbers like these."
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 14.989,
+   "sec": 1.567,
+   "text": "You just have to open them."
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 17.055,
+   "sec": 1.071,
+   "text": "We do."
+  },
+  {
+   "file": "vo_06.wav",
+   "at": 18.326,
+   "sec": 0.939,
+   "text": "Data Kadai."
+  },
+  {
+   "file": "vo_07.mp3",
+   "at": 19.465,
+   "sec": 1.436,
+   "text": "It means data shop."
+  },
+  {
+   "file": "vo_08.mp3",
+   "at": 21.101,
+   "sec": 2.847,
+   "text": "This one serves India's numbers, fresh."
+  },
+  {
+   "file": "vo_09.mp3",
+   "at": 24.797,
+   "sec": 4.623,
+   "text": "A new number every day, from official sources, named on screen."
+  },
+  {
+   "file": "vo_10.mp3",
+   "at": 30.12,
+   "sec": 4.728,
+   "text": "Money, farms, schools, and how your state compares."
+  },
+  {
+   "file": "vo_11.mp3",
+   "at": 35.443,
+   "sec": 2.925,
+   "text": "So, where does your state rank?"
+  }
+ ],
+ "up": {
+  "name": "Uttar Pradesh",
+  "big": "48.6%",
+  "text": "of India's sugarcane, 2024-25",
+  "source": "Source: Ministry of Agriculture and Farmers' Welfare, sugarcane production 2024-25, as published in the RBI Handbook of Statistics on Indian States (Table 65)."
+ },
+ "bihar": {
+  "name": "Bihar",
+  "big": "95.6%",
+  "text": "of villages brought under 5G services",
+  "income": "₹69,321",
+  "source": "Income: ₹69,321 a year, per-capita net state domestic product, current prices, 2024-25, the lowest of the 25 states and UTs with data (RBI Handbook). 5G: Dept of Telecommunications, Lok Sabha Starred Q. 470, 42,902 of 44,888 villages, as on 28 Feb 2026."
+ },
+ "themes": [
+  "Money",
+  "Farm and food",
+  "Women",
+  "Economy",
+  "Power and connections",
+  "School and health",
+  "Know your states"
+ ],
+ "tables": [
+  "RBI Handbook of Statistics on Indian States",
+  "Agriculture Ministry",
+  "National Family Health Survey (NFHS-6)",
+  "Dept of Telecommunications",
+  "Lok Sabha answers",
+  "Periodic Labour Force Survey",
+  "Central Electricity Authority"
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "tamilVoice": "sarvam vijay"
+}

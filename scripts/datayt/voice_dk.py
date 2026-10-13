@@ -76,3 +76,85 @@ def say(text, stem, voice=None):
     sec = round((_minimax if ENGINE == "minimax" else _kokoro_say)(text, path, voice), 3)
     json.dump({"h": h, "sec": sec, "text": text, "voice": voice, "engine": ENGINE}, open(meta, "w"))
     return os.path.basename(path), sec
+
+
+# ---------- Tamil words inside an English narration (AK, 13 Oct 2026) ----------
+# The English voice mispronounces Tamil words, so they are spoken from Tamil script by Sarvam Bulbul v3, speaker vijay,
+# then trimmed and set level with the English lines around them. Needs SARVAM_API_KEY. Override: DK_TAMIL_SPEAKER.
+TAMIL_SPEAKER = os.environ.get("DK_TAMIL_SPEAKER") or "vijay"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SR = 44100
+
+
+def pcm(path):
+    """A narration file as mono float samples at 44.1 kHz (decoded by Remotion's ffmpeg)."""
+    import subprocess, tempfile, wave, numpy as np
+    with tempfile.TemporaryDirectory() as d:
+        w = os.path.join(d, "a.wav")
+        r = subprocess.run(["npx", "remotion", "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", os.path.abspath(path), "-vn", "-ac", "1",
+                            "-ar", str(SR), "-c:a", "pcm_s16le", w], capture_output=True, text=True, cwd=ROOT)
+        if r.returncode or not os.path.exists(w):
+            raise SystemExit(f"could not decode {path}: {r.stderr[-200:]}")
+        f = wave.open(w)
+        return np.frombuffer(f.readframes(f.getnframes()), dtype=np.int16).astype(float) / 32768
+
+
+def voiced_rms(a):
+    """Loudness of the spoken parts only, the same measure the Kokoro normaliser uses."""
+    import numpy as np
+    v = a[np.abs(a) > 0.02 * np.abs(a).max()]
+    return float(np.sqrt(np.mean(v ** 2)))
+
+
+def say_tamil(text, stem, match=None, speaker=None):
+    """Voice Tamil script to `<stem>.wav`: silence trimmed from both ends and, when `match` is given, the voiced level set to
+    it. Returns (file name, seconds). Reuses the file when speaker, text and level are unchanged."""
+    import base64, wave, numpy as np, requests
+    speaker = speaker or TAMIL_SPEAKER
+    path = f"{stem}.wav"
+    h = hashlib.sha1(f"sarvam|{speaker}|{text}|{round(match or 0, 4)}".encode()).hexdigest()[:12]
+    meta = path + ".json"
+    if os.path.exists(path) and os.path.exists(meta):
+        m = json.load(open(meta))
+        if m.get("h") == h:
+            return os.path.basename(path), m["sec"]
+    body = {"text": text, "target_language_code": "ta-IN", "speaker": speaker, "model": "bulbul:v3", "pace": 1.0, "speech_sample_rate": SR,
+            "output_audio_codec": "mp3"}
+    raw = f"{stem}.raw.mp3"
+    for attempt in range(6):
+        r = requests.post("https://api.sarvam.ai/text-to-speech", headers={"api-subscription-key": os.environ["SARVAM_API_KEY"]}, json=body, timeout=120)
+        if r.status_code == 200 and r.json().get("audios"):
+            open(raw, "wb").write(base64.b64decode("".join(r.json()["audios"])))
+            break
+        print("  retry", os.path.basename(path), r.status_code, r.text[:160].replace("\n", " "))
+        if r.status_code in (401, 403):
+            raise SystemExit("Sarvam rejected the key (401/403): check SARVAM_API_KEY")
+        time.sleep(20 * (attempt + 1))
+    else:
+        raise SystemExit("TTS failed: " + path)
+    a = pcm(raw)
+    on = np.flatnonzero(np.abs(a) > 0.02 * np.abs(a).max())
+    a = a[max(0, on[0] - int(0.03 * SR)): on[-1] + int(0.08 * SR)]
+    if match:
+        a = a * (match / max(1e-6, voiced_rms(a)))
+    a = a * min(1.0, 0.95 / max(1e-6, float(np.abs(a).max())))
+    n = int(0.005 * SR)
+    a[:n] *= np.linspace(0, 1, n); a[-n:] *= np.linspace(1, 0, n)
+    w = wave.open(path, "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+    w.writeframes((a * 32767).astype(np.int16).tobytes()); w.close()
+    sec = round(len(a) / SR, 3)
+    json.dump({"h": h, "sec": sec, "text": text, "voice": speaker, "engine": "sarvam"}, open(meta, "w"))
+    return os.path.basename(path), sec
+
+
+def hear_tamil(path):
+    """What Sarvam's speech-to-text hears in a Tamil clip: a check that the word is recognisable, not a judgment of how it
+    sounds. Returns "" when the service gives no transcript."""
+    import requests
+    try:
+        r = requests.post("https://api.sarvam.ai/speech-to-text", headers={"api-subscription-key": os.environ["SARVAM_API_KEY"]},
+                          files={"file": (os.path.basename(path), open(path, "rb"), "audio/wav")},
+                          data={"model": "saarika:v2.5", "language_code": "ta-IN"}, timeout=120)
+        return (r.json().get("transcript") or "").strip() if r.status_code == 200 else f"(no transcript: {r.status_code} {r.text[:120]})"
+    except Exception as e:      # the check is optional: a build never fails on it
+        return f"(no transcript: {e})"

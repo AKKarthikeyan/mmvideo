@@ -1,0 +1,653 @@
+{
+ "id": "tn11",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "MNRE · Lok Sabha, 4 Feb 2026 · Mar 2021 to Mar 2025",
+ "palette": "C",
+ "state": "Rajasthan",
+ "points": [
+  {
+   "data": {
+    "ls": [
+     "ls18-s7-U768#1",
+     0
+    ]
+   },
+   "period": "March 2021"
+  },
+  {
+   "data": {
+    "ls": [
+     "ls18-s7-U768#1",
+     4
+    ]
+   },
+   "period": "March 2025"
+  }
+ ],
+ "measure": "share",
+ "delta": "points",
+ "kicker": "SHARE OF INDIA'S RENEWABLE CAPACITY",
+ "expect": {
+  "years": 4
+ },
+ "source": "Ministry of New and Renewable Energy, answer to Lok Sabha Unstarred Question 768, 4 February 2026 (Annexure-I): cumulative installed renewable energy capacity of each state and union territory, in megawatts, as on 31 March 2021 and 31 March 2025. Large hydro is included. Each share is of the all-India total printed in the same table.",
+ "hook": [
+  "*Rajasthan* added *30%* of India's",
+  "new installed renewable",
+  "capacity, 2021 to 2025."
+ ],
+ "hook_vo": "Rajasthan added thirty percent of India's new installed renewable capacity.",
+ "then": {
+  "text": "of India's capacity: *10,812 MW*",
+  "vo": "In March twenty twenty-one: seven point six percent of India's capacity."
+ },
+ "now": {
+  "text": "of India's capacity: *34,136 MW*",
+  "vo": "March twenty twenty-five: fifteen point five percent. Thirty-four thousand megawatts."
+ },
+ "facts": [
+  {
+   "kicker": "INSTALLED CAPACITY · 2021 TO 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Rajasthan's installed renewable capacity",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "ratio": [
+      {
+       "data": {
+        "ls": [
+         "ls18-s7-U768#1",
+         4
+        ]
+       }
+      },
+      {
+       "data": {
+        "ls": [
+         "ls18-s7-U768#1",
+         0
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "data": {
+        "ls": [
+         "ls18-s7-U768#1",
+         4
+        ]
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "ls": [
+         "ls18-s7-U768#1",
+         0
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 4,
+   "sub": "India: 142,013 MW to 220,096 MW.",
+   "vo": "India's capacity grew one point five times. Rajasthan's, three point two."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Its share rose in *each* of",
+    "the four years: 11.1%, 13.3%,",
+    "14.2%, then *15.5%*."
+   ],
+   "note": "The 30% on the first card: net added, March 2021 to March 2025, 23,324 of 78,084 MW. Includes large hydro. The table shows how much, not why.",
+   "vo": "The share rose in each of the four years."
+  }
+ ],
+ "tests": [
+  {
+   "says": "7.6% of India's capacity in March 2021 (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s7-U768#1",
+      0
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 76
+  },
+  {
+   "says": "15.5% in March 2025 (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s7-U768#1",
+      4
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 155
+  },
+  {
+   "says": "10,812 MW in March 2021",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s7-U768#1",
+      0
+     ]
+    }
+   },
+   "equals": 10812
+  },
+  {
+   "says": "34,136 MW in March 2025",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s7-U768#1",
+      4
+     ]
+    }
+   },
+   "equals": 34136
+  },
+  {
+   "says": "share doubled: 2.0 to 2.1 times",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      }
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.15
+  },
+  {
+   "says": "India 142,013 MW in March 2021",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s7-U768#1",
+      0
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 142013
+  },
+  {
+   "says": "India 220,096 MW in March 2025",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s7-U768#1",
+      4
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 220096
+  },
+  {
+   "says": "India's capacity grew one point five times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 15
+  },
+  {
+   "says": "Rajasthan's capacity grew three point two times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 32
+  },
+  {
+   "says": "Rajasthan added 23,324 MW",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "equals": 23324
+  },
+  {
+   "says": "India added 78,084 MW",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 78084
+  },
+  {
+   "says": "Rajasthan added thirty percent of India's new capacity",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U768#1",
+          4
+         ]
+        }
+       },
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U768#1",
+          0
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U768#1",
+          4
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U768#1",
+          0
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 30
+  },
+  {
+   "says": "share in March 2022 was 11.1% (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s7-U768#1",
+      1
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 111
+  },
+  {
+   "says": "share in March 2023 was 13.3% (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s7-U768#1",
+      2
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 133
+  },
+  {
+   "says": "share in March 2024 was 14.2% (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s7-U768#1",
+      3
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 142
+  },
+  {
+   "says": "the rise holds in every year: March 2022 share is at least 3 points above March 2021",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        1
+       ]
+      }
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 3,
+   "max": 4.5
+  },
+  {
+   "says": "a lower share can come with more megawatts: Karnataka's share fell 2 to 3 points",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": -3,
+   "max": -2
+  },
+  {
+   "says": "a lower share can come with more megawatts: Karnataka's capacity grew 1.2 to 1.3 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.2,
+   "max": 1.3
+  },
+  {
+   "says": "the rise holds in 2023: March 2023 share is 5 to 6.5 points above March 2021",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        2
+       ]
+      }
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 5,
+   "max": 6.5
+  },
+  {
+   "says": "the rise holds in 2024: March 2024 share is 6 to 7.5 points above March 2021",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        3
+       ]
+      }
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 6,
+   "max": 7.5
+  },
+  {
+   "says": "Ladakh is printed as 0 MW in March 2021 and 136 MW in March 2022",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s7-U768#1",
+      1
+     ]
+    },
+    "state": "Ladakh"
+   },
+   "equals": 136
+  },
+  {
+   "says": "Jammu and Kashmir fell 110 to 140 MW between March 2021 and March 2022 while Ladakh appeared at 136 MW: the 2021 J&K figure includes Ladakh",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        1
+       ]
+      },
+      "state": "Jammu and Kashmir"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "Jammu and Kashmir"
+     }
+    ]
+   },
+   "min": -140,
+   "max": -110
+  },
+  {
+   "says": "Jammu and Kashmir's share fell 0.5 to 1.5 points on the map only because of that split",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        4
+       ]
+      },
+      "state": "Jammu and Kashmir"
+     },
+     {
+      "share": {
+       "ls": [
+        "ls18-s7-U768#1",
+        0
+       ]
+      },
+      "state": "Jammu and Kashmir"
+     }
+    ]
+   },
+   "min": -1.5,
+   "max": -0.5
+  }
+ ],
+ "map": {
+  "bands": [
+   -1.5,
+   -0.3,
+   0.3,
+   1.5
+  ],
+  "title": "Renewable share: *each state's change*",
+  "sub": "points of India's capacity · {from} to {to}",
+  "note": "State totals incl. large hydro. A lower share can come with more MW. Blank: Ladakh (inside J&K in 2021, so J&K's dip is not like for like), A&N, Daman and Diu.",
+  "vo": "How each state's share of installed capacity moved.",
+  "key": [
+   "share fell",
+   "within 0.3 points",
+   "share rose"
+  ]
+ },
+ "end": {
+  "q": "Which *renewable* is near your home?",
+  "sub": "Solar, wind or hydro?",
+  "vo": "Which renewable is near your home? Solar, wind or hydro?"
+ },
+ "yt_title": "Rajasthan: 30% of India's New Installed Renewable Capacity"
+}

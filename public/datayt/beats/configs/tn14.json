@@ -1,0 +1,699 @@
+{
+ "id": "tn14",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Agriculture Ministry · land use, 2012-13 to 2022-23",
+ "palette": "E",
+ "state": "Madhya Pradesh",
+ "table": 57,
+ "from": "2012-13",
+ "to": "2022-23",
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "scale": 1.0000001,
+ "kicker": "CROP AREA PER 100 HA OF FARMLAND",
+ "expect": {
+  "years": 10
+ },
+ "source": "Ministry of Agriculture and Farmers' Welfare, Land Use Statistics at a Glance, as published in the RBI Handbook of Statistics on Indian States, Table 57: cropping intensity, per cent (area sown with crops, counting each crop, as a percentage of the net sown area). Area figures are Tables 53 (gross sown area) and 54 (net sown area). Figures are reported by the states to the Ministry (the table marks some as estimates). 2022-23 is the last year that is not provisional.",
+ "hook": [
+  "*Madhya Pradesh* cropped area",
+  "up *30%*, farmland up *3%*,",
+  "2012-13 to 2022-23."
+ ],
+ "hook_vo": "Madhya Pradesh's cropped area grew thirty percent. Its farmland, three.",
+ "then": {
+  "text": "crops on *151 ha* per 100 ha of farmland",
+  "vo": "In twenty twelve-thirteen: farmland sown one point five times."
+ },
+ "now": {
+  "text": "crops on *190 ha* per 100 ha of farmland",
+  "vo": "In twenty twenty-two twenty-three: farmland sown one point nine times."
+ },
+ "facts": [
+  {
+   "kicker": "AREA ADDED · 2012-13 TO 2022-23",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 0.001
+   },
+   "unit": " million ha",
+   "text": "more area under crops. Farmland: *0.5 million ha*",
+   "bars": [
+    {
+     "name": "Crops",
+     "unit": "",
+     "diff": [
+      {
+       "data": {
+        "rbi": [
+         53,
+         "2022-23"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         53,
+         "2012-13"
+        ]
+       }
+      }
+     ],
+     "scale": 0.001
+    },
+    {
+     "name": "Farmland",
+     "unit": "",
+     "diff": [
+      {
+       "data": {
+        "rbi": [
+         54,
+         "2022-23"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         54,
+         "2012-13"
+        ]
+       }
+      }
+     ],
+     "scale": 0.001
+    }
+   ],
+   "bar_max": 8,
+   "sub": "Bars in million hectares. Crop area 23.1 to 30.1; farmland 15.4 to 15.8.",
+   "vo": "Seven million more hectares of crops. The farmland itself, half a million."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "The rise of *39.3 points*",
+    "was *2.3 times* India's",
+    "rise of *16.8 points*."
+   ],
+   "note": "India: 139.1% to 155.9%. Provisional 2023-24: Madhya Pradesh 193.5%. Cropping intensity is crop area as a share of farmland (net sown area). The table shows how much, not why.",
+   "vo": "Its rise was two point three times India's rise of sixteen point eight."
+  }
+ ],
+ "tests": [
+  {
+   "says": "150.7% in 2012-13 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 1507
+  },
+  {
+   "says": "190.0% in 2022-23 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2022-23"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 1900
+  },
+  {
+   "says": "farmland sown one point five times in 2012-13 (tenths of the ratio)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    },
+    "scale": 0.1
+   },
+   "equals": 15
+  },
+  {
+   "says": "farmland sown one point nine times in 2022-23",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2022-23"
+     ]
+    },
+    "scale": 0.1
+   },
+   "equals": 19
+  },
+  {
+   "says": "151 ha of crops per 100 ha in 2012-13",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    }
+   },
+   "equals": 151
+  },
+  {
+   "says": "190 ha of crops per 100 ha in 2022-23",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2022-23"
+     ]
+    }
+   },
+   "equals": 190
+  },
+  {
+   "says": "India 139.1% in 2012-13 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 1391
+  },
+  {
+   "says": "India 155.9% in 2022-23 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2022-23"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 1559
+  },
+  {
+   "says": "Madhya Pradesh rose 39.3 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        57,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        57,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 393
+  },
+  {
+   "says": "India rose sixteen point eight points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        57,
+        "2022-23"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        57,
+        "2012-13"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 168
+  },
+  {
+   "says": "Madhya Pradesh's rise was two point three times India's (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          57,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          57,
+          "2012-13"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          57,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          57,
+          "2012-13"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 23
+  },
+  {
+   "says": "crop area up thirty percent (gross sown area, table 53)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          53,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          53,
+          "2012-13"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 30
+  },
+  {
+   "says": "farmland up three percent (net sown area, table 54)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          54,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          54,
+          "2012-13"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 3
+  },
+  {
+   "says": "farmland +3.2% printed (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          54,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          54,
+          "2012-13"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 32
+  },
+  {
+   "says": "crop area +30.2% (printed on the card; tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          53,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          53,
+          "2012-13"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 302
+  },
+  {
+   "says": "crop area 23.1 million ha in 2012-13 (table 53, tenths of a million)",
+   "value": {
+    "data": {
+     "rbi": [
+      53,
+      "2012-13"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 231
+  },
+  {
+   "says": "crop area 30.1 million ha in 2022-23",
+   "value": {
+    "data": {
+     "rbi": [
+      53,
+      "2022-23"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 301
+  },
+  {
+   "says": "farmland 15.4 million ha in 2012-13 (table 54)",
+   "value": {
+    "data": {
+     "rbi": [
+      54,
+      "2012-13"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 154
+  },
+  {
+   "says": "farmland 15.8 million ha in 2022-23",
+   "value": {
+    "data": {
+     "rbi": [
+      54,
+      "2022-23"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 158
+  },
+  {
+   "says": "provisional 2023-24: 193.5% (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2023-24 (p)"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 1935
+  },
+  {
+   "says": "cropping intensity is crop area over farmland: 2022-23 gives 190% from tables 53 and 54",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 190
+  },
+  {
+   "says": "cropping intensity is crop area over farmland: 2012-13 gives 151% from tables 53 and 54",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2012-13"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 151
+  },
+  {
+   "says": "Mizoram is printed as exactly 100.0 in 2012-13 (named in the map note)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    },
+    "state": "Mizoram",
+    "scale": 10
+   },
+   "equals": 1000
+  },
+  {
+   "says": "Manipur is printed as exactly 100.0 in 2012-13 (named in the map note)",
+   "value": {
+    "data": {
+     "rbi": [
+      57,
+      "2012-13"
+     ]
+    },
+    "state": "Manipur",
+    "scale": 10
+   },
+   "equals": 1000
+  },
+  {
+   "says": "crops covered 7.0 million more hectares: gross sown area 2022-23 minus 2012-13, tenths of a million (table 53)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        53,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 70
+  },
+  {
+   "says": "farmland grew 0.5 million hectares: net sown area 2022-23 minus 2012-13, tenths of a million (table 54)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        54,
+        "2012-13"
+       ]
+      }
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 5
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -3,
+   -0.5,
+   0.5,
+   25
+  ],
+  "title": "Crops per farmland: *each state's change*",
+  "sub": "percentage points · {from} to {to} · India +16.8",
+  "note": "Crop area as % of farmland. Blank: Andhra Pradesh (split 2014), Jammu and Kashmir (boundary), Telangana, Ladakh (no 2012-13). Mizoram, Manipur: 100.0 in 2012-13.",
+  "vo": "Crop area per farmland: the ten-year change in each state.",
+  "key": [
+   "fell",
+   "within 0.5 points",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Does your land give *two harvests*?",
+  "sub": "See where your state landed.",
+  "vo": "Does your land give two harvests?"
+ },
+ "yt_title": "Madhya Pradesh: Cropped Area Up 30% on 3% More Farmland"
+}

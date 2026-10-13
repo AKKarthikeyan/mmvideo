@@ -1,0 +1,548 @@
+{
+ "id": "px08",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "IIPS · NFHS-6 · RBI · 2023-24",
+ "source": "Schooling: men aged 15 to 49 with 10 or more years of schooling, NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences; the 2019-21 figure is printed beside it. 34 states and UTs ranked; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 fact sheet. Income: per-capita net state domestic product, current prices, 2023-24, RBI Handbook of Statistics on Indian States, Table 19 (33 states and UTs).",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Himachal* men, 2023-24: *76%*",
+    "had 10+ years of school.",
+    "Andhra: same income."
+   ],
+   "vo": "Seventy-six percent of Himachal Pradesh men had ten-plus years of school.",
+   "geo": "Himachal Pradesh",
+   "name": "Himachal",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹2,34,721",
+   "text": "a year. Andhra Pradesh: ₹2,37,951. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Himachal",
+     "label": "₹2,34,721",
+     "frac": 0.9864257767355464
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "₹2,37,951",
+     "frac": 1.0
+    }
+   ],
+   "vo": "Income per person: two lakh thirty-five thousand rupees, level with Andhra Pradesh's.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "kicker": "MEN, 10+ YEARS OF SCHOOL · 2023-24",
+   "big": "76.0%",
+   "text": "of men aged 15 to 49 had 10 or more years of school. India: 55%.",
+   "sub": "Survey estimate. Earlier survey, 2019-21: 71%. IIPS, NFHS-6 state fact sheets. 34 ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "bars": [
+    {
+     "name": "Himachal",
+     "label": "76.0%",
+     "frac": 0.76
+    },
+    {
+     "name": "India",
+     "label": "54.6%",
+     "frac": 0.546
+    }
+   ],
+   "vo": "Himachal Pradesh men: seventy-six percent. India's was fifty-five.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "kicker": "MEN, 10+ YEARS OF SCHOOL · 2023-24",
+   "big": "59.5%",
+   "text": "of men. Himachal Pradesh's was 1.3 times that, at the same income.",
+   "sub": "Up from 48% in 2019-21, when Himachal Pradesh's was 1.5 times that.",
+   "bars": [
+    {
+     "name": "Andhra Pradesh",
+     "label": "59.5%",
+     "frac": 0.595
+    },
+    {
+     "name": "Himachal",
+     "label": "76.0%",
+     "frac": 0.76
+    }
+   ],
+   "vo": "Andhra Pradesh, same income: fifty-nine point five percent, up from forty-eight.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Men's schooling mostly follows",
+    "income. *Himachal* has more",
+    "than its income predicts."
+   ],
+   "vo": "Men's schooling mostly followed income. Himachal did better than its income predicts.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Men with 10+ years of school, *every state*",
+   "sub": "% of men aged 15 to 49 · India 54.6% · 2023-24",
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Himachal Pradesh",
+    "Andhra Pradesh"
+   ],
+   "vo": "Men with ten-plus years of school in every state.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet). The table shows how much, not why.",
+   "ring": [
+    "Himachal Pradesh",
+    "Andhra Pradesh"
+   ],
+   "q": "Where did *your* schooling stop?",
+   "sub": "Class 10, 12 or beyond?",
+   "kind": "mapend",
+   "vo": "Where did your schooling stop?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Meghalaya",
+   "label": "35.9",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Tripura",
+   "label": "37.9",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.43
+  },
+  {
+   "name": "Assam",
+   "label": "41.7",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.542
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "42.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.654
+  },
+  {
+   "name": "West Bengal",
+   "label": "42.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.766
+  },
+  {
+   "name": "Bihar",
+   "label": "45.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.878
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "46.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.99
+  },
+  {
+   "name": "Gujarat",
+   "label": "47.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.102
+  },
+  {
+   "name": "Odisha",
+   "label": "49.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.214
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "49.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.325
+  },
+  {
+   "name": "Nagaland",
+   "label": "49.9",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.437
+  },
+  {
+   "name": "Jharkhand",
+   "label": "51.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.549
+  },
+  {
+   "name": "Sikkim",
+   "label": "52.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.661
+  },
+  {
+   "name": "Mizoram",
+   "label": "53.1",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.773
+  },
+  {
+   "name": "Rajasthan",
+   "label": "55.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.885
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "56.6",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 32.997
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "57.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.109
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "59.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "61.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.333
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "62.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.445
+  },
+  {
+   "name": "Karnataka",
+   "label": "63.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.557
+  },
+  {
+   "name": "Punjab",
+   "label": "64.3",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.669
+  },
+  {
+   "name": "Haryana",
+   "label": "64.4",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.781
+  },
+  {
+   "name": "Telangana",
+   "label": "65.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.893
+  },
+  {
+   "name": "Ladakh",
+   "label": "65.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.005
+  },
+  {
+   "name": "Maharashtra",
+   "label": "66.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.117
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "66.8",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.228
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "67.6",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.34
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "69.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.452
+  },
+  {
+   "name": "Goa",
+   "label": "69.9",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 34.564
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "76.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.676
+  },
+  {
+   "name": "Puducherry",
+   "label": "80.4",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.788
+  },
+  {
+   "name": "Kerala",
+   "label": "82.1",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.9
+  },
+  {
+   "name": "Chandigarh",
+   "label": "88.4",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 35.012
+  }
+ ],
+ "checked": [
+  "Himachal Pradesh 234721 rounds to 234721",
+  "Andhra Pradesh 237951 rounds to 237951",
+  "Himachal Pradesh / Andhra Pradesh = 0.99 (at least 0.98)",
+  "Andhra Pradesh / Himachal Pradesh = 1.01 (at least 0.98)",
+  "Himachal Pradesh 76 rounds to 76",
+  "India 54.6 rounds to 55",
+  "Himachal Pradesh 71.3 rounds to 71",
+  "Andhra Pradesh 59.5 rounds to 60",
+  "Andhra Pradesh 47.9 rounds to 48",
+  "Himachal Pradesh / Andhra Pradesh = 1.28 (at least 1.25)",
+  "Andhra Pradesh / Himachal Pradesh = 0.78 (at least 0.7407)",
+  "Himachal Pradesh / Andhra Pradesh = 1.49 (at least 1.45)",
+  "Andhra Pradesh / Himachal Pradesh = 0.67 (at least 0.6452)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.179,
+   "at": 0.12,
+   "text": "Seventy-six percent of Himachal Pradesh men had ten-plus years of school."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.485,
+   "at": 5.926,
+   "text": "Income per person: two lakh thirty-five thousand rupees, level with Andhra Pradesh's."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.101,
+   "at": 13.668,
+   "text": "Himachal Pradesh men: seventy-six percent. India's was fifty-five."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.754,
+   "at": 19.475,
+   "text": "Andhra Pradesh, same income: fifty-nine point five percent, up from forty-eight."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.754,
+   "at": 25.281,
+   "text": "Men's schooling mostly followed income. Himachal did better than its income predicts."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.996,
+   "at": 31.088,
+   "text": "Men with ten-plus years of school in every state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.645,
+   "at": 36.894,
+   "text": "Where did your schooling stop?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Men With 10+ Years of School: Himachal 76%, Andhra 59.5%"
+}

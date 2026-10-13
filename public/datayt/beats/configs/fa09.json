@@ -1,0 +1,322 @@
+{
+ "id": "fa09",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Textiles Ministry · DGCI&S · 2024-25",
+ "palette": "C",
+ "state": "Tamil Nadu",
+ "source": "Ministry of Textiles, reply to Lok Sabha Unstarred Question No. 5183 of 24 March 2026, Annexure-1: India's textile and apparel exports including handicrafts, by state, value in Rs. lakh, 2020-21 to 2024-25. Source printed under the table: DGCI&S; the total includes unspecified data. The answer does not mark any year provisional or final. State totals, not per-person figures.",
+ "hook": [
+  "*Tamil Nadu*: highest in",
+  "textile, apparel export value,",
+  "*5 years running*, 2024-25."
+ ],
+ "hook_vo": "Tamil Nadu led textile and apparel export value five years running.",
+ "facts": [
+  {
+   "state": "Tamil Nadu",
+   "kicker": "TEXTILE EXPORT VALUE · 2024-25",
+   "data": {
+    "ls": [
+     "ls18-s7-U5183#1",
+     4
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 30,
+   "text": "of India's textile and apparel export value, with handicrafts, in 2024-25. The highest of the states listed.",
+   "sub": "Export value from DGCI&S, in a Ministry of Textiles Lok Sabha answer (24 Mar 2026); not marked final. State totals, not per person.",
+   "vo": "Twenty-one percent of India's textile and apparel exports. Highest of any state."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "THE NEXT STATE · GUJARAT",
+   "data": {
+    "ls": [
+     "ls18-s7-U5183#1",
+     4
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Tamil Nadu"
+   ],
+   "bar_max": 30,
+   "text": "is Gujarat's share. Tamil Nadu's exports were 35% above Gujarat's.",
+   "sub": "Export value by state, 2024-25.",
+   "vo": "Gujarat was next. Tamil Nadu's exports were thirty-five percent above Gujarat's."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "FOUR YEARS EARLIER · 2020-21",
+   "data": {
+    "ls": [
+     "ls18-s7-U5183#1",
+     0
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 30,
+   "text": "of India's textile and apparel export value in 2020-21: also the highest, ahead of Gujarat.",
+   "sub": "Same table, 2020-21 column.",
+   "vo": "Four years earlier: nineteen point seven percent."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "min": 1.345
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "min": 0.738
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      0
+     ]
+    }
+   },
+   "min": 1.18
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      1
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      1
+     ]
+    }
+   },
+   "min": 1.18
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      2
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      2
+     ]
+    }
+   },
+   "min": 1.18
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      3
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      3
+     ]
+    }
+   },
+   "min": 1.18
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s7-U5183#1",
+      4
+     ]
+    }
+   },
+   "min": 1.18
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Tamil Nadu* led Gujarat by",
+   "*at least 18%* in every year,",
+   "2020-21 to 2024-25."
+  ],
+  "vo": "Tamil Nadu stayed at least eighteen percent ahead of Gujarat in every year."
+ },
+ "map": {
+  "data": {
+   "values": {
+    "Tamil Nadu": 6786347.81,
+    "Gujarat": 5015027.43,
+    "Haryana": 3484302.82,
+    "Maharashtra": 3361051.89,
+    "Uttar Pradesh": 3180440.73,
+    "Karnataka": 2396113.54,
+    "Rajasthan": 1456024.33,
+    "Punjab": 1182047.62,
+    "Madhya Pradesh": 1174887.72,
+    "West Bengal": 962899.22,
+    "Delhi": 916800.67,
+    "Dadra and Nagar Haveli and Daman and Diu": 625623.34,
+    "Andhra Pradesh": 441146.98,
+    "Kerala": 367831.39,
+    "Himachal Pradesh": 195720.17,
+    "Telangana": 125944.35,
+    "Jammu and Kashmir": 78118.7,
+    "Odisha": 75732.89,
+    "Bihar": 37561.25,
+    "Uttarakhand": 34851.25,
+    "Jharkhand": 30303.47,
+    "Puducherry": 10844.25,
+    "Chandigarh": 7469.78,
+    "Chhattisgarh": 4754.73,
+    "Goa": 2839.95,
+    "Assam": 1808.26,
+    "Ladakh": 71.93,
+    "Nagaland": 60.77,
+    "Meghalaya": 60.18,
+    "Tripura": 21.96,
+    "Sikkim": 18.18,
+    "Manipur": 12.3,
+    "Arunachal Pradesh": 8.88,
+    "Lakshadweep": 4.52,
+    "Mizoram": 0.13,
+    "Andaman and Nicobar Islands": 0.02
+   },
+   "india": 31957320.85
+  },
+  "as": "share",
+  "unit": "%",
+  "title": "Textile export value, *every state*",
+  "sub": "% of India's textile and apparel export value · 2024-25",
+  "note": "State totals, not per person. Handicrafts included. Export value, 2024-25; the answer does not mark it final.",
+  "ring": [
+   "Tamil Nadu",
+   "Gujarat"
+  ],
+  "vo": "Textile and apparel exports from every state. Find yours."
+ },
+ "end": {
+  "q": "Where was your *shirt* made?",
+  "sub": "Comment below.",
+  "vo": "Where was your shirt made?"
+ },
+ "yt_title": "Tamil Nadu: Highest Textile Export Value 5 Years Running"
+}

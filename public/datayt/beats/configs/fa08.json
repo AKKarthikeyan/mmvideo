@@ -1,0 +1,428 @@
+{
+ "id": "fa08",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Commerce Ministry (DPIIT) · to 30 Jun 2026",
+ "palette": "D",
+ "state": "Maharashtra",
+ "source": "Ministry of Commerce and Industry (DPIIT), reply to Lok Sabha Unstarred Question No. 1446 of 28 July 2026, Annexure-I: entities recognised as startups by DPIIT as on 30 June 2026, by state (all-India 2,40,092). Earlier counts: Unstarred Questions No. 4046 of 17 March 2026 and No. 588 of 3 February 2026. Eligibility was widened on 4 February 2026. A running count that includes entities since closed. State totals, not per-person figures.",
+ "hook": [
+  "*Maharashtra* had *1.7×*",
+  "Karnataka's recognised",
+  "start-ups, as on 30 June 2026."
+ ],
+ "hook_vo": "Maharashtra had one point seven times Karnataka's recognised start-ups.",
+ "facts": [
+  {
+   "state": "Maharashtra",
+   "kicker": "RECOGNISED START-UPS · TO JUN 2026",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 45000,
+   "text": "entities recognised as start-ups by DPIIT up to 30 June 2026. The highest of the states and UTs listed.",
+   "sub": "State totals, not per person. DPIIT: Department for Promotion of Industry and Internal Trade.",
+   "vo": "Forty-one thousand four hundred forty. The highest of any state."
+  },
+  {
+   "state": "Karnataka",
+   "kicker": "THREE MORE STATES OVER 22,000",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "Uttar Pradesh",
+    "Delhi"
+   ],
+   "bar_max": 45000,
+   "text": "Karnataka 24,026, Uttar Pradesh 23,678 and Delhi 22,336: the three other states above 22,000.",
+   "sub": "Entities recognised as start-ups by DPIIT, up to 30 June 2026.",
+   "vo": "Karnataka, Uttar Pradesh and Delhi each had over twenty-two thousand."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "SIX MONTHS EARLIER · 31 DEC 2025",
+   "data": {
+    "ls": [
+     "ls18-s7-U588#1",
+     0
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 45000,
+   "text": "start-ups on 31 December 2025, six months before. Karnataka then: 21,163.",
+   "sub": "Same count, earlier Lok Sabha answer (3 Feb 2026). Eligibility was widened on 4 Feb 2026.",
+   "vo": "In December it was thirty-five thousand nine hundred ninety-two, also the highest."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "equals": 41440
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "equals": 24026
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "equals": 23678
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ls": [
+     "ls18-s8-U1446#1",
+     0
+    ]
+   },
+   "equals": 22336
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ls": [
+     "ls18-s7-U588#1",
+     0
+    ]
+   },
+   "equals": 35992
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "ls": [
+     "ls18-s7-U588#1",
+     0
+    ]
+   },
+   "equals": 21163
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "min": 1.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s8-U1446#1",
+      0
+     ]
+    }
+   },
+   "min": 0.571
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s7-U4046#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s7-U4046#1",
+      0
+     ]
+    }
+   },
+   "min": 1.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s7-U4046#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s7-U4046#1",
+      0
+     ]
+    }
+   },
+   "min": 0.571
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s7-U588#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s7-U588#1",
+      0
+     ]
+    }
+   },
+   "min": 1.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s7-U588#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s7-U588#1",
+      0
+     ]
+    }
+   },
+   "min": 0.571
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      2
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      2
+     ]
+    }
+   },
+   "min": 1.6
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      3
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      3
+     ]
+    }
+   },
+   "min": 1.6
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      4
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s4-U4845#1",
+      4
+     ]
+    }
+   },
+   "min": 1.6
+  }
+ ],
+ "so": {
+  "lines": [
+   "*1.7 times* Karnataka's count",
+   "on each of three dates:",
+   "December, February, June."
+  ],
+  "vo": "One point seven times Karnataka's, on each of three dates."
+ },
+ "map": {
+  "data": {
+   "values": {
+    "Andaman and Nicobar Islands": 108,
+    "Andhra Pradesh": 4707,
+    "Arunachal Pradesh": 102,
+    "Assam": 2351,
+    "Bihar": 5527,
+    "Chandigarh": 740,
+    "Chhattisgarh": 2587,
+    "Delhi": 22336,
+    "Goa": 861,
+    "Gujarat": 21019,
+    "Haryana": 12482,
+    "Himachal Pradesh": 898,
+    "Jammu and Kashmir": 1628,
+    "Jharkhand": 2304,
+    "Karnataka": 24026,
+    "Kerala": 9092,
+    "Ladakh": 25,
+    "Lakshadweep": 3,
+    "Madhya Pradesh": 8194,
+    "Maharashtra": 41440,
+    "Manipur": 295,
+    "Meghalaya": 106,
+    "Mizoram": 78,
+    "Nagaland": 131,
+    "Odisha": 4123,
+    "Puducherry": 263,
+    "Punjab": 2708,
+    "Rajasthan": 8783,
+    "Sikkim": 21,
+    "Tamil Nadu": 15774,
+    "Telangana": 13622,
+    "Tripura": 233,
+    "Uttar Pradesh": 23678,
+    "Uttarakhand": 1970,
+    "West Bengal": 7775,
+    "Dadra and Nagar Haveli and Daman and Diu": 102
+   }
+  },
+  "unit": "",
+  "title": "Recognised start-ups, *every state*",
+  "sub": "entities recognised by DPIIT, up to 30 June 2026",
+  "note": "State totals, not per person. A running count of recognitions; some recognised entities have since closed.",
+  "ring": [
+   "Maharashtra",
+   "Karnataka"
+  ],
+  "vo": "Recognised start-ups in every state, as on thirty June."
+ },
+ "end": {
+  "q": "Which *start-up* began in your city?",
+  "sub": "Comment below.",
+  "vo": "Which start-up began in your city?"
+ },
+ "yt_title": "Maharashtra Had 1.7x Karnataka's Recognised Start-ups, 2026"
+}

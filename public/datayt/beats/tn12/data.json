@@ -1,0 +1,549 @@
+{
+ "id": "tn12",
+ "type": "then",
+ "chip": "12 YEARS ON",
+ "sourceShort": "NSO, MoSPI · output per person, 2011-12 to 2023-24",
+ "source": "National Statistics Office, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States, Table 20: per capita net state domestic product at constant prices (base 2011-12), rupees a year. A state average, not household income. Gujarat has no figure for 2023-24; Andhra Pradesh and Telangana are left off the map because the state was split in 2014, and Jammu and Kashmir because its boundary changed in 2019.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Karnataka* output per person:",
+    "*16% above* Maharashtra, 2023-24;",
+    "*9% below*, 2011-12."
+   ],
+   "vo": "Karnataka rose from nine percent below Maharashtra to sixteen percent above.",
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "OUTPUT PER PERSON · 2011-12 PRICES",
+   "big": "2.1×",
+   "p0": {
+    "period": "2011-12",
+    "label": "₹90,263",
+    "frac": 0.4701932593634422
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "₹1,91,970",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "a year for each person, at *2011-12 prices*",
+   "vo": "In twenty eleven-twelve: about ninety thousand rupees a year for each person.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "OUTPUT PER PERSON · 2011-12 PRICES",
+   "big": "2.1×",
+   "p0": {
+    "period": "2011-12",
+    "label": "₹90,263",
+    "frac": 0.4701932593634422
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "₹1,91,970",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "a year for each person: *2.1 times* that, same prices",
+   "vo": "Same prices, twelve years on: about one lakh ninety-two thousand rupees.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "SAME MEASURE · 2011-12 TO 2023-24",
+   "big": "2.1×",
+   "text": "Karnataka's real output per person",
+   "sub": "Maharashtra: ₹99,597 to ₹1,66,013 a year, same prices.",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "2.1×",
+     "frac": 0.8507140245726378
+    },
+    {
+     "name": "Maharashtra",
+     "label": "1.7×",
+     "frac": 0.666738958000743
+    }
+   ],
+   "vo": "Maharashtra's output per person rose one point seven times. Karnataka's, two point one.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Karnataka stayed *at least 15%*",
+    "above Maharashtra in each",
+    "year, 2021-22 to 2023-24."
+   ],
+   "note": "Both at 2011-12 prices. Karnataka, 2021-22 to 2023-24: ₹1,65,517, ₹1,82,371, ₹1,91,970. A state average, not household income. The table shows how much, not why.",
+   "vo": "Karnataka stayed at least fifteen percent above Maharashtra for three years.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Output per person: *each state's change*",
+   "sub": "% change at 2011-12 prices · 2011-12 to 2023-24",
+   "note": "State average, 2011-12 prices. Blank: Andhra Pradesh and Telangana (split 2014), Jammu and Kashmir (boundary changed), Gujarat (no 2023-24 figure).",
+   "anim": true,
+   "ring": [
+    "Karnataka"
+   ],
+   "vo": "Twelve years of change in output per person by state.",
+   "legend": [
+    {
+     "color": "#DA996A",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#662125",
+     "label": "bigger rise"
+    }
+   ],
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "State average, 2011-12 prices. Blank: Andhra Pradesh and Telangana (split 2014), Jammu and Kashmir (boundary changed), Gujarat (no 2023-24 figure).",
+   "ring": [
+    "Karnataka"
+   ],
+   "legend": [
+    {
+     "color": "#DA996A",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#662125",
+     "label": "bigger rise"
+    }
+   ],
+   "q": "Who rose *more* than Karnataka?",
+   "sub": "Find it on the map.",
+   "kind": "mapend",
+   "vo": "Who rose more than Karnataka?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Puducherry",
+   "label": "+20",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+31",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Goa",
+   "label": "+38",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Nagaland",
+   "label": "+46",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+47",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+50",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+51",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "West Bengal",
+   "label": "+51",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Punjab",
+   "label": "+53",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Manipur",
+   "label": "+54",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+56",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Bihar",
+   "label": "+56",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+58",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+59",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+59",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.947
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+67",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.068
+  },
+  {
+   "name": "Kerala",
+   "label": "+69",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 35.188
+  },
+  {
+   "name": "Haryana",
+   "label": "+72",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 35.309
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+73",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 35.43
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+75",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.551
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+75",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.672
+  },
+  {
+   "name": "Sikkim",
+   "label": "+84",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 35.793
+  },
+  {
+   "name": "Odisha",
+   "label": "+85",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.914
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+92",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.035
+  },
+  {
+   "name": "Assam",
+   "label": "+95",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 36.156
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+100",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 36.277
+  },
+  {
+   "name": "Tripura",
+   "label": "+109",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 36.398
+  },
+  {
+   "name": "Karnataka",
+   "label": "+113",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.519
+  },
+  {
+   "name": "Mizoram",
+   "label": "+163",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 36.64
+  }
+ ],
+ "checked": [
+  "Karnataka: 90263.00 in 2011-12, 191970.00 in 2023-24: +101707.00, 2.13 times",
+  "the years just before 2011-12 do not make it a freak year: measured from 90263.00 the change is still +101707.00",
+  "the change holds in each of 2021-22, 2022-23, 2023-24: 165517.00, 182371.00, 191970.00",
+  "years = 12",
+  "about ninety thousand rupees in 2011-12 (thousands): 90.26",
+  "₹90,263 in 2011-12: 90263.00",
+  "about one lakh ninety-two thousand rupees in 2023-24 (thousands): 191.97",
+  "₹1,91,970 in 2023-24: 191970.00",
+  "more than doubled: 2.0 to 2.3 times: 2.13",
+  "2.1 times (tenths): 21.27",
+  "Maharashtra rose 1.7 times (tenths): 16.67",
+  "Maharashtra ₹99,597 in 2011-12: 99597.00",
+  "Maharashtra ₹1,66,013 in 2023-24: 166013.00",
+  "9% below Maharashtra in 2011-12: 9.37",
+  "16% above Maharashtra in 2023-24: 15.64",
+  "2021-22: ₹1,65,517: 165517.00",
+  "2022-23: ₹1,82,371: 182371.00",
+  "the rise holds in each of the last three years: 2022-23 is already 2.0 to 2.1 times 2011-12: 2.02",
+  "the lead over Maharashtra holds in 2021-22: Karnataka 15 to 19% above (not a one-year flip): 16.85",
+  "the lead over Maharashtra holds in 2022-23: Karnataka 15 to 19% above (not a one-year flip): 17.67"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.25,
+   "at": 0.12,
+   "text": "Karnataka rose from nine percent below Maharashtra to sixteen percent above."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.799,
+   "at": 5.926,
+   "text": "In twenty eleven-twelve: about ninety thousand rupees a year for each person."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.328,
+   "at": 13.668,
+   "text": "Same prices, twelve years on: about one lakh ninety-two thousand rupees."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.537,
+   "at": 19.475,
+   "text": "Maharashtra's output per person rose one point seven times. Karnataka's, two point one."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.578,
+   "at": 27.217,
+   "text": "Karnataka stayed at least fifteen percent above Maharashtra for three years."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.97,
+   "at": 33.023,
+   "text": "Twelve years of change in output per person by state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.75,
+   "at": 38.83,
+   "text": "Who rose more than Karnataka?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Karnataka: Real Output per Person Up 2.1 Times in 12 Years"
+}

@@ -45,5 +45,17 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 37 | fa05 | Andhra Pradesh: Bank Loans Used Were 157% of Deposits, 2025 | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week two) |
 | 38 | px04 | Power Available per Person: Chhattisgarh 1.9x West Bengal | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; banked for a later week) |
 | 39 | tn10 | Odisha: Women With 10+ Years of School Up 11 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked for a later week) |
+| 40 | fa10 | Rajasthan Made 1 in 3 Units of India's Solar Electricity | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week three) |
+| 41 | tn12 | Karnataka: Real Output per Person Up 2.1 Times in 12 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; week three) |
+| 42 | fa06 | Assam: 41% of India's Handloom Weavers, 2019-20 Census | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week three) |
+| 43 | px07 | Share of Women at Work: Tamil Nadu 1.8x Haryana, Same Income | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; week three) |
+| 44 | tn14 | Madhya Pradesh: Cropped Area Up 30% on 3% More Farmland | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; week three) |
+| 45 | hl02 | Rajasthan or West Bengal: Foreign Tourist Visits? 4 Rounds | see pack | n/a | drafted (2026-10-13; beat template `pick`; script reviewed and fixed before voicing; week three) |
+| 46 | fa09 | Tamil Nadu: Highest Textile Export Value 5 Years Running | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week three) |
+| 47 | fa08 | Maharashtra Had 1.7x Karnataka's Recognised Start-ups, 2026 | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; week three) |
+| 48 | fa07 | Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4 | see pack | n/a | drafted (2026-10-13; beat template `fact`; script reviewed and fixed before voicing; banked) |
+| 49 | tn11 | Rajasthan: 30% of India's New Installed Renewable Capacity | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked) |
+| 50 | tn13 | Odisha: Women 15+ Usually at Work, 18% to 48% in 6 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked) |
+| 51 | px08 | Men With 10+ Years of School: Himachal 76%, Andhra 59.5% | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; banked) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

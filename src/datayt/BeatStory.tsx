@@ -36,6 +36,16 @@ const Rich: React.FC<{text: string; acc: string}> = ({text, acc}) => <>{text.spl
 // type that shrinks to fit a line: long state names stay on one line
 const fit = (text: string, max: number, width: number, ratio = 0.5) => Math.min(max, width / (Math.max(1, text.length) * ratio));
 
+// the largest of the given sizes at which a heading wraps into at most `lines` lines
+const wrapFit = (text: string, sizes: number[], width: number, lines: number, ratio = 0.48) => sizes.find((s) => {
+  const per = width / (s * ratio);
+  let n = 1, cur = 0;
+  for (const w of text.replace(/\*/g, "").split(" ")) {
+    if (cur && cur + 1 + w.length > per) { n++; cur = w.length; } else cur += (cur ? 1 : 0) + w.length;
+  }
+  return n <= lines;
+}) ?? sizes[sizes.length - 1];
+
 // One state's outline, scaled to fill a box.
 const Shape: React.FC<{name: string; x: number; y: number; w: number; h: number; fill: string; stroke?: string; scale?: number}> = ({name, x, y, w, h, fill, stroke = P.ink, scale = 1}) => {
   const g = GEO[name];
@@ -56,8 +66,8 @@ const Chrome: React.FC<{D: BeatData; dark: boolean}> = ({D, dark}) => {
   return <>
     <div style={{position: "absolute", left: 0, top: 0, height: 12, width: W * (f / F(D.total)), background: dark ? "#FFFFFF" : D.accent}}/>
     <div style={{position: "absolute", left: 60, top: 70, display: "flex", gap: 14, alignItems: "center"}}>
-      <div style={{background: dark ? "#FFFFFF" : D.accent2, color: dark ? D.accent : P.bg, fontFamily: SANS, fontWeight: 800, fontSize: 28, letterSpacing: 3, padding: "8px 16px", borderRadius: 8}}>{D.chip}</div>
-      <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 26, color: ink, opacity: 0.7}}>{D.sourceShort}</div>
+      <div style={{background: dark ? "#FFFFFF" : D.accent2, color: dark ? D.accent : P.bg, fontFamily: SANS, fontWeight: 800, fontSize: 28, letterSpacing: 3, padding: "8px 16px", borderRadius: 8, whiteSpace: "nowrap"}}>{D.chip}</div>
+      <div style={{fontFamily: SANS, fontWeight: 600, fontSize: fit(D.sourceShort, 26, 906 - 18.8 * D.chip.length, 0.51), whiteSpace: "nowrap", color: ink, opacity: 0.7}}>{D.sourceShort}</div>
     </div>
     <div style={{position: "absolute", right: 60, bottom: 50, display: "flex", alignItems: "center", gap: 10, opacity: 0.9}}>
       <Mark size={40} c={dark ? "#FFFFFF" : undefined} h={dark ? "#FFFFFF" : undefined}/>
@@ -435,7 +445,7 @@ const Pick: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
 const Tally: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const f = useCurrentFrame();
   return <AbsoluteFill>
-    <div style={{position: "absolute", left: 60, right: 60, top: 165, fontFamily: COND, fontWeight: 700, fontSize: 118, lineHeight: 1.03, color: P.ink}}><Rich text={b.q ?? ""} acc={D.accent}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 165, fontFamily: COND, fontWeight: 700, fontSize: wrapFit(b.q ?? "", [118, 104, 92, 80], 960, 2), lineHeight: 1.03, color: P.ink}}><Rich text={b.q ?? ""} acc={D.accent}/></div>
     <div style={{position: "absolute", left: 60, right: 60, top: 470}}>
       {(D.tally ?? []).map((r, i) => <div key={i} style={{marginBottom: 34, opacity: ease(f, f0 + 4 + i * 5, f0 + 12 + i * 5)}}>
         <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 28, color: P.mute}}>{r.q}</div>
@@ -462,13 +472,13 @@ const Fact: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
     <div style={{position: "absolute", left: 60, right: 60, top: 730, display: "flex", flexDirection: "column"}}>
       <div style={{fontFamily: COND, fontWeight: 700, fontSize: fit(b.big ?? "", 330, 960, 0.56), lineHeight: 1, color: D.accent, transform: `scale(${0.7 + 0.3 * p})`,
         transformOrigin: "left center", opacity: Math.min(1, p * 1.5)}}>{b.big}</div>
-      <div style={{fontFamily: COND, fontWeight: 700, fontSize: 74, lineHeight: 1.1, color: P.ink, marginTop: 22, opacity: ease(f, f0 + 6, f0 + 14)}}>{b.text}</div>
+      <div style={{fontFamily: COND, fontWeight: 700, fontSize: 74, lineHeight: 1.1, color: P.ink, marginTop: 22, opacity: ease(f, f0 + 6, f0 + 14)}}><Rich text={b.text ?? ""} acc={D.accent}/></div>
       {(b.bars ?? []).length > 0 && <div style={{marginTop: 44, display: "flex", flexDirection: "column", gap: 22}}>
         {(b.bars ?? []).map((r, i) => <div key={i} style={{display: "flex", alignItems: "center", gap: 20, opacity: ease(f, f0 + 10 + i * 5, f0 + 16 + i * 5)}}>
           <div style={{width: nameW, fontFamily: SANS, fontWeight: 700, fontSize: 38, color: P.ink}}>{r.name}</div>
           <div style={{flex: 1, height: 36, borderRadius: 18, background: P.empty}}>
             <div style={{height: 36, borderRadius: 18, width: `${r.frac * 100 * ease(f, f0 + 12 + i * 5, f0 + 30 + i * 5)}%`, background: i ? P.mute : D.accent}}/></div>
-          <div style={{width: 170, textAlign: "right", fontFamily: COND, fontWeight: 700, fontSize: 56, color: i ? P.mute : D.accent}}>{r.label}</div>
+          <div style={{width: 170, textAlign: "right", fontFamily: COND, fontWeight: 700, fontSize: fit(r.label, 56, 170, 0.47), whiteSpace: "nowrap", color: i ? P.mute : D.accent}}>{r.label}</div>
         </div>)}
       </div>}
       {b.sub && <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 36, lineHeight: 1.3, color: P.mute, marginTop: 34, opacity: ease(f, f0 + 12, f0 + 20)}}>{b.sub}</div>}
@@ -602,7 +612,7 @@ const MapBeat: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const h = foot ? 1000 : 1150, w = h * MAP_RATIO;      // with a footer the map is shorter, so the caution line stays clear of the Shorts overlay
   const ring = Object.fromEntries((b.ring ?? []).map((n) => [n, P.ink]));
   return <AbsoluteFill>
-    <div style={{position: "absolute", left: 60, right: 60, top: 150, fontFamily: COND, fontWeight: 700, fontSize: 84, lineHeight: 1.05, color: P.ink}}><Rich text={(end ? b.q : b.title) ?? ""} acc={D.accent}/></div>
+    <div style={{position: "absolute", left: 60, right: 60, top: 150, fontFamily: COND, fontWeight: 700, fontSize: wrapFit((end ? b.q : b.title) ?? "", [84, 76, 68], 960, 2, 0.44), lineHeight: 1.05, color: P.ink}}><Rich text={(end ? b.q : b.title) ?? ""} acc={D.accent}/></div>
     <div style={{position: "absolute", left: 60, right: 60, top: 350, fontFamily: SANS, fontWeight: end ? 700 : 400, fontSize: end ? 44 : 36, color: end ? D.accent2 : P.mute}}>{b.sub}</div>
     {b.legend && <div style={{position: "absolute", left: 60, right: 60, top: 404, display: "flex", gap: 30, alignItems: "center", opacity: end ? 1 : ease(f, f0 + 6, f0 + 14)}}>
       {b.legend.map((k) => <div key={k.label} style={{display: "flex", alignItems: "center", gap: 10}}>

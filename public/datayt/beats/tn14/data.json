@@ -1,0 +1,556 @@
+{
+ "id": "tn14",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Agriculture Ministry · land use, 2012-13 to 2022-23",
+ "source": "Ministry of Agriculture and Farmers' Welfare, Land Use Statistics at a Glance, as published in the RBI Handbook of Statistics on Indian States, Table 57: cropping intensity, per cent (area sown with crops, counting each crop, as a percentage of the net sown area). Area figures are Tables 53 (gross sown area) and 54 (net sown area). Figures are reported by the states to the Ministry (the table marks some as estimates). 2022-23 is the last year that is not provisional.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#2F8F5B",
+  "#93C2A4",
+  "#DDD5C8",
+  "#AF736B",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Madhya Pradesh* cropped area",
+    "up *30%*, farmland up *3%*,",
+    "2012-13 to 2022-23."
+   ],
+   "vo": "Madhya Pradesh's cropped area grew thirty percent. Its farmland, three.",
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "kicker": "CROP AREA PER 100 HA OF FARMLAND",
+   "big": "+39.3 points",
+   "p0": {
+    "period": "2012-13",
+    "label": "150.7%",
+    "frac": 0.7931578947368421
+   },
+   "p1": {
+    "period": "2022-23",
+    "label": "190.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "crops on *151 ha* per 100 ha of farmland",
+   "vo": "In twenty twelve-thirteen: farmland sown one point five times.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "kicker": "CROP AREA PER 100 HA OF FARMLAND",
+   "big": "+39.3 points",
+   "p0": {
+    "period": "2012-13",
+    "label": "150.7%",
+    "frac": 0.7931578947368421
+   },
+   "p1": {
+    "period": "2022-23",
+    "label": "190.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "crops on *190 ha* per 100 ha of farmland",
+   "vo": "In twenty twenty-two twenty-three: farmland sown one point nine times.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "AREA ADDED · 2012-13 TO 2022-23",
+   "big": "7.0 million ha",
+   "text": "more area under crops. Farmland: *0.5 million ha*",
+   "sub": "Bars in million hectares. Crop area 23.1 to 30.1; farmland 15.4 to 15.8.",
+   "bars": [
+    {
+     "name": "Crops",
+     "label": "7.0",
+     "frac": 0.873375
+    },
+    {
+     "name": "Farmland",
+     "label": "0.5",
+     "frac": 0.062
+    }
+   ],
+   "vo": "Seven million more hectares of crops. The farmland itself, half a million.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "The rise of *39.3 points*",
+    "was *2.3 times* India's",
+    "rise of *16.8 points*."
+   ],
+   "note": "India: 139.1% to 155.9%. Provisional 2023-24: Madhya Pradesh 193.5%. Cropping intensity is crop area as a share of farmland (net sown area). The table shows how much, not why.",
+   "vo": "Its rise was two point three times India's rise of sixteen point eight.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Crops per farmland: *each state's change*",
+   "sub": "percentage points · 2012-13 to 2022-23 · India +16.8",
+   "note": "Crop area as % of farmland. Blank: Andhra Pradesh (split 2014), Jammu and Kashmir (boundary), Telangana, Ladakh (no 2012-13). Mizoram, Manipur: 100.0 in 2012-13.",
+   "anim": true,
+   "ring": [
+    "Madhya Pradesh"
+   ],
+   "vo": "Crop area per farmland: the ten-year change in each state.",
+   "legend": [
+    {
+     "color": "#2F8F5B",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.5 points"
+    },
+    {
+     "color": "#740A00",
+     "label": "rose"
+    }
+   ],
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Crop area as % of farmland. Blank: Andhra Pradesh (split 2014), Jammu and Kashmir (boundary), Telangana, Ladakh (no 2012-13). Mizoram, Manipur: 100.0 in 2012-13.",
+   "ring": [
+    "Madhya Pradesh"
+   ],
+   "legend": [
+    {
+     "color": "#2F8F5B",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.5 points"
+    },
+    {
+     "color": "#740A00",
+     "label": "rose"
+    }
+   ],
+   "q": "Does your land give *two harvests*?",
+   "sub": "See where your state landed.",
+   "kind": "mapend",
+   "vo": "Does your land give two harvests?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "−19.2",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Goa",
+   "label": "−8.8",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "−3.6",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Bihar",
+   "label": "−1.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Kerala",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Manipur",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+1.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Odisha",
+   "label": "+1.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Assam",
+   "label": "+1.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Nagaland",
+   "label": "+2.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+2.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+3.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Haryana",
+   "label": "+4.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "Tripura",
+   "label": "+4.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.076
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+4.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.197
+  },
+  {
+   "name": "West Bengal",
+   "label": "+9.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.317
+  },
+  {
+   "name": "Karnataka",
+   "label": "+12.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.438
+  },
+  {
+   "name": "Punjab",
+   "label": "+12.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.559
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+15.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.68
+  },
+  {
+   "name": "Gujarat",
+   "label": "+16.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.801
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+19.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.922
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+19.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.043
+  },
+  {
+   "name": "Puducherry",
+   "label": "+20.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.164
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+20.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.285
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+27.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.406
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+39.3",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.527
+  },
+  {
+   "name": "Mizoram",
+   "label": "+42.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.648
+  }
+ ],
+ "checked": [
+  "Madhya Pradesh: 150.70 in 2012-13, 190.00 in 2022-23: +39.30, 1.26 times",
+  "the years just before 2012-13 do not make it a freak year: measured from 150.70 the change is still +39.30",
+  "the change holds in each of 2020-21, 2021-22, 2022-23: 189.30, 189.90, 190.00",
+  "years = 10",
+  "150.7% in 2012-13 (tenths): 1507.00",
+  "190.0% in 2022-23 (tenths): 1900.00",
+  "farmland sown one point five times in 2012-13 (tenths of the ratio): 15.07",
+  "farmland sown one point nine times in 2022-23: 19.00",
+  "151 ha of crops per 100 ha in 2012-13: 150.70",
+  "190 ha of crops per 100 ha in 2022-23: 190.00",
+  "India 139.1% in 2012-13 (tenths): 1391.00",
+  "India 155.9% in 2022-23 (tenths): 1559.00",
+  "Madhya Pradesh rose 39.3 points (tenths): 393.00",
+  "India rose sixteen point eight points (tenths): 168.00",
+  "Madhya Pradesh's rise was two point three times India's (tenths): 23.39",
+  "crop area up thirty percent (gross sown area, table 53): 30.21",
+  "farmland up three percent (net sown area, table 54): 3.23",
+  "farmland +3.2% printed (tenths): 32.31",
+  "crop area +30.2% (printed on the card; tenths): 302.08",
+  "crop area 23.1 million ha in 2012-13 (table 53, tenths of a million): 231.30",
+  "crop area 30.1 million ha in 2022-23: 301.17",
+  "farmland 15.4 million ha in 2012-13 (table 54): 153.52",
+  "farmland 15.8 million ha in 2022-23: 158.48",
+  "provisional 2023-24: 193.5% (tenths): 1935.00",
+  "cropping intensity is crop area over farmland: 2022-23 gives 190% from tables 53 and 54: 190.04",
+  "cropping intensity is crop area over farmland: 2012-13 gives 151% from tables 53 and 54: 150.66",
+  "Mizoram is printed as exactly 100.0 in 2012-13 (named in the map note): 1000.00",
+  "Manipur is printed as exactly 100.0 in 2012-13 (named in the map note): 1000.00",
+  "crops covered 7.0 million more hectares: gross sown area 2022-23 minus 2012-13, tenths of a million (table 53): 69.87",
+  "farmland grew 0.5 million hectares: net sown area 2022-23 minus 2012-13, tenths of a million (table 54): 4.96"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.675,
+   "at": 0.12,
+   "text": "Madhya Pradesh's cropped area grew thirty percent. Its farmland, three."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.466,
+   "at": 5.926,
+   "text": "In twenty twelve-thirteen: farmland sown one point five times."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.937,
+   "at": 11.733,
+   "text": "In twenty twenty-two twenty-three: farmland sown one point nine times."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.754,
+   "at": 17.539,
+   "text": "Seven million more hectares of crops. The farmland itself, half a million."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.754,
+   "at": 23.346,
+   "text": "Its rise was two point three times India's rise of sixteen point eight."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.545,
+   "at": 29.152,
+   "text": "Crop area per farmland: the ten-year change in each state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.037,
+   "at": 34.959,
+   "text": "Does your land give two harvests?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Madhya Pradesh: Cropped Area Up 30% on 3% More Farmland"
+}

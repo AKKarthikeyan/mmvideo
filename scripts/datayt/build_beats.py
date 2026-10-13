@@ -239,6 +239,12 @@ def house_rules(sid, cfg, beats, extra):
             bad.append(f"the map note is {len(b['note'])} characters (at most 165, or it runs into the source line)"); break
     if 22 * len(cfg["chip"]) + 13 * len(cfg["source_short"]) > 1000:
         bad.append("the chip and the source line together are too wide for the top row: shorten the source line")
+    if kinds[-1] == "mapend" and len(cfg["source"]) > 590:      # ten small lines fit under the map; the full reference goes in the post pack
+        bad.append(f"the source text is {len(cfg['source'])} characters (at most 590 on the last card, or it runs off the frame)")
+    for b in beats:
+        for r in b.get("bars") or []:
+            if len(r["label"]) > 9:      # the figure beside a bar has a narrow column
+                bad.append(f"a bar figure is too long to read beside its bar: '{r['label']}' (move the unit to the line under the bars)"); break
     return bad
 
 
@@ -350,7 +356,8 @@ def build(cfg):
             assert india, f"{sid}: the map has no all-India figure to take a share of"
             vals, india = {s_: 100 * x / india for s_, x in vals.items()}, None
         asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
-        extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], ""), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
+        dec = m.get("dec", 0 if all(float(x).is_integer() for x in vals.values()) else None)      # counts are whole numbers on the map
+        extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], "", dec), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
         missing = {x["name"] for x in extra["map"]} - set(GEO)
         assert not missing, f"{sid}: states not on the map: {missing}"
         ctx = {"india": fmt(india, unit) if india is not None else ""}

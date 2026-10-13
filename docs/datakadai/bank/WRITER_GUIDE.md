@@ -119,3 +119,19 @@ state in the earlier survey), a card of our own reading under `so`, then every s
   the table states. A count kept by a ministry (registered, sanctioned, reported by states) is said as that, not as a census.
 - Scheme tables (funds released, beneficiaries, posts, projects sanctioned) are not stories. Use answers that count something
   a viewer can picture.
+
+## What the week-three frame check caught (13 Oct 2026)
+1. `source` is what the last card prints, in small type under the map. It holds ten lines: at most 590 characters;
+   aim for 450.
+   Give the publisher, the document and its date, the table, the period and the one caveat that matters. The full
+   reference, with row counts and cross-checks, goes in the post pack's `source`, not on the card. The builder now
+   refuses a longer one.
+2. The figure beside a bar has a narrow column: at most nine characters. A bar unit such as " million ha" wrapped
+   onto three lines. Give the bars `"unit": ""` and say the unit in the line under them ("Bars in million hectares.").
+3. Game rounds: do not speak the year in the question. "Foreign tourist visits in twenty twenty-four. Rajasthan or
+   West Bengal?" took 4.9 seconds and pushed the Short to 48.8 seconds. The year is on the card; say "Foreign tourist
+   visits: Rajasthan or West Bengal?". Spoken years run about a second longer than the estimate allows.
+4. Accents (`*like this*`) now colour the meaning line of a fact card too. Before, the asterisks were printed.
+5. Lines of a statement card should be close in length. One line twice as long as the others shrinks to small type.
+6. A map of counts prints whole numbers. Give `"dec": 1` in `map` only if the figures really have a decimal.
+

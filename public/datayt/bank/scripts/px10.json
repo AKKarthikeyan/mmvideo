@@ -1,0 +1,968 @@
+{
+ "id": "px10",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "MoSPI · Annual Survey of Industries · 2023-24",
+ "palette": "D",
+ "state": "Odisha",
+ "source": "Annual Survey of Industries, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States 2024-25: Table 116, number of factories, and Table 117, fixed capital (rupees lakh), 2023-24. Survey estimates; the factory count includes factories not working. Fixed capital per factory is Table 117 divided by Table 116, state by state. Uttar Pradesh has no factory count in Table 116, so it is left out; 34 other states and UTs have both.",
+ "hook": [
+  "*Odisha*: *2.4×* West Bengal's",
+  "fixed capital, on *a third*",
+  "of the factories."
+ ],
+ "hook_vo": "Odisha: over double West Bengal's fixed capital, a third of the factories.",
+ "facts": [
+  {
+   "state": "Odisha",
+   "kicker": "FACTORIES COUNTED · 2023-24",
+   "data": {
+    "rbi": [
+     116,
+     "2023-24"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "West Bengal"
+   ],
+   "bar_max": 12000,
+   "text": "factories counted in the survey. West Bengal had 3.1 times as many.",
+   "sub": "Survey estimates, Annual Survey of Industries via RBI. Uttar Pradesh has no figure in this table.",
+   "vo": "Odisha had about thirty-three hundred factories. West Bengal, about ten thousand."
+  },
+  {
+   "state": "Odisha",
+   "kicker": "FACTORIES' FIXED CAPITAL · 2023-24",
+   "data": {
+    "add": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 1e-07
+   },
+   "unit": "",
+   "compare": [
+    "West Bengal"
+   ],
+   "bar_max": 4,
+   "text": "lakh crore rupees of fixed capital: land, buildings, machinery. Odisha's was *2.4 times* West Bengal's.",
+   "sub": "Value of what the surveyed factories owned, rupees lakh crore. State totals. {n} states and UTs with data.",
+   "vo": "Odisha's factories held three point seven lakh crore. West Bengal's, one point five."
+  },
+  {
+   "state": "Odisha",
+   "kicker": "FIXED CAPITAL / FACTORY · 2023-24",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       116,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 0.01
+   },
+   "unit": "₹",
+   "claim": "highest",
+   "compare": [
+    "West Bengal"
+   ],
+   "bar_max": 120,
+   "text": "crore of fixed capital per factory: the highest of {n} states and UTs with data. West Bengal: ₹15 crore.",
+   "sub": "Total fixed capital divided by factories counted, working or not: an average, not the typical factory. The table shows how much, not why.",
+   "vo": "Odisha held one hundred twelve crore rupees per factory. West Bengal, fifteen."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Every year, 2016-17 to 2023-24:",
+   "West Bengal *3×* the factories,",
+   "Odisha *over 2×* the capital."
+  ],
+  "vo": "Every year since twenty sixteen-seventeen: three times the factories, over twice the capital."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   ],
+   "scale": 0.01
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Fixed capital per factory, *every state*",
+  "sub": "₹ crore per factory · India {india} · 2023-24",
+  "note": "Fixed capital divided by factories counted: an average, not the typical one. Blank: Uttar Pradesh (no factory count); Dadra, Nagar Haveli, Daman and Diu (no row).",
+  "ring": [
+   "Odisha",
+   "West Bengal"
+  ],
+  "vo": "Fixed capital per factory counted, in every state."
+ },
+ "end": {
+  "q": "Factories or capital: which *tells more*?",
+  "sub": "Comment below.",
+  "vo": "Factories or capital: which tells more?"
+ },
+ "yt_title": "Odisha: 2.4x West Bengal's Fixed Capital, 1/3 the Factories",
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "add": [
+     {
+      "rbi": [
+       116,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 33
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "add": [
+     {
+      "rbi": [
+       116,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 0.001
+   },
+   "equals": 10
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "rbi": [
+     116,
+     "2023-24"
+    ]
+   },
+   "equals": 3281
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "rbi": [
+     116,
+     "2023-24"
+    ]
+   },
+   "equals": 10107
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 3.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.317
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.31
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "add": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 1e-06
+   },
+   "equals": 37
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "add": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 1e-06
+   },
+   "equals": 15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 2.35
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.408
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       116,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 112
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       117,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       116,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        117,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        116,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 0.01
+    }
+   },
+   "den": {
+    "state": "Sikkim",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        117,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        116,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 0.01
+    }
+   },
+   "min": 1.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2016-17"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2016-17"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2016-17"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2016-17"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2016-17"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2016-17"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2017-18"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2017-18"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2017-18"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2017-18"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2017-18"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2017-18"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2018-19"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2018-19"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2018-19"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2018-19"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2018-19"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2018-19"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2021-22"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2021-22"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2021-22"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 2.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      116,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "rbi": [
+      117,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 2.3
+  }
+ ]
+}

@@ -1,5 +1,7 @@
 # Data Kadai: week one (13 Shorts)
 
+Posting order replaced on 13 Oct 2026 by `PLAN.md` (themed weeks: 14 a week, one theme a day, two finance days). This page stays as the record of the build round.
+
 Status on 12 Oct 2026: all 13 are built as drafts. None is posted. Claude checked a frame from every beat and the audio levels; nobody has watched one end to end with sound yet.
 The second slot on day 7 is open: the fourteenth Short (Jammu and Kashmir health insurance, `tn04`) is written and reviewed but held, see below.
 

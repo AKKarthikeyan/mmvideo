@@ -518,7 +518,8 @@ def build(cfg):
         rank = lambda M, v: 1 + sum(x > v for s_, x in M.items() if s_ in M0 and s_ in M1)
         lab = lambda v: f"{v:.1f}%" if share else show(v, unit)
         kind = cfg.get("delta", "points" if share else "times")
-        delta = {"points": f"{signed(ch)} points", "times": f"{times:.1f}×", "percent": f"{signed(100 * (times - 1), 0)}%"}[kind]
+        delta = {"points": f"{signed(ch)} points", "times": f"{times:.1f}×", "percent": f"{signed(100 * (times - 1), 0)}%",
+                 "units": f"{signed(ch)}{cfg.get('delta_unit', unit)}"}[kind]      # "units": the change in the measure's own unit ("+3.9 years")
         ctx = {"then": lab(then), "now": lab(now), "change": signed(ch), "times": f"{times:.1f}", "years": y1 - y0, "from": clean(p0), "to": clean(p1),
                "rank_then": rank(M0, then), "rank_now": rank(M1, now), "n": len(set(M0) & set(M1)),
                "india_then": lab(I0) if I0 is not None and not share else "", "india_now": lab(I1) if I1 is not None and not share else ""}

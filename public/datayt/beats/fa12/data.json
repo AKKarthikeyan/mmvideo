@@ -1,0 +1,557 @@
+{
+ "id": "fa12",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "RBI · Handbook · end-March 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 152 and 155: offices of scheduled commercial banks and their deposits, as at end-March 2025. Deposits per office = deposits divided by offices, state by state; India is the ratio of the two all-India rows. A deposit is counted where the bank office is.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Delhi*: highest deposits",
+    "per bank office in India:",
+    "*₹520 crore*, 2025."
+   ],
+   "vo": "Delhi: five hundred twenty crore rupees of deposits per bank office.",
+   "geo": "NCT of Delhi",
+   "name": "Delhi",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "DEPOSITS PER OFFICE · MARCH 2025",
+   "big": "₹520",
+   "text": "crore of deposits for each bank office. The highest of 35 states and UTs with data. India: ₹140 crore.",
+   "sub": "Deposits: savings kept in banks, counted where the bank office is, not where the saver lives.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "₹520",
+     "frac": 0.8670405258310308
+    },
+    {
+     "name": "India",
+     "label": "₹140",
+     "frac": 0.2329260971995439
+    }
+   ],
+   "vo": "Highest of thirty-five states and territories. India's was one hundred forty crore.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "THE NEXT STATE · MARCH 2025",
+   "big": "₹353",
+   "text": "crore for each office in Maharashtra, the next highest. Delhi's was 1.5 times that.",
+   "sub": "Deposits per bank office, end-March 2025.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "₹353",
+     "frac": 0.5881389338367493
+    },
+    {
+     "name": "Delhi",
+     "label": "₹520",
+     "frac": 0.8670405258310308
+    }
+   ],
+   "vo": "Maharashtra came next. Delhi's figure was one point five times that.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "SHARE OF INDIA'S DEPOSITS · 2025",
+   "big": "8.8%",
+   "text": "of India's deposits sat in Delhi's 3,981 bank offices, out of 167,806 across India.",
+   "sub": "Scheduled commercial banks, end-March 2025.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "8.8%",
+     "frac": 0.3532367910779531
+    },
+    {
+     "name": "Maharashtra",
+     "label": "22.3%",
+     "frac": 0.8927174066271479
+    }
+   ],
+   "vo": "Delhi's under four thousand offices held eight point eight percent of India's deposits.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Delhi's figure, three years:",
+    "*₹439*, *₹477*, *₹520* crore,",
+    "the highest each year."
+   ],
+   "vo": "Delhi was the highest in each of the last three years.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Deposits per bank office, *every state*",
+   "sub": "₹ crore per office · India 140 · end-March 2025",
+   "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "NCT of Delhi",
+    "Maharashtra"
+   ],
+   "vo": "Here is every state: deposits for each bank office.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "ring": [
+    "NCT of Delhi",
+    "Maharashtra"
+   ],
+   "q": "Which *bank* holds your savings?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which bank holds your savings?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Manipur",
+   "label": "64",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Tripura",
+   "label": "65",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 27.556
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "65",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.664
+  },
+  {
+   "name": "Bihar",
+   "label": "69",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.773
+  },
+  {
+   "name": "Assam",
+   "label": "72",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 27.882
+  },
+  {
+   "name": "Mizoram",
+   "label": "72",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 27.991
+  },
+  {
+   "name": "Nagaland",
+   "label": "81",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 28.099
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "84",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.208
+  },
+  {
+   "name": "Rajasthan",
+   "label": "84",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.317
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "85",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.426
+  },
+  {
+   "name": "Sikkim",
+   "label": "88",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 28.534
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "89",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.643
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "91",
+   "bucket": 1,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 28.752
+  },
+  {
+   "name": "Meghalaya",
+   "label": "96",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 28.861
+  },
+  {
+   "name": "Ladakh",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.969
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.078
+  },
+  {
+   "name": "Punjab",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.187
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "98",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.296
+  },
+  {
+   "name": "Odisha",
+   "label": "99",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.404
+  },
+  {
+   "name": "Jharkhand",
+   "label": "104",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.513
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "105",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.622
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "111",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.731
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "112",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.839
+  },
+  {
+   "name": "Puducherry",
+   "label": "114",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.948
+  },
+  {
+   "name": "West Bengal",
+   "label": "121",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.057
+  },
+  {
+   "name": "Kerala",
+   "label": "121",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Gujarat",
+   "label": "134",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.274
+  },
+  {
+   "name": "Telangana",
+   "label": "138",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.383
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "145",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.492
+  },
+  {
+   "name": "Haryana",
+   "label": "156",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.601
+  },
+  {
+   "name": "Karnataka",
+   "label": "166",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.709
+  },
+  {
+   "name": "Goa",
+   "label": "175",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.818
+  },
+  {
+   "name": "Chandigarh",
+   "label": "275",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.927
+  },
+  {
+   "name": "Maharashtra",
+   "label": "353",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.036
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "520",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.144
+  }
+ ],
+ "checked": [
+  "Delhi is the highest of 35 with data (₹520)",
+  "Delhi 520.224 rounds to 520",
+  "India 139.756 rounds to 140",
+  "Maharashtra 352.883 rounds to 353",
+  "Delhi / Maharashtra = 1.47 (at least 1.45)",
+  "Maharashtra / Delhi = 0.68 (at least 0.66)",
+  "Delhi / Maharashtra = 1.47 (at least 1.4)",
+  "Delhi / Maharashtra = 1.57 (at least 1.4)",
+  "Delhi 3981 rounds to 3981",
+  "India 167806 rounds to 167806",
+  "Delhi 439.435 rounds to 439",
+  "Delhi 476.53 rounds to 477"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.048,
+   "at": 0.12,
+   "text": "Delhi: five hundred twenty crore rupees of deposits per bank office."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.806,
+   "at": 5.926,
+   "text": "Highest of thirty-five states and territories. India's was one hundred forty crore."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.067,
+   "at": 11.733,
+   "text": "Maharashtra came next. Delhi's figure was one point five times that."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.754,
+   "at": 17.539,
+   "text": "Delhi's under four thousand offices held eight point eight percent of India's deposits."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.847,
+   "at": 23.346,
+   "text": "Delhi was the highest in each of the last three years."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 27.217,
+   "text": "Here is every state: deposits for each bank office."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.168,
+   "at": 33.023,
+   "text": "Which bank holds your savings?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Delhi: Highest Deposits per Bank Office, ₹520 Crore, 2025"
+}

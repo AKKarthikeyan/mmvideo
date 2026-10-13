@@ -171,3 +171,20 @@ Rules for these figures:
 6. Debt, deficits, taxes and pensions are facts about a budget. No judgement of a state or its government, no cause.
 7. "Income" is state output per person: output booked in the state, not what residents earn.
 
+## What the themed round caught (13 Oct 2026)
+1. Bank credit, Table 156, is by place of sanction to 2018 and by place of utilisation from 2019. Do not divide a
+   sector table (157 to 159) by it across that break. Credit used in a state is Table 154 times Table 155.
+2. The men's NFHS-5 column for "ever used the internet" (indicator 15, col 3) in `nfhs6_states.json` disagrees with
+   NFHS-5's own sheets (India 51.2 in the file, 57.1 published). Do not build on it until it is re-read. The women's
+   column matched.
+3. Newer editions that are out and not on the drive: the Annual Survey of Industries 2024-25 (30 Sep 2026: factory
+   tables 116 to 131), SRS abridged life tables 2020-24 (May 2026: Table 7), RBI's State Finances with 2023-24
+   accounts (Jan 2026: Tables 164 to 178 stop at 2022-23 accounts).
+4. Exports, Table 181: the 2024-25 state rows cover 88% of the India figure, so a 2024-25 share is too low. Say so.
+5. A sector's share of state output can jump in one year (Uttarakhand and Bihar construction, 2022-23). Print the mid
+   years; a rise that sits in one step is not a ten-year story.
+6. A fact card with bars and a caption holds about 95 characters of meaning text (four lines). A statement card's
+   lines should be close in length; digits and % signs run wide.
+7. A then-and-now card can show its change in the measure's own unit: `"delta": "units", "delta_unit": " years"`.
+8. Spoken length: a card voice with three clauses of figures takes a four-bar beat. One figure, one comparison.
+

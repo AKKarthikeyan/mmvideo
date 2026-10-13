@@ -1,0 +1,597 @@
+{
+ "id": "tn15",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "RBI Handbook · end-March 2015, 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025): Tables 159 (personal loans), 155 (deposits) and 154 (credit-deposit ratio, place of utilisation), scheduled commercial banks, amounts outstanding at end-March 2015 and 2025. Share = personal loans ÷ credit used in the state (deposits × ratio). India: the all-India rows. Telangana is in the tables from 2015. A bank merger in July 2023 lifts figures from 2024. Not adjusted for prices.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Telangana*: personal loans",
+    "*more than doubled* their",
+    "share of bank loans, 2015-25."
+   ],
+   "vo": "Telangana's personal loans more than doubled their share of bank loans.",
+   "geo": "Telangana",
+   "name": "Telangana",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Telangana",
+   "name": "Telangana",
+   "kicker": "PERSONAL LOANS · % OF BANK LOANS",
+   "big": "+22.4 points",
+   "p0": {
+    "period": "End-March 2015",
+    "label": "19.4%",
+    "frac": 0.46406307102463057
+   },
+   "p1": {
+    "period": "End-March 2025",
+    "label": "41.8%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of Telangana's bank loans were personal loans (loans to individuals). India: *16.6%*.",
+   "vo": "In twenty fifteen, nineteen of every hundred rupees lent. India: seventeen.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "Telangana",
+   "name": "Telangana",
+   "kicker": "PERSONAL LOANS · % OF BANK LOANS",
+   "big": "+22.4 points",
+   "p0": {
+    "period": "End-March 2015",
+    "label": "19.4%",
+    "frac": 0.46406307102463057
+   },
+   "p1": {
+    "period": "End-March 2025",
+    "label": "41.8%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of bank loans. India: *31.0%*.",
+   "vo": "In twenty twenty-five: forty-two of every hundred. India: thirty-one.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "TELANGANA'S RISE, AGAINST INDIA'S",
+   "big": "2.2×",
+   "text": "Telangana's personal-loan share, 2025 against 2015",
+   "sub": "India: 16.6% to 31.0%. Personal loans: loans to individuals, such as for homes and vehicles.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "2.2×",
+     "frac": 0.8619518013291121
+    },
+    {
+     "name": "India",
+     "label": "1.9×",
+     "frac": 0.7454886128074248
+    }
+   ],
+   "vo": "India's share rose one point nine times. Telangana's, two point two.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Telangana's rise, *+22.4 points*,",
+    "was *1.6 times* India's rise",
+    "of *+14.4 points*, 2015 to 2025."
+   ],
+   "note": "Scheduled commercial banks. A bank merger in July 2023 lifts figures from March 2024. A smaller rise in share can still come with more loans.",
+   "vo": "Telangana's rise in points was one point six times India's.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Personal loans' share: *each state's change*",
+   "sub": "percentage points · 2015 to 2025 · India +14.4",
+   "note": "Share of bank credit used in the state. Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "Telangana"
+   ],
+   "vo": "Here is each state's change in the personal-loan share.",
+   "legend": [
+    {
+     "color": "#DD9942",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#740A00",
+     "label": "bigger rise"
+    }
+   ],
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Share of bank credit used in the state. Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu.",
+   "ring": [
+    "Telangana"
+   ],
+   "legend": [
+    {
+     "color": "#DD9942",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#740A00",
+     "label": "bigger rise"
+    }
+   ],
+   "q": "What was your first *loan* for?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "What was your first loan for?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Tripura",
+   "label": "+1.7",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+3.9",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.368
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "+4.7",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 33.484
+  },
+  {
+   "name": "Puducherry",
+   "label": "+6.0",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.599
+  },
+  {
+   "name": "Kerala",
+   "label": "+7.5",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.714
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+8.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.83
+  },
+  {
+   "name": "Mizoram",
+   "label": "+9.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.945
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+9.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.061
+  },
+  {
+   "name": "Odisha",
+   "label": "+9.9",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.176
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+10.1",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.291
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+11.0",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.407
+  },
+  {
+   "name": "Assam",
+   "label": "+11.8",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 34.522
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+12.6",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.637
+  },
+  {
+   "name": "Haryana",
+   "label": "+12.6",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.753
+  },
+  {
+   "name": "Karnataka",
+   "label": "+12.7",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.868
+  },
+  {
+   "name": "Bihar",
+   "label": "+13.2",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.983
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+13.4",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 35.099
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+14.6",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.214
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+15.9",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 35.33
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+15.9",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.445
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+16.0",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 35.56
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+16.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.676
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+16.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.791
+  },
+  {
+   "name": "Nagaland",
+   "label": "+16.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 35.906
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+16.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.022
+  },
+  {
+   "name": "Goa",
+   "label": "+17.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 36.137
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+17.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.252
+  },
+  {
+   "name": "Punjab",
+   "label": "+18.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 36.368
+  },
+  {
+   "name": "Gujarat",
+   "label": "+18.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.483
+  },
+  {
+   "name": "Manipur",
+   "label": "+18.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 36.599
+  },
+  {
+   "name": "West Bengal",
+   "label": "+19.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.714
+  },
+  {
+   "name": "Sikkim",
+   "label": "+20.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 36.829
+  },
+  {
+   "name": "Telangana",
+   "label": "+22.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.945
+  }
+ ],
+ "checked": [
+  "Telangana: 19.41 in End-March 2015, 41.82 in End-March 2025: +22.41, 2.15 times",
+  "years = 10",
+  "n = 34",
+  "19% in 2015 (card, title): 19.41",
+  "42% in 2025 (card, title): 41.82",
+  "Telangana 19.4% in 2015 (tenths): 194.07",
+  "Telangana 41.8% in 2025 (tenths): 418.21",
+  "India seventeen in 2015: 16.63",
+  "India thirty-one in 2025: 30.99",
+  "India 16.6% in 2015 (tenths): 166.30",
+  "India 31.0% in 2025 (tenths): 309.94",
+  "Telangana's rise +22.4 points (tenths): 224.13",
+  "India's rise +14.4 points (tenths), on the map: 143.64",
+  "Telangana's share 2.2 times (tenths): 21.55",
+  "India's share 1.9 times (tenths): 18.64",
+  "more than doubled: 2.0 to 2.3 times: 2.15",
+  "2015 is not a freak low: 2016 is within 1.5 points above it: 0.64",
+  "the rise holds in 2023 (37.7%): 37.74",
+  "the rise holds in 2024 (41.2%): 41.24",
+  "no fall back from the peak: 2025 is at or above 2024: 0.58",
+  "Telangana's rise is 1.6 times India's rise, 2015 to 2025 (tenths): 15.60",
+  "holds to 2024: Telangana's rise is 1.5 to 1.7 times India's: 1.58",
+  "holds to 2023: Telangana's rise is 1.5 to 1.7 times India's: 1.59",
+  "merger caveat: India's personal loans rose by over a quarter in the year to March 2024: 1.29"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.578,
+   "at": 0.12,
+   "text": "Telangana's personal loans more than doubled their share of bank loans."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.616,
+   "at": 5.926,
+   "text": "In twenty fifteen, nineteen of every hundred rupees lent. India: seventeen."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.067,
+   "at": 13.668,
+   "text": "In twenty twenty-five: forty-two of every hundred. India: thirty-one."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.668,
+   "at": 19.475,
+   "text": "India's share rose one point nine times. Telangana's, two point two."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.048,
+   "at": 27.217,
+   "text": "Telangana's rise in points was one point six times India's."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.866,
+   "at": 33.023,
+   "text": "Here is each state's change in the personal-loan share."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.645,
+   "at": 38.83,
+   "text": "What was your first loan for?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Telangana: Personal Loans 19% to 42% of Bank Loans, 2015-25"
+}

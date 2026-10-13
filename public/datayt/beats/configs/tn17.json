@@ -1,0 +1,537 @@
+{
+ "id": "tn17",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Commerce Ministry · Niryat · 2017-18 to 2023-24",
+ "palette": "A",
+ "state": "Gujarat",
+ "table": 181,
+ "from": "2017-18",
+ "to": "2023-24",
+ "measure": "share",
+ "kicker": "SHARE OF INDIA'S GOODS EXPORTS",
+ "expect": {
+  "years": 6
+ },
+ "source": "Department of Commerce, Ministry of Commerce and Industry, Niryat portal (state-wise goods exports, US dollars), as published in the RBI Handbook of Statistics on Indian States 2024-25, Table 181. Each share is of the all-India figure in the same table; the state rows add up to 96% of it in 2017-18 and 97% in 2023-24. The 2024-25 column is not used for the shares: its state rows cover only 88% of the total. Blank on the map: Jammu and Kashmir, Ladakh, A&N Islands, Dadra, Nagar Haveli, Daman and Diu.",
+ "hook": [
+  "*Gujarat's* goods export share",
+  "was level with Maharashtra's,",
+  "then *2×* Maharashtra's."
+ ],
+ "hook_vo": "Gujarat's goods export share was level with Maharashtra's, then twice as big.",
+ "then": {
+  "text": "of India's goods exports. Maharashtra: *23.0%*",
+  "vo": "In twenty seventeen-eighteen: twenty-two percent. Maharashtra, twenty-three."
+ },
+ "now": {
+  "text": "of India's goods exports. Maharashtra: *15.4%*",
+  "vo": "Six years on: thirty-one percent. Maharashtra, fifteen."
+ },
+ "facts": [
+  {
+   "kicker": "GOODS EXPORTS · 2023-24 / 2017-18",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2017-18"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Gujarat's goods exports, as a multiple of 2017-18",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         181,
+         "2023-24"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         181,
+         "2017-18"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         181,
+         "2023-24"
+        ]
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "rbi": [
+         181,
+         "2017-18"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 3,
+   "sub": "Current dollars, not adjusted for prices. 2024-25 not used (state rows cover 88% of India); Gujarat's share then: 26.6%.",
+   "vo": "Gujarat: two times its twenty seventeen-eighteen exports. India: one point four times."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Gujarat makes up *about half* of",
+    "the gap between India's goods",
+    "exports in 2023-24 and 2017-18."
+   ],
+   "note": "51% of the gap, in current dollars. The share stepped up in 2021-22: 20.8% to 29.8%. The table shows how much, not why.",
+   "vo": "Gujarat makes up about half of the gap between India's two export totals."
+  }
+ ],
+ "tests": [
+  {
+   "says": "22% in 2017-18 (hook, voice, title)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2017-18"
+     ]
+    }
+   },
+   "equals": 22
+  },
+  {
+   "says": "31% in 2023-24 (hook, voice, title)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2023-24"
+     ]
+    }
+   },
+   "equals": 31
+  },
+  {
+   "says": "Maharashtra 23.0% in 2017-18 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2017-18"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 230
+  },
+  {
+   "says": "Maharashtra 15.4% in 2023-24 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2023-24"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 154
+  },
+  {
+   "says": "Maharashtra twenty-three in the voice line",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2017-18"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 23
+  },
+  {
+   "says": "Maharashtra fifteen in the voice line",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2023-24"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 15
+  },
+  {
+   "says": "India's exports one point four times the 2017-18 figure (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2017-18"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 14
+  },
+  {
+   "says": "Gujarat makes up about half (49 to 53%) of the gap between India's export totals",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2017-18"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2017-18"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "min": 49,
+   "max": 53
+  },
+  {
+   "says": "51% of the gap (note)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2017-18"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          181,
+          "2017-18"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 51
+  },
+  {
+   "says": "2024-25 share 26.6% (tenths), the incomplete year, over the all-India row",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2024-25"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 266
+  },
+  {
+   "says": "the rise holds in 2021-22: Gujarat's share 28 to 32%, well above the 22% start",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 28,
+   "max": 32
+  },
+  {
+   "says": "the rise holds in 2022-23: Gujarat's share 31 to 34%",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 31,
+   "max": 34
+  },
+  {
+   "says": "the start is not a dip: Gujarat 20 to 23% in each of 2018-19 to 2020-21 (2018-19)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2018-19"
+     ]
+    }
+   },
+   "min": 20,
+   "max": 23
+  },
+  {
+   "says": "the start is not a spike: Gujarat 20 to 23% in 2019-20",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 20,
+   "max": 23
+  },
+  {
+   "says": "the start is not a spike: Gujarat 20 to 23% in 2020-21",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 20,
+   "max": 23
+  },
+  {
+   "says": "Gujarat's exports two times the 2017-18 figure (1.95 to 2.05 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        181,
+        "2017-18"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.05
+  },
+  {
+   "says": "2020-21 share 20.8% (tenths): the step up in 2021-22 starts here",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2020-21"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 208
+  },
+  {
+   "says": "2021-22 share 29.8% (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      181,
+      "2021-22"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 298
+  },
+  {
+   "says": "level with Maharashtra in 2017-18: Gujarat's share within 1 point of Maharashtra's (hook)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        181,
+        "2017-18"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "share": {
+       "rbi": [
+        181,
+        "2017-18"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": -1.0,
+   "max": 1.0
+  },
+  {
+   "says": "twice Maharashtra's share in 2023-24: 1.95 to 2.05 times (hook)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "share": {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.05
+  }
+ ],
+ "map": {
+  "bands": [
+   -2,
+   -0.5,
+   0.5,
+   2
+  ],
+  "title": "Export share: *each state's change*",
+  "sub": "points of India's goods exports · {from} to {to}",
+  "note": "A lower share can come with more exports. Blank: Jammu and Kashmir, Ladakh (boundary changed 2019); A&N Islands, Dadra, Nagar Haveli, Daman and Diu (no row).",
+  "vo": "Each state's change in its share of India's goods exports.",
+  "key": [
+   "smaller share",
+   "within 0.5 points",
+   "bigger share"
+  ]
+ },
+ "end": {
+  "q": "What does *your state* export most?",
+  "sub": "Spot your state on the map.",
+  "vo": "What does your state export most?"
+ },
+ "yt_title": "Gujarat: Goods Export Share Level With Maharashtra, Then 2x"
+}

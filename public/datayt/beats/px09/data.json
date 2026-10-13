@@ -1,0 +1,561 @@
+{
+ "id": "px09",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "RBI · Handbook · end-March 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 152, 155 and 156: offices of scheduled commercial banks, their deposits and the credit used in each state, as at end-March 2025. Shares are of the all-India rows. A deposit is counted where the bank office is. State totals, not per person.",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Tamil Nadu*: *16% more*",
+    "bank offices; *Karnataka*:",
+    "*29% more* deposits, 2025."
+   ],
+   "vo": "Tamil Nadu had more bank offices. Karnataka had more deposits.",
+   "geo": "Tamil Nadu",
+   "name": "Tamil Nadu",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S OFFICES · 2025",
+   "big": "7.9%",
+   "text": "of India's bank offices: 16% more than Karnataka's share.",
+   "sub": "Scheduled commercial banks, end-March 2025. State totals, not per person.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "7.9%",
+     "frac": 0.7868610180804023
+    },
+    {
+     "name": "Karnataka",
+     "label": "6.8%",
+     "frac": 0.6790579597868968
+    }
+   ],
+   "vo": "Tamil Nadu's share of India's bank offices was sixteen percent above Karnataka's.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S LOANS · 2025",
+   "big": "9.4%",
+   "text": "of India's bank loans, more than Karnataka's share.",
+   "sub": "Credit used in the state, scheduled commercial banks, end-March 2025.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "9.4%",
+     "frac": 0.9382864038252258
+    },
+    {
+     "name": "Karnataka",
+     "label": "7.3%",
+     "frac": 0.7300387797538332
+    }
+   ],
+   "vo": "Tamil Nadu also held a bigger share of India's bank loans.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "SHARE OF INDIA'S DEPOSITS · 2025",
+   "big": "8.1%",
+   "text": "of India's deposits: 29% more than Tamil Nadu's share, worked from unrounded totals.",
+   "sub": "Deposits: savings kept in banks, counted where the bank office is, not where the saver lives.",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "8.1%",
+     "frac": 0.8053560663347581
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "6.2%",
+     "frac": 0.6238427879298842
+    }
+   ],
+   "vo": "Karnataka held twenty-nine percent more of India's deposits than Tamil Nadu did.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Deposits per bank office, 2025:",
+    "*Karnataka ₹166 crore*,",
+    "Tamil Nadu ₹111 crore."
+   ],
+   "vo": "Per office, Karnataka held one point five times Tamil Nadu's deposits.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Deposits per bank office, *every state*",
+   "sub": "₹ crore per office · India 140 · end-March 2025",
+   "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Tamil Nadu",
+    "Karnataka"
+   ],
+   "vo": "Here is every state: deposits for each bank office.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "ring": [
+    "Tamil Nadu",
+    "Karnataka"
+   ],
+   "q": "How many *banks* are near you?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "How many banks are near you?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Manipur",
+   "label": "64",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Tripura",
+   "label": "65",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.491
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "65",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.6
+  },
+  {
+   "name": "Bihar",
+   "label": "69",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.708
+  },
+  {
+   "name": "Assam",
+   "label": "72",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.817
+  },
+  {
+   "name": "Mizoram",
+   "label": "72",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.926
+  },
+  {
+   "name": "Nagaland",
+   "label": "81",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.035
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "84",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.143
+  },
+  {
+   "name": "Rajasthan",
+   "label": "84",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.252
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "85",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.361
+  },
+  {
+   "name": "Sikkim",
+   "label": "88",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.47
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "89",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.578
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "91",
+   "bucket": 1,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 30.687
+  },
+  {
+   "name": "Meghalaya",
+   "label": "96",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.796
+  },
+  {
+   "name": "Ladakh",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.905
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.014
+  },
+  {
+   "name": "Punjab",
+   "label": "96",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.122
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "98",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.231
+  },
+  {
+   "name": "Odisha",
+   "label": "99",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.34
+  },
+  {
+   "name": "Jharkhand",
+   "label": "104",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.449
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "105",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.557
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "111",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.666
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "112",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.775
+  },
+  {
+   "name": "Puducherry",
+   "label": "114",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.884
+  },
+  {
+   "name": "West Bengal",
+   "label": "121",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.993
+  },
+  {
+   "name": "Kerala",
+   "label": "121",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.101
+  },
+  {
+   "name": "Gujarat",
+   "label": "134",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.21
+  },
+  {
+   "name": "Telangana",
+   "label": "138",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.319
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "145",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.428
+  },
+  {
+   "name": "Haryana",
+   "label": "156",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.536
+  },
+  {
+   "name": "Karnataka",
+   "label": "166",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.645
+  },
+  {
+   "name": "Goa",
+   "label": "175",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.754
+  },
+  {
+   "name": "Chandigarh",
+   "label": "275",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.863
+  },
+  {
+   "name": "Maharashtra",
+   "label": "353",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.971
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "520",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.08
+  }
+ ],
+ "checked": [
+  "Tamil Nadu / Karnataka = 1.16 (at least 1.155)",
+  "Karnataka / Tamil Nadu = 0.86 (at least 0.8584)",
+  "Karnataka / Tamil Nadu = 1.29 (at least 1.285)",
+  "Tamil Nadu / Karnataka = 0.77 (at least 0.7722)",
+  "Tamil Nadu / Karnataka = 1.29 (at least 1.2)",
+  "Karnataka 165.749 rounds to 166",
+  "Tamil Nadu 110.802 rounds to 111",
+  "India 139.756 rounds to 140",
+  "Karnataka / Tamil Nadu = 1.50 (at least 1.45)",
+  "Tamil Nadu / Karnataka = 0.67 (at least 0.645)",
+  "Tamil Nadu / Karnataka = 1.14 (at least 1.1)",
+  "Tamil Nadu / Karnataka = 1.12 (at least 1.1)",
+  "Karnataka / Tamil Nadu = 1.25 (at least 1.2)",
+  "Karnataka / Tamil Nadu = 1.23 (at least 1.2)",
+  "Tamil Nadu / Karnataka = 1.28 (at least 1.2)",
+  "Tamil Nadu / Karnataka = 1.29 (at least 1.2)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.257,
+   "at": 0.12,
+   "text": "Tamil Nadu had more bank offices. Karnataka had more deposits."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.754,
+   "at": 5.926,
+   "text": "Tamil Nadu's share of India's bank offices was sixteen percent above Karnataka's."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.735,
+   "at": 11.733,
+   "text": "Tamil Nadu also held a bigger share of India's bank loans."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.336,
+   "at": 17.539,
+   "text": "Karnataka held twenty-nine percent more of India's deposits than Tamil Nadu did."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.623,
+   "at": 23.346,
+   "text": "Per office, Karnataka held one point five times Tamil Nadu's deposits."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.205,
+   "at": 29.152,
+   "text": "Here is every state: deposits for each bank office."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.75,
+   "at": 34.959,
+   "text": "How many banks are near you?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Tamil Nadu: More Bank Offices. Karnataka: 29% More Deposits"
+}

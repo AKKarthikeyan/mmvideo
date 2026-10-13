@@ -57,5 +57,18 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 49 | tn11 | Rajasthan: 30% of India's New Installed Renewable Capacity | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked) |
 | 50 | tn13 | Odisha: Women 15+ Usually at Work, 18% to 48% in 6 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; script reviewed and fixed before voicing; banked) |
 | 51 | px08 | Men With 10+ Years of School: Himachal 76%, Andhra 59.5% | see pack | n/a | drafted (2026-10-13; beat template `paradox`; script reviewed and fixed before voicing; banked) |
+| 52 | tn15 | Telangana: Personal Loans 19% to 42% of Bank Loans, 2015-25 | see pack | n/a | drafted (2026-10-13; beat template `then`; Money day; script reviewed and fixed before voicing) |
+| 53 | fa11 | Maharashtra: Loans Approved ₹98, Used ₹86 per ₹100 Deposited | see pack | n/a | drafted (2026-10-13; beat template `fact`; Money day; script reviewed and fixed before voicing) |
+| 54 | tn16 | Assam: Loans per ₹100 of Deposits, ₹37 to ₹66 in 10 Years | see pack | n/a | drafted (2026-10-13; beat template `then`; Money day; script reviewed and fixed before voicing) |
+| 55 | px09 | Tamil Nadu: More Bank Offices. Karnataka: 29% More Deposits | see pack | n/a | drafted (2026-10-13; beat template `paradox`; Money day; script reviewed and fixed before voicing) |
+| 56 | fa12 | Delhi: Highest Deposits per Bank Office, ₹520 Crore, 2025 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Money day; script reviewed and fixed before voicing) |
+| 57 | tn17 | Gujarat: Goods Export Share Level With Maharashtra, Then 2x | see pack | n/a | drafted (2026-10-13; beat template `then`; Economy day; script reviewed and fixed before voicing) |
+| 58 | fa14 | Delhi: Own Taxes Paid 98% of Day-to-Day Spending, 2022-23 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Economy day; script reviewed and fixed before voicing) |
+| 59 | fa13 | Madhya Pradesh: Crops Made 31% of State Output, 2023-24 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Economy day; script reviewed and fixed before voicing) |
+| 60 | tn22 | Rural Karnataka Men: Farm Labour Pay Hit 94% of Construction | see pack | n/a | drafted (2026-10-13; beat template `then`; Economy day; script reviewed and fixed before voicing) |
+| 61 | tn20 | Uttarakhand: Babies Born in a Health Facility Up 5.7 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; School and health day; script reviewed and fixed before voicing) |
+| 62 | fa15 | Kerala: Share Aged 60+ Matches Share Under 15, 2023-24 | see pack | n/a | drafted (2026-10-13; beat template `fact`; School and health day; script reviewed and fixed before voicing) |
+| 63 | tn23 | Jharkhand: Mothers With 4+ Pregnancy Check-ups Up 20 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; School and health day; script reviewed and fixed before voicing) |
+| 64 | fa17 | Himachal: About 2 in 3 Women Worked or Sought Work, 2023-24 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Women day; script reviewed and fixed before voicing) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

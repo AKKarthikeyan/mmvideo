@@ -1,0 +1,433 @@
+{
+ "id": "fa12",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "RBI · Handbook · end-March 2025",
+ "palette": "C",
+ "state": "Delhi",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 152 and 155: offices of scheduled commercial banks and their deposits, as at end-March 2025. Deposits per office = deposits divided by offices, state by state; India is the ratio of the two all-India rows. A deposit is counted where the bank office is.",
+ "hook": [
+  "*Delhi*: highest deposits",
+  "per bank office in India:",
+  "*₹520 crore*, 2025."
+ ],
+ "hook_vo": "Delhi: five hundred twenty crore rupees of deposits per bank office.",
+ "facts": [
+  {
+   "state": "Delhi",
+   "kicker": "DEPOSITS PER OFFICE · MARCH 2025",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "unit": "₹",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 600,
+   "text": "crore of deposits for each bank office. The highest of {n} states and UTs with data. India: ₹140 crore.",
+   "sub": "Deposits: savings kept in banks, counted where the bank office is, not where the saver lives.",
+   "vo": "Highest of thirty-five states and territories. India's was one hundred forty crore."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "THE NEXT STATE · MARCH 2025",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Delhi"
+   ],
+   "bar_max": 600,
+   "text": "crore for each office in Maharashtra, the next highest. Delhi's was 1.5 times that.",
+   "sub": "Deposits per bank office, end-March 2025.",
+   "vo": "Maharashtra came next. Delhi's figure was one point five times that."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "SHARE OF INDIA'S DEPOSITS · 2025",
+   "data": {
+    "rbi": [
+     155,
+     "2025"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Maharashtra"
+   ],
+   "bar_max": 25,
+   "text": "of India's deposits sat in Delhi's 3,981 bank offices, out of 167,806 across India.",
+   "sub": "Scheduled commercial banks, end-March 2025.",
+   "vo": "Delhi's under four thousand offices held eight point eight percent of India's deposits."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 520
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 140
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 353
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 1.45
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 0.66
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2024"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2024"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2023"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2023"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "rbi": [
+     152,
+     "2025"
+    ]
+   },
+   "equals": 3981
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     152,
+     "2025"
+    ]
+   },
+   "equals": 167806
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2023"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2023"
+      ]
+     }
+    ]
+   },
+   "equals": 439
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2024"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2024"
+      ]
+     }
+    ]
+   },
+   "equals": 477
+  }
+ ],
+ "so": {
+  "lines": [
+   "Delhi's figure, three years:",
+   "*₹439*, *₹477*, *₹520* crore,",
+   "the highest each year."
+  ],
+  "vo": "Delhi was the highest in each of the last three years."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    },
+    {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   ]
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Deposits per bank office, *every state*",
+  "sub": "₹ crore per office · India 140 · end-March 2025",
+  "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+  "ring": [
+   "Delhi",
+   "Maharashtra"
+  ],
+  "vo": "Here is every state: deposits for each bank office."
+ },
+ "end": {
+  "q": "Which *bank* holds your savings?",
+  "sub": "Comment below.",
+  "vo": "Which bank holds your savings?"
+ },
+ "yt_title": "Delhi: Highest Deposits per Bank Office, ₹520 Crore, 2025"
+}

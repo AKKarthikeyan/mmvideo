@@ -1,5 +1,7 @@
 # Data Kadai: week three
 
+Posting order replaced on 13 Oct 2026 by `PLAN.md` (themed weeks: 14 a week, one theme a day, two finance days). This page stays as the record of the build round.
+
 Status on 13 Oct 2026: nine Shorts are scheduled for this week and five more are built and banked. None is posted. Claude checked a frame from every beat and the audio levels; nobody has watched one end to end with sound yet.
 Nine is fewer than fourteen. Twelve new scripts passed review this round; the viewer editor asked for four of them to wait because they repeat a state or a measure used in the same fortnight.
 

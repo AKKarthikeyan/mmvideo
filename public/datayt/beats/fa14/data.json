@@ -1,0 +1,535 @@
+{
+ "id": "fa14",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "RBI · State Finances · 2022-23 accounts",
+ "source": "Reserve Bank of India, State Finances: A Study of Budgets, as published in the RBI Handbook of Statistics on Indian States 2024-25: Table 168, own tax revenue (taxes the state raises itself), over Table 166, revenue expenditure (spending that does not create assets), rupees crore. 2022-23 is the latest year of actual accounts (A) in the Handbook; its 2023-24 and 2024-25 estimates are not used. 31 states and UTs have a figure: the 28 states, Delhi, Jammu and Kashmir, Puducherry. A funding mix, not a grade.",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Delhi*: own taxes covered",
+    "*98%* of day-to-day spending,",
+    "*highest of 31*, 2022-23."
+   ],
+   "vo": "Delhi's own taxes covered ninety-eight percent of day-to-day spending.",
+   "geo": "NCT of Delhi",
+   "name": "Delhi",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "OWN TAXES / DAY-TO-DAY SPENDING",
+   "big": "98.2%",
+   "text": "of Delhi's day-to-day spending was met by its own taxes. The highest of 31 states and UTs.",
+   "sub": "2022-23 accounts. Day-to-day spending: revenue expenditure, which builds no assets. Telangana: 69.7%. Gujarat: 69.5%.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "98.2%",
+     "frac": 0.9816979645981014
+    },
+    {
+     "name": "Telangana",
+     "label": "69.7%",
+     "frac": 0.6971585390497174
+    }
+   ],
+   "vo": "Highest of thirty-one states and territories. Telangana, seventy.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SAME MEASURE · TAMIL NADU",
+   "big": "53.7%",
+   "text": "was Tamil Nadu's figure in 2022-23. Delhi's was *1.8 times* that.",
+   "sub": "Own tax revenue as a share of revenue expenditure, 2022-23 accounts.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "53.7%",
+     "frac": 0.5365797031046848
+    },
+    {
+     "name": "Delhi",
+     "label": "98.2%",
+     "frac": 0.9816979645981014
+    }
+   ],
+   "vo": "Tamil Nadu: fifty-four percent. Delhi's was one point eight times that.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "FOUR YEARS EARLIER · 2018-19",
+   "big": "99.4%",
+   "text": "in 2018-19: also the highest, ahead of Maharashtra. In 2020-21 it was 73%, and still the highest.",
+   "sub": "Own tax revenue as a share of revenue expenditure.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "99.4%",
+     "frac": 0.9938402257679365
+    },
+    {
+     "name": "Maharashtra",
+     "label": "70.5%",
+     "frac": 0.7053388859344923
+    }
+   ],
+   "vo": "Four years earlier: ninety-nine percent, also the highest.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Delhi was *the highest* in each",
+    "of the *19 years* of accounts",
+    "from 2004-05 to 2022-23."
+   ],
+   "vo": "The highest in each of nineteen years of accounts.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Own taxes as % of spending, *every state*",
+   "sub": "% of revenue expenditure · 2022-23 accounts",
+   "note": "Own taxes: those a state raises itself. A funding mix, not a grade. Blank (no row): A&N Islands, Chandigarh, Ladakh, Lakshadweep, Dadra, Nagar Haveli, Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "NCT of Delhi",
+    "Telangana"
+   ],
+   "vo": "Own taxes as a share of spending, in every state.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Own taxes: those a state raises itself. A funding mix, not a grade. Blank (no row): A&N Islands, Chandigarh, Ladakh, Lakshadweep, Dadra, Nagar Haveli, Daman and Diu.",
+   "ring": [
+    "NCT of Delhi",
+    "Telangana"
+   ],
+   "q": "Where does *your state's* money come from?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where does your state's money come from?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Nagaland",
+   "label": "10.9",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Mizoram",
+   "label": "10.9",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "12.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Manipur",
+   "label": "13.3",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Tripura",
+   "label": "14.6",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Meghalaya",
+   "label": "17.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "19.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Sikkim",
+   "label": "19.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "23.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "Bihar",
+   "label": "23.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Assam",
+   "label": "24.1",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Odisha",
+   "label": "35.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "36.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Punjab",
+   "label": "37.2",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "West Bengal",
+   "label": "37.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Jharkhand",
+   "label": "37.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Rajasthan",
+   "label": "38.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "38.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "38.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "39.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "45.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Puducherry",
+   "label": "47.9",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Kerala",
+   "label": "50.7",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Goa",
+   "label": "52.6",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "53.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Haryana",
+   "label": "59.2",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Karnataka",
+   "label": "66.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Maharashtra",
+   "label": "68.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Gujarat",
+   "label": "69.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Telangana",
+   "label": "69.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "98.2",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.076
+  }
+ ],
+ "checked": [
+  "Delhi is the highest of 31 with data (98.2%)",
+  "Delhi is the highest of 31 with data (99.4%)",
+  "Delhi 98.1698 rounds to 98",
+  "Telangana 69.7159 rounds to 70",
+  "Tamil Nadu 53.658 rounds to 54",
+  "Gujarat 695.154 rounds to 695",
+  "Telangana 697.159 rounds to 697",
+  "Delhi 99.384 rounds to 99",
+  "Delhi 72.8089 rounds to 73",
+  "Delhi / Tamil Nadu = 1.83 (at least 1.75)",
+  "Tamil Nadu / Delhi = 0.55 (at least 0.5405)",
+  "Delhi / Tamil Nadu = 1.84 (at least 1.1)",
+  "Delhi / Tamil Nadu = 1.88 (at least 1.1)",
+  "Delhi / Tamil Nadu = 1.80 (at least 1.1)",
+  "Delhi / Maharashtra = 1.64 (at least 1.1)",
+  "Delhi / Maharashtra = 1.51 (at least 1.1)",
+  "Delhi / Karnataka = 1.50 (at least 1.1)",
+  "Delhi / Karnataka = 1.61 (at least 1.1)",
+  "Delhi / Gujarat = 1.50 (at least 1.1)",
+  "Delhi / Gujarat = 1.47 (at least 1.1)",
+  "Delhi / Gujarat = 1.55 (at least 1.1)",
+  "Delhi / Gujarat = 1.60 (at least 1.1)",
+  "Delhi / Maharashtra = 1.73 (at least 1.1)",
+  "Delhi / Maharashtra = 1.66 (at least 1.1)",
+  "Delhi / Maharashtra = 1.49 (at least 1.1)",
+  "Delhi / Maharashtra = 1.41 (at least 1.1)",
+  "Delhi / Maharashtra = 1.47 (at least 1.1)",
+  "Delhi / Karnataka = 1.32 (at least 1.1)",
+  "Delhi / Telangana = 1.30 (at least 1.1)",
+  "Delhi / Telangana = 1.41 (at least 1.1)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.623,
+   "at": 0.12,
+   "text": "Delhi's own taxes covered ninety-eight percent of day-to-day spending."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.989,
+   "at": 5.926,
+   "text": "Highest of thirty-one states and territories. Telangana, seventy."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.414,
+   "at": 11.733,
+   "text": "Tamil Nadu: fifty-four percent. Delhi's was one point eight times that."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.257,
+   "at": 17.539,
+   "text": "Four years earlier: ninety-nine percent, also the highest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.056,
+   "at": 23.346,
+   "text": "The highest in each of nineteen years of accounts."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.866,
+   "at": 27.217,
+   "text": "Own taxes as a share of spending, in every state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.168,
+   "at": 33.023,
+   "text": "Where does your state's money come from?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Delhi: Own Taxes Paid 98% of Day-to-Day Spending, 2022-23"
+}

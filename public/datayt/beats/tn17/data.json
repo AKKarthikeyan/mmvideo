@@ -1,0 +1,594 @@
+{
+ "id": "tn17",
+ "type": "then",
+ "chip": "6 YEARS ON",
+ "sourceShort": "Commerce Ministry · Niryat · 2017-18 to 2023-24",
+ "source": "Department of Commerce, Ministry of Commerce and Industry, Niryat portal (state-wise goods exports, US dollars), as published in the RBI Handbook of Statistics on Indian States 2024-25, Table 181. Each share is of the all-India figure in the same table; the state rows add up to 96% of it in 2017-18 and 97% in 2023-24. The 2024-25 column is not used for the shares: its state rows cover only 88% of the total. Blank on the map: Jammu and Kashmir, Ladakh, A&N Islands, Dadra, Nagar Haveli, Daman and Diu.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#C9822F",
+  "#E0BB8E",
+  "#DDD5C8",
+  "#B2818E",
+  "#7A2340"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Gujarat's* goods export share",
+    "was level with Maharashtra's,",
+    "then *2×* Maharashtra's."
+   ],
+   "vo": "Gujarat's goods export share was level with Maharashtra's, then twice as big.",
+   "geo": "Gujarat",
+   "name": "Gujarat",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Gujarat",
+   "name": "Gujarat",
+   "kicker": "SHARE OF INDIA'S GOODS EXPORTS",
+   "big": "+8.7 points",
+   "p0": {
+    "period": "2017-18",
+    "label": "22.0%",
+    "frac": 0.715855160228093
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "30.8%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of India's goods exports. Maharashtra: *23.0%*",
+   "vo": "In twenty seventeen-eighteen: twenty-two percent. Maharashtra, twenty-three.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Gujarat",
+   "name": "Gujarat",
+   "kicker": "SHARE OF INDIA'S GOODS EXPORTS",
+   "big": "+8.7 points",
+   "p0": {
+    "period": "2017-18",
+    "label": "22.0%",
+    "frac": 0.715855160228093
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "30.8%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of India's goods exports. Maharashtra: *15.4%*",
+   "vo": "Six years on: thirty-one percent. Maharashtra, fifteen.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "GOODS EXPORTS · 2023-24 / 2017-18",
+   "big": "2.0×",
+   "text": "Gujarat's goods exports, as a multiple of 2017-18",
+   "sub": "Current dollars, not adjusted for prices. 2024-25 not used (state rows cover 88% of India); Gujarat's share then: 26.6%.",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "label": "2.0×",
+     "frac": 0.6705030156995974
+    },
+    {
+     "name": "India",
+     "label": "1.4×",
+     "frac": 0.4799830437370549
+    }
+   ],
+   "vo": "Gujarat: two times its twenty seventeen-eighteen exports. India: one point four times.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Gujarat makes up *about half* of",
+    "the gap between India's goods",
+    "exports in 2023-24 and 2017-18."
+   ],
+   "note": "51% of the gap, in current dollars. The share stepped up in 2021-22: 20.8% to 29.8%. The table shows how much, not why.",
+   "vo": "Gujarat makes up about half of the gap between India's two export totals.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Export share: *each state's change*",
+   "sub": "points of India's goods exports · 2017-18 to 2023-24",
+   "note": "A lower share can come with more exports. Blank: Jammu and Kashmir, Ladakh (boundary changed 2019); A&N Islands, Dadra, Nagar Haveli, Daman and Diu (no row).",
+   "anim": true,
+   "ring": [
+    "Gujarat"
+   ],
+   "vo": "Each state's change in its share of India's goods exports.",
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "smaller share"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.5 points"
+    },
+    {
+     "color": "#7A2340",
+     "label": "bigger share"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "A lower share can come with more exports. Blank: Jammu and Kashmir, Ladakh (boundary changed 2019); A&N Islands, Dadra, Nagar Haveli, Daman and Diu (no row).",
+   "ring": [
+    "Gujarat"
+   ],
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "smaller share"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.5 points"
+    },
+    {
+     "color": "#7A2340",
+     "label": "bigger share"
+    }
+   ],
+   "q": "What does *your state* export most?",
+   "sub": "Spot your state on the map.",
+   "kind": "mapend",
+   "vo": "What does your state export most?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Maharashtra",
+   "label": "−7.6",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Kerala",
+   "label": "−0.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.437
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "−0.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.556
+  },
+  {
+   "name": "West Bengal",
+   "label": "−0.4",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.675
+  },
+  {
+   "name": "Punjab",
+   "label": "−0.4",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.794
+  },
+  {
+   "name": "Haryana",
+   "label": "−0.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.913
+  },
+  {
+   "name": "Goa",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.032
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.151
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.27
+  },
+  {
+   "name": "Meghalaya",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.388
+  },
+  {
+   "name": "Assam",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.507
+  },
+  {
+   "name": "Puducherry",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.626
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.745
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.864
+  },
+  {
+   "name": "Sikkim",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.983
+  },
+  {
+   "name": "Tripura",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.102
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Manipur",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.34
+  },
+  {
+   "name": "Mizoram",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.459
+  },
+  {
+   "name": "Chandigarh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 33.578
+  },
+  {
+   "name": "Rajasthan",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.697
+  },
+  {
+   "name": "Bihar",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.816
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.935
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.054
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.172
+  },
+  {
+   "name": "Karnataka",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.291
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.41
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.529
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.648
+  },
+  {
+   "name": "Odisha",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.767
+  },
+  {
+   "name": "Telangana",
+   "label": "+1.0",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.886
+  },
+  {
+   "name": "Gujarat",
+   "label": "+8.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.005
+  }
+ ],
+ "checked": [
+  "Gujarat: 22.01 in 2017-18, 30.75 in 2023-24: +8.74, 1.40 times",
+  "the years just before 2017-18 do not make it a freak year: measured from 22.01 the change is still +8.74",
+  "the change holds in each of 2021-22, 2022-23, 2023-24: 29.78, 32.74, 30.75",
+  "years = 6",
+  "22% in 2017-18 (hook, voice, title): 22.01",
+  "31% in 2023-24 (hook, voice, title): 30.75",
+  "Maharashtra 23.0% in 2017-18 (tenths): 229.67",
+  "Maharashtra 15.4% in 2023-24 (tenths): 153.78",
+  "Maharashtra twenty-three in the voice line: 22.97",
+  "Maharashtra fifteen in the voice line: 15.38",
+  "India's exports one point four times the 2017-18 figure (tenths): 14.40",
+  "Gujarat makes up about half (49 to 53%) of the gap between India's export totals: 50.61",
+  "51% of the gap (note): 50.61",
+  "2024-25 share 26.6% (tenths), the incomplete year, over the all-India row: 265.95",
+  "the rise holds in 2021-22: Gujarat's share 28 to 32%, well above the 22% start: 29.78",
+  "the rise holds in 2022-23: Gujarat's share 31 to 34%: 32.74",
+  "the start is not a dip: Gujarat 20 to 23% in each of 2018-19 to 2020-21 (2018-19): 20.42",
+  "the start is not a spike: Gujarat 20 to 23% in 2019-20: 20.25",
+  "the start is not a spike: Gujarat 20 to 23% in 2020-21: 20.76",
+  "Gujarat's exports two times the 2017-18 figure (1.95 to 2.05 times): 2.01",
+  "2020-21 share 20.8% (tenths): the step up in 2021-22 starts here: 207.63",
+  "2021-22 share 29.8% (tenths): 297.77",
+  "level with Maharashtra in 2017-18: Gujarat's share within 1 point of Maharashtra's (hook): -0.95",
+  "twice Maharashtra's share in 2023-24: 1.95 to 2.05 times (hook): 2.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.754,
+   "at": 0.12,
+   "text": "Gujarat's goods export share was level with Maharashtra's, then twice as big."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.257,
+   "at": 5.926,
+   "text": "In twenty seventeen-eighteen: twenty-two percent. Maharashtra, twenty-three."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.414,
+   "at": 11.733,
+   "text": "Six years on: thirty-one percent. Maharashtra, fifteen."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 7.131,
+   "at": 17.539,
+   "text": "Gujarat: two times its twenty seventeen-eighteen exports. India: one point four times."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.336,
+   "at": 25.281,
+   "text": "Gujarat makes up about half of the gap between India's two export totals."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.205,
+   "at": 31.088,
+   "text": "Each state's change in its share of India's goods exports."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.168,
+   "at": 36.894,
+   "text": "What does your state export most?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Gujarat: Goods Export Share Level With Maharashtra, Then 2x"
+}

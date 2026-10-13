@@ -81,7 +81,7 @@ const Hook: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   return <AbsoluteFill style={{justifyContent: "center", padding: "0 70px"}}>
     {(b.lines ?? []).map((l, i) => {
       const p = pop(f, f0 + 2 + i * 5);
-      return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 168, 940, 0.47), lineHeight: 1.02, color: P.ink,
+      return <div key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: fit(l.replace(/\*/g, ""), 168, 940, 0.5), lineHeight: 1.06, color: P.ink,
         opacity: Math.min(1, p * 1.4), transform: `translateY(${(1 - p) * 60}px)`}}><Rich text={l} acc={D.accent}/></div>;
     })}
     {b.note && <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 34, lineHeight: 1.3, color: P.mute, marginTop: 36, opacity: ease(f, f0 + 14, f0 + 22)}}>{b.note}</div>}

@@ -1,0 +1,1580 @@
+{
+ "id": "tn15",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "RBI Handbook · end-March 2015, 2025",
+ "palette": "E",
+ "state": "Telangana",
+ "points": [
+  {
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "rbi": [
+         159,
+         "2015"
+        ]
+       },
+       {
+        "rbi": [
+         155,
+         "2015"
+        ]
+       }
+      ]
+     },
+     {
+      "rbi": [
+       154,
+       "2015"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "period": "End-March 2015"
+  },
+  {
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "rbi": [
+         159,
+         "2025"
+        ]
+       },
+       {
+        "rbi": [
+         155,
+         "2025"
+        ]
+       }
+      ]
+     },
+     {
+      "rbi": [
+       154,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "period": "End-March 2025"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "PERSONAL LOANS · % OF BANK LOANS",
+ "expect": {
+  "years": 10,
+  "n": 34
+ },
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025): Tables 159 (personal loans), 155 (deposits) and 154 (credit-deposit ratio, place of utilisation), scheduled commercial banks, amounts outstanding at end-March 2015 and 2025. Share = personal loans ÷ credit used in the state (deposits × ratio). India: the all-India rows. Telangana is in the tables from 2015. A bank merger in July 2023 lifts figures from 2024. Not adjusted for prices.",
+ "hook": [
+  "*Telangana*: personal loans",
+  "*more than doubled* their",
+  "share of bank loans, 2015-25."
+ ],
+ "hook_vo": "Telangana's personal loans more than doubled their share of bank loans.",
+ "then": {
+  "text": "of Telangana's bank loans were personal loans (loans to individuals). India: *{india_then}*.",
+  "vo": "In twenty fifteen, nineteen of every hundred rupees lent. India: seventeen."
+ },
+ "now": {
+  "text": "of bank loans. India: *{india_now}*.",
+  "vo": "In twenty twenty-five: forty-two of every hundred. India: thirty-one."
+ },
+ "facts": [
+  {
+   "kicker": "TELANGANA'S RISE, AGAINST INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Telangana's personal-loan share, 2025 against 2015",
+   "bars": [
+    {
+     "name": "Telangana",
+     "ratio": [
+      {
+       "data": {
+        "ratio": [
+         {
+          "ratio": [
+           {
+            "rbi": [
+             159,
+             "2025"
+            ]
+           },
+           {
+            "rbi": [
+             155,
+             "2025"
+            ]
+           }
+          ]
+         },
+         {
+          "rbi": [
+           154,
+           "2025"
+          ]
+         }
+        ],
+        "scale": 10000
+       }
+      },
+      {
+       "data": {
+        "ratio": [
+         {
+          "ratio": [
+           {
+            "rbi": [
+             159,
+             "2015"
+            ]
+           },
+           {
+            "rbi": [
+             155,
+             "2015"
+            ]
+           }
+          ]
+         },
+         {
+          "rbi": [
+           154,
+           "2015"
+          ]
+         }
+        ],
+        "scale": 10000
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "data": {
+        "ratio": [
+         {
+          "ratio": [
+           {
+            "rbi": [
+             159,
+             "2025"
+            ]
+           },
+           {
+            "rbi": [
+             155,
+             "2025"
+            ]
+           }
+          ]
+         },
+         {
+          "rbi": [
+           154,
+           "2025"
+          ]
+         }
+        ],
+        "scale": 10000
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "ratio": [
+         {
+          "ratio": [
+           {
+            "rbi": [
+             159,
+             "2015"
+            ]
+           },
+           {
+            "rbi": [
+             155,
+             "2015"
+            ]
+           }
+          ]
+         },
+         {
+          "rbi": [
+           154,
+           "2015"
+          ]
+         }
+        ],
+        "scale": 10000
+       },
+       "state": "India"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 2.5,
+   "sub": "India: 16.6% to 31.0%. Personal loans: loans to individuals, such as for homes and vehicles.",
+   "vo": "India's share rose one point nine times. Telangana's, two point two."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Telangana's rise, *+22.4 points*,",
+    "was *1.6 times* India's rise",
+    "of *+14.4 points*, 2015 to 2025."
+   ],
+   "note": "Scheduled commercial banks. A bank merger in July 2023 lifts figures from March 2024. A smaller rise in share can still come with more loans.",
+   "vo": "Telangana's rise in points was one point six times India's."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   10,
+   13,
+   16,
+   18
+  ],
+  "title": "Personal loans' share: *each state's change*",
+  "sub": "percentage points · 2015 to 2025 · India +14.4",
+  "note": "Share of bank credit used in the state. Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu.",
+  "vo": "Here is each state's change in the personal-loan share.",
+  "key": [
+   "smaller rise",
+   "",
+   "bigger rise"
+  ]
+ },
+ "end": {
+  "q": "What was your first *loan* for?",
+  "sub": "Comment below.",
+  "vo": "What was your first loan for?"
+ },
+ "tests": [
+  {
+   "says": "19% in 2015 (card, title)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2015"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2015"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "equals": 19
+  },
+  {
+   "says": "42% in 2025 (card, title)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2025"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "equals": 42
+  },
+  {
+   "says": "Telangana 19.4% in 2015 (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2015"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2015"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "scale": 10
+   },
+   "equals": 194
+  },
+  {
+   "says": "Telangana 41.8% in 2025 (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2025"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "scale": 10
+   },
+   "equals": 418
+  },
+  {
+   "says": "India seventeen in 2015",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2015"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2015"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "India"
+   },
+   "equals": 17
+  },
+  {
+   "says": "India thirty-one in 2025",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2025"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "India"
+   },
+   "equals": 31
+  },
+  {
+   "says": "India 16.6% in 2015 (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2015"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2015"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 166
+  },
+  {
+   "says": "India 31.0% in 2025 (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2025"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 310
+  },
+  {
+   "says": "Telangana's rise +22.4 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 224
+  },
+  {
+   "says": "India's rise +14.4 points (tenths), on the map",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 144
+  },
+  {
+   "says": "Telangana's share 2.2 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 22
+  },
+  {
+   "says": "India's share 1.9 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 19
+  },
+  {
+   "says": "more than doubled: 2.0 to 2.3 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.3
+  },
+  {
+   "says": "2015 is not a freak low: 2016 is within 1.5 points above it",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2016"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2016"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2016"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2015"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2015"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2015"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ]
+   },
+   "min": 0,
+   "max": 1.5
+  },
+  {
+   "says": "the rise holds in 2023 (37.7%)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2023"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2023"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 35,
+   "max": 40
+  },
+  {
+   "says": "the rise holds in 2024 (41.2%)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2024"
+         ]
+        },
+        {
+         "rbi": [
+          155,
+          "2024"
+         ]
+        }
+       ]
+      },
+      {
+       "rbi": [
+        154,
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 40,
+   "max": 43
+  },
+  {
+   "says": "no fall back from the peak: 2025 is at or above 2024",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2025"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2025"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ratio": [
+          {
+           "rbi": [
+            159,
+            "2024"
+           ]
+          },
+          {
+           "rbi": [
+            155,
+            "2024"
+           ]
+          }
+         ]
+        },
+        {
+         "rbi": [
+          154,
+          "2024"
+         ]
+        }
+       ],
+       "scale": 10000
+      }
+     }
+    ]
+   },
+   "min": 0,
+   "max": 3
+  },
+  {
+   "says": "Telangana's rise is 1.6 times India's rise, 2015 to 2025 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2025"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2025"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2025"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2025"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2025"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2025"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 16
+  },
+  {
+   "says": "holds to 2024: Telangana's rise is 1.5 to 1.7 times India's",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2024"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2024"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2024"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2024"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2024"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2024"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.7
+  },
+  {
+   "says": "holds to 2023: Telangana's rise is 1.5 to 1.7 times India's",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2023"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2023"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2023"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2023"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2023"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2023"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "ratio": [
+          {
+           "ratio": [
+            {
+             "rbi": [
+              159,
+              "2015"
+             ]
+            },
+            {
+             "rbi": [
+              155,
+              "2015"
+             ]
+            }
+           ]
+          },
+          {
+           "rbi": [
+            154,
+            "2015"
+           ]
+          }
+         ],
+         "scale": 10000
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.7
+  },
+  {
+   "says": "merger caveat: India's personal loans rose by over a quarter in the year to March 2024",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.25,
+   "max": 1.35
+  }
+ ],
+ "yt_title": "Telangana: Personal Loans 19% to 42% of Bank Loans, 2015-25"
+}

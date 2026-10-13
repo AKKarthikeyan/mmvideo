@@ -101,6 +101,13 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - `SOURCE_MAP.md` lists each source with its tier and whether a script can fetch it; `SOURCES_CATALOG.md` lists what is
   already collected.
 
+## Weekly plan (AK, 13 Oct 2026)
+- AK: "every week required 14" and "keep every day one theme. in that 2 days Financial related data has to come."
+- So: 14 Shorts a week, two a day; each day has one theme; two of the seven days carry finance data (Money on day 1,
+  Economy on day 4). The theme names and which day each falls on were chosen by Claude and can be changed by AK.
+- The plan lives in `public/datayt/bank/themes.json` and is checked by `scripts/datayt/week_plan.py`, which writes
+  `ops/PLAN.md`. A week is not finished until that check shows no empty slot.
+
 ## Posting
 - Nothing is posted or uploaded by any agent. AK approves each pack and posts it.
 - Generated audio and video are git-ignored and stay out of the repo.

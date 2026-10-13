@@ -135,3 +135,39 @@ state in the earlier survey), a card of our own reading under `so`, then every s
 5. Lines of a statement card should be close in length. One line twice as long as the others shrinks to small type.
 6. A map of counts prints whole numbers. Give `"dec": 1` in `map` only if the figures really have a decimal.
 
+## Themed days (AK, 13 Oct 2026)
+Every week has 14 Shorts, two a day, and every day keeps to one theme. Two of the seven days carry finance data.
+The themes and the posting order are in `public/datayt/bank/themes.json`; `python3 scripts/datayt/week_plan.py` checks
+the plan and writes `docs/datakadai/ops/PLAN.md`.
+
+| Day | Theme | What it covers |
+| --- | --- | --- |
+| 1 | Money (finance) | banks, loans, deposits, savings, pensions |
+| 2 | Farm and food | crops, yields, fish, livestock, land |
+| 3 | Women | women's work, pay, phones, internet, property |
+| 4 | Economy (finance) | state income and output, prices, wages, state budgets, exports |
+| 5 | Power and connections | electricity, renewables, telecom, water |
+| 6 | School and health | schooling, children's health, hospitals, the body |
+| 7 | Know your states | a game, a place story, or what a state is known for |
+
+A script is written for one theme. The two Shorts of a day must differ in format, state and measure.
+
+## Rates built from two tables (finance days)
+Totals of money are size effects: Maharashtra has the most deposits because it is large and has Mumbai. Tell a rate.
+The builder builds one from two tables, state by state, wherever a data spec goes:
+- `{"ratio": [spec, spec], "scale": 100}`: the first over the second, for example personal loans as a share of all
+  bank credit: `{"ratio": [{"rbi": [159, "2025"]}, {"rbi": [156, "2025"]}], "scale": 100}`. The all-India figure is the
+  ratio of the two India rows when both tables print one.
+- `{"add": [spec, spec, ...]}` and `{"minus": [spec, spec]}`: a sum (women plus men) or a gap.
+- A two-level column is named in full: `{"rbi": [180, "2024-25 | Female"]}`.
+Rules for these figures:
+1. Say what the two things are, in the first frame and the title ("of every 100 rupees of bank loans...").
+2. Units: bank tables are in ₹ crore, state accounts in ₹ lakh. A ratio of crore to lakh needs `"scale": 10000` for per cent.
+3. Bank figures are scheduled commercial banks at end-March; say so in the source line. A deposit is counted where the
+   branch is, not where the saver lives.
+4. State budgets: use a year of accounts. "RE" and "BE" columns are estimates and must be named as such if used.
+5. Money over time is not adjusted for prices. Compare states within one year, or compare shares and ratios across
+   years; do not tell a rupee amount "rose" over ten years.
+6. Debt, deficits, taxes and pensions are facts about a budget. No judgement of a state or its government, no cause.
+7. "Income" is state output per person: output booked in the state, not what residents earn.
+

@@ -28,6 +28,7 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table,
 {"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States and {"ls": [table id, column]} for a state table from a Lok Sabha answer.
+A figure built from tables: {"ratio": [spec, spec], "scale": 100} (a rate, state by state), {"add": [spec, ...]} and {"minus": [spec, spec]}.
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
 Run from the repo root: python3 scripts/datayt/build_beats.py <id> [...]
@@ -70,6 +71,17 @@ say = lambda s: SAY.get(s, s)
 
 
 def series(spec):
+    if "ratio" in spec or "add" in spec or "minus" in spec:      # a figure built from two or more tables, state by state: a rate, a sum or a gap
+        parts = [series(x) for x in spec.get("ratio") or spec.get("add") or spec["minus"]]
+        k = spec.get("scale", 1); common = set.intersection(*(set(v) for v, _ in parts)); tot = [i for _, i in parts]
+        assert len(common) >= spec.get("min_states", 15), f"only {len(common)} states are in every table of {spec}"
+        if "add" in spec:
+            return {s: k * sum(v[s] for v, _ in parts) for s in common}, (k * sum(tot) if all(i is not None for i in tot) else None)
+        assert len(parts) == 2, "a ratio or a gap takes exactly two tables"
+        (a, ia), (b, ib) = parts
+        if "minus" in spec:
+            return {s: k * (a[s] - b[s]) for s in common}, (k * (ia - ib) if ia is not None and ib is not None else None)
+        return {s: k * a[s] / b[s] for s in common if b[s]}, (k * ia / ib if ia is not None and ib else None)
     if "coverage" in spec:
         d = json.load(open(COVERAGE)); k = spec["coverage"]; tot = d["published_total_row"]
         india = round(100 * tot[PCT[k][0]] / tot[PCT[k][1]], 1) if k in PCT else tot.get(k)
@@ -86,7 +98,7 @@ def series(spec):
     if "rbi" in spec:
         no, year = spec["rbi"]
         t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(no):03d}.json"))
-        col = [c for c in t["columns"] if c.split("|")[-1].strip() == year]
+        col = [c for c in t["columns"] if c == year or c.split("|")[-1].strip() == year]      # the year, or the full label of a two-level column ("2024-25 | Female")
         assert len(col) == 1, f"T{int(no):03d}: no single column for {year}"
         v = {s: r[col[0]] for s, r in t["states"].items() if r.get(col[0]) is not None}      # states with no figure that year are left out
         return v, v.pop("India", None)

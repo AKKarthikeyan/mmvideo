@@ -1,0 +1,41 @@
+{
+ "rule": "AK, 13 Oct 2026: every week has 14 Shorts (two a day); every day keeps to one theme; two of the seven days carry finance data.",
+ "days": [
+  {"day": 1, "key": "money", "name": "Money", "finance": true, "covers": "banks, loans, deposits, savings, pensions"},
+  {"day": 2, "key": "farm", "name": "Farm and food", "finance": false, "covers": "crops, yields, fish, livestock, land"},
+  {"day": 3, "key": "women", "name": "Women", "finance": false, "covers": "women's work, pay, phones, internet, property"},
+  {"day": 4, "key": "economy", "name": "Economy", "finance": true, "covers": "state income and output, prices, wages, state budgets, exports"},
+  {"day": 5, "key": "power", "name": "Power and connections", "finance": false, "covers": "electricity, renewables, telecom, water"},
+  {"day": 6, "key": "school_health", "name": "School and health", "finance": false, "covers": "schooling, children's health, hospitals, the body"},
+  {"day": 7, "key": "states", "name": "Know your states", "finance": false, "covers": "a game, a place story, or what a state is known for"}
+ ],
+ "videos": {
+  "fa05": "money", "tn09": "money",
+  "sh01": "farm", "rc01": "farm", "tn02": "farm", "tn05": "farm", "rc02": "farm", "sh02": "farm", "tn07": "farm", "fa03": "farm", "fa07": "farm", "tn14": "farm",
+  "tn03": "women", "fa04": "women", "px05": "women", "tn13": "women", "px07": "women",
+  "px02": "economy", "tn12": "economy",
+  "px03": "power", "tn06": "power", "px04": "power", "fa10": "power", "tn11": "power", "px01": "power", "gw01": "power",
+  "fa02": "school_health", "tn10": "school_health", "px08": "school_health",
+  "hl01": "states", "pl01": "states", "hl02": "states", "fa06": "states", "fa08": "states", "fa09": "states"
+ },
+ "weeks": [
+  {"week": 1, "days": [["tn09", "fa05"], ["tn02", "sh01"], ["fa04", "tn03"], ["px02", "tn12"], ["px03", "tn06"], ["fa02", "new"], ["hl01", "fa09"]]},
+  {"week": 2, "days": [["new", "new"], ["fa03", "tn07"], ["px05", "tn13"], ["new", "new"], ["fa10", "px01"], ["tn10", "new"], ["pl01", "fa06"]]},
+  {"week": 3, "days": [["new", "new"], ["tn14", "rc02"], ["px07", "new"], ["new", "new"], ["gw01", "px04"], ["px08", "new"], ["hl02", "fa08"]]}
+ ],
+ "apart": [
+  ["hl01", "hl02", 14, "the research allows one game a fortnight"],
+  ["px03", "px04", 14, "same table and shape"],
+  ["tn12", "fa08", 4, "both set Karnataka against Maharashtra"],
+  ["tn13", "px07", 6, "same survey measure"],
+  ["fa10", "tn11", 7, "both Rajasthan renewables"],
+  ["fa10", "hl02", 4, "both open on Rajasthan"],
+  ["tn14", "fa07", 7, "both Madhya Pradesh farm"],
+  ["tn06", "px01", 6, "both Bihar"],
+  ["fa02", "tn10", 6, "same schooling measure"],
+  ["tn10", "px08", 6, "same schooling measure, men and women"],
+  ["tn03", "tn04", 7, "both NFHS-6 jumps in the far south and north; tn04 is held"],
+  ["sh01", "sh02", 14, "the 100-square share: at most two in 60 days"]
+ ],
+ "stock": ["rc01", "tn05", "sh02", "fa07", "tn11"]
+}

@@ -188,3 +188,37 @@ Rules for these figures:
 7. A then-and-now card can show its change in the measure's own unit: `"delta": "units", "delta_unit": " years"`.
 8. Spoken length: a card voice with three clauses of figures takes a four-bar beat. One figure, one comparison.
 
+
+## Week four: Markets, and tables from other publishers (AK, 13 Oct 2026)
+AK asked for "more of Market and Money datas" in week four. That week carries its own themes: Money on two days, the new
+theme **Markets** (share-market investors, mutual funds, state bonds) on two days, Economy, Farm and food, Know your
+states. A week's own themes are listed under `"themes"` in its entry in `themes.json`; the standing seven are unchanged.
+- Any state table from another publisher is saved in the Handbook's shape under `public/datayt/sources/<folder>/` and
+  read with `{"tbl": ["<folder>/<file without .json>", "exact column name"]}`. A then-and-now script on such a table
+  sets `"table": "<folder>/<file>"`. The table's `notes` say what is counted, the page and the as-on date: read them.
+- Market tables: `markets/nse_*.json` (National Stock Exchange, Market Pulse) and `markets/amfi_*.json` (Association of
+  Mutual Funds in India). Population: `population/projected.json` (National Commission on Population projections from
+  the 2011 Census). A per-person rate built on it prints "projected population" and the source on the card.
+- An investor is counted where the account is registered, a fund's assets where the investor's address is, a deposit
+  where the bank office is. Say which, on the card.
+- No advice and no forecast: never "should invest", "safe", "returns", "will rise". Count people and rupees; say the period.
+
+## What week four caught (13 Oct 2026)
+1. A card heading (`kicker`) holds 33 characters. A longer one wraps and its second line runs into the state's outline; the
+   builder now stops on it. Put the period in the card text or the source chip, not the heading.
+2. Rupee amounts on a card: `"unit": "₹"` prints Indian grouping and no decimal (₹3,08,909). With `"unit": ""` the same
+   figure printed as 308,909.1.
+3. The last card's source text sits under the map note. With a three-line note and a map legend it holds about 430
+   characters, not 590. A long list (blank states) belongs in the post pack.
+4. A card with four bars pushes its small caption down beside the channel name: keep that caption under 35 characters.
+5. `--check` used to skip `"tests"` for fact and paradox scripts. It runs them now; a script that "passed" before
+   13 Oct 2026 was only tested on its `"checks"`.
+6. Name the second-placed state from the full ranking, never from memory (an editor found Telangana named where
+   Maharashtra was second).
+7. When a table covers one scheme's units or one kind of bank, say so in the hook and the title ("STP units",
+   "public-sector bank gold loans", "regional rural banks").
+8. A publisher can relabel its states or categories (AMFI: state list March 2026, scheme categories August 2026; NSE: two
+   states' rows swapped in two issues). Read at least two editions before comparing a state across time.
+9. A live web page as a source: save the table with the date and time read, and never voice a line a later update
+   will contradict ("no other state reached twenty thousand").
+10. A per-person figure uses `population/projected.json` (the July 2020 edition) and prints "projected population".

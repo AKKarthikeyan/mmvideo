@@ -1,0 +1,35 @@
+{
+ "idea": "Themed weeks, week four, Money day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "At end-March 2025, regional rural banks held 33.4% of all bank deposits in Mizoram, the highest of 29 states and UTs with a figure; India's share was 2.9%. Regional rural banks are banks set up to serve rural areas. They were also 44.8% of Mizoram's bank offices (India: 13.4%).",
+  "Mizoram's share has been the highest in each of the seven years from end-March 2019 to 2025; at end-March 2018 Tripura's was higher, 27.0% against Mizoram's 25.4%. Scheduled commercial banks, regional rural banks among them. A deposit is counted where the bank office is. State totals as shares, not per person."
+ ],
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 160, 155, 163 and 152: deposits of regional rural banks, deposits of all scheduled commercial banks (regional rural banks are among them), and bank offices, as at end-March 2018 to 2025. A deposit is counted where the bank office is. State totals as shares, not per person.",
+ "source_short": "RBI, Handbook, end-March 2025",
+ "question": "Is a rural bank near you?",
+ "tags": [
+  "Mizoram",
+  "Banking",
+  "RuralBanks"
+ ],
+ "pinned": "Source: Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 160, 155, 163 and 152: deposits of regional rural banks, deposits of all scheduled commercial banks (regional rural banks are among them), and bank offices, as at end-March 2018 to 2025. A deposit is counted where the bank office is. State totals as shares, not per person. Regional rural banks' deposits as a share of all bank deposits in the state. Blank: no figure.",
+ "instagram": "At end-March 2025, regional rural banks held 33.4% of all bank deposits in Mizoram, the highest of 29 states and UTs with a figure; India's share was 2.9%. Regional rural banks are banks set up to serve rural areas. They were also 44.8% of Mizoram's bank offices (India: 13.4%).",
+ "x": "Mizoram, end-March 2025: regional rural banks held 33.4% of bank deposits, the highest of 29 states and UTs; India 2.9%. They were 44.8% of the state's bank offices. Source: RBI Handbook of Statistics on Indian States 2024-25.",
+ "done": [
+  "Numbers editor recomputed with python3 -I from Handbook Tables 160, 155, 163 and 152: Mizoram 5,828 / 17,462 = 33.38%; India 6,90,414 / 2,34,51,838 = 2.94%; 29 states and UTs with a figure; Tripura next at 23.89%; offices 108 / 241 = 44.81% against India 22,481 / 1,67,806 = 13.40%; 2018 Tripura 26.98 against Mizoram 25.37; Mizoram's lead in each year 2019 to 2025. Read the Handbook 2024-25 notes for the four tables.",
+  "Settled whether the all-bank tables include regional rural banks: RBI never says so in the Handbook notes, but RBI's press releases of 29 May 2026 say the annual data include them, and T160 / T155 for India gives 3.21% for 2022, which matches RBI's 3.2%.",
+  "Fixed before voicing: the title now says 'Regional Rural Banks' (bare 'Rural Banks' reads as any bank in a rural area); 'small banks serving rural areas' became 'banks set up to serve rural areas' (the source does not say small). Viewer editor removed a card that repeated 'led since 2019'.",
+  "Margins: the 2025 lead passes the guide's margins; the thinnest year is 2019 (1.20 points), which passes by a little, and the 2018 exception is shown on card 3.",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read Handbook Tables 160, 155, 163 and 152, Mizoram 2025: regional rural bank deposits 5,828 of 17,462; offices 108 of 241; India 6,90,414 of 2,34,51,838 and 22,481 of 1,67,806",
+  "Not shown by RBI: no sentence says Table 152 (offices) includes regional rural bank branches (indirect evidence only: Mizoram 241 offices and RBI's 1.64 lakh branches against 1,67,806)",
+  "Freshness: end-March 2026 state cells were not readable (RBI DBIE, Annual BSR-1 and BSR-2 'Including RRBs', March 2026): re-read Mizoram's regional rural bank deposits and offices and re-date or rewrite if the 9.5-point lead over Tripura moves; Handbook 2025-26 is not out",
+  "AK decides: a Short dated end-March 2025 while end-March 2026 exists (the editor judges yes)",
+  "Small base: ₹17,462 crore of deposits. 'Bank deposits' here means scheduled commercial banks, so Kerala-style co-operative banks are outside the table",
+  "Scheduling: keep a week from px32 (rural banks) and tn31 (bank offices)",
+  "Add the source link to the description"
+ ]
+}

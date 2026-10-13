@@ -1,0 +1,687 @@
+{
+ "id": "px46",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "MeitY · Lok Sabha, 12 Aug 2026 · FY 2024-25",
+ "palette": "A",
+ "state": "Karnataka",
+ "source": "Ministry of Electronics and Information Technology, reply to Lok Sabha Starred Question No. 344 of 12 August 2026: units registered under the Software Technology Parks (STP) scheme and their exports, by state, FY 2024-25 (all-India: 2,042 units, ₹6,88,194.11 crore; 2025-26 estimated). Only STP-scheme units are counted, not all IT exporters: a 2025 Commerce reply (Q 5008) puts all STPI-registered units' exports at ₹9.43 lakh crore for FY 2023-24, against ₹6.37 lakh crore here. State totals, not per person.",
+ "hook": [
+  "*Karnataka* 381, *Tamil Nadu* 371",
+  "software-park scheme units;",
+  "exports *6×* apart, 2024-25."
+ ],
+ "hook_vo": "Karnataka and Tamil Nadu: similar software-park scheme units, exports six times apart.",
+ "facts": [
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SOFTWARE-PARK SCHEME UNITS",
+   "data": {
+    "tbl": [
+     "stpi/stp_units",
+     "2024-25"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 450,
+   "text": "units under the software-park (STP) scheme in Tamil Nadu. Karnataka: 381, about the same.",
+   "sub": "Exporting units registered with STPI under its STP scheme. Not companies, not size.",
+   "vo": "Tamil Nadu had three hundred seventy-one registered units. Karnataka, three hundred eighty-one."
+  },
+  {
+   "state": "Karnataka",
+   "kicker": "EXPORTS BY THOSE UNITS · ₹ CRORE",
+   "data": {
+    "tbl": [
+     "stpi/stp_exports",
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Tamil Nadu"
+   ],
+   "bar_max": 350000,
+   "text": "crore exported by Karnataka's units, FY 2024-25. Tamil Nadu: ₹51,537 crore.",
+   "sub": "Bars in ₹ crore. Karnataka 6.0 times Tamil Nadu. STP-scheme units only.",
+   "vo": "Karnataka's units exported six times as much as Tamil Nadu's."
+  },
+  {
+   "state": "Karnataka",
+   "kicker": "SHARE OF ALL STP-UNIT EXPORTS",
+   "data": {
+    "tbl": [
+     "stpi/stp_exports",
+     "2024-25"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Maharashtra"
+   ],
+   "bar_max": 60,
+   "text": "of the ₹6,88,194 crore exported by STP-scheme units. Maharashtra: 21%.",
+   "sub": "Karnataka held 45% in each of three years (2025-26 estimated).",
+   "vo": "Karnataka's units made forty-five percent of all of it."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "tbl": [
+     "stpi/stp_units",
+     "2024-25"
+    ]
+   },
+   "equals": 381
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "tbl": [
+     "stpi/stp_units",
+     "2024-25"
+    ]
+   },
+   "equals": 371
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "tbl": [
+     "stpi/stp_units",
+     "2024-25"
+    ]
+   },
+   "equals": 2042
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "tbl": [
+     "stpi/stp_exports",
+     "2024-25"
+    ]
+   },
+   "equals": 51537
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "tbl": [
+     "stpi/stp_exports",
+     "2024-25"
+    ]
+   },
+   "equals": 308909
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "tbl": [
+     "stpi/stp_exports",
+     "2024-25"
+    ]
+   },
+   "equals": 688194
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "min": 5.9
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2023-24"
+     ]
+    }
+   },
+   "min": 5.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2025-26"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2025-26"
+     ]
+    }
+   },
+   "min": 5.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "min": 2.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2023-24"
+     ]
+    }
+   },
+   "min": 1.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2025-26"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2025-26"
+     ]
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    }
+   },
+   "min": 1.9
+  }
+ ],
+ "so": {
+  "lines": [
+   "Exports per unit, FY 2024-25:",
+   "*Karnataka ₹811 crore*,",
+   "Tamil Nadu ₹139 crore."
+  ],
+  "vo": "Per unit, Karnataka exported eight hundred eleven crore. Tamil Nadu, one hundred thirty-nine.",
+  "note": "An average over units of very different sizes. Only units under the STP scheme are counted."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    },
+    {
+     "tbl": [
+      "stpi/stp_units",
+      "2024-25"
+     ]
+    }
+   ]
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "STP exports per unit, *every state*",
+  "sub": "₹ crore per unit · India 337 · FY 2024-25",
+  "note": "Only STP-scheme units are counted; other IT exporters are not. Blank: states with none. A count of units, not their size. State totals, not per person.",
+  "ring": [
+   "Karnataka",
+   "Tamil Nadu"
+  ],
+  "vo": "Here is every state: exports for each unit."
+ },
+ "end": {
+  "q": "Who do you know in *software*?",
+  "sub": "Comment below.",
+  "vo": "Who do you know in software?"
+ },
+ "tests": [
+  {
+   "says": "units 381 and 371 are about the same (within 3%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 103
+  },
+  {
+   "says": "Karnataka units within 3% of Tamil Nadu's",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 0.97,
+   "max": 1.03
+  },
+  {
+   "says": "units within 8% in 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2023-24"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2023-24"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 0.92,
+   "max": 1.08
+  },
+  {
+   "says": "units within 8% in 2025-26",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2025-26"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2025-26"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 0.92,
+   "max": 1.08
+  },
+  {
+   "says": "6.0 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 60
+  },
+  {
+   "says": "six times (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 5.9,
+   "max": 6.1
+  },
+  {
+   "says": "Karnataka 44.9% (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 449
+  },
+  {
+   "says": "Karnataka 45% in 2023-24",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2023-24"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 45
+  },
+  {
+   "says": "Karnataka 45% in 2024-25",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 45
+  },
+  {
+   "says": "Karnataka 45% in 2025-26",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2025-26"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 45
+  },
+  {
+   "says": "Telangana 15%",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    },
+    "state": "Telangana"
+   },
+   "equals": 15
+  },
+  {
+   "says": "Karnataka ₹811 crore per unit",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "equals": 811
+  },
+  {
+   "says": "Tamil Nadu ₹139 crore per unit",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "equals": 139
+  },
+  {
+   "says": "India ₹337 crore per unit",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "tbl": [
+        "stpi/stp_units",
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 337
+  },
+  {
+   "says": "Maharashtra 21% of STP-unit exports (second place, card 3)",
+   "value": {
+    "share": {
+     "tbl": [
+      "stpi/stp_exports",
+      "2024-25"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 21
+  },
+  {
+   "says": "Maharashtra is second: ahead of Telangana by over 5 points of the total in 2024-25",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "share": {
+       "tbl": [
+        "stpi/stp_exports",
+        "2024-25"
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 5,
+   "max": 7
+  }
+ ],
+ "yt_title": "Karnataka vs Tamil Nadu: 381 vs 371 STP Units, 6x Exports"
+}

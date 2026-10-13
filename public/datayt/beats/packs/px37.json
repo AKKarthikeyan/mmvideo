@@ -1,0 +1,37 @@
+{
+ "idea": "Themed weeks, week four, Money day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "Under the Pradhan Mantri MUDRA Yojana, from 8 April 2015 to 26 June 2026, women entrepreneurs held 56.9% of the loan accounts sanctioned in Delhi but 19.5% of the money sanctioned there. The gap between the two shares, 37.4 points, was the widest of any state or UT; India's was 24.1 points (66.2% of accounts, 42.1% of money).",
+  "Five states had gaps over 27 points: Delhi, Uttarakhand, Rajasthan, Maharashtra and Gujarat. These are cumulative loans sanctioned, as uploaded by lending institutions to the Mudra portal. A loan account is not a person. Dadra and Nagar Haveli and Daman and Diu is blank on the map (its gap was 23.0). The table shows how much, not why."
+ ],
+ "source": "Ministry of Finance, Lok Sabha unstarred question 2407, answered 3 Aug 2026, Annexure I: Pradhan Mantri MUDRA Yojana loan accounts and amounts sanctioned, cumulative, 8 Apr 2015 to 26 Jun 2026, in total and for women entrepreneurs, by state, as uploaded by lending institutions to the Mudra portal. Shares are women's accounts and amounts as a share of each state's total. A loan account is not a person. India is the answer's total row.",
+ "source_short": "Finance Ministry, Lok Sabha, Apr 2015 to Jun 2026",
+ "question": "Know someone with a Mudra loan?",
+ "tags": [
+  "Delhi",
+  "Mudra",
+  "Loans"
+ ],
+ "pinned": "Source: Ministry of Finance, Lok Sabha unstarred question 2407, answered 3 Aug 2026, Annexure I: Pradhan Mantri MUDRA Yojana loan accounts and amounts sanctioned, cumulative, 8 Apr 2015 to 26 Jun 2026, in total and for women entrepreneurs, by state, as uploaded by lending institutions to the Mudra portal. Shares are women's accounts and amounts as a share of each state's total. A loan account is not a person. India is the answer's total row. Above zero: women's share of accounts exceeds their share of money. Blank: Dadra and Nagar Haveli and Daman and Diu (23.0). The table shows how much, not why.",
+ "instagram": "Under the Pradhan Mantri MUDRA Yojana, from 8 April 2015 to 26 June 2026, women entrepreneurs held 56.9% of the loan accounts sanctioned in Delhi but 19.5% of the money sanctioned there. The gap between the two shares, 37.4 points, was the widest of any state or UT; India's was 24.1 points (66.2% of accounts, 42.1% of money).",
+ "x": "Mudra loans, 8 Apr 2015 to 26 Jun 2026: in Delhi women held 56.9% of loan accounts but 19.5% of the money sanctioned. The 37.4-point gap was the widest of any state or UT; India's was 24.1. Source: Ministry of Finance, Lok Sabha answer 2407.",
+ "done": [
+  "Numbers editor recomputed from the Lok Sabha answer's table with python3 -I (36 rows, 35 parsed, plus the printed total row): Delhi 21,76,055 of 38,24,355 accounts and 9,816.75 of 50,366.41 crore sanctioned; the rows add up to the printed total. Opened the answer's PDF (Annexure I) and read its headings: cumulative 8 Apr 2015 to 26 Jun 2026, the amount is sanctioned (not disbursed), data uploaded by lending institutions.",
+  "Fixed before voicing: the source now says cumulative and sanctioned; the map note names Dadra and Nagar Haveli and Daman and Diu (the parser had dropped its row, so the old source text wrongly said it had none; its gap, 23.0, is carried in a check); 'widest of 35' became 'of any state or UT'; the two cards on average loan size were removed because they read as the reason for the gap; a card was added naming the five states over 27 points (Haryana 26.5 and Kerala 26.4 are under it).",
+  "Viewer editor changed the closing question from 'How big was your first loan?' (asks for a money disclosure) to 'Know someone with a Mudra loan?'.",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read Lok Sabha unstarred Q 2407 (3 Aug 2026), Annexure I, Delhi row: 21,76,055 accounts of 38,24,355; 9,816.75 of 50,366.41 crore sanctioned; and the India total row (59,14,49,598 accounts; 41,71,541.99 crore)",
+  "Re-read the Dadra and Nagar Haveli and Daman and Diu row (row 8: 49,830 accounts, women 21,179; 1,024.83 and 199.55 crore)",
+  "Re-read the 'five states over 27 points' card against the whole table: it rests on a hand-sorted list of all 36 rows, no builder test counts them (Uttarakhand 31.7, Rajasthan 29.1, Maharashtra 28.3, Gujarat 28.0 per the editor)",
+  "Not verified: what 'Women Entrepreneurs (out of Total)' counts beyond its heading, and whether one woman holds several accounts (the Short says a loan account is not a person)",
+  "Freshness: Q 2407 is the newest answer with a women-by-state table; check Lok Sabha for a newer one on posting day",
+  "Scheduling: keep a week from fa12 and fa50 (all Delhi) and four days from tn36 (women's share of a government scheme)",
+  "Add the source link to the description"
+ ],
+ "signoff": [
+  "Hook, on screen: \"Delhi: women took 57% of Mudra loans, 19% of money sanctioned, 2015-26.\" In the voice: \"Delhi's women took fifty-seven percent of Mudra loans, nineteen percent of the money.\" It sets women's share of accounts against their share of money, led by Delhi; the card after the third names five states over 27 points, so Delhi is one of five."
+ ]
+}

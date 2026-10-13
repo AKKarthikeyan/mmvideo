@@ -2,6 +2,8 @@
 """Data Kadai themed weeks: checks the plan in public/datayt/bank/themes.json and writes docs/datakadai/ops/PLAN.md.
 
 AK's rules of 13 Oct 2026: 14 Shorts a week (two a day), one theme a day, two finance days a week.
+A week may carry its own seven themes ("themes": seven theme keys, from "days" and "more_themes"), as week four does
+after AK asked for more market and money data; it still needs at least two finance days.
 The plan is written by hand in themes.json ("weeks": seven days of two ids each, "new" for an empty slot); this script
 only checks it and prints it, so a broken rule is seen before anything is posted.
 Usage (repo root): python3 scripts/datayt/week_plan.py          check and write PLAN.md
@@ -12,6 +14,10 @@ import json, os, re, sys
 
 T = json.load(open("public/datayt/bank/themes.json"))
 DAYS, VID = T["days"], T["videos"]
+THEME = {d["key"]: d for d in DAYS + T.get("more_themes", [])}
+def days_of(w):
+    """The seven day-themes of a week: the standing ones, or the week's own list."""
+    return [{**THEME[k], "day": n + 1} for n, k in enumerate(w["themes"])] if w.get("themes") else DAYS
 FORMAT = {"paradox": "paradox", "then": "then and now", "fact": "one state, one fact", "share": "share", "race": "race", "pick": "game", "over": "over 100", "place": "place story"}
 def data(i):
     f = f"public/datayt/beats/{i}/data.json"
@@ -30,8 +36,9 @@ def todo():
 bad, order, pos = [], [], {}
 assert sum(d["finance"] for d in DAYS) == 2 and len(DAYS) == 7, "seven day-themes, two of them finance"
 for w in T["weeks"]:
-    assert len(w["days"]) == 7, f"week {w['week']}: seven days"
-    for d, ids in zip(DAYS, w["days"]):
+    assert len(w["days"]) == 7 and len(days_of(w)) == 7, f"week {w['week']}: seven days"
+    assert sum(d["finance"] for d in days_of(w)) >= 2, f"week {w['week']}: at least two finance days"
+    for d, ids in zip(days_of(w), w["days"]):
         if len(ids) != 2:
             bad.append(f"week {w['week']} day {d['day']}: {len(ids)} Shorts, not two")
         for slot, i in enumerate(ids):
@@ -65,16 +72,17 @@ L = ["# Data Kadai: the themed weeks", "",
      "This page is the posting order. It replaces the orders in `WEEK-01.md`, `WEEK-02.md` and `WEEK-03.md`, which stay as the record of each build round. Nothing is posted: AK approves each pack and posts it.", "",
      "## The seven days", "", "| Day | Theme | Finance | What it covers |", "| --- | --- | --- | --- |"]
 L += [f"| {d['day']} | {d['name']} | {'yes' if d['finance'] else ''} | {d['covers']} |" for d in DAYS]
+L += [f"| | {d['name']} | {'yes' if d['finance'] else ''} | {d['covers']} (only in a week that lists it) |" for d in T.get("more_themes", [])]
 for w in T["weeks"]:
     n = sum(i != "new" for d in w["days"] for i in d)
-    L += ["", f"## Week {w['week']} ({n} of 14)", "", "| Day | Theme | Slot | ID | Title | Format | Length | Before posting |", "| --- | --- | --- | --- | --- | --- | --- | --- |"]
-    for d, ids in zip(DAYS, w["days"]):
+    L += ["", f"## Week {w['week']} ({n} of 14)", ""] + ([w["why"], ""] if w.get("why") else []) + ["| Day | Theme | Slot | ID | Title | Format | Length | Before posting |", "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+    for d, ids in zip(days_of(w), w["days"]):
         for slot, i in enumerate(ids):
             x = data(i) if i != "new" else None
             L.append(f"| {d['day']} | {d['name']} | {('first', 'second')[slot]} | {i if x else 'empty'} | {x['ytTitle'] if x else ''} | {FORMAT.get(x['type'], x['type']) if x else ''} | {f'''{x['total']:.0f} s''' if x else ''} | {TODO.get(i, 'Watch with sound. Add the source link.') if x else ''} |")
 if T.get("stock"):
     L += ["", "## Built, waiting for a later week", ""]
-    L += [f"- `{i}` ({next(d['name'] for d in DAYS if d['key'] == VID[i])}): {data(i)['ytTitle']}" for i in T["stock"]]
+    L += [f"- `{i}` ({THEME[VID[i]]['name']}): {data(i)['ytTitle']}" for i in T["stock"]]
 if T.get("apart"):
     L += ["", "## Pairs kept apart", ""] + [f"- `{a}` and `{b}`: at least {g} days ({why})." for a, b, g, why in T["apart"]]
 L += ["", "## Problems the check found", ""] + ([f"- {b}" for b in bad] or ["None."])

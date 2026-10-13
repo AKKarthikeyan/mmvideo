@@ -1,0 +1,1203 @@
+{
+ "id": "px37",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "Min. of Finance · Lok Sabha answer, 3 Aug 2026",
+ "palette": "C",
+ "state": "Delhi",
+ "source": "Ministry of Finance, Lok Sabha unstarred question 2407, answered 3 Aug 2026, Annexure I: Pradhan Mantri MUDRA Yojana loan accounts and amounts sanctioned, cumulative, 8 Apr 2015 to 26 Jun 2026, in total and for women entrepreneurs, by state, as uploaded by lending institutions to the Mudra portal. Shares are women's accounts and amounts as a share of each state's total. A loan account is not a person. India is the answer's total row.",
+ "hook": [
+  "*Delhi*: women took *57%*",
+  "of Mudra loans, *19%* of",
+  "money sanctioned, 2015-26."
+ ],
+ "hook_vo": "Delhi's women took fifty-seven percent of Mudra loans, nineteen percent of the money.",
+ "facts": [
+  {
+   "state": "Delhi",
+   "kicker": "WOMEN'S SHARE OF LOAN ACCOUNTS",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       0
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of Delhi's Mudra loan accounts were women entrepreneurs'. India: 66%.",
+   "sub": "Small business loans, no collateral. Accounts sanctioned 8 Apr 2015 to 26 Jun 2026.",
+   "vo": "Women held fifty-seven percent of Delhi's Mudra loan accounts. India, sixty-six."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "WOMEN'S SHARE OF MONEY SANCTIONED",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       1
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of the rupees sanctioned in Delhi went to women's loans. India: 42%.",
+   "sub": "Amount sanctioned, same period. A loan account is not a person.",
+   "vo": "Women's loans got nineteen percent of the money sanctioned. India, forty-two."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "ACCOUNT SHARE MINUS MONEY SHARE",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 50,
+   "text": "points between the two shares: the widest of any state or UT. India: 24.",
+   "sub": "Women's share of accounts minus their share of money, 2015-26.",
+   "vo": "That gap, thirty-seven points, is the widest of any state or territory."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       0
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 57
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       0
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 569
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       0
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 66
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       0
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 662
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       1
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 19
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       1
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 195
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       1
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 42
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       1
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 421
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "equals": 37
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 374
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "equals": 24
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 241
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "minus": [
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           1
+          ]
+         },
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           3
+          ]
+         }
+        ]
+       },
+       {
+        "minus": [
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           0
+          ]
+         },
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           2
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 18
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "minus": [
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           1
+          ]
+         },
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           3
+          ]
+         }
+        ]
+       },
+       {
+        "minus": [
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           0
+          ]
+         },
+         {
+          "ls": [
+           "ls18-s8-U2407#1",
+           2
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 37
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       3
+      ]
+     },
+     {
+      "ls": [
+       "ls18-s8-U2407#1",
+       2
+      ]
+     }
+    ],
+    "scale": 10000000
+   },
+   "equals": 45113
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "minus": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         1
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         3
+        ]
+       }
+      ]
+     },
+     {
+      "minus": [
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         0
+        ]
+       },
+       {
+        "ls": [
+         "ls18-s8-U2407#1",
+         2
+        ]
+       }
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 246
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ls": [
+     "ls18-s8-U2407#1",
+     0
+    ]
+   },
+   "equals": 3824355
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ls": [
+     "ls18-s8-U2407#1",
+     2
+    ]
+   },
+   "equals": 2176055
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttarakhand",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "min": 1.15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttarakhand",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Rajasthan",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "X",
+    "data": {
+     "values": {
+      "X": 27
+     }
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "minus": [
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          2
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          0
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          3
+         ]
+        },
+        {
+         "ls": [
+          "ls18-s8-U2407#1",
+          1
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     ]
+    }
+   },
+   "min": 1.0
+  },
+  {
+   "kind": "round",
+   "state": "X",
+   "data": {
+    "minus": [
+     {
+      "ratio": [
+       {
+        "values": {
+         "X": 21179
+        }
+       },
+       {
+        "values": {
+         "X": 49830
+        }
+       }
+      ],
+      "scale": 100,
+      "min_states": 1
+     },
+     {
+      "ratio": [
+       {
+        "values": {
+         "X": 199.55
+        }
+       },
+       {
+        "values": {
+         "X": 1024.83
+        }
+       }
+      ],
+      "scale": 100,
+      "min_states": 1
+     }
+    ],
+    "scale": 10,
+    "min_states": 1
+   },
+   "equals": 230
+  }
+ ],
+ "so": {
+  "lines": [
+   "Gaps over *27 points*, five states:",
+   "Delhi, Uttarakhand, Rajasthan,",
+   "Maharashtra and Gujarat."
+  ],
+  "vo": "Five states have gaps over twenty-seven points."
+ },
+ "map": {
+  "data": {
+   "minus": [
+    {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U2407#1",
+        2
+       ]
+      },
+      {
+       "ls": [
+        "ls18-s8-U2407#1",
+        0
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U2407#1",
+        3
+       ]
+      },
+      {
+       "ls": [
+        "ls18-s8-U2407#1",
+        1
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   ]
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "Account share minus money share: *every state*",
+  "sub": "points · women's Mudra loans · India 24.1 · 2015-26",
+  "note": "Above zero: women's share of accounts exceeds their share of money. Blank: Dadra and Nagar Haveli and Daman and Diu (23.0). The table shows how much, not why.",
+  "ring": [
+   "Delhi",
+   "Uttarakhand",
+   "Rajasthan",
+   "Maharashtra",
+   "Gujarat"
+  ],
+  "vo": "Here is every state: the gap between accounts and money."
+ },
+ "end": {
+  "q": "Know someone with a *Mudra loan*?",
+  "sub": "Tag them below.",
+  "vo": "Know someone with a Mudra loan?"
+ },
+ "yt_title": "Delhi: Women Hold 57% of Mudra Loans, 19% of the Money"
+}

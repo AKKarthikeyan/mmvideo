@@ -1,0 +1,450 @@
+{
+ "id": "px46",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "MeitY · Lok Sabha, 12 Aug 2026 · FY 2024-25",
+ "source": "Ministry of Electronics and Information Technology, reply to Lok Sabha Starred Question No. 344 of 12 August 2026: units registered under the Software Technology Parks (STP) scheme and their exports, by state, FY 2024-25 (all-India: 2,042 units, ₹6,88,194.11 crore; 2025-26 estimated). Only STP-scheme units are counted, not all IT exporters: a 2025 Commerce reply (Q 5008) puts all STPI-registered units' exports at ₹9.43 lakh crore for FY 2023-24, against ₹6.37 lakh crore here. State totals, not per person.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Karnataka* 381, *Tamil Nadu* 371",
+    "software-park scheme units;",
+    "exports *6×* apart, 2024-25."
+   ],
+   "vo": "Karnataka and Tamil Nadu: similar software-park scheme units, exports six times apart.",
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SOFTWARE-PARK SCHEME UNITS",
+   "big": "371",
+   "text": "units under the software-park (STP) scheme in Tamil Nadu. Karnataka: 381, about the same.",
+   "sub": "Exporting units registered with STPI under its STP scheme. Not companies, not size.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "371",
+     "frac": 0.8244444444444444
+    },
+    {
+     "name": "Karnataka",
+     "label": "381",
+     "frac": 0.8466666666666667
+    }
+   ],
+   "vo": "Tamil Nadu had three hundred seventy-one registered units. Karnataka, three hundred eighty-one.",
+   "t0": 7.742,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "EXPORTS BY THOSE UNITS · ₹ CRORE",
+   "big": "₹3,08,909",
+   "text": "crore exported by Karnataka's units, FY 2024-25. Tamil Nadu: ₹51,537 crore.",
+   "sub": "Bars in ₹ crore. Karnataka 6.0 times Tamil Nadu. STP-scheme units only.",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "₹3,08,909",
+     "frac": 0.8825974571428571
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "₹51,537",
+     "frac": 0.14724728571428572
+    }
+   ],
+   "vo": "Karnataka's units exported six times as much as Tamil Nadu's.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "SHARE OF ALL STP-UNIT EXPORTS",
+   "big": "44.9%",
+   "text": "of the ₹6,88,194 crore exported by STP-scheme units. Maharashtra: 21%.",
+   "sub": "Karnataka held 45% in each of three years (2025-26 estimated).",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "44.9%",
+     "frac": 0.7481152616471343
+    },
+    {
+     "name": "Maharashtra",
+     "label": "20.6%",
+     "frac": 0.34411039931742515
+    }
+   ],
+   "vo": "Karnataka's units made forty-five percent of all of it.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Exports per unit, FY 2024-25:",
+    "*Karnataka ₹811 crore*,",
+    "Tamil Nadu ₹139 crore."
+   ],
+   "note": "An average over units of very different sizes. Only units under the STP scheme are counted.",
+   "vo": "Per unit, Karnataka exported eight hundred eleven crore. Tamil Nadu, one hundred thirty-nine.",
+   "t0": 27.097,
+   "t1": 34.839
+  },
+  {
+   "kind": "map",
+   "title": "STP exports per unit, *every state*",
+   "sub": "₹ crore per unit · India 337 · FY 2024-25",
+   "note": "Only STP-scheme units are counted; other IT exporters are not. Blank: states with none. A count of units, not their size. State totals, not per person.",
+   "anim": true,
+   "ring": [
+    "Karnataka",
+    "Tamil Nadu"
+   ],
+   "vo": "Here is every state: exports for each unit.",
+   "t0": 34.839,
+   "t1": 40.645
+  },
+  {
+   "note": "Only STP-scheme units are counted; other IT exporters are not. Blank: states with none. A count of units, not their size. State totals, not per person.",
+   "ring": [
+    "Karnataka",
+    "Tamil Nadu"
+   ],
+   "q": "Who do you know in *software*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Who do you know in software?",
+   "t0": 40.645,
+   "t1": 44.516
+  }
+ ],
+ "total": 44.916,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Assam",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 35.189
+  },
+  {
+   "name": "Jharkhand",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.31
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.431
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.552
+  },
+  {
+   "name": "Goa",
+   "label": "10",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 35.673
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "12",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.794
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "20",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.915
+  },
+  {
+   "name": "Odisha",
+   "label": "28",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.036
+  },
+  {
+   "name": "Meghalaya",
+   "label": "37",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 36.157
+  },
+  {
+   "name": "Chandigarh",
+   "label": "38",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 36.278
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "39",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 36.399
+  },
+  {
+   "name": "Puducherry",
+   "label": "39",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 36.52
+  },
+  {
+   "name": "Punjab",
+   "label": "41",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 36.641
+  },
+  {
+   "name": "Kerala",
+   "label": "63",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 36.762
+  },
+  {
+   "name": "Gujarat",
+   "label": "70",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.883
+  },
+  {
+   "name": "Rajasthan",
+   "label": "83",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.004
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "139",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.124
+  },
+  {
+   "name": "West Bengal",
+   "label": "144",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.245
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "158",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.366
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "292",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.487
+  },
+  {
+   "name": "Haryana",
+   "label": "300",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 37.608
+  },
+  {
+   "name": "Telangana",
+   "label": "371",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.729
+  },
+  {
+   "name": "Maharashtra",
+   "label": "404",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.85
+  },
+  {
+   "name": "Karnataka",
+   "label": "811",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.971
+  }
+ ],
+ "checked": [
+  "Karnataka is the highest of 24 with data (44.9%)",
+  "Karnataka 381 rounds to 381",
+  "Tamil Nadu 371 rounds to 371",
+  "India 2042 rounds to 2042",
+  "Tamil Nadu 51536.6 rounds to 51537",
+  "Karnataka 308909 rounds to 308909",
+  "India 688194 rounds to 688194",
+  "Karnataka / Tamil Nadu = 5.99 (at least 5.9)",
+  "Karnataka / Tamil Nadu = 5.67 (at least 5.5)",
+  "Karnataka / Tamil Nadu = 5.78 (at least 5.5)",
+  "Karnataka / Maharashtra = 2.17 (at least 2.1)",
+  "Maharashtra / Telangana = 1.31 (at least 1.3)",
+  "Maharashtra / Telangana = 1.44 (at least 1.4)",
+  "Telangana / Tamil Nadu = 1.97 (at least 1.9)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 6.008,
+   "at": 0.12,
+   "text": "Karnataka and Tamil Nadu: similar software-park scheme units, exports six times apart."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.616,
+   "at": 7.862,
+   "text": "Tamil Nadu had three hundred seventy-one registered units. Karnataka, three hundred eighty-one."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.735,
+   "at": 15.604,
+   "text": "Karnataka's units exported six times as much as Tamil Nadu's."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.048,
+   "at": 21.41,
+   "text": "Karnataka's units made forty-five percent of all of it."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 6.217,
+   "at": 27.217,
+   "text": "Per unit, Karnataka exported eight hundred eleven crore. Tamil Nadu, one hundred thirty-nine."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.101,
+   "at": 34.959,
+   "text": "Here is every state: exports for each unit."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.645,
+   "at": 40.765,
+   "text": "Who do you know in software?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Karnataka vs Tamil Nadu: 381 vs 371 STP Units, 6x Exports"
+}

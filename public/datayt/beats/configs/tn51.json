@@ -1,0 +1,597 @@
+{
+ "id": "tn51",
+ "type": "then",
+ "rules": 2,
+ "chip": "THEN AND NOW",
+ "source_short": "NSE · Market Pulse · Mar 2020 to 31 Aug 2026",
+ "palette": "E",
+ "state": "Assam",
+ "points": [
+  {
+   "data": {
+    "tbl": [
+     "markets/nse_investors",
+     "FY20"
+    ]
+   },
+   "period": "31 Mar 2020"
+  },
+  {
+   "data": {
+    "tbl": [
+     "markets/nse_investors",
+     "Aug 2026"
+    ]
+   },
+   "period": "31 Aug 2026"
+  }
+ ],
+ "measure": "value",
+ "scale": 0.01,
+ "unit": " lakh",
+ "delta": "times",
+ "kicker": "REGISTERED INVESTORS · LAKH",
+ "source": "National Stock Exchange of India, NSE Market Pulse: unique registered investors, distinct PANs registered with NSE whether or not they have traded, placed in a state by PIN code. September 2026 Table 70 for 31 March 2020, 31 March 2025 and 31 August 2026; April 2026 Table 43 for 31 March 2026. 1 lakh = 100 thousand. Population share: National Commission on Population projections (July 2020 edition), 1 March 2020 and 1 July 2026.",
+ "hook": [
+  "*Assam*: NSE-registered",
+  "investors up *13.3 times* since",
+  "March 2020; India *4.4 times*."
+ ],
+ "hook_vo": "Assam's registered investors grew thirteen times. India's, over four times.",
+ "then": {
+  "text": "registered investors, recorded in Assam.",
+  "vo": "In March twenty twenty, Assam had two point two lakh registered investors."
+ },
+ "now": {
+  "text": "registered investors: *13.3 times* the count. India: 4.4 times.",
+  "vo": "By August twenty twenty-six: twenty-nine lakh. Thirteen times as many."
+ },
+ "facts": [
+  {
+   "kicker": "BY MARCH 2025 · TIMES MARCH 2020",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Most of the rise came by March 2025. Since then Assam +16%, India +20%.",
+   "bars": [
+    {
+     "name": "Mar 2020",
+     "data": {
+      "tbl": [
+       "markets/nse_investors",
+       "FY20"
+      ]
+     },
+     "scale": 0.01,
+     "unit": ""
+    },
+    {
+     "name": "Mar 2025",
+     "data": {
+      "tbl": [
+       "markets/nse_investors",
+       "FY25"
+      ]
+     },
+     "scale": 0.01,
+     "unit": ""
+    },
+    {
+     "name": "Mar 2026",
+     "data": {
+      "tbl": [
+       "markets/nse_investors",
+       "FY26"
+      ]
+     },
+     "scale": 0.01,
+     "unit": ""
+    },
+    {
+     "name": "Aug 2026",
+     "data": {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     "scale": 0.01,
+     "unit": ""
+    }
+   ],
+   "bar_max": 35,
+   "sub": "Bars: lakh registered investors.",
+   "vo": "Most came by March twenty twenty-five: eleven times. Since then, sixteen percent more."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Assam's share of India's",
+    "registered investors:",
+    "*0.7%* to *2.2%*."
+   ],
+   "note": "March 2020 to 31 Aug 2026. A small base: 2.6% of India's projected population.",
+   "vo": "Assam went from point seven to two point two percent of India's total."
+  }
+ ],
+ "tests": [
+  {
+   "says": "13.3 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 13.25,
+   "max": 13.35
+  },
+  {
+   "says": "India 4.4 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 4.35,
+   "max": 4.45
+  },
+  {
+   "says": "thirteen times (hook voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 12.5,
+   "max": 13.5
+  },
+  {
+   "says": "India four times (hook voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 3.95,
+   "max": 4.5
+  },
+  {
+   "says": "eleven times by March 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 11.35,
+   "max": 11.5
+  },
+  {
+   "says": "Assam +16% since March 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY25"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.155,
+   "max": 1.165
+  },
+  {
+   "says": "India +20% since March 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY25"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.195,
+   "max": 1.205
+  },
+  {
+   "says": "2.2 lakh in March 2020 (tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "markets/nse_investors",
+      "FY20"
+     ]
+    },
+    "scale": 0.1
+   },
+   "equals": 22
+  },
+  {
+   "says": "29.4 lakh in August 2026 (tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    },
+    "scale": 0.1
+   },
+   "equals": 294
+  },
+  {
+   "says": "share 0.7% in March 2020 (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "markets/nse_investors",
+      "FY20"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 7
+  },
+  {
+   "says": "share 2.2% in August 2026 (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 22
+  },
+  {
+   "says": "Assam's multiple is the largest of the 25 states by a clear margin: Tripura is 9.75",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/nse_investors",
+          "Aug 2026"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/nse_investors",
+          "FY20"
+         ]
+        }
+       ]
+      },
+      "state": "Assam"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/nse_investors",
+          "Aug 2026"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/nse_investors",
+          "FY20"
+         ]
+        }
+       ]
+      },
+      "state": "Tripura"
+     }
+    ]
+   },
+   "min": 1.3,
+   "max": 1.4
+  },
+  {
+   "says": "Assam's population share, 1 July 2026: 2.6%",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected_july",
+      "2026"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 26
+  },
+  {
+   "says": "Assam's population share, 1 March 2020: 2.6%",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected",
+      "2020"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 26
+  },
+  {
+   "says": "March 2020 is not a dip: Assam's count was 2.0 times March 2015",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY20"
+       ]
+      },
+      "state": "Assam"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY15"
+       ]
+      },
+      "state": "Assam"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.1
+  },
+  {
+   "says": "the rise holds in each period: Assam March 2025 to March 2026 +11%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY26"
+       ]
+      },
+      "state": "Assam"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY25"
+       ]
+      },
+      "state": "Assam"
+     }
+    ]
+   },
+   "min": 1.1,
+   "max": 1.12
+  },
+  {
+   "says": "the rise holds in each period: Assam March 2026 to August 2026 +4%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      "state": "Assam"
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/nse_investors",
+        "FY26"
+       ]
+      },
+      "state": "Assam"
+     }
+    ]
+   },
+   "min": 1.04,
+   "max": 1.05
+  },
+  {
+   "says": "Assam's rise since March 2025 is smaller than India's (16% against 20%): ratio of the two",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "markets/nse_investors",
+          "Aug 2026"
+         ]
+        },
+        "state": "Assam"
+       },
+       {
+        "data": {
+         "tbl": [
+          "markets/nse_investors",
+          "FY25"
+         ]
+        },
+        "state": "Assam"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "markets/nse_investors",
+          "Aug 2026"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "tbl": [
+          "markets/nse_investors",
+          "FY25"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.95,
+   "max": 0.99
+  }
+ ],
+ "map": {
+  "as": "percent",
+  "bands": [
+   250,
+   400,
+   600,
+   800
+  ],
+  "title": "Registered investors: *each state's rise*",
+  "sub": "percent change, March 2020 to Aug 2026 · darker = bigger · India +336",
+  "note": "Every state's count rose. Blank: 12 smaller states and UTs that NSE groups as Others.",
+  "vo": "Every state rose. Here is each state's rise, in percent."
+ },
+ "end": {
+  "q": "Did your state beat India's 4.4 times?",
+  "sub": "Comment your state's rise.",
+  "vo": "Did your state beat India's four point four times?"
+ },
+ "yt_title": "Assam: Registered Investors Up 13.3 Times Since March 2020"
+}

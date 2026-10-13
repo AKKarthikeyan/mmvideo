@@ -1,0 +1,417 @@
+{
+ "id": "fa50",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "NSE · Market Pulse · 31 Aug 2026",
+ "palette": "C",
+ "state": "Delhi",
+ "source": "National Stock Exchange of India, NSE Market Pulse, September 2026, Table 70: unique registered investors, distinct PANs registered with NSE, traded or not, not only individuals, placed in a state by PIN code; 31 March 2020 and 31 August 2026. The table lists the 25 states and UTs with most PANs; 12 smaller ones sit in Others. Population: National Commission on Population, Projections 2011-2036 (July 2020 edition), 1 March 2020 and 1 July 2026. Rate = investors / projected population.",
+ "hook": [
+  "*Delhi*: *25* NSE-registered",
+  "investors per 100 projected",
+  "population. India *9.5*."
+ ],
+ "hook_vo": "Delhi had twenty-five registered investors per hundred projected population.",
+ "facts": [
+  {
+   "state": "Delhi",
+   "kicker": "INVESTORS PER 100 POPULATION",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "registered in Delhi per 100 projected population. India: 9.5. Highest of the {n} listed by NSE.",
+   "sub": "Registered investor: a PAN registered with NSE, traded or not; not only individuals. 31 Aug 2026; population 1 July 2026.",
+   "vo": "Delhi had twenty-five. India had nine point five."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "THE NEXT TWO · PER 100 POPULATION",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "Chandigarh",
+    "Goa"
+   ],
+   "bar_max": 30,
+   "text": "Chandigarh and Goa came next. State is set by PIN code, not by who lives there.",
+   "sub": "Registered investors per 100 projected population, 31 Aug 2026.",
+   "vo": "Chandigarh was next at twenty-one, then Goa at eighteen."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "SAME MEASURE · MARCH 2020",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "FY20"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2020"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "per 100 projected population on 31 March 2020. India: 2.3.",
+   "sub": "Registered investors, end-March 2020; population 1 March 2020.",
+   "vo": "In March twenty twenty, Delhi's was nine. India's was two point three."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 25
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 247
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 95
+  },
+  {
+   "kind": "round",
+   "state": "Chandigarh",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 21
+  },
+  {
+   "kind": "round",
+   "state": "Goa",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected_july",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 18
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "FY20"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2020"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 9
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "FY20"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2020"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 92
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "FY20"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2020"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 23
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chandigarh",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected_july",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Goa",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected_july",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Goa",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected_july",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected_july",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  }
+ ],
+ "so": {
+  "lines": [
+   "Delhi's rate against India's:",
+   "*4.0 times* in March 2020,",
+   "*2.6 times* in August 2026."
+  ],
+  "vo": "The gap to India narrowed from four times to two point six."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected_july",
+      "2026"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "Registered investors per 100 *projected population*",
+  "sub": "India {india} · 31 Aug 2026 · the 25 states and UTs NSE lists",
+  "note": "PANs by PIN code over projected population. Blank: 12 smaller states and UTs that NSE groups as Others.",
+  "ring": [
+   "Delhi",
+   "Chandigarh",
+   "Goa"
+  ],
+  "vo": "Here are the states NSE lists: registered investors per hundred projected population."
+ },
+ "end": {
+  "q": "Is your state *above* India's 9.5?",
+  "sub": "Comment your state's number.",
+  "vo": "Is your state above India's nine point five?"
+ },
+ "yt_title": "Delhi: 25 Registered Investors per 100 Projected Population"
+}

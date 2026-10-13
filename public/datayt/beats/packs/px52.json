@@ -1,0 +1,37 @@
+{
+ "idea": "Themed weeks, week four, Markets day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "On 31 August 2026, 8.5% of India's registered investors on NSE were recorded in Gujarat and 11.9% in Uttar Pradesh. But of the individual investors who traded in August 2026, 15.3% were recorded in Gujarat (19.9 lakh) and 8.8% in Uttar Pradesh (11.5 lakh).",
+  "Per 100 registered PANs, 17.2 traded in Gujarat against 7.1 in Uttar Pradesh, the highest of the ten states NSE lists; for October 2025 it was 19.6 and 8.9. A registered investor is any PAN registered with NSE, traded or not, and not only individuals; the state is set by PIN code. Those who traded are individuals, proprietorships and HUF who traded at least once in the month in the cash market, so the two counts differ. The map shows only the ten states NSE lists; NSE prints no figure for the others."
+ ],
+ "source": "National Stock Exchange of India, NSE Market Pulse. Registered investors (distinct PANs, traded or not, not only individuals, state by PIN code): Sept 2026 Table 70 (31 Aug 2026), Nov 2025 Table 60 (31 Oct 2025). Individual investors (individuals, proprietorships, HUF) who traded at least once in the month in the cash market, top ten states: Sept 2026 Figures 329, 331 (Aug 2026); Nov 2025 Figure 395 (Oct 2025). Two different counts; two months.",
+ "source_short": "NSE Market Pulse, Aug 2026 and Oct 2025",
+ "question": "Do you know someone who trades?",
+ "tags": [
+  "Gujarat",
+  "UttarPradesh",
+  "Markets"
+ ],
+ "pinned": "Source: National Stock Exchange of India, NSE Market Pulse. Registered investors (distinct PANs, traded or not, not only individuals, state by PIN code): Sept 2026 Table 70 (31 Aug 2026), Nov 2025 Table 60 (31 Oct 2025). Individual investors (individuals, proprietorships, HUF) who traded at least once in the month in the cash market, top ten states: Sept 2026 Figures 329, 331 (Aug 2026); Nov 2025 Figure 395 (Oct 2025). Two different counts; two months. Individual investors who traded at least once, over all registered PANs: different counts. NSE prints no figure for the other states. Map: the ten states NSE lists, no India figure.",
+ "instagram": "On 31 August 2026, 8.5% of India's registered investors on NSE were recorded in Gujarat and 11.9% in Uttar Pradesh. But of the individual investors who traded in August 2026, 15.3% were recorded in Gujarat (19.9 lakh) and 8.8% in Uttar Pradesh (11.5 lakh).",
+ "x": "NSE, Aug 2026: Gujarat had 8.5% of India's registered investors, Uttar Pradesh 11.9%. Of those who traded in the month, Gujarat had 15.3%, Uttar Pradesh 8.8%. Two different counts. Source: NSE Market Pulse, Sept 2026.",
+ "done": [
+  "Numbers editor recomputed with python3 -I and read the NSE Market Pulse pages as rendered images: Sept 2026 p. 299 (Gujarat 19.9 lakh and 15.3%, Uttar Pradesh 11.5 lakh and 8.8%, Delhi 6.0 and 4.6%); Nov 2025 p. 309, Figures 395 and 397 (October 2025: Gujarat 20.6 lakh, Uttar Pradesh 12.5, Delhi 6.6); Dec 2025 p. 239; registered base from Nov 2025 Table 60 (Gujarat 10,518, Uttar Pradesh 14,085 thousand). Uttar Pradesh 16,150 / Gujarat 11,541 registered = 1.40.",
+  "Fixed before voicing: the '1.6 times' card was replaced by October 2025, per 100 registered (Gujarat 19.6, Uttar Pradesh 8.9), because the paradox otherwise rested on one month; 'highest of 10' now says 'of the 10 states NSE lists' (a state outside the ten could in principle be higher); cards say the numerator and denominator are different counts and use 'traded at least once', never 'active'; the title and spelling of Uttar Pradesh were fixed.",
+  "Viewer editor changed the closing question from 'Know someone from Gujarat or Uttar Pradesh?' (invited state-against-state jibes) to 'Do you know someone who trades?'.",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read NSE Market Pulse Sept 2026 p. 299: Gujarat 19.9 lakh and 15.3%, Uttar Pradesh 11.5 lakh and 8.8% (those who traded, Aug 2026)",
+  "Re-read Sept 2026 Table 70 (p. 236), registered investors: Gujarat 11,541 and Uttar Pradesh 16,150 thousand (the 8.5% and 11.9% shares are not quoted cell by cell in the editor's report)",
+  "Re-read Nov 2025 p. 309 (Oct 2025: Gujarat 20.6 lakh, Uttar Pradesh 12.5, Delhi 6.6) and Table 60 p. 252 (Gujarat 10,518, Uttar Pradesh 14,085, Delhi 5,207)",
+  "Freshness: NSE's October 2026 Market Pulse (data to 30 Sept) is likely within days and may move every figure; all three NSE Shorts name 31 Aug 2026; decide whether to post before it lands",
+  "Not verified: whether NSE's state is the account's address; the June 2026 and Aug 2025 trader bars are unlabelled and not printed",
+  "Scheduling: keep at least four days from fa50 and tn51 so 'registered investors' is not heard twice in a row",
+  "Add the source link to the description"
+ ],
+ "signoff": [
+  "Closing map, on screen: \"Traded in Aug 2026 per 100 registered\", \"the ten states NSE lists · no India figure\". In the voice: \"Here are the ten states NSE lists: traded per hundred registered.\" It shows only ten states, so the house rule of closing on every state is not met; no measure that carries this paradox exists for the rest."
+ ]
+}

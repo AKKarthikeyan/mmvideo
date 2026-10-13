@@ -1,0 +1,35 @@
+{
+ "idea": "Themed weeks, week four, Economy day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "Tamil Nadu's share of India's FDI equity inflow (foreign direct investment in company shares, as reported by state) was 3.9% in 2020-21 and 8.0% in 2025-26, about twice the share. In dollars, Tamil Nadu's inflow went from US$2,323 million to US$4,724 million while India's total was flat: US$59.6 bn, then US$58.8 bn.",
+  "The share was up in four of the five years after 2020-21 (5.1%, 4.7%, 5.5%, 7.4%). The six months before, October 2019 to March 2020, were 4.2%, so 2020-21 was a low start; from 4.2% the rise is still 3.8 points. Counted in the state where the inflow is reported, not necessarily where it is spent. Delhi is not listed separately. Dollars are not adjusted for prices or exchange rates, and recent years are provisional. A lower share can come with more dollars. The table shows how much, not why."
+ ],
+ "source": "Ministry of Commerce and Industry (DPIIT), Lok Sabha unstarred question 328, answered 21 Jul 2026, Annexures III and IV: each state's share of India's FDI equity inflow, and the inflow in US$ million, by financial year, 2020-21 to 2025-26. Counted in the state where the inflow is reported, not necessarily where it is spent. Delhi is not listed separately (UTs and others). Recent years are provisional. The 4.2% is from DPIIT's FDI fact sheet, March 2020, Annexure C.",
+ "source_short": "DPIIT, Lok Sabha, 2020-21 to 2025-26",
+ "question": "Which foreign company is near you?",
+ "tags": [
+  "TamilNadu",
+  "FDI",
+  "Economy"
+ ],
+ "pinned": "Source: Ministry of Commerce and Industry (DPIIT), Lok Sabha unstarred question 328, answered 21 Jul 2026, Annexures III and IV: each state's share of India's FDI equity inflow, and the inflow in US$ million, by financial year, 2020-21 to 2025-26. Counted in the state where the inflow is reported, not necessarily where it is spent. Delhi is not listed separately (UTs and others). Recent years are provisional. The 4.2% is from DPIIT's FDI fact sheet, March 2020, Annexure C. A lower share can come with more dollars. Delhi is not listed separately. Blank: states with no 2020-21 figure. Map: change in each state's share, points of India's total.",
+ "instagram": "Tamil Nadu's share of India's FDI equity inflow (foreign direct investment in company shares, as reported by state) was 3.9% in 2020-21 and 8.0% in 2025-26, about twice the share. In dollars, Tamil Nadu's inflow went from US$2,323 million to US$4,724 million while India's total was flat: US$59.6 bn, then US$58.8 bn.",
+ "x": "Tamil Nadu's share of India's FDI equity inflow went from 3.9% (2020-21) to 8.0% (2025-26). In dollars: US$2,323 million to US$4,724 million, while India's total was flat. Source: DPIIT, Ministry of Commerce, Lok Sabha answer 328.",
+ "done": [
+  "Numbers editor recomputed with python3 -I the shares from Annexure IV dollars over the printed total (3.895, 5.109, 4.712, 5.484, 7.359, 8.028 against printed 3.90 to 8.03); dollars 2,323 to 4,724 (2.03 times); India 59,636 to 58,846 (0.99). Opened the Lok Sabha answer's PDF (Q 328, 21 Jul 2026, 9 pages): Annexure I dollars, Annexure III shares, Annexure IV totals, which equal DPIIT's published FDI equity totals, so the share is of equity inflow.",
+  "Start-year check: 2020-21 (3.90) is below the earlier six months, October 2019 to March 2020, at 4.21% (DPIIT FDI fact sheet March 2020, Annexure C: US$1,006.07 million of 23,881.34). That figure is now printed on card 4 and tested; from it the rise is still 3.8 points and 1.9 times, and 'doubled' is said only from 3.9%.",
+  "Fixed before voicing: source adds 'counted where the inflow is reported, not necessarily where it is spent' and 'recent years are provisional'. Viewer editor glossed the hook and kicker as 'foreign investment (FDI equity)' and replaced the closing question 'Where should FDI go next?' (a policy opinion).",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read Lok Sabha unstarred Q 328 (21 Jul 2026): Annexure III Tamil Nadu 3.90 (2020-21) and 8.03 (2025-26), Gujarat 36.71; Annexure IV Tamil Nadu 2,323 and 4,724, totals 59,636 and 58,846",
+  "Re-read DPIIT FDI fact sheet, March 2020, Annexure C (p. 12): Tamil Nadu 1,006.07 of 23,881.34 US$ million (this is not in a parsed table; the typed numbers are in the tests)",
+  "AK decides: keep 'doubled' measured from 3.9% with the earlier 4.2% printed on card 4",
+  "Not verified: how DPIIT attributes a state (the answer says 'reported in the State'; our 'not necessarily where it is spent' is an inference from RBI's regional-office reporting)",
+  "The hook voice still says 'FDI equity inflow'; 'foreign direct investment' would drop 'equity' (viewer editor left it)",
+  "Freshness: Q 328 is the newest state table; recent years can be revised",
+  "Scheduling: keep three days from fa35 and px46 (all Tamil Nadu)",
+  "Add the source link to the description"
+ ]
+}

@@ -1,0 +1,425 @@
+{
+ "id": "px57",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "AMFI Sep 2025, 2026 · RBI end-March 2025",
+ "palette": "D",
+ "state": "Haryana",
+ "source": "Association of Mutual Funds in India (AMFI), Classified Average AUM, State Wise: average assets of all mutual fund schemes, September 2025 and September 2026 (AMFI's total is comparable across both). RBI Handbook of Statistics on Indian States 2024-25, Table 155: bank deposits, scheduled commercial banks, end-March 2025, counted where the bank office is. AMFI does not say how a state is assigned. State totals, not per person; not adjusted for prices.",
+ "hook": [
+  "*Haryana* and *Kerala*: level",
+  "bank deposits, 2025. Haryana:",
+  "*2.7×* the fund assets."
+ ],
+ "hook_vo": "Level bank deposits. Haryana had two point seven times Kerala's fund assets.",
+ "facts": [
+  {
+   "state": "Haryana",
+   "kicker": "BANK DEPOSITS · END-MARCH 2025",
+   "data": {
+    "rbi": [
+     155,
+     "2025"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 1000000,
+   "text": "crore in banks in Haryana. Kerala: ₹8,94,855 crore. Within 1%.",
+   "sub": "Deposits, counted where the bank office is. State totals, not per person.",
+   "vo": "Haryana's deposits were within one percent of Kerala's."
+  },
+  {
+   "state": "Haryana",
+   "kicker": "MUTUAL FUND ASSETS · SEP 2025",
+   "data": {
+    "tbl": [
+     "markets/amfi_aum_total",
+     "Sep 2025"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 300000,
+   "text": "crore of mutual fund assets recorded in Haryana. Kerala: ₹99,687 crore.",
+   "sub": "Mutual fund: money pooled and invested by a fund house. AMFI does not say how a state is assigned.",
+   "vo": "Two lakh sixty-six thousand crore, against just under one lakh in Kerala."
+  },
+  {
+   "state": "Haryana",
+   "kicker": "A YEAR LATER · SEP 2026",
+   "data": {
+    "tbl": [
+     "markets/amfi_aum_total",
+     "Sep 2026"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 300000,
+   "text": "crore in Haryana: twice Kerala's ₹1,10,760 crore. End-March 2026 deposits not used.",
+   "sub": "Same AMFI total, all schemes. Haryana's was 2.7 times Kerala's in Sep 2025.",
+   "vo": "A year later, Haryana's was twice Kerala's."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.99
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.99
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2025"
+     ]
+    }
+   },
+   "min": 2.6
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2024"
+     ]
+    }
+   },
+   "min": 2.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2023"
+     ]
+    }
+   },
+   "min": 2.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2026"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2026"
+     ]
+    }
+   },
+   "min": 1.95
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2026"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2026"
+     ]
+    }
+   },
+   "min": 0.48
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 83
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 111
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2026"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 107
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 30
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 11
+  }
+ ],
+ "so": {
+  "lines": [
+   "Haryana's fund assets: *83%*",
+   "of a year before. Kerala: *111%*.",
+   "India: *107%*. Sep 2025 to Sep 2026."
+  ],
+  "vo": "Haryana's fell to eighty-three percent. Kerala's rose to one hundred eleven."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2026"
+     ]
+    },
+    {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2025"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "dec": 0,
+  "title": "Fund assets a year later, *every state*",
+  "sub": "% of Sep 2025 level · India 107 · AMFI total, all schemes",
+  "note": "Not adjusted for prices. AMFI does not say how a state is assigned. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+  "ring": [
+   "Haryana",
+   "Kerala"
+  ],
+  "vo": "Here is every state: its fund assets a year later."
+ },
+ "end": {
+  "q": "Why do *fund assets* differ?",
+  "sub": "Comment below.",
+  "vo": "Why do fund assets differ?"
+ },
+ "yt_title": "Haryana, Kerala: Level Bank Deposits, 2.7× the Fund Assets"
+}

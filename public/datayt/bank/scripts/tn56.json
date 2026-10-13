@@ -1,0 +1,1521 @@
+{
+ "id": "tn56",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "AMFI · Sep 2018, Sep 2025",
+ "palette": "A",
+ "state": "Rajasthan",
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "EQUITY-ORIENTED SHARE OF FUND ASSETS",
+ "expect": {
+  "years": 7
+ },
+ "points": [
+  {
+   "period": "Sep 2018",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_equity",
+       "Sep 2018"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2018"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  },
+  {
+   "period": "Sep 2025",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_equity",
+       "Sep 2025"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  }
+ ],
+ "source": "Association of Mutual Funds in India (AMFI), Classified Average AUM, State Wise, September 2018 and September 2025: AMFI's 'Growth/Equity Oriented Schemes' column as a share of all mutual fund schemes. AMFI does not say what the column holds, or how a state is assigned. SEBI's scheme recategorisation was complete by mid-2018, so earlier years are not compared. AMFI changed its category list in August 2026, so later months are not either.",
+ "hook": [
+  "*Rajasthan*: equity-oriented",
+  "share of mutual fund assets,",
+  "*40%* to *80%*, 2018-25."
+ ],
+ "hook_vo": "Rajasthan's equity-oriented share of mutual fund assets went from forty to eighty percent.",
+ "then": {
+  "text": "of mutual fund assets recorded in Rajasthan were in AMFI's equity-oriented schemes. India: *{india_then}*.",
+  "vo": "In September twenty eighteen: forty percent. India, thirty-four."
+ },
+ "now": {
+  "text": "of Rajasthan's fund assets were in those schemes. India: *{india_now}*.",
+  "vo": "In September twenty twenty-five: eighty percent. India, fifty-five."
+ },
+ "facts": [
+  {
+   "kicker": "RAJASTHAN · THE SPLIT, EACH YEAR",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       },
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of Rajasthan's fund assets sat outside equity-oriented schemes in Sep 2025, against 60% in Sep 2018.",
+   "bars": [
+    {
+     "data": {
+      "tbl": [
+       "markets/amfi_aum_equity",
+       "Sep 2018"
+      ]
+     },
+     "name": "Equity 2018",
+     "unit": "₹"
+    },
+    {
+     "diff": [
+      {
+       "data": {
+        "tbl": [
+         "markets/amfi_aum_total",
+         "Sep 2018"
+        ]
+       }
+      },
+      {
+       "data": {
+        "tbl": [
+         "markets/amfi_aum_equity",
+         "Sep 2018"
+        ]
+       }
+      }
+     ],
+     "name": "Other 2018",
+     "unit": "₹"
+    },
+    {
+     "data": {
+      "tbl": [
+       "markets/amfi_aum_equity",
+       "Sep 2025"
+      ]
+     },
+     "name": "Equity 2025",
+     "unit": "₹"
+    },
+    {
+     "diff": [
+      {
+       "data": {
+        "tbl": [
+         "markets/amfi_aum_total",
+         "Sep 2025"
+        ]
+       }
+      },
+      {
+       "data": {
+        "tbl": [
+         "markets/amfi_aum_equity",
+         "Sep 2025"
+        ]
+       }
+      }
+     ],
+     "name": "Other 2025",
+     "unit": "₹"
+    }
+   ],
+   "bar_max": 130000,
+   "sub": "Bars: ₹ crore, each September. Other: debt, liquid, hybrid, ETFs. Not adjusted for prices.",
+   "vo": "Here is the same split in rupees: equity-oriented against everything else."
+  },
+  {
+   "kicker": "RAJASTHAN · THE YEARS BETWEEN",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2021"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2021"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "unit": "%",
+   "text": "in Sep 2021 (India: 41.8%). Above India's in each year from 2018.",
+   "bars": [
+    {
+     "name": "Sep 2019",
+     "data": {
+      "ratio": [
+       {
+        "tbl": [
+         "markets/amfi_aum_equity",
+         "Sep 2019"
+        ]
+       },
+       {
+        "tbl": [
+         "markets/amfi_aum_total",
+         "Sep 2019"
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Sep 2021",
+     "data": {
+      "ratio": [
+       {
+        "tbl": [
+         "markets/amfi_aum_equity",
+         "Sep 2021"
+        ]
+       },
+       {
+        "tbl": [
+         "markets/amfi_aum_total",
+         "Sep 2021"
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Sep 2023",
+     "data": {
+      "ratio": [
+       {
+        "tbl": [
+         "markets/amfi_aum_equity",
+         "Sep 2023"
+        ]
+       },
+       {
+        "tbl": [
+         "markets/amfi_aum_total",
+         "Sep 2023"
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Equity-oriented share of Rajasthan's fund assets. It rose in five of the seven years.",
+   "vo": "It stayed ahead of India's share, and rose in five of seven years."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Above *70%* in each of the",
+    "last three Septembers:",
+    "72% (2023), 80%, 80%."
+   ],
+   "note": "Shares of the state's own fund assets, so no price adjustment is needed. The table shows how much, not why.",
+   "vo": "Above seventy percent in each of the last three Septembers."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   15,
+   22,
+   30,
+   40
+  ],
+  "title": "Equity-oriented share: *change by state*",
+  "sub": "percentage points · Sep 2018 to Sep 2025 · India +20.8",
+  "note": "Blank: Jammu and Kashmir (changed 2019), Ladakh, Dadra and Nagar Haveli and Daman and Diu. Sep 2026 left out: AMFI changed its categories.",
+  "vo": "Here is each state's change over the seven years."
+ },
+ "end": {
+  "q": "What is *your state's* change?",
+  "sub": "Find it on the map. Comment below.",
+  "vo": "What is your state's change?"
+ },
+ "yt_title": "Rajasthan: Equity-Oriented Fund Share 40% to 80%, 2018-25",
+ "tests": [
+  {
+   "says": "40% in 2018 (hook)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2018"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2018"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 40
+  },
+  {
+   "says": "80% in 2025 (hook)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2025"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 80
+  },
+  {
+   "says": "39.6% (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2018"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2018"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 396
+  },
+  {
+   "says": "79.5% (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2025"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 795
+  },
+  {
+   "says": "India 34 in 2018",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2018"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2018"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India"
+   },
+   "equals": 34
+  },
+  {
+   "says": "India 55 in 2025",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2025"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India"
+   },
+   "equals": 55
+  },
+  {
+   "says": "India +20.8 points (tenths) on the map",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 208
+  },
+  {
+   "says": "Rajasthan +39.9 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 399
+  },
+  {
+   "says": "60% outside equity-oriented in 2018 (card)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       },
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2018"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 60
+  },
+  {
+   "says": "20% outside equity-oriented in 2025 (card)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       },
+       {
+        "data": {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 20
+  },
+  {
+   "says": "72% in 2023",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2023"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 72
+  },
+  {
+   "says": "80% in 2024",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2024"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 80
+  },
+  {
+   "says": "above 70% in 2023",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2023"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 70,
+   "max": 100
+  },
+  {
+   "says": "above 70% in 2024",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2024"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 70,
+   "max": 100
+  },
+  {
+   "says": "above 70% in 2025",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2025"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 70,
+   "max": 100
+  },
+  {
+   "says": "2017 is below the start: 2018 is not a dip (32%)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2017"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2017"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 25,
+   "max": 39.6
+  },
+  {
+   "says": "Rajasthan above India in Sep 2018",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2019",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2019"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2019"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2019"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2019"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2020",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2020"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2020"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2020"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2020"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2021",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2021"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2021"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2021"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2021"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2022",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2022"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2022"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2023",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2023"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2023"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2023"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2023"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2024",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2024"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2024"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "Rajasthan above India in Sep 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.0001,
+   "max": 9
+  },
+  {
+   "says": "55% in 2021",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2021"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2021"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 55
+  },
+  {
+   "says": "India 41.8% in 2021",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_equity",
+        "Sep 2021"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2021"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 418
+  },
+  {
+   "says": "Rajasthan rose in Sep 2019 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2019"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2019"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2018"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 0.0001,
+   "max": 100
+  },
+  {
+   "says": "Rajasthan fell in Sep 2020 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2020"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2020"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2019"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2019"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": -100,
+   "max": -0.0001
+  },
+  {
+   "says": "Rajasthan rose in Sep 2021 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2021"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2021"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2020"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2020"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 0.0001,
+   "max": 100
+  },
+  {
+   "says": "Rajasthan rose in Sep 2022 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2022"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2021"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2021"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 0.0001,
+   "max": 100
+  },
+  {
+   "says": "Rajasthan rose in Sep 2023 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2023"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2023"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2022"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 0.0001,
+   "max": 100
+  },
+  {
+   "says": "Rajasthan rose in Sep 2024 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2024"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2023"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2023"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 0.0001,
+   "max": 100
+  },
+  {
+   "says": "Rajasthan fell in Sep 2025 (rose in 5 of 7 years)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2025"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "markets/amfi_aum_equity",
+          "Sep 2024"
+         ]
+        },
+        {
+         "tbl": [
+          "markets/amfi_aum_total",
+          "Sep 2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": -100,
+   "max": -0.0001
+  }
+ ]
+}

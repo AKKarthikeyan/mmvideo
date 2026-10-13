@@ -1,0 +1,464 @@
+{
+ "id": "fa40",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "Finance Ministry · Lok Sabha · 2024-25",
+ "source": "Ministry of Finance, Lok Sabha unstarred question 1575, 9 Feb 2026, Annexure A: gross domestic GST (CGST + SGST + IGST) in each state, 2024-25, before refunds; imports and cess not included; recorded where the taxpayer is registered. Over state output (GSDP) at current prices, National Statistical Office, via RBI Handbook of Statistics on Indian States 2024-25, Table 21; 2024-25 output is an early estimate. 25 states and UTs have both figures; none is published for Dadra, Nagar Haveli, Daman and Diu.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Haryana*: GST collected",
+    "*9.2%* of output, 2024-25,",
+    "*highest of 25 with data*"
+   ],
+   "vo": "Haryana's GST: nine point two percent of output. Highest of twenty-five with data.",
+   "geo": "Haryana",
+   "name": "Haryana",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Haryana",
+   "geo": "Haryana",
+   "kicker": "GST OVER STATE OUTPUT · 2024-25",
+   "big": "9.2%",
+   "text": "of state output was gross GST collected in Haryana. Highest of 25 states and UTs with data.",
+   "sub": "Gross CGST + SGST + IGST, before refunds; imports and cess left out. Next: Maharashtra, 7.4%.",
+   "bars": [
+    {
+     "name": "Haryana",
+     "label": "9.2%",
+     "frac": 0.9183648790316947
+    },
+    {
+     "name": "Maharashtra",
+     "label": "7.4%",
+     "frac": 0.7368677980569701
+    }
+   ],
+   "vo": "Maharashtra was next, at seven point four percent.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "SAME MEASURE · KERALA",
+   "big": "2.6%",
+   "text": "was Kerala's figure in 2024-25. Haryana's was *3.5 times* that.",
+   "sub": "Gross GST over state output, 2024-25. GST collected: Kerala ₹33,023 crore, Haryana ₹1,11,485 crore.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "2.6%",
+     "frac": 0.264494408521886
+    },
+    {
+     "name": "Haryana",
+     "label": "9.2%",
+     "frac": 0.9183648790316947
+    }
+   ],
+   "vo": "Kerala: two point six. Haryana's rate was three point five times that.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Haryana",
+   "geo": "Haryana",
+   "kicker": "THREE YEARS EARLIER · 2021-22",
+   "big": "7.2%",
+   "text": "in 2021-22. Up in each year since: 8.3%, 8.8%, then 9.2% in 2024-25.",
+   "sub": "Gross GST over state output. Maharashtra: 6.5% in 2021-22.",
+   "bars": [
+    {
+     "name": "Haryana",
+     "label": "7.2%",
+     "frac": 0.7200186770553627
+    },
+    {
+     "name": "Maharashtra",
+     "label": "6.5%",
+     "frac": 0.6485769156697202
+    }
+   ],
+   "vo": "Three years earlier: seven point two. Higher in each year since.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Haryana's output: *₹12.1 lakh crore*.",
+    "Kerala's: *₹12.5 lakh crore*.",
+    "Haryana's GST: *3.4 times* Kerala's."
+   ],
+   "note": "",
+   "vo": "Kerala and Haryana: level output. Haryana's GST was three point four times.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "GST as % of output, *every state with data*",
+   "sub": "gross GST over state output · 2024-25",
+   "note": "GST is recorded where the taxpayer is registered, not who bears it. 2024-25 output is an early estimate. Blank: no 2024-25 output, e.g. Gujarat, Sikkim, Goa.",
+   "anim": true,
+   "ring": [
+    "Haryana",
+    "Kerala"
+   ],
+   "vo": "Gross GST as a percent of output, in every state with data.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "GST is recorded where the taxpayer is registered, not who bears it. 2024-25 output is an early estimate. Blank: no 2024-25 output, e.g. Gujarat, Sikkim, Goa.",
+   "ring": [
+    "Haryana",
+    "Kerala"
+   ],
+   "q": "Which state *surprised* you here?",
+   "sub": "25 states and UTs have data.",
+   "kind": "mapend",
+   "vo": "Which state surprised you here?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Tripura",
+   "label": "1.3",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Bihar",
+   "label": "1.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "2.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Assam",
+   "label": "2.5",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "2.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Kerala",
+   "label": "2.6",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Rajasthan",
+   "label": "3.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Punjab",
+   "label": "3.1",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "3.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "West Bengal",
+   "label": "3.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Telangana",
+   "label": "3.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Meghalaya",
+   "label": "3.7",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.076
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "4.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.197
+  },
+  {
+   "name": "Karnataka",
+   "label": "4.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.317
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "5.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.438
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "5.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.559
+  },
+  {
+   "name": "Puducherry",
+   "label": "5.5",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.68
+  },
+  {
+   "name": "Jharkhand",
+   "label": "5.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.801
+  },
+  {
+   "name": "Odisha",
+   "label": "5.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.922
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "6.2",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.043
+  },
+  {
+   "name": "Maharashtra",
+   "label": "7.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.164
+  },
+  {
+   "name": "Haryana",
+   "label": "9.2",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.285
+  }
+ ],
+ "checked": [
+  "Haryana is the highest of 25 with data (9.2%)",
+  "Haryana 91.8365 rounds to 92",
+  "Maharashtra 73.6868 rounds to 74",
+  "Kerala 26.4494 rounds to 26",
+  "Haryana 72.0019 rounds to 72",
+  "Haryana 82.7273 rounds to 83",
+  "Haryana 88.3207 rounds to 88",
+  "Maharashtra 64.8577 rounds to 65",
+  "Haryana 111485 rounds to 111485",
+  "Kerala 33023 rounds to 33023",
+  "Haryana 121.395 rounds to 121",
+  "Kerala 124.853 rounds to 125",
+  "Haryana / Kerala = 3.47 (at least 3.45)",
+  "Haryana / Kerala = 3.38 (at least 3.35)",
+  "Kerala / Haryana = 1.03 (at least 0.97)",
+  "Haryana / Kerala = 0.97 (at least 0.97)",
+  "Haryana / Maharashtra = 1.20 (at least 1.15)",
+  "Haryana / Maharashtra = 1.21 (at least 1.15)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.564,
+   "at": 0.12,
+   "text": "Haryana's GST: nine point two percent of output. Highest of twenty-five with data."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.369,
+   "at": 7.862,
+   "text": "Maharashtra was next, at seven point four percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.918,
+   "at": 11.733,
+   "text": "Kerala: two point six. Haryana's rate was three point five times that."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.414,
+   "at": 17.539,
+   "text": "Three years earlier: seven point two. Higher in each year since."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.25,
+   "at": 23.346,
+   "text": "Kerala and Haryana: level output. Haryana's GST was three point four times."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.754,
+   "at": 29.152,
+   "text": "Gross GST as a percent of output, in every state with data."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.75,
+   "at": 34.959,
+   "text": "Which state surprised you here?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Haryana: GST Collected Was 9.2% of State Output, 2024-25"
+}

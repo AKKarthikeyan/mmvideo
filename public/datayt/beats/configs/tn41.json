@@ -1,0 +1,587 @@
+{
+ "id": "tn41",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Commerce Ministry · Lok Sabha · 2020-21 to 2025-26",
+ "palette": "A",
+ "state": "Tamil Nadu",
+ "points": [
+  {
+   "period": "2020-21",
+   "data": {
+    "ls": [
+     "ls18-s8-U328#1",
+     0
+    ]
+   }
+  },
+  {
+   "period": "2025-26",
+   "data": {
+    "ls": [
+     "ls18-s8-U328#1",
+     5
+    ]
+   }
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "SHARE OF INDIA'S FDI EQUITY",
+ "expect": {
+  "years": 5
+ },
+ "source": "Ministry of Commerce and Industry (DPIIT), Lok Sabha unstarred question 328, answered 21 Jul 2026, Annexures III and IV: each state's share of India's FDI equity inflow, and the inflow in US$ million, by financial year, 2020-21 to 2025-26. Counted in the state where the inflow is reported, not necessarily where it is spent. Delhi is not listed separately (UTs and others). Recent years are provisional. The 4.2% is from DPIIT's FDI fact sheet, March 2020, Annexure C.",
+ "hook": [
+  "*Tamil Nadu's* share of",
+  "India's foreign investment",
+  "(FDI equity) *3.9%* to *8.0%*"
+ ],
+ "hook_vo": "Tamil Nadu's share of India's FDI equity inflow doubled in five years.",
+ "then": {
+  "text": "of India's FDI equity inflow was reported in Tamil Nadu. US$2,323 million.",
+  "vo": "In the year to March twenty twenty-one: three point nine percent."
+ },
+ "now": {
+  "text": "of India's FDI equity inflow, reported in Tamil Nadu. US$4,724 million.",
+  "vo": "Five years on: eight percent. Twice the share."
+ },
+ "facts": [
+  {
+   "kicker": "TAMIL NADU'S SHARE · BY YEAR",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      4
+     ]
+    }
+   },
+   "unit": "%",
+   "text": "in 2024-25, after 5.5% the year before. Up in *4 of 5* years.",
+   "bars": [
+    {
+     "name": "2021-22",
+     "data": {
+      "ls": [
+       "ls18-s8-U328#1",
+       1
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "2022-23",
+     "data": {
+      "ls": [
+       "ls18-s8-U328#1",
+       2
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "2023-24",
+     "data": {
+      "ls": [
+       "ls18-s8-U328#1",
+       3
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "2024-25",
+     "data": {
+      "ls": [
+       "ls18-s8-U328#1",
+       4
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 10,
+   "sub": "2020-21: 3.9%, Gujarat 36.7%. Earlier six months, Oct 2019 to Mar 2020: 4.2%. 2025-26: 8.0%.",
+   "vo": "Up in four of five years. Seven point four percent the year before."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "India's total: *$59.6 bn*, then *$58.8 bn*.",
+    "Tamil Nadu: *$2.3 bn*, then *$4.7 bn*.",
+    "Its dollars grew *2.0 times*."
+   ],
+   "note": "FDI equity inflow, US$, 2020-21 and 2025-26. Not adjusted for prices or exchange rates. The table shows how much, not why.",
+   "vo": "India's total was flat. Tamil Nadu's own dollars doubled."
+  }
+ ],
+ "tests": [
+  {
+   "says": "3.9% in 2020-21",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      0
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 39
+  },
+  {
+   "says": "8.0% in 2025-26",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      5
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 80
+  },
+  {
+   "says": "doubled: share 2.06 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        5
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.15
+  },
+  {
+   "says": "5.1% in 2021-22",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      1
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 51
+  },
+  {
+   "says": "4.7% in 2022-23",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      2
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 47
+  },
+  {
+   "says": "5.5% in 2023-24",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      3
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 55
+  },
+  {
+   "says": "7.4% in 2024-25",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      4
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 74
+  },
+  {
+   "says": "up 2020-21 to 2021-22",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        1
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.1,
+   "max": 99
+  },
+  {
+   "says": "down 2021-22 to 2022-23 (the one dip)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        2
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        1
+       ]
+      }
+     }
+    ]
+   },
+   "min": -99,
+   "max": -0.1
+  },
+  {
+   "says": "up 2022-23 to 2023-24",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        3
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        2
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.1,
+   "max": 99
+  },
+  {
+   "says": "up 2023-24 to 2024-25",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        4
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        3
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.1,
+   "max": 99
+  },
+  {
+   "says": "up 2024-25 to 2025-26",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        5
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        4
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.1,
+   "max": 99
+  },
+  {
+   "says": "Gujarat 36.7% in 2020-21",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#1",
+      0
+     ]
+    },
+    "state": "Gujarat",
+    "scale": 10
+   },
+   "equals": 367
+  },
+  {
+   "says": "India $59.6 bn in 2020-21",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      0
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 596
+  },
+  {
+   "says": "India $58.8 bn in 2025-26",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      5
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 588
+  },
+  {
+   "says": "India's total flat (0.99 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#2",
+        5
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#2",
+        0
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.97,
+   "max": 1.02
+  },
+  {
+   "says": "Tamil Nadu $2.3 bn in 2020-21",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      0
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 23
+  },
+  {
+   "says": "Tamil Nadu $4.7 bn in 2025-26",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      5
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 47
+  },
+  {
+   "says": "$2,323 million in 2020-21",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      0
+     ]
+    }
+   },
+   "equals": 2323
+  },
+  {
+   "says": "$4,724 million in 2025-26",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U328#2",
+      5
+     ]
+    }
+   },
+   "equals": 4724
+  },
+  {
+   "says": "Tamil Nadu's dollars 2.0 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#2",
+        5
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#2",
+        0
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.1
+  },
+  {
+   "says": "4.2% of FDI equity inflow in Oct 2019 to Mar 2020 (DPIIT fact sheet March 2020, Annexure C: 1,006.07 of 23,881.34 US$ million)",
+   "value": {
+    "share": {
+     "values": {
+      "Tamil Nadu": 1006.07
+     },
+     "india": 23881.34
+    },
+    "scale": 10
+   },
+   "equals": 42
+  },
+  {
+   "says": "measured from that earlier 4.2%, the share is still up 3.8 points (not a freak start)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        5
+       ]
+      }
+     },
+     {
+      "share": {
+       "values": {
+        "Tamil Nadu": 1006.07
+       },
+       "india": 23881.34
+      }
+     }
+    ]
+   },
+   "min": 3.5,
+   "max": 4.1
+  },
+  {
+   "says": "measured from 4.2%, the 2025-26 share is 1.9 times (script says 'twice' only from 3.9%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U328#1",
+        5
+       ]
+      }
+     },
+     {
+      "share": {
+       "values": {
+        "Tamil Nadu": 1006.07
+       },
+       "india": 23881.34
+      }
+     }
+    ]
+   },
+   "min": 1.85,
+   "max": 1.95
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -5,
+   -0.5,
+   0.5,
+   5
+  ],
+  "title": "Share of India's FDI equity: *each state's change*",
+  "sub": "points of India's total · {from} to {to}",
+  "note": "A lower share can come with more dollars. Delhi is not listed separately. Blank: states with no 2020-21 figure.",
+  "ring": [
+   "Karnataka",
+   "Gujarat"
+  ],
+  "vo": "Each state's change in its share of India's FDI equity inflow.",
+  "key": [
+   "fell 5+",
+   "within 0.5 points",
+   "rose 5+"
+  ]
+ },
+ "end": {
+  "q": "Which *foreign company* is near you?",
+  "sub": "Comment below.",
+  "vo": "Which foreign company is near you?"
+ },
+ "yt_title": "Tamil Nadu's Share of India's FDI Equity: 3.9% to 8.0%"
+}

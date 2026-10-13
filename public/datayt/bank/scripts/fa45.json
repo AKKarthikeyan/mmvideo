@@ -1,0 +1,536 @@
+{
+ "id": "fa45",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Ministry of Mines · DMF page, Aug 2026",
+ "palette": "E",
+ "state": "Odisha",
+ "source": "Ministry of Mines, DMF Collection page (mines.gov.in/webportal/content/dmf-collection), table 'DMF Fund Status - Till August 2026', read 13 Oct 2026: cumulative collection under District Mineral Foundations, ₹ crore (all-India ₹1,36,355.10 crore). Each state is as on its own date: Odisha 31 Aug 2026; Maharashtra 30 Apr 2026; Assam, Punjab, Meghalaya, Haryana older. Funded by statutory contributions from mining lease holders (Ministry's PMKKKY Guidelines 2024). Output: RBI Handbook, Table 21, 2024-25.",
+ "hook": [
+  "*28%* of India's district",
+  "mineral fund money: *Odisha*,",
+  "to August 2026."
+ ],
+ "hook_vo": "Twenty-eight percent of district mineral fund money was collected in Odisha.",
+ "facts": [
+  {
+   "state": "Odisha",
+   "kicker": "DISTRICT MINERAL FUNDS · MOSTLY TO AUG 2026",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Jharkhand"
+   ],
+   "bar_max": 40,
+   "text": "of India's ₹1,36,355 crore collected: ₹38,608 crore in Odisha. Highest of {n} states.",
+   "sub": "Paid in by mining leaseholders. Dates differ by state: mostly 31 Aug 2026.",
+   "vo": "Thirty-nine thousand crore rupees. Jharkhand and Chhattisgarh each had about nineteen thousand."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "MAHARASHTRA · AS ON 30 APR 2026",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Odisha"
+   ],
+   "bar_max": 40,
+   "text": "is Maharashtra's share: ₹8,161 crore. Its 2024-25 output was 5.1 times Odisha's.",
+   "sub": "Odisha's is 4.7 times Maharashtra's, whose date is four months earlier.",
+   "vo": "Maharashtra's economy is five times Odisha's. Its collection was six percent."
+  },
+  {
+   "state": "Jharkhand",
+   "kicker": "THE NEXT TWO · MOSTLY TO AUG 2026",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Chhattisgarh"
+   ],
+   "bar_max": 40,
+   "text": "is Jharkhand's share: ₹19,444 crore. Chhattisgarh: 13.7%, ₹18,615 crore.",
+   "sub": "A gap of 0.6 points between them. Share of India's ₹1,36,355 crore.",
+   "vo": "Jharkhand held fourteen point three percent, Chhattisgarh thirteen point seven."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "equals": 38608
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "equals": 136355
+  },
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "equals": 19444
+  },
+  {
+   "kind": "round",
+   "state": "Chhattisgarh",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "equals": 18615
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "tbl": [
+     "mines/dmf_collection_aug2026",
+     "Total amount collected under DMF"
+    ]
+   },
+   "equals": 8161
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Jharkhand",
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    }
+   },
+   "min": 2.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    }
+   },
+   "min": 4.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      21,
+      "Base: 2011-12 | 2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      21,
+      "Base: 2011-12 | 2024-25"
+     ]
+    }
+   },
+   "min": 5.0
+  }
+ ],
+ "so": {
+  "lines": [
+   "Three states hold *56%*:",
+   "*Odisha*, Jharkhand and",
+   "Chhattisgarh, mostly to Aug 2026."
+  ],
+  "vo": "Odisha, Jharkhand and Chhattisgarh together hold fifty-six percent."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "mines/dmf_collection_aug2026",
+    "Total amount collected under DMF"
+   ]
+  },
+  "as": "share",
+  "unit": "%",
+  "dec": 1,
+  "title": "District mineral fund money, *every state*",
+  "sub": "% of India's ₹1,36,355 crore · mostly to 31 Aug 2026",
+  "note": "State totals, not per person. Dates differ by state (Haryana 2022, Meghalaya 2023). Blank: states the page does not list. The table shows how much, not why.",
+  "ring": [
+   "Odisha",
+   "Jharkhand",
+   "Chhattisgarh"
+  ],
+  "vo": "Here is every state's share of the money collected."
+ },
+ "end": {
+  "q": "Does your state *mine* much?",
+  "sub": "Comment below.",
+  "vo": "Does your state mine much?"
+ },
+ "tests": [
+  {
+   "says": "28% in the hook",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Odisha"
+   },
+   "equals": 28
+  },
+  {
+   "says": "28.3% (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Odisha",
+    "scale": 10
+   },
+   "equals": 283
+  },
+  {
+   "says": "Jharkhand 14.3%",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Jharkhand",
+    "scale": 10
+   },
+   "equals": 143
+  },
+  {
+   "says": "Chhattisgarh 13.7%",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Chhattisgarh",
+    "scale": 10
+   },
+   "equals": 137
+  },
+  {
+   "says": "Maharashtra 6.0% (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 60
+  },
+  {
+   "says": "Maharashtra six percent",
+   "value": {
+    "share": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 6
+  },
+  {
+   "says": "Odisha thirty-nine thousand crore",
+   "value": {
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Odisha",
+    "scale": 0.001
+   },
+   "equals": 39
+  },
+  {
+   "says": "Jharkhand about nineteen thousand crore (voice): 18.5 to 19.5 thousand",
+   "value": {
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Jharkhand",
+    "scale": 0.001
+   },
+   "min": 18.5,
+   "max": 19.5
+  },
+  {
+   "says": "Odisha 4.7 times Maharashtra (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Odisha"
+     },
+     {
+      "data": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 47
+  },
+  {
+   "says": "Maharashtra output 5.1 times Odisha (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2024-25"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2024-25"
+       ]
+      },
+      "state": "Odisha"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 51
+  },
+  {
+   "says": "Maharashtra economy five times Odisha's (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2024-25"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2024-25"
+       ]
+      },
+      "state": "Odisha"
+     }
+    ]
+   },
+   "equals": 5
+  },
+  {
+   "says": "gap Jharkhand minus Chhattisgarh 0.6 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Jharkhand"
+     },
+     {
+      "share": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Chhattisgarh"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 6
+  },
+  {
+   "says": "three states 56%",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "share": {
+         "tbl": [
+          "mines/dmf_collection_aug2026",
+          "Total amount collected under DMF"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "share": {
+         "tbl": [
+          "mines/dmf_collection_aug2026",
+          "Total amount collected under DMF"
+         ]
+        },
+        "state": "Jharkhand",
+        "scale": -1
+       }
+      ]
+     },
+     {
+      "share": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Chhattisgarh",
+      "scale": -1
+     }
+    ]
+   },
+   "equals": 56
+  },
+  {
+   "says": "Chhattisgarh about nineteen thousand crore (voice): 18.5 to 19.5 thousand",
+   "value": {
+    "data": {
+     "tbl": [
+      "mines/dmf_collection_aug2026",
+      "Total amount collected under DMF"
+     ]
+    },
+    "state": "Chhattisgarh",
+    "scale": 0.001
+   },
+   "min": 18.5,
+   "max": 19.5
+  },
+  {
+   "says": "Odisha ahead of Jharkhand by 14 points of the total (clear lead)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Odisha"
+     },
+     {
+      "share": {
+       "tbl": [
+        "mines/dmf_collection_aug2026",
+        "Total amount collected under DMF"
+       ]
+      },
+      "state": "Jharkhand"
+     }
+    ]
+   },
+   "min": 10,
+   "max": 20
+  }
+ ],
+ "yt_title": "Odisha: 28% of India's District Mineral Fund Money, 2026"
+}

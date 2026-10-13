@@ -1,0 +1,494 @@
+{
+ "id": "tn51",
+ "type": "then",
+ "chip": "THEN AND NOW",
+ "sourceShort": "NSE · Market Pulse · Mar 2020 to 31 Aug 2026",
+ "source": "National Stock Exchange of India, NSE Market Pulse: unique registered investors, distinct PANs registered with NSE whether or not they have traded, placed in a state by PIN code. September 2026 Table 70 for 31 March 2020, 31 March 2025 and 31 August 2026; April 2026 Table 43 for 31 March 2026. 1 lakh = 100 thousand. Population share: National Commission on Population projections (July 2020 edition), 1 March 2020 and 1 July 2026.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Assam*: NSE-registered",
+    "investors up *13.3 times* since",
+    "March 2020; India *4.4 times*."
+   ],
+   "vo": "Assam's registered investors grew thirteen times. India's, over four times.",
+   "geo": "Assam",
+   "name": "Assam",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "geo": "Assam",
+   "name": "Assam",
+   "kicker": "REGISTERED INVESTORS · LAKH",
+   "big": "13.3×",
+   "p0": {
+    "period": "31 Mar 2020",
+    "label": "2.2 lakh",
+    "frac": 0.0752212389380531
+   },
+   "p1": {
+    "period": "31 Aug 2026",
+    "label": "29.4 lakh",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "registered investors, recorded in Assam.",
+   "vo": "In March twenty twenty, Assam had two point two lakh registered investors.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "geo": "Assam",
+   "name": "Assam",
+   "kicker": "REGISTERED INVESTORS · LAKH",
+   "big": "13.3×",
+   "p0": {
+    "period": "31 Mar 2020",
+    "label": "2.2 lakh",
+    "frac": 0.0752212389380531
+   },
+   "p1": {
+    "period": "31 Aug 2026",
+    "label": "29.4 lakh",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "registered investors: *13.3 times* the count. India: 4.4 times.",
+   "vo": "By August twenty twenty-six: twenty-nine lakh. Thirteen times as many.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Assam",
+   "geo": "Assam",
+   "kicker": "BY MARCH 2025 · TIMES MARCH 2020",
+   "big": "11.4×",
+   "text": "Most of the rise came by March 2025. Since then Assam +16%, India +20%.",
+   "sub": "Bars: lakh registered investors.",
+   "bars": [
+    {
+     "name": "Mar 2020",
+     "label": "2.2",
+     "frac": 0.06314285714285714
+    },
+    {
+     "name": "Mar 2025",
+     "label": "25.3",
+     "frac": 0.722
+    },
+    {
+     "name": "Mar 2026",
+     "label": "28.1",
+     "frac": 0.8037142857142857
+    },
+    {
+     "name": "Aug 2026",
+     "label": "29.4",
+     "frac": 0.8394285714285714
+    }
+   ],
+   "vo": "Most came by March twenty twenty-five: eleven times. Since then, sixteen percent more.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Assam's share of India's",
+    "registered investors:",
+    "*0.7%* to *2.2%*."
+   ],
+   "note": "March 2020 to 31 Aug 2026. A small base: 2.6% of India's projected population.",
+   "vo": "Assam went from point seven to two point two percent of India's total.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Registered investors: *each state's rise*",
+   "sub": "percent change, March 2020 to Aug 2026 · darker = bigger · India +336",
+   "note": "Every state's count rose. Blank: 12 smaller states and UTs that NSE groups as Others.",
+   "anim": true,
+   "ring": [
+    "Assam"
+   ],
+   "vo": "Every state rose. Here is each state's rise, in percent.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Every state's count rose. Blank: 12 smaller states and UTs that NSE groups as Others.",
+   "ring": [
+    "Assam"
+   ],
+   "q": "Did your state beat India's 4.4 times?",
+   "sub": "Comment your state's rise.",
+   "kind": "mapend",
+   "vo": "Did your state beat India's four point four times?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "+162",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+202",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Gujarat",
+   "label": "+204",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+250",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+251",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Goa",
+   "label": "+251",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Kerala",
+   "label": "+269",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Karnataka",
+   "label": "+285",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Telangana",
+   "label": "+297",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "West Bengal",
+   "label": "+304",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+311",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Haryana",
+   "label": "+365",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Punjab",
+   "label": "+411",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+455",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+489",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.947
+  },
+  {
+   "name": "Odisha",
+   "label": "+507",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.068
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+520",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.188
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+558",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.309
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+562",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.43
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+602",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.551
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+620",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.672
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+629",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.793
+  },
+  {
+   "name": "Bihar",
+   "label": "+843",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.914
+  },
+  {
+   "name": "Tripura",
+   "label": "+875",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 36.035
+  },
+  {
+   "name": "Assam",
+   "label": "+1229",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 36.156
+  }
+ ],
+ "checked": [
+  "Assam: 2.21 in 31 Mar 2020, 29.38 in 31 Aug 2026: +27.17, 13.29 times",
+  "13.3 times: 13.29",
+  "India 4.4 times: 4.36",
+  "thirteen times (hook voice): 13.29",
+  "India four times (hook voice): 4.36",
+  "eleven times by March 2025: 11.43",
+  "Assam +16% since March 2025: 1.16",
+  "India +20% since March 2025: 1.20",
+  "2.2 lakh in March 2020 (tenths): 22.10",
+  "29.4 lakh in August 2026 (tenths): 293.80",
+  "share 0.7% in March 2020 (tenths): 7.13",
+  "share 2.2% in August 2026 (tenths): 21.72",
+  "Assam's multiple is the largest of the 25 states by a clear margin: Tripura is 9.75: 1.36",
+  "Assam's population share, 1 July 2026: 2.6%: 25.76",
+  "Assam's population share, 1 March 2020: 2.6%: 25.71",
+  "March 2020 is not a dip: Assam's count was 2.0 times March 2015: 2.03",
+  "the rise holds in each period: Assam March 2025 to March 2026 +11%: 1.11",
+  "the rise holds in each period: Assam March 2026 to August 2026 +4%: 1.04",
+  "Assam's rise since March 2025 is smaller than India's (16% against 20%): ratio of the two: 0.97"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.537,
+   "at": 0.12,
+   "text": "Assam's registered investors grew thirteen times. India's, over four times."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.067,
+   "at": 7.862,
+   "text": "In March twenty twenty, Assam had two point two lakh registered investors."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.067,
+   "at": 13.668,
+   "text": "By August twenty twenty-six: twenty-nine lakh. Thirteen times as many."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 7.0,
+   "at": 19.475,
+   "text": "Most came by March twenty twenty-five: eleven times. Since then, sixteen percent more."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.179,
+   "at": 27.217,
+   "text": "Assam went from point seven to two point two percent of India's total."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.858,
+   "at": 33.023,
+   "text": "Every state rose. Here is each state's rise, in percent."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.369,
+   "at": 38.83,
+   "text": "Did your state beat India's four point four times?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Assam: Registered Investors Up 13.3 Times Since March 2020"
+}

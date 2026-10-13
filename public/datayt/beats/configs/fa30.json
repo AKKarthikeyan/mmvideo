@@ -1,0 +1,635 @@
+{
+ "id": "fa30",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "RBI · Handbook · end-March 2025",
+ "palette": "O",
+ "state": "Mizoram",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 160, 155, 163 and 152: deposits of regional rural banks, deposits of all scheduled commercial banks (regional rural banks are among them), and bank offices, as at end-March 2018 to 2025. A deposit is counted where the bank office is. State totals as shares, not per person.",
+ "hook": [
+  "*Mizoram*: *33%* of deposits",
+  "in regional rural banks,",
+  "2025. India: *3%*."
+ ],
+ "hook_vo": "In Mizoram, a third of bank deposits sit in regional rural banks.",
+ "facts": [
+  {
+   "state": "Mizoram",
+   "kicker": "RURAL-BANK SHARE OF DEPOSITS",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 50,
+   "text": "of Mizoram's bank deposits sit in regional rural banks: the highest of {n} states and UTs.",
+   "sub": "Regional rural banks: banks set up to serve rural areas. Deposits: savings kept in banks.",
+   "vo": "Highest of twenty-nine states and territories. India's share was three percent."
+  },
+  {
+   "state": "Mizoram",
+   "kicker": "RURAL BRANCHES PER 100 OFFICES",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 60,
+   "text": "of Mizoram's bank offices are branches of regional rural banks: the highest of {n}.",
+   "sub": "Offices of scheduled commercial banks, end-March 2025. Counts of offices, not people.",
+   "vo": "Forty-five of every hundred bank offices there are rural bank branches."
+  },
+  {
+   "state": "Mizoram",
+   "kicker": "AT END-MARCH 2018",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2018"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2018"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Tripura"
+   ],
+   "bar_max": 50,
+   "text": "in 2018, when Tripura's share was higher, at 27%.",
+   "sub": "Regional rural banks' deposits as a share of all bank deposits in the state.",
+   "vo": "At end-March twenty eighteen, Tripura was ahead: twenty-seven percent to twenty-five."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Mizoram",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 33
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "rbi": [
+      160,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Mizoram",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.33
+  },
+  {
+   "kind": "round",
+   "state": "Mizoram",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 45
+  },
+  {
+   "kind": "round",
+   "state": "Mizoram",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2018"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2018"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 25
+  },
+  {
+   "kind": "round",
+   "state": "Tripura",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       160,
+       "2018"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2018"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 27
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2018"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2018"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2018"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2018"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2019"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2019"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2019"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2019"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2020"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2020"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2020"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2020"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2021"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2021"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2021"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2021"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2022"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2022"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2022"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2022"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2023"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2023"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Mizoram",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        160,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.04
+  }
+ ],
+ "so": {
+  "lines": [
+   "Mizoram has had *the highest*",
+   "share in each of *seven years*,",
+   "end-March 2019 to 2025."
+  ],
+  "vo": "Highest in each of the seven years, twenty nineteen to twenty twenty-five."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      160,
+      "2025"
+     ]
+    },
+    {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "title": "Rural-bank share of deposits, *every state*",
+  "sub": "% · India {india} · end-March 2025",
+  "note": "Regional rural banks' deposits as a share of all bank deposits in the state. State totals, not per person. Blank: no figure.",
+  "ring": [
+   "Mizoram",
+   "Tripura"
+  ],
+  "vo": "Every state's share of deposits held in regional rural banks."
+ },
+ "end": {
+  "q": "Is a *rural bank* near you?",
+  "sub": "Comment below.",
+  "vo": "Is a rural bank near you?"
+ },
+ "yt_title": "Mizoram: 33% of Bank Deposits in Regional Rural Banks, 2025"
+}

@@ -28,6 +28,7 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
 One story = one config, public/datayt/beats/configs/<id>.json. Data specs are the same as build_story.py
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table,
 {"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States and {"ls": [table id, column]} for a state table from a Lok Sabha answer.
+{"tbl": [path, column]} for any other state table saved in the Handbook's shape under public/datayt/sources/ (markets: NSE, AMFI; population).
 A figure built from tables: {"ratio": [spec, spec], "scale": 100} (a rate, state by state), {"add": [spec, ...]} and {"minus": [spec, spec]}.
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
@@ -59,7 +60,7 @@ MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2
 MUTE = False      # --mute: the text-led cut, no narration
 SPLITS = {"Telangana": 2014, "Andhra Pradesh": 2014, "Ladakh": 2019, "Jammu and Kashmir": 2019}      # a figure from before a state was split covers a different area
 PAGE = "#F7F4EE"
-BANNED = re.compile(r"\b(truth|reality|secret|exposed|shocking|worst|best|backward|failed|no\.? ?1|number one|today|currently|right now|independent country)\b|#1", re.I)
+BANNED = re.compile(r"\b(truth|reality|secret|exposed|shocking|worst|best|backward|failed|no\.? ?1|number one|today|currently|right now|independent country)\b|#1(?![0-9A-Fa-f])", re.I)      # "#1" as a rank, not the start of a colour code
 NUMBER_WORDS = dict(zip("1 2 3 4 5 6 7 8 9 10 11 12".split(), "one two three four five six seven eight nine ten eleven twelve".split()))
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
 GROUNDWATER = "public/datayt/groundwater/gw_2025.json"
@@ -95,6 +96,12 @@ def series(spec):
         v = {s: r[col] for s, r in t["rows"].items() if col < len(r) and isinstance(r[col], (int, float))}
         tot = (t.get("total") or [None] * (col + 1))[col] if t.get("total") and col < len(t["total"]) else None
         return v, tot if tot is not None else (sum(v.values()) if spec.get("sum") else None)      # "sum": the answer prints no total row, and its rows are the whole country
+    if "tbl" in spec:      # a state table saved in the Handbook's shape under public/datayt/sources/: [path without .json, "exact column name"]
+        path, name = spec["tbl"]
+        t = json.load(open(f"public/datayt/sources/{path}.json"))
+        assert name in t["columns"], f"{path}: no column '{name}'"
+        v = {s: r[name] for s, r in t["states"].items() if r.get(name) is not None}
+        return v, v.pop("India", None)
     if "rbi" in spec:
         no, year = spec["rbi"]
         t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(no):03d}.json"))
@@ -103,6 +110,11 @@ def series(spec):
         v = {s: r[col[0]] for s, r in t["states"].items() if r.get(col[0]) is not None}      # states with no figure that year are left out
         return v, v.pop("India", None)
     return base_series(spec)
+
+
+def year_table(ref):
+    """A table with a column a year: a Handbook table number, or the path of a table saved in the same shape."""
+    return json.load(open(f"public/datayt/sources/{ref}.json" if isinstance(ref, str) and not ref.isdigit() else f"public/datayt/sources/rbi_handbook/T{int(ref):03d}.json"))
 
 
 def tint(c, p, to=PAGE):
@@ -169,9 +181,13 @@ def value(q, st):
     return (100 * v / india if "share" in q else v) * q.get("scale", 1)
 
 
+TESTED = set()      # scripts whose "tests" have run in this build
+
+
 def run_checks(sid, cfg, st):
     """Recompute every spoken or printed comparison listed under "tests"; a failed one stops the build."""
     done = []
+    TESTED.add(sid)
     for k in cfg.get("tests", []):
         v = value(k["value"], st)
         if "equals" in k:
@@ -198,6 +214,9 @@ def house_rules(sid, cfg, beats, extra):
     """What the research and the writer's guide ask of every Short, as far as code can test it. Returns the rules broken."""
     typ, kinds, bad = cfg["type"], [b["kind"] for b in beats], []
     seen = []      # every string a viewer can read
+    for k in [cfg.get("kicker") or ""] + [f.get("kicker") or "" for f in cfg.get("facts", [])]:      # a heading that wraps runs into the state's outline (week four frame check)
+        if len(k) > 33:
+            bad.append(f"a card heading is {len(k)} characters (at most 33, or it wraps onto the state shape): '{k}'")
     def walk(x):
         if isinstance(x, str):
             seen.append(x)
@@ -362,7 +381,7 @@ def build(cfg):
             rho, n = spearman(series(so["weak_link"]["a"])[0], series(so["weak_link"]["b"])[0])
             assert abs(rho) <= so["weak_link"].get("max_abs", 0.3), f"{sid}: rank correlation is {rho:.2f}; 'weakly linked' is not supported"
             ctx = {"n": n, "rho": f"{rho:.2f}"}; checked.append(f"rank correlation across {n} states = {rho:.2f}")
-        beats.append({"kind": "say", "lines": [l.format(**ctx) for l in so["lines"]], "vo": so["vo"].format(**ctx)})
+        beats.append({"kind": "say", "lines": [l.format(**ctx) for l in so["lines"]], "note": so.get("note", ""), "vo": so["vo"].format(**ctx)})
         m = cfg["map"]; vals, india = series(m["data"]); unit = m.get("unit", "%")
         if m.get("as") == "share":
             assert india, f"{sid}: the map has no all-India figure to take a share of"
@@ -409,7 +428,7 @@ def build(cfg):
         extra["checked"] = [f"state rows add up to the all-India row ({sum(vals.values()) / india:.4f})", f"{st0} is first with {sh[st0]:.2f}% of the all-India figure"] + run_checks(sid, cfg, st0)
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
     elif typ == "race":
-        t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(cfg['table']):03d}.json"))
+        t = year_table(cfg["table"])
         yr = lambda c: c.split("|")[-1].strip()
         years = [yr(c) for c in t["columns"]]
         use = [c for c in t["columns"][years.index(cfg["from"]):years.index(cfg["to"]) + 1] if yr(c) not in cfg.get("skip", [])]
@@ -475,7 +494,7 @@ def build(cfg):
             assert abs(cover - 1) < 0.05, f"{sid}: in {what} the state rows add up to {100 * cover:.0f}% of the all-India row"
             return {s_: 100 * v / india for s_, v in vals.items()}, 100.0
         if "table" in cfg:      # a table with a column a year: the years around both dates are tested below
-            t = json.load(open(f"public/datayt/sources/rbi_handbook/T{int(cfg['table']):03d}.json"))
+            t = year_table(cfg["table"])
             years = [c.split("|")[-1].strip() for c in t["columns"]]
             assert len(set(years)) == len(years), f"{sid}: the table has more than one column a year; use 'points' with two data specs"
             col = lambda i: ({s_: r[t["columns"][i]] for s_, r in t["states"].items() if s_ != "India" and r.get(t["columns"][i]) is not None}, t["states"].get("India", {}).get(t["columns"][i]))
@@ -690,6 +709,8 @@ def build(cfg):
            "bands": extra.pop("bands_override", pal["bands"]), "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": [] if MUTE else vo,
            "voiceEngine": "none" if MUTE else V.ENGINE, "voice": "" if MUTE else V.VOICE,
            "ytTitle": cfg.get("yt_title", "")}
+    if sid not in TESTED and cfg.get("tests"):      # a fact or a paradox carries its comparisons under "checks"; any listed under "tests" are run too (found 13 Oct 2026: they were being skipped)
+        run_checks(sid, cfg, cfg.get("state") or cfg.get("a") or "India")
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     hits = [bt["t0"] for bt in beats if bt["kind"] in ("reveal", "score", "map") or (bt["kind"] == "rank" and bt["rank"] == 1) or (bt["kind"] == "pick" and bt["mode"] == "tell")]
     drop_at = hits[0] if hits else beats[-1]["t0"]

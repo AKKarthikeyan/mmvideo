@@ -1,0 +1,502 @@
+{
+ "id": "fa30",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "RBI · Handbook · end-March 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 160, 155, 163 and 152: deposits of regional rural banks, deposits of all scheduled commercial banks (regional rural banks are among them), and bank offices, as at end-March 2018 to 2025. A deposit is counted where the bank office is. State totals as shares, not per person.",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Mizoram*: *33%* of deposits",
+    "in regional rural banks,",
+    "2025. India: *3%*."
+   ],
+   "vo": "In Mizoram, a third of bank deposits sit in regional rural banks.",
+   "geo": "Mizoram",
+   "name": "Mizoram",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Mizoram",
+   "geo": "Mizoram",
+   "kicker": "RURAL-BANK SHARE OF DEPOSITS",
+   "big": "33.4%",
+   "text": "of Mizoram's bank deposits sit in regional rural banks: the highest of 29 states and UTs.",
+   "sub": "Regional rural banks: banks set up to serve rural areas. Deposits: savings kept in banks.",
+   "bars": [
+    {
+     "name": "Mizoram",
+     "label": "33.4%",
+     "frac": 0.6675065857290116
+    },
+    {
+     "name": "India",
+     "label": "2.9%",
+     "frac": 0.05887930830837225
+    }
+   ],
+   "vo": "Highest of twenty-nine states and territories. India's share was three percent.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Mizoram",
+   "geo": "Mizoram",
+   "kicker": "RURAL BRANCHES PER 100 OFFICES",
+   "big": "44.8%",
+   "text": "of Mizoram's bank offices are branches of regional rural banks: the highest of 29.",
+   "sub": "Offices of scheduled commercial banks, end-March 2025. Counts of offices, not people.",
+   "bars": [
+    {
+     "name": "Mizoram",
+     "label": "44.8%",
+     "frac": 0.7468879668049792
+    },
+    {
+     "name": "India",
+     "label": "13.4%",
+     "frac": 0.22328363308423615
+    }
+   ],
+   "vo": "Forty-five of every hundred bank offices there are rural bank branches.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Mizoram",
+   "geo": "Mizoram",
+   "kicker": "AT END-MARCH 2018",
+   "big": "25.4%",
+   "text": "in 2018, when Tripura's share was higher, at 27%.",
+   "sub": "Regional rural banks' deposits as a share of all bank deposits in the state.",
+   "bars": [
+    {
+     "name": "Mizoram",
+     "label": "25.4%",
+     "frac": 0.507321681624941
+    },
+    {
+     "name": "Tripura",
+     "label": "27.0%",
+     "frac": 0.5396003633060854
+    }
+   ],
+   "vo": "At end-March twenty eighteen, Tripura was ahead: twenty-seven percent to twenty-five.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Mizoram has had *the highest*",
+    "share in each of *seven years*,",
+    "end-March 2019 to 2025."
+   ],
+   "note": "",
+   "vo": "Highest in each of the seven years, twenty nineteen to twenty twenty-five.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Rural-bank share of deposits, *every state*",
+   "sub": "% · India 2.9% · end-March 2025",
+   "note": "Regional rural banks' deposits as a share of all bank deposits in the state. State totals, not per person. Blank: no figure.",
+   "anim": true,
+   "ring": [
+    "Mizoram",
+    "Tripura"
+   ],
+   "vo": "Every state's share of deposits held in regional rural banks.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Regional rural banks' deposits as a share of all bank deposits in the state. State totals, not per person. Blank: no figure.",
+   "ring": [
+    "Mizoram",
+    "Tripura"
+   ],
+   "q": "Is a *rural bank* near you?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is a rural bank near you?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Maharashtra",
+   "label": "0.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Ladakh",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.9",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "1.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Gujarat",
+   "label": "2.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Punjab",
+   "label": "2.3",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "West Bengal",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Haryana",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Karnataka",
+   "label": "2.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Kerala",
+   "label": "3.0",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Jharkhand",
+   "label": "3.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Manipur",
+   "label": "3.3",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Telangana",
+   "label": "3.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "3.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Puducherry",
+   "label": "3.9",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "4.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "4.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "4.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Odisha",
+   "label": "4.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Assam",
+   "label": "5.4",
+   "bucket": 3,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "5.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "6.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "7.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Rajasthan",
+   "label": "7.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Bihar",
+   "label": "8.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "10.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Meghalaya",
+   "label": "10.6",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Tripura",
+   "label": "23.9",
+   "bucket": 4,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Mizoram",
+   "label": "33.4",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 34.705
+  }
+ ],
+ "checked": [
+  "Mizoram is the highest of 29 with data (33.4%)",
+  "Mizoram is the highest of 29 with data (44.8%)",
+  "Mizoram 33.3753 rounds to 33",
+  "India 2.94397 rounds to 3",
+  "Mizoram / Mizoram = 0.33 (at least 0.33)",
+  "Mizoram 44.8133 rounds to 45",
+  "Mizoram 25.3661 rounds to 25",
+  "Tripura 26.98 rounds to 27",
+  "Tripura / Mizoram = 1.06 (at least 1.05)",
+  "Mizoram / Tripura = 1.04 (at least 1.04)",
+  "Mizoram / Tripura = 1.13 (at least 1.04)",
+  "Mizoram / Tripura = 1.30 (at least 1.04)",
+  "Mizoram / Tripura = 1.29 (at least 1.04)",
+  "Mizoram / Tripura = 1.44 (at least 1.04)",
+  "Mizoram / Tripura = 1.42 (at least 1.04)",
+  "Mizoram / Tripura = 1.40 (at least 1.04)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "In Mizoram, a third of bank deposits sit in regional rural banks."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.048,
+   "at": 5.926,
+   "text": "Highest of twenty-nine states and territories. India's share was three percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.459,
+   "at": 11.733,
+   "text": "Forty-five of every hundred bank offices there are rural bank branches."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.754,
+   "at": 19.475,
+   "text": "At end-March twenty eighteen, Tripura was ahead: twenty-seven percent to twenty-five."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.048,
+   "at": 25.281,
+   "text": "Highest in each of the seven years, twenty nineteen to twenty twenty-five."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.257,
+   "at": 31.088,
+   "text": "Every state's share of deposits held in regional rural banks."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 36.894,
+   "text": "Is a rural bank near you?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Mizoram: 33% of Bank Deposits in Regional Rural Banks, 2025"
+}

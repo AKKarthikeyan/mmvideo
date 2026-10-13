@@ -1,0 +1,458 @@
+{
+ "id": "tn36",
+ "type": "then",
+ "chip": "9 YEARS ON",
+ "sourceShort": "PFRDA via RBI Handbook · 2015-16, 2024-25",
+ "source": "PFRDA Handbook of NPS Statistics 2024, via RBI Handbook of Statistics on Indian States 2024-25, Table 180: Atal Pension Yojana enrolments in the year; share = women ÷ (women + men). Also Lok Sabha answer 2656, 9 Mar 2026. Blank: Andaman and Nicobar, Arunachal, Chandigarh, Chhattisgarh, Dadra-Daman-Diu, Delhi, Goa, J&K, Karnataka, Kerala, Ladakh, Lakshadweep, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Telangana.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#2F8F5B",
+  "#93C2A4",
+  "#DDD5C8",
+  "#AF736B",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Odisha*: women's share of",
+    "pension enrolees, *36%* to",
+    "*67%*, 2015-16 to 2024-25."
+   ],
+   "vo": "Odisha's Atal Pension Yojana: women's share rose from thirty-six to sixty-seven percent.",
+   "geo": "Odisha",
+   "name": "Odisha",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN'S SHARE OF ENROLMENTS",
+   "big": "+31.1 points",
+   "p0": {
+    "period": "2015-16",
+    "label": "36.1%",
+    "frac": 0.5371664089854632
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "67.2%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of Odisha's Atal Pension Yojana enrolments were women's: 39,987 of 110,846 women and men.",
+   "vo": "Twenty fifteen sixteen: women were thirty-six percent of Odisha's pension enrolees.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN'S SHARE OF ENROLMENTS",
+   "big": "+31.1 points",
+   "p0": {
+    "period": "2015-16",
+    "label": "36.1%",
+    "frac": 0.5371664089854632
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "67.2%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of enrolments were women's: 307,791 of 458,317.",
+   "vo": "Twenty twenty-four twenty-five: sixty-seven percent.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Odisha",
+   "geo": "Odisha",
+   "kicker": "ENROLMENTS IN THE YEAR, ODISHA",
+   "big": "7.7×",
+   "text": "Women's enrolments multiplied 7.7 times in nine years; men's, 2.1 times.",
+   "sub": "Women: 39,987 to 307,791. Men: 70,859 to 150,526. 2015-16 to 2024-25.",
+   "bars": [
+    {
+     "name": "Women",
+     "label": "7.7×",
+     "frac": 0.7697276614899843
+    },
+    {
+     "name": "Men",
+     "label": "2.1×",
+     "frac": 0.21243031936662948
+    }
+   ],
+   "vo": "Women's enrolments multiplied seven point seven times. Men's, two point one.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Women were *more than half*",
+    "of Odisha's enrolees in each",
+    "of the last *four* years."
+   ],
+   "note": "Lok Sabha answer, 2024-25: Odisha 66.5%, India 54.6%. 2025-26 to 31 Jan: Odisha 63.4%.",
+   "vo": "Women have been more than half of Odisha's enrolees for four years.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "In 2024-25, *fewer men*",
+    "enrolled: 187,494 down to",
+    "150,526, a fall of *20%*."
+   ],
+   "note": "Women's enrolments also rose, 265,290 to 307,791, so both moved the share.",
+   "vo": "In twenty twenty-four twenty-five fewer men enrolled: down by a fifth.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "kind": "map",
+   "title": "Women's share of pension enrolments: *change by state*",
+   "sub": "percentage points · 2015-16 to 2024-25",
+   "note": "Blank: 18 states and UTs where Handbook counts differ from Lok Sabha Q 2656, or the boundary changed (named below). Enrolments in a year.",
+   "anim": true,
+   "ring": [
+    "Odisha"
+   ],
+   "vo": "Here is each state's change over the nine years.",
+   "legend": [
+    {
+     "color": "#2F8F5B",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#740A00",
+     "label": "rose"
+    }
+   ],
+   "t0": 36.774,
+   "t1": 40.645
+  },
+  {
+   "note": "Blank: 18 states and UTs where Handbook counts differ from Lok Sabha Q 2656, or the boundary changed (named below). Enrolments in a year.",
+   "ring": [
+    "Odisha"
+   ],
+   "legend": [
+    {
+     "color": "#2F8F5B",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#740A00",
+     "label": "rose"
+    }
+   ],
+   "q": "Have you started a *pension*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Have you started a pension?",
+   "t0": 40.645,
+   "t1": 44.516
+  }
+ ],
+ "total": 44.916,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Gujarat",
+   "label": "−1.0",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.124
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+7.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.234
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+9.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.344
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+9.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.454
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+9.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.564
+  },
+  {
+   "name": "Puducherry",
+   "label": "+10.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 37.674
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+13.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.784
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+14.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.894
+  },
+  {
+   "name": "Punjab",
+   "label": "+14.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 38.004
+  },
+  {
+   "name": "Haryana",
+   "label": "+14.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 38.115
+  },
+  {
+   "name": "Tripura",
+   "label": "+22.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 38.225
+  },
+  {
+   "name": "West Bengal",
+   "label": "+23.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.335
+  },
+  {
+   "name": "Bihar",
+   "label": "+23.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.445
+  },
+  {
+   "name": "Assam",
+   "label": "+25.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 38.555
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+30.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.665
+  },
+  {
+   "name": "Odisha",
+   "label": "+31.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.775
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+33.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.885
+  }
+ ],
+ "checked": [
+  "Odisha: 36.07 in 2015-16, 67.16 in 2024-25: +31.08, 1.86 times",
+  "years = 9",
+  "36% in 2015-16 (hook): 36.07",
+  "67% in 2024-25 (hook): 67.16",
+  "36.1% (tenths): 360.74",
+  "67.2% (tenths): 671.57",
+  "rise of 31 points (hook, voice): 31.08",
+  "rise +31.1 points (tenths): 310.82",
+  "women 39,987 of 110,846 in 2015-16 (card): 39987.00",
+  "women 307,791 in 2024-25 (card): 307791.00",
+  "men 70,859 in 2015-16 (card): 70859.00",
+  "men 150,526 in 2024-25 (card): 150526.00",
+  "women and men enrolments 110,846 in 2015-16: 110846.00",
+  "women and men enrolments 458,317 in 2024-25: 458317.00",
+  "women's enrolments up 7.7 times (tenths): 76.97",
+  "men's enrolments up 2.1 times (tenths): 21.24",
+  "men fell in 2024-25 from 2023-24 (187,494 to 150,526): 36968.00",
+  "men 187,494 in 2023-24 (note): 187494.00",
+  "half or more in 2018-19: 50.17",
+  "half or more in 2019-20: 50.35",
+  "half or more in 2020-21: 50.31",
+  "half or more in 2021-22: 52.44",
+  "half or more in 2022-23: 55.97",
+  "half or more in 2023-24: 58.59",
+  "half or more in 2024-25: 67.16",
+  "2025-26 to 31 Jan: Odisha 63.4% women (Lok Sabha, tenths): 634.27",
+  "Lok Sabha 2024-25: Odisha 66.5% women (tenths): 664.72",
+  "India 2024-25: 54.6% women (Lok Sabha totals, tenths): 546.42",
+  "men fell by about a fifth in 2024-25 (voice): ratio of 2024-25 to 2023-24: 0.80",
+  "men down 20% (screen): 80.28",
+  "women 265,290 in 2023-24 (note): 265290.00",
+  "more than half in 2021-22 with a margin (voice: last four years): 52.44",
+  "Handbook share within 1 point of the Lok Sabha share, 2022-23 (Odisha cross-check): 0.09",
+  "Handbook share within 1 point of the Lok Sabha share, 2023-24 (Odisha cross-check): 0.46",
+  "Handbook share within 1 point of the Lok Sabha share, 2024-25 (Odisha cross-check): 0.69"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.146,
+   "at": 0.12,
+   "text": "Odisha's Atal Pension Yojana: women's share rose from thirty-six to sixty-seven percent."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 6.217,
+   "at": 5.926,
+   "text": "Twenty fifteen sixteen: women were thirty-six percent of Odisha's pension enrolees."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.048,
+   "at": 13.668,
+   "text": "Twenty twenty-four twenty-five: sixty-seven percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.937,
+   "at": 19.475,
+   "text": "Women's enrolments multiplied seven point seven times. Men's, two point one."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.866,
+   "at": 25.281,
+   "text": "Women have been more than half of Odisha's enrolees for four years."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.989,
+   "at": 31.088,
+   "text": "In twenty twenty-four twenty-five fewer men enrolled: down by a fifth."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.768,
+   "at": 36.894,
+   "text": "Here is each state's change over the nine years."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 1.567,
+   "at": 40.765,
+   "text": "Have you started a pension?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Odisha: Women's Share of Atal Pension Enrolments, 36% to 67%"
+}

@@ -1,0 +1,460 @@
+{
+ "id": "fa55",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "AMFI Sep 2025 · RBI end-March 2025",
+ "palette": "E",
+ "state": "Maharashtra",
+ "source": "Association of Mutual Funds in India (AMFI), Classified Average AUM, State Wise: average assets of all mutual fund schemes, September 2025, on AMFI's state list before its March 2026 revision. RBI Handbook of Statistics on Indian States 2024-25, Table 155: bank deposits, end-March 2025, counted where the bank office is. Two publishers, two dates. AMFI's files do not say how a state is assigned; its Factbook 2026 (p. 51) puts non-individual investors at 52% of Maharashtra's assets, March 2026.",
+ "hook": [
+  "*Maharashtra*: *₹60* of",
+  "mutual-fund assets per ₹100",
+  "of bank deposits. India: ₹33."
+ ],
+ "hook_vo": "For every hundred rupees in bank deposits, Maharashtra recorded sixty in mutual funds.",
+ "facts": [
+  {
+   "state": "Maharashtra",
+   "kicker": "FUND ASSETS PER ₹100 OF DEPOSITS",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 70,
+   "text": "rupees of fund assets recorded in Maharashtra per ₹100 of deposits there. Highest of {n}.",
+   "sub": "Mutual fund: money pooled by a fund house. Assets: AMFI, Sep 2025. Deposits: RBI, end-March 2025.",
+   "vo": "Sixty rupees of fund assets per hundred of bank deposits. India, thirty-three."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "THE NEXT STATE · SAME MEASURE",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 70,
+   "text": "rupees per ₹100 in Gujarat, the next highest. Maharashtra's is 1.4 times as much.",
+   "sub": "Same measure: fund assets Sep 2025 per ₹100 of bank deposits, end-March 2025.",
+   "vo": "Gujarat came next, at forty-three. Maharashtra's was one point four times that."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "A MIDDLE STATE · SAME MEASURE",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 70,
+   "text": "rupees per ₹100 in Telangana, near the middle of the 35. Maharashtra's is 3.9 times that.",
+   "sub": "Same measure: fund assets Sep 2025 per ₹100 of bank deposits, end-March 2025.",
+   "vo": "Telangana, near the middle, recorded fifteen. Maharashtra's was three point nine times that."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 60
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 33
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 43
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.35
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2024"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2024"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2023"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2023"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.5
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2024"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2024"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 59
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2023"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2023"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 50
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/amfi_aum_total",
+       "Sep 2025"
+      ]
+     },
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/amfi_aum_total",
+        "Sep 2025"
+       ]
+      },
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 3.85
+  }
+ ],
+ "so": {
+  "lines": [
+   "Highest in each of three",
+   "Septembers: *₹50* (2023), *₹59*,",
+   "*₹60* (2025) per ₹100 of deposits."
+  ],
+  "vo": "It was the highest in each of the three years to twenty twenty-five.",
+  "note": "AMFI's Factbook 2026: investors other than individuals held 52% of the fund assets recorded in Maharashtra, March 2026."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "markets/amfi_aum_total",
+      "Sep 2025"
+     ]
+    },
+    {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "Fund assets per ₹100 of deposits, *every state*",
+  "sub": "₹ per ₹100 · India 33.2 · assets Sep 2025, deposits end-March 2025",
+  "note": "Not per person. AMFI does not say how a state is assigned, and revised its list in March 2026. Blank: Dadra and Nagar Haveli, Daman and Diu.",
+  "ring": [
+   "Maharashtra",
+   "Gujarat"
+  ],
+  "vo": "Here is every state: fund assets for each hundred of deposits."
+ },
+ "end": {
+  "q": "What is *your state's* number?",
+  "sub": "Find it on the map. Comment below.",
+  "vo": "What is your state's number?"
+ },
+ "yt_title": "Maharashtra: ₹60 in Mutual Funds per ₹100 in Bank Deposits"
+}

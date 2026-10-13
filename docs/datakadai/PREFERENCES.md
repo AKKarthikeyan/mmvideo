@@ -109,6 +109,11 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - AK: "every week required 14" and "keep every day one theme. in that 2 days Financial related data has to come."
 - So: 14 Shorts a week, two a day; each day has one theme; two of the seven days carry finance data (Money on day 1,
   Economy on day 4). The theme names and which day each falls on were chosen by Claude and can be changed by AK.
+- Week four (AK, 13 Oct 2026): "go ahead with week 4 but include more of Market and Money datas this time." That week carries its own
+  themes: Money on two days and a new theme, Markets (share-market investors, mutual funds), on two. Which days, and whether later
+  weeks keep a Markets day, are open: AK asked only for more market and money data in week four. See `ops/WEEK-04.md`.
+- Market data rules: no advice and no forecast; an investor is "registered in" a state, never "lives in"; say what a registered
+  investor or a fund's assets count, on the card.
 - The plan lives in `public/datayt/bank/themes.json` and is checked by `scripts/datayt/week_plan.py`, which writes
   `ops/PLAN.md`. A week is not finished until that check shows no empty slot.
 

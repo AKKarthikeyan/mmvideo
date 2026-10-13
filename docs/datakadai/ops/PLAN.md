@@ -15,6 +15,7 @@ This page is the posting order. It replaces the orders in `WEEK-01.md`, `WEEK-02
 | 5 | Power and connections |  | electricity, renewables, telecom, water |
 | 6 | School and health |  | schooling, children's health, hospitals, the body |
 | 7 | Know your states |  | a game, a place story, or what a state is known for |
+| | Markets | yes | share-market investors, mutual funds, state bonds (only in a week that lists it) |
 
 ## Week 1 (14 of 14)
 
@@ -73,11 +74,30 @@ This page is the posting order. It replaces the orders in `WEEK-01.md`, `WEEK-02
 | 7 | Know your states | first | hl02 | Rajasthan or West Bengal: Foreign Tourist Visits? 4 Rounds | game | 43 s | Watch with sound. Read the 2026 tourism compendium before posting: round one uses 2024 visits and a 2025 figure is out (the winner holds on the provisional number). Add the source link. |
 | 7 | Know your states | second | fa06 | Assam: 41% of India's Handloom Weavers, 2019-20 Census | one state, one fact | 37 s | Watch with sound. Re-read both annexures in the PDFs. The loom card has no printed reference year: keep or drop it. Add the source link. |
 
+## Week 4 (14 of 14)
+
+This week carries its own themes. AK, 13 Oct 2026: "go ahead with week 4 but include more of Market and Money datas this time." Money runs on two days and the new theme Markets on two; Women, Power and connections, and School and health return in week five. `fa12` could not run here: it must stay 14 days from `px09`.
+
+| Day | Theme | Slot | ID | Title | Format | Length | Before posting |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Money | first | px37 | Delhi: Women Hold 57% of Mudra Loans, 19% of the Money | paradox | 39 s | Watch with sound. Re-read the Delhi row and the total row of Lok Sabha Q 2407, Annexure I. AK to sign off the hook: women's share of loan accounts against their share of the money, led by Delhi. Add the source link. |
+| 1 | Money | second | fa35 | Tamil Nadu: 5% of People, 36% of Public Bank Gold Loans | one state, one fact | 43 s | Watch with sound. Re-read Tamil Nadu, Andhra Pradesh and Kerala in Lok Sabha Q 3648, Annexure I, and Tamil Nadu and India in the population report's Table 8 (1 March 2026). AK to sign off the Kerala comparison card. Add the source link. |
+| 2 | Markets | first | px52 | Gujarat vs Uttar Pradesh: Fewer Registered, More Who Traded | paradox | 43 s | Watch with sound. Re-read Market Pulse Sept 2026 p. 299 and Nov 2025 pp. 252, 309. NSE's October issue is due: refresh or post before it. AK to decide on the ten-state closing map. Add the source link. |
+| 2 | Markets | second | fa55 | Maharashtra: ₹60 in Mutual Funds per ₹100 in Bank Deposits | one state, one fact | 43 s | Watch with sound. Re-read AMFI's Sep 2025 file (Maharashtra, Gujarat, Telangana, total) and RBI Table 155 for 2025. RBI's end-March 2026 deposits are out and not read. Add the source link. |
+| 3 | Farm and food | first | rc01 | Andhra Pradesh: More Fish Than Any 3 Other States Combined | race | 39 s | Watch with sound. |
+| 3 | Farm and food | second | tn05 | Chhattisgarh Grew 60% More Rice per Hectare in 10 Years | then and now | 37 s | Watch with sound. Add the source link. |
+| 4 | Economy | first | fa40 | Haryana: GST Collected Was 9.2% of State Output, 2024-25 | one state, one fact | 39 s | Watch with sound. Re-read Haryana, Kerala and Maharashtra in Lok Sabha Q 1575, Annexure A, and in Handbook Table 21 (2024-25, an early estimate). 'Recorded where the taxpayer is registered' is our reading of GST law, not the answer's words. Add the source link. |
+| 4 | Economy | second | tn41 | Tamil Nadu's Share of India's FDI Equity: 3.9% to 8.0% | then and now | 39 s | Watch with sound. Re-read Tamil Nadu in Lok Sabha Q 328, Annexures III and IV, and the 4.2% in DPIIT's March 2020 fact sheet, Annexure C. Add the source link. |
+| 5 | Money | first | fa30 | Mizoram: 33% of Bank Deposits in Regional Rural Banks, 2025 | one state, one fact | 41 s | Watch with sound. Re-read Mizoram 2025 in Handbook Tables 160, 155, 163 and 152. RBI's end-March 2026 state tables are out and not read. Add the source link. |
+| 5 | Money | second | tn36 | Odisha: Women's Share of Atal Pension Enrolments, 36% to 67% | then and now | 45 s | Watch with sound. Re-read Odisha in Handbook Table 180 (2015-16, 2024-25) and Lok Sabha Q 2656. AK to decide: the closing map shows 17 of 35 states because the Handbook's counts disagree with the Finance Ministry's for the rest. Add the source link. |
+| 6 | Markets | first | fa50 | Delhi: 25 Registered Investors per 100 Projected Population | one state, one fact | 39 s | Watch with sound. Re-read Delhi and India in Market Pulse Sept 2026, Table 70, and the population report's Table 11 (1 July 2026). AK to sign off the title: registered investors include companies and are not Delhi residents who invest. NSE's October issue is due. Add the source link. |
+| 6 | Markets | second | tn51 | Assam: Registered Investors Up 13.3 Times Since March 2020 | then and now | 43 s | Watch with sound. Re-read Assam and India in Market Pulse Sept 2026, Table 70, and Assam's March 2026 figure in April 2026, Table 43. NSE's October issue is due. Add the source link. |
+| 7 | Know your states | first | px46 | Karnataka vs Tamil Nadu: 381 vs 371 STP Units, 6x Exports | paradox | 45 s | Watch with sound. Re-read Karnataka, Tamil Nadu, Maharashtra and the total in Lok Sabha Starred Q 344 (units and exports, 2024-25). AK to sign off the per-unit card and 'STP' in the title; on the wider STPI count the gap is about five times. Add the source link. |
+| 7 | Know your states | second | fa48 | Himachal: 26.5% of India's Large-Hydro Electricity, 2024-25 | one state, one fact | 39 s | Watch with sound. Re-read Himachal Pradesh and the all-India total on page 12 of Lok Sabha Starred Q 284, Annexure-II. AK to decide whether 'large-hydro' is plain enough. Add the source link. |
+
 ## Built, waiting for a later week
 
 - `px04` (Power and connections): Power Available per Person: Chhattisgarh 1.9x West Bengal
-- `rc01` (Farm and food): Andhra Pradesh: More Fish Than Any 3 Other States Combined
-- `tn05` (Farm and food): Chhattisgarh Grew 60% More Rice per Hectare in 10 Years
 - `sh02` (Farm and food): Maharashtra: 36% of India's Cotton Area, 25% of the Crop
 - `fa07` (Farm and food): Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4
 - `fa12` (Money): Delhi: Highest Deposits per Bank Office, ₹520 Crore, 2025
@@ -112,6 +132,27 @@ This page is the posting order. It replaces the orders in `WEEK-01.md`, `WEEK-02
 - `tn14` and `fa13`: at least 7 days (both Madhya Pradesh crops).
 - `tn12` and `tn22`: at least 7 days (both Karnataka).
 - `px02` and `tn22`: at least 7 days (both rural wages).
+- `fa35` and `tn41`: at least 3 days (both Tamil Nadu).
+- `tn41` and `px46`: at least 3 days (both Tamil Nadu).
+- `fa35` and `px46`: at least 3 days (both Tamil Nadu).
+- `px09` and `px46`: at least 10 days (Karnataka against Tamil Nadu, the same shape).
+- `px09` and `fa35`: at least 4 days (both Tamil Nadu).
+- `fa12` and `px37`: at least 7 days (both Delhi, Money).
+- `fa12` and `fa50`: at least 7 days (both Delhi).
+- `px37` and `fa50`: at least 5 days (both Delhi).
+- `fa50` and `px52`: at least 4 days (both registered investors).
+- `tn51` and `px52`: at least 4 days (both registered investors).
+- `tn36` and `px37`: at least 4 days (both women's share of a scheme).
+- `tn36` and `tn10`: at least 7 days (both Odisha women).
+- `tn36` and `tn13`: at least 7 days (both Odisha women).
+- `fa48` and `fa17`: at least 7 days (both Himachal Pradesh).
+- `fa48` and `px08`: at least 7 days (both Himachal Pradesh).
+- `fa48` and `fa10`: at least 7 days (a state's share of one kind of electricity).
+- `tn05` and `tn02`: at least 7 days (both rice).
+- `tn51` and `fa06`: at least 4 days (both open on Assam).
+- `fa40` and `px07`: at least 7 days (both Haryana).
+- `fa55` and `fa11`: at least 7 days (both Maharashtra money).
+- `fa55` and `sh02`: at least 4 days (both Maharashtra).
 
 ## Problems the check found
 

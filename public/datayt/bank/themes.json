@@ -99,7 +99,19 @@
   "fa15": "school_health",
   "tn20": "school_health",
   "tn23": "school_health",
-  "fa17": "women"
+  "fa17": "women",
+  "px37": "money",
+  "fa35": "money",
+  "fa30": "money",
+  "tn36": "money",
+  "px52": "markets",
+  "fa55": "markets",
+  "fa50": "markets",
+  "tn51": "markets",
+  "fa40": "economy",
+  "tn41": "economy",
+  "px46": "states",
+  "fa48": "states"
  },
  "weeks": [
   {
@@ -198,6 +210,49 @@
     [
      "hl02",
      "fa06"
+    ]
+   ]
+  },
+  {
+   "week": 4,
+   "themes": [
+    "money",
+    "markets",
+    "farm",
+    "economy",
+    "money",
+    "markets",
+    "states"
+   ],
+   "why": "This week carries its own themes. AK, 13 Oct 2026: \"go ahead with week 4 but include more of Market and Money datas this time.\" Money runs on two days and the new theme Markets on two; Women, Power and connections, and School and health return in week five. `fa12` could not run here: it must stay 14 days from `px09`.",
+   "days": [
+    [
+     "px37",
+     "fa35"
+    ],
+    [
+     "px52",
+     "fa55"
+    ],
+    [
+     "rc01",
+     "tn05"
+    ],
+    [
+     "fa40",
+     "tn41"
+    ],
+    [
+     "fa30",
+     "tn36"
+    ],
+    [
+     "fa50",
+     "tn51"
+    ],
+    [
+     "px46",
+     "fa48"
     ]
    ]
   }
@@ -370,12 +425,136 @@
    "tn22",
    7,
    "both rural wages"
+  ],
+  [
+   "fa35",
+   "tn41",
+   3,
+   "both Tamil Nadu"
+  ],
+  [
+   "tn41",
+   "px46",
+   3,
+   "both Tamil Nadu"
+  ],
+  [
+   "fa35",
+   "px46",
+   3,
+   "both Tamil Nadu"
+  ],
+  [
+   "px09",
+   "px46",
+   10,
+   "Karnataka against Tamil Nadu, the same shape"
+  ],
+  [
+   "px09",
+   "fa35",
+   4,
+   "both Tamil Nadu"
+  ],
+  [
+   "fa12",
+   "px37",
+   7,
+   "both Delhi, Money"
+  ],
+  [
+   "fa12",
+   "fa50",
+   7,
+   "both Delhi"
+  ],
+  [
+   "px37",
+   "fa50",
+   5,
+   "both Delhi"
+  ],
+  [
+   "fa50",
+   "px52",
+   4,
+   "both registered investors"
+  ],
+  [
+   "tn51",
+   "px52",
+   4,
+   "both registered investors"
+  ],
+  [
+   "tn36",
+   "px37",
+   4,
+   "both women's share of a scheme"
+  ],
+  [
+   "tn36",
+   "tn10",
+   7,
+   "both Odisha women"
+  ],
+  [
+   "tn36",
+   "tn13",
+   7,
+   "both Odisha women"
+  ],
+  [
+   "fa48",
+   "fa17",
+   7,
+   "both Himachal Pradesh"
+  ],
+  [
+   "fa48",
+   "px08",
+   7,
+   "both Himachal Pradesh"
+  ],
+  [
+   "fa48",
+   "fa10",
+   7,
+   "a state's share of one kind of electricity"
+  ],
+  [
+   "tn05",
+   "tn02",
+   7,
+   "both rice"
+  ],
+  [
+   "tn51",
+   "fa06",
+   4,
+   "both open on Assam"
+  ],
+  [
+   "fa40",
+   "px07",
+   7,
+   "both Haryana"
+  ],
+  [
+   "fa55",
+   "fa11",
+   7,
+   "both Maharashtra money"
+  ],
+  [
+   "fa55",
+   "sh02",
+   4,
+   "both Maharashtra"
   ]
  ],
  "stock": [
   "px04",
-  "rc01",
-  "tn05",
   "sh02",
   "fa07",
   "fa12"
@@ -394,6 +573,26 @@
   "tn23": "Watch with sound. AK to confirm pregnancy care is an allowed topic. Read the row and its base in the NFHS-6 sheets for Jharkhand and India. Add the source link.",
   "fa17": "Watch with sound. Re-read the survey's state tables. AK to decide whether to refresh to the 2025 report (about 65%, still top five). Add the source link.",
   "tn11": "Watch with sound. MNRE has a March 2026 capacity table: consider ending the story there. Add the source link.",
-  "px07": "Watch with sound. Re-read the labour force survey's 2023-24 state table. AK to sign off: it sets Haryana's share of women at work against Tamil Nadu's. Add the source link."
- }
+  "px07": "Watch with sound. Re-read the labour force survey's 2023-24 state table. AK to sign off: it sets Haryana's share of women at work against Tamil Nadu's. Add the source link.",
+  "px37": "Watch with sound. Re-read the Delhi row and the total row of Lok Sabha Q 2407, Annexure I. AK to sign off the hook: women's share of loan accounts against their share of the money, led by Delhi. Add the source link.",
+  "fa35": "Watch with sound. Re-read Tamil Nadu, Andhra Pradesh and Kerala in Lok Sabha Q 3648, Annexure I, and Tamil Nadu and India in the population report's Table 8 (1 March 2026). AK to sign off the Kerala comparison card. Add the source link.",
+  "px52": "Watch with sound. Re-read Market Pulse Sept 2026 p. 299 and Nov 2025 pp. 252, 309. NSE's October issue is due: refresh or post before it. AK to decide on the ten-state closing map. Add the source link.",
+  "fa55": "Watch with sound. Re-read AMFI's Sep 2025 file (Maharashtra, Gujarat, Telangana, total) and RBI Table 155 for 2025. RBI's end-March 2026 deposits are out and not read. Add the source link.",
+  "fa40": "Watch with sound. Re-read Haryana, Kerala and Maharashtra in Lok Sabha Q 1575, Annexure A, and in Handbook Table 21 (2024-25, an early estimate). 'Recorded where the taxpayer is registered' is our reading of GST law, not the answer's words. Add the source link.",
+  "tn41": "Watch with sound. Re-read Tamil Nadu in Lok Sabha Q 328, Annexures III and IV, and the 4.2% in DPIIT's March 2020 fact sheet, Annexure C. Add the source link.",
+  "fa30": "Watch with sound. Re-read Mizoram 2025 in Handbook Tables 160, 155, 163 and 152. RBI's end-March 2026 state tables are out and not read. Add the source link.",
+  "tn36": "Watch with sound. Re-read Odisha in Handbook Table 180 (2015-16, 2024-25) and Lok Sabha Q 2656. AK to decide: the closing map shows 17 of 35 states because the Handbook's counts disagree with the Finance Ministry's for the rest. Add the source link.",
+  "fa50": "Watch with sound. Re-read Delhi and India in Market Pulse Sept 2026, Table 70, and the population report's Table 11 (1 July 2026). AK to sign off the title: registered investors include companies and are not Delhi residents who invest. NSE's October issue is due. Add the source link.",
+  "tn51": "Watch with sound. Re-read Assam and India in Market Pulse Sept 2026, Table 70, and Assam's March 2026 figure in April 2026, Table 43. NSE's October issue is due. Add the source link.",
+  "px46": "Watch with sound. Re-read Karnataka, Tamil Nadu, Maharashtra and the total in Lok Sabha Starred Q 344 (units and exports, 2024-25). AK to sign off the per-unit card and 'STP' in the title; on the wider STPI count the gap is about five times. Add the source link.",
+  "fa48": "Watch with sound. Re-read Himachal Pradesh and the all-India total on page 12 of Lok Sabha Starred Q 284, Annexure-II. AK to decide whether 'large-hydro' is plain enough. Add the source link."
+ },
+ "more_themes": [
+  {
+   "key": "markets",
+   "name": "Markets",
+   "finance": true,
+   "covers": "share-market investors, mutual funds, state bonds"
+  }
+ ]
 }

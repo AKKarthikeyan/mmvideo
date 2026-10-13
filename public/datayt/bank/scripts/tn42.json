@@ -1,0 +1,964 @@
+{
+ "id": "tn42",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Labour Bureau · rural wages · 2014-15 to 2024-25",
+ "palette": "D",
+ "state": "Andhra Pradesh",
+ "table": 112,
+ "from": "2014-15",
+ "to": "2024-25",
+ "measure": "value",
+ "unit": "₹",
+ "delta": "times",
+ "kicker": "RURAL CONSTRUCTION WAGE · MEN",
+ "expect": {
+  "years": 10
+ },
+ "source": "Labour Bureau, Indian Labour Journal, via RBI Handbook of Statistics on Indian States 2024-25, Tables 112, 113, 115: average daily wage in rural areas, men, current rupees, not adjusted for prices. India is the average of all quotations, not weighted. Both years come from the Bureau's earlier village sample (a new sample began July 2025). Telangana has no separate row; Andhra Pradesh is as the Bureau labels it. Blank on the map: Jammu and Kashmir (boundary changed 2019).",
+ "hook": [
+  "*Andhra Pradesh*: rural men's",
+  "construction wage *2.3×* vs",
+  "India's *1.6×*, before prices."
+ ],
+ "hook_vo": "Andhra Pradesh's rural construction wage outpaced India's over ten years, before price changes.",
+ "then": {
+  "text": "a day, before price changes, for rural men in construction. India's: ₹275.",
+  "vo": "In twenty fourteen-fifteen: two hundred and thirty-eight rupees a day."
+ },
+ "now": {
+  "text": "a day, before price changes. India's average: ₹441.",
+  "vo": "Ten years on: five hundred and fifty-four rupees a day."
+ },
+ "facts": [
+  {
+   "kicker": "AGAINST INDIA'S AVERAGE",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of India's average rural construction wage in *2024-25*",
+   "bars": [
+    {
+     "name": "2014-15",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2014-15"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2014-15"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2019-20",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2019-20"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2019-20"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2021-22",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2021-22"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2021-22"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2024-25",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2024-25"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2024-25"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 140,
+   "sub": "Each against India's average of all wage quotations, same year. Rural men, construction.",
+   "vo": "From eighty-six percent of India's wage to a hundred and twenty-six."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Three rural jobs for men:",
+    "Andhra Pradesh *2.1× to 2.3×*,",
+    "India *1.6× to 1.8×*."
+   ],
+   "note": "Construction, farm labour, non-farm labour. Current rupees, before price changes, 2014-15 to 2024-25.",
+   "vo": "Three rural jobs, all over double. India's, all under two times."
+  }
+ ],
+ "tests": [
+  {
+   "says": "2.3 times, construction",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 23
+  },
+  {
+   "says": "India 1.6 times, construction",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 16
+  },
+  {
+   "says": "2.1 times, farm labour",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 21
+  },
+  {
+   "says": "India 1.8 times, farm labour",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 18
+  },
+  {
+   "says": "non-farm labour: over double",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "min": 2.0,
+   "max": 2.2
+  },
+  {
+   "says": "non-farm labour 2.1",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 21
+  },
+  {
+   "says": "India non-farm labour 1.7",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 17
+  },
+  {
+   "says": "construction: over double",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "min": 2.0,
+   "max": 2.5
+  },
+  {
+   "says": "farm labour: over double",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "min": 2.0,
+   "max": 2.5
+  },
+  {
+   "says": "India construction: under two",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 1.0,
+   "max": 1.99
+  },
+  {
+   "says": "India farm: under two",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 1.0,
+   "max": 1.99
+  },
+  {
+   "says": "India non-farm: under two",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 1.0,
+   "max": 1.99
+  },
+  {
+   "says": "86% of India in 2014-15",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 86
+  },
+  {
+   "says": "126% of India in 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 126
+  },
+  {
+   "says": "₹238 in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 238
+  },
+  {
+   "says": "₹554 in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 554
+  },
+  {
+   "says": "India ₹275 in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 275
+  },
+  {
+   "says": "India ₹441 in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 441
+  },
+  {
+   "says": "95% of India in 2019-20 (mid-year bar)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 95
+  },
+  {
+   "says": "110% of India in 2021-22 (mid-year bar; the one big step: 97.5 to 109.6)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2021-22"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2021-22"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 110
+  },
+  {
+   "says": "start is not a dip: 2015-16 is above 2014-15 (89%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2015-16"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2015-16"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 86.5,
+   "max": 100
+  },
+  {
+   "says": "start is not a dip: 2016-17 is above 2014-15 (91%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 86.5,
+   "max": 100
+  },
+  {
+   "says": "holds in 2022-23 (123%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 120,
+   "max": 130
+  },
+  {
+   "says": "holds in 2023-24 (126%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 120,
+   "max": 130
+  },
+  {
+   "says": "holds in 2024-25 (126%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 120,
+   "max": 130
+  },
+  {
+   "says": "farm labour 116% of India in 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 110,
+   "max": 120
+  },
+  {
+   "says": "non-farm labour 115% of India in 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 110,
+   "max": 120
+  },
+  {
+   "says": "farm labour below India in 2014-15 (97%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 90,
+   "max": 100
+  },
+  {
+   "says": "non-farm labour below India in 2014-15 (93%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 90,
+   "max": 100
+  },
+  {
+   "says": "AP's wage grew 1.45 times as fast as India's (2.33 / 1.60)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.4,
+   "max": 1.5
+  }
+ ],
+ "map": {
+  "bands": [
+   40,
+   60,
+   80,
+   100
+  ],
+  "title": "Rural construction wage: *each state's change*",
+  "sub": "% change in current rupees · {from} to {to}",
+  "note": "Not adjusted for prices. Blank: Jammu and Kashmir (boundary changed 2019), Telangana (no row) and states with no figure for both years.",
+  "ring": [
+   "Odisha"
+  ],
+  "vo": "Each state's change in the rural construction wage, in ten years."
+ },
+ "end": {
+  "q": "Is your wage *keeping up*?",
+  "sub": "Spot your state on the map.",
+  "vo": "Is your wage keeping up?"
+ },
+ "yt_title": "Andhra Pradesh: Rural Construction Wage 2.3x vs India's 1.6x"
+}

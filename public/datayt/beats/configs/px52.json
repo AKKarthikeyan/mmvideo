@@ -1,0 +1,652 @@
+{
+ "id": "px52",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "NSE · Market Pulse · Aug 2026",
+ "palette": "A",
+ "state": "Gujarat",
+ "source": "National Stock Exchange of India, NSE Market Pulse. Registered investors (distinct PANs, traded or not, not only individuals, state by PIN code): Sept 2026 Table 70 (31 Aug 2026), Nov 2025 Table 60 (31 Oct 2025). Individual investors (individuals, proprietorships, HUF) who traded at least once in the month in the cash market, top ten states: Sept 2026 Figures 329, 331 (Aug 2026); Nov 2025 Figure 395 (Oct 2025). Two different counts; two months.",
+ "hook": [
+  "*Gujarat*: fewer registered",
+  "investors than *Uttar Pradesh*,",
+  "more who traded, Aug 2026."
+ ],
+ "hook_vo": "Gujarat had fewer registered investors than Uttar Pradesh, yet more traded in August.",
+ "facts": [
+  {
+   "state": "Gujarat",
+   "kicker": "SHARE OF REGISTERED INVESTORS",
+   "data": {
+    "tbl": [
+     "markets/nse_investors",
+     "Aug 2026"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 20,
+   "text": "of India's registered investors are recorded in Gujarat. Uttar Pradesh: 11.9%.",
+   "sub": "Registered investor: any PAN registered with NSE, traded or not, not only individuals. State by PIN code.",
+   "vo": "Gujarat: eight point five percent. Uttar Pradesh: eleven point nine."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "SHARE OF THOSE WHO TRADED",
+   "data": {
+    "tbl": [
+     "markets/nse_cash_activity_top10_aug2026",
+     "Aug 2026 share of active investors (%)"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 20,
+   "text": "of individual investors who traded in August 2026 were recorded in Gujarat. Uttar Pradesh: 8.8%.",
+   "sub": "19.9 lakh against 11.5 lakh who traded at least once that month, cash market.",
+   "vo": "Of those who traded: Gujarat fifteen percent, Uttar Pradesh nine."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "TRADED PER 100 REGISTERED",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 10000,
+    "min_states": 8
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 20,
+   "text": "individual investors traded per 100 registered PANs. The highest of the {n} states NSE lists.",
+   "sub": "Traded at least once in August 2026, over all registered PANs: two different counts.",
+   "vo": "Per hundred registered, seventeen traded. In Uttar Pradesh, seven."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    }
+   },
+   "min": 1.39
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "tbl": [
+      "markets/nse_cash_activity_top10_aug2026",
+      "Aug 2026 active individual investors in cash market (lakh)"
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "tbl": [
+      "markets/nse_cash_activity_top10_aug2026",
+      "Aug 2026 active individual investors in cash market (lakh)"
+     ]
+    }
+   },
+   "min": 1.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "tbl": [
+      "markets/nse_cash_activity_top10_aug2026",
+      "Aug 2026 share of active investors (%)"
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "tbl": [
+      "markets/nse_cash_activity_top10_aug2026",
+      "Aug 2026 share of active investors (%)"
+     ]
+    }
+   },
+   "min": 1.7
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_cash_activity_top10_aug2026",
+        "Aug 2026 active individual investors in cash market (lakh)"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      }
+     ],
+     "scale": 10000,
+     "min_states": 8
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "markets/nse_cash_activity_top10_aug2026",
+        "Aug 2026 active individual investors in cash market (lakh)"
+       ]
+      },
+      {
+       "tbl": [
+        "markets/nse_investors",
+        "Aug 2026"
+       ]
+      }
+     ],
+     "scale": 10000,
+     "min_states": 8
+    }
+   },
+   "min": 1.6
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "tbl": [
+     "markets/nse_cash_activity_top10_aug2026",
+     "Aug 2026 share of active investors (%)"
+    ]
+   },
+   "equals": 15
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "tbl": [
+     "markets/nse_cash_activity_top10_aug2026",
+     "Aug 2026 share of active investors (%)"
+    ]
+   },
+   "equals": 9
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 10000,
+    "min_states": 8
+   },
+   "equals": 17
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 10000,
+    "min_states": 8
+   },
+   "equals": 7
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 10000,
+    "min_states": 8
+   },
+   "equals": 11
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 100000,
+    "min_states": 8
+   },
+   "equals": 172
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "markets/nse_cash_activity_top10_aug2026",
+       "Aug 2026 active individual investors in cash market (lakh)"
+      ]
+     },
+     {
+      "tbl": [
+       "markets/nse_investors",
+       "Aug 2026"
+      ]
+     }
+    ],
+    "scale": 100000,
+    "min_states": 8
+   },
+   "equals": 71
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "values": {
+       "Maharashtra": 24.0,
+       "Gujarat": 20.6,
+       "Uttar Pradesh": 12.5,
+       "Rajasthan": 8.6,
+       "Tamil Nadu": 8.4,
+       "West Bengal": 8.2,
+       "Karnataka": 7.9,
+       "Delhi": 6.6,
+       "Madhya Pradesh": 5.3,
+       "Haryana": 5.1
+      }
+     },
+     {
+      "values": {
+       "Maharashtra": 19421,
+       "Gujarat": 10518,
+       "Uttar Pradesh": 14085,
+       "Rajasthan": 6965,
+       "Tamil Nadu": 6835,
+       "West Bengal": 7193,
+       "Karnataka": 6755,
+       "Delhi": 5207,
+       "Madhya Pradesh": 5880,
+       "Haryana": 4109
+      }
+     }
+    ],
+    "scale": 100000,
+    "min_states": 8
+   },
+   "equals": 196
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "values": {
+       "Maharashtra": 24.0,
+       "Gujarat": 20.6,
+       "Uttar Pradesh": 12.5,
+       "Rajasthan": 8.6,
+       "Tamil Nadu": 8.4,
+       "West Bengal": 8.2,
+       "Karnataka": 7.9,
+       "Delhi": 6.6,
+       "Madhya Pradesh": 5.3,
+       "Haryana": 5.1
+      }
+     },
+     {
+      "values": {
+       "Maharashtra": 19421,
+       "Gujarat": 10518,
+       "Uttar Pradesh": 14085,
+       "Rajasthan": 6965,
+       "Tamil Nadu": 6835,
+       "West Bengal": 7193,
+       "Karnataka": 6755,
+       "Delhi": 5207,
+       "Madhya Pradesh": 5880,
+       "Haryana": 4109
+      }
+     }
+    ],
+    "scale": 100000,
+    "min_states": 8
+   },
+   "equals": 89
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "values": {
+       "Maharashtra": 24.0,
+       "Gujarat": 20.6,
+       "Uttar Pradesh": 12.5,
+       "Rajasthan": 8.6,
+       "Tamil Nadu": 8.4,
+       "West Bengal": 8.2,
+       "Karnataka": 7.9,
+       "Delhi": 6.6,
+       "Madhya Pradesh": 5.3,
+       "Haryana": 5.1
+      }
+     },
+     {
+      "values": {
+       "Maharashtra": 19421,
+       "Gujarat": 10518,
+       "Uttar Pradesh": 14085,
+       "Rajasthan": 6965,
+       "Tamil Nadu": 6835,
+       "West Bengal": 7193,
+       "Karnataka": 6755,
+       "Delhi": 5207,
+       "Madhya Pradesh": 5880,
+       "Haryana": 4109
+      }
+     }
+    ],
+    "scale": 100000,
+    "min_states": 8
+   },
+   "equals": 127
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "values": {
+        "Maharashtra": 24.0,
+        "Gujarat": 20.6,
+        "Uttar Pradesh": 12.5,
+        "Rajasthan": 8.6,
+        "Tamil Nadu": 8.4,
+        "West Bengal": 8.2,
+        "Karnataka": 7.9,
+        "Delhi": 6.6,
+        "Madhya Pradesh": 5.3,
+        "Haryana": 5.1
+       }
+      },
+      {
+       "values": {
+        "Maharashtra": 19421,
+        "Gujarat": 10518,
+        "Uttar Pradesh": 14085,
+        "Rajasthan": 6965,
+        "Tamil Nadu": 6835,
+        "West Bengal": 7193,
+        "Karnataka": 6755,
+        "Delhi": 5207,
+        "Madhya Pradesh": 5880,
+        "Haryana": 4109
+       }
+      }
+     ],
+     "scale": 10000,
+     "min_states": 8
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "values": {
+        "Maharashtra": 24.0,
+        "Gujarat": 20.6,
+        "Uttar Pradesh": 12.5,
+        "Rajasthan": 8.6,
+        "Tamil Nadu": 8.4,
+        "West Bengal": 8.2,
+        "Karnataka": 7.9,
+        "Delhi": 6.6,
+        "Madhya Pradesh": 5.3,
+        "Haryana": 5.1
+       }
+      },
+      {
+       "values": {
+        "Maharashtra": 19421,
+        "Gujarat": 10518,
+        "Uttar Pradesh": 14085,
+        "Rajasthan": 6965,
+        "Tamil Nadu": 6835,
+        "West Bengal": 7193,
+        "Karnataka": 6755,
+        "Delhi": 5207,
+        "Madhya Pradesh": 5880,
+        "Haryana": 4109
+       }
+      }
+     ],
+     "scale": 10000,
+     "min_states": 8
+    }
+   },
+   "min": 1.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "values": {
+      "Maharashtra": 19421,
+      "Gujarat": 10518,
+      "Uttar Pradesh": 14085,
+      "Rajasthan": 6965,
+      "Tamil Nadu": 6835,
+      "West Bengal": 7193,
+      "Karnataka": 6755,
+      "Delhi": 5207,
+      "Madhya Pradesh": 5880,
+      "Haryana": 4109
+     }
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "values": {
+      "Maharashtra": 19421,
+      "Gujarat": 10518,
+      "Uttar Pradesh": 14085,
+      "Rajasthan": 6965,
+      "Tamil Nadu": 6835,
+      "West Bengal": 7193,
+      "Karnataka": 6755,
+      "Delhi": 5207,
+      "Madhya Pradesh": 5880,
+      "Haryana": 4109
+     }
+    }
+   },
+   "min": 1.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "values": {
+      "Maharashtra": 24.0,
+      "Gujarat": 20.6,
+      "Uttar Pradesh": 12.5,
+      "Rajasthan": 8.6,
+      "Tamil Nadu": 8.4,
+      "West Bengal": 8.2,
+      "Karnataka": 7.9,
+      "Delhi": 6.6,
+      "Madhya Pradesh": 5.3,
+      "Haryana": 5.1
+     }
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "values": {
+      "Maharashtra": 24.0,
+      "Gujarat": 20.6,
+      "Uttar Pradesh": 12.5,
+      "Rajasthan": 8.6,
+      "Tamil Nadu": 8.4,
+      "West Bengal": 8.2,
+      "Karnataka": 7.9,
+      "Delhi": 6.6,
+      "Madhya Pradesh": 5.3,
+      "Haryana": 5.1
+     }
+    }
+   },
+   "min": 1.6
+  }
+ ],
+ "so": {
+  "lines": [
+   "October 2025, per 100 registered:",
+   "Gujarat *19.6* traded,",
+   "Uttar Pradesh *8.9*."
+  ],
+  "vo": "October twenty twenty-five: Gujarat nineteen point six, Uttar Pradesh eight point nine."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "markets/nse_cash_activity_top10_aug2026",
+      "Aug 2026 active individual investors in cash market (lakh)"
+     ]
+    },
+    {
+     "tbl": [
+      "markets/nse_investors",
+      "Aug 2026"
+     ]
+    }
+   ],
+   "scale": 10000,
+   "min_states": 8
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "Traded in Aug 2026 per 100 *registered*",
+  "sub": "the ten states NSE lists · no India figure",
+  "note": "Individual investors who traded at least once, over all registered PANs: different counts. NSE prints no figure for the other states.",
+  "ring": [
+   "Gujarat",
+   "Uttar Pradesh"
+  ],
+  "vo": "Here are the ten states NSE lists: traded per hundred registered."
+ },
+ "end": {
+  "q": "Do you know someone who *trades*?",
+  "sub": "Tag them below.",
+  "vo": "Do you know someone who trades?"
+ },
+ "yt_title": "Gujarat vs Uttar Pradesh: Fewer Registered, More Who Traded"
+}

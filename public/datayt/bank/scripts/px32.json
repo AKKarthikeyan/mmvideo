@@ -1,0 +1,309 @@
+{
+ "id": "px32",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "RBI · Handbook · end-March 2025",
+ "palette": "O",
+ "state": "Kerala",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 162 and 154: credit-deposit ratio of regional rural banks, and of all scheduled commercial banks by place of utilisation, as at end-March 2023 to 2025 (loans used in the state per ₹100 of deposits held there). Regional rural banks are part of the all-bank figure. A ratio, not a verdict on lending.",
+ "hook": [
+  "*Kerala*: rural banks lent",
+  "*₹103* per ₹100 deposited;",
+  "all banks, *₹71*. 2025."
+ ],
+ "hook_vo": "Kerala's rural banks lent one hundred three per hundred deposited. All banks, seventy-one.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "RURAL BANKS: LOANS PER ₹100 OF DEPOSITS · 2025",
+   "data": {
+    "rbi": [
+     162,
+     "2025"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 150,
+   "text": "loans per ₹100 of deposits, in Kerala's regional rural banks. India's rural banks: ₹78.",
+   "sub": "Regional rural banks: banks set up to serve rural areas. Deposits: savings kept in banks.",
+   "vo": "Across India, regional rural banks lent seventy-eight rupees per hundred."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "ALL BANKS: LOANS PER ₹100 OF DEPOSITS · 2025",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 150,
+   "text": "loans per ₹100 of deposits, in all of Kerala's scheduled commercial banks. India: ₹80.",
+   "sub": "Rural banks are counted in this figure. Loans used in the state, end-March 2025.",
+   "vo": "All banks together in Kerala lent seventy-one. India's banks lent eighty."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "THE SAME GAP · END-MARCH 2024",
+   "data": {
+    "rbi": [
+     162,
+     "2024"
+    ]
+   },
+   "unit": "%",
+   "bar_max": 150,
+   "text": "in 2024: rural banks ₹101, all banks ₹72. In 2023: ₹100 and ₹68.",
+   "sub": "Loans per ₹100 of deposits, Kerala's regional rural banks.",
+   "vo": "The gap was there in twenty twenty-four too: one hundred one against seventy-two."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     162,
+     "2025"
+    ]
+   },
+   "equals": 103
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "equals": 71
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     162,
+     "2025"
+    ]
+   },
+   "equals": 78
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "equals": 80
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     162,
+     "2024"
+    ]
+   },
+   "equals": 101
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     154,
+     "2024"
+    ]
+   },
+   "equals": 72
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     162,
+     "2023"
+    ]
+   },
+   "equals": 100
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "rbi": [
+     154,
+     "2023"
+    ]
+   },
+   "equals": 68
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      162,
+      "2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      154,
+      "2023"
+     ]
+    }
+   },
+   "min": 1.35
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      162,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      154,
+      "2024"
+     ]
+    }
+   },
+   "min": 1.35
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      162,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.35
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "minus": [
+     {
+      "rbi": [
+       162,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       154,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 32
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       161,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       160,
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 103
+  }
+ ],
+ "so": {
+  "lines": [
+   "Rural banks lent *₹32 more*",
+   "per ₹100 of deposits than",
+   "all Kerala banks, 2025."
+  ],
+  "vo": "Thirty-two rupees more per hundred of deposits than all banks."
+ },
+ "map": {
+  "data": {
+   "minus": [
+    {
+     "rbi": [
+      162,
+      "2025"
+     ]
+    },
+    {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   ]
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Rural banks against all banks, *every state*",
+  "sub": "₹ per ₹100 deposited, rural minus all · India {india}",
+  "note": "Rural banks' loans per ₹100 of deposits minus all banks'. Plus: rural banks lend more. Blank: no figure. Not a verdict on lending.",
+  "ring": [
+   "Kerala"
+  ],
+  "vo": "Here is every state: rural banks minus all banks."
+ },
+ "end": {
+  "q": "Which *bank* do you use?",
+  "sub": "Comment below.",
+  "vo": "Which bank do you use?"
+ },
+ "yt_title": "Kerala: Rural Banks Lent ₹103 per ₹100 Held, All Banks ₹71"
+}

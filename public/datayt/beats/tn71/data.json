@@ -1,0 +1,521 @@
+{
+ "id": "tn71",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Labour Bureau · rural wages · 2014-15, 2024-25",
+ "source": "Labour Bureau (Ministry of Labour and Employment), Indian Labour Journal, as published in the RBI Handbook of Statistics on Indian States 2024-25 (11 Dec 2025), Table 112: average daily wage rates in rural areas, men, construction workers, current rupees. India: the average of all quotations. 2020-21 state figures cover ten months. Compared within each year, not adjusted for prices. Recent years can be revised.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#E8A33D",
+  "#F0CC96",
+  "#DDD5C8",
+  "#719490",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Odisha* rural men's",
+    "construction pay: *72%* of",
+    "India's; *89%* ten years on."
+   ],
+   "vo": "Odisha's rural men's construction pay climbed from seventy-two to eighty-nine percent of India's.",
+   "geo": "Odisha",
+   "name": "Odisha",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "MEN'S RURAL CONSTRUCTION PAY",
+   "big": "+16.8 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "72.3%",
+    "frac": 0.8113872773536898
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "89.1%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of India's average wage. Odisha *₹199* a day, India *₹275*",
+   "vo": "In twenty fourteen-fifteen: seventy-two percent.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "MEN'S RURAL CONSTRUCTION PAY",
+   "big": "+16.8 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "72.3%",
+    "frac": 0.8113872773536898
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "89.1%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of India's average wage. Odisha *₹393* a day, India *₹441*",
+   "vo": "Ten years on: eighty-nine percent of it.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Odisha",
+   "geo": "Odisha",
+   "kicker": "ODISHA VS INDIA · YEAR BY YEAR",
+   "big": "85.1%",
+   "text": "in 2023-24, the year before 89%. Up in 8 of 10 years, level in 1, down 0.4 in 1.",
+   "sub": "Odisha's wage as % of India's, selected years.",
+   "bars": [
+    {
+     "name": "2016-17",
+     "label": "76.2%",
+     "frac": 0.7624218492925304
+    },
+    {
+     "name": "2019-20",
+     "label": "80.7%",
+     "frac": 0.8065650644783119
+    },
+    {
+     "name": "2022-23",
+     "label": "83.6%",
+     "frac": 0.8362573099415204
+    }
+   ],
+   "vo": "Up in eight of ten years.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Odisha",
+   "geo": "Odisha",
+   "kicker": "ALSO UP IN NON-FARM LABOUR",
+   "big": "90.8%",
+   "text": "of India's average for non-farm labourers, 2024-25. It was 71.9% in 2014-15.",
+   "sub": "Rural men, non-agricultural labourers: Odisha's wage as % of India's, same year.",
+   "bars": [
+    {
+     "name": "2014-15",
+     "label": "71.9%",
+     "frac": 0.7189734960033657
+    },
+    {
+     "name": "2024-25",
+     "label": "90.8%",
+     "frac": 0.9084027252081754
+    }
+   ],
+   "vo": "Non-farm labourers' pay also reached ninety-one percent, from seventy-two.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Odisha gained *17 points* on",
+    "India: *second-biggest* gain of",
+    "19 states, 2014-15 to 2024-25."
+   ],
+   "note": "Andhra Pradesh: +39; Tripura: +13. Rural men, current rupees, each year against India's. The table shows how much, not why.",
+   "vo": "Odisha's gain of seventeen points was second-biggest of nineteen states.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Men's construction pay vs India: *every state*",
+   "sub": "rural men · points of India's wage · 2014-15 to 2024-25",
+   "note": "A lower figure can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no row. Andhra Pradesh: no separate Telangana row.",
+   "anim": true,
+   "ring": [
+    "Odisha"
+   ],
+   "vo": "Each state's change against India's average wage.",
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "A lower figure can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no row. Andhra Pradesh: no separate Telangana row.",
+   "ring": [
+    "Odisha"
+   ],
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "q": "Who built *your* house?",
+   "sub": "Spot your state on the map.",
+   "kind": "mapend",
+   "vo": "Who built your house?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Kerala",
+   "label": "−77.4",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Manipur",
+   "label": "−33.5",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Haryana",
+   "label": "−8.6",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Punjab",
+   "label": "−8.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Maharashtra",
+   "label": "−4.9",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Rajasthan",
+   "label": "−3.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Gujarat",
+   "label": "−3.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "West Bengal",
+   "label": "+1.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Assam",
+   "label": "+4.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Bihar",
+   "label": "+5.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Karnataka",
+   "label": "+5.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+6.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+8.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+9.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+11.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Tripura",
+   "label": "+13.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Odisha",
+   "label": "+16.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+39.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  }
+ ],
+ "checked": [
+  "Odisha: 72.29 in 2014-15, 89.10 in 2024-25: +16.80, 1.23 times",
+  "years = 10",
+  "the India row of 2014-15 typed into the series is 275.0: 275.00",
+  "the India row of 2024-25 typed into the series is 441.1: 441.10",
+  "India 2014-15 to the tenth: 275.0: 2750.00",
+  "India 2024-25 to the tenth: 441.1: 4411.00",
+  "72% in 2014-15 (hook, title, voice): 72.29",
+  "72.3% in 2014-15 (card, tenths): 722.91",
+  "89% in 2024-25 (hook, title, voice): 89.10",
+  "89.1% in 2024-25 (card, tenths): 890.95",
+  "the gain is 16.8 points (shift card, tenths): 168.05",
+  "17 points (say card, voice): 16.80",
+  "Odisha 2014-15 wage on the card: Rs 199: 198.80",
+  "India 2014-15 wage on the card: Rs 275: 275.00",
+  "Odisha 2024-25 wage on the card: Rs 393: 393.00",
+  "India 2024-25 wage on the card: Rs 441: 441.10",
+  "76% in 2016-17 (card): 76.24",
+  "81% in 2019-20 (card): 80.66",
+  "84% in 2022-23 (card): 83.63",
+  "85% in 2023-24 (card): 85.12",
+  "2015-16 is up by 0.25 to 4.5 points on 2014-15: 0.32",
+  "2016-17 is up by 0.25 to 4.5 points on 2015-16: 3.63",
+  "2017-18 is up by 0.25 to 4.5 points on 2016-17: 4.04",
+  "2018-19 is level: within 0.2 points of the year before: 0.06",
+  "2019-20 is up by 0.25 to 4.5 points on 2018-19: 0.31",
+  "2020-21 is up by 0.25 to 4.5 points on 2019-20: 0.60",
+  "2021-22 is up by 0.25 to 4.5 points on 2020-21: 2.81",
+  "2022-23 is the one dip: down 0.3 to 0.6 points: -0.44",
+  "2023-24 is up by 0.25 to 4.5 points on 2022-23: 1.49",
+  "2024-25 is up by 0.25 to 4.5 points on 2023-24: 3.98",
+  "2022-23 is at least 10 points above 2014-15: 11.33",
+  "2023-24 is at least 10 points above 2014-15: 12.83",
+  "2024-25 is at least 10 points above 2014-15: 16.80",
+  "non-farm labourers: 72% in 2014-15 (voice): 71.90",
+  "non-farm labourers: 71.9% in 2014-15 (card, tenths): 718.97",
+  "non-farm labourers: 91% in 2024-25 (voice): 90.84",
+  "non-farm labourers: 90.8% in 2024-25 (card, tenths): 908.40",
+  "non-farm labourers rose by 15 to 25 points: 18.94",
+  "non-farm labourers: 2022-23 at least 10 points above 2014-15: 13.25",
+  "non-farm labourers: 2023-24 at least 10 points above 2014-15: 13.91",
+  "Andhra Pradesh gained 39 points (say card note): 39.21",
+  "Tripura gained 13 points (say card note): 13.08",
+  "Assam gained under 12 points: 4.90",
+  "Bihar gained under 12 points: 5.66",
+  "Gujarat gained under 12 points: -3.42",
+  "Haryana gained under 12 points: -8.59",
+  "Himachal Pradesh gained under 12 points: 11.10",
+  "Karnataka gained under 12 points: 5.83",
+  "Kerala gained under 12 points: -77.35",
+  "Madhya Pradesh gained under 12 points: 6.73",
+  "Maharashtra gained under 12 points: -4.87",
+  "Manipur gained under 12 points: -33.47",
+  "Meghalaya gained under 12 points: 8.27",
+  "Punjab gained under 12 points: -8.46",
+  "Rajasthan gained under 12 points: -3.81",
+  "Tamil Nadu gained under 12 points: -0.08",
+  "Uttar Pradesh gained under 12 points: 9.81",
+  "West Bengal gained under 12 points: 1.17",
+  "the one dip is 0.4 points (card: down 0.4 in 1): -4.35"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.25,
+   "at": 0.12,
+   "text": "Odisha's rural men's construction pay climbed from seventy-two to eighty-nine percent of India's."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.657,
+   "at": 5.926,
+   "text": "In twenty fourteen-fifteen: seventy-two percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 2.664,
+   "at": 11.733,
+   "text": "Ten years on: eighty-nine percent of it."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.246,
+   "at": 15.604,
+   "text": "Up in eight of ten years."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.545,
+   "at": 19.475,
+   "text": "Non-farm labourers' pay also reached ninety-one percent, from seventy-two."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.858,
+   "at": 25.281,
+   "text": "Odisha's gain of seventeen points was second-biggest of nineteen states."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.657,
+   "at": 31.088,
+   "text": "Each state's change against India's average wage."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 1.567,
+   "at": 36.894,
+   "text": "Who built your house?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Odisha: Men's Rural Construction Wage, 72% to 89% of India's"
+}

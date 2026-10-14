@@ -1,0 +1,599 @@
+{
+ "id": "tn81",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Children aged 12 to 23 months fully vaccinated, by vaccination card or mother's recall (the sheets also print a card-only figure: India 87.1%). 33 states and UTs with a figure in both surveys; Manipur, Chandigarh and Lakshadweep have none. Survey estimates.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#C9822F",
+  "#E0BB8E",
+  "#DDD5C8",
+  "#B2818E",
+  "#7A2340"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Uttar Pradesh* 1-year-olds,",
+    "fully vaccinated: gap to India",
+    "*6.7 points*, then *1.2*."
+   ],
+   "vo": "Uttar Pradesh nearly caught up with India on fully vaccinated one-year-olds.",
+   "geo": "Uttar Pradesh",
+   "name": "Uttar Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Uttar Pradesh",
+   "name": "Uttar Pradesh",
+   "kicker": "CHILDREN FULLY VACCINATED",
+   "big": "+11.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "69.9%",
+    "frac": 0.8587223587223587
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "81.4%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of children aged 12 to 23 months were fully vaccinated. India: *76.6%*.",
+   "vo": "Earlier survey: seventy percent of children. India, seventy-seven.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Uttar Pradesh",
+   "name": "Uttar Pradesh",
+   "kicker": "CHILDREN FULLY VACCINATED",
+   "big": "+11.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "69.9%",
+    "frac": 0.8587223587223587
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "81.4%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of children aged 12 to 23 months. India: *82.6%*.",
+   "vo": "Next survey: eighty-one percent. India, eighty-three.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "UTTAR PRADESH'S RISE VS INDIA'S",
+   "big": "11.5 pts",
+   "text": "India's rise: 6.0 points. Uttar Pradesh's was *1.9 times* that.",
+   "sub": "Percentage points between the two surveys: Uttar Pradesh +11.5, India +6.0.",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "label": "11.5",
+     "frac": 0.8214285714285714
+    },
+    {
+     "name": "India",
+     "label": "6.0",
+     "frac": 0.42857142857142855
+    }
+   ],
+   "vo": "India rose six points. Uttar Pradesh rose one point nine times as much.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Gap to India's rate:",
+    "*6.7 points* in 2019-21,",
+    "*1.2 points* in 2023-24."
+   ],
+   "note": "Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "The gap to India's rate: six point seven points, then one point two.",
+   "t0": 25.161,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Fully vaccinated: *each state's change*",
+   "sub": "percentage points · darker = bigger rise · India +6.0",
+   "note": "Children aged 12 to 23 months, card or mother's recall. Survey estimates. Blank: Manipur (no figure), Chandigarh and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Uttar Pradesh"
+   ],
+   "vo": "Every state's change in children fully vaccinated.",
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#7A2340",
+     "label": "rose"
+    }
+   ],
+   "t0": 32.903,
+   "t1": 36.774
+  },
+  {
+   "note": "Children aged 12 to 23 months, card or mother's recall. Survey estimates. Blank: Manipur (no figure), Chandigarh and Lakshadweep (small sample).",
+   "ring": [
+    "Uttar Pradesh"
+   ],
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#7A2340",
+     "label": "rose"
+    }
+   ],
+   "q": "Do you still have your *vaccine card*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Do you still have your vaccine card?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "−5.9",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "−1.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.31
+  },
+  {
+   "name": "Mizoram",
+   "label": "−0.6",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.366
+  },
+  {
+   "name": "West Bengal",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.423
+  },
+  {
+   "name": "Odisha",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.48
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.536
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+0.6",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.593
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+0.9",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.65
+  },
+  {
+   "name": "Punjab",
+   "label": "+1.5",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.707
+  },
+  {
+   "name": "Telangana",
+   "label": "+1.8",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.763
+  },
+  {
+   "name": "Haryana",
+   "label": "+2.8",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.82
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+3.2",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.877
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+4.0",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.933
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+4.1",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.99
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+4.7",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.047
+  },
+  {
+   "name": "Tripura",
+   "label": "+4.9",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.103
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+4.9",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.16
+  },
+  {
+   "name": "Gujarat",
+   "label": "+5.3",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.217
+  },
+  {
+   "name": "Ladakh",
+   "label": "+5.9",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.274
+  },
+  {
+   "name": "Karnataka",
+   "label": "+5.9",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.33
+  },
+  {
+   "name": "Bihar",
+   "label": "+6.3",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.387
+  },
+  {
+   "name": "Nagaland",
+   "label": "+6.4",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.444
+  },
+  {
+   "name": "Kerala",
+   "label": "+6.5",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.5
+  },
+  {
+   "name": "Puducherry",
+   "label": "+7.0",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.557
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+8.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.614
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+9.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.67
+  },
+  {
+   "name": "Sikkim",
+   "label": "+10.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 34.727
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+11.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.784
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+11.3",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.841
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+11.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.897
+  },
+  {
+   "name": "Goa",
+   "label": "+11.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 34.954
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+14.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.011
+  },
+  {
+   "name": "Assam",
+   "label": "+15.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 35.067
+  }
+ ],
+ "checked": [
+  "Uttar Pradesh: 69.90 in NFHS-5 (2019-21), 81.40 in NFHS-6 (2023-24): +11.50, 1.16 times",
+  "Uttar Pradesh 69.9% in NFHS-5 (tenths): 699.00",
+  "Uttar Pradesh 81.4% in NFHS-6 (tenths): 814.00",
+  "India 76.6% in NFHS-5 (tenths): 766.00",
+  "India 82.6% in NFHS-6 (tenths): 826.00",
+  "seventy percent in NFHS-5 (voice, 69.9 rounds to 70): 69.90",
+  "eighty-one percent in NFHS-6 (voice): 81.40",
+  "India seventy-seven in NFHS-5 (voice, 76.6): 76.60",
+  "India eighty-three in NFHS-6 (voice, 82.6): 82.60",
+  "Uttar Pradesh rose 11.5 points: hook, title and card (tenths): 115.00",
+  "India rose 6.0 points: card and map (tenths): 60.00",
+  "India rose six points (voice): 6.00",
+  "Uttar Pradesh's rise is 1.9 times India's (tenths): 19.17",
+  "Uttar Pradesh rose one point nine times as much as India (voice): between 1.85 and 1.95: 1.92",
+  "gap to India in NFHS-5: 6.7 points (tenths): 67.00",
+  "gap to India in NFHS-6: 1.2 points (tenths): 12.00",
+  "Uttar Pradesh was below India in NFHS-5: 6.70",
+  "Uttar Pradesh was still below India in NFHS-6, by a small gap: 1.20"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Uttar Pradesh nearly caught up with India on fully vaccinated one-year-olds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.146,
+   "at": 5.926,
+   "text": "Earlier survey: seventy percent of children. India, seventy-seven."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.84,
+   "at": 11.733,
+   "text": "Next survey: eighty-one percent. India, eighty-three."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 6.347,
+   "at": 17.539,
+   "text": "India rose six points. Uttar Pradesh rose one point nine times as much."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.564,
+   "at": 25.281,
+   "text": "The gap to India's rate: six point seven points, then one point two."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 33.023,
+   "text": "Every state's change in children fully vaccinated."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.88,
+   "at": 36.894,
+   "text": "Do you still have your vaccine card?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Uttar Pradesh: 1-Year-Olds Fully Vaccinated Up 11.5 Points"
+}

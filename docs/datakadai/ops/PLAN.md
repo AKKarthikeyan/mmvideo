@@ -95,11 +95,29 @@ This week carries its own themes. AK, 13 Oct 2026: "go ahead with week 4 but inc
 | 7 | Know your states | first | px46 | Karnataka vs Tamil Nadu: 381 vs 371 STP Units, 6x Exports | paradox | 45 s | Watch with sound. Re-read Karnataka, Tamil Nadu, Maharashtra and the total in Lok Sabha Starred Q 344 (units and exports, 2024-25). AK to sign off the per-unit card and 'STP' in the title; on the wider STPI count the gap is about five times. Add the source link. |
 | 7 | Know your states | second | fa48 | Himachal: 26.5% of India's Large-Hydro Electricity, 2024-25 | one state, one fact | 39 s | Watch with sound. Re-read Himachal Pradesh and the all-India total on page 12 of Lok Sabha Starred Q 284, Annexure-II. AK to decide whether 'large-hydro' is plain enough. Add the source link. |
 
+## Week 5 (14 of 14)
+
+Back to the standing seven themes. `fa12` stays in stock: it is two days after `fa50` and seven after `px37` (all Delhi), and it shares a table with `px61`.
+
+| Day | Theme | Slot | ID | Title | Format | Length | Before posting |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Money | first | px61 | Gujarat Has 49% More Bank Offices per Person Than Jharkhand | paradox | 39 s | Watch with sound. Read the six NFHS cells in the fact sheets. AK to sign off: it sets Gujarat's lower share of women with their own account against Jharkhand's, and the hook is a question. Add the source link. |
+| 1 | Money | second | tn60 | Bank Deposits in Haryana: 2.5% to 3.8% of India's, 2015-25 | then and now | 41 s | Watch with sound. Re-read Table 155 for Haryana and India, 2015 and 2025; RBI's end-March 2026 state tables are out and were not read. Add the source link. |
+| 2 | Farm and food | first | sh02 | Maharashtra: 36% of India's Cotton Area, 25% of the Crop | share | 35 s | Watch with sound. Re-check Maharashtra's 2025-26 cotton area if the Ministry's table opens. |
+| 2 | Farm and food | second | fa07 | Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4 | one state, one fact | 41 s | Watch with sound. Add the source link. |
+| 3 | Women | first | tn66 | Karnataka: Wives With a Say in All 3 Decisions, 83% to 89% | then and now | 41 s | Watch with sound. Read Karnataka's and India's cells in the NFHS-6 sheets; Rajasthan and Uttarakhand are blank on the map. Add the source link. |
+| 3 | Women | second | px67 | Rajasthan Women: 52% in Labour Force, 21% of NSE Investors | paradox | 39 s | Watch with sound. NSE's October Market Pulse may be out: re-read Table 76. Read the labour force survey's state cells. Add the source link. |
+| 4 | Economy | first | tn71 | Odisha: Men's Rural Construction Wage, 72% to 89% of India's | then and now | 41 s | Watch with sound. Re-read Table 112 for Odisha and India; the 2024-25 step is the decade's biggest. Add the source link. |
+| 4 | Economy | second | px72 | Telangana: 3× Kerala's Registered Co-ops, 7% More People | paradox | 39 s | Watch with sound. Re-read the Lok Sabha societies tables and their as-on dates. AK to decide whether Kerala is the right comparison and whether cooperative societies fit the Economy day. Add the source link. |
+| 5 | Power and connections | first | fa76 | Madhya Pradesh: 21 of Every 100 Specified Dams, Apr 2025 | one state, one fact | 41 s | Watch with sound. Re-read page iv of the April 2025 dam register; the August 2026 reply keeps the story. Add the source link. |
+| 5 | Power and connections | second | px04 | Power Available per Person: Chhattisgarh 1.9x West Bengal | paradox | 45 s | Watch with sound. Add the source link. |
+| 6 | School and health | first | tn81 | Uttar Pradesh: 1-Year-Olds Fully Vaccinated Up 11.5 Points | then and now | 41 s | Watch with sound. Read the 'fully vaccinated' row and footnote in the NFHS-6 sheets. AK to confirm the health topic. Add the source link. |
+| 6 | School and health | second | px82 | Rajasthan Has 2x Gujarat's Colleges per University, 2023-24 | paradox | 41 s | Watch with sound. Gujarat's university lead holds in the last two editions only (2022-23 and 2023-24): AK to accept it as a snapshot. Re-read AISHE Tables 1 and 4. Add the source link. |
+| 7 | Know your states | first | fa85 | Goa: Over Half Said They Knew 3+ Languages, Census 2011 | one state, one fact | 37 s | Watch with sound. Re-read Census 2011 Table C-17 for Goa and the next three. Add the source link. |
+| 7 | Know your states | second | tn86 | West Bengal's Coastline: 157.5 km Old, 721 km Recalculated | then and now | 39 s | Watch with sound. Open the Ministry's coastline answer and confirm the rows and where the 'scale and calculation methods' sentence sits. Add the source link. |
+
 ## Built, waiting for a later week
 
-- `px04` (Power and connections): Power Available per Person: Chhattisgarh 1.9x West Bengal
-- `sh02` (Farm and food): Maharashtra: 36% of India's Cotton Area, 25% of the Crop
-- `fa07` (Farm and food): Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4
 - `fa12` (Money): Delhi: Highest Deposits per Bank Office, ₹520 Crore, 2025
 
 ## Pairs kept apart
@@ -153,6 +171,20 @@ This week carries its own themes. AK, 13 Oct 2026: "go ahead with week 4 but inc
 - `fa40` and `px07`: at least 7 days (both Haryana).
 - `fa55` and `fa11`: at least 7 days (both Maharashtra money).
 - `fa55` and `sh02`: at least 4 days (both Maharashtra).
+- `px61` and `tn09`: at least 7 days (same survey row: women's own bank account).
+- `px61` and `px09`: at least 7 days (both bank offices against another measure).
+- `tn60` and `fa40`: at least 4 days (both Haryana).
+- `tn60` and `fa12`: at least 7 days (both bank deposits).
+- `tn66` and `px61`: at least 2 days (both NFHS-6).
+- `px67` and `fa17`: at least 7 days (same labour force survey measure).
+- `tn71` and `tn36`: at least 6 days (both Odisha).
+- `tn71` and `tn22`: at least 7 days (same wage tables).
+- `px72` and `fa35`: at least 7 days (both against another southern state's count).
+- `fa76` and `fa07`: at least 3 days (both Madhya Pradesh).
+- `px82` and `px67`: at least 3 days (both Rajasthan).
+- `tn86` and `px04`: at least 2 days (both West Bengal).
+- `fa85` and `pl01`: at least 14 days (both Goa).
+- `tn81` and `px11`: at least 14 days (same survey, child vaccination).
 
 ## Problems the check found
 

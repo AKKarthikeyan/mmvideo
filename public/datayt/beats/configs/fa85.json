@@ -1,0 +1,599 @@
+{
+ "id": "fa85",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Census of India 2011 · Table C-17",
+ "palette": "D",
+ "state": "Goa",
+ "source": "Registrar General and Census Commissioner, India: Census 2011, Table C-17 (bilingualism and trilingualism), as on 1 March 2011, over population from Table A-01. Three or more languages: mother tongue plus two more that the person said they knew. Shares are our division. Census 2001, Table C-17, for the earlier card. Telangana and Ladakh sit inside Andhra Pradesh and Jammu and Kashmir as counted in 2011.",
+ "hook": [
+  "*Goa*: over *half* said they",
+  "knew 3+ languages. India:",
+  "*7%*. Census 2011."
+ ],
+ "hook_vo": "More than half of Goa's people said they knew three or more languages.",
+ "facts": [
+  {
+   "state": "Goa",
+   "kicker": "KNEW 3+ LANGUAGES · CENSUS 2011",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_language_states",
+     "Share knowing three or more languages (%) [derived]"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 60,
+   "text": "of Goa's people said they knew three or more languages. The highest of {n} states and UTs.",
+   "sub": "Their mother tongue plus two more, as Census 2011 counted them.",
+   "vo": "Fifty point eight percent. India, seven point one."
+  },
+  {
+   "state": "Chandigarh",
+   "kicker": "THE NEXT THREE · CENSUS 2011",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_language_states",
+     "Share knowing three or more languages (%) [derived]"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Goa",
+    "Arunachal Pradesh",
+    "Sikkim"
+   ],
+   "bar_max": 60,
+   "text": "in Chandigarh (a UT), second to Goa. Arunachal Pradesh and Sikkim: near 30%.",
+   "sub": "Share of each place's people.",
+   "vo": "The next three were near thirty percent. Goa led by over twenty points."
+  },
+  {
+   "state": "Goa",
+   "kicker": "TEN YEARS EARLIER · CENSUS 2001",
+   "data": {
+    "tbl": [
+     "evergreen/census2001_language_states",
+     "Share knowing three or more languages (%) [derived]"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "text": "in Census 2001: also the highest of {n} states and UTs. Chandigarh, next, was near 38%.",
+   "sub": "Same Census table (C-17), 1 March 2001.",
+   "vo": "Ten years earlier: forty-eight percent, also the highest."
+  }
+ ],
+ "so": {
+  "lines": [
+   "*741,249* of Goa's *1,458,545*",
+   "people said they knew 3+;",
+   "*7.2 times* India's rate."
+  ],
+  "note": "Persons who named two languages besides their mother tongue, Census 2011. Our division.",
+  "vo": "Goa's share was seven point two times India's."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "evergreen/census2011_language_states",
+    "Share knowing three or more languages (%) [derived]"
+   ]
+  },
+  "unit": "%",
+  "dec": 1,
+  "title": "Knew 3+ languages, *every state*",
+  "sub": "% of people · India {india} · Census 2011",
+  "note": "Blank: Telangana, Ladakh (inside Andhra Pradesh, J&K in 2011) and Dadra, Nagar Haveli, Daman and Diu (two rows then). The table shows how much, not why.",
+  "ring": [
+   "Goa",
+   "Chandigarh"
+  ],
+  "vo": "Here is every state: people who knew three or more languages.",
+  "drop": [
+   "Dadra and Nagar Haveli",
+   "Daman and Diu"
+  ]
+ },
+ "end": {
+  "q": "How many *languages* do you speak?",
+  "sub": "Comment below.",
+  "vo": "How many languages do you speak?"
+ },
+ "tests": [
+  {
+   "says": "Goa 50.82 rounds to 51 (card shows 50.8)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Goa"
+   },
+   "equals": 51
+  },
+  {
+   "says": "50.8% (card 1, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Goa",
+    "scale": 10
+   },
+   "equals": 508
+  },
+  {
+   "says": "Goa highest of all states and UTs is run by the builder (claim); lead over Chandigarh 20.3 points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Chandigarh"
+     }
+    ]
+   },
+   "min": 20,
+   "max": 21
+  },
+  {
+   "says": "India 7.1% (card 1, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 71
+  },
+  {
+   "says": "India 'seven' in the voice: 7.1 rounds to 7",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 7
+  },
+  {
+   "says": "Chandigarh near 30% (card 2): between 30 and 31",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Chandigarh"
+   },
+   "min": 30.0,
+   "max": 31.0
+  },
+  {
+   "says": "Chandigarh 30.5% (bar, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Chandigarh",
+    "scale": 10
+   },
+   "equals": 305
+  },
+  {
+   "says": "Arunachal Pradesh near 30% (card 2): between 30 and 31",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "min": 30.0,
+   "max": 31.0
+  },
+  {
+   "says": "Goa led Arunachal Pradesh by over twenty points (card 2 text and voice)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 20,
+   "max": 21
+  },
+  {
+   "says": "Goa led Chandigarh by over twenty points (card 2 text and voice)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Chandigarh"
+     }
+    ]
+   },
+   "min": 20,
+   "max": 21
+  },
+  {
+   "says": "Goa is 1.67 times the next place, Chandigarh (a clear lead)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Chandigarh"
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 1.7
+  },
+  {
+   "says": "Goa 47.8% in Census 2001 (card 3, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Goa",
+    "scale": 10
+   },
+   "equals": 478
+  },
+  {
+   "says": "'forty-eight percent' (voice): 47.84 rounds to 48",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Goa"
+   },
+   "equals": 48
+  },
+  {
+   "says": "Chandigarh near 38% in Census 2001 (card 3 text): between 37 and 38.5",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Chandigarh"
+   },
+   "min": 37.0,
+   "max": 38.5
+  },
+  {
+   "says": "Goa led Chandigarh by over 10 points in Census 2001",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Chandigarh"
+     }
+    ]
+   },
+   "min": 10,
+   "max": 10.5
+  },
+  {
+   "says": "7.2 times India's rate (so card, tenths): 7.16 rounds to 72",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 72
+  },
+  {
+   "says": "'seven point two' times (voice): between 7.15 and 7.25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 7.15,
+   "max": 7.25
+  },
+  {
+   "says": "741,249 Goa people knew three or more languages (so card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Persons knowing three or more languages"
+     ]
+    },
+    "state": "Goa"
+   },
+   "equals": 741249
+  },
+  {
+   "says": "1,458,545 people in Goa, Census 2011 (so card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Population"
+     ]
+    },
+    "state": "Goa"
+   },
+   "equals": 1458545
+  },
+  {
+   "says": "741,249 over 1,458,545 is the 50.8% on card 1",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Persons knowing three or more languages"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Population"
+       ]
+      },
+      "state": "Goa"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 508
+  },
+  {
+   "says": "India: 86,009,580 persons knew three or more languages (source line check, printed India row)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Persons knowing three or more languages"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 86009580
+  },
+  {
+   "says": "Sikkim near 30% (card 2): between 29.5 and 30",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Sikkim"
+   },
+   "min": 29.5,
+   "max": 30.0
+  },
+  {
+   "says": "Goa led Sikkim by over twenty points (card 2 text and voice)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Goa"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Sikkim"
+     }
+    ]
+   },
+   "min": 20,
+   "max": 22
+  },
+  {
+   "says": "the fourth place, Punjab (28.2), is 1.5 points below Sikkim: Chandigarh, Arunachal Pradesh and Sikkim are a clear next three, with no tie to the fourth",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Sikkim"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 2.0
+  },
+  {
+   "says": "Sikkim 29.7% (bar, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Sikkim",
+    "scale": 10
+   },
+   "equals": 297
+  },
+  {
+   "says": "over half of Goa's people knew three or more languages (hook, title, voice): 50.8",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_language_states",
+      "Share knowing three or more languages (%) [derived]"
+     ]
+    },
+    "state": "Goa"
+   },
+   "min": 50.0,
+   "max": 51.5
+  }
+ ],
+ "yt_title": "Goa: Over Half Said They Knew 3+ Languages, Census 2011"
+}

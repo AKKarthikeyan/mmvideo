@@ -70,5 +70,28 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 62 | fa15 | Kerala: Share Aged 60+ Matches Share Under 15, 2023-24 | see pack | n/a | drafted (2026-10-13; beat template `fact`; School and health day; script reviewed and fixed before voicing) |
 | 63 | tn23 | Jharkhand: Mothers With 4+ Pregnancy Check-ups Up 20 Points | see pack | n/a | drafted (2026-10-13; beat template `then`; School and health day; script reviewed and fixed before voicing) |
 | 64 | fa17 | Himachal: About 2 in 3 Women Worked or Sought Work, 2023-24 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Women day; script reviewed and fixed before voicing) |
+| 65 | px37 | Delhi: Women Hold 57% of Mudra Loans, 19% of the Money | see pack | n/a | drafted (2026-10-13; beat template `paradox`; Money day; script reviewed and fixed before voicing; week four) |
+| 66 | fa35 | Tamil Nadu: 5% of People, 36% of Public Bank Gold Loans | see pack | n/a | drafted (2026-10-13; beat template `fact`; Money day; script reviewed and fixed before voicing; week four) |
+| 67 | px52 | Gujarat vs Uttar Pradesh: Fewer Registered, More Who Traded | see pack | n/a | drafted (2026-10-13; beat template `paradox`; Markets day; script reviewed and fixed before voicing; week four) |
+| 68 | fa55 | Maharashtra: ₹60 in Mutual Funds per ₹100 in Bank Deposits | see pack | n/a | drafted (2026-10-13; beat template `fact`; Markets day; script reviewed and fixed before voicing; week four) |
+| 69 | fa40 | Haryana: GST Collected Was 9.2% of State Output, 2024-25 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Economy day; script reviewed and fixed before voicing; week four) |
+| 70 | tn41 | Tamil Nadu's Share of India's FDI Equity: 3.9% to 8.0% | see pack | n/a | drafted (2026-10-13; beat template `then`; Economy day; script reviewed and fixed before voicing; week four) |
+| 71 | fa30 | Mizoram: 33% of Bank Deposits in Regional Rural Banks, 2025 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Money day; script reviewed and fixed before voicing; week four) |
+| 72 | tn36 | Odisha: Women's Share of Atal Pension Enrolments, 36% to 67% | see pack | n/a | drafted (2026-10-13; beat template `then`; Money day; script reviewed and fixed before voicing; week four) |
+| 73 | fa50 | Delhi: 25 Registered Investors per 100 Projected Population | see pack | n/a | drafted (2026-10-13; beat template `fact`; Markets day; script reviewed and fixed before voicing; week four) |
+| 74 | tn51 | Assam: Registered Investors Up 13.3 Times Since March 2020 | see pack | n/a | drafted (2026-10-13; beat template `then`; Markets day; script reviewed and fixed before voicing; week four) |
+| 75 | px46 | Karnataka vs Tamil Nadu: 381 vs 371 STP Units, 6x Exports | see pack | n/a | drafted (2026-10-13; beat template `paradox`; Know your states day; script reviewed and fixed before voicing; week four) |
+| 76 | fa48 | Himachal: 26.5% of India's Large-Hydro Electricity, 2024-25 | see pack | n/a | drafted (2026-10-13; beat template `fact`; Know your states day; script reviewed and fixed before voicing; week four) |
+| 77 | px61 | Gujarat Has 49% More Bank Offices per Person Than Jharkhand | see pack | n/a | drafted (2026-10-14; beat template `paradox`; Money day; script reviewed and fixed before voicing; week five) |
+| 78 | tn60 | Bank Deposits in Haryana: 2.5% to 3.8% of India's, 2015-25 | see pack | n/a | drafted (2026-10-14; beat template `then`; Money day; script reviewed and fixed before voicing; week five) |
+| 79 | tn66 | Karnataka: Wives With a Say in All 3 Decisions, 83% to 89% | see pack | n/a | drafted (2026-10-14; beat template `then`; Women day; script reviewed and fixed before voicing; week five) |
+| 80 | px67 | Rajasthan Women: 52% in Labour Force, 21% of NSE Investors | see pack | n/a | drafted (2026-10-14; beat template `paradox`; Women day; script reviewed and fixed before voicing; week five) |
+| 81 | tn71 | Odisha: Men's Rural Construction Wage, 72% to 89% of India's | see pack | n/a | drafted (2026-10-14; beat template `then`; Economy day; script reviewed and fixed before voicing; week five) |
+| 82 | px72 | Telangana: 3× Kerala's Registered Co-ops, 7% More People | see pack | n/a | drafted (2026-10-14; beat template `paradox`; Economy day; script reviewed and fixed before voicing; week five) |
+| 83 | fa76 | Madhya Pradesh: 21 of Every 100 Specified Dams, Apr 2025 | see pack | n/a | drafted (2026-10-14; beat template `fact`; Power and connections day; script reviewed and fixed before voicing; week five) |
+| 84 | tn81 | Uttar Pradesh: 1-Year-Olds Fully Vaccinated Up 11.5 Points | see pack | n/a | drafted (2026-10-14; beat template `then`; School and health day; script reviewed and fixed before voicing; week five) |
+| 85 | px82 | Rajasthan Has 2x Gujarat's Colleges per University, 2023-24 | see pack | n/a | drafted (2026-10-14; beat template `paradox`; School and health day; script reviewed and fixed before voicing; week five) |
+| 86 | fa85 | Goa: Over Half Said They Knew 3+ Languages, Census 2011 | see pack | n/a | drafted (2026-10-14; beat template `fact`; Know your states day; script reviewed and fixed before voicing; week five) |
+| 87 | tn86 | West Bengal's Coastline: 157.5 km Old, 721 km Recalculated | see pack | n/a | drafted (2026-10-14; beat template `then`; Know your states day; script reviewed and fixed before voicing; week five) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

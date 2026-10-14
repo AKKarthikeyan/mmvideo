@@ -1,0 +1,563 @@
+{
+ "id": "px61",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "RBI end-March 2025 · NFHS-6 2023-24",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (Dec 2025), Table 152: offices of scheduled commercial banks, end-March 2025, over projected population (National Commission on Population, July 2020 edition, 1 March 2025). Women's own account: IIPS, NFHS-6 (2023-24) and NFHS-5 (2019-21) state fact sheets, women aged 15-49, survey estimates. Seven north-eastern states share one population projection.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "More bank offices per person:",
+    "*more women banked?*",
+    "*Gujarat* vs *Jharkhand*."
+   ],
+   "vo": "Gujarat had more bank offices per person. Were Jharkhand's women more often banked?",
+   "geo": "Gujarat",
+   "name": "Gujarat",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "BANK OFFICES PER LAKH PEOPLE",
+   "big": "13.0",
+   "text": "bank offices for every lakh people in Gujarat: 49% more than Jharkhand's 8.7. India: 11.9.",
+   "sub": "1 lakh = 100,000. End-March 2025.",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "label": "13.0",
+     "frac": 0.6495554918267852
+    },
+    {
+     "name": "Jharkhand",
+     "label": "8.7",
+     "frac": 0.4347396258125108
+    },
+    {
+     "name": "India",
+     "label": "11.9",
+     "frac": 0.5936572222646753
+    }
+   ],
+   "vo": "Gujarat had thirteen offices per lakh people, forty-nine percent more than Jharkhand.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Jharkhand",
+   "geo": "Jharkhand",
+   "kicker": "WOMEN WITH THEIR OWN ACCOUNT",
+   "big": "90.8%",
+   "text": "of women aged 15-49 had a bank account they use themselves. Gujarat: 82%. India: 89%.",
+   "sub": "National Family Health Survey 6, 2023-24.",
+   "bars": [
+    {
+     "name": "Jharkhand",
+     "label": "90.8%",
+     "frac": 0.9079999999999999
+    },
+    {
+     "name": "Gujarat",
+     "label": "82.2%",
+     "frac": 0.8220000000000001
+    },
+    {
+     "name": "India",
+     "label": "89.0%",
+     "frac": 0.89
+    }
+   ],
+   "vo": "Own account: Jharkhand's women ninety-one percent, Gujarat's eighty-two.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Jharkhand",
+   "geo": "Jharkhand",
+   "kicker": "THE SURVEY BEFORE · 2019-21",
+   "big": "79.6%",
+   "text": "of Jharkhand's women, in 2019-21. Gujarat: 70%. India: 79%.",
+   "sub": "National Family Health Survey 5, 2019-21: the same order.",
+   "bars": [
+    {
+     "name": "Jharkhand",
+     "label": "79.6%",
+     "frac": 0.7959999999999999
+    },
+    {
+     "name": "Gujarat",
+     "label": "70.0%",
+     "frac": 0.7
+    },
+    {
+     "name": "India",
+     "label": "78.6%",
+     "frac": 0.7859999999999999
+    }
+   ],
+   "vo": "In the survey before: eighty percent in Jharkhand, seventy in Gujarat.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "In 2023-24, across states",
+    "and UTs, offices per person",
+    "and women's own accounts",
+    "were *weakly linked.*"
+   ],
+   "note": "Bank offices at end-March 2025 against NFHS-6 (2023-24). The table shows how much, not why.",
+   "vo": "Across states, offices per person and women's accounts were weakly linked.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Bank offices per lakh people, *every state*",
+   "sub": "per lakh projected population · India 11.9 · end-March 2025",
+   "note": "Scheduled commercial banks. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Gujarat",
+    "Jharkhand"
+   ],
+   "vo": "Here is every state: bank offices for each lakh people.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Scheduled commercial banks. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "ring": [
+    "Gujarat",
+    "Jharkhand"
+   ],
+   "q": "Which matters more: *offices* or *accounts*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which matters more: offices or accounts?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Bihar",
+   "label": "6.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Manipur",
+   "label": "8.0",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 29.491
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "8.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.6
+  },
+  {
+   "name": "Jharkhand",
+   "label": "8.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.708
+  },
+  {
+   "name": "Assam",
+   "label": "8.9",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.817
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "9.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.926
+  },
+  {
+   "name": "West Bengal",
+   "label": "10.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.035
+  },
+  {
+   "name": "Nagaland",
+   "label": "10.2",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.143
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "10.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.252
+  },
+  {
+   "name": "Rajasthan",
+   "label": "10.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.361
+  },
+  {
+   "name": "Meghalaya",
+   "label": "11.6",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.47
+  },
+  {
+   "name": "Maharashtra",
+   "label": "11.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.578
+  },
+  {
+   "name": "Odisha",
+   "label": "12.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.687
+  },
+  {
+   "name": "Gujarat",
+   "label": "13.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.796
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "14.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.905
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "14.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.014
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "15.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.122
+  },
+  {
+   "name": "Tripura",
+   "label": "15.3",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.231
+  },
+  {
+   "name": "Telangana",
+   "label": "16.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.34
+  },
+  {
+   "name": "Karnataka",
+   "label": "16.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.449
+  },
+  {
+   "name": "Puducherry",
+   "label": "16.7",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.557
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "17.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.666
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "18.0",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.775
+  },
+  {
+   "name": "Haryana",
+   "label": "18.4",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.884
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "18.8",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.993
+  },
+  {
+   "name": "Mizoram",
+   "label": "19.1",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.101
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "19.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.21
+  },
+  {
+   "name": "Kerala",
+   "label": "20.5",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.319
+  },
+  {
+   "name": "Punjab",
+   "label": "22.3",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.428
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "24.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.536
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "24.6",
+   "bucket": 4,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 32.645
+  },
+  {
+   "name": "Sikkim",
+   "label": "26.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.754
+  },
+  {
+   "name": "Ladakh",
+   "label": "33.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.863
+  },
+  {
+   "name": "Chandigarh",
+   "label": "36.7",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.971
+  },
+  {
+   "name": "Goa",
+   "label": "43.4",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.08
+  }
+ ],
+ "checked": [
+  "rank correlation across 32 states = 0.20"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Gujarat had more bank offices per person. Were Jharkhand's women more often banked?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.754,
+   "at": 5.926,
+   "text": "Gujarat had thirteen offices per lakh people, forty-nine percent more than Jharkhand."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.257,
+   "at": 11.733,
+   "text": "Own account: Jharkhand's women ninety-one percent, Gujarat's eighty-two."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.198,
+   "at": 17.539,
+   "text": "In the survey before: eighty percent in Jharkhand, seventy in Gujarat."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.466,
+   "at": 23.346,
+   "text": "Across states, offices per person and women's accounts were weakly linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.414,
+   "at": 29.152,
+   "text": "Here is every state: bank offices for each lakh people."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.108,
+   "at": 34.959,
+   "text": "Which matters more: offices or accounts?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Gujarat Has 49% More Bank Offices per Person Than Jharkhand"
+}

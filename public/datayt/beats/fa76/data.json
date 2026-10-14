@@ -1,0 +1,514 @@
+{
+ "id": "fa76",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "NDSA · Dam Register · Apr 2025",
+ "source": "National Dam Safety Authority, Ministry of Jal Shakti: National Register of Specified Dams, April 2025 (Central Water Commission site), state summary, page iv: 6,628 dams and 265.5 billion cubic metres of live storage, completed and under construction. Specified dam: over 15 m high, or 10 to 15 m with size tests (Dam Safety Act, 2021). Area: India State of Forest Report 2023, as printed in Lok Sabha.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Madhya Pradesh*: *21* of",
+    "every 100 specified dams",
+    "in India, April 2025."
+   ],
+   "vo": "Madhya Pradesh has twenty-one of every hundred specified dams.",
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "SHARE OF INDIA'S SPECIFIED DAMS",
+   "big": "20.7%",
+   "text": "of India's specified dams: 1,370 of 6,628, on *9.4%* of the land. Gujarat: 7.9%.",
+   "sub": "Specified dam: over 15 m high, or 10 to 15 m with size tests (Dam Safety Act, 2021).",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "20.7%",
+     "frac": 0.45933078522094817
+    },
+    {
+     "name": "Gujarat",
+     "label": "7.9%",
+     "frac": 0.176020921343794
+    }
+   ],
+   "vo": "Madhya Pradesh: one in five dams, on nine percent of India's land.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "THE LEADER · MAHARASHTRA",
+   "big": "40.7%",
+   "text": "of India's specified dams: 2,696, *twice* Madhya Pradesh's. Same share of land: 9.4%.",
+   "sub": "State totals of dams, not of water. Land: share of India's geographical area.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "40.7%",
+     "frac": 0.9039093408435593
+    },
+    {
+     "name": "Madhya Pradesh",
+     "label": "20.7%",
+     "frac": 0.45933078522094817
+    }
+   ],
+   "vo": "Maharashtra has two in five, twice Madhya Pradesh's count, on the same land.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "SHARE OF INDIA'S LIVE STORAGE",
+   "big": "14.5%",
+   "text": "of India's live storage is in Madhya Pradesh. Maharashtra, with twice the dams: 14.2%.",
+   "sub": "Live storage: water a reservoir can release for use. India: 265.5 billion cubic metres.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "14.5%",
+     "frac": 0.7229310396770403
+    },
+    {
+     "name": "Maharashtra",
+     "label": "14.2%",
+     "frac": 0.7111062573434158
+    }
+   ],
+   "vo": "Madhya Pradesh's dams hold fourteen and a half percent of live storage.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "The average dam holds",
+    "*twice* as much live water in",
+    "Madhya Pradesh as in Maharashtra."
+   ],
+   "note": "Live storage per dam, register totals: 28 million cubic metres in Madhya Pradesh, 14 in Maharashtra. The table shows how much, not why.",
+   "vo": "A Madhya Pradesh dam holds, on average, twice the live water of Maharashtra's.",
+   "t0": 25.161,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Specified dams: *count in every state*",
+   "sub": "number of dams · India 6,628 · National Register, April 2025",
+   "note": "State totals, not per area. Blank: Chandigarh, Delhi, Puducherry, Dadra and Nagar Haveli and Daman and Diu, Lakshadweep (no row).",
+   "anim": true,
+   "ring": [
+    "Madhya Pradesh",
+    "Maharashtra"
+   ],
+   "vo": "Here is the number of specified dams in every state.",
+   "t0": 32.903,
+   "t1": 36.774
+  },
+  {
+   "note": "State totals, not per area. Blank: Chandigarh, Delhi, Puducherry, Dadra and Nagar Haveli and Daman and Diu, Lakshadweep (no row).",
+   "ring": [
+    "Madhya Pradesh",
+    "Maharashtra"
+   ],
+   "q": "Which *dam* have you seen?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which dam have you seen?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Nagaland",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Tripura",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.313
+  },
+  {
+   "name": "Ladakh",
+   "label": "2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 33.434
+  },
+  {
+   "name": "Assam",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.494
+  },
+  {
+   "name": "Haryana",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.555
+  },
+  {
+   "name": "Mizoram",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.615
+  },
+  {
+   "name": "Manipur",
+   "label": "4",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.675
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.736
+  },
+  {
+   "name": "Goa",
+   "label": "6",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.796
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.857
+  },
+  {
+   "name": "Meghalaya",
+   "label": "9",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.917
+  },
+  {
+   "name": "Sikkim",
+   "label": "9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.977
+  },
+  {
+   "name": "Punjab",
+   "label": "16",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.038
+  },
+  {
+   "name": "Bihar",
+   "label": "28",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.098
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "30",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.158
+  },
+  {
+   "name": "West Bengal",
+   "label": "36",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.219
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "37",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.279
+  },
+  {
+   "name": "Kerala",
+   "label": "65",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.339
+  },
+  {
+   "name": "Jharkhand",
+   "label": "72",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.4
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "123",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.46
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "143",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.52
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "166",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.581
+  },
+  {
+   "name": "Telangana",
+   "label": "174",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.641
+  },
+  {
+   "name": "Odisha",
+   "label": "221",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.702
+  },
+  {
+   "name": "Karnataka",
+   "label": "231",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.762
+  },
+  {
+   "name": "Rajasthan",
+   "label": "315",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.822
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "322",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.883
+  },
+  {
+   "name": "Gujarat",
+   "label": "525",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.943
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "1,370",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.003
+  },
+  {
+   "name": "Maharashtra",
+   "label": "2,696",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.064
+  }
+ ],
+ "checked": [
+  "Madhya Pradesh 1370 rounds to 1370",
+  "India 6628 rounds to 6628",
+  "Maharashtra 2696 rounds to 2696",
+  "Gujarat 525 rounds to 525",
+  "Maharashtra / Madhya Pradesh = 1.97 (at least 1.9)",
+  "Madhya Pradesh / Gujarat = 2.61 (at least 2.5)",
+  "Madhya Pradesh / Maharashtra = 1.02 (at least 0.97)",
+  "Maharashtra / Madhya Pradesh = 0.98 (at least 0.97)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.466,
+   "at": 0.12,
+   "text": "Madhya Pradesh has twenty-one of every hundred specified dams."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.179,
+   "at": 5.926,
+   "text": "Madhya Pradesh: one in five dams, on nine percent of India's land."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.825,
+   "at": 11.733,
+   "text": "Maharashtra has two in five, twice Madhya Pradesh's count, on the same land."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.657,
+   "at": 19.475,
+   "text": "Madhya Pradesh's dams hold fourteen and a half percent of live storage."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 6.06,
+   "at": 25.281,
+   "text": "A Madhya Pradesh dam holds, on average, twice the live water of Maharashtra's."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.533,
+   "at": 33.023,
+   "text": "Here is the number of specified dams in every state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.567,
+   "at": 36.894,
+   "text": "Which dam have you seen?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Madhya Pradesh: 21 of Every 100 Specified Dams, Apr 2025"
+}

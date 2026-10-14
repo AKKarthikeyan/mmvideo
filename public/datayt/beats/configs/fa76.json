@@ -1,0 +1,758 @@
+{
+ "id": "fa76",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "NDSA · Dam Register · Apr 2025",
+ "palette": "C",
+ "state": "Madhya Pradesh",
+ "source": "National Dam Safety Authority, Ministry of Jal Shakti: National Register of Specified Dams, April 2025 (Central Water Commission site), state summary, page iv: 6,628 dams and 265.5 billion cubic metres of live storage, completed and under construction. Specified dam: over 15 m high, or 10 to 15 m with size tests (Dam Safety Act, 2021). Area: India State of Forest Report 2023, as printed in Lok Sabha.",
+ "hook": [
+  "*Madhya Pradesh*: *21* of",
+  "every 100 specified dams",
+  "in India, April 2025."
+ ],
+ "hook_vo": "Madhya Pradesh has twenty-one of every hundred specified dams.",
+ "facts": [
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "SHARE OF INDIA'S SPECIFIED DAMS",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 45,
+   "text": "of India's specified dams: 1,370 of 6,628, on *9.4%* of the land. Gujarat: 7.9%.",
+   "sub": "Specified dam: over 15 m high, or 10 to 15 m with size tests (Dam Safety Act, 2021).",
+   "vo": "Madhya Pradesh: one in five dams, on nine percent of India's land."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "THE LEADER · MAHARASHTRA",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Madhya Pradesh"
+   ],
+   "bar_max": 45,
+   "text": "of India's specified dams: 2,696, *twice* Madhya Pradesh's. Same share of land: 9.4%.",
+   "sub": "State totals of dams, not of water. Land: share of India's geographical area.",
+   "vo": "Maharashtra has two in five, twice Madhya Pradesh's count, on the same land."
+  },
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "SHARE OF INDIA'S LIVE STORAGE",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Live storage: total (BCM)"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Maharashtra"
+   ],
+   "bar_max": 20,
+   "text": "of India's live storage is in Madhya Pradesh. Maharashtra, with twice the dams: 14.2%.",
+   "sub": "Live storage: water a reservoir can release for use. India: 265.5 billion cubic metres.",
+   "vo": "Madhya Pradesh's dams hold fourteen and a half percent of live storage."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "equals": 1370
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "equals": 6628
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "equals": 2696
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "tbl": [
+     "evergreen/built_dams_nrsd_2025",
+     "Specified dams: total"
+    ]
+   },
+   "equals": 525
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    }
+   },
+   "min": 1.9
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    }
+   },
+   "min": 2.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    }
+   },
+   "min": 0.97
+  }
+ ],
+ "tests": [
+  {
+   "says": "Madhya Pradesh 1,370 specified dams (text)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 1370
+  },
+  {
+   "says": "India 6,628 specified dams (text, map sub)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 6628
+  },
+  {
+   "says": "Maharashtra 2,696 specified dams",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 2696
+  },
+  {
+   "says": "Gujarat 525 specified dams",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "equals": 525
+  },
+  {
+   "says": "21 of every 100 (hook, voice): 20.7 rounds to 21",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 21
+  },
+  {
+   "says": "20.7% of India's dams (card, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Madhya Pradesh",
+    "scale": 10
+   },
+   "equals": 207
+  },
+  {
+   "says": "'one in five' (voice): between 19.5 and 21.5",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "min": 19.5,
+   "max": 21.5
+  },
+  {
+   "says": "Gujarat 7.9% (text, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Gujarat",
+    "scale": 10
+   },
+   "equals": 79
+  },
+  {
+   "says": "Maharashtra 40.7% (card, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 407
+  },
+  {
+   "says": "'two in five' (voice): between 39 and 42",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Specified dams: total"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "min": 39,
+   "max": 42
+  },
+  {
+   "says": "'twice Madhya Pradesh's count': 2,696 over 1,370 is 1.97",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.1
+  },
+  {
+   "says": "Madhya Pradesh is far ahead of the third state, Gujarat (2.6 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Gujarat"
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 2.7
+  },
+  {
+   "says": "9 percent of India's land, Madhya Pradesh (voice): 9.38 rounds to 9",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_forest_cover_isfr2023",
+      "Geographical area (ha)"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 9
+  },
+  {
+   "says": "9.4% of India's land, Madhya Pradesh (text, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_forest_cover_isfr2023",
+      "Geographical area (ha)"
+     ]
+    },
+    "state": "Madhya Pradesh",
+    "scale": 10
+   },
+   "equals": 94
+  },
+  {
+   "says": "9.4% of India's land, Maharashtra (text, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_forest_cover_isfr2023",
+      "Geographical area (ha)"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 94
+  },
+  {
+   "says": "same land as Maharashtra: the two shares are within 0.1 point",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Geographical area (ha)"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "share": {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Geographical area (ha)"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": -0.1,
+   "max": 0.1
+  },
+  {
+   "says": "dam share is more than twice land share for Madhya Pradesh (2.2 times)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "share": {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Geographical area (ha)"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 2.1,
+   "max": 2.3
+  },
+  {
+   "says": "Madhya Pradesh 14.5% of live storage (card, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    },
+    "state": "Madhya Pradesh",
+    "scale": 10
+   },
+   "equals": 145
+  },
+  {
+   "says": "'fourteen and a half percent' (voice)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "min": 14.4,
+   "max": 14.6
+  },
+  {
+   "says": "Maharashtra 14.2% of live storage (text, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 142
+  },
+  {
+   "says": "'about the same' live storage: Madhya Pradesh over Maharashtra within 3% (1.02)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Live storage: total (BCM)"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Live storage: total (BCM)"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": 0.97,
+   "max": 1.03
+  },
+  {
+   "says": "India live storage 265.5 billion cubic metres (sub, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/built_dams_nrsd_2025",
+      "Live storage: total (BCM)"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 2655
+  },
+  {
+   "says": "28 million cubic metres a dam in Madhya Pradesh (note)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Live storage: total (BCM)"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 28
+  },
+  {
+   "says": "14 million cubic metres a dam in Maharashtra (note)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Live storage: total (BCM)"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_dams_nrsd_2025",
+        "Specified dams: total"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 14
+  },
+  {
+   "says": "'twice' the live water a dam (voice, card): 1.9 to 2.1 times",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/built_dams_nrsd_2025",
+          "Live storage: total (BCM)"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/built_dams_nrsd_2025",
+          "Specified dams: total"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       }
+      ],
+      "scale": 1000
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/built_dams_nrsd_2025",
+          "Live storage: total (BCM)"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/built_dams_nrsd_2025",
+          "Specified dams: total"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ],
+      "scale": 1000
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.1
+  },
+  {
+   "says": "Aug 2026 answer: Madhya Pradesh 1,370 completed dams, the same count",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_specified_dams",
+      "Completed and operational specified dams"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 1370
+  },
+  {
+   "says": "Aug 2026 answer: Maharashtra 2,713 completed dams",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_specified_dams",
+      "Completed and operational specified dams"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 2713
+  },
+  {
+   "says": "Aug 2026 answer: Madhya Pradesh is still 21 of every 100 (20.8)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_specified_dams",
+      "Completed and operational specified dams"
+     ]
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 21
+  }
+ ],
+ "so": {
+  "lines": [
+   "The average dam holds",
+   "*twice* as much live water in",
+   "Madhya Pradesh as in Maharashtra."
+  ],
+  "note": "Live storage per dam, register totals: 28 million cubic metres in Madhya Pradesh, 14 in Maharashtra. The table shows how much, not why.",
+  "vo": "A Madhya Pradesh dam holds, on average, twice the live water of Maharashtra's."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "evergreen/built_dams_nrsd_2025",
+    "Specified dams: total"
+   ]
+  },
+  "unit": "",
+  "title": "Specified dams: *count in every state*",
+  "sub": "number of dams · India {india} · National Register, April 2025",
+  "note": "State totals, not per area. Blank: Chandigarh, Delhi, Puducherry, Dadra and Nagar Haveli and Daman and Diu, Lakshadweep (no row).",
+  "ring": [
+   "Madhya Pradesh",
+   "Maharashtra"
+  ],
+  "vo": "Here is the number of specified dams in every state."
+ },
+ "end": {
+  "q": "Which *dam* have you seen?",
+  "sub": "Comment below.",
+  "vo": "Which dam have you seen?"
+ },
+ "yt_title": "Madhya Pradesh: 21 of Every 100 Specified Dams, Apr 2025"
+}

@@ -1,0 +1,1106 @@
+{
+ "id": "tn86",
+ "type": "then",
+ "rules": 2,
+ "chip": "RECALCULATED",
+ "source_short": "Survey of India · coastline, April 2025",
+ "palette": "C",
+ "state": "West Bengal",
+ "points": [
+  {
+   "data": {
+    "tbl": [
+     "evergreen/land_coastline_2025",
+     "Old coastline (km)"
+    ]
+   },
+   "period": "Until 2025"
+  },
+  {
+   "data": {
+    "tbl": [
+     "evergreen/land_coastline_2025",
+     "Revised coastline, 2025 (km)"
+    ]
+   },
+   "period": "2025 revision"
+  }
+ ],
+ "measure": "value",
+ "unit": " km",
+ "delta": "times",
+ "kicker": "WEST BENGAL'S COASTLINE",
+ "expect": {
+  "n": 12
+ },
+ "source": "Survey of India, 'Length of Coastline of India' (11,098.81 km), promulgated by the Ministry of Ports, Shipping and Waterways on 29 April 2025; old and revised lengths in the Ministry of Earth Sciences' Parliament answer of 4 December 2025. The official note gives one general reason for every state, 'probable variation in scale and calculation methods', not one for West Bengal. 12 states and UTs have both lengths.",
+ "hook": [
+  "*West Bengal's* coast:",
+  "*157.5 km* before 2025,",
+  "*721 km* recalculated."
+ ],
+ "hook_vo": "West Bengal's coast was recalculated at four point six times the old figure.",
+ "then": {
+  "text": "was West Bengal's coastline in the old official count. India's: *{india_then}*.",
+  "vo": "The old count: one hundred fifty-seven and a half kilometres."
+ },
+ "now": {
+  "text": "in the 2025 recalculation: *{times} times* the old figure. India's: *{india_now}*.",
+  "vo": "The twenty twenty-five recalculation: seven hundred twenty-one kilometres."
+ },
+ "facts": [
+  {
+   "kicker": "WEST BENGAL AS % OF KERALA",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      }
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of Kerala's coast length after the recalculation. West Bengal's was 27.6% of it in the old count.",
+   "bars": [
+    {
+     "name": "Old count",
+     "ratio": [
+      {
+       "data": {
+        "tbl": [
+         "evergreen/land_coastline_2025",
+         "Old coastline (km)"
+        ]
+       }
+      },
+      {
+       "data": {
+        "tbl": [
+         "evergreen/land_coastline_2025",
+         "Old coastline (km)"
+        ]
+       },
+       "state": "Kerala"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2025",
+     "ratio": [
+      {
+       "data": {
+        "tbl": [
+         "evergreen/land_coastline_2025",
+         "Revised coastline, 2025 (km)"
+        ]
+       }
+      },
+      {
+       "data": {
+        "tbl": [
+         "evergreen/land_coastline_2025",
+         "Revised coastline, 2025 (km)"
+        ]
+       },
+       "state": "Kerala"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 140,
+   "sub": "Kerala's coast: 569.7 km old, 600.15 km revised.",
+   "vo": "After the recalculation, West Bengal's coast was longer than Kerala's."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "West Bengal's multiple, *4.6×*,",
+    "was the biggest of 12 coasts.",
+    "Next: Gujarat, *1.9×*."
+   ],
+   "note": "The official note gives one reason for all states: 'probable variation in scale and calculation methods'. It does not explain West Bengal alone.",
+   "vo": "West Bengal's multiple was the biggest of twelve. Gujarat's was one point nine."
+  }
+ ],
+ "map": {
+  "as": "percent",
+  "bands": [
+   10,
+   25,
+   50,
+   100
+  ],
+  "title": "Coastline recalculated: *each coast*",
+  "sub": "% difference, old vs 2025 recalculation · India +48",
+  "note": "Blank: states and UTs with no sea coast; Daman and Diu has no old figure. The table shows how much, not why.",
+  "ring": [
+   "Gujarat",
+   "Kerala"
+  ],
+  "vo": "Here is every coast: the recalculation against the old length."
+ },
+ "end": {
+  "q": "What is your favourite *beach*?",
+  "sub": "Comment below.",
+  "vo": "What is your favourite beach?"
+ },
+ "tests": [
+  {
+   "says": "West Bengal old 157.5 km (hook, card, tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Old coastline (km)"
+     ]
+    },
+    "state": "West Bengal",
+    "scale": 10
+   },
+   "equals": 1575
+  },
+  {
+   "says": "West Bengal revised 721.02 km (hundredths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Revised coastline, 2025 (km)"
+     ]
+    },
+    "state": "West Bengal",
+    "scale": 100
+   },
+   "equals": 72102
+  },
+  {
+   "says": "721 km (hook, title, voice): 721.02 rounds to 721",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Revised coastline, 2025 (km)"
+     ]
+    },
+    "state": "West Bengal"
+   },
+   "equals": 721
+  },
+  {
+   "says": "West Bengal 721.0 km on the card (tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Revised coastline, 2025 (km)"
+     ]
+    },
+    "state": "West Bengal",
+    "scale": 10
+   },
+   "equals": 7210
+  },
+  {
+   "says": "Kerala old 569.7 km (tenths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Old coastline (km)"
+     ]
+    },
+    "state": "Kerala",
+    "scale": 10
+   },
+   "equals": 5697
+  },
+  {
+   "says": "Kerala revised 600.15 km (hundredths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Revised coastline, 2025 (km)"
+     ]
+    },
+    "state": "Kerala",
+    "scale": 100
+   },
+   "equals": 60015
+  },
+  {
+   "says": "India old 7,516.6 km (tenths, card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Old coastline (km)"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 75166
+  },
+  {
+   "says": "India revised 11,098.81 km (hundredths)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/land_coastline_2025",
+      "Revised coastline, 2025 (km)"
+     ]
+    },
+    "state": "India",
+    "scale": 100
+   },
+   "equals": 1109881
+  },
+  {
+   "says": "4.6 times (card, voice, tenths): 4.58 rounds to 46",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 46
+  },
+  {
+   "says": "'four point six' times (voice): between 4.55 and 4.65",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 4.55,
+   "max": 4.65
+  },
+  {
+   "says": "West Bengal 120.1% of Kerala's coast after the recalculation (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 1201
+  },
+  {
+   "says": "West Bengal 27.6% of Kerala's coast in the old count (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 276
+  },
+  {
+   "says": "West Bengal's recalculated coast is longer than Kerala's by over 3% (1.20 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ]
+   },
+   "min": 1.19,
+   "max": 1.21
+  },
+  {
+   "says": "In the old count Kerala's coast was longer than West Bengal's by far (3.6 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 3.55,
+   "max": 3.7
+  },
+  {
+   "says": "Gujarat's multiple 1.9 (says card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Gujarat"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 19
+  },
+  {
+   "says": "'one point nine' (voice): Gujarat's multiple between 1.85 and 1.95",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Gujarat"
+     }
+    ]
+   },
+   "min": 1.85,
+   "max": 1.95
+  },
+  {
+   "says": "West Bengal's multiple is at least 2.3 times Gujarat's (4.58 over 1.93: the lead is not thin)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "West Bengal"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 2.3,
+   "max": 2.45
+  },
+  {
+   "says": "Andaman and Nicobar Islands's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Andaman and Nicobar Islands"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Andaman and Nicobar Islands"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Maharashtra's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Puducherry's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Puducherry"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Puducherry"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Karnataka's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Karnataka"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Karnataka"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Odisha's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Odisha"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Goa's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Goa"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Goa"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Tamil Nadu's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Tamil Nadu"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Tamil Nadu"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Lakshadweep's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Lakshadweep"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Lakshadweep"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Andhra Pradesh's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "Kerala's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ]
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Revised coastline, 2025 (km)"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "tbl": [
+          "evergreen/land_coastline_2025",
+          "Old coastline (km)"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.999
+  },
+  {
+   "says": "India's multiple is 1.48, the map sub says +48%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 148
+  }
+ ],
+ "yt_title": "West Bengal's Coastline: 157.5 km Old, 721 km Recalculated"
+}

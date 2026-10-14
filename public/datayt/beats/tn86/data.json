@@ -1,0 +1,356 @@
+{
+ "id": "tn86",
+ "type": "then",
+ "chip": "RECALCULATED",
+ "sourceShort": "Survey of India · coastline, April 2025",
+ "source": "Survey of India, 'Length of Coastline of India' (11,098.81 km), promulgated by the Ministry of Ports, Shipping and Waterways on 29 April 2025; old and revised lengths in the Ministry of Earth Sciences' Parliament answer of 4 December 2025. The official note gives one general reason for every state, 'probable variation in scale and calculation methods', not one for West Bengal. 12 states and UTs have both lengths.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*West Bengal's* coast:",
+    "*157.5 km* before 2025,",
+    "*721 km* recalculated."
+   ],
+   "vo": "West Bengal's coast was recalculated at four point six times the old figure.",
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "kicker": "WEST BENGAL'S COASTLINE",
+   "big": "4.6×",
+   "p0": {
+    "period": "Until 2025",
+    "label": "157.5 km",
+    "frac": 0.21844054256470002
+   },
+   "p1": {
+    "period": "2025 revision",
+    "label": "721.0 km",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "was West Bengal's coastline in the old official count. India's: *7,516.6 km*.",
+   "vo": "The old count: one hundred fifty-seven and a half kilometres.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "kicker": "WEST BENGAL'S COASTLINE",
+   "big": "4.6×",
+   "p0": {
+    "period": "Until 2025",
+    "label": "157.5 km",
+    "frac": 0.21844054256470002
+   },
+   "p1": {
+    "period": "2025 revision",
+    "label": "721.0 km",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "in the 2025 recalculation: *4.6 times* the old figure. India's: *11,098.8 km*.",
+   "vo": "The twenty twenty-five recalculation: seven hundred twenty-one kilometres.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "West Bengal",
+   "geo": "West Bengal",
+   "kicker": "WEST BENGAL AS % OF KERALA",
+   "big": "120.1%",
+   "text": "of Kerala's coast length after the recalculation. West Bengal's was 27.6% of it in the old count.",
+   "sub": "Kerala's coast: 569.7 km old, 600.15 km revised.",
+   "bars": [
+    {
+     "name": "Old count",
+     "label": "27.6%",
+     "frac": 0.19747235387045814
+    },
+    {
+     "name": "2025",
+     "label": "120.1%",
+     "frac": 0.8581426072053416
+    }
+   ],
+   "vo": "After the recalculation, West Bengal's coast was longer than Kerala's.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "West Bengal's multiple, *4.6×*,",
+    "was the biggest of 12 coasts.",
+    "Next: Gujarat, *1.9×*."
+   ],
+   "note": "The official note gives one reason for all states: 'probable variation in scale and calculation methods'. It does not explain West Bengal alone.",
+   "vo": "West Bengal's multiple was the biggest of twelve. Gujarat's was one point nine.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Coastline recalculated: *each coast*",
+   "sub": "% difference, old vs 2025 recalculation · India +48",
+   "note": "Blank: states and UTs with no sea coast; Daman and Diu has no old figure. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "West Bengal",
+    "Gujarat",
+    "Kerala"
+   ],
+   "vo": "Here is every coast: the recalculation against the old length.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Blank: states and UTs with no sea coast; Daman and Diu has no old figure. The table shows how much, not why.",
+   "ring": [
+    "West Bengal",
+    "Gujarat",
+    "Kerala"
+   ],
+   "q": "What is your favourite *beach*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "What is your favourite beach?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Kerala",
+   "label": "+5",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+8",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "+10",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+18",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Odisha",
+   "label": "+21",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Goa",
+   "label": "+21",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Karnataka",
+   "label": "+23",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+35",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Puducherry",
+   "label": "+39",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+57",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Gujarat",
+   "label": "+93",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "West Bengal",
+   "label": "+358",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  }
+ ],
+ "checked": [
+  "West Bengal: 157.50 in Until 2025, 721.02 in 2025 revision: +563.52, 4.58 times",
+  "n = 12",
+  "West Bengal old 157.5 km (hook, card, tenths): 1575.00",
+  "West Bengal revised 721.02 km (hundredths): 72102.00",
+  "721 km (hook, title, voice): 721.02 rounds to 721: 721.02",
+  "West Bengal 721.0 km on the card (tenths): 7210.20",
+  "Kerala old 569.7 km (tenths): 5697.00",
+  "Kerala revised 600.15 km (hundredths): 60015.00",
+  "India old 7,516.6 km (tenths, card): 75166.00",
+  "India revised 11,098.81 km (hundredths): 1109881.00",
+  "4.6 times (card, voice, tenths): 4.58 rounds to 46: 45.78",
+  "'four point six' times (voice): between 4.55 and 4.65: 4.58",
+  "West Bengal 120.1% of Kerala's coast after the recalculation (card, tenths): 1201.40",
+  "West Bengal 27.6% of Kerala's coast in the old count (card, tenths): 276.46",
+  "West Bengal's recalculated coast is longer than Kerala's by over 3% (1.20 times): 1.20",
+  "In the old count Kerala's coast was longer than West Bengal's by far (3.6 times): 3.62",
+  "Gujarat's multiple 1.9 (says card, tenths): 19.27",
+  "'one point nine' (voice): Gujarat's multiple between 1.85 and 1.95: 1.93",
+  "West Bengal's multiple is at least 2.3 times Gujarat's (4.58 over 1.93: the lead is not thin): 2.38",
+  "Andaman and Nicobar Islands's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.82",
+  "Maharashtra's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.70",
+  "Puducherry's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.72",
+  "Karnataka's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.64",
+  "Odisha's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.63",
+  "Goa's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.63",
+  "Tamil Nadu's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.61",
+  "Lakshadweep's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.57",
+  "Andhra Pradesh's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.56",
+  "Kerala's multiple is below Gujarat's (so West Bengal first, Gujarat next, of 12): 0.55",
+  "India's multiple is 1.48, the map sub says +48%: 147.66"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.858,
+   "at": 0.12,
+   "text": "West Bengal's coast was recalculated at four point six times the old figure."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.657,
+   "at": 5.926,
+   "text": "The old count: one hundred fifty-seven and a half kilometres."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.806,
+   "at": 11.733,
+   "text": "The twenty twenty-five recalculation: seven hundred twenty-one kilometres."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 17.539,
+   "text": "After the recalculation, West Bengal's coast was longer than Kerala's."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.466,
+   "at": 23.346,
+   "text": "West Bengal's multiple was the biggest of twelve. Gujarat's was one point nine."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.388,
+   "at": 29.152,
+   "text": "Here is every coast: the recalculation against the old length."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.88,
+   "at": 34.959,
+   "text": "What is your favourite beach?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "West Bengal's Coastline: 157.5 km Old, 721 km Recalculated"
+}

@@ -1,0 +1,824 @@
+{
+ "id": "tn60",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "RBI Handbook · end-March 2015, 2025",
+ "palette": "D",
+ "state": "Haryana",
+ "table": 155,
+ "from": "2015",
+ "to": "2025",
+ "measure": "share",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "SHARE OF INDIA'S BANK DEPOSITS",
+ "expect": {
+  "years": 10
+ },
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Table 155: deposits of scheduled commercial banks, as at end-March 2015 and 2025. Share = the state's row over the all-India row (the state rows add up to it). A deposit is counted where the bank office is, not where the saver lives. People: National Commission on Population projections (July 2020 edition), 1 March.",
+ "hook": [
+  "Bank deposits in *Haryana*:",
+  "*2.5%* of India's in 2015,",
+  "*3.8%* in 2025."
+ ],
+ "hook_vo": "Deposits in Haryana: two point five percent of India's, then three point eight.",
+ "then": {
+  "text": "of India's bank deposits were in Haryana. Share of India's projected population: 2.1%.",
+  "vo": "In March twenty fifteen: two point five percent of India's deposits."
+ },
+ "now": {
+  "text": "of India's bank deposits, 1.5 times the 2015 share. Projected population share: 2.2%.",
+  "vo": "In March twenty twenty-five: three point eight percent."
+ },
+ "facts": [
+  {
+   "kicker": "DEPOSITS PER PERSON · × INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "times India's bank deposits per person (deposit share ÷ share of people).",
+   "bars": [
+    {
+     "name": "2015",
+     "ratio": [
+      {
+       "share": {
+        "rbi": [
+         155,
+         "2015"
+        ]
+       }
+      },
+      {
+       "share": {
+        "tbl": [
+         "population/projected",
+         "2015"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "2025",
+     "ratio": [
+      {
+       "share": {
+        "rbi": [
+         155,
+         "2025"
+        ]
+       }
+      },
+      {
+       "share": {
+        "tbl": [
+         "population/projected",
+         "2025"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 2,
+   "sub": "Projected population, 1 March. Counted where the bank office is, not where the saver lives.",
+   "vo": "Per person: one point two times India's, then one point seven."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Haryana's share rose in *nine*",
+    "*of ten* years: *+1.3 points*.",
+    "Karnataka's rose *0.9 points*."
+   ],
+   "note": "Scheduled commercial banks, end-March. Karnataka's share: 7.1% to 8.1%. The table shows how much, not why.",
+   "vo": "Haryana's share rose in nine of ten years, by one point three."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -1.0,
+   -0.2,
+   0.2,
+   0.9
+  ],
+  "title": "Share of India's deposits: *change by state*",
+  "sub": "percentage points · 2015 to 2025",
+  "note": "Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu. A share can fall while deposits grow.",
+  "vo": "Here is each state's change in its share of deposits.",
+  "key": [
+   "fell",
+   "within 0.2 points",
+   "rose"
+  ],
+  "ring": [
+   "Karnataka"
+  ]
+ },
+ "end": {
+  "q": "Is your bank in *your state*?",
+  "sub": "Comment below.",
+  "vo": "Is your bank in your state?"
+ },
+ "tests": [
+  {
+   "says": "2.5% of India's deposits in 2015 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2015"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 25
+  },
+  {
+   "says": "3.8% of India's deposits in 2025 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 38
+  },
+  {
+   "says": "2.1% of India's people in 2015 (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected",
+      "2015"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 21
+  },
+  {
+   "says": "2.2% of India's people in 2025 (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected",
+      "2025"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 22
+  },
+  {
+   "says": "1.2 times India's deposits per person in 2015 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2015"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 12
+  },
+  {
+   "says": "1.7 times India's deposits per person in 2025 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 17
+  },
+  {
+   "says": "deposits per person above India's in 2015 (card says 1.2x)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2015"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.15,
+   "max": 1.25
+  },
+  {
+   "says": "deposits per person well above India's in 2025",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.65,
+   "max": 1.8
+  },
+  {
+   "says": "India = 1.0 times itself (card says India: 1.0x)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 1
+  },
+  {
+   "says": "gain of 1.3 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 13
+  },
+  {
+   "says": "gain is over one point",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 1.6
+  },
+  {
+   "says": "Karnataka gained 0.9 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 9
+  },
+  {
+   "says": "Karnataka gained under one point",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 0.99
+  },
+  {
+   "says": "1.5 times its 2015 share (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 15
+  },
+  {
+   "says": "Karnataka 7.1% of India's deposits in 2015 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2015"
+     ]
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 71
+  },
+  {
+   "says": "Karnataka 8.1% of India's deposits in 2025 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 81
+  },
+  {
+   "says": "2016: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2016"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2017: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2017"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2016"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2018: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2018"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2017"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2019: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2019"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2018"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2020: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2020"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2019"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2021: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2021"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2020"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2022: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2022"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2021"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2023: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2022"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2024: the share eased by under 0.1 point (the one year it did not rise)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2023"
+       ]
+      }
+     }
+    ]
+   },
+   "min": -0.1,
+   "max": 0.0
+  },
+  {
+   "says": "2025: the share rose on the year before",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2024"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 1.0
+  },
+  {
+   "says": "2023: share still above 3.6% (holds the gain)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2023"
+     ]
+    }
+   },
+   "min": 3.6,
+   "max": 4.0
+  },
+  {
+   "says": "2024: share still above 3.6% (holds the gain)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "min": 3.6,
+   "max": 4.0
+  },
+  {
+   "says": "2025: share still above 3.6% (holds the gain)",
+   "value": {
+    "share": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 3.6,
+   "max": 4.0
+  },
+  {
+   "says": "2014 share below 2015 (start is not a dip)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2015"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        155,
+        "2014"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.3
+  },
+  {
+   "says": "people share moved by under 0.1 point",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2015"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 0.1
+  }
+ ],
+ "yt_title": "Bank Deposits in Haryana: 2.5% to 3.8% of India's, 2015-25"
+}

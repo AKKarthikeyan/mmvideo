@@ -1,0 +1,1410 @@
+{
+ "id": "fa70",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Cooperation Ministry · NCD · 1 Mar 2026",
+ "palette": "D",
+ "state": "Maharashtra",
+ "source": "Ministry of Cooperation, reply to Lok Sabha Unstarred Question No. 2939 of 10 March 2026, Annexure 2: registered cooperative societies by State/UT, National Cooperative Database as of 1 March 2026 (all sectors, functional or not). Population: National Commission on Population, Projections 2011-2036 (July 2020 edition), 1 March 2026. Per lakh = societies ÷ projected population. Counts change with each update.",
+ "hook": [
+  "*Maharashtra*: *2.9×* India's",
+  "registered cooperatives per",
+  "person (projected), 2026."
+ ],
+ "hook_vo": "Maharashtra has two point nine times India's registered cooperatives per person.",
+ "facts": [
+  {
+   "state": "Maharashtra",
+   "kicker": "REGISTERED COOPERATIVE SOCIETIES",
+   "data": {
+    "tbl": [
+     "evergreen/ls_cooperatives_ncd",
+     "Total number of cooperative societies"
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 250000,
+   "text": "societies registered in Maharashtra. Highest of {n} states and UTs. India: 8.5 lakh.",
+   "sub": "All sectors in the National Cooperative Database. Counts societies, not members or money.",
+   "vo": "Maharashtra had the most: two hundred twenty-six thousand registered societies."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "SHARE OF INDIA'S SOCIETIES",
+   "data": {
+    "tbl": [
+     "evergreen/ls_cooperatives_ncd",
+     "Total number of cooperative societies"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 40,
+   "text": "of all registered cooperative societies in India. Gujarat, next: 10.2%.",
+   "sub": "Housing, dairy, credit and other societies, 1 March 2026.",
+   "vo": "Twenty-seven percent of India's. Gujarat, next: ten."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "SOCIETIES PER LAKH PEOPLE",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/ls_cooperatives_ncd",
+       "Total number of cooperative societies"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 200,
+   "text": "per lakh projected people; India 59.5. Highest of 21 states and UTs over 1 crore people.",
+   "sub": "1 lakh = 100,000. Societies ÷ projected population. Five smaller states and UTs have more.",
+   "vo": "Per lakh people: one hundred seventy-five. India: nearly sixty."
+  }
+ ],
+ "tests": [
+  {
+   "says": "27% of India's societies (hook, title, voice)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    }
+   },
+   "equals": 27
+  },
+  {
+   "says": "26.6% (card, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 266
+  },
+  {
+   "says": "9% of India's people (hook, title, say card, voice)",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   },
+   "equals": 9
+  },
+  {
+   "says": "Maharashtra societies 225,986 (card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    }
+   },
+   "equals": 225986
+  },
+  {
+   "says": "Gujarat societies 86,519 (bar)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "equals": 86519
+  },
+  {
+   "says": "India 8.5 lakh societies (card; tenths of a lakh)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "scale": 0.0001,
+    "state": "India"
+   },
+   "equals": 85
+  },
+  {
+   "says": "Gujarat 10.2% of India's societies (card, tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "scale": 10,
+    "state": "Gujarat"
+   },
+   "equals": 102
+  },
+  {
+   "says": "Gujarat ten percent (voice)",
+   "value": {
+    "share": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "equals": 10
+  },
+  {
+   "says": "175 societies per lakh people (voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 175
+  },
+  {
+   "says": "174.8 per lakh (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 1748
+  },
+  {
+   "says": "India 59.5 per lakh (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10,
+    "state": "India"
+   },
+   "equals": 595
+  },
+  {
+   "says": "India nearly sixty per lakh (voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India"
+   },
+   "min": 59,
+   "max": 60
+  },
+  {
+   "says": "2.9 times its share of people (say card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      }
+     },
+     {
+      "share": {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 29
+  },
+  {
+   "says": "Andhra Pradesh (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Andhra Pradesh"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Assam (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Assam"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Bihar (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Bihar"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Chhattisgarh (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Chhattisgarh"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Delhi (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Delhi"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Gujarat (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Gujarat"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Haryana (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Haryana"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Jammu and Kashmir (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Jammu and Kashmir"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Jharkhand (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Jharkhand"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Karnataka (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Karnataka"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Kerala (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Kerala"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Madhya Pradesh (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Madhya Pradesh"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Odisha (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Odisha"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Punjab (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Rajasthan (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Rajasthan"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Tamil Nadu (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Tamil Nadu"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Telangana (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Telangana"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Uttar Pradesh (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Uttar Pradesh"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Uttarakhand (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Uttarakhand"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "West Bengal (over 1 crore people) has fewer societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "West Bengal"
+   },
+   "min": 0,
+   "max": 160
+  },
+  {
+   "says": "Telangana is the next large state: 157.5, Maharashtra 11% above",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/ls_cooperatives_ncd",
+          "Total number of cooperative societies"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/ls_cooperatives_ncd",
+          "Total number of cooperative societies"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 1.1,
+   "max": 1.12
+  },
+  {
+   "says": "Himachal Pradesh is under 1 crore people (largest state under the cut)",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Himachal Pradesh"
+   },
+   "min": 7000,
+   "max": 10000
+  },
+  {
+   "says": "Andaman and Nicobar Islands has more societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Andaman and Nicobar Islands"
+   },
+   "min": 175,
+   "max": 1000
+  },
+  {
+   "says": "Andaman and Nicobar Islands has fewer than 1 crore projected people",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Andaman and Nicobar Islands"
+   },
+   "min": 0,
+   "max": 10000
+  },
+  {
+   "says": "Goa has more societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Goa"
+   },
+   "min": 175,
+   "max": 1000
+  },
+  {
+   "says": "Goa has fewer than 1 crore projected people",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Goa"
+   },
+   "min": 0,
+   "max": 10000
+  },
+  {
+   "says": "Manipur has more societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Manipur"
+   },
+   "min": 175,
+   "max": 1000
+  },
+  {
+   "says": "Manipur has fewer than 1 crore projected people",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Manipur"
+   },
+   "min": 0,
+   "max": 10000
+  },
+  {
+   "says": "Nagaland has more societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Nagaland"
+   },
+   "min": 175,
+   "max": 1000
+  },
+  {
+   "says": "Nagaland has fewer than 1 crore projected people",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Nagaland"
+   },
+   "min": 0,
+   "max": 10000
+  },
+  {
+   "says": "Sikkim has more societies per lakh people than Maharashtra",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Sikkim"
+   },
+   "min": 175,
+   "max": 1000
+  },
+  {
+   "says": "Sikkim has fewer than 1 crore projected people",
+   "value": {
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "state": "Sikkim"
+   },
+   "min": 0,
+   "max": 10000
+  },
+  {
+   "says": "Arunachal Pradesh (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Chandigarh (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Chandigarh"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Dadra and Nagar Haveli and Daman and Diu (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Dadra and Nagar Haveli and Daman and Diu"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Himachal Pradesh (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Himachal Pradesh"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Ladakh (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Ladakh"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Lakshadweep (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Lakshadweep"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Meghalaya (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Meghalaya"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Mizoram (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Mizoram"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Puducherry (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Puducherry"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "Tripura (under 1 crore people) has fewer societies per lakh people than Maharashtra: only five smaller places have more",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Tripura"
+   },
+   "min": 0,
+   "max": 174
+  },
+  {
+   "says": "2.9 times India's registered cooperatives per person (hook, title, voice; tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/ls_cooperatives_ncd",
+          "Total number of cooperative societies"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/ls_cooperatives_ncd",
+          "Total number of cooperative societies"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 29
+  }
+ ],
+ "so": {
+  "lines": [
+   "Maharashtra: *27%* of societies,",
+   "*9%* of projected people:",
+   "*2.9 times* its share of people."
+  ],
+  "note": "Registered societies against projected people. The table shows how much, not why.",
+  "vo": "Twenty-seven percent of societies, nine percent of people: two point nine times."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Cooperative societies per *lakh people*",
+  "sub": "registered societies · India {india} · 1 March 2026",
+  "note": "Not members or money. Seven north-eastern states other than Assam share one population projection.",
+  "ring": [
+   "Maharashtra"
+  ],
+  "vo": "Registered societies per lakh people, every state."
+ },
+ "end": {
+  "q": "Which *cooperative* do you belong to?",
+  "sub": "Comment below.",
+  "vo": "Which cooperative do you belong to?"
+ },
+ "yt_title": "Maharashtra: 2.9x India's Registered Cooperatives per Person"
+}

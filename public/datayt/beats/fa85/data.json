@@ -1,0 +1,527 @@
+{
+ "id": "fa85",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "Census of India 2011 · Table C-17",
+ "source": "Registrar General and Census Commissioner, India: Census 2011, Table C-17 (bilingualism and trilingualism), as on 1 March 2011, over population from Table A-01. Three or more languages: mother tongue plus two more that the person said they knew. Shares are our division. Census 2001, Table C-17, for the earlier card. Telangana and Ladakh sit inside Andhra Pradesh and Jammu and Kashmir as counted in 2011.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Goa*: over *half* said they",
+    "knew 3+ languages. India:",
+    "*7%*. Census 2011."
+   ],
+   "vo": "More than half of Goa's people said they knew three or more languages.",
+   "geo": "Goa",
+   "name": "Goa",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Goa",
+   "geo": "Goa",
+   "kicker": "KNEW 3+ LANGUAGES · CENSUS 2011",
+   "big": "50.8%",
+   "text": "of Goa's people said they knew three or more languages. The highest of 35 states and UTs.",
+   "sub": "Their mother tongue plus two more, as Census 2011 counted them.",
+   "bars": [
+    {
+     "name": "Goa",
+     "label": "50.8%",
+     "frac": 0.847
+    },
+    {
+     "name": "India",
+     "label": "7.1%",
+     "frac": 0.11833333333333333
+    }
+   ],
+   "vo": "Fifty point eight percent. India, seven point one.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Chandigarh",
+   "geo": "Chandigarh",
+   "kicker": "THE NEXT THREE · CENSUS 2011",
+   "big": "30.5%",
+   "text": "in Chandigarh (a UT), second to Goa. Arunachal Pradesh and Sikkim: near 30%.",
+   "sub": "Share of each place's people.",
+   "bars": [
+    {
+     "name": "Chandigarh",
+     "label": "30.5%",
+     "frac": 0.5085000000000001
+    },
+    {
+     "name": "Goa",
+     "label": "50.8%",
+     "frac": 0.847
+    },
+    {
+     "name": "Arunachal",
+     "label": "30.2%",
+     "frac": 0.5041666666666667
+    },
+    {
+     "name": "Sikkim",
+     "label": "29.7%",
+     "frac": 0.4951666666666667
+    }
+   ],
+   "vo": "The next three were near thirty percent. Goa led by over twenty points.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Goa",
+   "geo": "Goa",
+   "kicker": "TEN YEARS EARLIER · CENSUS 2001",
+   "big": "47.8%",
+   "text": "in Census 2001: also the highest of 35 states and UTs. Chandigarh, next, was near 38%.",
+   "sub": "Same Census table (C-17), 1 March 2001.",
+   "bars": [],
+   "vo": "Ten years earlier: forty-eight percent, also the highest.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*741,249* of Goa's *1,458,545*",
+    "people said they knew 3+;",
+    "*7.2 times* India's rate."
+   ],
+   "note": "Persons who named two languages besides their mother tongue, Census 2011. Our division.",
+   "vo": "Goa's share was seven point two times India's.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Knew 3+ languages, *every state*",
+   "sub": "% of people · India 7.1% · Census 2011",
+   "note": "Blank: Telangana, Ladakh (inside Andhra Pradesh, J&K in 2011) and Dadra, Nagar Haveli, Daman and Diu (two rows then). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Goa",
+    "Chandigarh"
+   ],
+   "vo": "Here is every state: people who knew three or more languages.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Blank: Telangana, Ladakh (inside Andhra Pradesh, J&K in 2011) and Dadra, Nagar Haveli, Daman and Diu (two rows then). The table shows how much, not why.",
+   "ring": [
+    "Goa",
+    "Chandigarh"
+   ],
+   "q": "How many *languages* do you speak?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "How many languages do you speak?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Uttar Pradesh",
+   "label": "1.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Rajasthan",
+   "label": "1.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.562
+  },
+  {
+   "name": "Bihar",
+   "label": "1.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.678
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "1.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.793
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "1.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.908
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.024
+  },
+  {
+   "name": "West Bengal",
+   "label": "3.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.139
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.254
+  },
+  {
+   "name": "Haryana",
+   "label": "4.6",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 28.37
+  },
+  {
+   "name": "Jharkhand",
+   "label": "4.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.485
+  },
+  {
+   "name": "Mizoram",
+   "label": "4.8",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.6
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "5.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.716
+  },
+  {
+   "name": "Tripura",
+   "label": "5.4",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 28.831
+  },
+  {
+   "name": "Puducherry",
+   "label": "5.7",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 28.946
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "7.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.062
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "8.1",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.177
+  },
+  {
+   "name": "Meghalaya",
+   "label": "9.3",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 29.292
+  },
+  {
+   "name": "Kerala",
+   "label": "9.6",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.408
+  },
+  {
+   "name": "Karnataka",
+   "label": "12.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.523
+  },
+  {
+   "name": "Odisha",
+   "label": "13.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.638
+  },
+  {
+   "name": "Assam",
+   "label": "13.9",
+   "bucket": 3,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.754
+  },
+  {
+   "name": "Gujarat",
+   "label": "14.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.869
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "15.5",
+   "bucket": 3,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.984
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "16.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.1
+  },
+  {
+   "name": "Maharashtra",
+   "label": "17.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.215
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "19.1",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.33
+  },
+  {
+   "name": "Manipur",
+   "label": "21.6",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.446
+  },
+  {
+   "name": "Nagaland",
+   "label": "27.2",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.561
+  },
+  {
+   "name": "Punjab",
+   "label": "28.2",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.676
+  },
+  {
+   "name": "Sikkim",
+   "label": "29.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.792
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "30.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.907
+  },
+  {
+   "name": "Chandigarh",
+   "label": "30.5",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.022
+  },
+  {
+   "name": "Goa",
+   "label": "50.8",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.138
+  }
+ ],
+ "checked": [
+  "Goa is the highest of 35 with data (50.8%)",
+  "Goa is the highest of 35 with data (47.8%)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.866,
+   "at": 0.12,
+   "text": "More than half of Goa's people said they knew three or more languages."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.918,
+   "at": 5.926,
+   "text": "Fifty point eight percent. India, seven point one."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.146,
+   "at": 11.733,
+   "text": "The next three were near thirty percent. Goa led by over twenty points."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.31,
+   "at": 17.539,
+   "text": "Ten years earlier: forty-eight percent, also the highest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.16,
+   "at": 23.346,
+   "text": "Goa's share was seven point two times India's."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.146,
+   "at": 27.217,
+   "text": "Here is every state: people who knew three or more languages."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.88,
+   "at": 33.023,
+   "text": "How many languages do you speak?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Goa: Over Half Said They Knew 3+ Languages, Census 2011"
+}

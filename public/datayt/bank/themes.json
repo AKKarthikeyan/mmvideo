@@ -111,7 +111,18 @@
   "fa40": "economy",
   "tn41": "economy",
   "px46": "states",
-  "fa48": "states"
+  "fa48": "states",
+  "px61": "money",
+  "tn60": "money",
+  "tn66": "women",
+  "px67": "women",
+  "tn71": "economy",
+  "px72": "economy",
+  "fa76": "power",
+  "tn81": "school_health",
+  "px82": "school_health",
+  "fa85": "states",
+  "tn86": "states"
  },
  "weeks": [
   {
@@ -255,6 +266,40 @@
      "fa48"
     ]
    ]
+  },
+  {
+   "week": 5,
+   "days": [
+    [
+     "px61",
+     "tn60"
+    ],
+    [
+     "sh02",
+     "fa07"
+    ],
+    [
+     "tn66",
+     "px67"
+    ],
+    [
+     "tn71",
+     "px72"
+    ],
+    [
+     "fa76",
+     "px04"
+    ],
+    [
+     "tn81",
+     "px82"
+    ],
+    [
+     "fa85",
+     "tn86"
+    ]
+   ],
+   "why": "Back to the standing seven themes. `fa12` stays in stock: it is two days after `fa50` and seven after `px37` (all Delhi), and it shares a table with `px61`."
   }
  ],
  "apart": [
@@ -551,12 +596,93 @@
    "sh02",
    4,
    "both Maharashtra"
+  ],
+  [
+   "px61",
+   "tn09",
+   7,
+   "same survey row: women's own bank account"
+  ],
+  [
+   "px61",
+   "px09",
+   7,
+   "both bank offices against another measure"
+  ],
+  [
+   "tn60",
+   "fa40",
+   4,
+   "both Haryana"
+  ],
+  [
+   "tn60",
+   "fa12",
+   7,
+   "both bank deposits"
+  ],
+  [
+   "tn66",
+   "px61",
+   2,
+   "both NFHS-6"
+  ],
+  [
+   "px67",
+   "fa17",
+   7,
+   "same labour force survey measure"
+  ],
+  [
+   "tn71",
+   "tn36",
+   6,
+   "both Odisha"
+  ],
+  [
+   "tn71",
+   "tn22",
+   7,
+   "same wage tables"
+  ],
+  [
+   "px72",
+   "fa35",
+   7,
+   "both against another southern state's count"
+  ],
+  [
+   "fa76",
+   "fa07",
+   3,
+   "both Madhya Pradesh"
+  ],
+  [
+   "px82",
+   "px67",
+   3,
+   "both Rajasthan"
+  ],
+  [
+   "tn86",
+   "px04",
+   2,
+   "both West Bengal"
+  ],
+  [
+   "fa85",
+   "pl01",
+   14,
+   "both Goa"
+  ],
+  [
+   "tn81",
+   "px11",
+   14,
+   "same survey, child vaccination"
   ]
  ],
  "stock": [
-  "px04",
-  "sh02",
-  "fa07",
   "fa12"
  ],
  "todo": {
@@ -585,7 +711,18 @@
   "fa50": "Watch with sound. Re-read Delhi and India in Market Pulse Sept 2026, Table 70, and the population report's Table 11 (1 July 2026). AK to sign off the title: registered investors include companies and are not Delhi residents who invest. NSE's October issue is due. Add the source link.",
   "tn51": "Watch with sound. Re-read Assam and India in Market Pulse Sept 2026, Table 70, and Assam's March 2026 figure in April 2026, Table 43. NSE's October issue is due. Add the source link.",
   "px46": "Watch with sound. Re-read Karnataka, Tamil Nadu, Maharashtra and the total in Lok Sabha Starred Q 344 (units and exports, 2024-25). AK to sign off the per-unit card and 'STP' in the title; on the wider STPI count the gap is about five times. Add the source link.",
-  "fa48": "Watch with sound. Re-read Himachal Pradesh and the all-India total on page 12 of Lok Sabha Starred Q 284, Annexure-II. AK to decide whether 'large-hydro' is plain enough. Add the source link."
+  "fa48": "Watch with sound. Re-read Himachal Pradesh and the all-India total on page 12 of Lok Sabha Starred Q 284, Annexure-II. AK to decide whether 'large-hydro' is plain enough. Add the source link.",
+  "px61": "Watch with sound. Read the six NFHS cells in the fact sheets. AK to sign off: it sets Gujarat's lower share of women with their own account against Jharkhand's, and the hook is a question. Add the source link.",
+  "tn60": "Watch with sound. Re-read Table 155 for Haryana and India, 2015 and 2025; RBI's end-March 2026 state tables are out and were not read. Add the source link.",
+  "tn66": "Watch with sound. Read Karnataka's and India's cells in the NFHS-6 sheets; Rajasthan and Uttarakhand are blank on the map. Add the source link.",
+  "px67": "Watch with sound. NSE's October Market Pulse may be out: re-read Table 76. Read the labour force survey's state cells. Add the source link.",
+  "tn71": "Watch with sound. Re-read Table 112 for Odisha and India; the 2024-25 step is the decade's biggest. Add the source link.",
+  "px72": "Watch with sound. Re-read the Lok Sabha societies tables and their as-on dates. AK to decide whether Kerala is the right comparison and whether cooperative societies fit the Economy day. Add the source link.",
+  "fa76": "Watch with sound. Re-read page iv of the April 2025 dam register; the August 2026 reply keeps the story. Add the source link.",
+  "tn81": "Watch with sound. Read the 'fully vaccinated' row and footnote in the NFHS-6 sheets. AK to confirm the health topic. Add the source link.",
+  "px82": "Watch with sound. Gujarat's university lead holds in the last two editions only (2022-23 and 2023-24): AK to accept it as a snapshot. Re-read AISHE Tables 1 and 4. Add the source link.",
+  "fa85": "Watch with sound. Re-read Census 2011 Table C-17 for Goa and the next three. Add the source link.",
+  "tn86": "Watch with sound. Open the Ministry's coastline answer and confirm the rows and where the 'scale and calculation methods' sentence sits. Add the source link."
  },
  "more_themes": [
   {

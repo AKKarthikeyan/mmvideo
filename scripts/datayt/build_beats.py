@@ -383,6 +383,10 @@ def build(cfg):
             ctx = {"n": n, "rho": f"{rho:.2f}"}; checked.append(f"rank correlation across {n} states = {rho:.2f}")
         beats.append({"kind": "say", "lines": [l.format(**ctx) for l in so["lines"]], "note": so.get("note", ""), "vo": so["vo"].format(**ctx)})
         m = cfg["map"]; vals, india = series(m["data"]); unit = m.get("unit", "%")
+        for s_ in m.get("drop", []):      # rows a table prints that the map cannot place (Census 2011: Dadra and Nagar Haveli, Daman and Diu); name them in the note
+            assert s_ in vals, f"{sid}: map drop '{s_}' is not a row of the table"
+            assert s_.split(" and ")[0].lower() in (m.get("note") or "").lower(), f"{sid}: the map note must name '{s_}', which is left off the map"
+            vals.pop(s_)
         if m.get("as") == "share":
             assert india, f"{sid}: the map has no all-India figure to take a share of"
             vals, india = {s_: 100 * x / india for s_, x in vals.items()}, None

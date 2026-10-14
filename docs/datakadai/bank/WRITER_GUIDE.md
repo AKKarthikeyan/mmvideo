@@ -233,3 +233,17 @@ the publisher if the as-on date is more than six months old.
 - The 2025 coastline figures were recalculated: say "recalculated", never "grew".
 - Forest cover is tree canopy of every kind (plantations and orchards included): say "forest cover", not "forest".
 - Facts from one table tell one story: one per fortnight.
+
+## What week five caught (14 Oct 2026)
+1. The map's sub line (under its title) holds one line of about 58 characters once `{india}` is filled in. Two ran to
+   two lines ("% of investors, gender disclosed · …", "colleges ÷ universities, AISHE-registered · …"). Put the
+   qualifier in the map note.
+2. The 165-character limit on a map note is a ceiling, not a target: a note of long words (state names, brackets) took four
+   lines at 162 characters and met the source text on the last card. Aim for about 140.
+3. A fact card's small caption runs beside the channel name when it takes two lines: keep it to one (about 50
+   characters). "1 lakh = 100,000. End-March 2025." is enough; the source line carries the rest.
+4. A table row the map cannot place (Census 2011 prints Dadra and Nagar Haveli, and Daman and Diu, as two rows) goes in
+   the map's `"drop"` list, and the map note must name it; the builder checks both. No zero-term workarounds.
+5. A question-style hook ("More bank offices per person: more women banked?") is new outside the games: it waits for AK.
+6. Two Shorts from one survey round (NFHS-6 ran three times in week five) can share a week, not a day, and each must
+   name its own row.

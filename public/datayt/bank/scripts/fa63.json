@@ -1,0 +1,1185 @@
+{
+ "id": "fa63",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Land Use Statistics · 2023-24 (prov.)",
+ "palette": "E",
+ "state": "Punjab",
+ "source": "Ministry of Agriculture and Farmers Welfare, Land Use Statistics at a Glance, via the RBI Handbook of Statistics on Indian States 2024-25 (Dec 2025), Tables 54, 55 and 56: thousand hectares, 2013-14 to 2023-24 (provisional). Net irrigated area is irrigated once, from any source; Punjab's two 2023-24 cells are equal as printed. Area: India State of Forest Report 2023, as printed in Lok Sabha.",
+ "hook": [
+  "*Punjab*: *100%* of sown land",
+  "reported irrigated, 2023-24.",
+  "India *59%*. Provisional."
+ ],
+ "hook_vo": "Punjab reported all its sown land irrigated. India, fifty-nine percent.",
+ "facts": [
+  {
+   "state": "Punjab",
+   "kicker": "IRRIGATED SHARE OF SOWN LAND",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       56,
+       "2023-24 (p)"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2023-24 (p)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of sown land reported irrigated: 4,109 of 4,109 thousand hectares. India: 59%.",
+   "sub": "Net irrigated area over net sown area, 2023-24 (provisional). Reported figures, as printed.",
+   "vo": "All four point one million hectares of sown land were reported irrigated."
+  },
+  {
+   "state": "Punjab",
+   "kicker": "TEN YEARS EARLIER · 2013-14",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       56,
+       "2013-14"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2013-14"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "in 2013-14: 4,143 of 4,145 thousand hectares. India then 48%, since up 11 points.",
+   "sub": "Same measure. Punjab's share was 99% or more in each of the last ten years.",
+   "vo": "Ten years earlier it was the same, while India's share was forty-eight percent."
+  },
+  {
+   "state": "Punjab",
+   "kicker": "IRRIGATED CROPS PER SOWN HECTARE",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       55,
+       "2023-24 (p)"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2023-24 (p)"
+      ]
+     }
+    ]
+   },
+   "unit": "×",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 2,
+   "text": "Counting every irrigated crop, irrigated area was *1.9 times* the sown land. India: 0.9.",
+   "sub": "Gross irrigated area counts each crop: land with two irrigated crops counts twice.",
+   "vo": "Counting each crop, irrigated area was one point nine times the sown land."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     54,
+     "2023-24 (p)"
+    ]
+   },
+   "equals": 4109
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     56,
+     "2023-24 (p)"
+    ]
+   },
+   "equals": 4109
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       56,
+       "2023-24 (p)"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2023-24 (p)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 100
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       56,
+       "2023-24 (p)"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2023-24 (p)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 59
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       56,
+       "2013-14"
+      ]
+     },
+     {
+      "rbi": [
+       54,
+       "2013-14"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 48
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     54,
+     "2013-14"
+    ]
+   },
+   "equals": 4145
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     56,
+     "2013-14"
+    ]
+   },
+   "equals": 4143
+  }
+ ],
+ "tests": [
+  {
+   "says": "Punjab net sown 4,109 thousand ha, 2023-24 (p) (text)",
+   "value": {
+    "data": {
+     "rbi": [
+      54,
+      "2023-24 (p)"
+     ]
+    },
+    "state": "Punjab"
+   },
+   "equals": 4109
+  },
+  {
+   "says": "Punjab net irrigated 4,109 thousand ha, 2023-24 (p) (text)",
+   "value": {
+    "data": {
+     "rbi": [
+      56,
+      "2023-24 (p)"
+     ]
+    },
+    "state": "Punjab"
+   },
+   "equals": 4109
+  },
+  {
+   "says": "'four point one million hectares' (voice): 4.1",
+   "value": {
+    "data": {
+     "rbi": [
+      54,
+      "2023-24 (p)"
+     ]
+    },
+    "state": "Punjab",
+    "scale": 0.001
+   },
+   "min": 4.05,
+   "max": 4.15
+  },
+  {
+   "says": "Punjab net sown 4,145 thousand ha, 2013-14 (text)",
+   "value": {
+    "data": {
+     "rbi": [
+      54,
+      "2013-14"
+     ]
+    },
+    "state": "Punjab"
+   },
+   "equals": 4145
+  },
+  {
+   "says": "Punjab net irrigated 4,143 thousand ha, 2013-14 (text)",
+   "value": {
+    "data": {
+     "rbi": [
+      56,
+      "2013-14"
+     ]
+    },
+    "state": "Punjab"
+   },
+   "equals": 4143
+  },
+  {
+   "says": "100% (hook, card): 4,109 over 4,109",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "equals": 100
+  },
+  {
+   "says": "exactly the whole: share is 100.0 (reported)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.95,
+   "max": 100.05
+  },
+  {
+   "says": "India 59% (hook, card, voice 'fifty-nine')",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India"
+   },
+   "equals": 59
+  },
+  {
+   "says": "India 59.3% (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 593
+  },
+  {
+   "says": "Punjab is 1.7 times India's share (100 over 59.3)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.65,
+   "max": 1.75
+  },
+  {
+   "says": "Punjab 99.95% in 2013-14 (card shows 100.0%)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2013-14"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2013-14"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab",
+    "scale": 10
+   },
+   "equals": 1000
+  },
+  {
+   "says": "India 48% in 2013-14 (text, voice 'forty-eight')",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2013-14"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2013-14"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India"
+   },
+   "equals": 48
+  },
+  {
+   "says": "India has risen 11 points since 2013-14 (text)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2013-14"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2013-14"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 11
+  },
+  {
+   "says": "2014-15: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2014-15"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2014-15"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2015-16: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2015-16"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2015-16"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2016-17: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2016-17"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2016-17"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2017-18: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2017-18"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2017-18"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2018-19: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2018-19"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2018-19"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2019-20: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2019-20"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2019-20"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2020-21: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2020-21"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2020-21"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2021-22: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2022-23: Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2023-24 (p): Punjab 99% or more of sown land irrigated ('ten years' line, sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab"
+   },
+   "min": 99.0,
+   "max": 100.01
+  },
+  {
+   "says": "2022-23 was the lowest of the ten: 99.3%",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        56,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Punjab",
+    "scale": 10
+   },
+   "equals": 993
+  },
+  {
+   "says": "2021-22: Punjab is 40 or more points above India",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2021-22"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2021-22"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2021-22"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2021-22"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 40,
+   "max": 50
+  },
+  {
+   "says": "2022-23: Punjab is 40 or more points above India",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2022-23"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2022-23"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2022-23"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2022-23"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 40,
+   "max": 50
+  },
+  {
+   "says": "2023-24: Punjab is 40 or more points above India (40.7)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          56,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 40,
+   "max": 42
+  },
+  {
+   "says": "1.9 times (card, voice): 1.88",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        55,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ]
+    },
+    "state": "Punjab",
+    "scale": 10
+   },
+   "equals": 19
+  },
+  {
+   "says": "India 0.9 (card text, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        55,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      }
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 9
+  },
+  {
+   "says": "Punjab's multiple is twice India's (2.0 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          55,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ]
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          55,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        }
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.1
+  },
+  {
+   "says": "82% of Punjab's land is sown (so, voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Geographical area (ha)"
+       ]
+      }
+     ],
+     "scale": 100000
+    },
+    "state": "Punjab"
+   },
+   "equals": 82
+  },
+  {
+   "says": "42% of India's land is sown (so, voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        54,
+        "2023-24 (p)"
+       ]
+      },
+      {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Geographical area (ha)"
+       ]
+      }
+     ],
+     "scale": 100000
+    },
+    "state": "India"
+   },
+   "equals": 42
+  },
+  {
+   "says": "Punjab's sown share is nearly twice India's (1.9 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/ls_forest_cover_isfr2023",
+          "Geographical area (ha)"
+         ]
+        }
+       ],
+       "scale": 100000
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          54,
+          "2023-24 (p)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/ls_forest_cover_isfr2023",
+          "Geographical area (ha)"
+         ]
+        }
+       ],
+       "scale": 100000
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.85,
+   "max": 2.0
+  }
+ ],
+ "so": {
+  "lines": [
+   "Sown land covers *82%* of",
+   "Punjab's area (India: 42%),",
+   "all of it reported irrigated."
+  ],
+  "note": "Net sown area over geographical area. 2023-24 is provisional. Equal cells are as printed. The table shows how much, not why.",
+  "vo": "Eighty-two percent of Punjab's land is sown, against forty-two for India."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      56,
+      "2023-24 (p)"
+     ]
+    },
+    {
+     "rbi": [
+      54,
+      "2023-24 (p)"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "title": "Sown land irrigated: *every state*",
+  "sub": "% of net sown area · India {india} · 2023-24 (provisional)",
+  "note": "Net irrigated over net sown area. Blank: Andaman and Nicobar Islands, Chandigarh, Dadra and Nagar Haveli and Daman and Diu, Ladakh, Lakshadweep.",
+  "ring": [
+   "Punjab"
+  ],
+  "vo": "Here is every state: the share of sown land irrigated."
+ },
+ "end": {
+  "q": "How does water reach *your* field?",
+  "sub": "Comment below.",
+  "vo": "How does water reach your field?"
+ },
+ "yt_title": "Punjab Reported 100% of Sown Land Irrigated, 2023-24 (prov.)"
+}

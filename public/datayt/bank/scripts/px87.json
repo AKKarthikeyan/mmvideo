@@ -1,0 +1,649 @@
+{
+ "id": "px87",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "Census of India 2011 · Table A-01",
+ "palette": "E",
+ "state": "Kerala",
+ "source": "Office of the Registrar General and Census Commissioner, India: Census 2011, Table A-01 (number of villages, towns, households, population and area), as on 1 March 2011: inhabited villages and rural population. Villages are as the Census counts them; the table gives counts, not a reason. Rural people per village is our division. Telangana and Ladakh sit inside Andhra Pradesh and Jammu and Kashmir as counted in 2011.",
+ "hook": [
+  "*Kerala* 2011: *16×* Arunachal's",
+  "rural people, *1/5* of its",
+  "inhabited villages."
+ ],
+ "hook_vo": "Kerala had a fifth of Arunachal's inhabited villages, sixteen times its rural people.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "INHABITED VILLAGES · CENSUS 2011",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_a1_states",
+     "Inhabited villages"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "Arunachal Pradesh"
+   ],
+   "bar_max": 6000,
+   "text": "inhabited villages in Kerala. Arunachal Pradesh had 5,258: about five times as many.",
+   "sub": "Villages as the Census counts them, 1 March 2011.",
+   "vo": "Kerala had one thousand seventeen villages. Arunachal Pradesh had five times as many."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "RURAL POPULATION · MILLION",
+   "data": {
+    "add": [
+     {
+      "tbl": [
+       "evergreen/census2011_a1_states",
+       "Rural population"
+      ]
+     }
+    ],
+    "scale": 1e-06
+   },
+   "unit": "",
+   "compare": [
+    "Arunachal Pradesh"
+   ],
+   "bar_max": 20,
+   "text": "million rural people in Kerala, 16 times Arunachal Pradesh's 1.1 million.",
+   "sub": "Bars in millions of rural people, Census 2011.",
+   "vo": "Kerala had seventeen point five million rural people against Arunachal's one point one."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "RURAL PEOPLE PER VILLAGE",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_a1_states",
+     "Rural population per inhabited village [derived]"
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "India",
+    "Arunachal Pradesh"
+   ],
+   "bar_max": 20000,
+   "text": "rural people per inhabited village in Kerala: highest of {n} states and UTs, 85 times Arunachal's.",
+   "sub": "Our division: people over villages.",
+   "vo": "A Kerala village averaged seventeen thousand rural people against India's fourteen hundred."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Census 2001 was the same:",
+   "Kerala *17,283* rural people",
+   "per village, Arunachal *225*."
+  ],
+  "note": "Rural people over inhabited villages, Census 2001. The table gives counts, not a reason.",
+  "vo": "In two thousand one: Kerala seventeen thousand, Arunachal two hundred twenty-five."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "evergreen/census2011_a1_states",
+    "Rural population per inhabited village [derived]"
+   ]
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Rural people per village, *every state*",
+  "sub": "rural people per inhabited village · India {india} · Census 2011",
+  "note": "Blank: Telangana, Ladakh (inside Andhra Pradesh, J&K in 2011) and Dadra, Nagar Haveli, Daman and Diu (two rows then). The table shows how much, not why.",
+  "ring": [
+   "Kerala",
+   "Arunachal Pradesh"
+  ],
+  "vo": "Here is every state: rural people for each village.",
+  "drop": [
+   "Dadra and Nagar Haveli",
+   "Daman and Diu"
+  ]
+ },
+ "end": {
+  "q": "How big is your *village*?",
+  "sub": "Comment below.",
+  "vo": "How big is your village?"
+ },
+ "tests": [
+  {
+   "says": "Kerala 1,017 inhabited villages (hook, card 1)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Inhabited villages"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "equals": 1017
+  },
+  {
+   "says": "Arunachal Pradesh 5,258 inhabited villages (hook, card 1)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Inhabited villages"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "equals": 5258
+  },
+  {
+   "says": "India 597,608 inhabited villages (printed total)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Inhabited villages"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 597608
+  },
+  {
+   "says": "Kerala rural population 17,471,135 (card 2)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "equals": 17471135
+  },
+  {
+   "says": "Arunachal Pradesh rural population 1,066,358 (card 2)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "equals": 1066358
+  },
+  {
+   "says": "Kerala 17.5 million rural people (card 2, tenths)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      }
+     ],
+     "scale": 1e-06
+    },
+    "state": "Kerala",
+    "scale": 10
+   },
+   "equals": 175
+  },
+  {
+   "says": "Arunachal Pradesh 1.1 million rural people (card 2, tenths)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      }
+     ],
+     "scale": 1e-06
+    },
+    "state": "Arunachal Pradesh",
+    "scale": 10
+   },
+   "equals": 11
+  },
+  {
+   "says": "Kerala 17,179 rural people per village (card 3)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "equals": 17179
+  },
+  {
+   "says": "India 1,395 rural people per village (card 3)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 1395
+  },
+  {
+   "says": "Arunachal Pradesh 203 rural people per village (card 3)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "equals": 203
+  },
+  {
+   "says": "'about fourteen hundred' (voice): India's 1,395 is between 1,350 and 1,450",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "India"
+   },
+   "min": 1350,
+   "max": 1450
+  },
+  {
+   "says": "'seventeen thousand' (voice): Kerala's 17,179 is between 17,000 and 17,499",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2011_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "min": 17000,
+   "max": 17499
+  },
+  {
+   "says": "'a fifth of Arunachal's villages' (hook voice): 0.193 is between 0.18 and 0.21",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 0.18,
+   "max": 0.21
+  },
+  {
+   "says": "'five times as many' (card 1 voice): Arunachal's villages over Kerala's is between 5.0 and 5.4",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ]
+   },
+   "min": 5.0,
+   "max": 5.4
+  },
+  {
+   "says": "'sixteen times' (hook voice, card 2): 16.4 rounds to 16",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "equals": 16
+  },
+  {
+   "says": "'sixteen times' is between 16.0 and 16.9",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 16.0,
+   "max": 16.9
+  },
+  {
+   "says": "85 times Arunachal's rural people per village (so card): 84.7 rounds to 85",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "equals": 85
+  },
+  {
+   "says": "'eighty-five times' (voice): between 84.5 and 85.5",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 84.5,
+   "max": 85.5
+  },
+  {
+   "says": "12 times India's average (so card): 12.3 rounds to 12",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 12
+  },
+  {
+   "says": "Kerala is at least 5 times the next State, Tripura (5.5)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Tripura"
+     }
+    ]
+   },
+   "min": 5.4,
+   "max": 5.6
+  },
+  {
+   "says": "Kerala is at least 2.9 times the next place, Chandigarh, a UT with 5 villages (2.96)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Chandigarh"
+     }
+    ]
+   },
+   "min": 2.9,
+   "max": 3.1
+  },
+  {
+   "says": "Census 2001: Kerala 17,283 per village",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "equals": 17283
+  },
+  {
+   "says": "Census 2001: Kerala was 5.5 times Tripura, the next State, then too",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Tripura"
+     }
+    ]
+   },
+   "min": 5.4,
+   "max": 5.7
+  },
+  {
+   "says": "Census 2001: Arunachal Pradesh 225 per village (the low end then too)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "equals": 225
+  },
+  {
+   "says": "Arunachal Pradesh is the lowest of all 35 at 203: Himachal Pradesh is next at 345 (1.7 times)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Rural population per inhabited village [derived]"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 1.8
+  },
+  {
+   "says": "Census 2001: Kerala's 1,364 villages are fewer than Arunachal Pradesh's 3,863",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Inhabited villages"
+       ]
+      },
+      "state": "Arunachal Pradesh"
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 0.4
+  },
+  {
+   "says": "'seventeen thousand' (2001 voice): Kerala's 17,283 is between 17,000 and 17,499",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/census2001_a1_states",
+      "Rural population per inhabited village [derived]"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "min": 17000,
+   "max": 17499
+  }
+ ],
+ "yt_title": "Kerala 2011: 1/5 of Arunachal's Villages, 16x Rural People"
+}

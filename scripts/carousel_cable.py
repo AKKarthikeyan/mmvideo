@@ -1,0 +1,38 @@
+"""Instagram carousel for the Den Networks and GTPL Hathway article (14 Oct 2026):
+https://www.moatmarginresearch.com/cable-subscription-channel-cost-den-gtpl/
+Every figure is in the published article. The figures are what the companies BOOK; the filings do not say what a home pays."""
+import json, pathlib
+ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public")
+slides = [
+ {"type": "cover", "lines": ["DEN BOOKED ₹86 CR", "CHANNEL COST: ₹162 CR", "WHAT COVERS THE REST?"], "stamp": "JUL–SEP 2026 · FROM THE FILINGS"},
+ {"type": "bars", "heading": "DEN NETWORKS · JUL–SEP 2026 · ₹ CRORE", "rows": [
+   {"name": "CHANNEL (CONTENT) COST", "v": 162, "label": "162"},
+   {"name": "PLACEMENT AND MARKETING INCOME", "v": 141, "label": "141"},
+   {"name": "SUBSCRIPTION INCOME BOOKED", "v": 86, "label": "86", "red": True}],
+  "body": "Group figures from Den's investor update, in whole crores. Unaudited, limited review."},
+ {"type": "bars", "heading": "GTPL HATHWAY · JUL–SEP 2026 · ₹ CRORE", "rows": [
+   {"name": "PAY CHANNEL COST", "v": 778.8, "label": "778.8"},
+   {"name": "PLACEMENT, CARRIAGE AND MARKETING INCOME", "v": 620.3, "label": "620.3"},
+   {"name": "CABLE SUBSCRIPTION BOOKED", "v": 345.5, "label": "345.5", "red": True}],
+  "body": "Group figures from GTPL's results presentation, converted from ₹ million. Unaudited, limited review."},
+ {"type": "bars", "heading": "SUBSCRIPTION BOOKED, AS A SHARE OF CHANNEL COST", "rows": [
+   {"name": "DEN NETWORKS", "v": 53, "label": "53%"}, {"name": "GTPL HATHWAY", "v": 44, "label": "44%", "red": True}],
+  "body": "Our arithmetic. A year earlier: 66% at Den and 49% at GTPL. These are amounts the companies book."},
+ {"type": "list", "heading": "WHAT THE FILINGS DO NOT SAY", "items": [
+   "WHAT A HOME PAYS", "WHAT THE LOCAL OPERATOR KEEPS", "WHY CHANNEL COST EXCEEDS BOOKED SUBSCRIPTION"], "lastRed": True},
+ {"type": "list", "heading": "DEN NETWORKS · THE QUARTER", "items": [
+   "CABLE SEGMENT: LOSS ₹8.0 CRORE", "BROADBAND SEGMENT: LOSS ₹0.7 CRORE", "OTHER INCOME: ₹60.7 CRORE", "PROFIT BEFORE TAX: ₹48.9 CRORE"]},
+ {"type": "stat", "heading": "DEN · CASH AND EQUIVALENTS · ITS OWN SLIDE", "big": "₹3,417 CR", "sub": "IT REPORTS \"ZERO GROSS DEBT\"",
+  "body": "Our reading: the interest it earns says nothing about how the cable business is doing."},
+ {"type": "bars", "heading": "GTPL · CHANNEL COST AFTER FEES, % OF SUBSCRIPTION", "rows": [
+   {"name": "JUL–SEP 2025", "v": 42.2, "label": "42.2%"}, {"name": "APR–JUN 2026", "v": 41.0, "label": "41.0%"}, {"name": "JUL–SEP 2026", "v": 45.9, "label": "45.9%", "red": True}],
+  "body": "Our arithmetic. If scale gives bargaining power, this share should fall as GTPL grows. EBITDA: ₹110.3 crore, against ₹110.1 crore."},
+ {"type": "list", "heading": "THE CASE AGAINST OUR READING", "items": [
+   "FEES ARE PAYMENT FOR SERVICES, NOT A REFUND", "FEE INCOME IS GROWING: +9%, +27%", "GTPL'S OPERATING EBITDA: ₹103.3 CR VS ₹101.6 CR", "ONE QUARTER, TWO COMPANIES, NO PEER READ"]},
+ {"type": "end", "sources": ["Den Networks: investor update and results, 13 Oct 2026 (NSE)", "GTPL Hathway: results and presentation, 13 Oct 2026 (NSE)",
+   "Both annual reports, FY2025-26; TRAI regulations, 2017 and 2024", "Shares and ratios: our arithmetic"]},
+]
+out = {"id": "cablesub", "vid": "cablesub", "kicker": "DEN · GTPL · 13 OCT 2026", "slides": slides, "clips": {}}
+(ROOT / "carousel/cablesub").mkdir(parents=True, exist_ok=True)
+json.dump(out, open(ROOT / "carousel/cablesub/carousel.json", "w"), indent=1, ensure_ascii=False)
+print("slides", len(slides))

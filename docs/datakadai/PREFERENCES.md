@@ -117,6 +117,17 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - The plan lives in `public/datayt/bank/themes.json` and is checked by `scripts/datayt/week_plan.py`, which writes
   `ops/PLAN.md`. A week is not finished until that check shows no empty slot.
 
+## What every video ships with (AK, 13 Oct 2026)
+AK: "all the videos should have one X POST, one Insta Carosaul. one MAP with all data."
+- Each Short's pack (`out/datakadai/daily/<date>/<id>/`) holds, beside `short.mp4` and `captions.md`:
+  - `x.png` (1600×900) for the X post, with the text under "X" in `captions.md`;
+  - `ig/01.png` … (1080×1350) for the Instagram carousel: the hook, each card, the map, the ranked list, the question and the source;
+  - `map.png` (1080×1350): the map with every state's number, and `list.png`, the same figures as a ranked list.
+- A game or a place story has no state map: its pack has the X image and the carousel only.
+- Made by `scripts/datayt/post_assets.py <id>` (or `--all`) from `src/datayt/BeatPosts.tsx`; a pack is not finished without them.
+  The split of the all-data image into a map and a list, and the carousel being the Short's own cards fitted to 4:5, were
+  Claude's choices and can be changed.
+
 ## Posting
 - Nothing is posted or uploaded by any agent. AK approves each pack and posts it.
 - Generated audio and video are git-ignored and stay out of the repo.

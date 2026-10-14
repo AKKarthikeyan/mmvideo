@@ -29,8 +29,10 @@ import persistents from "../../public/vx/persistents/data.json";
 import dmartq2 from "../../public/vx/dmartq2/data.json";
 import dmartq2s from "../../public/vx/dmartq2s/data.json";
 import dmartstory from "../../public/vx/dmartstory/data.json";
+import amckeeps from "../../public/vx/amckeeps/data.json";
+import amckeepss from "../../public/vx/amckeepss/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},

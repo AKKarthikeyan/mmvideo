@@ -176,6 +176,16 @@ SHORTS = {
   ("v6", "And borrowings nearly tripled in six months, to two thousand six hundred and twenty nine crore rupees."),
   ("v7", "So is the low price engine broken? No. Because"),
  ],
+ # ICICI Prudential AMC (13 Oct 2026): napkin twin of the Vox Short `amckeepss`, same seven lines (audio copied from it).
+ "bkw": [
+  ("w1", "What does a mutual fund company earn on every hundred rupees it looks after?"),
+  ("w2", "At ICICI Prudential, fifty three paise a year, by its own measure. It keeps thirty seven as profit, before tax."),
+  ("w3", "In April, the rule on what a fund may charge was trimmed."),
+  ("w4", "The company says that had no negative impact on it."),
+  ("w5", "In July, an analyst asked: was it fair to assume that you have passed on all to the distributors? The finance chief answered in one word. Yes."),
+  ("w6", "Distributors are the sellers: agents and banks. But this is the fund house's own account. No document we read shows what any seller was paid."),
+  ("w7", "So who gave way? As we read it, the sellers. And it all starts with one question:"),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

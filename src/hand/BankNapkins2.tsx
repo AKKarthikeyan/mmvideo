@@ -24,6 +24,7 @@ import bks from "../../public/hand/bks/beats.json";
 import bkt from "../../public/hand/bkt/beats.json";
 import bku from "../../public/hand/bku/beats.json";
 import bkv from "../../public/hand/bkv/beats.json";
+import bkw from "../../public/hand/bkw/beats.json";
 import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
 
 export const BFPS2 = 30;
@@ -31,7 +32,7 @@ const PAD = 0.15;
 type B = {key: string; text: string; sec: number};
 const frames = (bs: B[]) => bs.map((b) => Math.ceil((b.sec + PAD) * BFPS2));
 export const bkTotal2 = (bs: B[]) => frames(bs).reduce((a, b) => a + b, 0);
-export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku, bkv} as Record<string, B[]>;
+export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku, bkv, bkw} as Record<string, B[]>;
 
 const GOLD = "#b8860b", AMBER = "#e67700", GREY = "#555";
 const FILL: Record<string, string> = {[GREEN]: "rgba(43,138,62,0.18)", [RED]: "rgba(217,72,15,0.18)", [BLUE]: "rgba(28,100,184,0.18)",
@@ -1130,6 +1131,78 @@ const DMN7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
   </Canvas>
 );};
 
+// ---------------- bkw: ICICI Prudential AMC, what a fund house keeps (13 Oct 2026). Same seven lines as the Vox Short `amckeepss`. ----------------
+// Figures: the company's own measure, per ₹100 managed a year (presentation of 12 Oct 2026 and April 2026 call); 53 − 37 = 16 is our maths.
+const AMN1: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <T y={480} size={66}>a mutual fund company</T>
+    <T y={600} size={66}>looks after your</T>
+    <T y={860} size={230} color={GREEN}>₹100</T>
+    <HWrite x={540} y={1080} start={at("earn", -6)} size={92} anchor="middle" color={RED}>what does it earn?</HWrite>
+  </Canvas>
+);};
+const AMN2: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="THE SUM" color={BLUE}/><Napkin>
+    <HWrite x={140} y={500} start={0} size={50} color={GREY}>ICICI Prudential AMC</HWrite>
+    <HWrite x={140} y={570} start={6} dur={8} size={38} color={GREY} hand={false}>per ₹100 it looks after · a year</HWrite>
+    <HWrite x={140} y={740} start={at("fifty three", -6)} size={70}>earns</HWrite>
+    <HWrite x={470} y={740} start={at("fifty three")} size={100} color={GREEN}>53 paise</HWrite>
+    <HWrite x={140} y={900} start={at("It keeps", -16)} size={70} color={GREY}>costs</HWrite>
+    <HWrite x={470} y={900} start={at("It keeps", -10)} size={90} color={GREY}>− 16</HWrite>
+    <HDraw shape={sh.line(120, 950, 960, 950, {strokeWidth: 7, seed: 201})} start={at("It keeps")} dur={8}/>
+    <HWrite x={140} y={1110} start={at("thirty seven", -4)} size={70} color={BLUE}>keeps</HWrite>
+    <HWrite x={470} y={1110} start={at("thirty seven")} size={110} color={BLUE}>37 paise</HWrite>
+    <HWrite x={140} y={1230} start={at("before tax")} dur={8} size={32} color={GREY} hand={false}>its own measure · before tax · 16 is our maths</HWrite>
+  </Napkin></Canvas>
+);};
+const AMN3: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="THEN"/>
+    <HWrite x={540} y={600} start={0} size={110} anchor="middle">April 2026</HWrite>
+    <HWrite x={540} y={770} start={at("the rule")} size={60} anchor="middle" color={GREY}>what a fund may charge</HWrite>
+    <HWrite x={540} y={990} start={at("was trimmed")} size={170} anchor="middle" color={RED}>trimmed</HWrite>
+  </Canvas>
+);};
+const AMN4: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="BUT" color={BLUE}/><Napkin rot={1.5}>
+    <HWrite x={140} y={520} start={0} size={56} color={GREY}>the company says:</HWrite>
+    <HWrite x={140} y={700} start={at("no negative", -20)} size={78} color={GREEN}>no negative impact</HWrite>
+    <HDraw shape={sh.line(120, 770, 960, 770, {strokeWidth: 7, seed: 202})} start={at("no negative", -2)} dur={6} hand={false}/>
+    <HWrite x={140} y={900} start={at("no negative", 2)} dur={8} size={50} color={GREY} hand={false}>kept per ₹100, by its measure:</HWrite>
+    <HWrite x={140} y={1040} start={at("no negative", 6)} dur={12} size={86} color={BLUE}>37.6 → 37.3 paise</HWrite>
+    <HWrite x={140} y={1130} start={at("no negative", 10)} dur={8} size={36} color={GREY} hand={false}>year to Mar 2026 → Apr–Sep 2026</HWrite>
+  </Napkin></Canvas>
+);};
+const AMN5: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="WHO PAID?"/><Napkin>
+    <HWrite x={140} y={500} start={0} size={48} color={GREY}>analyst · July 2026 call:</HWrite>
+    <HWrite x={140} y={640} start={at("passed on")} size={66}>{'"passed on all to'}</HWrite>
+    <HWrite x={140} y={740} start={at("the distributors")} size={66}>{'the distributors?"'}</HWrite>
+    <HDraw shape={sh.line(120, 800, 960, 800, {strokeWidth: 7, seed: 203})} start={at("The finance chief")} dur={8}/>
+    <HWrite x={140} y={900} start={at("The finance chief", 4)} size={48} color={GREY}>finance chief:</HWrite>
+    <HWrite x={540} y={1150} start={at("in one word")} size={220} anchor="middle" color={RED}>{'"Yes."'}</HWrite>
+  </Napkin></Canvas>
+);};
+const AMN6: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas><Tag t="CAUTION" color={AMBER}/><Napkin rot={1.5}>
+    <HWrite x={140} y={520} start={0} size={60}>distributors = sellers</HWrite>
+    <HWrite x={140} y={600} start={at("agents")} dur={8} size={40} color={GREY} hand={false}>agents and banks</HWrite>
+    <HDraw shape={sh.line(120, 660, 960, 660, {strokeWidth: 7, seed: 204})} start={at("But this is", -6)} dur={8} hand={false}/>
+    <HWrite x={140} y={780} start={at("But this is")} size={52} color={GREY}>whose account?</HWrite>
+    <HWrite x={140} y={900} start={at("the fund house")} size={80} color={BLUE}>the fund house's</HWrite>
+    <HWrite x={140} y={1060} start={at("No document")} size={52} color={GREY}>what any seller was paid:</HWrite>
+    <HWrite x={140} y={1200} start={at("shows what")} size={100} color={RED}>not shown</HWrite>
+  </Napkin></Canvas>
+);};
+const AMN7: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
+  <Canvas>
+    <HWrite x={540} y={560} start={0} size={110} anchor="middle">who gave way?</HWrite>
+    <HWrite x={540} y={740} start={at("As we read")} size={60} anchor="middle" color={GREY}>our reading:</HWrite>
+    <HWrite x={540} y={920} start={at("the sellers")} size={150} anchor="middle" color={RED}>the sellers</HWrite>
+    <Note y={1010} start={at("the sellers", 10)}>on the fund houses' own words · three months</Note>
+    <Loop start={at("one question", -8)}/>
+  </Canvas>
+);};
+
 const SCENES: Record<string, React.FC<SceneP>> = {
   d1: D1, d2: D2, d3: D3, d4: D4, d5: D5, d6: D6, e1: E1, e2: E2, e3: E3, e4: E4, e5: E5,
   f1: F1, f2: F2, f3: F3, f4: F4, f5: F5, g1: G1, g2: G2, g3: G3, g4: G4, g5: G5,
@@ -1139,7 +1212,8 @@ const SCENES: Record<string, React.FC<SceneP>> = {
   n1: N1, n2: N2, n3: N3, n4: N4, n5: N5, o1: O1, o2: O2, o3: O3, o4: O4, o5: O5,
   p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, q1: Q1, q2: Q2, q3: Q3, q4: Q4, q5: Q5, r1: R1, r2: R2, r3: R3, r4: R4, r5: R5, r6: R6, r7: R7, s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6, s7: S7, t1: TC1, t2: TC2, t3: TC3, t4: TC4, t5: TC5, t6: TC6, t7: TC7,
   u1: PN1, u2: PN2, u3: PN3, u4: PN4, u5: PN5, u6: PN6, u7: PN7,
-  v1: DMN1, v2: DMN2, v3: DMN3, v4: DMN4, v5: DMN5, v6: DMN6, v7: DMN7};
+  v1: DMN1, v2: DMN2, v3: DMN3, v4: DMN4, v5: DMN5, v6: DMN6, v7: DMN7,
+  w1: AMN1, w2: AMN2, w3: AMN3, w4: AMN4, w5: AMN5, w6: AMN6, w7: AMN7};
 
 const Furniture: React.FC<{label: string}> = ({label}) => (
   <Canvas>

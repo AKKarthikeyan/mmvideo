@@ -6,7 +6,7 @@
 import React from "react";
 import {AbsoluteFill, continueRender, delayRender} from "remotion";
 import {COND, VoxDefs, VoxFonts} from "../../voxkit";
-import {P, StoreIcon} from "./kit";
+import {NoteIcon, P, StoreIcon} from "./kit";
 
 const TW = 1280, TH = 720;
 const INK = P.ink, WHITE = "#FFFFFF";
@@ -183,6 +183,69 @@ const V3: React.FC = () => {
   );
 };
 
+// ---------- 4: amckeeps: the note with a thin slice cut off ("who gave way?") ----------
+const V4: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={840} cy={520} color={T.yellowHi}/>
+    <Big x={640} y={190} size={200} anchor="middle" text="WHO GAVE"/>
+    <g transform="translate(800 565) rotate(-5) scale(0.82)">
+      <clipPath id="t4-main"><rect x={-340} y={-190} width={578} height={380}/></clipPath>
+      <clipPath id="t4-slice"><rect x={238} y={-190} width={120} height={380}/></clipPath>
+      <rect x={-298} y={-136} width={536} height={304} rx={20} fill={INK}/>
+      <g clipPath="url(#t4-main)"><NoteIcon size={400} label="₹100"/></g>
+      <g transform="translate(78 40) rotate(11 238 0)">
+        <rect x={252} y={-136} width={74} height={304} fill={INK}/>
+        <g clipPath="url(#t4-slice)"><NoteIcon size={400} label="₹100"/></g>
+      </g>
+    </g>
+    <Big x={60} y={430} size={250} fill={P.red} text="WAY?" rot={-3}/>
+  </g>
+);
+
+// ---------- 5: amckeeps: one coin with a wedge pulled out ("only 53 paise") ----------
+const V5: React.FC = () => {
+  const cx = 900, cy = 430, R = 250, a0 = (-24 * Math.PI) / 180, a1 = (6 * Math.PI) / 180;
+  const pt = (a: number) => [cx + R * Math.cos(a), cy + R * Math.sin(a)];
+  const [x0, y0] = pt(a0), [x1, y1] = pt(a1);
+  const body = `M ${cx} ${cy} L ${x1} ${y1} A ${R} ${R} 0 1 1 ${x0} ${y0} Z`;
+  const wedge = `M ${cx} ${cy} L ${x0} ${y0} A ${R} ${R} 0 0 1 ${x1} ${y1} Z`;
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={cx} cy={cy} color={T.yellowHi}/>
+      <path d={body} fill={INK} transform="translate(14 16)"/>
+      <path d={body} fill={P.gold} stroke={INK} strokeWidth={11}/>
+      <circle cx={cx} cy={cy} r={196} fill="none" stroke={INK} strokeWidth={6} opacity={0.4} strokeDasharray="1 0" clipPath="url(#t5-clip)"/>
+      <clipPath id="t5-clip"><path d={body}/></clipPath>
+      <text x={cx - 20} y={cy + 100} fontFamily={COND} fontWeight={700} fontSize={300} textAnchor="middle" fill={INK}>₹</text>
+      <g transform="translate(100 -16)">
+        <path d={wedge} fill={INK} transform="translate(10 12)"/>
+        <path d={wedge} fill={P.gold} stroke={INK} strokeWidth={11}/>
+      </g>
+      <Big x={60} y={190} size={170} text="ONLY"/>
+      <Big x={50} y={480} size={330} text="53"/>
+      <Big x={60} y={640} size={150} fill={P.red} text="PAISE?"/>
+    </g>
+  );
+};
+
+// ---------- 6: amckeeps: the seller, one figure ("who pays the seller?") ----------
+const V6: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={230} cy={470} color={T.yellowHi}/>
+    <g transform="translate(195 525) scale(4.1)">
+      <g transform="translate(2.6 3)"><circle cx={0} cy={-28} r={15} fill={INK}/><path d="M -26 40 v -22 a 26 26 0 0 1 52 0 v 22 Z" fill={INK}/></g>
+      <circle cx={0} cy={-28} r={15} fill={P.purple} stroke={INK} strokeWidth={2}/>
+      <path d="M -26 40 v -22 a 26 26 0 0 1 52 0 v 22 Z" fill={P.purple} stroke={INK} strokeWidth={2}/>
+    </g>
+    <Big x={1240} y={200} size={190} anchor="end" text="WHO PAYS"/>
+    <Big x={1240} y={400} size={190} anchor="end" text="THE"/>
+    <Big x={1240} y={640} size={250} anchor="end" fill={P.red} text="SELLER?" rot={-2}/>
+  </g>
+);
+
 export const IllusThumb: React.FC<{v: number}> = ({v}) => {
   useOswald();
   return (
@@ -190,7 +253,7 @@ export const IllusThumb: React.FC<{v: number}> = ({v}) => {
       <VoxFonts/>
       <svg width={TW} height={TH} viewBox={`0 0 ${TW} ${TH}`}>
         <VoxDefs/>
-        {v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
+        {v === 6 ? <V6/> : v === 5 ? <V5/> : v === 4 ? <V4/> : v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
       </svg>
     </AbsoluteFill>
   );

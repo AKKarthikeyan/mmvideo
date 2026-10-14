@@ -1,0 +1,2147 @@
+{
+ "id": "lf01",
+ "title": "What Moved India's Prices in September: Onion, Food and the New CPI",
+ "chip": "CPI · SEP 2026",
+ "sourceShort": "MoSPI · Consumer Price Index (base 2024) · September 2026, provisional",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office): Consumer Price Index (base 2024=100), press release for September 2026, PIB PRID 2322244, 12 Oct 2026, Annexures I to IV; first release of the new series, PRID 2227012, 12 Feb 2026; food and onion by state and month from the MoSPI eSankhyiki portal, read 14 Oct 2026. September figures are provisional.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "fps": 30,
+ "total": 166.467,
+ "chapters": [
+  {
+   "i": 0,
+   "id": "cold",
+   "title": "Cold open",
+   "label": "",
+   "t0": 0.0,
+   "t1": 10.0
+  },
+  {
+   "i": 1,
+   "id": "head",
+   "title": "The headline",
+   "label": "01  The headline",
+   "t0": 10.0,
+   "t1": 26.167
+  },
+  {
+   "i": 2,
+   "id": "food",
+   "title": "Food and the basket",
+   "label": "02  Food and the basket",
+   "t0": 26.167,
+   "t1": 51.033
+  },
+  {
+   "i": 3,
+   "id": "onion",
+   "title": "The onion story",
+   "label": "03  The onion story",
+   "t0": 51.033,
+   "t1": 74.433
+  },
+  {
+   "i": 4,
+   "id": "silver",
+   "title": "Silver and personal care",
+   "label": "04  Silver and personal care",
+   "t0": 74.433,
+   "t1": 89.0
+  },
+  {
+   "i": 5,
+   "id": "split",
+   "title": "Villages and cities",
+   "label": "05  Villages and cities",
+   "t0": 89.0,
+   "t1": 111.0
+  },
+  {
+   "i": 6,
+   "id": "state",
+   "title": "Your state",
+   "label": "06  Your state",
+   "t0": 111.0,
+   "t1": 132.233
+  },
+  {
+   "i": 7,
+   "id": "made",
+   "title": "How the number is made",
+   "label": "07  How the number is made",
+   "t0": 132.233,
+   "t1": 154.067
+  },
+  {
+   "i": 8,
+   "id": "close",
+   "title": "Close",
+   "label": "08  Close",
+   "t0": 154.067,
+   "t1": 166.467
+  }
+ ],
+ "scenes": [
+  {
+   "i": 0,
+   "kind": "cold",
+   "ch": 0,
+   "lines": [
+    "Onion is up *108%*",
+    "in one year.",
+    "Inflation: *5.54%*"
+   ],
+   "lit": {
+    "geo": "Puducherry",
+    "name": "Puducherry",
+    "label": "6.86%"
+   },
+   "cues": [
+    0.5,
+    4.3
+   ],
+   "vo": [
+    {
+     "text": "Onion prices are up one hundred eight percent in one year.",
+     "at": 0.5,
+     "sec": 3.5
+    },
+    {
+     "text": "India's inflation is five point five four percent.",
+     "at": 4.3,
+     "sec": 2.78
+    }
+   ],
+   "t0": 0.0,
+   "t1": 10.0
+  },
+  {
+   "i": 1,
+   "kind": "card",
+   "ch": 1,
+   "n": "01",
+   "title": "The headline",
+   "sub": "Year on year, all India",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "First, the headline.",
+     "at": 10.5,
+     "sec": 2.23
+    }
+   ],
+   "t0": 10.0,
+   "t1": 13.433
+  },
+  {
+   "i": 2,
+   "kind": "line",
+   "ch": 1,
+   "source": "MoSPI · all-India CPI, base 2024 · PIB releases and eSankhyiki portal · September provisional",
+   "title": "Inflation, year on year, all India",
+   "caption": "2.74% in January, then up every month. August: 4.83%.",
+   "series": [
+    {
+     "name": "Inflation",
+     "color": 0,
+     "label": "5.54%",
+     "pts": [
+      {
+       "m": "Jan-26",
+       "v": 2.74
+      },
+      {
+       "m": "Feb-26",
+       "v": 3.21
+      },
+      {
+       "m": "Mar-26",
+       "v": 3.4
+      },
+      {
+       "m": "Apr-26",
+       "v": 3.48
+      },
+      {
+       "m": "May-26",
+       "v": 3.93
+      },
+      {
+       "m": "Jun-26",
+       "v": 4.38
+      },
+      {
+       "m": "Jul-26",
+       "v": 4.45
+      },
+      {
+       "m": "Aug-26",
+       "v": 4.83
+      },
+      {
+       "m": "Sep-26",
+       "v": 5.54
+      }
+     ]
+    }
+   ],
+   "marks": [],
+   "cues": [
+    0.5,
+    4.06,
+    6.18
+   ],
+   "vo": [
+    {
+     "text": "Inflation began the year at two point seven four percent.",
+     "at": 13.933,
+     "sec": 3.26
+    },
+    {
+     "text": "It rose every month.",
+     "at": 17.493,
+     "sec": 1.82
+    },
+    {
+     "text": "In September it reached five point five four percent, up from four point eight three percent in August.",
+     "at": 19.613,
+     "sec": 5.83
+    }
+   ],
+   "t0": 13.433,
+   "t1": 26.167
+  },
+  {
+   "i": 3,
+   "kind": "card",
+   "ch": 2,
+   "n": "02",
+   "title": "Food and the basket",
+   "sub": "Weights and rates by division",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Next, food and the basket.",
+     "at": 26.667,
+     "sec": 2.71
+    }
+   ],
+   "t0": 26.167,
+   "t1": 30.1
+  },
+  {
+   "i": 4,
+   "kind": "bars",
+   "ch": 2,
+   "source": "MoSPI · CPI base 2024, divisions · PIB release of 12 Oct 2026; weights: first release of the new series",
+   "title": "Inflation by division, September",
+   "caption": "A thicker bar is a bigger share of the household basket. Food and beverages are 36.8% of it.",
+   "rows": [
+    {
+     "label": "Personal care and other goods",
+     "v": 13.75,
+     "text": "13.75%",
+     "hi": false,
+     "w": 5.038,
+     "wtext": "5.0%"
+    },
+    {
+     "label": "Restaurants and accommodation",
+     "v": 9.36,
+     "text": "9.36%",
+     "hi": false,
+     "w": 3.348,
+     "wtext": "3.3%"
+    },
+    {
+     "label": "Food and beverages",
+     "v": 7.36,
+     "text": "7.36%",
+     "hi": true,
+     "w": 36.753,
+     "wtext": "36.8%"
+    },
+    {
+     "label": "Transport",
+     "v": 5.01,
+     "text": "5.01%",
+     "hi": false,
+     "w": 8.796,
+     "wtext": "8.8%"
+    },
+    {
+     "label": "Education services",
+     "v": 3.94,
+     "text": "3.94%",
+     "hi": false,
+     "w": 3.333,
+     "wtext": "3.3%"
+    },
+    {
+     "label": "Clothing and footwear",
+     "v": 3.93,
+     "text": "3.93%",
+     "hi": false,
+     "w": 6.383,
+     "wtext": "6.4%"
+    },
+    {
+     "label": "Furnishings and household goods",
+     "v": 3.11,
+     "text": "3.11%",
+     "hi": false,
+     "w": 4.469,
+     "wtext": "4.5%"
+    },
+    {
+     "label": "Housing, water and fuels",
+     "v": 2.74,
+     "text": "2.74%",
+     "hi": false,
+     "w": 17.665,
+     "wtext": "17.7%"
+    },
+    {
+     "label": "Information and communication",
+     "v": 2.44,
+     "text": "2.44%",
+     "hi": false,
+     "w": 3.609,
+     "wtext": "3.6%"
+    },
+    {
+     "label": "Recreation, sport and culture",
+     "v": 2.16,
+     "text": "2.16%",
+     "hi": false,
+     "w": 1.516,
+     "wtext": "1.5%"
+    },
+    {
+     "label": "Health",
+     "v": 1.4,
+     "text": "1.40%",
+     "hi": false,
+     "w": 6.1,
+     "wtext": "6.1%"
+    }
+   ],
+   "weightHead": "Share of basket",
+   "cues": [
+    0.5,
+    3.34,
+    8.03
+   ],
+   "vo": [
+    {
+     "text": "Here is each division of the basket.",
+     "at": 30.6,
+     "sec": 2.54
+    },
+    {
+     "text": "Food and beverages carry the biggest weight, thirty-six point eight percent.",
+     "at": 33.44,
+     "sec": 4.39
+    },
+    {
+     "text": "Personal care and other goods rose fastest, thirteen point seven five percent.",
+     "at": 38.13,
+     "sec": 4.39
+    }
+   ],
+   "t0": 30.1,
+   "t1": 43.233
+  },
+  {
+   "i": 5,
+   "kind": "compare",
+   "ch": 2,
+   "source": "MoSPI · Consumer Food Price Index, all India · PIB release of 12 Oct 2026",
+   "title": "Food prices, year on year",
+   "a": {
+    "label": "Food, August",
+    "text": "5.97%",
+    "v": 5.97,
+    "sub": "Consumer Food Price Index, final"
+   },
+   "b": {
+    "label": "Food, September",
+    "text": "7.74%",
+    "v": 7.74,
+    "sub": "Provisional"
+   },
+   "cues": [
+    0.5,
+    4.06
+   ],
+   "vo": [
+    {
+     "text": "Food inflation was five point nine seven percent in August.",
+     "at": 43.733,
+     "sec": 3.26
+    },
+    {
+     "text": "In September it was seven point seven four percent.",
+     "at": 47.293,
+     "sec": 3.02
+    }
+   ],
+   "t0": 43.233,
+   "t1": 51.033
+  },
+  {
+   "i": 6,
+   "kind": "card",
+   "ch": 3,
+   "n": "03",
+   "title": "The onion story",
+   "sub": "One item, month by month",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Now, the onion.",
+     "at": 51.533,
+     "sec": 2.23
+    }
+   ],
+   "t0": 51.033,
+   "t1": 54.467
+  },
+  {
+   "i": 7,
+   "kind": "line",
+   "ch": 3,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion (combined) · read 14 Oct 2026",
+   "title": "Onion price index, all India",
+   "caption": "Onion index: 68 in June, 143 in September.",
+   "series": [
+    {
+     "name": "Onion index",
+     "color": 0,
+     "label": "143",
+     "pts": [
+      {
+       "m": "Jan-26",
+       "v": 72.79
+      },
+      {
+       "m": "Feb-26",
+       "v": 69.18
+      },
+      {
+       "m": "Mar-26",
+       "v": 64.42
+      },
+      {
+       "m": "Apr-26",
+       "v": 61.32
+      },
+      {
+       "m": "May-26",
+       "v": 62.61
+      },
+      {
+       "m": "Jun-26",
+       "v": 68.25
+      },
+      {
+       "m": "Jul-26",
+       "v": 85.97
+      },
+      {
+       "m": "Aug-26",
+       "v": 105.34
+      },
+      {
+       "m": "Sep-26",
+       "v": 142.88
+      }
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "m": "Jun-26",
+     "s": 0,
+     "text": "68"
+    }
+   ],
+   "cues": [
+    0.5,
+    3.58
+   ],
+   "vo": [
+    {
+     "text": "Onion's price index was sixty-eight in June.",
+     "at": 54.967,
+     "sec": 2.78
+    },
+    {
+     "text": "By September it was one hundred forty-three.",
+     "at": 58.047,
+     "sec": 2.78
+    }
+   ],
+   "t0": 54.467,
+   "t1": 61.533
+  },
+  {
+   "i": 8,
+   "kind": "bars",
+   "ch": 3,
+   "source": "MoSPI · CPI base 2024, five of the highest and lowest items · PIB release of 12 Oct 2026",
+   "title": "Five items, September, year on year",
+   "caption": "Some prices fell in the same month.",
+   "rows": [
+    {
+     "label": "Onion",
+     "v": 108.09,
+     "text": "+108.1%",
+     "hi": true
+    },
+    {
+     "label": "Ginger",
+     "v": 62.85,
+     "text": "+62.9%",
+     "hi": false
+    },
+    {
+     "label": "Garlic",
+     "v": 54.62,
+     "text": "+54.6%",
+     "hi": false
+    },
+    {
+     "label": "Tomato",
+     "v": -8.62,
+     "text": "−8.6%",
+     "hi": false
+    },
+    {
+     "label": "Potato",
+     "v": -11.5,
+     "text": "−11.5%",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    4.71,
+    7.31
+   ],
+   "vo": [
+    {
+     "text": "In the same month, potato fell eleven point five percent.",
+     "at": 62.033,
+     "sec": 3.91
+    },
+    {
+     "text": "Tomato fell eight point six percent.",
+     "at": 66.243,
+     "sec": 2.3
+    },
+    {
+     "text": "Garlic rose fifty-four point six percent, and ginger sixty-two point nine percent.",
+     "at": 68.843,
+     "sec": 4.87
+    }
+   ],
+   "t0": 61.533,
+   "t1": 74.433
+  },
+  {
+   "i": 9,
+   "kind": "card",
+   "ch": 4,
+   "n": "04",
+   "title": "Silver and personal care",
+   "sub": "Jewellery and the wider division",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Then, silver.",
+     "at": 74.933,
+     "sec": 1.99
+    }
+   ],
+   "t0": 74.433,
+   "t1": 77.633
+  },
+  {
+   "i": 10,
+   "kind": "tiles",
+   "ch": 4,
+   "source": "MoSPI · CPI base 2024, item, group and division · PIB release of 12 Oct 2026",
+   "title": "Silver jewellery and personal care",
+   "note": "Year-on-year rates, September 2026, provisional.",
+   "tiles": [
+    {
+     "big": "+87.8%",
+     "caption": "Silver jewellery, one year on",
+     "hi": true
+    },
+    {
+     "big": "+38.7%",
+     "caption": "Other personal effects, one year on",
+     "hi": false
+    },
+    {
+     "big": "13.75%",
+     "caption": "Personal care and other goods",
+     "hi": false
+    },
+    {
+     "big": "5.0%",
+     "caption": "Basket share of personal care and other goods",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    3.58,
+    7.38
+   ],
+   "vo": [
+    {
+     "text": "Silver jewellery rose eighty-seven point eight percent.",
+     "at": 78.133,
+     "sec": 2.78
+    },
+    {
+     "text": "Personal care and other goods rose thirteen point seven five percent.",
+     "at": 81.213,
+     "sec": 3.5
+    },
+    {
+     "text": "That division is five point zero percent of the basket.",
+     "at": 85.013,
+     "sec": 3.26
+    }
+   ],
+   "t0": 77.633,
+   "t1": 89.0
+  },
+  {
+   "i": 11,
+   "kind": "card",
+   "ch": 5,
+   "n": "05",
+   "title": "Villages and cities",
+   "sub": "Rural and urban inflation",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Now, villages and cities.",
+     "at": 89.5,
+     "sec": 2.47
+    }
+   ],
+   "t0": 89.0,
+   "t1": 92.7
+  },
+  {
+   "i": 12,
+   "kind": "line",
+   "ch": 5,
+   "source": "MoSPI · all-India CPI, base 2024, rural, urban and combined · PIB releases",
+   "title": "Inflation, rural and urban",
+   "caption": "In January the two were level: 2.73% rural and 2.75% urban.",
+   "series": [
+    {
+     "name": "Rural",
+     "color": 0,
+     "label": "6.08%",
+     "pts": [
+      {
+       "m": "Jan-26",
+       "v": 2.73
+      },
+      {
+       "m": "Feb-26",
+       "v": 3.37
+      },
+      {
+       "m": "Mar-26",
+       "v": 3.63
+      },
+      {
+       "m": "Apr-26",
+       "v": 3.74
+      },
+      {
+       "m": "May-26",
+       "v": 4.25
+      },
+      {
+       "m": "Jun-26",
+       "v": 4.74
+      },
+      {
+       "m": "Jul-26",
+       "v": 4.84
+      },
+      {
+       "m": "Aug-26",
+       "v": 5.24
+      },
+      {
+       "m": "Sep-26",
+       "v": 6.08
+      }
+     ]
+    },
+    {
+     "name": "Urban",
+     "color": 1,
+     "label": "4.88%",
+     "pts": [
+      {
+       "m": "Jan-26",
+       "v": 2.75
+      },
+      {
+       "m": "Feb-26",
+       "v": 3.02
+      },
+      {
+       "m": "Mar-26",
+       "v": 3.11
+      },
+      {
+       "m": "Apr-26",
+       "v": 3.16
+      },
+      {
+       "m": "May-26",
+       "v": 3.53
+      },
+      {
+       "m": "Jun-26",
+       "v": 3.93
+      },
+      {
+       "m": "Jul-26",
+       "v": 3.96
+      },
+      {
+       "m": "Aug-26",
+       "v": 4.31
+      },
+      {
+       "m": "Sep-26",
+       "v": 4.88
+      }
+     ]
+    },
+    {
+     "name": "All India",
+     "color": 2,
+     "label": "5.54%",
+     "pts": [
+      {
+       "m": "Jan-26",
+       "v": 2.74
+      },
+      {
+       "m": "Feb-26",
+       "v": 3.21
+      },
+      {
+       "m": "Mar-26",
+       "v": 3.4
+      },
+      {
+       "m": "Apr-26",
+       "v": 3.48
+      },
+      {
+       "m": "May-26",
+       "v": 3.93
+      },
+      {
+       "m": "Jun-26",
+       "v": 4.38
+      },
+      {
+       "m": "Jul-26",
+       "v": 4.45
+      },
+      {
+       "m": "Aug-26",
+       "v": 4.83
+      },
+      {
+       "m": "Sep-26",
+       "v": 5.54
+      }
+     ]
+    }
+   ],
+   "marks": [],
+   "cues": [
+    0.5,
+    3.99
+   ],
+   "vo": [
+    {
+     "text": "In January, villages and cities were level.",
+     "at": 93.2,
+     "sec": 3.19
+    },
+    {
+     "text": "By September, village prices had pulled ahead.",
+     "at": 96.69,
+     "sec": 3.19
+    }
+   ],
+   "t0": 92.7,
+   "t1": 100.6
+  },
+  {
+   "i": 13,
+   "kind": "compare",
+   "ch": 5,
+   "source": "MoSPI · CPI base 2024, rural and urban; division weights · PIB releases",
+   "title": "Inflation, villages and cities",
+   "caption": "Food is 42% of the rural basket and 30% of the urban one.",
+   "a": {
+    "label": "Rural, September",
+    "text": "6.08%",
+    "v": 6.08,
+    "sub": ""
+   },
+   "b": {
+    "label": "Urban, September",
+    "text": "4.88%",
+    "v": 4.88,
+    "sub": ""
+   },
+   "cues": [
+    0.5,
+    3.58,
+    6.66
+   ],
+   "vo": [
+    {
+     "text": "Rural inflation was six point zero eight percent.",
+     "at": 101.1,
+     "sec": 2.78
+    },
+    {
+     "text": "Urban inflation was four point eight eight percent.",
+     "at": 104.18,
+     "sec": 2.78
+    },
+    {
+     "text": "Food is a bigger share of the rural basket.",
+     "at": 107.26,
+     "sec": 3.02
+    }
+   ],
+   "t0": 100.6,
+   "t1": 111.0
+  },
+  {
+   "i": 14,
+   "kind": "card",
+   "ch": 6,
+   "n": "06",
+   "title": "Your state",
+   "sub": "Every state and territory",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Now, your state.",
+     "at": 111.5,
+     "sec": 2.23
+    }
+   ],
+   "t0": 111.0,
+   "t1": 114.433
+  },
+  {
+   "i": 15,
+   "kind": "map",
+   "ch": 6,
+   "source": "MoSPI · CPI base 2024, combined, by state and territory · PIB release of 12 Oct 2026, Annexure III",
+   "top": [
+    {
+     "rank": 1,
+     "name": "Puducherry",
+     "text": "6.86%",
+     "bucket": 4
+    },
+    {
+     "rank": 2,
+     "name": "Tamil Nadu",
+     "text": "6.81%",
+     "bucket": 4
+    },
+    {
+     "rank": 3,
+     "name": "Odisha",
+     "text": "6.70%",
+     "bucket": 4
+    },
+    {
+     "rank": 4,
+     "name": "Madhya Pradesh",
+     "text": "6.68%",
+     "bucket": 4
+    },
+    {
+     "rank": 5,
+     "name": "Telangana",
+     "text": "6.64%",
+     "bucket": 4
+    }
+   ],
+   "bottom": [
+    {
+     "rank": 34,
+     "name": "Delhi",
+     "text": "3.40%",
+     "bucket": 0
+    },
+    {
+     "rank": 35,
+     "name": "Nagaland",
+     "text": "3.22%",
+     "bucket": 0
+    },
+    {
+     "rank": 36,
+     "name": "Mizoram",
+     "text": "2.85%",
+     "bucket": 0
+    }
+   ],
+   "states": [
+    {
+     "name": "Mizoram",
+     "label": "2.85",
+     "bucket": 0,
+     "nudge": [
+      72,
+      56
+     ],
+     "at": 0.4
+    },
+    {
+     "name": "Nagaland",
+     "label": "3.22",
+     "bucket": 0,
+     "nudge": [
+      78,
+      8
+     ],
+     "at": 0.521
+    },
+    {
+     "name": "NCT of Delhi",
+     "label": "3.40",
+     "bucket": 0,
+     "nudge": [
+      -215,
+      -35
+     ],
+     "at": 0.642
+    },
+    {
+     "name": "Meghalaya",
+     "label": "3.59",
+     "bucket": 0,
+     "nudge": [
+      -76,
+      52
+     ],
+     "at": 0.763
+    },
+    {
+     "name": "Arunachal Pradesh",
+     "label": "3.70",
+     "bucket": 0,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 0.884
+    },
+    {
+     "name": "Goa",
+     "label": "3.92",
+     "bucket": 0,
+     "nudge": [
+      -82,
+      0
+     ],
+     "at": 1.005
+    },
+    {
+     "name": "Lakshadweep",
+     "label": "3.95",
+     "bucket": 0,
+     "nudge": [
+      -30,
+      -62
+     ],
+     "at": 1.126
+    },
+    {
+     "name": "Tripura",
+     "label": "3.96",
+     "bucket": 0,
+     "nudge": [
+      -32,
+      72
+     ],
+     "at": 1.247
+    },
+    {
+     "name": "Himachal Pradesh",
+     "label": "4.02",
+     "bucket": 1,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.368
+    },
+    {
+     "name": "West Bengal",
+     "label": "4.04",
+     "bucket": 1,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.489
+    },
+    {
+     "name": "Jammu and Kashmir",
+     "label": "4.27",
+     "bucket": 1,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.61
+    },
+    {
+     "name": "Andaman and Nicobar Islands",
+     "label": "4.30",
+     "bucket": 1,
+     "nudge": [
+      -78,
+      0
+     ],
+     "at": 1.731
+    },
+    {
+     "name": "Haryana",
+     "label": "4.37",
+     "bucket": 1,
+     "nudge": [
+      -8,
+      6
+     ],
+     "at": 1.852
+    },
+    {
+     "name": "Chandigarh",
+     "label": "4.39",
+     "bucket": 1,
+     "nudge": [
+      130,
+      -75
+     ],
+     "at": 1.973
+    },
+    {
+     "name": "Assam",
+     "label": "4.62",
+     "bucket": 1,
+     "nudge": [
+      -26,
+      -10
+     ],
+     "at": 2.094
+    },
+    {
+     "name": "Sikkim",
+     "label": "4.83",
+     "bucket": 2,
+     "nudge": [
+      0,
+      -62
+     ],
+     "at": 2.215
+    },
+    {
+     "name": "Chhattisgarh",
+     "label": "5.00",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.335
+    },
+    {
+     "name": "Jharkhand",
+     "label": "5.02",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.456
+    },
+    {
+     "name": "Manipur",
+     "label": "5.10",
+     "bucket": 2,
+     "nudge": [
+      88,
+      24
+     ],
+     "at": 2.577
+    },
+    {
+     "name": "Gujarat",
+     "label": "5.11",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.698
+    },
+    {
+     "name": "Maharashtra",
+     "label": "5.18",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.819
+    },
+    {
+     "name": "Kerala",
+     "label": "5.26",
+     "bucket": 2,
+     "nudge": [
+      -72,
+      30
+     ],
+     "at": 2.94
+    },
+    {
+     "name": "Punjab",
+     "label": "5.27",
+     "bucket": 3,
+     "nudge": [
+      -6,
+      0
+     ],
+     "at": 3.061
+    },
+    {
+     "name": "Uttarakhand",
+     "label": "5.47",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.182
+    },
+    {
+     "name": "Bihar",
+     "label": "5.48",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.303
+    },
+    {
+     "name": "Rajasthan",
+     "label": "5.71",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.424
+    },
+    {
+     "name": "Karnataka",
+     "label": "5.86",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.545
+    },
+    {
+     "name": "Ladakh",
+     "label": "5.90",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.666
+    },
+    {
+     "name": "Uttar Pradesh",
+     "label": "6.08",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.787
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "6.29",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.908
+    },
+    {
+     "name": "Dadra & Nagar Haveli and Daman & Diu",
+     "label": "6.59",
+     "bucket": 4,
+     "nudge": [
+      -84,
+      16
+     ],
+     "at": 4.029
+    },
+    {
+     "name": "Telangana",
+     "label": "6.64",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.15
+    },
+    {
+     "name": "Madhya Pradesh",
+     "label": "6.68",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.271
+    },
+    {
+     "name": "Odisha",
+     "label": "6.70",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.392
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "6.81",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.513
+    },
+    {
+     "name": "Puducherry",
+     "label": "6.86",
+     "bucket": 4,
+     "nudge": [
+      96,
+      0
+     ],
+     "at": 4.634
+    }
+   ],
+   "ring": [
+    "Puducherry",
+    "Tamil Nadu",
+    "Odisha",
+    "Madhya Pradesh",
+    "Telangana"
+   ],
+   "legend": {
+    "lo": "2.85",
+    "hi": "6.86",
+    "loWord": "lowest",
+    "hiWord": "highest"
+   },
+   "title": "Inflation by state and territory, September",
+   "sub": "India 5.54% · 11 of 36 above",
+   "note": "Biggest jump from August: Jharkhand, +1.9 points. Only Assam fell.",
+   "cues": [
+    0.5,
+    3.1,
+    7.07
+   ],
+   "vo": [
+    {
+     "text": "Here is every state and territory.",
+     "at": 114.933,
+     "sec": 2.3
+    },
+    {
+     "text": "Puducherry is highest, at six point eight six percent.",
+     "at": 117.533,
+     "sec": 3.67
+    },
+    {
+     "text": "eleven of thirty-six are above the national figure.",
+     "at": 121.503,
+     "sec": 3.02
+    }
+   ],
+   "t0": 114.433,
+   "t1": 125.233
+  },
+  {
+   "i": 16,
+   "kind": "map",
+   "ch": 6,
+   "source": "MoSPI · eSankhyiki portal, CFPI base 2024, by state · read 14 Oct 2026",
+   "top": [
+    {
+     "rank": 1,
+     "name": "Puducherry",
+     "text": "11.2%",
+     "bucket": 4
+    },
+    {
+     "rank": 2,
+     "name": "Tamil Nadu",
+     "text": "10.6%",
+     "bucket": 4
+    },
+    {
+     "rank": 3,
+     "name": "Andhra Pradesh",
+     "text": "10.2%",
+     "bucket": 4
+    },
+    {
+     "rank": 4,
+     "name": "Odisha",
+     "text": "9.6%",
+     "bucket": 4
+    },
+    {
+     "rank": 5,
+     "name": "Karnataka",
+     "text": "9.0%",
+     "bucket": 4
+    }
+   ],
+   "bottom": [
+    {
+     "rank": 34,
+     "name": "Nagaland",
+     "text": "3.6%",
+     "bucket": 0
+    },
+    {
+     "rank": 35,
+     "name": "Mizoram",
+     "text": "3.6%",
+     "bucket": 0
+    },
+    {
+     "rank": 36,
+     "name": "Lakshadweep",
+     "text": "2.1%",
+     "bucket": 0
+    }
+   ],
+   "states": [
+    {
+     "name": "Lakshadweep",
+     "label": "2.1",
+     "bucket": 0,
+     "nudge": [
+      -30,
+      -62
+     ],
+     "at": 0.4
+    },
+    {
+     "name": "Mizoram",
+     "label": "3.6",
+     "bucket": 0,
+     "nudge": [
+      72,
+      56
+     ],
+     "at": 0.521
+    },
+    {
+     "name": "Nagaland",
+     "label": "3.6",
+     "bucket": 0,
+     "nudge": [
+      78,
+      8
+     ],
+     "at": 0.642
+    },
+    {
+     "name": "Himachal Pradesh",
+     "label": "4.1",
+     "bucket": 0,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 0.763
+    },
+    {
+     "name": "Chandigarh",
+     "label": "4.1",
+     "bucket": 0,
+     "nudge": [
+      130,
+      -75
+     ],
+     "at": 0.884
+    },
+    {
+     "name": "Ladakh",
+     "label": "4.2",
+     "bucket": 0,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.005
+    },
+    {
+     "name": "Arunachal Pradesh",
+     "label": "4.3",
+     "bucket": 0,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.126
+    },
+    {
+     "name": "Meghalaya",
+     "label": "4.7",
+     "bucket": 0,
+     "nudge": [
+      -76,
+      52
+     ],
+     "at": 1.247
+    },
+    {
+     "name": "Andaman and Nicobar Islands",
+     "label": "4.8",
+     "bucket": 1,
+     "nudge": [
+      -78,
+      0
+     ],
+     "at": 1.368
+    },
+    {
+     "name": "Haryana",
+     "label": "4.8",
+     "bucket": 1,
+     "nudge": [
+      -8,
+      6
+     ],
+     "at": 1.489
+    },
+    {
+     "name": "Jammu and Kashmir",
+     "label": "4.8",
+     "bucket": 1,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.61
+    },
+    {
+     "name": "West Bengal",
+     "label": "4.9",
+     "bucket": 1,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 1.731
+    },
+    {
+     "name": "NCT of Delhi",
+     "label": "5.4",
+     "bucket": 1,
+     "nudge": [
+      -215,
+      -35
+     ],
+     "at": 1.852
+    },
+    {
+     "name": "Sikkim",
+     "label": "5.4",
+     "bucket": 1,
+     "nudge": [
+      0,
+      -62
+     ],
+     "at": 1.973
+    },
+    {
+     "name": "Goa",
+     "label": "5.6",
+     "bucket": 1,
+     "nudge": [
+      -82,
+      0
+     ],
+     "at": 2.094
+    },
+    {
+     "name": "Jharkhand",
+     "label": "6.2",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.215
+    },
+    {
+     "name": "Manipur",
+     "label": "6.4",
+     "bucket": 2,
+     "nudge": [
+      88,
+      24
+     ],
+     "at": 2.335
+    },
+    {
+     "name": "Assam",
+     "label": "6.6",
+     "bucket": 2,
+     "nudge": [
+      -26,
+      -10
+     ],
+     "at": 2.456
+    },
+    {
+     "name": "Bihar",
+     "label": "6.7",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.577
+    },
+    {
+     "name": "Gujarat",
+     "label": "6.8",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.698
+    },
+    {
+     "name": "Chhattisgarh",
+     "label": "6.9",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.819
+    },
+    {
+     "name": "Rajasthan",
+     "label": "7.1",
+     "bucket": 2,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 2.94
+    },
+    {
+     "name": "Tripura",
+     "label": "7.1",
+     "bucket": 3,
+     "nudge": [
+      -32,
+      72
+     ],
+     "at": 3.061
+    },
+    {
+     "name": "Dadra & Nagar Haveli and Daman & Diu",
+     "label": "7.8",
+     "bucket": 3,
+     "nudge": [
+      -84,
+      16
+     ],
+     "at": 3.182
+    },
+    {
+     "name": "Punjab",
+     "label": "7.8",
+     "bucket": 3,
+     "nudge": [
+      -6,
+      0
+     ],
+     "at": 3.303
+    },
+    {
+     "name": "Kerala",
+     "label": "8.2",
+     "bucket": 3,
+     "nudge": [
+      -72,
+      30
+     ],
+     "at": 3.424
+    },
+    {
+     "name": "Uttar Pradesh",
+     "label": "8.3",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.545
+    },
+    {
+     "name": "Madhya Pradesh",
+     "label": "8.4",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.666
+    },
+    {
+     "name": "Uttarakhand",
+     "label": "8.5",
+     "bucket": 3,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.787
+    },
+    {
+     "name": "Telangana",
+     "label": "8.7",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 3.908
+    },
+    {
+     "name": "Maharashtra",
+     "label": "8.9",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.029
+    },
+    {
+     "name": "Karnataka",
+     "label": "9.0",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.15
+    },
+    {
+     "name": "Odisha",
+     "label": "9.6",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.271
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "10.2",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.392
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "10.6",
+     "bucket": 4,
+     "nudge": [
+      0,
+      0
+     ],
+     "at": 4.513
+    },
+    {
+     "name": "Puducherry",
+     "label": "11.2",
+     "bucket": 4,
+     "nudge": [
+      96,
+      0
+     ],
+     "at": 4.634
+    }
+   ],
+   "ring": [
+    "Puducherry",
+    "Tamil Nadu",
+    "Andhra Pradesh",
+    "Odisha",
+    "Karnataka"
+   ],
+   "legend": {
+    "lo": "2.1",
+    "hi": "11.2",
+    "loWord": "lowest",
+    "hiWord": "highest"
+   },
+   "title": "Food inflation by state and territory",
+   "sub": "India 7.74%",
+   "note": "MoSPI: state-level item indices may rest on thin samples of price quotations.",
+   "cues": [
+    0.5,
+    3.1
+   ],
+   "vo": [
+    {
+     "text": "This is food inflation by state.",
+     "at": 125.733,
+     "sec": 2.3
+    },
+    {
+     "text": "Puducherry leads, at eleven point two percent.",
+     "at": 128.333,
+     "sec": 3.19
+    }
+   ],
+   "t0": 125.233,
+   "t1": 132.233
+  },
+  {
+   "i": 17,
+   "kind": "card",
+   "ch": 7,
+   "n": "07",
+   "title": "How the number is made",
+   "sub": "Basket, markets and base year",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "How the number is made.",
+     "at": 132.733,
+     "sec": 2.06
+    }
+   ],
+   "t0": 132.233,
+   "t1": 135.5
+  },
+  {
+   "i": 18,
+   "kind": "tiles",
+   "ch": 7,
+   "source": "MoSPI · CPI base 2024: items, response rate and base · PIB releases of 12 Oct 2026 and 12 Feb 2026",
+   "title": "Behind the number",
+   "tiles": [
+    {
+     "big": "358",
+     "caption": "items priced in the basket",
+     "hi": true
+    },
+    {
+     "big": "1,465",
+     "caption": "villages where prices are collected",
+     "hi": false
+    },
+    {
+     "big": "1,407",
+     "caption": "urban markets, online included",
+     "hi": false
+    },
+    {
+     "big": "2024",
+     "caption": "base year of the index",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    3.58,
+    9.06
+   ],
+   "vo": [
+    {
+     "text": "The index follows three hundred fifty-eight items.",
+     "at": 136.0,
+     "sec": 2.78
+    },
+    {
+     "text": "Prices come from one thousand four hundred sixty-five villages and one thousand four hundred seven urban markets.",
+     "at": 139.08,
+     "sec": 5.18
+    },
+    {
+     "text": "The base year is two thousand twenty-four.",
+     "at": 144.56,
+     "sec": 2.78
+    }
+   ],
+   "t0": 135.5,
+   "t1": 148.067
+  },
+  {
+   "i": 19,
+   "kind": "quote",
+   "ch": 7,
+   "source": "MoSPI via PIB · press release on the Consumer Price Index (base 2024) for September 2026",
+   "text": "Real time price data are collected from selected 1407 urban Markets (including online markets) and 1465 villages covering all States/UTs through personal visits by field staff of Field Operations Division of NSO, MoSPI on a weekly roster.",
+   "by": "Ministry of Statistics and Programme Implementation",
+   "date": "Press release on the Consumer Price Index, 12 Oct 2026",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "This is how MoSPI describes it.",
+     "at": 148.567,
+     "sec": 2.3
+    }
+   ],
+   "t0": 148.067,
+   "t1": 154.067
+  },
+  {
+   "i": 20,
+   "kind": "end",
+   "ch": 8,
+   "source": "Data Kadai · analysed and animated by Data Kadai, with an AI narrator",
+   "q": "Which price hit your home *hardest*?",
+   "next": "October's index, due 12 November.",
+   "sources": [
+    "State table: PIB release, 12 Oct 2026; food and onion: MoSPI eSankhyiki portal",
+    "Monthly series: PIB releases and the eSankhyiki portal",
+    "Divisions, items, weights: PIB releases of 12 Oct 2026 and 12 Feb 2026"
+   ],
+   "cues": [
+    0.5,
+    3.1,
+    5.94
+   ],
+   "vo": [
+    {
+     "text": "Which price hit your home hardest?",
+     "at": 154.567,
+     "sec": 2.3
+    },
+    {
+     "text": "Next month's number comes out in November.",
+     "at": 157.167,
+     "sec": 2.54
+    },
+    {
+     "text": "Every figure here comes from official tables.",
+     "at": 160.007,
+     "sec": 2.54
+    }
+   ],
+   "t0": 154.067,
+   "t1": 166.067
+  }
+ ],
+ "vo": [],
+ "music": null,
+ "voiced": false,
+ "voiceEngine": "none",
+ "checked": [
+  "val headline: 5.54",
+  "val headline_aug: 4.83",
+  "val headline_jan: 2.74",
+  "val food: 7.74",
+  "val food_aug: 5.97",
+  "val onion: 108.1",
+  "val puducherry: 6.86",
+  "val pud_food: 11.16",
+  "val n_above: 11",
+  "val n_states: 36",
+  "val jump_jh: 1.88",
+  "val onion_jun: 68.25",
+  "val onion_sep: 142.9",
+  "val potato: -11.5",
+  "val tomato: -8.62",
+  "val garlic: 54.62",
+  "val ginger: 62.85",
+  "val silver: 87.8",
+  "val effects: 38.69",
+  "val personal: 13.75",
+  "val personal_w: 5.038",
+  "val rural: 6.08",
+  "val urban: 4.88",
+  "val rural_jan: 2.73",
+  "val urban_jan: 2.75",
+  "val fw_rural: 41.98",
+  "val fw_urban: 30.25",
+  "val fw_new: 36.75",
+  "val n_items: 358",
+  "val n_villages: 1465",
+  "val n_markets: 1407",
+  "val base_year: 2024",
+  "inflation rises every month, January to September: Jan-26 to Sep-26 2.74 to 5.54",
+  "September is the highest of the nine months: 0.71",
+  "food inflation is above the headline: 2.2",
+  "headline in the monthly table is the all-India row of the state table: 0",
+  "food in the monthly table is the all-India row of the food state table: 0",
+  "Puducherry rounds to 7: 6.86",
+  "the five highest states: Puducherry 6.86, Tamil Nadu 6.81, Odisha 6.7, Madhya Pradesh 6.68, Telangana 6.64",
+  "the three lowest states: Mizoram 2.85, Nagaland 3.22, Delhi 3.4",
+  "the biggest jump from August is Jharkhand: Jharkhand 1.88",
+  "only one state fell from August: 1",
+  "the three highest food inflations: Puducherry 11.16, Tamil Nadu 10.62, Andhra Pradesh 10.18",
+  "the onion index more than doubled from June to September: 2.093",
+  "villages pulled ahead of cities: 1.2",
+  "villages and cities were level in January: -0.02",
+  "food is a bigger share of the rural basket: 11.73",
+  "food and beverages are the heaviest division: 19.09",
+  "MoSPI's caution on state item indices is in the saved table: found in mospi/cpi2024_states_2026_09",
+  "October's index is due on 12 November: found in mospi/cpi2024_breakdown_2026_09",
+  "scene 2 Inflation, last point: 5.54",
+  "scene 4 Food and beverages: 7.36",
+  "scene 4 Food and beverages weight: 36.75",
+  "scene 4 Clothing and footwear: 3.93",
+  "scene 4 Clothing and footwear weight: 6.383",
+  "scene 4 Housing, water and fuels: 2.74",
+  "scene 4 Housing, water and fuels weight: 17.66",
+  "scene 4 Furnishings and household goods: 3.11",
+  "scene 4 Furnishings and household goods weight: 4.469",
+  "scene 4 Health: 1.4",
+  "scene 4 Health weight: 6.1",
+  "scene 4 Transport: 5.01",
+  "scene 4 Transport weight: 8.796",
+  "scene 4 Information and communication: 2.44",
+  "scene 4 Information and communication weight: 3.609",
+  "scene 4 Recreation, sport and culture: 2.16",
+  "scene 4 Recreation, sport and culture weight: 1.516",
+  "scene 4 Education services: 3.94",
+  "scene 4 Education services weight: 3.333",
+  "scene 4 Restaurants and accommodation: 9.36",
+  "scene 4 Restaurants and accommodation weight: 3.348",
+  "scene 4 Personal care and other goods: 13.75",
+  "scene 4 Personal care and other goods weight: 5.038",
+  "scene 7 Onion index, last point: 142.9",
+  "scene 8 Onion: 108.1",
+  "scene 8 Ginger: 62.85",
+  "scene 8 Garlic: 54.62",
+  "scene 8 Tomato: -8.62",
+  "scene 8 Potato: -11.5",
+  "scene 12 Rural, last point: 6.08",
+  "scene 12 Urban, last point: 4.88",
+  "scene 12 All India, last point: 5.54",
+  "scene 19 quote is word for word from mospi/cpi2024_breakdown_2026_09"
+ ],
+ "figures": {
+  "headline": {
+   "value": 5.54,
+   "shows": "5.54%"
+  },
+  "headline_aug": {
+   "value": 4.83,
+   "shows": "4.83%"
+  },
+  "headline_jan": {
+   "value": 2.74,
+   "shows": "2.74%"
+  },
+  "food": {
+   "value": 7.74,
+   "shows": "7.74%"
+  },
+  "food_aug": {
+   "value": 5.97,
+   "shows": "5.97%"
+  },
+  "onion": {
+   "value": 108.09,
+   "shows": "108%"
+  },
+  "puducherry": {
+   "value": 6.86,
+   "shows": "6.86%"
+  },
+  "pud_food": {
+   "value": 11.16,
+   "shows": "11.2%"
+  },
+  "n_above": {
+   "value": 11.0,
+   "shows": "11"
+  },
+  "n_states": {
+   "value": 36.0,
+   "shows": "36"
+  },
+  "jump_jh": {
+   "value": 1.88,
+   "shows": "+1.9"
+  },
+  "onion_jun": {
+   "value": 68.25,
+   "shows": "68"
+  },
+  "onion_sep": {
+   "value": 142.88,
+   "shows": "143"
+  },
+  "potato": {
+   "value": -11.5,
+   "shows": "11.5%"
+  },
+  "tomato": {
+   "value": -8.62,
+   "shows": "8.6%"
+  },
+  "garlic": {
+   "value": 54.62,
+   "shows": "54.6%"
+  },
+  "ginger": {
+   "value": 62.85,
+   "shows": "62.9%"
+  },
+  "silver": {
+   "value": 87.8,
+   "shows": "+87.8%"
+  },
+  "effects": {
+   "value": 38.69,
+   "shows": "+38.7%"
+  },
+  "personal": {
+   "value": 13.75,
+   "shows": "13.75%"
+  },
+  "personal_w": {
+   "value": 5.038,
+   "shows": "5.0%"
+  },
+  "rural": {
+   "value": 6.08,
+   "shows": "6.08%"
+  },
+  "urban": {
+   "value": 4.88,
+   "shows": "4.88%"
+  },
+  "rural_jan": {
+   "value": 2.73,
+   "shows": "2.73%"
+  },
+  "urban_jan": {
+   "value": 2.75,
+   "shows": "2.75%"
+  },
+  "fw_rural": {
+   "value": 41.983,
+   "shows": "42%"
+  },
+  "fw_urban": {
+   "value": 30.251,
+   "shows": "30%"
+  },
+  "fw_new": {
+   "value": 36.753,
+   "shows": "36.8%"
+  },
+  "n_items": {
+   "value": 358.0,
+   "shows": "358"
+  },
+  "n_villages": {
+   "value": 1465.0,
+   "shows": "1,465"
+  },
+  "n_markets": {
+   "value": 1407.0,
+   "shows": "1,407"
+  },
+  "base_year": {
+   "value": 2024.0,
+   "shows": "2024"
+  }
+ }
+}

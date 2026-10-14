@@ -16,6 +16,8 @@ import {BrandStills} from "./Brand";
 import {PosterStills} from "./Poster";
 import {Intro, INTRO} from "./Intro";
 import {BeatPostStills} from "./BeatPosts";
+import {LongStory} from "./LongStory";
+import {LONGS} from "./longData";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
@@ -37,4 +39,7 @@ export const DataVideoCompositions: React.FC = () => <>
   {/* text-led cut of every beat Short: same pictures and music, no narration (for the narrated vs text-led test) */}
   {BEATS.map((d) => <Composition key={`${d.id}-text`} {...({id: `DATA-${d.id}-text`, component: BeatStory, defaultProps: {D: {...d, vo: []}},
     durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1080, height: 1920} as any)}/>)}
+  {/* long-form videos (16:9): one composition per config built by scripts/datayt/build_long.py */}
+  {LONGS.map((d) => <Composition key={d.id} {...({id: `DATA-LF-${d.id}`, component: LongStory, defaultProps: {D: d},
+    durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1920, height: 1080} as any)}/>)}
 </>;

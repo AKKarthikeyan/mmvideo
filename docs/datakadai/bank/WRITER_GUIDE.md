@@ -222,3 +222,14 @@ states. A week's own themes are listed under `"themes"` in its entry in `themes.
 9. A live web page as a source: save the table with the date and time read, and never voice a line a later update
    will contradict ("no other state reached twenty thousand").
 10. A per-person figure uses `population/projected.json` (the July 2020 edition) and prints "projected population".
+
+## The evergreen bank (AK, 14 Oct 2026)
+`docs/datakadai/bank/EVERGREEN.md` lists facts that rest on something slow (geography, a census, a count of things built
+or notified rarely, a date in a law), each read at the publisher, ranked by Jev. Their tables are in
+`public/datayt/sources/evergreen/` and are read with `{"tbl": ["evergreen/<table>", "<column>"]}`. A fact there is a checked
+lead: write the script to this guide, carry the fact's `caution` and `stays_true` into the card and the pack, and re-read
+the publisher if the as-on date is more than six months old.
+- Census 2011 figures say "Census 2011" on screen; the next census's results are expected from 2027.
+- The 2025 coastline figures were recalculated: say "recalculated", never "grew".
+- Forest cover is tree canopy of every kind (plantations and orchards included): say "forest cover", not "forest".
+- Facts from one table tell one story: one per fortnight.

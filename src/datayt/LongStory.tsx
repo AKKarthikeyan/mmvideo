@@ -169,9 +169,14 @@ const LineChart: React.FC<SP> = ({D, s, f}) => {
       })}
       {(s.marks ?? []).map((mk) => {
         const i = months.indexOf(mk.m), v = ser[mk.s].pts[i].v;
+        const edge = i === 0 || i === n - 1;      // at either end the label sits beside its point, inside the chart, clear of the axis numbers
+        const anchor = i === 0 ? "start" : i === n - 1 ? "end" : "middle", tx = x(i) + (i === 0 ? 24 : i === n - 1 ? -24 : 0);
+        const nb = i === 0 ? ser[mk.s].pts[1]?.v : i === n - 1 ? ser[mk.s].pts[n - 2]?.v : undefined;
+        const climbs = nb != null && y(nb) < y(v) - 12;      // the line rises away from this end point: a label above would sit on it
+        const ty = (edge && climbs) || (!edge && v < 0) ? y(v) + 62 : y(v) - 28;      // below a middle point under zero, off the zero line
         return <g key={mk.m} opacity={reach >= i ? ease(f, 8 + (54 * i) / (n - 1), 8 + (54 * i) / (n - 1) + 8) : 0}>
           <circle cx={x(i)} cy={y(v)} r={13} fill={cols[mk.s % 3]}/>
-          <text x={x(i)} y={y(v) - 28} textAnchor="middle" fontFamily={COND} fontWeight={700} fontSize={48} fill={cols[mk.s % 3]} stroke={P.bg} strokeWidth={10} paintOrder="stroke">{mk.text}</text>
+          <text x={tx} y={ty} textAnchor={anchor} fontFamily={COND} fontWeight={700} fontSize={48} fill={cols[mk.s % 3]} stroke={P.bg} strokeWidth={10} paintOrder="stroke">{mk.text}</text>
         </g>;
       })}
       {ser.map((q, k) => <g key={q.name} opacity={done}>
@@ -278,9 +283,9 @@ const Quote: React.FC<SP> = ({D, s, f}) => {
 const Compare: React.FC<SP> = ({D, s, f}) => {
   const a = s.a, b = s.b;
   if (!a || !b) return null;
-  const mxv = Math.max(a.v, b.v), CW = 780;
+  const mxv = Math.max(a.v, b.v), CW = 780, size = Math.min(fit(a.text, "cmp.big"), fit(b.text, "cmp.big"));      // one size, so the two figures compare by eye
   const col = (side: Side, left: number, color: string, at: number) => {
-    const size = fit(side.text, "cmp.big"), p = pop(f, at), sub = side.sub ? wrap(side.sub, "cmp.sub") : null;
+    const p = pop(f, at), sub = side.sub ? wrap(side.sub, "cmp.sub") : null;
     return <>
       <div style={{position: "absolute", left, top: 290, width: CW, fontFamily: SANS, fontWeight: 800, fontSize: fit(side.label, "cmp.label"), letterSpacing: 3, textTransform: "uppercase", whiteSpace: "nowrap",
         color: P.ink, opacity: ease(f, at - 2, at + 6)}}>{side.label}</div>
@@ -311,14 +316,14 @@ const Tiles: React.FC<SP> = ({D, s, f}) => {
     <Head t={s.title} f={f} acc={D.accent}/>
     {t.map((x, i) => {
       const at = s.cues && s.cues.length === n ? cue(s, i, 10) - 4 : 10 + i * 16, p = pop(f, at), cap = wrap(x.caption, "tile.caption", inner);
-      return <div key={i} style={{position: "absolute", left: M + i * (tw + gap), top: 300, width: tw, height: 400, boxSizing: "border-box", padding: 28, background: "#FFFFFF", border: `2px solid ${P.line}`,
+      return <div key={i} style={{position: "absolute", left: M + i * (tw + gap), top: 290, width: tw, height: 480, boxSizing: "border-box", padding: 28, background: "#FFFFFF", border: `2px solid ${P.line}`,
         borderRadius: 26, opacity: Math.min(1, p * 1.5), transform: `translateY(${(1 - p) * 40}px)`}}>
         <div style={{fontFamily: COND, fontWeight: 700, fontSize: big, lineHeight: 1.05, color: x.hi ? D.accent : P.ink, whiteSpace: "nowrap", marginTop: 18}}>{x.big}</div>
         <div style={{width: 64, height: 6, borderRadius: 3, background: D.accent2, margin: "26px 0 24px"}}/>
         <div style={{fontFamily: SANS, fontWeight: 700, fontSize: cap.size, lineHeight: 1.25, color: P.ink}}>{x.caption}</div>
       </div>;
     })}
-    <Cap t={s.note} f={f} at={50} top={790}/>
+    <Cap t={s.note} f={f} at={50} top={810}/>
   </AbsoluteFill>;
 };
 

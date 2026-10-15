@@ -2,7 +2,7 @@
 
 AK, 14 Oct 2026: "plan for this week long form video. Long form video should be about current trending topics go little more detailed than our regular Shorts."
 
-Status: plan only. Nothing is scripted, voiced or rendered for this yet, and nothing is posted.
+Status: built on 15 Oct 2026 after AK confirmed the topic and the length ("go ahead with long form, 7 minutes is fine"); see `LF01.md` for what was made and what changed from this plan (the RBI chapter moved after Your state, the basket chapter after the headline, no onion-by-state map, the 2012 food weight shown as regrouped). Not posted.
 
 ## Recommendation: September's prices
 

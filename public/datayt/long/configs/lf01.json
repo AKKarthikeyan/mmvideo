@@ -3,217 +3,3186 @@
  "title": "What Moved India's Prices in September: Onion, Food and the New CPI",
  "chip": "CPI · SEP 2026",
  "source_short": "MoSPI · Consumer Price Index (base 2024) · September 2026, provisional",
- "source": "Ministry of Statistics and Programme Implementation (National Statistics Office): Consumer Price Index (base 2024=100), press release for September 2026, PIB PRID 2322244, 12 Oct 2026, Annexures I to IV; first release of the new series, PRID 2227012, 12 Feb 2026; food and onion by state and month from the MoSPI eSankhyiki portal, read 14 Oct 2026. September figures are provisional.",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office): Consumer Price Index (base 2024=100), press release for September 2026, PIB PRID 2322244, 12 Oct 2026, Annexures I to IV; first release of the new series, PRID 2227012, 12 Feb 2026; every all-India item, and food and onion by state, from MoSPI's eSankhyiki portal, read 14 and 15 Oct 2026. Reserve Bank of India: Resolution of the Monetary Policy Committee and Governor's Statement, 7 Oct 2026. Ministry of Consumer Affairs, Food and Public Distribution: onion buffer release, PIB PRID 2303587, 26 Aug 2026. September figures are provisional.",
  "palette": "A",
  "tables": {
   "states": "mospi/cpi2024_states_2026_09",
   "monthly": "mospi/cpi2024_monthly",
-  "break": "mospi/cpi2024_breakdown_2026_09"
+  "break": "mospi/cpi2024_breakdown_2026_09",
+  "items": "mospi/cpi2024_allindia_items_2026_09",
+  "rbi": "rbi/mpc_2026_10",
+  "ca": "consumer_affairs/onion_2026_08"
  },
  "specs": {
-  "m_head": {"months": ["@monthly", "Combined inflation", ["Jan-26", "Sep-26"]]},
-  "m_head_to_aug": {"months": ["@monthly", "Combined inflation", ["Jan-26", "Aug-26"]]},
-  "m_rural": {"months": ["@monthly", "Rural inflation", ["Jan-26", "Sep-26"]]},
-  "m_urban": {"months": ["@monthly", "Urban inflation", ["Jan-26", "Sep-26"]]},
-  "m_food": {"months": ["@monthly", "Food inflation", ["Jan-26", "Sep-26"]]},
-  "m_onion": {"months": ["@monthly", "Onion index", ["Jan-26", "Sep-26"]]},
-  "s_head": {"tbl": ["@states", "Combined inflation Sep 2026"]},
-  "s_food": {"tbl": ["@states", "Food inflation Sep 2026"]},
-  "s_jump": {"minus": [{"tbl": ["@states", "Combined inflation Sep 2026"]}, {"tbl": ["@states", "Combined inflation Aug 2026 (provisional)"]}]}
+  "m_head": {
+   "months": [
+    "@monthly",
+    "Combined inflation",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  },
+  "m_head_to_aug": {
+   "months": [
+    "@monthly",
+    "Combined inflation",
+    [
+     "Jan-26",
+     "Aug-26"
+    ]
+   ]
+  },
+  "m_rural": {
+   "months": [
+    "@monthly",
+    "Rural inflation",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  },
+  "m_urban": {
+   "months": [
+    "@monthly",
+    "Urban inflation",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  },
+  "m_onion_y": {
+   "months": [
+    "@monthly",
+    "Onion inflation",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  },
+  "m_cidx": {
+   "months": [
+    "@monthly",
+    "Combined index",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  },
+  "s_head": {
+   "tbl": [
+    "@states",
+    "Combined inflation Sep 2026"
+   ]
+  },
+  "s_food": {
+   "tbl": [
+    "@states",
+    "Food inflation Sep 2026"
+   ]
+  },
+  "s_onion": {
+   "tbl": [
+    "@states",
+    "Onion inflation Sep 2026"
+   ]
+  },
+  "s_jump": {
+   "minus": [
+    {
+     "tbl": [
+      "@states",
+      "Combined inflation Sep 2026"
+     ]
+    },
+    {
+     "tbl": [
+      "@states",
+      "Combined inflation Aug 2026 (provisional)"
+     ]
+    }
+   ]
+  },
+  "m_onion_all": {
+   "months": [
+    "@monthly",
+    "Onion index",
+    [
+     "Jan-25",
+     "Sep-26"
+    ]
+   ]
+  },
+  "m_onion": {
+   "months": [
+    "@monthly",
+    "Onion index",
+    [
+     "Jan-26",
+     "Sep-26"
+    ]
+   ]
+  }
  },
  "vals": {
-  "headline":     {"v": {"data": {"$": "m_head"}, "at": "Sep-26"}, "dec": 2, "unit": "%", "equals": 5.54},
-  "headline_aug": {"v": {"data": {"$": "m_head"}, "at": "Aug-26"}, "dec": 2, "unit": "%", "equals": 4.83},
-  "headline_jan": {"v": {"data": {"$": "m_head"}, "at": "Jan-26"}, "dec": 2, "unit": "%", "equals": 2.74},
-  "food":         {"v": {"data": {"$": "m_food"}, "at": "Sep-26"}, "dec": 2, "unit": "%", "equals": 7.74},
-  "food_aug":     {"v": {"data": {"$": "m_food"}, "at": "Aug-26"}, "dec": 2, "unit": "%", "equals": 5.97},
-  "onion":        {"v": {"data": {"breakdown": ["@break", "items", "Onion", "Sep 2026"]}}, "dec": 0, "unit": "%", "equals": 108.09},
-  "puducherry":   {"v": {"data": {"$": "s_head"}, "state": "Puducherry"}, "dec": 2, "unit": "%", "equals": 6.86},
-  "pud_food":     {"v": {"data": {"$": "s_food"}, "state": "Puducherry"}, "dec": 1, "unit": "%", "equals": 11.2, "tol": 0.05},
-  "n_above":      {"v": {"count_above": {"$": "s_head"}, "than": {"data": {"$": "s_head"}, "state": "India"}}, "dec": 0, "unit": "", "equals": 11},
-  "n_states":     {"v": {"n_states": {"$": "s_head"}}, "dec": 0, "unit": "", "equals": 36},
-  "jump_jh":      {"v": {"data": {"$": "s_jump"}, "state": "Jharkhand"}, "dec": 1, "unit": "", "sign": true, "equals": 1.9, "tol": 0.05},
-  "onion_jun":    {"v": {"data": {"$": "m_onion"}, "at": "Jun-26"}, "dec": 0, "unit": "", "equals": 68.25},
-  "onion_sep":    {"v": {"data": {"$": "m_onion"}, "at": "Sep-26"}, "dec": 0, "unit": "", "equals": 142.88},
-  "potato":       {"v": {"data": {"breakdown": ["@break", "items", "Potato", "Sep 2026"]}}, "dec": 1, "unit": "%", "abs": true, "equals": -11.5},
-  "tomato":       {"v": {"data": {"breakdown": ["@break", "items", "Tomato", "Sep 2026"]}}, "dec": 1, "unit": "%", "abs": true, "equals": -8.62},
-  "garlic":       {"v": {"data": {"breakdown": ["@break", "items", "Garlic", "Sep 2026"]}}, "dec": 1, "unit": "%", "equals": 54.62},
-  "ginger":       {"v": {"data": {"breakdown": ["@break", "items", "Ginger", "Sep 2026"]}}, "dec": 1, "unit": "%", "equals": 62.85},
-  "silver":       {"v": {"data": {"breakdown": ["@break", "items", "Silver Jewellery", "Sep 2026"]}}, "dec": 1, "unit": "%", "sign": true, "equals": 87.8},
-  "effects":      {"v": {"data": {"breakdown": ["@break", "groups", "13.2", "combined"]}}, "dec": 1, "unit": "%", "sign": true, "equals": 38.69},
-  "personal":     {"v": {"data": {"breakdown": ["@break", "divisions", "13", "combined"]}}, "dec": 2, "unit": "%", "equals": 13.75},
-  "personal_w":   {"v": {"data": {"breakdown": ["@break", "divisions", "13", "weight combined 2024"]}}, "dec": 1, "unit": "%", "equals": 5.038},
-  "rural":        {"v": {"data": {"$": "m_rural"}, "at": "Sep-26"}, "dec": 2, "unit": "%", "equals": 6.08},
-  "urban":        {"v": {"data": {"$": "m_urban"}, "at": "Sep-26"}, "dec": 2, "unit": "%", "equals": 4.88},
-  "rural_jan":    {"v": {"data": {"$": "m_rural"}, "at": "Jan-26"}, "dec": 2, "unit": "%", "equals": 2.73},
-  "urban_jan":    {"v": {"data": {"$": "m_urban"}, "at": "Jan-26"}, "dec": 2, "unit": "%", "equals": 2.75},
-  "fw_rural":     {"v": {"data": {"breakdown": ["@break", "divisions", "01", "weight rural 2024"]}}, "dec": 0, "unit": "%", "equals": 41.983},
-  "fw_urban":     {"v": {"data": {"breakdown": ["@break", "divisions", "01", "weight urban 2024"]}}, "dec": 0, "unit": "%", "equals": 30.251},
-  "fw_new":       {"v": {"data": {"breakdown": ["@break", "divisions", "01", "weight combined 2024"]}}, "dec": 1, "unit": "%", "equals": 36.753},
-  "n_items":      {"v": {"data": {"breakdown": ["@break", "facts", "weighted items", "#1"]}}, "dec": 0, "unit": "", "equals": 358},
-  "n_villages":   {"v": {"data": {"breakdown": ["@break", "facts", "response", "#1"]}}, "dec": 0, "unit": "", "equals": 1465},
-  "n_markets":    {"v": {"data": {"breakdown": ["@break", "facts", "response", "#0"]}}, "dec": 0, "unit": "", "equals": 1407},
-  "base_year":    {"v": {"data": {"breakdown": ["@break", "facts", "base", "#1"]}}, "dec": 0, "unit": "", "plain": true, "equals": 2024}
+  "headline": {
+   "v": {
+    "data": {
+     "$": "m_head"
+    },
+    "at": "Sep-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 5.54
+  },
+  "headline_aug": {
+   "v": {
+    "data": {
+     "$": "m_head"
+    },
+    "at": "Aug-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 4.83
+  },
+  "headline_jan": {
+   "v": {
+    "data": {
+     "$": "m_head"
+    },
+    "at": "Jan-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 2.74
+  },
+  "base100": {
+   "v": 100,
+   "dec": 0,
+   "unit": "",
+   "prefix": "₹",
+   "equals": 100
+  },
+  "idx_sep": {
+   "v": {
+    "data": {
+     "$": "m_cidx"
+    },
+    "at": "Sep-26"
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "equals": 109.49
+  },
+  "food": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "groups",
+      "01.1",
+      "combined"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 7.74
+  },
+  "food_aug": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1",
+      "Aug 2026"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 5.97
+  },
+  "food_rural": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "groups",
+      "01.1",
+      "rural"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 8.06
+  },
+  "food_urban": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "groups",
+      "01.1",
+      "urban"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 7.18
+  },
+  "rest": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "11",
+      "combined"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 9.36
+  },
+  "personal": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "13",
+      "combined"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 13.75
+  },
+  "personal_w": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "13",
+      "weight combined 2024"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 5.038
+  },
+  "fw_rural": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "01",
+      "weight rural 2024"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 41.983
+  },
+  "fw_urban": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "01",
+      "weight urban 2024"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 30.251
+  },
+  "fw_new": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "01",
+      "weight combined 2024"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 36.753
+  },
+  "fw_old": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "01",
+      "weight combined 2012"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 42.617
+  },
+  "c_sugar": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.8",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 13.76
+  },
+  "c_fruit": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.6",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 10.75
+  },
+  "c_veg": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.7",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 9.18
+  },
+  "c_veg_aug": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.7",
+      "Aug 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 1.57
+  },
+  "c_cereals": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.1",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 3.94
+  },
+  "i_sugar": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.8.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 29.8
+  },
+  "i_rice": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.1.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 8.25
+  },
+  "i_wheat": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.1.1.1.02",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 1.64
+  },
+  "i_eggs": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.4.8.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 8.66
+  },
+  "i_milk": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "01.1.4.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 4.21
+  },
+  "onion": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Onion",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 108.09
+  },
+  "onion_s": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Onion",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "sign": true,
+   "equals": 108.09
+  },
+  "onion_jan_m": {
+   "v": {
+    "data": {
+     "$": "m_onion_y"
+    },
+    "at": "Jan-26"
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": -29.3
+  },
+  "onion_jan": {
+   "v": {
+    "data": {
+     "$": "m_onion_y"
+    },
+    "at": "Jan-26"
+   },
+   "dec": 1,
+   "unit": "%",
+   "abs": true,
+   "equals": -29.3
+  },
+  "onion_jun_m": {
+   "v": {
+    "data": {
+     "$": "m_onion_y"
+    },
+    "at": "Jun-26"
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 4.73
+  },
+  "onion_sep": {
+   "v": {
+    "data": {
+     "$": "m_onion"
+    },
+    "at": "Sep-26"
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 142.88
+  },
+  "potato": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Potato",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "abs": true,
+   "equals": -11.5
+  },
+  "tomato": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Tomato",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "abs": true,
+   "equals": -8.62
+  },
+  "garlic": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Garlic",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 54.62
+  },
+  "ginger": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "items",
+      "Ginger",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 62.85
+  },
+  "rbi_onion": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "onion",
+      "rise"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 85
+  },
+  "sale_price": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@ca",
+      "facts",
+      "sale",
+      "rupees per kg"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "prefix": "₹",
+   "equals": 35
+  },
+  "buffer_proc": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@ca",
+      "facts",
+      "buffer",
+      "procured"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "equals": 1.21
+  },
+  "buffer_target": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@ca",
+      "facts",
+      "buffer",
+      "target"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 2
+  },
+  "silver": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "13.2.1.1.1.02",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 87.8
+  },
+  "silver_aug": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "13.2.1.1.1.02",
+      "Aug 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 106.81
+  },
+  "gold": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "13.2.1.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 30.92
+  },
+  "jewel": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "13.2.1",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 43.28
+  },
+  "airfare": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "07.3.3.1.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 29.9
+  },
+  "petrol": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "07.2.2.2.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 7.51
+  },
+  "lpg": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "04.5.2.2.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 5.29
+  },
+  "elec": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "04.5.1.0.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "abs": true,
+   "equals": -1.04
+  },
+  "rural": {
+   "v": {
+    "data": {
+     "$": "m_rural"
+    },
+    "at": "Sep-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 6.08
+  },
+  "urban": {
+   "v": {
+    "data": {
+     "$": "m_urban"
+    },
+    "at": "Sep-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 4.88
+  },
+  "rural_jan": {
+   "v": {
+    "data": {
+     "$": "m_rural"
+    },
+    "at": "Jan-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 2.73
+  },
+  "urban_jan": {
+   "v": {
+    "data": {
+     "$": "m_urban"
+    },
+    "at": "Jan-26"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 2.75
+  },
+  "puducherry": {
+   "v": {
+    "data": {
+     "$": "s_head"
+    },
+    "state": "Puducherry"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 6.86
+  },
+  "tn": {
+   "v": {
+    "data": {
+     "$": "s_head"
+    },
+    "state": "Tamil Nadu"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 6.81
+  },
+  "odisha": {
+   "v": {
+    "data": {
+     "$": "s_head"
+    },
+    "state": "Odisha"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 6.7
+  },
+  "mizoram": {
+   "v": {
+    "data": {
+     "$": "s_head"
+    },
+    "state": "Mizoram"
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 2.85
+  },
+  "n_above": {
+   "v": {
+    "count_above": {
+     "$": "s_head"
+    },
+    "than": {
+     "data": {
+      "$": "s_head"
+     },
+     "state": "India"
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 11
+  },
+  "n_states": {
+   "v": {
+    "n_states": {
+     "$": "s_head"
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 36
+  },
+  "jump_jh": {
+   "v": {
+    "data": {
+     "$": "s_jump"
+    },
+    "state": "Jharkhand"
+   },
+   "dec": 1,
+   "unit": "",
+   "sign": true,
+   "say_unit": " percentage points",
+   "equals": 1.9,
+   "tol": 0.05
+  },
+  "pud_food": {
+   "v": {
+    "data": {
+     "$": "s_food"
+    },
+    "state": "Puducherry"
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 11.2,
+   "tol": 0.05
+  },
+  "tn_food": {
+   "v": {
+    "data": {
+     "$": "s_food"
+    },
+    "state": "Tamil Nadu"
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 10.6,
+   "tol": 0.05
+  },
+  "ap_food": {
+   "v": {
+    "data": {
+     "$": "s_food"
+    },
+    "state": "Andhra Pradesh"
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 10.2,
+   "tol": 0.05
+  },
+  "repo_after": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "repo",
+      "after"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 5.5
+  },
+  "repo_before": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "repo",
+      "before"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 5.25
+  },
+  "bps": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "repo",
+      "change bps"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 25
+  },
+  "proj_fy": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "projection",
+      "2026-27"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 5.2
+  },
+  "proj_q3": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "projection",
+      "Q3"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 6.0
+  },
+  "proj_q4": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@rbi",
+      "facts",
+      "projection",
+      "Q4"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 5.7
+  },
+  "n_items": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "facts",
+      "weighted items",
+      "#1"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 358
+  },
+  "n_items_old": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "facts",
+      "weighted items",
+      "#0"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 299
+  },
+  "n_villages": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "facts",
+      "response",
+      "#1"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 1465
+  },
+  "n_markets": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "facts",
+      "response",
+      "#0"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 1407
+  },
+  "base_year": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "facts",
+      "base",
+      "#1"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "plain": true,
+   "equals": 2024
+  },
+  "food_div": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "divisions",
+      "01",
+      "combined"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 7.36
+  },
+  "bev": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@break",
+      "groups",
+      "01.2",
+      "combined"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 0.25
+  },
+  "idx_up": {
+   "v": {
+    "diff": [
+     {
+      "val": "idx_sep"
+     },
+     {
+      "val": "base100"
+     }
+    ]
+   },
+   "dec": 2,
+   "unit": "%",
+   "equals": 9.49
+  },
+  "onion_sep25": {
+   "v": {
+    "data": {
+     "$": "m_onion_all"
+    },
+    "at": "Sep-25"
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 68.66
+  },
+  "prod_r": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@ca",
+      "facts",
+      "production",
+      "2025-26"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "say_unit": "",
+   "equals": 307.37
+  },
+  "diesel": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@items",
+      "items",
+      "07.2.2.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 8.41
+  }
  },
  "chapters": [
-  {"id": "cold", "title": "Cold open", "label": ""},
-  {"id": "head", "title": "The headline"},
-  {"id": "food", "title": "Food and the basket"},
-  {"id": "onion", "title": "The onion story"},
-  {"id": "silver", "title": "Silver and personal care"},
-  {"id": "split", "title": "Villages and cities"},
-  {"id": "state", "title": "Your state"},
-  {"id": "made", "title": "How the number is made"},
-  {"id": "close", "title": "Close"}
+  {
+   "id": "cold",
+   "title": "Cold open",
+   "label": ""
+  },
+  {
+   "id": "head",
+   "title": "The headline"
+  },
+  {
+   "id": "basket",
+   "title": "The new basket"
+  },
+  {
+   "id": "food",
+   "title": "Food leads"
+  },
+  {
+   "id": "onion",
+   "title": "The onion story"
+  },
+  {
+   "id": "beyond",
+   "title": "Beyond food: jewellery, travel and fuel"
+  },
+  {
+   "id": "split",
+   "title": "Villages and cities"
+  },
+  {
+   "id": "state",
+   "title": "Your state"
+  },
+  {
+   "id": "rbi",
+   "title": "What the RBI did"
+  },
+  {
+   "id": "close",
+   "title": "Close"
+  }
  ],
  "scenes": [
-  {"kind": "cold", "chapter": "cold", "min": 10,
-   "lines": ["Onion is up *{onion}*", "in one year.", "Inflation: *{headline}*"],
-   "map": {"lit": "Puducherry", "label": "{puducherry}"},
-   "vo": ["Onion prices are up {onion:say} in one year.", "India's inflation is {headline:say}."]},
-
-  {"kind": "card", "chapter": "head", "sub": "Year on year, all India", "vo": ["First, the headline."]},
-  {"kind": "line", "chapter": "head", "title": "Inflation, year on year, all India",
-   "series": [{"name": "Inflation", "data": {"$": "m_head"}, "dec": 2, "unit": "%", "equals": 5.54}],
-   "caption": "{headline_jan} in January, then up every month. August: {headline_aug}.",
-   "source": "MoSPI · all-India CPI, base 2024 · PIB releases and eSankhyiki portal · September provisional",
-   "vo": ["Inflation began the year at {headline_jan:say}.", "It rose every month.", "In September it reached {headline:say}, up from {headline_aug:say} in August."]},
-
-  {"kind": "card", "chapter": "food", "sub": "Weights and rates by division", "vo": ["Next, food and the basket."]},
-  {"kind": "bars", "chapter": "food", "title": "Inflation by division, September", "dec": 2, "unit": "%", "sort": "desc", "expect_top": "Personal care and other goods",
+  {
+   "kind": "cold",
+   "chapter": "cold",
+   "min": 8,
+   "lines": [
+    "Onion: up *{onion}*",
+    "in one year.",
+    "All prices: up *{headline}*"
+   ],
+   "map": {
+    "lit": "Puducherry",
+    "label": "{puducherry}"
+   },
+   "vo": [
+    "In September, onion cost {onion:say} more than a year before: more than double.",
+    "Prices across India were up {headline:say} on a year earlier, the highest this year.",
+    "Over the year, prices rose the most in one place: Puducherry.",
+    "These are September's provisional figures, from the official tables."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "head",
+   "sub": "What inflation measures",
+   "vo": [
+    "Chapter one: the headline."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "head",
+   "title": "An imagined basket of what households buy",
+   "a": {
+    "label": "At 2024 prices",
+    "var": "base100",
+    "sub": "The base year, when the index is set to {base100:n}"
+   },
+   "b": {
+    "label": "In September 2026",
+    "var": "idx_sep",
+    "sub": "The same basket at September's prices, provisional"
+   },
+   "caption": "Up {idx_up} since 2024. Inflation compares one year only: {headline} in September.",
+   "source": "MoSPI · all-India CPI (combined), base 2024 · Sep 2026 provisional · PIB release of 12 Oct 2026, Annexure IV",
+   "vo": [
+    "Every month, MoSPI, the statistics ministry, publishes the Consumer Price Index.",
+    "Imagine a basket that cost {base100:say} at twenty twenty-four prices.",
+    "In September, that basket would cost {idx_sep:say}. That number is the index.",
+    "Inflation looks at one year only: this September against last September."
+   ]
+  },
+  {
+   "kind": "line",
+   "chapter": "head",
+   "title": "Inflation, year on year, all India",
+   "series": [
+    {
+     "name": "Inflation",
+     "data": {
+      "$": "m_head"
+     },
+     "dec": 2,
+     "unit": "%",
+     "equals": 5.54
+    }
+   ],
+   "marks": [
+    {
+     "at": "Jan-26",
+     "var": "headline_jan"
+    }
+   ],
+   "caption": "{headline_jan} in January, then up every month. August: {headline_aug}. September is provisional.",
+   "source": "MoSPI · all-India CPI, base 2024 · PIB releases and eSankhyiki portal · Sep 2026 provisional",
+   "vo": [
+    "In January, inflation was {headline_jan:say}, and it went up every month after that.",
+    "August came in at {headline_aug:say}.",
+    "September: {headline:say}. That figure is provisional, and can be revised next month.",
+    "Yearly rates in the new series start in January, so there are only nine so far."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "basket",
+   "sub": "Items, markets and weights",
+   "vo": [
+    "Chapter two: the new basket."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "basket",
+   "title": "Behind the number",
+   "tiles": [
+    {
+     "var": "n_items",
+     "caption": "items priced in the basket",
+     "hi": true
+    },
+    {
+     "var": "n_villages",
+     "caption": "villages where prices are collected"
+    },
+    {
+     "var": "n_markets",
+     "caption": "urban markets, online included"
+    },
+    {
+     "var": "base_year",
+     "caption": "base year of the index"
+    }
+   ],
+   "source": "MoSPI · CPI base 2024: items, markets and base · PIB releases of 12 Oct 2026 and 12 Feb 2026",
+   "vo": [
+    "The new index prices {n_items:say} items, up from {n_items_old:say} in the old one.",
+    "Its prices come from {n_villages:say} villages and {n_markets:say} urban markets,",
+    "visited in person by field staff, on a weekly roster."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "basket",
+   "title": "Food and beverages: share of the basket",
+   "a": {
+    "label": "Old weights, regrouped",
+    "var": "fw_old",
+    "sub": "Base 2012, counted in the new divisions"
+   },
+   "b": {
+    "label": "New weights, base 2024",
+    "var": "fw_new",
+    "sub": "From the household spending survey"
+   },
+   "caption": "MoSPI regrouped the 2012 weights into the 2024 divisions so the two can be compared.",
+   "source": "MoSPI · first release of CPI base 2024, 12 Feb 2026: division-wise weights as per the new (2024) structure",
+   "vo": [
+    "The weights follow a national survey of household spending.",
+    "Counting the old basket in the new divisions, food and beverages were {fw_old:say}.",
+    "In the new basket, they are {fw_new:say}."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "food",
+   "sub": "The heaviest part of the basket",
+   "vo": [
+    "Chapter three: food."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "food",
+   "title": "Inflation by division, September",
+   "dec": 2,
+   "unit": "%",
+   "sort": "desc",
+   "expect_top": "Personal care and miscellaneous",
    "weight_head": "Share of basket",
    "rows": [
-    {"label": "Food and beverages", "v": {"data": {"breakdown": ["@break", "divisions", "01", "combined"]}}, "equals": 7.36, "w": {"data": {"breakdown": ["@break", "divisions", "01", "weight combined 2024"]}}, "w_equals": 36.753, "hi": true},
-    {"label": "Clothing and footwear", "v": {"data": {"breakdown": ["@break", "divisions", "03", "combined"]}}, "equals": 3.93, "w": {"data": {"breakdown": ["@break", "divisions", "03", "weight combined 2024"]}}, "w_equals": 6.383},
-    {"label": "Housing, water and fuels", "v": {"data": {"breakdown": ["@break", "divisions", "04", "combined"]}}, "equals": 2.74, "w": {"data": {"breakdown": ["@break", "divisions", "04", "weight combined 2024"]}}, "w_equals": 17.665},
-    {"label": "Furnishings and household goods", "v": {"data": {"breakdown": ["@break", "divisions", "05", "combined"]}}, "equals": 3.11, "w": {"data": {"breakdown": ["@break", "divisions", "05", "weight combined 2024"]}}, "w_equals": 4.469},
-    {"label": "Health", "v": {"data": {"breakdown": ["@break", "divisions", "06", "combined"]}}, "equals": 1.4, "w": {"data": {"breakdown": ["@break", "divisions", "06", "weight combined 2024"]}}, "w_equals": 6.1},
-    {"label": "Transport", "v": {"data": {"breakdown": ["@break", "divisions", "07", "combined"]}}, "equals": 5.01, "w": {"data": {"breakdown": ["@break", "divisions", "07", "weight combined 2024"]}}, "w_equals": 8.796},
-    {"label": "Information and communication", "v": {"data": {"breakdown": ["@break", "divisions", "08", "combined"]}}, "equals": 2.44, "w": {"data": {"breakdown": ["@break", "divisions", "08", "weight combined 2024"]}}, "w_equals": 3.609},
-    {"label": "Recreation, sport and culture", "v": {"data": {"breakdown": ["@break", "divisions", "09", "combined"]}}, "equals": 2.16, "w": {"data": {"breakdown": ["@break", "divisions", "09", "weight combined 2024"]}}, "w_equals": 1.516},
-    {"label": "Education services", "v": {"data": {"breakdown": ["@break", "divisions", "10", "combined"]}}, "equals": 3.94, "w": {"data": {"breakdown": ["@break", "divisions", "10", "weight combined 2024"]}}, "w_equals": 3.333},
-    {"label": "Restaurants and accommodation", "v": {"data": {"breakdown": ["@break", "divisions", "11", "combined"]}}, "equals": 9.36, "w": {"data": {"breakdown": ["@break", "divisions", "11", "weight combined 2024"]}}, "w_equals": 3.348},
-    {"label": "Personal care and other goods", "v": {"data": {"breakdown": ["@break", "divisions", "13", "combined"]}}, "equals": 13.75, "w": {"data": {"breakdown": ["@break", "divisions", "13", "weight combined 2024"]}}, "w_equals": 5.038}
+    {
+     "label": "Food and beverages",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "01",
+        "combined"
+       ]
+      }
+     },
+     "equals": 7.36,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "01",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 36.753,
+     "hi": true
+    },
+    {
+     "label": "Clothing and footwear",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "03",
+        "combined"
+       ]
+      }
+     },
+     "equals": 3.93,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "03",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 6.383
+    },
+    {
+     "label": "Housing, water and fuels",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "04",
+        "combined"
+       ]
+      }
+     },
+     "equals": 2.74,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "04",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 17.665
+    },
+    {
+     "label": "Furnishings and household goods",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "05",
+        "combined"
+       ]
+      }
+     },
+     "equals": 3.11,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "05",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 4.469
+    },
+    {
+     "label": "Health",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "06",
+        "combined"
+       ]
+      }
+     },
+     "equals": 1.4,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "06",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 6.1
+    },
+    {
+     "label": "Transport",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "07",
+        "combined"
+       ]
+      }
+     },
+     "equals": 5.01,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "07",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 8.796
+    },
+    {
+     "label": "Information and communication",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "08",
+        "combined"
+       ]
+      }
+     },
+     "equals": 2.44,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "08",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 3.609
+    },
+    {
+     "label": "Recreation, sport and culture",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "09",
+        "combined"
+       ]
+      }
+     },
+     "equals": 2.16,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "09",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 1.516
+    },
+    {
+     "label": "Education services",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "10",
+        "combined"
+       ]
+      }
+     },
+     "equals": 3.94,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "10",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 3.333
+    },
+    {
+     "label": "Restaurants and accommodation",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "11",
+        "combined"
+       ]
+      }
+     },
+     "equals": 9.36,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "11",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 3.348
+    },
+    {
+     "label": "Personal care and miscellaneous",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "13",
+        "combined"
+       ]
+      }
+     },
+     "equals": 13.75,
+     "w": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "13",
+        "weight combined 2024"
+       ]
+      }
+     },
+     "w_equals": 5.038
+    }
    ],
    "caption": "A thicker bar is a bigger share of the household basket. Food and beverages are {fw_new} of it.",
-   "source": "MoSPI · CPI base 2024, divisions · PIB release of 12 Oct 2026; weights: first release of the new series",
-   "vo": ["Here is each division of the basket.", "Food and beverages carry the biggest weight, {fw_new:say}.", "Personal care and other goods rose fastest, {personal:say}."]},
-  {"kind": "compare", "chapter": "food", "title": "Food prices, year on year",
-   "a": {"label": "Food, August", "var": "food_aug", "sub": "Consumer Food Price Index, final"},
-   "b": {"label": "Food, September", "var": "food", "sub": "Provisional"},
-   "source": "MoSPI · Consumer Food Price Index, all India · PIB release of 12 Oct 2026",
-   "vo": ["Food inflation was {food_aug:say} in August.", "In September it was {food:say}."]},
-
-  {"kind": "card", "chapter": "onion", "sub": "One item, month by month", "vo": ["Now, the onion."]},
-  {"kind": "line", "chapter": "onion", "title": "Onion price index, all India",
-   "series": [{"name": "Onion index", "data": {"$": "m_onion"}, "dec": 0, "unit": "", "equals": 142.88}],
-   "marks": [{"at": "Jun-26", "var": "onion_jun"}],
-   "caption": "Onion index: {onion_jun} in June, {onion_sep} in September.",
-   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion (combined) · read 14 Oct 2026",
-   "vo": ["Onion's price index was {onion_jun:say} in June.", "By September it was {onion_sep:say}."]},
-  {"kind": "bars", "chapter": "onion", "title": "Five items, September, year on year", "dec": 1, "unit": "%", "sign": true, "sort": "desc", "expect_top": "Onion",
+   "source": "MoSPI · CPI base 2024, divisions · Sep 2026 provisional · PIB 12 Oct 2026; weights: PIB 12 Feb 2026",
+   "vo": [
+    "Here are the main divisions of the basket. A thicker bar means a bigger weight.",
+    "Food and beverages are the heaviest, {fw_new:say}, and rose {food_div:say}, drinks included."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "food",
+   "title": "Food prices, year on year, all India",
+   "a": {
+    "label": "Food, August",
+    "var": "food_aug",
+    "sub": "Consumer Food Price Index, final"
+   },
+   "b": {
+    "label": "Food, September",
+    "var": "food",
+    "sub": "Provisional"
+   },
+   "caption": "Food alone, without drinks. Drinks rose {bev} in September.",
+   "source": "MoSPI · Consumer Food Price Index, all India · Sep 2026 provisional · PIB release of 12 Oct 2026",
+   "vo": [
+    "Food alone, without drinks, rose {food_aug:say} in August.",
+    "In September it rose {food:say}, faster than prices overall."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "food",
+   "title": "Inside food, September, year on year",
+   "dec": 1,
+   "unit": "%",
+   "sort": "desc",
+   "expect_top": "Sugar, confectionery, desserts",
+   "expect_bottom": "Cereals",
    "rows": [
-    {"label": "Onion", "v": {"data": {"breakdown": ["@break", "items", "Onion", "Sep 2026"]}}, "equals": 108.09, "hi": true},
-    {"label": "Ginger", "v": {"data": {"breakdown": ["@break", "items", "Ginger", "Sep 2026"]}}, "equals": 62.85},
-    {"label": "Garlic", "v": {"data": {"breakdown": ["@break", "items", "Garlic", "Sep 2026"]}}, "equals": 54.62},
-    {"label": "Tomato", "v": {"data": {"breakdown": ["@break", "items", "Tomato", "Sep 2026"]}}, "equals": -8.62},
-    {"label": "Potato", "v": {"data": {"breakdown": ["@break", "items", "Potato", "Sep 2026"]}}, "equals": -11.5}
+    {
+     "label": "Sugar, confectionery, desserts",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.8",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 13.76,
+     "hi": true
+    },
+    {
+     "label": "Fruits and nuts",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.6",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 10.75
+    },
+    {
+     "label": "Ready-made and other food",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.9",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 9.98
+    },
+    {
+     "label": "Vegetables, tubers, pulses",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.7",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 9.18
+    },
+    {
+     "label": "Meat",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.2",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.71
+    },
+    {
+     "label": "Oils and fats",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.5",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.35
+    },
+    {
+     "label": "Fish and seafood",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.3",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 7.9
+    },
+    {
+     "label": "Milk, dairy and eggs",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.4",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 5.14
+    },
+    {
+     "label": "Cereals",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.1",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 3.94
+    }
    ],
-   "caption": "Some prices fell in the same month.",
-   "source": "MoSPI · CPI base 2024, five of the highest and lowest items · PIB release of 12 Oct 2026",
-   "vo": ["In the same month, potato fell {potato:say}.", "Tomato fell {tomato:say}.", "Garlic rose {garlic:say}, and ginger {ginger:say}."]},
-
-  {"kind": "card", "chapter": "silver", "sub": "Jewellery and the wider division", "vo": ["Then, silver."]},
-  {"kind": "tiles", "chapter": "silver", "title": "Silver jewellery and personal care",
-   "tiles": [
-    {"var": "silver", "caption": "Silver jewellery, one year on", "hi": true},
-    {"var": "effects", "caption": "Other personal effects, one year on"},
-    {"var": "personal", "caption": "Personal care and other goods"},
-    {"var": "personal_w", "caption": "Basket share of personal care and other goods"}
+   "caption": "Vegetables, tubers and pulses: {c_veg_aug} in August, {c_veg} in September.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, nine food classes, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "vo": [
+    "Inside food, sugar and sweets rose fastest, {c_sugar:say}.",
+    "Fruits and nuts rose {c_fruit:say}.",
+    "Vegetables and pulses jumped, from {c_veg_aug:say} in August to {c_veg:say}.",
+    "Cereals rose the least, {c_cereals:say}."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "food",
+   "title": "Six staples, September, year on year",
+   "dec": 1,
+   "unit": "%",
+   "sort": "desc",
+   "expect_top": "Sugar",
+   "rows": [
+    {
+     "label": "Sugar",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.8.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 29.8,
+     "hi": true
+    },
+    {
+     "label": "Eggs",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.4.8.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.66
+    },
+    {
+     "label": "Rice",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.1.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.25
+    },
+    {
+     "label": "Arhar (tur)",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.7.6.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.19
+    },
+    {
+     "label": "Milk",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.4.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 4.21
+    },
+    {
+     "label": "Wheat",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.1.1.1.02",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 1.64
+    }
    ],
-   "note": "Year-on-year rates, September 2026, provisional.",
-   "source": "MoSPI · CPI base 2024, item, group and division · PIB release of 12 Oct 2026",
-   "vo": ["Silver jewellery rose {silver:say}.", "Personal care and other goods rose {personal:say}.", "That division is {personal_w:say} of the basket."]},
-
-  {"kind": "card", "chapter": "split", "sub": "Rural and urban inflation", "vo": ["Now, villages and cities."]},
-  {"kind": "line", "chapter": "split", "title": "Inflation, rural and urban",
+   "caption": "Rice and wheat sold through ration shops are separate items and are not shown here.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "vo": [
+    "Sugar alone, without sweets and desserts, was up {i_sugar:say} in a year.",
+    "Rice rose {i_rice:say}. Wheat rose only {i_wheat:say}."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "onion",
+   "sub": "One item, month by month",
+   "vo": [
+    "Chapter four: the onion."
+   ]
+  },
+  {
+   "kind": "line",
+   "chapter": "onion",
+   "title": "Onion, year on year, all India",
    "series": [
-    {"name": "Rural", "data": {"$": "m_rural"}, "dec": 2, "unit": "%", "equals": 6.08},
-    {"name": "Urban", "data": {"$": "m_urban"}, "dec": 2, "unit": "%", "equals": 4.88},
-    {"name": "All India", "data": {"$": "m_head"}, "dec": 2, "unit": "%", "equals": 5.54}
+    {
+     "name": "Onion",
+     "data": {
+      "$": "m_onion_y"
+     },
+     "dec": 1,
+     "unit": "%",
+     "equals": 108.09
+    }
    ],
-   "caption": "In January the two were level: {rural_jan} rural and {urban_jan} urban.",
-   "source": "MoSPI · all-India CPI, base 2024, rural, urban and combined · PIB releases",
-   "vo": ["In January, villages and cities were level.", "By September, village prices had pulled ahead."]},
-  {"kind": "compare", "chapter": "split", "title": "Inflation, villages and cities",
-   "a": {"label": "Rural, September", "var": "rural"},
-   "b": {"label": "Urban, September", "var": "urban"},
-   "caption": "Food is {fw_rural} of the rural basket and {fw_urban} of the urban one.",
-   "source": "MoSPI · CPI base 2024, rural and urban; division weights · PIB releases",
-   "vo": ["Rural inflation was {rural:say}.", "Urban inflation was {urban:say}.", "Food is a bigger share of the rural basket."]},
-
-  {"kind": "card", "chapter": "state", "sub": "Every state and territory", "vo": ["Now, your state."]},
-  {"kind": "map", "chapter": "state", "data": {"$": "s_head"}, "dec": 2, "unit": "%",
-   "title": "Inflation by state and territory, September",
-   "sub": "India {headline} · {n_above} of {n_states} above",
-   "key": ["lowest", "highest"],
-   "note": "Biggest jump from August: Jharkhand, {jump_jh} points. Only Assam fell.",
-   "source": "MoSPI · CPI base 2024, combined, by state and territory · PIB release of 12 Oct 2026, Annexure III",
-   "vo": ["Here is every state and territory.", "Puducherry is highest, at {puducherry:say}.", "{n_above:say} of {n_states:say} are above the national figure."]},
-  {"kind": "map", "chapter": "state", "data": {"$": "s_food"}, "dec": 1, "unit": "%",
-   "title": "Food inflation by state and territory",
-   "sub": "India {food}",
-   "key": ["lowest", "highest"],
-   "note": "MoSPI: state-level item indices may rest on thin samples of price quotations.",
-   "source": "MoSPI · eSankhyiki portal, CFPI base 2024, by state · read 14 Oct 2026",
-   "vo": ["This is food inflation by state.", "Puducherry leads, at {pud_food:say}."]},
-
-  {"kind": "card", "chapter": "made", "sub": "Basket, markets and base year", "vo": ["How the number is made."]},
-  {"kind": "tiles", "chapter": "made", "title": "Behind the number",
+   "marks": [
+    {
+     "at": "Jan-26",
+     "var": "onion_jan_m"
+    },
+    {
+     "at": "Jun-26",
+     "var": "onion_jun_m"
+    }
+   ],
+   "caption": "In January onion cost {onion_jan} less than a year before.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion (combined), all India · Sep 2026 provisional · read 14 Oct 2026",
+   "vo": [
+    "In January, onion cost {onion_jan:say} less than a year earlier.",
+    "By June, it cost {onion_jun_m:say} more.",
+    "Then it climbed fast, through July and August.",
+    "In September, onion was {onion:say} above a year before."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "onion",
+   "title": "Onion's price index, a year apart",
+   "a": {
+    "label": "September 2025",
+    "var": "onion_sep25",
+    "sub": "Index, base 2024"
+   },
+   "b": {
+    "label": "September 2026",
+    "var": "onion_sep",
+    "sub": "Provisional"
+   },
+   "caption": "More than double in a year.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion index (combined), all India · Sep 2026 provisional · read 14 Oct 2026",
+   "vo": [
+    "Here is what that means in the index.",
+    "A year earlier, onion's index stood at {onion_sep25:say}.",
+    "This September it was {onion_sep:say}: more than double."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "onion",
+   "title": "Five kitchen items, September, year on year",
+   "dec": 1,
+   "unit": "%",
+   "sign": true,
+   "sort": "desc",
+   "expect_top": "Onion",
+   "expect_bottom": "Potato",
+   "rows": [
+    {
+     "label": "Onion",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Onion",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 108.09,
+     "hi": true
+    },
+    {
+     "label": "Ginger",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Ginger",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 62.85
+    },
+    {
+     "label": "Garlic",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Garlic",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 54.62
+    },
+    {
+     "label": "Tomato",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Tomato",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": -8.62
+    },
+    {
+     "label": "Potato",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Potato",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": -11.5
+    }
+   ],
+   "caption": "Some kitchen prices were lower than a year before.",
+   "source": "MoSPI · CPI base 2024, five items from PIB Annexures I and II · Sep 2026 provisional · 12 Oct 2026",
+   "vo": [
+    "Not everything rose. Potato was down {potato:say} on a year before, and tomato {tomato:say}.",
+    "Garlic rose {garlic:say}, and ginger {ginger:say}."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "onion",
+   "title": "What the government said on 26 August",
    "tiles": [
-    {"var": "n_items", "caption": "items priced in the basket", "hi": true},
-    {"var": "n_villages", "caption": "villages where prices are collected"},
-    {"var": "n_markets", "caption": "urban markets, online included"},
-    {"var": "base_year", "caption": "base year of the index"}
+    {
+     "var": "sale_price",
+     "caption": "a kilo: the retail price the ministry announced",
+     "hi": true
+    },
+    {
+     "var": "prod_r",
+     "caption": "lakh tonnes: estimated crop of 2025 to 2026, close to the year before"
+    },
+    {
+     "var": "buffer_proc",
+     "caption": "lakh tonnes bought for the buffer, of {buffer_target:n} planned"
+    }
    ],
-   "source": "MoSPI · CPI base 2024: items, response rate and base · PIB releases of 12 Oct 2026 and 12 Feb 2026",
-   "vo": ["The index follows {n_items:say} items.", "Prices come from {n_villages:say} villages and {n_markets:say} urban markets.", "The base year is {base_year:say}."]},
-  {"kind": "quote", "chapter": "made",
-   "text": "Real time price data are collected from selected 1407 urban Markets (including online markets) and 1465 villages covering all States/UTs through personal visits by field staff of Field Operations Division of NSO, MoSPI on a weekly roster.",
-   "by": "Ministry of Statistics and Programme Implementation", "date": "Press release on the Consumer Price Index, 12 Oct 2026",
-   "verify": ["@break", "facts", "response"],
-   "source": "MoSPI via PIB · press release on the Consumer Price Index (base 2024) for September 2026",
-   "vo": ["This is how MoSPI describes it."]},
-
-  {"kind": "end", "chapter": "close", "min": 12,
+   "note": "Ministry of Consumer Affairs, Food and Public Distribution, press release of 26 August 2026.",
+   "source": "Ministry of Consumer Affairs · onion buffer release · PIB, 26 Aug 2026",
+   "vo": [
+    "By the twenty-sixth of August, the government said it had begun releasing onions from its buffer stock.",
+    "It announced retail sales at {sale_price:say} a kilo, and called supplies comfortable.",
+    "It said onion prices typically rise in the festive season."
+   ]
+  },
+  {
+   "kind": "quote",
+   "chapter": "onion",
+   "text": "Onion prices increased by about 85 per cent by end-September over end-June, driven by low rabi stocks and concerns over kharif arrivals amid uneven rainfall. As a result, the increase during August-September is sharper than the usual seasonal pick-up.",
+   "by": "Reserve Bank of India, Governor's Statement",
+   "date": "7 October 2026, footnote on onion",
+   "verify": [
+    "@rbi",
+    "text",
+    "onion"
+   ],
+   "source": "RBI · Governor's Statement, 7 Oct 2026, footnote 13 · rbi.org.in",
+   "vo": [
+    "Six weeks later, the RBI gave its reading.",
+    "It pointed to low rabi stocks and worries over kharif arrivals, amid uneven rain.",
+    "And it called the rise sharper than the usual seasonal pick-up.",
+    "Its figure compares end-June with end-September, and came before the September index."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "beyond",
+   "sub": "Silver, gold, air fares and fuel",
+   "vo": [
+    "Chapter five: beyond food."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "beyond",
+   "title": "Jewellery, September, year on year",
+   "a": {
+    "label": "Gold, diamond, platinum",
+    "var": "gold",
+    "sub": "Jewellery: one item in the index"
+   },
+   "b": {
+    "label": "Silver",
+    "var": "silver",
+    "sub": "Jewellery: one item in the index"
+   },
+   "caption": "In August, silver jewellery was up {silver_aug}.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "vo": [
+    "Silver jewellery cost {silver:say} more than a year before.",
+    "Gold, diamond and platinum jewellery cost {gold:say} more.",
+    "In August, silver had been up even more, {silver_aug:say}."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "beyond",
+   "title": "Travel and fuel, September, year on year",
+   "dec": 1,
+   "unit": "%",
+   "sign": true,
+   "sort": "desc",
+   "expect_top": "Domestic air fares",
+   "expect_bottom": "Electricity charges",
+   "rows": [
+    {
+     "label": "Domestic air fares",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "07.3.3.1.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 29.9,
+     "hi": true
+    },
+    {
+     "label": "Vehicle gas (CNG)",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "07.2.2.3.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 10.51
+    },
+    {
+     "label": "Diesel",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "07.2.2.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 8.41
+    },
+    {
+     "label": "Petrol",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "07.2.2.2.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 7.51
+    },
+    {
+     "label": "Cooking gas (LPG, piped)",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "04.5.2.2.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 5.29
+    },
+    {
+     "label": "Electricity charges",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "04.5.1.0.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": -1.04
+    }
+   ],
+   "caption": "Prices of items in the index, all India.",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "vo": [
+    "Domestic air fares rose {airfare:say}.",
+    "Diesel rose {diesel:say}, and petrol {petrol:say}.",
+    "Cooking gas, in cylinders and pipes, rose {lpg:say}.",
+    "Electricity charges fell {elec:say}."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "beyond",
+   "title": "Where jewellery sits in the basket",
+   "tiles": [
+    {
+     "var": "jewel",
+     "caption": "jewellery and watches together",
+     "hi": true
+    },
+    {
+     "var": "personal",
+     "caption": "its whole division, the fastest of the divisions"
+    },
+    {
+     "var": "personal_w",
+     "caption": "that division's share of the basket"
+    }
+   ],
+   "note": "Year on year, September 2026, provisional. The division: personal care, social protection and miscellaneous goods and services.",
+   "source": "MoSPI · CPI base 2024, class and division · Sep 2026 provisional · eSankhyiki portal and PIB release of 12 Oct 2026",
+   "vo": [
+    "Jewellery sits in the division of personal care, social protection and miscellaneous goods and services.",
+    "That division rose {personal:say}, the fastest of all, yet it is {personal_w:say} of the basket."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "split",
+   "sub": "Rural and urban inflation",
+   "vo": [
+    "Chapter six: villages and cities."
+   ]
+  },
+  {
+   "kind": "line",
+   "chapter": "split",
+   "title": "Inflation, rural and urban",
+   "series": [
+    {
+     "name": "Rural",
+     "data": {
+      "$": "m_rural"
+     },
+     "dec": 2,
+     "unit": "%",
+     "equals": 6.08
+    },
+    {
+     "name": "Urban",
+     "data": {
+      "$": "m_urban"
+     },
+     "dec": 2,
+     "unit": "%",
+     "equals": 4.88
+    },
+    {
+     "name": "All India",
+     "data": {
+      "$": "m_head"
+     },
+     "dec": 2,
+     "unit": "%",
+     "equals": 5.54
+    }
+   ],
+   "caption": "In January the two were almost level: {rural_jan} rural and {urban_jan} urban.",
+   "source": "MoSPI · all-India CPI, base 2024, rural, urban, combined · PIB releases · Sep 2026 provisional",
+   "vo": [
+    "In January, prices in villages and cities rose at almost the same pace.",
+    "By September, villages were ahead.",
+    "Rural inflation was {rural:say}. Urban, {urban:say}."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "split",
+   "title": "Food prices, villages and cities",
+   "a": {
+    "label": "Rural food, September",
+    "var": "food_rural"
+   },
+   "b": {
+    "label": "Urban food, September",
+    "var": "food_urban"
+   },
+   "caption": "Food and beverages are {fw_rural} of the rural basket and {fw_urban} of the urban one.",
+   "source": "MoSPI · Consumer Food Price Index and division weights, rural and urban · PIB · Sep 2026 provisional",
+   "vo": [
+    "Food rose {food_rural:say} in villages and {food_urban:say} in cities.",
+    "Food and drinks weigh more in village baskets: {fw_rural:say}, against {fw_urban:say} in cities.",
+    "MoSPI does not say whether the two are linked, and neither do we."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "state",
+   "sub": "Every state and union territory",
+   "vo": [
+    "Chapter seven: your state."
+   ]
+  },
+  {
+   "kind": "map",
+   "chapter": "state",
+   "data": {
+    "$": "s_head"
+   },
+   "dec": 2,
+   "unit": "%",
+   "title": "Inflation by state and territory, September",
+   "sub": "India {headline} · {n_above} of {n_states} above India · provisional",
+   "key": [
+    "lowest",
+    "highest"
+   ],
+   "note": "Biggest jump from August's first figures: Jharkhand, {jump_jh} points. Only Assam fell.",
+   "source": "MoSPI · CPI base 2024, combined, by state and territory · Sep 2026 provisional · PIB 12 Oct 2026, Annexure III",
+   "vo": [
+    "Here is every state and union territory.",
+    "Puducherry was highest, at {puducherry:say}.",
+    "Then Tamil Nadu, {tn:say}, and Odisha, {odisha:say}.",
+    "Mizoram was lowest, at {mizoram:say}.",
+    "Of the {n_states:say} states and territories, {n_above:say} were above the national figure.",
+    "Against August's first figures, the biggest jump was in Jharkhand, {jump_jh:say}."
+   ]
+  },
+  {
+   "kind": "map",
+   "chapter": "state",
+   "data": {
+    "$": "s_food"
+   },
+   "dec": 1,
+   "unit": "%",
+   "title": "Food inflation by state and territory, September",
+   "sub": "India {food} · provisional",
+   "key": [
+    "lowest",
+    "highest"
+   ],
+   "note": "Consumer Food Price Index by state, from MoSPI's eSankhyiki portal.",
+   "source": "MoSPI · eSankhyiki portal, Consumer Food Price Index base 2024, by state · Sep 2026 provisional · read 14 Oct 2026",
+   "vo": [
+    "Now food prices alone.",
+    "Puducherry led again, at {pud_food:say}.",
+    "Tamil Nadu was next, at {tn_food:say}, then Andhra Pradesh, at {ap_food:say}."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "rbi",
+   "sub": "The rate decision of 7 October",
+   "vo": [
+    "Chapter eight: what the RBI did."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "rbi",
+   "title": "The RBI's repo rate",
+   "a": {
+    "label": "Before 7 October",
+    "var": "repo_before",
+    "sub": "Kept at the August meeting"
+   },
+   "b": {
+    "label": "From 7 October",
+    "var": "repo_after",
+    "sub": "A unanimous vote"
+   },
+   "caption": "Up a quarter point ({bps:n} basis points), five days before September's prices were published.",
+   "source": "RBI · Monetary Policy Committee: resolution of 7 Oct 2026 and minutes of the August meeting · rbi.org.in",
+   "vo": [
+    "The repo rate is the rate at which the RBI lends money to banks for short periods.",
+    "On the seventh of October, the RBI raised it by a quarter point, to {repo_after:say}.",
+    "Its committee voted for the rise unanimously.",
+    "That was five days before September's price figures came out."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "rbi",
+   "title": "The RBI's own projections, made on 7 October",
+   "tiles": [
+    {
+     "var": "proj_fy",
+     "caption": "consumer price inflation projected for the year to March 2027",
+     "hi": true
+    },
+    {
+     "var": "proj_q3",
+     "caption": "October to December 2026"
+    },
+    {
+     "var": "proj_q4",
+     "caption": "January to March 2027"
+    }
+   ],
+   "note": "Minutes of the meeting: 21 October. The next meeting ends 4 December.",
+   "source": "RBI · Resolution of the Monetary Policy Committee, 5 to 7 Oct 2026, paragraphs 9, 17 and 18 · rbi.org.in",
+   "vo": [
+    "The RBI projects inflation of {proj_fy:say} for the year ending March twenty twenty-seven,",
+    "and {proj_q3:say} for October to December. These are the RBI's projections, not ours."
+   ]
+  },
+  {
+   "kind": "end",
+   "chapter": "close",
+   "min": 12,
    "q": "Which price hit your home *hardest*?",
    "next": "October's index, due 12 November.",
    "source": "Data Kadai · analysed and animated by Data Kadai, with an AI narrator",
-   "vo": ["Which price hit your home hardest?", "Next month's number comes out in November.", "Every figure here comes from official tables."]}
+   "vo": [
+    "October's figures are due on the twelfth of November.",
+    "Every number here is from, or worked out from, official tables: MoSPI, the RBI and the Consumer Affairs ministry.",
+    "Which price hit your home hardest: onion, sugar, silver or something else? Tell us in the comments."
+   ]
+  }
  ],
  "tests": [
-  {"says": "inflation rises every month, January to September", "rising": {"$": "m_head"}},
-  {"says": "September is the highest of the nine months", "value": {"diff": [{"val": "headline"}, {"agg": "max", "of": {"$": "m_head_to_aug"}}]}, "min": 0.01},
-  {"says": "food inflation is above the headline", "value": {"diff": [{"val": "food"}, {"val": "headline"}]}, "min": 0.01},
-  {"says": "headline in the monthly table is the all-India row of the state table", "value": {"diff": [{"val": "headline"}, {"data": {"$": "s_head"}, "state": "India"}]}, "min": -0.005, "max": 0.005},
-  {"says": "food in the monthly table is the all-India row of the food state table", "value": {"diff": [{"val": "food"}, {"data": {"$": "s_food"}, "state": "India"}]}, "min": -0.005, "max": 0.005},
-  {"says": "Puducherry rounds to 7", "value": {"val": "puducherry"}, "round": 7},
-  {"says": "the five highest states", "top": ["Puducherry", "Tamil Nadu", "Odisha", "Madhya Pradesh", "Telangana"], "of": {"$": "s_head"}},
-  {"says": "the three lowest states", "bottom": ["Mizoram", "Nagaland", "Delhi"], "of": {"$": "s_head"}},
-  {"says": "the biggest jump from August is Jharkhand", "top": ["Jharkhand"], "of": {"$": "s_jump"}},
-  {"says": "only one state fell from August", "value": {"count_below": {"$": "s_jump"}, "than": 0}, "equals": 1},
-  {"says": "the three highest food inflations", "top": ["Puducherry", "Tamil Nadu", "Andhra Pradesh"], "of": {"$": "s_food"}},
-  {"says": "the onion index more than doubled from June to September", "value": {"ratio": [{"val": "onion_sep"}, {"val": "onion_jun"}]}, "min": 2.0, "max": 2.2},
-  {"says": "villages pulled ahead of cities", "value": {"diff": [{"val": "rural"}, {"val": "urban"}]}, "min": 1.0},
-  {"says": "villages and cities were level in January", "value": {"diff": [{"val": "rural_jan"}, {"val": "urban_jan"}]}, "min": -0.05, "max": 0.05},
-  {"says": "food is a bigger share of the rural basket", "value": {"diff": [{"val": "fw_rural"}, {"val": "fw_urban"}]}, "min": 5},
-  {"says": "food and beverages are the heaviest division", "value": {"diff": [{"val": "fw_new"}, {"data": {"breakdown": ["@break", "divisions", "04", "weight combined 2024"]}}]}, "min": 10},
-  {"says": "MoSPI's caution on state item indices is in the saved table", "text": ["@states", "notes", 1], "contains": "state-level item indices may rest on thin samples of price quotations"},
-  {"says": "October's index is due on 12 November", "text": ["@break", "facts", "response"], "contains": "12th November"}
+  {
+   "says": "inflation rises every month, January to September",
+   "rising": {
+    "$": "m_head"
+   }
+  },
+  {
+   "says": "September is the highest of the nine months",
+   "value": {
+    "diff": [
+     {
+      "val": "headline"
+     },
+     {
+      "agg": "max",
+      "of": {
+       "$": "m_head_to_aug"
+      }
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "food inflation is above the headline",
+   "value": {
+    "diff": [
+     {
+      "val": "food"
+     },
+     {
+      "val": "headline"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "headline in the monthly table is the all-India row of the state table",
+   "value": {
+    "diff": [
+     {
+      "val": "headline"
+     },
+     {
+      "data": {
+       "$": "s_head"
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "food in the release is the all-India row of the food state table",
+   "value": {
+    "diff": [
+     {
+      "val": "food"
+     },
+     {
+      "data": {
+       "$": "s_food"
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "the portal's food figure matches the release",
+   "value": {
+    "diff": [
+     {
+      "val": "food"
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1",
+        "Sep 2026"
+       ]
+      }
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "the portal's onion figure matches the release",
+   "value": {
+    "diff": [
+     {
+      "val": "onion"
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "01.1.7.4.1.01",
+        "Sep 2026"
+       ]
+      }
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "the portal's silver figure matches the release",
+   "value": {
+    "diff": [
+     {
+      "val": "silver"
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@break",
+        "items",
+        "Silver Jewellery",
+        "Sep 2026"
+       ]
+      }
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "the index's September level is the portal's",
+   "value": {
+    "diff": [
+     {
+      "val": "idx_sep"
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@items",
+        "items",
+        "00",
+        "index Sep 2026"
+       ]
+      }
+     }
+    ]
+   },
+   "min": -0.005,
+   "max": 0.005
+  },
+  {
+   "says": "the five highest states",
+   "top": [
+    "Puducherry",
+    "Tamil Nadu",
+    "Odisha",
+    "Madhya Pradesh",
+    "Telangana"
+   ],
+   "of": {
+    "$": "s_head"
+   }
+  },
+  {
+   "says": "the three lowest states",
+   "bottom": [
+    "Mizoram",
+    "Nagaland",
+    "Delhi"
+   ],
+   "of": {
+    "$": "s_head"
+   }
+  },
+  {
+   "says": "the three highest food inflations",
+   "top": [
+    "Puducherry",
+    "Tamil Nadu",
+    "Andhra Pradesh"
+   ],
+   "of": {
+    "$": "s_food"
+   }
+  },
+  {
+   "says": "onion was cheaper than a year before in January",
+   "value": {
+    "val": "onion_jan_m"
+   },
+   "max": -0.01
+  },
+  {
+   "says": "onion climbed in July and August",
+   "rising": {
+    "months": [
+     "@monthly",
+     "Onion inflation",
+     [
+      "Jun-26",
+      "Sep-26"
+     ]
+    ]
+   }
+  },
+  {
+   "says": "silver jewellery's rise was larger in August",
+   "value": {
+    "diff": [
+     {
+      "val": "silver_aug"
+     },
+     {
+      "val": "silver"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "villages pulled ahead of cities",
+   "value": {
+    "diff": [
+     {
+      "val": "rural"
+     },
+     {
+      "val": "urban"
+     }
+    ]
+   },
+   "min": 1.0
+  },
+  {
+   "says": "villages and cities were level in January",
+   "value": {
+    "diff": [
+     {
+      "val": "rural_jan"
+     },
+     {
+      "val": "urban_jan"
+     }
+    ]
+   },
+   "min": -0.05,
+   "max": 0.05
+  },
+  {
+   "says": "food rose faster in villages",
+   "value": {
+    "diff": [
+     {
+      "val": "food_rural"
+     },
+     {
+      "val": "food_urban"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "food is a bigger share of the rural basket",
+   "value": {
+    "diff": [
+     {
+      "val": "fw_rural"
+     },
+     {
+      "val": "fw_urban"
+     }
+    ]
+   },
+   "min": 5
+  },
+  {
+   "says": "food and beverages are the heaviest division",
+   "value": {
+    "diff": [
+     {
+      "val": "fw_new"
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@break",
+        "divisions",
+        "04",
+        "weight combined 2024"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 10
+  },
+  {
+   "says": "the RBI's decision sentence",
+   "text": [
+    "@rbi",
+    "text",
+    "decision"
+   ],
+   "contains": "voted unanimously to increase the policy repo rate"
+  },
+  {
+   "says": "the RBI's projection sentence",
+   "text": [
+    "@rbi",
+    "text",
+    "projection"
+   ],
+   "contains": "CPI inflation is projected to be 5.2 per cent for 2026-27 with Q2 at 4.9 per cent; Q3 at 6.0 per cent; and Q4 at 5.7 per cent"
+  },
+  {
+   "says": "the minutes are due on 21 October",
+   "text": [
+    "@rbi",
+    "text",
+    "minutes"
+   ],
+   "contains": "published on October 21, 2026"
+  },
+  {
+   "says": "the next meeting ends on 4 December",
+   "text": [
+    "@rbi",
+    "text",
+    "next"
+   ],
+   "contains": "December 2 to 4, 2026"
+  },
+  {
+   "says": "Consumer Affairs on the buffer release",
+   "text": [
+    "@ca",
+    "text",
+    "release"
+   ],
+   "contains": "commenced calibrated and targeted release of onions from the buffer stock"
+  },
+  {
+   "says": "Consumer Affairs: prices usually rise in the festive season",
+   "text": [
+    "@ca",
+    "text",
+    "festive"
+   ],
+   "contains": "onion prices typically witness a seasonal uptick"
+  },
+  {
+   "says": "October's index is due on 12 November",
+   "text": [
+    "@break",
+    "facts",
+    "response"
+   ],
+   "contains": "12th November"
+  },
+  {
+   "says": "the new series' index starts in January 2025",
+   "text": [
+    "@monthly",
+    "notes",
+    0
+   ],
+   "contains": "the series starts with January 2025 as its first year"
+  },
+  {
+   "says": "its yearly rates start in January 2026",
+   "text": [
+    "@monthly",
+    "notes",
+    0
+   ],
+   "contains": "Year-on-year rates exist from January 2026 only"
+  },
+  {
+   "says": "onion cost more than double a year before",
+   "value": {
+    "val": "onion"
+   },
+   "min": 100
+  },
+  {
+   "says": "onion's index more than doubled in a year",
+   "value": {
+    "ratio": [
+     {
+      "val": "onion_sep"
+     },
+     {
+      "val": "onion_sep25"
+     }
+    ]
+   },
+   "min": 2.0
+  },
+  {
+   "says": "the rise since 2024 is larger than one year's inflation",
+   "value": {
+    "diff": [
+     {
+      "val": "idx_up"
+     },
+     {
+      "val": "headline"
+     }
+    ]
+   },
+   "min": 1
+  },
+  {
+   "says": "food without drinks rose faster than drinks",
+   "value": {
+    "diff": [
+     {
+      "val": "food"
+     },
+     {
+      "val": "bev"
+     }
+    ]
+   },
+   "min": 5
+  },
+  {
+   "says": "the August rate was 5.25 per cent (minutes of the August meeting)",
+   "text": [
+    "@rbi",
+    "text",
+    "aug"
+   ],
+   "contains": "keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent"
+  },
+  {
+   "says": "a quarter point: the new rate less the August rate",
+   "value": {
+    "diff": [
+     {
+      "val": "repo_after"
+     },
+     {
+      "val": "repo_before"
+     }
+    ]
+   },
+   "equals": 0.25
+  },
+  {
+   "says": "the RBI decision (7 Oct) came five days before the CPI release (12 Oct)",
+   "value": {
+    "diff": [
+     12,
+     7
+    ]
+   },
+   "equals": 5
+  },
+  {
+   "says": "MoSPI says prices are collected by personal visits on a weekly roster",
+   "text": [
+    "@break",
+    "facts",
+    "response"
+   ],
+   "contains": "through personal visits by field staff of Field Operations Division of NSO, MoSPI on a weekly roster"
+  },
+  {
+   "says": "MoSPI's caution on state item indices",
+   "text": [
+    "@break",
+    "facts",
+    "response"
+   ],
+   "contains": "may have been compiled using thin samples of price quotations"
+  },
+  {
+   "says": "the ministry announced retail sale at 35 rupees a kilo",
+   "text": [
+    "@ca",
+    "text",
+    "retail"
+   ],
+   "contains": "Retail sale of onions at ₹35 per kg is to be launched through mobile vans and retail outlets"
+  },
+  {
+   "says": "the ministry called onion availability comfortable",
+   "text": [
+    "@ca",
+    "text",
+    "production"
+   ],
+   "contains": "Onion availability is comfortable"
+  },
+  {
+   "says": "the crop estimate is within one per cent of the year before",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@ca",
+        "facts",
+        "production",
+        "2025-26"
+       ]
+      }
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@ca",
+        "facts",
+        "production",
+        "previous year"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.99,
+   "max": 1.01
+  },
+  {
+   "says": "the RBI says the August-September onion rise is sharper than the usual seasonal pick-up",
+   "text": [
+    "@rbi",
+    "text",
+    "onion"
+   ],
+   "contains": "sharper than the usual seasonal pick-up"
+  },
+  {
+   "says": "the 2012 weights are given in the 2024 structure",
+   "text": [
+    "@break",
+    "notes",
+    0
+   ],
+   "contains": "Division-wise weights as per new (2024) structure"
+  },
+  {
+   "says": "September is provisional and revised with October's release",
+   "text": [
+    "@states",
+    "notes",
+    2
+   ],
+   "contains": "September is provisional and is revised with October's release on 12 Nov 2026"
+  },
+  {
+   "says": "the division of personal care is the fastest of the divisions shown (scene expect_top guards the rest)",
+   "value": {
+    "diff": [
+     {
+      "val": "personal"
+     },
+     {
+      "val": "rest"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "against August's first published figures, the biggest jump is Jharkhand",
+   "top": [
+    "Jharkhand"
+   ],
+   "of": {
+    "$": "s_jump"
+   }
+  },
+  {
+   "says": "against August's first published figures, only one state fell",
+   "value": {
+    "count_below": {
+     "$": "s_jump"
+    },
+    "than": 0
+   },
+   "equals": 1
+  },
+  {
+   "says": "against August's first published figures, the state that fell is Assam",
+   "bottom": [
+    "Assam"
+   ],
+   "of": {
+    "$": "s_jump"
+   }
+  }
  ],
+ "thumb": {
+  "lines": [
+   "Onion",
+   "*{onion_s}*"
+  ],
+  "sub": "All prices up {headline} · September 2026"
+ },
  "sources": [
-  {"table": "@states", "text": "State table: PIB release, 12 Oct 2026; food and onion: MoSPI eSankhyiki portal"},
-  {"table": "@monthly", "text": "Monthly series: PIB releases and the eSankhyiki portal"},
-  {"table": "@break", "text": "Divisions, items, weights: PIB releases of 12 Oct 2026 and 12 Feb 2026"}
+  {
+   "table": "@states",
+   "text": "MoSPI: CPI release for September, PIB, 12 Oct 2026; food and onion by state from the eSankhyiki portal"
+  },
+  {
+   "table": "@items",
+   "text": "MoSPI eSankhyiki portal: every all-India item, read 15 Oct 2026"
+  },
+  {
+   "table": "@break",
+   "text": "Weights: MoSPI's first release of the new series, 12 Feb 2026"
+  },
+  {
+   "table": "@rbi",
+   "text": "RBI: Monetary Policy Committee resolution and Governor's statement, 7 Oct 2026; August minutes"
+  },
+  {
+   "table": "@ca",
+   "text": "Consumer Affairs: onion buffer release, PIB, 26 Aug 2026"
+  }
  ]
 }

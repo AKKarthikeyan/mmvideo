@@ -16,11 +16,13 @@ THE CONFIG
   specs    {"name": spec}: a data spec written once, used as {"$": "name"} anywhere
   vals     every figure the screen or the narrator says: {"name": {"v": <value spec>, "dec": 2, "unit": "%", "equals": 5.54}}.
            Text uses {name} (as shown, with its unit), {name:n} (number only); a voice line says the number in words. "sign": show +/-,
-           "abs": drop the minus (the text says "fell"), "plain": no thousands comma (a year). A val with no test fails the build.
+           "abs": drop the minus (the text says "fell"), "plain": no thousands comma (a year), "prefix": "₹" before the number (said "rupees").
+           A val with no test fails the build.
   chapters [{"id", "title", "label"?}]   the chapter of the first scene is the YouTube chapter; label "" hides the name on screen
   scenes   [{"kind", "chapter": id, "vo": [lines], "source"?, "min"? (seconds), "hold"? (seconds when there is no voice), ...}]
   tests    claims the script makes, run before anything else is written (see run_tests)
   sources  the end card's list: [{"table": "@states", "text": "..."}]
+  thumb    {"lines": [1-3 lines of at most 14 characters], "sub"?}: the thumbnail's words (src/datayt/LongPosts.tsx draws it)
 
 VALUE SPECS (a number from the data; every reader below sits on top of build_beats.series)
   {"data": {"tbl": [path, column]}, "state": "Puducherry"}              a state table in the Handbook's shape ("state": "India" for the national row)
@@ -36,7 +38,7 @@ SCENE KINDS and their keys (text may use *accent*, {name}; every text is checked
   card     sub?                       chapter number and title come from the chapter list
   line     title?, series [{"name", "data": {"months": ...}, "dec", "unit", "equals": last point}] (1-3), marks [{"at": month, "var": name, "series"?}],
            caption?, ymin?
-  bars     title?, rows [{"label", "v": spec, "equals", "w": spec?, "w_equals"?, "hi"?}] (3-12), dec, unit, wdec, sign, sort ("desc"|"asc"), expect_top?,
+  bars     title?, rows [{"label", "v": spec, "equals", "w": spec?, "w_equals"?, "hi"?}] (3-12), dec, unit, wdec, sign, sort ("desc"|"asc"), expect_top?, expect_bottom?,
            weight_head? (names the column when rows carry a weight: the bar is thicker for a larger weight), caption?
   map      data: <state series spec>, title, sub?, dec, unit, top (5), bottom (3), key ["lowest", "highest"], note?, ring_top (true)
   quote    text, by, date, verify [path, section, key]: the text must be a sentence of that saved source, word for word
@@ -45,6 +47,7 @@ SCENE KINDS and their keys (text may use *accent*, {name}; every text is checked
   end      q, next, sources are the config's list
 """
 import copy, glob, json, math, os, re, sys
+from decimal import Decimal, ROUND_HALF_UP
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_beats as B      # the Shorts builder: its data reader (series, value), the state names, the narrator estimate, the banned words
 from build_india_shorts import PALETTES
@@ -92,7 +95,7 @@ def breakdown(spec):
     path, section, key, field = spec["breakdown"]
     t = table(path)
     assert section in ("divisions", "groups", "items", "facts") and section in t, f"{path}: no section '{section}'"
-    if section in ("divisions", "groups") and key.split(".")[0] == "02":
+    if (section in ("divisions", "groups") or (section == "items" and re.match(r"\d\d(\.|$)", key))) and key.split(".")[0] == "02":
         raise SystemExit(f"{path}: division 02 (paan, tobacco and intoxicants) is never shown")
     assert key in t[section], f"{path}: no {section} row '{key}' (has {', '.join(t[section])})"
     row = t[section][key]
@@ -182,34 +185,45 @@ def run_tests(cfg, X):
 
 
 # ---------------------------------------------------------------- numbers as the screen shows them and as the narrator says them
+def rhu(v, dec):
+    """v to dec places, halves away from zero, read from the figure as printed (8.25 -> 8.3, 8.35 -> 8.4), as readers and the Shorts round.
+    Python's round() and format() round an exact half to even (8.25 -> 8.2)."""
+    return float(Decimal(repr(v)).quantize(Decimal(1).scaleb(-dec), rounding=ROUND_HALF_UP))
+
+
 def fnum(v, dec, sign=False, group=True):
-    r = round(v, dec); s = f"{abs(v):,.{dec}f}" if group else f"{abs(v):.{dec}f}"
+    r = rhu(v, dec); s = f"{abs(r):,.{dec}f}" if group else f"{abs(r):.{dec}f}"
     return ("−" if r < 0 else "+" if sign and r > 0 else "") + s
 
 
 def words(n):
     if n < 20: return ONES[n]
     if n < 100: return TENS[n // 10] + ("-" + ONES[n % 10] if n % 10 else "")
-    if n < 1000: return ONES[n // 100] + " hundred" + (" " + words(n % 100) if n % 100 else "")
-    return words(n // 1000) + " thousand" + (" " + words(n % 1000) if n % 1000 else "")
+    if n < 1000: return ONES[n // 100] + " hundred" + (" and " + words(n % 100) if n % 100 else "")      # Indian and British English: "one hundred and eight"
+    return words(n // 1000) + " thousand" + ((" and " if n % 1000 < 100 else " ") + words(n % 1000) if n % 1000 else "")
 
 
 def say_num(v, dec):
-    s = f"{abs(round(v, dec)):.{dec}f}"; ip, _, fp = s.partition(".")
-    return ("minus " if round(v, dec) < 0 else "") + words(int(ip)) + (" point " + " ".join(ONES[int(c)] for c in fp) if fp else "")
+    """The figure as the screen rounds it, in words; trailing zeros are not spoken (5.50 is "five point five", 6.0 is "six")."""
+    r = rhu(v, dec); s = f"{abs(r):.{dec}f}"; ip, _, fp = s.partition("."); fp = fp.rstrip("0")
+    return ("minus " if r < 0 else "") + words(int(ip)) + (" point " + " ".join(ONES[int(c)] for c in fp) if fp else "")
+
+
+assert fnum(8.25, 1) == "8.3" and fnum(8.35, 1) == "8.4" and fnum(-11.5, 1) == "−11.5" and say_num(5.50, 2) == "five point five", "rounding: halves go up"
 
 
 class Val:
     def __init__(self, name, v, d):
         self.name, self.v, self.d = name, v, d
-        self.dec, self.unit = d.get("dec", 2), d.get("unit", "%")
-        self.say_unit = d.get("say_unit", UNIT_WORDS.get(self.unit, self.unit))
+        self.dec, self.unit, self.prefix = d.get("dec", 2), d.get("unit", "%"), d.get("prefix", "")      # prefix: "₹" goes before the number
+        self.say_unit = d.get("say_unit", " rupees" if self.prefix == "₹" else UNIT_WORDS.get(self.unit, self.unit))
 
     def num(self):
         return fnum(abs(self.v) if self.d.get("abs") else self.v, self.dec, self.d.get("sign", False) and not self.d.get("abs"), not self.d.get("plain"))
 
     def text(self):
-        return self.num() + self.unit
+        n = self.num(); sgn = n[0] if n[:1] in "+−" else ""
+        return sgn + self.prefix + n[len(sgn):] + self.unit
 
     def say(self):
         return say_num(abs(self.v) if self.d.get("abs") else self.v, self.dec) + self.say_unit
@@ -338,6 +352,9 @@ def r_bars(sc, X, i):
     if sc.get("expect_top"):
         top = max(rows, key=lambda r: r["v"])["label"]
         assert top == sc["expect_top"], f"scene {i}: the largest bar is '{top}', not '{sc['expect_top']}'"
+    if sc.get("expect_bottom"):      # the voice says which row is lowest: every row of the set must be on the chart
+        low = min(rows, key=lambda r: r["v"])["label"]
+        assert low == sc["expect_bottom"], f"scene {i}: the smallest bar is '{low}', not '{sc['expect_bottom']}'"
     out = {"rows": rows}
     if any(weighted):
         out["weightHead"] = X.t(sc.get("weight_head", "Share of basket"), "bars.head", f"scene {i} weight head")
@@ -494,11 +511,17 @@ def build(path):
     if len(chapters) < 3: warns.append("YouTube needs at least three chapters")
     with open(f"{d}/chapters.txt", "w") as f:
         f.write("\n".join(f"{stamp(c['t0'])} {c['title']}" for c in chapters) + "\n")
+    thumb = None
+    if cfg.get("thumb"):      # the thumbnail's own words: two or three short lines and a sub line, figures from vals like any screen text
+        th = cfg["thumb"]; assert 1 <= len(th["lines"]) <= 3, "thumb: one to three lines"
+        thumb = {"lines": [X.t(l, None, "thumb line") for l in th["lines"]], "sub": X.t(th["sub"], None, "thumb sub") if th.get("sub") else ""}
+        assert all(len(plain(l)) <= 14 for l in thumb["lines"]), f"thumb: a line over 14 characters is too small to read: {thumb['lines']}"
     music_file = music(f"{d}/music.wav", total, scenes)
     out = {"id": sid, "title": cfg["title"], "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "accent": pal["accent"], "accent2": pal["accent2"],
            "bands": pal["bands"], "fps": FPS, "total": total, "chapters": chapters, "scenes": scenes, "vo": [] if CHECK else vo, "music": music_file, "voiced": not CHECK,
            "voiceEngine": "none" if CHECK else V.ENGINE, "checked": X.checked,
            "figures": {n: {"value": round(v.v, 6), "shows": v.text()} for n, v in X.vals.items()}}
+    if thumb: out["thumb"] = thumb
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     print(f"{sid}: {len(scenes)} scenes · {len(chapters)} chapters · {stamp(total)} ({total:.1f} s) · {X.n_tests} tests passed · "
           + ("line lengths estimated, no audio, no music" if CHECK else f"voice {V.ENGINE}"))

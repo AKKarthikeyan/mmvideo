@@ -3,7 +3,7 @@
  "title": "What Moved India's Prices in September: Onion, Food and the New CPI",
  "chip": "CPI · SEP 2026",
  "sourceShort": "MoSPI · Consumer Price Index (base 2024) · September 2026, provisional",
- "source": "Ministry of Statistics and Programme Implementation (National Statistics Office): Consumer Price Index (base 2024=100), press release for September 2026, PIB PRID 2322244, 12 Oct 2026, Annexures I to IV; first release of the new series, PRID 2227012, 12 Feb 2026; food and onion by state and month from the MoSPI eSankhyiki portal, read 14 Oct 2026. September figures are provisional.",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office): Consumer Price Index (base 2024=100), press release for September 2026, PIB PRID 2322244, 12 Oct 2026, Annexures I to IV; first release of the new series, PRID 2227012, 12 Feb 2026; every all-India item, and food and onion by state, from MoSPI's eSankhyiki portal, read 14 and 15 Oct 2026. Reserve Bank of India: Resolution of the Monetary Policy Committee and Governor's Statement, 7 Oct 2026. Ministry of Consumer Affairs, Food and Public Distribution: onion buffer release, PIB PRID 2303587, 26 Aug 2026. September figures are provisional.",
  "accent": "#7A2340",
  "accent2": "#C9822F",
  "bands": [
@@ -14,7 +14,7 @@
   "#662125"
  ],
  "fps": 30,
- "total": 166.467,
+ "total": 448.267,
  "chapters": [
   {
    "i": 0,
@@ -22,71 +22,79 @@
    "title": "Cold open",
    "label": "",
    "t0": 0.0,
-   "t1": 10.0
+   "t1": 22.1
   },
   {
    "i": 1,
    "id": "head",
    "title": "The headline",
    "label": "01  The headline",
-   "t0": 10.0,
-   "t1": 26.167
+   "t0": 22.1,
+   "t1": 72.767
   },
   {
    "i": 2,
-   "id": "food",
-   "title": "Food and the basket",
-   "label": "02  Food and the basket",
-   "t0": 26.167,
-   "t1": 51.033
+   "id": "basket",
+   "title": "The new basket",
+   "label": "02  The new basket",
+   "t0": 72.767,
+   "t1": 110.3
   },
   {
    "i": 3,
-   "id": "onion",
-   "title": "The onion story",
-   "label": "03  The onion story",
-   "t0": 51.033,
-   "t1": 74.433
+   "id": "food",
+   "title": "Food leads",
+   "label": "03  Food leads",
+   "t0": 110.3,
+   "t1": 171.133
   },
   {
    "i": 4,
-   "id": "silver",
-   "title": "Silver and personal care",
-   "label": "04  Silver and personal care",
-   "t0": 74.433,
-   "t1": 89.0
+   "id": "onion",
+   "title": "The onion story",
+   "label": "04  The onion story",
+   "t0": 171.133,
+   "t1": 252.567
   },
   {
    "i": 5,
-   "id": "split",
-   "title": "Villages and cities",
-   "label": "05  Villages and cities",
-   "t0": 89.0,
-   "t1": 111.0
+   "id": "beyond",
+   "title": "Beyond food: jewellery, travel and fuel",
+   "label": "05  Beyond food: jewellery, travel and fuel",
+   "t0": 252.567,
+   "t1": 306.3
   },
   {
    "i": 6,
-   "id": "state",
-   "title": "Your state",
-   "label": "06  Your state",
-   "t0": 111.0,
-   "t1": 132.233
+   "id": "split",
+   "title": "Villages and cities",
+   "label": "06  Villages and cities",
+   "t0": 306.3,
+   "t1": 343.7
   },
   {
    "i": 7,
-   "id": "made",
-   "title": "How the number is made",
-   "label": "07  How the number is made",
-   "t0": 132.233,
-   "t1": 154.067
+   "id": "state",
+   "title": "Your state",
+   "label": "07  Your state",
+   "t0": 343.7,
+   "t1": 391.833
   },
   {
    "i": 8,
+   "id": "rbi",
+   "title": "What the RBI did",
+   "label": "08  What the RBI did",
+   "t0": 391.833,
+   "t1": 426.9
+  },
+  {
+   "i": 9,
    "id": "close",
    "title": "Close",
-   "label": "08  Close",
-   "t0": 154.067,
-   "t1": 166.467
+   "label": "09  Close",
+   "t0": 426.9,
+   "t1": 448.267
   }
  ],
  "scenes": [
@@ -95,9 +103,9 @@
    "kind": "cold",
    "ch": 0,
    "lines": [
-    "Onion is up *108%*",
+    "Onion: up *108%*",
     "in one year.",
-    "Inflation: *5.54%*"
+    "All prices: up *5.54%*"
    ],
    "lit": {
     "geo": "Puducherry",
@@ -106,22 +114,34 @@
    },
    "cues": [
     0.5,
-    4.3
+    5.946,
+    12.071,
+    17.125
    ],
    "vo": [
     {
-     "text": "Onion prices are up one hundred eight percent in one year.",
+     "text": "In September, onion cost one hundred and eight percent more than a year before: more than double.",
      "at": 0.5,
-     "sec": 3.5
+     "sec": 5.146
     },
     {
-     "text": "India's inflation is five point five four percent.",
-     "at": 4.3,
-     "sec": 2.78
+     "text": "Prices across India were up five point five four percent on a year earlier, the highest this year.",
+     "at": 5.946,
+     "sec": 5.825
+    },
+    {
+     "text": "Over the year, prices rose the most in one place: Puducherry.",
+     "at": 12.071,
+     "sec": 4.754
+    },
+    {
+     "text": "These are September's provisional figures, from the official tables.",
+     "at": 17.125,
+     "sec": 4.257
     }
    ],
    "t0": 0.0,
-   "t1": 10.0
+   "t1": 22.1
   },
   {
    "i": 1,
@@ -129,27 +149,77 @@
    "ch": 1,
    "n": "01",
    "title": "The headline",
-   "sub": "Year on year, all India",
+   "sub": "What inflation measures",
    "cues": [
     0.5
    ],
    "vo": [
     {
-     "text": "First, the headline.",
-     "at": 10.5,
-     "sec": 2.23
+     "text": "Chapter one: the headline.",
+     "at": 22.6,
+     "sec": 2.298
     }
    ],
-   "t0": 10.0,
-   "t1": 13.433
+   "t0": 22.1,
+   "t1": 25.6
   },
   {
    "i": 2,
+   "kind": "compare",
+   "ch": 1,
+   "source": "MoSPI · all-India CPI (combined), base 2024 · Sep 2026 provisional · PIB release of 12 Oct 2026, Annexure IV",
+   "title": "An imagined basket of what households buy",
+   "caption": "Up 9.49% since 2024. Inflation compares one year only: 5.54% in September.",
+   "a": {
+    "label": "At 2024 prices",
+    "text": "₹100",
+    "v": 100.0,
+    "sub": "The base year, when the index is set to 100"
+   },
+   "b": {
+    "label": "In September 2026",
+    "text": "₹109.49",
+    "v": 109.49,
+    "sub": "The same basket at September's prices, provisional"
+   },
+   "cues": [
+    0.5,
+    6.546,
+    12.096,
+    20.049
+   ],
+   "vo": [
+    {
+     "text": "Every month, MoSPI, the statistics ministry, publishes the Consumer Price Index.",
+     "at": 26.1,
+     "sec": 5.746
+    },
+    {
+     "text": "Imagine a basket that cost one hundred rupees at twenty twenty-four prices.",
+     "at": 32.146,
+     "sec": 5.25
+    },
+    {
+     "text": "In September, that basket would cost one hundred and nine point four nine rupees. That number is the index.",
+     "at": 37.696,
+     "sec": 7.653
+    },
+    {
+     "text": "Inflation looks at one year only: this September against last September.",
+     "at": 45.649,
+     "sec": 4.336
+    }
+   ],
+   "t0": 25.6,
+   "t1": 50.7
+  },
+  {
+   "i": 3,
    "kind": "line",
    "ch": 1,
-   "source": "MoSPI · all-India CPI, base 2024 · PIB releases and eSankhyiki portal · September provisional",
+   "source": "MoSPI · all-India CPI, base 2024 · PIB releases and eSankhyiki portal · Sep 2026 provisional",
    "title": "Inflation, year on year, all India",
-   "caption": "2.74% in January, then up every month. August: 4.83%.",
+   "caption": "2.74% in January, then up every month. August: 4.83%. September is provisional.",
    "series": [
     {
      "name": "Inflation",
@@ -195,62 +265,191 @@
      ]
     }
    ],
-   "marks": [],
+   "marks": [
+    {
+     "m": "Jan-26",
+     "s": 0,
+     "text": "2.74%"
+    }
+   ],
    "cues": [
     0.5,
-    4.06,
-    6.18
+    7.565,
+    10.503,
+    16.811
    ],
    "vo": [
     {
-     "text": "Inflation began the year at two point seven four percent.",
-     "at": 13.933,
-     "sec": 3.26
+     "text": "In January, inflation was two point seven four percent, and it went up every month after that.",
+     "at": 51.2,
+     "sec": 6.765
     },
     {
-     "text": "It rose every month.",
-     "at": 17.493,
-     "sec": 1.82
+     "text": "August came in at four point eight three percent.",
+     "at": 58.265,
+     "sec": 2.638
     },
     {
-     "text": "In September it reached five point five four percent, up from four point eight three percent in August.",
-     "at": 19.613,
-     "sec": 5.83
+     "text": "September: five point five four percent. That figure is provisional, and can be revised next month.",
+     "at": 61.203,
+     "sec": 6.008
+    },
+    {
+     "text": "Yearly rates in the new series start in January, so there are only nine so far.",
+     "at": 67.511,
+     "sec": 4.545
     }
    ],
-   "t0": 13.433,
-   "t1": 26.167
+   "t0": 50.7,
+   "t1": 72.767
   },
   {
-   "i": 3,
+   "i": 4,
    "kind": "card",
    "ch": 2,
    "n": "02",
-   "title": "Food and the basket",
-   "sub": "Weights and rates by division",
+   "title": "The new basket",
+   "sub": "Items, markets and weights",
    "cues": [
     0.5
    ],
    "vo": [
     {
-     "text": "Next, food and the basket.",
-     "at": 26.667,
-     "sec": 2.71
+     "text": "Chapter two: the new basket.",
+     "at": 73.267,
+     "sec": 2.899
     }
    ],
-   "t0": 26.167,
-   "t1": 30.1
+   "t0": 72.767,
+   "t1": 76.867
   },
   {
-   "i": 4,
-   "kind": "bars",
+   "i": 5,
+   "kind": "tiles",
    "ch": 2,
-   "source": "MoSPI · CPI base 2024, divisions · PIB release of 12 Oct 2026; weights: first release of the new series",
+   "source": "MoSPI · CPI base 2024: items, markets and base · PIB releases of 12 Oct 2026 and 12 Feb 2026",
+   "title": "Behind the number",
+   "tiles": [
+    {
+     "big": "358",
+     "caption": "items priced in the basket",
+     "hi": true
+    },
+    {
+     "big": "1,465",
+     "caption": "villages where prices are collected",
+     "hi": false
+    },
+    {
+     "big": "1,407",
+     "caption": "urban markets, online included",
+     "hi": false
+    },
+    {
+     "big": "2024",
+     "caption": "base year of the index",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    6.546,
+    14.499
+   ],
+   "vo": [
+    {
+     "text": "The new index prices three hundred and fifty-eight items, up from two hundred and ninety-nine in the old one.",
+     "at": 77.367,
+     "sec": 5.746
+    },
+    {
+     "text": "Its prices come from one thousand four hundred and sixty-five villages and one thousand four hundred and seven urban markets,",
+     "at": 83.413,
+     "sec": 7.653
+    },
+    {
+     "text": "visited in person by field staff, on a weekly roster.",
+     "at": 91.366,
+     "sec": 3.97
+    }
+   ],
+   "t0": 76.867,
+   "t1": 96.067
+  },
+  {
+   "i": 6,
+   "kind": "compare",
+   "ch": 2,
+   "source": "MoSPI · first release of CPI base 2024, 12 Feb 2026: division-wise weights as per the new (2024) structure",
+   "title": "Food and beverages: share of the basket",
+   "caption": "MoSPI regrouped the 2012 weights into the 2024 divisions so the two can be compared.",
+   "a": {
+    "label": "Old weights, regrouped",
+    "text": "42.6%",
+    "v": 42.617,
+    "sub": "Base 2012, counted in the new divisions"
+   },
+   "b": {
+    "label": "New weights, base 2024",
+    "text": "36.8%",
+    "v": 36.753,
+    "sub": "From the household spending survey"
+   },
+   "cues": [
+    0.5,
+    3.725,
+    9.693
+   ],
+   "vo": [
+    {
+     "text": "The weights follow a national survey of household spending.",
+     "at": 96.567,
+     "sec": 2.925
+    },
+    {
+     "text": "Counting the old basket in the new divisions, food and beverages were forty-two point six percent.",
+     "at": 99.792,
+     "sec": 5.668
+    },
+    {
+     "text": "In the new basket, they are thirty-six point eight percent.",
+     "at": 105.76,
+     "sec": 3.84
+    }
+   ],
+   "t0": 96.067,
+   "t1": 110.3
+  },
+  {
+   "i": 7,
+   "kind": "card",
+   "ch": 3,
+   "n": "03",
+   "title": "Food leads",
+   "sub": "The heaviest part of the basket",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Chapter three: food.",
+     "at": 110.8,
+     "sec": 2.011
+    }
+   ],
+   "t0": 110.3,
+   "t1": 113.533
+  },
+  {
+   "i": 8,
+   "kind": "bars",
+   "ch": 3,
+   "source": "MoSPI · CPI base 2024, divisions · Sep 2026 provisional · PIB 12 Oct 2026; weights: PIB 12 Feb 2026",
    "title": "Inflation by division, September",
    "caption": "A thicker bar is a bigger share of the household basket. Food and beverages are 36.8% of it.",
    "rows": [
     {
-     "label": "Personal care and other goods",
+     "label": "Personal care and miscellaneous",
      "v": 13.75,
      "text": "13.75%",
      "hi": false,
@@ -341,35 +540,30 @@
    "weightHead": "Share of basket",
    "cues": [
     0.5,
-    3.34,
-    8.03
+    5.345
    ],
    "vo": [
     {
-     "text": "Here is each division of the basket.",
-     "at": 30.6,
-     "sec": 2.54
+     "text": "Here are the main divisions of the basket. A thicker bar means a bigger weight.",
+     "at": 114.033,
+     "sec": 4.545
     },
     {
-     "text": "Food and beverages carry the biggest weight, thirty-six point eight percent.",
-     "at": 33.44,
-     "sec": 4.39
-    },
-    {
-     "text": "Personal care and other goods rose fastest, thirteen point seven five percent.",
-     "at": 38.13,
-     "sec": 4.39
+     "text": "Food and beverages are the heaviest, thirty-six point eight percent, and rose seven point three six percent, drinks included.",
+     "at": 118.878,
+     "sec": 7.444
     }
    ],
-   "t0": 30.1,
-   "t1": 43.233
+   "t0": 113.533,
+   "t1": 127.033
   },
   {
-   "i": 5,
+   "i": 9,
    "kind": "compare",
-   "ch": 2,
-   "source": "MoSPI · Consumer Food Price Index, all India · PIB release of 12 Oct 2026",
-   "title": "Food prices, year on year",
+   "ch": 3,
+   "source": "MoSPI · Consumer Food Price Index, all India · Sep 2026 provisional · PIB release of 12 Oct 2026",
+   "title": "Food prices, year on year, all India",
+   "caption": "Food alone, without drinks. Drinks rose 0.25% in September.",
    "a": {
     "label": "Food, August",
     "text": "5.97%",
@@ -384,28 +578,186 @@
    },
    "cues": [
     0.5,
-    4.06
+    5.554
    ],
    "vo": [
     {
-     "text": "Food inflation was five point nine seven percent in August.",
-     "at": 43.733,
-     "sec": 3.26
+     "text": "Food alone, without drinks, rose five point nine seven percent in August.",
+     "at": 127.533,
+     "sec": 4.754
     },
     {
-     "text": "In September it was seven point seven four percent.",
-     "at": 47.293,
-     "sec": 3.02
+     "text": "In September it rose seven point seven four percent, faster than prices overall.",
+     "at": 132.587,
+     "sec": 5.459
     }
    ],
-   "t0": 43.233,
-   "t1": 51.033
+   "t0": 127.033,
+   "t1": 138.767
   },
   {
-   "i": 6,
-   "kind": "card",
+   "i": 10,
+   "kind": "bars",
    "ch": 3,
-   "n": "03",
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, nine food classes, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "title": "Inside food, September, year on year",
+   "caption": "Vegetables, tubers and pulses: 1.6% in August, 9.2% in September.",
+   "rows": [
+    {
+     "label": "Sugar, confectionery, desserts",
+     "v": 13.76,
+     "text": "13.8%",
+     "hi": true
+    },
+    {
+     "label": "Fruits and nuts",
+     "v": 10.75,
+     "text": "10.8%",
+     "hi": false
+    },
+    {
+     "label": "Ready-made and other food",
+     "v": 9.98,
+     "text": "10.0%",
+     "hi": false
+    },
+    {
+     "label": "Vegetables, tubers, pulses",
+     "v": 9.18,
+     "text": "9.2%",
+     "hi": false
+    },
+    {
+     "label": "Meat",
+     "v": 8.71,
+     "text": "8.7%",
+     "hi": false
+    },
+    {
+     "label": "Oils and fats",
+     "v": 8.35,
+     "text": "8.4%",
+     "hi": false
+    },
+    {
+     "label": "Fish and seafood",
+     "v": 7.9,
+     "text": "7.9%",
+     "hi": false
+    },
+    {
+     "label": "Milk, dairy and eggs",
+     "v": 5.14,
+     "text": "5.1%",
+     "hi": false
+    },
+    {
+     "label": "Cereals",
+     "v": 3.94,
+     "text": "3.9%",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    5.737,
+    9.302,
+    15.557
+   ],
+   "vo": [
+    {
+     "text": "Inside food, sugar and sweets rose fastest, thirteen point eight percent.",
+     "at": 139.267,
+     "sec": 4.937
+    },
+    {
+     "text": "Fruits and nuts rose ten point eight percent.",
+     "at": 144.504,
+     "sec": 3.265
+    },
+    {
+     "text": "Vegetables and pulses jumped, from one point six percent in August to nine point two percent.",
+     "at": 148.069,
+     "sec": 5.955
+    },
+    {
+     "text": "Cereals rose the least, three point nine percent.",
+     "at": 154.324,
+     "sec": 3.369
+    }
+   ],
+   "t0": 138.767,
+   "t1": 158.4
+  },
+  {
+   "i": 11,
+   "kind": "bars",
+   "ch": 3,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "title": "Six staples, September, year on year",
+   "caption": "Rice and wheat sold through ration shops are separate items and are not shown here.",
+   "rows": [
+    {
+     "label": "Sugar",
+     "v": 29.8,
+     "text": "29.8%",
+     "hi": true
+    },
+    {
+     "label": "Eggs",
+     "v": 8.66,
+     "text": "8.7%",
+     "hi": false
+    },
+    {
+     "label": "Rice",
+     "v": 8.25,
+     "text": "8.3%",
+     "hi": false
+    },
+    {
+     "label": "Arhar (tur)",
+     "v": 8.19,
+     "text": "8.2%",
+     "hi": false
+    },
+    {
+     "label": "Milk",
+     "v": 4.21,
+     "text": "4.2%",
+     "hi": false
+    },
+    {
+     "label": "Wheat",
+     "v": 1.64,
+     "text": "1.6%",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    6.755
+   ],
+   "vo": [
+    {
+     "text": "Sugar alone, without sweets and desserts, was up twenty-nine point eight percent in a year.",
+     "at": 158.9,
+     "sec": 5.955
+    },
+    {
+     "text": "Rice rose eight point three percent. Wheat rose only one point six percent.",
+     "at": 165.155,
+     "sec": 5.25
+    }
+   ],
+   "t0": 158.4,
+   "t1": 171.133
+  },
+  {
+   "i": 12,
+   "kind": "card",
+   "ch": 4,
+   "n": "04",
    "title": "The onion story",
    "sub": "One item, month by month",
    "cues": [
@@ -413,99 +765,160 @@
    ],
    "vo": [
     {
-     "text": "Now, the onion.",
-     "at": 51.533,
-     "sec": 2.23
+     "text": "Chapter four: the onion.",
+     "at": 171.633,
+     "sec": 2.586
     }
    ],
-   "t0": 51.033,
-   "t1": 54.467
+   "t0": 171.133,
+   "t1": 174.933
   },
   {
-   "i": 7,
+   "i": 13,
    "kind": "line",
-   "ch": 3,
-   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion (combined) · read 14 Oct 2026",
-   "title": "Onion price index, all India",
-   "caption": "Onion index: 68 in June, 143 in September.",
+   "ch": 4,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion (combined), all India · Sep 2026 provisional · read 14 Oct 2026",
+   "title": "Onion, year on year, all India",
+   "caption": "In January onion cost 29.3% less than a year before.",
    "series": [
     {
-     "name": "Onion index",
+     "name": "Onion",
      "color": 0,
-     "label": "143",
+     "label": "108.1%",
      "pts": [
       {
        "m": "Jan-26",
-       "v": 72.79
+       "v": -29.3
       },
       {
        "m": "Feb-26",
-       "v": 69.18
+       "v": -28.2
       },
       {
        "m": "Mar-26",
-       "v": 64.42
+       "v": -27.78
       },
       {
        "m": "Apr-26",
-       "v": 61.32
+       "v": -17.67
       },
       {
        "m": "May-26",
-       "v": 62.61
+       "v": -2.25
       },
       {
        "m": "Jun-26",
-       "v": 68.25
+       "v": 4.73
       },
       {
        "m": "Jul-26",
-       "v": 85.97
+       "v": 22.54
       },
       {
        "m": "Aug-26",
-       "v": 105.34
+       "v": 48.77
       },
       {
        "m": "Sep-26",
-       "v": 142.88
+       "v": 108.09
       }
      ]
     }
    ],
    "marks": [
     {
+     "m": "Jan-26",
+     "s": 0,
+     "text": "−29.3%"
+    },
+    {
      "m": "Jun-26",
      "s": 0,
-     "text": "68"
+     "text": "4.7%"
     }
    ],
    "cues": [
     0.5,
-    3.58
+    5.737,
+    9.903,
+    13.363
    ],
    "vo": [
     {
-     "text": "Onion's price index was sixty-eight in June.",
-     "at": 54.967,
-     "sec": 2.78
+     "text": "In January, onion cost twenty-nine point three percent less than a year earlier.",
+     "at": 175.433,
+     "sec": 4.937
     },
     {
-     "text": "By September it was one hundred forty-three.",
-     "at": 58.047,
-     "sec": 2.78
+     "text": "By June, it cost four point seven percent more.",
+     "at": 180.67,
+     "sec": 3.866
+    },
+    {
+     "text": "Then it climbed fast, through July and August.",
+     "at": 184.836,
+     "sec": 3.16
+    },
+    {
+     "text": "In September, onion was one hundred and eight percent above a year before.",
+     "at": 188.296,
+     "sec": 3.97
     }
    ],
-   "t0": 54.467,
-   "t1": 61.533
+   "t0": 174.933,
+   "t1": 192.967
   },
   {
-   "i": 8,
+   "i": 14,
+   "kind": "compare",
+   "ch": 4,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, onion index (combined), all India · Sep 2026 provisional · read 14 Oct 2026",
+   "title": "Onion's price index, a year apart",
+   "caption": "More than double in a year.",
+   "a": {
+    "label": "September 2025",
+    "text": "69",
+    "v": 68.66,
+    "sub": "Index, base 2024"
+   },
+   "b": {
+    "label": "September 2026",
+    "text": "143",
+    "v": 142.88,
+    "sub": "Provisional"
+   },
+   "cues": [
+    0.5,
+    3.124,
+    6.95
+   ],
+   "vo": [
+    {
+     "text": "Here is what that means in the index.",
+     "at": 193.467,
+     "sec": 2.324
+    },
+    {
+     "text": "A year earlier, onion's index stood at sixty-nine.",
+     "at": 196.091,
+     "sec": 3.526
+    },
+    {
+     "text": "This September it was one hundred and forty-three: more than double.",
+     "at": 199.917,
+     "sec": 3.84
+    }
+   ],
+   "t0": 192.967,
+   "t1": 204.467
+  },
+  {
+   "i": 15,
    "kind": "bars",
-   "ch": 3,
-   "source": "MoSPI · CPI base 2024, five of the highest and lowest items · PIB release of 12 Oct 2026",
-   "title": "Five items, September, year on year",
-   "caption": "Some prices fell in the same month.",
+   "ch": 4,
+   "source": "MoSPI · CPI base 2024, five items from PIB Annexures I and II · Sep 2026 provisional · 12 Oct 2026",
+   "title": "Five kitchen items, September, year on year",
+   "caption": "Some kitchen prices were lower than a year before.",
    "rows": [
     {
      "label": "Onion",
@@ -540,108 +953,299 @@
    ],
    "cues": [
     0.5,
-    4.71,
-    7.31
+    7.748
    ],
    "vo": [
     {
-     "text": "In the same month, potato fell eleven point five percent.",
-     "at": 62.033,
-     "sec": 3.91
-    },
-    {
-     "text": "Tomato fell eight point six percent.",
-     "at": 66.243,
-     "sec": 2.3
+     "text": "Not everything rose. Potato was down eleven point five percent on a year before, and tomato eight point six percent.",
+     "at": 204.967,
+     "sec": 6.948
     },
     {
      "text": "Garlic rose fifty-four point six percent, and ginger sixty-two point nine percent.",
-     "at": 68.843,
-     "sec": 4.87
+     "at": 212.215,
+     "sec": 5.067
     }
    ],
-   "t0": 61.533,
-   "t1": 74.433
+   "t0": 204.467,
+   "t1": 218.0
   },
   {
-   "i": 9,
-   "kind": "card",
-   "ch": 4,
-   "n": "04",
-   "title": "Silver and personal care",
-   "sub": "Jewellery and the wider division",
-   "cues": [
-    0.5
-   ],
-   "vo": [
-    {
-     "text": "Then, silver.",
-     "at": 74.933,
-     "sec": 1.99
-    }
-   ],
-   "t0": 74.433,
-   "t1": 77.633
-  },
-  {
-   "i": 10,
+   "i": 16,
    "kind": "tiles",
    "ch": 4,
-   "source": "MoSPI · CPI base 2024, item, group and division · PIB release of 12 Oct 2026",
-   "title": "Silver jewellery and personal care",
-   "note": "Year-on-year rates, September 2026, provisional.",
+   "source": "Ministry of Consumer Affairs · onion buffer release · PIB, 26 Aug 2026",
+   "title": "What the government said on 26 August",
+   "note": "Ministry of Consumer Affairs, Food and Public Distribution, press release of 26 August 2026.",
    "tiles": [
     {
-     "big": "+87.8%",
-     "caption": "Silver jewellery, one year on",
+     "big": "₹35",
+     "caption": "a kilo: the retail price the ministry announced",
      "hi": true
     },
     {
-     "big": "+38.7%",
-     "caption": "Other personal effects, one year on",
+     "big": "307",
+     "caption": "lakh tonnes: estimated crop of 2025 to 2026, close to the year before",
      "hi": false
     },
     {
-     "big": "13.75%",
-     "caption": "Personal care and other goods",
-     "hi": false
-    },
-    {
-     "big": "5.0%",
-     "caption": "Basket share of personal care and other goods",
+     "big": "1.21",
+     "caption": "lakh tonnes bought for the buffer, of 2 planned",
      "hi": false
     }
    ],
    "cues": [
     0.5,
-    3.58,
-    7.38
+    6.05,
+    11.496
    ],
    "vo": [
     {
-     "text": "Silver jewellery rose eighty-seven point eight percent.",
-     "at": 78.133,
-     "sec": 2.78
+     "text": "By the twenty-sixth of August, the government said it had begun releasing onions from its buffer stock.",
+     "at": 218.5,
+     "sec": 5.25
     },
     {
-     "text": "Personal care and other goods rose thirteen point seven five percent.",
-     "at": 81.213,
-     "sec": 3.5
+     "text": "It announced retail sales at thirty-five rupees a kilo, and called supplies comfortable.",
+     "at": 224.05,
+     "sec": 5.146
     },
     {
-     "text": "That division is five point zero percent of the basket.",
-     "at": 85.013,
-     "sec": 3.26
+     "text": "It said onion prices typically rise in the festive season.",
+     "at": 229.496,
+     "sec": 3.369
     }
    ],
-   "t0": 77.633,
-   "t1": 89.0
+   "t0": 218.0,
+   "t1": 233.567
   },
   {
-   "i": 11,
+   "i": 17,
+   "kind": "quote",
+   "ch": 4,
+   "source": "RBI · Governor's Statement, 7 Oct 2026, footnote 13 · rbi.org.in",
+   "text": "Onion prices increased by about 85 per cent by end-September over end-June, driven by low rabi stocks and concerns over kharif arrivals amid uneven rainfall. As a result, the increase during August-September is sharper than the usual seasonal pick-up.",
+   "by": "Reserve Bank of India, Governor's Statement",
+   "date": "7 October 2026, footnote on onion",
+   "cues": [
+    0.5,
+    3.438,
+    8.988,
+    12.448
+   ],
+   "vo": [
+    {
+     "text": "Six weeks later, the RBI gave its reading.",
+     "at": 234.067,
+     "sec": 2.638
+    },
+    {
+     "text": "It pointed to low rabi stocks and worries over kharif arrivals, amid uneven rain.",
+     "at": 237.005,
+     "sec": 5.25
+    },
+    {
+     "text": "And it called the rise sharper than the usual seasonal pick-up.",
+     "at": 242.555,
+     "sec": 3.16
+    },
+    {
+     "text": "Its figure compares end-June with end-September, and came before the September index.",
+     "at": 246.015,
+     "sec": 5.825
+    }
+   ],
+   "t0": 233.567,
+   "t1": 252.567
+  },
+  {
+   "i": 18,
    "kind": "card",
    "ch": 5,
    "n": "05",
+   "title": "Beyond food: jewellery, travel and fuel",
+   "sub": "Silver, gold, air fares and fuel",
+   "cues": [
+    0.5
+   ],
+   "vo": [
+    {
+     "text": "Chapter five: beyond food.",
+     "at": 253.067,
+     "sec": 2.455
+    }
+   ],
+   "t0": 252.567,
+   "t1": 256.233
+  },
+  {
+   "i": 19,
+   "kind": "compare",
+   "ch": 5,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "title": "Jewellery, September, year on year",
+   "caption": "In August, silver jewellery was up 106.8%.",
+   "a": {
+    "label": "Gold, diamond, platinum",
+    "text": "30.9%",
+    "v": 30.92,
+    "sub": "Jewellery: one item in the index"
+   },
+   "b": {
+    "label": "Silver",
+    "text": "87.8%",
+    "v": 87.8,
+    "sub": "Jewellery: one item in the index"
+   },
+   "cues": [
+    0.5,
+    5.345,
+    10.268
+   ],
+   "vo": [
+    {
+     "text": "Silver jewellery cost eighty-seven point eight percent more than a year before.",
+     "at": 256.733,
+     "sec": 4.545
+    },
+    {
+     "text": "Gold, diamond and platinum jewellery cost thirty point nine percent more.",
+     "at": 261.578,
+     "sec": 4.623
+    },
+    {
+     "text": "In August, silver had been up even more, one hundred and six point eight percent.",
+     "at": 266.501,
+     "sec": 5.25
+    }
+   ],
+   "t0": 256.233,
+   "t1": 272.467
+  },
+  {
+   "i": 20,
+   "kind": "bars",
+   "ch": 5,
+   "source": "MoSPI · eSankhyiki portal, CPI base 2024, items, all India · Sep 2026 provisional · read 15 Oct 2026",
+   "title": "Travel and fuel, September, year on year",
+   "caption": "Prices of items in the index, all India.",
+   "rows": [
+    {
+     "label": "Domestic air fares",
+     "v": 29.9,
+     "text": "+29.9%",
+     "hi": true
+    },
+    {
+     "label": "Vehicle gas (CNG)",
+     "v": 10.51,
+     "text": "+10.5%",
+     "hi": false
+    },
+    {
+     "label": "Diesel",
+     "v": 8.41,
+     "text": "+8.4%",
+     "hi": false
+    },
+    {
+     "label": "Petrol",
+     "v": 7.51,
+     "text": "+7.5%",
+     "hi": false
+    },
+    {
+     "label": "Cooking gas (LPG, piped)",
+     "v": 5.29,
+     "text": "+5.3%",
+     "hi": false
+    },
+    {
+     "label": "Electricity charges",
+     "v": -1.04,
+     "text": "−1.0%",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    4.248,
+    8.596,
+    14.433
+   ],
+   "vo": [
+    {
+     "text": "Domestic air fares rose twenty-nine point nine percent.",
+     "at": 272.967,
+     "sec": 3.448
+    },
+    {
+     "text": "Diesel rose eight point four percent, and petrol seven point five percent.",
+     "at": 276.715,
+     "sec": 4.048
+    },
+    {
+     "text": "Cooking gas, in cylinders and pipes, rose five point three percent.",
+     "at": 281.063,
+     "sec": 5.537
+    },
+    {
+     "text": "Electricity charges fell one percent.",
+     "at": 286.9,
+     "sec": 3.056
+    }
+   ],
+   "t0": 272.467,
+   "t1": 290.667
+  },
+  {
+   "i": 21,
+   "kind": "tiles",
+   "ch": 5,
+   "source": "MoSPI · CPI base 2024, class and division · Sep 2026 provisional · eSankhyiki portal and PIB release of 12 Oct 2026",
+   "title": "Where jewellery sits in the basket",
+   "note": "Year on year, September 2026, provisional. The division: personal care, social protection and miscellaneous goods and services.",
+   "tiles": [
+    {
+     "big": "43.3%",
+     "caption": "jewellery and watches together",
+     "hi": true
+    },
+    {
+     "big": "13.75%",
+     "caption": "its whole division, the fastest of the divisions",
+     "hi": false
+    },
+    {
+     "big": "5.0%",
+     "caption": "that division's share of the basket",
+     "hi": false
+    }
+   ],
+   "cues": [
+    0.5,
+    6.468
+   ],
+   "vo": [
+    {
+     "text": "Jewellery sits in the division of personal care, social protection and miscellaneous goods and services.",
+     "at": 291.167,
+     "sec": 5.668
+    },
+    {
+     "text": "That division rose thirteen point seven five percent, the fastest of all, yet it is five percent of the basket.",
+     "at": 297.135,
+     "sec": 8.437
+    }
+   ],
+   "t0": 290.667,
+   "t1": 306.3
+  },
+  {
+   "i": 22,
+   "kind": "card",
+   "ch": 6,
+   "n": "06",
    "title": "Villages and cities",
    "sub": "Rural and urban inflation",
    "cues": [
@@ -649,21 +1253,21 @@
    ],
    "vo": [
     {
-     "text": "Now, villages and cities.",
-     "at": 89.5,
-     "sec": 2.47
+     "text": "Chapter six: villages and cities.",
+     "at": 306.8,
+     "sec": 2.795
     }
    ],
-   "t0": 89.0,
-   "t1": 92.7
+   "t0": 306.3,
+   "t1": 310.3
   },
   {
-   "i": 12,
+   "i": 23,
    "kind": "line",
-   "ch": 5,
-   "source": "MoSPI · all-India CPI, base 2024, rural, urban and combined · PIB releases",
+   "ch": 6,
+   "source": "MoSPI · all-India CPI, base 2024, rural, urban, combined · PIB releases · Sep 2026 provisional",
    "title": "Inflation, rural and urban",
-   "caption": "In January the two were level: 2.73% rural and 2.75% urban.",
+   "caption": "In January the two were almost level: 2.73% rural and 2.75% urban.",
    "series": [
     {
      "name": "Rural",
@@ -798,92 +1402,98 @@
    "marks": [],
    "cues": [
     0.5,
-    3.99
+    6.468,
+    9.536
    ],
    "vo": [
     {
-     "text": "In January, villages and cities were level.",
-     "at": 93.2,
-     "sec": 3.19
+     "text": "In January, prices in villages and cities rose at almost the same pace.",
+     "at": 310.8,
+     "sec": 5.668
     },
     {
-     "text": "By September, village prices had pulled ahead.",
-     "at": 96.69,
-     "sec": 3.19
+     "text": "By September, villages were ahead.",
+     "at": 316.768,
+     "sec": 2.768
+    },
+    {
+     "text": "Rural inflation was six point zero eight percent. Urban, four point eight eight percent.",
+     "at": 319.836,
+     "sec": 5.746
     }
    ],
-   "t0": 92.7,
-   "t1": 100.6
+   "t0": 310.3,
+   "t1": 326.3
   },
   {
-   "i": 13,
+   "i": 24,
    "kind": "compare",
-   "ch": 5,
-   "source": "MoSPI · CPI base 2024, rural and urban; division weights · PIB releases",
-   "title": "Inflation, villages and cities",
-   "caption": "Food is 42% of the rural basket and 30% of the urban one.",
+   "ch": 6,
+   "source": "MoSPI · Consumer Food Price Index and division weights, rural and urban · PIB · Sep 2026 provisional",
+   "title": "Food prices, villages and cities",
+   "caption": "Food and beverages are 42% of the rural basket and 30% of the urban one.",
    "a": {
-    "label": "Rural, September",
-    "text": "6.08%",
-    "v": 6.08,
+    "label": "Rural food, September",
+    "text": "8.06%",
+    "v": 8.06,
     "sub": ""
    },
    "b": {
-    "label": "Urban, September",
-    "text": "4.88%",
-    "v": 4.88,
+    "label": "Urban food, September",
+    "text": "7.18%",
+    "v": 7.18,
     "sub": ""
    },
    "cues": [
     0.5,
-    3.58,
-    6.66
+    7.069,
+    12.697
    ],
    "vo": [
     {
-     "text": "Rural inflation was six point zero eight percent.",
-     "at": 101.1,
-     "sec": 2.78
+     "text": "Food rose eight point zero six percent in villages and seven point one eight percent in cities.",
+     "at": 326.8,
+     "sec": 6.269
     },
     {
-     "text": "Urban inflation was four point eight eight percent.",
-     "at": 104.18,
-     "sec": 2.78
+     "text": "Food and drinks weigh more in village baskets: forty-two percent, against thirty percent in cities.",
+     "at": 333.369,
+     "sec": 5.328
     },
     {
-     "text": "Food is a bigger share of the rural basket.",
-     "at": 107.26,
-     "sec": 3.02
+     "text": "MoSPI does not say whether the two are linked, and neither do we.",
+     "at": 338.997,
+     "sec": 3.97
     }
    ],
-   "t0": 100.6,
-   "t1": 111.0
+   "t0": 326.3,
+   "t1": 343.7
   },
   {
-   "i": 14,
+   "i": 25,
    "kind": "card",
-   "ch": 6,
-   "n": "06",
+   "ch": 7,
+   "n": "07",
    "title": "Your state",
-   "sub": "Every state and territory",
+   "sub": "Every state and union territory",
    "cues": [
     0.5
    ],
    "vo": [
     {
-     "text": "Now, your state.",
-     "at": 111.5,
-     "sec": 2.23
+     "text": "Chapter seven: your state.",
+     "at": 344.2,
+     "sec": 2.246
     }
    ],
-   "t0": 111.0,
-   "t1": 114.433
+   "t0": 343.7,
+   "t1": 347.167
   },
   {
-   "i": 15,
+   "i": 26,
    "kind": "map",
-   "ch": 6,
-   "source": "MoSPI · CPI base 2024, combined, by state and territory · PIB release of 12 Oct 2026, Annexure III",
+   "ch": 7,
+   "source": "MoSPI · CPI base 2024, combined, by state and territory · Sep 2026 provisional · PIB 12 Oct 2026, Annexure III",
    "top": [
     {
      "rank": 1,
@@ -1312,38 +1922,56 @@
     "hiWord": "highest"
    },
    "title": "Inflation by state and territory, September",
-   "sub": "India 5.54% · 11 of 36 above",
-   "note": "Biggest jump from August: Jharkhand, +1.9 points. Only Assam fell.",
+   "sub": "India 5.54% · 11 of 36 above India · provisional",
+   "note": "Biggest jump from August's first figures: Jharkhand, +1.9 points. Only Assam fell.",
    "cues": [
     0.5,
-    3.1,
-    7.07
+    3.725,
+    9.171,
+    15.165,
+    19.879,
+    24.436
    ],
    "vo": [
     {
-     "text": "Here is every state and territory.",
-     "at": 114.933,
-     "sec": 2.3
+     "text": "Here is every state and union territory.",
+     "at": 347.667,
+     "sec": 2.925
     },
     {
-     "text": "Puducherry is highest, at six point eight six percent.",
-     "at": 117.533,
-     "sec": 3.67
+     "text": "Puducherry was highest, at six point eight six percent.",
+     "at": 350.892,
+     "sec": 5.146
     },
     {
-     "text": "eleven of thirty-six are above the national figure.",
-     "at": 121.503,
-     "sec": 3.02
+     "text": "Then Tamil Nadu, six point eight one percent, and Odisha, six point seven percent.",
+     "at": 356.338,
+     "sec": 5.694
+    },
+    {
+     "text": "Mizoram was lowest, at two point eight five percent.",
+     "at": 362.332,
+     "sec": 4.414
+    },
+    {
+     "text": "Of the thirty-six states and territories, eleven were above the national figure.",
+     "at": 367.046,
+     "sec": 4.257
+    },
+    {
+     "text": "Against August's first figures, the biggest jump was in Jharkhand, one point nine percentage points.",
+     "at": 371.603,
+     "sec": 5.746
     }
    ],
-   "t0": 114.433,
-   "t1": 125.233
+   "t0": 347.167,
+   "t1": 378.067
   },
   {
-   "i": 16,
+   "i": 27,
    "kind": "map",
-   "ch": 6,
-   "source": "MoSPI · eSankhyiki portal, CFPI base 2024, by state · read 14 Oct 2026",
+   "ch": 7,
+   "source": "MoSPI · eSankhyiki portal, Consumer Food Price Index base 2024, by state · Sep 2026 provisional · read 14 Oct 2026",
    "top": [
     {
      "rank": 1,
@@ -1549,7 +2177,7 @@
     },
     {
      "name": "Jharkhand",
-     "label": "6.2",
+     "label": "6.3",
      "bucket": 2,
      "nudge": [
       0,
@@ -1659,7 +2287,7 @@
     },
     {
      "name": "Uttar Pradesh",
-     "label": "8.3",
+     "label": "8.4",
      "bucket": 3,
      "nudge": [
       0,
@@ -1771,248 +2399,884 @@
     "loWord": "lowest",
     "hiWord": "highest"
    },
-   "title": "Food inflation by state and territory",
-   "sub": "India 7.74%",
-   "note": "MoSPI: state-level item indices may rest on thin samples of price quotations.",
+   "title": "Food inflation by state and territory, September",
+   "sub": "India 7.74% · provisional",
+   "note": "Consumer Food Price Index by state, from MoSPI's eSankhyiki portal.",
    "cues": [
     0.5,
-    3.1
+    2.837,
+    6.741
    ],
    "vo": [
     {
-     "text": "This is food inflation by state.",
-     "at": 125.733,
-     "sec": 2.3
+     "text": "Now food prices alone.",
+     "at": 378.567,
+     "sec": 2.037
     },
     {
-     "text": "Puducherry leads, at eleven point two percent.",
-     "at": 128.333,
-     "sec": 3.19
+     "text": "Puducherry led again, at eleven point two percent.",
+     "at": 380.904,
+     "sec": 3.604
+    },
+    {
+     "text": "Tamil Nadu was next, at ten point six percent, then Andhra Pradesh, at ten point two percent.",
+     "at": 384.808,
+     "sec": 6.295
     }
    ],
-   "t0": 125.233,
-   "t1": 132.233
+   "t0": 378.067,
+   "t1": 391.833
   },
   {
-   "i": 17,
+   "i": 28,
    "kind": "card",
-   "ch": 7,
-   "n": "07",
-   "title": "How the number is made",
-   "sub": "Basket, markets and base year",
+   "ch": 8,
+   "n": "08",
+   "title": "What the RBI did",
+   "sub": "The rate decision of 7 October",
    "cues": [
     0.5
    ],
    "vo": [
     {
-     "text": "How the number is made.",
-     "at": 132.733,
-     "sec": 2.06
+     "text": "Chapter eight: what the RBI did.",
+     "at": 392.333,
+     "sec": 2.977
     }
    ],
-   "t0": 132.233,
-   "t1": 135.5
+   "t0": 391.833,
+   "t1": 396.033
   },
   {
-   "i": 18,
+   "i": 29,
+   "kind": "compare",
+   "ch": 8,
+   "source": "RBI · Monetary Policy Committee: resolution of 7 Oct 2026 and minutes of the August meeting · rbi.org.in",
+   "title": "The RBI's repo rate",
+   "caption": "Up a quarter point (25 basis points), five days before September's prices were published.",
+   "a": {
+    "label": "Before 7 October",
+    "text": "5.25%",
+    "v": 5.25,
+    "sub": "Kept at the August meeting"
+   },
+   "b": {
+    "label": "From 7 October",
+    "text": "5.50%",
+    "v": 5.5,
+    "sub": "A unanimous vote"
+   },
+   "cues": [
+    0.5,
+    5.057,
+    11.417,
+    14.877
+   ],
+   "vo": [
+    {
+     "text": "The repo rate is the rate at which the RBI lends money to banks for short periods.",
+     "at": 396.533,
+     "sec": 4.257
+    },
+    {
+     "text": "On the seventh of October, the RBI raised it by a quarter point, to five point five percent.",
+     "at": 401.09,
+     "sec": 6.06
+    },
+    {
+     "text": "Its committee voted for the rise unanimously.",
+     "at": 407.45,
+     "sec": 3.16
+    },
+    {
+     "text": "That was five days before September's price figures came out.",
+     "at": 410.91,
+     "sec": 3.265
+    }
+   ],
+   "t0": 396.033,
+   "t1": 414.9
+  },
+  {
+   "i": 30,
    "kind": "tiles",
-   "ch": 7,
-   "source": "MoSPI · CPI base 2024: items, response rate and base · PIB releases of 12 Oct 2026 and 12 Feb 2026",
-   "title": "Behind the number",
+   "ch": 8,
+   "source": "RBI · Resolution of the Monetary Policy Committee, 5 to 7 Oct 2026, paragraphs 9, 17 and 18 · rbi.org.in",
+   "title": "The RBI's own projections, made on 7 October",
+   "note": "Minutes of the meeting: 21 October. The next meeting ends 4 December.",
    "tiles": [
     {
-     "big": "358",
-     "caption": "items priced in the basket",
+     "big": "5.2%",
+     "caption": "consumer price inflation projected for the year to March 2027",
      "hi": true
     },
     {
-     "big": "1,465",
-     "caption": "villages where prices are collected",
+     "big": "6.0%",
+     "caption": "October to December 2026",
      "hi": false
     },
     {
-     "big": "1,407",
-     "caption": "urban markets, online included",
-     "hi": false
-    },
-    {
-     "big": "2024",
-     "caption": "base year of the index",
+     "big": "5.7%",
+     "caption": "January to March 2027",
      "hi": false
     }
    ],
    "cues": [
     0.5,
-    3.58,
-    9.06
+    5.554
    ],
    "vo": [
     {
-     "text": "The index follows three hundred fifty-eight items.",
-     "at": 136.0,
-     "sec": 2.78
+     "text": "The RBI projects inflation of five point two percent for the year ending March twenty twenty-seven,",
+     "at": 415.4,
+     "sec": 4.754
     },
     {
-     "text": "Prices come from one thousand four hundred sixty-five villages and one thousand four hundred seven urban markets.",
-     "at": 139.08,
-     "sec": 5.18
-    },
-    {
-     "text": "The base year is two thousand twenty-four.",
-     "at": 144.56,
-     "sec": 2.78
+     "text": "and six percent for October to December. These are the RBI's projections, not ours.",
+     "at": 420.454,
+     "sec": 5.746
     }
    ],
-   "t0": 135.5,
-   "t1": 148.067
+   "t0": 414.9,
+   "t1": 426.9
   },
   {
-   "i": 19,
-   "kind": "quote",
-   "ch": 7,
-   "source": "MoSPI via PIB · press release on the Consumer Price Index (base 2024) for September 2026",
-   "text": "Real time price data are collected from selected 1407 urban Markets (including online markets) and 1465 villages covering all States/UTs through personal visits by field staff of Field Operations Division of NSO, MoSPI on a weekly roster.",
-   "by": "Ministry of Statistics and Programme Implementation",
-   "date": "Press release on the Consumer Price Index, 12 Oct 2026",
-   "cues": [
-    0.5
-   ],
-   "vo": [
-    {
-     "text": "This is how MoSPI describes it.",
-     "at": 148.567,
-     "sec": 2.3
-    }
-   ],
-   "t0": 148.067,
-   "t1": 154.067
-  },
-  {
-   "i": 20,
+   "i": 31,
    "kind": "end",
-   "ch": 8,
+   "ch": 9,
    "source": "Data Kadai · analysed and animated by Data Kadai, with an AI narrator",
    "q": "Which price hit your home *hardest*?",
    "next": "October's index, due 12 November.",
    "sources": [
-    "State table: PIB release, 12 Oct 2026; food and onion: MoSPI eSankhyiki portal",
-    "Monthly series: PIB releases and the eSankhyiki portal",
-    "Divisions, items, weights: PIB releases of 12 Oct 2026 and 12 Feb 2026"
+    "MoSPI: CPI release for September, PIB, 12 Oct 2026; food and onion by state from the eSankhyiki portal",
+    "MoSPI eSankhyiki portal: every all-India item, read 15 Oct 2026",
+    "Weights: MoSPI's first release of the new series, 12 Feb 2026",
+    "RBI: Monetary Policy Committee resolution and Governor's statement, 7 Oct 2026; August minutes",
+    "Consumer Affairs: onion buffer release, PIB, 26 Aug 2026"
    ],
    "cues": [
     0.5,
-    3.1,
-    5.94
+    3.647,
+    12.332
    ],
    "vo": [
     {
-     "text": "Which price hit your home hardest?",
-     "at": 154.567,
-     "sec": 2.3
+     "text": "October's figures are due on the twelfth of November.",
+     "at": 427.4,
+     "sec": 2.847
     },
     {
-     "text": "Next month's number comes out in November.",
-     "at": 157.167,
-     "sec": 2.54
+     "text": "Every number here is from, or worked out from, official tables: MoSPI, the RBI and the Consumer Affairs ministry.",
+     "at": 430.547,
+     "sec": 8.385
     },
     {
-     "text": "Every figure here comes from official tables.",
-     "at": 160.007,
-     "sec": 2.54
+     "text": "Which price hit your home hardest: onion, sugar, silver or something else? Tell us in the comments.",
+     "at": 439.232,
+     "sec": 7.915
     }
    ],
-   "t0": 154.067,
-   "t1": 166.067
+   "t0": 426.9,
+   "t1": 447.867
   }
  ],
- "vo": [],
- "music": null,
- "voiced": false,
- "voiceEngine": "none",
+ "vo": [
+  {
+   "file": "vo_00_00.mp3",
+   "sec": 5.146,
+   "at": 0.5,
+   "text": "In September, onion cost one hundred and eight percent more than a year before: more than double."
+  },
+  {
+   "file": "vo_00_01.mp3",
+   "sec": 5.825,
+   "at": 5.946,
+   "text": "Prices across India were up five point five four percent on a year earlier, the highest this year."
+  },
+  {
+   "file": "vo_00_02.mp3",
+   "sec": 4.754,
+   "at": 12.071,
+   "text": "Over the year, prices rose the most in one place: Puducherry."
+  },
+  {
+   "file": "vo_00_03.mp3",
+   "sec": 4.257,
+   "at": 17.125,
+   "text": "These are September's provisional figures, from the official tables."
+  },
+  {
+   "file": "vo_01_00.mp3",
+   "sec": 2.298,
+   "at": 22.6,
+   "text": "Chapter one: the headline."
+  },
+  {
+   "file": "vo_02_00.mp3",
+   "sec": 5.746,
+   "at": 26.1,
+   "text": "Every month, MoSPI, the statistics ministry, publishes the Consumer Price Index."
+  },
+  {
+   "file": "vo_02_01.mp3",
+   "sec": 5.25,
+   "at": 32.146,
+   "text": "Imagine a basket that cost one hundred rupees at twenty twenty-four prices."
+  },
+  {
+   "file": "vo_02_02.mp3",
+   "sec": 7.653,
+   "at": 37.696,
+   "text": "In September, that basket would cost one hundred and nine point four nine rupees. That number is the index."
+  },
+  {
+   "file": "vo_02_03.mp3",
+   "sec": 4.336,
+   "at": 45.649,
+   "text": "Inflation looks at one year only: this September against last September."
+  },
+  {
+   "file": "vo_03_00.mp3",
+   "sec": 6.765,
+   "at": 51.2,
+   "text": "In January, inflation was two point seven four percent, and it went up every month after that."
+  },
+  {
+   "file": "vo_03_01.mp3",
+   "sec": 2.638,
+   "at": 58.265,
+   "text": "August came in at four point eight three percent."
+  },
+  {
+   "file": "vo_03_02.mp3",
+   "sec": 6.008,
+   "at": 61.203,
+   "text": "September: five point five four percent. That figure is provisional, and can be revised next month."
+  },
+  {
+   "file": "vo_03_03.mp3",
+   "sec": 4.545,
+   "at": 67.511,
+   "text": "Yearly rates in the new series start in January, so there are only nine so far."
+  },
+  {
+   "file": "vo_04_00.mp3",
+   "sec": 2.899,
+   "at": 73.267,
+   "text": "Chapter two: the new basket."
+  },
+  {
+   "file": "vo_05_00.mp3",
+   "sec": 5.746,
+   "at": 77.367,
+   "text": "The new index prices three hundred and fifty-eight items, up from two hundred and ninety-nine in the old one."
+  },
+  {
+   "file": "vo_05_01.mp3",
+   "sec": 7.653,
+   "at": 83.413,
+   "text": "Its prices come from one thousand four hundred and sixty-five villages and one thousand four hundred and seven urban markets,"
+  },
+  {
+   "file": "vo_05_02.mp3",
+   "sec": 3.97,
+   "at": 91.366,
+   "text": "visited in person by field staff, on a weekly roster."
+  },
+  {
+   "file": "vo_06_00.mp3",
+   "sec": 2.925,
+   "at": 96.567,
+   "text": "The weights follow a national survey of household spending."
+  },
+  {
+   "file": "vo_06_01.mp3",
+   "sec": 5.668,
+   "at": 99.792,
+   "text": "Counting the old basket in the new divisions, food and beverages were forty-two point six percent."
+  },
+  {
+   "file": "vo_06_02.mp3",
+   "sec": 3.84,
+   "at": 105.76,
+   "text": "In the new basket, they are thirty-six point eight percent."
+  },
+  {
+   "file": "vo_07_00.mp3",
+   "sec": 2.011,
+   "at": 110.8,
+   "text": "Chapter three: food."
+  },
+  {
+   "file": "vo_08_00.mp3",
+   "sec": 4.545,
+   "at": 114.033,
+   "text": "Here are the main divisions of the basket. A thicker bar means a bigger weight."
+  },
+  {
+   "file": "vo_08_01.mp3",
+   "sec": 7.444,
+   "at": 118.878,
+   "text": "Food and beverages are the heaviest, thirty-six point eight percent, and rose seven point three six percent, drinks included."
+  },
+  {
+   "file": "vo_09_00.mp3",
+   "sec": 4.754,
+   "at": 127.533,
+   "text": "Food alone, without drinks, rose five point nine seven percent in August."
+  },
+  {
+   "file": "vo_09_01.mp3",
+   "sec": 5.459,
+   "at": 132.587,
+   "text": "In September it rose seven point seven four percent, faster than prices overall."
+  },
+  {
+   "file": "vo_10_00.mp3",
+   "sec": 4.937,
+   "at": 139.267,
+   "text": "Inside food, sugar and sweets rose fastest, thirteen point eight percent."
+  },
+  {
+   "file": "vo_10_01.mp3",
+   "sec": 3.265,
+   "at": 144.504,
+   "text": "Fruits and nuts rose ten point eight percent."
+  },
+  {
+   "file": "vo_10_02.mp3",
+   "sec": 5.955,
+   "at": 148.069,
+   "text": "Vegetables and pulses jumped, from one point six percent in August to nine point two percent."
+  },
+  {
+   "file": "vo_10_03.mp3",
+   "sec": 3.369,
+   "at": 154.324,
+   "text": "Cereals rose the least, three point nine percent."
+  },
+  {
+   "file": "vo_11_00.mp3",
+   "sec": 5.955,
+   "at": 158.9,
+   "text": "Sugar alone, without sweets and desserts, was up twenty-nine point eight percent in a year."
+  },
+  {
+   "file": "vo_11_01.mp3",
+   "sec": 5.25,
+   "at": 165.155,
+   "text": "Rice rose eight point three percent. Wheat rose only one point six percent."
+  },
+  {
+   "file": "vo_12_00.mp3",
+   "sec": 2.586,
+   "at": 171.633,
+   "text": "Chapter four: the onion."
+  },
+  {
+   "file": "vo_13_00.mp3",
+   "sec": 4.937,
+   "at": 175.433,
+   "text": "In January, onion cost twenty-nine point three percent less than a year earlier."
+  },
+  {
+   "file": "vo_13_01.mp3",
+   "sec": 3.866,
+   "at": 180.67,
+   "text": "By June, it cost four point seven percent more."
+  },
+  {
+   "file": "vo_13_02.mp3",
+   "sec": 3.16,
+   "at": 184.836,
+   "text": "Then it climbed fast, through July and August."
+  },
+  {
+   "file": "vo_13_03.mp3",
+   "sec": 3.97,
+   "at": 188.296,
+   "text": "In September, onion was one hundred and eight percent above a year before."
+  },
+  {
+   "file": "vo_14_00.mp3",
+   "sec": 2.324,
+   "at": 193.467,
+   "text": "Here is what that means in the index."
+  },
+  {
+   "file": "vo_14_01.mp3",
+   "sec": 3.526,
+   "at": 196.091,
+   "text": "A year earlier, onion's index stood at sixty-nine."
+  },
+  {
+   "file": "vo_14_02.mp3",
+   "sec": 3.84,
+   "at": 199.917,
+   "text": "This September it was one hundred and forty-three: more than double."
+  },
+  {
+   "file": "vo_15_00.mp3",
+   "sec": 6.948,
+   "at": 204.967,
+   "text": "Not everything rose. Potato was down eleven point five percent on a year before, and tomato eight point six percent."
+  },
+  {
+   "file": "vo_15_01.mp3",
+   "sec": 5.067,
+   "at": 212.215,
+   "text": "Garlic rose fifty-four point six percent, and ginger sixty-two point nine percent."
+  },
+  {
+   "file": "vo_16_00.mp3",
+   "sec": 5.25,
+   "at": 218.5,
+   "text": "By the twenty-sixth of August, the government said it had begun releasing onions from its buffer stock."
+  },
+  {
+   "file": "vo_16_01.mp3",
+   "sec": 5.146,
+   "at": 224.05,
+   "text": "It announced retail sales at thirty-five rupees a kilo, and called supplies comfortable."
+  },
+  {
+   "file": "vo_16_02.mp3",
+   "sec": 3.369,
+   "at": 229.496,
+   "text": "It said onion prices typically rise in the festive season."
+  },
+  {
+   "file": "vo_17_00.mp3",
+   "sec": 2.638,
+   "at": 234.067,
+   "text": "Six weeks later, the RBI gave its reading."
+  },
+  {
+   "file": "vo_17_01.mp3",
+   "sec": 5.25,
+   "at": 237.005,
+   "text": "It pointed to low rabi stocks and worries over kharif arrivals, amid uneven rain."
+  },
+  {
+   "file": "vo_17_02.mp3",
+   "sec": 3.16,
+   "at": 242.555,
+   "text": "And it called the rise sharper than the usual seasonal pick-up."
+  },
+  {
+   "file": "vo_17_03.mp3",
+   "sec": 5.825,
+   "at": 246.015,
+   "text": "Its figure compares end-June with end-September, and came before the September index."
+  },
+  {
+   "file": "vo_18_00.mp3",
+   "sec": 2.455,
+   "at": 253.067,
+   "text": "Chapter five: beyond food."
+  },
+  {
+   "file": "vo_19_00.mp3",
+   "sec": 4.545,
+   "at": 256.733,
+   "text": "Silver jewellery cost eighty-seven point eight percent more than a year before."
+  },
+  {
+   "file": "vo_19_01.mp3",
+   "sec": 4.623,
+   "at": 261.578,
+   "text": "Gold, diamond and platinum jewellery cost thirty point nine percent more."
+  },
+  {
+   "file": "vo_19_02.mp3",
+   "sec": 5.25,
+   "at": 266.501,
+   "text": "In August, silver had been up even more, one hundred and six point eight percent."
+  },
+  {
+   "file": "vo_20_00.mp3",
+   "sec": 3.448,
+   "at": 272.967,
+   "text": "Domestic air fares rose twenty-nine point nine percent."
+  },
+  {
+   "file": "vo_20_01.mp3",
+   "sec": 4.048,
+   "at": 276.715,
+   "text": "Diesel rose eight point four percent, and petrol seven point five percent."
+  },
+  {
+   "file": "vo_20_02.mp3",
+   "sec": 5.537,
+   "at": 281.063,
+   "text": "Cooking gas, in cylinders and pipes, rose five point three percent."
+  },
+  {
+   "file": "vo_20_03.mp3",
+   "sec": 3.056,
+   "at": 286.9,
+   "text": "Electricity charges fell one percent."
+  },
+  {
+   "file": "vo_21_00.mp3",
+   "sec": 5.668,
+   "at": 291.167,
+   "text": "Jewellery sits in the division of personal care, social protection and miscellaneous goods and services."
+  },
+  {
+   "file": "vo_21_01.mp3",
+   "sec": 8.437,
+   "at": 297.135,
+   "text": "That division rose thirteen point seven five percent, the fastest of all, yet it is five percent of the basket."
+  },
+  {
+   "file": "vo_22_00.mp3",
+   "sec": 2.795,
+   "at": 306.8,
+   "text": "Chapter six: villages and cities."
+  },
+  {
+   "file": "vo_23_00.mp3",
+   "sec": 5.668,
+   "at": 310.8,
+   "text": "In January, prices in villages and cities rose at almost the same pace."
+  },
+  {
+   "file": "vo_23_01.mp3",
+   "sec": 2.768,
+   "at": 316.768,
+   "text": "By September, villages were ahead."
+  },
+  {
+   "file": "vo_23_02.mp3",
+   "sec": 5.746,
+   "at": 319.836,
+   "text": "Rural inflation was six point zero eight percent. Urban, four point eight eight percent."
+  },
+  {
+   "file": "vo_24_00.mp3",
+   "sec": 6.269,
+   "at": 326.8,
+   "text": "Food rose eight point zero six percent in villages and seven point one eight percent in cities."
+  },
+  {
+   "file": "vo_24_01.mp3",
+   "sec": 5.328,
+   "at": 333.369,
+   "text": "Food and drinks weigh more in village baskets: forty-two percent, against thirty percent in cities."
+  },
+  {
+   "file": "vo_24_02.mp3",
+   "sec": 3.97,
+   "at": 338.997,
+   "text": "MoSPI does not say whether the two are linked, and neither do we."
+  },
+  {
+   "file": "vo_25_00.mp3",
+   "sec": 2.246,
+   "at": 344.2,
+   "text": "Chapter seven: your state."
+  },
+  {
+   "file": "vo_26_00.mp3",
+   "sec": 2.925,
+   "at": 347.667,
+   "text": "Here is every state and union territory."
+  },
+  {
+   "file": "vo_26_01.mp3",
+   "sec": 5.146,
+   "at": 350.892,
+   "text": "Puducherry was highest, at six point eight six percent."
+  },
+  {
+   "file": "vo_26_02.mp3",
+   "sec": 5.694,
+   "at": 356.338,
+   "text": "Then Tamil Nadu, six point eight one percent, and Odisha, six point seven percent."
+  },
+  {
+   "file": "vo_26_03.mp3",
+   "sec": 4.414,
+   "at": 362.332,
+   "text": "Mizoram was lowest, at two point eight five percent."
+  },
+  {
+   "file": "vo_26_04.mp3",
+   "sec": 4.257,
+   "at": 367.046,
+   "text": "Of the thirty-six states and territories, eleven were above the national figure."
+  },
+  {
+   "file": "vo_26_05.mp3",
+   "sec": 5.746,
+   "at": 371.603,
+   "text": "Against August's first figures, the biggest jump was in Jharkhand, one point nine percentage points."
+  },
+  {
+   "file": "vo_27_00.mp3",
+   "sec": 2.037,
+   "at": 378.567,
+   "text": "Now food prices alone."
+  },
+  {
+   "file": "vo_27_01.mp3",
+   "sec": 3.604,
+   "at": 380.904,
+   "text": "Puducherry led again, at eleven point two percent."
+  },
+  {
+   "file": "vo_27_02.mp3",
+   "sec": 6.295,
+   "at": 384.808,
+   "text": "Tamil Nadu was next, at ten point six percent, then Andhra Pradesh, at ten point two percent."
+  },
+  {
+   "file": "vo_28_00.mp3",
+   "sec": 2.977,
+   "at": 392.333,
+   "text": "Chapter eight: what the RBI did."
+  },
+  {
+   "file": "vo_29_00.mp3",
+   "sec": 4.257,
+   "at": 396.533,
+   "text": "The repo rate is the rate at which the RBI lends money to banks for short periods."
+  },
+  {
+   "file": "vo_29_01.mp3",
+   "sec": 6.06,
+   "at": 401.09,
+   "text": "On the seventh of October, the RBI raised it by a quarter point, to five point five percent."
+  },
+  {
+   "file": "vo_29_02.mp3",
+   "sec": 3.16,
+   "at": 407.45,
+   "text": "Its committee voted for the rise unanimously."
+  },
+  {
+   "file": "vo_29_03.mp3",
+   "sec": 3.265,
+   "at": 410.91,
+   "text": "That was five days before September's price figures came out."
+  },
+  {
+   "file": "vo_30_00.mp3",
+   "sec": 4.754,
+   "at": 415.4,
+   "text": "The RBI projects inflation of five point two percent for the year ending March twenty twenty-seven,"
+  },
+  {
+   "file": "vo_30_01.mp3",
+   "sec": 5.746,
+   "at": 420.454,
+   "text": "and six percent for October to December. These are the RBI's projections, not ours."
+  },
+  {
+   "file": "vo_31_00.mp3",
+   "sec": 2.847,
+   "at": 427.4,
+   "text": "October's figures are due on the twelfth of November."
+  },
+  {
+   "file": "vo_31_01.mp3",
+   "sec": 8.385,
+   "at": 430.547,
+   "text": "Every number here is from, or worked out from, official tables: MoSPI, the RBI and the Consumer Affairs ministry."
+  },
+  {
+   "file": "vo_31_02.mp3",
+   "sec": 7.915,
+   "at": 439.232,
+   "text": "Which price hit your home hardest: onion, sugar, silver or something else? Tell us in the comments."
+  }
+ ],
+ "music": "music.wav",
+ "voiced": true,
+ "voiceEngine": "minimax",
  "checked": [
   "val headline: 5.54",
   "val headline_aug: 4.83",
   "val headline_jan: 2.74",
+  "val base100: 100",
+  "val idx_sep: 109.5",
   "val food: 7.74",
   "val food_aug: 5.97",
+  "val food_rural: 8.06",
+  "val food_urban: 7.18",
+  "val rest: 9.36",
+  "val personal: 13.75",
+  "val personal_w: 5.038",
+  "val fw_rural: 41.98",
+  "val fw_urban: 30.25",
+  "val fw_new: 36.75",
+  "val fw_old: 42.62",
+  "val c_sugar: 13.76",
+  "val c_fruit: 10.75",
+  "val c_veg: 9.18",
+  "val c_veg_aug: 1.57",
+  "val c_cereals: 3.94",
+  "val i_sugar: 29.8",
+  "val i_rice: 8.25",
+  "val i_wheat: 1.64",
+  "val i_eggs: 8.66",
+  "val i_milk: 4.21",
   "val onion: 108.1",
-  "val puducherry: 6.86",
-  "val pud_food: 11.16",
-  "val n_above: 11",
-  "val n_states: 36",
-  "val jump_jh: 1.88",
-  "val onion_jun: 68.25",
+  "val onion_s: 108.1",
+  "val onion_jan_m: -29.3",
+  "val onion_jan: -29.3",
+  "val onion_jun_m: 4.73",
   "val onion_sep: 142.9",
   "val potato: -11.5",
   "val tomato: -8.62",
   "val garlic: 54.62",
   "val ginger: 62.85",
+  "val rbi_onion: 85",
+  "val sale_price: 35",
+  "val buffer_proc: 1.21",
+  "val buffer_target: 2",
   "val silver: 87.8",
-  "val effects: 38.69",
-  "val personal: 13.75",
-  "val personal_w: 5.038",
+  "val silver_aug: 106.8",
+  "val gold: 30.92",
+  "val jewel: 43.28",
+  "val airfare: 29.9",
+  "val petrol: 7.51",
+  "val lpg: 5.29",
+  "val elec: -1.04",
   "val rural: 6.08",
   "val urban: 4.88",
   "val rural_jan: 2.73",
   "val urban_jan: 2.75",
-  "val fw_rural: 41.98",
-  "val fw_urban: 30.25",
-  "val fw_new: 36.75",
+  "val puducherry: 6.86",
+  "val tn: 6.81",
+  "val odisha: 6.7",
+  "val mizoram: 2.85",
+  "val n_above: 11",
+  "val n_states: 36",
+  "val jump_jh: 1.88",
+  "val pud_food: 11.16",
+  "val tn_food: 10.62",
+  "val ap_food: 10.18",
+  "val repo_after: 5.5",
+  "val repo_before: 5.25",
+  "val bps: 25",
+  "val proj_fy: 5.2",
+  "val proj_q3: 6",
+  "val proj_q4: 5.7",
   "val n_items: 358",
+  "val n_items_old: 299",
   "val n_villages: 1465",
   "val n_markets: 1407",
   "val base_year: 2024",
+  "val food_div: 7.36",
+  "val bev: 0.25",
+  "val idx_up: 9.49",
+  "val onion_sep25: 68.66",
+  "val prod_r: 307.4",
+  "val diesel: 8.41",
   "inflation rises every month, January to September: Jan-26 to Sep-26 2.74 to 5.54",
   "September is the highest of the nine months: 0.71",
   "food inflation is above the headline: 2.2",
   "headline in the monthly table is the all-India row of the state table: 0",
-  "food in the monthly table is the all-India row of the food state table: 0",
-  "Puducherry rounds to 7: 6.86",
+  "food in the release is the all-India row of the food state table: 0",
+  "the portal's food figure matches the release: 0",
+  "the portal's onion figure matches the release: 0",
+  "the portal's silver figure matches the release: 0",
+  "the index's September level is the portal's: 0",
   "the five highest states: Puducherry 6.86, Tamil Nadu 6.81, Odisha 6.7, Madhya Pradesh 6.68, Telangana 6.64",
   "the three lowest states: Mizoram 2.85, Nagaland 3.22, Delhi 3.4",
-  "the biggest jump from August is Jharkhand: Jharkhand 1.88",
-  "only one state fell from August: 1",
   "the three highest food inflations: Puducherry 11.16, Tamil Nadu 10.62, Andhra Pradesh 10.18",
-  "the onion index more than doubled from June to September: 2.093",
+  "onion was cheaper than a year before in January: -29.3",
+  "onion climbed in July and August: Jun-26 to Sep-26 4.73 to 108.09",
+  "silver jewellery's rise was larger in August: 19.01",
   "villages pulled ahead of cities: 1.2",
   "villages and cities were level in January: -0.02",
+  "food rose faster in villages: 0.88",
   "food is a bigger share of the rural basket: 11.73",
   "food and beverages are the heaviest division: 19.09",
-  "MoSPI's caution on state item indices is in the saved table: found in mospi/cpi2024_states_2026_09",
+  "the RBI's decision sentence: found in rbi/mpc_2026_10",
+  "the RBI's projection sentence: found in rbi/mpc_2026_10",
+  "the minutes are due on 21 October: found in rbi/mpc_2026_10",
+  "the next meeting ends on 4 December: found in rbi/mpc_2026_10",
+  "Consumer Affairs on the buffer release: found in consumer_affairs/onion_2026_08",
+  "Consumer Affairs: prices usually rise in the festive season: found in consumer_affairs/onion_2026_08",
   "October's index is due on 12 November: found in mospi/cpi2024_breakdown_2026_09",
-  "scene 2 Inflation, last point: 5.54",
-  "scene 4 Food and beverages: 7.36",
-  "scene 4 Food and beverages weight: 36.75",
-  "scene 4 Clothing and footwear: 3.93",
-  "scene 4 Clothing and footwear weight: 6.383",
-  "scene 4 Housing, water and fuels: 2.74",
-  "scene 4 Housing, water and fuels weight: 17.66",
-  "scene 4 Furnishings and household goods: 3.11",
-  "scene 4 Furnishings and household goods weight: 4.469",
-  "scene 4 Health: 1.4",
-  "scene 4 Health weight: 6.1",
-  "scene 4 Transport: 5.01",
-  "scene 4 Transport weight: 8.796",
-  "scene 4 Information and communication: 2.44",
-  "scene 4 Information and communication weight: 3.609",
-  "scene 4 Recreation, sport and culture: 2.16",
-  "scene 4 Recreation, sport and culture weight: 1.516",
-  "scene 4 Education services: 3.94",
-  "scene 4 Education services weight: 3.333",
-  "scene 4 Restaurants and accommodation: 9.36",
-  "scene 4 Restaurants and accommodation weight: 3.348",
-  "scene 4 Personal care and other goods: 13.75",
-  "scene 4 Personal care and other goods weight: 5.038",
-  "scene 7 Onion index, last point: 142.9",
-  "scene 8 Onion: 108.1",
-  "scene 8 Ginger: 62.85",
-  "scene 8 Garlic: 54.62",
-  "scene 8 Tomato: -8.62",
-  "scene 8 Potato: -11.5",
-  "scene 12 Rural, last point: 6.08",
-  "scene 12 Urban, last point: 4.88",
-  "scene 12 All India, last point: 5.54",
-  "scene 19 quote is word for word from mospi/cpi2024_breakdown_2026_09"
+  "the new series' index starts in January 2025: found in mospi/cpi2024_monthly",
+  "its yearly rates start in January 2026: found in mospi/cpi2024_monthly",
+  "onion cost more than double a year before: 108.1",
+  "onion's index more than doubled in a year: 2.081",
+  "the rise since 2024 is larger than one year's inflation: 3.95",
+  "food without drinks rose faster than drinks: 7.49",
+  "the August rate was 5.25 per cent (minutes of the August meeting): found in rbi/mpc_2026_10",
+  "a quarter point: the new rate less the August rate: 0.25",
+  "the RBI decision (7 Oct) came five days before the CPI release (12 Oct): 5",
+  "MoSPI says prices are collected by personal visits on a weekly roster: found in mospi/cpi2024_breakdown_2026_09",
+  "MoSPI's caution on state item indices: found in mospi/cpi2024_breakdown_2026_09",
+  "the ministry announced retail sale at 35 rupees a kilo: found in consumer_affairs/onion_2026_08",
+  "the ministry called onion availability comfortable: found in consumer_affairs/onion_2026_08",
+  "the crop estimate is within one per cent of the year before: 0.999",
+  "the RBI says the August-September onion rise is sharper than the usual seasonal pick-up: found in rbi/mpc_2026_10",
+  "the 2012 weights are given in the 2024 structure: found in mospi/cpi2024_breakdown_2026_09",
+  "September is provisional and revised with October's release: found in mospi/cpi2024_states_2026_09",
+  "the division of personal care is the fastest of the divisions shown (scene expect_top guards the rest): 4.39",
+  "against August's first published figures, the biggest jump is Jharkhand: Jharkhand 1.88",
+  "against August's first published figures, only one state fell: 1",
+  "against August's first published figures, the state that fell is Assam: Assam -0.22",
+  "scene 3 Inflation, last point: 5.54",
+  "scene 8 Food and beverages: 7.36",
+  "scene 8 Food and beverages weight: 36.75",
+  "scene 8 Clothing and footwear: 3.93",
+  "scene 8 Clothing and footwear weight: 6.383",
+  "scene 8 Housing, water and fuels: 2.74",
+  "scene 8 Housing, water and fuels weight: 17.66",
+  "scene 8 Furnishings and household goods: 3.11",
+  "scene 8 Furnishings and household goods weight: 4.469",
+  "scene 8 Health: 1.4",
+  "scene 8 Health weight: 6.1",
+  "scene 8 Transport: 5.01",
+  "scene 8 Transport weight: 8.796",
+  "scene 8 Information and communication: 2.44",
+  "scene 8 Information and communication weight: 3.609",
+  "scene 8 Recreation, sport and culture: 2.16",
+  "scene 8 Recreation, sport and culture weight: 1.516",
+  "scene 8 Education services: 3.94",
+  "scene 8 Education services weight: 3.333",
+  "scene 8 Restaurants and accommodation: 9.36",
+  "scene 8 Restaurants and accommodation weight: 3.348",
+  "scene 8 Personal care and miscellaneous: 13.75",
+  "scene 8 Personal care and miscellaneous weight: 5.038",
+  "scene 10 Sugar, confectionery, desserts: 13.76",
+  "scene 10 Fruits and nuts: 10.75",
+  "scene 10 Ready-made and other food: 9.98",
+  "scene 10 Vegetables, tubers, pulses: 9.18",
+  "scene 10 Meat: 8.71",
+  "scene 10 Oils and fats: 8.35",
+  "scene 10 Fish and seafood: 7.9",
+  "scene 10 Milk, dairy and eggs: 5.14",
+  "scene 10 Cereals: 3.94",
+  "scene 11 Sugar: 29.8",
+  "scene 11 Eggs: 8.66",
+  "scene 11 Rice: 8.25",
+  "scene 11 Arhar (tur): 8.19",
+  "scene 11 Milk: 4.21",
+  "scene 11 Wheat: 1.64",
+  "scene 13 Onion, last point: 108.1",
+  "scene 15 Onion: 108.1",
+  "scene 15 Ginger: 62.85",
+  "scene 15 Garlic: 54.62",
+  "scene 15 Tomato: -8.62",
+  "scene 15 Potato: -11.5",
+  "scene 17 quote is word for word from rbi/mpc_2026_10",
+  "scene 20 Domestic air fares: 29.9",
+  "scene 20 Vehicle gas (CNG): 10.51",
+  "scene 20 Diesel: 8.41",
+  "scene 20 Petrol: 7.51",
+  "scene 20 Cooking gas (LPG, piped): 5.29",
+  "scene 20 Electricity charges: -1.04",
+  "scene 23 Rural, last point: 6.08",
+  "scene 23 Urban, last point: 4.88",
+  "scene 23 All India, last point: 5.54"
  ],
  "figures": {
   "headline": {
@@ -2027,6 +3291,14 @@
    "value": 2.74,
    "shows": "2.74%"
   },
+  "base100": {
+   "value": 100.0,
+   "shows": "₹100"
+  },
+  "idx_sep": {
+   "value": 109.49,
+   "shows": "₹109.49"
+  },
   "food": {
    "value": 7.74,
    "shows": "7.74%"
@@ -2035,33 +3307,101 @@
    "value": 5.97,
    "shows": "5.97%"
   },
+  "food_rural": {
+   "value": 8.06,
+   "shows": "8.06%"
+  },
+  "food_urban": {
+   "value": 7.18,
+   "shows": "7.18%"
+  },
+  "rest": {
+   "value": 9.36,
+   "shows": "9.36%"
+  },
+  "personal": {
+   "value": 13.75,
+   "shows": "13.75%"
+  },
+  "personal_w": {
+   "value": 5.038,
+   "shows": "5.0%"
+  },
+  "fw_rural": {
+   "value": 41.983,
+   "shows": "42%"
+  },
+  "fw_urban": {
+   "value": 30.251,
+   "shows": "30%"
+  },
+  "fw_new": {
+   "value": 36.753,
+   "shows": "36.8%"
+  },
+  "fw_old": {
+   "value": 42.617,
+   "shows": "42.6%"
+  },
+  "c_sugar": {
+   "value": 13.76,
+   "shows": "13.8%"
+  },
+  "c_fruit": {
+   "value": 10.75,
+   "shows": "10.8%"
+  },
+  "c_veg": {
+   "value": 9.18,
+   "shows": "9.2%"
+  },
+  "c_veg_aug": {
+   "value": 1.57,
+   "shows": "1.6%"
+  },
+  "c_cereals": {
+   "value": 3.94,
+   "shows": "3.9%"
+  },
+  "i_sugar": {
+   "value": 29.8,
+   "shows": "29.8%"
+  },
+  "i_rice": {
+   "value": 8.25,
+   "shows": "8.3%"
+  },
+  "i_wheat": {
+   "value": 1.64,
+   "shows": "1.6%"
+  },
+  "i_eggs": {
+   "value": 8.66,
+   "shows": "8.7%"
+  },
+  "i_milk": {
+   "value": 4.21,
+   "shows": "4.2%"
+  },
   "onion": {
    "value": 108.09,
    "shows": "108%"
   },
-  "puducherry": {
-   "value": 6.86,
-   "shows": "6.86%"
+  "onion_s": {
+   "value": 108.09,
+   "shows": "+108%"
   },
-  "pud_food": {
-   "value": 11.16,
-   "shows": "11.2%"
+  "onion_jan_m": {
+   "value": -29.3,
+   "shows": "−29.3%"
   },
-  "n_above": {
-   "value": 11.0,
-   "shows": "11"
+  "onion_jan": {
+   "value": -29.3,
+   "shows": "29.3%"
   },
-  "n_states": {
-   "value": 36.0,
-   "shows": "36"
-  },
-  "jump_jh": {
-   "value": 1.88,
-   "shows": "+1.9"
-  },
-  "onion_jun": {
-   "value": 68.25,
-   "shows": "68"
+  "onion_jun_m": {
+   "value": 4.73,
+   "shows": "4.7%"
   },
   "onion_sep": {
    "value": 142.88,
@@ -2083,21 +3423,53 @@
    "value": 62.85,
    "shows": "62.9%"
   },
+  "rbi_onion": {
+   "value": 85,
+   "shows": "85%"
+  },
+  "sale_price": {
+   "value": 35,
+   "shows": "₹35"
+  },
+  "buffer_proc": {
+   "value": 1.21,
+   "shows": "1.21"
+  },
+  "buffer_target": {
+   "value": 2.0,
+   "shows": "2"
+  },
   "silver": {
    "value": 87.8,
-   "shows": "+87.8%"
+   "shows": "87.8%"
   },
-  "effects": {
-   "value": 38.69,
-   "shows": "+38.7%"
+  "silver_aug": {
+   "value": 106.81,
+   "shows": "106.8%"
   },
-  "personal": {
-   "value": 13.75,
-   "shows": "13.75%"
+  "gold": {
+   "value": 30.92,
+   "shows": "30.9%"
   },
-  "personal_w": {
-   "value": 5.038,
-   "shows": "5.0%"
+  "jewel": {
+   "value": 43.28,
+   "shows": "43.3%"
+  },
+  "airfare": {
+   "value": 29.9,
+   "shows": "29.9%"
+  },
+  "petrol": {
+   "value": 7.51,
+   "shows": "7.5%"
+  },
+  "lpg": {
+   "value": 5.29,
+   "shows": "5.3%"
+  },
+  "elec": {
+   "value": -1.04,
+   "shows": "1.0%"
   },
   "rural": {
    "value": 6.08,
@@ -2115,21 +3487,77 @@
    "value": 2.75,
    "shows": "2.75%"
   },
-  "fw_rural": {
-   "value": 41.983,
-   "shows": "42%"
+  "puducherry": {
+   "value": 6.86,
+   "shows": "6.86%"
   },
-  "fw_urban": {
-   "value": 30.251,
-   "shows": "30%"
+  "tn": {
+   "value": 6.81,
+   "shows": "6.81%"
   },
-  "fw_new": {
-   "value": 36.753,
-   "shows": "36.8%"
+  "odisha": {
+   "value": 6.7,
+   "shows": "6.70%"
+  },
+  "mizoram": {
+   "value": 2.85,
+   "shows": "2.85%"
+  },
+  "n_above": {
+   "value": 11.0,
+   "shows": "11"
+  },
+  "n_states": {
+   "value": 36.0,
+   "shows": "36"
+  },
+  "jump_jh": {
+   "value": 1.88,
+   "shows": "+1.9"
+  },
+  "pud_food": {
+   "value": 11.16,
+   "shows": "11.2%"
+  },
+  "tn_food": {
+   "value": 10.62,
+   "shows": "10.6%"
+  },
+  "ap_food": {
+   "value": 10.18,
+   "shows": "10.2%"
+  },
+  "repo_after": {
+   "value": 5.5,
+   "shows": "5.50%"
+  },
+  "repo_before": {
+   "value": 5.25,
+   "shows": "5.25%"
+  },
+  "bps": {
+   "value": 25,
+   "shows": "25"
+  },
+  "proj_fy": {
+   "value": 5.2,
+   "shows": "5.2%"
+  },
+  "proj_q3": {
+   "value": 6.0,
+   "shows": "6.0%"
+  },
+  "proj_q4": {
+   "value": 5.7,
+   "shows": "5.7%"
   },
   "n_items": {
    "value": 358.0,
    "shows": "358"
+  },
+  "n_items_old": {
+   "value": 299.0,
+   "shows": "299"
   },
   "n_villages": {
    "value": 1465.0,
@@ -2142,6 +3570,37 @@
   "base_year": {
    "value": 2024.0,
    "shows": "2024"
+  },
+  "food_div": {
+   "value": 7.36,
+   "shows": "7.36%"
+  },
+  "bev": {
+   "value": 0.25,
+   "shows": "0.25%"
+  },
+  "idx_up": {
+   "value": 9.49,
+   "shows": "9.49%"
+  },
+  "onion_sep25": {
+   "value": 68.66,
+   "shows": "69"
+  },
+  "prod_r": {
+   "value": 307.37,
+   "shows": "307"
+  },
+  "diesel": {
+   "value": 8.41,
+   "shows": "8.4%"
   }
+ },
+ "thumb": {
+  "lines": [
+   "Onion",
+   "*+108%*"
+  ],
+  "sub": "All prices up 5.54% · September 2026"
  }
 }

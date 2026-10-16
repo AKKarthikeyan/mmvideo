@@ -247,3 +247,12 @@ the publisher if the as-on date is more than six months old.
 5. A question-style hook ("More bank offices per person: more women banked?") is new outside the games: it waits for AK.
 6. Two Shorts from one survey round (NFHS-6 ran three times in week five) can share a week, not a day, and each must
    name its own row.
+
+## What the festival round caught (16 Oct 2026)
+1. An all-India item story uses the `basket` type: `{"item": [table, code, column], "item_name": "..."}` reads one row of MoSPI's item table, and the builder checks the row's own name. Any figure typed into a card, the reading, the hook or the title must be one the story reads, or the build stops.
+2. Name the item as MoSPI names it. "Gold /diamond /platinum jewellery" is not the price of gold; "Motor car and jeep" is cars, not "a car"; MoSPI's "Coconut" fell while "Green coconut" rose, so show both or say which.
+3. A price Short posted around a festival must say its period in the hook and title ("in a year", "since last September") and "provisional" in the top bar, or viewers read it as this week's prices. Never "festival prices" for September data.
+4. Map a group or division by state, not a single item: MoSPI cautions that state-level item indices can rest on thin samples. Put the caution in the source line.
+5. MoSPI's bus-and-coach figure covers commuting fares only; it does not fit a travel-home story.
+6. A quote from a publisher (UNESCO) is checked word for word against a saved copy (`"quotes"` in a `place` script); headings use the publisher's own name for the thing.
+7. The plain `end` card prints asterisks literally; use emphasis only on a `mapend` question.

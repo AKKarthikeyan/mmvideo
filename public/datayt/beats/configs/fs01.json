@@ -1,0 +1,274 @@
+{
+ "type": "basket",
+ "rules": 2,
+ "chip": "FESTIVE ITEMS",
+ "source_short": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "id": "fs01",
+ "palette": "A",
+ "hook": [
+  "Festive sweets: *sugar*",
+  "up *29.8%* in the year",
+  "to September 2026."
+ ],
+ "hook_vo": "In the year to September, sugar cost twenty-nine point eight percent more.",
+ "items": [
+  {
+   "kicker": "SUGAR · ALL INDIA",
+   "name": "Sugar",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "01.1.8.1.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Sugar",
+   "sign": true,
+   "text": "Sep 2026 against Sep 2025.",
+   "compare": [
+    {
+     "name": "Jaggery",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.8.1.1.02",
+      "Sep 2026"
+     ],
+     "item_name": "Jaggery (gur)"
+    },
+    {
+     "name": "All food",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1",
+      "Sep 2026"
+     ],
+     "item_name": "Food"
+    }
+   ],
+   "vo": "Jaggery rose twenty-two point six percent. All food, seven point seven."
+  },
+  {
+   "kicker": "READY-MADE SWEETS · ALL INDIA",
+   "name": "Milk sweets",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "01.1.4.7.1.02",
+    "Sep 2026"
+   ],
+   "item_name": "Prepared sweets- milk based",
+   "sign": true,
+   "text": "for sweets made with milk, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Other sweets",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.8.9.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Prepared sweets - non milk based"
+    }
+   ],
+   "sub": "Other sweets: those not made with milk.",
+   "vo": "Ready-made sweets, with milk or without, rose nine point four percent."
+  },
+  {
+   "kicker": "GHEE AND MILK · ALL INDIA",
+   "name": "Ghee",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "01.1.5.2.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Ghee",
+   "sign": true,
+   "text": "for ghee, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Milk",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.4.1.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Milk: liquid"
+    },
+    {
+     "name": "Sugar",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.8.1.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Sugar"
+    }
+   ],
+   "vo": "Ghee rose three point seven percent, and milk four point two."
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Sugar* rose about",
+   "three times as much",
+   "as ready-made *sweets*."
+  ],
+  "vo": "Sugar rose about three times as much as ready-made sweets.",
+  "note": "All-India prices, September 2026 against September 2025. Provisional."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "mospi/cpi2024_states_2026_09",
+    "Food inflation Sep 2026"
+   ]
+  },
+  "title": "Food prices, *every state*",
+  "sub": "% price rise · year on year · India {india} · Sep 2026",
+  "india_dec": 1,
+  "note": "All food, not only sweets. Consumer Food Price Index by state, September 2026, provisional.",
+  "check_india": [
+   {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1",
+     "Sep 2026"
+    ],
+    "item_name": "Food"
+   }
+  ],
+  "vo": "Now, the food price rise in every state."
+ },
+ "end": {
+  "q": "Which festive *sweet* do you buy?",
+  "sub": "Comment below.",
+  "vo": "Which festive sweet do you buy? Comment below."
+ },
+ "tests": [
+  {
+   "says": "sugar rose about three times as much as milk sweets",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.8.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Sugar"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.4.7.1.02",
+       "Sep 2026"
+      ],
+      "item_name": "Prepared sweets- milk based"
+     }
+    ]
+   },
+   "min": 3.0,
+   "max": 3.4
+  },
+  {
+   "says": "sugar rose about three times as much as other sweets",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.8.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Sugar"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.8.9.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Prepared sweets - non milk based"
+     }
+    ]
+   },
+   "min": 3.0,
+   "max": 3.4
+  },
+  {
+   "says": "sugar rose more than jaggery",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.8.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Sugar"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.8.1.1.02",
+       "Sep 2026"
+      ],
+      "item_name": "Jaggery (gur)"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "ghee rose less than milk",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.4.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Milk: liquid"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.5.2.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Ghee"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "milk sweets show 9.4%",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.4.7.1.02",
+     "Sep 2026"
+    ],
+    "item_name": "Prepared sweets- milk based",
+    "scale": 10
+   },
+   "equals": 94
+  },
+  {
+   "says": "other sweets show 9.4%",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.8.9.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Prepared sweets - non milk based",
+    "scale": 10
+   },
+   "equals": 94
+  }
+ ],
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: sugar, jaggery (gur), prepared sweets milk-based and non-milk-based, ghee, liquid milk, food. Food by state: Consumer Food Price Index, eSankhyiki, read 14 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "yt_title": "Festive Sweets: Sugar Up 29.8% in a Year (Sep 2026)"
+}

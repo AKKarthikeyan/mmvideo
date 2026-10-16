@@ -13,7 +13,7 @@ const FPS = 30, W = 1080, H = 1920;
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number; of?: number; big?: string; text?: string; name?: string; geo?: string; sub?: string;
   items?: {big: string; text: string}[]; rank?: number; frac?: number; label?: string; note?: string; a?: string; b?: string; win?: string; sa?: number; sb?: number;
-  title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
+  title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number; neg?: boolean}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
   spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[];
   measure?: string; pa?: {name: string; geo: string; label: string}; pb?: {name: string; geo: string; label: string};
   p0?: {period: string; label: string; frac: number}; p1?: {period: string; label: string; frac: number}; legend?: {color: string; label: string}[]};
@@ -56,6 +56,16 @@ const Shape: React.FC<{name: string; x: number; y: number; w: number; h: number;
   return <svg width={w} height={h} style={{position: "absolute", left: x, top: y, overflow: "visible"}}>
     <g transform={`translate(${w / 2},${h / 2}) scale(${s}) translate(${-(x0 + x1) / 2},${-(y0 + y1) / 2})`}>
       <path d={g.d} fillRule="evenodd" fill={fill} stroke={stroke} strokeWidth={3 / s} strokeLinejoin="round"/>
+    </g>
+  </svg>;
+};
+
+// The whole country's outline, for a card about an all-India figure (a "basket" Short): every state, one fill.
+const IndiaShape: React.FC<{x: number; y: number; w: number; h: number; fill: string; scale?: number}> = ({x, y, w, h, fill, scale = 1}) => {
+  const s = Math.min(w / geo.w, h / geo.h) * scale;
+  return <svg width={w} height={h} style={{position: "absolute", left: x, top: y, overflow: "visible"}}>
+    <g transform={`translate(${(w - geo.w * s) / 2},${(h - geo.h * s) / 2}) scale(${s})`}>
+      {(geo.states as G[]).map((g) => <path key={g.name} d={g.d} fillRule="evenodd" fill={fill} stroke={fill} strokeWidth={1.2 / s} strokeLinejoin="round"/>)}
     </g>
   </svg>;
 };
@@ -466,7 +476,8 @@ const Fact: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   const nameW = Math.min(330, Math.max(170, ...(b.bars ?? []).map((r) => r.name.length * 22 + 14)));
   return <AbsoluteFill>
     <div style={{position: "absolute", left: 60, right: 60, top: 172, fontFamily: SANS, fontWeight: 800, fontSize: 38, letterSpacing: 4, color: D.accent2}}>{b.kicker}</div>
-    <Shape name={b.geo ?? ""} x={60} y={260} w={380} h={430} fill={D.accent} scale={0.6 + 0.4 * p}/>
+    {b.geo === "India" ? <IndiaShape x={60} y={260} w={380} h={430} fill={D.accent} scale={0.6 + 0.4 * p}/>
+      : <Shape name={b.geo ?? ""} x={60} y={260} w={380} h={430} fill={D.accent} scale={0.6 + 0.4 * p}/>}
     <div style={{position: "absolute", left: 480, right: 50, top: 260, height: 430, display: "flex", alignItems: "center", fontFamily: COND, fontWeight: 700,
       fontSize: fit(b.name ?? "", 170, 540, 0.5), lineHeight: 1, color: P.ink}}>{b.name}</div>
     <div style={{position: "absolute", left: 60, right: 60, top: 730, display: "flex", flexDirection: "column"}}>
@@ -477,8 +488,8 @@ const Fact: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
         {(b.bars ?? []).map((r, i) => <div key={i} style={{display: "flex", alignItems: "center", gap: 20, opacity: ease(f, f0 + 10 + i * 5, f0 + 16 + i * 5)}}>
           <div style={{width: nameW, fontFamily: SANS, fontWeight: 700, fontSize: 38, color: P.ink}}>{r.name}</div>
           <div style={{flex: 1, height: 36, borderRadius: 18, background: P.empty}}>
-            <div style={{height: 36, borderRadius: 18, width: `${r.frac * 100 * ease(f, f0 + 12 + i * 5, f0 + 30 + i * 5)}%`, background: i ? P.mute : D.accent}}/></div>
-          <div style={{width: 170, textAlign: "right", fontFamily: COND, fontWeight: 700, fontSize: fit(r.label, 56, 170, 0.47), whiteSpace: "nowrap", color: i ? P.mute : D.accent}}>{r.label}</div>
+            <div style={{height: 36, borderRadius: 18, width: `${r.frac * 100 * ease(f, f0 + 12 + i * 5, f0 + 30 + i * 5)}%`, background: r.neg ? P.good : i ? P.mute : D.accent}}/></div>
+          <div style={{width: 170, textAlign: "right", fontFamily: COND, fontWeight: 700, fontSize: fit(r.label, 56, 170, 0.47), whiteSpace: "nowrap", color: r.neg ? P.good : i ? P.mute : D.accent}}>{r.label}</div>
         </div>)}
       </div>}
       {b.sub && <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 36, lineHeight: 1.3, color: P.mute, marginTop: 34, opacity: ease(f, f0 + 12, f0 + 20)}}>{b.sub}</div>}

@@ -21,6 +21,9 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
               numbers appear, then a card with every answer
   over        A ratio that passes 100: 100 squares for the whole and the extra squares spilling out below, the states
               above the line as bars against it, a finding, then every state on the map
+  basket      All-India prices of a few items (MoSPI's CPI item table): the hook over the whole of India, one card an item
+              against its neighbours, our own reading, then every state's figure for the wider group on the map. Every
+              figure typed into a card must be one the story reads from a table, and every item's name is checked
   place       How a place became part of India: the hook on the map, then one dated event per beat on a timeline,
               each naming the Act, treaty or record it comes from. Every span of years in the script is recomputed
               from the dates in the config
@@ -29,6 +32,7 @@ One story = one config, public/datayt/beats/configs/<id>.json. Data specs are th
 ({"nfhs": id}, {"plfs": [...]}, {"values": {...}}), plus {"coverage": key} for the mobile-coverage table, {"gw": key} for the ground water table,
 {"rbi": [table, year]} for a table of the RBI Handbook of Statistics on Indian States and {"ls": [table id, column]} for a state table from a Lok Sabha answer.
 {"tbl": [path, column]} for any other state table saved in the Handbook's shape under public/datayt/sources/ (markets: NSE, AMFI; population).
+{"item": [path, code, column], "item_name": "..."} for one all-India row of a table with an "items" section keyed by code (MoSPI's CPI items); the name is checked.
 A figure built from tables: {"ratio": [spec, spec], "scale": 100} (a rate, state by state), {"add": [spec, ...]} and {"minus": [spec, spec]}.
 Every claim in a clue ("highest", "lowest") is checked against the data before anything is voiced.
 Writes public/datayt/beats/<id>/data.json, music.wav, narration and src/datayt/beatData.ts. Template: src/datayt/BeatStory.tsx.
@@ -46,6 +50,7 @@ the title claims only numbers the video shows, the length is 30 to 45 seconds. A
 they would break.
 """
 import glob, json, math, os, re, sys
+from decimal import Decimal, ROUND_HALF_UP
 sys.path.insert(0, os.path.dirname(__file__))
 import music_shorts as M
 import voice_dk as V
@@ -112,6 +117,22 @@ def series(spec):
     return base_series(spec)
 
 
+def item_value(q):
+    """One all-India figure from a table with an "items" section keyed by code: {"item": [path, code, column], "item_name": name}.
+    The row's own name must be item_name, so a slip in a code cannot put the wrong item's figure under a label."""
+    path, code, col = q["item"]
+    row = json.load(open(f"public/datayt/sources/{path}.json"))["items"][code]
+    assert "item_name" not in q or row["name"] == q["item_name"], f"{path} {code} is '{row['name']}', not '{q['item_name']}'"
+    assert not code.startswith("02"), "division 02 (paan, tobacco and intoxicants) is never shown"
+    return row[col]
+
+
+def hfmt(v, unit="%", dec=1, sign=False):
+    """A figure as printed, halves rounded up as a reader would (Python's format rounds 8.25 to 8.2), a true minus sign."""
+    r = float(Decimal(repr(float(v))).quantize(Decimal(1).scaleb(-dec), rounding=ROUND_HALF_UP))
+    return ("−" if r < 0 else "+" if sign and r > 0 else "") + f"{abs(r):,.{dec}f}{unit}"
+
+
 def year_table(ref):
     """A table with a column a year: a Handbook table number, or the path of a table saved in the same shape."""
     return json.load(open(f"public/datayt/sources/{ref}.json" if isinstance(ref, str) and not ref.isdigit() else f"public/datayt/sources/rbi_handbook/T{int(ref):03d}.json"))
@@ -174,6 +195,8 @@ def value(q, st):
         return value(q["ratio"][0], st) / value(q["ratio"][1], st) * q.get("scale", 1)
     if "diff" in q:
         return (value(q["diff"][0], st) - value(q["diff"][1], st)) * q.get("scale", 1)
+    if "item" in q:
+        return item_value(q) * q.get("scale", 1)
     spec = q.get("share") or q["data"]
     vals, india = series(spec); s = q.get("state", st)
     v = india if s == "India" else find(vals, s)
@@ -627,13 +650,67 @@ def build(cfg):
                             f"together they have {rs:.2f}% of the all-India extractable resource and {es:.2f}% of the all-India extraction",
                             f"{len(stage)} states and UTs in the table"] + run_checks(sid, cfg, over[0])
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "basket":      # all-India item prices: no state leads the story, so the hook lights the whole country
+        beats[0].update({"kind": "spot", "spots": [{"geo": g_, "name": "", "tone": "a"} for g_ in sorted(GEO)]})
+        dec = cfg.get("dec", 1); checked, shown = [], set()
+        for i, c in enumerate(cfg["items"]):
+            v = item_value(c); u = c.get("unit", "%")
+            rows = [{"name": c["name"], "v": v}] + [{"name": o["name"], "v": item_value(o)} for o in c.get("compare", [])]
+            for r_ in rows:
+                shown.add(hfmt(r_["v"], "", dec).replace("−", "")); checked.append(f"card {i + 1}: {r_['name']} {r_['v']:g}")
+            top = max(abs(r_["v"]) for r_ in rows)
+            ctx = {"v": hfmt(v, u, dec, c.get("sign", False))}
+            beats.append({"kind": "fact", "name": c["name"], "geo": "India", "kicker": c["kicker"], "big": ctx["v"], "text": c.get("text", "").format(**ctx), "sub": c.get("sub", "").format(**ctx),
+                          "bars": [{"name": r_["name"], "label": hfmt(r_["v"], u, dec, c.get("sign", False)), "frac": abs(r_["v"]) / top, "neg": r_["v"] < 0} for r_ in rows] if len(rows) > 1 else [],
+                          "vo": c["vo"].format(**ctx)})
+        so = cfg["so"]
+        beats.append({"kind": "say", "lines": so["lines"], "note": so.get("note", ""), "vo": so["vo"]})
+        m = cfg["map"]; vals, india = series(m["data"]); unit = m.get("unit", "%"); mdec = m.get("dec", 1)
+        for s_ in m.get("drop", []):
+            assert s_ in vals and s_.split(" and ")[0].lower() in (m.get("note") or "").lower(), f"{sid}: map drop '{s_}' must be a row and be named in the note"
+            vals.pop(s_)
+        asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
+        band = {}      # five bands by rank, but two states that print the same figure share one band (a 7.1 in two colours reads as an error)
+        extra["map"] = [{"name": geo(s_), "label": (lab := hfmt(vals[s_], "", mdec)), "bucket": band.setdefault(lab, min(4, k * 5 // n)), "nudge": NUDGE.get(geo(s_), (0, 0))}
+                        for k, s_ in enumerate(asc)]
+        missing = {x["name"] for x in extra["map"]} - set(GEO)
+        assert not missing, f"{sid}: states not on the map: {missing}"
+        ctx = {"india": hfmt(india, unit, m.get("india_dec", 2)) if india is not None else ""}
+        if india is not None:
+            shown.add(hfmt(india, "", m.get("india_dec", 2)))
+        for x in m.get("check_india", []):      # the all-India row of the state table must be the figure the item table prints for the same group
+            got = item_value(x)
+            assert abs(got - india) < 0.005, f"{sid}: the map's all-India figure {india} is not the item table's {x['item_name']} ({got})"
+            checked.append(f"map: all-India {india:g} equals the item table's {x['item_name']} {got:g}")
+        ring = [geo(x) for x in m.get("ring", [])]
+        beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"].format(**ctx)})
+        # every figure typed into a card, the reading or the map's words must be one the story read from a table (years and free words excepted)
+        free = set(cfg.get("free_numbers", []))
+        texts = [b_.get("text", "") + " " + b_.get("sub", "") for b_ in beats if b_["kind"] == "fact"] + so["lines"] + [so.get("note", ""), m.get("note", ""), cfg.get("yt_title", "")] + cfg["hook"]
+        for t_ in texts:
+            for num in re.findall(r"\d[\d,]*(?:\.\d+)?", re.sub(r"\b(19|20)\d\d(-\d\d)?\b", "", t_.replace("*", ""))):
+                assert num in shown or num in free, f"{sid}: '{num}' in '{t_}' is not a figure the story reads (shown: {sorted(shown)})"
+        checked.append("every figure in the cards, the reading, the hook and the title is one read from a table")
+        extra["checked"] = checked + run_checks(sid, cfg, "India")
+        cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
     elif typ == "place":
         import datetime as _dt
-        st0 = cfg["state"]
-        assert geo(st0) in GEO, f"{sid}: {st0} is not on the map"
-        beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0), "note": cfg.get("map_note", "")})
+        st0 = cfg.get("state")
+        if cfg.get("spots"):      # a story of several places: each lit in the first frame, and each event can carry its own state
+            assert all(geo(s_) in GEO for s_ in cfg["spots"]), f"{sid}: a lit state is not on the map"
+            beats[0].update({"kind": "spot", "spots": [{"geo": geo(s_), "name": "", "tone": "a"} for s_ in cfg["spots"]], "note": cfg.get("map_note", "")})
+        else:
+            assert geo(st0) in GEO, f"{sid}: {st0} is not on the map"
+            beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0), "note": cfg.get("map_note", "")})
         day = lambda x: _dt.date(*[int(p_) for p_ in (x.split("-") + ["1", "1"])[:3]])
         checked = []
+        for q_ in cfg.get("quotes", []):      # words shown as a source's own must be in the saved copy of that source, word for word, and on a card
+            node = json.load(open(f"public/datayt/sources/{q_['text'][0]}.json"))
+            for k_ in q_["text"][1:]:
+                node = node[k_]
+            assert q_["contains"] in node, f"{sid}: '{q_['contains']}' is not in {q_['text']}"
+            assert not q_.get("on_card", True) or any(q_["contains"] in (e_.get("cite", "") + " " + e_.get("stat_label", "")) for e_ in cfg["events"]), f"{sid}: the quote '{q_['contains'][:40]}' is on no card"
+            checked.append(f"{q_['says']}: found word for word in {'/'.join(q_['text'])}")
         for k in cfg.get("spans", []):      # every "N years" in the script is recomputed from its two dates
             yrs = (day(k["to"]) - day(k["from"])).days / 365.2425
             got = int(yrs) if "full_years" in k else round(yrs)
@@ -652,7 +729,7 @@ def build(cfg):
         extra["timeline"] = [{"label": t_} for t_ in ticks]
         for e in cfg["events"]:
             beats.append({"kind": "event", "kicker": e["date"], "big": e["year"], "lines": e["head"], "text": e.get("cite", "").format(**ctx), "sub": e.get("stat_label", "").format(**ctx),
-                          "label": e.get("stat", "").format(**ctx), "n": ticks.index(e["tick"]) if e.get("tick") else -1, "geo": geo(st0), "vo": e["vo"]})
+                          "label": e.get("stat", "").format(**ctx), "n": ticks.index(e["tick"]) if e.get("tick") else -1, "geo": geo(e.get("state", st0)), "vo": e["vo"]})
         extra["checked"] = checked
     elif typ == "pick":
         beats.clear()      # no intro: the first frame is round one's question
@@ -683,7 +760,7 @@ def build(cfg):
     beats.append({**{k: v for k, v in e.items() if k not in ("kind", "vo")}, "kind": e.get("kind", "end"), "vo": e.get("vo") or f"{e['q']} {e['sub']}".replace("*", "")})
     for bt in beats:
         g = bt.get("geo")
-        assert g is None or g in GEO, f"{sid}: {g} is not on the map"
+        assert g is None or g in GEO or g == "India", f"{sid}: {g} is not on the map"
     broken = house_rules(sid, cfg, beats, extra)      # before anything is voiced
     if cfg.get("rules", 1) >= 2:
         assert not broken, f"{sid}: breaks the house rules: " + "; ".join(broken)

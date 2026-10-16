@@ -1,0 +1,764 @@
+{
+ "id": "fs01",
+ "type": "basket",
+ "chip": "FESTIVE ITEMS",
+ "sourceShort": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: sugar, jaggery (gur), prepared sweets milk-based and non-milk-based, ghee, liquid milk, food. Food by state: Consumer Food Price Index, eSankhyiki, read 14 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Festive sweets: *sugar*",
+    "up *29.8%* in the year",
+    "to September 2026."
+   ],
+   "vo": "In the year to September, sugar cost twenty-nine point eight percent more.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Sugar",
+   "geo": "India",
+   "kicker": "SUGAR · ALL INDIA",
+   "big": "+29.8%",
+   "text": "Sep 2026 against Sep 2025.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Sugar",
+     "label": "+29.8%",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Jaggery",
+     "label": "+22.6%",
+     "frac": 0.758724832214765,
+     "neg": false
+    },
+    {
+     "name": "All food",
+     "label": "+7.7%",
+     "frac": 0.25973154362416107,
+     "neg": false
+    }
+   ],
+   "vo": "Jaggery rose twenty-two point six percent. All food, seven point seven.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Milk sweets",
+   "geo": "India",
+   "kicker": "READY-MADE SWEETS · ALL INDIA",
+   "big": "+9.4%",
+   "text": "for sweets made with milk, against Sep 2025.",
+   "sub": "Other sweets: those not made with milk.",
+   "bars": [
+    {
+     "name": "Milk sweets",
+     "label": "+9.4%",
+     "frac": 0.9915254237288136,
+     "neg": false
+    },
+    {
+     "name": "Other sweets",
+     "label": "+9.4%",
+     "frac": 1.0,
+     "neg": false
+    }
+   ],
+   "vo": "Ready-made sweets, with milk or without, rose nine point four percent.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Ghee",
+   "geo": "India",
+   "kicker": "GHEE AND MILK · ALL INDIA",
+   "big": "+3.7%",
+   "text": "for ghee, against Sep 2025.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Ghee",
+     "label": "+3.7%",
+     "frac": 0.12449664429530201,
+     "neg": false
+    },
+    {
+     "name": "Milk",
+     "label": "+4.2%",
+     "frac": 0.14127516778523488,
+     "neg": false
+    },
+    {
+     "name": "Sugar",
+     "label": "+29.8%",
+     "frac": 1.0,
+     "neg": false
+    }
+   ],
+   "vo": "Ghee rose three point seven percent, and milk four point two.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Sugar* rose about",
+    "three times as much",
+    "as ready-made *sweets*."
+   ],
+   "note": "All-India prices, September 2026 against September 2025. Provisional.",
+   "vo": "Sugar rose about three times as much as ready-made sweets.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Food prices, *every state*",
+   "sub": "% price rise · year on year · India 7.7% · Sep 2026",
+   "note": "All food, not only sweets. Consumer Food Price Index by state, September 2026, provisional.",
+   "anim": true,
+   "ring": [],
+   "vo": "Now, the food price rise in every state.",
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "note": "All food, not only sweets. Consumer Food Price Index by state, September 2026, provisional.",
+   "ring": [],
+   "q": "Which festive *sweet* do you buy?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which festive sweet do you buy? Comment below.",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "2.1",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Mizoram",
+   "label": "3.6",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.37
+  },
+  {
+   "name": "Nagaland",
+   "label": "3.6",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.422
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "4.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.474
+  },
+  {
+   "name": "Chandigarh",
+   "label": "4.1",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.526
+  },
+  {
+   "name": "Ladakh",
+   "label": "4.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.578
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "4.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.63
+  },
+  {
+   "name": "Meghalaya",
+   "label": "4.7",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.682
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "4.8",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.734
+  },
+  {
+   "name": "Haryana",
+   "label": "4.8",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.786
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "4.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.838
+  },
+  {
+   "name": "West Bengal",
+   "label": "4.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.89
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "5.4",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.942
+  },
+  {
+   "name": "Sikkim",
+   "label": "5.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.994
+  },
+  {
+   "name": "Goa",
+   "label": "5.6",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.046
+  },
+  {
+   "name": "Jharkhand",
+   "label": "6.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.098
+  },
+  {
+   "name": "Manipur",
+   "label": "6.4",
+   "bucket": 2,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.15
+  },
+  {
+   "name": "Assam",
+   "label": "6.6",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.202
+  },
+  {
+   "name": "Bihar",
+   "label": "6.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.254
+  },
+  {
+   "name": "Gujarat",
+   "label": "6.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.305
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "6.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.357
+  },
+  {
+   "name": "Rajasthan",
+   "label": "7.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.409
+  },
+  {
+   "name": "Tripura",
+   "label": "7.1",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 32.461
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "7.8",
+   "bucket": 3,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 32.513
+  },
+  {
+   "name": "Punjab",
+   "label": "7.8",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.565
+  },
+  {
+   "name": "Kerala",
+   "label": "8.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.617
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "8.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.669
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "8.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.721
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "8.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.773
+  },
+  {
+   "name": "Telangana",
+   "label": "8.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.825
+  },
+  {
+   "name": "Maharashtra",
+   "label": "8.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.877
+  },
+  {
+   "name": "Karnataka",
+   "label": "9.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.929
+  },
+  {
+   "name": "Odisha",
+   "label": "9.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.981
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "10.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.033
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "10.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.085
+  },
+  {
+   "name": "Puducherry",
+   "label": "11.2",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.137
+  }
+ ],
+ "checked": [
+  "card 1: Sugar 29.8",
+  "card 1: Jaggery 22.61",
+  "card 1: All food 7.74",
+  "card 2: Milk sweets 9.36",
+  "card 2: Other sweets 9.44",
+  "card 3: Ghee 3.71",
+  "card 3: Milk 4.21",
+  "card 3: Sugar 29.8",
+  "map: all-India 7.74 equals the item table's Food 7.74",
+  "every figure in the cards, the reading, the hook and the title is one read from a table",
+  "sugar rose about three times as much as milk sweets: 3.18",
+  "sugar rose about three times as much as other sweets: 3.16",
+  "sugar rose more than jaggery: 7.19",
+  "ghee rose less than milk: 0.50",
+  "milk sweets show 9.4%: 93.60",
+  "other sweets show 9.4%: 94.40"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "In the year to September, sugar cost twenty-nine point eight percent more."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.336,
+   "at": 5.926,
+   "text": "Jaggery rose twenty-two point six percent. All food, seven point seven."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 6.06,
+   "at": 11.733,
+   "text": "Ready-made sweets, with milk or without, rose nine point four percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.858,
+   "at": 19.475,
+   "text": "Ghee rose three point seven percent, and milk four point two."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.257,
+   "at": 25.281,
+   "text": "Sugar rose about three times as much as ready-made sweets."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.265,
+   "at": 31.088,
+   "text": "Now, the food price rise in every state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.448,
+   "at": 34.959,
+   "text": "Which festive sweet do you buy? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Festive Sweets: Sugar Up 29.8% in a Year (Sep 2026)"
+}

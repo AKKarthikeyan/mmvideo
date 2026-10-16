@@ -1,0 +1,748 @@
+{
+ "id": "fs02",
+ "type": "basket",
+ "chip": "FESTIVE ITEMS",
+ "sourceShort": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: gold/diamond/platinum jewellery, silver jewellery, motor car and jeep, motor cycle and scooter, CPI (General). By state: group 'Other personal effects', eSankhyiki, read 16 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Dussehra buys, in a year:",
+    "gold jewellery up *30.9%*,",
+    "cars *4.5%* cheaper."
+   ],
+   "vo": "Gold jewellery up thirty point nine percent; cars four point five percent cheaper.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Gold",
+   "geo": "India",
+   "kicker": "GOLD JEWELLERY · ALL INDIA",
+   "big": "+30.9%",
+   "text": "for gold, diamond and platinum jewellery.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Gold",
+     "label": "+30.9%",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Consumer prices",
+     "label": "+5.5%",
+     "frac": 0.17917205692108668,
+     "neg": false
+    }
+   ],
+   "vo": "This covers gold, diamond and platinum jewellery; prices overall, five point five percent.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Silver",
+   "geo": "India",
+   "kicker": "SILVER JEWELLERY · ALL INDIA",
+   "big": "+87.8%",
+   "text": "for silver jewellery, against Sep 2025.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Silver",
+     "label": "+87.8%",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Gold",
+     "label": "+30.9%",
+     "frac": 0.3521640091116173,
+     "neg": false
+    }
+   ],
+   "vo": "Silver jewellery rose eighty-seven point eight percent.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Cars",
+   "geo": "India",
+   "kicker": "VEHICLES · ALL INDIA",
+   "big": "−4.5%",
+   "text": "for cars and jeeps: cheaper than a year earlier.",
+   "sub": "Two-wheelers: motorcycles and scooters.",
+   "bars": [
+    {
+     "name": "Cars",
+     "label": "−4.5%",
+     "frac": 1.0,
+     "neg": true
+    },
+    {
+     "name": "Two-wheeler",
+     "label": "−1.7%",
+     "frac": 0.376940133037694,
+     "neg": true
+    }
+   ],
+   "vo": "Cars cost four point five percent less; two-wheelers, one point seven less.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Gold jewellery* rose",
+    "over five times as much",
+    "as prices *overall*."
+   ],
+   "note": "All-India prices, September 2026 against September 2025. Provisional.",
+   "vo": "Gold jewellery rose over five times as much as prices overall.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Jewellery and personal items, *every state*",
+   "sub": "% price rise · year on year · India 38.7% · Sep 2026",
+   "note": "MoSPI's group 'Other personal effects': jewellery and watches, with bags and the like. September 2026, provisional.",
+   "anim": true,
+   "ring": [],
+   "vo": "Jewellery and personal items, across all the states.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "MoSPI's group 'Other personal effects': jewellery and watches, with bags and the like. September 2026, provisional.",
+   "ring": [],
+   "q": "What does your family buy at *Dussehra*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "What does your family buy at Dussehra? Comment below.",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Mizoram",
+   "label": "−0.1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 33.359
+  },
+  {
+   "name": "Meghalaya",
+   "label": "6.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.465
+  },
+  {
+   "name": "Goa",
+   "label": "8.8",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.57
+  },
+  {
+   "name": "Ladakh",
+   "label": "13.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.676
+  },
+  {
+   "name": "Tripura",
+   "label": "15.6",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.782
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "16.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.888
+  },
+  {
+   "name": "Assam",
+   "label": "21.7",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.993
+  },
+  {
+   "name": "West Bengal",
+   "label": "24.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.099
+  },
+  {
+   "name": "Manipur",
+   "label": "24.5",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 34.205
+  },
+  {
+   "name": "Puducherry",
+   "label": "27.6",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.31
+  },
+  {
+   "name": "Maharashtra",
+   "label": "28.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.416
+  },
+  {
+   "name": "Punjab",
+   "label": "29.1",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.522
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "30.9",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.628
+  },
+  {
+   "name": "Kerala",
+   "label": "31.3",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.733
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "33.4",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.839
+  },
+  {
+   "name": "Sikkim",
+   "label": "33.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 34.945
+  },
+  {
+   "name": "Odisha",
+   "label": "34.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.051
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "34.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.157
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "37.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.262
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "37.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.368
+  },
+  {
+   "name": "Bihar",
+   "label": "38.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.474
+  },
+  {
+   "name": "Rajasthan",
+   "label": "38.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.58
+  },
+  {
+   "name": "Gujarat",
+   "label": "39.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.685
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "40.0",
+   "bucket": 3,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 35.791
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "40.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.897
+  },
+  {
+   "name": "Karnataka",
+   "label": "40.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.003
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "40.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.108
+  },
+  {
+   "name": "Jharkhand",
+   "label": "42.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.214
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "43.2",
+   "bucket": 4,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 36.32
+  },
+  {
+   "name": "Haryana",
+   "label": "44.8",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 36.425
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "46.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.531
+  },
+  {
+   "name": "Chandigarh",
+   "label": "47.0",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 36.637
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "47.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.743
+  },
+  {
+   "name": "Telangana",
+   "label": "50.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.849
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "58.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.954
+  }
+ ],
+ "checked": [
+  "card 1: Gold 30.92",
+  "card 1: Consumer prices 5.54",
+  "card 2: Silver 87.8",
+  "card 2: Gold 30.92",
+  "card 3: Cars -4.51",
+  "card 3: Two-wheeler -1.7",
+  "map: all-India 38.69 equals the item table's Other personal effects 38.69",
+  "every figure in the cards, the reading, the hook and the title is one read from a table",
+  "gold jewellery rose over five times as much as prices overall: 5.58",
+  "silver rose more than gold: 56.88",
+  "cars cost less than a year earlier: -4.51",
+  "two-wheelers cost less than a year earlier: -1.70"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.597,
+   "at": 0.12,
+   "text": "Gold jewellery up thirty point nine percent; cars four point five percent cheaper."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 7.288,
+   "at": 5.926,
+   "text": "This covers gold, diamond and platinum jewellery; prices overall, five point five percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.578,
+   "at": 13.668,
+   "text": "Silver jewellery rose eighty-seven point eight percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.746,
+   "at": 19.475,
+   "text": "Cars cost four point five percent less; two-wheelers, one point seven less."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.97,
+   "at": 27.217,
+   "text": "Gold jewellery rose over five times as much as prices overall."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.657,
+   "at": 33.023,
+   "text": "Jewellery and personal items, across all the states."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.977,
+   "at": 38.83,
+   "text": "What does your family buy at Dussehra? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Dussehra Buys: Gold Jewellery Up 30.9% in a Year"
+}

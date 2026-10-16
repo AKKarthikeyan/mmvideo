@@ -93,5 +93,10 @@ least 14 stories queued, picking from `docs/DATAYT_SHORTS_PLAN.md` and `public/d
 | 85 | px82 | Rajasthan Has 2x Gujarat's Colleges per University, 2023-24 | see pack | n/a | drafted (2026-10-14; beat template `paradox`; School and health day; script reviewed and fixed before voicing; week five) |
 | 86 | fa85 | Goa: Over Half Said They Knew 3+ Languages, Census 2011 | see pack | n/a | drafted (2026-10-14; beat template `fact`; Know your states day; script reviewed and fixed before voicing; week five) |
 | 87 | tn86 | West Bengal's Coastline: 157.5 km Old, 721 km Recalculated | see pack | n/a | drafted (2026-10-14; beat template `then`; Know your states day; script reviewed and fixed before voicing; week five) |
+| 88 | fs03 | Going Home for the Holidays: Air Fares Up 29.9% in a Year | see pack | n/a | drafted (2026-10-16; beat template `basket`; festival special, Navaratri and Dussehra; script reviewed and fixed before voicing) |
+| 89 | fs04 | Coconut Oil 29.5% Cheaper, Sarees 6.0% Dearer in a Year | see pack | n/a | drafted (2026-10-16; beat template `basket`; festival special, Navaratri and Dussehra; script reviewed and fixed before voicing) |
+| 90 | fs02 | Dussehra Buys: Gold Jewellery Up 30.9% in a Year | see pack | n/a | drafted (2026-10-16; beat template `basket`; festival special, Navaratri and Dussehra; script reviewed and fixed before voicing) |
+| 91 | fs05 | Ramlila, Durga Puja, Garba, Deepavali: on UNESCO's List | see pack | n/a | drafted (2026-10-16; beat template `place`; festival special, Navaratri and Dussehra; script reviewed and fixed before voicing) |
+| 92 | fs01 | Festive Sweets: Sugar Up 29.8% in a Year (Sep 2026) | see pack | n/a | drafted (2026-10-16; beat template `basket`; festival special, Navaratri and Dussehra; script reviewed and fixed before voicing) |
 
 Checked 2026-10-09 by dk-planner against `public/datayt/nfhs6/nfhs6_states.json` (total column, India and Lakshadweep excluded, no `*`/`( )` cells at #1). Hooks for gts01, gts02, gts03 and gts10 reworded to match the numbers.

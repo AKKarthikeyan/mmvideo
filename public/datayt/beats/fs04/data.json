@@ -1,0 +1,758 @@
+{
+ "id": "fs04",
+ "type": "basket",
+ "chip": "FESTIVE ITEMS",
+ "sourceShort": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: saree, clothing, flower (fresh), banana, coconut oil, coconut, green coconut. By state: division 'Clothing and footwear', eSankhyiki, read 16 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Festival shopping:",
+    "coconut oil *29.5%* cheaper,",
+    "sarees up *6.0%* in a year."
+   ],
+   "vo": "Coconut oil cost twenty-nine point five percent less; sarees, six percent more.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Sarees",
+   "geo": "India",
+   "kicker": "SAREES · ALL INDIA",
+   "big": "+6.0%",
+   "text": "for sarees, against Sep 2025.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Sarees",
+     "label": "+6.0%",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Clothing",
+     "label": "+4.3%",
+     "frac": 0.7142857142857143,
+     "neg": false
+    }
+   ],
+   "vo": "Clothing overall rose four point three percent.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "kind": "fact",
+   "name": "Flowers",
+   "geo": "India",
+   "kicker": "FLOWERS AND FRUIT · ALL INDIA",
+   "big": "+4.9%",
+   "text": "for fresh flowers, against Sep 2025.",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Flowers",
+     "label": "+4.9%",
+     "frac": 0.6493333333333333,
+     "neg": false
+    },
+    {
+     "name": "Bananas",
+     "label": "+7.5%",
+     "frac": 1.0,
+     "neg": false
+    }
+   ],
+   "vo": "Fresh flowers rose four point nine percent; bananas, seven point five.",
+   "t0": 9.677,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Coconut oil",
+   "geo": "India",
+   "kicker": "COCONUT · ALL INDIA",
+   "big": "−29.5%",
+   "text": "for coconut oil, against Sep 2025.",
+   "sub": "Green coconut is a separate item, and it rose.",
+   "bars": [
+    {
+     "name": "Coconut oil",
+     "label": "−29.5%",
+     "frac": 1.0,
+     "neg": true
+    },
+    {
+     "name": "Coconut",
+     "label": "−4.0%",
+     "frac": 0.13520840393087089,
+     "neg": true
+    },
+    {
+     "name": "Green coconut",
+     "label": "+8.3%",
+     "frac": 0.28092172145035577,
+     "neg": false
+    }
+   ],
+   "vo": "Coconut cost four percent less; green coconut, eight point three percent more.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Clothes*, *flowers*, *bananas* up;",
+    "*coconut oil* fell the most."
+   ],
+   "note": "All-India prices, September 2026 against September 2025. Provisional.",
+   "vo": "Clothes, flowers and bananas cost more; coconut oil fell the most.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Clothing price rise, *every state*",
+   "sub": "% price rise · year on year · India 3.9% · Sep 2026",
+   "note": "Clothing and footwear only, not flowers or coconut. MoSPI's division, by state; clothing alone: 4.3% across India. Sep 2026, provisional.",
+   "anim": true,
+   "ring": [],
+   "vo": "Clothing and footwear prices, in each state.",
+   "t0": 27.097,
+   "t1": 30.968
+  },
+  {
+   "note": "Clothing and footwear only, not flowers or coconut. MoSPI's division, by state; clothing alone: 4.3% across India. Sep 2026, provisional.",
+   "ring": [],
+   "q": "What's on your *festival* list?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "What's on your festival list? Comment below.",
+   "t0": 30.968,
+   "t1": 34.839
+  }
+ ],
+ "total": 35.239,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Nagaland",
+   "label": "−1.2",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.499
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "0.6",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 27.551
+  },
+  {
+   "name": "Goa",
+   "label": "0.8",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 27.603
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "0.9",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 27.655
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "1.1",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 27.707
+  },
+  {
+   "name": "Manipur",
+   "label": "1.3",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 27.759
+  },
+  {
+   "name": "Kerala",
+   "label": "1.6",
+   "bucket": 0,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 27.811
+  },
+  {
+   "name": "Assam",
+   "label": "1.7",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 27.863
+  },
+  {
+   "name": "Puducherry",
+   "label": "1.8",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 27.915
+  },
+  {
+   "name": "Chandigarh",
+   "label": "2.2",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 27.967
+  },
+  {
+   "name": "Tripura",
+   "label": "2.3",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 28.019
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "2.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.071
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "2.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.123
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "2.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.175
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.227
+  },
+  {
+   "name": "Telangana",
+   "label": "3.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.279
+  },
+  {
+   "name": "Mizoram",
+   "label": "3.7",
+   "bucket": 2,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.331
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "3.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.383
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "3.8",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 28.434
+  },
+  {
+   "name": "Maharashtra",
+   "label": "3.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.486
+  },
+  {
+   "name": "Bihar",
+   "label": "4.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.538
+  },
+  {
+   "name": "Karnataka",
+   "label": "4.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.59
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "4.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.642
+  },
+  {
+   "name": "Rajasthan",
+   "label": "4.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.694
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "4.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.746
+  },
+  {
+   "name": "Gujarat",
+   "label": "4.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.798
+  },
+  {
+   "name": "Odisha",
+   "label": "4.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.85
+  },
+  {
+   "name": "Punjab",
+   "label": "4.6",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 28.902
+  },
+  {
+   "name": "West Bengal",
+   "label": "4.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.954
+  },
+  {
+   "name": "Haryana",
+   "label": "5.0",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.006
+  },
+  {
+   "name": "Jharkhand",
+   "label": "5.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.058
+  },
+  {
+   "name": "Ladakh",
+   "label": "5.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.11
+  },
+  {
+   "name": "Sikkim",
+   "label": "6.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.162
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "6.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.214
+  },
+  {
+   "name": "Meghalaya",
+   "label": "6.5",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 29.266
+  }
+ ],
+ "checked": [
+  "card 1: Sarees 5.95",
+  "card 1: Clothing 4.25",
+  "card 2: Flowers 4.87",
+  "card 2: Bananas 7.5",
+  "card 3: Coconut oil -29.51",
+  "card 3: Coconut -3.99",
+  "card 3: Green coconut 8.29",
+  "map: all-India 3.93 equals the item table's Clothing and footwear 3.93",
+  "every figure in the cards, the reading, the hook and the title is one read from a table",
+  "sarees show 6.0%: 59.50",
+  "coconut oil shows -29.5%: -295.10",
+  "coconut oil fell more than coconut: 25.52",
+  "coconut oil fell more than green coconut: 37.80",
+  "green coconut rose: 8.29",
+  "coconut fell: -3.99",
+  "flowers rose: 4.87",
+  "bananas rose: 7.50"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Coconut oil cost twenty-nine point five percent less; sarees, six percent more."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.16,
+   "at": 5.926,
+   "text": "Clothing overall rose four point three percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.015,
+   "at": 9.797,
+   "text": "Fresh flowers rose four point nine percent; bananas, seven point five."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.25,
+   "at": 15.604,
+   "text": "Coconut cost four percent less; green coconut, eight point three percent more."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.728,
+   "at": 21.41,
+   "text": "Clothes, flowers and bananas cost more; coconut oil fell the most."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.448,
+   "at": 27.217,
+   "text": "Clothing and footwear prices, in each state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.768,
+   "at": 31.088,
+   "text": "What's on your festival list? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Coconut Oil 29.5% Cheaper, Sarees 6.0% Dearer in a Year"
+}

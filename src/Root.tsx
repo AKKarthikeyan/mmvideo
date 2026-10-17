@@ -73,6 +73,8 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bku" component={BankNapkin2 as any} defaultProps={{sid: "bku", label: "Persistent · Nagarro"}} durationInFrames={bkTotal2(BK2.bku)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkv" component={BankNapkin2 as any} defaultProps={{sid: "bkv", label: "DMart Q2"}} durationInFrames={bkTotal2(BK2.bkv)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bkw" component={BankNapkin2 as any} defaultProps={{sid: "bkw", label: "ICICI Pru AMC"}} durationInFrames={bkTotal2(BK2.bkw)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkx" component={BankNapkin2 as any} defaultProps={{sid: "bkx", label: "Den · GTPL"}} durationInFrames={bkTotal2(BK2.bkx)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bky" component={BankNapkin2 as any} defaultProps={{sid: "bky", label: "ICICI Lombard"}} durationInFrames={bkTotal2(BK2.bky)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-intro" component={NapkinIntro} durationInFrames={napIntroTotal} fps={NIFPS} width={1920} height={1080}/>
     <Composition id="ILLUS-dev" component={IllusDev as any} defaultProps={{scene: {type: "kitdemo"}, say: "", sec: 8}} durationInFrames={1800} fps={30} width={1920} height={1080}/>
     <Composition id="ILLUS-icon" component={IllusIcon as any} defaultProps={{name: "store"}} durationInFrames={1} fps={30} width={512} height={512}/>

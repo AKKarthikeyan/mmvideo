@@ -246,6 +246,303 @@ const V6: React.FC = () => (
   </g>
 );
 
+// ---------- 7-9: cablerest: a stack of coins, two stacks, a television ----------
+// One coin of a stack: (cx, yTop) is the centre of its top face.
+const CoinC: React.FC<{cx: number; yTop: number; fill: string; side: string; rx?: number}> = ({cx, yTop, fill, side, rx = 120}) => {
+  const ry = 34, h = 40;
+  return (
+    <g>
+      <path d={`M ${cx - rx} ${yTop} L ${cx - rx} ${yTop + h} A ${rx} ${ry} 0 0 0 ${cx + rx} ${yTop + h} L ${cx + rx} ${yTop} Z`} fill={side} stroke={INK} strokeWidth={9}/>
+      <ellipse cx={cx} cy={yTop} rx={rx} ry={ry} fill={fill} stroke={INK} strokeWidth={9}/>
+    </g>
+  );
+};
+
+// 7: one stack of coins: the lower coins gold (what subscription covers), the upper ones red (the rest)
+const V7: React.FC = () => {
+  const cx = 1100, base = 606, step = 42;
+  const coins = Array.from({length: 8}, (_, i) => i); // 0 = bottom
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={cx} cy={420} color={T.yellowHi}/>
+      <ellipse cx={cx + 14} cy={base + 62} rx={130} ry={26} fill={INK} opacity={0.35}/>
+      {coins.map((i) => <CoinC key={i} cx={cx} yTop={base - i * step} fill={i < 5 ? P.gold : P.red} side={i < 5 ? "#C9981C" : "#B63A27"} rx={100}/>)}
+      <Big x={50} y={235} size={196} text="WHAT COVERS"/>
+      <Big x={50} y={440} size={216} parts={[["THE ", WHITE], ["REST?", P.red]]}/>
+    </g>
+  );
+};
+
+// 8: a short stack against a tall one, the two Den figures over them
+const V8: React.FC = () => {
+  const base = 620, step = 38;
+  const stack = (cx: number, n: number, fill: string, side: string) => Array.from({length: n}, (_, i) => <CoinC key={`${cx}-${i}`} cx={cx} yTop={base - i * step} fill={fill} side={side} rx={112}/>);
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={640} cy={420} color={T.yellowHi}/>
+      <ellipse cx={540} cy={base + 62} rx={560} ry={26} fill={INK} opacity={0.3}/>
+      {stack(215, 4, P.gold, "#C9981C")}
+      {stack(850, 8, P.red, "#B63A27")}
+      <Big x={215} y={228} size={210} anchor="middle" text="₹86"/>
+      <Big x={850} y={228} size={210} anchor="middle" fill={P.red} text="₹162"/>
+      <Big x={520} y={400} size={120} anchor="middle" fill={T.sun} text="vs" rot={-4}/>
+      <Slab x={1130} y={560} text="DEN" size={96} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+    </g>
+  );
+};
+
+// 9: a television, and who pays for what is on it
+const V9: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={1030} cy={430} color={T.yellowHi}/>
+    <g transform="translate(1030 440) rotate(3)">
+      <path d="M -40 -150 L -110 -250 M 40 -150 L 110 -250" fill="none" stroke={INK} strokeWidth={14}/>
+      <circle cx={-110} cy={-250} r={14} fill={INK}/><circle cx={110} cy={-250} r={14} fill={INK}/>
+      <rect x={-170} y={-130} width={374} height={266} rx={34} fill={INK}/>
+      <rect x={-190} y={-150} width={374} height={266} rx={34} fill={P.blue} stroke={INK} strokeWidth={11}/>
+      <rect x={-160} y={-120} width={246} height={206} rx={18} fill={WHITE} stroke={INK} strokeWidth={9}/>
+      <text x={-37} y={58} fontFamily={COND} fontWeight={700} fontSize={220} textAnchor="middle" fill={P.red} stroke={INK} strokeWidth={9} paintOrder="stroke">?</text>
+      <circle cx={134} cy={-70} r={19} fill={T.sun} stroke={INK} strokeWidth={8}/>
+      <circle cx={134} cy={-14} r={19} fill={WHITE} stroke={INK} strokeWidth={8}/>
+      <rect x={-130} y={114} width={46} height={34} fill={INK}/><rect x={86} y={114} width={46} height={34} fill={INK}/>
+    </g>
+    <Big x={50} y={225} size={200} text="WHO PAYS"/>
+    <Big x={50} y={410} size={160} fill={T.sun} text="FOR"/>
+    <Big x={50} y={610} size={150} fill={P.red} text="CHANNELS?"/>
+  </g>
+);
+
+// ---------- 10-12: lombardfloat: a scale, two stacks, an hourglass ----------
+// 10: a balance with the waiting money (gold coins) outweighing the insurance loss (a red tag): "insurance loss, still profit?"
+const V10: React.FC = () => {
+  const px = 985, py = 290, L = 190, th = (9 * Math.PI) / 180, dx = L * Math.cos(th), dy = L * Math.sin(th), drop = 135, pw = 88;
+  const lx = px - dx, ly = py - dy + drop, rx = px + dx, ry = py + dy + drop;
+  const pan = (cx: number, cy: number) => (
+    <g>
+      <path d={`M ${cx - pw} ${cy - 6} L ${cx + pw} ${cy - 6} A ${pw} 52 0 0 1 ${cx - pw} ${cy - 6} Z`} fill={INK} transform="translate(8 10)"/>
+      <path d={`M ${cx - pw} ${cy - 6} L ${cx + pw} ${cy - 6} A ${pw} 52 0 0 1 ${cx - pw} ${cy - 6} Z`} fill={P.mustard} stroke={INK} strokeWidth={9}/>
+    </g>
+  );
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={px} cy={430} color={T.yellowHi}/>
+      <rect x={px - 150} y={640} width={300} height={34} rx={10} fill={INK}/>
+      <rect x={px - 14} y={py} width={28} height={360} fill={INK}/>
+      <path d={`M ${px - dx} ${py - dy} L ${lx - pw + 10} ${ly - 6} M ${px - dx} ${py - dy} L ${lx + pw - 10} ${ly - 6} M ${px + dx} ${py + dy} L ${rx - pw + 10} ${ry - 6} M ${px + dx} ${py + dy} L ${rx + pw - 10} ${ry - 6}`} stroke={INK} strokeWidth={6} fill="none"/>
+      <line x1={px - dx} y1={py - dy} x2={px + dx} y2={py + dy} stroke={INK} strokeWidth={22}/>
+      <circle cx={px} cy={py} r={22} fill={P.gold} stroke={INK} strokeWidth={9}/>
+      {pan(lx, ly)}
+      {pan(rx, ry)}
+      {/* left: the loss, a red tag */}
+      <g transform={`translate(${lx} ${ly - 44}) rotate(-8)`}>
+        <path d="M -52 -30 L 30 -30 L 58 0 L 30 30 L -52 30 Z" fill={INK} transform="translate(5 6)"/>
+        <path d="M -52 -30 L 30 -30 L 58 0 L 30 30 L -52 30 Z" fill={P.red} stroke={INK} strokeWidth={7}/>
+        <circle cx={32} cy={0} r={7} fill={T.yellow} stroke={INK} strokeWidth={4}/>
+      </g>
+      {/* right: the waiting money, gold coins */}
+      {[0, 1, 2, 3].map((i) => <CoinC key={i} cx={rx} yTop={ry - 30 - i * 30} fill={P.gold} side="#C9981C" rx={62}/>)}
+      <Big x={50} y={150} size={128} text="INSURANCE"/>
+      <Big x={50} y={300} size={150} fill={P.red} text="LOSS."/>
+      <Big x={50} y={455} size={128} text="STILL"/>
+      <Big x={50} y={640} size={178} fill={T.sun} text="PROFIT?"/>
+    </g>
+  );
+};
+
+// 11: a short red stack against a tall gold one, three coins to nine (the loss and the profit are about 1 to 3)
+const V11: React.FC = () => {
+  const base = 626, step = 38;
+  const stack = (cx: number, n: number, fill: string, side: string) => Array.from({length: n}, (_, i) => <CoinC key={`${cx}-${i}`} cx={cx} yTop={base - i * step} fill={fill} side={side} rx={112}/>);
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={640} cy={420} color={T.yellowHi}/>
+      <ellipse cx={640} cy={base + 62} rx={580} ry={26} fill={INK} opacity={0.3}/>
+      {stack(230, 3, P.red, "#B63A27")}
+      {stack(900, 9, P.gold, "#C9981C")}
+      <Big x={265} y={450} size={170} anchor="middle" fill={P.red} text="−₹318"/>
+      <Big x={900} y={235} size={190} anchor="middle" text="₹946"/>
+      <Big x={565} y={400} size={120} anchor="middle" fill={T.sun} text="vs" rot={-4}/>
+      <Slab x={215} y={100} text="LOMBARD" size={68} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+    </g>
+  );
+};
+
+// 12: an hourglass of coins: the money that waits ("what is float?")
+const V12: React.FC = () => {
+  const glass = "M -135 -215 H 135 L 20 0 L 135 215 H -135 L -20 0 Z";
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <rect width={TW} height={TH} fill={T.yellow}/>
+      <Rays cx={1060} cy={420} color={T.yellowHi}/>
+      <g transform="translate(1075 392)">
+        <path d={glass} fill={INK} transform="translate(12 14)"/>
+        <clipPath id="t12-glass"><path d={glass}/></clipPath>
+        <path d={glass} fill={WHITE}/>
+        <g clipPath="url(#t12-glass)">
+          <rect x={-140} y={-120} width={280} height={125} fill={P.gold}/>
+          <path d="M -140 215 L -140 120 Q 0 70 140 120 L 140 215 Z" fill={P.gold}/>
+          <rect x={-5} y={0} width={10} height={130} fill={P.gold}/>
+        </g>
+        <path d={glass} fill="none" stroke={INK} strokeWidth={11}/>
+        <rect x={-165} y={-250} width={330} height={36} rx={10} fill={P.red} stroke={INK} strokeWidth={9}/>
+        <rect x={-165} y={214} width={330} height={36} rx={10} fill={P.red} stroke={INK} strokeWidth={9}/>
+        <circle cx={-40} cy={-150} r={26} fill={T.sun} stroke={INK} strokeWidth={7}/>
+        <circle cx={30} cy={-120} r={22} fill={T.sun} stroke={INK} strokeWidth={7}/>
+      </g>
+      <Big x={50} y={240} size={190} text="WHAT IS"/>
+      <Big x={50} y={455} size={235} fill={P.red} text="FLOAT?"/>
+    </g>
+  );
+};
+
+// ---------- 13-15: e2egpu: a GPU rack, a rack with one slice pulled out, one tray (the slice) ----------
+// The machine is green everywhere in this video: green trays, green lights, ink cabinet.
+const GTray: React.FC<{x: number; y: number; w: number; h: number; fill?: string}> = ({x, y, w, h, fill = P.green}) => (
+  <g>
+    <rect x={x} y={y} width={w} height={h} rx={8} fill={fill} stroke={INK} strokeWidth={8}/>
+    {Array.from({length: 6}, (_, i) => <rect key={i} x={x + 26 + i * ((w - 150) / 6)} y={y + h * 0.26} width={(w - 150) / 6 - 16} height={h * 0.48} rx={5} fill="#2B5A38" stroke={INK} strokeWidth={4}/>)}
+    <circle cx={x + w - 72} cy={y + h / 2} r={h * 0.13} fill={T.note} stroke={INK} strokeWidth={4}/>
+    <circle cx={x + w - 36} cy={y + h / 2} r={h * 0.13} fill={T.sun} stroke={INK} strokeWidth={4}/>
+  </g>
+);
+const GRack: React.FC<{x: number; y: number; w: number; n: number; th: number; gap: number; pull?: number; pullDx?: number}> = ({x, y, w, n, th, gap, pull = -1, pullDx = 0}) => {
+  const pad = 22, h = pad * 2 + n * th + (n - 1) * gap;
+  return (
+    <g>
+      <rect x={x + 16} y={y + 18} width={w} height={h} rx={18} fill={INK}/>
+      <rect x={x} y={y} width={w} height={h} rx={18} fill="#3A3A3A" stroke={INK} strokeWidth={11}/>
+      {Array.from({length: n}, (_, i) => i === pull
+        ? <rect key={i} x={x + pad} y={y + pad + i * (th + gap)} width={w - pad * 2} height={th} rx={8} fill={INK}/>
+        : <GTray key={i} x={x + pad} y={y + pad + i * (th + gap)} w={w - pad * 2} h={th}/>)}
+      <rect x={x + 40} y={y + h} width={34} height={26} fill={INK}/><rect x={x + w - 74} y={y + h} width={34} height={26} fill={INK}/>
+      {pull >= 0 ? (
+        <g transform={`translate(${pullDx} 0)`}>
+          <rect x={x + pad + 12} y={y + pad + pull * (th + gap) + 14} width={w - pad * 2} height={th} rx={8} fill={INK}/>
+          <GTray x={x + pad} y={y + pad + pull * (th + gap)} w={w - pad * 2} h={th}/>
+        </g>
+      ) : null}
+    </g>
+  );
+};
+
+// 13: the whole rack, and where the ₹44 went
+const V13: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={1040} cy={400} color={T.yellowHi}/>
+    <GRack x={930} y={60} w={300} n={7} th={62} gap={14}/>
+    <Big x={50} y={230} size={168} text="WHERE DID"/>
+    <Big x={50} y={455} size={215} fill={P.red} text="₹44 GO?"/>
+    <Slab x={200} y={600} text="E2E" size={84} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+  </g>
+);
+
+// 14: the rack with one tray pulled out: the slice
+const V14: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={1010} cy={400} color={T.yellowHi}/>
+    <GRack x={930} y={60} w={300} n={7} th={62} gap={14} pull={3} pullDx={-190}/>
+    <Big x={50} y={250} size={210} text="TWO"/>
+    <Big x={50} y={470} size={165} fill={P.red} text="STORIES?"/>
+    <Slab x={200} y={610} text="E2E" size={84} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+  </g>
+);
+
+// 15: one tray on its own, big: the slice of the machine
+const V15: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={640} cy={520} color={T.yellowHi}/>
+    <g transform="translate(250 395) rotate(-4)">
+      <rect x={16} y={18} width={780} height={150} rx={14} fill={INK}/>
+      <GTray x={0} y={0} w={780} h={150}/>
+    </g>
+    <Big x={640} y={250} size={180} anchor="middle" parts={[["WHY THE ", WHITE], ["GAP?", P.red]]}/>
+    <Slab x={1060} y={630} text="E2E" size={84} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+  </g>
+);
+
+
+// ---------- 16-18: a01moat: the castle with blue water (flat yellow ground, kid-friendly, no number) ----------
+const MOATBLUE = "#3E9BE0", GRASS = "#5DB862";
+// A sticker castle on its island, ringed by blue water; (x, y) is the middle of the island, k its scale.
+const TCastle: React.FC<{x: number; y: number; k?: number; rivals?: boolean}> = ({x, y, k = 1, rivals = true}) => {
+  const SW = 10;
+  const merl = (x0: number, x1: number, top: number, n: number) => {
+    const mw = (x1 - x0) / (n * 2 - 1);
+    return Array.from({length: n}, (_, i) => <rect key={i} x={x0 + i * 2 * mw} y={top - 30} width={mw} height={32} fill={WHITE} stroke={INK} strokeWidth={SW}/>);
+  };
+  return (
+    <g transform={`translate(${x} ${y}) scale(${k})`} strokeLinejoin="round" strokeLinecap="round">
+      {/* water ring and its ripples */}
+      <ellipse cx={14} cy={78} rx={420} ry={150} fill={INK}/>
+      <ellipse cx={0} cy={60} rx={420} ry={150} fill={MOATBLUE} stroke={INK} strokeWidth={SW}/>
+      {[[-300, 110, 90], [190, 150, 110], [250, 0, 70], [-260, 10, 60], [-60, 175, 80]].map((r, i) => <path key={i} d={`M ${r[0]} ${r[1]} q ${r[2] / 2} -16 ${r[2]} 0`} fill="none" stroke={WHITE} strokeWidth={9}/>)}
+      {/* island */}
+      <ellipse cx={0} cy={66} rx={250} ry={78} fill="#B8853F" stroke={INK} strokeWidth={SW}/>
+      <ellipse cx={0} cy={50} rx={250} ry={74} fill={GRASS} stroke={INK} strokeWidth={SW}/>
+      {/* walls and towers */}
+      <rect x={-110} y={-150} width={220} height={190} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      {merl(-110, 110, -150, 4)}
+      <rect x={-210} y={-230} width={100} height={270} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      {merl(-222, -98, -230, 3)}
+      <rect x={110} y={-230} width={100} height={270} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      {merl(98, 222, -230, 3)}
+      <rect x={-62} y={-330} width={124} height={200} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      {merl(-74, 74, -330, 3)}
+      <path d="M -10 -175 v -46 a 10 10 0 0 1 20 0 v 46 Z" fill={INK}/>
+      <path d="M -170 -120 v -40 a 10 10 0 0 1 20 0 v 40 Z" fill={INK}/><path d="M 150 -120 v -40 a 10 10 0 0 1 20 0 v 40 Z" fill={INK}/>
+      <path d="M -46 40 V -40 A 46 46 0 0 1 46 -40 V 40 Z" fill="#C89B5A" stroke={INK} strokeWidth={SW}/>
+      {/* flag */}
+      <line x1={0} y1={-360} x2={0} y2={-470} stroke={INK} strokeWidth={10}/>
+      <path d="M 4 -470 C 50 -490, 80 -440, 140 -458 L 140 -392 C 80 -376, 50 -424, 4 -404 Z" fill={P.red} stroke={INK} strokeWidth={SW}/>
+      {/* rivals kept out on the far bank */}
+      {rivals ? [-1, 1].map((sd) => <g key={sd} transform={`translate(${sd * 500} 120) rotate(${sd * 6})`}><StoreIcon size={150} accent={P.gray}/></g>) : null}
+    </g>
+  );
+};
+
+// 16: what is a moat?
+const V16: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={960} cy={420} color={T.yellowHi}/>
+    <TCastle x={968} y={500} k={0.72} rivals={false}/>
+    <Big x={50} y={235} size={190} text="WHAT IS"/>
+    <Big x={50} y={455} size={190} parts={[["A ", WHITE], ["MOAT?", P.red]]}/>
+  </g>
+);
+
+// 17: what keeps rivals out?
+const V17: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={640} cy={520} color={T.yellowHi}/>
+    <TCastle x={640} y={605} k={0.6}/>
+    <Big x={640} y={150} size={128} anchor="middle" text="WHAT KEEPS"/>
+    <Big x={640} y={285} size={128} anchor="middle" fill={P.red} text="RIVALS OUT?"/>
+  </g>
+);
+
+// 18: moats, explained simply
+const V18: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={880} cy={430} color={T.yellowHi}/>
+    <TCastle x={930} y={500} k={0.74} rivals={false}/>
+    <Big x={50} y={300} size={250} fill={P.red} text="MOATS"/>
+    <Slab x={300} y={460} text="EXPLAINED" size={92} fill={INK} color={T.sun} edge={WHITE} rot={-4}/>
+    <Slab x={260} y={600} text="SIMPLY" size={92} fill={WHITE} color={INK} rot={3}/>
+  </g>
+);
+
+
 export const IllusThumb: React.FC<{v: number}> = ({v}) => {
   useOswald();
   return (
@@ -253,7 +550,7 @@ export const IllusThumb: React.FC<{v: number}> = ({v}) => {
       <VoxFonts/>
       <svg width={TW} height={TH} viewBox={`0 0 ${TW} ${TH}`}>
         <VoxDefs/>
-        {v === 6 ? <V6/> : v === 5 ? <V5/> : v === 4 ? <V4/> : v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
+        {v === 18 ? <V18/> : v === 17 ? <V17/> : v === 16 ? <V16/> : v === 15 ? <V15/> : v === 14 ? <V14/> : v === 13 ? <V13/> : v === 12 ? <V12/> : v === 11 ? <V11/> : v === 10 ? <V10/> : v === 9 ? <V9/> : v === 8 ? <V8/> : v === 7 ? <V7/> : v === 6 ? <V6/> : v === 5 ? <V5/> : v === 4 ? <V4/> : v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
       </svg>
     </AbsoluteFill>
   );

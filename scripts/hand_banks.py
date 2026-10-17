@@ -186,6 +186,26 @@ SHORTS = {
   ("w6", "Distributors are the sellers: agents and banks. But this is the fund house's own account. No document we read shows what any seller was paid."),
   ("w7", "So who gave way? As we read it, the sellers. And it all starts with one question:"),
  ],
+ # Den and GTPL cable Short (14 Oct 2026): napkin twin of the cablerest video; figures from the published article.
+ "bkx": [
+  ("x1", "Does a cable company live on its subscriptions?"),
+  ("x2", "From July to September, Den Networks booked eighty six crore rupees of subscription income."),
+  ("x3", "Its bill for channels was one hundred and sixty two crore. Almost double."),
+  ("x4", "So what covers the rest? Fees from broadcasters: one hundred and forty one crore."),
+  ("x5", "G T P L Hathway shows the same three piles. Its booked subscription is forty four percent of its channel bill."),
+  ("x6", "One caution. These are figures the companies book. The filings do not say what a home pays, or what the local operator keeps."),
+  ("x7", "So why is the channel bill bigger? The filings do not say. Which brings us back to the question."),
+ ],
+ # ICICI Lombard Short (15 Oct 2026): napkin twin of the lombardfloat video; figures from the published article.
+ "bky": [
+  ("y1", "Can an insurer lose money on insurance and still make a profit?"),
+  ("y2", "From July to September, ICICI Lombard's insurance lost three hundred and eighteen crore rupees."),
+  ("y3", "Yet its profit after tax was nine hundred and forty six crore."),
+  ("y4", "The difference is the float. Premium comes in first. Claims are paid later. Meanwhile, the money is invested."),
+  ("y5", "Investments held against policyholders' money earned one thousand one hundred and sixty one crore in the quarter."),
+  ("y6", "On the company's own chart, the industry's insurance lost money in each of the last ten years. So the real test is the combined ratio."),
+  ("y7", "Float helps. The combined ratio decides how much. Which brings us back to the question."),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

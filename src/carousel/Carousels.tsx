@@ -13,8 +13,9 @@ import shyam from "../../public/carousel/shyam/carousel.json";
 import angelone from "../../public/carousel/angelone/carousel.json";
 import dmartq2 from "../../public/carousel/dmartq2/carousel.json";
 import cablesub from "../../public/carousel/cablesub/carousel.json";
+import lombardq2 from "../../public/carousel/lombardq2/carousel.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, shyam, angelone, dmartq2, cablesub] as unknown as CData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, shyam, angelone, dmartq2, cablesub, lombardq2] as unknown as CData[];
 export const CarouselCompositions: React.FC = () => (
   <>{ALL.map((D) => <Composition key={D.id} id={`CAR-${D.id}`} component={CarouselComp as any} defaultProps={{D}} durationInFrames={D.slides.length} fps={1} width={1080} height={1350}/>)}</>
 );

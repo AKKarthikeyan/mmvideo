@@ -24,6 +24,9 @@ Built after the Shorts benchmark (docs/datakadai/SHORTS_BENCHMARK.md) to sit bes
   basket      All-India prices of a few items (MoSPI's CPI item table): the hook over the whole of India, one card an item
               against its neighbours, our own reading, then every state's figure for the wider group on the map. Every
               figure typed into a card must be one the story reads from a table, and every item's name is checked
+  money       National money figures (markets, payments, savings, tax rules) with no state table: the hook over the whole of India,
+              three or four cards of one figure each (bars to compare), our own reading, then the question card. Every figure typed into a
+              card, the reading, the hook or the title must be one the story reads, and every comparison in words is a money_test
   place       How a place became part of India: the hook on the map, then one dated event per beat on a timeline,
               each naming the Act, treaty or record it comes from. Every span of years in the script is recomputed
               from the dates in the config
@@ -281,7 +284,10 @@ def house_rules(sid, cfg, beats, extra):
         bad.append("the last card needs one question to answer in the comments")
     if typ != "pick" and kinds[0] != "spot":
         bad.append("the hook is not on the map: open on the place, lit on the India map (share scripts: \"open\": \"map\")")
-    if typ not in ("pick", "place"):
+    if typ == "money":      # no state table to close on: three to five cards and the reading between the hook and the question card
+        if not 3 <= len(kinds) - 2 <= 5:
+            bad.append(f"{len(kinds) - 2} beats between the hook and the last card (three to five)")
+    elif typ not in ("pick", "place"):
         if kinds[-2:] != ["map", "mapend"]:
             bad.append("the story does not close on every state's number on the map")
         if not 3 <= len(kinds) - 3 <= 5:
@@ -654,14 +660,15 @@ def build(cfg):
         beats[0].update({"kind": "spot", "spots": [{"geo": g_, "name": "", "tone": "a"} for g_ in sorted(GEO)]})
         dec = cfg.get("dec", 1); checked, shown = [], set()
         for i, c in enumerate(cfg["items"]):
-            v = item_value(c); u = c.get("unit", "%")
+            v = item_value(c); u = c.get("unit", "%"); dec = c.get("dec", cfg.get("dec", 1))      # a card may print its own places (an average in whole rupees, a count to two places)
             rows = [{"name": c["name"], "v": v}] + [{"name": o["name"], "v": item_value(o)} for o in c.get("compare", [])]
             for r_ in rows:
                 shown.add(hfmt(r_["v"], "", dec).replace("−", "")); checked.append(f"card {i + 1}: {r_['name']} {r_['v']:g}")
             top = max(abs(r_["v"]) for r_ in rows)
-            ctx = {"v": hfmt(v, u, dec, c.get("sign", False))}
+            pre = c.get("prefix", "")      # a rupee sign before the figure: "₹18,437"
+            ctx = {"v": pre + hfmt(v, u, dec, c.get("sign", False))}
             beats.append({"kind": "fact", "name": c["name"], "geo": "India", "kicker": c["kicker"], "big": ctx["v"], "text": c.get("text", "").format(**ctx), "sub": c.get("sub", "").format(**ctx),
-                          "bars": [{"name": r_["name"], "label": hfmt(r_["v"], u, dec, c.get("sign", False)), "frac": abs(r_["v"]) / top, "neg": r_["v"] < 0} for r_ in rows] if len(rows) > 1 else [],
+                          "bars": [{"name": r_["name"], "label": pre + hfmt(r_["v"], u, dec, c.get("sign", False)), "frac": abs(r_["v"]) / top, "neg": r_["v"] < 0} for r_ in rows] if len(rows) > 1 else [],
                           "vo": c["vo"].format(**ctx)})
         so = cfg["so"]
         beats.append({"kind": "say", "lines": so["lines"], "note": so.get("note", ""), "vo": so["vo"]})
@@ -693,6 +700,58 @@ def build(cfg):
         checked.append("every figure in the cards, the reading, the hook and the title is one read from a table")
         extra["checked"] = checked + run_checks(sid, cfg, "India")
         cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+    elif typ == "money":      # national money figures (markets, payments, savings, tax rules): no state table, so the hook lights the whole country and the story closes on the question card
+        beats[0].update({"kind": "spot", "spots": [{"geo": g_, "name": "", "tone": "a"} for g_ in sorted(GEO)]})
+        checked, shown = [], set()
+        def mv(q):
+            """A money figure: {"item": [path, code, column], "item_name"} (and "scale"), {"ratio": [a, b]}, {"diff": [a, b]}, {"sum": [...]}, or
+            {"count": [path, column, ">" or "<", threshold]}: how many rows of the items table pass."""
+            if "ratio" in q: return mv(q["ratio"][0]) / mv(q["ratio"][1]) * q.get("scale", 1)
+            if "diff" in q: return (mv(q["diff"][0]) - mv(q["diff"][1])) * q.get("scale", 1)
+            if "sum" in q: return sum(mv(x) for x in q["sum"]) * q.get("scale", 1)
+            if "count" in q:
+                path, col, op, thr = q["count"]; rows = json.load(open(f"public/datayt/sources/{path}.json"))["items"].values()
+                return float(sum((r[col] > thr) if op == ">" else (r[col] < thr) for r in rows if r.get(col) is not None))
+            return item_value(q) * q.get("scale", 1)
+        def money(v, c):
+            """As printed: the sign, a prefix (a rupee sign), the number (Indian digit grouping for a whole number with "indian"), then the unit."""
+            body = inr(abs(v))[1:] if c.get("indian") else hfmt(abs(v), "", c.get("dec", 0))
+            sg = "\u2212" if v < 0 and body.strip("0.,") else ("+" if c.get("sign") and v > 0 else "")
+            return sg + c.get("prefix", "") + body + c.get("unit", "")
+        for i, c in enumerate(cfg["cards"]):
+            v = mv(c); big = money(v, c)
+            keys = ("unit", "dec", "prefix", "indian", "sign")
+            rows = [{"name": o["name"], "v": mv(o), "c": {**{k: c[k] for k in keys if k in c}, **{k: o[k] for k in keys if k in o}}} for o in c.get("bars", [])]
+            for t_ in [big] + [money(r_["v"], r_["c"]) for r_ in rows]:
+                shown.update(re.findall(r"\d[\d,]*(?:\.\d+)?", t_))
+            top = max([abs(r_["v"]) for r_ in rows] or [1]); ctx = {"v": big}
+            beats.append({"kind": "fact", "name": c.get("name", ""), "geo": "India", "kicker": c["kicker"], "big": big, "text": c.get("text", "").format(**ctx), "sub": c.get("sub", "").format(**ctx),
+                          "bars": [{"name": r_["name"], "label": money(r_["v"], r_["c"]), "frac": abs(r_["v"]) / top, "neg": r_["v"] < 0} for r_ in rows], "vo": c["vo"].format(**ctx)})
+            checked.append(f"card {i + 1}: {c['kicker']} {v:g}" + "".join(f"; {r_['name']} {r_['v']:g}" for r_ in rows))
+        so = cfg["so"]
+        beats.append({"kind": "say", "lines": so["lines"], "note": so.get("note", ""), "vo": so["vo"]})
+        for k in cfg.get("money_tests", []):      # every comparison the script makes in words ("nine of eleven", "more than double"), recomputed
+            v = mv(k["value"])
+            if "equals" in k:
+                assert math.floor(v + 0.5) == k["equals"], f"{sid}: '{k['says']}' fails: {v:g} does not round to {k['equals']}"
+            else:
+                assert k.get("min", -math.inf) <= v <= k.get("max", math.inf), f"{sid}: '{k['says']}' fails: {v:g} is outside {k.get('min')} to {k.get('max')}"
+            checked.append(f"{k['says']}: {v:.4g}")
+        for q_ in cfg.get("quotes", []):      # a rule or a sentence shown as the publisher's own must be in the saved copy, word for word
+            node = json.load(open(f"public/datayt/sources/{q_['text'][0]}.json"))
+            for k_ in q_["text"][1:]:
+                node = node[k_]
+            assert q_["contains"] in node, f"{sid}: '{q_['contains']}' is not in {q_['text']}"
+            checked.append(f"{q_['says']}: found word for word in {'/'.join(q_['text'])}")
+        free = set(cfg.get("free_numbers", []))
+        texts = [b_.get("text", "") + " " + b_.get("sub", "") for b_ in beats if b_["kind"] == "fact"] + so["lines"] + [so.get("note", ""), cfg.get("yt_title", "")] + cfg["hook"]
+        texts += [r_["name"] for b_ in beats if b_["kind"] == "fact" for r_ in b_.get("bars", [])]
+        for t_ in texts:
+            for num in re.findall(r"\d[\d,]*(?:\.\d+)?", re.sub(r"\b(19|20)\d\d(-\d\d)?\b", "", t_.replace("*", ""))):
+                num = num.rstrip(",")      # "Nifty 50, Muhurat 2022": the comma ends the clause, not the number
+                assert num in shown or num in free, f"{sid}: '{num}' in '{t_}' is not a figure the story reads (shown: {sorted(shown)})"
+        checked.append("every figure in the cards, the reading, the hook and the title is one read from a table")
+        extra["checked"] = checked
     elif typ == "place":
         import datetime as _dt
         st0 = cfg.get("state")

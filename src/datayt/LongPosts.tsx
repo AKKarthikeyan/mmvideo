@@ -108,7 +108,8 @@ const Thumb: React.FC<Props> = ({id, scene}) => {
 
 // ---------------------------------------------------------------- the X image
 const XPost: React.FC<Props> = ({id, scene}) => {
-  const D = find(id), s = mapScene(D, scene), c = cold(D), rows = s ? rowsOf(s) : [], lines = c?.lines ?? [D.title];
+  const D = find(id), s = mapScene(D, scene), c = cold(D), rows = s ? rowsOf(s) : [];
+  const lines = (D as unknown as {xpost?: {lines: string[]}}).xpost?.lines ?? c?.lines ?? [D.title];      // the X image's own claim, when the config gives one
   if (!s) return <Ground><div/></Ground>;
   const head = (t: string) => <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 18, letterSpacing: 3, color: P.mute, marginBottom: 6}}>{t}</div>;
   return <Ground>

@@ -16,13 +16,14 @@ THE CONFIG
   specs    {"name": spec}: a data spec written once, used as {"$": "name"} anywhere
   vals     every figure the screen or the narrator says: {"name": {"v": <value spec>, "dec": 2, "unit": "%", "equals": 5.54}}.
            Text uses {name} (as shown, with its unit), {name:n} (number only); a voice line says the number in words. "sign": show +/-,
-           "abs": drop the minus (the text says "fell"), "plain": no thousands comma (a year), "prefix": "₹" before the number (said "rupees").
+           "abs": drop the minus (the text says "fell"), "plain": no thousands comma (a year), "prefix": "₹" before the number (said "rupees"), "paise": a two-place rupee price said "fifty-two rupees and seventy paise".
            A val with no test fails the build.
   chapters [{"id", "title", "label"?}]   the chapter of the first scene is the YouTube chapter; label "" hides the name on screen
   scenes   [{"kind", "chapter": id, "vo": [lines], "source"?, "min"? (seconds), "hold"? (seconds when there is no voice), ...}]
   tests    claims the script makes, run before anything else is written (see run_tests)
   sources  the end card's list: [{"table": "@states", "text": "..."}]
   thumb    {"lines": [1-3 lines of at most 14 characters], "sub"?}: the thumbnail's words (src/datayt/LongPosts.tsx draws it)
+  x_post   {"lines": [1-3 lines]}: the X image's claim, when the cold open's claim is not about the map the X image shows
 
 VALUE SPECS (a number from the data; every reader below sits on top of build_beats.series)
   {"data": {"tbl": [path, column]}, "state": "Puducherry"}              a state table in the Handbook's shape ("state": "India" for the national row)
@@ -226,7 +227,14 @@ class Val:
         return sgn + self.prefix + n[len(sgn):] + self.unit
 
     def say(self):
+        if self.d.get("paise"):      # a price: "fifty-two rupees and seventy paise", the way a price is said (only for a figure in rupees to two places)
+            assert self.prefix == "₹" and self.dec == 2, f"{self.name}: paise is for a rupee figure shown to two places"
+            r = rhu(abs(self.v), 2); ip, fp = divmod(int(round(r * 100)), 100)
+            return words(ip) + " rupees" + (f" and {words(fp)} paise" if fp else "")
         return say_num(abs(self.v) if self.d.get("abs") else self.v, self.dec) + self.say_unit
+
+
+assert Val("t", 52.7, {"dec": 2, "prefix": "₹", "paise": True}).say() == "fifty-two rupees and seventy paise" and Val("t", 704.51, {"dec": 2, "prefix": "₹", "paise": True}).say() == "seven hundred and four rupees and fifty-one paise", "paise"
 
 
 # ---------------------------------------------------------------- text boxes: the same limits LongStory.tsx draws with
@@ -516,12 +524,17 @@ def build(path):
         th = cfg["thumb"]; assert 1 <= len(th["lines"]) <= 3, "thumb: one to three lines"
         thumb = {"lines": [X.t(l, None, "thumb line") for l in th["lines"]], "sub": X.t(th["sub"], None, "thumb sub") if th.get("sub") else ""}
         assert all(len(plain(l)) <= 14 for l in thumb["lines"]), f"thumb: a line over 14 characters is too small to read: {thumb['lines']}"
+    xpost = None
+    if cfg.get("x_post"):      # the X image's own claim when the cold open's claim is about something other than the map it shows
+        xp = cfg["x_post"]; assert 1 <= len(xp["lines"]) <= 3, "x_post: one to three lines"
+        xpost = {"lines": [X.t(l, None, "x_post line") for l in xp["lines"]]}
     music_file = music(f"{d}/music.wav", total, scenes)
     out = {"id": sid, "title": cfg["title"], "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "accent": pal["accent"], "accent2": pal["accent2"],
            "bands": pal["bands"], "fps": FPS, "total": total, "chapters": chapters, "scenes": scenes, "vo": [] if CHECK else vo, "music": music_file, "voiced": not CHECK,
            "voiceEngine": "none" if CHECK else V.ENGINE, "checked": X.checked,
            "figures": {n: {"value": round(v.v, 6), "shows": v.text()} for n, v in X.vals.items()}}
     if thumb: out["thumb"] = thumb
+    if xpost: out["xpost"] = xpost
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)
     print(f"{sid}: {len(scenes)} scenes · {len(chapters)} chapters · {stamp(total)} ({total:.1f} s) · {X.n_tests} tests passed · "
           + ("line lengths estimated, no audio, no music" if CHECK else f"voice {V.ENGINE}"))

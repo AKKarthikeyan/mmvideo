@@ -3,6 +3,9 @@
 // There each Short's scenes are written out in code; here the Result Engine (DarwinWiki resultengine/napkin.py) lays every
 // beat out as a list of elements and passes it as --props={D, label}, so a new company result needs no code.
 // Audio is read from <public-dir>/vx/<D.id>/<beat>.mp3, as for the other result compositions.
+// Since 16 Oct 2026 the engine also draws three other shapes of Short with the same kit (resultengine/formats.py): a sector
+// scoreboard, where each ₹100 of revenue went, and a figure's streak as a line. They need three more element kinds (bar,
+// seg, dot), and the yellow sticker names the format (prop `sticker`, "napkin math" by default).
 import React from "react";
 import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame} from "remotion";
 import {HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
@@ -14,9 +17,11 @@ const COL: Record<string, string> = {ink: INK, red: RED, blue: BLUE, green: GREE
 const FILL: Record<string, string> = {[GREEN]: "rgba(43,138,62,0.18)", [RED]: "rgba(217,72,15,0.18)", [BLUE]: "rgba(28,100,184,0.18)",
   [AMBER]: "rgba(230,119,0,0.18)"};
 
-type El = {k: "w" | "rule" | "ring" | "verdict" | "loop"; t?: string; x?: number; y?: number; size?: number; color?: string;
+// bar: a hatched box (an outline with fill false); seg: a line from (x1, y1) to (x2, y2); dot: a filled circle of radius r.
+type El = {k: "w" | "rule" | "ring" | "verdict" | "loop" | "bar" | "seg" | "dot"; t?: string; x?: number; y?: number; size?: number; color?: string;
   anchor?: "start" | "middle"; at?: string; off?: number; frac?: number; fixed?: boolean; hand?: boolean; dur?: number;
-  x1?: number; x2?: number; w?: number; h?: number; pick?: "GOOD" | "WATCH" | "CONCERN"; q?: boolean};
+  x1?: number; x2?: number; y1?: number; y2?: number; w?: number; h?: number; r?: number; sw?: number; fill?: boolean; op?: number;
+  pick?: "GOOD" | "WATCH" | "CONCERN"; q?: boolean};
 type NScene = {type: "napkin"; tag?: {t: string; color?: string} | null; paper?: boolean; rot?: number; tail?: number; els: El[]};
 type NBeat = {key: string; say: string; cap: string; sec: number; cues?: string[]; scene: NScene};
 export type NData = {id: string; beats: NBeat[]};
@@ -95,8 +100,16 @@ const Draw: React.FC<{b: NBeat; e: El; i: number}> = ({b, e, i}) => {
     return <HWrite x={e.x ?? 540} y={e.y ?? 600} start={start} size={e.size ?? 64} color={color} anchor={e.anchor ?? "start"}
       hand={e.hand ?? true} dur={e.fixed ? 8 : e.dur}>{e.t ?? ""}</HWrite>;
   }
-  if (e.k === "rule") return <HDraw shape={sh.line(e.x1 ?? 120, e.y ?? 850, e.x2 ?? 960, e.y ?? 850, {strokeWidth: 7, seed: 21 + i})} start={start} dur={10}/>;
-  if (e.k === "ring") return <HDraw shape={sh.ellipse(e.x ?? 540, e.y ?? 800, e.w ?? 600, e.h ?? 250, {stroke: color, strokeWidth: 8, seed: 11 + i})} start={start} dur={12}/>;
+  const d = (n: number) => (e.fixed ? 8 : e.dur ?? n);  // a fixed shape is complete by the first frame, as fixed writing is
+  if (e.k === "rule") return <HDraw shape={sh.line(e.x1 ?? 120, e.y ?? 850, e.x2 ?? 960, e.y ?? 850, {strokeWidth: 7, seed: 21 + i})} start={start} dur={d(10)}/>;
+  if (e.k === "ring") return <HDraw shape={sh.ellipse(e.x ?? 540, e.y ?? 800, e.w ?? 600, e.h ?? 250, {stroke: color, strokeWidth: 8, seed: 11 + i})} start={start} dur={d(12)} hand={!e.fixed}/>;
+  if (e.k === "bar") {
+    const box = sh.rect(e.x ?? 140, e.y ?? 600, e.w ?? 100, e.h ?? 40, e.fill === false ? {stroke: color, strokeWidth: 4, seed: 31 + i}
+      : {stroke: color, strokeWidth: 3, seed: 31 + i, fill: color, fillStyle: "hachure", hachureGap: 9, fillWeight: 3, hachureAngle: -41});
+    return <g opacity={e.op ?? 1}><HDraw shape={box} start={start} dur={d(10)} hand={false}/></g>;
+  }
+  if (e.k === "seg") return <HDraw shape={sh.line(e.x1 ?? 0, e.y1 ?? 0, e.x2 ?? 0, e.y2 ?? 0, {stroke: color, strokeWidth: e.sw ?? 4, seed: 41 + i})} start={start} dur={d(8)} hand={false}/>;
+  if (e.k === "dot") return <HDraw shape={sh.circle(e.x ?? 540, e.y ?? 800, (e.r ?? 12) * 2, {stroke: color, strokeWidth: 3, fill: color, fillStyle: "solid", seed: 51 + i})} start={start} dur={d(6)} hand={false}/>;
   if (e.k === "verdict") return <Verdict pick={e.pick ?? "WATCH"} q={e.q} y={e.y ?? 900} start={start}/>;
   if (e.k === "loop") return <Loop start={start}/>;
   return null;
@@ -132,19 +145,23 @@ const NapCaptions: React.FC<{cues: string[]; frames: number}> = ({cues, frames})
   );
 };
 
-const Furniture: React.FC<{label: string}> = ({label}) => (
+const Furniture: React.FC<{label: string; sticker?: string}> = ({label, sticker = "napkin math"}) => {
+  const fs = sticker.length <= 11 ? 52 : 44, sw = Math.max(420, sticker.length * fs * 0.6 + 60);  // the sticker grows with its words
+  const room = 920 - sw;  // the label beside it gives way: it is written smaller rather than run into the sticker
+  return (
   <Canvas>
     <g transform="rotate(-4 220 150)">
-      <rect x={60} y={90} width={420} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
-      <text x={270} y={163} fontFamily={HANDFONT} fontSize={52} textAnchor="middle" fill={INK}>napkin math</text>
+      <rect x={60} y={90} width={sw} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
+      <text x={60 + sw / 2} y={163} fontFamily={HANDFONT} fontSize={fs} textAnchor="middle" fill={INK}>{sticker}</text>
     </g>
-    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={Math.min(40, 500 / Math.max(8, label.length) / 0.6)} textAnchor="end" fill={INK}>{label}</text>
+    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={Math.max(24, Math.min(40, Math.min(500, room) / Math.max(8, label.length) / 0.6))} textAnchor="end" fill={INK}>{label}</text>
     <text x={540} y={1858} fontFamily={HANDFONT} fontSize={30} textAnchor="middle" fill={INK} opacity={0.6}>Moat &amp; Margin · from the filings</text>
     <text x={540} y={1896} fontFamily="'Helvetica Neue', Arial, sans-serif" fontSize={22} textAnchor="middle" fill={INK} opacity={0.6}>Educational research, not investment advice · not SEBI-registered</text>
   </Canvas>
-);
+  );
+};
 
-export const ResultNapkin: React.FC<{D: NData; label: string}> = ({D, label}) => {
+export const ResultNapkin: React.FC<{D: NData; label: string; sticker?: string}> = ({D, label, sticker}) => {
   let from = 0;
   return (
     <AbsoluteFill style={{background: PAPER}}>
@@ -161,7 +178,7 @@ export const ResultNapkin: React.FC<{D: NData; label: string}> = ({D, label}) =>
         from += fr;
         return el;
       })}
-      <Furniture label={label}/>
+      <Furniture label={label} sticker={sticker}/>
     </AbsoluteFill>
   );
 };

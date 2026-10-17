@@ -1,0 +1,210 @@
+{
+ "type": "basket",
+ "rules": 2,
+ "id": "fm01",
+ "palette": "D",
+ "chip": "JAN DHAN · OCT 2026",
+ "source_short": "PMJDY portal · as on 07/10/2026",
+ "hook": [
+  "Jan Dhan accounts hold",
+  "*₹3.21 lakh crore*.",
+  "But per account?"
+ ],
+ "hook_vo": "Jan Dhan accounts hold three point two one lakh crore rupees. Per account?",
+ "items": [
+  {
+   "kicker": "JAN DHAN · ALL INDIA",
+   "name": "Accounts",
+   "item": [
+    "pmjdy/jandhan_2026_10_07",
+    "accounts",
+    "value"
+   ],
+   "item_name": "Jan Dhan accounts, crore",
+   "dec": 2,
+   "unit": " cr",
+   "text": "accounts, as on 7 Oct 2026",
+   "compare": [
+    {
+     "name": "Women",
+     "item": [
+      "pmjdy/jandhan_2026_10_07",
+      "female",
+      "value"
+     ],
+     "item_name": "Women account holders, crore"
+    }
+   ],
+   "sub": "Portal term: beneficiaries. Money in them: ₹3.21 lakh crore.",
+   "vo": "Fifty-nine point five four crore accounts. Thirty-three point two crore held by women."
+  },
+  {
+   "kicker": "AVERAGE PER ACCOUNT",
+   "name": "Average",
+   "item": [
+    "pmjdy/jandhan_2026_10_07",
+    "avg_india",
+    "value"
+   ],
+   "dec": 0,
+   "unit": "",
+   "prefix": "₹",
+   "text": "per account, all India",
+   "sub": "Our calculation: balance divided by accounts, zero balances included.",
+   "vo": "That is about five thousand three hundred and ninety rupees per account."
+  },
+  {
+   "kicker": "HIGHEST AND LOWEST AVERAGE",
+   "name": "Lakshadweep",
+   "item": [
+    "pmjdy/jandhan_2026_10_07",
+    "avg_Lakshadweep",
+    "value"
+   ],
+   "dec": 0,
+   "unit": "",
+   "prefix": "₹",
+   "text": "Lakshadweep, the highest. Manipur, the lowest.",
+   "compare": [
+    {
+     "name": "Manipur",
+     "item": [
+      "pmjdy/jandhan_2026_10_07",
+      "avg_Manipur",
+      "value"
+     ]
+    }
+   ],
+   "sub": "Lakshadweep has 11,027 accounts; Manipur, 10,98,194.",
+   "vo": "Lakshadweep's average is highest, about six and a half times Manipur's, the lowest."
+  }
+ ],
+ "so": {
+  "lines": [
+   "An average,",
+   "not a *typical*",
+   "balance."
+  ],
+  "vo": "An average includes accounts with little or no money in them.",
+  "note": "Lakshadweep's average is about 6.5 times Manipur's, on a small number of accounts."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "pmjdy/jandhan_2026_10_07",
+    "Average balance per account (Rs, our calculation)"
+   ]
+  },
+  "title": "Average Jan Dhan balance, *every state and UT*",
+  "sub": "₹ per account · India {india} · 7 Oct 2026",
+  "india_dec": 0,
+  "dec": 0,
+  "unit": "",
+  "note": "Balance divided by accounts: our calculation from the PMJDY portal, as on 07/10/2026.",
+  "vo": "Now the average balance in every state and territory."
+ },
+ "end": {
+  "q": "Is your state above or below *₹5,390*?",
+  "sub": "Comment below.",
+  "vo": "Is your state above or below the national average? Comment below."
+ },
+ "free_numbers": [
+  "7",
+  "6.5",
+  "07",
+  "10",
+  "3.21",
+  "11,027",
+  "10,98,194"
+ ],
+ "tests": [
+  {
+   "says": "Lakshadweep's average is about six and a half times Manipur's",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "pmjdy/jandhan_2026_10_07",
+       "avg_Lakshadweep",
+       "value"
+      ]
+     },
+     {
+      "item": [
+       "pmjdy/jandhan_2026_10_07",
+       "avg_Manipur",
+       "value"
+      ]
+     }
+    ]
+   },
+   "min": 6.45,
+   "max": 6.6
+  },
+  {
+   "says": "the map's India figure is the national average",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "pmjdy/jandhan_2026_10_07",
+       "avg_india",
+       "value"
+      ]
+     },
+     {
+      "data": {
+       "tbl": [
+        "pmjdy/jandhan_2026_10_07",
+        "Average balance per account (Rs, our calculation)"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": -0.01,
+   "max": 0.01
+  },
+  {
+   "says": "money in them: 3.21 lakh crore",
+   "value": {
+    "item": [
+     "pmjdy/jandhan_2026_10_07",
+     "deposits_lakh",
+     "value"
+    ]
+   },
+   "min": 3.205,
+   "max": 3.2149
+  },
+  {
+   "says": "Lakshadweep has 11,027 accounts",
+   "value": {
+    "data": {
+     "tbl": [
+      "pmjdy/jandhan_2026_10_07",
+      "Beneficiaries"
+     ]
+    },
+    "state": "Lakshadweep"
+   },
+   "equals": 11027
+  },
+  {
+   "says": "Manipur has 10,98,194 accounts",
+   "value": {
+    "data": {
+     "tbl": [
+      "pmjdy/jandhan_2026_10_07",
+      "Beneficiaries"
+     ]
+    },
+    "state": "Manipur"
+   },
+   "equals": 1098194
+  }
+ ],
+ "source": "Pradhan Mantri Jan Dhan Yojana portal (Department of Financial Services, Ministry of Finance): Statewise account opening report and national progress report, as on 07/10/2026, read 17 Oct 2026. Average balance per account is our calculation (balance divided by the number of accounts) and includes accounts with little or no balance.",
+ "yt_title": "Jan Dhan: ₹3.21 Lakh Crore, ₹5,390 per Account (Oct 2026)"
+}

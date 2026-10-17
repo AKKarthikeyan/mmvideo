@@ -1,0 +1,206 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "fm04",
+ "palette": "C",
+ "chip": "UNCLAIMED MONEY",
+ "source_short": "RBI Annual Report 2025-26 · PIB, Mar 2026",
+ "hook": [
+  "*₹1.13 lakh crore*",
+  "in the RBI's fund for",
+  "*unclaimed* deposits"
+ ],
+ "hook_vo": "The RBI's unclaimed deposits fund: one point one three lakh crore rupees.",
+ "cards": [
+  {
+   "kicker": "RBI UNCLAIMED DEPOSITS FUND",
+   "name": "Fund",
+   "item": [
+    "rbi/unclaimed_2026",
+    "dea_2026",
+    "value"
+   ],
+   "item_name": "DEA Fund, 31 Mar 2026, Rs crore",
+   "scale": 1e-05,
+   "dec": 2,
+   "prefix": "₹",
+   "unit": " lakh cr",
+   "text": "in the RBI's DEA Fund, 31 Mar 2026",
+   "bars": [
+    {
+     "name": "Mar 2026",
+     "item": [
+      "rbi/unclaimed_2026",
+      "dea_2026",
+      "value"
+     ],
+     "scale": 1e-05,
+     "unit": ""
+    },
+    {
+     "name": "Mar 2025",
+     "item": [
+      "rbi/unclaimed_2026",
+      "dea_2025",
+      "value"
+     ],
+     "scale": 1e-05,
+     "unit": ""
+    }
+   ],
+   "sub": "Depositor Education and Awareness Fund. Lakh crore rupees.",
+   "vo": "Up from about zero point nine eight lakh crore a year before."
+  },
+  {
+   "kicker": "HOW MONEY GETS THERE",
+   "name": "Years",
+   "item": [
+    "rbi/unclaimed_2026",
+    "dormant_years",
+    "value"
+   ],
+   "dec": 0,
+   "unit": " years",
+   "text": "or more not operated: the balance moves to the fund",
+   "sub": "It is still the customer's money, with no time limit to claim it.",
+   "vo": "Untouched ten years, the money moves here. It is still yours."
+  },
+  {
+   "kicker": "YOUR MONEY, YOUR RIGHT",
+   "name": "Returned",
+   "item": [
+    "rbi/unclaimed_2026",
+    "returned",
+    "value"
+   ],
+   "item_name": "Unclaimed financial assets returned, as on 28 Feb 2026, Rs crore",
+   "dec": 0,
+   "prefix": "₹",
+   "unit": " cr",
+   "indian": true,
+   "text": "returned on 22.95 lakh claims, as on 28 Feb 2026",
+   "sub": "Banks, insurers and mutual funds together, not only this fund.",
+   "vo": "Banks, insurers and funds together returned five thousand seven hundred and seventy-seven crore."
+  },
+  {
+   "kicker": "ALSO UNCLAIMED · 28 FEB 2026",
+   "name": "Insurance",
+   "item": [
+    "rbi/unclaimed_2026",
+    "insurance",
+    "value"
+   ],
+   "item_name": "Unclaimed insurance with insurers, 28 Feb 2026, Rs crore",
+   "dec": 0,
+   "prefix": "₹",
+   "unit": " cr",
+   "indian": true,
+   "text": "with insurers",
+   "bars": [
+    {
+     "name": "Insurance",
+     "item": [
+      "rbi/unclaimed_2026",
+      "insurance",
+      "value"
+     ]
+    },
+    {
+     "name": "Mutual funds",
+     "item": [
+      "rbi/unclaimed_2026",
+      "mutual_funds",
+      "value"
+     ]
+    }
+   ],
+   "vo": "Unclaimed insurance: eight thousand nine hundred and seventy-four crore rupees."
+  }
+ ],
+ "so": {
+  "lines": [
+   "The RBI's own",
+   "*UDGAM* portal searches",
+   "many banks at once."
+  ],
+  "vo": "The RBI's own UDGAM portal searches unclaimed deposits across many banks.",
+  "note": "udgam.rbi.org.in. Banks settle the claims. Insurance: IRDAI's Bima Bharosa. Mutual funds: SEBI's MITRA."
+ },
+ "end": {
+  "q": "Has your family ever found forgotten money?",
+  "sub": "Comment below.",
+  "vo": "Has your family ever found forgotten money? Comment below."
+ },
+ "free_numbers": [
+  "22.95",
+  "28",
+  "31"
+ ],
+ "money_tests": [
+  {
+   "says": "claims returned: 22.95 lakh",
+   "value": {
+    "item": [
+     "rbi/unclaimed_2026",
+     "claims_lakh",
+     "value"
+    ]
+   },
+   "min": 22.95,
+   "max": 22.95
+  },
+  {
+   "says": "about 0.98 lakh crore a year before",
+   "value": {
+    "item": [
+     "rbi/unclaimed_2026",
+     "dea_2025",
+     "value"
+    ],
+    "scale": 1e-05
+   },
+   "min": 0.975,
+   "max": 0.985
+  }
+ ],
+ "quotes": [
+  {
+   "says": "no time limit to claim",
+   "text": [
+    "rbi/unclaimed_2026",
+    "text",
+    "no_time_limit"
+   ],
+   "contains": "there is no time limit for the customer or their legal heirs to claim"
+  },
+  {
+   "says": "ten years or more not operated goes to the fund",
+   "text": [
+    "rbi/unclaimed_2026",
+    "text",
+    "ten_years"
+   ],
+   "contains": "not been operated upon for a period of 10 years or more"
+  },
+  {
+   "says": "UDGAM searches across banks",
+   "text": [
+    "rbi/unclaimed_2026",
+    "text",
+    "udgam"
+   ],
+   "contains": "search unclaimed deposits/accounts across multiple banks at one place"
+  },
+  {
+   "says": "Bima Bharosa and MITRA",
+   "text": [
+    "rbi/unclaimed_2026",
+    "text",
+    "portals"
+   ],
+   "contains": "IRDAI's Bima Bharosa portal and SEBI's MITRA platform have been developed for tracing unclaimed insurance proceeds and mutual fund amounts"
+  }
+ ],
+ "source": "Reserve Bank of India, Annual Report 2025-26: balance sheet (Depositor Education and Awareness Fund, 31 Mar 2026 and 2025) and the 'Your Money, Your Right' campaign (Oct-Dec 2025). Ministry of Finance via PIB, 24 Mar 2026 (PRID 2244475): returns, insurance and mutual fund figures as on 28 Feb 2026, and the portals. PIB backgrounder on unclaimed deposits; RBI FAQ on UDGAM. Read 17 Oct 2026.",
+ "yt_title": "₹1.13 Lakh Crore in Unclaimed Deposits: RBI Fund (Mar 2026)"
+}

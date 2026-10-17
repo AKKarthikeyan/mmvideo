@@ -1,0 +1,378 @@
+{
+ "id": "fm02",
+ "type": "money",
+ "chip": "MUHURAT TRADING",
+ "sourceShort": "NSE, BSE · Diwali sessions 2015-2025",
+ "source": "Nifty 50 closes from NSE's historical index data and Sensex closes from BSE's index archive, on each Diwali Muhurat day 2015-2025 and the session before; dates and session times as printed in BSE's Muhurat notices. Changes are our calculation. 2026: NSE's holidays page, read 17 Oct 2026. Past moves are not a forecast or advice.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Diwali's one-hour trading:",
+    "up *9* times in *11*,",
+    "none above *1%*"
+   ],
+   "vo": "Muhurat sessions closed higher nine times in eleven. None moved one percent.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Up",
+   "geo": "India",
+   "kicker": "NIFTY 50 · MUHURAT DAYS",
+   "big": "9 of 11",
+   "text": "sessions closed higher, 2015 to 2025",
+   "sub": "Against the previous day's close: our calculation from NSE. Muhurat: Diwali's special session.",
+   "bars": [],
+   "vo": "Since twenty fifteen, the Nifty closed higher on nine of eleven Muhurat days.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "2022",
+   "geo": "India",
+   "kicker": "THE BIGGEST RISE",
+   "big": "+0.88%",
+   "text": "Nifty 50, Muhurat 2022",
+   "sub": "No session moved as much as one percent.",
+   "bars": [
+    {
+     "name": "2022",
+     "label": "+0.88%",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "2018",
+     "label": "+0.65%",
+     "frac": 0.7392739273927392,
+     "neg": false
+    },
+    {
+     "name": "2015",
+     "label": "+0.54%",
+     "frac": 0.6089677933310572,
+     "neg": false
+    }
+   ],
+   "vo": "The biggest rise, in twenty twenty-two, was zero point eight eight percent.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "2017",
+   "geo": "India",
+   "kicker": "THE DOWN YEARS",
+   "big": "−0.63%",
+   "text": "Nifty 50, Muhurat 2017",
+   "sub": "",
+   "bars": [
+    {
+     "name": "2017",
+     "label": "−0.63%",
+     "frac": 1.0,
+     "neg": true
+    },
+    {
+     "name": "2016",
+     "label": "−0.14%",
+     "frac": 0.22613943147530569,
+     "neg": true
+    }
+   ],
+   "vo": "It fell twice: in twenty sixteen and twenty seventeen.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "fact",
+   "name": "2025",
+   "geo": "India",
+   "kicker": "LAST YEAR · MUHURAT 2025",
+   "big": "+0.10%",
+   "text": "Nifty 50, Muhurat 2025",
+   "sub": "That year's session ran in the afternoon (BSE notice).",
+   "bars": [],
+   "vo": "Last year's session rose zero point one percent.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Under *1%*,",
+    "every year.",
+    "Not a *forecast*."
+   ],
+   "note": "Muhurat 2026: Sunday 8 Nov. NSE says the timings will follow by circular.",
+   "vo": "None moved one percent either way. Past years are not a forecast.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "q": "Do you follow Muhurat trading?",
+   "sub": "Muhurat 2026: Sunday 8 Nov.",
+   "kind": "end",
+   "vo": "Do you follow Muhurat trading? This year: Sunday, eighth November.",
+   "t0": 34.839,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "checked": [
+  "card 1: NIFTY 50 · MUHURAT DAYS 9",
+  "card 2: THE BIGGEST RISE 0.8787; 2022 0.8787; 2018 0.6496; 2015 0.5351",
+  "card 3: THE DOWN YEARS -0.6297; 2017 -0.6297; 2016 -0.1424",
+  "card 4: LAST YEAR · MUHURAT 2025 0.0985",
+  "nine of eleven sessions closed higher on the Nifty: 9",
+  "2022 was the only session above 0.87% (the biggest rise): 1",
+  "no session rose as much as one percent: 0",
+  "no session fell as much as one percent: 0",
+  "two sessions fell: 2",
+  "the 2026 session is on Sunday 8 Nov, timings by circular: found word for word in markets/muhurat_2015_2025/text/nse_2026",
+  "every figure in the cards, the reading, the hook and the title is one read from a table"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.336,
+   "at": 0.12,
+   "text": "Muhurat sessions closed higher nine times in eleven. None moved one percent."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.754,
+   "at": 5.926,
+   "text": "Since twenty fifteen, the Nifty closed higher on nine of eleven Muhurat days."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.668,
+   "at": 11.733,
+   "text": "The biggest rise, in twenty twenty-two, was zero point eight eight percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.623,
+   "at": 19.475,
+   "text": "It fell twice: in twenty sixteen and twenty seventeen."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.768,
+   "at": 25.281,
+   "text": "Last year's session rose zero point one percent."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.179,
+   "at": 29.152,
+   "text": "None moved one percent either way. Past years are not a forecast."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.597,
+   "at": 34.959,
+   "text": "Do you follow Muhurat trading? This year: Sunday, eighth November."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Diwali Muhurat Trading: Nifty Up 9 Times in 11 (2015-2025)"
+}

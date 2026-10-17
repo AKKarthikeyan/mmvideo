@@ -1,0 +1,366 @@
+{
+ "id": "fm05",
+ "type": "money",
+ "chip": "GIFTS AND TAX",
+ "sourceShort": "Income Tax Department · Income-tax Act, 2025",
+ "source": "Income Tax Department (incometaxindia.gov.in), read 17 Oct 2026: 'Tax treatment of Gifts Received by an Individual or HUF' (Income-tax Act, 2025, as amended by the Finance Act, 2026); Income-tax Act, 2025, sections 92, 186 and 451; Income-tax Rules, 2026, rule 15(5)(a), Table IV, item 4; threshold-limits page. Rules as printed, not tax advice.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Money* gifts from friends:",
+    "above *₹50,000* a year,",
+    "*all* of it taxable"
+   ],
+   "vo": "Friends' money gifts above fifty thousand rupees a year: all of it taxable.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Limit",
+   "geo": "India",
+   "kicker": "MONEY GIFTS, NON-RELATIVES",
+   "big": "₹50,000",
+   "text": "in a tax year, in total. Above it, the whole sum is taxable.",
+   "sub": "New Income-tax Act, 2025. Year 2026-27. A gifted TV is not counted.",
+   "bars": [],
+   "vo": "The limit counts a whole tax year's money gifts from non-relatives.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Example",
+   "geo": "India",
+   "kicker": "THE DEPARTMENT'S OWN EXAMPLE",
+   "big": "₹53,000",
+   "text": "two gifts, all of it taxable",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Gift one",
+     "label": "₹25,000",
+     "frac": 0.8928571428571429,
+     "neg": false
+    },
+    {
+     "name": "Gift two",
+     "label": "₹28,000",
+     "frac": 1.0,
+     "neg": false
+    }
+   ],
+   "vo": "Two gifts of twenty-five and twenty-eight thousand: all fifty-three thousand is taxable.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Employer",
+   "geo": "India",
+   "kicker": "FROM YOUR EMPLOYER",
+   "big": "₹15,000",
+   "text": "a tax year in gifts or vouchers: below it, valued at nil",
+   "sub": "Income-tax Rules, 2026. An older page shows ₹5,000 for gifts in kind.",
+   "bars": [],
+   "vo": "Employer gifts under fifteen thousand rupees a year count as nil value.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "fact",
+   "name": "Cash",
+   "geo": "India",
+   "kicker": "CASH, FROM ONE PERSON",
+   "big": "₹2,00,000",
+   "text": "or more in a day, or for one occasion: only through a bank",
+   "sub": "Cheque, draft or electronic mode. A penalty can equal the sum received.",
+   "bars": [],
+   "vo": "Two lakh or more from one person a day: bank only.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Relatives* and your",
+    "own wedding: not taxed.",
+    "Diwali: *no* exemption."
+   ],
+   "note": "'Relative' is a list defined in the Act. The department's rules, not advice on anyone's tax.",
+   "vo": "Relatives' gifts and your own wedding gifts: not taxed. Diwali: no exemption.",
+   "t0": 29.032,
+   "t1": 36.774
+  },
+  {
+   "q": "Did you know the ₹50,000 rule?",
+   "sub": "Comment below.",
+   "kind": "end",
+   "vo": "Did you know the fifty thousand rupee rule? Comment below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "checked": [
+  "card 1: MONEY GIFTS, NON-RELATIVES 50000",
+  "card 2: THE DEPARTMENT'S OWN EXAMPLE 53000; Gift one 25000; Gift two 28000",
+  "card 3: FROM YOUR EMPLOYER 15000",
+  "card 4: CASH, FROM ONE PERSON 200000",
+  "the example adds up: 0",
+  "the example is above the limit: 3000",
+  "the older page's figure is 5,000: 5000",
+  "above the limit, the whole sum: found word for word in incometax/gift_rules_2026/text/s92",
+  "the department's example: found word for word in incometax/gift_rules_2026/text/example",
+  "a TV is not counted: found word for word in incometax/gift_rules_2026/text/tv",
+  "employer gifts below Rs 15,000 are nil: found word for word in incometax/gift_rules_2026/text/employer",
+  "the older page shows Rs 5,000 in kind: found word for word in incometax/gift_rules_2026/text/old_employer",
+  "cash: Rs 2 lakh or more, a day, a transaction or one occasion: found word for word in incometax/gift_rules_2026/text/s186",
+  "penalty may equal the sum: found word for word in incometax/gift_rules_2026/text/s451",
+  "relatives' gifts are not taxed: found word for word in incometax/gift_rules_2026/text/relatives",
+  "marriage is the only exempt occasion: found word for word in incometax/gift_rules_2026/text/marriage",
+  "a friend is not a relative: found word for word in incometax/gift_rules_2026/text/friends",
+  "every figure in the cards, the reading, the hook and the title is one read from a table"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.205,
+   "at": 0.12,
+   "text": "Friends' money gifts above fifty thousand rupees a year: all of it taxable."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.127,
+   "at": 5.926,
+   "text": "The limit counts a whole tax year's money gifts from non-relatives."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.806,
+   "at": 11.733,
+   "text": "Two gifts of twenty-five and twenty-eight thousand: all fifty-three thousand is taxable."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.97,
+   "at": 17.539,
+   "text": "Employer gifts under fifteen thousand rupees a year count as nil value."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.336,
+   "at": 23.346,
+   "text": "Two lakh or more from one person a day: bank only."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.694,
+   "at": 29.152,
+   "text": "Relatives' gifts and your own wedding gifts: not taxed. Diwali: no exemption."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.16,
+   "at": 36.894,
+   "text": "Did you know the fifty thousand rupee rule? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Diwali Gifts and Tax: The ₹50,000 Rule (2026-27)"
+}

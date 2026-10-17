@@ -124,7 +124,7 @@ pibp = next(p for u, p in P.items() if "2244475" in u); pr = {r["item"]: r for r
 sent = [s for p in F["pages"] for s in (p.get("sentences") or [])]
 find = lambda w: next(s for s in sent if w in s)
 text = {"no_time_limit": find("no time limit"), "udgam": find("UDGAM refers to"), "ten_years": find("not been operated upon for a period of 10 years"),
-        "restituted": find("restituted"), "campaign": find("IV.12"), "definition": find("are classified as")}
+        "restituted": find("restituted"), "campaign": find("IV.12"), "definition": find("are classified as"), "portals": find("Bima Bharosa")}
 nums = {"5777": "₹5,777 crore", "22.95": "22.95 lakh claims", "2876": "₹2,876 crore"}
 assert "10 years" in text["ten_years"] and "5,777 crore" in text["restituted"] and "22.95 lakh" in text["restituted"] and "2,876 crore" in text["campaign"]
 pv = lambda key: next(r["value_crore"] for k, r in pr.items() if key in k.lower())

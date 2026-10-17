@@ -1,0 +1,290 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "fm03",
+ "palette": "O",
+ "chip": "UPI · DHANTERAS",
+ "source_short": "NPCI UPI daily data · 2023-2025",
+ "hook": [
+  "Dhanteras: a top-two day",
+  "for *UPI payments*,",
+  "*three* years running"
+ ],
+ "hook_vo": "Three years running, Dhanteras was a top-two day for UPI payments.",
+ "cards": [
+  {
+   "kicker": "DHANTERAS 2025 · 18 OCT",
+   "name": "2025",
+   "item": [
+    "npci/upi_festive_days_2023_2025",
+    "dhanteras 2025",
+    "volume mn"
+   ],
+   "item_name": "UPI on Dhanteras 2025",
+   "scale": 0.1,
+   "dec": 2,
+   "unit": " crore",
+   "text": "UPI payments that day: October's most",
+   "sub": "NPCI prints 754.37 million; crore is our conversion.",
+   "bars": [
+    {
+     "name": "That day",
+     "item": [
+      "npci/upi_festive_days_2023_2025",
+      "dhanteras 2025",
+      "volume mn"
+     ],
+     "scale": 0.1,
+     "unit": " cr"
+    },
+    {
+     "name": "Oct average",
+     "item": [
+      "npci/upi_festive_days_2023_2025",
+      "dhanteras 2025",
+      "month average volume mn"
+     ],
+     "scale": 0.1,
+     "unit": " cr"
+    }
+   ],
+   "vo": "Dhanteras twenty twenty-five: about seventy-five crore UPI payments in a day, October's most."
+  },
+  {
+   "kicker": "DHANTERAS 2024 · 29 OCT",
+   "name": "2024",
+   "item": [
+    "npci/upi_festive_days_2023_2025",
+    "dhanteras 2024",
+    "volume mn"
+   ],
+   "item_name": "UPI on Dhanteras 2024",
+   "scale": 0.1,
+   "dec": 2,
+   "unit": " crore",
+   "text": "payments: second-most of the month",
+   "vo": "In twenty twenty-four, the second-most of its month."
+  },
+  {
+   "kicker": "DHANTERAS 2023 · 10 NOV",
+   "name": "2023",
+   "item": [
+    "npci/upi_festive_days_2023_2025",
+    "dhanteras 2023",
+    "volume mn"
+   ],
+   "item_name": "UPI on Dhanteras 2023",
+   "scale": 0.1,
+   "dec": 2,
+   "unit": " crore",
+   "text": "payments: second-most of the month",
+   "vo": "And in twenty twenty-three, second again."
+  },
+  {
+   "kicker": "DIWALI DAY · RUPEE VALUE",
+   "name": "Diwali",
+   "item": [
+    "npci/upi_festive_days_2023_2025",
+    "change 2025",
+    "value"
+   ],
+   "item_name": "UPI value, Diwali against Dhanteras 2025, % (our calculation)",
+   "dec": 0,
+   "sign": true,
+   "unit": "%",
+   "text": "UPI value, Diwali against Dhanteras, 2025",
+   "bars": [
+    {
+     "name": "2025",
+     "item": [
+      "npci/upi_festive_days_2023_2025",
+      "change 2025",
+      "value"
+     ]
+    },
+    {
+     "name": "2024",
+     "item": [
+      "npci/upi_festive_days_2023_2025",
+      "change 2024",
+      "value"
+     ]
+    },
+    {
+     "name": "2023",
+     "item": [
+      "npci/upi_festive_days_2023_2025",
+      "change 2023",
+      "value"
+     ]
+    }
+   ],
+   "sub": "Diwali as dated by PIB greetings: 20 Oct 2025, 31 Oct 2024, 12 Nov 2023. Our calculation.",
+   "vo": "Diwali day's rupee value: twenty-eight percent below Dhanteras, in twenty twenty-five."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Diwali day:",
+   "lower *rupee value*,",
+   "every year."
+  ],
+  "vo": "By value, Diwali day was lower each year. By payments, it was mixed.",
+  "note": "By number of payments, Diwali 2024 was its month's busiest day."
+ },
+ "end": {
+  "q": "Do you pay by UPI on Dhanteras?",
+  "sub": "Comment below.",
+  "vo": "Do you pay by UPI on Dhanteras? Comment below."
+ },
+ "free_numbers": [
+  "754.37",
+  "20",
+  "31",
+  "12"
+ ],
+ "money_tests": [
+  {
+   "says": "Dhanteras was in the top two days of its month by payments, all three years",
+   "value": {
+    "sum": [
+     {
+      "item": [
+       "npci/upi_festive_days_2023_2025",
+       "top2 2023",
+       "value"
+      ]
+     },
+     {
+      "item": [
+       "npci/upi_festive_days_2023_2025",
+       "top2 2024",
+       "value"
+      ]
+     },
+     {
+      "item": [
+       "npci/upi_festive_days_2023_2025",
+       "top2 2025",
+       "value"
+      ]
+     }
+    ]
+   },
+   "equals": 3
+  },
+  {
+   "says": "Dhanteras 2025 was October's most",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "dhanteras 2025",
+     "volume rank in month (1 = most)"
+    ]
+   },
+   "equals": 1
+  },
+  {
+   "says": "Dhanteras 2024 was second",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "dhanteras 2024",
+     "volume rank in month (1 = most)"
+    ]
+   },
+   "equals": 2
+  },
+  {
+   "says": "Dhanteras 2023 was second",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "dhanteras 2023",
+     "volume rank in month (1 = most)"
+    ]
+   },
+   "equals": 2
+  },
+  {
+   "says": "NPCI prints 754.37 million",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "dhanteras 2025",
+     "volume mn"
+    ]
+   },
+   "min": 754.37,
+   "max": 754.37
+  },
+  {
+   "says": "Diwali value lower than Dhanteras in 2023",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "change 2023",
+     "value"
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "Diwali value lower than Dhanteras in 2024",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "change 2024",
+     "value"
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "Diwali value lower than Dhanteras in 2025",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "change 2025",
+     "value"
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "by number, Diwali 2024 was its month's busiest day (the note)",
+   "value": {
+    "item": [
+     "npci/upi_festive_days_2023_2025",
+     "diwali 2024",
+     "volume rank in month (1 = most)"
+    ]
+   },
+   "equals": 1
+  },
+  {
+   "says": "by number, Diwali 2023 was not above Dhanteras (mixed)",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "npci/upi_festive_days_2023_2025",
+       "diwali 2023",
+       "volume mn"
+      ]
+     },
+     {
+      "item": [
+       "npci/upi_festive_days_2023_2025",
+       "dhanteras 2023",
+       "volume mn"
+      ]
+     }
+    ]
+   },
+   "max": -0.01
+  }
+ ],
+ "source": "NPCI, UPI product statistics, daily volume (million) and value (Rs crore), October and November of 2023, 2024 and 2025, read 17 Oct 2026. Dhanteras and Diwali dated by the Prime Minister's and the President's greetings (PIB, pmindia.gov.in). Crore conversions, ranks, averages and changes are our calculation.",
+ "yt_title": "Dhanteras: A Top-Two Day for UPI Payments, 2023-2025"
+}

@@ -1,0 +1,734 @@
+{
+ "id": "fm01",
+ "type": "basket",
+ "chip": "JAN DHAN · OCT 2026",
+ "sourceShort": "PMJDY portal · as on 07/10/2026",
+ "source": "Pradhan Mantri Jan Dhan Yojana portal (Department of Financial Services, Ministry of Finance): Statewise account opening report and national progress report, as on 07/10/2026, read 17 Oct 2026. Average balance per account is our calculation (balance divided by the number of accounts) and includes accounts with little or no balance.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Jan Dhan accounts hold",
+    "*₹3.21 lakh crore*.",
+    "But per account?"
+   ],
+   "vo": "Jan Dhan accounts hold three point two one lakh crore rupees. Per account?",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Accounts",
+   "geo": "India",
+   "kicker": "JAN DHAN · ALL INDIA",
+   "big": "59.54 cr",
+   "text": "accounts, as on 7 Oct 2026",
+   "sub": "Portal term: beneficiaries. Money in them: ₹3.21 lakh crore.",
+   "bars": [
+    {
+     "name": "Accounts",
+     "label": "59.54 cr",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Women",
+     "label": "33.20 cr",
+     "frac": 0.5576083305340948,
+     "neg": false
+    }
+   ],
+   "vo": "Fifty-nine point five four crore accounts. Thirty-three point two crore held by women.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Average",
+   "geo": "India",
+   "kicker": "AVERAGE PER ACCOUNT",
+   "big": "₹5,390",
+   "text": "per account, all India",
+   "sub": "Our calculation: balance divided by accounts, zero balances included.",
+   "bars": [],
+   "vo": "That is about five thousand three hundred and ninety rupees per account.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Lakshadweep",
+   "geo": "India",
+   "kicker": "HIGHEST AND LOWEST AVERAGE",
+   "big": "₹18,437",
+   "text": "Lakshadweep, the highest. Manipur, the lowest.",
+   "sub": "Lakshadweep has 11,027 accounts; Manipur, 10,98,194.",
+   "bars": [
+    {
+     "name": "Lakshadweep",
+     "label": "₹18,437",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Manipur",
+     "label": "₹2,823",
+     "frac": 0.15312455251955895,
+     "neg": false
+    }
+   ],
+   "vo": "Lakshadweep's average is highest, about six and a half times Manipur's, the lowest.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "An average,",
+    "not a *typical*",
+    "balance."
+   ],
+   "note": "Lakshadweep's average is about 6.5 times Manipur's, on a small number of accounts.",
+   "vo": "An average includes accounts with little or no money in them.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Average Jan Dhan balance, *every state and UT*",
+   "sub": "₹ per account · India 5,390 · 7 Oct 2026",
+   "note": "Balance divided by accounts: our calculation from the PMJDY portal, as on 07/10/2026.",
+   "anim": true,
+   "ring": [],
+   "vo": "Now the average balance in every state and territory.",
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "note": "Balance divided by accounts: our calculation from the PMJDY portal, as on 07/10/2026.",
+   "ring": [],
+   "q": "Is your state above or below *₹5,390*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state above or below the national average? Comment below.",
+   "t0": 32.903,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Manipur",
+   "label": "2,823",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Assam",
+   "label": "2,937",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.434
+  },
+  {
+   "name": "Nagaland",
+   "label": "3,805",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 29.486
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "4,060",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.538
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "4,153",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.59
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "4,354",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.642
+  },
+  {
+   "name": "Telangana",
+   "label": "4,482",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.694
+  },
+  {
+   "name": "Bihar",
+   "label": "4,520",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.746
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "4,696",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.798
+  },
+  {
+   "name": "West Bengal",
+   "label": "4,782",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.85
+  },
+  {
+   "name": "Puducherry",
+   "label": "5,371",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.902
+  },
+  {
+   "name": "Punjab",
+   "label": "5,481",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.954
+  },
+  {
+   "name": "Meghalaya",
+   "label": "5,592",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.006
+  },
+  {
+   "name": "Sikkim",
+   "label": "5,654",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.058
+  },
+  {
+   "name": "Odisha",
+   "label": "5,665",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.11
+  },
+  {
+   "name": "Kerala",
+   "label": "5,666",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.162
+  },
+  {
+   "name": "Maharashtra",
+   "label": "5,679",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.214
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "5,709",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 30.266
+  },
+  {
+   "name": "Mizoram",
+   "label": "5,759",
+   "bucket": 2,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.318
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "5,895",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.369
+  },
+  {
+   "name": "Jharkhand",
+   "label": "6,084",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.421
+  },
+  {
+   "name": "Tripura",
+   "label": "6,223",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.473
+  },
+  {
+   "name": "Karnataka",
+   "label": "6,328",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.525
+  },
+  {
+   "name": "Gujarat",
+   "label": "6,362",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.577
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "6,516",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.629
+  },
+  {
+   "name": "Chandigarh",
+   "label": "6,525",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.681
+  },
+  {
+   "name": "Rajasthan",
+   "label": "6,583",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.733
+  },
+  {
+   "name": "Haryana",
+   "label": "7,349",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.785
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "7,700",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.837
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "7,801",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.889
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "7,863",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.941
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "8,269",
+   "bucket": 4,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 30.993
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "8,853",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.045
+  },
+  {
+   "name": "Goa",
+   "label": "10,721",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.097
+  },
+  {
+   "name": "Ladakh",
+   "label": "12,855",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.149
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "18,437",
+   "bucket": 4,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.201
+  }
+ ],
+ "checked": [
+  "card 1: Accounts 59.54",
+  "card 1: Women 33.2",
+  "card 2: Average 5390.24",
+  "card 3: Lakshadweep 18436.6",
+  "card 3: Manipur 2823.09",
+  "every figure in the cards, the reading, the hook and the title is one read from a table",
+  "Lakshadweep's average is about six and a half times Manipur's: 6.53",
+  "the map's India figure is the national average: 0.00",
+  "money in them: 3.21 lakh crore: 3.21",
+  "Lakshadweep has 11,027 accounts: 11027.00",
+  "Manipur has 10,98,194 accounts: 1098194.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.459,
+   "at": 0.12,
+   "text": "Jan Dhan accounts hold three point two one lakh crore rupees. Per account?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.989,
+   "at": 7.862,
+   "text": "Fifty-nine point five four crore accounts. Thirty-three point two crore held by women."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.578,
+   "at": 13.668,
+   "text": "That is about five thousand three hundred and ninety rupees per account."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.937,
+   "at": 19.475,
+   "text": "Lakshadweep's average is highest, about six and a half times Manipur's, the lowest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.369,
+   "at": 25.281,
+   "text": "An average includes accounts with little or no money in them."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.056,
+   "at": 29.152,
+   "text": "Now the average balance in every state and territory."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.179,
+   "at": 33.023,
+   "text": "Is your state above or below the national average? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Jan Dhan: ₹3.21 Lakh Crore, ₹5,390 per Account (Oct 2026)"
+}

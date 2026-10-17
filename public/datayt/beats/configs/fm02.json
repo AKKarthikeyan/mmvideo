@@ -1,0 +1,216 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "fm02",
+ "palette": "E",
+ "chip": "MUHURAT TRADING",
+ "source_short": "NSE, BSE · Diwali sessions 2015-2025",
+ "hook": [
+  "Diwali's one-hour trading:",
+  "up *9* times in *11*,",
+  "none above *1%*"
+ ],
+ "hook_vo": "Muhurat sessions closed higher nine times in eleven. None moved one percent.",
+ "cards": [
+  {
+   "kicker": "NIFTY 50 · MUHURAT DAYS",
+   "name": "Up",
+   "count": [
+    "markets/muhurat_2015_2025",
+    "nifty change %",
+    ">",
+    0
+   ],
+   "dec": 0,
+   "unit": " of 11",
+   "text": "sessions closed higher, 2015 to 2025",
+   "sub": "Against the previous day's close: our calculation from NSE. Muhurat: Diwali's special session.",
+   "vo": "Since twenty fifteen, the Nifty closed higher on nine of eleven Muhurat days."
+  },
+  {
+   "kicker": "THE BIGGEST RISE",
+   "name": "2022",
+   "item": [
+    "markets/muhurat_2015_2025",
+    "2022",
+    "nifty change %"
+   ],
+   "item_name": "Muhurat 2022",
+   "dec": 2,
+   "sign": true,
+   "unit": "%",
+   "text": "Nifty 50, Muhurat 2022",
+   "bars": [
+    {
+     "name": "2022",
+     "item": [
+      "markets/muhurat_2015_2025",
+      "2022",
+      "nifty change %"
+     ]
+    },
+    {
+     "name": "2018",
+     "item": [
+      "markets/muhurat_2015_2025",
+      "2018",
+      "nifty change %"
+     ]
+    },
+    {
+     "name": "2015",
+     "item": [
+      "markets/muhurat_2015_2025",
+      "2015",
+      "nifty change %"
+     ]
+    }
+   ],
+   "sub": "No session moved as much as one percent.",
+   "vo": "The biggest rise, in twenty twenty-two, was zero point eight eight percent."
+  },
+  {
+   "kicker": "THE DOWN YEARS",
+   "name": "2017",
+   "item": [
+    "markets/muhurat_2015_2025",
+    "2017",
+    "nifty change %"
+   ],
+   "item_name": "Muhurat 2017",
+   "dec": 2,
+   "sign": true,
+   "unit": "%",
+   "text": "Nifty 50, Muhurat 2017",
+   "bars": [
+    {
+     "name": "2017",
+     "item": [
+      "markets/muhurat_2015_2025",
+      "2017",
+      "nifty change %"
+     ]
+    },
+    {
+     "name": "2016",
+     "item": [
+      "markets/muhurat_2015_2025",
+      "2016",
+      "nifty change %"
+     ]
+    }
+   ],
+   "vo": "It fell twice: in twenty sixteen and twenty seventeen."
+  },
+  {
+   "kicker": "LAST YEAR · MUHURAT 2025",
+   "name": "2025",
+   "item": [
+    "markets/muhurat_2015_2025",
+    "2025",
+    "nifty change %"
+   ],
+   "item_name": "Muhurat 2025",
+   "dec": 2,
+   "sign": true,
+   "unit": "%",
+   "text": "Nifty 50, Muhurat 2025",
+   "sub": "That year's session ran in the afternoon (BSE notice).",
+   "vo": "Last year's session rose zero point one percent."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Under *1%*,",
+   "every year.",
+   "Not a *forecast*."
+  ],
+  "vo": "None moved one percent either way. Past years are not a forecast.",
+  "note": "Muhurat 2026: Sunday 8 Nov. NSE says the timings will follow by circular."
+ },
+ "end": {
+  "q": "Do you follow Muhurat trading?",
+  "sub": "Muhurat 2026: Sunday 8 Nov.",
+  "vo": "Do you follow Muhurat trading? This year: Sunday, eighth November."
+ },
+ "free_numbers": [
+  "8",
+  "50",
+  "1"
+ ],
+ "money_tests": [
+  {
+   "says": "nine of eleven sessions closed higher on the Nifty",
+   "value": {
+    "count": [
+     "markets/muhurat_2015_2025",
+     "nifty change %",
+     ">",
+     0
+    ]
+   },
+   "equals": 9
+  },
+  {
+   "says": "2022 was the only session above 0.87% (the biggest rise)",
+   "value": {
+    "count": [
+     "markets/muhurat_2015_2025",
+     "nifty change %",
+     ">",
+     0.87
+    ]
+   },
+   "equals": 1
+  },
+  {
+   "says": "no session rose as much as one percent",
+   "value": {
+    "count": [
+     "markets/muhurat_2015_2025",
+     "nifty change %",
+     ">",
+     0.999
+    ]
+   },
+   "equals": 0
+  },
+  {
+   "says": "no session fell as much as one percent",
+   "value": {
+    "count": [
+     "markets/muhurat_2015_2025",
+     "nifty change %",
+     "<",
+     -0.999
+    ]
+   },
+   "equals": 0
+  },
+  {
+   "says": "two sessions fell",
+   "value": {
+    "count": [
+     "markets/muhurat_2015_2025",
+     "nifty change %",
+     "<",
+     0
+    ]
+   },
+   "equals": 2
+  }
+ ],
+ "quotes": [
+  {
+   "says": "the 2026 session is on Sunday 8 Nov, timings by circular",
+   "text": [
+    "markets/muhurat_2015_2025",
+    "text",
+    "nse_2026"
+   ],
+   "contains": "Muhurat Trading will be conducted on Sunday, November 08, 2026"
+  }
+ ],
+ "source": "Nifty 50 closes from NSE's historical index data and Sensex closes from BSE's index archive, on each Diwali Muhurat day 2015-2025 and the session before; dates and session times as printed in BSE's Muhurat notices. Changes are our calculation. 2026: NSE's holidays page, read 17 Oct 2026. Past moves are not a forecast or advice.",
+ "yt_title": "Diwali Muhurat Trading: Nifty Up 9 Times in 11 (2015-2025)"
+}

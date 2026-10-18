@@ -1,14 +1,14 @@
 {
  "id": "tsmc3q26",
- "title": "TSMC Keeps $51 of Every $100 It Sells. How?",
+ "title": "How Does TSMC Make Money? Explained Simply",
  "chapters": [
-  "$51 of every $100",
-  "Where the dollars come from",
-  "The newest chips",
-  "Following the dollar",
-  "Why the margin slipped",
-  "What TSMC expects",
-  "What to watch",
+  "What does TSMC do?",
+  "Who pays TSMC?",
+  "How much does TSMC keep?",
+  "Why can't rivals copy TSMC?",
+  "Why did TSMC's margin slip?",
+  "What does TSMC expect next?",
+  "Does TSMC pass the moat test?",
   "Sources"
  ],
  "shorts": [],
@@ -27,155 +27,134 @@
  "beats": [
   {
    "ch": 0,
-   "key": "h00",
-   "say": "Out of every hundred dollars TSMC sells, how much does it keep? Not ten. Not twenty five. Fifty one dollars, after paying for its factories, its engineers and its taxes. A year ago, it kept about forty six. So how does a company that runs factories keep half of everything it sells?",
-   "cap": "Out of every $100 TSMC sells, how much does it keep? Not $10. Not $25. $51, after paying for its factories, its engineers and its taxes. A year ago, it kept about $46 (our arithmetic). So how does a company that runs factories keep half of everything it sells?",
+   "key": "w00",
+   "say": "What does TSMC do? It makes chips that other companies design. And it keeps fifty one dollars of every hundred it sells. How does a factory keep half? Picture a castle, with deep water all around it.",
+   "cap": "What does TSMC do? It makes chips that other companies design. And it keeps $51 of every $100 it sells. How does a factory keep half? Picture a castle, with deep water all around it.",
    "scene": {
-    "type": "keep",
-    "heading": "TSMC SELLS $100 OF CHIPS. HOW MUCH DOES IT KEEP?",
-    "note": "NET PROFIT · TSMC'S RESULTS, 15 OCT 2026 · FILED IN TAIWAN DOLLARS",
-    "total": 100,
-    "guesses": [
+    "type": "castle",
+    "flag": "TSMC",
+    "flagAt": "What does TSMC do",
+    "moatAt": "deep water all around",
+    "checks": [],
+    "stamps": [
      {
-      "text": "$10?",
-      "at": "Not ten"
-     },
-     {
-      "text": "$25?",
-      "at": "Not twenty five"
-     }
-    ],
-    "was": {
-     "v": 45.7,
-     "text": "$45.70",
-     "label": "JUL–SEP 2025",
-     "at": "A year ago"
-    },
-    "now": {
-     "v": 51.1,
-     "text": "$51.10",
-     "label": "JUL–SEP 2026",
-     "at": "Fifty one dollars"
-    },
-    "ask": {
-     "text": "HOW DOES A FACTORY KEEP HALF?",
-     "at": "So how does a company"
-    }
-   },
-   "sec": 18.8,
-   "cues": [
-    "Out of every $100 TSMC sells, how much does it keep?",
-    "Not $10.",
-    "Not $25.",
-    "$51, after paying for its factories, its engineers and its taxes.",
-    "A year ago, it kept about $46 (our arithmetic).",
-    "So how does a company that runs factories keep half of everything it sells?"
-   ]
-  },
-  {
-   "ch": 0,
-   "key": "h01",
-   "say": "Here is the strange part. Sales grew by about half in a year. Profit grew faster, by more than two thirds. Most factories work the other way round.",
-   "cap": "Here is the strange part. Sales grew by about half in a year (+50.9% in Taiwan dollars). Profit grew faster, by more than two thirds (+68.7%). Most factories work the other way round.",
-   "scene": {
-    "type": "duo",
-    "heading": "JULY TO SEPTEMBER 2026 · AGAINST A YEAR AGO · IN TAIWAN DOLLARS",
-    "note": "TSMC'S RESULTS · 15 OCT 2026",
-    "items": [
-     {
-      "icon": "box",
-      "label": "SALES GREW",
-      "v": 50.9,
-      "text": "+50.9%",
-      "at": "Sales grew"
-     },
-     {
-      "icon": "coin",
-      "label": "PROFIT GREW",
-      "v": 68.7,
-      "text": "+68.7%",
-      "at": "Profit grew faster"
-     }
-    ],
-    "gap": {
-     "text": "PROFIT GREW FASTER",
-     "at": "other way round"
-    }
-   },
-   "sec": 9.8,
-   "cues": [
-    "Here is the strange part.",
-    "Sales grew by about half in a year (+50.9% in Taiwan dollars).",
-    "Profit grew faster, by more than two thirds (+68.7%).",
-    "Most factories work the other way round."
-   ]
-  },
-  {
-   "ch": 0,
-   "key": "h02",
-   "say": "So three questions. Where do the dollars come from? Where do they go? And why, in a record quarter, did the margin slip a little from the quarter before? Stay for the three numbers to watch.",
-   "cap": "So three questions. Where do the dollars come from? Where do they go? And why, in a record quarter, did the margin slip a little from the quarter before? Stay for the three numbers to watch.",
-   "scene": {
-    "type": "strips",
-    "items": [
-     {
-      "text": "WHERE DO THE DOLLARS COME FROM?",
-      "at": "Where do the dollars come"
-     },
-     {
-      "text": "WHERE DO THEY GO?",
-      "at": "Where do they go"
-     },
-     {
-      "text": "WHY DID THE MARGIN SLIP?",
-      "at": "did the margin slip",
-      "red": true
+      "text": "$51 OF EVERY $100",
+      "at": "fifty one dollars"
      }
     ]
    },
-   "sec": 12.67,
+   "sec": 13.27,
    "cues": [
-    "So three questions.",
-    "Where do the dollars come from?",
-    "Where do they go?",
-    "And why, in a record quarter, did the margin slip a little from the quarter",
-    "before?",
-    "Stay for the three numbers to watch."
+    "What does TSMC do?",
+    "It makes chips that other companies design.",
+    "And it keeps $51 of every $100 it sells.",
+    "How does a factory keep half?",
+    "Picture a castle, with deep water all around it."
    ]
   },
   {
-   "ch": 1,
-   "key": "m10",
-   "say": "First, who pays TSMC?",
-   "cap": "First, who pays TSMC?",
+   "ch": 0,
+   "key": "w01",
+   "say": "Here is a made up bakery. Priya bakes cakes for ten famous cafés. Each café puts its own name on the box. Customers never see Priya's name. But every café needs her ovens.",
+   "cap": "Here is a made-up bakery. Priya bakes cakes for 10 famous cafés. Each café puts its own name on the box. Customers never see Priya's name. But every café needs her ovens.",
    "scene": {
-    "type": "title",
-    "lines": [
-     "WHERE THE DOLLARS",
-     "COME FROM"
-    ],
-    "red": false
+    "type": "store",
+    "heading": "PRIYA'S BAKERY",
+    "note": "MADE-UP EXAMPLE",
+    "sign": "BAKERY",
+    "facts": [
+     {
+      "text": "BAKES FOR 10 CAFÉS",
+      "at": "ten famous cafés"
+     },
+     {
+      "text": "CAFÉS PUT THEIR NAME",
+      "at": "its own name on the box"
+     }
+    ]
    },
-   "sec": 3.0,
+   "sec": 11.4,
    "cues": [
-    "First, who pays TSMC?"
+    "Here is a made-up bakery.",
+    "Priya bakes cakes for 10 famous cafés.",
+    "Each café puts its own name on the box.",
+    "Customers never see Priya's name.",
+    "But every café needs her ovens."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "w02",
+   "say": "TSMC is Priya, for chips. Companies like Apple and Nvidia design chips. TSMC builds them. From July to September, that brought in forty six point seven billion dollars.",
+   "cap": "TSMC is Priya, for chips. Companies like Apple and Nvidia design chips. TSMC builds them. From July to September 2026, that brought in $46.7 billion.",
+   "scene": {
+    "type": "store",
+    "heading": "TSMC · JULY TO SEPTEMBER 2026",
+    "note": "TSMC'S RESULTS · 15 OCT 2026",
+    "sign": "CHIP FACTORY",
+    "facts": [
+     {
+      "text": "OTHERS DESIGN",
+      "at": "design chips"
+     },
+     {
+      "text": "TSMC BUILDS",
+      "at": "TSMC builds them"
+     },
+     {
+      "text": "$46.7 BILLION",
+      "at": "forty six point seven"
+     }
+    ]
+   },
+   "sec": 11.2,
+   "cues": [
+    "TSMC is Priya, for chips.",
+    "Companies like Apple and Nvidia design chips.",
+    "TSMC builds them.",
+    "From July to September 2026, that brought in $46.7 billion."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "w03",
+   "say": "By the end, you will run our three question moat test on TSMC. First: who pays it?",
+   "cap": "By the end, you will run our 3-question moat test on TSMC. First: who pays it?",
+   "scene": {
+    "type": "castle",
+    "flag": "TSMC",
+    "flagAt": 0,
+    "moatAt": 0,
+    "checks": [],
+    "stamps": [
+     {
+      "text": "3-QUESTION TEST",
+      "at": "three question moat test"
+     }
+    ]
+   },
+   "sec": 5.47,
+   "cues": [
+    "By the end, you will run our 3-question moat test on TSMC.",
+    "First:",
+    "who pays it?"
    ]
   },
   {
    "ch": 1,
-   "key": "m11",
-   "say": "In three months, TSMC billed forty six point seven billion dollars. Of every hundred, about sixty eight came from chips for A I and data centres, which TSMC calls high performance computing. About twenty one came from smartphones. Cars, devices and the rest: about eleven.",
-   "cap": "In three months, TSMC billed $46.7 billion. Of every $100, about $68 came from chips for AI and data centres, which TSMC calls high-performance computing. About $21 came from smartphones. Cars, devices and the rest: about $11.",
+   "key": "p10",
+   "say": "Who pays TSMC? Mostly companies that make chips for A I and data centres. Of every hundred dollars, about sixty eight came from them. Smartphones paid about twenty one. Everything else, about eleven.",
+   "cap": "Who pays TSMC? Mostly companies that make chips for AI and data centres. Of every $100, about $68 came from them. Smartphones paid about $21. Everything else, about $11.",
    "scene": {
     "type": "note",
-    "heading": "EVERY $100 TSMC BILLED · JULY TO SEPTEMBER 2026",
-    "note": "TSMC'S RESULTS · 15 OCT 2026 · SHARE OF REVENUE BY PLATFORM",
+    "heading": "WHO PAID TSMC'S $100",
+    "note": "TSMC'S RESULTS · JUL–SEP 2026 · BY PLATFORM",
     "total": 100,
     "label": "$100",
     "segs": [
      {
       "key": "hpc",
-      "label": "AI AND DATA-CENTRE CHIPS (HPC)",
+      "label": "AI CHIP MAKERS",
       "v": 68,
       "text": "$68",
       "icon": "box",
@@ -191,7 +170,7 @@
      },
      {
       "key": "rest",
-      "label": "CARS, DEVICES AND THE REST",
+      "label": "EVERYTHING ELSE",
       "v": 11,
       "text": "$11",
       "icon": "coin",
@@ -206,102 +185,264 @@
      },
      {
       "key": "phone",
-      "at": "About twenty one"
+      "at": "Smartphones paid"
      },
      {
       "key": "rest",
-      "at": "Cars, devices"
+      "at": "Everything else"
      }
     ],
     "zoom": false,
-    "callouts": [
-     {
-      "text": "$46.7 BILLION IN THREE MONTHS",
-      "at": "forty six point seven"
-     }
-    ]
+    "callouts": []
    },
-   "sec": 18.13,
+   "sec": 13.27,
    "cues": [
-    "In three months, TSMC billed $46.7 billion.",
-    "Of every $100, about $68 came from chips for AI and data centres,",
-    "which TSMC calls high-performance computing.",
-    "About $21 came from smartphones.",
-    "Cars, devices and the rest:",
-    "about $11."
+    "Who pays TSMC?",
+    "Mostly companies that make chips for AI and data centres.",
+    "Of every $100, about $68 came from them.",
+    "Smartphones paid about $21.",
+    "Everything else, about $11."
    ]
   },
   {
    "ch": 1,
-   "key": "m12",
-   "say": "A year ago, the A I and data centre share was about fifty seven dollars of every hundred. Now sixty eight. Smartphones went the other way. Why does that matter for profit? Because of which chips those customers buy.",
-   "cap": "A year ago, the AI and data-centre share was about $57 of every $100. Now $68. Smartphones went the other way. Why does that matter for profit? Because of which chips those customers buy.",
+   "key": "p11",
+   "say": "A year ago, A I chip makers paid about fifty seven of every hundred. Now, sixty eight. So the castle now stands on A I. Why does that help TSMC keep more?",
+   "cap": "A year ago, AI chip makers paid about $57 of every $100. Now, $68. So the castle now stands on AI. Why does that help TSMC keep more?",
    "scene": {
     "type": "stacks",
-    "heading": "OF EVERY $100 TSMC BILLED: AI AND DATA-CENTRE CHIPS",
-    "note": "TSMC'S RESULTS · JUL–SEP 2025 AND JUL–SEP 2026",
+    "heading": "AI CHIP MAKERS' SHARE",
+    "note": "TSMC'S RESULTS · OF EVERY $100",
     "icon": "box",
     "items": [
      {
-      "label": "JUL–SEP 2025",
+      "label": "A YEAR AGO",
       "v": 57,
       "text": "$57",
       "at": "about fifty seven"
      },
      {
-      "label": "JUL–SEP 2026",
+      "label": "NOW",
       "v": 68,
       "text": "$68",
-      "at": "Now sixty eight",
+      "at": "Now, sixty eight",
       "red": true
      }
     ],
     "stamps": [
      {
-      "text": "WHY DOES THAT MATTER?",
-      "at": "Why does that matter"
+      "text": "WHY DOES IT HELP?",
+      "at": "Why does that help"
      }
     ]
    },
-   "sec": 14.33,
+   "sec": 10.27,
    "cues": [
-    "A year ago, the AI and data-centre share was about $57 of every $100.",
-    "Now $68.",
-    "Smartphones went the other way.",
-    "Why does that matter for profit?",
-    "Because of which chips those customers buy."
+    "A year ago, AI chip makers paid about $57 of every $100.",
+    "Now, $68.",
+    "So the castle now stands on AI.",
+    "Why does that help TSMC keep more?"
    ]
   },
   {
    "ch": 2,
-   "key": "f20",
-   "say": "So, which chips?",
-   "cap": "So, which chips?",
+   "key": "k20",
+   "say": "How much does TSMC keep? Fifty one dollars of every hundred. Not ten. Not twenty five. A year ago, it kept about forty six.",
+   "cap": "How much does TSMC keep? $51 of every $100. Not $10. Not $25. A year ago, it kept about $46 (our arithmetic).",
    "scene": {
-    "type": "title",
-    "lines": [
-     "THE NEWEST",
-     "CHIPS"
+    "type": "keep",
+    "heading": "TSMC SELLS $100. WHAT DOES IT KEEP?",
+    "note": "NET PROFIT · TSMC'S RESULTS, 15 OCT 2026",
+    "total": 100,
+    "guesses": [
+     {
+      "text": "$10?",
+      "at": "Not ten"
+     },
+     {
+      "text": "$25?",
+      "at": "Not twenty five"
+     }
     ],
-    "red": false
+    "was": {
+     "v": 45.7,
+     "text": "$46",
+     "label": "A YEAR AGO",
+     "at": "A year ago"
+    },
+    "now": {
+     "v": 51.1,
+     "text": "$51",
+     "label": "NOW",
+     "at": "Fifty one dollars of every"
+    }
    },
-   "sec": 3.0,
+   "sec": 8.2,
    "cues": [
-    "So, which chips?"
+    "How much does TSMC keep?",
+    "$51 of every $100.",
+    "Not $10.",
+    "Not $25.",
+    "A year ago, it kept about $46 (our arithmetic)."
    ]
   },
   {
    "ch": 2,
-   "key": "f21",
-   "say": "Chips are made on processes named in nanometres. Smaller is newer, and harder to make. Of every hundred dollars of wafers TSMC sold, thirty three were three nanometre chips. Twenty eight were five nanometre. Ten were seven. The newest, two nanometres, is already eight. Older processes: twenty one.",
-   "cap": "Chips are made on processes named in nanometres. Smaller is newer, and harder to make. Of every $100 of wafers TSMC sold, $33 were 3-nanometre chips. $28 were 5-nanometre. $10 were 7. The newest, 2 nanometres, is already $8. Older processes: $21.",
+   "key": "k21",
+   "say": "Follow one hundred dollars. Making the chips takes about thirty three. Running the company takes about eight. Tax takes about eight more. Fifty one is left.",
+   "cap": "Follow $100. Making the chips takes about $33. Running the company takes about $8. Tax takes about $8 more. $51 is left (our arithmetic; tax is after interest income).",
+   "scene": {
+    "type": "note",
+    "heading": "$100 OF SALES, CUT UP",
+    "note": "OUR ARITHMETIC FROM TSMC'S RESULTS · JUL–SEP 2026",
+    "total": 100,
+    "label": "$100",
+    "segs": [
+     {
+      "key": "make",
+      "label": "MAKING THE CHIPS",
+      "v": 33,
+      "text": "$33",
+      "icon": "box",
+      "color": "orange"
+     },
+     {
+      "key": "run",
+      "label": "RUNNING THE COMPANY",
+      "v": 8,
+      "text": "$8",
+      "icon": "person",
+      "color": "orange"
+     },
+     {
+      "key": "tax",
+      "label": "TAX",
+      "v": 8,
+      "text": "$8",
+      "icon": "tag",
+      "color": "gray"
+     },
+     {
+      "key": "kept",
+      "label": "KEPT",
+      "v": 51,
+      "text": "$51",
+      "icon": "coin",
+      "color": "gold"
+     }
+    ],
+    "done": [],
+    "show": [
+     {
+      "key": "make",
+      "at": "Making the chips"
+     },
+     {
+      "key": "run",
+      "at": "Running the company"
+     },
+     {
+      "key": "tax",
+      "at": "Tax takes"
+     },
+     {
+      "key": "kept",
+      "at": "Fifty one is left"
+     }
+    ],
+    "zoom": false,
+    "callouts": [
+     {
+      "text": "KEPT: $51",
+      "at": "Fifty one is left",
+      "red": true
+     }
+    ]
+   },
+   "sec": 10.4,
+   "cues": [
+    "Follow $100.",
+    "Making the chips takes about $33.",
+    "Running the company takes about $8.",
+    "Tax takes about $8 more.",
+    "$51 is left (our arithmetic; tax is after interest income)."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "k22",
+   "say": "And the share it keeps is growing. In a year, sales grew by half. Profit grew by two thirds.",
+   "cap": "And the share it keeps is growing. In a year, sales grew by half (+50.9%). Profit grew by two thirds (+68.7%, in Taiwan dollars).",
+   "scene": {
+    "type": "duo",
+    "heading": "IN ONE YEAR",
+    "note": "TSMC'S RESULTS · IN TAIWAN DOLLARS",
+    "items": [
+     {
+      "icon": "box",
+      "label": "SALES",
+      "v": 50.9,
+      "text": "+51%",
+      "at": "sales grew by half"
+     },
+     {
+      "icon": "coin",
+      "label": "PROFIT",
+      "v": 68.7,
+      "text": "+69%",
+      "at": "Profit grew"
+     }
+    ],
+    "gap": {
+     "text": "PROFIT GREW FASTER",
+     "at": "two thirds"
+    }
+   },
+   "sec": 6.13,
+   "cues": [
+    "And the share it keeps is growing.",
+    "In a year, sales grew by half (+50.9%).",
+    "Profit grew by two thirds (+68.7%, in Taiwan dollars)."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c30",
+   "say": "Why can't rivals copy TSMC? Because very few can make the newest chips. Chip makers name each new step by size. Smaller is newer, and harder to make.",
+   "cap": "Why can't rivals copy TSMC? Because very few can make the newest chips. Chip makers name each new step by size, in nanometres. Smaller is newer, and harder to make.",
+   "scene": {
+    "type": "castle",
+    "flag": "TSMC",
+    "flagAt": 0,
+    "moatAt": "very few can make",
+    "checks": [],
+    "stamps": [
+     {
+      "text": "SMALLER = HARDER",
+      "at": "Smaller is newer"
+     }
+    ]
+   },
+   "sec": 9.93,
+   "cues": [
+    "Why can't rivals copy TSMC?",
+    "Because very few can make the newest chips.",
+    "Chip makers name each new step by size, in nanometres.",
+    "Smaller is newer, and harder to make."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c31",
+   "say": "Of every hundred dollars of chips TSMC sold, thirty three were the three nanometre size. Twenty eight were five. Ten were seven. The newest, two, is already eight. Older sizes: twenty one.",
+   "cap": "Of every $100 of chips TSMC sold, $33 were the 3-nanometre size. $28 were 5. $10 were 7. The newest, 2, is already $8. Older sizes: $21.",
    "scene": {
     "type": "bars",
-    "heading": "OF EVERY $100 OF WAFERS TSMC SOLD · JULY TO SEPTEMBER 2026",
+    "heading": "OF EVERY $100 OF CHIPS SOLD",
     "unit": "$",
     "rows": [
      {
-      "name": "2nm (NEWEST)",
+      "name": "2nm · NEWEST",
       "v": 8,
       "label": "$8",
       "at": "is already eight",
@@ -329,306 +470,147 @@
       "name": "OLDER",
       "v": 21,
       "label": "$21",
-      "at": "Older processes"
+      "at": "Older sizes"
      }
     ]
    },
-   "sec": 19.87,
+   "sec": 12.53,
    "cues": [
-    "Chips are made on processes named in nanometres.",
-    "Smaller is newer, and harder to make.",
-    "Of every $100 of wafers TSMC sold, $33 were 3-nanometre chips.",
-    "$28 were 5-nanometre.",
+    "Of every $100 of chips TSMC sold, $33 were the 3-nanometre size.",
+    "$28 were 5.",
     "$10 were 7.",
-    "The newest, 2 nanometres, is already $8.",
-    "Older processes:",
+    "The newest, 2, is already $8.",
+    "Older sizes:",
     "$21."
-   ]
-  },
-  {
-   "ch": 2,
-   "key": "f22",
-   "say": "Add the first four together: seventy nine dollars of every hundred came from seven nanometres or newer. Very few factories in the world can make these at scale. Our reading: when customers have few other places to go, the price reflects it.",
-   "cap": "Add the first four together: $79 of every $100 came from 7 nanometres or newer. Very few factories in the world can make these at scale. Our reading: when customers have few other places to go, the price reflects it.",
-   "scene": {
-    "type": "hand",
-    "title": "Why the newest chips matter:",
-    "items": [
-     {
-      "text": "$79 of every $100: 7nm or newer",
-      "at": "seventy nine dollars"
-     },
-     {
-      "text": "Few factories can make them",
-      "at": "Very few factories"
-     },
-     {
-      "text": "Few choices → the price reflects it (our reading)",
-      "at": "the price reflects it",
-      "red": true
-     }
-    ]
-   },
-   "sec": 16.0,
-   "cues": [
-    "Add the first four together:",
-    "$79 of every $100 came from 7 nanometres or newer.",
-    "Very few factories in the world can make these at scale.",
-    "Our reading:",
-    "when customers have few other places to go, the price reflects it."
-   ]
-  },
-  {
-   "ch": 3,
-   "key": "c30",
-   "say": "Now follow one hundred dollars through TSMC.",
-   "cap": "Now follow $100 through TSMC.",
-   "scene": {
-    "type": "title",
-    "lines": [
-     "FOLLOWING",
-     "THE DOLLAR"
-    ],
-    "red": false
-   },
-   "sec": 3.0,
-   "cues": [
-    "Now follow $100 through TSMC."
-   ]
-  },
-  {
-   "ch": 3,
-   "key": "c31",
-   "say": "Take one hundred dollars of TSMC's sales. Making the chips, the materials, the power, and the machines wearing out, took about thirty three dollars sixty. Running the company, research, sales and offices, took seven eighty. Tax, after a little interest income, took seven sixty. Kept as profit: fifty one dollars.",
-   "cap": "Take $100 of TSMC's sales. Making the chips (the materials, the power, and the machines wearing out) took about $33.60. Running the company (research, sales and offices) took $7.80. Tax, after a little interest income, took $7.60. Kept as profit: $51.10 (our arithmetic).",
-   "scene": {
-    "type": "note",
-    "heading": "$100 OF TSMC'S SALES, CUT INTO PIECES · JULY TO SEPTEMBER 2026",
-    "note": "OUR ARITHMETIC FROM TSMC'S RESULTS · 15 OCT 2026",
-    "total": 100,
-    "label": "$100",
-    "segs": [
-     {
-      "key": "make",
-      "label": "MAKING THE CHIPS",
-      "v": 33.586,
-      "text": "$33.60",
-      "icon": "box",
-      "color": "orange"
-     },
-     {
-      "key": "run",
-      "label": "RUNNING THE COMPANY",
-      "v": 7.759,
-      "text": "$7.80",
-      "icon": "person",
-      "color": "orange"
-     },
-     {
-      "key": "tax",
-      "label": "TAX, LESS INTEREST INCOME",
-      "v": 7.588,
-      "text": "$7.60",
-      "icon": "tag",
-      "color": "gray"
-     },
-     {
-      "key": "kept",
-      "label": "KEPT AS PROFIT",
-      "v": 51.067,
-      "text": "$51.10",
-      "icon": "coin",
-      "color": "gold"
-     }
-    ],
-    "done": [],
-    "show": [
-     {
-      "key": "make",
-      "at": "Making the chips"
-     },
-     {
-      "key": "run",
-      "at": "Running the company"
-     },
-     {
-      "key": "tax",
-      "at": "Tax, after"
-     },
-     {
-      "key": "kept",
-      "at": "Kept as profit"
-     }
-    ],
-    "zoom": false,
-    "callouts": [
-     {
-      "text": "KEPT: $51.10",
-      "at": "Kept as profit",
-      "red": true
-     }
-    ]
-   },
-   "sec": 20.87,
-   "cues": [
-    "Take $100 of TSMC's sales.",
-    "Making the chips (the materials, the power,",
-    "and the machines wearing out) took about $33.60.",
-    "Running the company (research, sales and offices) took $7.80.",
-    "Tax, after a little interest income, took $7.60.",
-    "Kept as profit:",
-    "$51.10 (our arithmetic)."
    ]
   },
   {
    "ch": 3,
    "key": "c32",
-   "say": "The tax line hides two moves. Interest and other income added about two dollars thirty. Tax, and the slice that belongs to minority shareholders in TSMC's subsidiaries, took about nine ninety. Net, seven sixty.",
-   "cap": "The tax line hides two moves. Interest and other income added about $2.30. Tax, and the slice that belongs to minority shareholders in TSMC's subsidiaries, took about $9.90. Net, $7.60 (our arithmetic).",
+   "say": "Add up the newest four. Seventy nine of every hundred dollars. That is the water around the castle. A new chip factory costs billions of dollars. And it takes years to run one well.",
+   "cap": "Add up the newest four: $79 of every $100. That is the water around the castle. A new chip factory costs billions of dollars. And it takes years to run one well.",
    "scene": {
-    "type": "scale",
-    "heading": "INSIDE THE TAX LINE · PER $100 OF SALES",
-    "note": "OUR ARITHMETIC FROM TSMC'S RESULTS · 15 OCT 2026",
-    "left": {
-     "label": "INTEREST AND OTHER INCOME",
-     "text": "+$2.30",
-     "v": 2.3,
-     "at": "Interest and other income",
-     "color": "green"
-    },
-    "right": {
-     "label": "TAX AND MINORITY INTERESTS",
-     "text": "$9.90",
-     "v": 9.9,
-     "at": "took about nine ninety",
-     "color": "blue"
-    },
-    "result": {
-     "text": "NET: $7.60",
-     "at": "Net, seven sixty"
-    }
+    "type": "castle",
+    "flag": "TSMC",
+    "flagAt": 0,
+    "moatAt": "That is the water",
+    "note": "OUR READING",
+    "checks": [
+     {
+      "text": "$79 OF $100: NEWEST",
+      "ok": true,
+      "at": "Seventy nine of every"
+     },
+     {
+      "text": "BILLIONS TO BUILD",
+      "ok": true,
+      "at": "costs billions"
+     },
+     {
+      "text": "YEARS TO LEARN",
+      "ok": true,
+      "at": "takes years"
+     }
+    ]
    },
-   "sec": 14.0,
+   "sec": 12.07,
    "cues": [
-    "The tax line hides two moves.",
-    "Interest and other income added about $2.30.",
-    "Tax, and the slice that belongs to minority shareholders in TSMC's",
-    "subsidiaries, took about $9.90.",
-    "Net, $7.60 (our arithmetic)."
+    "Add up the newest four:",
+    "$79 of every $100.",
+    "That is the water around the castle.",
+    "A new chip factory costs billions of dollars.",
+    "And it takes years to run one well."
    ]
   },
   {
    "ch": 4,
-   "key": "d40",
-   "say": "So why did the margin slip, in a record quarter?",
-   "cap": "So why did the margin slip, in a record quarter?",
-   "scene": {
-    "type": "title",
-    "lines": [
-     "WHY THE MARGIN",
-     "SLIPPED"
-    ],
-    "red": false
-   },
-   "sec": 3.2,
-   "cues": [
-    "So why did the margin slip, in a record quarter?"
-   ]
-  },
-  {
-   "ch": 4,
-   "key": "d41",
-   "say": "Compared with April to June, sales grew seventeen point six percent. Profit grew only eight. Something cost more.",
-   "cap": "Compared with April to June, sales grew 17.6%. Profit grew only 8.0%. Something cost more.",
+   "key": "s40",
+   "say": "Why did TSMC's margin slip? Because costs grew faster than sales, against April to June. Sales grew seventeen point six percent. Profit grew only eight.",
+   "cap": "Why did TSMC's margin slip? Because costs grew faster than sales, against April to June. Sales grew 17.6%. Profit grew only 8.0%.",
    "scene": {
     "type": "duo",
-    "heading": "JULY TO SEPTEMBER 2026 · AGAINST APRIL TO JUNE · IN TAIWAN DOLLARS",
-    "note": "TSMC'S RESULTS · 15 OCT 2026",
+    "heading": "AGAINST APRIL TO JUNE 2026",
+    "note": "TSMC'S RESULTS · IN TAIWAN DOLLARS",
     "items": [
      {
       "icon": "box",
-      "label": "SALES GREW",
+      "label": "SALES",
       "v": 17.6,
       "text": "+17.6%",
-      "at": "sales grew"
+      "at": "Sales grew"
      },
      {
       "icon": "coin",
-      "label": "PROFIT GREW",
+      "label": "PROFIT",
       "v": 8.0,
-      "text": "+8.0%",
+      "text": "+8%",
       "at": "Profit grew only"
      }
     ],
     "gap": {
-     "text": "SOMETHING COST MORE",
-     "at": "Something cost more"
+     "text": "COSTS GREW FASTER",
+     "at": "costs grew faster"
     }
    },
-   "sec": 7.53,
+   "sec": 10.13,
    "cues": [
-    "Compared with April to June, sales grew 17.6%.",
-    "Profit grew only 8.0%.",
-    "Something cost more."
+    "Why did TSMC's margin slip?",
+    "Because costs grew faster than sales, against April to June.",
+    "Sales grew 17.6%.",
+    "Profit grew only 8.0%."
    ]
   },
   {
    "ch": 4,
-   "key": "d42",
-   "say": "The gross margin fell from about sixty seven point seven percent to sixty six point four. The operating margin fell from about sixty point three to fifty eight point seven. Small moves, on a very large base.",
-   "cap": "The gross margin fell from about 67.7% to 66.4%. The operating margin fell from about 60.3% to 58.7%. Small moves, on a very large base.",
+   "key": "s41",
+   "say": "The gross margin is what is left after making the chips. It fell from about sixty seven point seven percent to sixty six point four. Small, on a very big base.",
+   "cap": "The gross margin is what is left after making the chips. It fell from about 67.7% to 66.4%. Small, on a very big base.",
    "scene": {
-    "type": "bars",
-    "heading": "TSMC'S MARGINS · APRIL TO JUNE AND JULY TO SEPTEMBER 2026",
-    "unit": "%",
-    "rows": [
+    "type": "stacks",
+    "heading": "GROSS MARGIN",
+    "note": "TSMC'S RESULTS · LEFT AFTER MAKING THE CHIPS",
+    "icon": "coin",
+    "items": [
      {
-      "name": "GROSS · APR–JUN",
+      "label": "APR–JUN",
       "v": 67.7,
-      "label": "67.7%",
+      "text": "67.7%",
       "at": "sixty seven point seven"
      },
      {
-      "name": "GROSS · JUL–SEP",
+      "label": "JUL–SEP",
       "v": 66.4,
-      "label": "66.4%",
+      "text": "66.4%",
       "at": "to sixty six point four",
       "red": true
-     },
+     }
+    ],
+    "stamps": [
      {
-      "name": "OPERATING · APR–JUN",
-      "v": 60.3,
-      "label": "60.3%",
-      "at": "about sixty point three"
-     },
-     {
-      "name": "OPERATING · JUL–SEP",
-      "v": 58.7,
-      "label": "58.7%",
-      "at": "to fifty eight point seven",
-      "red": true
+      "text": "SMALL, ON A BIG BASE",
+      "at": "Small, on a very"
      }
     ]
    },
-   "sec": 13.8,
+   "sec": 10.6,
    "cues": [
-    "The gross margin fell from about 67.7% to 66.4%.",
-    "The operating margin fell from about 60.3% to 58.7%.",
-    "Small moves, on a very large base."
+    "The gross margin is what is left after making the chips.",
+    "It fell from about 67.7% to 66.4%.",
+    "Small, on a very big base."
    ]
   },
   {
    "ch": 4,
-   "key": "d43",
-   "say": "Why? On its earnings call, TSMC gave its reasons. In its own words: reason one. Reason two. Reason three.",
-   "cap": "Why? On its earnings call, TSMC gave its reasons. In its own words: reason one. Reason two. Reason three.",
+   "key": "s42",
+   "say": "What made costs grow? On its earnings call, TSMC named its reasons. Reason one. Reason two. Reason three.",
+   "cap": "What made costs grow? On its earnings call, TSMC named its reasons. Reason one. Reason two. Reason three.",
    "scene": {
     "type": "hand",
-    "title": "TSMC's reasons (earnings call):",
+    "title": "TSMC's reasons:",
     "items": [
      {
       "text": "FILL: reason one",
-      "at": "reason one"
+      "at": "Reason one"
      },
      {
       "text": "FILL: reason two",
@@ -643,10 +625,9 @@
    },
    "sec": 7.0,
    "cues": [
-    "Why?",
-    "On its earnings call, TSMC gave its reasons.",
-    "In its own words:",
-    "reason one.",
+    "What made costs grow?",
+    "On its earnings call, TSMC named its reasons.",
+    "Reason one.",
     "Reason two.",
     "Reason three."
    ]
@@ -654,202 +635,266 @@
   {
    "ch": 5,
    "key": "g50",
-   "say": "So what does TSMC expect next?",
-   "cap": "So what does TSMC expect next?",
+   "say": "What does TSMC expect next? About the same margins, or a little lower. For October to December, its gross margin guide is sixty five to sixty seven percent. Last quarter: sixty six point four.",
+   "cap": "What does TSMC expect next? About the same margins, or a little lower. For October to December, its gross margin guide is 65% to 67%. Last quarter: 66.4%.",
    "scene": {
-    "type": "title",
-    "lines": [
-     "WHAT TSMC",
-     "EXPECTS"
-    ],
-    "red": false
+    "type": "cards",
+    "cards": [
+     {
+      "top": "GUIDE · OCT–DEC",
+      "big": "65–67%",
+      "sub": "GROSS MARGIN",
+      "at": "sixty five to sixty seven"
+     },
+     {
+      "top": "LAST QUARTER",
+      "big": "66.4%",
+      "sub": "GROSS MARGIN",
+      "at": "Last quarter",
+      "fill": "mustard"
+     }
+    ]
    },
-   "sec": 3.0,
+   "sec": 12.8,
    "cues": [
-    "So what does TSMC expect next?"
+    "What does TSMC expect next?",
+    "About the same margins, or a little lower.",
+    "For October to December, its gross margin guide is 65% to 67%.",
+    "Last quarter:",
+    "66.4%."
    ]
   },
   {
    "ch": 5,
    "key": "g51",
-   "say": "For October to December, TSMC expects a gross margin between sixty five and sixty seven percent, and an operating margin between fifty six and a half and fifty eight and a half. That assumes thirty one point eight Taiwan dollars to the US dollar.",
-   "cap": "For October to December, TSMC expects a gross margin between 65% and 67%, and an operating margin between 56.5% and 58.5%. That assumes NT$31.8 to the US dollar.",
-   "scene": {
-    "type": "cards",
-    "cards": [
-     {
-      "top": "GROSS MARGIN · Q4 GUIDE",
-      "big": "65–67%",
-      "sub": "JUL–SEP: 66.4%",
-      "at": "gross margin between"
-     },
-     {
-      "top": "OPERATING MARGIN · Q4 GUIDE",
-      "big": "56.5–58.5%",
-      "sub": "JUL–SEP: 58.7%",
-      "at": "operating margin between"
-     },
-     {
-      "top": "ASSUMES",
-      "big": "NT$31.8 = $1",
-      "at": "That assumes",
-      "fill": "mustard"
-     }
-    ]
-   },
-   "sec": 16.4,
-   "cues": [
-    "For October to December, TSMC expects a gross margin between 65% and 67%,",
-    "and an operating margin between 56.5% and 58.5%.",
-    "That assumes NT$31.8 to the US dollar."
-   ]
-  },
-  {
-   "ch": 5,
-   "key": "g52",
-   "say": "Both midpoints sit a little below what TSMC just did. Flat to slightly lower: not a slide.",
-   "cap": "Both midpoints sit a little below what TSMC just did. Flat to slightly lower: not a slide.",
+   "say": "The middle of that range sits a little below last quarter. Flat, or slightly lower. Not a slide.",
+   "cap": "The middle of that range sits a little below last quarter. Flat, or slightly lower. Not a slide. (Operating margin guide: 56.5% to 58.5%, against 58.7%.)",
    "scene": {
     "type": "strips",
     "items": [
      {
-      "text": "MIDPOINTS: A LITTLE BELOW Q3",
-      "at": "Both midpoints"
+      "text": "A LITTLE BELOW",
+      "at": "a little below"
      },
      {
-      "text": "FLAT TO SLIGHTLY LOWER",
-      "at": "Flat to slightly lower"
+      "text": "FLAT OR SLIGHTLY LOWER",
+      "at": "Flat, or slightly"
      },
      {
       "text": "NOT A SLIDE",
-      "at": "not a slide",
+      "at": "Not a slide",
       "red": true
      }
     ]
    },
-   "sec": 6.0,
+   "sec": 6.4,
    "cues": [
-    "Both midpoints sit a little below what TSMC just did.",
-    "Flat to slightly lower:",
-    "not a slide."
+    "The middle of that range sits a little below last quarter.",
+    "Flat, or slightly lower.",
+    "Not a slide.",
+    "(Operating margin guide:",
+    "56.5% to 58.5%, against 58.7%.)"
    ]
   },
   {
    "ch": 6,
-   "key": "v60",
-   "say": "So will fifty one dollars hold?",
-   "cap": "So will $51 hold?",
+   "key": "t60",
+   "say": "Does TSMC pass our moat test? Ask our three questions. One: can a rival with money and time copy it? Two: must it be rebuilt again and again? Three: does it walk out with one person?",
+   "cap": "Does TSMC pass our moat test? Ask our 3 questions. One: can a rival with money and time copy it? Two: must it be rebuilt again and again? Three: does it walk out with one person?",
    "scene": {
-    "type": "title",
-    "lines": [
-     "WHAT TO",
-     "WATCH"
-    ],
-    "red": false
+    "type": "counter",
+    "to": 3,
+    "decimals": 0,
+    "sub": "QUESTIONS",
+    "at": "three questions",
+    "stamps": [
+     {
+      "text": "COPY · REBUILD · ONE PERSON",
+      "at": "walk out with one person"
+     }
+    ]
    },
-   "sec": 3.0,
+   "sec": 12.13,
    "cues": [
-    "So will $51 hold?"
+    "Does TSMC pass our moat test?",
+    "Ask our 3 questions.",
+    "One:",
+    "can a rival with money and time copy it?",
+    "Two:",
+    "must it be rebuilt again and again?",
+    "Three:",
+    "does it walk out with one person?"
    ]
   },
   {
    "ch": 6,
-   "key": "v61",
-   "say": "Three numbers will tell you. How fast two nanometres grows from eight dollars of every hundred. Whether the gross margin lands inside sixty five to sixty seven percent. And whether A I and data centre chips stay above two thirds of sales.",
-   "cap": "Three numbers will tell you. How fast 2 nanometres grows from $8 of every $100. Whether the gross margin lands inside 65% to 67%. And whether AI and data-centre chips stay above two thirds of sales.",
+   "key": "t61",
+   "say": "Copy it? Very hard, on our reading. Rebuild it? Yes. Every new size costs billions again. One person? No. So: a wide moat, that must be dug again every few years.",
+   "cap": "Copy it? Very hard, on our reading. Rebuild it? Yes. Every new size costs billions again. One person? No. So: a wide moat, that must be dug again every few years.",
+   "scene": {
+    "type": "castle",
+    "flag": "TSMC",
+    "flagAt": 0,
+    "moatAt": "a wide moat",
+    "note": "OUR READING · NOT INVESTMENT ADVICE",
+    "checks": [
+     {
+      "text": "COPY IT? VERY HARD",
+      "ok": true,
+      "at": "Copy it?"
+     },
+     {
+      "text": "REBUILD IT? YES",
+      "ok": false,
+      "at": "Rebuild it?"
+     },
+     {
+      "text": "ONE PERSON? NO",
+      "ok": true,
+      "at": "One person?"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "DUG AGAIN AND AGAIN",
+      "at": "dug again"
+     }
+    ]
+   },
+   "sec": 10.8,
+   "cues": [
+    "Copy it?",
+    "Very hard, on our reading.",
+    "Rebuild it?",
+    "Yes.",
+    "Every new size costs billions again.",
+    "One person?",
+    "No.",
+    "So:",
+    "a wide moat, that must be dug again every few years."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "t62",
+   "say": "Three numbers to watch next time. Does the two nanometre share keep growing? Does the margin land in the guide? Do A I chip makers stay above two thirds?",
+   "cap": "Three numbers to watch next time. Does the 2-nanometre share keep growing? Does the margin land in the guide? Do AI chip makers stay above two thirds?",
    "scene": {
     "type": "hand",
-    "title": "Three numbers to watch:",
+    "title": "Watch next time:",
     "items": [
      {
-      "text": "2nm: $8 of every $100 today",
-      "at": "How fast two nanometres"
+      "text": "2nm share: $8 today",
+      "at": "two nanometre share"
      },
      {
-      "text": "Gross margin inside 65–67%?",
-      "at": "Whether the gross margin"
+      "text": "Margin inside 65–67%?",
+      "at": "land in the guide"
      },
      {
-      "text": "AI chips above ⅔ of sales?",
+      "text": "AI makers above ⅔?",
       "at": "stay above two thirds",
       "red": true
      }
     ]
    },
-   "sec": 15.87,
+   "sec": 10.2,
    "cues": [
-    "Three numbers will tell you.",
-    "How fast 2 nanometres grows from $8 of every $100.",
-    "Whether the gross margin lands inside 65% to 67%.",
-    "And whether AI and data-centre chips stay above two thirds of sales."
+    "Three numbers to watch next time.",
+    "Does the 2-nanometre share keep growing?",
+    "Does the margin land in the guide?",
+    "Do AI chip makers stay above two thirds?"
    ]
   },
   {
    "ch": 6,
-   "key": "v62",
-   "say": "TSMC keeps fifty one dollars of every hundred. Next week, a hundred dollars you may spend yourself: your Netflix subscription. How much pays for the shows, and how much does Netflix keep?",
-   "cap": "TSMC keeps $51 of every $100. Next week, $100 you may spend yourself: your Netflix subscription. How much pays for the shows, and how much does Netflix keep?",
+   "key": "t63",
+   "say": "Quick recap. What does TSMC do? Makes chips others design. Who pays? Mostly A I chip makers. What does it keep? Fifty one of every hundred. Why can't rivals copy it? The newest chips are hard to make. The slip? Costs grew faster. Next? About the same. The test? A wide moat, dug again.",
+   "cap": "Quick recap. What does TSMC do? Makes chips others design. Who pays? Mostly AI chip makers. What does it keep? $51 of every $100. Why can't rivals copy it? The newest chips are hard to make. The slip? Costs grew faster. Next? About the same. The test? A wide moat, dug again.",
    "scene": {
-    "type": "strips",
-    "items": [
+    "type": "castle",
+    "flag": "RECAP",
+    "flagAt": 0,
+    "moatAt": 0,
+    "checks": []
+   },
+   "sec": 19.0,
+   "cues": [
+    "Quick recap.",
+    "What does TSMC do?",
+    "Makes chips others design.",
+    "Who pays?",
+    "Mostly AI chip makers.",
+    "What does it keep?",
+    "$51 of every $100.",
+    "Why can't rivals copy it?",
+    "The newest chips are hard to make.",
+    "The slip?",
+    "Costs grew faster.",
+    "Next?",
+    "About the same.",
+    "The test?",
+    "A wide moat, dug again."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "t64",
+   "say": "Next: your Netflix subscription. Where does each dollar go?",
+   "cap": "Next: your Netflix subscription. Where does each dollar go?",
+   "scene": {
+    "type": "cards",
+    "cards": [
      {
-      "text": "TSMC KEEPS $51 OF EVERY $100",
-      "at": "TSMC keeps"
-     },
-     {
-      "text": "NEXT: YOUR NETFLIX SUBSCRIPTION",
+      "top": "NEXT",
+      "big": "NETFLIX",
+      "sub": "WHERE YOUR DOLLAR GOES",
       "at": "your Netflix subscription"
-     },
-     {
-      "text": "HOW MUCH DOES NETFLIX KEEP?",
-      "at": "how much does Netflix keep",
-      "red": true
      }
     ]
    },
-   "sec": 12.47,
+   "sec": 3.93,
    "cues": [
-    "TSMC keeps $51 of every $100.",
-    "Next week, $100 you may spend yourself:",
+    "Next:",
     "your Netflix subscription.",
-    "How much pays for the shows, and how much does Netflix keep?"
+    "Where does each dollar go?"
    ]
   },
   {
    "ch": 7,
-   "key": "z71",
-   "say": "Every number is from TSMC's own filings, except our own arithmetic, which we label. Sources are linked in the description.",
-   "cap": "Every number is from TSMC's own filings, except our own arithmetic, which we label. Sources are linked in the description.",
+   "key": "z70",
+   "say": "Every source is in the description. Priya's bakery is made up.",
+   "cap": "Every source is in the description. Priya's bakery is made up.",
    "scene": {
     "type": "sources",
     "items": [
      "TSMC: 3Q26 earnings release, 15 Oct 2026",
      "TSMC: 3Q26 management report and earnings conference presentation",
      "TSMC: 3Q26 earnings call (reasons for the margin change)",
-     "US$ at NT$31.98, the rate implied by reported revenue of US$46.72B",
-     "Per-$100 splits and year-ago margin: our arithmetic",
+     "US$ figures as reported by TSMC; growth rates in Taiwan dollars",
+     "Per-$100 splits, the year-ago share kept and the moat test: our arithmetic and our reading",
+     "Priya's bakery is a made-up example",
      "Information, not investment advice · narration: synthetic voice"
     ]
    },
-   "sec": 8.13,
+   "sec": 4.13,
    "cues": [
-    "Every number is from TSMC's own filings, except our own arithmetic,",
-    "which we label.",
-    "Sources are linked in the description."
+    "Every source is in the description.",
+    "Priya's bakery is made up."
    ]
   },
   {
    "ch": 7,
-   "key": "z72",
-   "say": "Subscribe to follow the dollar, every week.",
-   "cap": "Subscribe to follow the dollar, every week.",
+   "key": "z71",
+   "say": "Subscribe to follow the dollar, explained simply.",
+   "cap": "Subscribe to follow the dollar, explained simply.",
    "scene": {
     "type": "end",
     "plain": true
    },
-   "sec": 3.0,
+   "sec": 3.27,
    "cues": [
-    "Subscribe to follow the dollar, every week."
+    "Subscribe to follow the dollar, explained simply."
    ]
   }
  ],

@@ -31,7 +31,7 @@ export const GlobalBanner: React.FC<BrandProps> = ({name, tagline}) => (
       <Flows x={0} y={430} w={470} h={580} o={0.5}/>
       <g transform="translate(2560 0) scale(-1 1)"><Flows x={0} y={430} w={470} h={580} o={0.5}/></g>
       <Mark x={560} y={600} s={1.55}/>
-      <text x={790} y={760} fontFamily={SANS} fontSize={190} fontWeight={700} fill={G.ink}>{name.toUpperCase()}</text>
+      <text x={790} y={760} fontFamily={SANS} fontSize={Math.min(190, 1250 / (name.length * 0.52))} fontWeight={700} fill={G.ink}>{name.toUpperCase()}</text>
       <text x={796} y={850} fontFamily={SANS} fontSize={58} fill={G.dim}>{tagline}</text>
       <text x={1280} y={1010} textAnchor="middle" fontFamily={SANS} fontSize={40} fontWeight={500} fill={G.amber}>
         EARNINGS BREAKDOWNS · FOLLOW THE DOLLAR · EVERY FIGURE SOURCED</text>

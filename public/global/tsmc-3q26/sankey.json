@@ -1,0 +1,285 @@
+{
+ "id": "tsmc-3q26",
+ "company": "TSMC",
+ "title": "Where every dollar of revenue went · income statement",
+ "period": "Calendar Q3 2026 · Jul–Sep",
+ "cur": "NT$",
+ "unit": "B",
+ "decimals": 1,
+ "show": {
+  "cur": "US$",
+  "rate": 31.9829
+ },
+ "tol": 0.05,
+ "source": "TSMC 3Q26 earnings release and management report, 15 Oct 2026",
+ "asOf": "18 Oct 2026",
+ "notes": [
+  "US$ at NT$31.98, the rate implied by reported revenue of US$46.72B. Filed in NT$; figures in grey. Operating expenses net of other operating income."
+ ],
+ "nodes": [
+  {
+   "id": "hpc",
+   "label": "High Performance Computing",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "68% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "phone",
+   "label": "Smartphone",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "21% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "iot",
+   "label": "Internet of Things",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "4% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "auto",
+   "label": "Automotive",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "4% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "dce",
+   "label": "Digital Consumer Electronics",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "1% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "oth",
+   "label": "Others",
+   "col": 0,
+   "kind": "rev",
+   "compact": true,
+   "sub": [
+    "2% of revenue"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "rev",
+   "label": "Revenue",
+   "col": 1,
+   "kind": "rev",
+   "sub": [
+    "+50.9% Y/Y in NT$"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "gp",
+   "label": "Gross profit",
+   "col": 2,
+   "kind": "keep",
+   "sub": [
+    "66.4% margin"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "cogs",
+   "label": "Cost of revenue",
+   "col": 2,
+   "kind": "spend",
+   "sub": [
+    "33.6% of revenue"
+   ],
+   "status": "derived"
+  },
+  {
+   "id": "nonop",
+   "label": "Non-operating, net",
+   "col": 3,
+   "kind": "keep",
+   "sub": [
+    "interest and other income"
+   ],
+   "status": "derived",
+   "side": "above"
+  },
+  {
+   "id": "oi",
+   "label": "Operating profit",
+   "col": 3,
+   "kind": "keep",
+   "sub": [
+    "58.7% margin"
+   ],
+   "status": "check",
+   "side": "below"
+  },
+  {
+   "id": "opex",
+   "label": "Operating expenses",
+   "col": 3,
+   "kind": "spend",
+   "sub": [
+    "7.8% of revenue, net"
+   ],
+   "status": "derived"
+  },
+  {
+   "id": "ni",
+   "label": "Net profit",
+   "col": 4,
+   "kind": "keep",
+   "sub": [
+    "51.1% margin",
+    "+68.7% Y/Y in NT$"
+   ],
+   "status": "check"
+  },
+  {
+   "id": "tax",
+   "label": "Tax and minority interests",
+   "col": 4,
+   "kind": "spend",
+   "sub": [
+    "pre-tax profit less net profit"
+   ],
+   "status": "derived"
+  }
+ ],
+ "links": [
+  {
+   "from": "hpc",
+   "to": "rev",
+   "value": 1016.085
+  },
+  {
+   "from": "phone",
+   "to": "rev",
+   "value": 313.791
+  },
+  {
+   "from": "iot",
+   "to": "rev",
+   "value": 59.77
+  },
+  {
+   "from": "auto",
+   "to": "rev",
+   "value": 59.77
+  },
+  {
+   "from": "dce",
+   "to": "rev",
+   "value": 14.942
+  },
+  {
+   "from": "oth",
+   "to": "rev",
+   "value": 29.885
+  },
+  {
+   "from": "rev",
+   "to": "gp",
+   "value": 992.379
+  },
+  {
+   "from": "rev",
+   "to": "cogs",
+   "value": 501.864
+  },
+  {
+   "from": "gp",
+   "to": "oi",
+   "value": 876.445
+  },
+  {
+   "from": "gp",
+   "to": "opex",
+   "value": 115.934
+  },
+  {
+   "from": "nonop",
+   "to": "ni",
+   "value": 34.594
+  },
+  {
+   "from": "oi",
+   "to": "ni",
+   "value": 728.466
+  },
+  {
+   "from": "oi",
+   "to": "tax",
+   "value": 147.979
+  }
+ ],
+ "steps": [
+  {
+   "sec": 3,
+   "cols": 0,
+   "caption": "Almost seven in ten dollars now come from high-performance computing: AI and data-centre chips."
+  },
+  {
+   "sec": 3,
+   "cols": 1,
+   "caption": "Together: US$46.7 billion of revenue in three months."
+  },
+  {
+   "sec": 4,
+   "cols": 2,
+   "focus": [
+    "gp",
+    "cogs",
+    "rev"
+   ],
+   "caption": "Making the wafers cost about a third. Two-thirds is gross profit."
+  },
+  {
+   "sec": 4,
+   "cols": 3,
+   "focus": [
+    "oi",
+    "opex",
+    "gp",
+    "nonop"
+   ],
+   "caption": "Research and overheads take under eight cents of each dollar."
+  },
+  {
+   "sec": 4,
+   "cols": 4,
+   "focus": [
+    "ni",
+    "tax",
+    "oi",
+    "nonop"
+   ],
+   "caption": "After tax, TSMC keeps 51 cents of every dollar it sells."
+  },
+  {
+   "sec": 4,
+   "cols": 4
+  }
+ ]
+}

@@ -12,6 +12,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Letters and Moat Files (Case engine) | `src/vx/LetterVideos.tsx`, `src/vx/CaseEngine.tsx`, `src/vx/scenes/`, `scripts/vx_letters.py`, `scripts/build_vx_letters.py`, `scripts/qa_vx.py`, `scripts/render_vx_letters.sh` |
 | Regional audio tracks (Tamil, Hindi; English stays original) | `scripts/audio_tracks.py`, `scripts/translations/`, `docs/AUDIO_TRACKS.md` |
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
+| Global channel (Sankey, channel art) | `src/global/`, `public/global/<id>/sankey.json`, `docs/global-launch/` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits
 `vx_letters.py` and `LetterVideos.tsx`. Append to shared files, never replace another session's entries.

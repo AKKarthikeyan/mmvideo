@@ -21,12 +21,21 @@ export const GlobalFonts: React.FC = () => (
   `}</style>
 );
 
-// The mark: three bands splitting off one bar, the Sankey in miniature.
+// The Moat Atlas mark: a globe (the atlas) inside a ring (the moat). Two colours, no detail that dies at 32 px.
+// Drawn in a 120x120 box; x, y is its top-left corner.
 export const Mark: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) => (
   <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={0} y={0} width={22} height={120} rx={3} fill={G.rev}/>
-    <path d="M 22 0 C 70 0, 70 -10, 118 -10 L 118 50 C 70 50, 70 60, 22 60 Z" fill={G.keep} opacity={0.9}/>
-    <path d="M 22 60 C 70 60, 70 80, 118 80 L 118 108 C 70 108, 70 92, 22 92 Z" fill={G.spend} opacity={0.9}/>
-    <path d="M 22 92 C 70 92, 70 122, 118 122 L 118 138 C 70 138, 70 120, 22 120 Z" fill={G.neutral} opacity={0.9}/>
+    <circle cx={60} cy={60} r={53} fill="none" stroke={G.rev} strokeWidth={10}/>
+    <circle cx={60} cy={60} r={36} fill={G.ink}/>
+    <ellipse cx={60} cy={60} rx={14} ry={36} fill="none" stroke={G.bg} strokeWidth={5}/>
+    <line x1={24} y1={60} x2={96} y2={60} stroke={G.bg} strokeWidth={5}/>
   </g>
+);
+
+// Wordmark: MOAT in bold ink, ATLAS in regular dim, tracked out. x, baseline y; returns its width for layout.
+export const wordmarkW = (size: number) => size * 5.35;
+export const Wordmark: React.FC<{x: number; y: number; size: number; anchor?: "start" | "middle"}> = ({x, y, size, anchor = "start"}) => (
+  <text x={x} y={y} textAnchor={anchor} fontFamily={SANS} fontSize={size} letterSpacing={size * 0.08}>
+    <tspan fontWeight={700} fill={G.ink}>MOAT</tspan><tspan dx={size * 0.28} fontWeight={400} fill={G.dim}>ATLAS</tspan>
+  </text>
 );

@@ -45,7 +45,7 @@ export const Frame: React.FC<{M: Meta; draft: number; beats: Beat[]; starts: num
       <GlobalFonts/>
       {beats.map((b, i) => b.audio ? <Sequence key={i} from={starts[i]}><Audio src={staticFile(`global/${M.id}/${b.audio}`)}/></Sequence> : null)}
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-        <Mark x={60} y={68} s={0.62}/>
+        <Mark x={60} y={72} s={0.62}/>
         <text x={150} y={112} fontFamily={SANS} fontSize={58} fontWeight={700} fill={G.ink}>{M.company.toUpperCase()}</text>
         <text x={150} y={156} fontFamily={SANS} fontSize={30} fill={G.dim}>{M.title}</text>
         <g transform={`translate(${W - 60} 70)`}>

@@ -17,9 +17,9 @@ Narration is written for MiniMax TTS at about 150 words a minute, with no person
 
 **Scene:** footer close-up showing source and "as of" date.
 
-**VO:** Every number is sourced on screen, and the data is free to download. No hype, no stock tips. Just the money, followed.
+**VO:** Every number is sourced on screen, and the data is free to download. No hype, no stock tips. Just the money, followed. This is Moat Atlas.
 
-**Scene:** channel name and mark. Credit line: "Research: Moat & Margin research team · Narration: synthetic voice".
+**Scene:** the Moat Atlas mark and wordmark. Credit line: "Research: Moat & Margin research team · Narration: synthetic voice".
 
 ---
 

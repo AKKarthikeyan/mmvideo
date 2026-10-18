@@ -1,4 +1,4 @@
-# Global channel: launch plan
+# Moat Atlas: launch plan
 
 Drafted 18 Oct 2026. The research behind it is `reports/Global data video channel scan.md` on the `research/global-channel-scan` branch.
 
@@ -8,25 +8,14 @@ Drafted 18 Oct 2026. The research behind it is `reports/Global data video channe
 
 **Voice:** MiniMax text-to-speech for now, under the rules in section 3.
 
-## 1. Name shortlist
+## 1. Name: Moat Atlas (chosen 18 Oct 2026)
 
-| Name | Why it works | Risk |
-|---|---|---|
-| **Flowsheet** (preview art uses this) | Sankey "flows" plus the financial "sheet". Short, ownable, and works beyond chips | Sounds like a spreadsheet tool |
-| **Profit Pools** | A finance term for who captures the profit along a value chain, which is exactly the "follow the dollar" format | Bain uses the term in consulting |
-| **Wafer to Wallet** | Covers the whole AI chain from the chip to the consumer. Memorable and alliterative | Locks the channel to chips |
-| Who Gets Paid | A question-led title that's easy to put in thumbnails | Generic; hard to search for |
-| Silicon Ledger | Chips plus filings; sounds serious | Long; "ledger" suggests crypto |
-| The Dollar Trail | Plain English and global | Likely already taken |
-| Margin Map | Neutral, and it echoes Moat & Margin | Close to the Indian brand |
-
-I couldn't check whether any of these are available. Before choosing, check the YouTube handle, the `.com` domain, the X/LinkedIn handles, and a quick USPTO and EUIPO trademark search. Once a name is chosen, re-render the art with:
-
-```
-npx remotion still src/index.ts GLOBAL-banner out/global/banner.png --props='{"name":"<Name>","tagline":"Where the money in AI and chips actually goes"}'
-```
-
-`GLOBAL-endcard` takes the same props. `GLOBAL-avatar` has no text.
+- **Tagline:** "The business behind the ticker, mapped from the filings".
+- **Flagship series:** Follow the Dollar.
+- **Why this name:** it ties to Moat & Margin (cross-promotion, and MoatSCORE can go global later), and "Atlas" says the coverage is global. Searches found no existing show using the exact name.
+- **Before the handle is claimed:** check `@MoatAtlas`, the `.com` domain and the X handle, and run a USPTO / EUIPO trademark search. VanEck runs an ETF with the ticker MOAT; worth a glance, though "Moat Atlas" is a different mark.
+- **Art:** `GLOBAL-banner`, `GLOBAL-avatar` and `GLOBAL-endcard` all carry the name. The mark is a globe inside a blue ring (the moat); the wordmark is MOAT in bold, ATLAS in regular.
+- **Content plan:** `CONTENT_PLAN.md`.
 
 ## 2. Formats
 

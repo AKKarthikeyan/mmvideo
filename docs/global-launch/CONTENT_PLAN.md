@@ -2,7 +2,9 @@
 
 Drafted 18 Oct 2026.
 
-**Niche:** where the money in AI and chips actually goes.
+**Niche:** how the world's great companies actually make their money, one filing at a time. That covers every kind of company: consumer brands, platforms, banks, healthcare, carmakers, energy and tech. AI and chips are one theme among several, not the channel.
+
+**What makes it one channel:** the method, not the sector. Every video follows the dollar through a real filing, puts the source on screen, and ends on what to watch next. A viewer who came for Netflix should feel at home in the Visa video.
 
 **Audience:** English-speaking investors in the US, UK and Europe.
 
@@ -15,28 +17,35 @@ Earnings dates below are each company's usual timing. **Confirm every one on the
 | Pillar | What it is | Share of long videos | Main formats |
 |---|---|---|---|
 | **Earnings Breakdown** | One company's quarter, out within 48 h: where the money went, what changed, what management guided. | ~40% | Sankey or waterfall, $1 split, guidance range |
-| **Follow the Dollar** (flagship) | One dollar traced across companies. Example: a cloud company's AI spending → Nvidia → TSMC → ASML / SK Hynix. | ~30% | Cross-company Sankey, mix bar, indexed lines |
+| **Follow the Dollar** (flagship) | Follows one everyday dollar through the companies it pays. Examples: a Netflix subscription, a Starbucks latte, a card swipe on Visa, a cloud company's AI spending. | ~30% | Sankey (one company or several), $1 split, mix bar |
 | **Atlas Entry** | One company's moat, from its filings: what protects it, what it earns from that, and what could break it. Later carries a global MoatSCORE. | ~30% | Mix bar, waterfall, peer dumbbell, trend lines |
 | **One Number** (Shorts) | One surprising number from that week's long video, in under 45 s, ending on a question that the long video answers. | 3 a week | $1 split, mix bar, guidance range (vertical versions) |
 
+**Sector rules:**
+- No sector more than twice in a row.
+- Each quarter, aim for about a third tech and two-thirds everything else: consumer, finance, healthcare, industrials and autos, energy.
+- About one video in six is an Asian or Indian company told for Western viewers. That's the gap nobody else covers well.
+
 ## 2. The 12-week slate
 
-| Week (Tue) | Pillar | Long video (working title) | Formats | Data to collect | Shorts (Wed / Fri / Sun) |
-|---|---|---|---|---|---|
-| **27 Oct** | Breakdown | **Trailer** + "TSMC keeps 51¢ of every dollar it sells. How?" | $1 split, Sankey, mix bar, guidance | TSMC 3Q26 management report (already drafted) | 51¢ kept · 79% from 7nm and newer · Q4 guide vs Q3 |
-| **3 Nov** | Follow the Dollar | "Big Tech spent $__B on AI last quarter. Who got paid?" | Cross-company Sankey, indexed lines | Q3 capex from Microsoft, Alphabet, Amazon and Meta (usually reported late October); Nvidia's last data-centre revenue | Combined capex · capex vs revenue · biggest spender |
-| **10 Nov** | Atlas Entry | "ASML: the only company that can make this machine" | Mix bar (system sales), waterfall, trend | ASML Q3 2026 report (mid-October) | Price of one machine `[check]` · share of sales from the most advanced machines · order backlog |
-| **17 Nov** | Breakdown | "Nvidia Q3: where every dollar of revenue went" (publish within 48 h of results, expected around 17–18 Nov) | Sankey, $1 split, guidance | Nvidia Q3 FY27 release and CFO commentary | Cents kept · data-centre share · next-quarter guide |
-| **24 Nov** | Atlas Entry | "How AI memory flipped Samsung and SK Hynix" | Peer dumbbell, trend lines | SK Hynix and Samsung Q3 results (late October) | Operating margin gap · AI-memory (HBM) share · who leads now |
-| **1 Dec** | Follow the Dollar | "Inside one AI server: who gets which slice?" | Unit teardown stack (new format) | Third-party teardown estimates, labelled "estimate" on screen | Biggest slice · memory's share · chip-maker's share |
-| **8 Dec** | Atlas Entry | "Is Nvidia's real moat the software?" | Mix bar, trend, peer dumbbell | Nvidia segment history; peers' accelerator revenue `[check]` | R&D per dollar · gross margin vs peers · developer count `[check]` |
-| **15 Dec** | Breakdown | "Broadcom: the other AI chip winner" (results usually mid-December; confirm) | Sankey, mix bar, guidance | Broadcom Q4 FY26 release | AI revenue share · cents kept · guide |
-| **22 Dec** | Atlas Entry | "What it would really cost India to build a TSMC" | Waterfall (cost stack), peer bars | Public fab-cost disclosures and India Semiconductor Mission figures `[check]` | Cost of one fab · subsidy share · years to build |
-| **29 Dec** | Follow the Dollar | "2026 in one chart: where the AI money went" | Bump chart (new), indexed lines | Full-year figures assembled from the quarters already covered | Biggest climber · market-cap ranks · capex vs revenue |
-| **5 Jan** | Atlas Entry | "Taiwan in numbers: how much of the world's chips depend on one island" | Mix bar, map (new) | TSMC share of advanced output; industry reports `[check]` | One number per Short |
-| **12 Jan** | Breakdown | "TSMC Q4 2026" (usually mid-January; confirm). Then run the **12-video checkpoint** (launch plan, section 7). | Sankey, waterfall profit bridge, guidance | TSMC 4Q26 management report plus 4Q25 for the bridge | Year-on-year bridge · cents kept · 2027 guide |
+| Week (Tue) | Pillar | Sector | Long video (working title) | Formats | Data to collect | Shorts (Wed / Fri / Sun) |
+|---|---|---|---|---|---|---|
+| **27 Oct** | Breakdown | Tech (Asia) | **Trailer** + "TSMC keeps 51¢ of every dollar it sells. How?" | $1 split, Sankey, mix bar, guidance | TSMC 3Q26 management report (already drafted) | 51¢ kept · 79% from 7nm and newer · Q4 guide vs Q3 |
+| **3 Nov** | Follow the Dollar | Media | "Your Netflix subscription: where does the money go?" | Sankey, $1 split | Netflix Q3 2026 letter and 10-Q (mid-October): revenue by region, content amortisation, marketing | Cents to content · revenue per member by region · cents kept |
+| **10 Nov** | Atlas Entry | Payments | "Visa: the toll booth on the world's card payments" | Mix bar, waterfall, peer dumbbell (vs Mastercard) | Visa FY Q4 2026 (late October), Mastercard Q3 | Cents kept per dollar of revenue · payments volume `[check]` · Visa vs Mastercard margin |
+| **17 Nov** | Breakdown | Tech | "Nvidia Q3: where every dollar of revenue went" (publish within 48 h of results, expected around 17–18 Nov) | Sankey, $1 split, guidance | Nvidia Q3 FY27 release and CFO commentary | Cents kept · data-centre share · next-quarter guide |
+| **24 Nov** | Atlas Entry | Autos (Europe vs Asia) | "Ferrari vs Toyota: why one earns more on every car" | Peer dumbbell, waterfall per car | Ferrari Q3 and Toyota Q2 FY27 (both early November) | Profit per car, each `[check]` · cars sold · price mix |
+| **1 Dec** | Follow the Dollar | Consumer | "Where each dollar you spend at Starbucks goes" | $1 split, Sankey | Starbucks FY2026 10-K (mid-November): product, store operating and occupancy costs | Cents to coffee and product · cents to staff and stores · cents kept |
+| **8 Dec** | Atlas Entry | Healthcare | "Novo Nordisk vs Eli Lilly: the weight-loss drug race in numbers" | Trend lines, peer dumbbell, mix bar | Both Q3 2026 reports (late Oct / early Nov) | Obesity-drug share of revenue · growth vs each other · margin gap |
+| **15 Dec** | Breakdown | Retail | "Costco barely profits on what it sells. So how does it make money?" (results usually mid-December; confirm) | Waterfall, $1 split | Costco Q1 FY27 release | Membership fees vs operating income `[check]` · gross margin · renewal rate |
+| **22 Dec** | Atlas Entry | Conglomerate (India) | "Reliance: India's biggest company, explained for the world" | Mix bar (segments), Sankey | Reliance Q2 FY27 results (mid-October) | Segment share · Jio users `[check]` · retail vs energy profit |
+| **29 Dec** | Follow the Dollar | All | "2026 in one chart: the world's biggest companies and how they make money" | Bump chart (new), mix bar | Year-end market caps, plus revenue mix for the top 10 | Biggest climber · biggest faller · one surprise |
+| **5 Jan** | Atlas Entry | Luxury | "LVMH: how a handbag company earns like a tech firm" | Mix bar, waterfall, peer dumbbell | LVMH H1 2026 report and Q3 revenue | Fashion & leather share · operating margin · region mix |
+| **12 Jan** | Breakdown | Finance | "JPMorgan: how the world's biggest bank makes money" (Q4 results usually mid-January; confirm). Then run the **12-video checkpoint** (launch plan, section 7). | Sankey (interest, fees, costs, provisions), guidance | JPMorgan Q4 2026 release and supplement | Interest vs fee share · cents kept · credit-loss provisions |
 
-**Alternates if an earnings date moves:** SK Hynix Q4 or ASML Q4 (both usually late January), or a backlog title from section 4.
+**Results-week bonus videos** (an extra long video plus Shorts, only if the data is ready): Apple and Amazon (usually late October / early November), Walmart (mid-November), TSMC Q4 (mid-January), Netflix Q4 (around 20 January).
+
+**The 12-week mix:** 3 tech (2 of them AI-linked), 3 consumer and retail, 2 finance and payments, 1 healthcare, 1 autos, 1 luxury, 1 year-end roundup. Two videos are Asian or Indian companies (TSMC, Reliance), and Toyota sits in the Ferrari episode.
 
 ## 3. Titles and thumbnails
 
@@ -48,15 +57,13 @@ Earnings dates below are each company's usual timing. **Confirm every one on the
 
 ## 4. Backlog (pick when a slot frees up)
 
-- Arm: how a company that makes no chips gets paid on billions of them.
-- Apple's chip bill: how much of an iPhone's price goes to chips `[estimate]`.
-- Microsoft's AI spending vs Azure revenue, indexed to 100.
-- Samsung Foundry vs TSMC: two foundries, same scale.
-- The power bill of AI: what data centres pay, and who sells the electricity.
-- Tokyo Electron, Lasertec, Advantest: Japan's quiet chip toll-booths.
-- Foxconn: thin margins on the hardware behind AI.
-- Netflix, Spotify, Uber: Follow the Dollar outside chips, to test whether the format travels.
-- Indian IT (TCS, Infosys) as AI buyers and sellers, for global viewers.
+- **Consumer:** Coca-Cola (the syrup business, not the bottling), McDonald's (a property company that sells burgers?), Nike (where $100 of sneakers goes), Unilever, Nestlé.
+- **Platforms:** Uber (a dollar of fare), Airbnb, Spotify (a dollar of subscription to labels and artists), Apple's App Store.
+- **Finance:** Mastercard vs Visa, Berkshire Hathaway's insurance float, HDFC Bank for global viewers, BlackRock (fees on trillions).
+- **Healthcare:** UnitedHealth (a dollar of premium), Johnson & Johnson.
+- **Industrials and energy:** Saudi Aramco (the most profitable company on earth?), ExxonMobil, Caterpillar, Airbus vs Boeing.
+- **Asia:** Toyota alone, Samsung, Tencent, Sony, TCS and Infosys, Tata Motors (Jaguar Land Rover).
+- **Tech and AI (kept to about a third of the slate):** ASML, Big Tech's AI spending (who gets paid), Samsung vs SK Hynix memory, Arm's royalty model, inside one AI server.
 
 ## 5. Weekly workload (one long video + 3 Shorts)
 

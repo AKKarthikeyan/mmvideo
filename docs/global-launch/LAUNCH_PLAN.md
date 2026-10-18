@@ -2,7 +2,7 @@
 
 Drafted 18 Oct 2026. The research behind it is `reports/Global data video channel scan.md` on the `research/global-channel-scan` branch.
 
-**Niche:** where the money in AI and chips actually goes. Nvidia, TSMC, ASML, Samsung, SK Hynix, the cloud companies that buy the servers, and the Asian suppliers Western viewers rarely see. Every video is built from the companies' filings.
+**Niche:** how the world's great companies actually make their money. Every kind of company is in scope: consumer brands, platforms, banks, healthcare, carmakers, energy and tech. AI and chips are one theme, not the channel, and Asian and Indian companies are told for Western viewers. Every video is built from the companies' filings. The channel's identity comes from the method (follow the dollar, sourced on screen), not from one sector.
 
 **Audience:** English-speaking investors in the US, UK and Europe. Indian viewers are welcome, but they aren't the target, because ad revenue per view is roughly 8 to 20 times lower in India.
 
@@ -47,20 +47,12 @@ YouTube does not pay out on AI personas presented as human experts giving financ
 
 ## 4. Calendar to the 1 Feb 2027 Partner Program change
 
-From 1 Feb 2027, new channels need 8,000 watch hours in 365 days plus 1,000 subscribers. Reaching the old 4,000-hour bar before then isn't realistic for a new channel, so plan for 8,000 hours, which is about 120K views at 4 minutes watched per view. Earnings dates below are the companies' usual timing. **Confirm each one on the company's investor relations calendar.**
+From 1 Feb 2027, new channels need 8,000 watch hours in 365 days plus 1,000 subscribers. Reaching the old 4,000-hour bar before then isn't realistic for a new channel, so plan for 8,000 hours, which is about 120K views at 4 minutes watched per view.
 
-| Week of | Publish | Prep |
-|---|---|---|
-| 19 Oct | — | Pick the name; set up the channel (section 5); check every TSMC figure against the 3Q26 management report |
-| 26 Oct | Trailer; **Ep 1: TSMC Q3 2026, "51 cents of every dollar"**; 3 Shorts | Samsung and SK Hynix Q3 results are usually late October; collect them for Ep 4 |
-| 2 Nov | **Ep 2: Follow the dollar: who profits when a cloud company buys one AI server** | Mark modelled splits as estimates on screen |
-| 9 Nov | **Ep 3: ASML, the monopoly behind every advanced chip** | Nvidia data ready the night before results |
-| 16 Nov | **Ep 4: Nvidia results breakdown** (results expected around 17–18 Nov; confirm) | Biggest search week of the quarter: publish within 48 h |
-| 23 Nov | **Ep 5: How AI memory flipped Samsung vs. SK Hynix** | — |
-| 30 Nov | **Ep 6: What it would really cost India to build a TSMC** | — |
-| 7 Dec – 4 Jan | Eps 7–10: evergreen deep dives (e.g. Broadcom, Arm's royalty model, the hyperscaler capex race, Taiwan risk in numbers) | Holiday lull: bank the evergreen videos |
-| 11 Jan | **Ep 11: TSMC Q4 2026** (usually mid-January) | 12-video checkpoint (section 6) |
-| 18 Jan – 1 Feb | Ep 12+: ASML Q4, then big-tech capex results (usually late Jan / early Feb) | Re-plan the mix from checkpoint results |
+The week-by-week slate lives in **`CONTENT_PLAN.md`**: trailer and TSMC on 27 Oct, then Netflix, Visa, Nvidia, Ferrari vs Toyota, Starbucks, Novo vs Lilly, Costco, Reliance, the 2026 roundup, LVMH and JPMorgan on 12 Jan. In the week of 19 Oct, before launch:
+- set up the channel (section 5);
+- check every TSMC figure against the 3Q26 management report;
+- confirm the November earnings dates.
 
 ## 5. Channel setup checklist
 
@@ -74,7 +66,7 @@ From 1 Feb 2027, new channels need 8,000 watch hours in 365 days plus 1,000 subs
 - [ ] Turn on multi-language audio later (dubbing). Uploading your own dubbed tracks is open to everyone, and auto-dubbing covers 27 languages.
 
 **About text (draft):**
-> Where the money in AI and chips actually goes. We read the filings of Nvidia, TSMC, ASML, Samsung, SK Hynix and the companies that buy their chips, and show every dollar on one chart: where it comes from, who spends it, who keeps it. Every figure is sourced on screen, and the data is free to download. Research by the Moat & Margin team. Information, not investment advice.
+> The business behind the ticker. We read the filings of the world's great companies (Netflix, Visa, Nvidia, Costco, Toyota, LVMH, JPMorgan and more) and show every dollar on one chart: where it comes from, who spends it, who keeps it. Every figure is sourced on screen, and the data is free to download. Research by the Moat & Margin team. Information, not investment advice.
 
 **Description template:**
 ```

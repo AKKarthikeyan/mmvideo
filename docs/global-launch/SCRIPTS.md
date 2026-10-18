@@ -9,11 +9,11 @@ Narration is written for MiniMax TTS at about 150 words a minute, with no person
 
 **Scene:** black frame. One blue bar grows, then splits into green, coral and amber ribbons (the `GLOBAL-sankey` reveal, unlabelled).
 
-**VO:** Every AI chatbot, every data centre, every new phone starts as a dollar someone spends. That dollar doesn't stay in one place. It gets split. Some goes to the company that designs the chip, some to the one that makes it, some to the one that makes the machine that makes it. And some is kept as profit.
+**VO:** Every coffee, every subscription, every card swipe, every new phone starts as a dollar someone spends. That dollar doesn't stay in one place. It gets split. Some pays for the product, some for the people, some for the tax man. And some is kept as profit.
 
 **Scene:** the TSMC Sankey at full reveal.
 
-**VO:** This channel follows that dollar, using the companies' own filings: Nvidia, TSMC, ASML, Samsung, SK Hynix, and the cloud giants paying for all of it. Within two days of every major result, you'll see where the money came from, who spent it, and who kept it.
+**VO:** This channel follows that dollar through the world's great companies, using their own filings: Netflix and Visa, Toyota and Ferrari, Costco, LVMH, JPMorgan, Nvidia and TSMC. Within two days of every major result, you'll see where the money came from, who spent it, and who kept it.
 
 **Scene:** footer close-up showing source and "as of" date.
 
@@ -77,6 +77,6 @@ Narration is written for MiniMax TTS at about 150 words a minute, with no person
 ### 6:40 Close
 **Scene:** `GLOBAL-endcard`.
 
-**VO:** TSMC keeps fifty-one cents of every dollar. Next, the bigger question: when a cloud company spends a hundred dollars on AI servers, how much ends up with Nvidia, how much with TSMC, and how much with the companies behind them? The data for this video is linked below.
+**VO:** TSMC keeps fifty-one cents of every dollar. Next week, a dollar you probably spend yourself: your Netflix subscription. How much pays for the shows, how much for the marketing, and how much Netflix keeps. The data for this video is linked below.
 
 **Description sources:** TSMC 3Q26 earnings release and management report (15 Oct 2026). US$ at NT$31.98, the rate implied by reported revenue of US$46.72B.

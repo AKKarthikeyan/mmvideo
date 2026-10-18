@@ -8,7 +8,7 @@
 // (default "FOUND", "OF"), s.slots for the number of places in the case line-up (default 6).
 import React from "react";
 import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
-import {SP, TFn, P, SAFE, IStage, IHeading, INote, IStamps, Pop, Chip, Icon, fit, fmtIN, clamp01} from "./kit";
+import {SP, TFn, P, SAFE, IStage, IHeading, INote, IStamps, Pop, Chip, Icon, fit, fmtIN, clamp01, CurCtx} from "./kit";
 import {Stamp, Pin, COND} from "../../voxkit";
 
 // ---------- small shared helpers ----------
@@ -25,9 +25,9 @@ const prog = (f: number, start: number, dur: number, ease: (t: number) => number
 const spr = (f: number, start: number, fps: number, damping = 12, stiffness = 150, mass = 0.8) =>
   f < start ? 0 : f - start > 150 ? 1 : spring({frame: f - start, fps, config: {damping, stiffness, mass}});
 // Currency symbol taken from the first money text in the props ("₹6.18" -> "₹"), so it is never assumed silently.
-const curOf = (texts: any[]) => {
+const curOf = (texts: any[], fallback = "₹") => {
   for (const t of texts) { const m = /^[^\d\s.,+\-A-Za-z]+/.exec(String(t ?? "")); if (m && m[0].length <= 3) return m[0]; }
-  return "₹";
+  return fallback;
 };
 const Tx: React.FC<{x?: number; y?: number; size: number; fill?: string; anchor?: "start" | "middle" | "end"; ls?: number; children: React.ReactNode}> =
   ({x = 0, y = 0, size, fill = P.ink, anchor = "middle", ls = 1, children}) =>
@@ -165,7 +165,8 @@ const Keep: React.FC<SP> = ({s, n, T, b}) => {
   const total = Number(s.total) > 0 ? Number(s.total) : 100;
   const was = s.was && Number(s.was.v) > 0 ? s.was : null;
   const now = s.now && Number(s.now.v) > 0 ? s.now : null;
-  const label = s.label || `${curOf([was?.text, now?.text])}${fmtIN(total)}`;
+  const cur = React.useContext(CurCtx);
+  const label = s.label || `${curOf([was?.text, now?.text], cur)}${fmtIN(total)}`;
   const guesses: any[] = s.guesses || [];
   const zoom = !!(was || now);
   const tWas = was ? at(T, was.at) : 1e9, tNow = now ? at(T, now.at) : 1e9;
@@ -354,7 +355,8 @@ const NoteScene: React.FC<SP> = ({s, n, T, b}) => {
   const zoom = !!s.zoom && all.length > 1;
   const work = zoom ? all.slice(1) : all;
   const wsum = work.reduce((a, g) => a + Number(g.v), 0) || 1;
-  const label = s.label || (all.length || Number(s.total) > 0 ? `${curOf(all.map((g) => g.text))}${fmtIN(Number(s.total) > 0 ? Number(s.total) : sum)}` : "");
+  const cur = React.useContext(CurCtx);
+  const label = s.label || (all.length || Number(s.total) > 0 ? `${curOf(all.map((g) => g.text), cur)}${fmtIN(Number(s.total) > 0 ? Number(s.total) : sum)}` : "");
 
   // the working bar and its pieces
   const X0 = zoom ? 150 : 312, BW = zoom ? 1620 : 1488, BH = zoom ? 140 : 150;

@@ -209,6 +209,7 @@ def main():
             else: b["sec"] = round(tts(b["say"], mp3, V.get("voice", "English_Diligent_Man")), 2); print(" voiced", b["key"], b["sec"])
             b["cues"] = chunks(b["cap"])
         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
+        data.update({k: V[k] for k in ("cur", "brand") if k in V})   # other channels (Moat Atlas): currency and branding
         data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
         json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)
         tot = sum(b["sec"] for b in V["beats"])

@@ -3292,3 +3292,8 @@ A01["pics"] = {}
 for _b in A01["beats"]:
     if "new" in _b["scene"] and _A01_NEW.get(_b["scene"]["new"]["type"]): _b["scene"] = _b["scene"]["new"]
 VIDEOS.append(A01)
+
+# ---------------------------------------------------------------- Moat Atlas (the international channel, from 18 Oct 2026)
+# Its long videos use this same engine; their scripts live in vx_global.py so the two channels' entries stay apart.
+from vx_global import GLOBAL_VIDEOS
+VIDEOS.extend(GLOBAL_VIDEOS)

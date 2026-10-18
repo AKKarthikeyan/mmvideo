@@ -34,8 +34,9 @@ import amckeepss from "../../public/vx/amckeepss/data.json";
 import cablerest from "../../public/vx/cablerest/data.json";
 import lombardfloat from "../../public/vx/lombardfloat/data.json";
 import e2egpu from "../../public/vx/e2egpu/data.json";
+import tsmc3q26 from "../../public/vx/tsmc3q26/data.json";   // Moat Atlas (international channel), scripts/vx_global.py
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu, tsmc3q26] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},

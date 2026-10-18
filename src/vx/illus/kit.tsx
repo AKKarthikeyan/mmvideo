@@ -131,22 +131,24 @@ export const TrolleyIcon: React.FC<IP & {full?: boolean}> = ({color = P.white, a
     <circle cx={-16} cy={34} r={8} fill={P.ink}/><circle cx={22} cy={34} r={8} fill={P.ink}/>
   </Ico>
 );
-export const CoinIcon: React.FC<IP & {label?: string}> = ({color = P.gold, label = "₹", ...p}) => (
+// The video's currency (VData.cur, default ₹): coin, tag and note icons print it unless they are given a label.
+export const CurCtx = React.createContext("₹");
+export const CoinIcon: React.FC<IP & {label?: string}> = ({color = P.gold, label, ...p}) => (
   <Ico {...p}>
     <circle cx={0} cy={4} r={42} fill={P.shade} opacity={0.35}/>
     <circle cx={0} cy={0} r={42} fill={color} stroke={P.ink} strokeWidth={SW}/>
     <circle cx={0} cy={0} r={32} fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.55}/>
-    <text x={0} y={18} fontFamily={COND} fontWeight={700} fontSize={50} textAnchor="middle" fill={P.ink}>{label}</text>
+    <text x={0} y={18} fontFamily={COND} fontWeight={700} fontSize={50} textAnchor="middle" fill={P.ink}>{label ?? <CurText/>}</text>
   </Ico>
 );
 // A plainly stylised note (not a likeness of real currency): pass the text to print on it.
-export const NoteIcon: React.FC<IP & {label?: string}> = ({color = "#BFD9B4", label = "₹100", ...p}) => (
+export const NoteIcon: React.FC<IP & {label?: string}> = ({color = "#BFD9B4", label, ...p}) => (
   <Ico {...p}>
     <rect x={-78} y={-38} width={156} height={76} rx={6} fill={color} stroke={P.ink} strokeWidth={SW}/>
     <rect x={-68} y={-28} width={136} height={56} rx={3} fill="none" stroke={P.ink} strokeWidth={2} opacity={0.5}/>
     <circle cx={-48} cy={0} r={13} fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.6}/>
     <circle cx={48} cy={0} r={13} fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.6}/>
-    <text x={0} y={15} fontFamily={COND} fontWeight={700} fontSize={42} textAnchor="middle" fill={P.ink}>{label}</text>
+    <text x={0} y={15} fontFamily={COND} fontWeight={700} fontSize={42} textAnchor="middle" fill={P.ink}>{label ?? <CurText suffix="100"/>}</text>
   </Ico>
 );
 export const BankIcon: React.FC<IP> = ({color = P.white, accent = P.blue, ...p}) => (
@@ -172,12 +174,13 @@ export const PersonIcon: React.FC<IP> = ({color = P.ink, ...p}) => (
     <path d="M -26 40 v -22 a 26 26 0 0 1 52 0 v 22 Z" fill={color}/>
   </Ico>
 );
-export const TagIcon: React.FC<IP & {label?: string}> = ({color = P.mustard, label = "₹", ...p}) => (
+export const TagIcon: React.FC<IP & {label?: string}> = ({color = P.mustard, label, ...p}) => (
   <Ico {...p}>
     <path d="M -44 0 L -14 -30 H 44 V 30 H -14 Z" fill={color} stroke={P.ink} strokeWidth={SW}/>
     <circle cx={-18} cy={0} r={6} fill={P.white} stroke={P.ink} strokeWidth={3}/>
-    <text x={16} y={14} fontFamily={COND} fontWeight={700} fontSize={38} textAnchor="middle" fill={P.ink}>{label}</text>
+    <text x={16} y={14} fontFamily={COND} fontWeight={700} fontSize={38} textAnchor="middle" fill={P.ink}>{label ?? <CurText/>}</text>
   </Ico>
 );
+function CurText({suffix = ""}: {suffix?: string}) { return <>{React.useContext(CurCtx) + suffix}</>; }
 export const ICONS: Record<string, React.FC<any>> = {store: StoreIcon, trolley: TrolleyIcon, coin: CoinIcon, note: NoteIcon, bank: BankIcon, box: BoxIcon, person: PersonIcon, tag: TagIcon};
 export const Icon: React.FC<IP & {name: string; label?: string}> = ({name, ...p}) => { const I = ICONS[name] || BoxIcon; return <I {...p}/>; };

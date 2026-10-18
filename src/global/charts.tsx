@@ -7,7 +7,7 @@
 import React from "react";
 import {useCurrentFrame, useVideoConfig} from "remotion";
 import {G, RAMP, SANS} from "./theme";
-import {Beat, Frame, HALO, Meta, Money, Status, assertChecks, beatAt, ease, money, textW, timeline} from "./frame";
+import {Beat, Frame, HALO, Meta, Money, Status, assertChecks, chartBox, ease, money, portrait, textW, timeline} from "./frame";
 
 type Reveal = Beat & {upto?: number};
 const unchecked = (xs: {status?: Status}[]) => xs.filter((x) => (x.status ?? "check") === "check").length;
@@ -17,7 +17,7 @@ const revealAt = (beats: Reveal[], starts: number[], i: number) => {
   const b = beats.findIndex((x) => (x.upto ?? 1e9) >= i);
   return starts[Math.max(0, b)];
 };
-const area = (W: number, H: number, beats: Beat[]) => ({x: 60, y: 200, w: W - 120, h: H - 330 - (beats.some((b) => b.caption) ? 90 : 0)});
+const area = chartBox;
 
 // ---------------------------------------------------------------- waterfall
 export type WItem = {label: string; value: number; sub?: string; status?: Status};
@@ -95,10 +95,10 @@ export const cents = (vals: number[]) => {
 export const GlobalSplit: React.FC<{D: SplitData}> = ({D}) => {
   const f = useCurrentFrame(), {width: W, height: H} = useVideoConfig(), beats = sBeats(D), {starts} = timeline(beats);
   const A = area(W, H, beats), ct = cents(D.parts.map((p) => p.value));
-  const cell = Math.min(62, (A.h - 20) / 10), gx = A.x + 120, gy = A.y + (A.h - cell * 10) / 2 + 10;
+  const P = portrait(W, H), cell = P ? 46 : Math.min(62, (A.h - 20) / 10), gx = P ? A.x : A.x + 120, gy = A.y + (A.h - cell * 10) / 2 + 10;
   const owner: number[] = ct.flatMap((c, i) => Array(c).fill(i));
   const first = ct.map((_, i) => sum(ct.slice(0, i)));
-  const lx = gx + cell * 10 + 140, rowH = Math.min(150, (A.h - 20) / D.parts.length);
+  const lx = gx + cell * 10 + (P ? 40 : 140), rowH = Math.min(P ? 160 : 150, (A.h - 20) / D.parts.length);
   return (
     <Frame M={D} draft={unchecked([...D.parts, ...(D.whole ? [D.whole] : [])])} beats={beats} starts={starts}>
       {owner.map((pi, j) => {
@@ -113,6 +113,12 @@ export const GlobalSplit: React.FC<{D: SplitData}> = ({D}) => {
       {D.parts.map((p, i) => {
         const t0 = revealAt(beats, starts, i), q = ease(f, t0, t0 + 24), y = A.y + 20 + i * rowH + rowH / 2;
         if (f < t0) return null;
+        if (P) return <g key={i} opacity={ease(f, t0, t0 + 8)}>
+          <rect x={lx} y={y - 58} width={12} height={116} rx={4} fill={G[p.kind]}/>
+          <text x={lx + 30} y={y + 2} fontFamily={SANS} fontSize={72} fontWeight={700} fill={G.ink}>{`${Math.round(ct[i] * q)}¢`}</text>
+          <text x={lx + 30} y={y + 38} fontFamily={SANS} fontSize={28} fontWeight={500} fill={G.ink}>{p.label}</text>
+          <text x={lx + 30} y={y + 68} fontFamily={SANS} fontSize={22} fill={G.dim}>{money(D, p.value)}</text>
+        </g>;
         return <g key={i} opacity={ease(f, t0, t0 + 8)}>
           <rect x={lx} y={y - 34} width={14} height={68} rx={4} fill={G[p.kind]}/>
           <text x={lx + 36} y={y + 26} fontFamily={SANS} fontSize={84} fontWeight={700} fill={G.ink}>{`${Math.round(ct[i] * q)}¢`}</text>
@@ -183,9 +189,10 @@ export const guideTotal = (D: GuideData) => { assertChecks(D.id, checkGuide(D));
 
 export const GlobalGuide: React.FC<{D: GuideData}> = ({D}) => {
   const f = useCurrentFrame(), {width: W, height: H} = useVideoConfig(), beats = gBeats(D), {starts} = timeline(beats);
-  const A = area(W, H, beats), x0 = A.x + 380, x1 = A.x + A.w - 300, {min, max, step, unit} = D.axis;
+  const A = area(W, H, beats), P = portrait(W, H), {min, max, step, unit} = D.axis;
+  const x0 = P ? A.x + 30 : A.x + 380, x1 = P ? A.x + A.w - 30 : A.x + A.w - 300;
   const X = (v: number) => x0 + ((v - min) / (max - min)) * (x1 - x0);
-  const rowH = Math.min(210, (A.h - 140) / D.rows.length), top = A.y + 110, bottom = top + rowH * D.rows.length;
+  const rowH = Math.min(P ? 200 : 210, (A.h - 140) / D.rows.length), top = A.y + (P ? 150 : 110), bottom = top + rowH * D.rows.length;
   const ticks = Array.from({length: Math.floor((max - min) / step) + 1}, (_, i) => min + i * step);
   const [t1, t2] = [starts[1] ?? 0, starts[2] ?? 0], pct = (v: number) => `${+v.toFixed(1)}${unit}`;
   return (
@@ -204,14 +211,15 @@ export const GlobalGuide: React.FC<{D: GuideData}> = ({D}) => {
         const cy = top + rowH * i + rowH / 2, mid = (r.low + r.high) / 2, q = ease(f, t1, t1 + 18);
         const d = mid - r.prior, dot = ease(f, 4 + i * 6, 16 + i * 6);
         return <g key={i}>
-          <text x={x0 - 40} y={cy + 12} textAnchor="end" fontFamily={SANS} fontSize={36} fontWeight={700} fill={G.ink}>{r.label}</text>
+          {P ? <text x={A.x} y={cy - 88} fontFamily={SANS} fontSize={36} fontWeight={700} fill={G.ink}>{r.label}</text>
+            : <text x={x0 - 40} y={cy + 12} textAnchor="end" fontFamily={SANS} fontSize={36} fontWeight={700} fill={G.ink}>{r.label}</text>}
           {f >= t1 ? <g>
             <rect x={X(mid) - (X(r.high) - X(r.low)) / 2 * q} y={cy - 30} width={(X(r.high) - X(r.low)) * q} height={60} rx={6} fill={G.rev} fillOpacity={0.55} stroke={G.rev} strokeWidth={3}/>
             <text x={X(mid)} y={cy - 44} textAnchor="middle" fontFamily={SANS} fontSize={28} fontWeight={500} fill={G.ink} opacity={q} style={HALO}>{`${pct(r.low)}–${pct(r.high)}`}</text>
           </g> : null}
           <circle cx={X(r.prior)} cy={cy} r={14 * dot} fill={G.ink} stroke={G.bg} strokeWidth={3}/>
           <text x={X(r.prior)} y={cy + 62} textAnchor="middle" fontFamily={SANS} fontSize={26} fill={G.ink} opacity={dot} style={HALO}>{pct(r.prior)}</text>
-          {f >= t2 ? <text x={x1 + 40} y={cy + 10} fontFamily={SANS} fontSize={28} fontWeight={500} fill={G.ink} opacity={ease(f, t2, t2 + 12)}>
+          {f >= t2 ? <text x={P ? x1 : x1 + 40} y={P ? cy - 88 : cy + 10} textAnchor={P ? "end" : "start"} fontFamily={SANS} fontSize={28} fontWeight={500} fill={G.ink} opacity={ease(f, t2, t2 + 12)}>
             {`midpoint vs ${D.priorLabel.split(" ")[0]}: ${d >= 0 ? "+" : "−"}${Math.abs(d).toFixed(1)} pt`}</text> : null}
         </g>;
       })}

@@ -12,9 +12,18 @@ import tsmcW from "../../public/global/tsmc-3q26/waterfall.json";
 import tsmcS from "../../public/global/tsmc-3q26/split.json";
 import tsmcM from "../../public/global/tsmc-3q26/mix.json";
 import tsmcG from "../../public/global/tsmc-3q26/guide.json";
+import tsmcShorts from "../../public/global/tsmc-3q26/shorts.json";
 
 const DEF = tsmc as unknown as SankeyData;
 const DW = tsmcW as unknown as WaterfallData, DS = tsmcS as unknown as SplitData, DM = tsmcM as unknown as MixData, DG = tsmcG as unknown as GuideData;
+
+// Shorts (1080x1920): the same chart data plus a hook headline and a closing call to the long video. Beats run
+// 30% slower than in the long video, since a Short carries its story in captions until narration is added.
+type ShortOv = {hook: string; cta: string};
+const short = <T extends {beats?: any[]}>(D: T, beats: any[], o: ShortOv): T =>
+  ({...D, hook: o.hook, beats: [...beats.map((b) => ({...b, sec: b.sec * 1.3})), {sec: 3, caption: o.cta}]});
+const SH = tsmcShorts as Record<string, ShortOv>;
+const SS = short(DS, DS.beats ?? [], SH.split), SM = short(DM, DM.beats ?? [], SH.mix), SG = short(DG, DG.beats ?? [], SH.guide);
 
 // Every chart template once, back to back, on its default data: the format menu as one video.
 const REEL: [React.FC<any>, any, number][] = [
@@ -36,6 +45,12 @@ export const GlobalCompositions: React.FC = () => (
       durationInFrames={mixTotal(DM)} calculateMetadata={({props}: any) => ({durationInFrames: mixTotal(props.D)})}/>
     <Composition id="GLOBAL-guide" component={GlobalGuide as any} defaultProps={{D: DG}} fps={GFPS} width={1920} height={1080}
       durationInFrames={guideTotal(DG)} calculateMetadata={({props}: any) => ({durationInFrames: guideTotal(props.D)})}/>
+    <Composition id="GLOBAL-short-split" component={GlobalSplit as any} defaultProps={{D: SS}} fps={GFPS} width={1080} height={1920}
+      durationInFrames={splitTotal(SS)} calculateMetadata={({props}: any) => ({durationInFrames: splitTotal(props.D)})}/>
+    <Composition id="GLOBAL-short-mix" component={GlobalMix as any} defaultProps={{D: SM}} fps={GFPS} width={1080} height={1920}
+      durationInFrames={mixTotal(SM)} calculateMetadata={({props}: any) => ({durationInFrames: mixTotal(props.D)})}/>
+    <Composition id="GLOBAL-short-guide" component={GlobalGuide as any} defaultProps={{D: SG}} fps={GFPS} width={1080} height={1920}
+      durationInFrames={guideTotal(SG)} calculateMetadata={({props}: any) => ({durationInFrames: guideTotal(props.D)})}/>
     <Composition id="GLOBAL-reel" component={Reel} fps={GFPS} width={1920} height={1080} durationInFrames={REEL.reduce((a, r) => a + r[2], 0)}/>
     {/* Channel art: pass --props='{"name":"...","tagline":"..."}' once the name is chosen. */}
     <Still id="GLOBAL-banner" component={GlobalBanner as any} defaultProps={BRAND} width={2560} height={1440}/>

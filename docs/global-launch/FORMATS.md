@@ -26,6 +26,22 @@ Every figure carries a `status`:
 
 The DRAFT tag stays on every frame until nothing is marked `check`.
 
+## Shorts (1080x1920)
+
+`GLOBAL-split`, `GLOBAL-mix` and `GLOBAL-guide` switch to a portrait layout when the frame is taller than it is wide:
+- a hook headline above the chart (`hook`, with "|" for line breaks);
+- captions wrapped to two lines;
+- the source footer above the Shorts title overlay;
+- nothing important under the action buttons on the right.
+
+The Sankey and the waterfall stay 16:9 only, because they're too dense for a phone.
+
+`GLOBAL-short-split`, `GLOBAL-short-mix` and `GLOBAL-short-guide` are the three launch-week TSMC Shorts:
+- They reuse the long video's data files, so a figure is corrected in one place.
+- The hook and closing line for each Short come from `public/global/<id>/shorts.json`.
+- Their beats run 30% slower than in the long video.
+- Each ends with a 3-second line pointing to the long video.
+
 ## Planned (built when the first episode that needs one is scripted)
 
 | Format | Question | Data it needs |

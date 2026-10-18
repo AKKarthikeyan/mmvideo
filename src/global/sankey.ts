@@ -2,20 +2,16 @@
 // One shape serves a single income statement (segments -> revenue -> profit) and a cross-company "follow the dollar"
 // chain (buyer capex -> Nvidia -> TSMC -> ASML); columns are explicit, so the layout never guesses.
 
-export type Kind = "rev" | "keep" | "spend" | "neutral" | "amber";
-// verified = read off the filing; derived = arithmetic on filed lines; check = not yet read off the filing.
-export type Status = "verified" | "derived" | "check";
+import {Beat, Meta, Money, Status, money, textW} from "./frame";
+
+export type Kind = "rev" | "keep" | "spend" | "neutral";
+// Status: verified = read off the filing; derived = arithmetic on filed lines; check = not yet read off the filing.
 export type Side = "left" | "right" | "above" | "below";
 export type SNode = {id: string; label: string; col: number; kind?: Kind; sub?: string[]; compact?: boolean; status?: Status; side?: Side};
 export type SLink = {from: string; to: string; value: number};
-export type Step = {sec: number; cols?: number; focus?: string[]; caption?: string; audio?: string};
-export type SankeyData = {
-  id: string; company: string; title: string; period: string;
-  cur: string; unit?: string; decimals?: number;
-  show?: {cur: string; rate: number};   // display currency: shown value = filed value / rate
-  tol?: number;                          // allowed in/out mismatch per node, in filed units
+export type Step = Beat & {cols?: number; focus?: string[]};
+export type SankeyData = Meta & Money & {
   scale?: number;                        // px per filed unit; set the same value on peers to draw them to one scale
-  source: string; asOf: string; notes?: string[];
   nodes: SNode[]; links: SLink[]; steps?: Step[];
 };
 
@@ -55,11 +51,6 @@ export const assertSankey = (D: SankeyData) => {
 
 export const unchecked = (D: SankeyData) => D.nodes.filter((n) => (n.status ?? "check") === "check").map((n) => n.id);
 
-export const fmt = (D: SankeyData, v: number, spend = false) => {
-  const c = D.show ? D.show.cur : D.cur, x = D.show ? v / D.show.rate : v, s = `${c}${x.toFixed(D.decimals ?? 1)}${D.unit ?? ""}`;
-  return spend ? `(${s})` : s;
-};
-export const fmtFiled = (D: SankeyData, v: number) => `${D.cur}${v.toFixed(0)}${D.unit ?? ""}`;
 
 // ---- layout ----
 export const NODE_W = 22, GAP = 16, LINE = {label: 34, value: 38, small: 26};
@@ -72,10 +63,9 @@ const labelBlock = (D: SankeyData, n: SNode) => n.compact
   ? LINE.label + LINE.value - 6 + 4
   : LINE.label + LINE.value + (D.show ? LINE.small : 0) + LINE.small * (n.sub?.length ?? 0) + 6;
 
-// Oswald is condensed: about 0.47 em per character is a safe width estimate for sizing the label gutters.
-export const textW = (t: string, size: number) => t.length * size * 0.47;
-const labelW = (D: SankeyData, n: SNode) => Math.max(textW(n.label, 28), textW(fmt(D, 999.9), 34),
-  n.compact ? textW(`${fmt(D, 999.9)} · ${n.sub?.[0] ?? ""}`, 27) : 0, ...(n.sub ?? []).map((t) => textW(t, 21)));
+// Oswald is condensed, so textW (about 0.47 em per character) is a safe estimate for sizing the label gutters.
+const labelW = (D: SankeyData, n: SNode) => Math.max(textW(n.label, 28), textW(money(D, 999.9), 34),
+  n.compact ? textW(`${money(D, 999.9)} · ${n.sub?.[0] ?? ""}`, 27) : 0, ...(n.sub ?? []).map((t) => textW(t, 21)));
 
 export const layout = (D: SankeyData, box: Box) => {
   const {v} = flows(D), ncol = Math.max(...D.nodes.map((n) => n.col)) + 1;

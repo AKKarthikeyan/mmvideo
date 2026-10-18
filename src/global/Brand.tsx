@@ -10,7 +10,7 @@ export const BRAND: BrandProps = {name: "Flowsheet", tagline: "Where the money i
 // Decorative ribbons: one wide band splitting into kept (green) and spent (coral), drawn across a band of the frame.
 const Flows: React.FC<{x: number; y: number; w: number; h: number; o?: number}> = ({x, y, w, h, o = 1}) => {
   const bands: [number, number, number, number, string][] = [
-    [0.0, 0.62, 0.02, 0.40, G.keep], [0.62, 0.86, 0.52, 0.70, G.spend], [0.86, 1.0, 0.82, 0.96, G.amber]];
+    [0.0, 0.62, 0.02, 0.40, G.keep], [0.62, 0.86, 0.52, 0.70, G.spend], [0.86, 1.0, 0.82, 0.96, G.neutral]];
   return (
     <g opacity={o}>
       <rect x={x} y={y} width={w * 0.012} height={h} fill={G.rev}/>
@@ -51,7 +51,7 @@ export const GlobalAvatar: React.FC = () => (
 
 // 1280x720 thumbnail: company, one number, at most four words. The number is the hook, so it gets half the frame.
 // Optional `split`: where one dollar went, drawn as a stacked bar on the right (values in cents, top to bottom).
-type Part = {label: string; v: number; kind: "keep" | "spend" | "amber" | "rev"};
+type Part = {label: string; v: number; kind: "keep" | "spend" | "neutral" | "rev"};
 export type ThumbProps = {company: string; number: string; numberSub: string; line: string; accent?: Part["kind"]; split?: Part[]};
 const Split: React.FC<{parts: Part[]; x: number; y: number; h: number}> = ({parts, x, y, h}) => {
   const tot = parts.reduce((a, p) => a + p.v, 0);

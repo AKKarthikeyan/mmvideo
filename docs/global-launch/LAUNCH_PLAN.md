@@ -37,6 +37,8 @@ npx remotion still src/index.ts GLOBAL-banner out/global/banner.png --props='{"n
 | **Shorts**: one chart each, as a trailer for a long video | 30–50 s | 3 a week | Cut from the long video |
 | Bar chart races | 20 s segments inside stories only | — | Never as a standalone video |
 
+The full chart kit is in `FORMATS.md`: Sankey, waterfall and profit bridge, the $1 split, the mix bar and the guidance range are built; trend, peer, value-chain and teardown formats are planned. Use 3–4 formats per episode.
+
 Rules for every video:
 - Calendar quarters on screen (fiscal quarter in small print).
 - Filed currency in grey, with the exchange rate stated.

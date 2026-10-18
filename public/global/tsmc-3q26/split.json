@@ -1,0 +1,72 @@
+{
+ "id": "tsmc-3q26",
+ "company": "TSMC",
+ "period": "Calendar Q3 2026 · Jul–Sep",
+ "source": "TSMC 3Q26 earnings release and management report, 15 Oct 2026",
+ "asOf": "18 Oct 2026",
+ "cur": "NT$",
+ "unit": "B",
+ "decimals": 1,
+ "show": {
+  "cur": "US$",
+  "rate": 31.9829
+ },
+ "tol": 0.05,
+ "title": "Where one dollar of revenue went",
+ "notes": [
+  "Each coin is one cent of revenue. Cents rounded so they add up to exactly 100."
+ ],
+ "whole": {
+  "label": "revenue",
+  "value": 1494.243,
+  "status": "check"
+ },
+ "parts": [
+  {
+   "label": "kept as net profit",
+   "value": 763.06,
+   "kind": "keep",
+   "status": "check"
+  },
+  {
+   "label": "to make the chips",
+   "value": 501.864,
+   "kind": "spend",
+   "status": "derived"
+  },
+  {
+   "label": "to run the company",
+   "value": 115.934,
+   "kind": "spend2",
+   "status": "derived"
+  },
+  {
+   "label": "tax, net of other income",
+   "value": 113.385,
+   "kind": "neutral",
+   "status": "derived"
+  }
+ ],
+ "beats": [
+  {
+   "sec": 2.5,
+   "upto": 0,
+   "caption": "Out of every dollar TSMC sold, 51 cents stayed as profit."
+  },
+  {
+   "sec": 2.5,
+   "upto": 1,
+   "caption": "33 cents paid for making the chips."
+  },
+  {
+   "sec": 2,
+   "upto": 2,
+   "caption": "8 cents ran the company: research, sales, admin."
+  },
+  {
+   "sec": 4,
+   "upto": 3,
+   "caption": "And 8 cents went in tax, after interest income."
+  }
+ ]
+}

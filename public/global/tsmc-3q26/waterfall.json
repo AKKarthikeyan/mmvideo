@@ -1,0 +1,83 @@
+{
+ "id": "tsmc-3q26",
+ "company": "TSMC",
+ "period": "Calendar Q3 2026 · Jul–Sep",
+ "source": "TSMC 3Q26 earnings release and management report, 15 Oct 2026",
+ "asOf": "18 Oct 2026",
+ "cur": "NT$",
+ "unit": "B",
+ "decimals": 1,
+ "show": {
+  "cur": "US$",
+  "rate": 31.9829
+ },
+ "tol": 0.05,
+ "title": "From revenue to net profit, step by step",
+ "notes": [
+  "US$ at NT$31.98, the rate implied by reported revenue of US$46.72B. Operating expenses net of other operating income."
+ ],
+ "start": {
+  "label": "Revenue",
+  "value": 1494.243,
+  "status": "check"
+ },
+ "items": [
+  {
+   "label": "Cost of|revenue",
+   "value": -501.864,
+   "sub": "33.6% of revenue",
+   "status": "derived"
+  },
+  {
+   "label": "Operating|expenses",
+   "value": -115.934,
+   "sub": "7.8%",
+   "status": "derived"
+  },
+  {
+   "label": "Non-operating|income",
+   "value": 34.594,
+   "sub": "2.3%",
+   "status": "derived"
+  },
+  {
+   "label": "Tax and|minority",
+   "value": -147.979,
+   "sub": "9.9%",
+   "status": "derived"
+  }
+ ],
+ "end": {
+  "label": "Net|profit",
+  "value": 763.06,
+  "sub": "51.1% of revenue",
+  "status": "check"
+ },
+ "beats": [
+  {
+   "sec": 2,
+   "upto": 0,
+   "caption": "Start with US$46.7 billion of revenue."
+  },
+  {
+   "sec": 2.5,
+   "upto": 1,
+   "caption": "A third goes on making the wafers."
+  },
+  {
+   "sec": 2.5,
+   "upto": 2,
+   "caption": "Research and overheads: under eight cents in the dollar."
+  },
+  {
+   "sec": 2.5,
+   "upto": 4,
+   "caption": "Interest income adds a little; tax takes about ten cents."
+  },
+  {
+   "sec": 5,
+   "upto": 5,
+   "caption": "Net profit: US$23.9 billion, 51% of revenue."
+  }
+ ]
+}

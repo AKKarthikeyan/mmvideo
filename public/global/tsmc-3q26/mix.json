@@ -1,0 +1,54 @@
+{
+ "id": "tsmc-3q26",
+ "company": "TSMC",
+ "period": "Calendar Q3 2026 · Jul–Sep",
+ "source": "TSMC 3Q26 earnings release and management report, 15 Oct 2026",
+ "asOf": "18 Oct 2026",
+ "title": "Which chips the money comes from",
+ "notes": [
+  "Process nodes in nanometres (nm): smaller is newer and harder to make."
+ ],
+ "basis": "Share of TSMC wafer revenue by process technology",
+ "parts": [
+  {
+   "label": "2nm",
+   "pct": 8,
+   "status": "check"
+  },
+  {
+   "label": "3nm",
+   "pct": 33,
+   "status": "check"
+  },
+  {
+   "label": "5nm",
+   "pct": 28,
+   "status": "check"
+  },
+  {
+   "label": "7nm",
+   "pct": 10,
+   "status": "check"
+  },
+  {
+   "label": "16nm|and older",
+   "pct": 21,
+   "status": "check"
+  }
+ ],
+ "bracket": {
+  "from": 0,
+  "to": 3,
+  "label": "7nm and newer: 79% of wafer revenue"
+ },
+ "beats": [
+  {
+   "sec": 3.5,
+   "caption": "A third of wafer revenue now comes from 3nm. The newest, 2nm, is already 8%."
+  },
+  {
+   "sec": 5,
+   "caption": "Almost four in five wafer dollars come from processes few rivals can match."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "tsmc-3q26",
+ "company": "TSMC",
+ "period": "Q4 2026 guidance vs Q3 2026",
+ "source": "TSMC 3Q26 earnings release and management report, 15 Oct 2026",
+ "asOf": "18 Oct 2026",
+ "title": "What TSMC expects next quarter",
+ "notes": [
+  "Guidance assumes NT$31.8 per US$. Margins as a share of revenue."
+ ],
+ "axis": {
+  "min": 54,
+  "max": 70,
+  "step": 4,
+  "unit": "%"
+ },
+ "guideLabel": "Q4 2026 guidance",
+ "priorLabel": "Q3 2026 actual",
+ "rows": [
+  {
+   "label": "Gross margin",
+   "low": 65,
+   "high": 67,
+   "prior": 66.4,
+   "status": "check"
+  },
+  {
+   "label": "Operating margin",
+   "low": 56.5,
+   "high": 58.5,
+   "prior": 58.7,
+   "status": "check"
+  }
+ ],
+ "beats": [
+  {
+   "sec": 2.5,
+   "caption": "Last quarter: 66.4% gross margin, 58.7% operating margin."
+  },
+  {
+   "sec": 3,
+   "caption": "TSMC's own range for the next quarter."
+  },
+  {
+   "sec": 5,
+   "caption": "Both midpoints sit just below Q3: margins guided flat to slightly lower."
+  }
+ ]
+}

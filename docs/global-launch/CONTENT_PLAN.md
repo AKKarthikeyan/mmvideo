@@ -8,7 +8,7 @@ Drafted 18 Oct 2026.
 
 **Audience:** English-speaking investors in the US, UK and Europe.
 
-**Rhythm:** 1 long video a week (Tuesday) plus 3 Shorts cut from it (Wednesday, Friday, Sunday). Results weeks add a second long video within 48 hours of the report.
+**Rhythm (updated 19 Oct 2026):** 2 long videos a week (Tuesday and Friday) and 3 to 4 Shorts cut from each, one Short a day. The dated schedule to 1 Feb 2027 is in **`CALENDAR.md`** (and `calendar.csv`), and it supersedes the 12-week slate below where they differ.
 
 Earnings dates below are each company's usual timing. **Confirm every one on the company's investor-relations calendar** before booking the week.
 

@@ -280,6 +280,58 @@ Built from the content plan, the US trends report (`reports/US company analysis 
 | E26-S4 | The moat test on TSMC: copy it? rebuild it? one person? |
 | E28-S4 | The moat test on Big Tech: copy it? rebuild it? one person? |
 
+## When results land on other weekdays
+
+The Tuesday and Friday slots stay fixed, because viewers learn the rhythm. What moves is which video fills each slot. Results can land on any weekday, so they are handled with two tools: a fast Short within 24 hours, and the long breakdown in the next slot that leaves at least two working days.
+
+**1. Long breakdown: which slot**
+
+| Results day | Long breakdown goes out | What moves |
+|---|---|---|
+| Monday or Tuesday | **Friday** of the same week | That Friday's evergreen video goes to the bank |
+| Wednesday | **Friday** if the video was pre-built (below), otherwise **next Tuesday** | The same |
+| Thursday or Friday | **Next Tuesday** | Nothing, unless that Tuesday already holds a results video. Then the less-searched company becomes Shorts only |
+
+Examples from this calendar:
+- Apple (Mon 2 Nov) → Fri 6 Nov.
+- Nvidia (Tue 17 Nov, if confirmed) → Fri 20 Nov.
+- Walmart (Thu 19 Nov) → Tue 24 Nov.
+- Costco (Thu 10 Dec) → Tue 15 Dec.
+- JPMorgan (Thu 14 Jan) → Tue 19 Jan.
+
+**2. The One Number Short within 24 hours**
+
+For any company on the watch list (every company in this calendar, plus Meta, Microsoft, Alphabet, Palantir and Tesla), post a 30–40 s Short the day after results: the headline number from the press release, drawn as the $1 split or one chart. It takes that day's Short slot, and the planned Short moves to the bank.
+
+This catches the search spike on results day even when the long video comes days later. The Short ends with "Full breakdown on Friday/Tuesday", which points viewers to the long video.
+
+**3. Pre-build so results day is only an update**
+
+Most of a breakdown doesn't change with the new numbers: the castle, the made-up example, what the company sells, last quarter's figures, the moat test. So build it before the results:
+
+| When | Task |
+|---|---|
+| 3–5 days before | Script written with last quarter's numbers as placeholders. Data file filled from the previous filing. Scenes built. You approve the script in this form |
+| Results day | Swap in the new numbers and the guidance, check each one against the release, and rewrite at most 3–4 beats (what changed, why, what's next) |
+| Day after | Voice, render, QA, publish the One Number Short |
+| Next slot | Publish the long video |
+
+With this, Wednesday results can still make Friday.
+
+**4. Time zones work in your favour**
+
+Most US companies report after the 4 pm Eastern close, which is about 1:30 am in India. The press release is waiting when work starts in the morning in India. A Short finished by about 6 pm IST goes up at about 8:30 am Eastern, the same morning US viewers are reading about the results. Results before the US open (7 am Eastern) arrive at about 4:30 pm IST, in time for a Short that night.
+
+**5. Too many results in one week** (late October, late January)
+
+- Rank the companies by demand: the US trends report order, then the Google Trends check.
+- The top one gets the long video. The next two or three get One Number Shorts only.
+- A company that only gets a Short this quarter can still get a long video next quarter.
+
+**6. A third long video, only for the biggest events**
+
+For Nvidia, Apple, or the Anthropic listing, a bonus long video on a Wednesday or Thursday is allowed if production has room. Don't move the Tuesday and Friday videos to make space for it.
+
 ## Production rhythm for 2 long videos a week
 
 | Long video | Research and data | Script to AK for approval | Voice, render, QA | Shorts cut |

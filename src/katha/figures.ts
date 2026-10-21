@@ -129,7 +129,13 @@ export const arjuna = (pose: "despair" | "listen" | "resolve" = "listen", w = 0,
     P.push(ribbon(sampleCubics([[96, -560], [74, -520], [70, -460], [88, -408], [104, -360], [102, -300], [80, -254]], 10), 9, 9, 1));
     P.push(`M 96 -560 L 80 -254 L 82 -254 L 98 -560 Z`);
   }
-  P.push(streamer(-30, -318 + sink, 70, 14, 3, t * 0.09, 10 + w * 5, -1, 10));   // his scarf, lifting behind
+  // his scarf draped over the forearm, falling to the knee
+  {
+    const ph = t * 0.09 + 1.7, pts: number[][] = [], L: number[][] = [], R: number[][] = [];
+    for (let i = 0; i <= 12; i++) { const u = i / 12; pts.push([-34 - 8 * u - (6 + 8 * w) * u * u - Math.sin(ph + u * 4) * 4 * u, -240 + sink * (1 - u) + 120 * u]); }
+    for (let i = 0; i < pts.length; i++) { const u = i / (pts.length - 1), a2 = pts[Math.max(0, i - 1)], b2 = pts[Math.min(pts.length - 1, i + 1)], tx = b2[0] - a2[0], ty = b2[1] - a2[1], l = Math.hypot(tx, ty) || 1, wd = (9 + 7 * Math.sin(u * Math.PI)) / 2; L.push([pts[i][0] - (ty / l) * wd, pts[i][1] + (tx / l) * wd]); R.push([pts[i][0] + (ty / l) * wd, pts[i][1] - (tx / l) * wd]); }
+    P.push(smooth([...L, ...R.reverse()].map((q) => [q[0], q[1]] as Pt)));
+  }
   return P;
 };
 // The Gandiva: a long recurved bow with its string; laid down (angle in degrees) at x, y.

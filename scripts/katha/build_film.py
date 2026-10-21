@@ -24,7 +24,16 @@ VOICES = {
     "ARJUNA": {"voice_id": "English_Diligent_Man", "speed": 0.95, "pitch": 1},
     "DHRITARASHTRA": {"voice_id": "English_Diligent_Man", "speed": 0.82, "pitch": -5},
 }
-PAD = {"verse": 1.6, "title": 0.6}   # seconds of quiet after the voice, by scene type (default 0.5)
+PAD = {"verse": 1.6, "title": 0.6}
+CREDITS = [
+    "Verses: Shri Purohit Swami (1935), edited text, from the Bhagavad Gita dataset at github.com/gita/gita",
+    "Horse and bird silhouettes traced from models by Mirada, 3 Dreams of Black (ro.me), Apache License 2.0",
+    "Type: Tiro Devanagari Sanskrit, Cormorant Garamond and Cinzel, SIL Open Font License",
+    "Music: tanpura, bansuri and conch synthesised in code · Made in code with Remotion",
+]
+FPS = 30
+def beat_frames(b):   # mirrors beatLen in src/katha/Film.tsx
+    return -(-int(round((b["sec"] + (1.0 if b["scene"]["type"] == "title" else 0.6)) * FPS * 1000)) // 1000)   # seconds of quiet after the voice, by scene type (default 0.5)
 
 def tts(text, path, v):
     """MiniMax speech-2.6-hd, as in scripts/build_vx.py (waits on 429s; never switches provider). Returns seconds."""
@@ -143,6 +152,8 @@ def main():
             if p: problems.append(f"{b['key']} {b['speaker']} {b.get('ref')}: {p}")
             sc = scene_for(b, mv)
             if "conch" in str(b.get("music", "")).lower() and sc.get("type") in ("field", "chariot"): sc["conch"] = True
+            if sc.get("type") == "end":
+                sc.setdefault("title", S["title"].split(":")[0]); sc.setdefault("subtitle", S.get("subtitle") or "as Krishna told it to Arjuna"); sc.setdefault("lines", CREDITS)
             words = len(re.findall(r"\w+", b["say"]))
             mp3, o, v = out / f"{b['key']}.mp3", old.get(b["key"]), voices.get(b["speaker"], voices["SANJAYA"])
             pad = PAD.get(sc["type"], 0.5)
@@ -153,11 +164,21 @@ def main():
             else:
                 sec = words / WPS + pad + (0.7 if sc["type"] == "verse" else 0); audio = None   # estimate until voiced
             sec = max(sec, 4.5 if sc["type"] == "title" else 3.0)
-            beats.append(dict(key=b["key"], chapter=ch if 1 <= ch <= 18 else 0, movement=label if 1 <= ch <= 18 else "", speaker=b["speaker"], say=b["say"],
+            beats.append(dict(key=b["key"], part=ch, chapter=ch if 1 <= ch <= 18 else 0, movement=label if 1 <= ch <= 18 else "", speaker=b["speaker"], say=b["say"],
                               sec=round(sec, 2), audio=audio, voice=v if audio else None, scene=sc, music=b.get("music", "")))
     data = dict(id=fid, title=S["title"], subtitle=S.get("subtitle", ""), beats=beats, music="dharma/tanpura.wav", bell="dharma/bell.wav")
     json.dump(data, open(out / "data.json", "w"), ensure_ascii=False, indent=1)
     tot = sum(b["sec"] + (1.0 if b["scene"]["type"] == "title" else 0.6) for b in beats)
+    # YouTube description with chapter timestamps (exact once every beat is voiced)
+    t, marks, seen = 0, [], set()
+    for b in beats:
+        lab = b["movement"] or ("Epilogue" if b["part"] >= 19 else "Prologue")
+        if lab not in seen: seen.add(lab); marks.append((t, lab.replace("Chapter ", "").replace(" · ", ". ", 1) if b["movement"] else lab))
+        t += beat_frames(b)
+    stamp = lambda fr: f"{fr // FPS // 60}:{fr // FPS % 60:02d}"
+    desc = [S.get("description", "").strip(), "", *[f"{stamp(fr)} {lab}" for fr, lab in marks], "", "Credits", *[f"- {c}" for c in CREDITS]]
+    if S.get("youtube_title_options"): desc = ["Title options: " + " | ".join(S["youtube_title_options"]), ""] + desc
+    (out / "description.txt").write_text("\n".join(desc).strip() + "\n")
     nv = sum(1 for b in beats if b["audio"])
     print(f"{out / 'data.json'}: {len(beats)} beats, {tot / 60:.1f} min ({nv} voiced, {len(beats) - nv} estimated)")
     kinds = sorted({(b['scene']['type'], b['scene'].get('kind', ''), b['scene'].get('pose', ''), b['scene'].get('variant', '')) for b in beats})

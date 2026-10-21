@@ -12,12 +12,15 @@ dark shapes rimmed with light, drifting dust, slow camera push-ins, film grain, 
 - Every word on screen comes from the scene's props (`s`), never hard-coded in a scene.
 - Deterministic: no `Math.random`, no `Date`. Use `rnd(i, salt)` from `geom.ts`. Animate only from `useCurrentFrame()`.
 - Calm motion: slow drifts, breathing light, slow push-ins. Nothing bounces or pops.
+- **No SVG blur filters for light, haze, smoke or glow; use gradients.** Long software renders dropped black tiles when
+  scenes stacked large `feGaussianBlur` / `feTurbulence` filters. Soft light is a `radialGradient` whose stops fade to
+  opacity 0; haze is a `linearGradient`; the grain is a texture (`Finish`). At most one small blur, on a small element.
 - Never pure black or flat clip-art colour: silhouettes are `K.sil` (#160C1E) or tints of it; light is warm gold.
 
 ## Files
 | File | What |
 |---|---|
-| `look.tsx` | `K` palette, `W H FPS`, fonts (`SA` Tiro Devanagari Sanskrit, `EN` Cormorant Garamond, `CAPS` Cinzel), `KathaDefs` (gradients `k-gold`, `k-fade-h`, `k-halo`; filters `k-soft`, `k-bloom`, `blur(s)` for s in 1.5 4 8 14 30 60), `Finish` (grain + vignette) |
+| `look.tsx` | `K` palette, `W H FPS`, fonts (`SA` Tiro Devanagari Sanskrit, `EN` Cormorant Garamond, `CAPS` Cinzel), `KathaDefs` (gradients `k-gold`, `k-fade-h`, `k-halo`; text glows `k-soft`, `k-bloom` for cards only), `Finish` (grain texture + vignette) |
 | `geom.ts` | `smooth(points)` Catmull-Rom outline (a point `[x, y, "c"]` is a sharp corner), `ribbon(pts, w0, w1)` tapered band, `sampleCubics`, `streamer(x0, y0, len, w0, w1, phase, amp, dir)` waving cloth, `rnd`, `lerp`, `clamp01` |
 | `stage.tsx` | `SceneP` ({s, n}), `Frame` (full-frame svg with defs, a zoom/push and the finish), `push(f, n, from, to)`, `Flock` (birds crossing), `Foreground` (out-of-focus grass and spears) |
 | `sky.tsx` | `Sky` (mood "dusk" / "dawn" / "night" / "gold", sun position and size, god rays, clouds, stars), `Dust` (motes in the light), `Haze`, `Clouds` |

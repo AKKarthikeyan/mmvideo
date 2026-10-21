@@ -64,6 +64,7 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
   const f = useCurrentFrame();
   const {frames, starts, total} = filmLayout(D);
   const cur = starts.reduce((a, s, i) => (f >= s ? i : a), 0), b = D.beats[cur];
+  const bed = D.beats.some((x) => x.audio) ? 0.17 : 0.3;   // the tanpura sits lower under a voiced film
   return (
     <AbsoluteFill style={{background: K.night}}>
       <KathaFonts/>
@@ -80,7 +81,7 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
       })}
       <Lamps chapter={b?.chapter || 0} f={f}/>
       <Chapter b={b} f={f}/>
-      {D.music !== "" ? <Audio src={staticFile(D.music || "dharma/tanpura.wav")} loop volume={(fr) => interpolate(fr, [0, 60, total - 90, total], [0, 0.3, 0.3, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"})}/> : null}
+      {D.music !== "" ? <Audio src={staticFile(D.music || "dharma/tanpura.wav")} loop volume={(fr) => interpolate(fr, [0, 60, total - 90, total], [0, bed, bed, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"})}/> : null}
     </AbsoluteFill>
   );
 };

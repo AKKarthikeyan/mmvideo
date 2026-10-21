@@ -3,18 +3,48 @@
 
   python3 scripts/katha/build_film.py scripts/katha/gita_film.json            # estimate timings (no audio)
   python3 scripts/katha/build_film.py scripts/katha/gita_film.json --tts      # MiniMax narration per beat (MINIMAX_API_KEY)
+  python3 scripts/katha/build_film.py --list-voices                          # the English system voices on the account
 
 The script (written for AK's request, 21 Oct 2026: "recreate Bhagavad Geeta by Krishna to Arjuna, premium, rich, poetic")
 is a list of movements (prologue, chapters 1-18, epilogue) of beats {key, speaker, say, ref, show_sanskrit, scene, music}.
 This step: checks every quoted line against the corpus (Krishna, Arjuna and Dhritarashtra speak only verse text), fills
 verse scenes from the corpus (Sanskrit, transliteration, the English as quoted, the source line), maps the script's free
 wording of poses and metaphors onto the kit's scene names, and times each beat (2.5 words a second plus a breath)."""
-import json, re, sys, pathlib, unicodedata
+import json, os, re, sys, time, pathlib, unicodedata
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "dharma"))
 from corpus import ref as corpus_ref
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 WPS = 2.5                     # spoken words per second (calm, poetic delivery)
+# Voices by speaker (override in the script's "voices"). All four use the repo's proven Indian-accent narrator, told apart
+# by pitch and pace, so nothing breaks on a wrong voice id; ear-test, then swap ids from --list-voices if wanted.
+VOICES = {
+    "SANJAYA": {"voice_id": "English_Diligent_Man", "speed": 0.94, "pitch": 0},
+    "KRISHNA": {"voice_id": "English_Diligent_Man", "speed": 0.86, "pitch": -3},
+    "ARJUNA": {"voice_id": "English_Diligent_Man", "speed": 0.95, "pitch": 1},
+    "DHRITARASHTRA": {"voice_id": "English_Diligent_Man", "speed": 0.82, "pitch": -5},
+}
+PAD = {"verse": 1.6, "title": 0.6}   # seconds of quiet after the voice, by scene type (default 0.5)
+
+def tts(text, path, v):
+    """MiniMax speech-2.6-hd, as in scripts/build_vx.py (waits on 429s; never switches provider). Returns seconds."""
+    import requests
+    key = os.environ["MINIMAX_API_KEY"]
+    body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": "English",
+            "voice_setting": {"voice_id": v["voice_id"], "speed": v.get("speed", 1), "vol": 1, "pitch": v.get("pitch", 0)},
+            "audio_setting": {"sample_rate": 44100, "bitrate": 128000, "format": "mp3", "channel": 1}}
+    for attempt in range(6):
+        j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": f"Bearer {key}"}, json=body, timeout=120).json()
+        if (j.get("data") or {}).get("audio"):
+            open(path, "wb").write(bytes.fromhex(j["data"]["audio"])); return j["extra_info"]["audio_length"] / 1000
+        print("  retry", path.name, j.get("base_resp")); time.sleep(20 * (attempt + 1))
+    raise SystemExit("TTS failed: " + path.name)
+
+def list_voices():
+    import requests
+    j = requests.post("https://api.minimax.io/v1/get_voice", headers={"Authorization": f"Bearer {os.environ['MINIMAX_API_KEY']}"}, json={"voice_type": "system"}, timeout=60).json()
+    for v in j.get("system_voice") or []:
+        if v.get("voice_id", "").startswith("English"): print(f"{v['voice_id']:42} {v.get('voice_name', '')}  {'; '.join(v.get('description') or [])[:90]}")
 
 POSE_MAP = [                  # script wording -> ChariotRig pose
     (r"rising|bow-raised|bow raised|resolve|stands? (up|ready)", "resolve"),
@@ -98,8 +128,13 @@ def scene_for(b, mv):
     return sc
 
 def main():
-    a = sys.argv[1:]; src = pathlib.Path(a[0]); S = json.load(open(src)); fid = S.get("id") or src.stem
+    a = sys.argv[1:]
+    if "--list-voices" in a: return list_voices()
+    files = [x for x in a if not x.startswith("--")]; voice = "--tts" in a
+    src = pathlib.Path(files[0]); S = json.load(open(src)); fid = S.get("id") or src.stem
     out = ROOT / "public" / "katha" / fid; out.mkdir(parents=True, exist_ok=True)
+    voices = {**VOICES, **(S.get("voices") or {})}
+    old = {b["key"]: b for b in json.load(open(out / "data.json"))["beats"]} if (out / "data.json").exists() else {}
     beats, problems = [], []
     for mv in S["movements"]:
         ch = int(mv.get("chapter", 0)); label = f"{'Prologue' if ch == 0 else 'Epilogue' if ch >= 19 else 'Chapter ' + str(ch)} · {mv['name']}"
@@ -109,14 +144,22 @@ def main():
             sc = scene_for(b, mv)
             if "conch" in str(b.get("music", "")).lower() and sc.get("type") in ("field", "chariot"): sc["conch"] = True
             words = len(re.findall(r"\w+", b["say"]))
-            sec = max(3.0, words / WPS + (1.2 if sc["type"] == "verse" else 0.4))
-            if sc["type"] == "title": sec = max(sec, 4.5)
+            mp3, o, v = out / f"{b['key']}.mp3", old.get(b["key"]), voices.get(b["speaker"], voices["SANJAYA"])
+            pad = PAD.get(sc["type"], 0.5)
+            if o and o.get("audio") and mp3.exists() and o.get("say") == b["say"] and o.get("voice") == v:
+                sec, audio = o["sec"], o["audio"]                                # unchanged line: keep its audio
+            elif voice:
+                sec = tts(b["say"], mp3, v) + pad; audio = f"katha/{fid}/{mp3.name}"; print(f"  voiced {b['key']} {b['speaker']} {sec:.1f}s")
+            else:
+                sec = words / WPS + pad + (0.7 if sc["type"] == "verse" else 0); audio = None   # estimate until voiced
+            sec = max(sec, 4.5 if sc["type"] == "title" else 3.0)
             beats.append(dict(key=b["key"], chapter=ch if 1 <= ch <= 18 else 0, movement=label if 1 <= ch <= 18 else "", speaker=b["speaker"], say=b["say"],
-                              sec=round(sec, 2), scene=sc, music=b.get("music", "")))
+                              sec=round(sec, 2), audio=audio, voice=v if audio else None, scene=sc, music=b.get("music", "")))
     data = dict(id=fid, title=S["title"], subtitle=S.get("subtitle", ""), beats=beats, music="dharma/tanpura.wav", bell="dharma/bell.wav")
     json.dump(data, open(out / "data.json", "w"), ensure_ascii=False, indent=1)
     tot = sum(b["sec"] + (1.0 if b["scene"]["type"] == "title" else 0.6) for b in beats)
-    print(f"{out / 'data.json'}: {len(beats)} beats, {tot / 60:.1f} min (estimated)")
+    nv = sum(1 for b in beats if b["audio"])
+    print(f"{out / 'data.json'}: {len(beats)} beats, {tot / 60:.1f} min ({nv} voiced, {len(beats) - nv} estimated)")
     kinds = sorted({(b['scene']['type'], b['scene'].get('kind', ''), b['scene'].get('pose', ''), b['scene'].get('variant', '')) for b in beats})
     print("scenes:", "; ".join(":".join(x for x in k if x) for k in kinds))
     if problems: print("QUOTE PROBLEMS:"); [print("  " + p) for p in problems]

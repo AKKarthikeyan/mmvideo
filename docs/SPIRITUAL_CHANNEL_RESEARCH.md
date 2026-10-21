@@ -162,6 +162,8 @@ What to keep: the modern-problem hook, the Arjuna parallel, one concrete analogy
 
 Positioning in one line: **the plain-words, source-on-screen guide to Indian thought, drawn rather than generated.**
 
+The English-language landscape worldwide and in India, and what it changes for titles, register, publishing time and the competitor set, is in `ENGLISH_CHANNELS.md` (21 Oct 2026).
+
 ---
 
 ## 6. How to present differently (the house rules)

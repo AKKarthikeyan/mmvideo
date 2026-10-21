@@ -9,9 +9,11 @@
 //   rope     the rope and the snake: in the dark a rope is a snake; bring the lamp and the snake was never there
 //   salt     Chandogya Upanishad 6.13: a lump of salt in water: dissolved, unseen, in every drop
 // Icons (100 x 100 box like the kit's): diya, lotus, chariot, bow, flute, feather, banyan, conch.
+// Redrawn 21 Oct 2026 after AK: "feeling like 2nd grade drawing": the horse, the car, the birds and the trees are now built from
+// tapered bands (ribbon), hanging locks (mane, fringe), leaf clusters (cloud) and bending limbs, in the kit's flat-fill, ink-outline style.
 import React from "react";
 import {Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
-import {SP, P, IStage, IHeading, INote, IStamps, Pop, Chip, Arrow, PersonIcon, TFn, fit, clamp01, SAFE} from "./kit";
+import {SP, P, IStage, IHeading, INote, IStamps, Chip, Arrow, TFn, fit, clamp01, SAFE} from "./kit";
 import {COND, TYPE, Stage, Strip, VoxDefs} from "../../voxkit";
 
 // ---------- fonts for scripture: Noto Serif Devanagari and Noto Serif (both OFL, in public/fonts) ----------
@@ -64,7 +66,56 @@ const Label: React.FC<{x: number; y: number; start: number; text?: string; to?: 
 // Deterministic pseudo-random in [0, 1): the same picture on every render.
 const rnd = (i: number, salt = 0) => { const v = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453; return v - Math.floor(v); };
 
+
+// ---------- geometry: tapered bands, locks, leaf clusters, limbs (the drawings are built from these) ----------
+type Pt = [number, number];
+const cubicAt = (a: Pt, b: Pt, c: Pt, d: Pt, t: number): Pt => { const u = 1 - t; return [u * u * u * a[0] + 3 * u * u * t * b[0] + 3 * u * t * t * c[0] + t * t * t * d[0], u * u * u * a[1] + 3 * u * u * t * b[1] + 3 * u * t * t * c[1] + t * t * t * d[1]]; };
+// Samples along a chain of cubic Béziers: [p0, c1, c2, p1, c1, c2, p2, ...], n samples per segment.
+const sampleCubics = (p: Pt[], n: number): Pt[] => { const out: Pt[] = []; for (let s = 0; s + 3 < p.length; s += 3) for (let i = 0; i <= n; i++) { if (s > 0 && i === 0) continue; out.push(cubicAt(p[s], p[s + 1], p[s + 2], p[s + 3], i / n)); } return out; };
+const nrmAt = (pts: Pt[], i: number): Pt => { const n = pts.length, a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)]; const tx = b[0] - a[0], ty = b[1] - a[1], l = Math.hypot(tx, ty) || 1; return [-ty / l, tx / l]; };
+const fmt = (p: Pt) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+// A band along a polyline that tapers from w0 to w1 (pw bends the taper): tails, roots, branches, a snake.
+const ribbon = (pts: Pt[], w0: number, w1: number, pw = 1): string => {
+  const L: Pt[] = [], R: Pt[] = [], n = pts.length;
+  for (let i = 0; i < n; i++) { const nn = nrmAt(pts, i), w = (w0 + (w1 - w0) * Math.pow(i / (n - 1), pw)) / 2; L.push([pts[i][0] + nn[0] * w, pts[i][1] + nn[1] * w]); R.push([pts[i][0] - nn[0] * w, pts[i][1] - nn[1] * w]); }
+  return `M ${L.map(fmt).join(" L ")} L ${R.reverse().map(fmt).join(" L ")} Z`;
+};
+// k pointed locks with curved sides hanging off a curve (a mane, a fringe); root/tip are depths along the normal.
+const locks = (pts: Pt[], root: number, tip: number, k: number): string => {
+  const n = pts.length, at = (u: number, d: number): Pt => { const i = Math.max(0, Math.min(n - 1, Math.round(u * (n - 1)))), nn = nrmAt(pts, i); return [pts[i][0] + nn[0] * d, pts[i][1] + nn[1] * d]; };
+  let d = `M ${pts.map(fmt).join(" L ")} L ${fmt(at(1, root))}`;
+  for (let j = k; j > 0; j--) {
+    const a = at(j / k, root), t = at((j - 0.5) / k, tip), b = at((j - 1) / k, root);
+    const c1: Pt = [(a[0] + t[0]) / 2 + (a[0] - b[0]) * 0.18, (a[1] + t[1]) / 2 + (a[1] - b[1]) * 0.18], c2: Pt = [(b[0] + t[0]) / 2 - (a[0] - b[0]) * 0.18, (b[1] + t[1]) / 2 - (a[1] - b[1]) * 0.18];
+    d += ` Q ${fmt(c1)} ${fmt(t)} Q ${fmt(c2)} ${fmt(b)}`;
+  }
+  return d + " Z";
+};
+// A leafy cluster: k rounded bumps round an ellipse.
+const cloud = (cx: number, cy: number, rx: number, ry: number, k: number, b = 0.26, seed = 0): string => {
+  const P: Pt[] = []; for (let i = 0; i < k; i++) { const a = i / k * Math.PI * 2 + seed; P.push([cx + Math.cos(a) * rx, cy + Math.sin(a) * ry]); }
+  let d = `M ${fmt(P[0])}`;
+  for (let i = 0; i < k; i++) { const q = P[(i + 1) % k], a = (i + 0.5) / k * Math.PI * 2 + seed; d += ` Q ${fmt([cx + Math.cos(a) * rx * (1 + b), cy + Math.sin(a) * ry * (1 + b)])} ${fmt(q)}`; }
+  return d + " Z";
+};
+// A two-tone cluster of leaves: the dark mass, then the lit side.
+const Foliage: React.FC<{cx: number; cy: number; rx: number; ry: number; k: number; seed: number}> = ({cx, cy, rx, ry, k, seed}) => (
+  <g><path d={cloud(cx, cy, rx, ry, k, 0.26, seed)} fill={DP.leaf} stroke={P.ink} strokeWidth={5}/>
+    <path d={cloud(cx - rx * 0.13, cy - ry * 0.19, rx * 0.68, ry * 0.61, Math.max(5, k - 2), 0.26, seed + 0.4)} fill={DP.leafLt} opacity={0.9}/></g>
+);
+// A limb that bends once: pivot P, upper length L1 at a1 degrees from straight down (+ = forward), lower L2 at a1 + a2.
+const limb = (Pv: Pt, a1: number, L1: number, a2: number, L2: number, w0: number, w1: number, w2: number) => {
+  const r = Math.PI / 180, A = a1 * r, B = (a1 + a2) * r;
+  const K: Pt = [Pv[0] + Math.sin(A) * L1, Pv[1] + Math.cos(A) * L1], F: Pt = [K[0] + Math.sin(B) * L2, K[1] + Math.cos(B) * L2];
+  const n1: Pt = [Math.cos(A), -Math.sin(A)], n2: Pt = [Math.cos(B), -Math.sin(B)], nk: Pt = [(n1[0] + n2[0]) / 2, (n1[1] + n2[1]) / 2];
+  const pts: Pt[] = [[Pv[0] + n1[0] * w0 / 2, Pv[1] + n1[1] * w0 / 2], [K[0] + nk[0] * w1 / 2, K[1] + nk[1] * w1 / 2], [F[0] + n2[0] * w2 / 2, F[1] + n2[1] * w2 / 2], [F[0] - n2[0] * w2 / 2, F[1] - n2[1] * w2 / 2], [K[0] - nk[0] * w1 / 2, K[1] - nk[1] * w1 / 2], [Pv[0] - n1[0] * w0 / 2, Pv[1] - n1[1] * w0 / 2]];
+  return {d: `M ${pts.map(fmt).join(" L ")} Z`, F, B};
+};
+const COAT_SHADE: Record<string, string> = {[P.mustard]: "#B8842A", "#A86B3C": "#80502A", [P.gray]: "#6E6E6E", [P.white]: "#CFC7B8"};
+const shade = (c: string) => COAT_SHADE[c] || "#555555";
+
 // ---------- icons ----------
+
 type IP = {x?: number; y?: number; size?: number; color?: string; accent?: string};
 const Ico: React.FC<IP & {children: React.ReactNode}> = ({x = 0, y = 0, size = 100, children}) =>
   <g transform={`translate(${x} ${y}) scale(${size / 100})`} strokeLinejoin="round" strokeLinecap="round">{children}</g>;
@@ -98,16 +149,21 @@ export const LotusIcon: React.FC<IP> = ({color = DP.lotus, accent = DP.lotusLt, 
 );
 export const ChariotIcon: React.FC<IP> = ({color = P.mustard, accent = P.red, ...p}) => {
   const f = useCurrentFrame();
+  const fringe: Pt[] = []; for (let i = 0; i <= 12; i++) { const a = Math.PI * i / 12; fringe.push([-28 * Math.cos(a), -38 + 5 * Math.sin(a)]); }
   return (
     <Ico {...p}>
-      <line x1={-30} y1={-14} x2={-30} y2={-48} stroke={P.ink} strokeWidth={4}/>
-      <path d="M -30 -48 L 2 -40 L -30 -32 Z" fill={accent} stroke={P.ink} strokeWidth={3}/>
-      <path d="M -44 20 L -44 -14 L 24 -14 L 38 20 Z" fill={color} stroke={P.ink} strokeWidth={SW}/>
-      <line x1={38} y1={8} x2={56} y2={2} stroke={P.ink} strokeWidth={5}/>
-      <g transform={`translate(10 24) rotate(${f * 3})`}>
-        <circle r={22} fill={P.white} stroke={P.ink} strokeWidth={SW}/>
-        {[0, 45, 90, 135].map((a) => <line key={a} x1={-22} y1={0} x2={22} y2={0} stroke={P.ink} strokeWidth={3} transform={`rotate(${a})`}/>)}
-        <circle r={5} fill={P.ink}/>
+      <line x1={-8} y1={-16} x2={-8} y2={-40} stroke={P.ink} strokeWidth={3}/>
+      <path d="M -28 -38 C -28 -50 -12 -54 0 -54 C 12 -54 28 -50 28 -38 Z" fill={accent} stroke={P.ink} strokeWidth={3}/>
+      <path d={locks(fringe, -1, -7, 6)} fill={P.gold} stroke={P.ink} strokeWidth={2}/>
+      <circle cx={0} cy={-56} r={3} fill={P.gold} stroke={P.ink} strokeWidth={2}/>
+      <path d="M -40 10 L -40 -12 C -40 -16 -36 -18 -32 -18 L 8 -18 C 20 -18 30 -24 36 -36 C 38 -40 42 -40 42 -36 C 42 -22 38 -8 36 10 Z" fill={color} stroke={P.ink} strokeWidth={3.5}/>
+      <path d="M -34 -12 L 8 -12 C 18 -12 26 -18 32 -28" fill="none" stroke={accent} strokeWidth={5}/>
+      <rect x={-46} y={10} width={88} height={7} fill={DP.bark} stroke={P.ink} strokeWidth={3}/>
+      <line x1={36} y1={4} x2={56} y2={-2} stroke={P.ink} strokeWidth={5}/>
+      <g transform={`translate(0 30) rotate(${f * 3})`}>
+        <circle r={18} fill={P.paper} stroke={P.ink} strokeWidth={3.5}/>
+        {[0, 45, 90, 135].map((a) => <line key={a} x1={-17} y1={0} x2={17} y2={0} stroke={P.ink} strokeWidth={2.5} transform={`rotate(${a})`}/>)}
+        <circle r={5} fill={P.gold} stroke={P.ink} strokeWidth={2.5}/>
       </g>
     </Ico>
   );
@@ -146,18 +202,21 @@ export const FeatherIcon: React.FC<IP> = ({color = DP.leaf, accent = P.blue, ...
 export const BanyanIcon: React.FC<IP> = ({color = DP.leaf, accent = DP.bark, ...p}) => (
   <Ico {...p}>
     <line x1={-50} y1={46} x2={50} y2={46} stroke={P.ink} strokeWidth={3}/>
-    <path d="M -11 46 L -8 -2 L 8 -2 L 11 46 Z" fill={accent} stroke={P.ink} strokeWidth={SW}/>
-    {[[-28, 6, 46], [26, 8, 46]].map((r, i) => <path key={i} d={`M ${r[0]} ${r[1]} Q ${r[0] * 1.1} 26 ${r[0] * 1.15} ${r[2]}`} fill="none" stroke={accent} strokeWidth={5}/>)}
-    {[[-24, -6, 22], [24, -6, 22], [0, -20, 32]].map((c, i) => <circle key={i} cx={c[0]} cy={c[1]} r={c[2]} fill={color} stroke={P.ink} strokeWidth={SW}/>)}
-    <circle cx={-6} cy={-14} r={9} fill={DP.leafLt} opacity={0.8}/>
+    <path d="M -14 46 C -10 20 -8 0 -8 -14 L 8 -14 C 8 0 10 20 14 46 Z" fill={accent} stroke={P.ink} strokeWidth={3.5}/>
+    {[[-30, -6, -34], [28, -4, 32], [-40, 0, -46], [40, 2, 44]].map((r, i) => <g key={i}>
+      <path d={`M ${r[0]} ${r[1]} C ${r[0] - 2} 16 ${r[2]} 30 ${r[2]} 46`} fill="none" stroke={P.ink} strokeWidth={5.5}/>
+      <path d={`M ${r[0]} ${r[1]} C ${r[0] - 2} 16 ${r[2]} 30 ${r[2]} 46`} fill="none" stroke={DP.barkLt} strokeWidth={2.5}/></g>)}
+    <path d={cloud(0, -18, 50, 28, 10, 0.26, 0.4)} fill={color} stroke={P.ink} strokeWidth={3.5}/>
+    <path d={cloud(-6, -24, 32, 16, 8, 0.26, 0.9)} fill={DP.leafLt} opacity={0.9}/>
   </Ico>
 );
 export const ConchIcon: React.FC<IP> = ({color = P.white, ...p}) => (
   <Ico {...p}>
-    <path d="M -36 18 L -58 32" stroke={P.ink} strokeWidth={9}/>
-    <path d="M -36 18 Q -44 -30 0 -40 Q 44 -34 40 2 Q 36 30 6 34 Q -20 36 -36 18 Z" fill={color} stroke={P.ink} strokeWidth={SW}/>
-    <path d="M 8 -16 q 16 2 14 15 q -2 13 -15 11 q -11 -2 -9 -11 q 2 -7 9 -6" fill="none" stroke={P.ink} strokeWidth={3}/>
-    <path d="M -30 10 Q -20 -22 6 -30" fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.5}/>
+    <path d="M 8 -50 C 22 -48 34 -36 36 -18 C 38 2 34 20 24 32 C 16 42 4 46 -10 44 C -26 42 -40 32 -44 16 C -48 2 -40 -14 -28 -24 C -16 -34 -4 -40 2 -48 Z" fill={color} stroke={P.ink} strokeWidth={3.5}/>
+    <path d="M 8 -50 C 16 -46 20 -38 16 -32 C 12 -26 4 -28 6 -34 C 7 -38 12 -38 12 -34" fill="none" stroke={P.ink} strokeWidth={3}/>
+    <path d="M -40 10 C -34 22 -22 34 -6 40 C -14 30 -22 18 -24 6 C -26 -2 -22 -8 -16 -10 C -30 -8 -40 -2 -40 10 Z" fill="#DED6C6" stroke={P.ink} strokeWidth={3}/>
+    <path d="M 0 -30 C 12 -22 22 -8 24 8 M -8 -22 C 4 -14 12 -2 14 10" fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.5}/>
+    <path d="M -10 44 L -14 54" stroke={P.ink} strokeWidth={6}/>
   </Ico>
 );
 export const DHARMA_ICONS: Record<string, React.FC<any>> = {diya: DiyaIcon, lotus: LotusIcon, chariot: ChariotIcon, bow: BowIcon, flute: FluteIcon, feather: FeatherIcon, banyan: BanyanIcon, conch: ConchIcon};
@@ -223,116 +282,209 @@ const Verse: React.FC<SP> = ({s, n, T}) => {
 };
 
 // ---------- chariot: Katha Upanishad 1.3.3-4 ----------
-// s: {heading, note, parts: {horses, reins, driver, rider, chariot, road: {text, at}}, wild?: at, calm?: at}
-const G = 770;
-const Horse: React.FC<{x: number; y: number; i: number; wild: number; scale: number}> = ({x, y, i, wild, scale}) => {
-  const f = useCurrentFrame();
-  const bob = Math.sin(f * 0.55 + i * 1.7) * 5, leg = Math.sin(f * 0.55 + i * 1.7) * 14;
-  const turn = wild * (i === 1 ? 0 : i === 0 ? -7 : 8), jitter = wild * Math.sin(f * 1.3 + i) * 4, spread = wild * (i === 1 ? -26 : 18);
-  const coat = [P.mustard, "#A86B3C", P.gray][i % 3];
+// s: {heading, note, parts: {rider, driver, reins, horses, chariot, road: {text, at}}, wild?: at, calm?: at}
+// A numbered legend fills down the left as each part is named; the same number lands on the part in the picture.
+const HORSE_BODY = "M 186 -156 C 212 -160 244 -146 256 -126 C 268 -110 266 -92 250 -84 C 238 -78 222 -80 210 -90 C 198 -100 196 -102 196 -102 C 176 -78 142 -52 120 -16 C 112 6 108 30 84 44 C 40 56 -40 56 -86 44 C -116 36 -134 10 -130 -18 C -126 -46 -110 -62 -80 -64 C -50 -66 -20 -68 -6 -68 C 50 -100 140 -158 186 -156 Z";
+const HORSE_TAIL = ribbon(sampleCubics([[-102, -56], [-150, -50], [-180, 10], [-168, 66], [-160, 96], [-178, 122], [-172, 146]], 8), 32, 6, 0.7);
+const HORSE_MANE = locks(sampleCubics([[184, -156], [140, -158], [50, -100], [-6, -68]], 16), -6, -46, 5);
+// Side view, facing right; origin at the centre of the barrel, hooves at y = 166. Legs swing with `phase`; `wild` widens the stride.
+const Horse: React.FC<{x: number; y: number; sc: number; coat: string; phase: number; wild: number}> = ({x, y, sc, coat, phase, wild}) => {
+  const amp = 18 + wild * 16, dark = shade(coat);
+  // One leg: a bent limb from a pivot inside the barrel, and the hoof as an ink block at its end.
+  const leg = (p: Pt, a1: number, a2: number, hind: boolean, far: boolean) => {
+    const m = limb(p, a1, hind ? 84 : 80, a2, 70, hind ? 46 : 34, 22, 17);
+    const bx = Math.sin(m.B), by = Math.cos(m.B), nx = Math.cos(m.B), ny = -Math.sin(m.B), F = m.F;
+    const hoof: Pt[] = [[F[0] + nx * 9, F[1] + ny * 9], [F[0] - nx * 9, F[1] - ny * 9], [F[0] - nx * 13 + bx * 22, F[1] - ny * 13 + by * 22], [F[0] + nx * 13 + bx * 22, F[1] + ny * 13 + by * 22]];
+    return <g><path d={m.d} fill={far ? dark : coat} stroke={P.ink} strokeWidth={5}/><path d={`M ${hoof.map(fmt).join(" L ")} Z`} fill={P.ink}/></g>;
+  };
+  const s1 = Math.sin(phase), s2 = Math.sin(phase + Math.PI), s3 = Math.sin(phase + 1.2), s4 = Math.sin(phase + 1.2 + Math.PI);
   return (
-    <g transform={`translate(${x + jitter} ${y + bob + spread}) rotate(${turn}) scale(${scale})`}>
-      {[[-44, 1], [-24, -1], [26, 1], [46, -1]].map((l, k) => <line key={k} x1={l[0]} y1={10} x2={l[0] + l[1] * leg * (k % 2 ? 1 : -1)} y2={62} stroke={P.ink} strokeWidth={9}/>)}
-      <path d="M -70 -4 q -18 -30 -8 -56" fill="none" stroke={P.ink} strokeWidth={6}/>
-      <path d="M 40 -16 L 84 -60" stroke={P.ink} strokeWidth={34} strokeLinecap="round"/>
-      <path d="M 40 -16 L 84 -60" stroke={coat} strokeWidth={24} strokeLinecap="round"/>
-      <ellipse cx={0} cy={0} rx={72} ry={34} fill={coat} stroke={P.ink} strokeWidth={5}/>
-      <path d="M 44 -30 q 24 -34 40 -42" fill="none" stroke={P.ink} strokeWidth={7} strokeLinecap="round"/>
-      <g transform="translate(102 -62) rotate(18)">
-        <ellipse cx={0} cy={0} rx={32} ry={17} fill={coat} stroke={P.ink} strokeWidth={5}/>
-        <path d="M -16 -12 l 4 -20 l 14 16 Z" fill={coat} stroke={P.ink} strokeWidth={4}/>
-        <circle cx={-4} cy={-5} r={3.6} fill={P.ink}/>
-        <circle cx={26} cy={5} r={3} fill={P.ink} opacity={0.6}/>
+    <g transform={`translate(${x} ${y}) scale(${sc})`} strokeLinejoin="round" strokeLinecap="round">
+      {leg([-96, 10], -12 + s2 * amp, -Math.max(0, s2) * 34, true, true)}
+      {leg([84, 6], 8 + s3 * amp, Math.max(0, -s3) * 36, false, true)}
+      <path d={HORSE_TAIL} fill={dark} stroke={P.ink} strokeWidth={5}/>
+      {leg([-90, 14], -12 + s1 * amp, -Math.max(0, s1) * 34, true, false)}
+      {leg([92, 10], 8 + s4 * amp, Math.max(0, -s4) * 36, false, false)}
+      <path d={HORSE_BODY} fill={coat} stroke={P.ink} strokeWidth={5}/>
+      <path d="M -86 44 C -40 56 40 56 84 44 C 60 30 -60 30 -86 44 Z" fill={P.ink} opacity={0.12}/>
+      <path d={HORSE_MANE} fill={dark} stroke={P.ink} strokeWidth={5}/>
+      <path d="M 176 -162 C 196 -166 214 -160 228 -140 C 214 -144 204 -140 196 -128 C 194 -142 186 -152 176 -162 Z" fill={dark} stroke={P.ink} strokeWidth={4}/>
+      <path d="M 166 -146 L 158 -186 L 184 -158 Z" fill={coat} stroke={P.ink} strokeWidth={5}/>
+      <path d="M 186 -150 L 186 -192 L 210 -158 Z" fill={coat} stroke={P.ink} strokeWidth={5}/>
+      <circle cx={218} cy={-132} r={6.5} fill={P.ink}/><circle cx={220} cy={-134} r={2} fill={P.white}/>
+      <path d="M 250 -106 q 7 -3 8 4" fill="none" stroke={P.ink} strokeWidth={3.5}/>
+      <path d="M 190 -146 C 206 -122 228 -104 250 -98" fill="none" stroke={P.ink} strokeWidth={4}/>
+      <circle cx={250} cy={-96} r={6} fill={P.gold} stroke={P.ink} strokeWidth={3}/>
+      <path d="M 72 -94 C 96 -60 108 -30 110 -4" fill="none" stroke={P.ink} strokeWidth={12}/>
+      <path d="M 72 -94 C 96 -60 108 -30 110 -4" fill="none" stroke={P.red} strokeWidth={6}/>
+    </g>
+  );
+};
+// Faceless figure from the waist up (the car hides the legs): seated and still, or standing and leaning to the reins.
+const Figure: React.FC<{x: number; y: number; color: string; pose: "sit" | "drive"}> = ({x, y, color, pose}) => (
+  <g transform={`translate(${x} ${y})`} strokeLinejoin="round" strokeLinecap="round">
+    {pose === "drive" ? (
+      <>
+        <path d="M -30 0 L 30 0 C 34 -40 38 -70 44 -92 L -14 -100 C -24 -70 -30 -40 -30 0 Z" fill={color} stroke={P.ink} strokeWidth={5}/>
+        <path d={ribbon(sampleCubics([[6, -90], [40, -84], [70, -74], [96, -64]], 6), 26, 16)} fill={color} stroke={P.ink} strokeWidth={5}/>
+        <path d={ribbon(sampleCubics([[30, -96], [60, -92], [86, -80], [106, -70]], 6), 24, 15)} fill={color} stroke={P.ink} strokeWidth={5}/>
+        <circle cx={104} cy={-66} r={11} fill={color} stroke={P.ink} strokeWidth={4}/>
+        <path d="M 16 -96 L 26 -116" stroke={P.ink} strokeWidth={12}/>
+        <circle cx={34} cy={-138} r={24} fill={color} stroke={P.ink} strokeWidth={5}/>
+        <path d="M 12 -150 C 20 -170 48 -170 58 -150 Z" fill={P.red} stroke={P.ink} strokeWidth={4}/>
+      </>
+    ) : (
+      <>
+        <path d="M -34 0 L 34 0 C 36 -40 36 -70 30 -96 L -30 -96 C -36 -70 -36 -40 -34 0 Z" fill={color} stroke={P.ink} strokeWidth={5}/>
+        <path d={ribbon(sampleCubics([[22, -86], [42, -70], [44, -40], [30, -14]], 6), 26, 16)} fill={color} stroke={P.ink} strokeWidth={5}/>
+        <circle cx={30} cy={-12} r={11} fill={color} stroke={P.ink} strokeWidth={4}/>
+        <path d="M 0 -96 L 0 -114" stroke={P.ink} strokeWidth={12}/>
+        <circle cx={2} cy={-138} r={24} fill={color} stroke={P.ink} strokeWidth={5}/>
+        <path d="M -22 -148 C -14 -170 18 -170 26 -148 Z" fill={P.gold} stroke={P.ink} strokeWidth={4}/>
+      </>
+    )}
+  </g>
+);
+const Wheel: React.FC<{r: number; spin: number}> = ({r, spin}) => (
+  <g transform={`rotate(${spin})`}>
+    <circle r={r} fill={DP.barkLt} stroke={P.ink} strokeWidth={6}/>
+    <circle r={r - 16} fill={P.paper} stroke={P.ink} strokeWidth={5}/>
+    {Array.from({length: 12}, (_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * Math.PI / 6) * (r - 14)} y2={Math.sin(i * Math.PI / 6) * (r - 14)} stroke={P.ink} strokeWidth={6}/>)}
+    {Array.from({length: 12}, (_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * Math.PI / 6) * (r - 16)} y2={Math.sin(i * Math.PI / 6) * (r - 16)} stroke={DP.barkLt} strokeWidth={2.5}/>)}
+    <circle r={20} fill={P.gold} stroke={P.ink} strokeWidth={5}/><circle r={7} fill={P.ink}/>
+  </g>
+);
+// A numbered red badge that pops in, with an optional short leader to the part it names.
+const Badge: React.FC<{x: number; y: number; n: number; start: number; lead?: Pt}> = ({x, y, n, start, lead}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  if (f < start) return null;
+  const u = start <= ON ? 1 : pop(f, fps, start, 10, 160);
+  return (
+    <g>
+      {lead ? <g opacity={u}><line x1={x} y1={y} x2={lead[0]} y2={lead[1]} stroke={P.ink} strokeWidth={4}/><circle cx={lead[0]} cy={lead[1]} r={6} fill={P.ink}/></g> : null}
+      <g transform={`translate(${x} ${y}) scale(${0.5 + 0.5 * u})`}>
+        <circle r={24} fill={P.red} stroke={P.ink} strokeWidth={4} style={{filter: "url(#vshadow)"}}/>
+        <text y={11} fontFamily={COND} fontWeight={700} fontSize={32} textAnchor="middle" fill={P.white}>{n}</text>
       </g>
     </g>
   );
 };
+const CHARIOT_FRINGE: Pt[] = Array.from({length: 25}, (_, i) => { const a = Math.PI * i / 24; return [-180 * Math.cos(a), -300 + 28 * Math.sin(a)]; });
+const CHARIOT_ORDER = ["rider", "driver", "reins", "horses", "chariot", "road"];
 const Chariot: React.FC<SP> = ({s, n, T}) => {
   const f = useCurrentFrame();
   const parts = s.parts || {};
   const wildAt = when(T, s.wild), calmAt = when(T, s.calm);
   const wild = s.wild == null ? 0 : prog(f, wildAt, 18) * (s.calm == null ? 1 : 1 - prog(f, calmAt, 24));
+  const SC = 0.84, AX: Pt = [955, 700], G = AX[1] + 82 * SC;
   const spin = f * 4, dash = -(f * 7) % 120;
-  const horses = [{x: 1270, y: 700, sc: 0.98}, {x: 1380, y: 672, sc: 0.9}, {x: 1470, y: 716, sc: 1.02}];
-  const hand: [number, number] = [1010, 636];
-  const anchors: Record<string, [number, number]> = {horses: [1320, 690], reins: [1150, 650], driver: [985, 590], rider: [825, 560], chariot: [880, 712], road: [640, 785]};
-  const order = ["rider", "driver", "reins", "horses", "chariot", "road"];
+  const run = 0.35 + wild * 0.6;   // stride tempo
+  const horses = [[660, -86, 1, P.mustard, 0.2, -5], [720, -116, 0.94, "#A86B3C", 1.4, 3], [780, -146, 0.88, P.gray, 3.1, 9]] as [number, number, number, string, number, number][];
+  const offs = horses.map((h, k) => ({dx: wild * (k * 18 + Math.sin(f * 1.3 + k) * 5), dy: wild * Math.abs(Math.sin(f * 0.9 + k * 2)) * -8, rot: wild * h[5]}));
+  const st = (k: string) => when(T, parts[k] && parts[k].at);
+  const badges: Record<string, {x: number; y: number; lead?: Pt}> = {
+    rider: {x: 868, y: 440, lead: [904, 470]}, driver: {x: 1120, y: 430, lead: [1078, 468]}, reins: {x: 1420, y: 494, lead: [1420, 546]},
+    horses: {x: 1509, y: 628}, chariot: {x: 1080, y: 640}, road: {x: 1300, y: G},
+  };
   return (
     <IStage n={n}>
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
-      {/* road */}
-      <rect x={120} y={G} width={1700} height={34} fill={P.paper} stroke={P.ink} strokeWidth={4}/>
-      <line x1={120} y1={G + 17} x2={1820} y2={G + 17} stroke={P.ink} strokeWidth={4} strokeDasharray="60 60" strokeDashoffset={dash} opacity={0.5}/>
-      {/* horses behind the reins */}
-      {horses.map((h, i) => <Horse key={i} x={h.x} y={h.y} i={i} wild={wild} scale={h.sc}/>)}
-      {/* reins: taut from the driver's hand when the mind holds them, slack and tangled when it does not */}
-      {horses.map((h, i) => <path key={i} d={`M ${hand[0]} ${hand[1]} Q ${(hand[0] + h.x) / 2} ${hand[1] + 24 + 90 * wild} ${h.x + 96 * h.sc} ${h.y - 58 * h.sc + wild * (i === 1 ? -26 : 18)}`} fill="none" stroke={P.ink} strokeWidth={3.5} opacity={0.85}/>)}
-      {/* the chariot: platform, pole, canopy, two wheels */}
-      <line x1={1040} y1={720} x2={1250} y2={700} stroke={P.ink} strokeWidth={8}/>
-      <path d="M 700 668 L 700 736 L 1060 736 L 1060 668 L 1040 650 L 720 650 Z" fill={P.mustard} stroke={P.ink} strokeWidth={5}/>
-      <rect x={700} y={736} width={360} height={14} fill={DP.bark} stroke={P.ink} strokeWidth={4}/>
-      <line x1={760} y1={650} x2={760} y2={520} stroke={P.ink} strokeWidth={6}/>
-      <path d="M 760 520 L 830 536 L 760 552 Z" fill={P.red} stroke={P.ink} strokeWidth={3}/>
-      {/* rider (the self, seated, still) and driver (the intellect, leaning to the horses) */}
-      <PersonIcon x={825} y={600} size={140} color={P.blue}/>
-      <g transform="rotate(8 985 650)"><PersonIcon x={985} y={600} size={150}/></g>
-      <line x1={1000} y1={610} x2={1012} y2={636} stroke={P.ink} strokeWidth={9} strokeLinecap="round"/>
-      {[790, 990].map((cx) => (
-        <g key={cx} transform={`translate(${cx} ${G}) rotate(${spin})`}>
-          <circle r={78} fill={P.white} stroke={P.ink} strokeWidth={6}/>
-          {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5].map((a) => <line key={a} x1={-78} y1={0} x2={78} y2={0} stroke={P.ink} strokeWidth={4} transform={`rotate(${a})`}/>)}
-          <circle r={14} fill={P.ink}/>
-        </g>))}
-      {/* the legend builds down the left as each part is named */}
-      {order.map((k, i) => { const p = parts[k]; return p && p.text ? <Label key={k} x={120} y={330 + i * 92} start={when(T, p.at)} text={String(p.text)} to={anchors[k]} bend={k === "road" ? 0 : -0.08}/> : null; })}
-      <IStamps s={s} T={T}/>
+      {/* the road */}
+      <rect x={140} y={G - 13} width={1680} height={26} fill={P.paper} stroke={P.ink} strokeWidth={4}/>
+      <line x1={140} y1={G} x2={1820} y2={G} stroke={P.ink} strokeWidth={4} strokeDasharray="60 60" strokeDashoffset={dash} opacity={0.5}/>
+      <g transform={`translate(${AX[0]} ${AX[1]}) scale(${SC})`} strokeLinejoin="round" strokeLinecap="round">
+        {/* the pole to the yoke, behind everything */}
+        <path d="M 200 -30 L 760 -128" stroke={P.ink} strokeWidth={16}/>
+        <path d="M 200 -30 L 760 -128" stroke={DP.barkLt} strokeWidth={8}/>
+        {/* the parasol's pole, the car, the rail with its studs, the floor */}
+        <line x1={-60} y1={-20} x2={-60} y2={-330} stroke={P.ink} strokeWidth={9}/>
+        <line x1={-60} y1={-20} x2={-60} y2={-330} stroke={P.gold} strokeWidth={4}/>
+        <path d="M -176 -20 L -176 -100 C -176 -116 -164 -124 -148 -124 L 40 -124 C 110 -124 160 -140 188 -186 C 200 -206 214 -206 214 -190 C 214 -160 206 -128 198 -100 C 192 -70 194 -44 200 -20 Z" fill={P.mustard} stroke={P.ink} strokeWidth={6}/>
+        <path d="M -164 -112 L 40 -112 C 104 -112 150 -128 178 -170" fill="none" stroke={P.ink} strokeWidth={22}/>
+        <path d="M -164 -112 L 40 -112 C 104 -112 150 -128 178 -170" fill="none" stroke={P.red} strokeWidth={14}/>
+        {[-140, -100, -60, -20, 20, 60, 100, 136].map((x) => <circle key={x} cx={x} cy={x < 40 ? -112 : -112 - (x - 40) * 0.5 - (x - 40) * (x - 40) * 0.0038} r={4.5} fill={P.gold} stroke={P.ink} strokeWidth={2}/>)}
+        <path d="M -176 -56 L 196 -56" stroke={P.ink} strokeWidth={3} opacity={0.35}/>
+        <rect x={-196} y={-26} width={406} height={14} fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
+        {/* the parasol (chhatra) over the rider */}
+        <path d="M -180 -300 C -180 -352 -80 -372 0 -372 C 80 -372 180 -352 180 -300 Z" fill={P.red} stroke={P.ink} strokeWidth={6}/>
+        <ellipse cx={0} cy={-300} rx={180} ry={28} fill="#C94A3A" stroke={P.ink} strokeWidth={6}/>
+        <path d={locks(CHARIOT_FRINGE, -4, -30, 12)} fill={P.gold} stroke={P.ink} strokeWidth={4}/>
+        <line x1={0} y1={-372} x2={0} y2={-404} stroke={P.ink} strokeWidth={7}/><circle cx={0} cy={-410} r={10} fill={P.gold} stroke={P.ink} strokeWidth={4}/>
+        {/* the self, seated and still; the intellect, standing, leaning to the reins */}
+        <Figure x={-50} y={-120} color={P.blue} pose="sit"/>
+        <Figure x={92} y={-116} color={P.ink} pose="drive"/>
+        {/* the team, far to near; when the mind lets go they jitter, turn and pull apart (the far ones most) */}
+        {horses.slice().reverse().map((h, i) => { const o = offs[2 - i]; return <g key={i} transform={`translate(${o.dx} ${o.dy}) rotate(${o.rot} ${h[0]} ${h[1]})`}><Horse x={h[0]} y={h[1]} sc={h[2]} coat={h[3]} phase={f * run + h[4]} wild={wild}/></g>; })}
+        {/* the reins: taut from the driver's fists to each bit when the mind holds them; slack when it does not */}
+        {horses.map((h, k) => { const o = offs[k], r = o.rot * Math.PI / 180, lx = 250 * h[2], ly = -96 * h[2]; const bx = h[0] + o.dx + lx * Math.cos(r) - ly * Math.sin(r), by = h[1] + o.dy + lx * Math.sin(r) + ly * Math.cos(r); return <path key={k} d={`M 196 -182 Q ${(196 + bx) / 2} ${(-182 + by) / 2 + 26 + 110 * wild} ${bx} ${by}`} fill="none" stroke={P.ink} strokeWidth={3.5}/>; })}
+        <Wheel r={82} spin={spin}/>
+      </g>
+      {/* the legend, numbered, filling down the left; the same number lands on the part */}
+      {CHARIOT_ORDER.map((k, i) => { const p = parts[k]; if (!p || !p.text) return null; const at = st(k), y = 330 + i * 92, b = badges[k]; return (
+        <g key={k}>
+          <Chip x={184} y={y} start={at} text={String(p.text)} size={38} anchor="start"/>
+          <Badge x={146} y={y} n={i + 1} start={at}/>
+          <Badge x={b.x} y={b.y} n={i + 1} start={at + 4} lead={b.lead}/>
+        </g>); })}
+      {/* stamps go top right, clear of the team */}
+      <IStamps s={s} T={T} y={430}/>
     </IStage>
   );
 };
 
 // ---------- birds: Mundaka Upanishad 3.1.1 ----------
 // s: {heading, note, eater: {text, at}, watcher: {text, at}, fruit: {text, at}, tree?: {text, at}}
-const Bird: React.FC<{x: number; y: number; color: string; peck?: number; flip?: boolean}> = ({x, y, color, peck = 0, flip = false}) => (
-  <g transform={`translate(${x} ${y}) scale(${flip ? -1 : 1} 1)`}>
-    <path d="M -46 -4 l -34 -26 l 6 30 l -6 26 Z" fill={color} stroke={P.ink} strokeWidth={4}/>
-    <ellipse cx={0} cy={0} rx={48} ry={30} fill={color} stroke={P.ink} strokeWidth={5}/>
-    <path d="M -10 -6 q 18 -14 40 -2 q -18 14 -40 2 Z" fill={P.ink} opacity={0.12}/>
-    <g transform={`translate(40 -22) rotate(${peck})`}>
-      <circle r={22} fill={color} stroke={P.ink} strokeWidth={5}/>
-      <path d="M 18 -2 l 24 6 l -24 8 Z" fill={P.orange} stroke={P.ink} strokeWidth={3}/>
-      <circle cx={6} cy={-6} r={4} fill={P.ink}/>
-    </g>
-    {[-12, 8].map((lx) => <line key={lx} x1={lx} y1={28} x2={lx + 4} y2={46} stroke={P.ink} strokeWidth={4}/>)}
+// A songbird facing right, origin at the feet.
+const Bird: React.FC<{x: number; y: number; color: string; tilt?: number; sc?: number}> = ({x, y, color, tilt = 0, sc = 1}) => (
+  <g transform={`translate(${x} ${y}) rotate(${tilt}) scale(${sc})`} strokeLinejoin="round" strokeLinecap="round">
+    <path d="M -40 -26 L -82 -48 L -72 -32 L -88 -20 L -68 -18 L -44 -12 Z" fill={color} stroke={P.ink} strokeWidth={4}/>
+    <line x1={2} y1={-8} x2={6} y2={8} stroke={P.ink} strokeWidth={4}/><line x1={14} y1={-8} x2={16} y2={8} stroke={P.ink} strokeWidth={4}/>
+    <path d="M -2 8 l -8 6 M 6 8 l 8 6 M 10 8 l -6 6 M 16 8 l 8 6" fill="none" stroke={P.ink} strokeWidth={3}/>
+    <path d="M -44 -26 C -34 -62 6 -82 36 -72 C 56 -66 66 -52 64 -42 C 60 -30 52 -24 42 -22 C 32 -4 -4 2 -30 -8 C -44 -14 -48 -20 -44 -26 Z" fill={color} stroke={P.ink} strokeWidth={4}/>
+    <path d="M -24 -40 C -10 -58 26 -56 40 -42 C 30 -30 14 -24 -4 -26 L -28 -22 L -16 -30 L -34 -28 Z" fill={color} stroke={P.ink} strokeWidth={4}/>
+    <path d="M -20 -40 C -8 -50 20 -50 34 -42" fill="none" stroke={P.ink} strokeWidth={3} opacity={0.5}/>
+    <path d="M 60 -50 L 86 -42 L 58 -34 Z" fill={P.gold} stroke={P.ink} strokeWidth={3}/>
+    <circle cx={42} cy={-56} r={7} fill={P.white} stroke={P.ink} strokeWidth={2}/><circle cx={43} cy={-56} r={3.5} fill={P.ink}/>
   </g>
 );
+const BIRDS_LOW = sampleCubics([[600, 590], [800, 540], [1080, 540], [1380, 560]], 24), BIRDS_HIGH = sampleCubics([[580, 520], [700, 380], [980, 380], [1280, 420]], 24);
+const BIRDS_FRUIT: Pt[] = [[905, 586], [960, 604], [1020, 592], [1075, 606], [1130, 590]];
 const Birds: React.FC<SP> = ({s, n, T}) => {
   const f = useCurrentFrame();
-  const peck = Math.max(0, Math.sin(f * 0.21)) ** 3 * 48;
+  const peck = Math.max(0, Math.sin(f * 0.21)) ** 3 * 30;
   const halo = 0.16 + 0.07 * Math.sin(f / 9);
-  const fruits = [[905, 586], [960, 604], [1020, 592], [1075, 606], [1130, 590]];
   return (
     <IStage n={n}>
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
-      <line x1={140} y1={868} x2={1800} y2={868} stroke={P.ink} strokeWidth={4}/>
-      {/* the tree: one trunk, one lower branch with fruit, one higher branch */}
-      <path d="M 520 868 L 536 540 L 600 540 L 616 868 Z" fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
-      <path d="M 596 586 Q 900 530 1360 548" fill="none" stroke={P.ink} strokeWidth={32}/>
-      <path d="M 596 586 Q 900 530 1360 548" fill="none" stroke={DP.barkLt} strokeWidth={22}/>
-      <path d="M 572 560 Q 860 360 1320 418" fill="none" stroke={P.ink} strokeWidth={26}/>
-      <path d="M 572 560 Q 860 360 1320 418" fill="none" stroke={DP.barkLt} strokeWidth={16}/>
-      {[[568, 470, 120], [470, 420, 90], [650, 380, 100], [560, 330, 80]].map((c, i) => <circle key={i} cx={c[0]} cy={c[1]} r={c[2]} fill={DP.leaf} stroke={P.ink} strokeWidth={5}/>)}
-      {[[1230, 500, 70], [1330, 470, 56], [1180, 440, 50]].map((c, i) => <circle key={i} cx={c[0]} cy={c[1]} r={c[2]} fill={DP.leafLt} stroke={P.ink} strokeWidth={5}/>)}
-      {fruits.map((p, i) => <g key={i}><line x1={p[0]} y1={p[1] - 36} x2={p[0]} y2={p[1] - 14} stroke={P.ink} strokeWidth={3}/><circle cx={p[0]} cy={p[1]} r={15} fill={P.red} stroke={P.ink} strokeWidth={4}/></g>)}
-      {/* the eater, pecking; the watcher, still, with a soft light round it */}
-      <Bird x={830} y={528} color={P.mustard} peck={peck}/>
-      <circle cx={1160} cy={372} r={92} fill={P.gold} opacity={halo}/>
-      <Bird x={1160} y={372} color={P.white}/>
-      {s.eater && s.eater.text ? <Label x={760} y={760} start={when(T, s.eater.at)} text={String(s.eater.text)} to={[850, 560]} anchor="middle" bend={0.1}/> : null}
-      {s.fruit && s.fruit.text ? <Label x={1240} y={700} start={when(T, s.fruit.at)} text={String(s.fruit.text)} to={[1090, 612]} anchor="middle" bend={-0.1}/> : null}
-      {s.watcher && s.watcher.text ? <Label x={1520} y={300} start={when(T, s.watcher.at)} text={String(s.watcher.text)} to={[1215, 356]} anchor="middle"/> : null}
-      {s.tree && s.tree.text ? <Label x={300} y={760} start={when(T, s.tree.at)} text={String(s.tree.text)} to={[520, 700]} anchor="middle"/> : null}
+      <g strokeLinejoin="round" strokeLinecap="round">
+        <line x1={140} y1={868} x2={1800} y2={868} stroke={P.ink} strokeWidth={4}/>
+        {[300, 420, 700, 760, 1300, 1500, 1620].map((x) => <path key={x} d={`M ${x} 868 q 6 -22 14 -30 M ${x + 16} 868 q 2 -18 12 -26 M ${x - 10} 868 q -4 -16 2 -22`} fill="none" stroke={P.ink} strokeWidth={3}/>)}
+        {/* one trunk, flared at the foot; two branches: the low one carries the fruit, the high one the watcher */}
+        <path d="M 496 868 C 530 830 542 720 546 600 C 548 560 552 530 560 500 L 616 500 C 620 540 626 600 632 660 C 640 740 660 820 690 868 Z" fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
+        <path d="M 560 820 C 566 760 568 700 570 640 M 606 840 C 600 790 596 740 598 690" fill="none" stroke={P.ink} strokeWidth={3} opacity={0.4}/>
+        <path d="M 900 548 Q 950 524 980 500 M 1120 400 Q 1150 370 1180 340" fill="none" stroke={P.ink} strokeWidth={8}/>
+        <path d={ribbon(BIRDS_LOW, 46, 18, 0.8)} fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
+        <path d={ribbon(BIRDS_HIGH, 40, 14, 0.8)} fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
+        <Foliage cx={560} cy={380} rx={210} ry={150} k={11} seed={0.3}/>
+        <Foliage cx={1300} cy={500} rx={120} ry={80} k={8} seed={0.9}/>
+        <Foliage cx={1240} cy={380} rx={96} ry={66} k={7} seed={1.4}/>
+        <Foliage cx={1010} cy={430} rx={110} ry={62} k={8} seed={2.1}/>
+        {BIRDS_FRUIT.map((p, i) => <g key={i}>
+          <line x1={p[0]} y1={p[1] - 36} x2={p[0]} y2={p[1] - 14} stroke={P.ink} strokeWidth={3}/>
+          <circle cx={p[0]} cy={p[1]} r={15} fill={P.red} stroke={P.ink} strokeWidth={4}/>
+          <path d={`M ${p[0]} ${p[1] - 18} q 14 -14 24 -4 q -12 10 -24 4 Z`} fill={DP.leafLt} stroke={P.ink} strokeWidth={3}/>
+          <circle cx={p[0] - 5} cy={p[1] - 5} r={3} fill={P.white} opacity={0.8}/></g>)}
+        {/* the eater, pecking at the fruit; the watcher, still, with a soft light round it */}
+        <Bird x={848} y={562} color={P.mustard} tilt={peck} sc={1.3}/>
+        <circle cx={1160} cy={360} r={104} fill={P.gold} opacity={halo}/>
+        <Bird x={1160} y={410} color={P.white} sc={1.3}/>
+      </g>
+      {s.eater && s.eater.text ? <Label x={760} y={760} start={when(T, s.eater.at)} text={String(s.eater.text)} to={[836, 596]} anchor="middle" bend={0.1}/> : null}
+      {s.fruit && s.fruit.text ? <Label x={1240} y={700} start={when(T, s.fruit.at)} text={String(s.fruit.text)} to={[1096, 616]} anchor="middle" bend={-0.1}/> : null}
+      {s.watcher && s.watcher.text ? <Label x={1540} y={300} start={when(T, s.watcher.at)} text={String(s.watcher.text)} to={[1236, 338]} anchor="middle" bend={-0.08}/> : null}
+      {s.tree && s.tree.text ? <Label x={300} y={760} start={when(T, s.tree.at)} text={String(s.tree.text)} to={[540, 720]} anchor="middle"/> : null}
       <IStamps s={s} T={T}/>
     </IStage>
   );
@@ -340,39 +492,53 @@ const Birds: React.FC<SP> = ({s, n, T}) => {
 
 // ---------- tree: Gita 15.1-3, the inverted ashvattha ----------
 // s: {heading, note, roots: {text, at}, branches: {text, at}, leaves: {text, at}, axe: {text, at}}
+const TREE_ROOTS: Pt[][] = [[[960, 330], [900, 300], [800, 290], [690, 246]], [[960, 330], [930, 290], [880, 250], [830, 208]], [[960, 330], [980, 290], [985, 250], [990, 206]], [[960, 330], [1000, 290], [1050, 250], [1100, 214]], [[960, 330], [1040, 300], [1130, 290], [1240, 250]]].map((p) => sampleCubics(p as Pt[], 10));
+const TREE_BRANCHES: Pt[][] = [[[960, 620], [860, 660], [700, 720], [560, 830]], [[960, 620], [900, 720], [820, 790], [760, 880]], [[960, 620], [958, 720], [962, 800], [960, 890]], [[960, 620], [1020, 720], [1100, 790], [1160, 880]], [[960, 620], [1060, 660], [1220, 720], [1360, 830]]].map((p) => sampleCubics(p as Pt[], 12));
+const TREE_TWIGS: Pt[][] = [[[760, 740], [730, 760], [710, 790], [700, 820]], [[1150, 740], [1180, 760], [1200, 790], [1220, 820]], [[1070, 760], [1090, 790], [1100, 810], [1100, 840]], [[860, 760], [840, 790], [830, 810], [830, 840]]].map((p) => sampleCubics(p as Pt[], 8));
+// Side roots fork off the main ones part-way along.
+const TREE_ROOTLETS: Pt[][] = [[TREE_ROOTS[0][6], [790, 262], [760, 250], [740, 222]], [TREE_ROOTS[4][6], [1120, 262], [1150, 250], [1170, 222]], [TREE_ROOTS[0][9], [690, 262], [660, 270], [640, 286]], [TREE_ROOTS[1][5], [860, 236], [840, 224], [820, 200]], [TREE_ROOTS[3][5], [1060, 236], [1080, 224], [1110, 200]]].map((p) => sampleCubics(p as Pt[], 8));
 const Tree: React.FC<SP> = ({s, n, T}) => {
   const f = useCurrentFrame();
   const axeAt = when(T, s.axe && s.axe.at), u = f - axeAt;
   const chops = axeAt <= ON ? 3 : u < 0 ? 0 : Math.min(3, Math.floor(u / 16) + (u % 16 > 8 ? 1 : 0));
   const swing = axeAt <= ON || u < 0 || u > 48 ? 28 : 28 - 60 * Math.max(0, Math.sin((u % 16) / 16 * Math.PI)) ** 2;
   const shake = u >= 0 && u < 48 && u % 16 > 7 && u % 16 < 12 ? Math.sin(u * 2.5) * 5 : 0;
-  const branches = ["M 960 640 Q 760 700 560 830", "M 960 640 Q 860 760 760 880", "M 960 640 L 960 890", "M 960 640 Q 1060 760 1160 880", "M 960 640 Q 1160 700 1360 830"];
-  const ends = [[560, 830], [760, 880], [960, 890], [1160, 880], [1360, 830], [700, 780], [860, 820], [1060, 820], [1220, 780]];
   return (
     <IStage n={n}>
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
-      {/* the sky the roots reach into */}
-      <ellipse cx={960} cy={262} rx={460} ry={74} fill={DP.sky} stroke={P.ink} strokeWidth={4} opacity={0.9}/>
-      {["M 960 320 Q 900 280 700 250", "M 960 320 Q 940 270 840 220", "M 960 320 L 980 218", "M 960 320 Q 1010 270 1100 226", "M 960 320 Q 1040 290 1220 254"].map((d, i) =>
-        <path key={i} d={d} fill="none" stroke={DP.bark} strokeWidth={10 - i % 2 * 3} strokeLinecap="round"/>)}
-      <g transform={`translate(${shake} 0)`}>
-        <path d="M 930 320 L 926 640 L 994 640 L 990 320 Z" fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
-        {chops > 0 ? <path d={`M 994 ${520} l ${-18 * chops} ${14 * chops / 3} l ${18 * chops} ${14 * chops / 3} Z`} fill={P.cream} stroke={P.ink} strokeWidth={3}/> : null}
-        {branches.map((d, i) => <g key={i}><path d={d} fill="none" stroke={P.ink} strokeWidth={22} strokeLinecap="round"/><path d={d} fill="none" stroke={DP.barkLt} strokeWidth={14} strokeLinecap="round"/></g>)}
-        {ends.map((e, i) => <circle key={i} cx={e[0]} cy={e[1]} r={i < 5 ? 44 : 30} fill={i % 2 ? DP.leaf : DP.leafLt} stroke={P.ink} strokeWidth={5}/>)}
+      <g strokeLinejoin="round" strokeLinecap="round">
+        {/* the source above: a soft disc the roots reach into */}
+        <ellipse cx={960} cy={262} rx={470} ry={76} fill={DP.sky} opacity={0.95} stroke={P.ink} strokeWidth={4}/>
+        <ellipse cx={960} cy={262} rx={380} ry={50} fill={P.white} opacity={0.5}/>
+        {TREE_ROOTLETS.map((r, i) => <path key={i} d={ribbon(r, 12, 3, 0.9)} fill={DP.bark} stroke={P.ink} strokeWidth={4}/>)}
+        {TREE_ROOTS.map((r, i) => <path key={i} d={ribbon(r, i % 2 ? 24 : 30, 6, 0.9)} fill={DP.bark} stroke={P.ink} strokeWidth={4}/>)}
+        <ellipse cx={960} cy={332} rx={44} ry={16} fill={DP.bark}/>
+        <g transform={`translate(${shake} 0)`}>
+          {/* branches below, each ending in a cluster of leaves */}
+          {TREE_TWIGS.map((r, i) => <path key={i} d={ribbon(r, 12, 4, 0.9)} fill={DP.bark} stroke={P.ink} strokeWidth={5}/>)}
+          {TREE_BRANCHES.map((r, i) => <path key={i} d={ribbon(r, i % 4 === 0 ? 40 : i === 2 ? 30 : 34, 10, 0.9)} fill={DP.bark} stroke={P.ink} strokeWidth={5}/>)}
+          {/* the trunk, widest at the root collar */}
+          <path d="M 918 326 C 926 420 924 530 930 640 L 990 640 C 996 530 994 420 1002 326 Z" fill={DP.bark} stroke={P.ink} strokeWidth={5}/>
+          <path d="M 944 360 C 946 440 944 520 948 600 M 976 380 C 974 440 976 500 974 560" fill="none" stroke={P.ink} strokeWidth={3} opacity={0.4}/>
+          <ellipse cx={960} cy={640} rx={38} ry={16} fill={DP.bark}/>
+          {chops > 0 ? <path d={`M 990 520 l ${-15 * chops} ${16} l ${15 * chops} ${16} Z`} fill={P.cream} stroke={P.ink} strokeWidth={3}/> : null}
+          {([[560, 838, 84, 58, 8, 0.2], [760, 884, 66, 46, 7, 1.1], [960, 892, 70, 48, 7, 0.7], [1160, 884, 66, 46, 7, 1.9], [1360, 838, 84, 58, 8, 0.5], [700, 826, 42, 30, 6, 2.4], [1220, 826, 42, 30, 6, 0.9], [1100, 846, 38, 28, 6, 1.6], [830, 846, 38, 28, 6, 2.9]] as number[][]).map((c, i) =>
+            <Foliage key={i} cx={c[0]} cy={c[1]} rx={c[2]} ry={c[3]} k={c[4]} seed={c[5]}/>)}
+        </g>
+        {/* the axe, swinging at the trunk from s.axe.at: a wooden haft, a steel head with its edge to the tree */}
+        {axeAt > ON && u >= -6 ? (
+          <g transform={`translate(1130 560) rotate(${swing})`}>
+            <path d="M -4 -9 L 190 -12 C 206 -12 210 -2 206 6 L 196 10 L -4 9 Z" fill={DP.barkLt} stroke={P.ink} strokeWidth={4}/>
+            <path d="M 8 -16 L 8 16 L -12 16 C -40 24 -68 46 -92 58 C -104 30 -104 -4 -96 -30 C -70 -26 -40 -18 -12 -16 Z" fill="#9A9FA3" stroke={P.ink} strokeWidth={5}/>
+            <path d="M -92 -22 C -96 0 -96 24 -88 48" fill="none" stroke={P.white} strokeWidth={5} opacity={0.8}/>
+            <path d="M 8 -16 L 8 16 L -12 16 L -12 -16 Z" fill="#6E7377" stroke={P.ink} strokeWidth={4}/>
+          </g>) : null}
       </g>
-      {/* the axe, swinging at the trunk from s.axe.at */}
-      {axeAt > ON && u >= -6 ? (
-        <g transform={`translate(1130 560) rotate(${swing})`}>
-          <rect x={-10} y={-10} width={180} height={20} rx={8} fill={DP.bark} stroke={P.ink} strokeWidth={4}/>
-          <path d="M -4 -36 L -64 -58 Q -108 0 -64 58 L -4 36 Z" fill={P.gray} stroke={P.ink} strokeWidth={5}/>
-          <path d="M -70 -50 Q -100 0 -70 50" fill="none" stroke={P.white} strokeWidth={6} opacity={0.7}/>
-        </g>) : null}
-      {s.roots && s.roots.text ? <Label x={120} y={300} start={when(T, s.roots.at)} text={String(s.roots.text)} to={[700, 250]}/> : null}
-      {s.branches && s.branches.text ? <Label x={120} y={700} start={when(T, s.branches.at)} text={String(s.branches.text)} to={[690, 740]}/> : null}
-      {s.leaves && s.leaves.text ? <Label x={1800} y={760} start={when(T, s.leaves.at)} text={String(s.leaves.text)} to={[1400, 830]} anchor="end"/> : null}
-      {s.axe && s.axe.text ? <Label x={1800} y={480} start={axeAt} text={String(s.axe.text)} to={[1280, 560]} anchor="end"/> : null}
+      {s.roots && s.roots.text ? <Label x={120} y={300} start={when(T, s.roots.at)} text={String(s.roots.text)} to={[690, 250]}/> : null}
+      {s.branches && s.branches.text ? <Label x={120} y={700} start={when(T, s.branches.at)} text={String(s.branches.text)} to={[690, 724]}/> : null}
+      {s.leaves && s.leaves.text ? <Label x={1800} y={760} start={when(T, s.leaves.at)} text={String(s.leaves.text)} to={[1440, 836]} anchor="end"/> : null}
+      {s.axe && s.axe.text ? <Label x={1800} y={480} start={axeAt} text={String(s.axe.text)} to={[1290, 580]} anchor="end"/> : null}
       <IStamps s={s} T={T}/>
     </IStage>
   );
@@ -409,27 +575,39 @@ const Gunas: React.FC<SP> = ({s, n, T}) => {
 };
 
 // ---------- rope: in the dark a rope is a snake ----------
-// s: {heading, note, snake: {text, at}, lamp: {text, at}, rope: {text, at}}
+// s: {heading, note, snake: {text, at}, lamp: {text, at}, rope: {text, at}, dark?: true}
+const coilPts = (r: number): Pt[] => { const n = Math.round(r / 5), out: Pt[] = []; for (let i = 0; i <= n; i++) { const a = Math.PI * 2 * i / n + 0.3; out.push([960 + r * Math.cos(a), 700 + r * 0.46 * Math.sin(a)]); } return out; };
+const ROPE_STRANDS: Pt[][] = [coilPts(156), coilPts(110), coilPts(64), sampleCubics([[1104, 712], [1150, 728], [1200, 704], [1250, 712]], 16)];
+const SNAKE_BODY = sampleCubics([[1100, 712], [1150, 728], [1200, 704], [1250, 712], [1290, 718], [1312, 650], [1350, 586]], 12);
+// One strand of rope: ink edge, the rope, and the twist as short strokes across it.
+const Strand: React.FC<{pts: Pt[]}> = ({pts}) => {
+  const d = `M ${pts.map(fmt).join(" L ")}`;
+  const marks: string[] = [];
+  for (let i = 0; i < pts.length; i += 2) { const nn = nrmAt(pts, i), p = pts[i], tx = nn[1], ty = -nn[0]; marks.push(`M ${(p[0] + nn[0] * 10 - tx * 6).toFixed(1)} ${(p[1] + nn[1] * 10 - ty * 6).toFixed(1)} L ${(p[0] - nn[0] * 10 + tx * 6).toFixed(1)} ${(p[1] - nn[1] * 10 + ty * 6).toFixed(1)}`); }
+  return <g><path d={d} fill="none" stroke={P.ink} strokeWidth={34}/><path d={d} fill="none" stroke={DP.rope} strokeWidth={24}/><path d={marks.join(" ")} fill="none" stroke={P.ink} strokeWidth={3} opacity={0.45}/></g>;
+};
 const Rope: React.FC<SP> = ({s, n, T}) => {
   const f = useCurrentFrame();
   // s.dark: the lamp never comes in this beat (the opening of a video; the payoff is a later rope beat with s.lamp.at)
   const lampAt = when(T, s.lamp && s.lamp.at), light = s.dark ? 0 : lampAt <= ON ? 1 : prog(f, lampAt, 36, Easing.inOut(Easing.cubic));
   const dark = 0.66 * (1 - light), flick = 1 + 0.05 * Math.sin(f / 2.2);
-  const coil = (r: number) => `M ${960 + r} 700 a ${r} ${r * 0.42} 0 1 1 ${-2 * r} 0 a ${r} ${r * 0.42} 0 1 1 ${2 * r} 0`;
+  const sway = Math.sin(f / 7) * 3;
   return (
     <IStage n={n}>
-      <line x1={140} y1={800} x2={1800} y2={800} stroke={P.ink} strokeWidth={4}/>
-      {/* the rope, coiled on the floor */}
-      {[150, 108, 66].map((r) => <path key={r} d={coil(r)} fill="none" stroke={P.ink} strokeWidth={30} strokeLinecap="round"/>)}
-      <path d="M 1110 700 Q 1180 690 1240 720" fill="none" stroke={P.ink} strokeWidth={30} strokeLinecap="round"/>
-      {[150, 108, 66].map((r) => <path key={r} d={coil(r)} fill="none" stroke={DP.rope} strokeWidth={20}/>)}
-      <path d="M 1110 700 Q 1180 690 1240 720" fill="none" stroke={DP.rope} strokeWidth={20} strokeLinecap="round"/>
-      {/* what the dark makes of it: a snake, gone as the light comes */}
-      <g opacity={1 - light}>
-        <path d="M 1110 700 Q 1180 690 1240 720" fill="none" stroke="#2F5A2A" strokeWidth={20} strokeLinecap="round"/>
-        <path d="M 1240 720 q 26 -34 70 -22 q 36 10 30 36 q -8 24 -44 20 q -34 -4 -56 -34 Z" fill="#3E7A3A" stroke={P.ink} strokeWidth={5}/>
-        <circle cx={1300} cy={716} r={5} fill={P.gold} stroke={P.ink} strokeWidth={2}/>
-        <path d={`M 1340 736 l 22 ${6 + Math.sin(f / 2) * 4} m -22 -6 l 22 ${-8 + Math.sin(f / 2) * 4}`} fill="none" stroke={P.red} strokeWidth={3}/>
+      <g strokeLinejoin="round" strokeLinecap="round">
+        <line x1={140} y1={800} x2={1800} y2={800} stroke={P.ink} strokeWidth={4}/>
+        {/* the rope, coiled on the floor, outer loop to inner, then the loose end */}
+        {ROPE_STRANDS.map((p, i) => <Strand key={i} pts={p}/>)}
+        {/* what the dark makes of the loose end: a snake, raised to strike, gone as the light comes */}
+        <g opacity={1 - light} transform={`rotate(${sway} 1104 712)`}>
+          <path d={ribbon(SNAKE_BODY, 38, 24, 1)} fill="#3E7A3A" stroke={P.ink} strokeWidth={5}/>
+          <path d={ribbon(SNAKE_BODY, 14, 9, 1)} fill="#8BBF6A" opacity={0.8}/>
+          <g transform="translate(1350 586) rotate(-34) scale(1.3)">
+            <path d="M -10 -14 C 10 -22 40 -18 54 -6 C 62 0 60 10 48 14 C 30 20 6 18 -10 12 Z" fill="#3E7A3A" stroke={P.ink} strokeWidth={4}/>
+            <circle cx={30} cy={-6} r={5} fill={P.gold} stroke={P.ink} strokeWidth={2}/><circle cx={31} cy={-6} r={1.8} fill={P.ink}/>
+            <path d={`M 56 4 l 22 ${2 + Math.sin(f / 2) * 3} m -22 -2 l 20 ${-10 + Math.sin(f / 2) * 3}`} fill="none" stroke={P.red} strokeWidth={3}/>
+          </g>
+        </g>
       </g>
       {/* the dark, and the lamp that lifts it */}
       <rect x={0} y={0} width={1920} height={1080} fill={DP.night} opacity={dark}/>
@@ -437,9 +615,9 @@ const Rope: React.FC<SP> = ({s, n, T}) => {
       {s.dark ? null : <DiyaIcon x={420} y={740} size={230} lit={lerp(0.25, 1, light)}/>}
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
-      {s.snake && s.snake.text ? <Label x={1800} y={520} start={when(T, s.snake.at)} text={String(s.snake.text)} to={[1310, 690]} anchor="end" fill={P.ink} color={P.white}/> : null}
+      {s.snake && s.snake.text ? <Label x={1800} y={500} start={when(T, s.snake.at)} text={String(s.snake.text)} to={[1392, 548]} anchor="end" fill={P.ink} color={P.white}/> : null}
       {s.lamp && s.lamp.text ? <Label x={420} y={470} start={lampAt} text={String(s.lamp.text)} to={[420, 600]} anchor="middle"/> : null}
-      {s.rope && s.rope.text ? <Label x={1800} y={860} start={when(T, s.rope.at)} text={String(s.rope.text)} to={[1180, 760]} anchor="end"/> : null}
+      {s.rope && s.rope.text ? <Label x={1800} y={860} start={when(T, s.rope.at)} text={String(s.rope.text)} to={[1200, 740]} anchor="end"/> : null}
       <IStamps s={s} T={T}/>
     </IStage>
   );
@@ -454,24 +632,31 @@ const Salt: React.FC<SP> = ({s, n, T}) => {
   const dissolve = dropAt <= ON ? 1 : prog(f, dropAt + 18, 70);
   const ripple = dropAt <= ON ? 1 : prog(f, dropAt + 10, 30, Easing.out(Easing.quad));
   const samples = arr(s.samples).slice(0, 3), depth = [540, 650, 760];
-  const grains = Array.from({length: 46}, (_, i) => { const a = rnd(i) * Math.PI * 2, r = Math.sqrt(rnd(i, 1)); return {x: 960 + Math.cos(a) * 230 * r * (1 - 0.3 * Math.abs(Math.sin(a))), y: 520 + rnd(i, 2) * 280, d: 0.4 + rnd(i, 3) * 0.6}; });
+  // grains settle inside the bowl: narrower lower down
+  const grains = Array.from({length: 46}, (_, i) => { const a = rnd(i) * Math.PI * 2, r = Math.sqrt(rnd(i, 1)), y = 520 + rnd(i, 2) * 280, w = 230 * Math.sqrt(Math.max(0.05, 1 - ((y - 480) / 350) ** 2)); return {x: 960 + Math.cos(a) * w * r, y, d: 0.4 + rnd(i, 3) * 0.6}; });
   return (
     <IStage n={n}>
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
-      <line x1={140} y1={860} x2={1800} y2={860} stroke={P.ink} strokeWidth={4}/>
-      {/* the bowl of water */}
-      <path d="M 700 480 Q 700 820 960 834 Q 1220 820 1220 480 Z" fill={DP.water} stroke={P.ink} strokeWidth={5}/>
-      <path d="M 740 520 Q 736 760 900 800" fill="none" stroke={P.white} strokeWidth={10} opacity={0.5} strokeLinecap="round"/>
-      {/* the grains: appear as the lump dissolves and drift until they fill the water */}
-      {grains.map((g, i) => { const o = clamp01((dissolve - g.d * 0.5) / 0.5); const y = lerp(lumpY, g.y, o), x = lerp(960, g.x, o); return o > 0 ? <circle key={i} cx={x} cy={y} r={4} fill={P.white} stroke={P.ink} strokeWidth={1.5} opacity={0.9 * o}/> : null; })}
-      <ellipse cx={960} cy={480} rx={260} ry={42} fill={DP.waterLt} stroke={P.ink} strokeWidth={5}/>
-      {dropped && ripple < 1 ? [0, 0.3].map((d, i) => <ellipse key={i} cx={960} cy={480} rx={30 + 200 * clamp01(ripple - d)} ry={6 + 32 * clamp01(ripple - d)} fill="none" stroke={P.ink} strokeWidth={3} opacity={1 - clamp01(ripple - d)}/>) : null}
-      {/* the lump, before it goes in and while it still has a shape */}
-      {dissolve < 1 ? <g transform={`translate(960 ${lumpY}) scale(${1 - dissolve})`}>
-        <path d="M -40 -22 L -8 -46 L 34 -36 L 46 6 L 18 44 L -26 38 L -48 8 Z" fill={P.white} stroke={P.ink} strokeWidth={5} strokeLinejoin="round"/>
-        <path d="M -8 -46 L -2 -6 L 46 6 M -2 -6 L -26 38" fill="none" stroke={P.ink} strokeWidth={2.5} opacity={0.5}/>
-      </g> : null}
+      <g strokeLinejoin="round" strokeLinecap="round">
+        <line x1={140} y1={860} x2={1800} y2={860} stroke={P.ink} strokeWidth={4}/>
+        {/* a clay bowl on a foot ring; the water seen through its open top */}
+        <path d="M 900 826 L 1020 826 L 1030 856 L 890 856 Z" fill={DP.terracotta} stroke={P.ink} strokeWidth={5}/>
+        <path d="M 690 480 C 690 660 760 800 880 828 L 1040 828 C 1160 800 1230 660 1230 480 Z" fill={DP.water} stroke={P.ink} strokeWidth={5}/>
+        <path d="M 740 540 C 744 680 790 760 880 800" fill="none" stroke={P.white} strokeWidth={12} opacity={0.5}/>
+        {/* the grains: appear as the lump dissolves and drift until they fill the water */}
+        {grains.map((g, i) => { const o = clamp01((dissolve - g.d * 0.5) / 0.5); const y = lerp(lumpY, g.y, o), x = lerp(960, g.x, o); return o > 0 ? <circle key={i} cx={x} cy={y} r={4} fill={P.white} stroke={P.ink} strokeWidth={1.5} opacity={0.9 * o}/> : null; })}
+        <ellipse cx={960} cy={480} rx={270} ry={46} fill={DP.terracotta} stroke={P.ink} strokeWidth={5}/>
+        <ellipse cx={960} cy={480} rx={236} ry={34} fill={DP.waterLt} stroke={P.ink} strokeWidth={4}/>
+        <path d="M 800 470 C 860 452 1060 452 1120 470" fill="none" stroke={P.white} strokeWidth={5} opacity={0.8}/>
+        {dropped && ripple < 1 ? [0, 0.3].map((d, i) => <ellipse key={i} cx={960} cy={480} rx={30 + 190 * clamp01(ripple - d)} ry={5 + 26 * clamp01(ripple - d)} fill="none" stroke={P.ink} strokeWidth={3} opacity={1 - clamp01(ripple - d)}/>) : null}
+        {/* the lump, before it goes in and while it still has a shape: a rock crystal with facets */}
+        {dissolve < 1 ? <g transform={`translate(960 ${lumpY}) scale(${1.15 * (1 - dissolve)})`}>
+          <path d="M -46 -8 L -22 -44 L 26 -48 L 50 -14 L 40 34 L -8 48 L -40 30 Z" fill={P.white} stroke={P.ink} strokeWidth={5}/>
+          <path d="M -22 -44 L -6 -6 L 50 -14 M -6 -6 L -8 48 M -6 -6 L -40 30" fill="none" stroke={P.ink} strokeWidth={3} opacity={0.6}/>
+          <path d="M -6 -6 L -8 48 L -40 30 Z" fill={P.ink} opacity={0.12}/><path d="M -6 -6 L 50 -14 L 40 34 L -8 48 Z" fill={P.ink} opacity={0.06}/>
+        </g> : null}
+      </g>
       {s.lump && s.lump.text ? <Label x={600} y={300} start={when(T, s.lump.at)} text={String(s.lump.text)} to={[900, 300]} anchor="end"/> : null}
       {/* three tastes: top, middle, bottom */}
       {samples.map((sm, i) => {

@@ -3,9 +3,11 @@
 transparent PNG, and a catalogue sheet. Source of the drawings: src/vx/illus/ (kit.tsx and the scene files).
 Example props: illustration-library/props/<type>.json  ({"scene": {...}, "say": "...", "sec": 12.3}).
 usage: export_illustration_library.py [type ...] [--no-clips]"""
-import json, math, pathlib, shutil, subprocess, sys, tempfile
+import json, math, os, pathlib, shutil, subprocess, sys, tempfile
 from PIL import Image, ImageDraw
 MM = pathlib.Path(__file__).resolve().parent.parent; LIB = MM / "illustration-library"
+# A browser Remotion may use instead of downloading one (cloud sessions): REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium
+BROWSER = [f"--browser-executable={os.environ['REMOTION_BROWSER_EXECUTABLE']}", "--chrome-mode=chrome-for-testing"] if os.environ.get("REMOTION_BROWSER_EXECUTABLE") else []
 ICONS = ["store", "trolley", "coin", "note", "bank", "box", "person", "tag",
          "diya", "lotus", "chariot", "bow", "flute", "feather", "banyan", "conch"]   # the dharma kit (src/vx/illus/Dharma.tsx)
 want = [a for a in sys.argv[1:] if not a.startswith("--")]; clips = "--no-clips" not in sys.argv
@@ -13,7 +15,7 @@ pub = pathlib.Path(tempfile.mkdtemp()) / "public"; shutil.copytree(MM / "public/
 r = subprocess.run(["npx", "remotion", "bundle", "src/index.ts", "--out-dir", bundle, "--public-dir", str(pub), "--log=error"], cwd=MM, capture_output=True, text=True)
 if r.returncode: sys.exit("BUNDLE FAILED\n" + (r.stdout + r.stderr)[-3000:])
 def run(args):
-    r = subprocess.run(["npx", "remotion", *args, "--log=error"], cwd=MM, capture_output=True, text=True)
+    r = subprocess.run(["npx", "remotion", *args, *BROWSER, "--log=error"], cwd=MM, capture_output=True, text=True)
     if r.returncode: print("FAIL", args[:4], (r.stdout + r.stderr)[-800:])
     return r.returncode == 0
 (LIB / "scenes").mkdir(parents=True, exist_ok=True); (LIB / "icons").mkdir(exist_ok=True); tmp = pub.parent

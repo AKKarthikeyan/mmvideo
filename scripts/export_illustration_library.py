@@ -6,7 +6,8 @@ usage: export_illustration_library.py [type ...] [--no-clips]"""
 import json, math, pathlib, shutil, subprocess, sys, tempfile
 from PIL import Image, ImageDraw
 MM = pathlib.Path(__file__).resolve().parent.parent; LIB = MM / "illustration-library"
-ICONS = ["store", "trolley", "coin", "note", "bank", "box", "person", "tag"]
+ICONS = ["store", "trolley", "coin", "note", "bank", "box", "person", "tag",
+         "diya", "lotus", "chariot", "bow", "flute", "feather", "banyan", "conch"]   # the dharma kit (src/vx/illus/Dharma.tsx)
 want = [a for a in sys.argv[1:] if not a.startswith("--")]; clips = "--no-clips" not in sys.argv
 pub = pathlib.Path(tempfile.mkdtemp()) / "public"; shutil.copytree(MM / "public/fonts", pub / "fonts"); bundle = str(pub.parent / "bundle")
 r = subprocess.run(["npx", "remotion", "bundle", "src/index.ts", "--out-dir", bundle, "--public-dir", str(pub), "--log=error"], cwd=MM, capture_output=True, text=True)

@@ -6,6 +6,7 @@ import {AbsoluteFill, staticFile} from "remotion";
 import {C, COND, VoxFonts} from "../../voxkit";
 import {Beat, H, IStage, Icon, ICONS, SP, W, makeT, FPS, Chip, Arrow, Num} from "./kit";
 import {ILLUS} from "./index";
+import {DharmaFonts} from "./Dharma";
 
 const KitDemo: React.FC<SP> = ({n}) => (
   <IStage n={n}>
@@ -21,7 +22,7 @@ export const IllusDev: React.FC<{scene: any; say: string; sec: number; guides?: 
   const Scene = scene.type === "kitdemo" ? KitDemo : ILLUS[scene.type];
   return (
     <AbsoluteFill style={{background: C.tan}}>
-      <VoxFonts/><style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
+      <VoxFonts/><DharmaFonts/><style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
       {Scene ? <AbsoluteFill><Scene s={scene} n={n} T={makeT(b)} b={b} D={{id: "dev"}}/></AbsoluteFill>
         : <div style={{font: "60px sans-serif", padding: 80}}>no such scene type: {String(scene.type)}</div>}
       {/* guides: furniture above y=110, captions below y=925 */}

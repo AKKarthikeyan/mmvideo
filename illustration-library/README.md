@@ -25,6 +25,7 @@ The drawings themselves live in the video project at `src/vx/illus/`:
 | `Compare.tsx` | `scale` (a balance), `calendar` (a date that moved), `race` (companies as runners). |
 | `World.tsx` | `store` (a storefront with shoppers and fact chips), `gears` (three meshing gears), `castle` (a castle and moat with check shields). |
 | `Thumb.tsx` | Thumbnails drawn with the kit (composition `ILLUS-thumb`). |
+| `Dharma.tsx` | The spiritual channel's kit (21 Oct 2026): `verse` (a verse on a paper card: Devanagari, transliteration, English, source; text from `scripts/dharma/corpus.py`), `chariot` (Katha Upanishad 1.3.3-4), `birds` (Mundaka 3.1.1), `tree` (Gita 15.1-3, the inverted ashvattha), `gunas` (three bars), `rope` (rope and snake, with the lamp), `salt` (Chandogya 6.13); icons diya, lotus, chariot, bow, flute, feather, banyan, conch. Fonts: Noto Serif and Noto Serif Devanagari (OFL) in `public/fonts`. |
 
 ## Using a scene in a new video
 

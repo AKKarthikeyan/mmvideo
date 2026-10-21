@@ -9,7 +9,10 @@ import {ILLUS} from "./illus";
 export const FPS = 30;
 export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
 export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
-  timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
+  timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>;
+  brand?: string; brandName?: string; endLines?: string[]};   // per-channel furniture (21 Oct 2026); defaults are Moat & Margin's
+const BRAND = "Moat & Margin · from the filings", BRAND_NAME = "MOAT & MARGIN";
+const END_LINES = ["Educational research, not investment advice.", "Not a SEBI-registered Research Analyst."];
 
 const isTitle = (b: Beat) => b.scene.type === "title";
 export const beatFrames = (b: Beat) => Math.ceil((b.sec + (isTitle(b) ? 1.1 : 0.5)) * FPS);
@@ -560,7 +563,7 @@ const Furniture: React.FC<{D: VData; beats: Beat[]; starts: number[]; total: num
       })}
       {showTag && <g><rect x={36} y={30} width={D.chapters[ch].length * 15 + 110} height={44} fill={C.ink}/>
         <text x={52} y={61} fontFamily={TYPE} fontSize={24} fill={C.white}>{`CH ${ch} · ${D.chapters[ch].toUpperCase()}`}</text></g>}
-      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">Moat &amp; Margin · from the filings</text>
+      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">{D.brand || BRAND}</text>
     </svg>
   );
 };
@@ -615,26 +618,23 @@ const ShortHook: React.FC<{text: string; n: number}> = ({text, n}) => {
     </svg>
   );
 };
-const ShortEndLoop: React.FC = () => (
+const ShortEndLoop: React.FC<{D: VData}> = ({D}) => (
   <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>
     <VoxDefs/><Stage w={1080} h={1920}/>
     <rect x={60} y={560} width={960} height={170} fill={C.ink} rx={8}/>
     <text x={540} y={675} fontFamily={COND} fontWeight={700} fontSize={76} textAnchor="middle" fill={C.mustard}>FULL VIDEO: LINKED BELOW</text>
-    <Strip x={540} y={860} start={0} text="MOAT & MARGIN" size={96}/>
-    <TypeLabel x={110} y={1060} start={0} text="Educational research, not investment advice." size={30} cps={40}/>
-    <TypeLabel x={110} y={1150} start={0} text="Not a SEBI-registered Research Analyst." size={30} cps={40}/>
+    <Strip x={540} y={860} start={0} text={D.brandName || BRAND_NAME} size={96}/>
+    {(D.endLines || END_LINES).map((t, i) => <TypeLabel key={i} x={110} y={1060 + i * 90} start={0} text={t} size={30} cps={40}/>)}
   </svg>
 );
-const ShortEnd: React.FC<{title: string}> = ({title}) => {
+const ShortEnd: React.FC<{title: string; D: VData}> = ({title, D}) => {
   const n = SHORT_END;
   return (
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>
       <VoxDefs/><Stage w={1080} h={1920}/>
       <Strip x={540} y={640} start={0} text="FULL STORY · LONG VIDEO" size={70} fill={C.red} color={C.white}/>
-      <Strip x={540} y={800} start={4} text="MOAT & MARGIN" size={96}/>
-      <TypeLabel x={110} y={1010} start={10} text="Every figure from primary documents." size={30} cps={4}/>
-      <TypeLabel x={110} y={1100} start={20} text="Educational research, not investment advice." size={30} cps={4}/>
-      <TypeLabel x={110} y={1190} start={30} text="Not a SEBI-registered Research Analyst." size={30} cps={4}/>
+      <Strip x={540} y={800} start={4} text={D.brandName || BRAND_NAME} size={96}/>
+      {(D.endLines ? D.endLines : ["Every figure from primary documents.", ...END_LINES]).map((t, i) => <TypeLabel key={i} x={110} y={1010 + i * 90} start={10 + i * 10} text={t} size={30} cps={4}/>)}
     </svg>
   );
 };
@@ -645,12 +645,12 @@ export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
     <AbsoluteFill style={{background: C.tan}}>
       <Fonts/>
       {bs.map((b, i) => { const el = <BeatSeq key={b.key} D={D} b={b} from={from} n={frames[i]}/>; from += frames[i]; return el; })}
-      {D.shorts[idx].loop ? null : D.shorts[idx].hook ? <Sequence from={from} durationInFrames={shortEnd(D, idx)}><AbsoluteFill><ShortEndLoop/></AbsoluteFill></Sequence>
-        : <Sequence from={from} durationInFrames={SHORT_END}><AbsoluteFill><ShortEnd title={D.shorts[idx].title}/></AbsoluteFill></Sequence>}
+      {D.shorts[idx].loop ? null : D.shorts[idx].hook ? <Sequence from={from} durationInFrames={shortEnd(D, idx)}><AbsoluteFill><ShortEndLoop D={D}/></AbsoluteFill></Sequence>
+        : <Sequence from={from} durationInFrames={SHORT_END}><AbsoluteFill><ShortEnd title={D.shorts[idx].title} D={D}/></AbsoluteFill></Sequence>}
       {D.shorts[idx].hook && !D.shorts[idx].loop && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
       <svg width={1080} height={1920} style={{position: "absolute"}}>
         <text x={540} y={140} fontFamily={COND} fontWeight={700} fontSize={40} textAnchor="middle" fill={C.ink}>{D.shorts[idx].title.toUpperCase()}</text>
-        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">Moat &amp; Margin · from the filings</text>
+        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">{D.brand || BRAND}</text>
         {D.shorts[idx].loop && <text x={540} y={1898} fontFamily={TYPE} fontSize={22} fill={C.ink} opacity={0.6} textAnchor="middle">Educational research, not investment advice · not SEBI-registered</text>}
       </svg>
     </AbsoluteFill>

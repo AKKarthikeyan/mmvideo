@@ -26,6 +26,7 @@ import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
 import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
 import {IllusDev, IllusIcon} from "./vx/illus/Dev";
 import {IllusThumb} from "./vx/illus/Thumb";
+import {DharmaCompositions} from "./dharma/Videos";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -42,6 +43,7 @@ export const RemotionRoot: React.FC = () => (
     <StyleTestCompositions/>
     <SleepLongCompositions/>
     <LetterVxCompositions/>
+    <DharmaCompositions/>
     <ExplainerCompositions/>
     <MoatVerticalComposition/>
     <CarouselCompositions/>

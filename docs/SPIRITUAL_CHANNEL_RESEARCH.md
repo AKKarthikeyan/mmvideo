@@ -197,6 +197,7 @@ Positioning in one line: **the plain-words, source-on-screen guide to Indian tho
 
 | Date | Event | Video |
 | --- | --- | --- |
+| 6 Nov 2026 | Ramayana: Part 1 releases (Nitesh Tiwari; Ranbir Kapoor, Sai Pallavi, Yash). "ramayana trailer" is a 4.2M-a-month search this week | "What the Valmiki Ramayana actually says" series: three sourced videos in the release fortnight (see NICHE_GAPS.md) |
 | 8 Nov 2026 | Diwali | Why five days? What Lakshmi, Rama and Bali have to do with each other |
 | late Nov 2026 | Dev Uthani Ekadashi, Tulsi Vivah | What an Ekadashi fast is for (sources) |
 | ~20 Dec 2026 | Gita Jayanti (Mokshada Ekadashi) | **Launch anchor**: "The Gita in 18 chapters" playlist opens with chapters 1 and 2 |

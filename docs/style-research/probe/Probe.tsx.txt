@@ -1,0 +1,138 @@
+// Reference only, not compiled: the 3D probe from the style research (21 Oct 2026), our own code.
+// It loaded the CC0 Quaternius horse (stepanMiller/wild-mustang) and the CC0 UAL mannequin (J-Ponzo/gltf-universal-animation-library)
+// in @remotion/three, set every AnimationMixer from the frame, and rendered with --gl=swangle in the cloud container.
+// Packages it used: @remotion/three ^4.0.529, three ^0.180.0, @react-three/fiber ^9.8.2 (all MIT).
+// Rename to .tsx inside a Remotion project to use it. Public files expected: horse.glb, AnimationLibrary_Godot_Standard.gltf + .bin.
+
+import React, { useMemo } from 'react';
+import { AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { ThreeCanvas } from '@remotion/three';
+import { useLoader } from '@react-three/fiber';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
+
+// three-tone toon ramp
+const ramp = (() => {
+  const d = new Uint8Array([90, 170, 255]);
+  const t = new THREE.DataTexture(d, 3, 1, THREE.RedFormat);
+  t.minFilter = THREE.NearestFilter; t.magFilter = THREE.NearestFilter; t.needsUpdate = true;
+  return t;
+})();
+
+const toon = (hex: string) => new THREE.MeshToonMaterial({ color: new THREE.Color(hex), gradientMap: ramp });
+
+// skinning-aware inverted-hull ink line
+const ink = (thickness: number) => {
+  const m = new THREE.MeshBasicMaterial({ color: '#1b1410', side: THREE.BackSide });
+  m.onBeforeCompile = (s) => {
+    s.vertexShader = s.vertexShader.replace('#include <begin_vertex>', `#include <begin_vertex>\n transformed += normalize(objectNormal) * ${thickness.toFixed(4)};`);
+  };
+  return m;
+};
+
+function stylise(root: THREE.Object3D, palette: (name: string) => string, rel: number) {
+  const pending: [THREE.Object3D, THREE.Object3D][] = [];
+  root.traverse((o) => {
+    const mesh = o as THREE.SkinnedMesh;
+    if (!(mesh as any).isMesh) return;
+    mesh.material = Array.isArray(mesh.material)
+      ? mesh.material.map((mm) => toon(palette(mm.name)))
+      : toon(palette(mesh.material.name));
+    mesh.geometry.computeBoundingSphere();
+    const t = mesh.geometry.boundingSphere!.radius * rel;
+    const hull = (mesh as any).isSkinnedMesh
+      ? new THREE.SkinnedMesh(mesh.geometry, ink(t))
+      : new THREE.Mesh(mesh.geometry, ink(t));
+    if ((mesh as any).isSkinnedMesh) (hull as THREE.SkinnedMesh).bind(mesh.skeleton, mesh.bindMatrix);
+    hull.position.copy(mesh.position); hull.quaternion.copy(mesh.quaternion); hull.scale.copy(mesh.scale);
+    hull.frustumCulled = false; mesh.frustumCulled = false;
+    pending.push([mesh.parent as THREE.Object3D, hull]);
+  });
+  pending.forEach(([parent, hull]) => parent.add(hull));
+}
+
+function fitHeight(obj: THREE.Object3D, h: number) {
+  const box = new THREE.Box3().setFromObject(obj);
+  const s = h / (box.max.y - box.min.y);
+  obj.scale.setScalar(s);
+  return s;
+}
+
+const horsePalette = (n: string) => ({ Main: '#e9dcc4', Main_Dark: '#cdbb9c', Main_Light: '#f4ead8', Hair: '#3a2c22', Hooves: '#3a2c22', Muzzle: '#b9a68a', Eye_White: '#3a2c22', Eye_Black: '#1b1410', Veter_Blaze: '#f4ead8' } as Record<string, string>)[n] ?? '#e9dcc4';
+
+const Horse: React.FC<{ x: number; z: number; phase: number }> = ({ x, z, phase }) => {
+  const gltf = useLoader(GLTFLoader, staticFile('horse.glb'));
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { obj, mixer } = useMemo(() => {
+    const obj = skeletonClone(gltf.scene);
+    fitHeight(obj, 1.7);
+    stylise(obj, horsePalette, 0.012);
+    const mixer = new THREE.AnimationMixer(obj);
+    const clip = gltf.animations.find((a) => a.name === 'Gallop')!;
+    mixer.clipAction(clip).play();
+    return { obj, mixer };
+  }, [gltf]);
+  mixer.setTime(frame / fps + phase);
+  return <primitive object={obj} position={[x, 0, z]} rotation={[0, Math.PI / 2, 0]} />;
+};
+
+const Driver: React.FC = () => {
+  const gltf = useLoader(GLTFLoader, staticFile('AnimationLibrary_Godot_Standard.gltf'));
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { obj, mixer } = useMemo(() => {
+    const obj = skeletonClone(gltf.scene);
+    fitHeight(obj, 1.6);
+    stylise(obj, () => '#c98a4b', 0.01);
+    const mixer = new THREE.AnimationMixer(obj);
+    mixer.clipAction(gltf.animations.find((a) => a.name === 'Driving_Loop')!).play();
+    return { obj, mixer };
+  }, [gltf]);
+  mixer.setTime(frame / fps);
+  return <primitive object={obj} position={[-3.4, 0.62, 0]} rotation={[0, Math.PI / 2, 0]} />;
+};
+
+const Chariot: React.FC = () => {
+  const frame = useCurrentFrame();
+  const wood = useMemo(() => toon('#8a5a3a'), []);
+  const gold = useMemo(() => toon('#d9a441'), []);
+  return (
+    <group position={[-3.4, 0, 0]}>
+      <mesh material={wood} position={[0, 0.55, 0]}><boxGeometry args={[1.4, 0.12, 1.6]} /></mesh>
+      <mesh material={gold} position={[0.6, 1.0, 0]}><boxGeometry args={[0.1, 0.9, 1.6]} /></mesh>
+      {[-0.95, 0.95].map((zz) => (
+        <mesh key={zz} material={gold} position={[0, 0.6, zz]} rotation={[Math.PI / 2, 0, -frame * 0.25]}>
+          <torusGeometry args={[0.6, 0.06, 8, 24]} />
+        </mesh>
+      ))}
+      <mesh material={wood} position={[1.6, 0.6, 0]} rotation={[0, 0, Math.PI / 2]}><cylinderGeometry args={[0.04, 0.04, 2.4, 6]} /></mesh>
+    </group>
+  );
+};
+
+export const Probe: React.FC = () => {
+  const { width, height } = useVideoConfig();
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{ background: 'linear-gradient(#2b2350, #c9775a 70%, #f0b27a)' }}>
+      <ThreeCanvas width={width} height={height} camera={{ position: [3.5, 2.0, 8.5], fov: 32 }} gl={{ antialias: true }}>
+        <fog attach="fog" args={['#c9775a', 8, 30]} />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[-4, 6, 4]} intensity={2.2} color="#ffd9a8" />
+        <group position={[-frame * 0.0, 0, 0]}>
+          <Horse x={0.4} z={-0.65} phase={0} />
+          <Horse x={0.0} z={0} phase={0.17} />
+          <Horse x={0.4} z={0.65} phase={0.33} />
+          <Chariot />
+          <Driver />
+        </group>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+          <planeGeometry args={[80, 80]} />
+          <meshToonMaterial color="#b0805a" gradientMap={ramp} />
+        </mesh>
+      </ThreeCanvas>
+    </AbsoluteFill>
+  );
+};

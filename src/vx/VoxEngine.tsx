@@ -419,12 +419,12 @@ const Sources: React.FC<SP> = ({s, n}) => {
 };
 
 // plain (AK, 3 Oct 2026): long videos without notes or warnings — brand + site only; the disclaimer lives in the description.
-const End: React.FC<SP> = ({s, n}) => {
+const End: React.FC<SP> = ({s, n, D}) => {
   const L = useL();
-  const lines = s.plain ? ["moatmarginresearch.com"] : ["Educational research, not investment advice.", "Not a SEBI-registered Research Analyst", "or Investment Adviser.", "moatmarginresearch.com"];
+  const lines = s.lines ? s.lines : D.endLines ? D.endLines : s.plain ? ["moatmarginresearch.com"] : ["Educational research, not investment advice.", "Not a SEBI-registered Research Analyst", "or Investment Adviser.", "moatmarginresearch.com"];
   return (
     <Svg n={n}>
-      <Strip x={L.cx} y={L.land ? 300 : 700} start={0} text="MOAT & MARGIN" size={L.land ? 120 : 100}/>
+      <Strip x={L.cx} y={L.land ? 300 : 700} start={0} text={D.brandName || BRAND_NAME} size={L.land ? 120 : 100}/>
       {lines.map((t, i) => <TypeLabel key={i} x={L.land ? 440 : 80} y={(L.land ? 520 : 960) + i * 90} start={10 + i * 25} text={t} size={L.land ? 36 : 34} cps={3}/>)}
     </Svg>
   );

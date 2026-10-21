@@ -3,6 +3,22 @@
 Set up 21 Oct 2026 from the research in `SPIRITUAL_CHANNEL_RESEARCH.md` and `NICHE_GAPS.md`. Same engine as Moat & Margin
 (Remotion, the Vox template, MiniMax voices, the illustration kit); a different kit, a different corpus and stricter sourcing rules.
 
+## The format: VoxPlus (AK, 21 Oct 2026: "use our VoxPlus")
+
+The story format AK set on 11 Oct 2026 for the Moat & Margin story videos (`dmartstory`, `amckeeps`, `cablerest`, `lombardfloat`, `e2egpu` in
+`scripts/vx_scripts.py`): the Vox engine plus the illustration kit, told to a viewer who has never opened the text. The pilot follows it beat for beat:
+
+| VoxPlus element | In the pilot (`scripts/dharma/dharma_scripts.py`) |
+| --- | --- |
+| A real question at 0:00 (by 0:05), then a hook at most every 45 s | `hooks` list, checked by `build_dharma.py` after every build (same arithmetic as `scripts/hook_check.py`) |
+| A spine, one sentence | "Who let go of the reins at two in the morning?" |
+| A gate: changed, care, added, invalidate, monitor | what the text says; who it is for; what is our reading; what would make our reading wrong; what to try and watch |
+| A recurring case board | the chariot (`_board()`): six parts named one by one, stamps count them, "CASE CLOSED?" at the verdict |
+| Every beat illustrated | verse cards, chariot, gears (the eight-link chain), birds, rope (dark at 0:00, the lamp at the verdict), hand-written worries and comforts, cards |
+| Chapter titles on mood plates | `pics` (MiniMax image-01, no people, no deities, no text), generated with `build_dharma.py --pics` |
+| Marks | hook, rehooks, turn, counter, plants (the snake at 0:00 pays off at the verdict; the chariot at 0:20 closes at the end), known, unknown, monitor, handoff |
+| Sources, then the end card, then the next video named | `sources`, `end`, `next_video` |
+
 ## The rules (all of them matter)
 
 1. **Narrator, never deity.** The voice is a guide. Krishna's words are shown as quotes with chapter, verse and translator. No beat is ever written in the first person as a god.
@@ -22,7 +38,7 @@ Set up 21 Oct 2026 from the research in `SPIRITUAL_CHANNEL_RESEARCH.md` and `NIC
 | --- | --- | --- |
 | Corpus (Gita: Sanskrit, transliteration, word meanings, translations) | `scripts/dharma/corpus.py`, data in `sources/scripture/` (not in git), manifest with sha256 in `scripts/dharma/corpus_manifest.json` | `python3 scripts/dharma/corpus.py fetch` once per machine; `verse 2.47`; `chapter 2` |
 | Scripts | `scripts/dharma/dharma_scripts.py` (beat format of `vx_scripts.py`; `V()` makes a verse beat) | edit |
-| Build | `scripts/dharma/build_dharma.py` writes `public/vx/<id>/data.json` and `review.md`; voices beats with MiniMax (`MINIMAX_API_KEY`), `--no-tts` for layout | `python3 scripts/dharma/build_dharma.py --no-tts dhgita02` |
+| Build | `scripts/dharma/build_dharma.py` writes `public/vx/<id>/data.json` and `review.md`, runs the hook-cadence check, voices beats with MiniMax (`MINIMAX_API_KEY`), `--no-tts` for layout, `--pics` for the title plates | `python3 scripts/dharma/build_dharma.py --no-tts dhgita02` |
 | Compositions | `src/dharma/Videos.tsx` registers `DH-<id>-long` and `DH-<id>-shortN` on the Vox engine | `npx remotion render src/index.ts DH-dhgita02-long out/dhgita02.mp4` |
 | Kit | `src/vx/illus/Dharma.tsx`: scenes `verse`, `chariot`, `birds`, `tree`, `gunas`, `rope`, `salt`; icons diya, lotus, chariot, bow, flute, feather, banyan, conch; stills in `illustration-library/scenes/` and `icons/`, example props in `illustration-library/props/` | `npx remotion still <bundle> ILLUS-dev out.png --props=illustration-library/props/chariot.json --frame=400` |
 | Fonts | `public/fonts/NotoSerifDevanagari.ttf`, `NotoSerif.ttf` (OFL, licence files beside them) | included by the `verse` scene |

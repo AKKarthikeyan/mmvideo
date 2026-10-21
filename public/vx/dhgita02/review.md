@@ -2,7 +2,7 @@
 
 reviewed_by: None
 
-Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, Unlicense). English: Shri Purohit Swami, 1935 (public domain). Katha Upanishad 1.3.3-4: our paraphrase, to be replaced by a public-domain translation once sources/ holds one.
+Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, Unlicense). English: after Shri Purohit Swami, 1935 (public domain), in the dataset's edited text. Katha Upanishad 1.3.3-4 and Mundaka Upanishad 3.1.1: our paraphrase, to be replaced by a public-domain translation once sources/ holds one.
 
 ## c12 · gita:1.29
 
@@ -29,7 +29,7 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 **Shown:** Lord Shri Krishna said: Why grieve for those for whom no grief is due, yet professing wisdom? The wise grieve neither for the dead nor the living.  
 *BHAGAVAD GITA 2.11 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** The first thing Krishna says is not comfort. It is a diagnosis. You are grieving for those who do not call for grief, and you sound wise while you do it. The wise, it says, grieve neither for the dead nor the living.
+**Narration:** The first thing Krishna says is not comfort. It is a diagnosis. You are grieving for those who do not call for grief, and you sound wise while you do it. The wise, it says, grieve neither for the dead nor the living. Why does that matter at two in the morning?
 
 ## c23 · gita:2.14
 
@@ -38,7 +38,7 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 **Shown:** Those external relations that bring cold and heat, pain and happiness come and go; they are not permanent. Endure them bravely, O Prince!  
 *BHAGAVAD GITA 2.14 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** Then the second move. Heat and cold, pleasure and pain, come from contact with the world. They come and they go. They are not permanent. Endure them.
+**Narration:** Then the second move. Heat and cold, pleasure and pain, come from contact with the world. They come and they go. They are not permanent. Endure them. Then why does the loop not pass?
 
 ## c31 · gita:2.62
 
@@ -65,7 +65,7 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 **Shown:** As a ship at sea is tossed by the tempest, so the reason is carried away by the mind when preyed upon by straying senses.  
 *BHAGAVAD GITA 2.67 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** Chapter two says the same thing with a boat. One straying sense the mind follows can carry the whole reason away, the way a storm tosses a ship at sea. Overthinking is the ship going sideways.
+**Narration:** Chapter two says the same thing with a ship. One straying sense the mind follows can carry the whole reason away, the way a storm tosses a ship at sea. Overthinking is the ship going sideways. So who is supposed to be holding the reins?
 
 ## c41 · gita:2.47
 
@@ -74,9 +74,9 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 **Shown:** But you have only the right to work, but none to the fruit of it. Let not the fruit of your action be your motive; nor be you enamored of inaction.  
 *BHAGAVAD GITA 2.47 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** Here is the most quoted line in the book, and the most misquoted. You have the right to work, but never to the fruit of it. Do not make the fruit your motive. And do not use that as an excuse to do nothing.
+**Narration:** Here is the most quoted line in the book, and the most misquoted. You have the right to work, but never to the fruit of it. Do not make the fruit your motive. And do not use that as an excuse to do nothing. So what does the verse hand back to you?
 
-## c48 · gita:2.48
+## c43 · gita:2.48
 
 योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय। / सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते
 
@@ -85,7 +85,7 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 
 **Narration:** The next verse gives the method a name. Act with the mind held steady, renounce attachment, look on success and failure with an equal eye. That equanimity, the verse says, is what yoga means; this translator's word for yoga is spirituality.
 
-## c49 · gita:2.50
+## c44 · gita:2.50
 
 बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते। / तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम्
 
@@ -94,7 +94,7 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 
 **Narration:** And two verses on, a definition that surprises people. The Sanskrit says yoga is skill in action; Purohit renders it as the true art of living. Either way: not withdrawal from action. Skill in it.
 
-## c43 · gita:2.40
+## c45 · gita:2.40
 
 नेहाभिक्रमनाशोऽस्ति प्रत्यवायो न विद्यते। / स्वल्पमप्यस्य धर्मस्य त्रायते महतो भयात्
 
@@ -110,23 +110,23 @@ Sanskrit and transliteration: the Bhagavad Gita dataset (github.com/gita/gita, U
 **Shown:** He attains peace into whom desires flow as rivers into the ocean, which, though brimming with water, remains ever the same; not he whom desires carry away.  
 *BHAGAVAD GITA 2.70 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** Arjuna asks what such a person is like. The answer ends with a picture. Rivers pour into the ocean from every side, and the ocean, brimming, remains the same. That is the mind the chapter is describing. Not empty. Full, and still.
+**Narration:** Arjuna asks what such a person is like. The answer ends with a picture. Rivers pour into the ocean from every side, and the ocean, brimming, remains the same. That is the mind the chapter is describing. Not empty. Full, and still. What does that feel like from the inside?
 
-## c53 · gita:2.58
+## c54 · gita:2.58
 
 यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः। / इन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता
 
 **Shown:** He who can withdraw his senses from the attraction of their objects, as the tortoise draws its limbs within its shell—take it that such a one has attained perfection.  
 *BHAGAVAD GITA 2.58 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** And a second picture, smaller. A tortoise drawing its limbs in. Not because the world is dangerous, but because it can. The ability to pull attention back is the skill the chapter is teaching.
+**Narration:** Two smaller pictures before the verdict. A tortoise drawing its limbs in. Not because the world is dangerous, but because it can. The ability to pull attention back is the skill the chapter is teaching.
 
-## c54 · gita:2.56
+## c55 · gita:2.56
 
 दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः। / वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते
 
 **Shown:** The sage whose mind is unruffled in suffering, whose desire is not aroused by enjoyment, who is without attachment, anger, or fear—take him to be one who stands at a lofty level.  
 *BHAGAVAD GITA 2.56 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)*
 
-**Narration:** Here is the plain description, for the record. Unruffled in suffering. Not stirred by enjoyment. Without attachment, anger or fear. The chapter calls this a settled mind. Notice it never says a mind with nothing in it.
+**Narration:** And the plain description, for the record. Unruffled in suffering. Not stirred by enjoyment. Without attachment, anger or fear. The chapter calls this a settled mind. Notice it never says a mind with nothing in it.
 

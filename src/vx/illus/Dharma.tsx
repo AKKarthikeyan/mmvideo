@@ -12,7 +12,7 @@
 import React from "react";
 import {Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
 import {SP, P, IStage, IHeading, INote, IStamps, Pop, Chip, Arrow, PersonIcon, TFn, fit, clamp01, SAFE} from "./kit";
-import {COND, TYPE} from "../../voxkit";
+import {COND, TYPE, Stage, Strip, VoxDefs} from "../../voxkit";
 
 // ---------- fonts for scripture: Noto Serif Devanagari and Noto Serif (both OFL, in public/fonts) ----------
 export const DEVA = "'Noto Serif Devanagari', 'Noto Sans Devanagari', 'DejaVu Serif', serif";
@@ -165,15 +165,16 @@ export const DHARMA_ICONS: Record<string, React.FC<any>> = {diya: DiyaIcon, lotu
 // ---------- verse: the text itself, on a paper card ----------
 // s: {heading?, note?, sa: [lines], tr: [lines], en, src, at?, hl?: [words in red]}  (sa/tr/en/src come from corpus.ref())
 const Verse: React.FC<SP> = ({s, n, T}) => {
-  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const f = useCurrentFrame(); const {fps, width, height} = useVideoConfig();
+  const vert = height > width;   // Shorts: the same card, portrait
   const sa = arr(s.sa).length ? arr(s.sa) : s.sa ? [String(s.sa)] : [];
   const tr = arr(s.tr).length ? arr(s.tr) : s.tr ? [String(s.tr)] : [];
   const hl: string[] = arr(s.hl).map((w) => String(w).toLowerCase());
-  const X0 = 210, X1 = 1710, Y0 = s.heading ? 250 : 200, Y1 = 880, CX = 960;
+  const X0 = vert ? 50 : 210, X1 = vert ? 1030 : 1710, Y0 = vert ? 420 : s.heading ? 250 : 200, Y1 = vert ? 1500 : 880, CX = vert ? 540 : 960;
   const speaker = sa.length > 1 && /उवाच\s*$/.test(sa[0]) ? sa[0] : null, body = speaker ? sa.slice(1) : sa;
-  const saSize = body.some((l) => l.length > 34) ? 48 : 56, trSize = 32;
+  const saSize = (body.some((l) => l.length > 34) ? 48 : 56) * (vert ? 0.78 : 1), trSize = vert ? 26 : 32;
   let y = Y0 + 84;
-  const enLines = wrap(String(s.en || ""), 44, X1 - X0 - 180, 0.5), enSize = enLines.length > 3 ? 38 : 44;
+  const enLines = wrap(String(s.en || ""), vert ? 40 : 44, X1 - X0 - (vert ? 90 : 180), 0.5), enSize = vert ? (enLines.length > 5 ? 34 : 40) : enLines.length > 3 ? 38 : 44;
   const enAt = when(T, s.at), e = enAt <= ON ? 1 : pop(f, fps, enAt, 14, 120);
   const card = pop(f, fps, 0, 14, 120);
   const rows: React.ReactNode[] = [];
@@ -182,10 +183,8 @@ const Verse: React.FC<SP> = ({s, n, T}) => {
   y += 4;
   tr.forEach((l, i) => { rows.push(<Txt key={`tr${i}`} x={CX} y={y} text={l} size={trSize} font={SERIF} weight={400} italic color={P.gray}/>); y += trSize * 1.45; });
   const divY = y + 10; y = divY + 64;
-  return (
-    <IStage n={n}>
-      <DharmaFonts/>
-      <IHeading text={s.heading}/>
+  const cardEl = (
+    <>
       <g transform={`translate(${CX} ${(Y0 + Y1) / 2}) scale(${0.96 + 0.04 * card}) translate(${-CX} ${-(Y0 + Y1) / 2})`}>
         <rect x={X0} y={Y0} width={X1 - X0} height={Y1 - Y0} rx={6} fill={P.cream} stroke={P.ink} strokeWidth={5} style={{filter: "url(#vshadow)"}}/>
         <rect x={X0 + 14} y={Y0 + 14} width={X1 - X0 - 28} height={Y1 - Y0 - 28} rx={3} fill="none" stroke={P.ink} strokeWidth={1.5} opacity={0.35}/>
@@ -200,8 +199,23 @@ const Verse: React.FC<SP> = ({s, n, T}) => {
                 <tspan key={j} fill={hl.includes(w.toLowerCase().replace(/[^a-z']/g, "")) ? P.red : P.ink}>{w}{j < words.length - 1 ? " " : ""}</tspan>)}</text>;
             })}
           </g>) : null}
-        {s.src ? <INote text={String(s.src)} x={X1 - 24} y={Y1 - 24}/> : null}
+        {s.src ? <INote text={String(s.src)} x={vert ? X0 + 24 : X1 - 24} y={Y1 - 24} anchor={vert ? "start" : "end"}/> : null}
       </g>
+    </>
+  );
+  if (vert) return (
+    <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>
+      <VoxDefs/><Stage w={1080} h={1920}/><DharmaFonts/>
+      {s.heading ? <Strip x={540} y={300} start={0} text={String(s.heading)} size={fit(String(s.heading), 56, 960)}/> : null}
+      {cardEl}
+      <IStamps s={s} T={T} x={900} y={1700}/>
+    </svg>
+  );
+  return (
+    <IStage n={n}>
+      <DharmaFonts/>
+      <IHeading text={s.heading}/>
+      {cardEl}
       <INote text={s.note} y={236}/>
       <IStamps s={s} T={T}/>
     </IStage>
@@ -398,7 +412,8 @@ const Gunas: React.FC<SP> = ({s, n, T}) => {
 // s: {heading, note, snake: {text, at}, lamp: {text, at}, rope: {text, at}}
 const Rope: React.FC<SP> = ({s, n, T}) => {
   const f = useCurrentFrame();
-  const lampAt = when(T, s.lamp && s.lamp.at), light = lampAt <= ON ? 1 : prog(f, lampAt, 36, Easing.inOut(Easing.cubic));
+  // s.dark: the lamp never comes in this beat (the opening of a video; the payoff is a later rope beat with s.lamp.at)
+  const lampAt = when(T, s.lamp && s.lamp.at), light = s.dark ? 0 : lampAt <= ON ? 1 : prog(f, lampAt, 36, Easing.inOut(Easing.cubic));
   const dark = 0.66 * (1 - light), flick = 1 + 0.05 * Math.sin(f / 2.2);
   const coil = (r: number) => `M ${960 + r} 700 a ${r} ${r * 0.42} 0 1 1 ${-2 * r} 0 a ${r} ${r * 0.42} 0 1 1 ${2 * r} 0`;
   return (
@@ -418,8 +433,8 @@ const Rope: React.FC<SP> = ({s, n, T}) => {
       </g>
       {/* the dark, and the lamp that lifts it */}
       <rect x={0} y={0} width={1920} height={1080} fill={DP.night} opacity={dark}/>
-      <circle cx={420} cy={700} r={420} fill={P.gold} opacity={0.22 * light * flick}/>
-      <DiyaIcon x={420} y={740} size={230} lit={lerp(0.25, 1, light)}/>
+      {s.dark ? null : <circle cx={420} cy={700} r={420} fill={P.gold} opacity={0.22 * light * flick}/>}
+      {s.dark ? null : <DiyaIcon x={420} y={740} size={230} lit={lerp(0.25, 1, light)}/>}
       <IHeading text={s.heading}/>
       <INote text={s.note}/>
       {s.snake && s.snake.text ? <Label x={1800} y={520} start={when(T, s.snake.at)} text={String(s.snake.text)} to={[1310, 690]} anchor="end" fill={P.ink} color={P.white}/> : null}

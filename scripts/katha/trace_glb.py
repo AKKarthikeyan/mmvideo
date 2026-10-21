@@ -7,8 +7,11 @@ The Katha kit draws these as rim-lit silhouettes (src/katha/sil.tsx), so the fil
 
 Source models (not in git; fetch with --fetch): the horse, flamingo, stork and parrot in the three.js repository
 (examples/models/gltf), credited there "model by mirada from ro.me"; they come from "3 Dreams of Black" (ro.me, Google
-Data Arts, 2011), whose repository (github.com/dataarts/3-dreams-of-black) states it "has been opened up with the Apache
-License 2.0". Credit line for video descriptions: "Horse and bird models by Mirada, from 3 Dreams of Black (ro.me), Apache 2.0."
+Data Arts, 2011). LICENCE WARNING: the repository README says the code "has been opened up with the Apache License 2.0",
+but the models folder has its own licence (dataarts/3-dreams-of-black deploy/files/models/LICENSE.txt): the 3D assets
+are CC BY-NC-SA 3.0, which is non-commercial. Silhouettes traced from them must not be used in a monetised video.
+Replacement: the CC0 Quaternius horse (see docs/STYLE_RESEARCH_GITHUB.md). This script handles morph-target models only;
+the Quaternius horse is skinned, so it needs skinning support or a three.js render before tracing.
 Needs: numpy, Pillow, potracer (pip install potracer). potracer is GPL; it is a tool here, its output is ours."""
 import json, struct, sys, pathlib, urllib.request
 import numpy as np
@@ -161,7 +164,7 @@ if __name__ == "__main__":
         sys.exit()
     if "--stand" in a:
         idles, idx, bounds, zmid = stand_cycle(a[0])
-        res = {"source": pathlib.Path(a[0]).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), Apache License 2.0; via the three.js repository. Standing pose assembled from the gallop keyframes.",
+        res = {"source": pathlib.Path(a[0]).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), CC BY-NC-SA 3.0 (non-commercial); via the three.js repository. Standing pose assembled from the gallop keyframes.",
                "units": "model units; +x forward, y down, ground at y = 0", "cycle_sec": 4.0, "frames": [], "anchors": []}
         for P in idles:
             m, s, Hh = raster(P, idx, 1400, bounds); res["frames"].append(trace(m, s, Hh, bounds, zmid)); res["anchors"].append(anchors(P, zmid, "horse"))
@@ -170,7 +173,7 @@ if __name__ == "__main__":
     W = int(a[a.index("--width") + 1]) if "--width" in a else 1400
     pos, idx, targets, times = load(src); frames = poses(pos, targets, n)
     allp = np.vstack(frames); bounds = ((allp[:, 2].min(), allp[:, 2].max()), (min(0, allp[:, 1].min()), allp[:, 1].max())); zmid = (bounds[0][0] + bounds[0][1]) / 2
-    res = {"source": pathlib.Path(src).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), Apache License 2.0; via the three.js repository",
+    res = {"source": pathlib.Path(src).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), CC BY-NC-SA 3.0 (non-commercial); via the three.js repository",
            "units": "model units; +x forward (towards the head), y down, ground at y = 0", "cycle_sec": float(times[-1]) if times else 1.5,
            "frames": [], "anchors": []}
     for P in frames:

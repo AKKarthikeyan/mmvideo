@@ -57,5 +57,10 @@ npx remotion still /tmp/kb KATHA-dev out.png --props='{"scene":{"type":"metaphor
 
 ## Credits
 Horse and bird silhouettes are traced (`scripts/katha/trace_glb.py`) from models by Mirada in *3 Dreams of Black* (ro.me,
-Google Data Arts, 2011; repository states Apache License 2.0), as shipped in the three.js repository. Fonts: Tiro
+Google Data Arts, 2011), as shipped in the three.js repository.
+
+**Licence blocker.** The repository's README says Apache 2.0, but that covers the code only. The models folder carries
+its own licence, CC BY-NC-SA 3.0, which is non-commercial. The traced horses and birds in `sil/*.json` must be replaced
+before any film using them goes on a monetised channel. The verified replacement is the CC0 Quaternius horse; see
+`docs/STYLE_RESEARCH_GITHUB.md`. `build_film.py` prints a blocker line until `NC_SILHOUETTES` is set to False. Fonts: Tiro
 Devanagari Sanskrit, Cormorant Garamond, Cinzel (SIL OFL 1.1, via Fontsource).

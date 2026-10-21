@@ -1,6 +1,8 @@
 // Silhouettes with a rim of light (21 Oct 2026). A shape is drawn three times: as a clip, in the rim colour, and in the
 // dark colour nudged away from the light inside the clip, which leaves a thin crescent of light on the side facing it.
-// Horses and birds are traced from animated models (scripts/katha/trace_glb.py): Mirada, 3 Dreams of Black, Apache 2.0.
+// Horses and birds are traced from animated models (scripts/katha/trace_glb.py): Mirada, 3 Dreams of Black.
+// LICENCE: those models are CC BY-NC-SA 3.0 (non-commercial), not Apache as first assumed. Do not publish a film that
+// uses Horse or Bird on a monetised channel until sil/*.json is re-traced from a CC0 model (docs/STYLE_RESEARCH_GITHUB.md).
 import React, {useId} from "react";
 import {K} from "./look";
 import horseJ from "./sil/horse.json";

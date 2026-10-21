@@ -25,9 +25,13 @@ VOICES = {
     "DHRITARASHTRA": {"voice_id": "English_Diligent_Man", "speed": 0.82, "pitch": -5},
 }
 PAD = {"verse": 1.6, "title": 0.6}
+# The horse and bird silhouettes (src/katha/sil/*.json) are traced from the ro.me models, which are CC BY-NC-SA 3.0
+# (dataarts/3-dreams-of-black deploy/files/models/LICENSE.txt). A film using them must not go on a monetised channel.
+# Set this to False once they are re-traced from a commercial-safe model (docs/STYLE_RESEARCH_GITHUB.md).
+NC_SILHOUETTES = True
 CREDITS = [
     "Verses: Shri Purohit Swami (1935), edited text, from the Bhagavad Gita dataset at github.com/gita/gita",
-    "Horse and bird silhouettes traced from models by Mirada, 3 Dreams of Black (ro.me), Apache License 2.0",
+    "Horse and bird silhouettes traced from models by Mirada, 3 Dreams of Black (ro.me), CC BY-NC-SA 3.0 (non-commercial)",
     "Type: Tiro Devanagari Sanskrit, Cormorant Garamond and Cinzel, SIL Open Font License",
     "Music: tanpura, bansuri and conch synthesised in code · Made in code with Remotion",
 ]
@@ -185,6 +189,9 @@ def main():
     print("scenes:", "; ".join(":".join(x for x in k if x) for k in kinds))
     if problems: print("QUOTE PROBLEMS:"); [print("  " + p) for p in problems]
     else: print("quotes: every Krishna/Arjuna/Dhritarashtra line is corpus text")
+    if NC_SILHOUETTES:
+        print("BLOCKER: the horse and bird silhouettes are CC BY-NC-SA 3.0 (non-commercial). Re-trace them from the CC0"
+              " Quaternius horse before publishing; see docs/STYLE_RESEARCH_GITHUB.md.")
 
 if __name__ == "__main__":
     main()

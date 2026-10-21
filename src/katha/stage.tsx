@@ -31,5 +31,5 @@ export const Foreground: React.FC<{f: number; y?: number; side?: "both" | "left"
   const L = side !== "right", R = side !== "left";
   if (L) { parts.push(`M -40 ${y - 30} C 200 ${y - 60} 420 ${y - 40} 620 ${y + 10} L 620 1100 L -40 1100 Z`); for (let i = 0; i < 9; i++) tuft(20 + i * 62, y - 34 + i * 4.5, 40 + rnd(i, 5) * 40, i); spear(160, y - 40, 230, -14); spear(300, y - 42, 150, 22); spear(470, y - 20, 120, -32); }
   if (R) { parts.push(`M 1300 ${y + 14} C 1500 ${y - 40} 1720 ${y - 64} 1960 ${y - 36} L 1960 1100 L 1300 1100 Z`); for (let i = 0; i < 9; i++) tuft(1360 + i * 64, y - 10 - i * 5, 40 + rnd(i, 6) * 40, i + 20); spear(1700, y - 54, 260, 12); spear(1560, y - 40, 140, -26); spear(1840, y - 58, 180, 30); }
-  return <g filter={blurPx ? blur(blurPx) : undefined}>{parts.map((d, i) => <path key={i} d={d} fill="#08040C"/>)}</g>;
+  return <g opacity={blurPx ? 0.96 : 1}>{parts.map((d, i) => <path key={i} d={d} fill="#08040C"/>)}</g>;
 };

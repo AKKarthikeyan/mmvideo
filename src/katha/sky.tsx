@@ -32,14 +32,17 @@ export const Sky: React.FC<{mood?: Mood; sun?: [number, number]; sunR?: number; 
       }) : null}
       <circle cx={sun[0]} cy={sun[1]} r={sunR * 6.7} fill={`url(#sun-${id})`}/>
       {rays > 0 ? (
-        <g opacity={rays} filter={blur(14)} transform={`rotate(${Math.sin(f / 240) * 3} ${sun[0]} ${sun[1]})`}>
+        <g opacity={rays} transform={`rotate(${Math.sin(f / 240) * 3} ${sun[0]} ${sun[1]})`}>
+          <defs><radialGradient id={`ray-${id}`} cx={sun[0]} cy={sun[1]} r={1500} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor={c1} stopOpacity={1}/><stop offset="0.5" stopColor={c1} stopOpacity={0.45}/><stop offset="1" stopColor={c1} stopOpacity={0}/></radialGradient></defs>
           {Array.from({length: 16}, (_, i) => {
             const a = (-178 + i * 11.5 + rnd(i, 3) * 6) * Math.PI / 180, w = (1.4 + rnd(i, 4) * 2.6) * Math.PI / 180, L = 1700;
-            const breathe = 0.7 + 0.3 * Math.sin(f / 50 + i * 1.3);
-            return <path key={i} d={`M ${sun[0]} ${sun[1]} L ${sun[0] + Math.cos(a - w) * L} ${sun[1] + Math.sin(a - w) * L} L ${sun[0] + Math.cos(a + w) * L} ${sun[1] + Math.sin(a + w) * L} Z`} fill={c1} opacity={(0.08 + 0.08 * rnd(i, 5)) * breathe}/>;
+            const breathe = 0.7 + 0.3 * Math.sin(f / 50 + i * 1.3), o = (0.06 + 0.06 * rnd(i, 5)) * breathe;
+            // three nested wedges give the ray a soft edge without a blur filter
+            return <g key={i}>{[1, 0.62, 0.3].map((k, j) => <path key={j} d={`M ${sun[0]} ${sun[1]} L ${sun[0] + Math.cos(a - w * k) * L} ${sun[1] + Math.sin(a - w * k) * L} L ${sun[0] + Math.cos(a + w * k) * L} ${sun[1] + Math.sin(a + w * k) * L} Z`} fill={`url(#ray-${id})`} opacity={o}/>)}</g>;
           })}
         </g>) : null}
-      <circle cx={sun[0]} cy={sun[1]} r={sunR} fill={c0} filter={blur(4)}/>
+      <defs><radialGradient id={`core-${id}`}><stop offset="0.82" stopColor={c0}/><stop offset="1" stopColor={c0} stopOpacity={0}/></radialGradient></defs>
+      <circle cx={sun[0]} cy={sun[1]} r={sunR * 1.08} fill={`url(#core-${id})`}/>
       {clouds > 0 ? <Clouds f={f} mood={mood} op={clouds}/> : null}
     </g>
   );
@@ -51,13 +54,16 @@ export const Clouds: React.FC<{f: number; mood: Mood; op?: number}> = ({f, mood,
     : [[250, 64, 0.5, "#3A2A5A", "#D9784F"], [395, 50, 0.55, "#5B2F57", "#F2A060"], [520, 34, 0.5, "#8E3D52", "#FFC27A"]];
   return (
     <g opacity={op}>
-      {bands.map(([y, h, a, dark, lit], b) => (
+      <defs>{bands.map(([, , , dark, lit], b) => <React.Fragment key={b}>
+        <radialGradient id={`cl-d-${mood}-${b}`}><stop offset="0" stopColor={dark}/><stop offset="0.55" stopColor={dark} stopOpacity={0.85}/><stop offset="1" stopColor={dark} stopOpacity={0}/></radialGradient>
+        <radialGradient id={`cl-l-${mood}-${b}`}><stop offset="0" stopColor={lit}/><stop offset="0.5" stopColor={lit} stopOpacity={0.7}/><stop offset="1" stopColor={lit} stopOpacity={0}/></radialGradient></React.Fragment>)}</defs>
+      {bands.map(([y, h, a], b) => (
         <g key={b} opacity={a}>
           {Array.from({length: 10}, (_, i) => {
             const x = ((rnd(i, b * 10 + 1) * 2300 + f * (0.08 + b * 0.05)) % 2300) - 190, w = 240 + rnd(i, b * 10 + 2) * 560, hh = h * (0.5 + rnd(i, b * 10 + 3) * 0.8), yy = y + rnd(i, b * 10 + 4) * 34;
             return <g key={i}>
-              <ellipse cx={x} cy={yy} rx={w / 2} ry={hh / 2} fill={dark} filter={blur(14)}/>
-              <ellipse cx={x + w * 0.05} cy={yy + hh * 0.3} rx={w * 0.42} ry={hh * 0.16} fill={lit} filter={blur(4)} opacity={0.85}/>
+              <ellipse cx={x} cy={yy} rx={w / 2 + 28} ry={hh / 2 + 28} fill={`url(#cl-d-${mood}-${b})`}/>
+              <ellipse cx={x + w * 0.05} cy={yy + hh * 0.3} rx={w * 0.42 + 8} ry={hh * 0.16 + 8} fill={`url(#cl-l-${mood}-${b})`} opacity={0.85}/>
             </g>;
           })}
         </g>
@@ -70,13 +76,13 @@ export const Dust: React.FC<{f: number; sun: [number, number]; n?: number; y0?: 
   <g>{Array.from({length: n}, (_, i) => {
     const sp = 0.15 + rnd(i, 105) * 0.5, x = ((rnd(i, 101) * W + f * sp) % (W + 40)) - 20, y = y0 + ((rnd(i, 102) * (y1 - y0) - f * sp * 0.4) % (y1 - y0) + (y1 - y0)) % (y1 - y0) + Math.sin(f / 30 + i) * 6;
     const d = Math.hypot(x - sun[0], y - sun[1]), a = Math.max(0.05, 1 - d / 1100), r = 0.8 + rnd(i, 103) * 2.4;
-    return <circle key={i} cx={x} cy={y} r={r} fill={color} opacity={a * (0.5 + 0.4 * Math.sin(f / 13 + i))} filter={rnd(i, 104) < 0.3 ? blur(1.5) : undefined}/>;
+    return <circle key={i} cx={x} cy={y} r={r} fill={color} opacity={a * (0.5 + 0.4 * Math.sin(f / 13 + i))}/>;
   })}</g>
 );
 // A horizontal band of haze (between depth layers).
 export const Haze: React.FC<{y: number; h: number; color: string; op?: number}> = ({y, h, color, op = 0.55}) => (
   <g>
     <defs><linearGradient id={`haze-${y}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={color} stopOpacity={0}/><stop offset="0.6" stopColor={color} stopOpacity={op}/><stop offset="1" stopColor={color} stopOpacity={0}/></linearGradient></defs>
-    <rect x={-40} y={y - h / 2} width={W + 80} height={h} fill={`url(#haze-${y})`} filter={blur(14)}/>
+    <rect x={-40} y={y - h / 2} width={W + 80} height={h} fill={`url(#haze-${y})`}/>
   </g>
 );

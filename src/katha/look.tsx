@@ -33,10 +33,15 @@ export const KathaDefs: React.FC<{seed?: number}> = ({seed = 3}) => (
 );
 export const blur = (s: number) => `url(#k-b${String(s).replace(".", "_")})`;
 // Film grain (re-seeded every 2 frames so it lives) and a vignette: the last two layers of every frame.
-export const Finish: React.FC<{f: number; grain?: number; vig?: number}> = ({f, grain = 0.05, vig = 1}) => (
-  <>
-    <defs><filter id={`k-grain-${f % 7}`} x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed={Math.floor(f / 2) % 97}/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .9 0"/></filter></defs>
-    <rect x={0} y={0} width={W} height={H} fill="url(#k-vig)" opacity={vig}/>
-    <rect x={0} y={0} width={W} height={H} filter={`url(#k-grain-${f % 7})`} opacity={grain}/>
-  </>
-);
+// The grain is a 512 px noise texture (public/katha/grain.png), shifted every two frames: no SVG filter, so long renders
+// stay fast and never drop tiles (per-frame turbulence filters made the renderer drop black tiles under load).
+export const Finish: React.FC<{f: number; grain?: number; vig?: number}> = ({f, grain = 0.06, vig = 1}) => {
+  const k = Math.floor(f / 2), ox = (k * 97) % 256, oy = (k * 151) % 256, id = `k-grain-${k % 5}`;
+  return (
+    <>
+      <defs><pattern id={id} patternUnits="userSpaceOnUse" x={-ox} y={-oy} width={256} height={256}><image href={staticFile("katha/grain.png")} width={256} height={256}/></pattern></defs>
+      <rect x={0} y={0} width={W} height={H} fill="url(#k-vig)" opacity={vig}/>
+      <rect x={0} y={0} width={W} height={H} fill={`url(#${id})`} opacity={grain} style={{mixBlendMode: "overlay"}}/>
+    </>
+  );
+};

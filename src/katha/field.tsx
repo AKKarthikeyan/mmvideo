@@ -34,7 +34,8 @@ export const Ground: React.FC<{y: number; sunX: number; light?: number; top?: st
   <g>
     <defs><linearGradient id={`gnd-${y}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={top}/><stop offset="1" stopColor={bottom}/></linearGradient></defs>
     <rect x={-40} y={y} width={W + 80} height={H - y + 40} fill={`url(#gnd-${y})`}/>
-    <path d={`M ${sunX - 70} ${y} L ${sunX + 70} ${y} L ${sunX + 760} ${H} L ${sunX - 380} ${H} Z`} fill="#F2A050" opacity={light} filter={blur(30)}/>
+    <defs><radialGradient id={`gl-${y}`} cx={sunX + 190} cy={H} r={620} gradientTransform={`translate(${sunX + 190} ${H}) scale(0.9 1.6) translate(${-(sunX + 190)} ${-H})`} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#F2A050" stopOpacity={1}/><stop offset="1" stopColor="#F2A050" stopOpacity={0}/></radialGradient></defs>
+    <rect x={-40} y={y} width={W + 80} height={H - y + 40} fill={`url(#gl-${y})`} opacity={light * 1.6}/>
   </g>
 );
 // Both armies facing each other across the plain, three depth rows each, with haze between the rows.
@@ -42,7 +43,8 @@ export const Armies: React.FC<{horizon: number; f: number; gap?: [number, number
   <g>
     <Army y={horizon - 6} scale={0.7} count={260} seed={40} x0={-40} x1={gap[0]} color={tint[0]} f={f}/>
     <Army y={horizon - 6} scale={0.7} count={260} seed={50} x0={gap[1]} x1={W + 40} color={tint[0]} f={f}/>
-    <rect x={0} y={horizon - 30} width={W} height={60} fill="#E58A4A" opacity={0.35} filter={blur(14)}/>
+    <defs><linearGradient id={`hz-${horizon}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E58A4A" stopOpacity={0}/><stop offset="0.5" stopColor="#E58A4A" stopOpacity={0.35}/><stop offset="1" stopColor="#E58A4A" stopOpacity={0}/></linearGradient></defs>
+    <rect x={0} y={horizon - 40} width={W} height={80} fill={`url(#hz-${horizon})`}/>
     <Army y={horizon + 18} scale={1.15} count={150} seed={60} x0={-60} x1={gap[0] - 140} color={tint[1]} f={f + 40}/>
     <Army y={horizon + 18} scale={1.15} count={150} seed={70} x0={gap[1] + 140} x1={W + 60} color={tint[1]} f={f + 40}/>
   </g>

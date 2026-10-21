@@ -31,7 +31,7 @@ export const ChariotRig: React.FC<{f: number; pose: string; light: [number, numb
       <Rimmed paths={ratha(t, w)} light={light} w={4}/>
       <Rimmed paths={arjuna(aPose as any, w, t)} transform={`translate(${ax} ${ay}) scale(${ascale})`} light={light} w={4 / ascale}/>
       {pose !== "arrive" ? <circle cx={kx + 2} cy={ky - 380 * kscale} r={150} fill="url(#k-halo)" opacity={0.55 + 0.1 * Math.sin(f / 45)}/> : null}
-      <Rimmed paths={kPaths} transform={kTr} light={light} w={4 / kscale} glow={0.35}/>
+      <Rimmed paths={kPaths} transform={kTr} light={light} w={4 / kscale}/>
       {HS.map(([x, y, sc, ph], i) => { const [mx, my] = horseAnchor(f, sp, ph, "mouth", !moving); const bx = x + mx * sc, by = y + my * sc;
         return <path key={i} d={`M ${hand[0]} ${hand[1]} Q ${(hand[0] + bx) / 2} ${(hand[1] + by) / 2 + (moving ? 10 : 40)} ${bx} ${by}`} fill="none" stroke={K.rim} strokeWidth={1.6} opacity={0.75}/>; })}
       <Rimmed paths={[wheel(118, spin)]} light={light} w={3} evenodd/>
@@ -57,7 +57,8 @@ export const FieldScene: React.FC<SceneP> = ({s, n}) => {
         const t0 = 8 + i * 9; return [0, 1, 2].map((k) => { const u = (f - t0 - k * 14) / 70; return u > 0 && u < 1 ? <ellipse key={`${i}-${k}`} cx={x} cy={y} rx={30 + 420 * u} ry={10 + 120 * u} fill="none" stroke={K.rim} strokeWidth={3 * (1 - u)} opacity={0.55 * (1 - u)}/> : null; });
       }) : null}
       <g transform={`translate(${cx} ${828}) scale(0.42)`}><ChariotRig f={f} pose={pose} light={light}/></g>
-      {moving ? <ellipse cx={cx + 300} cy={880} rx={220} ry={26} fill="#E9B57A" opacity={0.18} filter={blur(14)}/> : null}
+      <defs><radialGradient id="fs-dust"><stop offset="0" stopColor="#E9B57A" stopOpacity={0.3}/><stop offset="1" stopColor="#E9B57A" stopOpacity={0}/></radialGradient></defs>
+      {moving ? <ellipse cx={cx + 300} cy={880} rx={260} ry={40} fill="url(#fs-dust)"/> : null}
       <Dust f={f} sun={sun} n={140} y0={560}/>
     </Frame>
   );
@@ -76,7 +77,8 @@ export const ChariotScene: React.FC<SceneP> = ({s, n}) => {
       <Armies horizon={HOR} f={f} gap={[640, 1300]}/>
       <Ground y={HOR + 30} sunX={sun[0]}/>
       <Haze y={HOR + 50} h={90} color="#E58A4A" op={0.28}/>
-      <ellipse cx={hub[0] + 300} cy={hub[1] + 118} rx={760} ry={34} fill="#000" opacity={0.35} filter={blur(14)}/>
+      <defs><radialGradient id="cs-shadow"><stop offset="0" stopColor="#000" stopOpacity={0.45}/><stop offset="1" stopColor="#000" stopOpacity={0}/></radialGradient></defs>
+      <ellipse cx={hub[0] + 300} cy={hub[1] + 118} rx={800} ry={48} fill="url(#cs-shadow)"/>
       <g transform={`translate(${hub[0]} ${hub[1]})`}><ChariotRig f={f} pose={s.pose || "teach"} light={light} wind={s.wind ?? 0}/></g>
       <Dust f={f} sun={sun} n={180} y0={300}/>
       <Foreground f={f} y={1010} blurPx={5}/>

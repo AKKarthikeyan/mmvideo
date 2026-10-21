@@ -27,6 +27,7 @@ import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
 import {IllusDev, IllusIcon} from "./vx/illus/Dev";
 import {IllusThumb} from "./vx/illus/Thumb";
 import {DharmaCompositions} from "./dharma/Videos";
+import {KathaCompositions} from "./katha/Videos";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -44,6 +45,7 @@ export const RemotionRoot: React.FC = () => (
     <SleepLongCompositions/>
     <LetterVxCompositions/>
     <DharmaCompositions/>
+    <KathaCompositions/>
     <ExplainerCompositions/>
     <MoatVerticalComposition/>
     <CarouselCompositions/>

@@ -25,13 +25,21 @@ VOICES = {
     "DHRITARASHTRA": {"voice_id": "English_Diligent_Man", "speed": 0.82, "pitch": -5},
 }
 PAD = {"verse": 1.6, "title": 0.6}
-# The horse and bird silhouettes (src/katha/sil/*.json) are traced from the ro.me models, which are CC BY-NC-SA 3.0
-# (dataarts/3-dreams-of-black deploy/files/models/LICENSE.txt). A film using them must not go on a monetised channel.
-# Set this to False once they are re-traced from a commercial-safe model (docs/STYLE_RESEARCH_GITHUB.md).
-NC_SILHOUETTES = True
+# Every silhouette in src/katha/sil/*.json names its source and licence in its "credit" field. A film may go on a
+# monetised channel only if each is CC0 or drawn in code. Until 21 Oct 2026 the horses and birds came from the ro.me
+# models (CC BY-NC-SA 3.0); they were replaced with the CC0 Quaternius horse and birds drawn in code, and main() checks
+# the credits on every build so a non-commercial source cannot slip back in (docs/STYLE_RESEARCH_GITHUB.md).
+SIL = pathlib.Path(__file__).resolve().parents[2] / "src" / "katha" / "sil"
+def sil_licence_problems():
+    bad = []
+    for p in sorted(SIL.glob("*.json")):
+        c = json.loads(p.read_text()).get("credit", "")
+        if not ("CC0" in c or "Drawn in code" in c) or any(k in c for k in ("-NC", "NonCommercial", "non-commercial")):
+            bad.append(f"{p.name}: {c or 'no credit field'}")
+    return bad
 CREDITS = [
     "Verses: Shri Purohit Swami (1935), edited text, from the Bhagavad Gita dataset at github.com/gita/gita",
-    "Horse and bird silhouettes traced from models by Mirada, 3 Dreams of Black (ro.me), CC BY-NC-SA 3.0 (non-commercial)",
+    "Horses traced from the horse model by Quaternius (CC0) · Birds drawn in code",
     "Type: Tiro Devanagari Sanskrit, Cormorant Garamond and Cinzel, SIL Open Font License",
     "Music: tanpura, bansuri and conch synthesised in code · Made in code with Remotion",
 ]
@@ -189,9 +197,9 @@ def main():
     print("scenes:", "; ".join(":".join(x for x in k if x) for k in kinds))
     if problems: print("QUOTE PROBLEMS:"); [print("  " + p) for p in problems]
     else: print("quotes: every Krishna/Arjuna/Dhritarashtra line is corpus text")
-    if NC_SILHOUETTES:
-        print("BLOCKER: the horse and bird silhouettes are CC BY-NC-SA 3.0 (non-commercial). Re-trace them from the CC0"
-              " Quaternius horse before publishing; see docs/STYLE_RESEARCH_GITHUB.md.")
+    bad = sil_licence_problems()
+    if bad: print("BLOCKER: these silhouettes are not cleared for a monetised channel:"); [print("  " + b) for b in bad]
+    else: print("silhouettes: every horse and bird is CC0 or drawn in code")
 
 if __name__ == "__main__":
     main()

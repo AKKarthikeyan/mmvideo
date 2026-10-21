@@ -8,7 +8,7 @@ dark shapes rimmed with light, drifting dust, slow camera push-ins, film grain, 
 ## Rules (non-negotiable)
 - **Krishna and Arjuna appear only as backlit silhouettes** from `figures.ts` (no face, no features, no colour fill).
   Krishna's cosmic form (Gita 11) is shown **only as light**, never as a figure. No other deity is drawn at all.
-- No image model, no photographs. Everything is code-drawn or traced from the licensed models in `sil/`.
+- No image model, no photographs. Everything is code-drawn or traced from CC0 models (`sil/LICENSES.md`).
 - Every word on screen comes from the scene's props (`s`), never hard-coded in a scene.
 - Deterministic: no `Math.random`, no `Date`. Use `rnd(i, salt)` from `geom.ts`. Animate only from `useCurrentFrame()`.
 - Calm motion: slow drifts, breathing light, slow push-ins. Nothing bounces or pops.
@@ -25,7 +25,7 @@ dark shapes rimmed with light, drifting dust, slow camera push-ins, film grain, 
 | `stage.tsx` | `SceneP` ({s, n}), `Frame` (full-frame svg with defs, a zoom/push and the finish), `push(f, n, from, to)`, `Flock` (birds crossing), `Foreground` (out-of-focus grass and spears) |
 | `sky.tsx` | `Sky` (mood "dusk" / "dawn" / "night" / "gold", sun position and size, god rays, clouds, stars), `Dust` (motes in the light), `Haze`, `Clouds` |
 | `field.tsx` | `Armies`, `NearArmies`, `Ground`, `armyPath` |
-| `sil.tsx` | `Rimmed` (rim-lit silhouette from path items `{d, t, fill}`), `Bird` (traced flamingo, stork, parrot in flight), `horseItem` (traced gallop), `CYCLES`, `frameOf` |
+| `sil.tsx` | `Rimmed` (rim-lit silhouette from path items `{d, t, fill}`), `Bird` (flamingo, stork, parrot in flight, drawn in code), `horseItem` (gallop and standing idle traced from the CC0 Quaternius horse), `CYCLES`, `frameOf` |
 | `figures.ts` | `krishnaTeach(w, t)`, `krishnaDrive`, `arjuna("despair" / "listen" / "resolve")`, `gandiva`, `ratha`, `wheel`: path lists, standing on y = 0, ~400 units tall |
 | `cards.tsx` | `VerseCard`, `TitleCard`, `Mandala`, `Rule` (gold rule with a lotus bud), `wrap`, `devaNum` |
 | `scenes.tsx` | `field`, `chariot`, `verse`, `title`; `metaphor` (by `s.kind`), `light`, `sanjaya`, `end` dispatch to `metaphors/` |
@@ -56,11 +56,12 @@ npx remotion still /tmp/kb KATHA-dev out.png --props='{"scene":{"type":"metaphor
 ```
 
 ## Credits
-Horse and bird silhouettes are traced (`scripts/katha/trace_glb.py`) from models by Mirada in *3 Dreams of Black* (ro.me,
-Google Data Arts, 2011), as shipped in the three.js repository.
+Horses: traced (`scripts/katha/trace_glb.py`) from the horse in Quaternius's Ultimate Animated Animal Pack, CC0 1.0, as
+repacked in github.com/stepanMiller/wild-mustang. The repo's own additions (a face-blaze mesh and a Trot clip, under its
+MIT licence) are not used. Birds: drawn in code (`scripts/katha/birds.py`), with no outside model. Details and licence
+texts: `sil/LICENSES.md`. Fonts: Tiro Devanagari Sanskrit, Cormorant Garamond, Cinzel (SIL OFL 1.1, via Fontsource).
 
-**Licence blocker.** The repository's README says Apache 2.0, but that covers the code only. The models folder carries
-its own licence, CC BY-NC-SA 3.0, which is non-commercial. The traced horses and birds in `sil/*.json` must be replaced
-before any film using them goes on a monetised channel. The verified replacement is the CC0 Quaternius horse; see
-`docs/STYLE_RESEARCH_GITHUB.md`. `build_film.py` prints a blocker line until `NC_SILHOUETTES` is set to False. Fonts: Tiro
-Devanagari Sanskrit, Cormorant Garamond, Cinzel (SIL OFL 1.1, via Fontsource).
+Until 21 Oct 2026 the horses and birds were traced from the three.js example models from *3 Dreams of Black* (ro.me). Their
+repository's README says Apache 2.0, but that covers the code only; the models are CC BY-NC-SA 3.0, which is
+non-commercial, so they were replaced. `scripts/katha/build_film.py` checks the `credit` field of every `sil/*.json` on each
+build and prints a BLOCKER line if any source is not CC0 or drawn in code.

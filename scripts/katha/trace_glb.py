@@ -1,49 +1,129 @@
 #!/usr/bin/env python3
-"""Trace a morph-animated GLB model into side-view silhouettes: one SVG path per frame, plus anchor points per frame.
-The Katha kit draws these as rim-lit silhouettes (src/katha/sil.tsx), so the film stays pure SVG with no WebGL at render.
+"""Trace a skinned, animated GLB model into side-view silhouettes: one SVG path per frame, plus anchor points per frame.
+The Katha kit draws these as rim-lit silhouettes (src/katha/sil.tsx), so a film stays pure SVG with no WebGL at render.
 
-  python3 scripts/katha/trace_glb.py sources/models/Horse.glb src/katha/sil/horse.json --frames 60 --anchors horse
-  python3 scripts/katha/trace_glb.py sources/models/Horse.glb src/katha/sil/horse_stand.json --stand     # standing idle
+  python3 scripts/katha/trace_glb.py --fetch                       # the CC0 horse and its licence files, sha256 checked
+  python3 scripts/katha/trace_glb.py sources/models/quaternius/horse.glb src/katha/sil/horse.json --clip Gallop --frames 36 --play-sec 1.2
+  python3 scripts/katha/trace_glb.py sources/models/quaternius/horse.glb src/katha/sil/horse_stand.json --clip Idle --frames 24
+  python3 scripts/katha/trace_glb.py ... --sheet out.png            # also write a contact sheet of the traced frames
 
-Source models (not in git; fetch with --fetch): the horse, flamingo, stork and parrot in the three.js repository
-(examples/models/gltf), credited there "model by mirada from ro.me"; they come from "3 Dreams of Black" (ro.me, Google
-Data Arts, 2011). LICENCE WARNING: the repository README says the code "has been opened up with the Apache License 2.0",
-but the models folder has its own licence (dataarts/3-dreams-of-black deploy/files/models/LICENSE.txt): the 3D assets
-are CC BY-NC-SA 3.0, which is non-commercial. Silhouettes traced from them must not be used in a monetised video.
-Replacement: the CC0 Quaternius horse (see docs/STYLE_RESEARCH_GITHUB.md). This script handles morph-target models only;
-the Quaternius horse is skinned, so it needs skinning support or a three.js render before tracing.
+Source model: the horse from Quaternius's Ultimate Animated Animal Pack, CC0 1.0 (public domain dedication), as repacked
+in github.com/stepanMiller/wild-mustang (public/assets/characters/horse.glb). That repo adds a face-blaze mesh (material
+Veter_Blaze) and a Trot clip under its own MIT licence; this script skips the blaze and we use only Quaternius's clips,
+so the traced silhouettes derive from CC0 material only. The model is not kept in git (sources/ is ignored); --fetch
+gets it. Credit is not required; the description may say "Horse model by Quaternius (CC0)".
+
+The model is skinned (50 joints). Each frame samples the clip, poses the joints, skins the mesh (linear blend), projects
+it side-on (+z forward becomes +x, y up becomes -y), rasterizes and traces with potrace. Units are scaled so a standing
+horse's withers sit about 151 units above the ground, the same size as the kit's earlier horse, with x = 0 under the
+barrel and y = 0 on the ground. Anchors follow fixed points on the mesh: mouth (the bit), poll, withers and chest.
+cycle_sec is how long one cycle plays in the film; --play-sec slows it (the 0.6 s gallop plays over 1.2 s, a calm slow
+motion like the kit's earlier horse) and clip_sec keeps the clip's own length.
+History: until 21 Oct 2026 this script traced morph-target models from three.js's examples, which turned out to be
+CC BY-NC-SA 3.0; those silhouettes were replaced (docs/STYLE_RESEARCH_GITHUB.md).
 Needs: numpy, Pillow, potracer (pip install potracer). potracer is GPL; it is a tool here, its output is ours."""
-import json, struct, sys, pathlib, urllib.request
+import hashlib, json, struct, sys, pathlib, urllib.request
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 import potrace
 
-RAW = "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/"
+HORSE = {"url": "https://raw.githubusercontent.com/stepanMiller/wild-mustang/main/public/assets/characters/horse.glb",
+         "sha256": "591007f38ed01f46a2141806abd2500c34b90eb3e509ce7ee56cf46d440508d3",
+         "licences": {"quaternius-animals-license.txt": "https://raw.githubusercontent.com/stepanMiller/wild-mustang/main/public/assets/licenses/quaternius-animals-license.txt",
+                      "wild-mustang-LICENSE.txt": "https://raw.githubusercontent.com/stepanMiller/wild-mustang/main/LICENSE"}}
+SKIP_MATERIALS = {"Veter_Blaze"}     # the repo's own addition; not Quaternius CC0
+WITHERS = 151.0                      # target withers height in output units
 
-def load(path):
+# ---------- glTF reading ----------
+def read_glb(path):
     b = open(path, "rb").read(); jl = struct.unpack("<I", b[12:16])[0]; J = json.loads(b[20:20 + jl])
     off = 20 + jl; bl = struct.unpack("<I", b[off:off + 4])[0]; BIN = b[off + 8: off + 8 + bl]
     def acc(i):
         a = J["accessors"][i]; v = J["bufferViews"][a["bufferView"]]
-        n = {"SCALAR": 1, "VEC2": 2, "VEC3": 3, "VEC4": 4}[a["type"]]
+        n = {"SCALAR": 1, "VEC2": 2, "VEC3": 3, "VEC4": 4, "MAT4": 16}[a["type"]]
         dt = {5126: np.float32, 5123: np.uint16, 5125: np.uint32, 5121: np.uint8}[a["componentType"]]
-        start = v.get("byteOffset", 0) + a.get("byteOffset", 0); cnt = a["count"]
-        arr = np.frombuffer(BIN, dt, count=cnt * n, offset=start)
-        return arr.reshape(cnt, n) if n > 1 else arr
-    p = J["meshes"][0]["primitives"][0]
-    pos = acc(p["attributes"]["POSITION"]).astype(np.float64); idx = acc(p["indices"]).reshape(-1, 3)
-    targets = [acc(t["POSITION"]).astype(np.float64) for t in p.get("targets", [])]
-    anim = J.get("animations", [{}])[0]; times = acc(anim["samplers"][0]["input"]).tolist() if anim else []
-    return pos, idx, targets, times
+        arr = np.frombuffer(BIN, dt, count=a["count"] * n, offset=v.get("byteOffset", 0) + a.get("byteOffset", 0)).astype(np.float64 if dt == np.float32 else np.int64)
+        if a.get("normalized"): arr = arr / {5121: 255.0, 5123: 65535.0}[a["componentType"]]
+        return arr.reshape(a["count"], n) if n > 1 else arr
+    return J, acc
 
-def poses(pos, targets, n):
-    """n evenly spaced poses round the cycle, blending neighbouring morph targets (targets are deltas from the base)."""
-    k = len(targets); out = []
-    for i in range(n):
-        u = i / n * k; a = int(u) % k; b = (a + 1) % k; t = u - int(u)
-        out.append(pos + targets[a] * (1 - t) + targets[b] * t)
-    return out
+def quat_mat(q):
+    x, y, z, w = q
+    return np.array([[1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w)],
+                     [2 * (x * y + z * w), 1 - 2 * (x * x + z * z), 2 * (y * z - x * w)],
+                     [2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]])
 
+def trs(t, r, s):
+    M = np.eye(4); M[:3, :3] = quat_mat(r) * np.asarray(s)[None, :]; M[:3, 3] = t; return M
+
+def slerp(a, b, u):
+    a, b = np.asarray(a), np.asarray(b); d = float(np.dot(a, b))
+    if d < 0: b, d = -b, -d
+    if d > 0.9995: q = a + u * (b - a); return q / np.linalg.norm(q)
+    th = np.arccos(d); return (np.sin((1 - u) * th) * a + np.sin(u * th) * b) / np.sin(th)
+
+class Skinned:
+    """A skinned glTF model: node hierarchy, one skin, the mesh primitives (minus SKIP_MATERIALS), named clips."""
+    def __init__(self, path):
+        J, acc = read_glb(path); self.J = J
+        N = J["nodes"]; self.names = [n.get("name", str(i)) for i, n in enumerate(N)]
+        self.rest = [(np.array(n.get("translation", [0, 0, 0]), float), np.array(n.get("rotation", [0, 0, 0, 1]), float), np.array(n.get("scale", [1, 1, 1]), float)) for n in N]
+        self.parent = [-1] * len(N)
+        for i, n in enumerate(N):
+            for c in n.get("children", []): self.parent[c] = i
+        self.order = []                               # parents before children
+        def visit(i): self.order.append(i); [visit(c) for c in N[i].get("children", [])]
+        for r in J["scenes"][J.get("scene", 0)]["nodes"]: visit(r)
+        sk = J["skins"][0]; self.joints = sk["joints"]; self.ibm = acc(sk["inverseBindMatrices"]).reshape(-1, 4, 4).transpose(0, 2, 1)
+        mesh_node = next(i for i, n in enumerate(N) if "skin" in n and "mesh" in n)
+        P, JT, WT, IDX, MAT = [], [], [], [], []
+        for pr in J["meshes"][N[mesh_node]["mesh"]]["primitives"]:
+            mat = J["materials"][pr["material"]]["name"] if "material" in pr else ""
+            if mat in SKIP_MATERIALS: continue
+            p = acc(pr["attributes"]["POSITION"]); base = sum(len(x) for x in P)
+            P.append(p); JT.append(acc(pr["attributes"]["JOINTS_0"]).astype(int)); WT.append(acc(pr["attributes"]["WEIGHTS_0"]))
+            IDX.append(acc(pr["indices"]).reshape(-1, 3) + base); MAT += [mat] * len(p)
+        self.pos = np.vstack(P); self.jt = np.vstack(JT); self.wt = np.vstack(WT); self.idx = np.vstack(IDX); self.mat = np.array(MAT)
+        self.wt = self.wt / self.wt.sum(1, keepdims=True)
+        self.clips = {}
+        for an in J.get("animations", []):
+            ch = []
+            for c in an["channels"]:
+                s = an["samplers"][c["sampler"]]
+                ch.append((c["target"]["node"], c["target"]["path"], acc(s["input"]), acc(s["output"]), s.get("interpolation", "LINEAR")))
+            self.clips[an["name"]] = (ch, max(float(x[2].max()) for x in ch))
+
+    def pose(self, clip, t):
+        """World matrices of every node at time t of the clip."""
+        T = [list(r) for r in self.rest]; ch, dur = self.clips[clip]
+        for node, path, ti, out, interp in ch:
+            k = {"translation": 0, "rotation": 1, "scale": 2}.get(path)
+            if k is None: continue
+            if interp == "CUBICSPLINE": out = out.reshape(len(ti), 3, -1)[:, 1]
+            if t <= ti[0]: v = out[0]
+            elif t >= ti[-1]: v = out[-1]
+            else:
+                j = int(np.searchsorted(ti, t)) - 1; u = (t - ti[j]) / (ti[j + 1] - ti[j])
+                if interp == "STEP": v = out[j]
+                elif k == 1: v = slerp(out[j], out[j + 1], u)
+                else: v = out[j] * (1 - u) + out[j + 1] * u
+            T[node][k] = np.asarray(v, float)
+        Wd = [None] * len(T)
+        for i in self.order:
+            L = trs(*T[i]); Wd[i] = L if self.parent[i] < 0 else Wd[self.parent[i]] @ L
+        return Wd
+
+    def skin(self, clip, t):
+        Wd = self.pose(clip, t)
+        Jm = np.stack([Wd[j] @ self.ibm[k] for k, j in enumerate(self.joints)])          # (J, 4, 4)
+        ph = np.c_[self.pos, np.ones(len(self.pos))]
+        out = np.zeros((len(self.pos), 3))
+        for c in range(self.jt.shape[1]):
+            M = Jm[self.jt[:, c]]                                                            # (V, 4, 4)
+            out += self.wt[:, c:c + 1] * np.einsum("vij,vj->vi", M, ph)[:, :3]
+        return out
+
+# ---------- raster and trace (shared with scripts/katha/birds.py) ----------
 def raster(P, idx, W, bounds):
     (z0, z1), (y0, y1) = bounds; s = (W - 40) / (z1 - z0); Hh = int((y1 - y0) * s) + 40
     im = Image.new("L", (W, Hh), 0); d = ImageDraw.Draw(im)
@@ -63,120 +143,100 @@ def trace(mask, s, Hh, bounds, zmid):
         out.append(d + " Z")
     return " ".join(out)
 
-def anchors(P, zmid, kind):
-    z, y = P[:, 2] - zmid, P[:, 1]; A = {}
-    if kind == "horse":
-        head = z > z.max() - 60
-        i = np.argmax(np.where(head, z, -1e9)); A["mouth"] = [z[i], -y[i] + 6]
-        i = np.argmax(np.where(head, y, -1e9)); A["poll"] = [z[i], -y[i]]
-        body = (z > -60) & (z < 40); i = np.argmax(np.where(body, y, -1e9)); A["withers"] = [z[i], -y[i]]
-        chest = (z > z.max() - 120) & (y < 130); i = np.argmax(np.where(chest, z, -1e9)); A["chest"] = [z[i], -y[i]]
-    return {k: [round(float(v[0]), 1), round(float(v[1]), 1)] for k, v in A.items()}
+# ---------- the horse: units, anchor points ----------
+def horse_frame(m):
+    """Scale and origin from the rest pose of the Idle clip: withers at WITHERS units, x = 0 under the barrel."""
+    P = m.skin("Idle", 0.0)
+    dom = m.jt[np.arange(len(m.jt)), m.wt.argmax(1)]; jn = np.array([m.names[m.joints[k]] for k in dom])
+    body = np.isin(jn, ["Torso3", "Neck1"]); withers_y = P[body][:, 1].max()
+    ground = P[:, 1].min(); S = WITHERS / (withers_y - ground)
+    legs = np.char.find(jn.astype(str), "Leg") >= 0
+    front = P[legs & np.char.startswith(jn.astype(str), "Front")][:, 2].mean(); hind = P[legs & np.char.startswith(jn.astype(str), "Back")][:, 2].mean()
+    return S, (front + hind) / 2, ground, P, jn
 
+def anchor_vertices(P, jn, mat):
+    """Fixed vertex indices whose skinned positions are the anchors (chosen on the rest pose)."""
+    z, y = P[:, 2], P[:, 1]; A = {}
+    mz = np.where(mat == "Muzzle")[0]
+    lo = y[mz].min() + 0.35 * (y[mz].max() - y[mz].min())           # the corner of the mouth, where the bit sits
+    A["mouth"] = mz[np.argsort(np.abs(y[mz] - lo) + 0.3 * (z[mz].max() - z[mz]))[:3]]
+    head = np.where((jn == "Head") & (mat != "Hair"))[0]
+    A["poll"] = head[np.argsort(-(y[head] - 0.4 * np.abs(z[head] - z[head].min())))[:3]]
+    body = np.where(np.isin(jn, ["Torso3", "Neck1"]))[0]
+    A["withers"] = body[np.argsort(-y[body])[:3]]
+    top, g = y[body].max(), P[:, 1].min()                              # the breast: front of the body at 45 to 70% of withers height
+    tor = np.where(np.isin(jn, ["Torso3", "Torso2", "FrontShoulder.L", "FrontShoulder.R", "Neck1"]) & (y > g + 0.45 * (top - g)) & (y < g + 0.7 * (top - g)))[0]
+    A["chest"] = tor[np.argsort(-z[tor])[:3]]
+    return A
 
-def stand_cycle(path, n=24):
-    """A standing horse built from a gallop: each leg grafted from the keyframe where it hangs most nearly vertical,
-    straightened under its shoulder or hip, the body pitched level, the tail let down; then an idle cycle of n poses
-    (a slow nod of the head and neck, the tail swaying)."""
-    pos, idx, targets, times = load(path)
-    frames = [pos + t for t in targets]
-    allp = np.vstack(frames); 
-    # body frame: the one whose back is most level (withers vs croup height)
-    def level(P):
-        z = P[:,2]
-        fr = P[(z > -10) & (z < 40)][:,1].max(); bk = P[(z < -80) & (z > -150)][:,1].max(); return abs(fr - bk)
-    bodyk = int(np.argmin([level(P) for P in frames])); print("body frame", bodyk)
-    B = frames[bodyk].copy()
-    LEG_TOP = 105.0
-    # legs = connected pieces of the mesh below the belly (vertex identity is fixed across frames)
-    base_y = pos[:,1]; LOW = 72.0
-    low = base_y < LOW
-    parent = list(range(len(pos)))
-    # weld: vertices at the same base position are one vertex (the export splits them at UV seams)
-    key = {}
-    for v in range(len(pos)):
-        k = tuple(np.round(pos[v], 2)); key.setdefault(k, []).append(v)
-    def find(i):
-        while parent[i] != i: parent[i] = parent[parent[i]]; i = parent[i]
-        return i
-    for group in key.values():
-        for v in group[1:]: parent[find(v)] = find(group[0])
-    for tri in idx:
-        for a_, b_ in ((tri[0], tri[1]), (tri[1], tri[2]), (tri[0], tri[2])):
-            if low[a_] and low[b_]: parent[find(a_)] = find(b_)
-    comps = {}
-    for v in np.where(low)[0]: comps.setdefault(find(v), []).append(v)
-    comps = sorted(comps.values(), key=len, reverse=True)
-    print("components below the belly:", [ (len(c), round(pos[c][:,2].mean()), round(pos[c][:,0].mean())) for c in comps[:8]])
-    legs = [np.array(c) for c in comps if len(c) > 20][:4]
-    print("legs:", [(len(c), round(pos[c][:,2].mean()), round(pos[c][:,0].mean())) for c in legs])
-    out = B.copy()
-    for L in legs:
-        best, bk = 1e9, 0
-        for k, P in enumerate(frames):
-            Q = P[L]; hoof = Q[np.argmin(Q[:,1])]; topz = Q[Q[:,1] > np.percentile(Q[:,1], 85)][:,2].mean()
-            score = abs(hoof[2] - topz)
-            if score < best: best, bk = score, k
-        P = frames[bk]
-        # the leg's own top band, to align it with the body frame
-        top = L[base_y[L] > LOW - 18]
-        shift = (B[top] - P[top]).mean(0)
-        w = np.clip((LOW - base_y[L]) / 18, 0, 1)[:, None]
-        G = P[L] + shift
-        # straighten: rotate the grafted leg about its top so the hoof sits under it (z-y plane), fully at the hoof
-        T = G[w[:, 0] < 0.2].mean(0) if (w[:, 0] < 0.2).any() else G[np.argmax(G[:,1])]
-        Hh = G[np.argmin(G[:,1])]; ang = np.arctan2(Hh[2] - T[2], T[1] - Hh[1])
-        rel = G - T; u = w[:, 0] ** 0.7; a = -ang * u
-        G2 = G.copy(); G2[:,2] = T[2] + rel[:,2] * np.cos(a) + rel[:,1] * np.sin(a); G2[:,1] = T[1] - rel[:,2] * np.sin(a) + rel[:,1] * np.cos(a)
-        out[L] = w * G2 + (1 - w) * B[L]
-        print("leg z", round(pos[L][:,2].mean()), "x", round(pos[L][:,0].mean()), "frame", bk, "score", round(best, 1))
-    # level the body: pitch the whole horse so the front and hind hooves stand on one ground line
-    front = [L for L in legs if pos[L][:,2].mean() > 0]; hind = [L for L in legs if pos[L][:,2].mean() <= 0]
-    fy = np.mean([out[L][:,1].min() for L in front]); fz = np.mean([out[L][np.argmin(out[L][:,1]), 2] for L in front])
-    hy = np.mean([out[L][:,1].min() for L in hind]); hz = np.mean([out[L][np.argmin(out[L][:,1]), 2] for L in hind])
-    pitch = np.arctan2(fy - hy, fz - hz); c0 = out.mean(0); rel = out - c0
-    out[:,2] = c0[2] + rel[:,2] * np.cos(-pitch) - rel[:,1] * np.sin(-pitch); out[:,1] = c0[1] + rel[:,2] * np.sin(-pitch) + rel[:,1] * np.cos(-pitch)
-    print("pitch", round(np.degrees(pitch), 1))
-    STAND = out.copy()
-    def rot_zy(P, mask, piv, ang):          # rotate masked vertices about piv in the z-y plane (y up); ang may be per-vertex
-        rel = P[mask] - piv; c, s_ = np.cos(ang), np.sin(ang)
-        P[mask, 2] = piv[2] + rel[:,2] * c - rel[:,1] * s_; P[mask, 1] = piv[1] + rel[:,2] * s_ + rel[:,1] * c
-    tail = (STAND[:,2] < STAND[:,2].min() + 75) & (STAND[:,1] > 115)
-    head = (pos[:,2] > 40) & (pos[:,1] > 120)
-    def idle(ph):
-        P = STAND.copy()
-        dock = P[tail][np.argmax(P[tail][:,2])].copy(); dist = np.clip((dock[2] - P[tail][:,2]) / 70, 0, 1)
-        rot_zy(P, tail, dock, np.radians(62 + 6 * np.sin(ph + 1.0)) * dist)
-        withers = P[(pos[:,2] > -10) & (pos[:,2] < 40)][np.argmax(P[(pos[:,2] > -10) & (pos[:,2] < 40)][:,1])].copy()
-        dz = np.clip((P[head][:,2] - withers[2]) / 90, 0, 1)
-        rot_zy(P, head, withers, np.radians(2.5 * np.sin(ph) + 1.5 * np.sin(2 * ph + 0.7)) * dz)
-        P[:,1] -= P[:,1].min()
-        return P
-    idles = [idle(2 * np.pi * k / n) for k in range(n)]
-    allp = np.vstack([pos + t for t in targets]); bounds = ((allp[:, 2].min(), allp[:, 2].max()), (min(0, allp[:, 1].min()), allp[:, 1].max()))
-    return idles, idx, bounds, (bounds[0][0] + bounds[0][1]) / 2
+def trace_clip(src, clip, n, W=1400, play=None):
+    m = Skinned(src); S, zmid, ground, _, jn = horse_frame(m); Prest = m.skin("Idle", 0.0)
+    AV = anchor_vertices(Prest, jn, m.mat)
+    ch, dur = m.clips[clip]
+    frames = []
+    for i in range(n):
+        P = m.skin(clip, dur * i / n); Q = P.copy(); Q[:, 1] = (P[:, 1] - ground) * S; Q[:, 2] = (P[:, 2] - zmid) * S; frames.append(Q)
+    allp = np.vstack(frames)
+    bounds = ((allp[:, 2].min() - 2, allp[:, 2].max() + 2), (min(0, allp[:, 1].min()) - 2, allp[:, 1].max() + 2))
+    res = {"source": "horse.glb, Quaternius Ultimate Animated Animal Pack (via stepanMiller/wild-mustang), clip " + clip,
+           "credit": "Horse model by Quaternius, CC0 1.0 (public domain dedication); traced with scripts/katha/trace_glb.py",
+           "units": "+x forward (towards the head), y down, ground at y = 0; standing withers about 151 units high",
+           "cycle_sec": round(play or dur, 4), "clip_sec": round(dur, 4), "frames": [], "anchors": []}
+    for Q in frames:
+        mk, s, Hh = raster(Q, m.idx, W, bounds); res["frames"].append(trace(mk, s, Hh, bounds, 0.0))
+        res["anchors"].append({k: [round(float(Q[v, 2].mean()), 1), round(float(-Q[v, 1].mean()) + (6 if k == "mouth" else 0), 1)] for k, v in AV.items()})
+    return res, frames
+
+def sheet(res, out, cols=6, cell=330):
+    """Contact sheet of the traced paths (rendered by sampling the Bezier curves), with the anchors marked."""
+    import re
+    n = len(res["frames"]); rows = (n + cols - 1) // cols
+    from PIL import ImageChops
+    im = Image.new("RGB", (cols * cell, rows * cell), (236, 228, 214)); d = ImageDraw.Draw(im)
+    ink = Image.new("1", im.size, 0)
+    sc = cell / 400
+    for i, pth in enumerate(res["frames"]):
+        ox, oy = (i % cols) * cell + cell * 0.5, (i // cols) * cell + cell * 0.82
+        for sub in pth.split(" Z"):
+            tok = re.findall(r"[MLC]|-?\d+\.?\d*", sub)
+            if not tok: continue
+            pts, k, cur = [], 0, None
+            while k < len(tok):
+                c = tok[k]; k += 1
+                if c in "ML": cur = (float(tok[k]), float(tok[k + 1])); k += 2; pts.append(cur)
+                elif c == "C":
+                    p1, p2, p3 = [(float(tok[k + 2 * j]), float(tok[k + 2 * j + 1])) for j in range(3)]; k += 6
+                    for u in np.linspace(0.1, 1, 8):
+                        a = (1 - u) ** 3; b = 3 * (1 - u) ** 2 * u; cc = 3 * (1 - u) * u * u; e = u ** 3
+                        pts.append((a * cur[0] + b * p1[0] + cc * p2[0] + e * p3[0], a * cur[1] + b * p1[1] + cc * p2[1] + e * p3[1]))
+                    cur = p3
+            if len(pts) > 2:
+                one = Image.new("1", im.size, 0); ImageDraw.Draw(one).polygon([(ox + x * sc, oy + y * sc) for x, y in pts], fill=1)
+                ink = ImageChops.logical_xor(ink, one)
+        im.paste((29, 18, 40), mask=ink); ink = Image.new("1", im.size, 0); d = ImageDraw.Draw(im)
+        if res["anchors"]:
+            for k, (x, y) in res["anchors"][i].items():
+                col = {"mouth": (230, 60, 40), "poll": (40, 160, 230), "withers": (60, 200, 90), "chest": (240, 190, 40)}[k]
+                d.ellipse([ox + x * sc - 4, oy + y * sc - 4, ox + x * sc + 4, oy + y * sc + 4], fill=col)
+        d.line([(ox - 170, oy), (ox + 170, oy)], fill=(160, 150, 140)); d.text((ox - cell * 0.48, oy - cell * 0.78), str(i), fill=(90, 80, 70))
+    im.save(out)
+
+def fetch(dst=pathlib.Path("sources/models/quaternius")):
+    dst.mkdir(parents=True, exist_ok=True); glb = dst / "horse.glb"
+    urllib.request.urlretrieve(HORSE["url"], glb)
+    h = hashlib.sha256(glb.read_bytes()).hexdigest()
+    if h != HORSE["sha256"]: sys.exit(f"sha256 mismatch for {glb}: {h} (expected {HORSE['sha256']}); check the licence again before using it")
+    for name, url in HORSE["licences"].items(): urllib.request.urlretrieve(url, dst / name)
+    print("fetched", glb, "sha256 ok, with", ", ".join(HORSE["licences"]))
 
 if __name__ == "__main__":
     a = sys.argv[1:]
-    if "--fetch" in a:
-        dst = pathlib.Path("sources/models"); dst.mkdir(parents=True, exist_ok=True)
-        for m in ["Horse", "Flamingo", "Stork", "Parrot"]: urllib.request.urlretrieve(RAW + m + ".glb", dst / f"{m}.glb"); print("fetched", m)
-        sys.exit()
-    if "--stand" in a:
-        idles, idx, bounds, zmid = stand_cycle(a[0])
-        res = {"source": pathlib.Path(a[0]).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), CC BY-NC-SA 3.0 (non-commercial); via the three.js repository. Standing pose assembled from the gallop keyframes.",
-               "units": "model units; +x forward, y down, ground at y = 0", "cycle_sec": 4.0, "frames": [], "anchors": []}
-        for P in idles:
-            m, s, Hh = raster(P, idx, 1400, bounds); res["frames"].append(trace(m, s, Hh, bounds, zmid)); res["anchors"].append(anchors(P, zmid, "horse"))
-        json.dump(res, open(a[1], "w"), separators=(",", ":")); print(a[1], len(res["frames"]), "frames"); sys.exit()
-    src, out = a[0], a[1]; n = int(a[a.index("--frames") + 1]) if "--frames" in a else 60; kind = a[a.index("--anchors") + 1] if "--anchors" in a else ""
-    W = int(a[a.index("--width") + 1]) if "--width" in a else 1400
-    pos, idx, targets, times = load(src); frames = poses(pos, targets, n)
-    allp = np.vstack(frames); bounds = ((allp[:, 2].min(), allp[:, 2].max()), (min(0, allp[:, 1].min()), allp[:, 1].max())); zmid = (bounds[0][0] + bounds[0][1]) / 2
-    res = {"source": pathlib.Path(src).name, "credit": "Model by Mirada, from 3 Dreams of Black (ro.me, Google Data Arts), CC BY-NC-SA 3.0 (non-commercial); via the three.js repository",
-           "units": "model units; +x forward (towards the head), y down, ground at y = 0", "cycle_sec": float(times[-1]) if times else 1.5,
-           "frames": [], "anchors": []}
-    for P in frames:
-        m, s, Hh = raster(P, idx, W, bounds); res["frames"].append(trace(m, s, Hh, bounds, zmid))
-        if kind: res["anchors"].append(anchors(P, zmid, kind))
-    json.dump(res, open(out, "w"), separators=(",", ":")); print(out, len(res["frames"]), "frames", pathlib.Path(out).stat().st_size // 1024, "KB")
+    if "--fetch" in a: fetch(); sys.exit()
+    src, out = a[0], a[1]
+    clip = a[a.index("--clip") + 1] if "--clip" in a else "Gallop"
+    n = int(a[a.index("--frames") + 1]) if "--frames" in a else 36
+    play = float(a[a.index("--play-sec") + 1]) if "--play-sec" in a else None
+    res, _ = trace_clip(src, clip, n, play=play)
+    json.dump(res, open(out, "w"), separators=(",", ":"))
+    print(out, len(res["frames"]), "frames", round(res["cycle_sec"], 3), "s", pathlib.Path(out).stat().st_size // 1024, "KB")
+    if "--sheet" in a: sheet(res, a[a.index("--sheet") + 1]); print("sheet", a[a.index("--sheet") + 1])

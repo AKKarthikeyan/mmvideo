@@ -74,6 +74,7 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
             <Fade first={i === 0}><S s={bt.scene} n={n}/><Caption b={bt} n={n}/></Fade>
             {bt.audio ? <Sequence from={XF}><Audio src={staticFile(bt.audio)}/></Sequence> : null}
             {bt.scene?.type === "title" && D.bell !== "" ? <Audio src={staticFile(D.bell || "dharma/bell.wav")} volume={0.45}/> : null}
+            {cue(bt.music, i) ? <Audio src={staticFile(cue(bt.music, i) as string)} volume={CUE_VOL[String(bt.music).split(/[ ,]/)[0]] ?? 0.4}/> : null}
           </Sequence>
         );
       })}
@@ -82,6 +83,16 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
       {D.music !== "" ? <Audio src={staticFile(D.music || "dharma/tanpura.wav")} loop volume={(fr) => interpolate(fr, [0, 60, total - 90, total], [0, 0.3, 0.3, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"})}/> : null}
     </AbsoluteFill>
   );
+};
+// Sound cues by the beat's music field (scripts/katha/sounds.py writes them): conch, flute (four phrases in turn), swell, bell.
+const CUE_VOL: Record<string, number> = {conch: 0.55, flute: 0.32, swell: 0.4, bell: 0.45};
+const cue = (m: string | undefined, i: number): string | null => {
+  const k = String(m || "").toLowerCase();
+  if (k.includes("conch")) return "katha/sfx/conch.wav";
+  if (k.includes("flute")) return `katha/sfx/flute${(i % 4) + 1}.wav`;
+  if (k.includes("swell")) return "katha/sfx/swell.wav";
+  if (k.includes("bell")) return "dharma/bell.wav";
+  return null;
 };
 const Fade: React.FC<{first: boolean; children: React.ReactNode}> = ({first, children}) => {
   const f = useCurrentFrame();

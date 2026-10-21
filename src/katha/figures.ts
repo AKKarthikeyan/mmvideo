@@ -43,8 +43,6 @@ export const krishnaTeach = (w = 0, t = 0): string[] => {
   P.push(smooth([[-6, -212], [6, -212], [12, -150], [18, -80], [20, -18], [8, -12, "c"], [0, -80], [-6, -150]]));
   P.push(smooth([[-40, -10], [-18, -10], [-16, 0, "c"], [-54, 0, "c"], [-50, -4]]));
   P.push(smooth([[32, -10], [52, -10], [54, 0, "c"], [18, 0, "c"], [22, -4]]));
-  // the sash at the waist, its ends lifting behind
-  P.push(streamer(26, -220, 70, 12, 4, t * 0.11, 8 + w * 4, 1, 8));
   // the garland (vanamala) from the neck to below the knee, standing just off the front of the body
   P.push(...pearls(sampleCubics([[-20, -330], [-46, -290], [-48, -200], [-40, -120]], 22), 5.2));
   P.push(...pearls(sampleCubics([[-40, -120], [-30, -150], [-10, -230], [8, -330]], 14).slice(1), 4.6));
@@ -59,7 +57,14 @@ export const krishnaTeach = (w = 0, t = 0): string[] => {
   P.push(ribbon(sampleCubics([[38, -232], [32, -212], [24, -200], [14, -192]], 6), 17, 12, 1));
   P.push(smooth([[18, -200], [8, -190], [6, -182], [14, -180], [22, -188]]));
   // the uttariya over the shoulders, both ends streaming back in the wind
-  P.push(streamer(34, -324, 128, 20, 4, t * 0.09, 16 + w * 8, 1, 12));
+  // the uttariya draped over the forearm: from the elbow it falls to the knee, its end lifting a little in the wind
+  {
+    const ph = t * 0.09, pts: number[][] = [];
+    for (let i = 0; i <= 12; i++) { const u = i / 12; pts.push([40 + 10 * u + (8 + 10 * w) * u * u + Math.sin(ph + u * 4) * 5 * u, -236 + 130 * u]); }
+    const L: number[][] = [], R: number[][] = [];
+    for (let i = 0; i < pts.length; i++) { const u = i / (pts.length - 1), a2 = pts[Math.max(0, i - 1)], b2 = pts[Math.min(pts.length - 1, i + 1)], tx = b2[0] - a2[0], ty = b2[1] - a2[1], l = Math.hypot(tx, ty) || 1, wd = (10 + 8 * Math.sin(u * Math.PI)) / 2; L.push([pts[i][0] - (ty / l) * wd, pts[i][1] + (tx / l) * wd]); R.push([pts[i][0] + (ty / l) * wd, pts[i][1] - (tx / l) * wd]); }
+    P.push(smooth([...L, ...R.reverse()].map((q) => [q[0], q[1]] as Pt)));
+  }
   // the crown and the feather
   P.push(...mukuta(-2, -396, 1));
   P.push(...feather(14, -440, 110, 0.55, w));

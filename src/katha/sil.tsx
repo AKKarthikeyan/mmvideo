@@ -7,10 +7,11 @@ import horseJ from "./sil/horse.json";
 import flamingoJ from "./sil/flamingo.json";
 import storkJ from "./sil/stork.json";
 import parrotJ from "./sil/parrot.json";
+import standJ from "./sil/horse_stand.json";
 import {krishnaTeach, krishnaDrive, arjuna, ratha, wheel, gandiva} from "./figures";
 
 type Cycle = {frames: string[]; anchors?: Record<string, [number, number]>[]; cycle_sec: number};
-export const CYCLES: Record<string, Cycle> = {horse: horseJ as any, flamingo: flamingoJ as any, stork: storkJ as any, parrot: parrotJ as any};
+export const CYCLES: Record<string, Cycle> = {horse: horseJ as any, stand: standJ as any, flamingo: flamingoJ as any, stork: storkJ as any, parrot: parrotJ as any};
 export const frameOf = (c: Cycle, f: number, speed = 1, phase = 0) => {
   const n = c.frames.length, i = Math.floor(((f / 30) * speed / c.cycle_sec + phase) * n);
   return ((i % n) + n) % n;
@@ -34,11 +35,13 @@ export const Rimmed: React.FC<{paths: Item[]; transform?: string; fill?: string;
   );
 };
 // A galloping horse (facing right) as a path item; x, y = the ground point under the barrel; scale 1 = ~210 px tall.
-export const horseItem = (x: number, y: number, scale: number, f: number, speed = 1, phase = 0, fill?: string): Item =>
-  ({d: CYCLES.horse.frames[frameOf(CYCLES.horse, f, speed, phase)], t: `translate(${x} ${y}) scale(${scale})`, fill});
+export const horseItem = (x: number, y: number, scale: number, f: number, speed = 1, phase = 0, fill?: string, stand = false): Item => {
+  const c = stand ? CYCLES.stand : CYCLES.horse;
+  return {d: c.frames[frameOf(c, f, speed, phase)], t: `translate(${x} ${y}) scale(${scale})`, fill};
+};
 export const Horse: React.FC<{x: number; y: number; scale: number; f: number; speed?: number; phase?: number; light: [number, number]; fill?: string}> =
   ({x, y, scale, f, speed = 1, phase = 0, light, fill = K.silHorse}) => <Rimmed paths={[horseItem(x, y, scale, f, speed, phase)]} fill={fill} light={light} w={4}/>;
-export const horseAnchor = (f: number, speed = 1, phase = 0, key = "mouth") => { const c = CYCLES.horse, i = frameOf(c, f, speed, phase); return c.anchors ? c.anchors[i][key] : [0, 0]; };
+export const horseAnchor = (f: number, speed = 1, phase = 0, key = "mouth", stand = false) => { const c = stand ? CYCLES.stand : CYCLES.horse, i = frameOf(c, f, speed, phase); return c.anchors ? c.anchors[i][key] : [0, 0]; };
 // A bird in flight (facing right unless flip).
 export const Bird: React.FC<{kind?: "flamingo" | "stork" | "parrot"; x: number; y: number; scale: number; f: number; speed?: number; phase?: number; light?: [number, number]; fill?: string; flip?: boolean}> =
   ({kind = "stork", x, y, scale, f, speed = 1, phase = 0, light, fill = K.sil, flip = false}) => {

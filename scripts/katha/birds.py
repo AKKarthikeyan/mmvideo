@@ -2,13 +2,17 @@
 """Flying birds for the Katha kit, drawn in code for this channel.
 
 A white stork, a greater flamingo and a rose-ringed parakeet are each built here from simple 3D geometry written by
-hand: a lofted body, neck, head and bill, trailing legs, a tail, and two wings hinged at the shoulder with an elbow and
-a wrist, the stork's wing ending in splayed finger-like primaries. One wingbeat is animated (a slower, deliberate
-downstroke that reaches a little forward; a quicker upstroke in which the arm rises first and the hand trails back and
-down from a flexed wrist; the body rising a little on the downstroke), every frame is projected orthographically through
-one fixed camera (from the ground, a little below and behind the bird), rasterised at high resolution with
-anti-aliasing, and traced to an SVG path with potrace. The birds owe nothing to any outside model, image or tracing:
-no file is read and nothing is downloaded, and there is no randomness, so a run always gives the same output.
+hand: a lofted body, neck, head and bill, trailing legs, a tail, and two wings. Each wing is a planform (leading edge,
+chord, thickness along the span) skinned to three bones hinged at the shoulder, elbow and wrist, with the outer
+primaries as separate feathers: the stork's five splayed fingers, or a few graduated tips on the pointed wings of the
+flamingo and the parakeet. One wingbeat is animated from keyframes on a stroke clock: a slower downstroke in which the
+wing sweeps down and, in its second half, reaches forward, the fingers spreading under the load; then a quicker
+upstroke in which the wing rises nearly straight, swept back and feathered, and only once it is high flexes at the
+wrist so the hand trails back and down from it, before it opens out again at the top. The body rises a little on the
+downstroke; neck and legs stay still. Every frame is projected orthographically through one fixed camera (from the
+ground, 16 degrees below the bird and 8 degrees ahead of it), rasterised at high resolution with anti-aliasing, and
+traced to an SVG path with potrace. The birds owe nothing to any outside model, image or tracing: no file is read and
+nothing is downloaded, and there is no randomness, so a run always gives the same output.
 
   python3 scripts/katha/birds.py [stork|flamingo|parrot|all] [--sheet DIR]
 
@@ -36,18 +40,6 @@ def Rz(a):
     c, s = math.cos(a), math.sin(a); return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
 def unit(v):
     v = np.asarray(v, float); return v / np.linalg.norm(v)
-
-def turn(axis, a):
-    """Rotation by angle a about an axis (Rodrigues)."""
-    x, y, z = unit(axis); K = np.array([[0, -z, y], [z, 0, -x], [-y, x, 0]])
-    return np.eye(3) + math.sin(a) * K + (1 - math.cos(a)) * K @ K
-
-def between(Ra, Rb, k):
-    """k rotations evenly between Ra and Rb (exclusive): the frames that fill a bent joint without a gap."""
-    Q = Ra.T @ Rb; a = math.acos(max(-1.0, min(1.0, (np.trace(Q) - 1) / 2)))
-    if a < 1e-5: return [Ra] * k
-    ax = np.array([Q[2, 1] - Q[1, 2], Q[0, 2] - Q[2, 0], Q[1, 0] - Q[0, 1]])
-    return [Ra @ turn(ax, a * j / (k + 1)) for j in range(1, k + 1)]
 
 def curve(pts, n=8):
     """A smooth (Catmull-Rom) curve through the points, n samples per span; returns the samples and their parameter
@@ -115,15 +107,52 @@ def keys(u, K):
     h00, h10, h01, h11 = 2 * s ** 3 - 3 * s ** 2 + 1, s ** 3 - 2 * s ** 2 + s, -2 * s ** 3 + 3 * s ** 2, s ** 3 - s ** 2
     return {k: h00 * V[i][k] + h10 * h * tan(i, k) + h01 * V[i + 1][k] + h11 * h * tan(i + 1, k) for k in V[i]}
 
+def monotone(q, x):
+    """A smooth monotone curve through the values q at evenly spaced x in 0..1, flat at both ends (Fritsch-Carlson)."""
+    n = len(q) - 1; h = 1.0 / n; d = [(q[i + 1] - q[i]) / h for i in range(n)]
+    t = [0.0] + [0.0 if d[i - 1] * d[i] <= 0 else 2 / (1 / d[i - 1] + 1 / d[i]) for i in range(1, n)] + [0.0]
+    j = min(int(x / h), n - 1); s = x / h - j
+    return ((2 * s ** 3 - 3 * s * s + 1) * q[j] + (s ** 3 - 2 * s * s + s) * h * t[j] + (-2 * s ** 3 + 3 * s * s) * q[j + 1]
+            + (s ** 3 - s * s) * h * t[j + 1])
+
+def bump(v, a, b):
+    """0 at v <= 0, rising smoothly to 1 by v = a, held, then falling smoothly back to 0 between b and 1."""
+    if v <= 0 or v >= 1: return 0.0
+    return smooth01(v / a) * (1 - smooth01((v - b) / (1 - b)))
+
 def beat(ph, m):
-    """The pose at phase ph (0 = wings at the top, about to sweep down) from the bird's keyframes m["keys"]:
-    e  shoulder elevation (deg)          sw  shoulder sweep (deg, + back, - reaching forward)
-    el elbow bend (deg, + forearm up)    f   wrist flexion 0..1 (hand swept back, feathers slid together)
-    hd wrist bend (deg, + hand up)       ld  air load on the outer primaries 0..1 (they curl up under it)
-    tw twist about the arm (deg, - leading edge up: the wing feathers on the upstroke)
-    sp splay of the outer primaries 0..1 (spread under load, gathered into a clean tip on the recovery)
+    """The pose at phase ph (0 = wings at the top, about to sweep down). Every channel is a smooth periodic function
+    of the stroke clock u (0 top, 1/2 bottom, 1 top again), so the wing never stops or jumps:
+    e  shoulder elevation (deg): a cosine in u, from m["e"][0] at the top to m["e"][1] at the bottom
+    sw shoulder sweep (deg, + back): swept back at the top and on the upstroke, reaching forward late in the downstroke
+    f  wrist flexion 0..1: none on the downstroke; on the upstroke the wrist leads and the hand trails, the flexion
+       building over the first part of the rise, held while the arm passes the horizontal, opening out over the last
+       third, so the hand unfolds smoothly into the next downstroke
+    el elbow bend (deg, + forearm up) and hd wrist bend (deg, + hand up): with the flexion, the arm bows up and the hand
+       droops behind the wrist
+    tw twist about the arm (deg, + leading edge down on the downstroke, - leading edge up on the upstroke)
+    ld air load on the outer primaries 0..1 (they curl up under it); sp splay of the outer primaries 0..1
     The body rises a little on the downstroke and settles on the upstroke."""
-    u = warp(ph, m["down"]) % 1.0; p = keys(u, m["keys"])
+    u = warp(ph, m["down"]) % 1.0; c = math.cos(TAU * u)
+    v = (u - 0.5) * 2 if u > 0.5 else 0.0                          # upstroke progress 0..1
+    d = math.sin(TAU * u) ** 2 if u < 0.5 else 0.0                 # downstroke load, peaking mid-stroke
+    e0, e1 = m["e"]; F = m["flex"]; a, b, bh = m["flex_ab"]; u0 = m.get("flex_u0", 0.5)
+    w = (u - u0) / (1 - u0) if u > u0 else 0.0                     # the flexion starts just before the bottom
+    f = F * bump(w, a, b); fh = F * bump(w, a, bh)
+    if m.get("open") and bh < w < 1:                               # the hand opens along a tuned curve
+        fh = F * smooth01(w / a) * (1 - monotone(m["open"], (w - bh) / (1 - bh)))
+    k = m.get("up_lead", 0.0)                                      # the arm rises early in the upstroke, the hand late
+    ue = 0.5 + 0.5 * (v + k / TAU * (1 - math.cos(TAU * v))) if u > 0.5 else u
+    p = dict(e=(e0 + e1) / 2 + (e0 - e1) / 2 * math.cos(TAU * ue),
+             sw=m["sw"][0] - m["sw"][1] * math.cos(TAU * (u - m["sw"][2])),
+             f=f, fh=fh, el=m["el"] * f / F, hd=m["hd"][0] * d + m["hd"][1] * fh / F,
+             tw=m["tw"][0] * math.sin(TAU * u) + m["tw"][1] * f / F,
+             ld=d, u=u, v=v)
+    s0, s1, g = m["sp"]                       # splay at the top and at the bottom, how far the flexion gathers them
+    if u < 0.5:                               # spread through the first half of the downstroke, gathered by its end
+        x = u * 2; spread = smooth01(x / 0.3) * (1 - smooth01((x - 0.4) / 0.35))
+        base = s0 + (s1 - s0) * smooth01((x - 0.4) / 0.35); p["sp"] = base + (1 - base) * spread
+    else: p["sp"] = (s1 + (s0 - s1) * smooth01(v)) * (1 - g * f / F)
     p["lift"] = -m["bob"] * math.cos(TAU * (u - 0.06)); return p
 
 
@@ -132,8 +161,33 @@ def smooth01(x):
     x = min(1.0, max(0.0, x)); return x * x * (3 - 2 * x)
 
 def wing(sh, W, P):
-    """Both wings. W: the bird's wing spec, built as the left (far) wing, outward = +y, and mirrored for the near one.
-    The wing is a planform (leading edge ahead of the bones, chord behind them, per station along the span) skinned
+    """Both wings, in the same pose, except for an animator's cheat on the far wing: W["far"] may override parts of
+    the spec for it (a smaller forward fold of the elbow, so that while the wing is flexed its wrist stays tucked behind
+    the near wing instead of poking out over the neck), and W["far_hand"] shortens its hand and primaries in
+    proportion to the flexion. Extended (the whole downstroke) the two wings match."""
+    Wf = dict(W, **W.get("far", {})); Pf = dict(P)
+    Pf["hd"] = P["hd"] + W.get("far_hd", 0.0) * P.get("fh", P["f"])       # its hand tucked up behind the body
+    Pf["e"] = P["e"] + W.get("far_e", 0.0) * P["f"]                          # and the arm a little higher
+    Pf["e"] += W.get("far_top", 0.0) * max(0.0, math.cos(TAU * P.get("u", 0.0))) ** 2   # near the top of the stroke
+    Pf["sp"] = P.get("sp", 1.0) * W.get("far_sp", 1.0)                       # its primaries seen end on: fewer slots
+    tuck = max(P["f"], math.sin(math.pi * P.get("v", 0.0)) ** 2)            # the whole upstroke, most at mid-stroke
+    for Q in wing_parts(shorter_hand(Wf, 1 - W.get("far_hand", 0.0) * tuck), Pf): sh.add(Q, "far")
+    for Q in wing_parts(W, P): sh.add(Q * [1, -1, 1.0], "near")
+
+
+def shorter_hand(W, k):
+    """The wing spec with everything beyond the wrist (hand, its planform rows, the primaries) scaled by k."""
+    Lh, Lf, Lm = W["len"]; w0 = Lh + Lf; out = dict(W, len=(Lh, Lf, Lm * k))
+    out["plan"] = [(y if y <= w0 else w0 + (y - w0) * k, *rest) for y, *rest in W["plan"]]
+    if W.get("feathers"):
+        F = dict(W["feathers"]); F["root_y"] = [w0 + (y - w0) * k for y in F["root_y"]]
+        F["length"] = [L * k for L in F["length"]]; out["feathers"] = F
+    return out
+
+
+def wing_parts(W, P):
+    """One wing as a list of convex solids. W: the bird's wing spec, built as the left (far) wing, outward = +y; the near
+    wing is its mirror image. The wing is a planform (leading edge ahead of the bones, chord behind them, per station along the span) skinned
     to three bones hinged at the shoulder, elbow and wrist: each station follows a smooth blend of the bones it lies
     between, so when the wrist flexes the trailing edge folds with the hand and the outline stays smooth. Each panel
     between two stations is a thin convex slab, deeper at the leading edge. The outer primaries are separate feathers
@@ -141,7 +195,7 @@ def wing(sh, W, P):
     f = P["f"]; S = np.array(W["shoulder"], float); Lh, Lf, Lm = W["len"]; sw, fs = W["sweep"], W["fold_sweep"]
     R0 = Rx(rad(P["e"])) @ Rz(rad(sw[0] + fs[0] * f + P["sw"])) @ Ry(rad(P.get("tw", 0)))
     R1 = R0 @ Rz(rad(sw[1] + fs[1] * f)) @ Rx(rad(P["el"]))
-    R2 = R1 @ Rz(rad(sw[2] + fs[2] * f)) @ Rx(rad(P["hd"]))
+    R2 = R1 @ Rz(rad(sw[2] + fs[2] * P.get("fh", f))) @ Rx(rad(P["hd"]))
     E0, W0 = S + [0, Lh, 0], S + [0, Lh + Lf, 0]
     E = S + R0 @ [0, Lh, 0]; Wr = E + R1 @ [0, Lf, 0]
     bones = ((R0, S, S), (R1, E0, E), (R2, W0, Wr))
@@ -170,17 +224,24 @@ def wing(sh, W, P):
                                le1 + n1 * h1, le1 - n1 * h1, te1 + n1 * h1 * 0.35, te1 - n1 * h1 * 0.35]))
     # the outer primaries: the stork's splayed fingers, or a few graduated tips on a pointed wing. Each fans from the
     # end of the hand, closes up as the wrist flexes, and curls up a little under the load of the downstroke.
-    Fd = W.get("feathers")
+    Fd = W.get("feathers"); gathered = []; cl = max(f, 1 - P.get("sp", 1.0))
     if Fd:
-        k = len(Fd["angle"]); c = max(f, 1 - P.get("sp", 1.0)); fan = 1 - Fd.get("close", 0.6) * c
+        k = len(Fd["angle"]); c = cl; fan = 1 - Fd.get("close", 0.6) * c
         mean = float(np.mean(Fd["angle"])); slide = 1 - Fd.get("slide", 0.8) * c; yend = max(Fd["root_y"])
+        conv = Fd.get("converge", 0.0) * c                      # gathered, the tips close onto one point
+        ga = rad(Fd.get("gather", mean)); r0 = np.array([Fd["root_x"][0], Fd["root_y"][0]])
+        tip = r0 + Fd["length"][0] * np.array([-math.sin(ga), math.cos(ga)])
         for j in range(k):
             # gathered (folded, or not under load), the feathers slide over one another into a single pointed tip
-            a_ = rad(mean + (Fd["angle"][j] - mean) * fan + Fd.get("fold_angle", 0) * f)
+            a_ = rad(Fd["angle"][j] + (Fd.get("gather", mean) - Fd["angle"][j]) * (1 - fan) + Fd.get("fold_angle", 0) * f)
             ry = Fd["root_y"][j] + (yend - Fd["root_y"][j]) * (1 - slide) * 0.6
+            L, wd = Fd["length"][j] * (1 - Fd.get("shorten", 0.0) * f), Fd["width"][j]
+            if conv > 0:
+                dv = tip - [Fd["root_x"][j], Fd["root_y"][j]]
+                a_ = (1 - conv) * a_ + conv * (math.atan2(-dv[0], dv[1]) + rad(Fd.get("fold_angle", 0) * f))
+                L = (1 - conv) * L + conv * (float(np.hypot(*dv)) - 1.2 * j)
             root = Wr + R2 @ [Fd["root_x"][j] * slide, ry - Lh - Lf, 0]
             Rf = R2 @ Rz(a_)
-            L, wd = Fd["length"][j] * (1 - Fd.get("shorten", 0.0) * f), Fd["width"][j]
             prof = Fd["profile"][j] if isinstance(Fd["profile"][0], list) else Fd["profile"]
             curl = Fd.get("curl", 0) * P.get("ld", 0) + Fd.get("curl0", 0); ns = len(prof) - 1
             ctr, frames = [root], []
@@ -193,28 +254,42 @@ def wing(sh, W, P):
                 q = [ctr[i] + side * wd * (1 - aft) * prof[i], ctr[i + 1] + side * wd * (1 - aft) * prof[i + 1],
                      ctr[i + 1] - side * wd * aft * prof[i + 1], ctr[i] - side * wd * aft * prof[i]]
                 parts.append(np.array([p_ + nrm * h * sg for p_ in q for sg in (1, -1)]))
-    for mirror, tag in ((1, "far"), (-1, "near")):
-        for Q in parts: sh.add(Q * [1, mirror, 1.0], tag)
+                gathered.append((root, parts[-1]))
+    # the flexed wing is one closed surface: the secondaries and the folded primaries overlap, so the outer wing (elbow
+    # to hand, and the primaries as far as they are gathered together) is also drawn as a single solid. Extended it is
+    # the planform itself; flexed it fills the angle between the hand and the forearm, so the wing reads as one
+    # tapering shape with its corner at the wrist. Splayed fingers stay apart (their share of the solid shrinks to
+    # their roots).
+    outer = [q for (le, te, n_, h), (y, *_r) in zip(st, rows) if y >= Lh + W.get("hull_from", 0.45) * Lf
+             for q in (le + n_ * h, le - n_ * h, te + n_ * h * 0.35, te - n_ * h * 0.35)]
+    g = smooth01((cl - 0.35) / 0.5)
+    outer += [r + (q - r) * g for r, Q in gathered for q in Q]
+    if W.get("hull", True): parts.append(np.array(outer))
+    return parts
 
 
 # ---------------------------------------------------------------- the birds
+STORK_BEAT = dict(down=0.56, bob=1.6, e=(28, -8), sw=(-1, 9, 0.42), flex=0.8, flex_u0=0.45, flex_ab=(0.22, 0.5, 0.28),
+                  open=[0.0, 0.001, 0.002, 0.22, 0.62, 1.0], up_lead=0.3, el=0, hd=(8, -16), tw=(6, -6), sp=(0.5, 0.0, 0.7))
+STORK_WING = dict(
+    hull=False, shoulder=(8, 6.0, 4.0), len=(21, 31, 15), sweep=(8, -4, 4), fold_sweep=(-10, -70, 150), blend=(4, 7), camber=0.06,
+    far=dict(fold_sweep=(30, -16, 150)), far_hand=0.6, far_hd=40, far_e=20, far_top=-10, far_sp=0.4,
+    # span y, lead, chord, thickness: a broad, nearly rectangular wing
+    plan=[(0, 5, 23, 2.2), (8, 6.5, 29, 2.4), (21, 6, 32, 2.2), (36, 4.6, 33, 1.8), (52, 3.2, 31, 1.4),
+          (60, 2.6, 28, 1.1), (66.5, 1.8, 25, 0.9)],
+    tuck=(0.2, 0.35, 0.3),
+    feathers=dict(                                           # the five emarginated outer primaries, splayed
+        angle=[-4, 8, 20, 33, 47, 62], root_y=[66.5, 65.5, 64, 62, 59.5, 56.5], root_x=[0.0, -2.5, -5.5, -9, -13, -17],
+        length=[27, 33, 34, 32, 29, 23], width=[6.6, 7.6, 8.2, 8.6, 9.6, 12.5], aft=0.55,
+        profile=[[1, 1, 0.95, 0.62, 0.5, 0.42, 0.3, 0.05]] * 5 + [[1, 1, 1, 0.95, 0.85, 0.7, 0.45, 0.05]],
+        curl=0.24, curl0=0.03, close=0.0, slide=0.0, converge=1.0, gather=8, fold_angle=-4, depth=0.6),
+)
+
 def stork(ph):
     """White / painted stork: neck straight out, long straight heavy bill, legs trailing well past a short tail, broad
     rectangular wings ending in splayed fingers. A shallow, unhurried beat: the wing reaches forward and down, then
     rises wrist first with the hand swept back."""
-    m = dict(down=0.57, bob=1.6, keys=[
-        (0.00, dict(e=40, sw=14, el=-2, f=0.3, hd=2, tw=-10, ld=0.0, sp=0.2)),
-        (0.08, dict(e=33, sw=10, el=0, f=0.02, hd=6, tw=-2, ld=0.3, sp=0.45)),
-        (0.20, dict(e=16, sw=5, el=2, f=0.0, hd=10, tw=5, ld=0.9, sp=0.9)),
-        (0.30, dict(e=2, sw=-8, el=2, f=0.0, hd=10, tw=6, ld=1.0, sp=1.0)),
-        (0.40, dict(e=-9, sw=-22, el=2, f=0.0, hd=8, tw=6, ld=0.7, sp=1.0)),
-        (0.50, dict(e=-14, sw=-30, el=0, f=0.05, hd=4, tw=2, ld=0.2, sp=0.9)),
-        (0.58, dict(e=-4, sw=-18, el=8, f=0.3, hd=2, tw=-14, ld=0.0, sp=0.4)),
-        (0.66, dict(e=14, sw=-4, el=14, f=0.65, hd=0, tw=-28, ld=0.0, sp=0.1)),
-        (0.75, dict(e=30, sw=6, el=12, f=0.9, hd=-2, tw=-30, ld=0.0, sp=0.0)),
-        (0.85, dict(e=38, sw=12, el=6, f=0.85, hd=-2, tw=-24, ld=0.0, sp=0.0)),
-        (0.93, dict(e=41, sw=15, el=0, f=0.6, hd=0, tw=-16, ld=0.0, sp=0.1))])
-    p = beat(ph, m); sh = Shape()
+    p = beat(ph, STORK_BEAT); sh = Shape()
     # body: a deep oval, slightly arched, full underneath, running back into the rump
     sh.tube([(-26, 0, 2.0), (-18, 0, 0.6), (-8, 0, -0.8), (3, 0, -1.2), (13, 0, -0.4), (21, 0, 0.8)],
             r=[6.0, 9.6, 11.6, 12.0, 10.4, 7.6], rz=[5.4, 9.4, 12.2, 12.6, 11.0, 8.4])
@@ -222,45 +297,39 @@ def stork(ph):
     sh.tube([(15, 0, 1.0), (29, 0, -0.2), (43, 0, -1.6), (56, 0, -2.8)], r=[8.6, 6.6, 6.0, 5.8], rz=[9.6, 7.4, 6.6, 6.2])
     sh.tube([(53, 0, -2.6), (58, 0, -2.3), (62.5, 0, -3.0), (65.5, 0, -3.8)], r=[5.6, 5.9, 5.2, 4.2], rz=[6.2, 6.6, 5.8, 4.8])
     sh.tube([(63, 0, -3.6), (75.5, 0, -5.8), (88.5, 0, -7.9)], r=[3.0, 2.0, 0.3], rz=[5.0, 3.0, 0.45], n=6)
-    # short tail, broad and rounded at the end, flat but with some depth where it leaves the rump
-    sh.tube([(-22, 0, 2.2), (-31, 0, 2.0), (-39, 0, 1.8), (-44.5, 0, 1.6)], r=[7.0, 8.6, 7.4, 3.0], rz=[4.8, 2.8, 1.7, 1.1], n=5)
-    # legs: thighs under the belly, then shank and foot trailing straight back, the toes a little splayed
-    for y in (3.4, -3.4):
-        sh.tube([(-6, y * 1.2, -8.0), (-17, y, -9.4)], r=[4.2, 2.7], n=3)
-        sh.tube([(-17, y, -9.4), (-47, y * 0.85, -11.0), (-81, y * 0.75, -12.6)], r=[2.4, 2.1, 1.8], n=5)
-        sh.ball((-47, y * 0.85, -11.0), 2.4)
+    # short tail: a broad, rounded fan spread flat behind the rump, low enough that the legs run out from beneath it
+    sh.tube([(-20, 0, 1.0), (-27, 0, -0.2), (-34, 0, -1.4), (-39.5, 0, -2.2), (-42.5, 0, -2.6)],
+            r=[7.6, 9.4, 10.2, 8.6, 4.4], rz=[6.0, 3.6, 2.4, 1.8, 1.3], n=5)
+    # legs: thighs under the belly, then shank and foot trailing straight back under the tail, the toes a little splayed
+    for y in (3.2, -3.2):
+        sh.tube([(-4, y * 1.2, -7.2), (-16, y, -7.4)], r=[4.4, 2.9], n=3)
+        sh.tube([(-16, y, -7.4), (-47, y * 0.85, -8.6), (-81, y * 0.75, -10.2)], r=[2.5, 2.2, 1.9], n=5)
+        sh.ball((-47, y * 0.85, -8.6), 2.5)
         for dy, dz, L in ((0.0, -0.4, 8.0), (1.6, 0.6, 6.5), (-1.6, -1.3, 6.8)):
-            sh.tube([(-81, y * 0.75, -12.6), (-81 - L, y * 0.75 + dy * np.sign(y), -12.6 + dz)], r=[1.5, 0.8], n=2)
-    wing(sh, dict(
-        shoulder=(8, 6.0, 4.0), len=(21, 31, 15), sweep=(8, -4, 4), fold_sweep=(4, -22, 120), blend=(4, 7), camber=0.06,
-        # span y, lead, chord, thickness: a broad, nearly rectangular wing
-        plan=[(0, 5, 18, 2.2), (8, 6.5, 27, 2.4), (21, 6, 32, 2.2), (36, 4.6, 33.5, 1.8), (52, 3.2, 32, 1.4),
-              (60, 2.6, 28, 1.1), (66.5, 1.8, 23, 0.9)],
-        tuck=(0.0, 0.25, 0.55),
-        feathers=dict(                                           # the five emarginated outer primaries, splayed
-            angle=[-4, 8, 20, 33, 47, 62], root_y=[66.5, 65.5, 64, 62, 59.5, 56.5], root_x=[0.0, -2.5, -5.5, -9, -13, -17],
-            length=[27, 33, 34, 32, 29, 23], width=[6.6, 7.6, 8.2, 8.6, 9.6, 12.5], aft=0.55,
-            profile=[[1, 1, 0.95, 0.62, 0.5, 0.42, 0.3, 0.05]] * 5 + [[1, 1, 1, 0.95, 0.85, 0.7, 0.45, 0.05]],
-            curl=0.24, curl0=0.03, close=0.85, fold_angle=-8, depth=0.6),
-    ), p)
+            sh.tube([(-81, y * 0.75, -10.2), (-81 - L, y * 0.75 + dy * np.sign(y), -10.2 + dz)], r=[1.6, 0.8], n=2)
+    wing(sh, STORK_WING, p)
     return sh, p["lift"]
 
+
+FLAMINGO_BEAT = dict(down=0.56, bob=1.4, e=(30, -12), sw=(-2, 9, 0.42), flex=0.8, flex_u0=0.45, flex_ab=(0.22, 0.5, 0.28),
+                     open=[0.0, 0.219, 0.28, 0.46, 0.74, 1.0], up_lead=0.3, el=0, hd=(8, -16), tw=(6, -6), sp=(0.0, 0.0, 0.0))
+FLAMINGO_WING = dict(
+    hull=False, shoulder=(7, 4.6, 3.6), len=(20, 28, 33), sweep=(10, -6, 12), fold_sweep=(-10, -70, 150), blend=(4, 7), camber=0.06,
+    far=dict(fold_sweep=(30, -16, 150)), far_hand=0.85, far_hd=40, far_e=20, far_top=-10,
+    # a narrower wing tapering to a long pointed hand
+    plan=[(0, 4.4, 12, 1.9), (8.9, 5.4, 17.5, 2.0), (20, 5.0, 21, 1.8), (33.3, 3.8, 21.5, 1.5), (47.7, 2.6, 20, 1.2),
+          (57.7, 2.2, 17, 1.0), (68.8, 1.7, 12.5, 0.8), (77.7, 1.0, 7.5, 0.6), (81, 0.4, 4.5, 0.45)],
+    tuck=(0.2, 0.35, 0.3),
+    feathers=dict(                                           # the outer primaries, closed into one smooth pointed tip
+        angle=[2, 8, 15], root_y=[78.8, 75.5, 71.6], root_x=[-1.0, -3.6, -6.4], aft=0.5,
+        length=[18.9, 17.2, 15], width=[4.4, 4.8, 5.2], profile=[1, 0.95, 0.85, 0.65, 0.4, 0.08],
+        curl=0.12, close=0.0, slide=0.0, converge=1.0, gather=5, depth=0.45),
+)
 
 def flamingo(ph):
     """Greater flamingo: very long thin neck held out and drooping a little, the bill bent down, very long thin legs
     trailing straight behind, a slim body, narrower pointed wings."""
-    m = dict(down=0.56, bob=1.4, keys=[
-        (0.00, dict(e=40, sw=6, el=-2, f=0.08, hd=4, ld=0.0)),
-        (0.13, dict(e=29, sw=-2, el=0, f=0.0, hd=8, ld=0.5)),
-        (0.26, dict(e=10, sw=-9, el=2, f=0.0, hd=10, ld=1.0)),
-        (0.39, dict(e=-10, sw=-15, el=2, f=0.0, hd=8, ld=0.8)),
-        (0.50, dict(e=-18, sw=-17, el=1, f=0.05, hd=4, ld=0.3)),
-        (0.58, dict(e=-8, sw=-11, el=8, f=0.3, hd=2, ld=0.0)),
-        (0.66, dict(e=6, sw=-3, el=14, f=0.65, hd=-8, ld=0.0)),
-        (0.75, dict(e=20, sw=3, el=14, f=0.9, hd=-22, ld=0.0)),
-        (0.84, dict(e=32, sw=6, el=8, f=0.75, hd=-22, ld=0.0)),
-        (0.92, dict(e=39, sw=7, el=2, f=0.35, hd=-8, ld=0.0))])
-    p = beat(ph, m); sh = Shape()
+    p = beat(ph, FLAMINGO_BEAT); sh = Shape()
     sh.tube([(-22, 0, 1.5), (-14, 0, 0.4), (-3, 0, -0.5), (8, 0, -0.2), (16, 0, 0.8)], r=[3.2, 6.8, 8.4, 7.6, 5.4], rz=[3.0, 6.8, 8.6, 7.8, 5.6])
     sh.tube([(13, 0, 1.0), (30, 0, 0.6), (48, 0, -1.6), (64, 0, -4.6), (74, 0, -6.6)], r=[5.0, 3.4, 3.0, 2.9, 3.0], rz=[5.6, 3.8, 3.4, 3.2, 3.2], n=10)
     sh.tube([(72.5, 0, -6.3), (75.5, 0, -6.0), (78.5, 0, -6.6)], r=[3.4, 3.8, 3.2], n=4)
@@ -273,36 +342,30 @@ def flamingo(ph):
         sh.tube([(-15, y, -7.0), (-48, y * 0.8, -8.4), (-82, y * 0.7, -9.6)], r=[1.4, 1.2, 1.05], n=5)
         sh.ball((-48, y * 0.8, -8.4), 1.6)
         sh.tube([(-81.5, y * 0.7, -9.6), (-85.5, y * 0.7, -10.2), (-89.4, y * 0.7, -10.9)], r=[1.2, 2.2, 0.5], rz=[1.0, 0.9, 0.4], n=3)
-    wing(sh, dict(
-        shoulder=(7, 4.6, 3.6), len=(18, 25, 30), sweep=(10, -6, 12), fold_sweep=(4, -10, 70), blend=(4, 7), camber=0.06,
-        # a narrower wing tapering to a long pointed hand
-        plan=[(0, 4.4, 12, 1.9), (8, 5.4, 17.5, 2.0), (18, 5.0, 21, 1.8), (30, 3.8, 21.5, 1.5), (43, 2.6, 20, 1.2),
-              (52, 2.2, 17, 1.0), (62, 1.7, 12.5, 0.8), (70, 1.0, 7.5, 0.6), (73, 0.4, 4.5, 0.45)],
-        tuck=(0.0, 0.2, 0.25),
-        feathers=dict(                                           # three graduated primary tips, only just parted
-            angle=[2, 8, 15], root_y=[71, 68, 64.5], root_x=[-1.0, -3.6, -6.4], aft=0.5,
-            length=[17, 15.5, 13.5], width=[4.4, 4.8, 5.2], profile=[1, 0.95, 0.85, 0.65, 0.4, 0.08],
-            curl=0.12, close=0.7, depth=0.45),
-    ), p)
+    wing(sh, FLAMINGO_WING, p)
     return sh, p["lift"]
 
+
+PARROT_BEAT = dict(down=0.56, bob=0.9, e=(36, -10), sw=(-14, 22, 0.45), flex=0.8, flex_u0=0.45, flex_ab=(0.22, 0.5, 0.28),
+                   open=[0.0, 0.219, 0.28, 0.46, 0.74, 1.0], up_lead=0.3, el=0, hd=(6, -16), tw=(6, -6), sp=(0.0, 0.0, 0.0))
+PARROT_WING = dict(
+    hull=False, shoulder=(6, 4.4, 3.6), len=(12, 16.5, 26.5), sweep=(12, -4, 18), fold_sweep=(-10, -60, 140), blend=(3, 5), camber=0.06,
+    far=dict(fold_sweep=(30, -16, 140)), far_hand=0.85, far_hd=40, far_e=20, far_top=-10,
+    # narrow, the hand long and pointed
+    plan=[(0, 4.0, 9, 1.6), (6.6, 4.6, 12.5, 1.7), (12.1, 4.2, 13.5, 1.5), (20.9, 3.2, 13.5, 1.3), (28.6, 2.4, 12.5, 1.1),
+          (36.3, 2.0, 10.5, 0.9), (45.1, 1.5, 7.5, 0.7), (51.7, 0.9, 4.5, 0.5), (55, 0.3, 2.0, 0.35)],
+    tuck=(0.2, 0.35, 0.3),
+    feathers=dict(                                           # the outermost primaries make the point
+        angle=[1, 6, 12], root_y=[52.3, 49.5, 46.2], root_x=[-0.6, -2.4, -4.4], aft=0.5,
+        length=[10.5, 9.9, 8.8], width=[3.2, 3.5, 3.8], profile=[1, 0.95, 0.85, 0.62, 0.36, 0.06],
+        curl=0.1, close=0.0, slide=0.0, converge=1.0, gather=4, depth=0.4),
+)
 
 def parrot(ph):
     """Rose-ringed parakeet: compact body, round head, a short hooked beak, a long graduated pointed tail, pointed
     swept-back wings. A quick, deep beat."""
-    m = dict(down=0.56, bob=0.9, keys=[
-        (0.00, dict(e=44, sw=12, el=-2, f=0.15, hd=2, ld=0.0)),
-        (0.13, dict(e=30, sw=4, el=0, f=0.05, hd=6, ld=0.5)),
-        (0.26, dict(e=8, sw=-4, el=2, f=0.0, hd=8, ld=1.0)),
-        (0.39, dict(e=-14, sw=-10, el=2, f=0.0, hd=6, ld=0.8)),
-        (0.50, dict(e=-24, sw=-12, el=1, f=0.05, hd=2, ld=0.3)),
-        (0.58, dict(e=-12, sw=-6, el=8, f=0.35, hd=0, ld=0.0)),
-        (0.66, dict(e=6, sw=2, el=14, f=0.7, hd=-8, ld=0.0)),
-        (0.75, dict(e=24, sw=8, el=14, f=0.95, hd=-20, ld=0.0)),
-        (0.84, dict(e=38, sw=12, el=8, f=0.8, hd=-20, ld=0.0)),
-        (0.92, dict(e=44, sw=13, el=2, f=0.45, hd=-6, ld=0.0))])
-    p = beat(ph, m); sh = Shape()
-    sh.tube([(-15, 0, 0.6), (-8, 0, 0.0), (2, 0, 0), (12, 0, 0.6), (20, 0, 1.8)], r=[5.0, 7.0, 8.4, 7.8, 6.0], rz=[5.0, 6.8, 8.0, 7.6, 6.2])
+    p = beat(ph, PARROT_BEAT); sh = Shape()
+    sh.tube([(-15, 0, 0.4), (-8, 0, -0.3), (2, 0, -0.4), (12, 0, 0.3), (20, 0, 1.8)], r=[5.0, 7.2, 8.6, 8.0, 6.0], rz=[5.4, 7.6, 8.8, 8.2, 6.4])
     sh.ball((25, 0, 3.0), 6.9, 6.6)
     # the beak: a stout hooked upper mandible and a small lower one
     sh.tube([(29.5, 0, 4.4), (33.6, 0, 3.7), (36.4, 0, 1.6), (36.8, 0, -1.2), (35.6, 0, -2.6)], r=[2.2, 1.9, 1.45, 0.9, 0.35], rz=[3.0, 2.5, 1.8, 1.1, 0.35], n=5)
@@ -310,17 +373,7 @@ def parrot(ph):
     # the tail: a long graduated wedge that grows out of the rump, deepest at its base and tapering to a fine point
     sh.tube([(-6, 0, 0.3), (-14, 0, 0.0), (-22, 0, -0.5), (-32, 0, -1.0), (-44, 0, -1.6), (-56, 0, -2.1), (-66, 0, -2.5)],
             r=[6.4, 6.0, 5.0, 3.8, 2.5, 1.2, 0.2], rz=[6.2, 5.0, 3.7, 2.7, 1.8, 0.9, 0.2], n=6)
-    wing(sh, dict(
-        shoulder=(6, 4.4, 3.6), len=(11, 15, 24), sweep=(12, -4, 18), fold_sweep=(4, -10, 66), blend=(3, 5), camber=0.06,
-        # narrow, the hand long and pointed
-        plan=[(0, 4.0, 9, 1.6), (6, 4.6, 12.5, 1.7), (11, 4.2, 13.5, 1.5), (19, 3.2, 13.5, 1.3), (26, 2.4, 12.5, 1.1),
-              (33, 2.0, 10.5, 0.9), (41, 1.5, 7.5, 0.7), (47, 0.9, 4.5, 0.5), (50, 0.3, 2.0, 0.35)],
-        tuck=(0.0, 0.2, 0.25),
-        feathers=dict(                                           # the outermost primaries make the point
-            angle=[1, 6, 12], root_y=[47.5, 45, 42], root_x=[-0.6, -2.4, -4.4], aft=0.5,
-            length=[9.5, 9.0, 8.0], width=[3.2, 3.5, 3.8], profile=[1, 0.95, 0.85, 0.62, 0.36, 0.06],
-            curl=0.1, close=0.7, depth=0.4),
-    ), p)
+    wing(sh, PARROT_WING, p)
     return sh, p["lift"]
 
 
@@ -328,11 +381,11 @@ BIRDS = {
     # cycle_sec, frames per cycle, and the union x extent in model units (the old birds' size, so scenes need no
     # retuning). "centre": keep the body centre at the origin and only scale to the width (the parakeet's long tail
     # puts its body well right of the middle of its extent).
-    "stork": dict(build=stork, cycle=1.2, frames=48, x=(-89, 89)),
-    "flamingo": dict(build=flamingo, cycle=1.0, frames=48, x=(-89, 89)),
-    "parrot": dict(build=parrot, cycle=0.6, frames=48, x=(-49, 52), centre=True),
+    "stork": dict(build=stork, cycle=1.2, frames=48, x=(-89, 89), wing_blur=1.1),
+    "flamingo": dict(build=flamingo, cycle=1.0, frames=48, x=(-89, 89), wing_blur=1.0),
+    "parrot": dict(build=parrot, cycle=0.6, frames=48, x=(-49, 52), wing_blur=0.7),
 }
-CAMERA = dict(yaw=8.0, pitch=16.0)
+CAMERA = dict(yaw=18.0, pitch=20.0)     # seen from the ground: 16 degrees below the bird and 8 degrees ahead of it
 
 
 # ---------------------------------------------------------------- camera, raster, trace
@@ -363,13 +416,21 @@ def project(sh, lift, C):
     """2D convex polygons (model units, y down) for one pose."""
     off = np.array([0, 0, lift]); return [hull((S + off) @ C.T) for S in sh.solids]
 
-def raster(polys, S, box, ss=3, close=1.0):
-    """Draw at ss x the trace resolution, then average down (anti-aliasing), soften a touch and threshold."""
-    x0, y0, x1, y1 = box; W, H = int((x1 - x0) * S) + 1, int((y1 - y0) * S) + 1
-    im = Image.new("L", (W * ss, H * ss), 0); d = ImageDraw.Draw(im); k = S * ss
-    for P in polys:
-        if len(P) >= 3: d.polygon([((x - x0) * k, (y - y0) * k) for x, y in P], fill=255)
-    im = im.resize((W, H), Image.Resampling.BOX).filter(ImageFilter.GaussianBlur(radius=0.9))
+def raster(polys, S, box, tags=None, ss=3, close=1.0, wblur=0.0):
+    """Draw at ss x the trace resolution, then average down (anti-aliasing), soften a touch and threshold. The wings
+    (every solid not tagged "body") are drawn on their own layer and softened there with a Gaussian of wblur model
+    units before the threshold: feather tips and slivers too small to read melt away and the notches between tips
+    seen end on fill in, so a wing edge reads as a deliberate shape, never as a row of teeth."""
+    x0, y0, x1, y1 = box; W, H = int((x1 - x0) * S) + 1, int((y1 - y0) * S) + 1; k = S * ss
+    def layer(sel):
+        im = Image.new("L", (W * ss, H * ss), 0); d = ImageDraw.Draw(im)
+        for P, t in zip(polys, tags or ["body"] * len(polys)):
+            if len(P) >= 3 and sel(t): d.polygon([((x - x0) * k, (y - y0) * k) for x, y in P], fill=255)
+        return im.resize((W, H), Image.Resampling.BOX).filter(ImageFilter.GaussianBlur(radius=0.9))
+    if tags is None or not wblur: im = layer(lambda t: True)
+    else:
+        wg = layer(lambda t: t != "body").filter(ImageFilter.GaussianBlur(radius=wblur * S))
+        im = Image.fromarray(np.maximum(np.array(layer(lambda t: t == "body")), np.array(wg)))
     c = 2 * int(S * close / 2) + 1                                # a small closing seals hairline notches between parts
     if c >= 3: im = im.filter(ImageFilter.MaxFilter(c)).filter(ImageFilter.MinFilter(c))
     return np.array(im) > 127
@@ -394,28 +455,33 @@ def trace(mask, S, box, hole_min=80.0):
 
 
 def fitted(name, cam=None):
-    """Every frame's projected polygons, scaled (and for most birds shifted in x) so the union of all frames spans
-    the bird's x extent. Two passes: first on the geometry, then on the rasterised outline (thickness, smoothing)."""
+    """Every frame's projected polygons (and their tags), scaled (and for most birds shifted in x) so the union of all
+    frames spans the bird's x extent. Two passes: first on the geometry, then on the rasterised outline."""
     B = BIRDS[name]; n = B["frames"]; C = camera(**(cam or CAMERA))
-    polys = [project(*B["build"](i / n), C) for i in range(n)]
+    built = [B["build"](i / n) for i in range(n)]
+    polys = [project(sh, lift, C) for sh, lift in built]; tags = [sh.tags for sh, _ in built]
     S = 5.5 * 178 / (B["x"][1] - B["x"][0])
     for rnd in range(2):
         pts = np.vstack([P for fr in polys for P in fr]); lo, hi = pts.min(0), pts.max(0)
         box = (lo[0] - 4, lo[1] - 4, hi[0] + 4, hi[1] + 4)
         if rnd == 0: lo_x, hi_x = lo[0], hi[0]
         else:
-            cols = np.flatnonzero(np.any([raster(fr, S, box).any(0) for fr in polys], axis=0))
+            cols = np.flatnonzero(np.any([raster(fr, S, box, tg, **clean(B)).any(0) for fr, tg in zip(polys, tags)], axis=0))
             lo_x, hi_x = box[0] + cols[0] / S, box[0] + (cols[-1] + 1) / S
         k = (B["x"][1] - B["x"][0]) / (hi_x - lo_x); dx = 0.0 if B.get("centre") else B["x"][0] - lo_x * k
         polys = [[P * k + [dx, 0] for P in fr] for fr in polys]
     pts = np.vstack([P for fr in polys for P in fr]); lo, hi = pts.min(0), pts.max(0)
-    return polys, S, (lo[0] - 4, lo[1] - 4, hi[0] + 4, hi[1] + 4)
+    return polys, tags, S, (lo[0] - 4, lo[1] - 4, hi[0] + 4, hi[1] + 4)
+
+
+def clean(B):
+    return dict(wblur=B.get("wing_blur", 0.0))
 
 
 def build(name):
-    B = BIRDS[name]; polys, S, box = fitted(name); frames = []
-    for i, fr in enumerate(polys):
-        frames.append(trace(raster(fr, S, box), S, box))
+    B = BIRDS[name]; polys, tags, S, box = fitted(name); frames = []
+    for i, (fr, tg) in enumerate(zip(polys, tags)):
+        frames.append(trace(raster(fr, S, box, tg, **clean(B)), S, box))
         k_out = pieces(frames[-1])
         if k_out != 1: print(f"  warning: {name} frame {i} has {k_out} separate pieces")
     return {"source": "procedural: scripts/katha/birds.py", "credit": "Drawn in code for this channel; no outside model",

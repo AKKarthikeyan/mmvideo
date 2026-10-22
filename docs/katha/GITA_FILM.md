@@ -11,28 +11,32 @@
 - **Licences**: horses traced from the CC0 Quaternius horse, birds drawn in code, fonts OFL, music synthesised in code. `build_film.py` checks every silhouette's credit on each build.
 - **Length**: about 18.7 min estimated. The real length comes from the voice.
 
-## On the Mini
+## On the Mini: one command
 
 ```bash
-git pull
-npm ci
-python3 scripts/dharma/tanpura.py        # tanpura bed and bell (wav files are not in git)
-python3 scripts/katha/sounds.py          # conch, flute and swell cues
-export MINIMAX_API_KEY=...               # the key that lives on the Mini
-python3 scripts/katha/build_film.py scripts/katha/gita.json --tts    # voices every beat, caches the mp3s, re-times the film
-npx remotion studio                      # optional: scrub KT-gita before rendering
-npx remotion render src/index.ts KT-gita out/gita.mp4
+git pull && npm ci
+export TYPESAFE_API_KEY=... MINIMAX_API_KEY=...    # both live on the Mini
+scripts/katha/finish_gita.sh
 ```
 
-The build prints four checks; all four should pass: quotes are corpus text, every beat resolves to a scene, every quoted line is attributed on screen, and every silhouette is CC0 or drawn in code. `public/katha/gita/description.txt` holds the YouTube description with chapter timestamps (rebuilt from the voiced timing) and credits.
+It makes the tanpura, bell and sound cues, asks Jev the open decisions and applies them, voices every beat with
+MiniMax, re-times the film, runs the four checks, and renders `out/gita.mp4`. The four checks: quotes are corpus
+text, every beat resolves to a scene, every quoted line is attributed on screen, and every silhouette is CC0 or
+drawn in code. `public/katha/gita/description.txt` holds the YouTube description with chapter timestamps and credits.
+Scrub the film once in `npx remotion studio` before uploading.
 
-## Decisions for AK before publishing
+## Decisions
 
-1. **A voice for Krishna.** Rule 1 says the narrator never speaks as a god. The script gives Krishna's quoted verses their own voice settings (`KRISHNA` in `VOICES`, `scripts/katha/build_film.py`), always with the verse plate on screen. Keep that, or have Sanjaya read the verses?
-2. **The disclosure.** It is spoken once at the end, over the end card, not early. Keep it there?
-3. **Pronunciation.** Ear-test the Sanskrit names in the MiniMax voice, and the letter "A" at beat c10b02 ("ay" or "uh").
-4. **13.34.** Purohit widens the Sanskrit. Sivananda's wording would tie the verse to the chapter title, but it would be a second Sivananda exception.
-5. **The printed text.** The corpus English is an edited, modernised copy. Check every quoted line against the printed 1935 Purohit (and 1949 Sivananda for 4.7) before publishing; start with 2.12, 18.72 and 4.7.
+AK, 22 Oct 2026: "Get own voice, remaining get the opinion of Jev and complete".
+
+1. **Krishna's voice: his own.** Krishna's quoted verses get a MiniMax voice of their own, not the narrator's voice at another pitch. Jev picks it from the live English voice list (`scripts/katha/ask_jev.py`, question `voice`).
+2. **The disclosure: Jev decides** between the end only (as now), early only, or a short line early as well.
+3. **Pronunciation: Jev decides** how Sanjaya says the letter A in 10.33. Jev cannot listen, so the Sanskrit names still get one listen in the new voices.
+4. **13.34: Jev decides** between Purohit and Sivananda, and also for 2.12 and 18.72, judged on faithfulness and on being clear when heard once.
+5. **The printed text.** Jev cannot read the 1935 book. Every plate says "(EDITED TEXT)", which is what the film quotes; a check against print stays open for whenever the book is at hand.
+
+The script keeps the current choice when Jev's confidence is below 0.45, caches Jev's answers in
+`public/katha/gita/jev_answers.json`, and records them in `docs/katha/JEV_DECISIONS.md`.
 
 ## Known rough edges
 

@@ -2,20 +2,28 @@
 // 17.23), fire veiled by smoke and the dusty mirror (3.38), the flame that climbs to the sun (8.24-26).
 // Lamplight: one warm source per shot, everything else a near-black shape rimmed by it. Soft light, haze and smoke are
 // radial / linear gradients only (no blur or turbulence filters: long renders dropped tiles under them).
+// 22 Oct 2026 (fix round 1, on the shared kit): every flame is the kit's Flame / Fire / Diya; the niche is a devakoshta
+// (kit niche: carved pilasters, cusped top, a little shikhara) in weathered laterite ashlar, beside a jali window on the
+// storm; the stair of lamps is a kit ghat under a warm moon, the lamps kindled from the temple down, each mirrored in the
+// river; the yajna has carved kit pillars and a brass kalasha that catch the firelight; the smoke is curling filaments
+// over the same kunda; the flame climbs a column of light to a gold sun that turns into a wheel of twelve spokes.
 import React, {useId} from "react";
 import {interpolate, useCurrentFrame} from "remotion";
-import {K, W, H, SA, CAPS} from "../look";
-import {SceneP, Frame, push} from "../stage";
-import {Sky, Dust, Mood} from "../sky";
-import {smooth, ribbon, rnd, lerp, clamp01, nrmAt, Pt} from "../geom";
-import {Rimmed} from "../sil";
+import {K, W, H, softStops, SoftGlow, mixHex} from "../look";
+import {SceneP, Frame, push, Label} from "../stage";
+import {Sky, Dust, Mood, LightFlash, Haze} from "../sky";
+import {smooth, ribbon, rnd, lerp, clamp01, nrmAt, wob, polyD, streamer, Pt} from "../geom";
+import {Rimmed, Item} from "../sil";
+import {Flame, Fire as FireBed, Diya, diyaWick} from "../fire";
+import {niche, cuspedArch, pillar, ghat, ledge, temple, RELIEF, RELIEF_LT} from "../arch";
+import {peepal, coconut, palmyra, neem, khejri, reeds} from "../flora";
 
 type V2 = [number, number];
+type It = Exclude<Item, string>;
 // ---------- small helpers ----------
 const ease = (f: number, a: number, d: number) => interpolate(f, [a, a + Math.max(0.001, d)], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
 const sstep = (v: number) => { const t = clamp01(v); return t * t * (3 - 2 * t); };
-// Smooth 1D noise from a few incommensurate sines, in about [-1, 1].
-const wob = (t: number, s = 0) => Math.sin(t + s * 1.7) * 0.5 + Math.sin(t * 2.31 + s * 3.1) * 0.3 + Math.sin(t * 4.07 + s * 5.3) * 0.2;
+const bump = (f: number, a: number, up: number, down: number) => ease(f, a, up) * (1 - ease(f, a + up, down));
 const uid = () => "fl" + useId().replace(/[^a-zA-Z0-9]/g, "");
 const MOODS: Mood[] = ["dusk", "dawn", "night", "gold"];
 const moodOf = (s: any, d: Mood): Mood => (MOODS.includes(s?.mood) ? s.mood : d);
@@ -30,462 +38,420 @@ const blade = (pts: number[][], wmax: number): string => {
     const u = i / (n - 1), [nx, ny] = nrmAt(pts, i), w = wmax * Math.pow(Math.sin(Math.PI * Math.pow(u, 0.75)), 0.9);
     L.push([pts[i][0] + nx * w, pts[i][1] + ny * w]); R.push([pts[i][0] - nx * w, pts[i][1] - ny * w]);
   }
-  return smooth([[pts[0][0], pts[0][1], "c"], ...L, [pts[n - 1][0], pts[n - 1][1], "c"], ...R.reverse()]);
+  return smooth([[pts[0][0], pts[0][1], "c"], ...L, [pts[n - 1][0], pts[n - 1][1], "c"], ...R.reverse()], {wind: "cw"});
 };
-const isDeva = (t: string) => /[\u0900-\u097F]/.test(t);
+// A band whose width follows ws (one width per point): smoke filaments that pinch and swell.
+const ribbonW = (pts: number[][], ws: number[]): string => {
+  const L: number[][] = [], R: number[][] = [];
+  pts.forEach((p, i) => { const [nx, ny] = nrmAt(pts, i), w = ws[i] / 2; L.push([p[0] + nx * w, p[1] + ny * w]); R.push([p[0] - nx * w, p[1] - ny * w]); });
+  return smooth([...L, ...R.reverse()] as Pt[]);
+};
+const dOf = (it: Item) => (typeof it === "string" ? it : it.d);
+// A kit piece's joined outline split into its parts, one item each, so a point light rims every part towards itself.
+const parts = (d: string, extra: Partial<It> = {}): It[] => d.split(/(?=M )/).map((x) => x.trim()).filter(Boolean).map((x) => ({...extra, d: x}));
+// The bounding box of a path's coordinate pairs (M / L / C paths only).
+const bbox = (d: string): [number, number, number, number] => {
+  const v = (d.match(/-?\d*\.?\d+/g) || []).map(Number);
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (let i = 0; i + 1 < v.length; i += 2) { x0 = Math.min(x0, v[i]); x1 = Math.max(x1, v[i]); y0 = Math.min(y0, v[i + 1]); y1 = Math.max(y1, v[i + 1]); }
+  return [x0, y0, x1, y1];
+};
+const circ = (x: number, y: number, rx: number, ry = rx) => `M ${(x - rx).toFixed(1)} ${y.toFixed(1)} a ${rx.toFixed(1)} ${ry.toFixed(1)} 0 1 0 ${(2 * rx).toFixed(1)} 0 a ${rx.toFixed(1)} ${ry.toFixed(1)} 0 1 0 ${(-2 * rx).toFixed(1)} 0 Z `;
 
-// Shared soft lights. Every glow, shadow and smoke puff is an ellipse filled with one of these.
+// Shared soft lights, all on the film's one glow falloff (softStops).
 const SMOKES: [string, string][] = [["fl-sm-warm", "#8A5446"], ["fl-sm-mid", "#4C3C56"], ["fl-sm-cool", "#2C2842"], ["fl-sm-pale", "#7A7290"], ["fl-sm-ash", "#9A92A0"]];
 const FlameDefs: React.FC = () => (
   <defs>
-    <radialGradient id="fl-warm"><stop offset="0" stopColor="#FFEFC4" stopOpacity={0.8}/><stop offset="0.18" stopColor="#FFC877" stopOpacity={0.42}/><stop offset="0.48" stopColor="#F0904A" stopOpacity={0.13}/><stop offset="1" stopColor="#C2553A" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-soft"><stop offset="0" stopColor="#FFC877" stopOpacity={0.5}/><stop offset="0.5" stopColor="#E8904A" stopOpacity={0.18}/><stop offset="1" stopColor="#C2553A" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-hot"><stop offset="0" stopColor="#FFFDF2"/><stop offset="0.3" stopColor="#FFE9B8" stopOpacity={0.75}/><stop offset="1" stopColor="#FFC877" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-ember"><stop offset="0" stopColor="#FFB060" stopOpacity={0.95}/><stop offset="0.35" stopColor="#F0602A" stopOpacity={0.55}/><stop offset="1" stopColor="#A0301E" stopOpacity={0}/></radialGradient>
+    <radialGradient id="fl-warm">{softStops("#FFEFC4", 0.78, "#E8823A", 2.2)}</radialGradient>
+    <radialGradient id="fl-soft">{softStops("#FFC877", 0.5, "#C2553A", 1.8)}</radialGradient>
+    <radialGradient id="fl-hot">{softStops("#FFFDF2", 1, "#FFC877", 3)}</radialGradient>
+    <radialGradient id="fl-ember">{softStops("#FFB060", 0.95, "#A0301E", 2.4)}</radialGradient>
     <radialGradient id="fl-shade"><stop offset="0" stopColor="#030108" stopOpacity={0.8}/><stop offset="0.5" stopColor="#030108" stopOpacity={0.4}/><stop offset="1" stopColor="#030108" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-cool"><stop offset="0" stopColor="#DDE2F2" stopOpacity={0.55}/><stop offset="0.3" stopColor="#9AA4D8" stopOpacity={0.2}/><stop offset="1" stopColor="#6B78A8" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-blue"><stop offset="0" stopColor="#6F8CFF" stopOpacity={0.85}/><stop offset="1" stopColor="#3D5BD0" stopOpacity={0}/></radialGradient>
-    <radialGradient id="fl-floor"><stop offset="0" stopColor="#F5A85A" stopOpacity={0.6}/><stop offset="0.35" stopColor="#D0703A" stopOpacity={0.3}/><stop offset="0.7" stopColor="#8E3D52" stopOpacity={0.1}/><stop offset="1" stopColor="#4A2B5C" stopOpacity={0}/></radialGradient>
+    <radialGradient id="fl-cool">{softStops("#DDE2F2", 0.5, "#6B78A8", 2)}</radialGradient>
+    <radialGradient id="fl-floor">{softStops("#F5A85A", 0.62, "#4A2B5C", 1.7)}</radialGradient>
     {SMOKES.map(([id, c]) => <radialGradient key={id} id={id}><stop offset="0" stopColor={c} stopOpacity={0.85}/><stop offset="0.45" stopColor={c} stopOpacity={0.55}/><stop offset="1" stopColor={c} stopOpacity={0}/></radialGradient>)}
-    <radialGradient id="fl-sm-body"><stop offset="0" stopColor="#3A3246" stopOpacity={0.97}/><stop offset="0.66" stopColor="#362E42" stopOpacity={0.92}/><stop offset="0.86" stopColor="#30283C" stopOpacity={0.4}/><stop offset="1" stopColor="#30283C" stopOpacity={0}/></radialGradient>
     <linearGradient id="fl-down" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#030108" stopOpacity={0.6}/><stop offset="1" stopColor="#030108" stopOpacity={0}/></linearGradient>
-    <linearGradient id="fl-fade-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={K.rim} stopOpacity={0}/><stop offset="0.5" stopColor={K.rim}/><stop offset="1" stopColor={K.rim} stopOpacity={0}/></linearGradient>
     <linearGradient id="fl-fade-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor={K.rim} stopOpacity={0}/><stop offset="0.5" stopColor={K.rim}/><stop offset="1" stopColor={K.rim} stopOpacity={0}/></linearGradient>
   </defs>
 );
 const Glow: React.FC<{x: number; y: number; rx: number; ry?: number; g?: string; o?: number}> = ({x, y, rx, ry, g = "fl-warm", o = 1}) =>
   o <= 0.002 || rx <= 0 ? null : <ellipse cx={x} cy={y} rx={rx} ry={ry ?? rx} fill={`url(#${g})`} opacity={Math.min(1, o)}/>;
 
-// ---------- the flame ----------
-// Outline of a flame standing on (x, y), height h, half-width w; it bends with lean and sways by sway (a wave up the flame).
-const flameOutline = (x: number, y: number, h: number, w: number, lean: number, sway: number, t: number): string => {
-  const N = 12, L: Pt[] = [], R: Pt[] = [];
-  let tip: Pt = [x, y - h, "c"];
-  for (let i = 1; i <= N; i++) {
-    const u = i / N;
-    const hw = u < 0.24 ? w * Math.sqrt(Math.max(0, 1 - Math.pow((0.24 - u) / 0.24, 2))) : w * Math.pow((1 - u) / 0.76, 1.15);
-    const cx = x + lean * h * u * u + sway * h * Math.pow(u, 1.6) * Math.sin(t - u * 3.2);
-    const cy = y - h * u;
-    if (i === N) { tip = [cx, cy, "c"]; continue; }
-    L.push([cx - hw, cy]); R.push([cx + hw, cy]);
-  }
-  return smooth([[x, y + w * 0.08], ...R, tip, ...L.reverse()] as Pt[]);
-};
-// A lamp flame: halo, two soft fringes, the gold body, a white core and a blue root. b: brightness 0..1+ (0 = gone).
-const Flame: React.FC<{x: number; y: number; h: number; w?: number; lean?: number; sway?: number; t?: number; b?: number; halo?: number}> =
-  ({x, y, h, w = h * 0.2, lean = 0, sway = 0, t = 0, b = 1, halo = 1}) => {
-  const id = uid();
-  if (b <= 0.001 || h < 0.5) return null;
-  const tip = [x + lean * h, y - h];
-  return (
-    <g>
-      <defs>
-        <linearGradient id={`${id}g`} gradientUnits="userSpaceOnUse" x1={x} y1={y + 2} x2={tip[0]} y2={tip[1]}>
-          <stop offset="0" stopColor="#FF8A3A" stopOpacity={0.2}/>
-          <stop offset="0.12" stopColor="#FFB45A" stopOpacity={0.95}/>
-          <stop offset="0.4" stopColor="#FFD889"/>
-          <stop offset="0.75" stopColor="#FFB451"/>
-          <stop offset="1" stopColor="#F07A35" stopOpacity={0.8}/>
-        </linearGradient>
-        <radialGradient id={`${id}c`} gradientUnits="userSpaceOnUse" cx={x + lean * h * 0.1} cy={y - h * 0.2} r={h * 0.5}>
-          <stop offset="0" stopColor="#FFFFF6"/><stop offset="0.55" stopColor="#FFF4D0" stopOpacity={0.9}/><stop offset="1" stopColor="#FFE2A0" stopOpacity={0}/>
-        </radialGradient>
-      </defs>
-      {halo > 0 ? <Glow x={x + lean * h * 0.4} y={y - h * 0.45} rx={h * 5.5} o={halo * b}/> : null}
-      <Glow x={x + lean * h * 0.3} y={y - h * 0.42} rx={h * 1.1} ry={h * 1.25} g="fl-soft" o={0.9 * b}/>
-      <g opacity={Math.min(1, b * 1.15)}>
-        <path d={flameOutline(x, y + h * 0.05, h * 1.16, w * 2.0, lean, sway, t)} fill="#F59A45" opacity={0.12}/>
-        <path d={flameOutline(x, y + h * 0.03, h * 1.07, w * 1.42, lean, sway, t)} fill="#FFB45A" opacity={0.24}/>
-        <path d={flameOutline(x, y, h, w, lean, sway, t)} fill={`url(#${id}g)`}/>
-        <path d={flameOutline(x, y - h * 0.03, h * 0.64, w * 0.6, lean * 0.7, sway * 0.7, t)} fill={`url(#${id}c)`}/>
-        <ellipse cx={x} cy={y - h * 0.05} rx={w * 0.7} ry={h * 0.11} fill="url(#fl-blue)" opacity={0.55}/>
-      </g>
-    </g>
-  );
-};
-
-// ---------- the clay lamp (diya), seen from the front and a little above; the spout points at us ----------
-// Origin: the centre of the rim. The wick tip (the flame's root) is at (0, 17) * s; the foot at (0, 56) * s.
-const DIYA_BODY = smooth([[-78, -2], [-76, 10], [-66, 26], [-48, 40], [-26, 48], [-18, 56, "c"], [18, 56, "c"], [26, 48], [48, 40], [66, 26], [76, 10], [78, -2], [70, -12], [40, -19], [0, -21], [-40, -19], [-70, -12]]);
-const DIYA_OPEN = smooth([[-66, -2], [-50, -12], [0, -16], [50, -12], [66, -2], [48, 8], [14, 12], [0, 20], [-14, 12], [-48, 8]]);
-const DIYA_LIP = smooth([[-70, -1], [-48, 11], [-16, 15], [-6, 22], [0, 27, "c"], [6, 22], [16, 15], [48, 11], [70, -1], [72, 6], [50, 18], [18, 22], [8, 30], [0, 34, "c"], [-8, 30], [-18, 22], [-50, 18], [-72, 6]]);
-const Diya: React.FC<{x: number; y: number; s?: number; lit?: number; cold?: boolean; shadow?: number}> = ({x, y, s = 1, lit = 1, cold = false, shadow = 1}) => {
-  const id = uid();
-  const warm = cold ? "#7A84B0" : K.rim, L = Math.min(1, lit);
-  return (
-    <g transform={`translate(${x} ${y}) scale(${s})`}>
-      <defs>
-        <linearGradient id={`${id}b`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cold ? "#272236" : "#4A2418"}/><stop offset="0.35" stopColor={cold ? "#17131F" : "#26120F"}/><stop offset="1" stopColor="#0C070B"/></linearGradient>
-        <radialGradient id={`${id}o`} cx="0.5" cy="0.75" r="0.6"><stop offset="0" stopColor={cold ? "#3A3550" : "#FFD68A"} stopOpacity={cold ? 0.4 : 0.9 * L}/><stop offset="0.4" stopColor={cold ? "#1E1A2A" : "#9A5A22"} stopOpacity={0.85}/><stop offset="1" stopColor="#1A0E0C"/></radialGradient>
-      </defs>
-      {shadow > 0 ? <ellipse cx={0} cy={56} rx={112} ry={13} fill="url(#fl-shade)" opacity={0.85 * shadow}/> : null}
-      <path d={DIYA_BODY} fill={`url(#${id}b)`}/>
-      {/* incised bands on the belly, catching the light */}
-      <path d="M -70 20 Q 0 44 70 20" fill="none" stroke={warm} strokeWidth={1} opacity={cold ? 0.12 : 0.24 * L}/>
-      <path d="M -58 32 Q 0 52 58 32" fill="none" stroke={warm} strokeWidth={0.8} opacity={cold ? 0.08 : 0.14 * L}/>
-      <path d={DIYA_BODY} fill="none" stroke={warm} strokeWidth={1.4} opacity={cold ? 0.2 : 0.3 * L}/>
-      <path d={DIYA_OPEN} fill={`url(#${id}o)`}/>
-      {!cold ? <ellipse cx={0} cy={2} rx={24} ry={4} fill="url(#fl-hot)" opacity={0.6 * L}/> : null}
-      <path d={DIYA_LIP} fill={cold ? "#2A2438" : "#6A3020"}/>
-      <path d={DIYA_LIP} fill="none" stroke={warm} strokeWidth={1.5} opacity={cold ? 0.32 : 0.85 * L}/>
-      <path d={ribbon([[0, -2], [1, 6], [-1, 12], [0, 18]], 5, 3.5)} fill="#2A1A14"/>
-      <circle cx={0} cy={17} r={2.6} fill={cold ? "#4A3A3A" : "#FF7A2A"} opacity={cold ? 0.6 : L}/>
-    </g>
-  );
-};
-
-// ---------- stone ----------
-// An ashlar wall: courses of blocks of uneven height and tone, mortar grooves, and a lit lip on the side of each joint
-// facing the light (lx, ly).
-const AshlarWall: React.FC<{lx: number; ly: number; seed?: number; light?: number; base?: string; lit?: string; reach?: number}> =
-  ({lx, ly, seed = 1, light = 1, base = "#150E1E", lit = "#FFCB86", reach = 760}) => {
-  const x0 = -80, x1 = W + 80, y0 = -80, y1 = H + 80;
-  const blocks: React.ReactNode[] = [], joints: string[] = [], lips: [string, number][] = [], chips: React.ReactNode[] = [];
-  let r = 0, y = y0;
-  while (y < y1) {
-    const course = 80 + rnd(r, seed + 9) * 34;
-    let x = x0 - rnd(r, seed) * 200, c = 0;
-    while (x < x1) {
-      const w = 170 + rnd(r * 31 + c, seed + 2) * 190, sh = rnd(r * 17 + c, seed + 3);
-      blocks.push(<rect key={`${r}-${c}`} x={x} y={y} width={w} height={course} fill={base} opacity={0.7 + sh * 0.3}/>);
-      joints.push(`M ${x.toFixed(1)} ${y.toFixed(1)} l 0 ${course.toFixed(1)}`);
-      const d = Math.hypot(x - lx, y + course / 2 - ly), a = Math.max(0, 1 - d / reach);
-      if (a > 0.02) lips.push([`M ${(x + (x < lx ? 3 : -3)).toFixed(1)} ${(y + 5).toFixed(1)} l 0 ${(course - 10).toFixed(1)}`, a]);
-      // weathering: a couple of chips in each block
-      for (let k = 0; k < 2; k++) {
-        const cx = x + 16 + rnd(r * 7 + c * 3 + k, seed + 5) * (w - 32), cy = y + 10 + rnd(r * 5 + c * 11 + k, seed + 6) * (course - 20);
-        chips.push(<ellipse key={`${r}-${c}-${k}`} cx={cx} cy={cy} rx={3 + rnd(c + k, r + 4) * 9} ry={1.5 + rnd(c * 3 + k, r) * 3} fill="#05030A" opacity={0.35}/>);
+// ---------- stone: an uneven, weathered laterite ashlar ----------
+// Courses of uneven height, blocks of uneven length with worn corners and a slightly crooked face, each its own tone;
+// laterite pores and a few cracks; the edge of each block that faces the lamp (lp) catches a thin lip of light.
+const Ashlar: React.FC<{lp: V2; L: number; seed?: number; tone?: string; lit?: string; reach?: number}> = ({lp, L, seed = 1, tone = "#1B1120", lit = "#FFC98A", reach = 900}) => {
+  const [lx, ly] = lp, x0 = -180, x1 = W + 180, y0 = -180, y1 = H + 180;
+  const blocks: React.ReactNode[] = [], lips: React.ReactNode[] = [];
+  let pits = "", cracks = "";
+  for (let r = 0, y = y0; y < y1; r++) {
+    const ch = (rnd(r, seed + 9) < 0.35 ? 56 : 84) + rnd(r, seed + 8) * 40;
+    for (let c = 0, x = x0 - rnd(r, seed) * 240; x < x1; c++) {
+      const w = 130 + rnd(r * 31 + c, seed + 2) * 250, k = r * 57 + c;
+      const j = (q: number, a = 5) => (rnd(k * 9 + q, seed + 4) - 0.5) * a;
+      const cut = 5 + rnd(k, seed + 5) * 10;
+      const xa = x + 2.5 + j(0), xb = x + w - 2.5 + j(1), ya = y + 2.5 + j(2, 3), yb = y + ch - 2.5 + j(3, 3);
+      const pts = [[xa + cut, ya], [xb - cut * 0.6, ya + j(4, 2)], [xb, ya + cut * 0.7], [xb + j(5, 2), yb - cut], [xb - cut * 0.8, yb], [xa + cut * 0.5, yb + j(6, 2)], [xa, yb - cut * 0.6], [xa + j(7, 2), ya + cut]];
+      blocks.push(<path key={k} d={polyD(pts)} fill={mixHex(tone, "#2A1824", rnd(k, seed + 3) * 0.7)}/>);
+      const np = Math.floor(rnd(k, seed + 6) * 5);
+      for (let q = 0; q < np; q++) pits += circ(xa + 14 + rnd(k * 5 + q, seed + 7) * (w - 30), ya + 10 + rnd(k * 7 + q, seed + 8) * (ch - 22), 1.4 + rnd(k * 3 + q, seed + 9) * 3.6, 1 + rnd(k * 3 + q, seed + 10) * 2.2);
+      if (rnd(k, seed + 11) < 0.2) {
+        let px = xa + w * (0.2 + 0.6 * rnd(k, seed + 12)), py = ya;
+        cracks += `M ${px.toFixed(1)} ${py.toFixed(1)}`;
+        for (let q = 0; q < 4; q++) { px += (rnd(k * 4 + q, seed + 13) - 0.5) * 26; py += ch / 4; cracks += ` L ${px.toFixed(1)} ${Math.min(yb, py).toFixed(1)}`; }
       }
-      x += w; c++;
+      const cx = (xa + xb) / 2, cy = (ya + yb) / 2, dx = lx - cx, dy = ly - cy, d = Math.hypot(dx, dy) || 1, a = L * Math.pow(Math.max(0, 1 - d / reach), 2);
+      if (a > 0.015) {
+        const ey = dy > 0 ? yb : ya, ex = dx > 0 ? xb : xa;
+        lips.push(<path key={"h" + k} d={`M ${(xa + cut).toFixed(1)} ${ey.toFixed(1)} L ${(xb - cut).toFixed(1)} ${ey.toFixed(1)}`} stroke={lit} strokeWidth={1.6} opacity={Math.min(1, a * (Math.abs(dy) / d) * 0.9)}/>);
+        lips.push(<path key={"v" + k} d={`M ${ex.toFixed(1)} ${(ya + cut).toFixed(1)} L ${ex.toFixed(1)} ${(yb - cut).toFixed(1)}`} stroke={lit} strokeWidth={1.6} opacity={Math.min(1, a * (Math.abs(dx) / d) * 0.9)}/>);
+      }
+      x += w;
     }
-    joints.push(`M ${x0} ${y.toFixed(1)} L ${x1} ${y.toFixed(1)}`);
-    const a = Math.max(0, 1 - Math.abs(y - ly) / reach);
-    if (a > 0.02) lips.push([`M ${Math.max(x0, lx - reach)} ${(y + (y > ly ? 3.5 : -3.5)).toFixed(1)} L ${Math.min(x1, lx + reach)} ${(y + (y > ly ? 3.5 : -3.5)).toFixed(1)}`, a]);
-    y += course; r++;
+    y += ch;
   }
   return (
     <g>
-      <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="#08060F"/>
+      <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="#07040B"/>
       {blocks}
-      {chips}
-      <path d={joints.join(" ")} stroke="#040208" strokeWidth={4} fill="none" opacity={0.8}/>
-      {light > 0 ? lips.map(([d, a], i) => <path key={i} d={d} stroke={lit} strokeWidth={1.4} fill="none" opacity={a * a * 0.36 * light}/>) : null}
+      <path d={pits} fill="#060309" opacity={0.6}/>
+      <path d={cracks} stroke="#060309" strokeWidth={1.5} fill="none" opacity={0.7}/>
+      {lips}
     </g>
   );
 };
 
-// The horseshoe (chaitya) arch of a temple niche: from the left springing over the apex to the right one.
-const archPts = (cx: number, hw: number, ySpr: number, yApex: number, bulge = 0.06): Pt[] => {
-  const h = ySpr - yApex, b = hw * bulge;
-  const half: Pt[] = [[cx - hw, ySpr], [cx - hw - b, ySpr - h * 0.3], [cx - hw * 0.9 - b * 0.4, ySpr - h * 0.62], [cx - hw * 0.6, ySpr - h * 0.86], [cx - hw * 0.24, ySpr - h * 0.975]];
-  const right = half.map(([x, y]) => [2 * cx - x, y] as Pt).reverse();
-  return [...half, [cx, yApex, "c"], ...right];
-};
-const nicheShape = (cx: number, hw: number, yFloor: number, ySpr: number, yApex: number, bulge?: number) =>
-  smooth([[cx - hw, yFloor, "c"], ...archPts(cx, hw, ySpr, yApex, bulge), [cx + hw, yFloor, "c"]]);
-
-// ---------- the restless night: peepal leaves and grit blown across ----------
+// ---------- the restless night: peepal leaves, grit, a twig ----------
 const PEEPAL: Pt[] = [[0, 0, "c"], [-0.03, -0.14], [0.04, -0.3], [0.18, -0.38], [0.34, -0.36], [0.5, -0.26], [0.64, -0.15], [0.8, -0.05], [1, 0, "c"], [0.8, 0.05], [0.64, 0.15], [0.5, 0.26], [0.34, 0.36], [0.18, 0.38], [0.04, 0.3], [-0.03, 0.14]];
-const leafPath = (L: number, narrow = 1): string => smooth(PEEPAL.map((p) => [p[0] * L, p[1] * L * narrow, p[2]] as Pt))
-  + " " + ribbon([[L * 0.03, 0], [-L * 0.14, L * 0.02], [-L * 0.3, L * 0.07]], L * 0.04, L * 0.018);
-// Leaves tumbling across in the wind, in bands above and below the niche, rim-lit when they pass near the light.
-const Leaves: React.FC<{f: number; n?: number; wind?: number; lx: number; ly: number; seed?: number; bands: [number, number][]}> = ({f, n = 6, wind = 1, lx, ly, seed = 0, bands}) => (
-  <g>
-    {Array.from({length: n}, (_, i) => {
-      const k = i + seed * 50, sc = 0.5 + rnd(k, 62) * 0.4, band = bands[i % bands.length];
-      const vx = (9 + rnd(k, 63) * 7) * wind, span = W + 700;
-      const x = ((f * vx + rnd(k, 64) * span) % span) - 350;
-      const y = band[0] + rnd(k, 65) * (band[1] - band[0]) + Math.sin(f / 17 + k) * 30 * wind + (x / W) * (rnd(k, 66) - 0.3) * 120;
-      const rot = f * (4 + rnd(k, 67) * 6) * wind * (rnd(k, 68) < 0.5 ? 1 : -1) + rnd(k, 69) * 360, flip = Math.cos(f / (6 + rnd(k, 70) * 4) + k);
-      const tr = `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)}) scale(${sc} ${(sc * (0.18 + 0.82 * Math.abs(flip))).toFixed(3)})`;
-      const lit = Math.max(0, 1 - Math.hypot(x - lx, y - ly) / 760);
-      return <Rimmed key={i} paths={[leafPath(70, 0.75 + rnd(k, 71) * 0.2)]} transform={tr} light={[lx - x, ly - y]} fill="#0E0814" rim={lit > 0.06 ? "#E8A868" : "#5A5884"} w={1.8 / sc}/>;
-    })}
-  </g>
-);
-// Grit and seed-fluff streaking sideways in the wind: thin tapered streaks.
-const Gust: React.FC<{f: number; n?: number; wind?: number; lx: number; ly: number; y0?: number; y1?: number}> = ({f, n = 60, wind = 1, lx, ly, y0 = 120, y1 = 960}) => (
+const leafPath = (L: number, narrow = 1): string => smooth(PEEPAL.map((p) => [p[0] * L, p[1] * L * narrow, p[2]] as Pt), {wind: "cw"})
+  + " " + ribbon([[L * 0.03, 0], [-L * 0.14, L * 0.02], [-L * 0.3, L * 0.07]], L * 0.04, L * 0.018, 1, "cw");
+// Peepal leaves tumbling through a box on the wind (v < 0 blows right to left); each is rimmed from the light point lp
+// (its rim direction turned into the leaf's own spinning frame, so the lit edge stays on the side facing the light).
+const Leaves: React.FC<{f: number; n?: number; v?: number; seed?: number; box: [number, number, number, number]; lp: V2; rim: string; far?: number}> = ({f, n = 6, v = 1, seed = 0, box, lp, rim, far = 900}) => {
+  const [bx0, by0, bx1, by1] = box, span = bx1 - bx0 + 320;
+  return (
+    <g>{Array.from({length: n}, (_, i) => {
+      const k = i + seed * 50, sc = 0.42 + rnd(k, 62) * 0.38, vx = (8 + rnd(k, 63) * 8) * v;
+      const x = bx0 - 160 + ((((f * vx + rnd(k, 64) * span) % span) + span) % span);
+      const y = by0 + rnd(k, 65) * (by1 - by0) + Math.sin(f / 13 + k) * 24 * Math.abs(v) + (x - bx0) / span * (rnd(k, 66) - 0.4) * 90;
+      const rot = f * (5 + rnd(k, 67) * 7) * (rnd(k, 68) < 0.5 ? 1 : -1) + rnd(k, 69) * 360, sy = 0.2 + 0.8 * Math.abs(Math.cos(f / (5 + rnd(k, 70) * 4) + k));
+      const a = (-rot * Math.PI) / 180, dx = lp[0] - x, dy = lp[1] - y;
+      const lx = (dx * Math.cos(a) - dy * Math.sin(a)) / sc, ly = (dx * Math.sin(a) + dy * Math.cos(a)) / (sc * sy);
+      const near = Math.max(0, 1 - Math.hypot(dx, dy) / far);
+      return <Rimmed key={i} paths={[leafPath(64, 0.8)]} transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)}) scale(${sc.toFixed(3)} ${(sc * sy).toFixed(3)})`}
+        light={[lx, ly]} fill="#0C0712" rim={mixHex("#3A2A44", rim, 0.35 + 0.65 * near)} w={1.7 / sc}/>;
+    })}</g>
+  );
+};
+// Grit and seed-fluff streaking on the wind (v < 0: right to left), brighter near the light.
+const Gust: React.FC<{f: number; n?: number; v?: number; lp: V2; y0?: number; y1?: number}> = ({f, n = 60, v = 1, lp, y0 = 120, y1 = 960}) => (
   <g>{Array.from({length: n}, (_, i) => {
-    const vx = (14 + rnd(i, 81) * 18) * wind, span = W + 300, x = ((f * vx + rnd(i, 82) * span) % span) - 150;
-    const y = y0 + rnd(i, 83) * (y1 - y0) + Math.sin(f / 9 + i) * 10, len = vx * (1.6 + rnd(i, 84) * 1.4), d = Math.hypot(x - lx, y - ly), a = 0.08 + Math.max(0, 1 - d / 650) * 0.5;
-    return <path key={i} d={ribbon([[x - len, y - len * 0.05], [x - len * 0.5, y - len * 0.02], [x, y]], 0.1, 1 + rnd(i, 85) * 1.6)} fill={d < 650 ? "#FFD9A0" : "#9AA0C8"} opacity={a * (0.4 + 0.6 * rnd(i, 86))}/>;
+    const sp = (14 + rnd(i, 81) * 18) * Math.abs(v), dir = v < 0 ? -1 : 1, span = W + 300, x = (((f * sp * dir + rnd(i, 82) * span) % span) + span) % span - 150;
+    const y = y0 + rnd(i, 83) * (y1 - y0) + Math.sin(f / 9 + i) * 10, len = sp * (1.6 + rnd(i, 84) * 1.4) * dir, d = Math.hypot(x - lp[0], y - lp[1]);
+    return <path key={i} d={ribbon([[x - len, y - Math.abs(len) * 0.04], [x - len * 0.5, y - Math.abs(len) * 0.02], [x, y]], 0.1, 1 + rnd(i, 85) * 1.6)} fill={d < 650 ? "#FFD9A0" : "#9AA0C8"} opacity={(0.08 + Math.max(0, 1 - d / 650) * 0.5) * (0.4 + 0.6 * rnd(i, 86))}/>;
   })}</g>
 );
-// A peepal twig reaching in from a corner, tossing in the wind: crisp silhouette, faint warm rim from the lamp.
-const Twig: React.FC<{f: number; x: number; y: number; s?: number; flip?: boolean; wind?: number; seed?: number; light: V2; rim?: string}> =
-  ({f, x, y, s = 1, flip = false, wind = 1, seed = 0, light, rim = "#B88A62"}) => {
-  const sw = (Math.sin(f / 16 + seed) * 2.6 + Math.sin(f / 6.3 + seed * 2) * 1.1) * wind;
+// A peepal twig tossing in the wind: crisp silhouette, a faint rim from the light direction.
+const Twig: React.FC<{f: number; x: number; y: number; s?: number; flip?: boolean; wind?: number; seed?: number; light: V2; rim?: string; fill?: string}> =
+  ({f, x, y, s = 1, flip = false, wind = 1, seed = 0, light, rim = "#B88A62", fill = "#07040B"}) => {
+  const sw = (Math.sin(f / 9 + seed) * 4 + Math.sin(f / 3.7 + seed * 2) * 2.2) * wind;
   const stem: number[][] = [[0, 0], [-70, 34], [-150, 64], [-232, 84], [-312, 112], [-380, 160], [-428, 222], [-452, 290]];
-  const items: {d: string; t: string}[] = [];
+  const items: It[] = [];
   for (let i = 0; i < 13; i++) {
     const p = stem[1 + (i % 7)], side = i % 2 ? 1 : -1;
-    const ang = 96 + side * 34 + rnd(i, seed + 3) * 30 + Math.sin(f / 3.4 + i * 1.3) * 15 * wind;
-    const L = 66 + rnd(i, seed + 4) * 34, sy = 0.4 + 0.6 * Math.abs(Math.cos(f / 4.6 + i * 0.9));
-    items.push({d: leafPath(L, 0.78), t: `translate(${p[0] + side * 8} ${p[1] + 6}) rotate(${ang.toFixed(1)}) scale(1 ${sy.toFixed(3)})`});
+    const ang = 96 + side * 34 + rnd(i, seed + 3) * 30 + Math.sin(f / 2.2 + i * 1.3) * 26 * wind;
+    const L = 66 + rnd(i, seed + 4) * 34, sy = 0.3 + 0.7 * Math.abs(Math.cos(f / 2.8 + i * 0.9));
+    items.push({d: leafPath(L, 0.78), t: `translate(${p[0] + side * 8} ${p[1] + 6}) rotate(${ang.toFixed(1)}) scale(1 ${sy.toFixed(3)})`, rw: 0.6});
   }
   const lv: V2 = [flip ? -light[0] : light[0], light[1]];
   return (
     <g transform={`translate(${x} ${y}) scale(${flip ? -s : s} ${s}) rotate(${sw.toFixed(2)})`}>
-      <Rimmed paths={[ribbon(stem, 13, 4), ...items]} light={lv} fill="#07040B" rim={rim} w={1.6 / s}/>
-    </g>
-  );
-};
-
-// Smoke above a burning flame: one straight thread in still air, torn curls in the wind.
-const SmokeThread: React.FC<{x: number; y: number; f: number; top: number; mode: "thread" | "torn"}> = ({x, y, f, top, mode}) => {
-  const id = uid(), N = 30, pts: number[][] = [];
-  for (let i = 0; i <= N; i++) {
-    const u = i / N, yy = lerp(y, top, u);
-    const dx = mode === "thread" ? Math.pow(u, 3) * 6 * Math.sin(f / 30 + u * 6) : u * 70 * Math.sin(f / 6 - u * 8) + u * u * 180;
-    pts.push([x + dx, yy]);
-  }
-  return (
-    <g>
-      <defs><linearGradient id={id} gradientUnits="userSpaceOnUse" x1={x} y1={y} x2={x} y2={top}><stop offset="0" stopColor="#E9D8C0" stopOpacity={0}/><stop offset="0.06" stopColor="#F0E2CC" stopOpacity={0.55}/><stop offset="0.7" stopColor="#B8A8B8" stopOpacity={0.25}/><stop offset="1" stopColor="#8A80A0" stopOpacity={0}/></linearGradient></defs>
-      <path d={ribbon(pts, 1.4, mode === "thread" ? 3 : 16)} fill={`url(#${id})`}/>
-      {mode === "torn" ? <path d={ribbon(pts.map(([px, py]) => [px + 6, py]), 4, 34)} fill={`url(#${id})`} opacity={0.3}/> : null}
-    </g>
-  );
-};
-// The flame just gone: an ember fading on the wick and a curl of smoke unwinding up out of the niche.
-const OutSmoke: React.FC<{x: number; y: number; f: number; n: number; top: number}> = ({x, y, f, n, top}) => {
-  const id = uid(), ember = 1 - ease(f, 0, n * 0.5), Hh = y - top;
-  const curls = [0, 1, 2].map((k) => {
-    const N = 44, pts: number[][] = [], grow = 0.55 + 0.45 * Math.min(1, (f + k * 30) / 150);
-    for (let i = 0; i <= N; i++) {
-      const u = i / N, yy = y - u * Hh * grow;
-      const dx = Math.sin(u * 8.5 - f / 20 + k * 2.1) * (3 + u * 30) + u * u * 46 * (k - 0.8);
-      pts.push([x + dx, yy]);
-    }
-    return pts;
-  });
-  return (
-    <g>
-      <defs><linearGradient id={id} gradientUnits="userSpaceOnUse" x1={x} y1={y} x2={x} y2={top}><stop offset="0" stopColor="#D0CCE0" stopOpacity={0.75}/><stop offset="0.45" stopColor="#A09EBE" stopOpacity={0.36}/><stop offset="1" stopColor="#7A7898" stopOpacity={0}/></linearGradient></defs>
-      {curls.map((p, i) => <path key={i} d={ribbon(p, 2.2, 9 + i * 6, 1.4)} fill={`url(#${id})`} opacity={(1 - i * 0.3) * (0.45 + 0.55 * (1 - ease(f, n * 0.5, n * 0.5)))}/>)}
-      <Glow x={x} y={y + 2} rx={16} g="fl-ember" o={ember * 0.8}/>
-      <circle cx={x} cy={y + 2} r={2.4} fill="#FFB060" opacity={ember}/>
-    </g>
-  );
-};
-
-// A temple pilaster in shallow relief: base mouldings, shaft, a bracket capital; the edge facing the lamp lit.
-const Pilaster: React.FC<{x: number; y0: number; y1: number; w: number; side: number; lit: number; cold?: boolean}> = ({x, y0, y1, w, side, lit, cold}) => {
-  const stone = cold ? "#15132A" : "#1E1424", rim = cold ? "#7880AA" : K.rim;
-  const parts: [number, number, number][] = [[y1 - 26, 26, w + 22], [y1 - 40, 14, w + 10], [y0 + 34, y1 - 40 - (y0 + 34), w], [y0 + 20, 14, w + 12], [y0, 20, w + 34]];
-  return (
-    <g>
-      {parts.map(([yy, hh, ww], i) => <g key={i}>
-        <rect x={x - ww / 2} y={yy} width={ww} height={hh} fill={stone}/>
-        <rect x={side > 0 ? x + ww / 2 - 2 : x - ww / 2} y={yy + 1} width={2} height={hh - 2} fill={rim} opacity={(cold ? 0.16 : 0.45) * lit}/>
-        <rect x={x - ww / 2} y={yy + hh - 2} width={ww} height={2} fill="#000" opacity={0.45}/>
-      </g>)}
-      {[-0.25, 0, 0.25].map((k, i) => <rect key={i} x={x + k * w - 1} y={y0 + 40} width={2} height={y1 - y0 - 86} fill="#000" opacity={0.3}/>)}
+      <Rimmed paths={[ribbon(stem, 13, 4, 1, "cw"), ...items]} light={lv} fill={fill} rim={rim} w={1.6 / s}/>
     </g>
   );
 };
 
 // ---------- 6.19: the lamp in the niche ----------
-const LampNiche: React.FC<SceneP & {mode: string}> = ({s, n, mode}) => {
+// A devakoshta in a laterite wall: the kit niche (carved pilasters on lotus bases, a cusped top, a little shikhara with
+// its amalaka and kalasha) over a lotus-moulded sill, the diya inside on the lit floor of the recess. On the right a jali
+// window gives on the night: a peepal thrashing, a pennant whipping, clouds racing, a temple far off. still: the flame
+// dead vertical, its smoke one straight thread; flicker: the wind finds the alcove; out: the lamp gone, a thread of smoke
+// in the moonlight from the window. A still beat whose detail says the lamp is relit begins dark: a soft light comes
+// down to the wick and the flame catches under a small flash.
+const LampNiche: React.FC<SceneP & {mode: "still" | "flicker" | "out"}> = ({s, n, mode}) => {
   const f = useCurrentFrame();
-  const mood = moodOf(s, "night"), amb = AMB[mood];
-  const cold = mode === "out", flick = mode === "flicker";
-  const wind = flick ? 1.6 : cold ? 0.9 : 1.15;
-  const NX = 960, HW = 250, FLOOR = 792, SPR = 486, APEX = 268, J = 34;
-  const DY = 712, DS = 1.25, FX = NX, FY = DY + 17 * DS;
-  // still: only a faint breath; flicker: the restless mind, the flame thrown about and the light jumping with it
-  const lean = flick ? wob(f * 0.15, 1) * 0.62 + 0.15 : 0;
-  const sway = flick ? 0.18 + 0.1 * wob(f * 0.2, 2) : 0.004 * Math.sin(f / 23);
-  const hF = flick ? 118 * (0.66 + 0.42 * (0.5 + 0.5 * wob(f * 0.21, 3))) : 118 * (1 + 0.012 * Math.sin(f / 37));
-  const bright = cold ? 0 : flick ? 0.62 + 0.38 * (0.5 + 0.5 * wob(f * 0.27, 4)) : 1 + 0.025 * Math.sin(f / 41);
-  const lx = FX + lean * hF * 0.6, ly = FY - hF * 0.5;
-  const z = push(f, n, 1, flick ? 1.04 : 1.07);
-  const front = nicheShape(NX, HW, FLOOR, SPR, APEX);
-  const back = nicheShape(NX, HW - J, FLOOR - 24, SPR + 6, APEX + 40);
   const id = uid();
-  const stone = cold ? "#17152A" : "#201424", rim = cold ? "#8088B4" : K.rim;
-  const L = cold ? 0 : bright;
+  const out = mode === "out", flick = mode === "flicker";
+  const relight = mode === "still" && (s?.relight === true || /relight|light(s|ed)? again|rekindl/i.test(String(s?.detail || "")));
+  const NX = 760, SY = 890, NW = 400, NH = 440, J = 40;
+  const DS = 2.6, DX = NX - 44, DY = SY - 9, [FX, FY] = diyaWick(DX, DY, DS);
+  const WX = 1480, WY = 820, WW = 400, WH = 600, wpw = WW * 0.13, wx0 = WX - (WW / 2 - wpw * 0.8), wx1 = WX + (WW / 2 - wpw * 0.8), wy0 = WY - WH * 0.82, JH = 150, HZ = WY - 64;
+  // the storm outside (it blows right to left, in at the window)
+  const storm = out ? 0.12 : flick ? 1.25 : 1;
+  const gust = storm * (0.6 + 0.4 * (0.5 + 0.5 * wob(f * 0.075, 3)));
+  // the flame
+  const kindle = relight ? ease(f, n * 0.12, n * 0.07) : 1;
+  const L = out ? 0 : flick ? 0.7 + 0.3 * (0.5 + 0.5 * wob(f * 0.31, 4)) : kindle * (1 + 0.02 * Math.sin(f / 41));
+  const lean = flick ? -(0.8 + 0.9 * (0.5 + 0.5 * wob(f * 0.11, 1))) : 0;
+  const hF = 52 * DS * (flick ? 0.95 + 0.2 * wob(f * 0.23, 5) + 0.08 * lean : 0.3 + 0.7 * kindle);
+  const tipX = FX + lean * hF * 0.95, tipY = FY - hF;
+  const lp: V2 = [FX + lean * hF * 0.35, FY - hF * 0.42];
+  const mp: V2 = [WX - 30, wy0 + 120];
+  const lamp = L > 0.35, P: V2 = lamp ? lp : mp;
+  const moonRim = "#A6A4CC";
+  const rimC = lamp ? mixHex("#5A3236", K.rim, clamp01(L)) : moonRim;
+  const rimFar = lamp ? mixHex(rimC, "#2A1828", 0.5) : moonRim;
+  const z = push(f, n, 1, flick ? 1.04 : 1.07);
+  // the kit pieces
+  const NI = niche({x: NX, y: SY, w: NW, h: NH});
+  const nParts = parts(dOf(NI[0])), nLow = nParts.filter((p) => bbox(p.d)[1] > SY - NH * 1.08), nHigh = nParts.filter((p) => bbox(p.d)[1] <= SY - NH * 1.08);
+  const WA = cuspedArch({x: WX, y: WY, w: WW, h: WH, lobes: 7});
+  const WL = ledge({x0: WX - WW / 2 - 14, x1: WX + WW / 2 + 14, y: WY, h: 36, seed: 3});
+  const SL = ledge({x0: NX - NW / 2 - NW * 0.16 * 1.7, x1: NX + NW / 2 + NW * 0.16 * 1.7, y: SY + NH * 0.11, h: 30, seed: 5});
+  // the jali: a stone screen across the lower window, pierced in a lattice of lozenges
+  const jx0 = WX - (WW / 2 - wpw * 0.8), jx1 = WX + (WW / 2 - wpw * 0.8), jy0 = WY - JH;
+  let jali = polyD([[jx0, jy0], [jx1, jy0], [jx1, WY], [jx0, WY]], true, "cw");
+  for (let r = 0, yy = jy0 + 20; yy < WY - 18; yy += 21, r++) for (let xx = jx0 + 40 + (r % 2) * 14; xx < jx1 - 36; xx += 28) jali += " " + polyD([[xx, yy - 9], [xx + 10, yy], [xx, yy + 9], [xx - 10, yy]], true, "ccw");
+  // the lotus (padma) moulding under the sill: petals hanging from a fillet, each tinted by the lamp's light on it
+  const PY = SY + NH * 0.11 + 30 * 0.88, petals: React.ReactNode[] = [];
+  const pX0 = NX - NW / 2 - NW * 0.16 * 1.5, pX1 = NX + NW / 2 + NW * 0.16 * 1.5, np = 17, pw = (pX1 - pX0) / np;
+  for (let i = 0; i < np; i++) {
+    const cx = pX0 + pw * (i + 0.5), k = lamp ? L * Math.max(0, 1 - Math.abs(cx - lp[0]) / 520) : 0.25 * Math.max(0, 1 - Math.abs(cx - mp[0]) / 1100);
+    const d = smooth([[cx - pw * 0.5, PY + 2, "c"], [cx - pw * 0.52, PY + 16], [cx - pw * 0.4, PY + 32], [cx - pw * 0.16, PY + 43], [cx, PY + 46, "c"], [cx + pw * 0.16, PY + 43], [cx + pw * 0.4, PY + 32], [cx + pw * 0.52, PY + 16], [cx + pw * 0.5, PY + 2, "c"]], {wind: "cw"});
+    petals.push(<path key={i} d={d} fill={mixHex("#1A1020", lamp ? "#7A4028" : "#44425E", k * 0.75)}/>);
+    petals.push(<path key={"r" + i} d={smooth([[cx - pw * 0.06, PY + 6, "c"], [cx - pw * 0.08, PY + 24], [cx, PY + 38, "c"], [cx + pw * 0.08, PY + 24], [cx + pw * 0.06, PY + 6, "c"]], {wind: "cw"})} fill={mixHex("#2A1A2C", lamp ? "#E0A060" : "#8A88B0", k * 0.7)} opacity={0.8}/>);
+  }
+  const ox0 = NX - NW / 2, ox1 = NX + NW / 2, oy0 = SY - NH * 1.03;
   return (
-    <Frame f={f} zoom={z} cx={FX} cy={FY - 80}>
+    <Frame f={f} zoom={z} cx={FX} cy={FY - 30}>
       <FlameDefs/>
       <defs>
-        <radialGradient id={`${id}w`} cx={lx} cy={ly} r={1000} gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#FFC878" stopOpacity={0.55}/><stop offset="0.14" stopColor="#E8904A" stopOpacity={0.3}/><stop offset="0.4" stopColor="#8E3D52" stopOpacity={0.1}/><stop offset="1" stopColor="#2E2350" stopOpacity={0}/>
+        <linearGradient id={`${id}sky`} gradientUnits="userSpaceOnUse" x1={0} y1={wy0} x2={0} y2={WY}>
+          <stop offset="0" stopColor="#0E1338"/><stop offset="0.5" stopColor="#1F2A5A"/><stop offset="0.78" stopColor="#3A4272"/><stop offset="0.86" stopColor="#5A4466"/><stop offset="0.93" stopColor="#8A5250"/><stop offset="1" stopColor="#5A3644"/>
+        </linearGradient>
+        <radialGradient id={`${id}cw`}>{softStops("#A6AEDA", 0.55, "#4A5488", 1.4)}</radialGradient>
+        <radialGradient id={`${id}n`} gradientUnits="userSpaceOnUse" cx={lp[0]} cy={lp[1] + 10} r={430}>
+          <stop offset="0" stopColor="#E8A262"/><stop offset="0.14" stopColor="#C47A42"/><stop offset="0.38" stopColor="#8A4628"/><stop offset="0.7" stopColor="#4A2220"/><stop offset="1" stopColor="#24121A"/>
         </radialGradient>
-        <radialGradient id={`${id}d`} cx={NX} cy={FY - 140} r={1250} gradientUnits="userSpaceOnUse">
-          <stop offset="0.22" stopColor="#030108" stopOpacity={0}/><stop offset="0.62" stopColor="#030108" stopOpacity={0.5}/><stop offset="1" stopColor="#030108" stopOpacity={0.88}/>
+        <radialGradient id={`${id}fl`} gradientUnits="userSpaceOnUse" cx={FX} cy={SY - J * 0.5} r={330}>
+          <stop offset="0" stopColor="#E8A058"/><stop offset="0.45" stopColor="#9A5430"/><stop offset="1" stopColor="#3A1C1C"/>
         </radialGradient>
-        <radialGradient id={`${id}n`} cx={lx} cy={ly + 10} r={340} gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#FFE2A4"/><stop offset="0.22" stopColor="#EAA455"/><stop offset="0.55" stopColor="#8A4430"/><stop offset="1" stopColor="#2A1626"/>
+        <linearGradient id={`${id}jl`} gradientUnits="userSpaceOnUse" x1={ox0} y1={0} x2={ox0 + J} y2={0}><stop offset="0" stopColor="#24121A"/><stop offset="1" stopColor="#8A4426"/></linearGradient>
+        <linearGradient id={`${id}jr`} gradientUnits="userSpaceOnUse" x1={ox1} y1={0} x2={ox1 - J} y2={0}><stop offset="0" stopColor="#24121A"/><stop offset="1" stopColor="#9A4E2A"/></linearGradient>
+        <linearGradient id={`${id}sm`} gradientUnits="userSpaceOnUse" x1={0} y1={tipY} x2={0} y2={SY - NH * 0.86}>
+          <stop offset="0" stopColor="#FFF0D8" stopOpacity={0}/><stop offset="0.08" stopColor="#F4E2CC" stopOpacity={0.62}/><stop offset="0.7" stopColor="#D8C2B8" stopOpacity={0.32}/><stop offset="1" stopColor="#B8A4B0" stopOpacity={0.1}/>
+        </linearGradient>
+        <linearGradient id={`${id}so`} gradientUnits="userSpaceOnUse" x1={0} y1={FY} x2={0} y2={SY - NH * 0.86}>
+          <stop offset="0" stopColor="#D4D0E4" stopOpacity={0.7}/><stop offset="0.5" stopColor="#A6A2C4" stopOpacity={0.34}/><stop offset="1" stopColor="#7A7898" stopOpacity={0}/>
+        </linearGradient>
+        <radialGradient id={`${id}d`} gradientUnits="userSpaceOnUse" cx={NX + 140} cy={SY - 300} r={1300}>
+          <stop offset="0.25" stopColor="#030108" stopOpacity={0}/><stop offset="0.66" stopColor="#030108" stopOpacity={0.45}/><stop offset="1" stopColor="#030108" stopOpacity={0.85}/>
         </radialGradient>
-        <radialGradient id={`${id}c`} cx={NX - 620} cy={-120} r={1500} gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor={amb} stopOpacity={0.26}/><stop offset="0.6" stopColor={amb} stopOpacity={0.07}/><stop offset="1" stopColor={amb} stopOpacity={0}/>
-        </radialGradient>
-        <linearGradient id={`${id}j`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#000" stopOpacity={0.6}/><stop offset="0.5" stopColor="#000" stopOpacity={0}/><stop offset="1" stopColor="#000" stopOpacity={0.6}/></linearGradient>
-        <linearGradient id={`${id}s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cold ? "#201E34" : "#3A2226"}/><stop offset="0.5" stopColor={cold ? "#15132A" : "#24151C"}/><stop offset="1" stopColor={cold ? "#0E0C1A" : "#140C14"}/></linearGradient>
-        <clipPath id={`${id}k`}><path d={front}/></clipPath>
-        <clipPath id={`${id}o`}><path d={`M -200 -200 L ${W + 200} -200 L ${W + 200} ${H + 200} L -200 ${H + 200} Z ${nicheShape(NX, HW + 96, FLOOR + 50, SPR, APEX - 100)}`} clipRule="evenodd"/></clipPath>
+        <clipPath id={`${id}wc`}><path clipRule="evenodd" d={`M -400 -400 H ${W + 400} V ${H + 400} H -400 Z M ${ox0} ${oy0} H ${ox1} V ${SY + 1} H ${ox0} Z M ${wx0} ${wy0 - 2} H ${wx1} V ${WY + 1} H ${wx0} Z`}/></clipPath>
+        <clipPath id={`${id}rc`}><rect x={ox0} y={oy0} width={NW} height={SY + 1 - oy0}/></clipPath>
+        <clipPath id={`${id}win`}><rect x={wx0} y={wy0 - 2} width={wx1 - wx0} height={WY + 3 - wy0}/></clipPath>
       </defs>
-      {/* the wall: stone, cool night from the upper left, the lamp's warmth, and darkness closing in at the edges */}
-      <AshlarWall lx={lx} ly={ly} light={L} base={cold ? "#12101F" : "#150E1E"}/>
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}c)`} opacity={cold ? 1.6 : 1}/>
-      {!cold ? <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}w)`} opacity={bright}/> : null}
-      {/* the cornice above and the pilasters either side */}
-      <rect x={NX - HW - 230} y={APEX - 168} width={2 * HW + 460} height={44} fill={stone}/>
-      <rect x={NX - HW - 230} y={APEX - 126} width={2 * HW + 460} height={3} fill={rim} opacity={cold ? 0.18 : 0.5 * bright}/>
-      <rect x={NX - HW - 200} y={APEX - 123} width={2 * HW + 400} height={26} fill="url(#fl-down)" opacity={0.8}/>
-      <rect x={NX - HW - 214} y={APEX - 186} width={2 * HW + 428} height={18} fill={stone}/>
-      {[-1, 1].map((sd) => <Pilaster key={sd} x={NX + sd * (HW + 150)} y0={APEX - 122} y1={FLOOR} w={58} side={-sd} lit={cold ? 1 : bright} cold={cold}/>)}
-      {/* the moulded frame of the arch: three bands, each with a lit inner edge */}
-      {[[96, 30], [62, 14], [36, 20]].map(([o, bw], i) => {
-        const outer = nicheShape(NX, HW + o, FLOOR, SPR, APEX - o * 1.05), inner = nicheShape(NX, HW + o - bw, FLOOR, SPR, APEX - (o - bw) * 1.05);
-        return <g key={i}>
-          <path d={`${outer} ${inner}`} fillRule="evenodd" fill={stone}/>
-          <path d={inner} fill="none" stroke={rim} strokeWidth={1.5} opacity={cold ? 0.15 : 0.5 * bright}/>
-          <path d={outer} fill="none" stroke="#05030A" strokeWidth={3} opacity={0.8}/>
-        </g>;
-      })}
-      {/* the recess: jambs and soffit, then the back wall, then the floor */}
-      <path d={front} fill={cold ? "#0E0C1A" : "#341A22"}/>
-      <g clipPath={`url(#${id}k)`}>
-        <path d={front} fill={`url(#${id}n)`} opacity={cold ? 0 : 0.75 * bright}/>
-        <rect x={NX - HW} y={APEX} width={HW * 2} height={FLOOR - APEX} fill={`url(#${id}j)`}/>
-        <path d={back} fill={cold ? "#0B0915" : `url(#${id}n)`}/>
-        <path d={back} fill="none" stroke="#000" strokeWidth={16} opacity={0.14}/>
-        <path d={back} fill="none" stroke="#000" strokeWidth={6} opacity={0.24}/>
-        <path d={`M ${NX - HW} ${FLOOR} L ${NX - HW + J} ${FLOOR - 24} L ${NX + HW - J} ${FLOOR - 24} L ${NX + HW} ${FLOOR} Z`} fill={cold ? "#161424" : "#9A5E36"} opacity={cold ? 1 : 0.9 * Math.min(1, bright)}/>
-        {cold ? <rect x={NX - HW} y={APEX} width={HW * 2} height={FLOOR - APEX} fill={amb} opacity={0.06}/> : null}
-        {/* the lamp's shadow on the floor, swinging when the flame leans */}
-        <ellipse cx={FX - lean * 60} cy={FLOOR - 9} rx={128} ry={12} fill="url(#fl-shade)" opacity={cold ? 0.4 : 0.8}/>
+
+      {/* the night through the window: sky, racing cloud, a far temple and palms, the pennant, the peepal thrashing */}
+      <g clipPath={`url(#${id}win)`}>
+        <rect x={wx0 - 10} y={wy0 - 10} width={wx1 - wx0 + 20} height={WY - wy0 + 20} fill={`url(#${id}sky)`}/>
+        <SoftGlow x={wx0 - 140} y={wy0 - 80} r={560} c0="#D6DCF4" c1="#5A68A0" o={0.55} k={1.8}/>
+        {Array.from({length: 18}, (_, i) => <circle key={i} cx={wx0 + rnd(i, 301) * (wx1 - wx0)} cy={wy0 + rnd(i, 302) * 200} r={0.7 + rnd(i, 303) * 1.1} fill="#F2EAD8" opacity={0.25 + 0.4 * rnd(i, 304)}/>)}
+        {Array.from({length: 7}, (_, i) => {
+          const sp = (2.5 + rnd(i, 311) * 3) * storm + 0.3, span = wx1 - wx0 + 700, x = wx1 + 350 - ((f * sp + rnd(i, 312) * span) % span);
+          return <ellipse key={i} cx={x} cy={wy0 + 30 + rnd(i, 313) * 300} rx={130 + rnd(i, 314) * 150} ry={14 + rnd(i, 315) * 18} fill={`url(#${id}cw)`} opacity={0.5}/>;
+        })}
+        <Rimmed paths={[...palmyra({x: WX + 60, y: HZ + 4, h: 230, seed: 4, wind: -gust * 0.7, t: f * 2.5}), ...coconut({x: WX - 150, y: HZ + 6, h: 200, seed: 6, wind: -gust * 0.9, t: f * 2.5, lean: -0.15})]}
+          light={[-1, -0.8]} fill="#120E2A" rim="#6A70A0" w={1.3}/>
+        <Rimmed paths={temple({x: WX - 52, y: HZ + 2, w: 46, porch: 1, spires: 1, flag: true, t: f * 6 * storm, wind: -1})} light={[-1, -0.8]} fill="#120E28" rim="#7076A6" w={1.3}/>
+        {(() => {
+          const px = WX + 30, top = wy0 + 150;
+          return <Rimmed paths={[polyD([[px - 2.5, HZ + 10], [px + 2.5, HZ + 10], [px + 2, top], [px - 2, top]], true, "cw"), {d: streamer(px, top + 3, 120 + 30 * gust, 34, 6, f * 0.55, 6 + 10 * gust, -1, 12), rim: true}]}
+            light={[-1, -0.8]} fill="#120D24" rim="#7A7EB0" w={1.2}/>;
+        })()}
+        <g transform={`rotate(${(-storm * (1.4 + 1.6 * wob(f * 0.07, 2))).toFixed(2)} ${WX + 420} ${WY + 320})`}>
+          <Rimmed paths={peepal({x: WX + 420, y: WY + 320, h: 900, seed: 3, wind: -gust * 0.8, t: f * 2.6 * storm + 5, detail: 0.9, back: "#16122C"})} light={[-1, -0.7]} fill="#0B0716" rim="#7C84B4" w={1.8}/>
+        </g>
+        <Twig f={f} x={wx1 + 60} y={wy0 + 20} s={0.62} wind={gust * 1.4} seed={2} light={[-1, -0.7]} rim="#8088B8"/>
+        <Leaves f={f} n={out ? 0 : 9} v={-storm * 1.2} seed={2} box={[wx0, wy0, wx1, WY - JH]} lp={[wx0 - 300, wy0 - 300]} rim="#8A90C0" far={2000}/>
       </g>
-      {/* the sill: a projecting stone ledge */}
-      <path d={`M ${NX - HW - 140} ${FLOOR} L ${NX + HW + 140} ${FLOOR} L ${NX + HW + 154} ${FLOOR + 12} L ${NX - HW - 154} ${FLOOR + 12} Z`} fill={cold ? "#24223A" : "#5E3A2C"} opacity={cold ? 0.9 : 0.85 * Math.min(1, bright)}/>
-      <rect x={NX - HW - 154} y={FLOOR + 12} width={HW * 2 + 308} height={38} fill={`url(#${id}s)`}/>
-      <rect x={NX - HW - 154} y={FLOOR + 12} width={HW * 2 + 308} height={2} fill={rim} opacity={cold ? 0.26 : 0.55 * bright}/>
-      <rect x={NX - HW - 154} y={FLOOR + 30} width={HW * 2 + 308} height={2.5} fill="#05030A" opacity={0.6}/>
-      <rect x={NX - HW - 130} y={FLOOR + 50} width={HW * 2 + 260} height={18} fill="#100A16"/>
-      <rect x={NX - HW - 154} y={FLOOR + 50} width={HW * 2 + 308} height={34} fill="url(#fl-down)"/>
-      {/* darkness closing in from the edges of the frame */}
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}d)`}/>
-      {/* the lamp and its flame */}
-      <Diya x={FX} y={DY} s={DS} lit={bright} cold={cold} shadow={0}/>
-      {!cold ? <>
-        <SmokeThread x={FX + lean * hF} y={FY - hF} f={f} top={APEX + 44} mode={flick ? "torn" : "thread"}/>
-        <Flame x={FX} y={FY} h={hF} w={hF * 0.2} lean={lean} sway={sway} t={flick ? f / 2.2 : f / 4} b={bright} halo={1.05}/>
-      </> : <OutSmoke x={FX} y={FY - 2} f={f} n={n} top={APEX + 30}/>}
-      {/* the wind outside the niche: streaks (never inside the recess), leaves, a twig at the corner */}
-      <g clipPath={`url(#${id}o)`}><Gust f={f} wind={wind} lx={lx} ly={ly} n={flick ? 80 : 50}/></g>
-      <Leaves f={f} n={flick ? 9 : 7} wind={wind} lx={lx} ly={ly} seed={1} bands={[[40, 150], [880, 1010], [330, 520], [60, 170], [860, 990], [560, 640]]}/>
-      <Twig f={f} x={W + 40} y={-40} s={1.35} wind={wind} seed={1} light={[lx - (W - 200), ly - 100]} rim={cold ? "#6A6E98" : "#B88A62"}/>
+
+      {/* the recess: back wall lit by the flame (its soot streak above), jambs, floor; the smoke; the lamp */}
+      <g clipPath={`url(#${id}rc)`}>
+        <rect x={ox0} y={oy0} width={NW} height={SY + 1 - oy0} fill={out || L < 0.05 ? "#110D1A" : "#1A0C14"}/>
+        {L > 0.01 ? <rect x={ox0} y={oy0} width={NW} height={SY + 1 - oy0} fill={`url(#${id}n)`} opacity={Math.min(1, L)}/> : null}
+        <path d={[0.3, 0.55, 0.8].map((k) => `M ${ox0} ${(SY - NH * k).toFixed(1)} L ${ox1} ${(SY - NH * k + 2).toFixed(1)}`).join(" ") + ` M ${NX - 90} ${SY - NH * 0.55} l 0 ${NH * 0.25} M ${NX + 120} ${SY - NH * 0.8} l 0 ${NH * 0.25} M ${NX - 30} ${SY - NH * 0.3} l 0 ${NH * 0.25}`}
+          stroke="#120608" strokeWidth={2.4} fill="none" opacity={0.32}/>
+        <ellipse cx={FX} cy={tipY - 120} rx={46} ry={130} fill="url(#fl-shade)" opacity={0.55}/>
+        <path d={polyD([[ox0, SY + 1], [ox0 + J, SY - 24], [ox0 + J, oy0], [ox0, oy0]])} fill={L > 0.05 ? `url(#${id}jl)` : "#0C0A16"} opacity={0.25 + 0.75 * Math.min(1, L)}/>
+        <path d={polyD([[ox1, SY + 1], [ox1 - J, SY - 24], [ox1 - J, oy0], [ox1, oy0]])} fill={L > 0.05 ? `url(#${id}jr)` : "#0C0A16"} opacity={0.25 + 0.75 * Math.min(1, L)}/>
+        <path d={polyD([[ox0, SY + 1], [ox1, SY + 1], [ox1 - J, SY - 24], [ox0 + J, SY - 24]])} fill={L > 0.05 ? `url(#${id}fl)` : "#1A1828"} opacity={0.15 + 0.85 * Math.min(1, L)}/>
+        {out ? <rect x={ox0} y={oy0} width={NW} height={SY + 1 - oy0} fill="#6A6E9A" opacity={0.07}/> : null}
+        {/* the smoke: one straight thread in the still air; torn away by the wind; a curl from the dead wick */}
+        {!out && L > 0.2 && !flick ? <>
+          <path d={ribbon(Array.from({length: 16}, (_, i) => [FX + 0.4 * Math.sin(i * 0.7 + f / 40), lerp(tipY - 2, SY - NH * 0.86, i / 15)]), 1.2, 2.8, 1, "cw")} fill={`url(#${id}sm)`} opacity={Math.min(1, L)}/>
+        </> : null}
+        {flick ? [0, 1, 2].map((k) => {
+          const pts = Array.from({length: 22}, (_, i) => { const u = i / 21; return [tipX - u * (150 + 90 * k) * gust - u * u * 60 + Math.sin(f / 4 - u * 9 + k * 2) * u * 26, tipY - u * (170 + 40 * k) + u * u * 40]; });
+          return <path key={k} d={ribbon(pts, 1.2, 10 + k * 6, 1, "cw")} fill={`url(#${id}sm)`} opacity={0.5 - k * 0.12}/>;
+        }) : null}
+        {out || (relight && kindle < 0.02) ? [0, 1].map((k) => {
+          const top = SY - NH * 0.86, Hh = FY - top, grow = out ? 0.6 + 0.4 * Math.min(1, (f + k * 30) / 160) : 0.5;
+          const pts = Array.from({length: 40}, (_, i) => { const u = i / 39; return [FX + Math.sin(u * 8 - f / 22 + k * 2.1) * (2 + u * 26) + u * u * 34 * (k - 0.6), FY - 4 - u * Hh * grow]; });
+          return <path key={k} d={ribbon(pts, 1.6, 7 + k * 6, 1.4, "cw")} fill={`url(#${id}so)`} opacity={(out ? 0.4 + 0.6 * (1 - ease(f, n * 0.55, n * 0.45)) : 0.35) * (1 - k * 0.35)}/>;
+        }) : null}
+        <Diya x={DX} y={DY} s={DS} f={f} lit={Math.min(1, L)} flame={false} shadow={0.9}/>
+        <Flame x={FX} y={FY} h={hF} f={f} seed={3} calm={flick ? 0 : 1} lean={lean} wind={flick ? -0.6 : 0} b={L} halo={0} licks={flick ? 4 : 1}/>
+        {out ? <>
+          <Glow x={FX} y={FY + 1} rx={18} g="fl-ember" o={0.85 * (1 - ease(f, 0, n * 0.45))}/>
+          <circle cx={FX} cy={FY + 1} r={2.4} fill="#FFB060" opacity={1 - ease(f, 0, n * 0.45)}/>
+        </> : null}
+      </g>
+
+      {/* the wall, pierced by the niche and the window */}
+      <g clipPath={`url(#${id}wc)`}>
+        <Ashlar lp={P} L={lamp ? Math.min(1, L) : 0.22} tone="#130B17" lit={lamp ? "#FFC98A" : "#A8A8D0"} reach={lamp ? 950 : 1100}/>
+      </g>
+      {/* the window: jali, carved frame, sill */}
+      <Rimmed paths={[jali]} point={P} light={[-1, 0]} fill="#1A1020" rim={rimFar} w={1.6}/>
+      <Rimmed paths={[...parts(dOf(WA[0])), WA[1]]} point={P} light={[-1, 0]} fill="#170E1E" rim={rimFar} w={2.2}/>
+      <Rimmed paths={[...parts(dOf(WL[0])), WL[1]]} point={P} light={[-1, 0]} fill="#170E1E" rim={rimFar} w={1.8}/>
+      {/* the niche: its sill and lotus moulding, the pilasters and cusped top, the little shikhara */}
+      <Rimmed paths={[...parts(dOf(SL[0])), SL[1]]} point={P} light={[0, -1]} fill={lamp ? "#22152A" : "#160E1C"} rim={rimC} w={2}/>
+      <path d={polyD([[pX0, PY], [pX1, PY], [pX1, PY + 6], [pX0, PY + 6]])} fill="#0E0812"/>
+      {petals}
+      <Rimmed paths={nLow} point={P} light={[0, -1]} fill={lamp ? "#22152A" : "#160E1C"} rim={rimC} w={2.6}/>
+      <Rimmed paths={[...nHigh, NI[1]]} point={P} light={[0, -1]} fill="#170E1D" rim={mixHex(rimC, "#2A1828", 0.45)} w={2.2}/>
+
+      {/* the lamp's light on the stone, and its halo */}
+      {L > 0.01 ? <>
+        <SoftGlow x={lp[0]} y={lp[1]} r={1150} ry={900} c0="#F2A458" c1="#6A2E4A" o={0.34 * L} k={1.6}/>
+        <SoftGlow x={lp[0]} y={lp[1]} r={hF * 4.6} c0="#FFE9B8" c1="#F0A04B" o={0.55 * L} k={2.2}/>
+      </> : null}
+      {!lamp ? <SoftGlow x={WX} y={wy0 + 200} r={950} c0="#9098C8" c1="#2A2850" o={0.16} k={1.6}/> : null}
+      {/* the hand of light that relights the lamp */}
+      {relight ? (() => {
+        const u = sstep((f - n * 0.02) / (n * 0.1)), ox = lerp(FX + 220, FX + 4, u), oy = lerp(FY - 300, FY - 6, u), o = ease(f, 0, n * 0.04) * (1 - ease(f, n * 0.13, n * 0.06));
+        return <>
+          {o > 0 ? <><SoftGlow x={ox} y={oy} r={90} c0="#FFF4DC" c1="#F0B060" o={0.9 * o} k={2.4}/><circle cx={ox} cy={oy} r={4} fill="#FFF8E8" opacity={o}/></> : null}
+          <LightFlash p={(f - n * 0.1) / (n * 0.1)} x={FX} y={FY - 30} r={300}/>
+        </>;
+      })() : null}
+      {/* the wind in the room once it finds the alcove */}
+      {flick ? <>
+        <Gust f={f} v={-1.1} lp={lp} n={60}/>
+        <Leaves f={f} n={8} v={-1.3} seed={1} box={[0, 120, W, 1000]} lp={lp} rim={K.rim}/>
+      </> : null}
+      {!flick ? <Dust f={f} sun={lp} n={36} y0={300} y1={1000} color={lamp ? "#FFE2A8" : "#C8C8E0"}/> : null}
+      <rect x={-200} y={-200} width={W + 400} height={H + 400} fill={`url(#${id}d)`}/>
     </Frame>
   );
 };
 
-// ---------- the stair of lamps: ghat steps in silhouette, lamps kindling one after another up to the shrine ----------
-// A Nagara shrine in silhouette: a curvilinear tower (shikhara) ribbed with courses, an amalaka disc, a kalasha finial;
-// the doorway glows with the light inside. y is the base; s scales (s = 1 ~ 520 tall).
-const SHRINE_TOWER = smooth([[-150, 0, "c"], [-150, -150, "c"], [-130, -150, "c"], [-126, -230], [-112, -310], [-88, -380], [-58, -428], [-40, -440, "c"], [40, -440, "c"], [58, -428], [88, -380], [112, -310], [126, -230], [130, -150, "c"], [150, -150, "c"], [150, 0, "c"]]);
-const SHRINE_AMALAKA = smooth([[-56, -440], [-50, -458], [0, -466], [50, -458], [56, -440], [0, -432]]);
-const SHRINE_FINIAL = smooth([[-8, -466], [-18, -484], [-10, -500], [0, -526, "c"], [10, -500], [18, -484], [8, -466]]);
-const Shrine: React.FC<{x: number; y: number; s: number; glow: number; light: V2; rim?: string}> = ({x, y, s, glow, light, rim = "#9AA4D8"}) => {
-  const ribs = Array.from({length: 9}, (_, k) => { const yy = -170 - k * 30, ww = 128 - Math.pow(k / 9, 1.8) * 86; return `M ${-ww} ${yy} L ${ww} ${yy}`; }).join(" ");
-  const door = `M -40 0 L -40 -96 Q -40 -128 0 -136 Q 40 -128 40 -96 L 40 0 Z`;
-  return (
-    <g transform={`translate(${x} ${y}) scale(${s})`}>
-      <Glow x={0} y={-70} rx={330} ry={220} o={0.45 * glow}/>
-      <Rimmed paths={[SHRINE_TOWER, SHRINE_AMALAKA, SHRINE_FINIAL]} light={light} fill="#110A18" rim={rim} w={3 / s}/>
-      <path d={ribs} stroke="#000" strokeWidth={3} opacity={0.5}/>
-      <path d={ribs} stroke={rim} strokeWidth={1} opacity={0.1} transform="translate(0 -3)"/>
-      <path d={door} fill="#FFC27A" opacity={0.2 + 0.7 * glow}/>
-      <Glow x={0} y={-50} rx={70} ry={90} g="fl-hot" o={0.65 * glow}/>
-    </g>
-  );
+// ---------- the stair of lamps (12.8-12.11): a ghat under a warm moon, the lamps kindled from the temple down ----------
+// The kit ghat in profile runs from the temple's platform (upper right) down to the river (lower left): many shallow
+// chipped steps with landings. At frame 0 every lamp is dark; a spark leaves the lit temple and carries the flame down,
+// lamp to lamp, while the camera eases down and back until the whole lit stair stands over its own reflection.
+// The tread layout of the kit's side-view ghat (same weights and jitter), so the lamps stand on its treads.
+type GhatG = {x0: number; y0: number; x1: number; y1: number; n: number; seed: number; landing: number};
+const ghatTreads = ({x0, y0, x1, y1, n, seed, landing}: GhatG) => {
+  const isLand = (i: number) => landing > 0 && i > 0 && i % landing === 0;
+  const wts = Array.from({length: n}, (_, i) => (isLand(i) ? 2.6 : 1) * (0.92 + 0.16 * rnd(i, seed + 9))), tot = wts.reduce((a, b) => a + b, 0);
+  const rise = (y1 - y0) / n, ar = Math.abs(rise), out: {xa: number; xb: number; y: number; land: boolean}[] = [];
+  let xs = x0;
+  for (let i = 0; i < n; i++) { const run = ((x1 - x0) * wts[i]) / tot; out.push({xa: xs, xb: xs + run, y: y0 + rise * i + (rnd(i, seed + 1) - 0.5) * ar * 0.12, land: isLand(i)}); xs += run; }
+  return out;
 };
 const LampStair: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame();
-  const mood = moodOf(s, "night"), amb = AMB[mood];
-  const N = Math.max(2, Math.min(14, Math.round(Number(s.count) || 7)));
+  const mood = moodOf(s, "night");
   const id = uid();
-  const moon: V2 = [340, 250];
-  const X0 = 150, Y0 = 1000, X1 = 1470, Y1 = 520;
-  const run = (X1 - X0) / N, rise = (Y0 - Y1) / N;
-  const tread = (i: number) => ({xa: X0 + i * run, xb: X0 + (i + 1) * run, y: Y0 - (i + 1) * rise});
-  const seg: string[] = [`M -80 ${Y0}`, `L ${X0} ${Y0}`];
-  for (let i = 0; i < N; i++) { const t = tread(i); seg.push(`L ${t.xa.toFixed(1)} ${t.y.toFixed(1)}`, `L ${t.xb.toFixed(1)} ${t.y.toFixed(1)}`); }
-  seg.push(`L ${W + 80} ${Y1}`, `L ${W + 80} ${H + 80}`, `L -80 ${H + 80} Z`);
-  const stair = seg.join(" ");
-  const ds = Math.max(0.3, Math.min(0.56, run / 330));
-  const pos = (i: number): V2 => { const t = tread(i); return [t.xa + run * 0.52, t.y]; };
-  // the kindling: lamp i catches at T[i] (the first is already burning); a spark carries the light from lamp i-1 to i
-  const T = Array.from({length: N}, (_, i) => (i === 0 ? -30 : lerp(n * 0.06, n * 0.8, (i - 1) / Math.max(1, N - 2))));
-  const litOf = (i: number) => ease(f, T[i], 12);
-  const litSum = T.reduce((a, _, i) => a + litOf(i), 0);
-  // masonry of the stair's side wall: a course per step and staggered joints
-  const joints: string[] = [];
-  for (let i = 0; i < N; i++) {
-    const t = tread(i);
-    joints.push(`M -80 ${(t.y + rise).toFixed(1)} L ${t.xa.toFixed(1)} ${(t.y + rise).toFixed(1)}`);
-    for (let x = t.xa - run * (i % 2 ? 0.2 : 0.7); x > -80; x -= run) joints.push(`M ${x.toFixed(1)} ${(t.y + rise).toFixed(1)} l 0 ${rise.toFixed(1)}`);
+  const N = Math.max(3, Math.min(9, Math.round(Number(s.count) || 7)));
+  const MOON: V2 = [300, 196], WLN = 652, NEAR = 948;
+  const G: GhatG = {x0: 1540, y0: 488, x1: 250, y1: NEAR - 8, n: 24, seed: 4, landing: 4};
+  const gh = ghat({...G, view: "side", bottom: H + 160});
+  const stairD = dOf(gh[0]);
+  const T = ghatTreads(G);
+  const idx = N === 7 ? [1, 4, 8, 12, 16, 20, 23] : Array.from({length: N}, (_, k) => Math.round(lerp(1, G.n - 1, k / (N - 1))));
+  const DSc = 0.62;
+  const pos = idx.map((i): V2 => { const t = T[i]; return [t.xa + (t.xb - t.xa) * (t.land ? 0.5 : 0.42), t.y + (t.land ? 1 : 0)]; });
+  // the kindling: the temple's light goes to lamp 0, then down the stair
+  const TL = Array.from({length: N}, (_, k) => lerp(n * 0.1, n * 0.8, k / (N - 1)));
+  const litOf = (k: number) => ease(f, TL[k], 14);
+  const flare = (k: number) => 1 + 0.6 * bump(f, TL[k], 4, 18);
+  const TX = 1760, TW = 112, tp = temple({x: TX, y: G.y0, w: TW, porch: -1, spires: 1, flag: true, t: f, wind: -0.5});
+  const bay = tp.at.bay || [TX - 150, G.y0 - 70];
+  const from = (k: number): V2 => (k === 0 ? [bay[0], bay[1] + 10] : [pos[k - 1][0], pos[k - 1][1] - 40 * DSc]);
+  // the camera: close on the temple and the first dark lamps, easing down and back to the whole lit stair
+  const e = sstep(f / (n * 0.92)), z = lerp(1.22, 1.0, e), cx = lerp(1250, 960, e), cy = lerp(440, 540, e);
+  const rimM = "#EACB98", lightAt = (x: number, y: number): V2 => [MOON[0] - x, MOON[1] - y];
+  const masonry: string[] = [];
+  for (let yy = G.y0 + 30, r = 0; yy < NEAR; yy += 38, r++) {
+    masonry.push(`M -100 ${yy} L ${W + 300} ${yy + 1.5}`);
+    for (let xx = -100 + (r % 2) * 70 + rnd(r, 7) * 60; xx < W + 300; xx += 130 + rnd(r * 13 + xx, 8) * 90) masonry.push(`M ${xx.toFixed(1)} ${yy} l ${(rnd(xx, r) * 4 - 2).toFixed(1)} 38`);
   }
-  const shrineX = 1700;
   return (
-    <Frame f={f} zoom={push(f, n, 1, 1.05)} cx={900} cy={620}>
+    <Frame f={f} zoom={1} cx={960} cy={540}>
       <FlameDefs/>
-      <Sky mood={mood} sun={moon} sunR={20} f={f} rays={0} id={`lrow${id}`} clouds={0.55}/>
       <defs>
-        <linearGradient id={`${id}m`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1A1222"/><stop offset="1" stopColor="#0A0610"/></linearGradient>
-        <clipPath id={`${id}k`}><path d={stair}/></clipPath>
+        <linearGradient id={`${id}r`} gradientUnits="userSpaceOnUse" x1={0} y1={WLN} x2={0} y2={H}>
+          <stop offset="0" stopColor="#6A4052"/><stop offset="0.12" stopColor="#3A2A4E"/><stop offset="0.5" stopColor="#1C1634"/><stop offset="1" stopColor="#0C0A1C"/>
+        </linearGradient>
+        <linearGradient id={`${id}m`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1C1324"/><stop offset="1" stopColor="#0C0812"/></linearGradient>
+        <clipPath id={`${id}k`}><path d={stairD}/></clipPath>
       </defs>
-      {/* far bank: a low line of trees in the haze */}
-      <path d={ridge([[-60, 712], ...Array.from({length: 26}, (_, i) => [i * 80 - 20, 690 - rnd(i, 12) * 46 - (i % 3 === 0 ? 24 : 0)] as Pt), [W + 60, 700]], 740)} fill="#140F26"/>
-      {/* the river below the ghat, holding a little moonlight */}
-      <defs><linearGradient id={`${id}r`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24305E"/><stop offset="1" stopColor="#0C1028"/></linearGradient></defs>
-      <rect x={-60} y={738} width={W + 120} height={H - 700} fill={`url(#${id}r)`}/>
-      {Array.from({length: 40}, (_, i) => { const y = 746 + Math.pow(rnd(i, 13), 1.4) * 260, x = moon[0] + (rnd(i, 14) - 0.5) * (60 + (y - 740) * 1.1), len = 10 + (y - 740) * 0.25; return <rect key={i} x={x - len / 2} y={y} width={len} height={1.6} fill="#C9CFE6" opacity={(0.15 + 0.25 * Math.sin(f / 6 + i * 2)) * (1 - (y - 740) / 320)}/>; })}
-      {/* the shrine at the top of the stair */}
-      <Shrine x={shrineX} y={Y1 + 2} s={0.64} glow={0.15 + 0.85 * Math.pow(litSum / N, 1.5)} light={[moon[0] - shrineX, moon[1] - Y1 + 200]} rim={AMB[mood]}/>
-      {/* the stair: one dark mass, faintly rimmed by the moon on its upper-left edges */}
-      <Rimmed paths={[stair]} light={[moon[0] - 900, moon[1] - 700]} fill={`url(#${id}m)`} rim={amb} w={2.2}/>
-      {/* each lamp's light: a pool spilling down the stair's face, the tread it stands on and the riser behind it */}
-      <g clipPath={`url(#${id}k)`}>
-        {Array.from({length: N}, (_, i) => {
-          const L = litOf(i); if (L <= 0) return null;
-          const [x, y] = pos(i), fl = 1 + 0.04 * Math.sin(f / 9 + i * 2);
-          return <Glow key={i} x={x} y={y + rise * 0.3} rx={run * 1.7} ry={rise * 3.2} o={L * 0.75 * fl}/>;
+      <g transform={`translate(960 540) scale(${z.toFixed(4)}) translate(${(-cx).toFixed(1)} ${(-cy).toFixed(1)})`}>
+        <Sky mood={mood} sun={MOON} sunR={32} f={f} rays={0} id="lrow" clouds={0.5} horizon={WLN}/>
+        {/* the far bank: two hazy ranges, then palms and a neem on the near shore of the far bank */}
+        <path d={ridge([[-300, WLN - 18], ...Array.from({length: 14}, (_, i) => [-200 + i * 180, WLN - 34 - 22 * Math.sin(i * 1.3) - rnd(i, 21) * 16] as Pt), [W + 300, WLN - 20]], WLN + 10)} fill="#3A2848" opacity={0.85}/>
+        <Haze y={WLN - 18} h={60} color="#8A5A62" op={0.35}/>
+        <Rimmed paths={[ridge([[-300, WLN - 2], ...Array.from({length: 22}, (_, i) => [-260 + i * 120, WLN - 10 - rnd(i, 23) * 12] as Pt), [W + 300, WLN - 4]], WLN + 6),
+          ...palmyra({x: 120, y: WLN - 6, h: 130, seed: 2, t: f}), ...coconut({x: 520, y: WLN - 6, h: 112, seed: 5, t: f, lean: 0.2}), ...neem({x: 760, y: WLN - 6, h: 90, seed: 3, t: f}), ...palmyra({x: 1020, y: WLN - 8, h: 104, seed: 7, t: f})]}
+          light={lightAt(600, WLN - 60)} fill="#1E1428" rim={rimM} w={1.4}/>
+        {/* the river, holding the moon and the warm band */}
+        <rect x={-300} y={WLN} width={W + 600} height={H - WLN + 200} fill={`url(#${id}r)`}/>
+        {Array.from({length: 46}, (_, i) => { const y = WLN + 6 + Math.pow(rnd(i, 13), 1.3) * 420, x = MOON[0] + (rnd(i, 14) - 0.5) * (40 + (y - WLN) * 0.9), len = 10 + (y - WLN) * 0.22; return <rect key={i} x={x - len / 2} y={y} width={len} height={1.6} fill="#FFE2B0" opacity={(0.14 + 0.22 * Math.sin(f / 6 + i * 2)) * (1 - (y - WLN) / 470)}/>; })}
+        {/* the temple's platform and the temple; its porch glows; a peepal behind */}
+        <SoftGlow x={bay[0]} y={bay[1]} r={300} ry={200} c0="#FFD890" c1="#E8823A" o={0.75} k={1.8}/>
+        <Rimmed paths={peepal({x: 1990, y: G.y0, h: 380, seed: 8, t: f, back: "#140C1C"})} light={lightAt(1990, 300)} fill="#100818" rim={mixHex(rimM, "#2A1A30", 0.55)} w={1.5}/>
+        <Rimmed paths={tp} light={lightAt(TX, 300)} fill="#150C1C" rim={rimM} w={2.4}/>
+        <Rimmed paths={[...parts(dOf(ledge({x0: 1500, x1: W + 380, y: G.y0, h: 44, seed: 2, wall: 700})[0]))]} light={lightAt(1700, G.y0)} fill="#150C1C" rim={rimM} w={2}/>
+        {/* the stair: the kit ghat, its courses, the lamps' light pooled on the stone */}
+        <Rimmed paths={[gh[0]]} light={lightAt(900, 700)} fill={`url(#${id}m)`} rim={rimM} w={2.2}/>
+        <g clipPath={`url(#${id}k)`}>
+          <path d={masonry.join(" ")} stroke="#06030A" strokeWidth={2.4} fill="none" opacity={0.7}/>
+          {pos.map(([x, y], k) => { const L = litOf(k); return L > 0 ? <SoftGlow key={k} x={x} y={y + 30} r={190} ry={130} c0="#FFC878" c1="#C2553A" o={L * 0.7 * flare(k)} k={1.8}/> : null; })}
+        </g>
+        {pos.map(([x, y], k) => { const L = litOf(k), t = T[idx[k]]; return L > 0 ? <rect key={k} x={Math.min(t.xa, t.xb) - 30} y={y - 1.2} width={Math.abs(t.xb - t.xa) + 60} height={2.2} fill="url(#fl-fade-h)" opacity={L}/> : null; })}
+        {/* the lamps */}
+        {pos.map(([x, y], k) => <Diya key={k} x={x - 12 * DSc} y={y} s={DSc} f={f} seed={k + 2} lit={litOf(k) * flare(k)} calm={0.85} shadow={0.6} halo={0.8}/>)}
+        {/* the spark that carries the light down */}
+        {Array.from({length: N}, (_, k) => {
+          const a = k === 0 ? n * 0.03 : Math.max(TL[k - 1] + 8, TL[k] - n * 0.09), b = TL[k], u = (f - a) / (b - a);
+          if (u <= 0 || u >= 1) return null;
+          const [x0, y0] = from(k), [x1, y1] = diyaWick(pos[k][0] - 12 * DSc, pos[k][1], DSc), arc = 60 + Math.abs(x1 - x0) * 0.12;
+          const at = (q: number): V2 => { const e2 = sstep(q); return [lerp(x0, x1, e2), lerp(y0, y1, e2) - Math.sin(q * Math.PI) * arc]; };
+          const [px, py] = at(u);
+          return <g key={k}>
+            {[1, 2, 3, 4, 5].map((j) => { const [qx, qy] = at(Math.max(0, u - j * 0.03)); return <circle key={j} cx={qx} cy={qy} r={2.4 - j * 0.35} fill="#FFE2A8" opacity={0.55 - j * 0.09}/>; })}
+            <SoftGlow x={px} y={py} r={44} c0="#FFF0C8" c1="#F0A04B" o={0.9} k={2.4}/>
+            <circle cx={px} cy={py} r={3.2} fill="#FFF6DC"/>
+          </g>;
         })}
-        <path d={joints.join(" ")} stroke="#05030A" strokeWidth={3} fill="none" opacity={0.75}/>
+        {/* the near water along the foot of the ghat: every lit lamp mirrored in it */}
+        <rect x={-300} y={NEAR} width={W + 600} height={H - NEAR + 200} fill={`url(#${id}r)`}/>
+        <rect x={-300} y={NEAR} width={W + 600} height={1.4} fill="#0A0612" opacity={0.8}/>
+        {pos.map(([x, y], k) => {
+          const L = litOf(k); if (L <= 0) return null;
+          const depth = 30 + Math.min(110, (NEAR - y) * 0.26), xx = x + 30 * DSc;
+          return <g key={k}>
+            <SoftGlow x={xx} y={NEAR + depth * 0.5} r={60} ry={depth * 0.75} c0="#FFD08A" c1="#C2553A" o={0.45 * L} k={1.8}/>
+            {Array.from({length: 9}, (_, j) => { const u = j / 8, yy = NEAR + 4 + u * depth, wv = Math.sin(f / 5 + j * 1.7 + k) * 4, len = (26 - 16 * u) * (0.6 + 0.4 * rnd(j, k + 30)); return <rect key={j} x={xx - len / 2 + wv} y={yy} width={len} height={1.8} rx={0.9} fill="#FFDCA0" opacity={L * (0.75 - 0.6 * u) * (0.6 + 0.4 * Math.sin(f / 4 + j * 2.3 + k))}/>; })}
+          </g>;
+        })}
+        {Array.from({length: 24}, (_, i) => { const y = NEAR + 8 + rnd(i, 41) * 120, x = MOON[0] + (rnd(i, 42) - 0.5) * 140, len = 16 + rnd(i, 43) * 30; return <rect key={i} x={x - len / 2} y={y} width={len} height={1.5} fill="#FFE2B0" opacity={(0.12 + 0.18 * Math.sin(f / 7 + i * 1.9)) * (1 - (y - NEAR) / 160)}/>; })}
+        <Dust f={f} sun={pos[Math.max(0, Math.min(N - 1, Math.floor(f / Math.max(1, n) * N)))]} n={50} y0={300} y1={NEAR}/>
       </g>
-      {Array.from({length: N}, (_, i) => {
-        const L = litOf(i); if (L <= 0) return null;
-        const t = tread(i);
-        return <g key={i} opacity={L}>
-          <rect x={t.xa} y={t.y} width={run} height={2.2} fill="url(#fl-fade-h)"/>
-          {i < N - 1 ? <rect x={t.xb - 2.2} y={t.y - rise} width={2.2} height={rise} fill="url(#fl-fade-v)" opacity={0.8}/> : null}
-        </g>;
-      })}
-      {/* the lamps */}
-      {Array.from({length: N}, (_, i) => {
-        const [x, y] = pos(i), L = litOf(i), fl = f - T[i];
-        const flare = fl > 0 ? 1 + 0.5 * Math.max(0, 1 - fl / 16) : 1;
-        const rim = y - 56 * ds;
-        return <g key={i}>
-          <Diya x={x} y={rim} s={ds} lit={L} cold={L < 0.05} shadow={0.6}/>
-          <Flame x={x} y={rim + 17 * ds} h={92 * ds * (0.3 + 0.7 * L) * (1 + 0.015 * Math.sin(f / 7 + i))} w={18 * ds * (0.4 + 0.6 * L)} sway={0.03} t={f / 5 + i} b={L * flare} halo={0.7}/>
-        </g>;
-      })}
-      {/* the spark that carries the light up from one lamp to the next */}
-      {Array.from({length: N - 1}, (_, i) => {
-        const a = Math.max(T[i] + 6, T[i + 1] - n * 0.1), b = T[i + 1], u = (f - a) / (b - a);
-        if (u <= 0 || u >= 1) return null;
-        const [x0, y0] = pos(i), [x1, y1] = pos(i + 1), e = sstep(u), h0 = 92 * ds;
-        const px = lerp(x0, x1, e), py = lerp(y0 - 56 * ds - h0 * 0.9, y1 - 56 * ds + 10 * ds, e) - Math.sin(u * Math.PI) * rise * 1.6;
-        return <g key={i}>
-          {[1, 2, 3, 4].map((k) => { const uu = Math.max(0, u - k * 0.035), ee = sstep(uu); return <circle key={k} cx={lerp(x0, x1, ee)} cy={lerp(y0 - 56 * ds - h0 * 0.9, y1 - 56 * ds + 10 * ds, ee) - Math.sin(uu * Math.PI) * rise * 1.6} r={2.4 - k * 0.4} fill="#FFE2A8" opacity={0.5 - k * 0.1}/>; })}
-          <Glow x={px} y={py} rx={34} g="fl-warm"/>
-          <circle cx={px} cy={py} r={3.4} fill="#FFF6DC"/>
-        </g>;
-      })}
-      <Dust f={f} sun={pos(Math.max(0, Math.min(N - 1, Math.floor(litSum) - 1)))} n={60} y0={300} y1={1000}/>
     </Frame>
   );
 };
@@ -496,67 +462,6 @@ const Lamp: React.FC<SceneP> = ({s, n}) => {
   return <LampNiche s={s} n={n} mode={v === "flicker" || v === "out" ? v : "still"}/>;
 };
 
-// ---------- fire: tongues of flame, sparks, smoke ----------
-// One tongue of fire standing on (x, y): slender (pw > 1 thins the upper part), a sharp tip, an S-wave travelling up it.
-const tongue = (x: number, y: number, h: number, w: number, lean: number, sway: number, t: number, pw = 1.7): string => {
-  const N = 16, L: Pt[] = [], R: Pt[] = [];
-  let tip: Pt = [x, y - h, "c"];
-  for (let i = 1; i <= N; i++) {
-    const u = i / N;
-    const hw = u < 0.16 ? w * Math.sqrt(Math.max(0, 1 - Math.pow((0.16 - u) / 0.16, 2))) : w * Math.pow((1 - u) / 0.84, pw);
-    const cx = x + lean * h * u * u + sway * h * Math.pow(u, 1.3) * Math.sin(t - u * 4.6);
-    const cy = y - h * u;
-    if (i === N) { tip = [cx, cy, "c"]; continue; }
-    L.push([cx - hw, cy]); R.push([cx + hw, cy]);
-  }
-  return smooth([[x, y + w * 0.1], ...R, tip, ...L.reverse()] as Pt[]);
-};
-// The body of a fire: a low swelling dome the tongues rise out of.
-const dome = (x: number, y: number, w: number, h: number, t: number): string => smooth([
-  [x - w, y + 6, "c"], [x - w * 0.94, y - h * 0.32], [x - w * 0.72, y - h * (0.72 + 0.06 * Math.sin(t))], [x - w * 0.38, y - h * (0.95 + 0.05 * Math.sin(t * 1.3 + 1))],
-  [x, y - h], [x + w * 0.38, y - h * (0.95 + 0.05 * Math.sin(t * 1.1 + 2))], [x + w * 0.72, y - h * (0.72 + 0.06 * Math.sin(t * 0.9 + 3))], [x + w * 0.94, y - h * 0.32], [x + w, y + 6, "c"]]);
-type Tg = {x: number; h: number; w: number; lean: number; sway: number; t: number};
-// A living fire on the line y (its base is meant to sit hidden behind a rim), half-width w, height h; k: its strength
-// (0 = out, 1 = full, more = flaring). Four layers: a soft red fringe, the orange body, the gold heart, a white core.
-const Blaze: React.FC<{f: number; x: number; y: number; w: number; h: number; k?: number; seed?: number; wind?: number}> = ({f, x, y, w, h, k = 1, seed = 0, wind = 0}) => {
-  const id = uid();
-  if (k <= 0.02) return null;
-  const kk = Math.min(1.4, k), Hk = h * kk, Wk = w * (0.45 + 0.55 * Math.min(1, kk));
-  const mk = (M: number, span: number, hK: number, wK: number, ph: number): Tg[] => Array.from({length: M}, (_, i) => {
-    const u = i / (M - 1) - 0.5;
-    const prof = 0.4 + 0.6 * Math.pow(Math.cos(u * Math.PI * 0.96), 1.5);
-    const life = 0.6 + 0.4 * (0.5 + 0.5 * wob(f * 0.068 + i * 1.9 + ph, seed + i + ph));
-    return {x: x + u * 2 * Wk * span + Math.sin(f * 0.03 + i + ph) * Wk * 0.04, h: Hk * hK * prof * life, w: Wk * wK * (0.85 + 0.3 * rnd(i, seed + 3 + ph)),
-      lean: -u * 0.35 + wind * 0.25 + 0.1 * wob(f * 0.045 + i * 2.7 + ph, seed + 7), sway: 0.1 + 0.05 * rnd(i, seed + 4 + ph), t: f * 0.17 + i * 1.7 + ph};
-  });
-  const outer = mk(11, 0.84, 1, 0.27, 0), mid = mk(7, 0.62, 0.74, 0.26, 2.1), core = mk(5, 0.42, 0.4, 0.22, 4.3);
-  const layer = (T: Tg[], dw: number, dh: number, hs: number, ws: number, fill: string, key: string) => [
-    <path key={key + "d"} d={dome(x, y, Wk * dw, Hk * dh, f * 0.05 + dw)} fill={fill}/>,
-    ...T.map((tg, i) => <path key={key + i} d={tongue(tg.x, y, tg.h * hs, tg.w * ws, tg.lean, tg.sway, tg.t)} fill={fill}/>),
-  ];
-  const wisps = outer.map((tg, i) => {
-    const P = 30 + rnd(i, seed + 11) * 18, a = ((f + rnd(i, seed + 12) * P) % P) / P;
-    const fx = tg.x + tg.lean * tg.h * 0.85 + Math.sin(a * 4 + i) * 10, fy = y - tg.h * (0.78 + 0.55 * a);
-    const len = tg.w * 3.4 * (1 - 0.45 * a), wid = tg.w * 0.34 * (1 - 0.6 * a);
-    return wid > 0.6 ? <path key={i} d={tongue(fx, fy, len, wid, tg.lean * 0.6, 0.16, f * 0.25 + i, 1.2)} fill="#EE7032" opacity={Math.pow(1 - a, 1.6) * 0.7}/> : null;
-  });
-  return (
-    <g>
-      <defs>
-        <linearGradient id={`${id}o`} gradientUnits="userSpaceOnUse" x1={0} y1={y + 6} x2={0} y2={y - Hk * 1.05}><stop offset="0" stopColor="#FFA040" stopOpacity={0.95}/><stop offset="0.3" stopColor="#F2702C" stopOpacity={0.92}/><stop offset="0.62" stopColor="#C8401E" stopOpacity={0.72}/><stop offset="0.88" stopColor="#8E2A1E" stopOpacity={0.25}/><stop offset="1" stopColor="#8E2A1E" stopOpacity={0}/></linearGradient>
-        <linearGradient id={`${id}m`} gradientUnits="userSpaceOnUse" x1={0} y1={y + 4} x2={0} y2={y - Hk * 0.82}><stop offset="0" stopColor="#FFE9A8"/><stop offset="0.3" stopColor="#FFC462"/><stop offset="0.66" stopColor="#F68A34" stopOpacity={0.85}/><stop offset="1" stopColor="#E0602A" stopOpacity={0}/></linearGradient>
-        <linearGradient id={`${id}c`} gradientUnits="userSpaceOnUse" x1={0} y1={y + 2} x2={0} y2={y - Hk * 0.4}><stop offset="0" stopColor="#FFFBE6"/><stop offset="0.35" stopColor="#FFEDB4" stopOpacity={0.9}/><stop offset="1" stopColor="#FFD889" stopOpacity={0}/></linearGradient>
-      </defs>
-      <Glow x={x} y={y - Hk * 0.42} rx={Wk * 2.6 + Hk * 0.5} ry={Hk * 1.15} o={0.72 * Math.min(1, kk) * (0.93 + 0.07 * wob(f * 0.13, seed))}/>
-      <Glow x={x} y={y - Hk * 0.2} rx={Wk * 1.5} ry={Hk * 0.5} g="fl-soft" o={0.9 * Math.min(1, kk)}/>
-      <g opacity={0.24}>{layer(outer, 1.12, 0.36, 1.08, 1.55, "#E8642C", "f")}</g>
-      <g opacity={0.96}>{layer(outer, 1, 0.3, 1, 1, `url(#${id}o)`, "o")}</g>
-      {wisps}
-      <g>{layer(mid, 0.78, 0.2, 1, 1, `url(#${id}m)`, "m")}</g>
-      <g>{layer(core, 0.5, 0.11, 1, 1, `url(#${id}c)`, "c")}</g>
-    </g>
-  );
-};
 // Sparks rising from a fire, curling, fading, each with a short streak.
 const Sparks: React.FC<{f: number; x: number; y: number; w: number; h: number; n?: number; k?: number; seed?: number; wind?: number}> = ({f, x, y, w, h, n = 34, k = 1, seed = 0, wind = 0}) => (
   <g>{k <= 0.02 ? null : Array.from({length: n}, (_, i) => {
@@ -726,80 +631,7 @@ const KundFront: React.FC<{g: KG; light: number}> = ({g, light}) => {
     </g>
   );
 };
-// A water pot (kalasha) with mango leaves splayed from its mouth and hanging over the rim, a coconut upright on top;
-// in silhouette, base at (0, 0).
-const KALASHA: string[] = [
-  smooth([[-26, 0, "c"], [-42, -8], [-58, -30], [-62, -56], [-52, -80], [-32, -94], [-18, -100], [-16, -108, "c"], [-28, -114], [-31, -120, "c"], [31, -120, "c"], [28, -114], [16, -108, "c"], [18, -100], [32, -94], [52, -80], [62, -56], [58, -30], [42, -8], [26, 0, "c"]]),
-  smooth([[-22, -118], [-27, -138], [-22, -158], [-10, -172], [-3, -180], [0, -192, "c"], [3, -180], [10, -172], [22, -158], [27, -138], [22, -118]]),
-  ...[[-1, 0, 74, 0.12], [-1, 1, 82, 0.42], [-1, 2, 66, 0.78], [1, 0, 74, 0.12], [1, 1, 82, 0.42], [1, 2, 66, 0.78]].map(([sd, k, L, up]) => {
-    const pts: number[][] = [];
-    for (let i = 0; i <= 12; i++) {
-      const u = i / 12, x = sd * (10 + L * u * (1 - 0.25 * up)), y = -126 - up * 40 * Math.sin(u * Math.PI * 0.7) + (0.55 - up * 0.25) * L * u * u * (k === 2 ? 0.6 : 1);
-      pts.push([x, y]);
-    }
-    return blade(pts, 9 + (k === 1 ? 1.5 : 0));
-  }),
-];
-// The pillars of the fire pavilion: base, shaft, bracket capital.
-const pillar = (x: number, w: number, y0: number, y1: number): string[] => [
-  `M ${x - w * 0.8} ${y1} L ${x + w * 0.8} ${y1} L ${x + w * 0.8} ${y1 - w * 0.5} L ${x + w * 0.62} ${y1 - w * 0.7} L ${x - w * 0.62} ${y1 - w * 0.7} L ${x - w * 0.8} ${y1 - w * 0.5} Z`,
-  `M ${x - w / 2} ${y1 - w * 0.7} L ${x + w / 2} ${y1 - w * 0.7} L ${x + w * 0.46} ${y0 + w * 1.2} L ${x - w * 0.46} ${y0 + w * 1.2} Z`,
-  smooth([[x - w * 0.55, y0 + w * 1.25, "c"], [x - w * 0.62, y0 + w * 0.9], [x - w * 1.1, y0 + w * 0.7], [x - w * 1.2, y0 + w * 0.45, "c"], [x - w * 1.2, y0, "c"], [x + w * 1.2, y0, "c"], [x + w * 1.2, y0 + w * 0.45, "c"], [x + w * 1.1, y0 + w * 0.7], [x + w * 0.62, y0 + w * 0.9], [x + w * 0.55, y0 + w * 1.25, "c"]]),
-];
 
-const Fire: React.FC<SceneP> = ({s, n}) => {
-  const f = useCurrentFrame();
-  const v = String(s.variant || "");
-  const mood = moodOf(s, "night"), amb = AMB[mood];
-  const id = uid();
-  const X = 960, g = kundGeom(X, 904, 1), FB = g.fb;
-  let k = 1, flow = 0, ash = 0;
-  if (v === "ash") { const p = sstep((f - 0.1 * n) / (0.62 * n)); k = 1 - 0.985 * p; ash = sstep((f - 0.3 * n) / (0.5 * n)); }
-  if (v === "offering") { flow = ease(f, 0, 14) * (1 - ease(f, 0.82 * n, 0.1 * n)); k = 1 + 0.2 * ease(f, 20, 40) * (1 - ease(f, 0.86 * n, 0.12 * n)); }
-  if (v === "syllables") k = 0.86;
-  const flick = 0.93 + 0.07 * wob(f * 0.11, 3), light = Math.max(v === "ash" ? 0.3 * (1 - 0.5 * ash) : 0, k) * flick;
-  const FH = 450, FW = 190;
-  const labels: string[] = Array.isArray(s.labels) ? s.labels.slice(0, 3).map(String) : [];
-  const smokeOp = v === "syllables" ? 0.95 : v === "ash" ? 0.45 + 0.4 * (1 - k) : 0.55;
-  const lightAt = (px: number, py: number): V2 => [X - px, FB - 180 - py];
-  return (
-    <Frame f={f} zoom={push(f, n, 1, 1.05)} cx={X} cy={600}>
-      <FlameDefs/>
-      <Sky mood={mood} sun={[1600, 200]} sunR={15} f={f} rays={0} id={`fire${id}`} clouds={0.4}/>
-      <defs>
-        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#140D1E"/><stop offset="1" stopColor="#06030A"/></linearGradient>
-      </defs>
-      {/* far trees on the horizon, then the ground */}
-      <path d={ridge([[-60, 712], ...Array.from({length: 22}, (_, i) => [i * 95 - 30, 690 - rnd(i, 31) * 50 - (i % 4 === 1 ? 26 : 0)] as Pt), [W + 60, 700]], 760)} fill="#150E24"/>
-      <rect x={-60} y={730} width={W + 120} height={H - 700} fill={`url(#${id}g)`}/>
-      <Glow x={X} y={g.y - 30} rx={1000 * Math.max(0.3, light)} ry={240 * Math.max(0.3, light)} g="fl-floor" o={Math.min(1, 0.3 + 0.7 * light)}/>
-      {/* the pavilion's far pillars */}
-      {[[560, 40, 40, 770], [1360, 40, 40, 770]].map(([px, pw, y0, y1], i) => (
-        <Rimmed key={i} paths={pillar(px, pw, y0, y1)} light={lightAt(px, (y0 + y1) / 2)} fill="#140C18" rim={K.rim} w={2.5}/>
-      ))}
-      <Plume f={f} x={X} y={FB - FH * 0.8 * Math.max(0.3, k)} rise={640} n={v === "syllables" ? 28 : 18} op={smokeOp} wind={0.22} r0={50} r1={230} spread={90}/>
-      <KundBack g={g} light={light} f={f} ash={ash}/>
-      {v === "offering" ? <Ghee f={f} flow={flow} fb={FB} fh={FH}/> : null}
-      <Shimmer f={f} x={X} y={FB - FH * 0.85 * k} w={FW} h={380} k={k}/>
-      <Blaze f={f} x={X} y={FB} w={FW} h={FH} k={k} seed={2}/>
-      {v === "ash" && k < 0.6 ? <Plume f={f} x={X} y={FB - 30} rise={560} n={9} op={0.75 * (1 - k)} wind={0.12} r0={16} r1={120} spread={180} seed={5}/> : null}
-      <KundFront g={g} light={light}/>
-      <Sparks f={f} x={X} y={FB} w={FW} h={FH} k={k} n={v === "offering" ? 46 : 32}/>
-      {labels.map((t, i) => <Syllable key={i} t={t} i={i} m={labels.length} f={f} n={n} fb={FB}/>)}
-      {/* the kalasha, and the near pillars and lintel, rimmed by the fire */}
-      <g transform={`translate(${X - 500} ${g.y - 2})`}>
-        <ellipse cx={0} cy={2} rx={76} ry={11} fill="url(#fl-shade)" opacity={0.75}/>
-        <Rimmed paths={KALASHA} light={[1, -0.5]} fill="#170D16" rim={K.rim} w={2.6}/>
-      </g>
-      {[[140, 76, -10, 1030], [1780, 76, -10, 1030]].map(([px, pw, y0, y1], i) => (
-        <Rimmed key={i} paths={pillar(px, pw, y0, y1)} light={lightAt(px, (y0 + y1) / 2)} fill="#0A060D" rim={K.rim} w={3.2}/>
-      ))}
-      <rect x={-60} y={-40} width={W + 120} height={76} fill="#09050C"/>
-      <rect x={60} y={35} width={W - 120} height={1.6} fill={K.rim} opacity={0.35 * light}/>
-      <Dust f={f} sun={[X, FB - 200]} n={60} y0={200} y1={1000}/>
-    </Frame>
-  );
-};
 // The offering: a long ladle (sruk) reaching in from above, a thin stream of ghee pouring into the fire.
 const Ghee: React.FC<{f: number; flow: number; fb: number; fh: number}> = ({f, flow, fb, fh}) => {
   const id = uid();
@@ -824,105 +656,242 @@ const Ghee: React.FC<{f: number; flow: number; fb: number; fh: number}> = ({f, f
     </g>
   );
 };
-// One of the three words rising out of the fire into the smoke, in gold light.
-const Syllable: React.FC<{t: string; i: number; m: number; f: number; n: number; fb: number}> = ({t, i, m, f, n, fb}) => {
-  const t0 = n * (0.04 + 0.22 * i), d = n * 0.34, p = clamp01((f - t0) / d);
-  if (p <= 0) return null;
-  const e = sstep(p), x1 = 960 + (i - (m - 1) / 2) * 290, y1 = 236;
-  const x = lerp(960 + (i - (m - 1) / 2) * 60, x1, e), y = lerp(fb - 300, y1, e) + Math.sin(f / 40 + i) * 4 * e;
-  const o = sstep(p / 0.35), deva = isDeva(t);
+
+// ---------- smoke as filaments ----------
+// Rising, curling, translucent bands that pinch and swell; a wave travels up each so its curls climb. Filled with a
+// vertical gradient (userSpace, base to top): warm where the fire lights it from below, cool and thin at the top.
+type Fil = {x: number; y: number; top: number; amp: number; wl: number; sp: number; ph: number; w0: number; w1: number; drift: number};
+const filOf = (i: number, x: number, spread: number, y: number, top: number, w1: number, salt = 0, ampK = 1): Fil => ({
+  x: x + (rnd(i, salt + 51) - 0.5) * spread, y, top: top - rnd(i, salt + 52) * 120, amp: (10 + rnd(i, salt + 53) * 34) * ampK, wl: 1.1 + rnd(i, salt + 54) * 1.6,
+  sp: 0.04 + rnd(i, salt + 55) * 0.035, ph: rnd(i, salt + 56) * 6.28, w0: 4 + rnd(i, salt + 57) * 8, w1: w1 * (0.45 + 0.8 * rnd(i, salt + 58)), drift: (rnd(i, salt + 59) - 0.4) * 260,
+});
+const filament = (q: Fil, f: number, bend: number, i: number): string => {
+  const M = 22, pts: number[][] = [], ws: number[] = [];
+  for (let j = 0; j <= M; j++) {
+    const u = j / M;
+    pts.push([q.x + Math.sin(u * q.wl * Math.PI * 2 - f * q.sp + q.ph) * q.amp * (0.25 + u) + q.drift * u * u + bend * u * u, lerp(q.y, q.top, u)]);
+    ws.push(lerp(q.w0, q.w1, Math.pow(u, 0.8)) * (0.62 + 0.38 * Math.sin(u * 7.3 + f * 0.04 + i * 1.7)));
+  }
+  return ribbonW(pts, ws);
+};
+const SmokeGrad: React.FC<{id: string; y0: number; y1: number; k?: number}> = ({id, y0, y1, k = 1}) => (
+  <linearGradient id={id} gradientUnits="userSpaceOnUse" x1={0} y1={y0} x2={0} y2={y1}>
+    <stop offset="0" stopColor="#C88850" stopOpacity={0}/><stop offset="0.07" stopColor="#B87A52" stopOpacity={0.62 * k}/><stop offset="0.26" stopColor="#7A5258" stopOpacity={0.52 * k}/>
+    <stop offset="0.55" stopColor="#463E5C" stopOpacity={0.42 * k}/><stop offset="1" stopColor="#2C2C4C" stopOpacity={0}/>
+  </linearGradient>
+);
+
+// ---------- the kalasha: a brass pot with mango leaves and a coconut, its belly catching the fire ----------
+// Base at (0, 0), about 200 units tall; drawn at scale s.
+const KAL_POT = smooth([[-26, 0, "c"], [-42, -8], [-58, -30], [-62, -56], [-52, -80], [-32, -94], [-18, -100], [-16, -108, "c"], [-28, -114], [-31, -120, "c"], [31, -120, "c"], [28, -114], [16, -108, "c"], [18, -100], [32, -94], [52, -80], [62, -56], [58, -30], [42, -8], [26, 0, "c"]], {wind: "cw"});
+const KAL_NUT = smooth([[-24, -116], [-31, -138], [-29, -162], [-18, -182], [-6, -193], [0, -197, "c"], [6, -193], [18, -182], [29, -162], [31, -138], [24, -116]], {wind: "cw"});
+// five mango leaves a side, fanned from under the coconut and drooping over the pot's shoulders
+const KAL_LEAVES: string[] = Array.from({length: 10}, (_, i) => {
+  const sd = i % 2 ? 1 : -1, k = Math.floor(i / 2), L = 58 + (k % 2) * 12 - k * 2, rise = 26 - k * 5, droop = 0.55 + k * 0.12, pts: number[][] = [];
+  for (let j = 0; j <= 12; j++) { const u = j / 12; pts.push([sd * (8 + L * u * (0.95 - k * 0.06)), -122 - rise * Math.sin(u * Math.PI * 0.8) + droop * L * u * u]); }
+  return blade(pts, 7.5);
+});
+const KAL_FIBRE = Array.from({length: 7}, (_, i) => { const a = -Math.PI / 2 + (i - 3) * 0.22; return ribbon([[0, -182], [Math.cos(a) * 14, -182 + Math.sin(a) * 14], [Math.cos(a) * 22 + (i - 3) * 2, -182 + Math.sin(a) * 20 + 3]], 2.2, 0.4, 1, "cw"); }).join(" ");
+const Kalasha: React.FC<{x: number; y: number; s: number; lp: V2; light: number; f: number}> = ({x, y, s, lp, light, f}) => {
+  const id = uid();
+  // the light point in the pot's own units, and the direction the rim pass pushes the dark fill
+  const lx = (lp[0] - x) / s, ly = (lp[1] - y) / s, ll = Math.hypot(lx, ly + 60) || 1, dx = lx / ll, dy = (ly + 60) / ll, w = 2.6 / s;
+  const sh = Math.min(1.3, light);
   return (
-    <g opacity={o}>
-      <Glow x={x} y={y - 30} rx={190} ry={110} g="fl-warm" o={0.55}/>
-      <text x={x} y={y} textAnchor="middle" fontFamily={deva ? SA : CAPS} fontSize={deva ? 108 : 92} letterSpacing={deva ? 0 : 10} fill="url(#k-gold)">{t}</text>
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <defs>
+        <linearGradient id={`${id}b`} gradientUnits="userSpaceOnUse" x1={-64} y1={0} x2={64} y2={0}>
+          <stop offset="0" stopColor="#140A08"/><stop offset="0.42" stopColor="#2A170E"/><stop offset="0.66" stopColor={mixHex("#3A2210", "#7A4A1E", sh * 0.8)}/>
+          <stop offset="0.8" stopColor={mixHex("#4A2C12", "#D89A48", sh * 0.85)}/><stop offset="0.88" stopColor={mixHex("#3A2210", "#F2C070", sh * 0.8)}/><stop offset="0.95" stopColor={mixHex("#24140C", "#8A5422", sh * 0.7)}/><stop offset="1" stopColor="#1E100A"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx={0} cy={2} rx={84} ry={11} fill="url(#fl-shade)" opacity={0.8}/>
+      <Rimmed paths={[...parts(dOf(ledge({x0: -66, x1: 66, y: 0, h: 22, seed: 9})[0])), {d: KAL_NUT, fill: "#2A160E"}, {d: KAL_FIBRE, rw: 0.5, fill: "#2A160E"}, ...KAL_LEAVES.map((d) => ({d, rw: 0.7, fill: "#0E0E0A"})), KAL_POT]} point={[lx, ly]} light={[1, -0.4]} fill="#140C10" rim={K.rim} w={w}/>
+      {/* the brass: the pot again in its sheen, set back from the lit edge so the rim still shows; a hot highlight */}
+      <path d={KAL_POT} transform={`translate(${(-dx * w).toFixed(2)} ${(-dy * w).toFixed(2)})`} fill={`url(#${id}b)`}/>
+      <path d="M -17 -104 L 17 -104 M -18 -100.5 L 18 -100.5 M -17 -97 L 17 -97" stroke="#7A2418" strokeWidth={1.6} opacity={0.9}/>
+      <path d="M 6 -104 L 17 -104 M 7 -100.5 L 18 -100.5" stroke="#FFB070" strokeWidth={0.9} opacity={0.6 * sh}/>
+      <path d="M -54 -56 Q 0 -44 54 -56" stroke="#0E0806" strokeWidth={1.4} fill="none" opacity={0.6}/>
+      <path d="M 24 -51 Q 40 -53 54 -56" stroke="#FFD08A" strokeWidth={1.1} fill="none" opacity={0.55 * sh}/>
+      <ellipse cx={38} cy={-60} rx={7} ry={24} fill="url(#fl-hot)" opacity={0.75 * sh * (0.92 + 0.08 * Math.sin(f / 5))}/>
     </g>
   );
 };
 
-// ---------- 3.38: fire covered by smoke ----------
-// A hearth on the ground: crossed logs under the fire, and a ring of stones in front of it.
-const HearthBack: React.FC<{x: number; y: number; f: number}> = ({x, y, f}) => {
-  const logs = [ribbon([[x - 190, y + 4], [x - 60, y - 34], [x + 70, y - 74]], 34, 24), ribbon([[x + 195, y + 8], [x + 60, y - 32], [x - 70, y - 76]], 32, 22)];
+// ---------- the yajna (4.24-25, 3.9, 17.23): the kunda in a carved pavilion ----------
+// The kit Fire on the havan kunda, its white cores, blue roots and licks breaking into curling smoke, the air above it
+// shimmering. Two carved kit pillars and a beam frame the shot; their inner faces, the floor and the brass kalasha catch
+// the firelight, flickering with it. offering: ghee poured from a ladle, grain scattered, a marigold dropped, each making
+// the fire leap and throwing up sparks that climb and stay as the morning stars; syllables: the three words (s.labels,
+// ॐ तत् सत्) written one by one above the fire in the film's one type rule; ash: the fire burns down to ash and embers.
+const PILLARS = [{x: 150, side: 1}, {x: 1770, side: -1}];
+const FireScene: React.FC<SceneP> = ({s, n}) => {
+  const f = useCurrentFrame();
+  const v = String(s.variant || "");
+  const mood = moodOf(s, "night");
+  const id = uid();
+  const X = 960, g = kundGeom(X, 912, 1), FB = g.fb;
+  const off = v === "offering", syl = v === "syllables";
+  const OF = off ? [{a: 0.08 * n, land: 0.15 * n, end: 0.42 * n}, {a: 0.47 * n, land: 0.53 * n, end: 0.58 * n}, {a: 0.63 * n, land: 0.71 * n, end: 0.73 * n}] : [];
+  let k = 1, ash = 0;
+  if (v === "ash") { const p = sstep((f - 0.1 * n) / (0.62 * n)); k = 1 - 0.985 * p; ash = sstep((f - 0.3 * n) / (0.5 * n)); }
+  if (off) k = 1 + 0.12 * ease(f, OF[0].land, 20) * (1 - ease(f, OF[0].end, 20)) + OF.reduce((a, o) => a + 0.3 * bump(f, o.land, 5, 40), 0);
+  if (syl) k = 0.96;
+  const flick = 0.9 + 0.1 * wob(f * 0.13, 3), light = Math.max(v === "ash" ? 0.3 * (1 - 0.5 * ash) : 0, k) * flick;
+  const FH = 390, FW = 190;
+  const lp: V2 = [X, FB - FH * 0.35 * Math.max(0.3, k)];
+  const labels: string[] = Array.isArray(s.labels) ? s.labels.slice(0, 3).map(String) : [];
+  const HZ = 740;
+  const nFil = syl ? 14 : v === "ash" ? 6 : 9;
+  // the beam over the pavilion: a carved band, a dentil course, pendant buds; its underside faces the fire
+  const beam: It[] = [{d: polyD([[-200, -80], [W + 200, -80], [W + 200, 58], [-200, 58]], true, "cw")}];
+  let dent = "";
+  for (let x = -180; x < W + 200; x += 34) dent += polyD([[x, 58], [x + 20, 58], [x + 20, 70], [x, 70]], true, "cw") + " ";
+  beam.push({d: dent});
+  for (let x = 330; x < W - 300; x += 210) beam.push({d: smooth([[x - 7, 70, "c"], [x - 9, 84], [x, 98, "c"], [x + 9, 84], [x + 7, 70, "c"]], {wind: "cw"})});
+  const beamRel: It = {d: [polyD([[-200, 8], [W + 200, 8], [W + 200, 11], [-200, 11]], true, "cw"), polyD([[-200, 34], [W + 200, 34], [W + 200, 36], [-200, 36]], true, "cw")].join(" "), fill: RELIEF, rim: false};
+  // star sparks: thrown up by each offering, climbing to a place in the sky and staying there as a star
+  const stars = OF.flatMap((o, j) => Array.from({length: 6}, (_, i) => {
+    const q = j * 6 + i, t0 = o.land + i * 3, dur = 70 + rnd(q, 401) * 50, u = (f - t0) / dur;
+    if (u <= 0) return null;
+    const sx = X + (rnd(q, 402) - 0.5) * 140, sy = FB - 280, tx = 260 + rnd(q, 403) * 1400, ty = 70 + rnd(q, 404) * 270;
+    const e = sstep(Math.min(1, u)), px = lerp(sx, tx, e) + Math.sin(e * Math.PI * 2 + q) * 40 * (1 - e), py = lerp(sy, ty, Math.pow(e, 0.8));
+    const fade = 1 - 0.65 * ease(f, 0.86 * n, 0.14 * n), tw = u >= 1 ? 0.6 + 0.4 * Math.sin(f / (6 + rnd(q, 405) * 6) + q) : 1;
+    return <g key={q} opacity={fade * tw}>
+      <SoftGlow x={px} y={py} r={u < 1 ? 26 : 12} c0="#FFF0C8" c1="#F0A04B" o={u < 1 ? 0.9 : 0.6} k={2.4}/>
+      <circle cx={px} cy={py} r={u < 1 ? 2.2 : 1.6} fill="#FFF6DC"/>
+    </g>;
+  }));
   return (
-    <g>
-      <Glow x={x} y={y - 20} rx={240} ry={70} g="fl-ember" o={0.8}/>
-      <Rimmed paths={logs} light={[0, -1]} fill="#1A0D10" rim="#FF9A50" w={3}/>
-      {[[x - 188, y + 4], [x + 193, y + 8]].map(([lx, ly], i) => <g key={i}>
-        <ellipse cx={lx} cy={ly} rx={12} ry={17} fill="#2A1210"/>
-        <ellipse cx={lx} cy={ly} rx={9} ry={12} fill="url(#fl-ember)" opacity={0.6 + 0.3 * Math.sin(f / 13 + i)}/>
-      </g>)}
-    </g>
+    <Frame f={f} zoom={push(f, n, 1, 1.05)} cx={X} cy={600}
+      overlay={syl && labels.length ? <>{labels.map((t, i) => {
+        const at = n * (0.44 + 0.16 * i), x = 960 + (i - (labels.length - 1) / 2) * 330, y = 300;
+        return <g key={i}>
+          <SoftGlow x={x} y={y - 36} r={200} ry={130} c0="#FFD890" c1="#E8823A" o={0.6 * ease(f, at, 22) * (0.92 + 0.08 * wob(f * 0.2, i))} k={2}/>
+          <Label sa={t} f={f} at={at} x={x} y={y} anchor="middle" size={112}/>
+        </g>;
+      })}</> : null}>
+      <FlameDefs/>
+      <Sky mood={mood} sun={[1610, 186]} sunR={17} f={f} rays={0} id="fire" clouds={0.35} horizon={HZ}/>
+      {off ? <SoftGlow x={1300} y={HZ + 10} r={1200} ry={320} c0="#F4A868" c1="#6A2E4A" o={0.4 * f / Math.max(1, n)} k={1.5}/> : null}
+      <defs>
+        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#170F20"/><stop offset="1" stopColor="#07040B"/></linearGradient>
+        <SmokeGrad id={`${id}s`} y0={FB - FH * 0.55} y1={-60} k={syl ? 1.15 : 1}/>
+        {PILLARS.map((p, i) => <linearGradient key={i} id={`${id}p${i}`} gradientUnits="userSpaceOnUse" x1={p.x + p.side * 66} y1={0} x2={p.x + p.side * 18} y2={0}>
+          <stop offset="0" stopColor="#F09850" stopOpacity={Math.min(0.42, 0.3 * light)}/><stop offset="0.45" stopColor="#D06A38" stopOpacity={Math.min(0.2, 0.12 * light)}/><stop offset="1" stopColor="#C2553A" stopOpacity={0}/>
+        </linearGradient>)}
+        {PILLARS.map((p, i) => <clipPath key={i} id={`${id}c${i}`}><path d={dOf(pillar({x: p.x, y: 1062, h: 1000})[0])}/></clipPath>)}
+      </defs>
+      {/* the far trees on the horizon, then the ground */}
+      <path d={ridge([[-60, HZ - 4], ...Array.from({length: 22}, (_, i) => [i * 95 - 30, HZ - 14 - rnd(i, 31) * 22] as Pt), [W + 60, HZ - 6]], HZ + 20)} fill="#1A1228"/>
+      {[...neem({x: 250, y: HZ, h: 120, seed: 4, t: f}), ...peepal({x: 610, y: HZ, h: 170, seed: 6, t: f}), ...khejri({x: 1290, y: HZ, h: 130, seed: 2, t: f}), ...palmyra({x: 1470, y: HZ, h: 190, seed: 3, t: f}), ...neem({x: 1720, y: HZ, h: 110, seed: 9, t: f})]
+        .map((it, i) => <path key={i} d={dOf(it)} transform={typeof it === "string" ? undefined : it.t} fill="#1A1228"/>)}
+      <rect x={-60} y={HZ} width={W + 120} height={H - HZ + 80} fill={`url(#${id}g)`}/>
+      <Glow x={X} y={g.y - 24} rx={1050 * Math.max(0.3, light)} ry={250 * Math.max(0.3, light)} g="fl-floor" o={Math.min(1, 0.3 + 0.7 * light)}/>
+      {stars}
+      {/* the smoke above the fire, and the shimmer */}
+      <g>{Array.from({length: nFil}, (_, i) => <path key={i} d={filament(filOf(i, X, 160, FB - FH * 0.55 * Math.max(0.4, k), -40, syl ? 260 : 190, 7), f, 60, i)} fill={`url(#${id}s)`} opacity={0.5}/>)}</g>
+      <KundBack g={g} light={light} f={f} ash={ash}/>
+      {off ? <Ghee f={f} flow={ease(f, OF[0].a, 10) * (1 - ease(f, OF[0].end, 12))} fb={FB} fh={FH}/> : null}
+      <Shimmer f={f} x={X} y={FB - FH * 0.85 * k} w={FW} h={380} k={k}/>
+      {k > 0.05 ? Array.from({length: 5}, (_, i) => { const u = i / 4 - 0.5, hh = FH * k * (1.02 + 0.22 * rnd(i, 21)) * (1 - 0.45 * Math.abs(u)); return <Flame key={i} x={X + u * FW * 1.3} y={FB + 4} h={hh} w={hh * 0.13} f={f} seed={30 + i} calm={0.05} lean={-u * 0.32} b={0.7} halo={0} licks={2} blue={0.4}/>; }) : null}
+      <FireBed x={X} y={FB} w={FW} h={FH} f={f} seed={2} k={k} calm={0.15} sparks={0} halo={1}/>
+      <FireBed x={X - 10} y={FB + 6} w={FW * 0.6} h={FH * 0.62} f={f} seed={7} k={k} calm={0.3} sparks={0} halo={0}/>
+      {v === "ash" && k < 0.6 ? <Plume f={f} x={X} y={FB - 30} rise={560} n={9} op={0.75 * (1 - k)} wind={0.12} r0={16} r1={120} spread={180} seed={5}/> : null}
+      <KundFront g={g} light={light}/>
+      <Sparks f={f} x={X} y={FB} w={FW} h={FH} k={k} n={off ? 40 : 28}/>
+      {/* the offerings: grain from a hand of light, then a marigold */}
+      {off ? (() => {
+        const G2 = OF[1], F3 = OF[2], gp = (f - G2.a) / (G2.land - G2.a + 10), fp = (f - F3.a) / (F3.land - F3.a);
+        return <>
+          {gp > -0.2 && gp < 1.3 ? <SoftGlow x={X + 90} y={300} r={70} c0="#FFF2D2" c1="#F0B060" o={0.8 * bump(f, G2.a - 8, 10, 30)} k={2.2}/> : null}
+          {gp > 0 && gp < 1.4 ? Array.from({length: 36}, (_, i) => { const u = gp - rnd(i, 411) * 0.4; if (u <= 0 || u > 1) return null; return <ellipse key={i} cx={X + 90 + (rnd(i, 412) - 0.6) * 90 * u} cy={300 + (FB - 230 - 300) * u * u} rx={1.4} ry={2.4} fill="#FFE2A0" opacity={0.85}/>; }) : null}
+          {fp > -0.2 && fp < 1 ? <SoftGlow x={X - 50} y={270} r={70} c0="#FFF2D2" c1="#F0B060" o={0.8 * bump(f, F3.a - 8, 10, 26)} k={2.2}/> : null}
+          {fp > 0 && fp < 1 ? (() => {
+            const mx = X - 50 + 40 * fp, my = 270 + (FB - 220 - 270) * fp * fp, r = 20;
+            return <g transform={`translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(${(f * 4).toFixed(1)})`}>
+              {Array.from({length: 16}, (_, i) => { const a = (i / 16) * Math.PI * 2; return <ellipse key={i} cx={Math.cos(a) * r * 0.62} cy={Math.sin(a) * r * 0.62} rx={r * 0.42} ry={r * 0.24} transform={`rotate(${(a * 180) / Math.PI} ${Math.cos(a) * r * 0.62} ${Math.sin(a) * r * 0.62})`} fill={i % 2 ? "#D8701E" : "#F09030"}/>; })}
+              <circle r={r * 0.42} fill="#B85A14"/><circle r={r * 0.2} fill="#7A3A10"/>
+            </g>;
+          })() : null}
+        </>;
+      })() : null}
+      {/* the kalasha by the altar */}
+      <Kalasha x={X - 560} y={986} s={1.45} lp={lp} light={light} f={f}/>
+      {/* the pavilion: two carved pillars and the beam, rimmed by the fire, their inner faces flickering with it */}
+      {PILLARS.map((p, i) => {
+        const pp = pillar({x: p.x, y: 1062, h: 1000});
+        return <g key={i}>
+          <Rimmed paths={pp} point={lp} light={[p.side, 0]} fill="#0C070F" rim={K.rim} w={3}/>
+          <rect x={p.x - 260} y={-60} width={520} height={1200} fill={`url(#${id}p${i})`} clipPath={`url(#${id}c${i})`}/>
+        </g>;
+      })}
+      <Rimmed paths={[...beam, beamRel]} point={lp} light={[0, 1]} fill="#0A060D" rim={K.rim} w={2.4}/>
+      <rect x={-60} y={58} width={W + 120} height={34} fill="url(#fl-down)" opacity={0.5}/>
+      <Dust f={f} sun={[X, FB - 220]} n={50} y0={200} y1={1000}/>
+    </Frame>
   );
 };
-const HearthFront: React.FC<{x: number; y: number}> = ({x, y}) => (
-  <g>{Array.from({length: 7}, (_, i) => {
-    const a = Math.PI * (0.06 + (i / 6) * 0.88), sx = x - Math.cos(a) * 230, sy = y + 18 + Math.sin(a) * 34, w = 46 + rnd(i, 61) * 16, h = 30 + rnd(i, 62) * 10;
-    const stone = smooth(Array.from({length: 10}, (_, k) => { const an = (k / 10) * Math.PI * 2, rr = 0.88 + rnd(i * 10 + k, 63) * 0.18; return [sx + Math.cos(an) * w * rr, sy + Math.min(0.55, Math.sin(an)) * h * rr] as Pt; }));
-    return <Rimmed key={i} paths={[stone]} light={[x - sx, y - 200 - sy]} fill="#130A12" rim={K.rim} w={2.4}/>;
-  })}</g>
-);
-// A billow of smoke: a cluster of lobes (so its edge is lumpy, never a disc), a warm underside where the fire lights it,
-// a cool cap where the night sky does. q seeds the lobes; t turns them slowly.
-const Billow: React.FC<{x: number; y: number; r: number; o: number; warm: number; cool: number; q: number; t?: number}> = ({x, y, r, o, warm, cool, q, t = 0}) => {
-  if (o <= 0.01) return null;
-  const lobes = Array.from({length: 5}, (_, k) => {
-    if (k === 0) return [x, y, r];
-    const an = -Math.PI / 2 + (k - 2.5) * 0.9 + (rnd(q * 5 + k, 77) - 0.5) * 0.6 + Math.sin(t + k) * 0.12, d = r * (0.5 + rnd(q * 5 + k, 78) * 0.25);
-    return [x + Math.cos(an) * d * 1.25, y + Math.sin(an) * d * 0.8, r * (0.5 + rnd(q * 5 + k, 79) * 0.25)];
-  });
-  return (
-    <g opacity={Math.min(1, o)}>
-      {lobes.map(([lx, ly, lr], k) => <circle key={k} cx={lx} cy={ly} r={lr} fill="url(#fl-sm-body)"/>)}
-      {warm > 0.02 ? <ellipse cx={x} cy={y + r * 0.3} rx={r * 0.85} ry={r * 0.55} fill="url(#fl-sm-warm)" opacity={warm}/> : null}
-      {cool > 0.02 ? lobes.slice(1, 4).map(([lx, ly, lr], k) => <ellipse key={k} cx={lx - lr * 0.1} cy={ly - lr * 0.3} rx={lr * 0.7} ry={lr * 0.45} fill="url(#fl-sm-pale)" opacity={cool}/>) : null}
-    </g>
-  );
-};
+
+// ---------- 3.38 / 18.48: fire covered by smoke ----------
+// The same kunda as the yajna, on open ground at night. Smoke rises off the fire in curling translucent filaments, lit
+// warm from below and cool at the top, so thick at first that the fire only glows through it. Three gusts sweep in from
+// the left; each bends the smoke away and blows part of it off, shafts of firelight open through the gaps, and the fire
+// is revealed step by step until it stands whole and bright under a thin rising thread.
+const reedsAt = (x: number, y: number, h: number, wind: number, t: number, seed: number) => reeds({x, y, h, wind, t, seed});
 const SmokeVeil: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame();
   const mood = moodOf(s, "night");
   const id = uid();
-  const X = 960, GY = 868, FB = GY - 24, FH = 370;
-  const clear = sstep((f - 0.08 * n) / (0.76 * n));
-  const keep = (q: number, early = 0) => clamp01((rnd(q, 85) + 0.16 - clear * (1.2 + early)) * 4);
-  const warmAt = (x: number, y: number) => clamp01(1 - Math.hypot((x - X) * 0.7, y - FB) / 460) * 0.95;
-  const back: React.ReactNode[] = [], column: React.ReactNode[] = [], front: React.ReactNode[] = [];
-  for (let i = 0; i < 20; i++) {
-    const q = 100 + i, vx = (0.2 + rnd(q, 71) * 0.25) * (i % 2 ? -1 : 1), span = W + 700;
-    const x = ((i / 20 + rnd(q, 73) * 0.05) * span + f * vx + span * 4) % span - 350, y = lerp(470, 660, rnd(q, 74)) - clear * 140;
-    back.push(<Billow key={q} q={q} t={f / 90} x={x} y={y} r={lerp(110, 170, rnd(q, 76))} o={0.85 * keep(q)} warm={warmAt(x, y) * 0.7} cool={0.35}/>);
-  }
-  for (let i = 0; i < 58; i++) {
-    const P = 330 + rnd(i, 81) * 140, a = ((f + rnd(i, 82) * P) % P) / P, spread = lerp(30, 520, Math.pow(a, 1.2));
-    const x = X + (rnd(i, 83) - 0.5) * 2 * spread + Math.sin(a * 5 + i) * 30 + a * a * 160, y = FB - 40 - a * (FB + 160);
-    const r = lerp(46, 160, Math.pow(a, 0.8)) * (0.8 + 0.4 * rnd(i, 84));
-    const life = Math.min(1, a / 0.08) * Math.min(1, (1 - a) / 0.15), surv = i % 6 === 0 ? lerp(1, 0.35, clear) : keep(i);
-    column.push(<Billow key={i} q={i} t={f / 70 + i} x={x} y={y} r={r} o={0.92 * life * surv} warm={warmAt(x, y)} cool={0.35 * clamp01((FB - y) / 500)}/>);
-  }
-  for (let i = 0; i < 22; i++) {
-    const q = 300 + i, vx = (0.25 + rnd(q, 91) * 0.25) * (i % 2 ? 1 : -1), span = W + 700;
-    const x = ((i / 22 + rnd(q, 92) * 0.05) * span + f * vx + span * 4) % span - 350, y = lerp(740, 940, rnd(q, 93)) - clear * 40;
-    front.push(<Billow key={q} q={q} t={f / 80} x={x} y={y} r={lerp(90, 150, rnd(q, 94))} o={0.95 * keep(q, 0.25)} warm={warmAt(x, y)} cool={0.12}/>);
-  }
+  const X = 960, g = kundGeom(X, 938, 0.8), FB = g.fb, FH = 330, FW = 150, HZ = 764;
+  const GU = [0.28, 0.46, 0.62].map((a) => a * n), gd = 0.13 * n;
+  const clear = GU.reduce((p, a) => p + sstep((f - a) / gd), 0) / 3;
+  const blow = Math.min(1.2, GU.reduce((p, a) => p + bump(f, a - gd * 0.15, gd * 0.45, gd * 0.8), 0));
+  const bright = 0.86 + 0.24 * ease(f, 0.6 * n, 0.2 * n);
+  const k = bright * (0.95 + 0.05 * wob(f * 0.13, 2));
+  const lp: V2 = [X, FB - FH * 0.35];
+  const fil = Array.from({length: 44}, (_, i) => {
+    const q = filOf(i, X, 260, FB - 24, -90, 150, 3, 2.2), th = rnd(i, 61), keep = i % 9 === 0;
+    const gone = Math.min(keep ? 0.55 : 1, sstep((clear - th * 0.86) / 0.16));
+    return {d: filament(q, f, 160 + blow * 420 + gone * 900, i), o: (keep ? 0.62 : 0.48) * (1 - gone)};
+  });
   return (
     <Frame f={f} zoom={push(f, n, 1.02, 1.07)} cx={X} cy={640}>
       <FlameDefs/>
-      <Sky mood={mood} sun={[420, 230]} sunR={18} f={f} rays={0} id={`smk${id}`} clouds={0.3}/>
-      <defs><linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#120C1C"/><stop offset="1" stopColor="#06030A"/></linearGradient></defs>
-      <path d={ridge([[-60, 760], [200, 700], [520, 668], [800, 694], [1100, 656], [1400, 692], [1700, 650], [W + 60, 700]], 800)} fill="#140E24"/>
-      <rect x={-60} y={770} width={W + 120} height={H - 740} fill={`url(#${id}g)`}/>
-      <Glow x={X} y={GY + 10} rx={920} ry={210} g="fl-floor" o={0.95}/>
-      <g>{back}</g>
-      <HearthBack x={X} y={GY} f={f}/>
-      <Blaze f={f} x={X} y={FB} w={125} h={FH} k={1} seed={6}/>
-      <HearthFront x={X} y={GY}/>
-      <Sparks f={f} x={X} y={FB} w={125} h={FH} n={22} seed={3}/>
-      <g>{column}</g>
-      {/* the fire's light caught in the smoke */}
-      <Glow x={X} y={FB - 140} rx={560} ry={380} g="fl-soft" o={0.3 + 0.35 * (1 - clear)}/>
-      <g>{front}</g>
-      <Glow x={X} y={FB - 70} rx={320} ry={220} g="fl-warm" o={0.5 * (1 - clear)}/>
-      <Dust f={f} sun={[X, FB - 100]} n={50} y0={250} y1={1000}/>
+      <Sky mood={mood} sun={null} f={f} rays={0} id="smk" clouds={0.4} horizon={HZ}/>
+      <defs>
+        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#160E20"/><stop offset="1" stopColor="#06030A"/></linearGradient>
+        <SmokeGrad id={`${id}s`} y0={FB - 24} y1={-90}/>
+        <radialGradient id={`${id}r`} gradientUnits="userSpaceOnUse" cx={lp[0]} cy={lp[1]} r={950}>{softStops("#FFDCA0", 0.55, "#F0A04B", 1.6)}</radialGradient>
+      </defs>
+      {/* the far tree line and the open ground */}
+      <path d={ridge([[-80, HZ - 6], [240, HZ - 26], [560, HZ - 14], [880, HZ - 30], [1200, HZ - 12], [1520, HZ - 28], [W + 80, HZ - 10]], HZ + 20)} fill="#1C1328"/>
+      {[...khejri({x: 210, y: HZ - 10, h: 150, seed: 3, t: f}), ...neem({x: 470, y: HZ - 8, h: 120, seed: 5, t: f}), ...peepal({x: 1420, y: HZ - 12, h: 200, seed: 2, t: f}), ...palmyra({x: 1700, y: HZ - 8, h: 210, seed: 6, t: f})]
+        .map((it, i) => <path key={i} d={dOf(it)} transform={typeof it === "string" ? undefined : it.t} fill="#1C1328"/>)}
+      <rect x={-60} y={HZ} width={W + 120} height={H - HZ + 80} fill={`url(#${id}g)`}/>
+      <Glow x={X} y={g.y - 10} rx={980 * k} ry={220 * k} g="fl-floor" o={0.95}/>
+      {/* the kunda and its fire */}
+      <KundBack g={g} light={k} f={f}/>
+      <Shimmer f={f} x={X} y={FB - FH * 0.85} w={FW} h={320} k={k * clear}/>
+      <FireBed x={X} y={FB} w={FW} h={FH} f={f} seed={6} k={k} calm={0.15} sparks={0} halo={1}/>
+      <FireBed x={X - 8} y={FB + 5} w={FW * 0.6} h={FH * 0.62} f={f} seed={9} k={k} calm={0.3} sparks={0} halo={0}/>
+      <KundFront g={g} light={k}/>
+      <Sparks f={f} x={X} y={FB} w={FW} h={FH} k={k} n={24} seed={3} wind={0.4 * blow}/>
+      {/* the smoke, and the fire glowing through it */}
+      <g>{fil.map((q, i) => (q.o > 0.004 ? <path key={i} d={q.d} fill={`url(#${id}s)`} opacity={q.o}/> : null))}</g>
+      <SoftGlow x={X} y={FB - 150} r={420} ry={360} c0="#FFC878" c1="#C2553A" o={0.5 * (1 - clear) + 0.08} k={1.8}/>
+      {/* shafts of firelight through the thinning smoke */}
+      <g opacity={(0.1 + 0.3 * Math.sin(Math.PI * Math.min(1, clear * 1.2))) * (0.9 + 0.1 * wob(f * 0.1, 4))}>
+        {Array.from({length: 7}, (_, i) => {
+          const a = (-90 + (i - 3) * 15 + rnd(i, 71) * 6 + Math.sin(f / 60 + i) * 2) * Math.PI / 180, w = (2 + rnd(i, 72) * 3) * Math.PI / 180, Lr = 950, o = clamp01(clear * 3 - i * 0.28 - rnd(i, 73) * 0.3);
+          // three nested wedges give each shaft a soft edge without a blur
+          return o > 0 ? <g key={i}>{[1, 0.62, 0.3].map((kk, j) => <path key={j} d={`M ${lp[0]} ${lp[1]} L ${lp[0] + Math.cos(a - w * kk) * Lr} ${lp[1] + Math.sin(a - w * kk) * Lr} L ${lp[0] + Math.cos(a + w * kk) * Lr} ${lp[1] + Math.sin(a + w * kk) * Lr} Z`} fill={`url(#${id}r)`} opacity={o * 0.45}/>)}</g> : null;
+        })}
+      </g>
+      <g opacity={Math.min(1, blow)}><Gust f={f} v={1} lp={lp} n={46} y0={250} y1={900}/></g>
+      {/* kans grass in the foreground, bowing to the gusts */}
+      <Rimmed paths={[...reedsAt(150, 1084, 250, 0.15 + blow * 0.7, f, 3), ...reedsAt(1790, 1086, 230, 0.15 + blow * 0.7, f, 7)]} point={lp} light={[1, -1]} fill="#0A060D" rim={K.rim} w={2}/>
+      <Dust f={f} sun={lp} n={50} y0={250} y1={1000}/>
     </Frame>
   );
 };
@@ -960,7 +929,7 @@ const Mirror: React.FC<SceneP> = ({s, n}) => {
   const stand = smooth([[MX - 20, MY + R + 40, "c"], [MX - 26, MY + R + 74], [MX - 16, MY + R + 100], [MX - 60, MY + R + 118], [MX - 112, MY + R + 132, "c"], [MX - 112, MY + R + 146, "c"], [MX + 112, MY + R + 146, "c"], [MX + 112, MY + R + 132, "c"], [MX + 60, MY + R + 118], [MX + 16, MY + R + 100], [MX + 26, MY + R + 74], [MX + 20, MY + R + 40, "c"]]);
   const knot = smooth([[MX - 30, MY + R + 70], [MX - 22, MY + R + 60], [MX + 22, MY + R + 60], [MX + 30, MY + R + 70], [MX + 22, MY + R + 80], [MX - 22, MY + R + 80]]);
   const TABLE = MY + R + 146, DS = 0.86;
-  const LF: V2 = [lamp[0], TABLE - 56 * DS + 17 * DS];
+  const LF: V2 = diyaWick(lamp[0], TABLE, DS * 1.6);
   const lightV: V2 = [LF[0] - MX, LF[1] - 90 - MY];
   return (
     <Frame f={f} zoom={push(f, n, 1, 1.06)} cx={MX - 80} cy={MY}>
@@ -1011,83 +980,129 @@ const Mirror: React.FC<SceneP> = ({s, n}) => {
       <rect x={-60} y={TABLE} width={W + 120} height={H - TABLE + 60} fill={`url(#${id}t)`}/>
       <rect x={-60} y={TABLE} width={W + 120} height={2} fill={K.rim} opacity={0.35}/>
       <Glow x={LF[0]} y={TABLE + 6} rx={560} ry={70} g="fl-floor" o={0.85}/>
-      <Diya x={lamp[0]} y={TABLE - 56 * DS} s={DS} lit={1} shadow={0.7}/>
-      <Flame x={lamp[0]} y={LF[1]} h={86} w={16.5} sway={0.01} t={f / 6} b={1 + 0.03 * Math.sin(f / 37)} halo={0.85}/>
+      <Diya x={lamp[0]} y={TABLE} s={DS * 1.6} f={f} calm={1} shadow={0.7}/>
       <Dust f={f} sun={[MX, MY]} n={50} y0={150} y1={950}/>
     </Frame>
   );
 };
 const Smoke: React.FC<SceneP> = ({s, n}) => (s.variant === "mirror" ? <Mirror s={s} n={n}/> : <SmokeVeil s={s} n={n}/>);
 
-// ---------- 8.24-26: the flame that climbs the path of light to the sun ----------
+// ---------- 8.24-26, 8.5: the flame that climbs the path of light to the sun ----------
+// A gold dusk on the river. On the water, a diya on a leaf boat with marigolds; behind it the far shore in three hazy
+// ranges, palms and a small temple with its flag; at the lower left the ghat's steps, their edges lit, petals on them.
+// A faint column of light already joins the flame to the sun. The flame stretches, a flame of it lifts and climbs the
+// column (brightening it as it goes), the sun pulses when it arrives, and the disc turns and gains twelve spokes of
+// light: the wheel (the film cuts back to the chariot's wheel on the field).
+const marigold = (x: number, y: number, r: number, rot: number, key: string | number) => (
+  <g key={key} transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})`}>
+    {Array.from({length: 14}, (_, i) => { const a = (i / 14) * 360, c = r * 0.6; return <ellipse key={i} cx={c} cy={0} rx={r * 0.44} ry={r * 0.25} transform={`rotate(${a})`} fill={i % 2 ? "#C8601A" : "#E8862A"}/>; })}
+    <circle r={r * 0.45} fill="#A8501A"/><circle r={r * 0.22} cx={-r * 0.06} cy={-r * 0.06} fill="#F2A040" opacity={0.7}/>
+  </g>
+);
 const FlameSun: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame();
-  const mood = moodOf(s, "dawn");
+  const mood = moodOf(s, "gold");
   const id = uid();
-  const SUN: V2 = [960, 400], SR = 58, HZ = 566, BANK = 892;
-  const DS = 0.86, DY = BANK - 56 * DS, FY = DY + 17 * DS, FH = 80;
-  const T0 = 0.16 * n, T1 = 0.84 * n;
-  const lift = ease(f, 0.06 * n, T0 - 0.06 * n), u = sstep((f - T0) / (T1 - T0)), gone = f > T0;
-  const merge = ease(f, T1 - 0.06 * n, 0.14 * n);
-  // the spark: up from the flame's tip, along the path of light, smaller as it goes into the distance
-  const sy0 = FY - FH * (1 + 0.35 * lift);
-  const at = (uu: number) => ({x: SUN[0] + Math.sin(uu * Math.PI * 2.5) * 18 * (1 - uu), y: lerp(sy0, SUN[1], uu), s: lerp(1, 0.4, Math.pow(uu, 0.8))});
+  const SUN: V2 = [960, 334], SR = 62, HZ = 606;
+  // the leaf boat and its lamp, rocking on the river; the flame stands on the sun's axis
+  const BX = 940, BY = 914 + Math.sin(f / 26) * 3, rock = Math.sin(f / 31 + 1) * 1.4;
+  const DS = 1.3, DXp = SUN[0] - 38 * 1.48 * DS, [FX, FY] = diyaWick(DXp, BY - 8, DS);
+  const T0 = 0.12 * n, T1 = 0.18 * n, T2 = 0.7 * n;
+  const stretch = bump(f, T0, T1 - T0, 0.08 * n), u = sstep((f - T1) / (T2 - T1)), climbing = f > T1 && f < T2;
+  const pulse = bump(f, T2 - 2, 0.04 * n, 0.12 * n), spokes = ease(f, T2 + 0.02 * n, 0.18 * n);
+  const FH0 = 36 * DS, fh = FH0 * (1 + 0.6 * stretch) * (f > T1 ? 0.72 + 0.28 * ease(f, T1, 0.2 * n) : 1);
+  const tip0 = FY - FH0 * 1.5;
+  const at = (q: number) => ({x: SUN[0] + Math.sin(q * Math.PI * 3) * 10 * (1 - q), y: lerp(tip0, SUN[1] + SR * 0.4, q), s: lerp(1, 0.45, Math.pow(q, 0.8))});
   const sp = at(u);
-  const path = clamp01(0.3 + 0.7 * Math.max(u, 0.3 * lift));
+  // the far shore, the ghat
+  const G: GhatG = {x0: -90, y0: 872, x1: 610, y1: 1012, n: 9, seed: 6, landing: 0};
+  const gh = ghat({...G, view: "side", bottom: H + 120}), T = ghatTreads(G);
+  const lightAt = (x: number, y: number): V2 => [SUN[0] - x, SUN[1] - y];
   const rows: React.ReactNode[] = [];
-  for (let r = 0; r < 46; r++) {
-    const q = r / 45, y = HZ + 3 + Math.pow(q, 1.6) * (BANK - HZ - 14), spread = lerp(16, 250, Math.pow(q, 1.1));
+  for (let r = 0; r < 44; r++) {
+    const q = r / 43, y = HZ + 3 + Math.pow(q, 1.6) * (H - HZ), spread = lerp(16, 230, Math.pow(q, 1.1));
     for (let j = 0; j < 4; j++) {
-      const k = r * 4 + j, x = SUN[0] + (rnd(k, 141) - 0.5) * 2 * spread * (0.3 + 0.7 * rnd(k, 142)), len = lerp(8, 70, q) * (0.5 + rnd(k, 143));
-      const tw = 0.5 + 0.5 * Math.sin(f / (4 + rnd(k, 144) * 5) + k), lit = Math.max(0, 1 - Math.abs(x - SUN[0]) / (spread * 1.2));
-      rows.push(<rect key={k} x={x - len / 2} y={y} width={len} height={lerp(1.2, 3.2, q)} rx={1} fill="#FFE6B8" opacity={tw * lit * (0.35 + 0.5 * path)}/>);
+      const kk = r * 4 + j, x = SUN[0] + (rnd(kk, 141) - 0.5) * 2 * spread * (0.3 + 0.7 * rnd(kk, 142)), len = lerp(8, 64, q) * (0.5 + rnd(kk, 143));
+      const tw = 0.5 + 0.5 * Math.sin(f / (4 + rnd(kk, 144) * 5) + kk), lit = Math.max(0, 1 - Math.abs(x - SUN[0]) / (spread * 1.2));
+      rows.push(<rect key={kk} x={x - len / 2} y={y} width={len} height={lerp(1.2, 3, q)} rx={1} fill="#FFF0C8" opacity={tw * lit * (0.4 + 0.35 * u + 0.25 * pulse)}/>);
     }
   }
-  const trail = Array.from({length: 12}, (_, k) => { const p = at(Math.max(0, u - (k + 1) * 0.016)); return {...p, o: (1 - k / 12) * 0.6}; });
-  const far: Pt[] = [[-60, HZ + 4], ...Array.from({length: 24}, (_, i) => [i * 86 - 40, HZ - 12 - rnd(i, 151) * 26 - (i % 5 === 2 ? 18 : 0)] as Pt), [W + 60, HZ + 2]];
-  const ghat = ridge([[-60, BANK + 6], [300, BANK - 2], [700, BANK + 2], [960, BANK], [1240, BANK + 2], [1600, BANK - 4], [W + 60, BANK + 4]]);
+  const boat = smooth([[-150, -8, "c"], [-118, 8], [-60, 22], [0, 26], [60, 22], [118, 8], [150, -8, "c"], [116, -3], [60, 2], [0, 4], [-60, 2], [-116, -3]], {wind: "cw"});
+  const veins = [-100, -50, 0, 50, 100].map((x) => `M ${x} ${2 + Math.abs(x) * -0.02} Q ${x * 1.04} 12 ${x * 1.12} ${22 - Math.abs(x) * 0.12}`).join(" ");
   return (
-    <Frame f={f} zoom={push(f, n, 1, 1.06)} cx={SUN[0]} cy={620}>
+    <Frame f={f} zoom={push(f, n, 1, 1.06)} cx={SUN[0]} cy={600} vig={0.8}>
       <FlameDefs/>
-      <Sky mood={mood} sun={SUN} sunR={SR} f={f} rays={0.28 + 0.4 * merge} id={`fsun${id}`} clouds={0.55}/>
+      <Sky mood={mood} sun={SUN} sunR={SR} f={f} rays={0.3 + 0.45 * pulse + 0.15 * spokes} id="fsun" clouds={0.55} horizon={HZ} glow={1 + 0.4 * pulse}/>
       <defs>
-        <linearGradient id={`${id}w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E3A27E"/><stop offset="0.22" stopColor="#7D6A92"/><stop offset="1" stopColor="#1E2448"/></linearGradient>
-        <linearGradient id={`${id}h`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#FFE3A3" stopOpacity={0}/><stop offset="0.5" stopColor="#FFF0C8"/><stop offset="1" stopColor="#FFE3A3" stopOpacity={0}/></linearGradient>
-        <linearGradient id={`${id}v`} gradientUnits="userSpaceOnUse" x1={0} y1={0} x2={0} y2={FY}><stop offset="0" stopColor="#fff" stopOpacity={0.15}/><stop offset={SUN[1] / FY} stopColor="#fff" stopOpacity={1}/><stop offset="0.85" stopColor="#fff" stopOpacity={0.55}/><stop offset="1" stopColor="#fff" stopOpacity={0}/></linearGradient>
-        <mask id={`${id}k`} maskUnits="userSpaceOnUse" x={0} y={0} width={W} height={H}><rect x={0} y={0} width={W} height={FY} fill={`url(#${id}v)`}/></mask>
-        <radialGradient id={`${id}s`}><stop offset="0" stopColor="#FFFDF4"/><stop offset="0.75" stopColor="#FFF4D8"/><stop offset="0.92" stopColor="#FFE6B0" stopOpacity={0.9}/><stop offset="1" stopColor="#FFE6B0" stopOpacity={0}/></radialGradient>
-        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2A1C34"/><stop offset="0.3" stopColor="#170E1E"/><stop offset="1" stopColor="#0A060E"/></linearGradient>
+        <linearGradient id={`${id}w`} gradientUnits="userSpaceOnUse" x1={0} y1={HZ} x2={0} y2={H}><stop offset="0" stopColor="#F4BC7C"/><stop offset="0.16" stopColor="#C8785E"/><stop offset="0.5" stopColor="#6E3A58"/><stop offset="1" stopColor="#2A1630"/></linearGradient>
+        <linearGradient id={`${id}c`} gradientUnits="userSpaceOnUse" x1={0} y1={SUN[1]} x2={0} y2={FY}><stop offset="0" stopColor="#FFF4D8" stopOpacity={0.9}/><stop offset="0.5" stopColor="#FFE2A8" stopOpacity={0.45}/><stop offset="0.9" stopColor="#FFD890" stopOpacity={0.55}/><stop offset="1" stopColor="#FFD890" stopOpacity={0}/></linearGradient>
+        <linearGradient id={`${id}ch`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity={0}/><stop offset="0.5" stopColor="#fff"/><stop offset="1" stopColor="#fff" stopOpacity={0}/></linearGradient>
+        <mask id={`${id}cm`} maskUnits="userSpaceOnUse" x={SUN[0] - 170} y={0} width={340} height={H}><rect x={SUN[0] - 170} y={0} width={340} height={H} fill={`url(#${id}ch)`}/></mask>
+        <mask id={`${id}cn`} maskUnits="userSpaceOnUse" x={SUN[0] - 22} y={0} width={44} height={H}><rect x={SUN[0] - 22} y={0} width={44} height={H} fill={`url(#${id}ch)`}/></mask>
+        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2E1C30"/><stop offset="0.3" stopColor="#1A0E1E"/><stop offset="1" stopColor="#0C0610"/></linearGradient>
+        <clipPath id={`${id}k`}><path d={dOf(gh[0])}/></clipPath>
       </defs>
-      {/* the river, holding the dawn */}
-      <rect x={-60} y={HZ} width={W + 120} height={BANK - HZ + 60} fill={`url(#${id}w)`}/>
-      <Glow x={SUN[0]} y={HZ + 8} rx={560} ry={80} g="fl-warm" o={0.5}/>
-      <Rimmed paths={[ridge(far, HZ + 30)]} light={[0, -1]} fill="#2A2040" rim="#FFC890" w={1.6}/>
-      <Shrine x={1330} y={HZ - 8} s={0.17} glow={0.2} light={[SUN[0] - 1330, SUN[1] - HZ]} rim="#FFC890"/>
-      {/* the path of light: the sun's track on the water and a column of light rising through the sun */}
+      {/* the far shore: three ranges going back into the haze, palms, a small temple with its flag */}
+      <path d={ridge([[-80, HZ - 30], [180, HZ - 62], [420, HZ - 44], [700, HZ - 70], [980, HZ - 40], [1260, HZ - 66], [1540, HZ - 48], [1800, HZ - 74], [W + 80, HZ - 40]], HZ + 4)} fill="#D8906E" opacity={0.42}/>
+      <Haze y={HZ - 30} h={70} color="#F6C890" op={0.4}/>
+      <path d={ridge([[-80, HZ - 14], [260, HZ - 38], [560, HZ - 24], [900, HZ - 36], [1180, HZ - 20], [1500, HZ - 40], [W + 80, HZ - 18]], HZ + 4)} fill="#9A4E5E" opacity={0.7}/>
+      <Haze y={HZ - 10} h={40} color="#F2B880" op={0.35}/>
+      <Rimmed paths={[ridge([[-80, HZ - 2], ...Array.from({length: 22}, (_, i) => [-60 + i * 95, HZ - 7 - rnd(i, 151) * 9] as Pt), [W + 80, HZ - 2]], HZ + 8),
+        ...palmyra({x: 250, y: HZ - 4, h: 150, seed: 2, t: f}), ...coconut({x: 380, y: HZ - 4, h: 128, seed: 5, t: f, lean: 0.25}), ...palmyra({x: 1640, y: HZ - 5, h: 138, seed: 8, t: f}), ...coconut({x: 1770, y: HZ - 4, h: 120, seed: 3, t: f, lean: -0.2}), ...neem({x: 560, y: HZ - 4, h: 66, seed: 4, t: f})]}
+        light={lightAt(960, HZ)} fill="#3A1E36" rim="#FFD08A" w={1.4}/>
+      <Rimmed paths={temple({x: 1340, y: HZ - 3, w: 40, porch: 1, spires: 1, flag: true, t: f, wind: 0.6})} light={lightAt(1340, HZ - 80)} fill="#3A1E36" rim="#FFD08A" w={1.4}/>
+      {/* the river holding the gold, the sun's path on it */}
+      <rect x={-80} y={HZ} width={W + 160} height={H - HZ + 80} fill={`url(#${id}w)`}/>
+      <Glow x={SUN[0]} y={HZ + 8} rx={600} ry={70} g="fl-warm" o={0.55}/>
       {rows}
-      <g mask={`url(#${id}k)`} opacity={0.2 + 0.4 * path}>
-        <rect x={SUN[0] - 130} y={0} width={260} height={FY} fill={`url(#${id}h)`} opacity={0.5}/>
-        <rect x={SUN[0] - 34} y={0} width={68} height={FY} fill={`url(#${id}h)`}/>
+      {/* the column of light between the flame and the sun; the stretch below the climbing flame burns brighter */}
+      <g mask={`url(#${id}cm)`}>
+        <rect x={SUN[0] - 170} y={SUN[1]} width={340} height={FY - SUN[1]} fill={`url(#${id}c)`} opacity={0.16 + 0.22 * u + 0.2 * pulse}/>
       </g>
-      <Glow x={SUN[0]} y={SUN[1]} rx={SR * (2.4 + 2.6 * merge)} g="fl-hot" o={0.45 + 0.5 * merge}/>
-      <circle cx={SUN[0]} cy={SUN[1]} r={SR * 0.98} fill={`url(#${id}s)`}/>
-      {/* the ghat: a stone step at the water's edge, the lamp on it */}
-      <Rimmed paths={[ghat]} light={[0, -1]} fill={`url(#${id}g)`} rim="#FFC890" w={2.2}/>
-      <path d={Array.from({length: 7}, (_, i) => `M ${-60 + i * 330 + (i % 2) * 90} ${BANK + 8} l 0 52`).join(" ")} stroke="#05030A" strokeWidth={2.5} opacity={0.55}/>
-      <rect x={-60} y={BANK + 60} width={W + 120} height={H - BANK} fill="#0A060E"/>
-      <rect x={-60} y={BANK + 60} width={W + 120} height={1.6} fill="#FFC890" opacity={0.25}/>
-      <Glow x={SUN[0]} y={BANK + 4} rx={340} ry={40} g="fl-floor" o={0.85}/>
-      <Diya x={SUN[0]} y={DY} s={DS} lit={gone ? 0.8 : 1} shadow={0.6}/>
-      <Flame x={SUN[0]} y={FY} h={FH * (gone ? 0.6 : 1 + 0.35 * lift)} w={15 * (gone ? 0.85 : 1 - 0.15 * lift)} sway={0.012} t={f / 6} b={gone ? 0.85 : 1} halo={0.7}/>
-      {gone && u < 1 ? <g>
-        {trail.map((p, k) => <circle key={k} cx={p.x} cy={p.y} r={3.4 * p.s} fill="#FFE9B8" opacity={p.o}/>)}
-        <Glow x={sp.x} y={sp.y} rx={110 * sp.s} g="fl-warm"/>
-        <path d={flameOutline(sp.x, sp.y + 18 * sp.s, 44 * sp.s, 9 * sp.s, 0, 0.03, f / 4)} fill="#FFD889"/>
-        <path d={flameOutline(sp.x, sp.y + 14 * sp.s, 24 * sp.s, 5 * sp.s, 0, 0.03, f / 4)} fill="#FFFBEA"/>
+      <g mask={`url(#${id}cn)`}>
+        <rect x={SUN[0] - 22} y={SUN[1]} width={44} height={FY - SUN[1]} fill={`url(#${id}c)`} opacity={0.4 + 0.35 * u + 0.25 * pulse}/>
+        {climbing ? <rect x={SUN[0] - 22} y={sp.y} width={44} height={tip0 - sp.y} fill="#FFF0C8" opacity={0.5}/> : null}
+      </g>
+      {/* the sun's answer: a pulse, then the turning wheel of twelve spokes in the disc */}
+      <SoftGlow x={SUN[0]} y={SUN[1]} r={SR * (2.6 + 3.6 * pulse)} c0="#FFFBEA" c1="#FFC060" o={0.25 + 0.6 * pulse} k={2.4}/>
+      {spokes > 0.01 ? <g opacity={spokes} transform={`rotate(${(f * 0.45).toFixed(2)} ${SUN[0]} ${SUN[1]})`}>
+        {Array.from({length: 12}, (_, i) => { const a = (i / 12) * Math.PI * 2, c = Math.cos(a), sn = Math.sin(a), r0 = SR * 0.2, r1 = SR * 0.86, w0 = 3.4, w1 = 2.2;
+          return <path key={i} d={polyD([[SUN[0] + c * r0 - sn * w0, SUN[1] + sn * r0 + c * w0], [SUN[0] + c * r1 - sn * w1, SUN[1] + sn * r1 + c * w1], [SUN[0] + c * r1 + sn * w1, SUN[1] + sn * r1 - c * w1], [SUN[0] + c * r0 + sn * w0, SUN[1] + sn * r0 - c * w0]])} fill="#E2922E" opacity={0.85}/>; })}
+        <circle cx={SUN[0]} cy={SUN[1]} r={SR * 0.9} fill="none" stroke="#E2922E" strokeWidth={4.5} opacity={0.85}/>
+        <circle cx={SUN[0]} cy={SUN[1]} r={SR * 0.17} fill="none" stroke="#E2922E" strokeWidth={4} opacity={0.9}/>
+        {Array.from({length: 12}, (_, i) => { const a = ((i + 0.5) / 12) * Math.PI * 2; return <circle key={i} cx={SUN[0] + Math.cos(a) * SR * 0.98} cy={SUN[1] + Math.sin(a) * SR * 0.98} r={2.6} fill="#E2922E" opacity={0.8}/>; })}
       </g> : null}
-      <Dust f={f} sun={SUN} n={70} y0={150} y1={880}/>
+      {/* the ghat: steps going down into the river, their edges lit, marigold petals on the treads */}
+      <Rimmed paths={[gh[0]]} light={lightAt(260, 950)} fill={`url(#${id}g)`} rim="#FFD08A" w={2.4}/>
+      <g clipPath={`url(#${id}k)`}>
+        <path d={Array.from({length: 7}, (_, r) => `M -100 ${900 + r * 30} L 700 ${902 + r * 30}` + Array.from({length: 5}, (_, c) => ` M ${(-60 + c * 150 + (r % 2) * 70).toFixed(0)} ${900 + r * 30} l 0 30`).join("")).join(" ")} stroke="#06030A" strokeWidth={2} fill="none" opacity={0.6}/>
+        <SoftGlow x={560} y={980} r={260} ry={120} c0="#FFC878" c1="#8E3D52" o={0.25} k={1.6}/>
+      </g>
+      {T.map((t, i) => Array.from({length: 2}, (_, j) => { const q = i * 2 + j; return rnd(q, 161) < 0.7 ? <ellipse key={q} cx={lerp(t.xa, t.xb, 0.15 + 0.7 * rnd(q, 162))} cy={t.y - 1.6} rx={4 + rnd(q, 163) * 2} ry={1.8} transform={`rotate(${(rnd(q, 164) - 0.5) * 50} ${lerp(t.xa, t.xb, 0.15 + 0.7 * rnd(q, 162))} ${t.y - 1.6})`} fill={rnd(q, 165) < 0.5 ? "#E8862A" : "#C8601A"}/> : null; }))}
+      {/* petals adrift, the ripples round the boat, the flame's reflection */}
+      {Array.from({length: 9}, (_, i) => { const x = 640 + rnd(i, 171) * 700 + Math.sin(f / 50 + i) * 8 + f * 0.12, y = 960 + rnd(i, 172) * 100; return <ellipse key={i} cx={x} cy={y} rx={4.5} ry={1.6} fill={i % 2 ? "#E8862A" : "#C8601A"} opacity={0.9}/>; })}
+      {[0, 1, 2].map((k) => { const a = ((f / 90 + k / 3) % 1); return <ellipse key={k} cx={BX} cy={BY + 18} rx={170 + a * 160} ry={14 + a * 14} fill="none" stroke="#FFD8A0" strokeWidth={1.2} opacity={0.3 * (1 - a)}/>; })}
+      {Array.from({length: 10}, (_, j) => { const q = j / 9, yy = BY + 30 + q * 120, len = (34 - 22 * q) * (0.6 + 0.4 * rnd(j, 181)); return <rect key={j} x={FX - len / 2 + Math.sin(f / 5 + j * 1.7) * 4} y={yy} width={len} height={2} rx={1} fill="#FFE6B0" opacity={(0.8 - 0.65 * q) * (0.6 + 0.4 * Math.sin(f / 4 + j * 2.3))}/>; })}
+      {/* the leaf boat, its marigolds, the diya */}
+      <g transform={`rotate(${rock.toFixed(2)} ${BX} ${BY})`}>
+        <g transform={`translate(${BX} ${BY})`}>
+          <Rimmed paths={[boat]} light={lightAt(BX, BY)} fill="#16140C" rim="#FFD08A" w={2}/>
+          <path d={veins} stroke="#2E2A18" strokeWidth={1.4} fill="none" opacity={0.8}/>
+        </g>
+        {marigold(BX - 104, BY - 10, 15, f * 0.2, "m1")}
+        {marigold(BX + 112, BY - 9, 13, 40 - f * 0.2, "m2")}
+        {marigold(BX - 72, BY - 6, 11, 70, "m3")}
+        <Diya x={DXp} y={BY - 6} s={DS} f={f} seed={4} lit={1} flame={false} shadow={0.5}/>
+      </g>
+      <Flame x={FX} y={FY} h={fh} f={f} seed={4} calm={0.9} b={1} halo={0.8}/>
+      {/* the flame that climbs */}
+      {climbing ? <g>
+        {Array.from({length: 10}, (_, k) => { const p = at(Math.max(0, u - (k + 1) * 0.018)); return <circle key={k} cx={p.x} cy={p.y} r={3.2 * p.s} fill="#FFE9B8" opacity={(1 - k / 10) * 0.55}/>; })}
+        <Flame x={sp.x} y={sp.y + 26 * sp.s} h={60 * sp.s} f={f} seed={9} calm={0.95} b={1} halo={0.9}/>
+      </g> : null}
+      <Dust f={f} sun={SUN} n={60} y0={150} y1={880}/>
     </Frame>
   );
 };
 
-export const SCENES: Record<string, React.FC<SceneP>> = {lamp: Lamp, fire: Fire, smoke: Smoke, "flame-sun": FlameSun};
+export const SCENES: Record<string, React.FC<SceneP>> = {lamp: Lamp, fire: FireScene, smoke: Smoke, "flame-sun": FlameSun};

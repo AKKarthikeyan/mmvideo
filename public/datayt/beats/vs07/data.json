@@ -1,0 +1,587 @@
+{
+ "id": "vs07",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "UDISE+ · SRS · NFHS-6 · 2023-25",
+ "source": "Class 9-12 gross enrolment ratio, 2024-25: UDISE+, Ministry of Education, via RBI Handbook of Statistics on Indian States (Table 1); enrolment at any age over the age group, so it can pass 100. Infant deaths per 1,000 live births, 2023: Sample Registration System (Table 4). Mothers with at least 4 antenatal visits, children under 3 breastfed within an hour of birth, children 6-23 months with an adequate diet: NFHS-6 (2023-24), IIPS, state fact sheets; survey estimates, same order in NFHS-5 (2019-21).",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*West Bengal*",
+    "vs *Odisha.*",
+    "5 rounds: school and health."
+   ],
+   "vo": "West Bengal versus Odisha. Five rounds.",
+   "spots": [
+    {
+     "geo": "West Bengal",
+     "tone": "a",
+     "name": "West Bengal"
+    },
+    {
+     "geo": "Odisha",
+     "tone": "b",
+     "name": "Odisha"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "versus",
+   "label": "Class 9-12 enrolment ratio, 2024-25",
+   "note": "gross ratio, can pass 100 · 2024-25 · higher is better",
+   "a": "81.2%",
+   "b": "66.8%",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "Class nine to twelve enrolment: West Bengal.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Mothers with 4+ pregnancy check-ups",
+   "note": "mothers, 4+ visits · 2023-24 · higher is better",
+   "a": "64.5%",
+   "b": "73.6%",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Four or more pregnancy check-ups: Odisha.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "versus",
+   "label": "Infant deaths per 1,000 births, 2023",
+   "note": "per 1,000 births · 2023 · lower is better",
+   "a": "17.0",
+   "b": "30.0",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Fewer infant deaths: West Bengal.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "versus",
+   "label": "Babies breastfed within 1 hour",
+   "note": "children under 3 · 2023-24 · higher is better",
+   "a": "50.0%",
+   "b": "60.9%",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Breastfed within an hour of birth: Odisha.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "versus",
+   "label": "Adequate diet, babies 6-23 months",
+   "note": "babies 6-23 months · 2023-24 · higher is better",
+   "a": "28.3%",
+   "b": "14.9%",
+   "win": "a",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Babies' adequate diet: West Bengal.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "score",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Final score: West Bengal three, Odisha two.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Class 9-12 enrolment, *every state*",
+   "sub": "West Bengal 3 · Odisha 2 · India 67.6%",
+   "note": "Gross enrolment ratio, 2024-25 (UDISE+): pupils of any age over the age group. Both states outlined. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "West Bengal",
+    "Odisha"
+   ],
+   "vo": "Every state: Class nine to twelve enrolment.",
+   "t0": 32.903,
+   "t1": 36.774
+  },
+  {
+   "note": "Gross enrolment ratio, 2024-25 (UDISE+): pupils of any age over the age group. Both states outlined. The table shows how much, not why.",
+   "ring": [
+    "West Bengal",
+    "Odisha"
+   ],
+   "q": "Which pair should we compare next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which pair should we compare next? Comment below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "West Bengal",
+  "geo": "West Bengal"
+ },
+ "b": {
+  "name": "Odisha",
+  "geo": "Odisha"
+ },
+ "map": [
+  {
+   "name": "Bihar",
+   "label": "46.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Nagaland",
+   "label": "47.8",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 33.305
+  },
+  {
+   "name": "Jharkhand",
+   "label": "49.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.357
+  },
+  {
+   "name": "Assam",
+   "label": "55.9",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.409
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "56.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.461
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "57.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.513
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "58.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.565
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "60.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.617
+  },
+  {
+   "name": "Gujarat",
+   "label": "61.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.669
+  },
+  {
+   "name": "Meghalaya",
+   "label": "62.7",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.721
+  },
+  {
+   "name": "Odisha",
+   "label": "66.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.773
+  },
+  {
+   "name": "Tripura",
+   "label": "67.8",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.825
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "68.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.877
+  },
+  {
+   "name": "Manipur",
+   "label": "70.8",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.929
+  },
+  {
+   "name": "Sikkim",
+   "label": "71.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.981
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "71.8",
+   "bucket": 2,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 34.033
+  },
+  {
+   "name": "Rajasthan",
+   "label": "72.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.085
+  },
+  {
+   "name": "Ladakh",
+   "label": "73.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.137
+  },
+  {
+   "name": "Mizoram",
+   "label": "73.7",
+   "bucket": 2,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 34.189
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "74.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.24
+  },
+  {
+   "name": "Maharashtra",
+   "label": "78.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.292
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "80.0",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 34.344
+  },
+  {
+   "name": "Karnataka",
+   "label": "80.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.396
+  },
+  {
+   "name": "West Bengal",
+   "label": "81.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.448
+  },
+  {
+   "name": "Haryana",
+   "label": "81.7",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.5
+  },
+  {
+   "name": "Telangana",
+   "label": "83.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.552
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "85.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.604
+  },
+  {
+   "name": "Punjab",
+   "label": "85.6",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.656
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "87.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.708
+  },
+  {
+   "name": "Kerala",
+   "label": "91.8",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.76
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "93.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.812
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "94.3",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.864
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "97.3",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.916
+  },
+  {
+   "name": "Puducherry",
+   "label": "97.6",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.968
+  },
+  {
+   "name": "Goa",
+   "label": "102.1",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 35.02
+  },
+  {
+   "name": "Chandigarh",
+   "label": "115.5",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 35.072
+  }
+ ],
+ "checked": [
+  "Class 9-12 enrolment ratio, 2024-25: West Bengal 81.2, Odisha 66.8, 22% apart, West Bengal ahead",
+  "Mothers with 4+ pregnancy check-ups: West Bengal 64.5, Odisha 73.6, 14% apart, Odisha ahead",
+  "  same winner in {'nfhs': 30, 'col': 3}: West Bengal 76.7, Odisha 78.1",
+  "Infant deaths per 1,000 births, 2023: West Bengal 17, Odisha 30, 76% apart, West Bengal ahead",
+  "  same winner in {'rbi': [4, '2022']}: West Bengal 17, Odisha 32",
+  "  same winner in {'rbi': [4, '2021']}: West Bengal 18, Odisha 35",
+  "Babies breastfed within 1 hour: West Bengal 50, Odisha 60.9, 22% apart, Odisha ahead",
+  "  same winner in {'nfhs': 61, 'col': 3}: West Bengal 59.4, Odisha 68.5",
+  "Adequate diet, babies 6-23 months: West Bengal 28.3, Odisha 14.9, 90% apart, West Bengal ahead",
+  "  same winner in {'nfhs': 68, 'col': 3}: West Bengal 22.8, Odisha 20.1",
+  "score 3 to 2",
+  "adequate diet: West Bengal about 1.9 times Odisha: 1.90"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.709,
+   "at": 0.12,
+   "text": "West Bengal versus Odisha. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.526,
+   "at": 5.926,
+   "text": "Class nine to twelve enrolment: West Bengal."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.16,
+   "at": 11.733,
+   "text": "Four or more pregnancy check-ups: Odisha."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.638,
+   "at": 15.604,
+   "text": "Fewer infant deaths: West Bengal."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.899,
+   "at": 19.475,
+   "text": "Breastfed within an hour of birth: Odisha."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.664,
+   "at": 23.346,
+   "text": "Babies' adequate diet: West Bengal."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.657,
+   "at": 27.217,
+   "text": "Final score: West Bengal three, Odisha two."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 3.03,
+   "at": 33.023,
+   "text": "Every state: Class nine to twelve enrolment."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 2.768,
+   "at": 36.894,
+   "text": "Which pair should we compare next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "West Bengal vs Odisha: 5 Rounds of School and Health Data"
+}

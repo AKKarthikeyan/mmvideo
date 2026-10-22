@@ -1,0 +1,675 @@
+{
+ "id": "vs02",
+ "type": "versus",
+ "rules": 2,
+ "theme": "money",
+ "chip": "STATE vs STATE",
+ "source_short": "RBI Handbook · PFRDA · 2024-25",
+ "palette": "A",
+ "a": "Punjab",
+ "b": "Haryana",
+ "source": "Bank offices and loans of scheduled commercial banks, end-March 2025: RBI Handbook of Statistics on Indian States, Tables 152, 157-159 (the loan tables do not say whether a loan is counted where it is made or where it is used). Pension: new Atal Pension Yojana enrolments in 2024-25, PFRDA (Table 180). Per person: projected population on 1 March 2025 (National Commission on Population, 2020).",
+ "hook": [
+  "*Punjab*",
+  "vs *Haryana.*",
+  "5 rounds of money data."
+ ],
+ "hook_vo": "Punjab versus Haryana. Five rounds.",
+ "categories": [
+  {
+   "label": "Bank offices per lakh people",
+   "note": "offices per lakh people · end-March 2025 · higher wins",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        152,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        152,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   ],
+   "vo": "Punjab has a fifth more bank offices per lakh people."
+  },
+  {
+   "label": "Personal loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "unit": "k",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       159,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   ],
+   "vo": "Haryana's personal loans per person are two-thirds higher."
+  },
+  {
+   "label": "Farm loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "unit": "k",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   ],
+   "vo": "Punjab's farm loans per person are fourteen percent higher."
+  },
+  {
+   "label": "Industry loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "unit": "k",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       158,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        158,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        158,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   ],
+   "vo": "Haryana's industry loans per person are almost double."
+  },
+  {
+   "label": "New pension enrolments per lakh",
+   "note": "Atal Pension Yojana · per lakh people · 2024-25 · higher wins",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "add": [
+       {
+        "rbi": [
+         180,
+         "2024-25 | Female"
+        ]
+       },
+       {
+        "rbi": [
+         180,
+         "2024-25 | Male"
+        ]
+       },
+       {
+        "rbi": [
+         180,
+         "2024-25 | Transgender"
+        ]
+       }
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2023-24 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2023-24 | Male"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2023-24 | Transgender"
+         ]
+        }
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    {
+     "ratio": [
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2022-23 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2022-23 | Male"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2022-23 | Transgender"
+         ]
+        }
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   ],
+   "vo": "Punjab has thirty percent more pension enrolments per lakh people."
+  }
+ ],
+ "tests": [
+  {
+   "says": "bank offices per lakh people: Punjab a fifth above Haryana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          152,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          152,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Haryana"
+     }
+    ]
+   },
+   "min": 1.18,
+   "max": 1.25
+  },
+  {
+   "says": "personal loans per person: Haryana two-thirds above Punjab",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Haryana"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          159,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.64,
+   "max": 1.7
+  },
+  {
+   "says": "farm loans per person: Punjab fourteen percent above Haryana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          157,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          157,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Haryana"
+     }
+    ]
+   },
+   "min": 1.135,
+   "max": 1.145
+  },
+  {
+   "says": "industry loans per person: Haryana almost double Punjab",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          158,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Haryana"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          158,
+          "2025"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 10
+      },
+      "state": "Punjab"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.0
+  },
+  {
+   "says": "pension enrolments per lakh people: Punjab thirty percent above Haryana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2024-25 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Male"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Transgender"
+           ]
+          }
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Punjab"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2024-25 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Male"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Transgender"
+           ]
+          }
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Haryana"
+     }
+    ]
+   },
+   "min": 1.285,
+   "max": 1.305
+  }
+ ],
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2025"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "title": "Bank offices per lakh people, *every state*",
+  "sub": "Punjab 3 · Haryana 2 · India {india}",
+  "note": "Scheduled commercial bank offices per lakh people (projected population), end-March 2025. Both outlined. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+  "ring": [
+   "Punjab",
+   "Haryana"
+  ],
+  "vo": "Offices are counted where the branch stands, not where people live."
+ },
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Punjab vs Haryana: 5 Rounds of Money Data"
+}

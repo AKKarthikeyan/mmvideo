@@ -1,0 +1,154 @@
+{
+ "id": "vs07",
+ "type": "versus",
+ "theme": "school_health",
+ "rules": 2,
+ "chip": "STATE vs STATE",
+ "source_short": "UDISE+ · SRS · NFHS-6 · 2023-25",
+ "palette": "C",
+ "a": "West Bengal",
+ "b": "Odisha",
+ "source": "Class 9-12 gross enrolment ratio, 2024-25: UDISE+, Ministry of Education, via RBI Handbook of Statistics on Indian States (Table 1); enrolment at any age over the age group, so it can pass 100. Infant deaths per 1,000 live births, 2023: Sample Registration System (Table 4). Mothers with at least 4 antenatal visits, children under 3 breastfed within an hour of birth, children 6-23 months with an adequate diet: NFHS-6 (2023-24), IIPS, state fact sheets; survey estimates, same order in NFHS-5 (2019-21).",
+ "hook": [
+  "*West Bengal*",
+  "vs *Odisha.*",
+  "5 rounds: school and health."
+ ],
+ "hook_vo": "West Bengal versus Odisha. Five rounds.",
+ "categories": [
+  {
+   "label": "Class 9-12 enrolment ratio, 2024-25",
+   "say": "school enrolment",
+   "unit": "%",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "vo": "Class nine to twelve enrolment: West Bengal.",
+   "note": "gross ratio, can pass 100 · 2024-25 · higher is better"
+  },
+  {
+   "label": "Mothers with 4+ pregnancy check-ups",
+   "say": "pregnancy check-ups",
+   "unit": "%",
+   "data": {
+    "nfhs": 30
+   },
+   "vo": "Four or more pregnancy check-ups: Odisha.",
+   "also": [
+    {
+     "nfhs": 30,
+     "col": 3
+    }
+   ],
+   "note": "mothers, 4+ visits · 2023-24 · higher is better"
+  },
+  {
+   "label": "Infant deaths per 1,000 births, 2023",
+   "say": "infant deaths",
+   "unit": "",
+   "data": {
+    "rbi": [
+     4,
+     "2023"
+    ]
+   },
+   "vo": "Fewer infant deaths: West Bengal.",
+   "better": "low",
+   "note": "per 1,000 births · 2023 · lower is better",
+   "also": [
+    {
+     "rbi": [
+      4,
+      "2022"
+     ]
+    },
+    {
+     "rbi": [
+      4,
+      "2021"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Babies breastfed within 1 hour",
+   "say": "early breastfeeding",
+   "unit": "%",
+   "data": {
+    "nfhs": 61
+   },
+   "vo": "Breastfed within an hour of birth: Odisha.",
+   "also": [
+    {
+     "nfhs": 61,
+     "col": 3
+    }
+   ],
+   "note": "children under 3 · 2023-24 · higher is better"
+  },
+  {
+   "label": "Adequate diet, babies 6-23 months",
+   "say": "adequate diet",
+   "unit": "%",
+   "data": {
+    "nfhs": 68
+   },
+   "vo": "Babies' adequate diet: West Bengal.",
+   "also": [
+    {
+     "nfhs": 68,
+     "col": 3
+    }
+   ],
+   "note": "babies 6-23 months · 2023-24 · higher is better"
+  }
+ ],
+ "tests": [
+  {
+   "says": "adequate diet: West Bengal about 1.9 times Odisha",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 68
+      },
+      "state": "West Bengal"
+     },
+     {
+      "data": {
+       "nfhs": 68
+      },
+      "state": "Odisha"
+     }
+    ]
+   },
+   "min": 1.8,
+   "max": 2.0
+  }
+ ],
+ "end": {
+  "q": "Which pair should we compare next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "West Bengal vs Odisha: 5 Rounds of School and Health Data",
+ "map": {
+  "data": {
+   "rbi": [
+    1,
+    "Secondary (Class IX to XII) | Total"
+   ]
+  },
+  "unit": "%",
+  "title": "Class 9-12 enrolment, *every state*",
+  "sub": "West Bengal 3 · Odisha 2 · India {india}",
+  "note": "Gross enrolment ratio, 2024-25 (UDISE+): pupils of any age over the age group. Both states outlined. The table shows how much, not why.",
+  "ring": [
+   "West Bengal",
+   "Odisha"
+  ],
+  "vo": "Every state: Class nine to twelve enrolment."
+ }
+}

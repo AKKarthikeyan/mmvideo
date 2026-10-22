@@ -1,0 +1,36 @@
+{
+ "id": "cn06",
+ "type": "countdown",
+ "theme": "women",
+ "rules": 1,
+ "chip": "TOP 5",
+ "source_short": "MoSPI · PLFS 2025",
+ "palette": "D",
+ "data": {
+  "plfs": [
+   "WPR",
+   "2025",
+   "rural",
+   "female"
+  ]
+ },
+ "unit": "%",
+ "min_lead": 5.0,
+ "label": "of rural women at work, 2025",
+ "source": "MoSPI, National Statistics Office: Periodic Labour Force Survey, calendar year 2025 (January to December, new design). Rural women aged 15 and above who were at work (usual status; unpaid family work counts). Survey estimates; small states carry wider sampling error. Himachal Pradesh (66.3), Nagaland (65.6) and Meghalaya (64.1) are within 2.2 points of each other, and Ladakh (62.0) and Arunachal Pradesh (61.7) are level: read ranks two to five as a group.",
+ "hook": [
+  "Where are",
+  "*rural women* most",
+  "often at work?"
+ ],
+ "hook_vo": "Where are rural women most often at work?",
+ "map_title": "Rural women at work, *every state*",
+ "map_vo": "Every state, mapped. India: forty-five percent.",
+ "end": {
+  "q": "Is your state on the list?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Rural Women at Work: Sikkim 75.3%, Top 5 States, 2025",
+ "rules_note": "rules 1, not 2: the versus and countdown types cannot meet rules 2 in build_beats.py itself (digits in the generated score and rank voice lines, 'Number one', hook not on the map, no closing map and mapend, no tests registered as a finding). Every other house rule passes.",
+ "hold": "HOLD (editor, 22 Oct 2026): the saved 2025 rural women's table has a blank-as-nan row (Chandigarh), which scrambles the builder's sort: this config's top five (Ladakh to Sikkim) leaves out Chhattisgarh 65.9, which belongs third. The true order is Sikkim 75.3, Himachal Pradesh 66.3, Chhattisgarh 65.9, Nagaland 65.6, Meghalaya 64.1, and ranks two to four are within 0.7 points, so rules 2 (3% between ranks) cannot pass. Do not voice."
+}

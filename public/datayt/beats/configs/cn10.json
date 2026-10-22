@@ -1,0 +1,233 @@
+{
+ "id": "cn10",
+ "type": "countdown",
+ "rules": 2,
+ "theme": "school_health",
+ "chip": "TOP 5",
+ "source_short": "Health Ministry · Lok Sabha answer, Jul 2026",
+ "palette": "D",
+ "data": {
+  "ratio": [
+   {
+    "ls": [
+     "ls18-s8-U1099#1",
+     2
+    ]
+   },
+   {
+    "tbl": [
+     "population/projected",
+     "2026"
+    ]
+   }
+  ],
+  "scale": 100
+ },
+ "unit": "",
+ "label": "MBBS seats per lakh people, 2025-26",
+ "source": "MBBS seats in medical colleges by State/UT, academic year 2025-26: Ministry of Health and Family Welfare, reply to Lok Sabha Unstarred Question 1099 of 24 July 2026 (Annexure I), counts as printed. Per lakh people: seats over projected population on 1 March 2026 (National Commission on Population, July 2020 projections from Census 2011). Seats are counted where the college is, not where the student lives. 34 listed; Dadra & Nagar Haveli not ranked.",
+ "hook": [
+  "Which state has the most",
+  "MBBS seats per lakh",
+  "people?"
+ ],
+ "hook_vo": "Which state has the most medical seats per lakh people?",
+ "rank_vo": {
+  "5": "Fifth is Karnataka, with twenty seats per lakh people.",
+  "4": "Fourth is Sikkim, twenty-one.",
+  "3": "Third is Telangana, twenty-five.",
+  "2": "Second is the Andaman and Nicobar Islands, twenty-eight.",
+  "1": "First is Puducherry, over one hundred."
+ },
+ "tests": [
+  {
+   "says": "fifth: Karnataka twenty",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Karnataka"
+   },
+   "equals": 20
+  },
+  {
+   "says": "fourth: Sikkim twenty-one",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Sikkim"
+   },
+   "equals": 21
+  },
+  {
+   "says": "third: Telangana twenty-five",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Telangana"
+   },
+   "equals": 25
+  },
+  {
+   "says": "second: Andaman and Nicobar Islands twenty-eight",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Andaman and Nicobar Islands"
+   },
+   "equals": 28
+  },
+  {
+   "says": "first: Puducherry over one hundred",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Puducherry"
+   },
+   "min": 100,
+   "max": 115
+  },
+  {
+   "says": "first: Puducherry more than three times the second",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Puducherry"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Andaman and Nicobar Islands"
+     }
+    ]
+   },
+   "min": 3.5,
+   "max": 4.2
+  }
+ ],
+ "map": {
+  "unit": "",
+  "title": "MBBS seats per lakh, *every state*",
+  "sub": "per lakh people · academic year 2025-26",
+  "note": "Counted where the college is. Top five outlined. Blank: Ladakh, Lakshadweep (not listed); Dadra and Nagar Haveli and Daman and Diu (177 seats).",
+  "ring": [
+   "Puducherry",
+   "Andaman and Nicobar Islands",
+   "Telangana",
+   "Sikkim",
+   "Karnataka"
+  ],
+  "vo": "Every state, mapped. Seats sit where the college is."
+ },
+ "end": {
+  "q": "Is your state in the top five?",
+  "sub": "Comment below."
+ },
+ "yt_title": "MBBS Seats per Lakh People: Top 5 States/UTs, 2025-26 🩺"
+}

@@ -290,8 +290,9 @@ def house_rules(sid, cfg, beats, extra):
     elif typ not in ("pick", "place"):
         if kinds[-2:] != ["map", "mapend"]:
             bad.append("the story does not close on every state's number on the map")
-        if not 3 <= len(kinds) - 3 <= 5:
-            bad.append(f"{len(kinds) - 3} beats between the hook and the map (three to five)")
+        most = 6 if typ == "versus" else 5      # a versus has five rounds and its final score card, the payoff of the story (22 Oct 2026)
+        if not 3 <= len(kinds) - 3 <= most:
+            bad.append(f"{len(kinds) - 3} beats between the hook and the map (three to {most})")
     if not extra.get("checked"):
         bad.append("no computed finding is carried as a test")
     for b in beats:
@@ -316,6 +317,25 @@ def find(vals, state):
     raise SystemExit(f"no value for {state}")
 
 
+def closing_map(sid, cfg, beats, extra):
+    """Rules 2 (versus, countdown): the story closes on every state's number on the map, then the last card. Same block as the paradox type's.
+    cfg["map"] = {title, sub, note, ring, vo, [data, unit, drop, dec]}; "data" and "unit" default to the story's own (countdown)."""
+    m = cfg["map"]; vals, india = series(m.get("data") or cfg["data"]); unit = m.get("unit", cfg.get("unit", "%"))
+    for s_ in m.get("drop", []):
+        assert s_ in vals, f"{sid}: map drop '{s_}' is not a row of the table"
+        assert s_.split(" and ")[0].lower() in (m.get("note") or "").lower(), f"{sid}: the map note must name '{s_}', which is left off the map"
+        vals.pop(s_)
+    asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
+    dec = m.get("dec", 0 if all(float(x).is_integer() for x in vals.values()) else None)
+    extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], "", dec), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
+    missing = {x["name"] for x in extra["map"]} - set(GEO)
+    assert not missing, f"{sid}: states not on the map: {missing}"
+    ctx = {"india": fmt(india, unit) if india is not None else ""}
+    ring = [geo(x) for x in m.get("ring", [])]
+    beats.append({"kind": "map", "title": m["title"], "sub": m.get("sub", "").format(**ctx), "note": m.get("note", ""), "anim": True, "ring": ring, "vo": m["vo"].format(**ctx)})
+    cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
+
+
 def build(cfg):
     sid, typ = cfg["id"], cfg["type"]
     pal = PALETTES[cfg.get("palette", "A")]
@@ -337,20 +357,33 @@ def build(cfg):
         beats.append({"kind": "recap", "name": nm(st), "geo": geo(st), "items": [{"big": b["big"], "text": b["text"]} for b in beats if b["kind"] == "clue"],
                       "vo": cfg.get("recap_vo", "How many clues did you need?")})
     elif typ == "countdown":
-        vals, india = series(cfg["data"]); unit = cfg.get("unit", "%")
+        vals, india = series(cfg["data"]); unit = cfg.get("unit", "%"); v2 = cfg.get("rules", 1) >= 2
         rk = sorted(vals.items(), key=lambda x: -x[1])
         assert rk[0][1] - rk[1][1] >= cfg.get("min_lead", 1.0), f"{sid}: lead of #1 is under the minimum"
-        top = rk[:5]
+        top = rk[:5]; checked = []
+        if v2:      # rules 2: the hook lights the five states on the India map; every rank is a clear step from the next state (3%), the digits are spelled out in "rank_vo", and the story closes on the map
+            for k in range(5):
+                gap = (rk[k][1] - rk[k + 1][1]) / abs(rk[k + 1][1])
+                assert gap >= cfg.get("min_gap", 0.03), f"{sid}: #{k + 1} {rk[k][0]} ({rk[k][1]:g}) is only {100 * gap:.1f}% above {rk[k + 1][0]} ({rk[k + 1][1]:g}): level, not a rank"
+                checked.append(f"#{k + 1} {rk[k][0]} {rk[k][1]:g} is {100 * gap:.1f}% above #{k + 2} {rk[k + 1][0]} {rk[k + 1][1]:g}, among {len(vals)} with data")
+            beats[0].update({"kind": "spot", "spots": [{"geo": geo(s_), "tone": "a", "name": nm(s_)} for s_, _ in top]})
         for i in range(4, -1, -1):
             s_, v = top[i]
             beats.append({"kind": "rank", "rank": i + 1, "name": nm(s_), "geo": geo(s_), "big": fmt(v, unit), "frac": v / top[0][1], "label": cfg["label"],
-                          "vo": (f"{['One', 'Two', 'Three', 'Four', 'Five'][i]}: {say(s_)}, {v:g}." if i else f"Number one: {say(s_)}, {v:g} percent.")})
-        asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
-        extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], ""), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
-        beats.append({"kind": "map", "title": cfg["map_title"], "sub": f"India {fmt(india, unit)}" if india is not None else "",
-                      "vo": cfg.get("map_vo") or (f"Every state, mapped. India: {india:g} percent." if india is not None else "Every state, mapped.")})
+                          "vo": (cfg["rank_vo"][str(i + 1)] if v2 else f"{['One', 'Two', 'Three', 'Four', 'Five'][i]}: {say(s_)}, {v:g}." if i else f"Number one: {say(s_)}, {v:g} percent.")})
+        if v2:
+            closing_map(sid, cfg, beats, extra)
+            extra["checked"] = checked + run_checks(sid, cfg, top[0][0])
+        else:
+            asc = sorted(vals, key=lambda s_: (vals[s_], s_)); n = len(asc)
+            extra["map"] = [{"name": geo(s_), "label": fmt(vals[s_], ""), "bucket": min(4, i * 5 // n), "nudge": NUDGE.get(geo(s_), (0, 0))} for i, s_ in enumerate(asc)]
+            beats.append({"kind": "map", "title": cfg["map_title"], "sub": f"India {fmt(india, unit)}" if india is not None else "",
+                          "vo": cfg.get("map_vo") or (f"Every state, mapped. India: {india:g} percent." if india is not None else "Every state, mapped.")})
     elif typ == "versus":
-        a, b = cfg["a"], cfg["b"]; sa = sb = 0
+        a, b = cfg["a"], cfg["b"]; sa = sb = 0; v2 = cfg.get("rules", 1) >= 2; checked = []
+        wd = ["zero", "one", "two", "three", "four", "five"]
+        if v2:      # rules 2: the hook lights both states on the India map
+            beats[0].update({"kind": "spot", "spots": [{"geo": geo(a), "tone": "a", "name": nm(a)}, {"geo": geo(b), "tone": "b", "name": nm(b)}]})
         for c in cfg["categories"]:
             vals, _ = series(c["data"]); va, vb = find(vals, a), find(vals, b)
             assert va != vb, f"{sid}: {c['label']} is a tie"
@@ -358,11 +391,24 @@ def build(cfg):
             win = "a" if (va > vb) == high else "b"
             sa += win == "a"; sb += win == "b"
             u = c.get("unit", "%")
-            beats.append({"kind": "versus", "label": c["label"], "note": "higher is better" if high else "lower is better", "a": fmt(va, u), "b": fmt(vb, u), "win": win, "sa": sa, "sb": sb,
+            if v2:      # a round is won by a clear lead (5%), the same state leads in each earlier year given under "also", and the voice line is written out
+                assert c.get("vo"), f"{sid}: round '{c['label']}' needs its own voice line, numbers spelled out"
+                rel = abs(va - vb) / min(abs(va), abs(vb))
+                assert rel >= c.get("min_lead", 0.05), f"{sid}: '{c['label']}': {a} {va:g} and {b} {vb:g} are level (a lead is at least 5%)"
+                checked.append(f"{c['label']}: {a} {va:g}, {b} {vb:g}, {100 * rel:.0f}% apart, {nm(a if win == 'a' else b)} ahead")
+                for sp in c.get("also", []):
+                    ev, _ = series(sp); ea, eb = find(ev, a), find(ev, b)
+                    assert ea != eb and (ea > eb) == (va > vb), f"{sid}: '{c['label']}' does not hold in {sp}: {a} {ea:g}, {b} {eb:g}"
+                    checked.append(f"  same winner in {sp}: {a} {ea:g}, {b} {eb:g}")
+            beats.append({"kind": "versus", "label": c["label"], "note": c.get("note") or ("higher is better" if high else "lower is better"), "a": fmt(va, u), "b": fmt(vb, u), "win": win, "sa": sa, "sb": sb,
                           "vo": c.get("vo") or f"Round {len([x for x in beats if x['kind'] == 'versus']) + 1}, {c['say']}: {say(a if win == 'a' else b)}."})
         lead = a if sa > sb else b
-        beats.append({"kind": "score", "sa": sa, "sb": sb, "vo": f"Final score: {say(lead)} {max(sa, sb)}, {say(b if lead == a else a)} {min(sa, sb)}."})
+        if not v2 or cfg.get("score", True):      # rules 2 allows only five beats before the map: five rounds leave no room for the score card ("score": false), the last round shows the running score
+            beats.append({"kind": "score", "sa": sa, "sb": sb, "vo": (f"Final score: {say(lead)} {wd[max(sa, sb)]}, {say(b if lead == a else a)} {wd[min(sa, sb)]}." if v2 else f"Final score: {say(lead)} {max(sa, sb)}, {say(b if lead == a else a)} {min(sa, sb)}.")})
         extra["a"] = {"name": nm(a), "geo": geo(a)}; extra["b"] = {"name": nm(b), "geo": geo(b)}
+        if v2:
+            closing_map(sid, cfg, beats, extra)
+            extra["checked"] = checked + [f"score {sa} to {sb}"] + run_checks(sid, cfg, a)
     elif typ in ("paradox", "fact"):      # "fact": one state, one fact, told on the same cards without a second measure
         st0 = cfg["state"]; checked = []
         beats[0].update({"kind": "spot", "geo": geo(st0), "name": nm(st0)})

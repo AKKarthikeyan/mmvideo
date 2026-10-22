@@ -1,0 +1,183 @@
+{
+ "id": "cn02",
+ "type": "countdown",
+ "rules": 2,
+ "theme": "money",
+ "chip": "TOP 5",
+ "source_short": "RBI Handbook · NSO · 2023-24",
+ "palette": "E",
+ "data": {
+  "ratio": [
+   {
+    "rbi": [
+     156,
+     "2024"
+    ]
+   },
+   {
+    "rbi": [
+     21,
+     "Base: 2011-12 | 2023-24"
+    ]
+   }
+  ],
+  "scale": 10000
+ },
+ "unit": "%",
+ "label": "bank loans as % of state output, 2023-24",
+ "min_gap": 0.03,
+ "rank_vo": {
+  "5": "Fifth place goes to Tamil Nadu at fifty-nine percent.",
+  "4": "Fourth place goes to Telangana at sixty-four percent.",
+  "3": "Third place goes to Maharashtra at ninety-nine percent.",
+  "2": "Second place goes to Chandigarh at one hundred thirty-eight percent.",
+  "1": "First place goes to Delhi at one hundred fifty-three percent."
+ },
+ "tests": [
+  {
+   "says": "Delhi: bank loans are 153 percent of state output, 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        156,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2023-24"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "Delhi"
+   },
+   "equals": 153
+  },
+  {
+   "says": "Chandigarh: bank loans are 138 percent of state output, 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        156,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2023-24"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "Chandigarh"
+   },
+   "equals": 138
+  },
+  {
+   "says": "Maharashtra: bank loans are 99 percent of state output, 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        156,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2023-24"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 99
+  },
+  {
+   "says": "Telangana: bank loans are 64 percent of state output, 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        156,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2023-24"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "Telangana"
+   },
+   "equals": 64
+  },
+  {
+   "says": "Tamil Nadu: bank loans are 59 percent of state output, 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        156,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        21,
+        "Base: 2011-12 | 2023-24"
+       ]
+      }
+     ],
+     "scale": 10000
+    },
+    "state": "Tamil Nadu"
+   },
+   "equals": 59
+  }
+ ],
+ "source": "RBI Handbook of Statistics on Indian States. Bank loans used in the state (scheduled commercial banks, end-March 2024, Table 156) divided by gross state domestic product at current prices, 2023-24 (NSO, Table 21). Blank: Gujarat (no 2023-24 output in the table), Lakshadweep, Dadra, Nagar Haveli, Daman and Diu. The table shows how much, not why.",
+ "hook": [
+  "Bank loans vs",
+  "state output:",
+  "*top 5* states and UTs"
+ ],
+ "hook_vo": "Bank loans against state output. The top five.",
+ "map": {
+  "title": "Bank loans ÷ state output, *every state*",
+  "sub": "Top five outlined",
+  "note": "Loans used in the state, end-March 2024, as % of 2023-24 output. Blank: Gujarat (no 2023-24 output), Lakshadweep, Dadra and Nagar Haveli and Daman and Diu.",
+  "ring": [
+   "Delhi",
+   "Chandigarh",
+   "Maharashtra",
+   "Telangana",
+   "Tamil Nadu"
+  ],
+  "vo": "Loans are counted where they are used, not where the lender sits."
+ },
+ "end": {
+  "q": "Where does your state stand?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Bank Loans vs State Output: Delhi at 153%, Top 5"
+}

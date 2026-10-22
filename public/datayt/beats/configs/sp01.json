@@ -1,0 +1,655 @@
+{
+ "id": "sp01",
+ "type": "paradox",
+ "theme": "money",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "RBI Handbook · 2025",
+ "palette": "D",
+ "state": "Odisha",
+ "source": "RBI Handbook of Statistics on Indian States, Tables 157 and 159: bank loans to farming and to individuals, scheduled commercial banks, end-March 2025. Per person: projected population as on 1 March 2025 (National Commission on Population, July 2020 edition).",
+ "hook": [
+  "*Odisha*: *1.6×* West Bengal's",
+  "farm loans per person,",
+  "same personal loans, 2025."
+ ],
+ "hook_vo": "Odisha and West Bengal: level personal loans, unequal farm loans.",
+ "facts": [
+  {
+   "state": "Odisha",
+   "kicker": "PERSONAL LOANS PER PERSON · 2025",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       159,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "unit": "₹",
+   "compare": [
+    "West Bengal"
+   ],
+   "text": "a person. West Bengal: ₹20,868. Level.",
+   "sub": "Banks to individuals, end-March 2025. {n} states and UTs.",
+   "vo": "Odisha had about twenty-one thousand rupees per person, level with West Bengal."
+  },
+  {
+   "state": "Odisha",
+   "kicker": "FARM LOANS PER PERSON · 2025",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "unit": "₹",
+   "compare": [
+    "India"
+   ],
+   "text": "a person in bank loans to farming. Below India's.",
+   "sub": "Credit to agriculture, scheduled banks. {n} states and UTs.",
+   "vo": "Odisha: nearly ten thousand rupees per person in farm loans, below India's."
+  },
+  {
+   "state": "West Bengal",
+   "kicker": "FARM LOANS PER PERSON · 2025",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "unit": "₹",
+   "compare": [
+    "Odisha"
+   ],
+   "text": "a person: below Odisha's. Odisha had 1.6 times that, at level personal loans.",
+   "sub": "2023: 1.5 times. 2024: 1.6 times.",
+   "vo": "West Bengal: six thousand two hundred rupees. Odisha: one point six times."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       159,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 20868
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       159,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 20584
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 9812
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 6239
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       157,
+       "2025"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 17124
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        159,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2025"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 1.55
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 1.55
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        157,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   },
+   "min": 1.45
+  }
+ ],
+ "so": {
+  "lines": [
+   "Personal loans per person",
+   "were level in 2025.",
+   "*Odisha* had more farm loans",
+   "per person than West Bengal."
+  ],
+  "vo": "Personal loans per person were level. Odisha had more farm loans per person."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      157,
+      "2025"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2025"
+     ]
+    }
+   ],
+   "scale": 10
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "Farm loans per person, *every state*",
+  "sub": "₹ thousand per person · India {india} · 2025",
+  "note": "Blank: Dadra, Nagar Haveli, Daman and Diu (no row). Bank loans to farming. The table shows how much, not why.",
+  "ring": [
+   "Odisha",
+   "West Bengal"
+  ],
+  "vo": "Here is every state's figure: bank loans to farming, per person."
+ },
+ "end": {
+  "q": "Where does your state stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "Odisha vs West Bengal: Level Personal Loans, 1.6x Farm Loans"
+}

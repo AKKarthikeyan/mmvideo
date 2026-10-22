@@ -1,0 +1,403 @@
+{
+ "id": "sp08",
+ "type": "versus",
+ "theme": "states",
+ "rules": 1,
+ "chip": "STATE vs STATE",
+ "source_short": "Census 2011 · SoI 2025 · AISHE · GI · Rail",
+ "palette": "A",
+ "a": "Karnataka",
+ "b": "Tamil Nadu",
+ "source": "Area: Census of India 2011, Table A-01. Coastline: Survey of India and Ministry of Earth Sciences, figures recalculated in 2025 (not comparable with older ones). Colleges per lakh people aged 18-23: Ministry of Education, AISHE 2023-24. Geographical Indications: our count of rows in the GI Registry year-wise register as on 31 Mar 2026; a GI shared by states counts for each. Railway route: Ministry of Railways data in RBI Handbook of Statistics on Indian States, Table 145, end-March 2024, divided by geographical area (ISFR 2023).",
+ "hook": [
+  "*Karnataka*",
+  "vs *Tamil Nadu.*",
+  "5 neighbour rounds."
+ ],
+ "hook_vo": "Karnataka versus Tamil Nadu. Five neighbour rounds.",
+ "categories": [
+  {
+   "label": "Area, sq km (Census 2011)",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_a1_states",
+     "Area (sq km)"
+    ]
+   },
+   "vo": "Area goes to Karnataka, nearly one and a half times Tamil Nadu's."
+  },
+  {
+   "label": "Coastline, km (recalculated 2025)",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/land_coastline_2025",
+     "Revised coastline, 2025 (km)"
+    ]
+   },
+   "vo": "Coastline goes to Tamil Nadu, over three times Karnataka's."
+  },
+  {
+   "label": "Colleges per lakh aged 18-23, 2023-24",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/built_aishe_colleges_2023_24",
+     "Colleges per lakh population aged 18-23, 2023-24"
+    ]
+   },
+   "vo": "Colleges per lakh young people go to Karnataka."
+  },
+  {
+   "label": "Registered GI tags (Mar 2026)",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/heritage_gi_by_state",
+     "GIs registered (counted under each State/UT named)"
+    ]
+   },
+   "vo": "Registered GI tags go to Tamil Nadu, over one and a half times."
+  },
+  {
+   "label": "Rail route km per 1,000 sq km (2024)",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/built_rail_route_2024",
+       "Railway route, end-March 2024 (km)"
+      ]
+     },
+     {
+      "tbl": [
+       "evergreen/built_area_isfr2023",
+       "Geographical area (sq km)"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "vo": "Railway line per area goes to Tamil Nadu, over sixty percent more."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Karnataka is nearly one and a half times Tamil Nadu's area (Census 2011)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Area (sq km)"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Area (sq km)"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 1.45,
+   "max": 1.5
+  },
+  {
+   "says": "Tamil Nadu coastline is over three times Karnataka's (recalculated 2025)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Revised coastline, 2025 (km)"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 3.05,
+   "max": 3.2
+  },
+  {
+   "says": "Tamil Nadu coastline is longer than Karnataka's (old figures)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_coastline_2025",
+        "Old coastline (km)"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 3.0,
+   "max": 3.4
+  },
+  {
+   "says": "Karnataka has more colleges per lakh aged 18-23 (2023-24)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.65
+  },
+  {
+   "says": "Karnataka has more colleges per lakh aged 18-23 (2022-23)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Tamil Nadu"
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.7
+  },
+  {
+   "says": "Tamil Nadu has over one and a half times Karnataka's registered GIs",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/heritage_gi_by_state",
+        "GIs registered (counted under each State/UT named)"
+       ]
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/heritage_gi_by_state",
+        "GIs registered (counted under each State/UT named)"
+       ]
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.6
+  },
+  {
+   "says": "Tamil Nadu has over sixty percent more railway route per area than Karnataka (end-March 2024)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2024 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2024 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 1.7
+  },
+  {
+   "says": "Tamil Nadu has more railway route per area than Karnataka (end-March 2020)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2020 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2020 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.55,
+   "max": 1.8
+  },
+  {
+   "says": "Tamil Nadu has more railway route per area than Karnataka (end-March 2004)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2004 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Tamil Nadu"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_rail_route_2024",
+          "Railway route, end-March 2004 (km)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.3
+  }
+ ],
+ "end": {
+  "q": "Which neighbours should we compare next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Karnataka vs Tamil Nadu: 5 Rounds of State Facts",
+ "rules_note": "rules 1, not 2: the versus type cannot meet rules 2 in build_beats.py itself (digits in the generated score voice line, hook not on the map, no closing map and mapend, no finding registered by the type). Every other house rule passes."
+}

@@ -1,0 +1,546 @@
+{
+ "id": "vs04",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "Ministry of Agriculture via RBI · 2024-25",
+ "source": "Ministry of Agriculture and Farmers' Welfare, via RBI Handbook of Statistics on Indian States. Yields, 2024-25 final estimates: cotton lint, pulses, rice (Tables 86, 83, 80). Fruit and vegetables, 2024-25 third advance estimates: production over area (Tables 74, 72, 75, 73). Yield is output per hectare, not a state total. Andhra Pradesh and Telangana have been separate states since 2014.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Andhra Pradesh*",
+    "vs *Telangana.*",
+    "5 farm rounds."
+   ],
+   "vo": "Andhra Pradesh versus Telangana. Five farm rounds.",
+   "spots": [
+    {
+     "geo": "Andhra Pradesh",
+     "tone": "a",
+     "name": "Andhra Pradesh"
+    },
+    {
+     "geo": "Telangana",
+     "tone": "b",
+     "name": "Telangana"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "versus",
+   "label": "Fruit yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "a": "24.0",
+   "b": "11.6",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "Andhra Pradesh grows over twice the fruit per hectare.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "kind": "versus",
+   "label": "Cotton yield",
+   "note": "kg of lint per hectare · 2024-25 · higher is better",
+   "a": "476",
+   "b": "543",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Telangana's cotton yield is fourteen percent higher.",
+   "t0": 9.677,
+   "t1": 13.548
+  },
+  {
+   "kind": "versus",
+   "label": "Vegetable yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "a": "36.8",
+   "b": "22.0",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Andhra Pradesh's vegetable yield is over two-thirds higher.",
+   "t0": 13.548,
+   "t1": 17.419
+  },
+  {
+   "kind": "versus",
+   "label": "Pulses yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "a": "875",
+   "b": "1,128",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Telangana's pulses yield is over a quarter higher.",
+   "t0": 17.419,
+   "t1": 21.29
+  },
+  {
+   "kind": "versus",
+   "label": "Rice yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "a": "3,928",
+   "b": "3,627",
+   "win": "a",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Andhra Pradesh's rice yield is eight percent higher.",
+   "t0": 21.29,
+   "t1": 25.161
+  },
+  {
+   "kind": "score",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Final score: Andhra Pradesh three, Telangana two.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Rice yield, *every state*",
+   "sub": "Andhra Pradesh 3 · Telangana 2 · India 2,929",
+   "note": "Kilograms per hectare, 2024-25 final estimates. Both states outlined. Blank: states with no figure. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Andhra Pradesh",
+    "Telangana"
+   ],
+   "vo": "Yield is output per hectare, so size gives no edge.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Kilograms per hectare, 2024-25 final estimates. Both states outlined. Blank: states with no figure. The table shows how much, not why.",
+   "ring": [
+    "Andhra Pradesh",
+    "Telangana"
+   ],
+   "q": "Which two states next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which two states next? Comment below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Andhra Pradesh",
+  "geo": "Andhra Pradesh"
+ },
+ "b": {
+  "name": "Telangana",
+  "geo": "Telangana"
+ },
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "1,242",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Mizoram",
+   "label": "1,709",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Nagaland",
+   "label": "1,736",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "1,856",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Jharkhand",
+   "label": "1,894",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "2,080",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Assam",
+   "label": "2,225",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Maharashtra",
+   "label": "2,299",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "2,345",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Goa",
+   "label": "2,348",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Gujarat",
+   "label": "2,410",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Manipur",
+   "label": "2,465",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "2,482",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Odisha",
+   "label": "2,485",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Bihar",
+   "label": "2,561",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Meghalaya",
+   "label": "2,592",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Rajasthan",
+   "label": "2,593",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "2,655",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "2,710",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Puducherry",
+   "label": "2,761",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "2,800",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "2,824",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "West Bengal",
+   "label": "2,865",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Kerala",
+   "label": "2,923",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Tripura",
+   "label": "3,185",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3,288",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Karnataka",
+   "label": "3,344",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Telangana",
+   "label": "3,627",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Haryana",
+   "label": "3,766",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "3,928",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Punjab",
+   "label": "4,428",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.947
+  }
+ ],
+ "checked": [
+  "Fruit yield: Andhra Pradesh 23.9689, Telangana 11.5831, 107% apart, Andhra Pradesh ahead",
+  "  same winner in {'ratio': [{'rbi': [74, '2023-24']}, {'rbi': [72, '2023-24']}]}: Andhra Pradesh 22.3462, Telangana 11.0868",
+  "  same winner in {'ratio': [{'rbi': [74, '2022-23']}, {'rbi': [72, '2022-23']}]}: Andhra Pradesh 23.2116, Telangana 12.745",
+  "Cotton yield: Andhra Pradesh 476, Telangana 543, 14% apart, Telangana ahead",
+  "  same winner in {'rbi': [86, '2023-24']}: Andhra Pradesh 297, Telangana 475",
+  "  same winner in {'rbi': [86, '2022-23']}: Andhra Pradesh 372, Telangana 495",
+  "Vegetable yield: Andhra Pradesh 36.8043, Telangana 21.9505, 68% apart, Andhra Pradesh ahead",
+  "  same winner in {'ratio': [{'rbi': [75, '2023-24']}, {'rbi': [73, '2023-24']}]}: Andhra Pradesh 34.3387, Telangana 22.9",
+  "  same winner in {'ratio': [{'rbi': [75, '2022-23']}, {'rbi': [73, '2022-23']}]}: Andhra Pradesh 32.3281, Telangana 24.795",
+  "Pulses yield: Andhra Pradesh 875, Telangana 1128, 29% apart, Telangana ahead",
+  "  same winner in {'rbi': [83, '2023-24']}: Andhra Pradesh 874, Telangana 1094",
+  "  same winner in {'rbi': [83, '2022-23']}: Andhra Pradesh 1042, Telangana 1122",
+  "Rice yield: Andhra Pradesh 3928, Telangana 3627, 8% apart, Andhra Pradesh ahead",
+  "  same winner in {'rbi': [80, '2023-24']}: Andhra Pradesh 3822, Telangana 3602",
+  "  same winner in {'rbi': [80, '2022-23']}: Andhra Pradesh 3730, Telangana 3406",
+  "score 3 to 2",
+  "fruit yield: Andhra Pradesh more than double Telangana: 2.07",
+  "cotton yield: Telangana fourteen percent above Andhra Pradesh: 1.14",
+  "vegetable yield: Andhra Pradesh over two-thirds above Telangana: 1.68",
+  "pulses yield: Telangana over a quarter above Andhra Pradesh: 1.29",
+  "rice yield: Andhra Pradesh eight percent above Telangana: 1.08"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.735,
+   "at": 0.12,
+   "text": "Andhra Pradesh versus Telangana. Five farm rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.925,
+   "at": 5.926,
+   "text": "Andhra Pradesh grows over twice the fruit per hectare."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.369,
+   "at": 9.797,
+   "text": "Telangana's cotton yield is fourteen percent higher."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.265,
+   "at": 13.668,
+   "text": "Andhra Pradesh's vegetable yield is over two-thirds higher."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.925,
+   "at": 17.539,
+   "text": "Telangana's pulses yield is over a quarter higher."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.056,
+   "at": 21.41,
+   "text": "Andhra Pradesh's rice yield is eight percent higher."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.787,
+   "at": 25.281,
+   "text": "Final score: Andhra Pradesh three, Telangana two."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 4.179,
+   "at": 31.088,
+   "text": "Yield is output per hectare, so size gives no edge."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 2.795,
+   "at": 36.894,
+   "text": "Which two states next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Andhra Pradesh vs Telangana: 5 Farm Rounds 🌾"
+}

@@ -1,0 +1,550 @@
+{
+ "id": "cn10",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "Health Ministry · Lok Sabha answer, Jul 2026",
+ "source": "MBBS seats in medical colleges by State/UT, academic year 2025-26: Ministry of Health and Family Welfare, reply to Lok Sabha Unstarred Question 1099 of 24 July 2026 (Annexure I), counts as printed. Per lakh people: seats over projected population on 1 March 2026 (National Commission on Population, July 2020 projections from Census 2011). Seats are counted where the college is, not where the student lives. 34 listed; Dadra & Nagar Haveli not ranked.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Which state has the most",
+    "MBBS seats per lakh",
+    "people?"
+   ],
+   "vo": "Which state has the most medical seats per lakh people?",
+   "spots": [
+    {
+     "geo": "Puducherry",
+     "tone": "a",
+     "name": "Puducherry"
+    },
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "tone": "a",
+     "name": "A&N Islands"
+    },
+    {
+     "geo": "Telangana",
+     "tone": "a",
+     "name": "Telangana"
+    },
+    {
+     "geo": "Sikkim",
+     "tone": "a",
+     "name": "Sikkim"
+    },
+    {
+     "geo": "Karnataka",
+     "tone": "a",
+     "name": "Karnataka"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "big": "20.2",
+   "frac": 0.1896756189984803,
+   "label": "MBBS seats per lakh people, 2025-26",
+   "vo": "Fifth is Karnataka, with twenty seats per lakh people.",
+   "t0": 3.871,
+   "t1": 9.677
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "Sikkim",
+   "geo": "Sikkim",
+   "big": "21.2",
+   "frac": 0.19874306605011446,
+   "label": "MBBS seats per lakh people, 2025-26",
+   "vo": "Fourth is Sikkim, twenty-one.",
+   "t0": 9.677,
+   "t1": 13.548
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Telangana",
+   "geo": "Telangana",
+   "big": "24.7",
+   "frac": 0.2316275435489542,
+   "label": "MBBS seats per lakh people, 2025-26",
+   "vo": "Third is Telangana, twenty-five.",
+   "t0": 13.548,
+   "t1": 17.419
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "A&N Islands",
+   "geo": "Andaman and Nicobar Islands",
+   "big": "28.1",
+   "frac": 0.263398199458733,
+   "label": "MBBS seats per lakh people, 2025-26",
+   "vo": "Second is the Andaman and Nicobar Islands, twenty-eight.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Puducherry",
+   "geo": "Puducherry",
+   "big": "106.6",
+   "frac": 1.0,
+   "label": "MBBS seats per lakh people, 2025-26",
+   "vo": "First is Puducherry, over one hundred.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "MBBS seats per lakh, *every state*",
+   "sub": "per lakh people · academic year 2025-26",
+   "note": "Counted where the college is. Top five outlined. Blank: Ladakh, Lakshadweep (not listed); Dadra and Nagar Haveli and Daman and Diu (177 seats).",
+   "anim": true,
+   "ring": [
+    "Puducherry",
+    "Andaman and Nicobar Islands",
+    "Telangana",
+    "Sikkim",
+    "Karnataka"
+   ],
+   "vo": "Every state, mapped. Seats sit where the college is.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Counted where the college is. Top five outlined. Blank: Ladakh, Lakshadweep (not listed); Dadra and Nagar Haveli and Daman and Diu (177 seats).",
+   "ring": [
+    "Puducherry",
+    "Andaman and Nicobar Islands",
+    "Telangana",
+    "Sikkim",
+    "Karnataka"
+   ],
+   "q": "Is your state in the top five?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state in the top five? Comment below.",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Bihar",
+   "label": "2.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Jharkhand",
+   "label": "3.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.562
+  },
+  {
+   "name": "Nagaland",
+   "label": "4.4",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.678
+  },
+  {
+   "name": "Assam",
+   "label": "5.4",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 27.793
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "5.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.908
+  },
+  {
+   "name": "Meghalaya",
+   "label": "5.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 28.024
+  },
+  {
+   "name": "Punjab",
+   "label": "6.1",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 28.139
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "6.2",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 28.254
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "6.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.37
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "6.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.485
+  },
+  {
+   "name": "Odisha",
+   "label": "6.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.6
+  },
+  {
+   "name": "West Bengal",
+   "label": "6.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.716
+  },
+  {
+   "name": "Mizoram",
+   "label": "7.9",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.831
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "7.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.946
+  },
+  {
+   "name": "Haryana",
+   "label": "8.7",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.062
+  },
+  {
+   "name": "Rajasthan",
+   "label": "8.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.177
+  },
+  {
+   "name": "Maharashtra",
+   "label": "9.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.292
+  },
+  {
+   "name": "Gujarat",
+   "label": "10.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.408
+  },
+  {
+   "name": "Tripura",
+   "label": "10.6",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.523
+  },
+  {
+   "name": "Chandigarh",
+   "label": "11.8",
+   "bucket": 2,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 29.638
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "12.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.754
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "12.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.869
+  },
+  {
+   "name": "Goa",
+   "label": "12.5",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.984
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "12.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.1
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "13.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.215
+  },
+  {
+   "name": "Kerala",
+   "label": "14.9",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.33
+  },
+  {
+   "name": "Manipur",
+   "label": "15.9",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.446
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "16.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.561
+  },
+  {
+   "name": "Karnataka",
+   "label": "20.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.676
+  },
+  {
+   "name": "Sikkim",
+   "label": "21.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.792
+  },
+  {
+   "name": "Telangana",
+   "label": "24.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.907
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "28.1",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.022
+  },
+  {
+   "name": "Puducherry",
+   "label": "106.6",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.138
+  }
+ ],
+ "checked": [
+  "#1 Puducherry 106.602 is 279.7% above #2 Andaman and Nicobar Islands 28.0788, among 33 with data",
+  "#2 Andaman and Nicobar Islands 28.0788 is 13.7% above #3 Telangana 24.692, among 33 with data",
+  "#3 Telangana 24.692 is 16.5% above #4 Sikkim 21.1864, among 33 with data",
+  "#4 Sikkim 21.1864 is 4.8% above #5 Karnataka 20.2198, among 33 with data",
+  "#5 Karnataka 20.2198 is 20.2% above #6 Tamil Nadu 16.8287, among 33 with data",
+  "fifth: Karnataka twenty: 20.22",
+  "fourth: Sikkim twenty-one: 21.19",
+  "third: Telangana twenty-five: 24.69",
+  "second: Andaman and Nicobar Islands twenty-eight: 28.08",
+  "first: Puducherry over one hundred: 106.60",
+  "first: Puducherry more than three times the second: 3.80"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.16,
+   "at": 0.12,
+   "text": "Which state has the most medical seats per lakh people?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.578,
+   "at": 3.991,
+   "text": "Fifth is Karnataka, with twenty seats per lakh people."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 2.324,
+   "at": 9.797,
+   "text": "Fourth is Sikkim, twenty-one."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.507,
+   "at": 13.668,
+   "text": "Third is Telangana, twenty-five."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.048,
+   "at": 17.539,
+   "text": "Second is the Andaman and Nicobar Islands, twenty-eight."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.246,
+   "at": 23.346,
+   "text": "First is Puducherry, over one hundred."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.937,
+   "at": 27.217,
+   "text": "Every state, mapped. Seats sit where the college is."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.925,
+   "at": 33.023,
+   "text": "Is your state in the top five? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "MBBS Seats per Lakh People: Top 5 States/UTs, 2025-26 🩺"
+}

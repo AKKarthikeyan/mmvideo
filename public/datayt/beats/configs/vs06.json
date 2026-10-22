@@ -1,0 +1,241 @@
+{
+ "id": "vs06",
+ "type": "versus",
+ "theme": "women",
+ "rules": 2,
+ "chip": "STATE vs STATE",
+ "source_short": "IIPS · PFRDA · UDISE+ · 2023-25",
+ "palette": "E",
+ "a": "Gujarat",
+ "b": "Rajasthan",
+ "source": "NFHS-6 (2023-24), IIPS, state fact sheets; survey estimates, and each lead was there in NFHS-5 (2019-21) too: women 15-49 who worked in the past year and were paid in cash; mothers who took iron folic acid for 100 days or more; women 15-24 using hygienic period protection. Atal Pension Yojana sign-ups in the year, women as a share of all, 2024-25 (PFRDA), and girls' Class 9-12 gross enrolment ratio, 2024-25 (UDISE+, Ministry of Education; it can pass 100): RBI Handbook of Statistics on Indian States, Tables 180 and 1.",
+ "hook": [
+  "*Gujarat*",
+  "vs *Rajasthan.*",
+  "5 rounds: women and girls."
+ ],
+ "hook_vo": "Gujarat versus Rajasthan. Five rounds.",
+ "categories": [
+  {
+   "label": "Women paid in cash for work",
+   "say": "pay",
+   "unit": "%",
+   "data": {
+    "nfhs": 91
+   },
+   "also": [
+    {
+     "nfhs": 91,
+     "col": 3
+    }
+   ],
+   "vo": "Women paid in cash: Gujarat at thirty-seven percent.",
+   "note": "women 15-49 paid in cash · 2023-24 · higher is better"
+  },
+  {
+   "label": "Women in Atal Pension sign-ups",
+   "say": "pension",
+   "unit": "%",
+   "note": "% of the year's sign-ups · 2024-25 · higher is better",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       180,
+       "2024-25 | Female"
+      ]
+     },
+     {
+      "add": [
+       {
+        "rbi": [
+         180,
+         "2024-25 | Female"
+        ]
+       },
+       {
+        "rbi": [
+         180,
+         "2024-25 | Male"
+        ]
+       },
+       {
+        "rbi": [
+         180,
+         "2024-25 | Transgender"
+        ]
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2023-24 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2023-24 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2023-24 | Male"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2023-24 | Transgender"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2022-23 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2022-23 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2022-23 | Male"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2022-23 | Transgender"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   ],
+   "vo": "Women among Atal Pension sign-ups: Rajasthan."
+  },
+  {
+   "label": "Mothers: iron folic acid, 100+ days",
+   "say": "iron folic acid",
+   "unit": "%",
+   "data": {
+    "nfhs": 32
+   },
+   "also": [
+    {
+     "nfhs": 32,
+     "col": 3
+    }
+   ],
+   "vo": "Iron folic acid in pregnancy: Gujarat.",
+   "note": "mothers, 100+ days · 2023-24 · higher is better"
+  },
+  {
+   "label": "Hygienic period protection, 15-24",
+   "say": "period protection",
+   "unit": "%",
+   "data": {
+    "nfhs": 94
+   },
+   "also": [
+    {
+     "nfhs": 94,
+     "col": 3
+    }
+   ],
+   "vo": "Period protection for young women: Rajasthan.",
+   "note": "women 15-24 · 2023-24 · higher is better"
+  },
+  {
+   "label": "Girls in Class 9-12, enrolment ratio",
+   "say": "girls in school",
+   "unit": "%",
+   "note": "gross ratio, can pass 100 · 2024-25 · higher is better",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Female"
+    ]
+   },
+   "vo": "Girls in Class nine to twelve: Rajasthan."
+  }
+ ],
+ "tests": [
+  {
+   "says": "cash pay: Gujarat thirty-seven percent",
+   "value": {
+    "data": {
+     "nfhs": 91
+    },
+    "state": "Gujarat"
+   },
+   "equals": 37
+  },
+  {
+   "says": "iron folic acid: Gujarat 1.6 to 1.9 times Rajasthan",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 32
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "nfhs": 32
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 1.9
+  }
+ ],
+ "end": {
+  "q": "Which pair should we compare next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Gujarat vs Rajasthan: 5 Rounds on Women and Girls",
+ "map": {
+  "data": {
+   "nfhs": 91
+  },
+  "unit": "%",
+  "title": "Women paid in cash, *every state*",
+  "sub": "Rajasthan 3 · Gujarat 2 · India {india}",
+  "note": "Women 15-49 who worked in the past year and were paid in cash, NFHS-6 (2023-24). Both states outlined. Blank: Lakshadweep, Manipur.",
+  "ring": [
+   "Gujarat",
+   "Rajasthan"
+  ],
+  "vo": "Every state: women paid in cash."
+ }
+}

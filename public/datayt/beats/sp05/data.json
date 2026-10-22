@@ -1,0 +1,551 @@
+{
+ "id": "sp05",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "PLFS · NFHS-6 · 2023-24",
+ "source": "Work: women aged 15 and above at work (usual status, unpaid family work counted), rural and urban, Periodic Labour Force Survey, MoSPI; 2023-24 (July to June) and 2025 (January to December, new design). Phones: share of women aged 15 to 49 with a mobile phone they themselves use, NFHS-6 (2023-24) state fact sheets, International Institute for Population Sciences (survey estimates; Lakshadweep is not ranked and Manipur has no NFHS-6 sheet yet).",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Share of women, 2023-24:",
+    "*Uttar Pradesh* at work,",
+    "*Bihar* with own phones."
+   ],
+   "vo": "Share of women: Uttar Pradesh leads at work, Bihar on own phones.",
+   "geo": "Uttar Pradesh",
+   "name": "Uttar Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "big": "33.6%",
+   "text": "of women aged 15+ were at work, 2023-24. Bihar: 30.1%. India: 40.3%.",
+   "sub": "Survey estimate. PLFS, MoSPI; unpaid work counts.",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "label": "33.6%",
+     "frac": 0.336
+    },
+    {
+     "name": "Bihar",
+     "label": "30.1%",
+     "frac": 0.301
+    }
+   ],
+   "vo": "Thirty-four percent of Uttar Pradesh's women were at work. Bihar, thirty.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "WOMEN AT WORK · 2025",
+   "big": "31.7%",
+   "text": "of women aged 15+, calendar year 2025 (new design). Bihar: 24.0%.",
+   "sub": "Survey estimate. Same order in 2022-23.",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "label": "31.7%",
+     "frac": 0.317
+    },
+    {
+     "name": "Bihar",
+     "label": "24.0%",
+     "frac": 0.24
+    }
+   ],
+   "vo": "In twenty twenty-five Uttar Pradesh had thirty-two percent, Bihar twenty-four.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Bihar",
+   "geo": "Bihar",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "big": "62.8%",
+   "text": "of women aged 15 to 49 had a mobile phone they used. Uttar Pradesh: 56.4%. India: 64%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Bihar",
+     "label": "62.8%",
+     "frac": 0.628
+    },
+    {
+     "name": "Uttar Pradesh",
+     "label": "56.4%",
+     "frac": 0.564
+    }
+   ],
+   "vo": "In Bihar sixty-three percent of women had their own phone, Uttar Pradesh fifty-six.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across 32 states and UTs,",
+    "women at work and women",
+    "with their own phone were",
+    "*not closely linked*."
+   ],
+   "note": "Work counts unpaid family work too. A phone here is one the woman uses herself. The table shows how much, not why.",
+   "vo": "Across states, women at work and women's own phones were not closely linked.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Women with a phone they use, *every state*",
+   "sub": "% of women aged 15 to 49 · India 63.6% · 2023-24",
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Uttar Pradesh",
+    "Bihar"
+   ],
+   "vo": "Here is every state: women with a mobile phone they use.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+   "ring": [
+    "Uttar Pradesh",
+    "Bihar"
+   ],
+   "q": "Do women in your home have *phones*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Do women in your home have phones?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chhattisgarh",
+   "label": "47.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "48.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.494
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "56.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.606
+  },
+  {
+   "name": "Jharkhand",
+   "label": "58.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.718
+  },
+  {
+   "name": "Gujarat",
+   "label": "58.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.83
+  },
+  {
+   "name": "Rajasthan",
+   "label": "61.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.942
+  },
+  {
+   "name": "Bihar",
+   "label": "62.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.054
+  },
+  {
+   "name": "Maharashtra",
+   "label": "63.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Odisha",
+   "label": "63.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.278
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "64.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.39
+  },
+  {
+   "name": "Haryana",
+   "label": "64.9",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.502
+  },
+  {
+   "name": "West Bengal",
+   "label": "65.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.614
+  },
+  {
+   "name": "Tripura",
+   "label": "65.5",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.726
+  },
+  {
+   "name": "Telangana",
+   "label": "65.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.838
+  },
+  {
+   "name": "Assam",
+   "label": "66.8",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.95
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "68.3",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 31.062
+  },
+  {
+   "name": "Karnataka",
+   "label": "72.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.174
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "72.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Punjab",
+   "label": "72.6",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.397
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "76.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.509
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "76.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.621
+  },
+  {
+   "name": "Meghalaya",
+   "label": "80.6",
+   "bucket": 3,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.733
+  },
+  {
+   "name": "Puducherry",
+   "label": "82.4",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.845
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "83.3",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.957
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "84.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.069
+  },
+  {
+   "name": "Chandigarh",
+   "label": "84.4",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.181
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "86.7",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.293
+  },
+  {
+   "name": "Nagaland",
+   "label": "88.5",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.405
+  },
+  {
+   "name": "Ladakh",
+   "label": "89.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.517
+  },
+  {
+   "name": "Kerala",
+   "label": "89.1",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.629
+  },
+  {
+   "name": "Goa",
+   "label": "89.9",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.741
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "90.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.853
+  },
+  {
+   "name": "Mizoram",
+   "label": "90.9",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.965
+  },
+  {
+   "name": "Sikkim",
+   "label": "91.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.077
+  }
+ ],
+ "checked": [
+  "Uttar Pradesh 33.6 rounds to 34",
+  "Bihar 30.1 rounds to 30",
+  "India 40.3 rounds to 40",
+  "Uttar Pradesh 31.7 rounds to 32",
+  "Bihar 24 rounds to 24",
+  "Bihar 62.8 rounds to 63",
+  "Uttar Pradesh 56.4 rounds to 56",
+  "India 63.6 rounds to 64",
+  "Uttar Pradesh / Bihar = 1.12 (at least 1.03)",
+  "Uttar Pradesh / Bihar = 1.32 (at least 1.03)",
+  "Uttar Pradesh / Bihar = 1.39 (at least 1.03)",
+  "Bihar / Uttar Pradesh = 1.11 (at least 1.03)",
+  "Bihar / Uttar Pradesh = 1.11 (at least 1.03)",
+  "rank correlation across 32 states = -0.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Share of women: Uttar Pradesh leads at work, Bihar on own phones."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.806,
+   "at": 5.926,
+   "text": "Thirty-four percent of Uttar Pradesh's women were at work. Bihar, thirty."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.545,
+   "at": 11.733,
+   "text": "In twenty twenty-five Uttar Pradesh had thirty-two percent, Bihar twenty-four."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.25,
+   "at": 17.539,
+   "text": "In Bihar sixty-three percent of women had their own phone, Uttar Pradesh fifty-six."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.336,
+   "at": 23.346,
+   "text": "Across states, women at work and women's own phones were not closely linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.989,
+   "at": 29.152,
+   "text": "Here is every state: women with a mobile phone they use."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.246,
+   "at": 34.959,
+   "text": "Do women in your home have phones?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Uttar Pradesh Women at Work 33.6%; Bihar Own Phones 62.8%"
+}

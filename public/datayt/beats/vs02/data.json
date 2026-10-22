@@ -1,0 +1,586 @@
+{
+ "id": "vs02",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "RBI Handbook · PFRDA · 2024-25",
+ "source": "Bank offices and loans of scheduled commercial banks, end-March 2025: RBI Handbook of Statistics on Indian States, Tables 152, 157-159 (the loan tables do not say whether a loan is counted where it is made or where it is used). Pension: new Atal Pension Yojana enrolments in 2024-25, PFRDA (Table 180). Per person: projected population on 1 March 2025 (National Commission on Population, 2020).",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Punjab*",
+    "vs *Haryana.*",
+    "5 rounds of money data."
+   ],
+   "vo": "Punjab versus Haryana. Five rounds.",
+   "spots": [
+    {
+     "geo": "Punjab",
+     "tone": "a",
+     "name": "Punjab"
+    },
+    {
+     "geo": "Haryana",
+     "tone": "b",
+     "name": "Haryana"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "versus",
+   "label": "Bank offices per lakh people",
+   "note": "offices per lakh people · end-March 2025 · higher wins",
+   "a": "22.3",
+   "b": "18.4",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "Punjab has a fifth more bank offices per lakh people.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "versus",
+   "label": "Personal loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "a": "42.3k",
+   "b": "70.9k",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Haryana's personal loans per person are two-thirds higher.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Farm loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "a": "27.3k",
+   "b": "24.0k",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Punjab's farm loans per person are fourteen percent higher.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "versus",
+   "label": "Industry loans per person",
+   "note": "₹ thousand per person · end-March 2025 · higher wins",
+   "a": "30.3k",
+   "b": "59.8k",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Haryana's industry loans per person are almost double.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "versus",
+   "label": "New pension enrolments per lakh",
+   "note": "Atal Pension Yojana · per lakh people · 2024-25 · higher wins",
+   "a": "1,118.7",
+   "b": "863.2",
+   "win": "a",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Punjab has thirty percent more pension enrolments per lakh people.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "score",
+   "sa": 3,
+   "sb": 2,
+   "vo": "Final score: Punjab three, Haryana two.",
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Bank offices per lakh people, *every state*",
+   "sub": "Punjab 3 · Haryana 2 · India 11.9",
+   "note": "Scheduled commercial bank offices per lakh people (projected population), end-March 2025. Both outlined. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "Punjab",
+    "Haryana"
+   ],
+   "vo": "Offices are counted where the branch stands, not where people live.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Scheduled commercial bank offices per lakh people (projected population), end-March 2025. Both outlined. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+   "ring": [
+    "Punjab",
+    "Haryana"
+   ],
+   "q": "Which two states next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which two states next? Comment below.",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Punjab",
+  "geo": "Punjab"
+ },
+ "b": {
+  "name": "Haryana",
+  "geo": "Haryana"
+ },
+ "map": [
+  {
+   "name": "Bihar",
+   "label": "6.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Manipur",
+   "label": "8.0",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.362
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "8.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.471
+  },
+  {
+   "name": "Jharkhand",
+   "label": "8.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.579
+  },
+  {
+   "name": "Assam",
+   "label": "8.9",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.688
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "9.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.797
+  },
+  {
+   "name": "West Bengal",
+   "label": "10.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.906
+  },
+  {
+   "name": "Nagaland",
+   "label": "10.2",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.014
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "10.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.123
+  },
+  {
+   "name": "Rajasthan",
+   "label": "10.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.232
+  },
+  {
+   "name": "Meghalaya",
+   "label": "11.6",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.341
+  },
+  {
+   "name": "Maharashtra",
+   "label": "11.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.449
+  },
+  {
+   "name": "Odisha",
+   "label": "12.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.558
+  },
+  {
+   "name": "Gujarat",
+   "label": "13.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.667
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "14.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.776
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "14.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.885
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "15.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.993
+  },
+  {
+   "name": "Tripura",
+   "label": "15.3",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 35.102
+  },
+  {
+   "name": "Telangana",
+   "label": "16.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.211
+  },
+  {
+   "name": "Karnataka",
+   "label": "16.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.32
+  },
+  {
+   "name": "Puducherry",
+   "label": "16.7",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 35.428
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "17.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.537
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "18.0",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 35.646
+  },
+  {
+   "name": "Haryana",
+   "label": "18.4",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 35.755
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "18.8",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 35.864
+  },
+  {
+   "name": "Mizoram",
+   "label": "19.1",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 35.972
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "19.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.081
+  },
+  {
+   "name": "Kerala",
+   "label": "20.5",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 36.19
+  },
+  {
+   "name": "Punjab",
+   "label": "22.3",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 36.299
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "24.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.407
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "24.6",
+   "bucket": 4,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 36.516
+  },
+  {
+   "name": "Sikkim",
+   "label": "26.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 36.625
+  },
+  {
+   "name": "Ladakh",
+   "label": "33.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.734
+  },
+  {
+   "name": "Chandigarh",
+   "label": "36.7",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 36.842
+  },
+  {
+   "name": "Goa",
+   "label": "43.4",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 36.951
+  }
+ ],
+ "checked": [
+  "Bank offices per lakh people: Punjab 22.3379, Haryana 18.3702, 22% apart, Punjab ahead",
+  "  same winner in {'ratio': [{'rbi': [152, '2024']}, {'tbl': ['population/projected', '2024']}], 'scale': 100}: Punjab 21.9362, Haryana 18.0388",
+  "  same winner in {'ratio': [{'rbi': [152, '2023']}, {'tbl': ['population/projected', '2023']}], 'scale': 100}: Punjab 21.5164, Haryana 17.6305",
+  "Personal loans per person: Punjab 42.326, Haryana 70.9484, 68% apart, Haryana ahead",
+  "  same winner in {'ratio': [{'rbi': [159, '2024']}, {'tbl': ['population/projected', '2024']}], 'scale': 10}: Punjab 38.7709, Haryana 62.8031",
+  "  same winner in {'ratio': [{'rbi': [159, '2023']}, {'tbl': ['population/projected', '2023']}], 'scale': 10}: Punjab 29.1708, Haryana 45.0948",
+  "Farm loans per person: Punjab 27.2961, Haryana 24.0183, 14% apart, Punjab ahead",
+  "  same winner in {'ratio': [{'rbi': [157, '2024']}, {'tbl': ['population/projected', '2024']}], 'scale': 10}: Punjab 26.0587, Haryana 22.5467",
+  "  same winner in {'ratio': [{'rbi': [157, '2023']}, {'tbl': ['population/projected', '2023']}], 'scale': 10}: Punjab 24.1347, Haryana 20.8441",
+  "Industry loans per person: Punjab 30.3152, Haryana 59.8225, 97% apart, Haryana ahead",
+  "  same winner in {'ratio': [{'rbi': [158, '2024']}, {'tbl': ['population/projected', '2024']}], 'scale': 10}: Punjab 27.9849, Haryana 51.0398",
+  "  same winner in {'ratio': [{'rbi': [158, '2023']}, {'tbl': ['population/projected', '2023']}], 'scale': 10}: Punjab 24.4569, Haryana 41.053",
+  "New pension enrolments per lakh: Punjab 1118.7, Haryana 863.221, 30% apart, Punjab ahead",
+  "  same winner in {'ratio': [{'add': [{'rbi': [180, '2023-24 | Female']}, {'rbi': [180, '2023-24 | Male']}, {'rbi': [180, '2023-24 | Transgender']}]}, {'tbl': ['population/projected', '2024']}], 'scale': 100}: Punjab 1088.62, Haryana 858.009",
+  "  same winner in {'ratio': [{'add': [{'rbi': [180, '2022-23 | Female']}, {'rbi': [180, '2022-23 | Male']}, {'rbi': [180, '2022-23 | Transgender']}]}, {'tbl': ['population/projected', '2023']}], 'scale': 100}: Punjab 1140.14, Haryana 929.71",
+  "score 3 to 2",
+  "bank offices per lakh people: Punjab a fifth above Haryana: 1.22",
+  "personal loans per person: Haryana two-thirds above Punjab: 1.68",
+  "farm loans per person: Punjab fourteen percent above Haryana: 1.14",
+  "industry loans per person: Haryana almost double Punjab: 1.97",
+  "pension enrolments per lakh people: Punjab thirty percent above Haryana: 1.30"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 2.664,
+   "at": 0.12,
+   "text": "Punjab versus Haryana. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.265,
+   "at": 3.991,
+   "text": "Punjab has a fifth more bank offices per lakh people."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.265,
+   "at": 7.862,
+   "text": "Haryana's personal loans per person are two-thirds higher."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.578,
+   "at": 11.733,
+   "text": "Punjab's farm loans per person are fourteen percent higher."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.657,
+   "at": 17.539,
+   "text": "Haryana's industry loans per person are almost double."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.179,
+   "at": 23.346,
+   "text": "Punjab has thirty percent more pension enrolments per lakh people."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.395,
+   "at": 29.152,
+   "text": "Final score: Punjab three, Haryana two."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 3.657,
+   "at": 33.023,
+   "text": "Offices are counted where the branch stands, not where people live."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 2.324,
+   "at": 38.83,
+   "text": "Which two states next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Punjab vs Haryana: 5 Rounds of Money Data"
+}

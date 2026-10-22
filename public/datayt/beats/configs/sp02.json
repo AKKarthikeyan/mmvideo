@@ -1,0 +1,489 @@
+{
+ "id": "sp02",
+ "type": "paradox",
+ "theme": "economy",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "Labour Bureau · Commerce Ministry · 2023-25",
+ "palette": "A",
+ "state": "Uttar Pradesh",
+ "source": "RBI Handbook of Statistics on Indian States. Table 112: average daily wage of men construction workers in rural India, 2024-25 (Labour Bureau, Indian Labour Journal). Table 181: goods exports, 2023-24 (Department of Commerce, Niryat portal); the 2024-25 column covers 88% of India's total. Per person: projected population as on 1 March 2024 (NCP, July 2020 edition).",
+ "hook": [
+  "*Uttar Pradesh* vs *Bihar*:",
+  "level rural construction pay,",
+  "*5.4×* exports per person."
+ ],
+ "hook_vo": "Uttar Pradesh and Bihar: level construction pay, over five times the exports.",
+ "facts": [
+  {
+   "state": "Uttar Pradesh",
+   "kicker": "RURAL CONSTRUCTION PAY · 2024-25",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Bihar"
+   ],
+   "text": "a day. Bihar: ₹389. Level.",
+   "sub": "Men, construction work, rural India. {n} states with data.",
+   "vo": "Uttar Pradesh: about three hundred ninety rupees a day. Bihar: level."
+  },
+  {
+   "state": "Uttar Pradesh",
+   "kicker": "EXPORTS PER PERSON, US$ · 2023-24",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       181,
+       "2023-24"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "text": "US dollars of goods exported per person. Below India's.",
+   "sub": "Goods only, projected population. {n} states and UTs.",
+   "vo": "Uttar Pradesh exported goods worth about eighty-six dollars per person, below India's."
+  },
+  {
+   "state": "Bihar",
+   "kicker": "EXPORTS PER PERSON, US$ · 2023-24",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       181,
+       "2023-24"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "unit": "",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "text": "US dollars per person: Uttar Pradesh had 5.4 times that.",
+   "sub": "2022-23: 4.5 times. 2024-25: 5.8 times.",
+   "vo": "Bihar: sixteen dollars per person. Uttar Pradesh had over five times that."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "equals": 390
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "rbi": [
+     112,
+     "2024-25"
+    ]
+   },
+   "equals": 389
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       181,
+       "2023-24"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 16
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       181,
+       "2023-24"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 86
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       181,
+       "2023-24"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 312
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2023-24"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 5.35
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2022-23"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2022-23"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 4.45
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        181,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 5.8
+  }
+ ],
+ "so": {
+  "lines": [
+   "Rural construction pay was level.",
+   "*Uttar Pradesh* exported 5.4 times",
+   "as many goods per person."
+  ],
+  "vo": "Pay was level. Uttar Pradesh exported over five times as much per person."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      181,
+      "2023-24"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2024"
+     ]
+    }
+   ],
+   "scale": 1000
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Goods exports per person, *every state*",
+  "sub": "US$ per person · India {india} · 2023-24",
+  "note": "Blank: Andaman and Nicobar Islands, Dadra, Nagar Haveli, Daman and Diu (no row). Goods only, not services. The table shows how much, not why.",
+  "ring": [
+   "Uttar Pradesh",
+   "Bihar"
+  ],
+  "vo": "Here is every state's figure. It counts goods exports per person, not services."
+ },
+ "end": {
+  "q": "Where does your state stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "Uttar Pradesh vs Bihar: Level Construction Pay, 5.4x Exports"
+}

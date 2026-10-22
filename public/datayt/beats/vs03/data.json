@@ -1,0 +1,576 @@
+{
+ "id": "vs03",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "RBI Handbook · NSO · 2022-23",
+ "source": "RBI Handbook of Statistics on Indian States, from the National Statistical Office, 2022-23 (Gujarat has no 2023-24 figures): gross state value added at current prices for services, manufacturing, financial services and crops (Tables 29, 33, 45, 49) and net state domestic product per person at constant 2011-12 prices (Table 20). Per person: projected population on 1 March 2023 (National Commission on Population, 2020).",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Maharashtra*",
+    "vs *Gujarat.*",
+    "5 rounds of economy data."
+   ],
+   "vo": "Maharashtra versus Gujarat. Five rounds.",
+   "spots": [
+    {
+     "geo": "Maharashtra",
+     "tone": "a",
+     "name": "Maharashtra"
+    },
+    {
+     "geo": "Gujarat",
+     "tone": "b",
+     "name": "Gujarat"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "versus",
+   "label": "Services output per person",
+   "note": "₹ thousand per person · 2022-23 · higher wins",
+   "a": "157.9k",
+   "b": "94.1k",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "Maharashtra leads services by two-thirds.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "versus",
+   "label": "Manufacturing output per person",
+   "note": "₹ thousand per person · 2022-23 · higher wins",
+   "a": "39.0k",
+   "b": "94.2k",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Gujarat more than doubles Maharashtra in manufacturing.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Financial services per person",
+   "note": "₹ thousand per person · 2022-23 · higher wins",
+   "a": "29.4k",
+   "b": "12.8k",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Maharashtra more than doubles Gujarat in financial services.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "versus",
+   "label": "Real output per person",
+   "note": "times its 2011-12 level · 2022-23 · higher wins",
+   "a": "1.6×",
+   "b": "2.1×",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Gujarat has doubled its real output.",
+   "t0": 17.419,
+   "t1": 21.29
+  },
+  {
+   "kind": "versus",
+   "label": "Crop output per person",
+   "note": "₹ thousand per person · 2022-23 · higher wins",
+   "a": "17.7k",
+   "b": "28.5k",
+   "win": "b",
+   "sa": 2,
+   "sb": 3,
+   "vo": "Gujarat leads crops by sixty-one percent.",
+   "t0": 21.29,
+   "t1": 25.161
+  },
+  {
+   "kind": "score",
+   "sa": 2,
+   "sb": 3,
+   "vo": "Final score: Gujarat three, Maharashtra two.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Manufacturing output per person, *every state*",
+   "sub": "Gujarat 3 · Maharashtra 2",
+   "note": "Manufacturing value added per person, ₹ thousand, 2022-23. Blank: Lakshadweep, Dadra and Nagar Haveli and Daman and Diu. Both outlined.",
+   "anim": true,
+   "ring": [
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "vo": "Output is counted where the work is done.",
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "note": "Manufacturing value added per person, ₹ thousand, 2022-23. Blank: Lakshadweep, Dadra and Nagar Haveli and Daman and Diu. Both outlined.",
+   "ring": [
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "q": "Which two states next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which two states next? Comment below.",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Maharashtra",
+  "geo": "Maharashtra"
+ },
+ "b": {
+  "name": "Gujarat",
+  "geo": "Gujarat"
+ },
+ "map": [
+  {
+   "name": "Mizoram",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Nagaland",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.373
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.428
+  },
+  {
+   "name": "Manipur",
+   "label": "2",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.483
+  },
+  {
+   "name": "Ladakh",
+   "label": "2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.538
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.593
+  },
+  {
+   "name": "Tripura",
+   "label": "4",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.648
+  },
+  {
+   "name": "Bihar",
+   "label": "5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.703
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.758
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "10",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.813
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "11",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.868
+  },
+  {
+   "name": "Meghalaya",
+   "label": "11",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Chandigarh",
+   "label": "12",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.978
+  },
+  {
+   "name": "Assam",
+   "label": "14",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.033
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "16",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.088
+  },
+  {
+   "name": "Rajasthan",
+   "label": "18",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.143
+  },
+  {
+   "name": "West Bengal",
+   "label": "19",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.198
+  },
+  {
+   "name": "Jharkhand",
+   "label": "20",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.254
+  },
+  {
+   "name": "Kerala",
+   "label": "22",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.309
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "22",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.364
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "24",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.419
+  },
+  {
+   "name": "Odisha",
+   "label": "25",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.474
+  },
+  {
+   "name": "Telangana",
+   "label": "29",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.529
+  },
+  {
+   "name": "Punjab",
+   "label": "34",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.584
+  },
+  {
+   "name": "Maharashtra",
+   "label": "39",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.639
+  },
+  {
+   "name": "Karnataka",
+   "label": "41",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.694
+  },
+  {
+   "name": "Puducherry",
+   "label": "52",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.749
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "52",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.804
+  },
+  {
+   "name": "Haryana",
+   "label": "53",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.859
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "61",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.914
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "65",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.969
+  },
+  {
+   "name": "Gujarat",
+   "label": "94",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.024
+  },
+  {
+   "name": "Goa",
+   "label": "193",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.079
+  },
+  {
+   "name": "Sikkim",
+   "label": "205",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.134
+  }
+ ],
+ "checked": [
+  "Services output per person: Maharashtra 157.94, Gujarat 94.0684, 68% apart, Maharashtra ahead",
+  "  same winner in {'ratio': [{'rbi': [49, 'Base: 2011-12 | 2021-22']}, {'tbl': ['population/projected', '2022']}], 'scale': 0.1}: Maharashtra 131.224, Gujarat 83.699",
+  "  same winner in {'ratio': [{'rbi': [49, 'Base: 2011-12 | 2020-21']}, {'tbl': ['population/projected', '2021']}], 'scale': 0.1}: Maharashtra 112.186, Gujarat 74.3685",
+  "Manufacturing output per person: Maharashtra 39.0019, Gujarat 94.2387, 142% apart, Gujarat ahead",
+  "  same winner in {'ratio': [{'rbi': [33, 'Base: 2011-12 | 2021-22']}, {'tbl': ['population/projected', '2022']}], 'scale': 0.1}: Maharashtra 37.5223, Gujarat 88.2375",
+  "  same winner in {'ratio': [{'rbi': [33, 'Base: 2011-12 | 2020-21']}, {'tbl': ['population/projected', '2021']}], 'scale': 0.1}: Maharashtra 30.5253, Gujarat 73.2345",
+  "Financial services per person: Maharashtra 29.3564, Gujarat 12.7768, 130% apart, Maharashtra ahead",
+  "  same winner in {'ratio': [{'rbi': [45, 'Base: 2011-12 | 2021-22']}, {'tbl': ['population/projected', '2022']}], 'scale': 0.1}: Maharashtra 22.7797, Gujarat 12.3093",
+  "  same winner in {'ratio': [{'rbi': [45, 'Base: 2011-12 | 2020-21']}, {'tbl': ['population/projected', '2021']}], 'scale': 0.1}: Maharashtra 20.5447, Gujarat 12.1744",
+  "Real output per person: Maharashtra 1.55606, Gujarat 2.08003, 34% apart, Gujarat ahead",
+  "  same winner in {'ratio': [{'rbi': [20, 'Base: 2011-12 | 2021-22']}, {'rbi': [20, 'Base: 2011-12 | 2011-12']}]}: Maharashtra 1.42224, Gujarat 1.94921",
+  "  same winner in {'ratio': [{'rbi': [20, 'Base: 2011-12 | 2020-21']}, {'rbi': [20, 'Base: 2011-12 | 2011-12']}]}: Maharashtra 1.28066, Gujarat 1.7865",
+  "Crop output per person: Maharashtra 17.6961, Gujarat 28.5056, 61% apart, Gujarat ahead",
+  "  same winner in {'ratio': [{'rbi': [29, 'Base: 2011-12 | 2021-22']}, {'tbl': ['population/projected', '2022']}], 'scale': 0.1}: Maharashtra 18.0025, Gujarat 24.8977",
+  "  same winner in {'ratio': [{'rbi': [29, 'Base: 2011-12 | 2020-21']}, {'tbl': ['population/projected', '2021']}], 'scale': 0.1}: Maharashtra 14.6059, Gujarat 23.0304",
+  "score 2 to 3",
+  "services output per person: Maharashtra two-thirds above Gujarat: 1.68",
+  "manufacturing output per person: Gujarat more than double Maharashtra: 2.42",
+  "finance output per person: Maharashtra over twice Gujarat: 2.30",
+  "real output per person: Gujarat at least twice its 2011-12 level: 2.08",
+  "crop output per person: Gujarat sixty-one percent above Maharashtra: 1.61"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.056,
+   "at": 0.12,
+   "text": "Maharashtra versus Gujarat. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.638,
+   "at": 3.991,
+   "text": "Maharashtra leads services by two-thirds."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.056,
+   "at": 7.862,
+   "text": "Gujarat more than doubles Maharashtra in manufacturing."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.866,
+   "at": 11.733,
+   "text": "Maharashtra more than doubles Gujarat in financial services."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.533,
+   "at": 17.539,
+   "text": "Gujarat has doubled its real output."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.638,
+   "at": 21.41,
+   "text": "Gujarat leads crops by sixty-one percent."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.657,
+   "at": 25.281,
+   "text": "Final score: Gujarat three, Maharashtra two."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.324,
+   "at": 31.088,
+   "text": "Output is counted where the work is done."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 2.847,
+   "at": 34.959,
+   "text": "Which two states next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Maharashtra vs Gujarat: 5 Rounds of Economy Data"
+}

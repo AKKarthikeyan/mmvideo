@@ -1,0 +1,184 @@
+{
+ "id": "cn11",
+ "type": "countdown",
+ "rules": 2,
+ "theme": "power",
+ "chip": "TOP 5",
+ "source_short": "CEA · MoSPI via RBI · end-March 2024",
+ "palette": "E",
+ "data": {
+  "ratio": [
+   {
+    "rbi": [
+     143,
+     "2024"
+    ]
+   },
+   {
+    "rbi": [
+     140,
+     "2023-24"
+    ]
+   }
+  ],
+  "scale": 100
+ },
+ "unit": "%",
+ "label": "of capacity renewable, no large hydro, 2024",
+ "source": "Installed capacity (2023-24): Central Electricity Authority, Ministry of Power, via RBI Handbook of Statistics on Indian States, Table 140. Renewable capacity at end-March 2024: grid-connected solar, wind, small hydro and bio-power, Energy Statistics (MoSPI), same Handbook, Table 143. Large hydro is in the total, not in the renewable figure. A share of capacity, not of power generated. 33 states and UTs with both figures.",
+ "hook": [
+  "Which state has the most",
+  "renewable share of its",
+  "installed power capacity?"
+ ],
+ "hook_vo": "Which state has the biggest renewable share of its power capacity?",
+ "rank_vo": {
+  "5": "Fifth is Andhra Pradesh at thirty-four percent.",
+  "4": "Fourth is Gujarat at forty-nine percent.",
+  "3": "Third is Tamil Nadu at fifty percent.",
+  "2": "Second is Karnataka at fifty-four percent.",
+  "1": "First is Rajasthan at over sixty-one percent."
+ },
+ "tests": [
+  {
+   "says": "fifth: Andhra Pradesh thirty-four percent",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        140,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Andhra Pradesh"
+   },
+   "equals": 34
+  },
+  {
+   "says": "fourth: Gujarat forty-nine percent",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        140,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Gujarat"
+   },
+   "equals": 49
+  },
+  {
+   "says": "third: Tamil Nadu fifty percent",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        140,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Tamil Nadu"
+   },
+   "equals": 50
+  },
+  {
+   "says": "second: Karnataka fifty-four percent",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        140,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Karnataka"
+   },
+   "equals": 54
+  },
+  {
+   "says": "first: Rajasthan over sixty-one percent",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "rbi": [
+        140,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Rajasthan"
+   },
+   "min": 61,
+   "max": 62
+  }
+ ],
+ "map": {
+  "unit": "%",
+  "title": "Renewable share, *every state*",
+  "sub": "% of installed capacity · end-March 2024",
+  "note": "Renewable capacity as a share of all installed capacity, end-March 2024, not of generation. Large hydro excluded. Top five outlined. Blank: no figure.",
+  "ring": [
+   "Rajasthan",
+   "Karnataka",
+   "Tamil Nadu",
+   "Gujarat",
+   "Andhra Pradesh"
+  ],
+  "vo": "Every state, mapped. Renewable here leaves out large hydro."
+ },
+ "end": {
+  "q": "Is your state in the top five?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Renewable Share of Power Capacity: Top 5 States, 2024 ☀️"
+}

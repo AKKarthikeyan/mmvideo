@@ -1,0 +1,529 @@
+{
+ "id": "cn04",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "Agriculture Ministry via RBI · 2024-25",
+ "source": "Ministry of Agriculture and Farmers' Welfare, via RBI Handbook of Statistics on Indian States, Table 62: foodgrain production (rice, wheat, coarse cereals, pulses), 2024-25 final estimates. Divided by each state's projected population on 1 March 2025 (National Commission on Population, 2020). State production over state population: not what people eat. States and UTs with a figure.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Which state *produces*",
+    "the most foodgrain",
+    "per person?"
+   ],
+   "vo": "Which state produces the most foodgrain per person?",
+   "spots": [
+    {
+     "geo": "Punjab",
+     "tone": "a",
+     "name": "Punjab"
+    },
+    {
+     "geo": "Haryana",
+     "tone": "a",
+     "name": "Haryana"
+    },
+    {
+     "geo": "Telangana",
+     "tone": "a",
+     "name": "Telangana"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "tone": "a",
+     "name": "Madhya Pradesh"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "tone": "a",
+     "name": "Chhattisgarh"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Chhattisgarh",
+   "geo": "Chhattisgarh",
+   "big": "368.8 kg",
+   "frac": 0.35018465971886215,
+   "label": "of foodgrain produced per person, 2024-25",
+   "vo": "Fifth is Chhattisgarh at three hundred sixty-nine.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "big": "526.1 kg",
+   "frac": 0.4994958663184773,
+   "label": "of foodgrain produced per person, 2024-25",
+   "vo": "Fourth is Madhya Pradesh at five hundred twenty-six.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Telangana",
+   "geo": "Telangana",
+   "big": "562.6 kg",
+   "frac": 0.5341907584091226,
+   "label": "of foodgrain produced per person, 2024-25",
+   "vo": "Third is Telangana at five hundred sixty-three.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "Haryana",
+   "geo": "Haryana",
+   "big": "611.0 kg",
+   "frac": 0.5801397482218377,
+   "label": "of foodgrain produced per person, 2024-25",
+   "vo": "Second is Haryana at six hundred eleven.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Punjab",
+   "geo": "Punjab",
+   "big": "1,053.2 kg",
+   "frac": 1.0,
+   "label": "of foodgrain produced per person, 2024-25",
+   "vo": "First is Punjab at over a thousand kilograms.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "map",
+   "title": "Foodgrain per person, *every state*",
+   "sub": "kilograms per person · India 253.1 · 2024-25",
+   "note": "Foodgrains produced in the state over its projected population (1 March 2025): not what people eat. Top five outlined. Blank: no figure.",
+   "anim": true,
+   "ring": [
+    "Punjab",
+    "Haryana",
+    "Telangana",
+    "Madhya Pradesh",
+    "Chhattisgarh"
+   ],
+   "vo": "Every state, mapped. This counts foodgrain grown, divided by population.",
+   "t0": 25.161,
+   "t1": 32.903
+  },
+  {
+   "note": "Foodgrains produced in the state over its projected population (1 March 2025): not what people eat. Top five outlined. Blank: no figure.",
+   "ring": [
+    "Punjab",
+    "Haryana",
+    "Telangana",
+    "Madhya Pradesh",
+    "Chhattisgarh"
+   ],
+   "q": "Is your state in the top five?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state in the top five? Comment below.",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "NCT of Delhi",
+   "label": "5",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 25.511
+  },
+  {
+   "name": "Kerala",
+   "label": "14",
+   "bucket": 0,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 25.632
+  },
+  {
+   "name": "Puducherry",
+   "label": "28",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 25.753
+  },
+  {
+   "name": "Mizoram",
+   "label": "37",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 25.874
+  },
+  {
+   "name": "Goa",
+   "label": "50",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 25.995
+  },
+  {
+   "name": "Sikkim",
+   "label": "98",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 26.116
+  },
+  {
+   "name": "Meghalaya",
+   "label": "99",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 26.237
+  },
+  {
+   "name": "Jharkhand",
+   "label": "125",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.358
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "134",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.479
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "141",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.6
+  },
+  {
+   "name": "Gujarat",
+   "label": "143",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.721
+  },
+  {
+   "name": "Maharashtra",
+   "label": "144",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.842
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "145",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.963
+  },
+  {
+   "name": "Manipur",
+   "label": "152",
+   "bucket": 2,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 27.084
+  },
+  {
+   "name": "Assam",
+   "label": "152",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 27.205
+  },
+  {
+   "name": "Bihar",
+   "label": "164",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.326
+  },
+  {
+   "name": "Tripura",
+   "label": "181",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 27.446
+  },
+  {
+   "name": "West Bengal",
+   "label": "198",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.567
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "208",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.688
+  },
+  {
+   "name": "Karnataka",
+   "label": "213",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.809
+  },
+  {
+   "name": "Nagaland",
+   "label": "217",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.93
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "219",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.051
+  },
+  {
+   "name": "Odisha",
+   "label": "222",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.172
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "247",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.293
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "266",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.414
+  },
+  {
+   "name": "Rajasthan",
+   "label": "309",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.535
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "369",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.656
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "526",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.777
+  },
+  {
+   "name": "Telangana",
+   "label": "563",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.898
+  },
+  {
+   "name": "Haryana",
+   "label": "611",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.019
+  },
+  {
+   "name": "Punjab",
+   "label": "1,053",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.14
+  }
+ ],
+ "checked": [
+  "#1 Punjab 1053.2 is 72.4% above #2 Haryana 611.003, among 31 with data",
+  "#2 Haryana 611.003 is 8.6% above #3 Telangana 562.61, among 31 with data",
+  "#3 Telangana 562.61 is 6.9% above #4 Madhya Pradesh 526.069, among 31 with data",
+  "#4 Madhya Pradesh 526.069 is 42.6% above #5 Chhattisgarh 368.815, among 31 with data",
+  "#5 Chhattisgarh 368.815 is 19.4% above #6 Rajasthan 308.95, among 31 with data",
+  "fifth: Chhattisgarh three hundred sixty-nine: 368.81",
+  "fourth: Madhya Pradesh five hundred twenty-six: 526.07",
+  "third: Telangana five hundred sixty-three: 562.61",
+  "second: Haryana six hundred eleven: 611.00",
+  "first: Punjab over a thousand: 1053.20"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.265,
+   "at": 0.12,
+   "text": "Which state produces the most foodgrain per person?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.847,
+   "at": 3.991,
+   "text": "Fifth is Chhattisgarh at three hundred sixty-nine."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 2.638,
+   "at": 7.862,
+   "text": "Fourth is Madhya Pradesh at five hundred twenty-six."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.533,
+   "at": 11.733,
+   "text": "Third is Telangana at five hundred sixty-three."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.16,
+   "at": 15.604,
+   "text": "Second is Haryana at six hundred eleven."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.735,
+   "at": 19.475,
+   "text": "First is Punjab at over a thousand kilograms."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 5.877,
+   "at": 25.281,
+   "text": "Every state, mapped. This counts foodgrain grown, divided by population."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.638,
+   "at": 33.023,
+   "text": "Is your state in the top five? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Foodgrain Per Person: India's Top 5 States, 2024-25 🌾"
+}

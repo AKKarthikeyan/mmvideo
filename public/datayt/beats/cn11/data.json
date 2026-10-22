@@ -1,0 +1,549 @@
+{
+ "id": "cn11",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "CEA · MoSPI via RBI · end-March 2024",
+ "source": "Installed capacity (2023-24): Central Electricity Authority, Ministry of Power, via RBI Handbook of Statistics on Indian States, Table 140. Renewable capacity at end-March 2024: grid-connected solar, wind, small hydro and bio-power, Energy Statistics (MoSPI), same Handbook, Table 143. Large hydro is in the total, not in the renewable figure. A share of capacity, not of power generated. 33 states and UTs with both figures.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Which state has the most",
+    "renewable share of its",
+    "installed power capacity?"
+   ],
+   "vo": "Which state has the biggest renewable share of its power capacity?",
+   "spots": [
+    {
+     "geo": "Rajasthan",
+     "tone": "a",
+     "name": "Rajasthan"
+    },
+    {
+     "geo": "Karnataka",
+     "tone": "a",
+     "name": "Karnataka"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "tone": "a",
+     "name": "Tamil Nadu"
+    },
+    {
+     "geo": "Gujarat",
+     "tone": "a",
+     "name": "Gujarat"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "tone": "a",
+     "name": "Andhra Pradesh"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Andhra Pradesh",
+   "geo": "Andhra Pradesh",
+   "big": "34.2%",
+   "frac": 0.5562118181059781,
+   "label": "of capacity renewable, no large hydro, 2024",
+   "vo": "Fifth is Andhra Pradesh at thirty-four percent.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "big": "48.6%",
+   "frac": 0.7902909925089889,
+   "label": "of capacity renewable, no large hydro, 2024",
+   "vo": "Fourth is Gujarat at forty-nine percent.",
+   "t0": 9.677,
+   "t1": 13.548
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "big": "50.2%",
+   "frac": 0.8165345670178483,
+   "label": "of capacity renewable, no large hydro, 2024",
+   "vo": "Third is Tamil Nadu at fifty percent.",
+   "t0": 13.548,
+   "t1": 17.419
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "big": "54.1%",
+   "frac": 0.8791806775956715,
+   "label": "of capacity renewable, no large hydro, 2024",
+   "vo": "Second is Karnataka at fifty-four percent.",
+   "t0": 17.419,
+   "t1": 21.29
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "big": "61.5%",
+   "frac": 1.0,
+   "label": "of capacity renewable, no large hydro, 2024",
+   "vo": "First is Rajasthan at over sixty-one percent.",
+   "t0": 21.29,
+   "t1": 25.161
+  },
+  {
+   "kind": "map",
+   "title": "Renewable share, *every state*",
+   "sub": "% of installed capacity · end-March 2024",
+   "note": "Renewable capacity as a share of all installed capacity, end-March 2024, not of generation. Large hydro excluded. Top five outlined. Blank: no figure.",
+   "anim": true,
+   "ring": [
+    "Rajasthan",
+    "Karnataka",
+    "Tamil Nadu",
+    "Gujarat",
+    "Andhra Pradesh"
+   ],
+   "vo": "Every state, mapped. Renewable here leaves out large hydro.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "note": "Renewable capacity as a share of all installed capacity, end-March 2024, not of generation. Large hydro excluded. Top five outlined. Blank: no figure.",
+   "ring": [
+    "Rajasthan",
+    "Karnataka",
+    "Tamil Nadu",
+    "Gujarat",
+    "Andhra Pradesh"
+   ],
+   "q": "Is your state in the top five?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your state in the top five? Comment below.",
+   "t0": 30.968,
+   "t1": 34.839
+  }
+ ],
+ "total": 35.239,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "NCT of Delhi",
+   "label": "4.9",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 25.511
+  },
+  {
+   "name": "Tripura",
+   "label": "5.3",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 25.626
+  },
+  {
+   "name": "West Bengal",
+   "label": "5.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.742
+  },
+  {
+   "name": "Bihar",
+   "label": "6.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.857
+  },
+  {
+   "name": "Jharkhand",
+   "label": "6.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.972
+  },
+  {
+   "name": "Manipur",
+   "label": "6.7",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 26.088
+  },
+  {
+   "name": "Goa",
+   "label": "6.9",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 26.203
+  },
+  {
+   "name": "Sikkim",
+   "label": "7.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 26.319
+  },
+  {
+   "name": "Odisha",
+   "label": "8.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.434
+  },
+  {
+   "name": "Assam",
+   "label": "9.4",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 26.549
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "11.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.665
+  },
+  {
+   "name": "Meghalaya",
+   "label": "11.2",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 26.78
+  },
+  {
+   "name": "Puducherry",
+   "label": "11.7",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 26.895
+  },
+  {
+   "name": "Haryana",
+   "label": "13.6",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 27.011
+  },
+  {
+   "name": "Punjab",
+   "label": "14.3",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 27.126
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "15.6",
+   "bucket": 2,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 27.241
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "16.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.357
+  },
+  {
+   "name": "Nagaland",
+   "label": "17.3",
+   "bucket": 2,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.472
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "18.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.588
+  },
+  {
+   "name": "Kerala",
+   "label": "20.5",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 27.703
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "21.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.818
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "23.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.934
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "26.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.049
+  },
+  {
+   "name": "Telangana",
+   "label": "26.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.164
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "27.3",
+   "bucket": 3,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 28.28
+  },
+  {
+   "name": "Chandigarh",
+   "label": "28.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 28.395
+  },
+  {
+   "name": "Mizoram",
+   "label": "28.7",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.51
+  },
+  {
+   "name": "Maharashtra",
+   "label": "30.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.626
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "34.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.741
+  },
+  {
+   "name": "Gujarat",
+   "label": "48.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.857
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "50.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.972
+  },
+  {
+   "name": "Karnataka",
+   "label": "54.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.087
+  },
+  {
+   "name": "Rajasthan",
+   "label": "61.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.203
+  }
+ ],
+ "checked": [
+  "#1 Rajasthan 61.4805 is 13.7% above #2 Karnataka 54.0525, among 33 with data",
+  "#2 Karnataka 54.0525 is 7.7% above #3 Tamil Nadu 50.201, among 33 with data",
+  "#3 Tamil Nadu 50.201 is 3.3% above #4 Gujarat 48.5875, among 33 with data",
+  "#4 Gujarat 48.5875 is 42.1% above #5 Andhra Pradesh 34.1962, among 33 with data",
+  "#5 Andhra Pradesh 34.1962 is 12.9% above #6 Maharashtra 30.2985, among 33 with data",
+  "fifth: Andhra Pradesh thirty-four percent: 34.20",
+  "fourth: Gujarat forty-nine percent: 48.59",
+  "third: Tamil Nadu fifty percent: 50.20",
+  "second: Karnataka fifty-four percent: 54.05",
+  "first: Rajasthan over sixty-one percent: 61.48"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.735,
+   "at": 0.12,
+   "text": "Which state has the biggest renewable share of its power capacity?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.056,
+   "at": 5.926,
+   "text": "Fifth is Andhra Pradesh at thirty-four percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 2.324,
+   "at": 9.797,
+   "text": "Fourth is Gujarat at forty-nine percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.056,
+   "at": 13.668,
+   "text": "Third is Tamil Nadu at fifty percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.448,
+   "at": 17.539,
+   "text": "Second is Karnataka at fifty-four percent."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 21.41,
+   "text": "First is Rajasthan at over sixty-one percent."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.597,
+   "at": 25.281,
+   "text": "Every state, mapped. Renewable here leaves out large hydro."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.768,
+   "at": 31.088,
+   "text": "Is your state in the top five? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Renewable Share of Power Capacity: Top 5 States, 2024 ☀️"
+}

@@ -1,0 +1,549 @@
+{
+ "id": "cn02",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "RBI Handbook · NSO · 2023-24",
+ "source": "RBI Handbook of Statistics on Indian States. Bank loans used in the state (scheduled commercial banks, end-March 2024, Table 156) divided by gross state domestic product at current prices, 2023-24 (NSO, Table 21). Blank: Gujarat (no 2023-24 output in the table), Lakshadweep, Dadra, Nagar Haveli, Daman and Diu. The table shows how much, not why.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Bank loans vs",
+    "state output:",
+    "*top 5* states and UTs"
+   ],
+   "vo": "Bank loans against state output. The top five.",
+   "spots": [
+    {
+     "geo": "NCT of Delhi",
+     "tone": "a",
+     "name": "Delhi"
+    },
+    {
+     "geo": "Chandigarh",
+     "tone": "a",
+     "name": "Chandigarh"
+    },
+    {
+     "geo": "Maharashtra",
+     "tone": "a",
+     "name": "Maharashtra"
+    },
+    {
+     "geo": "Telangana",
+     "tone": "a",
+     "name": "Telangana"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "tone": "a",
+     "name": "Tamil Nadu"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "big": "58.9%",
+   "frac": 0.38467701475993654,
+   "label": "bank loans as % of state output, 2023-24",
+   "vo": "Fifth place goes to Tamil Nadu at fifty-nine percent.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "Telangana",
+   "geo": "Telangana",
+   "big": "64.4%",
+   "frac": 0.4206138856388142,
+   "label": "bank loans as % of state output, 2023-24",
+   "vo": "Fourth place goes to Telangana at sixty-four percent.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "big": "99.4%",
+   "frac": 0.6494338229639504,
+   "label": "bank loans as % of state output, 2023-24",
+   "vo": "Third place goes to Maharashtra at ninety-nine percent.",
+   "t0": 17.419,
+   "t1": 21.29
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "Chandigarh",
+   "geo": "Chandigarh",
+   "big": "138.5%",
+   "frac": 0.9049745965246431,
+   "label": "bank loans as % of state output, 2023-24",
+   "vo": "Second place goes to Chandigarh at one hundred thirty-eight percent.",
+   "t0": 21.29,
+   "t1": 25.161
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "big": "153.0%",
+   "frac": 1.0,
+   "label": "bank loans as % of state output, 2023-24",
+   "vo": "First place goes to Delhi at one hundred fifty-three percent.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Bank loans ÷ state output, *every state*",
+   "sub": "Top five outlined",
+   "note": "Loans used in the state, end-March 2024, as % of 2023-24 output. Blank: Gujarat (no 2023-24 output), Lakshadweep, Dadra and Nagar Haveli and Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "NCT of Delhi",
+    "Chandigarh",
+    "Maharashtra",
+    "Telangana",
+    "Tamil Nadu"
+   ],
+   "vo": "Loans are counted where they are used, not where the lender sits.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Loans used in the state, end-March 2024, as % of 2023-24 output. Blank: Gujarat (no 2023-24 output), Lakshadweep, Dadra and Nagar Haveli and Daman and Diu.",
+   "ring": [
+    "NCT of Delhi",
+    "Chandigarh",
+    "Maharashtra",
+    "Telangana",
+    "Tamil Nadu"
+   ],
+   "q": "Where does your state stand?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where does your state stand? Comment below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "13.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Tripura",
+   "label": "21.9",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.433
+  },
+  {
+   "name": "Nagaland",
+   "label": "22.7",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.549
+  },
+  {
+   "name": "Assam",
+   "label": "23.5",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.664
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "23.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.779
+  },
+  {
+   "name": "Mizoram",
+   "label": "24.1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.895
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "26.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.01
+  },
+  {
+   "name": "Meghalaya",
+   "label": "26.9",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.125
+  },
+  {
+   "name": "Manipur",
+   "label": "28.0",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.241
+  },
+  {
+   "name": "Jharkhand",
+   "label": "28.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.356
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "28.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.471
+  },
+  {
+   "name": "Goa",
+   "label": "29.6",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.587
+  },
+  {
+   "name": "Bihar",
+   "label": "31.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.702
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "33.0",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.817
+  },
+  {
+   "name": "Odisha",
+   "label": "33.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.933
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "35.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.048
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "36.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.163
+  },
+  {
+   "name": "West Bengal",
+   "label": "36.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.279
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "37.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.394
+  },
+  {
+   "name": "Rajasthan",
+   "label": "40.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.509
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "44.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.625
+  },
+  {
+   "name": "Puducherry",
+   "label": "46.7",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.74
+  },
+  {
+   "name": "Ladakh",
+   "label": "47.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.855
+  },
+  {
+   "name": "Karnataka",
+   "label": "48.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.971
+  },
+  {
+   "name": "Punjab",
+   "label": "48.7",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.086
+  },
+  {
+   "name": "Kerala",
+   "label": "51.1",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.201
+  },
+  {
+   "name": "Haryana",
+   "label": "53.6",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.317
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "53.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.432
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "58.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.547
+  },
+  {
+   "name": "Telangana",
+   "label": "64.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.663
+  },
+  {
+   "name": "Maharashtra",
+   "label": "99.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.778
+  },
+  {
+   "name": "Chandigarh",
+   "label": "138.5",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 34.893
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "153.0",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 35.009
+  }
+ ],
+ "checked": [
+  "#1 Delhi 153.024 is 10.5% above #2 Chandigarh 138.483, among 33 with data",
+  "#2 Chandigarh 138.483 is 39.3% above #3 Maharashtra 99.3788, among 33 with data",
+  "#3 Maharashtra 99.3788 is 54.4% above #4 Telangana 64.3639, among 33 with data",
+  "#4 Telangana 64.3639 is 9.3% above #5 Tamil Nadu 58.8647, among 33 with data",
+  "#5 Tamil Nadu 58.8647 is 9.6% above #6 Andhra Pradesh 53.6885, among 33 with data",
+  "Delhi: bank loans are 153 percent of state output, 2023-24: 153.02",
+  "Chandigarh: bank loans are 138 percent of state output, 2023-24: 138.48",
+  "Maharashtra: bank loans are 99 percent of state output, 2023-24: 99.38",
+  "Telangana: bank loans are 64 percent of state output, 2023-24: 64.36",
+  "Tamil Nadu: bank loans are 59 percent of state output, 2023-24: 58.86"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.657,
+   "at": 0.12,
+   "text": "Bank loans against state output. The top five."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.657,
+   "at": 5.926,
+   "text": "Fifth place goes to Tamil Nadu at fifty-nine percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.578,
+   "at": 11.733,
+   "text": "Fourth place goes to Telangana at sixty-four percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.768,
+   "at": 17.539,
+   "text": "Third place goes to Maharashtra at ninety-nine percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.448,
+   "at": 21.41,
+   "text": "Second place goes to Chandigarh at one hundred thirty-eight percent."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 25.281,
+   "text": "First place goes to Delhi at one hundred fifty-three percent."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.048,
+   "at": 31.088,
+   "text": "Loans are counted where they are used, not where the lender sits."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.716,
+   "at": 36.894,
+   "text": "Where does your state stand? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Bank Loans vs State Output: Delhi at 153%, Top 5"
+}

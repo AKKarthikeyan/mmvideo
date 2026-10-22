@@ -11,9 +11,13 @@
    "speaker": "ARJUNA",
    "say": "The bow Gandiva slips from my hand",
    "ref": "gita:1.30",
-   "sec": 3.3,
-   "audio": null,
-   "voice": null,
+   "sec": 3.0,
+   "audio": "katha/gita/p00b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -43,9 +47,13 @@
    "speaker": "DHRITARASHTRA",
    "say": "O Sanjaya! What happened on the sacred battlefield of Kurukshetra when my people and the Pandavas gathered?",
    "ref": "gita:1.1",
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 9.33,
+   "audio": "katha/gita/p00b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.82,
+    "pitch": -5
+   },
    "scene": {
     "type": "sanjaya",
     "setting": "the blind king's hall at night, pillars lost in indigo dark",
@@ -70,9 +78,13 @@
    "speaker": "SANJAYA",
    "say": "You cannot see, my king, so you ask me. Your sons stand on one side of that field; your brother's sons, the Pandavas, on the other. My people, you say, and the Pandavas. Even your question is divided.",
    "ref": null,
-   "sec": 16.1,
-   "audio": null,
-   "voice": null,
+   "sec": 16.09,
+   "audio": "katha/gita/p00b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "flame steady, close",
@@ -90,9 +102,13 @@
    "speaker": "SANJAYA",
    "say": "Before a single arrow flew, one man on that field let his bow fall. Why? By the sage Vyasa's grace, I will be your eyes. Listen.",
    "ref": null,
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 11.78,
+   "audio": "katha/gita/p00b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "light",
     "mode": "pure",
@@ -110,8 +126,12 @@
    "say": "The Bhagavad Gita. The Song of the Lord.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/p00b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 0,
@@ -125,6 +145,28 @@
    "music": "bell"
   },
   {
+   "key": "p00b90",
+   "part": 0,
+   "chapter": 0,
+   "movement": "",
+   "speaker": "SANJAYA",
+   "say": "A note on how we work. Every verse you see is shown with its chapter and verse, in a public domain translation named on screen. Where we add our own reading, it is marked as our note. The pictures are drawn in code, the voice is synthetic, and nothing here speaks for God.",
+   "ref": null,
+   "sec": 17.82,
+   "audio": "katha/gita/p00b90.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
+   "scene": {
+    "type": "sanjaya",
+    "variant": "listen",
+    "detail": "the hall, the lamp steady; the narrator steps out of the story for a moment"
+   },
+   "music": "drone"
+  },
+  {
    "key": "c01b01",
    "part": 1,
    "chapter": 1,
@@ -133,8 +175,12 @@
    "say": "One. Arjuna's despair.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c01b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 1,
@@ -153,9 +199,13 @@
    "speaker": "SANJAYA",
    "say": "Dawn on Kurukshetra: two armies, banners, elephants, chariots to the edge of sight. Old Bhishma, grandsire of both sides, blows his conch like a lion's roar.",
    "ref": null,
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 12.65,
+   "audio": "katha/gita/c01b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "time": "dawn",
@@ -181,9 +231,13 @@
    "speaker": "SANJAYA",
    "say": "Arjuna is the finest archer of his age. Holding his reins is Krishna: his cousin, his friend, his charioteer. And, as you will hear, far more.",
    "ref": null,
-   "sec": 10.9,
-   "audio": null,
-   "voice": null,
+   "sec": 12.2,
+   "audio": "katha/gita/c01b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -209,9 +263,13 @@
    "speaker": "ARJUNA",
    "say": "Please draw up my chariot between the two armies.",
    "ref": "gita:1.21",
-   "sec": 4.1,
-   "audio": null,
-   "voice": null,
+   "sec": 3.82,
+   "audio": "katha/gita/c01b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -237,9 +295,13 @@
    "speaker": "KRISHNA",
    "say": "O Arjuna! Behold, these members of the family of Kuru are assembled.",
    "ref": "gita:1.25",
-   "sec": 5.3,
-   "audio": null,
-   "voice": null,
+   "sec": 6.85,
+   "audio": "katha/gita/c01b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -265,9 +327,13 @@
    "speaker": "SANJAYA",
    "say": "There, Arjuna noticed fathers, grandfathers, uncles, cousins, sons, grandsons, teachers, and friends.",
    "ref": "gita:1.26",
-   "sec": 5.3,
-   "audio": null,
-   "voice": null,
+   "sec": 9.8,
+   "audio": "katha/gita/c01b06.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "time": "dawn",
@@ -295,9 +361,13 @@
    "speaker": "SANJAYA",
    "say": "He came to face an enemy. He finds a family.",
    "ref": null,
-   "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "sec": 3.84,
+   "audio": "katha/gita/c01b07.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "time": "dawn",
@@ -324,9 +394,13 @@
    "speaker": "ARJUNA",
    "say": "The bow Gandiva slips from my hand, and my skin burns. I cannot remain still, for my mind is in tumult.",
    "ref": "gita:1.30",
-   "sec": 8.9,
-   "audio": null,
-   "voice": null,
+   "sec": 9.07,
+   "audio": "katha/gita/c01b08.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -356,9 +430,13 @@
    "speaker": "ARJUNA",
    "say": "I do not crave victory, nor a kingdom, nor any pleasure. What would a kingdom, happiness, or life be to me?",
    "ref": "gita:1.32",
-   "sec": 8.9,
-   "audio": null,
-   "voice": null,
+   "sec": 8.88,
+   "audio": "katha/gita/c01b09.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -384,9 +462,13 @@
    "speaker": "SANJAYA",
    "say": "Having spoken thus, Arjuna sank into the seat of his chariot, discarding his bow and arrow, overwhelmed with grief in the midst of the armies.",
    "ref": "gita:1.47",
-   "sec": 10.5,
-   "audio": null,
-   "voice": null,
+   "sec": 9.93,
+   "audio": "katha/gita/c01b10.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -412,8 +494,12 @@
    "say": "Two. The yoga of knowledge.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c02b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 2,
@@ -432,9 +518,13 @@
    "speaker": "SANJAYA",
    "say": "Krishna's answer is stern at first. In effect: stand up; this weakness is unworthy of you.",
    "ref": null,
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 7.79,
+   "audio": "katha/gita/c02b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -459,9 +549,13 @@
    "speaker": "ARJUNA",
    "say": "My heart is oppressed with pity, and my mind is confused as to what my duty is. Therefore, my Lord, tell me what is best for my spiritual welfare, for I am Your disciple. Please direct me, I pray.",
    "ref": "gita:2.7",
-   "sec": 16.1,
-   "audio": null,
-   "voice": null,
+   "sec": 14.58,
+   "audio": "katha/gita/c02b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -491,9 +585,13 @@
    "speaker": "SANJAYA",
    "say": "A friend has become a teacher. Arjuna tells him he will not fight, and falls silent. And there, between the two armies, Krishna smiles.",
    "ref": null,
-   "sec": 10.1,
-   "audio": null,
-   "voice": null,
+   "sec": 10.43,
+   "audio": "katha/gita/c02b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -517,9 +615,13 @@
    "speaker": "KRISHNA",
    "say": "There was never a time when I was not, nor you, nor these princes were not; there will never be a time when we shall cease to exist.",
    "ref": "gita:2.12",
-   "sec": 13.5,
-   "audio": null,
-   "voice": null,
+   "sec": 10.64,
+   "audio": "katha/gita/c02b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:2.12",
@@ -559,9 +661,13 @@
    "speaker": "KRISHNA",
    "say": "As a man discards his threadbare robes and puts on new ones, so the Spirit throws off its worn-out bodies and takes on fresh ones.",
    "ref": "gita:2.22",
-   "sec": 10.9,
-   "audio": null,
-   "voice": null,
+   "sec": 11.11,
+   "audio": "katha/gita/c02b06.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "garments",
@@ -578,9 +684,13 @@
    "speaker": "KRISHNA",
    "say": "You have only the right to work, but none to the fruit of it. Let not the fruit of your action be your motive; nor be you enamored of inaction.",
    "ref": "gita:2.47",
-   "sec": 14.3,
-   "audio": null,
-   "voice": null,
+   "sec": 12.21,
+   "audio": "katha/gita/c02b07.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:2.47",
@@ -627,9 +737,13 @@
    "speaker": "SANJAYA",
    "say": "Then he describes a mind that stands still: one that draws in its senses as a tortoise draws in its limbs.",
    "ref": null,
-   "sec": 8.9,
-   "audio": null,
-   "voice": null,
+   "sec": 8.34,
+   "audio": "katha/gita/c02b08.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "tortoise",
@@ -646,9 +760,13 @@
    "speaker": "KRISHNA",
    "say": "He attains peace into whom desires flow as rivers into the ocean, which, though brimming with water, remains ever the same; not he whom desires carry away.",
    "ref": "gita:2.70",
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 12.38,
+   "audio": "katha/gita/c02b09.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "ocean",
@@ -665,9 +783,13 @@
    "speaker": "SANJAYA",
    "say": "A sea that never rises. I wish you could see it, my king. Krishna has said that action is far below a mind fixed on the Divine; and still he tells Arjuna to fight.",
    "ref": null,
-   "sec": 14.1,
-   "audio": null,
-   "voice": null,
+   "sec": 11.78,
+   "audio": "katha/gita/c02b10.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "steady",
@@ -686,8 +808,12 @@
    "say": "Three. The yoga of action.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c03b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 3,
@@ -706,9 +832,13 @@
    "speaker": "ARJUNA",
    "say": "My Lord! If wisdom is superior to action, why do you advise me to engage in this terrible fight?",
    "ref": "gita:3.1",
-   "sec": 8.1,
-   "audio": null,
-   "voice": null,
+   "sec": 6.87,
+   "audio": "katha/gita/c03b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -734,9 +864,13 @@
    "speaker": "SANJAYA",
    "say": "No one, Krishna answers, can stop acting:",
    "ref": null,
-   "sec": 3.3,
-   "audio": null,
-   "voice": null,
+   "sec": 3.97,
+   "audio": "katha/gita/c03b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -760,9 +894,13 @@
    "speaker": "KRISHNA",
    "say": "He cannot remain inactive even for a moment, for the qualities of Nature will compel him to act, whether he wills it or not.",
    "ref": "gita:3.5",
-   "sec": 10.1,
-   "audio": null,
-   "voice": null,
+   "sec": 9.12,
+   "audio": "katha/gita/c03b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "time": "dawn",
@@ -790,9 +928,13 @@
    "speaker": "KRISHNA",
    "say": "In this world, people are fettered by their actions, unless they are performed as a sacrifice. Therefore, O Arjuna, let your actions be done without attachment, as a sacrifice only.",
    "ref": "gita:3.9",
-   "sec": 12.5,
-   "audio": null,
-   "voice": null,
+   "sec": 13.66,
+   "audio": "katha/gita/c03b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "fire",
@@ -810,9 +952,13 @@
    "speaker": "SANJAYA",
    "say": "Four. Knowledge, and the renouncing of action.",
    "ref": null,
-   "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "sec": 4.91,
+   "audio": "katha/gita/c04b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 4,
@@ -831,9 +977,13 @@
    "speaker": "SANJAYA",
    "say": "Then Krishna says something no charioteer could say: long ago, he taught this to Vivasvan, the Sun. Arjuna objects that Krishna was born in their own time.",
    "ref": null,
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 10.35,
+   "audio": "katha/gita/c04b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -858,9 +1008,13 @@
    "speaker": "KRISHNA",
    "say": "I have been born again and again, from time to time; thou too, O Arjuna! My births are known to me, but yours are unknown to you.",
    "ref": "gita:4.5",
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 12.75,
+   "audio": "katha/gita/c04b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "light",
     "mode": "pure",
@@ -878,9 +1032,13 @@
    "speaker": "SANJAYA",
    "say": "My king, the one who holds the reins against your sons remembers every one of his births.",
    "ref": null,
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 6.06,
+   "audio": "katha/gita/c04b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "flame leaps",
@@ -897,9 +1055,13 @@
    "speaker": "KRISHNA",
    "say": "Whenever there is a decline of righteousness and an increase of unrighteousness, O Arjuna, then I manifest Myself.",
    "ref": "gita:4.7",
-   "sec": 9.5,
-   "audio": null,
-   "voice": null,
+   "sec": 10.98,
+   "audio": "katha/gita/c04b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:4.7",
@@ -940,8 +1102,12 @@
    "say": "Five. Renunciation.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c05b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 5,
@@ -960,9 +1126,13 @@
    "speaker": "ARJUNA",
    "say": "At one moment, You praise renunciation of action; at another, You praise right action. Tell me truly, I pray, which of these is more conducive to my highest welfare?",
    "ref": "gita:5.1",
-   "sec": 12.1,
-   "audio": null,
-   "voice": null,
+   "sec": 13.38,
+   "audio": "katha/gita/c05b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -987,9 +1157,13 @@
    "speaker": "KRISHNA",
    "say": "Both renunciation of action and the path of right action lead to the highest; however, right action is the better of the two.",
    "ref": "gita:5.2",
-   "sec": 9.7,
-   "audio": null,
-   "voice": null,
+   "sec": 10.06,
+   "audio": "katha/gita/c05b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "two-roads",
@@ -1006,9 +1180,13 @@
    "speaker": "KRISHNA",
    "say": "He who dedicates his actions to the Spirit, without any personal attachment to them, is no more tainted by sin than the water lily is wetted by water.",
    "ref": "gita:5.10",
-   "sec": 11.7,
-   "audio": null,
-   "voice": null,
+   "sec": 9.82,
+   "audio": "katha/gita/c05b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lotus-leaf",
@@ -1026,8 +1204,12 @@
    "say": "Six. Meditation.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c06b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 6,
@@ -1046,9 +1228,13 @@
    "speaker": "KRISHNA",
    "say": "The wise man who has conquered his mind and is absorbed in the Self is like a lamp that does not flicker, as it stands sheltered from every wind.",
    "ref": "gita:6.19",
-   "sec": 12.1,
-   "audio": null,
-   "voice": null,
+   "sec": 11.11,
+   "audio": "katha/gita/c06b02.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lamp",
@@ -1066,9 +1252,13 @@
    "speaker": "ARJUNA",
    "say": "Verily, the mind is fickle and turbulent, obstinate, and strong; indeed, it is extremely difficult to control, like the wind.",
    "ref": "gita:6.34",
-   "sec": 8.5,
-   "audio": null,
-   "voice": null,
+   "sec": 9.62,
+   "audio": "katha/gita/c06b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lamp",
@@ -1086,9 +1276,13 @@
    "speaker": "SANJAYA",
    "say": "It can be done, Krishna answers: with practice, and with letting go. Then Arjuna asks what becomes of one who tries, and fails.",
    "ref": null,
-   "sec": 9.7,
-   "audio": null,
-   "voice": null,
+   "sec": 11.16,
+   "audio": "katha/gita/c06b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lamp",
@@ -1106,9 +1300,13 @@
    "speaker": "KRISHNA",
    "say": "My beloved child! There is no destruction for him, either in this world or the next. No evil fate awaits him who treads the path of righteousness.",
    "ref": "gita:6.40",
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 13.38,
+   "audio": "katha/gita/c06b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lamp",
@@ -1127,8 +1325,12 @@
    "say": "Seven. Knowledge and realisation.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c07b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 7,
@@ -1147,9 +1349,13 @@
    "speaker": "SANJAYA",
    "say": "Now Krishna turns from the seeker to himself: to what holds the whole world together.",
    "ref": null,
-   "sec": 6.5,
-   "audio": null,
-   "voice": null,
+   "sec": 6.19,
+   "audio": "katha/gita/c07b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "camera": "wide",
@@ -1173,9 +1379,13 @@
    "speaker": "KRISHNA",
    "say": "O Arjuna! There is nothing higher than Me; all is strung on Me like rows of pearls on a thread.",
    "ref": "gita:7.7",
-   "sec": 8.5,
-   "audio": null,
-   "voice": null,
+   "sec": 9.2,
+   "audio": "katha/gita/c07b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "pearls",
@@ -1197,9 +1407,13 @@
    "speaker": "KRISHNA",
    "say": "I am the fragrance of the earth, the brilliance of fire, the life force in all beings, and the austerity of ascetics.",
    "ref": "gita:7.9",
-   "sec": 9.3,
-   "audio": null,
-   "voice": null,
+   "sec": 10.11,
+   "audio": "katha/gita/c07b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "pearls",
@@ -1218,8 +1432,12 @@
    "say": "Eight. The imperishable.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c08b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 8,
@@ -1238,9 +1456,13 @@
    "speaker": "ARJUNA",
    "say": "how may those who have learned self-control come to the knowledge of Thee at the time of death?",
    "ref": "gita:8.2",
-   "sec": 8.1,
-   "audio": null,
-   "voice": null,
+   "sec": 5.83,
+   "audio": "katha/gita/c08b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "field",
     "time": "dawn",
@@ -1266,9 +1488,13 @@
    "speaker": "KRISHNA",
    "say": "Whosoever, at the time of death, thinks only of Me and, thinking thus, leaves the body and goes forth, will assuredly know Me.",
    "ref": "gita:8.5",
-   "sec": 9.7,
-   "audio": null,
-   "voice": null,
+   "sec": 10.97,
+   "audio": "katha/gita/c08b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "flame-sun",
@@ -1286,9 +1512,13 @@
    "speaker": "KRISHNA",
    "say": "Therefore, always meditate on Me and fight; if your mind and reason are fixed on Me, you will surely come to Me.",
    "ref": "gita:8.7",
-   "sec": 11.1,
-   "audio": null,
-   "voice": null,
+   "sec": 10.3,
+   "audio": "katha/gita/c08b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:8.7",
@@ -1329,9 +1559,13 @@
    "speaker": "SANJAYA",
    "say": "Meditate, and fight. But how, my king, in the middle of a war?",
    "ref": null,
-   "sec": 5.7,
-   "audio": null,
-   "voice": null,
+   "sec": 6.04,
+   "audio": "katha/gita/c08b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "steady",
@@ -1349,8 +1583,12 @@
    "say": "Nine. The royal secret.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c09b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 9,
@@ -1369,9 +1607,13 @@
    "speaker": "KRISHNA",
    "say": "Whatever a person offers to Me, be it a leaf, flower, fruit, or water, I accept it, for it is offered with devotion and a pure mind.",
    "ref": "gita:9.26",
-   "sec": 11.3,
-   "audio": null,
-   "voice": null,
+   "sec": 13.66,
+   "audio": "katha/gita/c09b02.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "offering",
@@ -1395,9 +1637,13 @@
    "speaker": "SANJAYA",
    "say": "A leaf. A flower. A little water. Anyone on earth could bring him that.",
    "ref": null,
-   "sec": 6.1,
-   "audio": null,
-   "voice": null,
+   "sec": 6.48,
+   "audio": "katha/gita/c09b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "soft",
@@ -1414,9 +1660,13 @@
    "speaker": "KRISHNA",
    "say": "Whatever you do, whatever you eat, whatever you sacrifice and give, whatever austerities you practice, do all as an offering to Me.",
    "ref": "gita:9.27",
-   "sec": 9.3,
-   "audio": null,
-   "voice": null,
+   "sec": 10.58,
+   "audio": "katha/gita/c09b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -1447,8 +1697,12 @@
    "say": "Ten. The divine glories.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c10b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 10,
@@ -1467,9 +1721,13 @@
    "speaker": "SANJAYA",
    "say": "Then, in effect, he names himself in the best of everything: among things that never move, the Himalaya; among rivers, the Ganges; among letters, A; and among secrets, silence.",
    "ref": null,
-   "sec": 12.1,
-   "audio": null,
-   "voice": null,
+   "sec": 14.63,
+   "audio": "katha/gita/c10b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "glories",
@@ -1494,9 +1752,13 @@
    "speaker": "KRISHNA",
    "say": "Whatever is glorious, excellent, beautiful, and mighty, be assured that it comes from a fragment of My splendor.",
    "ref": "gita:10.41",
-   "sec": 7.7,
-   "audio": null,
-   "voice": null,
+   "sec": 11.81,
+   "audio": "katha/gita/c10b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "glories",
@@ -1514,9 +1776,13 @@
    "speaker": "KRISHNA",
    "say": "I sustain this universe with only a small part of Myself.",
    "ref": "gita:10.42",
-   "sec": 6.7,
-   "audio": null,
-   "voice": null,
+   "sec": 6.56,
+   "audio": "katha/gita/c10b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:10.42",
@@ -1553,9 +1819,13 @@
    "speaker": "SANJAYA",
    "say": "Only a small part, my king. And now Arjuna wants to see the whole.",
    "ref": null,
-   "sec": 6.1,
-   "audio": null,
-   "voice": null,
+   "sec": 6.66,
+   "audio": "katha/gita/c10b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "the flame stretches tall",
@@ -1573,8 +1843,12 @@
    "say": "Eleven. The vision of the universal form.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c11b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 11,
@@ -1593,9 +1867,13 @@
    "speaker": "KRISHNA",
    "say": "Yet, since you cannot see Me with mortal eyes, behold, I give you divine sight. Now, see the glory of My sovereignty.",
    "ref": "gita:11.8",
-   "sec": 9.3,
-   "audio": null,
-   "voice": null,
+   "sec": 11.16,
+   "audio": "katha/gita/c11b02.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -1620,9 +1898,13 @@
    "speaker": "SANJAYA",
    "say": "My king, I have that same sight, the gift of the sage. So I saw it too.",
    "ref": null,
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 5.99,
+   "audio": "katha/gita/c11b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "the lamp flares white",
@@ -1639,9 +1921,13 @@
    "speaker": "SANJAYA",
    "say": "Could a thousand suns blaze forth together, it would be but a faint reflection of the radiance of the Lord God.",
    "ref": "gita:11.12",
-   "sec": 8.9,
-   "audio": null,
-   "voice": null,
+   "sec": 7.03,
+   "audio": "katha/gita/c11b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "light",
     "mode": "thousand suns",
@@ -1664,9 +1950,13 @@
    "speaker": "ARJUNA",
    "say": "I see You, infinite in form, with faces, eyes, and limbs everywhere; with no beginning, middle, or end.",
    "ref": "gita:11.16",
-   "sec": 7.7,
-   "audio": null,
-   "voice": null,
+   "sec": 10.27,
+   "audio": "katha/gita/c11b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "light",
     "mode": "cosmic",
@@ -1684,9 +1974,13 @@
    "speaker": "SANJAYA",
    "say": "Then the vision turns, my king. In that fire Arjuna sees your sons, and Bhishma, and Drona, rushing in.",
    "ref": null,
-   "sec": 8.1,
-   "audio": null,
-   "voice": null,
+   "sec": 8.02,
+   "audio": "katha/gita/c11b06.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "light",
     "mode": "cosmic",
@@ -1704,9 +1998,13 @@
    "speaker": "ARJUNA",
    "say": "As rivers in flood surge furiously towards the ocean, so these heroes, the greatest among men, fling themselves into Thy flaming mouths.",
    "ref": "gita:11.28",
-   "sec": 9.3,
-   "audio": null,
-   "voice": null,
+   "sec": 9.82,
+   "audio": "katha/gita/c11b07.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "metaphor",
     "kind": "ocean",
@@ -1724,9 +2022,13 @@
    "speaker": "ARJUNA",
    "say": "Tell me then, who are You, who wears this dreadful form?",
    "ref": "gita:11.31",
-   "sec": 4.9,
-   "audio": null,
-   "voice": null,
+   "sec": 5.38,
+   "audio": "katha/gita/c11b08.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "light",
     "mode": "cosmic",
@@ -1745,9 +2047,13 @@
    "speaker": "SANJAYA",
    "say": "Krishna's answer begins with one word: kala. Time.",
    "ref": null,
-   "sec": 4.1,
-   "audio": null,
-   "voice": null,
+   "sec": 4.6,
+   "audio": "katha/gita/c11b09.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "light",
     "mode": "cosmic",
@@ -1765,9 +2071,13 @@
    "speaker": "KRISHNA",
    "say": "I have shown myself to you as the Destroyer who lays waste the world and whose purpose is destruction.",
    "ref": "gita:11.32",
-   "sec": 9.9,
-   "audio": null,
-   "voice": null,
+   "sec": 8.73,
+   "audio": "katha/gita/c11b10.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:11.32",
@@ -1810,9 +2120,13 @@
    "speaker": "KRISHNA",
    "say": "I have already doomed them. Be thou my instrument, Arjuna!",
    "ref": "gita:11.33",
-   "sec": 6.3,
-   "audio": null,
-   "voice": null,
+   "sec": 8.52,
+   "audio": "katha/gita/c11b11.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:11.33",
@@ -1851,9 +2165,13 @@
    "speaker": "SANJAYA",
    "say": "Arjuna bows, trembling, again and again, and remembers every ordinary day beside this friend.",
    "ref": null,
-   "sec": 6.1,
-   "audio": null,
-   "voice": null,
+   "sec": 7.79,
+   "audio": "katha/gita/c11b12.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -1882,9 +2200,13 @@
    "speaker": "ARJUNA",
    "say": "Whatever I have said to you in rashness, taking you only as a friend and addressing you as “O Krishna! O Yadava! O Friend!” in thoughtless familiarity, without understanding your greatness;",
    "ref": "gita:11.41",
-   "sec": 12.9,
-   "audio": null,
-   "voice": null,
+   "sec": 13.2,
+   "audio": "katha/gita/c11b13.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "metaphor",
     "kind": "light",
@@ -1903,9 +2225,13 @@
    "speaker": "ARJUNA",
    "say": "I ask for Your forgiveness for them all, O You Who are without equal!",
    "ref": "gita:11.42",
-   "sec": 6.1,
-   "audio": null,
-   "voice": null,
+   "sec": 5.38,
+   "audio": "katha/gita/c11b14.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "metaphor",
     "kind": "light",
@@ -1923,9 +2249,13 @@
    "speaker": "ARJUNA",
    "say": "I rejoice that I have seen what no man has ever seen before; yet, O Lord! I am overwhelmed with fear. Please take on the form I know.",
    "ref": "gita:11.45",
-   "sec": 11.7,
-   "audio": null,
-   "voice": null,
+   "sec": 9.33,
+   "audio": "katha/gita/c11b15.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "light",
     "mode": "cosmic",
@@ -1943,9 +2273,13 @@
    "speaker": "SANJAYA",
    "say": "Lord Shri Krishna showed Himself again in His accustomed form; and the Mighty Lord, in gentle tones, softly consoled him who had recently trembled with fear.",
    "ref": "gita:11.50",
-   "sec": 10.9,
-   "audio": null,
-   "voice": null,
+   "sec": 11.16,
+   "audio": "katha/gita/c11b16.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -1970,9 +2304,13 @@
    "speaker": "ARJUNA",
    "say": "Seeing You in Your gentle human form, my Lord, I am myself again, calm once more.",
    "ref": "gita:11.51",
-   "sec": 6.9,
-   "audio": null,
-   "voice": null,
+   "sec": 7.63,
+   "audio": "katha/gita/c11b17.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -2001,9 +2339,13 @@
    "speaker": "SANJAYA",
    "say": "The light is gone, my king. A charioteer again, the reins in his hands. But now Arjuna knows who holds them.",
    "ref": null,
-   "sec": 8.9,
-   "audio": null,
-   "voice": null,
+   "sec": 8.21,
+   "audio": "katha/gita/c11b18.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "back to an ordinary flame",
@@ -2021,8 +2363,12 @@
    "say": "Twelve. Devotion.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c12b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 12,
@@ -2041,9 +2387,13 @@
    "speaker": "SANJAYA",
    "say": "Arjuna asks which seeker is best. In effect, Krishna answers: fix your mind on me. If you cannot, practise. If you cannot practise, work for my sake. And if even that is too much, let go of the fruit of what you do.",
    "ref": null,
-   "sec": 17.7,
-   "audio": null,
-   "voice": null,
+   "sec": 18.68,
+   "audio": "katha/gita/c12b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "lamp",
@@ -2062,9 +2412,13 @@
    "speaker": "KRISHNA",
    "say": "He who does not harm the world, and whom the world cannot harm, who is not carried away by any impulse of joy, anger, or fear; such a one is My beloved.",
    "ref": "gita:12.15",
-   "sec": 15.1,
-   "audio": null,
-   "voice": null,
+   "sec": 13.43,
+   "audio": "katha/gita/c12b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:12.15",
@@ -2104,8 +2458,12 @@
    "say": "Thirteen. The field and its knower.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c13b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 13,
@@ -2124,9 +2482,13 @@
    "speaker": "SANJAYA",
    "say": "Krishna calls the body kshetra, a field, and the one who knows it kshetrajna, the knower of the field. Kshetra, my king: the word that opened your question.",
    "ref": null,
-   "sec": 11.7,
-   "audio": null,
-   "voice": null,
+   "sec": 13.09,
+   "audio": "katha/gita/c13b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "field",
@@ -2149,9 +2511,13 @@
    "speaker": "KRISHNA",
    "say": "He who can see the Supreme Lord in all beings, the Imperishable amidst the perishable, he is the one who truly sees.",
    "ref": "gita:13.28",
-   "sec": 11.1,
-   "audio": null,
-   "voice": null,
+   "sec": 9.75,
+   "audio": "katha/gita/c13b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:13.28",
@@ -2188,16 +2554,20 @@
    "chapter": 13,
    "movement": "Chapter 13 · The Field and Its Knower",
    "speaker": "KRISHNA",
-   "say": "As the one Sun illuminates the entire earth, so the Lord illuminates the entire universe.",
+   "say": "Just as the one sun illuminates the entire world, so too does the Lord of the field (Supreme Self) illuminate the entire field, O Arjuna.",
    "ref": "gita:13.34",
-   "sec": 6.5,
-   "audio": null,
-   "voice": null,
+   "sec": 12.02,
+   "audio": "katha/gita/c13b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "sun-world",
     "detail": "seen from far above the earth: one sun rises over the curve of the world and its light runs across it, field after field, river after river (a world apart from Kurukshetra's horizon, where the sun still waits)",
-    "plate": "BHAGAVAD GITA 13.34 (13.33 IN 700-VERSE EDITIONS) · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+    "plate": "BHAGAVAD GITA 13.34 (13.33 IN 700-VERSE EDITIONS) · AFTER SWAMI SIVANANDA, 1949 (EDITED TEXT)"
    },
    "music": "drone"
   },
@@ -2209,9 +2579,13 @@
    "speaker": "SANJAYA",
    "say": "But what ties the knower to the field? Krishna names three cords.",
    "ref": null,
-   "sec": 5.3,
-   "audio": null,
-   "voice": null,
+   "sec": 5.25,
+   "audio": "katha/gita/c13b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -2237,8 +2611,12 @@
    "say": "Fourteen. The three qualities.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c14b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 14,
@@ -2257,9 +2635,13 @@
    "speaker": "KRISHNA",
    "say": "Purity, passion, and ignorance are the qualities that the law of nature brings forth. They fetter the free spirit in all beings.",
    "ref": "gita:14.5",
-   "sec": 9.3,
-   "audio": null,
-   "voice": null,
+   "sec": 11.11,
+   "audio": "katha/gita/c14b02.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "gunas",
@@ -2281,9 +2663,13 @@
    "speaker": "SANJAYA",
    "say": "Sattva, rajas, tamas: a clear light, a restless flame, a heavy dark. All three can bind, he says, even the bright one. How, then, does anyone go free?",
    "ref": null,
-   "sec": 11.7,
-   "audio": null,
-   "voice": null,
+   "sec": 14.13,
+   "audio": "katha/gita/c14b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "gunas",
@@ -2299,9 +2685,13 @@
    "speaker": "KRISHNA",
    "say": "And he who serves Me alone, with unwavering devotion, shall overcome the Qualities and become one with the Eternal.",
    "ref": "gita:14.26",
-   "sec": 8.1,
-   "audio": null,
-   "voice": null,
+   "sec": 10.4,
+   "audio": "katha/gita/c14b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "gunas",
@@ -2320,8 +2710,12 @@
    "say": "Fifteen. The supreme person.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c15b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 15,
@@ -2340,9 +2734,13 @@
    "speaker": "SANJAYA",
    "say": "Now he speaks of a tree that grows upside down: the sacred ashvattha, roots above, in the Highest, branches hanging into our world. It must be hewn down, he says, with the sharp axe of non-attachment.",
    "ref": null,
-   "sec": 15.3,
-   "audio": null,
-   "voice": null,
+   "sec": 14.84,
+   "audio": "katha/gita/c15b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "ashvattha",
@@ -2360,9 +2758,13 @@
    "speaker": "KRISHNA",
    "say": "Neither the sun, nor the moon, nor fire shines there. Those who go there never come back. For, O Arjuna, that is my celestial home!",
    "ref": "gita:15.6",
-   "sec": 12.3,
-   "audio": null,
-   "voice": null,
+   "sec": 16.1,
+   "audio": "katha/gita/c15b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:15.6",
@@ -2406,8 +2808,12 @@
    "say": "Sixteen. The divine and the demonic.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c16b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 16,
@@ -2426,9 +2832,13 @@
    "speaker": "SANJAYA",
    "say": "Two roads. Along one, he names the divine qualities: fearlessness first, then truth, compassion, forgiveness, freedom from hate. Along the other: hypocrisy, pride, cruelty.",
    "ref": null,
-   "sec": 10.1,
-   "audio": null,
-   "voice": null,
+   "sec": 17.43,
+   "audio": "katha/gita/c16b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "two-roads",
@@ -2445,9 +2855,13 @@
    "speaker": "KRISHNA",
    "say": "Godly qualities lead to liberation; godless ones lead to bondage. Do not be anxious, Prince! You have the Godly qualities.",
    "ref": "gita:16.5",
-   "sec": 8.5,
-   "audio": null,
-   "voice": null,
+   "sec": 10.97,
+   "audio": "katha/gita/c16b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -2477,9 +2891,13 @@
    "speaker": "KRISHNA",
    "say": "The gates of hell are three: lust, wrath, and avarice; they destroy the Self, so avoid them.",
    "ref": "gita:16.21",
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 9.72,
+   "audio": "katha/gita/c16b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "two-roads",
@@ -2496,9 +2914,13 @@
    "speaker": "SANJAYA",
    "say": "Do not be anxious, he tells Arjuna. He will say it again, at the very end.",
    "ref": null,
-   "sec": 6.9,
-   "audio": null,
-   "voice": null,
+   "sec": 6.12,
+   "audio": "katha/gita/c16b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -2523,8 +2945,12 @@
    "say": "Seventeen. Three kinds of faith.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c17b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 17,
@@ -2543,9 +2969,13 @@
    "speaker": "KRISHNA",
    "say": "Every person's faith conforms to their nature. By nature, they are full of faith. They are, in fact, what their faith makes them.",
    "ref": "gita:17.3",
-   "sec": 10.1,
-   "audio": null,
-   "voice": null,
+   "sec": 12.02,
+   "audio": "katha/gita/c17b02.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "gunas",
@@ -2568,9 +2998,13 @@
    "speaker": "KRISHNA",
    "say": "Speech that hurts no one, that is true, pleasant to listen to, and beneficial, and the constant study of the scriptures—this is austerity of speech.",
    "ref": "gita:17.15",
-   "sec": 12.7,
-   "audio": null,
-   "voice": null,
+   "sec": 11.63,
+   "audio": "katha/gita/c17b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:17.15",
@@ -2609,9 +3043,13 @@
    "speaker": "SANJAYA",
    "say": "And he names the Eternal in three syllables. Om. Tat. Sat.",
    "ref": null,
-   "sec": 4.9,
-   "audio": null,
-   "voice": null,
+   "sec": 5.8,
+   "audio": "katha/gita/c17b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "fire",
@@ -2635,8 +3073,12 @@
    "say": "Eighteen. Liberation.",
    "ref": null,
    "sec": 4.5,
-   "audio": null,
-   "voice": null,
+   "audio": "katha/gita/c18b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "title",
     "chapter": 18,
@@ -2655,9 +3097,13 @@
    "speaker": "SANJAYA",
    "say": "The last chapter, my king. Arjuna asks what it truly means to renounce.",
    "ref": null,
-   "sec": 5.7,
-   "audio": null,
-   "voice": null,
+   "sec": 6.48,
+   "audio": "katha/gita/c18b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "camera": "wide",
@@ -2681,9 +3127,13 @@
    "speaker": "KRISHNA",
    "say": "The sages say that renunciation is forgoing an action that springs from desire, and relinquishing is the surrender of its fruit.",
    "ref": "gita:18.2",
-   "sec": 10.7,
-   "audio": null,
-   "voice": null,
+   "sec": 10.82,
+   "audio": "katha/gita/c18b03.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:18.2",
@@ -2719,9 +3169,13 @@
    "speaker": "KRISHNA",
    "say": "The duty that falls to one's lot of its own accord should not be abandoned, though it may have its defects. All acts are marred by defects, just as fire is obscured by smoke.",
    "ref": "gita:18.48",
-   "sec": 14.5,
-   "audio": null,
-   "voice": null,
+   "sec": 13.2,
+   "audio": "katha/gita/c18b04.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "metaphor",
     "kind": "smoke",
@@ -2739,9 +3193,13 @@
    "speaker": "KRISHNA",
    "say": "Thus, I have revealed to you the truth, the mystery of mysteries. Having thought it over, you are free to act as you wish.",
    "ref": "gita:18.63",
-   "sec": 11.9,
-   "audio": null,
-   "voice": null,
+   "sec": 12.6,
+   "audio": "katha/gita/c18b05.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:18.63",
@@ -2782,9 +3240,13 @@
    "speaker": "SANJAYA",
    "say": "Free, my king. After everything, he leaves the choice to Arjuna. And then he speaks once more, as a friend.",
    "ref": null,
-   "sec": 8.5,
-   "audio": null,
-   "voice": null,
+   "sec": 9.25,
+   "audio": "katha/gita/c18b06.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "steady",
@@ -2802,9 +3264,13 @@
    "speaker": "KRISHNA",
    "say": "Listen to My last word once more, the deepest secret of all; you are My beloved, you are My friend, and I speak for your welfare.",
    "ref": "gita:18.64",
-   "sec": 10.9,
-   "audio": null,
-   "voice": null,
+   "sec": 10.11,
+   "audio": "katha/gita/c18b07.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "close",
@@ -2834,9 +3300,13 @@
    "speaker": "KRISHNA",
    "say": "Give up your earthly duties, surrender yourself to Me alone. Do not be anxious; I will absolve you from all your sins.",
    "ref": "gita:18.66",
-   "sec": 11.1,
-   "audio": null,
-   "voice": null,
+   "sec": 10.79,
+   "audio": "katha/gita/c18b08.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:18.66",
@@ -2879,9 +3349,13 @@
    "speaker": "KRISHNA",
    "say": "O Arjuna, have you listened attentively to My words? Has your ignorance and delusion gone?",
    "ref": "gita:18.72",
-   "sec": 6.5,
-   "audio": null,
-   "voice": null,
+   "sec": 7.68,
+   "audio": "katha/gita/c18b09.mp3",
+   "voice": {
+    "voice_id": "English_Deep-VoicedGentleman",
+    "speed": 0.9,
+    "pitch": 0
+   },
    "scene": {
     "type": "chariot",
     "camera": "medium",
@@ -2906,9 +3380,13 @@
    "speaker": "ARJUNA",
    "say": "My Lord! O Immutable One! My delusion has fled. By Your Grace, O Changeless One, the light has dawned. My doubts have been dispelled, and I stand before You ready to do Your will.",
    "ref": "gita:18.73",
-   "sec": 14.1,
-   "audio": null,
-   "voice": null,
+   "sec": 13.9,
+   "audio": "katha/gita/c18b10.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.95,
+    "pitch": 1
+   },
    "scene": {
     "type": "chariot",
     "camera": "close then wide",
@@ -2939,9 +3417,13 @@
    "speaker": "SANJAYA",
    "say": "As I recall again and again the exceeding beauty of the Lord, I am filled with amazement and joy.",
    "ref": "gita:18.77",
-   "sec": 8.1,
-   "audio": null,
-   "voice": null,
+   "sec": 6.53,
+   "audio": "katha/gita/e19b01.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "the lamp burned low",
@@ -2959,9 +3441,13 @@
    "speaker": "SANJAYA",
    "say": "You asked me what happened on that field, my king. You have not said a word since.",
    "ref": null,
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 6.38,
+   "audio": "katha/gita/e19b02.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "sanjaya",
     "lamp": "low",
@@ -2978,9 +3464,13 @@
    "speaker": "SANJAYA",
    "say": "Wherever Lord Shri Krishna, the Prince of Wisdom, and Arjuna, the Great Archer, are, I am certain that good fortune, victory, happiness, and righteousness will follow.",
    "ref": "gita:18.78",
-   "sec": 12.7,
-   "audio": null,
-   "voice": null,
+   "sec": 14.29,
+   "audio": "katha/gita/e19b03.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "verse",
     "ref": "gita:18.78",
@@ -3023,9 +3513,13 @@
    "speaker": "SANJAYA",
    "say": "Eighteen chapters. Seven hundred verses. One conversation between two friends; and one of them held the reins.",
    "ref": null,
-   "sec": 7.3,
-   "audio": null,
-   "voice": null,
+   "sec": 8.99,
+   "audio": "katha/gita/e19b04.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "field",
     "time": "sunrise",
@@ -3050,16 +3544,20 @@
    "chapter": 0,
    "movement": "",
    "speaker": "SANJAYA",
-   "say": "A note on how we work. Every verse you see is shown with its chapter and verse, in a public domain translation named on screen. Where we add our own reading, it is marked as our note. The pictures are drawn in code, the voice is synthetic, and nothing here speaks for God.",
+   "say": "This was the Bhagavad Gita, as Sanjaya told it to the blind king.",
    "ref": null,
-   "sec": 21.7,
-   "audio": null,
-   "voice": null,
+   "sec": 4.29,
+   "audio": "katha/gita/e19b05.mp3",
+   "voice": {
+    "voice_id": "English_Diligent_Man",
+    "speed": 0.94,
+    "pitch": 0
+   },
    "scene": {
     "type": "end",
     "lines": [
      "The Bhagavad Gita, as Sanjaya told it",
-     "English verses after Shri Purohit Swami, 1935 (edited text) · Gita 4.7 after Swami Sivananda, 1949 (edited text)",
+     "English verses after Shri Purohit Swami, 1935 (edited text) · Gita 4.7 and 13.34 after Swami Sivananda, 1949 (edited text)",
      "Every verse with its chapter and verse · Our reading is marked OUR NOTE",
      "Dharma · chapter and verse"
     ],

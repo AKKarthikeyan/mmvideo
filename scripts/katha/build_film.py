@@ -39,11 +39,37 @@ def sil_licence_problems():
             bad.append(f"{p.name}: {c or 'no credit field'}")
     return bad
 CREDITS = [
-    "Verses: Shri Purohit Swami (1935) and, for 4.7, Swami Sivananda (1949), edited texts, from the Bhagavad Gita dataset at github.com/gita/gita",
+    "Verses: Shri Purohit Swami (1935) and, for {siv}, Swami Sivananda (1949), edited texts, from the Bhagavad Gita dataset at github.com/gita/gita",
     "Horses traced from the horse model by Quaternius (CC0) · Birds drawn in code",
     "Type: Tiro Devanagari Sanskrit, Cormorant Garamond and Cinzel, SIL Open Font License",
     "Music: tanpura, bansuri and conch synthesised in code · Made in code with Remotion",
 ]
+# Which verses are Sivananda's is decided per beat (ask_jev.py can move one), so the credits are built from the beats'
+# own source lines and the script's hand-written credits are checked against them, never trusted to stay in step.
+def sivananda_verses(beats):
+    refs = []
+    for b in beats:
+        s = b["scene"]
+        if "SIVANANDA" in f"{s.get('src', '')} {s.get('plate', '')}".upper() and b.get("ref"):
+            r = b["ref"].replace("gita:", "")
+            if r not in refs: refs.append(r)
+    return refs
+def credits(beats):
+    refs = sivananda_verses(beats)
+    if not refs: return [CREDITS[0].replace(" and, for {siv}, Swami Sivananda (1949), edited texts", ", edited text")] + CREDITS[1:]
+    siv = refs[0] if len(refs) == 1 else ", ".join(refs[:-1]) + " and " + refs[-1]
+    return [CREDITS[0].format(siv=siv)] + CREDITS[1:]
+def credit_problems(beats, S):
+    refs, bad = sivananda_verses(beats), []
+    texts = {"description": S.get("description", "")}
+    texts.update({f"{b['key']} end card": "\n".join(b["scene"].get("lines") or []) for b in beats if b["scene"].get("type") == "end"})
+    for where, text in texts.items():
+        # judge only the clause that credits him: the description's chapter-13 note also mentions 13.34
+        for clause in re.split(r"(?<!\d)[.;](?!\d)|·|\n", text):
+            if "sivananda" not in clause.lower(): continue
+            missing = [r for r in refs if not re.search(rf"(?<![\d.]){re.escape(r)}(?!\d)", clause)]
+            if missing: bad.append(f"{where} credits Sivananda but does not name {', '.join(missing)}: {clause.strip()}")
+    return bad
 FPS = 30
 def beat_frames(b):   # mirrors beatLen in src/katha/Film.tsx
     return -(-int(round((b["sec"] + (1.0 if b["scene"]["type"] == "title" else 0.6)) * FPS * 1000)) // 1000)   # seconds of quiet after the voice, by scene type (default 0.5)
@@ -384,7 +410,7 @@ def main():
             if sc.get("type") == "title" and int(mv.get("chapter", 0)) == 0 and not sc.get("kicker"):
                 sc["kicker"] = S["title"].split(":")[0].upper()
             if sc.get("type") == "end":
-                sc.setdefault("title", S["title"].split(":")[0]); sc.setdefault("subtitle", S.get("subtitle") or "as Krishna told it to Arjuna"); sc.setdefault("lines", CREDITS)
+                sc.setdefault("title", S["title"].split(":")[0]); sc.setdefault("subtitle", S.get("subtitle") or "as Krishna told it to Arjuna"); sc.setdefault("lines", credits(beats))
             words = len(re.findall(r"\w+", b["say"]))
             mp3, o, v = out / f"{b['key']}.mp3", old.get(b["key"]), voices.get(b["speaker"], voices["SANJAYA"])
             pad = PAD.get(sc["type"], 0.5)
@@ -412,7 +438,7 @@ def main():
     named = [re.sub(r"^\d+:\d\d\s+", "", l) for l in S.get("description", "").split("\n") if re.match(r"^\d+:\d\d\s", l)]
     if len(named) == len(marks): marks = [(fr, nm) for (fr, _), nm in zip(marks, named)]
     while body and not body[-1].strip(): body.pop()
-    desc = ["\n".join(body).strip(), "", *[f"{stamp(fr)} {lab}" for fr, lab in marks], "", "Credits", *[f"- {c}" for c in CREDITS]]
+    desc = ["\n".join(body).strip(), "", *[f"{stamp(fr)} {lab}" for fr, lab in marks], "", "Credits", *[f"- {c}" for c in credits(beats)]]
     if S.get("youtube_title_options"): desc = ["Title options: " + " | ".join(S["youtube_title_options"]), ""] + desc
     (out / "description.txt").write_text("\n".join(desc).strip() + "\n")
     nv = sum(1 for b in beats if b["audio"])
@@ -427,6 +453,9 @@ def main():
     bad = sil_licence_problems()
     if bad: print("BLOCKER: these silhouettes are not cleared for a monetised channel:"); [print("  " + b) for b in bad]
     else: print("silhouettes: every horse and bird is CC0 or drawn in code")
+    cbad = credit_problems(beats, S)
+    if cbad: print("CREDIT PROBLEMS:"); [print("  " + p) for p in cbad]
+    else: print(f"credits: Sivananda is named for {', '.join(sivananda_verses(beats)) or 'no verse'} wherever he is credited")
 
 if __name__ == "__main__":
     main()

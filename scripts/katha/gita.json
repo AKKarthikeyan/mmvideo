@@ -1,0 +1,2249 @@
+{
+ "title": "The Bhagavad Gita: The Song of the Lord",
+ "subtitle": "As Sanjaya told it to the blind king",
+ "hook_line": "Before a single arrow flies, the finest archer of his age lets his bow fall; in a dark hall, a blind king asks what happened on that field.",
+ "est_minutes": 17.1,
+ "youtube_title_options": [
+  "The Bhagavad Gita, as Krishna Spoke It to Arjuna | All 18 Chapters",
+  "Bhagavad Gita: Why Arjuna Dropped His Bow, and What Krishna Told Him",
+  "The Complete Bhagavad Gita | Krishna to Arjuna, All 18 Chapters"
+ ],
+ "description": "Kurukshetra, before sunrise. Two armies of one family, one chariot between them, and before a single arrow flies, the finest archer of his age lets his bow fall. What his charioteer, Krishna, tells him is the Bhagavad Gita, the Song of the Lord.\n\nThis film tells all eighteen chapters the way the Gita itself is framed: through Sanjaya, who by the sage Vyasa's grace can see the battlefield, describing it to the blind king Dhritarashtra. Every verse is on screen with its chapter and verse, in Devanagari, transliteration and English. The Sanskrit is shown, not recited. English verses are quoted from Shri Purohit Swami (1935, edited text); Gita 4.7 is quoted from Swami Sivananda (1949, edited text). Chapter 13 is numbered as in our source, which counts Arjuna's opening question as 13.1, so our 13.28 and 13.34 are 13.27 and 13.33 in 700-verse editions such as Gita Press.\n\nA note on how we work. Every verse is shown with its chapter and verse, in a public-domain translation named on screen. Our own reading is marked OUR NOTE. The pictures are drawn in code, the voice is synthetic, and nothing here speaks for God.\n\n0:00 Prologue: The Blind King's Question\n0:43 Chapter 1: Arjuna's Despair\n1:56 Chapter 2: The Yoga of Knowledge\n3:45 Chapter 3: The Yoga of Action\n4:23 Chapter 4: Knowledge and the Renunciation of Action\n5:06 Chapter 5: The Yoga of Renunciation\n5:43 Chapter 6: The Yoga of Meditation\n6:28 Chapter 7: Knowledge and Realisation\n6:57 Chapter 8: The Imperishable\n7:34 Chapter 9: The Royal Secret\n8:06 Chapter 10: The Divine Glories\n8:40 Chapter 11: The Vision of the Universal Form\n11:03 Chapter 12: The Yoga of Devotion\n11:37 Chapter 13: The Field and Its Knower\n12:14 Chapter 14: The Three Qualities\n12:48 Chapter 15: The Supreme Person\n13:19 Chapter 16: The Divine and the Demonic\n13:56 Chapter 17: The Three Kinds of Faith\n14:28 Chapter 18: Liberation through Renunciation\n16:03 Epilogue: Sanjaya's Answer",
+ "writer_notes": "FINAL SCRIPT. Built on the winning draft (\"sanjaya\") with the panel's grafts, and with every must-fix item applied or, where it needs AK, flagged below. The look is Lamplight (AK, 21 Oct 2026: \"go with Lamplight\"; AK also approved replacing the non-commercial horses and birds that day). Every scene is written for that look: flat near-black silhouettes with a gold rim on the side facing the light, light as the only colour, the diya as the signature light. The prologue's shadow armies on the pillars (p00b03) come from Lamplight's shadow-theatre lineage.\n\nLENGTH AND PACING\n- 119 beats and 2,270 spoken words.\n- At 2.6 words/s plus the holds written into the notes, the film runs 17.1 min. By build_film.py's own pre-TTS rule (2.5 words/s plus its pads) it runs 18.7 min, so re-time from the real MiniMax audio.\n- Chapter weights: prologue 0:43, ch1 1:12, ch2 1:49, ch11 2:23, ch18 1:35, epilogue 1:02. The fourteen quiet chapters run 30 to 45 s.\n- The striking image is at 0:00 (the falling Gandiva) and the king's question is spoken by 0:04. \"Why?\" is asked by 0:30. The longest gap between turns is 31 s (into chapter 13).\n- Every [≈m:ss] in the notes and in the description comes from the 2.6 words/s model.\n- TRIM RESERVE, if the voiced film runs over 18:00 (about 61 s in all, each cut self-contained): c17b03 (17.15, austerity of speech; chapter 17 falls to about 21 s); c02b08 (the tortoise, 2.58); c18b02 (with c18b03: Arjuna's 18.1 question and 18.2); c13b03 (13.28; chapter 13 falls to about 28 s); e19b01 (18.77); c05b03 (5.2; chapter 5 falls to about 27 s).\n\nMUST-FIX LEDGER\nScholar:\n(1) 4.7 is quoted from Swami Sivananda, exactly and in full, at c04b05, with the plate and card source AFTER SWAMI SIVANANDA, 1949 (EDITED TEXT). The note explains why: Purohit's 'reincarnate' contradicts 4.6. The highlight is 'I manifest Myself', plus यदा यदा हि धर्मस्य on the Sanskrit line.\n(2) 11.42 is grafted at c11b14, so 11.41 resolves before 11.45.\n(3) Cards: see CARD AND PLATE BUILD below.\n(4) Chapter 13: the plates and card sources read '13.28 (13.27 IN 700-VERSE EDITIONS)' and '13.34 (13.33 ...)', and the description says so too.\n(5) c18b06 now reads 'Free, my king. After everything, he leaves the choice to Arjuna.' It keeps OUR NOTE.\n(6) c15b02 now reads 'It must be hewn down, he says, with the sharp axe of non-attachment.'\n(7) 2.47 drops its leading 'But'. The checker accepts the case change on the first letter.\n(8) 3.5 gets an antecedent from c03b03 ('No one, Krishna answers, can stop acting:'). The draft's bridge line ('No one escapes action, then...') is folded into it and cut.\n(9) The disclosure (verbatim DISC_SAY) sits at the end, and AK must decide it; see AK DECISIONS.\n(10) Rule 1 also goes to AK. Every KRISHNA beat carries a plate or a card, and the checker enforces it.\n(11) 'grandsire of both sides' (c01b02); 'the one who holds the reins' (c04b04).\n(12) Optional grafts taken: the 2.49 bridge into 3.1 (c02b10); ma shucah, planted at c16b03 and c16b05 and lit at c18b08; 18.64, quoted (c18b07); 10.38 'among secrets, silence' (c10b02). Not taken, for time: 15.15 with smritir labdha (the first thing to restore).\nDirector:\n(1) 11.42 (above).\n(2) Sun continuity. One sky() rule governs every chariot and field beat. The disc stays below the horizon, with a saffron rim that warms chapter by chapter, and clears it only on 'the light has dawned' (c18b10). The draft's 'sun breaking behind the chariot' and 'sun directly behind Krishna' are gone; the latter is now 'the glow of the unrisen sun' at c04b02. The suns at 8.5 and 13.34 are marked as metaphor worlds, apart from Kurukshetra's horizon.\n(3) Arjuna breaks in his own voice: the cold open (p00b01), 1.30 in full (c01b08) and 1.32 (c01b09). 'He came to face an enemy. He finds a family.' is added (c01b07). 1.29 is carried by the picture.\n(4) No 'Chapter N.': the voice says 'One. Arjuna's despair.', and the card carries CHAPTER ONE and the Devanagari numeral.\n(5) 2.47 and 4.7 (above).\n(6) The ending breathes. The 18.78 card holds 4 s while the conch rings out. The closing line over the chariot at sunrise follows (e19b04, rewritten so the friend is not undersold: 'one of them held the reins'). Then a bell, then DISC_SAY over the end card on a low drone (e19b05).\n(7) 18.64 is quoted (c18b07). c18b06 keeps the scholar's wording, not 'He does not command', because 18.65-18.66 are commands.\n(8) Runtime. Cut from the draft: the plain-words gloss of 2.47, the 3.5-to-3.9 bridge line, 'the gentlest verse in the song', the narrated drive into the open ground (now shown under c01b04), the hall line that closed chapter 1, and the verses 1.14, 6.35 (now reported in c06b04), 11.4 and 18.65, plus line trims.\n(9) Images, with no added words: the wind finds the lamp's alcove (c06b03), so it goes out (c06b04) and is relit (c06b05); the sun of 8.5 resolves into the chariot wheel (c08b03); the fallen Gandiva is lit like an offering at 9.27 (c09b04).\n(10) Rule 5 is settled: AK, 21 Oct, DHARMA_CHANNEL.md rule 5 allows Krishna as a marked silhouette, and the cosmic form is light only. The Hanuman pennant stays an abstract emblem. 11.16's faces, eyes and limbs are points of light, and 11.28's mouths are fire only. Any caption of 8.2 capitalises 'How'. Every line must be checked against the printed 1935 text (rule 8, below).\nStrategist (the items that bear on this draft):\n- The disclosure is out of the opening, and 'night' appears nowhere.\n- The titles keep Bhagavad Gita, Krishna and Arjuna in the first 60 characters. The thumbnail is the cold-open frame: the Gandiva falling against the backlit chariot.\n- The hook is the 'arjuna' draft's falling bow (c00b01), grafted into the Sanjaya frame. The hall beat now moves, as shadow armies parting.\n- Chapter-end questions through the back half: c08b05, c13b05, c14b03, c16b05.\n- The blind king stays in the middle of the film (see THREADS).\n- Spoken Sanskrit is limited to single words.\n- The description has chapter timestamps and the '(1935, edited text)' credit.\n- A TTS test of the hook comes first (p00b01 note).\n- Every quoted beat has a plate or a card.\n\nQUOTATION CHECK (gita_checked.py, run before export)\n- Scope: 64 quoted beats, which is every KRISHNA, ARJUNA and DHRITARASHTRA line plus Sanjaya's own verses 1.26, 1.47, 11.12, 11.50, 18.77 and 18.78 (6 beats).\n- Each is checked as an exact contiguous excerpt of the corpus text. The only tolerances are the first letter's case after a dropped leading word (2.47, 8.2) and the punctuation mark at a trailing cut (p00b01).\n- Sivananda is quoted once, for 4.7. Each beat's note names any leading clause it drops.\n- Trailing cuts: p00b01 (the opening words of 1.30), 11.16 (drops 'O You, Lord of the Universe...'), 11.31 (first sentence), 11.32 (first sentence, on purpose: 'In spite of your efforts' misreads rite 'pi tvam), 11.45 (first three sentences).\n- Also checked: every card highlight against the spoken English; every Sanskrit highlight and every Devanagari overlay against the corpus; the chapter-13 plates for their 700-verse number; the disclosure against DISC_SAY.\n\nFACT-CHECK (21 Oct 2026; every beat with a ref re-read with 'corpus.py verse')\n- All 64 quoted beats are the Purohit text (Sivananda for 4.7) exactly, or a contiguous excerpt of it. Every card's en_text equals its spoken line, and every plate names its beat's verse.\n- Speakers were checked against the Sanskrit uvācha tags. Dhritarashtra: 1.1. Arjuna: 1.21, 1.30, 1.32, 2.7, 3.1, 5.1, 6.34, 8.2, 11.16, 11.28, 11.31, 11.41, 11.42, 11.45, 11.51, 18.73. Sanjaya: 1.26, 1.47, 11.12, 11.50, 18.77, 18.78. Krishna: every other verse.\n- FIXED, a speaker error inside a verse: 1.21 (c01b04). Purohit's 'O Infallible Lord of the earth!' fuses Arjuna's achyuta with mahī-pate, Sanjaya's address to the blind king. Arjuna now says only 'Please draw up my chariot between the two armies.' (9 words, from 15).\n- FIXED, Sanjaya: c07b02 no longer says Krishna 'begins to speak of himself' (he already has, in chapter 4). In c15b02, 'he shows Arjuna' is now 'he speaks of', and 'roots in heaven' is now 'roots above, in the Highest'.\n- SHARPENED NOTES: c01b02 (dawn and elephants are staging); c02b08 (2.54 is Arjuna's question); c11b03 (Sanjaya's divine sight comes from the Mahabharata; the Gita gives 18.75 and 18.77); c11b06 (11.26 names Arjuna's side too, so the picture keeps both armies); c13b02 and c13b05 (700-verse numbers 13.1 and 13.21); c13b04 (Purohit widens 'the knower lights the field' to 'the Lord lights the universe'); c14b03 (14.11-14.13); c18b10 (the conch is staging).\n- Every Sanjaya paraphrase is marked in the voice ('in effect', 'he says', 'Krishna answers') or by a SANJAYA'S PARAPHRASE plate, and every reading of ours carries OUR NOTE. No Sanjaya line puts words in Krishna's or Arjuna's mouth. 'Do not be anxious' at c16b05 is Purohit's exact 16.5 wording.\n\nCARD AND PLATE BUILD (scripts/katha/build_film.py and src/katha/cards.tsx do not do these yet)\n(a) English: print scene.en_text, the excerpt as spoken, on every card, including Sanjaya's 18.78. Never print corpus.ref()['en']: it adds 'Lord Shri Krishna replied:' and quotation marks, and for 11.32 it prints the sentence cut on purpose.\n(b) Source line: use scene.src. It reads Sivananda for 4.7 and carries the 700-verse number for 13.28; the builder currently always uses author 21.\n(c) Devanagari: strip the 'X उवाच' tag, which in chapters 13-18 is fused into the verse (for example 'अर्जुन उवाचनष्टो'). Split at '।', drop the '।।18.78।' marker, and drop the 'uvācha' lines from the transliteration. clean_sa() and clean_tr() in gita_checked.py do exactly this. They were run on all 15 card verses, and every cleaned card has as many Devanagari lines as transliteration lines.\n(d) Never take 17.23's Devanagari from the corpus, because it has lost its ॐ. c17b04 sets ॐ तत् सत् from the transliteration.\n(e) Highlights: cards.tsx lights single words, so scene.hl holds words, scene.highlight keeps the phrases, and scene.sa_highlight (new) lights Sanskrit.\n(f) Respect scene.lines: the kit always draws all three lines.\n(g) Draw three things on non-card scenes: scene.plate, as a lower-third reference plate; scene.kicker 'OUR NOTE'; and scene.overlay, the Devanagari of the cited verse. None is rendered yet.\n(h) A minor corpus mismatch: 18.66 reads Devanagari त्वा but transliteration tvāṁ.\n\nAK DECISIONS NEEDED BEFORE TTS\n1. Rule 1 ('narrator, never deity') against a voiced KRISHNA. Every KRISHNA beat is a verbatim translator quotation with its plate or card. Fallback: the Sanjaya voice reads those beats with no change of text.\n2. Rule 7. DISC_SAY is marked 'Spoken once, early', but it is placed at the end (e19b05) so nothing breaks the cold open; or move it to straight after p00b05. AK should also say whether to adopt wording for four voices: \"A note on how we work. Every verse you see is shown with its chapter and verse, in a public domain translation named on screen. Krishna and Arjuna speak only those words. Where we add our own reading, it is marked as our note. The pictures are drawn in code, the voices are synthetic, and nothing here speaks for God.\" If yes, change DISC_SAY and DISC_CAP in dharma_scripts.py and the description together, and the end-card strip becomes SYNTHETIC VOICES.\n3. Rule 8. The film stays a DRAFT until reviewed_by is signed. The corpus English is an edited copy, so check every Purohit line, and Sivananda's 4.7, against the printed 1935 and 1949 texts.\n4. Rule 10. No shloka is read by the TTS. Spoken Sanskrit is limited to names and single words: Kurukshetra KOO-roo-SHAY-tra, Pandavas PAAN-da-vas, Bhishma BHEESH-ma, Drona DRO-na, Gandiva GAAN-dee-va, Vyasa VYAA-sa, Vivasvan vi-VUS-vaan, Kuru, Kunti KOON-tee, Yadava YAA-da-va, kala KAA-la, kshetra KSHAY-tra, kshetrajna KSHAY-trag-nya, sattva SUT-tva, rajas RA-jus, tamas TA-mus, ashvattha USH-vut-tha, Om Tat Sat OM TUT SUT. Ear-test them before locking.\n\nTHREADS\n- The king's thread: p00b02, p00b03, c02b10, c04b04, c08b05, c09b03, c10b05, c11b03, c11b06, c11b18, c18b06, e19b01, e19b02. 18.78 closes the film, and for this king it is also the verdict on his sons.\n- Plants and payoffs:\n  - the falling bow: p00b01, then c01b08, then c18b10\n  - the reins: c01b03, then c11b18, then e19b04\n  - 'stand up': c02b02, then c18b10\n  - the rivers: c02b09, then c11b07\n  - the windless lamp: c06b02, then the wind c06b03, then out c06b04, then relit c06b05\n  - the gold eyelid: p00b04, then c11b02\n  - 'how, in a war?': c08b05, then the bow as an offering c09b04\n  - 'do not be anxious': c16b03 and c16b05, then मा शुचः c18b08\n  - kshetra: p00b02, then c13b02\n  - the three lamps: chapter 14, then c17b02\n  - 'Be thou my instrument': c11b11, then c18b10\n- Light: one dawn, the sun held below the horizon until 18.73. The hall ends at first grey light.\n\nPUROHIT'S WORDING, AS HANDLED\n- 4.7: Sivananda instead.\n- 11.32: kala is named first, and the second sentence is cut.\n- 5.10 'water lily': a lotus leaf is shown.\n- 13.2 'playground': not quoted; kshetra is explained.\n- 15.1 'seed above': not quoted; roots above are shown.\n- 18.66 'earthly duties': the Sanskrit is on the card.\n- 2.3 'effeminacy': not quoted.\n- 2.47 'But ... but': the leading 'But' is dropped.\n- 1.21 'O Infallible Lord of the earth!': not quoted, because mahī-pate is Sanjaya's address to the king.\n- 13.34 'the Lord ... the entire universe': quoted as is. The Sanskrit has the knower of the field lighting the field, as Sivananda renders it; a swap is AK's call.\nCORPUS DEFECTS (fix upstream): 4.4 'Vyasawana'; 16.6 'No changes needed'; 11.27 has a stray '1 '; 17.23 has lost its ॐ; chapters 13-18 fuse the speaker tags and have no half-verse breaks; 18.78 has a trailing marker; 13.1 shifts chapter 13's numbering; 1.20's transliteration carries 1.21's first line, and 1.21's Devanagari opens with Sanjaya's half-line (Purohit's 1.21 English follows that misalignment); 11.26's transliteration carries 11.27's four lines; 10.33's Devanagari repeats its second line; 3.5's Devanagari has a malformed कश्िचत् (कश्चित्); Sivananda's 1.21 and 1.22 are the same text. None of these verses is on a card.\n\nCUT FOR LENGTH (restore in this order for a longer cut; every verse has been read from the corpus)\n1. 15.15, with a Sanjaya line at 18.73 on smritir labdha ('memory regained', OUR NOTE)\n2. 4.42, the sword of wisdom, then 'Arise, he says. Arjuna does not rise.'\n3. 11.4\n4. 1.14\n5. 6.35 in Krishna's voice\n6. 18.65\n7. 1.29\n8. 10.18\n9. 11.29, the moths\n10. 18.61, the wheel\n\nVOICES\n- SANJAYA: warm and mature, the spine of the film.\n- KRISHNA: warm and unhurried, never theatrical; slower in chapter 11.\n- ARJUNA: young and sure at 1.21, breaking in chapter 1, awed in chapter 11, steady at 18.73.\n- DHRITARASHTRA: old, one line.\nMUSIC\n- The tanpura drone runs throughout, and the flute is Krishna's motif from 1.25.\n- A bell sounds on every title and at 2.47, after 18.66 and before the disclosure.\n- Conches: Bhishma, Panchajanya, 18.73 and 18.78.\n- Silences: the cold open, 1.47, 'kala', before 18.66 and under e19b02.\n- Swells: into chapter 11 and the thousand suns.\n\nFILES\n- Builder and checker: /tmp/claude-0/-home-user/269efd1f-bf38-5c27-a377-b0f692dd17c3/scratchpad/gita_checked.py (the fact-checked copy of gita_final.py). Run 'python3 gita_checked.py'; '--rows' adds timings and '--cards' adds the cleaned Devanagari.\n- Exporter: /tmp/claude-0/-home-user/269efd1f-bf38-5c27-a377-b0f692dd17c3/scratchpad/gita_checked_export.py. The patch that made both from the originals: /tmp/claude-0/-home-user/269efd1f-bf38-5c27-a377-b0f692dd17c3/scratchpad/fc_patch.py.\n- Output: /tmp/claude-0/-home-user/269efd1f-bf38-5c27-a377-b0f692dd17c3/scratchpad/gita_checked.json (this whole script) and /tmp/claude-0/-home-user/269efd1f-bf38-5c27-a377-b0f692dd17c3/scratchpad/gita_checked_movements.json. The pre-check gita_final.* files are left as they were.\n- The scratchpad belongs to this session, so copy the JSON into scripts/katha/ (build_film.py expects e.g. scripts/katha/gita_film.json) for the build.",
+ "movements": [
+  {
+   "id": "prologue",
+   "chapter": 0,
+   "name": "The Blind King's Question",
+   "sanskrit_name": "धृतराष्ट्र उवाच",
+   "beats": [
+    {
+     "key": "p00b01",
+     "speaker": "ARJUNA",
+     "say": "The bow Gandiva slips from my hand",
+     "ref": "gita:1.30",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-sinking",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon; rim light only",
+      "detail": "COLD OPEN: the Gandiva slides through an open hand in slow motion against the saffron rim; it never lands in this shot; hard cut to black on 'hand'",
+      "plate": "BHAGAVAD GITA 1.30 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "silence",
+     "note": "[≈0:00] 0:00, the striking image: the falling bow, spoken by 0:01 (excerpt: the opening words of 1.30, cut before ', and my skin burns.'; the voice ends the line). A flash-forward: chapter 1 walks up to this moment and plays the whole verse. Wind only, no drone. TTS check before locking: the voice must audibly break; if MiniMax reads it flat, keep the shot and the silence and drop the line (the king's question then lands at 0:02). This frame is also the thumbnail."
+    },
+    {
+     "key": "p00b02",
+     "speaker": "DHRITARASHTRA",
+     "say": "O Sanjaya! What happened on the sacred battlefield of Kurukshetra when my people and the Pandavas gathered?",
+     "ref": "gita:1.1",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "sanjaya",
+      "setting": "the blind king's hall at night, pillars lost in indigo dark",
+      "lamp": "black; a flint strike; a single oil lamp catches",
+      "king": "Dhritarashtra on a high throne, a backlit silhouette, face turned away from the flame",
+      "sanjaya": "Sanjaya standing beside the lamp, silhouette",
+      "overlay": "धर्मक्षेत्रे कुरुक्षेत्रे · dharma-kṣhetre kuru-kṣhetre rises in thin gold above the lamp, then the English line as it is spoken",
+      "plate": "BHAGAVAD GITA 1.1 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "silence",
+     "note": "[≈0:03] The film's question, by 0:04. The only DHRITARASHTRA line in the film: an old, low, unhurried voice. Drone enters under 'Kurukshetra'. Purohit's leading words 'The King Dhritarashtra asked,' and the quotation marks are dropped. Overlay Devanagari from the corpus (1.1, line 2), its speaker tag stripped."
+    },
+    {
+     "key": "p00b03",
+     "speaker": "SANJAYA",
+     "say": "You cannot see, my king, so you ask me. Your sons stand on one side of that field; your brother's sons, the Pandavas, on the other. My people, you say, and the Pandavas. Even your question is divided.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "flame steady, close",
+      "kicker": "OUR NOTE",
+      "detail": "shadow-theatre: the lamp throws two armies of shadow across the pillars, one on each side of the throne, and they part as Sanjaya says 'divided'; slow push in on the king's hand"
+     },
+     "music": "drone",
+     "note": "[≈0:11] OUR NOTE (kicker on screen): reading 'my people' (mamakah) against 'the Pandavas' as a divided heart is our reading of 1.1, not a line of the text. Context for newcomers: the Pandavas are the sons of Pandu, the king's younger brother (Mahabharata)."
+    },
+    {
+     "key": "p00b04",
+     "speaker": "SANJAYA",
+     "say": "Before a single arrow flew, one man on that field let his bow fall. Why? By the sage Vyasa's grace, I will be your eyes. Listen.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "pure",
+      "detail": "a thin horizontal line of gold opens across the dark like an eyelid; through it, far off, a plain at first light and one small chariot between two armies"
+     },
+     "music": "swell",
+     "note": "[≈0:26] Names the film's spine as a question: why did the bow fall? Gita 18.75 names Vyasa's blessing as the source of what Sanjaya heard; the gift of far sight itself is told in the Mahabharata (Bhishma Parva) around the Gita, not in its verses."
+    },
+    {
+     "key": "p00b05",
+     "speaker": "SANJAYA",
+     "say": "The Bhagavad Gita. The Song of the Lord.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 0,
+      "english": "The Song of the Lord",
+      "sanskrit": "श्रीमद्भगवद्गीता",
+      "transliteration": "Shrimad Bhagavad Gita",
+      "line": "as Sanjaya told it to the blind king"
+     },
+     "music": "bell",
+     "note": "[≈0:37] Main title. 'Bhagavad Gita' = 'the song of the Blessed One', explained once here. Bell on the title, the drone holds. Nothing stands between this card and chapter 1 (the disclosure is at the end; see writer notes)."
+    }
+   ]
+  },
+  {
+   "id": "c01",
+   "chapter": 1,
+   "name": "Arjuna's Despair",
+   "sanskrit_name": "अर्जुनविषादयोग",
+   "beats": [
+    {
+     "key": "c01b01",
+     "speaker": "SANJAYA",
+     "say": "One. Arjuna's despair.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 1,
+      "english": "Arjuna's Despair",
+      "sanskrit": "अर्जुनविषादयोग",
+      "transliteration": "Arjuna Vishada Yoga"
+     },
+     "music": "bell",
+     "note": "[≈0:43] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c01b02",
+     "speaker": "SANJAYA",
+     "say": "Dawn on Kurukshetra: two armies, banners, elephants, chariots to the edge of sight. Old Bhishma, grandsire of both sides, blows his conch like a lion's roar.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "dawn",
+      "view": "wide",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon",
+      "detail": "two armies on a plain under an indigo-to-saffron sky; banners, elephants, dust lit gold from below the horizon; on 'conch' a single great conch raised on the far side"
+     },
+     "music": "conch",
+     "note": "[≈0:47] 1.12-1.13 (Bhishma's conch 'resembling that of a lion's roar'; then conches, drums and horns). Bhishma is the grandsire (pitamaha) of both lines; strictly their great-uncle. The Gita names no hour: dawn, the elephants and the chariots 'to the edge of sight' are staging, not the text. Deep conch on 'lion's roar'."
+    },
+    {
+     "key": "c01b03",
+     "speaker": "SANJAYA",
+     "say": "Arjuna is the finest archer of his age. Holding his reins is Krishna: his cousin, his friend, his charioteer. And, as you will hear, far more.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-bow-raised",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon; the chariot black against the rim, gold rim light",
+      "detail": "first sight of the chariot in its place: four white horses, the pennant streaming; Krishna's silhouette lowers the conch Panchajanya as the line begins; Arjuna standing with the Gandiva bow and helmet; Krishna in front with the reins, crown and peacock feather catching the light; hold on the reins in his hands"
+     },
+     "music": "conch",
+     "note": "[≈0:57] A bright conch at the head of the beat: Krishna and Arjuna answer Bhishma (1.14-1.15, shown, not narrated). The sun does NOT break here (it clears the horizon only on 18.73). Pennant: 1.20 says Arjuna's flag bore Hanuman's image; it stays an abstract emblem (no other deity is drawn, house rule 5). The text says 'white horses' (1.14); four is the visual tradition. PLANT: who is the charioteer? Paid off at c11b18. Kinship from the Mahabharata (Kunti, Arjuna's mother, is the sister of Krishna's father)."
+    },
+    {
+     "key": "c01b04",
+     "speaker": "ARJUNA",
+     "say": "Please draw up my chariot between the two armies.",
+     "ref": "gita:1.21",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-bow-raised",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon",
+      "detail": "on the last word Krishna lifts the reins and the chariot rolls alone into the empty strip between the armies; dust; the horses' breath in the cold air",
+      "plate": "BHAGAVAD GITA 1.21 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈1:08] 1.24 (Krishna 'drew up His bright chariot in the midst between the two armies') is shown, not narrated. FACT-CHECK FIX: Purohit's leading words 'Raising his bow, he spoke this to the Lord Shri Krishna: O Infallible Lord of the earth!' are dropped; the picture shows the raised bow instead. 'Lord of the earth' is not Arjuna's: in the Sanskrit, mahī-pate is Sanjaya's address to the blind king (corpus 1.21, Devanagari line 1: हृषीकेशं तदा वाक्यमिदमाह महीपते, 'then, O lord of the earth, he spoke these words to Hrishikesha'; Sivananda's 1.20 has it so, 'O Lord of the Earth', to the king). Arjuna's own words are only senayor ubhayor madhye rathaṁ sthāpaya me 'chyuta; Purohit's edited text fuses his achyuta ('O Infallible') with the king's title, so the one cannot be kept without the other. Do not put 'Infallible' back by hand: the line must stay a contiguous excerpt. Arjuna's voice: young, strong, a warrior's confidence that breaks within a minute."
+    },
+    {
+     "key": "c01b05",
+     "speaker": "KRISHNA",
+     "say": "O Arjuna! Behold, these members of the family of Kuru are assembled.",
+     "ref": "gita:1.25",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon",
+      "detail": "Krishna's raised hand sweeps across the opposing ranks",
+      "plate": "BHAGAVAD GITA 1.25 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈1:12] Krishna's first words in the Gita (excerpt of 1.25: the leading clause 'Where Bheeshma and Drona had led all the rulers of the earth, they spoke thus:' dropped). Krishna's voice: warm, unhurried, never theatrical. First flute phrase: Krishna's motif for the whole film."
+    },
+    {
+     "key": "c01b06",
+     "speaker": "SANJAYA",
+     "say": "There, Arjuna noticed fathers, grandfathers, uncles, cousins, sons, grandsons, teachers, and friends.",
+     "ref": "gita:1.26",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "dawn",
+      "view": "slow lateral track across the front rank",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon",
+      "detail": "no faces: helmets, raised hands, banners, an old man's white beard in silhouette, a boy's small shield; each word of the list lands on a new silhouette",
+      "plate": "BHAGAVAD GITA 1.26 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈1:17] Sanjaya's verse, quoted exactly. Cut on each noun."
+    },
+    {
+     "key": "c01b07",
+     "speaker": "SANJAYA",
+     "say": "He came to face an enemy. He finds a family.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "dawn",
+      "view": "close",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon",
+      "detail": "one silhouette across the gap, an old teacher with a staff, lifts a hand in greeting"
+     },
+     "music": "drone",
+     "note": "[≈1:22] Sanjaya's line, not a verse (Drona, Arjuna's teacher, is among them: 1.25-1.26 and the Mahabharata)."
+    },
+    {
+     "key": "c01b08",
+     "speaker": "ARJUNA",
+     "say": "The bow Gandiva slips from my hand, and my skin burns. I cannot remain still, for my mind is in tumult.",
+     "ref": "gita:1.30",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-sinking",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon; cold",
+      "detail": "the cold-open shot, now in full: the bow tilts from the open hand, and this time it lands on the chariot floor",
+      "plate": "BHAGAVAD GITA 1.30 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈1:27] Pays off the cold open: the whole verse, in its place. The voice cracks; the drone thins to a single string."
+    },
+    {
+     "key": "c01b09",
+     "speaker": "ARJUNA",
+     "say": "I do not crave victory, nor a kingdom, nor any pleasure. What would a kingdom, happiness, or life be to me?",
+     "ref": "gita:1.32",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-sinking",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon; cold",
+      "detail": "Arjuna's silhouette turns away from the armies toward Krishna",
+      "plate": "BHAGAVAD GITA 1.32 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈1:35] Excerpt: the leading 'Ah, my Lord!' dropped. Arjuna's collapse in his own voice (1.29, the body failing, is carried by the picture in c01b08)."
+    },
+    {
+     "key": "c01b10",
+     "speaker": "SANJAYA",
+     "say": "Having spoken thus, Arjuna sank into the seat of his chariot, discarding his bow and arrow, overwhelmed with grief in the midst of the armies.",
+     "ref": "gita:1.47",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-seated-bow-down",
+      "time": "dawn",
+      "light": "pre-dawn indigo; a thin saffron rim behind the chariot; sun below the horizon; cold blue with a last edge of gold",
+      "plate": "BHAGAVAD GITA 1.47 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "silence",
+     "note": "[≈1:44] The chapter's last verse, Sanjaya's own. Purohit's 'Sanjaya said:' and the quotation marks dropped. Music cuts to silence on 'grief'; hold 2 s of wind only. The Gandiva now lies on the chariot floor and stays there until 18.73."
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "chapter": 2,
+   "name": "The Yoga of Knowledge",
+   "sanskrit_name": "सांख्ययोग",
+   "beats": [
+    {
+     "key": "c02b01",
+     "speaker": "SANJAYA",
+     "say": "Two. The yoga of knowledge.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 2,
+      "english": "The Yoga of Knowledge",
+      "sanskrit": "सांख्ययोग",
+      "transliteration": "Sankhya Yoga"
+     },
+     "music": "bell",
+     "note": "[≈1:56] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c02b02",
+     "speaker": "SANJAYA",
+     "say": "Krishna's answer is stern at first. In effect: stand up; this weakness is unworthy of you.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon; hard side light",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 2.2-2.3"
+     },
+     "music": "drone",
+     "note": "[≈2:00] Paraphrase of 2.2-2.3, flagged on screen. Purohit's own wording there ('unmanliness', 'effeminacy') is deliberately not quoted."
+    },
+    {
+     "key": "c02b03",
+     "speaker": "ARJUNA",
+     "say": "My heart is oppressed with pity, and my mind is confused as to what my duty is. Therefore, my Lord, tell me what is best for my spiritual welfare, for I am Your disciple. Please direct me, I pray.",
+     "ref": "gita:2.7",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-seated-bow-down",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon; soft",
+      "detail": "Arjuna's silhouette looks up toward Krishna",
+      "plate": "BHAGAVAD GITA 2.7 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈2:07] The hinge of the whole Gita: the friend asks to be taught. Let the last four words fall quietly."
+    },
+    {
+     "key": "c02b04",
+     "speaker": "SANJAYA",
+     "say": "A friend has become a teacher. Arjuna tells him he will not fight, and falls silent. And there, between the two armies, Krishna smiles.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon; warm gold rises behind Krishna"
+     },
+     "music": "flute",
+     "note": "[≈2:22] Narration of 2.9-2.10 (Purohit 2.10: 'with a gracious smile'). The smile is never drawn: the light warms instead. Flute motif returns."
+    },
+    {
+     "key": "c02b05",
+     "speaker": "KRISHNA",
+     "say": "There was never a time when I was not, nor you, nor these princes were not; there will never be a time when we shall cease to exist.",
+     "ref": "gita:2.12",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:2.12",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "There was never a time when I was not, nor you, nor these princes were not; there will never be a time when we shall cease to exist.",
+      "highlight": [
+       "never a time when I was not",
+       "cease to exist"
+      ],
+      "hl": [
+       "never",
+       "time",
+       "cease",
+       "exist"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 2.12 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈2:32] Full card: Devanagari, transliteration, English. Sanskrit is shown, never read by TTS (house rule 10)."
+    },
+    {
+     "key": "c02b06",
+     "speaker": "KRISHNA",
+     "say": "As a man discards his threadbare robes and puts on new ones, so the Spirit throws off its worn-out bodies and takes on fresh ones.",
+     "ref": "gita:2.22",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "worn garments set aside for new ones",
+      "detail": "a threadbare saffron robe slips from a shoulder of pure light and falls; new cloth unfolds and is taken up; no body is ever shown, only the light inside the cloth",
+      "plate": "BHAGAVAD GITA 2.22 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈2:45]"
+    },
+    {
+     "key": "c02b07",
+     "speaker": "KRISHNA",
+     "say": "You have only the right to work, but none to the fruit of it. Let not the fruit of your action be your motive; nor be you enamored of inaction.",
+     "ref": "gita:2.47",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:2.47",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "You have only the right to work, but none to the fruit of it. Let not the fruit of your action be your motive; nor be you enamored of inaction.",
+      "highlight": [
+       "only the right to work",
+       "none to the fruit of it",
+       "nor be you enamored of inaction"
+      ],
+      "hl": [
+       "only",
+       "right",
+       "work",
+       "none",
+       "fruit",
+       "enamored",
+       "inaction"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 2.47 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "कर्मण्येवाधिकारस्ते"
+      ]
+     },
+     "music": "bell",
+     "note": "[≈2:56] A bell marks the turn from the Self to action. The most quoted verse of the Gita: hold the full card. Excerpt: the corpus's leading 'But' is dropped (a permitted leading-word drop; the next word takes a capital Y), so the line no longer plays 'But ... but'. The card shows the line as spoken."
+    },
+    {
+     "key": "c02b08",
+     "speaker": "SANJAYA",
+     "say": "Then he describes a mind that stands still: one that draws in its senses as a tortoise draws in its limbs.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a tortoise drawing in its limbs",
+      "detail": "shallows at first light; a tortoise, gold-edged, draws in head and limbs one by one and becomes a smooth stone of light while the water moves around it",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 2.58"
+     },
+     "music": "drone",
+     "note": "[≈3:10] Reported speech of 2.58 (Arjuna asks about the steady mind at 2.54; Krishna's portrait runs 2.55-2.72), not a quotation; the plate says SANJAYA'S PARAPHRASE."
+    },
+    {
+     "key": "c02b09",
+     "speaker": "KRISHNA",
+     "say": "He attains peace into whom desires flow as rivers into the ocean, which, though brimming with water, remains ever the same; not he whom desires carry away.",
+     "ref": "gita:2.70",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "rivers entering the ocean",
+      "detail": "aerial: many rivers, saffron with silt, pour into a vast still indigo sea whose horizon never moves",
+      "plate": "BHAGAVAD GITA 2.70 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈3:20] PLANT: the rivers return as rivers of sparks at 11.28 (c11b07)."
+    },
+    {
+     "key": "c02b10",
+     "speaker": "SANJAYA",
+     "say": "A sea that never rises. I wish you could see it, my king. Krishna has said that action is far below a mind fixed on the Divine; and still he tells Arjuna to fight.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "steady",
+      "detail": "the king's face stays in shadow; only the lamp moves",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 2.49"
+     },
+     "music": "drone",
+     "note": "[≈3:31] The king's blindness, gently; then the doubt that opens chapter 3. Reports 2.49 (Purohit: 'Physical action is far inferior to an intellect concentrated on the Divine') and the 'fight' of 2.18 and 2.37. Grafted from the 'arjuna' draft (c02b13)."
+    }
+   ]
+  },
+  {
+   "id": "c03",
+   "chapter": 3,
+   "name": "The Yoga of Action",
+   "sanskrit_name": "कर्मयोग",
+   "beats": [
+    {
+     "key": "c03b01",
+     "speaker": "SANJAYA",
+     "say": "Three. The yoga of action.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 3,
+      "english": "The Yoga of Action",
+      "sanskrit": "कर्मयोग",
+      "transliteration": "Karma Yoga"
+     },
+     "music": "bell",
+     "note": "[≈3:45] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c03b02",
+     "speaker": "ARJUNA",
+     "say": "My Lord! If wisdom is superior to action, why do you advise me to engage in this terrible fight?",
+     "ref": "gita:3.1",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-seated-bow-down",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon",
+      "detail": "Arjuna's silhouette gestures at the armies",
+      "plate": "BHAGAVAD GITA 3.1 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈3:49] 'Arjuna questioned:' dropped."
+    },
+    {
+     "key": "c03b03",
+     "speaker": "SANJAYA",
+     "say": "No one, Krishna answers, can stop acting:",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon"
+     },
+     "music": "drone",
+     "note": "[≈3:57] Reported speech: gives 3.5's 'He' its antecedent (the Sanskrit of 3.5 opens na hi kashchit, 'no one indeed'). The draft's separate bridge line ('No one escapes action, then. What matters is what the action is for.') is folded into this line and cut."
+    },
+    {
+     "key": "c03b04",
+     "speaker": "KRISHNA",
+     "say": "He cannot remain inactive even for a moment, for the qualities of Nature will compel him to act, whether he wills it or not.",
+     "ref": "gita:3.5",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "dawn",
+      "view": "wide, slow",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon",
+      "detail": "nothing on the field is still: wind in a thousand banners, the horses' flanks rising and falling, dust turning in the light",
+      "plate": "BHAGAVAD GITA 3.5 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈4:00]"
+    },
+    {
+     "key": "c03b05",
+     "speaker": "KRISHNA",
+     "say": "In this world, people are fettered by their actions, unless they are performed as a sacrifice. Therefore, O Arjuna, let your actions be done without attachment, as a sacrifice only.",
+     "ref": "gita:3.9",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the sacrificial fire",
+      "detail": "a fire altar before sunrise; hands of light offer grain, ghee, a flower into the flame; each offering rises as sparks that drift up and become the morning stars fading",
+      "plate": "BHAGAVAD GITA 3.9 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈4:10]"
+    }
+   ]
+  },
+  {
+   "id": "c04",
+   "chapter": 4,
+   "name": "Knowledge and the Renunciation of Action",
+   "sanskrit_name": "ज्ञानकर्मसंन्यासयोग",
+   "beats": [
+    {
+     "key": "c04b01",
+     "speaker": "SANJAYA",
+     "say": "Four. Knowledge, and the renouncing of action.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 4,
+      "english": "Knowledge and the Renunciation of Action",
+      "sanskrit": "ज्ञानकर्मसंन्यासयोग",
+      "transliteration": "Jnana Karma Sannyasa Yoga"
+     },
+     "music": "bell",
+     "note": "[≈4:23] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c04b02",
+     "speaker": "SANJAYA",
+     "say": "Then Krishna says something no charioteer could say: long ago, he taught this to Vivasvan, the Sun. Arjuna objects that Krishna was born in their own time.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon; the glow of the unrisen sun directly behind Krishna, so he is outlined by it",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 4.1-4.4"
+     },
+     "music": "drone",
+     "note": "[≈4:28] Reported speech for 4.1 and 4.4 (Purohit's 4.4 in the dataset reads 'Vyasawana', a corruption, so it is not quoted). Vivasvan = the Sun in the Sanskrit; Purohit glosses him as 'the founder of the Sun dynasty'."
+    },
+    {
+     "key": "c04b03",
+     "speaker": "KRISHNA",
+     "say": "I have been born again and again, from time to time; thou too, O Arjuna! My births are known to me, but yours are unknown to you.",
+     "ref": "gita:4.5",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "pure",
+      "detail": "behind the chariot, faint concentric rings of light, like ripples, each one an age; never a figure",
+      "plate": "BHAGAVAD GITA 4.5 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈4:39] 'Lord Shri Krishna replied:' dropped."
+    },
+    {
+     "key": "c04b04",
+     "speaker": "SANJAYA",
+     "say": "My king, the one who holds the reins against your sons remembers every one of his births.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "flame leaps",
+      "detail": "the king turns his head toward Sanjaya for the first time"
+     },
+     "music": "drone",
+     "note": "[≈4:50] Sanjaya's awe and the king's dread, together. Reported speech of 4.5."
+    },
+    {
+     "key": "c04b05",
+     "speaker": "KRISHNA",
+     "say": "Whenever there is a decline of righteousness and an increase of unrighteousness, O Arjuna, then I manifest Myself.",
+     "ref": "gita:4.7",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:4.7",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Whenever there is a decline of righteousness and an increase of unrighteousness, O Arjuna, then I manifest Myself.",
+      "highlight": [
+       "I manifest Myself"
+      ],
+      "hl": [
+       "manifest",
+       "myself"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 4.7 · AFTER SWAMI SIVANANDA, 1949 (EDITED TEXT)",
+      "sa_highlight": [
+       "यदा यदा हि धर्मस्य"
+      ]
+     },
+     "music": "drone",
+     "note": "[≈4:57] SIVANANDA, NOT PUROHIT, for this verse only: the card's source line and plate read 'AFTER SWAMI SIVANANDA, 1949 (EDITED TEXT)'. Why: Purohit's 4.7 ('Whenever spirituality decays and materialism is rampant ... I reincarnate myself') misrenders dharma and adharma, and calls the avatara a reincarnation, which 4.6 rules out (ajo 'pi san ... sambhavamy atma-mayaya). Sivananda's text is quoted exactly, in full; it is public domain in India since 2024 and is quoted briefly, with attribution. Light यदा यदा हि धर्मस्य on the Sanskrit line, the most-recognised words in India."
+    }
+   ]
+  },
+  {
+   "id": "c05",
+   "chapter": 5,
+   "name": "The Yoga of Renunciation",
+   "sanskrit_name": "कर्मसंन्यासयोग",
+   "beats": [
+    {
+     "key": "c05b01",
+     "speaker": "SANJAYA",
+     "say": "Five. Renunciation.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 5,
+      "english": "The Yoga of Renunciation",
+      "sanskrit": "कर्मसंन्यासयोग",
+      "transliteration": "Karma Sannyasa Yoga"
+     },
+     "music": "bell",
+     "note": "[≈5:06] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c05b02",
+     "speaker": "ARJUNA",
+     "say": "At one moment, You praise renunciation of action; at another, You praise right action. Tell me truly, I pray, which of these is more conducive to my highest welfare?",
+     "ref": "gita:5.1",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "saffron rim a little wider; backlit glow; sun below the horizon",
+      "plate": "BHAGAVAD GITA 5.1 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈5:09] Leading 'Arjuna said: My Lord!' dropped."
+    },
+    {
+     "key": "c05b03",
+     "speaker": "KRISHNA",
+     "say": "Both renunciation of action and the path of right action lead to the highest; however, right action is the better of the two.",
+     "ref": "gita:5.2",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "two roads",
+      "detail": "two paths of light leave the chariot and meet again at the same far summit",
+      "plate": "BHAGAVAD GITA 5.2 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈5:21] 'Lord Shri Krishna replied:' dropped. Brief foreshadow of the two-roads image used fully in chapter 16."
+    },
+    {
+     "key": "c05b04",
+     "speaker": "KRISHNA",
+     "say": "He who dedicates his actions to the Spirit, without any personal attachment to them, is no more tainted by sin than the water lily is wetted by water.",
+     "ref": "gita:5.10",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a lotus leaf untouched by water",
+      "detail": "rain on a temple tank; drops bead into pearls on a broad lotus leaf and roll off, leaving it dry and shining",
+      "plate": "BHAGAVAD GITA 5.10 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈5:30] Purohit says 'water lily'; the Sanskrit is padma-patram, a lotus leaf, which is what we show. The plate keeps Purohit's English."
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "chapter": 6,
+   "name": "The Yoga of Meditation",
+   "sanskrit_name": "ध्यानयोग",
+   "beats": [
+    {
+     "key": "c06b01",
+     "speaker": "SANJAYA",
+     "say": "Six. Meditation.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 6,
+      "english": "The Yoga of Meditation",
+      "sanskrit": "ध्यानयोग",
+      "transliteration": "Dhyana Yoga"
+     },
+     "music": "bell",
+     "note": "[≈5:43] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c06b02",
+     "speaker": "KRISHNA",
+     "say": "The wise man who has conquered his mind and is absorbed in the Self is like a lamp that does not flicker, as it stands sheltered from every wind.",
+     "ref": "gita:6.19",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a lamp in a windless place",
+      "detail": "a clay diya in a stone niche; outside the niche a storm tears at banners; inside, the flame stands perfectly straight",
+      "plate": "BHAGAVAD GITA 6.19 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈5:46] Hold the still flame for a full breath after the line. It rhymes with Sanjaya's lamp in the hall."
+    },
+    {
+     "key": "c06b03",
+     "speaker": "ARJUNA",
+     "say": "Verily, the mind is fickle and turbulent, obstinate, and strong; indeed, it is extremely difficult to control, like the wind.",
+     "ref": "gita:6.34",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a lamp in a windless place (the wind)",
+      "detail": "the same niche: the wind finds the alcove and the flame thrashes, bending almost flat",
+      "plate": "BHAGAVAD GITA 6.34 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈5:58] Leading 'My Lord!' dropped. Arjuna answers Krishna's lamp with the wind that threatens it (image grafted from the 'arjuna' draft, c06b03). The most human line in the Gita: a little exasperation in the voice."
+    },
+    {
+     "key": "c06b04",
+     "speaker": "SANJAYA",
+     "say": "It can be done, Krishna answers: with practice, and with letting go. Then Arjuna asks what becomes of one who tries, and fails.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a lamp in a windless place (gone out)",
+      "detail": "the same niche after the wind: the diya has gone out; a thin thread of smoke",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 6.35-6.38"
+     },
+     "music": "silence",
+     "note": "[≈6:07] Reported speech of 6.35 (Purohit: 'with practice and renunciation, it can be done'; abhyasa and vairagya) and 6.37-6.38 (Purohit 6.38: 'like a riven cloud with no support'). The wind of c06b03 has put the lamp out."
+    },
+    {
+     "key": "c06b05",
+     "speaker": "KRISHNA",
+     "say": "My beloved child! There is no destruction for him, either in this world or the next. No evil fate awaits him who treads the path of righteousness.",
+     "ref": "gita:6.40",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a lamp in a windless place (relit)",
+      "detail": "a hand of light relights the diya in the same niche; the flame stands straight again",
+      "plate": "BHAGAVAD GITA 6.40 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈6:16] 'Lord Shri Krishna replied:' dropped. The lamp that went out is relit."
+    }
+   ]
+  },
+  {
+   "id": "c07",
+   "chapter": 7,
+   "name": "Knowledge and Realisation",
+   "sanskrit_name": "ज्ञानविज्ञानयोग",
+   "beats": [
+    {
+     "key": "c07b01",
+     "speaker": "SANJAYA",
+     "say": "Seven. Knowledge and realisation.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 7,
+      "english": "Knowledge and Realisation",
+      "sanskrit": "ज्ञानविज्ञानयोग",
+      "transliteration": "Jnana Vijnana Yoga"
+     },
+     "music": "bell",
+     "note": "[≈6:28] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c07b02",
+     "speaker": "SANJAYA",
+     "say": "Now Krishna turns from the seeker to himself: to what holds the whole world together.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "wide",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "rose and saffron rim, brighter; sun still hidden; the light around Krishna slightly brighter than the sky"
+     },
+     "music": "drone",
+     "note": "[≈6:31] FACT-CHECK FIX: the draft said Krishna 'stops speaking of the seeker, and begins to speak of himself'. He has already spoken of himself (4.5-4.8; in this film c04b03 and c04b05), and chapter 7 still speaks of seekers (7.3, 7.16). Purohit 7.1: 'I will tell you how you can know Me in my full perfection.'"
+    },
+    {
+     "key": "c07b03",
+     "speaker": "KRISHNA",
+     "say": "O Arjuna! There is nothing higher than Me; all is strung on Me like rows of pearls on a thread.",
+     "ref": "gita:7.7",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "metaphor",
+      "kind": "pearls on a thread",
+      "detail": "rows of pearls, each holding a tiny world (a river, a city, a star), strung on one thread of gold that is itself almost invisible",
+      "overlay": "सूत्रे मणिगणा इव · sūtre maṇi-gaṇā iva (from the corpus, 7.7 line 2) in a card corner",
+      "plate": "BHAGAVAD GITA 7.7 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈6:38]"
+    },
+    {
+     "key": "c07b04",
+     "speaker": "KRISHNA",
+     "say": "I am the fragrance of the earth, the brilliance of fire, the life force in all beings, and the austerity of ascetics.",
+     "ref": "gita:7.9",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "pearls on a thread (the thread revealed)",
+      "detail": "first rain on dry earth; a fire's glow; breath in cold air; a seated ascetic as a far silhouette; the gold thread runs through each image",
+      "plate": "BHAGAVAD GITA 7.9 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈6:47] Hold on the gold thread after the line."
+    }
+   ]
+  },
+  {
+   "id": "c08",
+   "chapter": 8,
+   "name": "The Imperishable",
+   "sanskrit_name": "अक्षरब्रह्मयोग",
+   "beats": [
+    {
+     "key": "c08b01",
+     "speaker": "SANJAYA",
+     "say": "Eight. The imperishable.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 8,
+      "english": "The Imperishable",
+      "sanskrit": "अक्षरब्रह्मयोग",
+      "transliteration": "Akshara Brahma Yoga"
+     },
+     "music": "bell",
+     "note": "[≈6:57] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c08b02",
+     "speaker": "ARJUNA",
+     "say": "how may those who have learned self-control come to the knowledge of Thee at the time of death?",
+     "ref": "gita:8.2",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "dawn",
+      "view": "the battlefield seen from the chariot",
+      "light": "rose and saffron rim, brighter; sun still hidden",
+      "detail": "ten thousand spears at rest; a crow crossing the glow",
+      "plate": "BHAGAVAD GITA 8.2 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈7:01] Excerpt of 8.2 (the leading clause 'Who rules the spirit sacrifice in many, and' dropped). Any caption or subtitle capitalises 'How'. On a battlefield the question is not abstract."
+    },
+    {
+     "key": "c08b03",
+     "speaker": "KRISHNA",
+     "say": "Whosoever, at the time of death, thinks only of Me and, thinking thus, leaves the body and goes forth, will assuredly know Me.",
+     "ref": "gita:8.5",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a flame returning to the sun",
+      "justification": "8.5, with 8.9's 'Brilliant like the Sun, Beyond the reach of darkness'",
+      "detail": "a single small flame lifts from a lamp and rises, steady, until it is lost in a vast sun; the sun's disc turns, gains twelve spokes, and resolves into the chariot's own wheel (match cut back to the field)",
+      "plate": "BHAGAVAD GITA 8.5 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈7:08] The metaphor's sun is a world apart, not Kurukshetra's horizon, so the battlefield sun still waits for 18.73. The wheel match cut is grafted from the 'arjuna' draft (c08b03)."
+    },
+    {
+     "key": "c08b04",
+     "speaker": "KRISHNA",
+     "say": "Therefore, always meditate on Me and fight; if your mind and reason are fixed on Me, you will surely come to Me.",
+     "ref": "gita:8.7",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:8.7",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Therefore, always meditate on Me and fight; if your mind and reason are fixed on Me, you will surely come to Me.",
+      "highlight": [
+       "always meditate on Me and fight"
+      ],
+      "hl": [
+       "always",
+       "meditate",
+       "fight"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 8.7 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "युध्य च"
+      ]
+     },
+     "music": "drone",
+     "note": "[≈7:19] Light up 'and fight' in English and युध्य च (yudhya cha) in the Sanskrit: the teaching never leaves the battlefield."
+    },
+    {
+     "key": "c08b05",
+     "speaker": "SANJAYA",
+     "say": "Meditate, and fight. But how, my king, in the middle of a war?",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "steady",
+      "detail": "the king's head lifts a little"
+     },
+     "music": "drone",
+     "note": "[≈7:29] Chapter-end question (the 'arjuna' draft's c08b05). Answered at 9.27 (c09b04), where the fallen bow is lit as an offering."
+    }
+   ]
+  },
+  {
+   "id": "c09",
+   "chapter": 9,
+   "name": "The Royal Secret",
+   "sanskrit_name": "राजविद्याराजगुह्ययोग",
+   "beats": [
+    {
+     "key": "c09b01",
+     "speaker": "SANJAYA",
+     "say": "Nine. The royal secret.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 9,
+      "english": "The Royal Secret",
+      "sanskrit": "राजविद्याराजगुह्ययोग",
+      "transliteration": "Raja Vidya Raja Guhya Yoga"
+     },
+     "music": "bell",
+     "note": "[≈7:34] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c09b02",
+     "speaker": "KRISHNA",
+     "say": "Whatever a person offers to Me, be it a leaf, flower, fruit, or water, I accept it, for it is offered with devotion and a pure mind.",
+     "ref": "gita:9.26",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a leaf, a flower, a fruit and water offered",
+      "detail": "four close shots on cupped hands of light: a tulsi leaf, a marigold, a small fruit, water poured from a brass lota; each is set down before a flame",
+      "overlay": "पत्रं पुष्पं फलं तोयं · patraṁ puṣhpaṁ phalaṁ toyaṁ (from the corpus, 9.26 line 1), each word lit with its offering",
+      "plate": "BHAGAVAD GITA 9.26 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈7:38] The gentlest verse in the song: Krishna's voice at its softest."
+    },
+    {
+     "key": "c09b03",
+     "speaker": "SANJAYA",
+     "say": "A leaf. A flower. A little water. Anyone on earth could bring him that.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "soft",
+      "detail": "a single marigold petal on the floor of the hall, in the lamplight"
+     },
+     "music": "drone",
+     "note": "[≈7:50] Sanjaya's reflection on 9.26, not a quotation."
+    },
+    {
+     "key": "c09b04",
+     "speaker": "KRISHNA",
+     "say": "Whatever you do, whatever you eat, whatever you sacrifice and give, whatever austerities you practice, do all as an offering to Me.",
+     "ref": "gita:9.27",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "rose and saffron rim, brighter; sun still hidden",
+      "detail": "the fallen Gandiva on the chariot floor, lit for a moment as if it were an offering; no added words",
+      "plate": "BHAGAVAD GITA 9.27 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈7:56] Answers c08b05. Image grafted from the 'arjuna' draft (c09b03)."
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "chapter": 10,
+   "name": "The Divine Glories",
+   "sanskrit_name": "विभूतियोग",
+   "beats": [
+    {
+     "key": "c10b01",
+     "speaker": "SANJAYA",
+     "say": "Ten. The divine glories.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 10,
+      "english": "The Divine Glories",
+      "sanskrit": "विभूतियोग",
+      "transliteration": "Vibhuti Yoga"
+     },
+     "music": "bell",
+     "note": "[≈8:06] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c10b02",
+     "speaker": "SANJAYA",
+     "say": "Then, in effect, he names himself in the best of everything: among things that never move, the Himalaya; among rivers, the Ganges; among letters, A; and among secrets, silence.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the glories",
+      "justification": "10.25, 10.31, 10.33, 10.38",
+      "detail": "four cuts: the Himalaya under the first glow; the Ganges at Varanasi with lamps on the water; the letter A (अ) drawn in gold; then a dark, silent sky with nothing in it",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 10.25, 10.31, 10.33, 10.38"
+     },
+     "music": "drone",
+     "note": "[≈8:10] Paraphrase flagged on screen. Purohit: 'among things immovable, I am the Himalayas' (10.25), 'the Ganges among rivers' (10.31), 'Of letters, I am A' (10.33), 'the silence of mystery' (10.38; the Sanskrit is maunam chaivasmi guhyanam, of secrets I am silence). 'Among secrets, silence' is grafted from the 'lamps' draft. TTS: 'A' is the letter (say 'ay', or the Sanskrit 'uh' for अ); ear-test it so it is not swallowed as the article."
+    },
+    {
+     "key": "c10b03",
+     "speaker": "KRISHNA",
+     "say": "Whatever is glorious, excellent, beautiful, and mighty, be assured that it comes from a fragment of My splendor.",
+     "ref": "gita:10.41",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the glories (sparks)",
+      "detail": "each glory is revealed as a single spark struck off one fire",
+      "plate": "BHAGAVAD GITA 10.41 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈8:21]"
+    },
+    {
+     "key": "c10b04",
+     "speaker": "KRISHNA",
+     "say": "I sustain this universe with only a small part of Myself.",
+     "ref": "gita:10.42",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:10.42",
+      "lines": [
+       "en"
+      ],
+      "en_text": "I sustain this universe with only a small part of Myself.",
+      "highlight": [
+       "only a small part of Myself"
+      ],
+      "hl": [
+       "only",
+       "small",
+       "part",
+       "myself"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 10.42 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈8:29] Excerpt: the leading 'But what is the use of all these details to you, O Arjuna?' dropped."
+    },
+    {
+     "key": "c10b05",
+     "speaker": "SANJAYA",
+     "say": "Only a small part, my king. And now Arjuna wants to see the whole.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "the flame stretches tall",
+      "detail": "the light in the hall is about to change"
+     },
+     "music": "swell",
+     "note": "[≈8:34] Reports 11.3-11.4. Hook into chapter 11; the swell begins under this line and carries over the title."
+    }
+   ]
+  },
+  {
+   "id": "c11",
+   "chapter": 11,
+   "name": "The Vision of the Universal Form",
+   "sanskrit_name": "विश्वरूपदर्शनयोग",
+   "beats": [
+    {
+     "key": "c11b01",
+     "speaker": "SANJAYA",
+     "say": "Eleven. The vision of the universal form.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 11,
+      "english": "The Vision of the Universal Form",
+      "sanskrit": "विश्वरूपदर्शनयोग",
+      "transliteration": "Vishvarupa Darshana Yoga"
+     },
+     "music": "swell",
+     "note": "[≈8:40] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c11b02",
+     "speaker": "KRISHNA",
+     "say": "Yet, since you cannot see Me with mortal eyes, behold, I give you divine sight. Now, see the glory of My sovereignty.",
+     "ref": "gita:11.8",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "rose and saffron rim, brighter; sun still hidden; a line of gold opens across the frame, the same 'eyelid' as Sanjaya's sight in the prologue",
+      "plate": "BHAGAVAD GITA 11.8 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈8:44] Visual rhyme with p00b04: the same gift Sanjaya has. 11.8 opens on 'Yet': it answers the request Sanjaya has just reported (c10b05; Arjuna's own 11.4 is cut for length)."
+    },
+    {
+     "key": "c11b03",
+     "speaker": "SANJAYA",
+     "say": "My king, I have that same sight, the gift of the sage. So I saw it too.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "the lamp flares white",
+      "detail": "Sanjaya's silhouette shields his eyes"
+     },
+     "music": "silence",
+     "note": "[≈8:54] One beat of silence after 'too' before the light. Sanjaya's own sight of the form is attested in 18.77 ('I recall again and again the exceeding beauty of the Lord'; the Sanskrit is rūpam aty-adbhutaṁ hareḥ, 'that most wondrous form of Hari'). 'That same sight': 11.8 calls Arjuna's gift divyaṁ chakṣhuḥ, divine sight; Vyasa's gift of divine sight to Sanjaya is told in the Mahabharata (Bhishma Parva), while the Gita itself says only that he heard by Vyasa's grace (18.75)."
+    },
+    {
+     "key": "c11b04",
+     "speaker": "SANJAYA",
+     "say": "Could a thousand suns blaze forth together, it would be but a faint reflection of the radiance of the Lord God.",
+     "ref": "gita:11.12",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "light",
+      "mode": "thousand suns",
+      "detail": "whiteout from the centre: a thousand points of sun igniting in rings until the frame is pure gold-white; no figure, no outline, ever",
+      "overlay": "दिवि सूर्यसहस्रस्य · divi sūrya-sahasrasya (from the corpus, 11.12 line 1) in deep indigo over the white",
+      "plate": "BHAGAVAD GITA 11.12 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "swell",
+     "note": "[≈9:02] Sanjaya's verse, quoted. The film's brightest frame. Hold 3 s of pure light after the line. Krishna's cosmic form is light only, never a figure."
+    },
+    {
+     "key": "c11b05",
+     "speaker": "ARJUNA",
+     "say": "I see You, infinite in form, with faces, eyes, and limbs everywhere; with no beginning, middle, or end.",
+     "ref": "gita:11.16",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "cosmic",
+      "detail": "galaxies, rivers, mountains, cities, flocks, all turning inside the light, folding into each other; 'faces, eyes and limbs' are never drawn: only multitudes of points of light",
+      "plate": "BHAGAVAD GITA 11.16 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈9:13] Excerpt: the trailing 'O You, Lord of the Universe, whose form is universal!' is left off. Arjuna's voice in awe, almost whispering. Never draw a face, an eye or a limb: points of light only."
+    },
+    {
+     "key": "c11b06",
+     "speaker": "SANJAYA",
+     "say": "Then the vision turns, my king. In that fire Arjuna sees your sons, and Bhishma, and Drona, rushing in.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "cosmic",
+      "detail": "the gold deepens to red; far below, the two armies on the field, tiny, streaming toward the light like sparks"
+     },
+     "music": "drone",
+     "note": "[≈9:20] Narration of 11.26-11.27 (true to the text: 'All these sons of Dhritarashtra ... Bheeshma, Drona'). 'Your sons': the sentence the blind king hears about his own children. 11.26 also names 'the other warrior chiefs on our side' (sahāsmadīyair api yodha-mukhyaiḥ): Sanjaya names only the king's own, which is selective, not false, so the picture keeps BOTH armies streaming in. Drone drops a fifth, darker."
+    },
+    {
+     "key": "c11b07",
+     "speaker": "ARJUNA",
+     "say": "As rivers in flood surge furiously towards the ocean, so these heroes, the greatest among men, fling themselves into Thy flaming mouths.",
+     "ref": "gita:11.28",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "rivers entering the ocean (reversed into fire)",
+      "detail": "the rivers of chapter 2 return, but now they are rivers of sparks pouring into a sea of flame; no mouths drawn, only fire",
+      "plate": "BHAGAVAD GITA 11.28 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈9:28] Pays off c02b09: the same image, now terrible. 'Mouths' are rendered only as fire."
+    },
+    {
+     "key": "c11b08",
+     "speaker": "ARJUNA",
+     "say": "Tell me then, who are You, who wears this dreadful form?",
+     "ref": "gita:11.31",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "cosmic",
+      "detail": "the light at its most overwhelming; a small dark silhouette of Arjuna, kneeling, at the bottom of the frame",
+      "plate": "BHAGAVAD GITA 11.31 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈9:38] Excerpt: the first sentence of 11.31."
+    },
+    {
+     "key": "c11b09",
+     "speaker": "SANJAYA",
+     "say": "Krishna's answer begins with one word: kala. Time.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "cosmic",
+      "detail": "the light slows; a great wheel of seasons and stars turns behind everything"
+     },
+     "music": "silence",
+     "note": "[≈9:42] The Sanskrit of 11.32 opens kalo 'smi, 'I am Time' (corpus word meanings: kalah, time; asmi, I am). Purohit renders it 'the Destroyer', so Sanjaya names the word before the quote. The only Sanskrit word the TTS must say here: KAA-la."
+    },
+    {
+     "key": "c11b10",
+     "speaker": "KRISHNA",
+     "say": "I have shown myself to you as the Destroyer who lays waste the world and whose purpose is destruction.",
+     "ref": "gita:11.32",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:11.32",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "I have shown myself to you as the Destroyer who lays waste the world and whose purpose is destruction.",
+      "highlight": [
+       "the Destroyer"
+      ],
+      "hl": [
+       "destroyer"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 11.32 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "कालोऽस्मि"
+      ]
+     },
+     "music": "swell",
+     "note": "[≈9:46] Excerpt: the first sentence of 11.32 after 'Lord Shri Krishna replied:'. The second sentence ('In spite of your efforts ...') is left out on purpose, in the voice AND on the card: it strays from the Sanskrit rite 'pi tvam ('even without you'). Light कालोऽस्मि. The same warm voice, only slower: the terror is in the light, not in shouting."
+    },
+    {
+     "key": "c11b11",
+     "speaker": "KRISHNA",
+     "say": "I have already doomed them. Be thou my instrument, Arjuna!",
+     "ref": "gita:11.33",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:11.33",
+      "lines": [
+       "en"
+      ],
+      "en_text": "I have already doomed them. Be thou my instrument, Arjuna!",
+      "highlight": [
+       "Be thou my instrument"
+      ],
+      "hl": [
+       "thou",
+       "instrument"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 11.33 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈9:56] Excerpt: the leading 'Then gird up your loins and conquer. Subdue your foes and enjoy the kingdom in prosperity.' dropped. PLANT: the instrument is lifted at 18.73."
+    },
+    {
+     "key": "c11b12",
+     "speaker": "SANJAYA",
+     "say": "Arjuna bows, trembling, again and again, and remembers every ordinary day beside this friend.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-sinking",
+      "time": "inside the light",
+      "light": "gold just under the horizon; sky almost day; sun still hidden",
+      "detail": "the light softening; Arjuna's silhouette bowed low on the chariot floor"
+     },
+     "music": "flute",
+     "note": "[≈10:00] Narration of 11.35, then a bridge into 11.41. The flute returns, small, under the light."
+    },
+    {
+     "key": "c11b13",
+     "speaker": "ARJUNA",
+     "say": "Whatever I have said to you in rashness, taking you only as a friend and addressing you as “O Krishna! O Yadava! O Friend!” in thoughtless familiarity, without understanding your greatness;",
+     "ref": "gita:11.41",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the friend remembered",
+      "detail": "memories as faint gold silhouettes: two young men laughing by a river, a shared meal, a chariot race; no faces",
+      "justification": "11.41-11.42 name jest, sport, repose, conversation and banquets",
+      "plate": "BHAGAVAD GITA 11.41 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈10:06] The emotional peak for many listeners. Read the inner quotation as Arjuna's own remembered voice, lighter. 11.41 ends on a semicolon: run straight on into c11b14 with no gap."
+    },
+    {
+     "key": "c11b14",
+     "speaker": "ARJUNA",
+     "say": "I ask for Your forgiveness for them all, O You Who are without equal!",
+     "ref": "gita:11.42",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the friend remembered",
+      "detail": "the memories fade; Arjuna's silhouette, hands joined, inside the light",
+      "plate": "BHAGAVAD GITA 11.42 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈10:18] Excerpt of 11.42: the leading clause 'Whatever insults I have offered to You in jest, in sport, in repose, in conversation, or at a banquet, alone or in a crowd,' dropped. Completes 11.41's sentence, so the plea for forgiveness is heard (grafted from the 'lamps' draft, c11b14). Let the voice break on 'without equal'."
+    },
+    {
+     "key": "c11b15",
+     "speaker": "ARJUNA",
+     "say": "I rejoice that I have seen what no man has ever seen before; yet, O Lord! I am overwhelmed with fear. Please take on the form I know.",
+     "ref": "gita:11.45",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "light",
+      "mode": "cosmic",
+      "detail": "the light begins to draw in toward a single point at the front of the chariot",
+      "plate": "BHAGAVAD GITA 11.45 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈10:25] Excerpt: the first three sentences of 11.45."
+    },
+    {
+     "key": "c11b16",
+     "speaker": "SANJAYA",
+     "say": "Lord Shri Krishna showed Himself again in His accustomed form; and the Mighty Lord, in gentle tones, softly consoled him who had recently trembled with fear.",
+     "ref": "gita:11.50",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "gold just under the horizon; sky almost day; sun still hidden; the light gathers back into the familiar silhouette: the crown and peacock feather, the reins in his hand",
+      "plate": "BHAGAVAD GITA 11.50 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈10:36] Sanjaya's verse, quoted from 'Lord Shri Krishna showed' (the leading 'Sanjaya continued: \"Having thus spoken to Arjuna,' dropped)."
+    },
+    {
+     "key": "c11b17",
+     "speaker": "ARJUNA",
+     "say": "Seeing You in Your gentle human form, my Lord, I am myself again, calm once more.",
+     "ref": "gita:11.51",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "gold just under the horizon; sky almost day; sun still hidden; soft",
+      "plate": "BHAGAVAD GITA 11.51 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈10:47] 'Arjuna said:' dropped. A long exhale before the line."
+    },
+    {
+     "key": "c11b18",
+     "speaker": "SANJAYA",
+     "say": "The light is gone, my king. A charioteer again, the reins in his hands. But now Arjuna knows who holds them.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "back to an ordinary flame",
+      "detail": "the king has not moved; his hand is open on the throne now"
+     },
+     "music": "drone",
+     "note": "[≈10:54] Pays off the plant at c01b03 ('far more')."
+    }
+   ]
+  },
+  {
+   "id": "c12",
+   "chapter": 12,
+   "name": "The Yoga of Devotion",
+   "sanskrit_name": "भक्तियोग",
+   "beats": [
+    {
+     "key": "c12b01",
+     "speaker": "SANJAYA",
+     "say": "Twelve. Devotion.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 12,
+      "english": "The Yoga of Devotion",
+      "sanskrit": "भक्तियोग",
+      "transliteration": "Bhakti Yoga"
+     },
+     "music": "bell",
+     "note": "[≈11:03] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c12b02",
+     "speaker": "SANJAYA",
+     "say": "Arjuna asks which seeker is best. In effect, Krishna answers: fix your mind on me. If you cannot, practise. If you cannot practise, work for my sake. And if even that is too much, let go of the fruit of what you do.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "a stair of lamps",
+      "justification": "12.8-12.11: each verse offers an easier way if the last is too hard",
+      "detail": "ghat steps descending to a river before sunrise; a lamp on every step; each 'if you cannot' moves the camera one step lower, and every step is still lit",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 12.1, 12.8-12.11"
+     },
+     "music": "flute",
+     "note": "[≈11:06] Reported speech of 12.1 (which devotees are better: those who worship the personal God, or the imperishable unmanifest), then a paraphrase of 12.8-12.11, flagged on screen (Purohit: 12.8 'let your mind cling only to Me'; 12.9 'constant practice'; 12.10 'do all your acts for My sake'; 12.11 'renounce the fruits of thy actions'). The point of the picture: no step is dark."
+    },
+    {
+     "key": "c12b03",
+     "speaker": "KRISHNA",
+     "say": "He who does not harm the world, and whom the world cannot harm, who is not carried away by any impulse of joy, anger, or fear; such a one is My beloved.",
+     "ref": "gita:12.15",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:12.15",
+      "lines": [
+       "en"
+      ],
+      "en_text": "He who does not harm the world, and whom the world cannot harm, who is not carried away by any impulse of joy, anger, or fear; such a one is My beloved.",
+      "highlight": [
+       "does not harm the world",
+       "whom the world cannot harm",
+       "My beloved"
+      ],
+      "hl": [
+       "harm",
+       "world",
+       "cannot",
+       "beloved"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 12.15 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈11:23]"
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "chapter": 13,
+   "name": "The Field and Its Knower",
+   "sanskrit_name": "क्षेत्र-क्षेत्रज्ञविभागयोग",
+   "beats": [
+    {
+     "key": "c13b01",
+     "speaker": "SANJAYA",
+     "say": "Thirteen. The field and its knower.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 13,
+      "english": "The Field and Its Knower",
+      "sanskrit": "क्षेत्र-क्षेत्रज्ञविभागयोग",
+      "transliteration": "Kshetra Kshetrajna Vibhaga Yoga"
+     },
+     "music": "bell",
+     "note": "[≈11:37] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c13b02",
+     "speaker": "SANJAYA",
+     "say": "Krishna calls the body kshetra, a field, and the one who knows it kshetrajna, the knower of the field. Kshetra, my king: the word that opened your question.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the field and its knower",
+      "kicker": "OUR NOTE",
+      "detail": "a ploughed field before sunrise, furrows, sprouting rice; over it, unmoving, a still point of light that watches; then the camera rises and the field becomes the battlefield of Kurukshetra",
+      "overlay": "धर्मक्षेत्रे कुरुक्षेत्रे · dharma-kṣhetre kuru-kṣhetre, the opening words of 1.1, with क्षेत्र lit"
+     },
+     "music": "drone",
+     "note": "[≈11:41] From the Sanskrit of 13.2 (13.1 in 700-verse editions; kshetram, kshetra-jnah; Purohit renders it 'the playground of the Self', so it is not quoted). OUR NOTE kicker for the echo of 1.1 (dharma-kshetre kuru-kshetre): a true word echo, our observation. TTS: KSHAY-tra, KSHAY-trag-nya."
+    },
+    {
+     "key": "c13b03",
+     "speaker": "KRISHNA",
+     "say": "He who can see the Supreme Lord in all beings, the Imperishable amidst the perishable, he is the one who truly sees.",
+     "ref": "gita:13.28",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:13.28",
+      "lines": [
+       "en"
+      ],
+      "en_text": "He who can see the Supreme Lord in all beings, the Imperishable amidst the perishable, he is the one who truly sees.",
+      "highlight": [
+       "the Imperishable amidst the perishable",
+       "truly sees"
+      ],
+      "hl": [
+       "imperishable",
+       "amidst",
+       "perishable",
+       "truly",
+       "sees"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 13.28 (13.27 IN 700-VERSE EDITIONS) · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈11:53] NUMBERING: the corpus counts Arjuna's opening question as 13.1, so this is 13.27 in the 700-verse editions most Indian viewers own (Gita Press and others). The card's source line reads 'BHAGAVAD GITA 13.28 (13.27 IN 700-VERSE EDITIONS)'; the card header's verse number must match."
+    },
+    {
+     "key": "c13b04",
+     "speaker": "KRISHNA",
+     "say": "As the one Sun illuminates the entire earth, so the Lord illuminates the entire universe.",
+     "ref": "gita:13.34",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the sun lighting the whole world",
+      "detail": "seen from far above the earth: one sun rises over the curve of the world and its light runs across it, field after field, river after river (a world apart from Kurukshetra's horizon, where the sun still waits)",
+      "plate": "BHAGAVAD GITA 13.34 (13.33 IN 700-VERSE EDITIONS) · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈12:02] NUMBERING: 13.33 in 700-verse editions; the plate says so. TRANSLATION NOTE: Purohit widens the Sanskrit here. kṣhetraṁ kṣhetrī tathā kṛitsnaṁ prakāśhayati is 'so the knower of the field lights the whole field' (Sivananda: 'the Lord of the field (Supreme Self) illuminate the entire field'); Purohit has 'the Lord illuminates the entire universe'. Kept, as Purohit's exact and usable words; a Sivananda swap would tie the verse to the chapter's title, and is AK's call (it would add a second Sivananda credit)."
+    },
+    {
+     "key": "c13b05",
+     "speaker": "SANJAYA",
+     "say": "But what ties the knower to the field? Krishna names three cords.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "gold just under the horizon; sky almost day; sun still hidden",
+      "kicker": "OUR NOTE"
+     },
+     "music": "drone",
+     "note": "[≈12:09] Chapter-end question into 14. OUR NOTE kicker for 'cords': guna also means a strand or cord; 13.22 (13.21 in 700-verse editions; Sanskrit: guna-sango 'sya, attachment to the qualities) names them as what binds."
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "chapter": 14,
+   "name": "The Three Qualities",
+   "sanskrit_name": "गुणत्रयविभागयोग",
+   "beats": [
+    {
+     "key": "c14b01",
+     "speaker": "SANJAYA",
+     "say": "Fourteen. The three qualities.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 14,
+      "english": "The Three Qualities",
+      "sanskrit": "गुणत्रयविभागयोग",
+      "transliteration": "Gunatraya Vibhaga Yoga"
+     },
+     "music": "bell",
+     "note": "[≈12:14] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c14b02",
+     "speaker": "KRISHNA",
+     "say": "Purity, passion, and ignorance are the qualities that the law of nature brings forth. They fetter the free spirit in all beings.",
+     "ref": "gita:14.5",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "metaphor",
+      "kind": "three lights for the three gunas",
+      "detail": "three lamps in a row in the dark: a clear white flame, a restless red flame, a dim smoking wick; fine threads of light run from each to a single bright point and hold it",
+      "overlay": "सत्त्वं रजस्तम इति · sattvaṁ rajas tama iti (from the corpus, 14.5) in a card corner",
+      "plate": "BHAGAVAD GITA 14.5 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈12:18]"
+    },
+    {
+     "key": "c14b03",
+     "speaker": "SANJAYA",
+     "say": "Sattva, rajas, tamas: a clear light, a restless flame, a heavy dark. All three can bind, he says, even the bright one. How, then, does anyone go free?",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "three lights for the three gunas",
+      "detail": "on 'even the bright one' the camera finds the thread tied to the white flame too"
+     },
+     "music": "drone",
+     "note": "[≈12:29] 'Even the bright one' is from 14.6 (purity 'binds one with its yearning for happiness and illumination'). The light, flame and dark images are our picture, drawn from 14.6-14.8 and 14.11-14.13 (Purohit 14.11 'the light of knowledge', 14.12 'the impulse to act', 14.13 'Darkness'). The closing question is grafted from the 'arjuna' draft (c14b03). TTS: SUT-va, RA-jas, TA-mas."
+    },
+    {
+     "key": "c14b04",
+     "speaker": "KRISHNA",
+     "say": "And he who serves Me alone, with unwavering devotion, shall overcome the Qualities and become one with the Eternal.",
+     "ref": "gita:14.26",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "three lights for the three gunas (released)",
+      "detail": "the three threads slacken and fall; the bright point rises free above all three lamps",
+      "plate": "BHAGAVAD GITA 14.26 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈12:40]"
+    }
+   ]
+  },
+  {
+   "id": "c15",
+   "chapter": 15,
+   "name": "The Supreme Person",
+   "sanskrit_name": "पुरुषोत्तमयोग",
+   "beats": [
+    {
+     "key": "c15b01",
+     "speaker": "SANJAYA",
+     "say": "Fifteen. The supreme person.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 15,
+      "english": "The Supreme Person",
+      "sanskrit": "पुरुषोत्तमयोग",
+      "transliteration": "Purushottama Yoga"
+     },
+     "music": "bell",
+     "note": "[≈12:48] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c15b02",
+     "speaker": "SANJAYA",
+     "say": "Now he speaks of a tree that grows upside down: the sacred ashvattha, roots above, in the Highest, branches hanging into our world. It must be hewn down, he says, with the sharp axe of non-attachment.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the upside-down ashvattha tree",
+      "detail": "a vast fig tree hangs from a sky of light, roots above, branches and leaves trailing down into a world of rivers and cities; on 'axe' a single clean stroke of light cuts through the trunk",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 15.1-15.3"
+     },
+     "music": "drone",
+     "note": "[≈12:52] Reported speech of 15.1-15.3, not a quotation. The image follows the Sanskrit urdhva-mulam adhah-shakham ashvattham (roots above, branches below), not Purohit's 'seed above'. 'Hewn down by the sharp axe of non-attachment' is Purohit's 15.3 phrase, reported with 'he says'; 15.3 states no exclusivity, so the draft's 'Only one blade can cut it' is gone. FACT-CHECK FIX: 'he shows Arjuna a tree' became 'he speaks of a tree' (15.1 prāhuḥ, 'they speak of'; this is a teaching, not a vision like chapter 11), and 'roots in heaven' became 'roots above, in the Highest' (ūrdhva-mūlam, 'roots above'; Purohit 15.1 'in the Highest'): 'heaven' would suggest svarga, which the verse does not say. TTS: USH-vut-tha."
+    },
+    {
+     "key": "c15b03",
+     "speaker": "KRISHNA",
+     "say": "Neither the sun, nor the moon, nor fire shines there. Those who go there never come back. For, O Arjuna, that is my celestial home!",
+     "ref": "gita:15.6",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:15.6",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Neither the sun, nor the moon, nor fire shines there. Those who go there never come back. For, O Arjuna, that is my celestial home!",
+      "highlight": [
+       "Neither the sun, nor the moon, nor fire shines there",
+       "my celestial home"
+      ],
+      "hl": [
+       "neither",
+       "sun",
+       "moon",
+       "fire",
+       "shines",
+       "celestial",
+       "home"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 15.6 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈13:07] The one place in the film where no lamp is needed."
+    }
+   ]
+  },
+  {
+   "id": "c16",
+   "chapter": 16,
+   "name": "The Divine and the Demonic",
+   "sanskrit_name": "दैवासुरसम्पद्विभागयोग",
+   "beats": [
+    {
+     "key": "c16b01",
+     "speaker": "SANJAYA",
+     "say": "Sixteen. The divine and the demonic.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 16,
+      "english": "The Divine and the Demonic",
+      "sanskrit": "दैवासुरसम्पद्विभागयोग",
+      "transliteration": "Daivasura Sampad Vibhaga Yoga"
+     },
+     "music": "bell",
+     "note": "[≈13:19] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c16b02",
+     "speaker": "SANJAYA",
+     "say": "Two roads. Along one, he names the divine qualities: fearlessness first, then truth, compassion, forgiveness, freedom from hate. Along the other: hypocrisy, pride, cruelty.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "two roads",
+      "detail": "a road forks before sunrise: one climbs toward the glow, lined with small lamps; the other runs down into shadow; each named quality appears as a word in gold or in smoke along its road",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 16.1-16.4"
+     },
+     "music": "drone",
+     "note": "[≈13:24] Reported from Purohit's 16.1-16.4: 'Fearlessness' opens 16.1; 'truth' and 'compassion towards all' 16.2; 'forgiveness' and 'freedom from hate' 16.3; 'Hypocrisy, pride, insolence, cruelty' 16.4. Not 16.6, whose corpus entry is corrupt."
+    },
+    {
+     "key": "c16b03",
+     "speaker": "KRISHNA",
+     "say": "Godly qualities lead to liberation; godless ones lead to bondage. Do not be anxious, Prince! You have the Godly qualities.",
+     "ref": "gita:16.5",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "gold just under the horizon; sky almost day; sun still hidden; warm",
+      "detail": "Krishna's hand rests on Arjuna's shoulder in silhouette",
+      "plate": "BHAGAVAD GITA 16.5 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈13:34] Tender. Light up 'Do not be anxious, Prince!' on the plate. PLANT: the Sanskrit is ma shucah, the same two words that close 18.66 (c18b08)."
+    },
+    {
+     "key": "c16b04",
+     "speaker": "KRISHNA",
+     "say": "The gates of hell are three: lust, wrath, and avarice; they destroy the Self, so avoid them.",
+     "ref": "gita:16.21",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "two roads (the three gates)",
+      "detail": "on the shadow road, three dark gateways one behind another; the chariot's road turns away from them toward the light",
+      "plate": "BHAGAVAD GITA 16.21 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈13:42]"
+    },
+    {
+     "key": "c16b05",
+     "speaker": "SANJAYA",
+     "say": "Do not be anxious, he tells Arjuna. He will say it again, at the very end.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "gold just under the horizon; sky almost day; sun still hidden"
+     },
+     "music": "drone",
+     "note": "[≈13:50] Forward hook (grafted from the 'lamps' draft, c16b03). True to the text: 16.5 and 18.66 both carry the Sanskrit ma shucah, and Purohit renders both 'Do not be anxious'."
+    }
+   ]
+  },
+  {
+   "id": "c17",
+   "chapter": 17,
+   "name": "The Three Kinds of Faith",
+   "sanskrit_name": "श्रद्धात्रयविभागयोग",
+   "beats": [
+    {
+     "key": "c17b01",
+     "speaker": "SANJAYA",
+     "say": "Seventeen. Three kinds of faith.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 17,
+      "english": "The Three Kinds of Faith",
+      "sanskrit": "श्रद्धात्रयविभागयोग",
+      "transliteration": "Shraddhatraya Vibhaga Yoga"
+     },
+     "music": "bell",
+     "note": "[≈13:56] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c17b02",
+     "speaker": "KRISHNA",
+     "say": "Every person's faith conforms to their nature. By nature, they are full of faith. They are, in fact, what their faith makes them.",
+     "ref": "gita:17.3",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "metaphor",
+      "kind": "three lights for the three gunas (as faith)",
+      "detail": "the three lamps of chapter 14 return, now each held in a different pair of hands",
+      "overlay": "यो यच्छ्रद्धः स एव सः · yo yach-chhraddhaḥ sa eva saḥ (from the corpus, 17.3 line 2) in a card corner",
+      "plate": "BHAGAVAD GITA 17.3 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈14:00]"
+    },
+    {
+     "key": "c17b03",
+     "speaker": "KRISHNA",
+     "say": "Speech that hurts no one, that is true, pleasant to listen to, and beneficial, and the constant study of the scriptures—this is austerity of speech.",
+     "ref": "gita:17.15",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:17.15",
+      "lines": [
+       "en"
+      ],
+      "en_text": "Speech that hurts no one, that is true, pleasant to listen to, and beneficial, and the constant study of the scriptures—this is austerity of speech.",
+      "highlight": [
+       "Speech that hurts no one",
+       "true",
+       "beneficial"
+      ],
+      "hl": [
+       "speech",
+       "hurts",
+       "true",
+       "beneficial"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 17.15 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈14:11] TTS: a short breath at the dash."
+    },
+    {
+     "key": "c17b04",
+     "speaker": "SANJAYA",
+     "say": "And he names the Eternal in three syllables. Om. Tat. Sat.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "the sacrificial fire (three syllables)",
+      "detail": "ॐ तत् सत् written in gold fire above an altar flame, one syllable per word spoken",
+      "plate": "SANJAYA'S PARAPHRASE · GITA 17.23"
+     },
+     "music": "bell",
+     "note": "[≈14:22] Reported speech of 17.23 (Purohit: 'Om Tat Sat is the triple designation of the Eternal Spirit'). A soft bell on each syllable. NEVER take 17.23's Devanagari from the corpus: it has lost its opening ॐ. The three words are set from the transliteration (oṁ tat sad)."
+    }
+   ]
+  },
+  {
+   "id": "c18",
+   "chapter": 18,
+   "name": "Liberation through Renunciation",
+   "sanskrit_name": "मोक्षसंन्यासयोग",
+   "beats": [
+    {
+     "key": "c18b01",
+     "speaker": "SANJAYA",
+     "say": "Eighteen. Liberation.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "title",
+      "chapter": 18,
+      "english": "Liberation through Renunciation",
+      "sanskrit": "मोक्षसंन्यासयोग",
+      "transliteration": "Moksha Sannyasa Yoga"
+     },
+     "music": "bell",
+     "note": "[≈14:28] The card carries CHAPTER N and the Devanagari numeral; the voice says only the numeral and the name."
+    },
+    {
+     "key": "c18b02",
+     "speaker": "SANJAYA",
+     "say": "The last chapter, my king. Arjuna asks what it truly means to renounce.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "wide",
+      "pose": "arjuna-listening",
+      "time": "dawn",
+      "light": "rim burning white-gold; sun about to break; the armies still waiting"
+     },
+     "music": "drone",
+     "note": "[≈14:31] Reported speech of 18.1."
+    },
+    {
+     "key": "c18b03",
+     "speaker": "KRISHNA",
+     "say": "The sages say that renunciation is forgoing an action that springs from desire, and relinquishing is the surrender of its fruit.",
+     "ref": "gita:18.2",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:18.2",
+      "lines": [
+       "en"
+      ],
+      "en_text": "The sages say that renunciation is forgoing an action that springs from desire, and relinquishing is the surrender of its fruit.",
+      "highlight": [
+       "relinquishing is the surrender of its fruit"
+      ],
+      "hl": [
+       "relinquishing",
+       "surrender",
+       "fruit"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 18.2 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈14:36] 'Lord Shri Krishna replied:' dropped. Sannyasa and tyaga; it echoes 2.47."
+    },
+    {
+     "key": "c18b04",
+     "speaker": "KRISHNA",
+     "say": "The duty that falls to one's lot of its own accord should not be abandoned, though it may have its defects. All acts are marred by defects, just as fire is obscured by smoke.",
+     "ref": "gita:18.48",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "metaphor",
+      "kind": "fire veiled by smoke",
+      "justification": "18.48 (and 3.38)",
+      "detail": "a fire on open ground, smoke curling over it; wind clears the smoke for a moment and the fire is whole and bright beneath",
+      "plate": "BHAGAVAD GITA 18.48 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈14:45]"
+    },
+    {
+     "key": "c18b05",
+     "speaker": "KRISHNA",
+     "say": "Thus, I have revealed to you the truth, the mystery of mysteries. Having thought it over, you are free to act as you wish.",
+     "ref": "gita:18.63",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:18.63",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Thus, I have revealed to you the truth, the mystery of mysteries. Having thought it over, you are free to act as you wish.",
+      "highlight": [
+       "you are free to act as you wish"
+      ],
+      "hl": [
+       "free",
+       "act",
+       "wish"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 18.63 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "यथेच्छसि तथा कुरु"
+      ]
+     },
+     "music": "drone",
+     "note": "[≈14:59] The film's quiet revelation: after everything, a choice. Full card."
+    },
+    {
+     "key": "c18b06",
+     "speaker": "SANJAYA",
+     "say": "Free, my king. After everything, he leaves the choice to Arjuna. And then he speaks once more, as a friend.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "steady",
+      "kicker": "OUR NOTE",
+      "detail": "the king lifts his face toward the voice"
+     },
+     "music": "drone",
+     "note": "[≈15:11] OUR NOTE: our reading of 18.63 as a handing-back of the choice. The draft's 'He does not command' is gone: 18.65-18.66, which follow, are commands. Wording after the 'lamps' draft (c18b04)."
+    },
+    {
+     "key": "c18b07",
+     "speaker": "KRISHNA",
+     "say": "Listen to My last word once more, the deepest secret of all; you are My beloved, you are My friend, and I speak for your welfare.",
+     "ref": "gita:18.64",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "rim burning white-gold; sun about to break; the warmest light of the film",
+      "detail": "Krishna turned fully to Arjuna; the reins slack in one hand",
+      "plate": "BHAGAVAD GITA 18.64 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈15:19] Quoted, not reported (grafted from the 'lamps' draft, c18b05): the payoff of the friend at the reins. 18.65 is cut for length; its 'you are My beloved' is already here."
+    },
+    {
+     "key": "c18b08",
+     "speaker": "KRISHNA",
+     "say": "Give up your earthly duties, surrender yourself to Me alone. Do not be anxious; I will absolve you from all your sins.",
+     "ref": "gita:18.66",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:18.66",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Give up your earthly duties, surrender yourself to Me alone. Do not be anxious; I will absolve you from all your sins.",
+      "highlight": [
+       "surrender yourself to Me alone",
+       "Do not be anxious"
+      ],
+      "hl": [
+       "surrender",
+       "yourself",
+       "alone",
+       "anxious"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 18.66 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "मा शुचः"
+      ]
+     },
+     "music": "bell",
+     "note": "[≈15:30] Sarva-dharman parityajya. One second of total silence before the line, a single bell after it, then hold the full card. Pays off c16b05: light मा शुचः (ma shucah), the same two words as 16.5; no line is added. Purohit's 'earthly duties' renders sarva-dharman; the transliteration shows the Sanskrit."
+    },
+    {
+     "key": "c18b09",
+     "speaker": "KRISHNA",
+     "say": "O Arjuna, have you listened attentively to My words? Has your ignorance and delusion gone?",
+     "ref": "gita:18.72",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "medium",
+      "pose": "krishna-turned-teaching",
+      "time": "dawn",
+      "light": "rim burning white-gold; sun about to break",
+      "plate": "BHAGAVAD GITA 18.72 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "drone",
+     "note": "[≈15:41] Asked gently, almost smiling. Then one held breath of silence."
+    },
+    {
+     "key": "c18b10",
+     "speaker": "ARJUNA",
+     "say": "My Lord! O Immutable One! My delusion has fled. By Your Grace, O Changeless One, the light has dawned. My doubts have been dispelled, and I stand before You ready to do Your will.",
+     "ref": "gita:18.73",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "chariot",
+      "camera": "close then wide",
+      "pose": "arjuna-rising-bow-raised",
+      "time": "sunrise",
+      "light": "the disc of the sun clears the horizon for the first time in the film, exactly on 'the light has dawned'; gold floods the field",
+      "detail": "Arjuna rises and lifts the Gandiva from the chariot floor; on 'ready to do Your will' it is raised into the sun",
+      "plate": "BHAGAVAD GITA 18.73 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "conch",
+     "note": "[≈15:48] 'Arjuna replied:' and the quotation marks dropped. Arjuna's strongest voice in the film. Pays off the cold open (p00b01), Krishna's 'stand up' (c02b02) and 'Be thou my instrument' (c11b11). The bow rising is staging: the verse says he stands ready; it does not describe the bow. Panchajanya's conch on the last word (staging too: the text sounds no conch here; Arjuna's own conch is Devadatta, 1.15)."
+    }
+   ]
+  },
+  {
+   "id": "epilogue",
+   "chapter": 19,
+   "name": "Sanjaya's Answer",
+   "sanskrit_name": "सञ्जय उवाच",
+   "beats": [
+    {
+     "key": "e19b01",
+     "speaker": "SANJAYA",
+     "say": "As I recall again and again the exceeding beauty of the Lord, I am filled with amazement and joy.",
+     "ref": "gita:18.77",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "the lamp burned low",
+      "detail": "first grey of morning at the high windows; a faint gold afterglow of the thousand suns on Sanjaya's silhouette",
+      "plate": "BHAGAVAD GITA 18.77 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)"
+     },
+     "music": "flute",
+     "note": "[≈16:03] Back in the hall: the frame closes. Pays off c11b03 ('So I saw it too')."
+    },
+    {
+     "key": "e19b02",
+     "speaker": "SANJAYA",
+     "say": "You asked me what happened on that field, my king. You have not said a word since.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "sanjaya",
+      "lamp": "low",
+      "detail": "the king's silhouette, very still"
+     },
+     "music": "silence",
+     "note": "[≈16:11] True to the text: Dhritarashtra speaks only 1.1. Silence under the line."
+    },
+    {
+     "key": "e19b03",
+     "speaker": "SANJAYA",
+     "say": "Wherever Lord Shri Krishna, the Prince of Wisdom, and Arjuna, the Great Archer, are, I am certain that good fortune, victory, happiness, and righteousness will follow.",
+     "ref": "gita:18.78",
+     "show_sanskrit": true,
+     "scene": {
+      "type": "verse",
+      "ref": "gita:18.78",
+      "lines": [
+       "sa",
+       "tr",
+       "en"
+      ],
+      "en_text": "Wherever Lord Shri Krishna, the Prince of Wisdom, and Arjuna, the Great Archer, are, I am certain that good fortune, victory, happiness, and righteousness will follow.",
+      "highlight": [
+       "good fortune, victory, happiness, and righteousness"
+      ],
+      "hl": [
+       "good",
+       "fortune",
+       "victory",
+       "happiness",
+       "righteousness"
+      ],
+      "place": "center",
+      "src": "BHAGAVAD GITA 18.78 · AFTER SHRI PUROHIT SWAMI, 1935 (EDITED TEXT)",
+      "sa_highlight": [
+       "यत्र योगेश्वरः कृष्णो"
+      ]
+     },
+     "music": "conch",
+     "note": "[≈16:19] The last verse of the Gita, Sanjaya's. Conch at the end of the line, then the drone alone; hold the card 4 s and let the conch ring out fully. For this king the verse is also the verdict on his sons: let the silence say it. The corpus's trailing '।।18.78।' marker is stripped from the card."
+    },
+    {
+     "key": "e19b04",
+     "speaker": "SANJAYA",
+     "say": "Eighteen chapters. Seven hundred verses. One conversation between two friends; and one of them held the reins.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "field",
+      "time": "sunrise",
+      "view": "wide, slow pull back",
+      "light": "full morning sun over Kurukshetra",
+      "detail": "the chariot between the armies in full sunlight: four white horses, the pennant streaming, Arjuna standing with the bow raised, Krishna at the reins"
+     },
+     "music": "drone",
+     "note": "[≈16:33] Sanjaya's closing line (after the 'arjuna' draft's c19b04); 'one of them held the reins' answers c11b18, so the friend is not undersold. Seven hundred is the traditional count (the corpus has 701 because it counts 13.1). Then a single bell, then the disclosure."
+    },
+    {
+     "key": "e19b05",
+     "speaker": "SANJAYA",
+     "say": "A note on how we work. Every verse you see is shown with its chapter and verse, in a public domain translation named on screen. Where we add our own reading, it is marked as our note. The pictures are drawn in code, the voice is synthetic, and nothing here speaks for God.",
+     "show_sanskrit": false,
+     "scene": {
+      "type": "end",
+      "lines": [
+       "The Bhagavad Gita, as Sanjaya told it",
+       "English verses after Shri Purohit Swami, 1935 (edited text) · Gita 4.7 after Swami Sivananda, 1949 (edited text)",
+       "Every verse with its chapter and verse · Our reading is marked OUR NOTE",
+       "Dharma · chapter and verse"
+      ],
+      "strips": [
+       "VERSE + CHAPTER ON SCREEN",
+       "OUR READING = OUR NOTE",
+       "DRAWN IN CODE · SYNTHETIC VOICE",
+       "NOBODY HERE SPEAKS FOR GOD"
+      ]
+     },
+     "music": "bell",
+     "note": "[≈16:42] House rule 7: the standing disclosure, verbatim DISC_SAY from scripts/dharma/dharma_scripts.py (checked by this script), spoken out of character by the narrator voice over the end card, after a single bell, on a low drone. It sits at the end so nothing breaks the cold open; AK to confirm the placement (DISC_SAY is marked 'Spoken once, early'). See writer notes for the adapted wording for four voices, which needs AK's approval before it replaces the verbatim line."
+    }
+   ]
+  }
+ ],
+ "id": "gita"
+}

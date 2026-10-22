@@ -4,6 +4,7 @@
   python3 scripts/katha/build_film.py scripts/katha/gita_film.json            # estimate timings (no audio)
   python3 scripts/katha/build_film.py scripts/katha/gita_film.json --tts      # MiniMax narration per beat (MINIMAX_API_KEY)
   python3 scripts/katha/build_film.py --list-voices                          # the English system voices on the account
+  python3 scripts/katha/build_film.py --check [public/katha/gita/data.json]  # every beat -> a real scene (also run on each build)
 
 The script (written for AK's request, 21 Oct 2026: "recreate Bhagavad Geeta by Krishna to Arjuna, premium, rich, poetic")
 is a list of movements (prologue, chapters 1-18, epilogue) of beats {key, speaker, say, ref, show_sanskrit, scene, music}.
@@ -38,7 +39,7 @@ def sil_licence_problems():
             bad.append(f"{p.name}: {c or 'no credit field'}")
     return bad
 CREDITS = [
-    "Verses: Shri Purohit Swami (1935), edited text, from the Bhagavad Gita dataset at github.com/gita/gita",
+    "Verses: Shri Purohit Swami (1935) and, for 4.7, Swami Sivananda (1949), edited texts, from the Bhagavad Gita dataset at github.com/gita/gita",
     "Horses traced from the horse model by Quaternius (CC0) · Birds drawn in code",
     "Type: Tiro Devanagari Sanskrit, Cormorant Garamond and Cinzel, SIL Open Font License",
     "Music: tanpura, bansuri and conch synthesised in code · Made in code with Remotion",
@@ -75,6 +76,7 @@ POSE_MAP = [                  # script wording -> ChariotRig pose
 ]
 KIND_MAP = [                  # metaphor wording -> (kind, variant)
     (r"windless.*gone out|lamp.*out\b|\(gone out\)", ("lamp", "out")),
+    (r"\(the wind\)|wind finds|flicker|thrash", ("lamp", "flicker")),
     (r"stair of lamps|row of lamps|lamps? (lit|lighting)", ("lamp", "row")),
     (r"windless|lamp", ("lamp", "still")),
     (r"flame return|flame.*sun|path of light", ("flame-sun", None)),
@@ -121,36 +123,224 @@ def check_quote(beat):
         if beat["speaker"] == "SANJAYA" or norm(beat["say"]) in norm(v["en"]): return None
     return "not a contiguous excerpt of the corpus text"
 
+# Refinements that read the beat's free-text "detail" (the shot as the writer saw it) once the kind is known.
+DETAIL_VARIANT = [            # (kind, detail regex, variant) applied only when the kind map gave no variant
+    ("fire", r"offer|ghee|grain", "offering"),
+    ("fire", r"\bash(es)?\b|burn(s|ed)? out", "ash"),
+    ("sword", r"\bknot\b", "knot"),
+    ("ashvattha", r"\baxe\b|\bcut", "cut"),
+]
+GLORY_ITEMS = [(r"himalaya|meru|peak|mountain", "himalaya"), (r"ganga|ganges|river", "ganga"), (r"\bsun\b", "sun"),
+               (r"ocean|\bsea\b", "ocean"), (r"\blion", "lion"), (r"ashvattha|fig tree|peepal", "ashvattha"),
+               (r"letter", "letter"), (r"silen|nothing in it", "silence")]
+DEVA = re.compile(r"[ऀ-ॿ][ऀ-ॿ‌‍]*")
+HALL_VARIANTS = ("listen", "alone", "dawn")
+LIGHT_VARIANTS = ("dawn", "full", "fade", "friend")
+
+def deva_words(t):
+    return DEVA.findall(str(t or ""))
+
+def clean_sa(lines):
+    """Card Devanagari from the corpus: drop the 'X उवाच' tag (fused into the verse in chapters 12-18), the trailing
+    '।।18.78।' marker, and split fused half-verses at the danda (the writer's CARD AND PLATE BUILD (c))."""
+    out = []
+    for l in lines:
+        l = re.sub(r"।।\s*\d+\.\d+\s*।?", "", l).strip()
+        l = re.sub(r"^(श्री\s*भगवानुवाच|अर्जुन\s*उवाच|सञ्जय\s*उवाच|धृतराष्ट्र\s*उवाच)\s*", "", l).strip()
+        for part in re.split(r"(?<=।)", l):
+            part = part.strip()
+            if part: out.append(part)
+    return out
+
+def clean_tr(lines):
+    return [l for l in lines if not re.fullmatch(r"\s*(śhrī[- ]bhagavān|arjuna|sañjaya|dhṛitarāśhtra)\s+uvācha\s*", l)]
+
+def tnorm(t):
+    return re.sub(r"\s+", " ", unicodedata.normalize("NFC", str(t)).replace("‘", "’").replace("'", "’")).strip().lower()
+
+def parse_overlay(text, refs):
+    """scene.overlay is 'देवनागरी · transliteration (stage note...)'. Returns {sa, en, hl, at} for the film's Label, with
+    the Devanagari and the transliteration both checked against the corpus lines of the cited verse(s); None if absent.
+    hl: a Devanagari fragment the note asks to light ('with क्षेत्र lit')."""
+    if not text: return None
+    head, _, rest = str(text).partition(" · ")
+    sa = " ".join(deva_words(head)) if deva_words(head) else ""
+    sas, trs = [], []
+    for r in refs:
+        try: v = corpus_ref(r, author=21)
+        except Exception: continue
+        sas += clean_sa(v["sa"]); trs += clean_tr(v["tr"])
+    corpus_tr = tnorm(" ".join(trs)); toks = rest.split(); en = ""
+    for k in range(len(toks), 0, -1):                       # the longest leading run of words that is corpus transliteration
+        cand = " ".join(toks[:k]).rstrip(",;:")
+        if tnorm(cand) and tnorm(cand) in corpus_tr: en = cand; break
+    m = re.search(r"with\s+(\S+)\s+lit", rest)
+    hl = m.group(1) if m and deva_words(m.group(1)) else ""
+    ok = bool(sa) and any(sa in l or sa.replace(" ", "") in l.replace(" ", "") for l in sas)
+    return {"sa": sa, "en": en, "hl": hl, "checked": ok and bool(en)}
+
+def sun_for(sc, mv, b):
+    """Kurukshetra's one dawn (the director's sky rule): the disc stays below the horizon (scenes put it at y = 700) with a
+    rim that warms chapter by chapter, and clears it only on 'the light has dawned' (18.73) and after."""
+    txt = (str(sc.get("light", "")) + " " + str(sc.get("time", ""))).lower()
+    if re.search(r"clears the horizon|sunrise|full morning sun|morning sun", txt): return [960, 590], "dawn", 0.6
+    ch = int(mv.get("chapter", 0))
+    y = 790 if ch <= 1 else 772 if ch <= 6 else 756 if ch <= 11 else 744 if ch <= 17 else 732
+    if re.search(r"about to break|burning", txt): y = 728
+    return [960, y], "dawn", 0.35
+
 def scene_for(b, mv):
     sc = dict(b.get("scene") or {}); t = sc.get("type", "chariot")
     desc = " ".join(str(sc.get(k, "")) for k in ("pose", "kind", "camera", "description", "what")).lower().replace("-", " ").replace("_", " ")
+    detail = str(sc.get("detail", "")).lower()
     if t == "chariot" or (t == "field" and "pose" in sc):
         pose = next((p for rx, p in POSE_MAP if re.search(rx, desc)), "teach")
         cam = str(sc.get("camera", "medium"))
         if t == "chariot" and cam == "wide": t = "field"
         sc.update(type=t, pose=pose)
-        if t == "chariot" and cam == "close": sc.update(zoomFrom=1.5, zoomTo=1.58, focusX=880, focusY=430)
-        tod = str(sc.get("time", sc.get("time_of_day", sc.get("light", "")))).lower()
-        sc["mood"] = "night" if "night" in tod else "dawn" if ("dawn" in tod or "morning" in tod) else "gold" if ("noon" in tod or "gold" in tod) else sc.get("mood", "dusk")
+        # close: the two figures fill ~45% of the frame; the pennant stays under the lamps row and the chapter line, the
+        # feet above the captions (zoom 1.36 -> 1.42 about (880, 472))
+        if t == "chariot" and cam.startswith("close"): sc.update(zoomFrom=1.36, zoomTo=1.42, focusX=880, focusY=472)
+    if t in ("chariot", "field") and "sun" not in sc:
+        sc["sun"], mood, rays = sun_for(sc, mv, b)
+        sc.setdefault("mood", mood); sc.setdefault("rays", rays)
+        tod = str(sc.get("time", "")).lower()
+        if "night" in tod: sc["mood"] = "night"
     elif t == "metaphor":
         hit = next((kv for rx, kv in KIND_MAP if re.search(rx, desc)), (desc.split("(")[0].strip().replace(" ", "-"), None))
         if hit[0] not in KINDS: print(f"  note: metaphor '{desc.strip()}' has no scene yet (mapped to '{hit[0]}')")
         sc["kind"], var = hit
         if var and not sc.get("variant"): sc["variant"] = var
+        if not sc.get("variant"):
+            sc["variant"] = next((v for k, rx, v in DETAIL_VARIANT if k == sc["kind"] and re.search(rx, detail)), None) or sc.pop("variant", None)
+            if sc.get("variant") is None: sc.pop("variant", None)
+        if sc["kind"] == "fire" and sc.get("variant") == "syllables" and not sc.get("labels"):
+            sc["labels"] = deva_words(sc.get("detail"))[:3]            # ॐ तत् सत् as the writer set them (never 17.23's corpus line)
+        if sc["kind"] == "glories" and sc.get("variant") != "sparks" and not sc.get("items"):
+            pos = sorted((m.start(), item) for rx, item in GLORY_ITEMS for m in [re.search(rx, detail)] if m)
+            items = list(dict.fromkeys(i for _, i in pos))
+            if items: sc["items"] = items
+            if "letter" in items and not sc.get("text") and deva_words(sc.get("detail")): sc["text"] = deva_words(sc.get("detail"))[0]
+        if sc["kind"] == "light":
+            sc["variant"] = sc.get("variant") or "full"
     elif t == "light":
-        d = desc + " " + str(sc.get("variant", ""))
-        sc["variant"] = sc.get("variant") or ("fade" if re.search(r"fade|soft|gentle|return", d) else "dawn" if re.search(r"begin|dawn|point", d) else "friend" if "friend" in d else "full")
+        d = (desc + " " + str(sc.get("mode", "")) + " " + detail + " " + str(sc.get("variant", ""))).lower()
+        if sc.get("variant") not in LIGHT_VARIANTS:
+            sc["variant"] = ("friend" if "friend" in d else
+                             "fade" if re.search(r"draw in|gathers? back|single point|fade|returns?\b", d) else
+                             "dawn" if re.search(r"eyelid|opens|faint|ripple|begin|point of light is born", d) else "full")
+        if "tone" not in sc:                                   # 11.26-11.31: the gold deepens towards red, then cools at 'kala'
+            sc["tone"] = 0.7 if re.search(r"deepens to red|red\b", d) else 0.45 if re.search(r"most overwhelming|dreadful", d) else 0.3 if re.search(r"slows|wheel", d) else 0
+            if not sc["tone"]: sc.pop("tone")
+    elif t == "sanjaya":
+        lamp = str(sc.get("lamp", "")).lower()
+        if sc.get("variant") not in HALL_VARIANTS:              # explicit, so the hall never has to guess from the prose
+            sc["variant"] = ("dawn" if int(mv.get("chapter", 0)) >= 19 or re.search(r"gr[ae]y|morning|dawn", detail) else
+                             "alone" if re.search(r"\balone\b|empty hall", detail + " " + lamp) else "listen")
     elif t == "title":
-        sc.update(chapter=mv["chapter"], name=sc.get("name") or mv["name"], sanskrit=sc.get("sanskrit") or mv.get("sanskrit_name", ""))
-    elif t == "verse" or (b.get("ref") and b["speaker"] in ("KRISHNA", "ARJUNA", "DHRITARASHTRA") and b.get("show_sanskrit")):
+        name = sc.get("name") or sc.get("english") or mv["name"]
+        sc.update(chapter=mv["chapter"], name=name, sanskrit=sc.get("sanskrit") or mv.get("sanskrit_name", ""))
+    elif t == "verse":
         r = b.get("ref") or sc.get("ref")
         v = corpus_ref(r if r.startswith("gita:") else f"gita:{r}", author=21)
-        sc = dict(type="verse", ref=r, sa=v["sa"], tr=v["tr"], en=b["say"] if b["speaker"] != "SANJAYA" else v["en"], src=v["src"], hl=sc.get("hl") or sc.get("light_up") or [])
+        en = sc.get("en_text") or (b["say"] if b["speaker"] != "SANJAYA" else v["en"])
+        out = dict(type="verse", ref=r, sa=clean_sa(v["sa"]), tr=clean_tr(v["tr"]), en=en, src=sc.get("src") or v["src"],
+                   hl=sc.get("hl") or sc.get("light_up") or [], lines=sc.get("lines") or ["sa", "tr", "en"])
+        if sc.get("sa_highlight"): out["sa_hl"] = sc["sa_highlight"]
+        if sc.get("highlight"): out["highlight"] = sc["highlight"]          # editor's phrases; the card lights out["hl"] words
+        if sc.get("enAt") is not None: out["enAt"] = sc["enAt"]
+        sc = out
+    # scene.overlay (the cited Devanagari on a non-card scene) -> the film's Label, or the scene's own words where the
+    # scene already draws them (the offering lights each word with its gift).
+    if sc.get("overlay") and sc.get("type") != "verse":
+        refs = [b["ref"]] if b.get("ref") else []
+        refs += [f"gita:{m}" for m in re.findall(r"\b(\d{1,2}\.\d{1,2})\b", str(sc["overlay"]))]
+        lab = parse_overlay(sc["overlay"], list(dict.fromkeys(refs)))
+        if lab and sc.get("kind") == "offering" and re.search(r"each word lit", str(sc["overlay"])) and not sc.get("labels"):
+            sc["labels"] = lab["sa"].split()
+        elif lab and lab["sa"]:
+            sc["label"] = {k: lab[k] for k in ("sa", "en", "hl") if lab[k]}
+        if lab and not lab["checked"]: print(f"  note: {b['key']} overlay not matched to the corpus: {sc['overlay'][:60]}")
     return sc
+
+# Every key a beat's scene may carry, and what reads it (the audit; check_scenes() fails on a key not listed here).
+SCENE_KEYS = {
+    "type": "Film.tsx -> KATHA_SCENES (scenes.tsx)", "kind": "scenes.tsx Metaphor -> METAPHORS (metaphors/index.ts)",
+    "variant": "the family scene for the kind / hall / light", "mood": "every scene's sky", "pose": "ChariotScene / FieldScene (ChariotRig)",
+    "sun": "ChariotScene / FieldScene", "rays": "ChariotScene / FieldScene", "conch": "FieldScene rings", "zoomFrom": "ChariotScene", "zoomTo": "ChariotScene",
+    "focusX": "ChariotScene", "focusY": "ChariotScene", "lamp": "hall SanjayaHall (lampState)", "detail": "hall SanjayaHall (poses); otherwise editor note",
+    "labels": "offering / fire syllables / two-roads / gunas / glories words", "items": "cosmos Glories", "text": "cosmos Glories letter", "tone": "cosmos LightScene",
+    "plate": "Film.tsx Plate (attribution under the captions)", "kicker": "Film.tsx Plate ('OUR NOTE' tag); TitleCard top line on titles",
+    "label": "Film.tsx -> stage.tsx Label (the cited Devanagari, from overlay)", "overlay": "editor note; parsed into label or labels by the builder",
+    "strips": "Film.tsx EndStrips", "lines": "VerseCard (which of sa/tr/en) / hall End credit lines", "title": "hall End", "subtitle": "hall End",
+    "ref": "VerseCard header", "sa": "VerseCard", "tr": "VerseCard", "en": "VerseCard", "src": "VerseCard source line", "hl": "VerseCard lit words",
+    "sa_hl": "VerseCard lit Sanskrit", "highlight": "editor note (phrases; hl holds the words)", "enAt": "VerseScene",
+    "chapter": "TitleCard numeral", "name": "TitleCard name", "sanskrit": "TitleCard Sanskrit name", "english": "editor note (copied into name)",
+    "transliteration": "TitleCard small caps under the Sanskrit", "line": "TitleCard italic line (main title)",
+    "camera": "builder (close -> zoom, wide -> field)", "view": "editor note", "time": "builder (sun, mood)", "light": "builder (sun stage); editor note",
+    "mode": "builder (light variant)", "justification": "editor note", "king": "editor note", "sanjaya": "editor note", "setting": "editor note",
+    "place": "editor note (every card is centred)", "captions": "Film.tsx Caption (false hides it)",
+}
+
+def tsx_registry():
+    """The scene registries as the code has them: KATHA_SCENES types, METAPHORS kinds by family, and per kind the variant
+    literals its component (and the components it renders) compares against."""
+    K = SIL.parent; reg = {"types": {}, "kinds": {}, "variants": {}, "glory_items": set()}
+    sc = (K / "scenes.tsx").read_text()
+    m = re.search(r"KATHA_SCENES[^=]*=\s*\{(.*?)\};", sc, re.S)
+    for k, v in re.findall(r"([\w-]+)\s*:\s*([^,}]+)", m.group(1)): reg["types"][k.strip()] = v.strip()
+    idx = (K / "metaphors" / "index.ts").read_text()
+    fams = re.findall(r'import\s*\{\s*SCENES as (\w+)\s*\}\s*from\s*"\./(\w+)"', idx)
+    lit = lambda body: set(re.findall(r'(?:variant|\bv\b|\bmode\b)(?:\s*\|\|\s*"")?\)?\s*[!=]==\s*"([\w-]+)"', body)) | set(re.findall(r'(?:s\??\.variant|\bv\b)\s*(?:\|\||\?\?)\s*"([\w-]+)"', body)) | {x for arr in re.findall(r'\[((?:\s*"[\w-]+"\s*,?)+)\]\.includes\(\s*(?:s\??\.variant|\bv\b|variant|mode)\s*\)', body) for x in re.findall(r'"([\w-]+)"', arr)}
+    for alias, fname in fams:
+        src = (K / "metaphors" / f"{fname}.tsx").read_text()
+        m = re.search(r"export const SCENES[^=]*=\s*\{(.*?)\};", src, re.S)
+        tops = {mm.group(1): mm.start() for mm in re.finditer(r"^(?:export )?const (\w+)", src, re.M)}
+        starts = sorted(tops.values()) + [len(src)]
+        body_of = lambda name: src[tops[name]:next(x for x in starts if x > tops[name])] if name in tops else ""
+        def collect(name, seen):
+            if name in seen or name not in tops: return set()
+            seen.add(name); body = body_of(name); out = lit(body)
+            for c in set(re.findall(r"<([A-Z]\w+)", body)) | set(re.findall(r"\b([A-Z]\w+)\(", body)):
+                if c in tops: out |= collect(c, seen)
+            return out
+        for k, comp in re.findall(r'"?([\w-]+)"?\s*:\s*(\w+)', m.group(1)):
+            reg["kinds"][k] = fname; reg["variants"][k] = collect(comp, set())
+        if fname == "cosmos":
+            gi = re.search(r"GITEMS[^=]*=\s*\{(.*?)\};", src, re.S); ga = re.search(r"GALIAS[^=]*=\s*\{(.*?)\};", src, re.S)
+            reg["glory_items"] = set(re.findall(r"(\w+)\s*:", gi.group(1))) | set(re.findall(r"(\w+)\s*:", ga.group(1))) | {"letter"}
+    reg["type_targets"] = {k: re.search(r'typeScene\("([\w-]+)"\)', v).group(1) for k, v in reg["types"].items() if "typeScene" in v}
+    return reg
+
+def check_scenes(beats):
+    """Every beat must resolve to a real scene: its type in KATHA_SCENES, a metaphor kind in METAPHORS, a variant the
+    scene really draws (not a silent default), glories items the scene has, and every quoted beat attributed on screen."""
+    reg, bad = tsx_registry(), []
+    for b in beats:
+        s, key = b["scene"], b["key"]; t = s.get("type")
+        if t not in reg["types"]: bad.append(f"{key}: scene type '{t}' is not in KATHA_SCENES"); continue
+        kind = s.get("kind") if t == "metaphor" else reg["type_targets"].get(t)
+        if t == "metaphor" or t in reg["type_targets"]:
+            if kind not in reg["kinds"]: bad.append(f"{key}: {t} kind '{kind}' is not in METAPHORS"); continue
+            v = s.get("variant")
+            if v and v not in reg["variants"][kind]: bad.append(f"{key}: {kind} has no variant '{v}' (it knows {sorted(reg['variants'][kind]) or 'none'})")
+        if kind == "glories" and s.get("items"):
+            miss = [i for i in s["items"] if i not in reg["glory_items"]]
+            if miss: bad.append(f"{key}: glories items {miss} are not drawn")
+        for k in s:
+            if k not in SCENE_KEYS: bad.append(f"{key}: scene key '{k}' is read by nothing (add it to SCENE_KEYS with its reader)")
+        if b["speaker"] in ("KRISHNA", "ARJUNA", "DHRITARASHTRA") and t != "verse" and not s.get("plate"):
+            bad.append(f"{key}: {b['speaker']} line with no verse card and no plate (house rule 1)")
+    return bad
 
 def main():
     a = sys.argv[1:]
     if "--list-voices" in a: return list_voices()
+    if "--check" in a:                     # check an existing data.json against the scene registries, without building
+        files = [x for x in a if not x.startswith("--")] or [str(ROOT / "public" / "katha" / "gita" / "data.json")]
+        bad = check_scenes(json.load(open(files[0]))["beats"])
+        print("SCENE PROBLEMS:\n  " + "\n  ".join(bad) if bad else f"{files[0]}: every beat resolves to a real scene and variant; every quoted line is attributed on screen")
+        sys.exit(1 if bad else 0)
     files = [x for x in a if not x.startswith("--")]; voice = "--tts" in a
     src = pathlib.Path(files[0]); S = json.load(open(src)); fid = S.get("id") or src.stem
     out = ROOT / "public" / "katha" / fid; out.mkdir(parents=True, exist_ok=True)
@@ -164,6 +354,11 @@ def main():
             if p: problems.append(f"{b['key']} {b['speaker']} {b.get('ref')}: {p}")
             sc = scene_for(b, mv)
             if "conch" in str(b.get("music", "")).lower() and sc.get("type") in ("field", "chariot"): sc["conch"] = True
+            if b["speaker"] in ("KRISHNA", "ARJUNA", "DHRITARASHTRA") and sc.get("type") != "verse" and not sc.get("plate") and b.get("ref"):
+                sc["plate"] = corpus_ref(b["ref"] if b["ref"].startswith("gita:") else f"gita:{b['ref']}", author=21)["src"]
+                print(f"  note: {b['key']} had no plate; using the corpus source line")
+            if sc.get("type") == "title" and int(mv.get("chapter", 0)) == 0 and not sc.get("kicker"):
+                sc["kicker"] = S["title"].split(":")[0].upper()
             if sc.get("type") == "end":
                 sc.setdefault("title", S["title"].split(":")[0]); sc.setdefault("subtitle", S.get("subtitle") or "as Krishna told it to Arjuna"); sc.setdefault("lines", CREDITS)
             words = len(re.findall(r"\w+", b["say"]))
@@ -176,7 +371,7 @@ def main():
             else:
                 sec = words / WPS + pad + (0.7 if sc["type"] == "verse" else 0); audio = None   # estimate until voiced
             sec = max(sec, 4.5 if sc["type"] == "title" else 3.0)
-            beats.append(dict(key=b["key"], part=ch, chapter=ch if 1 <= ch <= 18 else 0, movement=label if 1 <= ch <= 18 else "", speaker=b["speaker"], say=b["say"],
+            beats.append(dict(key=b["key"], part=ch, chapter=ch if 1 <= ch <= 18 else 0, movement=label if 1 <= ch <= 18 else "", speaker=b["speaker"], say=b["say"], ref=b.get("ref"),
                               sec=round(sec, 2), audio=audio, voice=v if audio else None, scene=sc, music=b.get("music", "")))
     data = dict(id=fid, title=S["title"], subtitle=S.get("subtitle", ""), beats=beats, music="dharma/tanpura.wav", bell="dharma/bell.wav")
     json.dump(data, open(out / "data.json", "w"), ensure_ascii=False, indent=1)
@@ -188,7 +383,12 @@ def main():
         if lab not in seen: seen.add(lab); marks.append((t, lab.replace("Chapter ", "").replace(" · ", ". ", 1) if b["movement"] else lab))
         t += beat_frames(b)
     stamp = lambda fr: f"{fr // FPS // 60}:{fr // FPS % 60:02d}"
-    desc = [S.get("description", "").strip(), "", *[f"{stamp(fr)} {lab}" for fr, lab in marks], "", "Credits", *[f"- {c}" for c in CREDITS]]
+    # the script's description carries the writer's estimated chapter list; keep its labels, use the built timings
+    body = [l for l in S.get("description", "").strip().split("\n") if not re.match(r"^\d+:\d\d\s", l)]
+    named = [re.sub(r"^\d+:\d\d\s+", "", l) for l in S.get("description", "").split("\n") if re.match(r"^\d+:\d\d\s", l)]
+    if len(named) == len(marks): marks = [(fr, nm) for (fr, _), nm in zip(marks, named)]
+    while body and not body[-1].strip(): body.pop()
+    desc = ["\n".join(body).strip(), "", *[f"{stamp(fr)} {lab}" for fr, lab in marks], "", "Credits", *[f"- {c}" for c in CREDITS]]
     if S.get("youtube_title_options"): desc = ["Title options: " + " | ".join(S["youtube_title_options"]), ""] + desc
     (out / "description.txt").write_text("\n".join(desc).strip() + "\n")
     nv = sum(1 for b in beats if b["audio"])
@@ -197,6 +397,9 @@ def main():
     print("scenes:", "; ".join(":".join(x for x in k if x) for k in kinds))
     if problems: print("QUOTE PROBLEMS:"); [print("  " + p) for p in problems]
     else: print("quotes: every Krishna/Arjuna/Dhritarashtra line is corpus text")
+    sbad = check_scenes(beats)
+    if sbad: print("SCENE PROBLEMS:"); [print("  " + p) for p in sbad]
+    else: print("scenes: every beat resolves to a real scene and variant; every quoted line is attributed on screen")
     bad = sil_licence_problems()
     if bad: print("BLOCKER: these silhouettes are not cleared for a monetised channel:"); [print("  " + b) for b in bad]
     else: print("silhouettes: every horse and bird is CC0 or drawn in code")

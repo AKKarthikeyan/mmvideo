@@ -2,7 +2,7 @@
 // n = the beat's length in frames. Every shot breathes: a slow push-in, drifting dust, living grain.
 import React from "react";
 import {interpolate, useCurrentFrame} from "remotion";
-import {K, W, H, KathaDefs, blur} from "./look";
+import {K, W, H, KathaDefs} from "./look";
 import {SceneP, push, Frame, Flock, Foreground} from "./stage";
 export type {SceneP} from "./stage";
 import {Sky, Dust, Haze, Mood} from "./sky";
@@ -93,6 +93,7 @@ export const TitleScene: React.FC<SceneP> = ({s, n}) => (
 );
 // Metaphor scenes live in ./metaphors (one file per family). A missing kind falls back to a quiet sky so a film always renders.
 import {METAPHORS} from "./metaphors";
+// (build_film.py's check_scenes() fails the build on any beat that would land here, so the film never shows it.)
 const Quiet: React.FC<SceneP> = ({s, n}) => { const f = useCurrentFrame(); return <Frame f={f} zoom={push(f, n)}><Sky mood={s.mood || "night"} sun={[960, 700]} f={f} rays={0.2} id="q"/><Dust f={f} sun={[960, 700]}/></Frame>; };
 const Metaphor: React.FC<SceneP> = (p) => { const M = (METAPHORS as Record<string, React.FC<SceneP>>)[p.s.kind] || Quiet; return <M {...p}/>; };
 const typeScene = (t: string): React.FC<SceneP> => (p) => { const M = (METAPHORS as Record<string, React.FC<SceneP>>)[t] || Quiet; return <M {...p}/>; };

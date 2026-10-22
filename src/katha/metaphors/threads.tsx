@@ -1,19 +1,25 @@
-// Katha metaphor scenes: threads (22 Oct 2026). Worn garments cast off for new ones (2.22), all strung on Me like pearls
-// on a thread (7.7, and the thread revealed), the offering of a leaf, a flower, a fruit, water (9.26), the sword of
-// knowledge cutting the tangle of doubt (4.42). Lamplight look: near-black shapes rimmed with warm light, light the only
-// colour. Soft light, glow, haze and smoke are radial / linear gradients only (no blur or turbulence filters).
+// Katha metaphor scenes: threads (22 Oct 2026; art director's fix round 1, 22 Oct 2026). Worn garments cast off for new
+// ones (2.22), all strung on Me like pearls on a thread (7.7, and the thread revealed), the offering of a leaf, a flower,
+// a fruit, water (9.26), the sword of knowledge cutting the tangle of doubt (4.42). Lamplight look: near-black shapes
+// rimmed with warm light, light the only colour. Soft light, glow, haze and smoke are radial / linear gradients only (no
+// blur or turbulence filters). One flame model (fire.tsx), Indian flora (flora.tsx) and architecture (arch.tsx), one
+// light per shot, words only through stage.tsx's Label in Frame's overlay; nothing solid ever fades to a ghost (it burns
+// away, breaks into flakes, or changes inside a flash of light).
 // Props: every scene reads s.mood ("dusk" | "dawn" | "night" | "gold") and s.variant, and renders from {type, kind} alone.
 //   garments: no extra props. pearls: s.variant "thread" dims the pearls and lights the thread running through them.
-//   offering: s.at (four 0-1 fractions: when the leaf, flower, fruit and water appear); s.labels (optional, up to four
-//   words, e.g. patraṁ puṣhpaṁ phalaṁ toyaṁ, each lit with its offering). sword: s.variant "knot" makes the tangle a knot
-//   of black thread instead of thorny vines; s.at (optional 0-1 fraction: when the blade sweeps).
+//   offering: s.at (four 0-1 fractions: when the leaf, flower, fruit and water arrive); s.labels (optional, up to four
+//   words, e.g. पत्रं पुष्पं फलं तोयं: one Label line, each word lit as its offering arrives). sword: s.variant "knot"
+//   makes the tangle a knot of black thread instead of thorny vines; s.at (optional 0-1 fraction: when the blade sweeps).
 import React, {useId} from "react";
 import {interpolate, useCurrentFrame} from "remotion";
-import {K, W, H, SA, EN} from "../look";
-import {SceneP, Frame, push} from "../stage";
-import {Sky, Dust, Mood} from "../sky";
-import {smooth, ribbon, rnd, lerp, clamp01, nrmAt, Pt} from "../geom";
+import {K, W, H, softStops} from "../look";
+import {SceneP, Frame, push, Label} from "../stage";
+import {Sky, Dust, Mood, LightFlash} from "../sky";
+import {smooth, ribbon, rnd, lerp, clamp01, nrmAt, polyD, band, Pt} from "../geom";
 import {Rimmed} from "../sil";
+import {coconut, palmyra, reeds, SIL_FAR} from "../flora";
+import {niche, pillar, ledge} from "../arch";
+import {Diya, diyaWick} from "../fire";
 
 type V2 = [number, number];
 // ---------- small helpers ----------
@@ -68,13 +74,18 @@ const ThreadDefs: React.FC = () => (
 );
 
 // =====================================================================================================================
-// 2.22 GARMENTS: an old, frayed cloth slips from the line and dissolves into dust of light; a new cloth unfurls and
-// billows in a warm wind, the low sun shining through it.
+// 2.22 GARMENTS: on a line between two bamboo poles at the river, a threadbare robe slips from one peg and burns away
+// from the hem, a charred edge with an ember rim creeping up it and ash flakes lifting on the warm wind, until only the
+// peg is left. Out of the light above, a new saffron cloth comes down folded, is taken up by three pegs and falls open
+// fold by fold; the low sun shines through its weave and the wind lifts its hem. The camera pushes in to centre it.
 // =====================================================================================================================
 type ClothFn = (u: number, v: number) => V2;
-type ClothLook = {dark: string; mid: string; lit: string; edge: string; edgeOp: number; op: number;
-  trans?: {c: string; o: number; cx: number; cy: number; r: number}; border?: {c: string; o: number; v0: number; v1: number; dots?: string; side?: number}};
-// The outline of a cloth through its grid (corners kept sharp), and one vertical strip of it.
+type ClothLook = {dark: string; mid: string; lit: string; edge: string; edgeOp: number;
+  trans?: {c: string; o: number; cx: number; cy: number; r: number};    // the sun's light coming through the cloth
+  disc?: {x: number; y: number; r: number; o: number};                   // the sun's disc seen through it
+  border?: {c: string; o: number; v0: number; v1: number; line?: string};
+  weave?: number};                                                      // the threads, dark against the light behind
+// The outline of a cloth through its grid (corners kept sharp), and one strip of it.
 const clothOutline = (fn: ClothFn, nu: number, nv: number): string => {
   const p: Pt[] = [];
   for (let i = 0; i <= nu; i++) { const q = fn(i / nu, 0); p.push(i === 0 || i === nu ? [q[0], q[1], "c"] : q); }
@@ -90,33 +101,31 @@ const clothStrip = (fn: ClothFn, u0: number, u1: number, nv: number): string => 
   return smooth(p);
 };
 // A band across the cloth between v0 and v1 (a woven border).
-const clothBand = (fn: ClothFn, v0: number, v1: number, k = 24): string => {
+const clothBand = (fn: ClothFn, v0: number, v1: number, k = 28): string => {
   const a: number[][] = [], b: number[][] = [];
   for (let i = 0; i <= k; i++) { a.push(fn(i / k, v0)); b.push(fn(i / k, v1)); }
   return lineD([...a, ...b.reverse()]) + " Z";
 };
-// A band down the cloth between u0 and u1 (a woven border along the selvedge).
-const clothBandU = (fn: ClothFn, u0: number, u1: number, k = 16): string => {
-  const a: number[][] = [], b: number[][] = [];
-  for (let j = 0; j <= k; j++) { a.push(fn(u0, j / k)); b.push(fn(u1, j / k)); }
-  return lineD([...a, ...b.reverse()]) + " Z";
-};
-// A hanging cloth: vertical strips shaded by their fold (shade[i] in -1..1 at u = i / nu), a transmitted-light glow, a
-// woven border, a lit edge. Translucent as a whole (look.op). holes: paths cut out of it through a mask.
-const Cloth: React.FC<{fn: ClothFn; nu?: number; nv?: number; shade: number[]; look: ClothLook; holes?: string[]; children?: React.ReactNode; after?: React.ReactNode}> =
-  ({fn, nu = 16, nv = 12, shade, look, holes, children, after}) => {
+const isoV = (fn: ClothFn, v: number, k = 28) => lineD(Array.from({length: k + 1}, (_, i) => fn(i / k, v)));
+// A hanging cloth: strips that follow its drape (shade[i] in -1..1 at u = i / nu: the fold's slope), the sun's light
+// through it, a woven border, the weave, a thin lit edge. out: a custom outline (a burnt edge); holes: cut by a mask.
+const Cloth: React.FC<{fn: ClothFn; nu?: number; nv?: number; shade: number[]; look: ClothLook; out?: string; holes?: string[]; children?: React.ReactNode}> =
+  ({fn, nu = 16, nv = 12, shade, look, out: outIn, holes, children}) => {
   const id = uid();
-  const out = clothOutline(fn, nu, nv), jm = Math.round(nv * 0.55);
+  const out = outIn ?? clothOutline(fn, nu, nv), jm = Math.round(nv * 0.55);
   const col = (sv: number) => (sv >= 0 ? mix(look.mid, look.lit, sv) : mix(look.mid, look.dark, -sv));
-  const B = look.border;
+  const B = look.border, Tr = look.trans, D = look.disc;
   return (
-    <g opacity={look.op} mask={holes && holes.length ? `url(#${id}m)` : undefined}>
+    <g mask={holes && holes.length ? `url(#${id}m)` : undefined}>
       <defs>
         <clipPath id={`${id}k`}><path d={out}/></clipPath>
         {Array.from({length: nu}, (_, i) => { const a = fn(i / nu, jm / nv), b = fn((i + 1) / nu, jm / nv);
           return <linearGradient key={i} id={`${id}g${i}`} gradientUnits="userSpaceOnUse" x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]}><stop offset="0" stopColor={col(shade[i])}/><stop offset="1" stopColor={col(shade[i + 1])}/></linearGradient>; })}
-        {look.trans ? <radialGradient id={`${id}t`} gradientUnits="userSpaceOnUse" cx={look.trans.cx} cy={look.trans.cy} r={look.trans.r}>
-          <stop offset="0" stopColor={look.trans.c} stopOpacity={look.trans.o}/><stop offset="0.4" stopColor={look.trans.c} stopOpacity={look.trans.o * 0.45}/><stop offset="1" stopColor={look.trans.c} stopOpacity={0}/></radialGradient> : null}
+        {Tr ? <radialGradient id={`${id}t`} gradientUnits="userSpaceOnUse" cx={Tr.cx} cy={Tr.cy} r={Tr.r}>{softStops(Tr.c, Tr.o, "#FFB060", 1.5)}</radialGradient> : null}
+        {D ? <radialGradient id={`${id}d`} gradientUnits="userSpaceOnUse" cx={D.x} cy={D.y} r={D.r}>{softStops("#FFFCEC", 1, "#FFE3A0", 3.4)}</radialGradient> : null}
+        {look.weave ? <pattern id={`${id}w`} width={2.6} height={2.6} patternUnits="userSpaceOnUse" patternTransform="rotate(-3)"><rect width={2.6} height={0.8} fill={look.dark}/><rect width={0.7} height={2.6} fill={look.dark} opacity={0.6}/></pattern> : null}
+        {look.weave && Tr ? <radialGradient id={`${id}wg`} gradientUnits="userSpaceOnUse" cx={Tr.cx} cy={Tr.cy} r={Tr.r * 0.7}>{softStops("#ffffff", 1, undefined, 1.2)}</radialGradient> : null}
+        {look.weave && Tr ? <mask id={`${id}wm`} maskUnits="userSpaceOnUse" x={Tr.cx - Tr.r} y={Tr.cy - Tr.r} width={Tr.r * 2} height={Tr.r * 2}><circle cx={Tr.cx} cy={Tr.cy} r={Tr.r * 0.7} fill={`url(#${id}wg)`}/></mask> : null}
         {holes && holes.length ? <mask id={`${id}m`} maskUnits="userSpaceOnUse" x={-400} y={-400} width={W + 800} height={H + 800}>
           <rect x={-400} y={-400} width={W + 800} height={H + 800} fill="#fff"/>{holes.map((d, i) => <path key={i} d={d} fill="#000"/>)}</mask> : null}
       </defs>
@@ -125,25 +134,46 @@ const Cloth: React.FC<{fn: ClothFn; nu?: number; nv?: number; shade: number[]; l
         {Array.from({length: nu}, (_, i) => <path key={i} d={clothStrip(fn, i / nu, (i + 1) / nu, nv)} fill={`url(#${id}g${i})`} stroke={`url(#${id}g${i})`} strokeWidth={1.5}/>)}
         {B ? <>
           <path d={clothBand(fn, B.v0, B.v1)} fill={B.c} opacity={B.o}/>
-          {B.side !== undefined ? <path d={clothBandU(fn, B.side, B.side + 0.03)} fill={B.c} opacity={B.o * 0.8}/> : null}
-          <path d={lineD(Array.from({length: 25}, (_, i) => fn(i / 24, B.v0 - 0.012)))} fill="none" stroke={B.c} strokeWidth={1.4} opacity={B.o * 0.9}/>
-          <path d={lineD(Array.from({length: 25}, (_, i) => fn(i / 24, B.v1 + 0.012)))} fill="none" stroke={B.c} strokeWidth={1} opacity={B.o * 0.7}/>
-          {B.dots ? Array.from({length: 22}, (_, i) => { const p = fn((i + 0.5) / 22, (B.v0 + B.v1) / 2); return <path key={i} d={`M ${n1(p[0])} ${n1(p[1] - 4)} l 3.2 4 l -3.2 4 l -3.2 -4 Z`} fill={B.dots} opacity={B.o}/>; }) : null}
+          <path d={isoV(fn, B.v0 - 0.022)} fill="none" stroke={B.c} strokeWidth={1.3} opacity={B.o * 0.8}/>
+          {B.line ? <path d={isoV(fn, B.v1 + 0.016)} fill="none" stroke={B.line} strokeWidth={2.2} opacity={B.o * 0.8}/> : null}
         </> : null}
-        {look.trans ? <path d={out} fill={`url(#${id}t)`}/> : null}
+        {Tr ? <path d={out} fill={`url(#${id}t)`}/> : null}
+        {D ? <circle cx={D.x} cy={D.y} r={D.r} fill={`url(#${id}d)`} opacity={D.o}/> : null}
+        {look.weave ? <path d={out} fill={`url(#${id}w)`} opacity={look.weave} mask={Tr ? `url(#${id}wm)` : undefined}/> : null}
         {children}
       </g>
-      <path d={out} fill="none" stroke={look.edge} strokeWidth={1.6} opacity={look.edgeOp}/>
-      {after}
+      <path d={out} fill="none" stroke={look.edge} strokeWidth={1.5} opacity={look.edgeOp}/>
     </g>
   );
 };
-// A ragged round hole (a worn patch giving way) at c, radius r.
-const holePath = (c: V2, r: number, seed: number): string => {
-  const p: Pt[] = [];
-  for (let k = 0; k < 9; k++) { const a = (k / 9) * Math.PI * 2 + rnd(seed, k) * 0.4, rr = r * (0.7 + 0.5 * rnd(seed, k + 20)); p.push([c[0] + Math.cos(a) * rr, c[1] + Math.sin(a) * rr * 1.1]); }
-  return smooth(p);
+// Piecewise-linear value noise: an irregular profile with sharp corners (a burnt edge, not a row of scallops).
+const vn = (x: number, seed: number) => { const i = Math.floor(x), t = x - i; return lerp(rnd(i, seed), rnd(i + 1, seed), t) * 2 - 1; };
+const jag = (s: number, seed: number) => 0.07 * vn(s * 6, seed) + 0.042 * vn(s * 15, seed + 1) + 0.024 * vn(s * 37, seed + 2) + 0.012 * vn(s * 83, seed + 3);
+// A cloth pegged to the line: x0..x1 on the line, pegs at fractions of the width (corners included), length L. Between
+// two pegs the top edge sags in a swag; the cloth's strips crowd towards each peg (k), so its folds radiate from them.
+type Hang = {x0: number; x1: number; pegs: number[]; L: number; swag: number; k: number};
+const pegSeg = (pegs: number[], s: number) => {
+  let j = 0; while (j < pegs.length - 2 && s > pegs[j + 1]) j++;
+  const a = pegs[j], b = pegs[j + 1]; return {j, a, b, w: clamp01((s - a) / (b - a))};
 };
+const hangTop = (h: Hang, s: number, lineY: (x: number) => number, swagK = 1) => {
+  const {a, b, w} = pegSeg(h.pegs, s);
+  const sc = a + (b - a) * (w - (h.k * swagK * Math.sin(2 * Math.PI * w)) / (2 * Math.PI));
+  const x = lerp(h.x0, h.x1, sc), xu = lerp(h.x0, h.x1, s);
+  const sw = swagK * h.swag * (b - a) * (h.x1 - h.x0) * Math.pow(Math.sin(Math.PI * w), 1.25);
+  return {x, xu, y: lineY(x) + 3 + sw, sw};
+};
+const shadeOf = (fn: (u: number) => number, nu: number, k: number, bias = 0) => Array.from({length: nu + 1}, (_, i) => { const u = i / nu, e = 0.004; return Math.max(-1, Math.min(1, -(fn(u + e) - fn(u - e)) / (2 * e) / k + bias)); });
+// A wooden clothes peg on the line (drawn at the origin, the line through y = 0).
+const PEG = smooth([[-5.6, -17, "c"], [5.6, -17, "c"], [6.2, -3], [4.4, 4], [5.2, 31, "c"], [-5.2, 31, "c"], [-4.4, 4], [-6.2, -3]]);
+const pegItem = (x: number, y: number, a = 0): {d: string; t: string; c: [number, number]} => ({d: PEG, t: `translate(${n1(x)} ${n1(y)}) rotate(${n1(a)})`, c: [x, y + 6]});
+// Ash: small irregular flakes (unit size).
+const FLAKE = [
+  "M -1 -0.3 L -0.25 -0.95 L 0.8 -0.55 L 1 0.35 L 0.15 0.85 L -0.75 0.6 Z",
+  "M -0.9 -0.6 L 0.5 -0.9 L 1 0.1 L 0.4 0.9 L -0.3 0.5 L -1 0.4 Z",
+  "M -1 0 L -0.4 -0.8 L 0.3 -0.5 L 0.9 -0.9 L 0.8 0.3 L -0.1 0.9 Z",
+  "M -0.8 -0.8 L 0.9 -0.4 L 0.6 0.4 L 1 0.9 L -0.5 0.7 L -0.9 0.1 Z",
+];
 // A bamboo pole between base b and top t: tapered, with nodes.
 const bamboo = (b: V2, t: V2, w: number): string[] => {
   const mid: V2 = [lerp(b[0], t[0], 0.5) + 4, lerp(b[1], t[1], 0.5)];
@@ -155,7 +185,7 @@ const bamboo = (b: V2, t: V2, w: number): string[] => {
   d.push(smooth([[t[0] - w * 0.42, t[1] + 4], [t[0] - w * 0.42, t[1] - 4, "c"], [t[0] + w * 0.44, t[1] - 14, "c"], [t[0] + w * 0.42, t[1] + 4]]));
   return d;
 };
-// Grass and reed blades along a ground line, bending in the wind.
+// Grass blades along a ground line, bending in the wind.
 const blades = (x0: number, x1: number, yAt: (x: number) => number, f: number, k: number, hMin: number, hMax: number, seed: number, wind = 1): string => {
   let d = "";
   for (let i = 0; i < k; i++) {
@@ -167,153 +197,231 @@ const blades = (x0: number, x1: number, yAt: (x: number) => number, f: number, k
   }
   return d;
 };
-
-// A palm on the far bank: a leaning trunk and a crown of drooping fronds (one path list for Rimmed).
-const palm = (x: number, y: number, h: number, lean: number, f: number, seed: number): string[] => {
-  const top: V2 = [x + lean * h, y - h];
-  const d = [ribbon(dense([[x, y], [x + lean * h * 0.35, y - h * 0.5], top], 6), h * 0.07, h * 0.04)];
-  const fr = [-2.75, -2.3, -1.85, -1.35, -0.95, -0.45, -0.1, 0.25, 3.35];
-  fr.forEach((a0, k) => {
-    const a = a0 + Math.sin(f / 40 + k + seed) * 0.03, L = h * (0.5 + 0.16 * rnd(k, seed)), side = Math.cos(a) >= 0 ? 1 : -1;
-    const mid: number[][] = [];
-    for (let q = 0; q <= 8; q++) { const u = q / 8; mid.push([top[0] + Math.cos(a) * L * u, top[1] + Math.sin(a) * L * u + u * u * L * (0.45 + 0.3 * Math.abs(Math.cos(a)))]); }
-    // the frond: a narrow blade along the rib, and leaflets hanging from it
-    let fd = ribbon(mid, h * 0.035, 0.8);
-    for (let q = 1; q < 8; q++) {
-      const p = mid[q], ll = h * 0.12 * Math.sin((q / 8) * Math.PI);
-      [-1, 1].forEach((sd) => { fd += " " + ribbon([[p[0], p[1]], [p[0] + side * ll * 0.3 + sd * ll * 0.35, p[1] + ll * 0.6], [p[0] + side * ll * 0.4 + sd * ll * 0.45, p[1] + ll]], h * 0.022, 0.5); });
-    }
-    d.push(fd);
+// A spindle along a line: thin at both ends, widest a little before the middle (a soft fold of cloth).
+const spindle = (pts: V2[], wMax: number, skew = 0.9): string => {
+  const L: Pt[] = [], Rr: Pt[] = [];
+  pts.forEach((p, i) => { const t = i / (pts.length - 1), w = (wMax * Math.pow(Math.sin(Math.PI * Math.pow(t, skew)), 0.6)) / 2, nn = nrmAt(pts as number[][], i); L.push([p[0] + nn[0] * w, p[1] + nn[1] * w]); Rr.push([p[0] - nn[0] * w, p[1] - nn[1] * w]); });
+  return smooth([...L, ...Rr.reverse()]);
+};
+// Soft folds: a shade made of three nested spindles (a soft edge with no blur), and a lit line along one side.
+const SoftFold: React.FC<{pts: V2[]; w: number; o?: number; lit?: number; skew?: number; c?: string}> = ({pts, w, o = 0.11, lit = 0.22, skew = 0.9, c = "#4A1206"}) => (
+  <g>
+    {[1, 0.62, 0.3].map((m, l) => <path key={l} d={spindle(pts, w * m, skew)} fill={c} opacity={o}/>)}
+    {lit > 0 ? <path d={lineD(pts.slice(1, Math.max(3, pts.length - 3)).map((p, i) => { const nn = nrmAt(pts as number[][], i + 1); return [p[0] - nn[0] * w * 0.42, p[1] - nn[1] * w * 0.42]; }))} fill="none" stroke="#FFE2A8" strokeWidth={1.2} opacity={lit}/> : null}
+  </g>
+);
+// The drape folds that radiate from each peg down into the cloth, dying out lower down.
+const drapeFolds = (fn: ClothFn, pegs: number[], vMax: number, amp: number, seed: number): React.ReactNode[] => {
+  const out: React.ReactNode[] = [];
+  pegs.forEach((up, pi) => {
+    const dirs = pi === 0 ? [0.1, 0.24] : pi === pegs.length - 1 ? [-0.1, -0.24] : [-0.3, -0.13, 0.11, 0.28];
+    dirs.forEach((sp, j) => {
+      const r = rnd(pi * 11 + j, seed), len = Math.min(vMax - 0.02, (0.4 + 0.42 * r) * (1 - Math.abs(sp) * 0.9));
+      if (len < 0.05) return;
+      const pts = Array.from({length: 14}, (_, i) => { const t = i / 13; return fn(up + Math.sign(sp) * 0.025 + sp * Math.pow(t, 0.62) * (0.85 + 0.3 * r), 0.03 + t * len); });
+      out.push(<SoftFold key={`${pi}-${j}`} pts={pts} w={(34 + 30 * rnd(pi * 11 + j, seed + 1)) * amp} o={0.05 * amp} lit={0.12 * amp} skew={0.8}/>);
+    });
   });
-  return d;
+  return out;
 };
 const Garments: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), id = uid();
   const mood = moodOf(s, "dusk");
   const T = (k: number) => k * n;
-  const sun: V2 = [1262, 600];
+  const sun: V2 = [1150, 572];
   const HZ = 742;
+  const toSun = (x: number, y: number): V2 => [sun[0] - x, sun[1] - y];
   // the line between two bamboo poles, sagging a little and breathing in the wind
-  const LX0 = 316, LY0 = 268, LX1 = 1642, LY1 = 262, sag = 66 + 2.5 * Math.sin(f / 47);
+  const LX0 = 236, LY0 = 262, LX1 = 1694, LY1 = 256, sag = 70 + 2.5 * Math.sin(f / 47);
   const lineY = (x: number) => { const u = (x - LX0) / (LX1 - LX0); return lerp(LY0, LY1, u) + sag * 4 * u * (1 - u); };
-  // ---- the old cloth: limp and heavy, frayed; its left corner slips off, then it falls and comes apart into light ----
-  const slip = (t: number) => sstep((t - T(0.17)) / T(0.17));
-  const fallOf = (t: number) => { const q = clamp01((t - T(0.3)) / T(0.34)); return q * q; };
-  const OX0 = 432, OX1 = 872, OL = 410;
-  const hem = (u: number) => 1 - 0.03 * rnd(Math.floor(u * 30), 41) - (u > 0.82 ? Math.pow((u - 0.82) / 0.18, 1.3) * 0.17 : 0);
-  const oFold = (u: number, v: number) => 0.7 * Math.sin(u * Math.PI * 4.2 + 0.4 + v * 0.8) + 0.25 * Math.sin(u * Math.PI * 8.4 + 1.3 - v * 0.6);
+  // ================= the old robe: threadbare; its left peg lets go, then it burns away from the hem =================
+  const OH: Hang = {x0: 372, x1: 772, pegs: [0, 1], L: 372, swag: 0.06, k: 0.55};
+  const slipOf = (t: number) => sstep((t - T(0.08)) / T(0.12));
+  const oz = (u: number, v: number) => 0.6 * Math.sin(u * Math.PI * 1.8 + 0.5 + v * 0.9) + 0.2 * Math.sin(u * Math.PI * 3.9 + 1.3 - v * 0.7);
   const oldAt = (u: number, v: number, t: number): V2 => {
-    const sl = slip(t), fa = fallOf(t);
-    let tx = lerp(OX0, OX1, u), ty = lineY(tx);
-    const k = Math.max(0, 1 - u / 0.72);
-    tx += sl * k * 80; ty += sl * Math.pow(k, 1.35) * 230;
-    const vv = v * hem(u), z = oFold(u, vv) * (0.3 + 0.7 * vv) * (1 + sl * k * 1.2 + fa * 1.5);
-    let x = tx + z * 7 + Math.sin(t / 41 + u * 2.3) * 5 * Math.pow(vv, 1.5);
-    let y = ty + vv * OL * (1 - 0.25 * fa) + z * 12 * vv * vv;
-    // falling: it crumples toward its middle, turns, drifts with the wind and ripples
-    if (fa > 0) {
-      const cx = lerp(OX0, OX1, 0.55) + sl * 40, cy = lineY(cx) + OL * 0.45, a = fa * 0.7;
-      x = lerp(x, cx, 0.3 * fa); y = lerp(y, cy, 0.18 * fa);
-      const ox = x - cx, oy = y - cy;
-      x = cx + ox * Math.cos(a) - oy * Math.sin(a) + 170 * fa + Math.sin(vv * 6 + t / 7 + u * 3) * 24 * fa;
-      y = cy + ox * Math.sin(a) + oy * Math.cos(a) + 560 * fa + Math.sin(u * 5 + t / 9) * 16 * fa;
+    const sl = slipOf(t), top = hangTop(OH, u, lineY);
+    const g = sstep(v / 0.6), z = oz(u, v) * (0.35 + 0.65 * v) * (1 + sl * 0.5);
+    let x = lerp(top.x, top.xu, g) + z * 7 + Math.sin(t / 41 + u * 2.3) * 4 * Math.pow(v, 1.5);
+    let y = top.y + v * OH.L - top.sw * 0.4 * v + z * 10 * v * v;
+    if (sl > 0) {
+      // hanging from the right peg alone, the free side swings down
+      const px = OH.x1, py = lineY(OH.x1) + 3, al = -sl * 0.6 * Math.pow(1 - u, 0.6), c = Math.cos(al), sn = Math.sin(al), dx = x - px, dy = y - py;
+      x = px + dx * c - dy * sn; y = py + dx * sn + dy * c;
     }
     return [x, y];
   };
   const oldFn: ClothFn = (u, v) => oldAt(u, v, f);
-  // the dissolving: ragged holes open from the hem upward, each rimmed with light and shedding motes
-  const NH = 64;
-  const holes = Array.from({length: NH}, (_, i) => {
-    const hemHole = i < 16, u = hemHole ? (i + rnd(i, 51)) / 16 : 0.04 + rnd(i, 52) * 0.92, v = hemHole ? 0.97 + rnd(i, 53) * 0.06 : 0.08 + rnd(i, 54) * 0.86;
-    const t0 = T(0.25) + (1 - v) * T(0.24) + rnd(i, 55) * T(0.07), R = (hemHole ? 46 : 34) + rnd(i, 56) * 60;
-    return {u, v, t0, R};
+  // the burn front, in the cloth's own coordinates: everything below v = front(u) is gone
+  const qOf = (t: number) => clamp01((t - T(0.19)) / T(0.38));
+  const frontOf = (u: number, t: number) => 1.12 + 0.32 * u - 1.8 * qOf(t) + jag(u, 7) + 0.02 * vn(u * 9 + t / 20, 19);
+  const KS = 110, vmax = (u: number) => Math.max(0.004, Math.min(1, frontOf(u, f)));
+  // what is left: from u0 (the first u from which the cloth is unbroken to the right peg) to the right edge
+  let u0 = 1;
+  for (let i = KS; i >= 0; i--) { if (frontOf(i / KS, f) <= 0.012) break; u0 = i / KS; }
+  const burnt = qOf(f) >= 1 || u0 > 0.985;
+  const oldOut = (() => {
+    const p: Pt[] = [], nT = Math.max(2, Math.round(24 * (1 - u0))), nB = Math.max(2, Math.round(KS * (1 - u0)));
+    for (let i = 0; i <= nT; i++) { const q = oldFn(lerp(u0, 1, i / nT), 0); p.push(i === 0 || i === nT ? [q[0], q[1], "c"] : q); }
+    for (let j = 1; j < 8; j++) p.push(oldFn(1, (vmax(1) * j) / 8));
+    for (let i = nB; i >= 0; i--) { const u = lerp(u0, 1, i / nB), q = oldFn(u, vmax(u)); p.push([q[0], q[1], "c"]); }
+    if (u0 <= 0) for (let j = 7; j >= 1; j--) p.push(oldFn(0, (vmax(0) * j) / 8));
+    return smooth(p);
+  })();
+  // holes burning through ahead of the front, and two old worn holes the light already shows through
+  const HO: number[][] = [[0.26, 0.6, 0.085], [0.6, 0.44, 0.07], [0.42, 0.27, 0.06], [0.8, 0.66, 0.065], [0.14, 0.36, 0.05], [0.7, 0.2, 0.05]];
+  const holePoly = (cu: number, cv: number, r: number, seed: number): V2[] => Array.from({length: 15}, (_, i) => {
+    const a = (i / 15) * Math.PI * 2 + 0.3 * (rnd(i, seed) - 0.5), k = 0.45 + 0.8 * rnd(i, seed + 1);
+    return oldFn(cu + Math.cos(a) * r * k * 0.93, cv + Math.sin(a) * r * k);
   });
-  const oldOp = 1 - sstep((f - T(0.56)) / T(0.1));
-  const holeD: string[] = [], rings: React.ReactNode[] = [];
-  // old worn holes, there from the start: the light shows through them
-  const worn: [number, number, number][] = [[0.3, 0.42, 9], [0.62, 0.66, 13], [0.18, 0.8, 7], [0.78, 0.3, 6]];
-  worn.forEach(([u, v, r], i) => { const c = oldFn(u, v); holeD.push(holePath(c, r, 90 + i)); rings.push(<path key={`w${i}`} d={holePath(c, r + 1.5, 90 + i)} fill="none" stroke="#E8B878" strokeWidth={2} opacity={0.55}/>); });
-  holes.forEach((h, i) => {
-    const r = h.R * sstep((f - h.t0) / T(0.1));
-    if (r < 0.5) return;
-    const c = oldFn(h.u, h.v), d = holePath(c, r, i);
-    holeD.push(d);
-    const glow = 1 - sstep((f - h.t0 - T(0.08)) / T(0.12));
-    if (glow > 0.01) rings.push(<g key={i} opacity={glow}><path d={holePath(c, r + 2, i)} fill="none" stroke="#FFB45A" strokeWidth={9} opacity={0.22}/><path d={holePath(c, r + 1, i)} fill="none" stroke="#FFE9B8" strokeWidth={2.4} opacity={0.9}/></g>);
-  });
-  // motes of light let go by the holes, drifting up and on toward the new cloth on the warm wind
-  const motes: React.ReactNode[] = [];
-  holes.forEach((h, i) => {
-    for (let j = 0; j < 3; j++) {
-      const tb = h.t0 + j * 5 + rnd(i * 3 + j, 61) * 10, age = f - tb, life = 120 + rnd(i * 3 + j, 62) * 100;
-      if (age < 0 || age > life) continue;
-      const a = (j / 3) * Math.PI * 2 + rnd(i, 63) * 6, rr = h.R * 0.5;
-      const b = oldAt(h.u, h.v, tb);
-      const x = b[0] + Math.cos(a) * rr + age * (1.0 + rnd(i * 3 + j, 64) * 1.1) + Math.sin(age / 17 + i) * 8;
-      const y = b[1] + Math.sin(a) * rr - age * (0.5 + rnd(i * 3 + j, 65) * 0.7) - age * age * 0.001;
-      const o = Math.min(1, age / 8) * Math.pow(1 - age / life, 1.3) * (0.65 + 0.35 * Math.sin(f / 5 + i + j));
-      const r = 1.1 + rnd(i * 3 + j, 66) * 2.2;
-      motes.push(<g key={`${i}-${j}`}><circle cx={x} cy={y} r={r * 5} fill="url(#th-mote)" opacity={o * 0.6}/><circle cx={x} cy={y} r={r} fill="#FFF1CC" opacity={o}/></g>);
+  const holes: V2[][] = [];
+  HO.forEach(([cu, cv, R], i) => { const r = R * sstep((0.24 - (frontOf(cu, f) - cv)) / 0.18); if (r > 0.004 && frontOf(cu, f) > cv - R) holes.push(holePoly(cu, cv, r, 40 + i * 7)); });
+  const worn = [[0.34, 0.5, 0.026], [0.66, 0.76, 0.03]].filter(([cu, cv]) => frontOf(cu, f) > cv + 0.03).map(([cu, cv, r], i) => holePoly(cu, cv, r, 90 + i * 5));
+  // the edge where it burns: runs of the front between 0 and 1, and the rims of the burning holes
+  const runs: V2[][] = [];
+  let run: V2[] = [];
+  for (let i = 0; i <= KS; i++) { const u = i / KS, fr = frontOf(u, f); if (u >= u0 && fr > 0.004 && fr < 0.995) run.push(oldFn(u, fr)); else { if (run.length > 1) runs.push(run); run = []; } }
+  if (run.length > 1) runs.push(run);
+  holes.forEach((hp) => runs.push([...hp, hp[0]]));
+  const charD = runs.map((r) => lineD(r)).join(" ");
+  const embers: React.ReactNode[] = [];
+  runs.forEach((r, ri) => {
+    for (let c = 0; c < r.length - 1; c += 5) {
+      const seg = r.slice(c, Math.min(r.length, c + 6)), fl = 0.55 + 0.45 * Math.sin(f / 3.1 + c * 0.9 + ri * 2.3) * Math.sin(f / 5.3 + c * 0.37);
+      embers.push(<g key={`${ri}-${c}`}>
+        <path d={lineD(seg)} fill="none" stroke={mix("#E0400E", "#FFA040", fl)} strokeWidth={3} strokeLinecap="round" opacity={0.9}/>
+        <path d={lineD(seg)} fill="none" stroke="#FFE6A8" strokeWidth={1.1} strokeLinecap="round" opacity={0.35 + 0.6 * fl}/>
+      </g>);
     }
   });
-  // fraying threads along the hem
-  const fray = Array.from({length: 30}, (_, i) => {
-    const u = (i + rnd(i, 71) * 0.8) / 30, p = oldFn(u, 1), L = 8 + rnd(i, 72) * 24, sw = Math.sin(f / 23 + i) * 4;
+  // ash flakes and sparks let go by the front, lifting and drifting right on the warm wind, cooling, crumbling away
+  const flakes: React.ReactNode[] = [];
+  for (let i = 0; i < 150; i++) {
+    const tb = T(0.19) + rnd(i, 501) * T(0.4), age = f - tb, life = 80 + rnd(i, 502) * 100;
+    if (age < 0 || age > life) continue;
+    const u = rnd(i, 503), fr = frontOf(u, tb);
+    if (fr <= 0.004 || fr >= 0.995) continue;
+    const b = oldAt(u, fr, tb), sp = 0.7 + rnd(i, 504);
+    const x = b[0] + age * 1.15 * sp + Math.sin(age / 13 + i) * 9 * Math.min(1, age / 30);
+    const y = b[1] - age * (0.42 + 0.6 * rnd(i, 505)) - age * age * 0.0016;
+    const spark = i % 5 === 0, cool = clamp01(age / ((spark ? 40 : 18) + 22 * rnd(i, 506)));
+    const k = 1 - sstep((age - life * 0.62) / (life * 0.38));
+    if (spark) { flakes.push(<g key={i}><circle cx={x} cy={y} r={7 * k} fill="url(#th-mote)" opacity={0.9 * (1 - cool)}/><circle cx={x} cy={y} r={1.3 * k} fill={mix("#FFF0C0", "#E0602A", cool)}/></g>); continue; }
+    const sz = (2.4 + 5.2 * rnd(i, 507)) * k, rot = rnd(i, 508) * 360 + age * (2 + 5 * rnd(i, 509)) * (i % 2 ? 1 : -1), tum = 0.25 + 0.75 * Math.abs(Math.cos(age / (7 + 6 * rnd(i, 510)) + i));
+    if (sz < 0.3) continue;
+    const fill = mix(mix("#FFB050", "#9A3216", Math.min(1, cool * 1.6)), "#3C3036", sstep((cool - 0.35) / 0.65));
+    flakes.push(<g key={i} transform={`translate(${n1(x)} ${n1(y)}) rotate(${n1(rot)}) scale(${sz.toFixed(2)} ${(sz * tum).toFixed(2)})`}>
+      {cool < 0.6 ? <circle r={2.4} fill="url(#th-mote)" opacity={0.7 * (1 - cool / 0.6)}/> : null}
+      <path d={FLAKE[i % 4]} fill={fill}/>
+      {cool < 0.9 ? <path d={FLAKE[i % 4]} fill="none" stroke="#FF8A3A" strokeWidth={0.22} opacity={1 - cool}/> : null}
+    </g>);
+  }
+  // a frayed hem while it lasts
+  const fray = Array.from({length: 26}, (_, i) => {
+    const u = (i + rnd(i, 71) * 0.8) / 26; if (frontOf(u, f) < 1.02) return "";
+    const p = oldFn(u, 1), L = 8 + rnd(i, 72) * 22, sw = Math.sin(f / 23 + i) * 4;
     return `M ${n1(p[0])} ${n1(p[1] - 2)} Q ${n1(p[0] + sw * 0.5 + 2)} ${n1(p[1] + L * 0.5)} ${n1(p[0] + sw + (rnd(i, 73) - 0.5) * 6)} ${n1(p[1] + L)}`;
   }).join(" ");
-  const shadeOf = (fn: (u: number) => number, nu: number, k: number, bias = 0) => Array.from({length: nu + 1}, (_, i) => { const u = i / nu, e = 0.004; return Math.max(-1, Math.min(1, -(fn(u + e) - fn(u - e)) / (2 * e) / k + bias)); });
-  const oldShade = shadeOf((u) => oFold(u, 0.6), 22, 12, -0.1).map((q) => q * 0.8);
-  // ---- the new cloth: rolled on the line, it unrolls, then the warm wind fills it ----
-  const uf = sstep((f - T(0.3)) / T(0.3)), wind = sstep((f - T(0.42)) / T(0.32));
-  const NX0 = 1012, NX1 = 1504, NLmax = 446, NL = lerp(56, NLmax, uf);
-  const ph = f * 0.045;
-  const nz = (u: number, v: number) => 0.6 * Math.sin(u * Math.PI * 2.7 + 0.9 * Math.sin(ph * 0.7) + v * 1.1) + 0.14 * Math.sin(u * Math.PI * 6.3 - ph * 0.9 + v * 2.0) + wind * 0.6 * Math.sin(u * Math.PI * 1.5 - ph * 1.6 + v * 2.6);
-  const newFn: ClothFn = (u, v) => {
-    const tx = lerp(NX0, NX1, u), ty = lineY(tx), z = nz(u, v) * (0.25 + 0.75 * v) * (0.4 + 0.6 * uf);
-    let x = tx + z * 9;
-    x += wind * (84 * Math.pow(v, 1.5) * (0.74 + 0.26 * Math.sin(ph + u * 1.4)) + 15 * v * Math.sin(v * 5 - ph * 1.7 + u * 2.4));
-    x += (1 - wind) * Math.sin(f / 45 + u * 2) * 3 * v;
-    const y = ty + v * NL + z * 18 * v * v - wind * 36 * v * v * (0.6 + 0.4 * Math.sin(ph * 1.1 + 1 + u * 1.2));
+  const oldShade = shadeOf((u) => oz(u, 0.6), 22, 7, -0.1).map((q) => q * 0.45);
+  const oldLook: ClothLook = {dark: "#200C0C", mid: "#5A2C18", lit: "#94522A", edge: "#E8B078", edgeOp: 0,
+    trans: {c: "#F0A060", o: 0.32, cx: sun[0] - 300, cy: sun[1] - 60, r: 460}, border: {c: "#8A5A2A", o: 0.35, v0: 0.86, v1: 0.88}, weave: 0.3};
+  // ================= the new cloth: comes down folded out of the light, is pegged, falls open fold by fold =================
+  const NH: Hang = {x0: 905, x1: 1395, pegs: [0, 0.5, 1], L: 456, swag: 0.1, k: 0.72};
+  const arr = sstep((f - T(0.22)) / T(0.16)), land = sstep((f - T(0.365)) / T(0.05));
+  const th1 = Math.PI * sstep((f - T(0.4)) / T(0.075)), th2 = Math.PI * sstep((f - T(0.475)) / T(0.075));
+  const c1 = Math.max(0, -Math.cos(th1)), c2 = Math.max(0, -Math.cos(th2));
+  const open = sstep((f - T(0.5)) / T(0.14)), wind = sstep((f - T(0.52)) / T(0.3)), ph = f * 0.045;
+  const P3 = NH.L / 3;
+  const dOf = (v: number) => (v <= 1 / 3 ? v * NH.L : v <= 2 / 3 ? P3 + (v - 1 / 3) * NH.L * c1 : P3 + P3 * c1 + (v - 2 / 3) * NH.L * c2);
+  const nz = (u: number, v: number) => 0.5 * Math.sin(2 * Math.PI * 1.35 * u + 0.5 * Math.sin(ph * 0.7) + v * 0.9) + 0.16 * Math.sin(2 * Math.PI * 2.8 * u + 1.1 - ph * 0.8 + v * 1.8) + wind * 0.4 * Math.sin(Math.PI * 1.4 * u - ph * 1.5 + v * 2.4);
+  const settle = 0.3 + 0.7 * open;
+  const dropY = -(1 - arr) * 760, dropX = -(1 - arr) * 120, dropA = (1 - arr) * 0.12 * Math.sin(f / 13);
+  const newAt = (u: number, v: number): V2 => {
+    const top = hangTop(NH, u, lineY, land);
+    const d = dOf(v), vv = d / NH.L, g = sstep(vv / 0.6);
+    const z = nz(u, vv) * (0.3 + 0.7 * vv) * settle;
+    let x = lerp(top.x, top.xu, g) + z * 8;
+    let y = top.y + d - top.sw * 0.4 * Math.min(1, vv * 2) + z * 12 * vv * vv;
+    // the warm wind fills it: the lower cloth billows downwind and the hem lifts in a curve
+    x += wind * (76 * Math.pow(vv, 1.6) * (0.78 + 0.22 * Math.sin(ph + u * 1.4)) + 13 * vv * Math.sin(vv * 5 - ph * 1.7 + u * 2.4));
+    y -= wind * 40 * vv * vv * (0.55 + 0.45 * Math.sin(ph * 1.1 + 1 + u * 2.2));
+    x += (1 - wind) * Math.sin(f / 45 + u * 2) * 3 * vv;
+    // while it is still in the air it is a soft bundle: its ends droop, its middle bows up a little
+    y += (1 - land) * (34 * Math.pow(Math.abs(u - 0.5) * 2, 2.2) - 10 * Math.sin(Math.PI * u) + 9 * Math.sin(u * 8 - f / 6) * (0.4 + vv));
+    x += (1 - land) * 14 * vv * Math.sin(u * 5 - f / 8);
+    if (arr < 1) {
+      // still coming down: turning a little about the middle of its top edge
+      const px = 1150, py = lineY(1150), c = Math.cos(dropA), sn = Math.sin(dropA), dx = x - px, dy = y - py;
+      x = px + dx * c - dy * sn + dropX; y = py + dx * sn + dy * c + dropY;
+    }
     return [x, y];
   };
-  const newShade = shadeOf((u) => nz(u, 0.6), 28, 6.5).map((q) => q * 0.85 * (0.5 + 0.5 * uf));
-  const flapV = Math.min(1, 50 / NL);
-  const flapFn: ClothFn = (u, v) => { const p = newFn(u, v * flapV); return [p[0] + 1.5, p[1] + 2]; };
-  const flapShade = newShade.map((q) => q * 0.6 - 0.25);
-  const newLook: ClothLook = {dark: "#5A1C1C", mid: "#C25A2A", lit: "#FFC06A", edge: "#FFE3A3", edgeOp: 0.6, op: 0.9,
-    trans: {c: "#FFF0C8", o: 0.85, cx: sun[0], cy: sun[1], r: 330}, border: {c: "#FFD27A", o: 0.75, v0: 0.86, v1: 0.93, dots: "#7A2418", side: 0.94}};
-  const flapLook: ClothLook = {dark: "#4A1818", mid: "#A0442A", lit: "#F09A50", edge: "#FFD38A", edgeOp: 0.6, op: 0.88,
-    trans: {c: "#FFE0A0", o: 0.45, cx: sun[0], cy: sun[1], r: 300}, border: {c: "#FFD27A", o: 0.7, v0: 0.7, v1: 0.82}};
-  const oldLook: ClothLook = {dark: "#140E16", mid: "#33262E", lit: "#5E4A4E", edge: "#B89070", edgeOp: 0.4, op: 0.95 * oldOp,
-    trans: {c: "#E8B888", o: 0.2, cx: sun[0] - 320, cy: sun[1] - 40, r: 560}, border: {c: "#8A6A4A", o: 0.3, v0: 0.84, v1: 0.9}};
-  // the roll still to unroll, along the bottom of the new cloth: a cylinder with its spiral ends showing
-  const rollW = (1 - uf) * 30;
-  const rollPts = Array.from({length: 29}, (_, i) => { const p = newFn(i / 28, 1); return [p[0], p[1] + rollW * 0.3] as V2; });
-  // ---- the world around: far bank with palms, river, near bank, poles ----
+  const sub = (v0: number, v1: number): ClothFn => (u, v) => newAt(u, lerp(v0, v1, v));
+  const newShade = shadeOf((u) => nz(u, 0.6), 30, 9).map((q) => q * 0.55 * settle);
+  const lookN = (k: number): ClothLook => ({dark: "#5A160A", mid: mix("#B44A16", "#5A1A0C", k), lit: mix("#E88434", "#A04A1E", k), edge: "#FFE3A3", edgeOp: 0.5 * (1 - k * 0.6),
+    trans: {c: "#FFF2CC", o: 0.95 * (1 - k * 0.7), cx: sun[0], cy: sun[1], r: 430}, disc: {x: sun[0], y: sun[1], r: 92, o: 0.8 * (1 - k)}, weave: 0.24});
+  const full = th2 >= Math.PI - 1e-3;
+  const borderFull = {c: "#E8B04E", o: 0.7, v0: 0.902, v1: 0.914, line: "#7A1E10"};
+  // the cowl folds that hang in each swag between two pegs
+  const swagFolds = land > 0.05 ? [0.035, 0.1, 0.19].map((v0, k) => {
+    if (v0 + 0.15 > (full ? 1 : th1 >= Math.PI / 2 ? 2 / 3 : 1 / 3) + 0.1) return null;
+    const segs = [[0, 0.5], [0.5, 1]].map(([a, b]) => Array.from({length: 15}, (_, i) => { const w = i / 14, u = lerp(a, b, w); return newAt(u, v0 + (0.05 + 0.045 * k) * Math.sin(Math.PI * w) * land); }));
+    return <g key={k} opacity={land}>{segs.map((sg, j) => <SoftFold key={j} pts={sg} w={24 - 5 * k} o={0.08} lit={0.16} skew={1}/>)}</g>;
+  }) : null;
+  const vVis = full ? 1 : th1 >= Math.PI / 2 ? (th2 >= Math.PI / 2 ? 1 : 2 / 3) : 1 / 3;
+  const drape = land > 0.05 ? <g opacity={land}>
+    {drapeFolds(newAt, NH.pegs, Math.min(vVis, 0.95), 0.6 + 0.4 * open, 29)}
+    <path d={isoV(newAt, 0.012, 40)} fill="none" stroke="#3A0C04" strokeWidth={3} opacity={0.35}/>
+  </g> : null;
+  // the fresh creases where it was folded, slowly shaken out by the wind
+  const creases = full ? [1 / 3, 2 / 3].map((v, k) => <g key={k} opacity={0.8 * (1 - 0.6 * wind)}>
+    <SoftFold pts={Array.from({length: 17}, (_, i) => newAt(0.02 + 0.96 * (i / 16), v))} w={9} o={0.07} lit={0.16} skew={1}/>
+  </g>) : null;
+  const newCloth = full
+    ? <Cloth fn={newAt} nu={30} nv={14} shade={newShade} look={{...lookN(0), border: borderFull}}>{drape}{swagFolds}{creases}</Cloth>
+    : <>
+      {th1 < Math.PI / 2 ? [2, 1].map((k) => <path key={k} d={clothOutline(sub(0, 1 / 3), 30, 5)} transform={`translate(${n1(k * 1.5)} ${n1(k * 4.5)})`} fill={k === 2 ? "#5A1A0C" : "#8A2E12"} stroke="#FFD08A" strokeWidth={1} strokeOpacity={0.45}/>) : null}
+      {th1 >= Math.PI / 2 && th2 < Math.PI / 2 ? <path d={clothOutline(sub(1 / 3, 2 / 3), 30, 5)} transform="translate(1.5 4.5)" fill="#6A2010" stroke="#FFD08A" strokeWidth={1} strokeOpacity={0.4}/> : null}
+      <Cloth fn={sub(0, 1 / 3)} nu={30} nv={5} shade={newShade} look={lookN(0)}>{drape}{swagFolds}
+        {th1 < Math.PI / 2 ? <>
+          {[[0.14, 0.32], [0.46, 0.6], [0.7, 0.9]].map(([a, b], i) => <SoftFold key={i} pts={Array.from({length: 9}, (_, j) => sub(0, 1 / 3)(lerp(a, b, j / 8), 0.12 + 0.8 * (j / 8)))} w={26} o={0.055} lit={0.12}/>)}
+          <path d={clothOutline(sub(0, 1 / 3), 30, 5)} fill={`url(#${id}bl)`}/>
+        </> : null}
+        {th1 < Math.PI / 2 ? <path d={isoV(sub(0, 1 / 3), 0.985)} fill="none" stroke="#FFD890" strokeWidth={3.5} opacity={0.55}/> : null}</Cloth>
+      {th1 >= Math.PI / 2 ? <Cloth fn={sub(1 / 3, 2 / 3)} nu={30} nv={5} shade={newShade} look={lookN(0.75 * (1 - c1))}>
+        {th2 < Math.PI / 2 ? <path d={isoV(sub(1 / 3, 2 / 3), 0.985)} fill="none" stroke="#FFD890" strokeWidth={3.5} opacity={0.5 * c1}/> : null}</Cloth> : null}
+      {th2 >= Math.PI / 2 ? <Cloth fn={sub(2 / 3, 1)} nu={30} nv={5} shade={newShade} look={{...lookN(0.75 * (1 - c2)), border: {...borderFull, v0: (borderFull.v0 - 2 / 3) * 3, v1: (borderFull.v1 - 2 / 3) * 3}}}/> : null}
+    </>;
+  // ================= pegs =================
+  const pegsNew = [0, 0.5, 1].map((u) => { const x = lerp(NH.x0, NH.x1, u); return pegItem(x, lineY(x), (u - 0.5) * 6); });
+  const pegsOld = [pegItem(OH.x1, lineY(OH.x1), 3)];
+  const tf = f - T(0.08);
+  const pegFall = tf > 0 ? (() => { const y = lineY(OH.x0) + 0.5 * 0.7 * tf * tf, x = OH.x0 - tf * 0.8; return y < 1200 ? [pegItem(x, y, -tf * 7)] : []; })() : [pegItem(OH.x0, lineY(OH.x0), -3)];
+  // ================= the world around: far bank with palms, river, near bank, poles =================
   const bank: Pt[] = [];
-  for (let i = 0; i <= 84; i++) { const x = -60 + i * 25, crown = Math.max(0, Math.sin(x / 70 + rnd(Math.floor(i / 5), 83) * 3)); bank.push([x, HZ - 4 - rnd(i, 82) * 6 - crown * (8 + 14 * rnd(Math.floor(i / 4), 81))]); }
-  const bankD = `${smooth(bank, false)} L ${W + 60} ${HZ + 4} L -60 ${HZ + 4} Z`;
+  for (let i = 0; i <= 90; i++) { const x = -80 + i * 25, crown = Math.max(0, Math.sin(x / 70 + rnd(Math.floor(i / 5), 83) * 3)); bank.push([x, HZ - 4 - rnd(i, 82) * 6 - crown * (8 + 14 * rnd(Math.floor(i / 4), 81))]); }
+  const bankD = `${smooth(bank, false)} L ${W + 160} ${HZ + 4} L -80 ${HZ + 4} Z`;
   const nearY = (x: number) => 812 + 16 * Math.sin(x / 260 + 0.6) + 8 * Math.sin(x / 97);
-  const nearPts: Pt[] = Array.from({length: 41}, (_, i) => { const x = -60 + i * 51; return [x, nearY(x)]; });
-  const nearD = `${smooth(nearPts, false)} L ${W + 60} ${H + 60} L -60 ${H + 60} Z`;
-  const toSun = (x: number, y: number): V2 => [sun[0] - x, sun[1] - y];
-  const cam = sstep(f / n);
+  const nearPts: Pt[] = Array.from({length: 45}, (_, i) => { const x = -80 + i * 50; return [x, nearY(x)]; });
+  const nearD = `${smooth(nearPts, false)} L ${W + 160} ${H + 60} L -80 ${H + 60} Z`;
+  // the push: zoom about a point right of the frame, so the new cloth slides from right of centre to the centre
+  const cam = sstep((f - T(0.04)) / T(0.96)), zoom = 1 + 0.18 * cam;
   return (
-    <Frame f={f} zoom={1 + 0.08 * cam} cx={lerp(1000, 1200, cam)} cy={520}>
+    <Frame f={f} zoom={zoom} cx={2094} cy={520}>
       <ThreadDefs/>
       <defs>
         <linearGradient id={`${id}r`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E8925A"/><stop offset="0.25" stopColor="#8E3D52"/><stop offset="1" stopColor="#2A1838"/></linearGradient>
         <linearGradient id={`${id}h`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#F0A04B" stopOpacity={0}/><stop offset="0.6" stopColor="#F0A04B" stopOpacity={0.3}/><stop offset="1" stopColor="#FFD27A" stopOpacity={0.55}/></linearGradient>
+        <linearGradient id={`${id}bl`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2A0A10" stopOpacity={0.35}/><stop offset="0.6" stopColor="#FFB060" stopOpacity={0}/><stop offset="1" stopColor="#FFC878" stopOpacity={0.45}/></linearGradient>
         <radialGradient id={`${id}s`} cx={sun[0]} cy={HZ + 20} r={420} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${sun[0]} ${HZ}) scale(0.5 1) translate(${-sun[0]} ${-HZ})`}><stop offset="0" stopColor="#FFE3A3" stopOpacity={0.75}/><stop offset="0.4" stopColor="#F0A04B" stopOpacity={0.25}/><stop offset="1" stopColor="#F0A04B" stopOpacity={0}/></radialGradient>
-        <linearGradient id={`${id}roll`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#FFD08A"/><stop offset="0.3" stopColor="#E07A3A"/><stop offset="0.7" stopColor="#8E3022"/><stop offset="1" stopColor="#3A1216"/></linearGradient>
       </defs>
-      <Sky mood={mood} sun={sun} sunR={72} f={f} rays={0.35} id={`${id}k`}/>
-      {/* far bank: a low line of trees and two palms, hazed by the low sun */}
-      <Rimmed paths={[bankD, ...palm(150, HZ - 6, 120, 0.12, f, 1), ...palm(1790, HZ - 6, 104, -0.15, f, 2), ...palm(1850, HZ - 4, 78, 0.1, f, 3)]} light={[0.2, -1]} fill="#2A1830" rim="#E8A060" w={1.4}/>
-      <rect x={-60} y={HZ - 80} width={W + 120} height={86} fill={`url(#${id}h)`}/>
+      <Sky mood={mood} sun={sun} sunR={70} f={f} rays={0.35} id={`${id}k`}/>
+      {/* far bank: a low line of trees, coconut and palmyra palms, hazed by the low sun */}
+      <Rimmed paths={[bankD, ...coconut({x: 150, y: HZ - 6, h: 128, seed: 3, wind: 0.2, t: f, lean: 0.14, detail: 0.8}), ...palmyra({x: 1772, y: HZ - 6, h: 118, seed: 5, wind: 0.2, t: f, detail: 0.8}),
+        ...coconut({x: 1860, y: HZ - 4, h: 96, seed: 8, wind: 0.2, t: f, lean: -0.16, detail: 0.7})]} light={toSun(960, HZ - 60)} fill={SIL_FAR} rim="#E8A060" w={1.4}/>
+      <rect x={-80} y={HZ - 80} width={W + 240} height={86} fill={`url(#${id}h)`}/>
       {/* the river: the sky mirrored, the sun's path glittering */}
-      <rect x={-60} y={HZ} width={W + 120} height={90} fill={`url(#${id}r)`}/>
-      <rect x={-60} y={HZ} width={W + 120} height={90} fill={`url(#${id}s)`}/>
+      <rect x={-80} y={HZ} width={W + 240} height={90} fill={`url(#${id}r)`}/>
+      <rect x={-80} y={HZ} width={W + 240} height={90} fill={`url(#${id}s)`}/>
       {Array.from({length: 30}, (_, i) => {
         const y = HZ + 4 + Math.pow(rnd(i, 91), 1.3) * 70, w = 10 + rnd(i, 92) * 46 * (1 - (y - HZ) / 120), x = sun[0] + (rnd(i, 93) - 0.5) * (60 + (y - HZ) * 2.2) + Math.sin(f / 20 + i) * 6;
         return <rect key={i} x={x - w / 2} y={y} width={w} height={1.6} fill="#FFE9B8" opacity={(0.3 + 0.5 * rnd(i, 94)) * (0.5 + 0.5 * Math.sin(f / 7 + i * 2.1))}/>;
@@ -321,43 +429,40 @@ const Garments: React.FC<SceneP> = ({s, n}) => {
       {/* near bank */}
       <path d={nearD} fill="#120A16"/>
       <path d={smooth(nearPts, false)} fill="none" stroke="#FFC877" strokeWidth={1.6} opacity={0.35}/>
-      <rect x={-60} y={850} width={W + 120} height={260} fill="url(#th-down)" opacity={0.5}/>
+      <rect x={-80} y={850} width={W + 240} height={260} fill="url(#th-down)" opacity={0.5}/>
       {/* the poles and the line */}
-      <Rimmed paths={bamboo([300, 990], [306, 232], 17)} light={toSun(300, 600)} fill="#130A18" w={2.6}/>
-      <Rimmed paths={bamboo([1662, 1000], [1656, 226], 17)} light={toSun(1660, 600)} fill="#130A18" w={2.6}/>
-      <path d={lineD(Array.from({length: 41}, (_, i) => { const x = lerp(LX0, LX1, i / 40); return [x, lineY(x)]; }))} fill="none" stroke="#1A0E1E" strokeWidth={3.2}/>
-      <path d={lineD(Array.from({length: 41}, (_, i) => { const x = lerp(LX0, LX1, i / 40); return [x, lineY(x) + 1]; }))} fill="none" stroke="#FFD38A" strokeWidth={1} opacity={0.55}/>
-      {/* the old cloth */}
-      {oldOp > 0.01 ? <Cloth fn={oldFn} nu={22} shade={oldShade} look={oldLook} holes={holeD} after={<path d={fray} fill="none" stroke="#5A4048" strokeWidth={1.2} opacity={0.85}/>}>
-        {/* threadbare patches the light comes through */}
+      <Rimmed paths={bamboo([226, 990], [232, 232], 17)} light={toSun(230, 600)} fill="#130A18" w={2.6}/>
+      <Rimmed paths={bamboo([1704, 1000], [1698, 226], 17)} light={toSun(1700, 600)} fill="#130A18" w={2.6}/>
+      <path d={lineD(Array.from({length: 49}, (_, i) => { const x = lerp(LX0, LX1, i / 48); return [x, lineY(x)]; }))} fill="none" stroke="#1A0E1E" strokeWidth={3.2}/>
+      <path d={lineD(Array.from({length: 49}, (_, i) => { const x = lerp(LX0, LX1, i / 48); return [x, lineY(x) + 1]; }))} fill="none" stroke="#FFD38A" strokeWidth={1} opacity={0.55}/>
+      {/* the old robe: threadbare, charring at its burning edge, the ember rim and its glow over it */}
+      {!burnt ? <Cloth fn={oldFn} nu={22} nv={12} shade={oldShade} look={oldLook} out={oldOut} holes={[...holes, ...worn].map((p) => polyD(p, true))}>
         {[[0.42, 0.3, 46], [0.72, 0.5, 38], [0.24, 0.62, 30]].map(([u, v, r], i) => { const c = oldFn(u, v); return <Glow key={i} x={c[0]} y={c[1]} rx={r} ry={r * 1.3} g="th-soft" o={0.3}/>; })}
-        {rings}
+        {drapeFolds(oldFn, OH.pegs, 0.9, 0.8, 13)}
+        {[0.04, 0.12].map((v0, k) => <SoftFold key={k} pts={Array.from({length: 15}, (_, i) => oldFn(i / 14, v0 + (0.05 + 0.04 * k) * Math.sin((Math.PI * i) / 14) * (1 - slipOf(f))))} w={20 - 5 * k} o={0.09} lit={0.1} skew={1}/>)}
+        <path d={charD} fill="none" stroke="#3A1A0C" strokeWidth={30} strokeLinejoin="round" opacity={0.45}/>
+        <path d={charD} fill="none" stroke="#120604" strokeWidth={11} strokeLinejoin="round" opacity={0.92}/>
       </Cloth> : null}
-      {motes}
-      {/* the new cloth, the doubled flap over the line, and the roll */}
-      <Glow x={sun[0]} y={sun[1] - 40} rx={420} ry={360} g="th-soft" o={0.25 + 0.3 * uf}/>
-      <Cloth fn={newFn} nu={28} nv={14} shade={newShade} look={newLook}/>
-      <Cloth fn={flapFn} nu={28} nv={4} shade={flapShade} look={flapLook}/>
-      {rollW > 0.8 ? <g>
-        <path d={ribbon(rollPts, rollW, rollW)} fill={`url(#${id}roll)`}/>
-        <path d={lineD(rollPts.map(([x, y]) => [x, y - rollW * 0.32]))} fill="none" stroke="#FFE3A3" strokeWidth={1.4} opacity={0.6}/>
-        {[0, 28].map((i) => { const p = rollPts[i]; return <g key={i}>
-          <ellipse cx={p[0]} cy={p[1]} rx={rollW * 0.3} ry={rollW * 0.5} fill="#5A1C1C" stroke="#FFD38A" strokeWidth={1} strokeOpacity={0.6}/>
-          <path d={`M ${n1(p[0])} ${n1(p[1] - rollW * 0.32)} A ${n1(rollW * 0.18)} ${n1(rollW * 0.3)} 0 1 1 ${n1(p[0] - 0.1)} ${n1(p[1] + rollW * 0.12)}`} fill="none" stroke="#E08A44" strokeWidth={1} opacity={0.6}/>
-        </g>; })}
-      </g> : null}
-      {/* the warm wind: dust in the light, grass and reeds bending */}
-      <Dust f={f} sun={sun} n={120} y0={200} y1={900}/>
-      <Rimmed paths={[blades(-40, 620, nearY, f, 60, 20, 70, 3, 0.4 + wind * 0.6), blades(1300, 1960, nearY, f, 60, 20, 80, 5, 0.4 + wind * 0.6)]} light={[0.4, -1]} fill="#0B0610" rim="#E8A868" w={1.6}/>
-      <Rimmed paths={[blades(-60, 260, (x) => nearY(x) + 120, f, 18, 120, 260, 7, 0.5 + wind * 0.5), blades(1720, 1980, (x) => nearY(x) + 120, f, 16, 120, 280, 9, 0.5 + wind * 0.5)]} light={[-0.3, -1]} fill="#07040A" rim="#B88A62" w={1.8}/>
+      {!burnt && fray ? <path d={fray} fill="none" stroke="#5A4048" strokeWidth={1.2} opacity={0.85}/> : null}
+      {!burnt ? worn.map((hp, i) => <path key={i} d={polyD(hp, true)} fill="none" stroke="#E8B878" strokeWidth={1.6} opacity={0.5}/>) : null}
+      {charD ? <path d={charD} fill="none" stroke="#FF7A2A" strokeWidth={16} strokeLinejoin="round" opacity={0.1}/> : null}
+      {embers}
+      <Rimmed paths={[...pegsOld, ...pegFall]} light={toSun(700, 300)} fill="#1C1016" rim="#F0B070" w={1.8}/>
+      {flakes}
+      {/* the new cloth, and its pegs */}
+      <Glow x={sun[0]} y={sun[1] - 30} rx={440} ry={380} g="th-soft" o={0.2 + 0.3 * open}/>
+      {newCloth}
+      <Rimmed paths={pegsNew} light={[0, 1]} fill="#1C1016" rim="#F0B070" w={1.8}/>
+      {/* the warm wind: dust in the light, grass and kans grass bending */}
+      <Dust f={f} sun={sun} n={110} y0={200} y1={900}/>
+      <Rimmed paths={[blades(-60, 620, nearY, f, 64, 20, 70, 3, 0.4 + wind * 0.6), blades(1260, 2000, nearY, f, 70, 20, 80, 5, 0.4 + wind * 0.6)]} light={toSun(960, 800)} fill="#0B0610" rim="#E8A868" w={1.6}/>
+      <Rimmed paths={[...reeds({x: 90, y: 1010, h: 330, seed: 5, wind: 0.3 + 0.3 * wind, t: f, plumes: 5}), ...reeds({x: 1880, y: 1016, h: 360, seed: 9, wind: 0.3 + 0.3 * wind, t: f, plumes: 6})]}
+        light={toSun(960, 860)} fill="#07040A" rim="#C89262" w={1.8}/>
     </Frame>
   );
 };
 
-// =====================================================================================================================
-// 7.7 PEARLS: a long string of luminous pearls in darkness, each holding a glint of a world; variant "thread": the
-// pearls dim and the thread itself lights, one line of light running through them all.
-// =====================================================================================================================
+// The worlds glowing in the pearls' depths (unit coordinates).
 const WORLD_BG: [number, string][][] = [
   [[0, "#2A2050"], [0.42, "#8E3D52"], [0.58, "#F0A04B"], [0.63, "#FFE3A3"], [0.66, "#5A2A3A"], [1, "#24142A"]],   // dawn
   [[0, "#0B1029"], [0.45, "#24305E"], [0.52, "#4A6A9A"], [0.6, "#1E3058"], [1, "#0A1430"]],                      // sea
@@ -368,23 +473,6 @@ const WORLD_BG: [number, string][][] = [
   [[0, "#07050F"], [0.5, "#1C1438"], [1, "#07050F"]],                                                           // galaxy
   [[0, "#120E2A"], [0.55, "#2A2050"], [0.6, "#3A2A50"], [1, "#0A0816"]],                                        // lamps on a ghat
 ];
-const PearlDefs: React.FC = () => (
-  <defs>
-    <clipPath id="pe-unit"><circle r={1}/></clipPath>
-    {WORLD_BG.map((st, k) => <linearGradient key={k} id={`pe-w${k}`} x1="0" y1="0" x2="0" y2="1">{st.map(([o, c], i) => <stop key={i} offset={o} stopColor={c}/>)}</linearGradient>)}
-    <radialGradient id="pe-milk" cx="0.42" cy="0.38" r="0.62"><stop offset="0" stopColor="#FFF6E6" stopOpacity={0.05}/><stop offset="0.62" stopColor="#FFF0DA" stopOpacity={0.12}/><stop offset="0.86" stopColor="#FFE9CC" stopOpacity={0.45}/><stop offset="1" stopColor="#FFF4E2" stopOpacity={0.75}/></radialGradient>
-    <radialGradient id="pe-shd" cx="0.3" cy="0.25" r="0.95"><stop offset="0.5" stopColor="#07050F" stopOpacity={0}/><stop offset="1" stopColor="#07050F" stopOpacity={0.6}/></radialGradient>
-    <radialGradient id="pe-veil" cx="0.44" cy="0.4" r="0.62"><stop offset="0" stopColor="#FFF6EC" stopOpacity={0.12}/><stop offset="0.4" stopColor="#FFF0E0" stopOpacity={0.22}/><stop offset="0.7" stopColor="#F6E6D8" stopOpacity={0.66}/><stop offset="0.9" stopColor="#EAD6CC" stopOpacity={0.92}/><stop offset="1" stopColor="#D2B8C0" stopOpacity={0.97}/></radialGradient>
-    <radialGradient id="pe-iri" cx="0.58" cy="0.62" r="0.62"><stop offset="0.74" stopColor="#F2B6C6" stopOpacity={0}/><stop offset="0.86" stopColor="#F2B6C6" stopOpacity={0.3}/><stop offset="0.95" stopColor="#A9C2F2" stopOpacity={0.28}/><stop offset="1" stopColor="#A9C2F2" stopOpacity={0}/></radialGradient>
-    <radialGradient id="pe-spec" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.95}/><stop offset="0.5" stopColor="#FFF6E0" stopOpacity={0.4}/><stop offset="1" stopColor="#FFF6E0" stopOpacity={0}/></radialGradient>
-    <radialGradient id="pe-halo"><stop offset="0" stopColor="#FFE9C0" stopOpacity={0.5}/><stop offset="0.3" stopColor="#F0C080" stopOpacity={0.16}/><stop offset="1" stopColor="#E8A060" stopOpacity={0}/></radialGradient>
-    <radialGradient id="pe-pearl" cx="0.38" cy="0.34" r="0.75"><stop offset="0" stopColor="#FFF8EC"/><stop offset="0.45" stopColor="#E8D6C4"/><stop offset="0.8" stopColor="#9A8090"/><stop offset="1" stopColor="#5A4660"/></radialGradient>
-    <radialGradient id="pe-glass" cx="0.4" cy="0.36" r="0.7"><stop offset="0" stopColor="#2A2040" stopOpacity={0.55}/><stop offset="0.8" stopColor="#120C22" stopOpacity={0.8}/><stop offset="1" stopColor="#0B0712" stopOpacity={0.9}/></radialGradient>
-    <radialGradient id="pe-moon"><stop offset="0" stopColor="#FFFBEA"/><stop offset="0.5" stopColor="#FFF0C8" stopOpacity={0.9}/><stop offset="1" stopColor="#FFE3A3" stopOpacity={0}/></radialGradient>
-    <radialGradient id="pe-bokeh"><stop offset="0" stopColor="#FFD9A0" stopOpacity={0.22}/><stop offset="0.7" stopColor="#E8A060" stopOpacity={0.1}/><stop offset="1" stopColor="#E8A060" stopOpacity={0}/></radialGradient>
-    <radialGradient id="pe-bokeh2"><stop offset="0" stopColor="#9AA4D8" stopOpacity={0.16}/><stop offset="0.7" stopColor="#6B78A8" stopOpacity={0.07}/><stop offset="1" stopColor="#6B78A8" stopOpacity={0}/></radialGradient>
-  </defs>
-);
 // A tiny world inside a pearl, in unit coordinates (the pearl is the unit circle); dx: a slow parallax drift.
 const World: React.FC<{k: number; f: number; seed: number; dx: number}> = ({k, f, seed, dx}) => {
   const tw = (i: number) => 0.6 + 0.4 * Math.sin(f / 9 + seed * 3 + i * 2.1);
@@ -436,158 +524,170 @@ const World: React.FC<{k: number; f: number; seed: number; dx: number}> = ({k, f
     </g>;
   }
 };
-// One pearl at (x, y), radius r: halo, the world inside, the milky skin, a shadow, a highlight, a rim of light.
-// b: brightness (1 lit, 0 dark glass); w: whether to show a world (small far pearls are plain).
-// Far pearls (no world) are drawn plainly: a lit nacre disc, a highlight, a little halo; few elements for many beads.
-const PlainPearl: React.FC<{x: number; y: number; r: number; b: number; glass: number}> = ({x, y, r, b, glass}) => (
-  <g transform={`translate(${n1(x)} ${n1(y)}) scale(${r.toFixed(2)})`}>
-    {b > 0.02 && r > 9 ? <circle r={2.4} fill="url(#pe-halo)" opacity={0.6 * b}/> : null}
-    <circle r={1} fill="url(#pe-pearl)"/>
-    <circle r={1} fill="url(#pe-iri)"/>
-    {glass > 0.01 ? <circle r={1} fill="url(#pe-glass)" opacity={glass}/> : null}
-    <ellipse cx={-0.34} cy={-0.42} rx={0.3} ry={0.17} transform="rotate(-38 -0.34 -0.42)" fill="url(#pe-spec)" opacity={0.5 + 0.5 * b}/>
-  </g>
+
+// =====================================================================================================================
+// 7.7 PEARLS: one strand of pearls runs diagonally out of the deep, from a warm light far up on the left to the lower
+// right, where the nearest pearl looms large and soft out of focus; the camera drifts slowly along the thread. Each pearl
+// is opaque nacre with a soft iridescent lustre, a world glowing faintly in its depths. Variant "thread": the pearls dim
+// (still nacre, never glass) and the thread itself lights, pulses of light running down it through every pearl.
+// =====================================================================================================================
+type V3 = [number, number, number];
+const NACRE: string[][] = [
+  ["#FFF9F0", "#F0E3D3", "#D0BBB2", "#8C7287", "#3A2944"],   // cream, a rose overtone
+  ["#FCFAF6", "#E6E0DE", "#C0B7C4", "#787096", "#2E284C"],   // silver
+  ["#FFF5E2", "#F2DAB6", "#CEAA8A", "#88645A", "#3E263A"],   // golden
+];
+const PearlDefs: React.FC = () => (
+  <defs>
+    <clipPath id="pe-unit"><circle r={1}/></clipPath>
+    {WORLD_BG.map((st, k) => <linearGradient key={k} id={`pe-w${k}`} x1="0" y1="0" x2="0" y2="1">{st.map(([o, c], i) => <stop key={i} offset={o} stopColor={c}/>)}</linearGradient>)}
+    {/* the nacre: lit from +x (each pearl turns it to face the light), deepening to plum on the far side */}
+    {NACRE.map((c, k) => <radialGradient key={k} id={`pe-n${k}`} cx="0.64" cy="0.5" fx="0.8" fy="0.48" r="0.74">
+      <stop offset="0" stopColor={c[0]}/><stop offset="0.3" stopColor={c[1]}/><stop offset="0.62" stopColor={c[2]}/><stop offset="0.88" stopColor={c[3]}/><stop offset="1" stopColor={c[4]}/></radialGradient>)}
+    {/* the same, out of focus: its edge melts away */}
+    {NACRE.map((c, k) => <radialGradient key={k} id={`pe-s${k}`} cx="0.58" cy="0.5" fx="0.68" fy="0.5" r="0.62">
+      <stop offset="0" stopColor={c[0]}/><stop offset="0.35" stopColor={c[1]}/><stop offset="0.68" stopColor={c[2]}/><stop offset="0.84" stopColor={c[3]} stopOpacity={0.92}/><stop offset="0.93" stopColor={c[4]} stopOpacity={0.45}/><stop offset="1" stopColor={c[4]} stopOpacity={0}/></radialGradient>)}
+    {/* orient: the iridescent overtone in a ring on the shadowed side (rose, then green, then blue) */}
+    <radialGradient id="pe-orient" cx="0.42" cy="0.5" r="0.6"><stop offset="0.6" stopColor="#F4B8C8" stopOpacity={0}/><stop offset="0.76" stopColor="#F4B8C8" stopOpacity={0.24}/><stop offset="0.87" stopColor="#B6E2CE" stopOpacity={0.17}/><stop offset="0.95" stopColor="#B4C4F6" stopOpacity={0.22}/><stop offset="1" stopColor="#B4C4F6" stopOpacity={0}/></radialGradient>
+    <radialGradient id="pe-lus">{softStops("#FFFDF6", 0.6, "#FFEEDA", 2.0)}</radialGradient>
+    <radialGradient id="pe-spec"><stop offset="0" stopColor="#FFFFFF"/><stop offset="0.4" stopColor="#FFF8EA" stopOpacity={0.6}/><stop offset="1" stopColor="#FFF4E0" stopOpacity={0}/></radialGradient>
+    <radialGradient id="pe-fadeg"><stop offset="0" stopColor="#fff"/><stop offset="0.45" stopColor="#fff" stopOpacity={0.85}/><stop offset="0.8" stopColor="#fff" stopOpacity={0.25}/><stop offset="1" stopColor="#fff" stopOpacity={0}/></radialGradient>
+    <mask id="pe-fade" maskUnits="userSpaceOnUse" x={-1.1} y={-1.1} width={2.2} height={2.2}><circle r={1} fill="url(#pe-fadeg)"/></mask>
+    <radialGradient id="pe-moon"><stop offset="0" stopColor="#FFFBEA"/><stop offset="0.5" stopColor="#FFF0C8" stopOpacity={0.9}/><stop offset="1" stopColor="#FFE3A3" stopOpacity={0}/></radialGradient>
+    <radialGradient id="pe-glow">{softStops("#FFE6B0", 0.75, "#F0A04B", 2.0)}</radialGradient>
+    <radialGradient id="pe-inner">{softStops("#FFF2D0", 0.95, "#FFB860", 1.8)}</radialGradient>
+  </defs>
 );
-const Pearl: React.FC<{x: number; y: number; r: number; k: number; f: number; b: number; seed: number; world: boolean; glass?: number}> = ({x, y, r, k, f, b, seed, world, glass = 0}) => !world ? <PlainPearl x={x} y={y} r={r} b={b} glass={glass}/> : (
-  <g transform={`translate(${n1(x)} ${n1(y)})`}>
-    {b > 0.02 ? <circle r={r * 3} fill="url(#pe-halo)" opacity={0.75 * b}/> : null}
-    <g transform={`scale(${r.toFixed(2)})`}>
-      <g clipPath="url(#pe-unit)">
-        {world ? <>
-          <circle r={1} fill={`url(#pe-w${k})`}/>
-          <World k={k} f={f} seed={seed} dx={0.08 * Math.sin(f / 70 + seed)}/>
-          <circle r={1} fill="url(#pe-veil)" opacity={Math.min(1, 0.75 + 6 / r)}/>
-        </> : <circle r={1} fill="url(#pe-pearl)"/>}
-        <circle r={1} fill="url(#pe-iri)"/>
-        <circle r={1} fill="url(#pe-milk)" opacity={0.6}/>
-        <circle r={1} fill="url(#pe-shd)"/>
-        {glass > 0.01 ? <circle r={1} fill="url(#pe-glass)" opacity={glass}/> : null}
+// The rim of light on the lit side of a unit pearl (turned with it).
+const RIM_ARC = (() => { const p: number[][] = []; for (let i = 0; i <= 14; i++) { const a = -0.85 + (1.7 * i) / 14; p.push([Math.cos(a) * 0.99, Math.sin(a) * 0.99]); } return lineD(p); })();
+// One pearl at (x, y), radius r. a: the direction to the light (degrees). soft: out of focus (0..1). haze: lost in the
+// far light (0..1). world: which world glows in its depths (-1: none), wo its strength. dim: the thread variant's
+// dimming (it darkens the body and the world, never the lustre: the pearl stays nacre). glow: lit from within.
+const Nacre: React.FC<{x: number; y: number; r: number; a: number; k: number; world: number; wo: number; f: number; seed: number; soft: number; haze: number; hazeC: string; dim: number; glow: number}> =
+  ({x, y, r, a, k, world, wo, f, seed, soft, haze, hazeC, dim, glow}) => {
+  const ra = `rotate(${a.toFixed(1)})`, sharp = soft < 0.35;
+  return (
+    <g transform={`translate(${n1(x)} ${n1(y)}) scale(${r.toFixed(2)})`}>
+      {glow > 0.01 ? <circle r={2.8} fill="url(#pe-glow)" opacity={Math.min(1, glow)}/> : null}
+      <g transform={ra}><circle r={soft > 0.01 ? 1 + 0.14 * soft : 1} fill={`url(#pe-${soft > 0.01 ? "s" : "n"}${k})`}/></g>
+      <g clipPath={sharp ? "url(#pe-unit)" : undefined}>
+        {sharp && world >= 0 && wo > 0.01 && r > 14 ? <g mask="url(#pe-fade)" opacity={wo}><g transform="translate(-0.06 0.02) scale(0.72 0.66)">
+          <circle r={1.3} fill={`url(#pe-w${world})`}/><World k={world} f={f} seed={seed} dx={0.08 * Math.sin(f / 70 + seed)}/></g></g> : null}
+        {dim > 0.01 ? <circle r={sharp ? 1 : 1 + 0.14 * soft} fill="#33182A" opacity={dim}/> : null}
+        <g transform={ra}>
+          <circle r={1} fill="url(#pe-orient)" opacity={1 - 0.6 * soft}/>
+          <ellipse cx={0.28 + 0.06 * soft} cy={-0.04} rx={0.6 + 0.12 * soft} ry={0.78 + 0.1 * soft} fill="url(#pe-lus)" opacity={0.46 + 0.3 * soft - 0.1 * dim}/>
+          {soft > 0.01 ? <ellipse cx={0.62} cy={0} rx={0.42} ry={0.9} fill="url(#pe-glow)" opacity={0.5 * soft}/> : null}
+        </g>
+        {glow > 0.01 ? <circle r={0.92} fill="url(#pe-inner)" opacity={Math.min(1, glow * 0.75)}/> : null}
+        <g transform={ra}>
+          <ellipse cx={0.52 - 0.08 * soft} cy={-0.2} rx={0.2 + 0.2 * soft} ry={0.12 + 0.12 * soft} transform="rotate(-20 0.54 -0.2)" fill="url(#pe-spec)" opacity={(0.95 - 0.2 * soft) * (1 - 0.25 * dim)}/>
+          <ellipse cx={-0.5} cy={0.42} rx={0.32} ry={0.1} transform="rotate(-38 -0.5 0.42)" fill="url(#pe-spec)" opacity={0.18 * (1 - soft)}/>
+        </g>
       </g>
-      <ellipse cx={-0.34} cy={-0.42} rx={0.3} ry={0.17} transform="rotate(-38 -0.34 -0.42)" fill="url(#pe-spec)" opacity={0.5 + 0.5 * b}/>
-      <ellipse cx={0.28} cy={0.58} rx={0.3} ry={0.12} transform="rotate(-30 0.28 0.58)" fill="url(#pe-spec)" opacity={0.22 * b}/>
-      <circle r={0.985} fill="none" stroke="#FFF0DA" strokeWidth={0.04} opacity={0.12 + 0.2 * b}/>
+      {haze > 0.01 ? <circle r={1.03} fill={hazeC} opacity={haze}/> : null}
     </g>
-  </g>
-);
-type Strand = {ctl: V2[]; rMin: number; rMax: number; peak: number; spread: number; gap: number; op: number; world: boolean; amp: number; ph: number};
-// The strand hangs through its control points and swings slowly, most at its low middle.
-const strandPts = (st: Strand, f: number): V2[] => {
-  const base = dense(st.ctl, 24), N = base.length - 1, sw = st.amp * Math.sin(f / 95 + st.ph);
-  return base.map(([x, y], i) => { const bell = Math.sin((Math.PI * i) / N); return [x + sw * bell, y - Math.abs(sw) * 0.1 * bell] as V2; });
+  );
 };
 const Pearls: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), id = uid();
   const thread = s.variant === "thread";
-  const tv = thread ? sstep((f - n * 0.12) / (n * 0.45)) : 0;
+  const tv = thread ? 0.55 + 0.45 * sstep(f / (n * 0.3)) : 0;
   const mood = moodOf(s, "night");
-  const amb = {night: "#1A1236", dusk: "#2A1430", dawn: "#18203E", gold: "#2A1A2E"}[mood];
-  const strands: Strand[] = [
-    {ctl: [[-80, 110], [420, 300], [1000, 380], [1500, 300], [2000, 110]], rMin: 5, rMax: 9, peak: 0.5, spread: 0.3, gap: 3, op: 0.36, world: false, amp: 20, ph: 2.1},
-    {ctl: [[-100, 250], [480, 540], [1120, 600], [1620, 470], [2060, 230]], rMin: 8, rMax: 15, peak: 0.52, spread: 0.28, gap: 4, op: 0.58, world: false, amp: 26, ph: 1.0},
-    {ctl: [[-170, 40], [260, 420], [800, 740], [1340, 650], [1800, 330], [2110, 30]], rMin: 13, rMax: 50, peak: 0.44, spread: 0.2, gap: 5, op: 1, world: true, amp: 30, ph: 0},
-  ];
+  const tint = {night: "#2A1840", dusk: "#3A1A3E", dawn: "#22284A", gold: "#3A2232"}[mood];
+  // the strand in 3D (camera at the origin, looking down +z): it comes down out of the light above the frame on the
+  // left, hangs in a long curve and sweeps forward past the lens at the lower right (a quadratic curve, by arc length)
+  const F = 1000, CX = 960 - 30 * sstep(f / n), CY = 540;
+  const S3 = (sx: number, sy: number, z: number): V3 => [((sx - 960) * z) / F, ((sy - 540) * z) / F, z];
+  const A = S3(640, -160, 3400), Cc = S3(720, 1010, 1900), Bn = S3(2080, 1070, 680);
+  const NB = 240, tab: V3[] = [], cum: number[] = [0];
+  for (let i = 0; i <= NB; i++) {
+    const u = i / NB, v = 1 - u, sw = 4 * u * v;
+    tab.push([v * v * Bn[0] + 2 * v * u * Cc[0] + u * u * A[0] + 60 * Math.sin(f / 80 + u * 2.4) * sw, v * v * Bn[1] + 2 * v * u * Cc[1] + u * u * A[1] + 24 * Math.sin(f / 64 + u * 3) * sw, v * v * Bn[2] + 2 * v * u * Cc[2] + u * u * A[2]]);
+    if (i) cum.push(cum[i - 1] + Math.hypot(tab[i][0] - tab[i - 1][0], tab[i][1] - tab[i - 1][1], tab[i][2] - tab[i - 1][2]));
+  }
+  const LT = cum[NB];
+  const at3 = (sL: number): V3 => {
+    const s1 = Math.max(0, Math.min(LT, sL)); let lo = 0, hi = NB;
+    while (hi - lo > 1) { const m = (lo + hi) >> 1; if (cum[m] < s1) lo = m; else hi = m; }
+    const t = (s1 - cum[lo]) / Math.max(1e-6, cum[hi] - cum[lo]), p = tab[lo], q = tab[hi];
+    return [lerp(p[0], q[0], t), lerp(p[1], q[1], t), lerp(p[2], q[2], t)];
+  };
+  const proj = (P: V3): [number, number, number] => [CX + (F * P[0]) / P[2], CY + (F * P[1]) / P[2], F / P[2]];
+  const Lt: V2 = [700, -40];                                // the light the thread comes down from (just above the frame)
+  // pearls along it, drifting down the thread towards the lens as the camera travels along it
+  const R = 88, SP = R * 3.2, speed = 0.9, travel = f * speed, k0 = Math.floor(travel / SP), off = travel - k0 * SP;
+  type B = {sL: number; P: V3; q: [number, number, number]; kid: number};
+  const beads: B[] = [];
+  for (let k = 0; k * SP - off < LT; k++) { const sL = k * SP - off; if (sL < 0) continue; const P = at3(sL); beads.push({sL, P, q: proj(P), kid: k + k0}); }
+  beads.sort((a, b) => b.P[2] - a.P[2]);                    // far first
+  // pulses of light running down the thread from the light (thread variant): always two or three on screen
+  const PSP = LT * 0.34, PV = 15;
+  const pulses = thread ? Array.from({length: 4}, (_, j) => LT + PSP * 0.2 - ((f * PV + j * PSP) % (PSP * 4))).filter((p) => p > -40 && p < LT + 40) : [];
+  const nearP = (sL: number) => pulses.reduce((m, p) => Math.max(m, Math.exp(-Math.pow((sL - p) / (SP * 0.75), 2))), 0);
+  // the thread between two arc positions, projected; its width follows the depth
+  const tpts = (s0: number, s1: number, k = 8) => Array.from({length: k + 1}, (_, i) => proj(at3(lerp(s0, s1, i / k))));
+  const strokeSeg = (s0: number, s1: number, key: string) => {
+    const pts = tpts(s0, s1), sc = pts[Math.floor(pts.length / 2)][2], d = lineD(pts), pk = nearP((s0 + s1) / 2);
+    return <g key={key}>
+      {tv > 0 ? <>
+        <path d={d} fill="none" stroke="#FFC877" strokeWidth={16 * sc + 4} opacity={0.1 * tv} strokeLinecap="round"/>
+        <path d={d} fill="none" stroke="#FFE2A8" strokeWidth={5 * sc + 1.6} opacity={0.3 * tv} strokeLinecap="round"/>
+      </> : null}
+      <path d={d} fill="none" stroke={tv > 0 ? "#FFF4D8" : "#C89A58"} strokeWidth={(tv > 0 ? 2.6 : 2.2) * sc + 0.4} opacity={tv > 0 ? 0.6 + 0.4 * tv : 0.75} strokeLinecap="round"/>
+      {pk > 0.02 ? <path d={d} fill="none" stroke="#FFFFFF" strokeWidth={4.5 * sc + 1.6} opacity={0.95 * pk} strokeLinecap="round"/> : null}
+    </g>;
+  };
+  const nodes: React.ReactNode[] = [];
+  const top = beads.length ? beads[0].sL : 0;
+  nodes.push(strokeSeg(LT, top, "t-top"));
+  beads.forEach((b, i) => {
+    const [x, y, sc] = b.q, r = R * sc;
+    const nb = beads[i + 1], toS = nb ? nb.sL : 0;
+    const vis = !(x < -r - 60 || x > W + r + 60 || y < -r - 60 || y > H + r + 60);
+    if (vis) {
+      const soft = clamp01((1060 - b.P[2]) / 320), haze = clamp01((b.P[2] - 2300) / 2600) * 0.5;
+      const a = (Math.atan2(Lt[1] - y, Lt[0] - x) * 180) / Math.PI, pn = nearP(b.sL);
+      nodes.push(<Nacre key={`p${b.kid}`} x={x} y={y} r={r} a={a} k={soft > 0.2 ? 0 : ((b.kid % 3) + 3) % 3} world={((b.kid % 8) + 8) % 8} wo={thread ? 0.16 + 0.6 * pn : 0.34} f={f} seed={b.kid}
+        soft={soft} haze={haze} hazeC={mix(tint, "#E8A870", 0.5)} dim={thread ? tv * 0.4 * (1 - pn) : 0} glow={thread ? pn * 0.95 : 0.1 * (1 - soft)}/>);
+      if (soft < 0.4) { const h = proj(at3(b.sL - R * 0.97)); nodes.push(<circle key={`h${b.kid}`} cx={h[0]} cy={h[1]} r={Math.max(0.8, 3 * sc)} fill="#2A1820" opacity={0.8}/>); }
+    }
+    // the thread on to the next pearl (its far end hidden inside it), and the silk knot halfway
+    nodes.push(strokeSeg(b.sL - R * 0.97, toS, `t${b.kid}`));
+    if (nb) {
+      const kq = proj(at3((b.sL + toS) / 2)), kr = Math.max(1.4, 7 * kq[2]), pk = nearP((b.sL + toS) / 2);
+      nodes.push(<g key={`k${b.kid}`}><ellipse cx={kq[0]} cy={kq[1]} rx={kr} ry={kr * 0.8} fill={thread ? mix("#7A5428", "#FFF0C8", 0.5 * tv + 0.5 * pk) : "#5A3A22"}/><circle cx={kq[0] - kr * 0.3} cy={kq[1] - kr * 0.3} r={kr * 0.35} fill="#FFE2A8" opacity={0.6}/></g>);
+    }
+  });
+  // the pulses themselves: a bead of light on the thread, and its glow
+  const pulseNodes = pulses.map((p, j) => {
+    const q = proj(at3(p)); if (q[0] < -300 || q[0] > W + 300 || q[1] < -300 || q[1] > H + 300) return null;
+    return <g key={`pl${j}`}><circle cx={q[0]} cy={q[1]} r={260 * q[2] + 40} fill="url(#pe-glow)" opacity={0.85}/></g>;
+  });
   return (
-    <Frame f={f} zoom={push(f, n, 1, 1.06)} cx={960} cy={560}>
+    <Frame f={f} zoom={push(f, n, 1, 1.03)} cx={960} cy={540}>
       <ThreadDefs/>
       <PearlDefs/>
       <defs>
-        <radialGradient id={`${id}bg`} cx="0.5" cy="0.55" r="0.75"><stop offset="0" stopColor={amb}/><stop offset="0.6" stopColor="#0B0818"/><stop offset="1" stopColor="#040208"/></radialGradient>
+        <radialGradient id={`${id}bg`} gradientUnits="userSpaceOnUse" cx={Lt[0]} cy={Lt[1]} r={2000}>
+          <stop offset="0" stopColor="#E8A870"/><stop offset="0.07" stopColor="#B06A58"/><stop offset="0.2" stopColor={mix(tint, "#7A3A50", 0.55)}/><stop offset="0.42" stopColor={tint}/><stop offset="0.72" stopColor="#100A20"/><stop offset="1" stopColor="#06040C"/>
+        </radialGradient>
       </defs>
       <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}bg)`}/>
-      {/* far out-of-focus lights */}
-      {Array.from({length: 16}, (_, i) => {
-        const x = rnd(i, 201) * W + Math.sin(f / 200 + i) * 20, y = 140 + rnd(i, 202) * 760, r = 60 + rnd(i, 203) * 120;
-        return <circle key={i} cx={x} cy={y} r={r} fill={`url(#${i % 3 ? "pe-bokeh" : "pe-bokeh2"})`} opacity={0.5 + 0.5 * Math.sin(f / 60 + i)}/>;
-      })}
-      <Glow x={960} y={620} rx={900} ry={420} g="th-soft" o={0.18 + 0.18 * tv}/>
-      {strands.map((st, si) => {
-        const pts = strandPts(st, f), cum = cumLen(pts), L = cum[cum.length - 1];
-        // pearls graduated: largest at the low middle of the strand
-        const beads: {p: V2; r: number; k: number}[] = [];
-        let pos = 0, i = 0;
-        while (pos < L) { const q = clamp01(pos / L), r = lerp(st.rMin, st.rMax, Math.exp(-Math.pow((q - st.peak) / st.spread, 2))); pos += r; beads.push({p: atLen(pts, cum, pos), r, k: (i * 3 + si) % 8}); pos += r + st.gap * (0.6 + r / 40); i++; }
-        const td = lineD(pts);
-        // the thread: faint between the pearls; in the "thread" variant it becomes a line of light, a pulse running along it
-        const pulse = (f * 9 + si * 400) % (L + 600) - 300;
-        const pb = 1 - 0.82 * tv;
-        return (
-          <g key={si} opacity={st.op}>
-            <path d={td} fill="none" stroke="#C9A55A" strokeWidth={si === 2 ? 1.4 : 0.9} opacity={0.45}/>
-            {beads.map((bd, j) => bd.p[0] > -60 && bd.p[0] < W + 60 && bd.p[1] < H + 60 ? <Pearl key={j} x={bd.p[0]} y={bd.p[1]} r={bd.r} k={bd.k} f={f} b={pb * (0.85 + 0.15 * Math.sin(f / 37 + j * 0.7))} seed={j + si * 50} world={st.world} glass={0.75 * tv}/> : null)}
-            {tv > 0.01 ? <g opacity={tv}>
-              <path d={td} fill="none" stroke="#FFC877" strokeWidth={34} opacity={0.06}/>
-              <path d={td} fill="none" stroke="#FFD9A0" strokeWidth={12} opacity={0.18}/>
-              <path d={td} fill="none" stroke="#FFF6D8" strokeWidth={si === 2 ? 3.2 : 2} opacity={0.95}/>
-              <path d={td} fill="none" stroke="#FFFFFF" strokeWidth={si === 2 ? 6 : 4} strokeDasharray={`160 ${L + 900}`} strokeDashoffset={-pulse} strokeLinecap="round" opacity={0.8}/>
-              <path d={td} fill="none" stroke="#FFE3A3" strokeWidth={22} strokeDasharray={`240 ${L + 900}`} strokeDashoffset={-pulse + 40} strokeLinecap="round" opacity={0.18}/>
-            </g> : null}
-          </g>
-        );
-      })}
-      <Dust f={f} sun={[960, 600]} n={90} y0={120} y1={980}/>
+      <circle cx={Lt[0]} cy={Lt[1]} r={700} fill="url(#pe-glow)" opacity={0.5 + 0.2 * tv}/>
+      <Dust f={f} sun={[Lt[0], Lt[1] + 200]} n={60} y0={60} y1={900}/>
+      {nodes}
+      {pulseNodes}
     </Frame>
   );
 };
 
 // =====================================================================================================================
-// 9.26 OFFERING: a brass plate and a water pot on a stone floor in lamplight; a leaf, a flower, a fruit appear one by
-// one, and water is poured into a small bowl. No hands.
+// 9.26 OFFERING: a brass thali on a dark stone floor before a temple wall: a carved niche in soft shadow above it, a
+// pillar's lotus base at the side, a faint kolam border in rice flour. A clay diya burns on the plate. A leaf, a
+// marigold, a mango arrive one by one, each in a breath of light; then a copper lota tilts in from the top right and
+// pours a thread of water into the small bowl. No hands. The words, one line, each lit as its gift arrives.
 // =====================================================================================================================
-// The clay lamp's flame (as in the flame family): halo, fringes, gold body, white core, blue root.
-const flameOutline = (x: number, y: number, h: number, w: number, sway: number, t: number): string => {
-  const N = 12, L: Pt[] = [], R: Pt[] = [];
-  let tip: Pt = [x, y - h, "c"];
-  for (let i = 1; i <= N; i++) {
-    const u = i / N, hw = u < 0.24 ? w * Math.sqrt(Math.max(0, 1 - Math.pow((0.24 - u) / 0.24, 2))) : w * Math.pow((1 - u) / 0.76, 1.15);
-    const cx = x + sway * h * Math.pow(u, 1.6) * Math.sin(t - u * 3.2), cy = y - h * u;
-    if (i === N) { tip = [cx, cy, "c"]; continue; }
-    L.push([cx - hw, cy]); R.push([cx + hw, cy]);
-  }
-  return smooth([[x, y + w * 0.08], ...R, tip, ...L.reverse()] as Pt[]);
-};
-const Flame: React.FC<{x: number; y: number; h: number; f: number}> = ({x, y, h, f}) => {
-  const id = uid(), w = h * 0.2, sway = 0.02 + 0.01 * Math.sin(f / 17), t = f / 4;
-  return (
-    <g>
-      <defs>
-        <linearGradient id={`${id}g`} gradientUnits="userSpaceOnUse" x1={x} y1={y + 2} x2={x} y2={y - h}><stop offset="0" stopColor="#FF8A3A" stopOpacity={0.2}/><stop offset="0.12" stopColor="#FFB45A" stopOpacity={0.95}/><stop offset="0.4" stopColor="#FFD889"/><stop offset="0.75" stopColor="#FFB451"/><stop offset="1" stopColor="#F07A35" stopOpacity={0.8}/></linearGradient>
-        <radialGradient id={`${id}c`} gradientUnits="userSpaceOnUse" cx={x} cy={y - h * 0.2} r={h * 0.5}><stop offset="0" stopColor="#FFFFF6"/><stop offset="0.55" stopColor="#FFF4D0" stopOpacity={0.9}/><stop offset="1" stopColor="#FFE2A0" stopOpacity={0}/></radialGradient>
-      </defs>
-      <Glow x={x} y={y - h * 0.45} rx={h * 5} o={0.9}/>
-      <Glow x={x} y={y - h * 0.42} rx={h * 1.1} ry={h * 1.25} g="th-soft" o={0.9}/>
-      <path d={flameOutline(x, y + h * 0.05, h * 1.16, w * 2, sway, t)} fill="#F59A45" opacity={0.12}/>
-      <path d={flameOutline(x, y + h * 0.03, h * 1.07, w * 1.42, sway, t)} fill="#FFB45A" opacity={0.24}/>
-      <path d={flameOutline(x, y, h, w, sway, t)} fill={`url(#${id}g)`}/>
-      <path d={flameOutline(x, y - h * 0.03, h * 0.64, w * 0.6, sway * 0.7, t)} fill={`url(#${id}c)`}/>
-      <ellipse cx={x} cy={y - h * 0.05} rx={w * 0.7} ry={h * 0.11} fill="url(#th-blue)" opacity={0.55}/>
-    </g>
-  );
-};
-const DIYA_BODY = smooth([[-78, -2], [-76, 10], [-66, 26], [-48, 40], [-26, 48], [-18, 56, "c"], [18, 56, "c"], [26, 48], [48, 40], [66, 26], [76, 10], [78, -2], [70, -12], [40, -19], [0, -21], [-40, -19], [-70, -12]]);
-const DIYA_OPEN = smooth([[-66, -2], [-50, -12], [0, -16], [50, -12], [66, -2], [48, 8], [14, 12], [0, 20], [-14, 12], [-48, 8]]);
-const DIYA_LIP = smooth([[-70, -1], [-48, 11], [-16, 15], [-6, 22], [0, 27, "c"], [6, 22], [16, 15], [48, 11], [70, -1], [72, 6], [50, 18], [18, 22], [8, 30], [0, 34, "c"], [-8, 30], [-18, 22], [-50, 18], [-72, 6]]);
-const Diya: React.FC<{x: number; y: number; s: number}> = ({x, y, s}) => {
-  const id = uid();
-  return (
-    <g transform={`translate(${x} ${y}) scale(${s})`}>
-      <defs>
-        <linearGradient id={`${id}b`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4A2418"/><stop offset="0.35" stopColor="#26120F"/><stop offset="1" stopColor="#0C070B"/></linearGradient>
-        <radialGradient id={`${id}o`} cx="0.5" cy="0.75" r="0.6"><stop offset="0" stopColor="#FFD68A" stopOpacity={0.9}/><stop offset="0.4" stopColor="#9A5A22" stopOpacity={0.85}/><stop offset="1" stopColor="#1A0E0C"/></radialGradient>
-      </defs>
-      <ellipse cx={14} cy={56} rx={118} ry={16} fill="url(#th-shade)" opacity={0.85}/>
-      <path d={DIYA_BODY} fill={`url(#${id}b)`}/>
-      <path d="M -70 20 Q 0 44 70 20" fill="none" stroke={K.rim} strokeWidth={1} opacity={0.24}/>
-      <path d={DIYA_BODY} fill="none" stroke={K.rim} strokeWidth={1.4} opacity={0.3}/>
-      <path d={DIYA_OPEN} fill={`url(#${id}o)`}/>
-      <ellipse cx={0} cy={2} rx={24} ry={4} fill="url(#th-hot)" opacity={0.6}/>
-      <path d={DIYA_LIP} fill="#6A3020"/>
-      <path d={DIYA_LIP} fill="none" stroke={K.rim} strokeWidth={1.5} opacity={0.85}/>
-      <path d={ribbon([[0, -2], [1, 6], [-1, 12], [0, 18]], 5, 3.5)} fill="#2A1A14"/>
-      <circle cx={0} cy={17} r={2.6} fill="#FF7A2A"/>
-    </g>
-  );
-};
-// ---- the offerings ----
 // A heart-shaped peepal leaf, base at the origin, its long drip tip along +x, length L (local; the caller lays it flat).
 const PEEPAL: Pt[] = [[0, 0, "c"], [-0.05, -0.08], [-0.075, -0.2], [-0.03, -0.32], [0.07, -0.41], [0.2, -0.44], [0.33, -0.41], [0.45, -0.33], [0.55, -0.23], [0.64, -0.14], [0.72, -0.075], [0.8, -0.036], [0.9, -0.012], [1.0, 0, "c"], [0.9, 0.012], [0.8, 0.036], [0.72, 0.075], [0.64, 0.14], [0.55, 0.23], [0.45, 0.33], [0.33, 0.41], [0.2, 0.44], [0.07, 0.41], [-0.03, 0.32], [-0.075, 0.2], [-0.05, 0.08]];
 const PeepalLeaf: React.FC<{L: number}> = ({L}) => {
@@ -612,219 +712,267 @@ const PeepalLeaf: React.FC<{L: number}> = ({L}) => {
     </g>
   );
 };
-// A marigold: a dome of ruffled petals laid out on the golden angle, seen from above at a slant, lit from the back left.
-const PETAL: Pt[] = [[0, -0.18], [0.45, -0.42], [0.78, -0.44], [0.9, -0.32], [1.0, -0.17], [0.93, -0.05], [1.04, 0.06], [0.95, 0.2], [0.86, 0.36], [0.5, 0.42], [0, 0.18]];
-const PETAL_D = smooth(PETAL.map((p) => [p[0] * 10, p[1] * 10] as Pt));
-const Marigold: React.FC<{R: number; seed: number}> = ({R, seed}) => {
-  const el = 0.62, ce = 0.78, Ln = [-0.5, 0.66, -0.56], ll = Math.hypot(Ln[0], Ln[1], Ln[2]);
+// A marigold petal: a fan whose outer edge is crinkled into small teeth (local: base at 0, pointing +x, length ~10).
+const MPETAL: string[] = Array.from({length: 5}, (_, k) => {
+  const pts: Pt[] = [[0, 0, "c"], [4.6, -2.9 - 0.4 * rnd(k, 341)]];
+  const nT = 9, spread = 0.5 + 0.14 * rnd(k, 342);
+  for (let i = 0; i <= nT; i++) {
+    const a = -spread + (2 * spread * i) / nT, tooth = i % 2 === 0, rr = 10 * (tooth ? 1 + 0.06 * rnd(i + k * 20, 343) : 0.84 + 0.08 * rnd(i + k * 20, 344));
+    const p: [number, number] = [Math.cos(a) * rr * 0.92, Math.sin(a) * rr * 0.78];
+    pts.push(tooth ? [p[0], p[1], "c"] : p);
+  }
+  pts.push([4.6, 2.9 + 0.4 * rnd(k, 345)]);
+  return smooth(pts);
+});
+const MCREASE = "M 1.5 0.2 Q 5 0.9 8.8 0.3 M 2.4 -0.6 Q 5.4 -2 8.2 -3.4 M 2.4 0.9 Q 5.6 2.3 8 3.6";
+// A marigold head (Tagetes erecta): a dense dome of ruffled petal layers, deep red-orange in the core, bright orange
+// at the frilly edges, each petal darker at its base and lit at its crinkled rim; lit from the light direction lx.
+const Marigold: React.FC<{R: number; seed: number; lx: number}> = ({R, seed, lx}) => {
+  const sinE = 0.6, cosE = 0.8, Ln = [0.62 * lx, 0.62, 0.22], ll = Math.hypot(Ln[0], Ln[1], Ln[2]);
   const items: {depth: number; node: React.ReactNode}[] = [];
-  const N = 230;
+  const N = 380;
   for (let i = 0; i < N; i++) {
-    const t = (i + 0.5) / N, rr = Math.sqrt(t) * 1.02, ang = i * 2.39996 + seed;
-    const X = Math.cos(ang) * rr, Z = Math.sin(ang) * rr, Y = Math.sqrt(Math.max(0, 1 - rr * rr)) * 0.82;
-    const sx = X * R, sy = (Z * el - Y * ce) * R, depth = Z * ce + Y * el;
-    const nl = Math.hypot(X, Y, Z) || 1, lam = Math.max(0, (X * Ln[0] + Y * Ln[1] + Z * Ln[2]) / nl / ll);
-    const dirA = (Math.atan2(sy + 0.82 * ce * R, sx) * 180) / Math.PI + (rnd(i, 331) - 0.5) * 30, size = R * (0.17 + 0.18 * rr) / 10;
-    const base = mix(mix("#FFB238", "#C24A1A", Math.pow(rr, 1.4)), "#FF9A2A", (rnd(i, 332) - 0.3) * 0.5);
-    const c = mix(mix(base, "#FFE38A", lam * 0.7), "#4A1206", (1 - lam) * 0.45 * rr);
-    const sz = size * (0.85 + 0.3 * rnd(i, 333));
-    items.push({depth, node: <g key={i} transform={`translate(${n1(sx)} ${n1(sy)}) rotate(${n1(dirA)}) scale(${sz.toFixed(3)} ${(sz * (0.75 + 0.35 * (1 - rr))).toFixed(3)})`}>
-      <path d={PETAL_D} fill={c}/>
-      <path d={PETAL_D} fill="#3A0C04" opacity={0.17} transform="translate(-1 0) scale(0.55 0.8)"/>
-      <path d="M 8 -3 Q 9.6 0 8 3" fill="none" stroke="#FFE9B0" strokeWidth={0.7} opacity={0.35 * lam}/>
+    const t = (i + 0.5) / N, rr = clamp01(Math.sqrt(t) * 1.02 + (rnd(i, 330) - 0.5) * 0.05), ang = i * 2.39996 + seed + (rnd(i, 331) - 0.5) * 0.5;
+    const X = Math.cos(ang) * rr, Z = Math.sin(ang) * rr, Y = Math.sqrt(Math.max(0, 1 - rr * rr)) * 0.74 + 0.07 * (rnd(i, 332) - 0.5);
+    const sx = X * R * (1 + 0.05 * (rnd(i, 337) - 0.5)), sy = (Z * sinE - Y * cosE) * R, depth = Z * cosE + Y * sinE;
+    const nl = Math.hypot(X, Y / 0.6, Z) || 1, lam = Math.max(0, (X * Ln[0] + (Y / 0.6) * Ln[1] + Z * Ln[2]) / nl / ll);
+    const dirA = (Math.atan2(Math.sin(ang) * sinE + (rr < 0.4 ? -0.7 : -0.2), Math.cos(ang)) * 180) / Math.PI + (rnd(i, 333) - 0.5) * 80;
+    const size = (R * (0.1 + 0.12 * rr) * (0.8 + 0.45 * rnd(i, 334))) / 10, kx = rr > 0.72 ? 0.62 + 0.38 * Math.abs(Math.cos(ang)) : 0.82 + 0.18 * rnd(i, 335);
+    const core = clamp01((0.36 - rr) / 0.3);
+    const base = mix(mix("#FF9C1C", "#F27A0E", rnd(i, 336) * 0.7), "#C8420A", core * 0.8);
+    const c = mix(base, "#8E2606", (1 - lam) * 0.5), hi = mix(c, "#FFD872", 0.25 + 0.45 * lam);
+    items.push({depth, node: <g key={i} transform={`translate(${n1(sx)} ${n1(sy)}) rotate(${n1(dirA)}) scale(${(size * kx).toFixed(3)} ${size.toFixed(3)})`}>
+      <path d={MPETAL[i % 5]} fill={mix(c, "#5A1404", 0.5)} transform="translate(-0.5 0.5)"/>
+      <path d={MPETAL[i % 5]} fill={c}/>
+      <path d={MPETAL[(i + 2) % 5]} fill={hi} transform="translate(3.8 0) scale(0.6 0.84)"/>
     </g>});
   }
   items.sort((a, b) => a.depth - b.depth);
   return (
     <g>
-      <ellipse cx={R * 0.25} cy={R * 0.32} rx={R * 1.2} ry={R * 0.45} fill="url(#th-shade)" opacity={0.85}/>
-      {[-1, 1].map((sd) => <path key={sd} d={smooth([[sd * R * 0.2, R * 0.1, "c"], [sd * R * 0.6, R * 0.26], [sd * R * 1.05, R * 0.3], [sd * R * 1.32, R * 0.2, "c"], [sd * R * 0.95, R * 0.08], [sd * R * 0.5, R * 0.04]])} fill="#2A3010" stroke="#C9B060" strokeWidth={1} strokeOpacity={0.35}/>)}
+      <ellipse cx={R * 0.3} cy={R * 0.3} rx={R * 1.25} ry={R * 0.44} fill="url(#th-shade)" opacity={0.9}/>
+      {/* two serrated leaves under the head */}
+      {[-1, 1].map((sd) => <path key={sd} d={smooth([[sd * R * 0.3, R * 0.1, "c"], [sd * R * 0.7, R * 0.16], [sd * R * 0.98, R * 0.24], [sd * R * 1.06, R * 0.2], [sd * R * 1.18, R * 0.24], [sd * R * 1.34, R * 0.14, "c"], [sd * R * 1.14, R * 0.08], [sd * R * 1.08, R * 0.02], [sd * R * 0.8, R * 0.0], [sd * R * 0.55, R * 0.0]])} fill="#26360E" stroke="#C8C070" strokeWidth={1} strokeOpacity={0.35}/>)}
+      <ellipse cx={0} cy={-R * 0.16} rx={R * 0.9} ry={R * 0.72} fill="#9A3008"/>
       {items.map((it) => it.node)}
-      <ellipse cx={-R * 0.3} cy={-R * 0.62} rx={R * 0.45} ry={R * 0.22} fill="url(#th-warm)" opacity={0.45}/>
+      <ellipse cx={-R * 0.3 * lx} cy={-R * 0.56} rx={R * 0.5} ry={R * 0.24} fill="url(#th-warm)" opacity={0.3}/>
     </g>
   );
 };
-// A ripe mango lying on its side, the stem end up and right, lit from the back left.
-const MANGO = smooth([[-80, 18, "c"], [-78, 2], [-66, -20], [-42, -38], [-8, -47], [28, -45], [56, -34], [74, -16], [78, 6], [68, 26], [44, 40], [10, 46], [-26, 42], [-56, 32]]);
+// A ripe mango lying on its side: kidney-shaped, broad at the stem end (right) with a stem nub, the apex (left) turned
+// down with its little beak; green at the shoulder, yellow, a red blush; lit from the upper left.
+const MANGO = smooth([[90, -26], [62, -44], [24, -51], [-16, -48], [-52, -38], [-78, -22], [-92, -4], [-93, 9], [-88, 19], [-83, 28, "c"], [-78, 24], [-70, 27], [-56, 35], [-24, 45], [14, 49], [50, 43], [78, 28], [94, 8], [97, -10]]);
 const Mango: React.FC<{s: number}> = ({s}) => {
   const id = uid();
   return (
     <g transform={`scale(${s})`}>
       <defs>
-        <radialGradient id={`${id}g`} cx="0.36" cy="0.28" r="0.85"><stop offset="0" stopColor="#FFF0A8"/><stop offset="0.25" stopColor="#F8C24A"/><stop offset="0.55" stopColor="#E8862E"/><stop offset="0.82" stopColor="#A63C1C"/><stop offset="1" stopColor="#4A160E"/></radialGradient>
-        <radialGradient id={`${id}b`}><stop offset="0" stopColor="#8A9A30" stopOpacity={0.6}/><stop offset="1" stopColor="#8A9A30" stopOpacity={0}/></radialGradient>
-        <radialGradient id={`${id}r`}><stop offset="0" stopColor="#D8402A" stopOpacity={0.45}/><stop offset="1" stopColor="#D8402A" stopOpacity={0}/></radialGradient>
+        <linearGradient id={`${id}g`} gradientUnits="userSpaceOnUse" x1={96} y1={-30} x2={-94} y2={20}><stop offset="0" stopColor="#6E8A26"/><stop offset="0.16" stopColor="#A8A834"/><stop offset="0.38" stopColor="#ECC246"/><stop offset="0.7" stopColor="#F4A63A"/><stop offset="1" stopColor="#E88C2E"/></linearGradient>
+        <radialGradient id={`${id}r`}><stop offset="0" stopColor="#C8302A" stopOpacity={0.8}/><stop offset="0.5" stopColor="#D04A2A" stopOpacity={0.4}/><stop offset="1" stopColor="#D85A2A" stopOpacity={0}/></radialGradient>
+        <radialGradient id={`${id}d`} gradientUnits="userSpaceOnUse" cx={34} cy={44} r={110}><stop offset="0" stopColor="#2A0C06" stopOpacity={0.7}/><stop offset="0.6" stopColor="#2A0C06" stopOpacity={0.25}/><stop offset="1" stopColor="#2A0C06" stopOpacity={0}/></radialGradient>
+        <clipPath id={`${id}c`}><path d={MANGO}/></clipPath>
       </defs>
-      <ellipse cx={22} cy={40} rx={92} ry={18} fill="url(#th-shade)" opacity={0.9}/>
+      <ellipse cx={26} cy={42} rx={100} ry={18} fill="url(#th-shade)" opacity={0.9}/>
       <path d={MANGO} fill={`url(#${id}g)`}/>
-      <ellipse cx={30} cy={-8} rx={48} ry={30} fill={`url(#${id}r)`}/>
-      <ellipse cx={54} cy={-26} rx={34} ry={20} fill={`url(#${id}b)`}/>
-      <ellipse cx={-26} cy={-28} rx={22} ry={8} transform="rotate(-16 -26 -28)" fill="url(#th-hot)" opacity={0.75}/>
-      <path d="M -70 -14 Q -40 -42 0 -46" fill="none" stroke="#FFF0C0" strokeWidth={1.6} opacity={0.55}/>
-      <path d={ribbon([[58, -32], [64, -40], [72, -43]], 5, 3)} fill="#3A2410"/>
+      <g clipPath={`url(#${id}c)`}>
+        <ellipse cx={34} cy={-30} rx={62} ry={32} fill={`url(#${id}r)`}/>
+        <ellipse cx={-10} cy={-40} rx={30} ry={16} fill={`url(#${id}r)`} opacity={0.6}/>
+        <path d={MANGO} fill={`url(#${id}d)`}/>
+        {/* the faint ridge from the stem to the beak, and the pale lenticels */}
+        <path d="M 88 -18 C 40 -2 -30 10 -82 24" fill="none" stroke="#FFF0B0" strokeWidth={1.2} opacity={0.18}/>
+        {Array.from({length: 34}, (_, i) => <circle key={i} cx={-80 + rnd(i, 361) * 166} cy={-44 + rnd(i, 362) * 86} r={0.7 + 0.6 * rnd(i, 363)} fill="#FFF2C4" opacity={0.3}/>)}
+        <ellipse cx={-34} cy={-28} rx={26} ry={9} transform="rotate(-14 -34 -28)" fill="url(#th-hot)" opacity={0.8}/>
+      </g>
+      <path d="M -88 -6 C -74 -30 -40 -46 4 -50" fill="none" stroke="#FFF0C0" strokeWidth={1.8} opacity={0.6}/>
+      {/* the stem end: a little cavity and the cut stalk */}
+      <ellipse cx={86} cy={-28} rx={9} ry={5} fill="#4A4012" opacity={0.7}/>
+      <path d={band([[86, -28], [90, -36], [97, -42]], 6.5, 5, 1, "round")} fill="#3E2C12"/>
+      <ellipse cx={97} cy={-42} rx={3} ry={2.2} fill="#8A7040"/>
     </g>
   );
 };
-// A brass water pot (lota): squat round belly, short neck, flared lip; lit from the left.
+// A copper lota with a spout, upright: base at (0, 0), mouth at y = -186; the spout leaves the shoulder on the left.
 const LOTA = smooth([[-46, 0, "c"], [-50, -5], [-44, -10], [-70, -22], [-92, -44], [-102, -72], [-98, -104], [-82, -128], [-60, -144], [-44, -152], [-40, -162], [-48, -172], [-62, -180], [-64, -186, "c"], [64, -186, "c"], [62, -180], [48, -172], [40, -162], [44, -152], [60, -144], [82, -128], [98, -104], [102, -72], [92, -44], [70, -22], [44, -10], [50, -5], [46, 0, "c"]]);
+const SPOUT = band([[-74, -116], [-98, -138], [-118, -160], [-131, -176]], 17, 8, 1, "round");
+const SPOUT_TIP: V2 = [-133, -179];
+// The rice-flour kolam border: two lines weaving round a row of dots, little loops at the crossings, edged by two
+// straight lines; drawn flat on the floor (y squashed by the view).
+const kolam = (x0: number, x1: number, yc: number, a: number, P: number, sq: number): string => {
+  const m: string[] = [];
+  for (const sd of [-1, 1]) m.push(lineD(Array.from({length: Math.ceil((x1 - x0) / 4) + 1}, (_, i) => { const x = Math.min(x1, x0 + i * 4); return [x, yc + sd * a * sq * Math.sin((Math.PI * (x - x0)) / P)]; })));
+  for (const sd of [-1, 1]) m.push(`M ${n1(x0)} ${n1(yc + sd * (a + 12) * sq)} L ${n1(x1)} ${n1(yc + sd * (a + 12) * sq)}`);
+  for (let x = x0, k = 0; x <= x1 + 0.1; x += P, k++) {
+    const sd = k % 2 ? 1 : -1, y = yc + sd * (a + 12) * sq, ry = 10 * sq;
+    m.push(`M ${n1(x - 5)} ${n1(y)} C ${n1(x - 7)} ${n1(y + sd * ry * 1.6)} ${n1(x + 7)} ${n1(y + sd * ry * 1.6)} ${n1(x + 5)} ${n1(y)}`);
+  }
+  return m.join(" ");
+};
+const kolamDots = (x0: number, x1: number, yc: number, P: number, r: number): string => {
+  let d = "";
+  for (let x = x0 + P / 2; x < x1; x += P) d += `M ${n1(x - r)} ${n1(yc)} a ${r} ${r * 0.6} 0 1 0 ${n1(2 * r)} 0 a ${r} ${r * 0.6} 0 1 0 ${n1(-2 * r)} 0 `;
+  return d;
+};
 const Offering: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), id = uid();
   const mood = moodOf(s, "night");
   const amb = {night: "#2E2350", dusk: "#4A2B5C", dawn: "#2F3D6E", gold: "#5A3048"}[mood];
   const atIn: number[] = Array.isArray(s.at) ? s.at.map(Number) : [];
-  const at = [0.1, 0.3, 0.5, 0.68].map((d, i) => (Number.isFinite(atIn[i]) ? clamp01(atIn[i]) : d));
+  const at = [0.13, 0.26, 0.39, 0.53].map((d, i) => (Number.isFinite(atIn[i]) ? clamp01(atIn[i]) : d));
   const labels: string[] = Array.isArray(s.labels) ? s.labels.slice(0, 4).map(String) : [];
-  const app = at.map((a) => ease(f, a * n, Math.max(18, n * 0.08)));
-  const bloom = at.map((a) => { const t = (f - a * n) / Math.max(24, n * 0.12); return t < 0 || t > 1 ? 0 : Math.sin(Math.PI * t); });
-  // the plate, the lamp, the pot
-  const PX = 980, PY = 676, PR = 360, PQ = 0.355;
-  const LX = 600, LY = 540, DS = 1.0, FL: V2 = [LX, LY + 17 * DS];
-  const fh = 78 * (1 + 0.015 * Math.sin(f / 31));
-  const light: V2 = [FL[0], FL[1] - fh * 0.5];
-  // floor slabs in perspective
-  const VPX = 960, VPY = -900, YB = 1180;
-  const rowY = [1, 1.18, 1.4, 1.68, 2.05, 2.6, 3.4].map((zz) => VPY + (YB - VPY) / zz);
-  const xAt = (xb: number, y: number) => VPX + ((xb - VPX) * (y - VPY)) / (YB - VPY);
-  const slabs: React.ReactNode[] = [], joints: string[] = [];
-  for (let r = 0; r < rowY.length - 1; r++) {
-    const y0 = rowY[r], y1 = rowY[r + 1], off = (r % 2) * 300;
-    for (let j = -5; j <= 5; j++) {
-      const xb0 = VPX + j * 600 - 300 + off, xb1 = xb0 + 600;
-      const p = [[xAt(xb0, y0), y0], [xAt(xb1, y0), y0], [xAt(xb1, y1), y1], [xAt(xb0, y1), y1]];
-      slabs.push(<path key={`${r}-${j}`} d={lineD(p) + " Z"} fill="#1A1016" opacity={0.75 + 0.25 * rnd(r * 13 + j, 301)}/>);
-      joints.push(`M ${n1(p[0][0])} ${n1(y0)} L ${n1(p[3][0])} ${n1(y1)}`);
-    }
-    joints.push(`M -100 ${n1(y1)} L ${W + 100} ${n1(y1)}`);
-  }
-  // water: a thin stream poured from the dark above into the bowl, the level rising
-  const BX = 1190, BY = 650;
-  const wT = at[3] * n, wD = Math.max(40, n * 0.16);
-  const pour = sstep((f - wT) / 10) * (1 - sstep((f - wT - wD) / 14));
+  // each gift arrives inside a breath of light: the flash swells, the gift is there at its height, it settles
+  const AT = at.map((a) => a * n);
+  const flashP = AT.map((a) => clamp01((f - (a - 12)) / 26));
+  const here = AT.map((a) => f >= a);
+  const settle = AT.map((a) => (1 - sstep((f - a) / 16)) * -16);
+  const glowAfter = AT.map((a) => { const t = (f - a) / 40; return t < 0 || t > 1 ? 0 : Math.sin(Math.PI * Math.min(1, t * 2)) * (1 - t); });
+  // the plate, the lamp on it
+  const PX = 960, PY = 716, PR = 560, PQ = 0.34;
+  const DX = 604, DY = 654, DS = 1.5, wick = diyaWick(DX, DY, DS);
+  const light: V2 = [wick[0], wick[1] - 26];
+  const WALL = 330;
+  // the water: a lota comes in from the top right, tilts, pours from its spout into the bowl, tilts back and leaves
+  const BX = 1278, BY = 694;
+  const wT = AT[3], wD = Math.max(42, n * 0.15);
+  const inL = sstep((f - (wT - 38)) / 36), outL = sstep((f - (wT + wD + 6)) / 40);
+  const tilt = -60 * inL * (1 - outL) - 6 * outL;
+  const lp: V2 = [lerp(1790, 1528, inL) + outL * 260, lerp(-280, 300, inL) - outL * 640];
+  const rot = (p: V2, deg: number): V2 => { const a = (deg * Math.PI) / 180, c = Math.cos(a), sn = Math.sin(a); return [p[0] * c - p[1] * sn, p[0] * sn + p[1] * c]; };
+  const tipRel = rot([SPOUT_TIP[0], SPOUT_TIP[1] + 100], tilt), dirRel = rot([-0.6, -0.8], tilt);
+  const S0: V2 = [lp[0] + tipRel[0], lp[1] + tipRel[1]];
+  const pour = f >= wT && f <= wT + wD + 10 ? 1 : 0;
+  const head = sstep((f - wT) / 9), tail = sstep((f - wT - wD) / 9);
   const level = sstep((f - wT - 6) / (wD + 10));
-  const surfY = BY + lerp(16, 5, level);
-  const TOP = 190;
-  const streamPts: number[][] = Array.from({length: 25}, (_, i) => { const u = i / 24; return [BX - 4 + Math.sin(f / 7 + u * 5) * 1.4 * (1 - u) + Math.sin(f / 13 + u * 9) * 0.7 + u * 4, lerp(TOP, surfY, u)]; });
-  const sideLine = (sd: number, w0: number, w1: number) => streamPts.map(([x, y], i) => { const u = i / 24, w = lerp(w0, w1, Math.sqrt(u)) * (1 + 0.14 * Math.sin(y / 11 - f * 0.9)); return [x + (sd * w) / 2, y]; });
-  const sCum = cumLen(streamPts), sL = sCum[sCum.length - 1];
-  const z = push(f, n, 1.12, 1.18), ZX = PX - 60, ZY = PY - 70;
-  const lblY = ZY + (895 - ZY) / z;
-  const shadowTo = (x: number, y: number, len: number): [number, number] => { const dx = x - light[0], dy = (y - light[1]) * 2.2, l = Math.hypot(dx, dy) || 1; return [(dx / l) * len, (dy / l) * len * 0.4]; };
-  const settle = (i: number) => `translate(0 ${n1((1 - app[i]) * -14)})`;
+  const surfY = BY + lerp(14, 4, level);
+  const B: V2 = [BX - 6, surfY];
+  const C: V2 = [S0[0] + dirRel[0] * 110, S0[1] + dirRel[1] * 110 + 30];
+  const bez = (u: number): V2 => { const v = 1 - u; return [v * v * S0[0] + 2 * v * u * C[0] + u * u * B[0], v * v * S0[1] + 2 * v * u * C[1] + u * u * B[1]]; };
+  const NS = 26, sPts: V2[] = Array.from({length: NS + 1}, (_, i) => { const u = lerp(tail, head, i / NS), p = bez(u); return [p[0] + Math.sin(f / 4 + u * 9) * 1.2 * u, p[1]]; });
+  const sW = (i: number) => lerp(11, 6.5, i / NS) * (1 + 0.12 * Math.sin(i * 1.3 - f * 0.8));
+  const sideOf = (sd: number) => sPts.map((p, i) => { const nn = nrmAt(sPts, i); return [p[0] + (nn[0] * sd * sW(i)) / 2, p[1] + (nn[1] * sd * sW(i)) / 2]; });
+  const z = push(f, n, 1.12, 1.16);
+  const shadowTo = (x: number, y: number, len: number): V2 => { const dx = x - light[0], dy = (y - light[1]) * 2.2, l = Math.hypot(dx, dy) || 1; return [(dx / l) * len, (dy / l) * len * 0.4]; };
+  // the stone behind: the wall with its niche (its back faintly lit), the plinth, a pillar's lotus base
+  const wallNiche = niche({x: 960, y: 278, w: 150, h: 128, wall: [-140, -200, W + 140, WALL - 52], courses: false});
+  const plinth = ledge({x0: -140, x1: W + 140, y: WALL - 52, h: 52, seed: 3, wall: 0});
+  const col = pillar({x: 1655, y: WALL + 64, h: 1180});
+  const sa = labels.filter((t) => /[ऀ-ॿ]/.test(t)).join(" "), en = labels.filter((t) => !/[ऀ-ॿ]/.test(t)).join(" ");
+  const cur = here.lastIndexOf(true);
   return (
-    <Frame f={f} zoom={z} cx={ZX} cy={ZY}>
+    <Frame f={f} zoom={z} cx={960} cy={700} overlay={labels.length ? <Label sa={sa} en={en} hl={cur >= 0 && labels[cur] && /[ऀ-ॿ]/.test(labels[cur]) ? labels[cur] : undefined} f={f} at={AT[0] - 4} until={n + 30}/> : null}>
       <ThreadDefs/>
       <defs>
-        <radialGradient id={`${id}fl`} cx={light[0]} cy={light[1] + 60} r={1000} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${light[0]} ${light[1] + 60}) scale(1 0.5) translate(${-light[0]} ${-(light[1] + 60)})`}>
-          <stop offset="0" stopColor="#FFB868" stopOpacity={0.7}/><stop offset="0.12" stopColor="#E8904A" stopOpacity={0.42}/><stop offset="0.32" stopColor="#A0503A" stopOpacity={0.18}/><stop offset="0.62" stopColor="#4A2B5C" stopOpacity={0.05}/><stop offset="1" stopColor="#2E2350" stopOpacity={0}/>
+        <radialGradient id={`${id}fl`} cx={light[0]} cy={light[1] + 80} r={1150} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${light[0]} ${light[1] + 80}) scale(1 0.55) translate(${-light[0]} ${-(light[1] + 80)})`}>
+          <stop offset="0" stopColor="#FFB868" stopOpacity={0.62}/><stop offset="0.12" stopColor="#E8904A" stopOpacity={0.38}/><stop offset="0.32" stopColor="#A0503A" stopOpacity={0.16}/><stop offset="0.62" stopColor="#4A2B5C" stopOpacity={0.05}/><stop offset="1" stopColor="#2E2350" stopOpacity={0}/>
         </radialGradient>
-        <linearGradient id={`${id}wl`} gradientUnits="userSpaceOnUse" x1={-100} y1={0} x2={W + 100} y2={0}><stop offset="0" stopColor="#FFC877" stopOpacity={0.05}/><stop offset="0.3" stopColor="#FFC877" stopOpacity={0.35}/><stop offset="0.7" stopColor="#FFC877" stopOpacity={0.08}/><stop offset="1" stopColor="#FFC877" stopOpacity={0.02}/></linearGradient>
+        <radialGradient id={`${id}wl`} cx={light[0]} cy={WALL} r={1000} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${light[0]} ${WALL}) scale(1 0.7) translate(${-light[0]} ${-WALL})`}>
+          <stop offset="0" stopColor="#C8743A" stopOpacity={0.42}/><stop offset="0.3" stopColor="#7A3A2A" stopOpacity={0.2}/><stop offset="1" stopColor="#2E1A30" stopOpacity={0}/>
+        </radialGradient>
         <radialGradient id={`${id}amb`} cx={W / 2} cy={-200} r={1300} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor={amb} stopOpacity={0.3}/><stop offset="1" stopColor={amb} stopOpacity={0}/></radialGradient>
-        <radialGradient id={`${id}dk`} cx={PX - 120} cy={PY - 40} r={1150} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${PX - 120} ${PY - 40}) scale(1 0.8) translate(${-(PX - 120)} ${-(PY - 40)})`}><stop offset="0.28" stopColor="#030108" stopOpacity={0}/><stop offset="0.6" stopColor="#030108" stopOpacity={0.6}/><stop offset="1" stopColor="#030108" stopOpacity={0.95}/></radialGradient>
+        <radialGradient id={`${id}dk`} cx={PX - 60} cy={PY - 60} r={1250} gradientUnits="userSpaceOnUse" gradientTransform={`translate(${PX - 60} ${PY - 60}) scale(1 0.78) translate(${-(PX - 60)} ${-(PY - 60)})`}><stop offset="0.34" stopColor="#030108" stopOpacity={0}/><stop offset="0.68" stopColor="#030108" stopOpacity={0.55}/><stop offset="1" stopColor="#030108" stopOpacity={0.92}/></radialGradient>
+        <radialGradient id={`${id}kl`} cx={light[0]} cy={light[1]} r={1100} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#FFF0D0" stopOpacity={0.55}/><stop offset="0.45" stopColor="#F2E2C8" stopOpacity={0.2}/><stop offset="1" stopColor="#E8DCC8" stopOpacity={0.06}/></radialGradient>
+        <radialGradient id={`${id}st`}><stop offset="0" stopColor="#24161E" stopOpacity={0.55}/><stop offset="1" stopColor="#24161E" stopOpacity={0}/></radialGradient>
+        <radialGradient id={`${id}nb`} cx={960} cy={200} r={120} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#B8703C" stopOpacity={0.5}/><stop offset="0.6" stopColor="#5A2A26" stopOpacity={0.35}/><stop offset="1" stopColor="#1A0E18" stopOpacity={0.2}/></radialGradient>
         <linearGradient id={`${id}rim`} gradientUnits="userSpaceOnUse" x1={PX - PR * 0.8} y1={PY - PR * PQ} x2={PX + PR * 0.8} y2={PY + PR * PQ}><stop offset="0" stopColor="#FFEDB8"/><stop offset="0.18" stopColor="#E0A44C"/><stop offset="0.5" stopColor="#8A5620"/><stop offset="0.8" stopColor="#3A220C"/><stop offset="1" stopColor="#1E1006"/></linearGradient>
         <linearGradient id={`${id}side`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#C08A3C"/><stop offset="0.35" stopColor="#6A4218"/><stop offset="1" stopColor="#1A0C06"/></linearGradient>
         <linearGradient id={`${id}slope`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E8B060"/><stop offset="1" stopColor="#6A4218"/></linearGradient>
-        <radialGradient id={`${id}well`} gradientUnits="userSpaceOnUse" cx={PX - 150} cy={PY - 30} r={480} gradientTransform={`translate(${PX - 150} ${PY - 30}) scale(1 0.42) translate(${-(PX - 150)} ${-(PY - 30)})`}><stop offset="0" stopColor="#FFD488"/><stop offset="0.22" stopColor="#C48A3A"/><stop offset="0.6" stopColor="#5A3814"/><stop offset="1" stopColor="#24140A"/></radialGradient>
-        <linearGradient id={`${id}lota`} gradientUnits="userSpaceOnUse" x1={-104} y1={0} x2={104} y2={0}><stop offset="0" stopColor="#B07A34"/><stop offset="0.07" stopColor="#FFE6A8"/><stop offset="0.16" stopColor="#F2C46A"/><stop offset="0.3" stopColor="#A0682A"/><stop offset="0.55" stopColor="#4A2C12"/><stop offset="0.85" stopColor="#1A0E06"/><stop offset="1" stopColor="#5A3616"/></linearGradient>
-        <linearGradient id={`${id}st`} gradientUnits="userSpaceOnUse" x1={0} y1={TOP} x2={0} y2={surfY}><stop offset="0" stopColor="#FFF2D0" stopOpacity={0}/><stop offset="0.25" stopColor="#FFF2D0" stopOpacity={0.6}/><stop offset="1" stopColor="#FFE6B0"/></linearGradient>
-        <linearGradient id={`${id}sfg`} gradientUnits="userSpaceOnUse" x1={0} y1={TOP} x2={0} y2={TOP + 160}><stop offset="0" stopColor="#000"/><stop offset="1" stopColor="#fff"/></linearGradient>
-        <mask id={`${id}sf`} maskUnits="userSpaceOnUse" x={BX - 200} y={TOP - 10} width={400} height={surfY - TOP + 80}><rect x={BX - 200} y={TOP - 10} width={400} height={surfY - TOP + 80} fill={`url(#${id}sfg)`}/></mask>
-        <radialGradient id={`${id}water`} cx="0.36" cy="0.4" r="0.7"><stop offset="0" stopColor="#8A6248"/><stop offset="0.5" stopColor="#3A2228"/><stop offset="1" stopColor="#140A12"/></radialGradient>
+        <radialGradient id={`${id}well`} gradientUnits="userSpaceOnUse" cx={PX - 200} cy={PY - 40} r={620} gradientTransform={`translate(${PX - 200} ${PY - 40}) scale(1 0.42) translate(${-(PX - 200)} ${-(PY - 40)})`}><stop offset="0" stopColor="#FFD488"/><stop offset="0.22" stopColor="#C48A3A"/><stop offset="0.6" stopColor="#5A3814"/><stop offset="1" stopColor="#24140A"/></radialGradient>
+        <radialGradient id={`${id}bw`} gradientUnits="userSpaceOnUse" cx={BX - 30} cy={BY - 6} r={90}><stop offset="0" stopColor="#E8B060"/><stop offset="0.5" stopColor="#8A5A24"/><stop offset="1" stopColor="#2A160A"/></radialGradient>
+        <linearGradient id={`${id}lota`} gradientUnits="userSpaceOnUse" x1={-104} y1={0} x2={104} y2={0}><stop offset="0" stopColor="#E89A60"/><stop offset="0.08" stopColor="#FFD3A0"/><stop offset="0.2" stopColor="#D07A44"/><stop offset="0.42" stopColor="#8A3A1C"/><stop offset="0.75" stopColor="#3A140A"/><stop offset="1" stopColor="#6A2E16"/></linearGradient>
+        <linearGradient id={`${id}st2`} gradientUnits="userSpaceOnUse" x1={S0[0]} y1={S0[1]} x2={B[0]} y2={B[1]}><stop offset="0" stopColor="#FFF6E0" stopOpacity={0.7}/><stop offset="1" stopColor="#FFE6B8" stopOpacity={0.5}/></linearGradient>
+        <radialGradient id={`${id}water`} cx="0.36" cy="0.4" r="0.7"><stop offset="0" stopColor="#9A7050"/><stop offset="0.5" stopColor="#3A2228"/><stop offset="1" stopColor="#140A12"/></radialGradient>
       </defs>
-      {/* the stone floor: warm in the lamp's pool, cool and dark beyond */}
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill="#0A0710"/>
-      {slabs}
-      <path d={joints.join(" ")} stroke="#040208" strokeWidth={3} fill="none" opacity={0.85}/>
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}amb)`}/>
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}fl)`}/>
-      <path d={joints.join(" ")} stroke="#FFC877" strokeWidth={1} fill="none" opacity={0.06} transform="translate(0 2)"/>
-      {/* the polished stone mirrors the flame */}
-      <Glow x={FL[0]} y={FL[1] + 130} rx={22} ry={100} g="th-soft" o={0.55}/>
-      {/* a few loose petals and grains of rice on the floor */}
-      {[[1372, 760, 20], [1414, 790, -30], [560, 770, 60], [742, 852, 10]].map(([x, y, a], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${a}) scale(1.5 0.9)`}><path d={PETAL_D} fill={i % 2 ? "#C8501C" : "#E8862E"} opacity={0.8}/></g>)}
-      {/* the foot of the shrine wall at the back, its plinth catching a little of the lamp */}
-      <rect x={-100} y={-100} width={W + 200} height={300} fill="#0C0812"/>
-      <rect x={-100} y={150} width={W + 200} height={50} fill="#150D16"/>
-      <rect x={-100} y={196} width={W + 200} height={8} fill="#1C1218"/>
-      <rect x={-100} y={150} width={W + 200} height={2} fill={`url(#${id}wl)`}/>
-      <rect x={-100} y={196} width={W + 200} height={1.6} fill={`url(#${id}wl)`}/>
-      <rect x={-100} y={204} width={W + 200} height={40} fill="url(#th-down)" opacity={0.7}/>
-      {/* the lamp, just behind the plate */}
-      <Diya x={LX} y={LY} s={DS}/>
+      {/* the stone floor: one dark slab of stone, warm in the lamp's pool, mottled, cool and dark beyond */}
+      <rect x={-140} y={-200} width={W + 280} height={H + 400} fill="#0E0810"/>
+      {Array.from({length: 9}, (_, i) => <ellipse key={i} cx={-60 + rnd(i, 371) * (W + 120)} cy={WALL + 60 + rnd(i, 372) * 700} rx={180 + rnd(i, 373) * 260} ry={50 + rnd(i, 374) * 90} fill={`url(#${id}st)`} opacity={0.8}/>)}
+      <rect x={-140} y={-200} width={W + 280} height={H + 400} fill={`url(#${id}amb)`}/>
+      <rect x={-140} y={WALL - 60} width={W + 280} height={H} fill={`url(#${id}fl)`}/>
+      {/* the kolam: a border before the wall and one at our feet, in rice flour, brightest near the flame */}
+      <path d={kolam(-120, W + 120, WALL + 58, 13, 44, 0.42)} fill="none" stroke={`url(#${id}kl)`} strokeWidth={2} strokeLinecap="round"/>
+      <path d={kolamDots(-120, W + 120, WALL + 58, 44, 2.6)} fill="#F2E4CC" opacity={0.3}/>
+      <path d={kolam(-140, W + 140, 1010, 22, 72, 0.5)} fill="none" stroke={`url(#${id}kl)`} strokeWidth={2.8} strokeLinecap="round"/>
+      <path d={kolamDots(-140, W + 140, 1010, 72, 3.6)} fill="#F2E4CC" opacity={0.25}/>
+      {/* the wall: the niche's back faintly lit, the wall and the niche's frame in shadow, the plinth, the pillar */}
+      <rect x={880} y={110} width={160} height={180} fill={`url(#${id}nb)`}/>
+      <Rimmed paths={wallNiche} point={light} light={[-1, 1]} fill="#130A18" rim="#C88A50" w={2.2}/>
+      <rect x={-140} y={-200} width={W + 280} height={WALL + 200} fill={`url(#${id}wl)`}/>
+      <Rimmed paths={plinth} point={light} light={[-1, 1]} fill="#150C1A" rim="#9A6440" w={1.4}/>
+      <Rimmed paths={col} point={light} light={[-1, 1]} fill="#160C1A" rim="#D89A5C" w={2.8}/>
+      <rect x={-140} y={WALL} width={W + 280} height={40} fill="url(#th-down)" opacity={0.6}/>
+      {/* loose petals on the floor */}
+      {[[1600, 880, 20], [1650, 905, -40], [300, 860, 60], [380, 952, 10], [1500, 960, 80]].map(([x, y, a], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${a}) scale(1.6 0.9)`}><path d={MPETAL[i % 5]} fill={i % 2 ? "#C8501C" : "#E8862E"} opacity={0.85}/></g>)}
       {/* the plate: shadow, the side of the rim, the rim, the inner slope, the well with its engraved rings */}
-      <ellipse cx={PX + 60} cy={PY + 30} rx={PR * 1.08} ry={PR * PQ * 1.2} fill="url(#th-shade)" opacity={0.95}/>
-      <path d={`M ${PX - PR} ${PY} A ${PR} ${PR * PQ} 0 0 0 ${PX + PR} ${PY} L ${PX + PR - 4} ${PY + 14} A ${PR - 4} ${(PR - 4) * PQ} 0 0 1 ${PX - PR + 4} ${PY + 14} Z`} fill={`url(#${id}side)`}/>
+      <ellipse cx={PX + 70} cy={PY + 34} rx={PR * 1.08} ry={PR * PQ * 1.2} fill="url(#th-shade)" opacity={0.95}/>
+      <path d={`M ${PX - PR} ${PY} A ${PR} ${PR * PQ} 0 0 0 ${PX + PR} ${PY} L ${PX + PR - 4} ${PY + 16} A ${PR - 4} ${(PR - 4) * PQ} 0 0 1 ${PX - PR + 4} ${PY + 16} Z`} fill={`url(#${id}side)`}/>
       <ellipse cx={PX} cy={PY} rx={PR} ry={PR * PQ} fill={`url(#${id}rim)`}/>
-      <ellipse cx={PX} cy={PY + 2} rx={PR - 22} ry={(PR - 22) * PQ} fill={`url(#${id}slope)`} opacity={0.9}/>
-      <ellipse cx={PX} cy={PY + 7} rx={PR - 34} ry={(PR - 34) * PQ} fill={`url(#${id}well)`}/>
+      <ellipse cx={PX} cy={PY + 2} rx={PR - 26} ry={(PR - 26) * PQ} fill={`url(#${id}slope)`} opacity={0.9}/>
+      <ellipse cx={PX} cy={PY + 8} rx={PR - 40} ry={(PR - 40) * PQ} fill={`url(#${id}well)`}/>
       {[0.2, 0.42, 0.66, 0.88].map((k, i) => <g key={i}>
-        <ellipse cx={PX} cy={PY + 7} rx={(PR - 34) * k} ry={(PR - 34) * k * PQ} fill="none" stroke="#2A1606" strokeWidth={1.2} opacity={0.4}/>
-        <ellipse cx={PX} cy={PY + 8.5} rx={(PR - 34) * k} ry={(PR - 34) * k * PQ} fill="none" stroke="#FFD890" strokeWidth={0.8} opacity={0.16}/>
+        <ellipse cx={PX} cy={PY + 8} rx={(PR - 40) * k} ry={(PR - 40) * k * PQ} fill="none" stroke="#2A1606" strokeWidth={1.2} opacity={0.4}/>
+        <ellipse cx={PX} cy={PY + 9.5} rx={(PR - 40) * k} ry={(PR - 40) * k * PQ} fill="none" stroke="#FFD890" strokeWidth={0.8} opacity={0.16}/>
       </g>)}
-      {Array.from({length: 40}, (_, i) => { const a = (i / 40) * Math.PI * 2; return <circle key={i} cx={PX + Math.cos(a) * (PR - 11)} cy={PY + Math.sin(a) * (PR - 11) * PQ} r={1.8} fill="#2A1606" opacity={0.45}/>; })}
-      <path d={`M ${PX - PR + 4} ${PY - 2} A ${PR - 4} ${(PR - 4) * PQ} 0 0 1 ${PX - 40} ${PY - (PR - 4) * PQ + 1}`} fill="none" stroke="#FFF4D0" strokeWidth={2.6} opacity={0.8}/>
-      <Glow x={PX - 170} y={PY - 30} rx={130} ry={36} g="th-hot" o={0.4}/>
-      {/* grains of rice */}
-      {Array.from({length: 26}, (_, i) => { const a = rnd(i, 311) * 6.28, rr = Math.sqrt(rnd(i, 312)) * 46; return <ellipse key={i} cx={870 + Math.cos(a) * rr * 1.6} cy={738 + Math.sin(a) * rr * 0.5} rx={3.2} ry={1.4} transform={`rotate(${n1(rnd(i, 313) * 180)} ${n1(870 + Math.cos(a) * rr * 1.6)} ${n1(738 + Math.sin(a) * rr * 0.5)})`} fill="#F4E6C8" opacity={0.8}/>; })}
+      {Array.from({length: 48}, (_, i) => { const a = (i / 48) * Math.PI * 2; return <circle key={i} cx={PX + Math.cos(a) * (PR - 13)} cy={PY + Math.sin(a) * (PR - 13) * PQ} r={2} fill="#2A1606" opacity={0.45}/>; })}
+      <path d={`M ${PX - PR + 4} ${PY - 2} A ${PR - 4} ${(PR - 4) * PQ} 0 0 1 ${PX - 60} ${PY - (PR - 4) * PQ + 1}`} fill="none" stroke="#FFF4D0" strokeWidth={2.8} opacity={0.8}/>
+      {/* the brass mirrors the flame */}
+      <Glow x={light[0] + 4} y={DY + 40} rx={26} ry={70} g="th-soft" o={0.7}/>
+      {/* grains of rice, a few petals on the plate */}
+      {Array.from({length: 30}, (_, i) => { const a = rnd(i, 311) * 6.28, rr = Math.sqrt(rnd(i, 312)) * 52, x = 880 + Math.cos(a) * rr * 1.7, y = 742 + Math.sin(a) * rr * 0.5; return <ellipse key={i} cx={x} cy={y} rx={3.4} ry={1.5} transform={`rotate(${n1(rnd(i, 313) * 180)} ${n1(x)} ${n1(y)})`} fill="#F4E6C8" opacity={0.8}/>; })}
+      {/* the diya on the plate: its flame is the scene's one light */}
+      <Diya x={DX} y={DY} s={DS} f={f} seed={4} calm={0.9}/>
       {/* the leaf */}
-      <g opacity={app[0]} transform={settle(0)}>
-        <Glow x={790} y={660} rx={180} ry={70} g="th-warm" o={bloom[0] * 0.7}/>
-        <g transform={`translate(${shadowTo(780, 670, 20)[0]} ${shadowTo(780, 670, 20)[1] + 8})`} opacity={0.6}><g transform="translate(690 668) scale(1 0.44) rotate(-12)"><path d={smooth(PEEPAL.map((p) => [p[0] * 210, p[1] * 210, p[2]] as Pt))} fill="#120806"/></g></g>
-        <g transform="translate(690 668) scale(1 0.44) rotate(-12)"><PeepalLeaf L={210}/></g>
-      </g>
-      {/* the flower */}
-      <g opacity={app[1]} transform={settle(1)}>
-        <Glow x={950} y={600} rx={160} ry={90} g="th-warm" o={bloom[1] * 0.7}/>
-        <g transform="translate(950 640)"><Marigold R={66} seed={0.7}/></g>
-      </g>
+      {here[0] ? <g transform={`translate(0 ${n1(settle[0])})`}>
+        <g transform={`translate(${n1(shadowTo(760, 790, 22)[0])} ${n1(shadowTo(760, 790, 22)[1] + 8)})`} opacity={0.6}><g transform="translate(640 800) scale(1 0.44) rotate(-10)"><path d={smooth(PEEPAL.map((p) => [p[0] * 236, p[1] * 236, p[2]] as Pt))} fill="#120806"/></g></g>
+        <g transform="translate(640 800) scale(1 0.44) rotate(-10)"><PeepalLeaf L={236}/></g>
+      </g> : null}
       {/* the bowl for water */}
       <g>
-        <ellipse cx={BX + 26} cy={BY + 30} rx={90} ry={22} fill="url(#th-shade)" opacity={0.85}/>
-        <path d={`M ${BX - 66} ${BY} C ${BX - 66} ${BY + 30} ${BX - 32} ${BY + 44} ${BX} ${BY + 44} C ${BX + 32} ${BY + 44} ${BX + 66} ${BY + 30} ${BX + 66} ${BY} Z`} fill={`url(#${id}side)`}/>
-        <ellipse cx={BX} cy={BY} rx={66} ry={23} fill="#1A0E08"/>
-        <ellipse cx={BX} cy={BY - 2} rx={60} ry={19} fill={`url(#${id}well)`} opacity={0.45}/>
+        <ellipse cx={BX + 30} cy={BY + 34} rx={100} ry={24} fill="url(#th-shade)" opacity={0.85}/>
+        <path d={`M ${BX - 76} ${BY} C ${BX - 76} ${BY + 34} ${BX - 36} ${BY + 50} ${BX} ${BY + 50} C ${BX + 36} ${BY + 50} ${BX + 76} ${BY + 34} ${BX + 76} ${BY} Z`} fill={`url(#${id}side)`}/>
+        <ellipse cx={BX} cy={BY} rx={76} ry={26} fill="#1A0E08"/>
+        <ellipse cx={BX} cy={BY - 2} rx={70} ry={22} fill={`url(#${id}bw)`} opacity={0.55}/>
         {level > 0.01 ? <g>
-          <ellipse cx={BX} cy={surfY} rx={lerp(44, 58, level)} ry={lerp(13, 18, level)} fill={`url(#${id}water)`}/>
-          <ellipse cx={BX - 18} cy={surfY - 3} rx={10} ry={3} fill="url(#th-hot)" opacity={0.75 * level}/>
-          {[0, 1, 2].map((k) => { const ag = (((f - wT + k * 14) % 42) + 42) % 42 / 42; return f > wT ? <ellipse key={k} cx={BX} cy={surfY} rx={6 + ag * 44} ry={2 + ag * 14} fill="none" stroke="#FFE6B0" strokeWidth={1} opacity={(1 - ag) * 0.6 * Math.max(pour, 1 - sstep((f - wT - wD) / 40))}/> : null; })}
+          <ellipse cx={BX} cy={surfY} rx={lerp(50, 66, level)} ry={lerp(15, 21, level)} fill={`url(#${id}water)`}/>
+          <ellipse cx={BX - 22} cy={surfY - 4} rx={12} ry={3.4} fill="url(#th-hot)" opacity={0.8 * level}/>
+          {/* the splash ring: ripples spreading from where the water strikes */}
+          {[0, 1, 2, 3].map((k) => { const ag = ((((f - wT + k * 11) % 44) + 44) % 44) / 44; const live = f > wT ? Math.max(pour * head, 1 - sstep((f - wT - wD) / 40)) : 0;
+            return live > 0.01 ? <ellipse key={k} cx={B[0]} cy={surfY} rx={6 + ag * 54} ry={2 + ag * 18} fill="none" stroke="#FFE6B0" strokeWidth={1.2} opacity={(1 - ag) * 0.65 * live}/> : null; })}
         </g> : null}
-        <ellipse cx={BX} cy={BY} rx={66} ry={23} fill="none" stroke="#FFD890" strokeWidth={2} opacity={0.65}/>
-        <path d={`M ${BX - 64} ${BY - 4} A 66 23 0 0 1 ${BX - 6} ${BY - 23}`} fill="none" stroke="#FFF4D0" strokeWidth={2} opacity={0.7}/>
+        <ellipse cx={BX} cy={BY} rx={76} ry={26} fill="none" stroke="#FFD890" strokeWidth={2} opacity={0.65}/>
+        <path d={`M ${BX - 74} ${BY - 4} A 76 26 0 0 1 ${BX - 8} ${BY - 26}`} fill="none" stroke="#FFF4D0" strokeWidth={2.2} opacity={0.75}/>
       </g>
-      {pour > 0.01 ? <g opacity={pour} mask={`url(#${id}sf)`}>
-        <path d={lineD([...sideLine(-1, 16, 8), ...sideLine(1, 16, 8).reverse()]) + " Z"} fill={`url(#${id}st)`} opacity={0.3}/>
-        <path d={ribbon(sideLine(-1, 16, 8), 2, 1.5)} fill="#FFF8E0" opacity={0.85}/>
-        <path d={ribbon(sideLine(1, 16, 8), 1.2, 1)} fill="#FFD8A0" opacity={0.5}/>
-        <path d={ribbon(sideLine(-0.3, 16, 8), 0.9, 0.7)} fill="#FFFFFF" opacity={0.3}/>
-        {Array.from({length: 8}, (_, k) => { const u = (f * 0.045 + k / 8) % 1, p = atLen(streamPts, sCum, Math.pow(u, 0.75) * sL); return <ellipse key={k} cx={p[0] - 1.5} cy={p[1]} rx={1.4} ry={5 + 4 * u} fill="#FFFFFF" opacity={0.7 * Math.sin(Math.PI * u)}/>; })}
-        {Array.from({length: 6}, (_, k) => { const ph2 = ((f * 0.07 + k / 6) % 1), a = (k / 6) * Math.PI * 2 + 0.4; return <circle key={k} cx={BX + Math.cos(a) * 16 * ph2} cy={surfY - 14 * Math.sin(Math.PI * ph2) + Math.sin(a) * 4 * ph2} r={1.6} fill="#FFF2D0" opacity={0.8 * (1 - ph2)}/>; })}
-        <Glow x={BX} y={surfY} rx={34} ry={11} g="th-hot" o={0.55}/>
-      </g> : null}
+      {/* the flower */}
+      {here[1] ? <g transform={`translate(920 ${n1(652 + settle[1])})`}><Marigold R={78} seed={0.7} lx={-1}/></g> : null}
       {/* the fruit */}
-      <g opacity={app[2]} transform={settle(2)}>
-        <Glow x={1060} y={716} rx={160} ry={70} g="th-warm" o={bloom[2] * 0.7}/>
-        <g transform="translate(1064 724) rotate(-6)"><Mango s={1.0}/></g>
-      </g>
-      <Glow x={BX} y={BY} rx={150} ry={64} g="th-warm" o={bloom[3] * 0.6}/>
-      {/* the water pot */}
-      <g transform="translate(1520 664)">
-        <ellipse cx={50} cy={4} rx={140} ry={24} fill="url(#th-shade)" opacity={0.9}/>
+      {here[2] ? <g transform={`translate(1060 ${n1(806 + settle[2])}) rotate(-5)`}><Mango s={1.08}/></g> : null}
+      {/* the stream: from the spout in an arc, catching the lamp on its near side, striking the bowl */}
+      {pour && head > tail + 0.01 ? <g>
+        <path d={lineD([...sideOf(-1), ...sideOf(1).reverse()]) + " Z"} fill={`url(#${id}st2)`} opacity={0.42}/>
+        <path d={ribbon(sideOf(-0.7), 2, 1.4)} fill="#FFF8E4" opacity={0.9}/>
+        <path d={ribbon(sideOf(0.8), 1.1, 0.8)} fill="#FFD8A0" opacity={0.45}/>
+        {Array.from({length: 9}, (_, k) => { const u = (f * 0.05 + k / 9) % 1; if (u < tail || u > head) return null; const p = bez(u); return <ellipse key={k} cx={p[0] - 2} cy={p[1]} rx={1.6} ry={5 + 5 * u} fill="#FFFFFF" opacity={0.75 * Math.sin(Math.PI * u)}/>; })}
+        {head > 0.98 && tail < 0.02 ? Array.from({length: 7}, (_, k) => { const ph2 = (f * 0.08 + k / 7) % 1, a = (k / 7) * Math.PI * 2 + 0.4; return <circle key={k} cx={B[0] + Math.cos(a) * 22 * ph2} cy={surfY - 22 * Math.sin(Math.PI * ph2) + Math.sin(a) * 6 * ph2} r={1.8} fill="#FFF2D0" opacity={0.85 * (1 - ph2)}/>; }) : null}
+        {head > 0.98 ? <Glow x={B[0]} y={surfY} rx={40} ry={13} g="th-hot" o={0.6}/> : null}
+      </g> : null}
+      {/* the lota: copper, the lamp on its lower side */}
+      {inL > 0 && outL < 1 ? <g transform={`translate(${n1(lp[0])} ${n1(lp[1])}) rotate(${n1(tilt)}) translate(0 100)`}>
+        <path d={SPOUT} fill={`url(#${id}lota)`}/>
         <path d={LOTA} fill={`url(#${id}lota)`}/>
-        {[-148, -60].map((y, i) => <g key={i}><path d={`M ${i ? -100 : -64} ${y} Q 0 ${y + 14} ${i ? 100 : 64} ${y}`} fill="none" stroke="#1E1006" strokeWidth={1.6} opacity={0.6}/><path d={`M ${i ? -100 : -64} ${y + 2} Q 0 ${y + 16} ${i ? 100 : 64} ${y + 2}`} fill="none" stroke="#FFE0A0" strokeWidth={0.9} opacity={0.3}/></g>)}
-        <ellipse cx={-62} cy={-86} rx={10} ry={44} fill="url(#th-hot)" opacity={0.55}/>
-        <ellipse cx={0} cy={-186} rx={64} ry={14} fill="#B07A34"/>
-        <ellipse cx={0} cy={-185} rx={52} ry={10} fill="#100604"/>
-        <path d="M -64 -186 A 64 14 0 0 1 16 -199" fill="none" stroke="#FFF0C8" strokeWidth={1.8} opacity={0.75}/>
-        <path d={LOTA} fill="none" stroke="#FFD38A" strokeWidth={1} opacity={0.25}/>
-      </g>
+        {[-148, -60].map((y, i) => <g key={i}><path d={`M ${i ? -100 : -64} ${y} Q 0 ${y + 14} ${i ? 100 : 64} ${y}`} fill="none" stroke="#2A0E06" strokeWidth={1.8} opacity={0.6}/><path d={`M ${i ? -100 : -64} ${y + 2} Q 0 ${y + 16} ${i ? 100 : 64} ${y + 2}`} fill="none" stroke="#FFC890" strokeWidth={0.9} opacity={0.35}/></g>)}
+        <ellipse cx={-70} cy={-84} rx={11} ry={46} fill="url(#th-hot)" opacity={0.55}/>
+        <ellipse cx={0} cy={-186} rx={64} ry={14} fill="#B0603A"/>
+        <ellipse cx={0} cy={-185} rx={52} ry={10} fill="#140604"/>
+        <path d="M -64 -186 A 64 14 0 0 0 16 -173" fill="none" stroke="#FFD8B0" strokeWidth={1.8} opacity={0.6}/>
+        <path d={LOTA} fill="none" stroke="#FFC890" strokeWidth={1.1} opacity={0.3}/>
+        <circle cx={SPOUT_TIP[0]} cy={SPOUT_TIP[1]} r={4.5} fill="#2A0E06"/>
+      </g> : null}
+      {/* light accepting each gift */}
+      {[0, 1, 2].map((i) => { const pos: V2[] = [[700, 790], [920, 640], [1060, 800]]; return <g key={i}>
+        <LightFlash p={flashP[i]} x={pos[i][0]} y={pos[i][1]} r={150}/>
+        <Glow x={pos[i][0]} y={pos[i][1]} rx={200} ry={90} g="th-warm" o={glowAfter[i] * 0.7}/>
+      </g>; })}
+      <Glow x={BX} y={BY} rx={170} ry={70} g="th-warm" o={glowAfter[3] * 0.7}/>
+      <Glow x={960} y={200} rx={120} ry={150} g="th-soft" o={0.25 + 0.5 * Math.max(...glowAfter)}/>
       {/* darkness closing in */}
-      <rect x={-100} y={-100} width={W + 200} height={H + 200} fill={`url(#${id}dk)`}/>
-      {/* the flame over everything: its light is the scene's */}
-      <Flame x={FL[0]} y={FL[1]} h={fh} f={f}/>
-      {/* the words, each lit with its offering */}
-      {labels.map((t, i) => {
-        const xs = W / 2 + (i - (labels.length - 1) / 2) * 250, x = ZX + (xs - ZX) / z, o = app[i] * (0.75 + 0.25 * bloom[i]);
-        return <text key={i} x={x} y={lblY} textAnchor="middle" fontFamily={isDeva(t) ? SA : EN} fontStyle={isDeva(t) ? "normal" : "italic"} fontSize={(isDeva(t) ? 44 : 40) / z} fill="#F2C46A" opacity={o}>{t}</text>;
-      })}
+      <rect x={-140} y={-200} width={W + 280} height={H + 400} fill={`url(#${id}dk)`}/>
     </Frame>
   );
 };

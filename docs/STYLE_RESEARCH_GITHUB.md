@@ -17,6 +17,8 @@ The art director's full write-up of each direction, with scene recipes, build st
 
 The horse and bird silhouettes in the Katha kit are not safe for a monetised channel.
 
+**Resolved, 21 to 22 Oct.** AK approved the fix and chose Lamplight. The horses are re-traced from the CC0 Quaternius horse, the birds are drawn in code, and `build_film.py` checks every silhouette's credit on each build (`src/katha/sil/LICENSES.md`). The film's state is in `docs/katha/GITA_FILM.md`.
+
 - **What happened.** They were traced from the horse, flamingo, stork and parrot models that ship in the three.js repository. Those models come from *3 Dreams of Black* (ro.me). That repository's README says it "has been opened up with the Apache License 2.0", and I relied on that line. The models folder carries its own licence file, and it reads: "3D assets and textures ... are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License".
 - **Who confirmed it.** I read that file myself. Two research checkers reached the same verdict on their own, the 3D checker and the illustration-library checker.
 - **What it touches.** The traced frames in `src/katha/sil/` feed the chariot team, the standing horses and the flocks of birds. Nothing has been published.

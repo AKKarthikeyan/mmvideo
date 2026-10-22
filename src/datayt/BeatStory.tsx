@@ -648,6 +648,10 @@ const End: React.FC<{D: BeatData; b: Beat; f0: number}> = ({D, b, f0}) => {
   </AbsoluteFill>;
 };
 
+// The clear area of a Short (1080x1920): page coordinates map to x' = SAFE.x + SAFE.s * x, y' = SAFE.y + SAFE.s * y, so the
+// page's own 60 px margins land about 95 px from the left, 230 px from the right, 150 px from the top and 380 px from the bottom.
+export const SAFE = {x: 50, y: 95, s: 0.78};
+
 const KINDS: Record<string, React.FC<{D: BeatData; b: Beat; f0: number}>> = {hook: Hook, clue: Clue, count: Count, reveal: Reveal, recap: Recap, rank: Rank, versus: Versus, score: Score, map: MapBeat, end: End,
   spot: Spot, fact: Fact, say: Hook, mapend: MapBeat, grid: Grid, race: Race, stack: Stack, pick: Pick, tally: Tally, event: EventBeat, line100: Line100, shift: Shift};
 const DARK = (b: Beat) => b.kind === "count" || b.kind === "reveal" || (b.kind === "rank" && b.rank === 1);
@@ -666,11 +670,17 @@ export const BeatStory: React.FC<{D: BeatData}> = ({D}) => {
   const f0 = F(b.t0);
   // a quick push-in on every cut keeps the frame moving
   const cut = 1 + 0.04 * Math.max(0, 1 - (f - f0) / 7);
-  return <AbsoluteFill style={{background: P.bg}}>
+  const dark = DARK(b);
+  return <AbsoluteFill style={{background: dark ? D.accent : P.bg}}>
     <VoxFonts/>
-    <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 45%, ${P.bg2} 0%, ${P.bg} 70%)`}}/>
-    <AbsoluteFill style={{transform: `scale(${cut})`}}>{K ? <K D={D} b={b} f0={f0}/> : null}</AbsoluteFill>
-    <Chrome D={D} dark={DARK(b)}/>
+    {!dark && <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 45%, ${P.bg2} 0%, ${P.bg} 70%)`}}/>}
+    {/* The YouTube Shorts player draws over the frame: icons along the top, like and share buttons down the right, the title and
+        channel name across the bottom (AK, 22 Oct 2026). Everything is drawn on the usual 1080x1920 page and then shrunk into the
+        clear area (SAFE); the background and full-colour beats still fill the whole frame. */}
+    <div style={{position: "absolute", left: 0, top: 0, width: W, height: H, transformOrigin: "0 0", transform: `translate(${SAFE.x}px, ${SAFE.y}px) scale(${SAFE.s})`}}>
+      <AbsoluteFill style={{transform: `scale(${cut})`}}>{K ? <K D={D} b={b} f0={f0}/> : null}</AbsoluteFill>
+      <Chrome D={D} dark={dark}/>
+    </div>
     <Audio src={staticFile(`datayt/beats/${D.id}/music.wav`)} volume={(fr) => musicVol(D, fr)}/>
     {(D.vo ?? []).map((v) => <Sequence key={v.file} from={F(v.at)}><Audio src={staticFile(`datayt/beats/${D.id}/${v.file}`)}/></Sequence>)}
   </AbsoluteFill>;

@@ -6,7 +6,7 @@ import {smooth, ribbon, sampleCubics, streamer, Pt} from "./geom";
 
 const pearls = (pts: number[][], r: number): string[] => pts.map(([x, y]) => `M ${x + r} ${y} a ${r} ${r} 0 1 0 ${-2 * r} 0 a ${r} ${r} 0 1 0 ${2 * r} 0 Z`);
 // The kirita-mukuta: a tall crown that swells like a bell, tapers to a finial, with petals at its band.
-const mukuta = (x: number, y: number, s: number, tall = 1): string[] => {
+export const mukuta = (x: number, y: number, s: number, tall = 1): string[] => {
   const T = (p: number[]): Pt => [x + p[0] * s, y + p[1] * s * (p[1] < 0 ? tall : 1)] as Pt;
   return [
     smooth([[-25, 0], [-27, -10], [-24, -22], [-20, -34], [-18, -46], [-12, -58], [-6, -70], [-2, -82, "c"], [2, -70], [8, -58], [14, -46], [16, -34], [20, -22], [23, -10], [21, 0]].map(T as any) as Pt[]),

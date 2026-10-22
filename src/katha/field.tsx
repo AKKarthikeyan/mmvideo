@@ -1,8 +1,8 @@
 // The field of Kurukshetra: two armies as procedural silhouettes in depth (banners, spears, elephants, parasols),
 // the plain, and the light that runs across it towards us.
 import React, {useMemo} from "react";
-import {W, H, blur} from "./look";
-import {rnd} from "./geom";
+import {W, H} from "./look";
+import {rnd, smooth, Pt} from "./geom";
 
 // One row of an army along the horizon y: banners on poles, spears, elephants with howdahs, chariot parasols.
 export const armyPath = (y: number, scale: number, count: number, seed: number, x0: number, x1: number, wave = 0): string => {
@@ -25,8 +25,19 @@ export const armyPath = (y: number, scale: number, count: number, seed: number, 
   }
   return d;
 };
+// The army's footing: a low mound under the row that fills the gaps between the feet and tapers away at both ends in a
+// soft shoulder (22 Oct 2026: it was a hard rectangle whose square ends showed at the gap between the armies).
+export const armyBase = (y: number, scale: number, x0: number, x1: number, seed = 0): string => {
+  const pts: Pt[] = [], depth = 60 * Math.max(1, scale), sh = 80 * Math.max(0.6, scale), n = Math.max(8, Math.round((x1 - x0) / 18));
+  for (let i = 0; i <= n; i++) {
+    const x = x0 - 20 + ((x1 - x0 + 40) * i) / n, e = Math.min(x - (x0 - 20), x1 + 20 - x) / sh;
+    const fall = e >= 1 ? 0 : 1 - Math.pow(Math.max(0, e), 0.6);
+    pts.push([x, y - 1 + Math.sin(i * 1.3 + seed) * 1.2 * scale + fall * depth]);
+  }
+  return `${smooth(pts, false)} L ${(x1 + 20).toFixed(1)} ${(y + depth).toFixed(1)} L ${(x0 - 20).toFixed(1)} ${(y + depth).toFixed(1)} Z`;
+};
 export const Army: React.FC<{y: number; scale: number; count: number; seed: number; x0: number; x1: number; color: string; f: number}> = ({y, scale, count, seed, x0, x1, color, f}) => {
-  const base = useMemo(() => `M ${x0 - 30} ${y - 1} L ${x1 + 30} ${y - 1} L ${x1 + 30} ${y + 60} L ${x0 - 30} ${y + 60} Z`, [x0, x1, y]);
+  const base = useMemo(() => armyBase(y, scale, x0, x1, seed), [x0, x1, y, scale, seed]);
   return <g><path d={armyPath(y, scale, count, seed, x0, x1, f / 18)} fill={color} stroke={color} strokeWidth={0.8 * scale}/><path d={base} fill={color}/></g>;
 };
 // The plain: a dark ground with a soft path of light running from the sun towards the viewer.

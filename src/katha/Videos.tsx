@@ -6,6 +6,7 @@ import {KathaFonts, K, FPS, SA, EN, CAPS} from "./look";
 import {KATHA_SCENES} from "./scenes";
 import {KathaFilm, KData, filmLayout} from "./Film";
 import {FILMS} from "./films";
+import {KitSheet} from "./KitSheet";
 
 export const KathaDev: React.FC<{scene: any; sec: number}> = ({scene, sec}) => {
   const S = KATHA_SCENES[scene.type];
@@ -33,6 +34,8 @@ export const KathaCompositions: React.FC = () => (
   <>
     <Still id="KATHA-thumb" component={KathaThumb as any} defaultProps={{scene: {type: "chariot", pose: "teach", mood: "dusk", hub: [980, 812], sun: [1240, 600]}, title: "THE BHAGAVAD GITA", sanskrit: "श्रीमद्भगवद्गीता", line: "as Krishna told it to Arjuna", align: "left"}} width={1280} height={720}/>
     {FILMS.map((D: KData) => <React.Fragment key={D.id}><Composition id={`KT-${D.id}`} component={KathaFilm as any} defaultProps={{D}} durationInFrames={filmLayout(D).total} fps={FPS} width={1920} height={1080}/></React.Fragment>)}
+    {/* the kit sheet: every flora, architecture, fire piece and sky mood (props: page "all" | "flora" | "arch" | "fire" | "sky") */}
+    <Still id="KATHA-kit" component={KitSheet as any} defaultProps={{page: "all"}} width={1920} height={1080}/>
     <Composition id="KATHA-dev" component={KathaDev as any} defaultProps={{scene: {type: "chariot", pose: "teach"}, sec: 8}} durationInFrames={900} fps={FPS} width={1920} height={1080}/>
   </>
 );

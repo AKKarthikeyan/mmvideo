@@ -189,7 +189,15 @@ def sun_for(sc, mv, b):
     if re.search(r"about to break|burning", txt): y = 728
     return [960, y], "dawn", 0.35
 
-def scene_for(b, mv):
+# A wide field shot's camera, from the writer's "view" (FieldScene pushes about (960, 720)): a pull back starts close and
+# opens out; "close" comes in on the chariot and the near ranks; "slow" halves the push. Other views stay editor notes.
+VIEW_ZOOM = [(r"pull(s|ing)? back|pull-back|draws? back", (1.08, 1.0)), (r"^close|\bclose\b", (1.16, 1.22)), (r"\bslow\b", (1.0, 1.03))]
+
+def scene_for(b, mv, ctx=None):
+    """ctx carries state along the film: ctx["pose"] is the chariot's pose in the last chariot shot of this movement, so a
+    wide field shot with no pose of its own continues it (the car stands where the medium shot left it) instead of
+    falling back to FieldScene's gallop."""
+    ctx = ctx if ctx is not None else {}
     sc = dict(b.get("scene") or {}); t = sc.get("type", "chariot")
     desc = " ".join(str(sc.get(k, "")) for k in ("pose", "kind", "camera", "description", "what")).lower().replace("-", " ").replace("_", " ")
     detail = str(sc.get("detail", "")).lower()
@@ -201,6 +209,15 @@ def scene_for(b, mv):
         # close: the two figures fill ~45% of the frame; the pennant stays under the lamps row and the chapter line, the
         # feet above the captions (zoom 1.36 -> 1.42 about (880, 472))
         if t == "chariot" and cam.startswith("close"): sc.update(zoomFrom=1.36, zoomTo=1.42, focusX=880, focusY=472)
+        if sc["type"] == "chariot": ctx["pose"] = pose
+    elif t == "field":
+        # no pose written: Krishna at the reins (or a gallop) drives; else the pose of the last chariot shot in this
+        # movement; else the chariot is still arriving (chapter 1's opening) or standing between the armies (teach).
+        if re.search(r"\breins\b|gallop|charg|\bdriv", detail): sc["pose"] = "arrive"
+        else: sc["pose"] = ctx.get("pose") or ("arrive" if int(mv.get("chapter", 0)) <= 1 else "teach")
+    if t == "field" and "zoomFrom" not in sc and sc.get("view"):
+        z = next((zz for rx, zz in VIEW_ZOOM if re.search(rx, str(sc["view"]).lower())), None)
+        if z: sc["zoomFrom"], sc["zoomTo"] = z
     if t in ("chariot", "field") and "sun" not in sc:
         sc["sun"], mood, rays = sun_for(sc, mv, b)
         sc.setdefault("mood", mood); sc.setdefault("rays", rays)
@@ -267,7 +284,7 @@ def scene_for(b, mv):
 SCENE_KEYS = {
     "type": "Film.tsx -> KATHA_SCENES (scenes.tsx)", "kind": "scenes.tsx Metaphor -> METAPHORS (metaphors/index.ts)",
     "variant": "the family scene for the kind / hall / light", "mood": "every scene's sky", "pose": "ChariotScene / FieldScene (ChariotRig)",
-    "sun": "ChariotScene / FieldScene", "rays": "ChariotScene / FieldScene", "conch": "FieldScene rings", "zoomFrom": "ChariotScene", "zoomTo": "ChariotScene",
+    "sun": "ChariotScene / FieldScene", "rays": "ChariotScene / FieldScene", "conch": "FieldScene rings", "zoomFrom": "ChariotScene / FieldScene", "zoomTo": "ChariotScene / FieldScene",
     "focusX": "ChariotScene", "focusY": "ChariotScene", "lamp": "hall SanjayaHall (lampState)", "detail": "hall SanjayaHall (poses); otherwise editor note",
     "labels": "offering / fire syllables / two-roads / gunas / glories words", "items": "cosmos Glories", "text": "cosmos Glories letter", "tone": "cosmos LightScene",
     "plate": "Film.tsx Plate (attribution under the captions)", "kicker": "Film.tsx Plate ('OUR NOTE' tag); TitleCard top line on titles",
@@ -277,7 +294,7 @@ SCENE_KEYS = {
     "sa_hl": "VerseCard lit Sanskrit", "highlight": "editor note (phrases; hl holds the words)", "enAt": "VerseScene",
     "chapter": "TitleCard numeral", "name": "TitleCard name", "sanskrit": "TitleCard Sanskrit name", "english": "editor note (copied into name)",
     "transliteration": "TitleCard small caps under the Sanskrit", "line": "TitleCard italic line (main title)",
-    "camera": "builder (close -> zoom, wide -> field)", "view": "editor note", "time": "builder (sun, mood)", "light": "builder (sun stage); editor note",
+    "camera": "builder (close -> zoom, wide -> field)", "view": "builder (field: pull back / close / slow -> zoomFrom, zoomTo); otherwise editor note", "time": "builder (sun, mood)", "light": "builder (sun stage); editor note",
     "mode": "builder (light variant)", "justification": "editor note", "king": "editor note", "sanjaya": "editor note", "setting": "editor note",
     "place": "editor note (every card is centred)", "captions": "Film.tsx Caption (false hides it)",
 }
@@ -310,6 +327,9 @@ def tsx_registry():
             gi = re.search(r"GITEMS[^=]*=\s*\{(.*?)\};", src, re.S); ga = re.search(r"GALIAS[^=]*=\s*\{(.*?)\};", src, re.S)
             reg["glory_items"] = set(re.findall(r"(\w+)\s*:", gi.group(1))) | set(re.findall(r"(\w+)\s*:", ga.group(1))) | {"letter"}
     reg["type_targets"] = {k: re.search(r'typeScene\("([\w-]+)"\)', v).group(1) for k, v in reg["types"].items() if "typeScene" in v}
+    # the chariot rig's poses: the literals ChariotRig compares pose against, plus the scenes' own defaults (s.pose || "x")
+    rig = re.search(r"export const ChariotRig.*?\n\};", sc, re.S)
+    reg["poses"] = set(re.findall(r'\bpose\s*===\s*"([\w-]+)"', rig.group(0) if rig else "")) | set(re.findall(r's\.pose\s*\|\|\s*"([\w-]+)"', sc))
     return reg
 
 def check_scenes(beats):
@@ -324,6 +344,9 @@ def check_scenes(beats):
             if kind not in reg["kinds"]: bad.append(f"{key}: {t} kind '{kind}' is not in METAPHORS"); continue
             v = s.get("variant")
             if v and v not in reg["variants"][kind]: bad.append(f"{key}: {kind} has no variant '{v}' (it knows {sorted(reg['variants'][kind]) or 'none'})")
+        if t in ("chariot", "field"):          # the pose is always explicit: FieldScene's own default is a gallop
+            if not s.get("pose"): bad.append(f"{key}: {t} beat with no pose (the scene would fall back to its default)")
+            elif s["pose"] not in reg["poses"]: bad.append(f"{key}: {t} pose '{s['pose']}' is not one ChariotRig draws ({sorted(reg['poses'])})")
         if kind == "glories" and s.get("items"):
             miss = [i for i in s["items"] if i not in reg["glory_items"]]
             if miss: bad.append(f"{key}: glories items {miss} are not drawn")
@@ -348,11 +371,12 @@ def main():
     old = {b["key"]: b for b in json.load(open(out / "data.json"))["beats"]} if (out / "data.json").exists() else {}
     beats, problems = [], []
     for mv in S["movements"]:
+        ctx = {}                           # per movement: the chariot's pose carries from shot to shot
         ch = int(mv.get("chapter", 0)); label = f"{'Prologue' if ch == 0 else 'Epilogue' if ch >= 19 else 'Chapter ' + str(ch)} · {mv['name']}"
         for b in mv["beats"]:
             p = check_quote(b)
             if p: problems.append(f"{b['key']} {b['speaker']} {b.get('ref')}: {p}")
-            sc = scene_for(b, mv)
+            sc = scene_for(b, mv, ctx)
             if "conch" in str(b.get("music", "")).lower() and sc.get("type") in ("field", "chariot"): sc["conch"] = True
             if b["speaker"] in ("KRISHNA", "ARJUNA", "DHRITARASHTRA") and sc.get("type") != "verse" and not sc.get("plate") and b.get("ref"):
                 sc["plate"] = corpus_ref(b["ref"] if b["ref"].startswith("gita:") else f"gita:{b['ref']}", author=21)["src"]

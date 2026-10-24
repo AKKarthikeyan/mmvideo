@@ -137,7 +137,8 @@ Craft rules:
 - **Pace and sound.** 140 to 155 words a minute, so 1,500 to 1,800 words for 11 minutes. Duck the tanpura under the voice (about −18 to −22 dB).
 - **Sanskrit.** The narrator never reads it. It is shown on screen, or a human reciter records 5 to 10 seconds of it.
 - **Write for the ear.** Short sentences, read aloud before the voice pass. Overly written scripts are what make synthetic voices sound robotic.
-- **One recurring foil.** The blind king's "and then?" gives the episode a questioner without a talking-head host.
+- **One recurring foil.** The blind king asks "but why?" or "so what did he do?" (never "and then?", the weak-story marker), which gives the episode a questioner without a talking-head host.
+- **The full storytelling and visual rules,** with the eight episode shapes and the boring-alarm checklist, are in `INNER_CHARIOT_STYLE_GUIDE.md`.
 - **Vary the shape.** Some episodes run story-first, some problem-first, some as a mystery. A fixed skeleton with only the nouns changed is what the inauthentic-content policy demonetises.
 
 **Shorts** (25 to 40 s):

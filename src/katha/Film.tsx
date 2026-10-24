@@ -32,6 +32,20 @@ const ease = (f: number, a: number, d: number) => interpolate(f, [a, a + d], [0,
 // The bottom of the frame, from the bottom up: the plate's baseline 46 px up (inside title-safe), the captions above it.
 const PLATE_BOTTOM = 40, CAP_BOTTOM = 86;
 const QUOTED = ["KRISHNA", "ARJUNA", "DHRITARASHTRA"];
+// The attribution row is read on a phone and across a room, so 26 px at 0.9 and tags at 22 px (style guide, section 4).
+// A row too long for one line (13.34's plate, with its 700-verse number) breaks at the plate's first " · " onto two
+// lines, and the caption above lifts by one plate line. CAPS_ADV is Cinzel's average capital advance per em, measured on
+// a render (24 Oct 2026: 44 capitals at 26 px, letter-spacing 3, took 746 px).
+const PLATE_PX = 26, PLATE_LS = 3, TAG_PX = 22, PLATE_LINE = 34, CAPS_ADV = 0.55, ROW_MAX = 1760;
+const plateLines = (b: KBeat): string[] => {
+  const s = b.scene || {};
+  const p = s.plate ? String(s.plate).toUpperCase() : "";
+  if (!p || s.type === "verse" || s.type === "title" || s.type === "end") return p ? [p] : [];
+  const extra = (QUOTED.includes(b.speaker) ? b.speaker.length + 3 : 0) + (s.kicker ? String(s.kicker).length + 4 : 0);
+  const cut = p.indexOf(" · ");
+  if (cut < 0 || (p.length + extra) * (PLATE_PX * CAPS_ADV + PLATE_LS) <= ROW_MAX) return [p];
+  return [p.slice(0, cut), p.slice(cut + 3)];
+};
 // A clause longer than one caption line (~80 characters at 44 px) is halved where it reads best: at a comma, else before
 // a conjunction or a dash, else at the space nearest the middle; so a cue never wraps to a second line over the shot.
 const CUE_MAX = 80, CONJ = /^(and|but|or|nor|yet|so|that|which|who|when|where|while|as|if|though|until|because)\s/;
@@ -81,8 +95,8 @@ const Caption: React.FC<{b: KBeat; n: number; on: boolean}> = ({b, n, on}) => {
   // in at XF - 2, out by n - 2: the next beat's caption starts at its XF - 2 (= this beat's n - 2), so two never overlap
   const a = ease(f, XF - 2, 12) * (1 - ease(f, n - 12, 10));
   return (
-    <div style={{position: "absolute", left: 0, right: 0, bottom: end ? 52 : CAP_BOTTOM, display: "flex", flexDirection: "column", alignItems: "center", opacity: a}}>
-      {tag ? <div style={{fontFamily: CAPS, fontSize: 18, letterSpacing: 6, color: K.gold, marginBottom: 10, textShadow: "0 0 12px rgba(0,0,0,.9)"}}>{b.speaker}</div> : null}
+    <div style={{position: "absolute", left: 0, right: 0, bottom: end ? 52 : CAP_BOTTOM + (plateLines(b).length > 1 ? PLATE_LINE : 0), display: "flex", flexDirection: "column", alignItems: "center", opacity: a}}>
+      {tag ? <div style={{fontFamily: CAPS, fontSize: TAG_PX, letterSpacing: 5, color: K.gold, marginBottom: 10, textShadow: "0 0 12px rgba(0,0,0,.9)"}}>{b.speaker}</div> : null}
       <div style={{fontFamily: EN, fontStyle: quote ? "italic" : "normal", fontWeight: 500, fontSize: end ? 32 : 44, lineHeight: 1.2, color: quote ? "#F6D99A" : end ? "#E9DCC2" : K.cream, maxWidth: end ? 1600 : 1500, textAlign: "center",
         textShadow: "0 0 18px rgba(0,0,0,.95), 0 2px 4px rgba(0,0,0,.9)"}}>{cs[idx]}</div>
     </div>
@@ -127,13 +141,15 @@ const Plate: React.FC<{b: KBeat; n: number}> = ({b, n}) => {
       {note ? <div style={{display: "flex", alignItems: "center", gap: 9, padding: "5px 14px 4px 11px", border: "1px solid rgba(240,160,75,.8)", borderRadius: 3,
         background: "rgba(42,18,30,.62)", boxShadow: "0 0 14px rgba(240,160,75,.18)"}}>
         <Bud c={K.saffron}/>
-        <span style={{fontFamily: CAPS, fontWeight: 600, fontSize: 16, letterSpacing: 5, color: "#FFC98A", lineHeight: 1}}>{note.toUpperCase()}</span>
+        <span style={{fontFamily: CAPS, fontWeight: 600, fontSize: TAG_PX, letterSpacing: 4, color: "#FFC98A", lineHeight: 1}}>{note.toUpperCase()}</span>
       </div> : null}
       {who ? <div style={{display: "flex", alignItems: "center", gap: 16}}>
-        <span style={{fontFamily: CAPS, fontWeight: 600, fontSize: 17, letterSpacing: 6, color: K.gold, textShadow: shadow, whiteSpace: "nowrap", lineHeight: 1}}>{who}</span>
-        <span style={{width: 5, height: 5, transform: "rotate(45deg)", background: K.gold, opacity: 0.6}}/>
+        <span style={{fontFamily: CAPS, fontWeight: 600, fontSize: TAG_PX, letterSpacing: 4, color: K.gold, textShadow: shadow, whiteSpace: "nowrap", lineHeight: 1}}>{who}</span>
+        <span style={{width: 6, height: 6, transform: "rotate(45deg)", background: K.gold, opacity: 0.6}}/>
       </div> : null}
-      {plate ? <div style={{fontFamily: CAPS, fontSize: 16, letterSpacing: 4.5, color: "#E8C27A", opacity: 0.7, textShadow: shadow, whiteSpace: "nowrap", lineHeight: 1}}>{plate.toUpperCase()}</div> : null}
+      {plate ? <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: PLATE_LINE - PLATE_PX}}>
+        {plateLines(b).map((t, i) => <div key={i} style={{fontFamily: CAPS, fontSize: PLATE_PX, letterSpacing: PLATE_LS, color: "#E8C27A", opacity: 0.9, textShadow: shadow, whiteSpace: "nowrap", lineHeight: 1}}>{t}</div>)}
+      </div> : null}
     </div>
   );
 };
@@ -161,8 +177,8 @@ const EndStrips: React.FC<{b: KBeat; n: number}> = ({b, n}) => {
       {strips.map((t, i) => {
         const a = ease(f, at[i] - 4, 16);
         return <React.Fragment key={i}>
-          {i ? <div style={{width: 5, height: 5, margin: "0 22px", transform: "rotate(45deg)", background: K.gold, opacity: 0.55 * Math.min(a, ease(f, at[i - 1] - 4, 16))}}/> : null}
-          <div style={{fontFamily: CAPS, fontSize: 16, letterSpacing: 4.5, color: "#E8C27A", opacity: 0.85 * a, transform: `translateY(${(1 - a) * 6}px)`, whiteSpace: "nowrap", textShadow: "0 0 10px rgba(7,5,15,.9)"}}>{t}</div>
+          {i ? <div style={{width: 5, height: 5, margin: "0 14px", transform: "rotate(45deg)", background: K.gold, opacity: 0.55 * Math.min(a, ease(f, at[i - 1] - 4, 16))}}/> : null}
+          <div style={{fontFamily: CAPS, fontSize: TAG_PX, letterSpacing: 2, color: "#E8C27A", opacity: 0.9 * a, transform: `translateY(${(1 - a) * 6}px)`, whiteSpace: "nowrap", textShadow: "0 0 10px rgba(7,5,15,.9)"}}>{t}</div>
         </React.Fragment>;
       })}
     </div>

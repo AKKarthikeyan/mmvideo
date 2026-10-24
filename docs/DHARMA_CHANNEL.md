@@ -1,4 +1,6 @@
-# The spiritual channel (working name "dharma"): how it is made
+# The spiritual channel, The Inner Chariot (@InnerChariotIN; working name "dharma"): how it is made
+
+Named by AK on 24 Oct 2026. The content plan is `INNER_CHARIOT_CONTENT_PLAN.md`.
 
 Set up 21 Oct 2026 from the research in `SPIRITUAL_CHANNEL_RESEARCH.md` and `NICHE_GAPS.md`. Same engine as Moat & Margin
 (Remotion, the Vox template, MiniMax voices, the illustration kit); a different kit, a different corpus and stricter sourcing rules.
@@ -37,7 +39,7 @@ day. Still open: whether the explainer videos move to this look (question 3 in t
 6. **No "research shows" without the paper on screen.**
 7. **Disclosure beat** in every long video (`DISC` in `dharma_scripts.py`): verse and chapter on screen, our reading marked, drawn in code, synthetic voice, nobody here speaks for God. Same line in every description.
 8. **A human reviewer signs `reviewed_by`** on the video before upload. The build writes `public/vx/<id>/review.md`: every verse, the Sanskrit, the English shown and the narration round it. Until it is signed the video is a DRAFT.
-9. **Festival videos go up two weeks early.** Calendar in the research doc. Ramayana: Part 1 releases 6 Nov 2026; Gita Jayanti about 20 Dec 2026 (verify with a panchang).
+9. **Festival videos go up two weeks early.** Calendar in the research doc. Ramayana: Part 1 releases 5 Nov 2026 (makers, 11 Oct; Sony's earlier international date was 6 Nov); Gita Jayanti Sun 20 Dec 2026 (Drik Panchang, New Delhi).
 10. **English original, Hindi as an audio track** (`scripts/audio_tracks.py`, same rules as `AUDIO_TRACKS.md`). Sanskrit shlokas are shown, not read by the TTS; if a shloka must be heard, a human reciter records it.
 
 ## The pieces
@@ -60,4 +62,4 @@ In the cloud session the browser for Remotion is `/opt/pw-browsers/chromium`: ad
 - Mixing the tanpura bed under the Vox narration (the Vox long has no music bed yet; the Sleep/Letter engine does). Add a ducked bed to `VoxLong` behind a flag, or mix in post with ffmpeg.
 - Public-domain texts beyond the Gita (Arnold's Song Celestial, Ganguli's Mahabharata, Max Muller's Upanishads): Gutenberg and sacred-texts are blocked from the cloud session's proxy. Drop the files into `sources/scripture/` by hand and add them to `SOURCES` in `corpus.py`.
 - Thumbnails for the channel: an `ILLUS-thumb` variant with the dharma kit and a single icon, three to five words, no deity.
-- Channel name, handle, palette accent, narrator and reviewer: AK's decisions (listed at the end of the research doc).
+- Channel name and handle: decided, The Inner Chariot, @InnerChariotIN (AK, 24 Oct 2026). Palette accent, narrator and reviewer: still AK's decisions (listed at the end of the research doc).

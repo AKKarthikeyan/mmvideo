@@ -42,7 +42,7 @@ Two more findings belong inside the spiritual channel rather than as separate ch
 
 ## Recommendation
 
-1. Launch the spiritual channel as planned. Its calendar now carries the Ramayana release (6 Nov 2026) and Gita Jayanti (around 20 Dec 2026).
+1. Launch the spiritual channel as planned. Its calendar now carries the Ramayana release (5 Nov 2026, per the makers on 11 Oct) and Gita Jayanti (around 20 Dec 2026).
 2. Niche 3 (finance rules in Hindi) is better run as a Moat & Margin series than as a new channel: it reuses the clip discipline, the compliance rules and the Hindi-track workflow, and finance carries the highest ad rate.
 3. Niche 4 (psychology, sourced) is the spiritual channel's second pillar, not a sibling: the audience overlap is the point.
 4. The next standalone channel, once the spiritual one is running, is niche 1 (how things work, in Hindi), with niche 2 (Indian history) as the alternative. Both are evergreen, both are what the engine draws best, and both have the widest gap between what people watch and how well it is made.

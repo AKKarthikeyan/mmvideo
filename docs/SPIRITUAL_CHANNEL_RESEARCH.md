@@ -199,7 +199,7 @@ The English-language landscape worldwide and in India, and what it changes for t
 
 | Date | Event | Video |
 | --- | --- | --- |
-| 6 Nov 2026 | Ramayana: Part 1 releases (Nitesh Tiwari; Ranbir Kapoor, Sai Pallavi, Yash). "ramayana trailer" is a 4.2M-a-month search this week | "What the Valmiki Ramayana actually says" series: three sourced videos in the release fortnight (see NICHE_GAPS.md) |
+| 5 Nov 2026 | Ramayana: Part 1 releases (makers, 11 Oct; first listed as 6 Nov) (Nitesh Tiwari; Ranbir Kapoor, Sai Pallavi, Yash). "ramayana trailer" is a 4.2M-a-month search this week | "What the Valmiki Ramayana actually says" series: three sourced videos in the release fortnight (see NICHE_GAPS.md) |
 | 8 Nov 2026 | Diwali | Why five days? What Lakshmi, Rama and Bali have to do with each other |
 | late Nov 2026 | Dev Uthani Ekadashi, Tulsi Vivah | What an Ekadashi fast is for (sources) |
 | ~20 Dec 2026 | Gita Jayanti (Mokshada Ekadashi) | **Launch anchor**: "The Gita in 18 chapters" playlist opens with chapters 1 and 2 |
@@ -258,7 +258,7 @@ Nothing in the plan needs on-camera presence, licensed music, stock footage or a
 
 ## 10. Open decisions for AK
 
-1. Channel name and handle, and whether it is a Moat & Margin sibling or a standalone brand.
+1. ~~Channel name and handle~~ Decided 24 Oct 2026: The Inner Chariot, @InnerChariotIN, a standalone brand. Content plan: `INNER_CHARIOT_CONTENT_PLAN.md`.
 2. Narrator: Indian-accent English male (as the Moat Files) or a new voice reserved for this channel.
 3. Who reviews doctrine and Sanskrit.
 4. Whether to record shlokas with a human reciter.

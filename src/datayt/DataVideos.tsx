@@ -19,6 +19,7 @@ import {BeatPostStills} from "./BeatPosts";
 import {LongStory} from "./LongStory";
 import {LONGS} from "./longData";
 import {LongPostStills} from "./LongPosts";
+import {CoverStills} from "./Covers";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
@@ -26,6 +27,7 @@ export const DataVideoCompositions: React.FC = () => <>
   <StoryPostStills/>
   <BeatPostStills/>
   <LongPostStills/>
+  <CoverStills/>
   <Composition id="DATA-intro" component={Intro} durationInFrames={Math.ceil(INTRO.total * 30)} fps={30} width={1080} height={1920}/>
   <Composition {...({id: "DATA-intro-long", component: Intro, defaultProps: {wide: true}, durationInFrames: Math.ceil(INTRO.total * 30), fps: 30, width: 1920, height: 1080} as any)}/>
   <Composition id="DATA-tn-alcohol" component={TnAlcohol} durationInFrames={TN_ALCOHOL_FRAMES} fps={TN_ALCOHOL_FPS} width={1920} height={1080}/>

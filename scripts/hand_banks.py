@@ -129,6 +129,83 @@ SHORTS = {
   ("q4", "The twist. Divide turnover by share. The market went from eighteen hundred to fifty five hundred billion a day. It tripled."),
   ("q5", "Its futures and options share held. New commodity traders went elsewhere. Back to the napkin."),
  ],
+ "bkr": [
+  ("r1", "Angel One's commodity trading doubled."),
+  ("r2", "Its market share fell to forty one point seven percent."),
+  ("r3", "How? The market tripled. Angel One only doubled."),
+  ("r4", "In twenty twenty one, it had twenty eight percent. It built that to sixty seven point six."),
+  ("r5", "Now about two thirds of that climb is gone."),
+  ("r6", "Its futures and options share? Held at twenty two percent."),
+  ("r7", "So it's losing the new traders, not the old ones. Because"),
+ ],
+ "bks": [
+  ("s1", "India's jewellers grew up to twenty nine percent."),
+  ("s2", "Gold prices rose twenty eight percent."),
+  ("s3", "So the same grams, at higher prices."),
+  ("s4", "Existing stores grew less than gold did."),
+  ("s5", "So who's actually growing? Diamonds. Seven percent, by volume."),
+  ("s6", "Last year gold rose forty three percent. Senco grew six and a half."),
+  ("s7", "So is it demand, or just the price of gold? Because"),
+ ],
+ "bkt": [
+  ("t1", "T C S grew eleven percent last quarter."),
+  ("t2", "Take out the weaker rupee: two point eight."),
+  ("t3", "Its A I revenue? Three point one billion dollars a year."),
+  ("t4", "Up seventy percent in nine months."),
+  ("t5", "So why did total revenue barely move?"),
+  ("t6", "Its own C E O: there is a deflation because of the productivity benefit."),
+  ("t7", "So is A I growing T C S, or shrinking it? Because"),
+ ],
+ # Persistent / Nagarro (10 Oct 2026): napkin twin of the Vox Short, same seven lines.
+ "bku": [
+  ("u1", "Persistent has secured ninety four percent of Nagarro."),
+  ("u2", "The price values it at about one point two seven billion euros."),
+  ("u3", "In June, its chief executive said: no share sale."),
+  ("u4", "In October, shareholders approved up to four hundred and fifty million dollars of equity."),
+  ("u5", "Why? The loan behind the deal runs just eighteen months."),
+  ("u6", "And for two years, Nagarro's cash stays in Nagarro."),
+  ("u7", "So who pays for this deal? Because"),
+ ],
+ # DMart Q2 FY27 (11 Oct 2026): napkin twin of the Vox Short, same seven lines.
+ "bkv": [
+  ("v1", "D Mart sold eighteen percent more last quarter."),
+  ("v2", "But its profit grew only seven point six percent."),
+  ("v3", "Did it cut prices? No. The gross margin barely moved."),
+  ("v4", "But last year it opened eighty five stores. It used to open about fifty."),
+  ("v5", "So depreciation is up twenty six percent, and interest is up eighty seven."),
+  ("v6", "And borrowings nearly tripled in six months, to two thousand six hundred and twenty nine crore rupees."),
+  ("v7", "So is the low price engine broken? No. Because"),
+ ],
+ # ICICI Prudential AMC (13 Oct 2026): napkin twin of the Vox Short `amckeepss`, same seven lines (audio copied from it).
+ "bkw": [
+  ("w1", "What does a mutual fund company earn on every hundred rupees it looks after?"),
+  ("w2", "At ICICI Prudential, fifty three paise a year, by its own measure. It keeps thirty seven as profit, before tax."),
+  ("w3", "In April, the rule on what a fund may charge was trimmed."),
+  ("w4", "The company says that had no negative impact on it."),
+  ("w5", "In July, an analyst asked: was it fair to assume that you have passed on all to the distributors? The finance chief answered in one word. Yes."),
+  ("w6", "Distributors are the sellers: agents and banks. But this is the fund house's own account. No document we read shows what any seller was paid."),
+  ("w7", "So who gave way? As we read it, the sellers. And it all starts with one question:"),
+ ],
+ # Den and GTPL cable Short (14 Oct 2026): napkin twin of the cablerest video; figures from the published article.
+ "bkx": [
+  ("x1", "Does a cable company live on its subscriptions?"),
+  ("x2", "From July to September, Den Networks booked eighty six crore rupees of subscription income."),
+  ("x3", "Its bill for channels was one hundred and sixty two crore. Almost double."),
+  ("x4", "So what covers the rest? Fees from broadcasters: one hundred and forty one crore."),
+  ("x5", "G T P L Hathway shows the same three piles. Its booked subscription is forty four percent of its channel bill."),
+  ("x6", "One caution. These are figures the companies book. The filings do not say what a home pays, or what the local operator keeps."),
+  ("x7", "So why is the channel bill bigger? The filings do not say. Which brings us back to the question."),
+ ],
+ # ICICI Lombard Short (15 Oct 2026): napkin twin of the lombardfloat video; figures from the published article.
+ "bky": [
+  ("y1", "Can an insurer lose money on insurance and still make a profit?"),
+  ("y2", "From July to September, ICICI Lombard's insurance lost three hundred and eighteen crore rupees."),
+  ("y3", "Yet its profit after tax was nine hundred and forty six crore."),
+  ("y4", "The difference is the float. Premium comes in first. Claims are paid later. Meanwhile, the money is invested."),
+  ("y5", "Investments held against policyholders' money earned one thousand one hundred and sixty one crore in the quarter."),
+  ("y6", "On the company's own chart, the industry's insurance lost money in each of the last ten years. So the real test is the combined ratio."),
+  ("y7", "Float helps. The combined ratio decides how much. Which brings us back to the question."),
+ ],
 }
 for sid in (sys.argv[1:] or SHORTS):
     OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)

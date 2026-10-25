@@ -2,7 +2,7 @@
 """4 Oct 2026: SRTs + upload sheet for bank napkin Shorts set 2 (bkd–bkk). Facts: out/vx/bank-q2-forensic-scripts-v2.md"""
 import json, math, re, pathlib, sys
 sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from package_shyam import srt, split
+from srt_util import srt, split
 FPS = 30; OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx"); H = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/hand")
 S = [
  ("bkd", "bank-q2-bob-savers-india-borrowers-abroad", "WATCH", "Bank of Baroda: savers in India, borrowers abroad #shorts",

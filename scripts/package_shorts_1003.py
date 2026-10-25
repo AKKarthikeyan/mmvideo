@@ -2,7 +2,7 @@
 """SRT captions for the HAL napkin Short and the CEO-chain kinetic Short (3 Oct 2026)."""
 import json, math, re, pathlib, sys
 sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from package_shyam import srt, split
+from srt_util import srt, split
 FPS = 30; OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx")
 H = json.load(open("/Volumes/DarwinSSD/MMVideo/public/hand/hal/beats.json")); t = 0; ent = []
 for b in H:

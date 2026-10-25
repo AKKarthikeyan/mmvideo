@@ -2,7 +2,7 @@
 """7 Oct 2026 kit: Angel One commodity-share long video (top-10 filings of 6 Oct + digest link), Vox Short, napkin Short."""
 import json, math, re, pathlib, sys
 sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from package_shyam import srt, split
+from srt_util import srt, split
 FPS = 30; OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx"); VX = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 D = json.load(open(VX / "angelone/data.json")); t = 0; ent = []; chap = {}
 for b in D["beats"]:
@@ -16,11 +16,11 @@ S = json.load(open(VX / "angelones/data.json")); by = {b["key"]: b for b in S["b
 for k in S["shorts"][0]["beats"]:
     b = by[k]; ent += split(b["cap"], t2, t2 + b["sec"], b["cues"]); t2 += math.ceil((b["sec"] + 0.12) * FPS) / FPS
 srt(ent, OUT / "angel-one-commodity-short-vox.srt")
-H = json.load(open("/Volumes/DarwinSSD/MMVideo/public/hand/bkq/beats.json")); t3 = 0; ent = []
+H = json.load(open("/Volumes/DarwinSSD/MMVideo/public/hand/bkr/beats.json")); t3 = 0; ent = []
 for b in H:
     parts = [p.strip() for p in re.findall(r"[^.!?]+[.!?]*", b["text"]) if p.strip()]
     ent += split(b["text"], t3, t3 + b["sec"], parts); t3 += math.ceil((b["sec"] + 0.15) * FPS) / FPS
-srt(ent, OUT / "angel-one-commodity-napkin.srt")
+srt(ent, OUT / "angel-one-commodity-short-napkin.srt")
 B = "https://nsearchives.nseindia.com/corporate/"
 ART = "https://www.moatmarginresearch.com/angel-one-commodity-market-share/"
 DIGEST = "https://www.moatmarginresearch.com/daily-filing-digest-2026-10-06/"
@@ -38,7 +38,7 @@ TOP10 = [
 ]
 DISC = "Educational research, not investment advice. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser. No buy/sell recommendations, no price targets."
 FOOT = DISC + "\n#MoatMargin #AngelOne #MCX"
-L = [f"LONG VIDEO · angel-one-commodity-share-2022-low.mp4 · {long_len} · 1920x1080 · narrator FEMALE (rotation)",
+L = [f"LONG VIDEO · angel-one-commodity-share-2022-low.mp4 · {long_len} · 1920x1080 · narrator MALE (AK 8 Oct: male voice only)",
  "Title options (A/B test; thumbnails 1-3 pair with A-C):",
  "  A. Angel One's Commodity Share Is Back to 2022 Levels",
  "  B. Angel One Doubled Commodity Trading. Its Share Fell.",
@@ -60,12 +60,12 @@ L += [f"Every other filing of the day: {DIGEST}", "", "SOURCES",
  "PINNED COMMENT: Angel One's commodity share is at its lowest since January 2022, while its F&O share held. Who do you think is winning the new commodity traders? Today's top 10 filings, with links, are in the description. " + DISC,
  "Holdings disclosure line: [AK to fill]",
  "NEXT VIDEO (hand-off / end screen): Angel One's Q2 Results: Did Revenue Double Too? (after the 15 Oct board meeting)", "", "─" * 60, ""]
-L += [f"SHORT 1 (Vox · loop · female) · angel-one-commodity-short-vox.mp4 · {t2:.1f} s",
+L += [f"SHORT 1 (Vox · loop · male) · angel-one-commodity-short-vox.mp4 · {t2:.1f} s",
  "Title: Angel One doubled. Its share fell anyway. #shorts",
  "Description: Angel One's commodity turnover more than doubled in Q2 FY27, but its market share fell to 44.0% (41.7% in September). The market roughly tripled (our arithmetic: turnover ÷ share). Its F&O share held at 22.1%. Full story: " + ART + " · Today's digest: " + DIGEST,
  FOOT, "Pinned comment: Losing the new traders, or just a bigger market? " + DISC, "",
- f"SHORT 2 (napkin · Indian accent · loop) · angel-one-commodity-napkin.mp4 · {t3:.1f} s",
- "Title: Turnover doubled. Share fell 21 points. Here's why. #shorts",
+ f"SHORT 2 (napkin · same 7 lines as the Vox Short · male · loop) · angel-one-commodity-short-napkin.mp4 · {t3:.1f} s",
+ "Title: Angel One doubled. Its share fell anyway. (napkin math) #shorts",
  "Description: Angel One, Q2 FY27: ₹2,438 bn a day of commodity turnover at a 44.0% share; a year ago ₹1,187 bn at 65.1%. Divide turnover by share and the market went from ~₹1,823 bn to ~₹5,541 bn a day (our arithmetic). Full read: " + ART + " · Today's digest: " + DIGEST,
  FOOT, "Pinned comment: Napkin math: turnover ÷ share = the market. " + DISC,
  "Posting rule: neither Short within 2 hours before the long upload; each links to the long video."]

@@ -8,7 +8,7 @@ from vx_scripts import VIDEOS
 
 ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
-ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"
+ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"; DM = R / "dmart"; RP = R / "retailpeers"
 CLIPS = {
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
@@ -76,9 +76,36 @@ CLIPS = {
   "bk_au": (JD/"NSE_106806399.pdf", "29.1%", 0, 1),
   "bk_ujjivan": (JD/"NSE_106806279.pdf", "32.1%", 0, 0, 1),
   "ao_q2": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "44.0%", 3, 0),
+  "jw_gold": (JD/"NSE_106810081.pdf", "~28% higher YoY", 1, 1),
+  "jw_diam": (JD/"NSE_106810081.pdf", "Diamond Jewellery Growth (Volume)", 2, 1),
+  "jw_kal": (JD/"NSE_106809136.pdf", "same-store-sales-growth of approximately 20%", 1, 1),
+  "jw_sen25": (JW/"Sencogold_08102025174001_BusinessUpdateQ2H1FY26.pdf", "43% YoY on average", 0, 1),
+  "jw_ttn25": (JW/"TITAN_07102025164635_Q2update202526.pdf", "marginal YoY declines", 1, 1),
+  "jw_ttn27": (JD/"NSE_106808719.pdf", "mid-single digits", 1, 0),
   "ao_sep26": (AO/"ANGEL8896_06102026073616_October062026_Intimation_of_Business_updates.pdf", "41.7%", 2, 0, 1),
   "ao_sep21": (AO/"ANGELBRKG_05102021082516_October052021Intimationofmonthlybusinessupdate.pdf", "27.8%", 2, 0),
   "ao_peak": (AO/"ANGEL8896_04092025071949_September042025_Intimation_of_Business_Update_August_2025.pdf", "67.6%", 1, 1),
+  "tc_q2": (JD/"NSE_106811193.pdf", "Q2 Revenue at", 0, 1),
+  "tc_q2fy26": (TQ/"TCS_CORPCS_09102025155609_PressReleaseletter.pdf", "- 3.3", 10, 0),
+  "tc_fy26": (TQ/"TCS_CORPCS_09042026155806_PressReleaseletter_signed.pdf", "-2.4% in CC", 1, 1),
+  "tc_opm": (JD/"NSE_106811193.pdf", "Operating Margin at 24.0%", 2, 1),
+  "tc_opex": (JD/"NSE_106811193.pdf", "Other Operating expenses", 4, 2),
+  "tc_bby": (TQ/"TCS_CORPCS_01102026182634_Signed_SE_Letter.pdf", "INR 1 Lakh", 2, 1),
+  "pe_94": (JD/"NSE_106812808.pdf", "94.04%", 4, 1),
+  "pe_bridge": (PE/"PERSISTENTUSER1_27062026030030_PSLFinalSEOutcomeoftheBMJune272026Signed.pdf", "EUR 1,400,000,000", 2, 3),
+  "pe_qip": (PE/"PERSISTENTUSER1_03072026121301_PSLInvestorCallTranscriptSubmissionSd.pdf", "intend doing any QIP", 0, 1),
+  "pe_450": (PE/"PERSISTENTUSER1_02092026221625_PersistentSEOutcomeoftheBMSeptember22026signed.pdf", "USD 450 million", 1, 2),
+  "pe_egm": (PE/"PERSISTENTUSER1_12092026122147_PersistentEGMNoticeSE_IntimationSigned.pdf", "18-month arrangement", 1, 0),
+  "pe_cash": (PE/"PERSISTENTUSER1_12092026122147_PersistentEGMNoticeSE_IntimationSigned.pdf", "limited access to the cash-flows", 2, 1),
+  "pe_cdo": (JD/"NSE_106813060.pdf", "Chief Delivery Officer", 2, 2, 1),
+  "pe_icra": (JD/"NSE_106813119.pdf", "Rating Watch with Negative Implications", 1, 1),
+  "dm_pr": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Standalone PAT up by 7.6%", 1, 4),
+  "dm_lfl": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Two years and older DMart stores", 1, 1),
+  "dm_wage": (DM/"DMART_10102026153213_ASLPressRelease10102026.pdf", "Wage inflation at entry-level", 1, 0),
+  "dm_borrow": (DM/"DMART_10102026151828_ASLOutcomeofBM10102026.pdf", "2,628.66", 2, 2),
+  "dm_cp": (DM/"DMART_10102026151828_ASLOutcomeofBM10102026.pdf", "Proceeds of commercial papers", 1, 2),
+  "dm_psf": (DM/"DMART_24072026191836_PresentationforAnalystInvestorMeet2026.pdf", "33,422", 2, 1),
+  "vm_festive": (RP/"VMART_01102026185733_BusinessUpdateQ2FY27.pdf", "Navratri", 1, 1),
   "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
 

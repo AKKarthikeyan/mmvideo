@@ -1,0 +1,57 @@
+{
+ "scene": {
+  "type": "case",
+  "heading": "THE CASE OF THE MISSING 56 PAISE",
+  "note": "PER ₹100 OF SALES · OUR ARITHMETIC",
+  "total": 56,
+  "unit": "PAISE",
+  "done": [
+   {
+    "label": "THE GOODS",
+    "v": 10,
+    "icon": "box",
+    "color": "ink"
+   },
+   {
+    "label": "SALARIES",
+    "v": 2,
+    "icon": "person",
+    "color": "blue"
+   },
+   {
+    "label": "RUNNING COSTS",
+    "v": 16,
+    "icon": "tag",
+    "color": "orange"
+   },
+   {
+    "label": "WEAR AND TEAR",
+    "v": 9,
+    "icon": "store",
+    "color": "green"
+   }
+  ],
+  "found": [
+   {
+    "label": "INTEREST",
+    "v": 11,
+    "icon": "bank",
+    "color": "purple",
+    "at": "Eleven paise"
+   },
+   {
+    "label": "LESS SIDE INCOME",
+    "v": 8,
+    "icon": "coin",
+    "color": "teal",
+    "at": "That is eight paise"
+   }
+  ],
+  "closed": {
+   "text": "CASE CLOSED?",
+   "at": "Case closed"
+  }
+ },
+ "say": "Eleven paise. And the last piece: D Mart's side income, the money it earns from things other than selling goods, fell. That is eight paise. Nine, eleven and eight: twenty eight. All fifty six paise, found. Case closed? Not quite.",
+ "sec": 17.71
+}

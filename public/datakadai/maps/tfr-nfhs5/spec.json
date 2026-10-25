@@ -1,0 +1,30 @@
+{
+ "id": "tfr-nfhs5",
+ "draft": "NFHS-6 (2023-24) replaced NFHS-5 in June 2026. Rebuild data.csv from the official NFHS-6 fact sheets before upload.",
+ "series": "India Map of the Day",
+ "title": "India's Baby Map",
+ "metric": {"label": "Total fertility rate", "unit": "children per woman", "decimals": 1},
+ "scale": {"palette": "diverging", "breaks": [1.4, 1.7, 2.1, 2.4, 2.7]},
+ "hook": {"kicker": "NFHS-5 · 2019-21", "big": "2.0", "line": "children per woman. India is now below the replacement level of 2.1."},
+ "reveal": "31 of 36 states and UTs are at or below 2.1",
+ "rank": {"top": "Most children", "bottom": "Fewest children"},
+ "twist": {"states": ["KL", "TN"], "title": "Only 2 states saw fertility rise since 2015-16",
+           "lines": ["Kerala 1.6 → 1.8", "Tamil Nadu 1.7 → 1.8"]},
+ "question": {"big": "3.0 vs 1.1", "line": "Bihar vs Sikkim. What explains a gap this big? Tell us in the comments."},
+ "thumb": {"big": "3.0 vs 1.1", "line": "Why Bihar and Sikkim are worlds apart"},
+ "source": {"name": "NFHS-5 (2019-21) state fact sheets, MoHFW / IIPS", "url": "rchiips.org/nfhs",
+            "via": "github.com/pratapvardhan/NFHS-5 (CC BY 4.0)", "checked": "2026-10-25"},
+ "stamp": "OFFICIAL",
+ "claims": [
+  {"type": "value", "id": "IN", "eq": 2.0},
+  {"type": "count_lte", "max": 2.1, "n": 31},
+  {"type": "top", "ids": ["BR", "ML", "UP"]},
+  {"type": "bottom", "ids": ["SK"]},
+  {"type": "value", "id": "BR", "eq": 3.0},
+  {"type": "value", "id": "SK", "eq": 1.1},
+  {"type": "rose", "ids": ["KL", "TN"]},
+  {"type": "value", "id": "KL", "eq": 1.8, "prev": 1.6},
+  {"type": "value", "id": "TN", "eq": 1.8, "prev": 1.7}
+ ],
+ "audio": null
+}

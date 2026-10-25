@@ -15,6 +15,7 @@ import {LetterVxCompositions} from "./vx/LetterVideos";
 import {ExplainerCompositions} from "./explainer/MoatExplainer";
 import {MoatVerticalComposition} from "./explainer/MoatVertical";
 import {CarouselCompositions} from "./carousel/Carousels";
+import {NapkinCompositions} from "./napkin/NapkinVideos";
 import {Banner} from "./banner/Banner";
 import {ChannelIntro, introTotal, IFPS} from "./intro/ChannelIntro";
 import {DataVideoCompositions} from "./datayt/DataVideos";
@@ -23,6 +24,10 @@ import {HalNapkin, halTotal, HFPS2} from "./hand/HalNapkin";
 import {VogNapkin, vogTotal, VFPS} from "./hand/VogNapkin";
 import {BankNapkin, bkTotal, BK, BFPS} from "./hand/BankNapkins";
 import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
+import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
+import {IllusDev, IllusIcon} from "./vx/illus/Dev";
+import {IllusThumb} from "./vx/illus/Thumb";
+import {DataKadaiCompositions} from "./datakadai/DataKadaiVideos";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -42,6 +47,8 @@ export const RemotionRoot: React.FC = () => (
     <ExplainerCompositions/>
     <MoatVerticalComposition/>
     <CarouselCompositions/>
+    <DataKadaiCompositions/>
+    <NapkinCompositions/>
     <Still id="YTBanner" component={Banner} width={2560} height={1440}/>
     <Composition id="HAND-shyam" component={ShyamNapkin} durationInFrames={nTotal} fps={NFPS} width={1080} height={1920}/>
     <Composition id="HAND-hal" component={HalNapkin} durationInFrames={halTotal} fps={HFPS2} width={1080} height={1920}/>
@@ -62,6 +69,20 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="HAND-bkn" component={BankNapkin2 as any} defaultProps={{sid: "bkn", label: "Karnataka Bank · Q2"}} durationInFrames={bkTotal2(BK2.bkn)} fps={BFPS2} width={1080} height={1920}/>
     <Composition id="HAND-bko" component={BankNapkin2 as any} defaultProps={{sid: "bko", label: "22 banks · Q2"}} durationInFrames={bkTotal2(BK2.bko)} fps={BFPS2} width={1080} height={1920}/>
     <DataVideoCompositions/>
+    <Composition id="HAND-bkp" component={BankNapkin2 as any} defaultProps={{sid: "bkp", label: "Suryoday SFB · Q2"}} durationInFrames={bkTotal2(BK2.bkp)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkq" component={BankNapkin2 as any} defaultProps={{sid: "bkq", label: "Angel One · commodity"}} durationInFrames={bkTotal2(BK2.bkq)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkr" component={BankNapkin2 as any} defaultProps={{sid: "bkr", label: "Angel One · commodity"}} durationInFrames={bkTotal2(BK2.bkr)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bks" component={BankNapkin2 as any} defaultProps={{sid: "bks", label: "Jewellers vs gold"}} durationInFrames={bkTotal2(BK2.bks)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkt" component={BankNapkin2 as any} defaultProps={{sid: "bkt", label: "TCS Q2"}} durationInFrames={bkTotal2(BK2.bkt)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bku" component={BankNapkin2 as any} defaultProps={{sid: "bku", label: "Persistent · Nagarro"}} durationInFrames={bkTotal2(BK2.bku)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkv" component={BankNapkin2 as any} defaultProps={{sid: "bkv", label: "DMart Q2"}} durationInFrames={bkTotal2(BK2.bkv)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkw" component={BankNapkin2 as any} defaultProps={{sid: "bkw", label: "ICICI Pru AMC"}} durationInFrames={bkTotal2(BK2.bkw)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bkx" component={BankNapkin2 as any} defaultProps={{sid: "bkx", label: "Den · GTPL"}} durationInFrames={bkTotal2(BK2.bkx)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-bky" component={BankNapkin2 as any} defaultProps={{sid: "bky", label: "ICICI Lombard"}} durationInFrames={bkTotal2(BK2.bky)} fps={BFPS2} width={1080} height={1920}/>
+    <Composition id="HAND-intro" component={NapkinIntro} durationInFrames={napIntroTotal} fps={NIFPS} width={1920} height={1080}/>
+    <Composition id="ILLUS-dev" component={IllusDev as any} defaultProps={{scene: {type: "kitdemo"}, say: "", sec: 8}} durationInFrames={1800} fps={30} width={1920} height={1080}/>
+    <Composition id="ILLUS-icon" component={IllusIcon as any} defaultProps={{name: "store"}} durationInFrames={1} fps={30} width={512} height={512}/>
+    <Composition id="ILLUS-thumb" component={IllusThumb as any} defaultProps={{v: 1}} durationInFrames={1} fps={30} width={1280} height={720}/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
   </>
 );

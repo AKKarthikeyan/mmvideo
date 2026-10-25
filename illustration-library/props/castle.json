@@ -1,0 +1,28 @@
+{
+ "scene": {
+  "type": "castle",
+  "heading": "A MOAT: WHAT PROTECTS A BUSINESS FROM ITS RIVALS · OUR VIEW",
+  "flag": "DMART: LOW COSTS",
+  "moatAt": "called a moat",
+  "flagAt": "its low costs",
+  "checks": [
+   {
+    "text": "GOODS PIECE: BARELY MOVED",
+    "ok": true,
+    "at": "the goods piece barely moved"
+   },
+   {
+    "text": "RUNNING COSTS: CREPT UP",
+    "ok": false,
+    "at": "running costs crept up"
+   },
+   {
+    "text": "OLDER STORES: SELLING MORE",
+    "ok": true,
+    "at": "older stores are selling more"
+   }
+  ]
+ },
+ "say": "What protects a business from its rivals is called a moat, like the water around a castle. Our view: D Mart's moat is its low costs. You have seen three checks already: the goods piece barely moved, running costs crept up, and older stores are selling more. But there is a fourth check you have not seen.",
+ "sec": 19.85
+}

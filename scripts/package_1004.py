@@ -2,7 +2,7 @@
 """4 Oct 2026 kit: chapters + SRT for the Q2 bank long video, the JLR kinetic Short and the Vedanta napkin Short."""
 import json, math, re, pathlib, sys
 sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from package_shyam import srt, split  # (also refreshes the Shyam SRTs, harmless)
+from srt_util import srt, split  # (also refreshes the Shyam SRTs, harmless)
 FPS = 30; OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx"); VX = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 D = json.load(open(VX / "banksq2/data.json")); t = 0; ent = []; chap = {}
 for b in D["beats"]:

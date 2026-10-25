@@ -1,0 +1,1372 @@
+{
+ "id": "lombardfloat",
+ "title": "ICICI Lombard Lost Money on Insurance. How Did It Profit?",
+ "chapters": [
+  "The puzzle",
+  "Money that waits",
+  "The two engines",
+  "Why two profits?",
+  "Is float a moat?",
+  "Where this could break",
+  "Back to the motor policy",
+  "Sources"
+ ],
+ "shorts": [],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "h00",
+   "say": "Can an insurer lose money on insurance, and still profit? From July to September twenty twenty six, ICICI Lombard's insurance lost three hundred and eighteen crore rupees in its audited accounts. Yet its profit after tax was nine hundred and forty six crore. How?",
+   "cap": "Can an insurer lose money on insurance, and still profit? From July to September 2026, ICICI Lombard's insurance lost ₹318 crore in its audited accounts. Yet its profit after tax was ₹946 crore (₹946.40 crore). How?",
+   "scene": {
+    "type": "duo",
+    "heading": "ICICI LOMBARD · JULY TO SEPTEMBER 2026 · AUDITED",
+    "note": "RESULTS FILED 14 OCT 2026 · UNDERWRITING RESULT AND PROFIT AFTER TAX",
+    "items": [
+     {
+      "icon": "tag",
+      "label": "THE INSURANCE ITSELF",
+      "v": -318.38,
+      "text": "−₹318 CR",
+      "at": "lose money on insurance"
+     },
+     {
+      "icon": "coin",
+      "label": "PROFIT AFTER TAX",
+      "v": 946.4,
+      "text": "₹946 CR",
+      "at": "Yet its profit after tax"
+     }
+    ],
+    "gap": {
+     "text": "HOW?",
+     "at": "Yet its profit after tax|+30"
+    }
+   },
+   "sec": 16.46,
+   "cues": [
+    "Can an insurer lose money on insurance, and still profit?",
+    "From July to September 2026, ICICI Lombard's insurance lost ₹318 crore in its",
+    "audited accounts.",
+    "Yet its profit after tax was ₹946 crore (₹946.40 crore).",
+    "How?"
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "h02",
+   "say": "Picture a scale. On one side, what the insurance itself loses. On the other, what the insurer earns on money it holds while it waits to pay claims. Which side is heavier? And does every insurer have that second side?",
+   "cap": "Picture a scale. On one side, what the insurance itself loses. On the other, what the insurer earns on money it holds while it waits to pay claims. Which side is heavier? And does every insurer have that second side?",
+   "scene": {
+    "type": "scale",
+    "heading": "ONE PICTURE TO HOLD",
+    "note": "FIRST A MADE-UP EXAMPLE, THEN ICICI LOMBARD",
+    "left": {
+     "label": "WHAT THE INSURANCE LOSES",
+     "red": true,
+     "text": "?",
+     "v": 1,
+     "at": "Picture a scale"
+    },
+    "right": {
+     "label": "WHAT THE WAITING MONEY EARNS",
+     "color": "gold",
+     "text": "?",
+     "v": 1,
+     "at": "On the other"
+    },
+    "result": {
+     "text": "WHICH SIDE IS HEAVIER?",
+     "at": "while it waits to pay claims"
+    }
+   },
+   "sec": 13.84,
+   "cues": [
+    "Picture a scale.",
+    "On one side, what the insurance itself loses.",
+    "On the other, what the insurer earns on money it holds while it waits to pay",
+    "claims.",
+    "Which side is heavier?",
+    "And does every insurer have that second side?"
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "h01",
+   "say": "And here is the strange part. The same quarter has two profit figures. Nine hundred and forty six crore, in the audited results, which match the regulator's basis. And one thousand and thirty one crore, on the company's own basis. Why two? And what should you track?",
+   "cap": "And here is the strange part. The same quarter has two profit figures. ₹946 crore, in the audited results, which match the regulator's basis (IRDAI's 1/n). And ₹1,031 crore, on the company's own basis (the n basis). Why two? And what should you track?",
+   "scene": {
+    "type": "stacks",
+    "heading": "ONE QUARTER, TWO PROFIT FIGURES · JULY TO SEPTEMBER 2026",
+    "note": "AUDITED RESULTS AND PRESENTATION, 14 OCT 2026 · PROFIT AFTER TAX",
+    "icon": "store",
+    "items": [
+     {
+      "label": "AUDITED RESULTS · MATCH IRDAI'S 1/n BASIS",
+      "v": 946.4,
+      "text": "₹946 CR",
+      "at": "the strange part"
+     },
+     {
+      "label": "THE COMPANY'S OWN n BASIS · NOT PART OF THE AUDITED RESULTS",
+      "v": 1031,
+      "text": "₹1,031 CR",
+      "at": "And one thousand and thirty one"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "SAME QUARTER, TWO FIGURES",
+      "at": "two profit figures"
+     }
+    ]
+   },
+   "sec": 18.42,
+   "cues": [
+    "And here is the strange part.",
+    "The same quarter has two profit figures.",
+    "₹946 crore, in the audited results, which match the regulator's basis",
+    "(IRDAI's 1/n).",
+    "And ₹1,031 crore, on the company's own basis (the n basis).",
+    "Why two?",
+    "And what should you track?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m10",
+   "say": "First: where does that waiting money come from?",
+   "cap": "First: where does that waiting money come from?",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "MONEY THAT",
+     "WAITS"
+    ],
+    "red": false
+   },
+   "sec": 3.24,
+   "cues": [
+    "First:",
+    "where does that waiting money come from?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m11",
+   "say": "A made up example. A hundred families in a housing society each put a thousand rupees into a repair fund: one lakh rupees. It sits in a bank deposit, earning interest. The repairs are paid months later. But what if they cost more?",
+   "cap": "A made-up example. A hundred families in a housing society each put ₹1,000 into a repair fund: ₹1 lakh. It sits in a bank deposit, earning interest. The repairs are paid months later. But what if they cost more?",
+   "scene": {
+    "type": "gears",
+    "heading": "A HOUSING SOCIETY'S REPAIR FUND",
+    "note": "MADE-UP EXAMPLE",
+    "gears": [
+     {
+      "text": "FAMILIES PUT IN ₹1 LAKH",
+      "icon": "person",
+      "at": "A made up example"
+     },
+     {
+      "text": "IT WAITS IN A DEPOSIT",
+      "icon": "coin",
+      "at": "It sits in a bank deposit"
+     },
+     {
+      "text": "REPAIRS PAID LATER",
+      "icon": "tag",
+      "at": "The repairs are paid"
+     }
+    ],
+    "result": {
+     "text": "THE MONEY WAITS, AND EARNS",
+     "at": "earning interest"
+    }
+   },
+   "sec": 12.62,
+   "cues": [
+    "A made-up example.",
+    "A hundred families in a housing society each put ₹1,000 into a repair fund:",
+    "₹1 lakh.",
+    "It sits in a bank deposit, earning interest.",
+    "The repairs are paid months later.",
+    "But what if they cost more?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m12",
+   "say": "In our made up example, say the repairs cost five thousand rupees more than the fund. The deposit earned six thousand. So the society ends up a thousand ahead.",
+   "cap": "In our made-up example, say the repairs cost ₹5,000 more than the fund. The deposit earned ₹6,000. So the society ends up ₹1,000 ahead.",
+   "scene": {
+    "type": "scale",
+    "heading": "THE REPAIR FUND ON OUR SCALE",
+    "note": "MADE-UP EXAMPLE · ALL NUMBERS INVENTED",
+    "left": {
+     "label": "REPAIRS: MORE THAN THE FUND",
+     "red": true,
+     "text": "−₹5,000",
+     "v": 5000,
+     "at": "say the repairs cost"
+    },
+    "right": {
+     "label": "INTEREST ON THE FUND",
+     "color": "gold",
+     "text": "₹6,000",
+     "v": 6000,
+     "at": "The deposit earned six thousand"
+    },
+    "result": {
+     "text": "₹1,000 AHEAD · MADE UP",
+     "at": "the society ends up a thousand ahead"
+    }
+   },
+   "sec": 8.65,
+   "cues": [
+    "In our made-up example, say the repairs cost ₹5,000 more than the fund.",
+    "The deposit earned ₹6,000.",
+    "So the society ends up ₹1,000 ahead."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m13",
+   "say": "Now a real policy: motor insurance. The company's slides note that Indian general insurance works on a cash before cover model. You pay the premium on day one. The insurer invests it. Claims come later, sometimes years later. How many years?",
+   "cap": "Now a real policy: motor insurance. The company's slides note that Indian general insurance works on a “cash before cover” model. You pay the premium on day one. The insurer invests it. Claims come later, sometimes years later. How many years?",
+   "scene": {
+    "type": "gears",
+    "heading": "ONE MOTOR POLICY · “CASH BEFORE COVER”",
+    "note": "THE COMPANY'S PRESENTATION OF 14 OCT 2026, SLIDE 23",
+    "gears": [
+     {
+      "text": "PREMIUM PAID ON DAY ONE",
+      "icon": "note",
+      "at": "Now a real policy"
+     },
+     {
+      "text": "THE INSURER INVESTS IT",
+      "icon": "coin",
+      "at": "The insurer invests it"
+     },
+     {
+      "text": "CLAIMS PAID LATER",
+      "icon": "tag",
+      "at": "Claims come later"
+     }
+    ],
+    "result": {
+     "text": "HOW MANY YEARS?",
+     "at": "The insurer invests it|+30"
+    }
+   },
+   "sec": 16.07,
+   "cues": [
+    "Now a real policy:",
+    "motor insurance.",
+    "The company's slides note that Indian general insurance works on a “cash",
+    "before cover” model.",
+    "You pay the premium on day one.",
+    "The insurer invests it.",
+    "Claims come later, sometimes years later.",
+    "How many years?"
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "m14",
+   "say": "Take third party claims: injury or damage caused to others. In the company's tables, take accidents in the year to March twenty seventeen. At that year's end, about one thousand seven hundred crore rupees was unpaid. Nine years later, almost four hundred crore still was. So how much does ICICI Lombard hold?",
+   "cap": "Take third-party claims: injury or damage caused to others. In the company's tables, take accidents in the year to March 2017. At that year's end, about ₹1,700 crore (₹1,683 crore) was unpaid. Nine years later (March 2026), almost ₹400 crore (₹391 crore) still was. So how much does ICICI Lombard hold?",
+   "scene": {
+    "type": "stacks",
+    "heading": "MOTOR THIRD-PARTY CLAIMS FOR FY2017 ACCIDENTS, STILL UNPAID",
+    "note": "PRESENTATION OF 14 OCT 2026, SLIDE 30 · COMPANY'S TABLE, RUPEES CRORE · EXCLUDES THE OLD MOTOR THIRD-PARTY POOL",
+    "icon": "store",
+    "items": [
+     {
+      "label": "MARCH 2017",
+      "v": 1683,
+      "text": "₹1,683 CR",
+      "at": "Take third party claims",
+      "red": true
+     },
+     {
+      "label": "MARCH 2026",
+      "v": 391,
+      "text": "₹391 CR",
+      "at": "Nine years later",
+      "red": true
+     }
+    ],
+    "stamps": [
+     {
+      "text": "9 YEARS LATER, STILL UNPAID",
+      "at": "Nine years later|+40"
+     }
+    ]
+   },
+   "sec": 19.83,
+   "cues": [
+    "Take third-party claims:",
+    "injury or damage caused to others.",
+    "In the company's tables, take accidents in the year to March 2017.",
+    "At that year's end, about ₹1,700 crore (₹1,683 crore) was unpaid.",
+    "Nine years later (March 2026), almost ₹400 crore (₹391 crore) still was.",
+    "So how much does ICICI Lombard hold?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f20",
+   "say": "What does our scale show at ICICI Lombard?",
+   "cap": "What does our scale show at ICICI Lombard?",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE TWO",
+     "ENGINES"
+    ],
+    "red": false
+   },
+   "sec": 3.37,
+   "cues": [
+    "What does our scale show at ICICI Lombard?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f21",
+   "say": "First engine: the insurance itself, measured by a combined ratio. It adds up claims, commission and running costs, each set against premium. Above a hundred percent means the insurance lost money. From July to September, it was one hundred and seven percent.",
+   "cap": "First engine: the insurance itself, measured by a combined ratio. It adds up claims, commission and running costs, each set against premium. Above 100% means the insurance lost money. From July to September 2026, it was 107.0%.",
+   "scene": {
+    "type": "counter",
+    "heading": "ENGINE ONE: THE INSURANCE ITSELF · COMBINED RATIO, JUL–SEP 2026",
+    "to": 107.0,
+    "decimals": 1,
+    "suffix": "%",
+    "at": "measured by a combined ratio",
+    "sub": "ABOVE 100% MEANS THE INSURANCE LOST MONEY",
+    "stamps": [
+     {
+      "text": "CLAIMS ÷ PREMIUM EARNED + COSTS ÷ PREMIUM WRITTEN",
+      "at": "each set against premium"
+     }
+    ]
+   },
+   "sec": 16.17,
+   "cues": [
+    "First engine:",
+    "the insurance itself, measured by a combined ratio.",
+    "It adds up claims, commission and running costs, each set against premium.",
+    "Above 100% means the insurance lost money.",
+    "From July to September 2026, it was 107.0%."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f22",
+   "say": "A bad quarter? The company says it included one hundred and eighteen crore rupees of catastrophe losses. Without them, the ratio was one hundred and five point three percent, still above a hundred. A year earlier, one hundred and five point one.",
+   "cap": "A bad quarter? The company says it included ₹118 crore of catastrophe losses. Without them, the ratio was 105.3%, still above 100. A year earlier (July to September 2025), 105.1%.",
+   "scene": {
+    "type": "cards",
+    "heading": "COMBINED RATIO, 1/n BASIS · AUDITED RESULTS AND SLIDE 15, 14 OCT 2026",
+    "cards": [
+     {
+      "top": "JUL–SEP 2026",
+      "big": "107.0%",
+      "sub": "105.3% WITHOUT ₹118 CR OF CATASTROPHE LOSSES, IT SAYS",
+      "at": "A bad quarter"
+     },
+     {
+      "top": "JUL–SEP 2025",
+      "big": "105.1%",
+      "sub": "A YEAR EARLIER",
+      "at": "A year earlier"
+     }
+    ]
+   },
+   "sec": 14.97,
+   "cues": [
+    "A bad quarter?",
+    "The company says it included ₹118 crore of catastrophe losses.",
+    "Without them, the ratio was 105.3%, still above 100.",
+    "A year earlier (July to September 2025), 105.1%."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f23",
+   "say": "Now the second engine: income on investments. In the same quarter, investments held against policyholders' money earned one thousand one hundred and sixty one crore rupees. Those against shareholders' money, four hundred and seven crore. These two, not the insurance, carried the profit. Both include gains from selling. More on that later.",
+   "cap": "Now the second engine: income on investments. In the same quarter, investments held against policyholders' money earned ₹1,161 crore (₹1,160.83 crore). Those against shareholders' money, ₹407 crore (₹407.36 crore). These two, not the insurance, carried the profit. Both include gains from selling. More on that later.",
+   "scene": {
+    "type": "stacks",
+    "heading": "ENGINE TWO: INCOME ON INVESTMENTS · JULY TO SEPTEMBER 2026",
+    "note": "AUDITED RESULTS, 14 OCT 2026 · LINES 4 AND 18(b)",
+    "icon": "coin",
+    "items": [
+     {
+      "label": "ON POLICYHOLDERS' MONEY",
+      "v": 1160.83,
+      "text": "₹1,161 CR",
+      "at": "Now the second engine"
+     },
+     {
+      "label": "ON SHAREHOLDERS' MONEY",
+      "v": 407.36,
+      "text": "₹407 CR",
+      "at": "Those against shareholders"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "BOTH INCLUDE GAINS FROM SELLING · MORE LATER",
+      "at": "Both include gains"
+     }
+    ]
+   },
+   "sec": 20.43,
+   "cues": [
+    "Now the second engine:",
+    "income on investments.",
+    "In the same quarter, investments held against policyholders' money earned",
+    "₹1,161 crore (₹1,160.83 crore).",
+    "Those against shareholders' money, ₹407 crore (₹407.36 crore).",
+    "These two, not the insurance, carried the profit.",
+    "Both include gains from selling.",
+    "More on that later."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f24",
+   "say": "Back to our scale. The insurance lost three hundred and eighteen crore. Income on policyholders' money alone was more than three and a half times that, by our arithmetic. But why does an insurer hold so much of other people's money?",
+   "cap": "Back to our scale. The insurance lost ₹318 crore. Income on policyholders' money alone was more than three and a half times that (3.6 times, our arithmetic). But why does an insurer hold so much of other people's money?",
+   "scene": {
+    "type": "scale",
+    "heading": "OUR SCALE · ICICI LOMBARD, JULY TO SEPTEMBER 2026",
+    "note": "AUDITED RESULTS · INCOME ON POLICYHOLDERS' FUNDS ONLY · OUR ARITHMETIC FOR THE MULTIPLE",
+    "left": {
+     "label": "WHAT THE INSURANCE LOSES",
+     "red": true,
+     "text": "₹318 CR",
+     "v": 318.38,
+     "at": "Back to our scale"
+    },
+    "right": {
+     "label": "WHAT THE WAITING MONEY EARNS",
+     "color": "gold",
+     "text": "₹1,161 CR",
+     "v": 1160.83,
+     "at": "Income on policyholders"
+    },
+    "result": {
+     "text": "3.6 TIMES THE LOSS · OUR ARITHMETIC",
+     "at": "more than three and a half times"
+    }
+   },
+   "sec": 13.3,
+   "cues": [
+    "Back to our scale.",
+    "The insurance lost ₹318 crore.",
+    "Income on policyholders' money alone was more than three and a half times",
+    "that (3.6 times, our arithmetic).",
+    "But why does an insurer hold so much of other people's money?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "f25",
+   "say": "That waiting money is often called float. At the end of September, it held about forty seven thousand crore rupees of investments against policyholders' money, and about seventeen thousand crore against shareholders'.",
+   "cap": "That waiting money is often called float. At 30 September 2026, it held ₹47,379 crore of investments against policyholders' money, and ₹16,953 crore against shareholders'.",
+   "scene": {
+    "type": "stacks",
+    "heading": "ICICI LOMBARD'S INVESTMENTS · 30 SEPTEMBER 2026",
+    "note": "AUDITED BALANCE SHEET, 14 OCT 2026",
+    "icon": "store",
+    "items": [
+     {
+      "label": "AGAINST POLICYHOLDERS' MONEY",
+      "v": 47378.51,
+      "text": "₹47,379 CR",
+      "at": "That waiting money"
+     },
+     {
+      "label": "AGAINST SHAREHOLDERS' MONEY",
+      "v": 16953.17,
+      "text": "₹16,953 CR",
+      "at": "and about seventeen thousand"
+     }
+    ]
+   },
+   "sec": 11.76,
+   "cues": [
+    "That waiting money is often called float.",
+    "At 30 September 2026, it held ₹47,379 crore of investments against",
+    "policyholders' money, and ₹16,953 crore against shareholders'."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t30",
+   "say": "Now, the two profit figures we promised.",
+   "cap": "Now, the two profit figures we promised.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHY TWO",
+     "PROFITS?"
+    ],
+    "red": false
+   },
+   "sec": 2.85,
+   "cues": [
+    "Now, the two profit figures we promised."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t32",
+   "say": "Take a made up policy, of the kind sold for several years at once, like long term health cover. Three years of cover, thirty thousand rupees, paid on day one. The regulator's rule: each year, count the premium times one over N, N being the number of years.",
+   "cap": "Take a made-up policy, of the kind sold for several years at once, like long-term health cover. Three years of cover, ₹30,000, paid on day one. The regulator's rule (IRDAI's): each year, count the premium times 1/n, n being the number of years.",
+   "scene": {
+    "type": "spread",
+    "heading": "IRDAI'S 1/n RULE · ONE MADE-UP 3-YEAR POLICY",
+    "note": "MADE-UP EXAMPLE · IRDAI MASTER CIRCULAR, 17 MAY 2024, SECTION IV, 5A",
+    "cost": {
+     "text": "₹30,000 PAID ON DAY ONE",
+     "at": "Take a made up policy"
+    },
+    "years": [
+     "YEAR 1",
+     "YEAR 2",
+     "YEAR 3"
+    ],
+    "cutAt": "times one over N",
+    "dropAt": "being the number of years"
+   },
+   "sec": 17.71,
+   "cues": [
+    "Take a made-up policy, of the kind sold for several years at once,",
+    "like long-term health cover.",
+    "Three years of cover, ₹30,000, paid on day one.",
+    "The regulator's rule (IRDAI's):",
+    "each year, count the premium times 1/n, n being the number of years."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t32b",
+   "say": "That is ten thousand a year counted as premium. The other twenty thousand waits, as advance premium. That is the one over N basis.",
+   "cap": "That is ₹10,000 a year counted as premium. The other ₹20,000 waits, as advance premium. That is the 1/n basis.",
+   "scene": {
+    "type": "cards",
+    "heading": "IRDAI'S 1/n RULE · THE MADE-UP POLICY, DAY ONE",
+    "cards": [
+     {
+      "top": "COUNTED AS PREMIUM EACH YEAR",
+      "big": "₹10,000",
+      "sub": "MADE UP · ₹30,000 ÷ 3 YEARS",
+      "at": "That is ten thousand",
+      "fill": "mustard"
+     },
+     {
+      "top": "WAITS AS ADVANCE PREMIUM",
+      "big": "₹20,000",
+      "sub": "MADE UP · THE REST OF THE ₹30,000",
+      "at": "The other twenty thousand",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "THAT IS THE 1/n BASIS",
+      "at": "That is the one over N basis"
+     }
+    ]
+   },
+   "sec": 7.97,
+   "cues": [
+    "That is ₹10,000 a year counted as premium.",
+    "The other ₹20,000 waits, as advance premium.",
+    "That is the 1/n basis."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t33",
+   "say": "The audited figures match the company's one over N figures, the regulator's basis. And the N basis? The company's own term. Before the rule, it said, long term health premium was counted in the year of sale. On our reading, the N basis still does that.",
+   "cap": "The audited figures match the company's 1/n figures, the regulator's basis. And the n basis? The company's own term. Before the rule, it said, long-term health premium was counted in the year of sale. On our reading, the n basis still does that.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE TWO BASES · PRESENTATION OF 14 OCT 2026 AND CALL OF 17 JAN 2025",
+    "cards": [
+     {
+      "top": "1/n BASIS · IRDAI'S RULE",
+      "big": "A YEAR AT A TIME",
+      "sub": "AUDITED FIGURES MATCH THE COMPANY'S 1/n FIGURES",
+      "at": "The audited figures match",
+      "fill": "mustard"
+     },
+     {
+      "top": "n BASIS · THE COMPANY'S TERM",
+      "big": "IN THE YEAR OF SALE",
+      "sub": "OUR READING · NOT PART OF THE AUDITED RESULTS",
+      "at": "And the N basis",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 16.82,
+   "cues": [
+    "The audited figures match the company's 1/n figures, the regulator's basis.",
+    "And the n basis?",
+    "The company's own term.",
+    "Before the rule, it said, long-term health premium was counted in the year of",
+    "sale.",
+    "On our reading, the n basis still does that."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t34",
+   "say": "So, both side by side. Is N always higher?",
+   "cap": "So, both side by side. Is n always higher?",
+   "scene": {
+    "type": "cards",
+    "heading": "PROFIT AFTER TAX, JUL–SEP 2026 · SLIDES 14 AND 15",
+    "cards": [
+     {
+      "top": "1/n BASIS · AUDITED",
+      "big": "₹946 CR",
+      "sub": "+15.5% ON A YEAR AGO · COMBINED RATIO 107.0%",
+      "at": "So, both side by side",
+      "fill": "mustard"
+     },
+     {
+      "top": "n BASIS · THE COMPANY'S",
+      "big": "₹1,031 CR",
+      "sub": "+27.5% ON A YEAR AGO · COMBINED RATIO 104.5%",
+      "at": "So, both side by side|+40",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 3.79,
+   "cues": [
+    "So, both side by side.",
+    "Is n always higher?"
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t35",
+   "say": "No. In the two years to March twenty twenty six, one over N gave the higher profit. In this half year, the lower.",
+   "cap": "No. In the two years to March 2026 (FY25 and FY26), 1/n gave the higher profit. In this half year (April to September 2026), the lower.",
+   "scene": {
+    "type": "hand",
+    "title": "Which profit is higher?",
+    "items": [
+     {
+      "text": "FY25: 1/n higher (₹2,508 cr vs ₹2,419 cr)",
+      "at": "No. In the two years"
+     },
+     {
+      "text": "FY26: 1/n higher (₹2,772 cr vs ₹2,761 cr)",
+      "at": "one over N gave the higher"
+     },
+     {
+      "text": "Apr–Sep 2026: n higher (₹1,454 cr vs ₹1,350 cr)",
+      "at": "In this half year"
+     }
+    ]
+   },
+   "sec": 8.86,
+   "cues": [
+    "No.",
+    "In the two years to March 2026 (FY25 and FY26), 1/n gave the higher profit.",
+    "In this half year (April to September 2026), the lower."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "t36",
+   "say": "And what drives the premium gap? This quarter, by our arithmetic, the N basis counted almost five hundred crore rupees more premium. A year ago, about three hundred and sixty. We think long term health is part of the reason.",
+   "cap": "And what drives the premium gap? This quarter, by our arithmetic, the n basis counted almost ₹500 crore (₹492 crore) more premium. A year ago, about ₹360 crore (₹361 crore). We think long-term health is part of the reason.",
+   "scene": {
+    "type": "cards",
+    "heading": "PREMIUM ON THE n BASIS ABOVE 1/n · GROSS DIRECT PREMIUM · SLIDES 14 AND 15",
+    "cards": [
+     {
+      "top": "JUL–SEP 2026",
+      "big": "₹492 CR",
+      "sub": "MORE PREMIUM ON THE n BASIS · OUR ARITHMETIC",
+      "at": "This quarter",
+      "fill": "mustard"
+     },
+     {
+      "top": "JUL–SEP 2025",
+      "big": "₹361 CR",
+      "sub": "A YEAR EARLIER · OUR ARITHMETIC",
+      "at": "A year ago",
+      "fill": "mustard"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "OUR READING: PARTLY LONG-TERM HEALTH",
+      "at": "We think long term health"
+     }
+    ]
+   },
+   "sec": 13.35,
+   "cues": [
+    "And what drives the premium gap?",
+    "This quarter, by our arithmetic, the n basis counted almost ₹500 crore (₹492",
+    "crore) more premium.",
+    "A year ago, about ₹360 crore (₹361 crore).",
+    "We think long-term health is part of the reason."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s40",
+   "say": "So is this waiting money a moat?",
+   "cap": "So is this waiting money a moat?",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "IS FLOAT",
+     "A MOAT?"
+    ],
+    "red": false
+   },
+   "sec": 1.96,
+   "cues": [
+    "So is this waiting money a moat?"
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s41",
+   "say": "A moat protects a business from rivals, like water around a fort. Is float one? The catch: other insurers hold policyholders' money too. So our own test is different: year after year, does this insurer lose less on the insurance itself than the industry?",
+   "cap": "A moat protects a business from rivals, like water around a fort. Is float one? The catch: other insurers hold policyholders' money too. So our own test is different: year after year, does this insurer lose less on the insurance itself than the industry?",
+   "scene": {
+    "type": "castle",
+    "heading": "A MOAT: WHAT PROTECTS A BUSINESS FROM ITS RIVALS",
+    "flag": "FLOAT ALONE?",
+    "moatAt": "A moat protects",
+    "flagAt": "Is float one",
+    "checks": [
+     {
+      "text": "OTHER INSURERS HOLD FLOAT TOO",
+      "ok": false,
+      "at": "other insurers hold"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "OUR TEST · NOT THE COMPANY'S",
+      "at": "So our own test"
+     }
+    ]
+   },
+   "sec": 16.95,
+   "cues": [
+    "A moat protects a business from rivals, like water around a fort.",
+    "Is float one?",
+    "The catch:",
+    "other insurers hold policyholders' money too.",
+    "So our own test is different:",
+    "year after year, does this insurer lose less on the insurance itself than the",
+    "industry?"
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s42",
+   "say": "Does it pass? Here is the company's own chart, which footnotes its ratios as B A G I adjusted numbers. For each of the last ten years, it shows the industry's combined ratio above a hundred. The range is one hundred and twelve to about one hundred and twenty.",
+   "cap": "Does it pass? Here is the company's own chart, which footnotes its ratios as “BAGI adjusted numbers”. For each of the last ten years (FY17 to FY26), it shows the industry's combined ratio above 100. The range is 112% to about 120% (120.3%).",
+   "scene": {
+    "type": "bars",
+    "heading": "COMBINED RATIO, FY17–FY26 · THE COMPANY'S OWN CHART, FOOTNOTED “BAGI ADJUSTED NUMBERS” (ANALYST PRESENTATION, 29 SEP 2026, SLIDE 4)",
+    "rows": [
+     {
+      "name": "INDUSTRY · HIGHEST",
+      "v": 120.3,
+      "label": "120.3%",
+      "at": "Here is the company's own chart",
+      "red": true
+     },
+     {
+      "name": "INDUSTRY · LOWEST",
+      "v": 112,
+      "label": "112%",
+      "at": "The range is one hundred and twelve",
+      "red": true
+     }
+    ],
+    "stamps": [
+     {
+      "text": "THE COMPANY'S OWN CHART",
+      "at": "Does it pass"
+     }
+    ]
+   },
+   "sec": 16.59,
+   "cues": [
+    "Does it pass?",
+    "Here is the company's own chart, which footnotes its ratios as “BAGI adjusted",
+    "numbers”.",
+    "For each of the last ten years (FY17 to FY26),",
+    "it shows the industry's combined ratio above 100.",
+    "The range is 112% to about 120% (120.3%)."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s43",
+   "say": "ICICI Lombard's, on the same chart, ran from just under a hundred to almost one hundred and nine. So its worst year was better than the industry's best. But the footnote does not say what is adjusted.",
+   "cap": "ICICI Lombard's, on the same chart, ran from just under 100 to almost 109 (99.4% to 108.8%). So its worst year was better than the industry's best. But the footnote does not say what is adjusted.",
+   "scene": {
+    "type": "bars",
+    "heading": "COMBINED RATIO, FY17–FY26 · THE COMPANY'S OWN CHART, FOOTNOTED “BAGI ADJUSTED NUMBERS” (29 SEP 2026, SLIDE 4)",
+    "rows": [
+     {
+      "name": "INDUSTRY · HIGHEST",
+      "v": 120.3,
+      "label": "120.3%",
+      "at": -1,
+      "red": true
+     },
+     {
+      "name": "INDUSTRY · LOWEST",
+      "v": 112,
+      "label": "112%",
+      "at": -1,
+      "red": true
+     },
+     {
+      "name": "ICICI LOMBARD · LOWEST",
+      "v": 99.4,
+      "label": "99.4%",
+      "at": "ICICI Lombard's, on the same chart"
+     },
+     {
+      "name": "ICICI LOMBARD · HIGHEST",
+      "v": 108.8,
+      "label": "108.8%",
+      "at": "almost one hundred and nine"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "FOOTNOTE: “BAGI ADJUSTED NUMBERS”",
+      "at": "But the footnote",
+      "y": 900
+     }
+    ]
+   },
+   "sec": 12.88,
+   "cues": [
+    "ICICI Lombard's, on the same chart, ran from just under 100 to almost 109",
+    "(99.4% to 108.8%).",
+    "So its worst year was better than the industry's best.",
+    "But the footnote does not say what is adjusted."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "s44",
+   "say": "But the gap is not fixed. In July, on the earnings call, the company's chief executive gave the industry's ratio for the year to March twenty twenty six: almost one hundred and eighteen. ICICI Lombard's: one hundred and three. Both are on the company's own chart, footnoted B A G I adjusted numbers. Since then, ICICI Lombard's has been about one hundred and seven. We read no industry figure since.",
+   "cap": "But the gap is not fixed. In July 2026, on the earnings call, the company's managing director and chief executive gave the industry's ratio for the year to March 2026: almost 118 (117.8%). ICICI Lombard's: 103 (103.4%). Both are on the company's own chart, footnoted “BAGI adjusted numbers”. Since then, ICICI Lombard's has been about 107%, in both quarters (107.2% and 107.0%). We read no industry figure since.",
+   "scene": {
+    "type": "cards",
+    "heading": "COMBINED RATIO · MD AND CEO, CALL OF 15 JUL 2026 (ALSO ON THE COMPANY'S OWN CHART, “BAGI ADJUSTED NUMBERS”) · SLIDE 15, 14 OCT 2026",
+    "cards": [
+     {
+      "top": "FY26 · INDUSTRY",
+      "big": "117.8%",
+      "sub": "AS THE COMPANY'S MD AND CEO PUT IT",
+      "at": "But the gap is not fixed"
+     },
+     {
+      "top": "FY26 · ICICI LOMBARD",
+      "big": "103.4%",
+      "sub": "A GAP OF OVER 14 POINTS",
+      "at": "ICICI Lombard's: one hundred",
+      "fill": "mustard"
+     },
+     {
+      "top": "SINCE THEN · ICICI LOMBARD",
+      "big": "107.2% · 107.0%",
+      "sub": "APR–JUN AND JUL–SEP 2026 · NO INDUSTRY FIGURE READ",
+      "at": "Since then"
+     }
+    ]
+   },
+   "sec": 25.34,
+   "cues": [
+    "But the gap is not fixed.",
+    "In July 2026, on the earnings call, the company's managing director and chief",
+    "executive gave the industry's ratio for the year to March 2026:",
+    "almost 118 (117.8%).",
+    "ICICI Lombard's:",
+    "103 (103.4%).",
+    "Both are on the company's own chart, footnoted “BAGI adjusted numbers”.",
+    "Since then, ICICI Lombard's has been about 107%,",
+    "in both quarters (107.2% and 107.0%).",
+    "We read no industry figure since."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b50",
+   "say": "Now, what could tip the scale the other way?",
+   "cap": "Now, what could tip the scale the other way?",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "WHERE THIS",
+     "COULD BREAK"
+    ],
+    "red": false
+   },
+   "sec": 2.46,
+   "cues": [
+    "Now, what could tip the scale the other way?"
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b51",
+   "say": "First, gains from selling investments come and go. In April to June, they were one hundred and eighty three crore rupees, down from three hundred and eighty a year before. In July to September, four hundred and fifty three.",
+   "cap": "First, gains from selling investments come and go. In April to June 2026, they were ₹183 crore, down from ₹380 crore a year before. In July to September 2026, ₹453 crore.",
+   "scene": {
+    "type": "stacks",
+    "heading": "GAINS FROM SELLING INVESTMENTS (CAPITAL GAINS)",
+    "note": "PRESS RELEASES OF 15 JUL 2026 (NET OF IMPAIRMENT) AND 14 OCT 2026",
+    "icon": "coin",
+    "items": [
+     {
+      "label": "APR–JUN 2026",
+      "v": 183,
+      "text": "₹183 CR",
+      "at": "First, gains from selling"
+     },
+     {
+      "label": "JUL–SEP 2026",
+      "v": 453,
+      "text": "₹453 CR",
+      "at": "In July to September"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "APR–JUN A YEAR BEFORE: ₹380 CR",
+      "at": "down from three hundred and eighty"
+     }
+    ]
+   },
+   "sec": 12.77,
+   "cues": [
+    "First, gains from selling investments come and go.",
+    "In April to June 2026, they were ₹183 crore,",
+    "down from ₹380 crore a year before.",
+    "In July to September 2026, ₹453 crore."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b52",
+   "say": "Second, claims include reserves, which are estimates. Past estimates have come down over time, which the company says reflects prudence. But reserves can also rise. In April to June, profit after tax fell forty six percent, on the one over N basis.",
+   "cap": "Second, claims include reserves, which are estimates. Past estimates have come down over time, which the company says reflects prudence. But reserves can also rise. In April to June 2026, profit after tax fell 46.0%, on the 1/n basis.",
+   "scene": {
+    "type": "hand",
+    "title": "Partly an estimate:",
+    "items": [
+     {
+      "text": "Claims include reserves",
+      "at": "Second, claims include"
+     },
+     {
+      "text": "Past estimates came down over time",
+      "at": "Past estimates have come down"
+     },
+     {
+      "text": "The company: favourable run-offs reflect prudence",
+      "at": "which the company says"
+     },
+     {
+      "text": "Apr–Jun 2026: profit after tax −46.0% (1/n basis)",
+      "at": "In April to June",
+      "red": true
+     }
+    ]
+   },
+   "sec": 16.8,
+   "cues": [
+    "Second, claims include reserves, which are estimates.",
+    "Past estimates have come down over time,",
+    "which the company says reflects prudence.",
+    "But reserves can also rise.",
+    "In April to June 2026, profit after tax fell 46.0%, on the 1/n basis."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b52b",
+   "say": "What caused the fall? The company points to two causes. One: two large fire losses, sixty three crore rupees in all. Two: a Supreme Court judgment that raised its motor third party reserves by one hundred and sixty five crore. Without them, it said, profit fell twenty three percent.",
+   "cap": "What caused the fall? The company points to two causes. One: two large fire losses (₹63 crore in all). Two: a Supreme Court judgment that raised its motor third-party reserves by ₹165 crore. Without them, it said, profit fell 23.0%.",
+   "scene": {
+    "type": "cards",
+    "heading": "APRIL TO JUNE 2026 · WHAT THE COMPANY SAYS · PRESS RELEASE, 15 JUL 2026",
+    "cards": [
+     {
+      "top": "TWO LARGE FIRE LOSSES",
+      "big": "₹63 CR",
+      "sub": "IN ALL, AS THE COMPANY STATES",
+      "at": "One: two large fire losses"
+     },
+     {
+      "top": "SUPREME COURT JUDGMENT",
+      "big": "+₹165 CR",
+      "sub": "MOTOR THIRD-PARTY RESERVES",
+      "at": "Two: a Supreme Court judgment"
+     },
+     {
+      "top": "PROFIT FALL WITHOUT THEM",
+      "big": "−23.0%",
+      "sub": "AS THE COMPANY PUT IT",
+      "at": "Without them",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 20.06,
+   "cues": [
+    "What caused the fall?",
+    "The company points to two causes.",
+    "One:",
+    "two large fire losses (₹63 crore in all).",
+    "Two:",
+    "a Supreme Court judgment that raised its motor third-party reserves by ₹165",
+    "crore.",
+    "Without them, it said, profit fell 23.0%."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b53",
+   "say": "Third, does the waiting money always earn? Float income depends on markets. In the six months to September, the account holding gains on policyholders' unsold investments rose by about two thousand six hundred crore rupees, our arithmetic. In March, it had shown a loss of about five hundred and sixty crore.",
+   "cap": "Third, does the waiting money always earn? Float income depends on markets. In the six months to September 2026, the account holding gains on policyholders' unsold investments (the fair value change account) rose by about ₹2,600 crore (₹2,630 crore; our arithmetic). In March 2026, it had shown a loss of about ₹560 crore (₹562 crore).",
+   "scene": {
+    "type": "stacks",
+    "heading": "POLICYHOLDERS' GAINS NOT YET BOOKED · APRIL TO SEPTEMBER 2026",
+    "note": "AUDITED BALANCE SHEET · FAIR VALUE CHANGE ACCOUNT · OUR ARITHMETIC",
+    "icon": "coin",
+    "items": [
+     {
+      "label": "RISE IN SIX MONTHS",
+      "v": 2630,
+      "text": "₹2,630 CR",
+      "at": "Float income depends"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "MARCH 2026: A LOSS OF ₹562 CR",
+      "at": "In March, it had shown"
+     }
+    ]
+   },
+   "sec": 19.96,
+   "cues": [
+    "Third, does the waiting money always earn?",
+    "Float income depends on markets.",
+    "In the six months to September 2026, the account holding gains on",
+    "policyholders' unsold investments (the fair value change account) rose by",
+    "about ₹2,600 crore (₹2,630 crore; our arithmetic).",
+    "In March 2026, it had shown a loss of about ₹560 crore (₹562 crore)."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "b54",
+   "say": "And timing: float needs claims paid later than premium arrives. In those six months, claims paid rose about twenty percent on a year earlier, and premium received about five and a half, our arithmetic. Cash from operations was an outflow of about three hundred and eighty crore. Policyholders' investments still grew, mostly from that rise in value.",
+   "cap": "And timing: float needs claims paid later than premium arrives. In those six months, claims paid rose 19.7% on a year earlier, and premium received 5.5% (both our arithmetic). Cash from operations was an outflow of about ₹380 crore (₹383.66 crore; a year earlier, an inflow of ₹459 crore). Policyholders' investments still grew, mostly from that rise in value (₹2,630 crore of ₹3,886 crore, our arithmetic).",
+   "scene": {
+    "type": "duo",
+    "heading": "APRIL TO SEPTEMBER 2026 · AGAINST A YEAR EARLIER",
+    "note": "RECEIPTS AND PAYMENTS ACCOUNT · OUR ARITHMETIC",
+    "items": [
+     {
+      "icon": "tag",
+      "label": "CLAIMS PAID",
+      "v": 19.7,
+      "text": "+19.7%",
+      "at": "And timing"
+     },
+     {
+      "icon": "note",
+      "label": "PREMIUM RECEIVED",
+      "v": 5.5,
+      "text": "+5.5%",
+      "at": "and premium received"
+     }
+    ],
+    "gap": {
+     "text": "CASH FROM OPERATIONS: −₹383.66 CR",
+     "at": "Cash from operations"
+    }
+   },
+   "sec": 19.91,
+   "cues": [
+    "And timing:",
+    "float needs claims paid later than premium arrives.",
+    "In those six months, claims paid rose 19.7% on a year earlier,",
+    "and premium received 5.5% (both our arithmetic).",
+    "Cash from operations was an outflow of about ₹380 crore (₹383.66 crore; a",
+    "year earlier, an inflow of ₹459 crore).",
+    "Policyholders' investments still grew,",
+    "mostly from that rise in value (₹2,630 crore of ₹3,886 crore, our arithmetic)."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "v60",
+   "say": "So, back to our motor policy, and our scale.",
+   "cap": "So, back to our motor policy, and our scale.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "BACK TO THE",
+     "MOTOR POLICY"
+    ],
+    "red": false
+   },
+   "sec": 3.92,
+   "cues": [
+    "So, back to our motor policy, and our scale."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "v61",
+   "say": "A long term motor policy pays the insurer on day one. The money is invested while it waits: the second engine. Some of its claims may stay unpaid for nine years or more.",
+   "cap": "A long-term motor policy pays the insurer on day one. The money is invested while it waits: the second engine. Some of its claims may stay unpaid for nine years or more.",
+   "scene": {
+    "type": "gears",
+    "heading": "ONE MOTOR POLICY, FOLLOWED",
+    "note": "PRESENTATION OF 14 OCT 2026, SLIDES 23 AND 30",
+    "gears": [
+     {
+      "text": "PAID ON DAY ONE",
+      "icon": "note",
+      "at": "A long term motor policy"
+     },
+     {
+      "text": "INVESTED WHILE IT WAITS",
+      "icon": "coin",
+      "at": "The money is invested"
+     },
+     {
+      "text": "CLAIMS: 9 YEARS OR MORE",
+      "icon": "tag",
+      "at": "Some of its claims"
+     }
+    ]
+   },
+   "sec": 11.6,
+   "cues": [
+    "A long-term motor policy pays the insurer on day one.",
+    "The money is invested while it waits:",
+    "the second engine.",
+    "Some of its claims may stay unpaid for nine years or more."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "v62",
+   "say": "So which side is heavier? This quarter, income on policyholders' money was over three times the insurance loss. But other insurers hold such money too.",
+   "cap": "So which side is heavier? This quarter, income on policyholders' money was over three times the insurance loss. But other insurers hold such money too.",
+   "scene": {
+    "type": "scale",
+    "heading": "OUR SCALE, AGAIN · JULY TO SEPTEMBER 2026",
+    "note": "AUDITED RESULTS · OUR ARITHMETIC FOR THE MULTIPLE",
+    "left": {
+     "label": "WHAT THE INSURANCE LOSES",
+     "red": true,
+     "text": "₹318 CR",
+     "v": 318.38,
+     "at": "So which side is heavier"
+    },
+    "right": {
+     "label": "WHAT THE WAITING MONEY EARNS",
+     "color": "gold",
+     "text": "₹1,161 CR",
+     "v": 1160.83,
+     "at": "This quarter, income on"
+    },
+    "result": {
+     "text": "THE WAITING MONEY · OVER 3× THE LOSS",
+     "at": "over three times"
+    },
+    "stamps": [
+     {
+      "text": "OTHER INSURERS HOLD SUCH MONEY TOO",
+      "at": "But other insurers"
+     }
+    ]
+   },
+   "sec": 9.85,
+   "cues": [
+    "So which side is heavier?",
+    "This quarter, income on policyholders' money was over three times the",
+    "insurance loss.",
+    "But other insurers hold such money too."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "v62b",
+   "say": "So what separates ICICI Lombard? On the company's own chart, in all ten years, the industry's combined ratio stayed at one hundred and twelve or above. The industry's return on owners' money never went above twelve percent. ICICI Lombard's never fell below fourteen. That chart footnotes its combined ratios as B A G I adjusted numbers. Our reading: float helps. The combined ratio decides how much.",
+   "cap": "So what separates ICICI Lombard? On the company's own chart, in all ten years, the industry's combined ratio stayed at 112% or above. The industry's return on owners' money never went above 12% (11.9%). ICICI Lombard's never fell below 14% (14.0%). That chart footnotes its combined ratios as “BAGI adjusted numbers”. Our reading: float helps. The combined ratio decides how much.",
+   "scene": {
+    "type": "bars",
+    "heading": "RETURN ON OWNERS' MONEY (ROE), FY17–FY26 · THE COMPANY'S OWN CHART, COMBINED RATIOS FOOTNOTED “BAGI ADJUSTED NUMBERS” (29 SEP 2026, SLIDE 4)",
+    "rows": [
+     {
+      "name": "INDUSTRY · HIGHEST (RATIO 112%+ EVERY YEAR)",
+      "v": 11.9,
+      "label": "11.9%",
+      "at": "So what separates",
+      "red": true
+     },
+     {
+      "name": "ICICI LOMBARD · LOWEST",
+      "v": 14.0,
+      "label": "14.0%",
+      "at": "ICICI Lombard's never fell"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "OUR READING: FLOAT HELPS · THE RATIO DECIDES HOW MUCH",
+      "at": "Our reading: float helps"
+     }
+    ]
+   },
+   "sec": 25.52,
+   "cues": [
+    "So what separates ICICI Lombard?",
+    "On the company's own chart, in all ten years,",
+    "the industry's combined ratio stayed at 112% or above.",
+    "The industry's return on owners' money never went above 12% (11.9%).",
+    "ICICI Lombard's never fell below 14% (14.0%).",
+    "That chart footnotes its combined ratios as “BAGI adjusted numbers”.",
+    "Our reading:",
+    "float helps.",
+    "The combined ratio decides how much."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "v63",
+   "say": "Three things to track in the filings. One: the combined ratio against the industry's. Two: investment income without gains from selling. Three, our answer to the two profits: track both figures, and the gap between them.",
+   "cap": "Three things to track in the filings. One: the combined ratio against the industry's. Two: investment income without gains from selling. Three, our answer to the two profits: track both figures, and the gap between them.",
+   "scene": {
+    "type": "hand",
+    "title": "To track in the filings:",
+    "items": [
+     {
+      "text": "Combined ratio against the industry's",
+      "at": "Three things to track"
+     },
+     {
+      "text": "Investment income without capital gains, which the company reports separately",
+      "at": "Two: investment income"
+     },
+     {
+      "text": "Both profits, and the gap between them",
+      "at": "Three, our answer",
+      "red": true
+     }
+    ]
+   },
+   "sec": 13.4,
+   "cues": [
+    "Three things to track in the filings.",
+    "One:",
+    "the combined ratio against the industry's.",
+    "Two:",
+    "investment income without gains from selling.",
+    "Three, our answer to the two profits:",
+    "track both figures, and the gap between them."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "z70",
+   "say": "One question stays open: how the N basis profit is worked out, line by line. The filings do not show it.",
+   "cap": "One question stays open: how the n-basis profit is worked out, line by line. The filings do not show it.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "ONE QUESTION STAYS OPEN",
+      "at": "One question"
+     },
+     {
+      "text": "HOW IS THE n-BASIS PROFIT WORKED OUT?",
+      "at": "how the N basis profit",
+      "red": true
+     }
+    ]
+   },
+   "sec": 8.15,
+   "cues": [
+    "One question stays open:",
+    "how the n-basis profit is worked out, line by line.",
+    "The filings do not show it."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "z71",
+   "say": "Every number, except the made up examples and our own arithmetic, comes from the filings and the regulator's circular, linked on moatmarginresearch dot com.",
+   "cap": "Every number, except the made-up examples and our own arithmetic, comes from the filings and the regulator's circular (IRDAI's), linked on moatmarginresearch.com.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "ICICI Lombard: audited results, quarter and half year to 30 Sep 2026, filed 14 Oct 2026",
+     "ICICI Lombard: press release and investor presentation, 14 Oct 2026 and 15 Jul 2026",
+     "ICICI Lombard: earnings call transcripts, 17 Jan 2025 and 15 Jul 2026",
+     "ICICI Lombard: Digital Day presentation, 29 Sep 2026",
+     "IRDAI: Master Circular on Actuarial, Finance and Investment Functions, 17 May 2024",
+     "All linked at moatmarginresearch.com",
+     "Educational research, not investment advice · not SEBI-registered"
+    ]
+   },
+   "sec": 8.57,
+   "cues": [
+    "Every number, except the made-up examples and our own arithmetic,",
+    "comes from the filings and the regulator's circular (IRDAI's),",
+    "linked on moatmarginresearch.com."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "z72",
+   "say": "Subscribe for the filings that matter, every day.",
+   "cap": "Subscribe for the filings that matter, every day.",
+   "scene": {
+    "type": "end",
+    "plain": true
+   },
+   "sec": 3.73,
+   "cues": [
+    "Subscribe for the filings that matter, every day."
+   ]
+  }
+ ],
+ "clips": {}
+}

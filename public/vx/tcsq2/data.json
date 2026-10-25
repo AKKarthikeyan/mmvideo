@@ -1,0 +1,1781 @@
+{
+ "id": "tcsq2",
+ "title": "TCS Grew 11%. Really, 2.8%. Where the Margin Went.",
+ "chapters": [
+  "TCS Q2",
+  "The rupee",
+  "The margin",
+  "The AI line",
+  "The moat test",
+  "The other reading",
+  "The verdict",
+  "Today's top 10 filings",
+  "Sources"
+ ],
+ "shorts": [],
+ "timelines": {},
+ "beats": [
+  {
+   "ch": 0,
+   "key": "c00",
+   "say": "T C S says revenue grew eleven percent last quarter. Take out the weaker rupee, and it grew two point eight. Its margin slipped to twenty four percent. So is the I T slowdown over for T C S? And what is A I doing to its margin?",
+   "cap": "TCS says revenue grew 11% last quarter. Take out the weaker rupee, and it grew 2.8%. Its margin slipped to 24%. So is the IT slowdown over for TCS? And what is AI doing to its margin?",
+   "scene": {
+    "type": "cards",
+    "heading": "TCS · Q2 FY27 · OWN FILING · 8 OCT 2026",
+    "cards": [
+     {
+      "top": "IN RUPEES",
+      "big": "+11.2%",
+      "at": "grew eleven percent"
+     },
+     {
+      "top": "CONSTANT CURRENCY",
+      "big": "+2.8%",
+      "at": "grew two point eight",
+      "fill": "mustard"
+     },
+     {
+      "top": "OPERATING MARGIN",
+      "big": "24.0%",
+      "at": "twenty four percent"
+     }
+    ]
+   },
+   "sec": 14.45,
+   "cues": [
+    "TCS says revenue grew 11% last quarter.",
+    "Take out the weaker rupee, and it grew 2.8%.",
+    "Its margin slipped to 24%.",
+    "So is the IT slowdown over for TCS?",
+    "And what is AI doing to its margin?"
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c01",
+   "say": "Here's the quarter, in T C S's own release. Revenue, seventy three thousand one hundred and eighty eight crore rupees. Up eleven point two percent in rupees. But only half a percent on the previous quarter, in constant currency.",
+   "cap": "Here's the quarter, in TCS's own release. Revenue, ₹73,188 crore. Up 11.2% in rupees. But only 0.5% on the previous quarter, in constant currency.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_q2",
+    "heading": "TCS · Q2 FY27 PRESS RELEASE · 8 OCT 2026",
+    "hl": [
+     "seventy three thousand"
+    ],
+    "stamps": [
+     {
+      "text": "+0.5% QoQ IN CONSTANT CURRENCY",
+      "at": "half a percent"
+     }
+    ]
+   },
+   "sec": 14.5,
+   "cues": [
+    "Here's the quarter, in TCS's own release.",
+    "Revenue, ₹73,188 crore.",
+    "Up 11.2% in rupees.",
+    "But only 0.5% on the previous quarter, in constant currency."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c02",
+   "say": "One more number to hold on to: three point one billion dollars. That's what T C S now earns a year from A I work. It decides how this story ends.",
+   "cap": "One more number to hold on to: $3.1 billion. That's what TCS now earns a year from AI work. It decides how this story ends.",
+   "scene": {
+    "type": "counter",
+    "heading": "TCS · ANNUALISED AI REVENUE · Q2 FY27",
+    "to": 3.1,
+    "decimals": 1,
+    "prefix": "$",
+    "suffix": " BN",
+    "at": "three point one billion",
+    "sub": "HOLD ON TO THIS NUMBER"
+   },
+   "sec": 10.32,
+   "cues": [
+    "One more number to hold on to:",
+    "$3.1 billion.",
+    "That's what TCS now earns a year from AI work.",
+    "It decides how this story ends."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c03",
+   "say": "By the end, you'll know how much of the growth is real, where the margin went, and whether the moat is holding. Then, today's top ten filings.",
+   "cap": "By the end, you'll know how much of the growth is real, where the margin went, and whether the moat is holding. Then, today's top 10 filings.",
+   "scene": {
+    "type": "pic",
+    "pic": "p_office",
+    "items": [
+     {
+      "text": "HOW MUCH GROWTH IS REAL?",
+      "at": "how much of the growth"
+     },
+     {
+      "text": "WHERE DID THE MARGIN GO?",
+      "at": "where the margin went"
+     },
+     {
+      "text": "TODAY'S TOP 10 FILINGS",
+      "at": "top ten",
+      "red": true
+     }
+    ]
+   },
+   "sec": 8.15,
+   "cues": [
+    "By the end, you'll know how much of the growth is real,",
+    "where the margin went, and whether the moat is holding.",
+    "Then, today's top 10 filings."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c10",
+   "say": "Chapter one. The rupee.",
+   "cap": "Chapter one. The rupee.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "RUPEE"
+    ],
+    "red": false,
+    "pic": "t_rupee"
+   },
+   "sec": 2.12,
+   "cues": [
+    "Chapter one.",
+    "The rupee."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c11",
+   "say": "Constant currency means: same exchange rates as a year ago. On that basis, T C S grew two point eight percent. The rest of the eleven point two, about eight points, came from the rupee weakening against the dollar, the pound and the euro.",
+   "cap": "Constant currency means: same exchange rates as a year ago. On that basis, TCS grew 2.8%. The rest of the 11.2%, about 8 points, came from the rupee weakening against the dollar, the pound and the euro (our arithmetic).",
+   "scene": {
+    "type": "bars",
+    "heading": "TCS · Q2 FY27 · REVENUE GROWTH, YEAR ON YEAR",
+    "rows": [
+     {
+      "name": "IN RUPEES",
+      "v": 11.2,
+      "label": "+11.2%",
+      "at": "eleven point two"
+     },
+     {
+      "name": "CONSTANT CURRENCY",
+      "v": 2.8,
+      "label": "+2.8%",
+      "at": "two point eight percent"
+     },
+     {
+      "name": "CURRENCY (OUR ARITHMETIC)",
+      "v": 8.2,
+      "label": "~8 pts",
+      "at": "about eight points"
+     }
+    ]
+   },
+   "sec": 14.24,
+   "cues": [
+    "Constant currency means:",
+    "same exchange rates as a year ago.",
+    "On that basis, TCS grew 2.8%.",
+    "The rest of the 11.2%, about 8 points,",
+    "came from the rupee weakening against the dollar,",
+    "the pound and the euro (our arithmetic)."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c12",
+   "say": "And two point eight is measured against a weak quarter. A year ago, revenue was shrinking: minus three point three percent.",
+   "cap": "And 2.8% is measured against a weak quarter. A year ago, revenue was shrinking: −3.3%.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_q2fy26",
+    "heading": "TCS · Q2 FY26 PRESS RELEASE · 9 OCT 2025",
+    "hl": [
+     "minus three point three"
+    ],
+    "stamps": [
+     {
+      "text": "Q2 FY26: −3.3% YoY (CC)",
+      "at": "minus three point three"
+     }
+    ]
+   },
+   "sec": 7.63,
+   "cues": [
+    "And 2.8% is measured against a weak quarter.",
+    "A year ago, revenue was shrinking:",
+    "−3.3%."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c13",
+   "say": "Here's the full slowdown, in T C S's own releases. Growth of five and a half percent two years ago. Then four straight quarters of shrinking. Then back to growth: three point two percent, and now two point eight.",
+   "cap": "Here's the full slowdown, in TCS's own releases. Growth of 5.5% two years ago. Then four straight quarters of shrinking. Then back to growth: 3.2%, and now 2.8%.",
+   "scene": {
+    "type": "table",
+    "heading": "TCS · REVENUE GROWTH, YoY, CONSTANT CURRENCY · OWN RELEASES",
+    "cols": [
+     "",
+     "THEN",
+     "A YEAR LATER"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Q2",
+       "FY25: +5.5%",
+       "FY26: −3.3%"
+      ],
+      "at": "five and a half"
+     },
+     {
+      "cells": [
+       "Q3",
+       "FY25: +4.5%",
+       "FY26: −2.6%"
+      ],
+      "at": "two years ago"
+     },
+     {
+      "cells": [
+       "Q4",
+       "FY25: +2.5%",
+       "FY26: −0.6%"
+      ],
+      "at": "Then four"
+     },
+     {
+      "cells": [
+       "Q1",
+       "FY26: −3.1%",
+       "FY27: +3.2%"
+      ],
+      "at": "three point two"
+     },
+     {
+      "cells": [
+       "Q2",
+       "FY26: −3.3%",
+       "FY27: +2.8%"
+      ],
+      "at": "now two point eight"
+     }
+    ]
+   },
+   "sec": 13.97,
+   "cues": [
+    "Here's the full slowdown, in TCS's own releases.",
+    "Growth of 5.5% two years ago.",
+    "Then four straight quarters of shrinking.",
+    "Then back to growth:",
+    "3.2%, and now 2.8%."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c14",
+   "say": "For the full year to March, revenue fell two point four percent in constant currency.",
+   "cap": "For the full year to March, revenue fell 2.4% in constant currency.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_fy26",
+    "heading": "TCS · Q4 FY26 PRESS RELEASE · 9 APR 2026",
+    "hl": [
+     "two point four"
+    ],
+    "stamps": [
+     {
+      "text": "FY26: −2.4% IN CC",
+      "at": "two point four"
+     }
+    ]
+   },
+   "sec": 6.63,
+   "cues": [
+    "For the full year to March, revenue fell 2.4% in constant currency."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c15",
+   "say": "On the call, chief executive K Krithivasan put it plainly.",
+   "cap": "On the call, chief executive K Krithivasan put it plainly.",
+   "scene": {
+    "type": "quote",
+    "text": "“The demand environment has not materially changed since last quarter, and discretionary programs without near-term value remain under scrutiny.”",
+    "who": "K KRITHIVASAN · CEO · EARNINGS CALL, 8 OCT 2026 (OUR TRANSCRIPT)",
+    "at": "put it plainly"
+   },
+   "sec": 3.73,
+   "cues": [
+    "On the call, chief executive K Krithivasan put it plainly."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "c16",
+   "say": "So the shrinking has stopped. But the growth is small, and the quarter to quarter pace slowed. Which raises the question: if growth barely moved, why did the margin fall?",
+   "cap": "So the shrinking has stopped. But the growth is small, and the quarter-to-quarter pace slowed. Which raises the question: if growth barely moved, why did the margin fall?",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "SHRINKING: STOPPED",
+      "at": "shrinking has stopped"
+     },
+     {
+      "text": "GROWTH: SMALL",
+      "at": "growth is small"
+     },
+     {
+      "text": "WHY DID THE MARGIN FALL?",
+      "at": "why did the margin fall",
+      "red": true
+     }
+    ]
+   },
+   "sec": 11.34,
+   "cues": [
+    "So the shrinking has stopped.",
+    "But the growth is small, and the quarter-to-quarter pace slowed.",
+    "Which raises the question:",
+    "if growth barely moved, why did the margin fall?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c20",
+   "say": "Chapter two. The margin.",
+   "cap": "Chapter two. The margin.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "MARGIN"
+    ],
+    "red": false,
+    "pic": "t_margin"
+   },
+   "sec": 2.01,
+   "cues": [
+    "Chapter two.",
+    "The margin."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c21",
+   "say": "Operating margin: twenty four percent. A year ago, twenty five point two. A drop of more than one point, on seventy three thousand crore of revenue.",
+   "cap": "Operating margin: 24.0%. A year ago, 25.2%. A drop of more than one point, on ₹73,000 crore of revenue.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_opm",
+    "heading": "TCS · Q2 FY27 PRESS RELEASE · 8 OCT 2026",
+    "hl": [
+     "twenty four percent"
+    ],
+    "stamps": [
+     {
+      "text": "A YEAR AGO: 25.2%",
+      "at": "twenty five point two"
+     }
+    ]
+   },
+   "sec": 9.17,
+   "cues": [
+    "Operating margin:",
+    "24.0%.",
+    "A year ago, 25.2%.",
+    "A drop of more than one point, on ₹73,000 crore of revenue."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c22",
+   "say": "The usual suspect in I T is salaries. Not this time. Employee costs fell, from fifty eight point seven percent of revenue to fifty seven point two. What rose was other operating expenses: from twelve and a half percent of revenue to fifteen point two.",
+   "cap": "The usual suspect in IT is salaries. Not this time. Employee costs fell, from 58.7% of revenue to 57.2%. What rose was other operating expenses: from 12.5% of revenue to 15.2% (our arithmetic from the results table).",
+   "scene": {
+    "type": "table",
+    "heading": "TCS · COSTS AS % OF REVENUE · Q2 FY26 → Q2 FY27 · OUR ARITHMETIC",
+    "cols": [
+     "",
+     "Q2 FY26",
+     "Q2 FY27"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Employee costs",
+       "58.7%",
+       "57.2%"
+      ],
+      "at": "Employee costs fell"
+     },
+     {
+      "cells": [
+       "Other operating expenses",
+       "12.5%",
+       "15.2%"
+      ],
+      "at": "other operating expenses"
+     },
+     {
+      "cells": [
+       "Equipment & software licences",
+       "1.5%",
+       "1.8%"
+      ],
+      "at": "fifteen point two"
+     },
+     {
+      "cells": [
+       "Depreciation",
+       "2.1%",
+       "1.7%"
+      ],
+      "at": "fifteen point two"
+     }
+    ]
+   },
+   "sec": 18.26,
+   "cues": [
+    "The usual suspect in IT is salaries.",
+    "Not this time.",
+    "Employee costs fell, from 58.7% of revenue to 57.2%.",
+    "What rose was other operating expenses:",
+    "from 12.5% of revenue to 15.2% (our arithmetic from the results table)."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c23",
+   "say": "That line grew thirty five percent in a year, to eleven thousand one hundred and thirty one crore. The filing doesn't break it down. The call did.",
+   "cap": "That line grew 35% in a year, to ₹11,131 crore. The filing doesn't break it down. The call did.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_opex",
+    "heading": "TCS · Q2 FY27 PRESS RELEASE · CONSOLIDATED P&L",
+    "hl": [
+     "eleven thousand one hundred"
+    ],
+    "stamps": [
+     {
+      "text": "₹8,248 CR → ₹11,131 CR (+35%)",
+      "at": "thirty five percent"
+     }
+    ]
+   },
+   "sec": 8.72,
+   "cues": [
+    "That line grew 35% in a year, to ₹11,131 crore.",
+    "The filing doesn't break it down.",
+    "The call did."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c24",
+   "say": "The chief financial officer, Samir Seksaria, said T C S had invested in a higher bench, people paid but not yet billed, and hired more subcontractors.",
+   "cap": "The chief financial officer, Samir Seksaria, said TCS had invested in a higher bench (people paid but not yet billed) and hired more subcontractors.",
+   "scene": {
+    "type": "quote",
+    "text": "“we have invested in a higher bench and increased hiring of subcontractors to meet near-term skills and delivery requirements”",
+    "who": "SAMIR SEKSARIA · CFO · EARNINGS CALL, 8 OCT 2026 (OUR TRANSCRIPT)",
+    "at": "higher bench"
+   },
+   "sec": 10.37,
+   "cues": [
+    "The chief financial officer, Samir Seksaria,",
+    "said TCS had invested in a higher bench (people paid but not yet billed) and",
+    "hired more subcontractors."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c25",
+   "say": "And part of the fall in staff costs was a lower bonus payout this quarter. That can come back.",
+   "cap": "And part of the fall in staff costs was a lower bonus payout this quarter. That can come back.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "STAFF COSTS: LOWER BONUS",
+      "at": "lower bonus"
+     },
+     {
+      "text": "CAN REVERSE",
+      "at": "can come back",
+      "red": true
+     }
+    ]
+   },
+   "sec": 5.96,
+   "cues": [
+    "And part of the fall in staff costs was a lower bonus payout this quarter.",
+    "That can come back."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c26",
+   "say": "The squeeze shows in five of T C S's six segments. Manufacturing fell from thirty point five percent to twenty seven point eight. Communications, media and technology, from twenty eight point nine to twenty six point eight. Only consumer business improved.",
+   "cap": "The squeeze shows in five of TCS's six segments. Manufacturing fell from 30.5% to 27.8%. Communications, media and technology, from 28.9% to 26.8%. Only consumer business improved (our arithmetic from segment results).",
+   "scene": {
+    "type": "table",
+    "heading": "TCS · SEGMENT MARGIN · Q2 FY26 → Q2 FY27 · OUR ARITHMETIC",
+    "cols": [
+     "SEGMENT",
+     "THEN",
+     "NOW"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Manufacturing",
+       "30.5%",
+       "27.8%"
+      ],
+      "at": "Manufacturing fell"
+     },
+     {
+      "cells": [
+       "Comms, media & tech",
+       "28.9%",
+       "26.8%"
+      ],
+      "at": "Communications"
+     },
+     {
+      "cells": [
+       "Life sciences",
+       "27.5%",
+       "25.3%"
+      ],
+      "at": "twenty six point eight"
+     },
+     {
+      "cells": [
+       "BFSI",
+       "26.5%",
+       "25.5%"
+      ],
+      "at": "twenty six point eight"
+     },
+     {
+      "cells": [
+       "Consumer business",
+       "27.7%",
+       "29.8%"
+      ],
+      "at": "Only consumer"
+     }
+    ]
+   },
+   "sec": 15.18,
+   "cues": [
+    "The squeeze shows in five of TCS's six segments.",
+    "Manufacturing fell from 30.5% to 27.8%.",
+    "Communications, media and technology, from 28.9% to 26.8%.",
+    "Only consumer business improved (our arithmetic from segment results)."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "c27",
+   "say": "So the margin didn't fall on salaries. It fell on capacity bought ahead of revenue. Which only makes sense if T C S expects new work. So what is A I actually doing to that work?",
+   "cap": "So the margin didn't fall on salaries. It fell on capacity bought ahead of revenue. Which only makes sense if TCS expects new work. So what is AI actually doing to that work?",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "NOT SALARIES",
+      "at": "didn't fall on salaries"
+     },
+     {
+      "text": "CAPACITY AHEAD OF REVENUE",
+      "at": "capacity bought ahead"
+     },
+     {
+      "text": "WHAT IS AI DOING?",
+      "at": "actually doing",
+      "red": true
+     }
+    ]
+   },
+   "sec": 10.27,
+   "cues": [
+    "So the margin didn't fall on salaries.",
+    "It fell on capacity bought ahead of revenue.",
+    "Which only makes sense if TCS expects new work.",
+    "So what is AI actually doing to that work?"
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c30",
+   "say": "Chapter three. The A I line.",
+   "cap": "Chapter three. The A I line.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "AI LINE"
+    ],
+    "red": false,
+    "pic": "t_ai"
+   },
+   "sec": 2.51,
+   "cues": [
+    "Chapter three.",
+    "The A I line."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c31",
+   "say": "T C S now reports A I revenue every quarter, as a yearly run rate. One point eight billion dollars nine months ago. Two point three. Two point six. And now three point one, which T C S says is more than ten percent of revenue.",
+   "cap": "TCS now reports AI revenue every quarter, as a yearly run rate. $1.8 billion nine months ago. $2.3 billion. $2.6 billion. And now $3.1 billion, which TCS says is more than 10% of revenue.",
+   "scene": {
+    "type": "bars",
+    "heading": "TCS · ANNUALISED AI REVENUE · US$ BN · OWN RELEASES",
+    "rows": [
+     {
+      "name": "Q3 FY26",
+      "v": 1.8,
+      "label": "$1.8 bn",
+      "at": "One point eight"
+     },
+     {
+      "name": "Q4 FY26",
+      "v": 2.3,
+      "label": "$2.3 bn",
+      "at": "Two point three"
+     },
+     {
+      "name": "Q1 FY27",
+      "v": 2.6,
+      "label": "$2.6 bn",
+      "at": "Two point six"
+     },
+     {
+      "name": "Q2 FY27",
+      "v": 3.1,
+      "label": "$3.1 bn",
+      "at": "now three point one"
+     }
+    ]
+   },
+   "sec": 15.49,
+   "cues": [
+    "TCS now reports AI revenue every quarter, as a yearly run rate.",
+    "$1.8 billion nine months ago.",
+    "$2.3 billion.",
+    "$2.6 billion.",
+    "And now $3.1 billion, which TCS says is more than 10% of revenue."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c32",
+   "say": "That's growth of about seventy percent in nine months. But total revenue, in constant currency, grew two point eight percent in a year. So if A I is growing that fast, something else is shrinking.",
+   "cap": "That's growth of about 70% in nine months (our arithmetic). But total revenue, in constant currency, grew 2.8% in a year. So if AI is growing that fast, something else is shrinking.",
+   "scene": {
+    "type": "table",
+    "heading": "TWO GROWTH RATES · OUR ARITHMETIC",
+    "cols": [
+     "",
+     "GROWTH"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "AI revenue, 9 months",
+       "~+72%"
+      ],
+      "at": "seventy percent"
+     },
+     {
+      "cells": [
+       "Total revenue, 1 year (CC)",
+       "+2.8%"
+      ],
+      "at": "two point eight percent in a year"
+     }
+    ]
+   },
+   "sec": 10.74,
+   "cues": [
+    "That's growth of about 70% in nine months (our arithmetic).",
+    "But total revenue, in constant currency, grew 2.8% in a year.",
+    "So if AI is growing that fast, something else is shrinking."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c33",
+   "say": "An analyst asked exactly that. Krithivasan's answer:",
+   "cap": "An analyst asked exactly that. Krithivasan's answer:",
+   "scene": {
+    "type": "quote",
+    "text": "“there is a deflation because of the productivity benefit”",
+    "who": "K KRITHIVASAN · CEO · EARNINGS CALL, 8 OCT 2026 (OUR TRANSCRIPT)",
+    "at": "asked exactly that"
+   },
+   "sec": 4.31,
+   "cues": [
+    "An analyst asked exactly that.",
+    "Krithivasan's answer:"
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c34",
+   "say": "In other words: when A I does the work faster, clients pay for fewer hours. He said A I also brings new modernisation work and vendor consolidation, but he would not say the squeeze is over.",
+   "cap": "In other words: when AI does the work faster, clients pay for fewer hours. He said AI also brings new modernisation work and vendor consolidation, but he would not say the squeeze is over.",
+   "scene": {
+    "type": "hand",
+    "title": "AI cuts both ways:",
+    "items": [
+     {
+      "text": "Faster work, fewer billable hours",
+      "at": "fewer hours"
+     },
+     {
+      "text": "New modernisation work",
+      "at": "modernisation"
+     },
+     {
+      "text": "Squeeze over? Not yet",
+      "at": "would not say",
+      "red": true
+     }
+    ]
+   },
+   "sec": 12.07,
+   "cues": [
+    "In other words:",
+    "when AI does the work faster, clients pay for fewer hours.",
+    "He said AI also brings new modernisation work and vendor consolidation,",
+    "but he would not say the squeeze is over."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c35",
+   "say": "The C F O added two things. The A I revenue earns a much higher margin than the company average. And pricing overall is roughly stable, though revenue per employee slipped slightly.",
+   "cap": "The CFO added two things. The AI revenue earns “a much higher margin than our company average”. And pricing overall is roughly stable, though revenue per employee slipped slightly.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "AI WORK: HIGHER MARGIN",
+      "at": "much higher margin"
+     },
+     {
+      "text": "PRICING: ROUGHLY STABLE",
+      "at": "roughly stable"
+     },
+     {
+      "text": "REVENUE PER EMPLOYEE: SLIGHTLY DOWN",
+      "at": "slipped slightly",
+      "red": true
+     }
+    ]
+   },
+   "sec": 12.07,
+   "cues": [
+    "The CFO added two things.",
+    "The AI revenue earns “a much higher margin than our company average”.",
+    "And pricing overall is roughly stable,",
+    "though revenue per employee slipped slightly."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "c36",
+   "say": "So the literal answer: the slowdown has ended, but growth is small, and A I is replacing part of the old work. The bigger question is the moat. Can T C S keep the gains from A I? Or does it have to hand them to clients?",
+   "cap": "So the literal answer: the slowdown has ended, but growth is small, and AI is replacing part of the old work. The bigger question is the moat. Can TCS keep the gains from AI? Or does it have to hand them to clients?",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "SLOWDOWN: ENDED. GROWTH: SMALL",
+      "at": "literal answer"
+     },
+     {
+      "text": "AI REPLACES SOME OLD WORK",
+      "at": "replacing part"
+     },
+     {
+      "text": "WHO KEEPS THE AI GAINS?",
+      "at": "hand them to clients",
+      "red": true
+     }
+    ]
+   },
+   "sec": 14.91,
+   "cues": [
+    "So the literal answer:",
+    "the slowdown has ended, but growth is small,",
+    "and AI is replacing part of the old work.",
+    "The bigger question is the moat.",
+    "Can TCS keep the gains from AI?",
+    "Or does it have to hand them to clients?"
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c40",
+   "say": "Chapter four. The moat test.",
+   "cap": "Chapter four. The moat test.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE MOAT",
+     "TEST"
+    ],
+    "red": false,
+    "pic": "t_moat"
+   },
+   "sec": 2.53,
+   "cues": [
+    "Chapter four.",
+    "The moat test."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c41",
+   "say": "Start with the peers. In the June quarter, T C S grew three point two percent in constant currency, at a twenty four percent margin. Infosys, two point four at twenty one point one. H C L Tech, two point six at sixteen point nine. Wipro's I T services, zero point nine at sixteen. Tech Mahindra grew fastest, six point six, but at a margin of fourteen point four.",
+   "cap": "Start with the peers. In the June quarter, TCS grew 3.2% in constant currency, at a 24.0% margin. Infosys, 2.4% at 21.1%. HCLTech, 2.6% at 16.9%. Wipro's IT services, 0.9% at 16.0%. Tech Mahindra grew fastest, 6.6%, but at a margin of 14.4%.",
+   "scene": {
+    "type": "table",
+    "heading": "Q1 FY27 (JUNE QUARTER) · OWN RELEASES",
+    "cols": [
+     "COMPANY",
+     "GROWTH (CC, YoY)",
+     "MARGIN"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "TCS",
+       "+3.2%",
+       "24.0%"
+      ],
+      "at": "T C S grew three point two"
+     },
+     {
+      "cells": [
+       "Infosys",
+       "+2.4%",
+       "21.1%"
+      ],
+      "at": "Infosys"
+     },
+     {
+      "cells": [
+       "HCLTech",
+       "+2.6%",
+       "16.9%*"
+      ],
+      "at": "H C L Tech"
+     },
+     {
+      "cells": [
+       "Wipro (IT services)",
+       "+0.9%",
+       "16.0%"
+      ],
+      "at": "Wipro"
+     },
+     {
+      "cells": [
+       "Tech Mahindra",
+       "+6.6%",
+       "14.4%"
+      ],
+      "at": "Tech Mahindra"
+     }
+    ]
+   },
+   "sec": 24.48,
+   "cues": [
+    "Start with the peers.",
+    "In the June quarter, TCS grew 3.2% in constant currency, at a 24.0% margin.",
+    "Infosys, 2.4% at 21.1%.",
+    "HCLTech, 2.6% at 16.9%.",
+    "Wipro's IT services, 0.9% at 16.0%.",
+    "Tech Mahindra grew fastest, 6.6%, but at a margin of 14.4%."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c42",
+   "say": "Even after the slide, T C S earns about three points more on every hundred rupees than Infosys, and seven to ten points more than the rest.",
+   "cap": "Even after the slide, TCS earns about 3 points more on every ₹100 than Infosys, and 7 to 10 points more than the rest.",
+   "scene": {
+    "type": "cards",
+    "heading": "MARGIN GAP · JUNE QUARTER · OUR ARITHMETIC",
+    "cards": [
+     {
+      "top": "TCS vs INFOSYS",
+      "big": "~3 PTS",
+      "at": "three points"
+     },
+     {
+      "top": "TCS vs THE REST",
+      "big": "7–10 PTS",
+      "at": "seven to ten",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 8.72,
+   "cues": [
+    "Even after the slide, TCS earns about 3 points more on every ₹100 than",
+    "Infosys, and 7 to 10 points more than the rest."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c43",
+   "say": "And over five years, through a boom and a bust, the margin has stayed in a narrow band. Twenty five point nine percent in the year to March twenty twenty one. Twenty five point three. Twenty four point one. Twenty four point six. About twenty four point three. Twenty five. And now twenty four.",
+   "cap": "And over five years, through a boom and a bust, the margin has stayed in a narrow band. 25.9% in FY21. 25.3%. 24.1%. 24.6%. About 24.3%. 25.0%. And now 24.0%.",
+   "scene": {
+    "type": "bars",
+    "heading": "TCS · OPERATING MARGIN BY YEAR · OWN RELEASES",
+    "rows": [
+     {
+      "name": "FY21",
+      "v": 25.9,
+      "label": "25.9%",
+      "at": "twenty five point nine"
+     },
+     {
+      "name": "FY22",
+      "v": 25.3,
+      "label": "25.3%",
+      "at": "Twenty five point three"
+     },
+     {
+      "name": "FY23",
+      "v": 24.1,
+      "label": "24.1%",
+      "at": "Twenty four point one"
+     },
+     {
+      "name": "FY24",
+      "v": 24.6,
+      "label": "24.6%",
+      "at": "Twenty four point six"
+     },
+     {
+      "name": "FY25",
+      "v": 24.3,
+      "label": "~24.3%",
+      "at": "About twenty four point three"
+     },
+     {
+      "name": "FY26",
+      "v": 25.0,
+      "label": "25.0%",
+      "at": "Twenty five."
+     },
+     {
+      "name": "Q2 FY27",
+      "v": 24.0,
+      "label": "24.0%",
+      "at": "now twenty four"
+     }
+    ]
+   },
+   "sec": 18.02,
+   "cues": [
+    "And over five years, through a boom and a bust,",
+    "the margin has stayed in a narrow band.",
+    "25.9% in FY21.",
+    "25.3%.",
+    "24.1%.",
+    "24.6%.",
+    "About 24.3%.",
+    "25.0%.",
+    "And now 24.0%."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c44",
+   "say": "That's what a moat looks like in services: clients who stay. Even through the shrinking quarters, T C S signed between nine and twelve billion dollars of new contracts every quarter.",
+   "cap": "That's what a moat looks like in services: clients who stay. Even through the shrinking quarters, TCS signed between $9 billion and $12 billion of new contracts every quarter.",
+   "scene": {
+    "type": "bars",
+    "heading": "TCS · TOTAL CONTRACT VALUE SIGNED · US$ BN",
+    "rows": [
+     {
+      "name": "Q1 FY26",
+      "v": 9.4,
+      "label": "9.4",
+      "at": "clients who stay"
+     },
+     {
+      "name": "Q2 FY26",
+      "v": 10.0,
+      "label": "10.0",
+      "at": "shrinking quarters"
+     },
+     {
+      "name": "Q3 FY26",
+      "v": 9.3,
+      "label": "9.3",
+      "at": "between nine"
+     },
+     {
+      "name": "Q4 FY26",
+      "v": 12.0,
+      "label": "12.0",
+      "at": "and twelve"
+     },
+     {
+      "name": "Q1 FY27",
+      "v": 9.5,
+      "label": "9.5",
+      "at": "new contracts"
+     },
+     {
+      "name": "Q2 FY27",
+      "v": 9.6,
+      "label": "9.6",
+      "at": "every quarter"
+     }
+    ]
+   },
+   "sec": 10.74,
+   "cues": [
+    "That's what a moat looks like in services:",
+    "clients who stay.",
+    "Even through the shrinking quarters, TCS signed between $9 billion and $12",
+    "billion of new contracts every quarter."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c45",
+   "say": "And this quarter it went further. It's buying M H P, Porsche's German I T consulting arm, price not disclosed. And it's taking over Best Buy's India technology centre, about four hundred and fifty people, for one lakh rupees, under a multi year contract.",
+   "cap": "And this quarter it went further. It's buying MHP, Porsche's German IT consulting arm, price not disclosed. And it's taking over Best Buy's India technology centre, about 450 people, for ₹1 lakh, under a multi-year contract.",
+   "scene": {
+    "type": "clip",
+    "clip": "tc_bby",
+    "heading": "TCS · ACQUISITION OF BBY SERVICES INDIA LLP · 1 OCT 2026",
+    "hl": [
+     "one lakh"
+    ],
+    "stamps": [
+     {
+      "text": "~450 PEOPLE · ₹1 LAKH",
+      "at": "four hundred and fifty"
+     }
+    ]
+   },
+   "sec": 17.21,
+   "cues": [
+    "And this quarter it went further.",
+    "It's buying MHP, Porsche's German IT consulting arm, price not disclosed.",
+    "And it's taking over Best Buy's India technology centre, about 450 people,",
+    "for ₹1 lakh, under a multi-year contract."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "c46",
+   "say": "When a client hands over its own technology team, replacing T C S gets much harder. On the call, Krithivasan said of M H P: this has got nothing to do with productivity. But does keeping clients mean keeping the margin?",
+   "cap": "When a client hands over its own technology team, replacing TCS gets much harder. On the call, Krithivasan said of MHP: “This has got nothing to do with productivity.” But does keeping clients mean keeping the margin?",
+   "scene": {
+    "type": "quote",
+    "text": "“This has got nothing to do with productivity. This is about how they transform themselves as an organization.”",
+    "who": "K KRITHIVASAN · CEO · EARNINGS CALL, 8 OCT 2026 (OUR TRANSCRIPT)",
+    "at": "nothing to do with productivity"
+   },
+   "sec": 14.84,
+   "cues": [
+    "When a client hands over its own technology team,",
+    "replacing TCS gets much harder.",
+    "On the call, Krithivasan said of MHP:",
+    "“This has got nothing to do with productivity.”",
+    "But does keeping clients mean keeping the margin?"
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "c50",
+   "say": "Chapter five. The other reading.",
+   "cap": "Chapter five. The other reading.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE OTHER",
+     "READING"
+    ],
+    "red": false,
+    "pic": "t_other"
+   },
+   "sec": 2.64,
+   "cues": [
+    "Chapter five.",
+    "The other reading."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "c51",
+   "say": "Now the case against. M H P will cut the margin by about half a point in the second half, the C F O said, depending on when it closes. December brings the usual furloughs. And he called climbing back an uphill task.",
+   "cap": "Now the case against. MHP will cut the margin by about half a point in the second half, the CFO said, depending on when it closes. December brings the usual furloughs. And he called climbing back “an uphill task”.",
+   "scene": {
+    "type": "hand",
+    "title": "The case against:",
+    "items": [
+     {
+      "text": "MHP: ~0.5 pt margin drag in H2",
+      "at": "half a point"
+     },
+     {
+      "text": "December furloughs",
+      "at": "furloughs"
+     },
+     {
+      "text": "CFO: “an uphill task”",
+      "at": "uphill task",
+      "red": true
+     }
+    ]
+   },
+   "sec": 13.97,
+   "cues": [
+    "Now the case against.",
+    "MHP will cut the margin by about half a point in the second half,",
+    "the CFO said, depending on when it closes.",
+    "December brings the usual furloughs.",
+    "And he called climbing back “an uphill task”."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "c52",
+   "say": "T C S's long term target band is twenty six to twenty eight percent. The C F O kept it, but as an aspiration, with no date. Today's margin is two points below the bottom of that band.",
+   "cap": "TCS's long-term target band is 26–28%. The CFO kept it, but as an aspiration, with no date. Today's margin is 2 points below the bottom of that band.",
+   "scene": {
+    "type": "cards",
+    "heading": "THE TARGET BAND vs TODAY",
+    "cards": [
+     {
+      "top": "LONG-TERM BAND",
+      "big": "26–28%",
+      "at": "twenty six to twenty eight"
+     },
+     {
+      "top": "Q2 FY27",
+      "big": "24.0%",
+      "at": "Today's margin",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 12.25,
+   "cues": [
+    "TCS's long-term target band is 26–28%.",
+    "The CFO kept it, but as an aspiration, with no date.",
+    "Today's margin is 2 points below the bottom of that band."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "c53",
+   "say": "And the case for. Growth is positive two quarters running. Cash from operations was one hundred and two percent of profit. And the A I work, the fastest growing part, earns above average margins.",
+   "cap": "And the case for. Growth is positive two quarters running. Cash from operations was 102% of profit. And the AI work, the fastest-growing part, earns above-average margins.",
+   "scene": {
+    "type": "hand",
+    "title": "The case for:",
+    "items": [
+     {
+      "text": "Growth positive, 2 quarters",
+      "at": "two quarters running"
+     },
+     {
+      "text": "Cash: 102% of profit",
+      "at": "one hundred and two"
+     },
+     {
+      "text": "AI work: above-average margin",
+      "at": "above average margins"
+     }
+    ]
+   },
+   "sec": 14.65,
+   "cues": [
+    "And the case for.",
+    "Growth is positive two quarters running.",
+    "Cash from operations was 102% of profit.",
+    "And the AI work, the fastest-growing part, earns above-average margins."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c60",
+   "say": "Chapter six. The verdict.",
+   "cap": "Chapter six. The verdict.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "THE",
+     "VERDICT"
+    ],
+    "red": false,
+    "pic": "t_verdict"
+   },
+   "sec": 2.25,
+   "cues": [
+    "Chapter six.",
+    "The verdict."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c61",
+   "say": "Remember three point one billion dollars? It's now more than a tenth of T C S, and it earns more than the rest. If it keeps growing faster than the old work shrinks, the margin can climb back. If not, twenty four percent is the new normal.",
+   "cap": "Remember $3.1 billion? It's now more than a tenth of TCS, and it earns more than the rest. If it keeps growing faster than the old work shrinks, the margin can climb back. If not, 24% is the new normal.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "$3.1 BN · >10% OF REVENUE",
+      "at": "three point one billion"
+     },
+     {
+      "text": "AI GROWS FASTER → MARGIN RECOVERS",
+      "at": "margin can climb back"
+     },
+     {
+      "text": "IF NOT: 24% IS NORMAL",
+      "at": "new normal",
+      "red": true
+     }
+    ]
+   },
+   "sec": 14.37,
+   "cues": [
+    "Remember $3.1 billion?",
+    "It's now more than a tenth of TCS, and it earns more than the rest.",
+    "If it keeps growing faster than the old work shrinks,",
+    "the margin can climb back.",
+    "If not, 24% is the new normal."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c62",
+   "say": "Moat verdict: holding. Clients stayed through four shrinking quarters, T C S still has the highest margin in its peer group, and the Porsche and Best Buy deals put clients' own teams inside T C S.",
+   "cap": "Moat verdict: holding. Clients stayed through four shrinking quarters, TCS still has the highest margin in its peer group, and the Porsche and Best Buy deals put clients' own teams inside TCS.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "MOAT: HOLDING",
+      "at": "Moat verdict"
+     },
+     {
+      "text": "HIGHEST MARGIN AMONG PEERS",
+      "at": "highest margin"
+     },
+     {
+      "text": "CLIENT TEAMS MOVING IN",
+      "at": "own teams inside",
+      "red": true
+     }
+    ]
+   },
+   "sec": 12.88,
+   "cues": [
+    "Moat verdict:",
+    "holding.",
+    "Clients stayed through four shrinking quarters,",
+    "TCS still has the highest margin in its peer group,",
+    "and the Porsche and Best Buy deals put clients' own teams inside TCS."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c63",
+   "say": "Margin verdict: weaker, for now. Twenty four percent, down from twenty five point two, with M H P adding pressure. The cause is capacity bought ahead of revenue, and some productivity handed to clients. Not a price war, by management's account.",
+   "cap": "Margin verdict: weaker, for now. 24.0%, down from 25.2%, with MHP adding pressure. The cause is capacity bought ahead of revenue, and some productivity handed to clients. Not a price war, by management's account.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "MARGIN: WEAKER, FOR NOW",
+      "at": "Margin verdict"
+     },
+     {
+      "text": "25.2% → 24.0%",
+      "at": "twenty five point two"
+     },
+     {
+      "text": "CAPACITY + PRODUCTIVITY GIVE-BACK",
+      "at": "handed to clients",
+      "red": true
+     }
+    ]
+   },
+   "sec": 15.31,
+   "cues": [
+    "Margin verdict:",
+    "weaker, for now.",
+    "24.0%, down from 25.2%, with MHP adding pressure.",
+    "The cause is capacity bought ahead of revenue,",
+    "and some productivity handed to clients.",
+    "Not a price war, by management's account."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c64",
+   "say": "On our Moat Screener, Wipro scores five point three nine. T C S, five point one five. Tech Mahindra, five point one one. H C L Tech, five point zero five. Infosys, four point seven six.",
+   "cap": "On our Moat Screener, Wipro scores 5.39. TCS, 5.15. Tech Mahindra, 5.11. HCLTech, 5.05. Infosys, 4.76.",
+   "scene": {
+    "type": "scores",
+    "rows": [
+     [
+      "Wipro",
+      5.39
+     ],
+     [
+      "TCS",
+      5.15
+     ],
+     [
+      "Tech Mahindra",
+      5.11
+     ],
+     [
+      "HCLTech",
+      5.05
+     ],
+     [
+      "Infosys",
+      4.76
+     ]
+    ],
+    "note": "MOATSCORES AS PUBLISHED 9 OCT 2026 · FIRST PASS"
+   },
+   "sec": 15.65,
+   "cues": [
+    "On our Moat Screener, Wipro scores 5.39.",
+    "TCS, 5.15.",
+    "Tech Mahindra, 5.11.",
+    "HCLTech, 5.05.",
+    "Infosys, 4.76."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c65",
+   "say": "What we know: growth is back, but small. The margin fell on subcontractors, bench and partners, not salaries. A I is over a tenth of revenue.",
+   "cap": "What we know: growth is back, but small. The margin fell on subcontractors, bench and partners, not salaries. AI is over a tenth of revenue.",
+   "scene": {
+    "type": "hand",
+    "title": "Known:",
+    "items": [
+     {
+      "text": "Growth back: +2.8% (CC)",
+      "at": "growth is back"
+     },
+     {
+      "text": "Margin hit: non-staff costs",
+      "at": "not salaries"
+     },
+     {
+      "text": "AI: >10% of revenue",
+      "at": "over a tenth"
+     }
+    ]
+   },
+   "sec": 10.58,
+   "cues": [
+    "What we know:",
+    "growth is back, but small.",
+    "The margin fell on subcontractors, bench and partners, not salaries.",
+    "AI is over a tenth of revenue."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c66",
+   "say": "What we don't know: how much old revenue A I is removing, what's inside the other expenses line, and what T C S is paying for M H P.",
+   "cap": "What we don't know: how much old revenue AI is removing, what's inside the other expenses line, and what TCS is paying for MHP.",
+   "scene": {
+    "type": "hand",
+    "title": "Unknown:",
+    "items": [
+     {
+      "text": "Old revenue AI removes",
+      "at": "old revenue"
+     },
+     {
+      "text": "Inside “other expenses”",
+      "at": "other expenses"
+     },
+     {
+      "text": "MHP's price",
+      "at": "paying for"
+     }
+    ]
+   },
+   "sec": 8.65,
+   "cues": [
+    "What we don't know:",
+    "how much old revenue AI is removing, what's inside the other expenses line,",
+    "and what TCS is paying for MHP."
+   ]
+  },
+  {
+   "ch": 6,
+   "key": "c67",
+   "say": "What to watch: Infosys, H C L Tech and Wipro report later this month. Then T C S in January: does growth beat one percent a quarter, and does that expense line fall back below fifteen percent?",
+   "cap": "What to watch: Infosys, HCLTech and Wipro report later this month. Then TCS in January: does growth beat 1% a quarter, and does that expense line fall back below 15%?",
+   "scene": {
+    "type": "hand",
+    "title": "What to watch:",
+    "items": [
+     {
+      "text": "Peers' Q2 results, October",
+      "at": "later this month"
+     },
+     {
+      "text": "TCS Q3: >1% a quarter?",
+      "at": "one percent a quarter"
+     },
+     {
+      "text": "Other expenses <15% of revenue?",
+      "at": "below fifteen"
+     }
+    ]
+   },
+   "sec": 14.65,
+   "cues": [
+    "What to watch:",
+    "Infosys, HCLTech and Wipro report later this month.",
+    "Then TCS in January:",
+    "does growth beat 1% a quarter, and does that expense line fall back below 15%?"
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "c70",
+   "say": "Chapter seven. Today's top ten filings.",
+   "cap": "Chapter seven. Today's top ten filings.",
+   "scene": {
+    "type": "title",
+    "lines": [
+     "TODAY'S TOP",
+     "10 FILINGS"
+    ],
+    "red": false,
+    "pic": "t_top10"
+   },
+   "sec": 3.24,
+   "cues": [
+    "Chapter seven.",
+    "Today's top ten filings."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "c71",
+   "say": "One: the T C S results you just saw. Two: Cochin Shipyard plans a fifty fifty repair yard venture with Drydocks World, valuing the yard at one thousand eight hundred crore. Three: Evonile Pharma, the former Novartis India, plans a rights issue of up to nine hundred crore. Four: another two point one percent of Ajanta Pharma's shares were pledged. Five: Dr Reddy's got a U S F D A form four eight three with two observations.",
+   "cap": "1: the TCS results you just saw. 2: Cochin Shipyard plans a 50:50 repair-yard venture with Drydocks World, valuing the yard at ₹1,800 crore. 3: Evonile Pharma, the former Novartis India, plans a rights issue of up to ₹900 crore. 4: another 2.1% of Ajanta Pharma's shares were pledged. 5: Dr Reddy's got a USFDA Form 483 with two observations.",
+   "scene": {
+    "type": "list",
+    "heading": "TODAY'S TOP 10 FILINGS · 8 OCT 2026 · 1–5",
+    "items": [
+     {
+      "text": "TCS: +2.8% IN CC, MARGIN 24.0%",
+      "at": "One:"
+     },
+     {
+      "text": "COCHIN SHIPYARD: ₹1,800 CR YARD JV",
+      "at": "Two:"
+     },
+     {
+      "text": "EVONILE PHARMA: ₹900 CR RIGHTS",
+      "at": "Three:"
+     },
+     {
+      "text": "AJANTA PHARMA: 2.1% MORE PLEDGED",
+      "at": "Four:"
+     },
+     {
+      "text": "DR REDDY'S: FORM 483, 2 OBSERVATIONS",
+      "at": "Five:"
+     }
+    ]
+   },
+   "sec": 28.84,
+   "cues": [
+    "1:",
+    "the TCS results you just saw.",
+    "2:",
+    "Cochin Shipyard plans a 50:50 repair-yard venture with Drydocks World,",
+    "valuing the yard at ₹1,800 crore.",
+    "3:",
+    "Evonile Pharma, the former Novartis India,",
+    "plans a rights issue of up to ₹900 crore.",
+    "4:",
+    "another 2.1% of Ajanta Pharma's shares were pledged.",
+    "5:",
+    "Dr Reddy's got a USFDA Form 483 with two observations."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "c72",
+   "say": "Six: Polycab appealed its insolvency admission to the appeals tribunal. Seven: N C C won a one thousand two hundred and eighty six crore road contract. Eight: K E C International won one thousand and thirty crore of orders. Nine: Embassy Developments pre-sold about three thousand two hundred crore of homes in the quarter. Ten: Groupe A D P withdrew its deputy chief executive at G M R Airports.",
+   "cap": "6: Polycab appealed its insolvency admission to the NCLAT. 7: NCC won a ₹1,286 crore road contract. 8: KEC International won ₹1,030 crore of orders. 9: Embassy Developments pre-sold about ₹3,225 crore of homes in the quarter. 10: Groupe ADP withdrew its deputy CEO at GMR Airports.",
+   "scene": {
+    "type": "list",
+    "start": 6,
+    "heading": "TODAY'S TOP 10 FILINGS · 8 OCT 2026 · 6–10",
+    "items": [
+     {
+      "text": "POLYCAB: APPEAL TO NCLAT",
+      "at": "Six:"
+     },
+     {
+      "text": "NCC: ₹1,286 CR ROAD CONTRACT",
+      "at": "Seven:"
+     },
+     {
+      "text": "KEC: ₹1,030 CR OF ORDERS",
+      "at": "Eight:"
+     },
+     {
+      "text": "EMBASSY DEV.: ~₹3,225 CR PRE-SALES",
+      "at": "Nine:"
+     },
+     {
+      "text": "GMR AIRPORTS: ADP WITHDRAWS DEPUTY CEO",
+      "at": "Ten:"
+     }
+    ]
+   },
+   "sec": 26.91,
+   "cues": [
+    "6:",
+    "Polycab appealed its insolvency admission to the NCLAT.",
+    "7:",
+    "NCC won a ₹1,286 crore road contract.",
+    "8:",
+    "KEC International won ₹1,030 crore of orders.",
+    "9:",
+    "Embassy Developments pre-sold about ₹3,225 crore of homes in the quarter.",
+    "10:",
+    "Groupe ADP withdrew its deputy CEO at GMR Airports."
+   ]
+  },
+  {
+   "ch": 7,
+   "key": "c73",
+   "say": "Every one of these, with a link to the filing, is in today's digest on moatmarginresearch dot com. The link is in the description.",
+   "cap": "Every one of these, with a link to the filing, is in today's digest on moatmarginresearch.com. The link is in the description.",
+   "scene": {
+    "type": "pic",
+    "pic": "p_digest",
+    "items": [
+     {
+      "text": "FULL DIGEST + FILING LINKS",
+      "at": "Every one"
+     },
+     {
+      "text": "MOATMARGINRESEARCH.COM",
+      "at": "moatmarginresearch"
+     },
+     {
+      "text": "LINK IN THE DESCRIPTION",
+      "at": "description",
+      "red": true
+     }
+    ]
+   },
+   "sec": 7.65,
+   "cues": [
+    "Every one of these, with a link to the filing,",
+    "is in today's digest on moatmarginresearch.com.",
+    "The link is in the description."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "c80",
+   "say": "Every number here comes from the companies' own filings, and the quotes from our transcript of the call. Links are in the description.",
+   "cap": "Every number here comes from the companies' own filings, and the quotes from our transcript of the call. Links are in the description.",
+   "scene": {
+    "type": "sources",
+    "items": [
+     "TCS · Q2 FY27 results & press release · 8 Oct 2026 · NSE",
+     "TCS · press releases Q4 FY21 to Q1 FY27 · NSE",
+     "TCS · earnings call audio, 8 Oct 2026 · our transcript",
+     "Infosys, HCLTech, Wipro, Tech Mahindra · Q1 FY27 releases · NSE",
+     "Cost ratios, segment margins, gaps: our arithmetic",
+     "Moat & Margin · Moat Screener · 9 Oct 2026"
+    ]
+   },
+   "sec": 6.87,
+   "cues": [
+    "Every number here comes from the companies' own filings,",
+    "and the quotes from our transcript of the call.",
+    "Links are in the description."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "c81",
+   "say": "Next: Infosys reports next. We'll see whether the slowdown, and the margin squeeze, are T C S's alone or the whole sector's. That video starts where this one stops.",
+   "cap": "Next: Infosys reports next. We'll see whether the slowdown, and the margin squeeze, are TCS's alone or the whole sector's. That video starts where this one stops.",
+   "scene": {
+    "type": "strips",
+    "items": [
+     {
+      "text": "NEXT VIDEO",
+      "at": "Next"
+     },
+     {
+      "text": "INFOSYS Q2",
+      "at": "Infosys reports"
+     },
+     {
+      "text": "IS IT SECTOR-WIDE?",
+      "at": "whole sector",
+      "red": true
+     }
+    ]
+   },
+   "sec": 11.34,
+   "cues": [
+    "Next:",
+    "Infosys reports next.",
+    "We'll see whether the slowdown, and the margin squeeze,",
+    "are TCS's alone or the whole sector's.",
+    "That video starts where this one stops."
+   ]
+  },
+  {
+   "ch": 8,
+   "key": "c82",
+   "say": "Subscribe for the filings that matter, every day.",
+   "cap": "Subscribe for the filings that matter, every day.",
+   "scene": {
+    "type": "end",
+    "plain": true
+   },
+   "sec": 2.92,
+   "cues": [
+    "Subscribe for the filings that matter, every day."
+   ]
+  }
+ ],
+ "clips": {
+  "tc_q2": {
+   "w": 1336,
+   "h": 111,
+   "hl": [
+    [
+     0.0696,
+     0.0517,
+     0.1616,
+     0.3533
+    ]
+   ],
+   "page": 2,
+   "quote": "Q2 Revenue at"
+  },
+  "tc_q2fy26": {
+   "w": 1471,
+   "h": 415,
+   "hl": [
+    [
+     0.8929,
+     0.9106,
+     0.0491,
+     0.0871
+    ]
+   ],
+   "page": 3,
+   "quote": "- 3.3"
+  },
+  "tc_fy26": {
+   "w": 1056,
+   "h": 123,
+   "hl": [
+    [
+     0.7952,
+     0.2917,
+     0.1609,
+     0.4244
+    ]
+   ],
+   "page": 2,
+   "quote": "-2.4% in CC"
+  },
+  "tc_opm": {
+   "w": 1294,
+   "h": 239,
+   "hl": [
+    [
+     0.0714,
+     0.5446,
+     0.295,
+     0.164
+    ]
+   ],
+   "page": 2,
+   "quote": "Operating Margin at 24.0%"
+  },
+  "tc_opex": {
+   "w": 1419,
+   "h": 292,
+   "hl": [
+    [
+     0.0947,
+     0.5846,
+     0.2378,
+     0.1236
+    ]
+   ],
+   "page": 10,
+   "quote": "Other Operating expenses"
+  },
+  "tc_bby": {
+   "w": 953,
+   "h": 218,
+   "hl": [
+    [
+     0.7499,
+     0.4279,
+     0.1993,
+     0.2511
+    ]
+   ],
+   "page": 2,
+   "quote": "INR 1 Lakh"
+  }
+ }
+}

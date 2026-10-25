@@ -4,10 +4,10 @@
  "theme": "states",
  "rules": 2,
  "chip": "WHICH IS HIGHER?",
- "source_short": "Census 2011 · FSI 2023 · SoI 2025",
+ "source_short": "Census 2011 · SoI 2025",
  "palette": "D",
  "think": 0.5,
- "source": "Coastline: Survey of India and Ministry of Earth Sciences, figures recalculated in 2025 (not comparable with older ones). People per square kilometre: Census of India 2011, Table A-01. Rural people per inhabited village: rural population divided by inhabited villages, Census 2011, Table A-01 (our calculation). Bamboo-bearing area: Forest Survey of India, ISFR 2023, estimated from forest inventory plots inside recorded forest area. Pairs, not full rankings.",
+ "source": "Coastline: Survey of India and Ministry of Earth Sciences, figures recalculated in 2025 (not comparable with older ones). People per square kilometre: Census of India 2011, Table A-01. Rural people per inhabited village: rural population divided by inhabited villages, Census 2011, Table A-01 (our calculation). Pairs, not full rankings.",
  "rounds": [
   {
    "pair": [
@@ -30,7 +30,7 @@
     1.18,
     1.22
    ],
-   "ask": "More people per square kilometre: Kerala or West Bengal?",
+   "ask": "More crowded: Kerala or West Bengal?",
    "tell": "West Bengal. About a fifth more."
   },
   {
@@ -78,32 +78,8 @@
     1.34,
     1.4
    ],
-   "ask": "More people in the average village: Odisha or Chhattisgarh?",
+   "ask": "Bigger villages: Odisha or Chhattisgarh?",
    "tell": "Chhattisgarh. More than a third more people."
-  },
-  {
-   "pair": [
-    "Arunachal Pradesh",
-    "Assam"
-   ],
-   "data": {
-    "tbl": [
-     "evergreen/land_isfr2023_bamboo",
-     "Bamboo bearing area, ISFR 2023 (km2)"
-    ]
-   },
-   "scale": 0.001,
-   "q": [
-    "Which state has more",
-    "*bamboo-bearing area?*"
-   ],
-   "measure": "Bamboo-bearing area, ISFR 2023, thousand sq km",
-   "says": [
-    1.63,
-    1.65
-   ],
-   "ask": "More bamboo-bearing area: Arunachal Pradesh or Assam?",
-   "tell": "Arunachal Pradesh. Sixty-four percent more."
   }
  ],
  "end": {
@@ -112,5 +88,6 @@
   "note": "Pairs, not full rankings. Coastline recalculated in 2025.",
   "vo": "Which round fooled you?"
  },
- "yt_title": "Can You Beat This India Quiz? 4 Rounds of Higher or Lower"
+ "yt_title": "Can You Beat This India Quiz? 3 Rounds of Higher or Lower",
+ "_len_note": "25 Oct 2026, AK: Shorts 25-35 s. Bamboo round dropped (4 to 3 rounds), two questions cut."
 }

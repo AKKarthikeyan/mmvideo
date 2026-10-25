@@ -64,6 +64,8 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
   3. Pack lands in `out/datakadai/daily/<date>/<id>/`: `short.mp4`, `ig.png`, `x.png`, `captions.md`.
 
 ## What we optimise for (AK, 11 Oct 2026)
+- Short length (AK, 25 Oct 2026): **25 to 35 seconds, aim for 30**, because retention drops on longer Shorts. `build_beats.py`
+  refuses a voiced Short outside the band; long videos are not affected.
 - Virality is the most important criterion when choosing and ranking video ideas: will people share it, argue in the
   comments, tag someone, watch it twice. It carries the most weight in any idea scoring.
 - Virality must come from the data. No rage-bait, no mocking a state or community, no claim the numbers cannot carry.

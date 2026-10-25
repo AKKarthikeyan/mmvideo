@@ -10,7 +10,7 @@ to stay inside YouTube's rules.
 
 ## The short answer
 
-- **Shorts:** a hook-led story about a place, told on one map, one thing on screen at a time, 30 to 45 seconds.
+- **Shorts:** a hook-led story about a place, told on one map, one thing on screen at a time, 25 to 35 seconds, aim for 30 (25 Oct 2026, AK: "Shorts are maximum 25-35 sec" because longer Shorts lose retention).
   Story-led India map Shorts had a median of 73,000 views; numbers-and-chart Shorts had 6,200.
 - **Long-form:** a 12 to 20 minute narrated map-and-chart video built on a place question (North vs South, a
   big-state duel, "Is X the next Y?"). These reached 3x their channel's median 37% of the time; other topics 13%.
@@ -109,7 +109,7 @@ long-form Duel.
 
 ## Part 4. The recommended template, with compliance built in
 
-### Short (30 to 45 seconds)
+### Short (25 to 35 seconds, aim for 30; was 30 to 45 until 25 Oct 2026)
 
 | Time | Beat |
 | --- | --- |

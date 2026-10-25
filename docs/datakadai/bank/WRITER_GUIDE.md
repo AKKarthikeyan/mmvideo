@@ -55,7 +55,8 @@ A script in the bank stops in `build_beats.py --check` if it breaks one of these
   backward, failed.
 - The title is at most 60 characters and every number in it appears on screen.
 - The source chip names the publisher and the period. At least one computed finding is carried as a test.
-- Built length 30 to 45 seconds.
+- Built length 25 to 35 seconds, aim for 30 (25 Oct 2026, AK: "Shorts are maximum 25-35 sec" because longer Shorts lose retention). At this tempo a beat lasts at least 3.9 s, so a Short
+  holds seven or eight beats, and each voice line must fit one beat (about 3.3 s, eight or nine words).
 A game (`pick`) and a place story keep their own openings and endings.
 
 ## Two more types
@@ -104,7 +105,7 @@ state in the earlier survey), a card of our own reading under `so`, then every s
     2024-25 column is the final estimate; say "final estimates" in `source_short`. NFHS-6 figures came from the fact
     sheets; list the exact cells for a person to re-read in the PDF.
 15. Run `python3 scripts/datayt/build_beats.py --check <id>` from the repo folder until it passes. It runs the number
-    tests and the house rules and estimates the length (30 to 45 seconds; aim for 35 to 41).
+    tests and the house rules and estimates the length (25 to 35 seconds; aim for 27 to 32).
 
 ## Lok Sabha answers as a source
 - The state tables parsed from answers are in `public/datayt/sources/loksabha/tables/s<N>.json`: each has `id`, `ministry`,

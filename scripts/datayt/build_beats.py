@@ -882,8 +882,8 @@ def build(cfg):
         nb = max(MIN_BARS[bt["kind"]], math.ceil(need / M.BAR))
         bt["t0"], bt["t1"] = round(t, 3), round(t + nb * M.BAR, 3); t += nb * M.BAR
     total = round(t + 0.4, 3)
-    if not 30 <= total <= 45:      # the research's band for a Short; an estimate (--check, --mute) only warns
-        msg = f"{sid}: {total:.1f} s is outside 30 to 45 seconds"
+    if not 25 <= total <= 35:      # AK, 25 Oct 2026: "Shorts are maximum 25-35 sec" (retention); was 30 to 45. An estimate (--check, --mute) only warns
+        msg = f"{sid}: {total:.1f} s is outside 25 to 35 seconds"
         assert ESTIMATE or cfg.get("rules", 1) < 2, msg
         print(msg + (" (estimated)" if ESTIMATE else ""))
     for bt in beats:      # an animated map fills state by state, lowest value first, then holds

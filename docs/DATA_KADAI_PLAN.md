@@ -3,6 +3,9 @@
 Data Kadai is an India-wide data channel. Titles get the click; **data is the product**. Every rule below exists to
 keep every number on screen true, sourced and current.
 
+Related: `docs/datakadai/AUDIENCE.md` (what viewers want, weekly listening loop) and
+`docs/datakadai/CALENDAR_NOV_2026.md` (4-week calendar; week 1 scripts in `docs/datakadai/week44/`).
+
 ## 1. Publishing plan
 
 ### Phase 1: months 1 to 3 (learn what works)

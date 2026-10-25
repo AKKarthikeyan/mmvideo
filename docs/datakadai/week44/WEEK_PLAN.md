@@ -13,18 +13,18 @@ on Thu 29 Oct (MiniMax quota back about 08:05 IST). The Mon to Wed state compari
 
 | Day | Short A (new script) | Short B (built 22 Oct) | Long video |
 | --- | --- | --- | --- |
-| Mon 26 | `gd01` Indian Homes Hold 3× as Much Gold as the US Government · Pocket, Moment (built 25 Oct, 29 s, text-led) | none (held) | |
-| Tue 27 | `cw01` The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (built 25 Oct, 31 s, text-led) | none (held) | |
+| Mon 26 | `gd01` Indian Homes Hold 3× as Much Gold as the US Government · Pocket, Moment (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | none (held) | |
+| Tue 27 | `cw01` The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | none (held) | |
 | Wed 28 | India's Baby Map (NFHS-6) · State (once recorded) | none (held) | |
-| Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: Who Wins on Money? 5 Rounds, re-voiced that morning) | | **India Is Running Out of Babies. Here's the Map.** |
-| Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat or Rajasthan: Where Do Women and Girls Do Better? (re-cut, voiced Thu) | |
-| Sat 31 | Which State Pays India's GST? · State, Pocket | `cn08` Can You Beat This India Quiz? 3 Rounds of Higher or Lower (re-cut, voiced Thu) | 10 Minutes vs DMart vs the Kirana Anna (only if the basket test is shot Mon 26; otherwise move to Sat 7 Nov) |
-| Sun 1 | UPI October Scorecard: Festive Record? · Pocket, Moment (NPCI releases that day) | `vs07` Odisha Wins on Mothers. West Bengal Wins on Schools. (re-cut, voiced Thu) | |
+| Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: Who Wins on Money? 5 Rounds, voiced 25 Oct) | | **India Is Running Out of Babies. Here's the Map.** |
+| Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat or Rajasthan: Where Do Women and Girls Do Better? (re-cut, voiced 25 Oct, 31 s) | |
+| Sat 31 | Which State Pays India's GST? · State, Pocket | `cn08` Can You Beat This India Quiz? 3 Rounds of Higher or Lower (re-cut, voiced 25 Oct, 31 s) | 10 Minutes vs DMart vs the Kirana Anna (only if the basket test is shot Mon 26; otherwise move to Sat 7 Nov) |
+| Sun 1 | UPI October Scorecard: Festive Record? · Pocket, Moment (NPCI releases that day) | `vs07` Odisha Wins on Mothers. West Bengal Wins on Schools. (re-cut, voiced 25 Oct, 31 s) | |
 
 Scripts: Short A in `SHORTS.md`, long videos in `LONG_baby_map.md` and `LONG_quick_commerce.md`. Short B scripts and
 captions in `../posts/2026-10-22-<id>.md`, videos in `out/datakadai/daily/2026-10-22/<id>/`.
 
-Moved to week 2 (held 25 Oct, already re-cut, voice on Thu): `vs03`, `vs05`, `cn02`.
+Moved to week 2 (held 25 Oct; re-cut and voiced 25 Oct, ready): `vs03`, `vs05`, `cn02`. They could go back to Mon to Wed on AK's word.
 Left in stock for week 2: `vs04`, `vs08`, `cn09`, `cn10`, `cn11`, `sp05` (and `vs02` if Thursday's gold Short runs); these
 still need the 25-35 s re-cut.
 `cn09` uses 2022-23 data: the year stays in its title.
@@ -109,3 +109,7 @@ and viewer editor on 22 Oct. They only need AK to watch with sound and say go.
    Q3 report is not out; then `vs03`, `vs05`, `cn02` (week 2):
    `python3 scripts/datayt/build_beats.py vs06 cn08 vs07 vs02 vs03 vs05 cn02` (refuses anything outside 25 to 35 s).
 3. Frame-check each, remake post images (`post_assets.py <id>`) and watch each with sound before AK's go.
+
+**Done early (25 Oct, night):** on AK's "voice and render the 7 re-cut state comparisons now on the MiniMax Go key", all seven
+(`vs06`, `cn08`, `vs07`, `vs02`, `vs03`, `vs05`, `cn02`) were voiced on the Go account, rendered at 31 s (narrated and text-led),
+frame-checked and their post images remade. Thursday's re-voicing step is no longer needed for them.

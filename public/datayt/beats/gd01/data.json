@@ -218,7 +218,7 @@
    "bars": [],
    "vo": "Homes and temples: about twenty-five thousand tonnes.",
    "t0": 3.871,
-   "t1": 7.742
+   "t1": 9.677
   },
   {
    "kind": "fact",
@@ -230,8 +230,8 @@
    "sub": "US Treasury: 261,498,926 troy ounces; tonnes are our conversion.",
    "bars": [],
    "vo": "The US government: about eight thousand tonnes.",
-   "t0": 7.742,
-   "t1": 11.613
+   "t0": 9.677,
+   "t1": 13.548
   },
   {
    "kind": "fact",
@@ -256,8 +256,8 @@
     }
    ],
    "vo": "About three times as much.",
-   "t0": 11.613,
-   "t1": 15.484
+   "t0": 13.548,
+   "t1": 17.419
   },
   {
    "kind": "fact",
@@ -282,8 +282,8 @@
     }
    ],
    "vo": "The RBI itself: eight hundred eighty tonnes.",
-   "t0": 15.484,
-   "t1": 19.355
+   "t0": 17.419,
+   "t1": 23.226
   },
   {
    "kind": "say",
@@ -294,19 +294,19 @@
    ],
    "note": "Dhanteras is 6 November. Household gold is an estimate.",
    "vo": "Indian homes hold over twenty-five times the RBI's gold.",
-   "t0": 19.355,
-   "t1": 23.226
+   "t0": 23.226,
+   "t1": 29.032
   },
   {
    "q": "How much of your savings is gold?",
    "sub": "Comment below.",
    "kind": "end",
    "vo": "How much of your savings is gold? Comment below.",
-   "t0": 23.226,
-   "t1": 29.032
+   "t0": 29.032,
+   "t1": 32.903
   }
  ],
- "total": 29.432,
+ "total": 33.303,
  "fps": 30,
  "beat": 0.4838709677419355,
  "checked": [
@@ -320,8 +320,51 @@
   "the RBI held 880.52 t: 880.5",
   "every figure in the cards, the reading, the hook and the title is one read from a table"
  ],
- "vo": [],
- "voiceEngine": "none",
- "voice": "",
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 2.925,
+   "at": 0.12,
+   "text": "Indian homes hold three times the US government's gold."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.787,
+   "at": 3.991,
+   "text": "Homes and temples: about twenty-five thousand tonnes."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.108,
+   "at": 9.797,
+   "text": "The US government: about eight thousand tonnes."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 1.75,
+   "at": 13.668,
+   "text": "About three times as much."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.918,
+   "at": 17.539,
+   "text": "The RBI itself: eight hundred eighty tonnes."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 23.346,
+   "text": "Indian homes hold over twenty-five times the RBI's gold."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.16,
+   "at": 29.152,
+   "text": "How much of your savings is gold? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
  "ytTitle": "Indian Homes Hold 3× as Much Gold as the US Government"
 }

@@ -218,7 +218,7 @@
    "bars": [],
    "vo": "Then Reliance brought back Campa, at ten rupees.",
    "t0": 5.806,
-   "t1": 9.677
+   "t1": 11.613
   },
   {
    "kind": "fact",
@@ -243,8 +243,8 @@
     }
    ],
    "vo": "With Lahori Zeera, its share doubled to fifteen percent.",
-   "t0": 9.677,
-   "t1": 15.484
+   "t0": 11.613,
+   "t1": 17.419
   },
   {
    "kind": "fact",
@@ -269,8 +269,8 @@
     }
    ],
    "vo": "Coke and Pepsi fell to eighty-five.",
-   "t0": 15.484,
-   "t1": 19.355
+   "t0": 17.419,
+   "t1": 21.29
   },
   {
    "kind": "fact",
@@ -282,8 +282,8 @@
    "sub": "Down from ₹12 and above.",
    "bars": [],
    "vo": "Their reply: their own ten-rupee packs.",
-   "t0": 19.355,
-   "t1": 23.226
+   "t0": 21.29,
+   "t1": 25.161
   },
   {
    "kind": "say",
@@ -294,19 +294,19 @@
    ],
    "note": "NielsenIQ figures as cited by industry sources. Shares are of all soft drinks.",
    "vo": "The cola war is now fought at ten rupees.",
-   "t0": 23.226,
-   "t1": 27.097
+   "t0": 25.161,
+   "t1": 29.032
   },
   {
    "q": "Which is in your fridge?",
    "sub": "Campa, Coke, Pepsi or Thums Up?",
    "kind": "end",
    "vo": "Which is in your fridge? Comment below.",
-   "t0": 27.097,
-   "t1": 30.968
+   "t0": 29.032,
+   "t1": 32.903
   }
  ],
- "total": 31.368,
+ "total": 33.303,
  "fps": 30,
  "beat": 0.4838709677419355,
  "checked": [
@@ -318,8 +318,51 @@
   "Coke and Pepsi held 93% before: 93",
   "every figure in the cards, the reading, the hook and the title is one read from a table"
  ],
- "vo": [],
- "voiceEngine": "none",
- "voice": "",
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.578,
+   "at": 0.12,
+   "text": "Coke and Pepsi held ninety-three percent of India's soft drinks."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.578,
+   "at": 5.926,
+   "text": "Then Reliance brought back Campa, at ten rupees."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.866,
+   "at": 11.733,
+   "text": "With Lahori Zeera, its share doubled to fifteen percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.533,
+   "at": 17.539,
+   "text": "Coke and Pepsi fell to eighty-five."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.186,
+   "at": 21.41,
+   "text": "Their reply: their own ten-rupee packs."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.16,
+   "at": 25.281,
+   "text": "The cola war is now fought at ten rupees."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.507,
+   "at": 29.152,
+   "text": "Which is in your fridge? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
  "ytTitle": "The ₹10 Cola War: Campa vs Coke and Pepsi"
 }

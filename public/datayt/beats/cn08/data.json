@@ -2,8 +2,8 @@
  "id": "cn08",
  "type": "pick",
  "chip": "WHICH IS HIGHER?",
- "sourceShort": "Census 2011 · FSI 2023 · SoI 2025",
- "source": "Coastline: Survey of India and Ministry of Earth Sciences, figures recalculated in 2025 (not comparable with older ones). People per square kilometre: Census of India 2011, Table A-01. Rural people per inhabited village: rural population divided by inhabited villages, Census 2011, Table A-01 (our calculation). Bamboo-bearing area: Forest Survey of India, ISFR 2023, estimated from forest inventory plots inside recorded forest area. Pairs, not full rankings.",
+ "sourceShort": "Census 2011 · SoI 2025",
+ "source": "Coastline: Survey of India and Ministry of Earth Sciences, figures recalculated in 2025 (not comparable with older ones). People per square kilometre: Census of India 2011, Table A-01. Rural people per inhabited village: rural population divided by inhabited villages, Census 2011, Table A-01 (our calculation). Pairs, not full rankings.",
  "accent": "#2A366F",
  "accent2": "#E8604C",
  "bands": [
@@ -16,7 +16,7 @@
  "beats": [
   {
    "n": 1,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has more",
     "*people per sq km?*"
@@ -37,13 +37,13 @@
    "kind": "pick",
    "mode": "ask",
    "pause": 0.5,
-   "vo": "More people per square kilometre: Kerala or West Bengal?",
+   "vo": "More crowded: Kerala or West Bengal?",
    "t0": 0.0,
-   "t1": 5.806
+   "t1": 3.871
   },
   {
    "n": 1,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has more",
     "*people per sq km?*"
@@ -64,12 +64,12 @@
    "kind": "pick",
    "mode": "tell",
    "vo": "West Bengal. About a fifth more.",
-   "t0": 5.806,
-   "t1": 9.677
+   "t0": 3.871,
+   "t1": 7.742
   },
   {
    "n": 2,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has the",
     "*longer coastline?*"
@@ -91,12 +91,12 @@
    "mode": "ask",
    "pause": 0.5,
    "vo": "Longer coastline: Gujarat or Andhra Pradesh?",
-   "t0": 9.677,
-   "t1": 15.484
+   "t0": 7.742,
+   "t1": 13.548
   },
   {
    "n": 2,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has the",
     "*longer coastline?*"
@@ -117,12 +117,12 @@
    "kind": "pick",
    "mode": "tell",
    "vo": "Gujarat. More than twice as long.",
-   "t0": 15.484,
-   "t1": 19.355
+   "t0": 13.548,
+   "t1": 17.419
   },
   {
    "n": 3,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has more people",
     "*in a village?*"
@@ -143,13 +143,13 @@
    "kind": "pick",
    "mode": "ask",
    "pause": 0.5,
-   "vo": "More people in the average village: Odisha or Chhattisgarh?",
-   "t0": 19.355,
-   "t1": 25.161
+   "vo": "Bigger villages: Odisha or Chhattisgarh?",
+   "t0": 17.419,
+   "t1": 23.226
   },
   {
    "n": 3,
-   "of": 4,
+   "of": 3,
    "lines": [
     "Which state has more people",
     "*in a village?*"
@@ -170,61 +170,8 @@
    "kind": "pick",
    "mode": "tell",
    "vo": "Chhattisgarh. More than a third more people.",
-   "t0": 25.161,
-   "t1": 29.032
-  },
-  {
-   "n": 4,
-   "of": 4,
-   "lines": [
-    "Which state has more",
-    "*bamboo-bearing area?*"
-   ],
-   "measure": "Bamboo-bearing area, ISFR 2023, thousand sq km",
-   "pa": {
-    "name": "Arunachal",
-    "geo": "Arunachal Pradesh",
-    "label": "18.4"
-   },
-   "pb": {
-    "name": "Assam",
-    "geo": "Assam",
-    "label": "11.2"
-   },
-   "win": "a",
-   "big": "+64%",
-   "kind": "pick",
-   "mode": "ask",
-   "pause": 0.5,
-   "vo": "More bamboo-bearing area: Arunachal Pradesh or Assam?",
-   "t0": 29.032,
-   "t1": 34.839
-  },
-  {
-   "n": 4,
-   "of": 4,
-   "lines": [
-    "Which state has more",
-    "*bamboo-bearing area?*"
-   ],
-   "measure": "Bamboo-bearing area, ISFR 2023, thousand sq km",
-   "pa": {
-    "name": "Arunachal",
-    "geo": "Arunachal Pradesh",
-    "label": "18.4"
-   },
-   "pb": {
-    "name": "Assam",
-    "geo": "Assam",
-    "label": "11.2"
-   },
-   "win": "a",
-   "big": "+64%",
-   "kind": "pick",
-   "mode": "tell",
-   "vo": "Arunachal Pradesh. Sixty-four percent more.",
-   "t0": 34.839,
-   "t1": 38.71
+   "t0": 23.226,
+   "t1": 27.097
   },
   {
    "q": "How many did *you* get?",
@@ -232,11 +179,11 @@
    "note": "Pairs, not full rankings. Coastline recalculated in 2025.",
    "kind": "tally",
    "vo": "Which round fooled you?",
-   "t0": 38.71,
-   "t1": 42.581
+   "t0": 27.097,
+   "t1": 30.968
   }
  ],
- "total": 42.981,
+ "total": 31.368,
  "fps": 30,
  "beat": 0.4838709677419355,
  "tally": [
@@ -260,74 +207,54 @@
    "wl": "1,002.0",
    "lose": "Odisha",
    "ll": "734.0"
-  },
-  {
-   "q": "Bamboo-bearing area, ISFR 2023, thousand sq km",
-   "win": "Arunachal",
-   "wl": "18.4",
-   "lose": "Assam",
-   "ll": "11.2"
   }
  ],
  "checked": [
   "round 1: West Bengal 1028.44 against Kerala 860: 1.20 times, a gap of 44.09 points of the all-India figure",
   "round 2: Gujarat 2340.62 against Andhra Pradesh 1053.07: 2.22 times, a gap of 11.60 points of the all-India figure",
-  "round 3: Chhattisgarh 1002 against Odisha 734: 1.37 times, a gap of 19.21 points of the all-India figure",
-  "round 4: Arunachal Pradesh 18424 against Assam 11246: 1.64 times, a gap of 4.64 points of the all-India figure"
+  "round 3: Chhattisgarh 1002 against Odisha 734: 1.37 times, a gap of 19.21 points of the all-India figure"
  ],
  "vo": [
   {
    "file": "vo_00.mp3",
-   "sec": 4.414,
+   "sec": 2.795,
    "at": 0.12,
-   "text": "More people per square kilometre: Kerala or West Bengal?"
+   "text": "More crowded: Kerala or West Bengal?"
   },
   {
    "file": "vo_01.mp3",
    "sec": 2.246,
-   "at": 5.926,
+   "at": 3.991,
    "text": "West Bengal. About a fifth more."
   },
   {
    "file": "vo_02.mp3",
    "sec": 3.866,
-   "at": 9.797,
+   "at": 7.862,
    "text": "Longer coastline: Gujarat or Andhra Pradesh?"
   },
   {
    "file": "vo_03.mp3",
    "sec": 2.638,
-   "at": 15.604,
+   "at": 13.668,
    "text": "Gujarat. More than twice as long."
   },
   {
    "file": "vo_04.mp3",
-   "sec": 4.205,
-   "at": 19.475,
-   "text": "More people in the average village: Odisha or Chhattisgarh?"
+   "sec": 3.918,
+   "at": 17.539,
+   "text": "Bigger villages: Odisha or Chhattisgarh?"
   },
   {
    "file": "vo_05.mp3",
    "sec": 3.16,
-   "at": 25.281,
+   "at": 23.346,
    "text": "Chhattisgarh. More than a third more people."
   },
   {
    "file": "vo_06.mp3",
-   "sec": 3.918,
-   "at": 29.152,
-   "text": "More bamboo-bearing area: Arunachal Pradesh or Assam?"
-  },
-  {
-   "file": "vo_07.mp3",
-   "sec": 2.768,
-   "at": 34.959,
-   "text": "Arunachal Pradesh. Sixty-four percent more."
-  },
-  {
-   "file": "vo_08.mp3",
    "sec": 1.436,
-   "at": 38.83,
+   "at": 27.217,
    "text": "Which round fooled you?"
   }
  ],

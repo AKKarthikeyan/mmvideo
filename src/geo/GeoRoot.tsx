@@ -1,0 +1,53 @@
+import React from "react";
+import {Composition} from "remotion";
+import {Siliguri, layout, FPS, W, H, GeoData} from "./Siliguri";
+import siliguri from "../../public/geo/siliguri/data.json";
+import {GeoShort, layout as glayout, GeoData as GD} from "./engine/GeoShort";
+import {SPECS} from "./week1/specs";
+import chenab from "../../public/geo/chenab/data.json";
+import indiatime from "../../public/geo/indiatime/data.json";
+import brahmaputra from "../../public/geo/brahmaputra/data.json";
+import princely from "../../public/geo/princely/data.json";
+import andaman from "../../public/geo/andaman/data.json";
+import himalaya from "../../public/geo/himalaya/data.json";
+import malacca from "../../public/geo/malacca/data.json";
+import chinatime from "../../public/geo/chinatime/data.json";
+import languages from "../../public/geo/languages/data.json";
+import enclaves from "../../public/geo/enclaves/data.json";
+import monsoon from "../../public/geo/monsoon/data.json";
+import hyderabad from "../../public/geo/hyderabad/data.json";
+import islamabad from "../../public/geo/islamabad/data.json";
+
+import {SPECS2} from "./week2/specs";
+import w2_minicoy from "../../public/geo/minicoy/data.json";
+import w2_austria from "../../public/geo/austria/data.json";
+import w2_kuttanad from "../../public/geo/kuttanad/data.json";
+import w2_sikhpolice from "../../public/geo/sikhpolice/data.json";
+import w2_seazone from "../../public/geo/seazone/data.json";
+import w2_nainsingh from "../../public/geo/nainsingh/data.json";
+import w2_thumba from "../../public/geo/thumba/data.json";
+import w2_zanzibar from "../../public/geo/zanzibar/data.json";
+import w2_barmer from "../../public/geo/barmer/data.json";
+import w2_berenike from "../../public/geo/berenike/data.json";
+import w2_panipat from "../../public/geo/panipat/data.json";
+import w2_bhitarkanika from "../../public/geo/bhitarkanika/data.json";
+import w2_thibaw from "../../public/geo/thibaw/data.json";
+import w2_narcondam from "../../public/geo/narcondam/data.json";
+
+const WEEK2: Record<string, unknown> = {minicoy: w2_minicoy, austria: w2_austria, kuttanad: w2_kuttanad, sikhpolice: w2_sikhpolice, seazone: w2_seazone, nainsingh: w2_nainsingh, thumba: w2_thumba, zanzibar: w2_zanzibar, barmer: w2_barmer, berenike: w2_berenike, panipat: w2_panipat, bhitarkanika: w2_bhitarkanika, thibaw: w2_thibaw, narcondam: w2_narcondam};
+const WEEK1: Record<string, unknown> = {chenab, indiatime, brahmaputra, princely, andaman, himalaya, malacca, chinatime, languages, enclaves, monsoon, hyderabad, islamabad};
+
+export const GeoRoot: React.FC = () => (
+  <>
+    <Composition id="GEO-siliguri" component={Siliguri as any} defaultProps={{D: siliguri as GeoData}}
+      durationInFrames={layout(siliguri as GeoData).total} fps={FPS} width={W} height={H}/>
+    {Object.entries(WEEK1).map(([id, d]) => (
+      <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS[id]}}
+        durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
+    ))}
+    {Object.entries(WEEK2).map(([id, d]) => (
+      <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS2[id]}}
+        durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
+    ))}
+  </>
+);

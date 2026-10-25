@@ -17,6 +17,8 @@ From week 1: Hindi audio track on every long video.
 ## Week 1 (26 Oct to 1 Nov): "Money, brands and your state"
 
 Scripts for this week: `week44/SHORTS.md`, `week44/LONG_quick_commerce.md`, `week44/LONG_baby_map.md`.
+**Posting plan (25 Oct):** `week44/WEEK_PLAN.md` pairs each Short below with a built state comparison from 22 Oct and
+lists what AK must verify.
 
 | Date | Format | Title | Need | Data and stamp | Status |
 | --- | --- | --- | --- | --- | --- |

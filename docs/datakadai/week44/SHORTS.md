@@ -35,7 +35,7 @@ Voice: human (English master, Hindi track recorded the same day).
 | --- | --- | --- |
 | 0–3 s | "₹10 for 200 ml. Coke and Pepsi charge ₹20 for 250 ml. Guess who's winning." | Two price tags swing in |
 | 3–12 s | "In 1977 Coca-Cola left India, and an Indian cola called Campa filled the gap. Then it faded away." | 1977 stamp; Campa vintage bottle |
-| 12–20 s | "Now Reliance has brought it back. Per 100 ml, Campa costs ₹5. Coke and Pepsi cost ₹8. That's about 37 % cheaper." | ₹5 vs ₹8 per 100 ml |
+| 12–20 s | "Now Reliance has brought it back. Per 100 ml, Campa costs ₹5. Coke and Pepsi cost ₹8. That's about 38 % cheaper." | ₹5 vs ₹8 per 100 ml (37.5 %) |
 | 20–28 s | "It pays shopkeepers more too: a 6 to 8 % margin, against 3.5 to 5 % from the big two." | Margin bars |
 | 28–38 s | "Result? Campa and Lahori Zeera doubled their share of the market, from about 7 % to about 15 % in nine months." | Share bar 7 % → 15 %; 🟡 ESTIMATE |
 | 38–46 s | "Coke and Pepsi's answer: their own ₹10 packs. The cola war is back." | ₹10 Coke, Pepsi, Thums Up packs |
@@ -50,15 +50,15 @@ Voice: human (English master, Hindi track recorded the same day).
 ## Wed 28 Oct · Map of the Day S1E1 · India's Baby Map (NFHS-6)
 
 - **Need:** State · **Stamp:** 🟢 OFFICIAL · **Engine:** episode `tfr-nfhs6` (copy `tfr-nfhs5`, rebuild with NFHS-6 data)
-- **[VERIFY] all values below against the official NFHS-6 state fact sheets (MoHFW / IIPS, June 2026).** The
-  figures here are from press coverage only.
+- **Filled 25 Oct 2026** from our checked NFHS-6 file (`public/datayt/nfhs6/nfhs6_states.json`, indicator 18).
+  Manipur is not in the file: show it blank with "not in NFHS-6 release". `[VERIFY: Manipur]`
 
 | Time | Voiceover | On screen (engine scene) |
 | --- | --- | --- |
-| 0–3 s | "One part of India now has fewer than one child per woman." | Hook: **0.9** [VERIFY: A&N] |
-| 3–10 s | "India's fertility rate is [FILL: 2.0]. Below 2.1, a population eventually starts to shrink." | Map fills, lowest to highest |
-| 10–17 s | "Most children: [FILL: Bihar, 2.7]. Fewest: [FILL: Andaman & Nicobar, 0.9], then [FILL: Sikkim, 1.0]." | Top 3 / bottom 3 |
-| 17–24 s | "The twist: [FILL from build_map.py facts, e.g. the biggest fall since NFHS-5]." | Twist scene |
+| 0–3 s | "One part of India now has fewer than one child per woman." | Hook: **0.9** · Andaman and Nicobar |
+| 3–10 s | "India's fertility rate is 2.0. Below 2.1, a population eventually starts to shrink." | Map fills, lowest to highest |
+| 10–17 s | "Most children: Bihar, 2.7. Fewest: Andaman and Nicobar, 0.9, then Sikkim, 1.0." | Top 3 / bottom 3 |
+| 17–24 s | "The twist: Meghalaya fell from 2.9 to 2.2 in a few years. But Jammu and Kashmir went up, from 1.4 to 1.8." | Twist scene: two states, NFHS-5 → NFHS-6 |
 | 24–28 s | "Why is your state where it is? Tell us below." | Question |
 | 28–30 s | "A new India map, every day." | End card |
 
@@ -94,15 +94,16 @@ Voice: human (English master, Hindi track recorded the same day).
 
 | Time | Voiceover | On screen |
 | --- | --- | --- |
-| 0–3 s | "Indians placed about 110 crore orders on 10-minute apps in a single year." | Counter to 110 crore |
+| 0–3 s | "Indians placed about 110 crore orders on 10-minute apps in a single year." | Counter to 110 crore · "2024-25" |
 | 3–10 s | "That's around 30 lakh orders every single day." | Clock + order pings |
-| 10–22 s | "Blinkit had about 44 % of those orders. Zepto 31 %. Swiggy Instamart 24.5 %, down from 34 % two years earlier." | Share bars; Instamart 34 % → 24.5 % |
+| 10–22 s | "Blinkit had about 45 % of those orders. Zepto 31 %. Swiggy Instamart about 25 %, down from 34 % two years earlier." | Share bars 44.5 % · 30.9 % · 24.6 %; Instamart 34 % → 24.6 % |
 | 22–34 s | "Meanwhile DMart, India's favourite supermarket, saw its slowest growth in years. Brokers blamed the 10-minute apps." | DMart growth line bending [UPDATE: latest quarter] |
 | 34–44 s | "So who's really winning: the app, DMart, or the kirana anna downstairs? We tested it with real shopping bills. Full video tomorrow." | Three shop icons; "Sat 31 Oct" |
 | 44–48 s | "Where did you buy milk this week?" | Comment prompt |
 
 - **Sources:** Zepto updated draft prospectus (FY25 orders: Blinkit 489.9 mn, Zepto 340.3 mn, Instamart 270.2 mn) via Apparel Resources; DMart via BusinessWorld.
 - **[VERIFY]:** check for FY26 order data in newer filings or company results and use it if available. Instamart's 34 % → 24.5 % comes from the article body; its headline says 21 %, so confirm against the filing.
+- **Rechecked 25 Oct:** the three FY25 order counts add to 1,100.4 mn (110 crore, 30.1 lakh a day) and give shares of 44.5 %, 30.9 % and 24.6 %, so the article's 24.5 % is a rounding slip. Keep "2024-25" on screen: the data is a year old.
 
 ---
 

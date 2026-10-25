@@ -64,10 +64,10 @@ roughly 30 lakh orders every day."
 
 **ON SCREEN:** order counters 48.99 cr · 34.03 cr · 27.02 cr → 110 cr; 🔴 CLAIM (company filing).
 
-**VO:** "Inside that race there's a race. Blinkit had about 44 % of the orders, Zepto about 31 %. Instamart, the
+**VO:** "Inside that race there's a race. Blinkit had about 45 % of the orders, Zepto about 31 %. Instamart, the
 early mover, slipped from about a third of orders two years earlier to under a quarter."
 
-**ON SCREEN:** share bars; Instamart 34 % → 24.5 % `[VERIFY: one headline says 21 %; use the filing figure]`.
+**ON SCREEN:** share bars; Instamart 34 % → 24.6 % (from the filing counts: 270.2 of 1,100.4 mn) `[VERIFY: one headline says 21 %; use the filing figure]`.
 
 ### Act 3 · The battle (4:30 to 7:30)
 

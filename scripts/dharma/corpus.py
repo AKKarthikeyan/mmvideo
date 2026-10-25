@@ -29,6 +29,13 @@ SOURCES = {
         "files": ["LICENSE", "data/verse.json", "data/translation.json", "data/chapters.json", "data/authors.json"],
         "licence": "Unlicense (public domain dedication) for the dataset; translations keep their own copyright status",
     },
+    # Valmiki's Ramayana, Books I-VI, in Ralph T. H. Griffith's verse (1870-74; Griffith died 1906), Project Gutenberg
+    # eBook #24869. Fetch it on the Mini: Gutenberg is not reachable from the cloud session's proxy.
+    "griffith-ramayan": {
+        "base": "https://www.gutenberg.org/",
+        "files": ["cache/epub/24869/pg24869.txt"],
+        "licence": "Public domain (Griffith d. 1906); Project Gutenberg eBook #24869",
+    },
 }
 # author_id -> (name, year, why it may be quoted on screen)
 QUOTABLE = {
@@ -60,9 +67,10 @@ def fetch():
             out.write_bytes(r.content)
             entries.append({"file": rel, "local": str(out.relative_to(ROOT)), "bytes": len(r.content), "sha256": sha256(out)})
             print(f"  {rel:28s} {len(r.content):>10,d} bytes")
-        man["sources"][key] = {"base": s["base"], "licence": s["licence"], "files": entries,
-                               "quotable": {str(k): {"name": v[0], "year": v[1], "status": v[2]} for k, v in QUOTABLE.items()},
-                               "reference_only": {str(k): v for k, v in REFERENCE_ONLY.items()}}
+        man["sources"][key] = {"base": s["base"], "licence": s["licence"], "files": entries}
+        if key == "gita-json":   # the dataset carries many translators; only these may go on screen
+            man["sources"][key].update(quotable={str(k): {"name": v[0], "year": v[1], "status": v[2]} for k, v in QUOTABLE.items()},
+                                       reference_only={str(k): v for k, v in REFERENCE_ONLY.items()})
     MANIFEST.write_text(json.dumps(man, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print("manifest", MANIFEST.relative_to(ROOT))
 
@@ -128,13 +136,76 @@ def ref(refstr: str, author: int = DEFAULT_AUTHOR) -> dict:
             "src": f"BHAGAVAD GITA {ch}.{v} · AFTER {name.upper()}, {year} (EDITED TEXT)"}
 
 
+# --- Griffith's Ramayan: cantos by Griffith's own book and canto numbers. These are not always the vulgate's sarga
+# numbers (Griffith condenses and renumbers in places), so the source line names Griffith's numbering, never a sarga.
+RAMAYAN = SRC / "griffith-ramayan" / "pg24869.txt"
+RAMAYAN_BOOK = {1: "Bala", 2: "Ayodhya", 3: "Aranya", 4: "Kishkindha", 5: "Sundara", 6: "Yuddha"}
+
+
+def roman(s: str) -> int:
+    val = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100}
+    n = 0
+    for i, ch in enumerate(s):
+        v = val[ch]
+        n += -v if i + 1 < len(s) and val[s[i + 1]] > v else v
+    return n
+
+
+def _ramayan() -> dict:
+    """{(book, canto): (title, text)} for the main text (Book I to the appendix), footnote markers "(305)" removed."""
+    if "ramayan" in _cache: return _cache["ramayan"]
+    if not RAMAYAN.exists():
+        sys.exit("Griffith's Ramayan not fetched: run  python3 scripts/dharma/corpus.py fetch  (on the Mini)")
+    lines = RAMAYAN.read_text(encoding="utf-8").split("\n")
+    start = next(i for i, l in enumerate(lines) if re.match(r"^BOOK I\.\(\d+\)", l))
+    end = next(i for i in range(start, len(lines)) if lines[i].strip() == "APPENDIX.")   # the contents list has one too
+    book, cur, cantos = 0, None, {}
+    for l in lines[start:end]:
+        mb = re.match(r"^BOOK ([IVX]+)\.", l)
+        if mb: book, cur = roman(mb.group(1)), None; continue
+        mc = re.match(r"^Canto ([IVXLC]+)\.\s*(.*)$", l)
+        if mc:
+            cur = (book, roman(mc.group(1))); cantos[cur] = (re.sub(r"\(\d+\)", "", mc.group(2)).strip(), []); continue
+        if cur: cantos[cur][1].append(l)
+    _cache["ramayan"] = {k: (t, re.sub(r"\(\d+\)", "", "\n".join(b)).strip()) for k, (t, b) in cantos.items()}
+    return _cache["ramayan"]
+
+
+def canto(book: int, n: int) -> dict:
+    """One canto of Griffith's Ramayan with the source line a plate prints. Griffith's canto titles are not shown on
+    screen: some are Victorian English that reads wrongly now (III.49 is titled "The Rape Of Sita": the abduction)."""
+    title, text = _ramayan()[(book, n)]
+    return {"book": book, "canto": n, "title": title, "text": text,
+            "src": f"VALMIKI'S RAMAYANA · GRIFFITH {RAMAYAN_BOOK[book].upper()} {book}.{n} · AFTER RALPH T. H. GRIFFITH, 1870–74"}
+
+
+def qnorm(s: str) -> str:
+    """For quote checks: curly quotes and apostrophes straightened, case and whitespace ignored, diacritics kept."""
+    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
+    return re.sub(r"\s+", " ", s).strip().lower()
+
+
+def find(phrase: str, book: int | None = None) -> list:
+    """Every canto whose text holds the phrase (normalised), as (book, canto)."""
+    q = qnorm(phrase)
+    return [k for k, (_, t) in _ramayan().items() if (book is None or k[0] == book) and q in qnorm(t)]
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("fetch"); sub.add_parser("verify")
     pv = sub.add_parser("verse"); pv.add_argument("ref"); pv.add_argument("--all", action="store_true")
     pc = sub.add_parser("chapter"); pc.add_argument("n", type=int)
+    pk = sub.add_parser("canto", help="Griffith's Ramayan, e.g. canto 3.45"); pk.add_argument("ref")
+    pf = sub.add_parser("find", help="which Griffith cantos hold a phrase"); pf.add_argument("phrase"); pf.add_argument("--book", type=int)
     a = ap.parse_args()
+    if a.cmd == "canto":
+        b, n = (int(x) for x in a.ref.split("."))
+        c = canto(b, n); print(f"Griffith {c['book']}.{c['canto']}: {c['title']}\n{c['src']}\n\n{c['text']}"); return
+    if a.cmd == "find":
+        for b, n in find(a.phrase, a.book): print(f"Griffith {b}.{n}: {_ramayan()[(b, n)][0]}")
+        return
     if a.cmd == "fetch": fetch()
     elif a.cmd == "verify": sys.exit(0 if verify() else 1)
     elif a.cmd == "verse":

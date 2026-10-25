@@ -11,7 +11,7 @@ The first long video for The Inner Chariot (@InnerChariotIN). It is episode 1 of
 | **Title** (pick one; test the others with Test & Compare) | **The Lakshman Rekha Isn't in Valmiki's Ramayana** (46 characters) · What the Oldest Ramayana Says, Before the Film · Five Things Valmiki Tells Differently |
 | **Hindi title** | लक्ष्मण रेखा वाल्मीकि रामायण में नहीं है |
 | **Series, shape** | Valmiki, Not the Film #1 · **Two Versions**, opening as a Mystery |
-| **Length** | 11 to 12 min; about 1,650 words at 140 to 155 words a minute |
+| **Length** | About 9 min (script draft 1: 761 narration words plus 12 quote cards voiced in character, counted 25 Oct). The 11 to 12 min first planned would need padding |
 | **Publish** | **Tue 3 Nov 2026**, two days before the release. Fallback: by Sun 15 Nov, the film's first fortnight |
 | **Listener** | Rohan, 27, who has booked for the opening weekend and wants to know what the oldest text says before the film shows him its version |
 | **Spine sentence** | The Ramayana you know is a river fed by many streams; this is what its source says. |
@@ -57,6 +57,8 @@ Humour: one dry line, at ourselves or the modern viewer ("If you grew up on the 
 ---
 
 ## Pictures and production
+
+**Decided 25 Oct 2026: Route B.** AK extended rule 5 so Rama, Sita and the other Ramayana figures appear as backlit silhouettes in light, like Krishna (`DHARMA_CHANNEL.md`). The options as weighed:
 
 **Rule 5 decides how Rama and Sita are shown.** The house rule allows Krishna as a silhouette in light and says "no other deity is drawn". Rama and Sita are revered as divine, so as the rule stands they cannot be drawn. Two routes:
 

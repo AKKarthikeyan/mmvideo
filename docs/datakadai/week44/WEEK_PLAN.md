@@ -11,11 +11,14 @@ Each day: **Short A** is new from `CALENDAR_NOV_2026.md` (Pocket, Moment, Brands
 the new Shorts once recorded."** So Mon to Wed carry one Short a day; the pairs start once the re-cut Shorts are voiced
 on Thu 29 Oct (MiniMax quota back about 08:05 IST). The Mon to Wed state comparisons move to week 2.
 
+**Superseded the same night:** all seven were voiced early on the Go account, and AK said "put vs03, vs05 and cn02 back as
+the second Short on Mon 26, Tue 27 and Wed 28". Every day now carries two Shorts again.
+
 | Day | Short A (new script) | Short B (built 22 Oct) | Long video |
 | --- | --- | --- | --- |
-| Mon 26 | `gd01` Indian Homes Hold 3× as Much Gold as the US Government · Pocket, Moment (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | none (held) | |
-| Tue 27 | `cw01` The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | none (held) | |
-| Wed 28 | India's Baby Map (NFHS-6) · State (once recorded) | none (held) | |
+| Mon 26 | `gd01` Indian Homes Hold 3× as Much Gold as the US Government · Pocket, Moment (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | `vs03` Maharashtra vs Gujarat: Which Economy Wins? 5 Rounds (re-cut, voiced 25 Oct, 31 s) | |
+| Tue 27 | `cw01` The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (built 25 Oct, 33 s, voiced with MiniMax via the Go account) | `vs05` Karnataka Wins on 5G. Tamil Nadu Wins on Power. Who Wins? (re-cut, voiced 25 Oct, 31 s) | |
+| Wed 28 | India's Baby Map (NFHS-6) · State (once recorded) | `cn02` Delhi Owes Banks More Than Its Whole Year's Output (re-cut, voiced 25 Oct, 31 s) | |
 | Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: Who Wins on Money? 5 Rounds, voiced 25 Oct) | | **India Is Running Out of Babies. Here's the Map.** |
 | Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat or Rajasthan: Where Do Women and Girls Do Better? (re-cut, voiced 25 Oct, 31 s) | |
 | Sat 31 | Which State Pays India's GST? · State, Pocket | `cn08` Can You Beat This India Quiz? 3 Rounds of Higher or Lower (re-cut, voiced 25 Oct, 31 s) | 10 Minutes vs DMart vs the Kirana Anna (only if the basket test is shot Mon 26; otherwise move to Sat 7 Nov) |
@@ -24,7 +27,7 @@ on Thu 29 Oct (MiniMax quota back about 08:05 IST). The Mon to Wed state compari
 Scripts: Short A in `SHORTS.md`, long videos in `LONG_baby_map.md` and `LONG_quick_commerce.md`. Short B scripts and
 captions in `../posts/2026-10-22-<id>.md`, videos in `out/datakadai/daily/2026-10-22/<id>/`.
 
-Moved to week 2 (held 25 Oct; re-cut and voiced 25 Oct, ready): `vs03`, `vs05`, `cn02`. They could go back to Mon to Wed on AK's word.
+`vs03`, `vs05`, `cn02` are back on Mon 26 to Wed 28 (AK, 25 Oct).
 Left in stock for week 2: `vs04`, `vs08`, `cn09`, `cn10`, `cn11`, `sp05` (and `vs02` if Thursday's gold Short runs); these
 still need the 25-35 s re-cut.
 `cn09` uses 2022-23 data: the year stays in its title.

@@ -18,8 +18,8 @@ From week 1: Hindi audio track on every long video.
 
 Scripts for this week: `week44/SHORTS.md`, `week44/LONG_quick_commerce.md`, `week44/LONG_baby_map.md`.
 **Posting plan (25 Oct):** `week44/WEEK_PLAN.md` pairs each Short below with a built state comparison from 22 Oct and
-lists what AK must verify. Second Short from Fri 30: `vs06`, `cn08`, `vs07` (and `vs02` on Thu if gold waits), retitled after the Jev check
-(`week44/JEV_CHECK.md`) and re-cut to 25-35 s; held until re-voiced on Thu 29 Oct (AK, 25 Oct). Mon to Wed: one Short a day.
+lists what AK must verify. Second Short each day: `vs03`, `vs05`, `cn02`, then `vs06`, `cn08`, `vs07` from Fri 30 (and `vs02` on Thu if gold waits), retitled after the Jev check
+(`week44/JEV_CHECK.md`), re-cut to 25-35 s and voiced 25 Oct. Mon 26 to Wed 28 carry `vs03`, `vs05`, `cn02` (AK, 25 Oct).
 **All Shorts: 25 to 35 seconds, aim for 30 (AK, 25 Oct 2026).**
 
 | Date | Format | Title | Need | Data and stamp | Status |

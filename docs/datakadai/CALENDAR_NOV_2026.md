@@ -18,17 +18,18 @@ From week 1: Hindi audio track on every long video.
 
 Scripts for this week: `week44/SHORTS.md`, `week44/LONG_quick_commerce.md`, `week44/LONG_baby_map.md`.
 **Posting plan (25 Oct):** `week44/WEEK_PLAN.md` pairs each Short below with a built state comparison from 22 Oct and
-lists what AK must verify.
+lists what AK must verify. Second Short each day: `vs03`, `vs05`, `cn02`, `vs02` (if gold waits), `vs06`, `cn08`, `vs07`, retitled
+25 Oct after the Jev check (`week44/JEV_CHECK.md`).
 
 | Date | Format | Title | Need | Data and stamp | Status |
 | --- | --- | --- | --- | --- | --- |
 | Mon 26 | Short | Indian Homes Hold 3× More Gold Than the US Government | Pocket, Moment (Diwali) | WGC household estimate 🟡, US and RBI reserves 🟢 | ✅ |
 | Tue 27 | Short · Kadai Wars S1E1 | The ₹10 Cola War: Campa vs Coke and Pepsi | Brands | NielsenIQ via industry sources 🟡 | ✅ |
-| Wed 28 | Short · Map S1E1 | India's Baby Map (NFHS-6) | State | NFHS-6 fact sheets 🟢 | 🔄 |
-| Thu 29 | **Long** · Map Deep Dive | India Is Running Out of Babies. Here's the Map. | State, Moment | NFHS-4, 5, 6 🟢 | 🔄 NFHS-6 |
+| Wed 28 | Short · Map S1E1 | India's Baby Map: One Region Now Below 1 Child per Woman | State | NFHS-6, our checked file 🟢 (Manipur missing) | ✅ filled 25 Oct |
+| Thu 29 | **Long** · Map Deep Dive | India Is Running Out of Babies. Here's the Map. | State, Moment | NFHS-4, 5, 6 🟢 | ✅ NFHS-6 filled 25 Oct; story rewritten (16 of 35 rose) |
 | Thu 29 | Short · Release day | Diwali Gold: Indians Buy Less, Pay More | Pocket, Moment | WGC Q3 2026 India 🟢 (fallback Q2) | 📅 ~29 Oct |
 | Fri 30 | Short · Kadai Wars S1E2 | 110 Crore Orders in 10 Minutes | Brands, Pocket | Zepto IPO filing 🔴 | ✅ |
-| Sat 31 | **Long** · Kadai Wars | 10 Minutes vs DMart vs the Kirana Anna: Who's Winning? | Brands, Pocket | Filings 🔴🟢, AICPDF 🔴, own basket test | 🔄 basket test |
+| Sat 31 | **Long** · Kadai Wars | 10 Minutes vs DMart vs the Kirana Anna: Who's Winning? | Brands, Pocket | Filings 🔴🟢, AICPDF 🔴, own basket test | 🔄 basket test Mon 26, else move to Sat 7 Nov |
 | Sat 31 | Short · Map S1E2 | Which State Pays India's GST? | State, Pocket | GST portal, September state-wise 🟢 | 🔄 |
 | Sun 1 | Short · Release day | UPI October Scorecard: Festive Record? | Pocket, Moment | NPCI October 🟢 | 📅 1 Nov |
 

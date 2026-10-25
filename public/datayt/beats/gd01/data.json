@@ -1,0 +1,327 @@
+{
+ "id": "gd01",
+ "type": "money",
+ "chip": "GOLD · ESTIMATE",
+ "sourceShort": "WGC estimate · US Treasury · RBI · 2026",
+ "source": "Indian households: World Gold Council estimate, about 25,000 t including temple gold (23,537 to 25,537 t by Sep 2024, as reported). US government: US Treasury, gold reserve, 30 Sep 2026, 261,498,926 fine troy ounces (tonnes our conversion). RBI: Half Yearly Report on Management of Foreign Exchange Reserves, Oct 2025 to Mar 2026: 880.52 t at end-March 2026.",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Indian homes hold",
+    "*3×* the US",
+    "government's gold"
+   ],
+   "vo": "Indian homes hold three times the US government's gold.",
+   "spots": [
+    {
+     "geo": "Andaman and Nicobar Islands",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Andhra Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Assam",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Bihar",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chandigarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Chhattisgarh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Dadra & Nagar Haveli and Daman & Diu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Goa",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Gujarat",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Haryana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jammu and Kashmir",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Jharkhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Karnataka",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Kerala",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Ladakh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Lakshadweep",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Maharashtra",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Manipur",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Meghalaya",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Mizoram",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "NCT of Delhi",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Nagaland",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Odisha",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Puducherry",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Punjab",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Rajasthan",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Sikkim",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Telangana",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Tripura",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttar Pradesh",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "Uttarakhand",
+     "name": "",
+     "tone": "a"
+    },
+    {
+     "geo": "West Bengal",
+     "name": "",
+     "tone": "a"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "fact",
+   "name": "Homes",
+   "geo": "India",
+   "kicker": "INDIAN HOMES · ESTIMATE",
+   "big": "25,000 t",
+   "text": "of gold in homes and temples",
+   "sub": "World Gold Council estimate: 23,537 to 25,537 t (2024).",
+   "bars": [],
+   "vo": "Homes and temples: about twenty-five thousand tonnes.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "vs the US",
+   "geo": "India",
+   "kicker": "US GOVERNMENT · 30 SEP 2026",
+   "big": "8,134 t",
+   "text": "Fort Knox and the other US vaults",
+   "sub": "US Treasury: 261,498,926 troy ounces; tonnes are our conversion.",
+   "bars": [],
+   "vo": "The US government: about eight thousand tonnes.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Homes vs US",
+   "geo": "India",
+   "kicker": "HOMES AGAINST THE US",
+   "big": "3×",
+   "text": "as much gold in Indian homes",
+   "sub": "",
+   "bars": [
+    {
+     "name": "Indian homes",
+     "label": "25,000 t",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "US government",
+     "label": "8,134 t",
+     "frac": 0.3253412,
+     "neg": false
+    }
+   ],
+   "vo": "About three times as much.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "RBI",
+   "geo": "India",
+   "kicker": "THE RBI · END-MARCH 2026",
+   "big": "880.52 t",
+   "text": "held by the Reserve Bank of India",
+   "sub": "",
+   "bars": [
+    {
+     "name": "RBI",
+     "label": "880.52 t",
+     "frac": 1.0,
+     "neg": false
+    },
+    {
+     "name": "Held in India",
+     "label": "680.05 t",
+     "frac": 0.7723277154408759,
+     "neg": false
+    }
+   ],
+   "vo": "The RBI itself: eight hundred eighty tonnes.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Homes hold",
+    "*over 25×*",
+    "the RBI's gold."
+   ],
+   "note": "Dhanteras is 6 November. Household gold is an estimate.",
+   "vo": "Indian homes hold over twenty-five times the RBI's gold.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "q": "How much of your savings is gold?",
+   "sub": "Comment below.",
+   "kind": "end",
+   "vo": "How much of your savings is gold? Comment below.",
+   "t0": 23.226,
+   "t1": 29.032
+  }
+ ],
+ "total": 29.432,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "checked": [
+  "card 1: INDIAN HOMES · ESTIMATE 25000",
+  "card 2: US GOVERNMENT · 30 SEP 2026 8133.53",
+  "card 3: HOMES AGAINST THE US 3.0737; Indian homes 25000; US government 8133.53",
+  "card 4: THE RBI · END-MARCH 2026 880.52; RBI 880.52; Held in India 680.05",
+  "Indian homes hold about three times the US government's gold: 3.074",
+  "even at the low estimate, homes hold close to three times the US: 2.894",
+  "homes hold over 25 times the RBI's gold, at the low estimate too: 26.73",
+  "the RBI held 880.52 t: 880.5",
+  "every figure in the cards, the reading, the hook and the title is one read from a table"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "Indian Homes Hold 3× as Much Gold as the US Government"
+}

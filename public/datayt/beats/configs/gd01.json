@@ -1,0 +1,231 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "gd01",
+ "palette": "O",
+ "theme": "money",
+ "chip": "GOLD · ESTIMATE",
+ "source_short": "WGC estimate · US Treasury · RBI · 2026",
+ "source": "Indian households: World Gold Council estimate, about 25,000 t including temple gold (23,537 to 25,537 t by Sep 2024, as reported). US government: US Treasury, gold reserve, 30 Sep 2026, 261,498,926 fine troy ounces (tonnes our conversion). RBI: Half Yearly Report on Management of Foreign Exchange Reserves, Oct 2025 to Mar 2026: 880.52 t at end-March 2026.",
+ "_len_note": "25 Oct 2026: built to AK's 25-35 s rule. The all-central-banks line (36,000 t) was cut: no source found.",
+ "hook": [
+  "Indian homes hold",
+  "*3×* the US",
+  "government's gold"
+ ],
+ "hook_vo": "Indian homes hold three times the US government's gold.",
+ "cards": [
+  {
+   "kicker": "INDIAN HOMES · ESTIMATE",
+   "name": "Homes",
+   "item": [
+    "gold/holdings_2026",
+    "indian households",
+    "tonnes"
+   ],
+   "item_name": "Indian household gold (estimate)",
+   "dec": 0,
+   "unit": " t",
+   "text": "of gold in homes and temples",
+   "sub": "World Gold Council estimate: 23,537 to 25,537 t (2024).",
+   "vo": "Homes and temples: about twenty-five thousand tonnes."
+  },
+  {
+   "kicker": "US GOVERNMENT · 30 SEP 2026",
+   "name": "vs the US",
+   "item": [
+    "gold/holdings_2026",
+    "us government",
+    "tonnes"
+   ],
+   "item_name": "US government gold",
+   "dec": 0,
+   "unit": " t",
+   "text": "Fort Knox and the other US vaults",
+   "sub": "US Treasury: 261,498,926 troy ounces; tonnes are our conversion.",
+   "vo": "The US government: about eight thousand tonnes."
+  },
+  {
+   "kicker": "HOMES AGAINST THE US",
+   "name": "Homes vs US",
+   "ratio": [
+    {
+     "item": [
+      "gold/holdings_2026",
+      "indian households",
+      "tonnes"
+     ]
+    },
+    {
+     "item": [
+      "gold/holdings_2026",
+      "us government",
+      "tonnes"
+     ]
+    }
+   ],
+   "dec": 0,
+   "unit": "×",
+   "text": "as much gold in Indian homes",
+   "bars": [
+    {
+     "name": "Indian homes",
+     "item": [
+      "gold/holdings_2026",
+      "indian households",
+      "tonnes"
+     ],
+     "unit": " t"
+    },
+    {
+     "name": "US government",
+     "item": [
+      "gold/holdings_2026",
+      "us government",
+      "tonnes"
+     ],
+     "unit": " t"
+    }
+   ],
+   "vo": "About three times as much."
+  },
+  {
+   "kicker": "THE RBI · END-MARCH 2026",
+   "name": "RBI",
+   "item": [
+    "gold/holdings_2026",
+    "rbi",
+    "tonnes"
+   ],
+   "item_name": "RBI gold",
+   "dec": 2,
+   "unit": " t",
+   "text": "held by the Reserve Bank of India",
+   "bars": [
+    {
+     "name": "RBI",
+     "item": [
+      "gold/holdings_2026",
+      "rbi",
+      "tonnes"
+     ],
+     "unit": " t"
+    },
+    {
+     "name": "Held in India",
+     "item": [
+      "gold/holdings_2026",
+      "rbi",
+      "held in India tonnes"
+     ],
+     "unit": " t"
+    }
+   ],
+   "vo": "The RBI itself: eight hundred eighty tonnes."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Homes hold",
+   "*over 25×*",
+   "the RBI's gold."
+  ],
+  "vo": "Indian homes hold over twenty-five times the RBI's gold.",
+  "note": "Dhanteras is 6 November. Household gold is an estimate."
+ },
+ "end": {
+  "q": "How much of your savings is gold?",
+  "sub": "Comment below.",
+  "vo": "How much of your savings is gold? Comment below."
+ },
+ "free_numbers": [
+  "23,537",
+  "25,537",
+  "261,498,926",
+  "25",
+  "6"
+ ],
+ "money_tests": [
+  {
+   "says": "Indian homes hold about three times the US government's gold",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "gold/holdings_2026",
+       "indian households",
+       "tonnes"
+      ]
+     },
+     {
+      "item": [
+       "gold/holdings_2026",
+       "us government",
+       "tonnes"
+      ]
+     }
+    ]
+   },
+   "min": 2.85,
+   "max": 3.15
+  },
+  {
+   "says": "even at the low estimate, homes hold close to three times the US",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "gold/holdings_2026",
+       "indian households",
+       "low tonnes"
+      ]
+     },
+     {
+      "item": [
+       "gold/holdings_2026",
+       "us government",
+       "tonnes"
+      ]
+     }
+    ]
+   },
+   "min": 2.85,
+   "max": 3.15
+  },
+  {
+   "says": "homes hold over 25 times the RBI's gold, at the low estimate too",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "gold/holdings_2026",
+       "indian households",
+       "low tonnes"
+      ]
+     },
+     {
+      "item": [
+       "gold/holdings_2026",
+       "rbi",
+       "tonnes"
+      ]
+     }
+    ]
+   },
+   "min": 25
+  },
+  {
+   "says": "the RBI held 880.52 t",
+   "value": {
+    "item": [
+     "gold/holdings_2026",
+     "rbi",
+     "tonnes"
+    ]
+   },
+   "min": 880.52,
+   "max": 880.52
+  }
+ ],
+ "yt_title": "Indian Homes Hold 3× as Much Gold as the US Government"
+}

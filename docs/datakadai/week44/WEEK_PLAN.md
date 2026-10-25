@@ -13,8 +13,8 @@ on Thu 29 Oct (MiniMax quota back about 08:05 IST). The Mon to Wed state compari
 
 | Day | Short A (new script) | Short B (built 22 Oct) | Long video |
 | --- | --- | --- | --- |
-| Mon 26 | Indian Homes Hold 3× More Gold Than the US Government · Pocket, Moment (once recorded) | none (held) | |
-| Tue 27 | The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (once recorded) | none (held) | |
+| Mon 26 | `gd01` Indian Homes Hold 3× as Much Gold as the US Government · Pocket, Moment (built 25 Oct, 29 s, text-led) | none (held) | |
+| Tue 27 | `cw01` The ₹10 Cola War: Campa vs Coke and Pepsi · Brands (built 25 Oct, 31 s, text-led) | none (held) | |
 | Wed 28 | India's Baby Map (NFHS-6) · State (once recorded) | none (held) | |
 | Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: Who Wins on Money? 5 Rounds, re-voiced that morning) | | **India Is Running Out of Babies. Here's the Map.** |
 | Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat or Rajasthan: Where Do Women and Girls Do Better? (re-cut, voiced Thu) | |

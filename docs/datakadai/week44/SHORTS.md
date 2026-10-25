@@ -12,6 +12,11 @@ sentence each, the UPI Short loses the festival set-up. Every number kept is unc
 
 ## Mon 26 Oct · Indian Homes Hold 3× More Gold Than the US Government (about 29 s)
 
+> **Built 25 Oct as `gd01`** (29 s, text-led, no narration): config `public/datayt/beats/configs/gd01.json`, pack
+> `docs/datakadai/posts/2026-10-26-gd01.md`. The built version replaces this table: the 36,000 t central-bank line is cut
+> (no source found), US is 8,134 t from the US Treasury (30 Sep 2026), RBI 880.52 t from the RBI (end-March 2026), and the
+> title is now "Indian Homes Hold 3× as Much Gold as the US Government" ("3× more" can be read as 4×).
+
 - **Need:** Pocket, Moment (Dhanteras 6 Nov) · **Stamps:** 🟡 ESTIMATE (households), 🟢 OFFICIAL (central banks)
 - **Visual:** gold bangle pile vs Fort Knox bars on a weighing scale (tharasu); counter ticks to 25,000 t.
 
@@ -31,6 +36,11 @@ sentence each, the UPI Short loses the festival set-up. Every number kept is unc
 ---
 
 ## Tue 27 Oct · Kadai Wars S1E1 · The ₹10 Cola War: Campa vs Coke and Pepsi (about 29 s)
+
+> **Built 25 Oct as `cw01`** (31 s, text-led, no narration): config `public/datayt/beats/configs/cw01.json`, pack
+> `docs/datakadai/posts/2026-10-27-cw01.md`. The built version replaces this table: the ₹10 vs ₹20 hook is gone (Coca-Cola
+> also sells 200 ml at ₹10), and the story is the NielsenIQ shares of all soft drinks: Coke and Pepsi 93 % → 85 %, Campa and
+> Lahori Zeera about 7 % → almost 15 % (Jan–Sep 2024 → 2025), then the ₹10 packs.
 
 - **Need:** Brands · **Stamps:** 🟡 ESTIMATE (share), 🟢 prices from packs
 - **Visual:** two bottles on price tags; per-ml price comparison; share bar 7 % → 15 %.

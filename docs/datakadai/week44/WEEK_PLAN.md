@@ -9,13 +9,13 @@ Each day: **Short A** is new from `CALENDAR_NOV_2026.md` (Pocket, Moment, Brands
 
 | Day | Short A (new script) | Short B (built 22 Oct) | Long video |
 | --- | --- | --- | --- |
-| Mon 26 | Indian Homes Hold 3× More Gold Than the US Government · Pocket, Moment | `vs03` Maharashtra vs Gujarat: 5 Rounds of Economy Data | |
-| Tue 27 | The ₹10 Cola War: Campa vs Coke and Pepsi · Brands | `vs05` Karnataka vs Tamil Nadu: 5 Rounds, Power and 5G | |
-| Wed 28 | India's Baby Map (NFHS-6) · State | `cn02` Bank Loans vs State Output: Delhi at 153%, Top 5 | |
-| Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: 5 Rounds of Money Data) | | **India Is Running Out of Babies. Here's the Map.** |
-| Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat vs Rajasthan: 5 Rounds on Women and Girls | |
-| Sat 31 | Which State Pays India's GST? · State, Pocket | `cn08` Kerala or West Bengal? 4 Rounds of Higher or Lower | 10 Minutes vs DMart vs the Kirana Anna (only if the basket test is shot Mon 26; otherwise move to Sat 7 Nov) |
-| Sun 1 | UPI October Scorecard: Festive Record? · Pocket, Moment (NPCI releases that day) | `vs07` West Bengal vs Odisha: 5 Rounds of School and Health Data | |
+| Mon 26 | Indian Homes Hold 3× More Gold Than the US Government · Pocket, Moment | `vs03` Maharashtra vs Gujarat: Which Economy Wins? 5 Rounds | |
+| Tue 27 | The ₹10 Cola War: Campa vs Coke and Pepsi · Brands | `vs05` Karnataka Wins on 5G. Tamil Nadu Wins on Power. Who Wins? | |
+| Wed 28 | India's Baby Map (NFHS-6) · State | `cn02` Delhi Owes Banks More Than Its Whole Year's Output | |
+| Thu 29 | Diwali Gold: Indians Buy Less, Pay More · Moment (only when the WGC Q3 report is out; otherwise `vs02` Punjab vs Haryana: Who Wins on Money? 5 Rounds) | | **India Is Running Out of Babies. Here's the Map.** |
+| Fri 30 | 110 Crore Orders in 10 Minutes · Brands, Pocket | `vs06` Gujarat or Rajasthan: Where Do Women and Girls Do Better? | |
+| Sat 31 | Which State Pays India's GST? · State, Pocket | `cn08` Can You Beat This India Quiz? 4 Rounds of Higher or Lower | 10 Minutes vs DMart vs the Kirana Anna (only if the basket test is shot Mon 26; otherwise move to Sat 7 Nov) |
+| Sun 1 | UPI October Scorecard: Festive Record? · Pocket, Moment (NPCI releases that day) | `vs07` Odisha Wins on Mothers. West Bengal Wins on Schools. | |
 
 Scripts: Short A in `SHORTS.md`, long videos in `LONG_baby_map.md` and `LONG_quick_commerce.md`. Short B scripts and
 captions in `../posts/2026-10-22-<id>.md`, videos in `out/datakadai/daily/2026-10-22/<id>/`.

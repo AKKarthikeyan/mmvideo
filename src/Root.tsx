@@ -26,6 +26,7 @@ import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
 import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
 import {IllusDev, IllusIcon} from "./vx/illus/Dev";
 import {IllusThumb} from "./vx/illus/Thumb";
+import {DataKadaiCompositions} from "./datakadai/DataKadaiVideos";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -45,6 +46,7 @@ export const RemotionRoot: React.FC = () => (
     <ExplainerCompositions/>
     <MoatVerticalComposition/>
     <CarouselCompositions/>
+    <DataKadaiCompositions/>
     <NapkinCompositions/>
     <Still id="YTBanner" component={Banner} width={2560} height={1440}/>
     <Composition id="HAND-shyam" component={ShyamNapkin} durationInFrames={nTotal} fps={NFPS} width={1080} height={1920}/>

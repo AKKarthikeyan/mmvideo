@@ -43,6 +43,9 @@
       .row .bfill { height: 12px; background: var(--acc); transform-origin: 0 50%; }
       .plab { position: absolute; font: 700 32px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; letter-spacing: 0.03em;
         background: var(--bg); padding: 6px 10px 8px; border-left: 5px solid var(--acc); }
+      #dleg { position: absolute; left: 110px; top: 862px; width: 800px; display: flex; flex-wrap: wrap; column-gap: 26px; row-gap: 14px; align-items: center;
+        font: 400 26px/1 Inter, sans-serif; color: var(--muted); }
+      #dleg i { display: inline-block; width: 34px; height: 22px; margin-right: 8px; vertical-align: -4px; }
       /* ranking */
       .rk { position: absolute; left: 110px; width: 1700px; }
       .rk .n { font: 700 46px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
@@ -62,6 +65,7 @@
         <div id="hTitle"></div><div id="hNum"></div><div id="hSub"></div><div class="chips" id="hChips"></div>
       </div>
       <div class="scene" id="s-growth"><div class="h">FIVE YEARS OF EXPORTS</div><div class="unit">₹ crore, financial years April to March</div><div id="bars"></div></div>
+      <div class="scene" id="s-district"><div class="h">WHERE IT IS MADE</div><div class="unit">Export value by district of origin, FY 2025–26</div><div id="dlist"></div><div id="dleg"></div><div id="dlabs"></div></div>
       <div class="scene" id="s-ports"><div class="h">WHERE IT LEAVES INDIA</div><div class="unit">Share of export value by Indian port, FY 2025–26</div><div id="prow"></div><div id="plabs"></div></div>
       <div class="scene" id="s-dest"><div class="h">WHO BUYS IT</div><div class="unit">Share of export value by destination, FY 2025–26</div><div id="drow"></div></div>
       <div class="scene" id="s-rank"><div class="h">GROWTH IN 2025–26</div><div class="unit">Change in export value on 2024–25 · exports over ₹20,000 crore</div><div id="rrow"></div></div>
@@ -103,17 +107,38 @@
       }
       const segs = (arr, path) => { for (let i = 0; i < arr.length; i += 4) { const [a, b] = px(arr[i], arr[i + 1]), [c, d] = px(arr[i + 2], arr[i + 3]); path.moveTo(a, b); path.lineTo(c, d); } };
       segs(window.INDIA.states, states); segs(window.INDIA.outline, outline);
-      const drawMap = (a, t, u) => {
+      // district shading: five classes by share of the top district's value
+      const D = S.districts ? S.districts.rows : [];
+      const dmaxv = D.length ? D[0].v : 1;
+      const BINS = [0.5, 0.15, 0.03, 0.005, 0];
+      const ramp = (k) => { const a = css("--land"), b = css("--acc");
+        const h = (c) => [1, 3, 5].map((j) => parseInt(c.slice(j, j + 2), 16)); const [x, y] = [h(a), h(b)], u = [0.18, 0.36, 0.56, 0.78, 1][k];
+        return `rgb(${x.map((v, j) => Math.round(v + (y[j] - v) * u)).join(",")})`; };
+      const dpaths = D.map((d, rank) => {
+        const path = new Path2D();
+        for (const r of window.INDIA.districts[d.i].rings) {
+          for (let i = 0; i < r.length; i += 2) { const [x, y] = px(r[i], r[i + 1]); i ? path.lineTo(x, y) : path.moveTo(x, y); }
+          path.closePath();
+        }
+        return { path, cls: 4 - BINS.findIndex((b) => d.v / dmaxv >= b), rank };
+      });
+      const drawMap = (a, t, u, da, du) => {
         g.clearRect(0, 0, 1920, 1080);
         if (a <= 0) return;
         g.globalAlpha = a;
         g.fillStyle = css("--land"); g.fill(land, "evenodd");
+        if (da > 0) for (const d of dpaths) {
+          const k = HF.clamp01((du - 0.6 - (d.rank / Math.max(1, dpaths.length)) * 2.2) / 0.4);
+          if (k <= 0) continue;
+          g.globalAlpha = a * da * k; g.fillStyle = ramp(d.cls); g.fill(d.path, "evenodd");
+        }
+        g.globalAlpha = a;
         g.strokeStyle = css("--dline"); g.lineWidth = 0.6; g.stroke(land);
         g.strokeStyle = css("--sline"); g.lineWidth = 1.4; g.stroke(states);
         g.strokeStyle = css("--outl"); g.lineWidth = 1.8; g.stroke(outline);
         // port bubbles: area proportional to share
         (S.ports || []).forEach((p, i) => {
-          if (p.lat == null) return;
+          if (p.lat == null || u < 0) return;
           const [x, y] = px(p.lon, p.lat), k = E.back((u - 0.8 - i * 0.35) / 0.6, 1.4);
           if (k <= 0) return;
           const r = Math.sqrt(p.pct) * 10.5 * k;
@@ -140,6 +165,15 @@
             `<div class="bl" style="left:${x - 60}px;width:310px">${f.fy}</div>`);
           f.h = (f.cr / max) * 470;
         });
+        if (D.length) {
+          const tot = D.reduce((x, d) => x + d.v, 0);
+          D.slice(0, 5).forEach((d, i) => {
+            $("dlist").insertAdjacentHTML("beforeend", `<div class="row" id="dl${i}" style="top:${300 + i * 112}px"><div class="n">${d.n} <span style="font:400 28px Inter;color:var(--muted)">${d.s}</span></div><div class="p">${(d.v / tot * 100).toFixed(1)}%</div><div class="track"><div class="bfill" id="dlf${i}" style="width:${(d.v / D[0].v) * 100}%"></div></div></div>`);
+          });
+          const th = BINS.slice(0, 4).map((b) => inr(dmaxv * b));
+          $("dleg").innerHTML = [4, 3, 2, 1, 0].map((c, j) => `<span><i style="background:${ramp(c)}"></i>${j === 0 ? th[0] + "+" : j === 4 ? "under " + th[3] : "from " + th[j]}</span>`).join("") +
+            `<span><i style="background:${css("--land")};outline:1px solid var(--sline)"></i>no figure</span>`;
+        }
         S.ports = S.ports.slice(0, 4);
         const pmax = Math.max(...S.ports.map((p) => p.pct));
         // map labels for the top three: east-coast ports label to the right, the rest to the left; same-side labels kept 52 px apart
@@ -195,7 +229,13 @@
           $(`bv${i}`).style.opacity = F(u, 0.9 + i * 0.35, 99, 0.3);
         });
         u = local("ports", t);
-        drawMap(vis("ports", t), t, u);
+        drawMap(Math.max(vis("ports", t), vis("district", t)), t, vis("ports", t) > 0 ? u : -1, vis("district", t), local("district", t));
+        const du = local("district", t);
+        if (du >= 0) D.slice(0, 5).forEach((d, i) => {
+          $(`dl${i}`).style.opacity = F(du, 1.2 + i * 0.3, 99, 0.3);
+          $(`dlf${i}`).style.transform = `scaleX(${E.o3((du - 1.3 - i * 0.3) / 0.7)})`;
+        });
+        $("dleg").style.opacity = F(du, 2.6, 99, 0.4);
         if (u >= 0) S.ports.forEach((p, i) => {
           $(`pr${i}`).style.opacity = F(u, 0.7 + i * 0.3, 99, 0.3);
           $(`pf${i}`).style.transform = `scaleX(${E.o3((u - 0.8 - i * 0.3) / 0.7)})`;

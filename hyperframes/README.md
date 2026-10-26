@@ -75,6 +75,38 @@ whole-state outlines with 726 districts; the tools use the state outline where o
 `vx2hf.py` converts a VoxEngine `public/vx/<id>/data.json` into a HyperFrames project (title, strips, counter, cards, clip
 and map scenes so far), for testing a whole video in HyperFrames.
 
+## Export story videos
+
+`videos/` holds data-driven export videos built from one template (`videos/_template/index.html`) and a generated
+`story.js` per video. `tools/export_videos.py` defines the videos (topic, channel, theme, title) and computes every
+number from DGCIS trade data (principal commodity × destination country × Indian port, monthly, via the ODbL mirror
+github.com/Vonter/india-export-import). Scenes: hook number, five-year growth, district map, exit ports on an
+all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and `kadai` (Data Kadai, warm white).
+
+| Video | Channel | Story (FY 2025–26) |
+| --- | --- | --- |
+| `ia-poultry` | Indica Atlas | Poultry exports ₹2,810 crore, nearly double; 66% left via Kochi and Thoothukudi; UAE 37% |
+| `ia-seafood` | Indica Atlas | Marine products ₹74,521 crore, +19%; Visakhapatnam 27%; USA 27%, China 18% |
+| `ia-spices` | Indica Atlas | Spices ₹37,644 crore, flat; Kochi and Nhava Sheva 41%; USA 14%, China 12% |
+| `dk-phones` | Data Kadai | Phones and telecom gear ₹3.03 lakh crore, +37%, 5.5× in four years; 69% flown from Chennai and Bengaluru; USA 58% |
+| `dk-buffalo` | Data Kadai | Buffalo meat ₹45,196 crore, +31%; UP inland depots (Dadri, Kanpur) 54%; Vietnam 18% |
+| `dk-growth` | Data Kadai | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
+
+```sh
+python3 hyperframes/tools/export_videos.py            # rebuild every story.js (downloads the mirror once, ~170 MB)
+python3 hyperframes/tools/hf.py sync videos
+python3 hyperframes/tools/hf.py render ia-poultry     # -> out/hyperframes/ia-poultry.mp4
+```
+
+**District map.** The mirror has no district of origin. Put DGCIS "Export by District of Origin" figures in
+`out/hyperframes/cache/district_exports.csv` with columns `state,district,commodity,value_crore` (commodity spelled as
+in DGCIS principal commodities, e.g. `POULTRY PRODUCTS`) and rebuild: the "Where it is made" scene appears, shading
+districts on the 820-district map (`shared/geo/india_districts.js`, from `tools/india_districts.py`) with the top five
+listed. Names are matched by state and name with `ALIAS` in `export_videos.py`; unmatched names are printed, never
+guessed. Without the file the scene is left out. A missing district means no reported figure, not zero.
+
+The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
+
 ## Rules for using these in a published video
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic

@@ -7,7 +7,8 @@ usage:
   hf.py render <id ...|all>      MP4s -> out/hyperframes/<id>.mp4
   hf.py reel                     title cards + every rendered sample -> out/hyperframes/visual-samples-reel.mp4
                                  and hyperframes/stills/contact-sheet.jpg
-Ids are folder names under hyperframes/samples (s01-satellite ...) or just the number (1, 01).
+Ids are folder names under hyperframes/samples (s01-satellite ...) or just the number (1, 01), or folder names under
+hyperframes/videos (ia-poultry ...); "videos" means every video.
 Needs Node 22+ (HyperFrames runs through npx) and ffmpeg on PATH.
 """
 import shutil
@@ -19,6 +20,7 @@ HF = "hyperframes@0.8.202"
 ROOT = Path(__file__).resolve().parents[2]
 LIB = ROOT / "hyperframes"
 SAMPLES = LIB / "samples"
+VIDEOS = LIB / "videos"
 OUT = ROOT / "out" / "hyperframes"
 CARD_SEC = 1.6
 # images a sample uses that already live in public/; copied at sync time instead of kept twice in git
@@ -31,13 +33,20 @@ LINKS = {
 PUBLIC_FONTS = ["Oswald-700.woff2", "Virgil-Regular.woff2"]
 
 
+def project(name):
+    return VIDEOS / name if (VIDEOS / name).is_dir() else SAMPLES / name
+
+
 def ids(args):
     names = sorted(p.name for p in SAMPLES.iterdir() if p.is_dir() and p.name.startswith("s"))
+    vids = sorted(p.name for p in VIDEOS.iterdir() if p.is_dir() and not p.name.startswith("_")) if VIDEOS.exists() else []
+    if args == ["videos"]:
+        return vids
     if not args or args == ["all"]:
         return names
     out = []
     for a in args:
-        hit = [n for n in names if n == a or (a.isdigit() and n.startswith(f"s{int(a):02d}-"))]
+        hit = [n for n in names + vids if n == a or (a.isdigit() and n.startswith(f"s{int(a):02d}-"))]
         if not hit:
             sys.exit(f"no sample called {a}; have: {', '.join(names)}")
         out += hit
@@ -46,7 +55,7 @@ def ids(args):
 
 def sync(names):
     for n in names + ["cards"]:
-        a = SAMPLES / n / "assets"
+        a = project(n) / "assets"
         for sub in ("lib", "fonts", "css"):
             (a / sub).mkdir(parents=True, exist_ok=True)
         for f in (LIB / "shared" / "lib").iterdir():
@@ -56,6 +65,9 @@ def sync(names):
         for f in PUBLIC_FONTS:
             shutil.copy(ROOT / "public" / "fonts" / f, a / "fonts")
         shutil.copy(LIB / "shared" / "base.css", a / "css")
+        if project(n).parent == VIDEOS:
+            (a / "geo").mkdir(exist_ok=True)
+            shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
     for dst, src in LINKS.items():
         d = SAMPLES / dst
         d.parent.mkdir(parents=True, exist_ok=True)
@@ -69,7 +81,7 @@ def hf(cwd, *args):
 
 def render(n):
     OUT.mkdir(parents=True, exist_ok=True)
-    hf(SAMPLES / n, "render", "-o", str(OUT / f"{n}.mp4"))
+    hf(project(n), "render", "-o", str(OUT / f"{n}.mp4"))
 
 
 def reel():
@@ -119,12 +131,12 @@ def main():
         sys.exit(__doc__)
     cmd, args = sys.argv[1], sys.argv[2:]
     if cmd == "sync":
-        sync(ids(args))
+        sync(ids(args) if args else ids([]) + ids(["videos"]))
     elif cmd == "check":
-        sys.exit(subprocess.run(["npx", "--yes", HF, "check"], cwd=SAMPLES / ids(args[:1])[0]).returncode)
+        sys.exit(subprocess.run(["npx", "--yes", HF, "check"], cwd=project(ids(args[:1])[0])).returncode)
     elif cmd == "snap":
         n = ids(args[:1])[0]
-        hf(SAMPLES / n, "snapshot", "--at", args[1], "--no-end", "-o", str(OUT / "snap" / n))
+        hf(project(n), "snapshot", "--at", args[1], "--no-end", "-o", str(OUT / "snap" / n))
     elif cmd == "render":
         for n in ids(args):
             render(n)

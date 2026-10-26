@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- Sample 12 · Scale comparison: ₹1 lakh crore in ₹500 notes, stacked (2 billion notes × 0.1 mm assumed ≈ 200 km). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Scale comparison</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #cv { position: absolute; inset: 0; }
+      #scrimT { position: absolute; left: 0; top: 0; width: 1920px; height: 400px; background: linear-gradient(rgba(6, 9, 14, 0.62), rgba(6, 9, 14, 0)); }
+      #h { position: absolute; right: 110px; top: 80px; text-align: right; }
+      #h .v { font: 700 150px/1 Oswald, sans-serif; color: #f7f3ea; font-variant-numeric: tabular-nums; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5); }
+      #h .l { font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.12em; color: #f7f3ea; margin-top: 6px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); }
+      #sub { position: absolute; left: 110px; top: 214px; font: 400 34px/1.25 Inter, sans-serif; color: #e3e8ee; }
+      .src { color: #c8cdd3; font-size: 24px; line-height: 1.35; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="11" data-width="1920" data-height="1080">
+      <canvas id="cv" width="1920" height="1080"></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">DATA KADAI · SCALE</div>
+      <div class="head">HOW TALL IS ₹1 LAKH CRORE?</div>
+      <div id="sub">In ₹500 notes: 2 billion of them, stacked</div>
+      <div id="h"><div class="v" id="hv">0 M</div><div class="l">HEIGHT OF THE STACK</div></div>
+      <div class="src">Our arithmetic: ₹1,00,000 crore ÷ ₹500 = 2 billion notes × 0.1 mm each (assumed)<br />Burj Khalifa 828 m · Everest 8,849 m · edge of space (Kármán line) 100 km · stack width not to scale</div>
+      <div class="cap" id="c1">₹1 lakh crore in ₹500 notes is two billion notes.</div>
+      <div class="cap" id="c2">Stacked, they would rise about 200 km: past Everest, past the edge of space.</div>
+    </div>
+    <script>
+      const H = HF.setup(11), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const g = $("cv").getContext("2d");
+      const GROUND = 930, TOPM = 300, SX = 1180;
+      const TOTAL = 2e9 * 0.0001; // metres
+      let sd = 4; const rnd = () => ((sd = (sd * 16807) % 2147483647) / 2147483647);
+      const stars = Array.from({ length: 260 }, () => [rnd() * 1920, rnd() * 1080, 0.6 + rnd() * 1.6]);
+      const mix = (a, b, u) => a.map((v, i) => Math.round(v + (b[i] - v) * u));
+      const sky = (alt) => {
+        const u1 = HF.clamp01(Math.log10(Math.max(alt, 1) / 2000) / Math.log10(25)), u2 = HF.clamp01(Math.log10(Math.max(alt, 1) / 30000) / Math.log10(4));
+        return [mix(mix([126, 164, 201], [24, 50, 82], u1), [5, 7, 11], u2), mix(mix([214, 226, 236], [60, 96, 140], u1), [12, 18, 30], u2)];
+      };
+      const fmt = (m) => (m < 1 ? `${Math.round(m * 100)} CM` : m < 1000 ? `${Math.round(m)} M` : `${(m / 1000).toFixed(m < 10000 ? 1 : 0)} KM`);
+      const LAND = [
+        { name: "BURJ KHALIFA", h: 828, x: 520, w: 0.16 },
+        { name: "MOUNT EVEREST", h: 8849, x: 470, w: 2.4 },
+      ];
+      H.render = (t) => {
+        // stack height grows on a log scale, camera keeps the top in view
+        const u = E.io2((t - 0.8) / 8.2);
+        const hgt = Math.pow(10, L(-1, Math.log10(TOTAL), u));
+        const view = Math.max(hgt * 1.35, 1.2);
+        const k = (GROUND - TOPM) / view; // px per metre
+        const Y = (m) => GROUND - m * k;
+        const [top, bot] = sky(view);
+        const gr = g.createLinearGradient(0, 0, 0, GROUND);
+        gr.addColorStop(0, `rgb(${top})`); gr.addColorStop(1, `rgb(${bot})`);
+        g.fillStyle = gr; g.fillRect(0, 0, 1920, 1080);
+        const starA = HF.clamp01(Math.log10(view / 40000) / Math.log10(3));
+        if (starA > 0) { g.fillStyle = `rgba(230, 238, 255, ${0.8 * starA})`; for (const [x, y, r] of stars) { g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fill(); } }
+        // ground, curving once the view is high enough
+        const curve = HF.clamp01(Math.log10(view / 20000) / Math.log10(10)) * 120;
+        g.fillStyle = "#1d2a22";
+        g.beginPath(); g.moveTo(0, 1080); g.lineTo(0, GROUND + curve); g.quadraticCurveTo(960, GROUND - curve, 1920, GROUND + curve); g.lineTo(1920, 1080); g.fill();
+        g.strokeStyle = "rgba(160, 205, 255, 0.55)"; g.lineWidth = 3;
+        g.beginPath(); g.moveTo(0, GROUND + curve); g.quadraticCurveTo(960, GROUND - curve, 1920, GROUND + curve); g.stroke();
+        // landmarks at true scale
+        g.font = "700 30px Oswald"; g.textBaseline = "alphabetic";
+        for (const lm of LAND) {
+          const hpx = lm.h * k;
+          // a landmark appears only once its summit is inside the frame, and fades as it shrinks to a speck
+          if (hpx < 3 || lm.h > view) continue;
+          const a = HF.clamp01((view - lm.h) / (lm.h * 0.25)) * HF.clamp01((hpx - 3) / 30);
+          g.fillStyle = `rgba(12, 16, 22, ${0.85 * a})`;
+          g.beginPath();
+          if (lm.name === "BURJ KHALIFA") {
+            const w = lm.h * lm.w * k;
+            g.moveTo(lm.x - w / 2, GROUND); g.lineTo(lm.x - w * 0.32, Y(lm.h * 0.45)); g.lineTo(lm.x - w * 0.16, Y(lm.h * 0.72));
+            g.lineTo(lm.x - w * 0.04, Y(lm.h * 0.9)); g.lineTo(lm.x, Y(lm.h)); g.lineTo(lm.x + w * 0.04, Y(lm.h * 0.9));
+            g.lineTo(lm.x + w * 0.16, Y(lm.h * 0.72)); g.lineTo(lm.x + w * 0.32, Y(lm.h * 0.45)); g.lineTo(lm.x + w / 2, GROUND);
+          } else {
+            const w = lm.h * lm.w * k;
+            g.moveTo(lm.x - w, GROUND); g.lineTo(lm.x - w * 0.45, Y(lm.h * 0.55)); g.lineTo(lm.x - w * 0.2, Y(lm.h * 0.78));
+            g.lineTo(lm.x, Y(lm.h)); g.lineTo(lm.x + w * 0.18, Y(lm.h * 0.83)); g.lineTo(lm.x + w * 0.5, Y(lm.h * 0.6)); g.lineTo(lm.x + w * 1.1, GROUND);
+          }
+          g.fill();
+          if (hpx > 40) {
+            g.fillStyle = `rgba(247, 243, 234, ${a})`;
+            g.fillText(`${lm.name} · ${lm.h.toLocaleString("en-IN")} M`, lm.x + 24, Math.max(Y(lm.h) - 14, 290));
+          }
+        }
+        // cruising airliner (~11 km) and the Kármán line (100 km)
+        const marks = [[11000, "AIRLINERS CRUISE · ~11 KM"], [100000, "EDGE OF SPACE · 100 KM"]];
+        for (const [m, lab] of marks) {
+          const y = Y(m);
+          if (y < TOPM - 40 || y > GROUND) continue;
+          const a = HF.clamp01((GROUND - y) / 80);
+          g.setLineDash([14, 12]); g.strokeStyle = `rgba(217, 164, 65, ${0.9 * a})`; g.lineWidth = 2.5;
+          g.beginPath(); g.moveTo(120, y); g.lineTo(1800, y); g.stroke(); g.setLineDash([]);
+          g.fillStyle = `rgba(217, 164, 65, ${a})`; g.fillText(lab, 130, y - 12);
+        }
+        // the stack: a column of notes, paper on the lit side
+        const top_ = Y(hgt);
+        const sg = g.createLinearGradient(SX - 70, 0, SX + 70, 0);
+        sg.addColorStop(0, "#b8ad94"); sg.addColorStop(0.45, "#efe6d2"); sg.addColorStop(1, "#a59a82");
+        g.fillStyle = sg; g.fillRect(SX - 70, top_, 140, GROUND - top_);
+        const lines = (GROUND - top_) / (0.0001 * k);
+        if (lines < 400) { g.strokeStyle = "rgba(90, 80, 60, 0.35)"; g.lineWidth = 1; for (let i = 1; i < lines; i++) { const y = GROUND - i * 0.0001 * k; g.beginPath(); g.moveTo(SX - 70, y); g.lineTo(SX + 70, y); g.stroke(); } }
+        g.fillStyle = "#d9a441"; g.fillRect(SX - 80, top_ - 6, 160, 6);
+        $("hv").textContent = fmt(hgt);
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.25, 99, 0.6);
+        $("sub").style.opacity = F(t, 0.5, 99, 0.5);
+        $("c1").style.opacity = F(t, 0.8, 5.0, 0.3);
+        $("c2").style.opacity = F(t, 5.3, 99, 0.3);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

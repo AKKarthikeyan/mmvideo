@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  Indica Atlas pilot: Lok Sabha seats as lit 3D prisms. Every frame is render(t) from one
+  linear GSAP clock, so seeking is exact. Geometry: assets/geo3d.js (hf_tools/geo3d.py).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Indica Atlas 3D seats pilot</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/geo3d.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <style>
+      @font-face { font-family: Oswald; font-weight: 700; src: url("assets/fonts/Oswald-700.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0b0e13; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0b0e13; }
+      #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+      #ice { position: absolute; inset: 0; opacity: 0;
+        background: radial-gradient(900px 620px at 60% 55%, rgba(150, 192, 222, 0.16), transparent 70%); }
+      #vig { position: absolute; inset: 0;
+        background: radial-gradient(1300px 820px at 58% 52%, transparent 52%, rgba(0, 0, 0, 0.62) 100%); }
+      #grain { position: absolute; inset: -64px; opacity: 0.09; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/></filter><rect width='256' height='256' filter='url(%23n)'/></svg>"); }
+      #kicker { position: absolute; left: 110px; top: 92px; font: 700 28px/1 Oswald, sans-serif;
+        letter-spacing: 0.22em; color: #d9a441; opacity: 0; }
+      #head { position: absolute; left: 110px; top: 134px; font: 700 66px/1 Oswald, sans-serif;
+        letter-spacing: 0.03em; color: #f7f3ea; opacity: 0; }
+      #countbox { position: absolute; left: 106px; top: 222px; opacity: 0; display: flex; align-items: baseline; gap: 18px; }
+      #count { font: 700 150px/1 Oswald, sans-serif; color: #d9a441; font-variant-numeric: tabular-nums; }
+      #countlab { font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: #c8cdd3; }
+      #labels .n { position: absolute; left: 0; top: 0; font: 700 30px/1 Oswald, sans-serif; color: #f7f3ea;
+        background: rgba(11, 14, 19, 0.78); padding: 4px 10px 5px; border-radius: 5px; opacity: 0; white-space: nowrap; }
+      #lines { position: absolute; inset: 0; }
+      .card { position: absolute; left: 1330px; top: 330px; width: 430px; padding: 22px 28px 20px; opacity: 0;
+        transform-origin: 0% 100%; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55); }
+      .card .nm { font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.08em; }
+      .card .big { font: 700 150px/0.95 Oswald, sans-serif; margin-top: 6px; }
+      .card .sub { font: 700 28px/1.1 Oswald, sans-serif; letter-spacing: 0.06em; margin-top: 4px; }
+      #cardUP { background: #d9a441; color: #1a1a1a; }
+      #cardTN { background: #f7f3ea; color: #1a1a1a; }
+      #cardTN .big { color: #b3241a; }
+      #stamp { position: absolute; left: 1290px; top: 112px; padding: 12px 26px; border: 6px solid #e0402f;
+        color: #e0402f; font: 700 60px/1 Oswald, sans-serif; letter-spacing: 0.06em; opacity: 0;
+        background: rgba(11, 14, 19, 0.55); }
+      #src { position: absolute; right: 110px; bottom: 112px; font: 28px/1 "DejaVu Sans Mono", monospace;
+        color: rgba(247, 243, 234, 0.72); }
+      #cap { position: absolute; left: 0; right: 0; bottom: 40px; height: 64px; }
+      #cap .cue { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); white-space: nowrap;
+        font: 40px/1.3 "DejaVu Sans", sans-serif; color: #f7f3ea; background: rgba(11, 14, 19, 0.66);
+        padding: 6px 20px; border-radius: 6px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="16" data-width="1920" data-height="1080">
+      <canvas id="gl" class="clip" data-start="0" data-duration="16" data-track-index="1"></canvas>
+      <div id="ice" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="labels"></div>
+      <svg id="lines" width="1920" height="1080" viewBox="0 0 1920 1080" data-layout-ignore>
+        <line id="lnUP" stroke="#d9a441" stroke-width="3" opacity="0" />
+        <circle id="dotUP" r="7" fill="#d9a441" opacity="0" />
+        <line id="lnTN" stroke="#f7f3ea" stroke-width="3" opacity="0" />
+        <circle id="dotTN" r="7" fill="#f7f3ea" opacity="0" />
+      </svg>
+      <div id="kicker">INDICA ATLAS · DELIMITATION</div>
+      <div id="head">LOK SABHA SEATS BY STATE</div>
+      <div id="countbox"><span id="count">0</span><span id="countlab">SEATS</span></div>
+      <div id="stamp">FROZEN SINCE 1971</div>
+      <div class="card" id="cardUP"><div class="nm">UTTAR PRADESH</div><div class="big">80</div><div class="sub" id="subUP"></div></div>
+      <div class="card" id="cardTN"><div class="nm">TAMIL NADU</div><div class="big">39</div><div class="sub" id="subTN"></div></div>
+      <div id="src">Seats: ECI · Map: india-maps-data (unverified)</div>
+      <div id="cap"></div>
+    </div>
+
+    <script>
+      (function () {
+        var SAY = "India has five hundred and forty three Lok Sabha seats. How they are shared between the states has been frozen since nineteen seventy one. Uttar Pradesh has eighty. Tamil Nadu has thirty nine.";
+        var CUES = [["India has", "India has 543 Lok Sabha seats."],
+          ["How they", "How they are shared between the states has been frozen since 1971."],
+          ["Uttar", "Uttar Pradesh has 80."], ["Tamil", "Tamil Nadu has 39."]];
+        var SEC = 15.5, D = 16;
+        function at(p) { return (SAY.indexOf(p) / SAY.length) * SEC; }
+        var T = { fz: at("frozen"), up: at("Uttar"), tn: at("Tamil"), D: D };
+        var clock = { t: 0 };
+        var host = { T: T, clock: clock, render: null };
+        window.__ia = host;
+        window.__hf = window.__hf || {};
+        window.__hf.buildReady = window.__hf.buildReady || {};
+        window.__hf.buildReady.main = new Promise(function (res) { host.ready = res; });
+
+        var tl = gsap.timeline({ paused: true });
+        tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: function () { if (host.render) host.render(clock.t); } }, 0);
+        tl.fromTo("#kicker", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+        tl.fromTo("#head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.35);
+        tl.fromTo("#countbox", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 1.7);
+        tl.fromTo("#ice", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, T.fz);
+        tl.fromTo("#stamp", { opacity: 0, scale: 1.7, rotation: -14 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.45, ease: "back.out(2)" }, T.fz + 0.15);
+        tl.to("#stamp", { opacity: 0, duration: 0.4 }, T.up);
+        tl.to(["#kicker", "#head", "#countbox"], { opacity: 0, y: -10, duration: 0.4, ease: "power2.in" }, T.up);
+        // Card times live in T so render(t) can fade the leader lines without reading the DOM.
+        T.upIn = T.up + 0.7; T.upOut = T.tn + 0.4; T.tnIn = T.tn + 0.5;
+        tl.fromTo("#cardUP", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, T.upIn);
+        tl.to("#cardUP", { opacity: 0, duration: 0.35 }, T.upOut);
+        tl.fromTo("#cardTN", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, T.tnIn);
+
+        var cap = document.getElementById("cap");
+        CUES.forEach(function (c, i) {
+          var el = document.createElement("div");
+          el.className = "cue";
+          el.textContent = c[1];
+          cap.appendChild(el);
+          tl.set(el, { opacity: 1 }, at(c[0]));
+          if (i + 1 < CUES.length) tl.set(el, { opacity: 0 }, at(CUES[i + 1][0]));
+        });
+        window.__timelines = window.__timelines || {};
+        window.__timelines.main = tl;
+      })();
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+
+      const H = window.__ia, T = H.T, D = T.D, G = window.GEO;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(1920, 1080, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFShadowMap;
+
+      const BG = 0x0b0e13;
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(BG);
+      scene.fog = new THREE.Fog(BG, 60, 140);
+      const camera = new THREE.PerspectiveCamera(34, 1920 / 1080, 0.5, 400);
+
+      scene.add(new THREE.HemisphereLight(0xdfe7ef, 0x0b0e13, 0.85));
+      const sun = new THREE.DirectionalLight(0xfff0d8, 2.6);
+      sun.position.set(-20, 32, 18);
+      sun.castShadow = true;
+      sun.shadow.mapSize.set(2048, 2048);
+      Object.assign(sun.shadow.camera, { left: -24, right: 24, top: 24, bottom: -24, near: 1, far: 120 });
+      sun.shadow.bias = -0.001;
+      sun.shadow.normalBias = 0.06;
+      scene.add(sun, sun.target);
+      const rim = new THREE.DirectionalLight(0x8fb3d9, 0.7);
+      rim.position.set(14, 12, -30);
+      scene.add(rim);
+
+      const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.MeshStandardMaterial({ color: 0x121820, roughness: 1 }));
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = -0.02;
+      ground.receiveShadow = true;
+      scene.add(ground);
+
+      // Map plane: x east, y north, z up; rotated so z is world up and north points away from the camera.
+      const map = new THREE.Group();
+      map.rotation.x = -Math.PI / 2;
+      scene.add(map);
+      const lines = (a) => {
+        const g = new THREE.BufferGeometry();
+        g.setAttribute("position", new THREE.Float32BufferAttribute(a, 3));
+        return g;
+      };
+      const segs = (flat, z) => {
+        const out = [];
+        for (let i = 0; i < flat.length; i += 4) out.push(flat[i], flat[i + 1], z, flat[i + 2], flat[i + 3], z);
+        return out;
+      };
+
+      const K = Math.cos((22 * Math.PI) / 180);
+      const gp = [];
+      for (let lon = 65; lon <= 100; lon += 5) gp.push((lon - 82.5) * K, -17, 0.004, (lon - 82.5) * K, 18, 0.004);
+      for (let lat = 5; lat <= 40; lat += 5) gp.push(-17.5 * K, lat - 22, 0.004, 17.5 * K, lat - 22, 0.004);
+      const gratMat = new THREE.LineBasicMaterial({ color: 0x334354, transparent: true, opacity: 0 });
+      map.add(new THREE.LineSegments(lines(gp), gratMat));
+      const coastMat = new THREE.LineBasicMaterial({ color: 0xeadfc6, transparent: true, opacity: 0 });
+      map.add(new THREE.LineSegments(lines(segs(G.coast, 0.01)), coastMat));
+
+      const col = (h) => new THREE.Color(h);
+      const LOW = col(0x34414f), HIGH = col(0xeadfc6), ICE_LO = col(0x2c4152), ICE_HI = col(0xbcd3e2);
+      const DIM = col(0x161d26), MUST = col(0xd9a441), RED = col(0xd62e1f);
+      const [bx0, , bx1] = G.box;
+      const pts = (r) => { const p = []; for (let i = 0; i < r.length; i += 2) p.push(new THREE.Vector2(r[i], r[i + 1])); return p; };
+
+      const states = G.states.map((s) => {
+        const shapes = s.polys.map((rings) => {
+          const sh = new THREE.Shape(pts(rings[0]));
+          for (let k = 1; k < rings.length; k++) sh.holes.push(new THREE.Path(pts(rings[k])));
+          return sh;
+        });
+        const mat = new THREE.MeshStandardMaterial({ roughness: 0.62, metalness: 0.04 });
+        const wall = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0 });
+        const mesh = new THREE.Mesh(new THREE.ExtrudeGeometry(shapes, { depth: 1, bevelEnabled: false, curveSegments: 1 }), [mat, wall]);
+        mesh.castShadow = mesh.receiveShadow = true;
+        const grp = new THREE.Group();
+        const edgeMat = new THREE.LineBasicMaterial({ color: BG, transparent: true, opacity: 0.6 });
+        grp.add(mesh, new THREE.LineSegments(lines(segs(s.edges, 1.002)), edgeMat));
+        map.add(grp);
+        const v = Math.sqrt(s.seats / 80);
+        return { ...s, grp, mat, wall, base: LOW.clone().lerp(HIGH, v), ice: ICE_LO.clone().lerp(ICE_HI, v),
+          light: 0.15 + (1.2 * (s.c[0] - bx0)) / (bx1 - bx0) };
+      });
+      [...states].sort((a, b) => b.seats - a.seats || a.c[0] - b.c[0]).forEach((s, i) => { s.rise = 2.0 + i * 0.075; });
+      const height = (s, r) => 0.06 + 0.06 * s.seats * r;
+      const UP = states.find((s) => s.name === "Uttar Pradesh");
+      const TN = states.find((s) => s.name === "Tamil Nadu");
+      document.getElementById("subUP").textContent = `SEATS · ${((UP.seats / 543) * 100).toFixed(1)}% OF 543`;
+      document.getElementById("subTN").textContent = `SEATS · ${((TN.seats / 543) * 100).toFixed(1)}% OF 543`;
+
+      const labelsEl = document.getElementById("labels");
+      const tall = states.filter((s) => s.seats >= 20).map((s) => {
+        const el = document.createElement("div");
+        el.className = "n";
+        el.textContent = s.seats;
+        labelsEl.appendChild(el);
+        return { s, el };
+      });
+
+      // Camera keys [time, position, target]; eased between keys, plus a slow yaw so it never stops dead.
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      const [ux, uz] = [UP.c[0], -UP.c[1]], [tx, tz] = [TN.c[0], -TN.c[1]];
+      const KEYS = [
+        [0.0, V(-5, 54, 6), V(-5, 0, 0.5)],
+        [1.8, V(-5, 50, 7), V(-5, 0, 0.3)],
+        [5.6, V(5, 29, 35), V(-3, 0.5, 0.8)],
+        [T.fz + 0.8, V(-8, 28, 34), V(-3.5, 0.5, 0.5)],
+        [T.up + 1.4, V(ux + 8, 15.5, uz + 19), V(ux + 4.5, 2.4, uz + 1)],
+        [T.tn, V(ux + 7, 15, uz + 19.5), V(ux + 4.5, 2.4, uz + 1)],
+        [T.tn + 1.4, V(tx + 9, 11, tz + 15.5), V(tx + 4.2, 1, tz)],
+        [D, V(tx + 9.5, 12, tz + 17), V(tx + 4.2, 1, tz)],
+      ];
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const eo = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+      const eio = (x) => { x = clamp01(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+      const pos = new THREE.Vector3(), tgt = new THREE.Vector3(), off = new THREE.Vector3(), tmp = new THREE.Vector3();
+      function placeCamera(t) {
+        let i = 0;
+        while (i < KEYS.length - 2 && t > KEYS[i + 1][0]) i++;
+        const [t0, p0, g0] = KEYS[i], [t1, p1, g1] = KEYS[i + 1];
+        const u = eio((t - t0) / (t1 - t0));
+        pos.copy(p0).lerp(p1, u);
+        tgt.copy(g0).lerp(g1, u);
+        off.subVectors(pos, tgt).applyAxisAngle(new THREE.Vector3(0, 1, 0), 0.1 * (t / D - 0.5));
+        camera.position.copy(tgt).add(off);
+        camera.lookAt(tgt);
+        camera.updateMatrixWorld();
+      }
+      const screen = (x, y, z) => {
+        tmp.set(x, y, z).project(camera);
+        return [((tmp.x + 1) / 2) * 1920, ((1 - tmp.y) / 2) * 1080, tmp.z < 1];
+      };
+      function callout(card, line, dot, s, a) {
+        const [sx, sy] = screen(s.c[0], s.grp.scale.z + 0.05, -s.c[1]);
+        const cx = card.offsetLeft, cy = card.offsetTop + card.offsetHeight / 2;
+        line.setAttribute("x1", sx); line.setAttribute("y1", sy);
+        line.setAttribute("x2", cx); line.setAttribute("y2", cy);
+        dot.setAttribute("cx", sx); dot.setAttribute("cy", sy);
+        line.setAttribute("opacity", a); dot.setAttribute("opacity", a);
+      }
+
+      const c = new THREE.Color();
+      const els = Object.fromEntries(["count", "grain", "cardUP", "cardTN", "lnUP", "dotUP", "lnTN", "dotTN"].map((k) => [k, document.getElementById(k)]));
+      H.render = (t) => {
+        placeCamera(t);
+        coastMat.opacity = 0.85 * eo((t - 0.1) / 1.0) * (1 - 0.6 * eo((t - 2.2) / 2));
+        gratMat.opacity = 0.7 * eo((t - 0.3) / 1.2);
+        const freeze = eio((t - T.fz) / 0.9), focus = eio((t - T.up - 0.3) / 0.8);
+        let counted = 0;
+        for (const s of states) {
+          const r = eo((t - s.rise) / 1.1);
+          s.grp.scale.z = height(s, r);
+          counted += s.seats * r;
+          c.copy(s.base).lerp(s.ice, freeze);
+          if (s === UP) c.lerp(MUST, eio((t - T.up - 0.2) / 0.6));
+          else if (s === TN) c.lerp(RED, eio((t - T.tn - 0.2) / 0.6));
+          else c.multiplyScalar(1 - 0.4 * focus);
+          s.mat.color.copy(DIM).lerp(c, eo((t - s.light) / 0.6));
+          s.wall.color.copy(s.mat.color).multiplyScalar(0.62);
+        }
+        els.count.textContent = Math.round(counted);
+        for (const { s, el } of tall) {
+          const [x, y, vis] = screen(s.c[0], s.grp.scale.z + 0.25, -s.c[1]);
+          el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -100%)`;
+          el.style.opacity = vis && y < 900 ? eo((t - s.rise - 0.8) / 0.4) * (1 - eio((t - T.up) / 0.5)) : 0;
+        }
+        callout(els.cardUP, els.lnUP, els.dotUP, UP, clamp01((t - T.upIn) / 0.3) * (1 - clamp01((t - T.upOut) / 0.35)));
+        callout(els.cardTN, els.lnTN, els.dotTN, TN, clamp01((t - T.tnIn) / 0.3));
+        const f = Math.round(t * 30);
+        els.grain.style.transform = `translate(${(f * 53) % 64}px, ${(f * 97) % 64}px)`;
+        renderer.render(scene, camera);
+      };
+      H.render(H.clock.t);
+      H.ready();
+    </script>
+  </body>
+</html>

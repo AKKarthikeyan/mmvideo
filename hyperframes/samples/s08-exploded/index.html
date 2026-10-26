@@ -1,0 +1,162 @@
+<!doctype html>
+<!-- Sample 08 · Exploded 3D object: a generic smartphone (not a specific model) separating into its layers. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Exploded object</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1200px 900px at 42% 55%, #1b2635 0%, #0e141c 55%, #080b10 100%); }
+      #gl { position: absolute; inset: 0; }
+      #lines { position: absolute; inset: 0; }
+      .lab { position: absolute; left: 1330px; top: 0; white-space: nowrap; opacity: 0; transform: translateY(-50%); }
+      .lab .n { font: 700 36px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: #f7f3ea; }
+      .lab .d { font: 400 26px/1.2 Inter, sans-serif; color: #aab6c4; margin-top: 4px; }
+      .lab i { position: absolute; left: -46px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: #7fd1ff; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="11" data-width="1920" data-height="1080">
+      <canvas id="gl" class="clip" data-start="0" data-duration="11" data-track-index="1"></canvas>
+      <svg id="lines" width="1920" height="1080" viewBox="0 0 1920 1080" data-layout-ignore></svg>
+      <div id="labs"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">THE INVENTOR DESK · TEARDOWN</div>
+      <div class="head">INSIDE A SMARTPHONE</div>
+      <div class="src">Generic model built for illustration · not a specific phone</div>
+      <div class="cap" id="c1">Take a phone apart, and it is a stack of layers.</div>
+      <div class="cap" id="c2">Each one is an invention of its own.</div>
+    </div>
+    <script>window.__S = HF.setup(11); window.__timelines.main = window.__S.tl;</script>
+    <script type="module">
+      import * as THREE from "three";
+      import { RoomEnvironment } from "./assets/lib/RoomEnvironment.js";
+      const H = window.__S, E = HF.ease, F = HF.fade, L = HF.lerp;
+      const $ = (id) => document.getElementById(id);
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(1920, 1080, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      const scene = new THREE.Scene();
+      scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+      const camera = new THREE.PerspectiveCamera(34, 1920 / 1080, 0.1, 200);
+
+      const rrect = (w, h, r, hole) => {
+        const s = new THREE.Shape(), x = -w / 2, y = -h / 2;
+        s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r); s.lineTo(x + w, y + h - r);
+        s.quadraticCurveTo(x + w, y + h, x + w - r, y + h); s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+        s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+        if (hole) s.holes.push(hole);
+        return s;
+      };
+      const rpath = (w, h, r) => { const s = rrect(w, h, r); const p = new THREE.Path(); p.curves = s.curves; return p; };
+      const slab = (shape, depth, mat, bevel = 0.02) =>
+        new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 3, curveSegments: 12 }), mat);
+      const W = 7.2, Hh = 15, R = 1.1;
+
+      const yaw = new THREE.Group();
+      scene.add(yaw);
+      const phone = new THREE.Group();
+      phone.rotation.x = -Math.PI / 2; // lies flat: its face points up, its long side runs away from the camera
+      yaw.add(phone);
+      const layers = [];
+      const add = (obj, z0, name, desc) => { obj.position.z = z0; phone.add(obj); layers.push({ obj, z0, name, desc }); };
+
+      // back glass
+      add(slab(rrect(W, Hh, R), 0.08, new THREE.MeshPhysicalMaterial({ color: 0x3a4656, roughness: 0.35, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.2 })), 0, "BACK GLASS", "Lets wireless charging through");
+      // camera module
+      const cam = new THREE.Group();
+      const camBase = slab(rrect(2.6, 2.6, 0.55), 0.25, new THREE.MeshStandardMaterial({ color: 0x20252c, metalness: 0.6, roughness: 0.3 }));
+      cam.add(camBase);
+      for (const [x, y] of [[-0.6, 0.6], [0.6, 0.6], [-0.6, -0.6]]) {
+        const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.48, 0.48, 0.35, 40), new THREE.MeshStandardMaterial({ color: 0xb8bcc4, metalness: 1, roughness: 0.25 }));
+        ring.rotation.x = Math.PI / 2; ring.position.set(x, y, 0.2);
+        const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 0.37, 40), new THREE.MeshPhysicalMaterial({ color: 0x05070a, roughness: 0.05, clearcoat: 1 }));
+        lens.rotation.x = Math.PI / 2; lens.position.set(x, y, 0.21);
+        cam.add(ring, lens);
+      }
+      cam.position.set(-2.0, 5.2, 0);
+      add(cam, 0.1, "CAMERA MODULE", "Three lenses, three sensors");
+      // battery with a plain label
+      const lc = document.createElement("canvas"); lc.width = 512; lc.height = 640;
+      const lg = lc.getContext("2d"); lg.fillStyle = "#1e2228"; lg.fillRect(0, 0, 512, 640);
+      lg.fillStyle = "#e9e4d8"; lg.fillRect(40, 380, 432, 200); lg.fillStyle = "#1e2228"; lg.font = "bold 64px Oswald, sans-serif"; lg.fillText("Li-ion", 70, 470);
+      lg.font = "28px monospace"; lg.fillText("RECHARGEABLE CELL", 70, 530);
+      const batTex = new THREE.CanvasTexture(lc); batTex.colorSpace = THREE.SRGBColorSpace;
+      const bat = new THREE.Mesh(new THREE.BoxGeometry(5.8, 7.4, 0.5), [0, 1, 2, 3].map(() => new THREE.MeshStandardMaterial({ color: 0x1e2228, roughness: 0.5 })).concat([
+        new THREE.MeshStandardMaterial({ map: batTex, roughness: 0.55 }), new THREE.MeshStandardMaterial({ color: 0x1e2228 })]));
+      bat.position.set(0, -2.6, 0.25);
+      add(bat, 0.35, "BATTERY", "The biggest part by volume");
+      // logic board with chips
+      const board = new THREE.Group();
+      board.add(slab(rrect(3.9, 4.6, 0.3), 0.06, new THREE.MeshStandardMaterial({ color: 0x163527, roughness: 0.55 }), 0.01));
+      const chip = new THREE.MeshStandardMaterial({ color: 0x0b0c0e, roughness: 0.4, metalness: 0.2 });
+      const can = new THREE.MeshStandardMaterial({ color: 0xc4c8ce, metalness: 1, roughness: 0.35 });
+      for (const [x, y, w, h, m] of [[0.6, 0.7, 1.5, 1.5, chip], [-0.9, -0.9, 1.4, 1.3, can], [0.9, -1.3, 1.3, 0.9, chip], [-1.1, 1.2, 1.0, 1.1, can]]) {
+        const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.16), m); b.position.set(x, y, 0.16); board.add(b);
+      }
+      board.position.set(1.45, 3.9, 0);
+      add(board, 0.1, "LOGIC BOARD", "Processor, memory, radios");
+      // mid frame
+      add(slab(rrect(W, Hh, R, rpath(W - 0.5, Hh - 0.5, R - 0.25)), 0.55, new THREE.MeshStandardMaterial({ color: 0xb9bcc2, metalness: 1, roughness: 0.28 })), 0.08, "FRAME", "Aluminium spine, holds it together");
+      // display: emissive gradient
+      const dc = document.createElement("canvas"); dc.width = 256; dc.height = 512;
+      const dg = dc.getContext("2d"), grd = dg.createLinearGradient(0, 0, 256, 512);
+      grd.addColorStop(0, "#0b1f3a"); grd.addColorStop(0.55, "#16466b"); grd.addColorStop(1, "#0a1628");
+      dg.fillStyle = grd; dg.fillRect(0, 0, 256, 512);
+      const dispTex = new THREE.CanvasTexture(dc); dispTex.colorSpace = THREE.SRGBColorSpace;
+      add(slab(rrect(W - 0.3, Hh - 0.3, R - 0.15), 0.06, new THREE.MeshStandardMaterial({ color: 0x050608, emissive: 0xffffff, emissiveMap: dispTex, emissiveIntensity: 1.3, roughness: 0.2 }), 0.01), 0.66, "OLED DISPLAY", "Each pixel makes its own light");
+      // cover glass
+      add(slab(rrect(W, Hh, R), 0.06, new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.02, metalness: 0, transparent: true, opacity: 0.18, clearcoat: 1, envMapIntensity: 2 })), 0.76, "COVER GLASS", "Toughened, about the thickness of a card");
+
+      const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(-8, 12, 14); scene.add(key);
+      const rim = new THREE.DirectionalLight(0x7fd1ff, 1.4); rim.position.set(10, -4, -10); scene.add(rim);
+
+      // labels: fixed column on the right, leader lines to each layer's right edge
+      const svg = $("lines"), NS = "http://www.w3.org/2000/svg";
+      const order = [6, 5, 4, 3, 2, 1, 0]; // top layer first
+      order.forEach((li, k) => {
+        const l = layers[li];
+        const el = document.createElement("div"); el.className = "lab";
+        el.innerHTML = `<i></i><div class="n">${l.name}</div><div class="d">${l.desc}</div>`;
+        $("labs").appendChild(el);
+        const ln = document.createElementNS(NS, "polyline");
+        ln.setAttribute("fill", "none"); ln.setAttribute("stroke", "#7fd1ff"); ln.setAttribute("stroke-width", "2"); ln.setAttribute("opacity", "0");
+        svg.appendChild(ln);
+        Object.assign(l, { el, ln, k, ly: 250 + k * 104 });
+      });
+      const tmp = new THREE.Vector3();
+      camera.position.set(0, 17, 25);
+      camera.lookAt(-3.2, 3.4, 0);
+      H.render = (t) => {
+        const ex = E.io3((t - 1.6) / 2.6);
+        yaw.rotation.y = L(-1.15, -0.7, E.io2(t / 11));
+        yaw.position.set(-5.2, L(2.2, -1.7, ex), 0);
+        layers.forEach((l, i) => { l.obj.position.z = l.z0 + ex * i * 1.38; });
+        scene.updateMatrixWorld();
+        for (const l of layers) {
+          const a = F(t, 4.4 + l.k * 0.32, 99, 0.35);
+          // anchor: right edge of the layer, mid height, in its own space
+          tmp.set(l.name === "CAMERA MODULE" ? 1.2 : l.name === "LOGIC BOARD" ? 1.95 : l.name === "BATTERY" ? 2.9 : W / 2, l.name === "CAMERA MODULE" || l.name === "LOGIC BOARD" ? 0 : l.name === "BATTERY" ? 1 : 2.5, 0.1);
+          tmp.applyMatrix4(l.obj.matrixWorld).project(camera);
+          const sx = ((tmp.x + 1) / 2) * 1920, sy = ((1 - tmp.y) / 2) * 1080;
+          l.el.style.top = `${l.ly}px`; l.el.style.opacity = a;
+          l.ln.setAttribute("points", `${sx},${sy} ${1240},${l.ly} ${1284},${l.ly}`);
+          l.ln.setAttribute("opacity", a * 0.9);
+        }
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.35, 99, 0.6);
+        $("c1").style.opacity = F(t, 1.0, 6.4, 0.3);
+        $("c2").style.opacity = F(t, 6.7, 99, 0.3);
+        renderer.render(scene, camera);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

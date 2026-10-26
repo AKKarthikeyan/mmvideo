@@ -1,0 +1,106 @@
+<!doctype html>
+<!-- Sample 04 · Money-flow breakdown: DMart, Jul–Sep 2026, one ₹100 of sales cut into pieces (figures from the dmartstory video). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Money flow breakdown</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1400px 900px at 50% 45%, #d6c9ab 0%, #c9bb9c 55%, #b8a988 100%); }
+      .seg { position: absolute; top: 0; left: 0; height: 120px; box-shadow: 0 10px 22px rgba(40, 28, 10, 0.28); }
+      .seg::after { content: ""; position: absolute; inset: 0; border-right: 2px solid rgba(239, 230, 210, 0.85); }
+      .lab { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; text-align: right; }
+      .lab.g { text-align: left; }
+      .lab .n { font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: #1a1a1a; }
+      .lab .v { font: 700 44px/1 Oswald, sans-serif; color: #1a1a1a; margin-top: 2px; }
+      .lab .n { font-size: 28px; }
+      #top { position: absolute; left: 330px; top: 286px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #4a4237; opacity: 0; }
+      #sub { position: absolute; left: 110px; top: 214px; font: 400 32px/1.2 Inter, sans-serif; color: #4a4237; }
+      #zoomtag { position: absolute; right: 130px; top: 286px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #9e2418; opacity: 0; }
+      #kept { position: absolute; left: 0; top: 0; opacity: 0; text-align: center; }
+      #kept .v { font: 700 150px/1 Oswald, sans-serif; color: #1a1a1a; }
+      #kept .n { white-space: nowrap; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.12em; color: #1a1a1a; background: #d9a441; padding: 8px 14px 10px; display: inline-block; }
+      .src { font-size: 26px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="11" data-width="1920" data-height="1080">
+      <div id="bars"></div>
+      <div id="labs"></div>
+      <div id="top">₹100 OF DMART'S SALES</div>
+      <div id="zoomtag">ZOOM: THE LAST ₹14</div>
+      <div id="kept"><div class="v">₹5.62</div><div class="n">LEFT FOR DMART · BEFORE INCOME TAX</div></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT &amp; MARGIN · FOLLOW THE ₹100</div>
+      <div class="head">WHERE DMART'S ₹100 GOES</div>
+      <div id="sub">July to September 2026 · per ₹100 of sales</div>
+      <div class="src">DMart results, 10 Oct 2026 · the split is our arithmetic<br />pieces total ₹100.10: profit includes about 10 paise of other income</div>
+      <div class="cap" id="c1">Out of every ₹100 DMart sells, almost ₹86 pays for the goods.</div>
+      <div class="cap" id="c2">After every other cost, it keeps ₹5.62, before income tax.</div>
+    </div>
+    <script>
+      const H = HF.setup(11), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const SEGS = [
+        ["THE GOODS", 85.85, "#1a1a1a", 1.6], ["SALARIES", 2.06, "#3b6ea5", 4.6], ["RUNNING COSTS", 4.77, "#c96f22", 5.3],
+        ["WEAR AND TEAR", 1.49, "#4f8a5b", 6.0], ["INTEREST", 0.31, "#7a5ea8", 6.7], ["LEFT FOR DMART", 5.62, "#d9a441", 99],
+      ];
+      const X0 = 330, WIDE = 1460, Y = 330, ROW0 = 480, ROWH = 82;
+      let acc = 0;
+      const segs = SEGS.map(([name, v, color, drop], i) => {
+        const el = document.createElement("div");
+        el.className = "seg"; el.style.background = color;
+        $("bars").appendChild(el);
+        const lab = document.createElement("div");
+        lab.className = "lab";
+        lab.innerHTML = `<div class="n">${name}</div><div class="v">${v < 1 ? Math.round(v * 100) + " PAISE" : "₹" + v.toFixed(2)}</div>`;
+        if (i < 5) $("labs").appendChild(lab);
+        const s = { name, v, a: acc, drop, el, lab, row: i === 0 ? 0 : i - 1 };
+        acc += v;
+        return s;
+      });
+      H.render = (t) => {
+        // scale: ₹100 across 1500 px, then zoom so the last ₹14.25 fills it
+        const z = E.io3((t - 3.2) / 1.2);
+        const off = L(0, 85.85, z), k = Math.exp(L(Math.log(WIDE / 100), Math.log(WIDE / 14.25), z));
+        const grow = E.o3((t - 0.2) / 0.8);
+        for (const s of segs) {
+          const x = X0 + (s.a - off) * k, w = s.v * k;
+          const d = E.io3((t - s.drop) / 0.7);
+          const y = s.row === 0 && s.name === "THE GOODS" ? L(Y, ROW0 + 40, d) : L(Y, ROW0 + s.row * ROWH, d);
+          s.el.style.transform = `translate(${x}px, ${y}px)`;
+          s.el.style.width = `${Math.max(0, Math.min(w, X0 + WIDE * grow - x))}px`;
+          s.el.style.height = `${s.name === "THE GOODS" || d < 1 ? 120 : L(120, 64, d)}px`;
+          if (s.name === "THE GOODS") s.el.style.opacity = (1 - 0.55 * E.io2((t - 2.6) / 0.6)) * (1 - E.io2((t - 3.3) / 0.8));
+          if (s.name === "LEFT FOR DMART") s.el.style.boxShadow = `0 10px 22px rgba(40,28,10,.28), 0 0 ${40 * E.io2((t - 7.5) / 0.6)}px rgba(217,164,65,${0.8 * E.io2((t - 7.5) / 0.6)})`;
+          if (s.lab.parentNode) {
+            const g = s.name === "THE GOODS";
+            const lx = g ? x + 30 : x - 22;
+            const ly = g ? ROW0 + 58 : ROW0 + s.row * ROWH - 4;
+            s.lab.classList.toggle("g", g);
+            s.lab.style.transform = g ? `translate(${lx}px, ${ly}px)` : `translate(${lx}px, ${ly}px) translateX(-100%)`;
+            s.lab.style.opacity = F(t, s.drop + 0.45, s.name === "THE GOODS" ? 3.2 : 99, 0.3);
+            if (s.name === "THE GOODS") s.lab.querySelector(".n").style.color = s.lab.querySelector(".v").style.color = "#f7f3ea";
+          }
+        }
+        const left = segs[5], lx = X0 + (left.a - off) * k;
+        $("kept").style.transform = `translate(${lx + (left.v * k) / 2 - 350}px, ${ROW0}px)`;
+        $("kept").style.width = "700px";
+        $("kept").style.opacity = F(t, 7.6, 99, 0.4);
+        $("top").style.opacity = F(t, 0.6, 3.1, 0.4);
+        $("zoomtag").style.opacity = F(t, 3.4, 7.4, 0.4);
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.25, 99, 0.6);
+        $("sub").style.opacity = F(t, 0.5, 99, 0.6);
+        $("c1").style.opacity = F(t, 1.4, 7.4, 0.3);
+        $("c2").style.opacity = F(t, 7.7, 99, 0.3);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

@@ -42,6 +42,8 @@ COVERS = {
              "a playful scene with two large question-mark shapes made of objects: coconut palms and backwaters on one side, a crowded busy town street on the other"),
     "vs07": ("2026-10-22", "STATE vs STATE", "Odisha wins on mothers. *West Bengal on schools.*",
              "a village school with children's school bags on a bench and a small health clinic with a mother holding a baby, faceless stylised figures, river and paddy fields"),
+    "pp118": ("2026-10-27", "CRICKET · T20I RECORD", "India *118/0* in six overs",
+              "a white cricket ball flying fast off the face of a wooden cricket bat, motion streaks behind the ball, a floodlit cricket ground at night far in the background, no people, no scoreboard"),
 }
 
 

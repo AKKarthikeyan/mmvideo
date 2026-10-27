@@ -46,6 +46,7 @@ import gw01 from "../../public/datayt/beats/gw01/data.json";
 import hl01 from "../../public/datayt/beats/hl01/data.json";
 import hl02 from "../../public/datayt/beats/hl02/data.json";
 import pl01 from "../../public/datayt/beats/pl01/data.json";
+import pp118 from "../../public/datayt/beats/pp118/data.json";
 import px01 from "../../public/datayt/beats/px01/data.json";
 import px02 from "../../public/datayt/beats/px02/data.json";
 import px03 from "../../public/datayt/beats/px03/data.json";
@@ -102,4 +103,4 @@ import vs07 from "../../public/datayt/beats/vs07/data.json";
 import vs08 from "../../public/datayt/beats/vs08/data.json";
 import type {BeatData} from "./BeatStory";
 
-export const BEATS = [clue01, cn02, cn04, cn08, cn09, cn10, cn11, cnt01, cw01, fa02, fa03, fa04, fa05, fa06, fa07, fa08, fa09, fa10, fa11, fa12, fa13, fa14, fa15, fa17, fa30, fa35, fa40, fa48, fa50, fa55, fa76, fa85, fm01, fm02, fm03, fm04, fm05, fs01, fs02, fs03, fs04, fs05, gd01, gw01, hl01, hl02, pl01, px01, px02, px03, px04, px05, px07, px08, px09, px37, px46, px52, px61, px67, px72, px82, rc01, rc02, sh01, sh02, sp05, tn02, tn03, tn04, tn05, tn06, tn07, tn09, tn10, tn11, tn12, tn13, tn14, tn15, tn16, tn17, tn20, tn22, tn23, tn36, tn41, tn51, tn60, tn66, tn71, tn81, tn86, vs01, vs02, vs03, vs04, vs05, vs06, vs07, vs08] as unknown as BeatData[];
+export const BEATS = [clue01, cn02, cn04, cn08, cn09, cn10, cn11, cnt01, cw01, fa02, fa03, fa04, fa05, fa06, fa07, fa08, fa09, fa10, fa11, fa12, fa13, fa14, fa15, fa17, fa30, fa35, fa40, fa48, fa50, fa55, fa76, fa85, fm01, fm02, fm03, fm04, fm05, fs01, fs02, fs03, fs04, fs05, gd01, gw01, hl01, hl02, pl01, pp118, px01, px02, px03, px04, px05, px07, px08, px09, px37, px46, px52, px61, px67, px72, px82, rc01, rc02, sh01, sh02, sp05, tn02, tn03, tn04, tn05, tn06, tn07, tn09, tn10, tn11, tn12, tn13, tn14, tn15, tn16, tn17, tn20, tn22, tn23, tn36, tn41, tn51, tn60, tn66, tn71, tn81, tn86, vs01, vs02, vs03, vs04, vs05, vs06, vs07, vs08] as unknown as BeatData[];

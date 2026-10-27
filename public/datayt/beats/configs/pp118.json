@@ -1,0 +1,476 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "pp118",
+ "palette": "D",
+ "theme": "money",
+ "chip": "CRICKET",
+ "source_short": "ESPNcricinfo, BCCI · 27 Oct 2026",
+ "source": "ESPNcricinfo scorecard, overs comparison and match report: New Zealand vs India, 3rd T20I, Hnry Stadium, Wellington, 27 Oct 2026 (T20I no. 4221); scorecard cross-checked on BCCI.tv. Earlier marks from ESPNcricinfo scorecards: Romania vs Serbia, Sofia, 26 Jun 2021 (116/0, chase won in 5.4 overs); Scotland vs Australia, Edinburgh, 4 Sep 2024 (powerplay 113/1).",
+ "_len_note": "27 Oct 2026, AK: 'India 118/0 in 6 Overs: The Data Behind India's Fastest-Ever T20I Powerplay', for tonight. Built to the 25-35 s rule. Every figure read on ESPNcricinfo's own match pages; 'T20I record' is Cricinfo's wording. Powerplay sixes and fours left out: the ball-by-ball feed could not be read.",
+ "hook": [
+  "*118/0*",
+  "in six overs.",
+  "A T20I record."
+ ],
+ "hook_vo": "One hundred eighteen in six overs. No wicket. A T-twenty record.",
+ "cards": [
+  {
+   "kicker": "OVER BY OVER · WELLINGTON",
+   "name": "India",
+   "item": [
+    "cricket/nzind_t20i3_2026",
+    "ind ov1",
+    "runs"
+   ],
+   "item_name": "India, runs in over 1",
+   "dec": 0,
+   "unit": "",
+   "text": "runs off the very first over",
+   "sub": "Chasing 199 in Wellington.",
+   "bars": [
+    {
+     "name": "Over 1",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov1",
+      "runs"
+     ]
+    },
+    {
+     "name": "Over 2",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov2",
+      "runs"
+     ]
+    },
+    {
+     "name": "Over 3",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov3",
+      "runs"
+     ]
+    },
+    {
+     "name": "Over 4",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov4",
+      "runs"
+     ]
+    },
+    {
+     "name": "Over 5",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov5",
+      "runs"
+     ]
+    },
+    {
+     "name": "Over 6",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind ov6",
+      "runs"
+     ]
+    }
+   ],
+   "vo": "Twenty-six came off the very first over.",
+   "claims": [
+    "C04",
+    "C02",
+    "C03"
+   ]
+  },
+  {
+   "kicker": "AFTER SIX OVERS",
+   "name": "Same ground",
+   "item": [
+    "cricket/nzind_t20i3_2026",
+    "nz pp",
+    "runs"
+   ],
+   "item_name": "New Zealand, powerplay (6 overs)",
+   "dec": 0,
+   "unit": "",
+   "text": "New Zealand's powerplay, same ground",
+   "sub": "India's was double.",
+   "bars": [
+    {
+     "name": "India",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind pp",
+      "runs"
+     ]
+    },
+    {
+     "name": "New Zealand",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "nz pp",
+      "runs"
+     ]
+    }
+   ],
+   "vo": "New Zealand made fifty-eight. India made double.",
+   "claims": [
+    "C05",
+    "C01",
+    "C07"
+   ]
+  },
+  {
+   "kicker": "TO REACH 118",
+   "name": "Catch-up",
+   "item": [
+    "cricket/nzind_t20i3_2026",
+    "nz 12",
+    "overs"
+   ],
+   "item_name": "New Zealand, score after 12 overs",
+   "dec": 0,
+   "unit": " overs",
+   "text": "New Zealand took to pass India's 118",
+   "bars": [
+    {
+     "name": "11 overs",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "nz 11",
+      "runs"
+     ],
+     "unit": ""
+    },
+    {
+     "name": "12 overs",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "nz 12",
+      "runs"
+     ],
+     "unit": ""
+    }
+   ],
+   "vo": "New Zealand needed twelve overs to get that far.",
+   "claims": [
+    "C06",
+    "C08"
+   ]
+  },
+  {
+   "kicker": "THE OLD MARKS",
+   "name": "Record",
+   "item": [
+    "cricket/nzind_t20i3_2026",
+    "ind pp",
+    "runs"
+   ],
+   "item_name": "India, powerplay (6 overs)",
+   "dec": 0,
+   "unit": "",
+   "text": "a T20I record for a powerplay",
+   "sub": "Romania's 116 was a chase won in 5.4 overs.",
+   "bars": [
+    {
+     "name": "India 2026",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "ind pp",
+      "runs"
+     ]
+    },
+    {
+     "name": "Romania 2021",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "rom 2021",
+      "runs"
+     ]
+    },
+    {
+     "name": "Australia 2024",
+     "item": [
+      "cricket/nzind_t20i3_2026",
+      "aus 2024",
+      "runs"
+     ]
+    }
+   ],
+   "vo": "It beat Romania's one sixteen and Australia's one thirteen.",
+   "claims": [
+    "C09",
+    "C10",
+    "C11"
+   ]
+  }
+ ],
+ "so": {
+  "lines": [
+   "Abhishek: *113* off 38.",
+   "India won with",
+   "40 balls to spare."
+  ],
+  "vo": "Abhishek hit one hundred thirteen. India won with forty balls left.",
+  "note": "Sooryavanshi made 45 off 19. They put on 133 for the first wicket.",
+  "claims": [
+   "C12",
+   "C14",
+   "C13",
+   "C15"
+  ]
+ },
+ "end": {
+  "q": "Can anyone beat 118 in six overs?",
+  "sub": "Name the pair who could.",
+  "vo": "Can anyone beat this? Name the pair below.",
+  "claims": [
+   "C01"
+  ]
+ },
+ "free_numbers": [
+  "0",
+  "20",
+  "199",
+  "5.4",
+  "113",
+  "38",
+  "40",
+  "45",
+  "19",
+  "133",
+  "6",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "11"
+ ],
+ "money_tests": [
+  {
+   "says": "the six overs add up to 118",
+   "value": {
+    "sum": [
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov1",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov2",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov3",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov4",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov5",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind ov6",
+       "runs"
+      ]
+     }
+    ]
+   },
+   "equals": 118
+  },
+  {
+   "says": "the score after over 6 is 118",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "ind ov6",
+     "score"
+    ]
+   },
+   "equals": 118
+  },
+  {
+   "says": "no wicket in the powerplay",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "ind pp",
+     "wickets"
+    ]
+   },
+   "equals": 0
+  },
+  {
+   "says": "India's powerplay was double New Zealand's",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind pp",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "nz pp",
+       "runs"
+      ]
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.1
+  },
+  {
+   "says": "New Zealand were short of 118 after 11 overs",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "nz 11",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind pp",
+       "runs"
+      ]
+     }
+    ]
+   },
+   "max": -1
+  },
+  {
+   "says": "New Zealand passed 118 after 12 overs",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "nz 12",
+       "runs"
+      ]
+     },
+     {
+      "item": [
+       "cricket/nzind_t20i3_2026",
+       "ind pp",
+       "runs"
+      ]
+     }
+    ]
+   },
+   "min": 1
+  },
+  {
+   "says": "the target was 199",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "result",
+     "target"
+    ]
+   },
+   "equals": 199
+  },
+  {
+   "says": "Abhishek made 113",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "abhishek",
+     "runs"
+    ]
+   },
+   "equals": 113
+  },
+  {
+   "says": "off 38 balls",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "abhishek",
+     "balls"
+    ]
+   },
+   "equals": 38
+  },
+  {
+   "says": "won with 40 balls to spare",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "result",
+     "balls"
+    ]
+   },
+   "equals": 40
+  },
+  {
+   "says": "Sooryavanshi made 45",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "sooryavanshi",
+     "runs"
+    ]
+   },
+   "equals": 45
+  },
+  {
+   "says": "off 19 balls",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "sooryavanshi",
+     "balls"
+    ]
+   },
+   "equals": 19
+  },
+  {
+   "says": "a 133 first-wicket stand",
+   "value": {
+    "item": [
+     "cricket/nzind_t20i3_2026",
+     "stand",
+     "runs"
+    ]
+   },
+   "equals": 133
+  }
+ ],
+ "yt_title": "India 118/0 in 6 Overs: A T20I Powerplay Record",
+ "hook_claims": [
+  "C01",
+  "C09"
+ ]
+}

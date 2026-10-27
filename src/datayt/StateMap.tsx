@@ -18,9 +18,13 @@ const mix = (a: string, b: string, p: number) => {
   return "#" + [0, 1, 2].map((i) => Math.round(h(a, i) + (h(b, i) - h(a, i)) * p).toString(16).padStart(2, "0")).join("");
 };
 
+// `pal` and `font` restyle the map for a look (brand tokens: src/looks/shared/MapClose.tsx); left out, the map is drawn
+// exactly as before.
+export type MapPal = {ink: string; bg: string; empty: string; light: string};
 export const StateMap: React.FC<{states: MapState[]; colors: string[]; x: number; y: number; h: number; frame?: number | null; t0?: number; fps?: number;
-  focus?: string[] | null; focusP?: number; ring?: Record<string, string>; fs?: number}> =
-  ({states, colors, x, y, h, frame = null, t0 = 0, fps = 30, focus = null, focusP = 1, ring = {}, fs = 22}) => {
+  focus?: string[] | null; focusP?: number; ring?: Record<string, string>; fs?: number; pal?: MapPal; font?: string}> =
+  ({states, colors, x, y, h, frame = null, t0 = 0, fps = 30, focus = null, focusP = 1, ring = {}, fs = 22, pal, font = COND}) => {
+  const Q = pal ?? {ink: P.ink, bg: P.bg, empty: P.empty, light: "#FFFFFF"};
   const S = h / geo.h, k = 1 / S;
   const BY = Object.fromEntries(states.map((s) => [s.name, s]));
   const f = frame ?? 1e9;
@@ -33,13 +37,13 @@ export const StateMap: React.FC<{states: MapState[]; colors: string[]; x: number
         const draw = ease(f, dStart, dStart + 18), base = ease(f, dStart + 12, dStart + 22);
         const at = F(d?.at ?? 0);
         const fillP = d ? ease(f, at, at + 6) : 0;
-        const col = d ? mix(P.empty, colors[d.bucket], fillP) : P.empty;
+        const col = d ? mix(Q.empty, colors[d.bucket], fillP) : Q.empty;
         const pop = d && frame != null ? spring({frame: f - at, fps, config: {damping: 12, stiffness: 180}, durationInFrames: 9}) : 0;
         const sc = 1 + 0.07 * Math.sin(pop * Math.PI) * (d && f >= at ? 1 : 0);
         const dim = focus && !focus.includes(g.name) ? 1 - 0.72 * focusP : 1;
         const rg = ring[g.name];
         return <g key={g.name} opacity={dim} transform={`translate(${g.lx},${g.ly}) scale(${sc}) translate(${-g.lx},${-g.ly})`}>
-          <path d={g.d} fillRule="evenodd" fill={col} fillOpacity={base} stroke={rg ?? P.ink} strokeOpacity={rg ? 1 : 0.55} strokeWidth={rg ? 5 : 1.1}
+          <path d={g.d} fillRule="evenodd" fill={col} fillOpacity={base} stroke={rg ?? Q.ink} strokeOpacity={rg ? 1 : 0.55} strokeWidth={rg ? 5 : 1.1}
                 strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - draw}/>
         </g>;
       })}
@@ -55,10 +59,10 @@ export const StateMap: React.FC<{states: MapState[]; colors: string[]; x: number
         const size = (hot ? fs * 1.35 : d.bucket >= 3 ? fs * 1.12 : fs) * k;
         const dark = (d.dark ?? d.bucket >= 2) && !out;      // a map whose bands are not light-to-dark says which fills are dark
         return <g key={d.name} opacity={op}>
-          {out && <line x1={g.lx} y1={g.ly} x2={lx} y2={ly} stroke={P.ink} strokeWidth={1.3 * k} opacity={0.55}/>}
-          {out && <circle cx={g.lx} cy={g.ly} r={3 * k} fill={P.ink} opacity={0.7}/>}
-          <text x={lx} y={ly + size * 0.35} textAnchor="middle" fontFamily={COND} fontWeight={700} fontSize={size}
-                fill={dark ? "#FFFFFF" : P.ink} stroke={dark ? mix(colors[d.bucket], "#000000", 0.25) : P.bg}
+          {out && <line x1={g.lx} y1={g.ly} x2={lx} y2={ly} stroke={Q.ink} strokeWidth={1.3 * k} opacity={0.55}/>}
+          {out && <circle cx={g.lx} cy={g.ly} r={3 * k} fill={Q.ink} opacity={0.7}/>}
+          <text x={lx} y={ly + size * 0.35} textAnchor="middle" fontFamily={font} fontWeight={700} fontSize={size}
+                fill={dark ? Q.light : Q.ink} stroke={dark ? mix(colors[d.bucket], "#000000", 0.25) : Q.bg}
                 strokeWidth={(dark ? 3 : 5) * k} paintOrder="stroke">{d.label}</text>
         </g>;
       })}

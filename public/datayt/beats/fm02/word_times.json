@@ -1,0 +1,1067 @@
+{
+ "id": "fm02",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.336,
+   "text": "Muhurat sessions closed higher nine times in eleven. None moved one percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Muhurat",
+     "norm": "muhurat",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "sessions",
+     "norm": "sessions",
+     "word": 1,
+     "start": 0.58,
+     "end": 0.96
+    },
+    {
+     "w": "closed",
+     "norm": "closed",
+     "word": 2,
+     "start": 0.96,
+     "end": 1.3
+    },
+    {
+     "w": "higher",
+     "norm": "higher",
+     "word": 3,
+     "start": 1.3,
+     "end": 1.58
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 4,
+     "start": 1.58,
+     "end": 1.92
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 5,
+     "start": 1.92,
+     "end": 2.14
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 6,
+     "start": 2.14,
+     "end": 2.34
+    },
+    {
+     "w": "eleven.",
+     "norm": "eleven",
+     "word": 7,
+     "start": 2.34,
+     "end": 2.66
+    },
+    {
+     "w": "None",
+     "norm": "none",
+     "word": 8,
+     "start": 3.06,
+     "end": 3.16
+    },
+    {
+     "w": "moved",
+     "norm": "moved",
+     "word": 9,
+     "start": 3.16,
+     "end": 3.48
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 10,
+     "start": 3.48,
+     "end": 3.78
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 11,
+     "start": 3.78,
+     "end": 4.06
+    }
+   ],
+   "numbers": [
+    {
+     "text": "nine",
+     "value": 9.0,
+     "mantissa": 9.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 4,
+     "whisper": 1.58,
+     "onset": 1.54,
+     "rule": "weak",
+     "how": "fall",
+     "at": 1.6733,
+     "f": 51
+    },
+    {
+     "text": "eleven",
+     "value": 11.0,
+     "mantissa": 11.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 7,
+     "whisper": 2.34,
+     "onset": 2.3475,
+     "rule": "vowel",
+     "how": "dip-rise",
+     "at": 2.4808,
+     "f": 76
+    },
+    {
+     "text": "one",
+     "value": 1.0,
+     "mantissa": 1.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 10,
+     "w1": 10,
+     "whisper": 3.48,
+     "onset": 3.42,
+     "rule": "weak",
+     "how": "burst",
+     "at": 3.5533,
+     "f": 107
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 4.754,
+   "text": "Since twenty fifteen, the Nifty closed higher on nine of eleven Muhurat days.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Since",
+     "norm": "since",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.44
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 1,
+     "start": 0.44,
+     "end": 0.76
+    },
+    {
+     "w": "fifteen,",
+     "norm": "fifteen",
+     "word": 2,
+     "start": 0.76,
+     "end": 1.06
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 3,
+     "start": 1.5,
+     "end": 1.62
+    },
+    {
+     "w": "Nifty",
+     "norm": "nifty",
+     "word": 4,
+     "start": 1.62,
+     "end": 1.82
+    },
+    {
+     "w": "closed",
+     "norm": "closed",
+     "word": 5,
+     "start": 1.82,
+     "end": 2.16
+    },
+    {
+     "w": "higher",
+     "norm": "higher",
+     "word": 6,
+     "start": 2.16,
+     "end": 2.5
+    },
+    {
+     "w": "on",
+     "norm": "on",
+     "word": 7,
+     "start": 2.5,
+     "end": 2.84
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 8,
+     "start": 2.84,
+     "end": 3.1
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 9,
+     "start": 3.1,
+     "end": 3.42
+    },
+    {
+     "w": "eleven",
+     "norm": "eleven",
+     "word": 10,
+     "start": 3.42,
+     "end": 3.74
+    },
+    {
+     "w": "Muhurat",
+     "norm": "muhurat",
+     "word": 11,
+     "start": 3.74,
+     "end": 4.08
+    },
+    {
+     "w": "days.",
+     "norm": "days",
+     "word": 12,
+     "start": 4.08,
+     "end": 4.36
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty fifteen",
+     "value": 2015.0,
+     "mantissa": 2015.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 1,
+     "w1": 2,
+     "whisper": 0.44,
+     "onset": 0.4425,
+     "rule": "stop",
+     "how": "burst",
+     "at": 6.3758,
+     "f": 192
+    },
+    {
+     "text": "nine",
+     "value": 9.0,
+     "mantissa": 9.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 8,
+     "whisper": 2.84,
+     "onset": 2.78,
+     "rule": "weak",
+     "how": "shared-nasal",
+     "at": 8.7133,
+     "f": 263
+    },
+    {
+     "text": "eleven",
+     "value": 11.0,
+     "mantissa": 11.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 10,
+     "w1": 10,
+     "whisper": 3.42,
+     "onset": 3.3425,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 9.2758,
+     "f": 280
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 5.668,
+   "text": "The biggest rise, in twenty twenty-two, was zero point eight eight percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "w": "biggest",
+     "norm": "biggest",
+     "word": 1,
+     "start": 0.36,
+     "end": 0.68
+    },
+    {
+     "w": "rise,",
+     "norm": "rise",
+     "word": 2,
+     "start": 0.68,
+     "end": 1.18
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 3,
+     "start": 1.72,
+     "end": 1.92
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 4,
+     "start": 1.92,
+     "end": 2.22
+    },
+    {
+     "w": "twenty-two,",
+     "norm": "twenty",
+     "word": 5,
+     "start": 2.22,
+     "end": 2.48
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 5,
+     "start": 2.48,
+     "end": 2.94
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 6,
+     "start": 3.44,
+     "end": 3.58
+    },
+    {
+     "w": "zero",
+     "norm": "zero",
+     "word": 7,
+     "start": 3.58,
+     "end": 4.0
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 8,
+     "start": 4.0,
+     "end": 4.32
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 9,
+     "start": 4.32,
+     "end": 4.7
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 10,
+     "start": 4.7,
+     "end": 4.94
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 11,
+     "start": 4.94,
+     "end": 5.34
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty twenty two",
+     "value": 2022.0,
+     "mantissa": 2022.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 4,
+     "w1": 6,
+     "whisper": 1.92,
+     "onset": 1.855,
+     "rule": "stop",
+     "how": "burst",
+     "at": 13.5883,
+     "f": 408
+    },
+    {
+     "text": "zero point eight eight",
+     "value": 0.88,
+     "mantissa": 0.88,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 11,
+     "whisper": 3.58,
+     "onset": 3.56,
+     "rule": "fric",
+     "how": "shared-hiss",
+     "at": 15.2933,
+     "f": 460
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 19.475,
+   "sec": 4.623,
+   "text": "It fell twice: in twenty sixteen and twenty seventeen.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "It",
+     "norm": "it",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "fell",
+     "norm": "fell",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.74
+    },
+    {
+     "w": "twice:",
+     "norm": "twice",
+     "word": 2,
+     "start": 0.74,
+     "end": 1.84
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 3,
+     "start": 1.84,
+     "end": 2.44
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 4,
+     "start": 2.44,
+     "end": 2.82
+    },
+    {
+     "w": "sixteen",
+     "norm": "sixteen",
+     "word": 5,
+     "start": 2.82,
+     "end": 3.2
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 6,
+     "start": 3.2,
+     "end": 3.56
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 7,
+     "start": 3.56,
+     "end": 3.9
+    },
+    {
+     "w": "seventeen.",
+     "norm": "seventeen",
+     "word": 8,
+     "start": 3.9,
+     "end": 4.32
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty sixteen",
+     "value": 2016.0,
+     "mantissa": 2016.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 2.44,
+     "onset": 2.4575,
+     "rule": "stop",
+     "how": "burst",
+     "at": 21.9242,
+     "f": 659
+    },
+    {
+     "text": "twenty seventeen",
+     "value": 2017.0,
+     "mantissa": 2017.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 7,
+     "w1": 8,
+     "whisper": 3.56,
+     "onset": 3.525,
+     "rule": "stop",
+     "how": "burst",
+     "at": 22.9917,
+     "f": 691
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 25.281,
+   "sec": 2.768,
+   "text": "Last year's session rose zero point one percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Last",
+     "norm": "last",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.52
+    },
+    {
+     "w": "year's",
+     "norm": "year",
+     "word": 1,
+     "start": 0.52,
+     "end": 0.88
+    },
+    {
+     "w": "session",
+     "norm": "session",
+     "word": 2,
+     "start": 0.88,
+     "end": 1.06
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 3,
+     "start": 1.06,
+     "end": 1.4
+    },
+    {
+     "w": "zero",
+     "norm": "zero",
+     "word": 4,
+     "start": 1.4,
+     "end": 1.82
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 5,
+     "start": 1.82,
+     "end": 2.02
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 6,
+     "start": 2.02,
+     "end": 2.22
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 7,
+     "start": 2.22,
+     "end": 2.56
+    }
+   ],
+   "numbers": [
+    {
+     "text": "zero point one",
+     "value": 0.1,
+     "mantissa": 0.1,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 6,
+     "whisper": 1.4,
+     "onset": 1.3975,
+     "rule": "fric",
+     "how": "shared-hiss",
+     "at": 26.6642,
+     "f": 801
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 29.152,
+   "sec": 4.179,
+   "text": "None moved one percent either way. Past years are not a forecast.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "None",
+     "norm": "none",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "moved",
+     "norm": "moved",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.9
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 2,
+     "start": 0.9,
+     "end": 1.24
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 3,
+     "start": 1.24,
+     "end": 1.48
+    },
+    {
+     "w": "either",
+     "norm": "either",
+     "word": 4,
+     "start": 1.48,
+     "end": 1.76
+    },
+    {
+     "w": "way.",
+     "norm": "way",
+     "word": 5,
+     "start": 1.76,
+     "end": 2.16
+    },
+    {
+     "w": "Past",
+     "norm": "past",
+     "word": 6,
+     "start": 2.44,
+     "end": 2.6
+    },
+    {
+     "w": "years",
+     "norm": "years",
+     "word": 7,
+     "start": 2.6,
+     "end": 2.88
+    },
+    {
+     "w": "are",
+     "norm": "are",
+     "word": 8,
+     "start": 2.88,
+     "end": 3.16
+    },
+    {
+     "w": "not",
+     "norm": "not",
+     "word": 9,
+     "start": 3.16,
+     "end": 3.32
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 10,
+     "start": 3.32,
+     "end": 3.48
+    },
+    {
+     "w": "forecast.",
+     "norm": "forecast",
+     "word": 11,
+     "start": 3.48,
+     "end": 3.8
+    }
+   ],
+   "numbers": [
+    {
+     "text": "one",
+     "value": 1.0,
+     "mantissa": 1.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 2,
+     "whisper": 0.9,
+     "onset": 0.84,
+     "rule": "weak",
+     "how": "rise",
+     "at": 30.0067,
+     "f": 901
+    }
+   ]
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 34.959,
+   "sec": 4.597,
+   "text": "Do you follow Muhurat trading? This year: Sunday, eighth November.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Do",
+     "norm": "do",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.32
+    },
+    {
+     "w": "you",
+     "norm": "you",
+     "word": 1,
+     "start": 0.32,
+     "end": 0.56
+    },
+    {
+     "w": "follow",
+     "norm": "follow",
+     "word": 2,
+     "start": 0.56,
+     "end": 0.84
+    },
+    {
+     "w": "Muhurat",
+     "norm": "muhurat",
+     "word": 3,
+     "start": 0.84,
+     "end": 1.22
+    },
+    {
+     "w": "trading?",
+     "norm": "trading",
+     "word": 4,
+     "start": 1.22,
+     "end": 1.54
+    },
+    {
+     "w": "This",
+     "norm": "this",
+     "word": 5,
+     "start": 2.18,
+     "end": 2.44
+    },
+    {
+     "w": "year:",
+     "norm": "year",
+     "word": 6,
+     "start": 2.44,
+     "end": 3.0
+    },
+    {
+     "w": "Sunday,",
+     "norm": "sunday",
+     "word": 7,
+     "start": 3.46,
+     "end": 3.62
+    },
+    {
+     "w": "eighth",
+     "norm": "eighth",
+     "word": 8,
+     "start": 3.84,
+     "end": 3.96
+    },
+    {
+     "w": "November.",
+     "norm": "november",
+     "word": 9,
+     "start": 3.96,
+     "end": 4.34
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 51,
+   "lockHow": "spoken",
+   "lockWord": "nine",
+   "firstNumF": 51,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "9",
+     "spokenF": 51,
+     "word": "nine",
+     "how": "spoken",
+     "lockF": 51
+    },
+    {
+     "role": "line",
+     "text": "11",
+     "spokenF": 76,
+     "word": "eleven",
+     "how": "spoken",
+     "lockF": 76
+    },
+    {
+     "role": "line",
+     "text": "1%",
+     "spokenF": 107,
+     "word": "one",
+     "how": "spoken",
+     "lockF": 107
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 263,
+   "lockHow": "spoken",
+   "lockWord": "nine",
+   "firstNumF": 192,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "9 of 11",
+     "spokenF": 263,
+     "word": "nine",
+     "how": "spoken",
+     "lockF": 263
+    },
+    {
+     "role": "text",
+     "text": "2015",
+     "spokenF": 192,
+     "word": "twenty fifteen",
+     "how": "spoken",
+     "lockF": 192
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 263
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 581,
+   "settleF": 569,
+   "line": 2,
+   "lockF": 460,
+   "lockHow": "spoken",
+   "lockWord": "zero point eight eight",
+   "firstNumF": 408,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+0.88%",
+     "spokenF": 460,
+     "word": "zero point eight eight",
+     "how": "spoken",
+     "lockF": 460
+    },
+    {
+     "role": "bar",
+     "text": "+0.88%",
+     "spokenF": 460,
+     "word": "zero point eight eight",
+     "how": "spoken",
+     "lockF": 460
+    },
+    {
+     "role": "bar",
+     "text": "+0.65%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 460
+    },
+    {
+     "role": "bar",
+     "text": "+0.54%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 460
+    },
+    {
+     "role": "text",
+     "text": "50",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 460
+    },
+    {
+     "role": "text",
+     "text": "2022",
+     "spokenF": 408,
+     "word": "twenty twenty two",
+     "how": "spoken",
+     "lockF": 408
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 581,
+   "f1": 755,
+   "settleF": 743,
+   "line": 3,
+   "lockF": 659,
+   "lockHow": "first-number",
+   "lockWord": "twenty sixteen",
+   "firstNumF": 659,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "−0.63%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 659
+    },
+    {
+     "role": "bar",
+     "text": "−0.63%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 659
+    },
+    {
+     "role": "bar",
+     "text": "−0.14%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 659
+    },
+    {
+     "role": "text",
+     "text": "50",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 659
+    },
+    {
+     "role": "text",
+     "text": "2017",
+     "spokenF": 691,
+     "word": "twenty seventeen",
+     "how": "spoken",
+     "lockF": 691
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 755,
+   "f1": 871,
+   "settleF": 859,
+   "line": 4,
+   "lockF": 801,
+   "lockHow": "spoken",
+   "lockWord": "zero point one",
+   "firstNumF": 801,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+0.10%",
+     "spokenF": 801,
+     "word": "zero point one",
+     "how": "spoken",
+     "lockF": 801
+    },
+    {
+     "role": "text",
+     "text": "50",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 801
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 801
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 871,
+   "f1": 1045,
+   "settleF": 1033,
+   "line": 5,
+   "lockF": 901,
+   "lockHow": "spoken",
+   "lockWord": "one",
+   "firstNumF": 901,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "1%",
+     "spokenF": 901,
+     "word": "one",
+     "how": "spoken",
+     "lockF": 901
+    }
+   ]
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 1045,
+   "f1": 1219,
+   "settleF": 1207,
+   "line": 6,
+   "lockF": 1051,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

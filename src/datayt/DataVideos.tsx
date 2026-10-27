@@ -20,6 +20,7 @@ import {LongStory} from "./LongStory";
 import {LONGS} from "./longData";
 import {LongPostStills} from "./LongPosts";
 import {CoverStills} from "./Covers";
+import {LookCompositions} from "../looks/LookCompositions";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
@@ -46,4 +47,6 @@ export const DataVideoCompositions: React.FC = () => <>
   {/* long-form videos (16:9): one composition per config built by scripts/datayt/build_long.py */}
   {LONGS.map((d) => <Composition key={d.id} {...({id: `DATA-LF-${d.id}`, component: LongStory, defaultProps: {D: d},
     durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1920, height: 1080} as any)}/>)}
+  {/* premium-look previews: DATA-<id>-look-<slab|counter|dispatch> for the national data stories, and the harness contact sheet */}
+  <LookCompositions/>
 </>;

@@ -1,0 +1,982 @@
+{
+ "id": "fm05",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.205,
+   "text": "Friends' money gifts above fifty thousand rupees a year: all of it taxable.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Friends'",
+     "norm": "friends",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.44
+    },
+    {
+     "w": "money",
+     "norm": "money",
+     "word": 1,
+     "start": 0.5,
+     "end": 0.74
+    },
+    {
+     "w": "gifts",
+     "norm": "gifts",
+     "word": 2,
+     "start": 0.74,
+     "end": 1.02
+    },
+    {
+     "w": "above",
+     "norm": "above",
+     "word": 3,
+     "start": 1.02,
+     "end": 1.36
+    },
+    {
+     "w": "fifty",
+     "norm": "fifty",
+     "word": 4,
+     "start": 1.36,
+     "end": 1.64
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 5,
+     "start": 1.64,
+     "end": 1.92
+    },
+    {
+     "w": "rupees",
+     "norm": "rupees",
+     "word": 6,
+     "start": 1.92,
+     "end": 2.2
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 7,
+     "start": 2.2,
+     "end": 2.44
+    },
+    {
+     "w": "year:",
+     "norm": "year",
+     "word": 8,
+     "start": 2.44,
+     "end": 2.76
+    },
+    {
+     "w": "all",
+     "norm": "all",
+     "word": 9,
+     "start": 2.76,
+     "end": 3.28
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 10,
+     "start": 3.28,
+     "end": 3.34
+    },
+    {
+     "w": "it",
+     "norm": "it",
+     "word": 11,
+     "start": 3.34,
+     "end": 3.46
+    },
+    {
+     "w": "taxable.",
+     "norm": "taxable",
+     "word": 12,
+     "start": 3.46,
+     "end": 3.92
+    }
+   ],
+   "numbers": [
+    {
+     "text": "fifty thousand",
+     "value": 50000.0,
+     "mantissa": 50.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 1.36,
+     "onset": 1.31,
+     "rule": "fric",
+     "how": "frication",
+     "at": 1.4433,
+     "f": 45
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 4.127,
+   "text": "The limit counts a whole tax year's money gifts from non-relatives.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.42
+    },
+    {
+     "w": "limit",
+     "norm": "limit",
+     "word": 1,
+     "start": 0.42,
+     "end": 0.58
+    },
+    {
+     "w": "counts",
+     "norm": "counts",
+     "word": 2,
+     "start": 0.58,
+     "end": 0.94
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 3,
+     "start": 0.94,
+     "end": 1.22
+    },
+    {
+     "w": "whole",
+     "norm": "whole",
+     "word": 4,
+     "start": 1.22,
+     "end": 1.44
+    },
+    {
+     "w": "tax",
+     "norm": "tax",
+     "word": 5,
+     "start": 1.44,
+     "end": 1.8
+    },
+    {
+     "w": "year's",
+     "norm": "year",
+     "word": 6,
+     "start": 1.8,
+     "end": 2.1
+    },
+    {
+     "w": "money",
+     "norm": "money",
+     "word": 7,
+     "start": 2.1,
+     "end": 2.34
+    },
+    {
+     "w": "gifts",
+     "norm": "gifts",
+     "word": 8,
+     "start": 2.34,
+     "end": 2.64
+    },
+    {
+     "w": "from",
+     "norm": "from",
+     "word": 9,
+     "start": 2.64,
+     "end": 3.06
+    },
+    {
+     "w": "non-relatives.",
+     "norm": "non",
+     "word": 10,
+     "start": 3.06,
+     "end": 3.3
+    },
+    {
+     "w": "relatives",
+     "norm": "relatives",
+     "word": 10,
+     "start": 3.3,
+     "end": 3.74
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 4.806,
+   "text": "Two gifts of twenty-five and twenty-eight thousand: all fifty-three thousand is taxable.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Two",
+     "norm": "two",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "gifts",
+     "norm": "gifts",
+     "word": 1,
+     "start": 0.34,
+     "end": 0.58
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 2,
+     "start": 0.58,
+     "end": 1.32
+    },
+    {
+     "w": "twenty-five",
+     "norm": "twenty",
+     "word": 3,
+     "start": 1.32,
+     "end": 1.6
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 3,
+     "start": 1.6,
+     "end": 1.88
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 4,
+     "start": 1.88,
+     "end": 2.18
+    },
+    {
+     "w": "twenty-eight",
+     "norm": "twenty",
+     "word": 5,
+     "start": 2.18,
+     "end": 2.48
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 5,
+     "start": 2.48,
+     "end": 2.62
+    },
+    {
+     "w": "thousand:",
+     "norm": "thousand",
+     "word": 6,
+     "start": 2.62,
+     "end": 2.92
+    },
+    {
+     "w": "all",
+     "norm": "all",
+     "word": 7,
+     "start": 3.16,
+     "end": 3.3
+    },
+    {
+     "w": "fifty-three",
+     "norm": "fifty",
+     "word": 8,
+     "start": 3.3,
+     "end": 3.56
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 8,
+     "start": 3.56,
+     "end": 3.76
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 9,
+     "start": 3.76,
+     "end": 4.0
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 10,
+     "start": 4.0,
+     "end": 4.22
+    },
+    {
+     "w": "taxable.",
+     "norm": "taxable",
+     "word": 11,
+     "start": 4.22,
+     "end": 4.56
+    }
+   ],
+   "numbers": [
+    {
+     "text": "two",
+     "value": 2.0,
+     "mantissa": 2.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 0,
+     "w1": 0,
+     "whisper": 0.0,
+     "onset": 0.1325,
+     "rule": "stop",
+     "how": "burst",
+     "at": 11.8658,
+     "f": 357
+    },
+    {
+     "text": "twenty five",
+     "value": 25000.0,
+     "mantissa": 25.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 4,
+     "whisper": 1.32,
+     "onset": 1.28,
+     "rule": "stop",
+     "how": "burst",
+     "at": 13.0133,
+     "f": 391
+    },
+    {
+     "text": "twenty eight thousand",
+     "value": 28000.0,
+     "mantissa": 28.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 6,
+     "w1": 8,
+     "whisper": 2.18,
+     "onset": 2.165,
+     "rule": "stop",
+     "how": "burst",
+     "at": 13.8983,
+     "f": 418
+    },
+    {
+     "text": "fifty three thousand",
+     "value": 53000.0,
+     "mantissa": 53.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 10,
+     "w1": 12,
+     "whisper": 3.3,
+     "onset": 3.2475,
+     "rule": "fric",
+     "how": "frication",
+     "at": 14.9808,
+     "f": 451
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 17.539,
+   "sec": 3.97,
+   "text": "Employer gifts under fifteen thousand rupees a year count as nil value.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Employer",
+     "norm": "employer",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.76
+    },
+    {
+     "w": "gifts",
+     "norm": "gifts",
+     "word": 1,
+     "start": 0.76,
+     "end": 1.02
+    },
+    {
+     "w": "under",
+     "norm": "under",
+     "word": 2,
+     "start": 1.02,
+     "end": 1.36
+    },
+    {
+     "w": "fifteen",
+     "norm": "fifteen",
+     "word": 3,
+     "start": 1.36,
+     "end": 1.64
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 4,
+     "start": 1.64,
+     "end": 1.98
+    },
+    {
+     "w": "rupees",
+     "norm": "rupees",
+     "word": 5,
+     "start": 1.98,
+     "end": 2.26
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 6,
+     "start": 2.26,
+     "end": 2.46
+    },
+    {
+     "w": "year",
+     "norm": "year",
+     "word": 7,
+     "start": 2.46,
+     "end": 2.64
+    },
+    {
+     "w": "count",
+     "norm": "count",
+     "word": 8,
+     "start": 2.64,
+     "end": 2.98
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 9,
+     "start": 2.98,
+     "end": 3.2
+    },
+    {
+     "w": "nil",
+     "norm": "nil",
+     "word": 10,
+     "start": 3.2,
+     "end": 3.4
+    },
+    {
+     "w": "value.",
+     "norm": "value",
+     "word": 11,
+     "start": 3.4,
+     "end": 3.66
+    }
+   ],
+   "numbers": [
+    {
+     "text": "fifteen thousand",
+     "value": 15000.0,
+     "mantissa": 15.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 4,
+     "whisper": 1.36,
+     "onset": 1.3225,
+     "rule": "fric",
+     "how": "frication",
+     "at": 18.8558,
+     "f": 567
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 23.346,
+   "sec": 4.336,
+   "text": "Two lakh or more from one person a day: bank only.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Two",
+     "norm": "two",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "lakh",
+     "norm": "lakh",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.76
+    },
+    {
+     "w": "or",
+     "norm": "or",
+     "word": 2,
+     "start": 0.76,
+     "end": 1.14
+    },
+    {
+     "w": "more",
+     "norm": "more",
+     "word": 3,
+     "start": 1.14,
+     "end": 1.46
+    },
+    {
+     "w": "from",
+     "norm": "from",
+     "word": 4,
+     "start": 1.46,
+     "end": 1.8
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 5,
+     "start": 1.8,
+     "end": 2.06
+    },
+    {
+     "w": "person",
+     "norm": "person",
+     "word": 6,
+     "start": 2.06,
+     "end": 2.48
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 7,
+     "start": 2.48,
+     "end": 2.72
+    },
+    {
+     "w": "day:",
+     "norm": "day",
+     "word": 8,
+     "start": 2.72,
+     "end": 3.14
+    },
+    {
+     "w": "bank",
+     "norm": "bank",
+     "word": 9,
+     "start": 3.14,
+     "end": 3.68
+    },
+    {
+     "w": "only.",
+     "norm": "only",
+     "word": 10,
+     "start": 3.68,
+     "end": 4.08
+    }
+   ],
+   "numbers": [
+    {
+     "text": "two lakh",
+     "value": 200000.0,
+     "mantissa": 2.0,
+     "scale": 100000.0,
+     "kind": "number",
+     "w0": 0,
+     "w1": 1,
+     "whisper": 0.0,
+     "onset": 0.175,
+     "rule": "stop",
+     "how": "burst",
+     "at": 23.5083,
+     "f": 706
+    },
+    {
+     "text": "one",
+     "value": 1.0,
+     "mantissa": 1.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 5,
+     "w1": 5,
+     "whisper": 1.8,
+     "onset": 1.8075,
+     "rule": "weak",
+     "how": "dip-rise",
+     "at": 25.1408,
+     "f": 755
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 29.152,
+   "sec": 5.694,
+   "text": "Relatives' gifts and your own wedding gifts: not taxed. Diwali: no exemption.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Relatives'",
+     "norm": "relatives",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.64
+    },
+    {
+     "w": "gifts",
+     "norm": "gifts",
+     "word": 1,
+     "start": 0.94,
+     "end": 1.04
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 2,
+     "start": 1.04,
+     "end": 1.36
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 3,
+     "start": 1.36,
+     "end": 1.56
+    },
+    {
+     "w": "own",
+     "norm": "own",
+     "word": 4,
+     "start": 1.56,
+     "end": 1.78
+    },
+    {
+     "w": "wedding",
+     "norm": "wedding",
+     "word": 5,
+     "start": 1.78,
+     "end": 2.06
+    },
+    {
+     "w": "gifts:",
+     "norm": "gifts",
+     "word": 6,
+     "start": 2.06,
+     "end": 2.52
+    },
+    {
+     "w": "not",
+     "norm": "not",
+     "word": 7,
+     "start": 2.52,
+     "end": 3.26
+    },
+    {
+     "w": "taxed.",
+     "norm": "taxed",
+     "word": 8,
+     "start": 3.26,
+     "end": 4.2
+    },
+    {
+     "w": "Diwali:",
+     "norm": "diwali",
+     "word": 9,
+     "start": 4.28,
+     "end": 4.68
+    },
+    {
+     "w": "no",
+     "norm": "no",
+     "word": 10,
+     "start": 4.68,
+     "end": 5.04
+    },
+    {
+     "w": "exemption.",
+     "norm": "exemption",
+     "word": 11,
+     "start": 5.04,
+     "end": 5.42
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 36.894,
+   "sec": 3.16,
+   "text": "Did you know the fifty thousand rupee rule? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Did",
+     "norm": "did",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "w": "you",
+     "norm": "you",
+     "word": 1,
+     "start": 0.36,
+     "end": 0.5
+    },
+    {
+     "w": "know",
+     "norm": "know",
+     "word": 2,
+     "start": 0.5,
+     "end": 0.62
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 3,
+     "start": 0.62,
+     "end": 0.78
+    },
+    {
+     "w": "fifty",
+     "norm": "fifty",
+     "word": 4,
+     "start": 0.78,
+     "end": 0.98
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 5,
+     "start": 0.98,
+     "end": 1.24
+    },
+    {
+     "w": "rupee",
+     "norm": "rupee",
+     "word": 6,
+     "start": 1.24,
+     "end": 1.5
+    },
+    {
+     "w": "rule?",
+     "norm": "rule",
+     "word": 7,
+     "start": 1.5,
+     "end": 1.76
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 8,
+     "start": 2.34,
+     "end": 2.58
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 9,
+     "start": 2.58,
+     "end": 2.88
+    }
+   ],
+   "numbers": [
+    {
+     "text": "fifty thousand",
+     "value": 50000.0,
+     "mantissa": 50.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 0.78,
+     "onset": 0.66,
+     "rule": "fric",
+     "how": "frication",
+     "at": 37.56,
+     "f": 1128
+    }
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 45,
+   "lockHow": "spoken",
+   "lockWord": "fifty thousand",
+   "firstNumF": 45,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "₹50,000",
+     "spokenF": 45,
+     "word": "fifty thousand",
+     "how": "spoken",
+     "lockF": 45
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹50,000",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 523,
+   "settleF": 511,
+   "line": 2,
+   "lockF": 451,
+   "lockHow": "spoken",
+   "lockWord": "fifty three thousand",
+   "firstNumF": 357,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹53,000",
+     "spokenF": 451,
+     "word": "fifty three thousand",
+     "how": "spoken",
+     "lockF": 451
+    },
+    {
+     "role": "bar",
+     "text": "₹25,000",
+     "spokenF": 391,
+     "word": "twenty five",
+     "how": "spoken",
+     "lockF": 391
+    },
+    {
+     "role": "bar",
+     "text": "₹28,000",
+     "spokenF": 418,
+     "word": "twenty eight thousand",
+     "how": "spoken",
+     "lockF": 418
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 697,
+   "settleF": 685,
+   "line": 3,
+   "lockF": 567,
+   "lockHow": "spoken",
+   "lockWord": "fifteen thousand",
+   "firstNumF": 567,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹15,000",
+     "spokenF": 567,
+     "word": "fifteen thousand",
+     "how": "spoken",
+     "lockF": 567
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 697,
+   "f1": 871,
+   "settleF": 859,
+   "line": 4,
+   "lockF": 706,
+   "lockHow": "spoken",
+   "lockWord": "two lakh",
+   "firstNumF": 706,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹2,00,000",
+     "spokenF": 706,
+     "word": "two lakh",
+     "how": "spoken",
+     "lockF": 706
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 871,
+   "f1": 1103,
+   "settleF": 1091,
+   "line": 5,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 1103,
+   "f1": 1219,
+   "settleF": 1207,
+   "line": 6,
+   "lockF": 1128,
+   "lockHow": "first-number",
+   "lockWord": "fifty thousand",
+   "firstNumF": 1128,
+   "late": false,
+   "numbers": [
+    {
+     "role": "q",
+     "text": "₹50,000",
+     "spokenF": 1128,
+     "word": "fifty thousand",
+     "how": "spoken",
+     "lockF": 1128
+    }
+   ]
+  }
+ ]
+}

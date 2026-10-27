@@ -5,6 +5,8 @@
 //   DK-bp-ig   1080x1350  one carousel slide: the Short itself at the frame asked for (the end of a beat), trimmed to 4:5
 //   DK-bp-end  1080x1350  the carousel's last slide: the question and the source
 // Each takes {id}; scripts/datayt/post_assets.py decides the slides and their frames and scripts/datayt/render_posts.mjs renders them.
+// A Short with a look (data.json "look", or {id, look, brand} props for a preview) gets the look's own X image and carousel
+// (src/looks/shared/LookPosts.tsx); the map and list images keep the existing map drawing.
 // DK-bp-ig and DK-bp-x are compositions as long as the Short, so a still of frame n shows the Short at frame n (a <Freeze> inside a
 // one-frame Still stayed on frame 0).
 import React from "react";
@@ -15,10 +17,16 @@ import {BRAND, Mark} from "./Brand";
 import {StateMap, MAP_RATIO} from "./StateMap";
 import {BeatStory, BeatData} from "./BeatStory";
 import {BEATS} from "./beatData";
+import {LookIgBeat, LookIgEnd, LookXPost} from "../looks/shared/LookPosts";
 
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
-type Props = {id: string};
+type Props = {id: string; look?: string; brand?: string};
 const find = (id: string) => BEATS.find((d) => d.id === id) ?? BEATS[0];
+// The Short as its posts draw it: props may force a look (and a brand) for a preview; otherwise data.json decides.
+const story = (p: Props): BeatData => {
+  const D = find(p.id);
+  return p.look ? {...D, look: p.look, brand: p.brand ?? D.brand} : p.brand && D.look ? {...D, brand: p.brand} : D;
+};
 const Rich: React.FC<{text: string; acc: string}> = ({text, acc}) => <>{text.split("*").map((p, i) =>
   i % 2 ? <span key={i} style={{color: acc}}>{p}</span> : <React.Fragment key={i}>{p}</React.Fragment>)}</>;
 const plain = (s: string) => s.replace(/\*/g, "");
@@ -142,8 +150,10 @@ const Frame: React.FC<{D: BeatData; scale: number; crop: number; w: number; h: n
   </div>
 );
 
-const XPost: React.FC<Props> = ({id}) => {
-  const D = find(id), m = mapBeat(D), rows = rowsOf(D), lines = hookLines(D);
+const XPost: React.FC<Props> = (props) => {
+  const D = story(props);
+  if (D.look) return <LookXPost D={D}/>;
+  const m = mapBeat(D), rows = rowsOf(D), lines = hookLines(D);
   const few = rows.length <= 12;
   const head = (c: string) => <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 18, letterSpacing: 3, color: P.mute, marginBottom: 6}}>{c}</div>;
   return <Ground>
@@ -175,16 +185,19 @@ const XPost: React.FC<Props> = ({id}) => {
 
 // One carousel slide: the whole frame of the Short fitted to the slide's height (a card with four bars reaches down to y = 1830,
 // so nothing below the progress bar is trimmed). The frame carries the channel name itself.
-const IgBeat: React.FC<Props> = ({id}) => {
-  const D = find(id);
+const IgBeat: React.FC<Props> = (props) => {
+  const D = story(props);
+  if (D.look) return <LookIgBeat D={D}/>;
   return <AbsoluteFill style={{background: P.bg}}>
     <VoxFonts/>
     <Frame D={D} scale={1350 / 1860} crop={16} w={1080} h={1350}/>
   </AbsoluteFill>;
 };
 
-const IgEnd: React.FC<Props> = ({id}) => {
-  const D = find(id), last = D.beats[D.beats.length - 1];
+const IgEnd: React.FC<Props> = (props) => {
+  const D = story(props);
+  if (D.look) return <LookIgEnd D={D}/>;
+  const last = D.beats[D.beats.length - 1];
   const q = last.q ?? "Where does *your* state rank?";
   return <Ground>
     <div style={{position: "absolute", left: 70, right: 70, top: 70, bottom: 56, display: "flex", flexDirection: "column"}}>

@@ -1,0 +1,923 @@
+{
+ "id": "fs03",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.179,
+   "text": "Domestic air fares rose twenty-nine point nine percent since last September.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Domestic",
+     "norm": "domestic",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.74
+    },
+    {
+     "w": "air",
+     "norm": "air",
+     "word": 1,
+     "start": 0.74,
+     "end": 0.98
+    },
+    {
+     "w": "fares",
+     "norm": "fares",
+     "word": 2,
+     "start": 0.98,
+     "end": 1.34
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 3,
+     "start": 1.34,
+     "end": 1.64
+    },
+    {
+     "w": "twenty-nine",
+     "norm": "twenty",
+     "word": 4,
+     "start": 1.64,
+     "end": 2.06
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 4,
+     "start": 2.06,
+     "end": 2.28
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 5,
+     "start": 2.28,
+     "end": 2.46
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 6,
+     "start": 2.46,
+     "end": 2.72
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 7,
+     "start": 2.72,
+     "end": 2.98
+    },
+    {
+     "w": "since",
+     "norm": "since",
+     "word": 8,
+     "start": 2.98,
+     "end": 3.3
+    },
+    {
+     "w": "last",
+     "norm": "last",
+     "word": 9,
+     "start": 3.3,
+     "end": 3.48
+    },
+    {
+     "w": "September.",
+     "norm": "september",
+     "word": 10,
+     "start": 3.48,
+     "end": 3.84
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty nine point nine",
+     "value": 29.9,
+     "mantissa": 29.9,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 7,
+     "whisper": 1.64,
+     "onset": 1.665,
+     "rule": "stop",
+     "how": "burst",
+     "at": 1.7983,
+     "f": 55
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 4.937,
+   "text": "Across all travel fares, the rise was three point eight percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Across",
+     "norm": "across",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.62
+    },
+    {
+     "w": "all",
+     "norm": "all",
+     "word": 1,
+     "start": 0.62,
+     "end": 0.94
+    },
+    {
+     "w": "travel",
+     "norm": "travel",
+     "word": 2,
+     "start": 0.94,
+     "end": 1.34
+    },
+    {
+     "w": "fares,",
+     "norm": "fares",
+     "word": 3,
+     "start": 1.34,
+     "end": 1.82
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 4,
+     "start": 2.06,
+     "end": 2.2
+    },
+    {
+     "w": "rise",
+     "norm": "rise",
+     "word": 5,
+     "start": 2.2,
+     "end": 2.38
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 6,
+     "start": 2.38,
+     "end": 2.7
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 7,
+     "start": 2.7,
+     "end": 3.02
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 8,
+     "start": 3.02,
+     "end": 3.48
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 9,
+     "start": 3.48,
+     "end": 4.02
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 10,
+     "start": 4.02,
+     "end": 4.62
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three point eight",
+     "value": 3.8,
+     "mantissa": 3.8,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 9,
+     "whisper": 2.7,
+     "onset": 2.6475,
+     "rule": "fric",
+     "how": "frication",
+     "at": 8.5808,
+     "f": 259
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 4.597,
+   "text": "Rail fares rose two point two percent; taxi fares, three point three.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Rail",
+     "norm": "rail",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "fares",
+     "norm": "fares",
+     "word": 1,
+     "start": 0.58,
+     "end": 0.86
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.12
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 3,
+     "start": 1.12,
+     "end": 1.34
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.34,
+     "end": 1.56
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 5,
+     "start": 1.56,
+     "end": 1.74
+    },
+    {
+     "w": "percent;",
+     "norm": "percent",
+     "word": 6,
+     "start": 1.74,
+     "end": 2.26
+    },
+    {
+     "w": "taxi",
+     "norm": "taxi",
+     "word": 7,
+     "start": 2.26,
+     "end": 3.02
+    },
+    {
+     "w": "fares,",
+     "norm": "fares",
+     "word": 8,
+     "start": 3.02,
+     "end": 3.58
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 9,
+     "start": 3.58,
+     "end": 3.82
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 10,
+     "start": 3.82,
+     "end": 4.02
+    },
+    {
+     "w": "three.",
+     "norm": "three",
+     "word": 11,
+     "start": 4.02,
+     "end": 4.28
+    }
+   ],
+   "numbers": [
+    {
+     "text": "two point two",
+     "value": 2.2,
+     "mantissa": 2.2,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 1.12,
+     "onset": 1.18,
+     "rule": "stop",
+     "how": "burst",
+     "at": 12.9133,
+     "f": 388
+    },
+    {
+     "text": "three point three",
+     "value": 3.3,
+     "mantissa": 3.3,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 9,
+     "w1": 11,
+     "whisper": 3.58,
+     "onset": 3.5825,
+     "rule": "fric",
+     "how": "frication",
+     "at": 15.3158,
+     "f": 461
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 17.539,
+   "sec": 4.806,
+   "text": "Hotel rooms rose two point four percent; hired cars, three point nine.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Hotel",
+     "norm": "hotel",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "rooms",
+     "norm": "rooms",
+     "word": 1,
+     "start": 0.48,
+     "end": 0.78
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 0.78,
+     "end": 1.14
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 3,
+     "start": 1.14,
+     "end": 1.52
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.52,
+     "end": 1.78
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 5,
+     "start": 1.78,
+     "end": 2.04
+    },
+    {
+     "w": "percent;",
+     "norm": "percent",
+     "word": 6,
+     "start": 2.04,
+     "end": 2.74
+    },
+    {
+     "w": "hired",
+     "norm": "hired",
+     "word": 7,
+     "start": 3.08,
+     "end": 3.16
+    },
+    {
+     "w": "cars,",
+     "norm": "cars",
+     "word": 8,
+     "start": 3.16,
+     "end": 3.62
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 9,
+     "start": 3.86,
+     "end": 4.14
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 10,
+     "start": 4.14,
+     "end": 4.3
+    },
+    {
+     "w": "nine.",
+     "norm": "nine",
+     "word": 11,
+     "start": 4.3,
+     "end": 4.54
+    }
+   ],
+   "numbers": [
+    {
+     "text": "two point four",
+     "value": 2.4,
+     "mantissa": 2.4,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 1.14,
+     "onset": 1.275,
+     "rule": "stop",
+     "how": "burst",
+     "at": 18.8083,
+     "f": 565
+    },
+    {
+     "text": "three point nine",
+     "value": 3.9,
+     "mantissa": 3.9,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 9,
+     "w1": 11,
+     "whisper": 3.86,
+     "onset": 3.895,
+     "rule": "fric",
+     "how": "frication",
+     "at": 21.4283,
+     "f": 644
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 23.346,
+   "sec": 3.735,
+   "text": "The air fare rise was over thirteen times the rail fare rise.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "air",
+     "norm": "air",
+     "word": 1,
+     "start": 0.48,
+     "end": 0.7
+    },
+    {
+     "w": "fare",
+     "norm": "fare",
+     "word": 2,
+     "start": 0.7,
+     "end": 0.9
+    },
+    {
+     "w": "rise",
+     "norm": "rise",
+     "word": 3,
+     "start": 0.9,
+     "end": 1.26
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 4,
+     "start": 1.26,
+     "end": 1.62
+    },
+    {
+     "w": "over",
+     "norm": "over",
+     "word": 5,
+     "start": 1.62,
+     "end": 1.88
+    },
+    {
+     "w": "thirteen",
+     "norm": "thirteen",
+     "word": 6,
+     "start": 1.88,
+     "end": 2.28
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 7,
+     "start": 2.28,
+     "end": 2.6
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 8,
+     "start": 2.6,
+     "end": 2.8
+    },
+    {
+     "w": "rail",
+     "norm": "rail",
+     "word": 9,
+     "start": 2.8,
+     "end": 2.98
+    },
+    {
+     "w": "fare",
+     "norm": "fare",
+     "word": 10,
+     "start": 2.98,
+     "end": 3.18
+    },
+    {
+     "w": "rise.",
+     "norm": "rise",
+     "word": 11,
+     "start": 3.18,
+     "end": 3.46
+    }
+   ],
+   "numbers": [
+    {
+     "text": "thirteen",
+     "value": 13.0,
+     "mantissa": 13.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 6,
+     "w1": 6,
+     "whisper": 1.88,
+     "onset": 1.9,
+     "rule": "fric",
+     "how": "frication",
+     "at": 25.2333,
+     "f": 758
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 29.152,
+   "sec": 2.925,
+   "text": "Fares for all modes of travel, state by state.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Fares",
+     "norm": "fares",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "for",
+     "norm": "for",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.8
+    },
+    {
+     "w": "all",
+     "norm": "all",
+     "word": 2,
+     "start": 0.8,
+     "end": 0.98
+    },
+    {
+     "w": "modes",
+     "norm": "modes",
+     "word": 3,
+     "start": 0.98,
+     "end": 1.18
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 4,
+     "start": 1.18,
+     "end": 1.36
+    },
+    {
+     "w": "travel,",
+     "norm": "travel",
+     "word": 5,
+     "start": 1.36,
+     "end": 1.74
+    },
+    {
+     "w": "state",
+     "norm": "state",
+     "word": 6,
+     "start": 2.04,
+     "end": 2.12
+    },
+    {
+     "w": "by",
+     "norm": "by",
+     "word": 7,
+     "start": 2.12,
+     "end": 2.38
+    },
+    {
+     "w": "state.",
+     "norm": "state",
+     "word": 8,
+     "start": 2.38,
+     "end": 2.58
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 33.023,
+   "sec": 2.638,
+   "text": "How are you travelling home this time? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "How",
+     "norm": "how",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.32
+    },
+    {
+     "w": "are",
+     "norm": "are",
+     "word": 1,
+     "start": 0.32,
+     "end": 0.46
+    },
+    {
+     "w": "you",
+     "norm": "you",
+     "word": 2,
+     "start": 0.46,
+     "end": 0.62
+    },
+    {
+     "w": "travelling",
+     "norm": "travelling",
+     "word": 3,
+     "start": 0.62,
+     "end": 0.82
+    },
+    {
+     "w": "home",
+     "norm": "home",
+     "word": 4,
+     "start": 0.82,
+     "end": 1.06
+    },
+    {
+     "w": "this",
+     "norm": "this",
+     "word": 5,
+     "start": 1.06,
+     "end": 1.28
+    },
+    {
+     "w": "time?",
+     "norm": "time",
+     "word": 6,
+     "start": 1.28,
+     "end": 1.66
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 7,
+     "start": 2.02,
+     "end": 2.18
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 8,
+     "start": 2.18,
+     "end": 2.44
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 55,
+   "lockHow": "spoken",
+   "lockWord": "twenty nine point nine",
+   "firstNumF": 55,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "29.9%",
+     "spokenF": 55,
+     "word": "twenty nine point nine",
+     "how": "spoken",
+     "lockF": 55
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 259,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+29.9%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+29.9%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+3.8%",
+     "spokenF": 259,
+     "word": "three point eight",
+     "how": "spoken",
+     "lockF": 259
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 523,
+   "settleF": 511,
+   "line": 2,
+   "lockF": 388,
+   "lockHow": "spoken",
+   "lockWord": "two point two",
+   "firstNumF": 388,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+2.2%",
+     "spokenF": 388,
+     "word": "two point two",
+     "how": "spoken",
+     "lockF": 388
+    },
+    {
+     "role": "bar",
+     "text": "+2.2%",
+     "spokenF": 388,
+     "word": "two point two",
+     "how": "spoken",
+     "lockF": 388
+    },
+    {
+     "role": "bar",
+     "text": "+3.3%",
+     "spokenF": 461,
+     "word": "three point three",
+     "how": "spoken",
+     "lockF": 461
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 388
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 697,
+   "settleF": 685,
+   "line": 3,
+   "lockF": 565,
+   "lockHow": "spoken",
+   "lockWord": "two point four",
+   "firstNumF": 565,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+2.4%",
+     "spokenF": 565,
+     "word": "two point four",
+     "how": "spoken",
+     "lockF": 565
+    },
+    {
+     "role": "bar",
+     "text": "+2.4%",
+     "spokenF": 565,
+     "word": "two point four",
+     "how": "spoken",
+     "lockF": 565
+    },
+    {
+     "role": "bar",
+     "text": "+3.9%",
+     "spokenF": 644,
+     "word": "three point nine",
+     "how": "spoken",
+     "lockF": 644
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 565
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "say",
+   "f0": 697,
+   "f1": 871,
+   "settleF": 859,
+   "line": 4,
+   "lockF": 758,
+   "lockHow": "first-number",
+   "lockWord": "thirteen",
+   "firstNumF": 758,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 5,
+   "kind": "map",
+   "f0": 871,
+   "f1": 987,
+   "settleF": 975,
+   "line": 5,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "mapend",
+   "f0": 987,
+   "f1": 1103,
+   "settleF": 1091,
+   "line": 6,
+   "lockF": 993,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

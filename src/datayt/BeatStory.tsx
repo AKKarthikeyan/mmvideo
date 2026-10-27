@@ -8,10 +8,11 @@ import geo from "../../public/datayt/india/geo.json";
 import {P} from "./IndiaShort";
 import {Mark} from "./Brand";
 import {StateMap, MapState, MAP_RATIO} from "./StateMap";
+import {LookStory} from "../looks/LookStory";
 
 const FPS = 30, W = 1080, H = 1920;
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
-type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number; of?: number; big?: string; text?: string; name?: string; geo?: string; sub?: string;
+export type Beat = {kind: string; t0: number; t1: number; lines?: string[]; n?: number; of?: number; big?: string; text?: string; name?: string; geo?: string; sub?: string;
   items?: {big: string; text: string}[]; rank?: number; frac?: number; label?: string; note?: string; a?: string; b?: string; win?: string; sa?: number; sb?: number;
   title?: string; q?: string; kicker?: string; bars?: {name: string; label: string; frac: number; neg?: boolean}[]; note?: string; anim?: boolean; ring?: string[]; mode?: string;
   spots?: {geo: string; also?: string[]; name: string; big?: string; note?: string; tone?: string; at?: number[]}[];
@@ -23,7 +24,9 @@ export type BeatData = {id: string; type: string; chip: string; sourceShort: str
   stack?: {a: {name: string; v: number; label: string}; parts: {name: string; v: number; label: string}[]; sum: string; sumName: string; note?: string};
   tally?: {q: string; win: string; wl: string; lose: string; ll: string}[];
   timeline?: {label: string}[];
-  line100?: {rows: {name: string; v: number; label: string; india?: boolean}[]; max: number; note: string; line: string}; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number}[]};
+  line100?: {rows: {name: string; v: number; label: string; india?: boolean}[]; max: number; note: string; line: string}; a?: {name: string; geo: string}; b?: {name: string; geo: string}; vo: {file: string; at: number; sec: number; text?: string}[];
+  // premium looks (src/looks): set by build_beats.py from the config's "look", "brand" and "look_opts"
+  look?: string; brand?: string; lookOpts?: Record<string, unknown>; ytTitle?: string};
 type G = {name: string; d: string; bbox: number[]; lx: number; ly: number};
 const GEO = Object.fromEntries((geo.states as G[]).map((g) => [g.name, g]));
 
@@ -663,7 +666,11 @@ const musicVol = (D: BeatData, fr: number) => {
   return 0.14 + 0.31 * Math.min(1, near / 0.2);
 };
 
-export const BeatStory: React.FC<{D: BeatData}> = ({D}) => {
+// A Short whose data.json names a look (src/looks: slab, counter, dispatch) is drawn by that look; every other Short is
+// drawn by BeatStoryBase below, exactly as before.
+export const BeatStory: React.FC<{D: BeatData}> = ({D}) => D.look ? <LookStory D={D}/> : <BeatStoryBase D={D}/>;
+
+const BeatStoryBase: React.FC<{D: BeatData}> = ({D}) => {
   const f = useCurrentFrame();
   const b = D.beats.find((x) => f >= F(x.t0) && f < F(x.t1)) ?? D.beats[D.beats.length - 1];
   const K = KINDS[b.kind];

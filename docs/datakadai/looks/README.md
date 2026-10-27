@@ -7,7 +7,15 @@ otherwise all vidoes looks Templated." Then, 26 Oct: "ok save this. We can use t
   `cw01`, dependencies, rejected options, the resource shortlist, and the completeness critic's gaps.
 - Prototype code, frames and clips, and the full machine result: `/Volumes/DarwinSSD/DataKadai/research/2026-10-25-looks/`
   (not in git; about 450 MB).
-- Status: researched and prototyped only. Nothing is built in `src/`. The map and state-comparison look stays as it is.
+- Status (26 Oct 2026): AK ordered all three looks with brand tokens. The shared foundation is built (`FOUNDATION.md`:
+  data contract, brand tokens for Data Kadai and Indica Atlas, word timings, dispatch, harness) and the four blockers below
+  are fixed there. The three looks are built in `src/looks/slab`, `counter` and `dispatch` (26 Oct). The map and
+  state-comparison look stays as it is; no config names a look yet, so every Short renders as before.
+- Status (27 Oct 2026): on the 27 Oct harness run Slab and Counter rendered all 308 stills, 0 failed. Dispatch failed every
+  still: its last refactor (26 Oct, after its last good render) moved the band colour into each beat's plan but two reads
+  still used the old `SP.bands`, and its source-quote loader (`dispatch/quotes.ts`) was never called. Both are fixed in
+  code; AK asked for no renders that day, so the Dispatch fix is not yet checked by `look_stills.py dispatch`.
+  Run that first, then look at the sheets.
 
 ## Decisions waiting for AK
 - Which looks to build: all three, or Slab and Counter first.

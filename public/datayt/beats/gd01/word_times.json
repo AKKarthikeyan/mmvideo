@@ -1,0 +1,744 @@
+{
+ "id": "gd01",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 2.925,
+   "text": "Indian homes hold three times the US government's gold.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Indian",
+     "norm": "indian",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "homes",
+     "norm": "homes",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.86
+    },
+    {
+     "w": "hold",
+     "norm": "hold",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.14
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 3,
+     "start": 1.14,
+     "end": 1.4
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 4,
+     "start": 1.4,
+     "end": 1.68
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 5,
+     "start": 1.68,
+     "end": 1.86
+    },
+    {
+     "w": "US",
+     "norm": "us",
+     "word": 6,
+     "start": 1.86,
+     "end": 2.08
+    },
+    {
+     "w": "government's",
+     "norm": "government",
+     "word": 7,
+     "start": 2.08,
+     "end": 2.56
+    },
+    {
+     "w": "gold.",
+     "norm": "gold",
+     "word": 8,
+     "start": 2.56,
+     "end": 2.68
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three",
+     "value": 3.0,
+     "mantissa": 3.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 3,
+     "whisper": 1.14,
+     "onset": 1.1825,
+     "rule": "fric",
+     "how": "frication",
+     "at": 1.3158,
+     "f": 41
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 3.991,
+   "sec": 3.787,
+   "text": "Homes and temples: about twenty-five thousand tonnes.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Homes",
+     "norm": "homes",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.68
+    },
+    {
+     "w": "temples:",
+     "norm": "temples",
+     "word": 2,
+     "start": 0.68,
+     "end": 1.16
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 3,
+     "start": 1.74,
+     "end": 2.12
+    },
+    {
+     "w": "twenty-five",
+     "norm": "twenty",
+     "word": 4,
+     "start": 2.12,
+     "end": 2.58
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 4,
+     "start": 2.58,
+     "end": 2.78
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 5,
+     "start": 2.78,
+     "end": 3.06
+    },
+    {
+     "w": "tonnes.",
+     "norm": "tonnes",
+     "word": 6,
+     "start": 3.06,
+     "end": 3.06,
+     "guessed": true
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty five thousand",
+     "value": 25000.0,
+     "mantissa": 25.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 6,
+     "whisper": 2.12,
+     "onset": 2.085,
+     "rule": "stop",
+     "how": "burst",
+     "at": 6.085,
+     "f": 183
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 9.797,
+   "sec": 3.108,
+   "text": "The US government: about eight thousand tonnes.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "US",
+     "norm": "us",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.68
+    },
+    {
+     "w": "government:",
+     "norm": "government",
+     "word": 2,
+     "start": 0.68,
+     "end": 1.16
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 3,
+     "start": 1.16,
+     "end": 1.62
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 4,
+     "start": 1.62,
+     "end": 1.96
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 5,
+     "start": 1.96,
+     "end": 2.4
+    },
+    {
+     "w": "tonnes.",
+     "norm": "tonnes",
+     "word": 6,
+     "start": 2.4,
+     "end": 2.7
+    }
+   ],
+   "numbers": [
+    {
+     "text": "eight thousand",
+     "value": 8000.0,
+     "mantissa": 8.0,
+     "scale": 1000.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 1.62,
+     "onset": 1.63,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 11.43,
+     "f": 344
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 13.668,
+   "sec": 1.75,
+   "text": "About three times as much.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "About",
+     "norm": "about",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.78
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 2,
+     "start": 0.78,
+     "end": 1.02
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 3,
+     "start": 1.02,
+     "end": 1.2
+    },
+    {
+     "w": "much.",
+     "norm": "much",
+     "word": 4,
+     "start": 1.2,
+     "end": 1.38
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three",
+     "value": 3.0,
+     "mantissa": 3.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 1,
+     "w1": 1,
+     "whisper": 0.54,
+     "onset": 0.555,
+     "rule": "fric",
+     "how": "frication",
+     "at": 14.2217,
+     "f": 428
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 17.539,
+   "sec": 3.918,
+   "text": "The RBI itself: eight hundred eighty tonnes.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.44
+    },
+    {
+     "w": "RBI",
+     "norm": "rbi",
+     "word": 1,
+     "start": 0.44,
+     "end": 0.8
+    },
+    {
+     "w": "itself:",
+     "norm": "itself",
+     "word": 2,
+     "start": 0.8,
+     "end": 1.88
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 3,
+     "start": 2.46,
+     "end": 2.46
+    },
+    {
+     "w": "hundred",
+     "norm": "hundred",
+     "word": 4,
+     "start": 2.46,
+     "end": 2.9
+    },
+    {
+     "w": "eighty",
+     "norm": "eighty",
+     "word": 5,
+     "start": 2.9,
+     "end": 3.22
+    },
+    {
+     "w": "tonnes.",
+     "norm": "tonnes",
+     "word": 6,
+     "start": 3.22,
+     "end": 3.22,
+     "guessed": true
+    }
+   ],
+   "numbers": [
+    {
+     "text": "eight hundred eighty",
+     "value": 880.0,
+     "mantissa": 880.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 2.46,
+     "onset": 2.485,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 20.0183,
+     "f": 602
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 23.346,
+   "sec": 4.048,
+   "text": "Indian homes hold over twenty-five times the RBI's gold.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Indian",
+     "norm": "indian",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.64
+    },
+    {
+     "w": "homes",
+     "norm": "homes",
+     "word": 1,
+     "start": 0.64,
+     "end": 1.12
+    },
+    {
+     "w": "hold",
+     "norm": "hold",
+     "word": 2,
+     "start": 1.12,
+     "end": 1.58
+    },
+    {
+     "w": "over",
+     "norm": "over",
+     "word": 3,
+     "start": 1.58,
+     "end": 1.94
+    },
+    {
+     "w": "twenty-five",
+     "norm": "twenty",
+     "word": 4,
+     "start": 1.94,
+     "end": 2.36
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 4,
+     "start": 2.36,
+     "end": 2.56
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 5,
+     "start": 2.56,
+     "end": 2.9
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 6,
+     "start": 2.9,
+     "end": 3.16
+    },
+    {
+     "w": "RBI's",
+     "norm": "rbi",
+     "word": 7,
+     "start": 3.16,
+     "end": 3.62
+    },
+    {
+     "w": "gold.",
+     "norm": "gold",
+     "word": 8,
+     "start": 3.62,
+     "end": 3.78
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty five",
+     "value": 25.0,
+     "mantissa": 25.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 1.94,
+     "onset": 1.9125,
+     "rule": "stop",
+     "how": "burst",
+     "at": 25.2458,
+     "f": 758
+    }
+   ]
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 29.152,
+   "sec": 3.16,
+   "text": "How much of your savings is gold? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "How",
+     "norm": "how",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "w": "much",
+     "norm": "much",
+     "word": 1,
+     "start": 0.36,
+     "end": 0.58
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 2,
+     "start": 0.58,
+     "end": 0.64
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 3,
+     "start": 0.64,
+     "end": 0.84
+    },
+    {
+     "w": "savings",
+     "norm": "savings",
+     "word": 4,
+     "start": 0.84,
+     "end": 1.16
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 5,
+     "start": 1.16,
+     "end": 1.68
+    },
+    {
+     "w": "gold?",
+     "norm": "gold",
+     "word": 6,
+     "start": 1.68,
+     "end": 1.98
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 7,
+     "start": 2.5,
+     "end": 2.58
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 8,
+     "start": 2.58,
+     "end": 2.86
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 116,
+   "settleF": 104,
+   "line": 0,
+   "lockF": 41,
+   "lockHow": "spoken",
+   "lockWord": "three",
+   "firstNumF": 41,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "3×",
+     "spokenF": 41,
+     "word": "three",
+     "how": "spoken",
+     "lockF": 41
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 116,
+   "f1": 290,
+   "settleF": 278,
+   "line": 1,
+   "lockF": 183,
+   "lockHow": "spoken",
+   "lockWord": "twenty five thousand",
+   "firstNumF": 183,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "25,000 t",
+     "spokenF": 183,
+     "word": "twenty five thousand",
+     "how": "spoken",
+     "lockF": 183
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 290,
+   "f1": 406,
+   "settleF": 394,
+   "line": 2,
+   "lockF": 344,
+   "lockHow": "spoken",
+   "lockWord": "eight thousand",
+   "firstNumF": 344,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "8,134 t",
+     "spokenF": 344,
+     "word": "eight thousand",
+     "how": "spoken",
+     "lockF": 344
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 406,
+   "f1": 523,
+   "settleF": 511,
+   "line": 3,
+   "lockF": 428,
+   "lockHow": "spoken",
+   "lockWord": "three",
+   "firstNumF": 428,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "3×",
+     "spokenF": 428,
+     "word": "three",
+     "how": "spoken",
+     "lockF": 428
+    },
+    {
+     "role": "bar",
+     "text": "25,000 t",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 412
+    },
+    {
+     "role": "bar",
+     "text": "8,134 t",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 412
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 697,
+   "settleF": 685,
+   "line": 4,
+   "lockF": 602,
+   "lockHow": "spoken",
+   "lockWord": "eight hundred eighty",
+   "firstNumF": 602,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "880.52 t",
+     "spokenF": 602,
+     "word": "eight hundred eighty",
+     "how": "spoken",
+     "lockF": 602
+    },
+    {
+     "role": "bar",
+     "text": "880.52 t",
+     "spokenF": 602,
+     "word": "eight hundred eighty",
+     "how": "spoken",
+     "lockF": 602
+    },
+    {
+     "role": "bar",
+     "text": "680.05 t",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 602
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 697,
+   "f1": 871,
+   "settleF": 859,
+   "line": 5,
+   "lockF": 758,
+   "lockHow": "spoken",
+   "lockWord": "twenty five",
+   "firstNumF": 758,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "over 25×",
+     "spokenF": 758,
+     "word": "twenty five",
+     "how": "spoken",
+     "lockF": 758
+    }
+   ]
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 871,
+   "f1": 987,
+   "settleF": 975,
+   "line": 6,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

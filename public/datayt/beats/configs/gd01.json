@@ -227,5 +227,28 @@
    "max": 880.52
   }
  ],
- "yt_title": "Indian Homes Hold 3× as Much Gold as the US Government"
+ "yt_title": "Indian Homes Hold 3× as Much Gold as the US Government",
+ "look_opts": {
+  "_note": "Premium looks only (src/looks). Critic blocker 4: the household figure's primary WGC document is not confirmed (public/datayt/sources/gold/holdings_2026.json: 'AK to confirm before posting'), so wherever a look names that source it reads exactly sourceLabel. useLookData throws if any source text a look would print matches sourceLabelMatch without it. Do not ship gd01 in a look until AK confirms the source.",
+  "sourceLabel": "WGC estimate, as reported",
+  "sourceLabelMatch": "WGC|World Gold Council",
+  "sourceShort": "WGC estimate, as reported · US Treasury · RBI · 2026",
+  "beatSources": {
+   "spot": "WGC estimate, as reported · US Treasury",
+   "Homes": "WGC estimate, as reported · 2024",
+   "vs the US": "US Treasury · 30 Sep 2026",
+   "Homes vs US": "WGC estimate, as reported · US Treasury",
+   "RBI": "RBI · end-March 2026",
+   "say": "WGC estimate, as reported · RBI",
+   "end": "WGC estimate, as reported · US Treasury · RBI"
+  },
+  "beatSubs": {
+   "Homes": "WGC estimate, as reported: 23,537 to 25,537 t (2024)."
+  },
+  "sourceLines": [
+   "Indian households, including temple gold: WGC estimate, as reported (23,537 to 25,537 t by Sep 2024)",
+   "US government: US Treasury, gold reserve, 30 Sep 2026 (tonnes our conversion)",
+   "RBI: Half Yearly Report on Management of Foreign Exchange Reserves, end-March 2026"
+  ]
+ }
 }

@@ -68,6 +68,9 @@ MIN_BARS = {"hook": 2, "clue": 2, "count": 1, "reveal": 2, "recap": 2, "rank": 2
 MUTE = False      # --mute: the text-led cut, no narration
 SPLITS = {"Telangana": 2014, "Andhra Pradesh": 2014, "Ladakh": 2019, "Jammu and Kashmir": 2019}      # a figure from before a state was split covers a different area
 PAGE = "#F7F4EE"
+LOOKS = ("slab", "counter", "dispatch")      # premium looks, src/looks (only for LOOK_TYPES)
+LOOK_TYPES = ("money", "basket")
+LOOK_BRANDS = ("datakadai", "indicaatlas")
 BANNED = re.compile(r"\b(truth|reality|secret|exposed|shocking|worst|best|backward|failed|no\.? ?1|number one|today|currently|right now|independent country)\b|#1(?![0-9A-Fa-f])", re.I)      # "#1" as a rank, not the start of a colour code
 NUMBER_WORDS = dict(zip("1 2 3 4 5 6 7 8 9 10 11 12".split(), "one two three four five six seven eight nine ten eleven twelve".split()))
 COVERAGE = "public/datayt/coverage/mobile_coverage_2026-02-28.json"
@@ -336,8 +339,24 @@ def closing_map(sid, cfg, beats, extra):
     cfg["end"] = {"kind": "mapend", "note": m.get("note", ""), "ring": ring, **cfg["end"]}
 
 
+def look_fields(sid, typ, cfg):
+    """Premium looks (docs/datakadai/looks/FOUNDATION.md): a config may name "look", "brand" and "look_opts"; they travel into
+    data.json as look, brand and lookOpts and change nothing else. Only national data stories (money, basket) can take a look,
+    so map and state-comparison Shorts always render exactly as before. Checked before anything is voiced."""
+    out = {}
+    for k, key in (("look", "look"), ("brand", "brand"), ("look_opts", "lookOpts")):
+        if cfg.get(k) is not None:
+            assert typ in LOOK_TYPES, f"{sid}: \"{k}\" is only for {' and '.join(LOOK_TYPES)} Shorts, not {typ}"
+            out[key] = cfg[k]
+    assert out.get("look") in (None,) + LOOKS, f"{sid}: unknown look {out.get('look')!r} (one of {', '.join(LOOKS)})"
+    assert out.get("brand") in (None,) + LOOK_BRANDS, f"{sid}: unknown brand {out.get('brand')!r} (one of {', '.join(LOOK_BRANDS)})"
+    assert isinstance(out.get("lookOpts", {}), dict), f"{sid}: look_opts must be an object"
+    return out
+
+
 def build(cfg):
     sid, typ = cfg["id"], cfg["type"]
+    looks = look_fields(sid, typ, cfg)
     pal = PALETTES[cfg.get("palette", "A")]
     d = f"{BASE}/{sid}"; os.makedirs(d, exist_ok=True)
     beats = [{"kind": "hook", "lines": cfg.get("hook", []), "vo": cfg.get("hook_vo") or " ".join(cfg.get("hook", [])).replace("*", "")}]
@@ -894,7 +913,7 @@ def build(cfg):
     out = {"id": sid, "type": typ, "chip": cfg["chip"], "sourceShort": cfg["source_short"], "source": cfg["source"], "accent": pal["accent"], "accent2": pal["accent2"],
            "bands": extra.pop("bands_override", pal["bands"]), "beats": beats, "total": total, "fps": FPS, "beat": M.BEAT, **extra, "vo": [] if MUTE else vo,
            "voiceEngine": "none" if MUTE else V.ENGINE, "voice": "" if MUTE else V.VOICE,
-           "ytTitle": cfg.get("yt_title", "")}
+           "ytTitle": cfg.get("yt_title", ""), **looks}
     if sid not in TESTED and cfg.get("tests"):      # a fact or a paradox carries its comparisons under "checks"; any listed under "tests" are run too (found 13 Oct 2026: they were being skipped)
         run_checks(sid, cfg, cfg.get("state") or cfg.get("a") or "India")
     json.dump(out, open(f"{d}/data.json", "w"), indent=1, ensure_ascii=False)

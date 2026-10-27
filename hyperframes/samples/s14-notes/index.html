@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- Sample 14 · Hand-drawn notes over a real document: Nomad Investment Partnership letter, June 2006 (page 99 of the collected letters). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Hand-drawn notes</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1500px 1000px at 40% 40%, #d4c6a6 0%, #c9bb9c 55%, #b5a684 100%); }
+      #page { position: absolute; left: 0; top: 0; width: 1488px; height: 2105px; transform-origin: 0 0; box-shadow: 0 24px 60px rgba(40, 28, 10, 0.4); }
+      #page img { position: absolute; left: 0; top: 0; width: 1488px; height: 2105px; }
+      #ink { position: absolute; left: 0; top: 0; }
+      .hl { fill: rgba(242, 201, 76, 0.55); mix-blend-mode: multiply; }
+      .pen { fill: none; stroke: #c42b1c; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      #over { position: absolute; inset: 0; }
+      .arrow { fill: none; stroke: #c42b1c; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+      .note { position: absolute; left: 1490px; width: 390px; text-shadow: 0 0 6px #fff, 0 0 12px #fff; font: 600 54px/1.02 Caveat, cursive; color: #7f170e; transform: rotate(-3deg); }
+      .kicker { background: rgba(26, 26, 26, 0.9); color: #d9a441; padding: 10px 14px; left: 1480px; top: 80px; }
+      .src { right: 40px; bottom: 112px; width: 400px; text-align: left; left: 1480px; font-size: 24px; line-height: 1.35; color: #3b342a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="11" data-width="1920" data-height="1080">
+      <div id="page">
+        <img src="assets/img/p99.png" alt="" />
+        <svg id="ink" width="1488" height="2105" viewBox="0 0 1488 2105">
+          <rect class="hl" id="h1" x="1045" y="390" width="250" height="35" />
+          <rect class="hl" id="h2" x="193" y="426" width="242" height="35" />
+          <path class="pen" id="circ" />
+          <path class="pen" id="u1" />
+          <path class="pen" id="u2" />
+          <path class="pen" id="brk" />
+        </svg>
+      </div>
+      <svg id="over" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <path class="arrow" id="a1" /><path class="arrow" id="a2" /><path class="arrow" id="a3" />
+      </svg>
+      <div class="note" id="n1">they made sure they can't sell the fund</div>
+      <div class="note" id="n2">the fee covers costs, it isn't profit</div>
+      <div class="note" id="n3">and they took a pay cut</div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT &amp; MARGIN · READ THE LETTER</div>
+      <div class="src">Nomad Investment Partnership letter, June 2006 · notes are ours</div>
+      <div class="cap" id="c1">In 2006, Nomad's managers made sure they could never sell the fund.</div>
+      <div class="cap" id="c2">And the fee would pay for costs, not make a profit.</div>
+    </div>
+    <script>
+      const H = HF.setup(11), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      let sd = 21; const rnd = () => ((sd = (sd * 16807) % 2147483647) / 2147483647);
+      const j = (a) => (rnd() - 0.5) * a;
+      // hand-drawn shapes: a loose double loop, slightly wavy underlines, a margin bracket
+      const loop = (cx, cy, rx, ry) => {
+        let d = "";
+        for (let i = 0; i <= 64; i++) {
+          const a = -2.6 + (i / 64) * Math.PI * 2.25, r = 1 + 0.06 * Math.sin(i * 0.7) + j(0.02);
+          const x = cx + Math.cos(a) * rx * r, y = cy + Math.sin(a) * ry * r * (1 + i * 0.002);
+          d += (i ? " L " : "M ") + x.toFixed(1) + " " + y.toFixed(1);
+        }
+        return d;
+      };
+      const wavy = (x0, x1, y) => {
+        let d = `M ${x0} ${y}`;
+        for (let x = x0 + 30; x <= x1; x += 30) d += ` Q ${x - 15} ${y + j(6)} ${x} ${y + j(4)}`;
+        return d;
+      };
+      $("circ").setAttribute("d", loop(880, 407, 182, 31));
+      $("u1").setAttribute("d", wavy(196, 556, 832));
+      $("u2").setAttribute("d", wavy(204, 550, 839));
+      $("brk").setAttribute("d", "M 1310 838 C 1324 839 1326 845 1326 851 C 1326 855 1331 857 1338 857 C 1331 857 1326 859 1326 863 C 1326 869 1324 875 1310 876");
+      const draws = [["circ", 1.0, 0.7], ["u1", 4.6, 0.5], ["u2", 5.0, 0.45], ["brk", 7.4, 0.45]].map(([id, a, d]) => {
+        const p = $(id), n = p.getTotalLength(); p.style.strokeDasharray = n; return { p, n, a, d };
+      });
+      const SC = 1.22, LEFT = 40 - 190 * SC;
+      const scr = (x, y, panY) => [LEFT + x * SC, (y - panY) * SC];
+      H.render = (t) => {
+        const panY = L(95, 364, E.io3((t - 3.4) / 1.2));
+        $("page").style.transform = `translate(${LEFT}px, ${-panY * SC}px) scale(${SC}) rotate(-0.4deg)`;
+        for (const s of draws) s.p.style.strokeDashoffset = s.n * (1 - E.io2((t - s.a) / s.d));
+        $("h1").style.transform = `scaleX(${E.io2((t - 2.6) / 0.5)})`; $("h1").style.transformOrigin = "1045px 0";
+        $("h2").style.transform = `scaleX(${E.io2((t - 3.1) / 0.4)})`; $("h2").style.transformOrigin = "193px 0";
+        // notes in the right column, arrows into the page
+        const notes = [["n1", 1.6, [1062, 407], 250], ["n2", 5.6, [556, 836], 470], ["n3", 7.9, [1340, 857], 700]];
+        for (const [id, a, tgt, y] of notes) {
+          const el = $(id); el.style.top = `${y}px`; el.style.opacity = F(t, a, 99, 0.35);
+          const [tx, ty] = scr(tgt[0], tgt[1], panY);
+          const ar = $("a" + id[1]);
+          const x0 = 1470, y0 = y + 40;
+          const mx = (x0 + tx) / 2, my = Math.min(y0, ty) - 70, ang = Math.atan2(ty - my, tx - mx), hh = 22;
+          ar.setAttribute("d", `M ${x0} ${y0} Q ${mx} ${my} ${tx} ${ty} M ${tx - hh * Math.cos(ang - 0.45)} ${ty - hh * Math.sin(ang - 0.45)} L ${tx} ${ty} L ${tx - hh * Math.cos(ang + 0.45)} ${ty - hh * Math.sin(ang + 0.45)}`);
+          const n = ar.getTotalLength(); ar.style.strokeDasharray = n;
+          ar.style.strokeDashoffset = n * (1 - E.io2((t - a - 0.2) / 0.5));
+        }
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        $("c1").style.opacity = F(t, 0.8, 4.4, 0.3);
+        $("c2").style.opacity = F(t, 4.7, 99, 0.3);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

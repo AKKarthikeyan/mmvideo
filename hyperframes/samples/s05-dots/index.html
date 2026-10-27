@@ -1,0 +1,108 @@
+<!doctype html>
+<!-- Sample 05 · Dot chart: out of every 1,000 Indians, how many lived in towns (Census 1951: 17.3%, Census 2011: 31.1%). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Dot chart</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #cv { position: absolute; inset: 0; }
+      .num { position: absolute; width: 450px; text-align: center; font: 700 120px/1 Oswald, sans-serif; font-variant-numeric: tabular-nums; }
+      .lab { position: absolute; width: 450px; text-align: center; font: 700 32px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: #c8cdd3; }
+      #nR { color: #eadfc6; } #nU { color: #d9a441; }
+      #year { position: absolute; right: 110px; top: 80px; font: 700 150px/1 Oswald, sans-serif; color: #f7f3ea; font-variant-numeric: tabular-nums; }
+      #yl { position: absolute; right: 114px; top: 238px; font: 28px/1 Plex, monospace; color: #c8cdd3; }
+      #sub { position: absolute; left: 110px; top: 214px; font: 400 34px/1.2 Inter, sans-serif; color: #c8cdd3; }
+      #delta { position: absolute; right: 110px; top: 300px; font: 700 44px/1 Oswald, sans-serif; color: #0b0e13;
+        background: #d9a441; padding: 10px 16px 12px; white-space: nowrap; }
+      .base { position: absolute; top: 912px; height: 3px; width: 660px; background: #3a4552; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+      <canvas id="cv" width="1920" height="1080"></canvas>
+      <div class="base" style="left: 290px"></div>
+      <div class="base" style="left: 970px"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">DATA KADAI · CENSUS</div>
+      <div class="head">WHERE INDIANS LIVE</div>
+      <div id="sub">Out of every 1,000 Indians · 1 dot = 1 person</div>
+      <div id="year">1951</div>
+      <div id="yl">CENSUS YEAR</div>
+      <div class="num" id="nR">827</div><div class="lab" id="lR">VILLAGES</div>
+      <div class="num" id="nU">173</div><div class="lab" id="lU">TOWNS &amp; CITIES</div>
+      <div id="delta">+138 IN 60 YEARS</div>
+      <div class="src">Census of India 1951 and 2011 · urban share 17.3% → 31.1%</div>
+      <div class="cap" id="c1">In 1951, 173 of every 1,000 Indians lived in a town.</div>
+      <div class="cap" id="c2">By 2011, it was 311.</div>
+    </div>
+    <script>
+      const H = HF.setup(10), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const ctx = $("cv").getContext("2d");
+      const N = 1000, R51 = 827, R11 = 689, SP = 16, COLS = 40;
+      let seed = 7;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+      const BAR = { r: 620, u: 1300 }; // bar centre x
+      const slot = (cx, j) => [cx - ((COLS - 1) * SP) / 2 + (j % COLS) * SP, 900 - Math.floor(j / COLS) * SP];
+      // Each dot: scattered start, grid, 1951 slot, 2011 slot. Rural dots fill from the bottom; the 138 that move are the top of the rural bar.
+      const dots = [];
+      for (let i = 0; i < N; i++) {
+        const a = rnd() * Math.PI * 2, r = 700 + rnd() * 500;
+        const p0 = [960 + Math.cos(a) * r, 540 + Math.sin(a) * r * 0.7];
+        const p1 = [960 - 19.5 * 22 + (i % 40) * 22, 600 - 12 * 22 + Math.floor(i / 40) * 22];
+        const p2 = i < R51 ? slot(BAR.r, i) : slot(BAR.u, i - R51);
+        const p3 = i < R11 ? slot(BAR.r, i) : i < R51 ? slot(BAR.u, N - R51 + (i - R11)) : slot(BAR.u, i - R51);
+        dots.push({ p0, p1, p2, p3, urb51: i >= R51, mover: i >= R11 && i < R51, d: rnd() });
+      }
+      const PAPER = [234, 223, 198], GOLD = [217, 164, 65];
+      const mix = (a, b, u) => `rgb(${a.map((v, k) => Math.round(v + (b[k] - v) * u)).join(",")})`;
+      H.render = (t) => {
+        ctx.clearRect(0, 0, 1920, 1080);
+        for (const o of dots) {
+          const u1 = E.io3((t - 0.2 - o.d * 0.6) / 0.9);            // fly in to the grid
+          const u2 = E.io3((t - 2.2 - o.d * 0.5) / 0.9);            // sort into 1951 bars
+          const u3 = o.mover ? E.io3((t - 4.8 - o.d * 0.9) / 1.1) : 0; // the 138 move to town
+          let x = L(o.p0[0], o.p1[0], u1), y = L(o.p0[1], o.p1[1], u1);
+          x = L(x, o.p2[0], u2); y = L(y, o.p2[1], u2);
+          if (u3 > 0) { x = L(x, o.p3[0], u3); y = L(y, o.p3[1], u3) - Math.sin(u3 * Math.PI) * 160; }
+          const g = o.urb51 ? u2 : u3;
+          ctx.fillStyle = mix(PAPER, GOLD, g);
+          ctx.globalAlpha = 0.25 + 0.75 * u1;
+          ctx.beginPath();
+          ctx.arc(x, y, 5.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        // Only census values are ever shown: numbers fade out while the dots move, the year flips once.
+        const after = t >= 5.7;
+        $("year").textContent = after ? 2011 : 1951;
+        const nr = after ? 689 : 827, nu = 1000 - nr;
+        $("nR").textContent = nr; $("nU").textContent = nu;
+        const rows = (n) => Math.ceil(n / COLS);
+        const yTop = (n) => 900 - rows(n) * SP - 6;
+        const showN = F(t, 3.0, 99, 0.4) * (1 - F(t, 4.7, 6.5, 0.3));
+        for (const [k, cx, n] of [["R", BAR.r, nr], ["U", BAR.u, nu]]) {
+          $("n" + k).style.left = `${cx - 225}px`; $("n" + k).style.top = `${yTop(n) - 170}px`;
+          $("l" + k).style.left = `${cx - 225}px`; $("l" + k).style.top = `${yTop(n) - 42}px`;
+          $("n" + k).style.opacity = $("l" + k).style.opacity = showN;
+        }
+        $("delta").style.opacity = F(t, 6.9, 99, 0.3);
+        $("delta").style.transform = `scale(${E.back((t - 6.9) / 0.4)})`;
+        for (const [id, a] of [["year", 1.6], ["yl", 1.7], ["sub", 0.6]]) $(id).style.opacity = F(t, a, 99, 0.5);
+        $("year").style.opacity = F(t, 1.6, 99, 0.5) * (1 - F(t, 5.5, 5.75, 0.15));
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.25, 99, 0.6);
+        document.querySelectorAll(".base").forEach((b) => (b.style.opacity = F(t, 2.6, 99, 0.4)));
+        $("c1").style.opacity = F(t, 3.0, 4.6, 0.3);
+        $("c2").style.opacity = F(t, 4.9, 99, 0.3);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

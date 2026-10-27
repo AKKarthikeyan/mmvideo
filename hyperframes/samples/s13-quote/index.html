@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- Sample 13 · Big-type quote: Nick Sleep, Nomad Investment Partnership letter, June 2004 (exact words; leading "However," omitted). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Big type quote</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1500px 1000px at 30% 40%, #2a241e 0%, #171411 55%, #0e0c0a 100%); }
+      #q { position: absolute; left: 150px; top: 250px; transform-origin: 0 50%; }
+      #big { font: italic 700 150px/1.02 Playfair, serif; color: #f4ecdc; }
+      #big .w, #small .w { display: inline-block; white-space: pre; }
+      #ul { position: absolute; left: 0; top: 0; height: 16px; background: #d9a441; transform-origin: 0 50%; }
+      #small { font: 400 46px/1.3 Inter, sans-serif; color: #d9cfbe; margin-top: 46px; width: 1500px; }
+      #by { font: 400 28px/1.3 Plex, monospace; color: #b3a891; margin-top: 34px; padding-top: 22px; border-top: 2px solid #4a4237; width: 1300px; }
+      #by b { font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #f4ecdc; font-weight: 700; }
+      #clip { position: absolute; left: 150px; top: 868px; width: 1180px; padding: 14px 18px; background: #fbf8f1; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+      #clip img { display: block; width: 1144px; }
+      #hl { position: absolute; background: rgba(242, 201, 76, 0.55); transform-origin: 0 50%; mix-blend-mode: multiply; }
+      #cliplab { position: absolute; left: 1360px; top: 900px; font: 700 26px/1.3 Oswald, sans-serif; letter-spacing: 0.12em; color: #d9a441; }
+      .kicker { color: #d9a441; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="9" data-width="1920" data-height="1080">
+      <div id="q">
+        <div id="big"></div>
+        <div id="small"></div>
+        <div id="by"><b>NICK SLEEP</b> · Nomad Investment Partnership · letter, June 2004</div>
+      </div>
+      <div id="clip"><img src="assets/img/n48_children.png" alt="" /><div id="hl"></div></div>
+      <div id="cliplab">THE ORIGINAL<br />LETTER</div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT &amp; MARGIN · IN THEIR WORDS</div>
+    </div>
+    <script>
+      const H = HF.setup(9), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const words = (el, text) => text.split(/(\s+)/).filter((s) => s.length).map((s) => {
+        const sp = document.createElement("span"); sp.className = "w"; sp.textContent = s; el.appendChild(sp); return sp;
+      });
+      const bigA = words($("big"), "“…stocks are not");
+      $("big").appendChild(document.createElement("br"));
+      const bigB = words($("big"), "like children.”");
+      const big = [...bigA, ...bigB];
+      const small = words($("small"), "The more stocks you own the less you care about each one individually.");
+      const ul = document.createElement("div"); ul.id = "ul"; $("big").style.position = "relative"; $("big").appendChild(ul);
+      const place = () => {
+        const a = bigB[0].getBoundingClientRect(), b = bigB[bigB.length - 1].getBoundingClientRect(), r = $("big").getBoundingClientRect();
+        ul.style.left = `${a.left - r.left}px`; ul.style.top = `${a.bottom - r.top - 12}px`; ul.style.width = `${b.right - a.left - 30}px`;
+        const img = $("clip").querySelector("img");
+        // highlight box from the clip's metadata: [x, y, w, h] as fractions of the clip image
+        const hb = [0.2922, 0.3133, 0.2808, 0.3679], w = img.clientWidth, h = img.clientHeight;
+        Object.assign($("hl").style, { left: `${18 + hb[0] * w}px`, top: `${14 + hb[1] * h}px`, width: `${hb[2] * w}px`, height: `${hb[3] * h}px` });
+      };
+      const reveal = (list, t0, step, t) => list.forEach((w, i) => {
+        const u = E.o3((t - t0 - i * step) / 0.55);
+        w.style.opacity = u; w.style.transform = `translateY(${(1 - u) * 46}px)`; w.style.filter = u < 1 ? `blur(${(1 - u) * 10}px)` : "none";
+      });
+      H.render = (t) => {
+        reveal(big, 0.5, 0.16, t);
+        reveal(small, 2.9, 0.07, t);
+        ul.style.transform = `scaleX(${E.io3((t - 2.1) / 0.6)})`;
+        $("by").style.opacity = F(t, 4.4, 99, 0.5);
+        $("q").style.transform = `scale(${1 + 0.025 * E.io2(t / 9)})`;
+        $("clip").style.opacity = F(t, 5.2, 99, 0.4);
+        $("clip").style.transform = `translateY(${60 * (1 - E.o3((t - 5.2) / 0.7))}px)`;
+        $("hl").style.transform = `scaleX(${E.io2((t - 6.0) / 0.6)})`;
+        $("cliplab").style.opacity = F(t, 5.6, 99, 0.4);
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+      };
+      const img = $("clip").querySelector("img");
+      const go = () => document.fonts.ready.then(() => { place(); H.ready(); });
+      img.complete ? go() : img.addEventListener("load", go);
+    </script>
+  </body>
+</html>

@@ -11,7 +11,7 @@ const SCHEM_WIDE = {kind: "label" as const, at: [87.4, 29.85] as P, text: "route
 const SCHEM_NEAR = {kind: "label" as const, at: [89.6, 28.95] as P, text: "route, schematic", size: 38};
 
 export const nainsingh: Spec = {
-  id: "nainsingh", globe: {lon: -0.17, lat: 51.5}, handoff: {lon: 85.5, lat: 29, span: 14}, hi: false,
+  id: "nainsingh", theme: "premium", globe: {lon: -0.17, lat: 51.5}, handoff: {lon: 85.5, lat: 29, span: 14}, hi: false,
   cams: [
     {in: "b1", dt: 0, dur: 1.2, cam: WIDE},
     {in: "b2", cam: {lon: 85, lat: 28.8, span: 10}},
@@ -73,3 +73,15 @@ export const nainsingh: Spec = {
   question: "Could you count every step for a year? 👇",
   credit: "Sources: Montgomerie, JRGS 1868 · RGS",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+nainsingh.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "beads", label: "every step"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "telescope", label: "survey"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "compass", label: "a guess"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "people", label: "stood out"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "boot", label: "disguised"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "beads", label: "100 beads"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "boot", label: "100 paces"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "mountain", label: "1,200+ mi"},
+);

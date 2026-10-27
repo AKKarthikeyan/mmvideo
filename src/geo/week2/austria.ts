@@ -16,7 +16,7 @@ const CLAIM: P[] = [[92.4, 9.55], [94.15, 9.55], [94.15, 6.6], [92.4, 6.6]];
 const EUROPE = {lon: 15.5, lat: 46.5, span: 14};
 
 export const austria: Spec = {
-  id: "austria", globe: {lon: 16.37, lat: 48.21}, handoff: {lon: 93.3, lat: 8.2, span: 6}, hi: true,
+  id: "austria", theme: "premium", globe: {lon: 16.37, lat: 48.21}, handoff: {lon: 93.3, lat: 8.2, span: 6}, hi: true,
   cams: [{in: "b1", dt: 0.1, dur: 1.2, cam: {lon: 85.5, lat: 13, span: 24}}, {in: "b2", dur: 1.0, cam: {lon: 93.25, lat: 8.3, span: 3.6}},
     {in: "b4", dt: 0.6, dur: 1.4, cam: {lon: 91.2, lat: 8.6, span: 7}},
     {in: "b5", dur: 1.4, cam: EUROPE}, {in: "b6", dur: 1.0, cam: {lon: 14.2, lat: 41.5, span: 14}},
@@ -75,3 +75,15 @@ export const austria: Spec = {
   question: "Which other surprise colony should we map next? 👇",
   credit: "Sources: Imperial Gazetteer · Novara · Haensel",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+austria.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "ship", label: "1778"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "island", label: "Nicobars"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "scroll", label: "1756 claim"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "house", label: "left 1773"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "crown", label: "Empress"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "coin", label: "no middlemen"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "fort", label: "trading post"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "clock", label: "3 years"},
+);

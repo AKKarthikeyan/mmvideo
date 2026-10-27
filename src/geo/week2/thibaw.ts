@@ -14,7 +14,7 @@ const WIDE = {lon: 87, lat: 17.5, span: 38};
 const NEAR_R = {lon: 73.31, lat: 16.99, span: 5};
 
 export const thibaw: Spec = {
-  id: "thibaw", globe: {lon: 96.08, lat: 21.97}, handoff: {lon: 87, lat: 17.5, span: 38}, hi: true,
+  id: "thibaw", theme: "premium", globe: {lon: 96.08, lat: 21.97}, handoff: {lon: 87, lat: 17.5, span: 38}, hi: true,
   cams: [
     {in: "b2", cam: {lon: 95.6, lat: 20.2, span: 8}, dur: 1.2},
     {in: "b3", cam: {lon: 96.08, lat: 21.9, span: 6}},
@@ -74,3 +74,15 @@ export const thibaw: Spec = {
   question: "Seen Thibaw Palace in Ratnagiri? 👇",
   credit: "Sources: Blue Book 1886 · Imperial Gazetteer",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+thibaw.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "crown", label: "last king"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "ship", label: "Nov 1885"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "scroll", label: "surrender"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "ship", label: "68 aboard"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "envelope", label: "telegram"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "ship", label: "to Madras"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "compass", label: "2,400 km"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "shield", label: "guarded"},
+);

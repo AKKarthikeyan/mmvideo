@@ -2,6 +2,8 @@
 // Satellite globe fly-in (NASA Blue Marble, inverse orthographic) hands off at GLOBE_END to a flat local-equirectangular map
 // (same scale + filter, so the switch is invisible), then a camera keyframed per beat, with timed overlay layers.
 import React, {useEffect, useMemo, useRef, useState} from "react";
+import {PFonts, PLabel, PPin, PRuler, PBig, PCounter, PTimeline, PTiles, PTag, PCaption, PQuestion, PCredit, PScrims, Grain, pcol, pv} from "./premium";
+import {driftCam, Sweep, Progress, Motes, Locator, PIcon} from "./motion";
 import {AbsoluteFill, Audio, Img, Sequence, continueRender, delayRender, interpolate, spring, staticFile, useCurrentFrame, Easing} from "remotion";
 
 export const FPS = 30, W = 1080, H = 1920;
@@ -28,9 +30,10 @@ export type Layer = When & (
   | {kind: "clock"; time: string | [string, string]; label?: string; x?: number; y?: number; r?: number; color?: string}
   | {kind: "bars"; items: {label: string; value: number; color: string}[]; unit: string; y?: number}
   | {kind: "panel"; name: string; props?: any}
+  | {kind: "icon"; name: string; at?: P; x?: number; y?: number; size?: number; color?: string; label?: string}   // premium theme only (motion.tsx ICONS)
 );
 export type Spec = {id: string; globe: {lon: number; lat: number}; handoff: Cam; hi?: boolean; cams: {in: string; dt?: number; dur?: number; cam: Cam}[];
-  layers: Layer[]; question: string; credit?: string};
+  layers: Layer[]; question: string; credit?: string; theme?: "premium"};   // theme "premium": src/geo/engine/premium.tsx
 type Beat = {key: string; say: string; cap: string; sec: number; audio: string};
 export type GeoData = {id: string; beats: Beat[]};
 
@@ -261,13 +264,18 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
   };
   if (!A) return <AbsoluteFill style={{background: "#05080f"}}/>;
   const G = A.geo;
-  const c = camAt(t, S, B); const {s, xy} = mk(c, cos0);
+  const c = S.theme === "premium" ? driftCam(camAt(t, S, B), t, B) : camAt(t, S, B); const {s, xy} = mk(c, cos0);
   const box = (bb: number[]) => { const [x, y] = xy(bb[0], bb[3]); return {position: "absolute" as const, left: x, top: y, width: (bb[1] - bb[0]) * cos0 * s, height: (bb[3] - bb[2]) * s}; };
   const flatO = interpolate(t, [GLOBE_END - 0.05, GLOBE_END + 0.15], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
   const cur = B.find((b) => t >= b.start && t < b.end + GAP) ?? B[B.length - 1];
   const sw = (px: number) => px / s;
   const Xc = c.lon * cos0, Yc = -c.lat;
 
+  const PR = S.theme === "premium";
+  const last = B[B.length - 1]; const qO = win(t, last.start + 0.2, L.end + 5);
+  // premium: screen boxes taken by labels, pins and cards, so each icon can pick a free slot
+  const occ: [number, number, number, number][] = [];
+  const box4 = (x: number, y: number, w: number, h: number) => occ.push([x - w / 2, x + w / 2, y - h / 2, y + h / 2]);
   const svgLayers: React.ReactNode[] = [], htmlLayers: React.ReactNode[] = [], screenLayers: React.ReactNode[] = [];
   S.layers.forEach((Ly, i) => {
     const [a, b] = span(Ly); const o = win(t, a, b); if (o <= 0) return;
@@ -276,15 +284,27 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
       case "fill": {
         const d = [...(Ly.iso ?? []).map((k) => G.countries[k] ? ringsPath(G.countries[k], cos0) : ""), ...(Ly.state ?? []).map((k) => G.states[k] ? ringsPath(G.states[k], cos0) : ""),
           Ly.poly ? ringsPath([Ly.poly], cos0) : ""].join("");
-        svgLayers.push(<path key={i} d={d} fill={Ly.color} fillOpacity={(Ly.alpha ?? 0.33) * o} stroke={Ly.color} strokeOpacity={o} strokeWidth={sw(4)}
+        svgLayers.push(<path key={i} d={d} fill={PR ? pcol(Ly.color) : Ly.color} fillOpacity={(Ly.alpha ?? 0.33) * o * (PR ? 0.7 : 1)} stroke={PR ? pcol(Ly.color) : Ly.color}
+          strokeOpacity={o * (PR ? 0.75 : 1)} strokeWidth={sw(PR ? 2.5 : 4)}
           strokeDasharray={Ly.dashed ? `${sw(16)} ${sw(10)}` : undefined}/>); break;
       }
       case "line": {
         const len = polyLen(Ly.pts); const draw = Ly.draw ?? 0.8; const k = Math.min(1, (t - a) / draw);
         const d = linePath(Ly.pts, cos0);
-        svgLayers.push(<path key={i} d={d} fill="none" stroke={Ly.color ?? "#fff"} strokeOpacity={o} strokeWidth={sw(Ly.width ?? 8)} strokeLinecap="round" strokeLinejoin="round"
+        if (PR) svgLayers.push(<path key={"g" + i} d={d} fill="none" stroke={pcol(Ly.color)} strokeOpacity={0.28 * o} strokeWidth={sw((Ly.width ?? 8) * 2.6)} strokeLinecap="round"
+          strokeLinejoin="round" pathLength={1} strokeDasharray={Ly.flow || Ly.dash ? undefined : `${k} 1`} style={{filter: "blur(3px)"}}/>);
+        svgLayers.push(<path key={i} d={d} fill="none" stroke={PR ? pcol(Ly.color) : Ly.color ?? "#fff"} strokeOpacity={o} strokeWidth={sw(PR ? Math.max(4, (Ly.width ?? 8) * 0.7) : Ly.width ?? 8)} strokeLinecap="round" strokeLinejoin="round"
           pathLength={1} strokeDasharray={Ly.flow ? `${0.03} ${0.03}` : Ly.dash ? `0.02 0.012` : `${k} 1`} strokeDashoffset={Ly.flow ? -t * 0.08 : 0}/>);
         void len;
+        if (PR && !Ly.dash && polyLen(Ly.pts) > 0) {
+          const heads: [number, number][] = [];
+          if (k < 1) heads.push([k, 1]);
+          else if (!Ly.flow) { const u = ((t - a - draw) / 2.4) % 1; heads.push([u, Math.sin(Math.PI * u)]); }
+          htmlLayers.push(<svg key={"h" + i} width={W} height={H} style={{position: "absolute", inset: 0, opacity: o, pointerEvents: "none"}}>
+            {heads.map(([u, a2], j) => { const [lo, la] = along(Ly.pts, u); const [hx, hy] = xy(lo, la);
+              return <g key={j} opacity={a2}><circle cx={hx} cy={hy} r={22} fill={pcol(Ly.color)} opacity={0.25} style={{filter: "blur(6px)"}}/>
+                <circle cx={hx} cy={hy} r={7} fill="#fff"/></g>; })}</svg>);
+        }
         if (Ly.arrow && k > 0.95) {
           const [p1, p0] = [Ly.pts[Ly.pts.length - 1], Ly.pts[Ly.pts.length - 2]];
           const [x1, y1] = xy(p1[0], p1[1]), [x0, y0] = xy(p0[0], p0[1]); const ang = Math.atan2(y1 - y0, x1 - x0); const r = (Ly.width ?? 8) * 3.2;
@@ -313,21 +333,27 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
         htmlLayers.push(<div key={i} style={{position: "absolute", top: 0, bottom: 0, left: 0, width: Math.max(0, xE), opacity: 0.62 * o,
           background: "linear-gradient(to right, #020615 0%, #020615 80%, rgba(2,6,21,0) 100%)"}}/>); break;
       }
-      case "label": { const [x, y] = xy(Ly.at[0], Ly.at[1]); htmlLayers.push(<Txt key={i} x={x} y={y + (Ly.dy ?? 0)} o={o} text={Ly.text} sub={Ly.sub} color={Ly.color} size={Ly.size}/>); break; }
+      case "label": { const [x, y] = xy(Ly.at[0], Ly.at[1]); if (PR) { htmlLayers.push(<PLabel key={i} x={x} y={y + (Ly.dy ?? 0)} o={o} text={Ly.text} sub={Ly.sub} color={Ly.color} size={Ly.size}/>);
+          box4(x, y + (Ly.dy ?? 0), Ly.text.length * 24 + 20, Ly.sub ? 90 : 56); break; } htmlLayers.push(<Txt key={i} x={x} y={y + (Ly.dy ?? 0)} o={o} text={Ly.text} sub={Ly.sub} color={Ly.color} size={Ly.size}/>); break; }
       case "pin": {
-        const [x, y] = xy(Ly.at[0], Ly.at[1]); const k = spring({frame: f - Math.round(a * FPS), fps: FPS, config: {damping: 11}});
+        const [x, y] = xy(Ly.at[0], Ly.at[1]);
+        if (PR) { htmlLayers.push(<PPin key={i} x={x} y={y} o={o} age={t - a} text={Ly.text} color={Ly.color} dy={Ly.dy}/>);
+          box4(x, y, 50, 50); if (Ly.text) box4(x, y + (Ly.dy ?? -62) - ((Ly.dy ?? -62) < 0 ? 30 : -30), Ly.text.length * 24 + 60, 64); break; }
+        const k = spring({frame: f - Math.round(a * FPS), fps: FPS, config: {damping: 11}});
         htmlLayers.push(<React.Fragment key={i}>
           <svg width={W} height={H} style={{position: "absolute", inset: 0, opacity: o}}><circle cx={x} cy={y} r={16 * k} fill={Ly.color ?? C.red} stroke="#fff" strokeWidth={5}/></svg>
           {Ly.text && <Txt x={x} y={y + (Ly.dy ?? -62)} o={o} text={Ly.text} color={Ly.color ?? "#fff"} size={Ly.size ?? 50}/>}</React.Fragment>); break;
       }
       case "ruler": {
         const [ax, ay] = xy(Ly.a[0], Ly.a[1]), [bx, by] = xy(Ly.b[0], Ly.b[1]); const k = Math.min(1, (t - a) / 0.7);
+        if (PR) { htmlLayers.push(<PRuler key={i} ax={ax} ay={ay} bx={bx} by={by} k={k} o={o} text={Ly.text} color={Ly.color} dy={Ly.dy}/>); break; }
         htmlLayers.push(<React.Fragment key={i}><svg width={W} height={H} style={{position: "absolute", inset: 0, opacity: o}}>
           <line x1={ax} y1={ay} x2={ax + (bx - ax) * k} y2={ay + (by - ay) * k} stroke={Ly.color ?? C.amber} strokeWidth={7} strokeLinecap="round"/>
           <circle cx={ax} cy={ay} r={11} fill={Ly.color ?? C.amber}/>{k > 0.98 && <circle cx={bx} cy={by} r={11} fill={Ly.color ?? C.amber}/>}</svg>
           <Txt x={(ax + bx) / 2} y={(ay + by) / 2 + (Ly.dy ?? -60)} o={o * (k > 0.5 ? 1 : 0)} text={Ly.text} color={Ly.color ?? C.amber} size={Ly.size ?? 58}/></React.Fragment>); break;
       }
       case "bigtext": {
+        if (PR) { screenLayers.push(<PBig key={i} o={o} age={t - a} text={Ly.text} sub={Ly.sub} color={Ly.color} y={Ly.y} size={Ly.size} stamp={Ly.stamp}/>); break; }
         const k = Ly.stamp ? spring({frame: f - Math.round(a * FPS), fps: FPS, config: {damping: 10, mass: 0.6}}) : 1;
         screenLayers.push(<div key={i} style={{position: "absolute", left: 30, right: 30, top: Ly.y ?? 240, textAlign: "center", opacity: o, fontFamily: FONT, fontWeight: 700,
           transform: Ly.stamp ? `scale(${2 - k}) rotate(-5deg)` : undefined, textShadow: "0 6px 24px #000, 0 0 4px #000"}}>
@@ -336,6 +362,8 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
       }
       case "counter": {
         const v = interpolate(t, [a + 0.1, a + (Ly.dur ?? 1.2)], [Ly.from, Ly.to], {extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic)});
+        if (PR) { screenLayers.push(<PCounter key={i} o={o} text={pv(v, Ly.prefix, Ly.suffix)} label={Ly.label} y={Ly.y} color={Ly.color} size={Ly.size}
+          prog={Math.max(0, Math.min(1, (t - a - 0.1) / Math.max(0.2, (Ly.dur ?? 1.2) - 0.1)))}/>); break; }
         screenLayers.push(<div key={i} style={{position: "absolute", left: 0, right: 0, top: Ly.y ?? 240, textAlign: "center", opacity: o, fontFamily: FONT, fontWeight: 700, textShadow: "0 6px 24px #000"}}>
           <div style={{fontSize: Ly.size ?? 200, lineHeight: 1, color: Ly.color ?? C.amber}}>{Ly.prefix ?? ""}{Math.round(v).toLocaleString("en-US")}{Ly.suffix ?? ""}</div>
           {Ly.label && <div style={{fontSize: 60, color: "#fff"}}>{Ly.label}</div>}</div>); break;
@@ -352,13 +380,36 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
             <div style={{width: 230, height: 640 * (it.value / mx) * k, background: it.color, opacity: 0.9, borderRadius: "14px 14px 0 0", margin: "10px auto 0"}}/>
             <div style={{fontSize: 50, marginTop: 10}}>{it.label}</div></div>)}</div>); break;
       }
-      case "panel": { const P = Panels[Ly.name]; if (!P) throw new Error("no panel " + Ly.name); screenLayers.push(<P key={i} o={o} u={lu} f={f} props={Ly.props}/>); break; }
+      case "icon": {
+        if (!PR) break;
+        // default slot: lower-left, just above the captions, so icons never cover map pins or labels; hidden under the end question
+        // pick the slot once per icon (no mid-beat jumps): everything shown at any time during the icon's life counts,
+        // placed with the camera as it stands ~1.3 s into the icon (after the beat's camera move)
+        const tc = Math.min(b - 0.3, a + 1.3);   // camera once a beat-start move has mostly settled
+        const c0 = driftCam(camAt(tc, S, B), tc, B); const p0 = mk(c0, cos0).xy;
+        const rects: number[][] = [];
+        const rb = (x: number, y: number, w: number, h: number) => rects.push([x - w / 2, x + w / 2, y - h / 2, y + h / 2]);
+        S.layers.forEach((Lz) => { const [za, zb] = span(Lz); if (zb < a || za > b) return;
+          if (Lz.kind === "label") { const [x, y] = p0(Lz.at[0], Lz.at[1]); rb(x, y + (Lz.dy ?? 0), Lz.text.length * 24 + 20, Lz.sub ? 90 : 56); }
+          if (Lz.kind === "pin") { const [x, y] = p0(Lz.at[0], Lz.at[1]); rb(x, y, 50, 50); if (Lz.text) rb(x, y + (Lz.dy ?? -62) - 30, Lz.text.length * 24 + 60, 64); }
+          if (Lz.kind === "ruler") { const [x1, y1] = p0(Lz.a[0], Lz.a[1]), [x2, y2] = p0(Lz.b[0], Lz.b[1]); rb((x1 + x2) / 2, (y1 + y2) / 2 + (Lz.dy ?? -60), Lz.text.length * 24 + 60, 70); }
+          if (Lz.kind === "panel") rb(540, 600, 940, 700);
+          if (Lz.kind === "bigtext" || Lz.kind === "counter") { const yy = Lz.y ?? 240; rb(540, yy + 150, 1000, 330); } });
+        const free = ([sx, sy]: number[]) => rects.filter(([x0, x1, y0, y1]) => x1 > sx - 110 && x0 < sx + 150 && y1 > sy - 95 && y0 < sy + 115).length;
+        const slots = [[130, 1190], [130, 640], [130, 915], [540, 1190]];   // lower-left, upper-left (mirrors the globe), mid-left, bottom-centre
+        const best = slots.reduce((bs, sl) => free(sl) < free(bs) ? sl : bs, slots[0]);
+        const [x, y] = Ly.at ? xy(Ly.at[0], Ly.at[1]) : [Ly.x ?? best[0], Ly.y ?? best[1]];
+        (Ly.at ? htmlLayers : screenLayers).push(<PIcon key={i} x={x} y={y} o={o * (1 - qO)} age={t - a} name={Ly.name} size={Ly.size ?? 104} color={Ly.color} label={Ly.label} seed={i}/>); break;
+      }
+      case "panel": {
+        if (PR && Ly.name === "timeline") { screenLayers.push(<PTimeline key={i} o={o} u={lu} props={Ly.props}/>); box4(540, 300 + 90 * (Ly.props.items.length) / 2 + 40, 940, 90 * Ly.props.items.length + 90); break; }
+        if (PR && Ly.name === "tiles") { screenLayers.push(<PTiles key={i} o={o} u={lu} props={Ly.props}/>); box4(540, 340 + 50 + 45 * Ly.props.words.length, 940, 100 + 90 * Ly.props.words.length); break; }
+        const P = Panels[Ly.name]; if (!P) throw new Error("no panel " + Ly.name); screenLayers.push(<P key={i} o={o} u={lu} f={f} props={Ly.props}/>); break; }
     }
   });
 
   const words = cur.cap.split(" "); const lt = t - cur.start;
   const nW = Math.min(words.length, Math.floor((lt / Math.max(0.5, cur.sec * 0.85)) * words.length) + 1);
-  const last = B[B.length - 1]; const qO = win(t, last.start + 0.2, L.end + 5);
   return (
     <AbsoluteFill style={{background: "#05080f", overflow: "hidden"}}>
       <style>{`@font-face{font-family:Oswald;font-weight:700;src:url(${staticFile("fonts/Oswald-700.woff2")}) format("woff2");}`}</style>
@@ -378,22 +429,28 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
         </svg>
         {htmlLayers}
       </AbsoluteFill>
-      <div style={{position: "absolute", left: 0, right: 0, top: 96, display: "flex", justifyContent: "center", pointerEvents: "none"}}>
+      {PR && <><PFonts/><Motes t={t}/><PScrims/><Sweep t={t} B={B}/></>}
+      {!PR && <div style={{position: "absolute", left: 0, right: 0, top: 96, display: "flex", justifyContent: "center", pointerEvents: "none"}}>
         <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 34, letterSpacing: 6, color: "#fff", background: "rgba(0,0,0,0.45)", borderRadius: 999,
           padding: "8px 26px", border: "2px solid rgba(255,176,32,0.8)", textShadow: "0 1px 3px #000"}}>
           <span style={{color: "#FFB020"}}>◉</span> INDICA ATLAS
         </div>
-      </div>
+      </div>}
+      {PR && <><PTag/><Progress t={t} B={B}/><Locator c={c} G={G} t={t}/></>}
       {screenLayers}
-      {qO > 0 && <div style={{position: "absolute", left: 60, right: 60, top: 1180, textAlign: "center", opacity: qO, fontFamily: FONT, fontWeight: 700, fontSize: 50,   // 50 (was 62, Week 1): keeps questions on one line
+      {PR && <PQuestion o={qO} text={S.question}/>}
+      {PR && <PCaption words={words} nW={nW} age={lt}/>}
+      {PR && <PCredit text={`Imagery: NASA Blue Marble · Borders: Natural Earth (India view)${S.credit ? " · " + S.credit : ""}`}/>}
+      {PR && <Grain f={f}/>}
+      {!PR && qO > 0 && <div style={{position: "absolute", left: 60, right: 60, top: 1180, textAlign: "center", opacity: qO, fontFamily: FONT, fontWeight: 700, fontSize: 50,   // 50 (was 62, Week 1): keeps questions on one line
         color: "#fff", background: "rgba(0,0,0,0.6)", borderRadius: 24, padding: "20px 26px"}}>{S.question}</div>}
-      <div style={{position: "absolute", left: 50, right: 50, top: 1380, textAlign: "center", fontFamily: FONT, fontWeight: 700, fontSize: 76, lineHeight: 1.12, color: "#fff",
+      {!PR && <div style={{position: "absolute", left: 50, right: 50, top: 1380, textAlign: "center", fontFamily: FONT, fontWeight: 700, fontSize: 76, lineHeight: 1.12, color: "#fff",
         WebkitTextStroke: "3px #000", paintOrder: "stroke", textShadow: "0 6px 18px rgba(0,0,0,0.85)"}}>
         {words.map((w, i) => <span key={i} style={{opacity: i < nW ? 1 : 0, color: i === nW - 1 ? C.amber : "#fff"}}>{w} </span>)}
-      </div>
-      <div style={{position: "absolute", left: 0, right: 0, bottom: 64, textAlign: "center", fontFamily: "Helvetica, Arial, sans-serif", fontSize: 24, color: "rgba(255,255,255,0.75)", textShadow: "0 1px 3px #000"}}>
+      </div>}
+      {!PR && <div style={{position: "absolute", left: 0, right: 0, bottom: 64, textAlign: "center", fontFamily: "Helvetica, Arial, sans-serif", fontSize: 24, color: "rgba(255,255,255,0.75)", textShadow: "0 1px 3px #000"}}>
         Imagery: NASA Blue Marble · Borders: Natural Earth (India view){S.credit ? " · " + S.credit : ""}
-      </div>
+      </div>}
       {B.map((bt) => <Sequence key={bt.key} from={Math.round(bt.start * FPS)} durationInFrames={Math.ceil(bt.sec * FPS) + 2}><Audio src={staticFile(`geo/${D.id}/${bt.audio}`)}/></Sequence>)}
     </AbsoluteFill>
   );

@@ -15,7 +15,7 @@ const SEA_LINE: P[] = [[75.202, 7.4], [75.188, 7.422], [74.936, 7.858], [74.496,
 const WIDE = {lon: 74.4, lat: 8.5, span: 5.4};
 
 export const minicoy: Spec = {
-  id: "minicoy", globe: {lon: -0.13, lat: 51.5}, handoff: {lon: 74.6, lat: 9.5, span: 9}, hi: true,
+  id: "minicoy", theme: "premium", globe: {lon: -0.13, lat: 51.5}, handoff: {lon: 74.6, lat: 9.5, span: 9}, hi: true,
   cams: [{in: "b1", dt: 0.1, dur: 1.0, cam: WIDE}, {in: "b2", dur: 0.9, cam: {lon: 75.4, lat: 10.6, span: 8}},
     {in: "b3", dur: 0.8, cam: WIDE}, {in: "b4", dur: 1.2, cam: {lon: 74.1, lat: 8.3, span: 5.0}},
     {in: "b5", dur: 0.9, cam: {lon: 73.6, lat: 9.8, span: 6.5}}, {in: "b6", dur: 1.0, cam: {lon: 73.4, lat: 9.3, span: 5.4}},
@@ -81,3 +81,14 @@ export const minicoy: Spec = {
   question: "Did you know an Indian island speaks the Maldives' language? 👇",
   credit: "Sources: Lakshadweep Admin · 1976 treaty",
 };
+
+// premium motion sample (AK 25 Oct 2026): animated icons, one per idea
+minicoy.layers.push(
+  {in: "b1", dt: 0.9, kind: "icon", name: "island", label: "Minicoy"},
+  {in: "b3", dt: 0.4, kind: "icon", name: "ship", label: "to Kochi"},
+  {in: "b4", dt: 0.4, kind: "icon", name: "compass", label: "south"},
+  {in: "b5", dt: 0.3, kind: "icon", name: "lighthouse", label: "last island"},
+  {in: "b6", dt: 0.3, kind: "icon", name: "waves", label: "9° channel"},
+  {in: "b7", dt: 0.2, kind: "icon", name: "people", label: "Mahl"},
+  {in: "b8", dt: 0.3, kind: "icon", name: "scroll", label: "1976"},
+);

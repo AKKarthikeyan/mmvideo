@@ -32,7 +32,7 @@ const N_AND: P = [93.06, 13.4];   // east coast of North Andaman
 const WIDE = {lon: 93.75, lat: 13.25, span: 3.4};
 
 export const narcondam: Spec = {
-  id: "narcondam", globe: {lon: -73.97, lat: 40.78}, handoff: {lon: 93.6, lat: 13.2, span: 3.5}, hi: true,
+  id: "narcondam", theme: "premium", globe: {lon: -73.97, lat: 40.78}, handoff: {lon: 93.6, lat: 13.2, span: 3.5}, hi: true,
   cams: [{in: "b1", dt: 0.1, dur: 1.4, cam: {lon: 94.1, lat: 13.25, span: 3.0}}, {in: "b2", dur: 1.3, cam: {lon: N[0] + 0.015, lat: N[1] - 0.01, span: 0.18}},
     {in: "b3", dur: 1.4, cam: WIDE}, {in: "b4", dur: 1.0, cam: {lon: N[0], lat: N[1] - 0.005, span: 0.15}},
     {in: "b5", dur: 0.9, cam: {lon: 93.75, lat: 13.3, span: 3.2}}, {in: "b6", dur: 1.0, cam: {lon: 94.2, lat: 13.9, span: 3.4}},
@@ -96,3 +96,15 @@ export const narcondam: Spec = {
   question: "Which island animal found nowhere else should we map next? 👇",
   credit: "Sources: UNESCO · BirdLife · IUCN Hornbill SG",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+narcondam.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "bird", label: "1 island"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "island", label: "6.8 km²"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "waves", label: "open sea"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "volcano", label: "710 m"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "waves", label: "cut off"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "bird", label: "own species"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "compass", label: "smallest range"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "bird", label: "~1,000"},
+);

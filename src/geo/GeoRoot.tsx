@@ -1,5 +1,6 @@
 import React from "react";
-import {Composition} from "remotion";
+import {Composition, Still} from "remotion";
+import {Thumb, Poster} from "./week2/art";
 import {Siliguri, layout, FPS, W, H, GeoData} from "./Siliguri";
 import siliguri from "../../public/geo/siliguri/data.json";
 import {GeoShort, layout as glayout, GeoData as GD} from "./engine/GeoShort";
@@ -49,5 +50,7 @@ export const GeoRoot: React.FC = () => (
       <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS2[id]}}
         durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
     ))}
+    {Object.keys(WEEK2).map((id) => <Still key={"t" + id} id={`THUMB-${id}`} component={Thumb as any} defaultProps={{id}} width={1080} height={1920}/>)}
+    {Object.keys(WEEK2).map((id) => <Still key={"p" + id} id={`POSTER-${id}`} component={Poster as any} defaultProps={{id}} width={1080} height={1080}/>)}
   </>
 );

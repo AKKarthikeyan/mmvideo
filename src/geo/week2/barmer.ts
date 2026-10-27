@@ -15,7 +15,7 @@ const TO_FIELD: P[][] = [[[71.6, 26.6], MANGALA], [[71.65, 25.4], MANGALA], [[71
 const LAKE = "#2F80ED";
 
 export const barmer: Spec = {
-  id: "barmer", globe: {lon: -95.37, lat: 29.76}, handoff: {lon: 71.4, lat: 25.75, span: 3}, hi: true,
+  id: "barmer", theme: "premium", globe: {lon: -95.37, lat: 29.76}, handoff: {lon: 71.4, lat: 25.75, span: 3}, hi: true,
   cams: [
     {in: "b1", dt: 1.8, dur: 1.6, cam: {lon: 71.3, lat: 25.85, span: 2.4}},
     {in: "b2", dur: 1.2, cam: {lon: 71.3, lat: 26.3, span: 6.5}},
@@ -72,3 +72,15 @@ export const barmer: Spec = {
   question: "Did you know Rajasthan had oil? 👇", credit: "Sources: Cairn, CGWB, AAPG",
 };
 void C; type _P = P;
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+barmer.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "rig", label: "2004"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "mountain", label: "Thar"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "mountain", label: "rift"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "waves", label: "lake"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "drop", label: "algae"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "clock", label: "heat + time"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "rig", label: "Fatehgarh"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "drop", label: "7.3 bn bbl"},
+);

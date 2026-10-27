@@ -12,7 +12,7 @@ const OUT: P[][] = [[PANIPAT, [71, 26], [63, 22]], [PANIPAT, [72.5, 21], [67, 15
 const WORLD = {lon: 44, lat: 27, span: 58};   // keeps the frame inside the map texture (no black edge)
 const CITY = {lon: 77.06, lat: 28.9, span: 2.4};
 export const panipat: Spec = {
-  id: "panipat", globe: {lon: -74, lat: 40.7}, handoff: {lon: 78, lat: 22, span: 30}, hi: true,
+  id: "panipat", theme: "premium", globe: {lon: -74, lat: 40.7}, handoff: {lon: 78, lat: 22, span: 30}, hi: true,
   cams: [{in: "b1", dt: 1.65, dur: 2.6, cam: {lon: 78, lat: 23, span: 25}}, {in: "b2", dur: 1.0, cam: WORLD},
     {in: "b3", dur: 1.4, cam: CITY}, {in: "b4", dur: 1.6, cam: {lon: 76.97, lat: 29.2, span: 2.0}},
     {in: "b5", dur: 2.5, cam: {lon: 76.97, lat: 29.25, span: 1.8}}, {in: "b6", dur: 3.0, cam: {lon: 77.0, lat: 29.1, span: 2.2}},
@@ -49,3 +49,15 @@ export const panipat: Spec = {
   ],
   question: "Where do your old clothes go? 👇", credit: "Sources: UN Comtrade · Panipat district · CESTAT",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+panipat.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "shirt", label: "160,000 t"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "ship", label: "from USA"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "factory", label: "Panipat"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "shirt", label: "cast-offs"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "factory", label: "weavers"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "shield", label: "customs"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "bale", label: "sort · shred"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "scroll", label: "shoddy"},
+);

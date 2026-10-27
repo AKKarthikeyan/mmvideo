@@ -16,7 +16,7 @@ const NP: P[] = [[86.76, 20.60], [86.86, 20.58], [86.95, 20.64], [86.98, 20.72],
 
 const CLOSE = {lon: 86.82, lat: 20.62, span: 1.2};
 export const bhitarkanika: Spec = {
-  id: "bhitarkanika", globe: {lon: 86.9, lat: 20.7}, handoff: {lon: 86.85, lat: 20.65, span: 4}, hi: true,
+  id: "bhitarkanika", theme: "premium", globe: {lon: 86.9, lat: 20.7}, handoff: {lon: 86.85, lat: 20.65, span: 4}, hi: true,
   cams: [{in: "b1", dt: 1.65, dur: 1.4, cam: CLOSE}, {in: "b3", dur: 1.8, cam: {lon: 86.87, lat: 20.66, span: 0.85}},
     {in: "b4", dur: 1.4, cam: {lon: 86.6, lat: 20.68, span: 2.6}}, {in: "b5", cam: CLOSE},
     {in: "b6", dur: 3.0, cam: {lon: 86.84, lat: 20.64, span: 1.0}}, {in: "b8", dur: 1.6, cam: {lon: 86.86, lat: 20.66, span: 0.95}},
@@ -59,3 +59,15 @@ export const bhitarkanika: Spec = {
   ],
   question: "Would you take a boat through these creeks? 👇", credit: "Sources: Govt of Odisha · IUCN CSG · JBNHS 1973",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+bhitarkanika.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "croc", label: "10 seen"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "croc", label: "1,800+"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "croc", label: "biggest"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "waves", label: "2 rivers"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "croc", label: "hunted"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "scroll", label: "1975"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "people", label: "2,300+"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "clock", label: "12+ years"},
+);

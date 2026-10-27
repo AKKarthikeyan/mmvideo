@@ -14,7 +14,7 @@ const LAUNCH: P[] = [[76.87, 8.53], [76.76, 8.50], [76.64, 8.45], [76.52, 8.37]]
 const WIDE = {lon: 77.5, lat: 4.0, span: 22};
 const CLOSE = {lon: 76.87, lat: 8.5, span: 0.8};
 export const thumba: Spec = {
-  id: "thumba", globe: {lon: -95, lat: 29.6}, handoff: {lon: 77.0, lat: 9.0, span: 8}, hi: true,
+  id: "thumba", theme: "premium", globe: {lon: -95, lat: 29.6}, handoff: {lon: 77.0, lat: 9.0, span: 8}, hi: true,
   cams: [{in: "b1", dt: 1.65, dur: 1.2, cam: {lon: 76.9, lat: 8.7, span: 3}}, {in: "b2", dt: 0.2, cam: CLOSE},
     {in: "b3", dt: 0.1, dur: 1.4, cam: WIDE}, {in: "b4", dt: 0.2, dur: 2.5, cam: {lon: 77.2, lat: 4.5, span: 20}},
     {in: "b5", dur: 2.5, cam: {lon: 77.0, lat: 7.5, span: 10}}, {in: "b6", cam: CLOSE},
@@ -57,3 +57,15 @@ export const thumba: Spec = {
   ],
   question: "Been to this space museum? 👇", credit: "Sources: VSSC · ISRO · Kalam 2005",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+thumba.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "rocket", label: "1st rockets"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "palm", label: "Thumba"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "globe", label: "electrojet"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "compass", label: "magnetic"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "rocket", label: "rockets ✓"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "house", label: "the church"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "people", label: "the parish"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "rocket", label: "21 Nov 1963"},
+);

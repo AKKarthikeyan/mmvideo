@@ -28,7 +28,7 @@ const LAK_PINS: P[] = [[72.71, 11.69], [72.19, 10.86], [72.64, 10.56], [73.68, 1
 const AN_PINS: P[] = [[92.73, 11.62], [92.95, 12.9], [92.55, 10.6], [92.8, 9.2], [93.5, 8.0], [93.8, 7.0]];
 
 export const seazone: Spec = {
-  id: "seazone", globe: {lon: -74, lat: 40.7}, handoff: {lon: 82, lat: 18, span: 30}, hi: false,
+  id: "seazone", theme: "premium", globe: {lon: -74, lat: 40.7}, handoff: {lon: 82, lat: 18, span: 30}, hi: false,
   cams: [{in: "b1", dt: 0.1, dur: 1.0, cam: W}, {in: "b3", dur: 1.0, cam: {lon: 72.6, lat: 17.4, span: 13}},
     {in: "b5", dur: 1.0, cam: {lon: 78, lat: 14.5, span: 21}}, {in: "b6", dur: 0.8, cam: W},
     {in: "b7", dur: 1.0, cam: {lon: 92.2, lat: 11.2, span: 12}}, {in: "b8", dur: 1.0, cam: {lon: 73.4, lat: 11.8, span: 12}},
@@ -82,3 +82,15 @@ export const seazone: Spec = {
   question: "Did you know islands give India this much sea? 👇",
   credit: "Sources: PIB · NCPOR · UNCLOS · RBI",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+seazone.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "waves", label: "2M+ km²"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "compass", label: "EEZ"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "scroll", label: "UN treaty"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "anchor", label: "370 km"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "fish", label: "fish · oil"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "island", label: "islands"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "island", label: "A&N"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "island", label: "Lakshadweep"},
+);

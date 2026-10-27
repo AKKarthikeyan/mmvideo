@@ -23,7 +23,7 @@ const RIVERS: P[][] = [[[76.86, 9.86], [76.64, 9.80], [76.46, 9.76]], [[76.86, 9
 
 const CLOSE = {lon: 76.45, lat: 9.47, span: 0.9};
 export const kuttanad: Spec = {
-  id: "kuttanad", globe: {lon: 4.9, lat: 52.37}, handoff: {lon: 76.5, lat: 9.6, span: 5}, hi: true,
+  id: "kuttanad", theme: "premium", globe: {lon: 4.9, lat: 52.37}, handoff: {lon: 76.5, lat: 9.6, span: 5}, hi: true,
   cams: [{in: "b1", dt: 1.65, dur: 1.2, cam: {lon: 76.45, lat: 9.5, span: 3}}, {in: "b2", cam: CLOSE},
     {in: "b4", dt: 0.1, dur: 2.4, cam: {lon: 76.44, lat: 9.52, span: 0.85}}, {in: "b5", cam: CLOSE},
     {in: "b7", dur: 1.6, cam: {lon: 76.46, lat: 9.44, span: 1.05}}, {in: "b8", cam: {lon: 76.5, lat: 9.47, span: 1.0}},
@@ -67,3 +67,15 @@ export const kuttanad: Spec = {
   ],
   question: "Would you farm two metres below the sea? 👇", credit: "Sources: FAO GIAHS · Ramakumar 2023 · Kerala Tourism",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+kuttanad.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "rice", label: "below sea"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "palm", label: "Kerala"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "waves", label: "half below"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "fish", label: "old lake"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "fort", label: "mud walls"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "drop", label: "pump out"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "globe", label: "polders"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "waves", label: "5 rivers"},
+);

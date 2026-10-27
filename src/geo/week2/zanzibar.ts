@@ -20,7 +20,7 @@ const WIDE = {lon: 54.5, lat: 4, span: 36};
 const TOWN = {lon: 39.19, lat: -6.16, span: 1.6};
 
 export const zanzibar: Spec = {
-  id: "zanzibar", globe: {lon: 72.88, lat: 19.08}, handoff: {lon: 39.19, lat: -6.16, span: 1.6}, hi: true,
+  id: "zanzibar", theme: "premium", globe: {lon: 72.88, lat: 19.08}, handoff: {lon: 39.19, lat: -6.16, span: 1.6}, hi: true,
   cams: [
     {in: "b1", dt: 2.0, dur: 1.6, cam: {lon: 39.24, lat: -6.12, span: 1.9}},
     {in: "b2", cam: {lon: 39.3, lat: -6.05, span: 2.2}},
@@ -93,3 +93,15 @@ export const zanzibar: Spec = {
   question: "Have you seen a door like this in Gujarat? 👇", credit: "Sources: ICOMOS, Purdy",
 };
 void C; type _P = P;
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+zanzibar.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "door", label: "500+ doors"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "island", label: "Zanzibar"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "dhow", label: "trade"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "people", label: "merchants"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "house", label: "havelis"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "house", label: "shopfronts"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "coin", label: "wealth"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "door", label: "styles"},
+);

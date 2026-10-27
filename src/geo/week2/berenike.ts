@@ -24,7 +24,7 @@ const PORT = {lon: 35.35, lat: 24.28, span: 1.4};     // south edge 23.15°N
 const WIDE = {lon: 59.6, lat: 16, span: 56};
 
 export const berenike: Spec = {
-  id: "berenike", globe: {lon: 12.5, lat: 41.9}, handoff: {lon: 35.3, lat: 25.1, span: 2.4}, hi: true,
+  id: "berenike", theme: "premium", globe: {lon: 12.5, lat: 41.9}, handoff: {lon: 35.3, lat: 25.1, span: 2.4}, hi: true,
   cams: [
     {in: "b1", dt: 1.8, dur: 1.4, cam: CLOSE},
     {in: "b2", dur: 2.6, cam: CLOSER},
@@ -93,3 +93,14 @@ export const berenike: Spec = {
   question: "Which Indian spice would you have shipped to Rome? 👇", credit: "Sources: Cappers, DAI",
 };
 void C; type _P = P;
+
+// premium motion sample (AK 25 Oct 2026): animated icons, one per idea
+berenike.layers.push(
+  {in: "b1", dt: 0.8, kind: "icon", name: "pepper", label: "7.5+ kg"},
+  {in: "b2", dt: 0.3, kind: "icon", name: "coin", label: "value"},
+  {in: "b3", dt: 0.3, kind: "icon", name: "anchor", label: "port"},
+  {in: "b4", dt: 0.6, kind: "icon", name: "dhow", label: "monsoon"},
+  {in: "b5", dt: 0.3, kind: "icon", name: "waves", label: "north winds"},
+  {in: "b7", dt: 0.3, kind: "icon", name: "house", label: "lived here"},
+  {in: "b8", dt: 0.4, kind: "icon", name: "scroll", label: "Tamil-Brahmi"},
+);

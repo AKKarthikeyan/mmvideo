@@ -19,7 +19,7 @@ const NEAR_SH = {lon: 121.1, lat: 30.65, span: 3.5};
 const SCHEM = {kind: "label" as const, at: [88, 12] as P, text: "routes schematic", size: 38};
 
 export const sikhpolice: Spec = {
-  id: "sikhpolice", globe: {lon: 74.3, lat: 31.55}, handoff: {lon: 118, lat: 27, span: 22}, hi: true,
+  id: "sikhpolice", theme: "premium", globe: {lon: 74.3, lat: 31.55}, handoff: {lon: 118, lat: 27, span: 22}, hi: true,
   cams: [
     {in: "b1", dt: 0, dur: 1.6, cam: NEAR_SH},
     {in: "b2", cam: WIDE, dur: 1.1},
@@ -77,3 +77,15 @@ export const sikhpolice: Spec = {
   question: "Did anyone in your family serve overseas? 👇",
   credit: "Sources: Shanghai Municipal Council · HK Police",
 };
+
+// premium motion (AK 26 Oct 2026): one animated icon per beat, lower-left slot
+sikhpolice.layers.push(
+  {in: "b1", dt: 0.35, kind: "icon", name: "shield", label: "558"},
+  {in: "b2", dt: 0.35, kind: "icon", name: "globe", label: "Punjab → China"},
+  {in: "b3", dt: 0.35, kind: "icon", name: "anchor", label: "Hong Kong"},
+  {in: "b4", dt: 0.35, kind: "icon", name: "ship", label: "Bombay"},
+  {in: "b5", dt: 0.35, kind: "icon", name: "people", label: "from Punjab"},
+  {in: "b6", dt: 0.35, kind: "icon", name: "people", label: "big heads"},
+  {in: "b7", dt: 0.35, kind: "icon", name: "shield", label: "16 hired"},
+  {in: "b8", dt: 0.35, kind: "icon", name: "people", label: "50 by 1885"},
+);

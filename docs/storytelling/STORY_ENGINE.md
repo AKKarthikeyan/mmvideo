@@ -313,7 +313,7 @@ Each channel's audience changes the length, the words, the hook type and which f
 - **Ending:** every state on the map, then one question.
 
 ### Indica Atlas
-- **Who:** about 50% Indian and 50% international viewers (AK's stated target when naming the channel, 20 Oct 2026). The international half has little prior knowledge of the place.
+- **Who:** Indian and international viewers. The content mix is 70% India and 30% global or India-and-the-world (AK, 25 Oct 2026, PLAN_WEEKS_2-5). International viewers have little prior knowledge of Indian places. Full playbook: `docs/geo/INDICA_ATLAS_PLAYBOOK.md`.
 - **Context:** "Why" Shorts of 25–35 s; long videos of 8–12 min.
 - **Language:** English for a global ear; place names said carefully (research claim on pronunciation).
 - **Best formats:** F10, F6, F4, F12, F7, F5 (explorers), F1.

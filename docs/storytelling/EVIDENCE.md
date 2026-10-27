@@ -39,3 +39,39 @@ Saved records: `research/pubmed_abstracts.json`, `research/crossref_records.json
 - Third-party Shorts benchmarks (for example "aim for 75–80% viewed"): they come from blogs (Tier X). AK can read the official "stayed to watch / swiped away" definition in Studio.
 - The van Laer (2014) and Braddock & Dillard (2016) meta-analyses on narrative persuasion: their abstracts weren't available, so they weren't read and aren't cited.
 - Harp & Mayer (1998) on seductive details: not opened. The coherence effect in E12 covers the same ground.
+
+## Added 27 Oct 2026 for the Shorts Engine
+
+| ID | Finding | Exact words (source) | Source | Strength |
+|---|---|---|---|---|
+| **E20** | A complete suspense story can be five sentences: initiating event, delay, outcome | Their minimal suspense example: "The sniper was waiting outside the house. Charles got up from the chair. He walked slowly toward the window. There was the sound of a shot and the window broke. Charles fell dead." | Brewer & Lichtenstein (1982), TR 265, pp. 15–16 | Strong (same source as E6) |
+| **E21** | Viewers actively work out *why* each thing is mentioned and fill the causal gaps themselves | Readers try to build a meaning representation "that explains why actions, events, and states are mentioned in the text" | Graesser, Singer, Trabasso (1994). *Psychological Review*. PMID 7938337 | Strong (major theory and review) |
+| **E22** | A sudden scene or time jump costs processing; a one-line foreshadow removes the cost | "readers do not expect event shifts, but foreshadowing eliminates this"; "reading times increased when an event shift was not foreshadowed" | Pettijohn & Radvansky (2016). *Memory & Cognition*. PMID 27170375 | Moderate |
+| **E23** | Slower speech is understood and remembered better (tested with degraded speech) | "slow sentences had a greater accuracy of sentence comprehension and faster RTs compared to fast sentences" | Patel, Sevich, Feng et al. (2026). *JSLHR*. PMID 42600158 | Moderate; specific population (cochlear implant users and simulated CI hearing) |
+| **E24** | Shorts can run to 3 minutes (square or vertical), but any Short over one minute with an active copyright claim is blocked worldwide; YouTube Audio Library music gets no Content ID claims | "Any Short that is over one minute in duration with an active copyright claim of any type" is blocked; "You can use most songs for up to 90 seconds in a 3 minute Short" | YouTube Help, answer 15424877 (read 27 Oct 2026) | Platform |
+| **E25** | A view counts from the first frame; an *engaged* view needs the viewer to keep watching. Analytics stay anchored on engaged views | "A view is now defined as counting from the very first frame"; "If you let it keep playing for some amount of seconds after that first frame, it's an engaged view"; "the vast majority of analytics remain anchored on engaged views" | YouTube Official Blog, 19 Aug 2026, "What are 'Engaged' Views on YouTube?" | Platform |
+
+Not read: Trabasso & van den Broek (1985) and Trabasso & Sperry (1985) on causal-chain events (publisher blocked). The causal-chain rule in SHORTS_ENGINE C2 rests on E21 instead.
+
+## Added 27 Oct 2026 for the Indica Atlas playbook (maps and places)
+
+| ID | Finding | Exact words (source) | Source | Strength |
+|---|---|---|---|---|
+| **E26** | People's world maps are built from "subregions" with systematic biases, and a few accurate "seed" locations shift their estimates for whole regions | The pre- and post-seeding estimates revealed "the subjective positioning and subregionalization of regions within continents"; "differential seeding effects revealed between-region dependencies" | Friedman & Brown (2000). *J Exp Psych: General*. PMID 10868334 | Moderate–Strong (4 experiments) |
+| **E27** | When people learn one new location, they update related regions too, balancing coherence against inertia | People "strike a balance between 2 principles: the need to keep their knowledge base coherent, and the inertial tendency to resist cha[nge]" | Friedman & Brown (2000). *JEP: Learning, Memory, Cognition*. PMID 10946370 | Moderate |
+| **E28** | Memory straightens maps: nearly symmetric rivers and lines are remembered as more symmetric and more aligned with the main axes | "increased (horizontal or vertical) symmetry in perception and memory of nearly symmetric curves in graphs and rivers in maps" | Tversky & Schiano (1989). *J Exp Psych: General*. PMID 2531198 | Moderate |
+| **E29** | **The "Mercator effect" is not in remembered areas, but it is in directions** | "Recent studies, however, have found no evidence for a Mercator effect on recalled areas for world regions"; the direction estimates provide "clear evidence of a Mercator effect" | Montello & Battersby (2022). *Annals of the AAG* 112(2):468–486, doi 10.1080/24694452.2021.1931001 (abstract via RePEc) | Moderate (replication plus new task) |
+| **E30** | Linking material to oneself improves memory | "self-referent encoding strategies yielding superior memory relative to both semantic and other-referent encoding strategies" | Symons & Johnson (1997). *Psychological Bulletin*. PMID 9136641 | Strong (meta-analysis) |
+| **E31** | Being quizzed improves long-term memory more than restudying | "on the delayed tests, prior testing produced substantially greater retention than studying"; "Testing is a powerful means of improving learning, not just assessing it" | Roediger & Karpicke (2006). *Psychological Science*. PMID 16507066 | Strong (widely replicated testing effect) |
+| **E32** | Awe comes from vastness plus a need to rethink | Two central appraisals: "perceived vastness, and a need for accommodation, defined as an inability to assimilate an experience into current mental structures" | Keltner & Haidt (2003). *Cognition & Emotion*. PMID 29715721 | Theory (widely used prototype) |
+
+**Our own data (not research papers, but real):**
+- **D1:** Indica Atlas's first 8 Shorts, views read 25 Oct 2026. The best were "questions about India itself".
+- **D2:** YouTube's public view counts for the top videos of 21 geography channels, read 25 Oct 2026.
+
+Both are in `docs/geo/research/CONTENT_REFRESH_2026-10-25.md`.
+
+**Leads not read:**
+- Fish, Goldsberry & Battersby (2011), change blindness in animated maps (publisher and thesis blocked; only secondary summaries seen).
+- Battersby & Montello (2009), seen only as an index snippet.
+- Stevens & Coupe (1978), no abstract available.

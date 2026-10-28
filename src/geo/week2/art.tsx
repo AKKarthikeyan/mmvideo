@@ -22,6 +22,9 @@ export const ART_TEXT: Record<string, ArtText> = {
   bhitarkanika: {l1: "10 → 1,800+", l2: "CROCODILES", sub: "Bhitarkanika, Odisha: from 10 seen in 1973"},
   thibaw: {l1: "BURMA'S KING", l2: "EXILED TO INDIA", sub: "Thibaw, Burma's last king, died in Ratnagiri in 1916"},
   narcondam: {l1: "1 ISLAND", l2: "1 BIRD", sub: "The Narcondam hornbill lives nowhere else"},
+  // Cyclone Shorts (28 Oct 2026). 21 = deaths from the storm itself in the State's count; the floods after Phailin killed 51 more (stated in the description and pinned comment).
+  cy01odisha: {l1: "9,887 → 21", l2: "ODISHA STORM DEATHS", sub: "1999 super cyclone vs Phailin 2013: how Odisha learned to move people out"},
+  cy02bay: {l1: "STRONGER? NO.", l2: "DEADLIEST: YES", sub: "Bay of Bengal cyclones: no sign of stronger storms, but the deadliest on record"},
 };
 
 

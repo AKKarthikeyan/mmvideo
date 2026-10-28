@@ -281,6 +281,26 @@ const Panels: Record<string, React.FC<{o: number; u: number; f: number; props?: 
       <text x={480} y={yt + 74} fill="#05080f" fontFamily={FONT} fontWeight={700} fontSize={50} textAnchor="middle" opacity={surge > 0.8 ? 1 : 0}>SURGE</text>
     </svg></Card>;
   },
+  // Document quote card (CY03, 28 Oct 2026). props {head, quote, cite, note?}. The quote is shown word for word; the cite names the document and article.
+  quoteCard: ({o, u, props}) => {
+    const q: string = props.quote, n = Math.round(interpolate(u, [0.05, 0.8], [0, q.length], {extrapolateLeft: "clamp", extrapolateRight: "clamp"}));
+    return <Card o={o} h={820}><div style={{padding: "54px 64px", fontFamily: FONT, color: "#fff"}}>
+      <div style={{fontSize: 44, fontWeight: 700, color: C.amber, letterSpacing: 4, textTransform: "uppercase"}}>{props.head}</div>
+      <div style={{fontSize: 58, fontWeight: 700, lineHeight: 1.22, marginTop: 40}}>“{q.slice(0, n)}<span style={{opacity: 0.18}}>{q.slice(n)}</span>”</div>
+      <div style={{fontSize: 42, fontWeight: 700, color: "#cfd6e0", marginTop: 36, opacity: u > 0.85 ? 1 : 0}}>{props.cite}</div>
+      {props.note && <div style={{fontSize: 38, fontWeight: 700, color: C.cyan, marginTop: 30, opacity: u > 0.9 ? 1 : 0}}>{props.note}</div>}
+    </div></Card>;
+  },
+  // Two governments' statements, equal size and equal weight (CY03). props {left: {who, text, color}, right: {who, text, color}, foot?}. Each box is that government's own record, unreconciled.
+  sideBySide: ({o, u, props}) => {
+    const Box = ({b, k}: {b: {who: string; text: string; color: string}; k: number}) => <div style={{flex: 1, border: `4px solid ${b.color}`, borderRadius: 28, padding: "36px 30px", opacity: k, background: "rgba(255,255,255,0.05)"}}>
+      <div style={{fontSize: 46, fontWeight: 700, color: b.color, letterSpacing: 3}}>{b.who}</div>
+      <div style={{fontSize: 54, fontWeight: 700, lineHeight: 1.2, marginTop: 24}}>{b.text}</div></div>;
+    const k1 = interpolate(u, [0.05, 0.4], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"}), k2 = interpolate(u, [0.4, 0.75], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+    return <Card o={o} h={700}><div style={{padding: "60px 40px", fontFamily: FONT, color: "#fff", display: "flex", gap: 28, height: "100%", boxSizing: "border-box"}}>
+      <Box b={props.left} k={k1}/><Box b={props.right} k={k2}/></div>
+      {props.foot && <div style={{position: "absolute", bottom: 26, left: 0, right: 0, textAlign: "center", fontFamily: FONT, fontWeight: 700, fontSize: 36, color: "#cfd6e0"}}>{props.foot}</div>}</Card>;
+  },
   timeline: ({o, u, props}) => {
     const items: {y: string; t: string}[] = props.items; const n = Math.ceil(u * items.length);
     return <Card o={o} top={300} h={760}><div style={{padding: "50px 60px", fontFamily: FONT, fontWeight: 700, color: "#fff"}}>

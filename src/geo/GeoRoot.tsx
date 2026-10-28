@@ -20,6 +20,9 @@ import hyderabad from "../../public/geo/hyderabad/data.json";
 import islamabad from "../../public/geo/islamabad/data.json";
 
 import {SPECS2} from "./week2/specs";
+import {SPECSC} from "./cyclone/specs";
+import c_odisha from "../../public/geo/cy01odisha/data.json";
+import c_bay from "../../public/geo/cy02bay/data.json";
 import w2_minicoy from "../../public/geo/minicoy/data.json";
 import w2_austria from "../../public/geo/austria/data.json";
 import w2_kuttanad from "../../public/geo/kuttanad/data.json";
@@ -36,6 +39,7 @@ import w2_thibaw from "../../public/geo/thibaw/data.json";
 import w2_narcondam from "../../public/geo/narcondam/data.json";
 
 const WEEK2: Record<string, unknown> = {minicoy: w2_minicoy, austria: w2_austria, kuttanad: w2_kuttanad, sikhpolice: w2_sikhpolice, seazone: w2_seazone, nainsingh: w2_nainsingh, thumba: w2_thumba, zanzibar: w2_zanzibar, barmer: w2_barmer, berenike: w2_berenike, panipat: w2_panipat, bhitarkanika: w2_bhitarkanika, thibaw: w2_thibaw, narcondam: w2_narcondam};
+const CYCLONE: Record<string, unknown> = {cy01odisha: c_odisha, cy02bay: c_bay, "cy02bay-a": c_bay};
 const WEEK1: Record<string, unknown> = {chenab, indiatime, brahmaputra, princely, andaman, himalaya, malacca, chinatime, languages, enclaves, monsoon, hyderabad, islamabad};
 
 export const GeoRoot: React.FC = () => (
@@ -48,6 +52,10 @@ export const GeoRoot: React.FC = () => (
     ))}
     {Object.entries(WEEK2).map(([id, d]) => (
       <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS2[id]}}
+        durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
+    ))}
+    {Object.entries(CYCLONE).map(([id, d]) => (
+      <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECSC[id]}}
         durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
     ))}
     {Object.keys(WEEK2).map((id) => <Still key={"t" + id} id={`THUMB-${id}`} component={Thumb as any} defaultProps={{id}} width={1080} height={1920}/>)}

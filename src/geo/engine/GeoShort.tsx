@@ -240,6 +240,47 @@ const Panels: Record<string, React.FC<{o: number; u: number; f: number; props?: 
     </svg></Card>;
   },
   // Timeline of dates
+  // Unit-dot picture (CY02 variant B, 27 Oct 2026): groups of dots, `lit` of `total` coloured in. props {title, note, gap?, r?, groups: [{label, color, total, lit, cols}]}
+  dotgrid: ({o, u, props}) => {
+    const G: {label: string; color: string; total: number; lit: number; cols: number; tag?: string}[] = props.groups; const rowsMax = Math.max(...G.map((g) => Math.ceil(g.total / g.cols))); const gap = props.gap ?? 40, r = props.r ?? 17;
+    const n = G.length, colW = 960 / n;
+    return <Card o={o}><svg width={960} height={900}>
+      <text x={480} y={100} fill="#fff" fontFamily={FONT} fontWeight={700} fontSize={50} textAnchor="middle">{props.title}</text>
+      {G.map((g, gi) => {
+        const cx = colW * (gi + 0.5), w = (g.cols - 1) * gap, lit = Math.round(interpolate(u, [0.08, 0.75], [0, g.lit], {extrapolateLeft: "clamp", extrapolateRight: "clamp"}));
+        return <g key={gi}>
+          {Array.from({length: g.total}).map((_, i) => <circle key={i} cx={cx - w / 2 + (i % g.cols) * gap} cy={210 + Math.floor(i / g.cols) * gap} r={r} fill={i < lit ? g.color : "rgba(255,255,255,0.14)"}/>)}
+          <text x={cx} y={210 + rowsMax * gap + 40} fill={g.color} fontFamily={FONT} fontWeight={700} fontSize={52} textAnchor="middle">{g.label}</text>
+          <text x={cx} y={210 + rowsMax * gap + 100} fill="#fff" fontFamily={FONT} fontWeight={700} fontSize={64} textAnchor="middle" opacity={u > 0.7 ? 1 : 0}>{g.tag ?? `${g.lit} of ${g.total}`}</text>
+        </g>;
+      })}
+      {props.note && <text x={480} y={840} fill="#cfd6e0" fontFamily={FONT} fontWeight={700} fontSize={40} textAnchor="middle">{props.note}</text>}
+    </svg></Card>;
+  },
+  // Funnel schematic (CY02 variant B): a storm enters the wide mouth, the water piles up at the narrow head. An ANALOGY, drawn to the measured ratio 492/1397, not to scale otherwise.
+  funnel: ({o, u, f}) => {
+    const mouth = [60, 900], head = [480 - 148, 480 + 148], yb = 760, yt = 190;
+    const sx = interpolate(u, [0.1, 0.7], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"}), cy = yb - 90 - (yb - 90 - 500) * sx;
+    const surge = interpolate(u, [0.55, 0.95], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+    const pts = `${mouth[0]},${yb} ${mouth[1]},${yb} ${head[1]},${yt} ${head[0]},${yt}`;
+    const sw = (y: number) => { const k = (yb - y) / (yb - yt); return [mouth[0] + (head[0] - mouth[0]) * k, mouth[1] + (head[1] - mouth[1]) * k]; };
+    const [sl, sr] = sw(yt + 110 * surge);
+    return <Card o={o}><svg width={960} height={900}>
+      <polygon points={pts} fill="rgba(61,217,255,0.18)" stroke="#fff" strokeWidth={5} strokeDasharray="18 12"/>
+      <polygon points={`${sl},${yt + 110 * (1 - 0) * surge} ${sr},${yt + 110 * surge} ${head[1]},${yt} ${head[0]},${yt}`} fill="rgba(255,176,32,0.55)" opacity={surge > 0 ? 1 : 0}/>
+      <g transform={`translate(480 ${cy}) rotate(${f * 7})`} opacity={sx > 0 || u > 0.1 ? 1 : 0}>
+        <circle r={62} fill="rgba(255,255,255,0.12)" stroke="#fff" strokeWidth={5}/>
+        {[0, 120, 240].map((a) => <path key={a} transform={`rotate(${a})`} d="M 0 -6 C 22 -34 52 -24 54 4" stroke={C.cyan} strokeWidth={9} fill="none" strokeLinecap="round"/>)}
+        <circle r={9} fill="#fff"/>
+      </g>
+      <text x={480} y={yb + 70} fill={C.cyan} fontFamily={FONT} fontWeight={700} fontSize={56} textAnchor="middle">1,400 km wide</text>
+      <text x={480} y={yt - 50} fill={C.amber} fontFamily={FONT} fontWeight={700} fontSize={56} textAnchor="middle" opacity={u > 0.25 ? 1 : 0}>under 500 km</text>
+      <text x={480} y={yb - 20} fill="#fff" fontFamily={FONT} fontWeight={700} fontSize={44} textAnchor="middle">FUNNEL · an analogy</text>
+      <text x={480} y={yt + 150} fill="#fff" fontFamily={FONT} fontWeight={700} fontSize={40} textAnchor="middle" opacity={surge > 0.4 ? 1 : 0}>shallow water</text>
+      <text x={480} y={yt + 200} fill="#fff" fontFamily={FONT} fontWeight={700} fontSize={40} textAnchor="middle" opacity={surge > 0.6 ? 1 : 0}>crowded low islands</text>
+      <text x={480} y={yt + 74} fill="#05080f" fontFamily={FONT} fontWeight={700} fontSize={50} textAnchor="middle" opacity={surge > 0.8 ? 1 : 0}>SURGE</text>
+    </svg></Card>;
+  },
   timeline: ({o, u, props}) => {
     const items: {y: string; t: string}[] = props.items; const n = Math.ceil(u * items.length);
     return <Card o={o} top={300} h={760}><div style={{padding: "50px 60px", fontFamily: FONT, fontWeight: 700, color: "#fff"}}>
@@ -376,7 +417,7 @@ export const GeoShort: React.FC<{D: GeoData; S: Spec}> = ({D, S}) => {
         const mx = Math.max(...Ly.items.map((x) => x.value)); const k = Math.min(1, (t - a) / 1.0);
         screenLayers.push(<div key={i} style={{position: "absolute", left: 120, right: 120, top: Ly.y ?? 260, height: 860, opacity: o, display: "flex", alignItems: "flex-end", justifyContent: "space-around"}}>
           {Ly.items.map((it) => <div key={it.label} style={{textAlign: "center", fontFamily: FONT, fontWeight: 700, color: "#fff", textShadow: shadow}}>
-            <div style={{fontSize: 72, color: it.color}}>{Math.round(it.value * k)} {Ly.unit}</div>
+            <div style={{fontSize: 72, color: it.color}}>{Math.round(it.value * k).toLocaleString("en-IN")} {Ly.unit}</div>
             <div style={{width: 230, height: 640 * (it.value / mx) * k, background: it.color, opacity: 0.9, borderRadius: "14px 14px 0 0", margin: "10px auto 0"}}/>
             <div style={{fontSize: 50, marginTop: 10}}>{it.label}</div></div>)}</div>); break;
       }

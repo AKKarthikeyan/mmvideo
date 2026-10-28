@@ -1,0 +1,91 @@
+{
+ "id": "cy02bay",
+ "ep": "CY02",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/CY02-bay-of-bengal",
+ "status": "DRAFT v1 for AK review, 27 Oct 2026. Not voiced.",
+ "version": "short ~30s, F1 Myth Flip",
+ "format": "F1 Myth Flip",
+ "target_seconds": 30,
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "Storm for storm, there's no sign Bay of Bengal cyclones are stronger.",
+   "caption": "Stronger? No sign, storm for storm",
+   "claims": [
+    "C003"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "India's weather service counts six in ten storms turning severe, in the Bay and the Arabian Sea.",
+   "caption": "IMD 1982–2024: 62% vs 62% turn severe",
+   "claims": [
+    "C003"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b3",
+   "move": "M3 Push",
+   "say": "But the Bay makes about twice as many cyclones, and the deadliest on record.",
+   "caption": "About 2× as many · deadliest on record",
+   "claims": [
+    "C001",
+    "C010"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b4",
+   "move": "M3 Push",
+   "say": "In nineteen seventy, in what is now Bangladesh, at least three hundred thousand died, mostly from the storm surge.",
+   "caption": "1970: 300,000+ died (WMO estimate)",
+   "claims": [
+    "C010",
+    "C011",
+    "C012"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b5",
+   "move": "M4 Turn",
+   "say": "Why? At its head the Bay narrows like a funnel, with shallow water and crowded low islands.",
+   "caption": "The Bay narrows: 1,400 km → under 500 km",
+   "claims": [
+    "C033",
+    "C034"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "b6",
+   "move": "M5 Echo",
+   "say": "So it's less about stronger storms, more about where they land.",
+   "caption": "Not stronger storms: where they land",
+   "claims": [
+    "C003",
+    "C033"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b7",
+   "move": "M5 Echo",
+   "say": "Stronger? No. Deadliest on record? Yes.",
+   "caption": "Stronger? No. Deadliest on record? Yes.",
+   "claims": [
+    "C003",
+    "C010"
+   ],
+   "pause": 1.0
+  }
+ ],
+ "title": "Why the Bay of Bengal makes the deadliest cyclones",
+ "title_note": "AK's pick, 27 Oct 2026 (50 characters). Script unchanged."
+}

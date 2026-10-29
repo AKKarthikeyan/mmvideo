@@ -110,8 +110,12 @@ export type RowLayout = {segs: Seg[]; text: string; fit: Fit; x: number; y: numb
 export const rowText = (segs: Seg[], upper = true) => segs.map((s, i) => (i && s.sp ? " " : "") + (upper && !s.num ? up(s.t) : s.t)).join("");
 
 // One row of a poster: words slam in from `at` (1 frame apart), numbers gated, hot words in the emphasis colour or block.
-export const Row: React.FC<{B: LookBrand; L: RowLayout; pal: Pal; f: number; at: number; upper?: boolean; color?: string; hot?: string; where: string; stagger?: number; block?: {bg: string; fg: string} | null}> =
-  ({B, L: R, pal, f, at, upper = true, color, hot, where, stagger = 1, block}) => {
+// The slam (scale 1.35 -> 1, y -0.22 em) happens inside each word's own clip box, a mask zoom: the word can never cross a
+// neighbour or the row above, even for a frame (the 27 Oct review caught 'THEUS' and 'HOWMUCH' mid-slam). The clip box
+// is the word's width (plus 0.02 em) and its line box from the row gap above to below the descenders.
+export const Row: React.FC<{B: LookBrand; L: RowLayout; pal: Pal; f: number; at: number; upper?: boolean; color?: string; hot?: string; where: string; stagger?: number;
+  block?: {bg: string; fg: string} | null; hotAt?: (i: number) => number}> =
+  ({B, L: R, pal, f, at, upper = true, color, hot, where, stagger = 1, block, hotAt}) => {
   const font = display(B, R.fit.stretch);
   const size = R.fit.size;
   const ink = color ?? pal.ink;
@@ -120,20 +124,31 @@ export const Row: React.FC<{B: LookBrand; L: RowLayout; pal: Pal; f: number; at:
   return <div style={{position: "absolute", left: R.x, top: R.y - CAP_TOP * size, height: size, ...fitCss(font, size), lineHeight: `${size}px`, color: ink}}>
     {R.segs.map((s, i) => {
       const t = upper && !s.num ? up(s.t) : s.t;
-      const sp = springAt(f, at + i * stagger, SLAM);
-      const o = ease(f, at + i * stagger, at + i * stagger + 2, Easing.linear);
-      if (f < at + i * stagger) return <React.Fragment key={i}>{i && s.sp ? " " : ""}<span style={{visibility: "hidden"}}>{t}</span></React.Fragment>;
-      // a one-word row already fills the width: it slams on the vertical only, so it never leaves the safe box
+      const a = at + i * stagger;
+      const sp = springAt(f, a, SLAM);
+      const o = ease(f, a, a + 2, Easing.linear);
+      if (f < a) return <React.Fragment key={i}>{i && s.sp ? " " : ""}<span style={{visibility: "hidden"}}>{t}</span></React.Fragment>;
       const k = 0.35 * (1 - sp);
-      const tr = `translateY(${(1 - sp) * -0.22 * size}px) scale(${R.segs.length === 1 ? 1 : 1 + k}, ${1 + k})`;
-      const isHot = s.hot;
-      const c = isHot ? hotC : ink;
-      const inner = s.num ? <InlineNum n={s.num} text={t} font={font} size={size} color={c} pal={pal} f={f} where={where}/> : t;
-      // the first word grows to the right, the last to the left: a slam never pushes type out of the safe box
-      const origin = i === 0 ? "0% 80%" : i === R.segs.length - 1 ? "100% 80%" : "50% 80%";
-      return <React.Fragment key={i}>{i && s.sp ? " " : ""}<span style={{display: "inline-block", position: "relative", transform: tr, transformOrigin: origin, opacity: o, color: c}}>
-        {isHot && hb && <span style={{position: "absolute", left: i === 0 ? 0 : -0.05 * size, right: i === R.segs.length - 1 ? 0 : -0.05 * size, top: (CAP_TOP - 0.07) * size, height: (CAP + 0.14) * size, background: hb.bg, zIndex: -1}}/>}
-        {inner}</span></React.Fragment>;
+      const tr = `translateY(${(1 - sp) * -0.22 * size}px) scale(${1 + k})`;
+      // emphasis: from the narrator's word when given (the block wipes in), else with the word
+      const ha = hotAt ? hotAt(i) : a;
+      const isHot = s.hot && f >= ha;
+      const hp = s.hot ? ease(f, ha, ha + 5, Easing.inOut(Easing.cubic)) : 0;
+      // a block wipes in left to right with the word recoloured inside it (the word drawn twice, the top copy clipped to
+      // the block), so no letter is ever the colour of what is behind it
+      const wiping = s.hot && !!hb && hp > 0 && hp < 1;
+      const c = isHot ? (hb ? (hp >= 1 ? hotC : ink) : hotC) : ink;
+      const word = (col: string) => s.num ? <InlineNum n={s.num} text={t} font={font} size={size} color={col} pal={pal} f={f} where={where}/> : t;
+      const inner = wiping
+        ? <span style={{position: "relative", display: "inline-block"}}>{word(ink)}
+            <span style={{position: "absolute", left: 0, top: 0, color: hotC, clipPath: `inset(-0.3em ${(1 - hp) * 100}% -0.3em -0.1em)`, whiteSpace: "pre"}}>{word(hotC)}</span></span>
+        : word(c);
+      // isolation: the emphasis block (z -1) must stay behind its own word, not fall behind the slab
+      return <React.Fragment key={i}>{i && s.sp ? " " : ""}<span style={{display: "inline-block", position: "relative", color: c, isolation: "isolate"}}>
+        {s.hot && hb && hp > 0 && <span style={{position: "absolute", left: i === 0 ? 0 : -0.05 * size, top: (CAP_TOP - 0.07) * size, height: (CAP + 0.14) * size, background: hb.bg,
+          width: `calc((100% + ${(i === 0 ? 0 : 0.05) + (i === R.segs.length - 1 ? 0 : 0.05)}em) * ${hp})`, zIndex: -1}}/>}
+        <span style={{display: "inline-block", clipPath: `inset(0 ${i === R.segs.length - 1 ? 0 : -0.02}em -0.3em ${i === 0 ? 0 : -0.02}em)`, opacity: o}}>
+          <span style={{display: "inline-block", transform: tr, transformOrigin: "50% 78%"}}>{inner}</span></span></span></React.Fragment>;
     })}
   </div>;
 };
@@ -158,15 +173,26 @@ export const NameBlock: React.FC<{B: LookBrand; segs: Seg[]; fit: Fit; x: number
   </div>;
 };
 export const nameBlockH = (fit: Fit) => CAP * fit.size + 2 * fit.size * 0.14;
+// The other name style: the name in poster type straight on the slab, a thick rule in the bar colour wiping in under it.
+export const NameRule: React.FC<{B: LookBrand; segs: Seg[]; fit: Fit; x: number; y: number; pal: Pal; f: number; at: number; where: string; W: number}> = ({B, segs, fit, x, y, pal, f, at, where, W}) => {
+  const p = ease(f, at + 2, at + 9, Easing.inOut(Easing.cubic));
+  const size = fit.size;
+  return <>
+    <Row B={B} L={{segs, text: "", fit, x, y: y + 0.14 * size, w: fit.w}} pal={pal} f={f} at={at} where={where} block={null} hot={pal.ink}/>
+    {p > 0 && <div style={{position: "absolute", left: x, top: y + (0.14 + CAP + 0.12) * size, width: Math.max(fit.w, Math.min(W, fit.w + 120)) * p, height: Math.max(10, 0.1 * size), background: pal.bar}}/>}
+  </>;
+};
+export const nameRuleH = (fit: Fit) => (0.14 + CAP + 0.12 + 0.1) * fit.size + 4;
 export const nameBlockW = (fit: Fit) => fit.w + 2 * fit.size * 0.16;
 
 // A provenance ticket: perforated card, mono type, slides in from the right. Lines are given already wrapped.
 export type TicketLayout = {head: string[]; body: string[]; headSize: number; bodySize: number; w: number; h: number};
-export const ticketLayout = (B: LookBrand, head: string, body: string, W: number, headMax = 28, bodyMax = 25): TicketLayout => {
+export const TICKET_MIN = 32;
+export const ticketLayout = (B: LookBrand, head: string, body: string, W: number, headMax = 36, bodyMax = 32): TicketLayout => {
   const pad = 20, perf = 18, inner = W - 2 * pad - perf;
   const hf = monoFont(B, 0.04), bf = monoFont(B);
-  const H = head ? fitLines(up(head), hf, inner, 2, headMax, 20) : {size: headMax, lines: [] as string[]};
-  const Bd = body ? fitLines(body, bf, inner, 3, bodyMax, 18) : {size: bodyMax, lines: [] as string[]};
+  const H = head ? fitLines(up(head), hf, inner, 2, Math.max(headMax, TICKET_MIN), TICKET_MIN) : {size: headMax, lines: [] as string[]};
+  const Bd = body ? fitLines(body, bf, inner, 4, Math.max(bodyMax, TICKET_MIN), TICKET_MIN) : {size: bodyMax, lines: [] as string[]};
   const wHead = Math.max(0, ...H.lines.map((l) => measure(l, hf, H.size)));
   const wBody = Math.max(0, ...Bd.lines.map((l) => measure(l, bf, Bd.size)));
   const w = Math.min(W, Math.ceil(Math.max(wHead, wBody)) + 2 * pad + perf + 2);
@@ -179,7 +205,7 @@ export const Ticket: React.FC<{B: LookBrand; T: TicketLayout; x: number; y: numb
   const p = ease(f, at, at + 7);
   const left = align === "right" ? x + W - T.w : x;
   const holes = Math.max(2, Math.floor(T.h / 16));
-  return <div style={{position: "absolute", left, top: y + (1 - p) * 26, width: T.w, height: T.h, background: bg, color: fg, opacity: Math.min(1, p * 2.5), padding: "14px 20px 14px 38px", boxSizing: "border-box"}}>
+  return <div style={{position: "absolute", left, top: y, width: T.w, height: T.h, background: bg, color: fg, clipPath: `inset(0 ${((1 - p) * 100).toFixed(2)}% 0 0)`, padding: "14px 20px 14px 38px", boxSizing: "border-box"}}>
     <div style={{position: "absolute", left: 6, top: 0, bottom: 0, width: 10}}>
       {Array.from({length: holes}, (_, i) => <div key={i} style={{position: "absolute", left: 0, top: (i + 0.5) * (T.h / holes) - 5, width: 10, height: 10, borderRadius: 5, background: hole}}/>)}
     </div>
@@ -217,7 +243,8 @@ export const Deck: React.FC<{B: LookBrand; D: DeckLayout; x: number; y: number; 
     const room = Math.max(1, (W - 2) / Math.max(1, w));      // a wide line slams on the vertical only: it never leaves the box
     const sx = 1 + Math.min(0.2, room - 1) * (1 - s), sy = 1 + 0.2 * (1 - s);
     return <div key={i} style={{position: "absolute", left: align === "right" ? x + W - w : x, top: y + i * D.size - CAP_TOP * D.size, ...fitCss(font, D.size), lineHeight: `${D.size}px`, color,
-      transform: `translateY(${(1 - s) * -0.22 * D.size}px) scale(${sx}, ${sy})`, transformOrigin: align === "right" ? "100% 80%" : "0% 80%", opacity: Math.min(1, s * 3)}}>{l}</div>;
+      clipPath: "inset(-0.02em -0.02em -0.3em -0.02em)", opacity: Math.min(1, s * 3)}}>
+      <div style={{transform: `translateY(${(1 - s) * -0.22 * D.size}px) scale(${sx}, ${sy})`, transformOrigin: align === "right" ? "100% 80%" : "0% 80%"}}>{l}</div></div>;
   })}</>;
 };
 

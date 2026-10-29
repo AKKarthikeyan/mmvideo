@@ -15,18 +15,19 @@ import {LookAudio} from "../shared/LookAudio";
 import type {LookProps} from "../shared/types";
 import {beatAt} from "../shared/useLookData";
 import {Bill, billStart, Proof, proofFrame} from "./bill";
-import {ID, camAt, type Cam} from "./camera";
+import {baseCam, camAt, type Cam} from "./camera";
 import {End, MapSheet, endFrame} from "./end";
 import {FlipStand, Tally, flipFrame, tallyFrame} from "./flip";
-import {Jars, jarFrame} from "./jars";
+import {Columns, colsFrame} from "./columns";
+import {chitFor} from "./chits";
 import {assertContrast, checkObjects, materials, rgba, type Mat} from "./materials";
 import {ease, inOut} from "./motion";
 import {Rack, Ratio, Tower, rackFrame, ratioFrame, towerFrame} from "./piles";
 import {planStory, type Cut} from "./plan";
 import {Product, productFrame} from "./product";
 import {SAFE, SourceChit} from "./props";
-import {hookCam, hookLayout, type Ctx} from "./scene";
-import {Light} from "./surfaces";
+import {hookCam, hookLayout, slots, type Ctx} from "./scene";
+import {Light, STAGE} from "./surfaces";
 import {useSafeCheck} from "./safecheck";
 
 const frameOf = (ctx: Ctx) => {
@@ -34,7 +35,7 @@ const frameOf = (ctx: Ctx) => {
     case "tower": return towerFrame(ctx);
     case "ratio": return ratioFrame(ctx);
     case "rack": return rackFrame(ctx);
-    case "jar": return jarFrame(ctx);
+    case "cols": return colsFrame(ctx);
     case "product": return productFrame(ctx);
     case "tally": return tallyFrame(ctx);
     case "end": return endFrame(ctx);
@@ -47,7 +48,7 @@ const frameOf = (ctx: Ctx) => {
 const BeatScene: React.FC<{ctx: Ctx}> = ({ctx}) => {
   const {p, f, b, L} = ctx;
   if (p.dev === "map") return <MapSheet ctx={ctx}/>;
-  const bill = <><Bill ctx={ctx}/><SourceChit B={ctx.B} M={ctx.M} text={b.src}/></>;
+  const bill = <><Bill ctx={ctx}/><SourceChit B={ctx.B} M={ctx.M} text={chitFor(L, b)}/></>;
   if (p.dev === "bill" && !p.proof) return bill;
   if (p.dev === "bill" && p.proof) {
     // the proof on the counter, then a tilt down (vertical whip) to the bill seen from above
@@ -69,14 +70,27 @@ const EyeScene: React.FC<{ctx: Ctx}> = ({ctx}) => {
   const {p, f, b, L} = ctx;
   const fr = frameOf(ctx);
   const hk = ctx.hook ? hookLayout(ctx, p.dev === "flip" ? "flip" : "card") : null;
-  const base: Cam = hk ? hookCam(hk.bottom, fr.objH) : ID;
-  const cam = camAt(p, f, b.f0, base, fr.focus, L.seed + b.i);
+  const base: Cam = hk ? hookCam(hk.bottom, fr.objH) : baseCam(p.frame.s, 540 - p.frame.dx);
+  const c0 = camAt(p, f, b.f0, base, fr.focus, L.seed + b.i, b.f1);
+  // the moves never push a tall object up under the tags and text at the top: the scale is capped by the room above
+  const room = STAGE.base - (hk ? hk.bottom + 30 : p.hang === "hook" ? 720 : 650);
+  // a row of three or four objects keeps its width so every object stays over its own shelf label
+  const sMax = p.items.length >= 3 && !hk ? Math.min(1, base.s) : Math.max(base.s, room / Math.max(1, fr.objH));
+  let cam: Cam = c0.s > sMax ? {...baseCam(sMax, c0.x), x: p.items.length >= 3 && !hk ? 540 + (c0.x - 540) * 0.3 : c0.x} : c0;
+  // a pan or a push never carries the outer objects off the frame: keep every object's edge inside x 60-1020
+  if ((p.dev === "tower" || p.dev === "cols") && p.items.length) {
+    const xs = slots(p.items.length), half = p.dev === "cols" ? 110 : 150;
+    const lo = Math.min(...xs) - half, hi = Math.max(...xs) + half;
+    // 540 + (lo - x) * s >= 60  ->  x <= lo + 480 / s ;  540 + (hi - x) * s <= 1020  ->  x >= hi - 480 / s
+    const upper = lo + 480 / cam.s, lower = hi - 480 / cam.s;
+    if (lower <= upper) cam = {...cam, x: Math.max(lower, Math.min(upper, cam.x))};
+  }
   let body: React.ReactNode;
   switch (p.dev) {
     case "tower": body = <Tower ctx={ctx} cam={cam}/>; break;
     case "ratio": body = <Ratio ctx={ctx} cam={cam}/>; break;
     case "rack": body = <Rack ctx={ctx} cam={cam}/>; break;
-    case "jar": body = <Jars ctx={ctx} cam={cam}/>; break;
+    case "cols": body = <Columns ctx={ctx} cam={cam}/>; break;
     case "product": body = <Product ctx={ctx} cam={cam}/>; break;
     case "tally": body = <Tally ctx={ctx} cam={cam}/>; break;
     case "end": body = <End ctx={ctx} cam={cam}/>; break;
@@ -86,7 +100,7 @@ const EyeScene: React.FC<{ctx: Ctx}> = ({ctx}) => {
   return <AbsoluteFill>
     {body}
     {hk && hk.render(f)}
-    {p.dev !== "end" && <SourceChit B={ctx.B} M={ctx.M} text={b.src}/>}
+    {p.dev !== "end" && <SourceChit B={ctx.B} M={ctx.M} text={chitFor(L, b)}/>}
   </AbsoluteFill>;
 };
 
@@ -146,7 +160,7 @@ export const CounterStory: React.FC<LookProps> = ({L, B}) => {
   const onLight = P.beats[i].dev === "map";
   const mono = fitFont(B.f.mono, 0.06);
   const chip = B.chip.upper ? L.chip.toUpperCase() : L.chip;
-  const chipS = fitSize(chip, mono, 430, 26, 18);
+  const chipS = fitSize(chip, mono, 470, 28, 22);
   const root = useRef<HTMLDivElement>(null);
   useSafeCheck(L.lookOpts.counterSafeCheck === true, root, B.safe, f);
   const paperCut = (cut === "paper" && f < b.f0 + 6) ? b.f0 : (ncut === "paper" && next && f >= next.f0 - 6) ? next.f0 : null;

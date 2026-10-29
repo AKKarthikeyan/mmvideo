@@ -14,7 +14,9 @@ import {type Cam, project} from "./camera";
 import {assertContrast, rgba} from "./materials";
 import {clamp01, ease, on2, slam} from "./motion";
 import {Pile} from "./objects";
-import {Card, GatedLine, LABEL_Y, Num, SAFE, ShelfLabel, Stamp, W_SAFE} from "./props";
+import {Card, GatedLine, Num, SAFE, ShelfLabel, Stamp, W_SAFE} from "./props";
+import {itemName} from "./plan";
+import {qualFor} from "./locks";
 import {World, type Ctx} from "./scene";
 import {STAGE, TopDown} from "./surfaces";
 
@@ -30,51 +32,82 @@ export const Bill: React.FC<{ctx: Ctx}> = ({ctx}) => {
   const paper = M.thermal;
   const ink = assertContrast(B.c.ink, paper, 26, "bill"), acc = assertContrast(B.c.accent, paper, 30, "bill emphasis");
   const soft = assertContrast(B.c.softInk, paper, 24, "bill note");
+  const NW = BW - 80;
   // items: the facts, said earlier
-  const items = L.beats.filter((x) => x.kind === "fact" && x.big && x.i < b.i).slice(-4).map((x) => ({name: (x.kicker ?? x.name ?? "").split(" · ")[0], n: x.big as LookNum}));
+  // the line name is what the big is the value of (a bar printing the same value, else the kicker), never a group the
+  // big is only one member of ("COCONUT −29.5%" was coconut oil); the source's printed qualifier rides with the value
+  const items = L.beats.filter((x) => x.kind === "fact" && x.big && x.i < b.i).slice(-4).map((x) => ({name: itemName(x).toUpperCase(), n: x.big as LookNum, q: qualFor(L, x.big)}));
   const lines = b.lines ?? [];
   const hero = b.hero;
+  const maxH = 1340 - 280;
+  const N = b.note ? fitLines(b.note, mono, NW, 5, 32, 28) : null;
+  // the takeaway takes the largest size (40-58 px) at which the whole bill still fits the paper, so the paper is never
+  // half empty; the facts above it follow at 0.8 of that size
+  const heroRow = (tk: number) => {
+    if (!hero) return {size: 0, lead: "", pre: "", post: ""};
+    const p = plain(lines.find((l) => plain(l).includes(hero.text)) ?? hero.text);
+    const i = p.indexOf(hero.text);
+    const pre = p.slice(0, i).trim(), post = p.slice(i + hero.text.length).trim();
+    const lead = pre && measure(pre.toUpperCase(), mono, tk) < 240 ? pre.toUpperCase() : "";
+    const room = NW - (lead ? measure(lead, mono, tk) + 18 : 0);
+    return {size: fitSize(hero.text, heroF, room, 210, 80), lead, pre: lead ? "" : pre, post};
+  };
+  const needH = (tk: number) => {
+    const iv = Math.round(tk * 0.8);
+    let h = 170 + items.length * iv * 1.5 + 56;
+    for (const l of lines) {
+      const p = plain(l);
+      if (hero && p.includes(hero.text)) { const r = heroRow(tk); h += r.size * 0.92 + 14 + (r.pre ? tk * 1.25 : 0) + (r.post && /\w/.test(r.post) ? wrap(r.post.toUpperCase(), mono, tk, NW).length * tk * 1.25 : 0); }
+      else h += wrap(p.toUpperCase(), mono, tk, NW).length * tk * 1.25;
+    }
+    if (N) h += N.lines.length * N.size * 1.3 + 60;
+    return h;
+  };
+  // no takeaway line is left to wrap with an orphan word: the size is capped by the longest line
+  let tk = Math.min(58, ...lines.filter((l) => !(hero && plain(l).includes(hero.text))).map((l) => fitSize(plain(l).toUpperCase(), mono, NW, 58, 40)));
+  while (tk > 40 && needH(tk) > maxH - 70) tk -= 2;
+  const iv = Math.round(tk * 0.8);
   const step = Math.max(3, Math.min(6, Math.floor((b.f1 - t0 - 40) / (items.length + lines.length + 3))));
   let row = 0;
   const at = () => t0 + 12 + (row++) * step;
   const vis = (a: number) => (on2(f) >= a ? 1 : 0);
-  const blocks: React.ReactNode[] = [];
-  const head = B.name.toUpperCase();
-  const hs = fitSize(head, fitFont(B.f.mono, 0.18), BW - 80, 40, 24);
-  blocks.push(<div key="h" style={{textAlign: "center", ...fitCss(fitFont(B.f.mono, 0.18), hs), color: ink, lineHeight: 1.2}}>{head}</div>);
-  blocks.push(<div key="c" style={{textAlign: "center", ...fitCss(mono, 22), color: soft, lineHeight: 1.4, marginBottom: 6}}>{L.chip.toUpperCase()}</div>);
-  blocks.push(<div key="r1" style={{borderTop: `3px dashed ${ink}`, margin: "10px 0 12px", opacity: 0.8}}/>);
+  const head: React.ReactNode[] = [], facts: React.ReactNode[] = [], take: React.ReactNode[] = [], foot: React.ReactNode[] = [];
+  const title = B.name.toUpperCase();
+  const hs = fitSize(title, fitFont(B.f.mono, 0.18), NW - 10, 46, 32);
+  head.push(<div key="h" style={{textAlign: "center", ...fitCss(fitFont(B.f.mono, 0.18), hs), color: ink, lineHeight: 1.2}}>{title}</div>);
+  head.push(<div key="c" style={{textAlign: "center", ...fitCss(mono, 30), color: soft, lineHeight: 1.4, marginBottom: 6}}>{L.chip.toUpperCase()}</div>);
+  head.push(<div key="r1" style={{borderTop: `3px dashed ${ink}`, margin: "10px 0 0", opacity: 0.8}}/>);
   for (const it of items) {
     const a = at();
-    const nameS = fitSize(it.name, mono, BW - 80 - measure(it.n.text, mono, 30) - 24, 28, 18);
-    blocks.push(<div key={`i${a}`} style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", opacity: vis(a), marginBottom: 6}}>
+    const val = (it.q ? it.q.toUpperCase() + " " : "") + it.n.text;
+    const vw = measure(val, mono, iv);
+    const nameS = fitSize(it.name, mono, NW - vw - 24, Math.round(iv * 0.8), 26);
+    const twoLines = measure(it.name, mono, nameS) > NW - vw - 24;
+    facts.push(<div key={`i${a}`} style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", opacity: vis(a), marginBottom: 12, flexWrap: twoLines ? "wrap" : "nowrap"}}>
       <span style={{...fitCss(mono, nameS), color: ink}}>{it.name}</span>
-      <Num n={it.n} f={f} font={mono} size={30} color={ink} blank={rgba(B.c.ink, 0.15)} where="bill item"/>
+      <span style={{whiteSpace: "nowrap", marginLeft: "auto"}}>{it.q && <span style={{...fitCss(mono, 28), color: acc}}>{it.q.toUpperCase()} </span>}<Num n={it.n} f={f} font={mono} size={iv} color={ink} blank={rgba(B.c.ink, 0.15)} where="bill item"/></span>
     </div>);
   }
-  blocks.push(<div key="r2" style={{borderTop: `3px dashed ${ink}`, margin: "12px 0 14px", opacity: 0.8}}/>);
+  facts.push(<div key="r2" style={{borderTop: `3px dashed ${ink}`, margin: "4px 0 0", opacity: 0.8}}/>);
   // the takeaway: the line holding the hero is split around it; the hero is the TOTAL
   const nums = [...b.tokens.map((t) => t.num).filter((n): n is LookNum => !!n && n !== hero), ...b.lineNums];
   for (const l of lines) {
     const a = at();
     const p = plain(l);
     if (hero && p.includes(hero.text)) {
-      const i = p.indexOf(hero.text);
-      const pre = p.slice(0, i).trim(), post = p.slice(i + hero.text.length).trim();
-      // the lead word(s) of the hero's own line ("AT") sit on the hero's row; the hero prints in the hero face
-      const lead = pre && measure(pre.toUpperCase(), mono, 34) < 220 ? pre.toUpperCase() : "";
-      if (pre && !lead) blocks.push(<div key={`p${a}`} style={{opacity: vis(a)}}><GatedLine line={pre.toUpperCase()} nums={nums} f={f} font={mono} size={34} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
-      const room = BW - 80 - (lead ? measure(lead, mono, 34) + 18 : 0);
-      const size = fitSize(hero.text, heroF, room, 210, 80);
-      blocks.push(<div key={`hero${a}`} style={{display: "flex", alignItems: "flex-end", gap: 18, margin: "4px 0 2px", height: size * 0.92, opacity: vis(a)}}>
-        {lead && <span style={{...fitCss(mono, 34), color: ink, paddingBottom: size * 0.08}}>{lead}</span>}
+      const r = heroRow(tk);
+      const room = NW - (r.lead ? measure(r.lead, mono, tk) + 18 : 0);
+      const size = r.size;
+      if (r.pre) take.push(<div key={`p${a}`} style={{opacity: vis(a)}}><GatedLine line={r.pre.toUpperCase()} nums={nums} f={f} font={mono} size={tk} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
+      take.push(<div key={`hero${a}`} style={{display: "flex", alignItems: "flex-end", gap: 18, margin: "4px 0 2px", height: size * 0.92, opacity: vis(a)}}>
+        {r.lead && <span style={{...fitCss(mono, tk), color: ink, paddingBottom: size * 0.08}}>{r.lead}</span>}
         {shown(hero, f) ? <span style={{transform: `scale(${1 + 0.25 * Math.exp(-(f - hero.lockF) / 3)})`, transformOrigin: "0 100%", display: "inline-block", lineHeight: 0.92}}>
           <Num n={hero} f={f} font={heroF} size={size} color={acc} blank="" where="bill total" qualSize={hero.qual ? Math.round(size * 0.3) : undefined}/></span>
           : <span style={{display: "inline-block", width: Math.min(room, measure(hero.text, heroF, size)), height: 10, background: rgba(B.c.ink, 0.12), marginBottom: size * 0.1}}/>}
       </div>);
-      if (post && /\w/.test(post)) blocks.push(<div key={`q${a}`} style={{opacity: vis(a)}}><GatedLine line={post.toUpperCase()} nums={nums} f={f} font={mono} size={34} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
+      if (r.post && /\w/.test(r.post)) take.push(<div key={`q${a}`} style={{opacity: vis(a)}}><GatedLine line={r.post.toUpperCase()} nums={nums} f={f} font={mono} size={tk} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
     } else {
-      const wrapped = wrap(p.toUpperCase(), mono, 34, BW - 80);
+      const wrapped = wrap(p.toUpperCase(), mono, tk, NW);
       const starredUpper = l.toUpperCase();
       // keep the *emphasis* of the script on the wrapped bill lines
       let k = 0;
@@ -82,32 +115,36 @@ export const Bill: React.FC<{ctx: Ctx}> = ({ctx}) => {
       for (const wl of wrapped) {
         const n = wl.split(/\s+/).length;
         const part = words.slice(k, k + n).join(" "); k += n;
-        blocks.push(<div key={`l${a}-${k}`} style={{opacity: vis(a)}}><GatedLine line={balance(part)} nums={nums} f={f} font={mono} size={34} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
+        take.push(<div key={`l${a}-${k}`} style={{opacity: vis(a)}}><GatedLine line={balance(part)} nums={nums} f={f} font={mono} size={tk} ink={ink} acc={acc} blank={rgba(B.c.ink, 0.15)} lh={1.25}/></div>);
       }
     }
   }
-  if (b.note) {
+  if (N) {
     const a = Math.max(at(), hero ? hero.lockF + 8 : 0);
-    const N = fitLines(b.note, mono, BW - 80, 4, 24, 18);
-    blocks.push(<div key="r3" style={{borderTop: `2px dashed ${soft}`, margin: "14px 0 10px", opacity: vis(a) * 0.7}}/>);
-    blocks.push(<div key="note" style={{opacity: vis(a)}}>{N.lines.map((x, i) => <div key={i} style={{...fitCss(mono, N.size), color: soft, lineHeight: 1.3}}>{x}</div>)}</div>);
+    foot.push(<div key="r3" style={{borderTop: `2px dashed ${soft}`, margin: "0 0 12px", opacity: vis(a) * 0.7}}/>);
+    foot.push(<div key="note" style={{opacity: vis(a)}}>{N.lines.map((x, i) => <div key={i} style={{...fitCss(mono, N.size), color: soft, lineHeight: 1.3}}>{x}</div>)}</div>);
   }
   const feed = ease(on2(f), t0, t0 + 24);
-  const maxH = 1404 - 290;
   const stampAt = (hero ? hero.lockF : t0 + 30) + 14;
   if (L.sourceLabel && b.src.includes(L.sourceLabel)) {
-    blocks.push(<div key="st" style={{position: "relative", height: 70, marginTop: 8}}>
-      {f >= stampAt && <Stamp B={B} text={L.sourceLabel} x={BW - 80 - 260} y={4} rot={-5} k={clamp01((f - stampAt) / 5)} maxW={240}/>}
+    foot.push(<div key="st" style={{position: "relative", height: 70, marginTop: 8}}>
+      {f >= stampAt && <Stamp B={B} text={L.sourceLabel} x={NW - 330} y={4} rot={-5} k={clamp01((f - stampAt) / 5)} maxW={300}/>}
     </div>);
   }
   const zig = "0 0, " + Array.from({length: 31}, (_, k) => 30 - k).map((i) => `${((i / 30) * 100).toFixed(2)}% ${i % 2 ? 14 : 0}px`).join(", ");
   return <AbsoluteFill>
     <TopDown M={M} surface={P.surface} seed={L.seed}/>
-    <div style={{position: "absolute", left: BX0, top: 290, width: BW, maxHeight: maxH * (0.3 + 0.7 * feed), overflow: "hidden", transform: "rotate(-1.2deg)",
+    <div style={{position: "absolute", left: BX0, top: 280, width: BW, maxHeight: maxH * (0.3 + 0.7 * feed), overflow: "hidden", transform: "rotate(-1.2deg)",
       filter: `drop-shadow(14px 22px 18px ${rgba(M.shadow, 0.5)})`}}>
-      <div style={{position: "relative", background: paper, padding: "30px 40px 26px"}}>
+      <div style={{position: "relative", background: paper, padding: "30px 40px 26px", minHeight: maxH - 14, boxSizing: "border-box", display: "flex", flexDirection: "column"}}>
         <div style={{position: "absolute", inset: 0, background: `linear-gradient(180deg, ${rgba(M.shadow, 0.07)}, ${rgba(M.shadow, 0)} 10%, ${rgba(M.shadow, 0)} 88%, ${rgba(M.shadow, 0.06)})`}}/>
-        <div style={{position: "relative"}}>{blocks}</div>
+        {/* the sections share the paper's height evenly, so no stretch of it is left blank */}
+        <div style={{position: "relative", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+          <div>{head}</div>
+          {facts.length > 1 && <div>{facts}</div>}
+          <div>{take}</div>
+          {foot.length > 0 && <div>{foot}</div>}
+        </div>
       </div>
       <div style={{height: 14, background: paper, clipPath: `polygon(${zig})`}}/>
     </div>
@@ -170,8 +207,8 @@ export const Proof: React.FC<{ctx: Ctx; cam: Cam}> = ({ctx, cam}) => {
       const L2 = fitLines(rest, disp, ww, 3, 54, 34);
       return <div style={{position: "absolute", left: x, top: 410, width: ww}}>{L2.lines.map((l, i) => <div key={i} style={{...fitCss(disp, L2.size), color: B.c.paper, lineHeight: 1.05, opacity: ease(f, hero.lockF + 2, hero.lockF + 8)}}>{l}</div>)}</div>;
     })()}
-    <ShelfLabel B={B} M={M} cx={project(cam, xa, 0)[0]} y={LABEL_Y} maxW={320} name={pr.bigName} nameOn f={f} dim/>
-    <ShelfLabel B={B} M={M} cx={project(cam, xc, 0)[0]} y={LABEL_Y} maxW={320} name={f >= hero.lockF ? `${pr.smallName} × ${pr.n}` : pr.smallName} nameOn f={f} hot/>
+    <ShelfLabel B={B} M={M} cx={project(cam, xa, 0)[0]} maxW={320} name={pr.bigName} nameOn dim/>
+    <ShelfLabel B={B} M={M} cx={project(cam, xc, 0)[0]} maxW={320} name={pr.smallName} nameOn hot/>
     {void stackH}
   </>;
 };

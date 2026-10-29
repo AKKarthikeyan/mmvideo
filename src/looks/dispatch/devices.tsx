@@ -41,7 +41,7 @@ const Val: React.FC<{c: Ctx; r: Row; size: number; color: string; at?: number}> 
   if (c.f < lock) return <Slug w={measure(r.text, ff, size)} size={size} color={color}/>;
   if (r.num) assertLocked(r.num, c.f, "Dispatch chart label");
   const p = ramp(c.f, lock, 6);
-  return <span style={{...css(ff, size), color, display: "inline-block", clipPath: `inset(-20% ${(1 - p) * 100}% -20% 0)`}}>{r.text}</span>;
+  return <span style={{...css(ff, size), color, display: "inline-block", clipPath: `inset(${(1 - p) * 120 - 20}% -4% -20% -4%)`}}>{r.text}</span>;
 };
 
 // A name: a data string, its own value-like numbers gated by their lock frames ("200 ml" of "200 ml of Campa").
@@ -66,7 +66,7 @@ export const deviceH = (d: Device): number => {
     case "tally": return 330;
     case "duration": return 300;
     case "threshold": return 330;
-    case "price": return (d.rows.length + 1) * 210 + (d.old ? 150 : 0);
+    case "price": return (d.rows.length + 1) * 200;
     case "sum": return 430;
     case "inset": return 660;
     case "ratio": return 520;
@@ -74,6 +74,21 @@ export const deviceH = (d: Device): number => {
 };
 
 // ---------- horizontal rows (rows, diverge, inset, ghosts) ----------
+// Where a row's value label goes: inside the bar end (a solid or ghost bar long enough), just past the bar end (room in the
+// box), else on the row's name line, right-aligned to the box (never below the bar, where the next row's name sits).
+export type LabelAt = {where: "inside" | "outside" | "name"; x0: number; x1: number};
+// pad: room a circled label needs on its outer side (a circle round a wide label strokes about a fifth of its width past it)
+export const labelAt = (c: Ctx, r: Row, axisX: number, len: number, lw: number, inEnd = len, pad = 0): LabelAt => {
+  const dir = r.v < 0 ? -1 : 1, pt = paint(c, r);
+  if ((pt.solid || r.ghost) && inEnd >= lw + 36) {
+    const x0 = dir > 0 ? axisX + inEnd - lw - 18 : axisX - len + 18;
+    return {where: "inside", x0, x1: x0 + lw};
+  }
+  const outRoom = dir > 0 ? (c.box.x + c.box.w) - (axisX + len) : (axisX - len) - c.box.x;
+  if (outRoom >= lw + 20 + pad) { const x0 = dir > 0 ? axisX + len + 14 : axisX - len - 14 - lw; return {where: "outside", x0, x1: x0 + lw}; }
+  const x1 = dir > 0 ? c.box.x + c.box.w - pad : axisX - 8;
+  return {where: "name", x0: x1 - lw, x1};
+};
 const BarRows: React.FC<{c: Ctx; rows: Row[]; scale: number; axisX: number; leftRoom: number; rightRoom: number; y: number; th: number; pitch: number;
   stagger?: number; noLabels?: boolean; growAt?: number[]; range?: {lo: number; hi: number; idx: number} | null}> =
   ({c, rows, scale, axisX, leftRoom, rightRoom, y, th, pitch, stagger = 4, noLabels, growAt, range}) => {
@@ -82,7 +97,8 @@ const BarRows: React.FC<{c: Ctx; rows: Row[]; scale: number; axisX: number; left
   return <>
     {rows.map((r, i) => {
       const yy = y + i * pitch, dir = r.v < 0 ? -1 : 1, len = (Math.abs(r.v) / scale) * (r.v < 0 ? leftRoom : rightRoom);
-      const at = growAt?.[i] ?? (r.ghost ? c.grow - 10 : c.grow + i * stagger);
+      // a stagger never delays a bar past its own figure's word (object first)
+      const at = growAt?.[i] ?? (r.ghost ? c.grow - 10 : Math.max(c.grow, Math.min(c.grow + i * stagger, lockOf(r) - 14)));
       const g = settleBy(c, at, 14);
       const p = ramp(f, g, 14, io);
       const Lx = len * p;
@@ -90,16 +106,16 @@ const BarRows: React.FC<{c: Ctx; rows: Row[]; scale: number; axisX: number; left
       const lw = measure(r.text, ff, LBL);
       const rLo = range && range.idx === i ? (range.lo / scale) * rightRoom : Infinity;
       const inEnd = Math.min(len, rLo - 4);
-      const inside = pt.solid && inEnd >= lw + 36;
-      const outRoom = dir > 0 ? (c.box.x + c.box.w) - (axisX + len) : (axisX - len) - c.box.x;
-      const outside = !inside && outRoom >= lw + 20;
+      const la = labelAt(c, r, axisX, len, lw, inEnd, r.hot && !r.ghost && c.markAt !== undefined ? Math.ceil(0.22 * lw) + 22 : 0);
+      const inside = la.where === "inside";
       const x0 = dir > 0 ? axisX : axisX - Lx;
       const nameX = dir > 0 ? axisX : Math.max(c.box.x, axisX - len);
+      const nameMax = la.where === "name" && !noLabels ? c.box.w - lw - 30 : c.box.w;
       return <React.Fragment key={i}>
-        {rowName(c, r, {color: r.ghost ? P.soft : P.text, at: g - 4, maxW: c.box.w,
+        {rowName(c, r, {color: r.ghost ? P.soft : P.text, at: g - 4, maxW: nameMax,
           style: dir > 0 ? {left: nameX, top: yy - NAME * 1.25} : {left: c.box.x, width: axisX - c.box.x - 12, textAlign: "right", top: yy - NAME * 1.25}})}
-        <div style={{position: "absolute", left: x0, top: yy, width: Math.max(0, Lx), height: th, background: pt.fill,
-          border: r.ghost ? `3px dashed ${pt.border}` : pt.border ? `3px solid ${pt.border}` : undefined, boxSizing: "border-box"}}/>
+        {Lx >= 2 && <div style={{position: "absolute", left: x0, top: yy, width: Lx, height: th, background: pt.fill,
+          border: r.ghost ? `3px dashed ${pt.border}` : pt.border ? `3px solid ${pt.border}` : undefined, boxSizing: "border-box"}}/>}
         {range && range.idx === i && p > 0.98 && (() => {
           const a = axisX + (range.lo / scale) * rightRoom, b2 = axisX + (range.hi / scale) * rightRoom, q = ramp(f, g + 16, 8);
           return <>
@@ -108,14 +124,12 @@ const BarRows: React.FC<{c: Ctx; rows: Row[]; scale: number; axisX: number; left
               <span style={{...css(F.body(B, 800, 0.08), FOOT), color: P.amberText}}>RANGE</span></div>
           </>;
         })()}
-        {!noLabels && p > 0.6 && <div style={{position: "absolute", top: yy + (th - LBL * 1.15) / 2, height: LBL * 1.15, display: "flex", alignItems: "center",
-          ...(inside ? (dir > 0 ? {left: axisX + inEnd - lw - 18} : {left: axisX - len + 18})
-            : outside ? (dir > 0 ? {left: axisX + len + 14} : {left: axisX - len - 14 - lw})
-            : {left: dir > 0 ? axisX + 8 : axisX - lw - 8, top: yy + th + 6})}}>
+        {!noLabels && p > 0.6 && <div style={{position: "absolute", top: la.where === "name" ? yy - NAME * 1.25 : yy + (th - LBL * 1.15) / 2, height: LBL * 1.15, display: "flex", alignItems: "center",
+          left: la.x0}}>
           {r.hot && c.markAt !== undefined && f >= c.markAt && !inside
             ? <EditorMark kind="circle" at={c.markAt} dur={14} seed={markSeed(c.seed, 7)} color={P.dark ? P.amber : B.c.accent} strokeWidth={5} padding={10}>
                 <Val c={c} r={r} size={LBL} color={P.text}/></EditorMark>
-            : <Val c={c} r={r} size={LBL} color={inside ? pt.inLabel : r.ghost ? P.soft : P.text}/>}
+            : <Val c={c} r={r} size={LBL} color={inside ? (r.ghost ? P.text : pt.inLabel) : r.ghost ? P.soft : P.text}/>}
         </div>}
       </React.Fragment>;
     })}
@@ -124,8 +138,8 @@ const BarRows: React.FC<{c: Ctx; rows: Row[]; scale: number; axisX: number; left
 
 // Rows fill the box: thicker bars for fewer rows (130-180 px for one or two, as a printed chart would), centred.
 const rowsBlock = (n: number, h: number) => {
-  const pitch = Math.max(120, Math.min(h / Math.max(1, n), n <= 2 ? 260 : 200));
-  const th = Math.max(56, Math.min(n <= 1 ? 180 : 140, Math.round((pitch - NAME * 1.3 - 34) * 0.92)));
+  const pitch = Math.max(120, Math.min(h / Math.max(1, n), n <= 2 ? 330 : 230));
+  const th = Math.max(56, Math.min(n <= 1 ? 230 : n === 2 ? 190 : 150, Math.round((pitch - NAME * 1.3 - 34) * 0.92)));
   const used = (n - 1) * pitch + NAME * 1.3 + th;
   return {pitch, th, top: Math.max(0, (h - used) / 2) + NAME * 1.3};
 };
@@ -142,21 +156,24 @@ const RowsDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "rows"}>}> = ({c, 
     {d.refs.map((r, k) => {
       // a dashed reference line through the bars only (never through a name or a value label), named in full below them
       const x = c.box.x + (r.v / d.scale) * c.box.w, at = settleBy(c, c.grow + 18, 10), op = ramp(c.f, at, 8);
-      const labW = measure(r.name, ff, LBL) + 14 + measure(r.text, ff, LBL);
+      const valW = measure(r.text, ff, LBL), nameMaxW = c.box.w - valW - 30;
+      let ns = LBL;
+      while (ns > 36 && measure(r.name, ff, ns) > nameMaxW) ns--;
+      const labW = measure(r.name, ff, ns) + 14 + valW + 8;
       const left = Math.max(c.box.x, Math.min(x - 1.5, c.box.x + c.box.w - labW));
       const yLab = c.box.y + top + (rows.length - 1) * pitch + th + 30;
       return <React.Fragment key={k}>
         {rows.map((row, j) => {
           const yy = c.box.y + top + j * pitch;
           const len = (Math.abs(row.v) / d.scale) * c.box.w, lw = measure(row.text, ff, LBL);
-          // the value label sits inside the bar end or just past it: skip the line where it would cross that label
-          const labX0 = len >= lw + 36 ? c.box.x + len - lw - 18 : c.box.x + len + 14, labX1 = labX0 + lw;
-          if (x > labX0 - 10 && x < labX1 + 10) return null;
+          // skip the line where it would cross this row's value label (placed by the same rule as BarRows)
+          const la = labelAt(c, row, c.box.x, len, lw);
+          if (la.where !== "name" && x > la.x0 - 12 && x < la.x1 + 12) return null;
           return <div key={j} style={{position: "absolute", left: x - 1.5, top: yy - 10, height: th + 20, borderLeft: `3px dashed ${c.P.text}`, opacity: op}}/>;
         })}
         <div style={{position: "absolute", left: x - 1.5, top: c.box.y + top + (rows.length - 1) * pitch + th + 10, height: 18, borderLeft: `3px dashed ${c.P.text}`, opacity: op}}/>
         <div style={{position: "absolute", left, top: yLab, opacity: op, display: "flex", gap: 14, alignItems: "baseline", whiteSpace: "nowrap"}}>
-          <Name c={c} text={r.name} gates={r.gates} lockF={lockOf(r)} color={c.P.soft} style={{position: "relative"}}/>
+          <Name c={c} text={r.name} gates={r.gates} lockF={lockOf(r)} color={c.P.soft} size={ns} style={{position: "relative"}}/>
           <Val c={c} r={r} size={LBL} color={c.P.soft}/></div>
       </React.Fragment>;
     })}
@@ -166,7 +183,7 @@ const RowsDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "rows"}>}> = ({c, 
 // Negatives and mixed signs: one scale for both sides of a zero axis, names above each bar on its axis side, values
 // outside the bar ends (room is reserved for them, so a label never sits on a bar or off the box). centre: the axis sits
 // in the middle and each side's scale is the largest value shown so far (a teaser whose values land one by one).
-const DivergeDevice: React.FC<{c: Ctx; rows: Row[]; ghost?: Row | null; noLabels?: boolean; growAt?: number[]; centre?: boolean}> = ({c, rows: rows0, ghost, noLabels, growAt, centre}) => {
+const DivergeDevice: React.FC<{c: Ctx; rows: Row[]; ghost?: Row | null; noLabels?: boolean; growAt?: number[]; centre?: boolean; labelAt?: number}> = ({c, rows: rows0, ghost, noLabels, growAt, centre, labelAt: labAt}) => {
   const {B, f, P, box} = c;
   const rows = ghost ? [ghost, ...rows0] : rows0;
   const shownRows = centre && growAt ? rows.filter((_, i) => f >= growAt[i]) : rows;
@@ -190,17 +207,17 @@ const DivergeDevice: React.FC<{c: Ctx; rows: Row[]; ghost?: Row | null; noLabels
       transformOrigin: "top", transform: `scaleY(${ramp(f, at0, 10)})`}}/>
     {rows.map((r, i) => {
       const y = y0 + i * pitch, dir = r.v < 0 ? -1 : 1, len = Math.abs(r.v) * k;
-      const g = settleBy(c, growAt?.[i] ?? (r.ghost ? c.grow - 10 : c.grow + i * 4), 14), p = ramp(f, g, 14, io);
+      const g = settleBy(c, growAt?.[i] ?? (r.ghost ? c.grow - 10 : Math.max(c.grow, Math.min(c.grow + i * 4, lockOf(r) - 14))), 14), p = ramp(f, g, 14, io);
       const pt = paint(c, r);
       const lw = measure(r.text, ff, LBL);
       const nameSide: React.CSSProperties = dir > 0 ? {left: axisX + 10} : {right: 1080 - axisX + 10};
       return <React.Fragment key={i}>
         {rowName(c, r, {color: r.ghost ? P.soft : P.text, at: centre ? undefined : g - 4, maxW: dir > 0 ? box.x + box.w - axisX - 10 : axisX - box.x - 10, style: {...nameSide, top: y - NAME * 1.25}})}
-        <div style={{position: "absolute", top: y, height: th, width: len * p, left: dir > 0 ? axisX : axisX - len * p, background: pt.fill,
-          border: r.ghost ? `3px dashed ${pt.border}` : pt.border ? `3px solid ${pt.border}` : undefined, boxSizing: "border-box"}}/>
+        {len * p >= 2 && <div style={{position: "absolute", top: y, height: th, width: len * p, left: dir > 0 ? axisX : axisX - len * p, background: pt.fill,
+          border: r.ghost ? `3px dashed ${pt.border}` : pt.border ? `3px solid ${pt.border}` : undefined, boxSizing: "border-box"}}/>}
         {!noLabels && p > 0.6 && <div style={{position: "absolute", top: y + (th - LBL * 1.15) / 2, height: LBL * 1.15, display: "flex", alignItems: "center",
           left: dir > 0 ? axisX + len + 12 : axisX - len - 12 - lw}}>
-          <Val c={c} r={r} size={LBL} color={r.ghost ? P.soft : P.text}/></div>}
+          <Val c={c} r={r} size={LBL} color={r.ghost ? P.soft : P.text} at={labAt}/></div>}
       </React.Fragment>;
     })}
   </>;
@@ -210,9 +227,22 @@ const DivergeDevice: React.FC<{c: Ctx; rows: Row[]; ghost?: Row | null; noLabels
 const PeriodsDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "periods"}>}> = ({c, d}) => {
   const {B, f, P, box} = c;
   const colW = Math.min(220, box.w * 0.28);
-  const xs = [box.x + box.w * 0.1, box.x + box.w * 0.6];
-  const base = box.y + box.h - 70, maxH = box.h - 70 - 120;
+  const xs = [box.x + box.w * 0.08, box.x + box.w * 0.92 - colW];
+  const maxH = box.h - 70 - 120;
+  // the block (tallest column, its label above, the period names below) sits in the middle of its region
+  const tall = Math.max(...d.rows.map((r) => Math.abs(r.v))) / d.scale * maxH;
+  const base = box.y + Math.max(0, (box.h - (tall + 170)) / 2) + 100 + tall;
   const tops: number[] = [];
+  const vff = F.body(B, 700);
+  let vs = 76;
+  while (vs > LBL && Math.max(...d.rows.map((r) => measure(r.text, vff, vs))) > colW + 50) vs -= 2;
+  // a value label is centred on its column but never so near the box edge that its circle leaves the box
+  const lw = d.rows.map((r) => Math.ceil(measure(r.text, vff, vs)) + 40);
+  // a label wider than its column (a qualified share: "almost 15%") is underlined, not circled: a circle round a wide label
+  // strokes a fifth of its width past it
+  const wide = d.rows.map((r) => measure(r.text, vff, vs) > colW * 0.85);
+  const mg = d.rows.map((r, i) => wide[i] ? 26 : Math.ceil(0.22 * measure(r.text, vff, vs)) + 24);
+  const lx = d.rows.map((_, i) => Math.max(box.x + mg[i], Math.min(xs[i] + colW / 2 - lw[i] / 2, box.x + box.w - lw[i] - mg[i])));
   const els = d.rows.map((r, i) => {
     const g = settleBy(c, c.grow + i * 8, 14), p = ramp(f, g, 14, io);
     const hh = (Math.abs(r.v) / d.scale) * maxH;
@@ -224,11 +254,11 @@ const PeriodsDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "periods"}>}> =
       <div style={{position: "absolute", left: xs[i], top: base - hh * p, width: colW, height: hh * p, background: earlier ? hatch(pt.line, 45, 6, 12) : pt.fill,
         border: `3px solid ${pt.line}`, boxSizing: "border-box"}}/>
       {rowName(c, r, {color: P.text, at: g - 4, style: {left: xs[i] - 60, width: colW + 120, top: base + 12, textAlign: "center"}})}
-      <div style={{position: "absolute", left: xs[i] - 80, width: colW + 160, top: base - hh - 100, display: "flex", justifyContent: "center"}}>
+      <div style={{position: "absolute", left: lx[i], width: lw[i], top: base - hh - 100, display: "flex", justifyContent: "center"}}>
         {p > 0.9 && (r.hot && c.markAt !== undefined && f >= c.markAt
-          ? <EditorMark kind="circle" at={c.markAt} dur={14} seed={markSeed(c.seed, 7)} color={P.dark ? P.amber : B.c.accent} strokeWidth={5} padding={10}>
-              <Val c={c} r={r} size={76} color={P.text}/></EditorMark>
-          : <Val c={c} r={r} size={76} color={P.text}/>)}</div>
+          ? <EditorMark kind={wide[i] ? "underline" : "circle"} at={c.markAt} dur={14} seed={markSeed(c.seed, 7)} color={P.dark ? P.amber : B.c.accent} strokeWidth={wide[i] ? 7 : 5} padding={wide[i] ? 4 : 10}>
+              <Val c={c} r={r} size={vs} color={P.text}/></EditorMark>
+          : <Val c={c} r={r} size={vs} color={P.text}/>)}</div>
     </React.Fragment>;
   });
   const both = Math.max(...d.rows.map(lockOf));
@@ -249,8 +279,11 @@ const PeriodsDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "periods"}>}> =
 // ink together on k's word, the other N-k appear hatched on N's word. ----------
 export const TallyTiles: React.FC<{c: Ctx; k: number; N: number; kF: number; NF: number}> = ({c, k, N, kF, NF}) => {
   const {f, P, box} = c;
-  const gap = 10, tw = (box.w - (N - 1) * gap) / N, th = Math.min(240, box.h - 40), y = box.y + (box.h - th) / 2;
+  const gap = 10, twN = (box.w - (N - 1) * gap) / N, th = Math.min(240, box.h - 40), y = box.y + (box.h - th) / 2;
   const trackOp = 1 - ramp(f, kF, 6);
+  // until N is said, the k tiles share the whole track (a tile's width cannot reveal N); on N's word they close up to N's grid
+  const spread = NF > kF + 2 ? 1 - ramp(f, NF, 8, io) : 0;
+  const twK = (box.w - (k - 1) * gap) / Math.max(1, k);
   return <>
     <div style={{position: "absolute", left: box.x, top: y, width: box.w * ramp(f, c.grow, 10, io), height: th, border: `3px solid ${P.text}`, boxSizing: "border-box",
       background: hatch(P.soft + "26", -45, 4, 14), opacity: 0.6 * trackOp}}/>
@@ -259,6 +292,7 @@ export const TallyTiles: React.FC<{c: Ctx; k: number; N: number; kF: number; NF:
       const at = mine ? kF : NF;
       if (f < at) return null;
       const q = ramp(f, at, 8);
+      const tw = mine ? twN + (twK - twN) * spread : twN;
       return <div key={i} style={{position: "absolute", left: box.x + i * (tw + gap), top: y, width: tw, height: th, opacity: q,
         border: `3px solid ${P.text}`, boxSizing: "border-box", background: mine ? "transparent" : hatch(P.soft + "66", -45, 4, 10)}}>
         {mine && <div style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%", background: P.hot, clipPath: `inset(${(1 - q) * 100}% 0 0 0)`}}/>}
@@ -267,7 +301,7 @@ export const TallyTiles: React.FC<{c: Ctx; k: number; N: number; kF: number; NF:
   </>;
 };
 
-// ---------- duration: an undivided rule until the word, then N equal segments ink on it, then the arrow onward ----------
+// ---------- duration: an undivided rule until the word, then N equal segments ink together on it, then the arrow onward ----------
 const DurationDevice: React.FC<{c: Ctx; years: number; lockF: number}> = ({c, years, lockF}) => {
   const {f, P, box} = c;
   const w = box.w * 0.82, segW = w / years, th = 84, y = box.y + (box.h - th) / 2;
@@ -279,7 +313,7 @@ const DurationDevice: React.FC<{c: Ctx; years: number; lockF: number}> = ({c, ye
     <div style={{position: "absolute", left: box.x, top: y, width: w * ramp(f, g, 12, io), height: th, border: `3px solid ${P.text}`, boxSizing: "border-box", opacity: 1 - div}}/>
     {f >= lockF && Array.from({length: years}, (_, i) => <div key={i} style={{position: "absolute", left: box.x + i * segW, top: y, width: segW - 6, height: th,
       border: `3px solid ${P.text}`, boxSizing: "border-box", opacity: div}}>
-      <div style={{position: "absolute", inset: 0, background: P.hot, clipPath: `inset(0 ${Math.min(1, Math.max(0, 1 - (ink * years - i))) * 100}% 0 0)`}}/>
+      <div style={{position: "absolute", inset: 0, background: P.hot, clipPath: `inset(${(1 - ink) * 100}% 0 0 0)`}}/>
     </div>)}
     <div style={{position: "absolute", left: box.x + w, top: y + th / 2 - 2, width: (box.w - w - 14) * arrow, borderTop: `5px dashed ${P.text}`}}/>
     <svg style={{position: "absolute", left: box.x + box.w - 30, top: y + th / 2 - 18, opacity: arrow}} width={30} height={36}>
@@ -312,71 +346,59 @@ export const ThresholdDevice: React.FC<{c: Ctx; at: Row; side: "above" | "below"
   </>;
 };
 
-// ---------- price board: name ... leader ... price. Earlier prices are ruled rows; this beat's price INKs on the board at
-// hero size (it is the beat's hero, printed once); a printed old price sits crossed off above it ----------
-export const PriceBoard: React.FC<{c: Ctx; d: Extract<Device, {kind: "price"}>; heroSize: number; markSeed0: number}> = ({c, d, heroSize, markSeed0}) => {
+// ---------- price board: a ledger, name ... leader ... price. Earlier prices are greyed rows; this beat's row is the thing
+// the band hero prices (the band sets the hero and any crossed-off old price, once; the board never repeats them at hero
+// size). The board's own figures land on their own words. ----------
+export const PriceBoard: React.FC<{c: Ctx; d: Extract<Device, {kind: "price"}>}> = ({c, d}) => {
   const {B, f, P, box} = c;
   const serif = F.serif(B, 560);
   const g = settleBy(c, c.grow - 8, 10);
-  const ghostH = 190, oldH = d.old ? 150 : 0, hotH = heroSize + 40;
-  const used = d.rows.length * ghostH + oldH + hotH;
-  let y = box.y + Math.max(0, (box.h - used) / 2);
-  const row = (r: Row, i: number, ps: number, h: number, hot: boolean) => {
-    const pw = hot ? 0 : measure(r.text, F.hero(B), ps);
-    const room = hot ? box.w : box.w - pw - 90;
-    let ns = 60;
-    while (ns > LBL && measure(r.name, serif, ns) > room) ns--;
+  const rows = [...d.rows, d.hot];
+  const pitch = Math.min(240, box.h / rows.length);
+  const ps = Math.round(Math.min(100, pitch * 0.45));
+  let y = box.y + Math.max(0, (box.h - pitch * rows.length) / 2);
+  // the beat's own price is the band's hero (above this ledger): its row prints no price again, only an arrow up to it
+  const ARROW = 44;
+  const pwOf = (r: Row) => r === d.hot ? ARROW : measure(r.text, F.hero(B), ps);
+  // one name size for the whole ledger (the largest at which every row fits beside its price)
+  let ns = 60;
+  while (ns > 36 && rows.some((r) => measure(r.name, serif, ns) > box.w - pwOf(r) - 90)) ns--;
+  return <>{rows.map((r, i) => {
+    const hot = r === d.hot;
+    const pw = pwOf(r);
+    const room = box.w - pw - 90;
     const nw = Math.min(room, measure(r.name, serif, ns));
     const op = ramp(f, g + 4 + i * 5, 8);
     const pt = paint(c, r);
+    const mid = y + pitch * 0.55;
+    const priceCol = hot ? (r.role && roleColor(c, r.role) !== B.c.accent2 ? roleColor(c, r.role) : P.text) : r.role ? pt.line : P.soft;
     const el = <React.Fragment key={i}>
-      <div style={{position: "absolute", left: box.x, top: y + h - 2, width: box.w, height: 2, background: P.rule, opacity: 0.6 * op}}/>
-      <div style={{position: "absolute", left: box.x, top: hot ? y : y + h * 0.5 - ns * 0.8, opacity: op}}>
-        <Gated text={r.name} nums={r.gates} lockF={lockOf(r)} f={f} ff={serif} size={ns} width={Math.ceil(nw) + 4} color={r.ghost ? P.soft : P.text} hot={P.text}/></div>
-      {!hot && <>
-        <div style={{position: "absolute", left: box.x + nw + 18, top: y + h * 0.5, width: Math.max(0, box.w - nw - pw - 44), borderTop: `5px dotted ${P.soft}`, opacity: op * 0.6}}/>
-        <div style={{position: "absolute", right: 1080 - (box.x + box.w), top: y + h * 0.5 - ps * 0.8, opacity: op}}>
-          <PriceVal c={c} r={r} size={ps} color={r.ghost ? (r.role ? pt.line : P.soft) : P.text}/></div>
-      </>}
-      {hot && <>
-        <div style={{position: "absolute", left: box.x, top: y + ns * 1.25, width: Math.max(0, box.w - (r.num ? measure(r.text, F.hero(B), heroSize) : 0) - 40), borderTop: `5px dotted ${P.soft}`, opacity: op * 0.6,
-          marginTop: heroSize * 0.45}}/>
-        {r.num && <div style={{position: "absolute", right: 1080 - (box.x + box.w), top: y + ns * 1.25 + 6}}>
-          <Ink B={B} n={r.num} f={f} size={heroSize} color={r.role ? roleColor(c, r.role) === B.c.accent2 ? P.text : roleColor(c, r.role) : P.text} slot={P.text}/></div>}
-      </>}
+      <div style={{position: "absolute", left: box.x, top: y + pitch - 2, width: box.w, height: 2, background: P.rule, opacity: 0.6 * op}}/>
+      <div style={{position: "absolute", left: box.x, top: mid - ns * 0.75, opacity: op}}>
+        <Gated text={r.name} nums={r.gates} lockF={lockOf(r)} f={f} ff={serif} size={ns} width={Math.ceil(nw) + 4} color={hot ? P.text : P.soft} hot={P.text}/></div>
+      <div style={{position: "absolute", left: box.x + nw + 18, top: mid, width: Math.max(0, box.w - nw - pw - 44), borderTop: `5px dotted ${P.soft}`, opacity: op * 0.6}}/>
+      {hot
+        ? <svg style={{position: "absolute", right: 1080 - (box.x + box.w), top: mid - 44, opacity: op}} width={ARROW} height={60}>
+            <path d="M 22 0 L 44 26 L 30 26 L 30 60 L 14 60 L 14 26 L 0 26 Z" fill={priceCol}/></svg>
+        : <div style={{position: "absolute", right: 1080 - (box.x + box.w), top: mid - ps * 0.78, opacity: op}}>
+            <PriceVal c={c} r={r} size={ps} color={priceCol}/></div>}
     </React.Fragment>;
-    y += h;
+    y += pitch;
     return el;
-  };
-  const ghosts = d.rows.map((r, i) => row(r, i, 120, ghostH, false));
-  const old = d.old ? (() => {
-    const o = d.old!, os = 120, rest = d.oldRest, rs = LBL;
-    const show = f >= o.lockF;
-    const el = <div key="old" style={{position: "absolute", right: 1080 - (box.x + box.w), top: y + 10, display: "flex", alignItems: "baseline", gap: 14, opacity: show ? 0.8 * ramp(f, o.lockF, 6) : 0}}>
-      {show && <EditorMark kind="crossed-off" at={Math.min(o.lockF + 8, c.f1 - 26)} dur={12} seed={markSeed0} color={B.c.accent} strokeWidth={7}>
-        <span style={{display: "inline-flex", alignItems: "baseline", gap: 12}}>
-          <span style={{...css(F.hero(B), os), fontWeight: 500, color: P.text, lineHeight: 1}}>{o.text}</span>
-          {rest && <span style={{...css(F.body(B, 700), rs), color: P.text}}>{rest}</span>}</span>
-      </EditorMark>}
-    </div>;
-    y += oldH;
-    return el;
-  })() : null;
-  const hot = row(d.hot, d.rows.length, heroSize, hotH + 60, true);
-  return <>{ghosts}{old}{hot}</>;
+  })}</>;
 };
 const PriceVal: React.FC<{c: Ctx; r: Row; size: number; color: string}> = ({c, r, size, color}) => {
   const ff = F.hero(c.B);
   if (c.f < lockOf(r)) return <Slug w={measure(r.text, ff, size)} size={size} color={color}/>;
   if (r.num) assertLocked(r.num, c.f, "Dispatch price");
   const p = ramp(c.f, lockOf(r), 7);
-  return <span style={{...css(ff, size), lineHeight: 1, color, display: "inline-block", clipPath: `inset(-20% ${(1 - p) * 100}% -20% 0)`}}>{r.text}</span>;
+  return <span style={{...css(ff, size), lineHeight: 1, color, display: "inline-block", clipPath: `inset(${(1 - p) * 120 - 20}% -4% -20% -4%)`}}>{r.text}</span>;
 };
 
 // ---------- a sum: parts stacked end to end, against an earlier rule (the limit) ----------
 const SumDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "sum"}>}> = ({c, d}) => {
   const {B, f, P, box} = c;
-  const th = 140, y = box.y + (box.h - th) / 2 + 20;
+  const th = 150, y = box.y + Math.max(NAME * 1.3 + 10, (box.h - th - 200) / 2 + NAME * 1.3);
   const tot = d.total.role ? roleColor(c, d.total.role) : P.text;
   let x = box.x;
   const parts = d.parts.map((r, i) => {
@@ -398,8 +420,8 @@ const SumDevice: React.FC<{c: Ctx; d: Extract<Device, {kind: "sum"}>}> = ({c, d}
   return <>
     {parts}
     {ln && <>
-      <div style={{position: "absolute", left: lx - 2, top: y - 120, height: th + 200, borderLeft: `5px dashed ${P.text}`, opacity: ramp(f, la, 8)}}/>
-      <div style={{position: "absolute", right: 1080 - lx + 14, top: y - 120, opacity: ramp(f, la, 8), display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
+      <div style={{position: "absolute", left: lx - 2, top: y - 30, height: th + 30 + 14 + LBL * 1.3 + 110, borderLeft: `5px dashed ${P.text}`, opacity: ramp(f, la, 8)}}/>
+      <div style={{position: "absolute", right: 1080 - lx + 14, top: y + th + 14 + LBL * 1.3 + 14, opacity: ramp(f, la, 8), display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
         <Name c={c} text={ln.name} gates={ln.gates} lockF={lockOf(ln)} color={P.soft} size={FOOT + 2} style={{position: "relative"}}/>
         <Val c={c} r={ln} size={LBL} color={P.text}/></div>
     </>}
@@ -479,7 +501,7 @@ export const RatioDesk: React.FC<{c: Ctx; A: Row; B2: Row; copies: number; scale
 };
 
 // ---------- the dispatcher ----------
-export const DeviceView: React.FC<{c: Ctx; d: Device; lockF: number; bracketAt?: number; heroSize?: number}> = ({c, d, lockF, bracketAt, heroSize = 220}) => {
+export const DeviceView: React.FC<{c: Ctx; d: Device; lockF: number; bracketAt?: number}> = ({c, d, lockF, bracketAt}) => {
   switch (d.kind) {
     case "rows": return <RowsDevice c={c} d={d}/>;
     case "diverge": return <DivergeDevice c={c} rows={d.rows} ghost={d.ghost}/>;
@@ -487,7 +509,7 @@ export const DeviceView: React.FC<{c: Ctx; d: Device; lockF: number; bracketAt?:
     case "tally": return <TallyTiles c={c} k={d.k} N={d.N} kF={lockF} NF={lockF}/>;
     case "duration": return <DurationDevice c={c} years={d.years} lockF={lockF}/>;
     case "threshold": return <ThresholdDevice c={c} at={d.at} side={d.side}/>;
-    case "price": return <PriceBoard c={c} d={d} heroSize={heroSize} markSeed0={markSeed(c.seed, 2)}/>;
+    case "price": return <PriceBoard c={c} d={d}/>;
     case "sum": return <SumDevice c={c} d={d}/>;
     case "inset": return <InsetDevice c={c} d={d}/>;
     case "ratio": return <RatioDesk c={c} A={d.A} B2={d.B} copies={d.copies} scale={d.scale} range={d.range ? {lo: d.range.lo.value, hi: d.range.hi.value} : null}
@@ -521,13 +543,20 @@ export const TeaserView: React.FC<{c: Ctx; t: Teaser}> = ({c, t}) => {
     }
     case "count": {
       // N equal, named tiles (the story's own sections), inked together on the number word: shapes, no digits
-      const gap = 18, tw = (box.w - gap * (t.n - 1)) / t.n, th = Math.min(200, box.h - 120), y = box.y + 20;
+      const first = t.names.map((n) => n.split(" ")[0]);
+      const shared = t.names.length > 1 && first.every((w) => w === first[0]) && t.names.every((n) => n.includes(" ")) ? first[0] : "";
+      const names = shared ? t.names.map((n) => n.slice(shared.length).trim()) : t.names;
+      const gap = 18, tw = (box.w - gap * (t.n - 1)) / t.n, th = Math.min(200, box.h - 120 - (shared ? 60 : 0)), y = box.y + 20 + (shared ? 60 : 0);
       const q = ramp(f, t.lockF, 10, io);
-      return <>{t.names.map((nm, i) => <React.Fragment key={i}>
+      const nf = F.body(B, 700);
+      let ns = LBL;
+      while (ns > 30 && names.some((nm) => nm.split(" ").some((w) => measure(w, nf, ns) > tw - 4))) ns--;
+      return <>{shared && <div style={{position: "absolute", left: box.x, top: box.y + 4, ...css(F.body(B, 800, 0.12), LBL), color: P.text}}>{shared}</div>}
+        {names.map((nm, i) => <React.Fragment key={i}>
         <div style={{position: "absolute", left: box.x + i * (tw + gap), top: y, width: tw, height: th, border: `3px solid ${P.text}`, boxSizing: "border-box",
           background: f >= t.lockF ? undefined : hatch(P.soft + "22", -45, 4, 14)}}>
           <div style={{position: "absolute", inset: 0, background: P.hot, clipPath: `inset(${(1 - q) * 100}% 0 0 0)`}}/></div>
-        <div style={{position: "absolute", left: box.x + i * (tw + gap), top: y + th + 14, width: tw, ...css(F.body(B, 700), LBL), whiteSpace: "normal", lineHeight: 1.08, color: P.text}}>
+        <div style={{position: "absolute", left: box.x + i * (tw + gap), top: y + th + 14, width: tw, ...css(nf, ns), whiteSpace: "normal", lineHeight: 1.08, color: P.text}}>
           {nm.split(" ").map((w, k) => <div key={k}>{w}</div>)}</div>
       </React.Fragment>)}</>;
     }
@@ -567,12 +596,12 @@ export const ProofView: React.FC<{c: Ctx; p: Exclude<Proof, {kind: "slip"}>}> = 
         {rowName(c, p.A, {at: g, style: {left: box.x, top: y - NAME * 1.35}})}
         <div style={{position: "absolute", left: box.x, top: y, width: aw * ramp(f, g, 10, io), height: th, border: `4px solid ${pA.line}`, boxSizing: "border-box"}}/>
         {Array.from({length: p.n}, (_, i) => {
-          const at = settleBy(c, p.lockF + 2 + i * 2, 4), q = ramp(f, at, 4);
+          const at = settleBy(c, p.lockF + 2, 8), q = ramp(f, at, 8, io);      // all together on the word: no count on the way
           return <div key={i} style={{position: "absolute", left: box.x + i * tw + 2, top: y + 4 + (1 - q) * -40, width: tw - 2, height: th - 8, background: pB.line,
             borderRight: `2px solid ${B.c.ink}`, boxSizing: "border-box", opacity: q}}/>;
         })}
         {p.lo !== null && <div style={{position: "absolute", left: box.x + (p.lo / p.scale) * box.w - 1.5, top: y - 18, height: th + 36, borderLeft: `3px dashed ${P.text}`,
-          opacity: ramp(f, settleBy(c, p.lockF + 2 + p.n * 2, 8), 8)}}/>}
+          opacity: ramp(f, settleBy(c, p.lockF + 12, 8), 8)}}/>}
         <div style={{position: "absolute", left: box.x, top: y + th + 20, display: "flex", alignItems: "center", gap: 14, opacity: ramp(f, settleBy(c, p.lockF + 6, 8), 8)}}>
           <span style={{width: Math.max(18, Math.min(64, tw)), height: 36, background: pB.line}}/>
           <Name c={c} text={`= ${p.B.name}`} gates={p.B.gates} lockF={lockOf(p.B)} color={P.text} style={{position: "relative"}}/>
@@ -587,7 +616,7 @@ export const ProofView: React.FC<{c: Ctx; p: Exclude<Proof, {kind: "slip"}>}> = 
         return <React.Fragment key={i}>
           {rowName(c, r, {at: g, maxW: box.w, style: {left: box.x, top: y - NAME * 1.3}})}
           <div style={{position: "absolute", left: box.x, top: y, width: box.w * 0.7 * q, height: th, background: pt.fill, border: pt.border ? `3px solid ${pt.border}` : undefined, boxSizing: "border-box"}}/>
-          <div style={{position: "absolute", left: box.x + box.w * 0.7 + 20, top: y + 8}}><Val c={c} r={r} size={64} color={P.text}/></div>
+          <div style={{position: "absolute", left: box.x + box.w * 0.7 + 20, top: y + 8}}><Val c={c} r={r} size={64} color={P.text} at={p.lockF}/></div>
         </React.Fragment>;
       })}
       <div style={{position: "absolute", left: box.x + box.w * 0.7, top: y0 + 10, height: p.rows.length * pitch, borderLeft: `3px dashed ${P.text}`, opacity: ramp(f, settleBy(c, p.lockF, 8), 8)}}/></>;
@@ -615,6 +644,6 @@ export const ProofView: React.FC<{c: Ctx; p: Exclude<Proof, {kind: "slip"}>}> = 
         {shown && <div style={{position: "absolute", left: X(p.edge) - 50, top: top + n * pitch + 34, opacity: ramp(f, p.lockF, 8), ...css(F.body(B, 800), LBL), color: P.amber}}>{p.text}</div>}
       </>;
     }
-    case "bars": return <DivergeDevice c={c} rows={p.rows}/>;
+    case "bars": return <DivergeDevice c={c} rows={p.rows} labelAt={p.lockF}/>;
   }
 };

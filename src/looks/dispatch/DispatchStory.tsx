@@ -1,13 +1,20 @@
 // KADAI DISPATCH: the front page and chart desk of an Indian financial daily (docs/datakadai/looks/LOOKS_SPEC.md, Kadai
-// Dispatch). Newsprint is the ground of every beat; colour comes only as a top FOLD band (the series colour) and the ink
-// TAKEAWAY page. One honest comparison object per beat (plan.ts + devices.tsx), hero figures that INK on the narrator's
-// word (lockF), a masthead and a source line on every frame. Every word and number is data.json's own, drawn in code;
-// colours and faces are brand tokens (B.c, B.f), so the same file renders Data Kadai or Indica Atlas.
+// Dispatch). Newsprint is the ground of every beat; colour comes only as a BAND (the series colour) and the ink TAKEAWAY
+// page. One honest comparison object per beat (plan.ts + devices.tsx), hero figures that INK on the narrator's word
+// (lockF), a masthead and a source line on every frame. Every word and number is data.json's own, drawn in code; colours
+// and faces are brand tokens (B.c, B.f), so the same file renders Data Kadai or Indica Atlas.
 //
-// Cuts land on the story-beat downbeats the builder set (t0/t1 never move): FOLD (the band edge tweens over 15 frames),
-// COLOUR WIPE (the band colour sweeps left to right over 8 frames) and PAGE (the ink page slides in from the right over
-// 10 frames). Internal bar downbeats: a 3-frame punch on the chart object and a 3-frame paper flash. The last 12 frames of
-// every beat are still.
+// Layouts rotate per story (plan.ts): a front page is a BANNER (band on top), a FOOT (band at the bottom) or PLAIN
+// newsprint; a fact is a FOLD (band on top), a FOOT (band at the bottom, chart first) or a BOX (newsprint, the chart in a
+// ruled box); the takeaway sets its proof below or above its headline; the letters page is a band, a FULL colour page or a
+// foot band. Every page's band is one rectangle, and the ground, the masthead and the source line all read it, so type is
+// always drawn in the colours of the ground actually under it, frame by frame (chrome is clipped to each band).
+//
+// Cuts land on the story-beat downbeats the builder set (t0/t1 never move): FOLD (the band edge tweens over 12 frames),
+// COLOUR WIPE (the band colour sweeps left to right over 8 frames) and PAGE (the whole next sheet, ground and content,
+// slides in from the right over 10 frames). The outgoing page's content leaves on the cut; the new page's content enters
+// once its ground is in place, so two pages' type never overlap. Internal bar downbeats: an 8 px nudge of the chart object
+// and a 3-frame paper flash. The last 12 frames of every beat are still.
 import React, {useMemo} from "react";
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame} from "remotion";
 import type {ColorRole, LookBrand} from "../brands/types";
@@ -16,24 +23,19 @@ import {downbeats} from "../shared/grid";
 import {LookAudio} from "../shared/LookAudio";
 import {MapClose} from "../shared/MapClose";
 import {EditorMark, markSeed} from "../shared/Marks";
-import {plain} from "../shared/text";
 import type {LookBeat, LookData, LookNum, LookProps} from "../shared/types";
-import {DeviceView, ProofView, TeaserView, type Ctx, type Pal} from "./devices";
-import {CL, css, F, fitGated, fitHero, Gated, hatch, heroW, Ink, io, Masthead, Notch, onDark, Paper, ramp, RULE_Y, SourceLine, sourceTop, textOn, textW, wipe} from "./kit";
-import {planStory, type BeatPlan, type StoryPlan} from "./plan";
+import {deviceH, DeviceView, ProofView, TeaserView, teaserH, type Ctx, type Pal} from "./devices";
+import {CL, css, F, fitGated, fitHero, Gated, geo, hatch, heroW, Ink, io, Masthead, Notch, onDark, Paper, ramp, SourceLine, sourceTop, textOn, textW, wipe} from "./kit";
+import {planStory, type BeatPlan, type EndLayout, type FactLayout, type HookLayout, type SayLayout, type StoryPlan} from "./plan";
 import {plateUse} from "./plates";
-import {useQuotes} from "./quotes";
-
-type Ground = {page: "news" | "ink"; band: ColorRole | null; h: number};
-const TOP = 304;      // first content line under the masthead rules
+import {useExtras} from "./quotes";
+import {withDispatchData} from "./sources";
 
 // ---------- palettes from tokens ----------
 const palNews = (B: LookBrand, hot: ColorRole): Pal => ({
-  text: B.c.ink, soft: B.c.softInk, hot: B.c[hot], hotLabel: B.c[textOn(B, hot, 44)], cold: hot === "ink" ? B.c.accent : B.c.ink,
-  coldLabel: B.c[textOn(B, hot === "ink" ? "accent" : "ink", 44)], ghost: B.c.softInk, amber: B.c.accent2, amberText: B.c.accent2Text, rule: B.c.ink, dark: false});
+  text: B.c.ink, soft: B.c.softInk, hot: B.c[hot], ghost: B.c.softInk, amber: B.c.accent2, amberText: B.c.accent2Text, rule: B.c.ink, dark: false});
 const palInk = (B: LookBrand): Pal => ({
-  text: B.c.paper, soft: B.c.line, hot: B.c.accent2, hotLabel: B.c[textOn(B, "accent2", 44, ["ink", "paper"])], cold: B.c.paper, coldLabel: B.c.ink,
-  ghost: B.c.line, amber: B.c.accent2Light, amberText: B.c.accent2Light, rule: B.c.paper, dark: true});
+  text: B.c.paper, soft: B.c.line, hot: B.c.accent2, ghost: B.c.line, amber: B.c.accent2Light, amberText: B.c.accent2Light, rule: B.c.paper, dark: true});
 
 // colours of type set on a band
 const onBand = (B: LookBrand, band: ColorRole) => {
@@ -43,13 +45,14 @@ const onBand = (B: LookBrand, band: ColorRole) => {
   const emph: ColorRole = band === "ink" ? "accent2Light" : textOn(B, band, 60);
   return {main, kick: B.c[kick], heroHot, emph: B.c[emph], dark: onDark(band)};
 };
+// a band's colour used as type on newsprint (amber never: its darker text tone instead)
+const newsText = (B: LookBrand, role: ColorRole, px = 44): ColorRole =>
+  B.pairOk(role, "newsprint", px) ? role : role === "accent2" && B.pairOk("accent2Text", "newsprint", px) ? "accent2Text" : "ink";
 
 // ---------- headline rows: a hook or say's lines with the hero token set large, reading order kept ----------
-// Text rows share one size (the largest at which each fits one line, down to 70% of the cap; a row that still does not fit
-// wraps). The hero's line keeps its words beside the figure when the figure stays at least ~3/4 of its largest size.
 type HRow = {kind: "text"; text: string} | {kind: "hero"; before: string; after: string};
 type HeadRow = {r: HRow; y: number; h: number; size: number; S: number};
-type HeadLayout = {rows: HeadRow[]; S: number; H: number; bottom: number};
+type HeadLayout = {rows: HeadRow[]; S: number; H: number; bottom: number; top: number};
 const isPunct = (s: string) => /^[.,;:!?)]+/.test(s);
 const headLayout = (B: LookBrand, b: LookBeat, top: number, maxS: number, maxH: number, maxBottom: number, beside = 0.62): HeadLayout => {
   const W = B.safe.x1 - B.safe.x0, serif = F.serif(B), hero = b.hero;
@@ -95,10 +98,15 @@ const headLayout = (B: LookBrand, b: LookBeat, top: number, maxS: number, maxH: 
       rows.push({r: {kind: "hero", before, after}, y, h, size: H, S}); y += h;
       if (r.after && !after) pushText(r.after);
     }
-    last = {rows, S, H, bottom: y};
+    last = {rows, S, H, bottom: y, top};
     if (y <= maxBottom) return last;
   }
   return last!;
+};
+// the same headline moved to start at `top`
+const moveHead = (lay: HeadLayout, top: number): HeadLayout => {
+  const d = top - lay.top;
+  return {...lay, top, bottom: lay.bottom + d, rows: lay.rows.map((r) => ({...r, y: r.y + d}))};
 };
 
 const Headline: React.FC<{B: LookBrand; b: LookBeat; lay: HeadLayout; f: number; set: number; color: string; emph: string; heroColor: string; slot: string; mark?: {at: number; seed: number; color: string}}> =
@@ -113,7 +121,7 @@ const Headline: React.FC<{B: LookBrand; b: LookBeat; lay: HeadLayout; f: number;
     const fig = <Ink B={B} n={b.hero!} f={f} size={size} color={heroColor} slot={slot} qualColor={color}/>;
     const words = (t: string, d: number) => <div style={{marginBottom: -S * 0.2}}>
       <Gated text={t} nums={nums} lockF={b.lockF} f={f} ff={serif} size={S} width={Math.ceil(textW(t, serif, S, {...serif, weight: 720})) + 4} color={color} hot={emph} hotWeight={720} lineH={1.1} set={at + d}/></div>;
-    return <div key={i} style={{position: "absolute", left: B.safe.x0 - (r.before ? 0 : size * 0.03), top: y, display: "flex", alignItems: "baseline", whiteSpace: "nowrap"}}>
+    return <div key={i} style={{position: "absolute", left: B.safe.x0, top: y, display: "flex", alignItems: "baseline", whiteSpace: "nowrap"}}>
       {r.before && <div style={{marginRight: S * 0.32}}>{words(r.before, 0)}</div>}
       {mark && f >= b.hero!.lockF ? <EditorMark kind="underline" at={mark.at} dur={12} seed={mark.seed} color={mark.color} strokeWidth={9} padding={{top: -size * 0.04}}>{fig}</EditorMark> : fig}
       {r.after && <div style={{marginLeft: isPunct(r.after) ? S * 0.04 : S * 0.32}}>{words(r.after, 2)}</div>}
@@ -121,111 +129,250 @@ const Headline: React.FC<{B: LookBrand; b: LookBeat; lay: HeadLayout; f: number;
   })}</>;
 };
 
-// ---------- the chart area of a fact page ----------
-const flagFor = (L: LookData, b: LookBeat, P: BeatPlan) => {
-  if (P.quote) return null;
-  const sub = b.subShown;
-  return sub ? sub : null;
-};
-
+// ---------- footnote flag and proof slip ----------
 const Flag: React.FC<{B: LookBrand; text: string; f: number; at: number; y: number; lockF: number; values: number[]; color: string; strip: string}> = ({B, text, f, at, y, lockF, values, color, strip}) => {
   const W = B.safe.x1 - B.safe.x0, ff = F.body(B, 600);
   return <div style={{position: "absolute", left: B.safe.x0, top: y, width: W, ...wipe(f, at, 8)}}>
     <div style={{position: "absolute", left: 0, top: 0, bottom: 0, width: 22, background: hatch(strip, 45, 4, 9)}}/>
     <div style={{position: "absolute", left: 0, top: 0, right: 0, bottom: 0, border: `2px solid ${color}`}}/>
     <div style={{padding: "12px 18px 12px 40px"}}>
-      <Gated text={text} nums={[]} lockF={lockF} f={f} ff={ff} size={32} width={W - 60} color={color} hot={color} lineH={1.22} values={values}/></div>
+      <Gated text={text} nums={[]} lockF={lockF} f={f} ff={ff} size={34} width={W - 60} color={color} hot={color} lineH={1.22} values={values}/></div>
   </div>;
 };
 const flagH = (B: LookBrand, text: string) => {
   const W = B.safe.x1 - B.safe.x0;
-  const n = fitGated(text, [], F.body(B, 600), W - 60, 9, 32, 32).lines;
-  return n * Math.round(32 * 1.22) + 24 + 4;
+  const n = fitGated(text, [], F.body(B, 600), W - 60, 9, 34, 34).lines;
+  return n * Math.round(34 * 1.22) + 24 + 4;
 };
 
-// A source quote set as a proof slip: a newsprint slip, a ruled hatched edge, the words exactly as the source prints them.
+// A source quote set as a proof slip: a newsprint slip, a ruled hatched edge, the words exactly as the source prints them,
+// credited to the document it comes from (quotes.ts quoteCredit).
 const Slip: React.FC<{B: LookBrand; q: {contains: string}; src: string; f: number; at: number; y: number; lockF: number; values: number[]; maxH: number}> = ({B, q, src, f, at, y, lockF, values, maxH}) => {
   const W = B.safe.x1 - B.safe.x0, serif = F.serif(B, 500);
   const quote = `“…${q.contains}…”`;
   const fit = fitGated(quote, [], serif, W - 70, 4, 42, 32);
-  const h = Math.min(maxH, fit.lines * Math.round(fit.size * 1.18) + 90);
-  return <div style={{position: "absolute", left: B.safe.x0, top: y, width: W, height: h, background: B.c.paper, boxShadow: `0 4px 0 ${B.c.line}`, ...wipe(f, at, 8),
-    transform: `rotate(${-0.6}deg)`}}>
+  const h = Math.min(maxH, fit.lines * Math.round(fit.size * 1.18) + 100);
+  let cs = 30;
+  while (cs > 24 && measure(src, F.body(B, 500), cs) > W - 50) cs--;
+  return <div style={{position: "absolute", left: B.safe.x0, top: y, width: W, height: h, background: B.c.paper, boxShadow: `0 4px 0 ${B.c.line}`, ...wipe(f, at, 8)}}>
     <div style={{position: "absolute", left: 0, top: 0, bottom: 0, width: 16, background: hatch(B.c.accent, 45, 3, 8)}}/>
     <div style={{position: "absolute", left: 34, top: 14, ...css(F.body(B, 800, 0.12), 26), color: B.c.accent}}>FROM THE SOURCE</div>
     <div style={{position: "absolute", left: 34, top: 50}}>
       <Gated text={quote} nums={[]} lockF={lockF} f={f} ff={serif} size={fit.size} width={W - 70} color={B.c.ink} hot={B.c.ink} lineH={1.18} values={values}/></div>
-    <div style={{position: "absolute", right: 16, bottom: 10, ...css(F.body(B, 500), 26), color: B.c.softInk}}>{src}</div>
+    <div style={{position: "absolute", right: 16, bottom: 10, maxWidth: W - 40, overflow: "hidden", ...css(F.body(B, 500), cs), color: B.c.softInk}}>{src}</div>
   </div>;
 };
 const slipH = (B: LookBrand, q: {contains: string}) => {
   const W = B.safe.x1 - B.safe.x0;
   const fit = fitGated(`“…${q.contains}…”`, [], F.serif(B, 500), W - 70, 4, 42, 32);
-  return fit.lines * Math.round(fit.size * 1.18) + 90;
+  return Math.min(340, fit.lines * Math.round(fit.size * 1.18) + 100);
 };
 
-// ---------- grounds ----------
+// ---------- geometry: every page's band and blocks, computed once and shared by ground, chrome and page ----------
+type Rect = {role: ColorRole; top: number; bottom: number};
+type Ground = {page: "news" | "ink"; rect: Rect | null};
+const srcOf = (SP: StoryPlan, b: LookBeat) => (b.kind === "fact" ? SP.beats[b.i].src : b.src);
+
+const lowerOf = (B: LookBrand, SP: StoryPlan, b: LookBeat) => {
+  const P = SP.beats[b.i];
+  const priceOld = P.device?.kind === "price" && !!P.device.old;
+  if (P.quote) return {kind: "slip" as const, h: slipH(B, P.quote), text: ""};
+  const sub = b.subShown;
+  if (sub && !priceOld) return {kind: "flag" as const, h: flagH(B, sub), text: sub};      // a crossed-off old price already prints the sub's figure
+  return null;
+};
+
+type FactGeom = {
+  layout: FactLayout; band: ColorRole; heroSize: number; kickY: number; heroY: number; old: {y: number; size: number} | null;
+  deckY: number; deck: {size: number; lines: number} | null; rect: Rect | null; chartTop: number; chartBottom: number;
+  box: {top: number; bottom: number} | null; lower: ReturnType<typeof lowerOf>; lowerY: number; src: string; srcTop: number;
+};
+const factGeom = (L: LookData, SP: StoryPlan, B: LookBrand, i: number): FactGeom => {
+  const b = L.beats[i], P = SP.beats[i];
+  const W = B.safe.x1 - B.safe.x0, {TOP} = geo(B);
+  const layout = (P.layout === "foot" || P.layout === "box" ? P.layout : "fold") as FactLayout;
+  const src = srcOf(SP, b), srcTop = sourceTop(B, src);
+  const lower = lowerOf(B, SP, b);
+  const lowerH = lower ? lower.h : 0;
+  const deck = L.textLed && b.text ? fitGated(b.text, b.textNums, F.serif(B), W, 2, 50, 40) : null;      // decks: text-led cut only
+  const deckH = deck ? deck.lines * Math.round(deck.size * 1.12) + 12 : 0;
+  const d = P.device;
+  const oldP = d?.kind === "price" && d.old ? d.old : null;
+  const need = d ? Math.max(260, Math.min(560, deviceH(d) * 0.9)) : 0;
+  for (let heroMax = 300; ; heroMax -= 10) {
+    const hs = b.big ? fitHero(B, b.big, W, heroMax, 120) : 0;
+    const heroH = Math.round(hs * 0.98);
+    const oldSize = oldP ? Math.round(Math.min(150, Math.max(110, hs * 0.55))) : 0;
+    const oldH = oldP ? oldSize + 18 : 0;
+    const headH = 58 + heroH + oldH + deckH;
+    let kickY: number, rect: Rect | null = null, chartTop: number, chartBottom: number, lowerY: number, box: FactGeom["box"] = null;
+    if (layout === "fold") {
+      kickY = TOP;
+      const bandBottom = TOP + headH + 34;
+      rect = {role: P.band, top: 0, bottom: bandBottom};
+      chartTop = bandBottom + 46;
+      lowerY = srcTop - 34 - lowerH;
+      chartBottom = lowerH ? lowerY - 30 : srcTop - 40;
+    } else if (layout === "foot") {
+      const bandTop = srcTop - 30 - headH - 44;
+      rect = {role: P.band, top: bandTop, bottom: 1920};
+      kickY = bandTop + 40;
+      chartTop = TOP + 36;
+      lowerY = bandTop - 34 - lowerH;
+      chartBottom = lowerH ? lowerY - 30 : bandTop - 40;
+    } else {
+      kickY = TOP;
+      lowerY = srcTop - 34 - lowerH;
+      box = {top: TOP + headH + 20, bottom: (lowerH ? lowerY : srcTop) - 30};
+      chartTop = box.top + 24;
+      chartBottom = box.bottom - 20;
+    }
+    const heroY = kickY + 58;
+    const old = oldP ? {y: heroY + heroH + 10, size: oldSize} : null;
+    const deckY = heroY + heroH + oldH + 6;
+    const g: FactGeom = {layout, band: P.band, heroSize: hs, kickY, heroY, old, deckY, deck, rect, chartTop, chartBottom, box, lower, lowerY, src, srcTop};
+    if (!d || chartBottom - chartTop - 40 >= need || heroMax <= 180) return g;
+  }
+};
+
+type FrontGeom = {layout: HookLayout; lay: HeadLayout; rect: Rect | null; objTop: number; objBottom: number};
+const frontGeom = (L: LookData, SP: StoryPlan, B: LookBrand, i: number): FrontGeom => {
+  const b = L.beats[i], P = SP.beats[i], {TOP} = geo(B);
+  const layout = (P.layout === "foot" || P.layout === "plain" ? P.layout : "banner") as HookLayout;
+  const srcTop = sourceTop(B, srcOf(SP, b));
+  const lay0 = headLayout(B, b, TOP + 6, 84, 300, 900, 0.78);
+  if (layout === "banner") {
+    const bottom = lay0.bottom + 40;
+    return {layout, lay: lay0, rect: {role: SP.lead, top: 0, bottom}, objTop: bottom + 48, objBottom: srcTop - 40};
+  }
+  if (layout === "plain") return {layout, lay: lay0, rect: null, objTop: lay0.bottom + 90, objBottom: srcTop - 40};
+  const h = lay0.bottom - lay0.top;
+  const bandTop = srcTop - 40 - h - 50;
+  return {layout, lay: moveHead(lay0, bandTop + 40), rect: {role: SP.lead, top: bandTop, bottom: 1920}, objTop: TOP + 36, objBottom: bandTop - 40};
+};
+
+const lettersBlocks = (L: LookData, B: LookBrand, i: number, layout: EndLayout) => {
+  const b = L.beats[i], {TOP} = geo(B);
+  const W = B.safe.x1 - B.safe.x0;
+  const q = b.q ?? "";
+  const qf = F.serif(B, 640);
+  const qFit = fitGated(q, b.qNums, qf, W, 3, 112, 72);
+  const qY = layout === "band" ? 530 : TOP + 130;
+  const qH = qFit.lines * Math.round(qFit.size * 1.06);
+  const sub = b.sub ?? "";
+  const subFit = sub ? fitGated(sub, [], F.body(B, 600), W, 2, 50, 36) : null;
+  const subY = qY + qH + 34;
+  const cta = sub.trim() !== "Comment below." && /comment below/i.test(b.voice?.text ?? b.vo ?? "") ? "Comment below." : "";
+  const ctaY = subY + (subFit ? subFit.lines * Math.round(subFit.size * 1.15) : 0) + 30;
+  const srcText = L.sourceLines.join("  ·  ");
+  const sFit = fitGated(srcText, [], F.body(B, 500), W, 8, 34, 24);
+  const sH = sFit.lines * Math.round(sFit.size * 1.25);
+  const sY = B.safe.y1 - sH;
+  const lockY = Math.max(ctaY + (cta ? 90 : 20) + (layout === "foot" ? 90 : 0), sY - 60 - 110);
+  const lockFits = lockY + 100 <= sY - 30;
+  return {q, qf, qFit, qY, qH, sub, subFit, subY, cta, ctaY, srcText, sFit, sH, sY, lockY, lockFits};
+};
+const endGeom = (L: LookData, SP: StoryPlan, B: LookBrand, i: number) => {
+  const P = SP.beats[i];
+  const layout = (P.layout === "full" || P.layout === "foot" ? P.layout : "band") as EndLayout;
+  const k = lettersBlocks(L, B, i, layout);
+  const rect: Rect = layout === "band" ? {role: SP.lead, top: 0, bottom: 470} : layout === "full" ? {role: SP.lead, top: 0, bottom: 1920}
+    : {role: SP.lead, top: (k.lockFits ? k.lockY : k.sY) - 50, bottom: 1920};
+  return {layout, rect, ...k};
+};
+
 const groundOf = (L: LookData, SP: StoryPlan, B: LookBrand, i: number): Ground => {
   const b = L.beats[i];
-  if (b.kind === "spot" || b.kind === "hook") return {page: "news", band: SP.lead, h: frontBand(L, B, i)};
-  if (b.kind === "fact") return SP.beats[i].device?.kind === "ratio" ? {page: "news", band: null, h: 0} : {page: "news", band: SP.beats[i].band, h: factBand(B, b)};
-  if (b.kind === "say") return {page: "ink", band: null, h: 0};
-  if (b.kind === "end") return {page: "news", band: SP.lead, h: 470};
-  return {page: "news", band: null, h: 0};
+  if (b.kind === "spot" || b.kind === "hook") return {page: "news", rect: frontGeom(L, SP, B, i).rect};
+  if (b.kind === "fact") return SP.beats[i].device?.kind === "ratio" ? {page: "news", rect: null} : {page: "news", rect: factGeom(L, SP, B, i).rect};
+  if (b.kind === "say") return {page: "ink", rect: null};
+  if (b.kind === "end") return {page: "news", rect: endGeom(L, SP, B, i).rect};
+  return {page: "news", rect: null};
 };
 
-const factHead = (B: LookBrand, b: LookBeat) => {
-  const W = B.safe.x1 - B.safe.x0;
-  const heroSize = b.big ? fitHero(B, b.big, W, 232, 120) : 0;
-  const heroY = TOP + 52;
-  const deckY = heroY + Math.round(heroSize * 0.98) + 10;
-  const deck = b.text ? fitGated(b.text, b.textNums, F.serif(B), W, 2, 50, 40) : null;
-  const bottom = deckY + (deck ? deck.lines * Math.round(deck.size * 1.12) : 0) + 34;
-  return {heroSize, heroY, deckY, deck, bottom};
-};
-const factBand = (B: LookBrand, b: LookBeat) => factHead(B, b).bottom;
-
-const frontLay = (L: LookData, B: LookBrand, i: number) => headLayout(B, L.beats[i], TOP + 6, 84, 300, 900, 0.78);
-const frontBand = (L: LookData, B: LookBrand, i: number) => frontLay(L, B, i).bottom + 40;
-
-const GroundView: React.FC<{B: LookBrand; L: LookData; SP: StoryPlan; i: number; f: number}> = ({B, L, SP, i, f}) => {
-  const b = L.beats[i];
-  const cur = groundOf(L, SP, B, i);
-  const prev = i > 0 ? groundOf(L, SP, B, i - 1) : cur;
-  const seed = L.seed + i;
-  const band = (g: Ground, h: number, sd: number, clip?: number) => g.band && h > 0
-    ? <Paper color={B.c[g.band]} seed={sd + 1} style={{height: h, ...(clip !== undefined ? {clipPath: `inset(0 ${(1 - clip) * 100}% 0 0)`} : {})}}/> : null;
-  const page = (g: Ground, sd: number, h: number) => <>
-    <Paper color={g.page === "ink" ? B.c.ink : B.c.newsprint} seed={sd} amount={g.page === "ink" ? 0.55 : 0.8}/>
-    {band(g, h, sd)}
-    {g.band && h > 0 && <div style={{position: "absolute", left: 0, top: h, width: 1080, height: 14, background: `linear-gradient(${B.c.ink}33, transparent)`}}/>}
-  </>;
+// The bands on screen at frame f, each with the horizontal share it covers (x0..x1 of the frame, for the colour wipe).
+type Band = Rect & {x0: number; x1: number; seed: number};
+const anchorTop = (r: Rect) => r.top <= 0;
+const bandsAt = (L: LookData, SP: StoryPlan, B: LookBrand, i: number, f: number, rest = false): Band[] => {
+  const b = L.beats[i], cur = groundOf(L, SP, B, i);
+  const full = (r: Rect, sd: number): Band => ({...r, x0: 0, x1: 1, seed: sd});
+  if (rest || i === 0) return cur.rect ? [full(cur.rect, L.seed + i + 1)] : [];
+  const prev = groundOf(L, SP, B, i - 1);
+  if (prev.page !== cur.page) return cur.rect ? [full(cur.rect, L.seed + i + 1)] : [];
   const t = f - b.f0;
-  if (cur.page !== prev.page) return page(cur, seed, cur.h);      // a PAGE cut is drawn by Sheet; after it the page is at rest
-  const h = interpolate(t, [0, 15], [prev.h, cur.h], {...CL, easing: io});
-  const colourChange = prev.band && cur.band && prev.band !== cur.band;
-  const wipeP = ramp(f, b.f0, 8, io);
+  const grow = (r: Rect, p: number): Rect => anchorTop(r) ? {...r, bottom: r.bottom * p} : {...r, top: 1920 - (1920 - r.top) * p};
+  const P = cur.rect, Q = prev.rect;
+  if (!P && !Q) return [];
+  if (P && !Q) return [full(grow(P, interpolate(t, [0, 12], [0, 1], {...CL, easing: io})), L.seed + i + 1)];
+  if (!P && Q) { const k = interpolate(t, [0, 8], [1, 0], {...CL, easing: io}); return k > 0 ? [full(grow(Q, k), L.seed + i)] : []; }
+  if (anchorTop(P!) === anchorTop(Q!) && (P!.bottom >= 1920) === (Q!.bottom >= 1920)) {
+    const k = interpolate(t, [0, 12], [0, 1], {...CL, easing: io});
+    const r: Rect = {role: P!.role, top: Q!.top + (P!.top - Q!.top) * k, bottom: Q!.bottom + (P!.bottom - Q!.bottom) * k};
+    if (P!.role === Q!.role) return [{...r, x0: 0, x1: 1, seed: L.seed + i + 1}];
+    const w = ramp(f, b.f0, 8, io);
+    return [...(w < 1 ? [{...r, role: Q!.role, x0: w, x1: 1, seed: L.seed + i}] : []), {...r, x0: 0, x1: w, seed: L.seed + i + 1}];
+  }
+  // a band on the other edge: the old one folds away, then the new one unfolds
+  const out = interpolate(t, [0, 6], [1, 0], {...CL, easing: io}), inn = interpolate(t, [3, 12], [0, 1], {...CL, easing: io});
+  return [...(out > 0 ? [full(grow(Q!, out), L.seed + i)] : []), ...(inn > 0 ? [full(grow(P!, inn), L.seed + i + 1)] : [])];
+};
+const clipOf = (r: Band) => `inset(${Math.max(0, r.top)}px ${(1 - r.x1) * 1080}px ${Math.max(0, 1920 - r.bottom)}px ${r.x0 * 1080}px)`;
+// everything outside the bands (evenodd: the frame minus each band rectangle)
+const clipOutside = (bands: Band[]) => {
+  const bs = bands.filter((r) => r.bottom - r.top > 0.5 && r.x1 > r.x0);
+  return bs.length ? `path(evenodd, "M0 0H1080V1920H0Z ${bs.map((r) => `M${r.x0 * 1080} ${r.top}H${r.x1 * 1080}V${r.bottom}H${r.x0 * 1080}Z`).join(" ")}")` : undefined;
+};
+
+const GroundLayer: React.FC<{B: LookBrand; page: "news" | "ink"; bands: Band[]; seed: number}> = ({B, page, bands, seed}) => <>
+  <Paper color={page === "ink" ? B.c.ink : B.c.newsprint} seed={seed} amount={page === "ink" ? 0.55 : 0.8}/>
+  {bands.map((r, k) => r.bottom - r.top > 0.5 && r.x1 > r.x0 && <React.Fragment key={k}>
+    <Paper color={B.c[r.role]} seed={r.seed} style={{clipPath: clipOf(r)}}/>
+    {anchorTop(r)
+      ? <div style={{position: "absolute", left: r.x0 * 1080, top: r.bottom, width: (r.x1 - r.x0) * 1080, height: 14, background: `linear-gradient(${B.c.ink}33, transparent)`}}/>
+      : r.bottom >= 1920 && <div style={{position: "absolute", left: r.x0 * 1080, top: r.top - 14, width: (r.x1 - r.x0) * 1080, height: 14, background: `linear-gradient(transparent, ${B.c.ink}33)`}}/>}
+  </React.Fragment>)}
+</>;
+
+// The masthead and the source line, in the colours of whatever ground is under each part of them: drawn once for the page
+// and once per band, each clipped to its own ground, so no part of the brand bug or the source sits in its own colour.
+const Chrome: React.FC<{B: LookBrand; L: LookData; page: "news" | "ink"; bands: Band[]; src: string | null; lockF: number; f: number}> = ({B, L, page, bands, src, lockF, f}) => {
+  const set = (color: string, on: "light" | "dark", plate: string | null) => <>
+    <Masthead B={B} chip={L.chip} color={color} on={on} plate={plate}/>
+    {src !== null && <SourceLine B={B} text={src} color={color} lockF={lockF} f={f}/>}
+  </>;
   return <>
-    <Paper color={cur.page === "ink" ? B.c.ink : B.c.newsprint} seed={seed} amount={cur.page === "ink" ? 0.55 : 0.8}/>
-    {colourChange ? <>{band(prev, h, seed - 1)}{band(cur, h, seed, wipeP)}</> : band(cur.band ? cur : prev, h, seed)}
-    {(cur.band || prev.band) && h > 0 && <div style={{position: "absolute", left: 0, top: h, width: 1080, height: 14, background: `linear-gradient(${B.c.ink}33, transparent)`}}/>}
+    <AbsoluteFill style={{clipPath: clipOutside(bands)}}>{page === "ink" ? set(B.c.paper, "dark", null) : set(B.c.ink, "light", null)}</AbsoluteFill>
+    {bands.filter((r) => r.bottom - r.top > 0.5 && r.x1 > r.x0).map((r, k) => {
+      const ob = onBand(B, r.role);
+      return <AbsoluteFill key={k} style={{clipPath: clipOf(r)}}>{set(ob.main, ob.dark ? "dark" : "light", ob.dark ? null : B.c.paper)}</AbsoluteFill>;
+    })}
   </>;
 };
 
 // ---------- pages ----------
 type PageProps = {L: LookData; B: LookBrand; SP: StoryPlan; i: number; f: number};
 
-const ChartArea: React.FC<PageProps & {top: number; bottom: number; hotRole: ColorRole}> = ({L, B, SP, i, f, top, bottom, hotRole}) => {
+// Object first: the chart is grown before the figure lands (said-earlier figures included), never before the page is in.
+// A figure said in an earlier beat (its lock is at or before this page's entrance) gets its object at once.
+const enterOf = (b: LookBeat) => b.f0 + 2;
+const growOf = (L: LookData, b: LookBeat) => {
+  const lock = b.big?.lockF ?? b.lockF;
+  if (lock <= enterOf(b) + 6) return b.f0 + 2;
+  return Math.max(b.f0 + 10, Math.min(b.f0 + Math.round(L.beatF), lock - 14, b.f1 - 40));
+};
+// the hero inks on its word, but never before the page has entered (a said-earlier figure lands with its object)
+const inkAt = (b: LookBeat) => Math.max(b.big?.lockF ?? b.lockF, enterOf(b) + 6);
+
+const ChartArea: React.FC<PageProps & {top: number; bottom: number; hotRole: ColorRole; inset?: number}> = ({L, B, SP, i, f, top, bottom, hotRole, inset = 0}) => {
   const b = L.beats[i], P = SP.beats[i], d = P.device;
   if (!d) return null;
-  const W = B.safe.x1 - B.safe.x0;
-  const grow = Math.min(b.f0 + Math.round(L.beatF), b.f1 - 40);
-  const c: Ctx = {B, f, P: palNews(B, hotRole), box: {x: B.safe.x0, y: top + 40, w: W, h: bottom - top - 40}, grow, seed: L.seed + i * 13, f1: b.f1,
+  const W = B.safe.x1 - B.safe.x0 - 2 * inset, X = B.safe.x0 + inset;
+  const c: Ctx = {B, f, P: palNews(B, hotRole), box: {x: X, y: top + 40, w: W, h: bottom - top - 40}, grow: growOf(L, b), seed: L.seed + i * 13, f1: b.f1,
     markAt: Math.min(Math.max((b.big?.lockF ?? b.lockF) + 24, b.f0 + Math.round(L.barF) + 4), b.f1 - 12 - 16)};
   const db = downbeats(b, L).slice(1);
   const pk = db.map((d0) => f >= d0 && f < d0 + 3 ? 1 - (f - d0) / 3 : 0).reduce((a, x) => Math.max(a, x), 0);
   return <>
-    <Notch B={B} x={B.safe.x0} y={top} w={W} color={B.c.ink} f={f} at={b.f0 + 4}/>
+    {!inset && <Notch B={B} x={X} y={top} w={W} color={B.c.ink} f={f} at={b.f0 + 4}/>}
     <div style={{position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transform: `translateY(${-8 * pk}px)`}}>
       <DeviceView c={c} d={d} lockF={b.big?.lockF ?? b.lockF}/>
     </div>
@@ -234,99 +381,102 @@ const ChartArea: React.FC<PageProps & {top: number; bottom: number; hotRole: Col
 
 const FactPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i], P = SP.beats[i];
-  const band = P.band;
+  const g = factGeom(L, SP, B, i);
+  const band = g.band;
   const W = B.safe.x1 - B.safe.x0;
-  const hd = factHead(B, b);
+  const onB = g.layout !== "box";
   const ob = onBand(B, band);
-  const src = sourceTop(B, b.src);
-  const flag = flagFor(L, b, P);
+  const main = onB ? ob.main : B.c.ink, kickC = onB ? ob.kick : B.c.ink;
+  const heroC = onB ? B.c[textOn(B, band, g.heroSize)] : B.c[newsText(B, band, g.heroSize)];
   const values = [b.big, ...b.barsL.map((r) => r.num)].filter(Boolean).map((n) => n!.value);
-  const fl = flag ? flagH(B, flag) : 0;
-  const sl = P.quote ? Math.min(330, slipH(B, P.quote)) : 0;
-  const lowerH = P.quote ? sl : fl;
-  const lowerY = src - 34 - lowerH;
   const lowAt = Math.min(Math.max(b.lockF + 15, b.f0 + Math.round(L.barF)), b.f1 - 12 - 8);
-  const chartTop = hd.bottom + 46;
-  const chartBottom = lowerH ? lowerY - 30 : src - 40;
   const kick = b.kicker ?? "";
   const kf = F.body(B, 800, 0.12);
   let ks = 36;
   while (ks > 26 && measure(kick, kf, ks) > W) ks--;
+  const d = P.device;
   return <>
-    <div style={{position: "absolute", left: B.safe.x0, top: TOP, ...wipe(f, b.f0 + 3, 8)}}>
-      <Gated text={kick} nums={b.big ? [b.big] : []} lockF={b.lockF} f={f} ff={kf} size={ks} width={W} color={ob.kick} hot={ob.kick} values={values}/></div>
-    {b.big && <div style={{position: "absolute", left: B.safe.x0 - hd.heroSize * 0.03, top: hd.heroY}}>
-      <Ink B={B} n={b.big} f={f} size={hd.heroSize} color={B.c[textOn(B, band, hd.heroSize)]} slot={ob.main} qualColor={ob.kick}/></div>}
-    {P.device?.kind === "price" && P.device.old && b.big && f >= P.device.old.lockF && (() => {
-      const o = P.device.old, x = B.safe.x0 + heroW(B, b.big, hd.heroSize) + 40, room = B.safe.x1 - x;
-      let os = Math.round(hd.heroSize * 0.42);
-      const ow = (z: number) => measure(o.text, F.hero(B), z) + (P.device.oldRest ? measure(P.device.oldRest, F.body(B, 700), Math.round(z * 0.36)) + 8 : 0) + 6;
-      while (os > 40 && ow(os) > room) os -= 2;
-      return <div style={{position: "absolute", left: x, top: hd.heroY + hd.heroSize * 0.3, opacity: 0.78 * ramp(f, o.lockF, 6), display: "flex", alignItems: "baseline", gap: 10}}>
-        <EditorMark kind="crossed-off" at={Math.min(o.lockF + 8, b.f1 - 26)} dur={12} seed={markSeed(L.seed, 2)} color={B.c[band === "accent2" ? "accent" : "accent2"]} strokeWidth={7}>
-          <span style={{...css(F.hero(B), os), fontWeight: 500, color: ob.main}}>{o.text}{P.device.oldRest && <span style={{...css(F.body(B, 700), Math.round(os * 0.36)), marginLeft: 8}}>{P.device.oldRest}</span>}</span>
-        </EditorMark></div>;
+    {g.layout === "box" && <div style={{position: "absolute", left: B.safe.x0, top: g.kickY - 22, width: 120, height: 10, background: B.c[band], ...wipe(f, b.f0 + 2, 8)}}/>}
+    <div style={{position: "absolute", left: B.safe.x0, top: g.kickY, ...wipe(f, b.f0 + 3, 8)}}>
+      <Gated text={kick} nums={b.big ? [b.big] : []} lockF={b.lockF} f={f} ff={kf} size={ks} width={W} color={kickC} hot={kickC} values={values}/></div>
+    {b.big && <div style={{position: "absolute", left: B.safe.x0, top: g.heroY}}>
+      <Ink B={B} n={b.big} f={f} size={g.heroSize} color={heroC} slot={main} qualColor={kickC} at={inkAt(b)}/></div>}
+    {d?.kind === "price" && d.old && g.old && f >= d.old.lockF && (() => {
+      // the printed old price, crossed off, on its own line under the hero (spec: 150 px; its words at the 44 px label floor)
+      const o = d.old;
+      return <div style={{position: "absolute", left: B.safe.x0, top: g.old.y, opacity: 0.8 * ramp(f, o.lockF, 6), display: "flex", alignItems: "baseline", gap: 16}}>
+        <EditorMark kind="crossed-off" at={Math.min(o.lockF + 8, b.f1 - 26)} dur={12} seed={markSeed(L.seed, 2)} color={B.c[onB ? (band === "accent2" ? "accent" : "accent2") : "accent"]} strokeWidth={8}>
+          <span style={{...css(F.hero(B), g.old.size), fontWeight: 500, color: main, lineHeight: 1}}>{o.text}</span></EditorMark>
+        {d.oldRest && <span style={{...css(F.body(B, 700), 44), color: main}}>{d.oldRest}</span>}
+      </div>;
     })()}
-    {b.text && hd.deck && <div style={{position: "absolute", left: B.safe.x0, top: hd.deckY}}>
-      <Gated text={b.text} nums={b.textNums} lockF={b.lockF} f={f} ff={F.serif(B)} size={hd.deck.size} width={W} color={ob.main} hot={ob.main} set={b.f0 + 6} lineH={1.12} values={values} balance/></div>}
-    <ChartArea L={L} B={B} SP={SP} i={i} f={f} top={chartTop} bottom={chartBottom} hotRole={band === "accent2" ? "accent2" : band}/>
-    {flag && <Flag B={B} text={flag} f={f} at={lowAt} y={lowerY} lockF={b.lockF} values={values} color={B.c.ink} strip={B.c.accent2}/>}
-    {P.quote && <Slip B={B} q={P.quote} src={b.src} f={f} at={lowAt} y={lowerY} lockF={b.lockF} values={values} maxH={330}/>}
+    {g.deck && b.text && <div style={{position: "absolute", left: B.safe.x0, top: g.deckY}}>
+      <Gated text={b.text} nums={b.textNums} lockF={b.lockF} f={f} ff={F.serif(B)} size={g.deck.size} width={W} color={main} hot={main} set={b.f0 + 6} lineH={1.12} values={values} balance/></div>}
+    {g.box && <div style={{position: "absolute", left: B.safe.x0, top: g.box.top, width: W, height: g.box.bottom - g.box.top, border: `3px solid ${B.c.ink}`, boxSizing: "border-box",
+      borderTop: `14px solid ${B.c[band]}`, ...wipe(f, b.f0 + 4, 10)}}/>}
+    <ChartArea L={L} B={B} SP={SP} i={i} f={f} top={g.chartTop} bottom={g.chartBottom} hotRole={band} inset={g.box ? 24 : 0}/>
+    {g.lower?.kind === "flag" && <Flag B={B} text={g.lower.text} f={f} at={lowAt} y={g.lowerY} lockF={b.lockF} values={values} color={B.c.ink} strip={B.c.accent2}/>}
+    {g.lower?.kind === "slip" && P.quote && <Slip B={B} q={P.quote} src={P.credit || b.src} f={f} at={lowAt} y={g.lowerY} lockF={b.lockF} values={values} maxH={g.lower.h}/>}
   </>;
 };
 
-// The chart desk (a ratio fact): the fold retracts, the page is all newsprint, every row of the comparison together.
+// The chart desk (a ratio fact): the page is all newsprint, every row of the comparison together.
 const DeskPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i], P = SP.beats[i], d = P.device as Extract<NonNullable<BeatPlan["device"]>, {kind: "ratio"}>;
-  const W = B.safe.x1 - B.safe.x0;
+  const W = B.safe.x1 - B.safe.x0, {TOP} = geo(B);
   const kf = F.body(B, 800, 0.12);
-  const heroSize = b.big ? fitHero(B, b.big, W * 0.5, 300, 160) : 0;
+  const deckOn = L.textLed && !!b.text;
+  const heroSize = b.big ? fitHero(B, b.big, deckOn ? W * 0.5 : W, 300, 160) : 0;
   const deckW = W - heroW(B, b.big!, heroSize) - 30;
-  const deck = b.text ? fitGated(b.text, b.textNums, F.serif(B), deckW, 3, 56, 40) : null;
+  const deck = deckOn ? fitGated(b.text!, b.textNums, F.serif(B), deckW, 3, 56, 40) : null;
   const heroY = TOP + 64;
-  const src = sourceTop(B, b.src);
+  const src = srcOf(SP, b), srcTop = sourceTop(B, src);
   const values = [b.big, ...b.barsL.map((r) => r.num)].filter(Boolean).map((n) => n!.value);
-  const flag = flagFor(L, b, P);
-  const fl = flag ? flagH(B, flag) : 0;
-  const lowerY = src - 34 - fl;
+  const lower = lowerOf(B, SP, b);
+  const fl = lower?.kind === "flag" ? lower.h : 0;
+  const lowerY = srcTop - 34 - fl;
   const top = heroY + heroSize + 40;
-  const grow = Math.min(b.f0 + Math.round(L.beatF), b.f1 - 40);
-  const c: Ctx = {B, f, P: palNews(B, "accent"), box: {x: B.safe.x0, y: top + 30, w: W, h: (fl ? lowerY - 30 : src - 40) - top - 30}, grow, seed: L.seed + i * 13, f1: b.f1};
+  const c: Ctx = {B, f, P: palNews(B, "accent"), box: {x: B.safe.x0, y: top + 30, w: W, h: (fl ? lowerY - 30 : srcTop - 40) - top - 30}, grow: growOf(L, b), seed: L.seed + i * 13, f1: b.f1};
   const br = Math.min(b.f1 - 12 - 16, Math.max(b.big!.lockF + 30, b.f0 + Math.round(L.barF)));
   return <>
     <div style={{position: "absolute", left: B.safe.x0, top: TOP, ...wipe(f, b.f0 + 3, 8)}}>
       <span style={{...css(kf, 36), color: B.c.ink}}>{b.kicker}</span></div>
-    <div style={{position: "absolute", left: B.safe.x0 - heroSize * 0.03, top: heroY, display: "flex", alignItems: "flex-end", gap: 30}}>
-      <Ink B={B} n={b.big!} f={f} size={heroSize} color={B.c.accent} slot={B.c.ink} qualColor={B.c.ink}/>
+    <div style={{position: "absolute", left: B.safe.x0, top: heroY, display: "flex", alignItems: "flex-end", gap: 30}}>
+      <Ink B={B} n={b.big!} f={f} size={heroSize} color={B.c[newsText(B, "accent", heroSize)]} slot={B.c.ink} qualColor={B.c.ink}/>
       {deck && <div style={{marginBottom: heroSize * 0.06}}><Gated text={b.text!} nums={b.textNums} lockF={b.lockF} f={f} ff={F.serif(B)} size={deck.size} width={deckW}
         color={B.c.ink} hot={B.c.ink} set={b.f0 + 8} lineH={1.08}/></div>}
     </div>
     <Notch B={B} x={B.safe.x0} y={top} w={W} color={B.c.ink} f={f} at={b.f0 + 4}/>
     <DeviceView c={c} d={d} lockF={b.big!.lockF} bracketAt={br}/>
-    {flag && <Flag B={B} text={flag} f={f} at={Math.min(b.lockF + 15, b.f1 - 20)} y={lowerY} lockF={b.lockF} values={values} color={B.c.ink} strip={B.c.accent2}/>}
+    {lower?.kind === "flag" && <Flag B={B} text={lower.text} f={f} at={Math.min(b.lockF + 15, b.f1 - 20)} y={lowerY} lockF={b.lockF} values={values} color={B.c.ink} strip={B.c.accent2}/>}
   </>;
 };
 
 const FrontPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i], P = SP.beats[i];
-  const g = f + 8;      // frame 0 is 8 frames into the reveal: the headline and the object are already on the page
-  const lay = frontLay(L, B, i);
-  const bandH = lay.bottom + 40;
-  const ob = onBand(B, SP.lead);
-  const heroRole = ob.heroHot(lay.H);
+  const g = frontGeom(L, SP, B, i);
   const W = B.safe.x1 - B.safe.x0;
-  const src = sourceTop(B, b.src);
-  const top = bandH + 48, bottom = src - 40;
+  const onB = g.layout !== "plain";
+  const ob = onBand(B, SP.lead);
+  const newsHot: ColorRole = SP.lead === "ink" ? "accent" : SP.lead;
+  const color = onB ? ob.main : B.c.ink;
+  const emph = onB ? ob.emph : B.c[newsText(B, newsHot, 60)];
+  const heroC = onB ? B.c[ob.heroHot(g.lay.H)] : B.c[newsText(B, newsHot, g.lay.H)];
   const use = plateUse(L.plate);
   const markAt = b.hero ? Math.min(b.hero.lockF + 8, b.f1 - 26) : 0;
+  const markC = onB ? B.c.accent2 : B.c.accent;
+  const top = g.objTop, bottom = g.objBottom;
+  const tH = P.teaser ? teaserH(P.teaser) : 0;
+  // a short object sits in the middle of its region, not at the top of empty paper
+  const tTop = P.teaser ? top + Math.max(0, Math.min(160, (bottom - top - tH - 40) / 2)) : top;
   return <>
-    <Headline B={B} b={b} lay={lay} f={f} set={b.f0 - 30} color={ob.main} emph={ob.emph} heroColor={B.c[heroRole]} slot={ob.main}
-      mark={b.hero ? {at: markAt, seed: markSeed(L.seed, 1), color: B.c.accent2} : undefined}/>
+    {g.layout === "plain" && <div style={{position: "absolute", left: B.safe.x0, top: g.lay.bottom + 30, width: W, height: 12, background: B.c[SP.lead], ...wipe(f + 8, b.f0, 8)}}/>}
+    <Headline B={B} b={b} lay={g.lay} f={f} set={b.f0 - 30} color={color} emph={emph} heroColor={heroC} slot={color}
+      mark={b.hero ? {at: markAt, seed: markSeed(L.seed, 1), color: markC} : undefined}/>
     {use && L.plate ? <PlateWindow B={B} src={L.plate} x={B.safe.x0} y={top} w={W} h={bottom - top - 44} f={f} f0={b.f0} f1={b.f1} focusY={use.focusY} zoom={use.zoom}/>
       : P.teaser && <>
-        <Notch B={B} x={B.safe.x0} y={top + 10} w={W} color={B.c.ink} f={g} at={0}/>
-        <TeaserView c={{B, f, P: palNews(B, SP.lead), box: {x: B.safe.x0, y: top + 40, w: W, h: bottom - top - 40}, grow: b.f0 - 12, seed: L.seed, f1: b.f1}} t={P.teaser}
-          heads={L.beats.filter((x) => x.kind === "fact").map((x) => ({text: x.kicker ?? "", lockF: x.lockF}))}/>
+        <Notch B={B} x={B.safe.x0} y={tTop + 10} w={W} color={B.c.ink} f={f + 8} at={0}/>
+        <TeaserView c={{B, f, P: palNews(B, SP.lead), box: {x: B.safe.x0, y: tTop + 40, w: W, h: Math.max(200, Math.min(bottom - tTop - 40, Math.max(tH, 300)))}, grow: b.f0 - 12, seed: L.seed, f1: b.f1}} t={P.teaser}/>
       </>}
   </>;
 };
@@ -335,29 +485,40 @@ const FrontPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
 const PlateWindow: React.FC<{B: LookBrand; src: string; x: number; y: number; w: number; h: number; f: number; f0: number; f1: number; focusY: number; zoom: number}> = ({B, src, x, y, w, h, f, f0, f1, focusY, zoom}) => {
   const k = interpolate(f, [f0, f1], [1.04, 1.1], CL) * zoom;
   return <>
-    <div style={{position: "absolute", left: x, top: y, width: w, height: h, overflow: "hidden", outline: `2px solid ${B.c.ink}`}}>
+    <div style={{position: "absolute", left: x, top: y, width: w, height: h, overflow: "hidden", outline: `2px solid ${B.c.ink}`, outlineOffset: -2}}>
       <Img src={staticFile(src)} style={{position: "absolute", left: 0, top: 0, width: w, height: h, objectFit: "cover", objectPosition: `50% ${focusY * 100}%`,
         transform: `scale(${k})`, transformOrigin: `50% ${focusY * 100}%`}}/>
       <div style={{position: "absolute", inset: 0, background: `linear-gradient(180deg, ${B.c.paper}00 40%, ${B.c.accent}26 100%)`, mixBlendMode: "multiply"}}/>
       <div style={{position: "absolute", inset: 0, background: `radial-gradient(ellipse at 50% 55%, transparent 55%, ${B.c.ink}55 130%)`}}/>
     </div>
-    <div style={{position: "absolute", left: x, top: y + h + 10, width: w, textAlign: "right", ...css(F.body(B, 600, 0.14), 30), color: B.c.softInk}}>ILLUSTRATION</div>
+    <div style={{position: "absolute", left: x, top: y + h + 8, width: w, textAlign: "right", ...css(F.body(B, 600, 0.14), 30), color: B.c.softInk}}>ILLUSTRATION</div>
   </>;
 };
 
 const TakeawayPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i], P = SP.beats[i];
-  const W = B.safe.x1 - B.safe.x0;
-  const src = sourceTop(B, b.src);
+  const W = B.safe.x1 - B.safe.x0, {TOP} = geo(B);
+  const srcTop = sourceTop(B, srcOf(SP, b));
   const note = b.note ?? "";
-  const noteFit = note ? fitGated(note, [], F.body(B, 500), W, 4, 34, 28) : null;
+  const noteFit = note ? fitGated(note, [], F.body(B, 500), W, 4, 34, 34) : null;
   const noteH = noteFit ? noteFit.lines * Math.round(noteFit.size * 1.25) : 0;
-  const noteY = src - 30 - noteH;
+  const noteY = srcTop - 30 - noteH;
   const hasProof = !!P.proof;
-  const need = !P.proof ? 0 : P.proof.kind === "slip" ? P.proof.quotes.reduce((a, q) => a + Math.min(330, slipH(B, q)) + 30, 0) : P.proof.kind === "band" ? P.proof.rows.length * 60 + 90
-    : P.proof.kind === "bars" ? P.proof.rows.length * 120 + 40 : 300;
-  const lay = headLayout(B, b, TOP + 70, 96, 270, hasProof ? Math.min(1000, noteY - 60 - need) : noteY - 200);
-  const proofTop = lay.bottom + 50, proofBottom = noteY - 40;
+  const need = !P.proof ? 0 : P.proof.kind === "slip" ? P.proof.quotes.reduce((a, q) => a + slipH(B, q) + 30, 0) : P.proof.kind === "band" ? P.proof.rows.length * 64 + 140
+    : P.proof.kind === "bars" ? P.proof.rows.length * 150 + 60 : P.proof.kind === "equal" ? P.proof.rows.length * 170 + 40 : 300;
+  const above = hasProof && (P.layout as SayLayout) === "above";
+  const headTop = TOP + 70;
+  let lay: HeadLayout, proofTop: number, proofBottom: number;
+  if (above) {
+    // proof first, under the kicker; the headline sits low, just above the note
+    proofTop = headTop + 10;
+    const lay0 = headLayout(B, b, proofTop + need + 60, 96, 270, noteY - 50);
+    lay = moveHead(lay0, Math.max(lay0.top, noteY - 50 - (lay0.bottom - lay0.top)));
+    proofBottom = lay.top - 60;
+  } else {
+    lay = headLayout(B, b, headTop, 96, 270, hasProof ? Math.min(1000, noteY - 60 - need) : noteY - 200);
+    proofTop = lay.bottom + 50; proofBottom = noteY - 40;
+  }
   const kf = F.body(B, 800, 0.14);
   const amber = B.pairOk("accent2", "ink", 34) ? B.c.accent2 : B.c.accent2Light;
   const set = b.f0 + 4;
@@ -370,15 +531,15 @@ const TakeawayPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
       mark={b.hero ? {at: Math.min(b.hero.lockF + 40, b.f1 - 30), seed: markSeed(L.seed, 3), color: B.c.accent2} : undefined}/>
     {P.proof && P.proof.kind !== "slip" && <ProofView c={{B, f, P: palInk(B), box: {x: B.safe.x0, y: proofTop, w: W, h: proofBottom - proofTop}, grow: proofAt, seed: L.seed, f1: b.f1}} p={P.proof}/>}
     {P.proof && P.proof.kind === "slip" && (() => {
-      const qs = P.proof.quotes, hs = qs.map((q) => Math.min(330, slipH(B, q)));
+      const qs = P.proof.quotes, hs = qs.map((q) => slipH(B, q));
       const tot = hs.reduce((a, h) => a + h, 0) + (qs.length - 1) * 30;
       let y = proofTop + Math.max(0, (proofBottom - proofTop - tot) / 2);
-      return qs.map((q, k) => { const el = <Slip key={k} B={B} q={q} src={b.src} f={f} at={proofAt + k * 10} y={y} lockF={b.lockF} values={values} maxH={hs[k]}/>; y += hs[k] + 30; return el; });
+      return qs.map((q, k) => { const el = <Slip key={k} B={B} q={q} src={P.credits[k] || b.src} f={f} at={proofAt + k * 10} y={y} lockF={b.lockF} values={values} maxH={hs[k]}/>; y += hs[k] + 30; return el; });
     })()}
     {!hasProof && note && (() => {
       const pf = F.serif(B, 500), pull = fitGated(note, [], pf, W - 40, 5, 58, 40);
       const ph = pull.lines * Math.round(pull.size * 1.18);
-      const py = Math.max(lay.bottom + 70, (lay.bottom + src - ph) / 2 - 20);
+      const py = Math.max(lay.bottom + 90, (lay.bottom + srcTop - ph) / 2 - 20);
       const at = Math.min(b.f0 + Math.round(L.barF), b.f1 - 24);
       return <>
         <div style={{position: "absolute", left: B.safe.x0, top: py - 34, width: 140, height: 6, background: amber, ...wipe(f, at, 8)}}/>
@@ -393,50 +554,44 @@ const TakeawayPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
 
 const LettersPage: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i];
-  const W = B.safe.x1 - B.safe.x0;
+  const W = B.safe.x1 - B.safe.x0, {TOP, RULE_Y} = geo(B);
+  const g = endGeom(L, SP, B, i);
   const hook = L.beats.find((x) => x.kind === "spot" || x.kind === "hook");
   const ob = onBand(B, SP.lead);
-  const q = b.q ?? "";
-  const qf = F.serif(B, 640);
-  const qFit = fitGated(q, b.qNums, qf, W, 3, 112, 72);
-  const qY = 470 + 60;
-  const qH = qFit.lines * Math.round(qFit.size * 1.06);
-  const sub = b.sub ?? "";
-  const subF = F.body(B, 600);
-  const subFit = sub ? fitGated(sub, [], subF, W, 2, 50, 36) : null;
-  const subY = qY + qH + 34;
-  const cta = sub.trim() !== "Comment below." && /comment below/i.test(b.voice?.text ?? b.vo ?? "") ? "Comment below." : "";
-  const ctaY = subY + (subFit ? subFit.lines * Math.round(subFit.size * 1.15) : 0) + 30;
-  const srcText = L.sourceLines.join("  ·  ");
-  const sf = F.body(B, 500);
-  const sFit = fitGated(srcText, [], sf, W, 8, 34, 24);
-  const sH = sFit.lines * Math.round(sFit.size * 1.25);
-  const sY = B.safe.y1 - sH;
-  const lockY = Math.max(ctaY + (cta ? 90 : 20), sY - 60 - 110);
-  const lockFits = lockY + 100 <= sY - 30;
-  const ghostN = hook?.hero;
+  const full = g.layout === "full", foot = g.layout === "foot";
+  // type over the band takes the band's colours; type on newsprint is ink
+  const topOnBand = full || g.layout === "band";
+  const qC = full ? ob.main : B.c.ink, qHot = full ? ob.emph : B.c[newsText(B, "accent", 72)];
+  const subC = full ? ob.main : B.c.softInk;
+  const ctaC = full ? ob.kick : B.c[newsText(B, "accent", 52)];
+  const bottomOn = full || foot;
+  const srcC = bottomOn ? ob.main : B.c.ink;
   const values = [...b.qNums.map((n) => n.value), ...SP.items.map((it) => it.v)];
+  const ghostN = hook?.hero;
   const ghostText = ghostN ? ghostN.sign + ghostN.prefix + ghostN.digits + (/^[%×]$/.test(ghostN.unit.trim()) ? ghostN.unit.trim() : "") : "";
+  // the hook's figure ghosted for the loop: inside the safe box, in an empty part of the page
+  const ghostBox = g.layout === "band" ? {top: RULE_Y + 30, bottom: 470 - 14} : {top: g.ctaY + (g.cta ? 80 : 10), bottom: (g.lockFits ? g.lockY : g.sY) - (foot ? 80 : 30)};
+  const ghostColor = topOnBand ? ob.main : B.c.ink;
   return <>
-    {ghostN && f >= ghostN.lockF && (() => {
+    {ghostN && f >= ghostN.lockF && ghostBox.bottom - ghostBox.top >= 120 && (() => {
       let gz = 400;
-      while (gz > 160 && measure(ghostText, F.hero(B), gz) > 1000) gz -= 10;
-      return <div style={{position: "absolute", right: 1080 - B.safe.x1 - 40, top: 470 - gz * 0.95, opacity: 0.08}}>
-        <div style={{...css(F.hero(B), gz), lineHeight: 1, color: ob.main}}>{ghostText}</div></div>;
+      while (gz > 100 && (measure(ghostText, F.hero(B), gz) > W || gz * 0.8 > ghostBox.bottom - ghostBox.top)) gz -= 10;
+      return <div style={{position: "absolute", right: 1080 - B.safe.x1, top: ghostBox.bottom - gz * 0.86, opacity: 0.08}}>
+        <div style={{...css(F.hero(B), gz), lineHeight: 1, color: ghostColor}}>{ghostText}</div></div>;
     })()}
     <div style={{position: "absolute", left: B.safe.x0, top: TOP + 30, display: "flex", alignItems: "center", gap: 14, ...wipe(f, b.f0 + 2, 8)}}>
-      <span style={{...css(F.body(B, 800, 0.14), 34), color: ob.kick}}>LETTERS</span></div>
-    <div style={{position: "absolute", left: B.safe.x0, top: TOP + 84, width: 120, height: 6, background: ob.kick, ...wipe(f, b.f0 + 6, 8)}}/>
-    <div style={{position: "absolute", left: B.safe.x0, top: qY}}>
-      <Gated text={q} nums={b.qNums} lockF={b.lockF} f={f} ff={qf} size={qFit.size} width={W} color={B.c.ink} hot={B.c.accent} lineH={1.06} set={b.f0 + 4} stagger={2} balance/></div>
-    {subFit && <div style={{position: "absolute", left: B.safe.x0, top: subY, opacity: ramp(f, b.f0 + 14, 8)}}>
-      <Gated text={sub} nums={[]} lockF={b.lockF} f={f} ff={subF} size={subFit.size} width={W} color={B.c.softInk} hot={B.c.softInk} lineH={1.15} values={values}/></div>}
-    {cta && <div style={{position: "absolute", left: B.safe.x0, top: ctaY, ...css(F.body(B, 700), 52), color: B.c.accent, ...wipe(f, b.f0 + 20, 8)}}>{cta}</div>}
-    {lockFits && <div style={{position: "absolute", left: B.safe.x0, top: lockY, display: "flex", alignItems: "center", gap: 22, opacity: ramp(f, b.f0 + 28, 10)}}>
-      <B.Mark size={96} on="light"/><B.Wordmark size={B.wordmark.stacked ? 56 : 64} on="light"/></div>}
-    <div style={{position: "absolute", left: B.safe.x0, top: sY - 22, width: W, height: 1.5, background: B.c.ink, opacity: 0.5}}/>
-    <div style={{position: "absolute", left: B.safe.x0, top: sY, opacity: ramp(f, b.f0 + 24, 10)}}>
-      <Gated text={srcText} nums={[]} lockF={b.lockF} f={f} ff={sf} size={sFit.size} width={W} color={B.c.ink} hot={B.c.ink} lineH={1.25} values={values}/></div>
+      <span style={{...css(F.body(B, 800, 0.14), 34), color: topOnBand ? ob.kick : B.c.ink}}>LETTERS</span></div>
+    <div style={{position: "absolute", left: B.safe.x0, top: TOP + 84, width: 120, height: 6, background: topOnBand ? ob.kick : B.c[SP.lead], ...wipe(f, b.f0 + 6, 8)}}/>
+    <div style={{position: "absolute", left: B.safe.x0, top: g.qY}}>
+      <Gated text={g.q} nums={b.qNums} lockF={b.lockF} f={f} ff={g.qf} size={g.qFit.size} width={W} color={qC} hot={qHot} lineH={1.06} set={b.f0 + 4} stagger={2} balance/></div>
+    {g.subFit && <div style={{position: "absolute", left: B.safe.x0, top: g.subY, opacity: ramp(f, b.f0 + 14, 8)}}>
+      <Gated text={g.sub} nums={[]} lockF={b.lockF} f={f} ff={F.body(B, 600)} size={g.subFit.size} width={W} color={subC} hot={subC} lineH={1.15} values={values}/></div>}
+    {g.cta && <div style={{position: "absolute", left: B.safe.x0, top: g.ctaY, ...css(F.body(B, 700), 52), color: ctaC, ...wipe(f, b.f0 + 20, 8)}}>{g.cta}</div>}
+    {g.lockFits && <div style={{position: "absolute", left: B.safe.x0, top: g.lockY, display: "flex", alignItems: "center", gap: 22, opacity: ramp(f, b.f0 + 28, 10)}}>
+      <B.Mark size={96} on={bottomOn && ob.dark ? "dark" : "light"}/><B.Wordmark size={B.wordmark.stacked ? 56 : 64} on={bottomOn && ob.dark ? "dark" : "light"}/></div>}
+    <div style={{position: "absolute", left: B.safe.x0, top: g.sY - 22, width: W, height: 1.5, background: srcC, opacity: 0.5}}/>
+    <div style={{position: "absolute", left: B.safe.x0, top: g.sY, opacity: ramp(f, b.f0 + 24, 10)}}>
+      <Gated text={g.srcText} nums={[]} lockF={b.lockF} f={f} ff={F.body(B, 500)} size={g.sFit.size} width={W} color={srcC} hot={srcC} lineH={1.25} values={values}/></div>
   </>;
 };
 
@@ -449,53 +604,46 @@ const Page: React.FC<PageProps> = (p) => {
   if (b.kind === "end") return <LettersPage {...p}/>;
   return null;
 };
+const isMap = (b: LookBeat) => b.kind === "map" || b.kind === "mapend";
+// the per-frame source line: none on the letters page or the map end, which print the full sources themselves
+const lineSrc = (SP: StoryPlan, b: LookBeat) => (b.kind === "end" || b.kind === "mapend" ? null : srcOf(SP, b));
 
-// The masthead's colours over whatever ground sits under it. On a bright band (amber) the Mark sits on a paper disc, so
-// the tea glass (amber itself) never disappears into its ground.
-const chromeOf = (L: LookData, SP: StoryPlan, B: LookBrand, i: number) => {
-  const g = groundOf(L, SP, B, i);
-  if (g.page === "ink") return {color: B.c.paper, on: "dark" as const, plate: null};
-  if (g.band && g.h > RULE_Y + 10) { const ob = onBand(B, g.band); return {color: ob.main, on: ob.dark ? "dark" as const : "light" as const, plate: ob.dark ? null : B.c.paper}; }
-  return {color: B.c.ink, on: "light" as const, plate: null};
-};
-
-// One whole page of a beat at rest (its ground at its final state, its content, its masthead and source line): what a PAGE
-// cut slides in over the page before it, so content always travels with its own paper.
+// One whole page of a beat at rest (its ground, its content, its chrome): what a PAGE cut slides in over the page before it,
+// so content always travels with its own paper.
 const Sheet: React.FC<PageProps> = ({L, B, SP, i, f}) => {
   const b = L.beats[i];
-  const map = b.kind === "map" || b.kind === "mapend";
-  const g = groundOf(L, SP, B, i), ch = chromeOf(L, SP, B, i), seed = L.seed + i;
+  const g = groundOf(L, SP, B, i), bands = bandsAt(L, SP, B, i, f, true), seed = L.seed + i;
+  const {TOP} = geo(B);
   return <AbsoluteFill style={{overflow: "hidden"}}>
-    {map
+    {isMap(b)
       ? <>
           <MapClose L={L} B={B} b={b} ground="newsprint" headFont="serif" top={TOP + 6} reserveBottom={b.kind === "map" ? B.safe.y1 - sourceTop(B, b.src) + 40 : 8}/>
           <Img src={staticFile(`looks/dispatch/paper-${seed % 4}.jpg`)} style={{position: "absolute", left: 0, top: 0, width: 1080, height: 1920, mixBlendMode: "soft-light", opacity: 0.6, pointerEvents: "none"}}/>
         </>
       : <>
-          <Paper color={g.page === "ink" ? B.c.ink : B.c.newsprint} seed={seed} amount={g.page === "ink" ? 0.55 : 0.8}/>
-          {g.band && g.h > 0 && <><Paper color={B.c[g.band]} seed={seed + 1} style={{height: g.h}}/>
-            <div style={{position: "absolute", left: 0, top: g.h, width: 1080, height: 14, background: `linear-gradient(${B.c.ink}33, transparent)`}}/></>}
+          <GroundLayer B={B} page={g.page} bands={bands} seed={seed}/>
           <Page L={L} B={B} SP={SP} i={i} f={f}/>
         </>}
-    <Masthead B={B} chip={L.chip} color={ch.color} on={ch.on} plate={ch.plate}/>
-    {b.kind !== "end" && b.kind !== "mapend" && <SourceLine B={B} text={b.src} color={b.kind === "say" ? B.c.paper : B.c.ink} lockF={b.lockF} f={f}/>}
+    <Chrome B={B} L={L} page={isMap(b) ? "news" : g.page} bands={isMap(b) ? [] : bands} src={lineSrc(SP, b)} lockF={b.lockF} f={f}/>
   </AbsoluteFill>;
 };
 
-export const DispatchStory: React.FC<LookProps> = ({L, B}) => {
+export const DispatchStory: React.FC<LookProps> = ({L: L0, B}) => {
   const f = useCurrentFrame();
-  const quotes = useQuotes(L.id);      // the config's source quotes (quotes.ts); the frame is held until they are read
-  const SP = useMemo(() => planStory(L, quotes ?? []), [L, quotes]);
+  const extras = useExtras(L0.id);      // config quotes and printed qualifiers (quotes.ts); the frame is held until they are read
+  const L = useMemo(() => withDispatchData(L0, extras?.printed ?? {}), [L0, extras]);
+  const SP = useMemo(() => planStory(L, extras?.quotes ?? []), [L, extras]);
   const i = L.beats.findIndex((x) => f >= x.f0 && f < x.f1);
   const bi = i < 0 ? L.beats.length - 1 : i;
   const b = L.beats[bi];
-  const map = b.kind === "map" || b.kind === "mapend";
-  const prevMap = bi > 0 && ["map", "mapend"].includes(L.beats[bi - 1].kind);
+  const map = isMap(b);
+  const prevMap = bi > 0 && isMap(L.beats[bi - 1]);
   const db = downbeats(b, L).slice(1);
   const flash = db.reduce((a, d0) => Math.max(a, f >= d0 && f < d0 + 3 ? 0.11 * (1 - (f - d0) / 3) : 0), 0);
+  const cur = groundOf(L, SP, B, bi), prev = bi > 0 ? groundOf(L, SP, B, bi - 1) : cur;
   // PAGE cut: the new page (ground, content, chrome) slides in from the right over the old one, which stays still under it
-  const pageCut = bi > 0 && f < b.f0 + 10 && (groundOf(L, SP, B, bi).page !== groundOf(L, SP, B, bi - 1).page || map !== prevMap);
-  if (pageCut) {
+  const pageCut = bi > 0 && (cur.page !== prev.page || map !== prevMap);
+  if (pageCut && f < b.f0 + 10) {
     const p = ramp(f, b.f0, 10, io);
     return <AbsoluteFill style={{background: B.c.newsprint, overflow: "hidden"}}>
       <Sheet L={L} B={B} SP={SP} i={bi - 1} f={f}/>
@@ -503,22 +651,24 @@ export const DispatchStory: React.FC<LookProps> = ({L, B}) => {
       <LookAudio L={L}/>
     </AbsoluteFill>;
   }
-  const ch = chromeOf(L, SP, B, bi);
-  const chPrev = bi > 0 ? chromeOf(L, SP, B, bi - 1) : ch;
-  const early = f - b.f0 < 7;
-  const chromeColor = early ? chPrev.color : ch.color, chromeOn = early ? chPrev.on : ch.on, chromePlate = early ? chPrev.plate : ch.plate;
-  const outgoing = bi > 0 && f - b.f0 < 6 && !prevMap && !map ? bi - 1 : -1;
   if (map) return <AbsoluteFill style={{background: B.c.newsprint, overflow: "hidden"}}>
     <Sheet L={L} B={B} SP={SP} i={bi} f={f}/>
     {flash > 0 && <AbsoluteFill style={{background: B.c.paper, opacity: flash, pointerEvents: "none"}}/>}
     <LookAudio L={L}/>
   </AbsoluteFill>;
+  // FOLD / COLOUR WIPE: the old page's content leaves on the cut; the new content enters once its band is in place
+  const bands = bandsAt(L, SP, B, bi, f);
+  const moved = !pageCut && bi > 0 && JSON.stringify(cur.rect && [cur.rect.top, cur.rect.bottom]) !== JSON.stringify(prev.rect && [prev.rect.top, prev.rect.bottom]);
+  const recoloured = !pageCut && bi > 0 && !!cur.rect && !!prev.rect && cur.rect.role !== prev.rect.role;
+  // the band unfolds (from nothing, or from the other edge) by frame 12 and re-folds along its own edge by 12 (mostly by 6);
+  // a recolour reaches the left half, where type starts, by 4: the new content waits for its own ground
+  const same = !!cur.rect && !!prev.rect && anchorTop(cur.rect) === anchorTop(prev.rect) && (cur.rect.bottom >= 1920) === (prev.rect.bottom >= 1920);
+  const delay = !moved ? (recoloured ? 4 : 1) : same ? 6 : cur.rect ? 11 : 8;
+  const enter = bi === 0 || pageCut ? 1 : ramp(f, b.f0 + delay, 4);
   return <AbsoluteFill style={{background: B.c.newsprint, overflow: "hidden"}}>
-    <GroundView B={B} L={L} SP={SP} i={bi} f={f}/>
-    {outgoing >= 0 && <div style={{position: "absolute", inset: 0, opacity: 1 - ramp(f, b.f0, 5)}}><Page L={L} B={B} SP={SP} i={outgoing} f={f}/></div>}
-    <div style={{position: "absolute", inset: 0}}><Page L={L} B={B} SP={SP} i={bi} f={f}/></div>
-    <Masthead B={B} chip={L.chip} color={chromeColor} on={chromeOn} plate={chromePlate}/>
-    <SourceLine B={B} text={b.src} color={b.kind === "say" ? B.c.paper : B.c.ink} lockF={b.lockF} f={f}/>
+    <GroundLayer B={B} page={cur.page} bands={bands} seed={L.seed + bi}/>
+    <AbsoluteFill style={{opacity: enter}}><Page L={L} B={B} SP={SP} i={bi} f={f}/></AbsoluteFill>
+    <Chrome B={B} L={L} page={cur.page} bands={bands} src={lineSrc(SP, b)} lockF={b.lockF} f={f}/>
     {flash > 0 && <AbsoluteFill style={{background: B.c.paper, opacity: flash, pointerEvents: "none"}}/>}
     <LookAudio L={L}/>
   </AbsoluteFill>;

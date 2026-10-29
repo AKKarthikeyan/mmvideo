@@ -7,8 +7,8 @@ import {fitCss, fitFont, fitLines} from "../shared/fit";
 import {type Cam, project} from "./camera";
 import {assertContrast, rgba} from "./materials";
 import {ease, inOut} from "./motion";
-import {Bottle, Pack, bottleGeom} from "./objects";
-import {LABEL_Y, SAFE, ShelfLabel} from "./props";
+import {Bottle, Pack, Packet, bottleGeom} from "./objects";
+import {SAFE, ShelfLabel, TopTag} from "./props";
 import {KickerSign, World, type Ctx} from "./scene";
 import {HeroTag} from "./piles";
 import {STAGE} from "./surfaces";
@@ -24,27 +24,29 @@ export const Product: React.FC<{ctx: Ctx; cam: Cam}> = ({ctx, cam}) => {
   const cx = prev ? 650 : 560;
   const slide = ease(f, b.f0 + 4, b.f0 + 18, inOut);
   const x = cx + (1 - slide) * 520;
-  const sized = !!p.size;
+  const sized = p.pack === "bottle";
   const SC = prev ? 1.3 : 1.45;
   const bg = bottleGeom(x, STAGE.base, SC);
-  const neck: [number, number] = sized ? [x, bg.neckY + 40] : [x, STAGE.base - 420];
+  const neck: [number, number] = sized ? [x, bg.neckY + 40] : [x, STAGE.base - 430];
+  const item = (cx0: number, pp: typeof p | null, sc: number, seed: string) => pp?.pack === "bottle"
+    ? <Bottle M={M} cx={cx0} base={STAGE.base} cap={B.c.accent2} seed={seed} f={f} scale={sc} liquid={P.liquid}/>
+    : pp?.pack === "packet" ? <Packet M={M} cx={cx0} base={STAGE.base} w={220} h={360}/> : <Pack M={M} cx={cx0} base={STAGE.base} w={210} h={430}/>;
   return <>
     <World ctx={ctx} cam={cam}>
-      {prev && (prevP?.size ? <Bottle M={M} cx={300} base={STAGE.base} cap={B.c.accent2} seed={`p${prev.i}`} f={f} scale={1.3}/>
-        : <Pack M={M} cx={300} base={STAGE.base} w={200} h={420}/>)}
-      {sized ? <Bottle M={M} cx={x} base={STAGE.base} cap={B.c.accent2} seed={`p${b.i}`} f={f} scale={SC}/>
-        : <Pack M={M} cx={x} base={STAGE.base} w={210} h={430}/>}
+      {prev && item(300, prevP, 1.3, `p${prev.i}`)}
+      {item(x, p, SC, `p${b.i}`)}
     </World>
     <KickerSign ctx={ctx}/>
     <HeroTag ctx={ctx} n={big} anchor={project(cam, neck[0], neck[1])} mode="flip" maxNumW={400}/>
-    {/* the earlier item's own price, small, on its shelf label */}
-    {prev && <ShelfLabel B={B} M={M} cx={project(cam, 300, 0)[0]} y={LABEL_Y} maxW={300} name={prev.name ?? ""} nameOn num={prev.big} f={f} dim/>}
-    <ShelfLabel B={B} M={M} cx={project(cam, cx, 0)[0]} y={LABEL_Y} maxW={330} name={b.name ?? ""} nameOn={!/\d/.test(b.name ?? "") || f >= big.lockF} f={f} hot/>
+    {/* the earlier item's own price, on a small tag at its top */}
+    {prev?.big && (() => { const [ax, ay] = project(cam, 300, STAGE.base - (prevP?.pack === "bottle" ? 500 : 440)); return <TopTag B={B} M={M} n={prev.big} f={f} ax={ax} ay={ay} size={40} dim at={b.f0 + 6}/>; })()}
+    {prev && <ShelfLabel B={B} M={M} cx={project(cam, 300, 0)[0]} maxW={300} name={prev.name ?? ""} nameOn dim/>}
+    <ShelfLabel B={B} M={M} cx={project(cam, cx, 0)[0]} maxW={330} name={b.name ?? ""} nameOn={!/\d/.test(b.name ?? "") || f >= big.lockF} hot/>
     {p.sub && f >= p.sub.f + 10 && (() => {
       // the note goes where nothing stands: left of a lone item, or inside an unspecified pack's empty outline
       const font = fitFont(B.f.mono);
-      const nw = prev ? 260 : 300;
-      const L2 = fitLines(p.sub.text, font, nw - 28, 4, 26, 18);
+      const nw = prev ? 300 : 340;
+      const L2 = fitLines(p.sub.text, font, nw - 28, 4, 32, 28);
       const k = ease(f, p.sub.f + 10, p.sub.f + 18);
       const [sx, sy] = prev ? project(cam, x - nw / 2, STAGE.base - 380) : project(cam, SAFE.x0 + 10, STAGE.base - 260);
       return <div style={{position: "absolute", left: Math.max(SAFE.x0, Math.min(sx, SAFE.x1 - nw)), top: sy, width: nw, padding: "10px 14px", background: M.kraft,

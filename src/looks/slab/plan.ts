@@ -1,14 +1,16 @@
 // Slab look: the story plan, computed once per story from LookData (pure, no DOM, no fonts).
 //   segs     a script line cut into words and printed numbers (each number a LookNum, so it is drawn only from its lock)
 //   poster   hook and say lines grouped into anchor rows (at most 4-5 words each), the hero pulled out to its own board
-//   rail     the carried object: one shared-scale bar rail per unit (t, %, ₹, cr...). The first value of a unit is the
-//            anchor; later beats of the same unit show it as a dashed ghost, so every fact is measured against it
+//   rail     the carried object: one bar rail per unit (t, %, ₹, cr...) at one scale for the whole story. An earlier value
+//            of the unit comes back as a dashed ghost only where the script relates the two (related() below)
+//   recaps   a say without a number recaps the story's own figures it names, on that same scale
 //   devices  ratio tiles (N×), tally (9 of 11), duration (10 years), stack (parts that add up to the big), inset (slivers)
 //   shots    slab colour per beat (never the same twice running), wipe direction, hook / fact / say / end archetypes,
 //            all seeded by the story id so two stories never share a layout sequence
 import type {ColorRole} from "../brands/types";
 import type {LookBeat, LookData, LookNum} from "../shared/types";
 import {pickOf, rng} from "./kit";
+import {qualOf} from "./prep";
 
 // ---------- script lines -> segments ----------
 export type Seg = {t: string; hot: boolean; num: LookNum | null; sp: boolean};   // sp: a space before it
@@ -101,7 +103,7 @@ export const posterOf = (b: LookBeat): Poster => {
     if (meaningful(a)) pre.push({fr: a, line: li});
     if (meaningful(z)) post.push({fr: z.filter((s, i) => i > 0 || /[A-Za-z0-9]/.test(s.t) || s.num), line: li});
   });
-  let pill: string | null = hero?.qual.trim() || null;
+  let pill: string | null = qualOf(hero) || null;
   if (hero && pre.length === 1 && pre[0].line === heroLine && wordsIn(pre[0].fr) === 1 && pre[0].fr.length === 1 && !pre[0].fr[0].hot) {
     pill = [pre[0].fr[0].t, pill].filter(Boolean).join(" ");
     pre.length = 0;
@@ -111,8 +113,13 @@ export const posterOf = (b: LookBeat): Poster => {
 };
 
 // ---------- the carried rail ----------
+// rows    the beat's own bars (or its big alone), one unit key
+// ghost   an earlier value of the same unit, drawn dashed, ONLY when the script itself relates the two (see related())
+// share   an unsigned percentage of a whole: drawn on a 0-100 track (755 px = 100), never on its own maximum
+// unitAdd the big's word unit when the bars print only "₹1.13" (fm04: the bars are lakh crore, as the big says)
 export type RailRow = {name: string; num: LookNum; v: number; key: string; beat: number};
-export type RailBeat = {rows: RailRow[]; ghost: RailRow | null; ghostName: string; scale: number; stack: boolean; inset: boolean; key: string};
+export type RailBeat = {rows: RailRow[]; ghost: RailRow | null; ghostName: string; ghostSrc: string; scale: number; stack: boolean; inset: boolean; key: string;
+  share: boolean; unitAdd: string; recap?: boolean};
 export type Device = "ratio" | "tally" | "duration" | "rail" | "none";
 
 const keyOf = (n: LookNum) => (n.prefix + n.unit).replace(/\s+/g, "").toLowerCase().replace(/crore/g, "cr");
@@ -130,26 +137,117 @@ const rowsOf = (b: LookBeat): RailRow[] => {
   return b.big ? [{name: b.name ?? "", num: b.big, v: vOf(b.big), key: keyOf(b.big), beat: b.i}] : [];
 };
 
+// Two beats of one unit are related only when the script itself puts them side by side:
+//   (a) a fact's bars print a value of each (gd01 'Homes vs US' prints 25,000 t and 8,134 t)
+//   (b) a hook or say prints a hero equal to a value of each (cw01 'at ₹10': Campa and the reply)
+//   (c) the same measure: the two kickers or the two decks are the same once numbers and dates are taken out
+//       (fm03 'DHANTERAS 2025 · 18 OCT' and 'DHANTERAS 2024 · 29 OCT'; fm02 'Nifty 50, Muhurat 2022' and '... 2017')
+//   (d) a say's 'over N×' compares the story's first value with the latest one, and the data bear it out
+// Anything else (fm05's gift limit against the employer and cash rules, fm04's returned claims against unclaimed
+// insurance) is never drawn on one rail.
+const STRIP = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b|[^a-z ]+/gi;
+const measureOf = (s?: string | null) => (s ?? "").toLowerCase().replace(STRIP, " ").replace(/\s+/g, " ").trim();
+const texts = (rows: RailRow[]) => rows.map((r) => r.num.text);
+const primaryOf = (L: LookData, rows: RailRow[]) => { const bj = L.beats[rows[0].beat]; return rows.find((r) => bj.big && r.num.text === bj.big.text) ?? rows[0]; };
+
+const relations = (L: LookData, all: RailRow[][]) => {
+  const rel = new Set<string>();
+  const add = (i: number, j: number) => { rel.add(`${i}:${j}`); rel.add(`${j}:${i}`); };
+  for (let i = 0; i < all.length; i++) for (let j = 0; j < i; j++) {
+    if (!all[i].length || !all[j].length || all[i][0].key !== all[j][0].key) continue;
+    const ti = texts(all[i]), tj = texts(all[j]);
+    const bars = L.beats.some((b) => b.kind === "fact" && b.barsL.length >= 2 && ti.some((x) => b.barsL.some((r) => r.num?.text === x)) && tj.some((x) => b.barsL.some((r) => r.num?.text === x)) && b.i !== i);
+    const hero = L.beats.some((b) => ["spot", "say", "hook"].includes(b.kind) && b.hero && ti.includes(b.hero.text) && tj.includes(b.hero.text));
+    const bi = L.beats[i], bj = L.beats[j];
+    const same = (!!measureOf(bi.kicker) && measureOf(bi.kicker) === measureOf(bj.kicker)) || (!!measureOf(bi.text) && measureOf(bi.text) === measureOf(bj.text));
+    if (bars || hero || same) add(i, j);
+  }
+  // (d) say "over 25×": the story's first value of a unit against the latest fact of that unit before the say
+  L.beats.forEach((b, s) => {
+    const h = b.hero;
+    if (b.kind !== "say" || !h || !isRatio(h)) return;
+    for (let j = s - 1; j >= 0; j--) {
+      if (!all[j].length) continue;
+      const a = all.findIndex((r) => r.length && r[0].key === all[j][0].key);
+      if (a < j && Math.abs(primaryOf(L, all[a]).v) / Math.abs(primaryOf(L, all[j]).v) >= h.value) add(a, j);
+      return;
+    }
+  });
+  return (i: number, j: number) => rel.has(`${i}:${j}`);
+};
+
 export const railPlan = (L: LookData): (RailBeat | null)[] => {
   const all = L.beats.map(rowsOf);
-  const anchor = new Map<string, RailRow>();
-  all.forEach((rows) => { if (rows.length && !anchor.has(rows[0].key)) anchor.set(rows[0].key, rows[0]); });
+  const rel = relations(L, all);
+  // an unsigned percentage (no + or − printed anywhere in the unit) is a share of a whole: 0-100 track
+  const shareKey = (key: string) => key === "%" && all.flat().filter((r) => r.key === key).every((r) => r.num.sign === "" && r.v > 0 && r.v <= 100);
   return L.beats.map((b, i) => {
     const rows = all[i];
     if (!rows.length) return null;
-    const key = rows[0].key, a = anchor.get(key)!;
-    const later = all.some((r, j) => j > i && r.length && r[0].key === key);
-    const ghost = a.beat < i && !rows.some((r) => r.name.toLowerCase() === a.name.toLowerCase()) ? a : null;
-    if (rows.length < 2 && !ghost && !(a.beat === i && later)) return null;
-    const ab = L.beats[a.beat];
-    const ghostName = ghost ? (ab.barsL.length && ab.name && ab.barsL[0].name !== ab.name ? ab.name : ghost.name) : "";
-    const scale = Math.max(...rows.map((r) => Math.abs(r.v)), ghost ? Math.abs(ghost.v) : 0) || 1;
-    const sameSign = rows.every((r) => Math.sign(r.v) === Math.sign(rows[0].v));
+    const key = rows[0].key;
+    const prev = all.map((_, j) => j).filter((j) => j < i && all[j].length && all[j][0].key === key && rel(i, j));
+    const later = all.some((r, j) => j > i && r.length && r[0].key === key && rel(i, j));
+    let g = prev.length ? primaryOf(L, all[prev[0]]) : null;
+    if (g && rows.some((r) => r.num.text === g!.num.text && r.name.toLowerCase() === g!.name.toLowerCase())) g = null;
     const big = b.big;
+    const sameSign = rows.every((r) => Math.sign(r.v) === Math.sign(rows[0].v));
     const stack = rows.length >= 2 && sameSign && !!big && keyOf(big) === key && Math.abs(rows.reduce((s, r) => s + r.v, 0) - vOf(big)) <= 0.005 * Math.abs(vOf(big));
-    const inset = !!ghost && rows.every((r) => Math.abs(r.v) / scale < 0.06);
-    return {rows, ghost, ghostName, scale: stack ? Math.max(Math.abs(vOf(big!)), ghost ? Math.abs(ghost.v) : 0) : scale, stack, inset, key};
+    // a stack's threshold marker: the value of the beat just before it, when that beat was the same unit alone (fm05's limit)
+    if (stack && !g && i > 0 && all[i - 1].length === 1 && all[i - 1][0].key === key) g = all[i - 1][0];
+    if (rows.length < 2 && !g && !later) return null;
+    const ab = g ? L.beats[g.beat] : null;
+    const ghostName = g && ab ? (ab.barsL.length && ab.name && ab.barsL[0].name !== ab.name ? ab.name : g.name) : "";
+    const ghostSrc = g && ab && ab.src !== b.src ? ab.src : "";
+    const scale = Math.max(...rows.map((r) => Math.abs(r.v)), g ? Math.abs(g.v) : 0) || 1;
+    const inset = !!g && !stack && rows.every((r) => Math.abs(r.v) / scale < 0.06);
+    const unitAdd = big && !big.unit.trim().match(/^[%×]?$/) && rows.every((r) => r.num.unit.trim() === "" && r.num.prefix === big.prefix) &&
+      rows.some((r) => r.num.digits === big.digits) ? big.unit : "";
+    return {rows, ghost: g, ghostName, ghostSrc, scale: stack ? Math.max(Math.abs(vOf(big!)), g ? Math.abs(g.v) : 0) : scale, stack, inset, key,
+      share: shareKey(key), unitAdd};
   });
+};
+
+// A say without a number recaps the story's own figures it talks about (all printed and said in earlier beats): rows
+// whose name the say's words name, the main figure of a fact the say names (fm03 'Diwali'), then the rest of those facts
+// and facts whose kicker or deck the say's words name. One unit (the one the say names most), at most 4 rows, drawn at
+// the story's shared scale for that unit.
+const STOP = new Set("the a an and or of in on at to for by is was are were its it as than then from with not no own all one two three four five six seven eight nine ten every year years each about over under more most less india india's this that their day your you our we they them what which who".split(" "));
+const wordsOf = (s?: string | null) => new Set((s ?? "").toLowerCase().replace(/\*/g, "").split(/[^a-z]+/).filter((w) => w.length > 2 && !STOP.has(w)).map((w) => w.replace(/s$/, "")));
+export const recapOf = (L: LookData, rails: (RailBeat | null)[], i: number): RailBeat | null => {
+  const b = L.beats[i];
+  if (b.kind !== "say" || b.hero) return null;
+  const sw = wordsOf((b.lines ?? []).join(" "));
+  const hit = (s?: string | null) => [...wordsOf(s)].some((w) => sw.has(w));
+  const cand: {r: RailRow; p: number}[] = [];
+  for (let j = 0; j < i; j++) {
+    const bj = L.beats[j];
+    const rows = rails[j]?.rows ?? rowsOf(bj);
+    if (bj.kind !== "fact" || !rows.length) continue;
+    const strong = hit(bj.name), subj = hit(bj.kicker) || hit(bj.text);
+    const prim = primaryOf(L, rows);
+    rows.forEach((r) => {
+      const p = hit(r.name) || (strong && r === prim) ? 0 : strong || subj ? 1 : 3;
+      if (p < 3) cand.push({r, p});
+    });
+  }
+  if (!cand.length) return null;
+  const score = new Map<string, number>();
+  cand.forEach((c) => score.set(c.r.key, (score.get(c.r.key) ?? 0) + (3 - c.p)));
+  const key = [...score.entries()].sort((a, b2) => b2[1] - a[1])[0][0];
+  const seen = new Set<string>();
+  const pick: RailRow[] = [];
+  for (const pri of [0, 1]) {
+    if (pri > 0 && pick.length >= 2) break;
+    for (const c of cand) {
+      const id = `${c.r.name}|${c.r.num.text}`;
+      if (c.p === pri && c.r.key === key && !seen.has(id) && pick.length < 4) { seen.add(id); pick.push(c.r); }
+    }
+  }
+  pick.sort((a, b2) => a.beat - b2.beat);
+  const share = rails.find((r) => r && r.key === key)?.share ?? false;
+  const adds = [...new Set(pick.map((r) => rails[r.beat]?.unitAdd ?? ""))];
+  return {rows: pick, ghost: null, ghostName: "", ghostSrc: "", scale: Math.max(...pick.map((r) => Math.abs(r.v))) || 1, stack: false, inset: false, key,
+    share, unitAdd: adds.length === 1 ? adds[0] : "", recap: true};
 };
 
 export const deviceOf = (b: LookBeat, rail: RailBeat | null): Device => {
@@ -166,11 +264,17 @@ export type Dir = "up" | "down" | "left" | "right" | "cut";
 export type HookArch = "poster" | "band" | "split" | "centre" | "wall";
 export type SayArch = HookArch | "marked" | "bands";
 export type FactArch = "name-top" | "board-top" | "rail-first";
-export type EndArch = "stack" | "centre";
+export type EndArch = "stack" | "centre" | "echo";      // echo: the hook's claim and number come back above the question
+// Per fact, beyond the order of its parts: where the provenance ticket sits (foot of the box, head under the chrome, or
+// tail right after the last part), how the name is set (a solid block, or poster type over a thick rule), and whether a
+// rail of 2-4 same-sign rows stands as columns instead of bars. Rotated per story so facts read differently.
+export type TicketPos = "foot" | "head" | "tail";
+export type NameStyle = "block" | "rule";
 export type Shot = {i: number; kind: string; f0: number; f1: number; slab: ColorRole; slab2: ColorRole | null; dir: Dir; burst: boolean;
-  arch: string; device: Device; align: "left" | "right"};
+  arch: string; device: Device; align: "left" | "right"; ticket: TicketPos; nameStyle: NameStyle; cols: boolean};
 export type Proof = {A: RailRow; Aname: string; B: RailRow; N: number};
-export type Plan = {shots: Shot[]; rail: (RailBeat | null)[]; posters: (Poster | null)[]; proofs: (Proof | null)[]; hookArch: HookArch; signature: string};
+export type Plan = {shots: Shot[]; rail: (RailBeat | null)[]; recaps: (RailBeat | null)[]; posters: (Poster | null)[]; proofs: (Proof | null)[]; hookArch: HookArch;
+  signature: string};
 
 // "over 25×" in a say line: N copies of the latest fact's value inside the story's anchor, when the data bear it out
 // (anchor / latest >= N, at most 60 tiles). Otherwise no proof.
@@ -222,8 +326,11 @@ export const planStory = (L: LookData): Plan => {
   const hookP = posters[0];
   const hookArch: HookArch = !hookP?.hero ? "wall" : pickOf(r, ["poster", "band", "split", "centre"] as HookArch[]);
   const factOrder: FactArch[] = pickOf(r, [["name-top", "board-top"], ["board-top", "name-top"], ["name-top", "rail-first", "board-top"], ["board-top", "rail-first", "name-top"]] as FactArch[][]);
-  const endArch: EndArch = pickOf(r, ["stack", "centre"] as EndArch[]);
-  let k = 0;
+  const endArch: EndArch = pickOf(r, (hookP?.hero ? ["stack", "centre", "echo"] : ["stack", "centre"]) as EndArch[]);
+  const tickets: TicketPos[] = pickOf(r, [["foot", "head", "tail"], ["head", "tail", "foot"], ["tail", "foot", "head"], ["head", "foot"], ["tail", "head"]] as TicketPos[][]);
+  const names: NameStyle[] = pickOf(r, [["block", "rule"], ["rule", "block"], ["block", "block", "rule"], ["rule", "rule", "block"]] as NameStyle[][]);
+  const colsFirst = r() < 0.5;
+  let k = 0, kf = 0, kc = 0;
   const shots: Shot[] = L.beats.map((b, i) => {
     let arch = "";
     if (i === 0) arch = hookArch;
@@ -242,9 +349,18 @@ export const planStory = (L: LookData): Plan => {
     else if (b.kind === "end") arch = endArch;
     else arch = b.kind;
     const split = arch === "split" ? (slabs[i] === "accent" ? "ground" : "accent") as ColorRole : null;
+    const isFact = b.kind === "fact";
+    const rb = rail[i];
+    const colsOk = isFact && devices[i] === "rail" && !!rb && !rb.stack && !rb.inset && rb.rows.length + (rb.ghost ? 1 : 0) >= 2 && rb.rows.length + (rb.ghost ? 1 : 0) <= 4 &&
+      [...rb.rows, ...(rb.ghost ? [rb.ghost] : [])].every((x) => x.v > 0);
+    // columns only when the tallest stands at least 40% of the unit's story-wide maximum (else they read as an empty box)
+    const keyMax = Math.max(...rail.filter((x) => x && rb && x.key === rb.key).flatMap((x) => x!.rows.map((y) => Math.abs(y.v))));
+    const tallOk = !!rb && Math.max(...rb.rows.map((y) => Math.abs(y.v)), rb.ghost ? Math.abs(rb.ghost.v) : 0) >= 0.4 * keyMax;
+    const cols = colsOk && tallOk && (kc++ % 2 === 0) === colsFirst;
     return {i, kind: b.kind, f0: b.f0, f1: b.f1, slab: slabs[i], slab2: split, dir: dirs[i], burst: slabs[i] === "accent" && (devices[i] === "ratio" || (b.kind === "say" && !!posters[i]?.hero)),
-      arch, device: devices[i], align: r() < 0.5 ? "left" : "right"};
+      arch, device: devices[i], align: r() < 0.5 ? "left" : "right",
+      ticket: isFact ? tickets[kf % tickets.length] : "foot", nameStyle: isFact ? names[kf++ % names.length] : "block", cols};
   });
-  const signature = shots.map((s) => `${s.kind[0]}:${s.arch}:${s.slab}:${s.dir}`).join(" ");
-  return {shots, rail, posters, proofs: L.beats.map((_, i) => proofOf(L, rail, i)), hookArch, signature};
+  const signature = shots.map((s) => `${s.kind[0]}:${s.arch}:${s.slab}:${s.dir}${s.kind === "fact" ? `:${s.ticket}:${s.nameStyle}:${s.cols ? "c" : "b"}` : ""}`).join(" ");
+  return {shots, rail, recaps: L.beats.map((_, i) => recapOf(L, rail, i)), posters, proofs: L.beats.map((_, i) => proofOf(L, rail, i)), hookArch, signature};
 };

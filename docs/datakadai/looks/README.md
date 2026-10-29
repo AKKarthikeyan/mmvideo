@@ -35,3 +35,9 @@ brand tokens per channel (palette, fonts, logo, safe area, music) instead of Dat
 poster type) and Dispatch (editorial desk) carry over best; Counter's objects are money-specific. The no-AI-maps rule matters
 even more there: every map stays code-drawn from official boundaries. Adaptation note:
 `/Volumes/DarwinSSD/Indica Atlas/Research/PREMIUM_LOOKS_from_DataKadai_2026-10-25.md`.
+
+## Approved by AK (29 Oct 2026)
+AK watched the rendered Slab, Counter and Dispatch videos for `gd01` (gold) and `cw01` (cola) and said all three are good.
+- Videos (33.4 s, narrated; not in git): `out/looks/{slab,counter,dispatch}/{gd01,cw01}.mp4`. Side by side: `out/looks/compare_gd01.png`, `out/looks/compare_cw01.png`. Indica Atlas colour demo: `out/looks/indica/`.
+- This approves the look, not a release. Still open before any look ships on a story: `gd01` waits for the WGC household figure to be confirmed at the source; the number lock lands up to about 4.6 frames late for words starting with f or s (never early); the `cw01` end note "Shares are of all soft drinks" sits badly with the Jan-Sep 2025 caveat; Counter's end cards leave the lower half empty; Dispatch's end cards show a faint ghost "3x"; the `cw01` source wording is typed in three places (move it to `look_opts.beatSources`); the six look fonts still need AK's sign-off (PREFERENCES.md names Oswald and Inter).
+- AK still chooses which look (or none) each story uses.

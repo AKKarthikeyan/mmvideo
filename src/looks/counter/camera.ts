@@ -17,17 +17,21 @@ export const baseCam = (s: number, x = 540): Cam => ({s, x, y: yFor(s)});
 export const project = (c: Cam, wx: number, wy: number): [number, number] => [540 + (wx - c.x) * c.s, 960 + (wy - c.y) * c.s];
 export const camCss = (c: Cam) => `translate(540px, 960px) scale(${c.s}) translate(${-c.x}px, ${-c.y}px)`;
 
-// The camera of a beat at frame f. base: the resting framing; focus: the world point the moves go toward.
-export const camAt = (p: BeatPlan, f: number, f0: number, base: Cam, focus: [number, number], seed: number): Cam => {
+// The camera of a beat at frame f. base: the resting framing; focus: the world point the moves go toward. Each move
+// eases in over 10-14 frames and is held; a slow push across the whole beat keeps every hold alive.
+export const camAt = (p: BeatPlan, f: number, f0: number, base: Cam, focus: [number, number], seed: number, f1 = f0 + 120): Cam => {
   const e0 = ease(f, f0, f0 + 14, inOut);
-  let s = base.s * (1.03 - 0.03 * e0), x = base.x;
+  let s = base.s * (1.04 - 0.04 * e0), x = base.x;
+  s *= 1 + 0.025 * Math.max(0, Math.min(1, (f - f0) / Math.max(1, f1 - f0)));
   for (const m of p.moves) {
     const t = ease(f, m.f, m.f + (m.kind === "punch" ? 10 : 14), inOut);
     if (t <= 0) continue;
-    if (m.kind === "punch") { s *= 1 + 0.08 * t; x += (focus[0] - x) * 0.12 * t; }
-    else if (m.kind === "crane") { s *= 1 + 0.04 * t; x += (focus[0] - x) * 0.08 * t; }
-    else if (m.kind === "pull") s *= 1 - 0.05 * t;
-    else x += (focus[0] > 540 ? 36 : -36) * t;
+    // bold enough to read on a phone (the scene caps the scale by the room above the objects, so a tall pile only pans/pulls)
+    if (m.kind === "punch") { s *= 1 + 0.32 * t; x += (focus[0] - x) * 0.5 * t; }
+    else if (m.kind === "crane") { s *= 1 + 0.18 * t; x += (focus[0] - x) * 0.3 * t; }
+    else if (m.kind === "pull") s *= 1 - 0.15 * t;
+    else if (m.kind === "push") s *= 1 + 0.176 * t;           // undoes a pull
+    else x += (focus[0] > 540 ? 140 : -140) * t;
   }
   return {s, x: x + noise2D(`cx${seed}`, f * 0.03, 0), y: yFor(s) + noise2D(`cy${seed}`, 0, f * 0.03) * 0.6};
 };

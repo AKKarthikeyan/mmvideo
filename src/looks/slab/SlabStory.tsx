@@ -19,6 +19,7 @@ import {Burst} from "./devices";
 import {ease, palOf} from "./kit";
 import {fullLock} from "./type";
 import {planStory, type Dir, type Shot} from "./plan";
+import {prepStory} from "./prep";
 
 const WIPE = 6, SEAM = 12;
 
@@ -56,12 +57,14 @@ const ShotView: React.FC<{C: Ctx; s: Shot; f: number}> = ({C, s, f}) => {
   </AbsoluteFill>;
 };
 
-export const SlabStory: React.FC<LookProps> = ({L, B}) => {
+export const SlabStory: React.FC<LookProps> = ({L: L0, B}) => {
   const f = useCurrentFrame();
+  const P = useMemo(() => prepStory(L0), [L0]);
+  const L = P.L;
   const plan = useMemo(() => planStory(L), [L]);
   const safe = (getInputProps() as {slabSafe?: boolean}).slabSafe === true;
-  const C = useMemo<Ctx>(() => ({L, B, plan, frozen: false, safe}), [L, B, plan, safe]);
-  const CF = useMemo<Ctx>(() => ({L, B, plan, frozen: true, safe}), [L, B, plan, safe]);
+  const C = useMemo<Ctx>(() => ({L, B, plan, frozen: false, safe, spoken: P.spoken, platesOk: P.platesOk}), [L, B, plan, safe, P]);
+  const CF = useMemo<Ctx>(() => ({L, B, plan, frozen: true, safe, spoken: P.spoken, platesOk: P.platesOk}), [L, B, plan, safe, P]);
   const b = beatAt(L, f);
   const s = plan.shots[b.i];
   const prev = b.i > 0 ? plan.shots[b.i - 1] : null;

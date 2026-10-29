@@ -9,26 +9,56 @@ import {continueRender, delayRender, staticFile} from "remotion";
 
 export type Quote = {says: string; text: string[]; contains: string};
 
-const CACHE = new Map<string, Quote[]>();
+// Printed qualifiers: a source table item may carry the figure exactly as the publisher prints it ("printed": "almost
+// 15%", "roughly 7%" in public/datayt/sources/softdrinks/share_2025.json). data.json keeps the bare number; the look prints
+// the publisher's wording so a rounded or approximate share never reads as exact. Keyed by beat name, then bar name (or
+// "big" for the card's own figure).
+export type Printed = Record<string, Record<string, string>>;
+export type Extras = {quotes: Quote[]; printed: Printed};
+
+const CACHE = new Map<string, Extras>();
 const parse = (cfg: unknown): Quote[] => {
   const qs = (cfg as {quotes?: unknown})?.quotes;
   if (!Array.isArray(qs)) return [];
   return qs.filter((q): q is Quote => !!q && typeof (q as Quote).contains === "string" && (q as Quote).contains.trim().length > 0)
     .map((q) => ({says: typeof q.says === "string" ? q.says : "", text: Array.isArray(q.text) ? q.text.map(String) : [], contains: q.contains}));
 };
+type Ref = [string, string, string];
+const refOk = (r: unknown): r is Ref => Array.isArray(r) && r.length >= 2 && r.every((x) => typeof x === "string");
+const getJson = (path: string) => fetch(staticFile(path)).then((r) => (r.ok ? r.json() : null), () => null).catch(() => null);
+const printedOf = async (cfg: unknown): Promise<Printed> => {
+  const cards = (cfg as {cards?: unknown})?.cards;
+  if (!Array.isArray(cards)) return {};
+  const want: {beat: string; key: string; ref: Ref}[] = [];
+  for (const c of cards as {name?: string; item?: unknown; bars?: {name?: string; item?: unknown}[]}[]) {
+    if (!c || typeof c.name !== "string") continue;
+    if (refOk(c.item)) want.push({beat: c.name, key: "big", ref: c.item});
+    for (const b of c.bars ?? []) if (b && typeof b.name === "string" && refOk(b.item)) want.push({beat: c.name, key: b.name, ref: b.item});
+  }
+  const tables = new Map<string, Promise<unknown>>();
+  for (const w of want) if (!tables.has(w.ref[0])) tables.set(w.ref[0], getJson(`datayt/sources/${w.ref[0]}.json`));
+  const out: Printed = {};
+  for (const w of want) {
+    const t = (await tables.get(w.ref[0])) as {items?: Record<string, {printed?: unknown}>} | null;
+    const pr = t?.items?.[w.ref[1]]?.printed;
+    if (typeof pr === "string" && pr.trim()) (out[w.beat] ??= {})[w.key] = pr.trim();
+  }
+  return out;
+};
 
-export const useQuotes = (id: string): Quote[] | null => {
-  const [qs, setQs] = useState<Quote[] | null>(() => CACHE.get(id) ?? null);
+export const useExtras = (id: string): Extras | null => {
+  const [qs, setQs] = useState<Extras | null>(() => CACHE.get(id) ?? null);
   const [handle] = useState(() => (CACHE.has(id) ? null : delayRender(`Dispatch: quotes for ${id}`)));
   useEffect(() => {
     let live = true;
-    const done = (q: Quote[]) => { CACHE.set(id, q); if (live) setQs(q); if (handle !== null) continueRender(handle); };
+    const done = (q: Extras) => { CACHE.set(id, q); if (live) setQs(q); if (handle !== null) continueRender(handle); };
     if (CACHE.has(id)) { done(CACHE.get(id)!); return; }
-    fetch(staticFile(`datayt/beats/configs/${id}.json`)).then((r) => (r.ok ? r.json() : null)).then((cfg) => done(parse(cfg)), () => done([]));
+    getJson(`datayt/beats/configs/${id}.json`).then(async (cfg) => done({quotes: parse(cfg), printed: await printedOf(cfg).catch(() => ({}))}), () => done({quotes: [], printed: {}}));
     return () => { live = false; };
   }, [id, handle]);
   return qs;
 };
+export const useQuotes = (id: string): Quote[] | null => useExtras(id)?.quotes ?? null;
 
 // The document a quote comes from, as the story's own source text names it: the source is split into its parts
 // ("RBI FAQ on UDGAM", "Income-tax Act, 2025, sections 92, 186 and 451", ...) and the part sharing the most words with the

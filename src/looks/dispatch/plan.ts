@@ -88,6 +88,7 @@ export type Item = {
   name: string; beat: number; kind: "big" | "bar"; lockF: number; num: LookNum | null;
   head?: string;                                          // the kicker of a bar that is its beat's own big: its name in later beats
   ent: string;                                            // the thing it measures (an entity key, see entKey)
+  entName: string;                                        // that thing's printed name (a period row's thing is its kicker)
 };
 export type Range = {lo: FreeNum; hi: FreeNum; of: number};      // an estimate range printed in a fact's sub
 
@@ -133,7 +134,7 @@ const rangeOf = (b: LookBeat): Range | null => {
 
 // ---------- devices ----------
 export type Role = "accent" | "ink" | "accent2";
-export type Row = {name: string; v: number; text: string; num: LookNum | null; lockF: number; hot: boolean; ghost?: boolean; ent: string; role: Role | null;
+export type Row = {name: string; v: number; text: string; num: LookNum | null; lockF: number; hot: boolean; ghost?: boolean; ent: string; entName: string; role: Role | null;
   from: number; gates: Gate[]};
 export type Device =
   | {kind: "tally"; k: number; N: number}
@@ -226,12 +227,12 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
       const n = r.num!;
       const own = b.big && near(n.value, b.big.value) && unitKey(b.big.unit).replace("lakhcr", "") === unitKey(n.unit).replace("lakhcr", "") ? kickerHead(b) : undefined;
       items.push({key: `${i}:bar:${r.name}`, v: n.value, cls: clsOf(n), text: r.label, name: r.name, beat: i, kind: "bar", lockF: lockOfNum(L, b, n), num: n, head: own,
-        ent: entKey(periods ? kickerHead(b) : r.name)});
+        ent: entKey(periods ? kickerHead(b) : r.name), entName: periods ? kickerHead(b) : r.name});
     }
     if (b.big && !bars.some((r) => near(r.num!.value, b.big!.value) && clsOf(r.num!) === clsOf(b.big!))) {
       const earlierBar = items.find((it) => it.kind === "bar" && it.cls === clsOf(b.big!) && near(it.v, b.big!.value));
       const name = isPrice(b.big) ? deckItem(b) : earlierBar?.name ?? kickerHead(b);
-      items.push({key: `${i}:big`, v: b.big.value, cls: clsOf(b.big), text: b.big.text, name, beat: i, kind: "big", lockF: lockOfNum(L, b, b.big), num: b.big, ent: entKey(name)});
+      items.push({key: `${i}:big`, v: b.big.value, cls: clsOf(b.big), text: b.big.text, name, beat: i, kind: "big", lockF: lockOfNum(L, b, b.big), num: b.big, ent: entKey(name), entName: name});
     }
   });
   const gates = L.beats.map((b) => gatesOf(L, b));
@@ -242,7 +243,7 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
   });
   const back = (a: Aliased): Item => items.find((it) => it.key === a.key)!;
   const rowOf = (it: Item, hot = false, ghost = false): Row => ({name: ghost && it.head ? it.head : it.name, v: it.v, text: it.text, num: it.num, lockF: it.lockF, hot, ghost,
-    ent: it.ent, role: null, from: it.beat, gates: gates[it.beat]});
+    ent: it.ent, entName: it.entName, role: null, from: it.beat, gates: gates[it.beat]});
   const upTo = (i: number, cls: string) => items.filter((it) => it.beat <= i && it.cls === cls);
   const runMax = (i: number, cls: string, extra: number[] = []) => {
     const rs = ranges.slice(0, i + 1).filter((r): r is Range => !!r && clsOf(r.hi) === cls).map((r) => r.hi.value);
@@ -255,6 +256,8 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
   const rangeFor = (i: number, v: number, cls: string) => ranges.slice(0, i + 1).find((r) => r && clsOf(r.hi) === cls && near(r.of, v)) ?? null;
   // the words a beat is about (its kicker, deck, sub and narration): a reference line must be named in them
   const about = (b: LookBeat) => [b.kicker, b.text, b.subShown, b.voice?.text, ...b.barsL.map((r) => r.name)].filter(Boolean).join(" ");
+  // what a page itself is about (no footnote): a reference line must be named here, by at least half its words
+  const aboutPage = (b: LookBeat) => [b.kicker, b.text, b.voice?.text, ...b.barsL.map((r) => r.name)].filter(Boolean).join(" ");
   const used = new Set<number>();
 
   // 2. per beat
@@ -291,7 +294,7 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
       if (bars.every((it) => it.cls === cls) && near(sum, big.value)) {
         const lineIt = items.filter((it) => it.beat < i && it.cls === cls && it.kind === "big" && it.v < big.value && it.v > big.value * 0.5 && nameIn(it.name, about(b)) > 0).pop() ?? null;
         return {kind: "sum", parts: bars.map((it) => rowOf(it)), total: {name: kickerHead(b), v: big.value, text: big.text, num: big, lockF: lockOfNum(L, b, big), hot: true,
-          ent: entKey(kickerHead(b)), role: null, from: i, gates: gates[i]}, line: lineIt ? rowOf(lineIt, false, true) : null, scale: Math.max(big.value, lineIt?.v ?? 0)};
+          ent: entKey(kickerHead(b)), entName: kickerHead(b), role: null, from: i, gates: gates[i]}, line: lineIt ? rowOf(lineIt, false, true) : null, scale: Math.max(big.value, lineIt?.v ?? 0)};
       }
       const scale = runMax(i, bcls);
       const mx = Math.max(...bars.map((it) => it.v));
@@ -300,7 +303,7 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
       const ghost = em && !bars.includes(em) && em.v > mx * 1.6 ? rowOf(em, false, true) : null;
       // a reference line is an earlier value the beat itself names ("AVERAGE PER ACCOUNT" on a page about averages), never
       // one picked by unit and size alone
-      const refs = items.filter((it) => it.beat < i && it.cls === bcls && it.kind === "big" && (it !== em || !ghost) && it.v < mx && nameIn(it.name, about(b)) > 0)
+      const refs = items.filter((it) => it.beat < i && it.cls === bcls && it.kind === "big" && (it !== em || !ghost) && it.v < mx && nameIn(it.name, aboutPage(b)) >= 0.5)
         .slice(-1).map((it) => rowOf(it, false, true));
       return {kind: "rows", rows: rowsOf(), scale: ghost ? scale : Math.max(...bars.map((it) => Math.abs(it.v))), ghost, refs, range: null};
     }
@@ -477,7 +480,7 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
   plans.forEach((p, i) => rowsOfPlan(p).forEach((r) => { if (!pages.has(r.ent)) pages.set(r.ent, new Set()); pages.get(r.ent)!.add(i); }));
   const lastUse: Record<Role, number> = {accent: -1, ink: -1, accent2: -1};
   const names: Record<string, string> = {};
-  plans.forEach((p) => rowsOfPlan(p).forEach((r) => { names[r.ent] ??= r.name; }));
+  plans.forEach((p) => rowsOfPlan(p).forEach((r) => { names[r.ent] ??= r.entName; }));
   const give = (ent: string, at: number) => {
     if (!ent || ent in roles) return;
     const mine = pages.get(ent) ?? new Set<number>();
@@ -519,7 +522,12 @@ export const planStory = (L: LookData, quotes: Quote[] = []): StoryPlan => {
     if (b.kind !== "fact") return;
     const d = p.device;
     if (d?.kind === "ratio") { p.layout = "desk"; prevL = "desk"; prevBand = null; return; }
-    const ok = FACT.filter((l) => l !== prevL && !(l === "box" && (!d || d.kind === "price" || d.kind === "tally" || d.kind === "duration")));
+    // a price page keeps its hero above its ledger (fold); shares are never boxed (a frame round a share reads as a whole market);
+    // a box needs a chart that fills it
+    const nRows = d && "rows" in d ? d.rows.length + ("ghost" in d && d.ghost ? 1 : 0) : 0;
+    const boxOk = !!d && ((d.kind === "rows" && nRows >= 2) || (d.kind === "diverge" && nRows >= 2) || (d.kind === "periods" && !d.share) || d.kind === "inset" || d.kind === "sum");
+    const allowed = (l: FactLayout) => !d ? l !== "box" : d.kind === "price" ? l === "fold" : l !== "box" || boxOk;
+    const ok0 = FACT.filter(allowed), ok1 = ok0.filter((l) => l !== prevL), ok = ok1.length ? ok1 : ok0;
     const lay = ok[k % ok.length];
     k++;
     p.layout = lay; prevL = lay;

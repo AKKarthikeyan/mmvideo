@@ -183,7 +183,7 @@ export const jarGeom = (cx: number, base: number, w: number, h: number) => {
 };
 
 // ---------------------------------------------------------------- a clear, stubby 200 ml-style bottle (no label, no contour)
-export const Bottle: React.FC<{M: Mat; cx: number; base: number; cap: string; seed: string; f: number; scale?: number}> = ({M, cx, base, cap, seed, f, scale = 1}) => {
+export const Bottle: React.FC<{M: Mat; cx: number; base: number; cap: string; seed: string; f: number; scale?: number; liquid?: "cola" | "clear"}> = ({M, cx, base, cap, seed, f, scale = 1, liquid = "cola"}) => {
   const gid = useUid("bt");
   const W = 150 * scale, H = 380 * scale, neck = 46 * scale, capW = 70 * scale;
   const x0 = cx - W / 2, top = base - H, sh = top + H * 0.36, nk = top + 26 * scale;
@@ -194,13 +194,14 @@ export const Bottle: React.FC<{M: Mat; cx: number; base: number; cap: string; se
   return <svg width={1080} height={1920} style={{position: "absolute", left: 0, top: 0, overflow: "visible"}}>
     <defs>
       <clipPath id={`${gid}c`}><path d={body}/></clipPath>
-      <linearGradient id={`${gid}g`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor={M.cola}/><stop offset="0.42" stopColor={M.colaLit}/><stop offset="0.6" stopColor={M.colaLit}/><stop offset="1" stopColor={M.cola}/></linearGradient>
+      <linearGradient id={`${gid}g`} x1="0" y1="0" x2="1" y2="0">{liquid === "cola" ? <><stop offset="0" stopColor={M.cola}/><stop offset="0.42" stopColor={M.colaLit}/><stop offset="0.6" stopColor={M.colaLit}/><stop offset="1" stopColor={M.cola}/></>
+        : <><stop offset="0" stopColor={M.glass} stopOpacity={0.3}/><stop offset="0.5" stopColor={M.glass} stopOpacity={0.12}/><stop offset="1" stopColor={M.glass} stopOpacity={0.3}/></>}</linearGradient>
       <filter id={`${gid}s`} x="-60%" y="-200%" width="220%" height="500%"><feGaussianBlur stdDeviation="10"/></filter>
     </defs>
     <ellipse cx={cx + 18} cy={base + 4} rx={W * 0.7} ry={13} fill={M.shadow} opacity={0.55} filter={`url(#${gid}s)`}/>
     <g clipPath={`url(#${gid}c)`}>
       <rect x={x0} y={fill} width={W} height={base - fill} fill={`url(#${gid}g)`}/>
-      {bubbles.map((b, i) => {
+      {liquid === "cola" && bubbles.map((b, i) => {
         const t = ((f * 0.01 * b.sp + b.ph) % 1);
         return <circle key={i} cx={x0 + 22 + b.x * (W - 44)} cy={base - 20 - t * (base - fill - 30)} r={2.5 * scale} fill={M.paper} opacity={0.35}/>;
       })}
@@ -219,6 +220,18 @@ export const Pack: React.FC<{M: Mat; cx: number; base: number; w: number; h: num
   <svg width={1080} height={1920} style={{position: "absolute", left: 0, top: 0, overflow: "visible"}}>
     <rect x={cx - w / 2} y={base - h} width={w} height={h} rx={w * 0.22} fill={rgba(M.paper, 0.05)} stroke={M.paper} strokeWidth={4} strokeDasharray="16 12" opacity={0.85}/>
   </svg>;
+
+// A plain kraft paper packet (an item sold by weight: "1 kg"), label-free, folded top.
+export const Packet: React.FC<{M: Mat; cx: number; base: number; w: number; h: number}> = ({M, cx, base, w, h}) => {
+  const x0 = cx - w / 2, top = base - h;
+  return <svg width={1080} height={1920} style={{position: "absolute", left: 0, top: 0, overflow: "visible"}}>
+    <ellipse cx={cx + 18} cy={base + 4} rx={w * 0.62} ry={13} fill={M.shadow} opacity={0.5}/>
+    <path d={`M${x0 + 8},${base} L${x0},${top + 60} L${x0 + w * 0.12},${top} L${x0 + w * 0.88},${top} L${x0 + w},${top + 60} L${x0 + w - 8},${base} Z`} fill={M.kraft}/>
+    <path d={`M${x0},${top + 60} L${x0 + w},${top + 60}`} stroke={M.kraftDark} strokeWidth={4}/>
+    {Array.from({length: 6}, (_, i) => <path key={i} d={`M${x0 + w * 0.12 + i * w * 0.15},${top} L${x0 + w * 0.12 + i * w * 0.15 + 8},${top + 56}`} stroke={M.kraftDark} strokeWidth={2} opacity={0.6}/>)}
+    <rect x={x0 + 14} y={top + 80} width={10} height={h - 100} fill={M.paper} opacity={0.25}/>
+  </svg>;
+};
 
 // ---------------------------------------------------------------- a brass loupe (screen or world)
 export const Loupe: React.FC<{M: Mat; cx: number; cy: number; r: number; children: React.ReactNode; label?: React.ReactNode}> = ({M, cx, cy, r, children, label}) =>

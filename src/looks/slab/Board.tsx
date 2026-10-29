@@ -2,8 +2,8 @@
 // split-flap tile; from lockF - 8 the tiles run a glyph-free streak reel; the digits then drop in right to left, the
 // rightmost exactly on lockF and the rest one or two frames after (assertLocked guards every digit). Static glyphs (₹ , .
 // % ×) stand from the start; the sign and word units (t, crore, lakh cr, of 11, years) arrive on the lock. Digits are a
-// solid brand colour with a slab-coloured outline and a hard drop (no image inside any digit), with a misregistration
-// ghost that decays over 8 frames at the lock.
+// solid brand colour with a solid hard drop (no image inside any digit), with a misregistration ghost that decays over
+// 8 frames at the lock.
 import React from "react";
 import type {LookBrand} from "../brands/types";
 import {ratio} from "../brands/contrast";
@@ -39,7 +39,9 @@ export const boardLayout = (B: LookBrand, n: LookNum, W: number, maxS: number, m
   const bestOf = (xs: typeof cands) => xs.reduce((a, c) => (c.S > a.S + 1 || (Math.abs(c.S - a.S) <= 1 && c.st > a.st)) ? c : a);
   const inl = bestOf(cands.filter((c) => !c.below));
   const bel = cands.some((c) => c.below) ? bestOf(cands.filter((c) => c.below)) : null;
-  const {S: S0, st, below} = bel && bel.S > inl.S * 1.15 ? bel : inl;
+  // a unit goes under the digits only when it is a word of 4 or more letters (lakh cr, of 11, years); a short unit (t, cr)
+  // stays inline, so it never sits orphaned on a line of its own
+  const {S: S0, st, below} = bel && unitText.replace(/\s/g, "").length >= 4 && bel.S > inl.S * 1.15 ? bel : inl;
   const S = Math.floor(S0 * 10) / 10;
   if (opts.minS && S < opts.minS) throw new Error(`slab board: "${n.text}" fits ${W}x${maxH} only at ${S.toFixed(0)}px (< ${opts.minS})`);
   const font = heroFont(B, st);
@@ -85,16 +87,18 @@ export const Board: React.FC<{B: LookBrand; L: BoardLayout; x: number; y: number
   // static glyphs (₹ , . % ×) arrive with the blank tiles, the sign with the digits
   const visible = (g: G) => g.kind === "digit" ? f >= colLock(n, g.col) : g.kind === "sign" ? f >= n.lockF : f >= (tileFrom ?? -1e9);
   const dropY = (g: G) => g.kind === "digit" ? (1 - springAt(f, colLock(n, g.col), DROP)) * -0.3 * S : 0;
-  // each digit lands inside its own tile box (a split-flap flip from the box's top edge), so a landing digit never
-  // crosses the name block or a row above it
-  const glyph = (g: G, i: number, layer: "drop" | "ghost" | "out" | "fill") => {
+  // Hard drop: one solid extrusion (stacked text-shadows, 1 px apart, down-right) under each glyph, so the drop is a
+  // single shape that never shows through a counter or breaks into pieces. A misregistration ghost decays over 8 frames
+  // at the lock. Each digit lands inside its own tile box (a split-flap flip from the box's top edge), so a landing digit
+  // never crosses the name block or a row above it.
+  const d = Math.max(4, Math.round(0.045 * S));
+  const shadow = style.hero ? Array.from({length: d}, (_, k) => `${k + 1}px ${k + 1}px 0 ${pal.drop}`).join(", ") : undefined;
+  const glyph = (g: G, i: number, layer: "ghost" | "fill") => {
     if (!visible(g)) return null;
     if (g.kind === "digit") assertLocked(n, f, where);
-    const d = layer === "drop" ? 0.045 * S : 0;
     const gx = layer === "ghost" ? 0.036 * S * (1 - gp) : 0, gy = layer === "ghost" ? 0.024 * S * (1 - gp) : 0;
-    const st: React.CSSProperties = {position: "absolute", left: g.x + d + gx, top: g.top + d + gy + dropY(g), ...fitCss(font, g.size), lineHeight: `${g.size}px`,
-      color: layer === "drop" ? pal.drop : layer === "ghost" ? pal.ghost : layer === "out" ? pal.bg : color};
-    if (layer === "out") Object.assign(st, {WebkitTextStroke: `${Math.max(3, 0.05 * S)}px ${pal.bg}`});
+    const st: React.CSSProperties = {position: "absolute", left: g.x + gx, top: g.top + gy + dropY(g), ...fitCss(font, g.size), lineHeight: `${g.size}px`,
+      color: layer === "ghost" ? pal.ghost : color, textShadow: layer === "fill" ? shadow : undefined};
     if (layer === "ghost") st.opacity = Math.min(1, (1 - gp) * 1.6);
     if (g.kind !== "digit" || dropY(g) === 0) return <span key={`${layer}${i}`} style={st}>{g.ch}</span>;
     const cx = g.x - 0.05 * S, cy = -0.012 * S;
@@ -105,14 +109,13 @@ export const Board: React.FC<{B: LookBrand; L: BoardLayout; x: number; y: number
   return <div style={{position: "absolute", left: x, top: y, width: L.w, height: L.h, transform: `scale(${sc})`, transformOrigin: "50% 100%"}}>
     {L.glyphs.map((g, i) => g.kind === "digit" && !visible(g) && f >= tilesFrom
       ? <Tile key={`t${i}`} x={g.x} y={0} w={g.w} h={CAP * S} f={f} reelFrom={n.lockF - REEL} seed={g.col + 1} pal={pal} streak={ratio(color, pal.tile) > 2 ? color : pal.bg}/> : null)}
-    {style.hero && L.glyphs.map((g, i) => glyph(g, i, "drop"))}
     {ghostOn && L.glyphs.map((g, i) => glyph(g, i, "ghost"))}
-    {style.hero && L.glyphs.map((g, i) => glyph(g, i, "out"))}
     {L.glyphs.map((g, i) => glyph(g, i, "fill"))}
     {L.unit && f >= n.lockF && (() => {
       const p = ease(f, n.lockF, n.lockF + 6);
-      return <div style={{position: "absolute", left: L.unit.x + (1 - p) * 50, top: L.unit.top, ...fitCss(display(B, 100), L.unit.size), lineHeight: `${L.unit.size}px`,
-        color: style.unitColor ?? color, opacity: Math.min(1, p * 2)}}>{L.unit.text}</div>;
+      // the unit wipes in left to right in place (a slide from the right would leave the safe box)
+      return <div style={{position: "absolute", left: L.unit.x, top: L.unit.top, ...fitCss(display(B, 100), L.unit.size), lineHeight: `${L.unit.size}px`,
+        color: style.unitColor ?? color, clipPath: `inset(-0.1em ${((1 - p) * 100).toFixed(2)}% -0.1em 0)`}}>{L.unit.text}</div>;
     })()}
   </div>;
 };

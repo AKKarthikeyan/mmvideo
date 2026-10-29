@@ -1,0 +1,30 @@
+{
+ "_note": "Slab only (src/looks/slab/prep.ts). Stopgap until the lead moves these into each config's look_opts: a config's own look_opts.beatSources always wins over beatSources here. quals are qualifier words the look prints before a number, taken only from the source table's 'printed' field or from a money_test with both min and max (LOOKS_SPEC.md, Integration 1). plate: Slab shows the Short's AI cover framed on the end card only when plate is true here; none is, after the 27 Oct review (cw01's cover shows red cola bottles, gd01's shows AI coins and a pendant).",
+ "cw01": {
+  "beatSources": {
+   "spot": "NielsenIQ via ET Retail, as reported · Jan-Sep 2024",
+   "Campa": "GlobalData · March 2023",
+   "Challengers": "NielsenIQ via ET Retail, as reported · Jan-Sep 2025 and 2024",
+   "Coke + Pepsi": "NielsenIQ via ET Retail, as reported · Jan-Sep 2025 and 2024",
+   "Reply": "Storyboard18 · 25 Nov 2025",
+   "say": "GlobalData, Mar 2023 · Storyboard18, Nov 2025",
+   "end": "NielsenIQ via ET Retail · GlobalData · Storyboard18"
+  },
+  "quals": {
+   "Challengers": {"15%": "almost", "7%": "roughly"}
+  },
+  "_why": {
+   "beatSources": "public/datayt/sources/softdrinks/share_2025.json: the 93% hook share is Jan-Sep 2024 ('coke pepsi 2024'); the Campa ₹10 / 200 ml price is GlobalData, March 2023 (notes); the majors' new ₹10 packs are Storyboard18 (notes; data.json source: Storyboard18, 25 Nov 2025).",
+   "quals": "share_2025.json items 'campa lahori 2025' printed 'almost 15%' and 'campa lahori 2024' printed 'roughly 7%'."
+  }
+ },
+ "gd01": {
+  "quals": {
+   "spot": {"3×": "about"},
+   "Homes vs US": {"3×": "about"}
+  },
+  "_why": {
+   "quals": "configs/gd01.json money_tests: 'Indian homes hold about three times the US government's gold', min 2.85, max 3.15 (2.89 at the low estimate); the b3 narration says 'About three times as much.'"
+  }
+ }
+}

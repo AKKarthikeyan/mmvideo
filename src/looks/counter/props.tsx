@@ -101,72 +101,155 @@ export const Card: React.FC<{M: Mat; x: number; y: number; w: number; h: number;
   </div>;
 
 // ---------------------------------------------------------------- a kraft sign (kicker), taped
-export const Sign: React.FC<{B: LookBrand; M: Mat; text: string; x: number; y: number; maxW: number; vis?: number; rot?: number; size?: number}> =
-  ({B, M, text, x, y, maxW, vis = 1, rot = -1.2, size = 32}) => {
+// segs: the text cut into parts; a part with a gate frame (a value-like number) is a glyph-free blank before it.
+export const Sign: React.FC<{B: LookBrand; M: Mat; text: string; x: number; y: number; maxW: number; vis?: number; rot?: number; size?: number;
+  segs?: {t: string; gate: number}[]; f?: number; align?: "left" | "right"}> =
+  ({B, M, text, x, y, maxW, vis = 1, rot = -1.2, size = 36, segs, f = 0, align = "left"}) => {
   const font = fitFont(B.f.mono, 0.04);
-  const s = fitSize(text, font, maxW - 36, size, 22);
-  const w = measure(text, font, s) + 36;
+  const s = fitSize(text, font, maxW - 36, size, 30);
+  const w = Math.min(maxW, measure(text, font, s) + 36);
   const color = assertContrast(B.c.ink, M.kraft, s, "sign");
-  return <div style={{position: "absolute", left: x, top: y, width: w, height: s + 22, opacity: vis, transform: `rotate(${rot}deg)`, filter: shadow(M, 0.6)}}>
+  const parts = segs ?? [{t: text, gate: -Infinity}];
+  return <div style={{position: "absolute", left: align === "right" ? x - w : x, top: y, width: w, height: s + 24, opacity: vis, transform: `rotate(${rot}deg)`, filter: shadow(M, 0.6)}}>
     <div style={{position: "absolute", inset: 0, background: M.kraft}}/>
-    <div style={{position: "absolute", left: -16, top: -10, width: 64, height: 22, background: rgba(M.paper, 0.6), transform: "rotate(-24deg)"}}/>
-    <div style={{position: "absolute", left: 18, top: 11, ...fitCss(font, s), color, lineHeight: 1}}>{text}</div>
-  </div>;
-};
-
-// ---------------------------------------------------------------- shelf-edge label (name + optional value), clipped to the counter edge
-export const ShelfLabel: React.FC<{B: LookBrand; M: Mat; cx: number; y: number; maxW: number; name: string; nameOn: boolean; num?: LookNum | null; f: number; hot?: boolean; dim?: boolean}> =
-  ({B, M, cx, y, maxW, name, nameOn, num, f, hot, dim}) => {
-  const mono = fitFont(B.f.mono, 0.03), hero = fitFont(B.f.hero);
-  const label = name.toUpperCase();
-  const ns = fitSize(label, mono, maxW - 24, 22, 15);
-  const vs = num ? fitSize(num.text, hero, maxW - 24, 36, 24) : 0;
-  const w = Math.min(maxW, Math.max(measure(label, mono, ns), num ? measure(num.text, hero, vs) : 0) + 26);
-  const bg = hot ? M.paper : M.kraft;
-  const ink = assertContrast(B.c.ink, bg, ns, "shelf label");
-  const left = Math.max(SAFE.x0, Math.min(SAFE.x1 - w, cx - w / 2));
-  if (!nameOn && (!num || !shown(num, f))) return null;      // nothing to say yet: no empty label
-  return <div style={{position: "absolute", left, top: y, width: w, opacity: dim ? 0.78 : 1, filter: shadow(M, 0.5)}}>
-    <div style={{background: bg, padding: "5px 13px 6px", borderTop: `5px solid ${hot ? B.c.accent : M.kraftDark}`}}>
-      <div style={{...fitCss(mono, ns), color: ink, lineHeight: 1.12, opacity: nameOn ? 1 : 0}}>{label}</div>
-      {num && <div style={{marginTop: 3, height: vs * 0.95, lineHeight: 0.95}}><Num n={num} f={f} font={hero} size={vs} color={ink} blank={rgba(B.c.ink, 0.18)} where="shelf label"/></div>}
+    <div style={{position: "absolute", left: align === "right" ? w - 48 : -16, top: -10, width: 64, height: 22, background: rgba(M.paper, 0.6), transform: `rotate(${align === "right" ? 24 : -24}deg)`}}/>
+    <div style={{position: "absolute", left: 18, top: 12, ...fitCss(font, s), color, lineHeight: 1, whiteSpace: "pre"}}>
+      {parts.map((p, i) => f >= p.gate ? <span key={i}>{p.t}</span>
+        : <span key={i} style={{display: "inline-block", width: measure(p.t, font, s), height: s * 0.7, background: rgba(B.c.ink, 0.18), borderRadius: 3}}/>)}
     </div>
   </div>;
 };
-export const LABEL_Y = 1336;
+
+// ---------------------------------------------------------------- shelf-edge label (a name), on the counter front
+// One line at 34-28 px, else two lines at 30-24 px. Values never go here: they sit on the object (TopTag) or its tag.
+export const LABEL_Y = 1304;
+const labelFit = (B: LookBrand, name: string, maxW: number) => {
+  const mono = fitFont(B.f.mono, 0.02);
+  const label = name.toUpperCase();
+  const one = fitSize(label, mono, maxW - 24, 40, 30);
+  const fits = (r: {size: number; lines: string[]}) => r.lines.length <= 2 && r.lines.every((l) => measure(l, mono, r.size) <= maxW - 24);
+  let L2 = measure(label, mono, one) <= maxW - 24 ? {size: one, lines: [label]} : fitLines(label, mono, maxW - 24, 2, 32, 26);
+  // too long for two lines at 26 px: two lines at 24, and only then three (the lane above the source chit holds two)
+  if (!fits(L2)) L2 = fitLines(label, mono, maxW - 24, 2, 26, 24);
+  if (!fits(L2)) L2 = fitLines(label, mono, maxW - 24, 3, 24, 22);
+  const w = Math.min(maxW, Math.max(...L2.lines.map((l) => measure(l, mono, L2.size))) + 26);
+  return {mono, L2, w};
+};
+export const ShelfLabel: React.FC<{B: LookBrand; M: Mat; cx: number; y?: number; maxW: number; name: string; nameOn: boolean; hot?: boolean; dim?: boolean; left?: number}> =
+  ({B, M, cx, y = LABEL_Y, maxW, name, nameOn, hot, dim, left: left0}) => {
+  if (!nameOn || !name) return null;
+  const {mono, L2, w} = labelFit(B, name, maxW);
+  const bg = hot ? M.paper : M.kraft;
+  const ink = assertContrast(B.c.ink, bg, L2.size, "shelf label");
+  const left = left0 ?? Math.max(SAFE.x0, Math.min(SAFE.x1 - w, cx - w / 2));
+  return <div style={{position: "absolute", left, top: y, width: w, opacity: dim ? 0.8 : 1, filter: shadow(M, 0.5)}}>
+    <div style={{background: bg, padding: "4px 13px 5px", borderTop: `5px solid ${hot ? B.c.accent : M.kraftDark}`}}>
+      {L2.lines.map((l, i) => <div key={i} style={{...fitCss(mono, L2.size), color: ink, lineHeight: L2.lines.length > 1 ? 1.0 : 1.1, whiteSpace: "nowrap"}}>{l}</div>)}
+    </div>
+  </div>;
+};
+// A row of shelf labels under objects at screen x `cx`. The row's width is shared by need: every label first gets its
+// longest word, the rest goes to the labels whose names are longest (so a long name wraps to two lines at a readable
+// size instead of three small ones), then they are pushed apart so none overlaps another and all stay in the safe box.
+export const ShelfRow: React.FC<{B: LookBrand; M: Mat; labels: {cx: number; name: string; on: boolean; hot?: boolean; dim?: boolean}[]}> = ({B, M, labels}) => {
+  const n = labels.length, gap = 14;
+  const mono = fitFont(B.f.mono, 0.02);
+  const names = labels.map((l) => (l.name || " ").toUpperCase());
+  const avail = W_SAFE - gap * (n - 1);
+  const natural = names.map((nm) => measure(nm, mono, 30) + 26);
+  const word = names.map((nm) => Math.max(...nm.split(/\s+/).map((w) => measure(w, mono, 26))) + 26);
+  let w = word.slice();
+  const sum = (a: number[]) => a.reduce((x, y) => x + y, 0);
+  if (sum(w) > avail) w = w.map((x) => (x * avail) / sum(w));
+  else {
+    const need = natural.map((nat, i) => Math.max(0, nat - w[i])), total = sum(need), rem = avail - sum(w);
+    if (total > 0) w = w.map((x, i) => x + need[i] * Math.min(1, rem / total));
+  }
+  const maxWs = w.map((x) => Math.min(480, x));
+  const ws = labels.map((l, i) => labelFit(B, l.name || " ", maxWs[i]).w);
+  const xs = labels.map((l, i) => Math.max(SAFE.x0, Math.min(SAFE.x1 - ws[i], l.cx - ws[i] / 2)));
+  for (let i = 1; i < n; i++) xs[i] = Math.max(xs[i], xs[i - 1] + ws[i - 1] + gap);
+  if (n) xs[n - 1] = Math.min(xs[n - 1], SAFE.x1 - ws[n - 1]);
+  for (let i = n - 2; i >= 0; i--) xs[i] = Math.min(xs[i], xs[i + 1] - ws[i] - gap);
+  if (n) xs[0] = Math.max(xs[0], SAFE.x0);
+  return <>{labels.map((l, i) => <ShelfLabel key={i} B={B} M={M} cx={l.cx} maxW={maxWs[i]} name={l.name} nameOn={l.on} hot={l.hot} dim={l.dim} left={xs[i]}/>)}</>;
+};
+
+// ---------------------------------------------------------------- a value tag on an object (screen space)
+// The printed value, its source's printed qualifier above it ("ALMOST"), and a provenance line under it when the value's
+// beat names an estimate source (gd01: "WGC ESTIMATE, AS REPORTED"). (ax, ay): the object point the tag sits on (its
+// bottom centre), clamped into the safe box. Shows nothing before the value's lock.
+type TagIn = {n: LookNum; q?: string; prov?: string | null; size?: number; ax: number; ay: number};
+// The box of a value tag (screen px), so tags in a row can be kept from overlapping each other.
+export const topTagBox = (B: LookBrand, t: TagIn) => {
+  const {n, q, prov, size = 44, ax, ay} = t;
+  const hero = fitFont(B.f.hero), mono = fitFont(B.f.mono, 0.04);
+  const vs = fitSize(n.text, hero, W_SAFE - 40, size, 30);
+  const qs = q ? 28 : 0;
+  const provL = prov ? fitLines(prov.toUpperCase(), mono, 360, 3, 26, 24) : null;
+  const w = Math.max(measure(n.text, hero, vs), q ? measure(q.toUpperCase(), mono, qs) : 0, provL ? Math.max(...provL.lines.map((l) => measure(l, mono, provL.size))) : 0) + 28;
+  const h = vs * 0.95 + 16 + (q ? qs + 4 : 0) + (provL ? provL.lines.length * (provL.size * 1.15) + 6 : 0);
+  const left = Math.max(SAFE.x0, Math.min(SAFE.x1 - w, ax - w / 2));
+  const top = Math.max(SAFE.y0 + 60, Math.min(SAFE.y1 - 160 - h, ay - h - 10));
+  return {vs, qs, provL, w, h, left, top, hero, mono};
+};
+// Adjusted anchor heights for a row of value tags: a tag that would overlap one already placed (left to right) is raised
+// clear of it. Tags not yet shown reserve their room too, so nothing jumps when they land.
+export const spreadAy = (B: LookBrand, tags: (TagIn | null)[]): number[] => {
+  const placed: {l: number; r: number; t: number; b: number}[] = [];
+  return tags.map((tg) => {
+    if (!tg) return 0;
+    let ay = tg.ay;
+    for (let k = 0; k < 6; k++) {
+      const g = topTagBox(B, {...tg, ay});
+      const hit = placed.find((p) => g.left < p.r + 6 && g.left + g.w > p.l - 6 && g.top < p.b + 6 && g.top + g.h > p.t - 6);
+      if (!hit) { placed.push({l: g.left, r: g.left + g.w, t: g.top, b: g.top + g.h}); break; }
+      ay = hit.t + 2;
+    }
+    return ay;
+  });
+};
+
+export const TopTag: React.FC<{B: LookBrand; M: Mat; n: LookNum; f: number; ax: number; ay: number; q?: string; prov?: string | null; size?: number; dim?: boolean; at?: number}> =
+  ({B, M, n, f, ax, ay, q, prov, size = 44, dim, at}) => {
+  const from = Math.max(n.lockF, at ?? -Infinity);
+  if (f < from) return null;
+  assertLocked(n, f, "top tag");
+  const {vs, qs, provL, w, left, top, mono} = topTagBox(B, {n, q, prov, size, ax, ay});
+  const k = Math.min(1, (f - from) / 5);
+  const ink = assertContrast(B.c.ink, B.c.paper, vs, "top tag");
+  return <div style={{position: "absolute", left, top, width: w, opacity: (dim ? 0.86 : 1) * k, transform: `translateY(${(1 - k) * -14}px) rotate(-1.5deg)`, filter: shadow(M, 0.5)}}>
+    <div style={{background: B.c.paper, padding: "6px 14px 8px", borderRadius: 4, borderLeft: `6px solid ${B.c.accent}`}}>
+      {q && <div style={{...fitCss(mono, qs), color: assertContrast(B.c.accent, B.c.paper, qs, "top tag qualifier"), lineHeight: 1.05, marginBottom: 4}}>{q.toUpperCase()}</div>}
+      <div style={{height: vs * 0.95, lineHeight: 0.95, ...fitCss(fitFont(B.f.hero), vs), color: ink, whiteSpace: "nowrap"}}>{n.text}</div>
+      {provL && <div style={{marginTop: 6}}>{provL.lines.map((l, i) => <div key={i} style={{...fitCss(mono, provL.size), color: assertContrast(B.c.accent, B.c.paper, provL.size, "provenance"), lineHeight: 1.15}}>{l}</div>)}</div>}
+    </div>
+  </div>;
+};
 
 // ---------------------------------------------------------------- taped source chit
-export const SourceChit: React.FC<{B: LookBrand; M: Mat; text: string; y?: number}> = ({B, M, text, y = 1424}) => {
+export const SourceChit: React.FC<{B: LookBrand; M: Mat; text: string; y?: number}> = ({B, M, text, y = 1422}) => {
   const font = fitFont(B.f.mono, 0.02);
   const full = `SOURCE · ${text}`;
-  const one = fitSize(full, font, W_SAFE - 30, 26, 17);
+  // 32 px on one line when it fits, else two lines at the largest size that fits (never under 26 px)
+  const one = fitSize(full, font, W_SAFE - 30, 32, 28);
   const fits = measure(full, font, one) <= W_SAFE - 30;
-  const L2 = fits ? {size: one, lines: [full]} : fitLines(full, font, W_SAFE - 30, 2, 22, 16);
-  const h = L2.lines.length * Math.round(L2.size * 1.3) + 16;
-  const top = Math.min(y, SAFE.y1 - h - 4);
+  const L2 = fits ? {size: one, lines: [full]} : fitLines(full, font, W_SAFE - 30, 2, 32, 26);
+  const h = L2.lines.length * Math.round(L2.size * 1.2) + 14;
+  const top = Math.min(y, SAFE.y1 - h - 2);
   const w = Math.max(...L2.lines.map((l) => measure(l, font, L2.size))) + 30;
   const color = assertContrast(B.c.ink, M.kraft, L2.size, "source chit");
   return <div style={{position: "absolute", left: SAFE.x0, top, width: w, height: h, transform: "rotate(-0.6deg)", filter: shadow(M, 0.5)}}>
     <div style={{position: "absolute", inset: 0, background: M.kraft}}/>
     <div style={{position: "absolute", right: -18, top: -8, width: 60, height: 20, background: rgba(M.paper, 0.55), transform: "rotate(28deg)"}}/>
-    <div style={{position: "absolute", left: 15, top: 8, ...fitCss(font, L2.size), color, lineHeight: 1.3}}>{L2.lines.map((l, i) => <div key={i}>{l}</div>)}</div>
+    <div style={{position: "absolute", left: 15, top: 7, ...fitCss(font, L2.size), color, lineHeight: 1.2}}>{L2.lines.map((l, i) => <div key={i}>{l}</div>)}</div>
   </div>;
-};
-
-// ---------------------------------------------------------------- brass unit key
-export const UnitKey: React.FC<{B: LookBrand; M: Mat; text: string; x: number; y: number; vis?: number; dx?: number}> = ({B, M, text, x, y, vis = 1, dx = 0}) => {
-  const font = fitFont(B.f.mono, 0.06);
-  const s = fitSize(text, font, 300, 26, 18);
-  const color = assertContrast(B.c.ink, M.brassLight, s, "unit key");
-  return <div style={{position: "absolute", left: x + dx, top: y, opacity: vis, padding: "8px 18px", borderRadius: 8,
-    background: `linear-gradient(180deg, ${M.brassLight}, ${M.brass})`, boxShadow: `0 6px 10px ${rgba(M.shadow, 0.5)}, inset 0 1px 0 ${rgba(M.paper, 0.6)}`,
-    ...fitCss(font, s), color, lineHeight: 1}}>{text}</div>;
 };
 
 // ---------------------------------------------------------------- provenance stamp (always on paper, never a hero)
 export const Stamp: React.FC<{B: LookBrand; text: string; x: number; y: number; rot?: number; k?: number; maxW?: number}> = ({B, text, x, y, rot = -8, k = 1, maxW = 300}) => {
   const font = fitFont(B.f.mono, 0.05);
-  const L2 = fitLines(text.toUpperCase(), font, maxW, 2, 24, 16);
+  const L2 = fitLines(text.toUpperCase(), font, maxW, 2, 30, 26);
   return <div style={{position: "absolute", left: x, top: y, transform: `rotate(${rot}deg) scale(${1.5 - 0.5 * k})`, opacity: k * 0.9, mixBlendMode: "multiply",
     border: `4px solid ${B.c.accent}`, borderRadius: 8, padding: "6px 12px", color: B.c.accent, ...fitCss(font, L2.size), lineHeight: 1.2}}>
     {L2.lines.map((l, i) => <div key={i}>{l}</div>)}

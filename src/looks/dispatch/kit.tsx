@@ -51,7 +51,7 @@ export const Masthead: React.FC<{B: LookBrand; chip: string; color: string; on: 
   const chipFont = F.body(B, 700, ls);
   return <>
     {wordmark && <div style={{position: "absolute", left: B.safe.x0, top: MAST_Y, height: 46, display: "flex", alignItems: "center", gap: 12}}>
-      {plate ? <div style={{width: 54, height: 54, borderRadius: 27, background: plate, display: "flex", alignItems: "center", justifyContent: "center", marginLeft: -4}}><B.Mark size={40} on="light"/></div>
+      {plate ? <div style={{width: 52, height: 52, borderRadius: 26, background: plate, display: "flex", alignItems: "center", justifyContent: "center", marginLeft: 0}}><B.Mark size={40} on="light"/></div>
         : <B.Mark size={46} on={on}/>}<B.Wordmark size={B.wordmark.stacked ? 50 : 36} on={on}/>
     </div>}
     <div style={{position: "absolute", right: 1080 - B.safe.x1, top: MAST_Y + 23 - size * 0.62, ...css(chipFont, size), color}}>{text}</div>
@@ -216,8 +216,9 @@ export const Gated: React.FC<GatedProps> = ({text, nums, lockF, f, ff, size, wid
         if (f < x.lockF) inner = <Slug w={measure(x.t, ff, size)} size={size} color={x.hot ? hot : color}/>;
         else {
           if (x.num && "role" in (x.num as object)) assertLocked(x.num as unknown as LookNum, f, "running text");
+          // a number lands whole: it rises out of its own baseline mask, so no frame shows part of it ("8,13")
           const q = ramp(f, x.lockF, 6);
-          inner = <span style={{display: "inline-block", clipPath: `inset(-20% ${(1 - q) * 100}% -20% 0)`}}>{x.t}</span>;
+          inner = <span style={{display: "inline-block", clipPath: `inset(${(1 - q) * 100}% -4% -20% -4%)`}}>{x.t}</span>;
         }
       }
       return <React.Fragment key={wi}>{wi > 0 && x.space ? " " : ""}<span style={{display: "inline-block", overflow: "hidden", verticalAlign: "bottom", lineHeight: `${Math.round(size * lineH)}px`}}>
@@ -229,7 +230,7 @@ export const Gated: React.FC<GatedProps> = ({text, nums, lockF, f, ff, size, wid
 // ---------- the INK verb: a hero figure ----------
 // A printed number set as an editorial hero: its qualifier ("about", "over", "~") and word units in the grotesque at
 // 0.3 / 0.34 em, symbols (%, ×) in the serif at 0.62 em, the figure in the hero serif. It INKs exactly at its lock frame:
-// a 7-frame wipe, the weight rising from light to the face's heaviest over 10 frames, a scale from 0.94. Before that, only
+// a 7-frame wipe up from the baseline (the whole figure at once, never a part of it), the weight rising from light to the face's heaviest over 10 frames, a scale from 0.94. Before that, only
 // the qualifier and a hairline slot of the figure's size.
 const isSym = (u: string) => /^[%×]$/.test(u.trim());
 export const heroParts = (n: NumParse) => ({qual: n.qual.trim(), main: n.sign + n.prefix + n.digits, unit: n.unit.trim(), sym: isSym(n.unit)});
@@ -259,7 +260,7 @@ export const Ink: React.FC<{B: LookBrand; n: LookNum; f: number; size: number; c
   return <div style={{display: "flex", alignItems: "baseline", whiteSpace: "pre", height: size * 0.92, lineHeight: 1}}>
     {p.qual && <span style={{...css(F.body(B, 800, 0.02), size * 0.3), color: qualColor ?? color, marginRight: size * 0.07, alignSelf: "flex-start", marginTop: size * 0.2}}>{p.qual}</span>}
     {shown
-      ? <span style={{display: "inline-flex", alignItems: "baseline", clipPath: `inset(-25% ${(1 - wipe) * 100}% -25% -2%)`, transform: `scale(${sc})`, transformOrigin: "0% 90%", color}}>
+      ? <span style={{display: "inline-flex", alignItems: "baseline", clipPath: `inset(${(1 - wipe) * 125 - 25}% -4% -25% -4%)`, transform: `scale(${sc})`, transformOrigin: "0% 90%", color}}>
           <span style={heroCss}>{p.main}</span>
           {p.unit && (p.sym ? <span style={{...heroCss, fontSize: size * 0.62, marginLeft: size * 0.02}}>{p.unit}</span>
             : <span style={{...css(F.body(B, 800), size * 0.34), marginLeft: size * 0.07}}>{p.unit}</span>)}

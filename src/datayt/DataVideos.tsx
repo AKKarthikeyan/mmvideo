@@ -21,6 +21,7 @@ import {LONGS} from "./longData";
 import {LongPostStills} from "./LongPosts";
 import {CoverStills} from "./Covers";
 import {LookCompositions} from "../looks/LookCompositions";
+import {CartoonCompositions} from "../looks/cartoon/CartoonCompositions";
 
 export const DataVideoCompositions: React.FC = () => <>
   <BrandStills/>
@@ -49,4 +50,5 @@ export const DataVideoCompositions: React.FC = () => <>
     durationInFrames: Math.ceil(d.total * 30), fps: 30, width: 1920, height: 1080} as any)}/>)}
   {/* premium-look previews: DATA-<id>-look-<slab|counter|dispatch> for the national data stories, and the harness contact sheet */}
   <LookCompositions/>
+  <CartoonCompositions/>
 </>;

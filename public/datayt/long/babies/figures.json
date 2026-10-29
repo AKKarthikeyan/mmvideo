@@ -1,0 +1,1557 @@
+{
+ "meta": {
+  "status": "VERIFIED 28 Oct 2026 against the IIPS NFHS-6 fact-sheet compendium (all 35 states and UTs plus India, indicators 1, 2, 3, 12, 16, 18, 864 cells, 0 differences) and the NFHS-4 and NFHS-5 India reports. NFHS-6 fact sheets are PROVISIONAL (IIPS, May 2026). Revised 28 Oct 2026 after the independent check: the NFHS-4 value of Andaman and Nicobar Islands and of NCT of Delhi is withheld from tfr (the 25 Jul 2017 ministry release and the report table disagree); Lok Sabha Q973 (24 Jul 2026) added as a second official source for the NFHS-5 and NFHS-6 state TFRs (72 cells, 0 differences).",
+  "unit": "children per woman (tfr); percent (school10, marriage18, age_structure)",
+  "release_status": "provisional (IIPS NFHS-6 fact sheets, released 29 May 2026; district compendiums released 20-21 Aug 2026 not checked for revisions)",
+  "read_date": "2026-10-28",
+  "definitions": {
+   "tfr": "total fertility rate: children per woman aged 15-49 at the age-specific rates of the three years before the survey (NFHS-5 report p.111)",
+   "school10": "NFHS-6 indicator 12: women age 15-49 with 10 or more years of schooling (%)",
+   "marriage18": "NFHS-6 indicator 16: women age 20-24 married before age 18 (%)",
+   "age_structure": "NFHS-6 indicators 2 and 3: population below age 15 (%) and age 60 and above (%)"
+  },
+  "indicator_ids_nfhs6": {
+   "tfr": 18,
+   "school10": 12,
+   "marriage18": 16,
+   "under15": 2,
+   "age60plus": 3
+  },
+  "coverage": "NFHS-6 gives results for 35 states and union territories (27 states + 8 UTs). Manipur is not in the release (IIPS fact-sheet introduction, p.3, and the IIPS release note). NFHS-5 covered 36 including Manipur. India has 28 states and 8 UTs. The Lok Sabha annexure (S11) lists Manipur with NFHS-5 2.2 and prints NA for NFHS-6.",
+  "comparability": {
+   "rounding": "nfhs5 and nfhs6 are the one-decimal figures printed in the NFHS-6 fact sheets. nfhs4 and nfhs3 are the two-decimal values of Table 4.3 of the NFHS-5 India report (identical to the NFHS-4 report) rounded half-up to one decimal; see tfr_report_2dp. Jharkhand NFHS-4 is 2.55, shown 2.6.",
+   "jammu_kashmir_ladakh": "NFHS-4 (2015-16) covered one Jammu and Kashmir that included Ladakh (2.01). From NFHS-5 they are separate union territories and the NFHS-5 India report prints na for both in the NFHS-4 column. So Jammu and Kashmir and Ladakh have NO nfhs4 in tfr (the old 2.0 was removed on 28 Oct 2026 because it is a different territory); the old-boundary value is kept in tfr_report_2dp as nfhs4_old_boundary and may be shown only with that label.",
+   "dadra_daman_diu": "NFHS-4 had Dadra and Nagar Haveli (2.32) and Daman and Diu (1.68) separately; merged in 2020; no combined nfhs4.",
+   "telangana_andhra": "Telangana separate from 2014; NFHS-3 (2005-06) has no separate Andhra Pradesh or Telangana TFR in the NFHS-4/5 tables (na).",
+   "tfr_reference_period": "each NFHS TFR covers the three years before its survey: about 2013-15 for NFHS-4 and about 2017-19 for NFHS-5 (report table notes); the survey rounds are named 2015-16, 2019-21, 2023-24.",
+   "nfhs4_omitted": [
+    "Jammu and Kashmir",
+    "Dadra & Nagar Haveli and Daman & Diu",
+    "Ladakh"
+   ],
+   "nfhs4_withheld_conflict": {
+    "Andaman and Nicobar Islands": "NFHS-4 TFR is published two ways: 1.5 in the MoHFW/PIB 'Findings of NFHS-4' table of 25 Jul 2017 (S12) and 1.44 (shown 1.4) in Table 4.3 of the NFHS-5 India report (S5). Not settled: the DHS host returned HTTP 403 on the revision pass. So tfr has NO nfhs4 for it. Both are in tfr_report_2dp (nfhs4, nfhs4_pib_2017_1dp). The fall to NFHS-5 (-0.1 or -0.2) is 'about the same' either way.",
+    "NCT of Delhi": "NFHS-4 TFR is 1.7 in the 2017 ministry release (S12) and 1.78 (shown 1.8) in the NFHS-5 report Table 4.3 (S5). Not used in the script; withheld for the same reason."
+   },
+   "nfhs4_checked_against_pib_2017": "Every other NFHS-4 value in tfr (Bihar 3.4, Meghalaya 3.0, Assam 2.2, Uttar Pradesh 2.7, Jharkhand 2.6, Nagaland 2.7, Kerala 1.6, Tamil Nadu 1.7, Goa 1.7, Sikkim 1.2, Lakshadweep 1.8, Chhattisgarh 2.2, India 2.2, and all the rest) equals the one-decimal column of the 25 Jul 2017 ministry release (S12); the only differences are the two withheld places. J&K 2.0 and Manipur 2.6 and Dadra and Nagar Haveli / Daman and Diu are in that release but are not in tfr (old boundary, not in NFHS-6, merged)."
+  },
+  "sources": [
+   {
+    "id": "S1",
+    "name": "IIPS, NFHS-6 (2023-24) India and State/UT Fact Sheets, May 2026 (183 pp.; HTTP Last-Modified 29 May 2026)",
+    "url": "https://www.nfhsiips.in/nfhsuser/assets/National%20Family%20Health%20Survey%20(NFHS-6)%202023-2024%20Fact%20Sheets.pdf",
+    "read": "2026-10-28",
+    "cells": "indicators 1, 2, 3, 12, 16, 18 on the first page of each state section; printed pages in CLAIMS.md; Introduction p.3 (except Manipur; provisional; 679,238 households, 716,397 women, 100,977 men; fieldwork 28 May 2023 to 31 Dec 2024); Appendix 1 p.153-155 (India RSE of TFR 0.003); Appendix 2 p.157-158 (sample by state)"
+   },
+   {
+    "id": "S2",
+    "name": "IIPS, NFHS-6 release note: Release of NFHS-6 Compendiums of India/State/District Fact Sheets",
+    "url": "https://www.nfhsiips.in/nfhsuser/assets/pdf/nfhs6%20fact%20sheet%20compendiums%20release%20writeup%20for%20website%20FINAL%2021aug26.pdf",
+    "read": "2026-10-28",
+    "cells": "except Manipur; India/State compendium released 29 May 2026; district compendiums 20 and 21 Aug 2026; fieldwork May 2023 to Dec 2024 in 715 districts"
+   },
+   {
+    "id": "S3",
+    "name": "IIPS NFHS site, home and release pages",
+    "url": "https://www.nfhsiips.in/nfhsuser/index.php and https://www.nfhsiips.in/nfhsuser/release-details.php",
+    "read": "2026-10-28",
+    "cells": "lists fact sheets of India, States and UTs and district compendiums of 35 States/UTs"
+   },
+   {
+    "id": "S4",
+    "name": "PIB, Ministry of Health and Family Welfare: Union Health Ministry Releases National Family Health Survey - 6 (Release ID 2266600, posted 29 May 2026)",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2266600",
+    "read": "2026-10-28",
+    "cells": "release date 29 May 2026; 'India's Total Fertility Rate (TFR) remains at 2.0'; NFHS-6 conducted during 2023-24 by MoHFW with IIPS Mumbai as the nodal agency; 'nearly 6.79 lakh households across 715 districts' (re-read on the revision pass, 28 Oct 2026)"
+   },
+   {
+    "id": "S5",
+    "name": "IIPS and MoHFW, NFHS-5 India Report 2019-21 (hosted by the DHS Program, FR375)",
+    "url": "https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf",
+    "read": "2026-10-28",
+    "cells": "Chapter 4 p.111-112 (TFR definition, below replacement level of 2.1); Table 4.1 (printed p.123); Table 4.3 (printed p.125-126: TFR by state for NFHS-5, NFHS-4, NFHS-3)",
+    "note": "read in the first pass; on the revision pass the DHS host returned HTTP 403 to the fetch tool, so the tables were not re-opened"
+   },
+   {
+    "id": "S6",
+    "name": "IIPS and MoHFW, NFHS-4 India Report 2015-16 (hosted by the DHS Program, FR339)",
+    "url": "https://dhsprogram.com/pubs/pdf/FR339/FR339.pdf",
+    "read": "2026-10-28",
+    "cells": "Chapter 4 p.112 (TFR 2.2; replacement level 2.1); Table 4.3 (TFR by state for NFHS-4, NFHS-3, NFHS-2)",
+    "note": "read in the first pass; on the revision pass the DHS host returned HTTP 403 to the fetch tool, so the tables were not re-opened"
+   },
+   {
+    "id": "S7",
+    "name": "IIPS and Macro International, NFHS-3 India Report Vol. I, 2005-06 (hosted by the DHS Program)",
+    "url": "https://dhsprogram.com/pubs/pdf/FRIND3/FRIND3-Vol1%5BOct-17-2008%5D.pdf",
+    "read": "2026-10-28",
+    "cells": "p.xxxi (TFR 2.7); Table 4.1 (TFR 15-49: NFHS-3 2.68, NFHS-2 2.85, NFHS-1 3.39)"
+   },
+   {
+    "id": "S8",
+    "name": "UN DESA, Indicators of Sustainable Development methodology sheet: Total fertility rate (replacement-level fertility, ageing, dependency)",
+    "url": "https://www.un.org/esa/sustdev/natlinfo/indicators/methodology_sheets/demographics/total_fertility_rate.pdf",
+    "read": "2026-10-28",
+    "cells": "definitions of replacement-level and below-replacement fertility; long-run effect on working-age share"
+   },
+   {
+    "id": "S9",
+    "name": "UN DESA Population Division, World Fertility Report 2007",
+    "url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2020/Jan/un_2007_worldfertilityreport.pdf",
+    "read": "2026-10-28",
+    "cells": "2.1 is needed at low mortality so that each woman has a surviving daughter"
+   },
+   {
+    "id": "S10",
+    "name": "PIB, MoHFW: SRS Report 2021 (Registrar General of India), Release ID 2128024, posted 10 May 2025",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2128024",
+    "read": "2026-10-28",
+    "cells": "India TFR 2.0 in 2021 (second official source for the headline; press release only, SRS table not opened)"
+   },
+   {
+    "id": "S11",
+    "name": "Lok Sabha Unstarred Question No. 973, 'Declining of Total Fertility Rate', Ministry of Health and Family Welfare, answered 24 Jul 2026, Annexure 'State/UT-wise Total Fertility Rate (TFR)'",
+    "url": "https://sansad.in/getFile/lsapps/loksabhaquestions/annex/188/AU973_rjypPS.pdf",
+    "read": "2026-10-28",
+    "cells": "NFHS-5 (2019-21) and NFHS-6 (2023-24) TFR for India and 35 states/UTs, one decimal; Manipur NFHS-5 2.2, NFHS-6 'NA'. All 72 cells (36 rows x 2) equal public/datayt/nfhs6/nfhs6_states.json (indicator 18, totals and the NFHS-5 comparator); 0 differences. Second official source for the state TFRs."
+   },
+   {
+    "id": "S12",
+    "name": "PIB, Ministry of Health and Family Welfare: 'Findings of NFHS-4' (Rajya Sabha reply, posted 25 Jul 2017, Release ID 168991), table of key indicators NFHS-4 vs NFHS-3",
+    "url": "https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=168991&reg=48&lang=2",
+    "read": "2026-10-28",
+    "cells": "one-decimal total fertility rate, NFHS-4 and NFHS-3, India and 36 states/UTs (Dadra & Nagar Haveli and Daman & Diu separate). Matches tfr nfhs4 except Andaman and Nicobar Islands (1.5 here, 1.44 in the report) and NCT of Delhi (1.7 here, 1.78 in the report)."
+   },
+   {
+    "id": "X1",
+    "name": "CROSS-CHECK ONLY (tier 3, not cited on screen): github.com/pratapvardhan/NFHS-5, NFHS-5-States.csv",
+    "url": "https://raw.githubusercontent.com/pratapvardhan/NFHS-5/master/NFHS-5-States.csv",
+    "read": "2026-10-28",
+    "cells": "NFHS-5 and NFHS-4 TFR, schooling and marriage for 36 states; agrees with S1/S5 for every NFHS-5 TFR, school and marriage value of the 35 places"
+   },
+   {
+    "id": "NR",
+    "name": "NOT READ: rchiips.org (TLS certificate is issued to nfhs.in and fails verification; not bypassed). NFHS-6 district compendiums and any state-level standard errors sit behind the nfhsiips.in guest login (not used).",
+    "url": "https://rchiips.org/nfhs/",
+    "read": "not read",
+    "cells": ""
+   }
+  ]
+ },
+ "tfr": {
+  "India": {
+   "nfhs3": 2.7,
+   "nfhs4": 2.2,
+   "nfhs5": 2.0,
+   "nfhs6": 2.0
+  },
+  "Arunachal Pradesh": {
+   "nfhs4": 2.1,
+   "nfhs5": 1.8,
+   "nfhs6": 1.5
+  },
+  "Assam": {
+   "nfhs4": 2.2,
+   "nfhs5": 1.9,
+   "nfhs6": 1.6
+  },
+  "Bihar": {
+   "nfhs4": 3.4,
+   "nfhs5": 3.0,
+   "nfhs6": 2.7
+  },
+  "Chhattisgarh": {
+   "nfhs4": 2.2,
+   "nfhs5": 1.8,
+   "nfhs6": 1.9
+  },
+  "Goa": {
+   "nfhs4": 1.7,
+   "nfhs5": 1.3,
+   "nfhs6": 1.6
+  },
+  "Gujarat": {
+   "nfhs4": 2.0,
+   "nfhs5": 1.9,
+   "nfhs6": 1.9
+  },
+  "Haryana": {
+   "nfhs4": 2.1,
+   "nfhs5": 1.9,
+   "nfhs6": 2.0
+  },
+  "Himachal Pradesh": {
+   "nfhs4": 1.9,
+   "nfhs5": 1.7,
+   "nfhs6": 1.8
+  },
+  "Jharkhand": {
+   "nfhs4": 2.6,
+   "nfhs5": 2.3,
+   "nfhs6": 2.2
+  },
+  "Karnataka": {
+   "nfhs4": 1.8,
+   "nfhs5": 1.7,
+   "nfhs6": 1.8
+  },
+  "Kerala": {
+   "nfhs4": 1.6,
+   "nfhs5": 1.8,
+   "nfhs6": 1.8
+  },
+  "Madhya Pradesh": {
+   "nfhs4": 2.3,
+   "nfhs5": 2.0,
+   "nfhs6": 2.1
+  },
+  "Maharashtra": {
+   "nfhs4": 1.9,
+   "nfhs5": 1.7,
+   "nfhs6": 1.8
+  },
+  "Meghalaya": {
+   "nfhs4": 3.0,
+   "nfhs5": 2.9,
+   "nfhs6": 2.2
+  },
+  "Mizoram": {
+   "nfhs4": 2.3,
+   "nfhs5": 1.9,
+   "nfhs6": 1.6
+  },
+  "Nagaland": {
+   "nfhs4": 2.7,
+   "nfhs5": 1.7,
+   "nfhs6": 2.0
+  },
+  "Odisha": {
+   "nfhs4": 2.1,
+   "nfhs5": 1.8,
+   "nfhs6": 1.7
+  },
+  "Punjab": {
+   "nfhs4": 1.6,
+   "nfhs5": 1.6,
+   "nfhs6": 1.6
+  },
+  "Chandigarh": {
+   "nfhs4": 1.6,
+   "nfhs5": 1.4,
+   "nfhs6": 1.8
+  },
+  "Jammu and Kashmir": {
+   "nfhs5": 1.4,
+   "nfhs6": 1.8
+  },
+  "NCT of Delhi": {
+   "nfhs5": 1.6,
+   "nfhs6": 1.6
+  },
+  "Puducherry": {
+   "nfhs4": 1.7,
+   "nfhs5": 1.5,
+   "nfhs6": 1.6
+  },
+  "Andhra Pradesh": {
+   "nfhs4": 1.8,
+   "nfhs5": 1.7,
+   "nfhs6": 1.8
+  },
+  "Rajasthan": {
+   "nfhs4": 2.4,
+   "nfhs5": 2.0,
+   "nfhs6": 2.1
+  },
+  "Sikkim": {
+   "nfhs4": 1.2,
+   "nfhs5": 1.1,
+   "nfhs6": 1.0
+  },
+  "Tamil Nadu": {
+   "nfhs4": 1.7,
+   "nfhs5": 1.8,
+   "nfhs6": 1.7
+  },
+  "Telangana": {
+   "nfhs4": 1.8,
+   "nfhs5": 1.8,
+   "nfhs6": 1.9
+  },
+  "Tripura": {
+   "nfhs4": 1.7,
+   "nfhs5": 1.7,
+   "nfhs6": 1.7
+  },
+  "Uttar Pradesh": {
+   "nfhs4": 2.7,
+   "nfhs5": 2.4,
+   "nfhs6": 2.2
+  },
+  "Uttarakhand": {
+   "nfhs4": 2.1,
+   "nfhs5": 1.9,
+   "nfhs6": 1.9
+  },
+  "West Bengal": {
+   "nfhs4": 1.8,
+   "nfhs5": 1.6,
+   "nfhs6": 1.6
+  },
+  "Andaman and Nicobar Islands": {
+   "nfhs5": 1.3,
+   "nfhs6": 0.9
+  },
+  "Dadra & Nagar Haveli and Daman & Diu": {
+   "nfhs5": 1.8,
+   "nfhs6": 1.7
+  },
+  "Ladakh": {
+   "nfhs5": 1.3,
+   "nfhs6": 1.6
+  },
+  "Lakshadweep": {
+   "nfhs4": 1.8,
+   "nfhs5": 1.4,
+   "nfhs6": 2.2
+  }
+ },
+ "school10": {
+  "India": {
+   "nfhs5": 41.0,
+   "nfhs6": 46.4
+  },
+  "Arunachal Pradesh": {
+   "nfhs5": 39.4,
+   "nfhs6": 50.4
+  },
+  "Assam": {
+   "nfhs5": 29.6,
+   "nfhs6": 37.1
+  },
+  "Bihar": {
+   "nfhs5": 28.8,
+   "nfhs6": 33.1
+  },
+  "Chhattisgarh": {
+   "nfhs5": 36.9,
+   "nfhs6": 41.9
+  },
+  "Goa": {
+   "nfhs5": 71.5,
+   "nfhs6": 66.5
+  },
+  "Gujarat": {
+   "nfhs5": 33.8,
+   "nfhs6": 38.6
+  },
+  "Haryana": {
+   "nfhs5": 49.5,
+   "nfhs6": 55.2
+  },
+  "Himachal Pradesh": {
+   "nfhs5": 65.9,
+   "nfhs6": 72.1
+  },
+  "Jharkhand": {
+   "nfhs5": 33.2,
+   "nfhs6": 39.5
+  },
+  "Karnataka": {
+   "nfhs5": 50.2,
+   "nfhs6": 57.6
+  },
+  "Kerala": {
+   "nfhs5": 77.0,
+   "nfhs6": 86.6
+  },
+  "Madhya Pradesh": {
+   "nfhs5": 29.3,
+   "nfhs6": 33.7
+  },
+  "Maharashtra": {
+   "nfhs5": 50.4,
+   "nfhs6": 55.4
+  },
+  "Meghalaya": {
+   "nfhs5": 35.1,
+   "nfhs6": 37.5
+  },
+  "Mizoram": {
+   "nfhs5": 50.0,
+   "nfhs6": 54.7
+  },
+  "Nagaland": {
+   "nfhs5": 44.4,
+   "nfhs6": 46.3
+  },
+  "Odisha": {
+   "nfhs5": 33.0,
+   "nfhs6": 43.9
+  },
+  "Punjab": {
+   "nfhs5": 56.0,
+   "nfhs6": 60.6
+  },
+  "Chandigarh": {
+   "nfhs5": 59.6,
+   "nfhs6": 70.1
+  },
+  "Jammu and Kashmir": {
+   "nfhs5": 51.3,
+   "nfhs6": 50.1
+  },
+  "NCT of Delhi": {
+   "nfhs5": 59.7,
+   "nfhs6": 64.0
+  },
+  "Puducherry": {
+   "nfhs5": 65.4,
+   "nfhs6": 75.1
+  },
+  "Andhra Pradesh": {
+   "nfhs5": 39.6,
+   "nfhs6": 48.4
+  },
+  "Rajasthan": {
+   "nfhs5": 33.4,
+   "nfhs6": 38.7
+  },
+  "Sikkim": {
+   "nfhs5": 49.0,
+   "nfhs6": 58.4
+  },
+  "Tamil Nadu": {
+   "nfhs5": 56.6,
+   "nfhs6": 64.2
+  },
+  "Telangana": {
+   "nfhs5": 45.5,
+   "nfhs6": 51.1
+  },
+  "Tripura": {
+   "nfhs5": 23.2,
+   "nfhs6": 32.9
+  },
+  "Uttar Pradesh": {
+   "nfhs5": 39.3,
+   "nfhs6": 42.5
+  },
+  "Uttarakhand": {
+   "nfhs5": 50.4,
+   "nfhs6": 56.1
+  },
+  "West Bengal": {
+   "nfhs5": 32.9,
+   "nfhs6": 40.0
+  },
+  "Andaman and Nicobar Islands": {
+   "nfhs5": 52.5,
+   "nfhs6": 65.0
+  },
+  "Dadra & Nagar Haveli and Daman & Diu": {
+   "nfhs5": 35.8,
+   "nfhs6": 44.8
+  },
+  "Ladakh": {
+   "nfhs5": 50.0,
+   "nfhs6": 58.2
+  },
+  "Lakshadweep": {
+   "nfhs5": 67.8,
+   "nfhs6": 78.1
+  }
+ },
+ "marriage18": {
+  "India": {
+   "nfhs5": 23.3,
+   "nfhs6": 20.1
+  },
+  "Arunachal Pradesh": {
+   "nfhs5": 18.9,
+   "nfhs6": 17.3
+  },
+  "Assam": {
+   "nfhs5": 31.8,
+   "nfhs6": 25.3
+  },
+  "Bihar": {
+   "nfhs5": 40.8,
+   "nfhs6": 34.6
+  },
+  "Chhattisgarh": {
+   "nfhs5": 12.1,
+   "nfhs6": 10.1
+  },
+  "Goa": {
+   "nfhs5": 5.8,
+   "nfhs6": 6.8
+  },
+  "Gujarat": {
+   "nfhs5": 21.8,
+   "nfhs6": 18.0
+  },
+  "Haryana": {
+   "nfhs5": 12.5,
+   "nfhs6": 11.9
+  },
+  "Himachal Pradesh": {
+   "nfhs5": 5.4,
+   "nfhs6": 7.9
+  },
+  "Jharkhand": {
+   "nfhs5": 32.2,
+   "nfhs6": 28.1
+  },
+  "Karnataka": {
+   "nfhs5": 21.3,
+   "nfhs6": 15.3
+  },
+  "Kerala": {
+   "nfhs5": 6.3,
+   "nfhs6": 2.9
+  },
+  "Madhya Pradesh": {
+   "nfhs5": 23.1,
+   "nfhs6": 20.0
+  },
+  "Maharashtra": {
+   "nfhs5": 21.9,
+   "nfhs6": 19.7
+  },
+  "Meghalaya": {
+   "nfhs5": 16.9,
+   "nfhs6": 13.8
+  },
+  "Mizoram": {
+   "nfhs5": 8.0,
+   "nfhs6": 6.0
+  },
+  "Nagaland": {
+   "nfhs5": 5.6,
+   "nfhs6": 10.2
+  },
+  "Odisha": {
+   "nfhs5": 20.5,
+   "nfhs6": 18.6
+  },
+  "Punjab": {
+   "nfhs5": 8.7,
+   "nfhs6": 10.2
+  },
+  "Chandigarh": {
+   "nfhs5": 9.7,
+   "nfhs6": 5.2
+  },
+  "Jammu and Kashmir": {
+   "nfhs5": 4.5,
+   "nfhs6": 5.1
+  },
+  "NCT of Delhi": {
+   "nfhs5": 9.9,
+   "nfhs6": 11.4
+  },
+  "Puducherry": {
+   "nfhs5": 6.5,
+   "nfhs6": 5.6
+  },
+  "Andhra Pradesh": {
+   "nfhs5": 29.3,
+   "nfhs6": 25.1
+  },
+  "Rajasthan": {
+   "nfhs5": 25.4,
+   "nfhs6": 24.6
+  },
+  "Sikkim": {
+   "nfhs5": 10.8,
+   "nfhs6": 9.1
+  },
+  "Tamil Nadu": {
+   "nfhs5": 12.8,
+   "nfhs6": 10.5
+  },
+  "Telangana": {
+   "nfhs5": 23.5,
+   "nfhs6": 17.9
+  },
+  "Tripura": {
+   "nfhs5": 40.1,
+   "nfhs6": 34.0
+  },
+  "Uttar Pradesh": {
+   "nfhs5": 15.8,
+   "nfhs6": 13.7
+  },
+  "Uttarakhand": {
+   "nfhs5": 9.8,
+   "nfhs6": 8.2
+  },
+  "West Bengal": {
+   "nfhs5": 41.6,
+   "nfhs6": 36.4
+  },
+  "Andaman and Nicobar Islands": {
+   "nfhs5": 16.2,
+   "nfhs6": 8.8
+  },
+  "Dadra & Nagar Haveli and Daman & Diu": {
+   "nfhs5": 26.4,
+   "nfhs6": 16.3
+  },
+  "Ladakh": {
+   "nfhs5": 2.5,
+   "nfhs6": 3.5
+  },
+  "Lakshadweep": {
+   "nfhs5": 1.3,
+   "nfhs6": 2.9
+  }
+ },
+ "stats": {
+  "n_states": 35,
+  "note_n": "35 = 27 states + 8 union territories with NFHS-6 results (India row excluded; Manipur not in the release)",
+  "corr_school_tfr6": -0.358,
+  "corr_school_tfr6_p": 0.035,
+  "corr_marriage_tfr6": 0.29,
+  "corr_marriage_tfr6_p": 0.091,
+  "corr_school_tfr5": -0.516,
+  "corr_marriage_tfr5": 0.457,
+  "n_nfhs5": 35,
+  "corr_school_tfr5_p": 0.002,
+  "corr_marriage_tfr5_p": 0.006,
+  "corr_note": "Pearson r across states, each state counts once (not population weighted), printed one-decimal totals; NFHS-5 values are the NFHS-5 column printed in the NFHS-6 fact sheets, same 35 places",
+  "corr_excl_lakshadweep": {
+   "n": 34,
+   "school_tfr6": -0.46,
+   "marriage_tfr6": 0.355,
+   "school_tfr5": -0.496,
+   "marriage_tfr5": 0.435
+  },
+  "at_or_below_2_1_nfhs6": 30,
+  "below_2_1_nfhs6": 28,
+  "exactly_2_1_nfhs6": [
+   "Madhya Pradesh",
+   "Rajasthan"
+  ],
+  "above_2_1_nfhs6": [
+   [
+    "Bihar",
+    2.7
+   ],
+   [
+    "Jharkhand",
+    2.2
+   ],
+   [
+    "Lakshadweep",
+    2.2
+   ],
+   [
+    "Meghalaya",
+    2.2
+   ],
+   [
+    "Uttar Pradesh",
+    2.2
+   ]
+  ],
+  "up": 16,
+  "down": 12,
+  "same": 7,
+  "up_by_exactly_0_1": [
+   "Chhattisgarh",
+   "Haryana",
+   "Himachal Pradesh",
+   "Karnataka",
+   "Madhya Pradesh",
+   "Maharashtra",
+   "Puducherry",
+   "Andhra Pradesh",
+   "Rajasthan",
+   "Telangana"
+  ],
+  "down_by_0_3_or_more": [
+   [
+    "Meghalaya",
+    2.9,
+    2.2,
+    -0.7
+   ],
+   [
+    "Andaman and Nicobar Islands",
+    1.3,
+    0.9,
+    -0.4
+   ],
+   [
+    "Arunachal Pradesh",
+    1.8,
+    1.5,
+    -0.3
+   ],
+   [
+    "Assam",
+    1.9,
+    1.6,
+    -0.3
+   ],
+   [
+    "Bihar",
+    3.0,
+    2.7,
+    -0.3
+   ],
+   [
+    "Mizoram",
+    1.9,
+    1.6,
+    -0.3
+   ]
+  ],
+  "lowest": [
+   [
+    "Andaman and Nicobar Islands",
+    0.9
+   ],
+   [
+    "Sikkim",
+    1.0
+   ],
+   [
+    "Arunachal Pradesh",
+    1.5
+   ],
+   [
+    "Assam",
+    1.6
+   ],
+   [
+    "Goa",
+    1.6
+   ]
+  ],
+  "lowest_note": "ties: after Andaman and Nicobar Islands (0.9) and Sikkim (1.0) and Arunachal Pradesh (1.5), 8 places read 1.6",
+  "highest": [
+   [
+    "Bihar",
+    2.7
+   ],
+   [
+    "Jharkhand",
+    2.2
+   ],
+   [
+    "Lakshadweep",
+    2.2
+   ],
+   [
+    "Meghalaya",
+    2.2
+   ],
+   [
+    "Uttar Pradesh",
+    2.2
+   ]
+  ],
+  "highest_note": "Bihar 2.7; Jharkhand, Lakshadweep, Meghalaya and Uttar Pradesh tie at 2.2; Madhya Pradesh and Rajasthan 2.1",
+  "biggest_falls": [
+   [
+    "Meghalaya",
+    2.9,
+    2.2,
+    -0.7
+   ],
+   [
+    "Andaman and Nicobar Islands",
+    1.3,
+    0.9,
+    -0.4
+   ],
+   [
+    "Arunachal Pradesh",
+    1.8,
+    1.5,
+    -0.3
+   ],
+   [
+    "Assam",
+    1.9,
+    1.6,
+    -0.3
+   ],
+   [
+    "Bihar",
+    3.0,
+    2.7,
+    -0.3
+   ],
+   [
+    "Mizoram",
+    1.9,
+    1.6,
+    -0.3
+   ]
+  ],
+  "biggest_falls_note": "Meghalaya -0.7, Andaman and Nicobar Islands -0.4, then four places at -0.3 (Arunachal Pradesh, Assam, Bihar, Mizoram)",
+  "risers_0_3_or_more": [
+   [
+    "Lakshadweep",
+    1.4,
+    2.2,
+    0.8
+   ],
+   [
+    "Chandigarh",
+    1.4,
+    1.8,
+    0.4
+   ],
+   [
+    "Jammu and Kashmir",
+    1.4,
+    1.8,
+    0.4
+   ],
+   [
+    "Goa",
+    1.3,
+    1.6,
+    0.3
+   ],
+   [
+    "Ladakh",
+    1.3,
+    1.6,
+    0.3
+   ],
+   [
+    "Nagaland",
+    1.7,
+    2.0,
+    0.3
+   ]
+  ],
+  "risers_robust_to_rounding": [
+   "Chandigarh",
+   "Jammu and Kashmir",
+   "Lakshadweep"
+  ],
+  "risers_note": "robust = still 0.3 or more after allowing the NFHS-6 one-decimal figure to be off by 0.05 either way against the NFHS-5 report two-decimal figure; Nagaland, Goa and Ladakh are 0.3 on printed figures only",
+  "falls_robust_to_rounding": [
+   "Meghalaya",
+   "Andaman and Nicobar Islands"
+  ],
+  "nfhs4_to_nfhs5_incl_manipur": {
+   "n_comparable": 33,
+   "up": 2,
+   "down": 28,
+   "same": 3,
+   "note": "NFHS-5 covered 36 places; 33 have an NFHS-4 value in Table 4.3 of the NFHS-5 report (Manipur 2.61 to 2.17 is down); up = Kerala 1.6 to 1.8 and Tamil Nadu 1.7 to 1.8 on one-decimal figures; at two decimals Punjab (1.62 to 1.63) and Tripura (1.68 to 1.70) also tick up",
+   "down_by_0_3_or_more": 14,
+   "down_by_0_3_or_more_places": [
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Jharkhand",
+    "Lakshadweep",
+    "Madhya Pradesh",
+    "Manipur",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Rajasthan",
+    "Uttar Pradesh"
+   ],
+   "up_by_0_3_or_more": 0,
+   "down_by_0_1_or_0_2": 14,
+   "level": 3,
+   "up_by_0_1_or_0_2": [
+    "Kerala",
+    "Tamil Nadu"
+   ],
+   "about_the_same": 19,
+   "method": "Same counts (14 / 14 / 3 / 2) both ways. (a) NFHS-5 report Table 4.3 two-decimal values rounded half-up to one decimal, Manipur 2.61 to 2.17 added. (b) the one-decimal NFHS-4 column of the 25 Jul 2017 ministry release (S12) against the NFHS-5 column of Lok Sabha Q973 (S11), J&K (old boundary), Ladakh and Dadra and Nagar Haveli and Daman and Diu left out as not comparable. Andaman and Nicobar and Delhi are 'about the same' under either of their NFHS-4 values. Rule: 0.3 or more on the printed figures (editorial, not a significance test)."
+  },
+  "nfhs4_to_nfhs5": {
+   "n_comparable": 32,
+   "up": [
+    [
+     "Kerala",
+     1.6,
+     1.8
+    ],
+    [
+     "Tamil Nadu",
+     1.7,
+     1.8
+    ]
+   ],
+   "down": 27,
+   "same": [
+    "Punjab",
+    "Telangana",
+    "Tripura"
+   ],
+   "not_comparable": [
+    "Jammu and Kashmir",
+    "Ladakh",
+    "Dadra & Nagar Haveli and Daman & Diu"
+   ],
+   "down_by_0_3_or_more": 13
+  },
+  "women_interviewed_nfhs6": {
+   "Arunachal Pradesh": 18467,
+   "Assam": 34844,
+   "Bihar": 46156,
+   "Chhattisgarh": 30024,
+   "Goa": 1126,
+   "Gujarat": 31441,
+   "Haryana": 22605,
+   "Himachal Pradesh": 10271,
+   "Jharkhand": 26541,
+   "Karnataka": 26425,
+   "Kerala": 11187,
+   "Madhya Pradesh": 54765,
+   "Maharashtra": 30408,
+   "Meghalaya": 12749,
+   "Mizoram": 9018,
+   "Nagaland": 9693,
+   "Odisha": 29449,
+   "Punjab": 20135,
+   "Chandigarh": 766,
+   "Jammu and Kashmir": 25233,
+   "NCT of Delhi": 8703,
+   "Puducherry": 3531,
+   "Andhra Pradesh": 10418,
+   "Rajasthan": 41261,
+   "Sikkim": 3319,
+   "Tamil Nadu": 30336,
+   "Telangana": 24407,
+   "Tripura": 7680,
+   "Uttar Pradesh": 94159,
+   "Uttarakhand": 12780,
+   "West Bengal": 20246,
+   "Andaman and Nicobar Islands": 2369,
+   "Dadra & Nagar Haveli and Daman & Diu": 2503,
+   "Ladakh": 2232,
+   "Lakshadweep": 1150
+  },
+  "small_sample_women_under_2500": [
+   [
+    "Chandigarh",
+    766
+   ],
+   [
+    "Goa",
+    1126
+   ],
+   [
+    "Lakshadweep",
+    1150
+   ],
+   [
+    "Ladakh",
+    2232
+   ],
+   [
+    "Andaman and Nicobar Islands",
+    2369
+   ]
+  ],
+  "rule": "a change is called a rise or a fall only when it is 0.3 or more on the printed one-decimal figures; 0.1 and 0.2 are called about the same (our editorial threshold, not a significance test: IIPS publishes no state-level standard errors in the fact sheets)",
+  "lok_sabha_cross_check": {
+   "source": "S11",
+   "rows": 36,
+   "cells": 72,
+   "differences": 0,
+   "manipur": {
+    "nfhs5": 2.2,
+    "nfhs6": "NA"
+   },
+   "note": "every NFHS-5 and NFHS-6 state TFR in tfr equals the Lok Sabha annexure"
+  },
+  "south_west_named_nfhs6": {
+   "south": {
+    "Andhra Pradesh": 1.8,
+    "Karnataka": 1.8,
+    "Kerala": 1.8,
+    "Tamil Nadu": 1.7,
+    "Telangana": 1.9
+   },
+   "west": {
+    "Gujarat": 1.9,
+    "Maharashtra": 1.8,
+    "Goa": 1.6
+   },
+   "note": "the script names these eight states instead of saying 'the south and the west' (no official region definition was read); all read 1.9 or lower. Puducherry 1.6 and Dadra and Nagar Haveli and Daman and Diu 1.7 are also 1.9 or lower but are not named."
+  }
+ },
+ "tfr_report_2dp": {
+  "India": {
+   "nfhs1": 3.39,
+   "nfhs2": 2.85,
+   "nfhs3": 2.68,
+   "nfhs4": 2.18,
+   "nfhs5": 1.99
+  },
+  "Arunachal Pradesh": {
+   "nfhs2": 2.52,
+   "nfhs3": 3.03,
+   "nfhs4": 2.1,
+   "nfhs5": 1.8
+  },
+  "Assam": {
+   "nfhs2": 2.31,
+   "nfhs3": 2.42,
+   "nfhs4": 2.21,
+   "nfhs5": 1.87
+  },
+  "Bihar": {
+   "nfhs2": 3.7,
+   "nfhs3": 4.0,
+   "nfhs4": 3.41,
+   "nfhs5": 2.98
+  },
+  "Chhattisgarh": {
+   "nfhs2": 2.79,
+   "nfhs3": 2.62,
+   "nfhs4": 2.23,
+   "nfhs5": 1.82
+  },
+  "Goa": {
+   "nfhs2": 1.77,
+   "nfhs3": 1.79,
+   "nfhs4": 1.66,
+   "nfhs5": 1.3
+  },
+  "Gujarat": {
+   "nfhs2": 2.72,
+   "nfhs3": 2.42,
+   "nfhs4": 2.03,
+   "nfhs5": 1.86
+  },
+  "Haryana": {
+   "nfhs2": 2.88,
+   "nfhs3": 2.69,
+   "nfhs4": 2.05,
+   "nfhs5": 1.91
+  },
+  "Himachal Pradesh": {
+   "nfhs2": 2.14,
+   "nfhs3": 1.94,
+   "nfhs4": 1.88,
+   "nfhs5": 1.66
+  },
+  "Jharkhand": {
+   "nfhs2": 2.76,
+   "nfhs3": 3.31,
+   "nfhs4": 2.55,
+   "nfhs5": 2.26
+  },
+  "Karnataka": {
+   "nfhs2": 2.13,
+   "nfhs3": 2.07,
+   "nfhs4": 1.8,
+   "nfhs5": 1.67
+  },
+  "Kerala": {
+   "nfhs2": 1.96,
+   "nfhs3": 1.93,
+   "nfhs4": 1.56,
+   "nfhs5": 1.79
+  },
+  "Madhya Pradesh": {
+   "nfhs2": 3.43,
+   "nfhs3": 3.12,
+   "nfhs4": 2.32,
+   "nfhs5": 1.99
+  },
+  "Maharashtra": {
+   "nfhs2": 2.52,
+   "nfhs3": 2.11,
+   "nfhs4": 1.87,
+   "nfhs5": 1.71
+  },
+  "Meghalaya": {
+   "nfhs2": 4.57,
+   "nfhs3": 3.8,
+   "nfhs4": 3.04,
+   "nfhs5": 2.91
+  },
+  "Mizoram": {
+   "nfhs2": 2.89,
+   "nfhs3": 2.86,
+   "nfhs4": 2.27,
+   "nfhs5": 1.87
+  },
+  "Nagaland": {
+   "nfhs2": 3.77,
+   "nfhs3": 3.74,
+   "nfhs4": 2.74,
+   "nfhs5": 1.72
+  },
+  "Odisha": {
+   "nfhs2": 2.46,
+   "nfhs3": 2.37,
+   "nfhs4": 2.05,
+   "nfhs5": 1.82
+  },
+  "Punjab": {
+   "nfhs2": 2.21,
+   "nfhs3": 1.99,
+   "nfhs4": 1.62,
+   "nfhs5": 1.63
+  },
+  "Chandigarh": {
+   "nfhs4": 1.57,
+   "nfhs5": 1.4
+  },
+  "Jammu and Kashmir": {
+   "nfhs2_old_boundary": 2.71,
+   "nfhs3_old_boundary": 2.38,
+   "nfhs4_old_boundary": 2.01,
+   "nfhs5": 1.41
+  },
+  "NCT of Delhi": {
+   "nfhs2": 2.4,
+   "nfhs3": 2.13,
+   "nfhs4": 1.78,
+   "nfhs5": 1.62,
+   "nfhs4_pib_2017_1dp": 1.7
+  },
+  "Puducherry": {
+   "nfhs4": 1.7,
+   "nfhs5": 1.49
+  },
+  "Andhra Pradesh": {
+   "nfhs4": 1.83,
+   "nfhs5": 1.68
+  },
+  "Rajasthan": {
+   "nfhs2": 3.78,
+   "nfhs3": 3.21,
+   "nfhs4": 2.4,
+   "nfhs5": 2.01
+  },
+  "Sikkim": {
+   "nfhs2": 2.75,
+   "nfhs3": 2.02,
+   "nfhs4": 1.17,
+   "nfhs5": 1.05
+  },
+  "Tamil Nadu": {
+   "nfhs2": 2.19,
+   "nfhs3": 1.8,
+   "nfhs4": 1.7,
+   "nfhs5": 1.76
+  },
+  "Telangana": {
+   "nfhs4": 1.78,
+   "nfhs5": 1.75
+  },
+  "Tripura": {
+   "nfhs2": 1.87,
+   "nfhs3": 2.22,
+   "nfhs4": 1.68,
+   "nfhs5": 1.7
+  },
+  "Uttar Pradesh": {
+   "nfhs2": 4.06,
+   "nfhs3": 3.82,
+   "nfhs4": 2.74,
+   "nfhs5": 2.35
+  },
+  "Uttarakhand": {
+   "nfhs2": 2.61,
+   "nfhs3": 2.55,
+   "nfhs4": 2.07,
+   "nfhs5": 1.85
+  },
+  "West Bengal": {
+   "nfhs2": 2.29,
+   "nfhs3": 2.27,
+   "nfhs4": 1.77,
+   "nfhs5": 1.64
+  },
+  "Andaman and Nicobar Islands": {
+   "nfhs4": 1.44,
+   "nfhs5": 1.28,
+   "nfhs4_pib_2017_1dp": 1.5
+  },
+  "Dadra & Nagar Haveli and Daman & Diu": {
+   "nfhs5": 1.84
+  },
+  "Ladakh": {
+   "nfhs5": 1.31
+  },
+  "Lakshadweep": {
+   "nfhs4": 1.82,
+   "nfhs5": 1.42
+  }
+ },
+ "age_structure": {
+  "India": {
+   "under15": {
+    "nfhs6": 25.5,
+    "nfhs5": 26.5
+   },
+   "age60plus": {
+    "nfhs6": 12.9,
+    "nfhs5": 11.8
+   }
+  },
+  "Arunachal Pradesh": {
+   "under15": {
+    "nfhs6": 21.8,
+    "nfhs5": 27.1
+   },
+   "age60plus": {
+    "nfhs6": 10.2,
+    "nfhs5": 8.1
+   }
+  },
+  "Assam": {
+   "under15": {
+    "nfhs6": 25.7,
+    "nfhs5": 28.3
+   },
+   "age60plus": {
+    "nfhs6": 10.3,
+    "nfhs5": 8.6
+   }
+  },
+  "Bihar": {
+   "under15": {
+    "nfhs6": 35.6,
+    "nfhs5": 36.4
+   },
+   "age60plus": {
+    "nfhs6": 11.5,
+    "nfhs5": 11.1
+   }
+  },
+  "Chhattisgarh": {
+   "under15": {
+    "nfhs6": 24.7,
+    "nfhs5": 25.4
+   },
+   "age60plus": {
+    "nfhs6": 11.4,
+    "nfhs5": 10.5
+   }
+  },
+  "Goa": {
+   "under15": {
+    "nfhs6": 18.1,
+    "nfhs5": 19.1
+   },
+   "age60plus": {
+    "nfhs6": 17.2,
+    "nfhs5": 14.2
+   }
+  },
+  "Gujarat": {
+   "under15": {
+    "nfhs6": 23.0,
+    "nfhs5": 24.0
+   },
+   "age60plus": {
+    "nfhs6": 13.1,
+    "nfhs5": 12.0
+   }
+  },
+  "Haryana": {
+   "under15": {
+    "nfhs6": 24.7,
+    "nfhs5": 25.3
+   },
+   "age60plus": {
+    "nfhs6": 12.3,
+    "nfhs5": 11.8
+   }
+  },
+  "Himachal Pradesh": {
+   "under15": {
+    "nfhs6": 20.9,
+    "nfhs5": 21.8
+   },
+   "age60plus": {
+    "nfhs6": 16.4,
+    "nfhs5": 14.7
+   }
+  },
+  "Jharkhand": {
+   "under15": {
+    "nfhs6": 30.4,
+    "nfhs5": 31.3
+   },
+   "age60plus": {
+    "nfhs6": 11.5,
+    "nfhs5": 10.0
+   }
+  },
+  "Karnataka": {
+   "under15": {
+    "nfhs6": 22.0,
+    "nfhs5": 22.9
+   },
+   "age60plus": {
+    "nfhs6": 14.6,
+    "nfhs5": 13.3
+   }
+  },
+  "Kerala": {
+   "under15": {
+    "nfhs6": 20.3,
+    "nfhs5": 20.6
+   },
+   "age60plus": {
+    "nfhs6": 20.7,
+    "nfhs5": 18.6
+   }
+  },
+  "Madhya Pradesh": {
+   "under15": {
+    "nfhs6": 25.8,
+    "nfhs5": 26.5
+   },
+   "age60plus": {
+    "nfhs6": 11.6,
+    "nfhs5": 10.9
+   }
+  },
+  "Maharashtra": {
+   "under15": {
+    "nfhs6": 21.8,
+    "nfhs5": 22.8
+   },
+   "age60plus": {
+    "nfhs6": 14.4,
+    "nfhs5": 13.7
+   }
+  },
+  "Meghalaya": {
+   "under15": {
+    "nfhs6": 34.1,
+    "nfhs5": 37.3
+   },
+   "age60plus": {
+    "nfhs6": 6.8,
+    "nfhs5": 4.9
+   }
+  },
+  "Mizoram": {
+   "under15": {
+    "nfhs6": 24.5,
+    "nfhs5": 27.3
+   },
+   "age60plus": {
+    "nfhs6": 11.4,
+    "nfhs5": 10.1
+   }
+  },
+  "Nagaland": {
+   "under15": {
+    "nfhs6": 25.3,
+    "nfhs5": 24.7
+   },
+   "age60plus": {
+    "nfhs6": 12.4,
+    "nfhs5": 10.7
+   }
+  },
+  "Odisha": {
+   "under15": {
+    "nfhs6": 22.3,
+    "nfhs5": 24.9
+   },
+   "age60plus": {
+    "nfhs6": 15.6,
+    "nfhs5": 13.4
+   }
+  },
+  "Punjab": {
+   "under15": {
+    "nfhs6": 21.4,
+    "nfhs5": 22.0
+   },
+   "age60plus": {
+    "nfhs6": 14.4,
+    "nfhs5": 13.7
+   }
+  },
+  "Chandigarh": {
+   "under15": {
+    "nfhs6": 20.7,
+    "nfhs5": 23.3
+   },
+   "age60plus": {
+    "nfhs6": 10.9,
+    "nfhs5": 10.9
+   }
+  },
+  "Jammu and Kashmir": {
+   "under15": {
+    "nfhs6": 24.9,
+    "nfhs5": 24.1
+   },
+   "age60plus": {
+    "nfhs6": 11.9,
+    "nfhs5": 9.5
+   }
+  },
+  "NCT of Delhi": {
+   "under15": {
+    "nfhs6": 22.7,
+    "nfhs5": 24.3
+   },
+   "age60plus": {
+    "nfhs6": 9.4,
+    "nfhs5": 8.5
+   }
+  },
+  "Puducherry": {
+   "under15": {
+    "nfhs6": 18.6,
+    "nfhs5": 20.4
+   },
+   "age60plus": {
+    "nfhs6": 15.2,
+    "nfhs5": 13.5
+   }
+  },
+  "Andhra Pradesh": {
+   "under15": {
+    "nfhs6": 21.1,
+    "nfhs5": 22.2
+   },
+   "age60plus": {
+    "nfhs6": 13.9,
+    "nfhs5": 13.2
+   }
+  },
+  "Rajasthan": {
+   "under15": {
+    "nfhs6": 27.7,
+    "nfhs5": 28.3
+   },
+   "age60plus": {
+    "nfhs6": 12.1,
+    "nfhs5": 10.5
+   }
+  },
+  "Sikkim": {
+   "under15": {
+    "nfhs6": 15.8,
+    "nfhs5": 19.5
+   },
+   "age60plus": {
+    "nfhs6": 13.2,
+    "nfhs5": 10.0
+   }
+  },
+  "Tamil Nadu": {
+   "under15": {
+    "nfhs6": 20.2,
+    "nfhs5": 21.0
+   },
+   "age60plus": {
+    "nfhs6": 16.3,
+    "nfhs5": 14.9
+   }
+  },
+  "Telangana": {
+   "under15": {
+    "nfhs6": 21.3,
+    "nfhs5": 22.5
+   },
+   "age60plus": {
+    "nfhs6": 14.1,
+    "nfhs5": 12.7
+   }
+  },
+  "Tripura": {
+   "under15": {
+    "nfhs6": 21.6,
+    "nfhs5": 23.7
+   },
+   "age60plus": {
+    "nfhs6": 14.1,
+    "nfhs5": 11.2
+   }
+  },
+  "Uttar Pradesh": {
+   "under15": {
+    "nfhs6": 29.9,
+    "nfhs5": 31.0
+   },
+   "age60plus": {
+    "nfhs6": 10.3,
+    "nfhs5": 10.0
+   }
+  },
+  "Uttarakhand": {
+   "under15": {
+    "nfhs6": 24.9,
+    "nfhs5": 26.3
+   },
+   "age60plus": {
+    "nfhs6": 12.8,
+    "nfhs5": 12.0
+   }
+  },
+  "West Bengal": {
+   "under15": {
+    "nfhs6": 21.6,
+    "nfhs5": 23.5
+   },
+   "age60plus": {
+    "nfhs6": 14.1,
+    "nfhs5": 10.9
+   }
+  },
+  "Andaman and Nicobar Islands": {
+   "under15": {
+    "nfhs6": 17.5,
+    "nfhs5": 20.8
+   },
+   "age60plus": {
+    "nfhs6": 12.6,
+    "nfhs5": 11.0
+   }
+  },
+  "Dadra & Nagar Haveli and Daman & Diu": {
+   "under15": {
+    "nfhs6": 23.1,
+    "nfhs5": 25.4
+   },
+   "age60plus": {
+    "nfhs6": 6.0,
+    "nfhs5": 6.9
+   }
+  },
+  "Ladakh": {
+   "under15": {
+    "nfhs6": 25.7,
+    "nfhs5": 22.8
+   },
+   "age60plus": {
+    "nfhs6": 14.6,
+    "nfhs5": 8.9
+   }
+  },
+  "Lakshadweep": {
+   "under15": {
+    "nfhs6": 25.7,
+    "nfhs5": 22.3
+   },
+   "age60plus": {
+    "nfhs6": 12.8,
+    "nfhs5": 12.9
+   }
+  }
+ }
+}

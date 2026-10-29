@@ -47,6 +47,7 @@ Re-render after a brand change: `npx remotion still src/index.ts DK-<name> docs/
 - Tamil words (AK, 13 Oct 2026, after hearing the English voice say "Kadai" in the intro): a Tamil word in the narration is
   spoken by Sarvam Bulbul v3, speaker `vijay`, from Tamil script (`voice_dk.say_tamil`, needs `SARVAM_API_KEY`). The clip is trimmed and
   set level with the English lines. No English line may contain the word; the Tamil script is voice text only, never on screen.
+- Blind-test picks per language (AK, 29 Oct 2026): English D (this MiniMax voice) and A (Google Gemini `Iapetus`), Hindi Google `Charon`, Tamil/Telugu/Bengali Maya-2-Native. Details, cautions and how to call each: `docs/datakadai/voices/VOICE_PICKS.md`. Long-form scene voicing: `scripts/datayt/long_voice.py`.
 
 ## Production machine and storage (fixed 9 Oct 2026; moved to DarwinSSD 10 Oct 2026)
 - Everything Data Kadai lives on **DarwinSSD**, attached to the Mac Mini: `/Volumes/DarwinSSD/DataKadai/`.

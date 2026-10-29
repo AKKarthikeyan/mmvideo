@@ -71,8 +71,18 @@ def words(only):
     for s in scenes():
         if only and s["id"] not in only: continue
         m = man[s["id"]]
-        r = mlx_whisper.transcribe(a16(os.path.join(VO, m["file"])), path_or_hf_repo="mlx-community/whisper-large-v3-turbo", language="en",
-                                   word_timestamps=True, initial_prompt=s["vo"], condition_on_previous_text=False)
+        audio = a16(os.path.join(VO, m["file"]))
+        import difflib, re
+        keep = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
+        best = None
+        for prompt in (s["vo"], None):      # the script as a prompt helps numbers; but it sometimes makes whisper drop the start of a line, so retry without it
+            r = mlx_whisper.transcribe(audio, path_or_hf_repo="mlx-community/whisper-large-v3-turbo", language="en", word_timestamps=True,
+                                       initial_prompt=prompt, condition_on_previous_text=False)
+            q = difflib.SequenceMatcher(None, keep(s["vo"]), keep(r["text"])).ratio()
+            if best is None or q > best[0]: best = (q, r)
+            if q >= 0.93: break
+        r = best[1]
+        if best[0] < 0.93: print("  WARNING", s["id"], "heard text matches the script only", round(best[0], 2), flush=True)
         ws = [{"w": w["word"].strip(), "start": round(w["start"], 3), "end": round(w["end"], 3)} for seg in r["segments"] for w in seg.get("words", []) if w["word"].strip()]
         out[s["id"]] = {"words": ws, "sec": m["sec"], "heard": r["text"].strip()}
         print(s["id"], len(ws), "words,", m["sec"], "s |", r["text"].strip()[:90], flush=True)
@@ -129,7 +139,7 @@ def srt(out_path):
             a2, b2 = a * tot / total_script, b * tot / total_script
             i = next((k for k, (x, y) in enumerate(cum) if x <= a2 < y), 0)
             j = next((k for k, (x, y) in enumerate(cum) if x < b2 <= y), len(ws) - 1)
-            lines = textwrap.wrap(g, 42) if len(g) <= 84 else textwrap.wrap(g, 52)
+            lines = [g] if len(g) <= 48 else textwrap.wrap(g, len(g) // 2 + 8, break_on_hyphens=False)     # one line, or two balanced lines
             cues.append([base + ws[i]["start"], base + ws[j]["end"] + 0.12, "\n".join(lines)])
     for k, c in enumerate(cues):                       # no overlap, nothing shorter than 0.7 s unless the next cue starts sooner
         nxt = cues[k + 1][0] if k + 1 < len(cues) else c[1] + 1

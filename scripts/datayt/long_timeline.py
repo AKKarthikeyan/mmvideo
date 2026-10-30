@@ -151,6 +151,7 @@ def scene_timing(sc, wt, wps):
             t = s0 + (e0 - s0) * si / ns
             reveals[key] = round(t * FPS) + MEASURED_MARGIN + (SUB_WORD_MARGIN if si else 0)
             starts.append((key, t))
+    dur += round(float(sc.get("hold") or 0) * FPS)                  # optional storyboard "hold" (s): extra time on screen after the last word
     for key, t in starts:                                           # the rule, checked on the way out
         if reveals[key] / FPS < t - 1e-9:
             raise TimelineError(f'scene "{sid}": reveal "{key}" at frame {reveals[key]} comes before its word ({t:.3f} s)')

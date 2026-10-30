@@ -1,0 +1,307 @@
+{
+ "film": "A",
+ "lang": "ta",
+ "status": "DRAFT",
+ "reviewed_by": null,
+ "voice": "Maya Siddhant",
+ "scenes": {
+  "a001": {
+   "en": "Every morning, a committee of egg farmers puts out one number. On twenty ninth October twenty twenty six, at Namakkal in Tamil Nadu, it was five rupees seventy paise for an egg.",
+   "text": "தினமும் காலையில, முட்டை பண்ணைக்காரங்க கமிட்டி ஒரு நம்பர் போடுது. ரெண்டாயிரத்து இருபத்தாறு, அக்டோபர் இருபத்தொன்பது, தமிழ்நாடு நாமக்கல்ல, முட்டை அஞ்சு ரூபா எழுபது பைசா.",
+   "est_sec": 11.08,
+   "slot_sec": 11.37,
+   "flag": "",
+   "notes": "NUMBERS: date 29 October 2026 and Rs 5.70 (five rupees seventy paise), spelled in words. Tamil date said as ரெண்டாயிரத்து இருபத்தி ஆறு, அக்டோபர் இருபத்தொன்பது (year first). 'at Namakkal in Tamil Nadu' said as தமிழ்நாடு நாமக்கல்ல. tight: 97% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a002": {
+   "en": "Traders across India watch it. And yet Tamil Nadu is not even India's biggest egg state.",
+   "text": "இந்தியா முழுக்க வியாபாரிங்க இதை பாக்குறாங்க. ஆனா, தமிழ்நாடு நம்பர் ஒன் முட்டை மாநிலம் கூட இல்ல.",
+   "est_sec": 5.38,
+   "slot_sec": 5.93,
+   "flag": "",
+   "notes": "'India's biggest egg state' said as நம்பர் ஒன் முட்டை மாநிலம். tight: 91% of the slot."
+  },
+  "a003": {
+   "en": "So how does one corner of the number two state end up setting the price? The answer starts with six hens that nobody wanted.",
+   "text": "அப்போ, நம்பர் டூ மாநிலத்தோட ஒரு மூலை, எப்படி விலை வைக்குது? பதில், யாருக்கும் வேண்டாத ஆறு கோழிங்கள்ல ஆரம்பிக்குது.",
+   "est_sec": 6.31,
+   "slot_sec": 6.77,
+   "flag": "",
+   "notes": "tight: 93% of the slot."
+  },
+  "a006": {
+   "en": "First, the place. Namakkal is a district in the middle of Tamil Nadu, just south of Salem. Until nineteen ninety seven it was part of Salem district.",
+   "text": "முதல்ல, இடம். நாமக்கல், தமிழ்நாட்டு நடுவுல ஒரு மாவட்டம், சேலத்துக்கு தெற்கே. ஆயிரத்து தொள்ளாயிரத்து தொண்ணூத்தி ஏழு வரை சேலம் மாவட்டத்துல இருந்துச்சு.",
+   "est_sec": 9.08,
+   "slot_sec": 10.17,
+   "flag": "",
+   "notes": "NUMBERS: 1997 (Namakkal part of Salem district until then). shortened to fit (2026-10-29)"
+  },
+  "a007": {
+   "en": "India lays about one hundred and forty nine billion eggs a year, second only to China.",
+   "text": "இந்தியால வருஷத்துக்கு சுமார் பதினாலாயிரத்து தொள்ளாயிரம் கோடி முட்டை வருது, சீனாவுக்கு அடுத்தபடியா.",
+   "est_sec": 6.0,
+   "slot_sec": 6.67,
+   "flag": "",
+   "notes": "NUMBERS: 149 billion is said as fourteen thousand nine hundred crore (same number, said in crore as people say it). On screen: 149.11 billion. 'second only to China' kept. Tamil: பதினாலாயிரத்து தொள்ளாயிரம் கோடி."
+  },
+  "a008": {
+   "en": "Andhra Pradesh lays the most, about eighteen in every hundred. Tamil Nadu is second, at about sixteen.",
+   "text": "அதிகமா போடுறது ஆந்திர பிரதேசம், நூத்துக்கு சுமார் பதினெட்டு. தமிழ்நாடு ரெண்டாவது, சுமார் பதினாறு.",
+   "est_sec": 5.85,
+   "slot_sec": 8.43,
+   "flag": "",
+   "notes": "NUMBERS: Andhra Pradesh about 18 in every hundred, Tamil Nadu about 16."
+  },
+  "a009": {
+   "en": "Inside Tamil Nadu, Namakkal is the giant. The state's own count gives it two of every three Tamil Nadu eggs. Even so, that is about one in ten of India's.",
+   "text": "தமிழ்நாட்டுக்குள்ள, நாமக்கல் தான் ஜாம்பவான். மாநிலத்தோட சொந்த கணக்குப்படி, தமிழ்நாட்டு முட்டைல மூணுல ரெண்டு அங்க தான். இருந்தாலும், இந்தியா முழுக்க பாத்தா அது சுமார் பத்துல ஒண்ணு தான்.",
+   "est_sec": 9.54,
+   "slot_sec": 10.67,
+   "flag": "",
+   "notes": "NUMBERS: two of every three Tamil Nadu eggs; about one in ten of India's. Hedge 'the state's own count' kept."
+  },
+  "a010": {
+   "en": "So it is not about volume alone. One egg in ten does not set the price for the other nine. The power of this place is something else: it is a price. And to see where that price came from, we go back to nineteen sixty nine.",
+   "text": "அப்போ இது வெறும் அளவு பத்தின விஷயம் இல்ல. பத்துல ஒரு முட்டை, மீதி ஒன்பதுக்கும் விலை வைக்காது. இந்த இடத்தோட பவர் வேற: அது ஒரு விலை. அந்த விலை எங்க இருந்து வந்துச்சுன்னு பாக்க, நாம ஆயிரத்து தொள்ளாயிரத்து அறுபத்தி ஒன்பதுக்கு போகணும்.",
+   "est_sec": 13.54,
+   "slot_sec": 14.67,
+   "flag": "",
+   "notes": "NUMBERS: one in ten vs the other nine; 1969. tight: 92% of the slot."
+  },
+  "a012": {
+   "en": "In nineteen sixty nine, a village postmaster named V. Vellappan carried six red desi hens to the government veterinary hospital in Namakkal.",
+   "text": "ஆயிரத்து தொள்ளாயிரத்து அறுபத்தி ஒன்பதுல, கிராம போஸ்ட்மாஸ்டர் வி. வெள்ளப்பன், ஆறு சிவப்பு நாட்டுக் கோழிங்கள, நாமக்கல் அரசு கால்நடை ஆஸ்பத்திரிக்கு கொண்டு போனாரு.",
+   "est_sec": 8.77,
+   "slot_sec": 10.97,
+   "flag": "",
+   "notes": "NAMES: V. Vellappan, village postmaster; 1969; six red desi hens; government veterinary hospital, Namakkal."
+  },
+  "a013": {
+   "en": "The vet, Doctor N. Nandagopal, looked at the six hens and suggested something else: hybrid layers. More eggs. More manure for the fields. More income.",
+   "text": "கால்நடை டாக்டர் என். நந்தகோபால் ஆறு கோழிய பாத்துட்டு, வேற ஒண்ணு சொன்னாரு: ஹைப்ரிட் லேயர். அதிக முட்டை. வயலுக்கு அதிக எரு. அதிக வருமானம்.",
+   "est_sec": 8.92,
+   "slot_sec": 11.27,
+   "flag": "",
+   "notes": "NAMES: Doctor N. Nandagopal (the vet). Three 'More...' fragments kept as fragments. shortened to fit (2026-10-29)"
+  },
+  "a014": {
+   "en": "In nineteen seventy the vet drove Vellappan and three other farmers to a poultry firm in Coimbatore. They came back with four hundred chicks, at three or four rupees each.",
+   "text": "எழுபதுல, டாக்டர் வெள்ளப்பனையும் மூணு விவசாயிகளையும் கோயம்புத்தூர் பௌல்ட்ரி கம்பெனிக்கு வண்டில கூட்டிட்டு போனாரு. நானூறு குஞ்சோட வந்தாங்க, ஒண்ணு மூணு நாலு ரூபா.",
+   "est_sec": 9.85,
+   "slot_sec": 10.27,
+   "flag": "",
+   "notes": "NUMBERS: 1970; Vellappan + three other farmers; Coimbatore poultry firm; 400 chicks at 3 or 4 rupees each. SHORT YEAR: 1970 said as எழுபதுல ('in seventy') to fit the slot; the year before (1969) is said in full in a012. 'poultry firm' said as பௌல்ட்ரி கம்பெனி. tight: 96% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a015": {
+   "en": "Each farmer raised one hundred chicks in a small thatched shed. Every morning the vet came by to check them, free of cost.",
+   "text": "ஒவ்வொரு விவசாயியும், ஒரு சின்ன கூரைக் கொட்டகைல நூறு குஞ்சு வளர்த்தாங்க. தினமும் காலையில டாக்டர் வந்து பாத்துட்டு போவாரு, காசு வாங்காம.",
+   "est_sec": 7.38,
+   "slot_sec": 9.2,
+   "flag": "",
+   "notes": "NUMBERS: 100 chicks each; free of cost."
+  },
+  "a016": {
+   "en": "The hens grew, and began to lay. And then the real problem: nobody wanted their eggs.",
+   "text": "கோழிங்க வளர்ந்து, முட்டை போட ஆரம்பிச்சுது. அப்போதான் நிஜமான பிரச்சனை: அவங்க முட்டை யாருக்குமே வேண்டாம்.",
+   "est_sec": 5.69,
+   "slot_sec": 7.93,
+   "flag": "",
+   "notes": ""
+  },
+  "a017": {
+   "en": "The study says consumers and restaurant owners wanted only desi eggs.",
+   "text": "ஸ்டடி சொல்லுது, கஸ்டமரும் ஹோட்டல்காரங்களும் நாட்டு முட்டை தான் கேட்டாங்க.",
+   "est_sec": 3.54,
+   "slot_sec": 4.97,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (TANUVAS 2020: \"consumers and restaurant owners preferred only desi chicken eggs\"). Audio is the narration line, framed as \"the study says\". \"restaurant owners\" is said as hotel people, the everyday word for restaurants; \"desi\" as நாட்டுக் கோழி / நாட்டு முட்டை."
+  },
+  "a018": {
+   "en": "Four farmers, each alone, with eggs nobody wanted. The vet's answer was simple: form a club. Collect everyone's eggs. Sell them together.",
+   "text": "நாலு விவசாயிங்க, ஒவ்வொருத்தரும் தனியா, யாருக்கும் வேண்டாத முட்டையோட. டாக்டரோட பதில் சிம்பிள்: ஒரு கிளப் ஆரம்பிங்க. எல்லாரோட முட்டையையும் சேருங்க. ஒண்ணா சேர்ந்து விங்க.",
+   "est_sec": 8.92,
+   "slot_sec": 12.93,
+   "flag": "",
+   "notes": ""
+  },
+  "a019": {
+   "en": "The club sent eggs to Chennai by train and sold them for twenty two paise each.",
+   "text": "கிளப், ரயில்ல சென்னைக்கு முட்டை அனுப்பி, ஒரு முட்டை இருபத்தி ரெண்டு பைசான்னு வித்துச்சு.",
+   "est_sec": 4.46,
+   "slot_sec": 5.47,
+   "flag": "",
+   "notes": "NUMBERS: 22 paise an egg, by train to Chennai."
+  },
+  "a020": {
+   "en": "Neighbours came to look, and sheds went up across the villages. By nineteen eighty two the area had about thirty lakh birds. By nineteen eighty five, seventy five lakh, and a veterinary college of its own.",
+   "text": "பக்கத்து ஊர்க்காரங்க பாக்க வந்தாங்க, ஊர் ஊரா கொட்டகை வந்துச்சு. ஆயிரத்து தொள்ளாயிரத்து எண்பத்தி ரெண்டுல அந்த ஏரியால சுமார் முப்பது லட்சம் கோழி. எண்பத்தி அஞ்சுல, எழுபத்தி அஞ்சு லட்சம், சொந்தமா ஒரு கால்நடை காலேஜும்.",
+   "est_sec": 11.69,
+   "slot_sec": 12.93,
+   "flag": "",
+   "notes": "NUMBERS: by 1982 about 30 lakh birds; by 1985, 75 lakh and a veterinary college. SHORT YEAR: 1985 said as எண்பத்தி அஞ்சுல right after 1982 is said in full. tight: 90% of the slot."
+  },
+  "a022": {
+   "en": "But a farm full of hens has one weakness. Eggs do not wait. When too many arrive at once, the price falls, and every farmer stands alone against the buyer.",
+   "text": "ஆனா, கோழி நிறைஞ்ச பண்ணைக்கு ஒரு பலவீனம்: முட்டை காத்திருக்காது. ஒரேடியா நிறைய வந்தா, விலை விழும், ஒவ்வொரு விவசாயியும் வாங்குறவர் முன்னாடி தனியா நிக்கணும்.",
+   "est_sec": 9.85,
+   "slot_sec": 10.27,
+   "flag": "",
+   "notes": "tight: 96% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a023": {
+   "en": "Around nineteen eighty one, the committee's own history says, feed had become two hundred and fifty percent dearer in five years, while an egg still sold for about thirty five paise. More than forty percent of poultry farmers had stopped.",
+   "text": "கமிட்டியோட சொந்த வரலாறு சொல்லுது, எண்பத்தி ஒண்ணு வாக்குல, அஞ்சு வருஷத்துல தீவனம் இருநூத்தி அம்பது பர்சென்ட் விலை ஏறிடுச்சு, முட்டை இன்னும் சுமார் முப்பத்தி அஞ்சு பைசா தான். நாப்பது பர்சென்ட்டுக்கு மேல கோழி விவசாயிங்க தொழிலை நிறுத்திட்டாங்க.",
+   "est_sec": 13.08,
+   "slot_sec": 13.6,
+   "flag": "",
+   "notes": "HEDGE kept: \"the committee's own history says\" (NECC's account, not verified). Numbers: about 1981, feed 250 percent dearer in five years, egg about 35 paise, more than 40 percent of poultry farmers stopped. SHORT YEAR: 'around 1981' said as எண்பத்தி ஒண்ணு வாக்குல to fit the slot. tight: 96% of the slot."
+  },
+  "a024": {
+   "en": "A group of farmers, led by the breeder Doctor B. V. Rao, travelled the country and held more than three hundred meetings.",
+   "text": "பிரீடர் டாக்டர் பி. வி. ராவ் தலைமையில, ஒரு விவசாயிங்க குழு நாடு முழுக்க சுத்தி, முன்னூறுக்கும் மேல மீட்டிங் நடத்துனாங்க.",
+   "est_sec": 6.46,
+   "slot_sec": 9.57,
+   "flag": "",
+   "notes": "NAMES: the breeder Doctor B. V. Rao; more than 300 meetings."
+  },
+  "a025": {
+   "en": "Their slogan: my egg, my price, my life.",
+   "text": "அவங்க ஸ்லோகன்: என் முட்டை, என் விலை, என் வாழ்க்கை.",
+   "est_sec": 2.15,
+   "slot_sec": 4.2,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (\"My egg, my price, my life\", NECC's own history). Audio is a faithful translation of the slogan; check it sounds like a slogan, not a sentence."
+  },
+  "a026": {
+   "en": "On the fourteenth of May nineteen eighty two, the National Egg Coordination Committee began declaring egg prices. It is an association of poultry farmers, not a government body.",
+   "text": "எண்பத்தி ரெண்டு, மே பதினாலு, நேஷனல் எக் கோஆர்டினேஷன் கமிட்டி முட்டை விலை அறிவிக்க ஆரம்பிச்சுது. இது கோழி விவசாயிங்க சங்கம், அரசு அமைப்பு இல்ல.",
+   "est_sec": 10.0,
+   "slot_sec": 10.77,
+   "flag": "",
+   "notes": "NAMES/NUMBERS: 14 May 1982; National Egg Coordination Committee said in English words; 'an association of poultry farmers, not a government body' kept. tight: 93% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a027": {
+   "en": "In Namakkal, farmers remember it more simply. P. K. Venkatachalam, one of the first, recalled taking a van of eggs to Chennai at an agreed nineteen paise. The trader offered fifteen. They settled at seventeen.",
+   "text": "நாமக்கல் விவசாயிங்க இதை இன்னும் சிம்பிளா ஞாபகம் வெச்சிருக்காங்க. முதல் ஆளுங்கள்ல ஒருத்தரான பி. கே. வெங்கடாசலம், பேசின பத்தொம்பது பைசாவுக்கு, ஒரு வேன் முட்டையை சென்னைக்கு கொண்டு போனதை நினைவு கூர்ந்தாரு. வியாபாரி பதினஞ்சு தர்றேன்னாரு. பதினேழுக்கு முடிஞ்சுது.",
+   "est_sec": 14.31,
+   "slot_sec": 15.63,
+   "flag": "",
+   "notes": "HEDGE kept: \"recalled\" (a farmer's recollection, Times of India 2023). Numbers: agreed 19 paise, trader offered 15, settled at 17. NAME: P. K. Venkatachalam. tight: 92% of the slot."
+  },
+  "a028": {
+   "en": "That is the click. Namakkal did not win by laying the most eggs. It won by being the place where farmers first agreed to say a price out loud.",
+   "text": "இதுதான் விஷயம். நாமக்கல் அதிக முட்டை போட்டு ஜெயிக்கல. விவசாயிங்க முதல் முதலா சேர்ந்து, விலையை வெளிப்படையா சொல்ல ஒத்துக்கிட்ட இடம், அதனால ஜெயிச்சுது.",
+   "est_sec": 8.62,
+   "slot_sec": 8.87,
+   "flag": "",
+   "notes": "'That is the click' said as இதுதான் விஷயம். tight: 97% of the slot."
+  },
+  "a030": {
+   "en": "But is it fair for producers to fix a price together? In twenty seventeen, two complaints reached the Competition Commission of India: one from a Namakkal resident, one from an animal welfare trust.",
+   "text": "ஆனா, உற்பத்தியாளர்கள் சேர்ந்து விலை வைக்கிறது நியாயமா? ரெண்டாயிரத்து பதினேழுல, காம்பெட்டிஷன் கமிஷன் ஆஃப் இந்தியாவுக்கு ரெண்டு புகார் வந்துச்சு: ஒண்ணு நாமக்கல்காரர், இன்னொண்ணு ஒரு விலங்கு நல டிரஸ்ட்.",
+   "est_sec": 12.15,
+   "slot_sec": 12.57,
+   "flag": "",
+   "notes": "NAMES/NUMBERS: 2017; Competition Commission of India said in English words; two complaints: a Namakkal resident and an animal welfare trust. tight: 97% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a031": {
+   "en": "In January twenty twenty two the Commission gave its order. It found that the committee's price is the de facto price in the market, because no other body in India declares the price of eggs.",
+   "text": "ரெண்டாயிரத்து இருபத்தி ரெண்டு ஜனவரில, கமிஷன் ஆர்டர் குடுத்துச்சு. கமிட்டியோட விலை தான் மார்க்கெட்ல நடைமுறை விலைன்னு அது சொல்லுச்சு, ஏன்னா இந்தியால வேற எந்த அமைப்பும் முட்டை விலையை அறிவிக்கிறதில்ல.",
+   "est_sec": 11.23,
+   "slot_sec": 11.67,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (CCI final order, para 115: \"the de facto price in the market\"). Audio renders \"de facto price\" as \"நடைமுறை விலை\" (de facto price), framed as the Commission's finding. \"no other body in India declares the price\" is the narration's own paraphrase of para 115, translated as said. NUMBERS: January 2022. tight: 96% of the slot."
+  },
+  "a032": {
+   "en": "Nobody wanted their eggs in nineteen seventy. Fifty years later, nobody else was declaring a price.",
+   "text": "எழுபதுல அவங்க முட்டை யாருக்கும் வேண்டாம். அம்பது வருஷம் கழிச்சு, வேற யாருமே விலை அறிவிக்கல.",
+   "est_sec": 5.54,
+   "slot_sec": 6.27,
+   "flag": "",
+   "notes": "Callback line: 1970 / fifty years later. No new fact. SHORT YEAR: 1970 said as எழுபதுல."
+  },
+  "a033": {
+   "en": "It held that the committee had broken the competition law by trying to enforce its prices, with penalties or the threat of them. It ordered an end to such threats, and told the committee to say prominently that its prices are only suggestive.",
+   "text": "அபராதம் போட்டோ, மிரட்டியோ, விலையை அமல்படுத்த முயற்சி பண்ணதால, கமிட்டி காம்பெட்டிஷன் சட்டத்தை மீறிடுச்சுன்னு அது சொல்லுச்சு. மிரட்டலை நிறுத்த உத்தரவு போட்டுச்சு, விலைங்க வெறும் பரிந்துரை தான்னு தெரியும்படி சொல்லணும்னும் சொல்லுச்சு.",
+   "est_sec": 12.62,
+   "slot_sec": 14.33,
+   "flag": "",
+   "notes": "QUOTE: on screen \"only suggestive\" (CCI paras 208-209) stays English. Audio renders it as \"வெறும் பரிந்துரை\" (only a recommendation). Check: penalties OR the threat of them; trying to enforce (not that penalties were collected); no claim stronger than the English."
+  },
+  "a034": {
+   "en": "It imposed no fine. The animal welfare trust appealed, asking for penalties and for the committee to be dissolved. In September twenty twenty two the appeals tribunal dismissed that appeal. A further appeal is pending in the Supreme Court.",
+   "text": "அபராதம் போடல. விலங்கு நல டிரஸ்ட், அபராதமும் கமிட்டியை கலைக்கணும்னும் கேட்டு அப்பீல் பண்ணுச்சு. ரெண்டாயிரத்து இருபத்தி ரெண்டு செப்டம்பர்ல, டிரிப்யூனல் அதை தள்ளுபடி பண்ணுச்சு. இன்னொரு அப்பீல் சுப்ரீம் கோர்ட்ல பெண்டிங்.",
+   "est_sec": 11.38,
+   "slot_sec": 12.1,
+   "flag": "",
+   "notes": "LEGAL: no fine; the trust appealed for penalties and dissolution; September 2022 the appeals tribunal dismissed it; further appeal pending in the Supreme Court. 'pending' kept. 'pending' said as பெண்டிங் (everyday word); 'the appeals tribunal' said as டிரிப்யூனல். tight: 94% of the slot."
+  },
+  "a036": {
+   "en": "So what is a suggestion worth? In July twenty twenty six, Namakkal's rate reached six rupees eighty paise, the highest on NECC's daily sheets since twenty twenty two.",
+   "text": "பரிந்துரைக்கு என்ன மதிப்பு? ரெண்டாயிரத்து இருபத்தாறு ஜூலைல, நாமக்கல் ரேட் ஆறு ரூபா எண்பது பைசா, இருபத்தி ரெண்டுக்கு பிறகு என்.இ.சி.சி தினசரி ஷீட்ல உச்சம்.",
+   "est_sec": 10.77,
+   "slot_sec": 11.37,
+   "flag": "",
+   "notes": "NUMBERS: July 2026, Rs 6.80, highest on NECC's daily sheets since 2022. NECC spelled out as letters. SHORT YEAR: 'since 2022' said as இருபத்தி ரெண்டுக்கு அப்புறம் (2026 said in full just before). tight: 95% of the slot. shortened to fit (2026-10-29)"
+  },
+  "a037": {
+   "en": "Five weeks later it was five rupees twenty. Down about a quarter.",
+   "text": "அஞ்சு வாரம் கழிச்சு, அஞ்சு ரூபா இருபது பைசா. சுமார் கால்வாசி குறைஞ்சுது.",
+   "est_sec": 4.0,
+   "slot_sec": 5.47,
+   "flag": "",
+   "notes": "NUMBERS: five weeks later Rs 5.20; down about a quarter."
+  },
+  "a038": {
+   "en": "The world is buying more of India's eggs too. In twenty twenty five, official trade data show the most egg exports on record: nearly eighteen crore eggs a month. Then a Gulf crisis hit shipping, and in March twenty twenty six exports fell by seven tenths.",
+   "text": "உலகமும் இந்திய முட்டையை அதிகமா வாங்குது. அரசாங்க வர்த்தக டேட்டா படி, ரெண்டாயிரத்து இருபத்தி அஞ்சுல முட்டை எக்ஸ்போர்ட் இதுவரை இல்லாத அளவு: மாசம் கிட்டத்தட்ட பதினெட்டு கோடி முட்டை. அப்புறம் கல்ஃப் நெருக்கடி ஷிப்பிங்கை அடிச்சுது, ரெண்டாயிரத்து இருபத்தி ஆறு மார்ச்ல எக்ஸ்போர்ட் எழுபது பர்சென்ட் விழுந்துச்சு.",
+   "est_sec": 16.62,
+   "slot_sec": 17.2,
+   "flag": "",
+   "notes": "NUMBERS: 2025 record, nearly 18 crore eggs a month. \"fell by seven tenths\" is said as seventy percent (same number; screen shows -71%). Gulf kept as the everyday word. 'official trade data show' kept. tight: 97% of the slot."
+  },
+  "a039": {
+   "en": "And every year the same shape: the rate dips in March and April, and climbs in November and December. In thirteen of sixteen years, the lowest month was March or April.",
+   "text": "ஒவ்வொரு வருஷமும் அதே மாதிரி: மார்ச், ஏப்ரல்ல ரேட் இறங்கும், நவம்பர், டிசம்பர்ல ஏறும். பதினாறு வருஷத்துல பதிமூணு வருஷம், ரேட் கம்மியான மாசம் மார்ச் இல்லன்னா ஏப்ரல்.",
+   "est_sec": 8.92,
+   "slot_sec": 11.27,
+   "flag": "",
+   "notes": "NUMBERS: dip in March-April, climb in November-December; 13 of 16 years the lowest month was March or April."
+  },
+  "a040": {
+   "en": "The club's first eggs sold for twenty two paise. The committee's suggestion this week is five rupees seventy. Not adjusted for inflation, but the same egg.",
+   "text": "கிளப்போட முதல் முட்டை இருபத்தி ரெண்டு பைசாவுக்கு வித்துச்சு. இந்த வாரம் கமிட்டியோட பரிந்துரை, அஞ்சு ரூபா எழுபது. விலைவாசி ஏற்றத்தை கணக்குல எடுக்கல, ஆனா அதே முட்டை தான்.",
+   "est_sec": 9.85,
+   "slot_sec": 11.2,
+   "flag": "",
+   "notes": "NUMBERS: 22 paise vs Rs 5.70. HEDGE kept: 'not adjusted for inflation'."
+  },
+  "a041": {
+   "en": "So both are true. Tamil Nadu is the number two egg state. And Namakkal's number is the one the trade reads first, because the farmers who once had no price made one.",
+   "text": "அப்போ ரெண்டுமே உண்மை. தமிழ்நாடு நம்பர் டூ முட்டை மாநிலம். ஆனா டிரேட் முதல்ல பாக்கிறது நாமக்கல் நம்பரை தான், ஏன்னா ஒரு காலத்துல விலையே இல்லாத விவசாயிங்க, ஒரு விலையை உருவாக்கினாங்க.",
+   "est_sec": 10.31,
+   "slot_sec": 10.8,
+   "flag": "",
+   "notes": "Synthesis line; 'number two egg state' kept. No new fact. tight: 95% of the slot."
+  },
+  "a042": {
+   "en": "Tomorrow morning there will be a new number. Printed under it, in small type: merely suggestive.",
+   "text": "நாளைக்கு காலையில ஒரு புது நம்பர் வரும். அதுக்கு கீழ, சின்ன எழுத்துல அச்சடிச்சிருக்கும்: வெறும் பரிந்துரை தான்.",
+   "est_sec": 6.0,
+   "slot_sec": 7.17,
+   "flag": "",
+   "notes": "QUOTE: on screen the NECC disclaimer \"merely suggestive and not mandatory\" stays English. The English narration says only \"merely suggestive\", so the audio says only that: \"வெறும் பரிந்துரை தான்\". Do not add \"not mandatory\" to the audio unless the English changes."
+  }
+ },
+ "reviewer_notes": [
+  "CHECK FIRST, the quotes (on screen they stay English; the audio says a faithful Tamil translation framed as a quote): a017, a025, a031, a033, a042. TANUVAS line ('the study says'), the slogan 'My egg, my price, my life', the CCI order ('de facto price' as \"நடைமுறை விலை\" (de facto price); 'only suggestive' as \"வெறும் பரிந்துரை\" (only a recommendation)), the NECC disclaimer ('merely suggestive' as \"வெறும் பரிந்துரை தான்\").",
+  "LEGAL lines (a031, a033, a034): must not be stronger than the English. The order found the committee tried to enforce prices with penalties or the threat of them; it did not find penalties were collected; it imposed no fine; an appeal was dismissed; a further appeal is pending in the Supreme Court.",
+  "HEDGES kept, please confirm each survived: 'the study says' / 'the study counts', 'the committee's own history says', 'recalled', 'not adjusted for inflation', 'pending', 'about' / 'nearly' on every rounded number.",
+  "NUMBERS are spelled in words, lakh and crore as people say them. Conversions to check: 149 billion eggs said as 14,900 crore (a007); 'fell by seven tenths' said as seventy percent (a038; screen shows -71%). Short spoken years used to fit the slot: a014, a020, a023, a032, a036 (the full year is said nearby; reviewer may restore the full year if the voiced line still fits).",
+  "NAMES in Tamil script, check spelling and pronunciation: Namakkal, Salem, Coimbatore, Chennai, Tamil Nadu, Andhra Pradesh, V. Vellappan, Doctor N. Nandagopal, Doctor B. V. Rao, P. K. Venkatachalam, Gulf. NECC is spelled out letter by letter; its full name and 'Competition Commission of India' are said in English words.",
+  "desi hens/eggs are said as நாட்டுக் கோழி / நாட்டு முட்டை; 'restaurant owners' as hotel people (the everyday Indian word).",
+  "TIMING is an estimate (syllables at 6.5 a second), not a measurement. Slots: measured timeline.json, minus 0.3 s. Lines marked 'tight' in notes are over 90% of the slot. The real check is the voiced track against the English.",
+  "STATUS: DRAFT. A native speaker must review before any voicing is used; reviewed_by stays null until AK names the reviewer."
+ ]
+}

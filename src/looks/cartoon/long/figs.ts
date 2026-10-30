@@ -1,10 +1,13 @@
 // figures.json (public/datayt/long/babies/figures.json) read through fig(): the only way a scene gets a number.
 // Every figure a viewer sees is printed from here, never typed in a component.
 import figures from "../../../../public/datayt/long/babies/figures.json";
+import nkFigures from "../../../../public/datayt/long/namakkal/figures.json";
 import type {FigRef} from "./contract";
 
 export type Fig = {value: number; text: string};
-const T = figures as unknown as Record<string, any>;
+// Each film's tables sit side by side (Namakkal's are prefixed nk_); "meta" is merged key by key.
+const B = figures as unknown as Record<string, any>, N = nkFigures as unknown as Record<string, any>;
+const T: Record<string, any> = {...B, ...N, meta: {...(B.meta ?? {}), ...(N.meta ?? {})}};
 
 export const fig = (r: FigRef, decimals = 1): Fig => {
   const row = T[r.t]?.[r.state];

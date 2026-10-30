@@ -13,7 +13,7 @@ MINIMAX_KEY_VAR=MINIMAX_GO_API_KEY uses the second plan (AK, 25 Oct 2026: when t
 import json, os, subprocess, sys, datetime
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-LONG = os.path.join(ROOT, "public/datayt/long/babies")
+LONG = os.path.join(ROOT, os.environ.get("LONG_DIR") or "public/datayt/long/babies")   # LONG_DIR=public/datayt/long/namakkal/A for another film
 VO = os.path.join(LONG, "vo")
 SB = os.path.join(LONG, "storyboard.json")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -36,6 +36,9 @@ def in_window():
 
 def voice(only):
     ok, now = in_window()
+    # NIGHT_OK=1: AK's explicit go-ahead to voice outside the window (29 Oct 2026, Namakkal films, on MINIMAX_GO_API_KEY, which only
+    # com.vigilv2.shadow uses, from 02:10). Never set it without AK saying so for that run.
+    if not ok and os.environ.get("NIGHT_OK") == "1": ok = True; print("voicing outside the window on AK's go-ahead,", now, flush=True)
     if not ok: raise SystemExit(f"MiniMax voice runs 06:45-22:10 IST only (now {now}); the key is busy at night.")
     kv = os.environ.get("MINIMAX_KEY_VAR")
     if kv: os.environ["MINIMAX_API_KEY"] = os.environ[kv]
@@ -47,6 +50,7 @@ def voice(only):
     man = json.load(open(man_p)) if os.path.exists(man_p) else {}
     for s in scenes():
         if only and s["id"] not in only: continue
+        if not s["vo"].strip(): continue                 # silent scenes (chapter cards)
         f, sec = V.say(spoken(s["vo"]), os.path.join(VO, s["id"]))
         man[s["id"]] = {"file": f, "sec": sec, "text": s["vo"], "voice": V.VOICE, "engine": V.ENGINE}
         json.dump(man, open(man_p, "w"), indent=1)
@@ -70,6 +74,7 @@ def words(only):
             return np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
     for s in scenes():
         if only and s["id"] not in only: continue
+        if not s["vo"].strip(): continue
         m = man[s["id"]]
         audio = a16(os.path.join(VO, m["file"]))
         import difflib, re
@@ -99,6 +104,7 @@ def mix():
     total = int(round(tl["total"] / tl["fps"] * sr))
     track = np.zeros(total + sr, dtype=np.float32)
     for s in tl["scenes"]:
+        if s["id"] not in man: continue                  # silent scenes
         a = V.pcm(os.path.join(VO, man[s["id"]]["file"]))
         i = int(round(s["from"] / tl["fps"] * sr))
         end = min(len(track), i + len(a))
@@ -121,6 +127,7 @@ def srt(out_path):
     alnum = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
     fps, cues = tl["fps"], []
     for sc in tl["scenes"]:
+        if not sc["vo"].strip() or sc["id"] not in wt: continue          # silent scenes (chapter cards)
         ws = wt[sc["id"]]["words"]
         cum, tot = [], 0
         for w in ws:

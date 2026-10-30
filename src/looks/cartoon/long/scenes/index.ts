@@ -11,5 +11,8 @@ import {Scene as scatter} from "./scatter";
 import {Scene as statement} from "./statement";
 import {Scene as title} from "./title";
 import {Scene as end} from "./end";
+import {Scene as priceLine} from "./priceLine";
+import {Scene as shareMap} from "./shareMap";
+import {Scene as doc} from "./doc";
 
-export const SCENES: Record<string, React.FC<SceneProps>> = {stage, replacement, "tfr-line": tfrLine, map, slope, multiples, scatter, statement, title, end};
+export const SCENES: Record<string, React.FC<SceneProps>> = {stage, replacement, "tfr-line": tfrLine, map, slope, multiples, scatter, statement, title, end, "price-line": priceLine, "share-map": shareMap, doc};

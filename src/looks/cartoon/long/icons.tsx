@@ -8,8 +8,8 @@
 import React from "react";
 import {C} from "../palette";
 
-export type IconName = "book" | "school" | "hospital" | "house" | "ring" | "rupee" | "calendar" | "pram" | "clock" | "heart" | "tree" | "scale";
-export const ICONS: IconName[] = ["book", "school", "hospital", "house", "ring", "rupee", "calendar", "pram", "clock", "heart", "tree", "scale"];
+export type IconName = "book" | "school" | "hospital" | "house" | "ring" | "rupee" | "calendar" | "pram" | "clock" | "heart" | "tree" | "scale" | "egg" | "hen";
+export const ICONS: IconName[] = ["book", "school", "hospital", "house", "ring", "rupee", "calendar", "pram", "clock", "heart", "tree", "scale", "egg", "hen"];
 
 type P = {f: number; w: number; id: string};
 
@@ -273,7 +273,36 @@ const Scale: React.FC<P> = ({f, w}) => {
   </g>;
 };
 
-const DRAW: Record<IconName, React.FC<P>> = {book: Book, school: School, hospital: Hospital, house: House, ring: Ring, rupee: Rupee, calendar: Calendar, pram: Pram, clock: Clock, heart: Heart, tree: Tree, scale: Scale};
+
+// ---- egg (Namakkal, 29 Oct 2026): a brown egg that wobbles now and then -----------------------------------------------------------------
+const Egg: React.FC<P> = ({f, w}) => {
+  const d = w * 0.6, k = f % 90, rot = bump(k, 60, 30) * Math.sin(k / 2.2) * 9;
+  return <g transform={`rotate(${rot} 0 50)`}>
+    <path d="M 0 -52 C 30 -52 44 -6 44 16 C 44 42 24 54 0 54 C -24 54 -44 42 -44 16 C -44 -6 -30 -52 0 -52 Z" fill={C.cream} {...L(w)}/>
+    <path d="M 22 -10 C 30 8 30 30 18 42" fill="none" stroke={C.wallLow} strokeWidth={d * 1.6} strokeLinecap="round" opacity={0.8}/>
+    <path d="M -20 -26 Q -28 -10 -28 6" fill="none" stroke={C.white} strokeWidth={d * 1.2} strokeLinecap="round"/>
+  </g>;
+};
+
+// ---- hen: a red-brown desi hen; she pecks every 2.6 s and blinks ------------------------------------------------------------------------
+const Hen: React.FC<P> = ({f, w}) => {
+  const d = w * 0.6, k = f % 78, peck = bump(k, 20, 16) * 18, blink = blinks(f, 3);
+  return <g transform="translate(-4 6)">
+    <path d="M -46 6 Q -60 -26 -34 -34 Q -40 -10 -26 -2 Z" fill={C.redDark} {...L(d)}/>
+    <path d="M -40 10 C -40 -22 6 -22 20 -8 C 34 4 30 40 0 44 C -28 46 -42 32 -40 10 Z" fill={C.orangeDark} {...L(w)}/>
+    <path d="M -24 8 Q -8 22 10 8" fill="none" stroke={C.brown} strokeWidth={d} strokeLinecap="round"/>
+    <path d="M -6 44 L -8 56 M 8 43 L 10 56" stroke={C.gold} strokeWidth={w * 0.9} strokeLinecap="round"/>
+    <g transform={`rotate(${peck} 16 -6)`}>
+      <circle cx={26} cy={-20} r={16} fill={C.orangeDark} {...L(w)}/>
+      <path d="M 18 -36 Q 22 -46 26 -38 Q 30 -48 34 -36 Z" fill={C.red} {...L(d)}/>
+      <path d="M 40 -22 L 52 -17 L 40 -12 Z" fill={C.gold} {...L(d)}/>
+      <path d="M 36 -8 Q 40 2 34 4 Q 30 0 32 -8 Z" fill={C.red} {...L(d * 0.8)}/>
+      {blink ? <path d="M 26 -24 L 34 -24" stroke={C.ink} strokeWidth={d}/> : <circle cx={30} cy={-24} r={3.6} fill={C.ink}/>}
+    </g>
+  </g>;
+};
+
+const DRAW: Record<IconName, React.FC<P>> = {egg: Egg, hen: Hen, book: Book, school: School, hospital: Hospital, house: House, ring: Ring, rupee: Rupee, calendar: Calendar, pram: Pram, clock: Clock, heart: Heart, tree: Tree, scale: Scale};
 
 export const Icon: React.FC<{name: IconName; x: number; y: number; s: number; f: number; shadow?: boolean; seed?: number}> = ({name, x, y, s, f, shadow = false, seed = 0}) => {
   const Draw = DRAW[name];

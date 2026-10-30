@@ -32,7 +32,7 @@ Disputed borders: use the map as the existing `StateMap` does (public/datayt/ind
 
 ## Fixed library APIs (SVG <g> in the 1920x1080 frame)
 - `Actor` (cast.tsx): `<Actor who x y h f pose flip mouth seed/>`; `who`: "uncle"|"mother"|"father"|"grandmother"|"girl"|"boy"|"baby"|"teacher"; (x, y) = middle of the feet line; h = height in px; pose "idle"|"present"|"point"|"cheer"|"worried"; mouth = Rhubarb shape letter A-H or X (see ../art.tsx Mouth).
-- `Icon` (icons.tsx): `<Icon name x y s f/>` centred on (x, y); s = 1 is about 120 px across; names: book, school, hospital, house, ring, rupee, calendar, pram, clock, heart, tree, scale.
+- `Icon` (icons.tsx): `<Icon name x y s f/>` centred on (x, y); s = 1 is about 120 px across; names: book, school, hospital, house, ring, rupee, calendar, pram, clock, heart, tree, scale, egg, hen.
 - `Set` (sets.tsx, owned by the stage builder): `<Set set f/>`; sets: home, school, street, clinic, village, city, void.
 
 ## Scene kinds and specs
@@ -48,6 +48,10 @@ All specs may also carry `camera?: {fx, fy, s0, s1}` (push-in over the scene) an
 8. **statement**: solid-blue card with big white text. `{lines: string[], accent?: string[] (words in yellow), mascot?: boolean}`.
 9. **title**: opening title card with the uncle and a headline. `{title, sub?, chip?}`.
 10. **end**: closing scene: the uncle asks the question, source list, subscribe prompt, "next video" box (empty frame; end-screen elements are added in YouTube). `{question, sources: string[], next?: string}`.
+
+11. **price-line** (Namakkal): `{series, y0, y1, ystep, drawKey?, drawn?, band?: {value: "max", key, label?}, marks: [{key, ref, at, caption?, side?, decimals?, prefix?, suffix?, color?}], title?, source, actor?}`. Type `PriceLineSpec` in `scenes/nk_kit.tsx`.
+12. **share-map** (Namakkal): `{states: [{state, key, ref, bx, by, color?, caption?, decimals?, suffix?}], lit?: [{state, key?, color?}], pin?: {name, key, label}, zoom?: {u, v, s}, title?, source}`. Type `ShareMapSpec`.
+13. **doc** (Namakkal): `{org, doc, quote, quoteKey, credit, creditKey?, label, actor?}`. The page is drawn and `label` says so on screen. Type `DocSpec`.
 
 ## Checks every builder must pass
 1. Render stills of your kind with `LONG-scene` at several frames (before / at / after each reveal), look at each image, and fix what is wrong: text outside SAFE, overlaps, number before its `at`, unreadable type, empty areas, flicker.

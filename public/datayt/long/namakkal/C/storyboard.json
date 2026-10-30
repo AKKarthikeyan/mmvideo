@@ -1,0 +1,2278 @@
+{
+ "id": "namakkal-C",
+ "format": "F2 The Long Road, Bhagyaraj heart, Nolan hairpin (scripts/C_LONG_ROAD.md)",
+ "target_minutes": 7,
+ "fps": 60,
+ "brand": "indicaatlas",
+ "scenes": [
+  {
+   "id": "c001",
+   "beat": "C01",
+   "act": "Cold open",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "farmer",
+      "who": "farmer",
+      "x": 1560,
+      "y": 900,
+      "h": 440,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "hen",
+      "x": 1080,
+      "y": 870,
+      "s": 1.2,
+      "enter": "hen"
+     },
+     {
+      "icon": "hen",
+      "x": 1220,
+      "y": 900,
+      "s": 1.0,
+      "seed": 2,
+      "enter": "hen"
+     },
+     {
+      "icon": "egg",
+      "x": 900,
+      "y": 560,
+      "s": 1.7
+     },
+     {
+      "icon": "ratesheet",
+      "x": 560,
+      "y": 520,
+      "s": 1.5,
+      "enter": "sheet"
+     }
+    ],
+    "badges": [
+     {
+      "key": "rate",
+      "ref": {
+       "t": "nk_rate",
+       "state": "Namakkal",
+       "s": "2026-10-29"
+      },
+      "decimals": 2,
+      "prefix": "₹",
+      "caption": "an egg · NECC suggested rate · 29 Oct 2026",
+      "x": 1380,
+      "y": 380,
+      "size": 170
+     }
+    ],
+    "pills": [
+     {
+      "text": "NAMAKKAL, TAMIL NADU",
+      "x": 96,
+      "y": 72,
+      "key": "nk"
+     }
+    ],
+    "camera": {
+     "fx": 960,
+     "fy": 600,
+     "s0": 1.0,
+     "s1": 1.08
+    }
+   },
+   "vo": "Every morning, a committee of egg farmers puts out a number. On twenty ninth October twenty twenty six, at Namakkal in Tamil Nadu, it was five rupees seventy paise for an egg.",
+   "reveals": [
+    {
+     "key": "sheet",
+     "word": "number"
+    },
+    {
+     "key": "hen",
+     "word": "farmers"
+    },
+    {
+     "key": "nk",
+     "word": "Namakkal"
+    },
+    {
+     "key": "rate",
+     "word": "five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Dawn over the village; the rate sheet unrolls; the ₹5.70 lands on 'five rupees seventy'.",
+   "hold": 1.0
+  },
+  {
+   "id": "c002",
+   "beat": "C02",
+   "act": "Cold open",
+   "kind": "stage",
+   "spec": {
+    "set": "hospital",
+    "actors": [
+     {
+      "id": "pm",
+      "who": "postmaster",
+      "x": 700,
+      "y": 900,
+      "h": 460,
+      "enter": "pm"
+     }
+    ],
+    "props": [
+     {
+      "icon": "deshen",
+      "x": 760,
+      "y": 880,
+      "s": 0.9,
+      "seed": 0,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 830,
+      "y": 854,
+      "s": 0.9,
+      "seed": 1,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 900,
+      "y": 880,
+      "s": 0.9,
+      "seed": 2,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 970,
+      "y": 854,
+      "s": 0.9,
+      "seed": 3,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 1040,
+      "y": 880,
+      "s": 0.9,
+      "seed": 4,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 1110,
+      "y": 854,
+      "s": 0.9,
+      "seed": 5,
+      "enter": "hens"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "1969",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "That number began with another morning, fifty seven years earlier, and six hens that a postmaster carried to the vet.",
+   "reveals": [
+    {
+     "key": "pm",
+     "word": "postmaster"
+    },
+    {
+     "key": "hens",
+     "word": "six"
+    }
+   ],
+   "transition": "wipe",
+   "visual": "The rate sheet's morning dissolves to a sepia morning in 1969.",
+   "hold": 1.0
+  },
+  {
+   "id": "c003",
+   "beat": "C03",
+   "act": "Cold open",
+   "kind": "title",
+   "spec": {
+    "kicker": "INDICA ATLAS",
+    "title": "Six Hens Nobody Wanted",
+    "sub": "How a postmaster and a vet built India's egg city",
+    "steps": [
+     {
+      "text": "TRY 1",
+      "key": "t"
+     },
+     {
+      "text": "TRY 2",
+      "key": "t"
+     },
+     {
+      "text": "TRY 3",
+      "key": "t"
+     },
+     {
+      "text": "TRY 4",
+      "key": "t"
+     }
+    ]
+   },
+   "vo": "How did six hens become a price? It took four tries. Each one fixed a problem, and made the next.",
+   "reveals": [
+    {
+     "key": "t",
+     "word": "four"
+    }
+   ],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c004",
+   "beat": null,
+   "act": "Try one: six hens",
+   "kind": "chapter",
+   "spec": {
+    "n": 1,
+    "title": "Try one: six hens",
+    "icon": "hen",
+    "year": "1969"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c005",
+   "beat": "C11",
+   "act": "Try one",
+   "kind": "share-map",
+   "spec": {
+    "states": [],
+    "lit": [
+     {
+      "state": "Tamil Nadu",
+      "key": "tn",
+      "color": "#F58A1F"
+     }
+    ],
+    "pin": {
+     "name": "Namakkal",
+     "key": "pin",
+     "label": "NAMAKKAL"
+    },
+    "zoom": {
+     "u": 352,
+     "v": 900,
+     "s": 2.6
+    },
+    "title": "NAMAKKAL · PART OF SALEM UNTIL 1997",
+    "source": "nk_district"
+   },
+   "vo": "Namakkal sits in the middle of Tamil Nadu. In the late nineteen sixties it was part of Salem district. A university case study calls it a place with low levels of agricultural activity.",
+   "reveals": [
+    {
+     "key": "pin",
+     "word": "Namakkal"
+    },
+    {
+     "key": "tn",
+     "word": "Tamil"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The globe gives way to India, then the camera falls into Tamil Nadu and the Namakkal pin pulses.",
+   "hold": 1.0
+  },
+  {
+   "id": "c006",
+   "beat": "C12",
+   "act": "Try one",
+   "kind": "stage",
+   "spec": {
+    "set": "hospital",
+    "actors": [
+     {
+      "id": "pm",
+      "who": "postmaster",
+      "x": 560,
+      "y": 900,
+      "h": 460,
+      "enter": "pm"
+     },
+     {
+      "id": "vet",
+      "who": "vet",
+      "x": 1460,
+      "y": 900,
+      "h": 470,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "deshen",
+      "x": 760,
+      "y": 880,
+      "s": 0.9,
+      "seed": 0,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 830,
+      "y": 854,
+      "s": 0.9,
+      "seed": 1,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 900,
+      "y": 880,
+      "s": 0.9,
+      "seed": 2,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 970,
+      "y": 854,
+      "s": 0.9,
+      "seed": 3,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 1040,
+      "y": 880,
+      "s": 0.9,
+      "seed": 4,
+      "enter": "hens"
+     },
+     {
+      "icon": "deshen",
+      "x": 1110,
+      "y": 854,
+      "s": 0.9,
+      "seed": 5,
+      "enter": "hens"
+     }
+    ],
+    "badges": [
+     {
+      "key": "hens",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "hens_1969"
+      },
+      "decimals": 0,
+      "caption": "red desi hens",
+      "x": 1250,
+      "y": 300,
+      "size": 150
+     }
+    ],
+    "pills": [
+     {
+      "text": "1969",
+      "x": 96,
+      "y": 72,
+      "key": "yr"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "In nineteen sixty nine, a village postmaster named V. Vellappan brought six red desi hens to the government veterinary hospital in Namakkal.",
+   "reveals": [
+    {
+     "key": "yr",
+     "word": "nineteen"
+    },
+    {
+     "key": "pm",
+     "word": "postmaster"
+    },
+    {
+     "key": "hens",
+     "word": "six"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A sepia 1969 morning: the postmaster walks up to the veterinary hospital with six red hens in a basket.",
+   "hold": 1.0
+  },
+  {
+   "id": "c007",
+   "beat": "C13",
+   "act": "Try one",
+   "kind": "stage",
+   "spec": {
+    "set": "hospital",
+    "actors": [],
+    "props": [
+     {
+      "icon": "deshen",
+      "x": 860,
+      "y": 860,
+      "s": 1.6
+     },
+     {
+      "icon": "egg",
+      "x": 1080,
+      "y": 900,
+      "s": 0.7,
+      "enter": "few"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "HARDY",
+      "x": 1300,
+      "y": 260,
+      "key": "hardy"
+     },
+     {
+      "text": "FEW EGGS",
+      "x": 1300,
+      "y": 350,
+      "key": "few"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "Desi hens are hardy. But they lay few eggs.",
+   "reveals": [
+    {
+     "key": "hardy",
+     "word": "hardy"
+    },
+    {
+     "key": "few",
+     "word": "few"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c008",
+   "beat": "C14",
+   "act": "Try one",
+   "kind": "stage",
+   "spec": {
+    "set": "hospital",
+    "actors": [
+     {
+      "id": "pm",
+      "who": "postmaster",
+      "x": 480,
+      "y": 900,
+      "h": 440
+     },
+     {
+      "id": "vet",
+      "who": "vet",
+      "x": 1000,
+      "y": 900,
+      "h": 470,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "hen",
+      "x": 1380,
+      "y": 860,
+      "s": 1.2,
+      "enter": "eggs"
+     },
+     {
+      "icon": "egg",
+      "x": 1520,
+      "y": 880,
+      "s": 0.8,
+      "enter": "eggs"
+     },
+     {
+      "icon": "egg",
+      "x": 1600,
+      "y": 900,
+      "s": 0.8,
+      "enter": "eggs"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "MORE EGGS",
+      "x": 1300,
+      "y": 200,
+      "key": "eggs"
+     },
+     {
+      "text": "MORE MANURE",
+      "x": 1300,
+      "y": 290,
+      "key": "manure"
+     },
+     {
+      "text": "MORE INCOME",
+      "x": 1300,
+      "y": 380,
+      "key": "income"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "So the vet, Doctor N. Nandagopal, suggested hybrid layers instead. More eggs. More manure for the fields. More income.",
+   "reveals": [
+    {
+     "key": "eggs",
+     "word": "eggs"
+    },
+    {
+     "key": "manure",
+     "word": "manure"
+    },
+    {
+     "key": "income",
+     "word": "income"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c009",
+   "beat": null,
+   "act": "Try two: the chicks",
+   "kind": "chapter",
+   "spec": {
+    "n": 2,
+    "title": "Try two: the chicks",
+    "icon": "chick",
+    "year": "1970"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c010",
+   "beat": "C21",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "road",
+    "actors": [],
+    "props": [
+     {
+      "icon": "car",
+      "x": 700,
+      "y": 820,
+      "s": 2.0,
+      "enter": "car"
+     },
+     {
+      "icon": "chick",
+      "x": 1300,
+      "y": 880,
+      "s": 0.8,
+      "enter": "chicks"
+     },
+     {
+      "icon": "chick",
+      "x": 1380,
+      "y": 900,
+      "s": 0.8,
+      "enter": "chicks",
+      "seed": 1
+     },
+     {
+      "icon": "chick",
+      "x": 1460,
+      "y": 880,
+      "s": 0.8,
+      "enter": "chicks",
+      "seed": 2
+     }
+    ],
+    "badges": [
+     {
+      "key": "chicks",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "chicks_1970"
+      },
+      "decimals": 0,
+      "caption": "chicks",
+      "x": 1400,
+      "y": 330,
+      "size": 160
+     }
+    ],
+    "pills": [
+     {
+      "text": "1970",
+      "x": 96,
+      "y": 72,
+      "key": "yr"
+     },
+     {
+      "text": "COIMBATORE",
+      "x": 96,
+      "y": 150,
+      "key": "cbe"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 228
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "In nineteen seventy the vet drove Vellappan and three other farmers to a poultry firm in Coimbatore. They bought four hundred chicks, at three or four rupees each.",
+   "reveals": [
+    {
+     "key": "yr",
+     "word": "seventy"
+    },
+    {
+     "key": "car",
+     "word": "drove"
+    },
+    {
+     "key": "cbe",
+     "word": "Coimbatore"
+    },
+    {
+     "key": "chicks",
+     "word": "four"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The vet's car on the Coimbatore road with four farmers; boxes of chicks on the way back.",
+   "hold": 1.0
+  },
+  {
+   "id": "c011",
+   "beat": "C22",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "sheds",
+    "actors": [
+     {
+      "id": "vet",
+      "who": "vet",
+      "x": 1500,
+      "y": 900,
+      "h": 440,
+      "enter": "vet",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "chick",
+      "x": 700,
+      "y": 900,
+      "s": 0.7,
+      "seed": 0
+     },
+     {
+      "icon": "chick",
+      "x": 780,
+      "y": 880,
+      "s": 0.7,
+      "seed": 1
+     },
+     {
+      "icon": "chick",
+      "x": 860,
+      "y": 860,
+      "s": 0.7,
+      "seed": 2
+     },
+     {
+      "icon": "chick",
+      "x": 940,
+      "y": 900,
+      "s": 0.7,
+      "seed": 3
+     },
+     {
+      "icon": "chick",
+      "x": 1020,
+      "y": 880,
+      "s": 0.7,
+      "seed": 4
+     },
+     {
+      "icon": "chick",
+      "x": 1100,
+      "y": 860,
+      "s": 0.7,
+      "seed": 5
+     },
+     {
+      "icon": "chick",
+      "x": 1180,
+      "y": 900,
+      "s": 0.7,
+      "seed": 6
+     },
+     {
+      "icon": "chick",
+      "x": 1260,
+      "y": 880,
+      "s": 0.7,
+      "seed": 7
+     }
+    ],
+    "badges": [
+     {
+      "key": "each",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "chicks_each"
+      },
+      "decimals": 0,
+      "caption": "chicks in each shed",
+      "x": 640,
+      "y": 330,
+      "size": 150
+     }
+    ],
+    "pills": [
+     {
+      "text": "EVERY MORNING · FREE",
+      "x": 96,
+      "y": 72,
+      "key": "morning"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "Each farmer raised one hundred chicks in a thatched shed. And every morning, the vet came to check them, free of cost.",
+   "reveals": [
+    {
+     "key": "each",
+     "word": "hundred"
+    },
+    {
+     "key": "vet",
+     "word": "vet"
+    },
+    {
+     "key": "morning",
+     "word": "morning"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c012",
+   "beat": "C23",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "market",
+    "actors": [
+     {
+      "id": "trader",
+      "who": "trader",
+      "x": 1300,
+      "y": 900,
+      "h": 440,
+      "pose": "refuse"
+     }
+    ],
+    "props": [
+     {
+      "icon": "crate",
+      "x": 560,
+      "y": 860,
+      "s": 1.4
+     },
+     {
+      "icon": "crate",
+      "x": 700,
+      "y": 880,
+      "s": 1.2,
+      "seed": 1
+     },
+     {
+      "icon": "egg",
+      "x": 640,
+      "y": 720,
+      "s": 0.8
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "NOBODY WANTED THE EGGS",
+      "x": 96,
+      "y": 72,
+      "key": "snub"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "The hens grew. They laid. And the town turned up its nose.",
+   "reveals": [
+    {
+     "key": "snub",
+     "word": "nose"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A town market: crates of the new white eggs; the buyer shakes his head.",
+   "hold": 1.0
+  },
+  {
+   "id": "c013",
+   "beat": "C23",
+   "act": "Try two",
+   "kind": "quote",
+   "spec": {
+    "quote": "consumers and restaurant owners preferred only desi chicken eggs",
+    "who": "TANUVAS case study",
+    "role": "2020",
+    "kind": "study",
+    "key": "q"
+   },
+   "vo": "Consumers and restaurant owners, the study says, wanted only desi eggs.",
+   "reveals": [
+    {
+     "key": "q",
+     "word": "Consumers"
+    }
+   ],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c014",
+   "beat": "C24",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "sheds",
+    "actors": [
+     {
+      "id": "f1",
+      "who": "farmer",
+      "x": 420,
+      "y": 900,
+      "h": 400
+     },
+     {
+      "id": "f2",
+      "who": "farmer2",
+      "x": 760,
+      "y": 900,
+      "h": 400,
+      "seed": 1
+     },
+     {
+      "id": "f3",
+      "who": "farmer",
+      "x": 1160,
+      "y": 900,
+      "h": 400,
+      "seed": 2,
+      "flip": true
+     },
+     {
+      "id": "f4",
+      "who": "farmer2",
+      "x": 1500,
+      "y": 900,
+      "h": 400,
+      "seed": 3,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "crate",
+      "x": 420,
+      "y": 920,
+      "s": 0.9,
+      "seed": 0
+     },
+     {
+      "icon": "crate",
+      "x": 780,
+      "y": 920,
+      "s": 0.9,
+      "seed": 1
+     },
+     {
+      "icon": "crate",
+      "x": 1140,
+      "y": 920,
+      "s": 0.9,
+      "seed": 2
+     },
+     {
+      "icon": "crate",
+      "x": 1500,
+      "y": 920,
+      "s": 0.9,
+      "seed": 3
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "SELL ALONE?",
+      "x": 96,
+      "y": 72,
+      "key": "alone"
+     },
+     {
+      "text": "OR TOGETHER?",
+      "x": 96,
+      "y": 150,
+      "key": "tog"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 228
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "Four farmers, each with a shed full of eggs nobody local wanted, and eggs do not wait. Sell alone, and take whatever a buyer offers. Or sell together.",
+   "reveals": [
+    {
+     "key": "alone",
+     "word": "alone"
+    },
+    {
+     "key": "tog",
+     "word": "together"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c015",
+   "beat": "C25",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "sheds",
+    "actors": [
+     {
+      "id": "f1",
+      "who": "farmer",
+      "x": 420,
+      "y": 900,
+      "h": 400
+     },
+     {
+      "id": "f2",
+      "who": "farmer2",
+      "x": 760,
+      "y": 900,
+      "h": 400,
+      "seed": 1
+     },
+     {
+      "id": "f3",
+      "who": "farmer",
+      "x": 1160,
+      "y": 900,
+      "h": 400,
+      "seed": 2,
+      "flip": true
+     },
+     {
+      "id": "f4",
+      "who": "farmer2",
+      "x": 1500,
+      "y": 900,
+      "h": 400,
+      "seed": 3,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "crate",
+      "x": 960,
+      "y": 900,
+      "s": 1.6,
+      "enter": "club"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "FARM CLUB",
+      "x": 96,
+      "y": 72,
+      "key": "club"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "The vet's answer: form a farm club. Collect everyone's eggs, and sell them together, further away.",
+   "reveals": [
+    {
+     "key": "club",
+     "word": "club"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Four farmers, four sheds; then one shared crate in the middle.",
+   "hold": 1.0
+  },
+  {
+   "id": "c016",
+   "beat": "C26",
+   "act": "Try two",
+   "kind": "stage",
+   "spec": {
+    "set": "train",
+    "actors": [],
+    "props": [
+     {
+      "icon": "crate",
+      "x": 1450,
+      "y": 860,
+      "s": 1.2,
+      "seed": 0
+     }
+    ],
+    "badges": [
+     {
+      "key": "p22",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "paise_chennai"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "caption": "an egg, in Chennai",
+      "x": 1380,
+      "y": 320,
+      "size": 150
+     }
+    ],
+    "pills": [
+     {
+      "text": "TO CHENNAI, BY TRAIN",
+      "x": 96,
+      "y": 72,
+      "key": "chennai"
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "The club sent eggs to Chennai by train and sold them for twenty two paise each.",
+   "reveals": [
+    {
+     "key": "chennai",
+     "word": "Chennai"
+    },
+    {
+     "key": "p22",
+     "word": "twenty"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c017",
+   "beat": null,
+   "act": "Try three: the boom",
+   "kind": "chapter",
+   "spec": {
+    "n": 3,
+    "title": "Try three: the boom",
+    "icon": "hen",
+    "year": "1975"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c018",
+   "beat": "C31",
+   "act": "Try three",
+   "kind": "timeline",
+   "spec": {
+    "points": [
+     {
+      "key": "b75",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1975"
+      },
+      "decimals": 0,
+      "label": "1975-76"
+     },
+     {
+      "key": "b78",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1978"
+      },
+      "decimals": 0,
+      "label": "1978-79"
+     },
+     {
+      "key": "b82",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1982"
+      },
+      "decimals": 0,
+      "label": "1982-83"
+     }
+    ],
+    "unit": "lakh birds",
+    "title": "BIRDS AROUND NAMAKKAL",
+    "source": "nk_story"
+   },
+   "vo": "Farmers from nearby villages came to see. Sheds went up everywhere. The study counts about three lakh birds in the mid seventies, twelve lakh a few years later, and thirty lakh by nineteen eighty two.",
+   "reveals": [
+    {
+     "key": "b75",
+     "word": "three"
+    },
+    {
+     "key": "b78",
+     "word": "twelve"
+    },
+    {
+     "key": "b82",
+     "word": "thirty"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c019",
+   "beat": "C32",
+   "act": "Try three",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "MORE HENS, MORE EGGS.",
+     "TOO MANY AT ONCE,",
+     "AND THE *PRICE FALLS*."
+    ]
+   },
+   "vo": "But more hens means more eggs, every single day. When too many arrive at once, the price falls, and every farmer stands alone against the buyer.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c020",
+   "beat": "C33",
+   "act": "Try three",
+   "kind": "counter",
+   "spec": {
+    "mode": "trio",
+    "visual": "crates",
+    "items": [
+     {
+      "key": "feed",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "feed_rise_pct"
+      },
+      "decimals": 0,
+      "prefix": "+",
+      "suffix": "%",
+      "label": "feed, in five years"
+     },
+     {
+      "key": "egg",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "paise_1981"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "label": "an egg"
+     },
+     {
+      "key": "out",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "stopped_pct"
+      },
+      "decimals": 0,
+      "suffix": "%",
+      "label": "of poultry farmers had stopped"
+     }
+    ],
+    "note": "c. 1981 · NECC's own account",
+    "source": "nk_story"
+   },
+   "vo": "Around nineteen eighty one, the egg committee's own history says, feed had become two hundred and fifty percent dearer in five years. An egg still sold for about thirty five paise. More than forty percent of poultry farmers had stopped.",
+   "reveals": [
+    {
+     "key": "feed",
+     "word": "two"
+    },
+    {
+     "key": "egg",
+     "word": "thirty"
+    },
+    {
+     "key": "out",
+     "word": "forty"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c021",
+   "beat": "C34",
+   "act": "Try three",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "THE CLUB COULD SELL EGGS.",
+     "IT COULD NOT *STOP THE FALL*."
+    ]
+   },
+   "vo": "So: the club could sell eggs. It could not stop the price from falling.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c022",
+   "beat": null,
+   "act": "Try four: the price",
+   "kind": "chapter",
+   "spec": {
+    "n": 4,
+    "title": "Try four: the price",
+    "icon": "ratesheet",
+    "year": "1982"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c023",
+   "beat": "C41",
+   "act": "Try four",
+   "kind": "stage",
+   "spec": {
+    "set": "road",
+    "actors": [
+     {
+      "id": "trader",
+      "who": "trader",
+      "x": 1500,
+      "y": 900,
+      "h": 430,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "van",
+      "x": 680,
+      "y": 820,
+      "s": 2.0
+     }
+    ],
+    "badges": [
+     {
+      "key": "v19",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "van_agreed"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "caption": "agreed",
+      "x": 520,
+      "y": 300,
+      "size": 110
+     },
+     {
+      "key": "v15",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "van_offer"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "caption": "offered",
+      "x": 960,
+      "y": 300,
+      "size": 110
+     },
+     {
+      "key": "v17",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "van_settled"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "caption": "settled",
+      "x": 1400,
+      "y": 300,
+      "size": 130
+     }
+    ],
+    "pills": [
+     {
+      "text": "RECOLLECTION · P. K. VENKATACHALAM",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "sepia"
+   },
+   "vo": "In Namakkal, P. K. Venkatachalam, one of the early farmers, recalled taking a van of eggs to Chennai at an agreed nineteen paise. The trader offered fifteen. They settled at seventeen.",
+   "reveals": [
+    {
+     "key": "v19",
+     "word": "nineteen"
+    },
+    {
+     "key": "v15",
+     "word": "fifteen"
+    },
+    {
+     "key": "v17",
+     "word": "seventeen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c024",
+   "beat": "C42",
+   "act": "Try four",
+   "kind": "stage",
+   "spec": {
+    "set": "hall",
+    "actors": [
+     {
+      "id": "crowd",
+      "who": "crowd",
+      "x": 960,
+      "y": 900,
+      "h": 380
+     }
+    ],
+    "props": [],
+    "badges": [],
+    "pills": [
+     {
+      "text": "NAMAKKAL COMMITTEE",
+      "x": 96,
+      "y": 72,
+      "key": "nk"
+     },
+     {
+      "text": "HYDERABAD",
+      "x": 1300,
+      "y": 220,
+      "key": "hy"
+     },
+     {
+      "text": "CHITTOOR",
+      "x": 1300,
+      "y": 300,
+      "key": "ch"
+     },
+     {
+      "text": "PUNE",
+      "x": 1300,
+      "y": 380,
+      "key": "pu"
+     },
+     {
+      "text": "RECOLLECTION · P. K. VENKATACHALAM",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "warm"
+   },
+   "vo": "Within a week, Venkatachalam said, the farmers met and formed a Namakkal committee to set the price. Farmers from Hyderabad, Chittoor and Pune joined, and it became national.",
+   "reveals": [
+    {
+     "key": "nk",
+     "word": "Namakkal"
+    },
+    {
+     "key": "hy",
+     "word": "Hyderabad"
+    },
+    {
+     "key": "ch",
+     "word": "Chittoor"
+    },
+    {
+     "key": "pu",
+     "word": "Pune"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c025",
+   "beat": "C43",
+   "act": "Try four",
+   "kind": "stage",
+   "spec": {
+    "set": "hall",
+    "actors": [
+     {
+      "id": "crowd",
+      "who": "crowd",
+      "x": 960,
+      "y": 900,
+      "h": 380
+     }
+    ],
+    "props": [],
+    "badges": [
+     {
+      "key": "meet",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "meetings"
+      },
+      "decimals": 0,
+      "suffix": "+",
+      "caption": "meetings across India",
+      "x": 1420,
+      "y": 300,
+      "size": 150
+     }
+    ],
+    "pills": [
+     {
+      "text": "NECC'S OWN HISTORY",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "ILLUSTRATIVE",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "tint": "warm"
+   },
+   "vo": "The national committee's own history tells it through the breeder Doctor B. V. Rao, who travelled the country and held more than three hundred meetings",
+   "reveals": [
+    {
+     "key": "meet",
+     "word": "three"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c026",
+   "beat": "C43",
+   "act": "Try four",
+   "kind": "quote",
+   "spec": {
+    "quote": "My egg, my price, my life",
+    "who": "Dr B. V. Rao's call",
+    "role": "NECC's own history",
+    "kind": "slogan",
+    "key": "q"
+   },
+   "vo": "with one slogan: my egg, my price, my life.",
+   "reveals": [
+    {
+     "key": "q",
+     "word": "egg"
+    }
+   ],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c027",
+   "beat": "C44",
+   "act": "Try four",
+   "kind": "stage",
+   "spec": {
+    "set": "hall",
+    "actors": [
+     {
+      "id": "crowd",
+      "who": "crowd",
+      "x": 960,
+      "y": 900,
+      "h": 360
+     }
+    ],
+    "props": [
+     {
+      "icon": "ratesheet",
+      "x": 1460,
+      "y": 560,
+      "s": 1.8,
+      "enter": "sheet"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "NECC · 14 MAY 1982",
+      "x": 96,
+      "y": 72,
+      "key": "necc"
+     },
+     {
+      "text": "A FARMERS' ASSOCIATION, NOT A GOVERNMENT BODY",
+      "x": 96,
+      "y": 150,
+      "key": "assoc"
+     }
+    ],
+    "tint": "warm"
+   },
+   "vo": "On the fourteenth of May nineteen eighty two, the National Egg Coordination Committee began declaring the price of eggs. Not a government body: an association of poultry farmers.",
+   "reveals": [
+    {
+     "key": "necc",
+     "word": "fourteenth"
+    },
+    {
+     "key": "sheet",
+     "word": "declaring"
+    },
+    {
+     "key": "assoc",
+     "word": "association"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The first price is chalked up: NECC's board goes live on 14 May 1982.",
+   "hold": 1.0
+  },
+  {
+   "id": "c028",
+   "beat": "C45",
+   "act": "Try four",
+   "kind": "timeline",
+   "spec": {
+    "points": [
+     {
+      "key": "b75",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1975"
+      },
+      "decimals": 0,
+      "label": "1975-76",
+      "shown": true
+     },
+     {
+      "key": "b78",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1978"
+      },
+      "decimals": 0,
+      "label": "1978-79",
+      "shown": true
+     },
+     {
+      "key": "b82",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1982"
+      },
+      "decimals": 0,
+      "label": "1982-83",
+      "shown": true
+     },
+     {
+      "key": "b85",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "birds_1985"
+      },
+      "decimals": 0,
+      "label": "1985"
+     }
+    ],
+    "unit": "lakh birds",
+    "pins": [
+     {
+      "key": "col",
+      "label": "VETERINARY COLLEGE, NAMAKKAL · 14 JUN 1985",
+      "at": "1985"
+     }
+    ],
+    "title": "BIRDS AROUND NAMAKKAL",
+    "source": "nk_story"
+   },
+   "vo": "By nineteen eighty five, the study counts seventy five lakh birds around Namakkal. That year the town got its own veterinary college.",
+   "reveals": [
+    {
+     "key": "b85",
+     "word": "seventy"
+    },
+    {
+     "key": "col",
+     "word": "college"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c029",
+   "beat": null,
+   "act": "The price of a price",
+   "kind": "chapter",
+   "spec": {
+    "n": 5,
+    "title": "The price of a price",
+    "icon": "doc",
+    "year": "2022"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c030",
+   "beat": "C51",
+   "act": "The price of a price",
+   "kind": "stage",
+   "spec": {
+    "set": "regulator",
+    "actors": [
+     {
+      "id": "off",
+      "who": "official",
+      "x": 1400,
+      "y": 900,
+      "h": 440,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "doc",
+      "x": 700,
+      "y": 600,
+      "s": 1.6,
+      "enter": "cases"
+     }
+    ],
+    "badges": [],
+    "pills": [
+     {
+      "text": "COMPETITION COMMISSION OF INDIA",
+      "x": 96,
+      "y": 72,
+      "key": "cci"
+     },
+     {
+      "text": "2017 · TWO COMPLAINTS",
+      "x": 96,
+      "y": 150,
+      "key": "cases"
+     }
+    ]
+   },
+   "vo": "A price set by producers has a problem of its own. Is it fair for sellers to agree on a price together? In twenty seventeen, two complaints reached the Competition Commission of India.",
+   "reveals": [
+    {
+     "key": "cci",
+     "word": "Competition"
+    },
+    {
+     "key": "cases",
+     "word": "complaints"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c031",
+   "beat": "C52",
+   "act": "The price of a price",
+   "kind": "doc",
+   "spec": {
+    "org": "Competition Commission of India",
+    "doc": "Final order · 14 January 2022 · para 115",
+    "quote": "the de facto price in the market",
+    "quoteKey": "q",
+    "credit": "CCI ORDER, CASE NOS. 09 AND 36 OF 2017",
+    "creditKey": "c",
+    "label": "DRAWING, NOT THE ORDER'S PAGE"
+   },
+   "vo": "In January twenty twenty two the Commission found that the committee's price is the de facto price in the market, because no other body in India declares one. Fifty years earlier, nobody wanted their eggs. Now nobody else was naming a price.",
+   "reveals": [
+    {
+     "key": "q",
+     "word": "de"
+    },
+    {
+     "key": "c",
+     "word": "because"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c032",
+   "beat": "C53",
+   "act": "The price of a price",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "NO MORE THREATS.",
+     "PRICES: *ONLY SUGGESTIVE*.",
+     "NO FINE · APPEAL DISMISSED",
+     "SUPREME COURT: PENDING"
+    ]
+   },
+   "vo": "It held that trying to enforce the price, with penalties or the threat of them, broke the competition law. It ordered an end to such threats, and told the committee to call its prices only suggestive. It imposed no fine. An appeal asking for penalties was dismissed by the tribunal, and a further appeal is pending in the Supreme Court.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": ""
+  },
+  {
+   "id": "c033",
+   "beat": null,
+   "act": "The road today",
+   "kind": "chapter",
+   "spec": {
+    "n": 6,
+    "title": "The road today",
+    "icon": "egg",
+    "year": "2026"
+   },
+   "vo": "",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": ""
+  },
+  {
+   "id": "c034",
+   "beat": "C60",
+   "act": "Today",
+   "kind": "counter",
+   "spec": {
+    "mode": "compare",
+    "visual": "eggs",
+    "items": [
+     {
+      "key": "cd",
+      "ref": {
+       "t": "nk_district",
+       "state": "Namakkal",
+       "s": "crore_day_2022_23"
+      },
+      "decimals": 1,
+      "suffix": " crore",
+      "label": "eggs a day, Namakkal"
+     },
+     {
+      "key": "tn",
+      "ref": {
+       "t": "nk_district",
+       "state": "Namakkal",
+       "s": "share_tn_2022_23"
+      },
+      "decimals": 0,
+      "suffix": "%",
+      "label": "of Tamil Nadu's eggs"
+     }
+    ],
+    "note": "Tamil Nadu's own count, 2022-23",
+    "source": "nk_district"
+   },
+   "vo": "Today, Tamil Nadu's own count puts Namakkal at about four crore eggs a day: two of every three eggs in the state.",
+   "reveals": [
+    {
+     "key": "cd",
+     "word": "four"
+    },
+    {
+     "key": "tn",
+     "word": "two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c035",
+   "beat": "C60b",
+   "act": "Today",
+   "kind": "bars",
+   "spec": {
+    "series": "nk_exports_monthly",
+    "from": "2023-01",
+    "marks": [
+     {
+      "key": "avg",
+      "ref": {
+       "t": "nk_exports",
+       "state": "India",
+       "s": "avg_month_2025"
+      },
+      "decimals": 1,
+      "suffix": " crore",
+      "caption": "eggs a month, 2025 average",
+      "line": true
+     }
+    ],
+    "title": "India's hen-egg exports, crore eggs a month",
+    "source": "nk_exports",
+    "highlight": {
+     "from": "2025-01",
+     "to": "2025-12",
+     "key": "avg",
+     "label": "2025: a record year"
+    }
+   },
+   "vo": "And the eggs went abroad. In twenty twenty five, India's egg exports were the highest on record, nearly eighteen crore eggs a month, most of them to the Gulf.",
+   "reveals": [
+    {
+     "key": "avg",
+     "word": "eighteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c036",
+   "beat": "C61",
+   "act": "Today",
+   "kind": "bars",
+   "spec": {
+    "series": "nk_exports_monthly",
+    "from": "2023-01",
+    "marks": [
+     {
+      "key": "avg",
+      "ref": {
+       "t": "nk_exports",
+       "state": "India",
+       "s": "avg_month_2025"
+      },
+      "decimals": 1,
+      "suffix": " crore",
+      "caption": "eggs a month, 2025 average",
+      "line": true
+     },
+     {
+      "key": "jan",
+      "ref": {
+       "t": "nk_exports",
+       "state": "India",
+       "s": "jan_2026"
+      },
+      "decimals": 1,
+      "suffix": " crore",
+      "at": "2026-01",
+      "caption": "Jan 2026"
+     },
+     {
+      "key": "fall",
+      "ref": {
+       "t": "nk_exports",
+       "state": "India",
+       "s": "fall_jan_mar_2026_pct"
+      },
+      "decimals": 0,
+      "suffix": "%",
+      "at": "2026-03",
+      "caption": "Jan → Mar 2026",
+      "color": "#E03A3E"
+     }
+    ],
+    "title": "India's hen-egg exports, crore eggs a month",
+    "source": "nk_exports",
+    "highlight": {
+     "from": "2025-01",
+     "to": "2025-12",
+     "key": "avg",
+     "label": "2025: a record year"
+    }
+   },
+   "vo": "Eggs still do not wait. In March twenty twenty six, with Gulf shipping in crisis, India's egg exports fell by seven tenths,",
+   "reveals": [
+    {
+     "key": "avg",
+     "word": "Eggs"
+    },
+    {
+     "key": "jan",
+     "word": "Gulf"
+    },
+    {
+     "key": "fall",
+     "word": "seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c037",
+   "beat": "C61",
+   "act": "Today",
+   "kind": "price-line",
+   "spec": {
+    "series": "feb_apr_2026",
+    "y0": 3.5,
+    "y1": 5.5,
+    "ystep": 0.5,
+    "drawKey": "low",
+    "marks": [
+     {
+      "key": "low",
+      "ref": {
+       "t": "nk_rate",
+       "state": "Namakkal",
+       "s": "mar_low_2026"
+      },
+      "decimals": 2,
+      "prefix": "₹",
+      "at": "min",
+      "caption": "27–29 Mar 2026",
+      "side": "left",
+      "color": "#E03A3E"
+     }
+    ],
+    "title": "Namakkal, rupees an egg, Feb to Apr 2026",
+    "source": "nk_rate"
+   },
+   "vo": "and Namakkal's rate fell to three rupees eighty five.",
+   "reveals": [
+    {
+     "key": "low",
+     "word": "three"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c038",
+   "beat": "C62",
+   "act": "Today",
+   "kind": "price-line",
+   "spec": {
+    "series": "jun_aug_2026",
+    "y0": 5.0,
+    "y1": 7.5,
+    "ystep": 0.5,
+    "drawKey": "pk",
+    "band": {
+     "value": "max",
+     "key": "pk"
+    },
+    "marks": [
+     {
+      "key": "pk",
+      "ref": {
+       "t": "nk_rate",
+       "state": "Namakkal",
+       "s": "peak_2026"
+      },
+      "decimals": 2,
+      "prefix": "₹",
+      "at": "max",
+      "caption": "16–24 Jul 2026",
+      "color": "#E03A3E"
+     },
+     {
+      "key": "end",
+      "ref": {
+       "t": "nk_rate",
+       "state": "Namakkal",
+       "s": "late_aug_2026"
+      },
+      "decimals": 2,
+      "prefix": "₹",
+      "at": "last",
+      "caption": "from 22 Aug",
+      "side": "above",
+      "dx": -100
+     }
+    ],
+    "title": "Namakkal, rupees an egg, Jun to Aug 2026",
+    "source": "nk_rate"
+   },
+   "vo": "In July it reached six eighty, the highest on NECC's daily sheets since twenty twenty two. By late August, five twenty.",
+   "reveals": [
+    {
+     "key": "pk",
+     "word": "six"
+    },
+    {
+     "key": "end",
+     "word": "five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c039",
+   "beat": "C63",
+   "act": "Today",
+   "kind": "seasons",
+   "spec": {
+    "series": "nk_monthly",
+    "key": "grid",
+    "lowKey": "low",
+    "count": {
+     "key": "low",
+     "ref": {
+      "t": "nk_seasons",
+      "state": "Namakkal",
+      "s": "low_marapr"
+     },
+     "decimals": 0,
+     "caption": "years the cheapest month was March or April"
+    },
+    "of": {
+     "key": "of",
+     "ref": {
+      "t": "nk_seasons",
+      "state": "Namakkal",
+      "s": "years"
+     },
+     "decimals": 0
+    },
+    "source": "nk_seasons"
+   },
+   "vo": "In thirteen of the last sixteen years, the cheapest month was March or April.",
+   "reveals": [
+    {
+     "key": "grid",
+     "word": "thirteen"
+    },
+    {
+     "key": "low",
+     "word": "March"
+    },
+    {
+     "key": "of",
+     "word": "March"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Sixteen rows of twelve months; each year's cheapest month lights up, and the March-April column glows.",
+   "hold": 1.0
+  },
+  {
+   "id": "c040",
+   "beat": "C71",
+   "act": "End",
+   "kind": "counter",
+   "spec": {
+    "mode": "pair",
+    "visual": "coins",
+    "items": [
+     {
+      "key": "p22",
+      "ref": {
+       "t": "nk_story",
+       "state": "Namakkal",
+       "s": "paise_chennai"
+      },
+      "decimals": 0,
+      "suffix": " paise",
+      "label": "the club's first eggs, Chennai"
+     },
+     {
+      "key": "r570",
+      "ref": {
+       "t": "nk_rate",
+       "state": "Namakkal",
+       "s": "2026-10-29"
+      },
+      "decimals": 2,
+      "prefix": "₹",
+      "label": "NECC's suggestion, 29 Oct 2026"
+     }
+    ],
+    "note": "not adjusted for inflation",
+    "source": "nk_story"
+   },
+   "vo": "The club's first eggs sold for twenty two paise. This week's suggestion is five rupees seventy.",
+   "reveals": [
+    {
+     "key": "p22",
+     "word": "twenty"
+    },
+    {
+     "key": "r570",
+     "word": "five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  },
+  {
+   "id": "c041",
+   "beat": "C72",
+   "act": "End",
+   "kind": "split",
+   "spec": {
+    "left": {
+     "set": "sheds",
+     "caption": "1970 · every morning, the vet",
+     "tint": "sepia"
+    },
+    "right": {
+     "set": "ratesheet",
+     "caption": "2026 · every morning, a number"
+    },
+    "disclaimer": "merely suggestive and not mandatory",
+    "discKey": "d"
+   },
+   "vo": "In nineteen seventy, a vet came every morning to check the hens. Today, every morning, the farmers' own committee puts out a number. Only a suggestion. But it is the one the trade reads first.",
+   "reveals": [
+    {
+     "key": "d",
+     "word": "suggestion"
+    }
+   ],
+   "transition": "cut",
+   "visual": "",
+   "hold": 1.0
+  }
+ ]
+}

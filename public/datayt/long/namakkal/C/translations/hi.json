@@ -1,0 +1,299 @@
+{
+ "film": "C",
+ "lang": "hi",
+ "status": "DRAFT",
+ "reviewed_by": null,
+ "voice": "Gemini Charon",
+ "scenes": {
+  "c001": {
+   "en": "Every morning, a committee of egg farmers puts out a number. On twenty ninth October twenty twenty six, at Namakkal in Tamil Nadu, it was five rupees seventy paise for an egg.",
+   "text": "हर सुबह, अंडा किसानों की एक कमेटी एक नंबर जारी करती है। उनतीस अक्टूबर दो हज़ार छब्बीस को, तमिलनाडु के नामक्कल में, एक अंडे का रेट था पाँच रुपये सत्तर पैसे।",
+   "est_sec": 10.55,
+   "slot_sec": 12.77,
+   "flag": "",
+   "notes": "NUMBERS: date 29 October 2026 and Rs 5.70 (five rupees seventy paise), spelled in words."
+  },
+  "c002": {
+   "en": "That number began with another morning, fifty seven years earlier, and six hens that a postmaster carried to the vet.",
+   "text": "यह नंबर शुरू हुआ सत्तावन साल पहले की एक और सुबह से, और उन छह मुर्गियों से जो एक पोस्टमास्टर पशु डॉक्टर के पास ले गया।",
+   "est_sec": 7.64,
+   "slot_sec": 8.17,
+   "flag": "",
+   "notes": "NUMBERS: fifty seven years earlier (1969 to 2026). tight: 94% of the slot."
+  },
+  "c003": {
+   "en": "How did six hens become a price? It took four tries. Each one fixed a problem, and made the next.",
+   "text": "छह मुर्गियाँ एक दाम कैसे बनीं? चार कोशिशें लगीं। हर कोशिश ने एक मुश्किल सुलझाई, और अगली खड़ी कर दी।",
+   "est_sec": 6.36,
+   "slot_sec": 7.87,
+   "flag": "",
+   "notes": "NUMBERS: four tries."
+  },
+  "c005": {
+   "en": "Namakkal sits in the middle of Tamil Nadu. In the late nineteen sixties it was part of Salem district. A university case study calls it a place with low levels of agricultural activity.",
+   "text": "नामक्कल तमिलनाडु के बीच में है। साठ के दशक के आख़िर में यह सेलम ज़िले में था। एक यूनिवर्सिटी केस स्टडी इसे कम खेती-बाड़ी वाली जगह कहती है।",
+   "est_sec": 9.27,
+   "slot_sec": 10.87,
+   "flag": "",
+   "notes": "HEDGE kept: 'a university case study calls it' (TANUVAS). 'late nineteen sixties' said as the sixties decade; part of Salem district. 'low levels of agricultural activity' said as कम खेती-बाड़ी वाली जगह."
+  },
+  "c006": {
+   "en": "In nineteen sixty nine, a village postmaster named V. Vellappan brought six red desi hens to the government veterinary hospital in Namakkal.",
+   "text": "उन्नीस सौ उनहत्तर में, गाँव के एक पोस्टमास्टर, वी. वेल्लप्पन, छह लाल देसी मुर्गियाँ नामक्कल के सरकारी पशु अस्पताल लाए।",
+   "est_sec": 7.45,
+   "slot_sec": 10.27,
+   "flag": "",
+   "notes": "NAMES: V. Vellappan, village postmaster; 1969; six red desi hens."
+  },
+  "c007": {
+   "en": "Desi hens are hardy. But they lay few eggs.",
+   "text": "देसी मुर्गियाँ मज़बूत होती हैं। पर अंडे कम देती हैं।",
+   "est_sec": 3.27,
+   "slot_sec": 5.07,
+   "flag": "",
+   "notes": ""
+  },
+  "c008": {
+   "en": "So the vet, Doctor N. Nandagopal, suggested hybrid layers instead. More eggs. More manure for the fields. More income.",
+   "text": "तो पशु डॉक्टर, डॉक्टर एन. नंदगोपाल ने उनकी जगह हाइब्रिड लेयर सुझाईं। ज़्यादा अंडे। खेतों के लिए ज़्यादा खाद। ज़्यादा कमाई।",
+   "est_sec": 8.0,
+   "slot_sec": 10.67,
+   "flag": "",
+   "notes": "NAMES: Doctor N. Nandagopal."
+  },
+  "c010": {
+   "en": "In nineteen seventy the vet drove Vellappan and three other farmers to a poultry firm in Coimbatore. They bought four hundred chicks, at three or four rupees each.",
+   "text": "उन्नीस सौ सत्तर में डॉक्टर, वेल्लप्पन और तीन और किसानों को गाड़ी से कोयंबटूर की एक पोल्ट्री फ़र्म ले गए। उन्होंने चार सौ चूज़े ख़रीदे, एक चूज़ा तीन या चार रुपये का।",
+   "est_sec": 9.64,
+   "slot_sec": 11.97,
+   "flag": "",
+   "notes": "NUMBERS: 1970; Vellappan + three other farmers; Coimbatore; bought 400 chicks at 3 or 4 rupees each."
+  },
+  "c011": {
+   "en": "Each farmer raised one hundred chicks in a thatched shed. And every morning, the vet came to check them, free of cost.",
+   "text": "हर किसान ने फूस के एक छप्पर में सौ चूज़े पाले। और हर सुबह, डॉक्टर उन्हें देखने आते, बिना कोई पैसा लिए।",
+   "est_sec": 6.55,
+   "slot_sec": 8.47,
+   "flag": "",
+   "notes": "NUMBERS: 100 chicks each; every morning, free of cost (the 'every morning' plant pays off in c041)."
+  },
+  "c012": {
+   "en": "The hens grew. They laid. And the town turned up its nose.",
+   "text": "मुर्गियाँ बड़ी हुईं। अंडे दिए। और कस्बे ने नाक-भौं सिकोड़ ली।",
+   "est_sec": 3.64,
+   "slot_sec": 5.27,
+   "flag": "",
+   "notes": "IDIOM: 'the town turned up its nose' rendered with the local idiom; check it reads as light, not insulting. Idiom: नाक-भौं सिकोड़ ली."
+  },
+  "c013": {
+   "en": "Consumers and restaurant owners, the study says, wanted only desi eggs.",
+   "text": "ग्राहक और होटल वाले, स्टडी कहती है, सिर्फ़ देसी अंडे चाहते थे।",
+   "est_sec": 4.0,
+   "slot_sec": 5.17,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (TANUVAS 2020: \"consumers and restaurant owners preferred only desi chicken eggs\"). Audio is the narration line, framed as \"the study says\". \"restaurant owners\" is said as hotel people, the everyday word for restaurants; \"desi\" as देसी."
+  },
+  "c014": {
+   "en": "Four farmers, each with a shed full of eggs nobody local wanted, and eggs do not wait. Sell alone, and take whatever a buyer offers. Or sell together.",
+   "text": "चार किसान, हर एक का छप्पर ऐसे अंडों से भरा जिन्हें यहाँ कोई नहीं चाहता था, और अंडे इंतज़ार नहीं करते। अकेले बेचो, तो ख़रीदार जो दे, वो लो। या मिलकर बेचो।",
+   "est_sec": 10.36,
+   "slot_sec": 11.27,
+   "flag": "",
+   "notes": "tight: 92% of the slot."
+  },
+  "c015": {
+   "en": "The vet's answer: form a farm club. Collect everyone's eggs, and sell them together, further away.",
+   "text": "डॉक्टर का जवाब: एक फ़ार्म क्लब बनाओ। सबके अंडे इकट्ठा करो, और मिलकर, दूर जाकर बेचो।",
+   "est_sec": 5.45,
+   "slot_sec": 8.1,
+   "flag": "",
+   "notes": ""
+  },
+  "c016": {
+   "en": "The club sent eggs to Chennai by train and sold them for twenty two paise each.",
+   "text": "क्लब ने अंडे ट्रेन से चेन्नई भेजे, और एक अंडा बाईस पैसे में बेचा।",
+   "est_sec": 4.0,
+   "slot_sec": 5.83,
+   "flag": "",
+   "notes": "NUMBERS: 22 paise an egg, by train to Chennai."
+  },
+  "c018": {
+   "en": "Farmers from nearby villages came to see. Sheds went up everywhere. The study counts about three lakh birds in the mid seventies, twelve lakh a few years later, and thirty lakh by nineteen eighty two.",
+   "text": "पास के गाँवों से किसान देखने आए। हर तरफ़ छप्पर खड़े हुए। स्टडी के हिसाब से, सत्तर के दशक के बीच करीब तीन लाख मुर्गियाँ थीं, कुछ साल बाद बारह लाख, और बयासी तक तीस लाख।",
+   "est_sec": 11.09,
+   "slot_sec": 11.47,
+   "flag": "",
+   "notes": "HEDGE 'the study counts' kept. NUMBERS: about 3 lakh birds mid seventies, 12 lakh a few years later, 30 lakh by 1982. tight: 97% of the slot. shortened to fit (2026-10-29)"
+  },
+  "c019": {
+   "en": "But more hens means more eggs, every single day. When too many arrive at once, the price falls, and every farmer stands alone against the buyer.",
+   "text": "लेकिन ज़्यादा मुर्गियाँ, मतलब ज़्यादा अंडे, हर एक दिन। एक साथ बहुत आ जाएँ, तो दाम गिरता है, और हर किसान ख़रीदार के सामने अकेला रह जाता है।",
+   "est_sec": 8.91,
+   "slot_sec": 9.67,
+   "flag": "",
+   "notes": "tight: 92% of the slot."
+  },
+  "c020": {
+   "en": "Around nineteen eighty one, the egg committee's own history says, feed had become two hundred and fifty percent dearer in five years. An egg still sold for about thirty five paise. More than forty percent of poultry farmers had stopped.",
+   "text": "अंडा कमेटी का अपना इतिहास कहता है, उन्नीस सौ इक्यासी के आसपास, पाँच साल में दाना ढाई सौ परसेंट महँगा हो चुका था। एक अंडा अब भी करीब पैंतीस पैसे में बिकता था। चालीस परसेंट से ज़्यादा पोल्ट्री किसान काम छोड़ चुके थे।",
+   "est_sec": 14.0,
+   "slot_sec": 15.53,
+   "flag": "",
+   "notes": "HEDGE kept: \"the committee's own history says\" (NECC's account, not verified). Numbers: about 1981, feed 250 percent dearer in five years, egg about 35 paise, more than 40 percent of poultry farmers stopped. tight: 90% of the slot."
+  },
+  "c021": {
+   "en": "So: the club could sell eggs. It could not stop the price from falling.",
+   "text": "यानी: क्लब अंडे बेच सकता था। पर दाम को गिरने से नहीं रोक सकता था।",
+   "est_sec": 4.36,
+   "slot_sec": 4.97,
+   "flag": "",
+   "notes": ""
+  },
+  "c023": {
+   "en": "In Namakkal, P. K. Venkatachalam, one of the early farmers, recalled taking a van of eggs to Chennai at an agreed nineteen paise. The trader offered fifteen. They settled at seventeen.",
+   "text": "नामक्कल में, शुरुआती किसानों में से एक, पी. के. वेंकटाचलम ने याद किया कि वे अंडों की एक वैन लेकर चेन्नई गए, तय दाम था उन्नीस पैसे। व्यापारी ने पंद्रह की पेशकश की। बात सत्रह पर तय हुई।",
+   "est_sec": 11.64,
+   "slot_sec": 12.77,
+   "flag": "",
+   "notes": "HEDGE kept: \"recalled\" (a farmer's recollection, Times of India 2023). Numbers: agreed 19 paise, trader offered 15, settled at 17. NAME: P. K. Venkatachalam. tight: 91% of the slot."
+  },
+  "c024": {
+   "en": "Within a week, Venkatachalam said, the farmers met and formed a Namakkal committee to set the price. Farmers from Hyderabad, Chittoor and Pune joined, and it became national.",
+   "text": "वेंकटाचलम के मुताबिक, एक हफ़्ते के अंदर किसानों ने मिलकर दाम तय करने के लिए नामक्कल की एक कमेटी बनाई। हैदराबाद, चित्तूर और पुणे के किसान जुड़े, और यह नेशनल बन गई।",
+   "est_sec": 11.45,
+   "slot_sec": 12.07,
+   "flag": "",
+   "notes": "HEDGE kept: 'Venkatachalam said'. NAMES: Hyderabad, Chittoor, Pune. Within a week. tight: 95% of the slot."
+  },
+  "c025": {
+   "en": "The national committee's own history tells it through the breeder Doctor B. V. Rao, who travelled the country and held more than three hundred meetings",
+   "text": "नेशनल कमेटी का अपना इतिहास यह कहानी ब्रीडर डॉक्टर बी. वी. राव के ज़रिए बताता है, जिन्होंने पूरे देश में घूमकर तीन सौ से ज़्यादा बैठकें कीं",
+   "est_sec": 9.27,
+   "slot_sec": 9.8,
+   "flag": "",
+   "notes": "HEDGE kept: 'the national committee's own history tells it through'. NAME: the breeder Doctor B. V. Rao; more than 300 meetings. Line runs on into c026 (no full stop), as in English. tight: 95% of the slot."
+  },
+  "c026": {
+   "en": "with one slogan: my egg, my price, my life.",
+   "text": "एक ही नारे के साथ: मेरा अंडा, मेरा दाम, मेरी ज़िंदगी।",
+   "est_sec": 3.27,
+   "slot_sec": 4.4,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (\"My egg, my price, my life\", NECC's own history). Audio is a faithful translation of the slogan; check it sounds like a slogan, not a sentence."
+  },
+  "c027": {
+   "en": "On the fourteenth of May nineteen eighty two, the National Egg Coordination Committee began declaring the price of eggs. Not a government body: an association of poultry farmers.",
+   "text": "चौदह मई उन्नीस सौ बयासी को, नेशनल एग कोऑर्डिनेशन कमेटी ने अंडों का दाम घोषित करना शुरू किया। कोई सरकारी संस्था नहीं: पोल्ट्री किसानों की एक एसोसिएशन।",
+   "est_sec": 10.91,
+   "slot_sec": 11.37,
+   "flag": "",
+   "notes": "NAMES/NUMBERS: 14 May 1982; National Egg Coordination Committee in English words; 'not a government body: an association of poultry farmers'. tight: 96% of the slot."
+  },
+  "c028": {
+   "en": "By nineteen eighty five, the study counts seventy five lakh birds around Namakkal. That year the town got its own veterinary college.",
+   "text": "उन्नीस सौ पचासी तक, स्टडी के हिसाब से, नामक्कल के आसपास पचहत्तर लाख मुर्गियाँ थीं। उसी साल शहर को अपना वेटरनरी कॉलेज मिला।",
+   "est_sec": 8.55,
+   "slot_sec": 9.37,
+   "flag": "",
+   "notes": "HEDGE 'the study counts' kept. NUMBERS: by 1985, 75 lakh birds; veterinary college that year. tight: 91% of the slot."
+  },
+  "c030": {
+   "en": "A price set by producers has a problem of its own. Is it fair for sellers to agree on a price together? In twenty seventeen, two complaints reached the Competition Commission of India.",
+   "text": "उत्पादकों के तय किए दाम की अपनी मुश्किल है। क्या बेचने वालों का मिलकर दाम तय करना सही है? दो हज़ार सत्रह में, कॉम्पिटिशन कमीशन ऑफ़ इंडिया को दो शिकायतें मिलीं।",
+   "est_sec": 10.73,
+   "slot_sec": 11.37,
+   "flag": "",
+   "notes": "NAMES/NUMBERS: Competition Commission of India in English words; 2017; two complaints. tight: 94% of the slot."
+  },
+  "c031": {
+   "en": "In January twenty twenty two the Commission found that the committee's price is the de facto price in the market, because no other body in India declares one. Fifty years earlier, nobody wanted their eggs. Now nobody else was naming a price.",
+   "text": "जनवरी दो हज़ार बाईस में कमीशन ने पाया कि कमेटी का दाम ही बाज़ार का असल दाम है, क्योंकि भारत में कोई और संस्था दाम घोषित नहीं करती। पचास साल पहले, उनके अंडे कोई नहीं चाहता था। अब कोई और दाम बता ही नहीं रहा था।",
+   "est_sec": 14.55,
+   "slot_sec": 16.27,
+   "flag": "",
+   "notes": "QUOTE: on screen stays English (CCI final order, para 115: \"the de facto price in the market\"). Audio renders \"de facto price\" as \"असल दाम\" (actual price), framed as the Commission's finding. \"no other body in India declares the price\" is the narration's own paraphrase of para 115, translated as said. NUMBERS: January 2022; fifty years earlier."
+  },
+  "c032": {
+   "en": "It held that trying to enforce the price, with penalties or the threat of them, broke the competition law. It ordered an end to such threats, and told the committee to call its prices only suggestive. It imposed no fine. An appeal asking for penalties was dismissed by the tribunal, and a further appeal is pending in the Supreme Court.",
+   "text": "उसने माना कि जुर्माने या धमकी से दाम लागू करवाने की कोशिश, कॉम्पिटिशन क़ानून तोड़ती है। धमकियाँ बंद करने का आदेश दिया, और कहा कि कमेटी अपने दामों को सिर्फ़ सुझाव कहे। कोई जुर्माना नहीं लगाया। जुर्माना माँगने वाली अपील ट्रिब्यूनल ने ख़ारिज की, और एक और अपील सुप्रीम कोर्ट में पेंडिंग है।",
+   "est_sec": 18.91,
+   "slot_sec": 19.8,
+   "flag": "",
+   "notes": "QUOTE: on screen \"only suggestive\" (CCI paras 208-209) stays English. Audio renders it as \"सिर्फ़ सुझाव\" (only a suggestion). Check: penalties OR the threat of them; trying to enforce (not that penalties were collected); no claim stronger than the English. LEGAL: no fine; an appeal asking for penalties dismissed by the tribunal; further appeal pending in the Supreme Court. tight: 96% of the slot."
+  },
+  "c034": {
+   "en": "Today, Tamil Nadu's own count puts Namakkal at about four crore eggs a day: two of every three eggs in the state.",
+   "text": "आज, तमिलनाडु की अपनी गिनती के हिसाब से, नामक्कल में रोज़ करीब चार करोड़ अंडे होते हैं: राज्य के हर तीन में से दो अंडे।",
+   "est_sec": 7.45,
+   "slot_sec": 8.7,
+   "flag": "",
+   "notes": "HEDGE 'Tamil Nadu's own count' kept. NUMBERS: about 4 crore eggs a day; two of every three in the state."
+  },
+  "c035": {
+   "en": "And the eggs went abroad. In twenty twenty five, India's egg exports were the highest on record, nearly eighteen crore eggs a month, most of them to the Gulf.",
+   "text": "और अंडे विदेश भी गए। दो हज़ार पच्चीस में भारत का अंडा एक्सपोर्ट अब तक का सबसे ज़्यादा रहा, करीब अठारह करोड़ अंडे हर महीने, ज़्यादातर गल्फ़ को।",
+   "est_sec": 9.09,
+   "slot_sec": 9.8,
+   "flag": "",
+   "notes": "NUMBERS: 2025 record, nearly 18 crore eggs a month, most to the Gulf. tight: 93% of the slot."
+  },
+  "c036": {
+   "en": "Eggs still do not wait. In March twenty twenty six, with Gulf shipping in crisis, India's egg exports fell by seven tenths,",
+   "text": "अंडे आज भी इंतज़ार नहीं करते। मार्च दो हज़ार छब्बीस में, जब गल्फ़ की शिपिंग संकट में थी, भारत का अंडा एक्सपोर्ट सत्तर परसेंट गिर गया,",
+   "est_sec": 8.0,
+   "slot_sec": 10.27,
+   "flag": "",
+   "notes": "NUMBERS: 2025 record, nearly 18 crore eggs a month. \"fell by seven tenths\" is said as seventy percent (same number; screen shows -71%). Gulf kept as the everyday word. Line runs on into c037 (comma), as in English."
+  },
+  "c037": {
+   "en": "and Namakkal's rate fell to three rupees eighty five.",
+   "text": "और नामक्कल का रेट गिरकर तीन रुपये पचासी पैसे पर आ गया।",
+   "est_sec": 4.0,
+   "slot_sec": 4.6,
+   "flag": "",
+   "notes": "NUMBERS: Rs 3.85."
+  },
+  "c038": {
+   "en": "In July it reached six eighty, the highest on NECC's daily sheets since twenty twenty two. By late August, five twenty.",
+   "text": "जुलाई में यह छह अस्सी पहुँचा, दो हज़ार बाईस के बाद एनईसीसी की रोज़ की शीटों में सबसे ऊँचा। अगस्त के आख़िर तक, पाँच बीस।",
+   "est_sec": 7.82,
+   "slot_sec": 8.87,
+   "flag": "",
+   "notes": "NUMBERS: July Rs 6.80 ('six eighty', short as in English), highest on NECC's daily sheets since 2022; late August Rs 5.20. NECC spelled as letters. Hindi keeps the English short form: छह अस्सी, पाँच बीस."
+  },
+  "c039": {
+   "en": "In thirteen of the last sixteen years, the cheapest month was March or April.",
+   "text": "पिछले सोलह में से तेरह सालों में, सबसे सस्ता महीना मार्च या अप्रैल रहा।",
+   "est_sec": 4.73,
+   "slot_sec": 5.57,
+   "flag": "",
+   "notes": "NUMBERS: 13 of the last 16 years, cheapest month March or April."
+  },
+  "c040": {
+   "en": "The club's first eggs sold for twenty two paise. This week's suggestion is five rupees seventy.",
+   "text": "क्लब के पहले अंडे बाईस पैसे में बिके थे। इस हफ़्ते का सुझाव है पाँच रुपये सत्तर।",
+   "est_sec": 5.27,
+   "slot_sec": 7.97,
+   "flag": "",
+   "notes": "NUMBERS: 22 paise vs Rs 5.70 ('this week's suggestion')."
+  },
+  "c041": {
+   "en": "In nineteen seventy, a vet came every morning to check the hens. Today, every morning, the farmers' own committee puts out a number. Only a suggestion. But it is the one the trade reads first.",
+   "text": "उन्नीस सौ सत्तर में, एक डॉक्टर हर सुबह मुर्गियों को देखने आते थे। आज, हर सुबह, किसानों की अपनी कमेटी एक नंबर जारी करती है। बस एक सुझाव। पर व्यापार सबसे पहले इसी को पढ़ता है।",
+   "est_sec": 12.0,
+   "slot_sec": 13.3,
+   "flag": "",
+   "notes": "QUOTE: on screen the NECC disclaimer \"merely suggestive and not mandatory\" stays English. The English narration says only \"merely suggestive\", so the audio says only that: \"महज़ सुझाव\". Do not add \"not mandatory\" to the audio unless the English changes. Closing line: 1970 vet every morning / today the committee every morning; 'only a suggestion'; 'the one the trade reads first'. tight: 90% of the slot."
+  }
+ },
+ "reviewer_notes": [
+  "CHECK FIRST, the quotes (on screen they stay English; the audio says a faithful Hindi translation framed as a quote): c013, c026, c031, c032, c041. TANUVAS line ('the study says'), the slogan 'My egg, my price, my life', the CCI order ('de facto price' as \"असल दाम\" (actual price); 'only suggestive' as \"सिर्फ़ सुझाव\" (only a suggestion)), the NECC disclaimer ('merely suggestive' as \"महज़ सुझाव\").",
+  "LEGAL lines (c031, c032): must not be stronger than the English. The order found the committee tried to enforce prices with penalties or the threat of them; it did not find penalties were collected; it imposed no fine; an appeal was dismissed; a further appeal is pending in the Supreme Court.",
+  "HEDGES kept, please confirm each survived: 'the study says' / 'the study counts', 'the committee's own history says', 'recalled', 'Venkatachalam said', 'a university case study calls it', 'pending', 'about' / 'nearly' on every rounded number.",
+  "NUMBERS are spelled in words, lakh and crore as people say them. Conversions to check: 'fell by seven tenths' said as seventy percent (c036; screen shows -71%).",
+  "NAMES in Hindi script, check spelling and pronunciation: Namakkal, Salem, Coimbatore, Chennai, Tamil Nadu, Andhra Pradesh, V. Vellappan, Doctor N. Nandagopal, Doctor B. V. Rao, P. K. Venkatachalam, Hyderabad, Chittoor, Pune, Gulf. NECC is spelled out letter by letter; its full name and 'Competition Commission of India' are said in English words.",
+  "desi hens/eggs are said as देसी; 'restaurant owners' as hotel people (the everyday Indian word).",
+  "TIMING is an estimate (syllables at 5.5 a second), not a measurement. Slots: measured timeline.json, minus 0.3 s. Lines marked 'tight' in notes are over 90% of the slot. The real check is the voiced track against the English.",
+  "STATUS: DRAFT. A native speaker must review before any voicing is used; reviewed_by stays null until AK names the reviewer."
+ ]
+}

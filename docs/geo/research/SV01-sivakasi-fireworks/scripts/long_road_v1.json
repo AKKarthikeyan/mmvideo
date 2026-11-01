@@ -1,0 +1,853 @@
+{
+ "id": "SV01-long_road_v1",
+ "ep": "SV01",
+ "product": "General long-form (no channel)",
+ "voice": "male, English, for Indian and global viewers aged 18-35; 'Sivakasi' = SHIV-uh-KAH-see; explain Deepavali, crore and lakh once",
+ "research": "docs/geo/research/SV01-sivakasi-fireworks (claims AK-VERIFIED 1 Nov 2026)",
+ "status": "DRAFT v1 for AK review, 1 Nov 2026. Not voiced.",
+ "format": "F2 The Long Road ('try, but, so'), with a hairpin cold open (the 2018 ban), one F13 scale-shock layer and the fix as the late peak.",
+ "target_seconds": 515,
+ "beats": [
+  {
+   "key": "ra01",
+   "move": "Hook: the surprising failure",
+   "say": "October twenty-eighteen. India's Supreme Court bans crackers made with barium salts, and joined crackers.",
+   "caption": "Oct 2018 · the ban",
+   "visual": "Court order frame; Delhi haze (drawn)",
+   "claims": [
+    "C022"
+   ],
+   "pause": 0.5,
+   "t": 0.0,
+   "words": 14
+  },
+  {
+   "key": "ra02",
+   "move": "The stakes",
+   "say": "In Sivakasi, the town that makes most of India's fireworks, the factories go quiet. For about five months.",
+   "caption": "Quiet for ~5 months",
+   "visual": "Factory sheds, dark; empty yards",
+   "claims": [
+    "C022",
+    "C002"
+   ],
+   "pause": 0.8,
+   "t": 6.3,
+   "words": 18
+  },
+  {
+   "key": "ra03",
+   "move": "The question",
+   "say": "How does a town get this big, and this exposed to a single rule? The road starts a hundred years earlier, with a matchbox.",
+   "caption": "HOW DID IT GET HERE?",
+   "visual": "Time-lapse rewind to 1922",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 14.5,
+   "words": 24
+  },
+  {
+   "key": "ra04",
+   "move": "Promise",
+   "say": "Follow the road. Try, but, so.",
+   "caption": "TRY · BUT · SO",
+   "visual": "Three markers",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 25.0,
+   "words": 6
+  },
+  {
+   "key": "rb01",
+   "move": "Prime: the globe",
+   "say": "Find India on the globe. Now slide down to its far south, to Tamil Nadu.",
+   "caption": "Tamil Nadu",
+   "visual": "Globe spin, zoom to the southern state",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 28.0,
+   "words": 15
+  },
+  {
+   "key": "rb02",
+   "move": "Prime: the place",
+   "say": "Sivakasi sits in Virudhunagar district. It is hot, and it sits in the rain shadow of the hills to the west.",
+   "caption": "Virudhunagar district",
+   "visual": "Terrain map; rain arrows stop at the ridge (geodata for the ridge, artistic arrows tagged)",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.5,
+   "t": 34.7,
+   "words": 21
+  },
+  {
+   "key": "rb03",
+   "move": "The need",
+   "say": "Farming here is hard, and families nearby need work. Villages around Sivakasi have plenty of labour, and little to do with it.",
+   "caption": "The need: work",
+   "visual": "Village dots, idle",
+   "claims": [
+    "C033",
+    "C001"
+   ],
+   "pause": 0.5,
+   "t": 43.9,
+   "words": 22
+  },
+  {
+   "key": "rb04",
+   "move": "Name the parts",
+   "say": "Three things to keep in mind. A match. A Bengal light, which is a match that burns in colour. And a firework.",
+   "caption": "Match · Bengal light · Firework",
+   "visual": "Three icons labelled one by one",
+   "claims": [
+    "C013"
+   ],
+   "pause": 0.5,
+   "t": 53.5,
+   "words": 22
+  },
+  {
+   "key": "rc01",
+   "move": "Try 1: learn the match",
+   "say": "Go back to nineteen twenty-two. Matches are made in Calcutta, today's Kolkata, or shipped in from abroad.",
+   "caption": "1922 · Calcutta",
+   "visual": "Old-map style India; Calcutta glows",
+   "claims": [
+    "C010"
+   ],
+   "pause": 0.5,
+   "t": 63.1,
+   "words": 17
+  },
+  {
+   "key": "rc02",
+   "move": "The travellers",
+   "say": "Two young men from Sivakasi make that trip. P. Ayya Nadar is about seventeen. A. Shanmuga Nadar is about nineteen.",
+   "caption": "Ayya Nadar · Shanmuga Nadar",
+   "visual": "Two drawn silhouettes at a station (no archival portraits unless the licence is cleared)",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.5,
+   "t": 70.6,
+   "words": 20
+  },
+  {
+   "key": "rc03",
+   "move": "Their goal",
+   "say": "They aren't going to learn fireworks. They're going to learn one thing: how to make a safety match.",
+   "caption": "Goal: the safety match",
+   "visual": "Close-up of a drawn matchbox",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.5,
+   "t": 79.4,
+   "words": 18
+  },
+  {
+   "key": "rc04",
+   "move": "The apprenticeship",
+   "say": "They stay six to eight months, learning from a match-maker named Purna Chandra Roy.",
+   "caption": "6-8 months",
+   "visual": "Workshop scene, slow",
+   "claims": [
+    "C008"
+   ],
+   "pause": 0.7,
+   "t": 87.3,
+   "words": 14
+  },
+  {
+   "key": "rc05",
+   "move": "Return",
+   "say": "In nineteen twenty-three they come home with German machines and open a match factory. The South-India Lucifer Match Industry.",
+   "caption": "1923 · first match factory",
+   "visual": "Machines arrive by cart; factory sign draws in",
+   "claims": [
+    "C009"
+   ],
+   "pause": 0.5,
+   "t": 93.8,
+   "words": 19
+  },
+  {
+   "key": "rc06",
+   "move": "BUT",
+   "say": "But the German machines are costly to run in a small, remote town.",
+   "caption": "BUT: too costly",
+   "visual": "Machine stamped with a cost tag",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 102.2,
+   "words": 13
+  },
+  {
+   "key": "rc07",
+   "move": "SO",
+   "say": "So they change the plan. They spread the work across the villages, to families with time to spare.",
+   "caption": "SO: spread the work",
+   "visual": "Map: lines from the factory to villages",
+   "claims": [
+    "C011",
+    "C033"
+   ],
+   "pause": 0.5,
+   "t": 108.1,
+   "words": 18
+  },
+  {
+   "key": "rc08",
+   "move": "How it worked",
+   "say": "Families roll, fill and pack by hand, at home. The factory does only the chemical part.",
+   "caption": "Hands at home",
+   "visual": "Drawn verandah scene, women and children packing",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 116.0,
+   "words": 16
+  },
+  {
+   "key": "rc09",
+   "move": "Mood of the time",
+   "say": "It fits the mood of the time. Mahatma Gandhi is urging Indians to revive village industries.",
+   "caption": "Village industry",
+   "visual": "Gandhi-era poster style, drawn in code (artistic)",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 123.1,
+   "words": 16
+  },
+  {
+   "key": "rc10",
+   "move": "Plant",
+   "say": "Remember that choice. It builds the town. And a hundred years later, it is the hardest thing to change.",
+   "caption": "Remember: hands",
+   "visual": "Hold on the verandah scene",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "plant": "P2: pays off at i07",
+   "t": 130.2,
+   "words": 19
+  },
+  {
+   "key": "rd01",
+   "move": "Try 2: stand out",
+   "say": "In nineteen twenty-six the two men part ways, and compete. Ayya Nadar's brand is a squirrel, Anil. Shanmuga Nadar's is a crow, Kaaka. A squirrel against a crow.",
+   "caption": "Squirrel vs Crow",
+   "visual": "Two label designs drawn in code, side by side",
+   "claims": [
+    "C012"
+   ],
+   "pause": 0.5,
+   "t": 138.6,
+   "words": 28
+  },
+  {
+   "key": "rd02",
+   "move": "BUT",
+   "say": "But a plain wooden match doesn't stand out. And each of the two rivals wants to.",
+   "caption": "BUT: everyone has matches",
+   "visual": "Two label designs among many",
+   "claims": [
+    "C012"
+   ],
+   "pause": 0.5,
+   "t": 150.7,
+   "words": 16
+  },
+  {
+   "key": "rd03",
+   "move": "SO: colour",
+   "say": "To stand out, match-makers add something new: sticks that burn in colour. They're called Bengal lights. In Tamil, matthaappu.",
+   "caption": "Bengal light · matthaappu",
+   "visual": "A match strikes; the flame turns red, then green",
+   "claims": [
+    "C013"
+   ],
+   "pause": 0.5,
+   "t": 157.8,
+   "words": 19
+  },
+  {
+   "key": "rd04",
+   "move": "Stepping stone",
+   "say": "Local histories treat the Bengal light as the stepping stone. A match that burns in colour is already close to a sparkler. And in nineteen thirty-eight, N. R. K. Rajarathina Nadar opens the town's first factory made only for fireworks.",
+   "caption": "1938 · first fireworks factory",
+   "visual": "Match flame grows into a sparkler, then a first firework",
+   "claims": [
+    "C014",
+    "C015"
+   ],
+   "pause": 0.7,
+   "hedge": "'treat ... as' is the hedge until C014 has a source",
+   "t": 166.2,
+   "words": 40
+  },
+  {
+   "key": "rd04b",
+   "move": "Loop closes",
+   "say": "So matches led to coloured matches, and coloured matches led to fireworks. Not a tradition. A chain.",
+   "caption": "Not a tradition. A chain.",
+   "visual": "First chain icons light",
+   "claims": [
+    "C006",
+    "C014"
+   ],
+   "pause": 0.8,
+   "t": 183.4,
+   "words": 17
+  },
+  {
+   "key": "rd05",
+   "move": "Recap",
+   "say": "So far: a match, a hand network, a coloured flame. Each fixed the last problem.",
+   "caption": "Match · hands · colour",
+   "visual": "Chain: three lit",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 191.3,
+   "words": 15
+  },
+  {
+   "key": "re01",
+   "move": "Try 3: the labels",
+   "say": "Every matchbox and every packet of crackers needs a bright paper label. In the nineteen thirties, those labels come from presses in Bombay, today's Mumbai.",
+   "caption": "Labels from Bombay",
+   "visual": "Label rolls on a train, Mumbai to Sivakasi",
+   "claims": [
+    "C016"
+   ],
+   "pause": 0.5,
+   "t": 198.0,
+   "words": 25
+  },
+  {
+   "key": "re02",
+   "move": "BUT / SO",
+   "say": "But waiting for labels from Bombay is slow. So in nineteen thirty-eight, K. S. A. Arunagiri Nadar sets up a printing press in Sivakasi itself.",
+   "caption": "SO: its own press",
+   "visual": "Press frame draws in",
+   "claims": [
+    "C016"
+   ],
+   "pause": 0.5,
+   "t": 208.8,
+   "words": 25
+  },
+  {
+   "key": "re03",
+   "move": "Analogy",
+   "say": "Picture a shop that sells most of its stock in one week, and keeps running out of paper cups from a far-off city. So the owner buys a printer. Then he notices it can print for the other eleven months too.",
+   "caption": "One week. Eleven months.",
+   "visual": "Drawn shop; calendar flips",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "analogy": true,
+   "t": 219.7,
+   "words": 41
+  },
+  {
+   "key": "re04",
+   "move": "Payoff",
+   "say": "That is Sivakasi's second trick. When the fireworks season ends, the presses keep running. Calendars. Diaries. Notebooks.",
+   "caption": "Presses never stop",
+   "visual": "Press output: calendar, diary, notebook",
+   "claims": [
+    "C016",
+    "C021"
+   ],
+   "pause": 0.5,
+   "t": 237.1,
+   "words": 17
+  },
+  {
+   "key": "re05",
+   "move": "Nickname, hedged",
+   "say": "Prime Minister Nehru is said to have called the town 'Kutty Japan', Little Japan, for making matches, fireworks and print on its own.",
+   "caption": "'Kutty Japan'",
+   "visual": "Nameplate",
+   "claims": [
+    "C019"
+   ],
+   "pause": 0.5,
+   "t": 244.7,
+   "words": 23
+  },
+  {
+   "key": "re06",
+   "move": "Own words (historian)",
+   "say": "A historian of the town, Rengaiah Murugan, put it simply: 'As a chain reaction, various allied industries started to mushroom.'",
+   "caption": "Chain reaction",
+   "visual": "Quote card over the chain icons",
+   "claims": [
+    "C030"
+   ],
+   "pause": 0.8,
+   "t": 254.7,
+   "words": 21
+  },
+  {
+   "key": "re07",
+   "move": "Recap",
+   "say": "So three links so far. The match. The coloured flame. The press. One more is coming, and it is not a machine. It is a war.",
+   "caption": "Match · colour · press · ?",
+   "visual": "Chain: three lit, one dark",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 264.2,
+   "words": 26
+  },
+  {
+   "key": "rf01",
+   "move": "Try 4: the licence and the war",
+   "say": "Now comes the moment that turns a good town into the national one. Nineteen-forty.",
+   "caption": "1940",
+   "visual": "Black beat, then a date",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 275.4,
+   "words": 14
+  },
+  {
+   "key": "rf02",
+   "move": "Rule 1",
+   "say": "That year, the Explosives Rules arrive. To make fireworks, you now need a licence.",
+   "caption": "Licence required",
+   "visual": "Rule document draws in",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.5,
+   "t": 281.7,
+   "words": 14
+  },
+  {
+   "key": "rf03",
+   "move": "Rule 2",
+   "say": "Then the Second World War cuts off the fireworks that used to come in from abroad.",
+   "caption": "Imports stop",
+   "visual": "Sea routes close on the map",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.5,
+   "t": 288.0,
+   "words": 16
+  },
+  {
+   "key": "rf04",
+   "move": "Door open",
+   "say": "The few licensed makers suddenly have the whole market. By nineteen forty-two, three firms hold licences: National, Standard and Kaliswari.",
+   "caption": "National · Standard · Kaliswari",
+   "visual": "Three factory icons",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.8,
+   "t": 295.1,
+   "words": 20
+  },
+  {
+   "key": "rf05",
+   "move": "Growth 1",
+   "say": "Three licensed factories in nineteen forty-two.",
+   "caption": "1942: 3",
+   "visual": "Bar chart: one bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 304.2,
+   "words": 6
+  },
+  {
+   "key": "rf06",
+   "move": "Growth 2",
+   "say": "By nineteen eighty: a hundred and eighty-nine.",
+   "caption": "1980: 189",
+   "visual": "Bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 307.3,
+   "words": 7
+  },
+  {
+   "key": "rf07",
+   "move": "Growth 3",
+   "say": "By two thousand and one: four hundred and fifty.",
+   "caption": "2001: 450",
+   "visual": "Bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 310.8,
+   "words": 9
+  },
+  {
+   "key": "rf08",
+   "move": "Growth 4",
+   "say": "Today, the industry says, more than a thousand.",
+   "caption": "Today: 1,000+",
+   "visual": "Bar rises past the frame",
+   "claims": [
+    "C004"
+   ],
+   "pause": 0.6,
+   "t": 315.1,
+   "words": 8
+  },
+  {
+   "key": "rf09",
+   "move": "Scale shock (F13)",
+   "say": "Worth about six thousand crore rupees a year. That is sixty billion rupees.",
+   "caption": "₹6,000 crore a year",
+   "visual": "Counter ticks to 6,000 as the whole chain glows",
+   "claims": [
+    "C003"
+   ],
+   "pause": 1.0,
+   "t": 319.0,
+   "words": 13
+  },
+  {
+   "key": "rf09b",
+   "move": "The pattern",
+   "say": "Notice the pattern. Every step solved the last problem, and set up the next one.",
+   "caption": "Solve one. Meet the next.",
+   "visual": "Chain icons pulse in order",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 325.4,
+   "words": 15
+  },
+  {
+   "key": "rf10",
+   "move": "Midpoint turn",
+   "say": "That is the road up. Now back to the quiet sheds of twenty-eighteen.",
+   "caption": "Back to 2018",
+   "visual": "Rewind arrow from today to 2018",
+   "claims": [],
+   "pause": 0.8,
+   "no_fact": true,
+   "t": 332.1,
+   "words": 13
+  },
+  {
+   "key": "rg01",
+   "move": "BUT: the worst day",
+   "say": "But the ban hits barium, a core ingredient of the old recipe. For about five months, the town waits.",
+   "caption": "BUT: the recipe is banned",
+   "visual": "Empty yards; calendar flips",
+   "claims": [
+    "C022"
+   ],
+   "pause": 0.5,
+   "t": 338.3,
+   "words": 19
+  },
+  {
+   "key": "rg02",
+   "move": "SO: the fix, part 1",
+   "say": "The industry's answer is the green cracker, developed by a government lab, CSIR-NEERI. Its versions are called SWAS, SAFAL and STAR.",
+   "caption": "Green crackers",
+   "visual": "Three labels",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "t": 346.6,
+   "words": 21
+  },
+  {
+   "key": "rg03",
+   "move": "Rule out the myth",
+   "say": "Green doesn't mean pollution-free. The lab's own claim is about a third less particle pollution.",
+   "caption": "~30% less. Not zero.",
+   "visual": "Smoke density bars: before, after",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "t": 355.8,
+   "words": 15
+  },
+  {
+   "key": "rg04",
+   "move": "How it works",
+   "say": "How? According to the lab, the mix releases water vapour and air as it burns, which helps the dust settle. Picture a tiny mist sprayer inside the shell.",
+   "caption": "Water vapour settles dust",
+   "visual": "Cutaway of a drawn shell with mist",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "analogy": true,
+   "t": 362.5,
+   "words": 28
+  },
+  {
+   "key": "rg04b",
+   "move": "Stakes",
+   "say": "Delhi and its surroundings are roughly thirteen percent of national demand, industry associations estimate.",
+   "caption": "Delhi-NCR ≈ 13%",
+   "visual": "Map highlight",
+   "claims": [
+    "C025"
+   ],
+   "pause": 0.5,
+   "t": 374.6,
+   "words": 14
+  },
+  {
+   "key": "rg05",
+   "move": "BUT: the deadline",
+   "say": "But even the fix has a catch. In October twenty twenty-five, the Court eases the Delhi ban for green crackers only, with QR codes, in fixed time slots. It comes just before Deepavali. A makers' leader said it comes too close to the festival, yet gives hope for future business.",
+   "caption": "Oct 2025 · too close to the festival",
+   "visual": "Calendar countdown to Deepavali",
+   "claims": [
+    "C025"
+   ],
+   "pause": 1.0,
+   "peak": true,
+   "t": 380.9,
+   "words": 50
+  },
+  {
+   "key": "rg06",
+   "move": "The fix, stated",
+   "say": "So the fix is real, and it is partial. Less pollution, not none. And a market that opens in slots.",
+   "caption": "Less. Not none.",
+   "visual": "Smoke bars hold",
+   "claims": [
+    "C023",
+    "C025"
+   ],
+   "pause": 0.5,
+   "t": 402.6,
+   "words": 20
+  },
+  {
+   "key": "rh01",
+   "move": "The cost: the hands",
+   "say": "Now go back to the hands. By the industry's count, about three lakh people work in these factories. That is three hundred thousand. Many more work around them.",
+   "caption": "~3 lakh workers",
+   "visual": "Drawn crowd leaving a factory gate",
+   "claims": [
+    "C005"
+   ],
+   "pause": 0.5,
+   "t": 411.4,
+   "words": 28
+  },
+  {
+   "key": "rh01b",
+   "move": "Plant pays",
+   "say": "Mixing, filling and threading fuses are still done mostly by hand.",
+   "caption": "Still by hand",
+   "visual": "Hands, close",
+   "claims": [
+    "C029"
+   ],
+   "pause": 0.5,
+   "t": 423.5,
+   "words": 11
+  },
+  {
+   "key": "rh01c",
+   "move": "Optional: the licence cap",
+   "say": "On paper, a small unit's licence limits how many people may work inside. Reports say twelve.",
+   "caption": "Licence cap",
+   "visual": "Floor plan",
+   "claims": [
+    "C027"
+   ],
+   "pause": 0.5,
+   "t": 428.5,
+   "words": 16
+  },
+  {
+   "key": "rh02",
+   "move": "The gap",
+   "say": "Reports describe sheds sub-let to contractors, and crowded verandahs. A gap between the licence and the workplace.",
+   "caption": "Licence ≠ workplace",
+   "visual": "Floor plan with more figures than the cap",
+   "claims": [
+    "C027"
+   ],
+   "pause": 0.5,
+   "t": 435.6,
+   "words": 17
+  },
+  {
+   "key": "rh03",
+   "move": "The day",
+   "say": "On the nineteenth of April, twenty twenty-six, an explosion at a factory near Sivakasi killed twenty-five workers.",
+   "caption": "19 Apr 2026 · 25 killed",
+   "visual": "Sober frame: date, number, a lamp. No gore, no photos",
+   "claims": [
+    "C026"
+   ],
+   "pause": 1.0,
+   "t": 443.2,
+   "words": 17
+  },
+  {
+   "key": "rh04",
+   "move": "A worker's line",
+   "say": "A worker, K. Rajkumar, told The Hindu that with a biometric attendance system, identifying the dead would not have been so hard.",
+   "caption": "Who was inside?",
+   "visual": "Attendance ledger frame",
+   "claims": [
+    "C026"
+   ],
+   "pause": 0.8,
+   "t": 451.2,
+   "words": 22
+  },
+  {
+   "key": "rh05",
+   "move": "Plant pays",
+   "say": "The road began with a choice to spread the work across many hands. It built the town. Now the same choice asks for a new safety answer.",
+   "caption": "The same hands",
+   "visual": "Verandah scene from rc08, now with a floor-plan overlay",
+   "claims": [
+    "C011",
+    "C026"
+   ],
+   "pause": 1.0,
+   "t": 461.1,
+   "words": 27
+  },
+  {
+   "key": "rj00",
+   "move": "Where it stands",
+   "say": "In May twenty twenty-five, the makers' association applied for a GI tag for Sivakasi fireworks. It's a legal label of origin. Their lawyer says it would help curb duplicates.",
+   "caption": "GI tag applied · May 2025",
+   "visual": "GI application frame",
+   "claims": [
+    "C024"
+   ],
+   "pause": 0.5,
+   "t": 473.3,
+   "words": 29
+  },
+  {
+   "key": "rj01",
+   "move": "Recap of the road",
+   "say": "Try, but, so. A match, then hands. A flame, then a press. A war, then a market. A ban, then a green recipe.",
+   "caption": "Try · but · so",
+   "visual": "Chain icons, all lit",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 485.8,
+   "words": 23
+  },
+  {
+   "key": "rj02",
+   "move": "Callback",
+   "say": "In twenty-eighteen the lights went out in Sivakasi. The town did not make fireworks for centuries. It learned to make them, one fix at a time.",
+   "caption": "Lights out → lights on",
+   "visual": "Night sky from ra01, now with the chain beneath",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 495.8,
+   "words": 26
+  },
+  {
+   "key": "rj03",
+   "move": "Last line",
+   "say": "Its next fix is the hardest: to keep the people who light the sky safe.",
+   "caption": "",
+   "visual": "One lit match, held; fade to black",
+   "claims": [],
+   "pause": 1.5,
+   "no_fact": true,
+   "t": 507.1,
+   "words": 15
+  }
+ ],
+ "shorts": [
+  {
+   "name": "R-S1 · The machines that failed (Try, but, so; ~50 s)",
+   "beats": [
+    "rc01",
+    "rc03",
+    "rc05",
+    "rc06",
+    "rc07",
+    "rd03",
+    "re02"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "rc06"
+    ],
+    "M2 Ground": [
+     "rc03",
+     "rc05"
+    ],
+    "M3 Push": [
+     "rc07"
+    ],
+    "M4 Turn": [
+     "rd03"
+    ],
+    "M5 Echo": [
+     "re02"
+    ]
+   },
+   "words": 129
+  },
+  {
+   "name": "R-S2 · The five months the factories went quiet (~40 s)",
+   "beats": [
+    "ra01",
+    "ra02",
+    "rg02",
+    "rg03",
+    "rg05"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "ra02"
+    ],
+    "M2 Ground": [
+     "ra01"
+    ],
+    "M3 Push": [
+     "rg02"
+    ],
+    "M4 Turn": [
+     "rg05"
+    ],
+    "M5 Echo": [
+     "rg03"
+    ]
+   },
+   "words": 118
+  }
+ ]
+}

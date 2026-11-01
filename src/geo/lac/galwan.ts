@@ -18,12 +18,12 @@ export const galwan: Spec = {
     {in: "b5", dur: 1.2, cam: WIDE}, {in: "b6", dur: 1.2, cam: {lon: 78.7, lat: 34.0, span: 6.5}}],
   layers: [
     // b1: the 1996 promise, word for word; LAC explained for a global viewer
-    {in: "b1", dt: 0.05, out: "b1", kind: "panel", name: "quoteCard", props: {head: "1996 · India–China Agreement, Art. X(1)",
+    {in: "b1", dt: 0.05, out: "b1", kind: "panel", name: "quoteCard", props: {compact: true, head: "1996 · India–China Agreement, Art. X(1)",
       quote: "exchange maps indicating their respective perceptions of the entire alignment of the line of actual control as soon as possible",
       cite: "the two sides agreed", note: "LAC: the line each side observes pending a boundary settlement (1993)"}},
     // b2: Galwan; the two records at equal size, India left, China right
     {in: "b2", dt: 0.2, out: "b2", kind: "pin", at: GALWAN, text: "GALWAN VALLEY · LADAKH", color: C.white, dy: -75},
-    {in: "b2", dt: 0.2, out: "b2", kind: "panel", name: "sideBySide", props: {left: {who: "INDIA SAYS", text: "20 personnel died", color: C.amber},
+    {in: "b2", dt: 0.2, out: "b2", kind: "panel", name: "sideBySide", props: {compact: true, left: {who: "INDIA SAYS", text: "20 personnel died", color: C.amber},
       right: {who: "CHINA SAYS", text: "casualties on both sides", color: C.cyan}, foot: "15 June 2020 · each government's own statement"}},
     // b3: India says disengagement complete; patrols restored at two named places
     {in: "b3", dt: 0.3, out: "b6", kind: "pin", at: DEPSANG, text: "DEPSANG", color: C.green},

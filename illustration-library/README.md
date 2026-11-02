@@ -54,4 +54,4 @@ python3 scripts/export_illustration_library.py               # everything, plus 
 - Text-only strip beats are blank until their first `at` phrase: anchor the first strip to the beat's first words.
 - A row that counts up needs its cue early enough to finish before the beat ends.
 - Keep each caption close to its narration in length, or the caption drifts away from the picture.
-- Check the hook spacing with `python3 scripts/hook_check.py <video id>` (a question in the first 5 seconds, then one at most every 45 seconds).
+- Check the story with `python3 scripts/story_check.py <video id>` (rules: `docs/STORYTELLING.md`). The earlier hook rule (a question in the first 5 seconds, then one at most every 45 seconds) was retired on 2 Nov 2026.

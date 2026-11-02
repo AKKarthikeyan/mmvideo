@@ -13,6 +13,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Regional audio tracks (Tamil, Hindi; English stays original) | `scripts/audio_tracks.py`, `scripts/translations/`, `docs/AUDIO_TRACKS.md` |
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
 | Premium explainer visuals (HyperFrames library, 15 samples) | `hyperframes/` (`hyperframes/README.md`), `hyperframes/tools/hf.py` |
+| Storytelling rules for every new script (AK, 2 Nov 2026) | `docs/STORYTELLING.md`, `scripts/story_check.py` (`scripts/hook_check.py` is retired) |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits
 `vx_letters.py` and `LetterVideos.tsx`. Append to shared files, never replace another session's entries.

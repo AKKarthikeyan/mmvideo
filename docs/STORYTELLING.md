@@ -22,7 +22,21 @@ that has no stakes [R].
 
 - **One promise.** Title, thumbnail and first line are one promise [R]. Write it as one sentence in `story.promise`. The
   opening frames must deliver exactly that. Platforms penalise misleading packaging, and viewers punish a broken promise
-  on the next upload [R].
+  on the next upload [R]. Make the promise concrete: the most believable outcome for the least perceived effort and wait
+  [R, Hormozi's value equation]. For us that is an honest "what you will understand in N minutes", never a promise the
+  documents cannot keep.
+- **Critical evidence first** [R, MrBeast's "critical components": the non-negotiable pieces without which the story
+  collapses, guarded above everything else]. Before scripting, name the 2 or 3 documents or figures the story cannot exist
+  without, and verify each against its source. List them in `story.critical` (what, and where it comes from). If one fails
+  verification, the video is reframed or dropped before the script exists. Name a fallback question too, one the surviving
+  evidence can still answer [R, backup days: plan for the thing that goes wrong].
+- **Adapt a proven format at our scale** [R]. A concept that earned views across several formats or platforms signals deep
+  curiosity (the Rs 1 versus Rs 1,000,000 series began as a one-dollar versus hundred-dollar donut video). Look for such a
+  format, then rebuild it on our own evidence. This is the "second-mover advantage" of a platform with 15 years of data.
+- **Mix the slate** [R, Hormozi's three tiers; watch concept lifecycles so no format is overused]. Tag each video
+  `story.tier`: `broad` (a mass-market topic that pulls cold viewers), `nurture` (deep value that builds trust), or
+  `authority` (proof of method: the Moat Files, reference videos). Plan the slate so no arc or concept runs three times in a
+  row. We do not sell anything in the video; the tiers are for planning only.
 - **Promise type** [R, Harris]: Question (answer a burning curiosity), Teaching (explain a system), Adventure (come along),
   or Tension (an uncertain outcome). Pick one; it sets title and tone. Most of ours are Question or Teaching.
 - **Frame for the honest curiosity gap** [R]. Same facts, bigger pull: "Who took DMart's missing 56 paise?" beats
@@ -45,6 +59,18 @@ that has no stakes [R].
 | `modular-value` | a reference or how-to video (Moat 60) | Per unit: why care, what it is, how to use it, re-hook into the next unit. Open with proof, value, structure, stakes [R, Hormozi, Whiffen] |
 | `claim-verdict` | testing a claim | Thesis. What the documents show in real use. A yes or no on the claim, never on the stock [R, Brownlee; the guardrail is [H]] |
 
+### The default skeleton for a filing-driven long video [H, built on the brief's four phases]
+
+| Time | Phase [R] | In our engine |
+| --- | --- | --- |
+| 0:00 to 0:30 | Hook and validation | Cold-open chapter: the promise as a number or a question, the source document on screen, primary loop opens |
+| 0:30 to 1:00 | Stakes | What is at stake, how it will be tested, the rule of the game ("follow the Rs 100"); secondary loop opens |
+| 1:00 to 3:00 | Hype to execution | The first chapter shows rather than announces; the first small answer lands by 2:00; setup is compressed |
+| about 3:00 | Re-engagement | The first reversal or change of scale found in the documents; tertiary loop opens |
+| 3:00 to the payoff | Back half | One chapter per question, each harder than the last; the counter-evidence; the `turn` beat; every chapter turn re-engages |
+| Payoff | Instant payoff | The answer, and what changes in how the viewer sees it |
+| Tail, 30 s at most | none | Next-video handoff, sources, the plain end card |
+
 ## 3. The opening (0:00 to 1:00)
 
 1. **The first sentence delivers what the title promised** [R]. No hello, no channel name, no "in this video", no agenda.
@@ -59,6 +85,16 @@ that has no stakes [R].
 5. **Minutes 1 to 3: stop announcing, start showing** [R]. Narration must stop explaining what is coming and demonstrate.
    Compress long setups into one dense sequence, for example years of filings into a single timeline or counter, so
    momentum starts at once [R, "crazy progression"].
+6. **Be specific, and echo the title** [R, Hormozi, Whiffen]. Replace a vague opener ("here is some advice for creators") with
+   the exact problem and its consequence ("if Shorts get views but no subscribers, check what happens right after the
+   payoff"). Say the title's own keywords in the first sentence so the viewer knows the click was right. `story_check.py`
+   warns when fewer than 2 of the title's keywords are spoken in the first 30 seconds.
+7. **Give a small win early** [R, Rober's graduated retention: early micro-satisfactions buy the patience for the heavy
+   explanation]. Answer one small question in the first chapter so the viewer has been paid before the hard part. [H] By 2:00;
+   `story_check.py` warns if nothing has been answered by then.
+8. **For a wrong intuition, steelman it first** [R, Veritasium]. A clear explanation alone can leave a viewer feeling they
+   understood while learning nothing, because the old belief filters it. State the common belief at full strength, say why it
+   feels right, then test it on the filing. The wrong answer becomes the peg the right one hangs on.
 
 ## 4. The middle
 
@@ -97,6 +133,19 @@ that has no stakes [R].
    synthetic, which is why the originator of the style walked it back in 2024 and 2025. [H] After each dense run, one slow
    beat: a single image or number held, a person or decision in view. Optimising only for the retention metric does not
    make a better video [R, Brownlee].
+10. **Manage cognitive load** [R]. A deep mid-video trough almost always comes from broken causality or from overload. [H] One
+    new idea per beat. Define a term, and show the number, before the next sentence leans on it. Never introduce a new term
+    and a new number in the same sentence.
+11. **Make the abstract human** [R, Kurzgesagt]. Give a big or invisible scale a thing the viewer can feel: one rupee, one
+    shop, one person. Keep the same one through the whole video (the Rs 100 note, the castle). Leave the viewer with a new
+    way of seeing, not a lecture.
+12. **Say what we do not know** [R, Harris: shown uncertainty keeps an analytical topic from feeling sterile]. The unknown and
+    what to monitor are on screen as their own beats, never buried. Our reading is labelled as ours.
+13. **Keep forward motion** [R, Harris]. Each scene orients the viewer (where are we) and then shows action. Carry an object
+    or a number from one scene into the next so the video reads as one movement.
+14. **Treat sound as structure** [R, Harris, Magnates, Kurzgesagt]. Choose the music before assembling the edit and let its
+    crescendos and rhythm shifts mark the turns and the payoff. Use one beat of silence before the line that matters. Keep
+    one steady narrator register inside a video: clinical clarity with some warmth, no shouting, rare first-person.
 
 ## 5. The back half and the payoff
 
@@ -104,8 +153,10 @@ that has no stakes [R].
    the unknown. A recap is not an escalation.
 2. **Cut every dull moment** [R]. Review the rough cut with several people and have them flag the energy dips. Write several
    full drafts, each one stripping background that does not move the story (the brief cites about a dozen at the top
-   end) [R, Kurzgesagt]. Keep the source ledger so every claim is provable [R]. Our review set is a common-viewer reader, a
-   retention editor and an adversarial fact-check [H, as used for `dmartstory`].
+   end) [R, Kurzgesagt]. Strip every detail, however interesting, that does not advance the central conflict [R,
+   MagnatesMedia]; log the strongest source passages by page so the cut stays fast. Keep the source ledger so every claim is
+   provable, and have an outside expert audit the facts where one is available [R]. Our review set is a common-viewer
+   reader, a retention editor and an adversarial fact-check [H, as used for `dmartstory`].
 3. **Pay off and stop** [R]. The moment the title's promise and the last open loop are fulfilled on screen, land the
    change in what the viewer now understands, then end. No victory lap. [H] After the payoff, only a handoff to the next
    video, sources and the plain end card, 30 seconds in all. Do not attach unrelated add-ons after the payoff (the
@@ -141,6 +192,8 @@ V["story"] = dict(
   ],
   turn="b30",                                              # the "But": the first answer is complicated or reversed
   plants=[("b02", "b60")],                                 # (set up here, pay off there)
+  critical=[dict(what="Q2 FY27 standalone results", src="BSE filing, 10 Oct 2026, p.3")],   # 2 or 3 pieces the story needs
+  tier="broad",                                            # optional: broad, nurture or authority (slate planning)
 )
 ```
 
@@ -152,25 +205,49 @@ python3 scripts/story_check.py <video id>     # uses built timings in public/vx/
 ```
 
 It fails if: the ledger is missing or malformed, a beat key does not exist, the primary loop opens after 0:30, the primary is
-not the last to close, a plant is paid before it is set, or more than 3 minutes pass with no loop opened or answered. It
-warns about beats that open with "and then", a video of 5 minutes or more without a primary, a secondary and a tertiary
-loop, a tail after the payoff longer than 30 s, a spoken subscribe or like ask near the end, and a missing `turn`. It
-cannot judge the rest; section 8 does.
+not the last to close, a plant is paid before it is set, `tier` is not one of the three, or more than 3 minutes pass with no
+loop opened or answered. It warns about beats that open with "and then", a video of 5 minutes or more without a primary, a
+secondary and a tertiary loop, nothing answered by 2:00, fewer than 2 of the title's keywords in the first 30 s, a missing
+`critical` list, a tail after the payoff longer than 30 s, a spoken subscribe or like ask near the end, and a missing
+`turn`. It cannot judge the rest; section 8 does.
 
-## 8. Retention-editor checklist (answer yes or no before the voice is built)
+## 8. Checklists: before the voice is built, and after the upload
 
-1. Can the promise be said in one sentence, and does the first sentence of the video deliver it?
-2. Is the primary loop open by 0:30 and are the stakes clear by 1:00?
-3. Is the connecting word between every pair of beats *but* or *therefore*?
-4. Does a question open or get answered at least every 3 minutes (`story_check.py` passes)?
-5. Is every loop answered on screen, with its source?
-6. Is there a real re-engagement near 3:00 and at each chapter turn, drawn from the documents?
-7. Does every visual prove the sentence beside it?
-8. Are feelings shown as evidence rather than named?
-9. Is there a slow beat after each dense run?
-10. Does the video stop within 30 s of the payoff, with no spoken ask?
-11. Is every number sourced, every illustration labelled, and every line free of price talk and verdicts on a stock?
-12. Have the common-viewer reader, the retention editor and the fact-check each signed off?
+**Before the voice is built** (the retention editor answers yes or no):
+
+1. Are the 2 or 3 critical documents or figures named in `story.critical` and verified against their sources?
+2. Can the promise be said in one sentence, and does the first sentence of the video deliver it in the title's own words?
+3. Is the primary loop open by 0:30 and are the stakes clear by 1:00?
+4. Is the connecting word between every pair of beats *but* or *therefore*?
+5. Does a question open or get answered at least every 3 minutes, and has a small question been answered by 2:00
+   (`story_check.py` passes)?
+6. Is every loop answered on screen, with its source?
+7. Is there a real re-engagement near 3:00 and at each chapter turn, drawn from the documents?
+8. Pick any beat and ask what the viewer loses by leaving now. Is there a clear answer for every beat? (A beat with no
+   answer is a dead zone.)
+9. Does each beat add one new idea, with terms and numbers introduced before they are leaned on?
+10. Does every visual prove the sentence beside it, and are feelings shown as evidence rather than named?
+11. Is there a slow beat after each dense run, and is the unknown shown on screen?
+12. Does the video stop within 30 s of the payoff, with no spoken ask?
+13. Is every number sourced, every illustration labelled, and every line free of price talk and verdicts on a stock?
+14. Have the common-viewer reader, the retention editor and the fact-check each signed off?
+
+**After the upload.** Open the retention graph in YouTube Studio, with the click-through rate beside it, and read the shape
+[R]. The symptom points at the rule that broke:
+
+| What the graph shows | Likely cause [R] | Rules to revisit |
+| --- | --- | --- |
+| High click-through, steep fall by the first-30-seconds marker | Packaging mismatch: the opening did not deliver what the title promised | 2 (one promise), 3.1, 3.6 |
+| Steep fall through minutes 1 to 3 | Setup too long; announcing instead of showing | 3.5, 3.7 |
+| A deep trough in the middle | Broken cause and effect ("and then"), or overload | 4.1, 4.10 |
+| The same kind of scene dips every time | A dead stretch with nothing pending | 4.3, 4.4, 4.5 |
+| Slow decay through the back half | Coasting instead of escalating | 5.1 |
+| A fall at the very end, or poor average view percentage | A tail after the payoff | 5.3, 5.4 |
+| Next upload's impressions drop after a high-click, low-retention video | A broken promise taught the audience to skip us | 2 (one promise) |
+| Strong retention but weak comments and no return viewers | Over-stimulation: retention bought at the cost of the video | 4.9 |
+
+Write the two or three biggest dips as beat keys into the next video's notes, and place its pattern interrupts and
+re-engagements just before them [R]. One video is a small sample; act on a pattern across two or three, not on one curve.
 
 ## 9. Retired and kept
 
@@ -199,7 +276,8 @@ Kept unchanged, because they are not structure rules or the brief does not touch
 - **MrBeast production operations** (the $10,000 on-camera rule, the 3-hour contestant rule, daily vendor check-ins,
   backup shoot days, "cheat code" consultants, staff quizzes): they run physical shoots. We have no equivalent.
 - **Hormozi's funnel** (the "secret offer" packaging, workshops, lead capture): a direct-response sales model that does not fit
-  research without advice. Only his script mechanics (hook, retain, reward; modular units with a re-hook) are used.
+  research without advice. Only his script mechanics (hook, retain, reward; modular units with a re-hook), his value
+  equation as a way to word an honest promise, and his idea of mixing content tiers are used.
 - **The retention curve and benchmarks in the brief** (the 100% to 66% curve, the 10% CTR baseline): modelled or channel-specific
   figures, not targets for us. We set targets from our own Studio data.
 - **The Zeigarnik effect.** The brief states as settled that interrupted tasks are remembered about twice as well. Replication

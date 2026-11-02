@@ -2,7 +2,7 @@
 """Story-ledger check for a long video (rules: docs/STORYTELLING.md, AK 2 Nov 2026). Replaces hook_check.py.
 Reads V["story"] (promise, arc, loops, turn, plants) from scripts/vx_scripts.py or scripts/vx_letters.py. Beat timings come
 from public/vx/<id>/data.json when it matches the script, else from a word count (--wpm).
-usage: story_check.py <id> [--wpm 165] [--open-by 30] [--tail 30] [--max-quiet 180]
+usage: story_check.py <id> [--wpm 165] [--open-by 30] [--tail 30] [--max-quiet 180] [--first-win 120]
 exit 0 = no FAIL (warnings allowed), 1 = at least one FAIL, 2 = unknown video"""
 import json, math, pathlib, re, sys
 HERE = pathlib.Path(__file__).resolve().parent
@@ -11,6 +11,8 @@ ARCS = {"three-act", "story-circle", "kishotenketsu", "misconception-first", "wo
         "evidence-first", "modular-value", "claim-verdict"}
 KINDS = ("primary", "secondary", "tertiary", "micro")
 THEN = re.compile(r"^\s*(and then|then|next|after that|afterwards|meanwhile)\b", re.I)
+TIERS = ("broad", "nurture", "authority")
+STOP = {"this", "that", "with", "from", "what", "when", "your", "have", "does", "about", "their", "into", "than", "them", "were", "will", "just", "more", "most", "only", "over", "some", "video", "explained", "simply", "short", "shorts"}
 ASK = re.compile(r"\b(subscribe|hit the bell|like (and|this)|follow us|link in (the )?bio|link below)\b", re.I)
 
 def arg(flag, default): return float(sys.argv[sys.argv.index(flag) + 1]) if flag in sys.argv else default
@@ -43,7 +45,7 @@ def timings(V, wpm):
 
 def main():
     if len(sys.argv) < 2 or sys.argv[1].startswith("--"): print(__doc__); return 2
-    vid, WPM, OPEN_BY, TAIL, QUIET = sys.argv[1], arg("--wpm", 165.0), arg("--open-by", 30.0), arg("--tail", 30.0), arg("--max-quiet", 180.0)
+    vid, WPM, OPEN_BY, TAIL, QUIET, WIN = sys.argv[1], arg("--wpm", 165.0), arg("--open-by", 30.0), arg("--tail", 30.0), arg("--max-quiet", 180.0), arg("--first-win", 120.0)
     V = find(vid)
     if V is None: print(f"no video with id {vid} in vx_scripts.py or vx_letters.py"); return 2
     T, total, notes = timings(V, WPM)
@@ -81,6 +83,19 @@ def main():
         ev = sorted({(T[idx[L[e]]][1], f"{L['id']} {e}s") for L in ok for e in ("open", "close")})
         for (a, ia), (b, ib) in zip(ev, ev[1:]):
             if b - a > QUIET: fails.append(f"{fmt(b - a)} with no question opened or answered, {fmt(a)} ({ia}) to {fmt(b)} ({ib}); the limit is {QUIET:.0f} s")
+    if ok:   # an early small win: the first answer lands soon, which buys patience for the heavy explanation (Rober)
+        first = min(T[idx[L["close"]]][1] for L in ok)
+        if first > WIN: warns.append(f"first question answered at {fmt(first)}; an early small win is expected by {WIN:.0f} s")
+    kw = {w for w in re.findall(r"[a-z]{4,}", f"{V.get('title', '')} {S.get('promise', '')}".lower()) if w not in STOP}
+    opening = " ".join(say for k, t0, t1, say, typ in T if t0 <= OPEN_BY).lower()
+    hit = {w for w in kw if w in opening}
+    if len(kw) >= 2 and len(hit) < 2: warns.append(f"the first {OPEN_BY:.0f} s echo {len(hit)} of the title's keywords ({', '.join(sorted(kw)[:6])}); echo at least 2 so the opening confirms the click")
+    crit = S.get("critical")
+    if not crit: warns.append("no story.critical: list the 2 or 3 documents or figures the story cannot exist without, each with its source")
+    else:
+        for c in crit:
+            if not (isinstance(c, dict) and c.get("what") and c.get("src")): warns.append(f"story.critical entry needs what and src: {c!r}")
+    if S.get("tier") is not None and S["tier"] not in TIERS: fails.append(f"story.tier must be one of {TIERS}")
     kinds = {L["kind"] for L in ok}
     if total >= 300 and not {"primary", "secondary", "tertiary"} <= kinds:
         warns.append(f"a {fmt(total)} video should stack a primary, a secondary and a tertiary loop; missing: {', '.join(sorted({'primary', 'secondary', 'tertiary'} - kinds))}")

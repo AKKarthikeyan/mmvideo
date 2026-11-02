@@ -10,4 +10,4 @@
 - Storytelling: every new script (long video, Short, Reel) follows `docs/STORYTELLING.md`. AK set these on 2 Nov 2026
   and they replace all earlier storytelling rules, including the 11 Oct "question by 0:05, a hook every 45 s".
   Declare `V["story"]` in the video's entry and run `python3 scripts/story_check.py <id>` before building the voice.
-  `scripts/hook_check.py` is retired.
+  `scripts/hook_check.py` is retired. The `/story <topic | video id>` skill does all of this in one step.

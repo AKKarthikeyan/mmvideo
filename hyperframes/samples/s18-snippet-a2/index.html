@@ -187,7 +187,7 @@
         $("tw1").style.opacity = C((t - A.dev) * 3); $("tw1").style.transform = `scale(${0.5 + 0.5 * Math.min(sp((t - A.dev) / 0.5), 1.1)})`;
         $("tw2").style.opacity = C((t - A.you) * 3); $("tw2").style.transform = `scale(${0.5 + 0.5 * Math.min(sp((t - A.you) / 0.5), 1.1)})`;
         const ou = sp((t - A.toll) / 0.7); $("booth").style.opacity = C(ou * 3); $("booth").style.transform = `translateY(${(1 - Math.min(ou, 1)) * -700}px) scale(${0.9 + 0.1 * Math.min(ou, 1.1)})`;
-        coins.forEach((d, i) => { const ph = (t - A.toll - 0.4 - i * 0.42); if (ph < 0) { d.style.opacity = 0; return; } const u = (ph / 2.9) % 1, x = L(1000, 40, u);
+        coins.forEach((d, i) => { const ph = (t - A.toll - 0.2 - i * 0.42); if (ph < 0) { d.style.opacity = 0; return; } const u = (ph / 1.6) % 1, x = L(1000, 40, u);
           const atBooth = Math.abs(x - 540) < 70, y = 1108 - (atBooth ? 26 * Math.cos(((x - 540) / 70) * 1.57) : 0);
           d.style.opacity = C(Math.min(u, 1 - u) * 12); d.style.transform = `translate(${x - 30}px, ${y}px) scale(${x < 540 ? 0.72 : 1})`; });
         // S3: columns grow, services share flagged

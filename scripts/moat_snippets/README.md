@@ -15,4 +15,6 @@ Format: about 2.8 spoken words a second (80 words at most). Visuals start from `
    or your own take with `--audio take.mp3`, or `--engine piper` for a scratch voice. This writes `vo.mp3` and `timing.js` and sets the video length.
 3. `python3 hyperframes/tools/hf.py check 18` then `snap` and `render` (silent MP4 to `out/hyperframes/`).
 4. `python3 scripts/moat_snippets/voice.py A1 --mux [--music bed.mp3]` writes `out/hyperframes/moat-snippet-a1.mp4`.
-The scenes follow the voiceover's word times, so a new voice needs no re-editing, only steps 2 to 4. Only A1 is built as video so far.
+5. Sound effects: `python3 scripts/moat_snippets/sfx.py A1` (needs numpy) mixes code-made effects under the voice and rewrites the same file.
+   Each snippet has a cue sheet in `sfx.py` keyed to the scene's word anchors; `--dry` prints it. A new snippet needs its own `cues_<id>` function.
+The scenes follow the voiceover's word times, so a new voice needs no re-editing, only steps 2 to 4. A1 and A2 are built as video so far.

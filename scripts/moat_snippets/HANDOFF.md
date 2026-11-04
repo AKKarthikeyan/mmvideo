@@ -20,7 +20,8 @@ Branch `claude/moat-atlas-asian-paints-short`. No pull request is open yet.
    The current A1 video uses a Kokoro stand-in voice (`--engine kokoro`; model files are not in git, see the voice.py docstring).
 2. A1 and A2 are voiced (4 Nov 2026, MiniMax `English_CaptivatingStoryteller`, `--speed 1.15`; voice 28.2 s and 25.6 s), rendered and muxed:
    `out/hyperframes/moat-snippet-a1.mp4` (32.7 s) and `moat-snippet-a2.mp4` (30.1 s), about -17.5 LUFS. A2's scene is `hyperframes/samples/s18-snippet-a2/`.
-   Next: A3 onwards, in the order in `FINAL_SCRIPTS.md` (copy `s18-snippet-a2`). End-card hold is 4.0 s (voice.py, A1, A2).
+   Both carry code-made sound effects (`sfx.py`, the synths AK approved on the Namakkal films; no downloaded packs). AK has not heard them yet.
+   Next: A3 onwards, in the order in `FINAL_SCRIPTS.md` (copy `s18-snippet-a2`). Each new snippet also needs a `cues_<id>` in `sfx.py`. End-card hold is 4.0 s (voice.py, A1, A2).
    The HyperFrames renderer needs ffmpeg with the `setparams` filter; Remotion's bundled ffmpeg lacks it (a static build from `pip install imageio-ffmpeg` works).
 3. Close the open verification items at the bottom of `final/VERIFICATION_LOG.md` (NPCI page, Visa 10-Q legal note, Apple call transcript from Apple's own site).
 4. Add a music bed (`--music`). Optionally port the richer motion from `s17`/`s18` into the Asian Paints short (`s16`).

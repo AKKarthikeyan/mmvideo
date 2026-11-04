@@ -109,6 +109,19 @@ guessed. Without the file the scene is left out. A missing district means no rep
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
+**Then vs Now Shorts (9:16, 18 s).** `videos/_template_nl/index.html` is the template; `tools/nightlight_shorts.py <State> ...`
+builds `videos/nl-<state>/` (night-light pictures for 2012 and 2016 cropped to the state, district outline, three cities, and
+for Maharashtra, Karnataka and Gujarat a closing card with the RBI Bulletin Oct 2026 correlation). Imagery is NASA Black Marble
+via GIBS layer `VIIRS_Black_Marble`, which serves only 2012 and 2016; they are separate composites, so the Short says to compare
+the pattern, not the brightness (never turn them into a % change). Pilot states built: `nl-maharashtra`, `nl-karnataka`,
+`nl-gujarat`. Other states need a `CITIES` entry in the tool, and have no RBI card. For 2012 vs 2024 swap in VNP46A3 (NASA Earthdata login).
+
+```sh
+python3 hyperframes/tools/nightlight_shorts.py Maharashtra Karnataka Gujarat
+python3 hyperframes/tools/hf.py sync nl-maharashtra nl-karnataka nl-gujarat
+python3 hyperframes/tools/hf.py render nl-maharashtra nl-karnataka nl-gujarat
+```
+
 ## Rules for using these in a published video
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic

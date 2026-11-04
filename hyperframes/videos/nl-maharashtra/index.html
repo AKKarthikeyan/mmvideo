@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- Then vs Now Short, 9:16: night lights 2012 vs 2016 for one state. Data: story.js, images: assets/img/y2012.jpg, y2016.jpg
+     (tools/nightlight_shorts.py). NASA Black Marble via GIBS; RBI Bulletin Oct 2026 Table 3 for the closing number. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Then vs Now: night lights</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body, #root { width: 1080px; height: 1920px; }
+      #win { position: absolute; left: 0; top: 400px; width: 1080px; height: 1080px; overflow: hidden; background: #05070a; }
+      #cam { position: absolute; left: 0; top: 0; width: 1400px; height: 1400px; transform-origin: 0 0; }
+      #cam img { position: absolute; left: 0; top: 0; width: 1400px; height: 1400px; }
+      #after { position: absolute; inset: 0; }
+      #cam svg { position: absolute; left: 0; top: 0; }
+      #wipe { position: absolute; top: 0; width: 6px; height: 1400px; margin-left: -3px; background: #f7f3ea; box-shadow: 0 0 30px rgba(247, 243, 234, 0.85); }
+      .city { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #f7f3ea;
+        white-space: nowrap; text-shadow: 0 0 8px #000, 0 0 14px #000; }
+      .chip { position: absolute; top: 24px; font: 700 52px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #0b0e13; background: #f7f3ea; padding: 10px 18px 12px; }
+      #kicker { position: absolute; left: 60px; top: 110px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.22em; color: #d9a441; }
+      #name { position: absolute; left: 56px; top: 164px; font: 700 150px/1 Oswald, sans-serif; letter-spacing: 0.02em; color: #f7f3ea; white-space: nowrap; }
+      #sub { position: absolute; left: 60px; top: 330px; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #c8cdd3; }
+      #yr { position: absolute; left: 0; top: 1500px; width: 1080px; height: 150px; }
+      #yr .y { position: absolute; left: 60px; top: 0; font: 700 170px/1 Oswald, sans-serif; color: #d9a441; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+      #yr .t { position: absolute; left: 520px; top: 36px; width: 500px; font: 400 36px/1.25 Inter, sans-serif; color: #f7f3ea; }
+      #card { position: absolute; left: 0; top: 1500px; width: 1080px; height: 190px; }
+      #card .n { position: absolute; left: 60px; top: 0; font: 700 170px/1 Oswald, sans-serif; color: #7fd0c8; font-variant-numeric: tabular-nums; }
+      #card .t { position: absolute; left: 400px; top: 20px; width: 620px; font: 400 36px/1.28 Inter, sans-serif; color: #f7f3ea; }
+      #card .p { position: absolute; left: 400px; top: 160px; font: 28px/1 Plex, monospace; color: #c8cdd3; white-space: nowrap; }
+      #src { position: absolute; left: 60px; top: 1722px; width: 960px; font: 400 28px/1.3 Plex, monospace; color: #b9c0c8; }
+      #scrimT { position: absolute; left: 0; top: 0; width: 1080px; height: 400px; background: linear-gradient(#06080b, rgba(6, 8, 11, 0)); }
+      #scrimB { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: linear-gradient(rgba(6, 8, 11, 0), #06080b 22%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="18" data-width="1080" data-height="1920">
+      <div id="win">
+        <div id="cam" data-layout-allow-overflow>
+          <img id="a" src="assets/img/y2012.jpg" alt="" />
+          <div id="after"><img id="b" src="assets/img/y2016.jpg" alt="" /></div>
+          <svg id="dim" width="1400" height="1400" viewBox="0 0 1400 1400"></svg>
+          <div id="wipe"></div>
+          <div id="cities"></div>
+        </div>
+        <div class="chip" id="chipA" style="left: 24px">2012</div>
+        <div class="chip" id="chipB" style="right: 24px">2016</div>
+      </div>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="kicker">INDICA ATLAS · THEN VS NOW</div>
+      <div id="name"></div>
+      <div id="sub">INDIA AT NIGHT, FROM ORBIT</div>
+      <div id="yr"><div class="y" id="yv">2012</div><div class="t" id="yt"></div></div>
+      <div id="card"><div class="n" id="cn">0.00</div><div class="t" id="ct"></div><div class="p" id="cp"></div></div>
+      <div id="src">NASA Black Marble (VIIRS) via GIBS. 2012 and 2016 are separate composites: compare the pattern, not the brightness.</div>
+    </div>
+    <script>
+      const H = HF.setup(18), E = HF.ease, F = HF.fade;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const S = window.STORY, NS = "http://www.w3.org/2000/svg", DUR = 18;
+      $("name").textContent = S.name.toUpperCase();
+      if (S.name.length > 9) $("name").style.fontSize = Math.floor(150 * 9 / S.name.length) + "px";
+      // everything outside the state is dimmed: a mask with the state shape cut out
+      const svg = $("dim");
+      const mk = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+      const mask = mk("mask", { id: "hole" }); svg.appendChild(mask);
+      mask.appendChild(mk("rect", { width: 1400, height: 1400, fill: "#fff" }));
+      const g = mk("g", { fill: "#000", stroke: "#000", "stroke-width": 2 }); mask.appendChild(g);
+      const line = mk("g", { fill: "none", stroke: "#f7f3ea", "stroke-width": 2.2, "stroke-linejoin": "round", opacity: 0.8 });
+      S.rings.forEach((r) => {
+        let p = "";
+        for (let i = 0; i < r.length; i += 2) p += (i ? "L" : "M") + r[i] + " " + r[i + 1];
+        p += "Z"; g.appendChild(mk("path", { d: p })); line.appendChild(mk("path", { d: p }));
+      });
+      svg.appendChild(mk("rect", { width: 1400, height: 1400, fill: "#05070a", opacity: 0.66, mask: "url(#hole)" }));
+      svg.appendChild(line);
+      S.cities.forEach((c, i) => {
+        const e = document.createElement("div"); e.className = "city"; e.id = "c" + i;
+        e.innerHTML = c.n.toUpperCase(); $("cities").appendChild(e);
+      });
+      // camera: slow push-in on the middle of the picture
+      const ZOOM = 0.7714, FOCUS = 700;
+      H.render = (t) => {
+        const z = ZOOM * (1 + 0.07 * E.io2(t / DUR));
+        const o = 540 - FOCUS * z;
+        $("cam").style.transform = `translate(${o}px, ${o}px) scale(${z})`;
+        // wipe 2012 -> 2016
+        const w = E.io3((t - 3.6) / 3.4);
+        const wx = w * 1400;
+        $("after").style.clipPath = `inset(0 ${1400 - wx}px 0 0)`;
+        $("wipe").style.left = `${wx}px`;
+        $("wipe").style.opacity = HF.clamp01(w * 20) * (1 - HF.clamp01((w - 0.97) * 30));
+        $("chipA").style.opacity = F(t, 0.8, 99, 0.4) * (1 - HF.clamp01((w - 0.2) / 0.1));
+        $("chipB").style.opacity = HF.clamp01((w - 0.8) / 0.1);
+        S.cities.forEach((c, i) => {
+          const e = $("c" + i);
+          e.style.left = `${c.x + 14}px`; e.style.top = `${c.y - 20}px`;
+          e.style.opacity = F(t, 1.4 + i * 0.25, 99, 0.4);
+          e.style.transform = `scale(${1 / (z / ZOOM)})`; e.style.transformOrigin = "0 50%";
+        });
+        // year read-out and one plain line
+        const late = HF.clamp01((w - 0.5) / 0.04);
+        $("yv").textContent = late > 0.5 ? S.years[1] : S.years[0];
+        $("yt").textContent = late > 0.5 ? "The same lights, four years on." : "Night lights, one image a year.";
+        $("yr").style.opacity = F(t, 0.7, S.corr ? 10.4 : 99, 0.4);
+        $("name").style.opacity = F(t, 0.3, 99, 0.6);
+        $("sub").style.opacity = F(t, 0.5, 99, 0.6);
+        $("kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        $("src").style.opacity = F(t, 0.9, 99, 0.5);
+        // RBI closing card, only where the Bulletin has a figure for the state
+        if (S.corr) {
+          const k = E.io2((t - 11.2) / 1.4);
+          $("cn").textContent = (S.corr * k).toFixed(2);
+          $("ct").textContent = "Quarterly light growth vs official economic growth: correlation";
+          $("cp").textContent = "RBI researchers · " + S.period;
+          $("card").style.opacity = F(t, 10.8, 99, 0.5);
+        } else $("card").style.opacity = 0;
+        $("root").style.filter = `brightness(${E.o2(t / 0.6)})`;
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Seventeen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Eighteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -24,6 +24,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
 | 16 | 9:16 illustrated short: podium, counter, bars, dot grid, moat ring, per-word captions | Moat Atlas | Asian Paints moat, from our 21 Jul and 17 Aug 2026 articles (ledger beats l63, l64); shapes illustrative | `samples/s16-short-moat` (script and sources in `SCRIPT.md`) |
 | 17 | 9:16 short, richer motion: spring captions, camera push, paper wipes, parallax, lit art | Moat Atlas | Apple fiscal Q4 2026 results (Apple release, 2 Nov 2026); derived percentages labelled | `samples/s17-short-apple` (script and sources in `SCRIPT.md`) |
+| 18 | Final Moat Snippet: word-timed 9:16 short with drawn scenes, voice and end card | Moat Atlas | Moat Snippet A1 (Apple, the lock); facts per `scripts/moat_snippets/final/` | `samples/s18-snippet-a1` (voice and timing: `scripts/moat_snippets/voice.py`) |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 

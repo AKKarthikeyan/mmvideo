@@ -8,3 +8,11 @@ A Moat Atlas series: one moat (or one crack in a moat) per vertical short, under
 that failed verification (an 87% CIRP figure, a $10B stockpile, a 50% TSMC price rise); they are in git history only.
 
 Format: about 2.8 spoken words a second (80 words at most). Visuals start from `hyperframes/samples/s16-short-moat` and `s17-short-apple`.
+
+## Producing a snippet
+1. `python3 hyperframes/tools/hf.py sync`
+2. Voice and timing: `python3 scripts/moat_snippets/voice.py A1` (MiniMax, needs `MINIMAX_API_KEY`; `--voice` picks the narrator),
+   or your own take with `--audio take.mp3`, or `--engine piper` for a scratch voice. This writes `vo.mp3` and `timing.js` and sets the video length.
+3. `python3 hyperframes/tools/hf.py check 18` then `snap` and `render` (silent MP4 to `out/hyperframes/`).
+4. `python3 scripts/moat_snippets/voice.py A1 --mux [--music bed.mp3]` writes `out/hyperframes/moat-snippet-a1.mp4`.
+The scenes follow the voiceover's word times, so a new voice needs no re-editing, only steps 2 to 4. Only A1 is built as video so far.

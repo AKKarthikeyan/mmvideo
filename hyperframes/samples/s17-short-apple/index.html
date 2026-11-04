@@ -1,0 +1,251 @@
+<!doctype html>
+<!-- Sample 17 · Moat Atlas 9:16 short: Apple's September-quarter results (fiscal Q4 2026, released 2 Nov 2026).
+     Every figure is from Apple's own release and tables (apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/, SEC Exhibit 99.1).
+     Percentages marked "our arithmetic" are computed from those tables. The phone is an ILLUSTRATIVE drawing, not a product photo. Script: SCRIPT.md.
+     Richer than sample 16: spring motion, camera push per scene, paper wipes, parallax and lit, shaded art. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Apple Q4 short</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      #root { width: 1080px; height: 1920px; --ink: #12301f; --mint: #2f9e7a; --red: #d9483b; --gold: #e0a93a; --cream: #f4f0e8;
+        background: radial-gradient(900px 1100px at 50% 40%, #f3f0ea 0%, #dcd7ce 58%, #b9b4aa 100%); }
+      #vig { background: radial-gradient(1000px 1300px at 50% 50%, transparent 48%, rgba(10, 30, 20, 0.5) 100%); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .abs { position: absolute; }
+      .sc { position: absolute; inset: 0; }
+      #pegs { position: absolute; inset: -60px; opacity: .5;
+        background-image: radial-gradient(circle, rgba(18,48,31,.22) 3px, transparent 3.5px); background-size: 54px 54px; }
+      .blob { position: absolute; border-radius: 50%; }
+      .cp { position: absolute; left: 90px; width: 900px; font: 700 100px/1.02 Playfair, serif; color: var(--ink); text-shadow: 0 2px 0 rgba(255,255,255,.4); }
+      .cp .ln { white-space: nowrap; } .cp .w { display: inline-block; white-space: pre; }
+      .cp .ac { font-style: italic; color: #146147; } .cp .rd { font-style: italic; color: #9a2616; } .cp .gd { font-style: italic; color: #6e4a02; }
+      .cp.sm { font-size: 82px; }
+      .tag2 { position: absolute; left: 90px; top: 80px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: .16em; color: var(--ink); border: 3px solid currentColor; padding: 10px 16px; background: rgba(244,240,232,.92); }
+      .ill { position: absolute; right: 90px; top: 88px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: .14em; color: #12301f; border: 2px dashed currentColor; padding: 8px 12px; background: rgba(244,240,232,.92); }
+      .srcl { position: absolute; left: 90px; right: 90px; bottom: 70px; font: 28px/1.3 Plex, monospace; color: #12301f; background: rgba(244,240,232,.92); padding: 12px 18px; border-radius: 10px; }
+      .chip { position: absolute; transform: translate(-50%, -50%); background: var(--cream); color: var(--ink); border-radius: 18px; padding: 10px 20px; text-align: center; white-space: nowrap;
+        box-shadow: 0 10px 24px rgba(0,0,0,.28), inset 0 -4px 0 rgba(18,48,31,.12); font: 700 34px/1.15 Oswald, sans-serif; letter-spacing: .06em; }
+      .chip b { display: block; font: 700 46px/1 Playfair, serif; letter-spacing: 0; }
+      .num { position: absolute; left: 0; right: 0; text-align: center; font: 700 190px/1 Playfair, serif; color: var(--ink); text-shadow: 0 6px 0 rgba(255,255,255,.45); font-variant-numeric: tabular-nums; }
+      #stamp { position: absolute; left: 520px; top: 1060px; font: 700 62px/1.05 Oswald, sans-serif; letter-spacing: .08em; color: var(--red); border: 9px solid var(--red); border-radius: 14px;
+        padding: 12px 24px; text-align: center; background: rgba(244,240,232,.92); transform-origin: 50% 50%; box-shadow: 0 14px 30px rgba(0,0,0,.3); }
+      .conf { position: absolute; width: 22px; height: 22px; border-radius: 4px; }
+      .wipe { position: absolute; top: 0; width: 1080px; height: 1920px; }
+      .rowlab { position: absolute; left: 90px; font: 700 36px/1 Oswald, sans-serif; letter-spacing: .12em; color: var(--ink); }
+      .val { position: absolute; font: 700 56px/1 Playfair, serif; color: var(--ink); }
+      .quote { position: absolute; left: 90px; right: 90px; top: 1568px; background: var(--ink); color: #e8f3ec; border-radius: 20px; padding: 22px 28px; font: 400 32px/1.3 Inter, sans-serif; box-shadow: 0 14px 30px rgba(0,0,0,.3); }
+      .quote b { display: block; margin-top: 8px; font: 700 28px/1 Oswald; letter-spacing: .14em; color: var(--gold); }
+      #endcard { position: absolute; left: 0; right: 0; top: 720px; text-align: center; }
+      #endcard b { display: block; font: 700 130px/1 Oswald; letter-spacing: .12em; color: var(--ink); }
+      #endcard i { display: block; font: italic 700 70px/1.15 Playfair; color: #146147; margin-top: 26px; }
+      #endcard span { display: block; font: 28px/1.4 Plex; color: #2c4033; margin-top: 56px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="43" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div id="pegs" data-layout-ignore></div>
+        <div id="blobs" data-layout-ignore></div>
+        <!-- 1 · record quarter -->
+        <div class="sc" id="s1">
+          <div class="abs" id="disc" style="left:140px;top:760px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#58c7a0,#2f9e7a 55%,#1d6b52);box-shadow:0 40px 80px rgba(0,0,0,.35), inset 0 -30px 60px rgba(0,0,0,.25)"></div>
+          <div class="abs" id="phone" style="left:360px;top:790px;width:360px;height:740px"></div>
+          <div class="num" id="n1" style="top:470px">$0.0B</div>
+          <div id="stamp">SEPTEMBER<br />QUARTER RECORD</div>
+          <div id="confetti"></div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div><div class="ill">ILLUSTRATIVE PHONE</div>
+          <div class="srcl">Net sales $114,477M vs $102,466M. Apple release, 2 Nov 2026.</div>
+        </div>
+        <!-- 2 · where it came from -->
+        <div class="sc" id="s2">
+          <svg class="abs" id="donut" style="left:90px;top:600px" width="900" height="900" viewBox="0 0 900 900"></svg>
+          <div id="dlabs"></div>
+          <div class="abs" id="dctr" style="left:90px;width:900px;top:975px;text-align:center;font:700 96px/1 Playfair,serif;color:#12301f">$114.5B<div style="font:700 30px/1.2 Oswald;letter-spacing:.14em;margin-top:6px;color:#34493c">SALES BY PRODUCT</div></div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div>
+          <div class="srcl">Net sales by category, quarter ended 26 Sep 2026 (Apple tables).</div>
+        </div>
+        <!-- 3 · services share vs profit -->
+        <div class="sc" id="s3">
+          <div class="abs" id="colA" style="left:170px;top:700px;width:330px;height:740px"></div>
+          <div class="abs" id="colB" style="left:580px;top:700px;width:330px;height:740px"></div>
+          <svg class="abs" id="conn" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+          <div class="rowlab" style="left:170px;top:1462px;width:330px;text-align:center;left:170px">OF SALES</div>
+          <div class="rowlab" style="left:580px;top:1462px;width:330px;text-align:center">OF GROSS PROFIT</div>
+          <div class="quote" id="q3" style="top:1530px">“…installed base of active devices reached a new all-time high.”<b>KEVAN PAREKH, APPLE CFO</b></div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div><div class="ill">OUR ARITHMETIC</div>
+          <div class="srcl" style="bottom:36px">Services: $31.6B of $114.5B sales, $24.0B of $54.8B gross margin.</div>
+        </div>
+        <!-- 4 · growth by region and product -->
+        <div class="sc" id="s4">
+          
+          <div id="rows"></div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div><div class="ill">OUR ARITHMETIC</div>
+          <div class="srcl">Net sales, year on year, from Apple's tables.</div>
+        </div>
+        <!-- 5 · EPS -->
+        <div class="sc" id="s5">
+          <div class="abs" id="eb1" style="left:200px;top:640px;width:300px;height:540px"></div>
+          <div class="abs" id="eb2" style="left:580px;top:640px;width:300px;height:540px"></div>
+          <div class="abs" id="cents" style="left:90px;top:1370px;width:900px;height:90px"></div>
+          <div class="chip" id="refund" style="left:840px;top:1300px;background:#fbe3df;color:#8f2a20">5¢ FROM<br />TARIFF REFUNDS</div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div>
+          <div class="srcl">Diluted EPS $2.10 vs $1.85; $0.05 from tariff refunds (Apple release).</div>
+        </div>
+        <!-- 6 · returned -->
+        <div class="sc" id="s6">
+          <div class="num" id="n6" style="top:560px;font-size:210px">$28B</div>
+          <div class="abs" id="tiles" style="left:150px;top:860px;width:780px;height:600px"></div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div><div class="ill">1 TILE = $1B</div>
+          <div class="srcl">$28B returned to shareholders in the quarter.</div>
+        </div>
+        <div id="endcard"><b>MOAT ATLAS</b><i>Apple, September quarter</i><span>Educational research, not investment advice · not SEBI-registered<br />Source: Apple results release, 2 Nov 2026</span></div>
+      </div>
+      <div class="wipe" id="w1" style="background:#12301f"></div>
+      <div class="wipe" id="w2" style="background:#2f9e7a"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+    </div>
+    <script>
+      const H = HF.setup(43), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const sp = (x) => (x <= 0 ? 0 : 1 - Math.exp(-7 * x) * Math.cos(12 * x));      // spring, x = seconds / duration
+      const rnd = (i, k = 1) => { const v = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); };
+      const SC = [["s1", 0, 6.6], ["s2", 6.6, 15], ["s3", 15, 23.2], ["s4", 23.2, 30.4], ["s5", 30.4, 36.4], ["s6", 36.4, 39.0]];
+      // ---- background: parallax blobs
+      const blobs = []; for (let i = 0; i < 16; i++) { const d = document.createElement("div"); d.className = "blob"; const s = 140 + rnd(i) * 320;
+        d.style.width = d.style.height = s + "px"; d.style.background = i % 3 === 0 ? "#e0a93a" : "#2f9e7a"; d.style.opacity = 0.07 + rnd(i, 2) * 0.1; $("blobs").appendChild(d); blobs.push({ d, s, x: rnd(i, 3) * 1300, y: rnd(i, 4) * 2000, v: 10 + rnd(i, 5) * 26 }); }
+      // ---- phone drawing (back view: lit titanium, camera plate, three lenses; no logo)
+      $("phone").innerHTML = `<svg viewBox="0 0 360 740" width="360" height="740"><defs>
+        <linearGradient id="fr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9e7e1"/><stop offset=".5" stop-color="#9c9a94"/><stop offset="1" stop-color="#d4d2cb"/></linearGradient>
+        <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d7a5a"/><stop offset=".55" stop-color="#1a4a35"/><stop offset="1" stop-color="#0f2a1e"/></linearGradient>
+        <radialGradient id="ln" cx=".38" cy=".34"><stop offset="0" stop-color="#6d8f86"/><stop offset=".3" stop-color="#1b2b2c"/><stop offset="1" stop-color="#05090a"/></radialGradient>
+        <linearGradient id="pl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4b9a7c"/><stop offset="1" stop-color="#22624a"/></linearGradient>
+        <clipPath id="cl"><rect x="10" y="10" width="340" height="720" rx="58"/></clipPath></defs>
+        <rect x="0" y="0" width="360" height="740" rx="66" fill="url(#fr)"/>
+        <rect x="10" y="10" width="340" height="720" rx="58" fill="url(#bd)"/>
+        <rect x="30" y="34" width="168" height="168" rx="42" fill="url(#pl)" stroke="#8fd1b6" stroke-opacity=".5" stroke-width="3"/>
+        ${[[78, 82], [152, 82], [115, 154]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="32" fill="#cfd3cf"/><circle cx="${x}" cy="${y}" r="26" fill="url(#ln)"/><circle cx="${x - 8}" cy="${y - 9}" r="6" fill="#fff" opacity=".55"/>`).join("")}
+        <circle cx="178" cy="150" r="9" fill="#f6efd2"/><circle cx="178" cy="178" r="6" fill="#222"/>
+        <g clip-path="url(#cl)"><rect id="shine" x="-200" y="-60" width="90" height="900" fill="#fff" opacity=".22" transform="rotate(18 180 370)"/></g>
+        <rect x="-6" y="150" width="8" height="70" rx="3" fill="#8d8b85"/><rect x="-6" y="250" width="8" height="70" rx="3" fill="#8d8b85"/><rect x="358" y="230" width="8" height="110" rx="3" fill="#8d8b85"/></svg>`;
+      // ---- confetti
+      const cf = []; for (let i = 0; i < 46; i++) { const d = document.createElement("div"); d.className = "conf"; d.style.background = ["#e0a93a", "#2f9e7a", "#d9483b", "#12301f"][i % 4]; $("confetti").appendChild(d); cf.push(d); }
+      // ---- donut
+      const cats = [["iPhone", 57583, "#2f9e7a"], ["Services", 31573, "#e0a93a"], ["Mac", 10792, "#12301f"], ["Wearables", 8300, "#7fa99a"], ["iPad", 6229, "#d9483b"]];
+      const TOT = 114477, R = 300, CIRC = 2 * Math.PI * R; let acc = 0; const slices = [];
+      cats.forEach(([n, v, col], i) => { const f = v / TOT, start = acc; acc += f; const mid = (start + f / 2) * 360, ang = (mid * Math.PI) / 180;
+        const g = document.createElementNS("http://www.w3.org/2000/svg", "g"); const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        c.setAttribute("cx", 450); c.setAttribute("cy", 450); c.setAttribute("r", R); c.setAttribute("fill", "none"); c.setAttribute("stroke", col); c.setAttribute("stroke-width", 150);
+        c.setAttribute("transform", "rotate(-90 450 450)"); g.appendChild(c); $("donut").appendChild(g);
+        const chip = document.createElement("div"); chip.className = "chip"; const rr = 455; let cx = 540 + Math.sin(ang) * rr, cy = 1050 - Math.cos(ang) * rr; cx = Math.max(160, Math.min(920, cx));
+        chip.style.left = cx + "px"; chip.style.top = cy + "px"; chip.innerHTML = `${n.toUpperCase()}<b>$${(v / 1000).toFixed(1)}B</b>`; $("dlabs").appendChild(chip);
+        slices.push({ g, c, f, start, mid: ang, chip, n }); });
+      // ---- column charts (scene 3)
+      const col = (id, svc) => { const el = $(id); el.innerHTML = `<div class="abs" style="left:0;bottom:0;width:330px;height:100%;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.3)">
+        <div class="abs prod" style="left:0;bottom:0;width:100%;background:linear-gradient(#1f5a3c,#12301f)"></div>
+        <div class="abs svc" style="left:0;width:100%;background:linear-gradient(#f0bd4f,#d09524)"><div class="pct" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:700 120px/1 Playfair,serif;color:#12301f">${svc}%</div></div></div>`; return { prod: el.querySelector(".prod"), svc: el.querySelector(".svc"), pct: el.querySelector(".pct") }; };
+      const cA = col("colA", 28), cB = col("colB", 44); const BASE = 740;
+      // ---- diverging bars (scene 4)
+      const rowsD = [["GREATER CHINA", 21.0, 1], ["REST OF ASIA PACIFIC", 15.0], ["EUROPE", 11.5], ["AMERICAS", 10.2], ["JAPAN", -1.4], ["WEARABLES, HOME, ACCESSORIES", -7.9], ["IPAD", -10.4]];
+      const SCL = 22, rowEls = rowsD.map(([n, v, hi], i) => { const y = 630 + i * 150; const lab = document.createElement("div"); lab.className = "rowlab"; lab.style.top = y + "px"; lab.textContent = n; $("rows").appendChild(lab);
+        const bar = document.createElement("div"); bar.className = "abs"; bar.style.top = y + 52 + "px"; bar.style.height = "62px"; bar.style.borderRadius = "10px"; bar.style.transformOrigin = v >= 0 ? "0 50%" : "100% 50%";
+        bar.style.background = v >= 0 ? (hi ? "linear-gradient(#f0bd4f,#d09524)" : "linear-gradient(#3fb48c,#2f9e7a)") : "linear-gradient(#e5604f,#c13b2e)";
+        bar.style.width = Math.abs(v) * SCL + "px"; bar.style.left = (v >= 0 ? 363 : 359 - Math.abs(v) * SCL) + "px"; bar.style.boxShadow = "0 8px 16px rgba(0,0,0,.25)"; $("rows").appendChild(bar); const tk = document.createElement("div"); tk.className = "abs"; tk.style.cssText = `left:359px;top:${y + 44}px;width:4px;height:78px;background:#12301f`; $("rows").appendChild(tk);
+        const val = document.createElement("div"); val.className = "val"; val.textContent = (v > 0 ? "+" : "−") + Math.abs(v).toFixed(1) + "%"; val.style.top = y + 54 + "px";
+        val.style.left = (v >= 0 ? 363 + v * SCL + 18 : 380) + "px"; if (v < 0) val.style.color = "#a32f24"; $("rows").appendChild(val); return { lab, bar, val, v, y }; });
+      // ---- EPS (scene 5)
+      const eb = (id, h, color, label, val) => { $(id).innerHTML = `<div class="abs b" style="left:0;bottom:0;width:100%;border-radius:18px 18px 0 0;background:${color};box-shadow:0 20px 40px rgba(0,0,0,.3)"></div><div class="val v" style="left:0;width:100%;text-align:center;font-size:84px">${val}</div><div class="rowlab" style="left:0;width:100%;text-align:center;top:560px">${label}</div>`; return { b: $(id).querySelector(".b"), v: $(id).querySelector(".v"), h }; };
+      const e1 = eb("eb1", 1.85 / 2.1 * 480, "linear-gradient(#9aa79f,#6f7c74)", "A YEAR AGO", "$1.85"), e2 = eb("eb2", 480, "linear-gradient(#3fb48c,#1f7a5c)", "NOW", "$2.10");
+      $("cents").innerHTML = `<div class="abs" id="cb1" style="left:0;top:0;height:90px;width:${900 * 205 / 210}px;background:linear-gradient(#1f5a3c,#12301f);border-radius:12px 0 0 12px;transform-origin:0 50%"></div><div class="abs" id="cb2" style="left:${900 * 205 / 210}px;top:0;height:90px;width:${900 * 5 / 210}px;background:#d9483b;border-radius:0 12px 12px 0"></div><div class="rowlab" style="left:0;top:104px">210¢ OF EPS</div>`;
+      // ---- tiles (scene 6)
+      const tiles = []; for (let i = 0; i < 28; i++) { const d = document.createElement("div"); d.className = "abs"; d.style.cssText = `left:${(i % 7) * 112}px;top:${Math.floor(i / 7) * 150}px;width:100px;height:130px;border-radius:14px;background:linear-gradient(#3fb48c,#1f7a5c);box-shadow:0 10px 20px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font:700 60px Oswald;color:#f4f0e8`; d.textContent = "$"; $("tiles").appendChild(d); tiles.push(d); }
+      // ---- captions (word stagger with spring); *mint* !red! ~gold~
+      const caps = [];
+      const cap = (top, lines, t0, step, tOut, cls = "") => { let mode = ""; const el = document.createElement("div"); el.className = "cp " + cls; el.style.top = top + "px"; const words = [];
+        lines.forEach((ln, i) => { const d = document.createElement("div"); d.className = "ln"; d.style.marginLeft = i * 56 + "px";
+          ln.split(" ").forEach((w) => { const s = document.createElement("span"); s.className = "w"; const m = { "*": "ac", "!": "rd", "~": "gd" };
+            if (m[w[0]]) { mode = m[w[0]]; w = w.slice(1); } const end = Object.keys(m).find((k) => m[k] === mode && w.endsWith(k)); if (end) w = w.slice(0, -1);
+            if (mode) s.classList.add(mode); if (end) mode = ""; s.textContent = w + " "; d.appendChild(s); words.push(s); }); el.appendChild(d); });
+        $("cam").appendChild(el); caps.push({ el, words, t0, step, tOut }); };
+      cap(210, ["Apple's", "*September* quarter"], 0.0, 0.2, 3.0, "sm");
+      cap(210, ["Up *12%*", "on a year ago"], 3.2, 0.22, 6.4);
+      cap(200, ["About *half*", "is still the iPhone"], 6.9, 0.2, 10.7, "sm");
+      cap(200, ["Services adds", "~$31.6B~"], 10.9, 0.22, 14.8);
+      cap(190, ["The moat,", "in one chart"], 15.2, 0.22, 18.6);
+      cap(190, ["28% of sales.", "*44%* of profit"], 18.9, 0.24, 23.0);
+      cap(200, ["Greater China", "*+21%*"], 23.5, 0.22, 26.8);
+      cap(200, ["But iPad", "!fell 10%!"], 27.0, 0.22, 30.2);
+      cap(190, ["Profit per share", "*$2.10,* up 14%"], 30.6, 0.2, 34.0, "sm");
+      cap(190, ["5¢ of it is", "!tariff refunds!"], 34.2, 0.22, 36.2);
+      cap(190, ["And it handed", "back ~$28B~"], 36.6, 0.2, 38.8);
+      // ---- render
+      const shakeAt = 4.1;
+      H.render = (t) => {
+        // scene visibility + camera push
+        let cur = SC[SC.length - 1];
+        SC.forEach(([id, a, b]) => { const on = t >= a && t < b; $(id).style.opacity = on ? 1 : 0; if (on) cur = [id, a, b]; });
+        const [, a0, b0] = cur; const k = E.io2((t - a0) / (b0 - a0));
+        const sh = Math.exp(-(t - shakeAt) * 9) * (t > shakeAt ? 1 : 0);
+        $("cam").style.transform = `translate(${Math.sin(t * 70) * 14 * sh}px, ${Math.cos(t * 83) * 14 * sh}px) scale(${1 + 0.05 * k})`;
+        $("endcard").style.opacity = F(t, 39.1, 99, 0.5);
+        // wipes
+        [["w1", 0], ["w2", 0.1]].forEach(([id, d]) => { let x = -1200; SC.slice(1).forEach(([, b]) => { const u = (t - (b - 0.3 + d)) / 0.6; if (u > 0 && u < 1) x = -1080 + 2160 * E.io2(u); }); $(id).style.transform = `translateX(${x}px)`; });
+        const eu = (t - 38.8) / 0.6; if (eu > 0 && eu < 1) { $("w1").style.transform = `translateX(${-1080 + 2160 * E.io2(eu)}px)`; }
+        // background parallax
+        $("pegs").style.transform = `translate(${-t * 6}px, ${-t * 14}px)`;
+        blobs.forEach((b) => { b.d.style.left = ((b.x + b.v * t) % 1500) - 200 + "px"; b.d.style.top = ((b.y - b.v * 0.7 * t + 4000) % 2300) - 200 + "px"; });
+        // captions
+        caps.forEach((c) => { c.words.forEach((w, i) => { const x = (t - c.t0 - i * c.step) / 0.7, u = sp(x), o = C(x * 4); w.style.opacity = o; w.style.transform = `translateY(${(1 - u) * 70}px) scale(${0.85 + 0.15 * Math.min(u, 1.2)})`; });
+          c.el.style.opacity = 1 - C((t - c.tOut) / 0.25); });
+        // ---- s1
+        const pu = sp((t - 0.1) / 1.1);
+        $("phone").style.transform = `translateY(${(1 - pu) * 900 + Math.sin(t * 2.2) * 14}px) rotate(${(1 - pu) * 18 + Math.sin(t * 1.6) * 2}deg)`;
+        $("disc").style.transform = `scale(${0.9 + 0.1 * sp((t - 0.05) / 0.8) + 0.015 * Math.sin(t * 3)})`;
+        $("shine").setAttribute("x", String(-240 + 700 * C(((t * 0.45) % 1.8) / 1.0)));
+        const cnt = 114.5 * E.io3((t - 1.0) / 2.6); $("n1").textContent = `$${cnt.toFixed(1)}B`; $("n1").style.opacity = F(t, 0.9, 99, 0.3);
+        const su = (t - shakeAt) / 0.35; $("stamp").style.opacity = su > 0 ? 1 : 0; $("stamp").style.transform = `translate(-50%, 0) rotate(-9deg) scale(${su > 0 ? 1 + 2.2 * Math.pow(1 - C(su), 2) : 3})`;
+        cf.forEach((d, i) => { const e = t - shakeAt; if (e < 0) { d.style.opacity = 0; return; } const a = rnd(i, 7) * 6.283 - 1.2, v = 500 + rnd(i, 8) * 700;
+          d.style.opacity = 1 - C((e - 1.2) / 0.8); d.style.left = 540 + Math.cos(a) * v * e * 0.75 + "px"; d.style.top = 1160 + Math.sin(a) * v * e * 0.75 + 900 * e * e + "px"; d.style.transform = `rotate(${e * 400 * (rnd(i, 9) - 0.5)}deg)`; });
+        // ---- s2
+        const sweep = TOT * E.io2((t - 6.9) / 2.8), cum = [];
+        slices.forEach((s, i) => { const vis = Math.max(0, Math.min(1, (sweep / TOT - s.start) / s.f)); const len = Math.max(0, s.f * CIRC * vis - 5);
+          s.c.setAttribute("stroke-dasharray", `${len} ${CIRC}`); s.c.setAttribute("stroke-dashoffset", String(-s.start * CIRC));
+          const hi = i === 0 ? E.io2((t - 9.2) / 0.4) * (1 - E.io2((t - 10.9) / 0.4)) : i === 1 ? E.io2((t - 11.2) / 0.4) : 0; const amp = 26 * hi;
+          s.g.setAttribute("transform", `translate(${Math.sin(s.mid) * amp} ${-Math.cos(s.mid) * amp})`);
+          const pop = sp((t - (7.0 + (s.start + s.f / 2) * 2.8 * 1.25)) / 0.8); s.chip.style.opacity = C(pop * 3); s.chip.style.transform = `translate(-50%,-50%) scale(${0.4 + 0.6 * Math.min(pop, 1.15)})`; });
+        $("dctr").style.opacity = F(t, 7.4, 99, 0.4);
+        // ---- s3
+        const g1 = sp((t - 15.4) / 0.9), g2 = sp((t - 17.0) / 0.9);
+        const hA = 0.276 * 740, hB = 0.437 * 740;
+        cA.prod.style.height = `${(740 - hA) * Math.min(g1, 1.08)}px`; cA.svc.style.top = "auto"; cA.svc.style.bottom = `${(740 - hA) * Math.min(g1, 1.08)}px`; cA.svc.style.height = `${hA * Math.min(g1, 1.08)}px`;
+        cB.prod.style.height = `${(740 - hB) * Math.min(g2, 1.08)}px`; cB.svc.style.top = "auto"; cB.svc.style.bottom = `${(740 - hB) * Math.min(g2, 1.08)}px`; cB.svc.style.height = `${hB * Math.min(g2, 1.08)}px`;
+        cA.pct.style.opacity = C((t - 16) * 3); cB.pct.style.opacity = C((t - 17.6) * 3); cB.pct.style.transform = `translateY(-50%) scale(${1 + 0.12 * Math.sin(C((t - 19.5) / 1.2) * 3.14)})`;
+        const yA = 1440 - (740 - hA), yB = 1440 - (740 - hB), cu = E.io2((t - 19.2) / 0.8);
+        $("conn").innerHTML = `<line x1="500" y1="${yA}" x2="580" y2="${yB}" stroke="#12301f" stroke-width="5" stroke-dasharray="14 10" opacity="${cu}"/><line x1="500" y1="700" x2="580" y2="700" stroke="#12301f" stroke-width="5" stroke-dasharray="14 10" opacity="${cu}"/>`;
+        $("q3").style.opacity = F(t, 19.6, 99, 0.4); $("q3").style.transform = `translateY(${(1 - sp((t - 19.6) / 0.8)) * 120}px)`;
+        // ---- s4
+        
+        rowEls.forEach((r, i) => { const x = (t - 23.7 - i * 0.28) / 0.8, u = sp(x); r.bar.style.transform = `scaleX(${Math.max(0, Math.min(u, 1.1))})`; r.lab.style.opacity = C(x * 4); r.val.style.opacity = C((x - 0.35) * 4);
+          if (i === 0) r.bar.style.filter = `brightness(${1 + 0.18 * Math.sin(t * 5) * C((t - 25) / 0.5)})`; });
+        // ---- s5
+        const b1 = sp((t - 30.7) / 0.9), b2 = sp((t - 31.6) / 0.9);
+        e1.b.style.height = `${e1.h * Math.min(b1, 1.1)}px`; e2.b.style.height = `${e2.h * Math.min(b2, 1.1)}px`;
+        e1.v.style.top = `${540 - e1.h * Math.min(b1, 1.1) - 100}px`; e2.v.style.top = `${540 - e2.h * Math.min(b2, 1.1) - 100}px`;
+        e1.v.style.opacity = C((t - 31) * 3); e2.v.style.opacity = C((t - 31.9) * 3);
+        $("cb1").style.transform = `scaleX(${E.io3((t - 33.4) / 0.8)})`; $("cb2").style.opacity = C((t - 34.2) * 3) * (0.8 + 0.2 * Math.sin(t * 8));
+        const rp = sp((t - 34.4) / 0.8); $("refund").style.opacity = C(rp * 3); $("refund").style.transform = `translate(-50%,-50%) scale(${0.4 + 0.6 * Math.min(rp, 1.15)})`;
+        // ---- s6
+        tiles.forEach((d, i) => { const x = (t - 36.7 - i * 0.045) / 0.7, u = sp(x); d.style.opacity = C(x * 4); d.style.transform = `translateY(${(1 - Math.min(u, 1.15)) * -700}px) rotate(${(1 - Math.min(u, 1)) * (i % 2 ? 14 : -14)}deg)`; });
+        $("n6").style.opacity = F(t, 36.7, 99, 0.3); $("n6").style.transform = `scale(${0.7 + 0.3 * sp((t - 36.7) / 0.8)})`;
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-# Visa and Mastercard: five Moat Atlas shorts, under 30 s each
+# Moat Snippets: Visa and Mastercard, five snippets (a Moat Atlas series), under 30 s each
 
 The two networks are close to twins, so each script works for both (swap the name and the number). Three are moats, two are the cracks.
 Pace about 2.8 words a second. Jokes are opinion, not claims. Anything tagged CHECK needs the primary source before recording.

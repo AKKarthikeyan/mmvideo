@@ -1,4 +1,4 @@
-# Apple's moats: five Moat Atlas shorts, under 30 s each
+# Moat Snippets: Apple's five moats (a Moat Atlas series), under 30 s each
 
 Pace: about 2.8 spoken words a second, so 80 words is about 28 s. Jokes are opinion, not claims. Every fact has a source tag;
 anything tagged CHECK needs the primary source before recording. Not investment advice · not SEBI-registered.

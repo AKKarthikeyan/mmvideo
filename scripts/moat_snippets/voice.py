@@ -2,20 +2,24 @@
 """Voiceover and word timing for a Moat Snippet.
 
     python3 scripts/moat_snippets/voice.py A1                       # MiniMax voice (needs MINIMAX_API_KEY), then word timing
-    python3 scripts/moat_snippets/voice.py A1 --engine piper        # local scratch voice for pacing tests (needs PIPER_MODEL=path/to/voice.onnx)
+    python3 scripts/moat_snippets/voice.py A1 --engine kokoro       # local US English voice, no key (KOKORO_MODEL, KOKORO_VOICES = files from kokoro-onnx releases)
+    python3 scripts/moat_snippets/voice.py A1 --engine piper        # lower-quality local scratch voice (PIPER_MODEL=path/to/voice.onnx)
     python3 scripts/moat_snippets/voice.py A1 --audio my_take.mp3   # your own recording: only the timing step
 
 Reads the final voiceover for <id> from final/FINAL_SCRIPTS.md. Writes, for the HyperFrames sample that animates it
 (default hyperframes/samples/s18-snippet-<id lower>/assets/): vo.mp3 and timing.js (window.TIMING = word start/end seconds,
 aligned to the script words with faster-whisper). Voices are not committed; rebuild with this script.
-Narrator: --voice defaults to the male Indian-accent English voice from scripts/voices.py; pass FEMALE's id to alternate.
+Moat Atlas is US English (AK, 4 Nov 2026): the MiniMax default is the American documentary narrator "English_captivating_female1" with
+language_boost English; the Indian-accent male voice in scripts/voices.py is not used here. Kokoro default is af_heart (US female); am_michael is US male.
+Check any new voice by ear before publishing.
 """
 import argparse, difflib, json, os, re, subprocess, sys, time, wave
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-MALE, FEMALE = "English_Diligent_Man", "English_captivating_female1"
+US_VOICE = "English_captivating_female1"   # MiniMax, American documentary narrator (scripts/voices.py FEMALE)
+KOKORO_VOICE = "af_heart"
 
 
 def script_text(sid):
@@ -49,6 +53,15 @@ def piper(text, out):
         v.synthesize_wav(text, wf)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ar", "44100", "-ac", "1", "-b:a", "128k", str(out)], check=True)
     os.remove(wav)
+
+
+def kokoro(text, voice, out):
+    import soundfile as sf
+    from kokoro_onnx import Kokoro
+    k = Kokoro(os.environ.get("KOKORO_MODEL") or sys.exit("set KOKORO_MODEL"), os.environ.get("KOKORO_VOICES") or sys.exit("set KOKORO_VOICES"))
+    samples, sr = k.create(text, voice=voice, speed=1.0, lang="en-us")
+    wav = str(out) + ".wav"; sf.write(wav, samples, sr)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ar", "44100", "-ac", "1", "-b:a", "128k", str(out)], check=True); os.remove(wav)
 
 
 def norm(w):
@@ -97,8 +110,8 @@ def mux(a):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("id"); ap.add_argument("--engine", default="minimax", choices=["minimax", "piper"])
-    ap.add_argument("--audio"); ap.add_argument("--voice", default=MALE); ap.add_argument("--speed", type=float, default=1.0); ap.add_argument("--out"); ap.add_argument("--mux", action="store_true", help="mux the rendered silent video with vo.mp3 (+ --music bed) into out/hyperframes/moat-snippet-<id>.mp4"); ap.add_argument("--music")
+    ap = argparse.ArgumentParser(); ap.add_argument("id"); ap.add_argument("--engine", default="minimax", choices=["minimax", "kokoro", "piper"])
+    ap.add_argument("--audio"); ap.add_argument("--voice"); ap.add_argument("--speed", type=float, default=1.0); ap.add_argument("--out"); ap.add_argument("--mux", action="store_true", help="mux the rendered silent video with vo.mp3 (+ --music bed) into out/hyperframes/moat-snippet-<id>.mp4"); ap.add_argument("--music")
     a = ap.parse_args(); text = script_text(a.id)
     if a.mux:
         return mux(a)
@@ -108,8 +121,10 @@ def main():
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a.audio, "-ar", "44100", "-ac", "1", str(mp3)], check=True)
     elif a.engine == "piper":
         piper(text, mp3)
+    elif a.engine == "kokoro":
+        kokoro(text, a.voice or KOKORO_VOICE, mp3)
     else:
-        minimax(text, a.voice, a.speed, mp3)
+        minimax(text, a.voice or US_VOICE, a.speed, mp3)
     words, dur, cov = align(text, mp3)
     (out / "timing.js").write_text("window.TIMING = " + json.dumps({"id": a.id, "duration": round(dur, 3), "words": words}) + ";\n")
     page = out.parent / "index.html"

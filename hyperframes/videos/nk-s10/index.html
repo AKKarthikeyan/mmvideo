@@ -1,0 +1,579 @@
+<!doctype html>
+<!-- Vertical Short (1080x1920) for the Namakkal story. Timing, words and every number come from story.js, which
+     tools/namakkal_shorts.py builds from the measured voice and darwin-research's locked beats. Scenes are keyed by beat. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Namakkal Short</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      #root { width: 1080px; height: 1920px; background: var(--bg); }
+      .atlas { --bg: #0b0e13; --fg: #f7f3ea; --muted: #b9c0c8; --acc: #d9a441; --acc2: #7fd1ff; --hot: #ff6a55; --panel: rgba(11, 14, 19, 0.82); --line: rgba(185, 192, 200, 0.22); }
+      .kadai { --bg: #f6f1e7; --fg: #1a1a1a; --muted: #554c40; --acc: #c8361f; --acc2: #1f6f8b; --hot: #c8361f; --panel: rgba(255, 252, 245, 0.94); --line: rgba(26, 26, 26, 0.16); }
+      .green { --bg: #0f1d19; --fg: #f3ecd9; --muted: #b8c2b4; --acc: #e0b252; --acc2: #8fd3b6; --hot: #ff7a5c; --panel: rgba(10, 20, 17, 0.84); --line: rgba(184, 194, 180, 0.2); }
+      .kadai #vig { --vig: 0.12; }
+      .kadai #grain { opacity: 0.12; mix-blend-mode: multiply; }
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+      .art { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #bgglow { position: absolute; inset: 0; background: radial-gradient(900px 1100px at 50% 36%, rgba(255, 255, 255, 0.06), transparent 70%); }
+      .kadai #bgglow { background: radial-gradient(900px 1100px at 50% 36%, rgba(255, 255, 255, 0.8), transparent 70%); }
+      #prog { position: absolute; left: 60px; top: 118px; width: 960px; height: 6px; background: var(--line); border-radius: 3px; }
+      #prog i { position: absolute; left: 0; top: 0; height: 6px; width: 960px; background: var(--acc); border-radius: 3px; transform-origin: 0 50%; }
+      .kick { position: absolute; left: 60px; top: 148px; font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.2em; color: var(--acc); }
+      #stamp { position: absolute; right: 60px; top: 140px; font: 700 26px/1 Oswald, sans-serif; letter-spacing: 0.16em; padding: 9px 14px 10px;
+        color: var(--bg); background: var(--fg); border-radius: 4px; white-space: nowrap; }
+      #stamp.claim { background: var(--hot); color: #fff; }
+      #stamp.calc { background: var(--acc2); color: #0b0e13; }
+      #stamp.ill { background: #f7f3ea; color: #1a1a1a; }
+      #hook { position: absolute; left: 60px; top: 560px; width: 960px; text-align: center; }
+      #hook div { font: 700 112px/1.02 Oswald, sans-serif; color: var(--fg); letter-spacing: 0.01em; text-transform: uppercase; }
+      #hook div + div { color: var(--acc); margin-top: 18px; }
+      #hookbg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--bg); }
+      #caps { position: absolute; left: 60px; top: 1248px; width: 960px; height: 160px; }
+      .cp { position: absolute; left: 0; top: 0; width: 960px; text-align: center; font: 600 54px/1.25 Inter, sans-serif; color: var(--fg); opacity: 0; }
+      .cp span { display: inline-block; white-space: pre; }
+      .cp b { font-weight: 600; padding: 4px 16px 8px; background: var(--panel); border-radius: 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+      #src { position: absolute; left: 60px; top: 1434px; width: 880px; font: 400 28px/1.32 Plex, monospace; color: var(--muted); }
+      #src span { background: var(--panel); padding: 2px 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+      #end { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
+      #endw { position: absolute; left: 60px; top: 560px; width: 960px; display: flex; flex-direction: column; align-items: center; gap: 34px; text-align: center; }
+      #end .a { font: 700 76px/1.1 Oswald, sans-serif; color: var(--fg); text-transform: uppercase; }
+      #end .b { font: italic 700 66px/1.15 Playfair, serif; color: var(--acc); }
+      #end .c { font: 600 42px/1.3 Inter, sans-serif; color: var(--muted); }
+      #end .brand { font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.24em; color: var(--muted); margin-top: 60px; }
+      .subs { display: flex; align-items: center; gap: 16px; padding: 18px 36px 20px 28px; border-radius: 60px; background: #d92b1f; color: #fff;
+        font: 700 48px/1 Oswald, sans-serif; letter-spacing: 0.08em; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35); white-space: nowrap; }
+      .subs svg { width: 46px; height: 46px; }
+      .subs small { font: 600 28px/1 Inter, sans-serif; letter-spacing: 0; opacity: 0.9; margin-left: 6px; }
+      #subA { position: absolute; left: 540px; top: 1540px; }
+      /* scene type */
+      .t-year { position: absolute; font: 700 190px/0.9 Oswald, sans-serif; color: #fff4dc; text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45); }
+      .card { position: absolute; background: rgba(22, 16, 11, 0.88); color: #f7f3ea; padding: 18px 24px 20px; border-left: 8px solid #d9a441; border-radius: 4px; }
+      .card .n { font: 700 46px/1.05 Oswald, sans-serif; letter-spacing: 0.04em; }
+      .card .r { font: 400 32px/1.25 Inter, sans-serif; color: #e6dccb; margin-top: 6px; }
+      .chip { position: absolute; font: 700 36px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #1a1a1a; background: #f2c14e; padding: 12px 18px 14px; border-radius: 40px; white-space: nowrap; }
+      .big { position: absolute; font: 700 210px/0.9 Oswald, sans-serif; color: var(--fg); }
+      .sub { position: absolute; font: 600 42px/1.2 Inter, sans-serif; color: var(--muted); }
+      .lab { position: absolute; font: 700 34px/1.1 Oswald, sans-serif; letter-spacing: 0.08em; color: var(--fg); text-transform: uppercase; }
+      .math { position: absolute; left: 60px; width: 960px; font: 400 34px/1.45 Plex, monospace; color: var(--fg); background: var(--panel); padding: 16px 22px; border-radius: 8px; border: 2px solid var(--line); }
+      .math b { color: var(--acc); font-weight: 400; }
+      .quote { position: absolute; left: 60px; width: 960px; font: italic 700 82px/1.12 Playfair, serif; color: var(--fg); }
+      .quote span { display: inline-block; white-space: pre; }
+      .by { position: absolute; left: 60px; width: 960px; font: 400 30px/1.35 Plex, monospace; color: var(--muted); border-top: 2px solid var(--line); padding-top: 18px; }
+      .step { position: absolute; left: 60px; width: 960px; height: 92px; background: var(--panel); border: 2px solid var(--line); border-radius: 12px;
+        font: 700 42px/92px Oswald, sans-serif; letter-spacing: 0.05em; color: var(--fg); padding-left: 120px; text-transform: uppercase; }
+      .step i { position: absolute; left: 28px; top: 14px; width: 64px; height: 64px; border-radius: 50%; background: var(--acc); color: #1a1a1a;
+        font: 700 40px/64px Oswald, sans-serif; text-align: center; font-style: normal; }
+      .zc { position: absolute; height: 40px; font: 600 26px/40px Inter, sans-serif; color: var(--fg); background: var(--panel); border: 2px solid var(--line);
+        border-radius: 20px; text-align: center; white-space: nowrap; }
+      .zc.nam { background: var(--acc); color: #1a1a1a; border-color: var(--acc); font-weight: 700; }
+      .colh { position: absolute; text-align: center; font: 700 30px/1.1 Oswald, sans-serif; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+      .coln { position: absolute; text-align: center; font: 700 120px/1 Oswald, sans-serif; color: var(--fg); }
+      .note { position: absolute; left: 60px; width: 960px; font: 400 27px/1.35 Plex, monospace; color: var(--muted); }
+      .verdict { position: absolute; left: 60px; width: 960px; height: 70px; font: 700 40px/70px Oswald, sans-serif; letter-spacing: 0.04em; color: var(--fg);
+        text-transform: uppercase; border-left: 10px solid var(--acc); background: var(--panel); padding-left: 26px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="atlas" data-composition-id="main" data-start="0" data-duration="51.138" data-width="1080" data-height="1920">
+      <div id="bgglow" data-layout-ignore></div>
+      <div id="stage"></div>
+      <div id="hookbg" data-layout-ignore></div>
+      <div id="hook"><div id="h1"></div><div id="h2"></div></div>
+      <div id="caps"></div>
+      <div id="src"><span id="srct"></span></div>
+      <div id="end"><div id="endw"><div class="a" id="e1"></div><div class="b" id="e2"></div><div class="c" id="e3"></div><div class="brand" id="eb"></div><div class="subs" id="subB"></div></div></div>
+      <div class="subs" id="subA"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="prog" data-layout-ignore><i id="progi"></i></div>
+      <div class="kick" id="kick"></div>
+      <div id="stamp"></div>
+    </div>
+    <script>
+      const S = window.STORY, FG = S.fig;
+      const H = HF.setup(S.total), E = HF.ease, F = HF.fade, L = HF.lerp, C01 = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const NS = "http://www.w3.org/2000/svg";
+      const el = (tag, cls, parent, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; parent.appendChild(e); return e; };
+      const at = (e, x, y, w) => { e.style.left = `${x}px`; e.style.top = `${y}px`; if (w) e.style.width = `${w}px`; return e; };
+      const svg = (parent, w = 1080, h = 1920) => { const s = document.createElementNS(NS, "svg"); s.setAttribute("width", w); s.setAttribute("height", h);
+        s.setAttribute("viewBox", `0 0 ${w} ${h}`); s.classList.add("art"); parent.appendChild(s); return s; };
+      const alnum = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+      const show = (e, u, a, d = 0.35, rise = 30) => { const k = E.o3((u - a) / d); e.style.opacity = k; e.style.transform = `translateY(${(1 - k) * rise}px)`; return k; };
+      const pop = (e, u, a, d = 0.45) => { const k = C01((u - a) / d); e.style.opacity = C01(k * 3); e.style.transform = `scale(${0.6 + 0.4 * E.back(k)})`; return k; };
+      const fmt = (x, dp = 0) => x.toLocaleString("en-IN", { minimumFractionDigits: dp, maximumFractionDigits: dp });
+      const THEME = S.theme || "atlas";
+      $("root").className = THEME;
+      $("kick").textContent = `${S.channel.toUpperCase()} · NAMAKKAL`;
+      $("h1").textContent = S.hook[0]; $("h2").textContent = S.hook[1];
+      [$("e1").textContent, $("e2").textContent, $("e3").textContent] = S.end;
+      $("eb").textContent = S.channel.toUpperCase();
+      const BELL = `<svg viewBox="0 0 24 24"><path fill="#fff" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1Z"/></svg>`;
+      $("subA").innerHTML = `${BELL}SUBSCRIBE<small>${S.channel}</small>`; $("subB").innerHTML = `${BELL}SUBSCRIBE`;
+
+      // W(b, "word", n): when the nth script word starting with "word" is spoken, in seconds from the beat start
+      const W = (b, w, n = 0) => {
+        const k = alnum(w); let seen = 0;
+        for (const tk of b.toks) if (alnum(tk[0]).startsWith(k) && seen++ === n) return tk[1];
+        throw new Error(`${b.key}: no word "${w}" #${n}`);
+      };
+      const parts = (b) => b.cap.split(" · ");
+      const STAMP = { e22: ["ILLUSTRATIVE DRAWING", "ill"], e23: ["DRAWING: ILLUSTRATIVE", "ill"], e27: ["QUOTE", ""], e81: ["CLAIM", "claim"],
+        e82: ["CALCULATED", "calc"], e83b: ["CALCULATED", "calc"], e57a: ["OFFICIAL DATA", ""], e57b: ["CALCULATED", "calc"], e57c: ["CALCULATED", "calc"], e57d: ["QUOTE", ""] };
+
+      // ---------- drawing kit ----------
+      const EGG = "M0,-41 C24,-41 32,-6 32,10 C32,30 18,41 0,41 C-18,41 -32,30 -32,10 C-32,-6 -24,-41 0,-41Z";
+      function hen(g, x, y, s, flip) {
+        const h = document.createElementNS(NS, "g");
+        h.innerHTML = `<ellipse cx="0" cy="58" rx="62" ry="10" fill="rgba(40,22,10,0.35)"/>
+          <path d="M-6,30 L-12,58 M10,30 L6,58" stroke="#d99a2b" stroke-width="6" stroke-linecap="round"/>
+          <path d="M-62,-6 C-80,-40 -66,-66 -44,-58 C-50,-40 -46,-22 -40,-12Z" fill="#6e1f12"/>
+          <ellipse cx="-4" cy="6" rx="56" ry="34" fill="#a8321f"/>
+          <path d="M-56,6 C-40,40 30,44 48,14 C20,30 -24,28 -56,6Z" fill="#7d2414"/>
+          <path d="M-30,-8 C-10,-26 22,-20 30,0 C10,-6 -10,-4 -30,-8Z" fill="#c4492c" opacity="0.8"/>
+          <g class="hd"><path d="M30,-6 C34,-36 40,-50 52,-50 C66,-50 70,-34 64,-18 C58,-6 46,0 30,-6Z" fill="#a8321f"/>
+          <path d="M44,-58 C46,-68 52,-68 54,-60 C56,-70 62,-68 62,-58 C66,-64 70,-58 66,-50 L46,-50Z" fill="#d8261a"/>
+          <path d="M66,-40 L80,-36 L66,-31Z" fill="#e8b23a"/><circle cx="57" cy="-40" r="3.6" fill="#1a0e08"/>
+          <path d="M60,-30 C64,-22 60,-16 56,-20Z" fill="#d8261a"/></g>`;
+        h.setAttribute("transform", `translate(${x},${y}) scale(${flip ? -s : s},${s})`);
+        g.appendChild(h); return h;
+      }
+      function sepiaSet(s, id, opts = {}) {
+        const sky = opts.sky || ["#f3d9a4", "#e1a865", "#b8743e"];
+        s.innerHTML = `<defs>
+          <linearGradient id="${id}sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sky[2]}"/><stop offset="0.55" stop-color="${sky[1]}"/><stop offset="1" stop-color="${sky[0]}"/></linearGradient>
+          <radialGradient id="${id}sun"><stop offset="0" stop-color="#fff1c7" stop-opacity="0.95"/><stop offset="0.3" stop-color="#ffd98a" stop-opacity="0.5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+          <linearGradient id="${id}gnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a31"/><stop offset="1" stop-color="#4e301a"/></linearGradient>
+          <linearGradient id="${id}haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a4" stop-opacity="0"/><stop offset="1" stop-color="#f3d9a4" stop-opacity="0.55"/></linearGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#${id}sky)"/>
+        <g class="cam">
+          <circle class="sun" cx="780" cy="640" r="380" fill="url(#${id}sun)"/><circle cx="780" cy="640" r="78" fill="#fff0c4" opacity="0.9"/>
+          <path class="far" d="M-100,900 C80,780 220,820 380,760 C520,700 640,790 800,730 C930,690 1040,760 1200,720 L1200,1100 L-100,1100Z" fill="#c48a55" opacity="0.75"/>
+          <rect x="-100" y="760" width="1300" height="300" fill="url(#${id}haze)"/>
+          <path class="mid" d="M-100,980 C120,900 300,950 500,900 C700,850 860,930 1200,880 L1200,1200 L-100,1200Z" fill="#9c6b3e"/>
+          <g class="trees"></g>
+          <path d="M-100,1040 C200,1010 500,1030 1200,1000 L1200,1920 L-100,1920Z" fill="url(#${id}gnd)"/>
+          <g class="near"></g>
+          <g class="dust"></g>
+        </g>`;
+        const tr = s.querySelector(".trees");
+        [[90, 930, 1.1], [250, 905, 0.8], [940, 890, 1.0], [1020, 905, 0.7]].forEach(([x, y, k]) => {
+          tr.insertAdjacentHTML("beforeend", `<g transform="translate(${x},${y}) scale(${k})"><rect x="-6" y="0" width="12" height="70" fill="#5e3a1f"/>
+            <ellipse cx="0" cy="-20" rx="62" ry="44" fill="#7a5a2c"/><ellipse cx="-16" cy="-32" rx="40" ry="30" fill="#8d6a35"/></g>`);
+        });
+        const du = s.querySelector(".dust");
+        for (let i = 0; i < 34; i++) { const c = document.createElementNS(NS, "circle"); c.setAttribute("r", 2 + (i * 37 % 5)); c.setAttribute("fill", "#fff3d1"); du.appendChild(c); }
+        return s;
+      }
+      function drawDust(s, t) {
+        s.querySelectorAll(".dust circle").forEach((c, i) => {
+          const x = (i * 211 + t * (8 + (i % 5) * 4)) % 1180 - 50, y = 420 + ((i * 137) % 760) + Math.sin(t * 0.6 + i) * 22;
+          c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("opacity", 0.22 + 0.25 * Math.sin(t * 0.9 + i * 1.7) ** 2);
+        });
+      }
+      function shed(g) {
+        g.insertAdjacentHTML("beforeend", `<defs><clipPath id="roofc"><path d="M150,800 L540,610 L930,800 L880,850 L200,850Z"/></clipPath></defs>
+          <ellipse cx="540" cy="1086" rx="430" ry="30" fill="rgba(40,22,10,0.35)"/>
+          <rect x="230" y="830" width="620" height="250" fill="#b07a4a"/><rect x="540" y="830" width="310" height="250" fill="#94643a"/>
+          <rect x="470" y="905" width="140" height="175" fill="#3a2414"/>
+          <rect x="300" y="900" width="110" height="80" fill="#4a2e18"/><rect x="670" y="900" width="110" height="80" fill="#3f2714"/>
+          <path d="M300,940 L410,940 M355,900 L355,980 M670,940 L780,940 M725,900 L725,980" stroke="#8a5a31" stroke-width="5"/>
+          <rect x="222" y="830" width="14" height="250" fill="#5e3a1f"/><rect x="844" y="830" width="14" height="250" fill="#4e301a"/>
+          <path d="M150,800 L540,610 L930,800 L880,850 L200,850Z" fill="#d6a75a"/>
+          <path d="M540,610 L930,800 L880,850 L540,850Z" fill="#b98a45"/>
+          <g clip-path="url(#roofc)" class="thatch"></g>
+          <path d="M150,800 L540,610 L930,800" fill="none" stroke="#f0cf8a" stroke-width="6" opacity="0.7"/>`);
+        const th = g.querySelector(".thatch");
+        let d = "";
+        for (let x = 120; x < 960; x += 14) d += `M${x},600 L${x - 24 + (x * 7 % 11)},860 `;
+        th.insertAdjacentHTML("beforeend", `<path d="${d}" stroke="#8a5a2b" stroke-width="3" opacity="0.45"/>`);
+        for (let y = 700; y < 860; y += 38) th.insertAdjacentHTML("beforeend", `<path d="M100,${y} L980,${y}" stroke="#7a4d22" stroke-width="4" opacity="0.35"/>`);
+      }
+      function sparkPath(v, x0, w, y0, h) {
+        let d = "", pen = false;
+        v.forEach((p, i) => {
+          if (p == null) { pen = false; return; }
+          const x = x0 + (i / (v.length - 1)) * w, y = y0 + h - p * h;
+          d += `${pen ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)} `; pen = true;
+        });
+        return d;
+      }
+
+      // ---------- scenes ----------
+      const SC = {};
+      SC.e22 = {
+        build(r, b) {
+          const s = sepiaSet(svg(r), "a");
+          this.s = s; shed(s.querySelector(".near"));
+          this.hens = [[250, 1112, 0.85, 0], [430, 1140, 0.95, 1], [610, 1118, 0.8, 1], [790, 1146, 0.98, 0], [340, 1180, 0.76, 1], [690, 1186, 0.78, 0]]
+            .map(([x, y, k, f], i) => ({ g: hen(s.querySelector(".near"), x, y, k, f), x, y, k, f, i }));
+          const p = parts(b), v = p[1].split(", "), n = p[2].split(", ");
+          this.yr = at(el("div", "t-year", r, p[0]), 60, 250);
+          this.c1 = at(el("div", "card", r, `<div class="n">${v[0].toUpperCase()}</div><div class="r">${v.slice(1).join(", ")}</div>`), 60, 470, 760);
+          this.c2 = at(el("div", "card", r, `<div class="n">${n[0].toUpperCase()}</div><div class="r">${n.slice(1).join(", ")}</div>`), 60, 640, 760);
+          const ch = ["more eggs", "more manure", "more income"];
+          this.ch = ch.map((c, i) => at(el("div", "chip", r, c.toUpperCase()), 60 + i * 322, 830));
+          this.tY = Math.max(b.gate, W(b, "nineteen")); this.t1 = Math.max(b.gate, W(b, "postmaster"));
+          this.t2 = W(b, "nandagopal"); this.tc = [W(b, "eggs"), W(b, "manure"), W(b, "income")];
+          this.c2.querySelector(".n").style.borderColor = "#7fd1ff"; this.c2.style.borderLeftColor = "#7fd1ff";
+        },
+        draw(u, b) {
+          this.s.querySelector(".cam").setAttribute("transform", `translate(540,960) scale(${1 + 0.06 * E.io2(u / b.dur)}) translate(-540,-960)`);
+          this.s.querySelector(".far").setAttribute("transform", `translate(${-12 * u / b.dur},0)`);
+          drawDust(this.s, u);
+          this.hens.forEach((h) => {
+            const ph = u * 1.3 + h.i * 1.9, peck = Math.max(0, Math.sin(ph)) ** 6, wob = Math.sin(ph * 0.5) * 6;
+            h.g.querySelector(".hd").setAttribute("transform", `rotate(${peck * 42},30,-6)`);
+            h.g.setAttribute("transform", `translate(${h.x + wob},${h.y - peck * 2}) scale(${h.f ? -h.k : h.k},${h.k})`);
+          });
+          show(this.yr, u, this.tY, 0.5, 60);
+          show(this.c1, u, this.t1); show(this.c2, u, this.t2);
+          this.ch.forEach((c, i) => pop(c, u, this.tc[i]));
+          const dim = E.io2((u - this.tc[0] + 0.3) / 0.5);
+          this.c1.style.opacity *= 1 - 0.35 * dim; this.c2.style.opacity *= 1 - 0.35 * dim;
+        },
+      };
+      SC.e23 = {
+        build(r, b) {
+          const s = sepiaSet(svg(r), "b", { sky: ["#f1d6a0", "#d9a061", "#a8683a"] });
+          this.s = s;
+          const g = s.querySelector(".near");
+          g.insertAdjacentHTML("beforeend", `<path id="road" d="M120,560 C300,500 420,640 600,560 C760,490 860,560 960,520" fill="none" stroke="rgba(40,22,10,0.55)" stroke-width="34" stroke-linecap="round"/>
+            <path d="M120,560 C300,500 420,640 600,560 C760,490 860,560 960,520" fill="none" stroke="#f7e3b5" stroke-width="4" stroke-dasharray="18 16"/>
+            <circle cx="120" cy="560" r="16" fill="#1a1410"/><circle cx="960" cy="520" r="16" fill="#1a1410"/>
+            <g id="car"><rect x="-58" y="-34" width="116" height="34" rx="10" fill="#2f4a5a"/><path d="M-34,-34 L-22,-60 L26,-60 L40,-34Z" fill="#3e6176"/>
+              <path d="M-18,-56 L-8,-38 L18,-38 L22,-56Z" fill="#cfe6ef" opacity="0.8"/><circle cx="-32" cy="2" r="14" fill="#1a1410"/><circle cx="34" cy="2" r="14" fill="#1a1410"/>
+              <circle cx="-32" cy="2" r="5" fill="#9aa"/><circle cx="34" cy="2" r="5" fill="#9aa"/></g>`);
+          this.road = s.querySelector("#road"); this.car = s.querySelector("#car");
+          this.yr = at(el("div", "t-year", r, "1970"), 60, 250);
+          const p = parts(b);
+          this.la = at(el("div", "lab", r, "Namakkal"), 70, 600); this.la.style.color = "#1a1410";
+          this.lb = at(el("div", "lab", r, p[3].split(", ").pop()), 760, 370); this.lb.style.color = "#1a1410";
+          this.firm = at(el("div", "card", r, `<div class="n">${p[3].split(", ")[0].toUpperCase()}</div><div class="r">poultry firm</div>`), 560, 600, 460);
+          this.cnt = at(el("div", "big", r, ""), 60, 690); this.cnt.style.color = "#fff4dc"; this.cnt.style.textShadow = "0 8px 30px rgba(0,0,0,0.4)";
+          this.cl = at(el("div", "card", r, `<div class="n">${p[1].replace(/^\d+\s*/, "").toUpperCase()}</div>`), 470, 760, 520);
+          this.n = +p[1].match(/^\d+/)[0];
+          // four farmers, the chicks split evenly between them (SHORTS_KIT.md: 100 each)
+          const dots = svg(r); this.dots = [];
+          for (let f = 0; f < 4; f++) {
+            const gx = 120 + f * 225, gy = 920;
+            dots.insertAdjacentHTML("beforeend", `<rect x="${gx - 16}" y="${gy - 16}" width="192" height="192" rx="14" fill="rgba(22,16,11,0.7)"/>
+              <text x="${gx + 80}" y="${gy + 216}" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="30" fill="#1a1410" letter-spacing="2">FARMER ${f + 1}</text>`);
+            for (let i = 0; i < this.n / 4; i++) {
+              const c = document.createElementNS(NS, "circle");
+              c.setAttribute("cx", gx + (i % 10) * 16.4 + 6); c.setAttribute("cy", gy + Math.floor(i / 10) * 16.4 + 6); c.setAttribute("r", 6.2); c.setAttribute("fill", "#ffd447");
+              dots.appendChild(c); this.dots.push(c);
+            }
+          }
+          this.dotsSvg = dots;
+          this.chips = p[2].split(" or ").map((c, i) => at(el("div", "chip", r, c), 60 + i * 480, 1170));
+          this.tGo = W(b, "took"); this.tAr = W(b, "coimbatore"); this.tF = W(b, "poultry"); this.tN = W(b, "four"); this.tP = W(b, "three", 1);
+        },
+        draw(u, b) {
+          this.s.querySelector(".cam").setAttribute("transform", `translate(540,960) scale(${1 + 0.04 * E.io2(u / b.dur)}) translate(-540,-960)`);
+          drawDust(this.s, u + 20);
+          show(this.yr, u, 0.1, 0.5, 60);
+          const k = E.io2((u - this.tGo) / Math.max(0.8, this.tAr - this.tGo)), len = this.road.getTotalLength(), pt = this.road.getPointAtLength(len * k);
+          const p2 = this.road.getPointAtLength(Math.min(len, len * k + 2)), ang = Math.atan2(p2.y - pt.y, p2.x - pt.x) * 57.3;
+          this.car.setAttribute("transform", `translate(${pt.x},${pt.y - 10}) rotate(${ang}) translate(0,${Math.sin(u * 18) * 1.5 * (k > 0 && k < 1)})`);
+          show(this.la, u, 0.2); show(this.lb, u, this.tGo); show(this.firm, u, this.tF);
+          this.firm.style.opacity *= 1 - E.io2((u - this.tN + 0.2) / 0.4);
+          const kn = E.o2((u - this.tN) / 1.6), n = Math.round(this.n * kn);
+          this.cnt.textContent = u >= this.tN ? fmt(n) : ""; this.cnt.style.opacity = u >= this.tN ? 1 : 0;
+          show(this.cl, u, this.tN + 0.2);
+          this.dotsSvg.style.opacity = F(u, this.tN - 0.4, 99, 0.4);
+          this.dots.forEach((c, i) => { const f = i % 100, grp = Math.floor(i / 100), on = (grp * 100 + f) < n; c.setAttribute("opacity", on ? 1 : 0.13); });
+          this.chips.forEach((c, i) => pop(c, u, this.tP + i * 0.35));
+        },
+      };
+      SC.e27 = {
+        build(r, b) {
+          r.style.background = "radial-gradient(1000px 1300px at 40% 30%, #2a241e 0%, #171411 55%, #0e0c0a 100%)";
+          this.k = at(el("div", "lab", r, "The real problem"), 60, 250); this.k.style.color = "#d9a441"; this.k.style.fontSize = "44px";
+          const q = parts(b)[0].match(/"([^"]+)"/)[1];
+          this.q = at(el("div", "quote", r), 60, 330); this.q.style.color = "#f4ecdc";
+          this.w = ("“" + q + "”").split(/(\s+)/).filter((x) => x.length).map((x) => { const sp = el("span", "", this.q); sp.textContent = x; return sp; });
+          this.by = at(el("div", "by", r, "— " + b.src), 60, 860); this.by.style.color = "#b3a891";
+          const st = ["Form a farm club", "Collect everyone's eggs", "Sell them together"];
+          this.st = st.map((x, i) => at(el("div", "step", r, `<i>${i + 1}</i>${x}`), 60, 960 + i * 104));
+          this.st.forEach((e) => { e.style.background = "rgba(255,248,232,0.08)"; e.style.color = "#f4ecdc"; });
+          this.tq = W(b, "consumers"); this.tqe = W(b, "eggs"); this.ts = [W(b, "form"), W(b, "collect"), W(b, "sell")];
+          this.tP = W(b, "problem");
+        },
+        draw(u, b) {
+          show(this.k, u, Math.min(0.2, this.tP));
+          const n = this.w.length, step = Math.max(0.08, (this.tqe - this.tq) / n);
+          this.w.forEach((w, i) => { const k = E.o3((u - this.tq - i * step) / 0.45); w.style.opacity = k; w.style.transform = `translateY(${(1 - k) * 40}px)`; w.style.filter = k < 1 ? `blur(${(1 - k) * 8}px)` : "none"; });
+          show(this.by, u, this.tqe);
+          this.q.style.transform = `scale(${1 - 0.04 * E.io2((u - this.ts[0] + 0.4) / 0.6)})`; this.q.style.transformOrigin = "0 0";
+          this.st.forEach((e, i) => show(e, u, this.ts[i], 0.4, 40));
+        },
+      };
+      // S6
+      SC.e81 = {
+        build(r, b) {
+          this.q = at(el("div", "quote", r, "“Namakkal makes a third of India’s eggs.”"), 60, 300);
+          this.bar = svg(r); this.seg = [];
+          for (let i = 0; i < FG.claimAll; i++) {
+            const x = 60 + i * (960 / FG.claimAll), rc = document.createElementNS(NS, "rect");
+            rc.setAttribute("x", x + 3); rc.setAttribute("y", 780); rc.setAttribute("width", 960 / FG.claimAll - 6); rc.setAttribute("height", 150); rc.setAttribute("rx", 6);
+            this.bar.appendChild(rc); this.seg.push(rc);
+          }
+          this.n6 = at(el("div", "big", r, `${FG.claim}`), 60, 960); this.n6.style.color = "var(--hot)";
+          this.of = at(el("div", "sub", r, `crore of ${FG.claimAll} crore a day`), 260, 1060, 760);
+          this.of.style.color = "var(--fg)"; this.of.style.fontSize = "52px";
+          this.third = at(el("div", "lab", r, "= one third"), 60, 720); this.third.style.color = "var(--hot)";
+          this.t6 = W(b, "six"); this.t18 = W(b, "eighteen");
+        },
+        draw(u, b) {
+          show(this.q, u, b.gate, 0.5, 40);
+          this.seg.forEach((rc, i) => {
+            const on = u >= this.t6 + i * 0.03 && i < FG.claim, shown = u >= this.t6 - 0.3 + i * 0.025;
+            rc.setAttribute("fill", on ? "var(--hot)" : "var(--line)"); rc.setAttribute("opacity", shown ? 1 : 0);
+          });
+          pop(this.n6, u, this.t6); show(this.of, u, this.t18); show(this.third, u, this.t18 + 0.4);
+        },
+      };
+      SC.e82 = {
+        build(r, b) {
+          this.h = at(el("div", "lab", r, "India’s official total"), 60, 250); this.h.style.fontSize = "44px";
+          this.cnt = at(el("div", "big", r, ""), 60, 300); this.cnt.style.fontSize = "170px";
+          this.un = at(el("div", "sub", r, "crore eggs a day"), 360, 350, 290);
+          const s = svg(r); this.eggs = [];
+          const full = Math.floor(FG.indiaDay), frac = FG.indiaDay - full;
+          for (let i = 0; i < full + 1; i++) {
+            const x = 128 + (i % 8) * 118, y = 560 + Math.floor(i / 8) * 112, g = document.createElementNS(NS, "g");
+            const part = i < full ? 1 : frac;
+            g.innerHTML = `<clipPath id="ec${i}"><rect x="-40" y="${41 - 82 * part}" width="80" height="${82 * part}"/></clipPath>
+              <path d="${EGG}" fill="none" stroke="var(--line)" stroke-width="3"/><path class="f" d="${EGG}" clip-path="url(#ec${i})"/>`;
+            g.setAttribute("transform", `translate(${x},${y})`); s.appendChild(g); this.eggs.push(g);
+          }
+          this.claimLab = at(el("div", "note", r, `the claim’s India: ${FG.claimAll} crore`), 60, 1010);
+          this.pct = at(el("div", "big", r, `${FG.claimPct}%`), 680, 285); this.pct.style.color = "var(--hot)"; this.pct.style.fontSize = "150px";
+          this.m = at(el("div", "math", r, `<b>${FG.indiaBn}</b> bn (${FG.indiaYear}) ÷ 365 = <b>${FG.indiaDay}</b> crore a day<br><b>${FG.claim}</b> ÷ <b>${FG.indiaDay}</b> = <b>${FG.claimPct}%</b>`), 60, 1070); this.m.style.fontSize = "31px";
+          this.t39 = W(b, "thirty"); this.tD = W(b, "double"); this.t6 = W(b, "six");
+        },
+        draw(u, b) {
+          show(this.h, u, 0); show(this.claimLab, u, 0.1);
+          this.claimLab.style.opacity *= 1 - E.io2((u - this.tD) / 0.4);
+          const kN = E.o2((u - this.t39) / 1.2);
+          this.cnt.textContent = u >= this.t39 ? fmt(FG.indiaDay * kN, 1) : ""; show(this.un, u, this.t39);
+          this.eggs.forEach((g, i) => {
+            const isClaim = i < FG.claimAll, appear = isClaim ? 0.1 + i * 0.03 : this.t39 + (i - FG.claimAll) * 0.04;
+            const k = E.back(C01((u - appear) / 0.35)); g.style.opacity = C01((u - appear) / 0.2);
+            const tr = g.getAttribute("transform").split(" scale")[0]; g.setAttribute("transform", `${tr} scale(${0.5 + 0.5 * k})`);
+            const lit = i < FG.claim && u >= this.t6 + i * 0.06, base = u >= this.t39 ? "var(--fg)" : "var(--muted)";
+            g.querySelector(".f").setAttribute("fill", lit ? "var(--hot)" : base); g.querySelector(".f").setAttribute("opacity", lit ? 1 : (u >= this.t39 ? 0.85 : 0.35));
+          });
+          pop(this.pct, u, this.t6 + 0.4); show(this.m, u, this.t6 - 0.2);
+          this.h.style.opacity *= 1 - E.io2((u - this.t6) / 0.3);
+        },
+      };
+      SC.e83b = {
+        build(r, b) {
+          this.h = at(el("div", "lab", r, "All of Tamil Nadu, 2024-25"), 60, 250); this.h.style.fontSize = "44px";
+          const s = svg(r); this.s = s;
+          s.innerHTML = `<line x1="60" y1="900" x2="1020" y2="900" stroke="var(--line)" stroke-width="4"/>
+            <rect id="tb" x="120" width="300" rx="10" fill="var(--acc2)"/><rect id="nb" x="520" width="300" rx="10" fill="var(--hot)"/>
+            <rect id="nbo" x="520" y="380" width="300" height="520" rx="10" fill="none" stroke="var(--line)" stroke-width="3" stroke-dasharray="10 8"/>`;
+          this.tv = at(el("div", "lab", r, `${FG.tnDay} crore a day`), 30, 322, 480); this.tv.style.fontSize = "40px"; this.tv.style.textAlign = "center";
+          this.tl = at(el("div", "sub", r, "Tamil Nadu"), 70, 912, 400); this.tl.style.fontSize = "36px"; this.tl.style.textAlign = "center";
+          this.nl = at(el("div", "sub", r, "Namakkal, as reported"), 420, 912, 500); this.nl.style.fontSize = "36px"; this.nl.style.textAlign = "center";
+          this.nv = at(el("div", "lab", r, `${FG.claim} crore`), 520, 0, 300); this.nv.style.fontSize = "44px"; this.nv.style.textAlign = "center"; this.nv.style.color = "#fff";
+          this.pct = at(el("div", "big", r, `${FG.tnPct}%?`), 560, 470); this.pct.style.fontSize = "150px"; this.pct.style.color = "#fff"; this.pct.style.textAlign = "center"; this.pct.style.width = "220px";
+          this.pct.style.left = "560px"; this.pct.style.fontSize = "96px";
+          this.m = at(el("div", "math", r, `<b>${FG.indiaBn2}</b> bn × <b>${FG.tnShare}%</b> ÷ 365 = <b>${FG.tnDay}</b> crore a day<br><b>${FG.claim}</b> ÷ <b>${FG.tnDay}</b> = <b>${FG.tnPct}%</b>`), 60, 990); this.m.style.fontSize = "31px";
+          this.v = ["Reports run high", "The count runs low", "“Namakkal” means more than one district"].map((x, i) => at(el("div", "verdict", r, x), 60, 985 + i * 82));
+          this.v[2].style.fontSize = "34px";
+          this.tT = W(b, "tamil"); this.tN = W(b, "six", 1); this.tv0 = [W(b, "reports"), W(b, "count", 1), W(b, "namakkal")];
+        },
+        draw(u, b) {
+          show(this.h, u, 0);
+          const kT = E.io3((u - this.tT) / 1.0), hT = 520 * kT, tb = this.s.querySelector("#tb");
+          tb.setAttribute("y", 900 - hT); tb.setAttribute("height", hT);
+          this.tv.style.opacity = C01((u - this.tT - 0.8) / 0.3); show(this.tl, u, this.tT);
+          const share = FG.claim / FG.tnDay, kN = E.io3((u - this.tN) / 1.4), hN = 520 * share * kN, nb = this.s.querySelector("#nb");
+          nb.setAttribute("y", 900 - hN); nb.setAttribute("height", hN);
+          this.s.querySelector("#nbo").setAttribute("opacity", C01((u - this.tN + 0.4) / 0.3));
+          show(this.nl, u, this.tN - 0.3);
+          this.nv.style.top = `${900 - hN + 18}px`; this.nv.style.opacity = C01((u - this.tN - 1.2) / 0.3);
+          pop(this.pct, u, this.tN + 1.4);
+          this.pct.style.top = `${900 - 520 * share + 100}px`;
+          show(this.m, u, this.tN + 0.6);
+          this.m.style.opacity *= 1 - E.io2((u - this.tv0[0] + 0.2) / 0.3);
+          this.v.forEach((e, i) => show(e, u, this.tv0[i], 0.4, 30));
+        },
+      };
+      // S10
+      SC.e57a = {
+        build(r, b) {
+          this.h = at(el("div", "lab", r, `India’s top egg states, ${FG.statesYear}`), 60, 300); this.h.style.fontSize = "44px";
+          this.u = at(el("div", "sub", r, "share of all eggs laid"), 60, 352);
+          const mx = FG.states[0][1];
+          this.rows = FG.states.map(([n, v], i) => {
+            const y = 450 + i * 132, row = el("div", "", r); row.style.position = "absolute"; at(row, 60, y, 960);
+            row.innerHTML = `<div class="lab" style="left:0;top:0;font-size:40px">${i + 1}. ${n}</div>
+              <div style="position:absolute;left:0;top:52px;height:52px;width:${(v / mx) * 720}px;background:${n === "Tamil Nadu" ? "var(--acc)" : "var(--line)"};border-radius:6px;transform-origin:0 50%" class="bar"></div>
+              <div class="lab" style="left:${(v / mx) * 720 + 18}px;top:58px;font-size:40px">${v.toFixed(2)}%</div>`;
+            return row;
+          });
+          this.pin = at(el("div", "chip", r, "Namakkal is here"), 580, 560); this.pin.style.background = "var(--acc)";
+          this.tN = Math.max(b.gate + 0.6, W(b, "namakkal"));
+        },
+        draw(u, b) {
+          show(this.h, u, b.gate); show(this.u, u, b.gate + 0.1);
+          this.rows.forEach((row, i) => { const k = E.io3((u - b.gate - 0.15 * i) / 0.6); row.style.opacity = C01(k * 2); row.querySelector(".bar").style.transform = `scaleX(${k})`; });
+          pop(this.pin, u, this.tN);
+        },
+      };
+      SC.e57b = {
+        build(r, b) {
+          const p = parts(b);
+          this.h = at(el("div", "lab", r, p[0] + " · " + p[1]), 60, 250); this.h.style.fontSize = "40px";
+          this.sub = at(el("div", "sub", r, p[2] + " · " + p[3]), 60, 300); this.sub.style.fontSize = "34px";
+          const zones = ["Namakkal", ...Object.keys(FG.strips).filter((z) => z !== "Namakkal").sort()];
+          const s = svg(r); this.paths = [];
+          zones.forEach((z, i) => {
+            const y = 380 + i * 33 + (i > 0 ? 16 : 0), nam = z === "Namakkal";
+            const t = document.createElementNS(NS, "text"); t.setAttribute("x", 60); t.setAttribute("y", y + 22); t.textContent = z;
+            t.setAttribute("font-family", "Inter"); t.setAttribute("font-size", nam ? 30 : 21); t.setAttribute("font-weight", nam ? 600 : 400);
+            t.setAttribute("fill", nam ? "var(--acc)" : "var(--muted)"); s.appendChild(t);
+            const pa = document.createElementNS(NS, "path"); pa.setAttribute("d", sparkPath(FG.strips[z], 290, 730, y, 28));
+            pa.setAttribute("fill", "none"); pa.setAttribute("stroke", nam ? "var(--acc)" : "var(--acc2)"); pa.setAttribute("stroke-width", nam ? 4 : 2);
+            pa.setAttribute("opacity", nam ? 1 : 0.55); pa.setAttribute("pathLength", 1); pa.setAttribute("stroke-dasharray", "1 1");
+            s.appendChild(pa); this.paths.push(pa);
+          });
+          this.yrs = svg(r);
+          ["2022", "2023", "2024", "2025", "2026"].forEach((y, i) => this.yrs.insertAdjacentHTML("beforeend",
+            `<text x="${290 + i * (730 / 4.83)}" y="1232" font-family="Plex" font-size="22" fill="var(--muted)">${y}</text>`));
+          this.q = at(el("div", "big", r, "Who moves first?"), 60, 700); this.q.style.fontSize = "120px"; this.q.style.width = "960px"; this.q.style.textAlign = "center";
+          this.q.style.background = "var(--panel)"; this.q.style.padding = "30px 0 40px"; this.q.style.textTransform = "uppercase"; this.q.style.color = "var(--acc)";
+          this.tA = W(b, "went"); this.tW = W(b, "who");
+        },
+        draw(u, b) {
+          show(this.h, u, 0); show(this.sub, u, 0.2);
+          this.paths.forEach((pa, i) => pa.setAttribute("stroke-dashoffset", 1 - E.io2((u - this.tA - i * 0.05) / 2.6)));
+          this.yrs.style.opacity = C01((u - this.tA) / 0.4);
+          pop(this.q, u, this.tW, 0.5);
+        },
+      };
+      SC.e57c = {
+        build(r, b) {
+          const by = (role) => FG.lead.filter((z) => z.role === role);
+          const early = by("moves earlier"), step = by("in step"), late = by("follows Namakkal");
+          const col = (x, w, head, n, list, cols, t) => {
+            const hd = at(el("div", "colh", r, head), x, 400, w), nb = at(el("div", "coln", r, `${n}`), x, 270, w);
+            const cw = (w - (cols - 1) * 10) / cols;
+            const chips = list.map((z, i) => at(el("div", "zc", r, z.zone.replace(/ \(.*\)/, "")), x + (i % cols) * (cw + 10), 490 + Math.floor(i / cols) * 50, cw));
+            return { hd, nb, chips, t };
+          };
+          this.cols = [
+            col(40, 300, "1-2 days earlier", early.length, early, 1, W(b, "four")),
+            col(370, 340, "Same day as Namakkal", step.length, step, 2, W(b, "seventeen")),
+            col(740, 300, "A day later", late.length, late, 1, W(b, "only")),
+          ];
+          this.nam = at(el("div", "zc nam", r, "Namakkal"), 400, 1000, 280); this.nam.style.left = "400px";
+          this.mostly = at(el("div", "big", r, "Mostly, nobody"), 60, 250); this.mostly.style.fontSize = "110px"; this.mostly.style.textTransform = "uppercase";
+          this.mostly.style.width = "960px"; this.mostly.style.textAlign = "center";
+          const lag = Object.fromEntries(FG.lead.map((z) => [z.zone, z.lag]));
+          this.n = at(el("div", "note", r, `Calculated: correlation of day-on-day rate changes, lags −5 to +5 days. Namakkal vs the other zones’ average move: ${FG.corr}. A pattern in the data, not proof of who decides.`), 60, 1080);
+          this.tM = W(b, "nobody");
+        },
+        draw(u, b) {
+          const kM = show(this.mostly, u, Math.max(0, this.tM - 0.2), 0.4);
+          this.mostly.style.opacity = kM * (1 - E.io2((u - this.cols[1].t + 0.1) / 0.3));
+          this.cols.forEach((c) => {
+            show(c.hd, u, c.t); pop(c.nb, u, c.t);
+            c.chips.forEach((e, i) => pop(e, u, c.t + 0.15 + i * 0.06, 0.35));
+          });
+          show(this.nam, u, this.cols[1].t + 0.2); show(this.n, u, this.cols[1].t + 0.6);
+        },
+      };
+      SC.e57d = {
+        build(r, b) {
+          this.a = at(el("div", "big", r, "Namakkal doesn’t lead."), 60, 360); this.a.style.fontSize = "104px"; this.a.style.width = "960px"; this.a.style.textTransform = "uppercase";
+          this.a2 = at(el("div", "big", r, "It moves with it."), 60, 600); this.a2.style.fontSize = "104px"; this.a2.style.width = "960px"; this.a2.style.color = "var(--acc)"; this.a2.style.textTransform = "uppercase";
+          this.c = at(el("div", "lab", r, "A committee, not a state"), 60, 270); this.c.style.fontSize = "52px"; this.c.style.color = "var(--acc)";
+          const q = parts(b)[0].match(/"([^"]+)"/)[1];
+          this.q = at(el("div", "quote", r), 60, 370); this.q.style.fontSize = "76px";
+          this.w = ("“…" + q + "”").split(/(\s+)/).filter((x) => x.length).map((x) => { const sp = el("span", "", this.q); sp.textContent = x; return sp; });
+          this.by = at(el("div", "by", r, parts(b)[0].match(/\(([^)]+)\)/)[1]), 60, 960);
+          this.end = at(el("div", "big", r, "So who really sets the price?"), 60, 420); this.end.style.fontSize = "124px"; this.end.style.width = "960px";
+          this.end.style.textTransform = "uppercase"; this.end.style.lineHeight = "1.02";
+          this.tC = W(b, "country"); this.tQ = W(b, "competition"); this.tQe = W(b, "necc"); this.tW = W(b, "who");
+          this.tM = W(b, "moves");
+        },
+        draw(u, b) {
+          const out1 = 1 - E.io2((u - this.tC + 0.2) / 0.3);
+          this.a.style.opacity = show(this.a, u, 0, 0.4) * out1; this.a2.style.opacity = show(this.a2, u, this.tM - 0.2, 0.4) * out1;
+          const out2 = 1 - E.io2((u - this.tW + 0.3) / 0.3);
+          this.c.style.opacity = show(this.c, u, this.tC) * out2;
+          const step = Math.max(0.07, (this.tQe - this.tQ) / this.w.length);
+          this.w.forEach((w, i) => { const k = E.o3((u - this.tQ - i * step) / 0.45); w.style.opacity = k * out2; w.style.transform = `translateY(${(1 - k) * 36}px)`; });
+          this.by.style.opacity = show(this.by, u, this.tQ + 0.5) * out2;
+          show(this.end, u, this.tW, 0.5, 50);
+        },
+      };
+
+      // ---------- assemble ----------
+      const stage = $("stage");
+      S.beats.forEach((b, i) => {
+        b.gate = i === 0 ? S.hookSec + 0.1 : 0;
+        b.end = i + 1 < S.beats.length ? S.beats[i + 1].t0 : S.endAt;
+        b.root = el("div", "scene", stage); b.root.dataset.layoutIgnore = "";
+        b.sc = Object.create(SC[b.key]); b.sc.build(b.root, b);
+        // captions: one block per phrase, one span per word
+        b.cps = b.phrases.map(([a, z]) => {
+          const d = el("div", "cp", $("caps")); const bb = el("b", "", d);
+          const spans = [];
+          for (let k = a; k <= z; k++) { const sp = el("span", "", bb); sp.textContent = b.toks[k][0] + (k < z ? " " : ""); spans.push([sp, b.toks[k][1]]); }
+          return { d, spans, t0: b.toks[a][1], t1: b.toks[z][2] };
+        });
+      });
+      H.render = (t) => {
+        $("progi").style.transform = `scaleX(${t / S.total})`;
+        const hk = 1 - E.io2((t - S.hookSec) / 0.35);
+        $("hook").style.opacity = hk; $("hook").style.transform = `scale(${0.9 + 0.1 * E.back(C01(t / 0.45))}) translateY(${-80 * (1 - hk)}px)`;
+        $("hookbg").style.opacity = 0.62 * hk;
+        let cur = null;
+        S.beats.forEach((b, i) => {
+          const a = i === 0 ? -1 : b.t0 - 0.15, z = b.end - 0.15;
+          b.root.style.opacity = F(t, a, z, 0.3);
+          const u = t - b.t0;
+          if (t > a - 0.5 && t < z + 0.6) b.sc.draw(u, b);
+          if (t >= (i === 0 ? 0 : b.t0 - 0.15) && t < b.end) cur = b;
+          b.cps.forEach((c, k) => {
+            const next = k + 1 < b.cps.length ? b.cps[k + 1].t0 : b.dur + 0.4;
+            const on = u >= c.t0 - 0.12 && u < next - 0.12 && t >= S.hookSec * (i === 0 ? 0 : 0);
+            c.d.style.opacity = on ? 1 : 0;
+            if (on) c.spans.forEach(([sp, ts]) => { sp.style.opacity = u >= ts - 0.05 ? 1 : 0.42; sp.style.color = u >= ts - 0.05 && u < ts + 0.3 ? "var(--acc)" : ""; });
+          });
+        });
+        const endK = E.o3((t - S.endAt) / 0.4);
+        $("end").style.opacity = endK;
+        ["e1", "e2", "e3", "eb"].forEach((id) => show($(id), t, S.endAt, 0.3, 30));
+        // subscribe: 5 s at the bottom mid-video, and the last 0.5 s of the Short (AK, 4 Nov 2026)
+        const kA = C01((t - S.subAt) / 0.35) * (1 - C01((t - S.subAt - S.subSec + 0.3) / 0.3)), pulse = 1 + 0.04 * Math.sin((t - S.subAt) * 6) ** 2;
+        $("subA").style.opacity = kA; $("subA").style.transform = `translateX(-50%) scale(${(0.7 + 0.3 * E.back(C01((t - S.subAt) / 0.35))) * pulse})`;
+        const kB = C01((t - S.subEnd) / 0.15);
+        $("subB").style.opacity = kB; $("subB").style.transform = `scale(${0.7 + 0.3 * E.back(C01((t - S.subEnd) / 0.25))})`;
+        if (cur) {
+          $("srct").textContent = "SOURCE · " + cur.src;
+          const [txt, cls] = STAMP[cur.key] || ["", ""];
+          $("stamp").textContent = txt; $("stamp").className = cls; $("stamp").style.opacity = txt && t > (cur.gate || 0) ? 1 : 0;
+        }
+        $("src").style.opacity = 1 - endK; $("caps").style.opacity = 1 - endK;
+        $("stamp").style.opacity *= 1 - endK;
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

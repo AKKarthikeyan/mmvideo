@@ -1,0 +1,4 @@
+#!/bin/sh
+# Remotion's ffprobe, for HyperFrames renders on the Mini (see ffmpeg here)
+R=/Volumes/DarwinSSD/DataKadai/mmvideo-dk/node_modules/@remotion/compositor-darwin-arm64
+DYLD_LIBRARY_PATH="$R" exec "$R/ffprobe" "$@"

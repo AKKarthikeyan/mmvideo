@@ -9,8 +9,9 @@
 Reads the final voiceover for <id> from final/FINAL_SCRIPTS.md. Writes, for the HyperFrames sample that animates it
 (default hyperframes/samples/s18-snippet-<id lower>/assets/): vo.mp3 and timing.js (window.TIMING = word start/end seconds,
 aligned to the script words with faster-whisper). Voices are not committed; rebuild with this script.
-Moat Atlas is US English (AK, 4 Nov 2026): the MiniMax default is the American documentary narrator "English_captivating_female1" with
-language_boost English; the Indian-accent male voice in scripts/voices.py is not used here. Kokoro default is af_heart (US female); am_michael is US male.
+Moat Atlas is US English (AK, 4 Nov 2026): the MiniMax default is "English_CaptivatingStoryteller" (US male storyteller, AK picked it
+from six US male samples on 4 Nov 2026) with language_boost English; the Indian-accent male voice in scripts/voices.py is not used here.
+It reads slowly (about 2.3 words a second), so a 79-word snippet needs --speed 1.15 or so to stay under 30 s. Kokoro default is af_heart (US female); am_michael is US male.
 Check any new voice by ear before publishing.
 """
 import argparse, difflib, json, os, re, subprocess, sys, time, wave
@@ -18,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-US_VOICE = "English_captivating_female1"   # MiniMax, American documentary narrator (scripts/voices.py FEMALE)
+US_VOICE = "English_CaptivatingStoryteller"   # MiniMax, US male storyteller (AK, 4 Nov 2026)
 KOKORO_VOICE = "af_heart"
 
 
@@ -105,7 +106,9 @@ def mux(a):
         cmd += ["-stream_loop", "-1", "-i", a.music, "-filter_complex", "[1:a]loudnorm=I=-16:TP=-1.5[v];[2:a]volume=0.12,loudnorm=I=-26:TP=-3[m];[v][m]amix=inputs=2:duration=first:normalize=0,apad[a]"]
     else:
         cmd += ["-filter_complex", "[1:a]loudnorm=I=-16:TP=-1.5,apad[a]"]
-    subprocess.run(cmd + ["-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
+    # apad + -shortest hangs in newer ffmpeg builds, so stop at the video's own length instead
+    vdur = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(vid)], capture_output=True, text=True, check=True).stdout.strip()
+    subprocess.run(cmd + ["-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-t", vdur, str(out)], check=True)
     print(out)
 
 
@@ -129,7 +132,7 @@ def main():
     (out / "timing.js").write_text("window.TIMING = " + json.dumps({"id": a.id, "duration": round(dur, 3), "words": words}) + ";\n")
     page = out.parent / "index.html"
     if page.exists():
-        total = round(dur + 0.5 + 3.6, 2)
+        total = round(dur + 0.5 + 4.0, 2)
         page.write_text(re.sub(r'data-duration="[0-9.]+"', f'data-duration="{total}"', page.read_text(), count=1))
     print(f"voice {dur:.1f}s  {len(words)} words  aligned exactly {cov:.0%}  -> {out}")
 

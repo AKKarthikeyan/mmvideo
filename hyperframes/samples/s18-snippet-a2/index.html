@@ -1,0 +1,215 @@
+<!doctype html>
+<!-- Sample 18 · Moat Snippet A2 "The crowd" (Apple): final 9:16 short, driven by the voiceover's word times (assets/timing.js, made by scripts/moat_snippets/voice.py).
+     Script, sources and verification: scripts/moat_snippets/final/. Every drawing is illustrative (no brand marks). Facts on screen: Apple 8-K, 2 Nov 2026 (Services 27.6% of
+     sales, 43.7% of gross profit, our arithmetic); US Supreme Court order list, 30 Jun 2026 (certiorari granted on the contempt question). Built on s18-snippet-a1. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat Snippet A2 The crowd</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/timing.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      #root { width: 1080px; height: 1920px; --ink: #12301f; --mint: #2f9e7a; --red: #d9483b; --gold: #e0a93a; --cream: #f4f0e8;
+        background: radial-gradient(900px 1100px at 50% 40%, #f3f0ea 0%, #dcd7ce 58%, #b9b4aa 100%); }
+      #vig { background: radial-gradient(1000px 1300px at 50% 50%, transparent 48%, rgba(10, 30, 20, 0.5) 100%); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .abs { position: absolute; } .sc { position: absolute; inset: 0; }
+      #pegs { position: absolute; inset: -60px; opacity: .5; background-image: radial-gradient(circle, rgba(18,48,31,.22) 3px, transparent 3.5px); background-size: 54px 54px; }
+      .blob { position: absolute; border-radius: 50%; }
+      .cp { position: absolute; left: 90px; width: 900px; font: 700 100px/1.02 Playfair, serif; color: var(--ink); text-shadow: 0 2px 0 rgba(255,255,255,.4); }
+      .cp .ln { white-space: nowrap; } .cp .w { display: inline-block; white-space: pre; }
+      .cp .ac { font-style: italic; color: #146147; } .cp .rd { font-style: italic; color: #9a2616; } .cp .gd { font-style: italic; color: #5e3f02; }
+      .cp.sm { font-size: 84px; }
+      .tag2 { position: absolute; left: 90px; top: 80px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: .16em; color: var(--ink); border: 3px solid currentColor; padding: 10px 16px; background: rgba(244,240,232,.92); }
+      .ill { position: absolute; right: 90px; top: 88px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: .14em; color: var(--ink); border: 2px dashed currentColor; padding: 8px 12px; background: rgba(244,240,232,.92); }
+      .srcl { position: absolute; left: 90px; right: 90px; bottom: 70px; font: 28px/1.3 Plex, monospace; color: #12301f; background: rgba(244,240,232,.92); padding: 12px 18px; border-radius: 10px; }
+      .rowlab { position: absolute; font: 700 36px/1 Oswald, sans-serif; letter-spacing: .12em; color: var(--ink); text-align: center; }
+      .town { position: absolute; font: 700 34px/1 Oswald, sans-serif; letter-spacing: .14em; color: var(--ink); text-align: center; background: rgba(244,240,232,.92); padding: 8px 14px; border-radius: 10px; }
+      .stamp { position: absolute; font: 700 64px/1.05 Oswald, sans-serif; letter-spacing: .08em; color: var(--red); border: 9px solid var(--red); border-radius: 14px;
+        padding: 12px 24px; text-align: center; background: rgba(244,240,232,.92); transform-origin: 50% 50%; box-shadow: 0 14px 30px rgba(0,0,0,.3); white-space: nowrap; }
+      .rcpt { position: absolute; font: 700 34px/1 Plex, monospace; color: var(--ink); white-space: nowrap; }
+      .wipe { position: absolute; top: 0; width: 1080px; height: 1920px; }
+      #endcard { position: absolute; left: 0; right: 0; top: 700px; text-align: center; }
+      #endcard b { display: block; font: 700 130px/1 Oswald; letter-spacing: .12em; color: var(--ink); }
+      #endcard i { display: block; font: italic 700 72px/1.15 Playfair; color: #146147; margin-top: 26px; }
+      #endcard span { display: block; font: 28px/1.4 Plex; color: #12301f; margin-top: 56px; padding: 0 60px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="30.09" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div id="pegs" data-layout-ignore></div><div id="blobs" data-layout-ignore></div>
+        <!-- S1 hook: not a phone -->
+        <div class="sc" id="s1">
+          <div class="abs" id="disc1" style="left:190px;top:720px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6d27a,#e0a93a 55%,#b27d0f);box-shadow:0 40px 80px rgba(0,0,0,.35), inset 0 -30px 60px rgba(0,0,0,.25)"></div>
+          <div class="abs" id="phone1" style="left:360px;top:780px;width:360px;height:740px"></div>
+          <svg class="abs" id="slash" style="left:240px;top:770px" width="600" height="760" viewBox="0 0 600 760"><circle cx="300" cy="380" r="280" fill="none" stroke="#d9483b" stroke-width="44"/><line id="sl" x1="102" y1="182" x2="498" y2="578" stroke="#d9483b" stroke-width="44" stroke-linecap="round"/></svg>
+          <div class="tag2">APPLE · MOAT SNIPPET 2</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <!-- S2 the toll bridge -->
+        <div class="sc" id="s2">
+          <div class="abs" id="bridge" style="left:0;top:820px;width:1080px;height:720px"></div>
+          <div class="abs" id="coins2" data-layout-ignore style="left:0;top:0;width:1080px;height:1920px"></div>
+          <div class="abs" id="booth" style="left:430px;top:820px;width:220px;transform-origin:50% 100%"></div>
+          <div class="town" id="tw1" style="left:60px;top:1600px;width:300px">DEVELOPERS</div>
+          <div class="town" id="tw2" style="left:720px;top:1600px;width:300px">YOU</div>
+          <div class="tag2">APPLE · MOAT SNIPPET 2</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <!-- S3 28% vs 44% -->
+        <div class="sc" id="s3">
+          <div class="abs" id="colA" style="left:170px;top:660px;width:330px;height:740px"></div>
+          <div class="abs" id="colB" style="left:580px;top:660px;width:330px;height:740px"></div>
+          <div class="rowlab" style="left:170px;top:1430px;width:330px">OF SALES</div>
+          <div class="rowlab" style="left:580px;top:1430px;width:330px">OF GROSS PROFIT</div>
+          <div class="rowlab" style="left:90px;top:1500px;width:900px;font-size:30px;color:#34493c">GOLD = SERVICES · GREEN = PRODUCTS</div>
+          <div class="tag2">APPLE · FISCAL Q4 2026</div>
+          <div class="srcl">Apple release, 2 Nov 2026 (our arithmetic)</div>
+        </div>
+        <!-- S4 sold once vs renews -->
+        <div class="sc" id="s4">
+          <div class="abs" id="phone4" style="left:130px;top:620px;width:360px;height:740px"></div>
+          <div class="stamp" id="once" style="left:110px;top:1430px">SOLD ONCE</div>
+          <div class="abs" id="tape" data-layout-ignore style="left:600px;top:560px;width:380px;height:1060px;overflow:hidden">
+            <div class="abs" id="strip" style="left:0;top:0;width:380px;background:#fbf8f1;box-shadow:0 14px 30px rgba(0,0,0,.28);border-radius:8px 8px 0 0"></div>
+          </div>
+          <div class="abs" id="yr" style="left:600px;top:1640px;width:380px;text-align:center;font:700 64px/1 Playfair,serif;color:#12301f">2026</div>
+          <div class="tag2">APPLE · MOAT SNIPPET 2</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <!-- S5 the court -->
+        <div class="sc" id="s5">
+          <div class="abs" id="court" style="left:140px;top:560px;width:800px;transform-origin:50% 100%"></div>
+          <div class="abs" id="booth5" style="left:450px;top:1180px;width:180px;transform-origin:50% 100%"></div>
+          <div class="abs" id="gavel" style="left:640px;top:1060px;width:300px;transform-origin:20% 80%"></div>
+          <div class="tag2">APPLE · MOAT SNIPPET 2</div><div class="ill">ILLUSTRATIVE</div>
+          <div class="srcl">US Supreme Court order, 30 Jun 2026</div>
+        </div>
+        <!-- S6 does the bridge survive -->
+        <div class="sc" id="s6">
+          <div class="abs" id="bridge6" style="left:0;top:820px;width:1080px;height:720px"></div>
+          <div class="abs" id="booth6" data-layout-ignore style="left:430px;top:820px;width:220px;transform-origin:50% 100%"></div>
+          <div class="tag2">APPLE · MOAT SNIPPET 2</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <div id="endcard"><b>MOAT ATLAS</b><i>Moat Snippets</i><span>Educational research, not investment advice<br />Not SEBI-registered<br />Sources: Apple, US Supreme Court · moatmarginresearch.com</span></div>
+      </div>
+      <div class="wipe" id="w1" style="background:#12301f"></div><div class="wipe" id="w2" style="background:#e0a93a"></div>
+      <div id="vig" data-layout-ignore></div><div id="grain" data-layout-ignore></div>
+    </div>
+    <script>
+      const TAIL = 4.0, TM = window.TIMING, W = TM.words, VD = TM.duration;
+      const H = HF.setup(VD + 0.5 + TAIL), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const sp = (x) => (x <= 0 ? 0 : 1 - Math.exp(-7 * x) * Math.cos(12 * x));
+      const rnd = (i, k = 1) => { const v = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); };
+      // ---- word anchors, searched in script order
+      const nz = (s) => s.toLowerCase().replace(/[^a-z0-9.%$]/g, "").replace(/\.$/, "");
+      let cur = 0;
+      const T = (phrase) => { const p = phrase.split(" ").map(nz); for (let i = cur; i <= W.length - p.length; i++) if (p.every((x, k) => nz(W[i + k].w) === x)) { cur = i; return W[i].t0; } console.warn("no anchor: " + phrase); return W[Math.min(cur, W.length - 1)].t0; };
+      const A = {};
+      A.isnt = T("isn't a phone"); A.pic = T("picture a"); A.dev = T("developers on"); A.you = T("you on the"); A.toll = T("apple takes"); A.svc = T("services is"); A.but = T("but 44%");
+      A.phone = T("the phone is"); A.sub = T("the subscription"); A.poss = T("and possibly"); A.court = T("the supreme court"); A.cont = T("contempt fight"); A.does = T("does the bridge");
+      const END = VD + 0.5;
+      const SC = [["s1", 0, A.pic], ["s2", A.pic, A.svc], ["s3", A.svc, A.phone], ["s4", A.phone, A.court], ["s5", A.court, A.does], ["s6", A.does, END]];
+      // ---- art
+      const tinSvg = (w) => `<svg viewBox="0 0 360 740" width="${w}" height="${w * 740 / 360}"><defs><linearGradient id="fr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9e7e1"/><stop offset=".5" stop-color="#9c9a94"/><stop offset="1" stop-color="#d4d2cb"/></linearGradient><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d7a5a"/><stop offset=".55" stop-color="#1a4a35"/><stop offset="1" stop-color="#0f2a1e"/></linearGradient><radialGradient id="ln" cx=".38" cy=".34"><stop offset="0" stop-color="#6d8f86"/><stop offset=".3" stop-color="#1b2b2c"/><stop offset="1" stop-color="#05090a"/></radialGradient><linearGradient id="pl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4b9a7c"/><stop offset="1" stop-color="#22624a"/></linearGradient><clipPath id="cl"><rect x="10" y="10" width="340" height="720" rx="58"/></clipPath></defs><rect width="360" height="740" rx="66" fill="url(#fr)"/><rect x="10" y="10" width="340" height="720" rx="58" fill="url(#bd)"/><rect x="30" y="34" width="168" height="168" rx="42" fill="url(#pl)" stroke="#8fd1b6" stroke-opacity=".5" stroke-width="3"/>${[[78, 82], [152, 82], [115, 154]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="32" fill="#cfd3cf"/><circle cx="${x}" cy="${y}" r="26" fill="url(#ln)"/><circle cx="${x - 8}" cy="${y - 9}" r="6" fill="#fff" opacity=".55"/>`).join("")}<circle cx="178" cy="150" r="9" fill="#f6efd2"/><g clip-path="url(#cl)"><rect class="shine" x="-200" y="-60" width="90" height="900" fill="#fff" opacity=".22" transform="rotate(18 180 370)"/></g></svg>`;
+      // bridge: two towns on cliffs, an arch, a deck at y=360 (page y 1180)
+      const bldg = (x0, n, k) => Array.from({ length: n }, (_, i) => { const w = 54 + rnd(i, k) * 40, h = 90 + rnd(i, k + 1) * 150, x = x0 + i * 62;
+        return `<rect x="${x}" y="${300 - h}" width="${w}" height="${h}" rx="6" fill="${i % 2 ? "#1f5a3c" : "#12301f"}"/>${Array.from({ length: Math.floor(h / 40) }, (_, j) => `<rect x="${x + 12}" y="${300 - h + 14 + j * 40}" width="${w - 24}" height="14" rx="3" fill="#f0bd4f" opacity="${0.35 + rnd(i * 7 + j, k) * 0.5}"/>`).join("")}`; }).join("");
+      const bridgeSvg = `<svg viewBox="0 0 1080 720" width="1080" height="720"><path d="M0 300 L300 300 L330 720 L0 720 Z" fill="#6d5a42"/><path d="M1080 300 L780 300 L750 720 L1080 720 Z" fill="#6d5a42"/>
+        <path d="M0 300 L300 300 L330 720 L0 720 Z" fill="none" stroke="#12301f" stroke-width="8"/><path d="M1080 300 L780 300 L750 720 L1080 720 Z" fill="none" stroke="#12301f" stroke-width="8"/>
+        <rect x="330" y="560" width="420" height="160" fill="#7fb9c9" opacity=".6"/><path d="M330 600 Q380 588 430 600 T530 600 T630 600 T750 600" stroke="#f4f0e8" stroke-width="6" fill="none" opacity=".7"/>
+        ${bldg(10, 4, 3)}${bldg(800, 4, 9)}
+        <path d="M290 360 Q540 120 790 360" fill="none" stroke="#12301f" stroke-width="22"/>${Array.from({ length: 9 }, (_, i) => { const x = 340 + i * 50, y = 360 - Math.sin(((x - 290) / 500) * Math.PI) * 170; return `<line x1="${x}" y1="${y}" x2="${x}" y2="360" stroke="#12301f" stroke-width="7"/>`; }).join("")}
+        <rect x="270" y="350" width="540" height="30" rx="6" fill="#e0a93a" stroke="#12301f" stroke-width="7"/></svg>`;
+      const boothSvg = `<svg viewBox="0 0 220 380"><rect x="20" y="70" width="180" height="300" rx="14" fill="#f4f0e8" stroke="#12301f" stroke-width="10"/><path d="M0 80 L110 10 L220 80 Z" fill="#d9483b" stroke="#12301f" stroke-width="10" stroke-linejoin="round"/>
+        <rect x="50" y="110" width="120" height="90" rx="10" fill="#8fd1b6" stroke="#12301f" stroke-width="8"/><text x="110" y="268" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="46" letter-spacing="4" fill="#12301f">TOLL</text>
+        <circle cx="110" cy="320" r="24" fill="#e0a93a" stroke="#12301f" stroke-width="6"/></svg>`;
+      const coinSvg = `<svg viewBox="0 0 60 60" width="60" height="60"><circle cx="30" cy="30" r="26" fill="#f0bd4f" stroke="#12301f" stroke-width="5"/><text x="30" y="41" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="32" fill="#12301f">$</text></svg>`;
+      const courtSvg = `<svg viewBox="0 0 800 640"><path d="M40 170 L400 30 L760 170 Z" fill="#f4f0e8" stroke="#12301f" stroke-width="12" stroke-linejoin="round"/><rect x="60" y="170" width="680" height="40" fill="#e6e1d6" stroke="#12301f" stroke-width="10"/>
+        ${Array.from({ length: 6 }, (_, i) => `<rect x="${100 + i * 112}" y="210" width="56" height="330" fill="#f4f0e8" stroke="#12301f" stroke-width="8"/><line x1="${118 + i * 112}" y1="220" x2="${118 + i * 112}" y2="530" stroke="#12301f" stroke-width="3" opacity=".35"/><line x1="${138 + i * 112}" y1="220" x2="${138 + i * 112}" y2="530" stroke="#12301f" stroke-width="3" opacity=".35"/>`).join("")}
+        <rect x="40" y="540" width="720" height="40" fill="#e6e1d6" stroke="#12301f" stroke-width="10"/><rect x="10" y="580" width="780" height="50" fill="#d8d2c4" stroke="#12301f" stroke-width="10"/>
+        <text x="400" y="150" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="40" letter-spacing="8" fill="#12301f">SUPREME COURT</text></svg>`;
+      const gavelSvg = `<svg viewBox="0 0 300 220"><rect x="20" y="150" width="200" height="22" rx="10" fill="#8a5a2b" stroke="#12301f" stroke-width="6" transform="rotate(-30 20 160)"/><rect x="150" y="10" width="130" height="80" rx="16" fill="#8a5a2b" stroke="#12301f" stroke-width="8" transform="rotate(-30 215 50)"/></svg>`;
+      $("phone1").innerHTML = tinSvg(360); $("phone4").innerHTML = tinSvg(360);
+      $("bridge").innerHTML = bridgeSvg; $("bridge6").innerHTML = bridgeSvg; ["booth", "booth5", "booth6"].forEach((id) => ($(id).innerHTML = boothSvg));
+      $("court").innerHTML = courtSvg; $("gavel").innerHTML = gavelSvg;
+      const shines = [...document.querySelectorAll(".shine")];
+      // coins crossing the bridge, right (you) to left (developers)
+      const coins = []; for (let i = 0; i < 7; i++) { const d = document.createElement("div"); d.className = "abs"; d.innerHTML = coinSvg; $("coins2").appendChild(d); coins.push(d); }
+      // receipt strip: one renewal line a month
+      const strip = $("strip"); const RL = 40; let rc = "";
+      for (let i = 0; i < RL; i++) rc += `<div class="rcpt" style="left:24px;top:${30 + i * 64}px">RENEWED ✓ <span style="color:#6e4a02">$</span>${"·".repeat(3)}</div>`;
+      strip.innerHTML = rc; strip.style.height = 30 + RL * 64 + "px";
+      // ---- column charts (scene 3), from s17-short-apple
+      const col = (id, svc) => { const el = $(id); el.innerHTML = `<div class="abs" style="left:0;bottom:0;width:330px;height:100%;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.3)">
+        <div class="abs prod" style="left:0;bottom:0;width:100%;background:linear-gradient(#1f5a3c,#12301f)"></div>
+        <div class="abs svc" style="left:0;width:100%;background:linear-gradient(#f0bd4f,#d09524)"><div class="pct" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:700 120px/1 Playfair,serif;color:#12301f">${svc}%</div></div></div>`; return { prod: el.querySelector(".prod"), svc: el.querySelector(".svc"), pct: el.querySelector(".pct"), h: (740 * svc) / 100 }; };
+      const cA = col("colA", 28), cB = col("colB", 44);
+      const grow = (c, g) => { const k = Math.min(g, 1.08); c.prod.style.height = `${(740 - c.h) * k}px`; c.svc.style.top = "auto"; c.svc.style.bottom = `${(740 - c.h) * k}px`; c.svc.style.height = `${c.h * k}px`; };
+      // ---- captions
+      const caps = [];
+      const cap = (top, lines, t0, tOut, cls = "", step = 0.16) => { let mode = ""; const el = document.createElement("div"); el.className = "cp " + cls; el.style.top = top + "px"; const words = [];
+        lines.forEach((ln, i) => { const d = document.createElement("div"); d.className = "ln"; d.style.marginLeft = i * 56 + "px";
+          ln.split(" ").forEach((w) => { const s = document.createElement("span"); s.className = "w"; const m = { "*": "ac", "!": "rd", "~": "gd" };
+            if (m[w[0]]) { mode = m[w[0]]; w = w.slice(1); } const end = Object.keys(m).find((k) => m[k] === mode && w.endsWith(k)); if (end) w = w.slice(0, -1);
+            if (mode) s.classList.add(mode); if (end) mode = ""; s.textContent = w + " "; d.appendChild(s); words.push(s); }); el.appendChild(d); });
+        $("cam").appendChild(el); caps.push({ el, words, t0, step, tOut }); };
+      cap(210, ["Almost *half*", "the gross profit"], 0.05, A.isnt - 0.15, "sm");
+      cap(210, ["Not a", "!phone!"], A.isnt, A.pic - 0.15);
+      cap(210, ["A bridge", "with a *toll*"], A.pic + 0.05, A.svc - 0.15);
+      cap(210, ["~28%~ of sales"], A.svc + 0.05, A.but - 0.05, "sm");
+      cap(210, ["~44%~ of", "gross profit"], A.but + 0.05, A.phone - 0.15, "sm");
+      cap(210, ["The Supreme Court", "will *hear it*"], A.court + 0.05, A.does - 0.15, "sm");
+      cap(210, ["Does the bridge", "*survive?*"], A.does + 0.05, END + 0.1, "sm");
+      // ---- background blobs
+      const blobs = []; for (let i = 0; i < 16; i++) { const d = document.createElement("div"); d.className = "blob"; const s = 140 + rnd(i) * 320; d.style.width = d.style.height = s + "px"; d.style.background = i % 3 === 0 ? "#e0a93a" : "#2f9e7a"; d.style.opacity = 0.07 + rnd(i, 2) * 0.1; $("blobs").appendChild(d); blobs.push({ d, x: rnd(i, 3) * 1300, y: rnd(i, 4) * 2000, v: 10 + rnd(i, 5) * 26 }); }
+      // ---- render
+      H.render = (t) => {
+        let cur_ = SC[0]; SC.forEach((s) => { const on = t >= s[1] && t < s[2]; $(s[0]).style.opacity = on ? 1 : 0; if (on) cur_ = s; });
+        const k = E.io2((t - cur_[1]) / Math.max(0.5, cur_[2] - cur_[1]));
+        $("cam").style.transform = `scale(${1 + 0.05 * k})`;
+        $("endcard").style.opacity = F(t, END + 0.15, 99, 0.5);
+        [["w1", 0], ["w2", 0.1]].forEach(([id, d]) => { let x = -1200; SC.slice(1).forEach((s) => { const u = (t - (s[1] - 0.3 + d)) / 0.6; if (u > 0 && u < 1) x = -1080 + 2160 * E.io2(u); }); const eu = (t - (END - 0.2 + d)) / 0.6; if (eu > 0 && eu < 1) x = -1080 + 2160 * E.io2(eu); $(id).style.transform = `translateX(${x}px)`; });
+        $("pegs").style.transform = `translate(${-t * 6}px, ${-t * 14}px)`;
+        blobs.forEach((b) => { b.d.style.left = ((b.x + b.v * t) % 1500) - 200 + "px"; b.d.style.top = ((b.y - b.v * 0.7 * t + 4000) % 2300) - 200 + "px"; });
+        caps.forEach((c) => { c.words.forEach((w, i) => { const x = (t - c.t0 - i * c.step) / 0.7, u = sp(x); w.style.opacity = C(x * 4); w.style.transform = `translateY(${(1 - u) * 70}px) scale(${0.85 + 0.15 * Math.min(u, 1.2)})`; }); c.el.style.opacity = 1 - C((t - c.tOut) / 0.25); });
+        shines.forEach((s) => s.setAttribute("x", String(-240 + 700 * C(((t * 0.45) % 1.8) / 1.0))));
+        // S1: the phone lands, then gets crossed out on "isn't a phone"
+        const pu = sp((t - 0.05) / 1.0); $("phone1").style.transform = `translateY(${(1 - pu) * 900 + Math.sin(t * 2.2) * 14}px) rotate(${(1 - pu) * 18 + Math.sin(t * 1.6) * 2}deg)`;
+        $("disc1").style.transform = `scale(${0.9 + 0.1 * sp((t - 0.02) / 0.8) + 0.015 * Math.sin(t * 3)})`;
+        const xu = sp((t - A.isnt) / 0.5); $("slash").style.opacity = C(xu * 3); $("slash").style.transform = `scale(${1.4 - 0.4 * Math.min(xu, 1.1)}) rotate(${(1 - Math.min(xu, 1)) * -20}deg)`;
+        // S2: bridge rises, towns label in, booth drops onto the deck, coins cross and pay at the booth
+        const bu = sp((t - A.pic) / 0.9); $("bridge").style.opacity = C(bu * 3); $("bridge").style.transform = `translateY(${(1 - Math.min(bu, 1)) * 300}px)`;
+        $("tw1").style.opacity = C((t - A.dev) * 3); $("tw1").style.transform = `scale(${0.5 + 0.5 * Math.min(sp((t - A.dev) / 0.5), 1.1)})`;
+        $("tw2").style.opacity = C((t - A.you) * 3); $("tw2").style.transform = `scale(${0.5 + 0.5 * Math.min(sp((t - A.you) / 0.5), 1.1)})`;
+        const ou = sp((t - A.toll) / 0.7); $("booth").style.opacity = C(ou * 3); $("booth").style.transform = `translateY(${(1 - Math.min(ou, 1)) * -700}px) scale(${0.9 + 0.1 * Math.min(ou, 1.1)})`;
+        coins.forEach((d, i) => { const ph = (t - A.toll - 0.4 - i * 0.42); if (ph < 0) { d.style.opacity = 0; return; } const u = (ph / 2.9) % 1, x = L(1000, 40, u);
+          const atBooth = Math.abs(x - 540) < 70, y = 1108 - (atBooth ? 26 * Math.cos(((x - 540) / 70) * 1.57) : 0);
+          d.style.opacity = C(Math.min(u, 1 - u) * 12); d.style.transform = `translate(${x - 30}px, ${y}px) scale(${x < 540 ? 0.72 : 1})`; });
+        // S3: columns grow, services share flagged
+        grow(cA, sp((t - A.svc - 0.1) / 1.1)); grow(cB, sp((t - A.but - 0.05) / 1.1));
+        cA.pct.style.opacity = C((t - A.svc - 0.4) * 3); cB.pct.style.opacity = C((t - A.but - 0.3) * 3); cB.pct.style.transform = `translateY(-50%) scale(${1 + 0.12 * Math.sin(C((t - A.but - 0.8) / 1.2) * 3.14)})`;
+        // S4: phone sold once (stamp), the receipt keeps unrolling, the year keeps counting
+        const fu = sp((t - A.phone) / 0.8); $("phone4").style.transform = `scale(0.82) translateX(${(1 - Math.min(fu, 1)) * -600}px)`; $("phone4").style.transformOrigin = "0 0";
+        const su = sp((t - A.phone - 0.6) / 0.5); $("once").style.opacity = C(su * 3); $("once").style.transform = `scale(${2 - Math.min(su, 1.05)}) rotate(-8deg)`;
+        const ru = Math.max(0, t - A.sub); $("tape").style.opacity = C(ru * 3); $("strip").style.transform = `translateY(${-ru * 210}px)`;
+        const yr = 2026 + Math.floor(Math.pow(ru, 1.6) * 3.2); $("yr").textContent = String(Math.min(yr, 2099)); $("yr").style.opacity = C(ru * 3);
+        $("yr").style.color = t > A.poss ? "#9a2616" : "#12301f";
+        // S5: court rises behind a small booth, gavel strikes on "contempt"
+        const cu = sp((t - A.court) / 0.9); $("court").style.opacity = C(cu * 3); $("court").style.transform = `scale(${0.6 + 0.4 * Math.min(cu, 1.06)})`;
+        const b5 = sp((t - A.court - 0.3) / 0.6); $("booth5").style.opacity = C(b5 * 3); $("booth5").style.transform = `scale(${0.5 + 0.5 * Math.min(b5, 1.1)})`;
+        const g0 = A.cont, gu = (t - g0) / 0.35; const ang = gu < 0 ? -40 : gu < 1 ? -40 + 70 * E.io2(gu) : 30 - 30 * C((gu - 1) * 1.2);
+        $("gavel").style.opacity = C((t - A.court - 0.5) * 3); $("gavel").style.transform = `rotate(${ang}deg)`;
+        $("booth5").style.transform += gu > 1 && gu < 1.6 ? ` translateY(${Math.sin((gu - 1) * 25) * 6}px)` : "";
+        // S6: the booth shrinks on the bridge
+        $("bridge6").style.opacity = 1; const hu = E.io3((t - A.does - 0.3) / 1.8);
+        $("booth6").style.transform = `scale(${1 - 0.65 * hu}) rotate(${Math.sin(t * 6) * 2 * hu}deg)`;
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

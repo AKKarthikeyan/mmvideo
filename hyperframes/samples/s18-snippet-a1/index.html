@@ -38,7 +38,7 @@
     </style>
   </head>
   <body>
-    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="30.66" data-width="1080" data-height="1920">
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="32.73" data-width="1080" data-height="1920">
       <div id="cam">
         <div id="pegs" data-layout-ignore></div><div id="blobs" data-layout-ignore></div>
         <!-- S1 hook -->
@@ -90,7 +90,7 @@
     </div>
     <script>
       const TM = window.TIMING, W = TM.words, VD = TM.duration;
-      const H = HF.setup(VD + 0.5 + 3.6), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      const H = HF.setup(VD + 0.5 + 4.0), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const sp = (x) => (x <= 0 ? 0 : 1 - Math.exp(-7 * x) * Math.cos(12 * x));

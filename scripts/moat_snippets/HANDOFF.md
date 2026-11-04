@@ -10,7 +10,7 @@ Branch `claude/moat-atlas-asian-paints-short`. No pull request is open yet.
 - **Tool:** `scripts/moat_snippets/voice.py` makes the voice, word timing and final mux (see `scripts/moat_snippets/README.md`, "Producing a snippet").
 
 ## Decisions already made (AK)
-- Moat Atlas is **US English**. MiniMax default voice: `English_captivating_female1` (American documentary narrator). Not yet auditioned.
+- Moat Atlas is **US English**. MiniMax default voice: `English_CaptivatingStoryteller` (US male storyteller; AK picked it 4 Nov 2026 from six US male samples). Reads slowly: use `--speed` about 1.15 to stay under 30 s.
 - Style: analogy, curiosity hook, dark humour aimed at companies and situations (never people), closing question. Real data with the source on screen; illustrative drawings labelled.
 - Every video ends on: "Educational research, not investment advice · not SEBI-registered".
 
@@ -18,7 +18,10 @@ Branch `claude/moat-atlas-asian-paints-short`. No pull request is open yet.
 1. Add `MINIMAX_API_KEY` to the cloud environment (environment menu, then Edit, then Network secrets or an environment variable). Then run
    `python3 scripts/moat_snippets/voice.py A1`, re-render (`python3 hyperframes/tools/hf.py render 18`) and `--mux`. Listen to the voice; try other US English MiniMax voices.
    The current A1 video uses a Kokoro stand-in voice (`--engine kokoro`; model files are not in git, see the voice.py docstring).
-2. Build A2 (Apple crowd) next: copy `s18-snippet-a1`, reuse the two-column chart from `s17-short-apple`. Then the rest, in the order in `FINAL_SCRIPTS.md`.
+2. A1 and A2 are voiced (4 Nov 2026, MiniMax `English_CaptivatingStoryteller`, `--speed 1.15`; voice 28.2 s and 25.6 s), rendered and muxed:
+   `out/hyperframes/moat-snippet-a1.mp4` (32.7 s) and `moat-snippet-a2.mp4` (30.1 s), about -17.5 LUFS. A2's scene is `hyperframes/samples/s18-snippet-a2/`.
+   Next: A3 onwards, in the order in `FINAL_SCRIPTS.md` (copy `s18-snippet-a2`). End-card hold is 4.0 s (voice.py, A1, A2).
+   The HyperFrames renderer needs ffmpeg with the `setparams` filter; Remotion's bundled ffmpeg lacks it (a static build from `pip install imageio-ffmpeg` works).
 3. Close the open verification items at the bottom of `final/VERIFICATION_LOG.md` (NPCI page, Visa 10-Q legal note, Apple call transcript from Apple's own site).
 4. Add a music bed (`--music`). Optionally port the richer motion from `s17`/`s18` into the Asian Paints short (`s16`).
 5. Possible later topic: Anthropic's IPO. Blocked on reading the S-1: SEC blocks anonymous downloads and needs a declared user agent; AK has not given one.

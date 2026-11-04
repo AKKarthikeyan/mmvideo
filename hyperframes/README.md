@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -22,6 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | Night lights behind three states, with a correlation bar per state | Indica Atlas, Data Kadai | NASA Black Marble 2016 composite (GIBS) + RBI Bulletin Oct 2026, Table 3 (Maharashtra 0.90, Karnataka 0.79, Gujarat 0.66) | `samples/s16-nightlights` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -32,7 +33,7 @@ Pillow. Renders go to `out/hyperframes/` (not in git).
 
 ```sh
 python3 hyperframes/tools/hf.py sync              # copy shared/ and the linked public/ images into every sample (run first)
-python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check; all 16 projects pass
+python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check; all 17 projects pass
 python3 hyperframes/tools/hf.py snap 3 1.5,6,9.5  # stills -> out/hyperframes/snap/s03-desk/
 python3 hyperframes/tools/hf.py render 3          # -> out/hyperframes/s03-desk.mp4 (or: render all)
 python3 hyperframes/tools/hf.py reel              # cards + every sample -> out/hyperframes/visual-samples-reel.mp4
@@ -68,6 +69,7 @@ byte for byte.
 | 07 | `globe_dots.py samples/s07-globe/assets/data` |
 | 10 | `depth_map.py public/vx/mf003-textile/img/mill_gate.jpeg samples/s10-parallax/assets/img/depth.png --vp 960,790 --sky 237,223,193` |
 | 15 | `geo3d.py <india.geojson> tools/indica_map_beat.json samples/s15-seatmap/assets/geo3d.js` |
+| 16 | `gibs_nightlights.py samples/s16-nightlights/assets`. Public NASA tiles, no login; needs Pillow and numpy |
 
 `<india.geojson>` is `geojson/india.geojson` from github.com/udit-001/india-maps-data (commit 2884453). It mixes 34
 whole-state outlines with 726 districts; the tools use the state outline where one exists.
@@ -111,6 +113,7 @@ The videos are silent drafts with captions; voice-over comes from the normal bui
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic
   model) says so on screen, as samples 08, 09 and 10 do.
+- Sample 16's picture is one 2016 composite; the RBI study used monthly VNP46A3 2012–2024 (needs a NASA Earthdata login). The on-screen tag says so. For a true 2012 vs 2024 before/after, fetch VNP46A3 for the three states. The correlations are the RBI authors' findings, so say "RBI researchers", not "the RBI". Gujarat's run ends 2023-24.
 - Sentinel-2 imagery needs the line "Contains modified Copernicus Sentinel data <years>".
 - India maps (samples 06 and 15) use community boundary data. Replace it with Survey of India boundaries before publishing.
 - Moat & Margin: no target prices, valuations or buy, sell or hold calls.

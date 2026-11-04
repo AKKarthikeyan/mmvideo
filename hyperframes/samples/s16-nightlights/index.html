@@ -1,0 +1,142 @@
+<!doctype html>
+<!-- Sample 16 · Night lights vs the economy: NASA Black Marble 2016 composite (GIBS) behind Maharashtra, Karnataka and Gujarat,
+     with the correlations from RBI Bulletin Oct 2026, Table 3. Tool: tools/gibs_nightlights.py. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Night lights and the economy</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/data/geo.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #cam { position: absolute; left: 0; top: 0; width: 3072px; height: 3072px; transform-origin: 0 0; }
+      #cam img { position: absolute; left: 0; top: 0; width: 3072px; height: 3072px;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent);
+        -webkit-mask-composite: source-in; mask-composite: intersect; }
+      #shapes { position: absolute; left: 0; top: 0; }
+      #shapes path { stroke-linejoin: round; }
+      #scrimT { position: absolute; left: 0; top: 0; width: 1920px; height: 360px;
+        background: linear-gradient(rgba(6, 8, 11, 0.85), rgba(6, 8, 11, 0)); }
+      #scrimB { position: absolute; left: 0; bottom: 0; width: 1920px; height: 300px;
+        background: linear-gradient(rgba(6, 8, 11, 0), rgba(6, 8, 11, 0.8)); }
+      #scrimR { position: absolute; right: 0; top: 0; width: 820px; height: 1080px;
+        background: linear-gradient(90deg, rgba(6, 8, 11, 0), rgba(6, 8, 11, 0.82) 45%); }
+      .lab { position: absolute; left: 0; top: 0; font: 700 38px/1 Oswald, sans-serif; letter-spacing: 0.08em; white-space: nowrap;
+        color: #0b0e13; padding: 6px 12px 8px; transform-origin: 0 100%; }
+      #panel { position: absolute; left: 1180px; top: 240px; width: 640px; height: 640px; }
+      #ptitle { font: 700 34px/1.15 Oswald, sans-serif; letter-spacing: 0.08em; color: #c8cdd3; width: 640px; }
+      .row { position: absolute; left: 0; width: 640px; height: 165px; }
+      .row .nm { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.08em; white-space: nowrap; }
+      .row .num { position: absolute; right: 0; top: -14px; font: 700 96px/1 Oswald, sans-serif; color: #f7f3ea; font-variant-numeric: tabular-nums; }
+      .row .trk { position: absolute; left: 0; top: 88px; width: 640px; height: 26px; background: rgba(247, 243, 234, 0.14); }
+      .row .bar { position: absolute; left: 0; top: 0; height: 26px; width: 0; }
+      .row .per { position: absolute; left: 0; top: 122px; font: 28px/1 Plex, monospace; color: #c8cdd3; white-space: nowrap; }
+      .src { width: 650px; font-size: 28px; line-height: 1.3; text-align: left; right: 100px; bottom: 125px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="14" data-width="1920" data-height="1080">
+      <div id="cam">
+        <img src="assets/img/nightlights_india.jpg" alt="" />
+        <svg id="shapes" width="3072" height="3072" viewBox="0 0 3072 3072"></svg>
+      </div>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="scrimR" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="labels"></div>
+      <div class="kicker">INDICA ATLAS · FROM ORBIT</div>
+      <div class="head">THE LIGHTS THAT TRACK THE ECONOMY</div>
+      <div class="tag" id="tag">IMAGE: 2016 · STUDY: 2012–2025</div>
+      <div id="panel">
+        <div id="ptitle">QUARTERLY LIGHT GROWTH VS OFFICIAL STATE GROWTH (CORRELATION)</div>
+        <div class="row" id="r0" style="top: 140px"><div class="nm">MAHARASHTRA</div><div class="num">0.00</div><div class="trk"><div class="bar"></div></div><div class="per">2012-13 to 2024-25</div></div>
+        <div class="row" id="r1" style="top: 300px"><div class="nm">KARNATAKA</div><div class="num">0.00</div><div class="trk"><div class="bar"></div></div><div class="per">2012-13 to 2024-25</div></div>
+        <div class="row" id="r2" style="top: 460px"><div class="nm">GUJARAT</div><div class="num">0.00</div><div class="trk"><div class="bar"></div></div><div class="per">2012-13 to 2023-24</div></div>
+      </div>
+      <div class="src">Lights: NASA Black Marble 2016 (GIBS)<br />Data: RBI Bulletin Oct 2026, Table 3</div>
+      <div class="cap" id="c1">India at night: each bright patch is electric light seen from space.</div>
+      <div class="cap" id="c2">In these three states, brighter quarters meant faster growth.</div>
+      <div class="cap" id="c3">RBI adds Google Trends to estimate growth before official data.</div>
+    </div>
+    <script>
+      const H = HF.setup(14), E = HF.ease, F = HF.fade;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const G = window.NL;
+      const COL = { Maharashtra: "#d9a441", Karnataka: "#7fd0c8", Gujarat: "#e8836b" };
+      const VAL = [["Maharashtra", 0.9], ["Karnataka", 0.79], ["Gujarat", 0.66]];
+      // lon/lat -> pixel in the stitched image (web mercator, zoom 7 tiles)
+      const N = 128;
+      const mx = (lon) => ((lon + 180) / 360 * N - G.x0 - 0) * 256 - 0;
+      const my = (lat) => { const r = lat * Math.PI / 180; return ((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * N - G.y0) * 256; };
+      // shapes: one group per state, districts as filled rings (group opacity so shared borders do not double up)
+      const svg = $("shapes"), NS = "http://www.w3.org/2000/svg";
+      const grp = {}, cen = {};
+      G.states.forEach((s) => {
+        const g = document.createElementNS(NS, "g");
+        g.setAttribute("fill", COL[s]); g.setAttribute("stroke", COL[s]); g.setAttribute("stroke-width", 3);
+        svg.appendChild(g); grp[s] = g; cen[s] = { x: 0, y: 0, n: 0 };
+      });
+      G.districts.forEach((d) => {
+        let p = "";
+        d.rings.forEach((r) => {
+          for (let i = 0; i < r.length; i += 2) {
+            const x = mx(r[i]), y = my(r[i + 1]);
+            p += (i ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1);
+            cen[d.s].x += x; cen[d.s].y += y; cen[d.s].n++;
+          }
+          p += "Z";
+        });
+        const el = document.createElementNS(NS, "path"); el.setAttribute("d", p); grp[d.s].appendChild(el);
+      });
+      // labels
+      VAL.forEach(([s]) => {
+        const e = document.createElement("div"); e.className = "lab"; e.id = "lab" + s; e.textContent = s.toUpperCase();
+        e.style.background = COL[s]; $("labels").appendChild(e);
+      });
+      // camera: interpolate from all-India to the three states. P = image pixel kept at screen point (sx, sy)
+      const A = { px: mx(83), py: my(22), sx: 960, sy: 560, s: 0.45 };
+      const B = { px: mx(75.2), py: my(18.4), sx: 640, sy: 600, s: 0.66 };
+      const lerp = (a, b, k) => a + (b - a) * k;
+      H.render = (t) => {
+        const k = E.io3(t / 3.8);
+        const px = lerp(A.px, B.px, k), py = lerp(A.py, B.py, k), sx = lerp(A.sx, B.sx, k), sy = lerp(A.sy, B.sy, k), s = lerp(A.s, B.s, k);
+        const ox = sx - s * px, oy = sy - s * py;
+        $("cam").style.transform = `translate(${ox}px, ${oy}px) scale(${s})`;
+        // state shapes: fade in one by one at 3.8 s, the state being read brightens
+        VAL.forEach(([st, v], i) => {
+          const on = F(t, 3.8 + i * 0.35, 99, 0.6);
+          const read = F(t, 6.2 + i * 1.4, 7.8 + i * 1.4, 0.4);
+          grp[st].setAttribute("opacity", on * (0.22 + 0.3 * read));
+          const lab = $("lab" + st);
+          lab.style.left = `${ox + s * cen[st].x / cen[st].n - 60}px`;
+          lab.style.top = `${oy + s * cen[st].y / cen[st].n}px`;
+          lab.style.opacity = on;
+          lab.style.transform = `scale(${E.back((t - 4.0 - i * 0.35) / 0.4)})`;
+          // bars
+          const r = $("r" + i), kk = E.io2((t - (6.2 + i * 1.4)) / 1.1);
+          r.style.opacity = F(t, 6.0 + i * 1.4, 99, 0.3);
+          r.querySelector(".nm").style.color = COL[st];
+          r.querySelector(".bar").style.background = COL[st];
+          r.querySelector(".bar").style.width = `${640 * v * kk}px`;
+          r.querySelector(".num").textContent = (v * kk).toFixed(2);
+        });
+        $("ptitle").style.opacity = F(t, 5.6, 99, 0.5);
+        $("scrimR").style.opacity = F(t, 5.4, 99, 0.6);
+        $("tag").style.opacity = F(t, 0.6, 99, 0.5) * 0.85;
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.35, 99, 0.6);
+        document.querySelector(".src").style.opacity = F(t, 0.8, 99, 0.5);
+        $("c1").style.opacity = F(t, 0.8, 4.2, 0.4);
+        $("c2").style.opacity = F(t, 4.6, 10.0, 0.4);
+        $("c3").style.opacity = F(t, 10.3, 99, 0.4);
+        $("root").style.filter = `brightness(${E.o2(t / 0.6)})`;
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

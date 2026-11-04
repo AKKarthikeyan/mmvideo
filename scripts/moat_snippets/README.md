@@ -9,6 +9,6 @@ anything tagged CHECK needs the primary source before recording. Not investment 
 | `apple_moat_shorts.md` | Apple | lock, crowd, brand, brain, muscle |
 | `visa_mastercard_moat_shorts.md` | Visa and Mastercard | club, toll without the pothole, sticker, referee, footpath (UPI) |
 
-Format: about 2.8 spoken words a second (so 80 words at most), hook in the first line, one fact with its source on screen,
-one joke, and a closing question. Visuals start from the HyperFrames shorts in `hyperframes/samples/s16-short-moat` and
+Format: about 2.8 spoken words a second (so 80 words at most): a curiosity hook in the first line, one analogy, one fact with its source on screen,
+one dark joke (aimed at companies and situations, never people), and a closing question. Visuals start from the HyperFrames shorts in `hyperframes/samples/s16-short-moat` and
 `s17-short-apple`.

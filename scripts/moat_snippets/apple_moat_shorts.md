@@ -1,47 +1,52 @@
 # Moat Snippets: Apple's five moats (a Moat Atlas series), under 30 s each
 
-Pace: about 2.8 spoken words a second, so 80 words is about 28 s. Jokes are opinion, not claims. Every fact has a source tag;
-anything tagged CHECK needs the primary source before recording. Not investment advice · not SEBI-registered.
+Shape of every snippet: HOOK (a curiosity question) → ANALOGY → FACT (sourced) → DARK JOKE → CLOSE (a question).
+Pace about 2.8 spoken words a second, so 80 words at most. Jokes and analogies are opinion, not claims; the dark humour is aimed at
+companies and situations, never at people or real tragedies. Anything tagged CHECK needs the primary source before recording.
+Not investment advice · not SEBI-registered.
 
 ## 1. The lock: leaving an iPhone is a divorce (switching costs)
-VO: "Leaving an iPhone isn't shopping. It's a divorce. Your photos, your passwords, your watch, even the AirPods that finally
-learned your ear all file for custody. Apple has more than 2.5 billion active devices. And in early 2026, 87% of people buying
-a new iPhone already owned one. Not trapped. Just very, very comfortable. So if comfort is the lock, what's the key?"
-Visual: phone on a disc, objects (photos, watch, earbuds) pull away on strings; counter 2.5B; bar 87%.
+Hook: Why do people stay with a phone they complain about? Analogy: a marriage with shared assets. Dark joke: your photo library is a very good negotiator.
+VO: "Why do people stay with a phone they complain about? Think of a marriage with shared assets: leaving is legal, but your photos, your
+watch and your earbuds go to the other side. Apple has over 2.5 billion active devices, and 87% of new iPhone buyers in early 2026 already owned one.
+Nobody's holding you hostage. Your photo library is just a very good negotiator. If comfort is the lock, what's the key?"
+Visual: phone on a disc, objects (photos, watch, earbuds) pull away on strings, a tiny lawyer in a suit; counter 2.5B; bar 87%.
 Sources: 2.5B, Tim Cook, Apple fiscal Q1 2026 call (29 Jan 2026), via AppleInsider/MacRumors, CHECK against transcript.
 87%: CIRP, Q1 2026, share of new iPhone buyers who already owned an iPhone (not a retention rate), via MacRumors 17 Jul 2026, CHECK against CIRP.
 
-## 2. The crowd: the toll booth between apps and you (two-sided network)
-VO: "Every developer asks: where are the customers? Every customer asks: where are the apps? Apple stands in the middle with a
-toll booth. Services is 28% of Apple's sales but 44% of its gross profit. Same iPhone, sold once, billing you forever. Apple's
-best salesperson is the subscription you forgot. The twist: courts are now deciding how big the toll can be on outside payment
-links. Does the booth survive?"
-Visual: two crowds (developers, users) with a booth between; the two-column chart from the Apple short; booth shrinks.
+## 2. The crowd: one bridge, one toll (two-sided network)
+Hook: Why does almost half of Apple's profit come from something that isn't a phone? Analogy: a bridge between two towns. Dark joke: the subscription outlives you.
+VO: "Why does almost half of Apple's profit come from something that isn't a phone? Picture a bridge between two towns, developers on one side,
+you on the other, and Apple takes a toll on the way across. Services is 28% of sales but 44% of gross profit. The phone is sold once. The subscription you
+forgot will outlive your enthusiasm, and possibly you. Courts are now deciding how big the toll can be. Does the bridge survive?"
+Visual: a bridge with a toll booth, two crowds; the two-column chart from the Apple short; the booth shrinks.
 Sources: 28% and 44%: our arithmetic from Apple's release tables, 2 Nov 2026 (Services $31,573M of $114,477M sales; $23,980M of $54,820M gross margin).
 Court: Epic v. Apple, contempt finding upheld, Supreme Court declined a stay in May 2026 (Business Standard, AppleInsider); the commission is still to be set. CHECK latest status on recording day.
 
-## 3. The brand: a very profitable logo (pricing power)
-VO: "Why do people queue for a phone this expensive? Apple kept 47.9 cents of every dollar of sales as gross profit last quarter.
-Not bad for a company that sells metal and glass. About one point of that was a tariff refund, so the real number is lower.
-And next quarter Apple says 45 to 46. Brands don't pay for parts. Customers do. So what happens when the parts cost more?"
-Visual: price tag with a logo-shaped hole (no logo); margin line chart with a dashed guidance segment.
+## 3. The brand: a wedding dress with a logo (pricing power)
+Hook: How does a company selling metal and glass keep 47.9 cents of every dollar? Analogy: a wedding dress, same cloth, priced by emotion. Dark joke: nobody haggles at the altar.
+VO: "Why does a company selling metal and glass keep 47.9 cents of every dollar as gross profit? Think wedding dress: same cloth as any other, priced by
+emotion, and nobody haggles at the altar. About a point of that margin was a tariff refund, so the real number is lower, and Apple guides to 45 to 46 next
+quarter. Even love gets repriced when the parts cost more. How much can a logo charge?"
+Visual: a price tag with a logo-shaped hole (no logo); margin line with a dashed guidance segment.
 Sources: 47.9% and the refund wording: Apple release, 2 Nov 2026. 45-46% guidance: Kevan Parekh on the call, via Yahoo Finance and Quartz, CHECK against transcript.
 
-## 4. The brain: a group project where everyone did their part (integration)
-VO: "Apple doesn't just buy chips. It designs its own, then asks TSMC to build them. So the chip, the software and the battery
-plan come from people who share a lunch room. Many rivals buy the brain from one company and the software from another, then hope.
-It's the one group project where everybody did the work. The catch: the best factory in the world has a price list. Reports say
-its newest chips cost at least 50% more."
-Visual: three puzzle pieces snapping together; wafer price callout labelled "reported, unconfirmed".
-Sources: Apple designs its own chips: Apple's own materials, CHECK a primary line. 2nm "at least 50% more than 3nm": TrendForce, citing industry reports (not TSMC or Apple), CHECK.
+## 4. The brain: the chef and the landlord (integration)
+Hook: Who actually makes the iPhone's brain? Analogy: a chef who writes every recipe but rents the kitchen. Dark joke: the landlord has no soul and a waiting list.
+VO: "Who actually makes the iPhone's brain? Apple designs it, TSMC builds it. Picture a chef who writes every recipe, then rents the best kitchen in town,
+and the landlord has no soul and a waiting list. Many rivals buy a ready-made brain instead. Reports say TSMC's newest manufacturing process costs at least
+50% more than the last. Rent control does not exist in semiconductors. So who holds more power: the chef or the landlord?"
+Visual: a chef holding a blueprint in front of a giant kitchen with a price sign going up.
+Sources: Apple designs its own chips: Apple's own materials, CHECK a primary line. 2nm "at least 50% more than 3nm": TrendForce, citing industry reports (not TSMC or Apple), shown as "reported, unconfirmed", CHECK.
 
-## 5. The muscle: pre-ordering the shortage (scale and supply)
-VO: "When memory chips got scarce, size bought Apple a place at the front of the queue. Reports say it stocked up on about
-ten billion dollars of parts. Apple pre-ordered the shortage. But even Apple's CEO called memory prices unprecedented, and its
-Mac and iPad supply is held back by memory. So is scale a moat, or just a longer runway?"
-Visual: a queue of phone makers with Apple at the front; memory price arrow; "unprecedented" quote card.
-Sources: $10B stockpile: Motley Fool, 3 Nov 2026, secondary, CHECK against the call. "Unprecedented", Ternus; Mac/iPad supply limits, Sabih Khan: call coverage via Benzinga and Yahoo, CHECK.
+## 5. The muscle: the neighbour who bought forty rolls (scale and supply)
+Hook: What do you do when the whole world wants the same memory chips? Analogy: the neighbour who stocked up before the shortage. Dark joke: Apple pre-ordered the apocalypse.
+VO: "What do you do when the whole world wants the same memory chips? If you're Apple, you stock up early, like the neighbour who bought forty rolls before the
+shortage. Reports say about ten billion dollars of parts. Apple pre-ordered the apocalypse. But its CEO called memory prices unprecedented, and Mac and iPad supply
+is held back by memory. Is scale a moat, or just a slower way to run out?"
+Visual: a shopper with a mountain of boxes at the front of a queue; memory price arrow; "unprecedented" quote card.
+Sources: $10B stockpile: Motley Fool, 3 Nov 2026, secondary, CHECK against the call (drop the line if unconfirmed). "Unprecedented", Ternus; Mac/iPad supply limits, Sabih Khan: call coverage via Benzinga and Yahoo, CHECK.
 
 ## Series note
 Order: 1 (hook), 2, 3, 5, 4. Each ends on a question that the next short answers or complicates. Cracks to say out loud: the App Store toll (court),
-the margin squeeze (memory), the TSMC price list. Our own seven-mechanism scoring is not applied here; these five map to lock, crowd, brand, scale and cost.
+the margin squeeze (memory), the TSMC price list.

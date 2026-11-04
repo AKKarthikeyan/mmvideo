@@ -1,0 +1,172 @@
+<!doctype html>
+<!-- Sample 16 · 9:16 illustrated short for Moat Atlas: "Asian Paints: the moat is the counter, not the can".
+     Every claim comes from the Moat 60 ledger (scripts/ledger/a01moat.csv, beats l63/l64): our articles of 21 Jul and 17 Aug 2026.
+     Tins, counter, dots and moat are ILLUSTRATIVE shapes, labelled on screen. Script and source map: SCRIPT.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Asian Paints moat short</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      #root { width: 1080px; height: 1920px; --ink: #12301f; --mint: #2f9e7a; --red: #d9483b; --gold: #d9a441;
+        background: radial-gradient(900px 1100px at 50% 42%, #f1eeea 0%, #d9d4cc 60%, #b3aea5 100%); }
+      #vig { background: radial-gradient(1000px 1300px at 50% 50%, transparent 50%, rgba(10, 30, 20, 0.45) 100%); }
+      .sc { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .cp { position: absolute; left: 90px; width: 900px; font: 700 96px/1.04 Playfair, serif; color: var(--ink); }
+      .cp .ln { white-space: nowrap; }
+      .cp .w { display: inline-block; white-space: pre; }
+      .cp .ac { font-style: italic; color: var(--mint); }
+      .cp .rd { font-style: italic; color: var(--red); }
+      .cp.sm { font-size: 78px; }
+      .tag2 { position: absolute; left: 90px; top: 92px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.16em; color: var(--ink);
+        border: 3px solid currentColor; padding: 10px 16px; }
+      .srcl { position: absolute; left: 90px; right: 90px; bottom: 96px; font: 26px/1.35 Plex, monospace; color: #34493c; }
+      .lab { position: absolute; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: var(--ink); }
+      .ill { position: absolute; right: 90px; top: 100px; font: 700 24px/1 Oswald, sans-serif; letter-spacing: 0.16em; color: #34493c; border: 2px dashed currentColor; padding: 8px 12px; }
+      #podium { left: 330px; width: 420px; bottom: 0; background: linear-gradient(#1f5a3c, #12301f); box-shadow: 0 0 60px rgba(0,0,0,.35); }
+      #medal { position: absolute; left: 50%; top: 60px; transform: translateX(-50%); font: 700 40px/1 Oswald; letter-spacing: .14em; color: #cfeede; text-align: center; }
+      .dot { position: absolute; width: 56px; height: 56px; border-radius: 50%; background: var(--mint); }
+      .dot.r { background: var(--red); }
+      #count { position: absolute; left: 0; right: 0; top: 520px; text-align: center; font: 700 220px/1 Playfair, serif; color: var(--ink); }
+      #count small { display: block; font: 700 34px/1.2 Oswald; letter-spacing: .16em; color: #34493c; margin-top: 8px; }
+      #endcard { position: absolute; left: 0; right: 0; top: 780px; text-align: center; }
+      #endcard b { display: block; font: 700 120px/1 Oswald; letter-spacing: .12em; color: var(--ink); }
+      #endcard i { display: block; font: italic 700 64px/1.2 Playfair; color: var(--mint); margin-top: 24px; }
+      #endcard span { display: block; font: 24px/1.4 Plex; color: #34493c; margin-top: 60px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="41" data-width="1080" data-height="1920">
+      <!-- 1 · market leader on a podium -->
+      <div class="sc" id="s1">
+        <svg class="abs" id="spikes" style="left:90px;top:300px" width="900" height="900" viewBox="-450 -450 900 900"></svg>
+        <div class="abs" id="podium"><div id="medal">MARKET<br />LEADER</div></div>
+        <div class="abs" id="tin1"></div>
+      </div>
+      <!-- 2 · the counter, not the can -->
+      <div class="sc" id="s2">
+        <div class="abs" id="wall" style="left:0;top:560px;width:1080px"></div>
+        <div class="abs" id="counter" style="left:60px;top:1260px;width:960px;height:300px;background:linear-gradient(#2a7a55,#12301f);border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.35)"></div>
+        <div class="lab" id="cntlab" style="left:0;width:1080px;text-align:center;top:1390px;color:#d3efe1;font-size:56px">SHOP COUNTER</div>
+        <div class="abs" id="ontop" style="left:60px;top:1110px;width:960px;height:150px"></div>
+        <div class="tag2" id="tag2">OUR ARTICLE · 17 AUG 2026</div>
+        <div class="ill">ILLUSTRATIVE</div>
+      </div>
+      <!-- 3 · decades vs under a year -->
+      <div class="sc" id="s3">
+        <div class="lab" style="left:90px;top:900px">BUILT BY THE LEADER</div>
+        <div class="abs" id="barA" style="left:90px;top:950px;height:90px;width:900px;background:var(--ink);transform-origin:0 50%"></div>
+        <div class="lab" id="decl" style="left:110px;top:972px;color:#cfeede;font-size:40px">DECADES</div>
+        <div class="lab" style="left:90px;top:1130px">MATCHED BY A FUNDED RIVAL</div>
+        <div class="abs" id="barB" style="left:90px;top:1180px;height:90px;width:900px;background:var(--red);transform-origin:0 50%"></div>
+        <div class="lab" id="yrl" style="left:540px;top:1202px;font-size:40px;color:var(--red)">UNDER 1 YEAR</div>
+        <div class="tag2">OUR ARTICLE · 21 JUL 2026</div>
+        <div class="ill">NOT TO SCALE</div>
+        <div class="srcl">Delivery service: company-reported benchmark, as set out in our article.</div>
+      </div>
+      <!-- 4 · 100 -> 140 -->
+      <div class="sc" id="s4">
+        <div id="count"><span id="cn">100</span><small>TINS OF CAPACITY</small></div>
+        <div class="abs" id="grid" style="left:90px;top:1030px;width:900px;height:640px"></div>
+        <div class="tag2">OUR ARTICLE · 21 JUL 2026</div>
+        <div class="ill">ILLUSTRATIVE · 1 DOT = 1 TIN</div>
+        <div class="srcl">Organised installed capacity, year to March 2025, up about 40% on the year before (Grasim disclosure, as quoted in our article). 100 × 1.4 = 140 is our arithmetic.</div>
+      </div>
+      <!-- 5 · moat, bypass, rebuild -->
+      <div class="sc" id="s5">
+        <svg class="abs" id="moatsvg" style="left:90px;top:840px" width="900" height="900" viewBox="0 0 900 900">
+          <circle cx="450" cy="450" r="330" fill="none" stroke="#2f9e7a" stroke-width="90" opacity=".55" />
+          <circle cx="450" cy="450" r="250" fill="#e6e1d8" />
+          <path id="bypass" d="M 60 640 C 120 880, 560 900, 700 760 C 790 680, 700 560, 560 500" fill="none" stroke="#d9483b" stroke-width="12" stroke-dasharray="26 18" stroke-linecap="round" />
+          <circle id="rival" cx="60" cy="640" r="22" fill="#d9483b" />
+        </svg>
+        <div class="abs" id="tin5" style="left:405px;top:1160px"></div>
+        <div class="tag2">OUR ARTICLES · JUL, AUG 2026</div>
+        <div class="ill">ILLUSTRATIVE</div>
+        <div id="endcard"><b>MOAT ATLAS</b><i>The Asian Paints moat</i><span>Educational research, not investment advice · not SEBI-registered<br />Sources: moatmarginresearch.com</span></div>
+      </div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+    </div>
+    <script>
+      const H = HF.setup(41), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const tin = (c, w, l = "PAINT") => `<svg viewBox="0 0 120 150" width="${w}"><path d="M44 12 Q60 -6 76 12" stroke="#7d7d76" stroke-width="5" fill="none"/><rect x="12" y="22" width="96" height="116" rx="10" fill="${c}"/><ellipse cx="60" cy="24" rx="48" ry="9" fill="#f3f1ec"/><rect x="12" y="62" width="96" height="44" fill="#f3f1ec"/><rect x="30" y="76" width="60" height="12" rx="3" fill="${c}"/></svg>`;
+      $("tin1").innerHTML = tin("#2f9e7a", 300); $("tin5").innerHTML = tin("#2f9e7a", 270);
+      // wall of dim tins + tins on the counter
+      let wall = ""; for (let r = 0; r < 3; r++) for (let c = 0; c < 8; c++) wall += `<div class="abs" style="left:${14 + c * 130}px;top:${r * 170}px">${tin(r % 2 ? "#8fb8a6" : "#a9c9ba", 110)}</div>`;
+      $("wall").innerHTML = wall;
+      let ot = ""; for (let c = 0; c < 8; c++) ot += `<div class="abs ot" style="left:${c * 120}px;top:0">${tin("#2f9e7a", 105)}</div>`; $("ontop").innerHTML = ot;
+      const ots = [...document.querySelectorAll(".ot")];
+      // spikes
+      const sp = $("spikes"); let pts = "";
+      for (let i = 0; i < 12; i++) { const a = (i / 12) * 6.283, len = 250 + (i % 3) * 120, w = 0.11; pts += `<polygon class="spk" data-len="${len}" points="0,0 ${Math.cos(a - w) * 120},${Math.sin(a - w) * 120} ${Math.cos(a) * len},${Math.sin(a) * len} ${Math.cos(a + w) * 120},${Math.sin(a + w) * 120}" fill="#12301f"/>`; }
+      sp.innerHTML = `<g id="spg">${pts}</g>`;
+      // dot grid 10 x 14
+      let dots = ""; for (let i = 0; i < 140; i++) dots += `<div class="dot ${i >= 100 ? "r" : ""}" style="left:${(i % 10) * 90 + 17}px;top:${Math.floor(i / 10) * 46 - 6}px;width:40px;height:40px"></div>`;
+      $("grid").innerHTML = dots; const dotEls = [...document.querySelectorAll(".dot")];
+      // captions: *mint italic*, !red italic!
+      const caps = [];
+      const cap = (top, lines, t0, step, tOut, cls = "") => {
+        let mode = ""; const el = document.createElement("div"); el.className = "cp " + cls; el.style.top = top + "px"; const words = [];
+        lines.forEach((ln, i) => { const d = document.createElement("div"); d.className = "ln"; d.style.marginLeft = i * 64 + "px";
+          ln.split(" ").forEach((w) => { const s = document.createElement("span"); s.className = "w";
+            if (w[0] === "*" || w[0] === "!") { mode = w[0] === "*" ? "ac" : "rd"; w = w.slice(1); }
+            const close = (w.endsWith("*") && mode === "ac") || (w.endsWith("!") && mode === "rd"); if (close) w = w.slice(0, -1);
+            if (mode) s.classList.add(mode); if (close) mode = "";
+            s.textContent = w + " "; d.appendChild(s); words.push(s); }); el.appendChild(d); });
+        $("root").insertBefore(el, $("vig")); caps.push({ el, words, t0, step, tOut });
+      };
+      cap(250, ["The", "*market* leader"], 0.1, 0.22, 3.2);
+      cap(250, ["But not", "the !paint!"], 3.5, 0.22, 6.3);
+      cap(240, ["The *counter,*", "not the can"], 6.8, 0.22, 13.1);
+      cap(230, ["Took", "*decades*", "to build"], 13.3, 0.25, 16.6);
+      cap(230, ["A rival matched", "its delivery in", "!under a year!"], 16.9, 0.2, 21.1, "sm");
+      cap(250, ["Capacity up", "about *40%*"], 21.5, 0.25, 29.1);
+      cap(240, ["The moat is real.", "But a rival can", "go !round! it"], 29.4, 0.2, 33.6, "sm");
+      cap(240, ["Now it's rebuilt", "around the *can*"], 34.0, 0.22, 35.8, "sm");
+      cap(240, ["Will that", "*work?*"], 36.0, 0.25, 37.4);
+      const pop = (t0, t) => { const u = E.back((t - t0) / 0.45); return u; };
+      H.render = (t) => {
+        $("s1").style.opacity = F(t, 0, 6.4, 0.3); $("s2").style.opacity = F(t, 6.4, 13.3, 0.4); $("s3").style.opacity = F(t, 13, 21.3, 0.4);
+        $("s4").style.opacity = F(t, 21, 29.3, 0.4); $("s5").style.opacity = F(t, 29.1, 99, 0.4);
+        caps.forEach((c) => { c.words.forEach((w, i) => { const u = E.o3((t - c.t0 - i * c.step) / 0.5); w.style.opacity = u; w.style.transform = `translateY(${(1 - u) * 40}px)`; });
+          c.el.style.opacity = 1 - HF.clamp01((t - c.tOut) / 0.3); });
+        // s1
+        const pu = E.back((t - 0.2) / 1.2, 1.3); $("podium").style.height = `${760 * pu}px`;
+        const tu = E.o3((t - 1.0) / 0.7); $("tin1").style.left = "390px"; $("tin1").style.top = `${L(-200, 1030 - 760 * Math.min(pu, 1) + 760 - 760 + 0 - 0, tu) - 0}px`;
+        $("tin1").style.top = `${L(-200, 1920 - 760 * Math.min(pu, 1) - 330, tu)}px`;
+        const su = E.o3((t - 1.5) / 1.5); $("spg").setAttribute("transform", `scale(${su}) rotate(${t * 6})`);
+        $("spikes").style.top = `${1920 - 760 * Math.min(pu, 1) - 330 - 450 + 150 - 0}px`;
+        $("medal").style.opacity = F(t, 1.4, 99, 0.4);
+        // s2
+        ots.forEach((o, i) => { const u = E.back((t - 7.0 - i * 0.07) / 0.5); o.style.opacity = HF.clamp01(u * 2); o.style.transform = `translateY(${(1 - Math.min(u, 1)) * -200}px)`; });
+        $("wall").style.opacity = 0.9 * (1 - 0.7 * E.io2((t - 9.2) / 0.8)); $("ontop").style.opacity = 1 - 0.75 * E.io2((t - 9.6) / 0.8);
+        const pulse = E.io2((t - 10.2) / 0.5) * (0.6 + 0.4 * Math.sin(t * 6));
+        $("counter").style.boxShadow = `0 0 ${20 + 50 * pulse}px ${6 + 14 * pulse}px rgba(217,164,65,${0.7 * E.io2((t - 10.2) / 0.5)}), 0 30px 60px rgba(0,0,0,.35)`;
+        // s3
+        $("barA").style.transform = `scaleX(${E.io3((t - 13.6) / 1.6)})`; $("decl").style.opacity = F(t, 14.6, 99, 0.3);
+        $("barB").style.transform = `scaleX(${0.46 * E.io3((t - 17.2) / 0.5)})`; $("yrl").style.opacity = F(t, 17.6, 99, 0.3);
+        // s4
+        const nDots = Math.floor(HF.clamp01((t - 21.6) / 1.8) * 100), nRed = Math.floor(HF.clamp01((t - 24.4) / 1.4) * 40);
+        dotEls.forEach((d, i) => { const on = i < 100 ? i < nDots : i - 100 < nRed; d.style.opacity = on ? 1 : 0; });
+        $("grid").style.transform = `translateY(${-14 * E.io2((t - 25.9) / 3)}px) scale(${1 + 0.03 * E.io2((t - 25.9) / 3)})`; $("count").style.transform = `scale(${1 + 0.05 * Math.sin(HF.clamp01((t - 25.9) / 3) * 3.14)})`;
+        $("cn").textContent = String(Math.round(100 + 40 * E.io2((t - 24.4) / 1.4) * (nRed > 0 ? 1 : 0)));
+        // s5
+        $("bypass").setAttribute("stroke-dashoffset", String(-t * 40));
+        $("bypass").style.opacity = F(t, 30.2, 34, 0.4); $("rival").setAttribute("opacity", F(t, 30.2, 34, 0.4));
+        const k = E.io2((t - 30.4) / 2.6), rp = document.getElementById("bypass").getPointAtLength(k * document.getElementById("bypass").getTotalLength());
+        $("rival").setAttribute("cx", rp.x); $("rival").setAttribute("cy", rp.y);
+        $("endcard").style.opacity = F(t, 37.4, 99, 0.5); $("tin5").style.opacity = 1 - F(t, 37.4, 99, 0.5); $("moatsvg").style.opacity = 1 - F(t, 37.4, 99, 0.5);
+        document.querySelectorAll("#s2 .tag2, #s5 .tag2, #s5 .ill").forEach((e) => { if (e.closest("#s5")) e.style.opacity = 1 - F(t, 37.4, 99, 0.4); });
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

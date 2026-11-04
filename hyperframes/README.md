@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -22,6 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | 9:16 illustrated short: podium, counter, bars, dot grid, moat ring, per-word captions | Moat Atlas | Asian Paints moat, from our 21 Jul and 17 Aug 2026 articles (ledger beats l63, l64); shapes illustrative | `samples/s16-short-moat` (script and sources in `SCRIPT.md`) |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 

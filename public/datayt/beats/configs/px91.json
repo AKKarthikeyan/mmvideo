@@ -1,0 +1,295 @@
+{
+  "id": "px91",
+  "type": "paradox",
+  "rules": 2,
+  "chip": "DATA PARADOX",
+  "source_short": "MoSPI · ASI · 2024-25",
+  "palette": "E",
+  "state": "Tamil Nadu",
+  "source": "Ministry of Statistics and Programme Implementation, Annual Survey of Industries 2024-25 (factsheet 30 Sep 2026; Volume I 4 Nov 2026): Annexure II Table 3, principal characteristics by major states. Registered factories and other covered units, not all manufacturing. Gross value added = net value added plus depreciation. Persons engaged are everyone working in the factory, not only workers. Shares and per-person figures are computed from the table. The table shows how much, not why.",
+  "hook": [
+    "*Tamil Nadu* has the *most*",
+    "factories, 2024-25:",
+    "*third* in value added."
+  ],
+  "hook_vo": "Tamil Nadu: most factories, third in value added.",
+  "facts": [
+    {
+      "state": "Tamil Nadu",
+      "kicker": "FACTORIES · ASI 2024-25",
+      "data": {
+        "tbl": [
+          "evergreen/built_asi_2024_25",
+          "Number of factories"
+        ]
+      },
+      "unit": "",
+      "compare": [
+        "Gujarat"
+      ],
+      "bar_max": 50000,
+      "text": "factories in Tamil Nadu, 15.44% of India's. Gujarat: 33,084, so Tamil Nadu has 25% more.",
+      "sub": "Registered factories and other covered units. India: 266,931. They engage 3,147,520 people, 14.99% of India's.",
+      "vo": "Tamil Nadu: forty-one thousand factories, twenty-five percent more than Gujarat."
+    },
+    {
+      "state": "Tamil Nadu",
+      "kicker": "GROSS VALUE ADDED · ASI 2024-25",
+      "data": {
+        "tbl": [
+          "evergreen/built_asi_2024_25",
+          "Share of India's GVA (%)"
+        ]
+      },
+      "unit": "%",
+      "compare": [
+        "Maharashtra"
+      ],
+      "bar_max": 20,
+      "text": "of India's gross value added in Tamil Nadu. Maharashtra: 15.92%, so Maharashtra has 46% more.",
+      "sub": "Value added: net value added plus depreciation. Tamil Nadu ranks third, after Maharashtra and Gujarat (14.10%).",
+      "vo": "Value added: Tamil Nadu, ten point nine percent. Maharashtra, fifteen point nine."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "round",
+      "state": "Tamil Nadu",
+      "data": {
+        "tbl": [
+          "evergreen/built_asi_2024_25",
+          "Number of factories"
+        ]
+      },
+      "equals": 41221
+    },
+    {
+      "kind": "round",
+      "state": "Gujarat",
+      "data": {
+        "tbl": [
+          "evergreen/built_asi_2024_25",
+          "Number of factories"
+        ]
+      },
+      "equals": 33084
+    },
+    {
+      "kind": "round",
+      "state": "Tamil Nadu",
+      "data": {
+        "tbl": [
+          "evergreen/built_asi_2024_25",
+          "Total persons engaged"
+        ]
+      },
+      "equals": 3147520
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Number of factories"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "den": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Number of factories"
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "min": 1.24,
+      "max": 1.26
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's GVA (%)"
+          ]
+        },
+        "state": "Maharashtra"
+      },
+      "den": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's GVA (%)"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "min": 1.45,
+      "max": 1.47
+    }
+  ],
+  "so": {
+    "lines": [
+      "Per person engaged,",
+      "Maharashtra's factories added",
+      "*₹15.6 lakh*; Tamil Nadu's, *₹9.3 lakh*."
+    ],
+    "note": "Gross value added divided by total persons engaged, 2024-25. India: ₹12.8 lakh. The table shows how much, not why.",
+    "vo": "Per person, Maharashtra: fifteen point six lakh. Tamil Nadu: nine point three."
+  },
+  "map": {
+    "data": {
+      "tbl": [
+        "evergreen/built_asi_2024_25",
+        "GVA per person engaged (Rs lakh)"
+      ]
+    },
+    "unit": "",
+    "dec": 1,
+    "title": "Value added per person, *every state*",
+    "sub": "₹ lakh · India {india} · ASI 2024-25",
+    "note": "Gross value added ÷ total persons engaged. Blank: Dadra and Nagar Haveli and Daman and Diu, Andaman and Nicobar Islands, Lakshadweep.",
+    "ring": [
+      "Tamil Nadu",
+      "Maharashtra"
+    ],
+    "vo": "Here is every state."
+  },
+  "end": {
+    "q": "Which *factory* town are you from?",
+    "sub": "Comment below.",
+    "vo": "Which factory town are you from?"
+  },
+  "tests": [
+    {
+      "says": "Tamil Nadu 15.44% of India's factories (card 1)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's factories (%)"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "min": 15.435,
+      "max": 15.445
+    },
+    {
+      "says": "India 266,931 factories (card 1 sub)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Number of factories"
+          ]
+        },
+        "state": "India"
+      },
+      "equals": 266931
+    },
+    {
+      "says": "Tamil Nadu 14.99% of India's persons engaged (card 1 sub)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's persons engaged (%)"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "min": 14.985,
+      "max": 14.995
+    },
+    {
+      "says": "Gujarat 14.10% of India's GVA (card 3 sub)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's GVA (%)"
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "min": 14.095,
+      "max": 14.105
+    },
+    {
+      "says": "Tamil Nadu 10.90% of India's GVA (card 3)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's GVA (%)"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "min": 10.895,
+      "max": 10.905
+    },
+    {
+      "says": "Maharashtra 15.92% of India's GVA (card 3)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "Share of India's GVA (%)"
+          ]
+        },
+        "state": "Maharashtra"
+      },
+      "min": 15.915,
+      "max": 15.925
+    },
+    {
+      "says": "Maharashtra GVA per person Rs 15.6 lakh (so card)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "GVA per person engaged (Rs lakh)"
+          ]
+        },
+        "state": "Maharashtra"
+      },
+      "min": 15.55,
+      "max": 15.65
+    },
+    {
+      "says": "Tamil Nadu GVA per person Rs 9.3 lakh (so card)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "GVA per person engaged (Rs lakh)"
+          ]
+        },
+        "state": "Tamil Nadu"
+      },
+      "min": 9.25,
+      "max": 9.35
+    },
+    {
+      "says": "India GVA per person Rs 12.8 lakh (so note)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_asi_2024_25",
+            "GVA per person engaged (Rs lakh)"
+          ]
+        },
+        "state": "India"
+      },
+      "min": 12.75,
+      "max": 12.85
+    }
+  ],
+  "yt_title": "Tamil Nadu: Most Factories, 3rd in Value Added (ASI 2024-25)"
+}

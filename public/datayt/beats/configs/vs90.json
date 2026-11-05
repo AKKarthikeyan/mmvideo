@@ -1,0 +1,153 @@
+{
+ "id": "vs90",
+ "type": "versus",
+ "rules": 2,
+ "theme": "money",
+ "chip": "STATE vs STATE",
+ "source_short": "GSTN · Oct 2026 report",
+ "palette": "E",
+ "a": "Karnataka",
+ "b": "Tamil Nadu",
+ "source": "Goods and Services Tax Network (GSTN), 'Gross and Net GST revenue collections for the month of October, 2026', posted 1 Nov 2026, provisional. Round 1: growth of domestic GST recorded in the state on October 2025, our calculation from Table 3. Round 2: Table 4, April to October 2026 over 2025. Round 3: GST identification numbers (GSTINs) under central and state formations at 31 Oct 2026, Table 4, added by us, in lakh. GST is recorded where the taxpayer is registered.",
+ "hook": [
+  "*Karnataka*",
+  "vs *Tamil Nadu.*",
+  "October GST, 3 rounds."
+ ],
+ "hook_vo": "Karnataka versus Tamil Nadu. October GST, three rounds.",
+ "categories": [
+  {
+   "label": "Growth on October 2025",
+   "note": "% · domestic GST · higher is better",
+   "unit": "%",
+   "data": {
+    "tbl": [
+     "gst/gst_2026_10",
+     "Growth % (our calculation, 1 decimal)"
+    ]
+   },
+   "vo": "In October, Karnataka grew eighteen percent. Tamil Nadu, three."
+  },
+  {
+   "label": "Growth, April to October",
+   "note": "% · domestic GST · 2026 over 2025 · higher is better",
+   "unit": "%",
+   "data": {
+    "tbl": [
+     "gst/gst_2026_10",
+     "Apr-Oct domestic: Growth on Apr-Oct 2025 % (printed)"
+    ]
+   },
+   "vo": "Over seven months, Karnataka grew twelve percent. Tamil Nadu fell two."
+  },
+  {
+   "label": "GST ID numbers",
+   "note": "GSTINs, lakh · 31 Oct 2026 · higher is better",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "gst/gst_2026_10",
+     "GSTINs, lakh (our calculation, 2 decimals)"
+    ]
+   },
+   "vo": "Tamil Nadu has more GST registrations: twelve point nine lakh."
+  }
+ ],
+ "score": false,
+ "map": {
+  "data": {
+   "tbl": [
+    "gst/gst_2026_10",
+    "Growth %, states over Rs 50 crore in Oct-25 (our calculation, 1 decimal)"
+   ]
+  },
+  "unit": "%",
+  "dec": 1,
+  "title": "October GST growth, *every state*",
+  "sub": "Karnataka 18.4 · Tamil Nadu 3.2",
+  "note": "Domestic GST in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in Oct 2025).",
+  "ring": [
+   "Karnataka",
+   "Tamil Nadu"
+  ],
+  "vo": "October GST growth, in every state with a large enough base."
+ },
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below.",
+  "vo": "Which two states should we compare next?"
+ },
+ "yt_title": "Karnataka vs Tamil Nadu: Who Won October's GST?",
+ "tests": [
+  {
+   "says": "Karnataka's growth is eighteen percent",
+   "value": {
+    "data": {
+     "tbl": [
+      "gst/gst_2026_10",
+      "Growth % (our calculation, 1 decimal)"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "min": 18.0,
+   "max": 19.0
+  },
+  {
+   "says": "Tamil Nadu's growth is three percent",
+   "value": {
+    "data": {
+     "tbl": [
+      "gst/gst_2026_10",
+      "Growth % (our calculation, 1 decimal)"
+     ]
+    },
+    "state": "Tamil Nadu"
+   },
+   "min": 3.0,
+   "max": 3.5
+  },
+  {
+   "says": "Karnataka grew twelve percent over seven months",
+   "value": {
+    "data": {
+     "tbl": [
+      "gst/gst_2026_10",
+      "Apr-Oct domestic: Growth on Apr-Oct 2025 % (printed)"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "min": 12.0,
+   "max": 12.5
+  },
+  {
+   "says": "Tamil Nadu fell two percent over seven months",
+   "value": {
+    "data": {
+     "tbl": [
+      "gst/gst_2026_10",
+      "Apr-Oct domestic: Growth on Apr-Oct 2025 % (printed)"
+     ]
+    },
+    "state": "Tamil Nadu"
+   },
+   "min": -2.5,
+   "max": -2.0
+  },
+  {
+   "says": "Tamil Nadu has twelve point nine lakh GSTINs",
+   "value": {
+    "data": {
+     "tbl": [
+      "gst/gst_2026_10",
+      "GSTINs, lakh (our calculation, 2 decimals)"
+     ]
+    },
+    "state": "Tamil Nadu"
+   },
+   "min": 12.85,
+   "max": 12.95
+  }
+ ]
+}

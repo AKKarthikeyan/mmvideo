@@ -1,0 +1,496 @@
+{
+ "id": "fa90",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "GSTN · Oct 2026 report",
+ "source": "Goods and Services Tax Network (GSTN), 'Gross and Net GST revenue collections for the month of October, 2026', posted 1 Nov 2026, provisional: Table 3 (domestic GST in each state, October 2026 and October 2025; GST on imports not included) and Table 4 (domestic collection April to October, growth on April to October 2025). Growth in rupees is our calculation from the printed figures. States that collected under ₹50 crore in October 2025 are left out of the ranking: Lakshadweep, Andaman and Nicobar, Mizoram.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Assam* GST, October:",
+    "up *47%* on 2025.",
+    "*Highest of 33.*"
+   ],
+   "vo": "Assam's GST rose forty-seven percent in October. Highest of thirty-three.",
+   "geo": "Assam",
+   "name": "Assam",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Assam",
+   "geo": "Assam",
+   "kicker": "GST · OCT 2026 v OCT 2025",
+   "big": "47.1%",
+   "text": "more GST collected in Assam than in October 2025. Highest of 33 states and UTs.",
+   "sub": "Domestic GST: ₹1,315 crore to ₹1,934 crore. Next: Manipur, 40.6%.",
+   "bars": [
+    {
+     "name": "Assam",
+     "label": "47.1%",
+     "frac": 0.785
+    },
+    {
+     "name": "Manipur",
+     "label": "40.6%",
+     "frac": 0.6766666666666666
+    }
+   ],
+   "vo": "Next was Manipur, at forty point six percent.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "kind": "fact",
+   "name": "Assam",
+   "geo": "Assam",
+   "kicker": "SAME MEASURE · APRIL TO OCTOBER",
+   "big": "38.3%",
+   "text": "more over seven months, April to October. Highest of 36 states and UTs.",
+   "sub": "Domestic GST, April to October 2026 over 2025. Next: Uttar Pradesh, 15.5%.",
+   "bars": [
+    {
+     "name": "Assam",
+     "label": "38.3%",
+     "frac": 0.7659999999999999
+    },
+    {
+     "name": "Uttar Pradesh",
+     "label": "15.5%",
+     "frac": 0.31
+    }
+   ],
+   "vo": "Over seven months: thirty-eight percent. Uttar Pradesh was next, at fifteen.",
+   "t0": 9.677,
+   "t1": 15.484
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Assam's rise: *₹619 crore*.",
+    "Maharashtra's rise: *₹4,137 crore*.",
+    "Rupees added: *6.7 times* Assam's."
+   ],
+   "note": "",
+   "vo": "In rupees, Maharashtra added more than six times what Assam added.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "map",
+   "title": "October GST growth, *every state*",
+   "sub": "domestic GST · Oct 2026 over Oct 2025",
+   "note": "Domestic GST recorded in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in October 2025).",
+   "anim": true,
+   "ring": [
+    "Assam"
+   ],
+   "vo": "October GST growth, in every state with a large enough base.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "note": "Domestic GST recorded in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in October 2025).",
+   "ring": [
+    "Assam"
+   ],
+   "q": "Which state next?",
+   "sub": "33 states and UTs mapped.",
+   "kind": "mapend",
+   "vo": "Which state should we map next?",
+   "t0": 27.097,
+   "t1": 30.968
+  }
+ ],
+ "total": 31.368,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "-28.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 21.64
+  },
+  {
+   "name": "Ladakh",
+   "label": "-19.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 21.755
+  },
+  {
+   "name": "Puducherry",
+   "label": "-6.3",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 21.871
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "-2.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 21.986
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 22.101
+  },
+  {
+   "name": "Chandigarh",
+   "label": "10.0",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 22.217
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "10.0",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 22.332
+  },
+  {
+   "name": "Odisha",
+   "label": "10.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 22.448
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "10.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 22.563
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "11.4",
+   "bucket": 1,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 22.678
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "11.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 22.794
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.3",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 22.909
+  },
+  {
+   "name": "Maharashtra",
+   "label": "13.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.024
+  },
+  {
+   "name": "Telangana",
+   "label": "13.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.14
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "13.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.255
+  },
+  {
+   "name": "Rajasthan",
+   "label": "15.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.37
+  },
+  {
+   "name": "Tripura",
+   "label": "16.2",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 23.486
+  },
+  {
+   "name": "Gujarat",
+   "label": "16.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.601
+  },
+  {
+   "name": "West Bengal",
+   "label": "17.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.717
+  },
+  {
+   "name": "Haryana",
+   "label": "17.3",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 23.832
+  },
+  {
+   "name": "Karnataka",
+   "label": "18.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.947
+  },
+  {
+   "name": "Kerala",
+   "label": "23.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 24.063
+  },
+  {
+   "name": "Bihar",
+   "label": "23.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.178
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "23.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.293
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "24.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.409
+  },
+  {
+   "name": "Punjab",
+   "label": "24.7",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 24.524
+  },
+  {
+   "name": "Goa",
+   "label": "26.5",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 24.639
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "29.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.755
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "29.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.87
+  },
+  {
+   "name": "Jharkhand",
+   "label": "31.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.986
+  },
+  {
+   "name": "Meghalaya",
+   "label": "35.0",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 25.101
+  },
+  {
+   "name": "Manipur",
+   "label": "40.6",
+   "bucket": 4,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 25.216
+  },
+  {
+   "name": "Assam",
+   "label": "47.1",
+   "bucket": 4,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 25.332
+  }
+ ],
+ "checked": [
+  "Assam is the highest of 33 with data (47.1%)",
+  "Assam is the highest of 36 with data (38.3%)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.545,
+   "at": 0.12,
+   "text": "Assam's GST rose forty-seven percent in October. Highest of thirty-three."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.056,
+   "at": 5.926,
+   "text": "Next was Manipur, at forty point six percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.205,
+   "at": 9.797,
+   "text": "Over seven months: thirty-eight percent. Uttar Pradesh was next, at fifteen."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.179,
+   "at": 15.604,
+   "text": "In rupees, Maharashtra added more than six times what Assam added."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.067,
+   "at": 21.41,
+   "text": "October GST growth, in every state with a large enough base."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.168,
+   "at": 27.217,
+   "text": "Which state should we map next?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Assam's GST Rose 47% in October 2026: Highest of 33"
+}

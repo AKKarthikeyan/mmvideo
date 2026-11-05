@@ -1,0 +1,502 @@
+{
+ "id": "vs90",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "GSTN · Oct 2026 report",
+ "source": "Goods and Services Tax Network (GSTN), 'Gross and Net GST revenue collections for the month of October, 2026', posted 1 Nov 2026, provisional. Round 1: growth of domestic GST recorded in the state on October 2025, our calculation from Table 3. Round 2: Table 4, April to October 2026 over 2025. Round 3: GST identification numbers (GSTINs) under central and state formations at 31 Oct 2026, Table 4, added by us, in lakh. GST is recorded where the taxpayer is registered.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Karnataka*",
+    "vs *Tamil Nadu.*",
+    "October GST, 3 rounds."
+   ],
+   "vo": "Karnataka versus Tamil Nadu. October GST, three rounds.",
+   "spots": [
+    {
+     "geo": "Karnataka",
+     "tone": "a",
+     "name": "Karnataka"
+    },
+    {
+     "geo": "Tamil Nadu",
+     "tone": "b",
+     "name": "Tamil Nadu"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "versus",
+   "label": "Growth on October 2025",
+   "note": "% · domestic GST · higher is better",
+   "a": "18.4%",
+   "b": "3.2%",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "In October, Karnataka grew eighteen percent. Tamil Nadu, three.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Growth, April to October",
+   "note": "% · domestic GST · 2026 over 2025 · higher is better",
+   "a": "12.2%",
+   "b": "-2.3%",
+   "win": "a",
+   "sa": 2,
+   "sb": 0,
+   "vo": "Over seven months, Karnataka grew twelve percent. Tamil Nadu fell two.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "versus",
+   "label": "GST ID numbers",
+   "note": "GSTINs, lakh · 31 Oct 2026 · higher is better",
+   "a": "11.6",
+   "b": "12.9",
+   "win": "b",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Tamil Nadu has more GST registrations: twelve point nine lakh.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "map",
+   "title": "October GST growth, *every state*",
+   "sub": "Karnataka 18.4 · Tamil Nadu 3.2",
+   "note": "Domestic GST in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in Oct 2025).",
+   "anim": true,
+   "ring": [
+    "Karnataka",
+    "Tamil Nadu"
+   ],
+   "vo": "October GST growth, in every state with a large enough base.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "note": "Domestic GST in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in Oct 2025).",
+   "ring": [
+    "Karnataka",
+    "Tamil Nadu"
+   ],
+   "q": "Which two states next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which two states should we compare next?",
+   "t0": 29.032,
+   "t1": 32.903
+  }
+ ],
+ "total": 33.303,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Karnataka",
+  "geo": "Karnataka"
+ },
+ "b": {
+  "name": "Tamil Nadu",
+  "geo": "Tamil Nadu"
+ },
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "-28.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 23.576
+  },
+  {
+   "name": "Ladakh",
+   "label": "-19.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.691
+  },
+  {
+   "name": "Puducherry",
+   "label": "-6.3",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 23.807
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "-2.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.922
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "3.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.037
+  },
+  {
+   "name": "Chandigarh",
+   "label": "10.0",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 24.153
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "10.0",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 24.268
+  },
+  {
+   "name": "Odisha",
+   "label": "10.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.383
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "10.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.499
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "11.4",
+   "bucket": 1,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 24.614
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "11.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.729
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.3",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 24.845
+  },
+  {
+   "name": "Maharashtra",
+   "label": "13.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.96
+  },
+  {
+   "name": "Telangana",
+   "label": "13.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.075
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "13.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.191
+  },
+  {
+   "name": "Rajasthan",
+   "label": "15.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.306
+  },
+  {
+   "name": "Tripura",
+   "label": "16.2",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 25.421
+  },
+  {
+   "name": "Gujarat",
+   "label": "16.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.537
+  },
+  {
+   "name": "West Bengal",
+   "label": "17.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.652
+  },
+  {
+   "name": "Haryana",
+   "label": "17.3",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 25.767
+  },
+  {
+   "name": "Karnataka",
+   "label": "18.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.883
+  },
+  {
+   "name": "Kerala",
+   "label": "23.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 25.998
+  },
+  {
+   "name": "Bihar",
+   "label": "23.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.113
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "23.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.229
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "24.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.344
+  },
+  {
+   "name": "Punjab",
+   "label": "24.7",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 26.459
+  },
+  {
+   "name": "Goa",
+   "label": "26.5",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 26.575
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "29.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.69
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "29.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.805
+  },
+  {
+   "name": "Jharkhand",
+   "label": "31.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.921
+  },
+  {
+   "name": "Meghalaya",
+   "label": "35.0",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 27.036
+  },
+  {
+   "name": "Manipur",
+   "label": "40.6",
+   "bucket": 4,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 27.151
+  },
+  {
+   "name": "Assam",
+   "label": "47.1",
+   "bucket": 4,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 27.267
+  }
+ ],
+ "checked": [
+  "Growth on October 2025: Karnataka 18.4, Tamil Nadu 3.2, 475% apart, Karnataka ahead",
+  "Growth, April to October: Karnataka 12.2, Tamil Nadu -2.3, 630% apart, Karnataka ahead",
+  "GST ID numbers: Karnataka 11.6, Tamil Nadu 12.92, 11% apart, Tamil Nadu ahead",
+  "score 2 to 1",
+  "Karnataka's growth is eighteen percent: 18.40",
+  "Tamil Nadu's growth is three percent: 3.20",
+  "Karnataka grew twelve percent over seven months: 12.20",
+  "Tamil Nadu fell two percent over seven months: -2.30",
+  "Tamil Nadu has twelve point nine lakh GSTINs: 12.92"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.048,
+   "at": 0.12,
+   "text": "Karnataka versus Tamil Nadu. October GST, three rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.728,
+   "at": 5.926,
+   "text": "In October, Karnataka grew eighteen percent. Tamil Nadu, three."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.754,
+   "at": 11.733,
+   "text": "Over seven months, Karnataka grew twelve percent. Tamil Nadu fell two."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.048,
+   "at": 17.539,
+   "text": "Tamil Nadu has more GST registrations: twelve point nine lakh."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.623,
+   "at": 23.346,
+   "text": "October GST growth, in every state with a large enough base."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.324,
+   "at": 29.152,
+   "text": "Which two states should we compare next?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Karnataka vs Tamil Nadu: Who Won October's GST?"
+}

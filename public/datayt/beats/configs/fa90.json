@@ -1,0 +1,146 @@
+{
+ "id": "fa90",
+ "type": "fact",
+ "rules": 2,
+ "theme": "money",
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "GSTN · Oct 2026 report",
+ "palette": "E",
+ "state": "Assam",
+ "source": "Goods and Services Tax Network (GSTN), 'Gross and Net GST revenue collections for the month of October, 2026', posted 1 Nov 2026, provisional: Table 3 (domestic GST in each state, October 2026 and October 2025; GST on imports not included) and Table 4 (domestic collection April to October, growth on April to October 2025). Growth in rupees is our calculation from the printed figures. States that collected under ₹50 crore in October 2025 are left out of the ranking: Lakshadweep, Andaman and Nicobar, Mizoram.",
+ "hook": [
+  "*Assam* GST, October:",
+  "up *47%* on 2025.",
+  "*Highest of 33.*"
+ ],
+ "hook_vo": "Assam's GST rose forty-seven percent in October. Highest of thirty-three.",
+ "facts": [
+  {
+   "state": "Assam",
+   "kicker": "GST · OCT 2026 v OCT 2025",
+   "data": {
+    "tbl": [
+     "gst/gst_2026_10",
+     "Growth %, states over Rs 50 crore in Oct-25 (our calculation, 1 decimal)"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Manipur"
+   ],
+   "bar_max": 60,
+   "text": "more GST collected in Assam than in October 2025. Highest of {n} states and UTs.",
+   "sub": "Domestic GST: ₹1,315 crore to ₹1,934 crore. Next: Manipur, 40.6%.",
+   "vo": "Next was Manipur, at forty point six percent."
+  },
+  {
+   "state": "Assam",
+   "kicker": "SAME MEASURE · APRIL TO OCTOBER",
+   "data": {
+    "tbl": [
+     "gst/gst_2026_10",
+     "Apr-Oct domestic: Growth on Apr-Oct 2025 % (printed)"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 50,
+   "text": "more over seven months, April to October. Highest of {n} states and UTs.",
+   "sub": "Domestic GST, April to October 2026 over 2025. Next: Uttar Pradesh, 15.5%.",
+   "vo": "Over seven months: thirty-eight percent. Uttar Pradesh was next, at fifteen."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Assam's rise: *₹619 crore*.",
+   "Maharashtra's rise: *₹4,137 crore*.",
+   "Rupees added: *6.7 times* Assam's."
+  ],
+  "vo": "In rupees, Maharashtra added more than six times what Assam added."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "gst/gst_2026_10",
+    "Growth %, states over Rs 50 crore in Oct-25 (our calculation, 1 decimal)"
+   ]
+  },
+  "unit": "%",
+  "dec": 1,
+  "title": "October GST growth, *every state*",
+  "sub": "domestic GST · Oct 2026 over Oct 2025",
+  "note": "Domestic GST recorded in the state, before refunds; provisional. Blank: Lakshadweep, Andaman and Nicobar, Mizoram (under ₹50 crore in October 2025).",
+  "ring": [
+   "Assam"
+  ],
+  "vo": "October GST growth, in every state with a large enough base."
+ },
+ "end": {
+  "q": "Which state next?",
+  "sub": "33 states and UTs mapped.",
+  "vo": "Which state should we map next?"
+ },
+ "yt_title": "Assam's GST Rose 47% in October 2026: Highest of 33",
+ "tests": [
+  {
+   "says": "Assam's October growth is 47 percent",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "gst/gst_2026_10",
+        "Oct-26 (Rs crore)"
+       ]
+      },
+      "state": "Assam"
+     },
+     {
+      "data": {
+       "tbl": [
+        "gst/gst_2026_10",
+        "Oct-25 (Rs crore)"
+       ]
+      },
+      "state": "Assam"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 146.5,
+   "max": 147.5
+  },
+  {
+   "says": "Maharashtra added more than six times what Assam added in rupees",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "gst/gst_2026_10",
+        "Oct-26 (Rs crore)"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "tbl": [
+        "gst/gst_2026_10",
+        "Oct-25 (Rs crore)"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 113,
+   "max": 114
+  }
+ ]
+}

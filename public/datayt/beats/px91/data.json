@@ -1,0 +1,501 @@
+{
+ "id": "px91",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "MoSPI · ASI · 2024-25",
+ "source": "Ministry of Statistics and Programme Implementation, Annual Survey of Industries 2024-25 (factsheet 30 Sep 2026; Volume I 4 Nov 2026): Annexure II Table 3, principal characteristics by major states. Registered factories and other covered units, not all manufacturing. Gross value added = net value added plus depreciation. Persons engaged are everyone working in the factory, not only workers. Shares and per-person figures are computed from the table. The table shows how much, not why.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Tamil Nadu* has the *most*",
+    "factories, 2024-25:",
+    "*third* in value added."
+   ],
+   "vo": "Tamil Nadu: most factories, third in value added.",
+   "geo": "Tamil Nadu",
+   "name": "Tamil Nadu",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "FACTORIES · ASI 2024-25",
+   "big": "41,221",
+   "text": "factories in Tamil Nadu, 15.44% of India's. Gujarat: 33,084, so Tamil Nadu has 25% more.",
+   "sub": "Registered factories and other covered units. India: 266,931. They engage 3,147,520 people, 14.99% of India's.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "41,221",
+     "frac": 0.82442
+    },
+    {
+     "name": "Gujarat",
+     "label": "33,084",
+     "frac": 0.66168
+    }
+   ],
+   "vo": "Tamil Nadu: forty-one thousand factories, twenty-five percent more than Gujarat.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "GROSS VALUE ADDED · ASI 2024-25",
+   "big": "10.9%",
+   "text": "of India's gross value added in Tamil Nadu. Maharashtra: 15.92%, so Maharashtra has 46% more.",
+   "sub": "Value added: net value added plus depreciation. Tamil Nadu ranks third, after Maharashtra and Gujarat (14.10%).",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "10.9%",
+     "frac": 0.545
+    },
+    {
+     "name": "Maharashtra",
+     "label": "15.9%",
+     "frac": 0.796
+    }
+   ],
+   "vo": "Value added: Tamil Nadu, ten point nine percent. Maharashtra, fifteen point nine.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Per person engaged,",
+    "Maharashtra's factories added",
+    "*₹15.6 lakh*; Tamil Nadu's, *₹9.3 lakh*."
+   ],
+   "note": "Gross value added divided by total persons engaged, 2024-25. India: ₹12.8 lakh. The table shows how much, not why.",
+   "vo": "Per person, Maharashtra: fifteen point six lakh. Tamil Nadu: nine point three.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "map",
+   "title": "Value added per person, *every state*",
+   "sub": "₹ lakh · India 12.8 · ASI 2024-25",
+   "note": "Gross value added ÷ total persons engaged. Blank: Dadra and Nagar Haveli and Daman and Diu, Andaman and Nicobar Islands, Lakshadweep.",
+   "anim": true,
+   "ring": [
+    "Tamil Nadu",
+    "Maharashtra"
+   ],
+   "vo": "Here is every state.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "note": "Gross value added ÷ total persons engaged. Blank: Dadra and Nagar Haveli and Daman and Diu, Andaman and Nicobar Islands, Lakshadweep.",
+   "ring": [
+    "Tamil Nadu",
+    "Maharashtra"
+   ],
+   "q": "Which *factory* town are you from?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which factory town are you from?",
+   "t0": 29.032,
+   "t1": 32.903
+  }
+ ],
+ "total": 33.303,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Nagaland",
+   "label": "1.8",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 25.511
+  },
+  {
+   "name": "Mizoram",
+   "label": "1.9",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 25.568
+  },
+  {
+   "name": "Ladakh",
+   "label": "2.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.624
+  },
+  {
+   "name": "Manipur",
+   "label": "2.2",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 25.681
+  },
+  {
+   "name": "Tripura",
+   "label": "2.8",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 25.738
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "8.0",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 25.794
+  },
+  {
+   "name": "Punjab",
+   "label": "8.3",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 25.851
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "8.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.908
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "9.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.965
+  },
+  {
+   "name": "Assam",
+   "label": "9.6",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 26.021
+  },
+  {
+   "name": "Chandigarh",
+   "label": "9.6",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 26.078
+  },
+  {
+   "name": "Telangana",
+   "label": "9.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.135
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "9.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.191
+  },
+  {
+   "name": "Kerala",
+   "label": "9.9",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 26.248
+  },
+  {
+   "name": "Bihar",
+   "label": "10.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.305
+  },
+  {
+   "name": "West Bengal",
+   "label": "11.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.361
+  },
+  {
+   "name": "Haryana",
+   "label": "11.9",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 26.418
+  },
+  {
+   "name": "Puducherry",
+   "label": "12.8",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 26.475
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "12.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.532
+  },
+  {
+   "name": "Rajasthan",
+   "label": "13.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.588
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "13.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.645
+  },
+  {
+   "name": "Gujarat",
+   "label": "13.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.702
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "14.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.758
+  },
+  {
+   "name": "Meghalaya",
+   "label": "14.7",
+   "bucket": 3,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 26.815
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "14.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.872
+  },
+  {
+   "name": "Karnataka",
+   "label": "15.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.928
+  },
+  {
+   "name": "Maharashtra",
+   "label": "15.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 26.985
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "16.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.042
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "16.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.099
+  },
+  {
+   "name": "Jharkhand",
+   "label": "20.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.155
+  },
+  {
+   "name": "Goa",
+   "label": "20.9",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 27.212
+  },
+  {
+   "name": "Odisha",
+   "label": "28.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.269
+  },
+  {
+   "name": "Sikkim",
+   "label": "74.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 27.325
+  }
+ ],
+ "checked": [
+  "Tamil Nadu 41221 rounds to 41221",
+  "Gujarat 33084 rounds to 33084",
+  "Tamil Nadu 3.14752e+06 rounds to 3147520",
+  "Tamil Nadu / Gujarat = 1.25 (at least 1.24)",
+  "Maharashtra / Tamil Nadu = 1.46 (at least 1.45)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.918,
+   "at": 0.12,
+   "text": "Tamil Nadu: most factories, third in value added."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.937,
+   "at": 5.926,
+   "text": "Tamil Nadu: forty-one thousand factories, twenty-five percent more than Gujarat."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.668,
+   "at": 11.733,
+   "text": "Value added: Tamil Nadu, ten point nine percent. Maharashtra, fifteen point nine."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.657,
+   "at": 19.475,
+   "text": "Per person, Maharashtra: fifteen point six lakh. Tamil Nadu: nine point three."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 1.645,
+   "at": 25.281,
+   "text": "Here is every state."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 1.75,
+   "at": 29.152,
+   "text": "Which factory town are you from?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Tamil Nadu: Most Factories, 3rd in Value Added (ASI 2024-25)"
+}

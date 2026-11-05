@@ -5,6 +5,7 @@ Usage (repo root): python3 scripts/datayt/week_pack.py <id> <YYYY-MM-DD>
 Reads public/datayt/beats/<id>/data.json (title, source, what the builder checked, length) and
 public/datayt/beats/packs/<id>.json (the words a person wrote: description, pinned comment, checks done and not done).
 Writes out/datakadai/daily/<date>/<id>/captions.md and copies it to docs/datakadai/posts/<date>-<id>.md.
+Then copies every rendered cut (short*.mp4) to the channel folder DataKadai/videos/ as <id>-<date>-<cut>.mp4 (scripts/deliver.py).
 The video files are rendered separately. Nothing is posted: posting needs AK's go.
 """
 import json, os, shutil, sys
@@ -40,3 +41,10 @@ open(f"{out}/captions.md", "w").write("\n".join(L) + "\n")
 os.makedirs("docs/datakadai/posts", exist_ok=True)
 shutil.copy(f"{out}/captions.md", f"docs/datakadai/posts/{date}-{sid}.md")
 print(f"{sid}: pack written to {out}/captions.md ({len(title)}-character title, {D['total']:.0f} s)")
+
+# AK: every finished video goes to its channel folder (scripts/deliver.py)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from deliver import deliver
+for f in sorted(os.listdir(out)):
+    if f.startswith("short") and f.endswith(".mp4"):
+        deliver("datakadai", f"{out}/{f}", name=f"{sid}-{date}-{f}")

@@ -29,3 +29,11 @@ for src in sys.argv[1:]:
         b = read(out, d)
         print(f"{src.split('/')[-1]}: {lufs:.1f} LUFS, peak {peak:.1f} -> gain {gain:+.1f} dB -> "
               f"{pl.Meter(48000).integrated_loudness(b):.1f} LUFS, peak {20 * np.log10(np.abs(b).max()):.1f}")
+
+# AK: every finished video goes to its channel folder (scripts/deliver.py in the repo)
+import glob, os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../scripts"))
+from deliver import deliver
+for f in sorted(glob.glob("out/datakadai/nightlights/*_final.mp4")):
+    deliver("datakadai", f, sub="Night lights 2012 v 2025 - DRAFT 2026-11-05",
+            name=f"nl-{os.path.basename(f)[:-len('_final.mp4')]}-2012-2025-draft.mp4")

@@ -145,7 +145,45 @@ def cues_a2(T, end):
     c += [(A["poss"], "drop"), (A["court"], "boom"), (A["court"] + 0.3, "pop"), (A["cont"] + 0.35, "stamp"), (A["does"] + 0.3, "drop")]
     return c + wipes([A["pic"], A["svc"], A["phone"], A["court"], A["does"]], end)
 
-CUES = {"A1": cues_a1, "A2": cues_a2}
+def take(T, pairs):
+    return {k: T(p) for k, p in pairs}
+
+def cues_a4(T, end):
+    A = take(T, [("brain", "brain"), ("apple", "apple says"), ("and", "and a significant"), ("pic", "picture a"), ("rents", "rents the"), ("asked", "asked about"),
+                 ("tsmc", "tsmcs ceo"), ("lord", "thats landlordspeak"), ("up", "going up"), ("so", "so who"), ("chef", "the chef or")])
+    c = [(0.05, "air"), (A["brain"], "lock1"), (A["apple"], "paper")] + [(A["apple"] + 0.3 + i * 0.35, "tick") for i in range(5)] + [(A["apple"] + 1.8, "pop_hi")]
+    c += [(A["and"] + 0.2 + i * 0.25, "pop_low") for i in range(4)]
+    c += [(A["pic"], "thud"), (A["pic"] + 0.3, "air"), (A["pic"] + 0.8, "paper"), (A["rents"], "pop"), (A["asked"], "thud"), (A["tsmc"], "pop"),
+          (A["lord"], "thud"), (A["lord"] + 0.3, "pop"), (A["up"], "lock3"), (A["so"], "thud"), (A["chef"], "pop_low")]
+    return c + wipes([A["apple"], A["pic"], A["asked"], A["lord"], A["so"]], end)
+
+def cues_v1(T, end):
+    A = take(T, [("because", "because a"), ("build", "build a"), ("right", "right and"), ("every", "every shop"), ("card", "and every card"), ("loop", "that loop"),
+                 ("n", "45.9"), ("up", "up 15%"), ("beat", "to beat"), ("sw", "switch at"), ("who", "who organises")])
+    c = [(0.05, "air"), (A["because"] + 0.1, "pop_low"), (A["because"] + 0.4, "pop"), (A["because"] + 0.7, "pop_hi")] + [(A["because"] + 0.9 + i * 0.3, "tick") for i in range(3)]
+    c += [(A["build"], "thud"), (A["build"] + 0.6, "pop"), (A["right"], "drop"), (A["every"], "pop"), (A["every"] + 0.25, "pop"), (A["every"] + 0.6, "air"), (A["card"], "air")]
+    c += [(A["n"] + i * 0.4, "tick") for i in range(3)] + [(A["n"] + 1.4, "lock2"), (A["up"], "stamp"), (A["beat"], "paper"), (A["sw"], "pop_hi"), (A["sw"] + 0.4, "pop_hi"),
+          (A["who"] - 0.4, "air"), (A["who"] + 0.2, "pop_hi"), (A["who"] + 0.65, "pop"), (A["who"] + 1.1, "pop_low")]
+    return c + wipes([A["because"], A["build"], A["every"], A["loop"], A["beat"]], end)
+
+def cues_v2(T, end):
+    A = take(T, [("near", "near 60%"), ("by", "by running"), ("pot", "the potholes"), ("when", "when you"), ("bank", "the bank takes"), ("net", "the network"), ("fee", "fee at"),
+                 ("flow", "sent no flowers"), ("jul", "in july"), ("v", "59.8%"), ("m", "mastercards"), ("same", "same number"), ("most", "most businesses"), ("why", "so why")])
+    c = [(0.3 + i * 0.4, "tick") for i in range(4)] + [(A["near"] + 0.4, "lock1"), (A["by"], "thud"), (A["by"] + 0.4, "pin")]
+    c += [(A["pot"] + i * 0.15, "pop_low") for i in range(3)] + [(A["when"] + 0.2, "thud")] + [(A["bank"] + 0.3 + i * 0.35, "tick") for i in range(3)]
+    c += [(A["net"], "air"), (A["fee"], "coin"), (A["flow"] - 0.2, "pop"), (A["flow"] + 0.4, "drop"), (A["jul"] + 0.3, "air"), (A["v"], "lock2"), (A["m"] + 0.3, "lock3"),
+          (A["same"], "air"), (A["most"], "pin")] + [(A["why"] + 0.2 + i * 0.18, "pop") for i in range(5)]
+    return c + wipes([A["by"], A["jul"], A["same"], A["why"]], end)
+
+def cues_v3(T, end):
+    A = take(T, [("sticker", "tiny sticker"), ("its", "its the"), ("nob", "nobody reads"), ("ev", "everybody trusts"), ("mc", "mastercards gross"), ("n", "3 trillion"),
+                 ("and", "and trust"), ("food", "food poisoning"), ("so", "so what"), ("qr", "qr code")])
+    c = [(0.05, "air"), (A["sticker"], "pop_hi"), (A["its"], "thud"), (A["its"] + 0.3, "pop"), (A["nob"] - 0.2, "paper"), (A["ev"], "lock1")]
+    c += [(A["mc"] + 0.3 + i * 0.6, "tick") for i in range(3)] + [(A["n"] + 1.2, "lock2"), (A["and"], "air"), (A["food"], "stamp"), (A["food"] + 0.2, "drop"),
+          (A["food"] + 1.3, "pop"), (A["so"], "thud"), (A["qr"] - 0.1, "pin"), (A["qr"] + 0.5, "pop_hi")]
+    return c + wipes([A["its"], A["mc"], A["and"], A["so"]], end)
+
+CUES = {"A1": cues_a1, "A2": cues_a2, "A4": cues_a4, "V1": cues_v1, "V2": cues_v2, "V3": cues_v3}
 
 
 # ---- mix

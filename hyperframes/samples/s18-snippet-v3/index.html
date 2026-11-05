@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- Sample 18 · Moat Snippet V3 "The sticker on the door" (Mastercard): 9:16 short on the voiceover's word times (assets/timing.js).
+     Script, sources and verification: scripts/moat_snippets/final/. Drawings are illustrative (no brand marks, a generic card sticker).
+     Facts on screen: Mastercard Q3 2026 release, 29 Oct 2026 (gross dollar volume about $3.0 trillion, +7% local currency). Scaffold: assets/lib/snippet.js. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat Snippet V3 The sticker</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/timing.js"></script>
+    <script src="assets/lib/snippet.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="26.25" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div class="sc" id="s1">
+          <div class="abs" id="door" data-layout-allow-overlap style="left:240px;top:660px;width:600px;transform-origin:62% 52%"></div>
+          <div class="tag2">MASTERCARD · SNIPPET 8</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <div class="sc" id="s2">
+          <div class="abs" id="window" style="left:90px;top:560px;width:900px;height:760px;border-radius:20px;background:linear-gradient(160deg,#cfe7ea,#9cc4c9);border:16px solid #12301f;box-shadow:0 24px 50px rgba(0,0,0,.3)"></div>
+          <div class="abs" id="grade" style="left:330px;top:700px;width:420px;height:500px;background:#f4f0e8;border:10px solid #12301f;border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,.25);text-align:center">
+            <div style="font:700 34px/1 Oswald;letter-spacing:.16em;margin-top:30px;color:#12301f">HYGIENE GRADE</div>
+            <div id="gl" style="font:700 300px/1 Playfair,serif;color:#146147;margin-top:20px">A</div>
+          </div>
+          <div class="abs" id="rules" style="left:0;top:0;width:1080px;height:1920px" data-layout-ignore></div>
+          <div class="town" id="nob" style="left:90px;top:1380px;width:420px">NOBODY READS THE RULES</div>
+          <div class="town" id="evb" style="left:570px;top:1460px;width:420px">EVERYBODY TRUSTS THE LETTER</div>
+          <div class="tag2">MASTERCARD · SNIPPET 8</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <div class="sc" id="s3">
+          <div class="num" id="n3" style="top:640px;font-size:200px">$0.0T</div><div class="lab" style="top:870px">GROSS DOLLAR VOLUME · ONE QUARTER</div>
+          <div class="abs" id="stack" style="left:240px;top:960px;width:600px;height:560px" data-layout-ignore></div>
+          <div class="tag2">MASTERCARD · Q3 2026</div>
+          <div class="srcl">Mastercard Q3 2026 release, 29 Oct 2026 (gross dollar volume, +7% local currency)</div>
+        </div>
+        <div class="sc" id="s4">
+          <div class="abs" id="mon" style="left:140px;top:640px;width:800px;height:420px;border-radius:24px;background:#12301f;box-shadow:0 24px 50px rgba(0,0,0,.35)"><svg class="abs" style="left:30px;top:30px" width="740" height="360" viewBox="0 0 740 360"><path id="flat" fill="none" stroke="#58c7a0" stroke-width="10" stroke-linejoin="round"/></svg></div>
+          <div class="abs" id="grade4" style="left:330px;top:1120px;width:420px;height:420px;background:#f4f0e8;border:10px solid #12301f;border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,.25);text-align:center">
+            <div style="font:700 30px/1 Oswald;letter-spacing:.16em;margin-top:26px;color:#12301f">HYGIENE GRADE</div><div id="gl4" style="font:700 260px/1 Playfair,serif;color:#146147;margin-top:14px">A</div>
+          </div>
+          <div class="tag2">MASTERCARD · SNIPPET 8</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <div class="sc" id="s5">
+          <div class="abs" id="door5" style="left:240px;top:560px;width:600px"></div>
+          <div class="abs" id="qr" style="left:0;top:0;width:260px;height:260px;background:#f4f0e8;border:8px solid #12301f;border-radius:16px;box-shadow:0 18px 36px rgba(0,0,0,.35)"></div>
+          <div class="tag2">MASTERCARD · SNIPPET 8</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const S = SNIP.start({ sources: "Mastercard", wipe2: "#e0a93a" }), $ = S.$, { sp, rnd, C, E, L, pop, END } = S;
+      window.__timelines.main = S.tl;
+      const A = S.anchors({ sticker: "tiny sticker", its: "its the", nob: "nobody reads", ev: "everybody trusts", mc: "mastercards gross", n: "3 trillion", and: "and trust",
+        bor: "is boring", point: "the point", food: "food poisoning", so: "so what", hint: "hint", qr: "qr code" });
+      S.scenes([["s1", 0, A.its], ["s2", A.its, A.mc], ["s3", A.mc, A.and], ["s4", A.and, A.so], ["s5", A.so, END]]);
+      // ---- art
+      const doorSvg = `<svg viewBox="0 0 600 1000" width="600" height="1000"><rect x="0" y="0" width="600" height="1000" rx="20" fill="#8a5a2b" stroke="#12301f" stroke-width="14"/><rect x="60" y="60" width="480" height="520" rx="12" fill="#bfdfe3" stroke="#12301f" stroke-width="10"/>
+        <path d="M100 100 L220 100 L120 300 Z" fill="#fff" opacity=".35"/><rect x="60" y="640" width="480" height="300" rx="12" fill="none" stroke="#5c3a18" stroke-width="10"/><circle cx="500" cy="600" r="22" fill="#e0a93a" stroke="#12301f" stroke-width="6"/>
+        <text x="300" y="160" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="56" letter-spacing="10" fill="#12301f">OPEN</text>
+        <g transform="translate(330 470)"><rect width="140" height="90" rx="10" fill="#f4f0e8" stroke="#12301f" stroke-width="5"/><rect x="16" y="14" width="56" height="38" rx="6" fill="#1f5a3c"/><rect x="24" y="24" width="12" height="9" rx="2" fill="#e0a93a"/><text x="106" y="44" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="20" fill="#12301f">CARDS</text><text x="70" y="76" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="17" letter-spacing="1" fill="#12301f">ACCEPTED</text></g></svg>`;
+      $("door").innerHTML = doorSvg; $("door5").innerHTML = doorSvg;
+      const rules = []; for (let i = 0; i < 7; i++) { const d = document.createElement("div"); d.className = "abs"; d.innerHTML = `<svg viewBox="0 0 160 200" width="160" height="200"><rect width="160" height="200" rx="8" fill="#fbf8f1" stroke="#12301f" stroke-width="5"/>${[0, 1, 2, 3, 4, 5].map((k) => `<rect x="18" y="${24 + k * 28}" width="${110 - (k % 3) * 20}" height="10" rx="5" fill="#9aa79f"/>`).join("")}</svg>`; $("rules").appendChild(d); rules.push(d); }
+      // three trillion as three stacks of bills, one a trillion
+      let st = ""; for (let s = 0; s < 3; s++) for (let k = 0; k < 9; k++) st += `<div class="abs bill" data-s="${s}" data-k="${k}" style="left:${s * 210}px;top:${470 - k * 48}px;width:180px;height:60px;border-radius:8px;background:linear-gradient(90deg,#2f9e7a,#58c7a0);border:4px solid #12301f"></div>`;
+      $("stack").innerHTML = st; const bills = [...document.querySelectorAll(".bill")];
+      // flat line, with one spike at "food poisoning"
+      const flatD = (spike) => { let d = "M0 200"; for (let x = 0; x <= 740; x += 20) { const y = x === 560 ? 200 - 170 * spike : x === 580 ? 200 + 120 * spike : 200 + Math.sin(x * 0.3) * 3; d += ` L${x} ${y}`; } return d; };
+      let q = ""; for (let i = 0; i < 49; i++) { const x = i % 7, y = Math.floor(i / 7), finder = (x < 2 && y < 2) || (x > 4 && y < 2) || (x < 2 && y > 4); if (finder || rnd(i, 9) > 0.5) q += `<rect x="${18 + x * 30}" y="${18 + y * 30}" width="28" height="28" fill="#12301f"/>`; }
+      $("qr").innerHTML = `<svg viewBox="0 0 250 250" width="244" height="244">${q}</svg>`;
+      // ---- captions
+      S.cap(210, ["A tiny sticker", "on the *door*"], 0.05, A.its - 0.15, "sm");
+      S.cap(210, ["The *A-grade*", "in the window"], A.its + 0.05, A.mc - 0.15, "sm");
+      S.cap(210, ["About ~$3 trillion~", "in a quarter"], A.n - 0.1, A.and - 0.15, "sm");
+      S.cap(210, ["Boring is", "the *point*"], A.bor, A.so - 0.15);
+      S.cap(210, ["What beats", "a *sticker?*"], A.so + 0.05, END + 0.1);
+      // ---- motion
+      S.render((t) => {
+        const du = sp((t - 0.05) / 0.9), z = 1 + 0.35 * E.io3((t - A.sticker) / 1.0); $("door").style.transform = `translateY(${(1 - Math.min(du, 1)) * 900}px) scale(${z})`;
+        const wu = pop(t, A.its, 0.7); $("window").style.opacity = wu.o; $("window").style.transform = `scale(${0.8 + 0.2 * Math.min(wu.u, 1.05)})`;
+        const gu = pop(t, A.its + 0.3, 0.7); $("grade").style.opacity = gu.o; $("grade").style.transform = `scale(${gu.s}) rotate(${Math.sin(t * 2) * 1.5}deg)`;
+        rules.forEach((r, i) => { const t0 = A.nob - 0.2 + i * 0.12, u = C((t - t0) / 1.4); r.style.opacity = String(u > 0 && u < 1 ? 1 - u * u : 0);
+          r.style.transform = `translate(${L(140 + (i % 4) * 200, -300 + rnd(i, 2) * 1500, u)}px, ${L(1500, 1900 + rnd(i, 3) * 200, u)}px) rotate(${u * (rnd(i, 4) * 400 - 200)}deg)`; });
+        $("nob").style.opacity = C((t - A.nob) * 3); $("evb").style.opacity = C((t - A.ev) * 3);
+        const nv = 3.0 * E.io3((t - A.n) / 1.2); $("n3").textContent = `$${nv.toFixed(1)}T`;
+        bills.forEach((b) => { const s = +b.dataset.s, k = +b.dataset.k, t0 = A.mc + 0.3 + s * 0.6 + k * 0.08, u = sp((t - t0) / 0.4); b.style.opacity = C(u * 3); b.style.transform = `translateY(${(1 - Math.min(u, 1)) * -300}px)`; });
+        const mu = pop(t, A.and, 0.6); $("mon").style.opacity = mu.o; $("mon").style.transform = `scale(${0.8 + 0.2 * Math.min(mu.u, 1.05)})`;
+        const spike = C((t - A.food) / 0.15) * (1 - C((t - A.food - 0.9) / 0.4)); $("flat").setAttribute("d", flatD(spike)); $("flat").setAttribute("stroke", spike > 0.2 ? "#d9483b" : "#58c7a0");
+        const g4 = pop(t, A.and + 0.4, 0.6); $("grade4").style.opacity = g4.o; $("grade4").style.transform = `scale(${g4.s}) rotate(${spike * 6 * Math.sin(t * 30)}deg)`;
+        const bad = t > A.food + 0.1 && t < A.food + 1.3; $("gl4").textContent = bad ? "C" : "A"; $("gl4").style.color = bad ? "#b3261b" : "#146147";
+        const qu = sp((t - A.qr + 0.1) / 0.6), qx = L(1200, 470, Math.min(qu, 1.05)); $("qr").style.opacity = C((t - A.hint) * 3); $("qr").style.transform = `translate(${qx}px, 980px) rotate(${(1 - Math.min(qu, 1)) * 30 - 4}deg)`;
+        $("door5").style.transform = `scale(${1 + 0.02 * Math.sin(t * 2)})`;
+      });
+    </script>
+  </body>
+</html>

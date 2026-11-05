@@ -17,4 +17,9 @@ Format: about 2.8 spoken words a second (80 words at most). Visuals start from `
 4. `python3 scripts/moat_snippets/voice.py A1 --mux [--music bed.mp3]` writes `out/hyperframes/moat-snippet-a1.mp4`.
 5. Sound effects: `python3 scripts/moat_snippets/sfx.py A1` (needs numpy) mixes code-made effects under the voice and rewrites the same file.
    Each snippet has a cue sheet in `sfx.py` keyed to the scene's word anchors; `--dry` prints it. A new snippet needs its own `cues_<id>` function.
-The scenes follow the voiceover's word times, so a new voice needs no re-editing, only steps 2 to 4. A1 and A2 are built as video so far.
+6. YouTube kit: `python3 scripts/moat_snippets/kit.py A1` writes the DRAFT video, English .srt, cover frame and upload text to
+   `/Volumes/DarwinSSD/Moat and Margin/Moat Atlas - Moat Snippets - DRAFT 2026-11-05/` (copy per snippet in `COPY` in kit.py).
+
+New scenes (A4 onwards) load `hyperframes/shared/lib/snippet.js`: styles, word anchors, captions, scene switching, wipes, background and end card,
+so a sample only draws its own art and motion. Copy `s18-snippet-v1` to start one.
+The scenes follow the voiceover's word times, so a new voice needs no re-editing, only steps 2 to 4. A1, A2, A4, V1, V2 and V3 are built as video so far.

@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- Sample 18 · Moat Snippet V2 "The toll without the pothole" (Visa, Mastercard): 9:16 short on the voiceover's word times (assets/timing.js).
+     Script, sources and verification: scripts/moat_snippets/final/. Drawings are illustrative (no brand marks). Facts on screen: Visa release,
+     27 Oct 2026 (July-September operating margin 59.8%, our arithmetic: operating income / net revenue); Mastercard release, 29 Oct 2026 (59.8%).
+     Scaffold: assets/lib/snippet.js. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat Snippet V2 The toll</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/timing.js"></script>
+    <script src="assets/lib/snippet.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="30.06" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div class="sc" id="s1">
+          <div class="num" id="n1" style="top:760px;font-size:300px">0%</div><div class="lab" style="top:1080px">OPERATING MARGIN</div>
+          <div class="abs" id="gauge" style="left:190px;top:1180px;width:700px;height:60px;border-radius:30px;background:#cfcabd;overflow:hidden;box-shadow:inset 0 4px 8px rgba(0,0,0,.2)"><div id="gfill" style="height:100%;width:0;background:linear-gradient(90deg,#2f9e7a,#e0a93a)"></div></div>
+          <div class="tag2">VISA · MASTERCARD · SNIPPET 7</div>
+        </div>
+        <div class="sc" id="s2">
+          <div class="abs" id="road" style="left:0;top:880px;width:1080px;height:640px"></div>
+          <div class="abs" id="gate" style="left:620px;top:640px;width:300px;transform-origin:50% 100%"></div>
+          <div class="abs" id="bank" style="left:60px;top:1260px;width:330px;transform-origin:50% 100%"></div>
+          <div class="abs" id="coin" style="left:0;top:0;width:70px"></div>
+          <div class="abs" id="flower" style="left:440px;top:700px;width:150px;transform-origin:50% 100%"></div>
+          <div class="town" id="netl" style="left:600px;top:560px;width:340px">THE NETWORK</div>
+          <div class="tag2">VISA · MASTERCARD · SNIPPET 7</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+        <div class="sc" id="s3">
+          <div class="abs" id="colV" style="left:170px;top:640px;width:330px;height:760px"></div>
+          <div class="abs" id="colM" style="left:580px;top:640px;width:330px;height:760px"></div>
+          <div class="rowlab" style="left:170px;top:1430px;width:330px">VISA</div><div class="rowlab" style="left:580px;top:1430px;width:330px">MASTERCARD</div>
+          <div class="rowlab" style="left:90px;top:1490px;width:900px;font-size:30px;color:#34493c">OPERATING MARGIN · JULY TO SEPTEMBER 2026</div>
+          <div class="tag2">VISA · MASTERCARD · Q3 2026</div>
+          <div class="srcl">Visa (27 Oct 2026) and Mastercard (29 Oct 2026) releases; Visa margin is our arithmetic</div>
+        </div>
+        <div class="sc" id="s4">
+          <div class="abs" id="frame" style="left:150px;top:620px;width:780px;height:880px;border:34px solid #b27d0f;border-radius:10px;background:#f4f0e8;box-shadow:0 30px 60px rgba(0,0,0,.35), inset 0 0 0 10px #f0bd4f;transform-origin:50% 0">
+            <div style="position:absolute;left:0;right:0;top:120px;text-align:center;font:700 150px/1 Playfair,serif;color:#12301f">59.8%</div>
+            <div style="position:absolute;left:0;right:0;top:300px;text-align:center;font:700 120px/1 Playfair,serif;color:#7a4f06">=</div>
+            <div style="position:absolute;left:0;right:0;top:450px;text-align:center;font:700 150px/1 Playfair,serif;color:#12301f">59.8%</div>
+            <div style="position:absolute;left:0;right:0;top:660px;text-align:center;font:700 34px/1 Oswald;letter-spacing:.14em;color:#34493c">VISA · MASTERCARD</div>
+          </div>
+          <svg class="abs" id="nail" style="left:510px;top:520px" width="60" height="120" viewBox="0 0 60 120"><path d="M30 0 L4 100 M30 0 L56 100" stroke="#12301f" stroke-width="5"/><circle cx="30" cy="8" r="10" fill="#7d8a82"/></svg>
+          <div class="tag2">VISA · MASTERCARD · SNIPPET 7</div>
+        </div>
+        <div class="sc" id="s5">
+          <div class="abs" id="road5" style="left:0;top:880px;width:1080px;height:640px"></div>
+          <div class="abs" id="cones" style="left:0;top:0;width:1080px;height:1920px"></div>
+          <div class="town" id="cheap" style="left:90px;top:1600px;width:420px">A CHEAPER ROAD?</div>
+          <div class="tag2">VISA · MASTERCARD · SNIPPET 7</div><div class="ill">ILLUSTRATIVE</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const S = SNIP.start({ sources: "Visa, Mastercard", wipe2: "#e0a93a" }), $ = S.$, { sp, rnd, C, E, L, pop, END } = S;
+      window.__timelines.main = S.tl;
+      const A = S.anchors({ near: "near 60%", by: "by running", pot: "the potholes", when: "when you", bank: "the bank takes", net: "the network", fee: "fee at", flow: "sent no flowers",
+        jul: "in july", v: "59.8%", so: "so was", m: "mastercards", same: "same number", most: "most businesses", why: "so why" });
+      S.scenes([["s1", 0, A.by], ["s2", A.by, A.jul], ["s3", A.jul, A.same], ["s4", A.same, A.why], ["s5", A.why, END]]);
+      // ---- art: a road over the ground, potholes, a toll gate, a bank that fills the holes
+      const roadSvg = (holes) => `<svg viewBox="0 0 1080 640" width="1080" height="640"><rect y="120" width="1080" height="520" fill="#8fa889"/><path d="M0 220 H1080 V470 H0 Z" fill="#4a4f4c"/><path d="M0 345 H1080" stroke="#f4f0e8" stroke-width="10" stroke-dasharray="60 40"/>
+        <path d="M0 220 H1080 M0 470 H1080" stroke="#12301f" stroke-width="8"/>${holes ? [[230, 290], [430, 410], [360, 260]].map(([x, y], i) => `<ellipse class="hole" data-i="${i}" cx="${x}" cy="${y}" rx="${52 - i * 6}" ry="${20 - i * 2}" fill="#1b1d1c" stroke="#2c302e" stroke-width="5"/>`).join("") : ""}</svg>`;
+      $("road").innerHTML = roadSvg(true); $("road5").innerHTML = roadSvg(false);
+      const holes = [...document.querySelectorAll("#road .hole")];
+      $("gate").innerHTML = `<svg viewBox="0 0 300 470"><rect x="30" y="60" width="140" height="400" rx="12" fill="#f4f0e8" stroke="#12301f" stroke-width="10"/><path d="M10 70 L100 10 L190 70 Z" fill="#2f9e7a" stroke="#12301f" stroke-width="10" stroke-linejoin="round"/>
+        <rect x="55" y="110" width="90" height="70" rx="8" fill="#8fd1b6" stroke="#12301f" stroke-width="7"/><text x="100" y="250" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="38" letter-spacing="3" fill="#12301f">FEE</text>
+        <g id="arm"><rect x="160" y="330" width="140" height="22" rx="10" fill="#d9483b" stroke="#12301f" stroke-width="5"/><rect x="200" y="330" width="22" height="22" fill="#f4f0e8"/><rect x="250" y="330" width="22" height="22" fill="#f4f0e8"/></g></svg>`;
+      $("bank").innerHTML = `<svg viewBox="0 0 330 360"><ellipse cx="165" cy="350" rx="150" ry="10" fill="rgba(0,0,0,.25)"/><path d="M10 110 L165 20 L320 110 Z" fill="#f4f0e8" stroke="#12301f" stroke-width="10" stroke-linejoin="round"/><rect x="30" y="110" width="270" height="30" fill="#e6e1d6" stroke="#12301f" stroke-width="8"/>
+        ${[0, 1, 2, 3].map((i) => `<rect x="${50 + i * 62}" y="140" width="34" height="160" fill="#f4f0e8" stroke="#12301f" stroke-width="6"/>`).join("")}<rect x="16" y="300" width="298" height="44" fill="#d8d2c4" stroke="#12301f" stroke-width="8"/>
+        <text x="165" y="96" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="36" letter-spacing="6" fill="#12301f">BANK</text>
+        <g id="shovel" transform="rotate(0 300 200)"><rect x="290" y="120" width="12" height="150" rx="5" fill="#8a5a2b"/><path d="M276 266 H316 L310 320 Q296 334 282 320 Z" fill="#7d8a82" stroke="#12301f" stroke-width="5"/></g></svg>`;
+      $("coin").innerHTML = `<svg viewBox="0 0 60 60" width="70" height="70"><circle cx="30" cy="30" r="26" fill="#f0bd4f" stroke="#12301f" stroke-width="5"/><text x="30" y="41" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="32" fill="#12301f">$</text></svg>`;
+      $("flower").innerHTML = `<svg viewBox="0 0 150 260"><path id="stem" d="M75 260 Q70 180 75 110" stroke="#2f9e7a" stroke-width="10" fill="none"/><g id="head">${[0, 1, 2, 3, 4, 5].map((i) => `<ellipse cx="75" cy="70" rx="18" ry="38" fill="#d9483b" transform="rotate(${i * 60} 75 100) translate(0 0)"/>`).join("")}<circle cx="75" cy="100" r="20" fill="#e0a93a"/></g>
+        <path d="M30 40 L120 160 M120 40 L30 160" stroke="#9a2616" stroke-width="14" stroke-linecap="round" id="nox"/></svg>`;
+      const col = (id, color) => { $(id).innerHTML = `<div class="abs" style="left:0;bottom:0;width:330px;height:100%;border-radius:18px;background:rgba(18,48,31,.12);box-shadow:inset 0 0 0 4px rgba(18,48,31,.25)"></div>
+        <div class="abs bar" style="left:0;bottom:0;width:330px;border-radius:18px;background:${color};box-shadow:0 20px 40px rgba(0,0,0,.3)"><div class="pct" style="position:absolute;left:0;right:0;top:40px;text-align:center;font:700 96px/1 Playfair,serif;color:#12301f">59.8%</div></div>`; return { bar: $(id).querySelector(".bar"), pct: $(id).querySelector(".pct") }; };
+      const cV = col("colV", "linear-gradient(#3fb48c,#2f9e7a)"), cM = col("colM", "linear-gradient(#f0bd4f,#d09524)");
+      let cn = ""; for (let i = 0; i < 5; i++) cn += `<div class="abs cone" style="left:${120 + i * 190}px;top:${1170 + (i % 2) * 70}px"><svg viewBox="0 0 100 120" width="100" height="120"><path d="M50 4 L84 104 H16 Z" fill="#e0703a" stroke="#12301f" stroke-width="5"/><path d="M33 52 H67 M25 78 H75" stroke="#f4f0e8" stroke-width="10"/><rect x="6" y="100" width="88" height="16" rx="4" fill="#12301f"/></svg></div>`;
+      $("cones").innerHTML = cn; const cones = [...document.querySelectorAll(".cone")];
+      // ---- captions
+      S.cap(210, ["Operating margins", "near *60%?*"], 0.05, A.by - 0.15, "sm");
+      S.cap(210, ["Run the road,", "not the *potholes*"], A.by + 0.05, A.bank - 0.15, "sm");
+      S.cap(210, ["The bank takes", "the !loss!"], A.bank + 0.05, A.net - 0.15, "sm");
+      S.cap(210, ["The network takes", "its *fee*"], A.net + 0.05, A.jul - 0.15, "sm");
+      S.cap(210, ["Visa: *59.8%*"], A.v - 0.1, A.so - 0.05);
+      S.cap(210, ["Mastercard: ~59.8%~"], A.so + 0.05, A.same - 0.15, "sm");
+      S.cap(210, ["Same number,", "*different companies*"], A.same + 0.05, A.why - 0.15, "sm");
+      S.cap(210, ["Why not a", "*cheaper road?*"], A.why + 0.05, END + 0.1);
+      // ---- motion
+      S.render((t) => {
+        const nu = E.io3((t - 0.1) / (A.near + 0.4)); $("n1").textContent = `${Math.round(60 * nu)}%`; $("gfill").style.width = `${60 * nu}%`;
+        const ru = sp((t - A.by) / 0.8); $("road").style.opacity = C(ru * 3); $("road").style.transform = `translateY(${(1 - Math.min(ru, 1)) * 300}px)`;
+        holes.forEach((h, i) => { const k = pop(t, A.pot + i * 0.15, 0.5), fix = E.io2((t - A.bank - 0.3 - i * 0.35) / 0.4); h.style.opacity = String(k.o); h.setAttribute("fill", fix > 0.5 ? "#6b6f6c" : "#1b1d1c"); h.style.transformBox = "fill-box"; h.style.transformOrigin = "50% 50%"; h.style.transform = `scale(${k.s * (1 - 0.35 * fix)})`; });
+        const gu = pop(t, A.by + 0.4, 0.7); $("gate").style.opacity = gu.o; $("gate").style.transform = `translateY(${(1 - Math.min(gu.u, 1)) * -500}px)`; $("netl").style.opacity = C((t - A.net) * 3);
+        const lift = E.io2((t - A.fee) / 0.4) * (1 - E.io2((t - A.fee - 1.2) / 0.4)); $("arm").setAttribute("transform", `rotate(${-70 * lift} 170 340)`);
+        const bk = pop(t, A.when + 0.2, 0.7); $("bank").style.opacity = bk.o; $("bank").style.transform = `scale(${0.5 + 0.5 * Math.min(bk.u, 1.08)})`;
+        $("shovel").setAttribute("transform", `rotate(${t > A.bank ? Math.sin((t - A.bank) * 9) * 18 : 0} 296 140)`);
+        const cx = L(1080, 700, E.io2((t - A.net) / 0.8)), cy = 1140 - 30 * Math.sin(C((t - A.net) / 0.8) * 3.14); const into = E.io2((t - A.fee) / 0.3);
+        $("coin").style.opacity = String(C((t - A.net) * 4) * (1 - into)); $("coin").style.transform = `translate(${cx}px, ${cy - 120 * into}px) scale(${1 - 0.5 * into})`;
+        const fu = pop(t, A.flow - 0.2, 0.5); $("flower").style.opacity = fu.o; $("flower").style.transform = `scale(${fu.s}) rotate(${-10 * E.io2((t - A.flow - 0.3) / 0.6)}deg)`;
+        $("nox").style.opacity = C((t - A.flow - 0.4) * 3);
+        const gv = sp((t - A.jul - 0.3) / 1.4), gm = sp((t - A.m) / 1.1); cV.bar.style.height = `${760 * 0.598 * Math.min(gv, 1.06)}px`; cM.bar.style.height = `${760 * 0.598 * Math.min(gm, 1.06)}px`;
+        cV.pct.style.opacity = C((t - A.v) * 3); cM.pct.style.opacity = C((t - A.m - 0.3) * 3);
+        const drop = sp((t - A.most) / 0.8); $("frame").style.opacity = C((t - A.same) * 3); $("frame").style.transform = `rotate(${(1 - Math.min(drop, 1)) * 0 + Math.sin(t * 2) * 1.2}deg) translateY(${(1 - Math.min(sp((t - A.same) / 0.8), 1)) * -900}px)`;
+        $("nail").style.opacity = C((t - A.most) * 3);
+        cones.forEach((c, i) => { const k = pop(t, A.why + 0.2 + i * 0.18, 0.45); c.style.opacity = k.o; c.style.transform = `scale(${k.s})`; });
+        $("cheap").style.opacity = C((t - A.why - 1.0) * 3);
+      });
+    </script>
+  </body>
+</html>

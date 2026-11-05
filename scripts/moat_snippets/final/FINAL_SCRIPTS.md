@@ -61,7 +61,7 @@ Production notes: on-screen source lines are exactly the `Source` text below. An
 **Analogy:** a chef who rents the kitchen
 
 **Voiceover (final):**
-> Who actually makes the iPhone's brain? Apple says it designs nearly the entire solution, and a significant majority of its manufacturing is done by outsourcing partners. Picture a chef who writes every recipe but rents the kitchen. Asked about reports of big price rises, TSMC's CEO called its pricing very strategic. That's landlord for rent is going up. So who holds more power: the chef or the landlord?
+> Who actually makes the iPhone's brain? Apple says it designs nearly the entire solution, and a significant majority of its manufacturing is done by outsourcing partners. Picture a chef who writes every recipe but rents the kitchen. Asked about reports of big price rises, TSMC's CEO called its pricing very strategic. That's landlord-speak for: rent is going up. So who holds more power: the chef or the landlord?
 
 **On-screen captions (in order):** “Apple designs nearly the entire solution” → “Partners do most of the manufacturing” → “TSMC: pricing is "very strategic"” → “Chef or landlord?”
 

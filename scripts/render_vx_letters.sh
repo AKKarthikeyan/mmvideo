@@ -2,9 +2,11 @@
 # Render one Letter video from the /tmp/ltb bundle: long (1080p), phone preview (<30 MB), 3 Shorts, 3 thumbnails (JPEG, <2 MB).
 # Usage: render_vx_letters.sh <id> [--skip-long]
 set -e
-export PATH=/opt/homebrew/bin:$PATH
-cd /Volumes/DarwinSSD/MMVideo
-id=$1; B=/tmp/ltb
+[ -d /opt/homebrew/bin ] && export PATH=/opt/homebrew/bin:$PATH
+cd "$(dirname "$0")/.."
+mkdir -p out/vx
+id=$1; B=${LTB_BUNDLE:-/tmp/ltb}
+[ -d "$B" ] || npx remotion bundle src/index.ts --out-dir="$B" --log=error   # bundle once, reused by every render below
 if [ "$2" != "--skip-long" ]; then npx remotion render $B VX-$id-long out/vx/$id-long.mp4 --log=error; fi
 npx remotion render $B VX-$id-long out/vx/$id-preview-phone.mp4 --scale=0.4 --crf=38 --log=error --overwrite
 for i in 1 2 3; do

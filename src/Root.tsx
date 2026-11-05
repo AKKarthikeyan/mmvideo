@@ -20,7 +20,7 @@ import {Banner} from "./banner/Banner";
 import {ChannelIntro, introTotal, IFPS} from "./intro/ChannelIntro";
 import {ShyamNapkin, nTotal, NFPS} from "./hand/ShyamNapkin";
 import {HalNapkin, halTotal, HFPS2} from "./hand/HalNapkin";
-import {VogNapkin, vogTotal, VFPS} from "./hand/VogNapkin";
+import {VogNapkin, vogTotal, VFPS as VOGFPS} from "./hand/VogNapkin";
 import {BankNapkin, bkTotal, BK, BFPS} from "./hand/BankNapkins";
 import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
 import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
@@ -49,7 +49,7 @@ export const RemotionRoot: React.FC = () => (
     <Still id="YTBanner" component={Banner} width={2560} height={1440}/>
     <Composition id="HAND-shyam" component={ShyamNapkin} durationInFrames={nTotal} fps={NFPS} width={1080} height={1920}/>
     <Composition id="HAND-hal" component={HalNapkin} durationInFrames={halTotal} fps={HFPS2} width={1080} height={1920}/>
-    <Composition id="HAND-vog" component={VogNapkin} durationInFrames={vogTotal} fps={VFPS} width={1080} height={1920}/>
+    <Composition id="HAND-vog" component={VogNapkin} durationInFrames={vogTotal} fps={VOGFPS} width={1080} height={1920}/>
     <Composition id="HAND-bka" component={BankNapkin as any} defaultProps={{sid: "bka", label: "Bank of Baroda · Q2"}} durationInFrames={bkTotal(BK.bka)} fps={BFPS} width={1080} height={1920}/>
     <Composition id="HAND-bkb" component={BankNapkin as any} defaultProps={{sid: "bkb", label: "Bandhan Bank · Q2"}} durationInFrames={bkTotal(BK.bkb)} fps={BFPS} width={1080} height={1920}/>
     <Composition id="HAND-bkc" component={BankNapkin as any} defaultProps={{sid: "bkc", label: "Ujjivan SFB · Q2"}} durationInFrames={bkTotal(BK.bkc)} fps={BFPS} width={1080} height={1920}/>

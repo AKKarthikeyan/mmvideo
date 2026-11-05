@@ -1,10 +1,15 @@
 {
   "name": "mmvideo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Moat & Margin video engine (Remotion 4)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "studio": "remotion studio src/index.ts",
+    "compositions": "remotion compositions src/index.ts",
+    "typecheck": "tsc --noEmit -p .",
+    "hf:sync": "python3 hyperframes/tools/hf.py sync",
+    "hf:check": "python3 hyperframes/tools/hf.py check",
+    "render:letters": "bash scripts/render_vx_letters.sh"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +23,10 @@
     "remotion": "^4.0.529",
     "roughjs": "^4.6.6",
     "svg-path-properties": "^2.1.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3"
   }
 }

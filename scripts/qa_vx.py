@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """QA stills at 85% of each beat of VX-<id>-long + contact sheet (run before the full render). Usage: qa_vx.py <id> [bundle]"""
-import json, math, subprocess, sys, pathlib
+import json, math, os, subprocess, sys, pathlib
 import fitz
-MM = pathlib.Path("/Volumes/DarwinSSD/MMVideo")
-vid = sys.argv[1]; bundle = sys.argv[2] if len(sys.argv) > 2 else "/tmp/ltb"
+MM = pathlib.Path(__file__).resolve().parent.parent
+vid = sys.argv[1]; bundle = sys.argv[2] if len(sys.argv) > 2 else os.environ.get("LTB_BUNDLE", "/tmp/ltb")
 D = json.load(open(MM / "public/vx" / vid / "data.json"))
 qa = MM / "out/vx/qa" / vid; qa.mkdir(parents=True, exist_ok=True)
 at = 0; shots = []

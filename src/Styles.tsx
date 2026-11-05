@@ -160,7 +160,7 @@ const Comic: React.FC = () => (
 
 // 7. Kolam line art: South Indian dot-grid line drawing (fits the Tamil edition)
 const Kolam: React.FC = () => {
-  const dots: JSX.Element[] = [];
+  const dots: React.JSX.Element[] = [];
   for (let r = 0; r < 7; r++) for (let c = 0; c < 7; c++) dots.push(<circle key={`${r}-${c}`} cx={300 + c * 80} cy={620 + r * 80} r={7} fill="#f8f0e3"/>);
   const loops = [0, 1, 2].map(i => g.ellipse(540, 860, 200 + i * 130, 200 + i * 130, {roughness: 0.6, stroke: "#f8f0e3", strokeWidth: 5, seed: 40 + i}));
   const petals = [0, 1, 2, 3].map(i => g.ellipse(540 + [0, 170, 0, -170][i], 860 + [-170, 0, 170, 0][i], 160, 160, {roughness: 0.7, stroke: "#ffd43b", strokeWidth: 4, seed: 50 + i}));

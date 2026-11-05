@@ -35,5 +35,5 @@ import glob, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../scripts"))
 from deliver import deliver
 for f in sorted(glob.glob("out/datakadai/nightlights/*_final.mp4")):
-    deliver("datakadai", f, sub="Night lights 2012 v 2025 - DRAFT 2026-11-05",
+    deliver("datakadai", f, short=True, sub="Night lights 2012 v 2025 - DRAFT 2026-11-05",
             name=f"nl-{os.path.basename(f)[:-len('_final.mp4')]}-2012-2025-draft.mp4")

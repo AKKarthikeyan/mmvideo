@@ -1,26 +1,32 @@
 #!/usr/bin/env python3
 """Copy finished videos into their channel folder on the SSD (AK: every video made goes to its channel's folder).
 
-Usage:  python3 scripts/deliver.py <channel> <video.mp4> [more.mp4 ...] [--sub "Folder name"] [--name new-name.mp4]
+Every channel folder has the same layout (AK, 5 Nov 2026):
+  01 Videos/  02 Shorts/  03 Brand/  04 YouTube Kit/  Docs/  README.txt
+Long films go to 01 Videos, Shorts to 02 Shorts.
+
+Usage:  python3 scripts/deliver.py <channel> <video.mp4> [more.mp4 ...] [--short] [--sub "Subfolder"] [--name new-name.mp4]
 Channels: datakadai, indica, moat, inventors, chariot, upsc.
-A file already in the folder with the same name and size is skipped. Each copy is logged in the folder's DELIVERED.txt.
-Called by week_pack.py (Data Kadai Shorts); run it by hand after any other final render.
+A file already in the folder with the same name and size is skipped. Each copy is logged in that folder's DELIVERED.txt.
+Called by week_pack.py (Data Kadai Shorts) and nl_master.py; run it by hand after any other final render.
 """
 import argparse, datetime, os, shutil, sys
 
 SSD = "/Volumes/DarwinSSD"
-FOLDERS = {
-    "datakadai": f"{SSD}/DataKadai/videos",
+BASES = {
+    "datakadai": f"{SSD}/DataKadai",
     "indica": f"{SSD}/Indica Atlas",
-    "moat": f"{SSD}/Moat and Margin/01 Videos",
-    "inventors": f"{SSD}/The Inventors Desk/01 Videos",
-    "chariot": f"{SSD}/The Inner Chariot/01 Video",
-    "upsc": f"{SSD}/The UPSC Mains/01 Videos",
+    "moat": f"{SSD}/Moat and Margin",
+    "inventors": f"{SSD}/The Inventors Desk",
+    "chariot": f"{SSD}/The Inner Chariot",
+    "upsc": f"{SSD}/The UPSC Mains",
 }
 
 
-def deliver(channel, src, sub=None, name=None):
-    dest_dir = os.path.join(FOLDERS[channel], sub) if sub else FOLDERS[channel]
+def deliver(channel, src, sub=None, name=None, short=False):
+    dest_dir = os.path.join(BASES[channel], "02 Shorts" if short else "01 Videos")
+    if sub:
+        dest_dir = os.path.join(dest_dir, sub)
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, name or os.path.basename(src))
     if os.path.exists(dest) and os.path.getsize(dest) == os.path.getsize(src):
@@ -36,12 +42,13 @@ def deliver(channel, src, sub=None, name=None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("channel", choices=sorted(FOLDERS))
+    ap.add_argument("channel", choices=sorted(BASES))
     ap.add_argument("videos", nargs="+")
+    ap.add_argument("--short", action="store_true", help="a Short: goes to 02 Shorts instead of 01 Videos")
     ap.add_argument("--sub")
     ap.add_argument("--name")
     a = ap.parse_args()
     if a.name and len(a.videos) > 1:
         sys.exit("--name works with one video only")
     for v in a.videos:
-        deliver(a.channel, v, a.sub, a.name)
+        deliver(a.channel, v, a.sub, a.name, a.short)

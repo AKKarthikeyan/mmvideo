@@ -1,0 +1,214 @@
+<!doctype html>
+<!-- Indica Atlas x The Inner Chariot · "The Longest Road Home" · silent draft with captions (82 s). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The Longest Road Home</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1300px 900px at 50% 45%, #1b2233 0%, #0b0e13 62%, #06080c 100%); }
+      .sc { position: absolute; inset: 0; opacity: 0; }
+      .big { position: absolute; left: 0; right: 0; text-align: center; font: 700 150px/1 Oswald, sans-serif; letter-spacing: 0.03em; color: #f7f3ea; }
+      .gold { color: #d9a441; }
+      .sub { position: absolute; left: 0; right: 0; text-align: center; font: 400 44px/1.35 Inter, sans-serif; color: #b9c0c8; }
+      .note { position: absolute; right: 110px; bottom: 112px; max-width: 1500px; font: 28px/1.3 Plex, monospace; color: #b9c0c8; text-align: right; }
+      .card { position: absolute; width: 540px; padding: 34px 38px; background: rgba(20, 27, 40, 0.88); border: 2px solid rgba(217, 164, 65, 0.4); }
+      .card .n { font: 700 90px/1 Oswald, sans-serif; color: #d9a441; }
+      .card .h { font: 700 44px/1.1 Oswald, sans-serif; letter-spacing: 0.04em; color: #f7f3ea; margin-top: 10px; }
+      .card .l { font: 400 30px/1.35 Inter, sans-serif; color: #b9c0c8; margin-top: 12px; }
+      svg text { font-family: Oswald, sans-serif; }
+      .lab { font: 700 34px Oswald, sans-serif; letter-spacing: 0.06em; fill: #f7f3ea; }
+      .lab2 { font: 400 26px Inter, sans-serif; fill: #b9c0c8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="82" data-width="1920" data-height="1080">
+
+      <!-- 1 hook 0-9 -->
+      <div class="sc" id="s1">
+        <div class="big" style="top:300px">20 DAYS<span class="gold">?</span></div>
+        <div class="sub" style="top:500px">The Pushpaka Vimana could fly.<br />So why does the festival story say Rama's road home took from Dussehra to Diwali?</div>
+      </div>
+
+      <!-- 2 route 9-33 -->
+      <div class="sc" id="s2">
+        <div class="kicker">INDICA ATLAS × THE INNER CHARIOT</div>
+        <div class="head">THE LONG WAY ROUND</div>
+        <svg id="map" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0">
+          <g id="grid" stroke="#1e2a3c" stroke-width="2"></g>
+          <line id="direct" stroke="#7fd1ff" stroke-width="4" stroke-dasharray="14 12" opacity="0.85"></line>
+          <polyline id="route" fill="none" stroke="#d9a441" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></polyline>
+          <g id="pins"></g>
+          <circle id="chariot" r="15" fill="#fff6dd" stroke="#d9a441" stroke-width="5"></circle>
+          <text id="dlab" class="lab2" fill="#7fd1ff"></text>
+        </svg>
+        <div class="note">SCHEMATIC, NOT TO SCALE · positions approximate<br />Stops: Valmiki Ramayana, Yuddha Kanda 121–128 · Kishkindha and Prayag as in tradition</div>
+      </div>
+
+      <!-- 3 honest answer 33-50 -->
+      <div class="sc" id="s3">
+        <div class="kicker">INDICA ATLAS × THE INNER CHARIOT</div>
+        <div class="head">WHAT THE TEXT SAYS, WHAT TRADITION SAYS</div>
+        <div class="card" id="c1" style="left:110px;top:330px">
+          <div class="n">1</div><div class="h">THE CHARIOT IS A GIFT</div>
+          <div class="l">Vibhishana offers the Pushpaka; at the end Rama sends it back to Kubera (Yuddha 121, 127).</div></div>
+        <div class="card" id="c2" style="left:690px;top:330px">
+          <div class="n">2</div><div class="h">THE ROUTE HAS STOPS</div>
+          <div class="l">The vimana lands at Bharadwaja's hermitage and then at Bharata's at Nandigrama (Yuddha 124–127).</div></div>
+        <div class="card" id="c3" style="left:1270px;top:330px">
+          <div class="n">3</div><div class="h">THE DATES ARE FESTIVAL</div>
+          <div class="l">Dussehra to Diwali is how the festivals tell it. It is tradition, not a day count we can read off these chapters.</div></div>
+        <div class="note">Read: valmikiramayan.net · sanskritdocuments.org (Yuddha Kanda)</div>
+      </div>
+
+      <!-- 4 inner chariot 50-73 -->
+      <div class="sc" id="s4">
+        <div class="kicker">INDICA ATLAS × THE INNER CHARIOT</div>
+        <div class="head">NOW THE OTHER CHARIOT</div>
+        <svg width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0">
+          <g id="ch" transform="translate(0,0)">
+            <!-- horses -->
+            <g id="horses" fill="none" stroke="#f7f3ea" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></g>
+            <!-- reins -->
+            <path id="reins" d="M 1010 640 C 920 600 840 600 760 640" fill="none" stroke="#d9a441" stroke-width="6"></path>
+            <!-- chariot body -->
+            <rect x="1010" y="590" width="360" height="150" fill="none" stroke="#f7f3ea" stroke-width="7"></rect>
+            <circle cx="1100" cy="770" r="60" fill="none" stroke="#f7f3ea" stroke-width="7"></circle>
+            <circle cx="1280" cy="770" r="60" fill="none" stroke="#f7f3ea" stroke-width="7"></circle>
+            <line x1="1010" y1="740" x2="1370" y2="740" stroke="#f7f3ea" stroke-width="7"></line>
+            <!-- charioteer and rider -->
+            <circle cx="1090" cy="530" r="30" fill="none" stroke="#7fd1ff" stroke-width="6"></circle>
+            <line x1="1090" y1="560" x2="1090" y2="590" stroke="#7fd1ff" stroke-width="6"></line>
+            <circle cx="1270" cy="500" r="42" fill="#fff6dd" opacity="0.95"></circle>
+            <circle cx="1270" cy="500" r="70" fill="none" stroke="#fff6dd" stroke-width="3" opacity="0.5"></circle>
+            <!-- labels -->
+            <g class="lb" id="lb0"><line x1="1270" y1="430" x2="1270" y2="330" stroke="#6b7482"/><text x="1270" y="310" text-anchor="middle" class="lab">ATMAN · THE RIDER</text></g>
+            <g class="lb" id="lb1"><line x1="1370" y1="680" x2="1480" y2="680" stroke="#6b7482"/><text x="1495" y="690" class="lab">SHARIRA · THE CHARIOT</text></g>
+            <g class="lb" id="lb2"><line x1="1060" y1="520" x2="990" y2="440" stroke="#6b7482"/><text x="980" y="425" text-anchor="end" class="lab">BUDDHI · THE CHARIOTEER</text></g>
+            <g class="lb" id="lb3"><line x1="880" y1="610" x2="840" y2="520" stroke="#6b7482"/><text x="830" y="505" text-anchor="end" class="lab">MANAS · THE REINS</text></g>
+            <g class="lb" id="lb4"><line x1="360" y1="760" x2="360" y2="840" stroke="#6b7482"/><text x="360" y="880" text-anchor="middle" class="lab">INDRIYAS · THE HORSES</text></g>
+            <g class="lb" id="lb5"><text x="960" y="960" text-anchor="middle" class="lab2">The roads they run on are the objects of desire.</text></g>
+          </g>
+        </svg>
+        <div class="note">Paraphrase of Katha Upanishad 1.3.3–4</div>
+      </div>
+
+      <!-- 5 close 73-82 -->
+      <div class="sc" id="s5">
+        <div class="big" style="top:250px;font-size:92px;line-height:1.15">THE LONGEST ROAD HOME<br /><span class="gold">RUNS THROUGH THE ONE HOLDING THE REINS</span></div>
+        <div class="sub" style="top:700px;font-size:38px">Indica Atlas × The Inner Chariot</div>
+      </div>
+
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="cap" id="cap"></div>
+    </div>
+    <script>
+      const H = HF.setup(82), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const NS = "http://www.w3.org/2000/svg";
+      const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+
+      // ---- schematic map: lon/lat -> screen (equirectangular, approximate) ----
+      const X = (lon) => 360 + (lon - 75) * 150, Y = (lat) => 915 - (lat - 6) * 31;
+      const STOPS = [
+        ["LANKA", 80.8, 7.9, "Vibhishana's gift: the Pushpaka lifts off"],
+        ["SETU", 79.3, 9.3, "Rama points out the bridge below"],
+        ["KISHKINDHA", 76.5, 15.3, "Traditional account: the vanara families join"],
+        ["BHARADWAJA'S ASHRAM", 81.85, 25.43, "Yuddha 124: a halt, and fruit out of season"],
+        ["NANDIGRAMA", 82.3, 26.6, "Yuddha 125–127: Bharata meets Rama"],
+      ];
+      const P = STOPS.map(([n, lo, la]) => [X(lo), Y(la)]);
+      // grid (graticule, not a coastline)
+      for (let lon = 74; lon <= 90; lon += 2) el("line", { x1: X(lon), y1: 250, x2: X(lon), y2: 1000 }, $("grid"));
+      for (let lat = 8; lat <= 28; lat += 4) el("line", { x1: 330, y1: Y(lat), x2: 1700, y2: Y(lat) }, $("grid"));
+      $("direct").setAttribute("x1", P[0][0]); $("direct").setAttribute("y1", P[0][1]);
+      $("direct").setAttribute("x2", P[4][0]); $("direct").setAttribute("y2", P[4][1]);
+      $("route").setAttribute("points", P.map((p) => p.join(",")).join(" "));
+      const pinEls = STOPS.map(([n], i) => {
+        const g = el("g", {}, $("pins"));
+        el("circle", { cx: P[i][0], cy: P[i][1], r: 12, fill: "#0b0e13", stroke: "#d9a441", "stroke-width": 5 }, g);
+        const right = (i === 2 || i === 3) ? -1 : 1;
+        const t = el("text", { x: P[i][0] + right * 30, y: P[i][1] + 10, "text-anchor": right > 0 ? "start" : "end", class: "lab" }, g);
+        t.textContent = n;
+        return g;
+      });
+      el("circle", { cx: P[4][0] + 120, cy: P[4][1] - 90, r: 0 }, $("pins"));
+      const segLen = P.slice(1).map((p, i) => Math.hypot(p[0] - P[i][0], p[1] - P[i][1]));
+      const total = segLen.reduce((a, b) => a + b, 0);
+      const posAt = (u) => { let d = u * total; for (let i = 0; i < segLen.length; i++) { if (d <= segLen[i]) { const k = d / segLen[i]; return [L(P[i][0], P[i + 1][0], k), L(P[i][1], P[i + 1][1], k)]; } d -= segLen[i]; } return P[P.length - 1]; };
+      const MAP_T = [10.5, 12.5, 16.5, 22, 28.5]; // when the chariot reaches each stop
+      const mapCaps = [
+        "The Pushpaka leaves Lanka, a gift from Vibhishana.",
+        "Rama shows Sita the bridge below.",
+        "The straight line north is about 2,700 km. The traditional route bends west first.",
+        "Yuddha 124: the vimana lands at Bharadwaja's hermitage.",
+        "Nandigrama: Bharata. Then Ayodhya.",
+      ];
+
+      // ---- inner chariot: horses ----
+      const hs = $("horses");
+      for (let i = 0; i < 5; i++) {
+        const x = 150 + i * 150, y = 640 + (i % 2) * 18;
+        el("path", { d: `M ${x} ${y} l 80 0 l 24 -50 l 22 12 M ${x + 10} ${y} l -14 60 M ${x + 70} ${y} l 8 60 M ${x + 20} ${y} l 18 55` }, hs);
+      }
+      el("path", { d: "M 910 640 L 1010 640" , stroke: "#d9a441"}, hs);
+
+      const caps = [
+        [0, "The Pushpaka Vimana could fly."],
+        [4, "So why does the festival story say Dussehra to Diwali?"],
+        ...mapCaps.map((c, i) => [MAP_T[i] - 0.5, c]),
+        [33.5, "Three things worth separating."],
+        [50.5, "The Katha Upanishad draws a different chariot."],
+        [56, "The rider is the Self. The chariot is the body."],
+        [60, "The charioteer is intellect. The reins are mind."],
+        [64, "The horses are the senses, running on the roads of desire."],
+        [69, "Hold the reins, and the road home gets shorter."],
+        [73.5, "The longest road home runs through the one holding the reins."],
+      ];
+
+      const scene = (id, a, b, t) => ($(id).style.opacity = F(t, a, b, 0.6));
+      H.render = (t) => {
+        scene("s1", 0, 9, t); scene("s2", 9, 33, t); scene("s3", 33, 50, t); scene("s4", 50, 73, t); scene("s5", 73, 99, t);
+        // map
+        const mt = HF.clamp01((t - 10) / (MAP_T[4] - 10));
+        const hold = [10, ...MAP_T];
+        let u = 0;
+        for (let i = 0; i < 5; i++) { const a = i === 0 ? 10.5 : MAP_T[i - 1] + 1.2, b = MAP_T[i]; if (i > 0) u = L(u, i / 4, 0); }
+        // progress by segment length, easing between stops
+        let d = 0;
+        for (let i = 1; i < 5; i++) d += segLen[i - 1] * E.io2((t - (MAP_T[i - 1] + 0.8)) / (MAP_T[i] - MAP_T[i - 1] - 0.8));
+        const prog = HF.clamp01(d / total);
+        const [cx, cy] = posAt(prog);
+        $("chariot").setAttribute("cx", cx); $("chariot").setAttribute("cy", cy);
+        $("chariot").style.opacity = F(t, 10.2, 99, 0.4);
+        const shown = Math.max(0, Math.round(prog * total * 1000) / 1000);
+        $("route").setAttribute("stroke-dasharray", `${shown} 99999`);
+        $("direct").style.opacity = F(t, 13.5, 99, 0.6) * 0.85;
+        $("dlab").setAttribute("x", (P[0][0] + P[4][0]) / 2 + 20); $("dlab").setAttribute("y", (P[0][1] + P[4][1]) / 2);
+        $("dlab").textContent = "straight line ≈ 2,700 km";
+        $("dlab").style.opacity = F(t, 14, 99, 0.6);
+        pinEls.forEach((g, i) => (g.style.opacity = F(t, MAP_T[i] - 1.6 + (i === 0 ? 1.1 : 0), 99, 0.4)));
+        // cards
+        [["c1", 36], ["c2", 40], ["c3", 44.5]].forEach(([id, a]) => {
+          const e = $(id); const k = E.o3((t - a) / 0.7); e.style.opacity = k; e.style.transform = `translateY(${(1 - k) * 40}px)`;
+        });
+        // chariot diagram
+        $("horses").style.transform = `translateX(${Math.sin(t * 4) * 6}px)`;
+        $("horses").style.opacity = F(t, 51, 99, 0.6);
+        const lt = [54, 55.5, 58, 60.5, 63, 68];
+        for (let i = 0; i < 6; i++) $("lb" + i).style.opacity = F(t, lt[i], 99, 0.5);
+        // caption
+        let c = "";
+        for (const [a, s] of caps) if (t >= a) c = s;
+        $("cap").textContent = c;
+        $("cap").style.opacity = F(t, 0.8, 81, 0.4);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

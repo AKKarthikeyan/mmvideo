@@ -16,3 +16,10 @@ sources/
 *.bak*
 .DS_Store
 .remotion/
+
+# company-story shorts: local photos stay out of git
+scripts/company_story_shorts/photos/*.jpg
+scripts/company_story_shorts/photos/*.jpeg
+scripts/company_story_shorts/photos/*.png
+scripts/company_story_shorts/photos/*.webp
+scripts/company_story_shorts/photos/credits.csv

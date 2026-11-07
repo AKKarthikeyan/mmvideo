@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Indica Atlas x The Inner Chariot · Short 9:16 · why the Pushpaka return took so long · light sandal · silent draft (50 s). -->
+<!-- Indica Atlas x The Inner Chariot · Short 9:16 · why the Pushpaka return took so long · India map, light sandal (54 s, silent draft). -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,120 +7,313 @@
     <title>Why So Long Short</title>
     <script src="assets/lib/gsap.min.js"></script>
     <script src="assets/lib/hf.js"></script>
+    <script src="assets/geo/india_districts.js"></script>
+    <script src="land.js"></script>
     <link rel="stylesheet" href="assets/css/base.css" />
     <style>
       html, body { width: 1080px; height: 1920px; }
-      #root { --bg: #ece0c6; --ink: #2a2118; --soft: #5a4d3b; --acc: #9a3f12; --blue: #2b6486; width: 1080px; height: 1920px;
-        background: radial-gradient(1000px 1400px at 50% 38%, #f3e9d2 0%, #ece0c6 60%, #dccda9 100%); }
+      #root { --ink: #2a2118; --soft: #4f4433; --acc: #9a3f12; --blue: #24597a; --sea: #e3d4b3; width: 1080px; height: 1920px; background: var(--sea); }
       #vig { display: none; }
-      #grain { opacity: 0.05; }
-      .sc { position: absolute; inset: 0; opacity: 0; }
-      .big { position: absolute; left: 60px; right: 60px; text-align: center; font: 700 160px/1 Oswald, sans-serif; color: var(--ink); }
-      .sub { position: absolute; left: 90px; right: 90px; text-align: center; font: 400 52px/1.4 Inter, sans-serif; color: var(--soft); }
+      #grain { opacity: 0.04; }
+      #map { position: absolute; left: 0; top: 0; }
+      .band { position: absolute; left: 0; right: 0; pointer-events: none; }
+      #bandT { top: 0; height: 420px; background: linear-gradient(#efe4cb 0%, rgba(239, 228, 203, 0.92) 55%, rgba(239, 228, 203, 0) 100%); }
+      #bandB { bottom: 0; height: 560px; background: linear-gradient(rgba(239, 228, 203, 0) 0%, rgba(239, 228, 203, 0.9) 40%, #efe4cb 100%); }
       .k { position: absolute; left: 70px; top: 150px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.2em; color: var(--acc); }
-      .h { position: absolute; left: 70px; top: 205px; right: 70px; font: 700 96px/1.02 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--ink); }
-      .note { position: absolute; left: 70px; right: 70px; bottom: 190px; font: 30px/1.3 Plex, monospace; color: var(--soft); }
-      svg text { font-family: Oswald, sans-serif; }
-      .lab { font: 700 44px Oswald, sans-serif; letter-spacing: 0.05em; fill: #2a2118; }
-      #cap { position: absolute; left: 60px; right: 60px; bottom: 330px; transform: none; white-space: normal; text-align: center; font: 600 48px/1.25 Inter, sans-serif; color: var(--ink); background: none; padding: 0; }
-      .why { position: absolute; left: 70px; right: 70px; padding: 36px 44px; background: rgba(255, 250, 235, 0.72); border: 3px solid #b9a67c; }
-      .why .n { position: absolute; left: 44px; top: 30px; font: 700 110px/1 Oswald, sans-serif; color: var(--acc); }
-      .why .t { margin-left: 120px; font: 700 62px/1.05 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--ink); }
-      .why .d { margin-left: 120px; margin-top: 14px; font: 400 40px/1.35 Inter, sans-serif; color: var(--soft); }
+      .h { position: absolute; left: 70px; top: 205px; right: 70px; font: 700 96px/1.02 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--ink); opacity: 0; }
+      .note { position: absolute; left: 70px; right: 70px; bottom: 150px; font: 28px/1.3 Plex, monospace; color: var(--soft); }
+      #hook { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+      #hook .big { position: absolute; left: 40px; right: 40px; top: 600px; text-align: center; white-space: nowrap; font: 700 150px/1 Oswald, sans-serif; color: var(--ink); }
+      #hook .big span { display: inline-block; }
+      #ticks { position: absolute; left: 90px; right: 90px; top: 860px; height: 70px; display: flex; gap: 8px; }
+      #ticks i { flex: 1; background: rgba(154, 63, 18, 0.14); border: 2px solid rgba(154, 63, 18, 0.45); }
+      #tickL, #tickR { position: absolute; top: 950px; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: var(--ink); }
+      #tickL { left: 90px; } #tickR { right: 90px; }
+      #tickN { position: absolute; left: 0; right: 0; top: 1020px; text-align: center; font: 400 34px/1.3 Inter, sans-serif; color: var(--soft); }
+      #odo { position: absolute; left: 70px; top: 330px; padding: 14px 22px; background: rgba(255, 250, 238, 0.9); border: 3px solid #c2ab7c; }
+      #odo .l { font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.16em; color: var(--acc); }
+      #odo .v { font: 700 64px/1.05 Oswald, sans-serif; color: var(--ink); margin-top: 6px; }
+      #straight { position: absolute; left: 70px; top: 330px; font: 700 120px/1 Oswald, sans-serif; color: var(--blue); }
+      #straight small { display: block; font: 400 36px/1.3 Inter, sans-serif; color: var(--soft); margin-top: 8px; }
+      #cap { position: absolute; left: 60px; right: 60px; bottom: 300px; transform: none; white-space: normal; text-align: center; font: 600 48px/1.25 Inter, sans-serif; color: var(--ink); background: none; padding: 0; }
+      #bars { position: absolute; left: 70px; right: 70px; top: 1190px; padding: 30px 36px; background: rgba(255, 250, 238, 0.94); border: 3px solid #c2ab7c; opacity: 0; }
+      .bl { font: 700 36px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: var(--ink); display: flex; justify-content: space-between; margin-top: 18px; }
+      .bl:first-child { margin-top: 0; }
+      .bar { height: 34px; margin-top: 10px; background: rgba(0, 0, 0, 0.06); }
+      .bar i { display: block; height: 100%; width: 0; }
+      #diff { margin-top: 24px; font: 700 54px/1.1 Oswald, sans-serif; color: var(--acc); }
+      #diffl { margin-top: 8px; font: 400 36px/1.3 Inter, sans-serif; color: var(--soft); }
+      .why { position: absolute; left: 70px; right: 70px; height: 156px; padding: 22px 30px 0 140px; background: rgba(255, 250, 238, 0.94); border: 3px solid #c2ab7c; opacity: 0; }
+      .why .n { position: absolute; left: 34px; top: 18px; font: 700 110px/1 Oswald, sans-serif; color: var(--acc); }
+      .why .t { font: 700 52px/1.05 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--ink); }
+      .why .d { margin-top: 8px; font: 400 34px/1.3 Inter, sans-serif; color: var(--soft); }
     </style>
   </head>
   <body>
-    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="50" data-width="1080" data-height="1920">
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="54" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920"></canvas>
+      <div class="band" id="bandT" data-layout-ignore></div>
+      <div class="band" id="bandB" data-layout-ignore></div>
 
-      <div class="sc" id="s1">
-        <div class="k" style="top:420px;left:0;right:0;text-align:center">INDICA ATLAS × THE INNER CHARIOT</div>
-        <div class="big" style="top:520px">WHY 20 DAYS<span style="color:var(--acc)">?</span></div>
-        <div class="sub" style="top:800px">Rama and Sita's flight home from Lanka, Dussehra to Diwali.<br />A flying chariot. So what took the time?</div>
+      <div id="hook">
+        <div class="big" id="hbig"><span>WHY</span> <span>20</span> <span>DAYS<b style="color:var(--acc)">?</b></span></div>
+        <div id="ticks"></div>
+        <div id="tickL">DUSSEHRA</div>
+        <div id="tickR">DIWALI</div>
+        <div id="tickN">The festival gap: about 20 days, varies by year</div>
       </div>
 
-      <div class="sc" id="s2">
-        <div class="k">INDICA ATLAS × THE INNER CHARIOT</div>
-        <div class="h">THE ROUTE HOME</div>
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;left:0;top:0">
-          <g id="grid" stroke="#d2c19a" stroke-width="2"></g>
-          <line id="direct" stroke="#2b6486" stroke-width="5" stroke-dasharray="16 12"></line>
-          <polyline id="route" fill="none" stroke="#9a3f12" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"></polyline>
-          <g id="pins"></g>
-          <circle id="chariot" r="20" fill="#fffaf0" stroke="#9a3f12" stroke-width="6"></circle>
-          <text id="dlab" class="lab" style="font-size:34px;font-weight:400;fill:#2b6486"></text>
-        </svg>
-        <div class="note">SCHEMATIC, NOT TO SCALE · positions approximate · Valmiki Ramayana, Yuddha Kanda 121–128; Kishkindha, Prayag and the dates are tradition</div>
+      <div class="k" id="kick">INDICA ATLAS × THE INNER CHARIOT</div>
+      <div class="h" id="h1">AS THE CROW FLIES</div>
+      <div class="h" id="h2">THE ROUTE HOME</div>
+      <div class="h" id="h3">THE DETOUR</div>
+      <div class="h" id="h4">WHY SO LONG</div>
+
+      <div id="straight"><span id="sv">0</span> KM<small>Lanka to Ayodhya, straight line</small></div>
+      <div id="odo"><div class="l">FLOWN SO FAR</div><div class="v" id="ov">0 km</div></div>
+
+      <div id="bars">
+        <div class="bl"><span>STRAIGHT LINE</span><span id="b1v"></span></div>
+        <div class="bar"><i id="b1" style="background:var(--blue)"></i></div>
+        <div class="bl"><span>ROUTE FLOWN</span><span id="b2v"></span></div>
+        <div class="bar"><i id="b2" style="background:var(--acc)"></i></div>
+        <div id="diff"></div>
+        <div id="diffl">The detour is not the delay. The stops are.</div>
       </div>
 
-      <div class="sc" id="s3">
-        <div class="k">INDICA ATLAS × THE INNER CHARIOT</div>
-        <div class="h">WHY SO LONG</div>
-        <div class="why" id="w0" style="top:420px"><div class="n">1</div><div class="t">HALTS ON THE WAY</div><div class="d">Lanka, Kishkindha, Bharadwaja's hermitage. Each was a stay, not a fly-past.</div></div>
-        <div class="why" id="w1" style="top:790px"><div class="n">2</div><div class="t">NEWS SENT AHEAD</div><div class="d">Hanuman goes first to tell Bharata, so Rama can arrive to a ready Ayodhya.</div></div>
-        <div class="why" id="w2" style="top:1160px"><div class="n">3</div><div class="t">THE DATES ARE FESTIVAL</div><div class="d">Dussehra to Diwali is how the festivals tell it. Distance was never the problem.</div></div>
-        <div class="note">Sources: Valmiki Ramayana, Yuddha Kanda 121–128 (valmikiramayan.net, sanskritdocuments.org)</div>
-      </div>
+      <div class="why" id="w0" style="top:1090px"><div class="n">1</div><div class="t">THREE HALTS</div><div class="d">Lanka, Kishkindha, Bharadwaja's hermitage</div></div>
+      <div class="why" id="w1" style="top:1266px"><div class="n">2</div><div class="t">NEWS SENT AHEAD</div><div class="d">Hanuman goes first to tell Bharata</div></div>
+      <div class="why" id="w2" style="top:1442px"><div class="n">3</div><div class="t">THE DATES ARE FESTIVAL</div><div class="d">Not a day count given in the text</div></div>
 
-      <div id="vig" data-layout-ignore></div>
+      <div class="note" id="note">Map: India, community district data (not Survey of India); land, Natural Earth. Sites approximate, as in tradition. Valmiki Ramayana, Yuddha Kanda 121–128.</div>
+
       <div id="grain" data-layout-ignore></div>
       <div id="cap"></div>
     </div>
     <script>
-      const H = HF.setup(50), E = HF.ease, F = HF.fade, L = HF.lerp;
+      const H = HF.setup(54), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
-      const NS = "http://www.w3.org/2000/svg";
-      const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+      const W = 1080, HGT = 1920;
 
-      const X = (lon) => 130 + (lon - 75) * 95, Y = (lat) => 1470 - (lat - 6) * 36;
-      const STOPS = [["LANKA", 80.8, 7.9], ["SETU", 79.3, 9.3], ["KISHKINDHA", 76.5, 15.3], ["BHARADWAJA", 81.85, 25.43], ["NANDIGRAMA", 82.3, 26.6]];
-      const P = STOPS.map(([n, lo, la]) => [X(lo), Y(la)]);
-      for (let lon = 74; lon <= 84; lon += 2) el("line", { x1: X(lon), y1: 520, x2: X(lon), y2: 1560 }, $("grid"));
-      for (let lat = 8; lat <= 28; lat += 4) el("line", { x1: 80, y1: Y(lat), x2: 1000, y2: Y(lat) }, $("grid"));
-      $("direct").setAttribute("x1", P[0][0]); $("direct").setAttribute("y1", P[0][1]);
-      $("direct").setAttribute("x2", P[4][0]); $("direct").setAttribute("y2", P[4][1]);
-      $("route").setAttribute("points", P.map((p) => p.join(",")).join(" "));
-      const side = [1, -1, 1, -1, -1];
-      const pins = STOPS.map(([n], i) => {
-        const g = el("g", {}, $("pins"));
-        el("circle", { cx: P[i][0], cy: P[i][1], r: 14, fill: "#ece0c6", stroke: "#9a3f12", "stroke-width": 6 }, g);
-        const t = el("text", { x: P[i][0] + side[i] * 30, y: P[i][1] + (i === 4 ? -26 : 14), "text-anchor": side[i] > 0 ? "start" : "end", class: "lab" }, g);
-        t.textContent = n; return g;
-      });
-      const seg = P.slice(1).map((p, i) => Math.hypot(p[0] - P[i][0], p[1] - P[i][1]));
-      const total = seg.reduce((a, b) => a + b, 0);
-      const posAt = (u) => { let d = u * total; for (let i = 0; i < seg.length; i++) { if (d <= seg[i]) { const k = d / seg[i]; return [L(P[i][0], P[i + 1][0], k), L(P[i][1], P[i + 1][1], k)]; } d -= seg[i]; } return P[4]; };
-      // chariot arrives at each stop at MT[i] and waits there until it leaves
-      const MT = [6.5, 10.5, 15, 23, 30], LEAVE = [8.5, 11, 18.5, 26, 99];
+      // ---------- projection: degrees -> base px (equirectangular, cos 18° squeeze); camera scales base px to screen
+      const K = Math.cos((18 * Math.PI) / 180), S0 = 33, LON0 = 80.5, LAT0 = 21.5;
+      const bx = (lon) => (lon - LON0) * K * S0, by = (lat) => -(lat - LAT0) * S0;
 
-      const caps = [
-        [0.3, "A flying chariot. Dussehra to Diwali."], [3, "So what took the time?"],
-        [6, "Lanka: Vibhishana asks Rama to stay some more days (Yuddha 121)."],
-        [9, "Then the Pushpaka lifts off, over the bridge."],
-        [11.5, "The straight line north is about 2,700 km. Flying that is not the delay."],
-        [15, "Kishkindha, by tradition: the vanara families come aboard."],
-        [19.5, "Then back across to the north."],
-        [23, "Bharadwaja's hermitage: a halt, a feast for the vanara army (Yuddha 124)."],
-        [26.5, "Hanuman goes ahead to tell Bharata (Yuddha 125–128)."],
-        [30, "Nandigrama: Rama meets Bharata. Ayodhya is next."],
-        [36.5, "Three reasons."],
+      // ---------- sites (approximate; Lanka, Kishkindha and Prayag as identified in tradition)
+      const SITES = [
+        { n: "LANKA", lat: 7.95, lon: 80.76, side: 1 },
+        { n: "SETU", lat: 9.18, lon: 79.4, side: -1 },
+        { n: "KISHKINDHA", lat: 15.33, lon: 76.46, side: -1 },
+        { n: "PRAYAG · BHARADWAJA", lat: 25.43, lon: 81.88, side: -1 },
+        { n: "NANDIGRAMA", lat: 26.68, lon: 82.12, side: -1 },
+        { n: "AYODHYA", lat: 26.8, lon: 82.2, side: 1 },
       ];
-      H.render = (t) => {
-        $("s1").style.opacity = F(t, -1, 5, 0.4); $("s2").style.opacity = F(t, 5, 35, 0.5); $("s3").style.opacity = F(t, 35, 99, 0.5);
-        // route progress: ease along each segment between LEAVE[i-1]-ish and MT[i]
-        let d = 0;
-        for (let i = 1; i < 5; i++) { const a = LEAVE[i - 1], b = MT[i]; d += seg[i - 1] * E.io2((t - a) / (b - a)); }
-        const prog = HF.clamp01(d / total), [cx, cy] = posAt(prog);
-        $("chariot").setAttribute("cx", cx); $("chariot").setAttribute("cy", cy); $("chariot").style.opacity = F(t, 5.6, 99, 0.4);
-        $("route").setAttribute("stroke-dasharray", `${prog * total} 99999`);
-        $("direct").style.opacity = F(t, 11.5, 99, 0.5);
-        $("dlab").setAttribute("x", 560); $("dlab").setAttribute("y", 1000); $("dlab").textContent = "straight line ≈ 2,700 km"; $("dlab").style.opacity = F(t, 12, 99, 0.5);
-        pins.forEach((g, i) => (g.style.opacity = F(t, i === 0 ? 5.8 : MT[i] - 1.5, 99, 0.4)));
-        [["w0", 37], ["w1", 41], ["w2", 45]].forEach(([id, a]) => { const k = E.o3((t - a) / 0.7); $(id).style.opacity = k; $(id).style.transform = `translateY(${(1 - k) * 40}px)`; });
-        let c = ""; for (const [a, s] of caps) if (t >= a) c = s;
-        $("cap").textContent = c; $("cap").style.opacity = F(t, -1, 49, 0.3) * (t < 35 ? 1 : t < 36.4 ? 0 : 0);
+      SITES.forEach((s) => { s.x = bx(s.lon); s.y = by(s.lat); });
+      const hav = (a, b) => { const r = Math.PI / 180, dl = (b.lat - a.lat) * r, dn = (b.lon - a.lon) * r;
+        const h = Math.sin(dl / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dn / 2) ** 2; return 2 * 6371 * Math.asin(Math.sqrt(h)); };
+      const LEGS = SITES.slice(1).map((b, i) => {
+        const a = SITES[i], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy), bul = [0.16, -0.14, 0.12, 0.2, 0.2][i];
+        return { a, b, cx: (a.x + b.x) / 2 - dy * bul, cy: (a.y + b.y) / 2 + dx * bul, km: hav(a, b) };
+      });
+      const ROUTE_KM = LEGS.reduce((s, l) => s + l.km, 0), STRAIGHT_KM = hav(SITES[0], SITES[5]);
+      const r10 = (v) => Math.round(v / 10) * 10, fmt = (v) => Math.round(v).toLocaleString("en-IN");
+      const bez = (l, s) => { const u = 1 - s; return [u * u * l.a.x + 2 * u * s * l.cx + s * s * l.b.x, u * u * l.a.y + 2 * u * s * l.cy + s * s * l.b.y]; };
+      const dbez = (l, s) => [2 * (1 - s) * (l.cx - l.a.x) + 2 * s * (l.b.x - l.cx), 2 * (1 - s) * (l.cy - l.a.y) + 2 * s * (l.b.y - l.cy)];
+
+      // ---------- flight plan: spans of legs flown in one move; halts in between
+      const SPANS = [{ t0: 13.4, t1: 19, legs: [0, 1] }, { t0: 22, t1: 26.4, legs: [2] }, { t0: 30.2, t1: 31.8, legs: [3] }, { t0: 33.3, t1: 34.3, legs: [4] }];
+      const HALTS = [{ i: 0, t0: 11, t1: 13.4, n: 1 }, { i: 2, t0: 19, t1: 22, n: 2 }, { i: 3, t0: 26.4, t1: 30.2, n: 3 }];
+      const flight = (t) => {
+        let leg = 0, s = 0;
+        for (const sp of SPANS) {
+          if (t < sp.t0) break;
+          const tot = sp.legs.reduce((a, i) => a + LEGS[i].km, 0);
+          let d = E.io2((t - sp.t0) / (sp.t1 - sp.t0)) * tot;
+          for (const i of sp.legs) { leg = i; if (d <= LEGS[i].km) { s = d / LEGS[i].km; break; } d -= LEGS[i].km; s = 1; }
+        }
+        const km = LEGS.slice(0, leg).reduce((a, l) => a + l.km, 0) + s * LEGS[leg].km;
+        const [x, y] = bez(LEGS[leg], s), [dx, dy] = dbez(LEGS[leg], s);
+        return { leg, s, km, x, y, ang: Math.atan2(dy, dx) };
       };
-      H.ready();
+
+      // ---------- camera: zoom keys, follow weight, screen centre
+      const ZK = [[0, 0.92], [11, 0.92], [12.4, 3], [13.6, 3], [15.4, 2.1], [17, 1.45], [19, 2.4], [22, 2.4], [23.4, 1.3], [25.6, 1.3], [26.6, 2.5], [30.2, 2.5], [31.2, 3.4], [35, 3.6], [36.6, 0.8], [42, 0.8], [43.4, 0.62], [99, 0.62]];
+      const key = (keys, t) => { let v = keys[0][1]; for (let i = 1; i < keys.length; i++) v = L(v, keys[i][1], E.io3((t - keys[i - 1][0]) / (keys[i][0] - keys[i - 1][0]))); return v; };
+      const CY = [[0, 960], [5.5, 960], [11, 900], [35, 900], [36.6, 720], [42, 720], [43.4, 650], [99, 650]];
+      const follow = (t) => E.io3((t - 11) / 1.4) * (1 - E.io3((t - 35) / 1.6));
+
+      // ---------- static geometry in base px
+      const india = new Path2D(), states = new Path2D(), outline = new Path2D(), land = new Path2D();
+      for (const d of window.INDIA.districts) for (const r of d.rings) {
+        for (let i = 0; i < r.length; i += 2) { const x = bx(r[i]), y = by(r[i + 1]); i ? india.lineTo(x, y) : india.moveTo(x, y); }
+        india.closePath();
+      }
+      const segs = (arr, p) => { for (let i = 0; i < arr.length; i += 4) { p.moveTo(bx(arr[i]), by(arr[i + 1])); p.lineTo(bx(arr[i + 2]), by(arr[i + 3])); } };
+      segs(window.INDIA.states, states); segs(window.INDIA.outline, outline);
+      for (const r of window.LANDR) { for (let i = 0; i < r.length; i += 2) { const x = bx(r[i]), y = by(r[i + 1]); i ? land.lineTo(x, y) : land.moveTo(x, y); } land.closePath(); }
+
+      // ---------- DOM bits
+      for (let i = 0; i < 20; i++) $("ticks").appendChild(document.createElement("i"));
+      const ticks = [...$("ticks").children];
+      $("b1v").textContent = `≈ ${fmt(r10(STRAIGHT_KM))} km`;
+      $("b2v").textContent = `≈ ${fmt(r10(ROUTE_KM))} km`;
+      const extra = ROUTE_KM - STRAIGHT_KM;
+      $("diff").textContent = `+ ${fmt(r10(extra))} km · ${Math.round((extra / STRAIGHT_KM) * 100)}% longer`;
+
+      const CAPS = [
+        [0, "Rama and Sita fly home from Lanka on the Pushpaka."],
+        [2.8, "The festivals put about 20 days between Dussehra and Diwali. Why so long?"],
+        [5.6, `In a straight line, Lanka to Ayodhya is about ${fmt(r10(STRAIGHT_KM))} km.`],
+        [11, "Halt 1, Lanka: Vibhishana asks Rama to stay on (Yuddha 121)."],
+        [13.6, "Then over the bridge at Setu,"],
+        [15.6, "and west, not north, to Kishkindha."],
+        [19, "Halt 2, Kishkindha: the vanara families come aboard (tradition)."],
+        [22.2, "Then the long leg to the north-east."],
+        [26.4, "Halt 3: Bharadwaja's hermitage, a feast for the army (Yuddha 124)."],
+        [28.2, "Hanuman flies ahead to tell Bharata (Yuddha 125–128)."],
+        [30.4, "Nandigrama: Bharata meets Rama."],
+        [33.2, "Then Ayodhya."],
+        [35.6, ""],
+      ];
+
+      // ---------- canvas helpers
+      const g = $("map").getContext("2d");
+      const ink = "#2a2118", acc = "#9a3f12", blue = "#24597a";
+      const label = (txt, x, y, side, size = 38, col = ink, a = 1) => {
+        a *= C((y - 340) / 50) * C((1500 - y) / 50);
+        if (a <= 0) return;
+        g.globalAlpha = a; g.font = `700 ${size}px Oswald`; g.textBaseline = "middle"; g.textAlign = side > 0 ? "left" : "right";
+        g.lineWidth = 8; g.strokeStyle = "rgba(246, 239, 222, 0.92)"; g.lineJoin = "round";
+        g.strokeText(txt, x + side * 26, y); g.fillStyle = col; g.fillText(txt, x + side * 26, y); g.globalAlpha = 1;
+      };
+      const pill = (txt, x, y, a) => {
+        a *= C((y - 340) / 50) * C((1500 - y) / 50);
+        if (a <= 0) return;
+        g.globalAlpha = a; g.font = "700 30px Oswald"; const w = g.measureText(txt).width + 26;
+        g.fillStyle = acc; g.beginPath(); g.roundRect(x - w / 2, y - 22, w, 44, 22); g.fill();
+        g.fillStyle = "#fff6e6"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(txt, x, y + 1); g.globalAlpha = 1;
+      };
+      const ring = (x, y, r, col, w, a) => { if (a <= 0) return; g.globalAlpha = a; g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.stroke(); g.globalAlpha = 1; };
+      const dot = (x, y, r, fill, stroke, w = 5) => { g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fillStyle = fill; g.fill(); if (stroke) { g.lineWidth = w; g.strokeStyle = stroke; g.stroke(); } };
+      const strokeLeg = (l, s0, s1) => { const n = 40; for (let k = 0; k <= n; k++) { const [x, y] = bez(l, L(s0, s1, k / n)); k ? g.lineTo(x, y) : g.moveTo(x, y); } };
+
+      H.render = (t) => {
+        const z = key(ZK, t), cyS = key(CY, t), f = flight(t), w = follow(t);
+        const camX = L(0, f.x, w), camY = L(0, f.y, w);
+        const sx = (x) => W / 2 + (x - camX) * z, sy = (y) => cyS + (y - camY) * z;
+        const mapA = L(0.3, 1, E.io3((t - 4.6) / 1.2));
+
+        // ---- base map
+        g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.fillStyle = "#e3d4b3"; g.fillRect(0, 0, W, HGT);
+        g.globalAlpha = mapA;
+        g.setTransform(z, 0, 0, z, W / 2 - camX * z, cyS - camY * z);
+        g.fillStyle = "#ece2ca"; g.fill(land);
+        g.fillStyle = "#f8f1e1"; g.fill(india);
+        g.strokeStyle = "#dccaa3"; g.lineWidth = 1.3 / z; g.stroke(states);
+        g.strokeStyle = "#9c8457"; g.lineWidth = 2.2 / z; g.stroke(outline);
+        g.strokeStyle = "#b9a57c"; g.lineWidth = 1.4 / z; g.stroke(land);
+
+        // ---- straight line Lanka -> Ayodhya
+        const sDraw = E.io2((t - 6) / 2.6), sA = t < 11 ? 1 : t < 35.5 ? 0.45 : 1;
+        if (sDraw > 0) {
+          const a = SITES[0], b = SITES[5];
+          g.globalAlpha = mapA * sA; g.setLineDash([16 / z, 12 / z]); g.lineDashOffset = -t * 30 / z;
+          g.strokeStyle = blue; g.lineWidth = 4.5 / z; g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(L(a.x, b.x, sDraw), L(a.y, b.y, sDraw)); g.stroke(); g.setLineDash([]);
+        }
+        // ---- route flown so far, with a soft halo
+        if (t >= 13.4) {
+          g.globalAlpha = 1; g.lineCap = "round"; g.lineJoin = "round";
+          for (const [col, lw] of [["rgba(154, 63, 18, 0.18)", 18], [acc, 7]]) {
+            g.strokeStyle = col; g.lineWidth = lw / z; g.beginPath();
+            for (let i = 0; i < f.leg; i++) strokeLeg(LEGS[i], 0, 1);
+            strokeLeg(LEGS[f.leg], 0, f.s); g.stroke();
+          }
+        }
+        // ---- Hanuman: Prayag -> Nandigrama, ahead of the chariot
+        const hu = E.io2((t - 28.2) / 1.6);
+        if (hu > 0) {
+          const a = SITES[3], b = SITES[4], march = t > 46.5 ? 1 : 0;
+          g.globalAlpha = t > 46.5 ? 0.6 + 0.4 * Math.sin(t * 6) : 0.9;
+          g.setLineDash([10 / z, 8 / z]); g.lineDashOffset = -t * 40 / z; g.strokeStyle = blue; g.lineWidth = (4 + 3 * march) / z;
+          g.beginPath(); g.moveTo(a.x - 6 / z, a.y); g.quadraticCurveTo(a.x - 30, (a.y + b.y) / 2, L(a.x, b.x, hu) - 6 / z, L(a.y, b.y, hu)); g.stroke(); g.setLineDash([]);
+        }
+
+        // ---- screen space: pins, rings, labels, chariot
+        g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1;
+        const reached = (i) => (i === 0 ? t >= 5.8 : i === 5 ? t >= 5.8 : f.leg >= i || (f.leg === i - 1 && f.s >= 0.999));
+        const showLab = (i) => (i === 4 ? z > 2 : i === 1 ? z > 1.2 : true);
+        SITES.forEach((s, i) => {
+          if (!reached(i)) return;
+          const x = sx(s.x), y = sy(s.y), pop = i === 0 || i === 5 ? E.back((t - 5.8 - (i ? 0.4 : 0)) / 0.5) : 1;
+          dot(x, y, 13 * pop, "#fff8ea", i === 5 ? blue : acc, 6);
+          label(s.n, x, y, s.side, 38, ink, C(pop) * (showLab(i) ? 1 : 0));
+        });
+        // halts: rings that ripple, a clock arc that fills while the chariot waits, a numbered pill that stays
+        for (const h of HALTS) {
+          if (t < h.t0) continue;
+          const s = SITES[h.i], x = sx(s.x), y = sy(s.y), u = C((t - h.t0) / (h.t1 - h.t0)), live = t < h.t1;
+          if (live) for (let k = 0; k < 3; k++) { const p = ((t - h.t0) * 0.9 + k / 3) % 1; ring(x, y, 20 + p * 90, acc, 4, (1 - p) * 0.7); }
+          g.strokeStyle = acc; g.lineWidth = 7; g.globalAlpha = live ? 1 : 0.55; g.beginPath(); g.arc(x, y, 30, -Math.PI / 2, -Math.PI / 2 + u * Math.PI * 2); g.stroke(); g.globalAlpha = 1;
+          const pulse = t > 43 && t < 46.5 ? 1 : 0;
+          if (pulse) for (let k = 0; k < 2; k++) { const p = ((t - 43) * 0.8 + k / 2) % 1; ring(x, y, 18 + p * 60, acc, 4, (1 - p) * 0.8); }
+          const dy = h.n === 3 ? L(62, -64, C((z - 1.3) / 0.7)) : -64;
+          pill(`HALT ${h.n}`, x, y + dy, E.o3((t - h.t0) / 0.4) * (h.n === 3 ? 1 - 0.75 * F(t, 28, 29.9, 0.3) : 1));
+        }
+        // Hanuman's runner
+        if (hu > 0 && hu < 1) { const a = SITES[3], b = SITES[4], x = sx(L(a.x, b.x, hu)), y = sy(L(a.y, b.y, hu)); dot(x, y, 11, blue); label("HANUMAN", x + 14, y + 6, 1, 34, blue); }
+        if (t >= 29.8 && t < 32) { const b = SITES[4]; const p = ((t - 29.8) * 0.9) % 1; ring(sx(b.x), sy(b.y), 16 + p * 60, blue, 4, (1 - p) * 0.8); }
+        // Ayodhya: a ring of lamps lights up on arrival
+        if (t >= 34.3) {
+          const s = SITES[5], x = sx(s.x), y = sy(s.y), R = L(70, 34, C((t - 35) / 1.6));
+          for (let k = 0; k < 12; k++) {
+            const a = E.o3((t - 34.3 - k * 0.06) / 0.3), ang = (k / 12) * Math.PI * 2 - Math.PI / 2;
+            if (a <= 0) continue;
+            const lx = x + Math.cos(ang) * R, ly = y + Math.sin(ang) * R, fl = 0.75 + 0.25 * Math.sin(t * 9 + k * 2.1);
+            const gr = g.createRadialGradient(lx, ly, 0, lx, ly, 18); gr.addColorStop(0, `rgba(255, 190, 70, ${0.8 * a * fl})`); gr.addColorStop(1, "rgba(255, 190, 70, 0)");
+            g.fillStyle = gr; g.beginPath(); g.arc(lx, ly, 18, 0, Math.PI * 2); g.fill();
+            dot(lx, ly, 5 * a, "#e8a43a");
+          }
+        }
+        // the chariot: glow, spark trail, arrowhead turned along its path
+        if (t >= 11 && t < 36.2) {
+          const a = F(t, 11, 35.6, 0.5), x = sx(f.x), y = sy(f.y);
+          for (let k = 1; k <= 16; k++) {
+            const p = flight(t - k * 0.05); const px = sx(p.x), py = sy(p.y);
+            if (Math.hypot(px - x, py - y) < 2) continue;
+            const j = Math.sin(k * 1.7 + t * 9) * 5;
+            g.globalAlpha = a * (1 - k / 16) * 0.75; dot(px + j * Math.sin(p.ang), py - j * Math.cos(p.ang), 7 * (1 - k / 17), "#e8a43a");
+          }
+          g.globalAlpha = a;
+          const gr = g.createRadialGradient(x, y, 0, x, y, 60); gr.addColorStop(0, "rgba(255, 196, 90, 0.75)"); gr.addColorStop(1, "rgba(255, 196, 90, 0)");
+          g.fillStyle = gr; g.beginPath(); g.arc(x, y, 60, 0, Math.PI * 2); g.fill();
+          g.save(); g.translate(x, y); g.rotate(f.ang);
+          g.beginPath(); g.moveTo(26, 0); g.lineTo(-18, -18); g.lineTo(-8, 0); g.lineTo(-18, 18); g.closePath();
+          g.fillStyle = "#fff8ea"; g.fill(); g.lineWidth = 5; g.strokeStyle = acc; g.lineJoin = "round"; g.stroke();
+          g.restore(); g.globalAlpha = 1;
+        }
+
+        // ---- DOM layers
+        $("hook").style.opacity = 1 - E.io3((t - 4.8) / 0.7);
+        $("hbig").style.transform = `scale(${L(1.06, 1, E.o3(t / 1.2))})`;
+        [...$("hbig").children].forEach((sp, i) => (sp.style.transform = `translateY(${(1 - E.back((t + 0.6 - i * 0.18) / 0.6)) * 60}px)`));
+        ticks.forEach((tk, i) => { const on = C((t - 0.8 - i * 0.11) / 0.15); tk.style.background = on ? `rgba(154, 63, 18, ${0.14 + 0.76 * on})` : ""; tk.style.transform = `scaleY(${1 + 0.25 * Math.sin(C((t - 0.8 - i * 0.11) / 0.3) * Math.PI)})`; });
+        $("kick").style.opacity = F(t, 4.9, 99, 0.6);
+        [["h1", 5.4, 10.6], ["h2", 10.8, 35.6], ["h3", 35.8, 42.2], ["h4", 42.4, 99]].forEach(([id, a, b]) => { const e = $(id), k = F(t, a, b, 0.5); e.style.opacity = k; e.style.transform = `translateX(${(1 - E.o3((t - a) / 0.5)) * -40}px)`; });
+        const sk = E.o3((t - 6) / 2.6);
+        $("straight").style.opacity = F(t, 5.8, 10.6, 0.4); $("sv").textContent = fmt(r10(sk * STRAIGHT_KM));
+        $("odo").style.opacity = F(t, 11, 35.6, 0.5); $("ov").textContent = `${fmt(r10(f.km))} km`;
+        $("bars").style.opacity = F(t, 36.4, 42.2, 0.5);
+        $("b1").style.width = `${(STRAIGHT_KM / ROUTE_KM) * 100 * E.io3((t - 36.8) / 1.2)}%`;
+        $("b2").style.width = `${100 * E.io3((t - 37.6) / 1.4)}%`;
+        $("diff").style.opacity = E.o3((t - 39) / 0.5); $("diff").style.transform = `scale(${L(1.2, 1, E.o3((t - 39) / 0.5))})`;
+        $("diffl").style.opacity = E.o3((t - 40) / 0.5);
+        [["w0", 43], ["w1", 46.5], ["w2", 50]].forEach(([id, a]) => { const e = $(id), k = E.o3((t - a) / 0.6); e.style.opacity = k; e.style.transform = `translateX(${(1 - k) * 120}px)`; });
+        $("note").style.opacity = F(t, 5, 99, 0.6);
+        let c = ""; for (const [a, s] of CAPS) if (t >= a) c = s;
+        $("cap").textContent = c; $("cap").style.opacity = c ? 1 : 0;
+      };
+      Promise.all(["700 40px Oswald", "400 30px Inter", "600 30px Inter", "400 28px Plex"].map((f) => document.fonts.load(f))).then(() => H.ready());
     </script>
   </body>
 </html>

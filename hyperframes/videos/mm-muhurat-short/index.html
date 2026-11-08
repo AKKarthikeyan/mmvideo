@@ -1,0 +1,222 @@
+<!doctype html>
+<!-- Moat & Margin Short · One hour, one year: each Diwali Muhurat session against the Samvat year that followed, on the
+     same scale, then Samvat 2082 day by day (NSE Nifty 50 closes). Numbers come from story.js, written by
+     tools/muhurat_shorts.py. 1080x1920, 45 s, silent with on-screen lines. No calls on the market. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>One hour, one year</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      .paper { --up: #1a1a1a; --dn: #b8261a; --dnt: #8e1c12; --hr: #e2a93a; }
+      #root { width: 1080px; height: 1920px; background: var(--bg); }
+      #vig { background: radial-gradient(900px 1500px at 50% 50%, transparent 60%, rgba(0, 0, 0, var(--vig)) 100%); }
+      .kicker { left: 70px; top: 150px; font-size: 30px; letter-spacing: 0.2em; }
+      .scene { position: absolute; inset: 0; opacity: 0; }
+      .h { position: absolute; left: 70px; top: 214px; font: 700 62px/1.02 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--fg); }
+      .unit { position: absolute; left: 70px; top: 290px; width: 940px; font: 400 30px/1.25 Inter, sans-serif; color: var(--muted); }
+      .line { position: absolute; left: 70px; width: 940px; font: 600 44px/1.22 Inter, sans-serif; color: var(--fg); }
+      .line b { color: var(--kick); }
+      #src { position: absolute; left: 70px; top: 1566px; width: 940px; font: 400 28px/1.35 Plex, monospace; color: var(--muted); }
+      /* hook */
+      #hT { position: absolute; left: 70px; top: 250px; width: 940px; font: 700 120px/0.98 Oswald, sans-serif; letter-spacing: 0.02em; color: var(--fg); }
+      .stat { position: absolute; left: 70px; width: 940px; }
+      .stat .n { font: 700 230px/1 Oswald, sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      .stat .l { font: 400 40px/1.25 Inter, sans-serif; color: var(--fg); margin-top: 4px; }
+      #st1 .n { color: var(--muted); font-size: 150px; }
+      #st2 .n { color: var(--kick); }
+      #hS { position: absolute; left: 72px; top: 1390px; width: 920px; font: 400 32px/1.3 Plex, monospace; color: var(--muted); }
+      /* same-scale bars */
+      #leg { position: absolute; left: 70px; top: 340px; display: flex; gap: 34px; font: 400 30px/1 Inter, sans-serif; color: var(--fg); }
+      #leg i { display: inline-block; vertical-align: -6px; margin-right: 10px; }
+      #axis { position: absolute; top: 404px; width: 3px; height: 946px; background: var(--fg); opacity: 0.6; }
+      .yr { position: absolute; left: 50px; width: 96px; text-align: right; font: 700 28px/1 Oswald, sans-serif; color: var(--muted); }
+      .ybar { position: absolute; height: 24px; background: var(--up); }
+      .ybar.dn { background: var(--dn); }
+      .hbar { position: absolute; height: 34px; background: var(--hr); outline: 2px solid var(--fg); }
+      .bv { position: absolute; font: 700 28px/1 Oswald, sans-serif; white-space: nowrap; }
+      .mark { position: absolute; left: 22px; width: 16px; height: 16px; border-radius: 50%; background: var(--dn); }
+      /* 2082 */
+      #cv { position: absolute; left: 0; top: 0; }
+      .ann { position: absolute; font: 700 32px/1.05 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .ann span { display: block; font: 400 28px/1.2 Inter, sans-serif; color: var(--muted); }
+      .ann.r { text-align: right; }
+      #res { position: absolute; left: 70px; top: 1350px; font: 700 64px/1 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--card);
+        background: var(--dnt); padding: 16px 24px 20px; white-space: nowrap; }
+      /* long view */
+      .lv { position: absolute; left: 70px; width: 940px; }
+      .lv .a { font: 400 36px/1.2 Inter, sans-serif; color: var(--muted); }
+      .lv .b { font: 700 150px/1.02 Oswald, sans-serif; color: var(--fg); font-variant-numeric: tabular-nums; }
+      #x21 { position: absolute; left: 62px; top: 940px; font: 700 210px/1 Oswald, sans-serif; color: var(--kick); white-space: nowrap; }
+      #lvN { position: absolute; left: 74px; top: 1160px; width: 920px; font: 400 30px/1.3 Plex, monospace; color: var(--muted); }
+      #close { position: absolute; left: 70px; top: 1260px; width: 940px; font: 700 Italic 54px/1.15 Playfair, serif; color: var(--fg); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="45" data-width="1080" data-height="1920">
+      <canvas id="cv" width="1080" height="1920"></canvas>
+      <div class="scene" id="s1">
+        <div id="hT">ONE HOUR.<br />ONE YEAR.</div>
+        <div class="stat" id="st1" style="top: 540px"><div class="n" id="n1"></div><div class="l">Average move of the Nifty 50 in the Diwali Muhurat session, up or down</div></div>
+        <div class="stat" id="st2" style="top: 860px"><div class="n" id="n2"></div><div class="l">Average move in the Samvat year that followed</div></div>
+        <div id="hS">26 Diwalis, 2000 to 2025</div>
+      </div>
+      <div class="scene" id="s2">
+        <div class="h">SAME SCALE</div>
+        <div class="unit">Nifty 50, % · by year of Diwali</div>
+        <div id="leg"><div><i style="width: 12px; height: 30px; background: var(--hr); outline: 2px solid var(--fg)"></i>The Muhurat hour</div>
+          <div><i style="width: 54px; height: 22px; background: var(--up)"></i>The Samvat year</div></div>
+        <div id="rows"></div>
+        <div id="axis"></div>
+        <div class="line" id="l2" style="top: 1400px" data-hold></div>
+      </div>
+      <div class="scene" id="s4">
+        <div class="h">SAMVAT 2082</div>
+        <div class="unit" id="u4"></div>
+        <div id="anns" data-hold></div>
+        <div id="res" data-hold></div>
+      </div>
+      <div class="scene" id="s5">
+        <div class="lv" style="top: 300px"><div class="a" id="lvA1"></div><div class="b" id="lvB1"></div></div>
+        <div class="lv" style="top: 590px"><div class="a" id="lvA2"></div><div class="b" id="lvB2"></div></div>
+        <div id="x21"></div>
+        <div id="lvN">Price index, before dividends.</div>
+        <div id="close">The hour is a ritual.<br />The years did the work.</div>
+      </div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT &amp; MARGIN · MUHURAT TRADING</div>
+      <div id="src"></div>
+    </div>
+    <script>
+      const S = window.STORY, R = S.rows, ST = S.stats, V = ST.s2082, P = S.path;
+      const H = HF.setup(45);
+      window.__timelines.main = H.tl;
+      const E = HF.ease, F = HF.fade, L = HF.lerp, C01 = HF.clamp01;
+      const $ = (id) => document.getElementById(id);
+      const num = (v, d = 0) => v.toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
+      const sg = (v, d = 1) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(d)}%`;
+      const day = (iso, y = true) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", ...(y ? { year: "numeric" } : {}), timeZone: "UTC" });
+      const css = (v) => getComputedStyle($("root")).getPropertyValue(v).trim();
+
+      $("src").textContent = `Source: ${S.source}. Samvat year: Muhurat close to the last close before the next Muhurat.`;
+      $("u4").textContent = `Nifty 50 daily close, ${day(V.start[0])} to ${day(V.end[0])}`;
+      $("res").textContent = `THE YEAR: ${sg(V.ret)}`;
+      $("lvA1").textContent = `Muhurat close, ${day(ST.first.date)}`; $("lvB1").textContent = num(ST.first.close, 2);
+      $("lvA2").textContent = `Close on ${day(ST.last.date)}`; $("lvB2").textContent = num(ST.last.close, 2);
+      $("x21").textContent = `ABOUT ${Math.round(ST.times)}×`;
+      const C = ST.cross;
+
+      // ---------- same-scale rows
+      const AX = 507, PX = 5.29, TOP = 414, PITCH = 36;
+      $("axis").style.left = AX - 1 + "px";
+      const rows = R.map((r, i) => {
+        const y = TOP + i * PITCH, w = Math.abs(r.year) * PX, up = r.year > 0, hw = Math.max(Math.abs(r.hour) * PX, 2);
+        const yr = document.createElement("div"); yr.className = "yr"; yr.style.top = y - 2 + "px"; yr.textContent = r.date.slice(0, 4);
+        const yb = document.createElement("div"); yb.className = "ybar" + (up ? "" : " dn"); yb.style.top = y + "px";
+        const hb = document.createElement("div"); hb.className = "hbar"; hb.style.top = y - 5 + "px"; hb.style.width = hw + "px";
+        hb.style.left = (r.hour > 0 ? AX + 1 : AX + 1 - hw) + "px";
+        const v = document.createElement("div"); v.className = "bv"; v.style.top = y - 2 + "px"; v.textContent = sg(r.year);
+        const inside = w > 140;
+        if (up) { if (inside) { v.style.left = AX + w - 112 + "px"; v.style.color = "var(--card)"; } else { v.style.left = AX + w + 12 + "px"; v.style.color = "var(--fg)"; } }
+        else { if (inside) { v.style.left = AX - w + 14 + "px"; v.style.color = "var(--card)"; } else { v.style.left = AX + 14 + "px"; v.style.color = "var(--dnt)"; } }
+        const mk = document.createElement("div"); mk.className = "mark"; mk.style.top = y + 4 + "px";
+        $("rows").append(yr, yb, hb, v, mk);
+        return { r, i, w, up, yr, yb, hb, v, mk };
+      });
+
+      // ---------- Samvat 2082 chart on the canvas
+      const g = $("cv").getContext("2d");
+      const X0 = 290, X1 = 870, Y0 = 520, Y1 = 1240, LO = 21800, HI = 26800;
+      const t0 = Date.parse(P[0][0]), t1 = Date.parse(P[P.length - 1][0]);
+      const cx = (iso) => X0 + ((Date.parse(iso) - t0) / (t1 - t0)) * (X1 - X0);
+      const cy = (v) => Y1 - ((v - LO) / (HI - LO)) * (Y1 - Y0);
+      const wkI = P.findIndex((p) => p[0] === V.week_from[0]);
+      const ann = (cls, x, y, html) => { const d = document.createElement("div"); d.className = "ann " + cls; d.style.left = x + "px"; d.style.top = y + "px"; d.innerHTML = html; $("anns").append(d); return d; };
+      const A = {
+        start: ann("r", X0 - 236, cy(V.start[1]) - 20, `${num(V.start[1], 0)}<span>Muhurat<br />${day(V.start[0])}</span>`),
+        peak: ann("", cx(V.peak[0]) + 20, cy(V.peak[1]) - 96, `${num(V.peak[1], 0)}<span>High, ${day(V.peak[0])}</span>`),
+        low: ann("", cx(V.low[0]) - 370, cy(V.low[1]) + 26, `${num(V.low[1], 0)} · ${sg(V.fall)} from the high<span>Low, ${day(V.low[0])}</span>`),
+        end: ann("r", cx(V.end[0]) - 360, cy(V.end[1]) - 100, `${num(V.end[1], 0)} · ${day(V.end[0], false)}<span>${sg(V.week)} in the last week</span>`),
+      };
+      for (const k in A) A[k].style.width = "330px";
+      A.start.style.width = "210px";
+      A.low.style.width = "520px"; A.end.style.width = "340px";
+      const drawChart = (t, a) => {
+        g.clearRect(0, 0, 1080, 1920);
+        if (a <= 0) return;
+        g.globalAlpha = a;
+        // gridlines every 1,000 points
+        g.strokeStyle = "rgba(26,26,26,0.14)"; g.lineWidth = 2; g.fillStyle = css("--muted"); g.font = "400 28px Inter";
+        for (let v = 22000; v <= 26000; v += 1000) { g.beginPath(); g.moveTo(X0, cy(v)); g.lineTo(X1 + 20, cy(v)); g.stroke(); g.fillText(num(v), X1 + 34, cy(v) + 9); }
+        // start level reference
+        g.setLineDash([10, 8]); g.strokeStyle = "rgba(26,26,26,0.5)"; g.beginPath(); g.moveTo(X0, cy(V.start[1])); g.lineTo(X1, cy(V.start[1])); g.stroke(); g.setLineDash([]);
+        const u = E.io2((t - 28.4) / 4.6), n = Math.max(1, Math.floor(u * (P.length - 1)));
+        g.lineJoin = "round"; g.lineWidth = 5; g.strokeStyle = css("--fg"); g.beginPath();
+        for (let i = 0; i <= Math.min(n, wkI); i++) { const x = cx(P[i][0]), y = cy(P[i][1]); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+        g.stroke();
+        if (n > wkI) { g.lineWidth = 9; g.strokeStyle = css("--kick"); g.beginPath();
+          for (let i = wkI; i <= n; i++) { const x = cx(P[i][0]), y = cy(P[i][1]); i > wkI ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); }
+        const dot = (iso, v, col) => { g.fillStyle = col; g.beginPath(); g.arc(cx(iso), cy(v), 11, 0, 7); g.fill(); };
+        dot(V.start[0], V.start[1], css("--fg"));
+        const at = (iso) => P.findIndex((p) => p[0] === iso) <= n;
+        if (at(V.peak[0])) dot(V.peak[0], V.peak[1], css("--fg"));
+        if (at(V.low[0])) dot(V.low[0], V.low[1], css("--dn"));
+        if (n >= P.length - 1) dot(V.end[0], V.end[1], css("--kick"));
+        g.globalAlpha = 1;
+      };
+      const reach = (iso) => 28.4 + 4.6 * (() => { // time the drawn line reaches a date (inverse of the io2 ease)
+        const f = P.findIndex((p) => p[0] === iso) / (P.length - 1);
+        return f < 0.5 ? Math.sqrt(f / 2) : 1 - Math.sqrt((1 - f) / 2);
+      })();
+
+      const SC = [[0, 6], [6, 21.5], [27.5, 10.5], [38, 7]];
+      const vis = (k, tt) => { const [a, d] = SC[k]; const last = k === SC.length - 1; return C01((tt - a) / 0.4) * (last ? 1 : 1 - C01((tt - a - d + 0.4) / 0.4)); };
+
+      H.render = (t) => {
+        // s1
+        $("s1").style.opacity = vis(0, t);
+        $("n1").textContent = `${L(0, ST.mean_abs_hour, E.o3((t - 0.8) / 1.2)).toFixed(2)}%`;
+        $("n2").textContent = `${L(0, ST.mean_abs_year, E.o3((t - 2.4) / 1.6)).toFixed(1)}%`;
+        $("st1").style.opacity = F(t, 0.6); $("st2").style.opacity = F(t, 2.2); $("hS").style.opacity = F(t, 3.4);
+        // s2 rows, then s3 (same scene): red Muhurat sessions
+        $("s2").style.opacity = vis(1, t);
+        const sig = C01((t - 19.5) / 0.5);
+        rows.forEach((o) => {
+          const a = 6.6 + o.i * 0.29, k = E.o3((t - a) / 0.5);
+          const red = o.r.hour <= 0;
+          const dim = L(1, red ? 1 : 0.28, sig);
+          o.yb.style.width = o.w * k + "px";
+          o.yb.style.left = (o.up ? AX + 2 : AX - o.w * k) + "px";
+          o.yb.style.opacity = dim; o.hb.style.opacity = C01((t - a) / 0.2) * Math.max(dim, 0.5);
+          o.yr.style.opacity = C01((t - a) / 0.3) * Math.max(dim, 0.5);
+          o.yr.style.color = red && sig > 0 ? "var(--fg)" : "";
+          o.v.style.opacity = C01((t - a - 0.35) / 0.3) * (o.v.style.color === "var(--card)" ? dim : Math.max(dim, 0.5));
+          o.mk.style.opacity = red ? sig : 0;
+        });
+        const l2 = $("l2");
+        if (t < 19.5) { l2.innerHTML = `The hour barely registers. The years ran from <b>${sg(Math.min(...R.map((r) => r.year)))}</b> to <b>${sg(Math.max(...R.map((r) => r.year)))}</b>.`; l2.style.opacity = F(t, 14.6, 19.1); }
+        else if (t < 23.4) { l2.innerHTML = `<b>${C.rg + C.rr}</b> Muhurat sessions closed lower. <b>${C.rg}</b> of those years still ended higher.`; l2.style.opacity = F(t, 19.7, 23.0); }
+        else { l2.innerHTML = `<b>${C.gg + C.gr}</b> closed higher. <b>${C.gr}</b> of those years ended lower.`; l2.style.opacity = F(t, 23.4); }
+        // s4 Samvat 2082
+        const a4 = vis(2, t);
+        $("s4").style.opacity = a4;
+        drawChart(t, a4);
+        A.start.style.opacity = F(t, 28.2);
+        A.peak.style.opacity = F(t, reach(V.peak[0]));
+        A.low.style.opacity = F(t, reach(V.low[0]));
+        A.end.style.opacity = F(t, 33.0);
+        $("res").style.opacity = F(t, 33.6);
+        // s5 long view
+        $("s5").style.opacity = vis(3, t);
+        $("lvB1").parentNode.style.opacity = F(t, 38.3); $("lvB2").parentNode.style.opacity = F(t, 39.2);
+        $("x21").style.opacity = F(t, 40.2); $("lvN").style.opacity = F(t, 40.6); $("close").style.opacity = F(t, 41.4);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>

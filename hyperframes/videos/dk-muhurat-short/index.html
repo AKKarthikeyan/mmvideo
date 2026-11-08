@@ -1,0 +1,195 @@
+<!doctype html>
+<!-- Data Kadai Short · Muhurat trading scorecard: every Diwali Muhurat session since 2000 (NSE Nifty 50 closes).
+     Numbers come from story.js, written by tools/muhurat_shorts.py. 1080x1920, 40 s, silent with on-screen lines. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Muhurat scorecard</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body { width: 1080px; height: 1920px; }
+      .kadai { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --acc: #0e7c66; --acc2: #c8431f; --dline: rgba(90, 80, 60, 0.16);
+        --band: rgba(14, 124, 102, 0.09); --kick: #0e7c66; }
+      #root { width: 1080px; height: 1920px; background: var(--bg); }
+      .kadai #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      #vig { --vig: 0.1; background: radial-gradient(900px 1500px at 50% 50%, transparent 60%, rgba(0, 0, 0, var(--vig)) 100%); }
+      .kicker { left: 70px; top: 150px; font-size: 30px; letter-spacing: 0.2em; }
+      .scene { position: absolute; inset: 0; opacity: 0; }
+      .h { position: absolute; left: 70px; top: 214px; font: 700 58px/1.02 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--fg); }
+      .unit { position: absolute; left: 70px; top: 292px; width: 940px; font: 400 30px/1.25 Inter, sans-serif; color: var(--muted); }
+      .line { position: absolute; left: 70px; width: 940px; font: 600 46px/1.22 Inter, sans-serif; color: var(--fg); }
+      .line b { color: var(--acc); font-weight: 600; }
+      .line i { color: var(--acc2); font-style: normal; }
+      #src { position: absolute; left: 70px; top: 1566px; width: 940px; font: 400 28px/1.35 Plex, monospace; color: var(--muted); }
+      /* hook */
+      #hT { position: absolute; left: 70px; top: 250px; width: 940px; font: 700 92px/1 Oswald, sans-serif; letter-spacing: 0.02em; color: var(--fg); }
+      #hN { position: absolute; left: 62px; top: 470px; font: 700 400px/1 Oswald, sans-serif; color: var(--acc); font-variant-numeric: tabular-nums; white-space: nowrap; }
+      #hN span { color: var(--muted); font-size: 200px; }
+      #hS { position: absolute; left: 72px; top: 920px; width: 920px; font: 400 44px/1.25 Inter, sans-serif; color: var(--fg); }
+      .chips { position: absolute; left: 70px; top: 1110px; display: flex; gap: 20px; }
+      .chip { font: 700 46px/1 Oswald, sans-serif; letter-spacing: 0.04em; padding: 14px 22px 16px; color: #fff; white-space: nowrap; }
+      .chip.up { background: var(--acc); } .chip.down { background: var(--acc2); }
+      /* bars */
+      #tally { position: absolute; right: 70px; top: 222px; font: 700 52px/1 Oswald, sans-serif; white-space: nowrap; }
+      #tally .u { color: var(--acc); } #tally .d { color: var(--acc2); margin-left: 18px; }
+      #band { position: absolute; top: 404px; height: 946px; background: var(--band); opacity: 0; }
+      #bandL { position: absolute; top: 1358px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: var(--acc); opacity: 0; white-space: nowrap; }
+      #axis { position: absolute; top: 404px; width: 3px; height: 946px; background: var(--fg); opacity: 0.55; }
+      .yr { position: absolute; left: 60px; width: 92px; text-align: right; font: 700 28px/1 Oswald, sans-serif; color: var(--muted); }
+      .bar { position: absolute; height: 26px; background: var(--acc); }
+      .bar.dn { background: var(--acc2); }
+      .bv { position: absolute; font: 700 28px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .brk { position: absolute; width: 14px; height: 40px; background: var(--bg); transform: skewX(-20deg); }
+      #call { position: absolute; left: 70px; top: 1374px; width: 940px; padding: 18px 24px; background: var(--fg); color: var(--bg); opacity: 0; }
+      #call .a { font: 700 40px/1.05 Oswald, sans-serif; letter-spacing: 0.02em; }
+      #call .b { font: 400 32px/1.3 Inter, sans-serif; margin-top: 8px; color: #e9e3d6; }
+      /* today */
+      #tK { position: absolute; left: 70px; top: 300px; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: var(--acc); }
+      #tN { position: absolute; left: 62px; top: 360px; font: 700 210px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      #tS { position: absolute; left: 70px; top: 600px; width: 940px; font: 400 44px/1.3 Inter, sans-serif; color: var(--fg); }
+      #tLev { position: absolute; left: 70px; top: 820px; width: 940px; padding: 30px 34px; border-left: 10px solid var(--acc); background: rgba(20, 22, 26, 0.05); }
+      #tLev .a { font: 400 34px/1.2 Inter, sans-serif; color: var(--muted); }
+      #tLev .b { font: 700 120px/1.05 Oswald, sans-serif; color: var(--fg); font-variant-numeric: tabular-nums; }
+      #tLev .c { font: 400 30px/1.2 Inter, sans-serif; color: var(--muted); }
+      /* end */
+      #eC { position: absolute; left: 70px; top: 520px; font: 700 132px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: var(--fg); }
+      #eL { position: absolute; left: 74px; top: 680px; width: 920px; font: 400 44px/1.3 Inter, sans-serif; color: var(--fg); }
+      #eM { position: absolute; left: 74px; top: 960px; width: 920px; font: 400 30px/1.45 Plex, monospace; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="kadai" data-composition-id="main" data-start="0" data-duration="40" data-width="1080" data-height="1920">
+      <div class="scene" id="s1">
+        <div id="hT">THE ONE-HOUR DIWALI SESSION</div>
+        <div id="hN">0<span>/26</span></div>
+        <div id="hS"></div>
+        <div class="chips"><div class="chip up" id="cU"></div><div class="chip down" id="cD"></div></div>
+      </div>
+      <div class="scene" id="s2">
+        <div class="h">EVERY MUHURAT SESSION</div>
+        <div class="unit">Nifty 50 close against the previous day's close, %</div>
+        <div id="tally"><span class="u" id="tU">▲ 0</span><span class="d" id="tD">▼ 0</span></div>
+        <div id="band"></div><div id="bandL">WITHIN ±1%</div>
+        <div id="rows"></div>
+        <div id="axis"></div>
+        <div id="call" data-hold><div class="a" id="callA"></div><div class="b" id="callB"></div></div>
+        <div class="line" id="l2" style="top: 1400px" data-hold></div>
+      </div>
+      <div class="scene" id="s4">
+        <div id="tK">TODAY · 8 NOV 2026</div>
+        <div id="tN">SESSION 27</div>
+        <div id="tS">Samvat 2083 opens with the 27th Muhurat session since 2000.</div>
+        <div id="tLev"><div class="a">The Nifty 50 walks in at</div><div class="b" id="tLevN"></div><div class="c" id="tLevC"></div></div>
+        <div class="line" id="l4" style="top: 1200px"></div>
+      </div>
+      <div class="scene" id="s5">
+        <div id="eC">DATA KADAI</div>
+        <div id="eL"></div>
+        <div id="eM"></div>
+      </div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">DATA KADAI · MUHURAT TRADING</div>
+      <div id="src"></div>
+    </div>
+    <script>
+      const S = window.STORY, R = S.rows, ST = S.stats;
+      const H = HF.setup(40);
+      window.__timelines.main = H.tl;
+      const E = HF.ease, F = HF.fade, L = HF.lerp, C01 = HF.clamp01;
+      const $ = (id) => document.getElementById(id);
+      const num = (v, d = 0) => v.toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
+      const pct = (v) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(2)}%`;
+      const day = (iso) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+
+      $("src").textContent = `Source: ${S.source}. Muhurat close vs previous trading day's close.`;
+      $("hS").textContent = `Diwali Muhurat sessions in which the Nifty 50 closed higher, 2000 to 2025`;
+      $("cU").textContent = `▲ ${ST.up} UP`; $("cD").textContent = `▼ ${ST.down} DOWN`;
+      $("l2").innerHTML = `Up <b>${ST.up}</b> times. Down <i>${ST.down}</i>.`;
+      const tl = ST.last;
+      $("tLevN").textContent = num(tl.close, 2);
+      $("tLevC").textContent = `Close on ${day(tl.date)}, the last session before Muhurat`;
+      $("l4").innerHTML = `Scorecard so far: <b>${ST.up} up</b>, <i>${ST.down} down</i>.`;
+      $("eL").textContent = `${ST.up} of ${ST.n} Muhurat sessions closed higher. Most moved less than 1%.`;
+      $("eM").textContent = `Muhurat close vs previous day's close, 2000–2025. Price index. Data: NSE.`;
+
+      // ---------- bar rows
+      const AX = 410, PX = 360, TOP = 414, PITCH = 36, CLIP = 1.6; // 1% = 360 px; bars past 1.6% are broken
+      $("axis").style.left = AX - 1 + "px";
+      $("band").style.left = AX - PX + "px"; $("band").style.width = 2 * PX + "px";
+      $("bandL").style.left = AX + PX - 170 + "px";
+      const rows = R.map((r, i) => {
+        const y = TOP + i * PITCH, w = Math.min(Math.abs(r.hour), CLIP) * PX, up = r.hour > 0;
+        const yr = document.createElement("div"); yr.className = "yr"; yr.style.top = y + "px"; yr.textContent = r.date.slice(0, 4);
+        const b = document.createElement("div"); b.className = "bar" + (up ? "" : " dn"); b.style.top = y + "px";
+        b.style.left = (up ? AX + 2 : AX - Math.max(w, 3)) + "px";
+        const v = document.createElement("div"); v.className = "bv"; v.style.top = y - 1 + "px"; v.textContent = pct(r.hour);
+        v.style.left = (up ? AX + w + 12 : AX + 14) + "px";
+        if (!up) v.style.color = "var(--acc2)";
+        $("rows").append(yr, b, v);
+        let brk = null;
+        if (Math.abs(r.hour) > CLIP) {
+          brk = document.createElement("div"); brk.className = "brk"; brk.style.top = y - 7 + "px"; brk.style.left = AX + w - 60 + "px";
+          $("rows").append(brk);
+          v.textContent = `${pct(r.hour)}  ▶ off the scale`; v.style.left = AX + 20 + "px"; v.style.color = "#fff";
+        }
+        return { r, i, y, w: Math.max(w, 3), yr, b, v, brk };
+      });
+      const big = rows.find((o) => o.r.date === ST.big.date);
+            $("callA").textContent = `${day(ST.big.date).toUpperCase()} · ${pct(ST.big.hour)}`;
+      $("callB").textContent = `The day after the Nifty's lowest close of 2008, ${num(ST.low08.close, 2)}. No other session moved more than 1.2%.`;
+
+      const SC = [[0, 5.5], [5.5, 23.5], [29, 5.5], [34.5, 5.5]]; // s1, s2 (bars, then typical move and 2008), s4, s5: start, length
+      const vis = (k, t) => { const [a, d] = SC[k]; const last = k === SC.length - 1; return C01((t - a) / 0.4) * (last ? 1 : 1 - C01((t - a - d + 0.4) / 0.4)); };
+      // check: only 2008 moves more than 1.2%
+      const over12 = R.filter((r) => Math.abs(r.hour) > 1.2).length;
+
+      H.render = (t) => {
+        // s1 hook
+        $("s1").style.opacity = vis(0, t);
+        const n = Math.round(L(0, ST.up, E.o3((t - 0.6) / 1.8)));
+        $("hN").firstChild.textContent = String(n);
+        $("hT").style.opacity = F(t, 0.1); $("hS").style.opacity = F(t, 1.4, Infinity, 0.5);
+        document.querySelector(".chips").style.opacity = F(t, 2.6, Infinity, 0.5);
+        // s2 rows
+        $("s2").style.opacity = vis(1, t);
+        let u = 0, d = 0;
+        const typical = C01((t - 16.6) / 0.6), focus = C01((t - 21.6) / 0.5);
+        rows.forEach((o) => {
+          const a = 6.0 + o.i * 0.3, k = E.o3((t - a) / 0.45);
+          const shown = k > 0.5;
+          if (shown) (o.r.hour > 0 ? u++ : d++);
+          const isBig = o === big;
+          const inBand = Math.abs(o.r.hour) < 1;
+          let dim = 1;
+          if (typical > 0 && focus === 0) dim = L(1, inBand || isBig ? 1 : 0.3, typical);
+          if (focus > 0) dim = L(inBand || isBig ? 1 : 0.3, isBig ? 1 : 0.22, focus);
+          o.b.style.width = o.w * k + "px";
+          if (o.r.hour <= 0) o.b.style.left = AX - o.w * k + "px";
+          o.yr.style.opacity = C01((t - a) / 0.3) * Math.max(dim, 0.5);
+          o.b.style.opacity = dim; o.v.style.opacity = C01((t - a - 0.25) / 0.3) * (o.brk ? dim : Math.max(dim, 0.5));
+          o.yr.style.color = isBig && focus > 0 ? "var(--fg)" : "";
+          if (o.brk) o.brk.style.opacity = k > 0.95 ? 1 : 0;
+        });
+        $("tU").textContent = `▲ ${u}`; $("tD").textContent = `▼ ${d}`;
+        $("band").style.opacity = typical * (1 - focus);
+        $("bandL").style.opacity = typical * (1 - focus);
+        $("call").style.opacity = focus;
+        const l2 = $("l2");
+        if (t < 16.6) { l2.innerHTML = `Up <b>${ST.up}</b> times. Down <i>${ST.down}</i>.`; l2.style.opacity = F(t, 14.0, 16.2); }
+        else { l2.innerHTML = `<b>${Math.round(L(0, ST.small, E.o3((t - 16.8) / 1.6)))} of ${ST.n}</b> moved less than 1%. The median move: <b>${pct(ST.median)}</b>.`; l2.style.opacity = F(t, 16.6, 21.2); }
+        // s4 today
+        $("s4").style.opacity = vis(2, t);
+        $("tN").style.opacity = F(t, 29.2); $("tS").style.opacity = F(t, 29.8);
+        $("tLev").style.opacity = F(t, 30.5); $("l4").style.opacity = F(t, 31.3);
+        // s5 end
+        $("s5").style.opacity = vis(3, t);
+      };
+      if (over12 !== 1) console.error("expected exactly one session above 1.2%, got", over12);
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>

@@ -107,6 +107,33 @@ guessed. Without the file the scene is left out. A missing district means no rep
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
+## Muhurat trading Shorts (8 Nov 2026)
+
+Two vertical Shorts (1080×1920) for Diwali Muhurat trading, each with its own `index.html` in `videos/` and a
+`story.js` written by `tools/muhurat_shorts.py` from NSE Nifty 50 closing levels. Every on-screen number is also in
+`scripts/ledger/muhurat-shorts.csv`.
+
+| Video | Channel | Story |
+| --- | --- | --- |
+| `dk-muhurat-short` (40 s) | Data Kadai | Nifty closed higher in 21 of 26 Muhurat sessions (2000–2025); 22 moved less than 1%, median +0.39%; 28 Oct 2008 (+6.35%) is the outlier, the day after 2008's lowest close; today is session 27, Nifty at 25,030.35 |
+| `mm-muhurat-short` (45 s) | Moat & Margin | The hour moves 0.69% on average, the Samvat year after it 23.4%; same-scale bars for all 26; 4 of 5 red Muhurats were followed by a green year; Samvat 2082 day by day: high 26,329 (2 Jan), low 22,232 (8 Oct, −15.6%), −3.2% for the year after +8.6% in the final week; 1,186 (2000) to 25,030, about 21× |
+
+Definitions on screen: a session's move is the Muhurat close against the previous trading day's close; a Samvat year
+runs from the Muhurat close to the last close before the next Muhurat. Price index, before dividends.
+
+```sh
+python3 hyperframes/tools/muhurat_shorts.py      # fetches the data once into out/hyperframes/cache/muhurat/ (git)
+python3 hyperframes/tools/hf.py sync dk-muhurat-short mm-muhurat-short
+python3 hyperframes/tools/hf.py render dk-muhurat-short mm-muhurat-short
+```
+
+Data: NSE's Nifty 50 end-of-day export (Jan 2000 to Sep 2026; mirror github.com/niranjan-bhol/temp) and, for Oct–Nov
+2026, the last one-minute bar of each day from github.com/technovusin/nifty50-historical-data (MIT). The script checks
+that the one-minute closes equal NSE's on all 42 overlapping days from 3 Aug 2026 (before August they do not, so they
+are not used), and that every Muhurat date trades about a fifth of a normal day. Spot checks against published figures:
+2025 close 25,868.60 (+0.10%), 2023 19,525.55 (+0.52%), 2008 +6.35%. Before publishing, check the 6 Nov 2026 close
+(25,030.35) on nseindia.com, since it comes from the one-minute set.
+
 ## Rules for using these in a published video
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic

@@ -65,7 +65,7 @@ def sync(names):
         for f in PUBLIC_FONTS:
             shutil.copy(ROOT / "public" / "fonts" / f, a / "fonts")
         shutil.copy(LIB / "shared" / "base.css", a / "css")
-        if project(n).parent == VIDEOS:
+        if project(n).parent == VIDEOS and not n.startswith("nl-"):
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
     for dst, src in LINKS.items():

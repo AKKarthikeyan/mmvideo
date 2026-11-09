@@ -65,8 +65,9 @@
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const S = window.STORY, NS = "http://www.w3.org/2000/svg", DUR = __DURATION__;
-      $("name").textContent = S.name.toUpperCase();
-      if (S.name.length > 9) $("name").style.fontSize = Math.floor(150 * 9 / S.name.length) + "px";
+      const TT = (S.title || S.name).toUpperCase();
+      $("name").textContent = TT;
+      if (TT.length > 9) $("name").style.fontSize = Math.max(64, Math.floor(150 * 9 / TT.length)) + "px";
       // everything outside the state is dimmed: a mask with the state shape cut out
       const svg = $("dim");
       const mk = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
@@ -101,7 +102,10 @@
         $("chipB").style.opacity = HF.clamp01((w - 0.8) / 0.1);
         S.cities.forEach((c, i) => {
           const e = $("c" + i);
-          e.style.left = `${c.x + 14}px`; e.style.top = `${c.y - 20}px`;
+          // labels that would run off the right edge sit to the left of their dot instead
+          const flip = c.x + 14 + c.n.length * 27 > 1290;
+          e.style.left = `${flip ? c.x - 14 : c.x + 14}px`; e.style.top = `${c.y - 20}px`;
+          e.style.marginLeft = flip ? `-${c.n.length * 27 + 4}px` : "0";
           e.style.opacity = F(t, 1.4 + i * 0.25, 99, 0.4);
           e.style.transform = `scale(${1 / (z / ZOOM)})`; e.style.transformOrigin = "0 50%";
         });

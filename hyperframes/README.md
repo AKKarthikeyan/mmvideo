@@ -109,17 +109,20 @@ guessed. Without the file the scene is left out. A missing district means no rep
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
-**Then vs Now Shorts (9:16, 18 s).** `videos/_template_nl/index.html` is the template; `tools/nightlight_shorts.py <State> ...`
-builds `videos/nl-<state>/` (night-light pictures for 2012 and 2016 cropped to the state, district outline, three cities, and
-for Maharashtra, Karnataka and Gujarat a closing card with the RBI Bulletin Oct 2026 correlation). Imagery is NASA Black Marble
-via GIBS layer `VIIRS_Black_Marble`, which serves only 2012 and 2016; they are separate composites, so the Short says to compare
-the pattern, not the brightness (never turn them into a % change). Pilot states built: `nl-maharashtra`, `nl-karnataka`,
-`nl-gujarat`. Other states need a `CITIES` entry in the tool, and have no RBI card. For 2012 vs 2024 swap in VNP46A3 (NASA Earthdata login).
+**Then vs Now Shorts (9:16).** `videos/_template_nl/index.html` is the template; `tools/nightlight_shorts.py all` (or one or more
+state names) builds `videos/nl-<state>/` for every state and UT: night-light pictures for 2012 and 2016 cropped to the state, district
+outline, up to three cities, and for Maharashtra, Karnataka and Gujarat (18 s) a closing card with the RBI Bulletin Oct 2026
+correlation. The other 33 end on the 2016 picture (12 s). Imagery is NASA Black Marble via GIBS layer `VIIRS_Black_Marble`, which serves
+only 2012 and 2016 (no public later year); they are separate composites, so the Short says to compare the pattern, not the
+brightness (never turn them into a % change). For 2012 vs 2024 swap in VNP46A3 (NASA Earthdata login).
+Territories under 700 world-pixels (about 400 km) get a minimum-size crop, so Delhi, Chandigarh, Goa and the like show their
+surroundings; Lakshadweep is nearly dark in the data. **Hold Jammu & Kashmir and Ladakh** until their boundaries are checked against
+Survey of India (the district data is community data and the tool leaves out the unassigned districts).
 
 ```sh
-python3 hyperframes/tools/nightlight_shorts.py Maharashtra Karnataka Gujarat
-python3 hyperframes/tools/hf.py sync nl-maharashtra nl-karnataka nl-gujarat
-python3 hyperframes/tools/hf.py render nl-maharashtra nl-karnataka nl-gujarat
+python3 hyperframes/tools/nightlight_shorts.py all
+python3 hyperframes/tools/hf.py sync $(ls hyperframes/videos | grep '^nl-')
+python3 hyperframes/tools/hf.py render nl-maharashtra nl-rajasthan   # or every nl-* name; ~1.5 min each
 ```
 
 ## Rules for using these in a published video

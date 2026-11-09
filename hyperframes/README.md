@@ -107,6 +107,20 @@ guessed. Without the file the scene is left out. A missing district means no rep
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
+## Company Shorts (vertical, 1080x1920)
+
+Two 40-second pilots, one per channel (Moat & Margin = Indian companies, Moat Atlas = global companies). Same clock and
+render pattern as the samples; each page overrides the 1920x1080 base size. Silent; `scripts/company_story_shorts/music_bed.py`
+adds a draft music bed.
+
+| Video | Channel | Signature visual | Built from |
+| --- | --- | --- | --- |
+| `mm-asianpaints` | Moat & Margin | "Follow the ₹100": FY26 total income split into a column, then 1 dot = 100 retail touchpoints | s04 money |
+| `ma-asml` | Moat Atlas | "From orbit to the moat": globe dive to Veldhoven, supplier arcs (ZEISS, TRUMPF, Cymer), 48 icons = 48 EUV systems | s07 globe |
+
+`ma-asml` uses Natural Earth 1:50m coastlines and borders (`world50.js`, from `tools/topo_world.py` on `npm pack world-atlas@2`)
+so the close-up over the Netherlands and Germany stays sharp. Every figure's source is in the page's top comment and on screen.
+
 ## Rules for using these in a published video
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic

@@ -1,6 +1,6 @@
 # Will NVIDIA Survive Without JENSEN? Explained Like You're 5
 
-**Final script, Vox Plus format** · Channel: Moat Atlas · Facts as of 9 Nov 2026 · 38 beats · 929 spoken words · about 6:37 at 150 words a minute (re-time after the voice is built)
+**Final script, Vox Plus format** · Channel: Moat Atlas · Facts as of 9 Nov 2026 · 38 beats · 944 spoken words · about 6:40 at this channel's pace of about 140 words a minute (re-time after the voice is built) · 4 Shorts
 
 ## Format rules (Vox Plus)
 
@@ -10,6 +10,7 @@
 - **Analogy beats** (restaurant, castle, house move) are drawn in the illustration kit and labelled ILLUSTRATIVE on screen.
 - **Every number** carries its source on screen (the Source column). Say "alleged" and "reported"; never "spy charge".
 - **Photos** come from `public/vx/nvidia_jensen/img/` (credits in `CREDITS.md`). The `pic` scene reads `public/vx/nvidia_jensen/pics/<name>.png`, so convert the chosen JPGs into `pics/` when building. Put each photo's short credit on screen while it shows.
+- **No share-price charts** (handover rule 6): prices appear only as plain numbers in text. **No CC BY-SA photos** (rule 5).
 - **Never shown:** any picture of the woman named in reports; any face edited to mock; the words SPY or CHARGED in a title or thumbnail.
 
 ## Chapters (for the description)
@@ -22,8 +23,8 @@
 - 3:34 Check 2: the diners
 - 4:21 Check 3: a second chef
 - 5:04 Has this happened before?
-- 5:35 The answer
-- 6:25 Sources
+- 5:41 The answer
+- 6:31 Sources
 
 ## Beats
 
@@ -36,7 +37,7 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 > This man runs one of the most valuable companies in the world. On Friday, NVIDIA was worth about four and a half trillion dollars.
 
 - **On screen:** Strips: NVIDIA · ≈ $4.5 TRILLION (6 NOV CLOSE)
-- **Visual:** jensen/ces2025_keynote_wide.jpg (slow push-in on Jensen on stage)
+- **Visual:** jensen/ces2025_keynote.jpg (CC0; slow push-in on Jensen on stage). Not the `_wide` picture: it is CC BY-SA, which the handover bans.
 - **Source on screen:** Market value: CNBC / Yahoo Finance, 6 Nov 2026 close
 
 **n01 · 0:10** · scene: `kinetic (kicker "8 NOV 2026")`
@@ -79,10 +80,11 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 **n13 · 1:04** · scene: `bars (2 rows) + stamp`
 
-> So this is a question mark, not a verdict. But markets hate question marks. On Monday morning, before trading began, NVIDIA's shares were down about five percent. Since the first report, they've fallen about thirteen percent.
+> So this is a question mark, not a verdict. But markets hate question marks. Friday, NVIDIA's shares closed at one hundred and eighty six dollars sixty four cents. On Monday morning, before trading began, they were down about four percent.
 
-- **On screen:** Bars: FRI CLOSE $186.64 · MON PRE-MARKET ≈ $176   Stamp: −13% SINCE 28 OCT
-- **Source on screen:** CNBC, Yahoo Finance, 9 Nov 2026. UPDATE: use Monday's close at render
+- **On screen:** Strips (numbers only, no price chart): FRI 6 NOV CLOSE $186.64 · MON 9 NOV PRE-MARKET ≈ −4%
+- **Source on screen:** Yahoo Finance, 9 Nov 2026 (close $186.64; pre-market −4.25% to $178.70)
+- **Why no bars:** handover rule 6 bans share-price charts. This beat stays true after Monday's close, so no update is needed. Add Monday's close only if you want it, as a plain number.
 
 **n14 · 1:19** · scene: `kinetic`
 
@@ -101,11 +103,12 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 **n21 · 1:34** · scene: `pic (heading "1993")`
 
-> Think of NVIDIA as a restaurant. In nineteen ninety three, Jensen and two friends, Chris Malachowsky and Curtis Priem, planned it over coffee at a Denny's in San Jose.
+> Think of NVIDIA as a restaurant. In nineteen ninety three, Jensen and two friends, Chris Malachowsky and Curtis Priem, planned it at a Denny's in Silicon Valley.
 
-- **On screen:** Strips: 1993 · A DENNY'S IN SAN JOSE · 3 FOUNDERS   Label: ILLUSTRATIVE: A DENNY'S, NOT THE ORIGINAL
-- **Visual:** `story/dennys_restaurant.jpg`
-- **Source on screen:** NVIDIA 10-K FY2026 (incorporated April 1993); Denny's story: see checklist item 6
+- **On screen:** Strips: 1993 · A DENNY'S IN SILICON VALLEY · 3 FOUNDERS   Label: ILLUSTRATIVE: A DENNY'S, NOT THE ORIGINAL
+- **Visual:** `story/dennys_restaurant.jpg` (JeepersMedia, CC BY 2.0; credit on screen)
+- **Source on screen:** NVIDIA blog, 26 Sep 2023 ("In 1993, three friends... met at Denny's"); NVIDIA 10-K FY2026 (incorporated April 1993)
+- **Wording note:** NVIDIA's own post says only "the Silicon Valley Denny's", so we do not say "San Jose" or name a street. The coffee line is Huang's own, from the same post.
 
 **n22 · 1:46** · scene: `cards ×3`
 
@@ -205,6 +208,7 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 > NVIDIA's annual report says CUDA runs on all NVIDIA chips. Moving all that code to another company's chips is like moving your whole house to a new city. It's possible, but slow and expensive.
 
 - **On screen:** Clip highlight: "CUDA development platform that runs on all NVIDIA GPUs"   Label on the house: ILLUSTRATIVE
+- **Visual:** `public/vx/nvidia_jensen/clips/10k_item1_cuda.png` (cropped from NVIDIA's own annual report PDF, Item 1)
 - **Source on screen:** NVIDIA 10-K FY2026, Item 1
 
 **n52 · 3:57** · scene: `kinetic`
@@ -242,16 +246,17 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 > And the same report carries a warning. It says NVIDIA is highly dependent on its longstanding executive team, and that failing to plan succession could hurt its long-term success.
 
 - **On screen:** Clip highlight: "highly dependent on the services of our longstanding executive team" · "succession planning"
-- **Visual:** Crop from the 10-K PDF (sources/)
+- **Visual:** `public/vx/nvidia_jensen/clips/10k_p23_succession.png` (cropped from NVIDIA's own annual report PDF, page 23 of the 10-K, with the two phrases highlighted)
 - **Source on screen:** NVIDIA 10-K FY2026, Item 1A, p.23
 
 **n62 · 4:45** · scene: `pic + strips`
 
-> What it doesn't do is name a successor. There's no public number two. Jensen has said he has around sixty people reporting straight to him. That's how he likes to run things. It also means there's no obvious next in line.
+> What it doesn't do is name a successor. There's no public number two. Jensen has said his direct staff is sixty people. That's how he runs things. It also means no obvious next in line.
 
-- **On screen:** Strips: NO PUBLIC SUCCESSOR · ≈ 60 DIRECT REPORTS
+- **On screen:** Strips: NO NAMED SUCCESSOR · "MY DIRECT STAFF IS 60 PEOPLE"
 - **Visual:** `jensen/ceo_flickr.jpg`
-- **Source on screen:** VERIFY: cite Huang's own interview for the 60 figure; successor: 10-K and Bloomberg
+- **Source on screen:** Huang, Lex Fridman Podcast #494, at 5:36 (his own words, our reading of the transcript); successor: the 10-K lists five officers and names none as successor
+- **Wording note:** the line we show is his exact sentence. "No obvious next in line" is our inference and is labelled as such on screen ("OUR READING").
 
 **n63 · 5:02** · scene: `castle (show=3)`
 
@@ -267,19 +272,20 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 - **On screen:** HAS THIS HAPPENED BEFORE?
 
-**n71 · 5:08** · scene: `duo (illustration kit) or two-line chart`
+**n71 · 5:08** · scene: `duo (illustration kit)`: two bar pairs of company sales, not share prices
 
-> Famous founders have stepped back before. In twenty eleven, Steve Jobs handed Apple to Tim Cook, and Apple grew far bigger. In two thousand, Bill Gates handed Microsoft's top job to Steve Ballmer. Microsoft's share price then took about sixteen years to get back to its old high.
+> Famous founders have stepped back before. In August twenty eleven, Steve Jobs handed Apple to Tim Cook. Apple's sales that year: about one hundred and eight billion dollars. Four years on: two hundred and thirty four billion. In January two thousand, Bill Gates handed Microsoft to Steve Ballmer. Microsoft's revenue then: about twenty three billion. Thirteen years on: seventy eight billion.
 
-- **On screen:** Duo: APPLE after Aug 2011 (rising) vs MICROSOFT after Jan 2000 (flat), indexed share-price lines
-- **Visual:** founders/steve_jobs_2010.jpg, tim_cook_2026.jpg, bill_gates_2025.jpg, steve_ballmer_2014.jpg when fetched
-- **Source on screen:** DATA TO PULL: monthly share prices (cite the provider on screen). VERIFY the Microsoft recovery year (2016)
+- **On screen:** Duo (sales bars): APPLE · FY2011 $108.2B → FY2015 $233.7B   MICROSOFT · FY2000 $23.0B → FY2013 $77.8B   Heading: SALES, NOT SHARE PRICE
+- **Visual:** founders/steve_jobs_2010.jpg, tim_cook_2026.jpg, bill_gates_2025.jpg, steve_ballmer_2014.jpg when fetched (check each licence; no CC BY-SA)
+- **Source on screen:** Apple 8-K (24 Aug 2011) and 10-Ks FY2011, FY2015 (net sales); Microsoft 10-K FY2000 (Ballmer named CEO Jan 2000) and Microsoft annual reports FY2000, FY2013 (revenue)
+- **Why sales, not shares:** handover rule 6 bans share-price charts, and a sales comparison is a primary-source fact. This replaces the old "Microsoft took 16 years to regain its high" line, which we could not source and is dropped.
 
 **n72 · 5:27** · scene: `kinetic`
 
-> Same story, very different endings. The difference was whether the next boss made the next big bet.
+> Both companies survived, and both kept growing. So survival is the easy part. The hard part is the next big bet.
 
-- **On screen:** Kinetic: SAME STORY. / DIFFERENT ENDINGS.
+- **On screen:** Kinetic: BOTH SURVIVED. / THE HARD PART IS THE NEXT BIG BET.
 
 ### The answer (5:35)
 
@@ -297,10 +303,10 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 **n82 · 5:59** · scene: `hand`
 
-> Here's what to watch. The board's findings, which have no deadline. NVIDIA's results on the seventeenth of November. A briefing that members of Congress have asked Jensen to attend on the eighteenth. And whether NVIDIA names a successor.
+> Here's what to watch. The board's findings, which have no deadline. NVIDIA's results on the seventeenth of November. A closed-door briefing on the eighteenth that three House committee chairs have asked Jensen to attend. And whether NVIDIA names a successor.
 
-- **On screen:** Hand "Watch:" BOARD FINDINGS (NO DEADLINE) · 17 NOV: Q3 RESULTS · 18 NOV: HOUSE BRIEFING REQUEST · A NAMED SUCCESSOR?
-- **Source on screen:** NVIDIA (results date, 28 Oct release); House committee letter via Yahoo / Reuters, 9 Nov
+- **On screen:** Hand "Watch:" BOARD FINDINGS (NO DEADLINE) · 17 NOV: Q3 RESULTS · 18 NOV: CLOSED-DOOR HOUSE BRIEFING (REQUESTED) · A NAMED SUCCESSOR?
+- **Source on screen:** NVIDIA (results date, 28 Oct release); House request of 5 Nov via Yahoo Finance, 9 Nov (a request, not a subpoena, per Bernstein)
 
 **n83 · 6:15** · scene: `strips`
 
@@ -317,13 +323,64 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 - **On screen:** Sources list · Disclaimer: Education, not investment advice. Allegations are unproven; no charges filed. Facts as of 9 Nov 2026.
 
-## Shorts (9:16, cut from the same beats)
+## Shorts (9:16, rewritten for the Shorts engine: a trailer that is also a whole story)
 
-| Short | Beats | Hook line |
-| --- | --- | --- |
-| Why NVIDIA's customers can't leave | n50, n51, n52, n53 | "Six million programmers can't easily leave NVIDIA. Here's why." |
-| NVIDIA's own warning about succession | n60, n61, n62 | "NVIDIA's annual report already warned about this." |
-| The two bets that built NVIDIA | n23, n24, n25, n26 | "In 1993 they planned it at a Denny's. Then came the strange bet." |
+**AK's brief (9 Nov 2026):** each Short works as a trailer for the long video, with a hook that makes people want the full test, **and** finishes as a complete story on its own. Under `SHORTS_ENGINE.md` that means:
+
+- **Spine cut or chapter cut only (section 7).** Each Short has its own question, one "but", a turn and an ending. Never a clip that stops mid-thought.
+- **The loop closes first (C13).** The pointer to the long video is the last half-second, *after* the question is answered. The Short must work for someone who never clicks.
+- **How the trailer pull works:** each Short answers its own small question, then ends on one *open* door that only the long video walks through. In YouTube Studio set the **Related video** field to the long film (AK does this by hand; nothing is posted from here), and pin a comment with the title.
+- **Format:** 45 s, 100-120 spoken words, speed 1, captions on, at most 3 numbers, one "but", Moat Atlas house look. Facts as of 9 Nov 2026. Every figure has its source on screen. Same safe rules as the long film: no photo of the woman named in reports, no SPY or CHARGED in a title, no share-price chart.
+
+### Short A · The trailer: "Could NVIDIA survive without Jensen?" (spine cut, F10 Paradox)
+
+| Move | Line | On screen / picture | Source on screen |
+| --- | --- | --- | --- |
+| M1 Hook | NVIDIA is worth about four and a half trillion dollars, and this weekend its board opened an investigation into its boss. | Strips: ≈ $4.5 TRILLION · BOARD INVESTIGATION · NO CHARGES; `jensen/ces2025_keynote.jpg` | Yahoo Finance; NVIDIA board statement, 8 Nov 2026 |
+| M2 Ground | Nobody has charged him. So here's the real question: could NVIDIA survive without Jensen Huang? | Kinetic: COULD NVIDIA SURVIVE WITHOUT JENSEN? | |
+| M3 Push | Treat it like a restaurant losing its head chef. Is the recipe written down? Yes: thirty one thousand of its staff work on research. Are the diners stuck? Mostly: millions of programmers write code for its chips. | Castle, shields 1 and 2 tick ✓; label ILLUSTRATIVE; cards 31,000 IN R&D · ≈ 6M CUDA DEVELOPERS | NVIDIA 10-K FY2026; NVIDIA Developer Forum, "20 Years of CUDA" |
+| M4 Turn ("but") | But is there a second chef? NVIDIA's own annual report says it is highly dependent on its longstanding executive team, and it names no successor. | `clips/10k_p23_succession.png` with highlight; shield 3 cracks ⚠ | NVIDIA 10-K FY2026, Item 1A, p.23 |
+| M5 Echo | So the company would likely survive. The open question: who picks the next dish? The full test is on the channel. | Kinetic: WHO PICKS THE NEXT DISH?; end card: the long video's title | |
+
+Words: 120 · numbers: 3 (4.5 trillion, 31,000, millions) · the loop: investigation in M1, "who picks the next dish" in M5.
+
+### Short B · "Six million programmers can't easily leave NVIDIA" (chapter cut, F1 Myth Flip)
+
+| Move | Line | On screen / picture | Source on screen |
+| --- | --- | --- | --- |
+| M1 Hook | Six million programmers can't easily leave NVIDIA. | HyperFrames s05 dot chart building to ≈ 6 MILLION | NVIDIA Developer Forum, "20 Years of CUDA" |
+| M2 Ground | In two thousand six, NVIDIA released CUDA, software that lets programmers use its chips for heavy maths. | Strips: 2006 · CUDA | NVIDIA 10-K FY2026, Item 1 |
+| M3 Push | Their code is written for NVIDIA chips. Moving it to another company's chips is like moving your whole house to a new city: possible, but slow and expensive. | `clips/10k_item1_cuda.png`; house illustration, ILLUSTRATIVE | NVIDIA 10-K FY2026, Item 1 |
+| M4 Turn | Now the twist. Two buyers, never named, made up more than a third of NVIDIA's sales last year: twenty two percent and fourteen. | Bars: CUSTOMER A 22% · CUSTOMER B 14% · stamp 36% FROM TWO BUYERS | NVIDIA 10-K FY2026, MD&A |
+| M5 Echo | Six million programmers can't easily leave. Two buyers carry a third of the sales. Would that hold without Jensen? Our full test is on the channel. | Kinetic: SIX MILLION STUCK. TWO BUYERS. | |
+
+Words: 102 · numbers: 3 · the "but" is in M3 (the cost of moving); M4 is the turn that re-reads M1 (the lock-in is real, and its biggest doors are two).
+
+### Short C · "NVIDIA's annual report already warned about this" (chapter cut, F4 Cold Case)
+
+| Move | Line | On screen / picture | Source on screen |
+| --- | --- | --- | --- |
+| M1 Hook | NVIDIA's annual report warned about this months before the news broke. | `clips/10k_p23_succession.png`, highlight lands on "highly dependent" | NVIDIA 10-K FY2026, filed 25 Feb 2026 |
+| M2 Ground | The report lists NVIDIA's executive officers. Jensen Huang is CEO, and he has been since he co-founded the company. | Table: HUANG · KRESS · PURI · SHOQUIST · TETER (no faces) | NVIDIA 10-K FY2026, executive officers |
+| M3 Push | Then, on page twenty three, it says the company is highly dependent on its longstanding executive team, and that poor succession planning could hurt its long-term success. | Clip, second highlight: "effective succession planning" | NVIDIA 10-K FY2026, Item 1A, p.23 |
+| M4 Turn ("but") | But the report names no successor. Jensen has said his direct staff is sixty people, and that's how he runs things. So there's no public number two. | Strips: NO NAMED SUCCESSOR · "MY DIRECT STAFF IS 60 PEOPLE"; `jensen/ceo_flickr.jpg` | Huang, Lex Fridman Podcast #494, 5:36 |
+| M5 Echo | The warning came months before the news. Now the question is who is next. The full test is on the channel. | Kinetic: THE WARNING CAME FIRST. | |
+
+Words: 106 · numbers: 2 (23, 60) · plant and payoff: M1's "warned" is explained by M3 and re-read in M5.
+
+### Short D · "In 1993 they planned it at a Denny's. Then came the strange bet." (chapter cut, F3 Happy Accident)
+
+| Move | Line | On screen / picture | Source on screen |
+| --- | --- | --- | --- |
+| M1 Hook | NVIDIA was planned at a Denny's. Then its boss made a strange bet. | `story/dennys_restaurant.jpg`, ILLUSTRATIVE: A DENNY'S, NOT THE ORIGINAL | NVIDIA blog, 26 Sep 2023 |
+| M2 Ground | In nineteen ninety three, Jensen Huang and two friends sketched a chip company over endless coffee. For years it made graphics chips for video games. | Timeline: 1993 → 1995 NV1; `gpu/nv1_1995_chip.jpg` | NVIDIA blog; NVIDIA 10-K FY2026 |
+| M3 Push ("but") | But Jensen bet the same chips could do huge amounts of maths at once. In two thousand six, NVIDIA released CUDA so programmers could use them that way. | `jensen/gtc2010_cpu_gpu_slide.jpg`; strip 2006: CUDA | NVIDIA 10-K FY2026; photo credit on screen |
+| M4 Turn | Later, researchers trained a famous AI program, AlexNet, on two NVIDIA gaming cards. It turned out AI needed exactly that maths. | Timeline adds: ALEXNET ON 2 NVIDIA GPUs; `gpu/gtx1080ti_die.jpg` | Krizhevsky, Sutskever & Hinton, NeurIPS 2012 |
+| M5 Echo | He didn't just run the kitchen. He picked the menu, twice. So what happens when the chef who picks the menu leaves? Full story on the channel. | Kinetic: HE PICKED THE MENU. TWICE. | |
+
+Words: 115 · numbers: 3 (1993, 2006, two cards).
+
+**Shorts gate (SH1-SH11), self-check:** SH1 hook in the first 2 s (all four) · SH2 100-120 words · SH3 one "but" each · SH5 setting on screen · SH7 at most 3 numbers each · SH9 M5 echoes M1 · SH10 each stands alone, pointer is the last line · SH11 under 60 s, so music only from the audio library. Run the real word count and timing after the voice is built.
 
 ## Thumbnail and title
 
@@ -332,13 +389,22 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 
 ## Before recording
 
-1. **UPDATE n13:** put Monday 9 Nov's closing price in place of the pre-market figure, and re-check the −13% figure.
-2. **VERIFY n62:** find Huang's own interview for "about sixty direct reports", or cut the line (the beat works without it).
-3. **VERIFY n71:** pull monthly share prices for Apple (from Aug 2011) and Microsoft (from Jan 2000), cite the provider on screen, and confirm Microsoft regained its 1999 high in 2016.
-4. **Crop the clips** from the 10-K PDF: Item 1A p.23 (succession wording, n61) and Item 1 ("runs on all NVIDIA GPUs", n51).
-5. **Fetch the pending photos** (`python3 scripts/fetch_pics.py public/vx/nvidia_jensen/img`). Every beat already has a fallback from the 22 photos on hand.
-6. **Source the Denny's story (n21)** with NVIDIA's or Denny's own account (Denny's marked the booth in 2023), and show it on screen.
-7. **Re-check the news** the morning you publish: the board probe, the 17 Nov results and the 18 Nov briefing may have moved.
+**Closed on 9 Nov 2026 (each checked at the source):**
+
+1. **n13 price.** Friday's close is $186.64 (Yahoo Finance, 9 Nov). Yahoo has Monday pre-market down about 4.25% ($178.70). No Monday close exists yet (US market closes after 02:30 IST on 10 Nov). Beat rewritten so it stays true: Friday close and "about four percent down before trading began". The old "-13% since the first report" is dropped: neither Yahoo nor CNBC states it. Bars replaced by strips because handover rule 6 bans share-price charts.
+2. **n62 "60 direct reports".** Huang says it himself: "My direct staff is 60 people" (Lex Fridman Podcast #494, 00:05:36, transcript at lexfridman.com). The line now quotes him and cites the timestamp. Another outlet has said 50; we use only his own words.
+3. **n71 Apple and Microsoft.** Dropped the share-price line (rule 6) and the "16 years to regain its high" claim (no source). Now sales: Apple FY2011 $108,249M and FY2015 $233,715M (Apple 10-Ks, read in full at sec.gov); Apple 8-K confirms Jobs resigned and Cook became CEO on 24 Aug 2011. Microsoft FY2000 $22,956M and FY2013 $77,849M (microsoft.com investor pages); Microsoft's FY2000 10-K says Ballmer was named CEO in January 2000. n72 rewritten to match: both survived and grew, so the open question is the next bet.
+4. **10-K clips.** Cropped from NVIDIA's own annual report PDF with the phrases highlighted: `clips/10k_p23_succession.png` (10-K page 23, Item 1A) and `clips/10k_item1_cuda.png` (Item 1). The PDF stays out of git.
+5. **n21 Denny's.** NVIDIA's own post (26 Sep 2023) says three friends "met at Denny's" in 1993, at "the Silicon Valley Denny's", with "all the coffee you could drink". It gives no city, so the script now says Silicon Valley, not San Jose. The Denny's picture on screen is a stand-in and labelled so; the AP photo on NVIDIA's page is not ours to use.
+
+**Also fixed while checking:** `jensen/ces2025_keynote_wide.jpg` (n00) is CC BY-SA, which the handover bans (rule 5); n00 now uses the CC0 `ces2025_keynote.jpg`. `datacenter/cern_server_room.jpg` is also CC BY-SA; it is not used in this script, so leave it out. The House briefing is a **request** by three Republican chairs (sent 5 Nov) for a closed-door briefing on 18 Nov, not a subpoena.
+
+**Still to do on the day:**
+
+- Fetch the pending photos (`python3 scripts/fetch_pics.py public/vx/nvidia_jensen/img`) and reject any CC BY-SA picture. Every beat has a fallback from the photos on hand.
+- Convert the chosen JPGs into `pics/` for the `pic` scene.
+- Re-check the news the morning you publish: the board probe, the 17 Nov results and the 18 Nov briefing may have moved. Add Monday's close to n13 only if you want it.
+- Voice it on the Mini inside `zsh -lic` between 06:45 and 22:10 IST; set "Altered or synthetic content: Yes".
 
 ## Sources (description)
 
@@ -346,6 +412,13 @@ VO is written for the voice: numbers are spelled out, as the engine's `say` fiel
 - CNN, 8 Nov 2026: https://www.cnn.com/2026/11/08/business/nvidia-investigation-ceo-jensen-huang
 - CNBC, 8 Nov 2026: https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html
 - CNBC, 9 Nov 2026 (shares): https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html
+- Huang on his direct staff: Lex Fridman Podcast #494 transcript (00:05:36): https://lexfridman.com/jensen-huang-transcript
+- NVIDIA blog, "NVIDIA Founder and CEO Jensen Huang Returns to Denny's...", 26 Sep 2023: https://blogs.nvidia.com/blog/nvidia-dennys-trillion/
+- NVIDIA 2026 Annual Report (includes the 10-K; clip source): https://s201.q4cdn.com/141608511/files/doc_financials/2026/ar/2026-Annual-Report-Web.pdf
+- Apple Form 8-K, 24 Aug 2011: https://www.sec.gov/Archives/edgar/data/320193/000118143111047179/rrd320651.htm
+- Apple 10-K FY2011 and FY2015 (net sales): https://www.sec.gov/Archives/edgar/data/320193/000119312511282113/d220209d10k.htm and https://www.sec.gov/Archives/edgar/data/320193/000119312515356351/d17062d10k.htm
+- Microsoft FY2000 10-K (Ballmer named CEO Jan 2000): https://www.sec.gov/Archives/edgar/data/789019/000103221000001961/0001032210-00-001961-0001.txt
+- Microsoft annual reports, revenue FY2000 and FY2013: https://www.microsoft.com/investor/reports/ar00/highlights.htm and https://www.microsoft.com/investor/reports/ar13/financial-highlights/index.html
 - NPR, 8 Nov 2026: https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy
 - Yahoo Finance, 9 Nov 2026 (Friday close, pre-market, House briefing request): https://finance.yahoo.com/markets/stocks/articles/nvidia-shares-fall-more-4-111021784.html
 - Yahoo Finance, "Jensen Huang just handed Wall Street its first $4.5 trillion CEO scandal": https://finance.yahoo.com/markets/article/jensen-huang-just-handed-wall-street-its-first-45-trillion-ceo-scandal-094803359.html

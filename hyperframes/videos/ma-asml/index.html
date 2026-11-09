@@ -1,0 +1,347 @@
+<!doctype html>
+<!-- Moat Atlas · Atlas File 01 · ASML: "The machine only one company can build". Vertical 1080x1920 Short, 40 s, silent.
+     Globe from sample s07, redrawn with Natural Earth 1:50m coastlines and borders (world50.js, tools/topo_world.py) so the dive holds up.
+     Facts: ASML Annual Report 2025 / Form 20-F ("currently the world's only manufacturer of EUV lithography systems"; 5,100 suppliers;
+     ZEISS SMT strategic partner for projection optics); TRUMPF EUV laser amplifier page (developed with ASML and ZEISS);
+     ASML 20-F (Cymer acquired 30 May 2013, San Diego); ASML Q4/FY2025 results 28 Jan 2026 (48 EUV systems, EUV system sales €11.6 bn,
+     installed-base management €8.2 bn, total net sales €32.7 bn). €11.6 bn / 48 = €242 m is our arithmetic. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Atlas File 01 · ASML</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="vo.js"></script>
+    <script src="dots.js"></script>
+    <script src="world50.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body, #root { width: 1080px; height: 1920px; }
+      #root { background: radial-gradient(1100px 1500px at 50% 48%, #131c29 0%, #0b0e13 62%); }
+      #vig { background: radial-gradient(950px 1500px at 50% 46%, transparent 58%, rgba(0, 0, 0, 0.6) 100%); }
+      #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #scrimT { position: absolute; left: 0; top: 0; width: 1080px; height: 640px; background: linear-gradient(rgba(11, 14, 19, 0.92), rgba(11, 14, 19, 0.55) 60%, rgba(11, 14, 19, 0)); }
+      #scrimB { position: absolute; left: 0; top: 1180px; width: 1080px; height: 740px; background: linear-gradient(rgba(11, 14, 19, 0), rgba(11, 14, 19, 0.85) 30%, rgba(11, 14, 19, 0.95)); }
+      .kicker { left: 80px; top: 120px; font-size: 28px; }
+      .cap { left: 60px; right: 60px; top: 1300px; bottom: auto; transform: none; white-space: normal; text-align: center;
+        font: 600 44px/1.28 Inter, sans-serif; padding: 16px 28px; border-radius: 12px; opacity: 0; background: rgba(247, 243, 234, 0.1);
+        border: 2px solid rgba(217, 164, 65, 0.55); }
+      .src { left: 80px; right: 80px; top: 1478px; bottom: auto; text-align: left; font: 22px/1.42 Plex, monospace; color: #aeb6c0; opacity: 0; }
+      .grp { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 700px; visibility: hidden; }
+      .h1 { position: absolute; left: 80px; width: 940px; font: 700 112px/1.0 Oswald, sans-serif; color: #f7f3ea; opacity: 0; }
+      .h1 b { position: absolute; left: -12px; top: 18px; height: 100px; background: #d9a441; z-index: -1; }
+      .h1.on { color: #0b0e13; }
+      .lb { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.06em;
+        color: #f7f3ea; text-shadow: 0 2px 10px #000; }
+      .lb b { display: inline-block; width: 44px; height: 44px; line-height: 44px; text-align: center; border-radius: 50%; background: #d9a441;
+        color: #0b0e13; margin-right: 10px; font-size: 28px; }
+      #lHQ { font-size: 40px; color: #d9a441; }
+      #list { position: absolute; left: 80px; top: 1010px; width: 920px; }
+      #list .r { font: 700 40px/1.1 Oswald, sans-serif; letter-spacing: 0.04em; color: #f7f3ea; margin-bottom: 22px; opacity: 0; white-space: nowrap; }
+      #list .r span { display: inline-block; width: 44px; height: 44px; line-height: 44px; text-align: center; border-radius: 50%; background: #d9a441;
+        color: #0b0e13; margin-right: 16px; font-size: 28px; }
+      #list .r small { font: 400 28px/1 Plex, monospace; color: #c8cdd3; letter-spacing: 0; margin-left: 12px; }
+      #sup { position: absolute; left: 80px; top: 230px; width: 920px; }
+      #sup .n { font: 700 190px/1 Oswald, sans-serif; color: #f7f3ea; }
+      #sup .t { font: 700 40px/1.2 Oswald, sans-serif; letter-spacing: 0.08em; color: #d9a441; }
+      /* money */
+      .mh { position: absolute; left: 80px; top: 180px; font: 700 64px/1 Oswald, sans-serif; color: #f7f3ea; }
+      #mNum { position: absolute; left: 80px; top: 280px; font: 700 210px/1 Oswald, sans-serif; color: #d9a441; }
+      #mLab { position: absolute; left: 86px; top: 500px; font: 700 38px/1.2 Oswald, sans-serif; letter-spacing: 0.08em; color: #f7f3ea; }
+      #icons { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .ic { position: absolute; width: 86px; height: 60px; border-radius: 8px; border: 3px solid #4a5b70; background: #141c27; }
+      .ic::before { content: ""; position: absolute; left: 10px; top: 10px; width: 26px; height: 34px; border-radius: 4px; background: currentColor; opacity: 0.9; }
+      .ic::after { content: ""; position: absolute; right: 10px; top: 14px; width: 30px; height: 6px; border-radius: 3px; background: currentColor; box-shadow: 0 12px 0 currentColor, 0 24px 0 currentColor; opacity: 0.7; }
+      #icTag { position: absolute; left: 80px; top: 1052px; font: 400 22px/1 Plex, monospace; color: #9aa3ad; letter-spacing: 0.06em; }
+      #mEur { position: absolute; left: 80px; top: 1092px; font: 700 76px/1 Oswald, sans-serif; color: #f7f3ea; opacity: 0; white-space: nowrap; }
+      #mEach { position: absolute; left: 80px; top: 1190px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #0b0e13; background: #d9a441;
+        padding: 8px 14px 10px; opacity: 0; white-space: nowrap; }
+      #hb { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .hr { position: absolute; left: 80px; width: 920px; opacity: 0; }
+      .hr .n { font: 700 34px/1.15 Oswald, sans-serif; letter-spacing: 0.06em; color: #f7f3ea; }
+      .hr .track { position: relative; height: 70px; margin-top: 12px; }
+      .hr .bar { position: absolute; left: 0; top: 0; height: 70px; transform-origin: 0 50%; }
+      .hr .v { position: absolute; top: 12px; font: 700 48px/1 Oswald, sans-serif; color: #f7f3ea; white-space: nowrap; }
+      #hbUnit { position: absolute; left: 80px; top: 300px; font: 400 26px/1 Plex, monospace; color: #aeb6c0; }
+      /* end */
+      #fNext { position: absolute; left: 80px; top: 640px; width: 920px; padding: 28px 32px; border: 3px solid #d9a441; background: rgba(11, 14, 19, 0.72); opacity: 0; }
+      #fNext .k { font: 400 26px/1 Plex, monospace; letter-spacing: 0.1em; color: #d9a441; }
+      #fNext .t { font: 600 40px/1.25 Inter, sans-serif; color: #f7f3ea; margin-top: 12px; }
+      #fFoot { position: absolute; left: 80px; top: 872px; width: 920px; padding: 12px 32px; background: rgba(11, 14, 19, 0.8); font: 400 26px/1.4 Plex, monospace; color: #c8cdd3; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="51.39" data-width="1080" data-height="1920">
+      <canvas id="gl" class="clip" data-start="0" data-duration="51.39" data-track-index="1"></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="labels"></div>
+      <div id="list"></div>
+
+      <div class="grp" id="gA">
+        <div class="h1" id="a1" style="top: 180px">THE MACHINE</div>
+        <div class="h1" id="a2" style="top: 292px">ONLY ONE</div>
+        <div class="h1 on" id="a3" style="top: 404px"><b id="aB"></b><span id="a3t">COMPANY BUILDS</span></div>
+      </div>
+      <div class="grp" id="gS"><div id="sup"><div class="n" id="supN">0</div><div class="t">SUPPLIERS IN ASML'S NETWORK, 2025</div></div></div>
+      <div class="grp" id="gM">
+        <div class="mh">WHAT THE MACHINES EARN</div>
+        <div id="mNum">0</div>
+        <div id="mLab">EUV SYSTEMS SOLD IN 2025</div>
+        <div id="icons"></div>
+        <div id="icTag">ICONS ARE ILLUSTRATIVE · 1 ICON = 1 EUV SYSTEM</div>
+        <div id="mEur">= €11.6 BILLION</div>
+        <div id="mEach">≈ €240 MILLION PER SYSTEM, ON AVERAGE</div>
+      </div>
+      <div class="grp" id="gH">
+        <div class="mh">ASML'S 2025, IN € BILLION</div>
+        <div id="hbUnit">Net sales by source · bars start at zero</div>
+        <div id="hb"></div>
+      </div>
+      <div class="grp" id="gQ">
+        <div class="h1" id="q1" style="top: 180px">COULD ANYONE</div>
+        <div class="h1 on" id="q2" style="top: 292px"><b id="qB"></b><span id="q2t">REDRAW THIS</span></div>
+        <div class="h1" id="q3" style="top: 404px">MAP?</div>
+      </div>
+      <div class="grp" id="gF">
+        <div id="fNext"><div class="k">NEXT ON MOAT ATLAS</div><div class="t">Ferrari: what if selling fewer cars helps the business?</div></div>
+        <div id="fFoot">Research, not a recommendation. No buy or sell view.</div>
+      </div>
+
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT ATLAS · ATLAS FILE 01</div>
+
+
+      <div class="src" id="s1">Source: ASML Annual Report 2025 (Form 20-F): "currently the world's only manufacturer of EUV lithography systems". Map: Natural Earth.</div>
+      <div class="src" id="s2">Sources: ASML Annual Report 2025 (ZEISS SMT, strategic partner for projection optics); TRUMPF, EUV laser amplifier
+        "developed with ASML and ZEISS". Map: Natural Earth.</div>
+      <div class="src" id="s3">Sources: ASML Form 20-F (Cymer acquired 30 May 2013); ASML Annual Report 2025 (total number of suppliers: 5,100).</div>
+      <div class="src" id="s4">Source: ASML Q4 and full-year 2025 results, 28 Jan 2026. €11.6 bn ÷ 48 is our arithmetic: an average across models,
+        not a list price.</div>
+      <div class="src" id="s5">Source: ASML Q4 and full-year 2025 results, 28 Jan 2026. Service and upgrades = installed base management.</div>
+      <div class="src" id="s6">Moat Atlas · ASML filings 2025 · Map: Natural Earth (public domain).</div>
+    </div>
+    <script>window.__S = HF.setup(window.VO.D); window.__timelines.main = window.__S.tl;</script>
+    <script type="module">
+      import * as THREE from "three";
+      const H = window.__S, E = HF.ease, F = HF.fade, C = HF.clamp01, Lr = HF.lerp;
+      const $ = (id) => document.getElementById(id);
+      const R = 10, Wd = 1080, Ht = 1920, FOV = 30, TAN = Math.tan((FOV / 2) * Math.PI / 180);
+      const v3 = (lat, lon, r = R) => {
+        const a = (lat * Math.PI) / 180, b = (lon * Math.PI) / 180;
+        return new THREE.Vector3(r * Math.cos(a) * Math.sin(b), r * Math.sin(a), r * Math.cos(a) * Math.cos(b));
+      };
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(Wd, Ht, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(FOV, Wd / Ht, 0.05, 400);
+      const globe = new THREE.Group();
+      scene.add(globe);
+
+      // land fill (texture) + crisp coastlines and borders (vector lines on the sphere)
+      const tc = document.createElement("canvas"); tc.width = 8192; tc.height = 4096;
+      const tg = tc.getContext("2d");
+      tg.fillStyle = "#0c131c"; tg.fillRect(0, 0, 8192, 4096);
+      for (const off of [0, 8192]) for (const r of window.LAND50) {
+        tg.beginPath();
+        r.forEach(([lon, lat], i) => { const x = ((lon + 90) / 360) * 8192 + off, y = ((90 - lat) / 180) * 4096; i ? tg.lineTo(x, y) : tg.moveTo(x, y); });
+        tg.closePath(); tg.fillStyle = "#212f3f"; tg.fill();
+      }
+      const landTex = new THREE.CanvasTexture(tc);
+      landTex.colorSpace = THREE.SRGBColorSpace; landTex.anisotropy = 8;
+      globe.add(new THREE.Mesh(new THREE.SphereGeometry(R * 0.999, 192, 128), new THREE.MeshBasicMaterial({ map: landTex })));
+      const lineGeo = (rings, r) => {
+        const pts = [];
+        for (const ln of rings) for (let i = 1; i < ln.length; i++) {
+          const a = v3(ln[i - 1][1], ln[i - 1][0], r), b = v3(ln[i][1], ln[i][0], r);
+          pts.push(a.x, a.y, a.z, b.x, b.y, b.z);
+        }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3)); return g;
+      };
+      const coastMat = new THREE.LineBasicMaterial({ color: 0x6f86a3, transparent: true, opacity: 0.85 });
+      const borderMat = new THREE.LineBasicMaterial({ color: 0x46566b, transparent: true, opacity: 0.0 });
+      globe.add(new THREE.LineSegments(lineGeo(window.LAND50, R * 1.0004), coastMat));
+      globe.add(new THREE.LineSegments(lineGeo(window.BORDERS50, R * 1.0005), borderMat));
+      // land dots for the wide view (fade out as we dive)
+      const dp = new Float32Array((window.DOTS.length / 2) * 3);
+      for (let i = 0; i < window.DOTS.length; i += 2) { const p = v3(window.DOTS[i], window.DOTS[i + 1], R * 1.002); dp.set([p.x, p.y, p.z], (i / 2) * 3); }
+      const dg = new THREE.BufferGeometry(); dg.setAttribute("position", new THREE.BufferAttribute(dp, 3));
+      const dotTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 64; const g = c.getContext("2d");
+        g.fillStyle = "#fff"; g.beginPath(); g.arc(32, 32, 26, 0, Math.PI * 2); g.fill(); return new THREE.CanvasTexture(c); })();
+      const dotMat = new THREE.PointsMaterial({ size: 3.2, sizeAttenuation: false, map: dotTex, color: 0xe6edf5, transparent: true, alphaTest: 0.3, opacity: 0 });
+      globe.add(new THREE.Points(dg, dotMat));
+      const atm = new THREE.Mesh(new THREE.SphereGeometry(R * 1.12, 96, 64), new THREE.ShaderMaterial({
+        transparent: true, blending: THREE.AdditiveBlending, side: THREE.BackSide, depthWrite: false, uniforms: { k: { value: 0 } },
+        vertexShader: "varying vec3 n; void main(){ n = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }",
+        fragmentShader: "uniform float k; varying vec3 n; void main(){ float i = pow(max(0., 0.72 - dot(n, vec3(0,0,1.))), 3.2); gl_FragColor = vec4(0.45,0.62,0.85,1.) * i * 1.1 * k; }",
+      }));
+      scene.add(atm);
+
+      // sites
+      const HQ = [51.405, 5.413];
+      const SITES = [
+        ["ZEISS", "Oberkochen", "the mirrors", 48.783, 10.1, 10.0, 0.0065],
+        ["TRUMPF", "Ditzingen", "the laser", 48.827, 9.067, 12.6, 0.0065],
+        ["CYMER", "San Diego", "the light source", 33.02, -117.08, 16.2, 0.045],
+      ];
+      const headGeo = new THREE.SphereGeometry(1, 16, 12);
+      const arcs = SITES.map(([co, town, what, lat, lon, t0, rad], k) => {
+        const a = v3(lat, lon).normalize(), b = v3(...HQ).normalize(), ang = a.angleTo(b), pts = [];
+        for (let i = 0; i <= 120; i++) {
+          const s = i / 120;
+          const q = a.clone().multiplyScalar(Math.sin((1 - s) * ang) / Math.sin(ang)).add(b.clone().multiplyScalar(Math.sin(s * ang) / Math.sin(ang)));
+          pts.push(q.normalize().multiplyScalar(R * (1.0006 + Math.sin(Math.PI * s) * (0.004 + ang * 0.11))));
+        }
+        const curve = new THREE.CatmullRomCurve3(pts);
+        const geo = new THREE.TubeGeometry(curve, 200, rad, 8, false);
+        const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0xf2c25c, transparent: true, opacity: 0.95 }));
+        const dot = new THREE.Mesh(headGeo, new THREE.MeshBasicMaterial({ color: 0xfff4d6 }));
+        const site = new THREE.Mesh(headGeo, new THREE.MeshBasicMaterial({ color: 0xd9a441 }));
+        site.position.copy(v3(lat, lon, R * 1.0006));
+        globe.add(mesh, dot, site);
+        const lb = document.createElement("div"); lb.className = "lb"; lb.innerHTML = `<b>${k + 1}</b>`; $("labels").appendChild(lb);
+        const row = document.createElement("div"); row.className = "r";
+        row.innerHTML = `<span>${k + 1}</span>${co} · ${town.toUpperCase()}<small>${what}</small>`; $("list").appendChild(row);
+        return { curve, mesh, dot, site, n: geo.index.count, t0, dur: 1.0 + ang * 1.2, lb, row, pos: v3(lat, lon, R * 1.001) };
+      });
+      const hqPos = v3(...HQ, R * 1.001);
+      const pin = new THREE.Mesh(new THREE.RingGeometry(0.75, 1, 48), new THREE.MeshBasicMaterial({ color: 0xd9a441, side: THREE.DoubleSide, transparent: true }));
+      pin.position.copy(v3(...HQ, R * 1.0012)); pin.lookAt(pin.position.clone().multiplyScalar(2));
+      const hqDot = new THREE.Mesh(headGeo, new THREE.MeshBasicMaterial({ color: 0xffe7a8 }));
+      hqDot.position.copy(pin.position);
+      globe.add(pin, hqDot);
+      const lHQ = document.createElement("div"); lHQ.className = "lb"; lHQ.id = "lHQ"; lHQ.textContent = "ASML · VELDHOVEN"; $("labels").appendChild(lHQ);
+
+      // camera path: [time, lat, lon, distance from centre, screen lift in px of the point we look at]
+      const K = [[0, 28, -38, 82, -60], [4.6, 40, -6, 80, -40], [9.0, 50.35, 7.55, 14.1, 260], [15.2, 50.3, 7.7, 13.8, 260],
+        [19.0, 45, -50, 64, 40], [20.8, 45, -48, 66, 40], [30.0, 44, -42, 72, -60], [40, 44, -36, 75, -60]];
+      const camAt = (t) => {
+        let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++;
+        const [t0, la0, lo0, d0, s0] = K[i], [t1, la1, lo1, d1, s1] = K[i + 1];
+        const u = E.io3((t - t0) / (t1 - t0));
+        return { lat: Lr(la0, la1, u), lon: Lr(lo0, lo1, u), d: R + Math.exp(Lr(Math.log(d0 - R), Math.log(d1 - R), u)), lift: Lr(s0, s1, u) };
+      };
+      const tmp = new THREE.Vector3(), cd = new THREE.Vector3();
+      const place = (el, local, a, dx = 18, dy = -22) => {
+        tmp.copy(local).applyMatrix4(globe.matrixWorld);
+        const facing = tmp.clone().normalize().dot(cd.copy(camera.position).sub(tmp).normalize());
+        tmp.project(camera);
+        const px = ((tmp.x + 1) / 2) * Wd, y = ((1 - tmp.y) / 2) * Ht + dy, flip = el.id === "lHQ" && px > 640;
+        const x = flip ? px - dx : px + dx;
+        el.style.transform = flip ? `translate(${x}px, ${y}px) translateX(-100%)` : `translate(${x}px, ${y}px)`;
+        el.style.opacity = a * C((facing - 0.05) / 0.15) * (x > -40 && x < Wd + 40 ? 1 : 0);
+      };
+      const GR = { gA: [0, 4.8], gS: [18.4, 20.9], gM: [21.0, 26.3], gH: [26.4, 30.0], gQ: [30.2, 35.4], gF: [35.6, 99] };
+      const grp = (id, t) => {
+        const [a, b] = GR[id], el = $(id), d = 0.4, vin = C((t - a) / d), vout = C((t - b) / d);
+        const op = (a === 0 ? 1 : E.o2(vin)) * (1 - E.io2(vout));
+        el.style.opacity = op; el.style.visibility = op > 0.002 ? "visible" : "hidden";
+        el.style.transform = `scale(${(a === 0 ? 1 : 0.93 + 0.07 * E.o3(vin)) * (1 + 0.025 * C((t - a) / (b - a))) * (1 + 0.22 * E.io2(vout))})`;
+        return t - a;
+      };
+      const rise = (id, t, at) => { $(id).style.opacity = C((t - at) / 0.3); $(id).style.transform = `translateY(${(1 - E.back((t - at) / 0.5, 1.3)) * 40}px)`; };
+
+      // money: 48 icons, then bars
+      const ICX = 80, ICY = 590, ICW = 86, ICH = 58, GX = 22, GY = 18;
+      const icons = Array.from({ length: 48 }, (_, i) => {
+        const el = document.createElement("div"); el.className = "ic";
+        el.style.left = ICX + (i % 8) * (ICW + GX + 4) + "px"; el.style.top = ICY + Math.floor(i / 8) * (ICH + GY) + "px";
+        $("icons").appendChild(el); return el;
+      });
+      const HB = [["TOTAL NET SALES", 32.7, "#f7f3ea", "#0b0e13"], ["EUV MACHINES", 11.6, "#5f7894", "#f7f3ea"], ["SERVICE AND UPGRADES ON INSTALLED MACHINES", 8.2, "#d9a441", "#0b0e13"]];
+      const hbs = HB.map(([n, v, c], i) => {
+        const r = document.createElement("div"); r.className = "hr"; r.style.top = 420 + i * 220 + "px";
+        r.innerHTML = `<div class="n">${n}</div><div class="track"><div class="bar" style="width:${(v / 32.7) * 920}px;background:${c}"></div><div class="v">€${v.toFixed(1)}</div></div>`;
+        $("hb").appendChild(r); return { r, bar: r.querySelector(".bar"), v: r.querySelector(".v"), w: (v / 32.7) * 920, at: 26.9 + i * 0.7 };
+      });
+
+      const warp = (r) => { const A = window.VO.anchors;
+        for (let i = 0; i < A.length - 1; i++) { const [d0, r0] = A[i], [d1, r1] = A[i + 1]; if (r <= r1) return d0 + ((d1 - d0) * (r - r0)) / (r1 - r0); }
+        return A[A.length - 1][0]; };
+      // captions come from the voiced beats (vo.js); each shows while its line is spoken
+      for (const b of window.VO.beats) if (b.cap) { const el = document.createElement("div"); el.className = "cap"; el.id = b.id; el.textContent = b.cap; document.getElementById("root").appendChild(el); }
+      const CAPS = window.VO.beats.filter((b) => b.cap).map((b) => [b.id, b.a, b.b]);
+      const SRCS = [["s1", 0.6, 9.6], ["s2", 9.8, 15.6], ["s3", 15.8, 20.8], ["s4", 21.0, 26.2], ["s5", 26.4, 30.0], ["s6", 30.3, 99]];
+
+      const draw = (t) => {
+        const c = camAt(t);
+        globe.rotation.set((c.lat * Math.PI) / 180, (-c.lon * Math.PI) / 180, 0, "XYZ");
+        const depth = c.d - R, ppu = Ht / (2 * depth * TAN), oy = c.lift / ppu;
+        camera.position.set(0, -oy, c.d); camera.lookAt(0, -oy, 0); camera.updateMatrixWorld();
+        scene.updateMatrixWorld();
+        const close = C((60 - c.d) / 40);
+        dotMat.opacity = 0.34 * E.o2(t / 1.0) * (1 - close);
+        coastMat.opacity = 0.35 + 0.55 * close;
+        borderMat.opacity = 0.75 * close;
+        atm.material.uniforms.k.value = E.o2(t / 1.2) * (1 - close);
+        const ws = depth / 16;                        // world size of ~1/60 of the screen height at this depth
+        for (const a of arcs) {
+          const u = E.io2((t - a.t0) / a.dur);
+          a.mesh.geometry.setDrawRange(0, Math.floor(a.n * u));
+          a.dot.visible = u > 0 && u < 1; a.dot.position.copy(a.curve.getPoint(u)); a.dot.scale.setScalar(ws * 0.06);
+          a.site.scale.setScalar(ws * 0.05 * C((t - a.t0 + 0.4) / 0.3)); a.site.visible = t > a.t0 - 0.4;
+          place(a.lb, a.pos, F(t, a.t0 - 0.3, a === arcs[2] ? 20.6 : 15.4, 0.3), -22, -22);
+          a.row.style.opacity = F(t, a.t0, 18.3, 0.35);
+        }
+        pin.scale.setScalar(ws * 0.22 * (1 + 0.3 * Math.abs(Math.sin(t * 3))));
+        pin.material.opacity = F(t, 5.6, 99, 0.4);
+        hqDot.scale.setScalar(ws * 0.06); hqDot.visible = t > 5.6;
+        place(lHQ, hqPos, F(t, 6.4, 20.8, 0.4) + F(t, 30.2, 35.3, 0.4), 30, -20);
+        // dim the globe behind the money scenes
+        $("gl").style.opacity = 1 - 0.85 * F(t, 20.9, 30.0, 0.5);
+
+        // headline
+        const ta = grp("gA", t);
+        rise("a1", ta, -0.6); rise("a2", ta, -0.55); rise("a3", ta, -0.5);
+        $("aB").style.width = `${E.o3((ta + 0.5) / 0.5) * (Wm.a + 24)}px`;
+        // suppliers
+        const ts = grp("gS", t);
+        $("supN").textContent = Math.round(5100 * E.o3(C((ts - 0.1) / 1.2))).toLocaleString("en-US");
+        // money
+        const tm = grp("gM", t);
+        const nOn = Math.round(48 * E.o2(C((tm - 0.3) / 1.8)));
+        $("mNum").textContent = nOn;
+        $("mLab").style.opacity = F(tm, 0.2, 99, 0.3);
+        icons.forEach((el, i) => {
+          const on = C((tm - 0.3 - (i / 48) * 1.8) / 0.12);
+          el.style.color = on > 0 ? "#d9a441" : "#2a3646";
+          el.style.borderColor = on > 0 ? `rgba(217,164,65,${0.4 + 0.6 * on})` : "#344457";
+          el.style.transform = `scale(${1 + 0.18 * Math.sin(Math.PI * on)})`;
+        });
+        $("icTag").style.opacity = F(tm, 0.8, 99, 0.3);
+        $("mEur").style.opacity = C((tm - 2.4) / 0.3); $("mEur").style.transform = `translateY(${(1 - E.back((tm - 2.4) / 0.5)) * 30}px)`;
+        $("mEach").style.opacity = C((tm - 3.2) / 0.3);
+        // bars
+        grp("gH", t);
+        for (const h of hbs) {
+          const g = E.o3((t - h.at) / 0.8);
+          h.r.style.opacity = C((t - h.at + 0.2) / 0.3);
+          h.bar.style.transform = `scaleX(${g})`;
+          const inside = h.w > 300;
+          h.v.style.left = inside ? `${Math.max(0, h.w * g - 190)}px` : `${h.w * g + 18}px`;
+          h.v.style.color = inside ? (h === hbs[0] ? "#0b0e13" : "#f7f3ea") : "#f7f3ea";
+        }
+        hbs[2].bar.style.boxShadow = `0 0 ${40 * F(t, 28.4, 99, 0.5)}px rgba(217,164,65,${0.8 * F(t, 28.4, 99, 0.5)})`;
+        // question + end
+        const tq = grp("gQ", t);
+        rise("q1", tq, 0.1); rise("q2", tq, 0.35); rise("q3", tq, 0.6);
+        $("qB").style.width = `${E.o3((tq - 0.9) / 0.5) * (Wm.q + 24)}px`;
+        const tf = grp("gF", t);
+        $("fNext").style.opacity = F(tf, 0.4, 99, 0.4); $("fFoot").style.opacity = F(tf, 0.9, 99, 0.4);
+
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+        for (const [id, a, b] of CAPS) $(id).style.opacity = F(t, a, b, 0.25);
+        for (const [id, a, b] of SRCS) $(id).style.opacity = F(t, a, b, 0.3);
+        renderer.render(scene, camera);
+      };
+      H.render = (rt) => draw(warp(rt));
+      const Wm = {};
+      document.fonts.ready.then(() => { Wm.a = $("a3t").offsetWidth; Wm.q = $("q2t").offsetWidth; H.ready(); });
+    </script>
+  </body>
+</html>

@@ -7,3 +7,4 @@
   from the matching sample there instead of building from scratch. AK asked for this on 26 Oct 2026.
 - Run `python3 hyperframes/tools/hf.py sync` before checking or rendering a sample; renders go to `out/hyperframes/`.
 - Every visual uses real data with its source on screen; anything illustrative is labelled as such on screen.
+- Channels (AK, 7 Nov 2026): **Moat & Margin = Indian companies only. Moat Atlas = global (non-Indian) companies only.** Pick the channel from the company before choosing a visual.

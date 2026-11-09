@@ -1,0 +1,337 @@
+<!doctype html>
+<!-- Moat & Margin · Moat File 01 · Asian Paints: "The paint tin is not the whole moat". Vertical 1080x1920 Short, 40 s, silent.
+     Every number is from a filing or the annual report; the source line on screen changes with each scene.
+     FY26 split per ₹100 of consolidated total income (₹36,307.34 cr), from the audited results filed 29 May 2026:
+       materials 15,384.05 + 4,014.05 + 603.68 = 20,001.78 -> 55.1 · other expenses 6,086.25 -> 16.8 · employees 2,799.59 -> 7.7
+       depreciation 1,228.85 + finance 195.41 = 1,424.26 -> 3.9 · tax 1,608.75 -> 4.4 · profit for the period 4,394.69 -> 12.1
+       (associates +165.59 and exceptional -157.61 net to 2 paise). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat File 01 · Asian Paints</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="vo.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      html, body, #root { width: 1080px; height: 1920px; }
+      #root { background: radial-gradient(1000px 1500px at 50% 42%, #d8cbad 0%, #c9bb9c 58%, #b5a684 100%); }
+      #vig { background: radial-gradient(900px 1450px at 50% 44%, transparent 58%, rgba(40, 28, 10, 0.32) 100%); }
+      .kicker { left: 80px; top: 120px; font-size: 28px; }
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 760px; visibility: hidden; }
+      .h { position: absolute; left: 80px; top: 180px; width: 920px; font: 700 64px/1.02 Oswald, sans-serif; letter-spacing: 0.02em; color: #1a1a1a; }
+      .sub { position: absolute; left: 82px; top: 262px; width: 920px; font: 400 30px/1.3 Inter, sans-serif; color: #4a4237; }
+      .cap { left: 60px; right: 60px; top: 1300px; bottom: auto; transform: none; white-space: normal; text-align: center;
+        font: 600 44px/1.28 Inter, sans-serif; padding: 16px 28px; border-radius: 12px; opacity: 0; }
+      .src { left: 80px; right: 80px; top: 1478px; bottom: auto; text-align: left; font: 24px/1.4 Plex, monospace; color: #2b261f; opacity: 0; }
+      .illu { position: absolute; font: 400 24px/1 Plex, monospace; letter-spacing: 0.1em; color: #2b261f; border: 2px solid #2b261f; padding: 6px 10px; }
+      /* A · hook */
+      #aHead { position: absolute; left: 80px; top: 300px; width: 940px; }
+      #aHead .l { position: relative; display: block; font: 700 132px/1.0 Oswald, sans-serif; letter-spacing: 0.01em; color: #1a1a1a; opacity: 0; }
+      #aHead .l b { position: absolute; left: -12px; top: 22px; height: 116px; background: #d9a441; z-index: -1; }
+      #aSub { position: absolute; left: 84px; top: 735px; font: 700 italic 44px/1.2 Playfair, serif; color: #4a4237; opacity: 0; }
+      #tin { position: absolute; left: 330px; top: 820px; width: 420px; height: 460px; }
+      #tinTag { left: 740px; top: 1190px; }
+      /* B · the ₹100 column */
+      #col { position: absolute; left: 110px; top: 330px; width: 300px; height: 900px; }
+      .seg { position: absolute; left: 0; width: 300px; box-shadow: 0 8px 18px rgba(40, 28, 10, 0.25); }
+      .seg::after { content: ""; position: absolute; inset: 0; border-top: 2px solid rgba(247, 243, 234, 0.85); }
+      #full { position: absolute; left: 0; bottom: 0; width: 300px; background: #d9a441; display: flex; align-items: center; justify-content: center;
+        font: 700 120px/1 Oswald, sans-serif; color: #1a1a1a; overflow: hidden; box-shadow: 0 10px 22px rgba(40, 28, 10, 0.3); }
+      .lab { position: absolute; left: 462px; width: 556px; padding: 0 8px; height: 58px; align-items: center; opacity: 0; display: flex; justify-content: space-between; align-items: baseline; }
+      .lab .n { font: 700 32px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #1a1a1a; }
+      .lab .v { font: 700 46px/1 Oswald, sans-serif; color: #1a1a1a; transform-origin: 100% 70%; }
+      #leads { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      /* C · the pivot */
+      .big { position: absolute; left: 80px; width: 920px; font: 700 104px/1.02 Oswald, sans-serif; color: #1a1a1a; opacity: 0; }
+      .big b { position: absolute; left: -14px; top: 18px; height: 96px; background: #d9a441; z-index: -1; }
+      #cQ { position: absolute; left: 84px; top: 820px; width: 900px; font: 700 italic 62px/1.18 Playfair, serif; color: #4a4237; opacity: 0; }
+      /* D · touchpoints */
+      #dNum { position: absolute; left: 80px; top: 296px; font: 700 168px/1 Oswald, sans-serif; color: #1a1a1a; }
+      #dLab { position: absolute; left: 84px; top: 476px; font: 700 34px/1.2 Oswald, sans-serif; letter-spacing: 0.08em; color: #4a4237; }
+      #dots { position: absolute; left: 0; top: 560px; width: 1080px; height: 640px; }
+      #dLeg { position: absolute; left: 108px; top: 1170px; font: 400 26px/1 Plex, monospace; color: #3f382e; }
+      #dLeg i { display: inline-block; width: 13px; height: 13px; border-radius: 50%; background: #1a1a1a; margin-right: 10px; vertical-align: 1px; }
+      #dAdd { position: absolute; left: 104px; top: 1218px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #1a1a1a;
+        background: #d9a441; padding: 6px 12px 8px; opacity: 0; white-space: nowrap; }
+      /* E · the test */
+      #card { position: absolute; left: 80px; top: 200px; width: 920px; padding: 30px 40px 36px; background: #f7f3ea;
+        box-shadow: 0 16px 34px rgba(40, 28, 10, 0.32); transform-origin: 50% 50%; }
+      #card .d { font: 400 30px/1 Plex, monospace; color: #7a1a10; letter-spacing: 0.08em; }
+      #card .t { font: 700 72px/1.05 Oswald, sans-serif; color: #1a1a1a; margin-top: 14px; }
+      #card .x { font: 400 36px/1.3 Inter, sans-serif; color: #3f382e; margin-top: 12px; }
+      #stamp { position: absolute; left: 640px; top: 150px; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #8e1c12;
+        border: 6px solid #8e1c12; padding: 10px 16px; transform-origin: 50% 50%; opacity: 0; }
+      #bars { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .bar { position: absolute; bottom: 690px; width: 210px; transform-origin: 50% 100%; box-shadow: 0 8px 16px rgba(40, 28, 10, 0.22); }
+      .bv { position: absolute; width: 300px; text-align: center; font: 700 44px/1.1 Oswald, sans-serif; color: #1a1a1a; opacity: 0; }
+      .bv small { display: block; font: 700 32px/1.2 Oswald, sans-serif; }
+      .bx { position: absolute; top: 1244px; width: 210px; text-align: center; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #4a4237; opacity: 0; }
+      #eAxis { position: absolute; left: 100px; top: 1230px; width: 880px; height: 4px; background: #1a1a1a; transform-origin: 0 50%; }
+      #eUnit { position: absolute; left: 100px; top: 640px; font: 400 26px/1 Plex, monospace; color: #3f382e; opacity: 0; }
+      /* F · end */
+      .q { position: absolute; left: 80px; width: 940px; font: 700 100px/1.02 Oswald, sans-serif; color: #1a1a1a; opacity: 0; }
+      .q b { position: absolute; left: -12px; top: 16px; height: 94px; background: #d9a441; z-index: -1; }
+      #fTest { position: absolute; left: 84px; top: 690px; font: 700 italic 56px/1.2 Playfair, serif; color: #4a4237; opacity: 0; }
+      #fNext { position: absolute; left: 80px; top: 880px; width: 920px; padding: 28px 32px; border: 3px solid #1a1a1a; opacity: 0; }
+      #fNext .k { font: 400 26px/1 Plex, monospace; letter-spacing: 0.1em; color: #7a1a10; }
+      #fNext .t { font: 600 40px/1.25 Inter, sans-serif; color: #1a1a1a; margin-top: 12px; }
+      #fFoot { position: absolute; left: 80px; top: 1130px; width: 920px; font: 400 26px/1.4 Plex, monospace; color: #3f382e; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="paper" data-composition-id="main" data-start="0" data-duration="56.2" data-width="1080" data-height="1920">
+      <!-- A · hook -->
+      <div class="scene" id="A">
+        <div id="aHead">
+          <span class="l">THE PAINT TIN</span><span class="l">IS NOT THE</span><span class="l" id="aHl"><b id="aB"></b><span id="aHt">WHOLE MOAT</span></span>
+        </div>
+        <div id="aSub">Asian Paints, FY 2025-26</div>
+        <svg id="tin" viewBox="0 0 420 460" aria-label="Illustration of a paint tin">
+          <defs>
+            <linearGradient id="gb" x1="0" x2="1"><stop offset="0" stop-color="#bdb39f" /><stop offset="0.35" stop-color="#efe8d8" /><stop offset="1" stop-color="#a99f8a" /></linearGradient>
+            <linearGradient id="gband" x1="0" x2="1"><stop offset="0" stop-color="#5e140c" /><stop offset="0.35" stop-color="#8f2416" /><stop offset="1" stop-color="#4f100a" /></linearGradient>
+          </defs>
+          <ellipse cx="210" cy="410" rx="170" ry="36" fill="#9e9480" />
+          <rect x="40" y="90" width="340" height="320" fill="url(#gb)" />
+          <rect x="40" y="190" width="340" height="130" fill="url(#gband)" />
+          <g id="sw"><rect x="88" y="236" width="38" height="38" rx="6" fill="#d9a441" /><rect x="140" y="236" width="38" height="38" rx="6" fill="#3b6ea5" />
+            <rect x="192" y="236" width="38" height="38" rx="6" fill="#4f8a5b" /><rect x="244" y="236" width="38" height="38" rx="6" fill="#c96f22" />
+            <rect x="296" y="236" width="38" height="38" rx="6" fill="#f7f3ea" /></g>
+          <ellipse cx="210" cy="90" rx="170" ry="36" fill="#d7cfbd" />
+          <ellipse cx="210" cy="90" rx="148" ry="28" fill="#b9ae96" />
+          <path d="M60 92 Q210 -40 360 92" fill="none" stroke="#6c6353" stroke-width="7" />
+          <path id="drip" d="M300 104 C300 104 304 160 296 170 C288 180 284 160 284 140 C284 120 290 108 300 104 Z" fill="#c4532b" />
+        </svg>
+        <div class="illu" id="tinTag">ILLUSTRATION</div>
+      </div>
+      <!-- B · ₹100 column -->
+      <div class="scene" id="B">
+        <div class="h">WHERE THE ₹100 WENT</div>
+        <div class="sub">Asian Paints, FY 2025-26 · per ₹100 of total income</div>
+        <svg id="leads"></svg>
+        <div id="col"><div id="full">₹100</div></div>
+        <div id="labs"></div>
+      </div>
+      <!-- C · pivot -->
+      <div class="scene" id="C">
+        <div class="big" id="c1" style="top: 330px">₹55 OF EVERY ₹100</div>
+        <div class="big" id="c2" style="top: 440px">IS MATERIALS.</div>
+        <div id="cQ" style="top: 610px">Rivals can buy materials too.</div>
+        <div class="big" id="c3" style="top: 760px"><b id="cB"></b><span id="c3t">SO WHERE IS</span></div>
+        <div class="big" id="c4" style="top: 866px"><b id="cB2"></b><span id="c4t">THE EDGE?</span></div>
+      </div>
+      <!-- D · touchpoints -->
+      <div class="scene" id="D">
+        <div class="h">THE SHOP COUNTER</div>
+        <div id="dNum">0</div>
+        <div id="dLab">RETAIL TOUCHPOINTS ACROSS INDIA (FY 2024-25)</div>
+        <canvas id="dots" width="1080" height="640"></canvas>
+        <div id="dLeg"><i></i>= 100 touchpoints (a count, not a map)</div>
+        <div id="dAdd">+ NEARLY 6,000 IN FY26</div>
+      </div>
+      <!-- E · the test -->
+      <div class="scene" id="E">
+        <div id="card"><div class="d">22 FEBRUARY 2024</div><div class="t">A NEW RIVAL ARRIVES</div>
+          <div class="x">Grasim launches Birla Opus, with about ₹10,000 crore invested.</div></div>
+        <div id="stamp">₹10,000 CR</div>
+        <div id="eUnit">Asian Paints revenue from operations, ₹ crore</div>
+        <div id="bars"></div>
+        <div id="eAxis"></div>
+      </div>
+      <!-- F · end -->
+      <div class="scene" id="F">
+        <div class="q" id="q1" style="top: 260px">CAN ₹10,000 CRORE</div>
+        <div class="q" id="q2" style="top: 364px"><b id="qB"></b><span id="qt">BUY 1.69 LAKH</span></div>
+        <div class="q" id="q3" style="top: 468px">SHOP COUNTERS?</div>
+        <div id="fTest">The test isn't over.</div>
+        <div id="fNext"><div class="k">NEXT ON MOAT &amp; MARGIN</div><div class="t">Pidilite: why the carpenter matters more than the billboard</div></div>
+        <div id="fFoot">Research, not a recommendation. No buy or sell view.</div>
+      </div>
+
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT &amp; MARGIN · MOAT FILE 01</div>
+
+
+      <div class="src" id="s1">Illustration: a generic paint tin, not an Asian Paints product.</div>
+      <div class="src" id="s2">Source: Asian Paints audited consolidated results, year to 31 Mar 2026 (filed 29 May 2026). Split per ₹100 of total income
+        (₹36,307 cr) is our arithmetic, rounded. Profit includes a ₹69 cr minority share; associates and one-offs net to 2 paise.</div>
+      <div class="src" id="s3">Source: Asian Paints Integrated Annual Report 2024-25 (169,000+ retail touchpoints); FY26 additions: Annual Report 2025-26, as reported by PTI.</div>
+      <div class="src" id="s4">Sources: Grasim press release, 22 Feb 2024; Asian Paints consolidated results FY24 (₹35,494.73 cr), FY25 (₹33,905.62 cr), FY26 (₹35,583.54 cr).</div>
+      <div class="src" id="s5">Moat &amp; Margin · Asian Paints filings and annual reports, FY24 to FY26.</div>
+    </div>
+    <script>
+      const H = HF.setup(window.VO.D), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+
+      // Scene envelope: arrive from slightly behind, drift forward, then push through the camera.
+      const SC = { A: [0, 4.5], B: [4.6, 16.9], C: [17.1, 20.6], D: [20.7, 28.4], E: [28.5, 35.2], F: [35.3, 99] };
+      function scene(id, t) {
+        const [a, b] = SC[id], el = $(id), d = 0.45;
+        const vin = C((t - a) / d), vout = C((t - b) / d);
+        const op = (a === 0 ? 1 : E.o2(vin)) * (1 - E.io2(vout));
+        const s = (a === 0 ? 1 : 0.93 + 0.07 * E.o3(vin)) * (1 + 0.03 * C((t - a) / Math.min(b - a, 12))) * (1 + 0.22 * E.io2(vout));
+        el.style.opacity = op;
+        el.style.transform = `scale(${s})`;
+        el.style.visibility = op > 0.002 ? "visible" : "hidden";
+        return t - a;
+      }
+      const warp = (r) => { const A = window.VO.anchors;
+        for (let i = 0; i < A.length - 1; i++) { const [d0, r0] = A[i], [d1, r1] = A[i + 1]; if (r <= r1) return d0 + ((d1 - d0) * (r - r0)) / (r1 - r0); }
+        return A[A.length - 1][0]; };
+      // captions come from the voiced beats (vo.js); each shows while its line is spoken
+      for (const b of window.VO.beats) if (b.cap) { const el = document.createElement("div"); el.className = "cap"; el.id = b.id; el.textContent = b.cap; document.getElementById("root").appendChild(el); }
+      const CAPS = window.VO.beats.filter((b) => b.cap).map((b) => [b.id, b.a, b.b]);
+      const SRCS = [["s1", 0.8, 4.4], ["s2", 5.0, 20.5], ["s3", 21.0, 28.3], ["s4", 28.9, 35.1], ["s5", 35.6, 99]];
+
+      // B · the column
+      const SEG = [
+        ["RAW MATERIALS & GOODS", 55.1, "#1a1a1a", 6.0], ["OTHER EXPENSES", 16.8, "#c96f22", 9.8], ["EMPLOYEES", 7.7, "#3b6ea5", 10.4],
+        ["DEPRECIATION & INTEREST", 3.9, "#4f8a5b", 11.0], ["TAX", 4.4, "#7a5ea8", 11.6], ["PROFIT", 12.1, "#d9a441", 13.3],
+      ];
+      const COLX = 110, COLTOP = 330, COLH = 900, COLW = 300;
+      let acc = 0;
+      const segs = SEG.map(([n, v, c, at]) => {
+        const el = document.createElement("div");
+        el.className = "seg"; el.style.background = c;
+        const h = (v / 100) * COLH, bottom = (acc / 100) * COLH;
+        el.style.height = h + "px"; el.style.bottom = bottom + "px";
+        $("col").appendChild(el);
+        const lab = document.createElement("div");
+        lab.className = "lab";
+        lab.innerHTML = `<span class="n">${n}</span><span class="v">₹${v.toFixed(1)}</span>`;
+        $("labs").appendChild(lab);
+        const cy = COLTOP + COLH - bottom - h / 2;
+        acc += v;
+        return { n, v, c, at, el, lab, cy, ly: cy };
+      });
+      // spread labels so none overlap (min 60 px apart), keeping order
+      for (let i = segs.length - 2; i >= 0; i--) if (segs[i].ly < segs[i + 1].ly + 60) segs[i].ly = segs[i + 1].ly + 60;
+      segs.forEach((s) => (s.lab.style.top = s.ly - 29 + "px"));
+      const NS = "http://www.w3.org/2000/svg";
+      const leads = segs.map((s) => {
+        const p = document.createElementNS(NS, "path");
+        p.setAttribute("d", `M${COLX + COLW + 8} ${s.cy} L${COLX + COLW + 30} ${s.cy} L${452} ${s.ly} L${462} ${s.ly}`);
+        p.setAttribute("fill", "none"); p.setAttribute("stroke", "#1a1a1a"); p.setAttribute("stroke-width", "3");
+        $("leads").appendChild(p);
+        return p;
+      });
+      const profit = segs[5];
+
+      // D · dots: 1 dot = 100 touchpoints. 1,690 for 169,000 (FY25) + 60 for ~6,000 added in FY26.
+      const DC = $("dots").getContext("2d"), COLS = 52, SP = 17, X0 = (1080 - (COLS - 1) * SP) / 2, Y0 = 18;
+      const hash = (i) => { let x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+      const DOTS = Array.from({ length: 1750 }, (_, i) => ({ x: X0 + (i % COLS) * SP, y: Y0 + Math.floor(i / COLS) * SP, gold: i >= 1690,
+        k: i >= 1690 ? (i - 1690) / 60 : C((i % COLS) / COLS * 0.75 + hash(i) * 0.25) }));
+      const inr = (n) => { const s = String(n); if (s.length <= 3) return s; const last = s.slice(-3), rest = s.slice(0, -3);
+        return rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + last; };
+
+      // E · bars (zero baseline, honest heights)
+      const BARS = [["FY24", 35494.73, "#1a1a1a", 150, ""], ["FY25", 33905.62, "#b3261a", 435, "−4.5%"], ["FY26", 35583.54, "#d9a441", 720, "+4.9%"]];
+      const BMAX = 420;
+      const bars = BARS.map(([y, v, c, x, ch], i) => {
+        const b = document.createElement("div"); b.className = "bar"; b.style.left = x + "px"; b.style.height = (v / 35583.54) * BMAX + "px"; b.style.background = c;
+        const bv = document.createElement("div"); bv.className = "bv"; bv.style.left = x - 45 + "px"; bv.style.top = 1230 - (v / 35583.54) * BMAX - (ch ? 104 : 62) + "px";
+        bv.innerHTML = `₹${inr(Math.round(v))}` + (ch ? `<small style="color:${i === 1 ? "#b3261a" : "#3d6b2f"}">${ch}</small>` : "");
+        const bx = document.createElement("div"); bx.className = "bx"; bx.style.left = x + "px"; bx.textContent = y;
+        $("bars").append(b, bv, bx);
+        return { b, bv, bx, at: 30.2 + i * 1.0 };
+      });
+
+      const draw = (t) => {
+        // A
+        const ta = scene("A", t);
+        document.querySelectorAll("#aHead .l").forEach((el, i) => {
+          const st = i * 0.16 - 0.5;
+          const p = E.back((ta - st) / 0.5, 1.4);
+          el.style.opacity = C((ta - st) / 0.3);
+          el.style.transform = `translateY(${(1 - p) * 50}px)`;
+        });
+        $("aB").style.width = `${E.o3((ta - 0.9) / 0.6) * (W.a + 24)}px`;
+        $("aSub").style.opacity = F(ta, 1.6, 99, 0.4);
+        const tp = E.back((ta - 0.9) / 0.7, 1.2);
+        $("tin").style.opacity = C((ta - 0.9) / 0.3);
+        $("tin").style.transform = `translateY(${(1 - tp) * 260 + Math.sin(ta * 2) * 4}px) rotate(${-3 + (1 - tp) * 8}deg)`;
+        $("drip").setAttribute("transform", `translate(0 104) scale(1 ${0.6 + 0.9 * E.io2((ta - 1.6) / 2.4)}) translate(0 -104)`);
+        $("tinTag").style.opacity = F(ta, 1.5, 99, 0.4);
+
+        // B
+        const tb = scene("B", t);
+        const grow = E.o3((tb - 0.1) / 0.8);
+        const split = E.io2((tb - 1.3) / 0.5);
+        $("full").style.height = `${grow * COLH}px`;
+        $("full").style.opacity = 1 - split;
+        segs.forEach((s, i) => {
+          const on = C((t - s.at + 0.2) / 0.35);
+          const lift = s === profit ? E.io2((t - 13.3) / 0.6) : 0;
+          s.el.style.opacity = split;
+          s.el.style.transform = `translateX(${(i % 2 ? 1 : -1) * (1 - split) * 0}px) scaleX(${1 + 0.04 * Math.sin(Math.PI * C((t - s.at) / 0.5))})`;
+          s.el.style.filter = t > 6.0 && t < s.at ? "saturate(0.15) brightness(1.15)" : "none";
+          if (s === profit) s.el.style.boxShadow = `0 8px 18px rgba(40,28,10,.25), 0 0 ${46 * lift}px rgba(217,164,65,${0.9 * lift})`;
+          s.lab.style.opacity = on;
+          s.lab.style.transform = `translateX(${(1 - E.o3(on)) * 30}px)`;
+          if (s === profit) { s.lab.style.background = `rgba(217,164,65,${0.95 * lift})`; s.lab.querySelector(".v").style.transform = `scale(${1 + 0.25 * lift})`; }
+          leads[i].style.opacity = on;
+        });
+        // C
+        const tc = scene("C", t);
+        [["c1", 0.1], ["c2", 0.35]].forEach(([id, a]) => { $(id).style.opacity = C((tc - a) / 0.3); $(id).style.transform = `translateY(${(1 - E.back((tc - a) / 0.5, 1.3)) * 40}px)`; });
+        $("cQ").style.opacity = F(tc, 1.0, 99, 0.35);
+        [["c3", 1.7], ["c4", 1.9]].forEach(([id, a]) => { $(id).style.opacity = C((tc - a) / 0.3); $(id).style.transform = `translateY(${(1 - E.back((tc - a) / 0.5, 1.3)) * 40}px)`; });
+        $("cB").style.width = `${E.o3((tc - 2.2) / 0.4) * (W.c3 + 24)}px`; $("cB2").style.width = `${E.o3((tc - 2.5) / 0.4) * (W.c4 + 24)}px`;
+        // D
+        const td = scene("D", t);
+        const fill = C((td - 0.6) / 2.6);
+        $("dNum").textContent = (fill >= 1 ? inr(169000) + "+" : inr(Math.round(169000 * E.o2(fill) / 100) * 100));
+        $("dLab").style.opacity = F(td, 0.4, 99, 0.4);
+        $("dLeg").style.opacity = F(td, 1.2, 99, 0.4);
+        DC.clearRect(0, 0, 1080, 640);
+        const addOn = C((td - 4.4) / 1.4);
+        for (const d of DOTS) {
+          const a = d.gold ? C((addOn - d.k * 0.8) / 0.2) : C((fill - d.k * 0.85) / 0.15);
+          if (a <= 0) continue;
+          DC.globalAlpha = a;
+          DC.fillStyle = d.gold ? "#b07a12" : "#1a1a1a";
+          DC.beginPath(); DC.arc(d.x, d.y, d.gold ? 6.2 + 2 * (1 - a) : 5.6, 0, Math.PI * 2); DC.fill();
+        }
+        DC.globalAlpha = 1;
+        $("dAdd").style.opacity = F(td, 4.6, 99, 0.35);
+        // E
+        const te = scene("E", t);
+        const cp = E.back((te - 0.1) / 0.6, 1.2);
+        $("card").style.transform = `translateY(${(1 - cp) * -420}px) rotate(${-2 + (1 - cp) * -6}deg)`;
+        const sp = C((te - 1.0) / 0.25);
+        $("stamp").style.opacity = sp;
+        $("stamp").style.transform = `rotate(-9deg) scale(${1.8 - 0.8 * E.o3(sp)})`;
+        $("eAxis").style.transform = `scaleX(${E.o3((te - 1.2) / 0.6)})`;
+        $("eUnit").style.opacity = F(te, 1.4, 99, 0.4);
+        for (const b of bars) {
+          const g = E.o3((t - b.at) / 0.7);
+          b.b.style.transform = `scaleY(${g})`;
+          b.bv.style.opacity = C((t - b.at - 0.5) / 0.3);
+          b.bx.style.opacity = C((t - b.at) / 0.3);
+        }
+        // F
+        const tf = scene("F", t);
+        ["q1", "q2", "q3"].forEach((id, i) => { const a = 0.15 + i * 0.25; $(id).style.opacity = C((tf - a) / 0.3); $(id).style.transform = `translateY(${(1 - E.back((tf - a) / 0.5, 1.3)) * 40}px)`; });
+        $("qB").style.width = `${E.o3((tf - 1.0) / 0.5) * (W.q + 24)}px`;
+        $("fTest").style.opacity = F(tf, 1.5, 99, 0.4);
+        $("fNext").style.opacity = F(tf, 2.2, 99, 0.4);
+        $("fFoot").style.opacity = F(tf, 2.6, 99, 0.4);
+
+        document.querySelector(".kicker").style.opacity = F(t, 0.1, 99, 0.5);
+        for (const [id, a, b] of CAPS) $(id).style.opacity = F(t, a, b, 0.25);
+        for (const [id, a, b] of SRCS) $(id).style.opacity = F(t, a, b, 0.3);
+      };
+      H.render = (rt) => draw(warp(rt));
+      const W = {};
+      document.fonts.ready.then(() => {
+        W.a = $("aHt").offsetWidth; W.c3 = $("c3t").offsetWidth; W.c4 = $("c4t").offsetWidth; W.q = $("qt").offsetWidth;
+        H.ready();
+      });
+    </script>
+  </body>
+</html>

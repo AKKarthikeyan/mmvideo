@@ -1,0 +1,229 @@
+--- src/voxkit.tsx.bak_prenvidia	2026-11-10 00:17:35
++++ src/voxkit.tsx	2026-11-10 00:17:35
+@@ -4,6 +4,10 @@
+ import React from "react";
+ import {interpolate, spring, useCurrentFrame, useVideoConfig, Easing, staticFile} from "remotion";
+ 
++// calm mode (AK, 10 Nov 2026): opt-in per video (data.json calm=true). No overshoot, no drift, so words and numbers hold still.
++export const CALM = {on: false};
++export const spr = (a: any) => spring(CALM.on ? {...a, config: {damping: 60, stiffness: 140, overshootClamping: true}} : a);
++
+ export const C = {tan: "#C9BB9C", ink: "#1A1A1A", gray: "#8C8C8C", red: "#D62E1F", mustard: "#D9A441", paper: "#EFE6D2", white: "#F7F3EA"};
+ export const COND = "Oswald, Impact, 'Arial Narrow', sans-serif";
+ export const TYPE = "'American Typewriter', 'Courier New', monospace";
+@@ -53,7 +57,7 @@
+ // Spring entrance with overshoot, then settle ("cutouts spring up with slight overshoot").
+ export const useSpringIn = (start: number, fromY = 120) => {
+   const f = useCurrentFrame(); const {fps} = useVideoConfig();
+-  const s = spring({frame: f - start, fps, config: {damping: 11, stiffness: 140, mass: 0.8}});
++  const s = spr({frame: f - start, fps, config: {damping: 11, stiffness: 140, mass: 0.8}});
+   return {visible: f >= start, s, ty: (1 - s) * fromY, scale: 0.85 + 0.15 * s};
+ };
+ 
+@@ -124,8 +128,8 @@
+ export const Stamp: React.FC<{x: number; y: number; start: number; text: string; rot?: number; size?: number}> = ({x, y, start, text, rot = -10, size = 70}) => {
+   const f = useCurrentFrame(); const {fps} = useVideoConfig();
+   if (f < start) return null;
+-  const s = spring({frame: f - start, fps, config: {damping: 14, stiffness: 260}});
+-  const k = 1.5 - 0.5 * s;
++  const s = spr({frame: f - start, fps, config: {damping: 14, stiffness: 260}});
++  const k = CALM.on ? 1 : 1.5 - 0.5 * s;
+   const w = text.length * size * 0.55 + 70, h = size * 1.6;
+   return (
+     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${k})`} opacity={0.92}>
+@@ -139,7 +143,7 @@
+ export const Pin: React.FC<{x: number; y: number; start: number}> = ({x, y, start}) => {
+   const f = useCurrentFrame(); const {fps} = useVideoConfig();
+   if (f < start) return null;
+-  const s = spring({frame: f - start, fps, config: {damping: 9, stiffness: 180}});
++  const s = spr({frame: f - start, fps, config: {damping: 9, stiffness: 180}});
+   const wob = Math.sin((f - start) / 3) * 10 * Math.max(0, 1 - (f - start) / 24);
+   return (
+     <g transform={`translate(${x} ${y - (1 - s) * 220}) rotate(${wob})`}>
+@@ -180,6 +184,7 @@
+ // Slow 2% camera drift across a beat.
+ export const Drift: React.FC<{frames: number; cx?: number; cy?: number; children: React.ReactNode}> = ({frames, cx = 540, cy = 960, children}) => {
+   const f = useCurrentFrame();
++  if (CALM.on) return <g>{children}</g>;
+   const k = interpolate(f, [0, frames], [1, 1.02]);
+   const dx = interpolate(f, [0, frames], [0, -10]);
+   return <g transform={`translate(${cx + dx} ${cy}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
+--- src/vx/VoxEngine.tsx.bak_prenvidia	2026-11-10 00:17:35
++++ src/vx/VoxEngine.tsx	2026-11-10 00:17:35
+@@ -2,13 +2,13 @@
+ // Every scene lays itself out for the current composition size; timings come from phrases in the narration.
+ import React from "react";
+ import {AbsoluteFill, Audio, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing} from "remotion";
+-import {C, COND, TYPE, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
++import {C, COND, TYPE, CALM, spr, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
+ import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
+ import {ILLUS} from "./illus";
+ 
+ export const FPS = 30;
+ export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
+-export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
++export type VData = {calm?: boolean; id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
+   timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
+ 
+ const isTitle = (b: Beat) => b.scene.type === "title";
+@@ -259,7 +259,7 @@
+ const RowIn: React.FC<{start: number; children: React.ReactNode}> = ({start, children}) => {
+   const f = useCurrentFrame(); const {fps} = useVideoConfig();
+   if (f < start) return null;
+-  const sp = spring({frame: f - start, fps, config: {damping: 14, stiffness: 160}});
++  const sp = spr({frame: f - start, fps, config: {damping: 14, stiffness: 160}});
+   return <g transform={`translate(${(1 - sp) * -60} 0)`} opacity={Math.min(1, sp * 1.5)}>{children}</g>;
+ };
+ 
+@@ -272,7 +272,7 @@
+       <Heading text={s.heading}/>
+       {rows.map((r: any, i: number) => {
+         const st = T(r.at);
+-        const sp = f < st ? 0 : (st < 0 ? 1 : spring({frame: f - st, fps, config: {damping: 16, stiffness: 120}}));
++        const sp = f < st ? 0 : (st < 0 ? 1 : spr({frame: f - st, fps, config: {damping: 16, stiffness: 120}}));
+         if (L.land) {
+           const y = 300 + i * Math.min(150, 540 / k); const bw = 880 * r.v / max;
+           return <g key={i}>
+@@ -300,7 +300,7 @@
+   const dot = (i: number, x: number, y: number, children: React.ReactNode) => {
+     if (f < at[i]) return (
+       <g key={i}><circle cx={x} cy={y} r={14} fill={C.tan} stroke={C.gray} strokeWidth={3} strokeDasharray="5 5"/></g>);
+-    const sp = at[i] < 0 ? 1 : spring({frame: f - at[i], fps, config: {damping: 10, stiffness: 170}});
++    const sp = at[i] < 0 ? 1 : spr({frame: f - at[i], fps, config: {damping: 10, stiffness: 170}});
+     return <g key={i} transform={`translate(${x} ${y}) scale(${0.4 + 0.6 * sp}) translate(${-x} ${-y})`}>
+       <circle cx={x} cy={y} r={16} fill={C.red} stroke={C.ink} strokeWidth={3}/>{children}</g>;
+   };
+@@ -343,7 +343,7 @@
+       <Heading text={s.heading}/>
+       {items.map((it: any, i: number) => {
+         if (f < times[i]) return null;
+-        const sp = spring({frame: f - times[i], fps, config: {damping: 12, stiffness: 160}});
++        const sp = spr({frame: f - times[i], fps, config: {damping: 12, stiffness: 160}});
+         const on = i === cur;
+         return <g key={i} transform={`translate(${(1 - sp) * -500} 0)`}>
+           <rect x={x0} y={y0 + i * rh} width={w} height={rh - 22} fill={on ? C.red : C.white} style={{filter: "url(#vshadow)"}}/>
+@@ -386,7 +386,7 @@
+       <Strip x={L.cx} y={L.top} start={0} text="MOATSCORE" size={L.land ? 70 : 64}/>
+       {rows.map(([name, sc], i) => {
+         const st = 8 + i * 6; if (f < st) return null;
+-        const sp = spring({frame: f - st, fps, config: {damping: 16, stiffness: 140}});
++        const sp = spr({frame: f - st, fps, config: {damping: 16, stiffness: 140}});
+         const y = y0 + i * rh; const bw = (w - 470) * (sc / 10);
+         return <g key={i}>
+           <Big x={x0 + 20} y={y + rh * 0.66} text={name} size={fit(name, Math.max(34, rh * 0.52), 400, 0.5)} anchor="start"/>
+@@ -446,7 +446,7 @@
+             <div key={li} style={{display: "flex", flexWrap: "wrap", gap: `0 ${size * 0.26}px`, justifyContent: "center", lineHeight: 1.08, maxWidth: maxW}}>
+               {ln.t.split(" ").map((w, i) => {
+                 const st = s0 + i * 4;
+-                const sp = spring({frame: f - st, fps, config: {damping: 11, stiffness: 170}});
++                const sp = spr({frame: f - st, fps, config: {damping: 11, stiffness: 170}});
+                 const em = (ln.em || []).some((e) => w.replace(/[^A-Z0-9&₹]/gi, "").toUpperCase() === e);
+                 return <span key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: em ? size * 1.12 : size, color: em ? C.red : C.ink,
+                   opacity: f >= st ? 1 : 0, display: "inline-block", transform: `translateY(${(1 - sp) * 50}px) scale(${0.8 + 0.2 * sp})`}}>{w}</span>;
+@@ -468,7 +468,7 @@
+   const sortT = s.sortAt ? T(s.sortAt) : 1e9;
+   const order = rows.map((_, i) => i).sort((a, b) => rows[b].v - rows[a].v);
+   const rank = rows.map((_, i) => order.indexOf(i));
+-  const sp = f < sortT ? 0 : spring({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
++  const sp = f < sortT ? 0 : spr({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
+   const maxV = Math.max(...rows.map((r) => Math.abs(r.v)), 1);
+   const land = L.land;
+   const rh = land ? Math.min(130, 620 / k) : Math.min(300, 1000 / k);
+@@ -479,7 +479,7 @@
+       <Heading text={s.heading}/>
+       {rows.map((r, i) => {
+         if (f < times[i]) return null;
+-        const g = spring({frame: f - times[i], fps, config: {damping: 16, stiffness: 120}});
++        const g = spr({frame: f - times[i], fps, config: {damping: 16, stiffness: 120}});
+         const pos = i + (rank[i] - i) * sp;
+         const y = y0 + pos * rh;
+         const lead = sp > 0.6 && rank[i] === 0;
+@@ -585,6 +585,7 @@
+   return {frames, starts, total: frames.reduce((a, b) => a + b, 0)};
+ };
+ export const VoxLong: React.FC<{D: VData}> = ({D}) => {
++  CALM.on = !!D.calm;
+   const {frames, starts, total} = longLayout(D);
+   return (
+     <AbsoluteFill style={{background: C.tan}}>
+@@ -639,6 +640,7 @@
+   );
+ };
+ export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
++  CALM.on = !!D.calm;
+   const {bs, frames} = shortLayout(D, idx);
+   let from = 0;
+   return (
+--- src/vx/illus/World.tsx.bak_prenvidia	2026-11-10 00:17:48
++++ src/vx/illus/World.tsx	2026-11-10 00:17:48
+@@ -6,7 +6,7 @@
+ import React from "react";
+ import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
+ import {SP, P, IStage, IHeading, INote, IStamps, Pop, Icon, StoreIcon, TrolleyIcon, PersonIcon, TFn, fit, clamp01} from "./kit";
+-import {COND} from "../../voxkit";
++import {COND, spr} from "../../voxkit";
+ 
+ // ---------- shared helpers ----------
+ const WOOD = "#C89B5A", WOOD_LT = "#DDB877";   // the kit's own box colours
+@@ -17,7 +17,7 @@
+ const prog = (f: number, start: number, dur: number, ease: (t: number) => number = Easing.out(Easing.cubic)) =>
+   interpolate(f, [start, start + Math.max(1, dur)], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease});
+ const pop = (f: number, fps: number, start: number, damping = 11, stiffness = 150) =>
+-  f < start ? 0 : spring({frame: f - start, fps, config: {damping, stiffness, mass: 0.8}});
++  f < start ? 0 : spr({frame: f - start, fps, config: {damping, stiffness, mass: 0.8}});
+ // Frame for an `at`. No `at`, or the number 0, means "on from the start": far enough back that every spring has settled.
+ const ON = -1000;
+ const when = (T: TFn, x: any) => (x == null || x === 0 ? ON : T(x));
+--- src/vx/Videos.tsx.bak_prenvidia	2026-11-10 00:06:11
++++ src/vx/Videos.tsx	2026-11-10 00:07:34
+@@ -39,8 +39,13 @@
+ import c01visa from "../../public/vx/c01visa/data.json";
+ import itcq2 from "../../public/vx/itcq2/data.json";
+ import bseq2 from "../../public/vx/bseq2/data.json";
++import nvidiajensen from "../../public/vx/nvidiajensen/data.json";
++import nvidiasa from "../../public/vx/nvidiasa/data.json";
++import nvidiasb from "../../public/vx/nvidiasb/data.json";
++import nvidiasc from "../../public/vx/nvidiasc/data.json";
++import nvidiasd from "../../public/vx/nvidiasd/data.json";
+ 
+-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu, a01moat, d01paint, c01visa, itcq2, bseq2] as unknown as VData[];
++const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu, a01moat, d01paint, c01visa, itcq2, bseq2, nvidiajensen, nvidiasa, nvidiasb, nvidiasc, nvidiasd] as unknown as VData[];
+ const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
+   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
+   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},
+@@ -51,6 +56,7 @@
+   kpigreen: {lines: ["KPI GREEN BUYS WIND", "₹2,410 CR IN CASH"], stamp: "WHO PAYS?", clip: "kpi_ev"},
+   welspun: {lines: ["WELSPUN'S ORDER BOOK", "MOVED TO ARKANSAS"], stamp: "₹25,350 CR → ₹45,000 CR", clip: "wel_protect"},
+   itcq2: {lines: ["REPORTED REVENUE +44%", "PROFIT DOWN 19%"], stamp: "A TAX INSIDE THE NUMBER", clip: "itc_note7"},
++  nvidiajensen: {lines: ["WILL NVIDIA SURVIVE", "WITHOUT JENSEN?"], stamp: "EXPLAINED LIKE YOU ARE 5", clip: "nv_succession"},
+   bseq2: {lines: ["PROFIT +45%", "OPTIONS −24%"], stamp: "IS THE MOAT CRACKING?", clip: "bse_profit"},
+ };
+ 
+--- scripts/build_vx.py.bak_prenvidia	2026-11-10 00:05:31
++++ scripts/build_vx.py	2026-11-10 00:17:35
+@@ -117,6 +117,7 @@
+ }
+ 
+ from vx_mm_clips import CLIPS_EXTRA; CLIPS.update(CLIPS_EXTRA)   # Moat & Margin Nov 2026 modules
++from vx_nvidia import CLIPS_NV; CLIPS.update(CLIPS_NV)   # NVIDIA film (Nov 2026)
+ 
+ def crop(name, pdf, phrase, up, dn, outdir, last=None, col=False):
+     d = fitz.open(pdf)
+@@ -218,7 +219,7 @@
+             else: b["sec"] = round(tts(b["say"], mp3, V.get("voice", "English_Diligent_Man")), 2); print(" voiced", b["key"], b["sec"])
+             b["cues"] = chunks(b["cap"])
+         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
+-        data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
++        data["calm"] = V.get("calm", False); data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
+         json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)
+         tot = sum(b["sec"] for b in V["beats"])
+         print(f"{V['id']}: {len(V['beats'])} beats, {tot/60:.2f} min narration, {len(clips)} clips")
+--- scripts/vx_scripts.py.bak_prenvidia	2026-11-10 00:05:31
++++ scripts/vx_scripts.py	2026-11-10 00:05:31
+@@ -4091,3 +4091,6 @@
+ 
+ # ---- Moat & Margin ITC and BSE videos (Nov 2026): own modules
+ import vx_mm_itc, vx_mm_bse  # noqa: E402,F401
++
++# ---- Moat Atlas NVIDIA / Jensen film and Shorts (Nov 2026): own module
++import vx_nvidia  # noqa: E402,F401

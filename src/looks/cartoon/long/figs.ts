@@ -2,12 +2,15 @@
 // Every figure a viewer sees is printed from here, never typed in a component.
 import figures from "../../../../public/datayt/long/babies/figures.json";
 import nkFigures from "../../../../public/datayt/long/namakkal/figures.json";
+import upscFigures from "../../../../public/datayt/long/upsc/figures.json";
 import type {FigRef} from "./contract";
 
 export type Fig = {value: number; text: string};
 // Each film's tables sit side by side (Namakkal's are prefixed nk_); "meta" is merged key by key.
-const B = figures as unknown as Record<string, any>, N = nkFigures as unknown as Record<string, any>;
-const T: Record<string, any> = {...B, ...N, meta: {...(B.meta ?? {}), ...(N.meta ?? {})}};
+const B = figures as unknown as Record<string, any>, N = nkFigures as unknown as Record<string, any>, U = upscFigures as unknown as Record<string, any>;
+const T: Record<string, any> = {...B, ...N, ...U, meta: {...(B.meta ?? {}), ...(N.meta ?? {}), ...(U.meta ?? {})}};
+// UPSC labels that carry a quantity (coordinates, heights): read with lab("cross"); throws when missing, like fig().
+export const lab = (key: string): string => { const v = T.u7_labels?.[key]; if (typeof v !== "string") throw new Error(`label missing: ${key}`); return v; };
 
 export const fig = (r: FigRef, decimals = 1): Fig => {
   const row = T[r.t]?.[r.state];

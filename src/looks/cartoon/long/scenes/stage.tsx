@@ -9,18 +9,24 @@ import {C} from "../../palette";
 import {Badge, Bubble, Inked, Num, Pill, ROUND, SANS, easeIO, pop, type Accent} from "../../ui";
 import {Actor, WHO, type Pose, type Who} from "../cast";
 import {H, SAFE, W, type FigRef, type SceneProps} from "../contract";
-import {fig} from "../figs";
+import {fig, lab} from "../figs";
 import {Icon, ICONS, type IconName} from "../icons";
-import {SET_NAMES, Set, type SetName} from "../sets";
+import {GlobeIntro, Lightning, Rain, SET_NAMES, Set, type SetName} from "../sets";
 
 export type StageActor = {id: string; who: Who; x: number; y: number; h: number; pose?: Pose; flip?: boolean; enter?: string; seed?: number; look?: number; talk?: boolean};
-export type StageProp = {icon: IconName; x: number; y: number; s: number; enter?: string; front?: boolean; shadow?: boolean};
+export type StageProp = {icon: IconName; x: number; y: number; s: number; enter?: string; front?: boolean; shadow?: boolean;
+  state?: "empty" | "filling" | "full"; level?: "high" | "mid"; glow?: boolean; hl?: boolean};   // bucket | thermometer | book | calendar (UPSC film)
 export type StageBadge = {key: string; ref?: FigRef; const?: number; text?: string; prefix?: string; suffix?: string; caption?: string; x: number; y: number; size?: number;
-  accent?: "underline" | "circle"; color?: string; rot?: number; decimals?: number};
-export type StagePill = {text: string; x: number; y: number; key?: string; dot?: string; size?: number};
-export type StageBubble = {who: string; text: string; x?: number; y?: number; key?: string; size?: number; tail?: "left" | "right"};
+  accent?: "underline" | "circle"; color?: string; rot?: number; decimals?: number; lab?: string};   // lab: words printed from lab(key) (figures.json u7_labels), instead of text
+export type StagePill = {text?: string; lab?: string; x: number; y: number; key?: string; dot?: string; size?: number};
+export type StageBubble = {who?: string;   // omitted: the first actor speaks
+   text?: string; lab?: string; x?: number; y?: number; key?: string; size?: number; tail?: "left" | "right"};
+// UPSC film additions: time (sky/light of rooftop and beach; a veil on the older sets), rain, thunder, intro "globe-band" (30 frames of Earth with a white cloud band, then the set).
 export type StageSpec = {set: SetName; actors?: StageActor[]; props?: StageProp[]; badges?: StageBadge[]; pills?: StagePill[]; bubble?: StageBubble; mouth?: boolean;
+  time?: "may" | "july" | "noon" | "burst"; rain?: boolean; thunder?: boolean; intro?: "globe-band";
   camera?: {fx: number; fy: number; s0: number; s1: number}; notes?: string};
+const INTRO_F = 30;
+const TIMES = ["may", "july", "noon", "burst"];
 
 const F_ROUND = {family: ROUND, weight: 800, tnum: false};
 const F_SANS8 = {family: SANS, weight: 800, tnum: false};
@@ -74,7 +80,14 @@ export const Scene: React.FC<SceneProps<StageSpec>> = ({f, dur, spec, at}) => {
     ids.push(a.id);
   });
   props.forEach((p) => { if (!ICONS.includes(p.icon)) throw new Error(`stage: unknown icon "${p.icon}" (known: ${ICONS.join(", ")})`); });
-  const speaker = bub ? actors.find((a) => a.id === bub.who) : undefined;
+  if (spec.time !== undefined && !TIMES.includes(spec.time)) throw new Error(`stage: unknown time "${spec.time}" (known: ${TIMES.join(", ")})`);
+  if (spec.intro !== undefined && spec.intro !== "globe-band") throw new Error(`stage: unknown intro "${spec.intro}" (known: globe-band)`);
+  // words that come from lab(): throws when the key is missing
+  const words = (o: {text?: string; lab?: string}, what: string): string => {
+    if ((o.text === undefined) === (o.lab === undefined)) throw new Error(`stage: ${what} needs exactly one of text or lab`);
+    return o.lab !== undefined ? lab(o.lab) : (o.text as string);
+  };
+  const speaker = bub ? (bub.who === undefined ? actors[0] : actors.find((a) => a.id === bub.who)) : undefined;
   if (bub && !speaker) throw new Error(`stage: bubble.who "${bub.who}" is not an actor id (ids: ${ids.join(", ") || "none"})`);
 
   // camera: slow push-in about (fx, fy), never below 1 so the set's edge never shows; a hair of drift keeps a still shot alive
@@ -87,8 +100,10 @@ export const Scene: React.FC<SceneProps<StageSpec>> = ({f, dur, spec, at}) => {
   // reveal frames: asking for every key on every frame makes an unknown key throw even on a frame where nothing shows yet
   const enterOf = (k?: string) => (k ? at(k) : 0);
   const bubAt = bub ? (bub.key ? at(bub.key) : Math.max(8, (speaker?.enter ? at(speaker.enter) : 0) + 14)) : 0;
-  const talking = (a: StageActor, i: number) => (a.talk || (spec.mouth && a.who === "uncle") || (bub && a.id === bub.who && f >= bubAt)) ? talkShape(f, a.seed ?? 11 + i * 7) : "X";
+  const talking = (a: StageActor, i: number) => (a.talk || (spec.mouth && a.who === "uncle") || (bub && a.id === speaker?.id && f >= bubAt)) ? talkShape(f, a.seed ?? 11 + i * 7) : "X";
 
+  // a calendar next to a UPSC figure (table u7_*) shows the year with June to September highlighted; `hl` on the prop forces it either way
+  const upsc = badges.some((b) => b.ref?.t.startsWith("u7_"));
   const order = actors.map((a, i) => ({a, i})).sort((p, q) => p.a.y - q.a.y || p.i - q.i);
   const popAbout = (x: number, y: number, p: number) => `translate(${x} ${y}) scale(${p}) translate(${-x} ${-y})`;
   const propNode = (p: StageProp, i: number) => {
@@ -96,20 +111,22 @@ export const Scene: React.FC<SceneProps<StageSpec>> = ({f, dur, spec, at}) => {
     if (f < t0) return null;
     const k = p.enter ? pop(f, t0, 170) : 1;
     if (k <= 0.001) return null;
-    return <g key={`p${i}`} transform={popAbout(p.x, p.y + p.s * 60, k)}><g transform={`translate(0 ${Math.sin((f + i * 17) / 16) * 5})`}><Icon name={p.icon} x={p.x} y={p.y} s={p.s} f={f} shadow={p.shadow} seed={i + 1}/></g></g>;
+    const ex = {state: p.state, level: p.level, glow: p.glow, hl: p.hl ?? (p.icon === "calendar" && upsc), prog: easeIO(f, 8, Math.max(9, dur - 12))};
+    return <g key={`p${i}`} transform={popAbout(p.x, p.y + p.s * 60, k)}><g transform={`translate(0 ${Math.sin((f + i * 17) / 16) * 5})`}><Icon name={p.icon} x={p.x} y={p.y} s={p.s} f={f} shadow={p.shadow} seed={i + 1} ex={ex}/></g></g>;
   };
 
   // overlay items
   const badgeNodes = badges.map((b, i) => {
     const t = at(b.key);
     const dec = b.decimals ?? 1, prefix = b.prefix ?? "", suffix = b.suffix ?? "";
-    const given = [b.ref, b.const !== undefined ? 1 : undefined, b.text].filter((v) => v !== undefined).length;
+    const btext = b.lab !== undefined ? lab(b.lab) : b.text;
+    const given = [b.ref, b.const !== undefined ? 1 : undefined, btext].filter((v) => v !== undefined).length;
     if (given !== 1) throw new Error(`stage: badge "${b.key}" needs exactly one of ref, const or text`);
     const accent: Accent | undefined = b.accent ? {kind: b.accent, color: C.red, seed: i + 2} : undefined, rot = b.rot ?? (i % 2 ? 2.5 : -2.5), color = b.color ?? C.royal;
     let shown: React.ReactNode, w: number, h: number;
-    if (b.text !== undefined) {
-      const size = b.size ?? 84, bx = badgeBox(b.text, size, b.caption, 36);
-      shown = <BadgeCard big={b.text} f={f} at={t} caption={b.caption} size={size} rot={rot} color={color} accent={accent}/>; w = bx.w; h = bx.h;
+    if (btext !== undefined) {
+      const size = b.size ?? 84, bx = badgeBox(btext, size, b.caption, 36);
+      shown = <BadgeCard big={btext} f={f} at={t} caption={b.caption} size={size} rot={rot} color={color} accent={accent}/>; w = bx.w; h = bx.h;
     } else {
       const val = b.ref ? fig(b.ref, dec).value : (b.const as number), txt = prefix + (b.ref ? fig(b.ref, dec).text : val.toFixed(dec)) + suffix, num = mkNum(txt, val, t, prefix, suffix, dec);
       const size = Math.max(b.size ?? 150, b.caption ? 142 : 0), circled = b.accent === "circle" && !!b.caption, bx = badgeBox(txt, size, b.caption, undefined, circled ? 40 : 8);
@@ -122,29 +139,31 @@ export const Scene: React.FC<SceneProps<StageSpec>> = ({f, dur, spec, at}) => {
   });
 
   const pillNodes = pills.map((p, i) => {
-    const t = p.key ? at(p.key) : 4 + i * 4, size = p.size ?? 38;
-    const w = measure(p.text, {...F_SANS9, letterSpacing: 0.5 / size} as any, size) + size * 0.62 + 5 * 2 + 14 + 18 + 28 + 12, h = size * 1.25 + 24 + 12;
+    const ptext = words(p, "pill"), t = p.key ? at(p.key) : (spec.intro ? INTRO_F : 0) + 4 + i * 4, size = p.size ?? 38;
+    const w = measure(ptext, {...F_SANS9, letterSpacing: 0.5 / size} as any, size) + size * 0.62 + 5 * 2 + 14 + 18 + 28 + 12, h = size * 1.25 + 24 + 12;
     const [cx, cy] = placeBox(p.x + w / 2, p.y + h / 2, w, h);
-    return <div key={`l${i}`} style={{position: "absolute", left: cx - w / 2, top: cy - h / 2}}><Pill text={p.text} f={f} at={t} dot={p.dot ?? C.red} size={size}/></div>;
+    return <div key={`l${i}`} style={{position: "absolute", left: cx - w / 2, top: cy - h / 2}}><Pill text={ptext} f={f} at={t} dot={p.dot ?? C.red} size={size}/></div>;
   });
 
   let bubbleNode: React.ReactNode = null;
   if (bub && speaker) {
-    const size = bub.size ?? 60, headX = speaker.x + (speaker.flip ? -1 : 1) * speaker.h * 0.1;
+    const btxt = words(bub, "bubble"), size = bub.size ?? 60, headX = speaker.x + (speaker.flip ? -1 : 1) * speaker.h * 0.1;
     const [tx, ty] = toScreen(bub.x ?? headX, bub.y ?? speaker.y - speaker.h * 1.02);
     const tail = bub.tail ?? (tx < W / 2 ? "left" : "right");
     // ui.tsx Bubble: max 640 px outer (border-box), 38 px padding and 7 px border each side; a wrapped bubble is always the full 640
-    const lines = wrap(bub.text, F_ROUND as any, size, 640 - 90), w = lines.length > 1 ? 640 : measure(lines[0] ?? "", F_ROUND as any, size) + 90, h = Math.ceil(lines.length * size * 1.06) + 66;
+    const lines = wrap(btxt, F_ROUND as any, size, 640 - 90), w = lines.length > 1 ? 640 : measure(lines[0] ?? "", F_ROUND as any, size) + 90, h = Math.ceil(lines.length * size * 1.06) + 66;
     let left = tail === "left" ? tx - 103 : tx + 113 - w, top = ty - 47 - h;
     left = Math.min(SAFE.x1 - w, Math.max(SAFE.x0, left)); top = Math.min(KEY_BOTTOM - 60 - h, Math.max(SAFE.y0, top));
     if (left + w > BUG.x0 && top < BUG.y1) top = BUG.y1 + 6;
-    bubbleNode = <div style={{position: "absolute", left, top, width: "max-content"}}><Bubble text={bub.text} f={f} at={bubAt} size={size} tail={tail}/></div>;
+    bubbleNode = <div style={{position: "absolute", left, top, width: "max-content"}}><Bubble text={btxt} f={f} at={bubAt} size={size} tail={tail}/></div>;
   }
 
+  if (spec.intro === "globe-band" && f < INTRO_F) return <div style={{position: "absolute", left: 0, top: 0, width: W, height: H, overflow: "hidden", background: C.ink}}>
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: "absolute", left: 0, top: 0}}><GlobeIntro f={f}/></svg></div>;
   return <div style={{position: "absolute", left: 0, top: 0, width: W, height: H, overflow: "hidden", background: C.ink}}>
     <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: "absolute", left: 0, top: 0}}>
       <g transform={`translate(${dx} ${dy}) translate(${cam.fx} ${cam.fy}) scale(${sc}) translate(${-cam.fx} ${-cam.fy})`}>
-        <Set set={spec.set} f={f}/>
+        <Set set={spec.set} f={f} time={spec.time}/>
         {props.map((p, i) => !p.front && propNode(p, i))}
         {order.map(({a, i}) => {
           const t0 = enterOf(a.enter);
@@ -157,6 +176,8 @@ export const Scene: React.FC<SceneProps<StageSpec>> = ({f, dur, spec, at}) => {
           </g>;
         })}
         {props.map((p, i) => p.front && propNode(p, i))}
+        {spec.rain && <Rain f={f} heavy={spec.time === "burst"}/>}
+        {spec.thunder && <Lightning f={f}/>}
       </g>
     </svg>
     {pillNodes}{badgeNodes}{bubbleNode}

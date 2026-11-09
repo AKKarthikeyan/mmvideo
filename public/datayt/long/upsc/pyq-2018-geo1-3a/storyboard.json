@@ -1,0 +1,1468 @@
+{
+ "id": "pyq-2018-geo1-3a",
+ "format": "long-16x9",
+ "target_minutes": 4.1,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2018-geo1-3a/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2018 · Geography optional Paper I · Q3(a)",
+    "marks": "20 marks",
+    "text": "Explain the origin, progress and retreat of the Indian monsoon and discuss its impact on the Indian economy.",
+    "glow": [
+     {
+      "text": "origin",
+      "key": "g1"
+     },
+     {
+      "text": "progress",
+      "key": "g2"
+     },
+     {
+      "text": "retreat",
+      "key": "g3"
+     },
+     {
+      "text": "impact on the Indian economy",
+      "key": "g4"
+     }
+    ]
+   },
+   "vo": "UPSC, twenty eighteen. Geography optional, Paper One, twenty marks. Explain the origin, progress and retreat of the Indian monsoon, and discuss its impact on the Indian economy. The easy answer opens with one cause. Our own Class Eleven textbook warns against exactly that.",
+   "reveals": [
+    {
+     "key": "g1",
+     "word": "origin,"
+    },
+    {
+     "key": "g2",
+     "word": "progress"
+    },
+    {
+     "key": "g3",
+     "word": "retreat"
+    },
+    {
+     "key": "g4",
+     "word": "economy."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2018, Geography Paper I, Q3(a)'. The words 'origin', 'progress', 'retreat' and 'impact on the Indian economy' glow faintly (plant).",
+   "beat": "b00",
+   "claims": [
+    "M004"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2018 · Geography optional Paper I · Q3(a)",
+    "marks": "20 marks",
+    "text": "Explain the origin, progress and retreat of the Indian monsoon and discuss its impact on the Indian economy.",
+    "strip": {
+     "years": [
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2026"
+     ],
+     "hits": [
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2022",
+      "2023",
+      "2026"
+     ],
+     "key": "st",
+     "note": "Sittings with a monsoon question · our count from UPSC's papers"
+    }
+   },
+   "vo": "And this idea keeps coming back. In the last eleven sittings, UPSC asked about the monsoon in seven. So let's learn to write this one well. Then its cousins get easier.",
+   "reveals": [
+    {
+     "key": "st",
+     "word": "seven."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A strip of eleven years; seven light up with small monsoon clouds.",
+   "beat": "b01",
+   "claims": [
+    "P001"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "Explain the origin, progress and retreat of the Indian monsoon and discuss its impact on the Indian economy.",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "show how and why",
+      "key": "x1"
+     },
+     {
+      "word": "discuss",
+      "meaning": "weigh more than one effect",
+      "key": "x2"
+     }
+    ],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "Progress",
+      "key": "d2"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat",
+      "key": "d3"
+     },
+     {
+      "id": "D4",
+      "label": "Economy",
+      "key": "d4"
+     }
+    ]
+   },
+   "vo": "First, read what it asks. Explain means show how and why. Discuss means weigh more than one effect. And there are four jobs: origin, progress, retreat, and the economy. Miss one, and the answer has a hole.",
+   "reveals": [
+    {
+     "key": "x1",
+     "word": "Explain"
+    },
+    {
+     "key": "x2",
+     "word": "Discuss"
+    },
+    {
+     "key": "d1",
+     "word": "origin,"
+    },
+    {
+     "key": "d2",
+     "word": "progress,"
+    },
+    {
+     "key": "d3",
+     "word": "retreat,"
+    },
+    {
+     "key": "d4",
+     "word": "economy."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'Explain' and 'discuss' highlighted; the question splits into four empty boxes, D1 origin, D2 progress, D3 retreat, D4 economy (plant: the boxes tick at the end).",
+   "beat": "b02",
+   "claims": []
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "seabreeze-giant",
+      "key": "g1"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "HOT LAND",
+        "at": "india",
+        "key": "l1"
+       },
+       {
+        "text": "COOLER SEA",
+        "at": "arabian",
+        "key": "l2"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Start with the easy origin story. In summer, land heats faster than the sea. A low forms over the hot north-west. Moist sea air flows in, and it rains. That part is true.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "land"
+    },
+    {
+     "key": "l2",
+     "word": "sea."
+    },
+    {
+     "key": "g1",
+     "word": "flows"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Cartoon India in May: heat shimmer over Rajasthan, a low-pressure swirl, arrows from the sea.",
+   "beat": "b03",
+   "claims": [
+    "M003",
+    "M006",
+    "M015"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "NCERT, Class XI",
+      "key": "c11"
+     },
+     "No single theory has fully explained the monsoon",
+     {
+      "text": "India: hotter in May than in July",
+      "key": "hm"
+     }
+    ],
+    "accent": [
+     "No single theory"
+    ]
+   },
+   "vo": "But our Class Eleven book adds a warning. No single theory has fully explained the monsoon. And the record shows why. India is hotter in May than in July, yet the heavy rain waits for July.",
+   "reveals": [
+    {
+     "key": "c11",
+     "word": "Class"
+    },
+    {
+     "key": "hm",
+     "word": "hotter"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The textbook page as a quote card (NCERT Class XI, India: Physical Environment); a May-July thermometer and rain gauge.",
+   "beat": "b04",
+   "claims": [
+    "M004",
+    "M008"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "globe",
+   "spec": {
+    "mode": "seasons",
+    "labels": [
+     {
+      "text": "THE BELTS FOLLOW THE SUN",
+      "key": "fs"
+     }
+    ]
+   },
+   "vo": "So scientists now picture something bigger. Near the equator sits a belt of rising air and rain. It follows the sun north each summer.",
+   "reveals": [
+    {
+     "key": "fs",
+     "word": "sun"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Globe: the white cloud band slides north with the sun and settles over north India in July.",
+   "beat": "b05",
+   "claims": [
+    "M011",
+    "M013",
+    "M095",
+    "M107"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b05",
+   "kind": "windmap",
+   "spec": {
+    "focus": "asia",
+    "layers": [
+     {
+      "id": "itcz-july",
+      "key": "ij",
+      "badge": {
+       "lab": "itcz_july",
+       "key": "ij"
+      }
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "MONSOON TROUGH",
+        "at": "ganges",
+        "key": "mt"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "By July it lies at about twenty to twenty-five degrees north, as the monsoon trough. The monsoon is that rain belt arriving, not a giant sea breeze.",
+   "reveals": [
+    {
+     "key": "ij",
+     "word": "twenty"
+    },
+    {
+     "key": "mt",
+     "word": "trough."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Globe: the white cloud band slides north with the sun and settles over north India in July.",
+   "beat": "b05",
+   "claims": [
+    "M011",
+    "M013",
+    "M095",
+    "M107"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b06",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "equator",
+      "key": "eq"
+     },
+     {
+      "id": "trades-se",
+      "key": "tr"
+     },
+     {
+      "id": "cross",
+      "key": "cx",
+      "badge": {
+       "lab": "cross",
+       "key": "cx"
+      }
+     },
+     {
+      "id": "bend",
+      "key": "bd"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "SE TRADES → SW MONSOON",
+        "at": "arabian",
+        "key": "ex"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Other parts work with it. Winds from the southern Indian Ocean cross the equator and swing to the south-west.",
+   "reveals": [
+    {
+     "key": "eq",
+     "word": "equator"
+    },
+    {
+     "key": "tr",
+     "word": "Winds"
+    },
+    {
+     "key": "cx",
+     "word": "cross"
+    },
+    {
+     "key": "bd",
+     "word": "swing"
+    },
+    {
+     "key": "ex",
+     "word": "south-west."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Atlas map, India whole: Mascarene High, arrows crossing the equator and bending; a dashed jet aloft.",
+   "beat": "b06",
+   "claims": [
+    "M020",
+    "M026",
+    "M018",
+    "M021"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b06",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "mascarene",
+      "key": "mh2"
+     },
+     {
+      "id": "somali",
+      "key": "sj"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "lab": "somali",
+        "at": "somali",
+        "key": "sl"
+       },
+       {
+        "text": "JUNE → JULY",
+        "at": "westcoast",
+        "key": "jj"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "A fast low-level jet carries them past Somalia to our west coast. High above, an easterly jet sets in.",
+   "reveals": [
+    {
+     "key": "mh2",
+     "word": "fast"
+    },
+    {
+     "key": "sj",
+     "word": "jet"
+    },
+    {
+     "key": "sl",
+     "word": "Somalia"
+    },
+    {
+     "key": "jj",
+     "word": "coast."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Atlas map, India whole: Mascarene High, arrows crossing the equator and bending; a dashed jet aloft.",
+   "beat": "b06",
+   "claims": [
+    "M020",
+    "M026",
+    "M018",
+    "M021"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 0,
+    "to": 0,
+    "minutes": [
+     14.0,
+     13.201
+    ],
+    "total": 14,
+    "words0": 0,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Now we write. There is no word limit, so we set our own: about three hundred words in fourteen minutes. Open with one line that defines the monsoon and shows the stakes.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet appears; clock 14:00 and word counter 0. The introduction writes itself in.",
+   "beat": "b07",
+   "claims": [
+    "P002",
+    "P003",
+    "M001",
+    "M085"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 1,
+    "to": 2,
+    "minutes": [
+     13.201,
+     9.244
+    ],
+    "total": 14,
+    "words0": 20,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Origin gets four points, not one. Heating and the heat low. The shifting rain belt. The cross-equatorial winds and the Somali jet. The highlands and the jet above. Then one line on El Niño, which tends to weaken it.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Origin"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Heading '1. Origin: no single cause'; four bullets write in; box D1 fills.",
+   "beat": "b08",
+   "claims": [
+    "M015",
+    "M013",
+    "M011",
+    "M026",
+    "M018",
+    "M111",
+    "M021",
+    "M073"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "b09",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 3,
+    "to": 3,
+    "minutes": [
+     9.244,
+     8.273
+    ],
+    "total": 14,
+    "words0": 119,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D1"
+    ],
+    "start": "w"
+   },
+   "vo": "Now the diagram. Give it about a minute. India, the high below the equator, and arrows bending north-east. Mark the heat low, the trough, and the two branches.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Fig. 1 draws stroke by stroke in pen; labels appear as the narrator names them.",
+   "beat": "b09",
+   "claims": [
+    "M020",
+    "M042",
+    "M015",
+    "M016"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "b10",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 4,
+    "to": 5,
+    "minutes": [
+     8.273,
+     6.115
+    ],
+    "total": 14,
+    "words0": 119,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "Progress is dates and directions. The Andaman Sea about the twenty-second of May. Kerala about the first of June. The whole country by about the eighth of July. That date is IMD's newer normal. Many older notes still say the fifteenth.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Progress"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in; a small date strip; box D2 fills.",
+   "beat": "b10",
+   "claims": [
+    "M031",
+    "M027",
+    "M029",
+    "M042"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "b11",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 6,
+    "to": 7,
+    "minutes": [
+     6.115,
+     4.756
+    ],
+    "total": 14,
+    "words0": 173,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2"
+    ],
+    "done": [
+     "D3"
+    ],
+    "start": "w"
+   },
+   "vo": "Retreat starts in the north-west around the seventeenth of September. Most of India is clear by the fifteenth of October. Then the winds turn, and Tamil Nadu gets its north-east monsoon.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Retreat"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 3 writes in; box D3 fills.",
+   "beat": "b11",
+   "claims": [
+    "M033",
+    "M034",
+    "M060"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "b12",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 8,
+    "to": 9,
+    "minutes": [
+     4.756,
+     1.679
+    ],
+    "total": 14,
+    "words0": 207,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2",
+     "D3"
+    ],
+    "done": [
+     "D4"
+    ],
+    "start": "w"
+   },
+   "vo": "The last job is the one people rush. The economy needs figures, not one line. Nearly half of Indians work in farming. Nearly half of that farming depends on rain. Kharif crops give almost half the year's grain. A good monsoon fills the reservoirs. And a weak one shows up in prices. This October, the Reserve Bank named the deficient monsoon as a pressure on food prices.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "The"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 4 writes in, bullet by bullet; box D4 fills.",
+   "beat": "b12",
+   "claims": [
+    "M085",
+    "M086",
+    "M116",
+    "M117",
+    "M114",
+    "M115"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "b13",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "The Indian monsoon is a seasonal reversal of winds (Arabic mausim, 'season'). June-September brings about 75% of India's annual rain."
+     },
+     {
+      "kind": "head",
+      "text": "1. Origin: no single cause"
+     },
+     {
+      "kind": "points",
+      "text": "• Thermal: summer heating forms a heat low over north-west India and a monsoon trough to the Bay of Bengal. • Shifting rain belt: the ITCZ follows the sun to about 20-25°N in July; the monsoon is this convergence zone's seasonal migration, not a giant sea breeze. • Cross-equatorial flow: south-east trades from the Mascarene High cross the equator at 40-60°E, turn south-west and ride the Somali jet to the west coast. • Upper air: the Himalaya-Tibet highlands act as a barrier and heat source; the Tropical Easterly Jet sets in aloft. • El Niño tends to weaken it."
+     },
+     {
+      "kind": "diagram",
+      "text": "India outline; Mascarene High south of the equator; arrows crossing the equator and bending north-east (Somali jet); Arabian Sea and Bay of Bengal branches; heat low and monsoon trough; dashed upper-air easterly jet; ITCZ line at 20-25°N in July.",
+      "label": "Fig. 1: How the monsoon arrives",
+      "diagram": {
+       "name": "monsoon",
+       "labels": {
+        "equator": "Equator",
+        "high": "Mascarene High (about 30°S)",
+        "jet": "Somali jet",
+        "bay": "Bay of Bengal branch",
+        "arabian": "Arabian Sea branch",
+        "low": "Heat low",
+        "trough": "Monsoon trough",
+        "tej": "TEJ (upper air)"
+       },
+       "items": []
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Progress"
+     },
+     {
+      "kind": "para",
+      "text": "Onset: Andaman Sea about 22 May, Kerala about 1 June, often with a 'burst'. The Arabian Sea branch strikes the Western Ghats; the Bay branch turns up the Ganga and Brahmaputra valleys. All India is covered by about 8 July (IMD's new normal), in active spells and breaks as the trough shifts."
+     },
+     {
+      "kind": "head",
+      "text": "3. Retreat"
+     },
+     {
+      "kind": "para",
+      "text": "Withdrawal starts in north-west India about 17 September and clears most of the country by 15 October. The winds reverse; the north-east monsoon gives Tamil Nadu about 48% of its yearly rain."
+     },
+     {
+      "kind": "head",
+      "text": "4. Impact on the economy"
+     },
+     {
+      "kind": "points",
+      "text": "• Farms: agriculture employs nearly half of Indians; nearly half of farming is rain-fed. • Food: kharif gave 46.7% of foodgrain output in 2025-26. • Drought: an all-India deficit above 10% with 20-40% of the area in drought; 2002, 2009 and 2015 were El Niño years. • Water: the above-normal 2025 monsoon raised reservoir levels (Economic Survey 2025-26). • Prices: RBI (October 2026) names the deficient monsoon as a risk to rural demand and a food-price pressure."
+     },
+     {
+      "kind": "close",
+      "text": "A planetary rain belt, not a sea breeze. With June-September rain down about 6% in 50 years and wet spells more intense, better forecasts (Mission Mausam) and stored water are India's insurance."
+     }
+    ],
+    "from": 10,
+    "to": 10,
+    "minutes": [
+     1.679,
+     0.4
+    ],
+    "total": 14,
+    "words0": 284,
+    "budget": 340,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2",
+     "D3",
+     "D4"
+    ],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "End where the science is going. June to September rain has fallen about six percent in fifty years. Wet spells have grown more intense. So better forecasts and stored water are India's insurance.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "End"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The conclusion writes in; clock near 0:30; word counter near 300.",
+   "beat": "b13",
+   "claims": [
+    "M083",
+    "M088"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "b14",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "The monsoon is caused by unequal heating of land and sea, like a big sea breeze.",
+      "miss": "one cause only; NCERT Class XI itself says no single theory explains it",
+      "key": "w1"
+     },
+     {
+      "text": "It covers the whole of India by 15 July.",
+      "miss": "the old normal; IMD's new normal is 8 July",
+      "key": "w2"
+     },
+     {
+      "text": "It retreats in October and November.",
+      "miss": "vague; no withdrawal dates and no north-east monsoon",
+      "key": "w3"
+     },
+     {
+      "text": "The monsoon is very important for Indian agriculture.",
+      "miss": "the economy demand gets one line and no figures",
+      "key": "w4"
+     },
+     {
+      "text": "(no diagram)",
+      "miss": "a mechanism question with no diagram",
+      "key": "w5"
+     }
+    ],
+    "heads": [
+     "1. Origin: no single cause",
+     "2. Progress",
+     "3. Retreat",
+     "4. Impact on the economy"
+    ],
+    "fig": "Fig. 1: How the monsoon arrives",
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now put it beside the easy answer. One cause. An old date. Vague on the retreat. One line on the economy. No diagram. Both took fourteen minutes. Only one did all four jobs.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "cause."
+    },
+    {
+     "key": "w2",
+     "word": "date."
+    },
+    {
+     "key": "w3",
+     "word": "retreat."
+    },
+    {
+     "key": "w4",
+     "word": "economy."
+    },
+    {
+     "key": "w5",
+     "word": "diagram."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's gaps ringed in red with one-line notes.",
+   "beat": "b14",
+   "claims": [
+    "M004",
+    "M029"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "b15",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Origin"
+     },
+     {
+      "id": "D2",
+      "label": "Progress"
+     },
+     {
+      "id": "D3",
+      "label": "Retreat"
+     },
+     {
+      "id": "D4",
+      "label": "Economy"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2020 Geography Paper I Q3(a): factors in the origin and development of the Indian monsoon",
+      "key": "c1"
+     },
+     {
+      "text": "2022 Geography Paper II Q2(a): the unpredictability of the south-west monsoon",
+      "key": "c2"
+     },
+     {
+      "text": "2019 Geography Paper II Q1(c): why is the Indian monsoon erratic?",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "Monsoon, Part 1: If heat brings the monsoon, why does the rain wait?",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "And here is the payoff. The same frame answers its cousins. Twenty twenty asked for the factors behind the monsoon. Twenty twenty-two asked why it is unpredictable. Twenty nineteen asked why it is erratic. Learn the frame once. To see why the rain belt moves, watch our monsoon episode.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "factors"
+    },
+    {
+     "key": "c2",
+     "word": "unpredictable."
+    },
+    {
+     "key": "c3",
+     "word": "erratic."
+    },
+    {
+     "key": "nx",
+     "word": "watch"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The four boxes tick; three cousin question cards slide in; end card to the GEO-07 episode.",
+   "beat": "b15",
+   "claims": [
+    "P001"
+   ]
+  }
+ ]
+}

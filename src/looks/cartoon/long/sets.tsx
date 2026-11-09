@@ -1,16 +1,18 @@
 // The seven sets of the long-form stage scene: full-frame 1920 x 1080 flat SVG backgrounds in the pilot's look (flat fills from C, 8 px ink outline, no
 // gradients, no photos, no digits anywhere on the art). Every set moves a little by itself (curtains, clouds, a passing auto, a flickering tube light...), driven only
 // by the frame number f, so a still at any frame is clean. Art bleeds 110 px past the frame so the camera drift never shows an edge.
-// API (fixed): <Set set f/> with set one of home, school, street, clinic, village, city, void. FLOOR[set] is the y where the back wall meets the ground: stand
+// API (fixed): <Set set f/> with set one of home, school, street, clinic, village, city, void (+ rooftop, beach, himalaya, UPSC film). FLOOR[set] is the y where the back wall meets the ground: stand
 // actors on y values from FLOOR + 60 down to about 960.
 import React from "react";
 import {random} from "remotion";
 import {C} from "../palette";
 import {H, W} from "./contract";
+import {GlobeIntro, NewSet, TimeCover} from "./sets_upsc";
+export {GlobeIntro, Lightning, Rain} from "./sets_upsc";
 
-export type SetName = "home" | "school" | "street" | "clinic" | "village" | "city" | "void";
-export const SET_NAMES: SetName[] = ["home", "school", "street", "clinic", "village", "city", "void"];
-export const FLOOR: Record<SetName, number> = {home: 720, school: 720, street: 712, clinic: 720, village: 700, city: 712, void: 740};
+export type SetName = "home" | "school" | "street" | "clinic" | "village" | "city" | "void" | "rooftop" | "beach" | "himalaya";
+export const SET_NAMES: SetName[] = ["home", "school", "street", "clinic", "village", "city", "void", "rooftop", "beach", "himalaya"];
+export const FLOOR: Record<SetName, number> = {home: 720, school: 720, street: 712, clinic: 720, village: 700, city: 712, void: 740, rooftop: 716, beach: 680, himalaya: 806};
 
 const B = 110;                  // bleed
 const INK = C.ink;
@@ -461,15 +463,17 @@ const Void: React.FC<{f: number}> = ({f}) => {
   </g>;
 };
 
-export const Set: React.FC<{set: SetName; f: number}> = ({set, f}) => {
+// time (UPSC film): "may" | "july" | "noon" | "burst" changes the sky of rooftop and beach; on the older sets it lays a flat veil (and dark cloud banks for "burst") over the art.
+export const Set: React.FC<{set: SetName; f: number; time?: string}> = ({set, f, time}) => {
   switch (set) {
-    case "home": return <Home f={f}/>;
-    case "school": return <School f={f}/>;
-    case "street": return <Street f={f}/>;
-    case "clinic": return <Clinic f={f}/>;
-    case "village": return <Village f={f}/>;
-    case "city": return <City f={f}/>;
-    case "void": return <Void f={f}/>;
+    case "home": return <><Home f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "school": return <><School f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "street": return <><Street f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "clinic": return <><Clinic f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "village": return <><Village f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "city": return <><City f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "void": return <><Void f={f}/>{time && <TimeCover f={f} time={time}/>}</>;
+    case "rooftop": case "beach": case "himalaya": return <NewSet set={set} f={f} time={time}/>;
     default: throw new Error(`unknown set "${set}" (known: ${SET_NAMES.join(", ")})`);
   }
 };

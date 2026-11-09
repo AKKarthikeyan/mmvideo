@@ -8,10 +8,14 @@
 import React from "react";
 import {C} from "../palette";
 
-export type IconName = "book" | "school" | "hospital" | "house" | "ring" | "rupee" | "calendar" | "pram" | "clock" | "heart" | "tree" | "scale" | "egg" | "hen";
-export const ICONS: IconName[] = ["book", "school", "hospital", "house", "ring", "rupee", "calendar", "pram", "clock", "heart", "tree", "scale", "egg", "hen"];
+export type IconName = "book" | "school" | "hospital" | "house" | "ring" | "rupee" | "calendar" | "pram" | "clock" | "heart" | "tree" | "scale" | "egg" | "hen" | "bucket" | "thermometer";
+export const ICONS: IconName[] = ["book", "school", "hospital", "house", "ring", "rupee", "calendar", "pram", "clock", "heart", "tree", "scale", "egg", "hen", "bucket", "thermometer"];
 
-type P = {f: number; w: number; id: string};
+// Optional per-icon variants (UPSC monsoon film, 2 Nov 2026). Icons that do not use them ignore them, so every older call draws exactly as before.
+//   bucket: state "empty" | "filling" (prog 0..1 = how far it has filled) | "full";  thermometer: level "high" | "mid";
+//   book: glow (a pulsing halo);  calendar: hl (a year view with June to September highlighted).
+export type IconExtra = {state?: "empty" | "filling" | "full"; prog?: number; level?: "high" | "mid"; glow?: boolean; hl?: boolean};
+type P = {f: number; w: number; id: string; ex?: IconExtra};
 
 const TAU = Math.PI * 2;
 const c01 = (v: number) => Math.min(1, Math.max(0, v));
@@ -32,9 +36,15 @@ const PageLines: React.FC<{d: number}> = ({d}) =>
   <g fill="none" stroke={C.royal} strokeWidth={d} strokeLinecap="round" opacity={0.5}>
     {[-14, -3, 8, 19].map((y, i) => <path key={i} d={`M 9 ${y} Q 26 ${y - 7} ${i === 3 ? 32 : 44} ${y - 1}`}/>)}
   </g>;
-const Book: React.FC<P> = ({f, w}) => {
+const Book: React.FC<P> = ({f, w, ex}) => {
   const d = w * 0.55, k = f % 96, a = io((k - 56) / 20) * Math.PI, sx = Math.cos(a), lift = Math.sin(a), bob = Math.sin(f / 15) * 1.6;
+  const pulse = 0.5 + 0.5 * Math.sin(f / 7);
   return <g transform={`translate(0 ${-3 + bob})`}>
+    {ex?.glow && <g>
+      <circle cx={0} cy={6} r={86 + pulse * 8} fill={C.yellow} opacity={0.3}/><circle cx={0} cy={6} r={66 + pulse * 5} fill={C.yellow} opacity={0.42}/>
+      <g transform={`translate(0 6) rotate(${f * 0.8})`}>{Array.from({length: 12}, (_, i) => <line key={i} x1={0} y1={-74 - pulse * 4} x2={0} y2={-(i % 2 ? 90 : 100) - pulse * 6} stroke={C.gold} strokeWidth={w * 0.8} strokeLinecap="round" transform={`rotate(${i * 30})`}/>)}</g>
+      {[[-70, -52, 0], [72, -44, 2], [64, 56, 4]].map(([x, y, ph], i) => <path key={i} d={star(10)} transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * Math.sin(f / 6 + ph)})`} fill={C.white} stroke={C.ink} strokeWidth={w * 0.5} strokeLinejoin="round"/>)}
+    </g>}
     <path d="M -6 40 L -6 58 L 0 52 L 6 58 L 6 40 Z" fill={C.red} {...L(d)}/>
     <path d="M -60 -34 Q -30 -46 0 -30 Q 30 -46 60 -34 L 60 44 Q 30 32 0 50 Q -30 32 -60 44 Z" fill={C.royal} {...L(w)}/>
     <g transform="scale(-1 1)"><path d={PAGE} fill={C.white} {...L(d)}/><PageLines d={d}/></g>
@@ -143,8 +153,27 @@ const Rupee: React.FC<P> = ({f, w, id}) => {
 };
 
 // ---- calendar: the circled day pulses and its ring is redrawn every 4 s ------------------------------------------------------------
-const Calendar: React.FC<P> = ({f, w}) => {
+const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+// Year view (UPSC film): twelve month tiles, JUN to SEP filled royal blue and pulsing, the rest pale. Only drawn when hl is set.
+const YearCalendar: React.FC<P> = ({f, w}) => {
+  const d = w * 0.6, pulse = 0.5 + 0.5 * Math.sin(f / 7);
+  return <g transform="translate(0 3)">
+    <rect x={-58} y={-36} width={116} height={92} rx={14} fill={C.white} {...L(w)}/>
+    <path d="M -58 -10 L -58 -22 Q -58 -36 -44 -36 L 44 -36 Q 58 -36 58 -22 L 58 -10 Z" fill={C.red} {...L(w)}/>
+    {[-34, 34].map((rx) => <g key={rx}><rect x={rx - 6} y={-49} width={12} height={24} rx={6} fill={C.fridgeDark} {...L(d)}/><rect x={rx - 2} y={-45} width={3.5} height={12} rx={1.8} fill={C.white} opacity={0.7}/></g>)}
+    {MONTHS.map((m, i) => {
+      const r = Math.floor(i / 4), c = i % 4, on = i >= 5 && i <= 8, x = -50 + c * 25, y = -4 + r * 20;
+      return <g key={m}>
+        <rect x={x} y={y} width={23} height={17} rx={4} fill={on ? C.royal : "#E3ECF7"} {...L(d * 0.55)}/>
+        {on && <rect x={x - 1.5 - pulse * 1.2} y={y - 1.5 - pulse * 1.2} width={26 + pulse * 2.4} height={20 + pulse * 2.4} rx={5.5} fill="none" stroke={C.yellow} strokeWidth={d * 0.7} opacity={0.6 + 0.4 * pulse}/>}
+        <text x={x + 11.5} y={y + 12.2} textAnchor="middle" fontFamily="'LK Schibsted', Arial, sans-serif" fontWeight={900} fontSize={8.4} fill={on ? C.white : "#5A6680"}>{m}</text>
+      </g>;
+    })}
+  </g>;
+};
+const Calendar: React.FC<P> = ({f, w, ex}) => {
   const d = w * 0.6, p = 1 + 0.09 * Math.sin(f / 6), pulse = 0.5 + 0.5 * Math.sin(f / 6);
+  if (ex?.hl) return <YearCalendar f={f} w={w} id="cal-hl"/>;
   return <g transform="translate(0 3)">
     <rect x={-48} y={-34} width={96} height={86} rx={14} fill={C.white} {...L(w)}/>
     <path d="M -48 -6 L -48 -20 Q -48 -34 -34 -34 L 34 -34 Q 48 -34 48 -20 L 48 -6 Z" fill={C.red} {...L(w)}/>
@@ -302,14 +331,61 @@ const Hen: React.FC<P> = ({f, w}) => {
   </g>;
 };
 
-const DRAW: Record<IconName, React.FC<P>> = {egg: Egg, hen: Hen, book: Book, school: School, hospital: Hospital, house: House, ring: Ring, rupee: Rupee, calendar: Calendar, pram: Pram, clock: Clock, heart: Heart, tree: Tree, scale: Scale};
+// ---- bucket (UPSC film): a red pail; water rises when it is "filling", drips fall in, ripples on the surface ---------------------------------------------
+const Bucket: React.FC<P> = ({f, w, id, ex}) => {
+  const d = w * 0.6, st = ex?.state ?? "empty";
+  const lvl = st === "full" ? 0.9 : st === "filling" ? 0.06 + 0.84 * c01(ex?.prog ?? 0) : 0;
+  const wy = 52 - lvl * 80;                              // water surface y (pail inside runs y -28 .. 52)
+  const wob = Math.sin(f / 5) * 1.6;
+  const body = "M -38 -30 L 38 -30 L 30 52 Q 0 58 -30 52 Z";
+  return <g transform="translate(0 4)">
+    <path d="M -40 -30 Q 0 -90 40 -30" fill="none" stroke={C.ink} strokeWidth={w * 1.15} strokeLinecap="round"/>
+    <path d="M -40 -30 Q 0 -90 40 -30" fill="none" stroke={C.fridgeDark} strokeWidth={d * 0.9} strokeLinecap="round"/>
+    <ellipse cx={0} cy={-30} rx={39} ry={9} fill={C.redDark} {...L(w)}/>
+    <clipPath id={`${id}c`}><path d={body}/></clipPath>
+    <path d={body} fill={C.red} {...L(w)}/>
+    <g clipPath={`url(#${id}c)`}>
+      <path d="M -30 -20 L -22 52 L -30 52 Z" fill={C.white} opacity={0.3}/>
+      <rect x={-40} y={-4} width={80} height={9} fill={C.redDark} opacity={0.55}/>
+      {lvl > 0.001 && <g>
+        <path d={`M -44 ${wy + wob} Q -22 ${wy - 5 - wob} 0 ${wy + wob} T 44 ${wy + wob} L 44 60 L -44 60 Z`} fill={C.blue}/>
+        <path d={`M -44 ${wy + wob} Q -22 ${wy - 5 - wob} 0 ${wy + wob} T 44 ${wy + wob}`} fill="none" stroke={C.white} strokeWidth={d * 0.8} opacity={0.7}/>
+        <path d={`M -22 ${wy + 14} L -22 ${Math.min(50, wy + 38)}`} stroke={C.white} strokeWidth={d * 0.9} strokeLinecap="round" opacity={0.4}/>
+      </g>}
+    </g>
+    <path d={body} fill="none" {...L(w)}/>
+    <ellipse cx={0} cy={-30} rx={39} ry={9} fill="none" {...L(w)}/>
+    {st === "filling" && [0, 1, 2].map((i) => { const k = (f / 11 + i / 3) % 1; return <path key={i} d={`M ${-8 + i * 8} ${-62 + k * 36} q 3 5 0 9 q -3 -4 0 -9 Z`} fill={C.blue} stroke={C.ink} strokeWidth={d * 0.5} opacity={1 - c01((k - 0.8) / 0.2)}/>; })}
+    {st !== "empty" && (() => { const k = (f / 14) % 1; return <ellipse cx={-4 + Math.sin(f / 9) * 8} cy={wy - 1} rx={4 + k * 14} ry={1.4 + k * 3} fill="none" stroke={C.white} strokeWidth={d * 0.6} opacity={(1 - k) * 0.8}/>; })()}
+  </g>;
+};
 
-export const Icon: React.FC<{name: IconName; x: number; y: number; s: number; f: number; shadow?: boolean; seed?: number}> = ({name, x, y, s, f, shadow = false, seed = 0}) => {
+// ---- thermometer (UPSC film): a mounted board with a red column; "high" is nearly full, "mid" about half. The top of the column breathes. ----------------------------
+const Thermometer: React.FC<P> = ({f, w, id, ex}) => {
+  const d = w * 0.6, lv = ex?.level === "mid" ? 0.5 : 0.9, hot = lv > 0.7, breath = Math.sin(f / 9) * 1.8;
+  const top = -52, base = 28, h = (base - top) * lv + breath, colX = hot ? C.red : C.orange;
+  return <g transform="translate(0 2)">
+    {hot && <circle cx={0} cy={0} r={92 + Math.sin(f / 8) * 6} fill={C.orange} opacity={0.2 + 0.08 * Math.sin(f / 8)}/>}
+    <rect x={-27} y={-72} width={54} height={146} rx={20} fill={C.cream} {...L(w)}/>
+    <rect x={-20} y={-66} width={7} height={118} rx={3.5} fill={C.white} opacity={0.6}/>
+    {Array.from({length: 9}, (_, i) => <line key={i} x1={11} x2={i % 2 ? 17 : 22} y1={-52 + i * 10} y2={-52 + i * 10} stroke={C.ink} strokeWidth={d * 0.7} strokeLinecap="round"/>)}
+    <rect x={-8} y={-58} width={16} height={92} rx={8} fill={C.white} {...L(d)}/>
+    <clipPath id={`${id}c`}><rect x={-8} y={-58} width={16} height={92} rx={8}/></clipPath>
+    <g clipPath={`url(#${id}c)`}><rect x={-8} y={base - h} width={16} height={h + 12} fill={colX}/><rect x={-5} y={base - h + 2} width={4} height={h} fill={C.white} opacity={0.5}/></g>
+    <circle cx={0} cy={46} r={15} fill={colX} {...L(w)}/><circle cx={-4.5} cy={41.5} r={4.5} fill={C.white} opacity={0.7}/>
+    <rect x={-4} y={30} width={8} height={18} fill={colX}/>
+    {hot && [0, 1, 2].map((i) => { const k = (f / 30 + i / 3) % 1; return <path key={i} d={`M ${-40 + i * 40} ${-84 - k * 20} q 6 -8 0 -16 q -6 -8 0 -16`} fill="none" stroke={C.orange} strokeWidth={d * 0.9} strokeLinecap="round" opacity={(1 - k) * 0.8}/>; })}
+  </g>;
+};
+
+const DRAW: Record<IconName, React.FC<P>> = {egg: Egg, hen: Hen, bucket: Bucket, thermometer: Thermometer, book: Book, school: School, hospital: Hospital, house: House, ring: Ring, rupee: Rupee, calendar: Calendar, pram: Pram, clock: Clock, heart: Heart, tree: Tree, scale: Scale};
+
+export const Icon: React.FC<{name: IconName; x: number; y: number; s: number; f: number; shadow?: boolean; seed?: number; ex?: IconExtra}> = ({name, x, y, s, f, shadow = false, seed = 0, ex}) => {
   const Draw = DRAW[name];
   if (!Draw) throw new Error(`unknown icon "${name}" (known: ${ICONS.join(", ")})`);
   const w = 8 / Math.sqrt(Math.max(0.15, s));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {shadow && <ellipse cx={0} cy={58} rx={46} ry={7} fill={C.shadow}/>}
-    <Draw f={f + seed * 23} w={w} id={`ic-${name}-${seed}`}/>
+    <Draw f={f + seed * 23} w={w} id={`ic-${name}-${seed}`} ex={ex}/>
   </g>;
 };

@@ -1,0 +1,349 @@
+{
+ "meta": {
+  "u7_source": "research/upsc/GEO-07/claims.csv in the main checkout; u7_claims names the claim id of every value"
+ },
+ "u7_nagpur": {
+  "May": {
+   "tmax": 43.1,
+   "raindays": 3.8
+  },
+  "July": {
+   "tmax": 31.9,
+   "raindays": 20.6
+  }
+ },
+ "u7_rain": {
+  "India": {
+   "sw_share": 74.9
+  }
+ },
+ "u7_labels": {
+  "cross": "40–60° E",
+  "rising": "RISING AIR · up to 14 km",
+  "sinking": "SINKING NEAR 30°",
+  "itcz_july": "20–25° N",
+  "heatlow": "HEAT LOW · about 1.5 km deep",
+  "lat20": "20° N",
+  "mascarene": "30° S · 50° E",
+  "somali": "SOMALI JET · 1–1.5 km up",
+  "tibet": "over 4,500 m",
+  "burst_cool": "mid-June → mid-July: days 5–8 °C cooler (NCERT)",
+  "p2_konkan": "300+ cm a year",
+  "p2_wraj": "~33 cm a year",
+  "p2_tn_half": "almost ½ of its rain: Oct–Dec",
+  "p2_lpa": "~87 cm",
+  "p2_rainfed": "nearly ½ of farming is rain-fed",
+  "p2_andaman": "Andaman & Nicobar · ~22 May",
+  "p2_kerala": "Kerala · ~1 June",
+  "p2_mumbai": "Mumbai · ~11 June",
+  "p2_delhi": "Delhi · ~27 June",
+  "p2_all": "whole country · ~8 July",
+  "p2_old_all": "old normal · 15 July",
+  "p2_oldbase": "old normal · from 1901–1940",
+  "p2_2025": "2025: whole country by 27 June",
+  "p2_t1": "after 10 May",
+  "p2_t2": "60% of 14 listed stations",
+  "p2_t3": "≥ 2.5 mm, 2 days in a row",
+  "p2_t4": "deep westerly winds",
+  "p2_t5": "satellite: deep cloud (OLR below 200 W/m²)",
+  "p2_windward": "windward side: 250–400 cm (NCERT)",
+  "p2_cherra": "Cherrapunji · 1,080+ cm a year (NCERT)",
+  "p2_house": "10 m+ of rain a year ≈ a 3-storey house",
+  "p2_ninex": "Konkan & Goa: 9× West Rajasthan",
+  "p2_breakweek": "⅓ of breaks: a week or more",
+  "p2_nobreak": "~1 year in 4: no July–August break",
+  "p2_dep": "~2 depressions a month",
+  "p2_wd1": "not before 1 September",
+  "p2_wd2": "5 days without rain",
+  "p2_wd3": "much drier air",
+  "p2_wd4": "a change in the winds",
+  "p2_nw": "north-west · from ~17 Sept",
+  "p2_nw_old": "NCERT: W. Rajasthan, 1st week of Sept (old normal)",
+  "p2_oct15": "most of India · by ~15 Oct",
+  "p2_east": "~14 Oct: easterlies set in",
+  "p2_nem": "coastal Tamil Nadu · ~20 Oct",
+  "p2_typical": "typical swing: ~10%",
+  "p2_worst": "worst shortfall on record: < 30%",
+  "p2_band_fc": "forecast: 96–104%",
+  "p2_band_season": "finished season: 90–110%",
+  "p2_band_region": "one district or state: −19% to +19%",
+  "p2_m108": "2025: 108%",
+  "p2_enso": "ENSO events: every 2–7 years",
+  "p2_dry": "dry phase since the 1970s",
+  "p2_six": "~6% fall in 50 years",
+  "e16_m3cap": "MONEY (M3) · 31 JULY 2026 · RBI",
+  "e16_cash": "cash with the public · about 13%",
+  "e16_dd": "demand deposits · about 11%",
+  "e16_td": "time deposits · about 75.5%",
+  "e16_oth": "other deposits with the RBI · under 0.5%",
+  "e16_dep": "deposits · about 87%",
+  "e16_q": "cash + demand deposits (M1) · about a quarter",
+  "e16_pen": "pen · ₹10",
+  "e16_pencil": "pencil · ₹2",
+  "e16_pen5": "1 pen = 5 pencils",
+  "e16_b5": "at 5%: ₹109.29",
+  "e16_b6": "at 6%: ₹107.33",
+  "e16_vk": "v = 1 ÷ k",
+  "e16_fisher": "M × V = P × T",
+  "e16_ck": "k = 1 ÷ V",
+  "e16_paise": "about 15 paise of cash for every ₹1 of deposits",
+  "e16_1935": "RBI set up · 1935",
+  "e16_s22": "RBI Act, section 22",
+  "e16_s26": "RBI Act, section 26",
+  "e16_coin": "Coinage Act, 2011",
+  "e16_f1911": "FISHER · 1911",
+  "e16_p1950": "PIGOU · 1950",
+  "e16_k1936": "KEYNES · 1936",
+  "e16_hi": "high rate: people expect it to fall",
+  "e16_lo": "low rate: people expect it to rise",
+  "e16_x2": "M × 2 → P × 2",
+  "e16_h100": "your deposit · ₹100",
+  "e16_h20": "kept as reserves · ₹20",
+  "e16_h80": "lent · ₹80",
+  "e16_h180": "money to spend · ₹180",
+  "e16_l125": "receipts in use · worth 125 kg"
+ },
+ "u7_claims": {
+  "u7_nagpur": "M104",
+  "u7_rain.sw_share": "M046",
+  "cross": "M026",
+  "rising": "M097",
+  "sinking": "M097",
+  "itcz_july": "M013",
+  "heatlow": "M015",
+  "lat20": "M099",
+  "mascarene": "M020",
+  "somali": "M018",
+  "tibet": "M111",
+  "burst_cool": "M043",
+  "p2_konkan": "M056",
+  "p2_wraj": "M056",
+  "p2_tn_half": "M060",
+  "p2_lpa": "M044",
+  "p2_rainfed": "M086",
+  "p2_andaman": "M031",
+  "p2_kerala": "M027",
+  "p2_mumbai": "M032",
+  "p2_delhi": "M032",
+  "p2_all": "M029",
+  "p2_old_all": "M029",
+  "p2_oldbase": "M030",
+  "p2_2025": "M040",
+  "p2_t1": "M035",
+  "p2_t2": "M035",
+  "p2_t3": "M035",
+  "p2_t4": "M035",
+  "p2_t5": "M035",
+  "p2_windward": "M058",
+  "p2_cherra": "M057",
+  "p2_house": "M057 M113",
+  "p2_ninex": "M056",
+  "p2_breakweek": "M067",
+  "p2_nobreak": "M067",
+  "p2_dep": "M071",
+  "p2_wd1": "M036",
+  "p2_wd2": "M036",
+  "p2_wd3": "M036",
+  "p2_wd4": "M036",
+  "p2_nw": "M033",
+  "p2_nw_old": "M033",
+  "p2_oct15": "M034",
+  "p2_east": "M062",
+  "p2_nem": "M062",
+  "p2_typical": "M081",
+  "p2_worst": "M081",
+  "p2_band_fc": "M048",
+  "p2_band_season": "M050",
+  "p2_band_region": "M051",
+  "p2_m108": "M055",
+  "p2_enso": "M073",
+  "p2_dry": "M082",
+  "p2_six": "M083",
+  "u7_months": "M046",
+  "u7_tn": "M060",
+  "u7_norm": "M048 M050 M051 M055",
+  "u7_lpa": "M044"
+ },
+ "u7_months": {
+  "June": {
+   "share": 19.1
+  },
+  "July": {
+   "share": 32.3
+  },
+  "August": {
+   "share": 29.4
+  },
+  "September": {
+   "share": 19.3
+  }
+ },
+ "u7_tn": {
+  "Tamil Nadu": {
+   "swm": 342.0,
+   "nem": 447.4,
+   "annual": 943.7
+  }
+ },
+ "u7_norm": {
+  "India": {
+   "y2025": 108,
+   "fc_lo": 96,
+   "fc_hi": 104,
+   "s_lo": 90,
+   "s_hi": 110,
+   "r_lo": -19,
+   "r_hi": 19
+  }
+ },
+ "u7_lpa": {
+  "India": {
+   "old": 880.6,
+   "new": 868.6
+  }
+ },
+ "e16_m3": {
+  "India": {
+   "cash": 12.97,
+   "dd": 11.11,
+   "td": 75.55,
+   "oth": 0.38,
+   "m1": 24.07,
+   "dep": 87.03
+  }
+ },
+ "e16_price": {
+  "India": {
+   "pen": 10,
+   "pencil": 2,
+   "ratio": 5
+  }
+ },
+ "e16_bond": {
+  "India": {
+   "r5": 109.29,
+   "r6": 107.33
+  }
+ },
+ "e16_cdr": {
+  "India": {
+   "paise": 14.96
+  }
+ },
+ "e16_p2": {
+  "India": {
+   "dep": 100,
+   "keep": 20,
+   "loan": 80,
+   "total": 180
+  }
+ },
+ "e16_lala": {
+  "India": {
+   "gold": 100,
+   "lent": 25,
+   "receipts": 125
+  }
+ },
+ "e16_rounds": {
+  "India": {
+   "rr": 20,
+   "r0": 100,
+   "r1": 80,
+   "r2": 64,
+   "total": 500,
+   "reserves": 100,
+   "loans": 400,
+   "mult": 5
+  }
+ },
+ "e16_mult": {
+  "India": {
+   "plain": 33.33,
+   "cdr": 0.1496,
+   "full": 6.4,
+   "crr": 3.0
+  }
+ },
+ "e16_crr": {
+  "India": {
+   "c45": 4.5,
+   "c425": 4.25,
+   "c4": 4.0,
+   "c375": 3.75,
+   "c35": 3.5,
+   "c325": 3.25,
+   "c3": 3.0,
+   "slr": 18.0
+  }
+ },
+ "e16_ins": {
+  "India": {
+   "lakh": 5
+  }
+ },
+ "e16_spread": {
+  "India": {
+   "lend": 200,
+   "rl": 5,
+   "rd": 2,
+   "earn": 10,
+   "cost": 4,
+   "gap": 6,
+   "savings": 2.5
+  }
+ },
+ "e16_debt": {
+  "India": {
+   "rf": 66,
+   "ri": 34,
+   "uf": 87,
+   "ui": 13
+  }
+ },
+ "e16_graph": {
+  "India": {
+   "banks": 51,
+   "coop": 10,
+   "otherf": 5,
+   "formal": 66,
+   "mlender": 23,
+   "relatives": 7,
+   "otheri": 3,
+   "landlords": 1,
+   "informal": 34
+  }
+ },
+ "e16_jd": {
+  "India": {
+   "accounts": 59.09,
+   "women": 55.7,
+   "rural": 77.8
+  }
+ },
+ "e16_upi": {
+  "India": {
+   "upi_cr": 2271.6,
+   "avg": 1273,
+   "ratio": 534,
+   "rtgs_cr": 3.19,
+   "rtgs_avg_lakh": 72,
+   "cheque_lakh": 425.55,
+   "upi_lakh": 227160.66
+  }
+ },
+ "e16_shg": {
+  "India": {
+   "savings": 144.22,
+   "credit": 77.41
+  }
+ },
+ "e16_comp": {
+  "India": {
+   "p": 1000,
+   "r": 6,
+   "y": 12,
+   "final": 2012.2
+  }
+ }
+}

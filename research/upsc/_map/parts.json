@@ -1,0 +1,1093 @@
+{
+ "rule": "deepest NCERT book per topic: max(1, ceil(words/4000), ceil(subtopics/12)); researched topics override",
+ "parts": {
+  "POL-01": 3,
+  "POL-17": 1,
+  "POL-29": 1,
+  "POL-03": 2,
+  "POL-04": 1,
+  "POL-05": 1,
+  "POL-21": 2,
+  "POL-10": 1,
+  "POL-08": 1,
+  "POL-13": 1,
+  "POL-12": 1,
+  "POL-28": 1,
+  "POL-09": 2,
+  "POL-11": 1,
+  "POL-15": 1,
+  "POL-16": 1,
+  "POL-06": 2,
+  "POL-18": 1,
+  "POL-19": 3,
+  "POL-37": 1,
+  "POL-20": 2,
+  "POL-02": 2,
+  "HIS-48": 1,
+  "HIS-47": 1,
+  "HIS-49": 1,
+  "POL-22": 3,
+  "ECO-04": 2,
+  "HIS-50": 1,
+  "POL-07": 2,
+  "POL-34": 1,
+  "POL-35": 2,
+  "POL-26": 1,
+  "POL-31": 3,
+  "ECO-27": 2,
+  "POL-14": 1,
+  "ECO-10": 1,
+  "POL-38": 2,
+  "POL-30": 1,
+  "POL-27": 1,
+  "HIS-01": 2,
+  "HIS-02": 1,
+  "HIS-03": 2,
+  "HIS-04": 1,
+  "HIS-06": 2,
+  "GEO-32": 1,
+  "HIS-18": 2,
+  "HIS-05": 1,
+  "HIS-07": 1,
+  "HIS-08": 1,
+  "HIS-09": 1,
+  "HIS-10": 1,
+  "HIS-11": 2,
+  "HIS-15": 1,
+  "HIS-13": 2,
+  "HID-01": 1,
+  "HID-02": 1,
+  "HID-08": 1,
+  "HIS-14": 1,
+  "HIS-19": 1,
+  "HIS-21": 2,
+  "HIS-22": 1,
+  "HIS-23": 1,
+  "HIS-24": 1,
+  "HIS-26": 2,
+  "HIS-27": 1,
+  "HID-03": 1,
+  "HID-06": 1,
+  "HIS-30": 2,
+  "HIS-29": 1,
+  "HIS-32": 2,
+  "ECO-02": 1,
+  "ECO-03": 2,
+  "HIS-33": 1,
+  "HIS-34": 1,
+  "HIS-36": 2,
+  "HIS-37": 3,
+  "HIS-38": 1,
+  "HIS-35": 1,
+  "HIS-39": 1,
+  "HIS-40": 1,
+  "HIS-41": 2,
+  "HIS-42": 1,
+  "HIS-43": 1,
+  "HIS-46": 1,
+  "HIS-44": 1,
+  "HIS-12": 2,
+  "HIS-25": 1,
+  "HID-07": 1,
+  "HIS-16": 3,
+  "HID-04": 1,
+  "HIS-20": 1,
+  "HIS-17": 1,
+  "HIS-28": 1,
+  "HIS-31": 1,
+  "HIS-45": 1,
+  "HID-05": 2,
+  "HIS-59": 2,
+  "HIS-56": 1,
+  "HIS-60": 2,
+  "HIS-58": 2,
+  "HIS-64": 1,
+  "HIS-66": 1,
+  "HIS-67": 1,
+  "HIS-53": 1,
+  "HIS-65": 1,
+  "HIS-63": 1,
+  "GEO-16": 2,
+  "GEO-17": 2,
+  "GEO-18": 2,
+  "GEO-07": 3,
+  "GEO-39": 1,
+  "GEO-15": 1,
+  "GED-05": 1,
+  "GEO-23": 1,
+  "GEO-38": 2,
+  "GEO-03": 1,
+  "GEO-09": 1,
+  "GEO-19": 1,
+  "GED-07": 1,
+  "GEO-01": 1,
+  "GEO-04": 1,
+  "GEO-02": 2,
+  "GEO-05": 5,
+  "GEO-14": 1,
+  "GEO-06": 2,
+  "GED-03": 1,
+  "GEO-10": 2,
+  "GEO-12": 1,
+  "GEO-11": 2,
+  "GED-06": 1,
+  "GEO-30": 2,
+  "GED-09": 1,
+  "GED-08": 2,
+  "GEO-20": 1,
+  "GEO-24": 3,
+  "GEO-29": 2,
+  "GEO-26": 1,
+  "GEO-28": 1,
+  "GEO-27": 2,
+  "GEO-33": 1,
+  "GEO-34": 2,
+  "AGR-01": 2,
+  "AGR-02": 1,
+  "AGR-05": 1,
+  "AGR-06": 1,
+  "GEO-22": 1,
+  "AGR-03": 1,
+  "GEO-41": 2,
+  "GEO-21": 1,
+  "GEO-25": 1,
+  "GEO-40": 2,
+  "GEO-37": 1,
+  "GEO-31": 1,
+  "GED-04": 2,
+  "ECO-24": 1,
+  "GEO-36": 1,
+  "ECO-05": 1,
+  "ECO-01": 4,
+  "ECO-06": 1,
+  "ECO-21": 1,
+  "ECO-22": 3,
+  "ECO-20": 1,
+  "ECO-09": 1,
+  "ECO-17": 2,
+  "AGR-11": 1,
+  "AGR-14": 1,
+  "AGR-19": 1,
+  "ECO-08": 2,
+  "ECO-23": 2,
+  "ECO-15": 2,
+  "ECO-14": 1,
+  "ECO-16": 1,
+  "ECO-11": 2,
+  "ECO-12": 1,
+  "ECO-19": 1,
+  "ECO-18": 1,
+  "ECO-28": 1,
+  "AGR-04": 1,
+  "AGR-07": 1,
+  "ECO-25": 2,
+  "ECO-26": 2
+ },
+ "detail": {
+  "POL-01": {
+   "book": "lehs3",
+   "words": 8119,
+   "subtopics": 11
+  },
+  "POL-17": {
+   "book": "fees1",
+   "words": 507,
+   "subtopics": 1
+  },
+  "POL-29": {
+   "book": "jess4",
+   "words": 2374,
+   "subtopics": 3
+  },
+  "POL-03": {
+   "book": "keps2",
+   "words": 4096,
+   "subtopics": 13
+  },
+  "POL-04": {
+   "book": "keps2",
+   "words": 1449,
+   "subtopics": 3
+  },
+  "POL-05": {
+   "book": "hees2",
+   "words": 1417,
+   "subtopics": 2
+  },
+  "POL-21": {
+   "book": "keps2",
+   "words": 6583,
+   "subtopics": 11
+  },
+  "POL-10": {
+   "book": "keps2",
+   "words": 2370,
+   "subtopics": 7
+  },
+  "POL-08": {
+   "book": "iest1",
+   "words": 1548,
+   "subtopics": 1
+  },
+  "POL-13": {
+   "book": "keps2",
+   "words": 1679,
+   "subtopics": 2
+  },
+  "POL-12": {
+   "book": "keps2",
+   "words": 1506,
+   "subtopics": 1
+  },
+  "POL-28": {
+   "book": "keps2",
+   "words": 949,
+   "subtopics": 1
+  },
+  "POL-09": {
+   "book": "hess3",
+   "words": 4680,
+   "subtopics": 3
+  },
+  "POL-11": {
+   "book": "keps2",
+   "words": 537,
+   "subtopics": 1
+  },
+  "POL-15": {
+   "book": "keps2",
+   "words": 3377,
+   "subtopics": 9
+  },
+  "POL-16": {
+   "book": "hees2",
+   "words": 2721,
+   "subtopics": 8
+  },
+  "POL-06": {
+   "book": "keps2",
+   "words": 7410,
+   "subtopics": 9
+  },
+  "POL-18": {
+   "book": "jess4",
+   "words": 3178,
+   "subtopics": 3
+  },
+  "POL-19": {
+   "book": "leps2",
+   "words": 8366,
+   "subtopics": 19
+  },
+  "POL-37": {
+   "book": "keps2",
+   "words": 322,
+   "subtopics": 1
+  },
+  "POL-20": {
+   "book": "keps2",
+   "words": 4322,
+   "subtopics": 9
+  },
+  "POL-02": {
+   "book": "keps1",
+   "words": 5504,
+   "subtopics": 5
+  },
+  "HIS-48": {
+   "book": "leps2",
+   "words": 2747,
+   "subtopics": 7
+  },
+  "HIS-47": {
+   "book": "leps2",
+   "words": 2093,
+   "subtopics": 4
+  },
+  "HIS-49": {
+   "book": "leps2",
+   "words": 1514,
+   "subtopics": 1
+  },
+  "POL-22": {
+   "book": "leps2",
+   "words": 11730,
+   "subtopics": 28
+  },
+  "ECO-04": {
+   "book": "keec1",
+   "words": 5064,
+   "subtopics": 10
+  },
+  "HIS-50": {
+   "book": "leps2",
+   "words": 3230,
+   "subtopics": 7
+  },
+  "POL-07": {
+   "book": "leps2",
+   "words": 4505,
+   "subtopics": 10
+  },
+  "POL-34": {
+   "book": "jess4",
+   "words": 3663,
+   "subtopics": 7
+  },
+  "POL-35": {
+   "book": "gess3",
+   "words": 5050,
+   "subtopics": 13
+  },
+  "POL-26": {
+   "book": "iest2",
+   "words": 2105,
+   "subtopics": 2
+  },
+  "POL-31": {
+   "book": "hess3",
+   "words": 11889,
+   "subtopics": 16
+  },
+  "ECO-27": {
+   "book": "hess3",
+   "words": 4426,
+   "subtopics": 8
+  },
+  "POL-14": {
+   "book": "gess3",
+   "words": 3217,
+   "subtopics": 4
+  },
+  "ECO-10": {
+   "book": "hees1",
+   "words": 58,
+   "subtopics": 1
+  },
+  "POL-38": {
+   "book": "keps1",
+   "words": 5512,
+   "subtopics": 6
+  },
+  "POL-30": {
+   "book": "iest2",
+   "words": 3687,
+   "subtopics": 8
+  },
+  "POL-27": {
+   "book": "iest2",
+   "words": 360,
+   "subtopics": 1
+  },
+  "HIS-01": {
+   "book": "lehs1",
+   "words": 4907,
+   "subtopics": 16
+  },
+  "HIS-02": {
+   "book": "iest1",
+   "words": 2652,
+   "subtopics": 7
+  },
+  "HIS-03": {
+   "book": "lehs1",
+   "words": 7048,
+   "subtopics": 22
+  },
+  "HIS-04": {
+   "book": "lehs1",
+   "words": 2853,
+   "subtopics": 10
+  },
+  "HIS-06": {
+   "book": "lehs1",
+   "words": 4056,
+   "subtopics": 10
+  },
+  "GEO-32": {
+   "book": "fees1",
+   "words": 2232,
+   "subtopics": 7
+  },
+  "HIS-18": {
+   "book": "kefa1",
+   "words": 6711,
+   "subtopics": 10
+  },
+  "HIS-05": {
+   "book": "gees1",
+   "words": 3500,
+   "subtopics": 6
+  },
+  "HIS-07": {
+   "book": "gees1",
+   "words": 2749,
+   "subtopics": 9
+  },
+  "HIS-08": {
+   "book": "gees1",
+   "words": 2684,
+   "subtopics": 6
+  },
+  "HIS-09": {
+   "book": "kefa1",
+   "words": 2568,
+   "subtopics": 6
+  },
+  "HIS-10": {
+   "book": "gees1",
+   "words": 1368,
+   "subtopics": 6
+  },
+  "HIS-11": {
+   "book": "lehs1",
+   "words": 4679,
+   "subtopics": 12
+  },
+  "HIS-15": {
+   "book": "gees2",
+   "words": 958,
+   "subtopics": 2
+  },
+  "HIS-13": {
+   "book": "gees2",
+   "words": 5416,
+   "subtopics": 17
+  },
+  "HID-01": {
+   "book": "gees2",
+   "words": 2959,
+   "subtopics": 4
+  },
+  "HID-02": {
+   "book": "gess1",
+   "words": 1096,
+   "subtopics": 3
+  },
+  "HID-08": {
+   "book": "lehs2",
+   "words": 1244,
+   "subtopics": 5
+  },
+  "HIS-14": {
+   "book": "kefa1",
+   "words": 2009,
+   "subtopics": 1
+  },
+  "HIS-19": {
+   "book": "hees1",
+   "words": 2486,
+   "subtopics": 5
+  },
+  "HIS-21": {
+   "book": "lehs2",
+   "words": 6005,
+   "subtopics": 16
+  },
+  "HIS-22": {
+   "book": "gess1",
+   "words": 521,
+   "subtopics": 5
+  },
+  "HIS-23": {
+   "book": "lehs2",
+   "words": 2401,
+   "subtopics": 2
+  },
+  "HIS-24": {
+   "book": "lehs2",
+   "words": 3899,
+   "subtopics": 7
+  },
+  "HIS-26": {
+   "book": "hees1",
+   "words": 4951,
+   "subtopics": 14
+  },
+  "HIS-27": {
+   "book": "gess1",
+   "words": 610,
+   "subtopics": 1
+  },
+  "HID-03": {
+   "book": "hees2",
+   "words": 3217,
+   "subtopics": 8
+  },
+  "HID-06": {
+   "book": "hees1",
+   "words": 81,
+   "subtopics": 1
+  },
+  "HIS-30": {
+   "book": "hess2",
+   "words": 5609,
+   "subtopics": 1
+  },
+  "HIS-29": {
+   "book": "hees1",
+   "words": 1659,
+   "subtopics": 5
+  },
+  "HIS-32": {
+   "book": "lehs3",
+   "words": 5110,
+   "subtopics": 12
+  },
+  "ECO-02": {
+   "book": "hees1",
+   "words": 514,
+   "subtopics": 1
+  },
+  "ECO-03": {
+   "book": "jess3",
+   "words": 6003,
+   "subtopics": 14
+  },
+  "HIS-33": {
+   "book": "hess2",
+   "words": 1055,
+   "subtopics": 3
+  },
+  "HIS-34": {
+   "book": "hess2",
+   "words": 3871,
+   "subtopics": 11
+  },
+  "HIS-36": {
+   "book": "lehs3",
+   "words": 5282,
+   "subtopics": 8
+  },
+  "HIS-37": {
+   "book": "lehs3",
+   "words": 9772,
+   "subtopics": 23
+  },
+  "HIS-38": {
+   "book": "hees2",
+   "words": 2736,
+   "subtopics": 5
+  },
+  "HIS-35": {
+   "book": "hess2",
+   "words": 2347,
+   "subtopics": 5
+  },
+  "HIS-39": {
+   "book": "jess3",
+   "words": 1387,
+   "subtopics": 2
+  },
+  "HIS-40": {
+   "book": "hees2",
+   "words": 2255,
+   "subtopics": 3
+  },
+  "HIS-41": {
+   "book": "lehs3",
+   "words": 4103,
+   "subtopics": 7
+  },
+  "HIS-42": {
+   "book": "lehs3",
+   "words": 2678,
+   "subtopics": 3
+  },
+  "HIS-43": {
+   "book": "lehs3",
+   "words": 3019,
+   "subtopics": 3
+  },
+  "HIS-46": {
+   "book": "hees2",
+   "words": 352,
+   "subtopics": 1
+  },
+  "HIS-44": {
+   "book": "lehs3",
+   "words": 568,
+   "subtopics": 1
+  },
+  "HIS-12": {
+   "book": "kefa1",
+   "words": 6236,
+   "subtopics": 8
+  },
+  "HIS-25": {
+   "book": "hees2",
+   "words": 1930,
+   "subtopics": 3
+  },
+  "HID-07": {
+   "book": "jess3",
+   "words": 296,
+   "subtopics": 1
+  },
+  "HIS-16": {
+   "book": "lehs2",
+   "words": 8179,
+   "subtopics": 21
+  },
+  "HID-04": {
+   "book": "gess1",
+   "words": 1224,
+   "subtopics": 4
+  },
+  "HIS-20": {
+   "book": "lehs2",
+   "words": 2306,
+   "subtopics": 6
+  },
+  "HIS-17": {
+   "book": "gess1",
+   "words": 171,
+   "subtopics": 1
+  },
+  "HIS-28": {
+   "book": "gess1",
+   "words": 2721,
+   "subtopics": 4
+  },
+  "HIS-31": {
+   "book": "hess2",
+   "words": 1313,
+   "subtopics": 4
+  },
+  "HIS-45": {
+   "book": "jess3",
+   "words": 2282,
+   "subtopics": 3
+  },
+  "HID-05": {
+   "book": "lehs2",
+   "words": 5984,
+   "subtopics": 15
+  },
+  "HIS-59": {
+   "book": "jess3",
+   "words": 7373,
+   "subtopics": 15
+  },
+  "HIS-56": {
+   "book": "jess3",
+   "words": 962,
+   "subtopics": 1
+  },
+  "HIS-60": {
+   "book": "kehs1",
+   "words": 7046,
+   "subtopics": 12
+  },
+  "HIS-58": {
+   "book": "jess3",
+   "words": 5551,
+   "subtopics": 13
+  },
+  "HIS-64": {
+   "book": "jess3",
+   "words": 1972,
+   "subtopics": 5
+  },
+  "HIS-66": {
+   "book": "jess3",
+   "words": 774,
+   "subtopics": 3
+  },
+  "HIS-67": {
+   "book": "kehs1",
+   "words": 2582,
+   "subtopics": 7
+  },
+  "HIS-53": {
+   "book": "jess3",
+   "words": 1281,
+   "subtopics": 3
+  },
+  "HIS-65": {
+   "book": "kehs1",
+   "words": 263,
+   "subtopics": 1
+  },
+  "HIS-63": {
+   "book": "kehs1",
+   "words": 2916,
+   "subtopics": 6
+  },
+  "GEO-16": {
+   "book": "gees2",
+   "words": 5903,
+   "subtopics": 14
+  },
+  "GEO-17": {
+   "book": "gees1",
+   "words": 4680,
+   "subtopics": 13
+  },
+  "GEO-18": {
+   "book": "kegy1",
+   "words": 4736,
+   "subtopics": 12
+  },
+  "GEO-07": {
+   "book": "gees1",
+   "words": 8321,
+   "subtopics": 13
+  },
+  "GEO-39": {
+   "book": "kegy2",
+   "words": 1174,
+   "subtopics": 1
+  },
+  "GEO-15": {
+   "book": "kegy1",
+   "words": 1782,
+   "subtopics": 8
+  },
+  "GED-05": {
+   "book": "kegy1",
+   "words": 535,
+   "subtopics": 2
+  },
+  "GEO-23": {
+   "book": "jess1",
+   "words": 2018,
+   "subtopics": 3
+  },
+  "GEO-38": {
+   "book": "kegy1",
+   "words": 4107,
+   "subtopics": 7
+  },
+  "GEO-03": {
+   "book": "kegy2",
+   "words": 1685,
+   "subtopics": 2
+  },
+  "GEO-09": {
+   "book": "iest2",
+   "words": 672,
+   "subtopics": 2
+  },
+  "GEO-19": {
+   "book": "kegy1",
+   "words": 1674,
+   "subtopics": 2
+  },
+  "GED-07": {
+   "book": "kegy2",
+   "words": 3806,
+   "subtopics": 5
+  },
+  "GEO-01": {
+   "book": "kegy2",
+   "words": 3070,
+   "subtopics": 12
+  },
+  "GEO-04": {
+   "book": "kegy2",
+   "words": 1331,
+   "subtopics": 5
+  },
+  "GEO-02": {
+   "book": "kegy2",
+   "words": 4176,
+   "subtopics": 12
+  },
+  "GEO-05": {
+   "book": "kegy2",
+   "words": 10115,
+   "subtopics": 50
+  },
+  "GEO-14": {
+   "book": "jess1",
+   "words": 2123,
+   "subtopics": 7
+  },
+  "GEO-06": {
+   "book": "kegy2",
+   "words": 5304,
+   "subtopics": 12
+  },
+  "GED-03": {
+   "book": "kegy2",
+   "words": 3259,
+   "subtopics": 6
+  },
+  "GEO-10": {
+   "book": "gess2",
+   "words": 4491,
+   "subtopics": 14
+  },
+  "GEO-12": {
+   "book": "fees1",
+   "words": 1446,
+   "subtopics": 4
+  },
+  "GEO-11": {
+   "book": "kegy2",
+   "words": 4546,
+   "subtopics": 13
+  },
+  "GED-06": {
+   "book": "iest2",
+   "words": 3147,
+   "subtopics": 2
+  },
+  "GEO-30": {
+   "book": "hees2",
+   "words": 4397,
+   "subtopics": 4
+  },
+  "GED-09": {
+   "book": "legy1",
+   "words": 454,
+   "subtopics": 1
+  },
+  "GED-08": {
+   "book": "legy1",
+   "words": 2472,
+   "subtopics": 13
+  },
+  "GEO-20": {
+   "book": "hees1",
+   "words": 3722,
+   "subtopics": 6
+  },
+  "GEO-24": {
+   "book": "legy1",
+   "words": 5547,
+   "subtopics": 26
+  },
+  "GEO-29": {
+   "book": "legy3",
+   "words": 5275,
+   "subtopics": 11
+  },
+  "GEO-26": {
+   "book": "legy1",
+   "words": 24,
+   "subtopics": 1
+  },
+  "GEO-28": {
+   "book": "jess1",
+   "words": 3845,
+   "subtopics": 7
+  },
+  "GEO-27": {
+   "book": "legy1",
+   "words": 4532,
+   "subtopics": 11
+  },
+  "GEO-33": {
+   "book": "legy2",
+   "words": 876,
+   "subtopics": 4
+  },
+  "GEO-34": {
+   "book": "hees2",
+   "words": 4757,
+   "subtopics": 9
+  },
+  "AGR-01": {
+   "book": "gees2",
+   "words": 5745,
+   "subtopics": 13
+  },
+  "AGR-02": {
+   "book": "jess1",
+   "words": 563,
+   "subtopics": 4
+  },
+  "AGR-05": {
+   "book": "legy2",
+   "words": 614,
+   "subtopics": 1
+  },
+  "AGR-06": {
+   "book": "legy2",
+   "words": 354,
+   "subtopics": 1
+  },
+  "GEO-22": {
+   "book": "jess1",
+   "words": 2098,
+   "subtopics": 3
+  },
+  "AGR-03": {
+   "book": "gees2",
+   "words": 610,
+   "subtopics": 1
+  },
+  "GEO-41": {
+   "book": "legy2",
+   "words": 4430,
+   "subtopics": 11
+  },
+  "GEO-21": {
+   "book": "jess1",
+   "words": 2247,
+   "subtopics": 6
+  },
+  "GEO-25": {
+   "book": "jess1",
+   "words": 2524,
+   "subtopics": 8
+  },
+  "GEO-40": {
+   "book": "hees2",
+   "words": 5798,
+   "subtopics": 16
+  },
+  "GEO-37": {
+   "book": "gees2",
+   "words": 951,
+   "subtopics": 1
+  },
+  "GEO-31": {
+   "book": "hees2",
+   "words": 450,
+   "subtopics": 1
+  },
+  "GED-04": {
+   "book": "iest2",
+   "words": 1689,
+   "subtopics": 15
+  },
+  "ECO-24": {
+   "book": "legy1",
+   "words": 2026,
+   "subtopics": 4
+  },
+  "GEO-36": {
+   "book": "jess1",
+   "words": 1264,
+   "subtopics": 1
+  },
+  "ECO-05": {
+   "book": "legy1",
+   "words": 2750,
+   "subtopics": 1
+  },
+  "ECO-01": {
+   "book": "leec1",
+   "words": 13982,
+   "subtopics": 11
+  },
+  "ECO-06": {
+   "book": "keec1",
+   "words": 3414,
+   "subtopics": 6
+  },
+  "ECO-21": {
+   "book": "keec1",
+   "words": 476,
+   "subtopics": 1
+  },
+  "ECO-22": {
+   "book": "jess3",
+   "words": 9424,
+   "subtopics": 1
+  },
+  "ECO-20": {
+   "book": "jess2",
+   "words": 1160,
+   "subtopics": 3
+  },
+  "ECO-09": {
+   "book": "keec1",
+   "words": 1318,
+   "subtopics": 4
+  },
+  "ECO-17": {
+   "book": "jess2",
+   "words": 4777,
+   "subtopics": 6
+  },
+  "AGR-11": {
+   "book": "keec1",
+   "words": 945,
+   "subtopics": 1
+  },
+  "AGR-14": {
+   "book": "keec1",
+   "words": 1334,
+   "subtopics": 2
+  },
+  "AGR-19": {
+   "book": "gees2",
+   "words": 1021,
+   "subtopics": 4
+  },
+  "ECO-08": {
+   "book": "keec1",
+   "words": 5544,
+   "subtopics": 11
+  },
+  "ECO-23": {
+   "book": "legy2",
+   "words": 4720,
+   "subtopics": 1
+  },
+  "ECO-15": {
+   "book": "leec1",
+   "words": 4016,
+   "subtopics": 1
+  },
+  "ECO-14": {
+   "book": "gees1",
+   "words": 3136,
+   "subtopics": 7
+  },
+  "ECO-16": {
+   "book": "leec1",
+   "words": 2280,
+   "subtopics": 7
+  },
+  "ECO-11": {
+   "book": "leec1",
+   "words": 4645,
+   "subtopics": 4
+  },
+  "ECO-12": {
+   "book": "iest2",
+   "words": 692,
+   "subtopics": 2
+  },
+  "ECO-19": {
+   "book": "leec1",
+   "words": 1511,
+   "subtopics": 4
+  },
+  "ECO-18": {
+   "book": "leec1",
+   "words": 2182,
+   "subtopics": 5
+  },
+  "ECO-28": {
+   "book": "jess2",
+   "words": 319,
+   "subtopics": 1
+  },
+  "AGR-04": {
+   "book": "gees2",
+   "words": 1165,
+   "subtopics": 5
+  },
+  "AGR-07": {
+   "book": "gees2",
+   "words": 740,
+   "subtopics": 2
+  },
+  "ECO-25": {
+   "book": "jess1",
+   "words": 4075,
+   "subtopics": 1
+  },
+  "ECO-26": {
+   "book": "jess1",
+   "words": 4962,
+   "subtopics": 1
+  }
+ }
+}

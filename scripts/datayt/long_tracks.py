@@ -17,11 +17,11 @@ The mix is loudness-normalised to -16 LUFS. Files stay _DRAFT until a native spe
 import base64, json, os, subprocess, sys, time, wave
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-BASE = os.path.join(ROOT, "public/datayt/long/namakkal")
+BASE = os.path.join(ROOT, os.environ.get("LONG_BASE", "public/datayt/long/namakkal"))   # UPSC: LONG_BASE=public/datayt/long/upsc
 FF = "/tmp/ffbin/ffmpeg"
 SR = 24000
 LEAD, GAP = 0.10, 0.20
-CAP = {"hi": 1.20, "ta": 1.10, "te": 1.10}       # AUDIO_TRACKS.md allows Hindi up to 1.25x
+CAP = {"hi": 1.20, "ta": 1.15, "te": 1.15, "kn": 1.15}   # kn: voice not chosen by AK; Maya Siddhant is a sample       # AUDIO_TRACKS.md allows Hindi up to 1.25x
 GEMINI = "gemini-3.8-flash-tts"
 
 
@@ -93,8 +93,8 @@ def voice(film, lang):
         if os.path.exists(wav) and os.path.exists(side) and json.load(open(side, encoding="utf-8")).get("text") == text:
             continue
         t0 = time.time()
-        gemini(text, wav) if lang == "hi" else maya(text, lang, wav)
-        json.dump({"text": text, "engine": "gemini-charon" if lang == "hi" else "maya-siddhant", "sec": round(dur(wav), 3)},
+        gemini(text, wav) if (lang == "hi" and os.environ.get("HI_ENGINE") == "gemini") else maya(text, lang, wav)   # AK 4 Nov 2026: Hindi on Maya (Gemini credits out); HI_ENGINE=gemini to go back
+        json.dump({"text": text, "engine": "gemini-charon" if (lang == "hi" and os.environ.get("HI_ENGINE") == "gemini") else "maya-siddhant", "sec": round(dur(wav), 3)},
                   open(side, "w", encoding="utf-8"), ensure_ascii=False)
         print(film, lang, sid, f"{dur(wav):.2f}s", f"({time.time() - t0:.1f}s)", flush=True)
 

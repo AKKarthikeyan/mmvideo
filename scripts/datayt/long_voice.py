@@ -7,6 +7,9 @@
 
 Files (public/datayt/long/babies/): vo/<id>.mp3 (+ .json sidecar from voice_dk.say), vo/manifest.json, word_times.json (the --words file of
 long_timeline.py: {"scenes": {id: {"words": [{w, start, end}], "sec"}}}), vo/narration.wav (mixed master, placed at each scene's `from`).
+MAYA (AK, 4 Nov 2026: English without MiniMax, voice Maya-2-Native Siddhant, local, any hour):
+  /Volumes/DarwinSSD/DataKadai/research/2026-10-28-voices/work/mayavenv/bin/python scripts/datayt/long_voice.py voice-maya [--only s001,s002]
+  writes vo/<id>.wav (24 kHz mono) + the same manifest.json; a line whose text is unchanged is reused. Do not run Remotion at the same time.
 Voice lines are cached by voice_dk.say (engine, voice, speed and text), so a re-run only voices what changed. Never falls back to Kokoro.
 MINIMAX_KEY_VAR=MINIMAX_GO_API_KEY uses the second plan (AK, 25 Oct 2026: when the first hits its limit).
 """
@@ -53,6 +56,31 @@ def voice(only):
         if not s["vo"].strip(): continue                 # silent scenes (chapter cards)
         f, sec = V.say(spoken(s["vo"]), os.path.join(VO, s["id"]))
         man[s["id"]] = {"file": f, "sec": sec, "text": s["vo"], "voice": V.VOICE, "engine": V.ENGINE}
+        json.dump(man, open(man_p, "w"), indent=1)
+        print(s["id"], f"{sec:.2f}s", flush=True)
+    print("voiced", len(man), "scenes, total", round(sum(m["sec"] for m in man.values()), 1), "s")
+
+
+def voice_maya(only):
+    import wave, numpy as np
+    from mlx_audio.tts.utils import load
+    os.makedirs(VO, exist_ok=True)
+    man_p = os.path.join(VO, "manifest.json")
+    man = json.load(open(man_p)) if os.path.exists(man_p) else {}
+    model = None
+    for s in scenes():
+        if only and s["id"] not in only: continue
+        if not s["vo"].strip(): continue
+        out = os.path.join(VO, s["id"] + ".wav"); text = spoken(s["vo"])
+        old = man.get(s["id"])
+        if old and old.get("engine") == "maya-siddhant" and old.get("text") == s["vo"] and os.path.exists(out):
+            print(s["id"], f"{old['sec']:.2f}s (cached)", flush=True); continue
+        if model is None: model = load("aruntemme/maya2-native-mlx-8bit")
+        a = np.concatenate([np.asarray(r.audio, np.float32).reshape(-1) for r in model.generate(text, voice="Siddhant", lang_code="en")])
+        w = wave.open(out, "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000)
+        w.writeframes((np.clip(a, -1, 1) * 32767).astype(np.int16).tobytes()); w.close()
+        sec = len(a) / 24000
+        man[s["id"]] = {"file": s["id"] + ".wav", "sec": sec, "text": s["vo"], "voice": "Siddhant", "engine": "maya-siddhant"}
         json.dump(man, open(man_p, "w"), indent=1)
         print(s["id"], f"{sec:.2f}s", flush=True)
     print("voiced", len(man), "scenes, total", round(sum(m["sec"] for m in man.values()), 1), "s")
@@ -161,4 +189,4 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     only = set(a[a.index("--only") + 1].split(",")) if "--only" in a else None
     if a[0] == "srt": srt(a[1] if len(a) > 1 else os.path.join(ROOT, "out/long/babies/babies_english.srt"))
-    else: {"voice": voice, "words": words, "mix": lambda o: mix()}[a[0]](only)
+    else: {"voice": voice, "voice-maya": voice_maya, "words": words, "mix": lambda o: mix()}[a[0]](only)

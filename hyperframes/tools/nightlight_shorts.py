@@ -1,41 +1,47 @@
-"""Then vs Now Shorts (9:16): night lights 2012 vs 2016 for one state, from NASA Black Marble via GIBS.
+"""Then vs Now Shorts (9:16): night lights 2012 vs 2025 for one state, from NASA Black Marble annual composites.
 
 usage: nightlight_shorts.py all | <State name> [<State name> ...]      e.g.  nightlight_shorts.py Maharashtra Karnataka Gujarat
-Writes hyperframes/videos/nl-<slug>/{index.html, story.js, assets/img/y2012.jpg, y2016.jpg}. Then:
-  python3 hyperframes/tools/hf.py sync videos      (fonts, libs)
-  python3 hyperframes/tools/hf.py render nl-maharashtra     -> out/hyperframes/nl-maharashtra.mp4
+Needs the tiles from vnp46a4_fetch.py 2012 2025 (NASA Earthdata token). Then for each state writes
+hyperframes/videos/nl-<slug>/{index.html, story.js, assets/img/y2012.jpg, y2025.jpg}, and:
+  python3 hyperframes/tools/hf.py sync nl-maharashtra ...
+  python3 hyperframes/tools/hf.py render nl-maharashtra ...     -> out/hyperframes/nl-maharashtra.mp4
 
-Imagery: NASA GIBS layer VIIRS_Black_Marble, time=2012-01-01 and time=2016-01-01 (the only two years the layer serves),
-web-mercator zoom 8 (about 0.55 km a pixel), public, no login. The two years are separate composites: the Short
-compares patterns and says so on screen; do not turn the pictures into a brightness percentage.
+Data: NASA Black Marble VNP46A4 (collection 2, Suomi NPP, annual), layer AllAngle_Composite_Snow_Free, nW/(cm^2 sr),
+15 arcsecond grid: same product and same colour scale for both years. The Short shows the pictures only: NO total-light
+percentage. Checked on tile h25v07 (10-20N, 70-80E): Suomi NPP total radiance is flat 2012-2018 (about 2.8 M), then steps up
+2021-2023 (3.5 -> 5.6 M) and reads about 20% above NOAA-20 (VJ146A4) by 2024 (5.8 M vs 4.75 M); NOAA-20 shows steady growth,
+about +70% 2018-2024. So lights have grown, but the size of the change depends on the satellite, and a figure like "+139%"
+would not be defensible. Read the pattern, not the exact brightness.
 Shapes: shared/geo/india_districts.js (community data: replace with Survey of India boundaries before publishing).
-Correlations (CORR) are the RBI Bulletin, Oct 2026, Table 3 figures (total GSVA); only three states have one.
-Tiles are cached in out/hyperframes/cache/gibs/. Needs Pillow and numpy.
+RBI correlations (CORR): RBI Bulletin, Oct 2026, Table 3 (total GSVA); only three states have one.
+The mosaics are cached in out/hyperframes/cache/vnp46a4/. Needs h5py, scipy, Pillow, numpy.
 """
 import json
 import math
 import re
-import subprocess
 import sys
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+import h5py
 import numpy as np
 from PIL import Image
+from scipy.ndimage import map_coordinates
 
 ROOT = Path(__file__).resolve().parents[2]
 VID = ROOT / "hyperframes" / "videos"
-CACHE = ROOT / "out" / "hyperframes" / "cache" / "gibs"
-URL = "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_Black_Marble/default/{y}-01-01/GoogleMapsCompatible_Level8/8/{r}/{c}.png"
+TILES = ROOT / "out" / "hyperframes" / "cache" / "vnp46a4"
+LAYER = "HDFEOS/GRIDS/VIIRS_Grid_DNB_2d/Data Fields/AllAngle_Composite_Snow_Free"
+YEARS = (2012, 2025)
+LON0, LAT1, SPAN = 60.0, 40.0, 40.0   # mosaic covers 60-100E, 0-40N
+N = 9600                              # 4 tiles x 2400
 Z = 8
 WORLD = 256 * 2 ** Z
 SIZE = 1400          # output square, px
-DURATION = 18
-YEARS = (2012, 2016)
+MIN_SIDE = 700       # world px (about 400 km): tiny territories still get a readable picture
+DUR_BASE, DUR_RBI = 12, 18
 
 # RBI Bulletin Oct 2026, Table 3: correlation of y-o-y quarterly night-light growth with total GSVA growth
 CORR = {"Maharashtra": (0.90, "2012-13 to 2024-25"), "Karnataka": (0.79, "2012-13 to 2024-25"), "Gujarat": (0.66, "2012-13 to 2023-24")}
-# a few well-known cities (lon, lat) so viewers can find their bearings
 CITIES = {
     "Andaman And Nicobar Islands": [("Port Blair", 92.74, 11.62)],
     "Andhra Pradesh": [("Visakhapatnam", 83.22, 17.69), ("Vijayawada", 80.65, 16.51), ("Tirupati", 79.42, 13.63)],
@@ -79,7 +85,10 @@ TITLES = {"Andaman And Nicobar Islands": "Andaman & Nicobar", "Jammu And Kashmir
           "Dadra & Nagar Haveli & Daman & Diu": "DNH & Daman & Diu"}
 # boundary data for these two is community data and must be checked against Survey of India before publishing
 HOLD = {"Jammu And Kashmir", "Ladakh"}
-MIN_SIDE = 700  # world px at zoom 8 (about 400 km): tiny territories still get a readable picture
+
+# one colour scale for both years: log stretch of radiance, then a warm lights ramp
+STOPS = [0.0, 0.15, 0.35, 0.60, 0.85, 1.0]
+RAMP = np.array([(3, 5, 9), (20, 26, 58), (120, 84, 70), (232, 160, 72), (255, 214, 140), (255, 250, 235)], np.float32)
 
 
 def wx(lon):
@@ -91,28 +100,47 @@ def wy(lat):
     return (1 - math.log(math.tan(r) + 1 / math.cos(r)) / math.pi) / 2 * WORLD
 
 
-def tile(year, c, r):
-    f = CACHE / f"{year}_z{Z}_{c}_{r}.png"
-    if not f.exists():
-        CACHE.mkdir(parents=True, exist_ok=True)
-        subprocess.run(["curl", "-sf", "-m", "60", "--retry", "3", "-o", str(f), URL.format(y=year, r=r, c=c)], check=True)
-    return Image.open(f).convert("RGB")
+def mosaic(year):
+    """Radiance for 60-100E x 0-40N as one (9600, 9600) array, row 0 = 40N, column 0 = 60E. Missing tiles and fill are 0."""
+    f = TILES / f"mosaic_{year}.npy"
+    if f.exists():
+        return np.load(f, mmap_mode="r")
+    m = np.zeros((N, N), np.float32)
+    files = sorted((TILES / str(year)).glob("*.h5"))
+    if not files:
+        sys.exit(f"no tiles for {year}: run vnp46a4_fetch.py {year}")
+    for p in files:
+        h, v = map(int, re.search(r"\.h(\d\d)v(\d\d)\.", p.name).groups())
+        with h5py.File(p, "r") as h5:
+            a = h5[LAYER][:]
+        a[a < 0] = 0
+        m[(v - 5) * 2400:(v - 4) * 2400, (h - 24) * 2400:(h - 23) * 2400] = a
+    np.save(f, m)
+    return np.load(f, mmap_mode="r")
 
 
-def picture(year, ox, oy, side):
-    c0, c1, r0, r1 = int(ox // 256), int((ox + side) // 256), int(oy // 256), int((oy + side) // 256)
-    big = Image.new("RGB", ((c1 - c0 + 1) * 256, (r1 - r0 + 1) * 256))
-    jobs = [(c, r) for c in range(c0, c1 + 1) for r in range(r0, r1 + 1)]
-    with ThreadPoolExecutor(6) as ex:
-        for (c, r), im in zip(jobs, ex.map(lambda p: tile(year, *p), jobs)):
-            big.paste(im, ((c - c0) * 256, (r - r0) * 256))
-    ax, ay = ox - c0 * 256, oy - r0 * 256
-    im = big.crop((round(ax), round(ay), round(ax + side), round(ay + side))).resize((SIZE, SIZE), Image.LANCZOS)
-    a = np.asarray(im).astype(np.float32) / 255.0  # same gamma lift for both years, nothing else
-    return Image.fromarray((np.power(a, 0.7) * 255).astype(np.uint8))
+def colour(r):
+    v = np.clip(np.log1p(r / 0.4) / math.log1p(80 / 0.4), 0, 1)
+    return np.stack([np.interp(v, STOPS, RAMP[:, c]) for c in range(3)], -1).astype(np.uint8)
 
 
-def build(name, india):
+def picture(m, ox, oy, side):
+    """Web-mercator square (ox, oy, side in zoom-8 world px) resampled from the lat/lon mosaic, coloured."""
+    t = (np.arange(SIZE) + 0.5) / SIZE
+    xs, ys = ox + t * side, oy + t * side
+    lon = xs / WORLD * 360 - 180
+    lat = np.degrees(np.arctan(np.sinh(math.pi * (1 - 2 * ys / WORLD))))
+    cols = (lon - LON0) / SPAN * N - 0.5
+    rows = (LAT1 - lat) / SPAN * N - 0.5
+    r0, r1 = max(int(rows.min()) - 2, 0), min(int(rows.max()) + 3, N)
+    c0, c1 = max(int(cols.min()) - 2, 0), min(int(cols.max()) + 3, N)
+    win = np.asarray(m[r0:r1, c0:c1])
+    rr, cc = np.meshgrid(rows - r0, cols - c0, indexing="ij")
+    out = map_coordinates(win, [rr, cc], order=1, mode="constant", cval=0.0)
+    return Image.fromarray(colour(out))
+
+
+def build(name, india, ms):
     ds = [d for d in india["districts"] if d["s"] == name]
     if not ds:
         sys.exit(f"no districts for {name}")
@@ -125,18 +153,20 @@ def build(name, india):
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
     d = VID / f"nl-{slug}"
     (d / "assets" / "img").mkdir(parents=True, exist_ok=True)
-    for y in YEARS:
-        picture(y, ox, oy, side).save(d / "assets" / "img" / f"y{y}.jpg", quality=88)
+    for old in (d / "assets" / "img").glob("y*.jpg"):
+        old.unlink()
+    for y, m in zip(YEARS, ms):
+        picture(m, ox, oy, side).save(d / "assets" / "img" / f"y{y}.jpg", quality=88)
     rings = [[round(v, 1) for i in range(0, len(r), 2) for v in ((wx(r[i]) - ox) * k, (wy(r[i + 1]) - oy) * k)] for dd in ds for r in dd["rings"]]
-    dur = DURATION if name in CORR else 12   # no RBI card where the Bulletin has no figure
-    story = {"name": name, "years": list(YEARS), "size": SIZE, "rings": rings, "duration": dur,
-             "title": TITLES.get(name, name), "cities": [{"n": n, "x": round((wx(lo) - ox) * k, 1), "y": round((wy(la) - oy) * k, 1)} for n, lo, la in CITIES.get(name, [])]}
+    dur = DUR_RBI if name in CORR else DUR_BASE
+    story = {"name": name, "title": TITLES.get(name, name), "years": list(YEARS), "size": SIZE, "rings": rings, "duration": dur,
+             "cities": [{"n": n, "x": round((wx(lo) - ox) * k, 1), "y": round((wy(la) - oy) * k, 1)} for n, lo, la in CITIES.get(name, [])]}
     if name in CORR:
         story["corr"], story["period"] = CORR[name]
     (d / "story.js").write_text("window.STORY = " + json.dumps(story, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    tpl = (VID / "_template_nl" / "index.html").read_text().replace("__DURATION__", str(dur))
-    (d / "index.html").write_text(tpl)
-    print(name, "->", d.relative_to(ROOT), f"{len(ds)} districts, {dur}s")
+    (d / "index.html").write_text((VID / "_template_nl" / "index.html").read_text()
+        .replace("__DURATION__", str(dur)).replace("__Y0__", str(YEARS[0])).replace("__Y1__", str(YEARS[1])))
+    print(f"{name:36s} {len(ds):3d} districts, {dur}s", flush=True)
 
 
 def main():
@@ -145,8 +175,9 @@ def main():
     names = sorted(CITIES) if sys.argv[1:] == ["all"] else sys.argv[1:]
     src = (ROOT / "hyperframes" / "shared" / "geo" / "india_districts.js").read_text()
     india = json.loads(src[src.index("{"):].rstrip().rstrip(";"))
+    ms = [mosaic(y) for y in YEARS]
     for n in names:
-        build(n, india)
+        build(n, india, ms)
     print("hold until boundaries are checked:", ", ".join(sorted(HOLD & set(names))) or "none")
 
 

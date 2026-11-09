@@ -41,13 +41,13 @@
       <div id="win">
         <div id="cam" data-layout-allow-overflow>
           <img id="a" src="assets/img/y2012.jpg" alt="" />
-          <div id="after"><img id="b" src="assets/img/y2016.jpg" alt="" /></div>
+          <div id="after"><img id="b" src="assets/img/y2025.jpg" alt="" /></div>
           <svg id="dim" width="1400" height="1400" viewBox="0 0 1400 1400"></svg>
           <div id="wipe"></div>
           <div id="cities"></div>
         </div>
         <div class="chip" id="chipA" style="left: 24px">2012</div>
-        <div class="chip" id="chipB" style="right: 24px">2016</div>
+        <div class="chip" id="chipB" style="right: 24px">2025</div>
       </div>
       <div id="scrimT" data-layout-ignore></div>
       <div id="scrimB" data-layout-ignore></div>
@@ -58,7 +58,7 @@
       <div id="sub">INDIA AT NIGHT, FROM ORBIT</div>
       <div id="yr"><div class="y" id="yv">2012</div><div class="t" id="yt"></div></div>
       <div id="card"><div class="n" id="cn">0.00</div><div class="t" id="ct"></div><div class="p" id="cp"></div></div>
-      <div id="src">NASA Black Marble (VIIRS) via GIBS. 2012 and 2016 are separate composites: compare the pattern, not the brightness.</div>
+      <div id="src">NASA Black Marble VNP46A4 (Suomi NPP), same colour scale both years. Compare the pattern, not exact brightness.</div>
     </div>
     <script>
       const H = HF.setup(12), E = HF.ease, F = HF.fade;
@@ -112,7 +112,7 @@
         // year read-out and one plain line
         const late = HF.clamp01((w - 0.5) / 0.04);
         $("yv").textContent = late > 0.5 ? S.years[1] : S.years[0];
-        $("yt").textContent = late > 0.5 ? "The same lights, four years on." : "Night lights, one image a year.";
+        $("yt").textContent = late > 0.5 ? `${S.years[1] - S.years[0]} years on, same colour scale.` : "Night lights, one image a year.";
         $("yr").style.opacity = F(t, 0.7, S.corr ? 10.4 : 99, 0.4);
         $("name").style.opacity = F(t, 0.3, 99, 0.6);
         $("sub").style.opacity = F(t, 0.5, 99, 0.6);

@@ -110,16 +110,23 @@ guessed. Without the file the scene is left out. A missing district means no rep
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
 **Then vs Now Shorts (9:16).** `videos/_template_nl/index.html` is the template; `tools/nightlight_shorts.py all` (or one or more
-state names) builds `videos/nl-<state>/` for every state and UT: night-light pictures for 2012 and 2016 cropped to the state, district
-outline, up to three cities, and for Maharashtra, Karnataka and Gujarat (18 s) a closing card with the RBI Bulletin Oct 2026
-correlation. The other 33 end on the 2016 picture (12 s). Imagery is NASA Black Marble via GIBS layer `VIIRS_Black_Marble`, which serves
-only 2012 and 2016 (no public later year); they are separate composites, so the Short says to compare the pattern, not the
-brightness (never turn them into a % change). For 2012 vs 2024 swap in VNP46A3 (NASA Earthdata login).
+state names) builds `videos/nl-<state>/` for every state and UT: night-light pictures for **2012 and 2025**, cropped to the state,
+district outline, up to three cities, and for Maharashtra, Karnataka and Gujarat (18 s) a closing card with the RBI Bulletin Oct 2026
+correlation. The other 33 end on the 2025 picture (12 s).
+Data: NASA Black Marble annual composites, VNP46A4 (Suomi NPP), layer `AllAngle_Composite_Snow_Free`, same colour scale for both
+years. `tools/vnp46a4_fetch.py 2012 2025` downloads the 16 India tiles per year (about 130 MB each) and needs an NASA Earthdata
+token (in the cloud environment: `request_credential` for `ladsweb.modaps.eosdis.nasa.gov`; elsewhere set `LAADS_TOKEN`).
+**No total-light percentage on screen, on purpose.** On tile h25v07 the Suomi NPP annual sum is flat 2012-2018 (about 2.8 M),
+steps up in 2021-2023 (3.5 to 5.6 M) and reads about 20% above NOAA-20 (VJ146A4) in 2024 (5.8 M vs 4.75 M), while NOAA-20 shows
+steady growth of about +70% 2018-2024. Lights have grown, but the size of the change depends on the satellite, so the Short
+says "compare the pattern, not exact brightness". Do not quote a figure from these pictures. (Superseded version: 2012 vs
+2016 from the public GIBS layer `VIIRS_Black_Marble`, in git history.)
 Territories under 700 world-pixels (about 400 km) get a minimum-size crop, so Delhi, Chandigarh, Goa and the like show their
 surroundings; Lakshadweep is nearly dark in the data. **Hold Jammu & Kashmir and Ladakh** until their boundaries are checked against
 Survey of India (the district data is community data and the tool leaves out the unassigned districts).
 
 ```sh
+python3 hyperframes/tools/vnp46a4_fetch.py 2012 2025
 python3 hyperframes/tools/nightlight_shorts.py all
 python3 hyperframes/tools/hf.py sync $(ls hyperframes/videos | grep '^nl-')
 python3 hyperframes/tools/hf.py render nl-maharashtra nl-rajasthan   # or every nl-* name; ~1.5 min each

@@ -4,6 +4,66 @@
 - 2 long videos a week, on **Tuesdays and Fridays**: 8 in November.
 - **1 Short every day:** 30.
 
+## Status 10 Nov 2026: approved, re-dated version proposed
+
+**AK approved the slate on 10 Nov.** By that day nothing had been built or published since 25 Oct:
+- the dates from 1 to 10 Nov had passed: L1, L2, L3, Diwali and Govardhan, and ten Shorts;
+- the IC-01 scenes and figures weren't built;
+- the Katha kit has no vertical 9:16 format for Shorts yet.
+
+*Ramayana: Part One* did open on 5 Nov and is running strongly, so the film-driven videos still matter.
+
+**Proposed re-dated slate (awaiting AK's yes).** The full plan below is kept for the record and for next year's festivals.
+
+| Date | Long video | Change |
+| --- | --- | --- |
+| **Tue 17 Nov** | L1 The Lakshman Rekha Isn't in Valmiki's Ramayana | From 3 Nov. Still inside the film's first fortnight (to 19 Nov); the brief's fallback was 15 Nov, which can't hold a 7-day build |
+| **Fri 20 Nov** | L5 What the Bhagavad Gita Actually Says About Overthinking | From 17 Nov. Reuses the Gita film's kit, so it can be scripted while L1 is being built |
+| **Tue 24 Nov** | L3 Was Kaikeyi a Villain? What Valmiki Actually Says | From 10 Nov. Reuses L1's figures; the film is in its third week |
+| **Fri 27 Nov** | L8 Which Bhagavad Gita Should You Read? | Unchanged |
+| — | L2 Diwali | **Dropped**: Diwali was 8 Nov. Kept for Diwali 2027 |
+| — | L4 Soorasamharam, L6 Karthigai Deepam | **Become Shorts** (the plan's own rule for late festival videos): the rooster on 14 Nov, the pillar on 24 Nov |
+| — | L7 Katha Upanishad | **To December**, as the plan allowed |
+
+So November gets **4 long videos, not 8**.
+
+**Shorts start Sat 14 Nov**, after a vertical template is built: **17 Shorts, not 30.**
+
+| Date | Short | Tags |
+| --- | --- | --- |
+| Sat 14 | Why Murugan's Flag Carries a Rooster (eve of Soorasamharam) | Curiosity · Demand |
+| Sun 15 (Soorasamharam) | Kural 301: Restraint Counts Only When You Could Strike | Interest · Gap |
+| Mon 16 | Ahalya Was Never a Stone | Curiosity · Demand |
+| **Tue 17** | ✂ The Lakshman Rekha Isn't in Valmiki (L1) | Demand · Curiosity |
+| Wed 18 | He Promised Before He Heard | Engagement · Interest |
+| Thu 19 | Sita Said No | Demand · Curiosity |
+| **Fri 20** | ✂ The Mind Is Like the Wind (L5) | Demand · Engagement |
+| Sat 21 | The Anger Spiral in Two Verses (Gita 2.62–63) | Demand · Engagement |
+| Sun 22 | The First Verse Ever Written Was About a Bird | Curiosity · Interest |
+| Mon 23 | Your Mind: Friend or Enemy? (Gita 6.5–6) | Demand · Engagement |
+| **Tue 24** (Karthigai Deepam) | The Pillar No God Could Measure (standalone; Shiva Purana paraphrase marked OUR NOTE) | Demand · Curiosity |
+| Wed 25 | ✂ Was Kaikeyi a Villain? (L3) | Demand · Engagement |
+| Thu 26 | Every Fire Has Smoke (Gita 18.48, for Perfectionists) | Demand · Engagement |
+| **Fri 27** | ✂ Which Gita Should You Read? (L8) | Gap · Engagement |
+| Sat 28 | "Hatred Dies": What Rama Said Over Ravana | Interest · Engagement |
+| Sun 29 | Two Birds on One Tree | Curiosity · Gap |
+| Mon 30 | "Do Not Be Anxious" (Gita 18.66), teaser for the Gita film on 6 Dec | Demand · Engagement |
+
+**Mix:** Ramayana 7, Gita 6, Puranas 2, Tamil 1, Upanishads 1.
+
+**Moved to December's backlog:** Heavier Than the Earth, Vritti, the Bird's Eye, the Half-Truth, the addiction poem, Kural 788, Turned Down Gold, the Dog.
+
+**Kept for 2027:** the Poison Before Lakshmi and Krishna Argued (Govardhan).
+
+**What the 17 Nov date needs, in order:**
+1. Build IC-01's 8 scenes and 7 silhouette figures.
+2. Voice it in character.
+3. Render, and have AK scrub it once.
+4. Hindi track.
+5. **A named reviewer signs**: still nobody, and the house rules block publishing without one.
+
+---
+
 Every title comes from `INNER_CHARIOT_CONTENT_MAP.md` (the code in brackets is the map's row). Every demand figure is a vidIQ estimate already in the research docs.
 
 ## How each title is tagged

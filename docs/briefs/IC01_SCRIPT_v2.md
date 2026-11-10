@@ -9,7 +9,9 @@ Draft 2, 25 Oct 2026. It replaces draft 1 (`IC01_SCRIPT_v1.md`, kept for the rec
 - Rama, Sita and the epic's figures appear as backlit silhouettes in light (rule 5, extended 25 Oct).
 - Not quoted: Lakshmana's lines on "womankind" and Sita's words about ending her life (both in 3.45).
 
-**Voicing (pending AK's answer):** each quote card is marked with who speaks it. If AK chooses "in character", those lines get their own voice, heard once. If he chooses "narrator only", the cards stay silent on screen.
+**Voicing: in character (AK approved, 10 Nov 2026).** Each quote card is marked with who speaks it, and those lines get their own voice, heard once and never re-read. NARRATOR cards use the narrator's voice.
+
+**Script locked, 10 Nov 2026**, apart from the reviewer's four checks below. No reviewer is named yet; the video can't be published until one signs.
 
 ---
 
@@ -232,8 +234,8 @@ Draft 2, 25 Oct 2026. It replaces draft 1 (`IC01_SCRIPT_v1.md`, kept for the rec
 ---
 
 ## To lock the script
-1. **AK:** voicing, in character or narrator only.
-2. **The reviewer:**
+1. **AK:** voicing. **Done 10 Nov: in character.**
+2. **The reviewer (still open, and nobody is named):**
    - the (check) line on the gods turning Manthara's mind;
    - the paraphrase of Sita's accusation ("fear, speaking as anger");
    - "Scholars disagree about where it first appears";

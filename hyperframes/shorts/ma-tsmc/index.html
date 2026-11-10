@@ -1,0 +1,245 @@
+<!doctype html>
+<!-- Moat Atlas · From Orbit · "This was empty Arizona desert in 2020" (TSMC Arizona). Reveal Loop Short, 1080 x 1920.
+     Timings come from story.js (tools/shorts_build.py). Sources: docs/SHORTS_BENCHMARKS.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat Atlas: TSMC Arizona from orbit</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/geo/world_land.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; }
+      #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 473px 800px; }
+      #cam img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #after { position: absolute; inset: 0; }
+      #wipe { position: absolute; top: 0; width: 6px; height: 1920px; margin-left: -3px; background: #f7f3ea; box-shadow: 0 0 26px rgba(247, 243, 234, 0.9); }
+      #dim { position: absolute; inset: 0; background: #05070a; opacity: 0; }
+      #date { position: absolute; left: 60px; top: 262px; height: 110px; }
+      #date .d { position: absolute; left: 0; top: 0; font: 700 104px/1 Oswald, sans-serif; letter-spacing: 0.01em; color: #f7f3ea; white-space: nowrap;
+        -webkit-text-stroke: 10px rgba(4, 6, 9, 0.85); paint-order: stroke fill; }
+      #date .l { position: absolute; left: 4px; top: 118px; font: 26px/1 Plex, monospace; color: #d7dbe0; white-space: nowrap; }
+      #brk { position: absolute; left: 0; top: 0; }
+      #brk path { fill: none; stroke: #f2b233; stroke-width: 7; stroke-linecap: square; }
+      #siteLab { left: 196px; top: 566px; font-size: 40px; }
+      #n100 { left: 60px; top: 388px; font-size: 230px; }
+      #n100lab { left: 66px; top: 618px; }
+      /* ladder */
+      #ladder { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+      #tsmc { transform-origin: 0 50%; left: 60px; top: 520px; font-size: 300px; color: #f7f3ea; }
+      #tsmclab { left: 68px; top: 800px; color: #f2b233; line-height: 1.12; }
+      #ladTitle { left: 64px; top: 290px; font-size: 54px; }
+      .bar { position: absolute; bottom: 720px; width: 150px; background: #f7f3ea; transform-origin: 50% 100%; }
+      .bar.now { background: #f2b233; }
+      .bv { position: absolute; width: 190px; text-align: center; font: 700 54px/1 Oswald, sans-serif; color: #f7f3ea; white-space: nowrap;
+        -webkit-text-stroke: 8px rgba(4, 6, 9, 0.9); paint-order: stroke fill; }
+      .bv.now { color: #f2b233; font-size: 96px; width: 300px; }
+      .by { position: absolute; top: 1214px; width: 190px; text-align: center; font: 700 38px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #c9ced4; }
+      /* globe */
+      #globe { position: absolute; left: 0; top: 0; opacity: 0; }
+      #g92 { left: 60px; top: 300px; font-size: 300px; }
+      #g92lab { left: 68px; top: 590px; font-size: 44px; line-height: 1.12; }
+      .pin { position: absolute; font: 700 40px/1.05 Oswald, sans-serif; letter-spacing: 0.04em; color: #07090d; background: #f7f3ea; padding: 8px 14px 10px; white-space: nowrap; }
+      .pin.acc { background: #f2b233; }
+      #next { left: 60px; top: 300px; font-size: 64px; padding: 14px 20px 16px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="35.067" data-width="1080" data-height="1920">
+      <div id="cam">
+        <img id="before" src="assets/img/tsmc_2020.jpg" alt="" />
+        <div id="after"><img src="assets/img/tsmc_2026.jpg" alt="" /></div>
+        <div id="wipe"></div>
+      </div>
+      <div id="dim" data-layout-ignore></div>
+      <canvas id="globe" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <svg id="brk" width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+        <path id="bk1" d="M300 690 L240 690 L240 750" /><path id="bk2" d="M780 690 L840 690 L840 750" />
+        <path id="bk3" d="M300 1030 L240 1030 L240 970" /><path id="bk4" d="M780 1030 L840 1030 L840 970" />
+      </svg>
+      <div class="kicker">MOAT ATLAS · FROM ORBIT</div>
+      <div class="src" id="srcs">
+        <div id="s0">Contains modified Copernicus Sentinel data 2020, 2026</div>
+        <div id="s1">Apple newsroom, 20 Oct 2026: “more than 100 million chips for Apple in 2026”</div>
+        <div id="s2">TSMC releases 2020–2025 · City of Phoenix, 16 Jul 2026 (announced totals)</div>
+        <div id="s3">SIA / BCG, Apr 2021: 92% of capacity below 10 nm (2019 data)</div>
+        <div id="s4">TSMC: Arizona in production on 4 nm; 2 nm in production in Taiwan</div>
+        <div id="s5">TSMC Q3 2026 results call, 15 Oct 2026: second fab, volume in Q3 2027</div>
+      </div>
+      <div id="date"><div class="d" id="d20">27 APR 2020</div><div class="d" id="d26">7 NOV 2026</div><div class="l">SENTINEL-2 · NORTH PHOENIX, ARIZONA</div></div>
+      <div class="chip acc" id="siteLab">TSMC ARIZONA</div>
+      <div class="big" id="n100">100M+</div>
+      <div class="lab" id="n100lab">CHIPS FOR APPLE · 2026</div>
+      <div class="big" id="tsmc">TSMC</div>
+      <div class="lab" id="tsmclab">TAIWAN SEMICONDUCTOR<br />MANUFACTURING COMPANY</div>
+      <div id="ladder">
+        <div class="lab" id="ladTitle">TSMC’S PLAN FOR THIS SITE</div>
+      </div>
+      <div class="big" id="g92">92%</div>
+      <div class="lab" id="g92lab">OF THE MOST ADVANCED<br />CHIP CAPACITY · 2019</div>
+      <div class="pin acc" id="pTW">TAIWAN · 2 NM</div>
+      <div class="pin" id="pAZ">ARIZONA · 4 NM</div>
+      <div class="chip acc" id="next">NEXT FAB: 3 NM · 2027</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // ---- times
+      const tWipe = B("b2") - 0.15, tBrk = A("b3", "A data center"), tApple = B("b4"), t100 = A("b4", "Over a hundred"),
+        tLad = B("b5"), tTaiwan = A("b5", "from Taiwan"), tPlan = A("b5", "Its plan"), t12 = A("b5", "at twelve"), tNow = A("b5", "Now it's"),
+        tGlobe = B("b6"), t92 = A("b6", "ninety-two"), tIsl = A("b6", "sat on one"), tCatch = B("b7"), tNew = A("b7", "The newest"),
+        tNext = A("b7", "Arizona's next"), tBack = B("b8"), tRet = tBack - 0.25;
+      // ---- ladder
+      const STEPS = [["2020", 12], ["2022", 40], ["2024", 65], ["2025", 165], ["2026", 265]];
+      const lad = $("ladder"), bars = [];
+      STEPS.forEach(([y, v], i) => {
+        const x = 70 + i * 190, now = i === STEPS.length - 1;
+        const b = document.createElement("div"); b.className = "bar" + (now ? " now" : ""); b.style.left = x + 20 + "px"; b.style.height = Math.max(14, v / 265 * 560) + "px";
+        const bv = document.createElement("div"); bv.className = "bv" + (now ? " now" : ""); bv.textContent = "$" + v + "B"; bv.style.left = (now ? x - 55 : x) + "px";
+        bv.style.top = 1200 - Math.max(14, v / 265 * 560) - (now ? 112 : 68) + "px";
+        const by = document.createElement("div"); by.className = "by"; by.textContent = y; by.style.left = x + "px";
+        lad.append(b, bv, by); bars.push([b, bv, by]);
+      });
+      const tStep = (i) => i === 0 ? t12 : i === 4 ? tNow : L(t12 + 0.75, tNow - 0.3, (i - 1) / 2);
+      // ---- globe
+      const g = $("globe").getContext("2d"), R = 430, GX = 540, GY = 860, rad = Math.PI / 180;
+      const TW = [121.0, 23.7], AZ = [-112.16, 33.78];
+      function proj(lon, lat, lon0, lat0) {
+        const l = (lon - lon0) * rad, p = lat * rad, p0 = lat0 * rad;
+        const cc = Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l);
+        let x = Math.cos(p) * Math.sin(l), y = Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l);
+        if (cc < 0) { const m = Math.hypot(x, y) || 1; x /= m; y /= m; }
+        return [GX + R * x, GY - R * y, cc];
+      }
+      function gc(a, b, u) {   // point on the great circle a -> b
+        const v = (p) => [Math.cos(p[1] * rad) * Math.cos(p[0] * rad), Math.cos(p[1] * rad) * Math.sin(p[0] * rad), Math.sin(p[1] * rad)];
+        const A1 = v(a), B1 = v(b), w = Math.acos(A1[0] * B1[0] + A1[1] * B1[1] + A1[2] * B1[2]);
+        const s1 = Math.sin((1 - u) * w) / Math.sin(w), s2 = Math.sin(u * w) / Math.sin(w);
+        const x = s1 * A1[0] + s2 * B1[0], y = s1 * A1[1] + s2 * B1[1], z = s1 * A1[2] + s2 * B1[2];
+        return [Math.atan2(y, x) / rad, Math.asin(z) / rad];
+      }
+      // land mask (equirectangular, 4 px per degree), sampled per pixel so the globe is exact at any rotation
+      const MK = document.createElement("canvas"); MK.width = 1440; MK.height = 720;
+      const mk = MK.getContext("2d"); mk.fillStyle = "#000"; mk.fillRect(0, 0, 1440, 720); mk.fillStyle = "#fff";
+      for (const ring of window.LAND) { mk.beginPath(); ring.forEach((q, i) => { const x = (q[0] + 180) * 4, y = (90 - q[1]) * 4; i ? mk.lineTo(x, y) : mk.moveTo(x, y); }); mk.closePath(); mk.fill(); }
+      const MASK = mk.getImageData(0, 0, 1440, 720).data;
+      const GI = g.createImageData(2 * R, 2 * R);
+      function drawGlobe(t) {
+        g.clearRect(0, 0, 1080, 1920);
+        const u = Z.io2((t - tCatch + 0.2) / 1.3);                 // rotate from Taiwan to the mid-Pacific
+        const lon0 = L(118, 184, u), lat0 = L(20, 34, u);
+        const sp = Math.sin(lat0 * rad), cp = Math.cos(lat0 * rad), d = GI.data;
+        for (let py = 0, o = 0; py < 2 * R; py++) {
+          const y = (R - py - 0.5) / R;
+          for (let px = 0; px < 2 * R; px++, o += 4) {
+            const x = (px + 0.5 - R) / R, r2 = x * x + y * y;
+            if (r2 >= 1) { d[o + 3] = 0; continue; }
+            const z = Math.sqrt(1 - r2);
+            const lat = Math.asin(z * sp + y * cp) / rad, lon = lon0 + Math.atan2(x, z * cp - y * sp) / rad;
+            const mx = ((Math.floor((lon + 180) * 4) % 1440) + 1440) % 1440, my = Math.min(719, Math.max(0, Math.floor((90 - lat) * 4)));
+            const land = MASK[(my * 1440 + mx) * 4] / 255;
+            const sh = 0.5 + 0.5 * Math.max(0, -0.38 * x + 0.42 * y + 0.82 * z), edge = Math.min(1, (1 - r2) * 9);
+            d[o] = (L(9, 74, land) * sh + 6) * edge; d[o + 1] = (L(27, 96, land) * sh + 9) * edge + 4; d[o + 2] = (L(52, 110, land) * sh + 14) * edge + 9;
+            d[o + 3] = 255;
+          }
+        }
+        g.putImageData(GI, GX - R, GY - R);
+        g.save(); g.beginPath(); g.arc(GX, GY, R, 0, 7); g.clip();
+        g.strokeStyle = "rgba(170,200,230,0.10)"; g.lineWidth = 1.5;
+        for (let lo = -180; lo < 180; lo += 20) { g.beginPath(); for (let la = -80; la <= 80; la += 4) { const p = proj(lo, la, lon0, lat0); if (p[2] > 0) g.lineTo(p[0], p[1]); else g.moveTo(p[0], p[1]); } g.stroke(); }
+        for (let la = -60; la <= 60; la += 20) { g.beginPath(); for (let lo = -180; lo <= 180; lo += 4) { const p = proj(lo, la, lon0, lat0); if (p[2] > 0) g.lineTo(p[0], p[1]); else g.moveTo(p[0], p[1]); } g.stroke(); }
+        // Taiwan: glow + pulse
+        const tw = proj(TW[0], TW[1], lon0, lat0), k = F(t, t92, 99, 0.3);
+        if (tw[2] > 0) {
+          const pulse = (((t - t92) * 0.9) % 1 + 1) % 1;
+          g.beginPath(); g.arc(tw[0], tw[1], 16 + 70 * pulse, 0, 7); g.strokeStyle = `rgba(242,178,51,${k * (1 - pulse)})`; g.lineWidth = 5; g.stroke();
+          g.beginPath(); g.arc(tw[0], tw[1], 30, 0, 7); g.fillStyle = `rgba(242,178,51,${0.3 * k})`; g.fill();
+          g.beginPath(); g.arc(tw[0], tw[1], 12, 0, 7); g.fillStyle = "#f2b233"; g.fill();
+        }
+        // arc Taiwan -> Arizona
+        const au = Z.io2((t - tCatch - 0.5) / 1.1);
+        if (au > 0) {
+          g.beginPath(); g.strokeStyle = "#f7f3ea"; g.lineWidth = 5; g.setLineDash([14, 10]);
+          for (let i = 0; i <= 60 * au; i++) { const q = gc(TW, AZ, i / 60), p = proj(q[0], q[1], lon0, lat0), lift = 1 + 0.1 * Math.sin(Math.PI * i / 60);
+            g.lineTo(GX + (p[0] - GX) * lift, GY + (p[1] - GY) * lift); }
+          g.stroke(); g.setLineDash([]);
+          const az = proj(AZ[0], AZ[1], lon0, lat0);
+          if (au > 0.98) { g.beginPath(); g.arc(az[0], az[1], 12, 0, 7); g.fillStyle = "#f7f3ea"; g.fill(); }
+        }
+        g.restore();
+        g.beginPath(); g.arc(GX, GY, R, 0, 7); g.strokeStyle = "rgba(160,200,235,0.45)"; g.lineWidth = 3; g.stroke();
+        return { tw, az: proj(AZ[0], AZ[1], lon0, lat0) };
+      }
+      const BL = [["bk1", 180], ["bk2", 180], ["bk3", 180], ["bk4", 180]];
+      BL.forEach(([id]) => { $(id).setAttribute("stroke-dasharray", 130); });
+      const show = (id, o) => { $(id).style.opacity = o; };
+      H.render = (t) => {
+        // ---- satellite + wipe (out at b2, back at b8 so the last frame is the first)
+        const ret = Z.io3((t - tRet) / (D - 0.04 - tRet));          // the way back: complete on the last frame, so the loop is seamless
+        const w = Z.io3((t - tWipe) / 1.5) - ret;
+        const push = Z.io2((t - tWipe - 0.6) / 4.5) - ret;
+        const s = 1 + 0.035 * Math.min(1, t / 3) * (1 - ret) + 0.42 * push;
+        $("cam").style.transform = `scale(${s})`;
+        const wx = w * 1080;
+        $("after").style.clipPath = `inset(0 ${1080 - wx}px 0 0)`;
+        $("wipe").style.left = wx + "px";
+        const lineX = 473 + (wx - 473) * s;
+        show("wipe", C((lineX - 6) / 40) * C((1074 - lineX) / 40));
+        const toAfter = C((w - 0.3) / 0.06);
+        show("d20", 1 - toAfter); show("d26", toAfter);
+        const inGlobe = F(t, tGlobe, tNext, 0.3), inLad = F(t, tLad, tGlobe, 0.3);
+        show("date", (1 - F(t, tApple - 0.2, tNext, 0.3)) * 1 + 0);
+        $("date").style.opacity = t < tApple ? 1 : t > tRet ? F(t, tRet, 99, 0.3) : 0;
+        show("dim", 0.62 * inLad + 0.94 * inGlobe);
+        // ---- bracket around the complex, then the Apple number
+        const bk = Z.o3((t - tBrk) / 0.5) * (1 - F(t, tLad - 0.2, 99, 0.3));
+        ["bk1", "bk2", "bk3", "bk4"].forEach((id) => { $(id).setAttribute("stroke-dashoffset", 130 * (1 - Z.o3((t - tBrk) / 0.5))); $(id).style.opacity = bk > 0 ? 1 - F(t, tLad - 0.2, 99, 0.3) : 0; });
+        const sl = F(t, tApple, t100 - 0.1, 0.25);
+        show("siteLab", sl); $("siteLab").style.transform = `scale(${Z.back((t - tApple) / 0.35)})`;
+        const n = F(t, t100, tLad - 0.2, 0.2);
+        show("n100", n); show("n100lab", n);
+        $("n100").textContent = Math.round(100 * Z.o3((t - t100) / 0.9)) + "M+";
+        // ---- ladder
+        lad.style.opacity = inLad;
+        bars.forEach(([b, bv, by], i) => {
+          const u = Z.o3((t - tStep(i)) / (i === 4 ? 0.7 : 0.35));
+          b.style.transform = `scaleY(${u})`; bv.style.opacity = by.style.opacity = C((t - tStep(i)) / 0.2);
+          if (i === 4) bv.textContent = "$" + Math.round(L(165, 265, u)) + "B";
+        });
+        show("ladTitle", F(t, tPlan, 99, 0.3));
+        const tm = F(t, tLad + 0.1, tPlan - 0.1, 0.22);
+        show("tsmc", tm); show("tsmclab", tm * C((t - tTaiwan) / 0.2)); $("tsmc").style.transform = `scale(${0.92 + 0.08 * Z.o3((t - tLad) / 0.5)})`;
+        // ---- globe
+        $("globe").style.opacity = inGlobe;
+        if (inGlobe > 0) {
+          const P = drawGlobe(t);
+          const lb = F(t, tNew, tNext, 0.25);
+          $("pTW").style.transform = `translate(${P.tw[0] - 130}px, ${P.tw[1] + 34}px)`; show("pTW", lb * (P.tw[2] > 0 ? 1 : 0));
+          $("pAZ").style.transform = `translate(${P.az[0] - 250}px, ${P.az[1] + 30}px)`; show("pAZ", lb * (P.az[2] > 0 ? 1 : 0));
+        } else { show("pTW", 0); show("pAZ", 0); }
+        const g92 = F(t, t92, tCatch, 0.25);
+        show("g92", g92); show("g92lab", g92);
+        $("g92").textContent = Math.round(92 * Z.o3((t - t92) / 0.6)) + "%";
+        // ---- next fab chip over the 2026 image
+        show("next", F(t, tNext + 0.15, tRet, 0.25)); $("next").style.transform = `scale(${Z.back((t - tNext - 0.15) / 0.35)})`;
+        // ---- sources: one line, matched to what is on screen
+        const srcT = [[0, tApple], [tApple, tLad], [tLad, tGlobe], [tGlobe, tNew], [tNew, tNext], [tNext, tBack]];
+        srcT.forEach(([a, b], i) => show("s" + i, t >= a && t < b ? 1 : 0));
+        if (t >= tBack) { show("s0", 1); show("s5", 0); }
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<!-- UPSC Mains (Hindi) · आँकड़ों में संविधान · "लोक सभा की सीटें आज भी 1971 से तय हैं". Reveal Loop Short, 1080 x 1920.
+     3D seat map from samples/s15-seatmap (assets/geo3d.js, tools/geo3d.py). Timings come from story.js.
+     Sources: docs/SHORTS_BENCHMARKS.md. Status of the law as of 10 Nov 2026: re-check before publishing. -->
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>UPSC Mains: लोक सभा की सीटें और 1971</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/geo3d.js"></script>
+    <script src="story.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --bg: #0a0f1c; --acc: #ffb020; --acc2: #ff5a3c; background: #0a0f1c; }
+      #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+      #ice { position: absolute; inset: 0; opacity: 0; background: radial-gradient(700px 900px at 50% 45%, rgba(150, 192, 222, 0.16), transparent 70%); }
+      #dim { position: absolute; inset: 0; background: #060a14; opacity: 0; }
+      .T { font-family: Teko, sans-serif; font-weight: 700; }
+      .M { font-family: Mukta, sans-serif; }
+      .ol { -webkit-text-stroke: 9px rgba(6, 10, 20, 0.9); paint-order: stroke fill; }
+      #hook { position: absolute; left: 60px; top: 262px; opacity: 0; }
+      #hook .a { font-size: 86px; line-height: 1; color: #f7f3ea; }
+      #hook .b { font-size: 250px; line-height: 0.86; color: var(--acc); margin-top: 6px; }
+      #hook .c { font-size: 70px; line-height: 1; color: #f7f3ea; }
+      #stamp { position: absolute; left: 440px; top: 350px; padding: 4px 26px 0; border: 8px solid var(--acc2); color: var(--acc2); font-size: 104px; line-height: 1.12;
+        background: rgba(8, 12, 24, 0.7); opacity: 0; white-space: nowrap; }
+      #labels .n { position: absolute; left: 0; top: 0; font: 700 40px/1 Teko, sans-serif; color: #f7f3ea; background: rgba(8, 12, 24, 0.8); padding: 5px 10px 0; border-radius: 5px; opacity: 0; white-space: nowrap; }
+      /* population then and now */
+      #pop { position: absolute; left: 60px; top: 268px; width: 900px; opacity: 0; }
+      #pop .row { display: flex; align-items: baseline; gap: 22px; }
+      #pop .y { font-size: 64px; color: #c9ced6; width: 190px; }
+      #pop .v { font-size: 150px; line-height: 0.95; color: #f7f3ea; }
+      #pop .v.now { color: var(--acc); }
+      #pop .u { font-size: 64px; color: #f7f3ea; }
+      #x2 { position: absolute; left: 790px; top: 330px; font-size: 150px; color: var(--acc2); opacity: 0; }
+      /* people per MP */
+      .st { position: absolute; top: 262px; width: 440px; opacity: 0; }
+      .st .nm { font-size: 74px; line-height: 1; color: #f7f3ea; white-space: nowrap; }
+      .st .nm span { font: 500 32px/1 Mukta, sans-serif; color: #c9ced6; margin-left: 12px; -webkit-text-stroke: 0; }
+      .st .big2 { font-size: 180px; line-height: 0.92; white-space: nowrap; }
+      .st .big2 small { font-size: 70px; color: #f7f3ea; margin-left: 10px; }
+      .st .sub { font: 500 32px/1.1 Mukta, sans-serif; color: #e7e9ee; white-space: nowrap; }
+      .dots { display: flex; flex-wrap: wrap; gap: 9px; width: 420px; margin-top: 14px; }
+      .dots i { width: 24px; height: 24px; border-radius: 50%; display: block; opacity: 0.18; }
+      #stRJ { left: 60px; } #stRJ .big2 { color: var(--acc); } #stRJ .dots i { background: var(--acc); }
+      #stKL { left: 540px; } #stKL .big2 { color: var(--acc2); } #stKL .dots i { background: var(--acc2); }
+      #lines { position: absolute; left: 0; top: 0; }
+      /* freeze timeline */
+      #tl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+      #tlHead { position: absolute; left: 60px; top: 262px; font-size: 96px; line-height: 1; color: #f7f3ea; }
+      #tlWhy { position: absolute; left: 60px; top: 372px; width: 900px; font: 700 46px/1.2 Mukta, sans-serif; color: var(--acc); }
+      #axis { position: absolute; left: 140px; top: 640px; width: 780px; height: 6px; background: rgba(247, 243, 234, 0.3); }
+      #lock { position: absolute; left: 90px; top: 622px; height: 42px; background: var(--acc2); border-radius: 6px; transform-origin: 0 50%; }
+      .nd { position: absolute; top: 608px; width: 0; }
+      .nd b { position: absolute; left: -11px; top: 23px; width: 22px; height: 22px; border-radius: 50%; background: #f7f3ea; border: 4px solid #0a0f1c; }
+      .nd .yy { position: absolute; left: -120px; width: 240px; text-align: center; top: -74px; font: 700 76px/1 Teko, sans-serif; color: #f7f3ea; }
+      .nd .tt { position: absolute; left: -130px; width: 260px; text-align: center; top: 76px; font: 500 30px/1.15 Mukta, sans-serif; color: #dfe3ea; }
+      .nd.hot .yy { color: var(--acc); }
+      #quote { position: absolute; left: 60px; top: 850px; width: 890px; font: 700 52px/1.22 Mukta, sans-serif; color: #f7f3ea; opacity: 0; }
+      #quote small { display: block; font: 500 32px/1.2 Mukta, sans-serif; color: var(--acc); margin-top: 10px; }
+      /* the vote */
+      #vote { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+      #vHead { position: absolute; left: 60px; top: 262px; font-size: 84px; line-height: 1; color: #f7f3ea; white-space: nowrap; }
+      #vSub { position: absolute; left: 62px; top: 352px; font: 500 38px/1.1 Mukta, sans-serif; color: #dfe3ea; }
+      #vProp { position: absolute; left: 60px; top: 432px; width: 900px; font: 700 50px/1.25 Mukta, sans-serif; color: #f7f3ea; }
+      #vProp b { color: var(--acc); font: 700 84px/0.8 Teko, sans-serif; }
+      #vBar { position: absolute; left: 60px; top: 640px; width: 900px; height: 120px; background: rgba(247, 243, 234, 0.14); }
+      #vYes { position: absolute; left: 0; top: 0; height: 120px; background: var(--acc); transform-origin: 0 50%; }
+      #vNo { position: absolute; top: 0; height: 120px; background: #8792a6; transform-origin: 0 50%; }
+      #vNeed { position: absolute; top: 560px; width: 6px; height: 280px; background: #f7f3ea; }
+      #vNeedL { position: absolute; top: 470px; font-size: 76px; line-height: 1; color: #f7f3ea; white-space: nowrap; }
+      #vYesL { position: absolute; left: 60px; top: 780px; font-size: 84px; line-height: 1; color: var(--acc); white-space: nowrap; }
+      #vNoL { position: absolute; top: 780px; font-size: 84px; line-height: 1; color: #b8c1d1; white-space: nowrap; }
+      #vGap { position: absolute; top: 900px; left: 60px; font: 700 50px/1.15 Mukta, sans-serif; color: #f7f3ea; }
+      #vGap b { color: var(--acc2); }
+      #fell { position: absolute; left: 520px; top: 1010px; padding: 2px 26px 0; border: 8px solid var(--acc2); color: var(--acc2); font-size: 116px; line-height: 1.12; background: rgba(8, 12, 24, 0.75); opacity: 0; white-space: nowrap; }
+      /* census 2027 */
+      #cen { position: absolute; left: 60px; top: 262px; opacity: 0; }
+      #cen .a { font-size: 200px; line-height: 0.9; color: var(--acc); }
+      #cen .b { font: 700 50px/1.2 Mukta, sans-serif; color: #f7f3ea; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="hi" data-composition-id="main" data-start="0" data-duration="39.400" data-width="1080" data-height="1920">
+      <canvas id="gl" class="clip" data-start="0" data-duration="39.400" data-track-index="1"></canvas>
+      <div id="ice" data-layout-ignore></div>
+      <div id="dim" data-layout-ignore></div>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="labels"></div>
+      <svg id="lines" width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+        <line id="lnRJ" stroke="#ffb020" stroke-width="5" opacity="0" /><circle id="dotRJ" r="10" fill="#ffb020" opacity="0" />
+        <line id="lnKL" stroke="#ff5a3c" stroke-width="5" opacity="0" /><circle id="dotKL" r="10" fill="#ff5a3c" opacity="0" />
+      </svg>
+      <div class="kicker">UPSC MAINS · आँकड़ों में संविधान</div>
+      <div class="src" id="srcs">
+        <div id="s0">सीटें: निर्वाचन आयोग · अनुच्छेद 81, 82 · मानचित्र: india-maps-data (असत्यापित)</div>
+        <div id="s1">जनगणना 1971: 54.8 करोड़ · जनगणना 2011: 121.1 करोड़ (भारत के महापंजीयक)</div>
+        <div id="s2">जनगणना 2011 की जनसंख्या ÷ लोक सभा सीटें · हमारी गणना</div>
+        <div id="s3">उद्देश्यों और कारणों का कथन, संविधान (91वाँ संशोधन) विधेयक, 2000 · 42वाँ संशोधन, 1976 · अनुच्छेद 82</div>
+        <div id="s4">संविधान (131वाँ संशोधन) विधेयक, 2026 · लोक सभा, 17 अप्रैल 2026 · स्रोत: PRS Legislative Research</div>
+        <div id="s5">जनगणना 2027: संदर्भ तिथि 1 मार्च 2027 · स्थिति: 10 नवंबर 2026</div>
+      </div>
+      <div id="hook"><div class="a T ol">लोक सभा की</div><div class="b T ol" id="n543">543</div><div class="c T ol">सीटें · राज्यों में बँटवारा</div></div>
+      <div id="stamp" class="T">आधार: 1971</div>
+      <div id="pop">
+        <div class="row"><div class="y T ol">1971</div><div class="v T ol">54.8</div><div class="u T ol">करोड़</div></div>
+        <div class="row"><div class="y T ol">2011</div><div class="v now T ol" id="p11">121.1</div><div class="u T ol">करोड़</div></div>
+      </div>
+      <div id="x2" class="T ol">2.2×</div>
+      <div class="st" id="stRJ"><div class="nm T ol">राजस्थान<span>25 सीटें</span></div><div class="big2 T ol"><span id="vRJ">27.4</span><small>लाख</small></div><div class="sub">लोग प्रति सांसद · ● = 1 लाख</div><div class="dots" id="dRJ"></div></div>
+      <div class="st" id="stKL"><div class="nm T ol">केरल<span>20 सीटें</span></div><div class="big2 T ol"><span id="vKL">16.7</span><small>लाख</small></div><div class="sub">लोग प्रति सांसद</div><div class="dots" id="dKL"></div></div>
+      <div id="tl">
+        <div id="tlHead" class="T ol">सीटों पर रोक</div>
+        <div id="tlWhy" class="ol">उद्देश्य: राज्यों को जनसंख्या स्थिरीकरण के लिए प्रेरित करना</div>
+        <div id="axis"></div><div id="lock"></div>
+        <div class="nd" id="n71"><b></b><div class="yy">1971</div><div class="tt">जनगणना<br />(बँटवारे का आधार)</div></div>
+        <div class="nd" id="n76"><b></b><div class="yy">1976</div><div class="tt">42वाँ संशोधन<br />रोक लगी</div></div>
+        <div class="nd" id="n01"><b></b><div class="yy">2001</div><div class="tt">84वाँ संशोधन<br />रोक बढ़ी</div></div>
+        <div class="nd hot" id="n26"><b></b><div class="yy">2026</div><div class="tt">इसके बाद की<br />पहली जनगणना तक</div></div>
+        <div id="quote" class="ol">“वर्ष 2026 के पश्चात् की गई पहली जनगणना” के आँकड़े प्रकाशित होने तक<small>अनुच्छेद 82 · संविधान (84वाँ संशोधन) अधिनियम, 2001</small></div>
+      </div>
+      <div id="vote">
+        <div id="vHead" class="T ol">131वाँ संशोधन विधेयक</div>
+        <div id="vSub" class="ol">लोक सभा · 17 अप्रैल 2026 · उपस्थित और मतदान करने वाले: 528</div>
+        <div id="vProp" class="ol">प्रस्ताव: लोक सभा में अधिकतम <b>850</b> सीटें<br />(815 राज्य + 35 केंद्रशासित प्रदेश)</div>
+        <div id="vNeedL" class="T ol">ज़रूरी: 352</div>
+        <div id="vBar"><div id="vYes"></div><div id="vNo"></div></div>
+        <div id="vNeed"></div>
+        <div id="vYesL" class="T ol">पक्ष में <span id="yesN">298</span></div>
+        <div id="vNoL" class="T ol">विरोध में 230</div>
+        <div id="vGap" class="ol">दो-तिहाई से <b>54 वोट कम</b> (हमारी गणना)</div>
+        <div id="fell" class="T">गिर गया</div>
+      </div>
+      <div id="cen"><div class="a T ol">2027</div><div class="b ol">जनगणना · संदर्भ तिथि 1 मार्च 2027<br />इसके आँकड़ों के बाद ही नया बँटवारा</div></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      window.__um = SH.init();
+      window.__timelines.main = window.__um.H.tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      const { H, B, E, A, caps, S } = window.__um, Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, G = window.GEO;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // ---- times
+      const t71 = A("b1", "इकहत्तर"), tPop = B("b2"), tDbl = A("b2", "दोगुनी"), tRes = B("b3"), tRJ = A("b3", "राजस्थान"), t27 = A("b3", "सत्ताईस"),
+        tKL = B("b4"), t17 = A("b4", "सत्रह"), tWhy = B("b5"), tWhy2 = A("b5", "कि राज्य"), t84 = B("b6"), t26 = A("b6", "दो हज़ार छब्बीस"), tFirst = A("b6", "पहली जनगणना"),
+        tApr = B("b7"), tBill = A("b7", "इसे बदलने वाला"), tFell = A("b7", "लोक सभा में गिर"), tNeed = A("b7", "चाहिए थे"), tGot = A("b7", "मिले"), tNow = B("b8"), tLoop = A("b8", "और तब तक");
+      // ---- three
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(1080, 1920, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
+      const BG = 0x0a0f1c, scene = new THREE.Scene();
+      scene.background = new THREE.Color(BG); scene.fog = new THREE.Fog(BG, 95, 230);
+      const camera = new THREE.PerspectiveCamera(30, 1080 / 1920, 0.5, 500);
+      scene.add(new THREE.HemisphereLight(0xdfe7ef, 0x0a0f1c, 0.9));
+      const sun = new THREE.DirectionalLight(0xfff0d8, 2.6); sun.position.set(-20, 32, 18); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+      Object.assign(sun.shadow.camera, { left: -26, right: 26, top: 26, bottom: -26, near: 1, far: 120 }); sun.shadow.bias = -0.001; sun.shadow.normalBias = 0.06;
+      scene.add(sun, sun.target);
+      const rim = new THREE.DirectionalLight(0x8fb3d9, 0.7); rim.position.set(14, 12, -30); scene.add(rim);
+      const ground = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.MeshStandardMaterial({ color: 0x0f1626, roughness: 1 }));
+      ground.rotation.x = -Math.PI / 2; ground.position.y = -0.02; ground.receiveShadow = true; scene.add(ground);
+      const map = new THREE.Group(); map.rotation.x = -Math.PI / 2; scene.add(map);
+      const lines = (a) => { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(a, 3)); return g; };
+      const segs = (flat, z) => { const out = []; for (let i = 0; i < flat.length; i += 4) out.push(flat[i], flat[i + 1], z, flat[i + 2], flat[i + 3], z); return out; };
+      const coastMat = new THREE.LineBasicMaterial({ color: 0xeadfc6, transparent: true, opacity: 0.35 });
+      map.add(new THREE.LineSegments(lines(segs(G.coast, 0.01)), coastMat));
+      const col = (h) => new THREE.Color(h);
+      const LOW = col(0x3a4658), HIGH = col(0xf0e6cf), ICE_LO = col(0x2c4152), ICE_HI = col(0xbcd3e2), AMB = col(0xffb020), RED = col(0xff5a3c);
+      const pts = (r) => { const p = []; for (let i = 0; i < r.length; i += 2) p.push(new THREE.Vector2(r[i], r[i + 1])); return p; };
+      const states = G.states.map((s) => {
+        const shapes = s.polys.map((rings) => { const sh = new THREE.Shape(pts(rings[0])); for (let k = 1; k < rings.length; k++) sh.holes.push(new THREE.Path(pts(rings[k]))); return sh; });
+        const mat = new THREE.MeshStandardMaterial({ roughness: 0.62, metalness: 0.04 }), wall = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0 });
+        const mesh = new THREE.Mesh(new THREE.ExtrudeGeometry(shapes, { depth: 1, bevelEnabled: false, curveSegments: 1 }), [mat, wall]);
+        mesh.castShadow = mesh.receiveShadow = true;
+        const grp = new THREE.Group();
+        grp.add(mesh, new THREE.LineSegments(lines(segs(s.edges, 1.002)), new THREE.LineBasicMaterial({ color: BG, transparent: true, opacity: 0.6 })));
+        grp.scale.z = 0.06 + 0.06 * s.seats; map.add(grp);
+        const v = Math.sqrt(s.seats / 80);
+        return { ...s, grp, mat, wall, base: LOW.clone().lerp(HIGH, v), ice: ICE_LO.clone().lerp(ICE_HI, v) };
+      });
+      const RJ = states.find((s) => s.name === "Rajasthan"), KL = states.find((s) => s.name === "Kerala");
+      const tall = states.filter((s) => s.seats >= 20).sort((a, b) => b.seats - a.seats).map((s, i) => {
+        const el = document.createElement("div"); el.className = "n"; el.textContent = s.seats; $("labels").appendChild(el); return { s, el, i };
+      });
+      const mk = (id, n) => { for (let i = 0; i < n; i++) $(id).appendChild(document.createElement("i")); return [...$(id).children]; };
+      const dRJ = mk("dRJ", 27), dKL = mk("dKL", 17);
+      // ---- camera keys [time, position, target]
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      const WIDE = [V(0, 84, 55), V(0, 0, -2.6)], LOWER = [V(-2, 88, 47), V(-2, 0, -7.5)];
+      const KEYS = [[0, ...WIDE], [tPop, V(2, 82, 57), V(0, 0, -2.4)], [tRes + 0.9, ...LOWER], [tKL, V(-3, 87, 47), V(-2.5, 0, -8)], [tKL + 0.9, V(-1, 86, 49), V(-2, 0, -7)],
+        [tWhy, V(-1, 86, 49), V(-2, 0, -7)], [tWhy + 1.0, V(1, 100, 44), V(0, 0, -13)], [tNow, V(-1, 100, 46), V(0, 0, -13)], [Math.min(D - 0.05, tNow + 1.6), ...WIDE], [D, ...WIDE]];
+      const pos = new THREE.Vector3(), tgt = new THREE.Vector3(), tmp = new THREE.Vector3();
+      function placeCamera(t) {
+        let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
+        const [t0, p0, g0] = KEYS[i], [t1, p1, g1] = KEYS[i + 1], u = Z.io3((t - t0) / (t1 - t0));
+        pos.copy(p0).lerp(p1, u); tgt.copy(g0).lerp(g1, u);
+        camera.position.copy(pos); camera.lookAt(tgt); camera.updateMatrixWorld();
+      }
+      const screen = (x, y, z) => { tmp.set(x, y, z).project(camera); return [((tmp.x + 1) / 2) * 1080, ((1 - tmp.y) / 2) * 1920]; };
+      const c = new THREE.Color(), show = (id, o) => { $(id).style.opacity = o; };
+      const NX = { n71: 140, n76: 400, n01: 660, n26: 920 };   // schematic spacing, not to scale
+      Object.entries(NX).forEach(([id, x]) => { $(id).style.left = x + "px"; });
+      const X352 = 60 + 900 * 352 / 528, W298 = 900 * 298 / 528, W230 = 900 * 230 / 528;
+      $("vNeed").style.left = X352 - 3 + "px"; $("vNeedL").style.left = X352 - 330 + "px"; $("vNo").style.left = W298 + "px"; $("vNoL").style.left = 60 + W298 + 40 + "px";
+      H.render = (t) => {
+        placeCamera(t);
+        // ---- the map: frozen at the word 1971, two states lit for the comparison, back to plain for the loop
+        const freeze = Z.io2((t - t71) / 0.9) * (1 - Z.io2((t - tLoop) / 0.8)), focus = F(t, tRes + 0.3, tWhy, 0.6);
+        const aRJ = F(t, tRJ, tWhy, 0.5), aKL = F(t, tKL, tWhy, 0.5);
+        for (const s of states) {
+          c.copy(s.base).lerp(s.ice, freeze);
+          if (s === RJ) c.lerp(AMB, aRJ); else if (s === KL) c.lerp(RED, aKL); else c.multiplyScalar(1 - 0.5 * focus);
+          s.mat.color.copy(c); s.wall.color.copy(c).multiplyScalar(0.62);
+        }
+        show("ice", 0.9 * freeze);
+        const back = F(t, tWhy, tNow, 0.5);                    // the map steps back behind the timeline and the vote
+        show("dim", 0.62 * back);
+        for (const { s, el, i } of tall) {
+          const [x, y] = screen(s.c[0], s.grp.scale.z + 0.3, -s.c[1]);
+          el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -100%)`;
+          el.style.opacity = y > 520 && y < 1260 ? Z.o3((t - 0.15 - i * 0.09) / 0.3) * (1 - F(t, tPop - 0.2, 99, 0.3)) : 0;
+        }
+        // ---- hook and stamp
+        const hk = Math.max(1 - F(t, tPop - 0.25, 99, 0.25), F(t, tLoop, 99, 0.3));
+        show("hook", hk);
+        const st = F(t, t71, tPop - 0.2, 0.12);
+        show("stamp", st); $("stamp").style.transform = `rotate(-6deg) scale(${1.7 - 0.7 * Z.o3((t - t71) / 0.28)})`;
+        // ---- population then and now
+        show("pop", F(t, tPop, tRes - 0.15, 0.25));
+        $("p11").textContent = L(54.8, 121.1, Z.o3((t - tPop - 0.3) / 1.0)).toFixed(1);
+        show("x2", F(t, tDbl, tRes - 0.15, 0.2)); $("x2").style.transform = `scale(${Z.back((t - tDbl) / 0.35)})`;
+        // ---- people per MP: Rajasthan, then Kerala
+        const pm = (id, dots, t0, val, vid) => {
+          const u = Z.o3((t - t0) / 0.9);
+          $(vid).textContent = (val * u).toFixed(1);
+          dots.forEach((d, i) => { d.style.opacity = t - t0 > 0.05 + i * (0.8 / dots.length) ? 1 : 0.18; });
+        };
+        show("stRJ", F(t, tRJ, tWhy - 0.15, 0.25)); pm("stRJ", dRJ, t27, 27.4, "vRJ");
+        show("stKL", F(t, tKL, tWhy - 0.15, 0.25)); pm("stKL", dKL, t17, 16.7, "vKL");
+        const call = (s, ln, dot, a, cardId) => {
+          const [sx, sy] = screen(s.c[0], s.grp.scale.z + 0.05, -s.c[1]), card = $(cardId), cy = card.offsetTop + card.offsetHeight + 8;
+          $(ln).setAttribute("x1", sx); $(ln).setAttribute("y1", sy); $(ln).setAttribute("x2", card.offsetLeft + 150); $(ln).setAttribute("y2", cy);
+          $(dot).setAttribute("cx", sx); $(dot).setAttribute("cy", sy); $(ln).setAttribute("opacity", a * 0.9); $(dot).setAttribute("opacity", a);
+        };
+        call(RJ, "lnRJ", "dotRJ", F(t, tRJ + 0.2, tWhy - 0.15, 0.25), "stRJ"); call(KL, "lnKL", "dotKL", F(t, tKL + 0.2, tWhy - 0.15, 0.25), "stKL");
+        // ---- the freeze, on a timeline
+        show("tl", F(t, tWhy, tApr - 0.15, 0.3));
+        const lockTo = L(NX.n76, L(NX.n01, NX.n26, Z.io2((t - t26) / 0.9)), Z.io2((t - tWhy - 0.3) / 0.9));
+        $("lock").style.left = NX.n76 + "px"; $("lock").style.width = Math.max(0, lockTo - NX.n76) + "px"; show("lock", F(t, tWhy + 0.3, 99, 0.2));
+        show("n71", 1); show("n76", F(t, tWhy + 0.2, 99, 0.25)); show("n01", F(t, t84, 99, 0.25)); show("n26", F(t, t26, 99, 0.25));
+        show("tlWhy", F(t, tWhy2, t84 + 0.2, 0.3)); show("quote", F(t, tFirst - 0.2, 99, 0.3));
+        // ---- the vote of 17 April 2026
+        show("vote", F(t, tApr, tNow - 0.15, 0.3));
+        const yes = Z.o3((t - tGot) / 0.9), no = Z.o3((t - tGot - 0.5) / 0.7);
+        $("vYes").style.width = W298 + "px"; $("vYes").style.transform = `scaleX(${yes})`; $("vNo").style.width = W230 + "px"; $("vNo").style.transform = `scaleX(${no})`;
+        $("yesN").textContent = Math.round(298 * yes);
+        show("vProp", F(t, tBill, tNeed - 0.1, 0.25)); show("vBar", F(t, tNeed - 0.1, 99, 0.25));
+        show("vNeed", F(t, tNeed, 99, 0.2)); show("vNeedL", F(t, tNeed, 99, 0.2)); show("vYesL", F(t, tGot, 99, 0.2)); show("vNoL", F(t, tGot + 0.5, 99, 0.25));
+        show("vGap", F(t, tGot + 1.0, 99, 0.3));
+        const fl = F(t, tFell, 99, 0.12); show("fell", fl); $("fell").style.transform = `rotate(-6deg) scale(${1.7 - 0.7 * Z.o3((t - tFell) / 0.28)})`;
+        // ---- census 2027
+        show("cen", F(t, tNow + 0.1, tLoop - 0.1, 0.25));
+        // ---- sources
+        [[0, tPop], [tPop, tRes], [tRes, tWhy], [tWhy, tApr], [tApr, tNow], [tNow, tLoop]].forEach(([a, b], i) => show("s" + i, t >= a && t < b ? 1 : 0));
+        if (t >= tLoop) show("s0", 1);
+        caps(t);
+        renderer.render(scene, camera);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

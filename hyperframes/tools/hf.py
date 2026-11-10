@@ -8,7 +8,7 @@ usage:
   hf.py reel                     title cards + every rendered sample -> out/hyperframes/visual-samples-reel.mp4
                                  and hyperframes/stills/contact-sheet.jpg
 Ids are folder names under hyperframes/samples (s01-satellite ...) or just the number (1, 01), or folder names under
-hyperframes/videos (ia-poultry ...); "videos" means every video.
+hyperframes/videos (ia-poultry ...) or hyperframes/shorts (ia-southtip ...); "videos" / "shorts" mean every one of them.
 Needs Node 22+ (HyperFrames runs through npx) and ffmpeg on PATH.
 """
 import shutil
@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 LIB = ROOT / "hyperframes"
 SAMPLES = LIB / "samples"
 VIDEOS = LIB / "videos"
+SHORTS = LIB / "shorts"          # vertical Reveal Loop Shorts (docs/SHORTS_FORMAT.md), built by tools/shorts_build.py
 OUT = ROOT / "out" / "hyperframes"
 CARD_SEC = 1.6
 # images a sample uses that already live in public/; copied at sync time instead of kept twice in git
@@ -30,18 +31,27 @@ LINKS = {
     "s13-quote/assets/img/n48_children.png": "public/vx/l48-nomad-letters/clips/n48_children.png",
     "s14-notes/assets/img/p99.png": "public/letters/l48_nomad_letters/pages/p99.png",
 }
+# files a Short borrows from a sample, copied at sync time
+SHORT_LINKS = {"um-parisiman/assets/geo3d.js": "samples/s15-seatmap/assets/geo3d.js"}
 PUBLIC_FONTS = ["Oswald-700.woff2", "Virgil-Regular.woff2"]
 
 
 def project(name):
-    return VIDEOS / name if (VIDEOS / name).is_dir() else SAMPLES / name
+    for d in (SHORTS, VIDEOS):
+        if (d / name).is_dir():
+            return d / name
+    return SAMPLES / name
 
 
 def ids(args):
     names = sorted(p.name for p in SAMPLES.iterdir() if p.is_dir() and p.name.startswith("s"))
     vids = sorted(p.name for p in VIDEOS.iterdir() if p.is_dir() and not p.name.startswith("_")) if VIDEOS.exists() else []
+    shorts = sorted(p.name for p in SHORTS.iterdir() if p.is_dir() and not p.name.startswith("_")) if SHORTS.exists() else []
     if args == ["videos"]:
         return vids
+    if args == ["shorts"]:
+        return shorts
+    vids = vids + shorts
     if not args or args == ["all"]:
         return names
     out = []
@@ -65,9 +75,16 @@ def sync(names):
         for f in PUBLIC_FONTS:
             shutil.copy(ROOT / "public" / "fonts" / f, a / "fonts")
         shutil.copy(LIB / "shared" / "base.css", a / "css")
+        shutil.copy(LIB / "shared" / "shorts.css", a / "css")
+        if project(n).parent == SHORTS:
+            (a / "geo").mkdir(exist_ok=True)
+            shutil.copy(LIB / "shared" / "geo" / "world_land.js", a / "geo")
         if project(n).parent == VIDEOS:
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
+    for dst, src in SHORT_LINKS.items():
+        if (SHORTS / dst).parents[1].is_dir():
+            shutil.copy(LIB / src, SHORTS / dst)
     for dst, src in LINKS.items():
         d = SAMPLES / dst
         d.parent.mkdir(parents=True, exist_ok=True)
@@ -131,7 +148,7 @@ def main():
         sys.exit(__doc__)
     cmd, args = sys.argv[1], sys.argv[2:]
     if cmd == "sync":
-        sync(ids(args) if args else ids([]) + ids(["videos"]))
+        sync(ids(args) if args else ids([]) + ids(["videos"]) + ids(["shorts"]))
     elif cmd == "check":
         sys.exit(subprocess.run(["npx", "--yes", HF, "check"], cwd=project(ids(args[:1])[0])).returncode)
     elif cmd == "snap":

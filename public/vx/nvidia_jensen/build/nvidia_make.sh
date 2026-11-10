@@ -4,9 +4,9 @@
 cd /Volumes/DarwinSSD/MMVideo || exit 1
 export PATH=/opt/homebrew/bin:/usr/bin:/bin:$PATH
 now=$(TZ=Asia/Kolkata date +%H%M)
-if [ "$now" -lt 0645 ] || [ "$now" -gt 2210 ]; then echo "Outside the voice window (06:45-22:10 IST). Now: $now. Stop."; exit 2; fi
-IDS="nvidiajensen nvidiasa nvidiasb nvidiasc nvidiasd"
-/usr/bin/python3 scripts/build_vx.py $IDS || exit 1                # voices every beat (MiniMax key comes from the login shell)
+if [ -z "$NV_FORCE" ] && { [ "$now" -lt 0645 ] || [ "$now" -gt 2210 ]; }; then echo "Outside the voice window (06:45-22:10 IST). Now: $now. Stop."; exit 2; fi
+IDS=(nvidiajensen nvidiasa nvidiasb nvidiasc nvidiasd)
+/usr/bin/python3 scripts/build_vx.py "${IDS[@]}" || exit 1                # voices every beat (MiniMax key comes from the login shell)
 rm -rf /tmp/nvb && npx remotion bundle src/index.ts --out-dir=/tmp/nvb || exit 1
 /usr/bin/python3 scripts/qa_vx.py nvidiajensen /tmp/nvb            # look at out/vx/qa/nvidiajensen/qa_sheet.png before the renders
 mkdir -p out/vx/nvidiajensen

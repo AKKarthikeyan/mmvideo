@@ -1,17 +1,18 @@
 --- src/voxkit.tsx.bak_prenvidia	2026-11-10 00:17:35
-+++ src/voxkit.tsx	2026-11-10 00:17:35
-@@ -4,6 +4,10 @@
++++ src/voxkit.tsx	2026-11-10 00:24:18
+@@ -4,6 +4,11 @@
  import React from "react";
  import {interpolate, spring, useCurrentFrame, useVideoConfig, Easing, staticFile} from "remotion";
  
 +// calm mode (AK, 10 Nov 2026): opt-in per video (data.json calm=true). No overshoot, no drift, so words and numbers hold still.
 +export const CALM = {on: false};
++export const BRAND = {name: "Moat & Margin"};   // per video (data.json brand); the corner chip and end cards read it
 +export const spr = (a: any) => spring(CALM.on ? {...a, config: {damping: 60, stiffness: 140, overshootClamping: true}} : a);
 +
  export const C = {tan: "#C9BB9C", ink: "#1A1A1A", gray: "#8C8C8C", red: "#D62E1F", mustard: "#D9A441", paper: "#EFE6D2", white: "#F7F3EA"};
  export const COND = "Oswald, Impact, 'Arial Narrow', sans-serif";
  export const TYPE = "'American Typewriter', 'Courier New', monospace";
-@@ -53,7 +57,7 @@
+@@ -53,7 +58,7 @@
  // Spring entrance with overshoot, then settle ("cutouts spring up with slight overshoot").
  export const useSpringIn = (start: number, fromY = 120) => {
    const f = useCurrentFrame(); const {fps} = useVideoConfig();
@@ -20,7 +21,7 @@
    return {visible: f >= start, s, ty: (1 - s) * fromY, scale: 0.85 + 0.15 * s};
  };
  
-@@ -124,8 +128,8 @@
+@@ -124,8 +129,8 @@
  export const Stamp: React.FC<{x: number; y: number; start: number; text: string; rot?: number; size?: number}> = ({x, y, start, text, rot = -10, size = 70}) => {
    const f = useCurrentFrame(); const {fps} = useVideoConfig();
    if (f < start) return null;
@@ -31,7 +32,7 @@
    const w = text.length * size * 0.55 + 70, h = size * 1.6;
    return (
      <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${k})`} opacity={0.92}>
-@@ -139,7 +143,7 @@
+@@ -139,7 +144,7 @@
  export const Pin: React.FC<{x: number; y: number; start: number}> = ({x, y, start}) => {
    const f = useCurrentFrame(); const {fps} = useVideoConfig();
    if (f < start) return null;
@@ -40,7 +41,7 @@
    const wob = Math.sin((f - start) / 3) * 10 * Math.max(0, 1 - (f - start) / 24);
    return (
      <g transform={`translate(${x} ${y - (1 - s) * 220}) rotate(${wob})`}>
-@@ -180,6 +184,7 @@
+@@ -180,6 +185,7 @@
  // Slow 2% camera drift across a beat.
  export const Drift: React.FC<{frames: number; cx?: number; cy?: number; children: React.ReactNode}> = ({frames, cx = 540, cy = 960, children}) => {
    const f = useCurrentFrame();
@@ -49,20 +50,20 @@
    const dx = interpolate(f, [0, frames], [0, -10]);
    return <g transform={`translate(${cx + dx} ${cy}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 --- src/vx/VoxEngine.tsx.bak_prenvidia	2026-11-10 00:17:35
-+++ src/vx/VoxEngine.tsx	2026-11-10 00:17:35
++++ src/vx/VoxEngine.tsx	2026-11-10 00:24:18
 @@ -2,13 +2,13 @@
  // Every scene lays itself out for the current composition size; timings come from phrases in the narration.
  import React from "react";
  import {AbsoluteFill, Audio, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing} from "remotion";
 -import {C, COND, TYPE, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
-+import {C, COND, TYPE, CALM, spr, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
++import {C, COND, TYPE, CALM, BRAND, spr, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
  import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
  import {ILLUS} from "./illus";
  
  export const FPS = 30;
  export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
 -export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
-+export type VData = {calm?: boolean; id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
++export type VData = {calm?: boolean; brand?: string; id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
    timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
  
  const isTitle = (b: Beat) => b.scene.type === "title";
@@ -138,22 +139,62 @@
          const pos = i + (rank[i] - i) * sp;
          const y = y0 + pos * rh;
          const lead = sp > 0.6 && rank[i] === 0;
+@@ -560,7 +560,7 @@
+       })}
+       {showTag && <g><rect x={36} y={30} width={D.chapters[ch].length * 15 + 110} height={44} fill={C.ink}/>
+         <text x={52} y={61} fontFamily={TYPE} fontSize={24} fill={C.white}>{`CH ${ch} · ${D.chapters[ch].toUpperCase()}`}</text></g>}
+-      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">Moat &amp; Margin · from the filings</text>
++      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">{BRAND.name} · from the filings</text>
+     </svg>
+   );
+ };
 @@ -585,6 +585,7 @@
    return {frames, starts, total: frames.reduce((a, b) => a + b, 0)};
  };
  export const VoxLong: React.FC<{D: VData}> = ({D}) => {
-+  CALM.on = !!D.calm;
++  CALM.on = !!D.calm; BRAND.name = D.brand || "Moat & Margin";
    const {frames, starts, total} = longLayout(D);
    return (
      <AbsoluteFill style={{background: C.tan}}>
-@@ -639,6 +640,7 @@
+@@ -620,9 +621,9 @@
+     <VoxDefs/><Stage w={1080} h={1920}/>
+     <rect x={60} y={560} width={960} height={170} fill={C.ink} rx={8}/>
+     <text x={540} y={675} fontFamily={COND} fontWeight={700} fontSize={76} textAnchor="middle" fill={C.mustard}>FULL VIDEO: LINKED BELOW</text>
+-    <Strip x={540} y={860} start={0} text="MOAT & MARGIN" size={96}/>
++    <Strip x={540} y={860} start={0} text={BRAND.name.toUpperCase()} size={96}/>
+     <TypeLabel x={110} y={1060} start={0} text="Educational research, not investment advice." size={30} cps={40}/>
+-    <TypeLabel x={110} y={1150} start={0} text="Not a SEBI-registered Research Analyst." size={30} cps={40}/>
++    {BRAND.name === "Moat & Margin" && <TypeLabel x={110} y={1150} start={0} text="Not a SEBI-registered Research Analyst." size={30} cps={40}/>}
+   </svg>
+ );
+ const ShortEnd: React.FC<{title: string}> = ({title}) => {
+@@ -631,14 +632,15 @@
+     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>
+       <VoxDefs/><Stage w={1080} h={1920}/>
+       <Strip x={540} y={640} start={0} text="FULL STORY · LONG VIDEO" size={70} fill={C.red} color={C.white}/>
+-      <Strip x={540} y={800} start={4} text="MOAT & MARGIN" size={96}/>
++      <Strip x={540} y={800} start={4} text={BRAND.name.toUpperCase()} size={96}/>
+       <TypeLabel x={110} y={1010} start={10} text="Every figure from primary documents." size={30} cps={4}/>
+       <TypeLabel x={110} y={1100} start={20} text="Educational research, not investment advice." size={30} cps={4}/>
+-      <TypeLabel x={110} y={1190} start={30} text="Not a SEBI-registered Research Analyst." size={30} cps={4}/>
++      {BRAND.name === "Moat & Margin" && <TypeLabel x={110} y={1190} start={30} text="Not a SEBI-registered Research Analyst." size={30} cps={4}/>}
+     </svg>
    );
  };
  export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
-+  CALM.on = !!D.calm;
++  CALM.on = !!D.calm; BRAND.name = D.brand || "Moat & Margin";
    const {bs, frames} = shortLayout(D, idx);
    let from = 0;
    return (
+@@ -650,7 +652,7 @@
+       {D.shorts[idx].hook && !D.shorts[idx].loop && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
+       <svg width={1080} height={1920} style={{position: "absolute"}}>
+         <text x={540} y={140} fontFamily={COND} fontWeight={700} fontSize={40} textAnchor="middle" fill={C.ink}>{D.shorts[idx].title.toUpperCase()}</text>
+-        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">Moat &amp; Margin · from the filings</text>
++        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">{BRAND.name} · from the filings</text>
+         {D.shorts[idx].loop && <text x={540} y={1898} fontFamily={TYPE} fontSize={22} fill={C.ink} opacity={0.6} textAnchor="middle">Educational research, not investment advice · not SEBI-registered</text>}
+       </svg>
+     </AbsoluteFill>
 --- src/vx/illus/World.tsx.bak_prenvidia	2026-11-10 00:17:48
 +++ src/vx/illus/World.tsx	2026-11-10 00:17:48
 @@ -6,7 +6,7 @@
@@ -200,7 +241,7 @@
  };
  
 --- scripts/build_vx.py.bak_prenvidia	2026-11-10 00:05:31
-+++ scripts/build_vx.py	2026-11-10 00:17:35
++++ scripts/build_vx.py	2026-11-10 00:24:18
 @@ -117,6 +117,7 @@
  }
  
@@ -214,7 +255,7 @@
              b["cues"] = chunks(b["cap"])
          data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
 -        data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
-+        data["calm"] = V.get("calm", False); data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
++        data["calm"] = V.get("calm", False); data["brand"] = V.get("brand", "Moat & Margin"); data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
          json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)
          tot = sum(b["sec"] for b in V["beats"])
          print(f"{V['id']}: {len(V['beats'])} beats, {tot/60:.2f} min narration, {len(clips)} clips")

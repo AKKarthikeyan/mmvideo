@@ -14,7 +14,7 @@ TENK = "NVIDIA 10-K FY2026"
 def _officer_rows(huang_at, rest_at):
     return [dict(cells=[n, r], at=(huang_at if n == "HUANG" else rest_at)) for n, r in OFFICERS]
 
-NV = dict(calm=True, id="nvidiajensen", title="Will NVIDIA Survive Without JENSEN? Explained Like You're 5", voice="English_Diligent_Man",
+NV = dict(calm=True, brand="Moat Atlas", id="nvidiajensen", title="Will NVIDIA Survive Without JENSEN? Explained Like You're 5", voice="English_Diligent_Man",
   keyword="NVIDIA",
   spine="Would NVIDIA survive without Jensen Huang? Three checks: is the recipe written down, are the customers stuck, is there a second chef?",
   chapters=["Cold open", "What happened", "Why Jensen matters", "The moat test", "Has this happened before?", "The answer", "Sources"],
@@ -118,16 +118,16 @@ NV = dict(calm=True, id="nvidiajensen", title="Will NVIDIA Survive Without JENSE
   T(4, "n71", "Famous founders have stepped back before. In August twenty eleven, Steve Jobs handed Apple to Tim Cook. Apple's sales that year: about one hundred and eight billion dollars. Four years on: two hundred and thirty four billion. In January two thousand, Bill Gates handed Microsoft to Steve Ballmer. Microsoft's revenue then: about twenty three billion. Thirteen years on: seventy eight billion.",
     "Famous founders have stepped back before. In August 2011, Steve Jobs handed Apple to Tim Cook. Apple's sales that year: about $108 billion. Four years on: $234 billion. In January 2000, Bill Gates handed Microsoft to Steve Ballmer. Microsoft's revenue then: about $23 billion. Thirteen years on: $78 billion.",
     dict(type="bars", heading="SALES, NOT SHARE PRICE · APPLE AND MICROSOFT FILINGS",
-         rows=[dict(name="APPLE FY2011", v=108.2, label="$108.2B", at="one hundred and eight billion"), dict(name="APPLE FY2015", v=233.7, label="$233.7B", at="two hundred and thirty four billion"),
-               dict(name="MICROSOFT FY2000", v=23.0, label="$23.0B", at="about twenty three billion"), dict(name="MICROSOFT FY2013", v=77.8, label="$77.8B", at="seventy eight billion")])),
+         rows=[dict(name="APPLE FY2011", v=108.2, label="$108.2B", at="Apple's sales that year"), dict(name="APPLE FY2015", v=233.7, label="$233.7B", at="Four years on"),
+               dict(name="MICROSOFT FY2000", v=23.0, label="$23.0B", at="Microsoft's revenue then"), dict(name="MICROSOFT FY2013", v=77.8, label="$77.8B", at="Thirteen years on")])),
   T(4, "n72", "Both companies survived, and both kept growing. So survival is the easy part. The hard part is the next big bet.", None,
     dict(type="kinetic", lines=[dict(t="BOTH SURVIVED.", at="Both companies survived", em=["SURVIVED"]), dict(t="THE HARD PART IS THE NEXT BIG BET.", at="The hard part", em=["BET"])])),
   # ---- 5 · the answer
   title(5, "n80", ["THE ANSWER"], "Chapter five. The answer, like you're five."),
   T(5, "n81", "So, will NVIDIA survive without Jensen? Yes. The recipe is written down, and the diners are stuck with the menu.", None,
     dict(type="castle", heading="ILLUSTRATIVE · OUR VIEW · THE THREE CHECKS", flag="THE RESTAURANT", flagAt=0, moatAt=0,
-         checks=[dict(text="RECIPE WRITTEN DOWN", ok=True, at="recipe is written down"), dict(text="DINERS STUCK (WARNING: 2 BUYERS)", ok=True, at="diners are stuck"),
-                 dict(text="SECOND CHEF: NOT CLEAR", ok=False, at="with the menu")])),
+         checks=[dict(text="RECIPE WRITTEN DOWN", ok=True, at="The recipe"), dict(text="DINERS STUCK (WARNING: 2 BUYERS)", ok=True, at="and the diners"),
+                 dict(text="SECOND CHEF: NOT CLEAR", ok=False, at="are stuck")])),
   T(5, "n81b", "But surviving isn't the same as winning. Jensen's real job was picking the next dish before anyone knew they were hungry for it. That's the hardest thing to replace.", None,
     dict(type="kinetic", lines=[dict(t="SURVIVING IS NOT WINNING.", at="surviving isn't", em=["WINNING"]), dict(t="HE PICKED THE NEXT DISH FIRST.", at="picking the next dish", em=["FIRST"])])),
   T(5, "n82", "Here's what to watch. The board's findings, which have no deadline. NVIDIA's results on the seventeenth of November. A closed-door briefing on the eighteenth that three House committee chairs have asked Jensen to attend. And whether NVIDIA names a successor.",
@@ -153,7 +153,7 @@ VIDEOS.append(NV)
 # ====================================================================== Shorts (one video id each, one Short each)
 # Spine or chapter cuts under SHORTS_ENGINE.md: question, one "but", a turn, an ending; the pointer to the long film is the last line.
 def _short(sid, title_, hook, beats):
-    V = dict(calm=True, id=sid, title=title_, voice="English_Diligent_Man", chapters=["Short"], beats=beats, timelines={"NVT": NVT}, pics={})
+    V = dict(calm=True, brand="Moat Atlas", id=sid, title=title_, voice="English_Diligent_Man", chapters=["Short"], beats=beats, timelines={"NVT": NVT}, pics={})
     V["shorts"] = [dict(title=title_, beats=[b["key"] for b in beats], hook=hook)]
     VIDEOS.append(V)
     return V
@@ -184,7 +184,7 @@ _short("nvidiasb", "Six million programmers can't easily leave NVIDIA", "6 MILLI
     dict(type="clip", clip="nv_cuda", heading=TENK + " · ITEM 1", hl=["Moving it"], stamps=[dict(text="ILLUSTRATIVE: MOVING HOUSE", at="moving your whole house")])),
   T(0, "b4", "Now the twist. Two buyers, never named, made up more than a third of NVIDIA's sales last year: twenty two percent and fourteen.",
     "Now the twist. Two buyers, never named, made up more than a third of NVIDIA's sales last year: 22% and 14%.",
-    dict(type="bars", heading=TENK + " · % OF REVENUE", rows=[dict(name="BUYER A", v=22, label="22%", at="twenty two percent"), dict(name="BUYER B", v=14, label="14%", at="fourteen")],
+    dict(type="bars", heading=TENK + " · % OF REVENUE", rows=[dict(name="BUYER A", v=22, label="22%", at="never named"), dict(name="BUYER B", v=14, label="14%", at="more than a third")],
          stamps=[dict(text="22% + 14% = 36%: OUR SUM", at="more than a third")])),
   T(0, "b5", "Six million can't easily leave. Two buyers carry a third of the sales. Would that hold without Jensen? Our full test is on the channel.", None,
     dict(type="kinetic", lines=[dict(t="SIX MILLION STUCK.", at="Six million can't", em=["STUCK"]), dict(t="TWO BUYERS.", at="Two buyers carry", em=["TWO"]), dict(t="FULL TEST ON THE CHANNEL.", at="Our full test")])),

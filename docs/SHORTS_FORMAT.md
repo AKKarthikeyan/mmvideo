@@ -5,6 +5,9 @@ Shorts on 28 channels in our genres ([`SHORTS_STUDY.md`](SHORTS_STUDY.md)), from
 and from the checked platform facts in [`SHORTS_RULES.md`](SHORTS_RULES.md). Those rules and `scripts/shorts_check.py` still
 apply. This document says what to make and how.
 
+**Three benchmark Shorts are built in this format** (Indica Atlas, UPSC Mains in Hindi, Moat Atlas): see
+[`SHORTS_BENCHMARKS.md`](SHORTS_BENCHMARKS.md) and `hyperframes/shorts/`. Start a new Short by copying the nearest one.
+
 **The format in one line: open on something the viewer already knows, show the thing they don't, in pictures, and end on a
 line that runs back into the first.**
 
@@ -92,6 +95,7 @@ series, all in the Reveal Loop.
 | **Data Kadai** | **Days of Work** | A price measured in days of an average wage | "How many days of work is a [thing]?" |
 | | **In ₹500 Notes** | A big number made physical | "₹[x] in ₹500 notes reaches [distance]" |
 | | **In Your Pocket** | India's trade story told through an object you own | "India exports ₹3 lakh crore of this" |
+| **UPSC Mains (Hindi)** | **आँकड़ों में संविधान** | One constitutional fact, shown in numbers an answer can use | "लोक सभा की सीटें आज भी 1971 से तय हैं" |
 | **The Inventor Desk** | **Why It's Shaped Like That** | The hidden reason behind an everyday Indian object | "Why the third pin on your plug is bigger" |
 | | **Patent Files** | The original drawing of something you use, drawn on screen | "The first [x] looked like this" |
 

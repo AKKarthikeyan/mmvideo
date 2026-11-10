@@ -66,6 +66,8 @@
       #vote { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
       #vHead { position: absolute; left: 60px; top: 262px; font-size: 84px; line-height: 1; color: #f7f3ea; white-space: nowrap; }
       #vSub { position: absolute; left: 62px; top: 352px; font: 500 38px/1.1 Mukta, sans-serif; color: #dfe3ea; }
+      #vProp { position: absolute; left: 60px; top: 432px; width: 900px; font: 700 50px/1.25 Mukta, sans-serif; color: #f7f3ea; }
+      #vProp b { color: var(--acc); font: 700 84px/0.8 Teko, sans-serif; }
       #vBar { position: absolute; left: 60px; top: 640px; width: 900px; height: 120px; background: rgba(247, 243, 234, 0.14); }
       #vYes { position: absolute; left: 0; top: 0; height: 120px; background: var(--acc); transform-origin: 0 50%; }
       #vNo { position: absolute; top: 0; height: 120px; background: #8792a6; transform-origin: 0 50%; }
@@ -103,7 +105,7 @@
         <div id="s1">जनगणना 1971: 54.8 करोड़ · जनगणना 2011: 121.1 करोड़ (भारत के महापंजीयक)</div>
         <div id="s2">जनगणना 2011 की जनसंख्या ÷ लोक सभा सीटें · हमारी गणना</div>
         <div id="s3">उद्देश्यों और कारणों का कथन, संविधान (91वाँ संशोधन) विधेयक, 2000 · 42वाँ संशोधन, 1976 · अनुच्छेद 82</div>
-        <div id="s4">संविधान (131वाँ संशोधन) विधेयक, 2026 · लोक सभा, 17 अप्रैल 2026 · स्रोत: PRS</div>
+        <div id="s4">संविधान (131वाँ संशोधन) विधेयक, 2026 · लोक सभा, 17 अप्रैल 2026 · स्रोत: PRS Legislative Research</div>
         <div id="s5">जनगणना 2027: संदर्भ तिथि 1 मार्च 2027 · स्थिति: 10 नवंबर 2026</div>
       </div>
       <div id="hook"><div class="a T ol">लोक सभा की</div><div class="b T ol" id="n543">543</div><div class="c T ol">सीटें · राज्यों में बँटवारा</div></div>
@@ -128,6 +130,7 @@
       <div id="vote">
         <div id="vHead" class="T ol">131वाँ संशोधन विधेयक</div>
         <div id="vSub" class="ol">लोक सभा · 17 अप्रैल 2026 · उपस्थित और मतदान करने वाले: 528</div>
+        <div id="vProp" class="ol">प्रस्ताव: लोक सभा में अधिकतम <b>850</b> सीटें<br />(815 राज्य + 35 केंद्रशासित प्रदेश)</div>
         <div id="vNeedL" class="T ol">ज़रूरी: 352</div>
         <div id="vBar"><div id="vYes"></div><div id="vNo"></div></div>
         <div id="vNeed"></div>
@@ -150,7 +153,7 @@
       // ---- times
       const t71 = A("b1", "इकहत्तर"), tPop = B("b2"), tDbl = A("b2", "दोगुनी"), tRes = B("b3"), tRJ = A("b3", "राजस्थान"), t27 = A("b3", "सत्ताईस"),
         tKL = B("b4"), t17 = A("b4", "सत्रह"), tWhy = B("b5"), tWhy2 = A("b5", "कि राज्य"), t84 = B("b6"), t26 = A("b6", "दो हज़ार छब्बीस"), tFirst = A("b6", "पहली जनगणना"),
-        tApr = B("b7"), tFell = A("b7", "लोक सभा में गिर"), tNeed = A("b7", "चाहिए थे"), tGot = A("b7", "मिले"), tNow = B("b8"), tLoop = A("b8", "और तब तक");
+        tApr = B("b7"), tBill = A("b7", "इसे बदलने वाला"), tFell = A("b7", "लोक सभा में गिर"), tNeed = A("b7", "चाहिए थे"), tGot = A("b7", "मिले"), tNow = B("b8"), tLoop = A("b8", "और तब तक");
       // ---- three
       const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, preserveDrawingBuffer: true });
       renderer.setPixelRatio(1); renderer.setSize(1080, 1920, false);
@@ -261,6 +264,7 @@
         const yes = Z.o3((t - tGot) / 0.9), no = Z.o3((t - tGot - 0.5) / 0.7);
         $("vYes").style.width = W298 + "px"; $("vYes").style.transform = `scaleX(${yes})`; $("vNo").style.width = W230 + "px"; $("vNo").style.transform = `scaleX(${no})`;
         $("yesN").textContent = Math.round(298 * yes);
+        show("vProp", F(t, tBill, tNeed - 0.1, 0.25)); show("vBar", F(t, tNeed - 0.1, 99, 0.25));
         show("vNeed", F(t, tNeed, 99, 0.2)); show("vNeedL", F(t, tNeed, 99, 0.2)); show("vYesL", F(t, tGot, 99, 0.2)); show("vNoL", F(t, tGot + 0.5, 99, 0.25));
         show("vGap", F(t, tGot + 1.0, 99, 0.3));
         const fl = F(t, tFell, 99, 0.12); show("fell", fl); $("fell").style.transform = `rotate(-6deg) scale(${1.7 - 0.7 * Z.o3((t - tFell) / 0.28)})`;

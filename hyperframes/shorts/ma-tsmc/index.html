@@ -99,7 +99,7 @@
       const tWipe = B("b2") - 0.15, tBrk = A("b3", "A data center"), tApple = B("b4"), t100 = A("b4", "Over a hundred"),
         tLad = B("b5"), tTaiwan = A("b5", "from Taiwan"), tPlan = A("b5", "Its plan"), t12 = A("b5", "at twelve"), tNow = A("b5", "Now it's"),
         tGlobe = B("b6"), t92 = A("b6", "ninety-two"), tIsl = A("b6", "sat on one"), tCatch = B("b7"), tNew = A("b7", "The newest"),
-        tNext = A("b7", "Arizona's next"), tBack = B("b8");
+        tNext = A("b7", "Arizona's next"), tBack = B("b8"), tRet = tBack - 0.25;
       // ---- ladder
       const STEPS = [["2020", 12], ["2022", 40], ["2024", 65], ["2025", 165], ["2026", 265]];
       const lad = $("ladder"), bars = [];
@@ -186,9 +186,10 @@
       const show = (id, o) => { $(id).style.opacity = o; };
       H.render = (t) => {
         // ---- satellite + wipe (out at b2, back at b8 so the last frame is the first)
-        const w = Z.io3((t - tWipe) / 1.5) - Z.io3((t - tBack - 0.1) / 1.3);
-        const push = Z.io2((t - tWipe - 0.6) / 4.5) - Z.io2((t - tBack) / 1.4);
-        const s = 1 + 0.035 * Math.min(1, t / 3) * (1 - Z.io2((t - tBack) / 1.4)) + 0.42 * push;
+        const ret = Z.io3((t - tRet) / (D - 0.04 - tRet));          // the way back: complete on the last frame, so the loop is seamless
+        const w = Z.io3((t - tWipe) / 1.5) - ret;
+        const push = Z.io2((t - tWipe - 0.6) / 4.5) - ret;
+        const s = 1 + 0.035 * Math.min(1, t / 3) * (1 - ret) + 0.42 * push;
         $("cam").style.transform = `scale(${s})`;
         const wx = w * 1080;
         $("after").style.clipPath = `inset(0 ${1080 - wx}px 0 0)`;
@@ -199,7 +200,7 @@
         show("d20", 1 - toAfter); show("d26", toAfter);
         const inGlobe = F(t, tGlobe, tNext, 0.3), inLad = F(t, tLad, tGlobe, 0.3);
         show("date", (1 - F(t, tApple - 0.2, tNext, 0.3)) * 1 + 0);
-        $("date").style.opacity = t < tApple ? 1 : t > tBack ? F(t, tBack, 99, 0.3) : 0;
+        $("date").style.opacity = t < tApple ? 1 : t > tRet ? F(t, tRet, 99, 0.3) : 0;
         show("dim", 0.62 * inLad + 0.94 * inGlobe);
         // ---- bracket around the complex, then the Apple number
         const bk = Z.o3((t - tBrk) / 0.5) * (1 - F(t, tLad - 0.2, 99, 0.3));
@@ -231,11 +232,11 @@
         show("g92", g92); show("g92lab", g92);
         $("g92").textContent = Math.round(92 * Z.o3((t - t92) / 0.6)) + "%";
         // ---- next fab chip over the 2026 image
-        show("next", F(t, tNext + 0.15, tBack, 0.25)); $("next").style.transform = `scale(${Z.back((t - tNext - 0.15) / 0.35)})`;
+        show("next", F(t, tNext + 0.15, tRet, 0.25)); $("next").style.transform = `scale(${Z.back((t - tNext - 0.15) / 0.35)})`;
         // ---- sources: one line, matched to what is on screen
         const srcT = [[0, tApple], [tApple, tLad], [tLad, tGlobe], [tGlobe, tNew], [tNew, tNext], [tNext, tBack]];
         srcT.forEach(([a, b], i) => show("s" + i, t >= a && t < b ? 1 : 0));
-        if (t >= tBack) show("s0", 1);
+        if (t >= tBack) { show("s0", 1); show("s5", 0); }
         caps(t);
       };
       H.ready();

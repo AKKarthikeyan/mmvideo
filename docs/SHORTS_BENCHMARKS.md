@@ -88,6 +88,7 @@ figures for GS-II.
 | 1976: freeze begins | 42nd Amendment Act, 1976 | The 84th SOR: "inserted by the Constitution (Forty-second Amendment) Act, 1976 as a measure to boost family planning norms" |
 | "वर्ष 2026 के पश्चात् की गई पहली जनगणना" | Art. 82, as amended by the 84th Amendment Act, 2001 | Official Hindi wording, from the Statement of Objects of the 131st Amendment Bill, 2026 |
 | 131st Amendment Bill fell, 17 Apr 2026 | 298 for, 230 against, 352 needed of 528 present and voting | PRS Legislative Research bill track; press reports |
+| The bill's proposal: at most 850 seats | 815 from states + 35 from Union territories | PRS Legislative Research bill track, Constitution (131st Amendment) Bill, 2026 |
 | "54 वोट कम" | 352 − 298 | Our arithmetic |
 | Census 2027 | reference date 1 March 2027 | Notification of 16 Jun 2025 |
 | Map | state outlines | `india-maps-data` (community data, unverified), as in sample s15 |

@@ -111,7 +111,7 @@
         return q;
       }
       const TITLES = [[0, tMain, "IS THIS INDIA’S<br />SOUTHERN TIP?"], [tMain, tReal, "ONLY THE<br />MAINLAND’S TIP"], [tIP + 1.6, tFrom, "INDIA’S REAL<br />SOUTHERN TIP"],
-        [t04 + 0.9, tEnd, "26 DECEMBER 2004"], [tPts, 99, "IS THIS INDIA’S<br />SOUTHERN TIP?"]];
+        [t04 + 0.9, tEnd, "26 DECEMBER 2004"], [Math.min(D - 0.6, tEnd + 2.1), 99, "IS THIS INDIA’S<br />SOUTHERN TIP?"]];
       H.render = (t) => {
         const c = cam(t);
         cx = MX(c[0]); cy = MY(c[1]); k = 1080 / (c[2] / (40075.017 * Math.cos(c[1] * rad)));

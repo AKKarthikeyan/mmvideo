@@ -28,6 +28,10 @@ Formats A (One Question), B (Ten Years, One Idea) and C (Answer Sheet Short), AK
 5. **pyq_cousins** `{demands, cousins: [{text, key}], next: {text, key}, title}`: the boxes tick, other years' questions arrive, the next card.
 6. **pyq_timeline** `{title, items: [{when, what, key?, red?}], quote?: {text, cite, key}}`: a pen timeline built node by node.
 
+## Answer standard
+Every answer follows `docs/upsc/ANSWER_STANDARD.md` (main checkout), checked by `pyq_tool.py` (rules A1-A10). In sheet text, `_term_`
+marks an underlined key term (drawn as a red underline; the underscores are not written). Headings are boxed.
+
 ## Look notes
 - Handwriting is Noteworthy, a macOS system font, so nothing is downloaded or committed. A Devanagari handwriting face is needed before
   Hindi versions (Kalam, OFL, covers both; downloading it is AK's call).

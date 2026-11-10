@@ -51,6 +51,24 @@ export const Hand: React.FC<{text: string; n: number; size: number; color?: stri
   </span>;
 };
 
+/** handwriting with _underlined terms_ (the underscores are markup, not ink); `u0` = an underline already open at the line start;
+ * `n` counts visible characters, so the reveal speed ignores the markup. Underlines are drawn in red, as toppers do. */
+export const HandU: React.FC<{text: string; n: number; size: number; u0?: boolean; color?: string; weight?: number}> = ({text, n, size, u0 = false, color = INK, weight = 400}) => {
+  const segs: {s: string; u: boolean}[] = []; let u = u0, cur = "";
+  for (const ch of text) { if (ch === "_") { if (cur) segs.push({s: cur, u}); cur = ""; u = !u; } else cur += ch; }
+  if (cur) segs.push({s: cur, u});
+  let left = Math.max(0, n);
+  return <span style={{fontFamily: HAND, fontSize: size, fontWeight: weight, color, whiteSpace: "pre"}}>
+    {segs.map((g, i) => {
+      const k = Math.min(g.s.length, left); left -= k;
+      const whole = Math.floor(k), part = k - whole;
+      return <span key={i} style={g.u ? {textDecoration: `underline ${RED} 2.5px`, textUnderlineOffset: 7, textDecorationSkipInk: "none"} : undefined}>
+        {g.s.slice(0, whole)}{part > 0 && <span style={{opacity: part}}>{g.s.slice(whole, whole + 1)}</span>}
+      </span>;
+    })}
+  </span>;
+};
+
 export const mmss = (min: number) => { const s = Math.max(0, Math.round(min * 60)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
 
 /** the exam clock and the word counter, stacked cards on the right */

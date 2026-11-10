@@ -5,7 +5,7 @@ import {AbsoluteFill} from "remotion";
 import {measure} from "../../shared/fit";
 import type {SceneProps} from "../../cartoon/long/contract";
 import {PaperFinish, SANS, SERIF, clamp, eo, prog} from "../kit";
-import {Boxes, Desk, Gauges, HAND, Hand, INK, Marker, PENCIL, RED, handWidth, paper, wrap, type Demand} from "./kit";
+import {Boxes, Desk, Gauges, HAND, Hand, HandU, INK, Marker, PENCIL, RED, handWidth, paper, wrap, type Demand} from "./kit";
 import {Diagram, type DiagramSpec} from "./diagrams";
 
 const SERIF_F = {family: SERIF, weight: 500, tnum: false, letterSpacing: 0};
@@ -74,6 +74,10 @@ export const PyqXray: React.FC<SceneProps<XSpec>> = ({f, spec, at}) => (
     {spec.directives.map((d, i) => <div key={d.key} style={{position: "absolute", left: 270 + i * 700, top: 330 + (i % 2) * 64, transform: `rotate(${i % 2 ? 0.8 : -1.1}deg)`, opacity: eo(prog(f, at(d.key) + 6, 12))}}>
       <Hand text={`${d.word} = ${d.meaning}`} n={(f - at(d.key) - 6) * 1.6} size={44} color={RED} weight={700}/>
     </div>)}
+    <div style={{position: "absolute", left: 200, width: 1520, top: 512, textAlign: "center", fontFamily: SANS, fontWeight: 600, fontSize: 22, color: "#f1dfc2",
+      opacity: spec.directives.length ? eo(prog(f, at(spec.directives[0].key) + 20, 15)) : 0, textShadow: "0 2px 6px rgba(30,15,5,.6)"}}>
+      These meanings are common teaching practice. UPSC publishes no definitions of directive words.
+    </div>
     {spec.demands.map((d, i) => {
       const s = eo(prog(f, at(d.key), 14)), x = (1920 - spec.demands.length * 420 + 40) / 2 + i * 420;
       return <div key={d.id} style={{position: "absolute", left: x, top: 620 + (1 - s) * 30, width: 380, height: 260, opacity: s, borderRadius: 18,
@@ -91,7 +95,9 @@ export const PyqXray: React.FC<SceneProps<XSpec>> = ({f, spec, at}) => (
 type Block = {kind: "intro" | "head" | "para" | "points" | "close" | "diagram"; text: string; label?: string; diagram?: DiagramSpec};
 type SheetSpec = {blocks: Block[]; from: number; to: number; minutes: [number, number]; total: number; words0: number; budget: number;
   demands: Demand[]; done0: string[]; done: string[]; start?: string};
-type Row = {block: number; y: number; h: number; kind: "line" | "head" | "diagram" | "caption"; text: string; indent: number; units: number};
+type Row = {block: number; y: number; h: number; kind: "line" | "head" | "diagram" | "caption"; text: string; indent: number; units: number; u0?: boolean};
+const vis = (t: string) => t.replace(/_/g, "");
+const markW = (t: string, s: number) => handWidth(vis(t), s);
 const PAGE = {x: 110, y: 60, w: 1130, h: 990}, INNER = {x: 120, w: 960}, LH = 54, SIZE = 33, VIEW = {top: 96, bottom: 900};
 
 const layout = (blocks: Block[]): Row[] => {
@@ -102,11 +108,16 @@ const layout = (blocks: Block[]): Row[] => {
       if (b.label) { rows.push({block: bi, y, h: LH, kind: "caption", text: b.label, indent: 0, units: b.label.length}); y += LH; }
       y += 10; return;
     }
-    if (b.kind === "head") { y += 12; for (const l of wrap(b.text, SIZE + 3, INNER.w)) { rows.push({block: bi, y, h: LH, kind: "head", text: l, indent: 0, units: l.length}); y += LH; } return; }
+    if (b.kind === "head") { y += 12; for (const l of wrap(vis(b.text), SIZE + 3, INNER.w - 40)) { rows.push({block: bi, y, h: LH, kind: "head", text: l, indent: 0, units: l.length}); y += LH; } return; }
     const items = b.kind === "points" ? b.text.split("•").map((s) => s.trim()).filter(Boolean) : [b.text];
     for (const it of items) {
       const ind = b.kind === "points" ? 34 : 0;
-      wrap(it, SIZE, INNER.w - ind).forEach((l, j) => { const tx = (b.kind === "points" && j === 0 ? "• " : "") + l; rows.push({block: bi, y, h: LH, kind: "line", text: tx, indent: j === 0 ? 0 : ind, units: tx.length}); y += LH; });
+      let open = false;
+      wrap(it, SIZE, INNER.w - ind, markW).forEach((l, j) => {
+        const tx = (b.kind === "points" && j === 0 ? "• " : "") + l;
+        rows.push({block: bi, y, h: LH, kind: "line", text: tx, indent: j === 0 ? 0 : ind, units: vis(tx).length, u0: open}); y += LH;
+        if ((l.match(/_/g) || []).length % 2) open = !open;
+      });
     }
     y += 8;
   });
@@ -160,8 +171,12 @@ export const PyqSheet: React.FC<SceneProps<SheetSpec>> = ({f, dur, spec, at}) =>
                 {b.diagram && <Diagram p={n / r.units} w={INNER.w - 40} h={r.h - 10} spec={b.diagram}/>}
               </div>;
             }
+            if (r.kind === "head") return <div key={i} style={{position: "absolute", top: r.y + 2, left: r.indent - 12, height: LH - 6, display: "flex", alignItems: "center",
+              padding: "0 14px", border: n > 0 ? `2.5px solid ${INK}` : "none", borderRadius: 6, opacity: n > 0 ? 1 : 0}}>
+              <Hand text={r.text} n={n} size={SIZE + 3} weight={700}/>
+            </div>;
             return <div key={i} style={{position: "absolute", top: r.y, left: r.indent, height: LH, display: "flex", alignItems: "flex-end", paddingBottom: 6}}>
-              <Hand text={r.text} n={n} size={r.kind === "head" ? SIZE + 3 : r.kind === "caption" ? SIZE - 5 : SIZE} weight={r.kind === "head" ? 700 : 400} under={r.kind === "head"} color={r.kind === "caption" ? PENCIL : INK}/>
+              {r.kind === "caption" ? <Hand text={r.text} n={n} size={SIZE - 5} color={PENCIL}/> : <HandU text={r.text} n={n} size={SIZE} u0={r.u0}/>}
             </div>;
           })}
         </div>
@@ -193,7 +208,7 @@ export const PyqCompare: React.FC<SceneProps<CSpec>> = ({f, spec, at}) => {
     </div>
     <div style={{...paper(990, 90 + (1 - a) * 40, 840, 820, 0.8, a), padding: "36px 44px"}}>
       <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 24, letterSpacing: "0.16em", color: "#4f7a3a"}}>{spec.title_good}</div>
-      {spec.heads.map((h, i) => <div key={i} style={{marginTop: 22}}><Hand text={h} n={999} size={32} weight={700} under/></div>)}
+      {spec.heads.map((h, i) => <div key={i} style={{marginTop: 22}}><Hand text={vis(h)} n={999} size={32} weight={700} under/></div>)}
       {spec.fig && <div style={{marginTop: 22}}><Hand text={"+ " + spec.fig} n={999} size={30} color={PENCIL}/></div>}
       <div style={{position: "relative", marginTop: 40, height: 300}}>
         <Boxes x={0} y={0} items={spec.demands} shown={() => 1} ticked={() => 1} size={28}/>

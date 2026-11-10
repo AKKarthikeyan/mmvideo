@@ -129,6 +129,11 @@ significant at 5% (and not under a one-year shift), which is about what chance g
 gives Maharashtra +0.39, Karnataka +0.11, Gujarat +0.33, far from the RBI's quarterly 0.90, 0.79, 0.66, so annual data cannot reproduce or
 extend the RBI result. Do not put these numbers on a Short or call them the RBI's. A real extension needs quarterly state GSVA, which most
 states do not publish.
+**All-India quarterly check (our calculation).** `tools/vnp46a3_monthly_sums.py` streams NASA monthly tiles into `data/nightlight_india_monthly.csv`
+(Apr 2012 to Sep 2026); `tools/nightlight_india_gdp_corr.py` correlates quarterly night-light growth with real GDP growth (OECD/FRED copy of MoSPI figures)
+over 53 quarters. All quarters: r = +0.46, but that is the Covid collapse and rebound; without the Covid quarters r = +0.23 (p = 0.12), and also
+without 2022-23 (Suomi NPP step) r = -0.04. So no simple, robust relationship at national level, which says nothing against the RBI's state results
+(they use a cleaned, modelled light series and quarterly state GSVA). Do not quote these numbers on a Short.
 Territories under 700 world-pixels (about 400 km) get a minimum-size crop, so Delhi, Chandigarh, Goa and the like show their
 surroundings; Lakshadweep is nearly dark in the data. **Hold Jammu & Kashmir and Ladakh** until their boundaries are checked against
 Survey of India (the district data is community data and the tool leaves out the unassigned districts).

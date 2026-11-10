@@ -14,6 +14,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
 | Shorts and Reels rules, all channels (and the gate that checks a built Short) | `docs/SHORTS_FORMAT.md` (the Reveal Loop), `docs/SHORTS_BENCHMARKS.md` and `hyperframes/shorts/` (three benchmark Shorts), `docs/SHORTS_RULES.md`, `docs/SHORTS_STUDY.md`, `docs/SHORTS_FACTCHECK.md`, `scripts/shorts_check.py`, `scripts/shorts_study/` |
 | Premium explainer visuals (HyperFrames library, 15 samples) | `hyperframes/` (`hyperframes/README.md`), `hyperframes/tools/hf.py` |
+| Licensed photos for a video (CC0 / CC BY / CC BY-SA, credits kept with them) | `public/vx/<id>/img/` (`CREDITS.md`, `credits.json`, `pending.json`), `scripts/fetch_pics.py` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits
 `vx_letters.py` and `LetterVideos.tsx`. Append to shared files, never replace another session's entries.

@@ -7,12 +7,18 @@ usage:
   shorts_build.py mux <id ...|all>                after `hf.py render <id>`: add voice + music bed ->
                                                   out/hyperframes/<id>-final.mp4
   shorts_build.py check <id ...|all>              run scripts/shorts_check.py on the built timings
+  shorts_build.py verify <id ...|all>             transcribe every voiced beat (faster-whisper, local) and print it next to
+                                                  the script: the voice sometimes repeats or drops words, and this is how
+                                                  a session that cannot listen checks it. Needs `pip install faster-whisper`.
 
 A Short is a list of beats; a beat is a list of (say, cap) chunks. `say` is what the voice reads (numbers in words);
 `cap` is the 2-4 word caption shown while it is read (*word* = accent colour). `ev` lists phrases at which the picture
 changes (a new scene or element), so shorts_check.py can measure how long any picture is held. The last beat runs
 back into the first (loop). Without a working key (or with --no-tts) timings are estimated from text length and the
 Short is silent: fine for layout work, not for publishing.
+
+The voice is not deterministic. A beat whose length is far off the others for its text is voiced again (up to three
+times, shortest kept), and pauses longer than 0.42 s inside a beat are cut to 0.3 s.
 
 Voice: MINIMAX_API_KEY in the environment, or a key the cloud session's proxy adds to api.minimax.io
 (then any placeholder value works). Voices are in VOICE below; Hindi must be ear-checked by a native speaker.
@@ -150,7 +156,22 @@ def pcm(path):
     a = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768
     # trim leading / trailing silence so beats sit tight against each other
     idx = np.where(np.abs(a) > 0.01)[0]
-    return a[max(0, idx[0] - 400): idx[-1] + 2000] if len(idx) else a
+    a = a[max(0, idx[0] - 400): idx[-1] + 2000] if len(idx) else a
+    # shorten long pauses inside the beat: 20 ms windows below the floor, runs over 0.42 s cut to 0.3 s
+    w = 882; n = len(a) // w; quiet = np.abs(a[: n * w]).reshape(n, w).max(1) < 0.012
+    keep = np.ones(len(a), dtype=bool); i = 0
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            if (j - i) * w / SR > 0.42 and i > 0 and j < n:
+                cut0 = i * w + int(0.15 * SR); cut1 = j * w - int(0.15 * SR)
+                keep[cut0:cut1] = False
+            i = j
+        else:
+            i += 1
+    return a[keep]
 
 
 def cap_html(c):
@@ -162,18 +183,28 @@ def story(sid, use_tts=True):
     sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
-    for bid, chunks, ev in sp["beats"]:
-        say = " ".join(c[0] for c in chunks)
-        f = adir / (hashlib.sha1((VOICE[lang]["voice_id"] + say).encode()).hexdigest()[:12] + ".mp3")
-        a = None
-        if voiced and not f.exists():
-            voiced = tts(say, lang, f)
-            if not voiced:
-                print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates")
-        if voiced and f.exists():
-            a = pcm(f); sec = len(a) / SR
-        else:
-            sec = max(0.7, len(say) / cps)
+    says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
+    clip = lambda say, k=0: adir / (hashlib.sha1((VOICE[lang]["voice_id"] + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
+    audio = {}
+    if voiced:
+        for say in says:
+            if not clip(say).exists() and not tts(say, lang, clip(say)):
+                print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates"); voiced = False; break
+            audio[say] = pcm(clip(say))
+    if voiced:                                  # a beat far slower than the rest for its text was probably said twice: voice it again
+        rate = {say: len(a) / SR / len(say) for say, a in audio.items()}; med = sorted(rate.values())[len(rate) // 2]
+        for say in says:
+            k = 0
+            while rate[say] > 1.4 * med and len(say) > 12 and k < 3:
+                k += 1
+                if clip(say, k).exists() or tts(say, lang, clip(say, k)):
+                    a = pcm(clip(say, k))
+                    if len(a) < len(audio[say]):
+                        audio[say] = a; rate[say] = len(a) / SR / len(say)
+                        print(f"  {sid}: re-voiced a slow beat ({len(a) / SR:.1f} s): {say[:40]}")
+    for (bid, chunks, ev), say in zip(sp["beats"], says):
+        a = audio.get(say) if voiced else None
+        sec = len(a) / SR if a is not None else max(0.7, len(say) / cps)
         tot = sum(len(c[0]) for c in chunks); acc = 0
         for csay, ccap in chunks:
             c0 = t + sec * acc / tot; acc += len(csay); c1 = t + sec * acc / tot
@@ -193,8 +224,9 @@ def story(sid, use_tts=True):
     (d / "check.json").write_text(json.dumps(chk, ensure_ascii=False, indent=1), encoding="utf-8")
     if voiced:
         mix = np.zeros(int(dur * SR) + SR, dtype=np.float32)
-        for t0, a in clips:
+        for (t0, a), b in zip(clips, beats):
             i = int(t0 * SR); mix[i:i + len(a)] += a
+            write_wav(adir / f"{b['id']}.wav", a)          # the clip as used, for `verify`
         write_wav(adir / "voice.wav", mix[: int(dur * SR)])
     else:
         (adir / "voice.wav").unlink(missing_ok=True)
@@ -249,6 +281,27 @@ def mux(sid):
     print(out)
 
 
+def verify(sid):
+    """Transcribe each beat as used and print it under the script line. Flags a beat whose transcript is much longer
+    or shorter than the script (a repeat or a dropped phrase). Spelling differences are normal: read the words."""
+    from faster_whisper import WhisperModel
+    sp = S[sid]; lang = sp["lang"][:2]; adir = OUT / "shorts_audio" / sid
+    model = WhisperModel("small", device="cpu", compute_type="int8"); bad = 0
+    print(f"{sid} ({sp['lang']})")
+    for bid, chunks, _ in sp["beats"]:
+        say = " ".join(c[0] for c in chunks); cap = re.sub(r"\*", "", " ".join(c[1] for c in chunks)); f = adir / f"{bid}.wav"
+        if not f.exists():
+            print(f"  {bid}: no clip (build the story with a voice key first)"); bad += 1; continue
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(f), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
+        segs, _ = model.transcribe(np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768, language=lang, beam_size=5)
+        heard = " ".join(x.text.strip() for x in segs)
+        ratio = len(heard.split()) / max(1, len(cap.split()))
+        flag = "CHECK" if ratio > 1.45 or ratio < 0.6 else "ok   "
+        bad += flag == "CHECK"
+        print(f"  {flag} {bid}  script: {say}\n            heard:  {heard}")
+    print(f"  {bad} beat(s) to check" if bad else "  every beat matches its script in length; read the lines above for wrong words")
+
+
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
@@ -261,6 +314,8 @@ def main():
             story(n, "--no-tts" not in sys.argv)
         elif cmd == "mux":
             mux(n)
+        elif cmd == "verify":
+            verify(n)
         elif cmd == "check":
             subprocess.run([sys.executable, str(ROOT / "scripts" / "shorts_check.py"), "--file", str(SHORTS / n / "check.json")])
         else:

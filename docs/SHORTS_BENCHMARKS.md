@@ -4,21 +4,27 @@ AK asked for one benchmark Short each for **Indica Atlas (English, India)**, **U
 (English, US)**, built in the Reveal Loop ([`SHORTS_FORMAT.md`](SHORTS_FORMAT.md)). These are the reference for every
 later Short on those channels: copy the nearest one and change the story.
 
-| Id | Channel · series | Title | Length (estimated) | Picture |
+| Id | Channel · series | Title | Length | Picture |
 | --- | --- | --- | --- | --- |
-| `ia-southtip` | Indica Atlas · Not Where You Think | Kanyakumari is NOT India's southern tip | ≈ 35 s | One continuous zoom, from the map of India to the coast of Great Nicobar |
-| `um-parisiman` | UPSC Mains (Hindi) · आँकड़ों में संविधान | लोक सभा की सीटें आज भी 1971 से तय हैं | ≈ 39 s | 3D seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
-| `ma-tsmc` | Moat Atlas · From Orbit | This was empty Arizona desert in 2020 | ≈ 36 s | Satellite before/after wipe, investment ladder, globe |
+| `ia-southtip` | Indica Atlas · Not Where You Think | Kanyakumari is NOT India's southern tip | 30.6 s | One continuous zoom, from the map of India to the coast of Great Nicobar |
+| `um-parisiman` | UPSC Mains (Hindi) · आँकड़ों में संविधान | लोक सभा की सीटें आज भी 1971 से तय हैं | 39.4 s | 3D seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
+| `ma-tsmc` | Moat Atlas · From Orbit | This was empty Arizona desert in 2020 | 35.1 s | Satellite before/after wipe, investment ladder, globe |
 
-**Status: picture-locked silent drafts.** Timings are estimated from the text. The MiniMax key saved for this cloud session
-was refused by MiniMax ("login fail"), so no voice could be made here. With a working key, the commands below re-time each
-Short to the real voice and add the sound; nothing else changes. Hindi narration must be ear-checked by a native speaker
-before publishing (as in `AUDIO_TRACKS.md`).
+**Status (10 Nov 2026): voiced with MiniMax, timed to the voice, rendered and muxed** to
+`out/hyperframes/<id>-final.mp4` (not in git). All three pass the Shorts gate with no FAIL, and each ends on its opening
+frame. Still to do before publishing:
+- **AK listens to all three.** The session that built them cannot hear. It checked every line by transcription
+  (`shorts_build.py verify`): the English lines match the script word for word, and the Hindi lines match in content.
+- **A native speaker ear-checks the Hindi** (pronunciation of चौरासीवें, "चाहिए थे तीन सौ बावन", and the pace), as in
+  `AUDIO_TRACKS.md`.
+- **The music bed** is a quiet code-made pad at about −26 dB under the voice; swap it for the channel's own bed if there
+  is one.
 
 ## Build
 
 ```sh
 python3 hyperframes/tools/shorts_build.py story all     # voice each beat (MiniMax), write story.js timings and check.json
+python3 hyperframes/tools/shorts_build.py verify all    # transcribe each voiced beat and print it under the script line
 python3 hyperframes/tools/hf.py sync shorts
 python3 hyperframes/tools/shorts_build.py check all     # the Shorts gate (scripts/shorts_check.py)
 python3 hyperframes/tools/hf.py check ia-southtip       # HyperFrames lint, layout and contrast
@@ -28,6 +34,9 @@ python3 hyperframes/tools/shorts_build.py mux ia-southtip   # -> out/hyperframes
 
 - **Voice key:** `MINIMAX_API_KEY` in the environment (on the Mac), or a key the cloud session's proxy adds to
   `api.minimax.io`. `--no-tts` builds with estimated timings.
+- **The voice is not deterministic.** On the first build one Hindi beat came back with its sentence said twice (9.9 s
+  for a 4.3 s line). The tool now voices a beat again when it is far slower than the others for its text, cuts pauses
+  over 0.42 s to 0.3 s, and `verify` prints what was actually said. Run `verify` after every voiced build.
 - **Scripts** live in `hyperframes/tools/shorts_build.py` (`S[...]`): each beat is a list of (what the voice says, the 2–4
   word caption). The page (`hyperframes/shorts/<id>/index.html`) hangs every picture change on a spoken phrase with
   `A("b4", "phrase")`, so the picture follows the voice whatever its length. If you reword a line, update the phrases the

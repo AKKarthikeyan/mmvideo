@@ -3,13 +3,13 @@ window.STORY = {
  "channel": "Moat Atlas",
  "lang": "en-US",
  "title": "This was empty Arizona desert in 2020",
- "dur": 36.333,
- "voiced": false,
+ "dur": 35.067,
+ "voiced": true,
  "beats": [
   {
    "id": "b1",
    "t0": 0.0,
-   "sec": 3.097,
+   "sec": 3.156,
    "say": "In twenty twenty, this was empty Arizona desert.",
    "ev": [
     "In twenty",
@@ -18,8 +18,8 @@ window.STORY = {
   },
   {
    "id": "b2",
-   "t0": 3.217,
-   "sec": 0.7,
+   "t0": 3.276,
+   "sec": 0.588,
    "say": "Watch.",
    "ev": [
     "Watch"
@@ -27,8 +27,8 @@ window.STORY = {
   },
   {
    "id": "b3",
-   "t0": 4.037,
-   "sec": 2.0,
+   "t0": 3.984,
+   "sec": 2.75,
    "say": "A warehouse? A data center? No.",
    "ev": [
     "A warehouse",
@@ -38,8 +38,8 @@ window.STORY = {
   },
   {
    "id": "b4",
-   "t0": 6.157,
-   "sec": 5.806,
+   "t0": 6.855,
+   "sec": 4.641,
    "say": "This is where Apple now gets chips for the iPhone. Over a hundred million chips this year.",
    "ev": [
     "This is where",
@@ -48,8 +48,8 @@ window.STORY = {
   },
   {
    "id": "b5",
-   "t0": 12.083,
-   "sec": 8.129,
+   "t0": 11.615,
+   "sec": 7.819,
    "say": "The builder is T S M C, from Taiwan. Its plan here started at twelve billion dollars. Now it's two hundred sixty-five billion.",
    "ev": [
     "The builder",
@@ -60,8 +60,8 @@ window.STORY = {
   },
   {
    "id": "b6",
-   "t0": 20.332,
-   "sec": 7.097,
+   "t0": 19.554,
+   "sec": 6.971,
    "say": "Why here? In twenty nineteen, ninety-two percent of the world's most advanced chip capacity sat on one island.",
    "ev": [
     "Why here",
@@ -71,8 +71,8 @@ window.STORY = {
   },
   {
    "id": "b7",
-   "t0": 27.549,
-   "sec": 7.355,
+   "t0": 26.645,
+   "sec": 6.824,
    "say": "But here's the catch. The newest chips are still made in Taiwan. Arizona's next fab starts in twenty twenty-seven.",
    "ev": [
     "But here's",
@@ -82,8 +82,8 @@ window.STORY = {
   },
   {
    "id": "b8",
-   "t0": 35.024,
-   "sec": 1.161,
+   "t0": 33.589,
+   "sec": 1.349,
    "say": "And six years ago?",
    "ev": [
     "And six"
@@ -93,132 +93,132 @@ window.STORY = {
  "caps": [
   {
    "t0": 0.0,
-   "t1": 1.12,
+   "t1": 1.142,
    "html": "In <em>2020,</em>"
   },
   {
-   "t0": 1.12,
-   "t1": 3.217,
+   "t0": 1.142,
+   "t1": 3.276,
    "html": "this was <em>empty desert.</em>"
   },
   {
-   "t0": 3.217,
-   "t1": 4.037,
+   "t0": 3.276,
+   "t1": 3.984,
    "html": "<em>Watch.</em>"
   },
   {
-   "t0": 4.037,
-   "t1": 4.864,
+   "t0": 3.984,
+   "t1": 5.122,
    "html": "A warehouse?"
   },
   {
-   "t0": 4.864,
-   "t1": 5.83,
+   "t0": 5.122,
+   "t1": 6.45,
    "html": "A data center?"
   },
   {
-   "t0": 5.83,
-   "t1": 6.157,
+   "t0": 6.45,
+   "t1": 6.855,
    "html": "<em>No.</em>"
   },
   {
-   "t0": 6.157,
-   "t1": 7.425,
+   "t0": 6.855,
+   "t1": 7.868,
    "html": "This is where <em>Apple</em>"
   },
   {
-   "t0": 7.425,
-   "t1": 9.427,
+   "t0": 7.868,
+   "t1": 9.468,
    "html": "now gets chips for the <em>iPhone.</em>"
   },
   {
-   "t0": 9.427,
-   "t1": 11.296,
+   "t0": 9.468,
+   "t1": 10.962,
    "html": "Over <em>100 million</em> chips"
   },
   {
-   "t0": 11.296,
-   "t1": 12.083,
+   "t0": 10.962,
+   "t1": 11.615,
    "html": "this year."
   },
   {
-   "t0": 12.083,
-   "t1": 13.616,
+   "t0": 11.615,
+   "t1": 13.089,
    "html": "The builder: <em>TSMC,</em>"
   },
   {
-   "t0": 13.616,
-   "t1": 14.415,
+   "t0": 13.089,
+   "t1": 13.858,
    "html": "from <em>Taiwan.</em>"
   },
   {
-   "t0": 14.415,
-   "t1": 15.815,
+   "t0": 13.858,
+   "t1": 15.204,
    "html": "Its plan here started"
   },
   {
-   "t0": 15.815,
-   "t1": 17.547,
+   "t0": 15.204,
+   "t1": 16.87,
    "html": "at <em>$12 billion.</em>"
   },
   {
-   "t0": 17.547,
-   "t1": 20.332,
+   "t0": 16.87,
+   "t1": 19.554,
    "html": "Now: <em>$265 billion.</em>"
   },
   {
-   "t0": 20.332,
-   "t1": 20.935,
+   "t0": 19.554,
+   "t1": 20.146,
    "html": "<em>Why here?</em>"
   },
   {
-   "t0": 20.935,
-   "t1": 22.207,
+   "t0": 20.146,
+   "t1": 21.395,
    "html": "In 2019,"
   },
   {
-   "t0": 22.207,
-   "t1": 23.412,
+   "t0": 21.395,
+   "t1": 22.579,
    "html": "<em>92%</em>"
   },
   {
-   "t0": 23.412,
-   "t1": 26.224,
+   "t0": 22.579,
+   "t1": 25.341,
    "html": "of the most advanced chip capacity"
   },
   {
-   "t0": 26.224,
-   "t1": 27.549,
+   "t0": 25.341,
+   "t1": 26.645,
    "html": "sat on <em>one island.</em>"
   },
   {
-   "t0": 27.549,
-   "t1": 28.953,
+   "t0": 26.645,
+   "t1": 27.948,
    "html": "But here's <em>the catch.</em>"
   },
   {
-   "t0": 28.953,
-   "t1": 30.023,
+   "t0": 27.948,
+   "t1": 28.941,
    "html": "The <em>newest</em> chips"
   },
   {
-   "t0": 30.023,
-   "t1": 31.694,
+   "t0": 28.941,
+   "t1": 30.492,
    "html": "are still made in <em>Taiwan.</em>"
   },
   {
-   "t0": 31.694,
-   "t1": 32.898,
+   "t0": 30.492,
+   "t1": 31.608,
    "html": "Arizona's next fab"
   },
   {
-   "t0": 32.898,
-   "t1": 35.024,
+   "t0": 31.608,
+   "t1": 33.589,
    "html": "starts in <em>2027.</em>"
   },
   {
-   "t0": 35.024,
-   "t1": 36.305,
+   "t0": 33.589,
+   "t1": 35.059,
    "html": "And <em>six years ago?</em>"
   }
  ]

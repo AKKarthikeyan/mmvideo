@@ -10,7 +10,8 @@
 | Economics (optional) | 16 |
 | Geography (optional) | 15 |
 | Agriculture (optional) | 21 |
-| **All** | **367** |
+| RBI Grade B (economics and finance) | 38 |
+| **All** | **405** |
 
 Each subject is a serial watched in order. A season is a run of episodes that build on one another. Episode numbers run through the whole serial. "Also in this playlist" are episodes from another serial that fit here: the same video sits in both playlists. Topics with more than one part were split by their research; every other topic counts as one video until its NCERT mapping is done, so the totals will grow.
 
@@ -616,4 +617,171 @@ Also in this playlist: GEO-14 The soils of India on one map
 | 19 | AGD-19 | Why so much fruit rots before it reaches you |
 | 20 | AGD-20 | Pests and how to outsmart them |
 | 21 | AGD-21 | Pesticides and plant quarantine |
+
+## RBI Grade B (economics and finance): 38 episodes
+
+### Season 1: Growth and development
+*Measuring growth, poverty and jobs, and what growth costs the planet (ESI, Growth and Development)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-01 | What GDP counts and what it misses *(from Economics)* |
+| + | ECO-44 | Measuring prices and output: CPI WPI and IIP *(from Economics)* |
+| + | ECO-07 | Who counts as poor? The poverty line fight *(from Economics)* |
+| + | ECO-08 | Jobs: why growth does not always hire *(from Economics)* |
+| + | ECO-09 | The rural job guarantee: a right to work *(from Economics)* |
+| + | ECO-24 | Beyond income: HDI basic needs and the SDGs *(from Economics)* |
+| 1 | ECR-01 | What pollution costs: green GDP and carbon prices |
+
+### Season 2: The Indian economy since 1947
+*History, reforms, the Survey and Budget, industry, farms and services (ESI, Indian Economy)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-02 | Why India was poor in 1947: the drain of wealth *(from History)* |
+| + | ECO-03 | Jute cotton and railways: who colonial industry served *(from History)* |
+| + | ECO-04 | Five Year Plans to NITI Aayog: who decides India's priorities *(from Economics)* |
+| + | ECO-05 | The Licence Raj: how a factory needed permission to grow *(from Economics)* |
+| + | ECO-06 | 1991: the crisis that rewrote India's economy *(from Economics)* |
+| + | ECO-31 | Industrial policy from 1948 to now *(from Economics)* |
+| + | ECO-21 | Selling the family silver? Privatisation and disinvestment *(from Economics)* |
+| 2 | ECR-02 | Hire and fire: labour laws and the four codes |
+| 3 | ECR-03 | The Economic Survey: what it says and how it differs from the Budget |
+| 4 | ECR-06 | Why reforms stall: the political economy of India |
+| 5 | ECR-04 | The services boom: why most of India's GDP is services |
+| + | AGR-05 | The Green Revolution and its bill *(from Agriculture)* |
+| + | AGR-07 | MSP: the price that decides what farmers grow *(from Agriculture)* |
+
+### Season 3: Globalisation
+*Payments, trade rules, global lenders, blocs and debt (ESI, Globalisation)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-19 | Balance of payments without the jargon *(from Economics)* |
+| + | ECO-18 | Why the rupee moves *(from Economics)* |
+| + | ECO-22 | WTO: the rulebook behind every trade fight *(from Economics)* |
+| + | ECO-50 | IMF and World Bank: lenders to the world *(from Economics)* |
+| + | ECO-20 | Foreign money in India: FDI and multinationals *(from Economics)* |
+| 6 | ECR-05 | Trade blocs and trade deals: SAARC ASEAN RCEP BRICS |
+| 7 | ECR-09 | What India owes the world: external debt and reserves |
+| 8 | ECR-10 | When America sneezes: how global finance reaches India |
+
+### Season 4: Society and the economy
+*Population, cities, women, caste and inequality (ESI, Social Structure)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-23 | Demographic dividend: a gift with an expiry date *(from Economics)* |
+| + | GEO-31 | Why people leave: migration in India and the world *(from Geography)* |
+| + | GEO-34 | The Indian city: sprawl slums and metros *(from Geography)* |
+| 9 | ECR-07 | Women and work: why so few Indian women are counted |
+| 10 | ECR-08 | Caste, class and inequality: who gets ahead |
+
+### Season 5: Public finance
+*Budget, taxes, deficits, states and subsidies (ESI and Paper III)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-10 | How to read the Union Budget *(from Economics)* |
+| + | ECO-45 | Income tax and other direct taxes *(from Economics)* |
+| + | ECO-12 | Who really pays a tax? GST and the rest *(from Economics)* |
+| + | ECO-11 | Deficit and debt: when a government borrows too much *(from Economics)* |
+| + | ECO-13 | The Finance Commission: how your state gets its share *(from Economics)* |
+| + | ECO-47 | Subsidies and direct benefit transfer *(from Economics)* |
+
+### Season 6: The financial system
+*Money, the RBI, banks, shadow banks, payments, inclusion and governance (Paper III, Financial System)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-33 | What money is: from coins to the digital rupee *(from Economics)* |
+| + | ECO-14 | What the RBI actually does *(from Economics)* |
+| + | ECO-37 | Kinds of banks: public private small payments cooperative *(from Economics)* |
+| + | ECO-51 | Development banks: NABARD SIDBI EXIM and NHB *(from Economics)* |
+| + | ECO-38 | Bad loans: NPAs and how lenders get money back *(from Economics)* |
+| + | ECO-39 | Keeping banks safe: capital rules and deposit insurance *(from Economics)* |
+| 11 | ECR-16 | Shadow banks: NBFCs IL&FS and the rules that followed |
+| 12 | ECR-17 | Who watches the bank? Boards auditors and governance failures |
+| + | ECO-17 | Inclusion: why a bank account changes a family *(from Economics)* |
+| + | ECO-34 | How your payment travels: cheques NEFT RTGS IMPS and UPI *(from Economics)* |
+| + | ECO-35 | Cards ATMs and the fee behind every swipe *(from Economics)* |
+| + | ECO-36 | Crypto and the digital rupee: what counts as money? *(from Economics)* |
+| + | ECO-16 | How banks create money *(from Economics)* |
+| + | ECO-15 | Repo rate and prices: how the RBI fights inflation *(from Economics)* |
+
+### Season 7: Financial markets and risk
+*Money, bond, forex and equity markets, derivatives, risk and project finance (Paper III, Markets and General Topics)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-29 | Shares and bonds: how money is raised in the market *(from Economics)* |
+| 13 | ECR-11 | The money market: call money T-bills CPs and CDs |
+| 14 | ECR-12 | Government bonds and the yield curve |
+| 15 | ECR-13 | The forex market: how currencies actually trade |
+| + | ECO-42 | Mutual funds ETFs REITs and InvITs: pooled investing explained *(from Economics)* |
+| 16 | ECR-14 | Futures options and swaps: derivatives explained (no advice) |
+| 17 | ECR-15 | How banks manage risk: credit market liquidity operational |
+| 18 | ECR-21 | Banks across borders: the BIS Basel and international banking |
+| 19 | ECR-20 | Private cost v social cost: cost-benefit and new ways to fund projects |
+| + | ECO-25 | Who pays for a highway? Investment models *(from Economics)* |
+
+### Season 8: Accounts and ratios
+*Balance sheet, profit and loss, cash flow and ratio analysis (Paper III, Accounting)*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 20 | ECR-18 | Reading a balance sheet and a profit and loss account |
+| 21 | ECR-19 | Cash flow and ratios: debt to equity debtor days return on equity |
+
+### Season 9: DEPR: microeconomics
+*Consumer, firm, market, distribution and welfare theory*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| + | ECO-30 | Demand and supply: how a price is set *(from Economics)* |
+| + | ECO-49 | Monopoly to perfect competition: market structures *(from Economics)* |
+| 22 | ECR-22 | Choosing between goods: utility and indifference curves |
+| 23 | ECR-23 | Game theory: why rivals get stuck |
+| 24 | ECR-24 | Production and cost: returns to scale and the shape of a firm |
+| 25 | ECR-25 | All markets at once: general equilibrium |
+| + | ECD-01 | Marshall v Walras: how a price gets made *(from Economics (optional))* |
+| + | ECD-02 | Who gets what: Ricardo Kaldor and Kalecki *(from Economics (optional))* |
+| + | ECD-03 | When few sellers rule: duopoly and oligopoly *(from Economics (optional))* |
+| + | ECD-04 | Can a society choose fairly? Pareto Arrow and Sen *(from Economics (optional))* |
+
+### Season 10: DEPR: macroeconomics
+*Output, cycles, inflation, money, growth, trade and public finance theory*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 26 | ECR-26 | Booms and slumps: theories of the business cycle |
+| + | ECD-05 | Keynes v the Classics: why unemployment persists *(from Economics (optional))* |
+| + | ECD-06 | New classical and the neo-classical synthesis: what sets interest rates *(from Economics (optional))* |
+| + | ECD-07 | Why people hold cash: Fisher Pigou Friedman Keynes *(from Economics (optional))* |
+| 27 | ECR-28 | AD-AS: one picture of the whole economy |
+| 28 | ECR-27 | The Phillips curve the Taylor rule and the Lucas critique |
+| 29 | ECR-29 | The Solow model: why some countries grow |
+| + | ECD-13 | Harrod and Lewis: two models of take-off *(from Economics (optional))* |
+| + | ECD-14 | Myrdal and Kuznets: does growth spread? *(from Economics (optional))* |
+| + | ECD-08 | Comparative advantage: why trade helps both sides *(from Economics (optional))* |
+| + | ECD-09 | Product cycles and strategic trade *(from Economics (optional))* |
+| + | ECD-10 | Tariff or quota? *(from Economics (optional))* |
+| + | ECD-11 | Fixed floating or currency board *(from Economics (optional))* |
+| + | ECD-12 | Speculative attacks and monetary unions *(from Economics (optional))* |
+| 30 | ECR-30 | The impossible trinity: what a country cannot have at once |
+| 31 | ECR-31 | Taxes spending and debt in theory |
+| + | ECD-15 | Who owes the future? Resources and generations *(from Economics (optional))* |
+
+### Season 11: DEPR: quantitative methods
+*Mathematics, statistics and econometrics for economists*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 32 | ECR-32 | Calculus for economists: marginal and optimal |
+| 33 | ECR-33 | Matrices linear algebra and linear programming |
+| 34 | ECR-34 | Average and spread: statistics and probability for economists |
+| 35 | ECR-35 | Index numbers and time series |
+| 36 | ECR-36 | Regression: what ordinary least squares does |
+| 37 | ECR-37 | Panel data and time-series econometrics |
+| 38 | ECR-38 | Bayes machine learning and AI in economics |
 

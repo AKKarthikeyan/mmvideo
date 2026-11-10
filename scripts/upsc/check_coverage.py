@@ -22,7 +22,14 @@ CODES = (
     + " ".join(f"HIS2-{i}" for i in range(1, 28)) + " "  # p73-76
     + " ".join(f"PSIR-G{i}" for i in range(1, 12)) + " "  # p136-137, Indian Government and Politics only
     + " ".join(f"AGR1-{i}" for i in range(1, 10)) + " "  # p37, paragraphs in printed order
-    + " ".join(f"AGR2-{i}" for i in range(1, 9))  # p38, paragraphs in printed order
+    + " ".join(f"AGR2-{i}" for i in range(1, 9)) + " "  # p38, paragraphs in printed order
+    # RBI Grade B (Advt. RBISB/DA/03/2025-26), economics and finance lines only; printed pages 34-40 of the notice.
+    # ESI = Phase II Paper I of the General cadre; FS/FMK/GT = Paper III a-c; MIC/MAC/ENV/QM/IE/CUR = DEPR papers.
+    # Out of scope: English, reasoning, quantitative aptitude, general awareness, Paper III management and ethics, DSIM statistics.
+    + " ".join(f"RBI-ESI{i}" for i in range(1, 5)) + " " + " ".join(f"RBI-FS{i}" for i in range(1, 8)) + " RBI-FMK "
+    + " ".join(f"RBI-GT{i}" for i in range(1, 10)) + " " + " ".join(f"RBI-MIC{i}" for i in range(1, 6)) + " "
+    + " ".join(f"RBI-MAC{i}" for i in range(1, 8)) + " RBI-ENV " + " ".join(f"RBI-QM{i}" for i in range(1, 4)) + " "
+    + " ".join(f"RBI-IE{i}" for i in range(1, 7)) + " RBI-CUR"
 ).split()
 
 rows = list(csv.DictReader(open(Path(__file__).parents[2] / "docs/upsc/catalogue.csv", encoding="utf-8")))

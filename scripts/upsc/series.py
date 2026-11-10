@@ -110,6 +110,34 @@ ADVANCED = {
 }
 
 
+# RBI Grade B (economics and finance), in the order of the notice's syllabus. "+" shows an episode whose home is another serial.
+RBI = [
+ ("Growth and development", "Measuring growth, poverty and jobs, and what growth costs the planet (ESI, Growth and Development)",
+  ["+ECO-01", "+ECO-44", "+ECO-07", "+ECO-08", "+ECO-09", "+ECO-24", "ECR-01"], []),
+ ("The Indian economy since 1947", "History, reforms, the Survey and Budget, industry, farms and services (ESI, Indian Economy)",
+  ["+ECO-02", "+ECO-03", "+ECO-04", "+ECO-05", "+ECO-06", "+ECO-31", "+ECO-21", "ECR-02", "ECR-03", "ECR-06", "ECR-04", "+AGR-05", "+AGR-07"], []),
+ ("Globalisation", "Payments, trade rules, global lenders, blocs and debt (ESI, Globalisation)",
+  ["+ECO-19", "+ECO-18", "+ECO-22", "+ECO-50", "+ECO-20", "ECR-05", "ECR-09", "ECR-10"], []),
+ ("Society and the economy", "Population, cities, women, caste and inequality (ESI, Social Structure)",
+  ["+ECO-23", "+GEO-31", "+GEO-34", "ECR-07", "ECR-08"], []),
+ ("Public finance", "Budget, taxes, deficits, states and subsidies (ESI and Paper III)",
+  ["+ECO-10", "+ECO-45", "+ECO-12", "+ECO-11", "+ECO-13", "+ECO-47"], []),
+ ("The financial system", "Money, the RBI, banks, shadow banks, payments, inclusion and governance (Paper III, Financial System)",
+  ["+ECO-33", "+ECO-14", "+ECO-37", "+ECO-51", "+ECO-38", "+ECO-39", "ECR-16", "ECR-17", "+ECO-17", "+ECO-34", "+ECO-35", "+ECO-36", "+ECO-16", "+ECO-15"], []),
+ ("Financial markets and risk", "Money, bond, forex and equity markets, derivatives, risk and project finance (Paper III, Markets and General Topics)",
+  ["+ECO-29", "ECR-11", "ECR-12", "ECR-13", "+ECO-42", "ECR-14", "ECR-15", "ECR-21", "ECR-20", "+ECO-25"], []),
+ ("Accounts and ratios", "Balance sheet, profit and loss, cash flow and ratio analysis (Paper III, Accounting)",
+  ["ECR-18", "ECR-19"], []),
+ ("DEPR: microeconomics", "Consumer, firm, market, distribution and welfare theory",
+  ["+ECO-30", "+ECO-49", "ECR-22", "ECR-23", "ECR-24", "ECR-25", "+ECD-01", "+ECD-02", "+ECD-03", "+ECD-04"], []),
+ ("DEPR: macroeconomics", "Output, cycles, inflation, money, growth, trade and public finance theory",
+  ["ECR-26", "+ECD-05", "+ECD-06", "+ECD-07", "ECR-28", "ECR-27", "ECR-29", "+ECD-13", "+ECD-14", "+ECD-08", "+ECD-09", "+ECD-10",
+   "+ECD-11", "+ECD-12", "ECR-30", "ECR-31", "+ECD-15"], []),
+ ("DEPR: quantitative methods", "Mathematics, statistics and econometrics for economists",
+  ["ECR-32", "ECR-33", "ECR-34", "ECR-35", "ECR-36", "ECR-37", "ECR-38"], []),
+]
+
+
 def load_parts():
     """Named parts for researched topics; elsewhere the count from research/upsc/_map/parts.json (an estimate)."""
     f = ROOT / "research/upsc/_map/parts.json"
@@ -125,6 +153,7 @@ def main():
     cat = {r["id"]: r for r in csv.DictReader(open(CAT, encoding="utf-8"))}
     rows, home, problems = [], {}, []
     allserials = list(SERIALS.items()) + [(k, [("Advanced", "Optional-paper level, in syllabus order", v, [])]) for k, v in ADVANCED.items()]
+    allserials.append(("RBI Grade B (economics and finance)", RBI))
     for serial, seasons in allserials:
         ep = 0
         for sn, (stitle, why, ids, also) in enumerate(seasons, 1):

@@ -121,6 +121,14 @@ steps up in 2021-2023 (3.5 to 5.6 M) and reads about 20% above NOAA-20 (VJ146A4)
 steady growth of about +70% 2018-2024. Lights have grown, but the size of the change depends on the satellite, so the Short
 says "compare the pattern, not exact brightness". Do not quote a figure from these pictures. (Superseded version: 2012 vs
 2016 from the public GIBS layer `VIIRS_Black_Marble`, in git history.)
+**Correlations for other states (our calculation, not on any Short).** `tools/vnp46a4_state_sums.py` streams the annual tiles and writes per-state
+light sums (`data/nightlight_state_sums.csv`, 2012-2024); `tools/nightlight_nsdp_corr.py` correlates year-on-year light growth with year-on-year
+Net State Domestic Product at constant 2011-12 prices (RBI Handbook of Statistics on the Indian Economy, Table 6, NSO data, FY 2011-12 to
+2023-24) and writes `data/nightlight_nsdp_corr.csv`. Result: 31 of 32 states are positive (median +0.23) but weak, and only Meghalaya is
+significant at 5% (and not under a one-year shift), which is about what chance gives across 32 tests. For the three RBI states annual data
+gives Maharashtra +0.39, Karnataka +0.11, Gujarat +0.33, far from the RBI's quarterly 0.90, 0.79, 0.66, so annual data cannot reproduce or
+extend the RBI result. Do not put these numbers on a Short or call them the RBI's. A real extension needs quarterly state GSVA, which most
+states do not publish.
 Territories under 700 world-pixels (about 400 km) get a minimum-size crop, so Delhi, Chandigarh, Goa and the like show their
 surroundings; Lakshadweep is nearly dark in the data. **Hold Jammu & Kashmir and Ladakh** until their boundaries are checked against
 Survey of India (the district data is community data and the tool leaves out the unassigned districts).

@@ -7,6 +7,7 @@ usage:
   shorts_build.py mux <id ...|all>                after `hf.py render <id>`: add voice + music bed ->
                                                   out/hyperframes/<id>-final.mp4
   shorts_build.py check <id ...|all>              run scripts/shorts_check.py on the built timings
+  shorts_build.py lines <id ...|all>              print each beat's line, for a local voice or a narrator to read
   shorts_build.py verify <id ...|all>             transcribe every voiced beat (faster-whisper, local) and print it next to
                                                   the script: the voice sometimes repeats or drops words, and this is how
                                                   a session that cannot listen checks it. Needs `pip install faster-whisper`.
@@ -20,6 +21,11 @@ Short is silent: fine for layout work, not for publishing.
 The voice is not deterministic. A beat whose length is far off the others for its text is voiced again (up to three
 times, shortest kept), and pauses longer than 0.42 s inside a beat are cut to 0.3 s.
 
+A local voice (for example "Maya" for Hindi, which lives on AK's machine) replaces MiniMax in two ways:
+  SHORTS_TTS_CMD_HI='<command with {text} and {out}>'   a command that reads the UTF-8 text file {text} and writes the
+                                                        speech to {out} (.wav); the suffix is the language (HI, EN_IN, EN_US)
+  shorts_build.py story um-parisiman --clips <folder>   one recorded file per beat: <folder>/b1.wav ... (wav, mp3 or m4a);
+                                                        `shorts_build.py lines um-parisiman` prints the lines to read
 Voice: MINIMAX_API_KEY in the environment, or a key the cloud session's proxy adds to api.minimax.io
 (then any placeholder value works). Voices are in VOICE below; Hindi must be ear-checked by a native speaker.
 """
@@ -132,6 +138,14 @@ S["um-parisiman"] = dict(
 
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
+    cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
+    if cmd:                                   # a local voice: the command reads {text} and writes {out}
+        txt = path.with_suffix(".txt"); txt.write_text(text, encoding="utf-8"); wav = path.with_suffix(".local.wav")
+        r = subprocess.run(cmd.format(text=str(txt), out=str(wav)), shell=True)
+        if r.returncode != 0 or not wav.exists():
+            print("  local voice command failed for", path.name); return False
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-ac", "1", "-ar", str(SR), str(path)], check=True)
+        return True
     import requests
     v = VOICE[lang]
     body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": v["boost"],
@@ -179,19 +193,27 @@ def cap_html(c):
     return re.sub(r"\*(.+?)\*", r"<em>\1</em>", c)
 
 
-def story(sid, use_tts=True):
+def story(sid, use_tts=True, clips_dir=None):
     sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
     says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
-    clip = lambda say, k=0: adir / (hashlib.sha1((VOICE[lang]["voice_id"] + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
+    engine = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_")) or VOICE[lang]["voice_id"]
+    clip = lambda say, k=0: adir / (hashlib.sha1((engine + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
     audio = {}
-    if voiced:
+    if clips_dir:                               # recorded lines, one file per beat
+        for (bid, _, _), say in zip(sp["beats"], says):
+            hit = [f for ext in ("wav", "mp3", "m4a") for f in [Path(clips_dir) / f"{bid}.{ext}"] if f.exists()]
+            if not hit:
+                sys.exit(f"{sid}: no clip for {bid} in {clips_dir} (expected {bid}.wav, .mp3 or .m4a)")
+            audio[say] = pcm(hit[0])
+        voiced = True
+    elif voiced:
         for say in says:
             if not clip(say).exists() and not tts(say, lang, clip(say)):
                 print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates"); voiced = False; break
             audio[say] = pcm(clip(say))
-    if voiced:                                  # a beat far slower than the rest for its text was probably said twice: voice it again
+    if voiced and not clips_dir:                # a beat far slower than the rest for its text was probably said twice: voice it again
         rate = {say: len(a) / SR / len(say) for say, a in audio.items()}; med = sorted(rate.values())[len(rate) // 2]
         for say in says:
             k = 0
@@ -305,13 +327,20 @@ def verify(sid):
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
-    cmd = sys.argv[1]; args = [a for a in sys.argv[2:] if not a.startswith("--")]
+    cmd = sys.argv[1]; raw = sys.argv[2:]; clips = None
+    if "--clips" in raw:
+        i = raw.index("--clips"); clips = raw[i + 1]; raw = raw[:i] + raw[i + 2:]
+    args = [a for a in raw if not a.startswith("--")]
     names = list(S) if args == ["all"] else args
     for n in names:
         if n not in S:
             sys.exit(f"no Short called {n}; have: {', '.join(S)}")
         if cmd == "story":
-            story(n, "--no-tts" not in sys.argv)
+            story(n, "--no-tts" not in sys.argv, clips)
+        elif cmd == "lines":
+            print(f"{n} · {S[n]['channel']} · {S[n]['lang']}")
+            for bid, chunks, _ in S[n]["beats"]:
+                print(f"  {bid}: " + " ".join(c[0] for c in chunks))
         elif cmd == "mux":
             mux(n)
         elif cmd == "verify":

@@ -15,6 +15,9 @@ later Short on those channels: copy the nearest one and change the story.
 frame. Still to do before publishing:
 - **AK listens to all three.** The session that built them cannot hear. It checked every line by transcription
   (`shorts_build.py verify`): the English lines match the script word for word, and the Hindi lines match in content.
+- **The Hindi Short is voiced with a stand-in.** AK wants the local voice **Maya** for Hindi (10 Nov 2026). Maya is on
+  AK's machine, which the cloud session cannot reach, so `um-parisiman` currently carries MiniMax `hindi_male_1_v2`.
+  Re-voice it on the machine that has Maya (see "Hindi with Maya" below); the picture re-times itself.
 - **A native speaker ear-checks the Hindi** (pronunciation of चौरासीवें, "चाहिए थे तीन सौ बावन", and the pace), as in
   `AUDIO_TRACKS.md`.
 - **The music bed** is a quiet code-made pad at about −26 dB under the voice; swap it for the channel's own bed if there
@@ -44,6 +47,24 @@ python3 hyperframes/tools/shorts_build.py mux ia-southtip   # -> out/hyperframes
 - **Shared pieces:** `hyperframes/shared/shorts.css` (1080 × 1920 layout, caption band, safe areas),
   `shared/lib/shorts.js` (clock, captions, phrase timing), `tools/atlas_base.py` (shaded terrain base maps).
 - **Render time** on the cloud container: about 10–20 minutes a Short.
+
+### Hindi with Maya (a local voice)
+
+On the machine that has Maya, either point the tool at Maya's command, or record the eight lines:
+
+```sh
+# 1. a command that reads the text file {text} and writes speech to {out} (.wav)
+SHORTS_TTS_CMD_HI='<maya command> --text-file {text} --out {out}' python3 hyperframes/tools/shorts_build.py story um-parisiman
+# 2. or: print the lines, save one file per beat (b1.wav ... b8.wav), and build from the folder
+python3 hyperframes/tools/shorts_build.py lines um-parisiman
+python3 hyperframes/tools/shorts_build.py story um-parisiman --clips ~/maya_clips/um-parisiman
+# then, either way
+python3 hyperframes/tools/shorts_build.py verify um-parisiman && python3 hyperframes/tools/shorts_build.py check um-parisiman
+python3 hyperframes/tools/hf.py sync um-parisiman && python3 hyperframes/tools/hf.py render um-parisiman
+python3 hyperframes/tools/shorts_build.py mux um-parisiman
+```
+
+The same two routes work for any language (`SHORTS_TTS_CMD_EN_IN`, `SHORTS_TTS_CMD_EN_US`) and for a human narrator.
 
 ## `ia-southtip` · Indica Atlas
 
@@ -78,7 +99,7 @@ Not used on purpose: the "145 km / 80 nautical miles" figure found online (uncit
 27 lakh people against under 17 lakh in Kerala, and the bill to change it fell in April 2026. Send: an answer-ready set of
 figures for GS-II.
 
-**Script** (voice: `hindi_male_1_v2`)
+**Script** (voice: Maya, AK's local Hindi voice; stand-in until then: MiniMax `hindi_male_1_v2`)
 > लोक सभा की सीटें आज भी इकहत्तर की जनगणना से तय हैं। · तब से आबादी दोगुनी से ज़्यादा हो चुकी है। · नतीजा? राजस्थान में एक सांसद
 > औसतन सत्ताईस लाख लोगों का प्रतिनिधि है। · केरल में, सत्रह लाख से भी कम। · यह रोक इसलिए लगी थी कि राज्य जनसंख्या स्थिर करने पर ज़ोर
 > दें। · चौरासीवें संशोधन ने इसे दो हज़ार छब्बीस के बाद की पहली जनगणना तक बढ़ा दिया। · अप्रैल दो हज़ार छब्बीस में इसे बदलने वाला विधेयक

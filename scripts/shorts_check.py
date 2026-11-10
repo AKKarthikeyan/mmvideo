@@ -21,12 +21,14 @@ Soft rules (WARN):
   S4 the payoff is in the last 30 %: a number, a 'but'/'actually' turn, or a question
   S5 title at most 50 characters (Shorts feed and Reels cover cut longer titles)
   S7 first sentence spoken by 2.5 s (the tightest openers)
+  S8 frame 1 is a picture, not text on a plain background (first beat is not kinetic/strips/list/title) — docs/SHORTS_FORMAT.md
   S6 picture changes at least every 3.0 s
 """
 import json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FPS = 30
+TEXT_ONLY = {"kinetic", "strips", "list", "title"}
 CONNECTORS = ("because", "so", "and", "but", "which", "that's why", "here's why")
 
 
@@ -111,6 +113,8 @@ def check(D, idx):
     add(len(S.get("title", "")) <= 50, "WARN", "S5", f"title {len(S.get('title', ''))} chars")
     add(worst <= 3.0, "WARN", "S6", f"longest hold {worst:.1f} s (aim 3.0)")
     add(first_end <= 2.5, "WARN", "S7", f"first sentence ends at {first_end:.1f} s (aim 2.5)")
+    t0 = (bs[0].get("scene") or {}).get("type", "") if bs else ""
+    add(t0 not in TEXT_ONLY, "WARN", "S8", f"first scene '{t0}'" + (" is text only: open on the subject itself" if t0 in TEXT_ONLY else ""))
     return dur, res
 
 

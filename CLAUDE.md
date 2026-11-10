@@ -7,6 +7,7 @@
   from the matching sample there instead of building from scratch. AK asked for this on 26 Oct 2026.
 - Run `python3 hyperframes/tools/hf.py sync` before checking or rendering a sample; renders go to `out/hyperframes/`.
 - Every visual uses real data with its source on screen; anything illustrative is labelled as such on screen.
+- Every Short is built in the Reveal Loop format, `docs/SHORTS_FORMAT.md` (topic test, beat sheet, series per channel).
 - Shorts and Reels on every channel follow `docs/SHORTS_RULES.md` (AK, 10 Nov 2026; fact-check behind it in
   `docs/SHORTS_FACTCHECK.md`). Write each Short as its own loop script, never a cut-down of long-video beats, and run
   `python3 scripts/shorts_check.py <id>` after the build: fix every FAIL before rendering.

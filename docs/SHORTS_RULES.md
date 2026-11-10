@@ -4,6 +4,9 @@
 against primary sources; the verdicts are in [`SHORTS_FACTCHECK.md`](SHORTS_FACTCHECK.md). The rules apply to Moat & Margin,
 Moat Atlas, Indica Atlas, Data Kadai and The Inventor Desk, on YouTube Shorts and Instagram Reels.
 
+**What to make, and how, is in [`SHORTS_FORMAT.md`](SHORTS_FORMAT.md) (the Reveal Loop), built on our own study of
+5,538 Shorts in our genres ([`SHORTS_STUDY.md`](SHORTS_STUDY.md)).** This file holds the rules every Short must meet.
+
 Each rule carries its basis: **[Official]** YouTube or Instagram says so · **[Data]** a large published dataset (vendor
 studies, directional) · **[Science]** peer-reviewed research · **[House]** AK's formula or our own results · **[Judgement]**
 our call, to revisit with our numbers.
@@ -55,9 +58,11 @@ long-video beats of 12–20 s each, so one picture sits for 15 s. The eight that
 **Rule: no more cut-downs. Every Short is written as its own script in the loop format (`K(...)` kinetic beats plus `T(...)`
 evidence beats, `loop=True`), from the same verified numbers as the long video.** **[House]**
 
-## 3. The beat structure (20–35 s default)
+## 3. The beat structure (24–38 s default; the full beat sheet is in SHORTS_FORMAT.md)
 
 Built on AK's Shorts formula of 1 Oct 2026. Sentence = scene.
+
+Frame 1 is the subject itself, never text on a plain background (S8 in `shorts_check.py`; study finding 5).
 
 | Time | Job | How |
 | --- | --- | --- |
@@ -67,8 +72,10 @@ Built on AK's Shorts formula of 1 Oct 2026. Sentence = scene.
 | last 20–30 % | **The turn** | The payoff beats the expectation the hook set: the number flips, or the obvious reading turns out wrong. |
 | last line | **Loop back** | The last line runs into the first ("…which matters more? Because" → "TVS grew 24%…"). No end card, no "subscribe", no "thanks for watching". |
 
-- **S-length** 20–45 s is our range; 20–35 s is the default. Data on length disagrees: 11–20 s has the highest median views,
-  45–60 s can win at the top when retention holds. Go past 45 s only when every extra beat is a new hit. **[Data]**
+- **S-length** 24–38 s for objects, money splits and single numbers; 45–60 s for maps and geopolitics, only when every
+  extra beat is a new picture and a new turn. Winners in our study: Zack D. Films 24–38 s, Hoyos about 34 s,
+  RealLifeLore and Johnny Harris 50–60 s. **[Data]** `shorts_check.py` warns outside 20–45 s; a map Short up to 60 s may
+  keep that WARN with the reason in the script comment.
 - **S-question** an open question by 8 s. **[Science]** curiosity is an information gap (Loewenstein 1994).
 - **S-turn** the last 30 % holds a number, a "but", or the reveal. **[Science]** reward prediction error: a surprise registers, a
   predictable payoff does not. **[Judgement]** as an editing rule.

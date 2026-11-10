@@ -107,6 +107,28 @@ guessed. Without the file the scene is left out. A missing district means no rep
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 
+## Reveal Loop Shorts (vertical, 1080 × 1920)
+
+`shorts/` holds the benchmark Shorts built in the Reveal Loop format (`docs/SHORTS_FORMAT.md`); scripts, sources and build
+steps are in `docs/SHORTS_BENCHMARKS.md`. `tools/shorts_build.py` holds each script, voices the beats and writes
+`story.js` (timings and captions); the page hangs every picture change on a spoken phrase, so it follows the voice.
+
+| Short | Channel | Picture |
+| --- | --- | --- |
+| `ia-southtip` | Indica Atlas (English, India) | Deep zoom through shaded terrain (z6, z8, z11) into Sentinel-2: Kanyakumari to Indira Point |
+| `um-parisiman` | UPSC Mains (Hindi) | 3D Lok Sabha seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
+| `ma-tsmc` | Moat Atlas (English, US) | Sentinel-2 before/after of TSMC Arizona, investment ladder, per-pixel globe |
+
+```sh
+python3 hyperframes/tools/shorts_build.py story all      # needs a MiniMax key; --no-tts estimates the timings
+python3 hyperframes/tools/hf.py sync shorts
+python3 hyperframes/tools/hf.py render ia-southtip        # then: shorts_build.py mux ia-southtip
+```
+
+Shared: `shared/shorts.css` (layout, caption band, safe areas; Teko and Mukta for Hindi), `shared/lib/shorts.js`,
+`shared/geo/world_land.js` (Natural Earth 1:110m land). `tools/atlas_base.py <zoom> <west> <south> <east> <north> <out.jpg>`
+makes a shaded-relief base map from AWS Terrain Tiles and prints its Mercator bounds for the page.
+
 ## Rules for using these in a published video
 
 - Real data only, with the source on screen. Anything that is not real (a redrawn drawing, an illustration, a generic

@@ -1,0 +1,182 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "Kanyakumari is NOT India's southern tip". Reveal Loop Short, 1080 x 1920.
+     One camera in Web Mercator flies through five image levels: terrain z6, z8, z11 (tools/atlas_base.py) and two
+     Sentinel-2 crops of Great Nicobar (11 Jan 2026). Timings come from story.js. Sources: docs/SHORTS_BENCHMARKS.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: India's real southern tip</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.14) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #title { left: 60px; top: 268px; font-size: 76px; line-height: 1.02; }
+      #x11 { left: 60px; top: 262px; font-size: 250px; }
+      #x11lab { left: 66px; top: 512px; line-height: 1.1; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 9px 14px 11px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: #f2b233; }
+      .tag.ghost { background: none; color: rgba(247, 243, 234, 0.82); letter-spacing: 0.3em; font-size: 34px; -webkit-text-stroke: 6px rgba(4, 10, 18, 0.7); paint-order: stroke fill; }
+      .tag small { display: block; font: 26px/1 Plex, monospace; letter-spacing: 0; margin-top: 7px; }
+      #stamp { position: absolute; left: 520px; top: 520px; font: 700 96px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #ff5a3c; border: 9px solid #ff5a3c; padding: 10px 24px 14px;
+        background: rgba(7, 12, 20, 0.72); opacity: 0; white-space: nowrap; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="35.067" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs">
+        <div id="s0">NCERT Class 9 Geography: the mainland starts at 8°4′N · Terrain: AWS Terrain Tiles</div>
+        <div id="s1">Distance: great-circle, our measurement · Terrain: AWS Terrain Tiles</div>
+        <div id="s2">Position: DGLL lighthouse record, 6°45.2′N 93°49.6′E · Contains modified Copernicus Sentinel data 2026</div>
+        <div id="s3">Great-circle distances, our measurement · Rondo Island: Indonesia base point TD.177</div>
+        <div id="s4">DGLL: Indira Point’s height fell by 4.25 m in the 2004 earthquake and tsunami · Sentinel-2, 11 Jan 2026</div>
+      </div>
+      <div class="lab" id="title"></div>
+      <div class="big" id="x11">11×</div>
+      <div class="lab" id="x11lab">CLOSER TO INDONESIA<br />THAN TO KANYAKUMARI</div>
+      <div id="stamp">NOT QUITE</div>
+      <div class="tag acc" id="tKK">KANYAKUMARI</div>
+      <div class="tag" id="tLat">MAINLAND ENDS · 8°4′N</div>
+      <div class="tag ghost" id="tSL">SRI LANKA</div>
+      <div class="tag ghost" id="tBay">BAY OF BENGAL</div>
+      <div class="tag ghost" id="tIN">INDIA</div>
+      <div class="tag" id="tKm">0 KM</div>
+      <div class="tag acc" id="tIP">INDIRA POINT<small>6°45′N · GREAT NICOBAR</small></div>
+      <div class="tag ghost" id="tID">INDONESIA</div>
+      <div class="tag" id="tRo">RONDO ISLAND</div>
+      <div class="tag acc" id="t160">≈ 160 KM</div>
+      <div class="tag" id="t1800">← KANYAKUMARI ≈ 1,800 KM</div>
+      <div class="tag acc" id="t2004">COAST SANK ≈ 4.25 M</div>
+      <div class="tag" id="tLH">LIGHTHOUSE</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, rad = Math.PI / 180;
+      // ---- Mercator
+      const MX = (lon) => (lon + 180) / 360, MY = (lat) => 0.5 - Math.log(Math.tan(Math.PI / 4 + lat * rad / 2)) / (2 * Math.PI);
+      const LAYERS = [
+        ["l0.jpg", [0.671875, 0.390625, 0.796875, 0.546875]], ["l1.webp", [0.703125, 0.45703125, 0.78125, 0.5]],
+        ["l2.webp", [0.7578125, 0.47753906, 0.765625, 0.48535156]],
+        ["l3.webp", [0.759977496183471, 0.4798862586866361, 0.7611336149276402, 0.48191047883767507]],
+        ["l4.webp", [0.7604517513892273, 0.48079125484812363, 0.7608538041663282, 0.48150971382380464]]];
+      const IMG = LAYERS.map(([f]) => { const im = new Image(); im.src = "assets/img/" + f; return im; });
+      const mc = $("map").getContext("2d"); mc.imageSmoothingEnabled = true; mc.imageSmoothingQuality = "high";
+      const KK = [77.55, 8.078], IP = [93.8267, 6.7533], RO = [95.1125, 6.075];
+      // ---- times
+      const tNot = B("b2"), tMain = B("b3"), tReal = B("b4"), t18 = A("b4", "eighteen hundred"), tSL = A("b4", "Past Sri Lanka"), tBay = A("b4", "across the Bay"),
+        tIP = B("b5"), tGN = A("b5", "on Great"), tFrom = B("b6"), t160 = A("b6", "a hundred and sixty"), t11 = A("b6", "Eleven times"),
+        t04 = B("b7"), t4m = A("b7", "by about four"), tLH = A("b7", "Its lighthouse"), tEnd = B("b8"), tPts = A("b8", "someone points");
+      // ---- camera: [time, lon, lat, width km]; between keys the centre moves in step with the width, so a dive stays on its target
+      const K0 = [78.25, 7.15, 1250];
+      const KEYS = [[0, ...K0], [tReal, 78.05, 7.5, 1080], [tReal + 1.5, 85.7, 7.9, 2550], [tIP - 0.15, 86.2, 7.7, 2450], [tIP + 2.3, 93.845, 6.79, 30], [tFrom, 93.842, 6.785, 26],
+        [tFrom + 1.5, 94.88, 6.4, 610], [t04 - 0.1, 94.9, 6.38, 590], [t04 + 1.7, 93.836, 6.763, 10.5], [tEnd, 93.835, 6.761, 8.8], [Math.min(D - 0.05, tEnd + 2.7), ...K0], [D, ...K0]];
+      function cam(t) {
+        let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
+        const a = KEYS[i], b = KEYS[i + 1], u = C((t - a[0]) / (b[0] - a[0]));
+        const big = Math.abs(Math.log(a[3] / b[3])) > 0.5, e = big ? Z.io3(u) : Z.io2(u);
+        const w = Math.exp(L(Math.log(a[3]), Math.log(b[3]), e));
+        const f = big ? (w - b[3]) / (a[3] - b[3]) : 1 - e;
+        return [L(b[1], a[1], f), L(b[2], a[2], f), w];
+      }
+      let k = 1, cx = 0, cy = 0;
+      const P = (ll) => [540 + (MX(ll[0]) - cx) * k, 960 + (MY(ll[1]) - cy) * k];
+      const g = $("ov").getContext("2d");
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const on = (p, m = 40) => p[0] > m && p[0] < 1080 - m && p[1] > 250 && p[1] < 1500;
+      function ring(p, t, col, r0 = 14) {
+        const pulse = ((t * 0.8) % 1 + 1) % 1;
+        g.beginPath(); g.arc(p[0], p[1], r0 + 46 * pulse, 0, 7); g.strokeStyle = col.replace("1)", `${1 - pulse})`); g.lineWidth = 5; g.stroke();
+        g.beginPath(); g.arc(p[0], p[1], r0 + 8, 0, 7); g.fillStyle = "rgba(4,8,14,0.55)"; g.fill();
+        g.beginPath(); g.arc(p[0], p[1], r0, 0, 7); g.fillStyle = col; g.fill();
+      }
+      function seg(a, b, u, col, w, dash) {   // straight on the map (the two points are close in latitude)
+        const pa = P(a), pb = P(b), q = [L(pa[0], pb[0], u), L(pa[1], pb[1], u)];
+        g.beginPath(); g.moveTo(pa[0], pa[1]); g.lineTo(q[0], q[1]); g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = w + 6; g.setLineDash([]); g.stroke();
+        g.beginPath(); g.moveTo(pa[0], pa[1]); g.lineTo(q[0], q[1]); g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []); g.stroke(); g.setLineDash([]);
+        return q;
+      }
+      const TITLES = [[0, tMain, "IS THIS INDIA’S<br />SOUTHERN TIP?"], [tMain, tReal, "ONLY THE<br />MAINLAND’S TIP"], [tIP + 1.6, tFrom, "INDIA’S REAL<br />SOUTHERN TIP"],
+        [t04 + 0.9, tEnd, "26 DECEMBER 2004"], [tPts, 99, "IS THIS INDIA’S<br />SOUTHERN TIP?"]];
+      H.render = (t) => {
+        const c = cam(t);
+        cx = MX(c[0]); cy = MY(c[1]); k = 1080 / (c[2] / (40075.017 * Math.cos(c[1] * rad)));
+        mc.fillStyle = "#07101c"; mc.globalAlpha = 1; mc.fillRect(0, 0, 1080, 1920);
+        LAYERS.forEach(([f, b], i) => {      // draw only the part of each level that is on screen
+          const im = IMG[i], X0 = 540 + (b[0] - cx) * k, Y0 = 960 + (b[1] - cy) * k, X1 = 540 + (b[2] - cx) * k, Y1 = 960 + (b[3] - cy) * k;
+          const sx = (X1 - X0) / im.naturalWidth, o = i === 0 ? 1 : C((sx - 0.1) / 0.16);
+          const vx0 = Math.max(0, X0), vy0 = Math.max(0, Y0), vx1 = Math.min(1080, X1), vy1 = Math.min(1920, Y1);
+          if (o <= 0 || vx1 <= vx0 || vy1 <= vy0) return;
+          mc.globalAlpha = o;
+          mc.drawImage(im, (vx0 - X0) / sx, (vy0 - Y0) / sx, (vx1 - vx0) / sx, (vy1 - vy0) / sx, vx0, vy0, vx1 - vx0, vy1 - vy0);
+        });
+        g.clearRect(0, 0, 1080, 1920);
+        const pKK = P(KK), pIP = P(IP), pRO = P(RO), far = c[2] > 300;
+        // ---- 8°4'N: where the mainland ends
+        const lat = F(t, tMain + 0.1, tReal + 0.7, 0.3);
+        if (lat > 0) {
+          const y = P([0, 8.0667])[1], u = Z.o3((t - tMain - 0.1) / 0.8);
+          g.globalAlpha = lat; g.beginPath(); g.moveTo(pKK[0] - 520 * u, y); g.lineTo(pKK[0] + 900 * u, y);
+          g.strokeStyle = "#f7f3ea"; g.lineWidth = 4; g.setLineDash([16, 12]); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+        }
+        place("tLat", Math.max(60, pKK[0] - 330), P([0, 8.0667])[1] + 44, F(t, tMain + 0.5, tReal + 0.5, 0.25));
+        // ---- flight line Kanyakumari -> Indira Point, with a running distance
+        const fu = Z.io2((t - t18 + 0.2) / (tIP - 0.5 - t18)), fl = F(t, t18 - 0.2, tIP + 1.2, 0.3) + F(t, tFrom + 0.9, t04, 0.3);
+        if (fl > 0 && far) { g.globalAlpha = Math.min(1, fl); const q = seg(KK, IP, t < tIP + 1.2 ? fu : 1, "#f7f3ea", 6, [18, 12]); g.globalAlpha = 1;
+          place("tKm", q[0] - 250, q[1] - 96, t < tIP ? F(t, t18, tIP - 0.1, 0.2) : 0); $("tKm").textContent = Math.round(1800 * fu).toLocaleString("en-US") + " KM"; }
+        else place("tKm", 0, 0, 0);
+        // ---- Indira Point -> Rondo Island
+        const ru = Z.io2((t - t160 + 0.15) / 0.8);
+        if (t > t160 - 0.15 && t < t04 + 0.6) { g.globalAlpha = 1 - F(t, t04, 99, 0.5); const q = seg(IP, RO, ru, "#f2b233", 8); g.globalAlpha = 1; }
+        const mid = [(pIP[0] + pRO[0]) / 2, (pIP[1] + pRO[1]) / 2];
+        place("t160", mid[0] - 60, mid[1] + 34, F(t, t160 + 0.45, t04, 0.25));
+        place("tRo", pRO[0] + 26, pRO[1] - 28, F(t, tFrom + 1.2, t04, 0.3));
+        place("tID", P([96.25, 4.95])[0] - 150, P([96.25, 4.95])[1], F(t, tFrom + 1.1, t04, 0.3));
+        place("t1800", 56, pIP[1] - 150, F(t, t11, t04, 0.25));
+        if (t > tFrom + 1.2 && t < t04 + 0.4) ring(pRO, t, "rgba(247,243,234,1)", 9);
+        // ---- pins
+        if (on(pKK) && (t < tIP + 0.6 || t > tEnd + 1)) ring(pKK, t, "rgba(242,178,51,1)");
+        place("tKK", pKK[0] + 34, pKK[1] - 30, on(pKK, 200) && (t < tIP - 0.2 || t > tEnd + 1.6) ? (t > tEnd ? F(t, tEnd + 1.6, 99, 0.3) : 1) : 0);
+        if (on(pIP) && t > tIP + 1.2 && t < tEnd + 1.2) ring(pIP, t, "rgba(242,178,51,1)", c[2] < 15 ? 0 : 14);
+        place("tIP", pIP[0] + 36, pIP[1] - 44, on(pIP, 120) ? F(t, tIP + 1.9, t04 + 0.5, 0.3) * (c[2] < 700 ? 1 : 0) : 0);
+        place("tSL", P([80.75, 7.75])[0] - 105, P([80.75, 7.75])[1], far ? F(t, tSL, tIP + 0.4, 0.3) : 0);
+        place("tBay", P([87.4, 11.6])[0] - 190, P([87.4, 11.6])[1], far ? F(t, tBay, tIP + 0.4, 0.3) : 0);
+        place("tIN", P([78.2, 12.4])[0] - 60, P([78.2, 12.4])[1], far ? Math.max(1 - F(t, tIP, 99, 0.4), F(t, tEnd + 1.8, 99, 0.4)) : 0);
+        // ---- the coast that sank, and the lighthouse
+        place("t2004", 60, 392, F(t, t4m, tEnd, 0.25));
+        if (t > tLH && t < tEnd + 0.4) { g.globalAlpha = 1 - F(t, tEnd, 99, 0.4); const r = 34 + 6 * Math.sin(t * 5);
+          g.beginPath(); g.arc(pIP[0], pIP[1], r, 0, 7); g.strokeStyle = "rgba(4,8,14,0.7)"; g.lineWidth = 13; g.stroke();
+          g.beginPath(); g.arc(pIP[0], pIP[1], r, 0, 7); g.strokeStyle = "#f2b233"; g.lineWidth = 7; g.stroke(); g.globalAlpha = 1; }
+        place("tLH", pIP[0] + 56, pIP[1] - 24, F(t, tLH + 0.1, tEnd, 0.25));
+        // ---- stamp, titles, 11x
+        const st = F(t, tNot, tMain, 0.12);
+        $("stamp").style.opacity = st; $("stamp").style.transform = `rotate(-7deg) scale(${1.6 - 0.6 * Z.o3((t - tNot) / 0.25)})`;
+        let html = "", o = 0;
+        for (const [a, b, h] of TITLES) if (t >= a && t < b) { html = h; o = Math.min(a === 0 ? 1 : C((t - a) / 0.25), C((b - t) / 0.2)); }
+        if ($("title").dataset.h !== html && html) { $("title").innerHTML = html; $("title").dataset.h = html; }
+        $("title").style.opacity = o;
+        const xo = F(t, t11, t04, 0.25);
+        $("x11").style.opacity = xo; $("x11lab").style.opacity = xo; $("x11").style.transform = `scale(${Z.back((t - t11) / 0.4)})`;
+        // ---- sources
+        const SRC = [[0, tReal], [tReal, tIP + 1.2], [tIP + 1.2, tFrom + 0.8], [tFrom + 0.8, t04 + 0.9], [t04 + 0.9, tEnd + 0.8], [tEnd + 0.8, 99]];
+        SRC.forEach(([a, b], i) => { $("s" + (i === 5 ? 0 : i)).style.opacity = (i === 5 ? (t >= a || t < tReal) : (t >= a && t < b)) ? 1 : 0; });
+        caps(t);
+      };
+      Promise.all(IMG.map((im) => im.decode())).then(() => H.ready());
+    </script>
+  </body>
+</html>

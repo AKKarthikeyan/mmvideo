@@ -6,6 +6,7 @@ plus a 0.12 s gap in loop Shorts (0.35 s otherwise), and an on-screen element ap
 
 usage: shorts_check.py <id> [--short N]     one video's Shorts (all, or only Short N, counted from 1)
        shorts_check.py --all [--summary]     every Short in public/vx/
+       shorts_check.py --file <check.json>   a HyperFrames Short (hyperframes/tools/shorts_build.py writes the file)
 exit 0 = every hard rule holds, 1 = at least one FAIL. WARN lines are soft rules: fix them unless there is a reason.
 
 Hard rules (FAIL):
@@ -78,7 +79,7 @@ def check(D, idx):
         events.append(t)
         events += [t + x for x in at_times(scene, say, sec)]
         if first_end is None:
-            m = re.search(r"[.!?:](\s|$)", say)
+            m = re.search(r"[.!?:।](\s|$)", say)
             if m: first_end = t + sec * (m.end() / len(say)); first_words = len(say[:m.end()].split())
         if first_q is None and "?" in say:
             first_q = t + sec * say.index("?") / len(say)
@@ -108,7 +109,7 @@ def check(D, idx):
     for b in bs:
         if tt + b["sec"] >= tail_start: tail += " " + b["say"]
         tt += b["sec"] + gap
-    turn = re.search(r"\d|\b(but|actually|catch|instead|only|still|yet|not)\b|\?", tail.lower()) or re.search(r"\b(one|two|three|four|five|six|seven|eight|nine|ten|hundred|thousand|lakh|crore|percent)\b", tail.lower())
+    turn = re.search(r"\d|\b(but|actually|catch|instead|only|still|yet|not)\b|\?|लेकिन|मगर|गिर|नहीं|अब", tail.lower()) or re.search(r"\b(one|two|three|four|five|six|seven|eight|nine|ten|hundred|thousand|lakh|crore|percent)\b", tail.lower())
     add(bool(turn), "WARN", "S4", "payoff marker in the last 30 %" if turn else "no number, turn or question in the last 30 %")
     add(len(S.get("title", "")) <= 50, "WARN", "S5", f"title {len(S.get('title', ''))} chars")
     add(worst <= 3.0, "WARN", "S6", f"longest hold {worst:.1f} s (aim 3.0)")
@@ -121,7 +122,8 @@ def check(D, idx):
 def main():
     a = sys.argv[1:]
     if not a: print(__doc__); sys.exit(2)
-    files = sorted((ROOT / "public/vx").glob("*/data.json")) if a[0] == "--all" else [ROOT / "public/vx" / a[0] / "data.json"]
+    files = (sorted((ROOT / "public/vx").glob("*/data.json")) if a[0] == "--all"
+             else [pathlib.Path(a[1])] if a[0] == "--file" else [ROOT / "public/vx" / a[0] / "data.json"])
     only = int(a[a.index("--short") + 1]) - 1 if "--short" in a else None
     summary = "--summary" in a; bad = 0; n = 0; fails = {}
     for f in files:

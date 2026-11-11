@@ -109,6 +109,8 @@ def main():
     for k, b in enumerate(A["beats"]):
         spoken += len(b["say"].split())
         check_claims(f"beat {b['key']}", b["claims"], "")
+        if b["scene"]["type"] == "idea":   # idea captions are drawn on screen as cards: their numbers are locked to the beat's claims
+            check_claims(f"beat {b['key']} cap", b["claims"], re.sub(r"\b(19|20)\d\d\b", "", b.get("cap", "")))
         if k and b["link"] not in ("but", "therefore"):
             fails.append(f"beat {b['key']}: link must be 'but' or 'therefore'")
         for s in sentences(b["say"]):

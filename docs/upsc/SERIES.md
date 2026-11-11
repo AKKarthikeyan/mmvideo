@@ -2,20 +2,22 @@
 
 | Serial | Episodes |
 |---|---:|
-| Polity | 59 |
+| Polity | 60 |
 | History | 104 |
-| Geography | 66 |
-| Economics | 64 |
+| Geography | 67 |
+| Economics | 66 |
 | Agriculture | 22 |
+| International relations | 39 |
+| Polity (optional) | 18 |
 | Economics (optional) | 16 |
 | Geography (optional) | 15 |
 | Agriculture (optional) | 21 |
 | RBI Grade B (economics and finance) | 38 |
-| **All** | **405** |
+| **All** | **466** |
 
 Each subject is a serial watched in order. A season is a run of episodes that build on one another. Episode numbers run through the whole serial. "Also in this playlist" are episodes from another serial that fit here: the same video sits in both playlists. Topics with more than one part were split by their research; every other topic counts as one video until its NCERT mapping is done, so the totals will grow.
 
-## Polity: 59 episodes
+## Polity: 60 episodes
 
 ### Season 1: The Constitution and its promises
 *Why India wrote a constitution, then its opening parts in their own order*
@@ -32,32 +34,33 @@ Each subject is a serial watched in order. A season is a run of episodes that bu
 | 8 | POL-40 | Union Territories and the languages of the Eighth Schedule |
 | 9 | POL-38 | Who is a citizen of India? (Part 1 of 2) |
 | 10 | POL-38 | Who is a citizen of India? (Part 2 of 2) |
-| 11 | POL-03 | Fundamental Rights: what you can actually do with them (Part 1 of 2) |
-| 12 | POL-03 | Fundamental Rights: what you can actually do with them (Part 2 of 2) |
-| 13 | POL-04 | Writs: the five orders that can stop a government |
-| 14 | POL-05 | Directive Principles and Duties: promises without a court |
-| 15 | POL-06 | Basic Structure: the case that limited Parliament (Part 1: Article 368 to Kesavananda) |
-| 16 | POL-06 | Basic Structure: the case that limited Parliament (Part 2: What the doctrine became) |
-| 17 | POL-07 | 1975: what the Emergency changed in the rulebook (Part 1 of 2) |
-| 18 | POL-07 | 1975: what the Emergency changed in the rulebook (Part 2 of 2) |
+| 11 | POL-03 | Fundamental Rights: what you can actually do with them (Part 1: Equal, but how? Equality and the reservation puzzle) |
+| 12 | POL-03 | Fundamental Rights: what you can actually do with them (Part 2: Can any law take your liberty? Freedom, life and liberty) |
+| 13 | POL-03 | Fundamental Rights: what you can actually do with them (Part 3: Religion, culture, limits and the Directive Principles) |
+| 14 | POL-04 | Writs: the five orders that can stop a government |
+| 15 | POL-05 | Directive Principles and Duties: promises without a court |
+| 16 | POL-06 | Basic Structure: the case that limited Parliament (Part 1: Article 368 to Kesavananda) |
+| 17 | POL-06 | Basic Structure: the case that limited Parliament (Part 2: What the doctrine became) |
+| 18 | POL-07 | 1975: what the Emergency changed in the rulebook (Part 1 of 2) |
+| 19 | POL-07 | 1975: what the Emergency changed in the rulebook (Part 2 of 2) |
 
 ### Season 2: How India is governed
 *The parliamentary system, organ by organ: who holds power and who checks it*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 19 | POL-08 | Why India chose a Prime Minister and not a President |
-| 20 | POL-13 | What the President can really do |
-| 21 | POL-12 | The Cabinet and how a Ministry works |
-| 22 | POL-10 | Lok Sabha v Rajya Sabha |
-| 23 | POL-09 | How a bill becomes a law (Part 1 of 2) |
-| 24 | POL-09 | How a bill becomes a law (Part 2 of 2) |
-| 25 | POL-11 | Anti-defection and privileges |
-| 26 | POL-17 | Who does what? Executive legislature and courts |
-| 27 | POL-15 | The Supreme Court and judicial review |
-| 28 | POL-16 | High Courts tribunals and how disputes get settled |
-| 29 | POL-14 | Governor Chief Minister and the state assembly |
-| 30 | POL-29 | India's Constitution v the world's |
+| 20 | POL-08 | Why India chose a Prime Minister and not a President |
+| 21 | POL-13 | What the President can really do |
+| 22 | POL-12 | The Cabinet and how a Ministry works |
+| 23 | POL-10 | Lok Sabha v Rajya Sabha |
+| 24 | POL-09 | How a bill becomes a law (Part 1 of 2) |
+| 25 | POL-09 | How a bill becomes a law (Part 2 of 2) |
+| 26 | POL-11 | Anti-defection and privileges |
+| 27 | POL-17 | Who does what? Executive legislature and courts |
+| 28 | POL-15 | The Supreme Court and judicial review |
+| 29 | POL-16 | High Courts tribunals and how disputes get settled |
+| 30 | POL-14 | Governor Chief Minister and the state assembly |
+| 31 | POL-29 | India's Constitution v the world's |
 
 Also in this playlist: ECO-10 How to read the Union Budget
 
@@ -66,13 +69,13 @@ Also in this playlist: ECO-10 How to read the Union Budget
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 31 | POL-18 | The Seventh Schedule: Union and State lists |
-| 32 | POL-39 | Special provisions: scheduled and tribal areas and Articles 370 and 371 |
-| 33 | POL-19 | Delhi v the states: where federalism fights (Part 1 of 3) |
-| 34 | POL-19 | Delhi v the states: where federalism fights (Part 2 of 3) |
-| 35 | POL-19 | Delhi v the states: where federalism fights (Part 3 of 3) |
-| 36 | POL-20 | Panchayats: the 73rd amendment and your village (Part 1 of 2) |
-| 37 | POL-20 | Panchayats: the 73rd amendment and your village (Part 2 of 2) |
+| 32 | POL-18 | The Seventh Schedule: Union and State lists |
+| 33 | POL-39 | Special provisions: scheduled and tribal areas and Articles 370 and 371 |
+| 34 | POL-19 | Delhi v the states: where federalism fights (Part 1 of 3) |
+| 35 | POL-19 | Delhi v the states: where federalism fights (Part 2 of 3) |
+| 36 | POL-19 | Delhi v the states: where federalism fights (Part 3 of 3) |
+| 37 | POL-20 | Panchayats: the 73rd amendment and your village (Part 1 of 2) |
+| 38 | POL-20 | Panchayats: the 73rd amendment and your village (Part 2 of 2) |
 
 Also in this playlist: ECO-13 The Finance Commission: how your state gets its share; GEO-35 Why state borders are where they are
 
@@ -81,34 +84,34 @@ Also in this playlist: ECO-13 The Finance Commission: how your state gets its sh
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 38 | POL-21 | The Election Commission and the rules of voting (Part 1 of 2) |
-| 39 | POL-21 | The Election Commission and the rules of voting (Part 2 of 2) |
-| 40 | POL-22 | Parties coalitions and how India votes (Part 1 of 3) |
-| 41 | POL-22 | Parties coalitions and how India votes (Part 2 of 3) |
-| 42 | POL-22 | Parties coalitions and how India votes (Part 3 of 3) |
-| 43 | POL-23 | CAG UPSC and the watchdogs in the Constitution |
-| 44 | POL-24 | Commissions for rights: SC ST BC women minorities NHRC |
-| 45 | POL-25 | Regulators: who polices markets and airwaves |
+| 39 | POL-21 | The Election Commission and the rules of voting (Part 1 of 2) |
+| 40 | POL-21 | The Election Commission and the rules of voting (Part 2 of 2) |
+| 41 | POL-22 | Parties coalitions and how India votes (Part 1 of 3) |
+| 42 | POL-22 | Parties coalitions and how India votes (Part 2 of 3) |
+| 43 | POL-22 | Parties coalitions and how India votes (Part 3 of 3) |
+| 44 | POL-23 | CAG UPSC and the watchdogs in the Constitution |
+| 45 | POL-24 | Commissions for rights: SC ST BC women minorities NHRC |
+| 46 | POL-25 | Regulators: who polices markets and airwaves |
 
 ### Season 5: Governance in practice
 *How policy reaches people, and how citizens push back*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 46 | POL-26 | RTI: the law that lets you ask |
-| 47 | POL-27 | e-Governance: what worked and what did not |
-| 48 | POL-28 | What a civil servant is really for |
-| 49 | POL-42 | Police courts and your rights when something goes wrong |
-| 50 | POL-30 | Why good schemes fail: design v delivery |
-| 51 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 1 of 3) |
-| 52 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 2 of 3) |
-| 53 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 3 of 3) |
-| 54 | POL-32 | NGOs and self-help groups |
-| 55 | POL-33 | Pressure groups: power without votes |
-| 56 | POL-34 | Caste religion and the ballot |
-| 57 | POL-35 | Movements that changed laws (Part 1 of 2) |
-| 58 | POL-35 | Movements that changed laws (Part 2 of 2) |
-| 59 | POL-36 | Four ways to read the freedom struggle |
+| 47 | POL-26 | RTI: the law that lets you ask |
+| 48 | POL-27 | e-Governance: what worked and what did not |
+| 49 | POL-28 | What a civil servant is really for |
+| 50 | POL-42 | Police courts and your rights when something goes wrong |
+| 51 | POL-30 | Why good schemes fail: design v delivery |
+| 52 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 1 of 3) |
+| 53 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 2 of 3) |
+| 54 | POL-31 | Welfare for whom? Laws and schemes for the vulnerable (Part 3 of 3) |
+| 55 | POL-32 | NGOs and self-help groups |
+| 56 | POL-33 | Pressure groups: power without votes |
+| 57 | POL-34 | Caste religion and the ballot |
+| 58 | POL-35 | Movements that changed laws (Part 1 of 2) |
+| 59 | POL-35 | Movements that changed laws (Part 2 of 2) |
+| 60 | POL-36 | Four ways to read the freedom struggle |
 
 Also in this playlist: ECO-09 The rural job guarantee: a right to work
 
@@ -264,7 +267,7 @@ Also in this playlist: HIS-12 How to read an Indian temple; HIS-16 Bhakti and Su
 | 103 | HIS-68 | From coal and steel to the European Union |
 | 104 | HIS-69 | The day the Soviet Union ended |
 
-## Geography: 66 episodes
+## Geography: 67 episodes
 
 ### Season 1: Reading the Earth, and our restless planet
 *Maps, latitude and time first; then inside the Earth, plates, quakes, volcanoes and landforms*
@@ -276,56 +279,57 @@ Also in this playlist: HIS-12 How to read an Indian temple; HIS-16 Bhakti and Su
 | 3 | GEO-01 | Journey to the centre of the Earth |
 | 4 | GEO-02 | The crash that built the Himalaya (Part 1 of 2) |
 | 5 | GEO-02 | The crash that built the Himalaya (Part 2 of 2) |
-| 6 | GEO-03 | Earthquakes and tsunamis: why some coasts are at risk |
-| 7 | GEO-04 | Volcanoes: where the planet leaks |
-| 8 | GEO-05 | How rivers carve a country (Part 1 of 5) |
-| 9 | GEO-05 | How rivers carve a country (Part 2 of 5) |
-| 10 | GEO-05 | How rivers carve a country (Part 3 of 5) |
-| 11 | GEO-05 | How rivers carve a country (Part 4 of 5) |
-| 12 | GEO-05 | How rivers carve a country (Part 5 of 5) |
+| 6 | GEO-03 | Earthquakes and tsunamis: why some coasts are at risk (Part 1: Why the ground breaks: waves, magnitude and India's zones) |
+| 7 | GEO-03 | Earthquakes and tsunamis: why some coasts are at risk (Part 2: Why some coasts are at risk: tsunamis and the warning chain) |
+| 8 | GEO-04 | Volcanoes: where the planet leaks |
+| 9 | GEO-05 | How rivers carve a country (Part 1 of 5) |
+| 10 | GEO-05 | How rivers carve a country (Part 2 of 5) |
+| 11 | GEO-05 | How rivers carve a country (Part 3 of 5) |
+| 12 | GEO-05 | How rivers carve a country (Part 4 of 5) |
+| 13 | GEO-05 | How rivers carve a country (Part 5 of 5) |
 
 ### Season 2: Air and weather
 *Winds, the monsoon, cyclones and climates*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 13 | GEO-06 | The winds that run the world (Part 1 of 2) |
-| 14 | GEO-06 | The winds that run the world (Part 2 of 2) |
-| 15 | GEO-44 | The water cycle: where every drop goes |
-| 16 | GEO-07 | The monsoon: how a whole subcontinent breathes (Part 1: The engine: what pulls it in) |
-| 17 | GEO-07 | The monsoon: how a whole subcontinent breathes (Part 2: The behaviour: onset, rain map, breaks, normal) |
-| 18 | GEO-08 | Jet streams and the winter rain of the north |
-| 19 | GEO-09 | Cyclones: why the Bay of Bengal is the danger zone |
-| 20 | GEO-10 | Every climate on Earth in ten minutes (Part 1 of 2) |
-| 21 | GEO-10 | Every climate on Earth in ten minutes (Part 2 of 2) |
-| 22 | GEO-39 | Climate change: what is changing on the map |
+| 14 | GEO-06 | The winds that run the world (Part 1 of 2) |
+| 15 | GEO-06 | The winds that run the world (Part 2 of 2) |
+| 16 | GEO-44 | The water cycle: where every drop goes |
+| 17 | GEO-07 | The monsoon: how a whole subcontinent breathes (Part 1: The engine: what pulls it in) |
+| 18 | GEO-07 | The monsoon: how a whole subcontinent breathes (Part 2: The behaviour: onset, rain map, breaks, normal) |
+| 19 | GEO-08 | Jet streams and the winter rain of the north |
+| 20 | GEO-09 | Cyclones: why the Bay of Bengal is the danger zone |
+| 21 | GEO-10 | Every climate on Earth in ten minutes (Part 1 of 2) |
+| 22 | GEO-10 | Every climate on Earth in ten minutes (Part 2 of 2) |
+| 23 | GEO-39 | Climate change: what is changing on the map |
 
 ### Season 3: The oceans
 *Currents, the sea floor, corals and the rising sea*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 23 | GEO-11 | Currents and tides: the ocean's conveyor belt (Part 1 of 2) |
-| 24 | GEO-11 | Currents and tides: the ocean's conveyor belt (Part 2 of 2) |
-| 25 | GEO-12 | What the sea floor looks like |
-| 26 | GEO-13 | Coral bleaching and the rising sea |
+| 24 | GEO-11 | Currents and tides: the ocean's conveyor belt (Part 1 of 2) |
+| 25 | GEO-11 | Currents and tides: the ocean's conveyor belt (Part 2 of 2) |
+| 26 | GEO-12 | What the sea floor looks like |
+| 27 | GEO-13 | Coral bleaching and the rising sea |
 
 ### Season 4: India: the land
 *Where India sits, its shapes, rivers, soils, forests, floods and the map*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 27 | GEO-16 | India's place in the world (Part 1 of 2) |
-| 28 | GEO-16 | India's place in the world (Part 2 of 2) |
-| 29 | GEO-17 | Himalaya plains plateau coast: India in four shapes (Part 1 of 2) |
-| 30 | GEO-17 | Himalaya plains plateau coast: India in four shapes (Part 2 of 2) |
-| 31 | GEO-18 | The rivers of India: Himalayan v peninsular (Part 1 of 2) |
-| 32 | GEO-18 | The rivers of India: Himalayan v peninsular (Part 2 of 2) |
-| 33 | GEO-14 | The soils of India on one map |
-| 34 | GEO-15 | Why forests grow where they grow |
-| 35 | GEO-19 | Floods and droughts in the same year |
-| 36 | GEO-40 | Find it on the map: the locate-it series (Part 1 of 2) |
-| 37 | GEO-40 | Find it on the map: the locate-it series (Part 2 of 2) |
+| 28 | GEO-16 | India's place in the world (Part 1 of 2) |
+| 29 | GEO-16 | India's place in the world (Part 2 of 2) |
+| 30 | GEO-17 | Himalaya plains plateau coast: India in four shapes (Part 1 of 2) |
+| 31 | GEO-17 | Himalaya plains plateau coast: India in four shapes (Part 2 of 2) |
+| 32 | GEO-18 | The rivers of India: Himalayan v peninsular (Part 1 of 2) |
+| 33 | GEO-18 | The rivers of India: Himalayan v peninsular (Part 2 of 2) |
+| 34 | GEO-14 | The soils of India on one map |
+| 35 | GEO-15 | Why forests grow where they grow |
+| 36 | GEO-19 | Floods and droughts in the same year |
+| 37 | GEO-40 | Find it on the map: the locate-it series (Part 1 of 2) |
+| 38 | GEO-40 | Find it on the map: the locate-it series (Part 2 of 2) |
 
 Also in this playlist: AGR-02 Many farming Indias: agro-climatic zones
 
@@ -334,21 +338,21 @@ Also in this playlist: AGR-02 Many farming Indias: agro-climatic zones
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 38 | GEO-45 | Land and land use: what India does with its ground |
-| 39 | GEO-20 | Where the minerals are and why |
-| 40 | GEO-21 | Coal oil sun wind: India's energy map |
-| 41 | GEO-22 | The water under our feet |
-| 42 | GEO-23 | Tigers and national parks: saving what is left |
-| 43 | GEO-24 | Why a factory is where it is (Part 1 of 3) |
-| 44 | GEO-24 | Why a factory is where it is (Part 2 of 3) |
-| 45 | GEO-24 | Why a factory is where it is (Part 3 of 3) |
-| 46 | GEO-25 | Cotton in Mumbai jute in Kolkata steel in Jamshedpur |
-| 47 | GEO-26 | SEZs tourism and India's new industrial map |
-| 48 | GEO-27 | Roads rails rivers pipes: how India moves (Part 1 of 2) |
-| 49 | GEO-27 | Roads rails rivers pipes: how India moves (Part 2 of 2) |
-| 50 | GEO-28 | Ports: India's front doors |
-| 51 | GEO-29 | From ISRO to the internet: India's invisible network (Part 1 of 2) |
-| 52 | GEO-29 | From ISRO to the internet: India's invisible network (Part 2 of 2) |
+| 39 | GEO-45 | Land and land use: what India does with its ground |
+| 40 | GEO-20 | Where the minerals are and why |
+| 41 | GEO-21 | Coal oil sun wind: India's energy map |
+| 42 | GEO-22 | The water under our feet |
+| 43 | GEO-23 | Tigers and national parks: saving what is left |
+| 44 | GEO-24 | Why a factory is where it is (Part 1 of 3) |
+| 45 | GEO-24 | Why a factory is where it is (Part 2 of 3) |
+| 46 | GEO-24 | Why a factory is where it is (Part 3 of 3) |
+| 47 | GEO-25 | Cotton in Mumbai jute in Kolkata steel in Jamshedpur |
+| 48 | GEO-26 | SEZs tourism and India's new industrial map |
+| 49 | GEO-27 | Roads rails rivers pipes: how India moves (Part 1 of 2) |
+| 50 | GEO-27 | Roads rails rivers pipes: how India moves (Part 2 of 2) |
+| 51 | GEO-28 | Ports: India's front doors |
+| 52 | GEO-29 | From ISRO to the internet: India's invisible network (Part 1 of 2) |
+| 53 | GEO-29 | From ISRO to the internet: India's invisible network (Part 2 of 2) |
 
 Also in this playlist: ECO-26 Why India's power companies keep losing money
 
@@ -357,13 +361,13 @@ Also in this playlist: ECO-26 Why India's power companies keep losing money
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 53 | GEO-30 | Where Indians live and why (Part 1 of 2) |
-| 54 | GEO-30 | Where Indians live and why (Part 2 of 2) |
-| 55 | GEO-31 | Why people leave: migration in India and the world |
-| 56 | GEO-32 | Languages tribes and cultural regions |
-| 57 | GEO-33 | Why villages look the way they do |
-| 58 | GEO-34 | The Indian city: sprawl slums and metros (Part 1 of 2) |
-| 59 | GEO-34 | The Indian city: sprawl slums and metros (Part 2 of 2) |
+| 54 | GEO-30 | Where Indians live and why (Part 1 of 2) |
+| 55 | GEO-30 | Where Indians live and why (Part 2 of 2) |
+| 56 | GEO-31 | Why people leave: migration in India and the world |
+| 57 | GEO-32 | Languages tribes and cultural regions |
+| 58 | GEO-33 | Why villages look the way they do |
+| 59 | GEO-34 | The Indian city: sprawl slums and metros (Part 1 of 2) |
+| 60 | GEO-34 | The Indian city: sprawl slums and metros (Part 2 of 2) |
 
 Also in this playlist: ECO-23 Demographic dividend: a gift with an expiry date
 
@@ -372,17 +376,17 @@ Also in this playlist: ECO-23 Demographic dividend: a gift with an expiry date
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 60 | GEO-35 | Why state borders are where they are |
-| 61 | GEO-36 | Inter-state water fights and the river-link idea |
-| 62 | GEO-37 | The Indian Ocean: the map behind the headlines |
-| 63 | GEO-38 | Landslides pollution and the green clearance (Part 1 of 2) |
-| 64 | GEO-38 | Landslides pollution and the green clearance (Part 2 of 2) |
-| 65 | GEO-41 | Planning for places: deserts hills and islands (Part 1 of 2) |
-| 66 | GEO-41 | Planning for places: deserts hills and islands (Part 2 of 2) |
+| 61 | GEO-35 | Why state borders are where they are |
+| 62 | GEO-36 | Inter-state water fights and the river-link idea |
+| 63 | GEO-37 | The Indian Ocean: the map behind the headlines |
+| 64 | GEO-38 | Landslides pollution and the green clearance (Part 1 of 2) |
+| 65 | GEO-38 | Landslides pollution and the green clearance (Part 2 of 2) |
+| 66 | GEO-41 | Planning for places: deserts hills and islands (Part 1 of 2) |
+| 67 | GEO-41 | Planning for places: deserts hills and islands (Part 2 of 2) |
 
 Also in this playlist: ECO-28 Rich states and poor states: why the gap stays
 
-## Economics: 64 episodes
+## Economics: 66 episodes
 
 ### Season 1: Basics: how an economy works
 *Scarcity and choice, prices, markets, and how output and prices are measured*
@@ -437,42 +441,44 @@ Also in this playlist: ECO-28 Rich states and poor states: why the gap stays
 |---:|---|---|
 | 29 | ECO-10 | How to read the Union Budget |
 | 30 | ECO-45 | Income tax and other direct taxes |
-| 31 | ECO-12 | Who really pays a tax? GST and the rest |
-| 32 | ECO-11 | Deficit and debt: when a government borrows too much (Part 1 of 2) |
-| 33 | ECO-11 | Deficit and debt: when a government borrows too much (Part 2 of 2) |
-| 34 | ECO-13 | The Finance Commission: how your state gets its share |
-| 35 | ECO-47 | Subsidies and direct benefit transfer |
-| 36 | ECO-46 | Black money and money laundering |
-| 37 | ECO-25 | Who pays for a highway? Investment models (Part 1 of 2) |
-| 38 | ECO-25 | Who pays for a highway? Investment models (Part 2 of 2) |
-| 39 | ECO-26 | Why India's power companies keep losing money (Part 1 of 2) |
-| 40 | ECO-26 | Why India's power companies keep losing money (Part 2 of 2) |
+| 31 | ECO-12 | Who really pays a tax? GST and the rest (Part 1: Who really pays? Incidence, direct and indirect taxes) |
+| 32 | ECO-12 | Who really pays a tax? GST and the rest (Part 2: GST in the Constitution: the 101st Amendment and the Council) |
+| 33 | ECO-12 | Who really pays a tax? GST and the rest (Part 3: The money: compensation, rates and the Budget) |
+| 34 | ECO-11 | Deficit and debt: when a government borrows too much (Part 1 of 2) |
+| 35 | ECO-11 | Deficit and debt: when a government borrows too much (Part 2 of 2) |
+| 36 | ECO-13 | The Finance Commission: how your state gets its share |
+| 37 | ECO-47 | Subsidies and direct benefit transfer |
+| 38 | ECO-46 | Black money and money laundering |
+| 39 | ECO-25 | Who pays for a highway? Investment models (Part 1 of 2) |
+| 40 | ECO-25 | Who pays for a highway? Investment models (Part 2 of 2) |
+| 41 | ECO-26 | Why India's power companies keep losing money (Part 1 of 2) |
+| 42 | ECO-26 | Why India's power companies keep losing money (Part 2 of 2) |
 
 ### Season 5: India and the world economy
 *Trade, the rupee, oil, foreign investment and the global lenders*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 41 | ECO-19 | Balance of payments without the jargon |
-| 42 | ECO-18 | Why the rupee moves |
-| 43 | ECO-48 | Why petrol prices change: oil taxes and strategic reserves |
-| 44 | ECO-20 | Foreign money in India: FDI and multinationals |
-| 45 | ECO-22 | WTO: the rulebook behind every trade fight (Part 1 of 3) |
-| 46 | ECO-22 | WTO: the rulebook behind every trade fight (Part 2 of 3) |
-| 47 | ECO-22 | WTO: the rulebook behind every trade fight (Part 3 of 3) |
-| 48 | ECO-50 | IMF and World Bank: lenders to the world |
+| 43 | ECO-19 | Balance of payments without the jargon |
+| 44 | ECO-18 | Why the rupee moves |
+| 45 | ECO-48 | Why petrol prices change: oil taxes and strategic reserves |
+| 46 | ECO-20 | Foreign money in India: FDI and multinationals |
+| 47 | ECO-22 | WTO: the rulebook behind every trade fight (Part 1 of 3) |
+| 48 | ECO-22 | WTO: the rulebook behind every trade fight (Part 2 of 3) |
+| 49 | ECO-22 | WTO: the rulebook behind every trade fight (Part 3 of 3) |
+| 50 | ECO-50 | IMF and World Bank: lenders to the world |
 
 ### Season 6: The story of India's economy
 *From planning to liberalisation, in order*
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 49 | ECO-04 | Five Year Plans to NITI Aayog: who decides India's priorities (Part 1 of 2) |
-| 50 | ECO-04 | Five Year Plans to NITI Aayog: who decides India's priorities (Part 2 of 2) |
-| 51 | ECO-05 | The Licence Raj: how a factory needed permission to grow |
-| 52 | ECO-31 | Industrial policy from 1948 to now |
-| 53 | ECO-06 | 1991: the crisis that rewrote India's economy |
-| 54 | ECO-21 | Selling the family silver? Privatisation and disinvestment |
+| 51 | ECO-04 | Five Year Plans to NITI Aayog: who decides India's priorities (Part 1 of 2) |
+| 52 | ECO-04 | Five Year Plans to NITI Aayog: who decides India's priorities (Part 2 of 2) |
+| 53 | ECO-05 | The Licence Raj: how a factory needed permission to grow |
+| 54 | ECO-31 | Industrial policy from 1948 to now |
+| 55 | ECO-06 | 1991: the crisis that rewrote India's economy |
+| 56 | ECO-21 | Selling the family silver? Privatisation and disinvestment |
 
 Also in this playlist: ECO-02 Why India was poor in 1947: the drain of wealth; ECO-03 Jute cotton and railways: who colonial industry served; AGR-05 The Green Revolution and its bill
 
@@ -481,16 +487,16 @@ Also in this playlist: ECO-02 Why India was poor in 1947: the drain of wealth; E
 
 | Ep | Topic | Episode |
 |---:|---|---|
-| 55 | ECO-07 | Who counts as poor? The poverty line fight |
-| 56 | ECO-08 | Jobs: why growth does not always hire (Part 1 of 2) |
-| 57 | ECO-08 | Jobs: why growth does not always hire (Part 2 of 2) |
-| 58 | ECO-09 | The rural job guarantee: a right to work |
-| 59 | ECO-23 | Demographic dividend: a gift with an expiry date (Part 1 of 2) |
-| 60 | ECO-23 | Demographic dividend: a gift with an expiry date (Part 2 of 2) |
-| 61 | ECO-24 | Beyond income: HDI basic needs and the SDGs |
-| 62 | ECO-27 | Schools and hospitals: what the state spends and gets (Part 1 of 2) |
-| 63 | ECO-27 | Schools and hospitals: what the state spends and gets (Part 2 of 2) |
-| 64 | ECO-28 | Rich states and poor states: why the gap stays |
+| 57 | ECO-07 | Who counts as poor? The poverty line fight |
+| 58 | ECO-08 | Jobs: why growth does not always hire (Part 1 of 2) |
+| 59 | ECO-08 | Jobs: why growth does not always hire (Part 2 of 2) |
+| 60 | ECO-09 | The rural job guarantee: a right to work |
+| 61 | ECO-23 | Demographic dividend: a gift with an expiry date (Part 1 of 2) |
+| 62 | ECO-23 | Demographic dividend: a gift with an expiry date (Part 2 of 2) |
+| 63 | ECO-24 | Beyond income: HDI basic needs and the SDGs |
+| 64 | ECO-27 | Schools and hospitals: what the state spends and gets (Part 1 of 2) |
+| 65 | ECO-27 | Schools and hospitals: what the state spends and gets (Part 2 of 2) |
+| 66 | ECO-28 | Rich states and poor states: why the gap stays |
 
 ## Agriculture: 22 episodes
 
@@ -541,6 +547,112 @@ Also in this playlist: GEO-14 The soils of India on one map
 | 20 | AGR-09 | Godowns and food security: why grain piles up |
 | 21 | AGR-13 | Why India grows so much and processes so little |
 | 22 | AGR-20 | Enough food yet still hungry |
+
+## International relations: 39 episodes
+
+### Season 1: How to study world politics
+*The ideas first: power, the theories, and how political systems are compared*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 1 | IRS-01 | Power, security and the national interest: how to read world politics |
+| 2 | IRS-02 | Realism and neorealism: a world of self-help |
+| 3 | IRS-03 | Idealism, liberalism and functionalism: can states cooperate? |
+| 4 | IRS-04 | Marxist and world-systems views of the world economy |
+| 5 | IRS-05 | Balance of power, deterrence and collective security |
+| 6 | IRS-06 | Comparing political systems: approaches and the changing state |
+| 7 | IRS-07 | Parties, pressure groups and movements around the world |
+
+### Season 2: The world order since 1945
+*Cold War, non-alignment, the unipolar moment and the rules of the world economy*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 8 | IRS-08 | The Cold War: superpowers, blocs and the arms race |
+| 9 | IRS-09 | Non-alignment: what it meant, and does it still matter? |
+| 10 | IRS-10 | After the Soviet Union: American hegemony and China's rise |
+| 11 | IRS-11 | From Bretton Woods to the WTO: the rules of the world economy |
+| + | ECO-22 | WTO: the rulebook behind every trade fight *(from Economics)* |
+| 12 | IRS-12 | Globalisation and the Global South |
+
+### Season 3: The UN and the global problems
+*What the institutions do, and the concerns no country solves alone*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 13 | IRS-13 | The United Nations: what it was built for and what it did |
+| 14 | IRS-14 | UN agencies and the case for UN reform |
+| 15 | IRS-15 | Regional blocs: EU, ASEAN, APEC, NAFTA |
+| 16 | IRS-16 | International law: the ICJ, the law of the sea and the Arctic |
+| 17 | IRS-17 | Human rights, democracy and gender justice in world politics |
+| 18 | IRS-18 | Terrorism and the new security threats |
+| 19 | IRS-19 | The nuclear order: NPT, deterrence and proliferation |
+| 20 | IRS-20 | Climate talks and the SDGs: the politics of the planet |
+
+### Season 4: India's foreign policy
+*How India decides, how its policy has changed, and its nuclear choices*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 21 | IRS-21 | How India makes foreign policy |
+| 22 | IRS-22 | India's foreign policy from Nehru to today |
+| 23 | IRS-23 | India and the nuclear question |
+| 24 | IRS-24 | India's soft power and its diaspora |
+
+### Season 5: India and its neighbours
+*South Asia, one neighbour at a time, and the rivers they share*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 25 | IRS-25 | Why South Asia cooperates so little: SAARC, SAFTA and BIMSTEC |
+| 26 | IRS-26 | India and Pakistan |
+| 27 | IRS-27 | India and China |
+| 28 | IRS-28 | India, Bangladesh, Myanmar and the north-east borderlands |
+| 29 | IRS-29 | India and Nepal, Bhutan, Sri Lanka and the Maldives |
+| 30 | IRS-30 | India, Afghanistan and Central Asia |
+| 31 | IRS-31 | Rivers across borders: the Indus Waters Treaty and water diplomacy |
+
+Also in this playlist: GEO-37 The Indian Ocean: the map behind the headlines
+
+### Season 6: India and the powers
+*The great powers, the regions and the groupings India works through*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 32 | IRS-32 | India and the USA |
+| 33 | IRS-33 | India and Russia |
+| 34 | IRS-34 | India, the EU and Europe |
+| 35 | IRS-35 | Look East to Act East: ASEAN, Japan and the Indo-Pacific |
+| 36 | IRS-36 | India and West Asia: the Gulf, Israel, Iran and energy |
+| 37 | IRS-37 | India, Africa and Latin America: leading the Global South |
+| 38 | IRS-38 | India at the UN: peacekeeping and the Security Council seat |
+| 39 | IRS-39 | India's groupings: BRICS, SCO, G20 and the Quad |
+
+## Polity (optional): 18 episodes
+
+### Season 1: Advanced
+*Optional-paper level, in syllabus order*
+
+| Ep | Topic | Episode |
+|---:|---|---|
+| 1 | PTH-01 | What political theory is, and how it is studied |
+| 2 | PTH-02 | Theories of the state |
+| 3 | PTH-03 | Justice: Rawls and his critics |
+| 4 | PTH-04 | Liberty, equality and affirmative action |
+| 5 | PTH-05 | Rights and human rights |
+| 6 | PTH-06 | Theories of democracy |
+| 7 | PTH-07 | Power, hegemony, ideology and legitimacy |
+| 8 | PTH-08 | Liberalism and socialism |
+| 9 | PTH-09 | Marx, Marxism and Gramsci |
+| 10 | PTH-10 | Fascism, totalitarianism and Hannah Arendt |
+| 11 | PTH-11 | Feminism |
+| 12 | PTH-12 | Gandhi's political thought |
+| 13 | PTH-13 | Ancient Indian political thought |
+| 14 | PTH-14 | Modern Indian thinkers: Sir Syed, Aurobindo, Ambedkar, M. N. Roy |
+| 15 | PTH-15 | Plato and Aristotle |
+| 16 | PTH-16 | Machiavelli, Hobbes and Locke |
+| 17 | PTH-17 | John Stuart Mill and liberty |
+| 18 | PTH-18 | Multiculturalism, post-colonialism and postmodernism |
 
 ## Economics (optional): 16 episodes
 

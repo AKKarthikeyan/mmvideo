@@ -20,7 +20,11 @@ CODES = (
     "GEO2-1 GEO2-2 GEO2-3 GEO2-4 GEO2-5 GEO2-6 GEO2-7 GEO2-8 GEO2-9 GEO2-10 GEO2-map "  # p66-67
     + " ".join(f"HIS1-{i}" for i in range(1, 25)) + " "  # p70-73
     + " ".join(f"HIS2-{i}" for i in range(1, 28)) + " "  # p73-76
-    + " ".join(f"PSIR-G{i}" for i in range(1, 12)) + " "  # p136-137, Indian Government and Politics only
+    + " ".join(f"PSIR-G{i}" for i in range(1, 12)) + " "  # p136-137, Indian Government and Politics
+    + " ".join(f"PSIR-T{i}" for i in range(1, 11)) + " "  # p136, Political Theory and Indian Political Thought (AK, 10 Nov 2026)
+    + " ".join(f"PSIR-C{i}" for i in range(1, 12)) + " "  # p137-138, Comparative Politics and International Relations
+    + " ".join(f"PSIR-I{i}" for i in range(1, 9)) + " "  # p138, India and the World
+    + "G2-ir1 G2-ir2 G2-ir3 G2-ir4 "  # p34-35, GS II international relations lines
     + " ".join(f"AGR1-{i}" for i in range(1, 10)) + " "  # p37, paragraphs in printed order
     + " ".join(f"AGR2-{i}" for i in range(1, 9)) + " "  # p38, paragraphs in printed order
     # RBI Grade B (Advt. RBISB/DA/03/2025-26), economics and finance lines only; printed pages 34-40 of the notice.
@@ -42,7 +46,7 @@ unknown = sorted(set(hits) - set(CODES))
 missing = [c for c in CODES if c not in hits]
 
 print(f"{len(rows)} episodes, {len(CODES)} syllabus lines in scope")
-for s in ("Economics", "Geography", "History", "Polity", "Agriculture"):
+for s in ("Economics", "Geography", "History", "Polity", "International relations", "Agriculture"):
     sub = [r for r in rows if r["subject"] == s]
     print(f"  {s:<12} core {sum(r['tier'] == 'C' for r in sub):>3}  depth {sum(r['tier'] == 'D' for r in sub):>3}  "
           f"living {sum(r['change'] == 'L' for r in sub):>3}  fixed {sum(r['change'] == 'F' for r in sub):>3}")

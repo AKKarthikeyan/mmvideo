@@ -21,6 +21,12 @@ PARTS = {
     "GEO-07": ["The engine: what pulls it in", "The behaviour: onset, rain map, breaks, normal"],
     "ECO-15": ["What the RBI controls", "How a rate change travels", "Inflation targeting and its limits"],
     "AGR-07": ["What MSP is and how it is set", "Who gains: procurement and the debate"],
+    "POL-03": ["Equal, but how? Equality and the reservation puzzle", "Can any law take your liberty? Freedom, life and liberty",
+               "Religion, culture, limits and the Directive Principles"],   # 3 parts: the dossier's split (154 claims; GOLD_STANDARD D1)
+    "ECO-12": ["Who really pays? Incidence, direct and indirect taxes", "GST in the Constitution: the 101st Amendment and the Council",
+               "The money: compensation, rates and the Budget"],   # 3 parts: dossier split (103 claims), AK 11 Nov 2026
+    "GEO-03": ["Why the ground breaks: waves, magnitude and India's zones", "Why some coasts are at risk: tsunamis and the warning chain"],
+               # 2 parts: dossier split (74 claims), AK 11 Nov 2026
 }
 
 # serial -> [(season title, what the season is for, [topic ids in viewing order], [ids also shown in this playlist])]
@@ -99,8 +105,27 @@ SERIALS = {
  ],
 }
 
+# International relations (AK, 10 Nov 2026): GS II's IR lines and PSIR Paper II, built from the 313 Mains IR questions no
+# episode taught (docs/upsc/planner/NEW_EPISODES.md). Neighbours and borders are sensitive: official sources only, no side.
+SERIALS["International relations"] = [
+ ("How to study world politics", "The ideas first: power, the theories, and how political systems are compared",
+  ["IRS-01", "IRS-02", "IRS-03", "IRS-04", "IRS-05", "IRS-06", "IRS-07"], []),
+ ("The world order since 1945", "Cold War, non-alignment, the unipolar moment and the rules of the world economy",
+  ["IRS-08", "IRS-09", "IRS-10", "IRS-11", "+ECO-22", "IRS-12"], []),
+ ("The UN and the global problems", "What the institutions do, and the concerns no country solves alone",
+  ["IRS-13", "IRS-14", "IRS-15", "IRS-16", "IRS-17", "IRS-18", "IRS-19", "IRS-20"], []),
+ ("India's foreign policy", "How India decides, how its policy has changed, and its nuclear choices",
+  ["IRS-21", "IRS-22", "IRS-23", "IRS-24"], []),
+ ("India and its neighbours", "South Asia, one neighbour at a time, and the rivers they share",
+  ["IRS-25", "IRS-26", "IRS-27", "IRS-28", "IRS-29", "IRS-30", "IRS-31"], ["GEO-37"]),
+ ("India and the powers", "The great powers, the regions and the groupings India works through",
+  ["IRS-32", "IRS-33", "IRS-34", "IRS-35", "IRS-36", "IRS-37", "IRS-38", "IRS-39"], []),
+]
+
 # Optional-paper ("advanced") serials: after the core serials, in the order of the optional syllabus.
 ADVANCED = {
+ "Polity (optional)": ["PTH-01", "PTH-02", "PTH-03", "PTH-04", "PTH-05", "PTH-06", "PTH-07", "PTH-08", "PTH-09", "PTH-10",
+                       "PTH-11", "PTH-12", "PTH-13", "PTH-14", "PTH-15", "PTH-16", "PTH-17", "PTH-18"],   # PSIR Paper I, political theory and thought
  "Economics (optional)": ["ECD-01", "ECD-02", "ECD-03", "ECD-04", "ECD-05", "ECD-06", "ECD-07", "ECD-08", "ECD-09", "ECD-10",
                           "ECD-11", "ECD-12", "ECD-13", "ECD-14", "ECD-15", "ECD-16"],
  "Geography (optional)": ["GED-01", "GED-02", "GED-03", "GED-04", "GED-05", "GED-06", "GED-07", "GED-08", "GED-09", "GED-10",

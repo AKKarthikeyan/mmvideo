@@ -1,0 +1,23 @@
+item_id,type,item,source_ref,why_it_must_be_taught,part,claim_ids
+K001,syllabus_term,"Earthquakes and Tsunamis (Geography Paper I, Physical: Geomorphology)",Notice 05/2026-CSE PDF p.65,Exact syllabus words,1,"A1-A12, A32-A50"
+K002,syllabus_term,"Environmental hazards: earthquakes, tsunamis (Geography Paper II)",Notice 05/2026-CSE PDF p.67,"Hazards in India: zones, exposure, management",1,"A21-A28, A56-A67"
+K003,syllabus_term,"Important geophysical phenomena such as earthquakes, tsunami, volcanic activity, cyclone (Mains GS I)",Notice 05/2026-CSE PDF p.34,"Volcanoes -> GEO-04, cyclones -> GEO-09; this episode covers earthquakes and tsunami",1,A1-A50
+K004,pyq,"2025 Mains GS I Q7 (10 marks, 150 words): What are tsunamis? How and where are they formed? What are their consequences? Explain with examples",UPSC 2025 GS1 (local _pyq/mains/2025_gs1.txt),"Must be answerable: definition A32-A35, formation A34-A36, where A43-A44, examples A44-A48, consequences A47-A48, A68",1,"A32-A48, A68"
+K005,pyq,2017 Mains GS III Q18 (15 marks): Dec 2004 tsunami; factors for tsunami and effects on life and economy; in light of NDMA (2010) guidelines describe mechanisms for preparedness,UPSC 2017 GS3 (local _pyq/mains/questions.csv),"Needs NDMA 2010 guideline structure: warning, structural, techno-legal, emergency response",1,"A34-A36, A47-A48, A51-A59"
+K006,pyq,2019 Geography Paper I Q4a (20 marks): methods of measuring intensity and magnitude of earthquakes; how seismic zones are demarcated,UPSC 2019 Geography 1,"Needs magnitude v intensity, MM/MSK, Mw, zone demarcation",1,"A9-A12, A15, A23-A27"
+K007,pyq,"2020 Geography Paper II Q7a (20 marks): demarcating the seismic zones of India, suggest interventions required in most sensitive zones for sustainable human settlements",UPSC 2020 Geography 2,"Needs zones, regions, building codes, retrofit",1,"A21-A28, A67"
+K008,pyq,2021 Mains GS III Q8 (10 marks): vulnerability of India to earthquake hazards; examples and salient features of major earthquakes in the last three decades,UPSC 2021 GS3,Needs the list of Indian quakes and why they killed (collapsing buildings),1,"A20-A22, A60-A61, A67"
+K009,pyq,2020 GS I Q4: geophysical characteristics of the Circum-Pacific Zone (tagged to GEO-04 with GEO-03 second),UPSC 2020 GS1; ledger research/upsc/pyq/2020-gs1-4/claims.csv,Plate-boundary belt of quakes/tsunamis; reuse ledger rows 2020-GS1-4-02 and -05,1,"A17, A18, A43"
+K010,ncert_misconception,Fix NCERT errors on screen as spot-the-mistake: Richter 0-10; tidal wave; speed shallow-vs-deep; 150 m record; Bill 2005; five zones; Bhuj 6.9,"kegy106, kegy203, gess205, gess203",Accuracy,1,"A9, A33, A37, A40, A63, A23, A60"
+K011,concept,"Earthquake anatomy: fault, focus, epicentre, waves, seismograph",kegy203 pp.19-20,Rung 3,1,A1-A7
+K012,concept,Shadow zones and what they proved about the core (link only; GEO-01 owns the interior),kegy203 p.20,Heading in the brief,1,"A5, A6"
+K013,concept,Magnitude v intensity with a daily-life picture (energy v how it felt where you stand),kegy203 p.21; USGS,Exam favourite,1,"A9-A12, A15"
+K014,concept,"Why coasts at subduction zones are at risk (trench, thrust fault, vertical displacement, fast deep-water wave, slow-down and pile-up)",NOAA FAQ; NDMA 2010,Title question,1,"A17, A18, A35, A37-A39"
+K015,india,India's seismic zones today: IS 1893 (Part 1):2016 stands; March 2026 withdrawal of revised map,PIB 1 Apr 2026,Current position; living fact,1,"A24, A25, A26"
+K016,india,"NCS and NSN (170 stations, M3.0+ detection)",PIB 1 Apr 2026; seismo.gov.in,Role of NCS,1,"A14, A29"
+K017,india,"ITEWC at INCOIS: set up after 2004, operational Oct 2007, RTSP 12 Oct 2011, alert levels, Tsunami Ready",INCOIS; PIB 2017; NDMA 2010,Current position,1,A51-A58
+K018,india,"2004 tsunami: magnitude, toll, India's toll, what the sea did (withdrew first)",USGS; NDMA; NOAA; NCERT,Example for K004/K005,1,"A41, A45-A50"
+K019,india,"Bhuj 2001: magnitude conflict, toll, GSDMA, Smritivan",USGS; GSDMA; NDMA; NCERT Class 7,NCERT case study,1,A60-A62
+K020,law,"Disaster Management Act 2005: definition, three tiers, 2025 amendment",DM Act; PIB Jul 2025,Law,1,A63-A65
+K021,law,"NDMA guidelines: earthquakes (2007), tsunamis (2010)",NDMA,Management,1,"A20-A22, A55, A56, A59"
+K022,fun,Guess-first questions with sourced answers,see dossier section D,Engagement,1,"A11, A33, A37, A38, A41, A42, A48"

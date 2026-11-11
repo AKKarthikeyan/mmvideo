@@ -170,3 +170,9 @@ check → storyboard → Maya voice → 60 fps 2K render → `deliver.py upsc`.
   Noteworthy (a macOS font). Hindi needs a Devanagari handwriting font such as Kalam (OFL), which would have to be downloaded.
 - **Answer standard (10 Nov 2026):** AK asked that answers meet UPSC's expectations. `docs/upsc/ANSWER_STANDARD.md` (UPSC's own rules, court records, 41 topper
   copies, nine institutes, four transcribed talks); pilots revised (`research/upsc/pyq/AUDIT_2026-11-10.md`) and re-rendered as v2.
+- **Topic tags and new serials (10 Nov 2026):** all 3,121 questions were tagged question by question (eight Sonnet agents plus a
+  cross-check; 27 of 30 sampled tags right) in `research/upsc/_pyq/mains/tags/` (local). On AK's go-ahead the catalogue gained an
+  International relations serial (IRS-01 to IRS-39, six seasons, PSIR Paper II and GS II's IR lines) and a Political theory season
+  (PTH-01 to PTH-18, "Polity (optional)"). India's neighbours and borders (IRS-26 to IRS-31) follow the sensitive-topic rules:
+  official sources only, no disputed-map borders, no side. The master plan (`docs/upsc/planner/MASTER.md`) now holds 3,207 videos.
+

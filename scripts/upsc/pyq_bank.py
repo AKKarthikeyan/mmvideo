@@ -190,8 +190,19 @@ def link(t, subj, idx):
     return (best, round(score, 1)) if score >= 4 else ("", round(score, 1))
 
 
+def load_tags():
+    """Checked tags (research/upsc/_pyq/mains/tags/out/*.csv, one row per question key, judged question by question) replace
+    the keyword guesses: subject, topic, topic2, confidence and new_topic (the episode a NONE question would need)."""
+    tags = {}
+    for f in sorted((D / "tags" / "out").glob("*.csv")):
+        for r in csv.DictReader(open(f, encoding="utf-8")):
+            tags[r["key"].strip()] = r
+    return tags
+
+
 def main():
     idx = topic_index()
+    tags = load_tags()
     rows, check = [], []
     for f in sorted(D.glob("20??_*.txt")):
         year, paper = int(f.stem[:4]), f.stem[5:]
@@ -221,8 +232,14 @@ def main():
             t2 = re.sub(r"\s*\b(10|15|20|12\s*[—-]+)\s*$", "", t2).strip()
             subj = PAPER_SUBJECT.get(paper) or gs_subject(paper, t2)
             tid, sc = link(t2, subj, idx)
-            rows.append(dict(year=year, paper=paper, q=qn, part=part, marks=mk or "", words=words or "",
-                             directive=directive(t2), subject=subj, topic=tid, link_score=sc, text=t2))
+            row = dict(year=year, paper=paper, q=qn, part=part, marks=mk or "", words=words or "",
+                       directive=directive(t2), subject=subj, topic=tid, link_score=sc, topic2="", confidence="", new_topic="", tag="keyword", text=t2)
+            tg = tags.get(f"{year}-{paper}-{qn}{part}")
+            if tg:
+                tp = (tg.get("topic") or "").strip()
+                row.update(subject=(tg.get("subject") or subj).strip(), topic="" if tp.upper() == "NONE" else tp, topic2=(tg.get("topic2") or "").strip(),
+                           confidence=(tg.get("confidence") or "").strip(), new_topic=(tg.get("new_topic") or "").strip(), tag="checked")
+            rows.append(row)
         want = "20" if not optional else "about 28 (8 questions; Q1 and Q5 in 5 parts)"
         check.append(f"| {year} | {paper} | {method} | {n_ok} | {want} |")
     with open(D / "questions.csv", "w", newline="", encoding="utf-8") as fh:

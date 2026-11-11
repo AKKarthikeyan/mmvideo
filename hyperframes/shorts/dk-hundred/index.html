@@ -1,0 +1,216 @@
+<!doctype html>
+<!-- Data Kadai · Kadai Kanakku · "You pay ₹100 at DMart. DMart keeps ₹5.62". The first cut-out cartoon Short (look B in
+     docs/PREMIUM_LOOKS_AND_TRENDS.md): two original characters drawn in code (Anna the shopkeeper explains, Thambi the
+     customer asks), paper layers with hard shadows, character and prop motion stepped at 12 fps, all type set in code.
+     Figures: DMart results of 10 Oct 2026 (Jul-Sep 2026); the split per ₹100 is our arithmetic. Timings: story.js. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Data Kadai: where your ₹100 goes at DMart</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      /* style bible: paper, ink, teal, marigold, brick; two skin tones; wood. Flat fills, no outlines, hard paper shadows. */
+      #root { --paper: #f3ead7; --ink: #1d1a16; --teal: #0e7c66; --deep: #0a4f43; --mari: #f2a71b; --brick: #c8431f; --wood: #c9965b; --wood2: #a87742;
+        --acc: #f2a71b; background: var(--paper); }
+      #grain { opacity: 0.16; mix-blend-mode: multiply; }
+      #vig { --vig: 0.16; }
+      svg { position: absolute; left: 0; top: 0; overflow: visible; }
+      .cut { filter: drop-shadow(0 7px 0 rgba(29, 26, 22, 0.2)); }
+      .kicker { color: var(--mari); }
+      .src { color: rgba(243, 234, 215, 0.92); width: 960px; line-height: 1.22; }
+      #coins { position: absolute; left: 0; top: 0; }
+      .tray { position: absolute; left: 630px; width: 384px; height: 92px; background: var(--paper); border-radius: 14px; box-shadow: 0 6px 0 rgba(29, 26, 22, 0.22); opacity: 0; }
+      .tray .n { position: absolute; left: 14px; top: 9px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: var(--ink); white-space: nowrap; }
+      .tray .v { position: absolute; right: 14px; top: 6px; font: 700 32px/1 Oswald, sans-serif; color: #a3341a; font-variant-numeric: tabular-nums; }
+      .tray.keep { background: var(--mari); }
+      .tray.keep .v { color: var(--ink); }
+      #note { position: absolute; left: 150px; top: 394px; width: 780px; height: 400px; border-radius: 26px; background: var(--teal); box-shadow: 0 9px 0 rgba(29, 26, 22, 0.25);
+        transform-origin: 50% 50%; overflow: hidden; }
+      #note .ring { position: absolute; left: 40px; top: 60px; width: 280px; height: 280px; border-radius: 50%; background: var(--deep); }
+      #note .rs { position: absolute; left: 40px; top: 60px; width: 280px; height: 280px; display: flex; align-items: center; justify-content: center; font: 700 150px/1 Oswald, sans-serif; color: var(--mari); }
+      #note .a { position: absolute; left: 356px; top: 74px; font: 700 56px/1.04 Oswald, sans-serif; letter-spacing: 0.02em; color: var(--paper); }
+      #note .b { transform-origin: 0 50%; position: absolute; left: 356px; top: 214px; font: 700 56px/1.04 Oswald, sans-serif; letter-spacing: 0.02em; color: var(--mari); }
+      #note .edge { position: absolute; inset: 14px; border: 4px solid rgba(243, 234, 215, 0.35); border-radius: 16px; }
+      #big { position: absolute; left: 58px; width: 572px; top: 392px; text-align: center; font: 700 190px/1 Oswald, sans-serif; color: var(--paper); opacity: 0;
+        text-shadow: 0 8px 0 rgba(29, 26, 22, 0.45); font-variant-numeric: tabular-nums; }
+      #bigLab { position: absolute; left: 58px; width: 572px; top: 600px; text-align: center; font: 700 40px/1.12 Oswald, sans-serif; letter-spacing: 0.08em; color: var(--ink); opacity: 0; }
+      #card { position: absolute; left: 74px; top: 334px; width: 932px; height: 392px; background: var(--paper); box-shadow: 0 10px 0 rgba(29, 26, 22, 0.28); opacity: 0; transform-origin: 50% 100%; }
+      #card .k { position: absolute; left: 44px; top: 34px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: var(--teal); }
+      #card .h { position: absolute; left: 40px; top: 84px; font: 700 132px/1 Oswald, sans-serif; color: var(--ink); white-space: nowrap; }
+      #card .u { position: absolute; left: 44px; top: 234px; font: 700 50px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: var(--ink); }
+      #card .mk { position: absolute; left: 36px; top: 192px; height: 26px; background: var(--mari); transform-origin: 0 50%; mix-blend-mode: multiply; }
+      #card .s { position: absolute; left: 44px; bottom: 26px; font: 28px/1.3 Plex, monospace; color: #4a4338; }
+      #sign { position: absolute; left: 0; width: 1080px; top: 1660px; text-align: center; font: 700 150px/1 Oswald, sans-serif; letter-spacing: 0.1em; color: #8a5f33; opacity: 0.55; }
+      .name { position: absolute; top: 1206px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: var(--paper); background: var(--ink); padding: 6px 12px 7px; }
+      #disc { position: absolute; left: 60px; top: 1500px; width: 900px; font: 600 28px/1.25 Inter, sans-serif; color: #f6f0e3; }
+      #capband .c { -webkit-text-stroke: 12px rgba(29, 26, 22, 0.96); }
+      #capband .c em { color: #ffc64a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="38.067" data-width="1080" data-height="1920">
+      <!-- wall, awning, hanging board -->
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+        <rect width="1080" height="1920" fill="#f3ead7" />
+        <g fill="#e7dcc3"><rect x="0" y="930" width="1080" height="14" /><rect x="0" y="1060" width="1080" height="14" /><rect x="0" y="1190" width="1080" height="14" /></g>
+        <g class="cut">
+          <rect x="0" y="0" width="1080" height="280" fill="#0a4f43" />
+          <g id="scallop"></g>
+        </g>
+        <g fill="#1d1a16"><rect x="150" y="280" width="8" height="50" /><rect x="922" y="280" width="8" height="50" /></g>
+        <g class="cut"><rect x="40" y="316" width="1000" height="556" rx="30" fill="#a87742" /><rect x="58" y="334" width="964" height="520" rx="20" fill="#c9965b" /></g>
+        <g fill="#b98850" opacity="0.6"><rect x="58" y="462" width="964" height="5" /><rect x="58" y="594" width="964" height="5" /><rect x="58" y="726" width="964" height="5" /></g>
+      </svg>
+      <canvas id="coins" width="1080" height="1920" data-layout-ignore></canvas>
+      <div class="tray" id="t0" style="top: 340px"><div class="n" data-layout-allow-occlusion id="t0n"></div><div class="v" data-layout-allow-occlusion id="t0v"></div></div>
+      <div class="tray" id="t1" style="top: 442px"><div class="n" data-layout-allow-occlusion id="t1n"></div><div class="v" data-layout-allow-occlusion id="t1v"></div></div>
+      <div class="tray" id="t2" style="top: 544px"><div class="n" data-layout-allow-occlusion id="t2n"></div><div class="v" data-layout-allow-occlusion id="t2v"></div></div>
+      <div class="tray" id="t3" style="top: 646px"><div class="n" data-layout-allow-occlusion id="t3n"></div><div class="v" data-layout-allow-occlusion id="t3v"></div></div>
+      <div class="tray keep" id="t4" style="top: 748px"><div class="n" data-layout-allow-occlusion id="t4n"></div><div class="v" data-layout-allow-occlusion id="t4v"></div></div>
+      <canvas id="coinsTop" width="1080" height="1920" style="position: absolute; left: 0; top: 0" data-layout-ignore></canvas>
+      <div id="note"><div class="ring"></div><div class="rs">₹100</div><div class="edge"></div><div class="a" id="noteA"></div><div class="b" id="noteB"></div></div>
+      <div id="card"><div class="k" id="cardK"></div><div class="mk" id="cardM"></div><div class="h" id="cardH">₹19,206</div><div class="u" id="cardU"></div><div class="s" id="cardS"></div></div>
+      <!-- the two characters, behind the counter front -->
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+        <g id="thambi" class="cut">
+          <g id="tBody"><rect x="-150" y="92" width="300" height="330" rx="70" fill="#0e7c66" /><rect x="-36" y="62" width="72" height="70" rx="20" fill="#b97d52" />
+            <path d="M-118 110 L-64 96 L-22 300 L-78 312 Z" fill="#f2a71b" /><path d="M118 110 L64 96 L22 300 L78 312 Z" fill="#f2a71b" /></g>
+          <g id="tHead"><circle cx="-93" cy="8" r="20" fill="#b97d52" /><circle cx="93" cy="8" r="20" fill="#b97d52" /><circle r="94" fill="#c98d60" />
+            <path d="M-97 -6 C-108 -92 -46 -128 8 -118 C72 -122 112 -74 97 -2 C84 -42 44 -66 -8 -60 C-52 -60 -82 -42 -97 -6 Z" fill="#1d1a16" />
+            <g id="tBrow" fill="#1d1a16"><rect x="-50" y="-34" width="34" height="9" rx="4" /><rect x="16" y="-34" width="34" height="9" rx="4" /></g>
+            <g id="tEyes" fill="#1d1a16"><ellipse id="tE1" cx="-32" cy="-6" rx="10" ry="10" /><ellipse id="tE2" cx="32" cy="-6" rx="10" ry="10" /></g>
+            <circle cx="0" cy="18" r="9" fill="#b97d52" /><ellipse id="tMouth" cx="0" cy="50" rx="22" ry="4" fill="#5a1f14" /></g>
+        </g>
+        <g id="anna" class="cut">
+          <g id="aArm"><rect x="-26" y="-190" width="52" height="210" rx="26" fill="#c8431f" /><circle cx="0" cy="-196" r="34" fill="#9c6a3f" /></g>
+          <g id="aBody"><rect x="-170" y="96" width="340" height="330" rx="76" fill="#c8431f" /><rect x="-40" y="64" width="80" height="72" rx="22" fill="#9c6a3f" />
+            <path d="M-96 150 L96 150 L120 430 L-120 430 Z" fill="#f3ead7" /><rect x="-96" y="150" width="192" height="12" fill="#e2d6ba" /></g>
+          <g id="aHead"><circle cx="-98" cy="10" r="21" fill="#9c6a3f" /><circle cx="98" cy="10" r="21" fill="#9c6a3f" /><circle r="100" fill="#ad7848" />
+            <path d="M-102 -4 C-110 -70 -70 -112 0 -112 C70 -112 110 -70 102 -4 C92 -50 60 -80 0 -80 C-60 -80 -92 -50 -102 -4 Z" fill="#1d1a16" />
+            <g fill="none" stroke="#1d1a16" stroke-width="7"><circle cx="-36" cy="-6" r="27" /><circle cx="36" cy="-6" r="27" /><path d="M-9 -8 L9 -8" /></g>
+            <g id="aEyes" fill="#1d1a16"><ellipse id="aE1" cx="-36" cy="-6" rx="9" ry="9" /><ellipse id="aE2" cx="36" cy="-6" rx="9" ry="9" /></g>
+            <circle cx="0" cy="22" r="11" fill="#9c6a3f" /><ellipse id="aMouth" cx="0" cy="64" rx="22" ry="4" fill="#5a1f14" />
+            <path d="M-52 40 C-40 26 -14 28 0 38 C14 28 40 26 52 40 C40 56 16 52 0 46 C-16 52 -40 56 -52 40 Z" fill="#1d1a16" /></g>
+        </g>
+        <!-- counter front -->
+        <g class="cut"><rect x="0" y="1262" width="1080" height="680" fill="#a87742" /><rect x="0" y="1262" width="1080" height="26" fill="#8a5f33" /><g fill="#966a3b"><rect x="0" y="1560" width="1080" height="6" /><rect x="0" y="1830" width="1080" height="6" /></g></g>
+      </svg>
+      <div class="name" id="nT" style="left: 60px"></div>
+      <div class="name" id="nA" style="right: 60px"></div>
+      <div id="sign" data-layout-ignore>DATA KADAI</div>
+      <div id="big"></div>
+      <div id="bigLab"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="src" id="src"></div>
+      <div id="disc"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S, hi } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const T = { kick: "DATA KADAI · KADAI KANAKKU", noteA: "I PAID ₹100<br />AT DMART.", noteB: "HOW MUCH DOES<br />DMART KEEP?",
+        src: "DMart results, 10 Oct 2026 (Jul–Sep 2026) · the split per ₹100 of sales is our arithmetic · coins rounded",
+        trays: ["THE GOODS", "STAFF", "RUNNING COSTS", "WEAR + INTEREST", "DMART KEEPS"], bigLab: "OF YOUR ₹100<br />BEFORE INCOME TAX", left: "COINS LEFT",
+        cardK: "DMART · JULY–SEPTEMBER 2026", cardU: "CRORE OF SALES IN THREE MONTHS", cardS: "Source: Avenue Supermarts results, 10 Oct 2026",
+        disc: "Illustration; figures from DMart's results. Educational, not investment advice. Not SEBI-registered.", nT: "THAMBI", nA: "ANNA" };
+      ["kick", "noteA", "noteB", "src", "bigLab", "cardK", "cardU", "cardS", "disc", "nT", "nA"].forEach((k) => { $(k).innerHTML = T[k]; });
+      // awning scallops
+      let sc = ""; for (let i = 0; i < 9; i++) sc += `<path d="M${i * 120} 280 h120 v12 a60 60 0 0 1 -120 0 Z" fill="${i % 2 ? "#f3ead7" : "#f2a71b"}" />`;
+      $("scallop").innerHTML = sc;
+      // ---- the split: exact rupees for the labels, whole coins for the picture (86 + 2 + 5 + 2 + 5 = 100)
+      const PART = [[85.85, 86], [2.06, 2], [4.77, 5], [1.80, 2], [5.62, 5]];
+      PART.forEach((p, i) => { $(`t${i}n`).textContent = T.trays[i]; });
+      const part = (k) => (k < 86 ? 0 : k < 88 ? 1 : k < 93 ? 2 : k < 95 ? 3 : 4), first = [0, 86, 88, 93, 95];
+      const GX = 119, GY = 369, CELL = 50, R = 22;
+      const grid = (k) => [GX + (k % 10) * CELL, GY + Math.floor(k / 10) * CELL];
+      const trayPos = (k) => { const p = part(k), j = k - first[p], y0 = 340 + p * 102;
+        return p === 0 ? [648 + (j % 29) * 12.4, y0 + 53 + Math.floor(j / 29) * 12] : [656 + j * 44, y0 + 62]; };
+      // ---- times
+      const tCount = Q("count"), tCoins = Q("coins"), tGoods = Q("goods"), tReact = Q("react"), tStaff = Q("staff"), tRun = Q("run"), tWear = Q("wear"), tLeft = Q("left"),
+        tKeep = Q("keep"), tTax = Q("tax"), tHow = Q("how"), tBig = Q("big"), tSlice = Q("slice"), tMon = Q("months"), tEnd = Q("end"), tQ = Q("q");
+      const tFly = [tGoods, tStaff, tRun, tWear, tKeep], tBack = tEnd;
+      const who = (t) => { for (const b of S.beats) if (t >= b.t0 && t < b.t0 + b.sec) return b.who; return null; };
+      const g = $("coins").getContext("2d"), g2 = $("coinsTop").getContext("2d");
+      function coin(c, x, y, r, a = 1) {
+        c.globalAlpha = a; c.beginPath(); c.arc(x, y + 4, r, 0, 7); c.fillStyle = "rgba(29,26,22,0.28)"; c.fill();
+        c.beginPath(); c.arc(x, y, r, 0, 7); c.fillStyle = "#f2a71b"; c.fill();
+        c.beginPath(); c.arc(x, y, r * 0.72, 0, 7); c.strokeStyle = "#c98410"; c.lineWidth = r * 0.12; c.stroke();
+        c.fillStyle = "#8a5a06"; c.font = `700 ${Math.round(r * 0.9)}px Oswald, sans-serif`; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("1", x, y + 1); c.globalAlpha = 1;
+      }
+      const set = (id, tr) => $(id).setAttribute("transform", tr);
+      H.render = (t) => {
+        const q = Math.floor(t * 12) / 12;                       // cut-out motion on twos; type and counters stay smooth
+        const sp = who(t), talk = (k) => (sp === k ? 5 + 13 * Math.abs(Math.sin(q * 20.1)) : 4);
+        const back = Z.io2((q - tBack) / Math.max(0.4, D - 0.08 - tBack));          // the rewind for the loop
+        // ---- the ₹100 note, then a hundred coins
+        const burst = Z.io2((q - tCoins) / 0.5) - back;
+        $("note").style.visibility = burst < 0.98 ? "visible" : "hidden";
+        $("note").style.transform = `rotate(${-2 + 1.2 * Math.sin(q * 2.2)}deg) scale(${1 - 0.86 * burst})`;
+        const cd = F(t, tBig, tEnd, 0.2);
+        g.clearRect(0, 0, 1080, 1920); g2.clearRect(0, 0, 1080, 1920);
+        for (let k = 0; k < 100; k++) {
+          const p = part(k), gp = grid(k), tp = trayPos(k), spread = Z.o3((q - tCoins - 0.1 - k * 0.006) / 0.5) * (1 - back);
+          if (spread <= 0) continue;
+          const fly = Z.io2((q - tFly[p] - (k - first[p]) * (p === 0 ? 0.012 : 0.07)) / 0.6) * (1 - back);
+          let x = L(540, gp[0], spread), y = L(594, gp[1], spread), r = R * (0.5 + 0.5 * spread);
+          if (p === 4) {                                           // the five that stay: they gather, then go to the tin
+            const gather = Z.io2((q - tLeft) / 0.5) * (1 - back), mx = 204 + (k - 95) * 70, my = 790;
+            x = L(x, mx, gather); y = L(y, my, gather); r = L(r, 31, gather);
+          }
+          x = L(x, tp[0], fly); y = L(y, tp[1] - 60 * Math.sin(Math.PI * fly), fly); r = L(r, p === 0 ? 13 : 19, fly);
+          coin(fly > 0.02 ? g2 : g, x, y, r, p < 4 ? 1 - cd : 1);
+        }
+        // the 62 paise that the rounded coins hide
+        const sm = F(q, tKeep + 0.7, tBack, 0.2);
+        if (sm > 0) { const tp = trayPos(99); coin(g2, tp[0] + 40, tp[1] + 4, 12, sm); }
+        // ---- trays and their running totals
+        PART.forEach(([v], i) => {
+          const o = F(t, tCoins + 0.3, tBack + 0.2, 0.3), n = PART[i][1], u = C((t - tFly[i]) / (i === 0 ? 1.6 : 0.6 + n * 0.07));
+          $("t" + i).style.opacity = o * (i < 4 ? 1 - cd : 1); $(`t${i}v`).textContent = t < tFly[i] ? "" : "₹" + (v * Z.o3(u)).toFixed(2);
+          $("t" + i).style.transform = `scale(${1 + 0.05 * F(t, tFly[i], tFly[i] + 0.5, 0.15) + (i === 4 ? 0.07 * F(t, tSlice, tSlice + 1.2, 0.2) : 0)})`;
+        });
+        // ---- coins still on the board, then the reveal in the same place
+        let flown = 0; for (let i = 0; i < 4; i++) flown += Math.round(PART[i][1] * C((t - tFly[i]) / (i === 0 ? 1.5 : 0.4 + PART[i][1] * 0.07)));
+        const cnt = F(t, tGoods + 0.3, tKeep, 0.2), rv = F(t, tKeep + 0.15, tBig, 0.18);
+        $("big").style.opacity = Math.max(cnt, rv); $("big").textContent = t < tKeep + 0.05 ? String(100 - flown) : "₹5.62";
+        $("big").style.fontSize = t < tKeep + 0.05 ? "190px" : "176px";
+        $("big").style.transform = `scale(${t < tKeep + 0.05 ? 1 + 0.06 * F(t, tLeft, tKeep, 0.15) : 0.7 + 0.3 * Z.back((t - tKeep - 0.15) / 0.4)})`;
+        $("bigLab").innerHTML = t < tTax ? T.left : T.bigLab; $("bigLab").style.opacity = Math.max(F(t, tGoods + 0.3, tKeep, 0.2), F(t, tTax, tBig, 0.2));
+        $("noteB").style.opacity = t > D - 1 ? 0 : C((t - tQ) / 0.12); $("noteB").style.transform = `scale(${0.8 + 0.2 * Z.back((t - tQ) / 0.3)})`;
+        // ---- the evidence card
+        const cu = Z.o3((q - tBig) / 0.35);
+        $("card").style.opacity = cd; $("card").style.transform = `translateY(${60 * (1 - cu)}px) rotate(${-1.5 + 0.5 * Math.sin(q * 1.7)}deg)`;
+        $("cardM").style.width = "620px"; $("cardM").style.transform = `scaleX(${Z.o3((t - tMon) / 0.45)})`; $("cardU").style.opacity = C((t - tMon) / 0.15);
+        $("cardU").style.transform = `translateX(${-30 * (1 - Z.o3((t - tMon) / 0.35))}px)`;
+        $("cardH").textContent = "₹" + Math.round(L(0, 19206, Z.o3((t - tBig - 0.1) / 0.9))).toLocaleString("en-IN");
+        // ---- Thambi (asks) and Anna (explains)
+        const blink = (ph) => (((q + ph) % 3.3) < 0.1 ? 1.5 : 1);
+        const wide = F(q, tReact, tStaff, 0.1) + F(q, tHow, tBig, 0.1), jump = 18 * F(q, tReact, tReact + 0.5, 0.12) + 12 * F(q, tHow, tHow + 0.5, 0.12);
+        set("thambi", `translate(232 ${1044 - jump})`);
+        set("tHead", `rotate(${(sp === "T" ? 3 : 1.2) * Math.sin(q * 4.1) + 5 * (sp === "A" ? 1 : 0)})`);
+        $("tMouth").setAttribute("ry", wide > 0.5 && sp !== "T" ? 15 : talk("T"));
+        ["tE1", "tE2"].forEach((id) => { $(id).setAttribute("ry", wide > 0.5 ? 14 : 10 / blink(0.4) / (blink(0.4) > 1 ? 4 : 1)); $(id).setAttribute("rx", wide > 0.5 ? 13 : 10); });
+        set("tBrow", `translate(0 ${-12 * wide})`);
+        set("tBody", `rotate(${0.8 * Math.sin(q * 2.0)})`);
+        const point = Math.max(F(q, tGoods - 0.2, tReact, 0.25), F(q, tStaff - 0.2, tLeft, 0.25), F(q, tKeep - 0.1, tHow, 0.25));
+        set("anna", "translate(848 1036)");
+        set("aHead", `rotate(${(sp === "A" ? 3 : 1) * Math.sin(q * 3.7 + 1) - 4 * (sp === "T" ? 1 : 0)})`);
+        $("aMouth").setAttribute("ry", talk("A"));
+        ["aE1", "aE2"].forEach((id) => $(id).setAttribute("ry", blink(1.7) > 1 ? 2 : 9));
+        set("aBody", `rotate(${0.7 * Math.sin(q * 1.8 + 2)})`);
+        set("aArm", `translate(-120 250) rotate(${L(-150, -28 + 6 * Math.sin(q * 5), point)})`);
+        $("src").style.opacity = 1;
+        caps(t);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

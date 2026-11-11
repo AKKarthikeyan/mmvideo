@@ -153,6 +153,25 @@ KITS["ia-coastline-hi"] = dict(
     voice=VOICE_HI, lang="Hindi")
 
 
+KITS["dk-hundred"] = dict(
+    cover=25.0,
+    titles=["You pay ₹100 at DMart. DMart keeps ₹5.62", "Where your ₹100 goes at DMart", "DMart keeps only ₹5.62 of your ₹100"],
+    description="""Out of every ₹100 you pay at DMart, here is where the money went in July-September 2026:
+The goods ₹85.85 · Staff ₹2.06 · Other running costs ₹4.77 · Wear and tear (depreciation) ₹1.49 · Interest ₹0.31 · Left for DMart ₹5.62, before income tax.
+Sales in those three months: ₹19,206 crore. A thin slice of a very big cake.
+
+How we worked it out: each line of DMart's profit and loss statement for the quarter, divided by its sales. That split is our arithmetic. The pieces add to ₹100.10 because the profit includes about 10 paise of other income. In the video the coins are rounded to whole rupees (86 + 2 + 5 + 2 + 5).
+
+Anna and Thambi are illustrated characters, not real people. Educational, not investment advice. We are not SEBI-registered. No share price or recommendation is discussed.""",
+    sources=[
+        "Avenue Supermarts (DMart): press release and financial results for the quarter ended 30 September 2026, filed with the stock exchanges on 10 October 2026",
+    ],
+    hashtags="#DataKadai #DMart",
+    pinned="What did you guess DMart keeps out of ₹100? Tell us before you watch it again. Which shop should Anna count next?",
+    tags=["DMart", "DMart profit", "Avenue Supermarts", "where does my money go", "DMart results", "retail margin", "Data Kadai", "explained simply"],
+    instagram="You pay ₹100 at DMart. DMart keeps ₹5.62, before income tax. Anna counts it in one-rupee coins.\n\nSource: DMart's July-September 2026 results. Educational, not investment advice.\n#DataKadai #DMart",
+    voice="Narration: synthetic voices (one voice, pitched two ways). Characters are illustrations drawn in code.", lang="English (India)")
+
 def srt_time(s):
     ms = int(round(s * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); sec, ms = divmod(ms, 1000)
     return f"{h:02}:{m:02}:{sec:02},{ms:03}"

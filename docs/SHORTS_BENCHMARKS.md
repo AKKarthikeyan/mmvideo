@@ -152,6 +152,13 @@ Wording chosen with care: "Apple now gets chips for the iPhone" (Apple names the
 $265B is an announced total, not money spent), "chip capacity" (the SIA figure is capacity below 10 nm). Not said: that
 Nvidia's finished AI chips are made here (only wafers, from Oct 2025), or that Arizona makes the most advanced chips.
 
+## `dk-hundred` · Data Kadai (cut-out cartoon pilot)
+
+"You pay ₹100 at DMart. DMart keeps ₹5.62." The first Short in the cut-out cartoon look, with two characters in
+dialogue. It is a pilot, not yet a benchmark: the two voices are one synthetic voice at two pitches. Details in
+`docs/PREMIUM_LOOKS_AND_TRENDS.md`, section 7. Figures: DMart results of 10 Oct 2026 (July-September 2026); the split
+per ₹100 of sales is our arithmetic.
+
 ## What these three add to the format
 
 1. **The first frame is the subject, moving**: a satellite image, a map with a pin, a 3D map. None opens on text.

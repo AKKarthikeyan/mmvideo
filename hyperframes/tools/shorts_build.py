@@ -20,6 +20,9 @@ A language version (id ending -hi) names its `base`: it has its own script and c
 Short's page and images into it, so the picture is made once. Pages of such Shorts time themselves with named cues
 (Q("name")); the script maps each cue to a phrase in its own language.
 
+A dialogue Short gives each beat a speaker as a fourth item ("A", "T") and a `cast` of voice tweaks per speaker
+(pitch, speed); story.js then carries `who` on each beat, so the page can move the right mouth.
+
 A Short is a list of beats; a beat is a list of (say, cap) chunks. `say` is what the voice reads (numbers in words);
 `cap` is the 2-4 word caption shown while it is read (*word* = accent colour). `ev` lists phrases at which the picture
 changes (a new scene or element), so shorts_check.py can measure how long any picture is held. The last beat runs
@@ -265,8 +268,32 @@ S["ia-coastline-hi"] = dict(
     ])
 
 
+S["dk-hundred"] = dict(
+    channel="Data Kadai", lang="en-IN", series="Kadai Kanakku",
+    title="You pay ₹100 at DMart. DMart keeps ₹5.62",
+    send="Everyone shops at DMart and everyone guesses far too high.",
+    cast={"A": dict(pitch=-1), "T": dict(pitch=5, speed=1.05)},     # one Indian-accent voice, pitched apart: ear-check it
+    beats=[
+        ("b1", [("Anna, I spent a hundred rupees at DMart.", "Anna, I spent *₹100* at DMart."), ("How much of it does DMart keep?", "How much does DMart *keep?*")],
+         {"hook": "Anna, I spent", "q": "How much"}, "T"),
+        ("b2", [("Let's count it.", "Let's *count it.*"), ("In one-rupee coins.", "In *one-rupee coins.*")], {"count": "Let's count", "coins": "In one-rupee"}, "A"),
+        ("b3", [("Eighty-six coins go straight out,", "*86 coins* go straight out,"), ("to buy the goods you took home.", "to buy *the goods* you took home.")],
+         {"goods": "Eighty-six coins", "home": "to buy the goods"}, "A"),
+        ("b4", [("Eighty-six? Already?", "*86?* Already?")], {"react": "Eighty-six? Already"}, "T"),
+        ("b5", [("Two pay the staff.", "*2* pay the staff."), ("Five cover every other running cost.", "*5* cover every other running cost."),
+                ("And two more go to wear and tear, and interest.", "*2 more:* wear and tear, and interest.")],
+         {"staff": "Two pay", "run": "Five cover", "wear": "And two more"}, "A"),
+        ("b6", [("So what's left?", "So what's *left?*")], {"left": "So what's left"}, "T"),
+        ("b7", [("Five rupees and sixty-two paise.", "*₹5.62.*"), ("Before income tax.", "Before income tax.")], {"keep": "Five rupees", "tax": "Before income"}, "A"),
+        ("b8", [("That's all?", "*That's all?*"), ("Then how is DMart so big?", "Then how is DMart *so big?*")], {"how": "That's all", "how2": "Then how"}, "T"),
+        ("b9", [("It sold over nineteen thousand crore rupees of goods in three months.", "It sold *over ₹19,000 crore* in three months."),
+                ("A thin slice of a very big cake.", "A *thin slice* of a very big cake.")], {"big": "It sold", "months": "of goods in three", "slice": "A thin slice"}, "A"),
+        ("b10", [("Hmm. Say that once more?", "Hmm. Say that *once more?*")], {"end": "Hmm. Say"}, "T"),
+    ])
+
+
 # ---------------------------------------------------------------------------------------------------------------------
-def tts(text, lang, path):
+def tts(text, lang, path, tweak=None):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
     if cmd:                                   # a local voice: the command reads {text} and writes {out}
         txt = path.with_suffix(".txt"); txt.write_text(text, encoding="utf-8"); wav = path.with_suffix(".local.wav")
@@ -278,7 +305,7 @@ def tts(text, lang, path):
     import requests
     v = VOICE[lang]
     body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": v["boost"],
-            "voice_setting": {"voice_id": v["voice_id"], "speed": 1, "vol": 1, "pitch": 0},
+            "voice_setting": {"voice_id": v["voice_id"], "speed": 1, "vol": 1, "pitch": 0, **(tweak or {})},
             "audio_setting": {"sample_rate": SR, "bitrate": 128000, "format": "mp3", "channel": 1}}
     key = os.environ.get("MINIMAX_API_KEY", "proxy-injected")
     for attempt in range(4):
@@ -326,16 +353,19 @@ def story(sid, use_tts=True, clips_dir=None, fresh=()):
     sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]; PAUSE = sp.get("pause", 0.3)     # longest pause kept inside a beat
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
-    says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
+    sp = dict(sp, beats=[b if len(b) == 4 else (*b, None) for b in sp["beats"]])      # (id, chunks, cues, speaker)
+    says = [" ".join(c[0] for c in chunks) for _, chunks, _, _ in sp["beats"]]
+    who = {say: w for (_, _, _, w), say in zip(sp["beats"], says)}; cast = sp.get("cast", {})
+    tw = lambda say: cast.get(who.get(say)) or None
     engine = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_")) or VOICE[lang]["voice_id"]
-    clip = lambda say, k=0: adir / (hashlib.sha1((engine + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
+    clip = lambda say, k=0: adir / (hashlib.sha1((engine + say + json.dumps(tw(say) or "", sort_keys=True) + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
     audio = {}
-    for (bid, _, _), say in zip(sp["beats"], says):     # --fresh b1,b7: throw away those beats' cached takes and voice them again
+    for (bid, _, _, _), say in zip(sp["beats"], says):     # --fresh b1,b7: throw away those beats' cached takes and voice them again
         if bid in fresh:
             for k in range(4):
                 clip(say, k).unlink(missing_ok=True)
     if clips_dir:                               # recorded lines, one file per beat
-        for (bid, _, _), say in zip(sp["beats"], says):
+        for (bid, _, _, _), say in zip(sp["beats"], says):
             hit = [f for ext in ("wav", "mp3", "m4a") for f in [Path(clips_dir) / f"{bid}.{ext}"] if f.exists()]
             if not hit:
                 sys.exit(f"{sid}: no clip for {bid} in {clips_dir} (expected {bid}.wav, .mp3 or .m4a)")
@@ -343,7 +373,7 @@ def story(sid, use_tts=True, clips_dir=None, fresh=()):
         voiced = True
     elif voiced:
         for say in says:
-            if not clip(say).exists() and not tts(say, lang, clip(say)):
+            if not clip(say).exists() and not tts(say, lang, clip(say), tw(say)):
                 print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates"); voiced = False; break
             audio[say] = pcm(clip(say), PAUSE)
     if voiced and not clips_dir:                # a beat far slower than the rest for its text was probably said twice: voice it again
@@ -352,13 +382,13 @@ def story(sid, use_tts=True, clips_dir=None, fresh=()):
             k = 0
             while rate[say] > 1.4 * med and len(say) > 12 and k < 3:
                 k += 1
-                if clip(say, k).exists() or tts(say, lang, clip(say, k)):
+                if clip(say, k).exists() or tts(say, lang, clip(say, k), tw(say)):
                     a = pcm(clip(say, k), PAUSE)
                     if len(a) < len(audio[say]):
                         audio[say] = a; rate[say] = len(a) / SR / len(say)
                         print(f"  {sid}: re-voiced a slow beat ({len(a) / SR:.1f} s): {say[:40]}")
     cues = {}
-    for (bid, chunks, ev), say in zip(sp["beats"], says):
+    for (bid, chunks, ev, spk), say in zip(sp["beats"], says):
         if isinstance(ev, dict):                # named cues: the page asks for Q("name"), so one page serves every language
             for name, ph in ev.items():
                 if ph.lower() not in say.lower():
@@ -377,7 +407,7 @@ def story(sid, use_tts=True, clips_dir=None, fresh=()):
         for name, ph in list(cues.items()):
             if isinstance(ph, str) and ph in ev:
                 cues[name] = round(t + sec * say.lower().index(ph.lower()) / len(say), 3)
-        beats.append(dict(id=bid, t0=round(t, 3), sec=round(sec, 3), say=say, ev=ev))
+        beats.append(dict(id=bid, t0=round(t, 3), sec=round(sec, 3), say=say, ev=ev, **({"who": spk} if spk else {})))
         clips.append((t, a)); t += sec + GAP
     dur = math.ceil(t * 30) / 30
     st = dict(id=sid, channel=sp["channel"], lang=lang, title=sp["title"], dur=round(dur, 3), voiced=bool(voiced), beats=beats, caps=caps, cues=cues)
@@ -459,7 +489,7 @@ def verify(sid):
     sp = S[sid]; lang = sp["lang"][:2]; adir = OUT / "shorts_audio" / sid
     model = WhisperModel("small", device="cpu", compute_type="int8"); bad = 0
     print(f"{sid} ({sp['lang']})")
-    for bid, chunks, _ in sp["beats"]:
+    for bid, chunks, *_ in sp["beats"]:
         say = " ".join(c[0] for c in chunks); cap = re.sub(r"\*", "", " ".join(c[1] for c in chunks)); f = adir / f"{bid}.wav"
         if not f.exists():
             print(f"  {bid}: no clip (build the story with a voice key first)"); bad += 1; continue
@@ -490,8 +520,8 @@ def main():
             story(n, "--no-tts" not in sys.argv, clips, fresh)
         elif cmd == "lines":
             print(f"{n} · {S[n]['channel']} · {S[n]['lang']}")
-            for bid, chunks, _ in S[n]["beats"]:
-                print(f"  {bid}: " + " ".join(c[0] for c in chunks))
+            for bid, chunks, *rest in S[n]["beats"]:
+                print(f"  {bid}{' [' + rest[1] + ']' if len(rest) > 1 and rest[1] else ''}: " + " ".join(c[0] for c in chunks))
         elif cmd == "mux":
             mux(n)
         elif cmd == "kit":

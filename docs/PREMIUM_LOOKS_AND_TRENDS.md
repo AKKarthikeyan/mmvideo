@@ -1,7 +1,8 @@
 # Premium explainer looks, "explain like I'm 5", and riding trends
 
 AK asked on 11 Nov 2026 how we can make Vox-style and other premium, rich-looking cartoon explainers in an
-"explain like I'm 5" format, and how to ride trends. This is the research and a plan. Nothing here is built yet.
+"explain like I'm 5" format, and how to ride trends. This is the research and a plan. Two pieces are now built
+(section 7): a pilot of look B and the first version of the trend-desk script.
 
 **Evidence.**
 - Live YouTube data from vidIQ on 11 Nov 2026.
@@ -181,3 +182,28 @@ mechanism.
 - Hours per video for the code-animated cartoon route: our estimate is 2–4 days of setup, then 4–8 hours a Short.
 - Hindi-versus-English performance of animated explainers: vidIQ does not index Hindi Shorts.
 - Commercial-use terms of the image models: secondary sources only. Read the terms before buying.
+
+## 7. Built so far (11 Nov 2026)
+
+**The look B pilot: `hyperframes/shorts/dk-hundred/`** (Data Kadai, series "Kadai Kanakku": "You pay ₹100 at DMart.
+DMart keeps ₹5.62").
+- Two original characters, drawn as vector shapes in the page, no generated images: Anna the shopkeeper explains,
+  Thambi the customer asks. Reuse them for every Kadai Kanakku Short; they are the series' faces.
+- Style bible, in the page's CSS: paper `#f3ead7`, ink `#1d1a16`, teal `#0e7c66`, marigold `#f2a71b`, brick `#c8431f`,
+  wood `#c9965b`. Flat fills, no outlines, hard paper shadows, paper grain. Characters and props move at 12 frames a
+  second; type and counters move smoothly.
+- One metaphor: ₹100 becomes a hundred one-rupee coins, and the coins leave for labelled trays. The number of coins
+  left counts down on the board, and the reveal lands in the same spot.
+- The evidence beat cuts to a paper card with the reported sales figure and its source. The disclaimer and the source
+  line stay on screen throughout.
+- Script: ten short turns, the child asks and the shopkeeper answers, about 100 words, a loop ending.
+  `shorts_build.py` now takes a speaker per beat (fourth item of the beat) and a `cast` of voice tweaks per speaker.
+- Voice: MiniMax has one Indian-accent English voice, so both characters use it at different pitch. This is the
+  weakest part of the pilot. Record two people, or two local voices, before publishing.
+- Build: `shorts_build.py story dk-hundred`, `verify`, `check`, `hf.py render dk-hundred`, `mux`, `kit`.
+
+**The trend desk script: `scripts/trend_desk.py`.** Run it at 08:30 and 18:00. It polls the feeds in section 4, counts
+signals for each trending search, guesses the channel, marks red flags, lists the day's RBI, SEBI and PIB releases,
+and writes `out/trend/<date>.md`. It fills only slope and fit; the owner scores gap, shelf life and edge and applies
+the go rule. Limits found on the first run: Reddit refused the request (HTTP 429) from the cloud, and trends in
+Indian languages match only through a short keyword list.

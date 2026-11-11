@@ -1,0 +1,805 @@
+{
+ "id": "pyq-2023-gs1-7",
+ "format": "long-16x9",
+ "target_minutes": 2.8,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2023-gs1-7/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2023 · General Studies Paper I · Q7",
+    "marks": "10 marks",
+    "text": "Why is the South-West Monsoon called ‘Purvaiya’ (easterly) in Bhojpur Region? How has this directional seasonal wind system influenced the cultural ethos of the region?",
+    "glow": []
+   },
+   "vo": "UPSC, twenty twenty-three. General Studies Paper One, ten marks, one hundred and fifty words. Why is the South-West Monsoon called Purvaiya, easterly, in the Bhojpur region? And how has this wind system influenced the region's culture? Here's the puzzle. A south-west monsoon with an east wind's name.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2023, GS Paper I, Q7'. The words 'South-West' and 'easterly' glow faintly (plant).",
+   "beat": "b00",
+   "claims": []
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "Why is the South-West Monsoon called ‘Purvaiya’ (easterly) in Bhojpur Region? How has this directional seasonal wind system influenced the cultural ethos of the region?",
+    "directives": [
+     {
+      "word": "Why",
+      "meaning": "give the reasons",
+      "key": "x1"
+     },
+     {
+      "word": "How",
+      "meaning": "show the process",
+      "key": "x2"
+     }
+    ],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture",
+      "key": "d2"
+     }
+    ]
+   },
+   "vo": "Read what it asks. Why asks for a cause. How has it influenced asks for effects. So there are two jobs. The reason for the name. And the mark it left on culture.",
+   "reveals": [
+    {
+     "key": "x1",
+     "word": "Why"
+    },
+    {
+     "key": "x2",
+     "word": "How"
+    },
+    {
+     "key": "d1",
+     "word": "Why"
+    },
+    {
+     "key": "d2",
+     "word": "mark"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'why' and 'how' highlighted; two empty boxes D1 and D2 (plant: they tick at the end).",
+   "beat": "b01",
+   "claims": []
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Why 'Purvaiya'? A 150-Word Answer (UPSC GS I 2023)",
+    "lines": [
+     {
+      "text": "In Bhojpuri song, purva is the easterly wind.",
+      "key": "l1"
+     },
+     {
+      "text": "A song collected in Jaunpur reads, gusts of easterly winds blow.",
+      "key": "l2"
+     }
+    ]
+   },
+   "vo": "Start with the word. In Bhojpuri song, purva is the easterly wind. A song collected in Jaunpur reads, gusts of easterly winds blow.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "word."
+    },
+    {
+     "key": "l2",
+     "word": "A"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The song line as a quote card (Jassal, Unearthing Gender); a small wind-vane pointing east.",
+   "beat": "b02",
+   "claims": [
+    "2023-GS1-7-01",
+    "2023-GS1-7-02"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Why 'Purvaiya'? A 150-Word Answer (UPSC GS I 2023)",
+    "lines": [
+     {
+      "text": "But the monsoon is south-west.",
+      "key": "l1"
+     },
+     {
+      "text": "Then the Bay of Bengal branch meets the Arakan Hills.",
+      "key": "l2"
+     },
+     {
+      "text": "It bends, and runs west up the Ganga plain.",
+      "key": "l3"
+     },
+     {
+      "text": "So it arrives from the east.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "But the monsoon is south-west. Yes, over the sea. Then the Bay of Bengal branch meets the Arakan Hills. It bends, and runs west up the Ganga plain. So it arrives from the east.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "Yes,"
+    },
+    {
+     "key": "l2",
+     "word": "Bay"
+    },
+    {
+     "key": "l3",
+     "word": "Arakan"
+    },
+    {
+     "key": "l4",
+     "word": "up"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Map of the Bay branch bending at the Arakan Hills and running west along the Ganga plain (pay-off of the plant).",
+   "beat": "b03",
+   "claims": [
+    "M042",
+    "2023-GS1-7-05"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Why 'Purvaiya'? A 150-Word Answer (UPSC GS I 2023)",
+    "lines": [
+     {
+      "text": "IMD gives the weather map.",
+      "key": "l1"
+     },
+     {
+      "text": "Its monsoon trough runs from Ganganagar through Prayagraj to Kolkata.",
+      "key": "l2"
+     },
+     {
+      "text": "North of that line, winds are easterly or south-easterly.",
+      "key": "l3"
+     },
+     {
+      "text": "Placing Bhojpur there is our own step.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "IMD gives the weather map. Its monsoon trough runs from Ganganagar through Prayagraj to Kolkata. North of that line, winds are easterly or south-easterly. Placing Bhojpur there is our own step. IMD never names it, so say it with care.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "monsoon"
+    },
+    {
+     "key": "l2",
+     "word": "to"
+    },
+    {
+     "key": "l3",
+     "word": "easterly"
+    },
+    {
+     "key": "l4",
+     "word": "our"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The trough drawn as a line on a map; arrows on its north side point west; a 'our inference' tag on Bhojpur.",
+   "beat": "b04",
+   "claims": [
+    "2023-GS1-7-03",
+    "2023-GS1-7-04"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Why 'Purvaiya'? A 150-Word Answer (UPSC GS I 2023)",
+    "lines": [
+     {
+      "text": "The rains set the farm calendar.",
+      "key": "l1"
+     },
+     {
+      "text": "Paddy sowing runs from the third week of June to the fourth week of July.",
+      "key": "l2"
+     },
+     {
+      "text": "A Jaunpur work song says, it's raining, let's go transplant paddy.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "Now the culture. The rains set the farm calendar. Paddy sowing runs from the third week of June to the fourth week of July. A Jaunpur work song says, it's raining, let's go transplant paddy.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "set"
+    },
+    {
+     "key": "l2",
+     "word": "third"
+    },
+    {
+     "key": "l3",
+     "word": "of"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A paddy field with a calendar strip; the song line as a quote card.",
+   "beat": "b05",
+   "claims": [
+    "2023-GS1-7-09",
+    "2023-GS1-7-12"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b06",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Purvaiya_ is the easterly (_purva_) wind of Bhojpuri song; the monsoon's Bay branch reaches the Ganga plain from the east."
+     },
+     {
+      "kind": "head",
+      "text": "1. Why easterly"
+     },
+     {
+      "kind": "points",
+      "text": "• The Bay of Bengal branch, bent by the Arakan Hills, moves _westward_ along the Ganga plain (NCERT). • IMD: north of the _monsoon trough_ (Ganganagar-Prayagraj-Kolkata) winds are easterly or south-easterly; placing Bhojpur there is our inference."
+     },
+     {
+      "kind": "diagram",
+      "text": "A flow: the Bay branch, the Ganga plain, the Purva wind, the Kajari song.",
+      "label": "Fig. 1: From the Bay of Bengal to the song",
+      "diagram": {
+       "name": "flow",
+       "labels": {},
+       "items": [
+        {
+         "when": "Bay branch",
+         "what": "bent by the Arakan Hills"
+        },
+        {
+         "when": "Ganga plain",
+         "what": "moves west along it"
+        },
+        {
+         "when": "Purva wind",
+         "what": "easterly north of the trough"
+        },
+        {
+         "when": "Kajari",
+         "what": "Sawan songs of rain and parting"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Cultural ethos"
+     },
+     {
+      "kind": "points",
+      "text": "• _Farming_: paddy is sown from the third week of June, and rain calls transplanting in song (Jassal). • _Kajari_, sung by women in Sawan (July-August); the slack season brings visits to natal homes. • _Migration_ shaped Biraha, Bidesiya and Kajari: the same wind pains wives left behind (Chauhan and Mishra). • 50,579,447 speak Bhojpuri (Census 2011)."
+     },
+     {
+      "kind": "close",
+      "text": "So the easterly sets the work, the songs and the ache: a boon for fields, a pain for the parted."
+     }
+    ],
+    "from": 0,
+    "to": 1,
+    "minutes": [
+     7.0,
+     6.029
+    ],
+    "total": 7,
+    "words0": 0,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Now we write. One hundred and fifty words, about seven minutes. Open by translating the word. Purva means easterly. Then the Bay branch.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet; clock 7:00 and word counter 0. The introduction writes in; box D1 fills.",
+   "beat": "b06",
+   "claims": [
+    "2023-GS1-7-01",
+    "2023-GS1-7-02",
+    "M042"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Purvaiya_ is the easterly (_purva_) wind of Bhojpuri song; the monsoon's Bay branch reaches the Ganga plain from the east."
+     },
+     {
+      "kind": "head",
+      "text": "1. Why easterly"
+     },
+     {
+      "kind": "points",
+      "text": "• The Bay of Bengal branch, bent by the Arakan Hills, moves _westward_ along the Ganga plain (NCERT). • IMD: north of the _monsoon trough_ (Ganganagar-Prayagraj-Kolkata) winds are easterly or south-easterly; placing Bhojpur there is our inference."
+     },
+     {
+      "kind": "diagram",
+      "text": "A flow: the Bay branch, the Ganga plain, the Purva wind, the Kajari song.",
+      "label": "Fig. 1: From the Bay of Bengal to the song",
+      "diagram": {
+       "name": "flow",
+       "labels": {},
+       "items": [
+        {
+         "when": "Bay branch",
+         "what": "bent by the Arakan Hills"
+        },
+        {
+         "when": "Ganga plain",
+         "what": "moves west along it"
+        },
+        {
+         "when": "Purva wind",
+         "what": "easterly north of the trough"
+        },
+        {
+         "when": "Kajari",
+         "what": "Sawan songs of rain and parting"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Cultural ethos"
+     },
+     {
+      "kind": "points",
+      "text": "• _Farming_: paddy is sown from the third week of June, and rain calls transplanting in song (Jassal). • _Kajari_, sung by women in Sawan (July-August); the slack season brings visits to natal homes. • _Migration_ shaped Biraha, Bidesiya and Kajari: the same wind pains wives left behind (Chauhan and Mishra). • 50,579,447 speak Bhojpuri (Census 2011)."
+     },
+     {
+      "kind": "close",
+      "text": "So the easterly sets the work, the songs and the ache: a boon for fields, a pain for the parted."
+     }
+    ],
+    "from": 2,
+    "to": 3,
+    "minutes": [
+     6.029,
+     3.609
+    ],
+    "total": 7,
+    "words0": 23,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D1"
+    ],
+    "start": "w"
+   },
+   "vo": "Section one is the cause. The Bay branch turns west. The trough has easterlies on its north. Then say plainly that placing Bhojpur there is our inference. Add a small flow diagram.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 1 writes in; Fig. 1 draws as four boxes joined by arrows.",
+   "beat": "b07",
+   "claims": [
+    "M042",
+    "2023-GS1-7-03",
+    "2023-GS1-7-04",
+    "2023-GS1-7-05"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Purvaiya_ is the easterly (_purva_) wind of Bhojpuri song; the monsoon's Bay branch reaches the Ganga plain from the east."
+     },
+     {
+      "kind": "head",
+      "text": "1. Why easterly"
+     },
+     {
+      "kind": "points",
+      "text": "• The Bay of Bengal branch, bent by the Arakan Hills, moves _westward_ along the Ganga plain (NCERT). • IMD: north of the _monsoon trough_ (Ganganagar-Prayagraj-Kolkata) winds are easterly or south-easterly; placing Bhojpur there is our inference."
+     },
+     {
+      "kind": "diagram",
+      "text": "A flow: the Bay branch, the Ganga plain, the Purva wind, the Kajari song.",
+      "label": "Fig. 1: From the Bay of Bengal to the song",
+      "diagram": {
+       "name": "flow",
+       "labels": {},
+       "items": [
+        {
+         "when": "Bay branch",
+         "what": "bent by the Arakan Hills"
+        },
+        {
+         "when": "Ganga plain",
+         "what": "moves west along it"
+        },
+        {
+         "when": "Purva wind",
+         "what": "easterly north of the trough"
+        },
+        {
+         "when": "Kajari",
+         "what": "Sawan songs of rain and parting"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Cultural ethos"
+     },
+     {
+      "kind": "points",
+      "text": "• _Farming_: paddy is sown from the third week of June, and rain calls transplanting in song (Jassal). • _Kajari_, sung by women in Sawan (July-August); the slack season brings visits to natal homes. • _Migration_ shaped Biraha, Bidesiya and Kajari: the same wind pains wives left behind (Chauhan and Mishra). • 50,579,447 speak Bhojpuri (Census 2011)."
+     },
+     {
+      "kind": "close",
+      "text": "So the easterly sets the work, the songs and the ache: a boon for fields, a pain for the parted."
+     }
+    ],
+    "from": 4,
+    "to": 4,
+    "minutes": [
+     3.609,
+     3.482
+    ],
+    "total": 7,
+    "words0": 58,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Section two is the culture. Farming first, with the paddy dates. Then Kajari, sung by women in Sawan, July and August. That slack season lets wives visit their parents. And fifty million people speak Bhojpuri.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in, bullet by bullet; key terms underlined; box D2 fills.",
+   "beat": "b08",
+   "claims": [
+    "2023-GS1-7-09",
+    "2023-GS1-7-10",
+    "2023-GS1-7-11",
+    "2023-GS1-7-14",
+    "2023-GS1-7-07"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b09",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Purvaiya_ is the easterly (_purva_) wind of Bhojpuri song; the monsoon's Bay branch reaches the Ganga plain from the east."
+     },
+     {
+      "kind": "head",
+      "text": "1. Why easterly"
+     },
+     {
+      "kind": "points",
+      "text": "• The Bay of Bengal branch, bent by the Arakan Hills, moves _westward_ along the Ganga plain (NCERT). • IMD: north of the _monsoon trough_ (Ganganagar-Prayagraj-Kolkata) winds are easterly or south-easterly; placing Bhojpur there is our inference."
+     },
+     {
+      "kind": "diagram",
+      "text": "A flow: the Bay branch, the Ganga plain, the Purva wind, the Kajari song.",
+      "label": "Fig. 1: From the Bay of Bengal to the song",
+      "diagram": {
+       "name": "flow",
+       "labels": {},
+       "items": [
+        {
+         "when": "Bay branch",
+         "what": "bent by the Arakan Hills"
+        },
+        {
+         "when": "Ganga plain",
+         "what": "moves west along it"
+        },
+        {
+         "when": "Purva wind",
+         "what": "easterly north of the trough"
+        },
+        {
+         "when": "Kajari",
+         "what": "Sawan songs of rain and parting"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "2. Cultural ethos"
+     },
+     {
+      "kind": "points",
+      "text": "• _Farming_: paddy is sown from the third week of June, and rain calls transplanting in song (Jassal). • _Kajari_, sung by women in Sawan (July-August); the slack season brings visits to natal homes. • _Migration_ shaped Biraha, Bidesiya and Kajari: the same wind pains wives left behind (Chauhan and Mishra). • 50,579,447 speak Bhojpuri (Census 2011)."
+     },
+     {
+      "kind": "close",
+      "text": "So the easterly sets the work, the songs and the ache: a boon for fields, a pain for the parted."
+     }
+    ],
+    "from": 5,
+    "to": 6,
+    "minutes": [
+     3.482,
+     0.4
+    ],
+    "total": 7,
+    "words0": 61,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "Last, the ache. Migration shaped Biraha, Bidesiya and Kajari. The same wind that should comfort pains a wife whose husband is away. Rain is a boon for the fields and a pain for the parted. End on that.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Last,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The last bullet and the conclusion write in; word counter near 150.",
+   "beat": "b09",
+   "claims": [
+    "2023-GS1-7-15",
+    "2023-GS1-7-02",
+    "2023-GS1-7-17"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b10",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "Purvaiya comes from a Bhojpuri suffix meaning 'from'.",
+      "miss": "no scholarly source gives that etymology; the word appears in songs as the easterly wind",
+      "key": "w1"
+     },
+     {
+      "text": "A south-west monsoon cannot be easterly.",
+      "miss": "north of the trough, winds are easterly or south-easterly",
+      "key": "w2"
+     },
+     {
+      "text": "IMD names Bhojpur's wind as easterly.",
+      "miss": "IMD names the trough, not Bhojpur: that step is our inference",
+      "key": "w3"
+     },
+     {
+      "text": "Festivals like Hariyali Teej come from the easterly wind.",
+      "miss": "no official or university-press source ties them to it",
+      "key": "w4"
+     },
+     {
+      "text": "The wind only brings joy.",
+      "miss": "the songs also call it an enemy of wives left behind",
+      "key": "w5"
+     }
+    ],
+    "heads": [
+     "1. Why easterly",
+     "2. Cultural ethos"
+    ],
+    "fig": "Fig. 1: From the Bay of Bengal to the song",
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now the easy answer beside it. It invents an origin for the word, from a suffix. It says a south-west monsoon cannot be easterly. It credits festivals to the wind with no source. It says the wind only brings joy. And it says IMD named the Bhojpur wind. It did not.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "invents"
+    },
+    {
+     "key": "w2",
+     "word": "suffix."
+    },
+    {
+     "key": "w3",
+     "word": "be"
+    },
+    {
+     "key": "w4",
+     "word": "with"
+    },
+    {
+     "key": "w5",
+     "word": "brings"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's slips ringed in red with one-line notes.",
+   "beat": "b10",
+   "claims": [
+    "2023-GS1-7-01",
+    "2023-GS1-7-04",
+    "2023-GS1-7-02",
+    "2023-GS1-7-03"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "b11",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Why 'Purvaiya'"
+     },
+     {
+      "id": "D2",
+      "label": "Its mark on culture"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2022 GS III Q8: mechanism and occurrence of cloudburst, with two recent examples",
+      "key": "c1"
+     },
+     {
+      "text": "2019 Geography Paper II Q1(c): why is the Indian monsoon erratic in nature?",
+      "key": "c2"
+     },
+     {
+      "text": "2018 Geography Paper I Q3(a): origin, progress and retreat of the monsoon, and its economic impact",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "The concept episode: The monsoon: how a whole subcontinent breathes",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "Here is the payoff. The same frame answers its cousins. Twenty twenty-two asked about the cloudburst. Twenty nineteen asked why the monsoon is erratic. Learn it once: the cause first, then its effects.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "The"
+    },
+    {
+     "key": "c2",
+     "word": "twenty-two"
+    },
+    {
+     "key": "c3",
+     "word": "nineteen"
+    },
+    {
+     "key": "nx",
+     "word": "then"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The two boxes tick; three cousin question cards slide in.",
+   "beat": "b11",
+   "claims": []
+  }
+ ]
+}

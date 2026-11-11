@@ -1,0 +1,1571 @@
+{
+ "id": "geo04-p1",
+ "format": "long-16x9",
+ "target_minutes": 9.0,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/GEO-04/script_p1.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "volcano-hook",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Mauna Loa · Hawaii",
+      "key": "ml"
+     },
+     {
+      "text": "lava pours out gently",
+      "key": "gl"
+     }
+    ],
+    "mode": "mauna"
+   },
+   "vo": "On Hawaii's Mauna Loa, which USGS calls the largest active volcano on Earth, lava usually pours out gently. It has built a broad mountain with gentle slopes.",
+   "reveals": [
+    {
+     "key": "ml",
+     "word": "Mauna"
+    },
+    {
+     "key": "gl",
+     "word": "gently."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Dusk on Mauna Loa: a red lava river sliding down a broad, gentle grey slope.",
+   "beat": "b00",
+   "claims": [
+    "V012",
+    "V060",
+    "V001"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "volcano-hook",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "g4_pina",
+      "key": "pt"
+     },
+     {
+      "lab": "g4_cool",
+      "key": "cl"
+     }
+    ],
+    "mode": "pinatubo"
+   },
+   "vo": "In 1991, Mount Pinatubo in the Philippines exploded. It threw so much gas high into the sky that the whole world cooled. USGS says global temperatures fell by about half a degree Celsius over 1991 to 1993. Both are openings where melted rock reaches the surface.",
+   "reveals": [
+    {
+     "key": "pt",
+     "word": "Pinatubo"
+    },
+    {
+     "key": "cl",
+     "word": "degree"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A towering ash column over green Philippine hills; then a small globe dimming under a thin veil.",
+   "beat": "b00",
+   "claims": [
+    "V012",
+    "V060",
+    "V001"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b00",
+   "kind": "title",
+   "spec": {
+    "title": "Why do some volcanoes ooze and others explode?",
+    "sub": "Volcanoes, part one",
+    "chip": "GEOGRAPHY · UPSC"
+   },
+   "vo": "So why do some volcanoes ooze and others explode?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Title card: the question.",
+   "beat": "b00",
+   "claims": [
+    "V012",
+    "V060",
+    "V001"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch1 b01",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "UPSC Prelims {const:2024} · GS Paper I · Q{const:3}",
+      "key": "pq"
+     },
+     "How many of these come out of a volcano?",
+     "pyroclastic debris · ash and dust · nitrogen compounds · sulphur compounds"
+    ],
+    "accent": [
+     "How many"
+    ]
+   },
+   "vo": "The exam asks about this. In 2024, the Prelims paper asked how many of four things come out of a volcano.",
+   "reveals": [
+    {
+     "key": "pq",
+     "word": "Prelims"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: the 2024 Prelims question, text only.",
+   "beat": "b01",
+   "claims": [
+    "V006",
+    "V027"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch1 b01",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "lines": [
+     {
+      "text": "First: what comes out",
+      "key": "n1"
+     },
+     {
+      "text": "Then: the switch, ooze or explode",
+      "key": "n2"
+     },
+     {
+      "text": "Then: where volcanoes sit on the map",
+      "key": "n3"
+     },
+     {
+      "text": "Keep an eye on Hawaii",
+      "key": "n4"
+     }
+    ]
+   },
+   "vo": "Here is our plan. First, what comes out. Then the switch that makes one volcano ooze and another explode. Then, where volcanoes sit on the map. One famous volcano will not fit that map. Keep an eye on Hawaii.",
+   "reveals": [
+    {
+     "key": "n1",
+     "word": "First,"
+    },
+    {
+     "key": "n2",
+     "word": "switch"
+    },
+    {
+     "key": "n3",
+     "word": "map."
+    },
+    {
+     "key": "n4",
+     "word": "Hawaii."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: the three steps, and a note to watch Hawaii (plant).",
+   "beat": "b01",
+   "claims": [
+    "V006",
+    "V027"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "cutaway",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: where gases, ash or melted rock escape",
+      "key": "df"
+     },
+     {
+      "text": "VOLCANO = the vent, and usually its cone",
+      "key": "vt"
+     }
+    ],
+    "mode": "vent"
+   },
+   "vo": "Start with the word. NCERT calls a volcano a place where gases, ash or melted rock escape to the ground. The United States Geological Survey, USGS, adds that the word also means the vent itself. It usually means the cone the vent builds around itself, too.",
+   "reveals": [
+    {
+     "key": "df",
+     "word": "NCERT"
+    },
+    {
+     "key": "vt",
+     "word": "vent"
+    }
+   ],
+   "transition": "cut",
+   "visual": "An atlas-relief mountain cut open: the vent and the cone it built light up.",
+   "beat": "b02",
+   "claims": [
+    "V001",
+    "V003"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "cutaway",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "MAGMA · melted rock underground",
+      "key": "mg"
+     },
+     {
+      "text": "LAVA · once it erupts",
+      "key": "lv"
+     },
+     {
+      "text": "NCERT Class XI calls it lava a little earlier, as it rises",
+      "key": "nc"
+     },
+     {
+      "text": "FOR THE EXAM: MAGMA BELOW, LAVA ABOVE",
+      "key": "ex"
+     }
+    ],
+    "mode": "magma"
+   },
+   "vo": "Under the ground, melted rock is called magma. Once it erupts, it is called lava. Our Class 11 book starts calling it lava a little earlier, once it begins to rise. For the exam, keep the clean line: magma below, lava above.",
+   "reveals": [
+    {
+     "key": "mg",
+     "word": "magma."
+    },
+    {
+     "key": "lv",
+     "word": "lava."
+    },
+    {
+     "key": "nc",
+     "word": "earlier,"
+    },
+    {
+     "key": "ex",
+     "word": "clean"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same cut-away: a glowing chamber labelled magma deep below, a red flow labelled lava on the slope.",
+   "beat": "b02",
+   "claims": [
+    "V001",
+    "V003"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "eruption-products",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "LAVA FLOWS",
+      "key": "p1"
+     },
+     {
+      "text": "PYROCLASTIC DEBRIS · broken rock",
+      "key": "p2"
+     },
+     {
+      "text": "VOLCANIC BOMBS",
+      "key": "p3"
+     },
+     {
+      "text": "ASH AND DUST",
+      "key": "p4"
+     },
+     {
+      "text": "GASES · nitrogen and sulphur compounds; a little chlorine, hydrogen, argon",
+      "key": "p5"
+     }
+    ],
+    "mode": "list"
+   },
+   "vo": "So what comes out? NCERT lists lava flows, broken rock called pyroclastic debris, volcanic bombs, ash and dust, and gases. The gases it names are nitrogen and sulphur compounds, with a little chlorine, hydrogen and argon.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "lava"
+    },
+    {
+     "key": "p2",
+     "word": "pyroclastic"
+    },
+    {
+     "key": "p3",
+     "word": "bombs,"
+    },
+    {
+     "key": "p4",
+     "word": "ash"
+    },
+    {
+     "key": "p5",
+     "word": "gases"
+    }
+   ],
+   "transition": "cut",
+   "visual": "An eruption sorts itself into labelled layers: lava flows, bombs, ash, a pale gas plume.",
+   "beat": "b03",
+   "claims": [
+    "V004",
+    "V006",
+    "V007",
+    "V005"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch2 b03",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "The {const:2024} question: by NCERT's list, all four come out",
+      "key": "q4"
+     },
+     {
+      "text": "We have not read UPSC's answer key: this answer is ours",
+      "key": "ak"
+     }
+    ],
+    "accent": [
+     "all four"
+    ]
+   },
+   "vo": "That is the list the 2024 question tested. By NCERT's list, all four things it asked about come out. We have not read UPSC's own answer key, so that answer is ours.",
+   "reveals": [
+    {
+     "key": "q4",
+     "word": "question"
+    },
+    {
+     "key": "ak",
+     "word": "answer"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Card: the answer by NCERT's list, and the honest note that it is ours.",
+   "beat": "b03",
+   "claims": [
+    "V004",
+    "V006",
+    "V007",
+    "V005"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "eruption-products",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "BOMBS · usually land near the vent",
+      "key": "bn"
+     },
+     {
+      "text": "FINEST ASH · travels farthest",
+      "key": "af"
+     },
+     {
+      "lab": "g4_water",
+      "key": "wv"
+     }
+    ],
+    "mode": "spread"
+   },
+   "vo": "USGS says the biggest lumps, the bombs, usually land near the vent. The finest ash travels farthest. And an older USGS fact sheet adds a gas the textbook leaves out. More than nine-tenths of volcanic gas is water vapour.",
+   "reveals": [
+    {
+     "key": "bn",
+     "word": "bombs,"
+    },
+    {
+     "key": "af",
+     "word": "finest"
+    },
+    {
+     "key": "wv",
+     "word": "nine-tenths"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Heavy bombs fall close to the cone, ash drifts far downwind, a tall white steam plume rises.",
+   "beat": "b03",
+   "claims": [
+    "V004",
+    "V006",
+    "V007",
+    "V005"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "pot-lid",
+    "chip": "ANALOGY",
+    "limit": "our picture, not a geologist's",
+    "labels": [
+     {
+      "text": "PRESSURE BUILDS",
+      "key": "pb"
+     },
+     {
+      "text": "slip out, or blow the lid off?",
+      "key": "q"
+     }
+    ]
+   },
+   "vo": "But a list does not tell us why Mauna Loa oozes and Pinatubo explodes. Think of a pot of water boiling with its lid on. The lid starts to rattle. Pressure builds underneath, looking for a way out. That is our picture, not a geologist's. So what decides whether the steam slips out, or blows the lid off?",
+   "reveals": [
+    {
+     "key": "pb",
+     "word": "Pressure"
+    },
+    {
+     "key": "q",
+     "word": "decides"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's kitchen: a steel pot on a gas flame, the lid rattling, puffs escaping at its rim.",
+   "beat": "b04",
+   "claims": []
+  },
+  {
+   "id": "s012",
+   "act": "Ch3 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "fizzy",
+    "chip": "ANALOGY",
+    "limit": "",
+    "labels": [
+     {
+      "text": "RUNNY LAVA · gas escapes quietly",
+      "key": "rn"
+     },
+     {
+      "text": "THICK LAVA · gas trapped, then bursts",
+      "key": "th"
+     },
+     {
+      "text": "VISCOUS = thick, pasty",
+      "key": "vs"
+     }
+    ],
+    "mode": "jugs"
+   },
+   "vo": "Here is the switch, in the words of USGS. Thin, runny lava lets its gas escape quietly. Thick, pasty lava traps the gas, until it bursts out. Geologists call that thick lava viscous.",
+   "reveals": [
+    {
+     "key": "rn",
+     "word": "runny"
+    },
+    {
+     "key": "th",
+     "word": "Thick,"
+    },
+    {
+     "key": "vs",
+     "word": "viscous."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two jugs: water poured runs and its bubbles pop; thick porridge holds big bubbles that burst.",
+   "beat": "b05",
+   "claims": [
+    "V009"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch3 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "fizzy",
+    "chip": "ANALOGY",
+    "limit": "",
+    "labels": [
+     {
+      "text": "USGS: like a fizzy drink",
+      "key": "fz"
+     }
+    ],
+    "mode": "bottle"
+   },
+   "vo": "USGS compares it to a fizzy drink. Shake the bottle with your thumb on top, then lift your thumb. The trapped gas rushes out, and the drink comes with it.",
+   "reveals": [
+    {
+     "key": "fz",
+     "word": "fizzy"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl shakes a bottle with her thumb on top, lifts the thumb, and foam bursts out.",
+   "beat": "b05",
+   "claims": [
+    "V009"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch3 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "fizzy",
+    "chip": "ANALOGY",
+    "limit": "magma is not shaken: gas comes out of the melt as the pressure falls while it rises",
+    "labels": [
+     {
+      "text": "IN MAGMA: GAS LEAVES THE MELT AS PRESSURE FALLS",
+      "key": "gp"
+     }
+    ],
+    "mode": "limit"
+   },
+   "vo": "The picture stops at one point. In magma, the gas is not shaken loose. It comes out of the melt as the pressure on it falls, as the magma rises.",
+   "reveals": [
+    {
+     "key": "gp",
+     "word": "pressure"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rising column of magma: bubbles appear and grow as it climbs; a depth gauge falls.",
+   "beat": "b05",
+   "claims": [
+    "V009"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "shield",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "SHIELD VOLCANO · runny basalt · broad, gentle",
+      "key": "sh"
+     },
+     {
+      "lab": "g4_mauna",
+      "key": "ml"
+     }
+    ],
+    "mode": "dome"
+   },
+   "vo": "So the lava decides the shape. Runny basalt lava spreads far before it cools. It builds a shield volcano: broad, with gentle slopes. Mauna Loa is the largest of them. It rises more than four thousand metres above the sea.",
+   "reveals": [
+    {
+     "key": "sh",
+     "word": "shield"
+    },
+    {
+     "key": "ml",
+     "word": "four"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A wide, low dome in atlas relief, thin lava sheets layered like pages; the girl at its foot for scale.",
+   "beat": "b06",
+   "claims": [
+    "V012"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "shield",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: explosive if water gets into the vent",
+      "key": "wt"
+     }
+    ],
+    "mode": "steam"
+   },
+   "vo": "NCERT notes one exception. A shield volcano can turn explosive if water gets into its vent.",
+   "reveals": [
+    {
+     "key": "wt",
+     "word": "water"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Sea water meets the vent: a sudden white jet of steam.",
+   "beat": "b06",
+   "claims": [
+    "V012"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "composite",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "layers of lava and ash",
+      "key": "ly"
+     },
+     {
+      "text": "COMPOSITE VOLCANO · STRATOVOLCANO",
+      "key": "cv"
+     },
+     {
+      "text": "Fuji · St Helens · Pinatubo",
+      "key": "ex"
+     }
+    ],
+    "mode": "cone"
+   },
+   "vo": "But sticky lava behaves differently. It erupts cooler, with ash, and builds up in layers. That builds a steep cone called a composite volcano, or a stratovolcano. Mount Fuji in Japan is one. So are Mount St Helens in the United States, and Pinatubo. These are the ones that often explode.",
+   "reveals": [
+    {
+     "key": "ly",
+     "word": "layers."
+    },
+    {
+     "key": "cv",
+     "word": "composite"
+    },
+    {
+     "key": "ex",
+     "word": "Fuji"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A steep cone cut open to show stripes of lava and ash.",
+   "beat": "b07",
+   "claims": [
+    "V013",
+    "V008"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "composite",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PYROCLASTIC FLOW · hot ash, rock and gas",
+      "key": "pf"
+     },
+     {
+      "lab": "g4_flow",
+      "key": "t8"
+     }
+    ],
+    "mode": "flow"
+   },
+   "vo": "When they do, a pyroclastic flow can race down the side: a fast avalanche of hot ash, rock and gas. USGS says it can be hotter than eight hundred degrees Celsius.",
+   "reveals": [
+    {
+     "key": "pf",
+     "word": "pyroclastic"
+    },
+    {
+     "key": "t8",
+     "word": "eight"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A grey avalanche of hot cloud racing down the cone's flank.",
+   "beat": "b07",
+   "claims": [
+    "V013",
+    "V008"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "five-types",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT'S FIVE TYPES",
+      "key": "f5"
+     }
+    ],
+    "mode": "all"
+   },
+   "vo": "NCERT names five kinds of volcano in all, by how they erupt and what they build. Shield and composite are two.",
+   "reveals": [
+    {
+     "key": "f5",
+     "word": "five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Five cards on the girl's desk: dome, steep cone, hollow with a lake, stacked lava sheets, a glowing sea-floor crack; the first two tick.",
+   "beat": "b08",
+   "claims": [
+    "V011",
+    "V014",
+    "V016",
+    "V018"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "five-types",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "CALDERA · the top falls in",
+      "key": "cd"
+     },
+     {
+      "lab": "g4_crater",
+      "key": "cl"
+     }
+    ],
+    "mode": "caldera"
+   },
+   "vo": "The third is a caldera. When a volcano empties its magma chamber, the top can fall in, leaving a huge hollow. Crater Lake, in Oregon, sits in one that formed about six thousand eight hundred years ago.",
+   "reveals": [
+    {
+     "key": "cd",
+     "word": "caldera."
+    },
+    {
+     "key": "cl",
+     "word": "Crater"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The caldera card grows: a cone empties and its top falls in; a blue lake fills the hollow.",
+   "beat": "b08",
+   "claims": [
+    "V011",
+    "V014",
+    "V016",
+    "V018"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "five-types",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "FLOOD BASALT PROVINCE",
+      "key": "fb"
+     }
+    ],
+    "mode": "flood"
+   },
+   "vo": "The fourth is a flood basalt province. Very runny lava pours out in many flows, for hundreds of kilometres.",
+   "reveals": [
+    {
+     "key": "fb",
+     "word": "flood"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The flood basalt card grows: very runny lava spreads in sheet after sheet across a plain.",
+   "beat": "b08",
+   "claims": [
+    "V011",
+    "V014",
+    "V016",
+    "V018"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "five-types",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "MID-OCEAN RIDGE VOLCANO",
+      "key": "mr"
+     },
+     {
+      "lab": "g4_ridge",
+      "key": "q3"
+     }
+    ],
+    "mode": "ridge"
+   },
+   "vo": "The fifth is the mid-ocean ridge volcano. Here lava erupts under the sea. USGS says scientists estimate that about three-quarters of all lava erupted on Earth comes out under the oceans.",
+   "reveals": [
+    {
+     "key": "mr",
+     "word": "mid-ocean"
+    },
+    {
+     "key": "q3",
+     "word": "three-quarters"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The ridge card grows: a glowing crack on the dark sea floor, pillows of lava.",
+   "beat": "b08",
+   "claims": [
+    "V011",
+    "V014",
+    "V016",
+    "V018"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch3 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "cinder-cone",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "CINDER CONE",
+      "key": "cc"
+     },
+     {
+      "lab": "g4_paricutin",
+      "key": "pr"
+     }
+    ]
+   },
+   "vo": "USGS also counts the simplest kind, the cinder cone. In 1943, one began in a farmer's field in Mexico, called Paricutin. In nine years of eruptions, it grew more than three hundred and sixty metres tall.",
+   "reveals": [
+    {
+     "key": "cc",
+     "word": "cinder"
+    },
+    {
+     "key": "pr",
+     "word": "Paricutin."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A ploughed field with a farmer's oxen; a small smoking mound becomes a tall black cone over a time-lapse of seasons.",
+   "beat": "b09",
+   "claims": [
+    "V015"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch3 b09",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "What about magma that never reaches the surface?"
+    ],
+    "accent": [
+     "never"
+    ]
+   },
+   "vo": "But what about magma that never reaches the surface at all?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Card: the question that leads underground.",
+   "beat": "b09",
+   "claims": [
+    "V015"
+   ]
+  },
+  {
+   "id": "s025",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "intrusive",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "VOLCANIC ROCK · cooled on the surface",
+      "key": "vr"
+     },
+     {
+      "text": "PLUTONIC ROCK · cooled underground: bigger crystals",
+      "key": "pr"
+     }
+    ],
+    "mode": "rocks"
+   },
+   "vo": "When lava cools on the surface, it makes volcanic rock. When magma cools underground, it makes plutonic rock. Underground it cools slowly, so its crystals grow bigger and the rock is coarser.",
+   "reveals": [
+    {
+     "key": "vr",
+     "word": "volcanic"
+    },
+    {
+     "key": "pr",
+     "word": "plutonic"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two rock samples under a lens: fine-grained on the left, coarse crystals on the right.",
+   "beat": "b10",
+   "claims": [
+    "V019",
+    "V020"
+   ]
+  },
+  {
+   "id": "s026",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "intrusive",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "INTRUSIVE FORMS (NCERT)",
+      "key": "if"
+     },
+     {
+      "text": "BATHOLITH · a large granite body",
+      "key": "bt"
+     },
+     {
+      "text": "seen only after erosion",
+      "key": "er"
+     }
+    ],
+    "mode": "batholith"
+   },
+   "vo": "NCERT calls the shapes it leaves underground intrusive forms. A batholith is a large granite body that cooled deep in the crust, part of an old magma chamber. We only see one after erosion strips away the rock above it.",
+   "reveals": [
+    {
+     "key": "if",
+     "word": "intrusive"
+    },
+    {
+     "key": "bt",
+     "word": "batholith"
+    },
+    {
+     "key": "er",
+     "word": "erosion"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A crust cut-away: a huge granite body far below; the layers above wear away until its dome shows as grey hills.",
+   "beat": "b10",
+   "claims": [
+    "V019",
+    "V020"
+   ]
+  },
+  {
+   "id": "s027",
+   "act": "Ch4 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "intrusive",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "LACCOLITH",
+      "key": "la"
+     },
+     {
+      "text": "LAPOLITH",
+      "key": "lp"
+     },
+     {
+      "text": "PHACOLITH",
+      "key": "ph"
+     },
+     {
+      "text": "SILL · SHEET",
+      "key": "si"
+     },
+     {
+      "text": "DYKE",
+      "key": "dk"
+     }
+    ],
+    "mode": "all"
+   },
+   "vo": "A laccolith is a dome with a flat base, fed by a pipe from below. A lapolith is shaped like a saucer. A phacolith is a wavy body that sits in folded rock. A sill is a near-horizontal body; a thinner one is called a sheet. And a dyke is a wall, where magma filled a crack and hardened almost upright.",
+   "reveals": [
+    {
+     "key": "la",
+     "word": "laccolith"
+    },
+    {
+     "key": "lp",
+     "word": "lapolith"
+    },
+    {
+     "key": "ph",
+     "word": "phacolith"
+    },
+    {
+     "key": "si",
+     "word": "sill"
+    },
+    {
+     "key": "dk",
+     "word": "dyke"
+    }
+   ],
+   "transition": "cut",
+   "visual": "One labelled cut-away with all the shapes; each lights up as it is named.",
+   "beat": "b11",
+   "claims": [
+    "V021",
+    "V023"
+   ]
+  },
+  {
+   "id": "s028",
+   "act": "Ch4 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "intrusive",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: dykes, commonest in western Maharashtra",
+      "key": "wm"
+     },
+     {
+      "text": "feeders of the Deccan Traps",
+      "key": "dt"
+     }
+    ],
+    "mode": "deccan"
+   },
+   "vo": "NCERT says dykes are the commonest intrusive form in western Maharashtra. It says they are considered the feeders of the Deccan Traps.",
+   "reveals": [
+    {
+     "key": "wm",
+     "word": "Maharashtra."
+    },
+    {
+     "key": "dt",
+     "word": "feeders"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The dyke glows as a vertical wall feeding stacked lava sheets above.",
+   "beat": "b11",
+   "claims": [
+    "V021",
+    "V023"
+   ]
+  },
+  {
+   "id": "s029",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "subduction",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PLATE EDGES",
+      "key": "pe"
+     },
+     {
+      "text": "AN OCEAN PLATE SINKS",
+      "key": "sk"
+     },
+     {
+      "text": "PLATES PART · new crust",
+      "key": "pt"
+     }
+    ],
+    "mode": "both"
+   },
+   "vo": "Now, where do volcanoes sit? Most active volcanoes stand at or near the edges of the plates that make up Earth's shell. Where an ocean plate meets a continental plate, the ocean plate sinks beneath it. That gives volcanoes and earthquakes. Where plates move apart, magma rises and makes new crust, as along the mid-ocean ridges.",
+   "reveals": [
+    {
+     "key": "pe",
+     "word": "edges"
+    },
+    {
+     "key": "sk",
+     "word": "sinks"
+    },
+    {
+     "key": "pt",
+     "word": "apart,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A slice of the Earth: an ocean plate sliding under a continent with a volcano above; across the ocean a ridge pulling apart.",
+   "beat": "b12",
+   "claims": [
+    "V024",
+    "V025",
+    "V026"
+   ]
+  },
+  {
+   "id": "s030",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "plates-map",
+    "chip": "ILLUSTRATION",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "g4_rim",
+      "key": "mh"
+     },
+     {
+      "text": "NCERT: the 'rim of fire'",
+      "key": "nc"
+     },
+     {
+      "text": "RING OF FIRE",
+      "key": "rf"
+     }
+    ],
+    "mode": "ring"
+   },
+   "vo": "The busiest belt rings the Pacific Ocean. USGS says more than half the world's active volcanoes circle it. NCERT calls it the rim of fire. It is better known as the Ring of Fire.",
+   "reveals": [
+    {
+     "key": "mh",
+     "word": "half"
+    },
+    {
+     "key": "nc",
+     "word": "rim"
+    },
+    {
+     "key": "rf",
+     "word": "Ring"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A world map centred on the Pacific; a red band lights up around its rim.",
+   "beat": "b12",
+   "claims": [
+    "V024",
+    "V025",
+    "V026"
+   ]
+  },
+  {
+   "id": "s031",
+   "act": "Ch5 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "subduction",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "SINKING PLATE → STICKY LAVA · composite cones",
+      "key": "sc"
+     },
+     {
+      "text": "RIDGES → RUNNY BASALT",
+      "key": "rb"
+     }
+    ],
+    "mode": "join"
+   },
+   "vo": "Now the switch and the map join up. USGS says most active volcanoes stand near boundaries where one plate sinks under another. The volcanoes over sinking plates, like St Helens and Pinatubo, are composite cones. The ridges, where plates pull apart, pour out runny basalt.",
+   "reveals": [
+    {
+     "key": "sc",
+     "word": "composite"
+    },
+    {
+     "key": "rb",
+     "word": "runny"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The slice again: a steep sticky cone over the sinking plate; a ridge welling runny lava across the ocean.",
+   "beat": "b13",
+   "claims": [
+    "V025",
+    "V013",
+    "V018"
+   ]
+  },
+  {
+   "id": "s032",
+   "act": "Ch5 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "plates-map",
+    "chip": "ILLUSTRATION",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "g4_hawaii",
+      "key": "hw"
+     }
+    ],
+    "mode": "hawaii"
+   },
+   "vo": "But remember Hawaii. Its islands formed more than three thousand two hundred kilometres from the nearest plate boundary. So where does its magma come from?",
+   "reveals": [
+    {
+     "key": "hw",
+     "word": "thousand"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Pacific map again: the question mark from the start lands on Hawaii, far from the rim.",
+   "beat": "b14",
+   "claims": [
+    "V027",
+    "V028"
+   ]
+  },
+  {
+   "id": "s033",
+   "act": "Ch5 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "hotspot",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "g4_wilson",
+      "key": "jw"
+     },
+     {
+      "text": "PLATE MOVES",
+      "key": "pm"
+     },
+     {
+      "lab": "g4_kauai",
+      "key": "ka"
+     }
+    ]
+   },
+   "vo": "In 1963, the geologist J. Tuzo Wilson suggested an answer: a hotspot. A fixed hot region deep in the mantle melts rock beneath the Pacific plate. As the plate drifts over it, the hotspot builds a new island, and the older ones are carried away. Kauai, far along the chain, has oldest rocks about five and a half million years old.",
+   "reveals": [
+    {
+     "key": "jw",
+     "word": "hotspot."
+    },
+    {
+     "key": "pm",
+     "word": "drifts"
+    },
+    {
+     "key": "ka",
+     "word": "Kauai,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A cut-away: a plume of heat under a moving plate builds islands one by one; they slide away like a conveyor, the oldest worn low.",
+   "beat": "b14",
+   "claims": [
+    "V027",
+    "V028"
+   ]
+  },
+  {
+   "id": "s034",
+   "act": "Ch5 b14",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "A hotspot track has been linked to India's Deccan Traps",
+     {
+      "text": "That story: part two",
+      "key": "p2"
+     }
+    ],
+    "accent": [
+     "Deccan Traps"
+    ]
+   },
+   "vo": "A hotspot track has also been linked to India's Deccan Traps. We follow that story in part two.",
+   "reveals": [
+    {
+     "key": "p2",
+     "word": "part"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Card: the Deccan link, and the promise of part two.",
+   "beat": "b14",
+   "claims": [
+    "V027",
+    "V028"
+   ]
+  },
+  {
+   "id": "s035",
+   "act": "Ch6 b15",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "It comes down to the lava",
+     "and the lava is linked to where the volcano sits"
+    ],
+    "accent": [
+     "lava"
+    ]
+   },
+   "vo": "So why do some volcanoes ooze and others explode? It comes down to the lava. And the lava is linked to where the volcano sits.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Card: the answer in one line.",
+   "beat": "b15",
+   "claims": [
+    "V009",
+    "V012",
+    "V013",
+    "V025",
+    "V018",
+    "V003",
+    "V011",
+    "V019",
+    "V021",
+    "V024",
+    "V026",
+    "V027"
+   ]
+  },
+  {
+   "id": "s036",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "subduction",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "RUNNY BASALT · hotspots and ridges · gas slips out",
+      "key": "rb"
+     },
+     {
+      "text": "STICKY LAVA · over sinking plates · bursts",
+      "key": "st"
+     }
+    ],
+    "mode": "summary"
+   },
+   "vo": "Runny basalt lets its gas slip out. It pours from Hawaii's hotspot, and from the ocean ridges. Sticky lava traps its gas until it bursts. Over sinking plates stand composite cones like St Helens and Pinatubo.",
+   "reveals": [
+    {
+     "key": "rb",
+     "word": "basalt"
+    },
+    {
+     "key": "st",
+     "word": "Sticky"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The slice view one last time, with the bottle and the map beside it.",
+   "beat": "b15",
+   "claims": [
+    "V009",
+    "V012",
+    "V013",
+    "V025",
+    "V018",
+    "V003",
+    "V011",
+    "V019",
+    "V021",
+    "V024",
+    "V026",
+    "V027"
+   ]
+  },
+  {
+   "id": "s037",
+   "act": "Ch6 b15",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "strike": {
+     "text": "What comes out?",
+     "key": "x"
+    },
+    "lines": [
+     {
+      "text": "Magma: melted rock underground · lava: once erupted",
+      "key": "n1"
+     },
+     {
+      "text": "Thin lava: gentle · thick, viscous lava: explosive",
+      "key": "n2"
+     },
+     {
+      "text": "NCERT's five: shield, composite, caldera, flood basalt, mid-ocean ridge",
+      "key": "n3"
+     },
+     {
+      "text": "Intrusive forms: batholith, laccolith, lapolith, phacolith, sill, dyke",
+      "key": "n4"
+     },
+     {
+      "text": "Most active volcanoes: near plate boundaries; more than half ring the Pacific",
+      "key": "n5"
+     },
+     {
+      "text": "Hotspots build volcanoes far from any boundary",
+      "key": "n6"
+     }
+    ]
+   },
+   "vo": "For the exam, write it this way. Magma is melted rock underground. Lava is magma that has erupted. Thin lava erupts gently. Thick, viscous lava traps gas and explodes. NCERT's five types are shield, composite, caldera, flood basalt province and mid-ocean ridge volcanoes. Magma that cools underground leaves intrusive forms: batholith, laccolith, lapolith, phacolith, sill and dyke. Most active volcanoes sit near plate boundaries. More than half of them ring the Pacific. Hotspots, like Hawaii's, can build volcanoes far from any boundary.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "write"
+    },
+    {
+     "key": "n1",
+     "word": "Magma"
+    },
+    {
+     "key": "n2",
+     "word": "Thin"
+    },
+    {
+     "key": "n3",
+     "word": "NCERT's"
+    },
+    {
+     "key": "n4",
+     "word": "intrusive"
+    },
+    {
+     "key": "n5",
+     "word": "boundaries."
+    },
+    {
+     "key": "n6",
+     "word": "Hotspots,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: the old question struck out; the exam lines fill in one per sentence.",
+   "beat": "b15",
+   "claims": [
+    "V009",
+    "V012",
+    "V013",
+    "V025",
+    "V018",
+    "V003",
+    "V011",
+    "V019",
+    "V021",
+    "V024",
+    "V026",
+    "V027"
+   ]
+  },
+  {
+   "id": "s038",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "ferry-island",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NEXT · Barren Island · the Deccan Traps · eruptions and the world's weather",
+      "key": "nx"
+     }
+    ]
+   },
+   "vo": "In part two: Barren Island, which NCERT calls India's only active volcano. The lava that built the Deccan Traps. And eruptions that changed the world's weather.",
+   "reveals": [
+    {
+     "key": "nx",
+     "word": "Barren"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl looks out from a ferry at a lone smoking island in a blue sea.",
+   "beat": "b16",
+   "claims": [
+    "V043",
+    "V060"
+   ]
+  }
+ ]
+}

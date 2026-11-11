@@ -124,10 +124,116 @@ PLANS = {
 }
 
 
+
+DIRECTIVE_MEANING = {"critically": "weigh strengths and weaknesses", "discuss": "weigh more than one side", "examine": "look closely at the facts and issues",
+                     "explain": "show how and why", "comment": "take and back a position", "analyse": "split into parts, show the links",
+                     "evaluate": "judge worth with evidence", "elucidate": "make clear, with examples", "mention": "name briefly",
+                     "describe": "set out the features", "illustrate": "explain with examples", "assess": "judge how far",
+                     "why": "give the reasons", "how": "show the process"}
+TOK = re.compile(r"[\w'’-]+[.,?!:]?")
+
+
+def toks(vo):
+    return TOK.findall(vo)
+
+
+def pick(vo, wants, default_first=True):
+    """the first token of vo that starts with any of the wanted words (case-insensitive); else the first token"""
+    ws = toks(vo)
+    for w in ws:
+        bare = w.rstrip(".,?!:").lower()
+        if any(bare.startswith(x.lower()) for x in wants if len(x) > 2):
+            return w
+    return ws[0] if (ws and default_first) else None
+
+
+def spread(vo, n):
+    """n tokens of vo spread evenly from about a fifth of the way in"""
+    ws = toks(vo)
+    if not ws: return []
+    idx = [min(len(ws) - 1, int(len(ws) * (0.15 + 0.75 * i / max(1, n)))) for i in range(n)]
+    return [ws[i] for i in idx]
+
+
+def short(text, n=4):
+    t = re.split(r"[:(,;]", text)[0]
+    t = re.sub(r"^(The|A|An)\s+", "", t.strip())
+    return " ".join(t.split()[:n])
+
+
+SHORT = {   # short demand labels for the boxes (the automatic cut of the demand text reads badly)
+    "2021-gs1-7": {"D1": "The eruptions of 2021", "D2": "Their regional impact"},
+    "2020-gs1-4": {"D1": "What and where", "D2": "Plates and relief", "D3": "Earthquakes", "D4": "Volcanoes"},
+    "2023-gs1-7": {"D1": "Why 'Purvaiya'", "D2": "Its mark on culture"},
+    "2017-gs1-17": {"D1": "Monsoon traits", "D2": "How it feeds Asia", "D3": "Check the premise"},
+    "2026-gs2-1": {"D1": "Privacy and identity", "D2": "What the Act changed", "D3": "Its effect"},
+    "2024-gs2-12": {"D1": "Privacy in Article 21", "D2": "Paternity DNA tests", "D3": "The child in the womb"},
+    "2017-gs2-12": {"D1": "What Puttaswamy decided", "D2": "How rights widened", "D3": "Who is bound; limits", "D4": "How far it reaches"},
+    "2024-gs1-18": {"D1": "The framework", "D2": "Why benefits lag", "D3": "The verdict"},
+    "2023-gs2-12": {"D1": "The provisions", "D2": "The cases", "D3": "Laws and figures", "D4": "Weighing it"},
+    "2022-gs2-2": {"D1": "Free, for citizens", "D2": "The limits", "D3": "The courts' view"},
+}
+
+
+def auto_plan(A, vid=""):
+    """A plan derived from the answer module itself, for answers without a hand-made PLANS entry."""
+    q, beats = A["question"], A["beats"]
+    P = dict(labels={d["id"]: SHORT.get(vid, {}).get(d["id"]) or d.get("short") or short(d["text"]) for d in A["demands"]}, glow=[], glow_words={})
+    xb = next((b for b in beats if b["scene"]["type"] == "xray"), None)
+    qt = q["text"].lower()
+    dirs = [w for w in DIRECTIVE_MEANING if re.search(r"\b" + w + r"\b", qt)]
+    if xb:
+        found = []
+        for i, w in enumerate(dirs[:2]):
+            word = pick(xb["say"], [w], default_first=False)
+            if word:
+                m = re.search(r"\b(" + w + r")\b", q["text"], re.I)
+                found.append((m.group(1) if m else w, DIRECTIVE_MEANING[w], f"x{i + 1}", word))
+        P["directives"] = found
+        P["demand_words"] = {d["id"]: pick(xb["say"], P["labels"][d["id"]].split()) for d in A["demands"]}
+    sheet_beats = [b["key"] for b in beats if b["scene"]["type"] == "sheet"]
+    groups, cur = [], []
+    for i, b in enumerate(A["sheet"]):
+        if b["kind"] == "head" and cur: groups.append(cur); cur = []
+        cur.append(i)
+    if cur: groups.append(cur)
+    K = len(sheet_beats)
+    if len(groups) >= K:
+        merged = groups[:K - 1] + [[i for g in groups[K - 1:] for i in g]]
+    else:
+        nb = len(A["sheet"]); cuts = [round(i * nb / K) for i in range(K + 1)]
+        merged = [list(range(cuts[i], max(cuts[i] + 1, cuts[i + 1]))) for i in range(K)]
+    P["sheet"] = {k: (g[0], g[-1]) for k, g in zip(sheet_beats, merged)}
+    dg = next((b for b in A["sheet"] if b["kind"] == "diagram"), None)
+    if dg:
+        tx = dg["text"].lower()
+        P["diagram"] = "monsoon" if dg.get("labels") else "bars" if "bar" in tx[:20] else "flow" if "flow" in tx[:20] else "timeline"
+    P["ideas"] = {}
+    for b in beats:
+        if b["scene"]["type"] == "idea":
+            parts = [x.strip() for x in re.split(r"·|\|", b.get("cap", "")) if x.strip()][:4] or \
+                    [s for s in sentences(b["say"]) if len(s.split()) >= 5][:4]
+            ws = spread(b["say"], len(parts))
+            P["ideas"][b["key"]] = [(None, "pyq_card", {"title": (lambda t: t if len(t) <= 72 else t[:72].rsplit(" ", 1)[0])(A["title"].split(":")[0].split(" (UPSC")[0]), "lines": [{"text": x, "key": f"l{i + 1}"} for i, x in enumerate(parts)]},
+                                     {f"l{i + 1}": ws[i] for i in range(len(parts))})]
+    cmp_b = next((b for b in beats if b["scene"]["type"] == "compare"), None)
+    P["weak_words"] = spread(cmp_b["say"], len(A["weak"])) if cmp_b else []
+    cz = next((b for b in beats if b["scene"]["type"] == "cousins"), None)
+    ncous = min(3, len(A["cousins"]))
+    P["cousin_words"] = spread(cz["say"], ncous + 1)[:ncous] if cz else []
+    cat = {r["id"]: r for r in csv.DictReader(open(os.path.join(MAIN, "docs/upsc/catalogue.csv"), encoding="utf-8"))}
+    topic = next((l for l in A["ledgers"] if not l.startswith("pyq")), "")
+    P["next"] = "The concept episode: " + cat.get(topic, {}).get("title", topic)
+    P["next_word"] = spread(cz["say"], 1)[0] if cz else "watch"
+    if cz:
+        ws = toks(cz["say"]); P["next_word"] = ws[-3] if len(ws) > 3 else ws[-1]
+    P["strip"] = dict(topic=topic, word=None, note="Sittings with a question on this idea · our count from UPSC's papers")
+    return P
+
 def main():
     vid = sys.argv[1]
     A, src = load(vid)
-    P = PLANS[vid]
+    P = PLANS.get(vid) or auto_plan(A, vid)
     global LED
     LED = {}
     for led in A["ledgers"]:
@@ -175,9 +281,14 @@ def main():
                 spec["glow"] = [dict(text=g, key=key) for g, key in P["glow"]]
                 rv = [(key, P["glow_words"][key]) for _, key in P["glow"]]
             else:
-                yrs, hits = year_strip(P["strip"]["term"])
+                if P["strip"].get("topic"):
+                    rows = list(csv.DictReader(open(os.path.join(MAIN, "research/upsc/_pyq/mains/questions.csv"), encoding="utf-8")))
+                    yrs = sorted({r["year"] for r in rows}); hits = sorted({r["year"] for r in rows if P["strip"]["topic"] in (r["topic"], r.get("topic2", ""))})
+                    word = toks(vo)[len(toks(vo)) // 2]
+                else:
+                    yrs, hits = year_strip(P["strip"]["term"]); word = P["strip"]["word"]
                 spec["strip"] = dict(years=yrs, hits=hits, key="st", note=P["strip"]["note"])
-                rv = [("st", P["strip"]["word"])]
+                rv = [("st", word)]
             add("pyq_question", spec, vo, rv, k, b["scene"]["pic"], b["claims"])
         elif t == "xray":
             spec = dict(text=q["text"], directives=[dict(word=w, meaning=m, key=key) for w, m, key, _ in P["directives"]],
@@ -189,8 +300,9 @@ def main():
             for part in P["ideas"][k]:
                 idx = part[0] if part[0] is not None else tuple(range(len(ss)))
                 v = " ".join(ss[i] for i in idx)
-                if part[1] in ("statement", "pyq_timeline"):
+                if part[1] in ("statement", "pyq_timeline", "pyq_card"):
                     kind, spec, rv = part[1], part[2], list(part[3].items())
+                    if part[1] == "pyq_card": add(kind, spec, v, rv, k, b["scene"]["pic"], b["claims"]); continue
                     seen.update(b["claims"])   # number lock: figures typed in this plan must be in the claims of this beat or an earlier one
                     pool = " ".join(LED.get(c, "") for c in seen)
                     have = {x.replace(",", "").rstrip(".,") for x in re.findall(r"\d[\d,.]*", pool)}

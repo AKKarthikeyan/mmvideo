@@ -268,4 +268,24 @@ export const PyqTimeline: React.FC<SceneProps<TSpec>> = ({f, spec, at}) => {
   </AbsoluteFill>;
 };
 
-export const PYQ_SCENES: Record<string, React.FC<SceneProps>> = {pyq_question: PyqQuestion, pyq_xray: PyqXray, pyq_sheet: PyqSheet, pyq_compare: PyqCompare, pyq_cousins: PyqCousins, pyq_timeline: PyqTimeline};
+// an idea card on the desk: a heading and up to four lines, each arriving at its key (the beat's caption, number-locked by pyq_tool)
+type CardSpec = {title: string; lines: {text: string; key: string}[]};
+export const PyqCard: React.FC<SceneProps<CardSpec>> = ({f, spec, at}) => {
+  const a = eo(prog(f, 0, 18));
+  return <AbsoluteFill>
+    <Desk f={f}/>
+    <div style={{...paper(260, 150 + (1 - a) * 40, 1400, 700, -0.5, a), padding: "60px 90px"}}>
+      <div style={{fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: "0.16em", color: "#7a4a26", marginBottom: 34}}>{spec.title.toUpperCase()}</div>
+      {spec.lines.map((l, i) => {
+        const s = eo(prog(f, at(l.key), 14));
+        return <div key={l.key} style={{display: "flex", gap: 22, alignItems: "baseline", marginBottom: 30, opacity: s, transform: `translateX(${(1 - s) * 30}px)`}}>
+          <div style={{width: 18, height: 18, borderRadius: 9, background: "#c0392b", flex: "none", marginTop: 14}}/>
+          <div style={{fontFamily: SERIF, fontWeight: 500, fontSize: 52, lineHeight: 1.2, color: "#2a1a10"}}>{l.text}</div>
+        </div>;
+      })}
+    </div>
+    <PaperFinish id="pq-card"/>
+  </AbsoluteFill>;
+};
+
+export const PYQ_SCENES: Record<string, React.FC<SceneProps>> = {pyq_card: PyqCard, pyq_question: PyqQuestion, pyq_xray: PyqXray, pyq_sheet: PyqSheet, pyq_compare: PyqCompare, pyq_cousins: PyqCousins, pyq_timeline: PyqTimeline};

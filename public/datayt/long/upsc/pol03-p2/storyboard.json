@@ -1,0 +1,1039 @@
+{
+ "id": "pol03-p2",
+ "format": "long-16x9",
+ "target_minutes": 8.0,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/POL-03/script_p2.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "prison-gate",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT's opening story",
+      "key": "ns"
+     },
+     {
+      "lab": "f3_lalung",
+      "key": "ml"
+     }
+    ],
+    "mode": "closed"
+   },
+   "vo": "NCERT opens its chapter on rights with two true stories. One is about a man named Machal Lalung. He was held in judicial custody for fifty-four years. He was released in two thousand five.",
+   "reveals": [
+    {
+     "key": "ns",
+     "word": "NCERT"
+    },
+    {
+     "key": "ml",
+     "word": "fifty-four"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A heavy prison gate in grey light; a calendar's pages flying past for decades.",
+   "beat": "b00",
+   "claims": [
+    "POL03-K07",
+    "POL03-D08"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "Article {const:21}: no one shall lose life or personal liberty,",
+      "key": "a21"
+     },
+     {
+      "text": "except according to procedure established by law",
+      "key": "pe"
+     }
+    ],
+    "accent": [
+     "procedure established by law"
+    ]
+   },
+   "vo": "Article twenty-one says no one can lose life or liberty, except by procedure established by law. So can any law take your liberty, as long as it follows its own procedure?",
+   "reveals": [
+    {
+     "key": "a21",
+     "word": "Article"
+    },
+    {
+     "key": "pe",
+     "word": "procedure"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The words of Article 21 on the gate.",
+   "beat": "b00",
+   "claims": [
+    "POL03-K07",
+    "POL03-D08"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "series-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PART 1 · equality",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · freedom",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · religion, culture, limits",
+      "key": "p3"
+     }
+    ],
+    "mode": "part2"
+   },
+   "vo": "This is part two of three on Fundamental Rights. Part one was equality. This part is freedom. First the six freedoms and their limits. Then life and liberty, and how one phrase in Article twenty-one changed its meaning.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "equality."
+    },
+    {
+     "key": "p2",
+     "word": "freedom."
+    },
+    {
+     "key": "p3",
+     "word": "Then"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three-stop path, the second stop lit.",
+   "beat": "b01",
+   "claims": [
+    "POL03-K10"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "six-doors",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 19(1) · six freedoms, for citizens",
+      "key": "a19"
+     },
+     {
+      "text": "SPEECH",
+      "key": "d1"
+     },
+     {
+      "text": "ASSEMBLY",
+      "key": "d2"
+     },
+     {
+      "text": "ASSOCIATION",
+      "key": "d3"
+     },
+     {
+      "text": "MOVEMENT",
+      "key": "d4"
+     },
+     {
+      "text": "RESIDENCE",
+      "key": "d5"
+     },
+     {
+      "text": "PROFESSION",
+      "key": "d6"
+     }
+    ],
+    "mode": "open"
+   },
+   "vo": "Article nineteen gives citizens six freedoms. To speak and express yourself. To gather peacefully, without arms. To form associations or unions. To move freely across India. To live and settle anywhere in it. And to practise any profession, trade or business.",
+   "reveals": [
+    {
+     "key": "a19",
+     "word": "nineteen"
+    },
+    {
+     "key": "d1",
+     "word": "speak"
+    },
+    {
+     "key": "d2",
+     "word": "gather"
+    },
+    {
+     "key": "d3",
+     "word": "associations"
+    },
+    {
+     "key": "d4",
+     "word": "move"
+    },
+    {
+     "key": "d5",
+     "word": "settle"
+    },
+    {
+     "key": "d6",
+     "word": "profession,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Six doors in a row, each opening on its scene.",
+   "beat": "b02",
+   "claims": [
+    "POL03-D01"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "six-doors",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "REASONABLE RESTRICTIONS",
+      "key": "rr"
+     },
+     {
+      "text": "speech: sovereignty · security · public order · decency · defamation · contempt · incitement",
+      "key": "sp"
+     },
+     {
+      "text": "movement: public interest · Scheduled Tribes",
+      "key": "mv"
+     }
+    ],
+    "mode": "gates"
+   },
+   "vo": "But no freedom here is absolute. Each comes with its own limits. Speech can be restricted for the sovereignty and integrity of India, security of the State, public order, decency or morality. Defamation, contempt of court and incitement to an offence are grounds too. And movement can be limited in the public interest, or to protect a Scheduled Tribe's interests.",
+   "reveals": [
+    {
+     "key": "rr",
+     "word": "absolute."
+    },
+    {
+     "key": "sp",
+     "word": "Speech"
+    },
+    {
+     "key": "mv",
+     "word": "movement"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Each door gets a small gate with a sign of its limits.",
+   "beat": "b03",
+   "claims": [
+    "POL03-D02",
+    "POL03-D03"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "phone-66a",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Shreya Singhal (2015)",
+      "key": "ss"
+     },
+     {
+      "text": "SECTION 66A, IT ACT · struck down in full",
+      "key": "sd"
+     }
+    ]
+   },
+   "vo": "A restriction must still be reasonable, and courts check that. In twenty fifteen, the Supreme Court struck down Section sixty-six A of the Information Technology Act in full. It held the section violated free speech and was not saved by the allowed limits.",
+   "reveals": [
+    {
+     "key": "ss",
+     "word": "twenty"
+    },
+    {
+     "key": "sd",
+     "word": "sixty-six"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A phone screen with a post; a law-book page labelled 66A tears out and falls away.",
+   "beat": "b04",
+   "claims": [
+    "POL03-D05"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch3 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "court-shields",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 20",
+      "key": "a20"
+     },
+     {
+      "text": "no retroactive offence",
+      "key": "s1"
+     },
+     {
+      "text": "no double punishment",
+      "key": "s2"
+     },
+     {
+      "text": "no forced self-incrimination",
+      "key": "s3"
+     }
+    ]
+   },
+   "vo": "Article twenty protects anyone accused of a crime. You cannot be punished for an act that was not an offence when you did it. You cannot be prosecuted and punished twice for the same offence. And you cannot be forced to be a witness against yourself.",
+   "reveals": [
+    {
+     "key": "a20",
+     "word": "twenty"
+    },
+    {
+     "key": "s1",
+     "word": "offence"
+    },
+    {
+     "key": "s2",
+     "word": "twice"
+    },
+    {
+     "key": "s3",
+     "word": "witness"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A courtroom in warm light; three shields appear in front of the accused, one per protection.",
+   "beat": "b05",
+   "claims": [
+    "POL03-D07"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "glass-boxes",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 21",
+      "key": "a21"
+     },
+     {
+      "text": "Gopalan (1950), majority: rights in separate boxes",
+      "key": "gp"
+     },
+     {
+      "text": "NCERT Grade 9: 'strict adherence to... valid laws'",
+      "key": "nc"
+     },
+     {
+      "text": "to our ear: the Gopalan idea",
+      "key": "oe"
+     }
+    ],
+    "mode": "boxes"
+   },
+   "vo": "Now Article twenty-one. Life and liberty can go only by procedure established by law. In nineteen fifty, in the Gopalan case, a majority of the Court read each right as a separate box. On that reading, a law that set out a procedure could be enough. NCERT's Class Nine glossary says the phrase means strict adherence to duly enacted and valid laws. To our ear, that is the Gopalan idea.",
+   "reveals": [
+    {
+     "key": "a21",
+     "word": "twenty-one."
+    },
+    {
+     "key": "gp",
+     "word": "Gopalan"
+    },
+    {
+     "key": "nc",
+     "word": "glossary"
+    },
+    {
+     "key": "oe",
+     "word": "ear,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Rights as separate glass boxes on a shelf; a stamped rulebook alone opens the liberty box.",
+   "beat": "b06",
+   "claims": [
+    "POL03-D08",
+    "POL03-D09",
+    "POL03-D11"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "glass-boxes",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PASSPORT · IMPOUNDED",
+      "key": "pi"
+     },
+     {
+      "text": "Maneka Gandhi (1978), lead opinion: right, just and fair",
+      "key": "mg"
+     },
+     {
+      "text": "one judge dissented",
+      "key": "dj"
+     },
+     {
+      "text": "tested by Article 14",
+      "key": "t14"
+     },
+     {
+      "text": "RIGHTS OVERLAP",
+      "key": "ov"
+     }
+    ],
+    "mode": "web"
+   },
+   "vo": "But in nineteen seventy-eight, Maneka Gandhi's passport was impounded, at first without reasons. Seven judges heard her case. Six joined the lead opinion: the procedure must be right, just and fair, not arbitrary. One judge dissented. It must also pass the test of equality in Article fourteen. And the rights are not separate boxes. Later judges said they overlap.",
+   "reveals": [
+    {
+     "key": "pi",
+     "word": "passport"
+    },
+    {
+     "key": "mg",
+     "word": "lead"
+    },
+    {
+     "key": "dj",
+     "word": "dissented."
+    },
+    {
+     "key": "t14",
+     "word": "equality"
+    },
+    {
+     "key": "ov",
+     "word": "overlap."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A passport stamped IMPOUNDED; the glass boxes melt into one connected web.",
+   "beat": "b07",
+   "claims": [
+    "POL03-L04",
+    "POL03-D10",
+    "POL03-D09"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch4 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "privacy-search",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f3_zero",
+      "key": "z"
+     },
+     {
+      "lab": "f3_9",
+      "key": "nj"
+     },
+     {
+      "text": "PRIVACY · under Article 21 and Part III",
+      "key": "pv"
+     }
+    ]
+   },
+   "vo": "So Article twenty-one grew wider and wider. Take privacy. The word privacy does not appear anywhere in the Constitution. Yet on the twenty-fourth of August, twenty seventeen, nine judges decided it together. Privacy is protected under Article twenty-one, and by the other freedoms.",
+   "reveals": [
+    {
+     "key": "z",
+     "word": "privacy"
+    },
+    {
+     "key": "nj",
+     "word": "nine"
+    },
+    {
+     "key": "pv",
+     "word": "Privacy"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A search box over the Constitution's text: 'privacy', 0 results; then nine chairs on a bench.",
+   "beat": "b08",
+   "claims": [
+    "POL03-L05",
+    "POL03-D12",
+    "POL03-L08"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch4 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "three-gates",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "lead opinion, four judges",
+      "key": "lo"
+     },
+     {
+      "text": "LAW",
+      "key": "g1"
+     },
+     {
+      "text": "LEGITIMATE AIM",
+      "key": "g2"
+     },
+     {
+      "text": "PROPORTION",
+      "key": "g3"
+     },
+     {
+      "text": "your data: informational privacy",
+      "key": "dt"
+     },
+     {
+      "text": "DPDP Act 2023 · in force in stages",
+      "key": "dp"
+     }
+    ]
+   },
+   "vo": "But privacy is not absolute either. The lead opinion, for four judges, set a three-part test. A law must exist. It must serve a legitimate aim. And the means must be proportionate to that aim. The same opinion said privacy covers your data, with dangers from the State and from others. A data protection law came in twenty twenty-three, and comes into force in stages.",
+   "reveals": [
+    {
+     "key": "lo",
+     "word": "lead"
+    },
+    {
+     "key": "g1",
+     "word": "law"
+    },
+    {
+     "key": "g2",
+     "word": "legitimate"
+    },
+    {
+     "key": "g3",
+     "word": "proportionate"
+    },
+    {
+     "key": "dt",
+     "word": "data,"
+    },
+    {
+     "key": "dp",
+     "word": "protection"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A phone, a bank card and a health app glow; three gates labelled LAW, AIM, PROPORTION stand before them.",
+   "beat": "b09",
+   "claims": [
+    "POL03-D13",
+    "POL03-D15",
+    "POL03-L03",
+    "POL03-X06"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "tree-21",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f3_21a",
+      "key": "ed"
+     },
+     {
+      "text": "86th Amendment 2002 · in force 2010 (NCERT says 2009)",
+      "key": "nc"
+     },
+     {
+      "text": "LIVELIHOOD · Olga Tellis (1985)",
+      "key": "lv"
+     },
+     {
+      "text": "CLEAN WATER AND AIR · Subhash Kumar (1991)",
+      "key": "wa"
+     }
+    ]
+   },
+   "vo": "Article twenty-one kept widening. Education became its own right in Article twenty-one A, for children aged six to fourteen. NCERT's Class Nine book says it was added in two thousand nine. The amendment is of two thousand two, in force from two thousand ten. The Court also held that the right to life includes livelihood. And it read clean water and air into it.",
+   "reveals": [
+    {
+     "key": "ed",
+     "word": "Education"
+    },
+    {
+     "key": "nc",
+     "word": "nine."
+    },
+    {
+     "key": "lv",
+     "word": "livelihood."
+    },
+    {
+     "key": "wa",
+     "word": "water"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A tree growing from a seed labelled ARTICLE 21: branches EDUCATION, LIVELIHOOD, WATER AND AIR.",
+   "beat": "b10",
+   "claims": [
+    "POL03-D16",
+    "POL03-D17",
+    "POL03-D18",
+    "POL03-D24"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch5 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "police-desk",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 22",
+      "key": "a22"
+     },
+     {
+      "text": "told the grounds · a lawyer of choice",
+      "key": "gr"
+     },
+     {
+      "lab": "f3_24h",
+      "key": "h24"
+     },
+     {
+      "text": "D.K. Basu (1996): memo of arrest · a relative told",
+      "key": "dk"
+     }
+    ]
+   },
+   "vo": "What if you are arrested? Article twenty-two says you must be told why, as soon as possible. You may consult a lawyer of your choice. And you must be taken before the nearest magistrate within twenty-four hours. In nineteen ninety-six, the Court added rules for every arrest: a memo of arrest, and a relative or friend told.",
+   "reveals": [
+    {
+     "key": "a22",
+     "word": "twenty-two"
+    },
+    {
+     "key": "gr",
+     "word": "lawyer"
+    },
+    {
+     "key": "h24",
+     "word": "magistrate"
+    },
+    {
+     "key": "dk",
+     "word": "memo"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A police-station desk: an arrest memo signed and witnessed; a clock; a phone call to a relative.",
+   "beat": "b11",
+   "claims": [
+    "POL03-D20",
+    "POL03-D22"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "detention-calendar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PREVENTIVE DETENTION",
+      "key": "pd"
+     },
+     {
+      "lab": "f3_3m",
+      "key": "m3"
+     },
+     {
+      "lab": "f3_2m",
+      "key": "m2"
+     }
+    ]
+   },
+   "vo": "But there is a harder case: preventive detention, to stop a feared act before it happens. The Constitution allows it, with a check. Detention beyond three months needs an Advisory Board's report, unless a law of Parliament provides otherwise. A nineteen seventy-eight amendment would cut that to two months. But in the Legislative Department's text of September twenty twenty-six, that change is still not in force.",
+   "reveals": [
+    {
+     "key": "pd",
+     "word": "preventive"
+    },
+    {
+     "key": "m3",
+     "word": "three"
+    },
+    {
+     "key": "m2",
+     "word": "two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A calendar marked at three months with an Advisory Board; a second marked two months behind glass labelled NOT IN FORCE.",
+   "beat": "b12",
+   "claims": [
+    "POL03-D21",
+    "POL03-D21b"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch5 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "emergency-door",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 359(1) · EMERGENCY",
+      "key": "em"
+     },
+     {
+      "text": "ARTICLES 20 AND 21 · never suspended",
+      "key": "ns"
+     },
+     {
+      "text": "Puttaswamy (2017), lead opinion: ADM Jabalpur (1976) overruled",
+      "key": "adm"
+     }
+    ]
+   },
+   "vo": "And during an Emergency? The President may suspend the right to go to court for most Fundamental Rights. But not for Articles twenty and twenty-one. That exception was added in nineteen seventy-eight. In twenty seventeen came Puttaswamy. Its lead opinion, for four judges, overruled the Emergency-era ruling of nineteen seventy-six, ADM Jabalpur.",
+   "reveals": [
+    {
+     "key": "em",
+     "word": "Emergency?"
+    },
+    {
+     "key": "ns",
+     "word": "twenty-one."
+    },
+    {
+     "key": "adm",
+     "word": "Jabalpur."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A courthouse door half shut by an EMERGENCY bar; two small doors marked 20 and 21 stay open.",
+   "beat": "b13",
+   "claims": [
+    "POL03-D23",
+    "POL03-D14"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch6 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "stadium-wage",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 23 · no trafficking, no forced labour",
+      "key": "a23"
+     },
+     {
+      "text": "Asian Games works, 1982",
+      "key": "ag"
+     },
+     {
+      "text": "PUDR (1982): below minimum wage = forced labour",
+      "key": "pu"
+     },
+     {
+      "text": "binds private contractors too",
+      "key": "pc"
+     }
+    ]
+   },
+   "vo": "Freedom also means freedom from exploitation. Article twenty-three bans trafficking in people, and forced labour. In nineteen eighty-two, workers building for the Asian Games were paid below the minimum wage. The Supreme Court held that this was forced labour. And it held that the Article binds private contractors too.",
+   "reveals": [
+    {
+     "key": "a23",
+     "word": "twenty-three"
+    },
+    {
+     "key": "ag",
+     "word": "Asian"
+    },
+    {
+     "key": "pu",
+     "word": "forced"
+    },
+    {
+     "key": "pc",
+     "word": "private"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A stadium under construction in 1982 light; a wage slip below a minimum line; a contractor's office gets the same notice.",
+   "beat": "b14",
+   "claims": [
+    "POL03-E01",
+    "POL03-E02",
+    "POL03-K07"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "mine-school",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f3_child",
+      "key": "a24"
+     },
+     {
+      "text": "NCERT: manual scavenging banned by law, Dec 2013",
+      "key": "ms"
+     }
+    ]
+   },
+   "vo": "Article twenty-four bars children under fourteen from factories, mines and other hazardous work. And NCERT Class Eight says a law in force from December twenty thirteen bans employing people as manual scavengers.",
+   "reveals": [
+    {
+     "key": "a24",
+     "word": "fourteen"
+    },
+    {
+     "key": "ms",
+     "word": "scavengers."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A school bag replaces a pick at a mine entrance; a sanitation machine replaces a bucket.",
+   "beat": "b15",
+   "claims": [
+    "POL03-E03",
+    "POL03-E04"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch7 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "prison-gate",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "SINCE MANEKA GANDHI: fair, just, reasonable",
+      "key": "mg"
+     },
+     {
+      "text": "SINCE PUTTASWAMY: legitimate aim, proportionate means",
+      "key": "pt"
+     }
+    ],
+    "mode": "open"
+   },
+   "vo": "So can any law take your liberty, as long as it follows its own procedure? Since Maneka Gandhi, no. The procedure itself must be fair, just and reasonable, and must pass the test of equality. And since Puttaswamy, a law that touches privacy needs a legitimate aim and proportionate means. That is the lead opinion, for four judges.",
+   "reveals": [
+    {
+     "key": "mg",
+     "word": "Maneka"
+    },
+    {
+     "key": "pt",
+     "word": "Puttaswamy,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The prison gate from the start opens onto daylight.",
+   "beat": "b16",
+   "claims": [
+    "POL03-D10",
+    "POL03-D13",
+    "POL03-D01",
+    "POL03-D02",
+    "POL03-D07",
+    "POL03-D12",
+    "POL03-D16",
+    "POL03-D18",
+    "POL03-D24"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch7 b16",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "lines": [
+     {
+      "text": "Art. 19: six freedoms + reasonable restrictions",
+      "key": "n1"
+     },
+     {
+      "text": "Art. 20: protects the accused",
+      "key": "n2"
+     },
+     {
+      "text": "Art. 21: fair procedure (Maneka Gandhi)",
+      "key": "n3"
+     },
+     {
+      "text": "Art. 21 holds privacy, livelihood, water and air; 21A education",
+      "key": "n4"
+     }
+    ],
+    "strike": {
+     "text": "any law will do?",
+     "key": "x"
+    }
+   },
+   "vo": "For the exam, write it this way. Article nineteen gives six freedoms, each with reasonable restrictions. Article twenty protects the accused. Article twenty-one, after Maneka Gandhi, needs fair procedure. It now holds privacy, livelihood, and clean water and air, and Article twenty-one A adds education.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "nineteen"
+    },
+    {
+     "key": "n2",
+     "word": "accused."
+    },
+    {
+     "key": "n3",
+     "word": "Maneka"
+    },
+    {
+     "key": "n4",
+     "word": "privacy,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: the exam lines fill in.",
+   "beat": "b16",
+   "claims": [
+    "POL03-D10",
+    "POL03-D13",
+    "POL03-D01",
+    "POL03-D02",
+    "POL03-D07",
+    "POL03-D12",
+    "POL03-D16",
+    "POL03-D18",
+    "POL03-D24"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch7 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "series-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PART 1 · equality",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · freedom",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · religion, culture, remedies, Directive Principles",
+      "key": "p3"
+     }
+    ],
+    "mode": "part3"
+   },
+   "vo": "In part three: religion, culture and education. Then the right to move the Court, and the Directive Principles that guide the State.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "part"
+    },
+    {
+     "key": "p2",
+     "word": "religion,"
+    },
+    {
+     "key": "p3",
+     "word": "Directive"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three-stop path, the third stop glowing.",
+   "beat": "b17",
+   "claims": [
+    "POL03-K10"
+   ]
+  }
+ ]
+}

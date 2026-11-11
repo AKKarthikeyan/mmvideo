@@ -1,0 +1,877 @@
+{
+ "id": "pyq-2017-gs1-17",
+ "format": "long-16x9",
+ "target_minutes": 3.2,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2017-gs1-17/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2017 · General Studies Paper I · Q17",
+    "marks": "15 marks",
+    "text": "What characteristics can be assigned to monsoon climate that succeeds in feeding more than 50 percent of the world population residing in Monsoon Asia ?",
+    "glow": []
+   },
+   "vo": "UPSC, twenty seventeen. General Studies Paper One, fifteen marks, two hundred and fifty words. What characteristics can be assigned to the monsoon climate? It feeds more than fifty per cent of the world's people in Monsoon Asia. Here's the catch. About half of humanity is easy to prove. More than half is not.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2017, GS Paper I, Q17'. The words 'more than 50 percent' glow faintly (plant).",
+   "beat": "b00",
+   "claims": []
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "What characteristics can be assigned to monsoon climate that succeeds in feeding more than 50 percent of the world population residing in Monsoon Asia ?",
+    "directives": [],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia",
+      "key": "d2"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise",
+      "key": "d3"
+     }
+    ]
+   },
+   "vo": "Read what it asks. Can be assigned means list the traits of the climate. That feeds means link it to food. So there are three jobs. The traits. The link to food. And a check on the premise.",
+   "reveals": [
+    {
+     "key": "d1",
+     "word": "traits"
+    },
+    {
+     "key": "d2",
+     "word": "feeds"
+    },
+    {
+     "key": "d3",
+     "word": "the"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'characteristics' and 'feeding' highlighted; three empty boxes D1 to D3 (plant: they tick at the end).",
+   "beat": "b01",
+   "claims": []
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Monsoon Asia and Half of Humanity",
+    "lines": [
+     {
+      "text": "Monsoon means a seasonal reversal of winds.",
+      "key": "l1"
+     },
+     {
+      "text": "South and South-East Asia have it from June to September.",
+      "key": "l2"
+     },
+     {
+      "text": "East Asia has its own, from June to August.",
+      "key": "l3"
+     },
+     {
+      "text": "Japan's Baiu runs from early June to late July.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "Start with the traits. Monsoon means a seasonal reversal of winds. South and South-East Asia have it from June to September. East Asia has its own, from June to August. Japan's Baiu runs from early June to late July.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "means"
+    },
+    {
+     "key": "l2",
+     "word": "South-East"
+    },
+    {
+     "key": "l3",
+     "word": "September."
+    },
+    {
+     "key": "l4",
+     "word": "June"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A map of Asia with two coloured monsoon zones and month bars beside each.",
+   "beat": "b02",
+   "claims": [
+    "M001",
+    "2017-GS1-17-11",
+    "2017-GS1-17-12"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Monsoon Asia and Half of Humanity",
+    "lines": [
+     {
+      "text": "But the rain is not even.",
+      "key": "l1"
+     },
+     {
+      "text": "India gets nearly seventy-five per cent of its yearly rain in four months.",
+      "key": "l2"
+     },
+     {
+      "text": "It starts in Kerala about the first of June.",
+      "key": "l3"
+     },
+     {
+      "text": "And it swings about ten per cent from year to year, with dry breaks.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "But the rain is not even. India gets nearly seventy-five per cent of its yearly rain in four months. It starts in Kerala about the first of June. And it swings about ten per cent from year to year, with dry breaks.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "India"
+    },
+    {
+     "key": "l2",
+     "word": "yearly"
+    },
+    {
+     "key": "l3",
+     "word": "Kerala"
+    },
+    {
+     "key": "l4",
+     "word": "it"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rain-gauge year strip: four tall bars for June to September; a wobbling line for the yearly swing.",
+   "beat": "b03",
+   "claims": [
+    "M046",
+    "M027",
+    "M081",
+    "M066"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Monsoon Asia and Half of Humanity",
+    "lines": [
+     {
+      "text": "Now the link to food.",
+      "key": "l1"
+     },
+     {
+      "text": "Asia grows eighty-nine per cent of the world's rice.",
+      "key": "l2"
+     },
+     {
+      "text": "FAO says rice is central to the food security of about half of humanity.",
+      "key": "l3"
+     },
+     {
+      "text": "And rice needs over one hundred centimetres of rain, or irrigation.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "Now the link to food. It is rice. Asia grows eighty-nine per cent of the world's rice. FAO says rice is central to the food security of about half of humanity. And rice needs over one hundred centimetres of rain, or irrigation.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "is"
+    },
+    {
+     "key": "l2",
+     "word": "the"
+    },
+    {
+     "key": "l3",
+     "word": "to"
+    },
+    {
+     "key": "l4",
+     "word": "of"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rice paddy beside a rain gauge marked 100 cm; a share ring at 89 per cent.",
+   "beat": "b04",
+   "claims": [
+    "2017-GS1-17-07",
+    "2017-GS1-17-06",
+    "M087"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Monsoon Asia and Half of Humanity",
+    "lines": [
+     {
+      "text": "Add East, South-East and South Asia, and you get fifty-four per cent of the world.",
+      "key": "l1"
+     },
+     {
+      "text": "That counts whole regions, so it is an upper bound.",
+      "key": "l2"
+     },
+     {
+      "text": "And it was already fifty-two per cent in nineteen fifty.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "But check the premise. Add East, South-East and South Asia, and you get fifty-four per cent of the world. That counts whole regions, so it is an upper bound. And it was already fifty-two per cent in nineteen fifty. So write: about half.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "South-East"
+    },
+    {
+     "key": "l2",
+     "word": "the"
+    },
+    {
+     "key": "l3",
+     "word": "upper"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three region blocks add to 54.1 per cent; a '1950: 52.2 per cent' ghost bar beside it (pay-off of the plant).",
+   "beat": "b05",
+   "claims": [
+    "2017-GS1-17-02",
+    "2017-GS1-17-04"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b06",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Monsoon climate_ means a seasonal reversal of winds. East, South-East and South Asia hold 54.1% of humanity, so 'about half' is the safe reading."
+     },
+     {
+      "kind": "head",
+      "text": "1. Characteristics of the climate"
+     },
+     {
+      "kind": "points",
+      "text": "• _Seasonal reversal_: a hot monsoonal climate across south and south-east Asia (NCERT). • _Two systems_: South and South-East Asia June-September; East Asia June-August (IPCC AR6); Japan's _Baiu_ runs early June to late July (JMA). • _Concentrated rain_: June-September gives 74.9% of India's annual rain, with Kerala onset about 1 June. • _Variable_: the standard deviation is about 10% of the mean, and El Niño can cut it."
+     },
+     {
+      "kind": "head",
+      "text": "2. How it feeds the people"
+     },
+     {
+      "kind": "points",
+      "text": "• _Rice_ is the bridge: Asia grows 89.4% of the world's rice (FAOSTAT 2024), and FAO calls it central to the food security of about half of humanity. • The top five producers, all in the monsoon belt, make 71.2% of world rice. • Rice needs over 100 cm of rain or irrigation; _kharif_ crops are sown with the monsoon."
+     },
+     {
+      "kind": "diagram",
+      "text": "Four bars: share of world rice grown in Asia; share from the top five producers; share of world people in the three UN regions; share of Asia's rice that depends on rain alone.",
+      "label": "Fig. 1: People and rice",
+      "diagram": {
+       "name": "bars",
+       "labels": {},
+       "items": [
+        {
+         "when": "89.4%",
+         "what": "Asia's share of world rice"
+        },
+        {
+         "when": "71.2%",
+         "what": "top five producers' share"
+        },
+        {
+         "when": "54.1%",
+         "what": "share of world people (UN East, South-East, South Asia)"
+        },
+        {
+         "when": "40%",
+         "what": "Asia's rice on rain alone"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "3. The premise and the risks"
+     },
+     {
+      "kind": "points",
+      "text": "• 54.1% counts whole UN regions, an upper bound; it was already 52.2% in 1950. • About 40% of Asia's rice depends on rain alone, and FAO names _rainfall instability_ a main risk. • IPCC AR6: these regions' people depend heavily on freshwater for agriculture."
+     },
+     {
+      "kind": "close",
+      "text": "So the monsoon feeds Asia as a seasonal, rain-fed rice engine; its variability, not its size, is the risk."
+     }
+    ],
+    "from": 0,
+    "to": 0,
+    "minutes": [
+     11.0,
+     9.963
+    ],
+    "total": 11,
+    "words0": 0,
+    "budget": 250,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Now we write. Two hundred and fifty words, about eleven minutes. Open with the definition. Then give the safe figure: about half of humanity.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet; clock 11:00 and word counter 0. The introduction writes in; box D1 fills.",
+   "beat": "b06",
+   "claims": [
+    "M001",
+    "2017-GS1-17-02"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Monsoon climate_ means a seasonal reversal of winds. East, South-East and South Asia hold 54.1% of humanity, so 'about half' is the safe reading."
+     },
+     {
+      "kind": "head",
+      "text": "1. Characteristics of the climate"
+     },
+     {
+      "kind": "points",
+      "text": "• _Seasonal reversal_: a hot monsoonal climate across south and south-east Asia (NCERT). • _Two systems_: South and South-East Asia June-September; East Asia June-August (IPCC AR6); Japan's _Baiu_ runs early June to late July (JMA). • _Concentrated rain_: June-September gives 74.9% of India's annual rain, with Kerala onset about 1 June. • _Variable_: the standard deviation is about 10% of the mean, and El Niño can cut it."
+     },
+     {
+      "kind": "head",
+      "text": "2. How it feeds the people"
+     },
+     {
+      "kind": "points",
+      "text": "• _Rice_ is the bridge: Asia grows 89.4% of the world's rice (FAOSTAT 2024), and FAO calls it central to the food security of about half of humanity. • The top five producers, all in the monsoon belt, make 71.2% of world rice. • Rice needs over 100 cm of rain or irrigation; _kharif_ crops are sown with the monsoon."
+     },
+     {
+      "kind": "diagram",
+      "text": "Four bars: share of world rice grown in Asia; share from the top five producers; share of world people in the three UN regions; share of Asia's rice that depends on rain alone.",
+      "label": "Fig. 1: People and rice",
+      "diagram": {
+       "name": "bars",
+       "labels": {},
+       "items": [
+        {
+         "when": "89.4%",
+         "what": "Asia's share of world rice"
+        },
+        {
+         "when": "71.2%",
+         "what": "top five producers' share"
+        },
+        {
+         "when": "54.1%",
+         "what": "share of world people (UN East, South-East, South Asia)"
+        },
+        {
+         "when": "40%",
+         "what": "Asia's rice on rain alone"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "3. The premise and the risks"
+     },
+     {
+      "kind": "points",
+      "text": "• 54.1% counts whole UN regions, an upper bound; it was already 52.2% in 1950. • About 40% of Asia's rice depends on rain alone, and FAO names _rainfall instability_ a main risk. • IPCC AR6: these regions' people depend heavily on freshwater for agriculture."
+     },
+     {
+      "kind": "close",
+      "text": "So the monsoon feeds Asia as a seasonal, rain-fed rice engine; its variability, not its size, is the risk."
+     }
+    ],
+    "from": 1,
+    "to": 2,
+    "minutes": [
+     9.963,
+     6.981
+    ],
+    "total": 11,
+    "words0": 24,
+    "budget": 250,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D1"
+    ],
+    "start": "w"
+   },
+   "vo": "Section one is the traits. Wind reversal. Two systems with their months. Rain packed into four months. And a swing of about ten per cent, with El Niño as one cause.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 1 writes in; key terms underlined.",
+   "beat": "b07",
+   "claims": [
+    "M001",
+    "2017-GS1-17-11",
+    "2017-GS1-17-12",
+    "M046",
+    "M081",
+    "M073"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Monsoon climate_ means a seasonal reversal of winds. East, South-East and South Asia hold 54.1% of humanity, so 'about half' is the safe reading."
+     },
+     {
+      "kind": "head",
+      "text": "1. Characteristics of the climate"
+     },
+     {
+      "kind": "points",
+      "text": "• _Seasonal reversal_: a hot monsoonal climate across south and south-east Asia (NCERT). • _Two systems_: South and South-East Asia June-September; East Asia June-August (IPCC AR6); Japan's _Baiu_ runs early June to late July (JMA). • _Concentrated rain_: June-September gives 74.9% of India's annual rain, with Kerala onset about 1 June. • _Variable_: the standard deviation is about 10% of the mean, and El Niño can cut it."
+     },
+     {
+      "kind": "head",
+      "text": "2. How it feeds the people"
+     },
+     {
+      "kind": "points",
+      "text": "• _Rice_ is the bridge: Asia grows 89.4% of the world's rice (FAOSTAT 2024), and FAO calls it central to the food security of about half of humanity. • The top five producers, all in the monsoon belt, make 71.2% of world rice. • Rice needs over 100 cm of rain or irrigation; _kharif_ crops are sown with the monsoon."
+     },
+     {
+      "kind": "diagram",
+      "text": "Four bars: share of world rice grown in Asia; share from the top five producers; share of world people in the three UN regions; share of Asia's rice that depends on rain alone.",
+      "label": "Fig. 1: People and rice",
+      "diagram": {
+       "name": "bars",
+       "labels": {},
+       "items": [
+        {
+         "when": "89.4%",
+         "what": "Asia's share of world rice"
+        },
+        {
+         "when": "71.2%",
+         "what": "top five producers' share"
+        },
+        {
+         "when": "54.1%",
+         "what": "share of world people (UN East, South-East, South Asia)"
+        },
+        {
+         "when": "40%",
+         "what": "Asia's rice on rain alone"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "3. The premise and the risks"
+     },
+     {
+      "kind": "points",
+      "text": "• 54.1% counts whole UN regions, an upper bound; it was already 52.2% in 1950. • About 40% of Asia's rice depends on rain alone, and FAO names _rainfall instability_ a main risk. • IPCC AR6: these regions' people depend heavily on freshwater for agriculture."
+     },
+     {
+      "kind": "close",
+      "text": "So the monsoon feeds Asia as a seasonal, rain-fed rice engine; its variability, not its size, is the risk."
+     }
+    ],
+    "from": 3,
+    "to": 5,
+    "minutes": [
+     6.981,
+     3.295
+    ],
+    "total": 11,
+    "words0": 93,
+    "budget": 250,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "Section two is the feeding. Rice is the bridge. Asia's share, FAO's wording, and five big producers, all in the belt. Add one diagram: four bars, drawn in a minute. People, rice, top five, and rain alone.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in; Fig. 1 bars draw one by one; box D2 fills.",
+   "beat": "b08",
+   "claims": [
+    "2017-GS1-17-07",
+    "2017-GS1-17-06",
+    "2017-GS1-17-08",
+    "2017-GS1-17-09",
+    "2017-GS1-17-02"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b09",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_Monsoon climate_ means a seasonal reversal of winds. East, South-East and South Asia hold 54.1% of humanity, so 'about half' is the safe reading."
+     },
+     {
+      "kind": "head",
+      "text": "1. Characteristics of the climate"
+     },
+     {
+      "kind": "points",
+      "text": "• _Seasonal reversal_: a hot monsoonal climate across south and south-east Asia (NCERT). • _Two systems_: South and South-East Asia June-September; East Asia June-August (IPCC AR6); Japan's _Baiu_ runs early June to late July (JMA). • _Concentrated rain_: June-September gives 74.9% of India's annual rain, with Kerala onset about 1 June. • _Variable_: the standard deviation is about 10% of the mean, and El Niño can cut it."
+     },
+     {
+      "kind": "head",
+      "text": "2. How it feeds the people"
+     },
+     {
+      "kind": "points",
+      "text": "• _Rice_ is the bridge: Asia grows 89.4% of the world's rice (FAOSTAT 2024), and FAO calls it central to the food security of about half of humanity. • The top five producers, all in the monsoon belt, make 71.2% of world rice. • Rice needs over 100 cm of rain or irrigation; _kharif_ crops are sown with the monsoon."
+     },
+     {
+      "kind": "diagram",
+      "text": "Four bars: share of world rice grown in Asia; share from the top five producers; share of world people in the three UN regions; share of Asia's rice that depends on rain alone.",
+      "label": "Fig. 1: People and rice",
+      "diagram": {
+       "name": "bars",
+       "labels": {},
+       "items": [
+        {
+         "when": "89.4%",
+         "what": "Asia's share of world rice"
+        },
+        {
+         "when": "71.2%",
+         "what": "top five producers' share"
+        },
+        {
+         "when": "54.1%",
+         "what": "share of world people (UN East, South-East, South Asia)"
+        },
+        {
+         "when": "40%",
+         "what": "Asia's rice on rain alone"
+        }
+       ]
+      }
+     },
+     {
+      "kind": "head",
+      "text": "3. The premise and the risks"
+     },
+     {
+      "kind": "points",
+      "text": "• 54.1% counts whole UN regions, an upper bound; it was already 52.2% in 1950. • About 40% of Asia's rice depends on rain alone, and FAO names _rainfall instability_ a main risk. • IPCC AR6: these regions' people depend heavily on freshwater for agriculture."
+     },
+     {
+      "kind": "close",
+      "text": "So the monsoon feeds Asia as a seasonal, rain-fed rice engine; its variability, not its size, is the risk."
+     }
+    ],
+    "from": 6,
+    "to": 8,
+    "minutes": [
+     3.295,
+     0.4
+    ],
+    "total": 11,
+    "words0": 156,
+    "budget": 250,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2"
+    ],
+    "done": [
+     "D3"
+    ],
+    "start": "w"
+   },
+   "vo": "Section three tests the premise. Fifty-four per cent is an upper bound. About forty per cent of Asia's rice depends on rain alone. FAO names rainfall instability a main risk. Close on that. The variability, not the size, is the risk.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 3 and the conclusion write in; box D3 fills; word counter near 250.",
+   "beat": "b09",
+   "claims": [
+    "2017-GS1-17-02",
+    "2017-GS1-17-09",
+    "2017-GS1-17-10",
+    "2017-GS1-17-13"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b10",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "Monsoon Asia has more than half the world's people, exactly as the question says.",
+      "miss": "that holds only for whole UN regions (54.1%, an upper bound); say 'about half'",
+      "key": "w1"
+     },
+     {
+      "text": "The monsoon is regular, so food is always secure.",
+      "miss": "rainfall instability is a main rice risk, and about 40% of Asia's rice depends on rain alone",
+      "key": "w2"
+     },
+     {
+      "text": "Rice is grown only in India and China.",
+      "miss": "five monsoon countries make 71.2% of the world's rice, including Bangladesh, Indonesia and Viet Nam",
+      "key": "w3"
+     },
+     {
+      "text": "Monsoon means only the Indian summer rain.",
+      "miss": "East Asia has its own system, with different months",
+      "key": "w4"
+     },
+     {
+      "text": "(no figures: 'a lot of people eat rice')",
+      "miss": "no named source and no number",
+      "key": "w5"
+     }
+    ],
+    "heads": [
+     "1. Characteristics of the climate",
+     "2. How it feeds the people",
+     "3. The premise and the risks"
+    ],
+    "fig": "Fig. 1: People and rice",
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now the easy answer beside it. It says over half, exactly, with no figure behind it. It says the monsoon is regular. It says rice grows only in India and China. It treats monsoon as Indian summer rain alone. And it names no number or source. Both took eleven minutes. Only one tested the premise.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "over"
+    },
+    {
+     "key": "w2",
+     "word": "It"
+    },
+    {
+     "key": "w3",
+     "word": "rice"
+    },
+    {
+     "key": "w4",
+     "word": "monsoon"
+    },
+    {
+     "key": "w5",
+     "word": "names"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's slips ringed in red with one-line notes.",
+   "beat": "b10",
+   "claims": [
+    "2017-GS1-17-02",
+    "2017-GS1-17-10",
+    "2017-GS1-17-08",
+    "2017-GS1-17-11"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "b11",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Monsoon traits"
+     },
+     {
+      "id": "D2",
+      "label": "How it feeds Asia"
+     },
+     {
+      "id": "D3",
+      "label": "Check the premise"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2018 Geography Paper I Q3(a): origin, progress and retreat of the Indian monsoon, and its economic impact",
+      "key": "c1"
+     },
+     {
+      "text": "2022 Geography Paper II Q2(a): factors in the unpredictability of the south-west monsoon",
+      "key": "c2"
+     },
+     {
+      "text": "2023 GS I Q7: why the south-west monsoon is called 'Purvaiya' in the Bhojpur region",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "The concept episode: The monsoon: how a whole subcontinent breathes",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "Here is the payoff. The same frame answers its cousins. Twenty eighteen asked for the origin, progress and retreat of the monsoon. Twenty twenty-two asked why it is unpredictable. Learn it once: the traits, the link, the check.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "same"
+    },
+    {
+     "key": "c2",
+     "word": "asked"
+    },
+    {
+     "key": "c3",
+     "word": "of"
+    },
+    {
+     "key": "nx",
+     "word": "link,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three boxes tick; three cousin question cards slide in.",
+   "beat": "b11",
+   "claims": []
+  }
+ ]
+}

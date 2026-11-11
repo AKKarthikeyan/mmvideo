@@ -1,0 +1,1151 @@
+{
+ "id": "pol03-p1",
+ "format": "long-16x9",
+ "target_minutes": 8.0,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/POL-03/script_p1.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "ghat-steps",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Article 15(2)",
+      "key": "a1"
+     },
+     {
+      "text": "shops · public restaurants · wells · tanks · bathing ghats · roads",
+      "key": "pl"
+     }
+    ],
+    "mode": "dawn"
+   },
+   "vo": "India's Constitution has a line about bathing ghats. It says no citizen can be kept from shops, public restaurants, or public wells, tanks, bathing ghats and roads. Not because of religion, race, caste, sex or place of birth.",
+   "reveals": [
+    {
+     "key": "a1",
+     "word": "Constitution"
+    },
+    {
+     "key": "pl",
+     "word": "shops,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "River steps at dawn, people of every kind walking down to the water; the words of Article 15(2) appear on the steps.",
+   "beat": "b00",
+   "claims": [
+    "POL03-B04"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "title",
+   "spec": {
+    "title": "Equal, but how?",
+    "sub": "Fundamental Rights, part one",
+    "chip": "POLITY · UPSC"
+   },
+   "vo": "Why would a constitution need to name a bathing ghat?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Title card.",
+   "beat": "b00",
+   "claims": [
+    "POL03-B04"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "balance",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "EQUALITY",
+      "key": "eq"
+     },
+     {
+      "text": "RESERVATION",
+      "key": "rs"
+     }
+    ],
+    "mode": "wobble"
+   },
+   "vo": "And here is a puzzle. The same Constitution lets the State reserve seats and jobs for some groups. So is that a break in the promise of equality? Or is it part of the promise?",
+   "reveals": [
+    {
+     "key": "eq",
+     "word": "equality?"
+    },
+    {
+     "key": "rs",
+     "word": "reserve"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A balance scale: EQUALITY on one pan, RESERVATION on the other; it wobbles.",
+   "beat": "b01",
+   "claims": [
+    "POL03-B09",
+    "POL03-K10"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "series-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PART 1 · what a right is · who it binds · equality",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · freedom",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · religion, culture, limits",
+      "key": "p3"
+     }
+    ],
+    "mode": "part1"
+   },
+   "vo": "This is part one of three on Fundamental Rights. We start with what a right is. Then who it binds. Then equality, and that puzzle.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "one"
+    },
+    {
+     "key": "p2",
+     "word": "binds."
+    },
+    {
+     "key": "p3",
+     "word": "puzzle."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A three-stop path, Part 1 lit.",
+   "beat": "b01",
+   "claims": [
+    "POL03-B09",
+    "POL03-K10"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "wants-rights",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: a right is a justified claim",
+      "key": "jc"
+     },
+     {
+      "text": "WANTS",
+      "key": "wn"
+     },
+     {
+      "text": "RIGHTS",
+      "key": "rt"
+     },
+     {
+      "text": "claims on the state: must do · must not do",
+      "key": "cs"
+     }
+    ]
+   },
+   "vo": "So what is a right? NCERT's answer is short. A right is a justified claim, something others must accept as fair. Not every want is a right. Wanting a phone is not a right. Not being thrown out of a public well is. Rights are mostly claims on the state. They tell it what it must do, and what it must not do.",
+   "reveals": [
+    {
+     "key": "jc",
+     "word": "justified"
+    },
+    {
+     "key": "wn",
+     "word": "want"
+    },
+    {
+     "key": "rt",
+     "word": "well"
+    },
+    {
+     "key": "cs",
+     "word": "claims"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: two columns; a phone slides into WANTS, a well into RIGHTS.",
+   "beat": "b02",
+   "claims": [
+    "POL03-K01",
+    "POL03-K03"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "bill-glass",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: a bill of rights · Motilal Nehru committee, 1928",
+      "key": "br"
+     },
+     {
+      "text": "PART III",
+      "key": "p3"
+     },
+     {
+      "text": "a majority cannot vote them away",
+      "key": "mj"
+     },
+     {
+      "text": "YOU CAN GO TO COURT",
+      "key": "ct"
+     }
+    ]
+   },
+   "vo": "Some rights are written into the Constitution itself. NCERT calls such a list a bill of rights. NCERT says the Motilal Nehru committee asked for one as early as nineteen twenty-eight. Fundamental Rights are in Part Three. A majority cannot vote them away by an ordinary law. And if they are broken, you can go to court.",
+   "reveals": [
+    {
+     "key": "br",
+     "word": "Motilal"
+    },
+    {
+     "key": "p3",
+     "word": "Part"
+    },
+    {
+     "key": "mj",
+     "word": "majority"
+    },
+    {
+     "key": "ct",
+     "word": "court."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A scroll unrolls into Part III; a vote counter pushes and stops at a glass wall; a courthouse door opens.",
+   "beat": "b03",
+   "claims": [
+    "POL03-K06",
+    "POL03-K08",
+    "POL03-K09"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "state-buildings",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 12 · THE STATE",
+      "key": "st"
+     },
+     {
+      "text": "Parliament · State legislatures · governments · local authorities",
+      "key": "ls"
+     },
+     {
+      "text": "Ajay Hasia (1980): an arm of the government counts",
+      "key": "ah"
+     }
+    ]
+   },
+   "vo": "But who must respect these rights? Article twelve calls it the State. That means the governments and legislatures of India and of each State, and local and other authorities. In nineteen eighty, the Supreme Court read it wider. A body that works as an arm of the government counts too.",
+   "reveals": [
+    {
+     "key": "st",
+     "word": "twelve"
+    },
+    {
+     "key": "ls",
+     "word": "legislatures"
+    },
+    {
+     "key": "ah",
+     "word": "arm"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Buildings light up one by one under one roof label THE STATE; a public-sector corporation joins them.",
+   "beat": "b04",
+   "claims": [
+    "POL03-A01",
+    "POL03-A02"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "rulebook",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 13",
+      "key": "a13"
+     },
+     {
+      "text": "VOID · to that extent",
+      "key": "vd"
+     },
+     {
+      "text": "ordinance · rule · notification · custom",
+      "key": "lw"
+     }
+    ]
+   },
+   "vo": "And Article thirteen gives the rights their teeth. A law that takes away a Fundamental Right is void, to that extent. Laws made before the Constitution are tested too. And law here is wide. It includes an ordinance, a rule, a notification, even a custom with the force of law.",
+   "reveals": [
+    {
+     "key": "a13",
+     "word": "thirteen"
+    },
+    {
+     "key": "vd",
+     "word": "void,"
+    },
+    {
+     "key": "lw",
+     "word": "ordinance,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rulebook with pages ORDINANCE, RULE, NOTIFICATION, CUSTOM; the page that crosses a right greys out with VOID stamped on it.",
+   "beat": "b05",
+   "claims": [
+    "POL03-A03",
+    "POL03-A04",
+    "POL03-A05",
+    "POL03-A09"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch2 b05",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "UPSC Prelims {const:2026}: what counts as 'law' in Article {const:13}",
+      "key": "q6"
+     },
+     {
+      "text": "Prelims {const:2025}: can an ordinance take away a Fundamental Right?",
+      "key": "q5"
+     }
+    ],
+    "accent": [
+     "Prelims"
+    ]
+   },
+   "vo": "UPSC Prelims has tested this. In twenty twenty-six, what counts as law here. In twenty twenty-five, whether an ordinance can take away a Fundamental Right.",
+   "reveals": [
+    {
+     "key": "q6",
+     "word": "twenty-six,"
+    },
+    {
+     "key": "q5",
+     "word": "twenty-five,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: the two Prelims questions.",
+   "beat": "b05",
+   "claims": [
+    "POL03-A03",
+    "POL03-A04",
+    "POL03-A05",
+    "POL03-A09"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch2 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "frame-crane",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 368 · amendment",
+      "key": "am"
+     },
+     {
+      "text": "Art. 13(4): Article 13 does not apply",
+      "key": "a4"
+     },
+     {
+      "lab": "f3_kes",
+      "key": "ks"
+     },
+     {
+      "text": "BASIC STRUCTURE · its own episode",
+      "key": "bs"
+     }
+    ]
+   },
+   "vo": "But can Parliament change the rights themselves? Yes, by amending the Constitution. Article thirteen does not apply to an amendment. Still, in nineteen seventy-three, in Kesavananda Bharati, seven judges drew a line. An amendment cannot destroy the basic structure. That story has its own episode.",
+   "reveals": [
+    {
+     "key": "am",
+     "word": "amending"
+    },
+    {
+     "key": "a4",
+     "word": "apply"
+    },
+    {
+     "key": "ks",
+     "word": "Kesavananda"
+    },
+    {
+     "key": "bs",
+     "word": "episode."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Constitution as a building: a crane swaps bricks, but a glowing inner frame cannot be touched.",
+   "beat": "b06",
+   "claims": [
+    "POL03-A07",
+    "POL03-A08"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "two-circles",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "EVERY PERSON · Arts 14, 20, 21, 22, 25",
+      "key": "ep"
+     },
+     {
+      "text": "CITIZENS ONLY · Arts 15, 16, 19, 29",
+      "key": "ci"
+     },
+     {
+      "text": "not 'every citizen' (NCERT Grade 8, corrected)",
+      "key": "nc"
+     }
+    ]
+   },
+   "vo": "Now, who holds which right? Many people say every citizen has these rights. That is not quite how the text reads. Some rights belong to every person, citizen or not. Equality before law in Article fourteen is one. Life and personal liberty in Article twenty-one is another. Others are for citizens only, like the six freedoms of Article nineteen, and Articles fifteen and sixteen.",
+   "reveals": [
+    {
+     "key": "nc",
+     "word": "text"
+    },
+    {
+     "key": "ep",
+     "word": "person,"
+    },
+    {
+     "key": "ci",
+     "word": "citizens"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two circles: EVERY PERSON and, inside it, CITIZENS; article numbers drop into each.",
+   "beat": "b07",
+   "claims": [
+    "POL03-A10",
+    "POL03-A11",
+    "POL03-A12"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch4 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "judge-scale",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 14",
+      "key": "a14"
+     },
+     {
+      "text": "EQUALITY BEFORE LAW · same law, whatever the rank",
+      "key": "eb"
+     },
+     {
+      "text": "EQUAL PROTECTION · alike situations, alike treatment",
+      "key": "ep"
+     }
+    ]
+   },
+   "vo": "Start the equality code with Article fourteen. The State shall not deny any person equality before the law, or the equal protection of the laws. NCERT explains the two phrases. Equality before law means the law treats everyone alike, whatever their rank. Equal protection means people in similar situations are treated alike.",
+   "reveals": [
+    {
+     "key": "a14",
+     "word": "fourteen."
+    },
+    {
+     "key": "eb",
+     "word": "rank."
+    },
+    {
+     "key": "ep",
+     "word": "similar"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A judge's scale with a minister and a domestic worker on the same pan; then two queues of similar people treated alike.",
+   "beat": "b08",
+   "claims": [
+    "POL03-B01",
+    "POL03-B02",
+    "POL03-B03"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch4 b08",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Maneka Gandhi (1978), lead opinion:",
+     {
+      "text": "equality is the opposite of arbitrary action",
+      "key": "ar"
+     }
+    ],
+    "accent": [
+     "arbitrary"
+    ]
+   },
+   "vo": "And in Maneka Gandhi, in nineteen seventy-eight, the lead opinion said equality is the opposite of arbitrary action.",
+   "reveals": [
+    {
+     "key": "ar",
+     "word": "arbitrary"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Quote card.",
+   "beat": "b08",
+   "claims": [
+    "POL03-B01",
+    "POL03-B02",
+    "POL03-B03"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch4 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "ghat-steps",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ARTICLE 15",
+      "key": "a15"
+     },
+     {
+      "text": "shops · restaurants · wells · tanks · bathing ghats · roads",
+      "key": "pl"
+     },
+     {
+      "text": "as we read it: named because people were kept from them",
+      "key": "wr"
+     },
+     {
+      "text": "Art. 15(3): women and children",
+      "key": "wc"
+     }
+    ],
+    "mode": "open"
+   },
+   "vo": "Article fifteen bars the State from discriminating against a citizen. Not on grounds only of religion, race, caste, sex or place of birth. Clause two goes further. No citizen can be shut out of shops, public restaurants, wells, tanks, bathing ghats and roads. That answers our first question, as we read it. The ghats are named because people had been kept from them. But clause three adds that the State can still make special provisions for women and children.",
+   "reveals": [
+    {
+     "key": "a15",
+     "word": "fifteen"
+    },
+    {
+     "key": "pl",
+     "word": "shops,"
+    },
+    {
+     "key": "wr",
+     "word": "kept"
+    },
+    {
+     "key": "wc",
+     "word": "women"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Back to the river steps: the ghat open to all; then a women's bus seat and a school ramp appear.",
+   "beat": "b09",
+   "claims": [
+    "POL03-B04",
+    "POL03-B05",
+    "POL03-K13"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "three-cards",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 16 · equal opportunity in public jobs",
+      "key": "a16"
+     },
+     {
+      "text": "ART. 17 · untouchability abolished",
+      "key": "a17"
+     },
+     {
+      "text": "PCR Act 1955 · PoA Act 1989",
+      "key": "lw"
+     },
+     {
+      "text": "ART. 18 · titles ended",
+      "key": "a18"
+     }
+    ]
+   },
+   "vo": "Article sixteen gives every citizen equality of opportunity in public jobs. Article seventeen abolishes untouchability and forbids it in any form. Enforcing it is an offence punishable by law. The Protection of Civil Rights Act of nineteen fifty-five punishes it. A separate law of nineteen eighty-nine, the Prevention of Atrocities Act, lists atrocities against Scheduled Castes and Scheduled Tribes. And Article eighteen ends titles, except military or academic distinctions.",
+   "reveals": [
+    {
+     "key": "a16",
+     "word": "sixteen"
+    },
+    {
+     "key": "a17",
+     "word": "seventeen"
+    },
+    {
+     "key": "lw",
+     "word": "Protection"
+    },
+    {
+     "key": "a18",
+     "word": "eighteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three cards: a job notice open to all; a broken chain across a village well; a crossed-out title beside a medal and a degree.",
+   "beat": "b10",
+   "claims": [
+    "POL03-B08",
+    "POL03-B11",
+    "POL03-B14",
+    "POL03-B13",
+    "POL03-B12"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch5 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "balance",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 16(4)",
+      "key": "c4"
+     },
+     {
+      "text": "not adequately represented, in the State's opinion",
+      "key": "ar"
+     },
+     {
+      "text": "NCERT: not a violation of equality",
+      "key": "nv"
+     },
+     {
+      "text": "Art. 15(4), First Amendment, 1951",
+      "key": "f4"
+     }
+    ],
+    "mode": "steady"
+   },
+   "vo": "But now the puzzle. Article sixteen, clause four, says nothing in it stops the State from reserving posts. The reservation is for any backward class which, in the State's opinion, is not adequately represented in its services. NCERT reads this plainly. It says reservation is not a violation of equality. And Article fifteen got a similar clause in nineteen fifty-one, by the First Amendment.",
+   "reveals": [
+    {
+     "key": "c4",
+     "word": "clause"
+    },
+    {
+     "key": "ar",
+     "word": "adequately"
+    },
+    {
+     "key": "nv",
+     "word": "violation"
+    },
+    {
+     "key": "f4",
+     "word": "First"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The scale steadies: the clause slides in as part of the EQUALITY pan.",
+   "beat": "b11",
+   "claims": [
+    "POL03-B09",
+    "POL03-B05"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "runners",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "AS WE READ IT: treat unequal situations differently",
+      "key": "uq"
+     },
+     {
+      "text": "ART. 46 · weaker sections, 'with special care'",
+      "key": "a46"
+     },
+     {
+      "text": "ART. 335 · SC/ST claims, with efficiency of administration",
+      "key": "a335"
+     }
+    ]
+   },
+   "vo": "In plain words, as we read it, equality here means more than treating everyone the same. It means treating people in unequal situations differently, so they can start level. The Directive Principles point the same way. Article forty-six asks the State to promote, with special care, the interests of the weaker sections. And Article three thirty-five adds a balance. The claims of Scheduled Castes and Scheduled Tribes to services are weighed with the efficiency of administration.",
+   "reveals": [
+    {
+     "key": "uq",
+     "word": "unequal"
+    },
+    {
+     "key": "a46",
+     "word": "forty-six"
+    },
+    {
+     "key": "a335",
+     "word": "thirty-five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two runners at different starting lines; a ramp lifts one to the line; a small balance labelled EFFICIENCY.",
+   "beat": "b12",
+   "claims": [
+    "POL03-C18",
+    "POL03-C17"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch5 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "mandal-desk",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "MANDAL REPORT · 31 Dec 1980",
+      "key": "mr"
+     },
+     {
+      "lab": "f3_27",
+      "key": "c27"
+     },
+     {
+      "text": "Indra Sawhney (1992), lead judgment",
+      "key": "is"
+     },
+     {
+      "text": "CREAMY LAYER · left out",
+      "key": "cl"
+     }
+    ]
+   },
+   "vo": "How did the quota for backward classes come about? The Mandal Commission reported on the last day of nineteen eighty. In nineteen ninety, the Government ordered twenty-seven percent of central civil posts for these classes, in direct recruitment. The Supreme Court's nine judges upheld it in nineteen ninety-two. But the lead judgment set a condition. The creamy layer, the better-off among them, must be left out.",
+   "reveals": [
+    {
+     "key": "mr",
+     "word": "Mandal"
+    },
+    {
+     "key": "c27",
+     "word": "twenty-seven"
+    },
+    {
+     "key": "is",
+     "word": "nine"
+    },
+    {
+     "key": "cl",
+     "word": "creamy"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A report dated 1980; an order stamped 1990; then a family pyramid with its well-off top shaded out.",
+   "beat": "b13",
+   "claims": [
+    "POL03-C01",
+    "POL03-C02",
+    "POL03-C05"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch5 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "vacancy-bar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f3_rule",
+      "key": "r5"
+     },
+     {
+      "lab": "f3_half",
+      "key": "hf"
+     },
+     {
+      "text": "Jaishri Patil (2021): ceiling kept",
+      "key": "jp"
+     }
+    ],
+    "mode": "half"
+   },
+   "vo": "The second limit is the fifty percent rule. A government order of nineteen ninety-three applies it, following that judgment. Reservations for Scheduled Castes, Scheduled Tribes and backward classes together must not cross half of a year's vacancies. In twenty twenty-one, a five-judge bench kept that ceiling. It said a Maratha quota above it was not justified by exceptional circumstances.",
+   "reveals": [
+    {
+     "key": "r5",
+     "word": "fifty"
+    },
+    {
+     "key": "hf",
+     "word": "half"
+    },
+    {
+     "key": "jp",
+     "word": "twenty-one,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bar of a year's vacancies with a bright line at the half mark; coloured blocks fill up to it; a block above is stopped.",
+   "beat": "b14",
+   "claims": [
+    "POL03-C22",
+    "POL03-C10"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch5 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "vacancy-bar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f3_ews",
+      "key": "ew"
+     },
+     {
+      "lab": "f3_split",
+      "key": "sp"
+     },
+     {
+      "text": "Maheshwari J.: ceiling 'not inflexible'",
+      "key": "mh"
+     },
+     {
+      "text": "DISSENT: two judges",
+      "key": "ds"
+     },
+     {
+      "lab": "f3_595",
+      "key": "ar"
+     }
+    ],
+    "mode": "ews"
+   },
+   "vo": "But in twenty nineteen, a new quota went on top. The hundred-and-third Amendment allowed up to ten percent for economically weaker sections. The Supreme Court upheld it by three to two. One of the majority, Justice Maheshwari, wrote about the ceiling. It is not inflexible, he said, and covers only the older classes. Two judges dissented. They held that leaving out the poor among the older groups broke the basic structure. In central jobs, that brings reserved posts to fifty-nine and a half percent, by our arithmetic.",
+   "reveals": [
+    {
+     "key": "ew",
+     "word": "hundred-and-third"
+    },
+    {
+     "key": "sp",
+     "word": "three"
+    },
+    {
+     "key": "mh",
+     "word": "Maheshwari,"
+    },
+    {
+     "key": "ds",
+     "word": "dissented."
+    },
+    {
+     "key": "ar",
+     "word": "fifty-nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The vacancy bar: a 10% block above the half line; five judges' chairs, three green, two amber marked DISSENT.",
+   "beat": "b15",
+   "claims": [
+    "POL03-B07",
+    "POL03-C12",
+    "POL03-C13",
+    "POL03-C14",
+    "POL03-C24"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch5 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "sc-tree",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Davinder Singh (2024)",
+      "key": "dv"
+     },
+     {
+      "lab": "f3_61",
+      "key": "s61"
+     },
+     {
+      "text": "sub-classification, with data",
+      "key": "sc"
+     },
+     {
+      "text": "ONE JUDGE'S OPINION · creamy layer among SCs · three agreed",
+      "key": "gj"
+     },
+     {
+      "text": "Art. 16(4A), 1995: promotion",
+      "key": "pr"
+     }
+    ]
+   },
+   "vo": "And the debate goes on. In twenty twenty-four, seven judges ruled six to one. States may sub-classify the Scheduled Castes, if their data shows a group is inadequately represented because of its backwardness. In a separate opinion, one judge said the State must also find a creamy layer among them. That is his opinion, and three judges agreed with it. Reservation in promotion has its own clause too, added in nineteen ninety-five.",
+   "reveals": [
+    {
+     "key": "dv",
+     "word": "debate"
+    },
+    {
+     "key": "s61",
+     "word": "seven"
+    },
+    {
+     "key": "sc",
+     "word": "sub-classify"
+    },
+    {
+     "key": "gj",
+     "word": "separate"
+    },
+    {
+     "key": "pr",
+     "word": "promotion"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A tree of the SC list branching into groups, each with a small data chart; a scroll labelled ONE JUDGE'S OPINION with signatures.",
+   "beat": "b16",
+   "claims": [
+    "POL03-C15",
+    "POL03-C16",
+    "POL03-B10"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch6 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "balance",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "READ PLAINLY: part of the promise",
+      "key": "pp"
+     },
+     {
+      "lab": "f3_limits",
+      "key": "lm"
+     }
+    ],
+    "mode": "balanced"
+   },
+   "vo": "So, is reservation a break in the promise of equality? Read plainly, the Constitution's own text says no. It writes reservation into the equality code, for a backward class which, in the State's opinion, is not adequately represented. NCERT says the same. The arguments are about its limits. The creamy layer. The fifty percent ceiling and its exceptions. And the data the State must show.",
+   "reveals": [
+    {
+     "key": "pp",
+     "word": "plainly,"
+    },
+    {
+     "key": "lm",
+     "word": "limits."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The scale balanced, the limits written on its base.",
+   "beat": "b17",
+   "claims": [
+    "POL03-B09",
+    "POL03-B01",
+    "POL03-B04",
+    "POL03-B08",
+    "POL03-C05",
+    "POL03-C22",
+    "POL03-C13",
+    "POL03-C15"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch6 b17",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "lines": [
+     {
+      "text": "Art. 14: equality before law",
+      "key": "n1"
+     },
+     {
+      "text": "Arts 15, 16: no discrimination, special provisions allowed",
+      "key": "n2"
+     },
+     {
+      "text": "16(4): reservation inside equality; courts set its limits",
+      "key": "n3"
+     }
+    ],
+    "strike": {
+     "text": "break the promise?",
+     "key": "x"
+    }
+   },
+   "vo": "For the exam, write it this way. Article fourteen is equality before law. Fifteen and sixteen bar discrimination, but allow special provisions. Sixteen four makes reservation part of equality, and courts have set its limits.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "fourteen"
+    },
+    {
+     "key": "n2",
+     "word": "Fifteen"
+    },
+    {
+     "key": "n3",
+     "word": "Sixteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: the old question struck out; the exam lines fill in.",
+   "beat": "b17",
+   "claims": [
+    "POL03-B09",
+    "POL03-B01",
+    "POL03-B04",
+    "POL03-B08",
+    "POL03-C05",
+    "POL03-C22",
+    "POL03-C13",
+    "POL03-C15"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch6 b18",
+   "kind": "analogy",
+   "spec": {
+    "which": "prison-gate",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NEXT · the freedoms, life and liberty",
+      "key": "nx"
+     }
+    ],
+    "mode": "tease"
+   },
+   "vo": "In part two: the freedoms, and life and liberty. Including one of the two stories NCERT opens with: a man held in custody for fifty-four years.",
+   "reveals": [
+    {
+     "key": "nx",
+     "word": "freedoms,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl closes the notebook; a prison gate in grey light, its lock glinting.",
+   "beat": "b18",
+   "claims": [
+    "POL03-K07"
+   ]
+  }
+ ]
+}

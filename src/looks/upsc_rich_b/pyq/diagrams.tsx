@@ -5,7 +5,7 @@ import {BOXES_B, proj} from "../map";
 import {clamp} from "../kit";
 import {HAND, INK, RED} from "./kit";
 
-export type DiagramSpec = {name: "monsoon" | "timeline" | "bars"; labels?: Record<string, string>; items?: {when: string; what: string}[]};
+export type DiagramSpec = {name: "monsoon" | "timeline" | "bars" | "flow"; labels?: Record<string, string>; items?: {when: string; what: string}[]};
 type P = {p: number; w: number; h: number; spec: DiagramSpec};
 const seg = (p: number, a: number, b: number) => clamp((p - a) / (b - a));
 
@@ -85,4 +85,26 @@ const Bars: React.FC<P> = ({p, w, h, spec}) => {
   </svg>;
 };
 
-export const Diagram: React.FC<P> = (props) => props.spec.name === "monsoon" ? <Monsoon {...props}/> : props.spec.name === "bars" ? <Bars {...props}/> : <Timeline {...props}/>;
+/** pen flowchart: boxes left to right (wrapping to a second row after three), joined by arrows; title in bold, one line beneath */
+const Flow: React.FC<P> = ({p, w, h, spec}) => {
+  const items = spec.items ?? [], n = items.length, perRow = n > 3 ? Math.ceil(n / 2) : n, rows = Math.ceil(n / perRow);
+  const bw = Math.min(260, (w - 60) / perRow - 50), bh = 120, gx = (w - perRow * bw) / (perRow + 1), gy = rows > 1 ? (h - rows * bh) / (rows + 1) : (h - bh) / 2;
+  const pos = items.map((_, i) => { const r = Math.floor(i / perRow), c = i % perRow, cc = r % 2 ? perRow - 1 - c : c; return {x: gx + cc * (bw + gx), y: gy + r * (bh + gy)}; });
+  const wrapTxt = (s: string, k: number) => { const ws = s.split(" "), out: string[] = []; let cur = ""; for (const x of ws) { if ((cur + " " + x).trim().length > k) { out.push(cur.trim()); cur = x; } else cur += " " + x; } if (cur.trim()) out.push(cur.trim()); return out.slice(0, 3); };
+  return <svg width={w} height={h}>
+    <defs><marker id="pq-fl-ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill={INK}/></marker></defs>
+    {items.map((it, i) => {
+      const q = clamp((p - i * (0.9 / n)) / (0.9 / n)), {x, y} = pos[i], nx = pos[i + 1];
+      return <g key={i} opacity={clamp(q * 2.5)}>
+        <rect x={x} y={y} width={bw} height={bh} rx={10} fill="rgba(31,45,110,.05)" stroke={INK} strokeWidth={2.5} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - q}/>
+        <text x={x + bw / 2} y={y + 36} fontFamily={HAND} fontSize={26} fontWeight={700} fill={INK} textAnchor="middle">{it.when}</text>
+        {wrapTxt(it.what, Math.floor(bw / 12)).map((l, j) => <text key={j} x={x + bw / 2} y={y + 68 + j * 26} fontFamily={HAND} fontSize={21} fill={INK} textAnchor="middle">{l}</text>)}
+        {nx && q > 0.9 && (nx.y === y
+          ? <line x1={nx.x > x ? x + bw + 6 : x - 6} y1={y + bh / 2} x2={nx.x > x ? nx.x - 10 : nx.x + bw + 10} y2={y + bh / 2} stroke={INK} strokeWidth={2.5} markerEnd="url(#pq-fl-ah)"/>
+          : <line x1={x + bw / 2} y1={y + bh + 6} x2={nx.x + bw / 2} y2={nx.y - 10} stroke={INK} strokeWidth={2.5} markerEnd="url(#pq-fl-ah)"/>)}
+      </g>;
+    })}
+  </svg>;
+};
+
+export const Diagram: React.FC<P> = (props) => props.spec.name === "monsoon" ? <Monsoon {...props}/> : props.spec.name === "bars" ? <Bars {...props}/> : props.spec.name === "flow" ? <Flow {...props}/> : <Timeline {...props}/>;

@@ -1,0 +1,687 @@
+{
+ "id": "pyq-2021-gs1-7",
+ "format": "long-16x9",
+ "target_minutes": 2.8,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2021-gs1-7/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2021 · General Studies Paper I · Q7",
+    "marks": "10 marks",
+    "text": "Mention the global occurrence of volcanic eruptions in 2021 and their impact on regional environment.",
+    "glow": []
+   },
+   "vo": "UPSC, twenty twenty-one. General Studies Paper One, ten marks, one hundred and fifty words. Mention the global occurrence of volcanic eruptions in twenty twenty-one. Then give their impact on regional environment. Here's a trap. One famous eruption feels like it belongs in this answer, and it doesn't.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2021, GS Paper I, Q7'. The year '2021' glows faintly (plant).",
+   "beat": "b00",
+   "claims": []
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "Mention the global occurrence of volcanic eruptions in 2021 and their impact on regional environment.",
+    "directives": [
+     {
+      "word": "Mention",
+      "meaning": "name briefly",
+      "key": "x1"
+     }
+    ],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact",
+      "key": "d2"
+     }
+    ]
+   },
+   "vo": "Read what it asks. Mention means list, briefly. Impact means say what each eruption did. So there are two jobs. Where did they happen? And what did they do to each region?",
+   "reveals": [
+    {
+     "key": "x1",
+     "word": "Mention"
+    },
+    {
+     "key": "d1",
+     "word": "there"
+    },
+    {
+     "key": "d2",
+     "word": "Impact"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'mention' and 'impact' highlighted; two empty boxes D1 and D2 (plant: they tick at the end).",
+   "beat": "b01",
+   "claims": []
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Volcanoes of 2021",
+    "lines": [
+     {
+      "text": "NOAA's database lists seven significant eruptions for twenty twenty-one.",
+      "key": "l1"
+     },
+     {
+      "text": "Three in the Americas, two in Europe, one in Africa, one in Asia.",
+      "key": "l2"
+     },
+     {
+      "text": "That is NOAA's filter, not a count of every eruption.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "Start with the where. NOAA's database lists seven significant eruptions for twenty twenty-one. Three in the Americas, two in Europe, one in Africa, one in Asia. That is NOAA's filter, not a count of every eruption.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "database"
+    },
+    {
+     "key": "l2",
+     "word": "in"
+    },
+    {
+     "key": "l3",
+     "word": "one"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A world map with seven dots, coloured by continent; a card reading 'NOAA NCEI, significant eruptions'.",
+   "beat": "b02",
+   "claims": [
+    "2021-GS1-7-01"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Volcanoes of 2021",
+    "lines": [
+     {
+      "text": "Hunga Tonga is not on that list.",
+      "key": "l1"
+     },
+     {
+      "text": "It erupted in January twenty twenty-two.",
+      "key": "l2"
+     },
+     {
+      "text": "Tonga is the famous one, so it sneaks into answers.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "But now the trap. Hunga Tonga is not on that list. It erupted in January twenty twenty-two. Tonga is the famous one, so it sneaks into answers. Leave it out.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "Hunga"
+    },
+    {
+     "key": "l2",
+     "word": "erupted"
+    },
+    {
+     "key": "l3",
+     "word": "the"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The 2021 calendar page; a Tonga card tries to slide in and bounces to the next year's page (pay-off of the plant).",
+   "beat": "b03",
+   "claims": [
+    "2021-GS1-7-16"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Volcanoes of 2021",
+    "lines": [
+     {
+      "text": "So how big was twenty twenty-one?",
+      "key": "l1"
+     },
+     {
+      "text": "None passed four on the explosivity scale.",
+      "key": "l2"
+     },
+     {
+      "text": "La Palma put out one point eight million tonnes of sulphur dioxide.",
+      "key": "l3"
+     },
+     {
+      "text": "That is about a tenth of Pinatubo.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "So how big was twenty twenty-one? None passed four on the explosivity scale. La Palma put out one point eight million tonnes of sulphur dioxide. That is about a tenth of Pinatubo. So the damage stayed regional.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "twenty-one?"
+    },
+    {
+     "key": "l2",
+     "word": "scale."
+    },
+    {
+     "key": "l3",
+     "word": "eight"
+    },
+    {
+     "key": "l4",
+     "word": "is"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bar scale: La Palma's gas beside Pinatubo's, one tenth the height; a regional-not-global tag.",
+   "beat": "b04",
+   "claims": [
+    "2021-GS1-7-02",
+    "2021-GS1-7-08",
+    "2021-GS1-7-10"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Volcanoes of 2021",
+    "lines": [
+     {
+      "text": "Regional is the word to build on.",
+      "key": "l1"
+     },
+     {
+      "text": "Each eruption hit a place in its own way.",
+      "key": "l2"
+     },
+     {
+      "text": "Ash and water in the Caribbean.",
+      "key": "l3"
+     },
+     {
+      "text": "Houses and power in Central Africa.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "Regional is the word to build on. Each eruption hit a place in its own way. Ash and water in the Caribbean. Houses and power in Central Africa. Air in Europe. Reefs in the Pacific.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "build"
+    },
+    {
+     "key": "l2",
+     "word": "place"
+    },
+    {
+     "key": "l3",
+     "word": "water"
+    },
+    {
+     "key": "l4",
+     "word": "power"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Four small region cards with icons: ash cloud, house, plume arrow, coral reef.",
+   "beat": "b05",
+   "claims": [
+    "2021-GS1-7-05",
+    "2021-GS1-7-03",
+    "2021-GS1-7-09",
+    "2021-GS1-7-14"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b06",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "NOAA's database lists _seven significant eruptions_ in 2021, none above VEI 4: regional in effect, not global."
+     },
+     {
+      "kind": "head",
+      "text": "1. Where they occurred"
+     },
+     {
+      "kind": "points",
+      "text": "• Americas 3 (Ecuador, Guatemala, _St Vincent_), Europe 2 (Italy, _La Palma_), Africa 1 (Nyiragongo), Asia 1 (Semeru). • Only St Vincent and Semeru reached VEI 4. • Hunga Tonga is 2022, not 2021."
+     },
+     {
+      "kind": "head",
+      "text": "2. Impact on regional environment"
+     },
+     {
+      "kind": "points",
+      "text": "• _Caribbean_: St Vincent's ash covered the island; about 16,000 were evacuated, water and power failed, banana farming was hit. • _Central Africa_: Nyiragongo destroyed about 5,000 houses and disrupted water and power. • _Europe_: La Palma erupted for 85 days, covering 12 km2 in lava; 1.8 Mt SO2 drifted over Africa, Europe and the Caribbean. • _Pacific_: Fukutoku-Oka-no-Ba's pumice raft drifted 1,300 km, stranding on Okinawa's reefs and mangroves."
+     },
+     {
+      "kind": "close",
+      "text": "So the harm was regional: ash, water, land, air. La Palma's SO2 was a tenth of Pinatubo's; no global cooling followed."
+     }
+    ],
+    "from": 0,
+    "to": 1,
+    "minutes": [
+     7.0,
+     6.037
+    ],
+    "total": 7,
+    "words0": 0,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Now we write. One hundred and fifty words, about seven minutes. Open with NOAA's seven, and say the effect was regional, not global.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet; clock 7:00 and word counter 0. The introduction writes in; box D1 fills.",
+   "beat": "b06",
+   "claims": [
+    "2021-GS1-7-01",
+    "2021-GS1-7-02"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "NOAA's database lists _seven significant eruptions_ in 2021, none above VEI 4: regional in effect, not global."
+     },
+     {
+      "kind": "head",
+      "text": "1. Where they occurred"
+     },
+     {
+      "kind": "points",
+      "text": "• Americas 3 (Ecuador, Guatemala, _St Vincent_), Europe 2 (Italy, _La Palma_), Africa 1 (Nyiragongo), Asia 1 (Semeru). • Only St Vincent and Semeru reached VEI 4. • Hunga Tonga is 2022, not 2021."
+     },
+     {
+      "kind": "head",
+      "text": "2. Impact on regional environment"
+     },
+     {
+      "kind": "points",
+      "text": "• _Caribbean_: St Vincent's ash covered the island; about 16,000 were evacuated, water and power failed, banana farming was hit. • _Central Africa_: Nyiragongo destroyed about 5,000 houses and disrupted water and power. • _Europe_: La Palma erupted for 85 days, covering 12 km2 in lava; 1.8 Mt SO2 drifted over Africa, Europe and the Caribbean. • _Pacific_: Fukutoku-Oka-no-Ba's pumice raft drifted 1,300 km, stranding on Okinawa's reefs and mangroves."
+     },
+     {
+      "kind": "close",
+      "text": "So the harm was regional: ash, water, land, air. La Palma's SO2 was a tenth of Pinatubo's; no global cooling followed."
+     }
+    ],
+    "from": 2,
+    "to": 2,
+    "minutes": [
+     6.037,
+     4.617
+    ],
+    "total": 7,
+    "words0": 21,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D1"
+    ],
+    "start": "w"
+   },
+   "vo": "Section one is the where. Three in the Americas, two in Europe, one each in Africa and Asia. Then one line that shows you know the trap. Tonga is twenty twenty-two.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 1 writes in with St Vincent and La Palma underlined.",
+   "beat": "b07",
+   "claims": [
+    "2021-GS1-7-01",
+    "2021-GS1-7-02",
+    "2021-GS1-7-16"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "NOAA's database lists _seven significant eruptions_ in 2021, none above VEI 4: regional in effect, not global."
+     },
+     {
+      "kind": "head",
+      "text": "1. Where they occurred"
+     },
+     {
+      "kind": "points",
+      "text": "• Americas 3 (Ecuador, Guatemala, _St Vincent_), Europe 2 (Italy, _La Palma_), Africa 1 (Nyiragongo), Asia 1 (Semeru). • Only St Vincent and Semeru reached VEI 4. • Hunga Tonga is 2022, not 2021."
+     },
+     {
+      "kind": "head",
+      "text": "2. Impact on regional environment"
+     },
+     {
+      "kind": "points",
+      "text": "• _Caribbean_: St Vincent's ash covered the island; about 16,000 were evacuated, water and power failed, banana farming was hit. • _Central Africa_: Nyiragongo destroyed about 5,000 houses and disrupted water and power. • _Europe_: La Palma erupted for 85 days, covering 12 km2 in lava; 1.8 Mt SO2 drifted over Africa, Europe and the Caribbean. • _Pacific_: Fukutoku-Oka-no-Ba's pumice raft drifted 1,300 km, stranding on Okinawa's reefs and mangroves."
+     },
+     {
+      "kind": "close",
+      "text": "So the harm was regional: ash, water, land, air. La Palma's SO2 was a tenth of Pinatubo's; no global cooling followed."
+     }
+    ],
+    "from": 3,
+    "to": 3,
+    "minutes": [
+     4.617,
+     4.388
+    ],
+    "total": 7,
+    "words0": 52,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Section two is the impact, one region at a time, each with a figure. St Vincent: sixteen thousand evacuated, water and power lost. Nyiragongo: five thousand houses. La Palma: eighty-five days and twelve square kilometres of lava. Its plume reached Africa and the Caribbean. And a pumice raft drifted thirteen hundred kilometres to Okinawa's reefs.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in, bullet by bullet; box D2 fills.",
+   "beat": "b08",
+   "claims": [
+    "2021-GS1-7-03",
+    "2021-GS1-7-05",
+    "2021-GS1-7-07",
+    "2021-GS1-7-09",
+    "2021-GS1-7-13",
+    "2021-GS1-7-14"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b09",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "NOAA's database lists _seven significant eruptions_ in 2021, none above VEI 4: regional in effect, not global."
+     },
+     {
+      "kind": "head",
+      "text": "1. Where they occurred"
+     },
+     {
+      "kind": "points",
+      "text": "• Americas 3 (Ecuador, Guatemala, _St Vincent_), Europe 2 (Italy, _La Palma_), Africa 1 (Nyiragongo), Asia 1 (Semeru). • Only St Vincent and Semeru reached VEI 4. • Hunga Tonga is 2022, not 2021."
+     },
+     {
+      "kind": "head",
+      "text": "2. Impact on regional environment"
+     },
+     {
+      "kind": "points",
+      "text": "• _Caribbean_: St Vincent's ash covered the island; about 16,000 were evacuated, water and power failed, banana farming was hit. • _Central Africa_: Nyiragongo destroyed about 5,000 houses and disrupted water and power. • _Europe_: La Palma erupted for 85 days, covering 12 km2 in lava; 1.8 Mt SO2 drifted over Africa, Europe and the Caribbean. • _Pacific_: Fukutoku-Oka-no-Ba's pumice raft drifted 1,300 km, stranding on Okinawa's reefs and mangroves."
+     },
+     {
+      "kind": "close",
+      "text": "So the harm was regional: ash, water, land, air. La Palma's SO2 was a tenth of Pinatubo's; no global cooling followed."
+     }
+    ],
+    "from": 4,
+    "to": 5,
+    "minutes": [
+     4.388,
+     0.4
+    ],
+    "total": 7,
+    "words0": 57,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "End with the scale. La Palma's gas was a tenth of Pinatubo's. So no global cooling followed. The harm was regional.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "End"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The conclusion writes in; clock near 0:30; word counter near 150.",
+   "beat": "b09",
+   "claims": [
+    "2021-GS1-7-10",
+    "2021-GS1-7-08"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b10",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "Hunga Tonga erupted in 2021 and cooled the Earth.",
+      "miss": "Tonga was January 2022; no source gives any global cooling for 2021",
+      "key": "w1"
+     },
+     {
+      "text": "Gives a total count of all eruptions in the year.",
+      "miss": "no allowed source gives one; NOAA's seven are only the significant ones",
+      "key": "w2"
+     },
+     {
+      "text": "Lists the eruptions and stops.",
+      "miss": "the question's second job is impact: water, farms, air and sea",
+      "key": "w3"
+     },
+     {
+      "text": "La Palma's gas stayed over the Canary Islands.",
+      "miss": "the plume reached Africa, Europe and the Caribbean",
+      "key": "w4"
+     }
+    ],
+    "heads": [
+     "1. Where they occurred",
+     "2. Impact on regional environment"
+    ],
+    "fig": null,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now the easy answer beside it. It adds Tonga and a global cooling. It gives a total count nobody can source. It lists eruptions but not their impact. It says the plume stayed on the island. Both took seven minutes. Only one did both jobs.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "It"
+    },
+    {
+     "key": "w2",
+     "word": "a"
+    },
+    {
+     "key": "w3",
+     "word": "eruptions"
+    },
+    {
+     "key": "w4",
+     "word": "stayed"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's slips ringed in red with one-line notes.",
+   "beat": "b10",
+   "claims": [
+    "2021-GS1-7-16",
+    "2021-GS1-7-10",
+    "2021-GS1-7-01",
+    "2021-GS1-7-05",
+    "2021-GS1-7-09"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "b11",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "The eruptions of 2021"
+     },
+     {
+      "id": "D2",
+      "label": "Their regional impact"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2020 GS I Q4: geophysical characteristics of the Circum-Pacific Zone",
+      "key": "c1"
+     },
+     {
+      "text": "2019 Geography Paper I Q1(a): phreatic eruptions and their consequences",
+      "key": "c2"
+     },
+     {
+      "text": "2017 Geography Paper I Q1(a): pseudovolcanic features",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "The concept episode: Volcanoes: where the planet leaks",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "Here is the payoff. The same frame answers its cousins. Twenty twenty asked about the Circum-Pacific Zone. Twenty nineteen asked about phreatic eruptions. Learn it once: where, then what it did.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "The"
+    },
+    {
+     "key": "c2",
+     "word": "Twenty"
+    },
+    {
+     "key": "c3",
+     "word": "Zone."
+    },
+    {
+     "key": "nx",
+     "word": "what"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The two boxes tick; three cousin question cards slide in.",
+   "beat": "b11",
+   "claims": []
+  }
+ ]
+}

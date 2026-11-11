@@ -7,7 +7,7 @@ Format A. Rendered by `scripts/upsc/pyq_tool.py` from `answer.py`; edit that fil
 
 Checked against the PDF: research/upsc/_pyq/mains/2017_geo1.pdf page 2.
 
-**Working budget:** 120-150 words, about 7 minutes in the hall (the bank lists 150 words for this question; 7 minutes is our arithmetic from 3 hours for 250 marks). Sheet: 157 words.
+**Working budget:** 120-150 words, about 7 minutes in the hall (the bank lists 150 words for this question; 7 minutes is our arithmetic from 3 hours for 250 marks). Sheet: 150 words.
 
 ## Demands
 
@@ -17,7 +17,7 @@ Checked against the PDF: research/upsc/_pyq/mains/2017_geo1.pdf page 2.
 
 ## The answer sheet
 
-We found no definition of _pseudovolcanic_ at any publisher we could open. Our working definition: looks volcanic, but no magma erupts at that spot. _(demands D1; claims )_
+We found no definition of _pseudovolcanic_ at any publisher we could open. Our working definition: looks volcanic, no magma erupts there. _(demands D1; claims )_
 
 **1. Look-alike features** _(demands D2; claims 2017-GEO1-1A-03, 2017-GEO1-1A-07, 2017-GEO1-1A-09)_
 
@@ -29,7 +29,7 @@ We found no definition of _pseudovolcanic_ at any publisher we could open. Our w
 
 **2. Borderline features (our reading)** _(demands D3; claims 2017-GEO1-1A-04)_
 
-- Some exam-prep notes list _geysers_ and _fumaroles_ here; no publisher we read does. USGS ties them to heat around a magma reservoir in young volcanic regions, "sometimes called dying volcanoes".
+- Some exam-prep notes list _geysers_ and _fumaroles_ here; no publisher we read does. USGS ties them to heat around a magma reservoir in young volcanic regions.
 - _Fumarole_: a vent releasing volcanic gas even when not erupting. _Geyser_: Old Faithful erupts about every 65 minutes on average; the mechanism is "not completely understood" (USGS). _(demands D3; claims 2017-GEO1-1A-04, 2017-GEO1-1A-05, 2017-GEO1-1A-06)_
 
 Treat the term as a convenience; judge each feature by its cause, not its shape. _(demands D3; claims )_

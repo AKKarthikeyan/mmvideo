@@ -30,7 +30,7 @@ A = dict(
         dict(id="D3", text="Say which borderline features belong (our reading)"),
     ],
     sheet=[
-        S("intro", """We found no definition of _pseudovolcanic_ at any publisher we could open. Our working definition: looks volcanic, but no magma erupts at that spot.""",
+        S("intro", """We found no definition of _pseudovolcanic_ at any publisher we could open. Our working definition: looks volcanic, no magma erupts there.""",
           ["D1"], []),
         S("head", "1. Look-alike features", ["D2"], [P + "03", P + "07", P + "09"]),
         S("diagram", """Cross-section: lava flow over wet ground; steam blasts build a small cone; no pipe down to a magma chamber.""",
@@ -41,7 +41,7 @@ A = dict(
           • _Mud volcano_: NCERT says gases and pressure push mud up at Baratang, Andaman, "India's only" one.""",
           ["D2"], [P + "03", P + "07", P + "09"]),
         S("head", "2. Borderline features (our reading)", ["D3"], [P + "04"]),
-        S("points", """• Some exam-prep notes list _geysers_ and _fumaroles_ here; no publisher we read does. USGS ties them to heat around a magma reservoir in young volcanic regions, "sometimes called dying volcanoes".
+        S("points", """• Some exam-prep notes list _geysers_ and _fumaroles_ here; no publisher we read does. USGS ties them to heat around a magma reservoir in young volcanic regions.
           • _Fumarole_: a vent releasing volcanic gas even when not erupting. _Geyser_: Old Faithful erupts about every 65 minutes on average; the mechanism is "not completely understood" (USGS).""",
           ["D3"], [P + "04", P + "05", P + "06"]),
         S("close", """Treat the term as a convenience; judge each feature by its cause, not its shape.""",
@@ -123,11 +123,11 @@ A = dict(
           []),
     ],
     story=dict(
-        promise="How do you write a note on a term nobody defines, and what do you do when sources disagree?",
+        promise="How do you write a note on a term we found no definition for, and which cases are borderline?",
         arc="misconception-first",
         loops=[
             dict(id="L1", kind="primary", q="How do you answer this in 150 words?", open="b00", close="b10"),
-            dict(id="L2", kind="secondary", q="Where do the sources disagree?", open="b00", close="b06"),
+            dict(id="L2", kind="secondary", q="Which features are borderline?", open="b00", close="b06"),
             dict(id="M1", kind="micro", q="What are the three jobs?", open="b01", close="b09"),
             dict(id="M2", kind="micro", q="Is Lonar volcanic?", open="b04", close="b10"),
         ],

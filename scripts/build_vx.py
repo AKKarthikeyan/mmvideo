@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Build data for the Vox engine: validate phrases, crop PDF clippings, voice beats (MiniMax), write public/vx/<id>/data.json.
 Usage: build_vx.py [--no-tts] [ids...]"""
-import json, os, re, sys, time, pathlib
-import fitz, requests
+import json, os, re, sys, pathlib
+import fitz
 sys.path.insert(0, os.path.dirname(__file__))
+import mm
+from minimax import MALE, estimate, narrate, tts   # tts: other scripts import it from here
 from vx_scripts import VIDEOS
 
-ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
+ROOT = mm.PUBLIC / "vx"
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
 ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"; DM = R / "dmart"; RP = R / "retailpeers"
 CLIPS = {
@@ -170,18 +172,6 @@ def phrases(scene):
             for v in x: walk(v)
     walk(scene); return out
 
-def tts(text, path, voice="English_Diligent_Man"):
-    key = os.environ["MINIMAX_API_KEY"]
-    body = {"model": "speech-2.6-hd", "text": text.replace("MoatSCORE", "Moat Score"), "stream": False, "language_boost": "English",
-            "voice_setting": {"voice_id": voice, "speed": 1, "vol": 1, "pitch": 0},
-            "audio_setting": {"sample_rate": 44100, "bitrate": 128000, "format": "mp3", "channel": 1}}
-    for attempt in range(6):
-        j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": f"Bearer {key}"}, json=body, timeout=120).json()
-        if (j.get("data") or {}).get("audio"):
-            open(path, "wb").write(bytes.fromhex(j["data"]["audio"])); return j["extra_info"]["audio_length"] / 1000
-        print("  retry", path.name, j.get("base_resp")); time.sleep(20 * (attempt + 1))   # wait on 429s; never switch provider
-    raise SystemExit("TTS failed: " + path.name)
-
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]; notts = "--no-tts" in sys.argv
     for V in VIDEOS:
@@ -202,11 +192,9 @@ def main():
         if (out / "data.json").exists():
             old = {b["key"]: b for b in json.load(open(out / "data.json"))["beats"]}
         for b in V["beats"]:
-            mp3 = out / f"{b['key']}.mp3"
             o = old.get(b["key"])
-            if mp3.exists() and o and o.get("say") == b["say"]: b["sec"] = o["sec"]
-            elif notts: b["sec"] = max(3.0, len(b["say"]) / 15)
-            else: b["sec"] = round(tts(b["say"], mp3, V.get("voice", "English_Diligent_Man")), 2); print(" voiced", b["key"], b["sec"])
+            b["sec"] = narrate(b["say"], out / f"{b['key']}.mp3", o["sec"] if o and o.get("say") == b["say"] else None,
+                               V.get("voice", MALE), estimate(b["say"]) if notts else None)
             b["cues"] = chunks(b["cap"])
         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
         data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips

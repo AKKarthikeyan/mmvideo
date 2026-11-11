@@ -16,9 +16,11 @@ Needs MINIMAX_API_KEY in the environment. Output: out/audio/<id>/ (not in git).
 import audioop, hashlib, json, os, subprocess, sys, time, wave
 from pathlib import Path
 import requests
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import mm
+from mm import FPS, timeline      # the players' timeline: [(beat, start_frame, slot_frames)], total_frames
 
-ROOT = Path(__file__).resolve().parent.parent
-FPS = 30
+ROOT = mm.REPO
 SR = 44100
 SPEED_MAX = 1.25      # above this a voice sounds rushed: shorten the translation instead
 SLOP = 0.15           # keep this much silence before the next beat starts
@@ -27,7 +29,7 @@ LANGS = {
     "ta": {"name": "Tamil", "boost": "Tamil"},
     "hi": {"name": "Hindi", "boost": "Hindi"},
 }
-# Tamil has no native MiniMax voice: use the same English voices as the English videos (scripts/voices.py).
+# Tamil has no native MiniMax voice: use the same English voices as the English videos (scripts/minimax.py).
 # Hindi has native voices. All must be ear-tested by AK / a native speaker before publishing.
 VOICES = {
     ("ta", "male"): "English_Diligent_Man", ("ta", "female"): "English_captivating_female1",
@@ -39,30 +41,7 @@ def ffmpeg(tool="ffmpeg"):
     return ["npx", "remotion", tool, "-hide_banner", "-loglevel", "error"] if tool == "ffmpeg" else ["npx", "remotion", tool]
 
 
-# ---------- timeline: mirrors beatFrames / shortLayout in src/vx/VoxEngine.tsx and CaseEngine.tsx ----------
-def beat_frames(b):
-    return int(-(-((b["sec"] + (1.1 if b["scene"]["type"] == "title" else 0.5)) * FPS) // 1))
-
-
-def timeline(D, short=None):
-    """Returns [(beat, start_frame, slot_frames)], total_frames."""
-    if short is None:
-        out, f = [], 0
-        for b in D["beats"]:
-            n = beat_frames(b); out.append((b, f, n)); f += n
-        return out, f
-    s = D["shorts"][short]
-    bs = [next(b for b in D["beats"] if b["key"] == k) for k in s["beats"]]
-    gap = 0.12 if s.get("loop") else 0.35
-    out, f = [], 0
-    for b in bs:
-        n = int(-(-((b["sec"] + gap) * FPS) // 1)); out.append((b, f, n)); f += n
-    f += 0 if s.get("loop") else (2 * FPS if s.get("hook") else 4 * FPS)
-    return out, f
-
-
-def load(vid):
-    return json.load(open(ROOT / "public" / "vx" / vid / "data.json"))
+load = mm.vx
 
 
 def tpath(vid, lang):

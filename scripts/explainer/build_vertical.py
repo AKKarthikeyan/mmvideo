@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """60-second vertical cut of the moat explainer: reuses voiced beats from public/explainer, voices two new short lines (same female voice)."""
 import json, math, shutil, sys, pathlib
-sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from build_vx import chunks, tts
-from voices import FEMALE
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+import mm
+from build_vx import chunks
+from minimax import FEMALE, narrate
 FPS = 30; PAD = 0.45
-SRC = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/explainer"); OUT = SRC / "vertical"; OUT.mkdir(exist_ok=True)
+SRC = mm.PUBLIC / "explainer"; OUT = SRC / "vertical"; OUT.mkdir(exist_ok=True)
 full = {b["key"]: b for b in json.load(open(SRC / "data.json"))["beats"]}
 NEW = {"we": "What do we do? Moat and Margin reads each company's own filings, scores its moat, and tells you every day what changed.",
        "end": "Moat and Margin. Educational research, not investment advice."}
@@ -16,7 +17,7 @@ for k in ORDER:
     mp3 = OUT / f"{k}.mp3"
     if k in NEW:
         say = NEW[k]; o = old.get(k)
-        sec = o["sec"] if (mp3.exists() and o and o["say"] == say) else round(tts(say, mp3, FEMALE), 2)
+        sec = narrate(say, mp3, o["sec"] if o and o["say"] == say else None, FEMALE)
     else:
         say, sec = full[k]["say"], full[k]["sec"]; shutil.copy(SRC / f"{k}.mp3", mp3)
     fr = math.ceil((sec + PAD) * FPS)

@@ -1,14 +1,63 @@
 #!/usr/bin/env python3
-"""Q2 bank forensic napkin Shorts (4 Oct 2026): BoB overseas loans (bka), Bandhan deposit mix (bkb), Ujjivan book shift (bkc).
-Indian-accent narrator (AK 3 Oct). Figures from the banks' own Q2 FY27 filings (1–3 Oct 2026); splits are our arithmetic.
-Usage: hand_banks.py [bka bkb bkc]"""
-import json, sys, pathlib
-sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from build_vx import tts
-from voices import MALE
-VOICE = MALE
-ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/hand")
+"""Napkin-math Shorts and the napkin channel intro: every script in one place, and one way to voice them.
+Usage: hand.py <id> [<id> ...]      e.g. hand.py bkv        (hand.py --all goes through every script)
+
+Each id is a folder in public/hand/. A line is voiced (MiniMax, male Indian-accent narrator: AK, 3 Oct 2026) only when it
+is new or its words changed; beats.json there holds the lines and their lengths for the players in src/hand/.
+To add a Short: add its lines to SHORTS and run this with its id. Spell things the way the voice should say them
+("T C S", "D Mart"); the caption writers in mm.py respell them for reading.
+Every figure is from the company's own filings; splits and ratios are our arithmetic."""
+import sys
+import mm
+from minimax import MALE, voice_lines
+
 SHORTS = {
+ # Shyam Metalics (3 Oct 2026). Filings: MoU (2 Oct 2026), FY26 press release (11 May 2026), Q1 FY27 deck (20 Jul 2026).
+ "shyam": [
+  ("n1", "Fifty thousand crore rupees. Let's check it on a napkin."),
+  ("n2", "Shyam Metalics' revenue last year: eighteen thousand five hundred and fifty two crore."),
+  ("n3", "Divide. This one steel plant costs about two point seven years of sales."),
+  ("n4", "Its own capex plan for the next four to five years? About nine thousand five hundred crore, from its own cash."),
+  ("n5", "So the plant is five times the plan. The gap: forty thousand five hundred crore."),
+  ("n6", "Who pays the gap? The MoU doesn't say. And it's non binding. So, back to the napkin."),
+ ],
+ # HAL / HATSOFF (3 Oct 2026). HAL's Reg 30 disclosure of 2 Oct 2026 (HATSOFF stake from CAE Canada at NIL consideration).
+ "hal": [
+  ("h1", "HAL has agreed to take half a company. The price: zero rupees."),
+  ("h2", "The company is HATSOFF. It trains military and civil helicopter pilots, on simulators."),
+  ("h3", "Until now, it was a fifty fifty joint venture: HAL and Canada's CAE."),
+  ("h4", "Last year's turnover: eighty point nine five crore rupees."),
+  ("h5", "CAE's half: three crore eighty four lakh shares, ten rupees each. That's about thirty eight crore of share capital."),
+  ("h6", "HAL's price for it: nil. HAL says it wants full management control."),
+  ("h7", "So why would CAE walk away with nothing? The filing doesn't say. Back to the napkin: half a company, zero rupees."),
+ ],
+ # Vedanta Oil & Gas, Cambay (4 Oct 2026). Q2 FY27 production release (3 Oct 2026); the split of the fall is our arithmetic.
+ "vog": [
+  ("v1", "Vedanta Oil and Gas lost an oil field to ONGC. Output fell nineteen percent. But the lost field isn't the main reason."),
+  ("v2", "Daily output: seventy two point two thousand barrels, down from eighty nine point one. A drop of sixteen point nine."),
+  ("v3", "Cambay, the field ONGC took over, fell by five point four."),
+  ("v4", "Rajasthan, its biggest field, fell by eleven. The company calls it natural decline."),
+  ("v5", "So Rajasthan is about two thirds of the fall. Cambay, about one third."),
+  ("v6", "And Rajasthan is eighty three percent of what it produces. How long does that contract run? The filings we read don't say. Back to the napkin."),
+ ],
+ # Channel intro in the napkin-math style, 16:9 (13 Oct 2026). AK-approved script, extended to 60-75 s. The tea stalls are
+ # a made-up example. DMart: Q2 FY27 results filed 10 Oct 2026 (revenue +18.4%, profit after tax +7.6%).
+ "introN": [
+  ("i1", "Two tea stalls, same street. One sells a cup for ten rupees. The other, for fifteen. Guess which one has the queue?"),
+  ("i2", "Both spend eight rupees to make a cup."),
+  ("i3", "So one keeps two rupees. The other keeps seven."),
+  ("i4", "Sell two hundred cups a day. One stall takes home four hundred rupees. The other, fourteen hundred."),
+  ("i5", "What a business keeps is its margin."),
+  ("i6", "And the reason the queue does not walk next door? That is its moat."),
+  ("i7", "Maybe it is the taste. Maybe thirty years of trust. Whatever it is, next door cannot copy it."),
+  ("i8", "That is our name, and our whole job. Moat and Margin."),
+  ("i9", "Every working day, companies file hundreds of documents. We pick out the few that matter."),
+  ("i10", "We do the same sum on real companies, from their own filings. D Mart sold eighteen percent more in one quarter. Its profit grew under eight. We went and found out why."),
+  ("i11", "No tips. No targets. Just the numbers, in plain words, with the document linked."),
+  ("i12", "Because once you can read a business, you see it everywhere. Even at a tea stall. Subscribe, and read along."),
+ ],
+ # Q2 bank forensic Shorts (4 Oct 2026 onwards): BoB overseas loans (bka), Bandhan deposit mix (bkb), Ujjivan book shift (bkc), ...
+ # Figures from the banks' own Q2 FY27 filings (1-3 Oct 2026); splits are our arithmetic.
  "bka": [
   ("a1", "Bank of Baroda's loans grew eighteen percent. Here's what the headline hides."),
   ("a2", "Global loans, fifteen point one two lakh crore. Minus loans in India, eleven point eight eight lakh crore. That leaves three point two four lakh crore abroad."),
@@ -207,13 +256,17 @@ SHORTS = {
   ("y7", "Float helps. The combined ratio decides how much. Which brings us back to the question."),
  ],
 }
-for sid in (sys.argv[1:] or SHORTS):
-    OUT = ROOT / sid; OUT.mkdir(parents=True, exist_ok=True)
-    old = {b["key"]: b for b in json.load(open(OUT / "beats.json"))} if (OUT / "beats.json").exists() else {}
-    out = []
-    for k, say in SHORTS[sid]:
-        mp3 = OUT / f"{k}.mp3"; o = old.get(k)
-        sec = o["sec"] if (mp3.exists() and o and o["text"] == say and o.get("voice") == VOICE) else round(tts(say, mp3, VOICE), 2)
-        out.append({"key": k, "text": say, "sec": sec, "voice": VOICE})
-    json.dump(out, open(OUT / "beats.json", "w"), indent=1, ensure_ascii=False)
-    print(sid, round(sum(b["sec"] + 0.15 for b in out), 1), "s", [b["sec"] for b in out])
+
+
+def main():
+    ids = list(SHORTS) if sys.argv[1:] == ["--all"] else sys.argv[1:]
+    unknown = [i for i in ids if i not in SHORTS]
+    if not ids or unknown:
+        sys.exit((f"no napkin script {unknown}\n" if unknown else "") + "usage: hand.py <id> [<id> ...]   ids: " + " ".join(SHORTS))
+    for sid in ids:
+        beats = voice_lines(mm.PUBLIC / "hand" / sid, SHORTS[sid], MALE)
+        print(sid, round(sum(b["sec"] + 0.15 for b in beats), 1), "s", [b["sec"] for b in beats])
+
+
+if __name__ == "__main__":
+    main()

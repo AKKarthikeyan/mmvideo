@@ -3,13 +3,15 @@
 Validates phrases, crops real PDF clippings (page chosen nearest a hint, since letter editions differ), voices beats (MiniMax only;
 waits on 429s), writes public/vx/<id>/data.json, and out/vx/<id>.srt + <id>-chapters.txt.
 Usage: build_vx_letters.py [--no-tts] [ids...]"""
-import json, math, os, sys, pathlib, tempfile
+import json, os, sys, pathlib, tempfile
 import fitz
 sys.path.insert(0, os.path.dirname(__file__))
-from build_vx import crop, chunks, phrases, tts
+import mm
+from build_vx import crop, chunks, phrases
+from minimax import estimate, narrate
 from vx_letters import VIDEOS
 
-ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx"); OUTV = pathlib.Path("/Volumes/DarwinSSD/MMVideo/out/vx")
+ROOT = mm.PUBLIC / "vx"; OUTV = mm.OUT / "vx"
 NOMAD = pathlib.Path("/Users/akkarthikeyan/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Full Collection Nomad Letters Nick Sleep.pdf")
 # name: (pdf, verbatim phrase, lines above, lines below, page hint)
 CLIPS = {
@@ -60,7 +62,7 @@ CLIPS = {
   "n50_fcf": (NOMAD, "free cash flow of just over U$500m", 1, 1, 105),
   "n50_novalue": (NOMAD, "your growth spending has no value", 2, 1, 105),
 }
-BRK = pathlib.Path("/Volumes/DarwinSSD/MMVideo/sources/berkshire")
+BRK = mm.REPO / "sources/berkshire"
 CLIPS.update({
   "g95_door": (BRK/"1995.pdf", "until a custodian appeared", 3, 2, 6),
   "g95_direct": (BRK/"1995.pdf", "of selling - direct marketing - gave it an enormous cost", 2, 2, 7),
@@ -193,28 +195,18 @@ def main():
         if (out / "data.json").exists():
             old = {b["key"]: b for b in json.load(open(out / "data.json"))["beats"]}
         for b in V["beats"]:
-            mp3 = out / f"{b['key']}.mp3"; o = old.get(b["key"]); spoken = pron(b["say"]); b["spoken"] = spoken
-            if mp3.exists() and o and o.get("spoken", o.get("say")) == spoken: b["sec"] = o["sec"]
-            elif notts: b["sec"] = max(3.0, len(b["say"]) / 15)
-            else: b["sec"] = round(tts(spoken, mp3), 2); print(" voiced", b["key"], b["sec"], flush=True)
+            o = old.get(b["key"]); spoken = pron(b["say"]); b["spoken"] = spoken
+            b["sec"] = narrate(spoken, out / f"{b['key']}.mp3", o["sec"] if o and o.get("spoken", o.get("say")) == spoken else None,
+                               dry=estimate(b["say"]) if notts else None)
             b["cues"] = chunks(b["cap"])
         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}; data["engine"] = V.get("engine", "vox")
         data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
         json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)
-        # SRT + chapter times, using the engine's long layout (beatFrames = sec + 1.1 s for titles, + 0.5 s otherwise)
-        FPS = 30; t = 0; srt = []; chap = {}
-        for b in V["beats"]:
-            n = math.ceil((b["sec"] + (1.1 if b["scene"]["type"] == "title" else 0.5)) * FPS)
-            chap.setdefault(b["ch"], t); tot = sum(len(c) for c in b["cues"]); acc = 0
-            for c in b["cues"]:
-                a = t / FPS + b["sec"] * acc / tot; acc += len(c); srt.append((a, t / FPS + b["sec"] * acc / tot, c))
-            t += n
-        ts = lambda x: f"{int(x//3600):02d}:{int(x%3600//60):02d}:{int(x%60):02d},{int(round(x%1*1000))%1000:03d}"
-        OUTV.mkdir(parents=True, exist_ok=True)
-        open(OUTV / f"{V['id']}.srt", "w").write("\n".join(f"{i+1}\n{ts(a)} --> {ts(z)}\n{c}\n" for i, (a, z, c) in enumerate(srt)))
-        mmss = lambda f: f"{int(f/FPS//60):02d}:{int(f/FPS%60):02d}"
-        open(OUTV / f"{V['id']}-chapters.txt", "w").write("\n".join(f"{mmss(chap[i])} {n}" for i, n in enumerate(V["chapters"]) if i in chap) + "\n")
-        print(f"{V['id']}: {len(V['beats'])} beats, {t/FPS/60:.2f} min, {len(clips)} clips", flush=True)
+        # captions and chapter times, on the long video's timeline
+        tl, total = mm.timeline(V)
+        mm.write_srt(OUTV / f"{V['id']}.srt", tl)
+        open(OUTV / f"{V['id']}-chapters.txt", "w").write(mm.chapters(V["chapters"], tl) + "\n")
+        print(f"{V['id']}: {len(V['beats'])} beats, {total/mm.FPS/60:.2f} min, {len(clips)} clips", flush=True)
 
 if __name__ == "__main__":
     main()

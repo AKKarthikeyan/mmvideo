@@ -5,8 +5,9 @@ dashes normalised to ASCII (base-14 Courier renders them as '·'). 2000+ are cop
 Usage: typeset_letters.py <year> [year ...]"""
 import html, pathlib, re, shutil, sys
 import fitz
+import mm
 SRC = pathlib.Path("/Volumes/DarwinSSD/Research/Fund Manager Letters/Warren Buffet Letters")
-OUT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/sources/berkshire")
+OUT = mm.REPO / "sources/berkshire"
 ASCII = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "—": "--", "–": "-", "\t": "    "})
 for y in sys.argv[1:]:
     if int(y) >= 2000:

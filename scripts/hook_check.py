@@ -4,24 +4,25 @@ Reads the built timings in public/vx/<id>/data.json and V["hooks"] from scripts/
 (the beat, and the words that open or re-open a question for the viewer) or bare "key" (the beat opens on it).
 A hook counts from the moment its phrase is spoken.
 usage: hook_check.py <id> [--max 45]      exit 0 = cadence holds, 1 = a gap is too long or the opening has no question"""
-import json, math, pathlib, sys
+import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import mm
 from vx_scripts import VIDEOS
 vid = sys.argv[1]; MAX = float(sys.argv[sys.argv.index("--max") + 1]) if "--max" in sys.argv else 45.0
 V = next(v for v in VIDEOS if v["id"] == vid); hooks = V.get("hooks") or []
-D = json.load(open(pathlib.Path(__file__).resolve().parent.parent / "public/vx" / vid / "data.json"))
+tl, total = mm.timeline(mm.vx(vid))
 HK = {}
 for h in hooks:
     k, _, ph = h.partition("|"); HK.setdefault(k, []).append(ph)
-t = 0.0; pts = []; first_q = None
-for b in D["beats"]:
-    say = b["say"]; n = math.ceil((b["sec"] + (1.1 if b["scene"]["type"] == "title" else 0.5)) * 30) / 30
+pts = []; first_q = None
+for b, start, _ in tl:
+    say = b["say"]; t = start / mm.FPS
     if first_q is None and "?" in say: first_q = t + b["sec"] * say.index("?") / len(say)
     for ph in HK.get(b["key"], []):
         i = say.lower().find(ph.lower()) if ph else 0      # "key|phrase": the hook is spoken at that phrase; bare "key": at the start of the beat
         if i < 0: print(f"  FAIL  hook phrase not in {b['key']}: {ph}"); i = 0
         pts.append((t + b["sec"] * i / len(say), b["key"], (ph or say)[:70]))
-    t += n
+t = total / mm.FPS
 pts.sort()
 fmt = lambda s: f"{int(s // 60)}:{int(s % 60):02d}"
 print(f"{vid}: {fmt(t)} total, {len(pts)} hook beats, limit {MAX:.0f} s")

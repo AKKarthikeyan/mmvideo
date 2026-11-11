@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Letter Reader build: validate phrases, crop real PDF clippings (PyMuPDF highlight boxes), voice beats (MiniMax), write public/letters/<id>/data.json.
 Usage: build_letters.py [--no-tts] [ids...]   (needs MINIMAX_API_KEY unless --no-tts)"""
-import json, os, sys, pathlib
-sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts")
-from build_vx import crop, chunks, tts, phrases
+import json, sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+import mm
+from build_vx import crop, chunks, phrases
+from minimax import estimate, narrate
 from sleep_shorts import SHORTS, PDF
 
-ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/letters")
+ROOT = mm.PUBLIC / "letters"
 
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]; notts = "--no-tts" in sys.argv
@@ -29,10 +31,9 @@ def main():
         if (out / "data.json").exists():
             old = {b["key"]: b for b in json.load(open(out / "data.json"))["beats"]}
         for b in V["beats"]:
-            mp3 = out / f"{b['key']}.mp3"; o = old.get(b["key"])
-            if mp3.exists() and o and o.get("say") == b["say"]: b["sec"] = o["sec"]
-            elif notts: b["sec"] = max(3.0, len(b["say"]) / 15)
-            else: b["sec"] = round(tts(b["say"], mp3), 2); print(" voiced", b["key"], b["sec"])
+            o = old.get(b["key"])
+            b["sec"] = narrate(b["say"], out / f"{b['key']}.mp3", o["sec"] if o and o.get("say") == b["say"] else None,
+                               dry=estimate(b["say"]) if notts else None)
             b["cues"] = chunks(b["cap"])
         data = {"id": V["id"], "title": V["title"], "beats": V["beats"], "clips": clips}
         json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)

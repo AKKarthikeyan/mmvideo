@@ -37,7 +37,7 @@ Files: `scripts/translations/kpigreen.{ta,hi}.json` (only the 2 Short-1 beats ar
    native speaker reviewed that file. Never upload or share a DRAFT as final.
 7. **Voices.** Tamil has no native MiniMax voice, so it uses the same English voices as the English videos (an English-accent Tamil: AK must
    ear-test it first). Hindi uses the native `hindi_male_1_v2` / `hindi_female_1_v2`. Use the same gender as the English video's narrator
-   (check the script's `VOICE` in `scripts/voices.py` / the build script; default is male `English_Diligent_Man`). Rotation rule: alternate per video.
+   (check the script's `VOICE` in `scripts/minimax.py` / the build script; default is male `English_Diligent_Man`). Rotation rule: alternate per video.
 8. **Quota.** The MiniMax key is shared (v1/v2 nightly jobs). Run builds one at a time, never between 22:00 and 02:00 IST, and on 429s wait;
    never switch provider. Cached beats are reused, so rebuilds only pay for changed lines.
 9. **Do not edit engine files** (`src/`, `build_vx.py`, `vx_scripts.py`). You only add `scripts/translations/*.json`. Commit only on AK's word.

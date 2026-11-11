@@ -3,9 +3,10 @@
 Sections: projector leader -> vintage piano (old film + sepia) -> riser + hit on the colour wipe -> modern pulse -> logo swell.
 Music is ducked under every narration line. Writes public/intro/music.wav."""
 import json, math, wave, numpy as np
+import mm
 
 SR = 44100
-B = json.load(open("/Volumes/DarwinSSD/MMVideo/public/intro/beats.json"))
+B = json.load(open(mm.PUBLIC / "intro/beats.json"))
 t = 50; speech = []; starts = {}
 for b in B:
     n = math.ceil((b["sec"] + 0.6) * 30); starts[b["key"]] = t / 30; speech.append((t / 30, (t + b["sec"] * 30) / 30)); t += n
@@ -148,6 +149,6 @@ mix[-int(3 * SR):] *= np.linspace(1, 0, int(3 * SR))
 mix = mix / (np.max(np.abs(mix)) + 1e-9) * 0.45
 st = np.stack([mix, np.roll(mix, int(0.011 * SR)) * 0.96], axis=1)   # slight stereo width
 pcm = (np.clip(st, -1, 1) * 32767).astype(np.int16)
-with wave.open("/Volumes/DarwinSSD/MMVideo/public/intro/music.wav", "wb") as w:
+with wave.open(str(mm.PUBLIC / "intro/music.wav"), "wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())
 print(f"music.wav {TOTAL:.2f}s  wipe {WIPE:.2f}s  logo {LOGO:.2f}s  speech segments {len(speech)}")

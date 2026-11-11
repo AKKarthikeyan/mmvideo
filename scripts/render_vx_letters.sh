@@ -3,7 +3,7 @@
 # Usage: render_vx_letters.sh <id> [--skip-long]
 set -e
 export PATH=/opt/homebrew/bin:$PATH
-cd /Volumes/DarwinSSD/MMVideo
+cd "$(dirname "$0")/.."
 id=$1; B=/tmp/ltb
 if [ "$2" != "--skip-long" ]; then npx remotion render $B VX-$id-long out/vx/$id-long.mp4 --log=error; fi
 npx remotion render $B VX-$id-long out/vx/$id-preview-phone.mp4 --scale=0.4 --crf=38 --log=error --overwrite

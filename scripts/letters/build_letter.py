@@ -6,11 +6,13 @@ public/letters/<slug>/data.json and out/letters/<slug>/ (SRT, chapters, YouTube 
 Usage: build_letter.py <slug> [--no-tts]"""
 import importlib, json, math, sys, pathlib
 import fitz
-sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts"); sys.path.insert(0, "/Volumes/DarwinSSD/MMVideo/scripts/letters/ep")
-from build_vx import chunks, tts
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1])); sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "ep"))
+import mm
+from build_vx import chunks
+from minimax import MALE, estimate, narrate
 
 FPS = 30; PAD = 0.6
-MM = pathlib.Path("/Volumes/DarwinSSD/MMVideo")
+MM = mm.REPO
 
 def spoken_phrases(s):
     out = [s.get(k) for k in ("at", "sync", "finale_at", "lead_at", "second_at") if s.get(k)]
@@ -21,7 +23,7 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]; notts = "--no-tts" in sys.argv
     slug = args[0]; E = importlib.import_module(slug)
     BEATS, CHAPTERS, META = E.BEATS, E.CHAPTERS, E.META
-    VOICE = getattr(E, "VOICE", "English_Diligent_Man")
+    VOICE = getattr(E, "VOICE", MALE)
     OUT = MM / "public/letters" / slug; (OUT / "pages").mkdir(parents=True, exist_ok=True)
     REL = MM / "out/letters" / slug; REL.mkdir(parents=True, exist_ok=True)
     keys = [b["key"] for b in BEATS]
@@ -49,28 +51,18 @@ def main():
         s["box"] = [r.x0 / W, r.y0 / H, r.width / W, r.height / H]; s["aspect"] = W / H
     old = {}
     if (OUT / "data.json").exists(): old = {b["key"]: b for b in json.load(open(OUT / "data.json"))["beats"]}
-    t = 0; srt = []; chap = {}
     for b in BEATS:
         s = b["scene"]
+        o = old.get(b["key"])
         if not b["say"]: b["sec"] = s["silent"]
-        else:
-            mp3 = OUT / f"{b['key']}.mp3"; o = old.get(b["key"])
-            if mp3.exists() and o and o.get("say") == b["say"]: b["sec"] = o["sec"]
-            elif notts: b["sec"] = max(3.0, len(b["say"]) / 15)
-            else: b["sec"] = round(tts(b["say"], mp3, VOICE), 2); print(" voiced", b["key"], b["sec"], flush=True)
+        else: b["sec"] = narrate(b["say"], OUT / f"{b['key']}.mp3", o["sec"] if o and o.get("say") == b["say"] else None,
+                                 VOICE, estimate(b["say"]) if notts else None)
         b["frames"] = math.ceil((b["sec"] + (PAD if b["say"] else 0)) * FPS)
-        chap.setdefault(b["ch"], t)
-        if b["say"]:
-            cues = chunks(b["say"]); tot = sum(len(c) for c in cues); acc = 0
-            for c in cues:
-                a = t / FPS + b["sec"] * acc / tot; acc += len(c); z = t / FPS + b["sec"] * acc / tot
-                srt.append((a, z, c))
-        t += b["frames"]
+    tl, t = mm.framed_timeline(BEATS)
+    said = lambda b: chunks(b["say"]) if b["say"] else []      # silent title cards carry no caption
     json.dump({"slug": slug, "meta": META, "beats": BEATS, "total": t}, open(OUT / "data.json", "w"), indent=1, ensure_ascii=False)
-    ts = lambda x: f"{int(x//3600):02d}:{int(x%3600//60):02d}:{int(x%60):02d},{int(round(x%1*1000))%1000:03d}"
-    open(REL / f"{slug}.srt", "w").write("\n".join(f"{i+1}\n{ts(a)} --> {ts(z)}\n{c}\n" for i, (a, z, c) in enumerate(srt)))
-    mmss = lambda f: f"{int(f/FPS//60)}:{int(f/FPS%60):02d}"
-    chapters = "\n".join(f"{mmss(chap[i])} {n}" for i, n in enumerate(CHAPTERS) if i in chap)
+    mm.write_srt(REL / f"{slug}.srt", tl, parts=said)
+    chapters = mm.chapters(CHAPTERS, tl, pad=False)
     open(REL / "chapters.txt", "w").write(chapters + "\n")
     desc = META["description"].strip() + "\n\nChapters\n" + chapters + "\n\n" + META.get("sources", "").strip() + \
         "\n\nEducational research, not investment advice. No company is scored. Moat & Margin is not a SEBI-registered Research Analyst or Investment Adviser.\n"

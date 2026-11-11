@@ -1,0 +1,172 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "One clock, two sunrises". Reveal Loop Short, 1080 x 1920, English and Hindi
+     from one page (STORY.lang picks the strings; timings are named cues in story.js). The sunrise line is computed for
+     21 June 2027 with the NOAA solar equations (sea-level horizon). Sources: docs/SHORTS_BENCHMARKS.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: one clock, two sunrises</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #title { left: 60px; top: 266px; font-size: 92px; line-height: 1.0; }
+      .hi #title { font-size: 112px; line-height: 1.05; }
+      #clock { left: 56px; top: 250px; font-size: 230px; color: #f7f3ea; }
+      #clockLab { left: 64px; top: 478px; color: var(--acc); }
+      #gap { left: 56px; top: 258px; font-size: 190px; }
+      .hi #gap { font-size: 170px; }
+      #gapLab { left: 64px; top: 462px; line-height: 1.1; }
+      #why { left: 56px; top: 258px; font-size: 170px; }
+      #whyLab { left: 64px; top: 444px; line-height: 1.1; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 38px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 8px 13px 10px; white-space: nowrap; opacity: 0; }
+      .tag b { font-weight: 700; background: #07090d; color: #f2b233; padding: 2px 9px 4px; margin-left: 10px; }
+      .tag.acc { background: #f2b233; }
+      .tag.ghost { background: none; color: rgba(247, 243, 234, 0.85); letter-spacing: 0.12em; font-size: 30px; -webkit-text-stroke: 6px rgba(4, 10, 18, 0.75); paint-order: stroke fill; }
+      .hi .tag { font: 700 46px/1 Teko, sans-serif; letter-spacing: 0.01em; padding: 9px 13px 3px; }
+      .hi .tag b { font-family: Oswald, sans-serif; font-size: 36px; padding: 0 9px 3px; }
+      .hi .tag.ghost { font-size: 40px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.333" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div></div>
+      <div class="lab" id="title"></div>
+      <div class="big" id="clock">03:48</div>
+      <div class="lab" id="clockLab"></div>
+      <div class="big" id="gap"></div>
+      <div class="lab" id="gapLab"></div>
+      <div class="big" id="why"></div>
+      <div class="lab" id="whyLab"></div>
+      <div class="tag acc" id="pDong"></div>
+      <div class="tag" id="pKol"></div>
+      <div class="tag" id="pMir"></div>
+      <div class="tag" id="pMum"></div>
+      <div class="tag acc" id="pGuh"></div>
+      <div class="tag ghost" id="pMer"></div>
+      <div class="tag" id="pW"></div>
+      <div class="tag" id="pE"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S, hi } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, rad = Math.PI / 180;
+      const T = hi ? {
+        kick: "INDICA ATLAS · जहाँ आप नहीं सोचते", title: "घड़ी एक।<br />सूर्योदय दो।", clockLab: "भारतीय समय · 21 जून 2027",
+        gap: "2 घंटे 4 मिनट", gapLab: "दो सूर्योदयों के बीच<br />एक ही घड़ी पर", why: "29° × 4 मिनट", whyLab: "सिर्फ़ देशांतर से ही<br />लगभग 1 घंटा 57 मिनट",
+        dong: "डोंग, अरुणाचल", kol: "कोलकाता", mir: "मिर्ज़ापुर", mum: "मुंबई", guh: "गुहार मोती, गुजरात", mer: "82°30′ पू. · मानक याम्योत्तर", w: "68°7′ पू.", e: "97°25′ पू.",
+        s0: "सूर्योदय: NOAA सौर समीकरणों से हमारी गणना, 21 जून 2027, समुद्र-तल क्षितिज · भू-आकृति: AWS Terrain Tiles",
+        s1: "NCERT कक्षा 9 भूगोल: मानक याम्योत्तर 82°30′ पू., मिर्ज़ापुर से · सूर्योदय: हमारी गणना",
+        s2: "NCERT कक्षा 9 भूगोल: 68°7′ पू. से 97°25′ पू.; गुजरात से अरुणाचल तक दो घंटे का अंतर",
+      } : {
+        kick: "INDICA ATLAS · NOT WHERE YOU THINK", title: "ONE CLOCK.<br />TWO SUNRISES.", clockLab: "INDIAN STANDARD TIME · 21 JUNE 2027",
+        gap: "2 H 04 MIN", gapLab: "BETWEEN TWO SUNRISES<br />ON THE SAME CLOCK", why: "29° × 4 MIN", whyLab: "LONGITUDE ALONE:<br />ABOUT 1 H 57 MIN",
+        dong: "DONG, ARUNACHAL", kol: "KOLKATA", mir: "MIRZAPUR", mum: "MUMBAI", guh: "GUHAR MOTI, GUJARAT", mer: "82°30′E · STANDARD MERIDIAN", w: "68°7′E", e: "97°25′E",
+        s0: "Sunrise: our calculation, NOAA solar equations, 21 June 2027, sea-level horizon · Terrain: AWS Terrain Tiles",
+        s1: "NCERT Class 9 Geography: Standard Meridian 82°30′E, through Mirzapur · Sunrise: our calculation",
+        s2: "NCERT Class 9 Geography: 68°7′E to 97°25′E; a time lag of two hours from Gujarat to Arunachal Pradesh",
+      };
+      ["kick", "title", "clockLab", "gap", "gapLab", "why", "whyLab", "s0", "s1", "s2"].forEach((k) => { $(k).innerHTML = T[k]; });
+      // ---- places [lon, lat], sunrise in IST minutes on 21 June 2027 (tools: NOAA equations, see docs)
+      const PL = [["pDong", [97.04, 28.17], 245, T.dong, "04:05"], ["pKol", [88.36, 22.57], 292, T.kol, "04:52"], ["pMir", [82.57, 25.15], 310, T.mir, "05:10"],
+        ["pMum", [72.88, 19.08], 361, T.mum, "06:01"], ["pGuh", [68.542, 23.713], 369, T.guh, "06:09"]];
+      PL.forEach(([id, , , name, tm]) => { $(id).innerHTML = `${name}<b>${tm}</b>`; });
+      $("pMer").textContent = T.mer; $("pW").textContent = T.w; $("pE").textContent = T.e;
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]]]);
+      const g = $("ov").getContext("2d");
+      // ---- times
+      const tSun = Q("sun"), tDong = Q("dong"), tCross = Q("cross"), tKol = Q("kol"), tMir = Q("mir"), tMum = Q("mum"), tGuh = Q("guh"), tSame = Q("same"),
+        tGap = Q("gap"), tWhy = Q("why"), t29 = Q("deg"), t4 = Q("four"), tEnd = Q("end");
+      // the clock: IST minutes against video time, pinned to the moments each place is named
+      const CK = [[0, 226], [tSun, 232], [tDong, 245], [tKol, 292], [tMir, 310], [tMum, 361], [tGuh, 369], [tSame, 376], [tEnd, 382], [D - 0.04, 226], [D, 226]];
+      const ist = (t) => { let i = 0; while (i < CK.length - 2 && t >= CK[i + 1][0]) i++; const a = CK[i], b = CK[i + 1], u = C((t - a[0]) / (b[0] - a[0]));
+        return L(a[1], b[1], i === CK.length - 3 ? Z.io3(u) : u); };
+      const DEC = 23.45 * rad, EOT = -1.3;
+      const termLon = (lat, utcMin, alt) => {       // longitude where the sun stands `alt` degrees below the horizon line, on its way up
+        const p = lat * rad, x = Math.cos(alt * rad) / (Math.cos(p) * Math.cos(DEC)) - Math.tan(p) * Math.tan(DEC);
+        const ha = Math.acos(Math.max(-1, Math.min(1, x))) / rad;
+        return (720 - EOT - utcMin) / 4 - ha;
+      };
+      const latAt = (y, cy, k) => (2 * Math.atan(Math.exp((0.5 - (cy + (y - 960) / k)) * 2 * Math.PI)) - Math.PI / 2) / rad;
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const fmt = (m) => String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(Math.floor(m % 60)).padStart(2, "0");
+      H.render = (t) => {
+        const drift = Math.min(t, tEnd) / D;
+        const camLon = 82.9 - 0.5 * drift * (1 - Z.io2((t - tEnd) / (D - tEnd))), camLat = 18.6, camW = 3780 - 150 * drift * (1 - Z.io2((t - tEnd) / (D - tEnd)));
+        M.cam(camLon, camLat, camW); M.draw();
+        const k = 1080 / (camW / (40075.017 * Math.cos(camLat * rad))), cy = ATLAS.MY(camLat);
+        g.clearRect(0, 0, 1080, 1920);
+        const m = ist(t), utc = m - 330;
+        // ---- night: bands from deep night to the sunrise line
+        for (let j = 23; j >= 0; j--) {
+          g.beginPath(); g.moveTo(0, 0);
+          for (let y = 0; y <= 1920; y += 16) { const la = latAt(y, cy, k); g.lineTo(M.P([termLon(la, utc, 90.833 + j * 0.45), la])[0], y); }
+          g.lineTo(0, 1920); g.closePath(); g.fillStyle = "rgba(3,6,18,0.043)"; g.fill();
+        }
+        g.beginPath();
+        for (let y = -20; y <= 1940; y += 12) { const la = latAt(y, cy, k), x = M.P([termLon(la, utc, 90.833), la])[0]; y < 0 ? g.moveTo(x, y) : g.lineTo(x, y); }
+        g.strokeStyle = "rgba(255,196,92,0.95)"; g.lineWidth = 6; g.shadowColor = "#ffb347"; g.shadowBlur = 34; g.stroke(); g.shadowBlur = 0;
+        // ---- the standard meridian
+        const mer = F(t, tMir - 0.2, tSame, 0.3);
+        if (mer > 0) { const a = M.P([82.5, 37.5]), b = M.P([82.5, 7.5]); g.globalAlpha = mer; g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]);
+          g.strokeStyle = "#f7f3ea"; g.lineWidth = 3; g.setLineDash([14, 12]); g.stroke(); g.setLineDash([]); g.globalAlpha = 1; }
+        place("pMer", M.P([82.5, 15.2])[0] + 16, M.P([82.5, 15.2])[1], mer);
+        // ---- places: a dot that lights when the sun reaches it, and its time
+        const named = { pDong: Q("dongName"), pKol: tKol, pMir: tMir, pMum: tMum, pGuh: Q("guhName") };
+        PL.forEach(([id, ll, rise]) => {
+          const p = M.P(ll), up = m >= rise, vis = F(t, named[id] - 0.1, tEnd + 0.3, 0.25);
+          if (vis > 0) {
+            g.globalAlpha = vis;
+            if (up) { const pulse = (((t * 0.9) % 1) + 1) % 1; g.beginPath(); g.arc(p[0], p[1], 14 + 40 * pulse, 0, 7); g.strokeStyle = `rgba(242,178,51,${1 - pulse})`; g.lineWidth = 5; g.stroke(); }
+            g.beginPath(); g.arc(p[0], p[1], 20, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill();
+            g.beginPath(); g.arc(p[0], p[1], 13, 0, 7); g.fillStyle = up ? "#f2b233" : "#8d97a6"; g.fill(); g.globalAlpha = 1;
+          }
+          const el = $(id), left = id === "pDong" || id === "pMir";
+          place(id, left ? p[0] - el.offsetWidth - 30 : p[0] + 30, p[1] - 28 + (id === "pMir" ? -40 : id === "pKol" ? 34 : 0), vis);
+          el.querySelector("b").style.opacity = up ? 1 : 0;
+        });
+        // ---- 29 degrees of longitude: a bracket under the header, dropped onto the map
+        const ru = Z.io2((t - t29) / 0.9), rv = F(t, t29 - 0.1, tEnd, 0.25);
+        if (rv > 0) {
+          const xa = M.P([68.117, 0])[0], xb = M.P([97.417, 0])[0], yb = 700, q = L(xa, xb, ru); g.globalAlpha = rv;
+          g.beginPath(); g.moveTo(xa, yb); g.lineTo(q, yb); g.strokeStyle = "#f2b233"; g.lineWidth = 8; g.stroke();
+          for (let d = 0; d <= 29 * ru; d++) { const x = M.P([68.117 + d, 0])[0]; g.beginPath(); g.moveTo(x, yb); g.lineTo(x, yb + (d % 5 ? 14 : 26)); g.lineWidth = 3; g.stroke(); }
+          [[68.117, 1], [97.417, C((ru - 0.9) / 0.1)]].forEach(([lo, o]) => { const x = M.P([lo, 0])[0], y1 = M.P([lo, 8.07])[1]; g.globalAlpha = rv * o; g.beginPath(); g.moveTo(x, yb); g.lineTo(x, y1);
+            g.strokeStyle = "rgba(242,178,51,0.6)"; g.lineWidth = 3; g.setLineDash([8, 10]); g.stroke(); g.setLineDash([]); });
+          g.globalAlpha = 1;
+          place("pW", xa - 6, yb - 66, rv); place("pE", xb - $("pE").offsetWidth + 6, yb - 66, rv * C((ru - 0.9) / 0.1));
+        } else { place("pW", 0, 0, 0); place("pE", 0, 0, 0); }
+        // ---- top: title, clock, gap, why
+        const tl = Math.max(1 - F(t, tSun - 0.25, 99, 0.25), F(t, Q("rem"), 99, 0.25));
+        $("title").style.opacity = tl;
+        const ck = F(t, tSun, tGap - 0.15, 0.25);
+        $("clock").style.opacity = ck; $("clockLab").style.opacity = ck; $("clock").textContent = fmt(m);
+        const gp = F(t, tGap, tWhy - 0.15, 0.22);
+        $("gap").style.opacity = gp; $("gapLab").style.opacity = gp; $("gap").style.transform = `scale(${0.9 + 0.1 * Z.back((t - tGap) / 0.4)})`; $("gap").style.transformOrigin = "0 50%";
+        const wy = F(t, t29, tEnd, 0.25);
+        $("why").style.opacity = wy; $("whyLab").style.opacity = wy * C((t - t4) / 0.3);
+        // ---- sources
+        [[0, tMir - 0.2], [tMir - 0.2, tWhy], [tWhy, tEnd + 0.3]].forEach(([a, b], i) => { $("s" + i).style.opacity = t >= a && t < b ? 1 : 0; });
+        if (t >= tEnd + 0.3) $("s0").style.opacity = 1;
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

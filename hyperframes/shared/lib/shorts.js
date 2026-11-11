@@ -1,7 +1,8 @@
 /* Reveal Loop Shorts runtime. A project loads story.js (written by tools/shorts_build.py):
    window.STORY = {dur, beats: [{id, t0, sec, say}], caps: [{t0, t1, html}]}.
    SH.init() sets up the HF clock and the caption band and returns {H, B, E, A}:
-   B(id) = start of a beat, E(id) = its end, A(id, "phrase", off) = the moment that phrase is spoken. */
+   B(id) = start of a beat, E(id) = its end, A(id, "phrase", off) = the moment that phrase is spoken,
+   Q("cue") = a named cue from STORY.cues (the same page then serves every language), hi = true for Hindi. */
 window.SH = (function () {
   function init() {
     const S = window.STORY, H = HF.setup(S.dur), by = {};
@@ -12,6 +13,9 @@ window.SH = (function () {
       if (i < 0) throw new Error("phrase not in " + id + ": " + phrase);
       return b.t0 + b.sec * i / b.say.length + off;
     };
+    const Q = (name, off = 0) => { if (!(name in (S.cues || {}))) throw new Error("no cue called " + name); return S.cues[name] + off; };
+    const hi = (S.lang || "").startsWith("hi");
+    if (hi) document.getElementById("root").classList.add("hi");
     const band = document.getElementById("capband"), els = [];
     if (band) S.caps.forEach((c) => { const el = document.createElement("div"); el.className = "c"; el.innerHTML = c.html; band.appendChild(el); els.push(el); });
     const caps = (t) => {
@@ -21,7 +25,7 @@ window.SH = (function () {
         if (on) els[i].style.transform = `scale(${0.9 + 0.1 * HF.ease.o3((t - c.t0) / 0.1)})`;
       }
     };
-    return { H, B, E, A, caps, S };
+    return { H, B, E, A, Q, caps, S, hi };
   }
   return { init };
 })();

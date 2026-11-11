@@ -1,0 +1,127 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "India's coastline is no longer 7,516 km". Reveal Loop Short, 1080 x 1920,
+     English and Hindi from one page. The ruler test is real: the mainland coast (Natural Earth 1:10m, assets/data/coast.js)
+     stepped with a 200 km and a 25 km ruler. Official figures: Rajya Sabha Q.589, 4 Dec 2025. Sources: docs/SHORTS_BENCHMARKS.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: the coastline that grew</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="assets/data/coast.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #hLab { left: 62px; top: 284px; font-size: 52px; }
+      #hBig { left: 56px; top: 338px; font-size: 170px; }
+      #hSub { left: 62px; top: 520px; font-size: 44px; color: #f2b233; }
+      .hi #hLab { font-size: 70px; top: 276px; } .hi #hBig { font-size: 170px; top: 346px; } .hi #hSub { font-size: 56px; top: 520px; }
+      #stamp { position: absolute; left: 470px; top: 640px; font: 700 80px/1 Oswald, sans-serif; letter-spacing: 0.03em; color: #ff5a3c; border: 8px solid #ff5a3c; padding: 8px 20px 12px;
+        background: rgba(7, 12, 20, 0.75); opacity: 0; white-space: nowrap; }
+      .hi #stamp { font: 700 96px/1 Teko, sans-serif; padding: 12px 20px 0; }
+      .row { position: absolute; left: 60px; width: 940px; opacity: 0; }
+      .row .n { font: 700 46px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #f7f3ea; -webkit-text-stroke: 8px rgba(4, 6, 9, 0.9); paint-order: stroke fill; white-space: nowrap; }
+      .row .v { font: 700 130px/1 Oswald, sans-serif; color: #f7f3ea; -webkit-text-stroke: 10px rgba(4, 6, 9, 0.9); paint-order: stroke fill; white-space: nowrap; font-variant-numeric: tabular-nums; }
+      .row.acc .v { color: #f2b233; }
+      .hi .row .n { font: 700 60px/1 Teko, sans-serif; letter-spacing: 0.01em; }
+      .hi .row .v { font-family: Teko, Oswald, sans-serif; }
+      #r1 { top: 280px; } #r2 { top: 470px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="27.500" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div></div>
+      <div class="lab" id="hLab"></div>
+      <div class="big" id="hBig">7,516</div>
+      <div class="lab" id="hSub"></div>
+      <div id="stamp"></div>
+      <div class="row" id="r1"><div class="n" id="r1n"></div><div class="v" id="r1v"></div></div>
+      <div class="row acc" id="r2"><div class="n" id="r2n"></div><div class="v" id="r2v"></div></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S, hi } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, CO = window.COAST;
+      const num = (n) => Math.round(n).toLocaleString("en-US");
+      const T = hi ? { kick: "INDICA ATLAS · जहाँ आप नहीं सोचते", hLab: "भारत की तटरेखा", u: "किमी", sub0: "हर स्कूली किताब में", sub1: "नया सरकारी आँकड़ा · 2025", stamp: "ज़मीन नहीं बढ़ी",
+          r200: "200 किमी का पैमाना", r25: "25 किमी का पैमाना", guj0: "गुजरात · पुराना आँकड़ा", guj1: "गुजरात · नया आँकड़ा",
+          s0: "राज्य सभा अतारांकित प्रश्न 589, 4 दिसंबर 2025 (पृथ्वी विज्ञान मंत्रालय): 7,516.6 किमी का पुनर्मूल्यांकन 11,098.81 किमी",
+          s1: "पैमाने का प्रयोग: Natural Earth 1:10m तटरेखा पर हमारी गणना, कच्छ से हुगली के मुहाने तक मुख्यभूमि",
+          s2: "गुजरात 1,214.70 → 2,340.62 किमी (प्रश्न 589) · नक़्शे 1:2,50,000, पहले 1:45,00,000 (मंत्रालय परिपत्र, प्रेस के अनुसार)" }
+        : { kick: "INDICA ATLAS · NOT WHERE YOU THINK", hLab: "INDIA’S COASTLINE", u: "KM", sub0: "IN EVERY SCHOOL BOOK", sub1: "THE NEW OFFICIAL FIGURE · 2025", stamp: "NO NEW LAND",
+          r200: "200 KM RULER", r25: "25 KM RULER", guj0: "GUJARAT · OLD FIGURE", guj1: "GUJARAT · NEW FIGURE",
+          s0: "Rajya Sabha Unstarred Q.589, 4 Dec 2025 (Ministry of Earth Sciences): 7,516.6 km re-assessed to 11,098.81 km",
+          s1: "Ruler test: our measurement, Natural Earth 1:10m coastline, mainland from Kutch to the Hooghly mouth",
+          s2: "Gujarat 1,214.70 → 2,340.62 km (Q.589) · Maps 1:250,000, earlier 1:4,500,000 (ministry circular, as reported)" };
+      ["kick", "hLab", "stamp", "s0", "s1", "s2"].forEach((k) => { $(k).innerHTML = T[k]; });
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]], ["assets/atlas/guj9.webp", [0.68359375, 0.42578125, 0.70898438, 0.44726562]]]);
+      const g = $("ov").getContext("2d");
+      // cumulative length along the coast, for the travelling light
+      const cum = [0]; for (let i = 1; i < CO.coast.length; i++) cum.push(cum[i - 1] + ATLAS.hav(CO.coast[i - 1], CO.coast[i]));
+      const total = cum[cum.length - 1];
+      // ---- times
+      const tBook = Q("book"), tNow = Q("now"), t11 = Q("n11"), tLand = Q("land"), tRuler = Q("ruler"), tGuj = Q("guj"), t200 = Q("r200"), tSkip = Q("skip"), t25 = Q("r25"), tThird = Q("third"),
+        tSurvey = Q("survey"), tDouble = Q("double"), tEnd = Q("end");
+      const WIDE = [81.2, 19.2, 3350], GUJ = [70.7, 21.75, 800];
+      const KEYS = [[0, ...WIDE], [tGuj - 0.2, 81.0, 19.4, 3250], [tGuj + 1.6, ...GUJ], [tSurvey, 70.8, 21.8, 760], [tEnd - 0.1, 70.9, 21.85, 740], [Math.min(D - 0.05, tEnd + 1.5), ...WIDE], [D, ...WIDE]];
+      const path = (pts, n, col, w, dash) => { g.beginPath(); for (let i = 0; i < n; i++) { const p = M.P(pts[i]); i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]); }
+        g.strokeStyle = col; g.lineWidth = w; g.lineJoin = "round"; g.setLineDash(dash || []); g.stroke(); g.setLineDash([]); };
+      const steps = (pts, u, col, w, r) => {       // ruler steps, drawn one after another
+        const n = pts.length - 1, k = u * n, full = Math.floor(k);
+        g.beginPath(); for (let i = 0; i <= full && i <= n; i++) { const p = M.P(pts[i]); i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]); }
+        if (full < n) { const a = M.P(pts[full]), b = M.P(pts[full + 1]), f = k - full; g.lineTo(L(a[0], b[0], f), L(a[1], b[1], f)); }
+        g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = w + 6; g.lineJoin = "round"; g.stroke(); g.strokeStyle = col; g.lineWidth = w; g.stroke();
+        for (let i = 0; i <= full && i <= n; i++) { const p = M.P(pts[i]); if (p[0] < -20 || p[0] > 1100 || p[1] < -20 || p[1] > 1940) continue;
+          g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.strokeStyle = "rgba(4,8,14,0.8)"; g.lineWidth = 3; g.stroke(); }
+      };
+      const show = (id, o) => { $(id).style.opacity = o; };
+      H.render = (t) => {
+        const c = ATLAS.keys(KEYS, t); M.cam(c[0], c[1], c[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        const zoomed = c[2] < 1800, rul = F(t, t200 - 0.1, tEnd + 0.6, 0.3);
+        // ---- the coast, with a light travelling along it (three laps, so the last frame is the first)
+        g.globalAlpha = 1 - 0.55 * rul; g.shadowColor = "#f2b233"; g.shadowBlur = zoomed ? 10 : 18;
+        path(CO.coast, CO.coast.length, zoomed ? "rgba(247,243,234,0.85)" : "#f2b233", zoomed ? 3 : 5); g.shadowBlur = 0; g.globalAlpha = 1;
+        if (!zoomed) { const s = ((t / D * 3) % 1) * total; let i = 0; while (i < cum.length - 1 && cum[i] < s) i++; const p = M.P(CO.coast[i]);
+          const gr = g.createRadialGradient(p[0], p[1], 0, p[0], p[1], 60); gr.addColorStop(0, "rgba(255,236,180,0.95)"); gr.addColorStop(1, "rgba(255,236,180,0)");
+          g.fillStyle = gr; g.beginPath(); g.arc(p[0], p[1], 60, 0, 7); g.fill(); }
+        // ---- the ruler test
+        if (rul > 0) { g.globalAlpha = rul * (1 - 0.6 * F(t, t25, 99, 0.4)); steps(CO.r200, Z.io2((t - t200) / Math.max(0.8, tSkip - t200 + 0.6)), "#f7f3ea", 8, 13);
+          g.globalAlpha = rul; if (t > t25 - 0.05) steps(CO.r25, Z.io2((t - t25) / Math.max(1.2, tThird - t25 + 0.5)), "#f2b233", 6, 6); g.globalAlpha = 1; }
+        // ---- header: 7,516 -> 11,098
+        const up = Z.io2((t - tNow) / Math.max(0.8, t11 - tNow + 0.5)) - Z.io2((t - (D - 0.9)) / 0.85), head = Math.max(1 - F(t, tGuj - 0.1, 99, 0.3), F(t, tEnd + 1.0, 99, 0.3));
+        show("hLab", head); show("hBig", head); show("hSub", head * Math.max(C((t - tBook) / 0.25), 0));
+        $("hBig").textContent = num(L(7516, 11098, up)) + " " + T.u; $("hBig").style.color = up > 0.5 ? "#f2b233" : "#f7f3ea";
+        $("hSub").textContent = up > 0.5 ? T.sub1 : T.sub0;
+        const st = F(t, tRuler, tGuj - 0.1, 0.12); show("stamp", st); $("stamp").style.transform = `rotate(-6deg) scale(${1.6 - 0.6 * Z.o3((t - tRuler) / 0.25)})`;
+        // ---- two rows: rulers, then Gujarat's official figures
+        const second = t >= tSurvey - 0.05;
+        $("r1n").textContent = second ? T.guj0 : T.r200; $("r2n").textContent = second ? T.guj1 : T.r25;
+        const a1 = second ? F(t, tSurvey, tEnd + 0.3, 0.25) : F(t, t200, tSurvey - 0.2, 0.25), a2 = second ? F(t, tDouble, tEnd + 0.3, 0.25) : F(t, t25, tSurvey - 0.2, 0.25);
+        show("r1", a1); show("r2", a2);
+        $("r1v").textContent = second ? "1,215 " + T.u : num(CO.len["200"] * Z.o3((t - t200) / 1.2)) + " " + T.u;
+        $("r2v").textContent = second ? num(L(1215, 2341, Z.o3((t - tDouble) / 0.9))) + " " + T.u : num(L(CO.len["200"], CO.len["25"], Z.o3((t - t25) / 1.4))) + " " + T.u;
+        // ---- sources
+        [[0, t200 - 0.1], [t200 - 0.1, tSurvey - 0.05], [tSurvey - 0.05, tEnd + 0.9]].forEach(([a, b], i) => show("s" + i, t >= a && t < b ? 1 : 0));
+        if (t >= tEnd + 0.9) show("s0", 1);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

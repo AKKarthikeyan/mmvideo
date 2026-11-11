@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "Eight foreign capitals are closer to Delhi than Chennai". Reveal Loop Short,
+     1080 x 1920, English and Hindi from one page. A great-circle ring grows from Delhi to Chennai's distance; each
+     capital lights up as the ring reaches it. Distances are great-circle between GeoNames city points (our measurement).
+     Sources: docs/SHORTS_BENCHMARKS.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: Delhi's circle of capitals</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #head { position: absolute; right: 56px; top: 268px; text-align: right; }
+      #headLab { position: static; display: block; font-size: 50px; }
+      #headBig { position: static; display: block; font-size: 150px; line-height: 1; margin-top: 6px; }
+      #count { position: absolute; right: 56px; top: 268px; text-align: right; opacity: 0; }
+      #countBig { position: static; display: block; font-size: 300px; line-height: 0.86; }
+      #countLab { position: static; display: block; font-size: 40px; line-height: 1.1; margin-top: 10px; }
+      .hi #headLab { font-size: 64px; } .hi #countLab { font-size: 48px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      .hi .tag { font: 700 42px/1 Teko, sans-serif; letter-spacing: 0.01em; padding: 8px 12px 4px; }
+      .hi .tag small { font: 700 23px/1 Mukta, sans-serif; margin-top: 0; padding-bottom: 5px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 560px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.333" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="src" id="srcs"><div id="s0"></div></div>
+      <div id="head"><span class="lab" id="headLab"></span><span class="big" id="headBig"></span></div>
+      <div id="count"><span class="big" id="countBig">0</span><span class="lab" id="countLab"></span></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S, hi } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const DEL = [77.2148, 28.62137], CHE = [80.27847, 13.08784], BLR = [77.59369, 12.97194];
+      // [cue, lon, lat, English, country, Hindi, country in Hindi, tag side]
+      const CAP = [["isl", 73.04329, 33.72148, "ISLAMABAD", "PAKISTAN", "इस्लामाबाद", "पाकिस्तान", "r"], ["kat", 85.3206, 27.70169, "KATHMANDU", "NEPAL", "काठमांडू", "नेपाल", "ru"],
+        ["kab", 69.17233, 34.52813, "KABUL", "AFGHANISTAN", "काबुल", "अफ़ग़ानिस्तान", "l"], ["thi", 89.64191, 27.46609, "THIMPHU", "BHUTAN", "थिम्पू", "भूटान", "rd"],
+        ["dus", 68.77905, 38.53575, "DUSHANBE", "TAJIKISTAN", "दुशान्बे", "ताजिकिस्तान", "l"], ["dha", 90.40744, 23.7104, "DHAKA", "BANGLADESH", "ढाका", "बांग्लादेश", "ld"],
+        ["tas", 69.21627, 41.26465, "TASHKENT", "UZBEKISTAN", "ताशकंद", "उज़्बेकिस्तान", "r"], ["bis", 74.59, 42.87, "BISHKEK", "KYRGYZSTAN", "बिश्केक", "किर्गिज़स्तान", "lu"]];
+      const km = (n) => Math.round(n).toLocaleString("en-US");
+      const dCHE = ATLAS.hav(DEL, CHE), dBLR = ATLAS.hav(DEL, BLR);
+      const T = hi ? { kick: "INDICA ATLAS · जहाँ आप नहीं सोचते", headLab: "दिल्ली → चेन्नई", countLab: "विदेशी राजधानियाँ<br />चेन्नई से ज़्यादा पास", del: "दिल्ली", che: "चेन्नई", blr: "बेंगलुरु", u: "किमी",
+          s0: "दूरियाँ: शहर-केंद्रों के बीच वृहत्-वृत्त दूरी, हमारी गणना · निर्देशांक: GeoNames · भू-आकृति: AWS Terrain Tiles" }
+        : { kick: "INDICA ATLAS · NOT WHERE YOU THINK", headLab: "DELHI → CHENNAI", countLab: "FOREIGN CAPITALS<br />CLOSER THAN CHENNAI", del: "DELHI", che: "CHENNAI", blr: "BENGALURU", u: "KM",
+          s0: "Distances: great-circle between city centres, our measurement · Coordinates: GeoNames · Terrain: AWS Terrain Tiles" };
+      ["kick", "headLab", "countLab", "s0"].forEach((k) => { $(k).innerHTML = T[k]; });
+      $("headBig").textContent = km(dCHE) + " " + T.u;
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tKm", "acc", km(dCHE) + " " + T.u); mk("tDel", "acc", T.del); mk("tChe", "", T.che); mk("tBlr", "", `${T.blr}<small>${km(dBLR)} ${T.u}</small>`);
+      CAP.forEach((c) => { c.d = ATLAS.hav(DEL, [c[1], c[2]]); mk("t_" + c[0], "", `${hi ? c[5] : c[3]}<small>${hi ? c[6] : c[4]} · ${km(c.d)} ${T.u}</small>`); });
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]]]);
+      const g = $("ov").getContext("2d");
+      // ---- times; the ring's radius is pinned to the moment each capital is named
+      const tQ = Q("q"), tRing = Q("ring"), tEight = Q("eight"), tAll = Q("all"), tBlr = Q("blr"), tBis2 = Q("bis2"), tEnd = Q("end");
+      const RK = [[tRing, 0]].concat(CAP.map((c) => [Q(c[0]), c.d])).concat([[tEight, dCHE], [tEnd, dCHE], [D - 0.04, 0], [D, 0]]);
+      const rad = (t) => { if (t <= RK[0][0]) return 0; let i = 0; while (i < RK.length - 2 && t >= RK[i + 1][0]) i++; const a = RK[i], b = RK[i + 1];
+        return L(a[1], b[1], Z.io2(C((t - a[0]) / (b[0] - a[0])))); };
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const side = (el, p, s) => { const w = el.offsetWidth, h = el.offsetHeight, dy = s.includes("u") ? -h - 6 : s.includes("d") ? 10 : -h / 2;
+        return [s[0] === "l" ? p[0] - w - 24 : p[0] + 24, p[1] + dy]; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const line = (a, b, u, col, w, dash, alpha = 1) => { const pa = M.P(a), pb = M.P(b), q = [L(pa[0], pb[0], u), L(pa[1], pb[1], u)]; g.globalAlpha = alpha;
+        g.beginPath(); g.moveTo(pa[0], pa[1]); g.lineTo(q[0], q[1]); g.strokeStyle = "rgba(4,8,14,0.55)"; g.lineWidth = w + 6; g.setLineDash([]); g.stroke();
+        g.beginPath(); g.moveTo(pa[0], pa[1]); g.lineTo(q[0], q[1]); g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []); g.stroke(); g.setLineDash([]); g.globalAlpha = 1; };
+      H.render = (t) => {
+        const back = Z.io2((t - tEnd) / (D - tEnd)), dr = Math.min(t, tEnd) / D * (1 - back);
+        M.cam(78.8 - 0.15 * dr, 24.3, 4800 - 110 * dr); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        const pD = M.P(DEL), pC = M.P(CHE), r = rad(t), focus = F(t, tBlr, tEnd, 0.3);
+        // ---- the ring: every point this far from Delhi
+        if (r > 4) {
+          const pts = ATLAS.circle(DEL, r).map(M.P);
+          g.beginPath(); pts.forEach((p, i) => (i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]))); g.closePath();
+          g.fillStyle = `rgba(242,178,51,${0.10 * (1 - 0.6 * focus)})`; g.fill();
+          g.strokeStyle = "#f2b233"; g.lineWidth = 6; g.shadowColor = "#f2b233"; g.shadowBlur = 22; g.globalAlpha = 1 - 0.5 * focus; g.stroke(); g.shadowBlur = 0; g.globalAlpha = 1;
+        }
+        // ---- Delhi to Chennai
+        line(DEL, CHE, 1, "#f7f3ea", 6, [16, 12], 1 - 0.75 * focus);
+        dot(pD, "#f2b233", 15); dot(pC, "#f7f3ea", 12, 1 - 0.6 * focus);
+        place("tDel", ...side($("tDel"), pD, "lu"), 1); place("tChe", ...side($("tChe"), pC, "r"), 1 - 0.6 * focus);
+        const mid = [(pD[0] + pC[0]) / 2, (pD[1] + pC[1]) / 2], kc = Math.max(F(t, Q("km"), Q("isl"), 0.2), 0) * (1 - focus);
+        place("tKm", mid[0] + 22, mid[1] - 26, kc); $("tKm").style.transform += ` scale(${0.8 + 0.2 * Z.back((t - Q("km")) / 0.35)})`;
+        // ---- capitals light up as the ring reaches them
+        let n = 0;
+        CAP.forEach((c) => {
+          const p = M.P([c[1], c[2]]), tc = Q(c[0]), on = t >= tc - 0.02 && t < tEnd + 0.5, keep = c[0] === "bis" ? 1 : 1 - 0.75 * focus;
+          if (t >= tc - 0.02) n++;
+          const o = F(t, tc - 0.02, tEnd + 0.2, 0.18) * keep;
+          if (o > 0) { const pulse = C((t - tc) / 0.5); g.beginPath(); g.arc(p[0], p[1], 12 + 46 * pulse, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - pulse) * o})`; g.lineWidth = 5; g.stroke(); dot(p, "#f2b233", 11, o); }
+          place("t_" + c[0], ...side($("t_" + c[0]), p, c[7]), o);
+        });
+        // ---- the twist: Bengaluru is farther than Bishkek
+        const bu = Z.io2((t - tBlr) / 0.7), bis = CAP[7];
+        if (focus > 0) { line(DEL, BLR, bu, "#f7f3ea", 7, null, focus); line(DEL, [bis[1], bis[2]], Z.io2((t - tBis2) / 0.7), "#f2b233", 7, null, focus); dot(M.P(BLR), "#f7f3ea", 12, focus * C(bu * 3)); }
+        place("tBlr", ...side($("tBlr"), M.P(BLR), "l"), focus * C((bu - 0.6) / 0.3));
+        // ---- header: the distance, then the count
+        const cn = F(t, Q("isl") - 0.05, tEnd, 0.25);
+        $("head").style.opacity = 1 - cn + F(t, tEnd + 0.4, 99, 0.3) * 0 + (t > tEnd ? F(t, tEnd + 0.3, 99, 0.3) : 0);
+        $("count").style.opacity = cn; $("countBig").textContent = n;
+        $("countLab").style.opacity = F(t, tAll, 99, 0.25);
+        $("s0").style.opacity = 1;
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

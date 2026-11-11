@@ -79,6 +79,9 @@ def sync(names):
         if project(n).parent == SHORTS:
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "world_land.js", a / "geo")
+            idx = project(n) / "index.html"
+            if idx.exists() and "assets/atlas/" in idx.read_text(encoding="utf-8"):      # shared base maps
+                shutil.copytree(LIB / "shared" / "atlas", a / "atlas", dirs_exist_ok=True)
         if project(n).parent == VIDEOS:
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")

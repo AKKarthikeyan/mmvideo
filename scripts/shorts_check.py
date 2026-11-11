@@ -30,7 +30,8 @@ import json, pathlib, re, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FPS = 30
 TEXT_ONLY = {"kinetic", "strips", "list", "title"}
-CONNECTORS = ("because", "so", "and", "but", "which", "that's why", "here's why")
+CONNECTORS = ("because", "so", "and", "but", "which", "that's why", "here's why", "no longer", "remember", "really", "says",
+              "नहीं रही", "याद रखिए", "तब तक", "दूर है")
 
 
 def at_times(scene, say, sec):

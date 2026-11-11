@@ -2,15 +2,23 @@
 """Build the Reveal Loop benchmark Shorts (docs/SHORTS_FORMAT.md): voice each beat, write timings, mux the sound.
 
 usage:
+  shorts_build.py story <id> --fresh b1,b7        voice those beats again (after `verify` shows a repeat or dropped words)
   shorts_build.py story <id ...|all> [--no-tts]   voice the beats (MiniMax, cached) and write shorts/<id>/story.js,
                                                   shorts/<id>/check.json and out/hyperframes/shorts_audio/<id>/voice.wav
   shorts_build.py mux <id ...|all>                after `hf.py render <id>`: add voice + music bed ->
                                                   out/hyperframes/<id>-final.mp4
   shorts_build.py check <id ...|all>              run scripts/shorts_check.py on the built timings
   shorts_build.py lines <id ...|all>              print each beat's line, for a local voice or a narrator to read
+  shorts_build.py kit <id ...>                    the upload kit (titles, description with sources, pinned comment, tags,
+                                                  Instagram caption, captions.srt, cover.png) -> out/hyperframes/kit/<id>/
+                                                  (texts live in tools/shorts_kits.py)
   shorts_build.py verify <id ...|all>             transcribe every voiced beat (faster-whisper, local) and print it next to
                                                   the script: the voice sometimes repeats or drops words, and this is how
                                                   a session that cannot listen checks it. Needs `pip install faster-whisper`.
+
+A language version (id ending -hi) names its `base`: it has its own script and cues, and `story` copies the base
+Short's page and images into it, so the picture is made once. Pages of such Shorts time themselves with named cues
+(Q("name")); the script maps each cue to a phrase in its own language.
 
 A Short is a list of beats; a beat is a list of (say, cap) chunks. `say` is what the voice reads (numbers in words);
 `cap` is the 2-4 word caption shown while it is read (*word* = accent colour). `ev` lists phrases at which the picture
@@ -42,6 +50,7 @@ from pathlib import Path
 
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parents[2]
 SHORTS = ROOT / "hyperframes" / "shorts"
 OUT = ROOT / "out" / "hyperframes"
@@ -136,6 +145,126 @@ S["um-parisiman"] = dict(
     ])
 
 
+S["ia-sunrise"] = dict(
+    channel="Indica Atlas", lang="en-IN", series="Not Where You Think",
+    title="One clock, two sunrises: India's 2-hour gap",
+    send="Everyone lives on IST; almost nobody knows the sun is up before 4:30 in Arunachal while Gujarat is still dark.",
+    beats=[
+        ("b1", [("India runs on one clock.", "India runs on *one clock.*"), ("Does the sun?", "Does *the sun?*")], {"hook": "India runs", "q": "Does the sun"}),
+        ("b2", [("On the twenty-first of June,", "On *21 June,*"), ("the sun rises in Dong, in Arunachal Pradesh,", "the sun rises in *Dong, Arunachal,*"),
+                ("at five past four in the morning.", "at *4:05* in the morning.")],
+         {"sun": "On the twenty-first", "dongName": "the sun rises in Dong", "dong": "at five past four"}),
+        ("b3", [("Then it crosses the country.", "Then it crosses the country."), ("Kolkata.", "*Kolkata.*"),
+                ("Mirzapur, where India sets its clock.", "*Mirzapur,* where India sets its clock."), ("Mumbai.", "*Mumbai.*")],
+         {"cross": "Then it crosses", "kol": "Kolkata", "mir": "Mirzapur", "mum": "Mumbai"}),
+        ("b4", [("And it reaches Guhar Moti, in Gujarat,", "And it reaches *Guhar Moti, Gujarat,*"), ("at nine past six.", "at *6:09.*")],
+         {"guhName": "And it reaches", "guh": "at nine past six"}),
+        ("b5", [("Same country. Same clock.", "Same country. Same clock."), ("Two hours and four minutes apart.", "*2 hours 4 minutes* apart.")],
+         {"same": "Same country", "gap": "Two hours"}),
+        ("b6", [("Why?", "*Why?*"), ("India is twenty-nine degrees of longitude wide.", "India is *29 degrees* of longitude wide."),
+                ("And every degree is four minutes of sun.", "Every degree is *4 minutes* of sun.")],
+         {"why": "Why", "deg": "India is twenty-nine", "four": "And every degree"}),
+        ("b7", [("So the next time your alarm says it's morning,", "So the next time your alarm says *it's morning,*"), ("remember:", "*remember:*")],
+         {"end": "So the next time", "rem": "remember"}),
+    ])
+
+S["ia-sunrise-hi"] = dict(
+    base="ia-sunrise", channel="Indica Atlas", lang="hi", series="जहाँ आप नहीं सोचते",
+    title="घड़ी एक, सूर्योदय दो: भारत में 2 घंटे का फ़र्क़",
+    send="पूरा देश एक ही घड़ी पर चलता है, पर अरुणाचल में सूरज साढ़े चार से पहले निकल आता है।",
+    beats=[
+        ("b1", [("भारत एक ही घड़ी से चलता है।", "भारत *एक ही घड़ी* से चलता है।"), ("पर क्या सूरज भी?", "पर क्या *सूरज* भी?")], {"hook": "भारत एक", "q": "पर क्या"}),
+        ("b2", [("इक्कीस जून को,", "*21 जून* को,"), ("अरुणाचल प्रदेश के डोंग में सूरज", "अरुणाचल के *डोंग* में सूरज"),
+                ("सुबह चार बजकर पाँच मिनट पर निकलता है।", "सुबह *4:05* पर निकलता है।")],
+         {"sun": "इक्कीस जून", "dongName": "अरुणाचल प्रदेश के डोंग", "dong": "सुबह चार बजकर"}),
+        ("b3", [("फिर वह पूरा देश पार करता है।", "फिर वह पूरा देश पार करता है।"), ("कोलकाता।", "*कोलकाता।*"),
+                ("मिर्ज़ापुर, जहाँ से भारत का समय तय होता है।", "*मिर्ज़ापुर,* जहाँ से भारत का समय तय होता है।"), ("मुंबई।", "*मुंबई।*")],
+         {"cross": "फिर वह", "kol": "कोलकाता", "mir": "मिर्ज़ापुर", "mum": "मुंबई"}),
+        ("b4", [("और गुजरात के गुहार मोती में वह", "और गुजरात के *गुहार मोती* में वह"), ("छह बजकर नौ मिनट पर पहुँचता है।", "*6:09* पर पहुँचता है।")],
+         {"guhName": "और गुजरात", "guh": "छह बजकर नौ"}),
+        ("b5", [("देश एक। घड़ी एक।", "देश एक। घड़ी एक।"), ("फ़र्क़, दो घंटे चार मिनट।", "फ़र्क़: *2 घंटे 4 मिनट।*")],
+         {"same": "देश एक", "gap": "फ़र्क़"}),
+        ("b6", [("क्यों?", "*क्यों?*"), ("भारत उनतीस डिग्री देशांतर में फैला है।", "भारत *29 डिग्री* देशांतर में फैला है।"),
+                ("और हर डिग्री का मतलब है, चार मिनट की धूप।", "हर डिग्री यानी *4 मिनट* की धूप।")],
+         {"why": "क्यों", "deg": "भारत उनतीस", "four": "और हर डिग्री"}),
+        ("b7", [("तो अगली बार जब अलार्म कहे कि सुबह हो गई,", "तो अगली बार जब अलार्म कहे कि *सुबह हो गई,*"), ("याद रखिए:", "*याद रखिए:*")],
+         {"end": "तो अगली बार", "rem": "याद रखिए"}),
+    ])
+
+
+S["ia-capitals"] = dict(
+    channel="Indica Atlas", lang="en-IN", series="Not Where You Think", pause=0.2,
+    title="8 foreign capitals closer to Delhi than Chennai",
+    send="North Indians think of Chennai as 'far south'; nobody guesses Kabul and Tashkent are nearer.",
+    beats=[
+        ("b1", [("Delhi to Chennai:", "*Delhi* to *Chennai:*"), ("seventeen hundred and fifty-six kilometres.", "*1,756* kilometres.")], {"hook": "Delhi to", "km": "seventeen hundred"}),
+        ("b2", [("How many foreign capitals", "How many *foreign capitals*"), ("are closer to Delhi than that?", "are closer to Delhi than that?"), ("Go on, take a guess.", "Go on, *take a guess.*")],
+         {"q": "How many", "ring": "Go on"}),
+        ("b3", [("Islamabad.", "*Islamabad.*"), ("Kathmandu.", "*Kathmandu.*"), ("Kabul.", "*Kabul.*")], {"isl": "Islamabad", "kat": "Kathmandu", "kab": "Kabul"}),
+        ("b4", [("Thimphu.", "*Thimphu.*"), ("Dushanbe.", "*Dushanbe.*"), ("Dhaka.", "*Dhaka.*")], {"thi": "Thimphu", "dus": "Dushanbe", "dha": "Dhaka"}),
+        ("b5", [("Tashkent.", "*Tashkent.*"), ("And Bishkek, in Kyrgyzstan.", "And *Bishkek,* in Kyrgyzstan.")], {"tas": "Tashkent", "bis": "And Bishkek"}),
+        ("b6", [("Eight foreign capitals.", "*Eight* foreign capitals."), ("Every one of them closer to Delhi than Chennai is.", "Every one closer to Delhi than *Chennai* is.")],
+         {"eight": "Eight foreign", "all": "Every one"}),
+        ("b7", [("Even Bengaluru is farther from Delhi", "Even *Bengaluru* is farther from Delhi"), ("than Bishkek.", "than *Bishkek.*")],
+         {"blr": "Even Bengaluru", "bis2": "than Bishkek"}),
+        ("b8", [("So how far is the south, really?", "So how far is *the south,* really?")], {"end": "So how far"}),
+    ])
+
+S["ia-capitals-hi"] = dict(
+    base="ia-capitals", channel="Indica Atlas", lang="hi", series="जहाँ आप नहीं सोचते", pause=0.2,
+    title="दिल्ली से चेन्नई दूर, 8 विदेशी राजधानियाँ पास",
+    send="उत्तर भारत में चेन्नई 'दूर दक्षिण' है; कोई नहीं सोचता कि काबुल और ताशकंद उससे पास हैं।",
+    beats=[
+        ("b1", [("दिल्ली से चेन्नई,", "*दिल्ली* से *चेन्नई:*"), ("सत्रह सौ छप्पन किलोमीटर।", "*1,756* किलोमीटर।")], {"hook": "दिल्ली से", "km": "सत्रह सौ"}),
+        ("b2", [("इससे कम दूरी पर", "इससे *कम दूरी* पर"), ("कितने देशों की राजधानियाँ हैं?", "कितने देशों की *राजधानियाँ* हैं?"), ("ज़रा अंदाज़ा लगाइए।", "ज़रा *अंदाज़ा* लगाइए।")],
+         {"q": "इससे कम", "ring": "ज़रा अंदाज़ा"}),
+        ("b3", [("पाकिस्तान का इस्लामाबाद।", "पाकिस्तान का *इस्लामाबाद।*"), ("नेपाल का काठमांडू।", "नेपाल का *काठमांडू।*"), ("अफ़ग़ानिस्तान का काबुल।", "अफ़ग़ानिस्तान का *काबुल।*")],
+         {"isl": "पाकिस्तान का", "kat": "नेपाल का", "kab": "अफ़ग़ानिस्तान का"}),
+        ("b4", [("भूटान का थिम्पू।", "भूटान का *थिम्पू।*"), ("ताजिकिस्तान का दुशान्बे।", "ताजिकिस्तान का *दुशान्बे।*"), ("बांग्लादेश का ढाका।", "बांग्लादेश का *ढाका।*")],
+         {"thi": "भूटान का", "dus": "ताजिकिस्तान का", "dha": "बांग्लादेश का"}),
+        ("b5", [("उज़्बेकिस्तान का ताशकंद।", "उज़्बेकिस्तान का *ताशकंद।*"), ("और किर्गिज़स्तान का बिश्केक।", "और किर्गिज़स्तान का *बिश्केक।*")], {"tas": "उज़्बेकिस्तान का", "bis": "और किर्गिज़स्तान"}),
+        ("b6", [("आठ विदेशी राजधानियाँ।", "*आठ* विदेशी राजधानियाँ।"), ("और ये सब, चेन्नई से ज़्यादा पास हैं।", "ये सब, *चेन्नई* से ज़्यादा पास हैं।")],
+         {"eight": "आठ विदेशी", "all": "और ये सब"}),
+        ("b7", [("बेंगलुरु भी दिल्ली से", "*बेंगलुरु* भी दिल्ली से"), ("बिश्केक से ज़्यादा दूर है।", "*बिश्केक* से ज़्यादा दूर है।")],
+         {"blr": "बेंगलुरु भी", "bis2": "बिश्केक से"}),
+        ("b8", [("तो दक्षिण आख़िर कितना दूर है?", "तो *दक्षिण* आख़िर कितना दूर है?")], {"end": "तो दक्षिण"}),
+    ])
+
+
+S["ia-coastline"] = dict(
+    channel="Indica Atlas", lang="en-IN", series="Not Where You Think",
+    title="India's coastline is no longer 7,516 km",
+    send="Everyone memorised 7,516 km at school; the official figure is now 11,098 km, and no land was added.",
+    beats=[
+        ("b1", [("Seven thousand five hundred and sixteen kilometres.", "*7,516* kilometres."), ("India's coastline, in every school book.", "India's coastline, in every *school book.*")],
+         {"hook": "Seven thousand", "book": "India's coastline, in every"}),
+        ("b2", [("The official figure is now", "The official figure is now"), ("eleven thousand and ninety-eight.", "*11,098.*")], {"now": "The official", "n11": "eleven thousand"}),
+        ("b3", [("Did India gain new land?", "Did India gain *new land?*"), ("No. It changed the ruler.", "*No.* It changed *the ruler.*")], {"land": "Did India", "ruler": "No. It changed"}),
+        ("b4", [("Measure Gujarat's coast", "Measure *Gujarat's* coast"), ("with a two hundred kilometre ruler,", "with a *200 km* ruler,"), ("and you skip every creek and bay.", "and you skip every *creek and bay.*")],
+         {"guj": "Measure Gujarat", "r200": "with a two hundred", "skip": "and you skip"}),
+        ("b5", [("Now use a twenty-five kilometre ruler.", "Now use a *25 km* ruler."), ("Same coast. A third longer.", "Same coast. *A third longer.*")], {"r25": "Now use", "third": "Same coast"}),
+        ("b6", [("The new survey used maps about eighteen times finer.", "The new survey used maps about *18 times finer.*"),
+                ("Gujarat's coast alone nearly doubled.", "Gujarat's coast alone *nearly doubled.*")], {"survey": "The new survey", "double": "Gujarat's coast alone"}),
+        ("b7", [("So India's coastline is no longer", "So India's coastline is *no longer*")], {"end": "So India's"}),
+    ])
+
+S["ia-coastline-hi"] = dict(
+    base="ia-coastline", channel="Indica Atlas", lang="hi", series="जहाँ आप नहीं सोचते",
+    title="भारत की तटरेखा अब 7,516 किमी नहीं रही",
+    send="सबने स्कूल में 7,516 किमी रटा था; अब सरकारी आँकड़ा 11,098 किमी है, और ज़मीन एक इंच नहीं बढ़ी।",
+    beats=[
+        ("b1", [("सात हज़ार पाँच सौ सोलह किलोमीटर।", "*7,516* किलोमीटर।"), ("हर स्कूली किताब में भारत की तटरेखा।", "हर *स्कूली किताब* में भारत की तटरेखा।")], {"hook": "सात हज़ार", "book": "हर स्कूली"}),
+        ("b2", [("अब सरकारी आँकड़ा है", "अब सरकारी आँकड़ा है"), ("ग्यारह हज़ार अट्ठानवे।", "*11,098।*")], {"now": "अब सरकारी", "n11": "ग्यारह हज़ार"}),
+        ("b3", [("क्या भारत की ज़मीन बढ़ी?", "क्या भारत की *ज़मीन* बढ़ी?"), ("नहीं। नापने का पैमाना बदला।", "*नहीं।* नापने का *पैमाना* बदला।")], {"land": "क्या भारत", "ruler": "नहीं। नापने"}),
+        ("b4", [("गुजरात का तट", "*गुजरात* का तट"), ("दो सौ किलोमीटर के पैमाने से नापिए,", "*200 किमी* के पैमाने से नापिए,"), ("तो हर खाड़ी छूट जाती है।", "तो हर *खाड़ी* छूट जाती है।")],
+         {"guj": "गुजरात का तट", "r200": "दो सौ किलोमीटर", "skip": "तो हर खाड़ी"}),
+        ("b5", [("अब पच्चीस किलोमीटर का पैमाना लीजिए।", "अब *25 किमी* का पैमाना लीजिए।"), ("वही तट। एक-तिहाई लंबा।", "वही तट। *एक-तिहाई लंबा।*")], {"r25": "अब पच्चीस", "third": "वही तट"}),
+        ("b6", [("नए सर्वे के नक़्शे लगभग अठारह गुना बारीक थे।", "नए सर्वे के नक़्शे लगभग *18 गुना बारीक* थे।"),
+                ("अकेले गुजरात का तट लगभग दोगुना हो गया।", "अकेले गुजरात का तट लगभग *दोगुना* हो गया।")], {"survey": "नए सर्वे", "double": "अकेले गुजरात"}),
+        ("b7", [("इसलिए भारत की तटरेखा, अब नहीं रही,", "इसलिए भारत की तटरेखा *अब नहीं रही*")], {"end": "इसलिए भारत"}),
+    ])
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
@@ -164,7 +293,7 @@ def tts(text, lang, path):
     return False
 
 
-def pcm(path):
+def pcm(path, pause=0.3):
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-f", "s16le", "-ac", "1", "-ar", str(SR), "-"],
                          capture_output=True, check=True).stdout
     a = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768
@@ -179,8 +308,8 @@ def pcm(path):
             j = i
             while j < n and quiet[j]:
                 j += 1
-            if (j - i) * w / SR > 0.42 and i > 0 and j < n:
-                cut0 = i * w + int(0.15 * SR); cut1 = j * w - int(0.15 * SR)
+            if (j - i) * w / SR > pause + 0.12 and i > 0 and j < n:
+                cut0 = i * w + int(pause / 2 * SR); cut1 = j * w - int(pause / 2 * SR)
                 keep[cut0:cut1] = False
             i = j
         else:
@@ -193,26 +322,30 @@ def cap_html(c):
     return re.sub(r"\*(.+?)\*", r"<em>\1</em>", c)
 
 
-def story(sid, use_tts=True, clips_dir=None):
-    sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]
+def story(sid, use_tts=True, clips_dir=None, fresh=()):
+    sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]; PAUSE = sp.get("pause", 0.3)     # longest pause kept inside a beat
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
     says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
     engine = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_")) or VOICE[lang]["voice_id"]
     clip = lambda say, k=0: adir / (hashlib.sha1((engine + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
     audio = {}
+    for (bid, _, _), say in zip(sp["beats"], says):     # --fresh b1,b7: throw away those beats' cached takes and voice them again
+        if bid in fresh:
+            for k in range(4):
+                clip(say, k).unlink(missing_ok=True)
     if clips_dir:                               # recorded lines, one file per beat
         for (bid, _, _), say in zip(sp["beats"], says):
             hit = [f for ext in ("wav", "mp3", "m4a") for f in [Path(clips_dir) / f"{bid}.{ext}"] if f.exists()]
             if not hit:
                 sys.exit(f"{sid}: no clip for {bid} in {clips_dir} (expected {bid}.wav, .mp3 or .m4a)")
-            audio[say] = pcm(hit[0])
+            audio[say] = pcm(hit[0], PAUSE)
         voiced = True
     elif voiced:
         for say in says:
             if not clip(say).exists() and not tts(say, lang, clip(say)):
                 print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates"); voiced = False; break
-            audio[say] = pcm(clip(say))
+            audio[say] = pcm(clip(say), PAUSE)
     if voiced and not clips_dir:                # a beat far slower than the rest for its text was probably said twice: voice it again
         rate = {say: len(a) / SR / len(say) for say, a in audio.items()}; med = sorted(rate.values())[len(rate) // 2]
         for say in says:
@@ -220,11 +353,18 @@ def story(sid, use_tts=True, clips_dir=None):
             while rate[say] > 1.4 * med and len(say) > 12 and k < 3:
                 k += 1
                 if clip(say, k).exists() or tts(say, lang, clip(say, k)):
-                    a = pcm(clip(say, k))
+                    a = pcm(clip(say, k), PAUSE)
                     if len(a) < len(audio[say]):
                         audio[say] = a; rate[say] = len(a) / SR / len(say)
                         print(f"  {sid}: re-voiced a slow beat ({len(a) / SR:.1f} s): {say[:40]}")
+    cues = {}
     for (bid, chunks, ev), say in zip(sp["beats"], says):
+        if isinstance(ev, dict):                # named cues: the page asks for Q("name"), so one page serves every language
+            for name, ph in ev.items():
+                if ph.lower() not in say.lower():
+                    sys.exit(f"{sid} {bid}: cue phrase not in narration: {ph}")
+                cues[name] = ph
+            ev = list(ev.values())
         a = audio.get(say) if voiced else None
         sec = len(a) / SR if a is not None else max(0.7, len(say) / cps)
         tot = sum(len(c[0]) for c in chunks); acc = 0
@@ -234,11 +374,20 @@ def story(sid, use_tts=True, clips_dir=None):
         for p in ev:
             if p.lower() not in say.lower():
                 sys.exit(f"{sid} {bid}: event phrase not in narration: {p}")
+        for name, ph in list(cues.items()):
+            if isinstance(ph, str) and ph in ev:
+                cues[name] = round(t + sec * say.lower().index(ph.lower()) / len(say), 3)
         beats.append(dict(id=bid, t0=round(t, 3), sec=round(sec, 3), say=say, ev=ev))
         clips.append((t, a)); t += sec + GAP
     dur = math.ceil(t * 30) / 30
-    st = dict(id=sid, channel=sp["channel"], lang=lang, title=sp["title"], dur=round(dur, 3), voiced=bool(voiced), beats=beats, caps=caps)
+    st = dict(id=sid, channel=sp["channel"], lang=lang, title=sp["title"], dur=round(dur, 3), voiced=bool(voiced), beats=beats, caps=caps, cues=cues)
     d = SHORTS / sid; d.mkdir(parents=True, exist_ok=True)
+    if sp.get("base"):                          # a language version: the page and its images come from the base Short
+        import shutil
+        b = SHORTS / sp["base"]; shutil.copy(b / "index.html", d / "index.html")
+        for sub in ("img", "data"):
+            if (b / "assets" / sub).is_dir():
+                shutil.copytree(b / "assets" / sub, d / "assets" / sub, dirs_exist_ok=True)
     (d / "story.js").write_text("window.STORY = " + json.dumps(st, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
     # timings in the shape scripts/shorts_check.py reads
     chk = dict(id=sid, title=sp["title"], shorts=[dict(title=sp["title"], beats=[b["id"] for b in beats], loop=True)],
@@ -327,7 +476,9 @@ def verify(sid):
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
-    cmd = sys.argv[1]; raw = sys.argv[2:]; clips = None
+    cmd = sys.argv[1]; raw = sys.argv[2:]; clips = None; fresh = ()
+    if "--fresh" in raw:
+        i = raw.index("--fresh"); fresh = tuple(raw[i + 1].split(",")); raw = raw[:i] + raw[i + 2:]
     if "--clips" in raw:
         i = raw.index("--clips"); clips = raw[i + 1]; raw = raw[:i] + raw[i + 2:]
     args = [a for a in raw if not a.startswith("--")]
@@ -336,13 +487,20 @@ def main():
         if n not in S:
             sys.exit(f"no Short called {n}; have: {', '.join(S)}")
         if cmd == "story":
-            story(n, "--no-tts" not in sys.argv, clips)
+            story(n, "--no-tts" not in sys.argv, clips, fresh)
         elif cmd == "lines":
             print(f"{n} · {S[n]['channel']} · {S[n]['lang']}")
             for bid, chunks, _ in S[n]["beats"]:
                 print(f"  {bid}: " + " ".join(c[0] for c in chunks))
         elif cmd == "mux":
             mux(n)
+        elif cmd == "kit":
+            import shorts_kits
+            if n not in shorts_kits.KITS:
+                print(f"{n}: no kit text yet (add KITS[\"{n}\"] to tools/shorts_kits.py)"); continue
+            js = (SHORTS / n / "story.js").read_text(encoding="utf-8")
+            d = shorts_kits.write_kit(n, json.loads(js[js.index("{"): js.rindex("}") + 1]), OUT / "kit" / n, OUT / f"{n}-final.mp4")
+            print(d)
         elif cmd == "verify":
             verify(n)
         elif cmd == "check":

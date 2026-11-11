@@ -83,6 +83,9 @@ Length by genre:
 Winners repeat a named promise; viewers learn what they'll get, and the label goes in the title. Each channel runs 2–3
 series, all in the Reveal Loop.
 
+Which channel a topic belongs to (AK, 11 Nov 2026): companies and business go to Moat & Margin; other data stories go
+to Data Kadai.
+
 | Channel | Series | The promise | Title template |
 | --- | --- | --- | --- |
 | **Moat & Margin** | **Follow the ₹100** | Where your ₹100 goes inside a brand you use | "You spend ₹100 at [brand]. It keeps ₹[x]" |

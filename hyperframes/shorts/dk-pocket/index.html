@@ -1,0 +1,260 @@
+<!doctype html>
+<!-- Data Kadai · In Your Pocket · "India exports ₹3 lakh crore of this". The first Short in the paper desk look (look A in
+     docs/PREMIUM_LOOKS_AND_TRENDS.md): torn paper on a cutting mat, moved on twos like stop motion, marker strokes drawn
+     in time with the voice. Helpers: assets/lib/paper.js. Data: DGCIS, April 2025 to March 2026, verified in
+     hyperframes/videos/dk-phones/story.js. No borders are drawn on either map. Timings: story.js. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Data Kadai: India exports ₹3 lakh crore of phones</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="assets/lib/paper.js"></script>
+    <script src="assets/geo/world_land.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      @font-face { font-family: Caveat; font-weight: 600; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); }
+      /* style bible: cutting-mat green, cream paper, kraft, ink, coral marker, pen blue, denim. Soft real shadows. */
+      #root { --mat: #17352f; --cream: #f2ead8; --kraft: #c8a56a; --ink: #1b1a17; --coral: #e8452c; --pen: #2b59c3; --denim: #2c4a78; --acc: #ff9a78; background: var(--mat); }
+      #mat { position: absolute; inset: 0; background:
+        linear-gradient(rgba(190, 235, 215, 0.13) 2px, transparent 2px) 0 0 / 300px 300px, linear-gradient(90deg, rgba(190, 235, 215, 0.13) 2px, transparent 2px) 0 0 / 300px 300px,
+        linear-gradient(rgba(190, 235, 215, 0.06) 1px, transparent 1px) 0 0 / 60px 60px, linear-gradient(90deg, rgba(190, 235, 215, 0.06) 1px, transparent 1px) 0 0 / 60px 60px, var(--mat); }
+      #grain { opacity: 0.12; }
+      #vig { --vig: 0.5; }
+      svg { position: absolute; left: 0; top: 0; overflow: visible; }
+      .pp { position: absolute; left: 0; top: 0; filter: drop-shadow(0 14px 12px rgba(0, 0, 0, 0.45)); transform-origin: 50% 50%; will-change: transform; }
+      .pp > .fib { position: absolute; inset: 0; background: #fffdf5; }
+      .pp > .face { position: absolute; inset: 0; background: var(--cream); overflow: hidden; }
+      .pp > .face::after { content: ""; position: absolute; inset: 0; background-image: var(--paper-grain); background-position: var(--gx, 0) var(--gy, 0); mix-blend-mode: multiply; opacity: 0.6; pointer-events: none; }
+      .tape { position: absolute; width: 150px; height: 46px; background: rgba(240, 226, 170, 0.72); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25); }
+      .mk { fill: none; stroke: var(--coral); stroke-width: 13; stroke-linecap: round; stroke-linejoin: round; }
+      .hand { position: absolute; font: 600 64px/0.95 Caveat, cursive; white-space: nowrap; }
+      .kicker { color: #f2c66b; }
+      .src { color: rgba(242, 234, 216, 0.9); width: 950px; }
+      /* scene 1: the pocket */
+      #label { width: 860px; height: 214px; }
+      #labA { position: absolute; left: 0; right: 0; top: 14px; text-align: center; font: 700 124px/1 Oswald, sans-serif; color: var(--ink); white-space: nowrap; }
+      #labB { position: absolute; left: 0; right: 0; top: 160px; text-align: center; font: 30px/1 Plex, monospace; color: #4a4338; }
+      #phone { width: 340px; height: 680px; }
+      #phone > .face { background: var(--cream); border-radius: 50px; }
+      #scr { position: absolute; left: 16px; top: 16px; right: 16px; bottom: 16px; border-radius: 36px; background: #171c1b; }
+      #cam { position: absolute; left: 152px; top: 32px; width: 36px; height: 36px; border-radius: 50%; background: #3a4a46; }
+      #scrA { position: absolute; left: 0; right: 0; top: 196px; text-align: center; font: 700 66px/1 Oswald, sans-serif; color: var(--cream); }
+      #scrB { position: absolute; left: 0; right: 0; top: 270px; text-align: center; font: 700 44px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: #f2c66b; }
+      #scrC { position: absolute; left: 0; right: 0; top: 342px; text-align: center; font: 28px/1.25 Plex, monospace; color: rgba(242, 234, 216, 0.85); }
+      #pocket { width: 640px; height: 660px; }
+      #pocket > .face { background: var(--denim); clip-path: polygon(0 0, 100% 0, 97% 86%, 50% 100%, 3% 86%); }
+      #tag { width: 700px; height: 118px; }
+      #tag > .face { background: var(--kraft); }
+      #tagT { position: absolute; left: 76px; top: 30px; font: 700 54px/1 Oswald, sans-serif; color: var(--ink); white-space: nowrap; }
+      #tagH { position: absolute; left: 26px; top: 43px; width: 30px; height: 30px; border-radius: 50%; background: var(--mat); }
+      /* scene 2: the chart sheet */
+      #chart { width: 940px; height: 900px; }
+      #chart > .face { background: linear-gradient(rgba(43, 89, 195, 0.16) 2px, transparent 2px) 0 26px / 100% 60px, var(--cream); }
+      #chT { position: absolute; left: 50px; top: 44px; font: 700 46px/1 Oswald, sans-serif; color: var(--ink); }
+      #chS { position: absolute; left: 50px; top: 104px; font: 28px/1 Plex, monospace; color: #4a4338; }
+      .bar { position: absolute; bottom: 110px; width: 130px; transform-origin: 50% 100%; box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3); }
+      .bv { position: absolute; width: 170px; text-align: center; font: 700 46px/1 Oswald, sans-serif; color: var(--cream); }
+      .by { position: absolute; top: 806px; width: 170px; text-align: center; font: 28px/1 Plex, monospace; color: #4a4338; }
+      #c55 { position: absolute; left: 56px; top: 424px; font: 700 84px/1 Oswald, sans-serif; color: var(--pen); white-space: nowrap; }
+      #c55b { position: absolute; left: 60px; top: 522px; font: 28px/1 Plex, monospace; color: #4a4338; }
+      #x55 { left: 60px; top: 170px; font-size: 250px; color: var(--coral); }
+      /* scenes 3 and 4: the map sheets */
+      #mapS, #world { width: 980px; height: 950px; }
+      #mapS > .face { background: #0d1b2a; }
+      #map { position: absolute; left: -50px; top: -485px; filter: sepia(0.28) saturate(0.85) contrast(1.06) brightness(1.08); }
+      .strip { position: absolute; background: var(--cream); padding: 9px 16px 10px; font: 28px/1 Plex, monospace; color: var(--ink); white-space: nowrap; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.35); }
+      .pin { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+      .pin i { position: absolute; left: -3px; top: -44px; width: 6px; height: 46px; background: #d9d4c7; }
+      .pin b { position: absolute; left: -19px; top: -74px; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #ff9c84, var(--coral) 55%, #a52612); box-shadow: 0 5px 6px rgba(0, 0, 0, 0.45); }
+      .ptag { position: absolute; left: 0; top: 0; background: var(--kraft); padding: 12px 18px 14px; box-shadow: 0 6px 7px rgba(0, 0, 0, 0.4); font: 700 40px/1 Oswald, sans-serif; color: var(--ink); white-space: nowrap; transform-origin: 50% 0; }
+      .ptag em { font-style: normal; color: #a52612; font-size: 58px; margin-left: 10px; }
+      #n91 { left: 690px; top: 610px; color: var(--cream); font-size: 70px; }
+      #n69 { left: 340px; top: 96px; color: var(--cream); font-size: 250px; }
+      #n69b { left: 352px; top: 316px; color: var(--cream); font-size: 66px; }
+      #wT { position: absolute; left: 40px; top: 548px; font: 28px/1 Plex, monospace; color: #4a4338; }
+      #wmap { position: absolute; left: 0; top: 70px; }
+      .seg { position: absolute; top: 606px; height: 112px; transform-origin: 0 50%; box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3); }
+      #wU { position: absolute; left: 40px; top: 744px; font: 700 132px/1 Oswald, sans-serif; color: #c93519; white-space: nowrap; }
+      .wl { position: absolute; left: 612px; font: 700 42px/1 Oswald, sans-serif; color: var(--ink); white-space: nowrap; }
+      .wl i { display: inline-block; width: 30px; height: 30px; margin-right: 14px; vertical-align: -2px; }
+      .wn { left: 0; top: 0; color: var(--ink); font-size: 66px; background: var(--cream); padding: 0 14px 6px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3); }
+      #capband .c { -webkit-text-stroke: 12px rgba(10, 22, 19, 0.96); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.000" data-width="1080" data-height="1920">
+      <div id="mat" data-layout-ignore></div>
+      <!-- things left lying on the desk -->
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" data-layout-ignore>
+        <g transform="translate(70 1590) rotate(-2)" filter="drop-shadow(0 8px 8px rgba(0,0,0,0.45))"><rect width="900" height="84" fill="#c9ced1" /><g id="ticks" fill="#3a4044"></g></g>
+        <g transform="translate(560 1770) rotate(7)" filter="drop-shadow(0 10px 9px rgba(0,0,0,0.5))"><rect width="420" height="58" rx="26" fill="#f2ead8" /><rect x="300" width="150" height="58" rx="26" fill="#e8452c" /><rect x="-34" y="14" width="40" height="30" rx="6" fill="#e8452c" /></g>
+      </svg>
+      <!-- scene 1 -->
+      <div class="pp" id="phone"><div class="face"><div id="scr"><div id="scrA">₹3,02,805</div><div id="scrB">CRORE</div><div id="scrC"></div></div><div id="cam"></div></div></div>
+      <div class="pp" id="pocket"><div class="face">
+        <svg width="640" height="660" viewBox="0 0 640 660">
+          <rect width="640" height="64" fill="#254069" />
+          <g fill="none" stroke="#e0a243" stroke-width="5" stroke-dasharray="17 11" stroke-linecap="round"><path d="M16 50 H624" /><path d="M30 86 L42 552 L320 636 L598 552 L610 86" /><path d="M54 86 L64 536 L320 612 L576 536 L586 86" /></g>
+          <path id="qm" d="M246 262 C246 150 394 150 394 262 C394 340 320 338 320 420" fill="none" stroke="#f2ead8" stroke-width="26" stroke-linecap="round" />
+          <circle id="qd" cx="320" cy="486" r="17" fill="#f2ead8" />
+        </svg></div></div>
+      <div class="pp" id="label"><div class="fib"></div><div class="face"><div id="labA">₹3 LAKH CRORE</div><div id="labB"></div></div>
+        <div class="tape" style="left: -40px; top: -14px; transform: rotate(-32deg)"></div><div class="tape" style="right: -44px; top: -10px; transform: rotate(28deg)"></div></div>
+      <div class="pp" id="tag"><div class="face"><div id="tagH"></div><div id="tagT"></div></div></div>
+      <!-- scene 2 -->
+      <div class="pp" id="chart"><div class="fib"></div><div class="face">
+        <div id="chT"></div><div id="chS"></div><div id="bars"></div>
+        <div id="c55">₹55,126 CRORE</div><div id="c55b"></div>
+        <div class="hand" id="x55">5.5×</div>
+        <svg width="940" height="900" viewBox="0 0 940 900"><path class="mk" id="mArrow" d="M135 652 C330 520 520 390 716 196" /><path class="mk" id="mHead" d="M652 202 L716 196 L696 258" /></svg>
+      </div></div>
+      <!-- scene 3 -->
+      <div class="pp" id="mapS"><div class="fib"></div><div class="face">
+        <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+        <svg id="ship" width="150" height="90" viewBox="0 0 150 90"><path d="M6 52 H144 L126 84 H24 Z" fill="#f2ead8" /><rect x="34" y="26" width="26" height="24" fill="#2b59c3" /><rect x="62" y="26" width="26" height="24" fill="#c8a56a" /><rect x="90" y="26" width="26" height="24" fill="#e8452c" /><rect x="48" y="2" width="26" height="24" fill="#c8a56a" /><rect x="76" y="2" width="26" height="24" fill="#2b59c3" /></svg>
+        <svg width="980" height="950" viewBox="0 0 980 950"><path class="mk" id="mX1" /><path class="mk" id="mX2" /><path class="mk" id="mLoop" style="stroke: #f2ead8; stroke-width: 9" /></svg>
+        <div class="hand" id="n91"></div>
+        <div class="hand" id="n69">69%</div><div class="hand" id="n69b"></div>
+        <div class="pin" id="pB"><i></i><b></b></div><div class="pin" id="pC"><i></i><b></b></div>
+        <div class="ptag" id="tB"></div><div class="ptag" id="tC"></div>
+        <svg id="pl1" width="90" height="70" viewBox="0 0 90 70"><path d="M0 34 L90 0 L52 70 L42 44 Z" fill="#fffdf5" /><path d="M42 44 L90 0 L30 38 Z" fill="#d9d4c7" /></svg>
+        <svg id="pl2" width="90" height="70" viewBox="0 0 90 70"><path d="M0 34 L90 0 L52 70 L42 44 Z" fill="#fffdf5" /><path d="M42 44 L90 0 L30 38 Z" fill="#d9d4c7" /></svg>
+        <div class="strip" id="mT" style="left: 26px; top: 28px"></div>
+      </div></div>
+      <!-- scene 4 -->
+      <div class="pp" id="world"><div class="fib"></div><div class="face">
+        <canvas id="wmap" width="980" height="440" data-layout-ignore></canvas>
+        <svg width="980" height="950" viewBox="0 0 980 950"><path id="thread" fill="none" stroke="#e8452c" stroke-width="8" stroke-linecap="round" /></svg>
+        <div class="pin" id="pI"><i style="background: #6b665c"></i><b></b></div><div class="pin" id="pU"><i style="background: #6b665c"></i><b></b></div>
+        <svg id="pl3" width="90" height="70" viewBox="0 0 90 70"><path d="M0 34 L90 0 L52 70 L42 44 Z" fill="#fffdf5" stroke="#1b1a17" stroke-width="3" /><path d="M42 44 L90 0 L30 38 Z" fill="#d9d4c7" stroke="#1b1a17" stroke-width="3" /></svg>
+        <div class="hand wn" id="wn1"></div><div class="hand wn" id="wn2"></div><div class="hand wn" id="wn3"></div>
+        <div id="wT"></div>
+        <div class="seg" id="g0" style="left: 40px; width: 526px; background: #e8452c"></div><div class="seg" id="g1" style="left: 566px; width: 109px; background: #2b59c3"></div>
+        <div class="seg" id="g2" style="left: 675px; width: 70px; background: #c8a56a"></div><div class="seg" id="g3" style="left: 745px; width: 195px; background: #b9b3a4"></div>
+        <div id="wU">USA 58%</div>
+        <div class="wl" id="w1" style="top: 752px"><i style="background: #2b59c3"></i><span></span></div><div class="wl" id="w2" style="top: 806px"><i style="background: #c8a56a"></i><span></span></div>
+        <div class="wl" id="w3" style="top: 860px"><i style="background: #b9b3a4"></i><span></span></div>
+      </div></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="src" id="src"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, PP = PAPER;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const T = { kick: "DATA KADAI · IN YOUR POCKET", src: "DGCIS trade data, April 2025–March 2026 · via Vonter/india-export-import (ODbL) · no borders drawn",
+        labB: "OF EXPORTS IN ONE YEAR", scrC: "exported<br />Apr 2025–Mar 2026", tagT: "PHONES + TELECOM GEAR",
+        chT: "PHONE + TELECOM GEAR EXPORTS", chS: "₹ lakh crore · years run April to March", c55b: "April 2021–March 2022",
+        mT: "WHERE THE PHONES LEAVE INDIA · 2025–26", n91: "4 airports<br />carry 91%", n69b: "from two airports",
+        tB: "BENGALURU AIRPORT<em>23%</em>", tC: "CHENNAI AIRPORT<em>46%</em>", wT: "WHO BUYS THEM · SHARE OF 2025–26 EXPORTS",
+        w1: "UAE 12%", w2: "CHINA 8%", w3: "OTHERS 22%", wn1: "the south", wn2: "by air", wn3: "America" };
+      ["kick", "src", "labB", "scrC", "tagT", "chT", "chS", "c55b", "mT", "n91", "n69b", "tB", "tC", "wT", "wn1", "wn2", "wn3"].forEach((k) => { $(k).innerHTML = T[k]; });
+      ["w1", "w2", "w3"].forEach((k) => { $(k).querySelector("span").textContent = T[k]; });
+      let tk = ""; for (let i = 0; i <= 44; i++) tk += `<rect x="${12 + i * 20}" y="0" width="2" height="${i % 5 ? 16 : 30}" />`;
+      $("ticks").innerHTML = tk;
+      // ---- paper: tear what was torn, leave scissor cuts straight
+      PP.grain();
+      PP.piece("label", { l: 16, r: 18 }, 3); PP.piece("chart", { t: 15, b: 10 }, 5); PP.piece("mapS", { t: 9, r: 9, b: 12, l: 9 }, 8); PP.piece("world", { t: 12, r: 8, b: 9, l: 8 }, 13);
+      // ---- the chart: exports by year, ₹ lakh crore (DGCIS)
+      const FY = [["21–22", 55126], ["22–23", 103849], ["23–24", 142953], ["24–25", 221528], ["25–26", 302805]], COL = ["#2b59c3", "#c8a56a", "#c8a56a", "#c8a56a", "#e8452c"];
+      $("bars").innerHTML = FY.map(([y, v], i) => { const x = 70 + i * 167.5, h = v / 1e5 * 190;
+        return `<div class="bar" id="b${i}" style="left: ${x}px; height: ${h}px; background: ${COL[i]}"></div><div class="bv" id="v${i}" style="left: ${x - 20}px; top: ${790 - h + 16}px; color: ${i > 0 && i < 4 ? "#1b1a17" : "#f2ead8"}">${(v / 1e5).toFixed(2)}</div><div class="by" style="left: ${x - 20}px">${y}</div>`; }).join("");
+      // ---- the India map (shaded relief; no borders) inside its sheet: sheet-local = frame - (50, 485)
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]]]);
+      const BLR = [77.71, 13.2], MAA = [80.17, 12.99], WIDE = [77, 21.5, 3900], SOUTH = [78.9, 14.5, 1250];
+      const loc = (ll) => { const p = M.P(ll); return [p[0] - 50, p[1] - 485]; };
+      M.cam(...SOUTH); { const a = loc(BLR), b = loc(MAA), cx = (a[0] + b[0]) / 2, cy = (a[1] + b[1]) / 2 - 30, rx = (b[0] - a[0]) / 2 + 92, ry = 104;
+        $("mLoop").setAttribute("d", `M${cx - rx * 0.9} ${cy - ry * 0.5} C${cx - rx} ${cy - ry * 1.5} ${cx + rx * 1.1} ${cy - ry * 1.4} ${cx + rx} ${cy} C${cx + rx * 0.9} ${cy + ry * 1.5} ${cx - rx * 1.2} ${cy + ry * 1.3} ${cx - rx} ${cy - ry * 0.1} C${cx - rx * 0.95} ${cy - ry * 0.9} ${cx - rx * 0.5} ${cy - ry * 1.2} ${cx - rx * 0.2} ${cy - ry * 1.25}`); }
+      M.cam(...WIDE); const SHIP = loc([67.3, 14.2]);
+      $("mX1").setAttribute("d", `M${SHIP[0] - 86} ${SHIP[1] - 62} L${SHIP[0] + 90} ${SHIP[1] + 66}`); $("mX2").setAttribute("d", `M${SHIP[0] + 88} ${SHIP[1] - 60} L${SHIP[0] - 84} ${SHIP[1] + 62}`);
+      // ---- the world, printed as dots (Natural Earth land; no borders). x = (lon + 140) * 3.5, y = (78 - lat) * 3.5
+      const WX = (lon) => (lon + 140) * 3.5, WY = (lat) => (78 - lat) * 3.5;
+      (function () {
+        const m = document.createElement("canvas"); m.width = 980; m.height = 440; const c = m.getContext("2d"); c.fillStyle = "#000";
+        LAND.forEach((ring) => { c.beginPath(); ring.forEach(([lo, la], i) => (i ? c.lineTo(WX(lo), WY(la)) : c.moveTo(WX(lo), WY(la)))); c.closePath(); c.fill(); });
+        const px = c.getImageData(0, 0, 980, 440).data, g = $("wmap").getContext("2d"); g.fillStyle = "rgba(43, 89, 195, 0.9)";
+        for (let j = 0, y = 6; y < 440; y += 9, j++) for (let x = 6 + (j % 2) * 4.5; x < 980; x += 9) if (px[(Math.round(y) * 980 + Math.round(x)) * 4 + 3] > 128) { g.beginPath(); g.arc(x, y, 3.3, 0, 7); g.fill(); }
+      })();
+      const IND = [WX(78.9), WY(13.1) + 70], USA = [WX(-98), WY(39) + 70];
+      $("thread").setAttribute("d", `M${IND[0]} ${IND[1]} Q${(IND[0] + USA[0]) / 2} ${-70} ${USA[0]} ${USA[1]}`);
+      const TH = $("thread"), THN = TH.getTotalLength();
+      // ---- times
+      const tPocket = Q("pocket"), tPhone = Q("phone"), tAgo = Q("ago"), tFifty = Q("fifty"), tTimes = Q("times"), tShip = Q("ship"), tCross = Q("cross"), tFly = Q("fly"), tTwo = Q("two"),
+        tWho = Q("who"), tUsa = Q("usa"), tSouth = Q("south"), tAir = Q("air"), tAm = Q("america"), tEnd = Q("end"), dBack = Math.max(0.25, Math.min(0.5, D - tEnd - 0.2));
+      // a piece of paper laid at (x, y): p = 0 off the desk in the direction `from`, 1 in place; it shakes a little each time it is re-laid
+      function lay(id, x, y, rot, p, from, seed, t, extra = "") {
+        const el = $(id); el.style.visibility = p > 0.002 ? "visible" : "hidden";
+        el.style.transform = `translate(${x + from[0] * (1 - p)}px, ${y + from[1] * (1 - p)}px) rotate(${rot + 7 * (1 - p) + 0.3 * PP.wob(seed, t)}deg) ${extra}`;
+      }
+      const inn = (q, a, d = 0.42) => Z.o3((q - a) / d), out = (q, b, d = 0.36) => 1 - Z.io2((q - b) / d);
+      const show = (id, o) => { $(id).style.opacity = o; };
+      H.render = (t) => {
+        const q = PP.twos(t); PP.boil(t);
+        const back = Z.io2((q - tEnd) / dBack);                                      // everything returns for the loop
+        // ---- scene 1: the label, the pocket, the phone
+        lay("label", 110, 318, -3, Math.max(out(q, tPocket), back), [-900, -500], 1, t);
+        lay("pocket", 220, 600, 0, Math.max(out(q, tPhone), back), [0, 1500], 2, t);
+        const qm = Math.max(1 - C((t - tPocket) / 0.2), back); $("qm").style.opacity = qm; $("qd").style.opacity = qm;
+        $("qm").setAttribute("transform", `rotate(${2.2 * PP.wob(7, t)} 320 340)`);
+        const rise = Z.o3((q - tPocket) / 0.5), hero = Z.io2((q - tPhone) / 0.5), gone = Z.io2((q - tAgo) / 0.36);
+        const peek = t < tPocket ? 16 * Math.abs(Math.sin(q * 5.2)) * F(t, 0.3, tPocket, 0.2) : 0;
+        const py = L(L(L(520, 300, rise), 420, hero), 520, back) - peek, ps = L(L(1, 1.22, hero), 1, back), px = 370 - 1100 * gone * (1 - back);
+        $("phone").style.transform = `translate(${px}px, ${py}px) rotate(${L(L(-3 * rise, 2, hero), 0, back) + 0.3 * PP.wob(3, t)}deg) scale(${ps})`;
+        lay("tag", 190, 1140, 4, inn(q, tPhone + 0.45) * out(q, tAgo), [900, 200], 4, t);
+        // ---- scene 2: the chart sheet
+        lay("chart", 70, 340, 1.2, inn(q, tAgo) * out(q, tShip), [1100, 100], 5, t);
+        FY.forEach((_, i) => { const a = i === 0 ? tFifty - 0.15 : tTimes + 0.1 + (i - 1) * 0.17, g = Z.o3((q - a) / 0.34);
+          $("b" + i).style.transform = `scaleY(${g}) rotate(${0.5 * PP.wob(20 + i, t)}deg)`; show("v" + i, C((t - a - 0.2) / 0.15)); });
+        show("c55", F(t, tFifty, tTimes, 0.15)); show("c55b", F(t, tFifty, tTimes, 0.15));
+        $("c55").style.transform = `scale(${0.8 + 0.2 * Z.back((t - tFifty) / 0.3)})`;
+        PP.draw($("mArrow"), (t - tTimes - 0.7) / 0.42); PP.draw($("mHead"), (t - tTimes - 1.08) / 0.15);
+        show("x55", C((t - tTimes - 0.25) / 0.12)); $("x55").style.transform = `rotate(${-5 + 0.8 * PP.wob(9, t)}deg) scale(${0.6 + 0.4 * Z.back((t - tTimes - 0.25) / 0.35)})`;
+        // ---- scene 3: the India map sheet; the camera pushes to the south
+        const pm = inn(q, tShip) * out(q, tWho);
+        lay("mapS", 50, 310, -0.8, pm, [0, 1500], 6, t);
+        if (pm > 0.002) {
+          const z = Z.io3((t - tFly + 0.2) / 1.1), w = Math.exp(L(Math.log(WIDE[2]), Math.log(SOUTH[2]), z)), f = (w - SOUTH[2]) / (WIDE[2] - SOUTH[2]);
+          M.cam(L(SOUTH[0], WIDE[0], f), L(SOUTH[1], WIDE[1], f), w); M.draw("#0d1b2a");
+          const sh = loc([67.3, 14.2]); $("ship").style.transform = `translate(${sh[0] - 75}px, ${sh[1] - 50 + 5 * PP.wob(11, t, 3)}px)`; show("ship", F(t, tShip + 0.3, tFly, 0.2));
+          PP.draw($("mX1"), (t - tCross) / 0.2); PP.draw($("mX2"), (t - tCross - 0.22) / 0.2);
+          const xo = 1 - C((t - tFly) / 0.2); $("mX1").style.opacity = xo; $("mX2").style.opacity = xo;
+          show("n91", F(t, tCross + 0.5, tFly, 0.2)); $("n91").style.transform = `rotate(${-4 + 0.7 * PP.wob(12, t)}deg)`;
+          [["pB", BLR, 0], ["pC", MAA, 0.18]].forEach(([id, ll, dl]) => { const p = loc(ll), d = Z.o3((q - tFly - 0.95 - dl) / 0.25);
+            $(id).style.transform = `translate(${p[0]}px, ${p[1] - 260 * (1 - d)}px)`; show(id, d > 0 ? 1 : 0); });
+          const b = loc(BLR), c = loc(MAA), tg = (id, x, y, a, sd) => { const g = Z.back((q - a) / 0.3); $(id).style.transform = `translate(${x}px, ${y}px) rotate(${(sd % 2 ? 3 : -3) + 0.5 * PP.wob(sd, t)}deg) scale(${g})`; show(id, q >= a ? 1 : 0); };
+          tg("tB", 30, b[1] + 150, tTwo + 0.3, 14); tg("tC", 440, c[1] + 236, tTwo, 15);
+          PP.draw($("mLoop"), (t - tFly - 1.35) / 0.55);
+          show("n69", C((t - tFly - 1.2) / 0.12)); $("n69").style.transform = `rotate(${-4 + 0.6 * PP.wob(16, t)}deg) scale(${0.6 + 0.4 * Z.back((t - tFly - 1.2) / 0.35)})`;
+          show("n69b", C((t - tFly - 1.6) / 0.15));
+          [["pl1", b, 0.1, -70], ["pl2", c, 0.35, -40]].forEach(([id, p, dl, ang]) => { const u = C((q - tTwo - 0.9 - dl) / 1.3), r = ang * Math.PI / 180;
+            $(id).style.transform = `translate(${p[0] - 30 + Math.cos(r) * 620 * u}px, ${p[1] - 110 + Math.sin(r) * 620 * u}px) rotate(${ang + 20}deg) scale(${0.7 + 0.5 * u})`; show(id, u > 0 && u < 1 ? 1 : 0); });
+          show("mT", 1);
+        }
+        // ---- scene 4: the world sheet and who buys
+        const pw = inn(q, tWho) * out(q, tEnd, dBack);
+        lay("world", 50, 310, 0.9, pw, [1150, -60], 17, t);
+        if (pw > 0.002) {
+          PP.draw(TH, (t - tWho - 0.5) / 0.9);
+          [["pI", IND, tWho + 0.35], ["pU", USA, tUsa - 0.1]].forEach(([id, p, a]) => { const d = Z.o3((q - a) / 0.25); $(id).style.transform = `translate(${p[0]}px, ${p[1] - 240 * (1 - d)}px)`; show(id, d > 0 ? 1 : 0); });
+          [["g0", tUsa + 0.1], ["g1", tUsa + 1.0], ["g2", tUsa + 1.2], ["g3", tUsa + 1.4]].forEach(([id, a]) => { $(id).style.transform = `scaleX(${Z.o3((q - a) / 0.4)})`; });
+          show("wT", C((t - tWho - 0.3) / 0.2)); show("wU", C((t - tUsa - 0.2) / 0.12)); $("wU").style.transform = `scale(${0.7 + 0.3 * Z.back((t - tUsa - 0.2) / 0.35)})`; $("wU").style.transformOrigin = "0 60%";
+          [["w1", 1.0], ["w2", 1.2], ["w3", 1.4]].forEach(([id, dl]) => show(id, C((t - tUsa - dl - 0.1) / 0.15)));
+          const u = Z.io2((q - tSouth - 0.1) / Math.max(0.6, tAm + 0.5 - tSouth)), pt = TH.getPointAtLength(THN * u), p2 = TH.getPointAtLength(Math.min(THN, THN * u + 6));
+          $("pl3").style.transform = `translate(${pt.x - 45}px, ${pt.y - 60}px) rotate(${Math.atan2(p2.y - pt.y, p2.x - pt.x) * 180 / Math.PI + 20}deg)`; show("pl3", t >= tSouth ? 1 : 0);
+          [["wn1", tSouth, IND[0] - 60, IND[1] + 26, 3], ["wn2", tAir, (IND[0] + USA[0]) / 2 - 70, 96, -4], ["wn3", tAm, USA[0] - 40, USA[1] + 26, -3]].forEach(([id, a, x, y, r], i) => {
+            show(id, C((t - a) / 0.12)); $(id).style.transform = `translate(${x}px, ${y}px) rotate(${r + 0.8 * PP.wob(30 + i, t)}deg) scale(${0.7 + 0.3 * Z.back((t - a) / 0.3)})`; });
+        }
+        caps(t);
+      };
+      Promise.all([M.ready, document.fonts.ready]).then(() => H.ready());
+    </script>
+  </body>
+</html>

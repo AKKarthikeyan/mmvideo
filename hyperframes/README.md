@@ -126,6 +126,7 @@ python3 hyperframes/tools/hf.py render ia-southtip        # then: shorts_build.p
 ```
 
 Shared: `shared/shorts.css` (layout, caption band, safe areas; Teko and Mukta for Hindi), `shared/lib/shorts.js`,
+`shared/lib/paper.js` (the paper desk look: torn edges, grain, stop-motion stepping, marker strokes),
 `shared/geo/world_land.js` (Natural Earth 1:110m land). `tools/atlas_base.py <zoom> <west> <south> <east> <north> <out.jpg>`
 makes a shaded-relief base map from AWS Terrain Tiles and prints its Mercator bounds for the page.
 

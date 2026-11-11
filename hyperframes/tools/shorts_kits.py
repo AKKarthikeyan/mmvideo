@@ -153,7 +153,30 @@ KITS["ia-coastline-hi"] = dict(
     voice=VOICE_HI, lang="Hindi")
 
 
-KITS["dk-hundred"] = dict(
+KITS["dk-pocket"] = dict(
+    cover=4.9,
+    titles=["India exports ₹3 lakh crore of this", "The ₹3 lakh crore export in your pocket", "69% of India's phone exports fly from 2 airports"],
+    description="""In April 2025-March 2026, India exported ₹3,02,805 crore of phones and telecom equipment. Four years earlier (April 2021-March 2022) it was ₹55,126 crore: about five and a half times smaller.
+Year by year, ₹ lakh crore: 0.55 · 1.04 · 1.43 · 2.22 · 3.03.
+
+Where it leaves India: Chennai airport 46.0%, Bengaluru airport 23.1%, Delhi airport 17.5%, Dadri inland depots 5.7%, Mumbai airport 4.2%. So two airports carry 69%, and four airports carry 91%.
+Who buys it: USA 58.5%, UAE 12.1%, China 7.8%, everyone else 21.6%.
+
+The shares are of export value. "Phones and telecom gear" is the category the trade data calls TELECOM INSTRUMENTS; mobile phones are counted in it. No borders are drawn on either map.""",
+    sources=[
+        "DGCIS Foreign Trade Data Dissemination Portal (Government of India), principal commodity data, April 2025-March 2026",
+        "Read through the open mirror github.com/Vonter/india-export-import (ODbL)",
+        TERRAIN,
+        "World land for the dot map: Natural Earth 1:110m land (public domain): https://www.naturalearthdata.com/",
+    ],
+    hashtags="#DataKadai #MadeInIndia",
+    pinned="Did you think India still imports most of its phones? What should we pull out of the pocket next?",
+    tags=["India exports", "phone exports India", "smartphone exports", "Chennai airport", "Bengaluru airport", "India trade data", "Data Kadai", "made in India"],
+    instagram="India now exports ₹3 lakh crore of this, and it is in your pocket. 69% of it flies out of two airports, and the USA buys 58%.\n\nSource: DGCIS trade data, April 2025-March 2026.\n#DataKadai #MadeInIndia",
+    altered="No (paper cut-outs animated in code, real maps; nothing in it looks like real footage of a real person or event)",
+    voice=VOICE_EN, lang="English (India)")
+
+KITS["mm-hundred"] = dict(
     cover=25.0,
     titles=["You pay ₹100 at DMart. DMart keeps ₹5.62", "Where your ₹100 goes at DMart", "DMart keeps only ₹5.62 of your ₹100"],
     description="""Out of every ₹100 you pay at DMart, here is where the money went in July-September 2026:
@@ -166,10 +189,10 @@ Anna and Thambi are illustrated characters, not real people. Educational, not in
     sources=[
         "Avenue Supermarts (DMart): press release and financial results for the quarter ended 30 September 2026, filed with the stock exchanges on 10 October 2026",
     ],
-    hashtags="#DataKadai #DMart",
+    hashtags="#MoatAndMargin #DMart",
     pinned="What did you guess DMart keeps out of ₹100? Tell us before you watch it again. Which shop should Anna count next?",
-    tags=["DMart", "DMart profit", "Avenue Supermarts", "where does my money go", "DMart results", "retail margin", "Data Kadai", "explained simply"],
-    instagram="You pay ₹100 at DMart. DMart keeps ₹5.62, before income tax. Anna counts it in one-rupee coins.\n\nSource: DMart's July-September 2026 results. Educational, not investment advice.\n#DataKadai #DMart",
+    tags=["DMart", "DMart profit", "Avenue Supermarts", "where does my money go", "DMart results", "retail margin", "Moat and Margin", "explained simply"],
+    instagram="You pay ₹100 at DMart. DMart keeps ₹5.62, before income tax. Anna counts it in one-rupee coins.\n\nSource: DMart's July-September 2026 results. Educational, not investment advice.\n#MoatAndMargin #DMart",
     altered="No (a plainly animated cartoon; nothing in it looks like real footage of a real person or event)",
     voice="Narration: synthetic voices (one voice, pitched two ways). Characters are illustrations drawn in code.", lang="English (India)")
 

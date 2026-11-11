@@ -268,8 +268,26 @@ S["ia-coastline-hi"] = dict(
     ])
 
 
-S["dk-hundred"] = dict(
-    channel="Data Kadai", lang="en-IN", series="Kadai Kanakku",
+S["dk-pocket"] = dict(
+    channel="Data Kadai", lang="en-IN", series="In Your Pocket",
+    title="India exports ₹3 lakh crore of this",
+    send="People assume India imports its phones.",
+    beats=[
+        ("b1", [("India now exports three lakh crore rupees of this.", "India exports *₹3 lakh crore* of this."), ("It's in your pocket.", "It's in your *pocket.*")],
+         {"hook": "India now", "pocket": "It's in your"}),
+        ("b2", [("Phones and telecom gear.", "*Phones* and telecom gear.")], {"phone": "Phones and"}),
+        ("b3", [("Four years ago?", "Four years ago?"), ("Fifty-five thousand crore.", "*₹55,000 crore.*")], {"ago": "Four years", "fifty": "Fifty-five"}),
+        ("b4", [("That's five and a half times bigger.", "*5.5 times* bigger.")], {"times": "That's five"}),
+        ("b5", [("And most of it doesn't go by ship.", "Most of it *doesn't go by ship.*")], {"ship": "And most", "cross": "doesn't go"}),
+        ("b6", [("Sixty-nine percent flies out of just two airports:", "*69%* flies out of just two airports:"), ("Chennai and Bengaluru.", "*Chennai* and *Bengaluru.*")],
+         {"fly": "Sixty-nine", "two": "Chennai and"}),
+        ("b7", [("Who buys it?", "Who *buys* it?"), ("The USA alone takes fifty-eight percent.", "The USA alone takes *58%.*")], {"who": "Who buys", "usa": "The USA"}),
+        ("b8", [("Out of the south,", "Out of *the south,*"), ("by air,", "*by air,*"), ("into America.", "into *America.*")], {"south": "Out of", "air": "by air", "america": "into America"}),
+        ("b9", [("That's how", "That's how...")], {"end": "That's how"}),
+    ])
+
+S["mm-hundred"] = dict(
+    channel="Moat & Margin", lang="en-IN", series="Follow the ₹100",
     title="You pay ₹100 at DMart. DMart keeps ₹5.62",
     send="Everyone shops at DMart and everyone guesses far too high.",
     cast={"A": dict(pitch=-1), "T": dict(pitch=5, speed=1.05)},     # one Indian-accent voice, pitched apart: ear-check it

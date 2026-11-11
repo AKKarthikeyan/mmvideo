@@ -1,6 +1,6 @@
 window.STORY = {
- "id": "dk-hundred",
- "channel": "Data Kadai",
+ "id": "mm-hundred",
+ "channel": "Moat & Margin",
  "lang": "en-IN",
  "title": "You pay ₹100 at DMart. DMart keeps ₹5.62",
  "dur": 38.067,

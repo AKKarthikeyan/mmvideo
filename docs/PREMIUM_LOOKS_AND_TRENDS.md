@@ -1,8 +1,8 @@
 # Premium explainer looks, "explain like I'm 5", and riding trends
 
 AK asked on 11 Nov 2026 how we can make Vox-style and other premium, rich-looking cartoon explainers in an
-"explain like I'm 5" format, and how to ride trends. This is the research and a plan. Two pieces are now built
-(section 7): a pilot of look B and the first version of the trend-desk script.
+"explain like I'm 5" format, and how to ride trends. This is the research and a plan. Three pieces are now built
+(section 7): pilots of looks A and B, and the first version of the trend-desk script.
 
 **Evidence.**
 - Live YouTube data from vidIQ on 11 Nov 2026.
@@ -185,10 +185,13 @@ mechanism.
 
 ## 7. Built so far (11 Nov 2026)
 
-**The look B pilot: `hyperframes/shorts/dk-hundred/`** (Data Kadai, series "Kadai Kanakku": "You pay ₹100 at DMart.
-DMart keeps ₹5.62").
+**Which channel gets which topic (AK, 11 Nov 2026).** Companies and business go to Moat & Margin. Other data stories
+go to Data Kadai. Both channels can use both looks below.
+
+**Look B pilot, the cut-out cartoon: `hyperframes/shorts/mm-hundred/`** (Moat & Margin, series "Follow the ₹100":
+"You pay ₹100 at DMart. DMart keeps ₹5.62"). It began as a Data Kadai pilot and moved, because DMart is a company.
 - Two original characters, drawn as vector shapes in the page, no generated images: Anna the shopkeeper explains,
-  Thambi the customer asks. Reuse them for every Kadai Kanakku Short; they are the series' faces.
+  Thambi the customer asks. Reuse them for every "Follow the ₹100" Short; they are the series' faces.
 - Style bible, in the page's CSS: paper `#f3ead7`, ink `#1d1a16`, teal `#0e7c66`, marigold `#f2a71b`, brick `#c8431f`,
   wood `#c9965b`. Flat fills, no outlines, hard paper shadows, paper grain. Characters and props move at 12 frames a
   second; type and counters move smoothly.
@@ -197,10 +200,28 @@ DMart keeps ₹5.62").
 - The evidence beat cuts to a paper card with the reported sales figure and its source. The disclaimer and the source
   line stay on screen throughout.
 - Script: ten short turns, the child asks and the shopkeeper answers, about 100 words, a loop ending.
-  `shorts_build.py` now takes a speaker per beat (fourth item of the beat) and a `cast` of voice tweaks per speaker.
+  `shorts_build.py` takes a speaker per beat (fourth item of the beat) and a `cast` of voice tweaks per speaker.
 - Voice: MiniMax has one Indian-accent English voice, so both characters use it at different pitch. This is the
   weakest part of the pilot. Record two people, or two local voices, before publishing.
-- Build: `shorts_build.py story dk-hundred`, `verify`, `check`, `hf.py render dk-hundred`, `mux`, `kit`.
+
+**Look A pilot, the paper desk: `hyperframes/shorts/dk-pocket/`** (Data Kadai, series "In Your Pocket": "India exports
+₹3 lakh crore of this").
+- A dark green cutting mat with torn paper laid on it: a taped label, a denim pocket, a paper phone, a ruled sheet
+  with a bar chart of paper strips, a printed relief map of India with push pins, and a world map printed as dots.
+- Our own palette, not Vox yellow: mat green `#17352f`, cream `#f2ead8`, kraft `#c8a56a`, ink `#1b1a17`, coral marker
+  `#e8452c`, pen blue `#2b59c3`, denim `#2c4a78`.
+- Stop motion: paper moves at 12 frames a second and shakes a little four times a second, as if re-laid by hand; the
+  grain shifts six times a second. Marker strokes, the map camera and counters stay smooth.
+- Marker strokes and handwriting (Caveat) land on the spoken word: the cross over the ship, the loop round the two
+  airports, the thread from India to the USA.
+- The helpers are shared, in `hyperframes/shared/lib/paper.js`: torn edges with a white fibre rim, grain, the
+  12-frame step, the hand shake and stroke drawing. Any Short can use them.
+- Data: DGCIS, April 2025 to March 2026, already verified in `hyperframes/videos/dk-phones/story.js`. No borders are
+  drawn on either map.
+
+**Build, either look:** `shorts_build.py story <id>`, `verify`, `check`, `hf.py render <id>`, `mux`, `kit`.
+
+**Look C, the toy world, is not built yet.** It is the next one to try, for The Inventor Desk.
 
 **The trend desk script: `scripts/trend_desk.py`.** Run it at 08:30 and 18:00. It polls the feeds in section 4, counts
 signals for each trending search, guesses the channel, marks red flags, lists the day's RBI, SEBI and PIB releases,

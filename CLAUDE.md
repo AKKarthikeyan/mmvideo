@@ -13,3 +13,7 @@
 - Shorts and Reels on every channel follow `docs/SHORTS_RULES.md` (AK, 10 Nov 2026; fact-check behind it in
   `docs/SHORTS_FACTCHECK.md`). Write each Short as its own loop script, never a cut-down of long-video beats, and run
   `python3 scripts/shorts_check.py <id>` after the build: fix every FAIL before rendering.
+- Which channel: companies and business topics go to Moat & Margin; other data stories go to Data Kadai (AK, 11 Nov 2026).
+- Two more looks for explainer Shorts, both usable on either channel: the cut-out cartoon (`hyperframes/shorts/mm-hundred`)
+  and the paper desk (`hyperframes/shorts/dk-pocket`, helpers in `hyperframes/shared/lib/paper.js`). See
+  `docs/PREMIUM_LOOKS_AND_TRENDS.md`, section 7.

@@ -9,14 +9,25 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Area | Files |
 | --- | --- |
 | Daily-filings videos (Vox engine) | `src/vx/VoxEngine.tsx`, `src/vx/Videos.tsx`, `scripts/vx_scripts.py`, `scripts/build_vx.py` |
-| Letters and Moat Files (Case engine) | `src/vx/LetterVideos.tsx`, `src/vx/CaseEngine.tsx`, `src/vx/scenes/`, `scripts/vx_letters.py`, `scripts/build_vx_letters.py`, `scripts/qa_vx.py`, `scripts/render_vx_letters.sh` |
+| Letters and Moat Files (the same Vox engine; `"engine": "case"` in a video's script puts The Moat Files name and the disclaimer on screen) | `src/vx/LetterVideos.tsx`, `src/vx/scenes/`, `scripts/vx_letters.py`, `scripts/build_vx_letters.py`, `scripts/qa_vx.py`, `scripts/render_vx_letters.sh` |
+| Napkin-math Shorts and the napkin intro | `scripts/hand.py` (every script; voices changed lines), `src/hand/`, `public/hand/<id>/beats.json` |
 | Regional audio tracks (Tamil, Hindi; English stays original) | `scripts/audio_tracks.py`, `scripts/translations/`, `docs/AUDIO_TRACKS.md` |
-| Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
+| Carousels | `scripts/carousels.py` (every spec), `src/carousel/`, `public/carousel/<id>/carousel.json` |
+| Upload kits (captions, YouTube text) and thumbnails | `scripts/package_story.py` (any story video), `scripts/kits_2026_10.py` (the October kits), `scripts/thumbs.py` |
 | Shorts and Reels rules, all channels (and the gate that checks a built Short) | `docs/SHORTS_FORMAT.md` (the Reveal Loop), `docs/SHORTS_BENCHMARKS.md` and `hyperframes/shorts/` (three benchmark Shorts), `docs/SHORTS_RULES.md`, `docs/SHORTS_STUDY.md`, `docs/SHORTS_FACTCHECK.md`, `scripts/shorts_check.py`, `scripts/shorts_study/` |
 | Premium explainer visuals (HyperFrames library, 15 samples) | `hyperframes/` (`hyperframes/README.md`), `hyperframes/tools/hf.py` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits
 `vx_letters.py` and `LetterVideos.tsx`. Append to shared files, never replace another session's entries.
+
+Two modules hold what every script shares, so no script keeps its own copy:
+
+- `scripts/mm.py`: where files live (`REPO`, `PUBLIC`, `OUT`), how many frames each beat holds (the same sums as the
+  players in `src/`), captions and chapter lists. If a player's timing changes, change it there.
+- `scripts/minimax.py`: the only code that calls MiniMax (voice and pictures), the two narrator voices, and the rule
+  that a line is voiced again only when its words change.
+
+Scripts find the checkout from their own location, so they run from any folder and on any machine.
 
 Not in git: `out/` (renders), `node_modules/`, generated audio (`*.mp3`, `*.wav`, rebuilt by the build scripts with
 MiniMax TTS), `sources/` (PDFs) and `*.bak*` backups. Use the bundled ffmpeg: `npx remotion ffmpeg` / `npx remotion ffprobe`.

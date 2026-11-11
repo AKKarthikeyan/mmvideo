@@ -1,6 +1,11 @@
 # Notes for Claude sessions in MMVideo
 
 - Start with `README.md`: what each engine area is, who edits which files, and what stays out of git.
+- Scripts share two modules: `scripts/mm.py` (where files live, how many frames a beat holds, captions, chapters) and
+  `scripts/minimax.py` (voice and pictures). Import from them; do not paste a timing sum, an SRT writer, a MiniMax call or
+  the checkout's path into a new script. A new napkin Short goes into `scripts/hand.py`, a carousel into
+  `scripts/carousels.py`, a thumbnail set into `scripts/thumbs.py`; an upload kit comes from `scripts/package_story.py`.
+  On the player side the napkin Shorts share `HandShort` in `src/handkit.tsx`, and The Moat Files run on `VoxEngine.tsx`.
 - Premium explainer visuals live in `hyperframes/` (see `hyperframes/README.md`). When a video needs a satellite
   before/after, terrain flyover, document close-up, money breakdown, dot chart, flow map, globe, exploded object,
   patent drawing, photo with depth, timeline, scale comparison, big quote, hand-drawn notes or a 3D data map, start

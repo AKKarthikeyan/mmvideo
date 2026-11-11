@@ -2,27 +2,17 @@
 // Facts: HAL Reg 30 disclosure, 2 Oct 2026 — 50% of HATSOFF (3,84,04,205 shares of ₹10) from CAE Canada at NIL consideration;
 // HATSOFF = 50:50 JV for military and civil helicopter pilot training on simulators; FY26 turnover ₹80.95 cr; reason: full management control.
 import React from "react";
-import {AbsoluteFill, Audio, Sequence, staticFile} from "remotion";
 import beats from "../../public/hand/hal/beats.json";
-import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
+import {HDraw, HWrite, INK, RED, BLUE, GREEN, HANDFONT, sh, HandBeat, HandCanvas, HandShort, handTotal, spokenAt} from "../handkit";
 
-export const HFPS2 = 30;
-const PAD = 0.15;
-type B = {key: string; text: string; sec: number};
+type B = HandBeat;
 const BS = beats as B[];
-export const halFrames = BS.map((b) => Math.ceil((b.sec + PAD) * HFPS2));
-export const halTotal = halFrames.reduce((a, b) => a + b, 0);
+export const halTotal = handTotal(BS);
 
-const at = (b: B, p: string, off = 0) => {
-  const i = b.text.toLowerCase().indexOf(p.toLowerCase());
-  if (i < 0) throw new Error(`phrase not in ${b.key}: ${p}`);
-  return Math.round(b.sec * HFPS2 * i / b.text.length) + off;
-};
+const at = spokenAt;
 const beat = (k: string) => BS.find((b) => b.key === k)!;
 
-const Canvas: React.FC<{children: React.ReactNode}> = ({children}) => (
-  <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>{children}</svg>
-);
+const Canvas = HandCanvas;
 const Napkin: React.FC<{children: React.ReactNode; rot?: number}> = ({children, rot = -2.5}) => (
   <g transform={`rotate(${rot} 540 930)`}>
     <rect x={80} y={330} width={920} height={1200} fill="#fffef6" stroke="#d8d2c2" strokeWidth={3}/>
@@ -138,36 +128,4 @@ const H7: React.FC = () => {
 
 const SCENES: Record<string, React.FC> = {h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, h7: H7};
 
-const Furniture: React.FC = () => (
-  <Canvas>
-    <g transform="rotate(-4 220 150)">
-      <rect x={60} y={90} width={420} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
-      <text x={270} y={163} fontFamily={HANDFONT} fontSize={52} textAnchor="middle" fill={INK}>napkin math</text>
-    </g>
-    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={40} textAnchor="end" fill={INK}>HAL · HATSOFF</text>
-    <text x={540} y={1858} fontFamily={HANDFONT} fontSize={30} textAnchor="middle" fill={INK} opacity={0.6}>Moat &amp; Margin · from the filings</text>
-    <text x={540} y={1896} fontFamily="'Helvetica Neue', Arial, sans-serif" fontSize={22} textAnchor="middle" fill={INK} opacity={0.6}>Educational research, not investment advice · not SEBI-registered</text>
-  </Canvas>
-);
-
-export const HalNapkin: React.FC = () => {
-  let from = 0;
-  return (
-    <AbsoluteFill style={{background: PAPER}}>
-      <style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
-      {BS.map((b, i) => {
-        const Scene = SCENES[b.key];
-        const el = (
-          <Sequence key={b.key} from={from} durationInFrames={halFrames[i]}>
-            <AbsoluteFill><Scene/></AbsoluteFill>
-            <Captions text={b.text} frames={halFrames[i]}/>
-            <Audio src={staticFile(`hand/hal/${b.key}.mp3`)}/>
-          </Sequence>
-        );
-        from += halFrames[i];
-        return el;
-      })}
-      <Furniture/>
-    </AbsoluteFill>
-  );
-};
+export const HalNapkin: React.FC = () => <HandShort sid="hal" label="HAL · HATSOFF" beats={BS} scenes={SCENES}/>;

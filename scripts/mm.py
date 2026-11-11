@@ -1,7 +1,7 @@
 """The engine's contract with every script, in one place: where files live, how long a beat is on screen, how captions are cut.
 
-The frame arithmetic mirrors the players (beatFrames / shortLayout in src/vx/VoxEngine.tsx and CaseEngine.tsx, and the napkin
-players in src/hand/). If a player's timing changes, change it here and nowhere else; no other script holds a copy.
+The frame arithmetic mirrors the players (beatFrames / shortLayout in src/vx/VoxEngine.tsx, and the napkin players in
+src/hand/). If a player's timing changes, change it here and nowhere else; no other script holds a copy.
 
     REPO, PUBLIC, OUT        the checkout, its public/ and its out/ (renders and kits, not in git)
     vx(id), napkin(id)       a built video's data.json, a napkin Short's beats.json

@@ -2,7 +2,7 @@
 import React from "react";
 import rough from "roughjs/bin/rough";
 import {svgPathProperties} from "svg-path-properties";
-import {interpolate, useCurrentFrame, Easing} from "remotion";
+import {AbsoluteFill, Audio, Sequence, staticFile, interpolate, useCurrentFrame, Easing} from "remotion";
 
 export const INK = "#1d1d1f", RED = "#d9480f", BLUE = "#1c64b8", GREEN = "#2b8a3e", PAPER = "#fbf8f1";
 export const HANDFONT = "Virgil, 'Comic Sans MS', sans-serif";
@@ -85,5 +85,62 @@ export const Captions: React.FC<{text: string; frames: number}> = ({text, frames
       <span style={{background: "rgba(255,255,255,0.72)", color: "#1d1d1f", fontFamily: "'Helvetica Neue', Arial, sans-serif",
         fontSize: 36, lineHeight: 1.4, padding: "6px 14px", borderRadius: 8, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone"}}>{cur}</span>
     </div>
+  );
+};
+
+// ---------- the napkin Short player: every vertical napkin Short in src/hand/ is this, with its own drawings ----------
+// A line holds for its narration plus 0.15 s (scripts/mm.py napkin_timeline is the same sum, for captions and kits).
+export type HandBeat = {key: string; text: string; sec: number};
+export const HAND_FPS = 30;
+export const handFrames = (bs: HandBeat[]) => bs.map((b) => Math.ceil((b.sec + 0.15) * HAND_FPS));
+export const handTotal = (bs: HandBeat[]) => handFrames(bs).reduce((a, b) => a + b, 0);
+
+// frame at which a phrase is spoken inside a beat (linear in characters, like the Vox engine)
+export const spokenAt = (b: HandBeat, p: string, off = 0) => {
+  const i = b.text.toLowerCase().indexOf(p.toLowerCase());
+  if (i < 0) throw new Error(`phrase not in ${b.key}: ${p}`);
+  return Math.round(b.sec * HAND_FPS * i / b.text.length) + off;
+};
+
+export const HandCanvas: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>{children}</svg>
+);
+
+// furniture on every frame: a sticky-note label (frame-1 hook), the subject, brand and the on-screen disclaimer footer
+const HandFurniture: React.FC<{label: string}> = ({label}) => (
+  <HandCanvas>
+    <g transform="rotate(-4 220 150)">
+      <rect x={60} y={90} width={420} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
+      <text x={270} y={163} fontFamily={HANDFONT} fontSize={52} textAnchor="middle" fill={INK}>napkin math</text>
+    </g>
+    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={40} textAnchor="end" fill={INK}>{label}</text>
+    <text x={540} y={1858} fontFamily={HANDFONT} fontSize={30} textAnchor="middle" fill={INK} opacity={0.6}>Moat &amp; Margin · from the filings</text>
+    <text x={540} y={1896} fontFamily="'Helvetica Neue', Arial, sans-serif" fontSize={22} textAnchor="middle" fill={INK} opacity={0.6}>Educational research, not investment advice · not SEBI-registered</text>
+  </HandCanvas>
+);
+
+// sid = folder in public/hand/ (beats.json and one mp3 per line, from scripts/hand.py); scenes = one drawing per beat key.
+// caption respells a line for reading where the voice needed it spelled out.
+export const HandShort: React.FC<{sid: string; label: string; beats: HandBeat[]; scenes: Record<string, React.FC<any>>; caption?: (text: string) => string}> =
+  ({sid, label, beats, scenes, caption}) => {
+  const fr = handFrames(beats);
+  let from = 0;
+  return (
+    <AbsoluteFill style={{background: PAPER}}>
+      <style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
+      {beats.map((b, i) => {
+        const Scene = scenes[b.key];
+        const el = (
+          <Sequence key={b.key} from={from} durationInFrames={fr[i]}>
+            <AbsoluteFill><Scene b={b}/></AbsoluteFill>
+            <Captions text={caption ? caption(b.text) : b.text} frames={fr[i]}/>
+            <Audio src={staticFile(`hand/${sid}/${b.key}.mp3`)}/>
+          </Sequence>
+        );
+        from += fr[i];
+        return el;
+      })}
+      <HandFurniture label={label}/>
+    </AbsoluteFill>
   );
 };

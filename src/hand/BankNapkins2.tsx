@@ -4,7 +4,6 @@
 // Figures: each bank's Q2 FY27 business update on NSE (1–3 Oct 2026). "our maths" marks our arithmetic on filed figures.
 // Fact sheet: out/vx/bank-q2-forensic-scripts-v2.md
 import React from "react";
-import {AbsoluteFill, Audio, Sequence, staticFile} from "remotion";
 import bkd from "../../public/hand/bkd/beats.json";
 import bke from "../../public/hand/bke/beats.json";
 import bkf from "../../public/hand/bkf/beats.json";
@@ -27,28 +26,18 @@ import bkv from "../../public/hand/bkv/beats.json";
 import bkw from "../../public/hand/bkw/beats.json";
 import bkx from "../../public/hand/bkx/beats.json";
 import bky from "../../public/hand/bky/beats.json";
-import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
+import {HDraw, HWrite, INK, RED, BLUE, GREEN, HANDFONT, sh, HandBeat, HandCanvas, HandShort, spokenAt} from "../handkit";
 
-export const BFPS2 = 30;
-const PAD = 0.15;
-type B = {key: string; text: string; sec: number};
-const frames = (bs: B[]) => bs.map((b) => Math.ceil((b.sec + PAD) * BFPS2));
-export const bkTotal2 = (bs: B[]) => frames(bs).reduce((a, b) => a + b, 0);
+type B = HandBeat;
 export const BK2 = {bkd, bke, bkf, bkg, bkh, bki, bkj, bkk, bkl, bkm, bkn, bko, bkp, bkq, bkr, bks, bkt, bku, bkv, bkw, bkx, bky} as Record<string, B[]>;
 
 const GOLD = "#b8860b", AMBER = "#e67700", GREY = "#555";
 const FILL: Record<string, string> = {[GREEN]: "rgba(43,138,62,0.18)", [RED]: "rgba(217,72,15,0.18)", [BLUE]: "rgba(28,100,184,0.18)",
   [GOLD]: "rgba(201,151,0,0.25)", [AMBER]: "rgba(230,119,0,0.18)", [INK]: "rgba(0,0,0,0.08)"};
 
-const atOf = (b: B) => (p: string, off = 0) => {
-  const i = b.text.toLowerCase().indexOf(p.toLowerCase());
-  if (i < 0) throw new Error(`phrase not in ${b.key}: ${p}`);
-  return Math.round(b.sec * BFPS2 * i / b.text.length) + off;
-};
+const atOf = (b: B) => (p: string, off = 0) => spokenAt(b, p, off);
 type SceneP = {b: B};
-const Canvas: React.FC<{children: React.ReactNode}> = ({children}) => (
-  <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>{children}</svg>
-);
+const Canvas = HandCanvas;
 const Napkin: React.FC<{children: React.ReactNode; rot?: number}> = ({children, rot = -2}) => (
   <g transform={`rotate(${rot} 540 930)`}>
     <rect x={80} y={360} width={920} height={1170} fill="#fffef6" stroke="#d8d2c2" strokeWidth={3}/>
@@ -1347,37 +1336,6 @@ const SCENES: Record<string, React.FC<SceneP>> = {
   x1: CBN1, x2: CBN2, x3: CBN3, x4: CBN4, x5: CBN5, x6: CBN6, x7: CBN7,
   y1: ILN1, y2: ILN2, y3: ILN3, y4: ILN4, y5: ILN5, y6: ILN6, y7: ILN7};
 
-const Furniture: React.FC<{label: string}> = ({label}) => (
-  <Canvas>
-    <g transform="rotate(-4 220 150)">
-      <rect x={60} y={90} width={420} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
-      <text x={270} y={163} fontFamily={HANDFONT} fontSize={52} textAnchor="middle" fill={INK}>napkin math</text>
-    </g>
-    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={40} textAnchor="end" fill={INK}>{label}</text>
-    <text x={540} y={1858} fontFamily={HANDFONT} fontSize={30} textAnchor="middle" fill={INK} opacity={0.6}>Moat &amp; Margin · from the filings</text>
-    <text x={540} y={1896} fontFamily="'Helvetica Neue', Arial, sans-serif" fontSize={22} textAnchor="middle" fill={INK} opacity={0.6}>Educational research, not investment advice · not SEBI-registered</text>
-  </Canvas>
-);
-
-export const BankNapkin2: React.FC<{sid: string; label: string}> = ({sid, label}) => {
-  const bs = BK2[sid]; const fr = frames(bs);
-  let from = 0;
-  return (
-    <AbsoluteFill style={{background: PAPER}}>
-      <style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
-      {bs.map((b, i) => {
-        const Scene = SCENES[b.key];
-        const el = (
-          <Sequence key={b.key} from={from} durationInFrames={fr[i]}>
-            <AbsoluteFill><Scene b={b}/></AbsoluteFill>
-            <Captions text={b.text.replace(/\b[A-Z](?: [A-Z])+\b/g, (m) => m.replace(/ /g, ""))} frames={fr[i]}/>
-            <Audio src={staticFile(`hand/${sid}/${b.key}.mp3`)}/>
-          </Sequence>
-        );
-        from += fr[i];
-        return el;
-      })}
-      <Furniture label={label}/>
-    </AbsoluteFill>
-  );
-};
+// captions join letters the voice needed spelled out ("T C S" -> "TCS")
+const joinInitials = (t: string) => t.replace(/\b[A-Z](?: [A-Z])+\b/g, (m) => m.replace(/ /g, ""));
+export const BankNapkin2: React.FC<{sid: string; label: string}> = ({sid, label}) => <HandShort sid={sid} label={label} beats={BK2[sid]} scenes={SCENES} caption={joinInitials}/>;

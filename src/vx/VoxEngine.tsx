@@ -5,10 +5,13 @@ import {AbsoluteFill, Audio, Sequence, spring, staticFile, useCurrentFrame, useV
 import {C, COND, TYPE, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
 import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
 import {ILLUS} from "./illus";
+import {CASE_SCENES} from "./scenes/CaseScenes";
 
 export const FPS = 30;
 export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
-export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
+// engine "case" = The Moat Files (scripts/vx_letters.py sets it): same engine, its own name on screen and the disclaimer kept
+// on screen for the whole long video.
+export type VData = {id: string; engine?: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
   timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
 
 const isTitle = (b: Beat) => b.scene.type === "title";
@@ -527,7 +530,7 @@ const Pic: React.FC<SP> = ({s, n, T, D}) => {
 };
 
 const SCENES: Record<string, React.FC<SP>> = {title: Title, strips: Strips, counter: Counter, cards: Cards, clip: Clip, quote: Quote,
-  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic, pic: Pic, ...ILLUS};
+  table: Table, bars: Bars, timeline: Timeline, list: List, hand: Hand, scores: Scores, sources: Sources, end: End, league: League, kinetic: Kinetic, pic: Pic, ...ILLUS, ...CASE_SCENES};
 
 // ---------- captions & furniture ----------
 const cueTimes = (b: Beat) => {
@@ -545,6 +548,8 @@ const Captions: React.FC<{b: Beat}> = ({b}) => {
     </div>
   );
 };
+const isCase = (D: VData) => D.engine === "case";
+const brand = (D: VData) => (isCase(D) ? "The Moat Files · Moat & Margin" : "Moat & Margin · from the filings");
 const Furniture: React.FC<{D: VData; beats: Beat[]; starts: number[]; total: number}> = ({D, beats, starts, total}) => {
   const f = useCurrentFrame();
   const chStart = D.chapters.map((_, c) => { const i = beats.findIndex((b) => b.ch === c); return i < 0 ? total : starts[i]; });
@@ -560,7 +565,8 @@ const Furniture: React.FC<{D: VData; beats: Beat[]; starts: number[]; total: num
       })}
       {showTag && <g><rect x={36} y={30} width={D.chapters[ch].length * 15 + 110} height={44} fill={C.ink}/>
         <text x={52} y={61} fontFamily={TYPE} fontSize={24} fill={C.white}>{`CH ${ch} · ${D.chapters[ch].toUpperCase()}`}</text></g>}
-      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">Moat &amp; Margin · from the filings</text>
+      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">{brand(D)}</text>
+      {isCase(D) && <text x={1880} y={94} fontFamily={TYPE} fontSize={19} fill={C.ink} opacity={0.6} textAnchor="end">Educational research, not investment advice · not SEBI-registered</text>}
     </svg>
   );
 };
@@ -650,7 +656,7 @@ export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
       {D.shorts[idx].hook && !D.shorts[idx].loop && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
       <svg width={1080} height={1920} style={{position: "absolute"}}>
         <text x={540} y={140} fontFamily={COND} fontWeight={700} fontSize={40} textAnchor="middle" fill={C.ink}>{D.shorts[idx].title.toUpperCase()}</text>
-        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">Moat &amp; Margin · from the filings</text>
+        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">{brand(D)}</text>
         {D.shorts[idx].loop && <text x={540} y={1898} fontFamily={TYPE} fontSize={22} fill={C.ink} opacity={0.6} textAnchor="middle">Educational research, not investment advice · not SEBI-registered</text>}
       </svg>
     </AbsoluteFill>

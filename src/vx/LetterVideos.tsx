@@ -18,7 +18,6 @@ import mf007 from "../../public/vx/mf007-coke/data.json";
 import mf008 from "../../public/vx/mf008-costco/data.json";
 import mf009 from "../../public/vx/mf009-walmart/data.json";
 import mf010 from "../../public/vx/mf010-dexter/data.json";
-import * as CE from "./CaseEngine";
 import {CaseThumbStills, PhotoThumbStills} from "./scenes/CaseThumbs";
 
 const ALL = [l47, l48, l49, l50] as unknown as VData[];
@@ -59,11 +58,11 @@ const CaseCompositions: React.FC = () => (
   <>
     {CASES.map((D) => (
       <React.Fragment key={D.id}>
-        <Composition id={`VX-${D.id}-long`} component={CE.VoxLong as any} defaultProps={{D}} durationInFrames={CE.longLayout(D).total} fps={FPS} width={1920} height={1080}/>
+        <Composition id={`VX-${D.id}-long`} component={VoxLong as any} defaultProps={{D}} durationInFrames={longLayout(D).total} fps={FPS} width={1920} height={1080}/>
         {D.shorts.map((_, i) => (
-          <Composition key={i} id={`VX-${D.id}-short${i + 1}`} component={CE.VoxShort as any} defaultProps={{D, idx: i}} durationInFrames={CE.shortLayout(D, i).total} fps={FPS} width={1080} height={1920}/>
+          <Composition key={i} id={`VX-${D.id}-short${i + 1}`} component={VoxShort as any} defaultProps={{D, idx: i}} durationInFrames={shortLayout(D, i).total} fps={FPS} width={1080} height={1920}/>
         ))}
-        {(CASE_THUMBG[D.id] || []).map((t, i) => <Still key={`g${i}`} id={`VX-${D.id}-thumbG${i + 1}`} component={CE.VoxThumbG as any} defaultProps={{D, ...t}} width={1280} height={720}/>)}
+        {(CASE_THUMBG[D.id] || []).map((t, i) => <Still key={`g${i}`} id={`VX-${D.id}-thumbG${i + 1}`} component={VoxThumbG as any} defaultProps={{D, ...t}} width={1280} height={720}/>)}
       </React.Fragment>
     ))}
   </>

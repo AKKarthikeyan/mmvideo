@@ -4,28 +4,17 @@
 // bkc: Ujjivan SFB — group-loan share 37.9%→34.3% (our arithmetic), secured 46.8%→52.0%, GNPA 2.45%→2.10%, write-offs ₹213 cr→₹43 cr.
 // Sources: each bank's Q2 FY27 business update on NSE (1–3 Oct 2026).
 import React from "react";
-import {AbsoluteFill, Audio, Sequence, staticFile} from "remotion";
 import bka from "../../public/hand/bka/beats.json";
 import bkb from "../../public/hand/bkb/beats.json";
 import bkc from "../../public/hand/bkc/beats.json";
-import {Captions, HDraw, HWrite, INK, PAPER, RED, BLUE, GREEN, HANDFONT, sh} from "../handkit";
+import {HDraw, HWrite, INK, RED, BLUE, GREEN, HANDFONT, sh, HandBeat, HandCanvas, HandShort, spokenAt} from "../handkit";
 
-export const BFPS = 30;
-const PAD = 0.15;
-type B = {key: string; text: string; sec: number};
-const frames = (bs: B[]) => bs.map((b) => Math.ceil((b.sec + PAD) * BFPS));
-export const bkTotal = (bs: B[]) => frames(bs).reduce((a, b) => a + b, 0);
+type B = HandBeat;
 export const BK = {bka: bka as B[], bkb: bkb as B[], bkc: bkc as B[]};
 
-const atOf = (b: B) => (p: string, off = 0) => {
-  const i = b.text.toLowerCase().indexOf(p.toLowerCase());
-  if (i < 0) throw new Error(`phrase not in ${b.key}: ${p}`);
-  return Math.round(b.sec * BFPS * i / b.text.length) + off;
-};
+const atOf = (b: B) => (p: string, off = 0) => spokenAt(b, p, off);
 type SceneP = {b: B};
-const Canvas: React.FC<{children: React.ReactNode}> = ({children}) => (
-  <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>{children}</svg>
-);
+const Canvas = HandCanvas;
 const Napkin: React.FC<{children: React.ReactNode; rot?: number}> = ({children, rot = -2}) => (
   <g transform={`rotate(${rot} 540 930)`}>
     <rect x={80} y={330} width={920} height={1200} fill="#fffef6" stroke="#d8d2c2" strokeWidth={3}/>
@@ -203,37 +192,4 @@ const C5: React.FC<SceneP> = ({b}) => { const at = atOf(b); return (
 
 const SCENES: Record<string, React.FC<SceneP>> = {a1: A1, a2: A2, a3: A3, a4: A4, a5: A5, b1: B1, b2: B2, b3: B3, b4: B4, b5: B5, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5};
 
-const Furniture: React.FC<{label: string}> = ({label}) => (
-  <Canvas>
-    <g transform="rotate(-4 220 150)">
-      <rect x={60} y={90} width={420} height={110} fill="#ffe066" stroke="#e0b800" strokeWidth={2}/>
-      <text x={270} y={163} fontFamily={HANDFONT} fontSize={52} textAnchor="middle" fill={INK}>napkin math</text>
-    </g>
-    <text x={1010} y={160} fontFamily={HANDFONT} fontSize={40} textAnchor="end" fill={INK}>{label}</text>
-    <text x={540} y={1858} fontFamily={HANDFONT} fontSize={30} textAnchor="middle" fill={INK} opacity={0.6}>Moat &amp; Margin · from the filings</text>
-    <text x={540} y={1896} fontFamily="'Helvetica Neue', Arial, sans-serif" fontSize={22} textAnchor="middle" fill={INK} opacity={0.6}>Educational research, not investment advice · not SEBI-registered</text>
-  </Canvas>
-);
-
-export const BankNapkin: React.FC<{sid: "bka" | "bkb" | "bkc"; label: string}> = ({sid, label}) => {
-  const bs = BK[sid]; const fr = frames(bs);
-  let from = 0;
-  return (
-    <AbsoluteFill style={{background: PAPER}}>
-      <style>{`@font-face{font-family:Virgil;src:url(${staticFile("fonts/Virgil-Regular.woff2")}) format("woff2");}`}</style>
-      {bs.map((b, i) => {
-        const Scene = SCENES[b.key];
-        const el = (
-          <Sequence key={b.key} from={from} durationInFrames={fr[i]}>
-            <AbsoluteFill><Scene b={b}/></AbsoluteFill>
-            <Captions text={b.text} frames={fr[i]}/>
-            <Audio src={staticFile(`hand/${sid}/${b.key}.mp3`)}/>
-          </Sequence>
-        );
-        from += fr[i];
-        return el;
-      })}
-      <Furniture label={label}/>
-    </AbsoluteFill>
-  );
-};
+export const BankNapkin: React.FC<{sid: "bka" | "bkb" | "bkc"; label: string}> = ({sid, label}) => <HandShort sid={sid} label={label} beats={BK[sid]} scenes={SCENES}/>;

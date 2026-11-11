@@ -170,6 +170,7 @@ Anna and Thambi are illustrated characters, not real people. Educational, not in
     pinned="What did you guess DMart keeps out of ₹100? Tell us before you watch it again. Which shop should Anna count next?",
     tags=["DMart", "DMart profit", "Avenue Supermarts", "where does my money go", "DMart results", "retail margin", "Data Kadai", "explained simply"],
     instagram="You pay ₹100 at DMart. DMart keeps ₹5.62, before income tax. Anna counts it in one-rupee coins.\n\nSource: DMart's July-September 2026 results. Educational, not investment advice.\n#DataKadai #DMart",
+    altered="No (a plainly animated cartoon; nothing in it looks like real footage of a real person or event)",
     voice="Narration: synthetic voices (one voice, pitched two ways). Characters are illustrations drawn in code.", lang="English (India)")
 
 def srt_time(s):
@@ -196,7 +197,7 @@ def write_kit(sid, story, out_dir, final_mp4):
     L += ["", "DESCRIPTION (paste as is)", k["description"], "", "Sources" if not story["lang"].startswith("hi") else "स्रोत"] + ["• " + s for s in k["sources"]]
     L += [k["voice"], k["hashtags"], "", "PINNED COMMENT", k["pinned"], "", "TAGS", ", ".join(k["tags"]), "",
           "YOUTUBE SETTINGS", f"  Language: {k['lang']} · Category: Education · Audience: not made for kids",
-          "  Altered content: No (real maps and satellite images; the synthetic narrator needs no label)",
+          "  Altered content: " + k.get("altered", "No (real maps and satellite images; the synthetic narrator needs no label)"),
           "  Related video: set by hand in desktop Studio once a long video on this topic exists",
           "  Remix: allow · Comments: on", "",
           "INSTAGRAM REEL (upload the same file natively; no YouTube marks on it)", k["instagram"], "",

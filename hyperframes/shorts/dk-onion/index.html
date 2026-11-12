@@ -1,0 +1,216 @@
+<!doctype html>
+<!-- Data Kadai · "Onions +116%, potatoes -14%: same inflation". Reveal Loop Short, 1080 x 1920, drawn in paper craft
+     (hyperframes/shared/lib/papercraft.js). A paper basket on a kitchen wall: the onion swells on frame 1, the camera pulls
+     back, potato and cauliflower shrink, garlic and ginger swell (area proportional to price vs a year ago), then a CPI ruler
+     is pinned to the wall: food 8.94 %, all items 6.09 %, just past the RBI's 2-6 % band. The camera returns to the onion,
+     so the last frame is the first. Numbers: MoSPI CPI release for Oct 2026 (provisional, 12 Nov 2026). Timings: story.js. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Data Kadai: onions +116%, potatoes -14%</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/papercraft.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #51bea3; --up: #d2471f; --down: #0e7c66; --ink: #1d1a16; background: #e9dfc8; }
+      #pc { position: absolute; left: 0; top: 0; }
+      #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      #vig { --vig: 0.32; }
+      .kicker { color: #0e7c66; text-shadow: 0 1px 0 rgba(255, 250, 238, 0.6); }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; color: #3b3226; }
+      #hook { position: absolute; left: 60px; top: 268px; }
+      #hook .n { font: 700 230px/0.9 Oswald, sans-serif; color: var(--up); -webkit-text-stroke: 12px rgba(29, 26, 22, 0.92); paint-order: stroke fill; white-space: nowrap; }
+      #hook .l { font: 700 44px/1.1 Oswald, sans-serif; letter-spacing: 0.06em; color: #fffaf0; -webkit-text-stroke: 8px rgba(29, 26, 22, 0.92); paint-order: stroke fill; margin-top: 8px; white-space: nowrap; }
+      .tag { position: absolute; top: 640px; width: 230px; padding: 10px 14px 12px; background: #fbf6ea; border-left: 10px solid var(--down);
+        box-shadow: 4px 8px 14px rgba(40, 28, 14, 0.35); opacity: 0; }
+      .tag.up { border-left-color: var(--up); }
+      .tag .nm { font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: #4a4036; }
+      .tag .v { font: 700 62px/1 Oswald, sans-serif; color: var(--down); margin-top: 6px; white-space: nowrap; }
+      .tag.up .v { color: var(--up); }
+      #gTitle { position: absolute; left: 64px; top: 330px; font: 700 40px/1.1 Oswald, sans-serif; letter-spacing: 0.06em; color: var(--ink); opacity: 0; }
+      .tick { position: absolute; top: 612px; width: 80px; margin-left: -40px; text-align: center; font: 700 34px/1 Oswald, sans-serif; color: #4a4036; opacity: 0; }
+      .glab { position: absolute; font: 700 50px/1 Oswald, sans-serif; letter-spacing: 0.02em; white-space: nowrap; opacity: 0; }
+      .glab small { display: block; font: 700 28px/1.1 Oswald, sans-serif; letter-spacing: 0.1em; color: #4a4036; margin-bottom: 4px; }
+      #lFood { right: 140px; top: 410px; text-align: right; color: var(--up); }
+      #lAll { left: 150px; top: 700px; color: var(--ink); }
+      #lBand { left: 230px; top: 410px; color: var(--down); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28.200" data-width="1080" data-height="1920">
+      <canvas id="pc" class="clip" width="1080" height="1920" data-start="0" data-duration="28.2" data-track-index="1" data-layout-allow-overflow></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">DATA KADAI · CPI, OCTOBER 2026</div>
+      <div class="src" id="srcs">
+        <div id="s0" data-layout-allow-overlap>MoSPI CPI, Oct 2026 (provisional) vs Oct 2025 · item area = price vs a year ago · illustration drawn in code</div>
+        <div id="s1" data-layout-allow-overlap>MoSPI CPI release, 12 Nov 2026: all India 6.09%, food (CFPI) 8.94% · RBI target 4% ± 2 points</div>
+      </div>
+      <div id="hook"><div class="n">+116%</div><div class="l">ONIONS · VS A YEAR AGO</div></div>
+      <div class="tag" id="tPot" style="left: 64px"><div class="nm">POTATO</div><div class="v">−14.2%</div></div>
+      <div class="tag up" id="tGar" style="left: 300px"><div class="nm">GARLIC</div><div class="v">+60.7%</div></div>
+      <div class="tag up" id="tGin" style="left: 536px"><div class="nm">GINGER</div><div class="v">+48.3%</div></div>
+      <div class="tag" id="tCau" style="left: 772px"><div class="nm">CAULIFLOWER</div><div class="v">−10.6%</div></div>
+      <div id="gTitle">INFLATION, OCT 2026 · YEAR ON YEAR</div>
+      <div id="ticks"></div>
+      <div class="glab" id="lFood"><small>FOOD</small>8.94%</div>
+      <div class="glab" id="lAll"><small>ALL ITEMS (CPI)</small>6.09%</div>
+      <div class="glab" id="lBand"><small>RBI BAND</small>2–6%</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, Lp = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const { W, N, N2, cord, sstep, mix, hex, blob, circle, band, ribbon, layer, draw, cloud, drawCloud, rng } = PS;
+      // ---- times (each picture change hangs on a spoken phrase)
+      const tOnion = A("b1", "a hundred and sixteen"), tBack = B("b2"), tNot = A("b3", "Not quite"), tPot = A("b3", "Potatoes"),
+        tCau = A("b4", "down more"), tGar = A("b5", "sixty"), tGin = A("b5", "Ginger"), tMix = B("b6"), tFood = A("b6", "and food"),
+        tNine = A("b6", "almost nine"), tAll = A("b7", "That pushed"), tSix = A("b7", "to six point"), tBand = A("b8", "Just over"),
+        tRet = B("b9");
+      const X = (p) => 90 + p * 90;                                  // ruler: 0-10 % across the wall
+      // area proportional to price vs a year ago: linear scale = sqrt(1 + change)
+      const SC = { onion: Math.sqrt(2.1622), garlic: Math.sqrt(1.6074), ginger: Math.sqrt(1.4832), potato: Math.sqrt(0.8576), cauli: Math.sqrt(0.8943) };
+
+      let scene = null;
+      function build() {
+        const fullRect = [[-160, -160], [W + 160, -160], [W + 160, 2080], [-160, 2080]];
+        const wall = layer({ poly: fullRect, shadow: false, h: (x, y) => cord((y + 12 * N.fbm(x * 0.004, y * 0.004) + 2.6 * Math.sin(x * 0.04 + y * 0.01)) / 7) * 1.3 + N2.fbm(x * 0.02, y * 0.02) * 1.5,
+          col: (x, y) => mix(hex("#f1e7d0"), hex("#d9c8a6"), C((y - 200) / 1600)), bump: 1, ao: 0.1, amb: 0.56 });
+        const table = layer({ poly: band(-160, W + 160, (x) => 1392 + 6 * Math.sin(x * 0.01)), h: (x, y, d) => sstep(0, 10, d) * 6 + cord((y + 16 * N.fbm(x * 0.002, y * 0.03)) / 9) * 1.6 + N2.fbm(x * 0.01, y * 0.12) * 3,
+          col: (x, y) => mix(hex("#9a663b"), hex("#5c381e"), C((y - 1392) / 500)), bump: 1, ao: 0.1, shadow: { dx: 0, dy: -8, blur: 16, a: 0.4 } });
+        // basket: dark opening, back rim, items, woven front, front rim
+        const BX = 540, BY = 1130, RX = 440, RY = 88;
+        const ell = (a0, a1, n, dy = 0) => { const p = []; for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * i / n; p.push([BX + RX * Math.cos(a), BY + dy + RY * Math.sin(a)]); } return p; };
+        const hole = layer({ poly: ell(0, 6.2832, 120), h: (x, y, d) => N.fbm(x * 0.03, y * 0.05) * 4, col: hex("#3c2412"), bump: 1, ao: 0.1, amb: 0.5, shadow: false, k: 2 });
+        const weave = (x, y, d) => { const row = Math.floor(y / 17), seg = ((x + (row % 2) * 19) / 38) % 1; return sstep(0, 10, d) * 6 + cord(y / 17) * 2.2 * (0.55 + 0.45 * Math.sin(seg * Math.PI)) + cord(x / 38 + (row % 2) * 0.5) * 0.6; };
+        const rimC = (pts) => ribbon(pts.map(([x, y]) => [x, y, 30]), 4, 0.05, 9).poly;
+        const backRim = layer({ poly: rimC(ell(Math.PI, 2 * Math.PI, 40)), h: (x, y, d) => sstep(0, 8, d) * 6 + cord(x / 16 + y / 40) * 2, col: hex("#c08a4c"), bump: 1, ao: 0.1, shadow: { dx: 4, dy: 8, blur: 8, a: 0.45 }, k: 2 });
+        const fpoly = ell(0, Math.PI, 60); fpoly.push([BX - RX + 40, 1330], [BX - RX + 120, 1450], [BX + RX - 120, 1450], [BX + RX - 40, 1330]);
+        const front = layer({ poly: fpoly, h: weave, col: (x, y) => mix(hex("#c3894a"), hex("#8a5a2c"), C((y - 1130) / 330)), bump: 1, ao: 0.1, shadow: { dx: 6, dy: 14, blur: 18, a: 0.55 }, k: 2 });
+        const frontRim = layer({ poly: rimC(ell(0, Math.PI, 40)), h: (x, y, d) => sstep(0, 8, d) * 6 + cord(x / 16 - y / 40) * 2, col: hex("#cf9a5a"), bump: 1, ao: 0.1, shadow: { dx: 4, dy: 8, blur: 8, a: 0.5 }, k: 2 });
+
+        // items, built around (0,0) at their size a year ago, baked at high resolution for the close-up
+        const KQ = 2.2;
+        function bulbPoly(R, top, nk) { const p = []; for (let i = 0; i < 180; i++) { const a = i / 180 * 6.2832, c = Math.cos(a), s = Math.sin(a); p.push([R * s * (1 - nk * Math.pow(Math.max(0, c), 2.2)), -R * c * (c > 0 ? top : 0.9)]); } return p; }
+        const hw = (R, top, nk, y) => { const c = y < 0 ? Math.min(1, -y / (R * top)) : Math.max(-1, -y / (R * 0.9)), s = Math.sqrt(Math.max(0.0004, 1 - c * c)); return Math.max(3, R * s * (1 - nk * Math.pow(Math.max(0, c), 2.2))); };
+        function bulb(R, top, nk, lines, depth, cA, cB, tint) {
+          const lon = (x, y) => Math.asin(Math.max(-1, Math.min(1, x / hw(R, top, nk, y))));
+          return layer({ poly: bulbPoly(R, top, nk), k: KQ,
+            h: (x, y, d) => sstep(0, R * 0.55, d) * R * 0.32 + cord(lon(x, y) / Math.PI * lines + N.fbm(x * 0.01, y * 0.01) * 0.6) * depth * Math.min(1, d / 4),
+            col: (x, y) => { let c = mix(hex(cA), hex(cB), C(0.5 + (x + y) / (3.2 * R))); if (tint) c = mix(c, hex(tint), C((y - 0.2 * R) / R) * 0.5); return c; },
+            bump: 1, ao: 0.08, amb: 0.42, shadow: { dx: 6, dy: 12, blur: 12, a: 0.5 } });
+        }
+        const stalk = (x0, y0, x1, y1, w, col) => layer({ poly: ribbon([[x0, y0, w], [(x0 + x1) / 2 + 3, (y0 + y1) / 2, w * 0.7], [x1, y1, w * 0.25]], 10, 0.1, 4).poly, k: KQ,
+          h: (x, y, d) => sstep(0, 3, d) * 3 + cord(x / 4 + y / 30) * 1.2, col: hex(col), bump: 1, ao: 0.08, shadow: { dx: 3, dy: 5, blur: 5, a: 0.45 } });
+        const roots = (R, col) => [-0.5, -0.25, 0, 0.25, 0.5].map((u, i) => layer({ poly: ribbon([[u * R * 0.25, R * 0.86, 5], [u * R * 0.6, R * 1.0 + (i % 2) * 6, 3], [u * R * 0.9, R * 1.08, 1.5]], 8, 0.1, 20 + i).poly, k: KQ,
+          h: (x, y, d) => sstep(0, 2, d) * 2, col: hex(col), bump: 1, ao: 0, shadow: { dx: 2, dy: 3, blur: 3, a: 0.4 } }));
+        const RO = 125, RG = 86;
+        const onion = { parts: [...roots(RO, "#dcc9a3"), bulb(RO, 1.18, 0.55, 15, 2.6, "#c45d84", "#6d1f40", null), stalk(0, -RO * 1.08, 10, -RO * 1.5, 22, "#c7a074")] };
+        const garlic = { parts: [...roots(RG, "#e6dcc6"), bulb(RG, 1.25, 0.6, 7, 4.2, "#f6efe0", "#c8b79a", "#c79ab2"), stalk(0, -RG * 1.15, -6, -RG * 1.7, 18, "#d9cbb0")] };
+        const ginger = { parts: [layer({ poly: blob(0, 0, 120, 66, 0.32, 61, 2.2), k: KQ,
+          h: (x, y, d) => sstep(0, 26, d) * 16 + cord((y + 0.25 * x) / 11 + N.fbm(x * 0.02, y * 0.02) * 2) * 1.8 + N2.fbm(x * 0.06, y * 0.06) * 2,
+          col: (x, y) => mix(hex("#dcb375"), hex("#a2733b"), C(0.5 + (x + y) / 260)), bump: 1, ao: 0.1, amb: 0.42, shadow: { dx: 6, dy: 12, blur: 12, a: 0.5 } })] };
+        const eyes = [[-40, -20], [30, 18], [55, -28], [-10, 35]];
+        const potato = { parts: [layer({ poly: blob(0, 0, 118, 86, 0.1, 62, 2), k: KQ,
+          h: (x, y, d) => sstep(0, 50, d) * 26 + N.fbm(x * 0.03, y * 0.03, 4) * 6 - eyes.reduce((s, [ex, ey]) => s + 6 * Math.exp(-((x - ex) ** 2 + (y - ey) ** 2) / 50), 0),
+          col: (x, y) => mix(mix(hex("#cc9d62"), hex("#946338"), C(0.5 + (x + y) / 300)), hex("#7d5230"), C((N2.fbm(x * 0.08, y * 0.08) - 0.6) * 4)), bump: 1, ao: 0.1, amb: 0.42, shadow: { dx: 6, dy: 12, blur: 12, a: 0.5 } })] };
+        const leaf = (ang, len, wid, seed) => { const ex = Math.cos(ang) * len, ey = Math.sin(ang) * len;
+          return layer({ poly: ribbon([[0, 20, 10], [ex * 0.45, ey * 0.45 + 20, wid], [ex, ey + 20, 4]], 14, 0.25, seed).poly, k: 1.6,
+            h: (x, y, d) => sstep(0, 8, d) * 6 + cord(d / 7) * 1.4, col: (x, y, d) => mix(hex("#5c8a3a"), hex("#3e6626"), C(d / 30)), bump: 1, ao: 0.08, shadow: { dx: 5, dy: 9, blur: 9, a: 0.5 } }); };
+        const cauli = { parts: [leaf(-2.5, 150, 70, 71), leaf(-0.6, 150, 70, 72), leaf(-1.57, 120, 60, 73)], florets: cloud(0, -20, 170, 130, ["#f5eedc", "#cbbd9c"], 74, { kind: "rose", sp: 3.2, rows: 3, big: 48 }) };
+        // the CPI ruler on the wall
+        const ruler = layer({ poly: [[50, 600], [1030, 600], [1030, 668], [50, 668]], h: (x, y, d) => sstep(0, 6, d) * 4 + N.fbm(x * 0.05, y * 0.05) * 1.2,
+          col: hex("#fbf4e4"), bump: 1, ao: 0.05, shadow: { dx: 6, dy: 10, blur: 12, a: 0.45 } });
+        const bandL = layer({ poly: [[X(2), 594], [X(6), 594], [X(6), 674], [X(2), 674]], h: (x, y, d) => sstep(0, 5, d) * 4 + cord(x / 9) * 0.8, col: hex("#2f9b78"), bump: 1, ao: 0.05, shadow: { dx: 4, dy: 7, blur: 8, a: 0.45 } });
+        const marker = (col, up) => layer({ poly: up ? [[0, 0], [30, 34], [30, 96], [-30, 96], [-30, 34]] : [[0, 0], [30, -34], [30, -96], [-30, -96], [-30, -34]],
+          h: (x, y, d) => sstep(0, 6, d) * 5, col: hex(col), bump: 1, ao: 0.05, shadow: { dx: 5, dy: 8, blur: 8, a: 0.5 } });
+        scene = { wall, table, hole, backRim, front, frontRim, onion, garlic, ginger, potato, cauli, ruler, bandL, mFood: marker("#d2471f", false), mAll: marker("#2a2622", true) };
+      }
+
+      function drawItem(ctx, it, x, y, s, rot, t) {
+        ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+        for (const p of it.parts) draw(ctx, p);
+        if (it.florets) drawCloud(ctx, it.florets, t, { spin: 0.05, bob: 1.2, breathe: 0.01 });
+        ctx.restore();
+      }
+
+      // ticks on the ruler
+      for (let p = 0; p <= 10; p += 2) { const d = document.createElement("div"); d.className = "tick"; d.style.left = X(p) + "px"; d.textContent = p + "%"; $("ticks").appendChild(d); }
+
+      const g = $("pc").getContext("2d");
+      H.render = (t) => {
+        caps(t);
+        if (!scene) return;
+        const P = scene, back = Z.io3((t - tRet) / (D - 0.05 - tRet));           // the way back to frame 1 (complete on the last frame)
+        // camera: onion close-up -> whole basket -> close-up again
+        const wide = Z.io3((t - tBack + 0.15) / 0.9) * (1 - back);
+        const Zm = Lp(2.1 / GS, 1, wide), fx = Lp(540 + 5 * GS, 540, wide), fy = Lp(GY + (1040 - 1150) * GS, 960, wide), sx = 540, sy = Lp(1000, 960, wide);
+        const breathe = 1 + 0.012 * Math.sin(t * 0.9);
+        g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = "#e9dfc8"; g.fillRect(0, 0, 1080, 1920);
+        const Zb = Zm * breathe;
+        g.setTransform(Zb, 0, 0, Zb, sx - fx * Zb, sy - fy * Zb);
+        draw(g, P.wall);
+        // gauge on the wall (pinned in at "Mix the whole basket")
+        const gIn = Z.back((t - tMix) / 0.6, 1.4) * (1 - C((t - tRet) / 0.4)), ga = C((t - tMix) / 0.3) * (1 - C((t - tRet) / 0.4));
+        if (ga > 0) {
+          draw(g, P.ruler, { y: -40 * (1 - gIn), alpha: ga });
+          const bk = Z.back((t - tBand) / 0.5, 1.6);
+          if (t > tBand) draw(g, P.bandL, { alpha: C((t - tBand) / 0.25) * ga, pivot: [X(4), 634], scy: 0.6 + 0.4 * bk, sc: 0.6 + 0.4 * bk });
+          g.save(); g.globalAlpha = ga; g.strokeStyle = "rgba(70,56,40,0.7)"; g.lineWidth = 3;
+          for (let p = 0; p <= 10; p += 1) { const x = X(p), y0 = 600 - 40 * (1 - gIn); g.beginPath(); g.moveTo(x, y0 + 4); g.lineTo(x, y0 + (p % 2 ? 14 : 22)); g.stroke(); }
+          if (t > tBand) { const pul = 0.5 + 0.5 * Math.sin((t - tBand) * 7); g.strokeStyle = `rgba(210,71,31,${0.55 + 0.45 * pul})`; g.lineWidth = 6; g.beginPath(); g.moveTo(X(6), 586); g.lineTo(X(6), 682); g.stroke(); }
+          g.restore();
+          const pf = Z.io3((t - tFood) / (tNine + 0.35 - tFood)), pa = Z.io3((t - tAll) / (tSix + 0.45 - tAll));
+          if (t > tFood) draw(g, P.mFood, { x: X(8.94 * pf), y: 596, alpha: ga * C((t - tFood) / 0.2) });
+          if (t > tAll) draw(g, P.mAll, { x: X(6.09 * pa), y: 672, alpha: ga * C((t - tAll) / 0.2) });
+        }
+        draw(g, P.table);
+        g.save(); g.translate(540, GY); g.scale(GS, GS); g.translate(-540, -1150);   // the basket group, larger than life
+        draw(g, P.hole); draw(g, P.backRim);
+        // items: grow or shrink on the spoken word, jiggle when the basket is mixed, return to last year's size for the loop
+        const pop = (t0) => Z.back((t - t0) / 0.7, 1.5) * (1 - back);
+        const mixJ = Math.sin(C((t - tMix) / 1.3) * Math.PI);
+        const life = (ph, k = 1) => ({ dy: Math.sin(t * 1.1 + ph) * 2.5 * k + Math.sin(t * 9 + ph) * 7 * mixJ, r: 0.02 * Math.sin(t * 0.8 + ph) + 0.06 * Math.sin(t * 8 + ph) * mixJ });
+        const items = [
+          ["garlic", 372, 1172, 1.0, 1, pop(tGar)], ["ginger", 712, 1168, 1.0, 2, pop(tGin)],
+          ["onion", 545, 1196, 1.0, 0, Z.back((t - tOnion) / 0.9, 1.3) * (1 - back)],
+          ["cauli", 815, 1196, 1.0, 3, pop(tCau)], ["potato", 262, 1206, 1.0, 4, pop(tPot)],
+        ];
+        for (const [nm, x, y, s0, ph, k] of items) {
+          const s = s0 * Lp(1, SC[nm], k), l = life(ph, nm === "onion" ? 0.4 : 1);
+          // anchor at the bottom so items rise out of the basket as they swell
+          const it = P[nm], h0 = nm === "onion" ? RO_H : nm === "garlic" ? 86 * 0.9 : nm === "cauli" ? 30 : nm === "ginger" ? 66 : 86;
+          drawItem(g, it, x, y - h0 * s + l.dy, s, l.r, t);
+        }
+        draw(g, P.front); draw(g, P.frontRim);
+        g.restore();
+        g.setTransform(1, 0, 0, 1, 0, 0);
+
+        // ---- overlays (screen space; the camera is still while they show)
+        const hookA = 1 - C((t - tMix) / 0.3) + C((t - tRet - 0.3) / 0.4);
+        $("hook").style.opacity = C(hookA);
+        $("hook").style.transform = `scale(${1 + 0.06 * Z.back((t - tOnion) / 0.5) * (1 - C((t - tOnion - 0.5) / 0.5))})`;
+        const tagA = (t0) => F(t, t0, tMix + 0.4, 0.25);
+        [["tPot", tPot], ["tCau", tCau], ["tGar", tGar], ["tGin", tGin]].forEach(([id, t0]) => {
+          $(id).style.opacity = tagA(t0); $(id).style.transform = `translateY(${16 * (1 - Z.back((t - t0) / 0.4))}px)`;
+        });
+        const gt = F(t, tMix + 0.1, tRet, 0.3);
+        $("gTitle").style.opacity = gt;
+        document.querySelectorAll(".tick").forEach((e) => { e.style.opacity = gt; });
+        $("lFood").style.opacity = F(t, tNine, tRet, 0.25);
+        $("lAll").style.opacity = F(t, tSix + 0.2, tRet, 0.25);
+        $("lBand").style.opacity = F(t, tBand + 0.15, tRet, 0.25);
+        $("s0").style.opacity = 1 - F(t, tMix, tRet, 0.3);
+        $("s1").style.opacity = F(t, tMix, tRet, 0.3);
+      };
+      const RO_H = 125 * 0.9, GS = 1.15, GY = 1190;
+      const go = () => { build(); H.ready(); };
+      document.fonts ? document.fonts.ready.then(go) : go();
+    </script>
+  </body>
+</html>

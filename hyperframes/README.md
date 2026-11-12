@@ -58,7 +58,7 @@ ones. A machine with a GPU is faster.
 
 ## Paper craft (sample 16)
 
-`samples/s16-papercraft` makes paper-relief scenes without any image files. `papercraft.js` is the engine. Each layer is a
+`samples/s16-papercraft` makes paper-relief scenes without any image files. `shared/lib/papercraft.js` is the engine (synced into every project, so Shorts can use it). Each layer is a
 polygon whose pixels get a height field: an edge dome plus a pattern such as coiled cords, spirals, rosettes, terraces,
 streaks or rough plaster. The height field is lit per pixel from the top left, darkened in the crevices and dropped onto
 a soft shadow. Static layers are baked once; live layers (sun spiral, rivers, lava) are relit every frame so their
@@ -131,6 +131,7 @@ steps are in `docs/SHORTS_BENCHMARKS.md`. `tools/shorts_build.py` holds each scr
 | `ia-southtip` | Indica Atlas (English, India) | Deep zoom through shaded terrain (z6, z8, z11) into Sentinel-2: Kanyakumari to Indira Point |
 | `um-parisiman` | UPSC Mains (Hindi) | 3D Lok Sabha seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
 | `ma-tsmc` | Moat Atlas (English, US) | Sentinel-2 before/after of TSMC Arizona, investment ladder, per-pixel globe |
+| `dk-onion` | Data Kadai (English, India) | Paper craft basket: onion +116 %, potato −14 %, then the CPI ruler (food 8.94 %, all items 6.09 %, RBI band). Silent draft: voice it on the Mac (MiniMax is blocked from the cloud session); numbers from MoSPI's Oct 2026 CPI release, to re-check before publishing |
 
 ```sh
 python3 hyperframes/tools/shorts_build.py story all      # needs a MiniMax key; --no-tts estimates the timings

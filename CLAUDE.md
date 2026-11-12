@@ -6,8 +6,9 @@
   patent drawing, photo with depth, timeline, scale comparison, big quote, hand-drawn notes or a 3D data map, start
   from the matching sample there instead of building from scratch. AK asked for this on 26 Oct 2026.
 - "Paper craft" is AK's name (12 Nov 2026) for layered paper, quilling or clay-relief scenes drawn and animated in code.
-  Start from `hyperframes/samples/s16-papercraft` (engine `papercraft.js`, scenes in `scenes.js`; see the Paper craft
-  section of `hyperframes/README.md`). It uses no image files. Label it on screen as an illustration.
+  Start from `hyperframes/samples/s16-papercraft` (engine `hyperframes/shared/lib/papercraft.js`, scenes in the
+  sample's `scenes.js`; see the Paper craft section of `hyperframes/README.md`; Short example: `hyperframes/shorts/dk-onion`).
+  It uses no image files. Label it on screen as an illustration.
 - Run `python3 hyperframes/tools/hf.py sync` before checking or rendering a sample; renders go to `out/hyperframes/`.
 - Every visual uses real data with its source on screen; anything illustrative is labelled as such on screen.
 - Every Short is built in the Reveal Loop format, `docs/SHORTS_FORMAT.md` (topic test, beat sheet, series per channel).

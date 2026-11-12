@@ -102,6 +102,21 @@ window.PS = (function () {
            pre(X,Y,d) -> aux (cached per pixel), bump (normal strength), ao (crevice darkening),
            amb (ambient), emit (0..1 glow, ignores shading), shadow {dx,dy,blur,a}, live (relit every frame), clip (rect) */
   function layer(spec) {
+    // spec.k > 1 bakes the layer at k times the resolution (for close-ups); draw() scales it back down
+    const k = spec.k || 1;
+    if (k !== 1) {
+      const s0 = spec, kk = 1 / k;
+      spec = Object.assign({}, s0, {
+        k: 1, poly: s0.poly.map(([x, y]) => [x * k, y * k]),
+        clip: (s0.clip || [-160, -160, W + 160, H + 160]).map((v) => v * k),
+        h: (X, Y, d, a, t) => s0.h(X * kk, Y * kk, d * kk, a, t) * k,
+        col: typeof s0.col === "function" ? (X, Y, d, a) => s0.col(X * kk, Y * kk, d * kk, a) : s0.col,
+        pre: s0.pre ? (X, Y, d) => s0.pre(X * kk, Y * kk, d * kk) : undefined,
+        shadow: s0.shadow === false ? false : Object.fromEntries(Object.entries(Object.assign({ dx: 6, dy: 10, blur: 12, a: 0.55 }, s0.shadow || {})).map(([n, v]) => [n, n === "a" ? v : v * k])),
+        aoR: Math.round((s0.aoR ?? 3) * k),
+      });
+      const L0 = layer(spec); L0.k = k; return L0;
+    }
     const poly = spec.poly;
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     for (const [x, y] of poly) { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y); }
@@ -201,19 +216,21 @@ window.PS = (function () {
   function draw(ctx, spr, tr = {}) {
     const a = tr.alpha ?? 1; if (a <= 0.003) return;
     ctx.save(); ctx.globalAlpha = a;
-    const ox = tr.x || 0, oy = tr.y || 0, sc = tr.sc ?? 1, rot = tr.rot || 0;
+    const ox = tr.x || 0, oy = tr.y || 0, sc = tr.sc ?? 1, rot = tr.rot || 0, ik = 1 / (spr.k || 1);
     if (tr.pivot) {
       ctx.translate(tr.pivot[0] + ox, tr.pivot[1] + oy); ctx.rotate(rot); ctx.scale(sc, tr.scy ?? sc); ctx.translate(-tr.pivot[0], -tr.pivot[1]);
+      ctx.scale(ik, ik);
       if (spr.shadow) ctx.drawImage(spr.shadow, spr.sx, spr.sy);
       ctx.drawImage(spr.lit, spr.x0, spr.y0);
     } else if (rot || sc !== 1) {
       // puffs are built around (0,0): shadow stays put, the lobe turns
-      ctx.translate(ox, oy); ctx.scale(sc, sc);
+      ctx.translate(ox, oy); ctx.scale(sc * ik, sc * ik);
       if (spr.shadow) ctx.drawImage(spr.shadow, spr.sx, spr.sy);
       ctx.rotate(rot); ctx.drawImage(spr.lit, spr.x0, spr.y0);
     } else {
-      if (spr.shadow) ctx.drawImage(spr.shadow, spr.sx + ox, spr.sy + oy);
-      ctx.drawImage(spr.lit, spr.x0 + ox, spr.y0 + oy);
+      ctx.translate(ox, oy); ctx.scale(ik, ik);
+      if (spr.shadow) ctx.drawImage(spr.shadow, spr.sx, spr.sy);
+      ctx.drawImage(spr.lit, spr.x0, spr.y0);
     }
     ctx.restore();
   }
@@ -260,7 +277,7 @@ window.PS = (function () {
     const p = blur * 2, c = canvas(L0.lit.width + 2 * p, L0.lit.height + 2 * p), g = c.getContext("2d");
     g.filter = `blur(${blur}px)`; g.drawImage(L0.lit, p, p); g.filter = "none";
     g.globalCompositeOperation = "source-in"; g.fillStyle = color; g.fillRect(0, 0, c.width, c.height);
-    return { lit: c, x0: L0.x0 - p, y0: L0.y0 - p, shadow: null };
+    return { lit: c, x0: L0.x0 - p, y0: L0.y0 - p, shadow: null, k: L0.k || 1 };
   }
   function additive(ctx, spr, alpha, tr = {}) { ctx.save(); ctx.globalCompositeOperation = "lighter"; draw(ctx, spr, Object.assign({}, tr, { alpha })); ctx.restore(); }
   // embers: seeded sparks rising from a source box, flickering

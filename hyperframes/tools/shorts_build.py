@@ -136,6 +136,27 @@ S["um-parisiman"] = dict(
     ])
 
 
+# Data Kadai · paper craft · numbers from MoSPI's CPI release for Oct 2026 (provisional, 12 Nov 2026), via AK's research
+# package (deep-research-report, 12 Nov 2026). VERIFY against the MoSPI release (item table) before publishing.
+S["dk-onion"] = dict(
+    channel="Data Kadai", lang="en-IN", series="(none yet: proposed 'Inside the Basket')",
+    title="Onions +116%, potatoes -14%: same inflation",
+    send="Everyone has noticed onion prices; almost nobody knows potatoes got cheaper in the same month, so 'food inflation 9%' is an average of opposite stories.",
+    beats=[
+        ("b1", [("Onions are up", "Onions are *up*"), ("a hundred and sixteen percent.", "*116%*")], ["Onions are", "a hundred and sixteen"]),
+        ("b2", [("So all food got costlier?", "So *all food* got costlier?")], ["So all food"]),
+        ("b3", [("Not quite.", "*Not quite.*"), ("Potatoes are fourteen percent cheaper.", "Potatoes *14% cheaper*")], ["Not quite", "Potatoes"]),
+        ("b4", [("Cauliflower,", "Cauliflower,"), ("down more than ten.", "down *10.6%*")], ["Cauliflower", "down more"]),
+        ("b5", [("But garlic is up sixty one.", "But garlic *+61%*"), ("Ginger, forty eight.", "Ginger *+48%*")], ["But garlic", "Ginger"]),
+        ("b6", [("Mix the whole basket,", "Mix the *whole basket,*"), ("and food inflation is almost nine percent.", "food inflation *8.94%*")],
+         ["Mix the whole", "and food", "almost nine"]),
+        ("b7", [("That pushed India's inflation", "That pushed India's inflation"), ("to six point zero nine.", "to *6.09%*")], ["That pushed", "to six point"]),
+        ("b8", [("Just over the R B I's", "Just over the RBI's"), ("six percent upper limit.", "*6%* upper limit.")], ["Just over", "six percent"]),
+        ("b9", [("And the strangest part?", "And the *strangest* part?"), ("Right in your kitchen,", "Right in *your kitchen,*")],
+         ["And the strangest", "Right in your"]),
+    ])
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))

@@ -1,4 +1,4 @@
-/* Paperscape engine: layered paper / clay relief scenes drawn entirely in code.
+/* Paper craft engine: layered paper / clay relief scenes drawn entirely in code.
    Every layer is a polygon. Its pixels get a height field (edge dome + a pattern such as coiled cords, spirals,
    streaks or rough plaster), lit per pixel from the top left, darkened in the crevices and dropped on a soft shadow.
    Static layers are baked once into sprites; "live" layers (sun, rivers, lava) are relit every frame so their

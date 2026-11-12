@@ -22,7 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
-| 16 | Paperscape: layered paper / quilled-cord relief landscapes drawn in code, every element moving (vertical) | Indica Atlas, Shorts openers, channel art | Style sample: illustrative, no data (three scenes: valley, ember volcano, moon jungle) | `samples/s16-paperscape` |
+| 16 | Paper craft: layered paper / quilled-cord relief landscapes drawn in code, every element moving (vertical) | Indica Atlas, Shorts openers, channel art | Style sample: illustrative, no data (three scenes: valley, ember volcano, moon jungle) | `samples/s16-papercraft` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -56,9 +56,9 @@ ones. A machine with a GPU is faster.
 
 `shared/lib/hf.js` holds the clock and easing helpers; `shared/base.css` holds the fonts and themes.
 
-## Paperscape (sample 16)
+## Paper craft (sample 16)
 
-`samples/s16-paperscape` makes paper-relief scenes without any image files. `paperscape.js` is the engine. Each layer is a
+`samples/s16-papercraft` makes paper-relief scenes without any image files. `papercraft.js` is the engine. Each layer is a
 polygon whose pixels get a height field: an edge dome plus a pattern such as coiled cords, spirals, rosettes, terraces,
 streaks or rough plaster. The height field is lit per pixel from the top left, darkened in the crevices and dropped onto
 a soft shadow. Static layers are baked once; live layers (sun spiral, rivers, lava) are relit every frame so their

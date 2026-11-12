@@ -1,4 +1,4 @@
-/* Three paperscape scenes. Each builder bakes its layers once and returns render(ctx, t) for t in [0, SCENE_D].
+/* Three paper craft scenes. Each builder bakes its layers once and returns render(ctx, t) for t in [0, SCENE_D].
    Order is back to front; z is parallax depth (0 far, 1 near). */
 window.SCENES = (function () {
   const { glow, additive, embers, radial, W, H, N, N2, cord, sstep, spiral, mix, hex, circle, blob, band, ribbon, layer, puff, draw, cloud, drawCloud, rng } = PS;

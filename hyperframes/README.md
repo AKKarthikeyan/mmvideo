@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -22,6 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | Paperscape: layered paper / quilled-cord relief landscapes drawn in code, every element moving (vertical) | Indica Atlas, Shorts openers, channel art | Style sample: illustrative, no data (three scenes: valley, ember volcano, moon jungle) | `samples/s16-paperscape` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -54,6 +55,18 @@ ones. A machine with a GPU is faster.
 3. Run `hf.py check`, look at `hf.py snap` stills, then render.
 
 `shared/lib/hf.js` holds the clock and easing helpers; `shared/base.css` holds the fonts and themes.
+
+## Paperscape (sample 16)
+
+`samples/s16-paperscape` makes paper-relief scenes without any image files. `paperscape.js` is the engine. Each layer is a
+polygon whose pixels get a height field: an edge dome plus a pattern such as coiled cords, spirals, rosettes, terraces,
+streaks or rough plaster. The height field is lit per pixel from the top left, darkened in the crevices and dropped onto
+a soft shadow. Static layers are baked once; live layers (sun spiral, rivers, lava) are relit every frame so their
+texture flows. `scenes.js` holds the three scenes. Each scene is a builder that bakes its layers and returns
+`render(ctx, t)`. To make a new scene, copy a builder and change the shapes and colours, then add it to `SCENES.list`.
+Motion comes from camera push-in with depth parallax, layers laid down in order at the start, drifting and breathing
+cloud lobes, spirals that wind, flowing water and lava, swaying trees, smoke puffs, embers and birds. Build time is about
+17 s for all three scenes, and a frame takes about 0.15 s.
 
 ## Data tools
 

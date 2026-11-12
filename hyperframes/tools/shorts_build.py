@@ -139,7 +139,7 @@ S["um-parisiman"] = dict(
 # Data Kadai · paper craft · numbers from MoSPI's CPI release for Oct 2026 (provisional, 12 Nov 2026), via AK's research
 # package (deep-research-report, 12 Nov 2026). VERIFY against the MoSPI release (item table) before publishing.
 S["dk-onion"] = dict(
-    channel="Data Kadai", lang="en-IN", series="(none yet: proposed 'Inside the Basket')",
+    channel="Data Kadai", lang="en-IN", series="(none yet: proposed 'Inside the Basket')", speed=0.96,  # lands in AK's 25-30 s
     title="Onions +116%, potatoes -14%: same inflation",
     send="Everyone has noticed onion prices; almost nobody knows potatoes got cheaper in the same month, so 'food inflation 9%' is an average of opposite stories.",
     beats=[
@@ -158,7 +158,7 @@ S["dk-onion"] = dict(
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-def tts(text, lang, path):
+def tts(text, lang, path, speed=1):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
     if cmd:                                   # a local voice: the command reads {text} and writes {out}
         txt = path.with_suffix(".txt"); txt.write_text(text, encoding="utf-8"); wav = path.with_suffix(".local.wav")
@@ -170,7 +170,7 @@ def tts(text, lang, path):
     import requests
     v = VOICE[lang]
     body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": v["boost"],
-            "voice_setting": {"voice_id": v["voice_id"], "speed": 1, "vol": 1, "pitch": 0},
+            "voice_setting": {"voice_id": v["voice_id"], "speed": speed, "vol": 1, "pitch": 0},
             "audio_setting": {"sample_rate": SR, "bitrate": 128000, "format": "mp3", "channel": 1}}
     key = os.environ.get("MINIMAX_API_KEY", "proxy-injected")
     for attempt in range(4):
@@ -219,7 +219,8 @@ def story(sid, use_tts=True, clips_dir=None):
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
     says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
-    engine = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_")) or VOICE[lang]["voice_id"]
+    speed = sp.get("speed", 1)                 # per-Short narration speed (MiniMax); part of the cache key when not 1
+    engine = (os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_")) or VOICE[lang]["voice_id"]) + (f"@{speed}" if speed != 1 else "")
     clip = lambda say, k=0: adir / (hashlib.sha1((engine + say + ("#%d" % k if k else "")).encode()).hexdigest()[:12] + ".mp3")
     audio = {}
     if clips_dir:                               # recorded lines, one file per beat
@@ -231,7 +232,7 @@ def story(sid, use_tts=True, clips_dir=None):
         voiced = True
     elif voiced:
         for say in says:
-            if not clip(say).exists() and not tts(say, lang, clip(say)):
+            if not clip(say).exists() and not tts(say, lang, clip(say), speed):
                 print(f"  {sid}: no voice (MiniMax key missing or refused); timings are estimates"); voiced = False; break
             audio[say] = pcm(clip(say))
     if voiced and not clips_dir:                # a beat far slower than the rest for its text was probably said twice: voice it again
@@ -240,7 +241,7 @@ def story(sid, use_tts=True, clips_dir=None):
             k = 0
             while rate[say] > 1.4 * med and len(say) > 12 and k < 3:
                 k += 1
-                if clip(say, k).exists() or tts(say, lang, clip(say, k)):
+                if clip(say, k).exists() or tts(say, lang, clip(say, k), speed):
                     a = pcm(clip(say, k))
                     if len(a) < len(audio[say]):
                         audio[say] = a; rate[say] = len(a) / SR / len(say)

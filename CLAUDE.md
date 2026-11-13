@@ -17,3 +17,5 @@
 - Two more looks for explainer Shorts, both usable on either channel: the cut-out cartoon (`hyperframes/shorts/mm-hundred`)
   and the paper desk (`hyperframes/shorts/dk-pocket`, helpers in `hyperframes/shared/lib/paper.js`). See
   `docs/PREMIUM_LOOKS_AND_TRENDS.md`, section 7.
+- The Kanyakumari format works (AK, 13 Nov 2026): `hyperframes/shorts/ia-southtip`. Build more Shorts that way; the recipe
+  and the state of all the Shorts work are in `docs/HANDOFF.md`.

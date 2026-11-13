@@ -68,6 +68,9 @@ The same two routes work for any language (`SHORTS_TTS_CMD_EN_IN`, `SHORTS_TTS_C
 
 ## `ia-southtip` · Indica Atlas
 
+**AK, 13 Nov 2026: this format works.** Build more Shorts this way. The recipe, step by step, is in
+`docs/HANDOFF.md`, section 3.
+
 **Topic test.** Familiar: every Indian learnt "Kanyakumari, the southern tip". Hidden: the real tip is 1,800 km away and
 eleven times closer to Indonesia. Send: "did you know Kanyakumari isn't the southern tip?"
 

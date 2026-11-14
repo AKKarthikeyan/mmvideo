@@ -13,6 +13,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Regional audio tracks (Tamil, Hindi; English stays original) | `scripts/audio_tracks.py`, `scripts/translations/`, `docs/AUDIO_TRACKS.md` |
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
 | Shorts and Reels rules, all channels (and the gate that checks a built Short) | `docs/SHORTS_FORMAT.md` (the Reveal Loop), `docs/SHORTS_BENCHMARKS.md` and `hyperframes/shorts/` (three benchmark Shorts), `docs/SHORTS_RULES.md`, `docs/SHORTS_STUDY.md`, `docs/SHORTS_FACTCHECK.md`, `scripts/shorts_check.py`, `scripts/shorts_study/` |
+| UPSC Mains channel: Shorts and long-video growth plan, visual per exam concept (draft) | `docs/UPSC_MAINS_PLAYBOOK.md` |
 | Premium explainer visuals (HyperFrames library, 15 samples) | `hyperframes/` (`hyperframes/README.md`), `hyperframes/tools/hf.py` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits

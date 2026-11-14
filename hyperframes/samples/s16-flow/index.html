@@ -180,19 +180,31 @@
         ["e7", "n", [[DX, 486], [DX, 572]], 10.8, 0.45, [T.no, DX + 18, 512]],
         ["e8", "", [[1380, 640], [1452, 640], [1452, 440], [1500, 440]], 12.9, 0.6],
       ];
+      // Chrome restarts the dash pattern at every "M", so a multi-part stroke is split into one <path> per sub-path
+      // and the parts are drawn one after another, like a pen: the line first, then its head.
+      const pen = (parent, d, cls, before) => {
+        const parts = d.match(/M[^M]*/g).map((sub) => {
+          const p = document.createElementNS(NS, "path");
+          p.setAttribute("d", sub); p.setAttribute("class", cls);
+          before ? parent.insertBefore(p, before) : parent.appendChild(p);
+          const n = p.getTotalLength(); p.style.strokeDasharray = `${n} ${n + 1}`; return { p, n };
+        });
+        return { parts, total: parts.reduce((a, q) => a + q.n, 0) };
+      };
+      const draw = (pn, u) => {
+        let left = u * pn.total;
+        for (const q of pn.parts) { const k = Math.max(0, Math.min(q.n, left)); q.p.style.strokeDashoffset = q.n - k; left -= q.n; }
+      };
       const edge = [];
       for (const [id, cls, P, t, d, lab] of A) {
-        const p = document.createElementNS(NS, "path");
         const [ax, ay] = P[P.length - 2], [bx, by] = P[P.length - 1];
         const g = Math.atan2(by - ay, bx - ax), hh = 18;
         let s = "M " + P.map((q) => q.join(" ")).join(" L ");
         s += ` M ${bx - hh * Math.cos(g - 0.5)} ${by - hh * Math.sin(g - 0.5)} L ${bx} ${by} L ${bx - hh * Math.cos(g + 0.5)} ${by - hh * Math.sin(g + 0.5)}`;
-        p.setAttribute("d", s); p.setAttribute("class", "ed " + cls);
-        $("edges").insertBefore(p, $("tok"));
+        const p = pen($("edges"), s, "ed " + cls, $("tok"));
         // the token runs along the line only (not the head)
         const line = document.createElementNS(NS, "path");
         line.setAttribute("d", "M " + P.map((q) => q.join(" ")).join(" L "));
-        const n = p.getTotalLength(); p.style.strokeDasharray = n;
         let le = null;
         if (lab) {
           le = document.createElement("div"); le.className = "el"; le.textContent = lab[0];
@@ -201,7 +213,7 @@
           if (id === "e6" || id === "e4") le.style.transform = "translateX(-50%)";
           $("crisp").appendChild(le);
         }
-        edge.push({ p, n, line, ln: line.getTotalLength(), t, d, le });
+        edge.push({ p, line, ln: line.getTotalLength(), t, d, le });
       }
 
       $("kick").textContent = T.kick; $("head").textContent = T.head; $("src").textContent = T.src;
@@ -237,11 +249,7 @@
         [`${S.p[0]}<small>${S.p[1]}</small>`, 1300, 420, 21.4], [S.a, 1655, 420, 22.05], [S.no, 1010, 568, 22.35, "lbl"],
         [`${S.j[0]}<small>${S.j[1]}</small>`, 960, 685, 22.8], [S.note, 200, 830, 23.6, "note"],
       ];
-      const sk = SK.map(([d, t, du, cls]) => {
-        const p = document.createElementNS(NS, "path");
-        p.setAttribute("d", d); p.setAttribute("class", "sp " + (cls || "")); $("sk").appendChild(p);
-        const n = p.getTotalLength(); p.style.strokeDasharray = n; return { p, n, t, du };
-      });
+      const sk = SK.map(([d, t, du, cls]) => ({ p: pen($("sk"), d, "sp " + (cls || "")), t, du }));
       const st = ST.map(([h, x, y, t, cls]) => {
         const d = document.createElement("div"); d.className = "st " + (cls || ""); d.innerHTML = h;
         d.style.left = x + "px"; d.style.top = y + "px"; $("sheet").appendChild(d); return { d, t };
@@ -267,7 +275,7 @@
         let tok = null;
         for (const e of edge) {
           const u = E.io2((t - e.t) / e.d);
-          e.p.style.strokeDashoffset = e.n * (1 - u);
+          draw(e.p, u);
           if (u > 0 && u < 1) tok = e.line.getPointAtLength(e.ln * u);
           if (e.le) e.le.style.opacity = F(t, e.t + e.d * 0.6, 99, 0.3);
         }
@@ -285,7 +293,7 @@
         $("crisp").style.visibility = t >= 19.0 ? "hidden" : "visible";   // covered by then; hidden so nothing sits under the page
         $("kick2").style.opacity = F(t, 19.0, 99, 0.4);
         $("src2").style.opacity = F(t, 19.2, 99, 0.4);
-        for (const s of sk) s.p.style.strokeDashoffset = s.n * (1 - E.io2((t - s.t) / s.du));
+        for (const s of sk) draw(s.p, E.io2((t - s.t) / s.du));
         for (const s of st) s.d.style.opacity = F(t, s.t, 99, 0.3);
       };
       document.fonts.ready.then(() => H.ready());

@@ -84,6 +84,7 @@ def sync(names):
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
     for dst, src in SHORT_LINKS.items():
         if (SHORTS / dst).parents[1].is_dir():
+            (SHORTS / dst).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(LIB / src, SHORTS / dst)
     for dst, src in LINKS.items():
         d = SAMPLES / dst

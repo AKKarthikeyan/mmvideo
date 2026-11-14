@@ -19,13 +19,13 @@
     </style>
   </head>
   <body>
-    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="24" data-width="1920" data-height="1080">
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="25.6" data-width="1920" data-height="1080">
       <div id="rule"></div>
       <div id="card"><div id="num"></div><div id="name"></div><div id="for"></div><div id="data"></div></div>
       <div id="grain" data-layout-ignore></div>
     </div>
     <script>
-      const H = HF.setup(24), E = HF.ease;
+      const H = HF.setup(25.6), E = HF.ease;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const C = [
@@ -44,6 +44,7 @@
         ["BIG-TYPE QUOTE", "Moat & Margin", "Real letter: Nomad, June 2004"],
         ["HAND-DRAWN NOTES", "All five channels", "Real letter: Nomad, June 2006"],
         ["3D DATA MAP", "Indica Atlas · Data Kadai", "Built earlier: Lok Sabha seats by state"],
+        ["PROCESS FLOWCHART", "UPSC Mains", "Constitution of India: how a bill becomes law"],
       ];
       const CL = 1.6;
       H.render = (t) => {

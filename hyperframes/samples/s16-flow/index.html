@@ -1,0 +1,294 @@
+<!doctype html>
+<!-- Sample 16 · Process flowchart that builds step by step, then turns into the hand-drawn exam version.
+     Story: how an ordinary bill becomes law (Constitution of India, Art. 100, 107, 108, 111, 368).
+     To reuse: change LANG, the text in T, and the boxes (N), arrows (A) and sketch (SK) below; every position is in px. -->
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Process flowchart</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      @font-face { font-family: Mukta; font-weight: 500; src: url("assets/fonts/mukta-devanagari-500-normal.woff2") format("woff2"); unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+      @font-face { font-family: Mukta; font-weight: 500; src: url("assets/fonts/mukta-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2010-2027, U+2190-21FF; }
+      @font-face { font-family: Mukta; font-weight: 700; src: url("assets/fonts/mukta-devanagari-700-normal.woff2") format("woff2"); unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+      @font-face { font-family: Mukta; font-weight: 700; src: url("assets/fonts/mukta-latin-700-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2010-2027, U+2190-21FF; }
+      #root { --acc: #ffb020; --ok: #4cc38a; --ink: #1f3a8a; --tf: Mukta, Inter, sans-serif;
+        background: #0a0f1c; }
+      #root.en { --tf: Inter, sans-serif; }
+      #root.en .bx .t { font-size: 30px; }
+      #root.en .el { font-size: 26px; }
+      #root.en .src { font-family: Inter, sans-serif; font-size: 28px; }
+      #crisp { position: absolute; inset: 0; transform-origin: 50% 45%;
+        background-image: linear-gradient(rgba(120, 150, 210, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 150, 210, 0.06) 1px, transparent 1px);
+        background-size: 48px 48px; }
+      #crisp .kicker { color: var(--acc); }
+      #root:not(.en) .kicker { font-family: Mukta, sans-serif; letter-spacing: 0.04em; }
+      #root:not(.en) .src { font-family: Mukta, sans-serif; font-size: 28px; }
+      #crisp .head { font-family: var(--tf); font-weight: 700; font-size: 58px; top: 128px; letter-spacing: 0; }
+      .bx { position: absolute; background: #121a2e; border: 2px solid #2b3654; border-radius: 12px; padding: 18px 22px; opacity: 0; }
+      .bx .t { font: 700 34px/1.15 var(--tf); color: #f7f3ea; }
+      .bx .s { font: 500 28px/1.3 var(--tf); color: #b9c0c8; margin-top: 8px; }
+      .bx .s b { color: var(--acc); font-weight: 700; }
+      .bx ul { list-style: none; margin-top: 8px; }
+      .bx li { font: 500 28px/1.35 var(--tf); color: #e7e9ee; }
+      .bx li::before { content: "• "; color: var(--acc); }
+      .bx .gl { position: absolute; inset: -2px; border: 3px solid var(--acc); border-radius: 12px; opacity: 0; box-shadow: 0 0 28px rgba(255, 176, 32, 0.45); }
+      .bx.ok { border-color: rgba(76, 195, 138, 0.8); }
+      .bx.ok .t { color: var(--ok); }
+      .bx.out { padding: 16px 20px; }
+      .bx.out .t { font-size: 30px; }
+      #dia { position: absolute; width: 150px; height: 150px; transform: rotate(45deg); background: #121a2e; border: 2px solid var(--acc); border-radius: 10px; }
+      #diaT { position: absolute; width: 240px; text-align: center; font: 700 36px/1 var(--tf); color: var(--acc); }
+      #edges { position: absolute; left: 0; top: 0; }
+      .ed { fill: none; stroke: #c9d2e3; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .ed.y { stroke: var(--ok); }
+      .ed.n { stroke: #ff5a3c; }
+      .ed.r { stroke: #8fa3c8; }
+      .el { position: absolute; font: 700 30px/1 var(--tf); white-space: nowrap; opacity: 0; }
+      #tok { fill: var(--acc); }
+      #panel { position: absolute; left: 110px; top: 540px; width: 480px; opacity: 0; }
+      #panel .top { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
+      #panel .num { font: 700 150px/0.8 Oswald, sans-serif; color: var(--acc); width: 90px; }
+      #panel .lab { font: 700 34px/1.2 var(--tf); color: #f7f3ea; }
+      #panel .row { display: flex; gap: 18px; font: 500 28px/1.3 var(--tf); color: #e7e9ee; margin-top: 10px; opacity: 0; }
+      #panel .row b { font: 700 28px/1.2 Oswald, sans-serif; color: var(--acc); width: 70px; flex: none; }
+      #panel .not { margin-top: 18px; padding-top: 14px; border-top: 2px solid #2b3654; font: 500 28px/1.3 var(--tf); color: #ff8a70; opacity: 0; }
+      #crisp .src { right: 110px; bottom: 30px; font-size: 28px; }
+      /* the exam version: an answer-booklet page */
+      #sheet { position: absolute; inset: 0; background-color: #f4efe2;
+        background-image: linear-gradient(90deg, transparent 148px, rgba(200, 40, 30, 0.45) 148px, rgba(200, 40, 30, 0.45) 151px, transparent 151px),
+          repeating-linear-gradient(transparent 0 47px, rgba(60, 100, 170, 0.18) 47px 48px);
+        box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.5); }
+      #sheet .kicker { color: #7a1a10; font-family: var(--tf); letter-spacing: 0.06em; font-size: 34px; top: 100px; left: 190px; }
+      #sheet .src { color: #4a4237; bottom: 30px; font-size: 28px; }
+      #sk { position: absolute; left: 0; top: 0; }
+      .sp { fill: none; stroke: var(--ink); stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+      .sp.red { stroke: #c42b1c; }
+      .st { position: absolute; transform: translate(-50%, -50%) rotate(-1deg); text-align: center; white-space: nowrap;
+        font: 500 38px/1.1 var(--tf); color: var(--ink); opacity: 0; }
+      #root.en .st { font-family: Virgil, cursive; font-size: 34px; }
+      .st small { display: block; font-size: 28px; color: #c42b1c; }
+      .st.lbl { font-size: 30px; color: #c42b1c; }
+      .st.note { transform: rotate(-1deg); text-align: left; font-size: 32px; line-height: 1.35; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="27.5" data-width="1920" data-height="1080">
+      <div id="crisp">
+        <svg id="edges" width="1920" height="1080" viewBox="0 0 1920 1080"><circle id="tok" r="10" cx="0" cy="0" visibility="hidden" /></svg>
+        <div id="dia"></div><div id="diaT"></div>
+        <div id="panel">
+          <div class="top"><div class="num" id="num">0</div><div class="lab" id="panelLab"></div></div>
+          <div class="row"><b>1961</b><span id="r1"></span></div>
+          <div class="row"><b>1978</b><span id="r2"></span></div>
+          <div class="row"><b>2002</b><span id="r3"></span></div>
+          <div class="not" id="not"></div>
+        </div>
+        <div class="kicker" id="kick"></div>
+        <div class="head" id="head"></div>
+        <div class="src" id="src"></div>
+      </div>
+      <div id="sheet">
+        <svg id="sk" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+        <div class="kicker" id="kick2"></div>
+        <div class="src" id="src2"></div>
+      </div>
+      <div id="grain" data-layout-ignore></div>
+    </div>
+    <script>
+      const LANG = "hi";   // "hi" for the UPSC Mains (Hindi) channel, "en" for English
+      const T = {
+        hi: {
+          kick: "UPSC मेन्स · GS-II · संसद", head: "साधारण विधेयक क़ानून कैसे बनता है",
+          n1: ["किसी भी सदन में पेश", "<b>अनु. 107(1)</b>"], n2: ["वह सदन पारित करता है", "<b>अनु. 100</b> · बहुमत से"],
+          n3: ["दूसरा सदन", "<b>अनु. 107(2)</b> · दोनों की सहमति ज़रूरी"], dia: "सहमत?",
+          n5: ["राष्ट्रपति", "<b>अनु. 111</b>"], o1: "अनुमति → अधिनियम", o2: "अनुमति रोकना", o3: "पुनर्विचार के लिए लौटाना",
+          n4: ["संयुक्त बैठक", "<b>अनु. 108</b> · राष्ट्रपति बुलाते हैं",
+            ["दूसरे सदन ने अस्वीकार किया", "संशोधनों पर अंतिम असहमति", "6 महीने से ज़्यादा पड़ा रहा"],
+            "फ़ैसला: दोनों सदनों के उपस्थित और मत देने वाले कुल सदस्यों का बहुमत"],
+          yes: "हाँ", no: "नहीं", ret: "दोबारा पारित हुआ, तो अनुमति देनी ही होगी",
+          panel: "बार ही हुई है<br>संयुक्त बैठक", r: ["दहेज प्रतिषेध विधेयक", "बैंककारी सेवा आयोग (निरसन) विधेयक", "आतंकवाद निवारण विधेयक"],
+          not: "धन विधेयक और संविधान संशोधन विधेयक पर संयुक्त बैठक नहीं (अनु. 108, 368)",
+          src: "स्रोत: भारत का संविधान, अनु. 100, 107, 108, 111, 368 · संयुक्त बैठकें: लोक सभा सचिवालय",
+          kick2: "परीक्षा में ऐसे बनाएँ · 30 सेकंड",
+          sk: { h1: "सदन 1", h2: "सदन 2", d: "सहमत?", p: ["राष्ट्रपति", "अनु. 111"], a: "अधिनियम", j: ["संयुक्त बैठक", "अनु. 108"],
+            yes: "हाँ", no: "नहीं", note: "× धन विधेयक, संविधान संशोधन: संयुक्त बैठक नहीं<br>अब तक केवल 3 बार: 1961, 1978, 2002" },
+          src2: "स्रोत: भारत का संविधान · आरेख हमारा",
+        },
+        en: {
+          kick: "UPSC MAINS · GS-II · PARLIAMENT", head: "How an ordinary bill becomes law",
+          n1: ["Introduced in either House", "<b>Art. 107(1)</b>"], n2: ["That House passes it", "<b>Art. 100</b> · by majority"],
+          n3: ["The other House", "<b>Art. 107(2)</b> · both must agree"], dia: "Agree?",
+          n5: ["The President", "<b>Art. 111</b>"], o1: "Assent → Act", o2: "Withholds assent", o3: "Returns for reconsideration",
+          n4: ["Joint sitting", "<b>Art. 108</b> · called by the President",
+            ["Other House rejects it", "Deadlock on amendments", "Pending over 6 months"],
+            "Majority of both Houses, present and voting"],
+          yes: "Yes", no: "No", ret: "Passed again: the President must assent",
+          panel: "joint sittings<br>ever held", r: ["Dowry Prohibition Bill", "Banking Service Commission (Repeal) Bill", "Prevention of Terrorism Bill"],
+          not: "No joint sitting for Money Bills or Amendment Bills (Art. 108, 368)",
+          src: "Source: Constitution of India, Art. 100, 107, 108, 111, 368 · joint sittings: Lok Sabha Secretariat",
+          kick2: "EXAM VERSION · DRAW IT IN 30 SECONDS",
+          sk: { h1: "House 1", h2: "House 2", d: "Agree?", p: ["President", "Art. 111"], a: "Act", j: ["Joint sitting", "Art. 108"],
+            yes: "Yes", no: "No", note: "× Money Bills, Constitution amendments: no joint sitting<br>Used only 3 times: 1961, 1978, 2002" },
+          src2: "Source: Constitution of India · diagram is ours",
+        },
+      }[LANG];
+
+      const H = HF.setup(27.5), E = HF.ease, F = HF.fade, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const NS = "http://www.w3.org/2000/svg";
+      if (LANG === "en") { $("root").classList.add("en"); document.documentElement.lang = "en"; }
+
+      // boxes: id, x, y, w, appear time, class, content
+      const N = [
+        ["n1", 110, 300, 340, 1.0, "", T.n1], ["n2", 520, 300, 300, 2.3, "", T.n2], ["n3", 890, 300, 320, 3.5, "", T.n3],
+        ["n5", 1500, 300, 330, 6.0, "", T.n5, 170],
+        ["o1", 1530, 535, 300, 7.3, "out ok", [T.o1]], ["o2", 1530, 645, 300, 7.8, "out", [T.o2]], ["o3", 1530, 755, 300, 8.3, "out", [T.o3]],
+        ["n4", 880, 572, 500, 11.4, "", T.n4],
+      ];
+      const box = {};
+      for (const [id, x, y, w, t, cls, c, h0] of N) {
+        const d = document.createElement("div");
+        d.className = "bx " + cls; d.id = id;
+        Object.assign(d.style, { left: x + "px", top: y + "px", width: w + "px" });
+        if (h0) d.style.height = h0 + "px";
+        let h = `<div class="t">${c[0]}</div>`;
+        if (c[1]) h += `<div class="s">${c[1]}</div>`;
+        if (c[2]) h += "<ul>" + c[2].map((s) => `<li>${s}</li>`).join("") + "</ul>";
+        if (c[3]) h += `<div class="s">${c[3]}</div>`;
+        d.innerHTML = h + '<div class="gl"></div>';
+        $("crisp").insertBefore(d, $("dia"));
+        box[id] = { el: d, gl: d.querySelector(".gl"), t };
+      }
+      const DX = 1350, DY = 380, DT = 4.8;            // the decision diamond
+      Object.assign($("dia").style, { left: DX - 75 + "px", top: DY - 75 + "px" });
+      Object.assign($("diaT").style, { left: DX - 120 + "px", top: DY - 18 + "px" });
+      $("diaT").textContent = T.dia;
+
+      // arrows: id, class, points, start, duration, label [text, x, y]; a head is added at the last point
+      const A = [
+        ["e1", "", [[450, 375], [520, 375]], 1.8, 0.45],
+        ["e2", "", [[820, 375], [890, 375]], 3.0, 0.45],
+        ["e3", "", [[1210, 380], [1244, 380]], 4.3, 0.4],
+        ["e4", "y", [[1456, 380], [1500, 380]], 5.5, 0.35, [T.yes, 1478, 330]],
+        ["e5", "", [[1665, 470], [1665, 505], [1505, 505], [1505, 799], [1530, 799], [1505, 799], [1505, 689], [1530, 689], [1505, 689], [1505, 579], [1530, 579]], 6.8, 0.6],
+        ["e6", "r", [[1680, 843], [1680, 975], [670, 975], [670, 455]], 9.0, 1.3, [T.ret, 1170, 930]],
+        ["e7", "n", [[DX, 486], [DX, 572]], 10.8, 0.45, [T.no, DX + 18, 512]],
+        ["e8", "", [[1380, 640], [1452, 640], [1452, 440], [1500, 440]], 12.9, 0.6],
+      ];
+      const edge = [];
+      for (const [id, cls, P, t, d, lab] of A) {
+        const p = document.createElementNS(NS, "path");
+        const [ax, ay] = P[P.length - 2], [bx, by] = P[P.length - 1];
+        const g = Math.atan2(by - ay, bx - ax), hh = 18;
+        let s = "M " + P.map((q) => q.join(" ")).join(" L ");
+        s += ` M ${bx - hh * Math.cos(g - 0.5)} ${by - hh * Math.sin(g - 0.5)} L ${bx} ${by} L ${bx - hh * Math.cos(g + 0.5)} ${by - hh * Math.sin(g + 0.5)}`;
+        p.setAttribute("d", s); p.setAttribute("class", "ed " + cls);
+        $("edges").insertBefore(p, $("tok"));
+        // the token runs along the line only (not the head)
+        const line = document.createElementNS(NS, "path");
+        line.setAttribute("d", "M " + P.map((q) => q.join(" ")).join(" L "));
+        const n = p.getTotalLength(); p.style.strokeDasharray = n;
+        let le = null;
+        if (lab) {
+          le = document.createElement("div"); le.className = "el"; le.textContent = lab[0];
+          le.style.color = cls === "y" ? "var(--ok)" : cls === "n" ? "#ff5a3c" : "#c9d2e3";
+          le.style.left = lab[1] + "px"; le.style.top = lab[2] + "px";
+          if (id === "e6" || id === "e4") le.style.transform = "translateX(-50%)";
+          $("crisp").appendChild(le);
+        }
+        edge.push({ p, n, line, ln: line.getTotalLength(), t, d, le });
+      }
+
+      $("kick").textContent = T.kick; $("head").textContent = T.head; $("src").textContent = T.src;
+      $("panelLab").innerHTML = T.panel; $("r1").textContent = T.r[0]; $("r2").textContent = T.r[1]; $("r3").textContent = T.r[2];
+      $("not").textContent = T.not; $("kick2").textContent = T.kick2; $("src2").textContent = T.src2;
+
+      // ---- the exam version: wobbly pen strokes from a seeded random, so every render is identical
+      let sd = 16; const rnd = () => ((sd = (sd * 16807) % 2147483647) / 2147483647), j = (a) => (rnd() - 0.5) * a;
+      const rl = (x0, y0, x1, y1) => {
+        const mx = (x0 + x1) / 2 + j(8), my = (y0 + y1) / 2 + j(8);
+        return `M ${x0 + j(6)} ${y0 + j(6)} Q ${mx} ${my} ${x1 + j(6)} ${y1 + j(6)}`;
+      };
+      const rbox = (x0, y0, x1, y1) => [rl(x0 - 8, y0, x1 + 6, y0), rl(x1, y0 - 6, x1, y1 + 8), rl(x1 + 8, y1, x0 - 6, y1), rl(x0, y1 + 6, x0, y0 - 8)].join(" ");
+      const rdia = (cx, cy, r) => [rl(cx - r, cy, cx, cy - r), rl(cx, cy - r, cx + r, cy), rl(cx + r, cy, cx, cy + r), rl(cx, cy + r, cx - r - 4, cy + 2)].join(" ");
+      const rarr = (P) => {
+        let s = "";
+        for (let i = 1; i < P.length; i++) s += rl(P[i - 1][0], P[i - 1][1], P[i][0], P[i][1]) + " ";
+        const [ax, ay] = P[P.length - 2], [bx, by] = P[P.length - 1], g = Math.atan2(by - ay, bx - ax), hh = 20;
+        return s + `M ${bx - hh * Math.cos(g - 0.55)} ${by - hh * Math.sin(g - 0.55)} L ${bx} ${by} L ${bx - hh * Math.cos(g + 0.55)} ${by - hh * Math.sin(g + 0.55)}`;
+      };
+      const S = T.sk;
+      // stroke: path, start, duration, class · text: html, x, y, start, class
+      const SK = [
+        [rbox(200, 370, 420, 470), 19, 0.45], [rarr([[420, 420], [540, 420]]), 19.45, 0.3],
+        [rbox(540, 370, 760, 470), 19.7, 0.45], [rarr([[760, 420], [862, 420]]), 20.15, 0.3],
+        [rdia(960, 420, 98), 20.4, 0.5], [rarr([[1058, 420], [1170, 420]]), 20.9, 0.3],
+        [rbox(1170, 355, 1430, 485), 21.2, 0.45], [rarr([[1430, 420], [1550, 420]]), 21.65, 0.3],
+        [rbox(1550, 370, 1760, 470), 21.9, 0.4], [rarr([[960, 518], [960, 620]]), 22.3, 0.3, "red"],
+        [rbox(800, 620, 1120, 750), 22.6, 0.5], [rarr([[1120, 685], [1300, 685], [1300, 485]]), 23.1, 0.4],
+      ];
+      const ST = [
+        [S.h1, 310, 420, 19.2], [S.h2, 650, 420, 19.9], [S.d, 960, 420, 20.6], [S.yes, 1112, 384, 20.95, "lbl"],
+        [`${S.p[0]}<small>${S.p[1]}</small>`, 1300, 420, 21.4], [S.a, 1655, 420, 22.05], [S.no, 1010, 568, 22.35, "lbl"],
+        [`${S.j[0]}<small>${S.j[1]}</small>`, 960, 685, 22.8], [S.note, 200, 830, 23.6, "note"],
+      ];
+      const sk = SK.map(([d, t, du, cls]) => {
+        const p = document.createElementNS(NS, "path");
+        p.setAttribute("d", d); p.setAttribute("class", "sp " + (cls || "")); $("sk").appendChild(p);
+        const n = p.getTotalLength(); p.style.strokeDasharray = n; return { p, n, t, du };
+      });
+      const st = ST.map(([h, x, y, t, cls]) => {
+        const d = document.createElement("div"); d.className = "st " + (cls || ""); d.innerHTML = h;
+        d.style.left = x + "px"; d.style.top = y + "px"; $("sheet").appendChild(d); return { d, t };
+      });
+
+      H.render = (t) => {
+        $("kick").style.opacity = F(t, 0.1, 99, 0.4);
+        $("head").style.opacity = F(t, 0.3, 99, 0.5);
+        $("head").style.transform = `translateY(${(1 - E.o3((t - 0.3) / 0.6)) * 20}px)`;
+        $("src").style.opacity = F(t, 1.0, 99, 0.5);
+        for (const id in box) {
+          const b = box[id];
+          b.el.style.opacity = F(t, b.t, 99, 0.35);
+          b.el.style.transform = `translateY(${(1 - E.o3((t - b.t) / 0.45)) * 18}px)`;
+          b.gl.style.opacity = F(t, b.t, b.t + 0.9, 0.25);
+        }
+        // the President lights up again when a bill arrives from the joint sitting
+        box.n5.gl.style.opacity = Math.max(F(t, 6.0, 6.9, 0.25), F(t, 13.5, 14.4, 0.25));
+        const dA = E.back((t - DT) / 0.5);
+        $("dia").style.opacity = F(t, DT, 99, 0.3);
+        $("dia").style.transform = `rotate(45deg) scale(${Math.max(0, dA)})`;
+        $("diaT").style.opacity = F(t, DT + 0.15, 99, 0.3);
+        let tok = null;
+        for (const e of edge) {
+          const u = E.io2((t - e.t) / e.d);
+          e.p.style.strokeDashoffset = e.n * (1 - u);
+          if (u > 0 && u < 1) tok = e.line.getPointAtLength(e.ln * u);
+          if (e.le) e.le.style.opacity = F(t, e.t + e.d * 0.6, 99, 0.3);
+        }
+        $("tok").setAttribute("visibility", tok ? "visible" : "hidden");
+        if (tok) { $("tok").setAttribute("cx", tok.x); $("tok").setAttribute("cy", tok.y); }
+        // the "only three times" panel
+        $("panel").style.opacity = F(t, 14.2, 99, 0.35);
+        $("num").textContent = Math.round(3 * E.o2((t - 14.3) / 0.8));
+        document.querySelectorAll("#panel .row").forEach((r, i) => (r.style.opacity = F(t, 14.7 + i * 0.25, 99, 0.3)));
+        $("not").style.opacity = F(t, 15.4, 99, 0.35);
+        // exam version: the answer-booklet page slides up over the crisp chart
+        const sh = E.io3((t - 18.4) / 0.6);
+        $("sheet").style.transform = `translateY(${(1 - sh) * 1120}px)`;
+        $("crisp").style.transform = `scale(${1 - 0.05 * sh})`;
+        $("crisp").style.visibility = t >= 19.0 ? "hidden" : "visible";   // covered by then; hidden so nothing sits under the page
+        $("kick2").style.opacity = F(t, 19.0, 99, 0.4);
+        $("src2").style.opacity = F(t, 19.2, 99, 0.4);
+        for (const s of sk) s.p.style.strokeDashoffset = s.n * (1 - E.io2((t - s.t) / s.du));
+        for (const s of st) s.d.style.opacity = F(t, s.t, 99, 0.3);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

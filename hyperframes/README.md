@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk, Moat Atlas and UPSC Mains.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -22,6 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | Process flowchart that builds step by step, then redraws itself as the hand-drawn exam version | UPSC Mains, any how-it-works beat | How an ordinary bill becomes law: Constitution Art. 100, 107, 108, 111, 368; the three joint sittings (1961, 1978, 2002) | `samples/s16-flow` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -32,7 +33,7 @@ Pillow. Renders go to `out/hyperframes/` (not in git).
 
 ```sh
 python3 hyperframes/tools/hf.py sync              # copy shared/ and the linked public/ images into every sample (run first)
-python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check; all 16 projects pass
+python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check (14 Nov 2026: s16 passes; s11 and s14 report errors under the current checker)
 python3 hyperframes/tools/hf.py snap 3 1.5,6,9.5  # stills -> out/hyperframes/snap/s03-desk/
 python3 hyperframes/tools/hf.py render 3          # -> out/hyperframes/s03-desk.mp4 (or: render all)
 python3 hyperframes/tools/hf.py reel              # cards + every sample -> out/hyperframes/visual-samples-reel.mp4
@@ -54,6 +55,26 @@ ones. A machine with a GPU is faster.
 3. Run `hf.py check`, look at `hf.py snap` stills, then render.
 
 `shared/lib/hf.js` holds the clock and easing helpers; `shared/base.css` holds the fonts and themes.
+
+## Sample 16: the process flowchart
+
+Made for the UPSC Mains channel (`docs/UPSC_MAINS_PLAYBOOK.md`), where most GS-II and GS-III answers need a flowchart. It
+plays in two acts: the full chart builds box by box on a dark grid, with a gold token running along each arrow as it
+draws, the decision diamond branching and a side panel with one real number; then an answer-booklet page slides up and
+the same chart redraws itself in pen, simplified to what an aspirant can draw in 30 seconds.
+
+- **Language:** `const LANG = "hi"` (the UPSC Mains channel) or `"en"`. All text is in the `T` table, one block per
+  language. The Hindi labels need a native speaker's check before publishing, as with every Hindi piece (`AUDIO_TRACKS.md`).
+- **New process:** edit `N` (boxes: id, x, y, width, appear time, class, content, optional height), `A` (arrows: points,
+  start, duration, optional label), the diamond position `DX, DY, DT`, and the sketch tables `SK` (pen strokes) and `ST`
+  (handwritten labels). Positions are in px on the 1920 × 1080 frame. `ok` and `out` box classes mark outcomes.
+- **Facts on screen:** Art. 107(1)–(2), 100, 108 (joint sitting: rejection, final disagreement on amendments, or six
+  months; majority of members of both Houses present and voting), 111 (assent, withhold, or return a non-Money Bill once;
+  if passed again, assent cannot be withheld), and no joint sitting for Money Bills (Art. 108) or Constitution amendment
+  bills (Art. 368). Joint sittings: Dowry Prohibition Bill (1961), Banking Service Commission (Repeal) Bill (1978),
+  Prevention of Terrorism Bill (2002). **Check the joint-sitting years against Lok Sabha Secretariat records before
+  publishing:** the three bills are agreed everywhere, but secondary sources differ on exact dates.
+- Sketch labels use Mukta for Hindi (no Devanagari handwriting font is in the library yet) and Virgil for English.
 
 ## Data tools
 

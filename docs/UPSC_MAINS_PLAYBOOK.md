@@ -119,15 +119,17 @@ Mayer, *Learning as a Generative Activity*]
 | Shares and structural change: urbanisation, workforce by sector, MSP coverage | GS-I, GS-III | 1,000 dots that regroup | s05 dots | A pie or 100-square grid |
 | Big numbers made real: debt, fiscal deficit, subsidy bills | GS-III | Scale comparison with a log zoom-out | s12 scale | One line comparing it to something known |
 | Trade, energy and diaspora flows | GS-II, GS-III | Globe with arcs and a ranked list | s07 globe | World outline with 3 arrows |
+| Procedures and mechanisms: how a bill becomes law, monetary transmission, GST sharing | GS-II, GS-III | Flowchart that builds, then redraws as the exam sketch | s16 flow | The same flowchart, 5–7 boxes |
 | Writing the answer itself | All | Hand-drawn notes over a real answer copy | s14 notes | The structure: intro, 3–4 points, way forward |
 
 ### Gaps in the library for this channel
 
-Three kinds of concept have no sample yet. They come up in almost every GS-II and GS-III answer, so they are the next
+Three kinds of concept had no sample. The first is now built. They come up in almost every GS-II and GS-III answer, so they are the next
 samples to build (AK's call):
 
-1. **Process flow:** a flowchart that builds step by step, each box landing on the spoken word (how a bill becomes law,
-   how a repo rate change reaches a loan, how GST revenue is shared). Ends as a drawable flowchart.
+1. **Process flow:** built as sample 16 (`hyperframes/samples/s16-flow`, 14 Nov 2026): how an ordinary bill becomes
+   law, in Hindi or English, ending as the hand-drawn exam version. Reuse it for how a repo rate change reaches a loan, or
+   how GST revenue is shared.
 2. **Linkage web:** one issue in the centre with GS-I, GS-II and GS-III spokes lighting up in turn, for the "एक मुद्दा,
    तीन पेपर" format.
 3. **Side-by-side comparison:** two articles, committees, schemes or countries in a table that fills row by row
@@ -149,7 +151,7 @@ samples to build (AK's call):
 | --- | --- | --- | --- |
 | 1–2 | Publish `um-parisiman` once AK has re-voiced it with Maya and a native speaker has ear-checked it | Build its Related video: "परिसीमन: GS-II का पूरा उत्तर" (the PYQs, the 1971 freeze, the 2026 bill, one drawable map) | Open the Telegram group; one-page free PDF of the delimitation figures |
 | 3–6 | 3 a week, one per series (आँकड़ों में संविधान, आपका ₹100, नक्शा कुछ और कहता है) | 1 PYQ का पोस्टमार्टम a week; the first कॉपी रिव्यू in week 4 | Ask for copies in every long video and in Telegram |
-| 7–10 | Keep the series that beat the channel median; swap the weakest topic type | Add एक मुद्दा, तीन पेपर every other week | Build the process-flow sample |
+| 7–10 | Keep the series that beat the channel median; swap the weakest topic type | Add एक मुद्दा, तीन पेपर every other week | Build the linkage-web sample (the process flow is s16) |
 | 11–13 | Hindi script of a proven Indica Atlas map story, as a नक्शा Short | आँकड़ों से उत्तर on the latest Budget or Survey | If Telegram passes about 2,000 active members, test the first paid item (the data pack) |
 
 Read every Short at 48 hours against the channel's own median (SHORTS_RULES §7) and log it. Add two UPSC numbers to the

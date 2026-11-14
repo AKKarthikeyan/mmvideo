@@ -1,0 +1,11 @@
+# W3-01-up: conflicts
+
+| # | Point | Version A | Version B | Ranking (rule 6) | We follow |
+|---|---|---|---|---|---|
+| K1 | UP's rank in 2011: fifth or sixth | Sixth (UP census count 199.8 million vs UN estimate for Pakistan 203.7 million; S01, S03) | Fifth (UP scaled to the UN's India: 208.1 million; S03, S02) | Both from owners of their numbers (Census of India; UN DESA). The UN's 2011 India figure is 4.2% above the census count (C021), so mixing a census UP with UN countries is slightly unfair to UP; scaling is slightly generous. Neither is wrong | Say "about sixth" for 2011 and "sixth" for 2026 (sixth on both bases) |
+| K2 | UP's population "now" | Census 2011 count: 199,812,341 (S01) | NCP projection 1 July 2026: 243,466 thousand (S02) | Not a contradiction: a count and a projection, 15 years apart. A real count comes in 2027 (C019) | Always label which one. "Official projection: about 24 crore" |
+| K3 | Census 2011 UP total | Final count 199,812,341 (S01, S02, S07) | Provisional total 199,581,477 (a figure seen in secondary pages; the provisional paper itself was not opened) | The final A-01 figure outranks a provisional one | 199,812,341 |
+| K4 | UP's area | 240,928 sq km (Census A-01, S01; MoSPI table from the 2009 Forest Survey of India report, S08) | 240,677 sq km (our Natural Earth measure, C022); "243,286" (search snippets, tier X, an older state area before boundary changes) | Census is the owner; ours is a check; the 243,286 appears in no source we read | 240,928 (or "about 241,000 sq km") |
+| K5 | India's total area | 3,287,469 (Census A-01, S01) | 3,287,263 (MoSPI/FSI table total, S08; the Technical Group does not state area) | Both official Indian; 0.006% apart; the Census figure carries a footnote on the INDIA row | Use only the ratio "about 7%" |
+| K6 | UP versus the UK by area | 240,928 vs 243,610 (WDI/FAO; UK 1.1% larger) | 240,677 vs 242,737 (ours; UK 0.9% larger) | Different definitions (surface area with inland water vs geometry) | "About the size of the UK" |
+| K7 | WPP edition | WPP 2024 (S03) | A WPP 2026 edition, if published, could change Nigeria/Brazil values | We looked: one secondary report says the next revision is due 2027; WPP 2024 is the latest read | WPP 2024; flag |

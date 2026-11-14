@@ -1,0 +1,97 @@
+{
+ "id": "w3kerala",
+ "ep": "W3-10",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/W3-10-kerala-land",
+ "status": "DRAFT v1, 8 Nov 2026. Land shares: MoA&FW Land Use Statistics 2023-24 (provisional), reporting area. People and villages: Census 2011. The two bases are never combined.",
+ "version": "short ~30s, F10 Paradox",
+ "format": "F10 Paradox (G1 Why (Almost) Nobody Lives Here, inverted: almost no land lies idle)",
+ "target_seconds": 30,
+ "title": "Only 1 Hectare in 18 of Kerala Lies Idle. India: 1 in 5",
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "In Kerala, in south-west India, only about one hectare in eighteen lies idle.",
+   "caption": "Kerala: about 1 hectare in 18 lies idle · 2023-24 (provisional)",
+   "claims": [
+    "C03",
+    "C06"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "Across India, it is about one in five.",
+   "caption": "All India: about 1 in 5 (21.0%) · Kerala: 5.6%",
+   "claims": [
+    "C03"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b3",
+   "move": "M3 Push",
+   "say": "In twenty eleven, Kerala packed eight hundred and sixty people into each square kilometre.",
+   "caption": "Census 2011: 860 people per km²",
+   "claims": [
+    "C01"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b4",
+   "move": "M3 Push",
+   "say": "That census found just one village in Kerala where nobody lived.",
+   "caption": "Census 2011: 1 uninhabited village · 1,017 inhabited",
+   "claims": [
+    "C07"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b5",
+   "move": "M4 Turn",
+   "say": "In ten years, land under buildings, roads and water grew sixteen percent.",
+   "caption": "Non-agricultural uses: +16% · 2014-15 to 2023-24 (p)",
+   "claims": [
+    "C05",
+    "C06"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b6",
+   "move": "M4 Turn",
+   "say": "Over a quarter is classed as forest, a legal label, wooded or not.",
+   "caption": "27.8% classed as forest (a legal class) · 2023-24 (p)",
+   "claims": [
+    "C04",
+    "C06"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b7",
+   "move": "M4 Turn",
+   "say": "Still, Punjab and West Bengal have even less idle land.",
+   "caption": "Idle land, 2023-24 (p): Punjab 3.0% · West Bengal 3.5%",
+   "claims": [
+    "C10"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b8",
+   "move": "M5 Echo",
+   "say": "But in Kerala, only about one hectare in eighteen lies idle.",
+   "caption": "Kerala: about 1 in 18 idle · India: about 1 in 5",
+   "claims": [
+    "C03"
+   ],
+   "pause": 1.0
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# W3-11 Colachel: conflicts between sources
+
+1. **The day.** S01 (Dutch letters): garrison surrendered 7 Aug 1741. S02 (Nagam Aiya): battle 15 Karkadakam 916 ME = 31 Jul 1741. S03 (Menon): battle 27 Audy = 10 Aug, fort taken 31 Audy (= 14 Aug on his own count). Menon's and Nagam's month conversions differ by 2 days (`method/dates_output.txt`). Resolution: say "1741" or "July-August 1741"; never one day. (C010)
+2. **What happened.** S01: a red-hot ball fired a powder barrel, the rice store burned, the garrison surrendered. S02/S03: a pitched battle, cavalry charge, Dutch fled to ships. Rank (rule 6): S01 is an internal record written within weeks, but by the losing side, which had reason to blame an accident; S02/S03 are the winner's court histories written 137-165 years later; Galletti himself notes the incident gets "a prominent place" in them. Safe common ground: Travancore attacked and took Colachel; the Dutch lost it.
+3. **Independence.** S02 follows S03 almost line by line (24 prisoners, 389 muskets), so they count as one tradition, not two.

@@ -1,0 +1,25 @@
+Natural Earth 10m populated places (simple) points: name, lon, lat, adm1name, pop_max
+  Haridwar: (78.13, 29.58, 'Haridwar (district point, haridwar.nic.in)', 'Uttarakhand', None)
+  Allahabad: (81.838061, 25.456941, 'Allahabad', 'Uttar Pradesh', 1201000)
+  Ujjain: (75.79004, 23.190405, 'Ujjain', 'Madhya Pradesh', 513350)
+  Nashik: (73.778036, 20.002365, 'Nasik', 'Maharashtra', 1473000)
+
+Great-circle distances between city points (km, haversine R=6371.0088)
+  Haridwar-Allahabad: 586
+  Haridwar-Ujjain: 748
+  Haridwar-Nashik: 1152
+  Allahabad-Ujjain: 663
+  Allahabad-Nashik: 1025
+  Ujjain-Nashik: 411
+
+NE admin-1 state containing each city point
+  Haridwar: not tested (district point lies on the generalised NE UP/Uttarakhand line; state taken from UNESCO file section D: Uttarakhand)
+  Allahabad: ['Uttar Pradesh']
+  Ujjain: ['Madhya Pradesh']
+  Nashik: ['Maharashtra']
+
+Nearest NE river centreline (name, km) to each city point
+  Haridwar: Ganges 8 km; Yamuna 89 km; Sutlej 205 km
+  Allahabad: Yamuna 4 km; Ganges 4 km; Son 107 km
+  Ujjain: Chambal 29 km; Mahi 81 km; Parbati 93 km
+  Nashik: Godävari 2 km; Bhima 111 km; Tapi 139 km

@@ -1,0 +1,27 @@
+# W3-04-myson: conflicts and how each was ranked
+
+Ranking rule (RESEARCH_RULES.md section 6): a record made at the time beats a later recollection; primary beats secondary; the owner of a number beats a reuse of it; an interested party is weaker where it gains.
+
+**K1. Where is My Son? (coordinate).** UNESCO's property page (S02, current): N15 46 25.835 E108 6 33.008 = 15.774 N, 108.109 E. The nomination cover sheet (S04, 1998 form, field 1.d): "15° 31' N, 108° 34' E" = 15.517 N, 108.567 E. We computed (method/coord_check.py) that the two points are 57 km apart; both fall inside Natural Earth's Vietnam outline, the cover-sheet point only 6 km from its edge (near the coast), the UNESCO page point 27 km from it. Ranking: UNESCO's page is the later, maintained record and the one UNESCO publishes with the property; the cover-sheet value is a 1998 form entry that UNESCO has since superseded. Use UNESCO's page (C002). Outcome: settled, but the Short should not show the cover-sheet coordinate.
+
+**K2. How did Champa begin in 192 CE?** ICOMOS (S01): "the people of the Tuong Lam area rose up against their Chinese overlords and founded an independent state". UNESCO (S02): "the ruling Dua Clan which unified the Cham clans and established the kingdom of Champapura ... in 192 CE". Majumdar (S08): the Chinese refer to the foundation in 192 AD by a man whose personal name was Lien and family name Kiu. Same date, three different actors; the root is sporadic Chinese records we did not read. Outcome: narrate only "UNESCO dates the kingdom to 192 CE" (C008), if at all.
+
+**K3. Was My Son the capital?** ICOMOS/UNESCO: "religious and political capital". Viet Nam's dossier (S04): capital at Sinhapura (Tra Kieu) from the 4th to early 8th century, then Indrapura. The dossier is the owner of the place's history but also an interested nominator; UNESCO's text repeats the nominator's first draft. Outcome: DISPUTED (C010); use "royal sanctuary".
+
+**K4. When was temple B1 built?** ICOMOS (S01): "Temple B1 was built in 1275". Majumdar (S08, architecture chapter): "Myson B-1 (1114 A. D.)". Different by 161 years. Neither is dated by us. Outcome: UNVERIFIED; never state B1's date.
+
+**K5. How long did ASI work on site?** Government of India press release (S10): "five years of intricate and meticulous work on site" and "from 2017 to 2022". My Son board (S12): "Sau 6 năm triển khai (từ 2017 - 2022)" = after 6 years (2017-2022). Both agree on 2017 to 2022; five vs six is on-site years versus calendar years. Outcome: say "from 2017 to 2022" (C027).
+
+**K6. When did Bhadravarman I found the temple?** Finot 1904: "vers 400 A.D." in the text of the same article, and "Ve siècle çaka" for the stele; Finot 1915: "IVe siècle çaka" (about 378-477 CE); dossier: "towards the end of the 4th century A.D."; Majumdar: palaeographic 5th century CE; Chinese king Fan Hu-da 380-413 "probable but not certain". Ranking: all within 4th-5th century CE; the later (1915) catalogue of the same editor outranks his 1904 first reading. Outcome: a range, never a year (C012).
+
+**K7. When was My Son inscribed?** Committee session 29 Nov - 4 Dec 1999 (S03); nomination file header "DATE OF INSCRIPTION: 4th December 1999" (S04, UNESCO packaging); UNESCO news item on the property page dated 2 December 1999 (S02). Outcome: say "1999" (C003).
+
+**K8. Which criteria?** State Party nomination box and ICOMOS's first page: "Criteria ii and v" (a State Party proposal, shown in the ICOMOS text as the justification). ICOMOS recommended (ii) and (iii). The nomination file's cover sheet (S04) quotes the Hoi An decision: "criteria (ii) and (v): Hoi An is an outstanding material manifestation..." (a UNESCO packaging error). The Committee inscribed on (ii) and (iii) (S03). Outcome: (ii) and (iii) (C003). Do not quote the cover sheet.
+
+**K9. Area.** ICOMOS 1999: "covering an area of 310ha" (and a 1,062 ha protection zone). UNESCO now: property 142 ha, buffer zone 920 ha. Different dates and definitions. Outcome: use UNESCO's current figure only (C033), if at all.
+
+**K10. What does "Hindu temples in Vietnam" mean: colonisation or adoption?** Majumdar (1927): the facts "unmistakably prove the Indian colonisation of the territories" (Greater India Society, an interested school of the British-Indian era). The Committee (S03): "an indigenous society adapting to external cultural influences". ICOMOS first draft (S01): "introduction" of Hindu architecture. ICOMOS (S01): influence came "early ... the exact date is not known". The inscriptions opened show Cham kings, Cham names and a local language (C011, C013, C021), and no invasion. Ranking: the Committee's text and the inscriptions outrank Majumdar's conclusion on a point where his school gains. Outcome: do not narrate colonisation; narrate adoption as UNESCO words it, with the "date not known" hedge (C004, C007).
+
+**K11. Which Saka-to-CE conversion?** Finot's printed equivalent for the Kaundinya stele is garbled in the OCR (reads "698"); 579 + 78 = 657, as Majumdar prints (657). Same rule fits ISAW's 913 -> 991 and 609 -> 687, and Finot's 797 -> 875. Outcome: 657 (C023).
+
+**K12. Where is the Kaundinya stele in the modern corpus?** ISAW's note to C. 87 cites "C. 96 B, l. 24-25" for the triad Isanesvara, Bhadresvara and Prabhaseshvara. We have not shown that Majumdar's No. 12 / Finot's stele of 579 Saka is C. 96. Outcome: cite Finot 1904 and Majumdar No. 12, not "C. 96".

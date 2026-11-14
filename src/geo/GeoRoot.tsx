@@ -20,6 +20,21 @@ import hyderabad from "../../public/geo/hyderabad/data.json";
 import islamabad from "../../public/geo/islamabad/data.json";
 
 import {SPECS2} from "./week2/specs";
+import {SPECS3} from "./week3/specs";
+import w3_up from "../../public/geo/w3up/data.json";
+import w3_ww1 from "../../public/geo/w3ww1/data.json";
+import w3_rajasthan from "../../public/geo/w3rajasthan/data.json";
+import w3_baarle from "../../public/geo/w3baarle/data.json";
+import w3_myson from "../../public/geo/w3myson/data.json";
+import w3_kumbh from "../../public/geo/w3kumbh/data.json";
+import w3_konkan from "../../public/geo/w3konkan/data.json";
+import w3_kochi from "../../public/geo/w3kochi/data.json";
+import w3_mumbai from "../../public/geo/w3mumbai/data.json";
+import w3_kerala from "../../public/geo/w3kerala/data.json";
+import w3_colachel from "../../public/geo/w3colachel/data.json";
+import w3_thar from "../../public/geo/w3thar/data.json";
+import w3_states from "../../public/geo/w3states/data.json";
+import w3_shapes from "../../public/geo/w3shapes/data.json";
 import {SPECSC} from "./cyclone/specs";
 import {SPECSL} from "./lac/specs";
 import l_galwan from "../../public/geo/cy03lac/data.json";
@@ -41,6 +56,7 @@ import w2_thibaw from "../../public/geo/thibaw/data.json";
 import w2_narcondam from "../../public/geo/narcondam/data.json";
 
 const WEEK2: Record<string, unknown> = {minicoy: w2_minicoy, austria: w2_austria, kuttanad: w2_kuttanad, sikhpolice: w2_sikhpolice, seazone: w2_seazone, nainsingh: w2_nainsingh, thumba: w2_thumba, zanzibar: w2_zanzibar, barmer: w2_barmer, berenike: w2_berenike, panipat: w2_panipat, bhitarkanika: w2_bhitarkanika, thibaw: w2_thibaw, narcondam: w2_narcondam};
+const WEEK3: Record<string, unknown> = {w3up: w3_up, w3ww1: w3_ww1, w3rajasthan: w3_rajasthan, w3baarle: w3_baarle, w3myson: w3_myson, w3kumbh: w3_kumbh, w3konkan: w3_konkan, w3kochi: w3_kochi, w3mumbai: w3_mumbai, w3kerala: w3_kerala, w3colachel: w3_colachel, w3thar: w3_thar, w3states: w3_states, w3shapes: w3_shapes};   // Week 3 (8-9 Nov 2026)
 const CYCLONE: Record<string, unknown> = {cy01odisha: c_odisha, cy02bay: c_bay, "cy02bay-a": c_bay};
 const LAC: Record<string, unknown> = {cy03lac: l_galwan};
 const ART_IDS = ["cy01odisha", "cy02bay"];   // cyclone Shorts with thumbnail art
@@ -56,6 +72,10 @@ export const GeoRoot: React.FC = () => (
     ))}
     {Object.entries(WEEK2).map(([id, d]) => (
       <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS2[id]}}
+        durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
+    ))}
+    {Object.entries(WEEK3).map(([id, d]) => (
+      <Composition key={id} id={`GEO-${id}`} component={GeoShort as any} defaultProps={{D: d as GD, S: SPECS3[id]}}
         durationInFrames={glayout(d as GD).total} fps={FPS} width={W} height={H}/>
     ))}
     {Object.entries(CYCLONE).map(([id, d]) => (

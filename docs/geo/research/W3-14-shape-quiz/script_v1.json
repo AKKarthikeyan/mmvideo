@@ -1,0 +1,106 @@
+{
+ "id": "w3shapes",
+ "ep": "W3-14",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/W3-14-shape-quiz",
+ "status": "DRAFT v1, 9 Nov 2026. All ranks and areas Census 2011 (Table A-01), 28 states. Capital clue dropped (open_questions 1). Kanyakumari not highlighted on the outline (open_questions 2).",
+ "version": "short, G3 quiz",
+ "format": "F8 quiz (G3 Guess the Place)",
+ "target_seconds": 30,
+ "title": "Guess These 3 Indian States From Their Shape 🗺️",
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "Three Indian states, shapes only. One is eighty-three times another's size.",
+   "caption": "3 states · shapes only · one is ~83× another",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b2",
+   "move": "M2 Clue 1 (question)",
+   "say": "Shape one: second-largest state in the last census. Which is it?",
+   "caption": "Shape 1 · 2nd largest (Census 2011) · Which state?",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b3",
+   "move": "M4 Reveal 1",
+   "say": "Madhya Pradesh, ahead of Maharashtra by five hundred and thirty-nine square kilometres.",
+   "caption": "MADHYA PRADESH · ahead of Maharashtra by 539 km²",
+   "claims": [
+    "C001",
+    "C002"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b4",
+   "move": "M3 Clue 2 (question)",
+   "say": "Shape two gained four taluks from Travancore-Cochin in nineteen fifty-six. Which is it?",
+   "caption": "Shape 2 · 1956: four taluks moved in · Which state?",
+   "claims": [
+    "C005"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b5",
+   "move": "M4 Reveal 2",
+   "say": "Tamil Nadu, then called Madras. Those taluks became Kanyakumari district.",
+   "caption": "TAMIL NADU (then Madras) · Kanyakumari: 1,684 km² (2011)",
+   "claims": [
+    "C005",
+    "C006"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b6",
+   "move": "M3 Clue 3 (question)",
+   "say": "Shape three: so small, we had to zoom in. Which is it?",
+   "caption": "Shape 3 · zoomed in · Which state?",
+   "claims": [
+    "C007",
+    "C008"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b7",
+   "move": "M4 Reveal 3",
+   "say": "Goa, the smallest state by area in the last census.",
+   "caption": "GOA · smallest state by area (Census 2011)",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b8",
+   "move": "M5 Loop",
+   "say": "Shape one is about eighty-three Goas. How many did you get?",
+   "caption": "Madhya Pradesh ≈ 83 × Goa (Census 2011 areas)",
+   "claims": [
+    "C001",
+    "C007"
+   ],
+   "pause": 0.3
+  }
+ ],
+ "wording_notes": [
+  "'in the last census' for every rank",
+  "'then called Madras', no rename year",
+  "'smallest by area' for Goa",
+  "Tamil Nadu drawn alone, without Puducherry",
+  "1,684 km² credited to Census 2011, not Survey of India",
+  "house outline is today's MP, never the 1956 shape"
+ ]
+}

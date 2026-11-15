@@ -6,16 +6,22 @@ Shorts and long videos, and which visual formats explain exam concepts best. Thi
 `um-parisiman` ([`SHORTS_BENCHMARKS.md`](SHORTS_BENCHMARKS.md)) and the HyperFrames library (`hyperframes/README.md`).
 Everything marked **AK's call** is a proposal, not a rule yet.
 
+**Update, 15 Nov 2026 (AK agreed):** the lead long format is now **Fix This Answer** (§3a): an answer repaired on screen,
+then a fresh question that tests whether the viewer can make the same repair. It replaces the copy-review format and the
+"4/10 to 6.5/10" claim that went with it. The pilot episode is `docs/upsc/fix-this-answer/FTA-01.md` and the visual is
+sample 17 (`hyperframes/samples/s17-repair`).
+
 ## 1. The one-line strategy
 
-**Shorts find aspirants; long videos teach them to write; the Telegram group and paid products keep them.** Each layer
+**Shorts find aspirants; long videos show them exactly how to fix their own answers; the Telegram group and paid products
+keep them.** Each layer
 hands the viewer to the next one, and every piece ends on a question the next layer answers.
 
 | Layer | Job | What we measure |
 | --- | --- | --- |
 | Shorts (3 a week) | Reach people who don't follow us, with one answer-ready fact | Chose-to-view %, shares, clicks to the Related video |
 | Long videos (1–2 a week) | Turn a fact into a full Mains answer; build trust | Average view duration, subscribers per 1,000 views, Telegram joins |
-| Weekly copy review | Show the method working on real aspirants' answers | Copies submitted per week, returning viewers |
+| Fix This Answer (2 a week in the pilot) | Repair one answer on screen, then test the repair on a fresh question | Answers submitted, rewrites completed, the same mistake recurring less, returning viewers |
 | Telegram + free PDF | Own the relationship (YouTube can't take it away) | Joins per 1,000 views, PDF downloads |
 | Paid (data pack, writing sprint) | Pay for the channel | Conversion from Telegram, refunds, complaints |
 
@@ -67,7 +73,7 @@ Example topics (every number **VERIFY** against the source named before building
 | --- | --- | --- |
 | Feb–Mar | Budget and Economic Survey (आपका ₹100) | Budget and Survey, chapter by chapter, mapped to GS-III |
 | Mar–May (Prelims season) | Facts that serve both Prelims and Mains | Static topics with PYQs; fewer Mains-only pieces |
-| Jun–Aug (Prelims result to Mains) | Answer ammunition on all three papers, daily if we can keep quality | PYQ deconstruction, copy reviews, the writing sprint |
+| Jun–Aug (Prelims result to Mains) | Answer ammunition on all three papers, daily if we can keep quality | PYQ deconstruction, Fix This Answer, the writing sprint |
 | Sep–Jan | News that lands in the syllabus (Census 2027, delimitation, monsoon, judgments) | Interdisciplinary issues, new PYQs the week the paper is out |
 
 Check each year's dates against the UPSC calendar before planning; the windows above are typical, not fixed.
@@ -81,7 +87,7 @@ syllabus phrase and the PYQ year, because aspirants search by them ("GS-2 PYQ 20
 | --- | --- | --- | --- |
 | **PYQ का पोस्टमार्टम** | 12–20 min | One Mains PYQ: the directive word, the demand of the question, the structure, then the answer built on screen with one diagram the viewer can draw | Search traffic for years; the clearest proof of method |
 | **एक मुद्दा, तीन पेपर** | 15–25 min | One issue across GS-I, II and III (e.g. Himalayan glaciers: geography of retreat, Art. 262 and river disputes, hydropower and disaster finance) | Mains rewards linkages; few channels teach them visually |
-| **कॉपी रिव्यू** (weekly) | 15–30 min, or live | Three real copies from Telegram, anonymised, marked on screen; one rewritten from about 4/10 to 6.5/10 | The highest-trust format in this niche; fills the Telegram group |
+| **Fix This Answer** (lead format, §3a) | 8–15 min | One question, one answer, one named mistake: diagnosed, repaired on the page, then a fresh question that needs the same repair | Answers the need aspirants name most: "what exactly should I change, and why?"; fills the Telegram group |
 | **आँकड़ों से उत्तर** | 10–15 min | One data source (Budget, Survey, PLFS, NFHS, Census) turned into five answer-ready figures with the citation | Saved and re-watched before the exam; feeds the paid data pack |
 | **Short का पूरा उत्तर** | 8–12 min | The long video behind a Short: same story, full answer, PYQs where it was asked | The Short's Related video; turns Short viewers into subscribers |
 
@@ -92,6 +98,74 @@ Rules for every long video:
 3. **Every Short sets its Related video** (in desktop Studio, by hand: K3) to the long video that answers it. Build the long
    video first, or the Short has nowhere to send viewers.
 4. **No talking head without a picture for more than 20 s.** The face builds trust; the picture carries the concept.
+
+## 3a. Fix This Answer: the lead format (AK, 15 Nov 2026)
+
+**Why.** AK's research (15 Nov 2026; Reddit and ForumIAS threads from 2019 to 2026, coaching pages, YouTube listings)
+found one persistent, concrete need: an aspirant who has studied a topic and written an answer wants to know *exactly what
+to change, and why*. Their complaints are about feedback that is "vague and generic", marks stuck at 4–4.5/10 on topics
+they know, and paid evaluation that still doesn't say what to do next. Some institutes already offer detailed evaluation
+and rewrites, so the opening is not a new category: it is **correction that is free to watch, concrete enough to copy and
+regular enough to become a habit.**
+
+Limits of that evidence, kept in view: it is qualitative; it comes mostly from English-medium aspirants (our channel is
+meant to be Hindi); YouTube comments could not be read; and we have not opened the cited threads ourselves. Check any
+thread before quoting it on screen. The four-week pilot below is how we learn whether *our* audience has the same need.
+
+**Who it is for.** An aspirant who knows the topic but cannot yet turn it into a relevant, concise answer.
+
+**One episode = one question, one answer, one named mistake.**
+
+| Step | On screen | What the viewer learns |
+| --- | --- | --- |
+| 1. Read the question | The printed question; its demands highlighted as D1, D2, D3 | What must be answered, and what is outside it |
+| 2. Inspect the answer | The answer on a booklet page, labelled as an aspirant's (with consent, anonymised) or as **illustrative, written by us** | A plausible answer can still miss the question |
+| 3. Diagnose | A red ring on the exact sentence, and the rule it breaks (ANSWER_STANDARD A1–A12) | Whether it is a **writing gap** (knows it, answered something else) or a **content gap** (the concept is wrong or missing) |
+| 4. Repair | Lines struck out, deleted, rewritten on the page, in a different ink | The editing decisions themselves, not just the finished answer |
+| 5. Respect the limits | A live word count against our budget, and the time for the marks | What can really fit in the hall |
+| 6. Test transfer | A **different past question** that needs the same repair; the viewer writes it before the next episode | Whether they learned the repair, not the answer |
+
+Rules:
+- **A content gap is taught before it is repaired.** If the answer is wrong about the concept, the episode says so, points
+  to the topic film (or gives a short explanation with its source) and leaves that repair for later. Structure cannot
+  supply missing understanding.
+- **The transfer question is a real PYQ from the same idea family.** The question bank already links them (the "cousin"
+  questions in each `research/upsc/pyq/<id>/ANSWER.md`, and the "Ten Years, One Idea" groups in the planner), so we never
+  need to invent one.
+- **No marks.** UPSC moderates marks and publishes no marking scheme (ANSWER_STANDARD), so we cannot say what an answer
+  would score. The screen shows demand coverage and the A-rules as **our rubric, not a UPSC mark**, and never
+  "from 4/10 to 7/10".
+- **Real answers only with written consent**, anonymised (no handwriting that identifies the writer, rule A12 applies to us
+  too). Until we have them, the answer is written by us and the page says **ILLUSTRATIVE · WRITTEN BY US, NOT A
+  CANDIDATE'S COPY** for as long as it is on screen. Use illustrative answers for the first episodes only.
+- **A Mains mentor checks every diagnosis and repair** before the episode is voiced. (Who: AK's call.)
+- **The answer and its edits are the main picture.** Maps and diagrams come in only where they explain the argument.
+- **Never promise to evaluate every subscriber's answer.** Repair a few representative ones fully; give everyone the
+  self-check list that ends each episode.
+
+Working titles (from AK's research; Hindi titles once the channel language is settled):
+1. "You Know the Topic. Why Does Your Answer Still Miss the Question?"
+2. "'Add More Analysis': Watch Us Fix the Actual Paragraph"
+3. "A 150-Word Answer: What Should You Delete?"
+4. "The Same Topic, Two Different Questions: Why Your Answer Must Change"
+5. "We Corrected This Answer. Can the Student Handle a New Question?"
+
+### The four-week pilot
+
+| | Plan |
+| --- | --- |
+| Volume | 2 episodes a week for 4 weeks |
+| Episodes 1–2 | Illustrative answers on topics we have fully researched (ECO-16, POL-03, GEO-07, GEO-04), so every repair rests on checked claims. FTA-01 is ready to script: `docs/upsc/fix-this-answer/FTA-01.md` |
+| From week 2 | A small, capped group of volunteers writes the answer **before** the episode; with consent, their answers replace ours |
+| Each volunteer | Writes the first answer, rewrites it after the episode, then attempts the transfer question |
+| Same criteria for both answers | Demands covered, facts correct, reasoning, relevance, within the word and time budget (A1–A12) |
+| Measure | Repeat participation, rewrites completed, the same mistake recurring less; then views, average view duration and subscribers per 1,000 views |
+| Decide after 4 weeks | Keep, change or drop the format (AK's call) |
+
+**What this does to the master planner (AK's call).** The planner (`docs/upsc/planner/MASTER.md`, branch
+`datakadai/cartoon-look`) schedules 10 polished answer videos a week. Polished answers alone are what aspirants say they
+cannot learn from. Proposal: during the pilot, the answer lane becomes 2 Fix This Answer episodes a week, and the polished
+answers already built stay as reference (each repair links to one). Re-plan the lane after the pilot.
 
 ## 4. Which visual explains which kind of exam concept
 
@@ -121,10 +195,11 @@ Mayer, *Learning as a Generative Activity*]
 | Trade, energy and diaspora flows | GS-II, GS-III | Globe with arcs and a ranked list | s07 globe | World outline with 3 arrows |
 | Procedures and mechanisms: how a bill becomes law, monetary transmission, GST sharing | GS-II, GS-III | Flowchart that builds, then redraws as the exam sketch | s16 flow | The same flowchart, 5–7 boxes |
 | Writing the answer itself | All | Hand-drawn notes over a real answer copy | s14 notes | The structure: intro, 3–4 points, way forward |
+| Repairing an answer (Fix This Answer) | All | The answer on a booklet page: demands, red ring, rule, strike-through, rewrite, live word count, then the transfer question | s17 repair | The self-check list: every demand has a heading, every claim has its source or channel, the ending answers the directive word |
 
 ### Gaps in the library for this channel
 
-Three kinds of concept had no sample. The first is now built. They come up in almost every GS-II and GS-III answer, so they are the next
+Three kinds of concept had no sample. The first is now built, and so is the repair visual (sample 17, 15 Nov 2026). They come up in almost every GS-II and GS-III answer, so they are the next
 samples to build (AK's call):
 
 1. **Process flow:** built as sample 16 (`hyperframes/samples/s16-flow`, 14 Nov 2026): how an ordinary bill becomes
@@ -150,7 +225,8 @@ samples to build (AK's call):
 | Weeks | Shorts | Long | Other |
 | --- | --- | --- | --- |
 | 1–2 | Publish `um-parisiman` once AK has re-voiced it with Maya and a native speaker has ear-checked it | Build its Related video: "परिसीमन: GS-II का पूरा उत्तर" (the PYQs, the 1971 freeze, the 2026 bill, one drawable map) | Open the Telegram group; one-page free PDF of the delimitation figures |
-| 3–6 | 3 a week, one per series (आँकड़ों में संविधान, आपका ₹100, नक्शा कुछ और कहता है) | 1 PYQ का पोस्टमार्टम a week; the first कॉपी रिव्यू in week 4 | Ask for copies in every long video and in Telegram |
+| 1–4 | As in weeks 1–2, then as in weeks 3–6 | **Fix This Answer pilot: 2 a week** (§3a), starting with FTA-01 | Recruit the capped volunteer group; collect answers before each episode |
+| 3–6 | 3 a week, one per series (आँकड़ों में संविधान, आपका ₹100, नक्शा कुछ और कहता है) | 1 PYQ का पोस्टमार्टम a week; Fix This Answer continues if the pilot holds up | Ask for answers in every long video and in Telegram |
 | 7–10 | Keep the series that beat the channel median; swap the weakest topic type | Add एक मुद्दा, तीन पेपर every other week | Build the linkage-web sample (the process flow is s16) |
 | 11–13 | Hindi script of a proven Indica Atlas map story, as a नक्शा Short | आँकड़ों से उत्तर on the latest Budget or Survey | If Telegram passes about 2,000 active members, test the first paid item (the data pack) |
 
@@ -167,5 +243,5 @@ writing sprint, then subject courses and evaluated tests. Before acting on its n
   each on the vendor's own page on the day we decide; fees and plans change often.
 - **Its operating rules are the right ones and match ours:** publish the lecture calendar before selling a batch, cap
   enrolment to evaluator capacity, and never claim ranker numbers we can't prove. Our version: show anonymised before and
-  after copies, as in the कॉपी रिव्यू format.
+  after answers, as in Fix This Answer, and never a mark we cannot prove.
 - **Affiliate links** (books, Audible) need a clear disclosure in the description and in the video when spoken about.

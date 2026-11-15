@@ -6,14 +6,46 @@ test, the script as voiced, and a source for every number on screen. Scripts liv
 
 | Id | Channel · series | Title | Length | Picture |
 | --- | --- | --- | --- | --- |
+| `id-razor` | The Inventor Desk · Patent Files | The first Gillette razor cost 1/3 of a week's pay | 31.5 s | The real 1904 drawing sheet inks itself in; header, Fig. 1 and Fig. 2 close-ups, the patent's own text on the blade, then the $5 tag, a week's pay and the 1904–1921 patent years |
 | `dk-exports` | Data Kadai · The Catch | India's exports jumped 45%. A third was fuel | 26.4 s | Two stacks of shipping containers ($1 B each): the 15 new ones drop in, fuel lights up, fuel and jewellery are taken out |
 | `ia-sunset` | Indica Atlas · Not Where You Think | India's sun sets 2 hours apart on one clock | 33.8 s | The evening of 20 Nov 2026 as a time-lapse on one IST clock: the computed night sweeps across India's terrain |
 
-**Status (15 Nov 2026):** voiced with MiniMax (`English_Diligent_Man`), every line checked by transcription
-(`shorts_build.py verify`: all 16 lines match the script), Shorts gate passed with no FAIL, HyperFrames check passed with no
-error, rendered and muxed to `out/hyperframes/<id>-final.mp4` (not in git). Before publishing: AK listens to both, and decides
+**Status (15 Nov 2026):** all three voiced with MiniMax (`English_Diligent_Man`), every line checked by transcription
+(`shorts_build.py verify`: all 24 lines match the script), Shorts gate passed with no FAIL, HyperFrames check passed with no
+error, rendered and muxed to `out/hyperframes/<id>-final.mp4` (not in git). Before publishing: AK listens to all three, and decides
 whether Data Kadai gets **The Catch** as a series (it is a Moat & Margin series in `SHORTS_FORMAT.md` §6; none of Data
 Kadai's three series fits a "the headline hides something" story).
+
+## `id-razor` · The Inventor Desk
+
+**Topic test.** Familiar: Gillette, the razor in every Indian bathroom, and the "give away the razor, sell the blades" story
+everyone has heard. Hidden: Gillette did not do it while its 1904 patents ran; the first razor cost $5 with its blades,
+about a third of a week's industrial wage, and the first giveaway came in 1922. Send: "the famous business trick is a myth."
+
+**Script** (voice: `English_Diligent_Man`)
+> This drawing gave us the razor blade you throw away. · Granted to King Gillette on the fifteenth of November, nineteen oh
+> four. · The blade? Six thousandths of an inch thick. MIT experts had called it impossible. · So how did he make money?
+> You've heard the trick. · Give the razor away. Then sell the blades forever. · He didn't. His razor cost five dollars. About
+> a third of a week's pay. · His patents kept rival blades out for seventeen years. Free razors came only after they ran
+> out. · So when someone calls it the Gillette trick, remember, → *(loops to "This drawing gave us…")*
+
+| On screen | Value | Source |
+| --- | --- | --- |
+| The drawing sheet and the text close-up | US Patent 775,134, K. C. Gillette, "Razor": filed 3 Dec 1901, granted 15 Nov 1904 | The patent itself (USPTO, public domain), from Google Patents: `patentimages.storage.googleapis.com/.../US775134.pdf` and the drawings PNG; page 2, lines 35–50, cropped to `assets/img/text.webp` |
+| "a blade you throw away" | "I am able to produce and sell my blades so cheaply that the user may buy them in quantities and throw them away when dull" | US 775,134, specification p. 1, lines 43–45 |
+| 0.006 in ≈ 0.15 mm | "a uniform thickness of about six one-thousandths of an inch" | US 775,134, specification p. 1, lines 89–91; 0.006 × 25.4 = 0.152 mm, our conversion |
+| MIT experts: impossible | "Gillette visited metallurgists at the Massachusetts Institute of Technology (MIT), who assured him his idea was impossible" | Lemelson-MIT, "King Gillette" (lemelson.mit.edu/resources/king-gillette) |
+| $5 for the razor and its first blades | "$5 for a razor with a pack of 12 blades and additional packs of 12 blades for $1" | R. C. Picker, "The Razors-and-Blades Myth(s)", 78 U. Chi. L. Rev. 225 (2011) |
+| ≈ 1/3 of a week's pay | "Five dollars was a particularly high price—roughly one-third of the average weekly industrial wage at the time" | Picker (2011); the wage is the US average, said on screen |
+| 17 years, rivals kept out | "For seventeen years—from 1904 to 1921—Gillette could block other firms from the blade market" | Picker (2011) |
+| First free razor, 1922 | "Gillette first introduced razor giveaways after its 1904 patents expired—the first was with Wrigley gum in 1922" | Picker (2011) |
+
+Wording chosen with care: "His patents" (plural: Picker credits the 1904 patents, 775,134 and the improved razor 775,135);
+"His razor cost five dollars" (the $5 bought the razor with its first blades, as the source line says); "MIT experts"
+(Lemelson-MIT says metallurgists at MIT). The handwritten "free!" and "sell these" are the myth being told, not a claim.
+Not used: the "51 razors and 168 blades in 1903" figure that circulates online (no primary source found), and the scout's
+claim that Nickerson worked on "ribbon steel" between a "curved guard and backing plate" (the patent describes a backing
+and guard, but we did not find who built which part).
 
 ## `dk-exports` · Data Kadai
 

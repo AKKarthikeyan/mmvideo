@@ -10,7 +10,7 @@ later Short on those channels: copy the nearest one and change the story.
 | `um-parisiman` | UPSC Mains (Hindi) · आँकड़ों में संविधान | लोक सभा की सीटें आज भी 1971 से तय हैं | 39.4 s | 3D seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
 | `ma-tsmc` | Moat Atlas · From Orbit | This was empty Arizona desert in 2020 | 35.1 s | Satellite before/after wipe, investment ladder, globe |
 
-Shorts built since, with their sources: [`SHORTS_BUILT.md`](SHORTS_BUILT.md) (`dk-exports`, `ia-sunset`).
+Shorts built since, with their sources: [`SHORTS_BUILT.md`](SHORTS_BUILT.md) (`id-razor`, `dk-exports`, `ia-sunset`).
 
 **Status (10 Nov 2026): voiced with MiniMax, timed to the voice, rendered and muxed** to
 `out/hyperframes/<id>-final.mp4` (not in git). All three pass the Shorts gate with no FAIL, and each ends on its opening

@@ -184,6 +184,32 @@ S["ia-sunset"] = dict(
     ])
 
 
+S["id-razor"] = dict(
+    channel="The Inventor Desk", lang="en-IN", series="Patent Files",
+    title="The first Gillette razor cost 1/3 of a week's pay",
+    send="Everyone has heard 'give away the razor, sell the blades'; Gillette's own first razor cost a third of a week's wage.",
+    beats=[
+        ("b1", [("This drawing gave us", "This drawing gave us"), ("the razor blade you throw away.", "the blade you *throw away.*")],
+         ["This drawing", "you throw away"]),
+        ("b2", [("Granted to King Gillette", "Granted to *King Gillette*"), ("on the fifteenth of November, nineteen oh four.", "on *15 November 1904.*")],
+         ["Granted to", "fifteenth of November"]),
+        ("b3", [("The blade?", "*The blade?*"), ("Six thousandths of an inch thick.", "*0.15 mm* thick."), ("MIT experts", "MIT experts"),
+                ("had called it impossible.", "called it *impossible.*")],
+         ["The blade", "Six thousandths", "MIT experts", "impossible"]),
+        ("b4", [("So how did he make money?", "So how did he *make money?*"), ("You've heard the trick.", "You've heard *the trick.*")],
+         ["So how", "You've heard"]),
+        ("b5", [("Give the razor away.", "Give the razor *away.*"), ("Then sell the blades forever.", "Then sell the *blades.*")],
+         ["Give the razor", "Then sell"]),
+        ("b6", [("He didn't.", "He *didn't.*"), ("His razor cost five dollars.", "His razor cost *$5.*"),
+                ("About a third of a week's pay.", "About *1/3* of a week's pay.")],
+         ["He didn't", "five dollars", "About a third"]),
+        ("b7", [("His patents kept rival blades out", "His patents kept *rival blades* out"), ("for seventeen years.", "for *17 years.*"),
+                ("Free razors came only", "*Free razors* came only"), ("after they ran out.", "after they *ran out.*")],
+         ["His patents", "seventeen years", "Free razors"]),
+        ("b8", [("So when someone calls it", "So when someone calls it"), ("the Gillette trick, remember,", "the *Gillette trick,* remember,")],
+         ["So when", "the Gillette trick"]),
+    ])
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))

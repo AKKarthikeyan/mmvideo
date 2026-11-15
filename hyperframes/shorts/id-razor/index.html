@@ -1,0 +1,202 @@
+<!doctype html>
+<!-- The Inventor Desk · Patent Files · "The first Gillette razor cost 1/3 of a week's pay". Reveal Loop Short, 1080 x 1920.
+     The real drawing sheet of US Patent 775,134 (K. C. Gillette, "Razor", granted 15 Nov 1904; public domain) inks itself
+     in on a desk; the camera moves between the header, Fig. 1 (the blade) and Fig. 2 (the razor); a close-up of the
+     patent's own text gives the blade's thickness. Timings come from story.js. Sources: docs/SHORTS_BUILT.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Inventor Desk: Gillette's patent</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      @font-face { font-family: Caveat; font-weight: 600; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); }
+      #root { --acc: #7fd1ff; --acc2: #ff5a3c; background: radial-gradient(1100px 1500px at 50% 46%, #1a2433 0%, #0d131b 62%, #080b10 100%); }
+      #cv { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(8, 11, 16, 0.94), rgba(8, 11, 16, 0.86) 45%, rgba(8, 11, 16, 0)); }
+      #scrimB { height: 780px; background: linear-gradient(rgba(8, 11, 16, 0), rgba(8, 11, 16, 0.72) 38%, rgba(8, 11, 16, 0.92)); }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      #title { left: 60px; top: 268px; font-size: 64px; line-height: 1.04; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 9px 14px 11px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: #7fd1ff; }
+      .tag.red { background: #ff5a3c; color: #fff; }
+      .tag small { display: block; font: 28px/1 Plex, monospace; letter-spacing: 0; margin-top: 7px; }
+      .hand { position: absolute; z-index: 2; left: 0; top: 0; font: 600 92px/1 Caveat, cursive; color: #b3220f; white-space: nowrap; opacity: 0; transform-origin: 0 50%; }
+      .stamp { position: absolute; left: 0; top: 0; font: 700 96px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #ff5a3c; border: 9px solid #ff5a3c; padding: 8px 24px 14px;
+        background: rgba(243, 238, 224, 0.82); opacity: 0; white-space: nowrap; }
+      #price { position: absolute; left: 0; top: 0; width: 250px; height: 150px; opacity: 0; transform-origin: 30px 75px; }
+      #price .card { position: absolute; left: 28px; top: 0; width: 222px; height: 150px; background: #f7e9b8; border: 4px solid #5a4a24; border-radius: 10px 22px 22px 10px;
+        font: 700 104px/150px Oswald, sans-serif; color: #2a2112; text-align: center; padding-left: 26px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45); }
+      #price .hole { position: absolute; left: 44px; top: 63px; width: 22px; height: 22px; border-radius: 50%; background: #0d131b; border: 3px solid #5a4a24; }
+      .yr { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; color: #f7f3ea; white-space: nowrap; opacity: 0; -webkit-text-stroke: 7px rgba(4, 6, 9, 0.85); paint-order: stroke fill; }
+      .yr small { display: block; margin-top: 6px; font: 28px/1.15 Plex, monospace; color: #c8cdd3; -webkit-text-stroke: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="31.533" data-width="1080" data-height="1920">
+      <canvas id="cv" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">THE INVENTOR DESK · PATENT FILES</div>
+      <div class="src" id="srcs">
+        <div id="s0">US Patent 775,134, K. C. Gillette, “Razor”: filed 3 Dec 1901, granted 15 Nov 1904 (Google Patents)</div>
+        <div id="s1">Patent 775,134: “about six one-thousandths of an inch” = 0.15 mm, our conversion · MIT: Lemelson-MIT, “King Gillette”</div>
+        <div id="s2">R. C. Picker, “The Razors-and-Blades Myth(s)”, 78 U. Chi. L. Rev. 225 (2011): $5 for the razor and its first blades</div>
+        <div id="s3">Picker (2011): the 1904 patents ran to 1921; the first razor giveaway came after, with Wrigley gum, in 1922</div>
+      </div>
+      <div class="lab" id="title"></div>
+      <div class="tag acc" id="tName">KING C. GILLETTE</div>
+      <div class="tag acc" id="tDate">PATENTED 15 NOV 1904</div>
+      <div class="tag acc" id="tBlade">FIG. 1 · THE BLADE</div>
+      <div class="tag" id="tMm">≈ 0.15 MM THICK<small>0.006 INCH, IN THE PATENT</small></div>
+      <div class="stamp" id="sImp" data-layout-allow-occlusion>IMPOSSIBLE</div>
+      <div class="tag" id="tMit">— MIT METALLURGISTS</div>
+      <div class="hand" id="hFree" data-layout-allow-occlusion>free!</div>
+      <div class="hand" id="hBlades" data-layout-allow-occlusion>sell these</div>
+      <div class="stamp" id="sMyth" data-layout-allow-occlusion>MYTH</div>
+      <div id="price"><div class="card">$5</div><div class="hole"></div></div>
+      <div class="yr" id="y1904">1904<small>patent</small></div>
+      <div class="yr" id="y1921">1921<small>runs out</small></div>
+      <div class="yr" id="y1922">1922<small>first free razor</small></div>
+      <div class="tag acc" id="t17">17 YEARS · NO RIVAL BLADES</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const SHEET = new Image(); SHEET.src = "assets/img/sheet.png";     // 2320 x 3408, the patent's drawing sheet
+      const TEXT = new Image(); TEXT.src = "assets/img/text.webp";       // 2120 x 600, page 2 of the patent, lines 35-50
+      const g = $("cv").getContext("2d"); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = "high";
+      // ---- times
+      const tThrow = A("b1", "you throw away"), tGrant = B("b2"), tNov = A("b2", "fifteenth of November"), tBlade = B("b3"), tSix = A("b3", "Six thousandths"),
+        tMit = A("b3", "MIT experts"), tImp = A("b3", "impossible"), tHow = B("b4"), tHeard = A("b4", "You've heard"), tGive = B("b5"), tSell = A("b5", "Then sell"),
+        tDidnt = B("b6"), t5 = A("b6", "five dollars"), tThird = A("b6", "About a third"), tPat = B("b7"), t17 = A("b7", "seventeen years"), tFree = A("b7", "Free razors"),
+        tEnd = B("b8");
+      // ---- camera over the sheet: [time, centre x, centre y (sheet px), scale]; the sheet sits on the desk
+      const FULL = [1160, 1640, 0.4], HEAD = [1080, 470, 0.78], FIG1 = [600, 905, 1.35], FIG2 = [590, 1560, 0.9];
+      const KEYS = [[0, 1160, 1600, 0.385], [tGrant - 0.1, ...FULL], [tGrant + 0.7, ...HEAD], [tBlade, 1080, 470, 0.8], [tBlade + 0.7, ...FIG1], [tHow, 600, 905, 1.42],
+        [tHow + 0.8, ...FIG2], [tPat, 590, 1600, 0.94], [tPat + 0.9, 1160, 640, 0.44], [tEnd, 1160, 680, 0.44], [D - 0.25, 1160, 1600, 0.385], [D, 1160, 1600, 0.385]];
+      function cam(t) {
+        let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
+        const a = KEYS[i], b = KEYS[i + 1], e = Z.io3(C((t - a[0]) / (b[0] - a[0])));
+        return [L(a[1], b[1], e), L(a[2], b[2], e), Math.exp(L(Math.log(a[3]), Math.log(b[3]), e))];
+      }
+      let cx = 0, cy = 0, s = 1;
+      const P = (x, y) => [540 + (x - cx) * s, 960 + (y - cy) * s];
+      const place = (id, x, y, o, extra = "") => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px) ${extra}`; };
+      function hl(x0, y0, x1, y1, u, col) {     // a box drawn round a part of the sheet
+        const a = P(x0, y0), b = P(x1, y1); if (u <= 0) return;
+        g.save(); g.globalAlpha = Math.min(1, u * 1.5); g.strokeStyle = col; g.lineWidth = 7; g.lineJoin = "round";
+        const w = b[0] - a[0], h = b[1] - a[1], per = 2 * (w + h); g.setLineDash([per * C(u), per]);
+        g.strokeRect(a[0], a[1], w, h); g.restore();
+      }
+      // the sheet inks itself in along a slanted front; r = how far the front has travelled (0..1)
+      const ink = (t) => t < D - 1.1 ? L(0.55, 1, Z.io2(t / 2.6)) : L(1, 0.55, Z.io2((t - (D - 1.1)) / 1.0));
+      H.render = (t) => {
+        const c = cam(t); cx = c[0]; cy = c[1]; s = c[2];
+        g.clearRect(0, 0, 1080, 1920);
+        const p0 = P(0, 0), p1 = P(2320, 3408), W = p1[0] - p0[0], Hh = p1[1] - p0[1];
+        // paper and shadow
+        g.save(); g.shadowColor = "rgba(0,0,0,0.6)"; g.shadowBlur = 60; g.shadowOffsetY = 24; g.fillStyle = "#f1ead8"; g.fillRect(p0[0], p0[1], W, Hh); g.restore();
+        // ink, clipped to the part already drawn
+        const r = ink(t);
+        g.save(); g.beginPath();
+        const fy0 = L(-600, 3900, r), slope = 0.42;                       // front: y = fy0 - slope * x  (sheet px)
+        const q = [P(0, 0), P(2320, 0), P(2320, fy0 - slope * 2320), P(0, fy0)];
+        g.moveTo(q[0][0], q[0][1]); q.slice(1).forEach((p) => g.lineTo(p[0], p[1])); g.closePath(); g.clip();
+        g.globalCompositeOperation = "multiply"; g.drawImage(SHEET, p0[0], p0[1], W, Hh); g.restore();
+        if (r < 0.999) {                                                   // the glowing pen front
+          const a = P(0, fy0), b = P(2320, fy0 - slope * 2320);
+          g.save(); g.beginPath(); g.rect(p0[0], p0[1], W, Hh); g.clip();
+          g.strokeStyle = "rgba(127,209,255,0.75)"; g.lineWidth = 5; g.shadowColor = "#7fd1ff"; g.shadowBlur = 24;
+          g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke(); g.restore();
+        }
+        g.globalCompositeOperation = "source-over";
+        // ---- b1: the blade lights up as it is named
+        hl(285, 770, 915, 1040, F(t, tThrow, tGrant + 0.4, 0.5) > 0 ? C((t - tThrow) / 0.5) * (1 - C((t - tGrant) / 0.3)) : 0, "#7fd1ff");
+        // ---- b2: the name and the date
+        hl(885, 458, 1235, 520, t < tBlade ? C((t - tGrant - 0.5) / 0.5) : 0, "#7fd1ff");
+        hl(1265, 400, 1800, 466, t < tBlade ? C((t - tNov) / 0.5) : 0, "#7fd1ff");
+        let p = P(885, 520); place("tName", p[0], p[1] + 18, F(t, tGrant + 0.7, tBlade, 0.2));
+        p = P(1265, 400); place("tDate", Math.min(p[0], 1080 - 520), p[1] - 80, F(t, tNov + 0.2, tBlade, 0.2));
+        // ---- b3: Fig. 1, its thickness from the text, and the stamp
+        p = P(295, 780); place("tBlade", p[0], p[1] - 76, F(t, tBlade + 0.6, tSix, 0.2));
+        const card = F(t, tSix - 0.15, tMit + 0.1, 0.35);
+        if (card > 0) {                                                    // the patent's own words, page 2, right column
+          const sx = 980, sy = 230, sw = 1140, sh = 270, k = 0.92, dx = 16, dy = 1000 + (1 - Z.o3(card)) * 260;
+          g.save(); g.globalAlpha = Math.min(1, card * 1.4); g.shadowColor = "rgba(0,0,0,0.55)"; g.shadowBlur = 40; g.shadowOffsetY = 16;
+          g.fillStyle = "#f3ecda"; g.fillRect(dx - 12, dy - 12, sw * k + 24, sh * k + 24); g.shadowColor = "transparent"; g.shadowBlur = 0; g.shadowOffsetY = 0;
+          g.globalCompositeOperation = "multiply"; g.drawImage(TEXT, sx, sy, sw, sh, dx, dy, sw * k, sh * k);
+          const u1 = C((t - tSix - 0.1) / 0.45), u2 = C((t - tSix - 0.5) / 0.6);   // highlighter
+          g.fillStyle = "rgba(255,214,64,0.62)";
+          g.fillRect(dx + (1436 - sx) * k, dy + (306 - sy) * k, (1768 - 1436) * k * u1, 44 * k);
+          g.fillRect(dx + (1012 - sx) * k, dy + (348 - sy) * k, (1660 - 1012) * k * u2, 40 * k);
+          g.restore();
+        }
+        place("tMm", 60, 1000 - 120 + (1 - Z.o3(card)) * 260, Math.min(card, F(t, tSix + 0.4, tMit + 0.1, 0.25)));
+        const si = F(t, tImp - 0.05, tHow + 0.1, 0.1);
+        $("sImp").style.opacity = si; $("sImp").style.transform = `translate(210px, 960px) rotate(-8deg) scale(${1.6 - 0.6 * Z.o3((t - tImp + 0.05) / 0.22)})`;
+        place("tMit", 300, 1130, F(t, tMit + 0.1, tHow + 0.1, 0.2));
+        // ---- b5: the trick as everyone tells it
+        p = P(250, 1650); place("hFree", p[0], p[1], F(t, tGive + 0.2, tPat, 0.2), `rotate(-6deg)`);
+        p = P(895, 1150); place("hBlades", Math.min(p[0] - 60, 1080 - 400), p[1] - 150, F(t, tSell + 0.1, tDidnt + 0.2, 0.2), `rotate(-4deg)`);
+        // ---- b6: the myth, the $5 tag and a third of a week's pay
+        const sm = F(t, tDidnt, tPat, 0.1);
+        p = P(250, 1650);
+        $("sMyth").style.opacity = sm; $("sMyth").style.transform = `translate(${Math.round(p[0] - 40)}px, ${Math.round(p[1] - 190)}px) rotate(-12deg) scale(${1.6 - 0.6 * Z.o3((t - tDidnt) / 0.22)})`;
+        if (sm > 0 && t < tPat + 0.2) {                                     // cross out "free!"
+          const u = C((t - tDidnt - 0.15) / 0.3); g.save(); g.globalAlpha = sm; g.strokeStyle = "#ff5a3c"; g.lineWidth = 10; g.lineCap = "round";
+          g.beginPath(); g.moveTo(p[0] - 10, p[1] + 66); g.lineTo(p[0] - 10 + 200 * u, p[1] + 34); g.stroke(); g.restore();
+        }
+        const pr = F(t, t5 - 0.1, tPat + 0.3, 0.2), sw = Math.sin((t - t5) * 5) * 14 * Math.exp(-(t - t5) * 1.4);
+        p = P(560, 1300); place("price", p[0] + 120, p[1] + 40, pr, `rotate(${(-8 + sw).toFixed(2)}deg)`);
+        if (pr > 0) { g.save(); g.globalAlpha = pr; g.strokeStyle = "#5a4a24"; g.lineWidth = 4; g.beginPath(); g.moveTo(p[0] + 10, p[1] - 10); g.lineTo(p[0] + 172, p[1] + 112); g.stroke(); g.restore(); }
+        const wk = F(t, tThird - 0.1, tPat + 0.2, 0.25);
+        if (wk > 0) {                                                       // a week's pay, a third of it gone
+          const x0 = 60, y0 = 418, w = 900, u = Z.io2((t - tThird) / 0.7);
+          g.save(); g.globalAlpha = wk; g.fillStyle = "rgba(8,11,16,0.82)"; g.fillRect(x0, y0, w, 64);
+          g.strokeStyle = "rgba(247,243,234,0.85)"; g.lineWidth = 3; g.strokeRect(x0, y0, w, 64);
+          g.fillStyle = "#ff5a3c"; g.fillRect(x0, y0, w / 3 * u, 64);
+          g.fillStyle = "rgba(247,243,234,0.5)"; g.fillRect(x0 + w / 3, y0, 3, 64); g.fillRect(x0 + 2 * w / 3, y0, 3, 64);
+          g.font = "700 32px Oswald"; g.lineWidth = 7; g.strokeStyle = "rgba(4,6,9,0.9)"; g.lineJoin = "round"; g.strokeText("A WEEK'S PAY · US AVERAGE INDUSTRIAL WAGE, 1904", x0, y0 + 108); g.fillStyle = "#f7f3ea"; g.fillText("A WEEK'S PAY · US AVERAGE INDUSTRIAL WAGE, 1904", x0, y0 + 108); g.restore();
+        }
+        // ---- b7: seventeen years of patents, then the giveaway
+        const tl = F(t, tPat + 0.3, tEnd + 0.2, 0.3);
+        if (tl > 0) {
+          const X = (yr) => 90 + (yr - 1904) / 19 * 880, y = 520, u = Z.io2((t - tPat - 0.3) / 1.0);
+          g.save(); g.globalAlpha = tl; g.lineCap = "round";
+          g.strokeStyle = "rgba(247,243,234,0.35)"; g.lineWidth = 6; g.beginPath(); g.moveTo(X(1904), y); g.lineTo(X(1923), y); g.stroke();
+          g.strokeStyle = "#7fd1ff"; g.lineWidth = 16; g.beginPath(); g.moveTo(X(1904), y); g.lineTo(L(X(1904), X(1921), u), y); g.stroke();
+          [1904, 1921].forEach((yr) => { g.fillStyle = "#7fd1ff"; g.beginPath(); g.arc(X(yr), y, 14, 0, 7); g.fill(); });
+          const gu = C((t - tFree) / 0.4);
+          if (gu > 0) { g.fillStyle = "#ff5a3c"; g.beginPath(); g.arc(X(1922), y, 14 * Z.back(gu), 0, 7); g.fill(); }
+          g.restore();
+          place("y1904", X(1904) - 30, y + 36, tl);
+          place("y1921", X(1921) - 150, y + 36, tl * C((t - t17 + 0.2) / 0.3));
+          place("y1922", X(1922) - 250, y - 150, tl * C((t - tFree) / 0.3));
+          place("t17", X(1904) - 30, y - 110, tl * C((t - t17) / 0.3) * (1 - C((t - tFree + 0.1) / 0.25)));
+        } else { ["y1904", "y1921", "y1922", "t17"].forEach((id) => { $(id).style.opacity = 0; }); }
+        // ---- titles
+        const TITLES = [[tHow + 0.1, tGive, "HOW DID HE<br />MAKE MONEY?"], [tGive, tDidnt, "THE TRICK<br />EVERYONE TELLS"], [tDidnt, tThird - 0.15, "THE FIRST GILLETTE<br />RAZOR: $5"],
+          [tThird - 0.15, tPat, "≈ 1/3 OF A<br />WEEK’S PAY"]];
+        let html = "", o = 0;
+        for (const [a, b, h] of TITLES) if (t >= a && t < b) { html = h; o = Math.min(C((t - a) / 0.2), C((b - t) / 0.15)); }
+        if ($("title").dataset.h !== html && html) { $("title").innerHTML = html; $("title").dataset.h = html; }
+        $("title").style.opacity = o;
+                // ---- sources
+        const so = [0, 0, 0, 0];
+        so[t < tBlade || t >= tEnd ? 0 : t < tHow ? 1 : t < tPat ? 2 : 3] = 1;
+        so.forEach((v, i) => { $("s" + i).style.opacity = v; });
+        caps(t);
+      };
+      Promise.all([SHEET.decode(), TEXT.decode()]).then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

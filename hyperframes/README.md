@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -22,8 +22,22 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | 3D cutaway, built problem by problem (vertical 1080 × 1920) | Indica Atlas, Inventor Desk | Chand Baori stepwell: illustrative model; 13 storeys, ≈3,500 steps as widely reported | `samples/s16-cutaway` |
 
-`samples/cards` makes the numbered title cards for the selection reel.
+`samples/cards` makes the numbered title cards for the selection reel; the reel letterboxes the vertical sample 16.
+
+**Sample 16, the cutaway.** The format of the viral "how it works" engineering Shorts: simple 3D models, the ground sliced open so you
+see underground, and a voice that builds the structure one problem at a time ("dig a hole... but in summer the water sinks... so
+cut wide steps"). Beats: monsoon fills the ground → dig a hole → summer, the water sinks out of reach → cut wide steps → stairs,
+someone walks down to the water → the water comes back up and the steps still reach it → the real numbers. The ground is one slab
+per storey (three boxes around a square hole), so digging and widening are just box scales; reuse it for any dug or stacked
+structure (a mine, a canal lock, a dam, a metro station, a foundation). Two things it learned: the WebGL canvas must be opaque
+(alpha lets see-through water punch holes in it), and in software rendering Chromium redraws a WebGL layer upside down under DOM
+tags that move, so the 3D frame is copied into the 2D overlay canvas and the WebGL canvas stays hidden. Before publishing: the
+water levels are illustrative and say so; check 13 storeys, ≈3,500 steps and the date against the ASI Jaipur Circle page (it
+could not be fetched from the cloud container; search results quote ASI at 19.5 m deep and 8th century, Guinness at 30.5 m and
+9th century, so depth is left off screen); the rain line (IMD Rajasthan Jun–Sep normal 435.6 mm, ≈90% of the year) comes from
+IMD figures quoted by Drishti IAS: check it against the Jaipur Meteorological Centre's monsoon report.
 
 ## Use
 

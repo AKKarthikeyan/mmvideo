@@ -84,6 +84,7 @@ def sync(names):
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
     for dst, src in SHORT_LINKS.items():
         if (SHORTS / dst).parents[1].is_dir():
+            (SHORTS / dst).parent.mkdir(exist_ok=True)
             shutil.copy(LIB / src, SHORTS / dst)
     for dst, src in LINKS.items():
         d = SAMPLES / dst
@@ -112,7 +113,9 @@ def reel():
     for i, n in enumerate(names):
         args += ["-ss", f"{i * CARD_SEC:.2f}", "-t", str(CARD_SEC), "-i", str(OUT / "cards.mp4"), "-i", str(OUT / f"{n}.mp4")]
     k = 2 * len(names)
-    fc = "".join(f"[{i}:v]scale=1920:1080,fps=30,format=yuv420p,setsar=1[v{i}];" for i in range(k))
+    # vertical samples (s16) are letterboxed into the landscape reel
+    fit = "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0x0b0e13"
+    fc = "".join(f"[{i}:v]{fit},fps=30,format=yuv420p,setsar=1[v{i}];" for i in range(k))
     fc += "".join(f"[v{i}]" for i in range(k)) + f"concat=n={k}:v=1:a=0[out]"
     subprocess.run(args + ["-filter_complex", fc, "-map", "[out]", "-c:v", "libx264", "-crf", "21", "-preset", "medium",
                            "-movflags", "+faststart", str(OUT / "visual-samples-reel.mp4")], check=True)
@@ -129,7 +132,7 @@ def contact_sheet(names):
                                    capture_output=True, text=True, check=True).stdout)
         png = OUT / f"still-{i:02d}.png"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{dur * 0.78:.2f}", "-i", str(f), "-frames:v", "1",
-                        "-vf", "scale=640:360", str(png)], check=True)
+                        "-vf", "scale=640:360:force_original_aspect_ratio=decrease,pad=640:360:(ow-iw)/2:(oh-ih)/2:color=0x0e1116", str(png)], check=True)
         im = Image.open(png).convert("RGB")
         d = ImageDraw.Draw(im)
         d.rectangle([0, 0, 92, 64], fill=(217, 164, 65))

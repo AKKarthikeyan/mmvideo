@@ -1,0 +1,405 @@
+<!doctype html>
+<!-- Sample 16 · 3D cutaway, built problem by problem: why an Indian stepwell has steps. Vertical, 1080 x 1920.
+     The ground is sliced through the middle of the well, so the section face shows what happens underground while the
+     structure grows: monsoon fills the ground -> dig a hole -> summer: the water sinks out of reach -> cut wide steps ->
+     flights of stairs, someone walks down to the water -> the real stepwell's numbers.
+     Model: 13 terraces on a square plan, stairs on the walls we can see; the cut-away front is where Chand Baori's
+     pavilion side would be. Proportions are simplified and the water levels are illustrative; both say so on screen.
+     The ground is stacked slabs, one per storey: each slab is three boxes (left, right, back) around a square hole whose
+     half-width render(t) sets, so digging and widening are just box scales. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Stepwell cutaway</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #0b1622; }
+      #gl { position: absolute; left: 0; top: 0; visibility: hidden; }
+      #ov { position: absolute; left: 0; top: 0; }
+      #title { left: 64px; top: 300px; font-size: 74px; line-height: 1.02; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 38px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea;
+        padding: 9px 14px 11px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: #f2b233; }
+      .tag.blue { background: #8fd3ff; }
+      .tag small { display: block; font: 28px/1 Plex, monospace; letter-spacing: 0; margin-top: 7px; }
+      #illus { position: absolute; left: 64px; top: 1180px; font: 26px/1 Plex, monospace; color: rgba(247, 243, 234, 0.85);
+        background: rgba(7, 9, 13, 0.6); padding: 8px 12px; white-space: nowrap; opacity: 0; }
+      #stats { position: absolute; left: 64px; top: 320px; opacity: 0; }
+      #stats .row { display: flex; align-items: baseline; gap: 18px; margin-bottom: 6px; opacity: 0; }
+      #stats .n { font: 700 132px/0.95 Oswald, sans-serif; color: var(--acc); -webkit-text-stroke: 10px rgba(4, 6, 9, 0.9); paint-order: stroke fill; }
+      #stats .u { font: 700 46px/1 Oswald, sans-serif; color: #f7f3ea; letter-spacing: 0.05em; -webkit-text-stroke: 8px rgba(4, 6, 9, 0.9); paint-order: stroke fill; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="1080" data-height="1920">
+      <canvas id="gl" class="clip" data-start="0" data-duration="32" data-track-index="1"></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDICA ATLAS · HOW IT WORKS</div>
+      <div class="src" id="srcs">
+        <div id="s0">Rain: IMD Rajasthan normal, Jun–Sep 435.6 mm, about 90% of the year’s rain</div>
+        <div id="s1">Cutaway model for illustration · water levels illustrative</div>
+        <div id="s2">13 storeys, about 3,500 steps, 9th century: as widely reported (Wikipedia, Outlook Traveller)</div>
+      </div>
+      <div class="lab" id="title">WHY DOES THIS WELL<br />HAVE 3,500 STEPS?</div>
+      <div id="stats">
+        <div class="row"><span class="n">13</span><span class="u">STOREYS</span></div>
+        <div class="row"><span class="n">≈3,500</span><span class="u">STEPS</span></div>
+        <div class="row"><span class="n">9TH</span><span class="u">CENTURY</span></div>
+      </div>
+      <div class="tag blue" id="tWT">WATER TABLE</div>
+      <div class="tag acc" id="tRain">JUN–SEP<small>≈ 90% OF THE YEAR’S RAIN</small></div>
+      <div class="tag" id="tDepth">WATER 2 M DOWN</div>
+      <div class="tag acc" id="tName">CHAND BAORI<small>ABHANERI, RAJASTHAN</small></div>
+      <div id="illus">ILLUSTRATIVE CUTAWAY · NOT TO SCALE</div>
+      <div id="capband">
+        <div class="c" id="c0">MONSOON FILLS<br />THE <em>GROUND</em></div>
+        <div class="c" id="c1">DIG A HOLE.<br /><em>WATER.</em></div>
+        <div class="c" id="c2">SUMMER: THE WATER<br /><em>SINKS</em></div>
+        <div class="c" id="c3">SO CUT WIDE<br /><em>STEPS</em></div>
+        <div class="c" id="c4">WALK DOWN TO<br />THE <em>WATER</em></div>
+        <div class="c" id="c5">AT ANY <em>LEVEL</em></div>
+      </div>
+    </div>
+    <script>window.__S = HF.setup(32); window.__timelines.main = window.__S.tl;</script>
+    <script type="module">
+      import * as THREE from "three";
+      import { RoomEnvironment } from "./assets/lib/RoomEnvironment.js";
+      const H = window.__S, E = HF.ease, F = HF.fade, L = HF.lerp, C01 = HF.clamp01;
+      const $ = (id) => document.getElementById(id);
+      const W = 1080, Hpx = 1920;
+
+      // ---------- model constants (1 unit ≈ 1 m, simplified) ----------
+      const N = 13, LH = 1.5, D = N * LH;          // 13 storeys of 1.5 m: 19.5 m to the floor
+      const A0 = 17, S = 1.1, SH = A0 - N * S;     // top half-width 17 m (≈35 m across), 1.1 m terrace per storey; shaft = floor width
+      const GX = 26, GZ = 26, GB = 27;             // ground block: x ±26, z -26..0 (cut at z = 0), down to -27
+      const half = (k) => A0 - k * S;              // finished half-width of storey k's opening
+      const WT_WET = -2, WT_DRY = -17;           // illustrative water table, monsoon and summer
+
+      // ---------- timing ----------
+      const T = { dig: [4.6, 7.6], bucket: 7.4, dry: [9.6, 12.6], widen: 14.2, stairs: 20.6, walk: [21.6, 26.2], cycle: [26.6, 30.6] };
+      const dig = (t) => E.io2((t - T.dig[0]) / (T.dig[1] - T.dig[0])) * D;
+      const widenK = (t, k) => E.io3((t - T.widen - k * 0.38) / 1.1);
+      const holeK = (t, k) => {                     // half-width of storey k's opening at time t (0 = not dug yet)
+        const front = dig(t), top = k * LH;
+        if (front <= top + 0.01) return 0;
+        const a = SH * E.o2((front - top) / LH);   // the shaft opens as the dig front passes through this storey
+        return L(a, half(k), widenK(t, k));
+      };
+      const waterY = (t) => {
+        let y = L(WT_WET, WT_DRY, E.io2((t - T.dry[0]) / (T.dry[1] - T.dry[0])));
+        const c = (t - T.cycle[0]) / (T.cycle[1] - T.cycle[0]);  // the year comes round again: water rises, steps still reach it
+        if (c > 0) y = L(WT_DRY, -7.5, Math.sin(Math.PI * C01(c)) ** 2);
+        return y;
+      };
+
+      // ---------- renderer ----------
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, alpha: false, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, Hpx, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFShadowMap;
+      const scene = new THREE.Scene();
+      scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+      scene.environmentIntensity = 0.35;
+      const camera = new THREE.PerspectiveCamera(46, W / Hpx, 0.5, 400);
+
+      const sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
+      sun.position.set(-30, 46, 34);
+      sun.castShadow = true;
+      sun.shadow.mapSize.set(2048, 2048);
+      Object.assign(sun.shadow.camera, { left: -40, right: 40, top: 40, bottom: -40, near: 1, far: 140 });
+      sun.shadow.bias = -0.0004;
+      scene.add(sun);
+      const fill = new THREE.HemisphereLight(0xbfd9ff, 0x5a4330, 0.9);
+      scene.add(fill);
+
+      // ---------- materials ----------
+      const std = (c, r = 0.9) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: 0 });
+      const stone = std(0xc89a6a), stoneTop = std(0xdcb688), ground = std(0x9c7b52), groundTop = std(0xa9895e);
+      // strata on the cut face, by depth (illustrative): topsoil, sand and silt, clay with kankar, weathered rock
+      const strata = (y) => (y > -2 ? 0x5e4027 : y > -8 ? 0xb08a58 : y > -14 ? 0x8d6a47 : 0x77736c);
+      const faceMats = (cut, top, side) => [side, side, top, side, cut, side]; // +x -x +y -y +z -z
+
+      const box = new THREE.BoxGeometry(1, 1, 1);
+      const slabs = [];
+      const mk = (mats) => { const m = new THREE.Mesh(box, mats); m.castShadow = m.receiveShadow = true; scene.add(m); return m; };
+      for (let k = 0; k < N; k++) {
+        const yTop = -k * LH, cut = std(strata(yTop - LH / 2), 0.95);
+        const top = k === 0 ? groundTop : stoneTop;
+        // the faces that line the hole are dressed stone; faces at the block's outer edge are earth
+        slabs.push({ k, yTop,
+          L: mk(faceMats(cut, top, stone)), R: mk(faceMats(cut, top, stone)), B: mk(faceMats(cut, top, stone)) });
+      }
+      // bedrock under the floor: rock band on the cut face, from the floor down to the block's base
+      const base = mk(faceMats(std(0x6f6b64, 0.95), stoneTop, ground));
+      base.scale.set(2 * GX, GB - D, GZ); base.position.set(0, -D - (GB - D) / 2, -GZ / 2);
+      // a thin earth skin over the cut face's outer rim so the block reads as a slice of the land
+      const edge = std(0x4a3524, 0.95);
+      const rimL = mk(edge), rimR = mk(edge);
+      rimL.scale.set(0.3, GB, GZ); rimL.position.set(-GX - 0.15, -GB / 2, -GZ / 2);
+      rimR.scale.set(0.3, GB, GZ); rimR.position.set(GX + 0.15, -GB / 2, -GZ / 2);
+      const rimB = mk(edge); rimB.scale.set(2 * GX + 0.6, GB, 0.3); rimB.position.set(0, -GB / 2, -GZ - 0.15);
+
+      const setSlab = (s, a) => {
+        const yc = s.yTop - LH / 2;
+        // left and right blocks run the full depth of the block; the back block spans the opening
+        const wl = GX - a;
+        s.L.scale.set(wl, LH, GZ); s.L.position.set(-a - wl / 2, yc, -GZ / 2);
+        s.R.scale.set(wl, LH, GZ); s.R.position.set(a + wl / 2, yc, -GZ / 2);
+        const db = GZ - a;
+        s.B.visible = a > 0.001;
+        s.B.scale.set(2 * a + 0.002, LH, db); s.B.position.set(0, yc, -a - db / 2);
+      };
+
+      // ---------- water ----------
+      const waterMat = new THREE.MeshStandardMaterial({ color: 0x2f86c4, roughness: 0.12, metalness: 0, emissive: 0x0d3a5e, emissiveIntensity: 0.5 });
+      const waters = [];
+      for (let k = 0; k < N; k++) { const m = new THREE.Mesh(box, waterMat); m.renderOrder = 2; scene.add(m); waters.push(m); }
+      // groundwater: a translucent sheet on the cut face below the water table
+      const gwMat = new THREE.MeshBasicMaterial({ color: 0x3fa3e8, transparent: true, opacity: 0.32, depthWrite: false });
+      const gw = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), gwMat); gw.renderOrder = 3; scene.add(gw);
+      const wtLine = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ color: 0x8fd3ff }));
+      wtLine.renderOrder = 4; scene.add(wtLine);
+
+      // ---------- stairs: zigzag flights on the inner walls, one instanced mesh ----------
+      // each storey's riser (1.5 m) carries pairs of flights meeting at the top (a "^"), 7 steps a flight
+      const STEPS = 7, RISE = LH / STEPS, RUN = 0.24, UNIT = 2 * STEPS * RUN + 0.5;
+      const stairList = [];
+      for (let k = 0; k < N - 1; k++) {
+        const a = half(k + 1), yb = -(k + 1) * LH; // flights climb the riser from storey k+1's terrace to storey k's
+        // back wall: along x at z = -half(k); side walls: along z at x = ±half(k), front half only
+        const wall = half(k);
+        const runs = [
+          { len: 2 * wall, place: (u, d) => [-wall + u, -wall + d], dir: [1, 0] },
+          { len: wall, place: (u, d) => [-wall + d, -wall + u], dir: [0, 1] },
+          { len: wall, place: (u, d) => [wall - d, -wall + u], dir: [0, 1] },
+        ];
+        for (const r of runs) {
+          const n = Math.floor((r.len - 0.6) / UNIT);
+          const off = (r.len - n * UNIT) / 2;
+          for (let j = 0; j < n; j++) {
+            const u0 = off + j * UNIT;
+            for (let s = 0; s < STEPS; s++) {
+              for (const side of [0, 1]) {
+                const u = side === 0 ? u0 + s * RUN + RUN / 2 : u0 + UNIT - s * RUN - RUN / 2;
+                const [x, z] = r.place(u, 0.42 / 2);
+                stairList.push({ k, x, z, y: yb + (s + 0.5) * RISE, h: (s + 1) * RISE, dir: r.dir });
+              }
+            }
+          }
+        }
+      }
+      const stairMat = std(0xe2c194, 0.85);
+      const stairs = new THREE.InstancedMesh(box, stairMat, stairList.length);
+      stairs.castShadow = stairs.receiveShadow = true;
+      scene.add(stairs);
+      const M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), SC = new THREE.Vector3();
+
+      // ---------- pulley, rope and bucket (beats 2-3) ----------
+      const wood = std(0x5b3a22, 0.8);
+      const pulley = new THREE.Group(); scene.add(pulley);
+      for (const x of [-SH - 0.6, SH + 0.6]) { const p = new THREE.Mesh(box, wood); p.scale.set(0.35, 3.4, 0.35); p.position.set(x, 1.7, -SH * 0.5); p.castShadow = true; pulley.add(p); }
+      const bar = new THREE.Mesh(box, wood); bar.scale.set(2 * SH + 1.6, 0.3, 0.3); bar.position.set(0, 3.3, -SH * 0.5); pulley.add(bar);
+      const rope = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1, 6), std(0xd8c9a8));
+      scene.add(rope);
+      const bucket = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.35, 0.7, 20), std(0x7a7f86, 0.5));
+      bucket.castShadow = true; scene.add(bucket);
+
+      // ---------- people: simple figures ----------
+      const person = (shirt) => {
+        const g = new THREE.Group();
+        const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.26, 0.9, 4, 10), std(shirt, 0.8)); body.position.y = 0.75;
+        const head = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 12), std(0x6b4630, 0.7)); head.position.y = 1.55;
+        const pot = new THREE.Mesh(new THREE.SphereGeometry(0.24, 14, 10), std(0xb5562f, 0.6)); pot.position.y = 1.95;
+        for (const m of [body, head, pot]) { m.castShadow = true; g.add(m); }
+        g.scale.setScalar(1.35); // a touch larger than life so the figure reads at this distance
+        scene.add(g); return g;
+      };
+      const walker = person(0xd8432f), watcher = person(0x2d6fb3), sitter = person(0xe0b03a);
+      // walker path: down the left wall's terraces, storey by storey, at a fixed z
+      const ZW = -9;
+      const walkerAt = (p, lastK) => {
+        const f = p * (lastK + 1), k = Math.min(lastK, Math.floor(f)), u = f - Math.floor(f);
+        // on storey k's terrace: between half(k+1) and half(k); stepping down to storey k+1 over u in 0.55..1
+        const xOn = (kk) => -(half(kk + 1) + S * 0.5), yOn = (kk) => -(kk + 1) * LH;
+        if (f <= 0) return [-(A0 + 1.2), 0];
+        const d = E.io2((u - 0.45) / 0.55);
+        if (k >= lastK) return [xOn(lastK), yOn(lastK)];
+        return [L(xOn(k), xOn(k + 1), d), L(yOn(k), yOn(k + 1), d)];
+      };
+
+      // ---------- rain ----------
+      const RN = 420, rainPos = new Float32Array(RN * 6);
+      const rainGeo = new THREE.BufferGeometry(); rainGeo.setAttribute("position", new THREE.BufferAttribute(rainPos, 3));
+      const rainMat = new THREE.LineBasicMaterial({ color: 0xbfe3ff, transparent: true, opacity: 0.6 });
+      const rain = new THREE.LineSegments(rainGeo, rainMat); scene.add(rain);
+      const rnd = (i, s) => { const x = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return x - Math.floor(x); };
+
+      // ---------- sky: a 2D gradient drawn each frame and used as the scene background, so the canvas stays opaque
+      // (an alpha canvas lets the see-through water punch holes in it, and Chromium then composites stray rectangles)
+      const skyC = document.createElement("canvas"); skyC.width = 270; skyC.height = 480;
+      const sky = skyC.getContext("2d"); sky.scale(0.25, 0.25);
+      const skyTex = new THREE.CanvasTexture(skyC); skyTex.colorSpace = THREE.SRGBColorSpace;
+      scene.background = skyTex;
+      const mixC = (a, b, u) => a.map((v, i) => Math.round(L(v, b[i], u)));
+      const drawSky = (t) => {
+        const dry = E.io2((t - T.dry[0]) / 3) * (1 - E.io2((t - 14) / 3)), wet = 1 - F(t, 3.6, 99, 1.4);
+        const top = mixC(mixC([24, 46, 70], [32, 54, 78], wet), [120, 86, 52], dry * 0.8);
+        const bot = mixC(mixC([92, 124, 150], [70, 92, 110], wet), [214, 160, 96], dry * 0.8);
+        const g = sky.createLinearGradient(0, 0, 0, 1100);
+        g.addColorStop(0, `rgb(${top})`); g.addColorStop(1, `rgb(${bot})`);
+        sky.fillStyle = g; sky.fillRect(0, 0, W, Hpx);
+        const lower = sky.createLinearGradient(0, 1100, 0, Hpx);
+        lower.addColorStop(0, "rgba(10,14,20,0)"); lower.addColorStop(1, "rgba(10,14,20,0.95)");
+        sky.fillStyle = lower; sky.fillRect(0, 1000, W, 920);
+        skyTex.needsUpdate = true;
+      };
+
+      // ---------- screen-space overlay: depth bracket ----------
+      const ov = $("ov").getContext("2d");
+      const proj = (x, y, z) => { V.set(x, y, z).project(camera); return [((V.x + 1) / 2) * W, ((1 - V.y) / 2) * Hpx]; };
+      const place = (id, p, dx = 0, dy = 0, a = 1) => { const e = $(id); e.style.left = `${Math.round(p[0] + dx)}px`; e.style.top = `${Math.round(p[1] + dy)}px`; e.style.opacity = a; };
+
+      // ---------- camera keyframes: [t, azimuth°, elevation°, distance, target y] ----------
+      const CAM = [
+        [0, 38, 20, 66, -8], [4.4, 34, 18, 60, -8], [8.6, 26, 12, 46, -9], [13.4, 22, 12, 52, -10],
+        [19.8, 30, 24, 70, -9], [24.5, 36, 26, 60, -11], [28.5, 44, 32, 74, -3], [32, 50, 34, 78, -2],
+      ];
+      const camAt = (t) => {
+        let i = 0; while (i < CAM.length - 2 && t > CAM[i + 1][0]) i++;
+        const a = CAM[i], b = CAM[i + 1], u = E.io2((t - a[0]) / (b[0] - a[0]));
+        return a.slice(1).map((v, j) => L(v, b[j + 1], u));
+      };
+
+      H.render = (t) => {
+        drawSky(t);
+        // camera
+        const [az, el, dist, ty] = camAt(t);
+        const ar = (az * Math.PI) / 180, er = (el * Math.PI) / 180, tgt = new THREE.Vector3(-2, ty, -7);
+        camera.position.set(tgt.x + dist * Math.sin(ar) * Math.cos(er), tgt.y + dist * Math.sin(er), tgt.z + dist * Math.cos(ar) * Math.cos(er));
+        camera.lookAt(tgt);
+        camera.updateMatrixWorld();
+
+        // ground and opening
+        const holes = slabs.map((s) => holeK(t, s.k));
+        slabs.forEach((s, i) => setSlab(s, holes[i]));
+        // the floor of the dug part
+        const wy = waterY(t);
+
+        // water: fills every dug storey below the water table
+        waters.forEach((m, k) => {
+          const a = holes[k], yTop = -k * LH, yBot = yTop - LH;
+          const hi = Math.min(yTop, wy), lowDug = Math.max(yBot, -dig(t));
+          if (a < 0.01 || hi <= lowDug + 0.001) { m.visible = false; return; }
+          m.visible = true;
+          const h = hi - lowDug;
+          m.scale.set(2 * a - 0.02, h, a - 0.01); m.position.set(0, lowDug + h / 2, -a / 2 - 0.005);
+        });
+        gw.scale.set(2 * GX, wy + GB, 1); gw.position.set(0, (wy - GB) / 2, 0.03);
+        wtLine.scale.set(2 * GX, 0.18, 1); wtLine.position.set(0, wy, 0.05);
+        const showWT = F(t, 1.2, 14.4, 0.5) + F(t, T.cycle[0], 99, 0.5);
+        gwMat.opacity = 0.1 + 0.14 * C01(showWT);
+        wtLine.material.opacity = 1; wtLine.visible = showWT > 0.05; wtLine.material.transparent = true; wtLine.material.opacity = C01(showWT);
+
+        // stairs pop in storey by storey, from the top
+        stairList.forEach((s, i) => {
+          const g = E.back((t - T.stairs - s.k * 0.16) / 0.45, 1.2);
+          const sc = Math.max(0.0001, g);
+          // a solid block from the terrace up to the tread; it grows up out of the terrace
+          if (s.dir[0]) SC.set(RUN, s.h * sc, 0.42); else SC.set(0.42, s.h * sc, RUN);
+          V.set(s.x, -(s.k + 1) * LH + (s.h * sc) / 2, s.z);
+          M4.compose(V, Q, SC); stairs.setMatrixAt(i, M4);
+        });
+        stairs.instanceMatrix.needsUpdate = true;
+        stairs.visible = t > T.stairs - 0.1;
+
+        // pulley and bucket: up for beats 2-3, gone once the steps are cut
+        const pul = F(t, T.bucket, T.widen - 0.3, 0.5);
+        pulley.visible = rope.visible = bucket.visible = pul > 0.02;
+        pulley.scale.setScalar(Math.max(0.001, pul));
+        const by = Math.min(-0.2, wy + 0.25 + 0.2 * Math.sin(t * 3)), ry = 3.3;
+        const bz = -SH * 0.5;
+        bucket.position.set(0, L(1.5, by, E.io2((t - T.bucket - 0.3) / 1.2)), bz);
+        rope.position.set(0, (ry + bucket.position.y + 0.35) / 2, bz);
+        rope.scale.set(1, Math.max(0.01, ry - bucket.position.y - 0.35), 1);
+        bucket.scale.setScalar(Math.max(0.001, pul));
+
+        // people
+        watcher.position.set(SH + 1.6, 0, -SH * 0.5 - 0.6); watcher.rotation.y = -1.2;
+        watcher.visible = t > T.bucket && t < T.widen + 0.2;
+        // walk down to the terrace just above the summer water; when the water comes back up, step back up with it
+        const lastK = Math.min(N - 2, Math.floor(-WT_DRY / LH) - 1);
+        let wp = C01((t - T.walk[0]) / (T.walk[1] - T.walk[0]));
+        if (t > T.cycle[0]) wp = Math.min(wp, Math.max(0, Math.min(lastK, (-wy - 0.3) / LH - 1)) / (lastK + 1));
+        const [wx, wyy] = walkerAt(wp, lastK);
+        walker.position.set(wx, wyy, ZW + Math.sin(t * 9) * 0.05); walker.rotation.y = Math.PI / 2;
+        walker.visible = t > T.walk[0] - 0.4;
+        sitter.position.set(6, -4 * LH, -(half(4) + 0.3)); sitter.rotation.y = 0.2;
+        sitter.visible = t > T.stairs + 1.2;
+
+        // rain
+        const rainA = 1 - F(t, 3.4, 99, 1.2);
+        rain.visible = rainA > 0.01;
+        rainMat.opacity = 0.55 * rainA;
+        for (let i = 0; i < RN; i++) {
+          const x = (rnd(i, 1) - 0.5) * 2 * GX, z = -rnd(i, 2) * GZ, sp = 26 + 10 * rnd(i, 3);
+          const y = 30 - ((t * sp + rnd(i, 4) * 32) % 32);
+          rainPos.set([x, y, z, x + 0.15, y + 1.6, z], i * 6);
+        }
+        rainGeo.attributes.position.needsUpdate = true;
+
+        renderer.render(scene, camera);
+
+        // ---------- 2D layer ----------
+        // the 3D frame is copied into the 2D canvas and the WebGL canvas itself stays hidden: in software rendering
+        // Chromium redraws the WebGL layer upside down under DOM tags that move between frames (dark ghost boxes)
+        ov.clearRect(0, 0, W, Hpx);
+        ov.drawImage(renderer.domElement, 0, 0);
+        // water-table tag rides the line, at the left of the cut face
+        const pWT = proj(-GX + 4, wy, 0.1);
+        place("tWT", [Math.max(64, pWT[0]), pWT[1]], 0, -64, C01(showWT) * (1 - F(t, 26.2, 99, 0.3)));
+        place("tRain", [64, 1040], 0, 0, F(t, 1.6, 4.4, 0.4));
+        // depth bracket from ground to the water, in the shaft (beats 2-3)
+        const dA = F(t, T.bucket + 0.4, T.widen - 0.2, 0.4);
+        if (dA > 0) {
+          const p0 = proj(SH + 0.4, 0, 0.1), p1 = proj(SH + 0.4, wy, 0.1);
+          ov.globalAlpha = dA; ov.strokeStyle = "#f2b233"; ov.lineWidth = 5;
+          ov.beginPath(); ov.moveTo(p0[0] + 40, p0[1]); ov.lineTo(p1[0] + 40, p1[1]);
+          ov.moveTo(p0[0] + 24, p0[1]); ov.lineTo(p0[0] + 56, p0[1]); ov.moveTo(p1[0] + 24, p1[1]); ov.lineTo(p1[0] + 56, p1[1]); ov.stroke();
+          ov.globalAlpha = 1;
+          $("tDepth").textContent = `WATER ${Math.round(-wy)} M DOWN`;
+          place("tDepth", [p1[0] + 70, (p0[1] + p1[1]) / 2], 0, -26, dA);
+        } else $("tDepth").style.opacity = 0;
+        place("tName", [64, 1030], 0, 0, F(t, 27.2, 99, 0.5));
+
+        // text
+        $("title").style.opacity = F(t, 0.3, 4.2, 0.5);
+        $("illus").style.opacity = F(t, 1.2, 4.4, 0.4) + F(t, 26.4, 99, 0.4); // the source line says it in between
+        $("stats").style.opacity = F(t, 26.4, 99, 0.3);
+        [...document.querySelectorAll("#stats .row")].forEach((r, i) => {
+          const a = E.o3((t - 26.6 - i * 0.45) / 0.4); r.style.opacity = a; r.style.transform = `translateX(${(1 - a) * -40}px)`;
+        });
+        $("s0").style.opacity = F(t, 0.6, 4.3, 0.4);
+        $("s1").style.opacity = F(t, 4.5, 26.2, 0.4);
+        $("s2").style.opacity = F(t, 26.4, 99, 0.4);
+        const caps = [[0.8, 4.3], [4.8, 9.3], [9.7, 14.0], [14.4, 20.4], [21.0, 26.3], [26.8, 99]];
+        caps.forEach(([a, b], i) => {
+          const e = $("c" + i), o = F(t, a, b, 0.25);
+          e.style.opacity = o; e.style.transform = `scale(${0.9 + 0.1 * E.back((t - a) / 0.3, 2)})`;
+        });
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

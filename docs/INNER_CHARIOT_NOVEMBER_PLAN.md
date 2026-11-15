@@ -1,5 +1,7 @@
 # The Inner Chariot: November 2026 planner
 
+> **Superseded 15 Nov 2026** by `INNER_CHARIOT_PLAN_DEC_JAN.md` and `INNER_CHARIOT_NORTH_STAR.md`. Nothing in this planner was published; it is kept for the record and for next year's festivals.
+
 **Cadence (AK, 25 Oct 2026):**
 - 2 long videos a week, on **Tuesdays and Fridays**: 8 in November.
 - **1 Short every day:** 30.

@@ -8,8 +8,8 @@ Everything marked **AK's call** is a proposal, not a rule yet.
 
 **Update, 15 Nov 2026 (AK agreed):** the lead long format is now **Fix This Answer** (§3a): an answer repaired on screen,
 then a fresh question that tests whether the viewer can make the same repair. It replaces the copy-review format and the
-"4/10 to 6.5/10" claim that went with it. The pilot episode is `docs/upsc/fix-this-answer/FTA-01.md` and the visual is
-sample 17 (`hyperframes/samples/s17-repair`).
+"4/10 to 6.5/10" claim that went with it. The pilot episode is `docs/upsc/fix-this-answer/FTA-01.md`, built in the
+channel's own look B with the answer-video kit (`src/looks/upsc_rich_b/fta/`, contract `CONTRACT_FTA.md`).
 
 ## 1. The one-line strategy
 
@@ -195,11 +195,11 @@ Mayer, *Learning as a Generative Activity*]
 | Trade, energy and diaspora flows | GS-II, GS-III | Globe with arcs and a ranked list | s07 globe | World outline with 3 arrows |
 | Procedures and mechanisms: how a bill becomes law, monetary transmission, GST sharing | GS-II, GS-III | Flowchart that builds, then redraws as the exam sketch | s16 flow | The same flowchart, 5–7 boxes |
 | Writing the answer itself | All | Hand-drawn notes over a real answer copy | s14 notes | The structure: intro, 3–4 points, way forward |
-| Repairing an answer (Fix This Answer) | All | The answer on a booklet page: demands, red ring, rule, strike-through, rewrite, live word count, then the transfer question | s17 repair | The self-check list: every demand has a heading, every claim has its source or channel, the ending answers the directive word |
+| Repairing an answer (Fix This Answer) | All | The answer on the ruled booklet on the desk (look B): demands, red ring, rule, strike-through, rewrite, live word count, then the transfer question | look B `fta_page`, `fta_transfer` (`src/looks/upsc_rich_b/fta/`) | The self-check list: every demand has a heading, every claim has its source or channel, the ending answers the directive word |
 
 ### Gaps in the library for this channel
 
-Three kinds of concept had no sample. The first is now built, and so is the repair visual (sample 17, 15 Nov 2026). They come up in almost every GS-II and GS-III answer, so they are the next
+Three kinds of concept had no sample. The first is now built. The repair visual is built in look B (`fta_page`, 15 Nov 2026). They come up in almost every GS-II and GS-III answer, so they are the next
 samples to build (AK's call):
 
 1. **Process flow:** built as sample 16 (`hyperframes/samples/s16-flow`, 14 Nov 2026): how an ordinary bill becomes

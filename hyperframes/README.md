@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Seventeen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk, Moat Atlas and UPSC Mains.
+Sixteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk, Moat Atlas and UPSC Mains.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -23,7 +23,6 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
 | 16 | Process flowchart that builds step by step, then redraws itself as the hand-drawn exam version | UPSC Mains, any how-it-works beat | How an ordinary bill becomes law: Constitution Art. 100, 107, 108, 111, 368; the three joint sittings (1961, 1978, 2002) | `samples/s16-flow` |
-| 17 | Answer repair: the question's demands, an answer on a booklet page, a red-pen diagnosis, strike-through and rewrite, a live word count, then a fresh question | UPSC Mains (Fix This Answer) | UPSC Mains 2024 Economics I Q4(a), repaired with NCERT, IGNOU and RBI Bulletin facts; the answer itself is illustrative and labelled so | `samples/s17-repair` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -34,7 +33,7 @@ Pillow. Renders go to `out/hyperframes/` (not in git).
 
 ```sh
 python3 hyperframes/tools/hf.py sync              # copy shared/ and the linked public/ images into every sample (run first)
-python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check (15 Nov 2026: s16 and s17 pass; s11 and s14 report errors under the current checker)
+python3 hyperframes/tools/hf.py check 3           # lint, layout and contrast check (14 Nov 2026: s16 passes; s11 and s14 report errors under the current checker)
 python3 hyperframes/tools/hf.py snap 3 1.5,6,9.5  # stills -> out/hyperframes/snap/s03-desk/
 python3 hyperframes/tools/hf.py render 3          # -> out/hyperframes/s03-desk.mp4 (or: render all)
 python3 hyperframes/tools/hf.py reel              # cards + every sample -> out/hyperframes/visual-samples-reel.mp4
@@ -76,24 +75,6 @@ the same chart redraws itself in pen, simplified to what an aspirant can draw in
   Prevention of Terrorism Bill (2002). **Check the joint-sitting years against Lok Sabha Secretariat records before
   publishing:** the three bills are agreed everywhere, but secondary sources differ on exact dates.
 - Sketch labels use Mukta for Hindi (no Devanagari handwriting font is in the library yet) and Virgil for English.
-
-## Sample 17: answer repair
-
-Made for Fix This Answer, the UPSC Mains channel's lead long format (`docs/UPSC_MAINS_PLAYBOOK.md` §3a; the episode it
-shows is `docs/upsc/fix-this-answer/FTA-01.md`). Six acts in 55 s: the question with its demands D1–D3 highlighted; the
-answer writes itself on a ruled booklet page beside a panel of demand statuses; a red ring and arrow land on the one
-mistake (writing gap, rule A1) while amber brackets flag the content gaps; the repair strikes, collapses and rewrites
-lines in green ink as the word count runs against the budget; an honest status line ("our rubric, not a UPSC mark");
-then a fresh past question that needs the same repair, with a self-check list.
-
-- **The answer on the page is illustrative** (written by us), and the stamp on the page says so for as long as it is on
-  screen. With a real aspirant's answer (with consent, anonymised), change the stamp, never drop it silently.
-- **New episode:** edit `T` (all text), `P` (page lines: id, text, kind `o` original / `n` repair / `h` repair heading,
-  write time, strike time, collapse time), the demand statuses in `status()`, and the times in `render`. Times are script
-  time; `HOLDS` pauses the clock for reading (5.5 s for 3.2 s, 18.4 s for 3 s).
-- The word count is counted from the lines on the page, not typed in. Lines wider than the page shrink to fit.
-- English only so far. Add a Hindi block to `T` once the channel language is settled; Caveat has no Devanagari, so Hindi
-  handwriting would fall back to Mukta.
 
 ## Data tools
 

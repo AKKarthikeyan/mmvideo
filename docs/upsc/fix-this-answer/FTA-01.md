@@ -1,7 +1,7 @@
 # FTA-01 · Fix This Answer: "Your limits section answers a different question"
 
 **Pilot episode 1 of the Fix This Answer format** (`docs/UPSC_MAINS_PLAYBOOK.md` §3a, AK agreed 15 Nov 2026). This is a
-draft for AK and a Mains mentor to review. Nothing is voiced yet.
+draft for AK and a Mains mentor to review. Built as a silent draft with estimated timing; nothing is voiced yet.
 
 | | |
 | --- | --- |
@@ -10,12 +10,13 @@ draft for AK and a Mains mentor to review. Nothing is voiced yet.
 | The one mistake | **Writing gap (rule A1, answer what is asked):** the limits section lists RBI's rules instead of what stops the real multiplier reaching its textbook value |
 | Content gaps (flagged, not repaired) | D1 (a loan opens a new deposit) and D2 (1/CRR ignores the cash people hold): taught in the ECO-16 film first |
 | Transfer question | UPSC CSE (Main) 2022, Economics optional Paper I, Q3(b), 15 marks |
-| Visual | Sample 17, `hyperframes/samples/s17-repair` (this episode's repair, 55 s) |
-| Length | About 8 minutes |
+| Visual | Look B, the answer-video look: `pyq_question`, `pyq_xray`, `pyq_card` and the new `fta_page`, `fta_transfer` (`src/looks/upsc_rich_b/fta/CONTRACT_FTA.md`) |
+| Source | `research/upsc/fta/fta-01/fta.py` (page, repair, narration); build `python3 scripts/upsc/fta_storyboard.py fta-01` |
+| Length | 3 min 12 s at the estimated pace (12 scenes) |
 | Language | Written in English. The channel is meant to be Hindi; that decision is still open, and a Hindi version needs a native speaker's check |
 
-**Where the facts come from.** Every claim ID below is in the research ledgers on branch `datakadai/cartoon-look` (not yet
-in `main`): `research/upsc/ECO-16/claims.csv` and `research/upsc/pyq/2024-eco1-4a/claims.csv`. The reference answer this
+**Where the facts come from.** Every claim ID below is in `research/upsc/ECO-16/claims.csv` and
+`research/upsc/pyq/2024-eco1-4a/claims.csv`, and the builder checks every number on screen against them. The reference answer this
 repair works towards is `research/upsc/pyq/2024-eco1-4a/ANSWER.md` (349 words, checked against the question paper PDF).
 The transfer question's reference answer is `research/upsc/pyq/2022-eco1-3b/ANSWER.md`.
 
@@ -101,6 +102,8 @@ we repair two or three of theirs on screen in a later episode, and release our r
 
 ## 6. Narration (draft, English)
 
+The narration as built is in `fta.py` (it is the source; the table below is the plan it came from, lightly edited there).
+
 | Beat | Says | On screen (sample 17 act) | Claims |
 | --- | --- | --- | --- |
 | b00 | You know this topic. You can write CRR, SLR and the multiplier in your sleep. So why does this answer still miss the question? Let's fix it, line by line. | The question card | — |
@@ -127,4 +130,4 @@ we repair two or three of theirs on screen in a later episode, and release our r
       2024-ECO1-4A-02).
 - [ ] Open the Telegram group (or another way to collect answers) before b12 promises it; otherwise cut b12.
 - [ ] The ECO-16 film is published first, so b05 has somewhere to send viewers.
-- [ ] Merge or copy the ECO-16 and PYQ research ledgers into `main`, so the claim IDs above resolve on the main branch.
+- [ ] Watch the draft on the Mac, where the handwriting renders in Noteworthy (the cloud draft falls back to a serif).

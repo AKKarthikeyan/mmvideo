@@ -1,0 +1,574 @@
+{
+ "id": "vs08",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "ISFR 2023 · AISHE · NMC 2024 · NTCA 2022 · ASI 2025",
+ "source": "Forest cover as a share of geographical area: Forest Survey of India, ISFR 2023, as laid in Lok Sabha, 2 Feb 2026. Colleges per lakh people aged 18-23: Ministry of Education, AISHE 2023-24. MBBS seats 2024-25: Ministry of Health (National Medical Commission), Lok Sabha reply of 9 Aug 2024, per person with population projections for 1 March 2024. Tigers: NTCA and Wildlife Institute of India, All India Tiger Estimation 2022 (state estimates). Monuments: Archaeological Survey of India, Lok Sabha answer of 1 Dec 2025. Tigers and monuments per 10,000 sq km of area (ISFR 2023).",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Rajasthan*",
+    "vs *Madhya Pradesh.*",
+    "5 rounds of state facts."
+   ],
+   "vo": "Rajasthan versus Madhya Pradesh. Five rounds.",
+   "spots": [
+    {
+     "geo": "Rajasthan",
+     "tone": "a",
+     "name": "Rajasthan"
+    },
+    {
+     "geo": "Madhya Pradesh",
+     "tone": "b",
+     "name": "Madhya Pradesh"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "versus",
+   "label": "MBBS seats per lakh people",
+   "note": "seats 2024-25 · population 2024 · higher is better",
+   "a": "7.2",
+   "b": "5.5",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "Rajasthan has thirty percent more medical seats per person.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "versus",
+   "label": "Forest cover",
+   "note": "% of geographical area · ISFR 2023 · higher is better",
+   "a": "4.8%",
+   "b": "25.0%",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Madhya Pradesh has over five times the forest share.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Colleges per lakh aged 18-23",
+   "note": "per lakh aged 18-23 · 2023-24 · higher is better",
+   "a": "47.0",
+   "b": "28.0",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Rajasthan has more colleges for every lakh young people.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "versus",
+   "label": "Tigers per 10,000 sq km",
+   "note": "2022 estimate · higher is better",
+   "a": "2.6",
+   "b": "25.5",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Madhya Pradesh has nearly ten times the tigers per area.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "versus",
+   "label": "Monuments per 10,000 sq km",
+   "note": "centrally protected · ASI, 2025 · higher is better",
+   "a": "4.7",
+   "b": "9.4",
+   "win": "b",
+   "sa": 2,
+   "sb": 3,
+   "vo": "Madhya Pradesh has about twice the monuments per area.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "score",
+   "sa": 2,
+   "sb": 3,
+   "vo": "Final score: Madhya Pradesh three, Rajasthan two.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Forest cover share, *every state*",
+   "sub": "Madhya Pradesh 25 · Rajasthan 4.8 · India 21.8%",
+   "note": "Forest cover as share of each state's area, ISFR 2023. Jammu and Kashmir and Ladakh: no separate share printed. Both states outlined.",
+   "anim": true,
+   "ring": [
+    "Rajasthan",
+    "Madhya Pradesh"
+   ],
+   "vo": "Forest cover is mapped by the Forest Survey of India.",
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "note": "Forest cover as share of each state's area, ISFR 2023. Jammu and Kashmir and Ladakh: no separate share printed. Both states outlined.",
+   "ring": [
+    "Rajasthan",
+    "Madhya Pradesh"
+   ],
+   "q": "Which two states should we compare next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which two states should we compare next? Comment below.",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Rajasthan",
+  "geo": "Rajasthan"
+ },
+ "b": {
+  "name": "Madhya Pradesh",
+  "geo": "Madhya Pradesh"
+ },
+ "map": [
+  {
+   "name": "Haryana",
+   "label": "3.6",
+   "bucket": 0,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Punjab",
+   "label": "3.7",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.437
+  },
+  {
+   "name": "Rajasthan",
+   "label": "4.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.492
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "6.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.547
+  },
+  {
+   "name": "Gujarat",
+   "label": "7.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.602
+  },
+  {
+   "name": "Bihar",
+   "label": "8.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.657
+  },
+  {
+   "name": "Puducherry",
+   "label": "9.0",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.712
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "13.2",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.767
+  },
+  {
+   "name": "Maharashtra",
+   "label": "16.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.822
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "18.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.877
+  },
+  {
+   "name": "Telangana",
+   "label": "18.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.932
+  },
+  {
+   "name": "West Bengal",
+   "label": "19.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "20.3",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.042
+  },
+  {
+   "name": "Karnataka",
+   "label": "20.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.097
+  },
+  {
+   "name": "Chandigarh",
+   "label": "21.9",
+   "bucket": 2,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.152
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "25.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.207
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "28.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.262
+  },
+  {
+   "name": "Jharkhand",
+   "label": "29.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.318
+  },
+  {
+   "name": "Odisha",
+   "label": "33.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.373
+  },
+  {
+   "name": "Assam",
+   "label": "36.1",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.428
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "37.5",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 30.483
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "41.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.538
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "45.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.593
+  },
+  {
+   "name": "Sikkim",
+   "label": "47.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.648
+  },
+  {
+   "name": "Kerala",
+   "label": "56.8",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.703
+  },
+  {
+   "name": "Goa",
+   "label": "61.2",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.758
+  },
+  {
+   "name": "Tripura",
+   "label": "72.3",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.813
+  },
+  {
+   "name": "Nagaland",
+   "label": "73.7",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.868
+  },
+  {
+   "name": "Manipur",
+   "label": "74.3",
+   "bucket": 4,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.923
+  },
+  {
+   "name": "Meghalaya",
+   "label": "75.7",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.978
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "78.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.033
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "81.6",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.088
+  },
+  {
+   "name": "Mizoram",
+   "label": "85.3",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.143
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "91.3",
+   "bucket": 4,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.198
+  }
+ ],
+ "checked": [
+  "MBBS seats per lakh people: Rajasthan 7.17364, Madhya Pradesh 5.5359, 30% apart, Rajasthan ahead",
+  "Forest cover: Rajasthan 4.84, Madhya Pradesh 25, 417% apart, Madhya Pradesh ahead",
+  "  same winner in {'ratio': [{'tbl': ['evergreen/land_isfr2023_forest_tree_cover', 'Forest cover 2021 (km2)']}, {'tbl': ['evergreen/land_isfr2023_forest_tree_cover', 'Geographical area (km2)']}], 'scale': 100}: Rajasthan 4.85976, Madhya Pradesh 25.1239",
+  "Colleges per lakh aged 18-23: Rajasthan 47, Madhya Pradesh 28, 68% apart, Rajasthan ahead",
+  "  same winner in {'tbl': ['evergreen/built_aishe_colleges_2023_24', 'Colleges per lakh population aged 18-23, 2022-23']}: Rajasthan 42, Madhya Pradesh 27",
+  "Tigers per 10,000 sq km: Rajasthan 2.5713, Madhya Pradesh 25.4662, 890% apart, Madhya Pradesh ahead",
+  "  same winner in {'ratio': [{'tbl': ['evergreen/land_tigers_2022', 'Tiger estimate 2018']}, {'tbl': ['evergreen/built_area_isfr2023', 'Geographical area (sq km)']}], 'scale': 10000}: Rajasthan 2.01613, Madhya Pradesh 17.064",
+  "Monuments per 10,000 sq km: Rajasthan 4.70431, Madhya Pradesh 9.40788, 100% apart, Madhya Pradesh ahead",
+  "  same winner in {'ratio': [{'tbl': ['evergreen/heritage_asi_protected_monuments_pdf', 'Centrally protected monuments and sites']}, {'tbl': ['evergreen/built_area_isfr2023', 'Geographical area (sq km)']}], 'scale': 10000}: Rajasthan 4.76275, Madhya Pradesh 9.44032",
+  "score 2 to 3",
+  "Madhya Pradesh forest cover share is over five times Rajasthan's (ISFR 2023): 5.17",
+  "Madhya Pradesh forest cover share over five times Rajasthan's (ISFR 2021): 5.17",
+  "Rajasthan has more colleges per lakh aged 18-23 than Madhya Pradesh (2023-24): 1.68",
+  "Rajasthan has more colleges per lakh aged 18-23 than Madhya Pradesh (2022-23): 1.56",
+  "Madhya Pradesh tigers per area nearly ten times Rajasthan's (2022): 9.90",
+  "Madhya Pradesh tigers per area at least eight times Rajasthan's (2018): 8.46",
+  "Rajasthan has thirty percent more MBBS seats per lakh people than Madhya Pradesh (2024-25 seats, 2024 population): 1.30",
+  "Madhya Pradesh has about twice Rajasthan's protected monuments per area (Lok Sabha answer): 2.00",
+  "Madhya Pradesh has about twice Rajasthan's protected monuments per area (ASI list PDF): 1.98"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.369,
+   "at": 0.12,
+   "text": "Rajasthan versus Madhya Pradesh. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.448,
+   "at": 3.991,
+   "text": "Rajasthan has thirty percent more medical seats per person."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.265,
+   "at": 7.862,
+   "text": "Madhya Pradesh has over five times the forest share."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.369,
+   "at": 11.733,
+   "text": "Rajasthan has more colleges for every lakh young people."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.448,
+   "at": 15.604,
+   "text": "Madhya Pradesh has nearly ten times the tigers per area."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.16,
+   "at": 19.475,
+   "text": "Madhya Pradesh has about twice the monuments per area."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.257,
+   "at": 23.346,
+   "text": "Final score: Madhya Pradesh three, Rajasthan two."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 3.265,
+   "at": 29.152,
+   "text": "Forest cover is mapped by the Forest Survey of India."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 2.925,
+   "at": 33.023,
+   "text": "Which two states should we compare next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rajasthan vs Madhya Pradesh: 5 Rounds of State Facts"
+}

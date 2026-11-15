@@ -1,0 +1,749 @@
+{
+  "id": "px82",
+  "type": "paradox",
+  "rules": 2,
+  "chip": "DATA PARADOX",
+  "source_short": "MoE · AISHE · 2023-24",
+  "palette": "E",
+  "state": "Rajasthan",
+  "source": "Ministry of Education, All India Survey on Higher Education (AISHE) 2023-24, released July 2026: Table 1 (universities of all types, with 2022-23) and Table 4 (colleges, with 2022-23). Counts are of institutions registered with the survey. Population: National Commission on Population projections, 1 March 2025. State totals, not per person. The table shows how much, not why.",
+  "hook": [
+    "*Rajasthan* has *twice* Gujarat's",
+    "colleges for each university:",
+    "*47* against *24*, 2023-24."
+  ],
+  "hook_vo": "Rajasthan had about twice Gujarat's colleges for each university.",
+  "facts": [
+    {
+      "state": "Gujarat",
+      "kicker": "UNIVERSITIES · AISHE 2023-24",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_universities_2023_24",
+          "Total universities"
+        ]
+      },
+      "unit": "",
+      "compare": [],
+      "text": "universities of all types in Gujarat. Rajasthan has 93, so Gujarat has 15% more.",
+      "sub": "Registered in AISHE, a survey of higher education. 2022-23: 102 against 91. State totals, not per person.",
+      "vo": "Gujarat had one hundred seven universities. Rajasthan, ninety-three."
+    },
+    {
+      "state": "Rajasthan",
+      "kicker": "COLLEGES · AISHE 2023-24",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_colleges_2023_24",
+          "Number of colleges 2023-24"
+        ]
+      },
+      "unit": "",
+      "compare": [
+        "Gujarat"
+      ],
+      "bar_max": 5000,
+      "text": "colleges in Rajasthan. Gujarat: 2,521, so Rajasthan has 72% more.",
+      "sub": "Registered with AISHE. 2022-23: 3,889 against 2,470. Rajasthan has 13% more projected population.",
+      "vo": "Rajasthan had seventy-two percent more colleges than Gujarat, with thirteen percent more people."
+    },
+    {
+      "state": "Rajasthan",
+      "kicker": "COLLEGES FOR EACH UNIVERSITY",
+      "data": {
+        "ratio": [
+          {
+            "tbl": [
+              "evergreen/built_aishe_colleges_2023_24",
+              "Number of colleges 2023-24"
+            ]
+          },
+          {
+            "tbl": [
+              "evergreen/built_aishe_universities_2023_24",
+              "Total universities"
+            ]
+          }
+        ]
+      },
+      "unit": "",
+      "compare": [
+        "Gujarat",
+        "India"
+      ],
+      "bar_max": 60,
+      "text": "colleges for each university in Rajasthan, about twice Gujarat's 24. India: 37.",
+      "sub": "A ratio of two counts, 2023-24. In 2022-23: Rajasthan 43, Gujarat 24. Not a count of affiliations.",
+      "vo": "Rajasthan had forty-seven colleges for each university. Gujarat, twenty-four."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "round",
+      "state": "Gujarat",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_universities_2023_24",
+          "Total universities"
+        ]
+      },
+      "equals": 107
+    },
+    {
+      "kind": "round",
+      "state": "Rajasthan",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_universities_2023_24",
+          "Total universities"
+        ]
+      },
+      "equals": 93
+    },
+    {
+      "kind": "round",
+      "state": "India",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_universities_2023_24",
+          "Total universities"
+        ]
+      },
+      "equals": 1289
+    },
+    {
+      "kind": "round",
+      "state": "Rajasthan",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_colleges_2023_24",
+          "Number of colleges 2023-24"
+        ]
+      },
+      "equals": 4344
+    },
+    {
+      "kind": "round",
+      "state": "Gujarat",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_colleges_2023_24",
+          "Number of colleges 2023-24"
+        ]
+      },
+      "equals": 2521
+    },
+    {
+      "kind": "round",
+      "state": "India",
+      "data": {
+        "tbl": [
+          "evergreen/built_aishe_colleges_2023_24",
+          "Number of colleges 2023-24"
+        ]
+      },
+      "equals": 48246
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "state": "Gujarat",
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_universities_2023_24",
+            "Total universities"
+          ]
+        }
+      },
+      "den": {
+        "state": "Rajasthan",
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_universities_2023_24",
+            "Total universities"
+          ]
+        }
+      },
+      "min": 1.14
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "state": "Rajasthan",
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Number of colleges 2023-24"
+          ]
+        }
+      },
+      "den": {
+        "state": "Gujarat",
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Number of colleges 2023-24"
+          ]
+        }
+      },
+      "min": 1.72
+    }
+  ],
+  "so": {
+    "weak_link": {
+      "a": {
+        "ratio": [
+          {
+            "tbl": [
+              "evergreen/built_aishe_universities_2023_24",
+              "Total universities"
+            ]
+          },
+          {
+            "tbl": [
+              "population/projected",
+              "2025"
+            ]
+          }
+        ],
+        "scale": 1000
+      },
+      "b": {
+        "tbl": [
+          "evergreen/built_aishe_colleges_2023_24",
+          "Colleges per lakh population aged 18-23, 2023-24"
+        ]
+      },
+      "max_abs": 0.3
+    },
+    "lines": [
+      "Across {n} states and UTs,",
+      "universities and colleges",
+      "per head were *not linked*."
+    ],
+    "note": "Universities per million projected people against colleges per lakh aged 18-23: rank correlation across 33 states and UTs. The table shows how much, not why.",
+    "vo": "Across the states, universities and colleges per head are not linked."
+  },
+  "map": {
+    "data": {
+      "ratio": [
+        {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Number of colleges 2023-24"
+          ]
+        },
+        {
+          "tbl": [
+            "evergreen/built_aishe_universities_2023_24",
+            "Total universities"
+          ]
+        }
+      ]
+    },
+    "unit": "",
+    "dec": 1,
+    "title": "Colleges for each university, *every state*",
+    "sub": "colleges ÷ universities · India {india} · 2023-24",
+    "note": "A ratio of two counts, not affiliations. Blank: Andaman and Nicobar Islands, Lakshadweep, Dadra and Nagar Haveli and Daman and Diu (no university).",
+    "ring": [
+      "Gujarat",
+      "Rajasthan"
+    ],
+    "vo": "Here is every state: colleges for each university."
+  },
+  "end": {
+    "q": "Which *college* did you go to?",
+    "sub": "Comment below.",
+    "vo": "Which college did you go to?"
+  },
+  "tests": [
+    {
+      "says": "Gujarat 107 universities (card 1)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_universities_2023_24",
+            "Total universities"
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "equals": 107
+    },
+    {
+      "says": "Rajasthan 93 universities (card 1)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_universities_2023_24",
+            "Total universities"
+          ]
+        },
+        "state": "Rajasthan"
+      },
+      "equals": 93
+    },
+    {
+      "says": "Gujarat has 15% more universities than Rajasthan (hook, card 1)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            },
+            "state": "Rajasthan"
+          }
+        ],
+        "scale": 100
+      },
+      "equals": 115
+    },
+    {
+      "says": "Gujarat has more universities in 2022-23 too (102 against 91)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities, AISHE 2022-23"
+              ]
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities, AISHE 2022-23"
+              ]
+            },
+            "state": "Rajasthan"
+          }
+        ]
+      },
+      "min": 1.1,
+      "max": 1.15
+    },
+    {
+      "says": "Rajasthan 4,344 colleges (card 2)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Number of colleges 2023-24"
+          ]
+        },
+        "state": "Rajasthan"
+      },
+      "equals": 4344
+    },
+    {
+      "says": "Gujarat 2,521 colleges (card 2)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Number of colleges 2023-24"
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "equals": 2521
+    },
+    {
+      "says": "Rajasthan has 72% more colleges than Gujarat (hook, title, card 2)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            "state": "Gujarat"
+          }
+        ],
+        "scale": 100
+      },
+      "equals": 172
+    },
+    {
+      "says": "Rajasthan has more colleges in 2022-23 too (3,889 against 2,470)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2022-23"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2022-23"
+              ]
+            },
+            "state": "Gujarat"
+          }
+        ]
+      },
+      "min": 1.5,
+      "max": 1.65
+    },
+    {
+      "says": "Rajasthan has 13% more projected population than Gujarat, 1 March 2025 (card 2)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            },
+            "state": "Gujarat"
+          }
+        ],
+        "scale": 100
+      },
+      "equals": 113
+    },
+    {
+      "says": "Rajasthan 46.7 colleges per university (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            }
+          ]
+        },
+        "state": "Rajasthan",
+        "scale": 10
+      },
+      "equals": 467
+    },
+    {
+      "says": "Rajasthan forty-seven colleges per university (voice)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            }
+          ]
+        },
+        "state": "Rajasthan"
+      },
+      "equals": 47
+    },
+    {
+      "says": "Gujarat 23.6 colleges per university (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            }
+          ]
+        },
+        "state": "Gujarat",
+        "scale": 10
+      },
+      "equals": 236
+    },
+    {
+      "says": "Gujarat twenty-four colleges per university (voice)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            }
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "equals": 24
+    },
+    {
+      "says": "India 37.4 colleges per university (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2023-24"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities"
+              ]
+            }
+          ]
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 374
+    },
+    {
+      "says": "Rajasthan's colleges per university are about twice Gujarat's",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_colleges_2023_24",
+                    "Number of colleges 2023-24"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_universities_2023_24",
+                    "Total universities"
+                  ]
+                }
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_colleges_2023_24",
+                    "Number of colleges 2023-24"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_universities_2023_24",
+                    "Total universities"
+                  ]
+                }
+              ]
+            },
+            "state": "Gujarat"
+          }
+        ]
+      },
+      "min": 1.9,
+      "max": 2.05
+    },
+    {
+      "says": "2022-23: Rajasthan 43 colleges per university",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2022-23"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities, AISHE 2022-23"
+              ]
+            }
+          ]
+        },
+        "state": "Rajasthan"
+      },
+      "equals": 43
+    },
+    {
+      "says": "2022-23: Gujarat 24 colleges per university",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "tbl": [
+                "evergreen/built_aishe_colleges_2023_24",
+                "Number of colleges 2022-23"
+              ]
+            },
+            {
+              "tbl": [
+                "evergreen/built_aishe_universities_2023_24",
+                "Total universities, AISHE 2022-23"
+              ]
+            }
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "equals": 24
+    },
+    {
+      "says": "Rajasthan 47 colleges per lakh aged 18-23 (map)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Colleges per lakh population aged 18-23, 2023-24"
+          ]
+        },
+        "state": "Rajasthan"
+      },
+      "equals": 47
+    },
+    {
+      "says": "Gujarat 34 colleges per lakh aged 18-23 (map)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Colleges per lakh population aged 18-23, 2023-24"
+          ]
+        },
+        "state": "Gujarat"
+      },
+      "equals": 34
+    },
+    {
+      "says": "India 32 colleges per lakh aged 18-23 (map)",
+      "value": {
+        "data": {
+          "tbl": [
+            "evergreen/built_aishe_colleges_2023_24",
+            "Colleges per lakh population aged 18-23, 2023-24"
+          ]
+        },
+        "state": "India"
+      },
+      "equals": 32
+    },
+    {
+      "says": "Gujarat has 1.46 universities per million projected people against Rajasthan's 1.12 (1 March 2025): 1.30 times, not on screen",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_universities_2023_24",
+                    "Total universities"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2025"
+                  ]
+                }
+              ],
+              "scale": 1000
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "tbl": [
+                    "evergreen/built_aishe_universities_2023_24",
+                    "Total universities"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2025"
+                  ]
+                }
+              ],
+              "scale": 1000
+            },
+            "state": "Rajasthan"
+          }
+        ]
+      },
+      "min": 1.2,
+      "max": 1.4
+    }
+  ],
+  "yt_title": "Rajasthan Has 2x Gujarat's Colleges per University, 2023-24"
+}

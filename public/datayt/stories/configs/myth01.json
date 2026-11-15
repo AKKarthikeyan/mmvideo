@@ -1,0 +1,61 @@
+{
+ "id": "myth01",
+ "type": "myth",
+ "chip": "MYTH-BUSTER",
+ "source_short": "NFHS-6 · 2023-24",
+ "unit": "%",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets. Men age 15 and above who drink alcohol.",
+ "data": {
+  "nfhs": 101
+ },
+ "palette": "O",
+ "min_lead": 1.0,
+ "myth": {
+  "state": "Goa"
+ },
+ "title": [
+  "Which state has",
+  "the most men",
+  "*who drink?*"
+ ],
+ "title_sub": "It's probably not the one you think.",
+ "headline": [
+  "Men who",
+  "*drink alcohol*"
+ ],
+ "sub": "Age 15+ · India 18.9%",
+ "panels": {
+  "guess": {
+   "kicker": "The usual answer",
+   "line": "Goa: *22.4%.*",
+   "sub": "That puts it 20th of 34."
+  },
+  "map": {
+   "kicker": "From the lowest share to the highest",
+   "line": "Every state, *mapped.*"
+  },
+  "top": {
+   "kicker": "Highest share of men who drink",
+   "line": "Top 5"
+  },
+  "truth": {
+   "kicker": "Goa is 20th of 34",
+   "line": "*Arunachal Pradesh: 50.5%.* Goa: 22.4%.",
+   "sub": "Both are outlined on the map. India: 18.9%."
+  }
+ },
+ "focus": {},
+ "end": {
+  "q": "Which state did you guess?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Which Indian state drinks the most? Not Goa 🍺",
+ "vo": {
+  "title": "Which state has the most men who drink alcohol?",
+  "guess": "Most people guess Goa. But Goa is 20th, at 22.4 percent.",
+  "map": "Here is every state, from the lowest share to the highest.",
+  "top": "Number one is Arunachal Pradesh: 50.5 percent. Telangana is second.",
+  "truth": "Goa, at 22.4 percent, is only 20th.",
+  "end": "Which state did you guess? Comment below."
+ }
+}

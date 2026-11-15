@@ -1,0 +1,604 @@
+{
+ "id": "tn13",
+ "type": "then",
+ "chip": "6 YEARS ON",
+ "sourceShort": "MoSPI · Periodic Labour Force Survey, 2017-18 to 2023-24",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office), Periodic Labour Force Survey, annual reports 2017-18 and 2023-24 (July to June; the first and the last of that series): worker population ratio, usual status (principal and subsidiary), women aged 15 years and above, rural and urban together. The ratio is the share of all women of that age who were working. Survey estimates.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Odisha*: women 15+ usually",
+    "at work: *18%* in 2017-18,",
+    "*48%* in 2023-24."
+   ],
+   "vo": "Women usually at work in Odisha: eighteen percent, then forty-eight percent.",
+   "geo": "Odisha",
+   "name": "Odisha",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN AGED 15+ USUALLY AT WORK",
+   "big": "+29.7 points",
+   "p0": {
+    "period": "2017-18",
+    "label": "18.3%",
+    "frac": 0.38125000000000003
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "48.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of women aged 15+. India: *22.0%*.",
+   "vo": "In twenty seventeen-eighteen: eighteen point three percent. India, twenty-two.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "Odisha",
+   "name": "Odisha",
+   "kicker": "WOMEN AGED 15+ USUALLY AT WORK",
+   "big": "+29.7 points",
+   "p0": {
+    "period": "2017-18",
+    "label": "18.3%",
+    "frac": 0.38125000000000003
+   },
+   "p1": {
+    "period": "2023-24",
+    "label": "48.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of women aged 15+. India: *40.3%*.",
+   "vo": "Six years on: forty-eight percent. India, forty point three.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Odisha",
+   "geo": "Odisha",
+   "kicker": "RURAL AND URBAN · 2023-24",
+   "big": "51.5%",
+   "text": "of rural women aged 15+. Urban: *27.8%*",
+   "sub": "2017-18: rural 18.9%, urban 14.8%.",
+   "bars": [
+    {
+     "name": "Rural",
+     "label": "51.5%",
+     "frac": 0.8583333333333333
+    },
+    {
+     "name": "Urban",
+     "label": "27.8%",
+     "frac": 0.4633333333333333
+    }
+   ],
+   "vo": "Rural women: fifty-one point five percent. Urban: twenty-eight.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Odisha went from *3.7 points*",
+    "*below* India's figure to",
+    "*7.7 points above* it."
+   ],
+   "note": "Paid or unpaid work. 2021-22: Odisha 31.4%, India 31.7%. Later, by calendar year: 47.3% (2024), 46.2% (2025, new design). Survey estimates. The table shows how much, not why.",
+   "vo": "Odisha moved from below India's figure to seven point seven points above.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Women at work: *each state's change*",
+   "sub": "percentage points · 2017-18 to 2023-24 · India +18.3",
+   "note": "Women aged 15+, survey estimates. Blank: Jammu and Kashmir (boundary changed), Ladakh (no 2017-18 figure), Dadra, Nagar Haveli, Daman and Diu (merged 2020).",
+   "anim": true,
+   "ring": [
+    "Odisha"
+   ],
+   "vo": "Women at work: the six-year change in each state.",
+   "legend": [
+    {
+     "color": "#9AA7D6",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#2A366F",
+     "label": "bigger rise"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Women aged 15+, survey estimates. Blank: Jammu and Kashmir (boundary changed), Ladakh (no 2017-18 figure), Dadra, Nagar Haveli, Daman and Diu (merged 2020).",
+   "ring": [
+    "Odisha"
+   ],
+   "legend": [
+    {
+     "color": "#9AA7D6",
+     "label": "smaller rise"
+    },
+    {
+     "color": "#2A366F",
+     "label": "bigger rise"
+    }
+   ],
+   "q": "What changed for women in *your* area?",
+   "sub": "Spot your state on the map.",
+   "kind": "mapend",
+   "vo": "What changed for women in your area?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Goa",
+   "label": "+1.5",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "+2.2",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.433
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+2.3",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.549
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+5.5",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.664
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+6.2",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.779
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+10.0",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.895
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+10.2",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.01
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+10.5",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.125
+  },
+  {
+   "name": "Haryana",
+   "label": "+10.8",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.241
+  },
+  {
+   "name": "Karnataka",
+   "label": "+12.4",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.356
+  },
+  {
+   "name": "Telangana",
+   "label": "+14.0",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.471
+  },
+  {
+   "name": "Mizoram",
+   "label": "+14.7",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.587
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+14.8",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.702
+  },
+  {
+   "name": "Punjab",
+   "label": "+15.2",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.817
+  },
+  {
+   "name": "Kerala",
+   "label": "+15.6",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.933
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+15.7",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.048
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+17.6",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 33.163
+  },
+  {
+   "name": "Puducherry",
+   "label": "+18.8",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.279
+  },
+  {
+   "name": "West Bengal",
+   "label": "+19.1",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.394
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+20.5",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.509
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+20.9",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.625
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+22.6",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.74
+  },
+  {
+   "name": "Sikkim",
+   "label": "+25.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.855
+  },
+  {
+   "name": "Manipur",
+   "label": "+25.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.971
+  },
+  {
+   "name": "Bihar",
+   "label": "+26.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.086
+  },
+  {
+   "name": "Gujarat",
+   "label": "+26.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.201
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+27.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.317
+  },
+  {
+   "name": "Odisha",
+   "label": "+29.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.432
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+35.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.547
+  },
+  {
+   "name": "Tripura",
+   "label": "+35.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.663
+  },
+  {
+   "name": "Assam",
+   "label": "+37.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 34.778
+  },
+  {
+   "name": "Nagaland",
+   "label": "+48.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.893
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+49.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.009
+  }
+ ],
+ "checked": [
+  "Odisha: 18.30 in 2017-18, 48.00 in 2023-24: +29.70, 2.62 times",
+  "years = 6",
+  "18.3% in 2017-18 (tenths): 183.00",
+  "eighteen percent in the hook and the title: 18.30",
+  "48.0% in 2023-24 (tenths): 480.00",
+  "forty-eight percent in the hook and the title: 48.00",
+  "India 22.0% in 2017-18 (tenths): 220.00",
+  "India twenty-two in 2017-18: 22.00",
+  "India 40.3% in 2023-24 (tenths): 403.00",
+  "India forty in 2023-24 (rounds to 40): 40.30",
+  "Odisha below India in 2017-18 by 3.7 points (tenths): 37.00",
+  "Odisha above India in 2023-24 by 7.7 points (tenths): 77.00",
+  "rural women 51.5% in 2023-24 (tenths): 515.00",
+  "urban women 27.8% in 2023-24 (tenths): 278.00",
+  "rural women 18.9% in 2017-18 (tenths): 189.00",
+  "urban women 14.8% in 2017-18 (tenths): 148.00",
+  "calendar year 2024: 47.3% (tenths): 473.00",
+  "calendar year 2025 (new survey design, not strictly comparable): 46.2% (tenths): 462.00",
+  "the rise holds in 2022-23: still 24 to 27 points above 2017-18: 25.30",
+  "calendar year 2024: 27 to 30 points above 2017-18: 29.00",
+  "calendar year 2025 (new design; information only): 27 to 30 points above 2017-18: 27.90",
+  "the 2023-24 figure is not a spike: within 3 points of calendar 2024 and 2025 (information only for 2025): 1.80",
+  "India rose 18.3 points, also +18.3 on the map (tenths): 183.00",
+  "Odisha rose 29.7 points, the figure on the card (tenths): 297.00",
+  "the hook says 2.6 times: Odisha's share of women at work (tenths): 26.23",
+  "urban women twenty-eight percent in 2023-24: 27.80",
+  "Odisha rose 29.7 points, India 18.3 points: Odisha's rise is 1.5 to 1.8 times India's: 1.62",
+  "2021-22: Odisha 31.4% (tenths): 314.00",
+  "2021-22: India 31.7% (tenths): 317.00",
+  "2021-22: Odisha level with India, within 1 point: -0.30",
+  "2022-23: Odisha 7 to 8 points above India (the lead is there in both of the last two July-June rounds): 7.70"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.858,
+   "at": 0.12,
+   "text": "Women usually at work in Odisha: eighteen percent, then forty-eight percent."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.485,
+   "at": 5.926,
+   "text": "In twenty seventeen-eighteen: eighteen point three percent. India, twenty-two."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.519,
+   "at": 13.668,
+   "text": "Six years on: forty-eight percent. India, forty point three."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 19.475,
+   "text": "Rural women: fifty-one point five percent. Urban: twenty-eight."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.067,
+   "at": 25.281,
+   "text": "Odisha moved from below India's figure to seven point seven points above."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 31.088,
+   "text": "Women at work: the six-year change in each state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.638,
+   "at": 36.894,
+   "text": "What changed for women in your area?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Odisha: Women 15+ Usually at Work, 18% to 48% in 6 Years"
+}

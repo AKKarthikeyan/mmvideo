@@ -1,0 +1,409 @@
+{
+ "id": "vs04",
+ "type": "versus",
+ "rules": 2,
+ "theme": "farm",
+ "chip": "STATE vs STATE",
+ "source_short": "Ministry of Agriculture via RBI · 2024-25",
+ "palette": "A",
+ "a": "Andhra Pradesh",
+ "b": "Telangana",
+ "source": "Ministry of Agriculture and Farmers' Welfare, via RBI Handbook of Statistics on Indian States. Yields, 2024-25 final estimates: cotton lint, pulses, rice (Tables 86, 83, 80). Fruit and vegetables, 2024-25 third advance estimates: production over area (Tables 74, 72, 75, 73). Yield is output per hectare, not a state total. Andhra Pradesh and Telangana have been separate states since 2014.",
+ "hook": [
+  "*Andhra Pradesh*",
+  "vs *Telangana.*",
+  "5 farm rounds."
+ ],
+ "hook_vo": "Andhra Pradesh versus Telangana. Five farm rounds.",
+ "categories": [
+  {
+   "label": "Fruit yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       74,
+       "2024-25*"
+      ]
+     },
+     {
+      "rbi": [
+       72,
+       "2024-25*"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        74,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        72,
+        "2023-24"
+       ]
+      }
+     ]
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        74,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        72,
+        "2022-23"
+       ]
+      }
+     ]
+    }
+   ],
+   "vo": "Andhra Pradesh grows over twice the fruit per hectare."
+  },
+  {
+   "label": "Cotton yield",
+   "note": "kg of lint per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     86,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      86,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      86,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Telangana's cotton yield is fourteen percent higher."
+  },
+  {
+   "label": "Vegetable yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       75,
+       "2024-25*"
+      ]
+     },
+     {
+      "rbi": [
+       73,
+       "2024-25*"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        75,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        73,
+        "2023-24"
+       ]
+      }
+     ]
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        75,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        73,
+        "2022-23"
+       ]
+      }
+     ]
+    }
+   ],
+   "vo": "Andhra Pradesh's vegetable yield is over two-thirds higher."
+  },
+  {
+   "label": "Pulses yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     83,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      83,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      83,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Telangana's pulses yield is over a quarter higher."
+  },
+  {
+   "label": "Rice yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     80,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      80,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      80,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Andhra Pradesh's rice yield is eight percent higher."
+  }
+ ],
+ "tests": [
+  {
+   "says": "fruit yield: Andhra Pradesh more than double Telangana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          74,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          72,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Andhra Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          74,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          72,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.2
+  },
+  {
+   "says": "cotton yield: Telangana fourteen percent above Andhra Pradesh",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        86,
+        "2024-25"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "rbi": [
+        86,
+        "2024-25"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     }
+    ]
+   },
+   "min": 1.135,
+   "max": 1.145
+  },
+  {
+   "says": "vegetable yield: Andhra Pradesh over two-thirds above Telangana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          75,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          73,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Andhra Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          75,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          73,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 1.6667,
+   "max": 1.7
+  },
+  {
+   "says": "pulses yield: Telangana over a quarter above Andhra Pradesh",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2024-25"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2024-25"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     }
+    ]
+   },
+   "min": 1.25,
+   "max": 1.33
+  },
+  {
+   "says": "rice yield: Andhra Pradesh eight percent above Telangana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2024-25"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2024-25"
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 1.075,
+   "max": 1.085
+  }
+ ],
+ "map": {
+  "data": {
+   "rbi": [
+    80,
+    "2024-25"
+   ]
+  },
+  "unit": "",
+  "title": "Rice yield, *every state*",
+  "sub": "Andhra Pradesh 3 · Telangana 2 · India {india}",
+  "note": "Kilograms per hectare, 2024-25 final estimates. Both states outlined. Blank: states with no figure. The table shows how much, not why.",
+  "ring": [
+   "Andhra Pradesh",
+   "Telangana"
+  ],
+  "vo": "Yield is output per hectare, so size gives no edge."
+ },
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Andhra Pradesh vs Telangana: 5 Farm Rounds 🌾"
+}

@@ -1,0 +1,508 @@
+{
+ "id": "px09",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "RBI · Handbook · end-March 2025",
+ "palette": "O",
+ "state": "Tamil Nadu",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 152, 155 and 156: offices of scheduled commercial banks, their deposits and the credit used in each state, as at end-March 2025. Shares are of the all-India rows. A deposit is counted where the bank office is. State totals, not per person.",
+ "hook": [
+  "*Tamil Nadu*: *16% more*",
+  "bank offices; *Karnataka*:",
+  "*29% more* deposits, 2025."
+ ],
+ "hook_vo": "Tamil Nadu had more bank offices. Karnataka had more deposits.",
+ "facts": [
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S OFFICES · 2025",
+   "data": {
+    "rbi": [
+     152,
+     "2025"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 10,
+   "text": "of India's bank offices: 16% more than Karnataka's share.",
+   "sub": "Scheduled commercial banks, end-March 2025. State totals, not per person.",
+   "vo": "Tamil Nadu's share of India's bank offices was sixteen percent above Karnataka's."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S LOANS · 2025",
+   "data": {
+    "rbi": [
+     156,
+     "2025"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 10,
+   "text": "of India's bank loans, more than Karnataka's share.",
+   "sub": "Credit used in the state, scheduled commercial banks, end-March 2025.",
+   "vo": "Tamil Nadu also held a bigger share of India's bank loans."
+  },
+  {
+   "state": "Karnataka",
+   "kicker": "SHARE OF INDIA'S DEPOSITS · 2025",
+   "data": {
+    "rbi": [
+     155,
+     "2025"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Tamil Nadu"
+   ],
+   "bar_max": 10,
+   "text": "of India's deposits: 29% more than Tamil Nadu's share, worked from unrounded totals.",
+   "sub": "Deposits: savings kept in banks, counted where the bank office is, not where the saver lives.",
+   "vo": "Karnataka held twenty-nine percent more of India's deposits than Tamil Nadu did."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.155
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.8584
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.285
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.7722
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      156,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 166
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 111
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       155,
+       "2025"
+      ]
+     },
+     {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     }
+    ]
+   },
+   "equals": 140
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 1.45
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        155,
+        "2025"
+       ]
+      },
+      {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 0.645
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      152,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      152,
+      "2024"
+     ]
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      152,
+      "2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      152,
+      "2023"
+     ]
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      155,
+      "2024"
+     ]
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      155,
+      "2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      155,
+      "2023"
+     ]
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      156,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      156,
+      "2024"
+     ]
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      156,
+      "2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "rbi": [
+      156,
+      "2023"
+     ]
+    }
+   },
+   "min": 1.2
+  }
+ ],
+ "so": {
+  "lines": [
+   "Deposits per bank office, 2025:",
+   "*Karnataka ₹166 crore*,",
+   "Tamil Nadu ₹111 crore."
+  ],
+  "vo": "Per office, Karnataka held one point five times Tamil Nadu's deposits."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      155,
+      "2025"
+     ]
+    },
+    {
+     "rbi": [
+      152,
+      "2025"
+     ]
+    }
+   ]
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Deposits per bank office, *every state*",
+  "sub": "₹ crore per office · India 140 · end-March 2025",
+  "note": "Scheduled commercial banks. State totals, not per person. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+  "ring": [
+   "Tamil Nadu",
+   "Karnataka"
+  ],
+  "vo": "Here is every state: deposits for each bank office."
+ },
+ "end": {
+  "q": "How many *banks* are near you?",
+  "sub": "Comment below.",
+  "vo": "How many banks are near you?"
+ },
+ "yt_title": "Tamil Nadu: More Bank Offices. Karnataka: 29% More Deposits"
+}

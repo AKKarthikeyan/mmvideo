@@ -1,0 +1,666 @@
+{
+ "id": "pyq-2026-gs2-1",
+ "format": "long-16x9",
+ "target_minutes": 2.5,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2026-gs2-1/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2026 · General Studies Paper II · Q1",
+    "marks": "10 marks",
+    "text": "Right to privacy relating to self-identity is very dear to every human being and well protected under Article 21 of the Constitution. In this context, examine the effect of the amendment in 2026, to the Transgender Persons (Protection of Rights) Act, 2019.",
+    "glow": []
+   },
+   "vo": "UPSC, twenty twenty-six. General Studies Paper Two, ten marks, a hundred and fifty words. Privacy and self-identity sit under Article twenty-one. Examine what the twenty twenty-six amendment did to the Transgender Persons Act. Here is the catch. The Act once gave a right to self-perceived identity. Did it survive?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2026, GS Paper II, Q1'. The words 'self-identity' glow faintly (plant).",
+   "beat": "b00",
+   "claims": [
+    "2026-GS2-1-04"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "Right to privacy relating to self-identity is very dear to every human being and well protected under Article 21 of the Constitution. In this context, examine the effect of the amendment in 2026, to the Transgender Persons (Protection of Rights) Act, 2019.",
+    "directives": [
+     {
+      "word": "examine",
+      "meaning": "look closely at the facts and issues",
+      "key": "x1"
+     }
+    ],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed",
+      "key": "d2"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect",
+      "key": "d3"
+     }
+    ]
+   },
+   "vo": "Read what it asks. Examine means weigh the effect and take a balanced view. There are three jobs. Set out the premise. Say what changed. Then test the effect against the right.",
+   "reveals": [
+    {
+     "key": "x1",
+     "word": "Examine"
+    },
+    {
+     "key": "d1",
+     "word": "and"
+    },
+    {
+     "key": "d2",
+     "word": "what"
+    },
+    {
+     "key": "d3",
+     "word": "effect"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'examine' highlighted; three empty boxes D1 to D3 (plant: they tick at the end).",
+   "beat": "b01",
+   "claims": []
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Privacy, Self-Identity and the 2026 Transgender Act Amendmen",
+    "lines": [
+     {
+      "text": "In twenty fourteen, in NALSA, the Supreme Court upheld a person's right to decide their own gender.",
+      "key": "l1"
+     },
+     {
+      "text": "In twenty seventeen, Puttaswamy quoted NALSA.",
+      "key": "l2"
+     },
+     {
+      "text": "Privacy, self-identity and autonomy are fundamental values.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "Start with the premise. In twenty fourteen, in NALSA, the Supreme Court upheld a person's right to decide their own gender. In twenty seventeen, Puttaswamy quoted NALSA. Privacy, self-identity and autonomy are fundamental values.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "twenty"
+    },
+    {
+     "key": "l2",
+     "word": "a"
+    },
+    {
+     "key": "l3",
+     "word": "twenty"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two judgment cards, 2014 and 2017, linked by a quote line; Article 21 text underneath.",
+   "beat": "b02",
+   "claims": [
+    "2026-GS2-1-16",
+    "2026-GS2-1-17",
+    "POL03-D12"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Privacy, Self-Identity and the 2026 Transgender Act Amendmen",
+    "lines": [
+     {
+      "text": "Puttaswamy also gave a yardstick.",
+      "key": "l1"
+     },
+     {
+      "text": "A law that invades privacy must pass three tests.",
+      "key": "l2"
+     },
+     {
+      "text": "Legality, a legitimate aim, and proportionality.",
+      "key": "l3"
+     },
+     {
+      "text": "Privacy is not absolute, but limits must be earned.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "Puttaswamy also gave a yardstick. A law that invades privacy must pass three tests. Legality, a legitimate aim, and proportionality. Privacy is not absolute, but limits must be earned.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "yardstick."
+    },
+    {
+     "key": "l2",
+     "word": "privacy"
+    },
+    {
+     "key": "l3",
+     "word": "a"
+    },
+    {
+     "key": "l4",
+     "word": "Privacy"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three gates in a row labelled legality, need, proportionality (plant: reused in the verdict).",
+   "beat": "b03",
+   "claims": [
+    "2026-GS2-1-18",
+    "POL03-D13"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Privacy, Self-Identity and the 2026 Transgender Act Amendmen",
+    "lines": [
+     {
+      "text": "But the twenty-nineteen Act went further.",
+      "key": "l1"
+     },
+     {
+      "text": "Section four, sub-section two gave a right to self-perceived gender identity.",
+      "key": "l2"
+     },
+     {
+      "text": "The twenty twenty-six Act, in section three, omits that sub-section.",
+      "key": "l3"
+     },
+     {
+      "text": "In force from the twenty-fifth of May.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "But the twenty-nineteen Act went further. Section four, sub-section two gave a right to self-perceived gender identity. The twenty twenty-six Act, in section three, omits that sub-section. In force from the twenty-fifth of May.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "further."
+    },
+    {
+     "key": "l2",
+     "word": "a"
+    },
+    {
+     "key": "l3",
+     "word": "The"
+    },
+    {
+     "key": "l4",
+     "word": "omits"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two Act texts side by side; s.4(2) struck through on the 2026 side (pay-off of the plant).",
+   "beat": "b04",
+   "claims": [
+    "2026-GS2-1-04",
+    "2026-GS2-1-05",
+    "2026-GS2-1-03"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Privacy, Self-Identity and the 2026 Transgender Act Amendmen",
+    "lines": [
+     {
+      "text": "So identity now runs through a process.",
+      "key": "l1"
+     },
+     {
+      "text": "A medical board must recommend before the District Magistrate issues a certificate.",
+      "key": "l2"
+     },
+     {
+      "text": "The definition is a closed list.",
+      "key": "l3"
+     },
+     {
+      "text": "Its proviso excludes self-perceived sexual identities.",
+      "key": "l4"
+     }
+    ]
+   },
+   "vo": "So identity now runs through a process. A medical board must recommend before the District Magistrate issues a certificate. The definition is a closed list. Its proviso excludes self-perceived sexual identities. The Act also adds heavier penalties for forcing a transgender identity.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "process."
+    },
+    {
+     "key": "l2",
+     "word": "District"
+    },
+    {
+     "key": "l3",
+     "word": "a"
+    },
+    {
+     "key": "l4",
+     "word": "sexual"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A flow card: person, medical board, District Magistrate, certificate; the new penalties as a side card.",
+   "beat": "b05",
+   "claims": [
+    "2026-GS2-1-10",
+    "2026-GS2-1-09",
+    "2026-GS2-1-08",
+    "2026-GS2-1-14"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b06",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_NALSA_ (2014) and _Puttaswamy_ (2017) place privacy and self-identity within Article 21."
+     },
+     {
+      "kind": "head",
+      "text": "1. What the Act changed"
+     },
+     {
+      "kind": "points",
+      "text": "• Act 3 of 2026, in force 25 May 2026, omits s.4(2): the statutory right to _self-perceived gender identity_. • A closed definition; its proviso excludes 'self-perceived sexual identities'. • A _medical board_ must recommend before the District Magistrate issues a certificate. • New penalties for forcing a transgender identity."
+     },
+     {
+      "kind": "head",
+      "text": "2. Tested against Puttaswamy"
+     },
+     {
+      "kind": "points",
+      "text": "• The test: _legality, need, proportionality_ (Chandrachud J.). • NALSA called self-identity a fundamental value; a board's recommendation replaces self-perception. • Puttaswamy called LGBT rights 'real rights'; the proviso is where that reasoning would be tested. • No court has yet ruled on the Act."
+     },
+     {
+      "kind": "close",
+      "text": "So the Act narrows self-identity in statute; whether that passes the _proportionality_ test awaits the courts."
+     }
+    ],
+    "from": 0,
+    "to": 0,
+    "minutes": [
+     7.0,
+     6.361
+    ],
+    "total": 7,
+    "words0": 0,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect"
+     }
+    ],
+    "done0": [],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Now we write. A hundred and fifty words, about seven minutes. Open with the two judgments in one line. That sets the premise.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet; clock 7:00 and word counter 0. The introduction writes in; box D1 fills.",
+   "beat": "b06",
+   "claims": [
+    "2026-GS2-1-16",
+    "POL03-D12"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_NALSA_ (2014) and _Puttaswamy_ (2017) place privacy and self-identity within Article 21."
+     },
+     {
+      "kind": "head",
+      "text": "1. What the Act changed"
+     },
+     {
+      "kind": "points",
+      "text": "• Act 3 of 2026, in force 25 May 2026, omits s.4(2): the statutory right to _self-perceived gender identity_. • A closed definition; its proviso excludes 'self-perceived sexual identities'. • A _medical board_ must recommend before the District Magistrate issues a certificate. • New penalties for forcing a transgender identity."
+     },
+     {
+      "kind": "head",
+      "text": "2. Tested against Puttaswamy"
+     },
+     {
+      "kind": "points",
+      "text": "• The test: _legality, need, proportionality_ (Chandrachud J.). • NALSA called self-identity a fundamental value; a board's recommendation replaces self-perception. • Puttaswamy called LGBT rights 'real rights'; the proviso is where that reasoning would be tested. • No court has yet ruled on the Act."
+     },
+     {
+      "kind": "close",
+      "text": "So the Act narrows self-identity in statute; whether that passes the _proportionality_ test awaits the courts."
+     }
+    ],
+    "from": 1,
+    "to": 2,
+    "minutes": [
+     6.361,
+     3.647
+    ],
+    "total": 7,
+    "words0": 12,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "Section one is what changed. Four short points. The omitted sub-section, the closed definition, the medical board, and the new penalties.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 1 writes in; box D2 fills.",
+   "beat": "b07",
+   "claims": [
+    "2026-GS2-1-05",
+    "2026-GS2-1-08",
+    "2026-GS2-1-10",
+    "2026-GS2-1-14"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "_NALSA_ (2014) and _Puttaswamy_ (2017) place privacy and self-identity within Article 21."
+     },
+     {
+      "kind": "head",
+      "text": "1. What the Act changed"
+     },
+     {
+      "kind": "points",
+      "text": "• Act 3 of 2026, in force 25 May 2026, omits s.4(2): the statutory right to _self-perceived gender identity_. • A closed definition; its proviso excludes 'self-perceived sexual identities'. • A _medical board_ must recommend before the District Magistrate issues a certificate. • New penalties for forcing a transgender identity."
+     },
+     {
+      "kind": "head",
+      "text": "2. Tested against Puttaswamy"
+     },
+     {
+      "kind": "points",
+      "text": "• The test: _legality, need, proportionality_ (Chandrachud J.). • NALSA called self-identity a fundamental value; a board's recommendation replaces self-perception. • Puttaswamy called LGBT rights 'real rights'; the proviso is where that reasoning would be tested. • No court has yet ruled on the Act."
+     },
+     {
+      "kind": "close",
+      "text": "So the Act narrows self-identity in statute; whether that passes the _proportionality_ test awaits the courts."
+     }
+    ],
+    "from": 3,
+    "to": 5,
+    "minutes": [
+     3.647,
+     0.4
+    ],
+    "total": 7,
+    "words0": 63,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect"
+     }
+    ],
+    "done0": [
+     "D2"
+    ],
+    "done": [
+     "D1",
+     "D3"
+    ],
+    "start": "w"
+   },
+   "vo": "Section two applies the three tests. Be careful with the last point. No court has ruled on this Act. So the verdict is a reasoned view, not a holding. It says the question awaits the courts.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in; the close writes in; box D3 fills.",
+   "beat": "b08",
+   "claims": [
+    "2026-GS2-1-18",
+    "2026-GS2-1-20",
+    "2026-GS2-1-17"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b09",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "The 2026 Act keeps the right to self-perceived gender identity in section 4(2).",
+      "miss": "section 3 of the 2026 Act omits s.4(2)",
+      "key": "w1"
+     },
+     {
+      "text": "The Act took effect on 30 March 2026, the day of assent.",
+      "miss": "s.1(2) waits for a notification; it began on 25 May 2026",
+      "key": "w2"
+     },
+     {
+      "text": "The Supreme Court has struck the amendment down.",
+      "miss": "no court ruling on its validity is in the record we read",
+      "key": "w3"
+     },
+     {
+      "text": "Article 21 does not cover self-identity.",
+      "miss": "NALSA, quoted in Puttaswamy, ties self-identity to privacy and autonomy",
+      "key": "w4"
+     },
+     {
+      "text": "(no mention of the three-fold test)",
+      "miss": "the question asks for the effect on a right; Puttaswamy's test is the yardstick",
+      "key": "w5"
+     }
+    ],
+    "heads": [
+     "1. What the Act changed",
+     "2. Tested against Puttaswamy"
+    ],
+    "fig": null,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now the easy answer beside it. It says self-perceived identity stays in section four. It does not. It says the Act began on assent. It began on a notified date. It says the Court struck it down. The record shows no ruling. And it never names the three-fold test.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "says"
+    },
+    {
+     "key": "w2",
+     "word": "It"
+    },
+    {
+     "key": "w3",
+     "word": "on"
+    },
+    {
+     "key": "w4",
+     "word": "date."
+    },
+    {
+     "key": "w5",
+     "word": "down."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's slips ringed in red with one-line notes.",
+   "beat": "b09",
+   "claims": [
+    "2026-GS2-1-05",
+    "2026-GS2-1-03",
+    "2026-GS2-1-18"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b10",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Privacy and identity"
+     },
+     {
+      "id": "D2",
+      "label": "What the Act changed"
+     },
+     {
+      "id": "D3",
+      "label": "Its effect"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2017 PSIR Paper I Q5(b): right to privacy is an intrinsic part of the right to life",
+      "key": "c1"
+     },
+     {
+      "text": "2023 GS II Q12: constitutional perspectives of gender justice, with case laws",
+      "key": "c2"
+     },
+     {
+      "text": "2026 GS II Q2: the evolution of women's constitutional position, as a class",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "The concept episode: Fundamental Rights: what you can actually do with them",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "Here is the payoff. This one answer serves its cousins. Twenty seventeen asked about privacy as part of the right to life. Twenty twenty-three asked about gender justice. Learn the premise once.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "This"
+    },
+    {
+     "key": "c2",
+     "word": "Twenty"
+    },
+    {
+     "key": "c3",
+     "word": "part"
+    },
+    {
+     "key": "nx",
+     "word": "the"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three boxes tick; three cousin question cards slide in.",
+   "beat": "b10",
+   "claims": [
+    "POL03-D12"
+   ]
+  }
+ ]
+}

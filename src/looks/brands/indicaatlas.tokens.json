@@ -1,0 +1,80 @@
+{
+ "id": "indicaatlas",
+ "name": "Indica Atlas",
+ "handle": "",
+ "tagline": "Maps · History · India and the world",
+ "_name_note": "Name, tagline and mark from MMVideo/src/brand/Brand.tsx (banner line 'MAPS · HISTORY · INDIA AND THE WORLD'); the handle is left empty until AK confirms it.",
+ "palette": {
+  "ground": "#06202C",
+  "ink": "#06202C",
+  "paper": "#F7F1E3",
+  "accent": "#0C3D52",
+  "accent2": "#FFB020",
+  "deep": "#06202C",
+  "muted": "#11597A"
+ },
+ "derived": {
+  "ray": "#11597A",
+  "line": "#A3A8A3",
+  "empty": "#DAD8CD",
+  "softInk": "#0C3D52",
+  "accent2Text": "#11597A",
+  "accent2Light": "#FFB020",
+  "newsprint": "#F7F1E3",
+  "newsprint2": "#E9E4D8"
+ },
+ "_derived_note": "From the Indica Atlas palette (MMVideo/src/brand/Brand.tsx B: deep #06202C, teal #0C3D52, sea #11597A, land #2E9E78, india #3DBE8C, amber #FFB020, cyan #3DD9FF, cream #F7F1E3). line, empty and newsprint2 are cream mixed with deep (35%, 12%, 6%); amber is too light for small text on cream, so accent2Text is sea.",
+ "mapRamp": ["#3DBE8C", "#2E9E78", "#11597A", "#0C3D52", "#06202C"],
+ "_mapRamp_note": "Light to dark: india, land, sea, teal, deep. Replaces a story's five bands on the closing map; the legend and labels follow the bucket.",
+ "faces": {
+  "anybody": {"family": "LK Anybody", "file": "fonts/looks/anybody/Anybody-VF.ttf", "format": "truetype", "weight": [100, 900], "stretch": [50, 150], "licence": "SIL OFL 1.1, fonts/looks/anybody/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "plexMono": {"family": "LK Plex Mono", "file": "fonts/looks/ibmplexmono/IBMPlexMono-Bold.ttf", "format": "truetype", "weight": 700, "licence": "SIL OFL 1.1, fonts/looks/ibmplexmono/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "bricolage": {"family": "LK Bricolage", "file": "fonts/looks/bricolagegrotesque/BricolageGrotesque-VF.ttf", "format": "truetype", "weight": [200, 800], "stretch": [75, 100], "licence": "SIL OFL 1.1, fonts/looks/bricolagegrotesque/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "spaceMono": {"family": "LK Space Mono", "file": "fonts/looks/spacemono/SpaceMono-Bold.ttf", "format": "truetype", "weight": 700, "licence": "SIL OFL 1.1, fonts/looks/spacemono/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "newsreader": {"family": "LK Newsreader", "file": "fonts/looks/newsreader/Newsreader-VF.ttf", "format": "truetype", "weight": [200, 800], "licence": "SIL OFL 1.1, fonts/looks/newsreader/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "schibsted": {"family": "LK Schibsted", "file": "fonts/looks/schibstedgrotesk/SchibstedGrotesk-VF.ttf", "format": "truetype", "weight": [400, 900], "licence": "SIL OFL 1.1, fonts/looks/schibstedgrotesk/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "oswald": {"family": "LK Oswald", "file": "fonts/Oswald-700.woff2", "format": "woff2", "weight": 700, "licence": "SIL OFL 1.1, fonts/OFL-Oswald.txt (latin subset: wordmark letters only)", "probe": "INDCATLS"}
+ },
+ "fonts": {
+  "display": {"face": "anybody", "weight": 900, "stretch": 100, "tnum": true, "fallback": "'Arial Black', Impact, sans-serif"},
+  "hero": {"face": "anybody", "weight": 900, "stretch": 100, "tnum": true, "fallback": "'Arial Black', Impact, sans-serif"},
+  "mono": {"face": "plexMono", "weight": 700, "tnum": false, "fallback": "Menlo, monospace"},
+  "serif": {"face": "newsreader", "weight": 560, "tnum": false, "fallback": "Georgia, serif"},
+  "body": {"face": "schibsted", "weight": 700, "tnum": false, "fallback": "'Helvetica Neue', Arial, sans-serif"},
+  "wordmark": {"face": "oswald", "weight": 700, "tnum": false, "fallback": "Impact, 'Arial Narrow', sans-serif"}
+ },
+ "lookFonts": {
+  "counter": {
+   "display": {"face": "bricolage", "weight": 800, "stretch": 80, "tnum": true, "fallback": "'Arial Black', sans-serif"},
+   "hero": {"face": "bricolage", "weight": 800, "stretch": 78, "tnum": true, "fallback": "'Arial Black', sans-serif"},
+   "mono": {"face": "spaceMono", "weight": 700, "tnum": false, "fallback": "Menlo, monospace"}
+  },
+  "dispatch": {
+   "display": {"face": "newsreader", "weight": 560, "tnum": false, "fallback": "Georgia, serif"},
+   "hero": {"face": "newsreader", "weight": 800, "tnum": false, "fallback": "Georgia, serif"}
+  }
+ },
+ "chip": {"bg": "accent2", "fg": "ink", "font": "mono", "size": 32, "tracking": 0.06, "radius": 6, "padX": 14, "padY": 6, "upper": true},
+ "safe": {"w": 1080, "h": 1920, "x0": 95, "x1": 850, "y0": 210, "y1": 1480},
+ "contrast": {
+  "pairs": [
+   {"fg": "paper", "bg": "ink"},
+   {"fg": "ink", "bg": "paper"},
+   {"fg": "paper", "bg": "accent"},
+   {"fg": "accent", "bg": "paper"},
+   {"fg": "ink", "bg": "accent2"},
+   {"fg": "accent2", "bg": "ink"},
+   {"fg": "accent2", "bg": "accent"},
+   {"fg": "paper", "bg": "deep"},
+   {"fg": "ink", "bg": "newsprint"},
+   {"fg": "accent", "bg": "newsprint"},
+   {"fg": "accent2Text", "bg": "newsprint"},
+   {"fg": "softInk", "bg": "paper"},
+   {"fg": "muted", "bg": "paper"},
+   {"fg": "accent2Light", "bg": "ink"},
+   {"fg": "paper", "bg": "ray"}
+  ],
+  "never": [["accent2", "paper"], ["accent2", "newsprint"], ["paper", "accent2"]]
+ },
+ "wordmark": {"parts": ["INDICA", "ATLAS"], "font": "wordmark", "stacked": true}
+}

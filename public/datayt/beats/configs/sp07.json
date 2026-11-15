@@ -1,0 +1,430 @@
+{
+ "id": "sp07",
+ "type": "versus",
+ "theme": "states",
+ "rules": 1,
+ "chip": "STATE vs STATE",
+ "source_short": "Census 2011 · RBI · AISHE 2023-24 · WII 2023",
+ "palette": "O",
+ "a": "Himachal Pradesh",
+ "b": "Uttarakhand",
+ "source": "Urban share and languages known: Census of India 2011 (Tables A-01 and C-17); the language figure is the share of people who report knowing three or more. Wildlife sanctuaries: National Wildlife Database Centre, Wildlife Institute of India, in a Rajya Sabha reply of 10 Aug 2023. Irrigated share of farmland: net irrigated over net sown area, 2023-24 (provisional), Ministry of Agriculture land-use data in the RBI Handbook. Colleges per lakh people aged 18-23: Ministry of Education, AISHE 2023-24.",
+ "hook": [
+  "*Himachal Pradesh*",
+  "vs *Uttarakhand.*",
+  "5 Himalayan rounds."
+ ],
+ "hook_vo": "Himachal Pradesh versus Uttarakhand. Five Himalayan rounds.",
+ "categories": [
+  {
+   "label": "Urban share of people (Census 2011)",
+   "unit": "%",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_a1_states",
+     "Urban share of population (%) [derived]"
+    ]
+   },
+   "vo": "Urban share goes to Uttarakhand, three times Himachal's."
+  },
+  {
+   "label": "Wildlife sanctuaries (Aug 2023)",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/land_protected_areas_2023",
+     "Wildlife sanctuaries (number)"
+    ]
+   },
+   "vo": "Wildlife sanctuaries go to Himachal, four times Uttarakhand's."
+  },
+  {
+   "label": "Farmland irrigated, % (2023-24 prov.)",
+   "unit": "%",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/rbi_land_irrigation",
+       "Net irrigated area 2023-24 (p) (thousand ha)"
+      ]
+     },
+     {
+      "tbl": [
+       "evergreen/rbi_land_irrigation",
+       "Net sown area 2023-24 (p) (thousand ha)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "vo": "Irrigated share of farmland goes to Uttarakhand, over twice Himachal's."
+  },
+  {
+   "label": "Know 3+ languages, % (Census 2011)",
+   "unit": "%",
+   "data": {
+    "tbl": [
+     "evergreen/census2011_language_states",
+     "Share knowing three or more languages (%) [derived]"
+    ]
+   },
+   "vo": "People knowing three or more languages: Himachal, over two and a half times."
+  },
+  {
+   "label": "Colleges per lakh aged 18-23, 2023-24",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/built_aishe_colleges_2023_24",
+     "Colleges per lakh population aged 18-23, 2023-24"
+    ]
+   },
+   "vo": "Colleges per lakh young people go to Himachal."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Uttarakhand urban share is three times Himachal's (Census 2011)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Urban share of population (%) [derived]"
+       ]
+      },
+      "state": "Uttarakhand"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_a1_states",
+        "Urban share of population (%) [derived]"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     }
+    ]
+   },
+   "min": 2.95,
+   "max": 3.08
+  },
+  {
+   "says": "Uttarakhand urban share well above Himachal's (Census 2001)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Urban share of population (%) [derived]"
+       ]
+      },
+      "state": "Uttarakhand"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_a1_states",
+        "Urban share of population (%) [derived]"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     }
+    ]
+   },
+   "min": 2.4,
+   "max": 2.9
+  },
+  {
+   "says": "Himachal has four times Uttarakhand's wildlife sanctuaries (Aug 2023)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_protected_areas_2023",
+        "Wildlife sanctuaries (number)"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/land_protected_areas_2023",
+        "Wildlife sanctuaries (number)"
+       ]
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 3.95,
+   "max": 4.05
+  },
+  {
+   "says": "Uttarakhand irrigated share of farmland is over twice Himachal's (2023-24 p)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2023-24 (p) (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2023-24 (p) (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Uttarakhand"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2023-24 (p) (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2023-24 (p) (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Himachal Pradesh"
+     }
+    ]
+   },
+   "min": 2.3,
+   "max": 2.9
+  },
+  {
+   "says": "Uttarakhand irrigated share over twice Himachal's (2013-14)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2013-14 (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2013-14 (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Uttarakhand"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2013-14 (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2013-14 (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Himachal Pradesh"
+     }
+    ]
+   },
+   "min": 2.1,
+   "max": 2.5
+  },
+  {
+   "says": "Uttarakhand irrigated share over twice Himachal's (2004-05)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2004-05 (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2004-05 (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Uttarakhand"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net irrigated area 2004-05 (thousand ha)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/rbi_land_irrigation",
+          "Net sown area 2004-05 (thousand ha)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Himachal Pradesh"
+     }
+    ]
+   },
+   "min": 2.1,
+   "max": 2.6
+  },
+  {
+   "says": "Himachal share knowing three or more languages is over two and a half times Uttarakhand's (Census 2011)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2011_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 2.6,
+   "max": 2.9
+  },
+  {
+   "says": "Himachal share knowing three or more languages is higher (Census 2001)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/census2001_language_states",
+        "Share knowing three or more languages (%) [derived]"
+       ]
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 2.0
+  },
+  {
+   "says": "Himachal has more colleges per lakh aged 18-23 (2023-24)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 1.1,
+   "max": 1.3
+  },
+  {
+   "says": "Himachal has more colleges per lakh aged 18-23 (2022-23)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 1.2,
+   "max": 1.4
+  }
+ ],
+ "end": {
+  "q": "Which hill states should we compare next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Himachal Pradesh vs Uttarakhand: 5 Rounds of Data",
+ "rules_note": "rules 1, not 2: the versus type cannot meet rules 2 in build_beats.py itself (digits in the generated score voice line, hook not on the map, no closing map and mapend, no finding registered by the type). Every other house rule passes."
+}

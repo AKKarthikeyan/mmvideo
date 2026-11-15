@@ -1,0 +1,393 @@
+{
+ "id": "fa03",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Agriculture Ministry · 2024-25 final est.",
+ "palette": "D",
+ "state": "Punjab",
+ "source": "Ministry of Agriculture and Farmers' Welfare, Government of India: state-wise estimates of yield, total foodgrains (kilograms per hectare), 2018-19 to 2024-25 (2024-25 is the Ministry's final estimate), as published in the RBI Handbook of Statistics on Indian States, Table 84 (31 states and UTs with data in 2024-25). Yield is output per hectare, not total output; the all-India figure covers all states and UTs.",
+ "hook": [
+  "*Punjab*: highest foodgrain",
+  "yield, 2024-25: 4,761 kg per",
+  "hectare, *18%* over Haryana's."
+ ],
+ "hook_vo": "Punjab had the highest foodgrain yield, eighteen percent above Haryana's.",
+ "facts": [
+  {
+   "state": "Punjab",
+   "kicker": "FOODGRAIN YIELD · 2024-25, FINAL ESTIMATES",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 5000,
+   "text": "kilograms of foodgrains per hectare. The highest of {n} states and UTs with data. India: 2,601.",
+   "sub": "Yield is output per hectare, not total output. Ministry of Agriculture and Farmers' Welfare, via RBI.",
+   "vo": "Highest of thirty-one states and territories. India's was two thousand six hundred one."
+  },
+  {
+   "state": "Haryana",
+   "kicker": "THE NEXT STATE · HARYANA · 2024-25",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "Punjab"
+   ],
+   "bar_max": 5000,
+   "text": "kilograms per hectare in 2024-25. Haryana, Punjab's neighbour, was next highest. Third: Delhi, 3,830.",
+   "sub": "Final estimates, 2024-25.",
+   "vo": "Its neighbour Haryana was next at four thousand thirty-six. Delhi was third."
+  },
+  {
+   "state": "Punjab",
+   "kicker": "SIX YEARS EARLIER · 2018-19",
+   "data": {
+    "rbi": [
+     84,
+     "2018-19"
+    ]
+   },
+   "unit": "",
+   "claim": "highest",
+   "compare": [
+    "Haryana"
+   ],
+   "bar_max": 5000,
+   "text": "kilograms per hectare in 2018-19: also the highest. Haryana: 3,981.",
+   "sub": "Yield, total foodgrains, 2018-19.",
+   "vo": "Six years earlier, also highest at four thousand six hundred fifty-eight."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "equals": 3830
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 1.04
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "equals": 4761
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "equals": 2601
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "rbi": [
+     84,
+     "2024-25"
+    ]
+   },
+   "equals": 4036
+  },
+  {
+   "kind": "round",
+   "state": "Punjab",
+   "data": {
+    "rbi": [
+     84,
+     "2018-19"
+    ]
+   },
+   "equals": 4658
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "rbi": [
+     84,
+     "2018-19"
+    ]
+   },
+   "equals": 3981
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 1.175
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2018-19"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2018-19"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2021-22"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Punjab",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      84,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 1.05
+  }
+ ],
+ "so": {
+  "lines": [
+   "Punjab's yield was above",
+   "*Haryana's* in each year",
+   "from 2018-19 to 2024-25."
+  ],
+  "vo": "Punjab led Haryana every year, twenty eighteen nineteen to twenty twenty-four twenty-five."
+ },
+ "map": {
+  "data": {
+   "rbi": [
+    84,
+    "2024-25"
+   ]
+  },
+  "unit": "",
+  "title": "Foodgrain yield, *every state*",
+  "sub": "kg per hectare · India {india} · 2024-25 final estimates",
+  "note": "Output per hectare, not total output. Blank: no figure in the table.",
+  "ring": [
+   "Punjab",
+   "Haryana"
+  ],
+  "vo": "Every state's foodgrain yield. Yield is output per hectare."
+ },
+ "end": {
+  "q": "Which crop is *your state* known for?",
+  "sub": "Comment below.",
+  "vo": "Which crop is your state known for?"
+ },
+ "yt_title": "Punjab: Highest Foodgrain Yield, 18% Above Haryana, 2024-25"
+}

@@ -1,0 +1,549 @@
+{
+ "id": "fa02",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "IIPS · NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicator: women aged 15 to 49 with 10 or more years of schooling. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "Rural *Kerala* women, 2023-24:",
+    "*85%* had 10+ years schooling.",
+    "*Above urban* elsewhere."
+   ],
+   "vo": "Rural Kerala topped every other state's urban women on ten-plus years of school.",
+   "geo": "Kerala",
+   "name": "Kerala",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "WOMEN WITH 10+ YEARS OF SCHOOL · NFHS-6",
+   "big": "86.6%",
+   "text": "of women aged 15 to 49, 2023-24. Highest of 34 ranked states and UTs. Next: Puducherry, 75%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. Lakshadweep (small sample) is not ranked.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "86.6%",
+     "frac": 0.866
+    },
+    {
+     "name": "Puducherry",
+     "label": "75.1%",
+     "frac": 0.7509999999999999
+    }
+   ],
+   "vo": "Eighty-seven percent of women. Highest of thirty-four ranked states and territories.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "NFHS-5 (2019-21), SAME QUESTION",
+   "big": "77.0%",
+   "text": "of women: Kerala led then too. India: 41%.",
+   "sub": "Survey estimate. NFHS-5 figure as printed in the NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "77.0%",
+     "frac": 0.77
+    },
+    {
+     "name": "India",
+     "label": "41.0%",
+     "frac": 0.41
+    }
+   ],
+   "vo": "Kerala led the earlier survey too at seventy-seven percent. India was forty-one.",
+   "t0": 13.548,
+   "t1": 21.29
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "RURAL WOMEN · NFHS-6",
+   "big": "84.6%",
+   "text": "of rural women aged 15 to 49, 2023-24. Highest of 33 ranked states and UTs with rural data. India's rural figure: 40%.",
+   "sub": "Survey estimate, rural column of the NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "84.6%",
+     "frac": 0.846
+    },
+    {
+     "name": "India",
+     "label": "39.7%",
+     "frac": 0.397
+    }
+   ],
+   "vo": "In rural Kerala it was eighty-five percent. India's rural figure was forty.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Rural *Kerala* women: *85%*.",
+    "Urban women in any other",
+    "state or UT with data: 78% or less."
+   ],
+   "vo": "Rural Kerala at eighty-five percent was above urban women anywhere else.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Women with 10+ years of school, *every state*",
+   "sub": "% of women aged 15 to 49 · India 46.4% · NFHS-6 (2023-24)",
+   "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Kerala",
+    "Puducherry"
+   ],
+   "vo": "Here is every state, for all women aged fifteen to forty-nine.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "ring": [
+    "Kerala",
+    "Puducherry"
+   ],
+   "q": "*Rural* or *urban*: where did you study?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Rural or urban: where did you study?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Tripura",
+   "label": "32.9",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Bihar",
+   "label": "33.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.365
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "33.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.477
+  },
+  {
+   "name": "Assam",
+   "label": "37.1",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.589
+  },
+  {
+   "name": "Meghalaya",
+   "label": "37.5",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.701
+  },
+  {
+   "name": "Gujarat",
+   "label": "38.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.813
+  },
+  {
+   "name": "Rajasthan",
+   "label": "38.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.925
+  },
+  {
+   "name": "Jharkhand",
+   "label": "39.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.037
+  },
+  {
+   "name": "West Bengal",
+   "label": "40.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.149
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "41.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.261
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "42.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.373
+  },
+  {
+   "name": "Odisha",
+   "label": "43.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.485
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "44.8",
+   "bucket": 1,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 34.597
+  },
+  {
+   "name": "Nagaland",
+   "label": "46.3",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.709
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "48.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.821
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "50.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.933
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "50.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.045
+  },
+  {
+   "name": "Telangana",
+   "label": "51.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.157
+  },
+  {
+   "name": "Mizoram",
+   "label": "54.7",
+   "bucket": 2,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 35.268
+  },
+  {
+   "name": "Haryana",
+   "label": "55.2",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 35.38
+  },
+  {
+   "name": "Maharashtra",
+   "label": "55.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.492
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "56.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.604
+  },
+  {
+   "name": "Karnataka",
+   "label": "57.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.716
+  },
+  {
+   "name": "Ladakh",
+   "label": "58.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.828
+  },
+  {
+   "name": "Sikkim",
+   "label": "58.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 35.94
+  },
+  {
+   "name": "Punjab",
+   "label": "60.6",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 36.052
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "64.0",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 36.164
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "64.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.276
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "65.0",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 36.388
+  },
+  {
+   "name": "Goa",
+   "label": "66.5",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 36.5
+  },
+  {
+   "name": "Chandigarh",
+   "label": "70.1",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 36.612
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "72.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.724
+  },
+  {
+   "name": "Puducherry",
+   "label": "75.1",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 36.836
+  },
+  {
+   "name": "Kerala",
+   "label": "86.6",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 36.948
+  }
+ ],
+ "checked": [
+  "Kerala is the highest of 34 with data (86.6%)",
+  "Kerala is the highest of 34 with data (77.0%)",
+  "Kerala is the highest of 33 with data (84.6%)",
+  "Kerala 86.6 rounds to 87",
+  "Puducherry 75.1 rounds to 75",
+  "Kerala 77 rounds to 77",
+  "India 41 rounds to 41",
+  "Kerala 84.6 rounds to 85",
+  "India 39.7 rounds to 40",
+  "Himachal Pradesh 78 rounds to 78",
+  "India 46.4 rounds to 46",
+  "Kerala / Himachal Pradesh = 1.08 (at least 1.08)",
+  "Kerala / Puducherry = 1.09 (at least 1.08)",
+  "Kerala / Andaman and Nicobar Islands = 1.14 (at least 1.14)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.623,
+   "at": 0.12,
+   "text": "Rural Kerala topped every other state's urban women on ten-plus years of school."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 6.87,
+   "at": 5.926,
+   "text": "Eighty-seven percent of women. Highest of thirty-four ranked states and territories."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.459,
+   "at": 13.668,
+   "text": "Kerala led the earlier survey too at seventy-seven percent. India was forty-one."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.466,
+   "at": 21.41,
+   "text": "In rural Kerala it was eighty-five percent. India's rural figure was forty."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.146,
+   "at": 27.217,
+   "text": "Rural Kerala at eighty-five percent was above urban women anywhere else."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.355,
+   "at": 33.023,
+   "text": "Here is every state, for all women aged fifteen to forty-nine."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.056,
+   "at": 38.83,
+   "text": "Rural or urban: where did you study?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rural Kerala 2023-24: 85% of Women Had 10+ Years of School"
+}

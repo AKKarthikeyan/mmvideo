@@ -1,0 +1,578 @@
+{
+ "id": "vs08",
+ "type": "versus",
+ "theme": "states",
+ "rules": 2,
+ "chip": "STATE vs STATE",
+ "source_short": "ISFR 2023 · AISHE · NMC 2024 · NTCA 2022 · ASI 2025",
+ "palette": "E",
+ "a": "Rajasthan",
+ "b": "Madhya Pradesh",
+ "source": "Forest cover as a share of geographical area: Forest Survey of India, ISFR 2023, as laid in Lok Sabha, 2 Feb 2026. Colleges per lakh people aged 18-23: Ministry of Education, AISHE 2023-24. MBBS seats 2024-25: Ministry of Health (National Medical Commission), Lok Sabha reply of 9 Aug 2024, per person with population projections for 1 March 2024. Tigers: NTCA and Wildlife Institute of India, All India Tiger Estimation 2022 (state estimates). Monuments: Archaeological Survey of India, Lok Sabha answer of 1 Dec 2025. Tigers and monuments per 10,000 sq km of area (ISFR 2023).",
+ "hook": [
+  "*Rajasthan*",
+  "vs *Madhya Pradesh.*",
+  "5 rounds of state facts."
+ ],
+ "hook_vo": "Rajasthan versus Madhya Pradesh. Five rounds.",
+ "categories": [
+  {
+   "label": "MBBS seats per lakh people",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/built_mbbs_seats_2024_25",
+       "MBBS seats 2024-25"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "vo": "Rajasthan has thirty percent more medical seats per person.",
+   "note": "seats 2024-25 · population 2024 · higher is better"
+  },
+  {
+   "label": "Forest cover",
+   "unit": "%",
+   "data": {
+    "tbl": [
+     "evergreen/ls_forest_cover_isfr2023",
+     "Forest cover (% of geographical area)"
+    ]
+   },
+   "vo": "Madhya Pradesh has over five times the forest share.",
+   "note": "% of geographical area · ISFR 2023 · higher is better",
+   "also": [
+    {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/land_isfr2023_forest_tree_cover",
+        "Forest cover 2021 (km2)"
+       ]
+      },
+      {
+       "tbl": [
+        "evergreen/land_isfr2023_forest_tree_cover",
+        "Geographical area (km2)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   ]
+  },
+  {
+   "label": "Colleges per lakh aged 18-23",
+   "unit": "",
+   "data": {
+    "tbl": [
+     "evergreen/built_aishe_colleges_2023_24",
+     "Colleges per lakh population aged 18-23, 2023-24"
+    ]
+   },
+   "vo": "Rajasthan has more colleges for every lakh young people.",
+   "note": "per lakh aged 18-23 · 2023-24 · higher is better",
+   "also": [
+    {
+     "tbl": [
+      "evergreen/built_aishe_colleges_2023_24",
+      "Colleges per lakh population aged 18-23, 2022-23"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Tigers per 10,000 sq km",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/land_tigers_2022",
+       "Tiger estimate 2022"
+      ]
+     },
+     {
+      "tbl": [
+       "evergreen/built_area_isfr2023",
+       "Geographical area (sq km)"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "vo": "Madhya Pradesh has nearly ten times the tigers per area.",
+   "note": "2022 estimate · higher is better",
+   "also": [
+    {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/land_tigers_2022",
+        "Tiger estimate 2018"
+       ]
+      },
+      {
+       "tbl": [
+        "evergreen/built_area_isfr2023",
+        "Geographical area (sq km)"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   ]
+  },
+  {
+   "label": "Monuments per 10,000 sq km",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/heritage_asi_protected_monuments",
+       "Centrally protected monuments and sites"
+      ]
+     },
+     {
+      "tbl": [
+       "evergreen/built_area_isfr2023",
+       "Geographical area (sq km)"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "vo": "Madhya Pradesh has about twice the monuments per area.",
+   "note": "centrally protected · ASI, 2025 · higher is better",
+   "also": [
+    {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/heritage_asi_protected_monuments_pdf",
+        "Centrally protected monuments and sites"
+       ]
+      },
+      {
+       "tbl": [
+        "evergreen/built_area_isfr2023",
+        "Geographical area (sq km)"
+       ]
+      }
+     ],
+     "scale": 10000
+    }
+   ]
+  }
+ ],
+ "tests": [
+  {
+   "says": "Madhya Pradesh forest cover share is over five times Rajasthan's (ISFR 2023)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Forest cover (% of geographical area)"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_forest_cover_isfr2023",
+        "Forest cover (% of geographical area)"
+       ]
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 5.0,
+   "max": 5.3
+  },
+  {
+   "says": "Madhya Pradesh forest cover share over five times Rajasthan's (ISFR 2021)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_isfr2023_forest_tree_cover",
+          "Forest cover 2021 (km2)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/land_isfr2023_forest_tree_cover",
+          "Geographical area (km2)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_isfr2023_forest_tree_cover",
+          "Forest cover 2021 (km2)"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/land_isfr2023_forest_tree_cover",
+          "Geographical area (km2)"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 5.0,
+   "max": 5.4
+  },
+  {
+   "says": "Rajasthan has more colleges per lakh aged 18-23 than Madhya Pradesh (2023-24)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Rajasthan"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2023-24"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.8
+  },
+  {
+   "says": "Rajasthan has more colleges per lakh aged 18-23 than Madhya Pradesh (2022-23)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Rajasthan"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/built_aishe_colleges_2023_24",
+        "Colleges per lakh population aged 18-23, 2022-23"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.4,
+   "max": 1.7
+  },
+  {
+   "says": "Madhya Pradesh tigers per area nearly ten times Rajasthan's (2022)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_tigers_2022",
+          "Tiger estimate 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_tigers_2022",
+          "Tiger estimate 2022"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 9.7,
+   "max": 10.1
+  },
+  {
+   "says": "Madhya Pradesh tigers per area at least eight times Rajasthan's (2018)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_tigers_2022",
+          "Tiger estimate 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/land_tigers_2022",
+          "Tiger estimate 2018"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 8.0,
+   "max": 9.5
+  },
+  {
+   "says": "Rajasthan has thirty percent more MBBS seats per lakh people than Madhya Pradesh (2024-25 seats, 2024 population)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_mbbs_seats_2024_25",
+          "MBBS seats 2024-25"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Rajasthan"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/built_mbbs_seats_2024_25",
+          "MBBS seats 2024-25"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.28,
+   "max": 1.31
+  },
+  {
+   "says": "Madhya Pradesh has about twice Rajasthan's protected monuments per area (Lok Sabha answer)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/heritage_asi_protected_monuments",
+          "Centrally protected monuments and sites"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/heritage_asi_protected_monuments",
+          "Centrally protected monuments and sites"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.05
+  },
+  {
+   "says": "Madhya Pradesh has about twice Rajasthan's protected monuments per area (ASI list PDF)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/heritage_asi_protected_monuments_pdf",
+          "Centrally protected monuments and sites"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "evergreen/heritage_asi_protected_monuments_pdf",
+          "Centrally protected monuments and sites"
+         ]
+        },
+        {
+         "tbl": [
+          "evergreen/built_area_isfr2023",
+          "Geographical area (sq km)"
+         ]
+        }
+       ],
+       "scale": 10000
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.05
+  }
+ ],
+ "end": {
+  "q": "Which two states should we compare next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Rajasthan vs Madhya Pradesh: 5 Rounds of State Facts",
+ "map": {
+  "data": {
+   "tbl": [
+    "evergreen/ls_forest_cover_isfr2023",
+    "Forest cover (% of geographical area)"
+   ]
+  },
+  "unit": "%",
+  "dec": 1,
+  "title": "Forest cover share, *every state*",
+  "sub": "Madhya Pradesh 25 · Rajasthan 4.8 · India {india}",
+  "note": "Forest cover as share of each state's area, ISFR 2023. Jammu and Kashmir and Ladakh: no separate share printed. Both states outlined.",
+  "ring": [
+   "Rajasthan",
+   "Madhya Pradesh"
+  ],
+  "vo": "Forest cover is mapped by the Forest Survey of India."
+ }
+}

@@ -1,0 +1,256 @@
+{
+ "type": "basket",
+ "rules": 2,
+ "chip": "FESTIVE ITEMS",
+ "source_short": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "id": "fs03",
+ "palette": "D",
+ "hook": [
+  "Going home for the holidays:",
+  "*air fares* up *29.9%*",
+  "since last September."
+ ],
+ "hook_vo": "Domestic air fares rose twenty-nine point nine percent since last September.",
+ "items": [
+  {
+   "kicker": "AIR FARES · ALL INDIA",
+   "name": "Flights",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "07.3.3.1.2.01",
+    "Sep 2026"
+   ],
+   "item_name": "Airfare",
+   "sign": true,
+   "text": "for domestic air fares in a year.",
+   "compare": [
+    {
+     "name": "All fares",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "07.3",
+      "Sep 2026"
+     ],
+     "item_name": "Passenger transport services"
+    }
+   ],
+   "sub": "All fares: rail, road, air and water.",
+   "vo": "Across all travel fares, the rise was three point eight percent."
+  },
+  {
+   "kicker": "TRAIN AND TAXI · ALL INDIA",
+   "name": "Train",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "07.3.1.1.2.01",
+    "Sep 2026"
+   ],
+   "item_name": "Rail fare",
+   "sign": true,
+   "text": "for rail fares, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Taxi",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "07.3.2.2.2.01",
+      "Sep 2026"
+     ],
+     "item_name": "Taxi fare"
+    }
+   ],
+   "vo": "Rail fares rose two point two percent; taxi fares, three point three."
+  },
+  {
+   "kicker": "HOTELS AND HIRED CARS · ALL INDIA",
+   "name": "Hotels",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "11.2.0.1.2.01",
+    "Sep 2026"
+   ],
+   "item_name": "Hotel lodging charges",
+   "sign": true,
+   "text": "for hotel rooms, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Hired car",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "07.3.2.2.2.02",
+      "Sep 2026"
+     ],
+     "item_name": "Car/bus hired for ceremonial occasion, picnic, etc"
+    }
+   ],
+   "sub": "Hired car or bus, for a ceremony or a picnic.",
+   "vo": "Hotel rooms rose two point four percent; hired cars, three point nine."
+  }
+ ],
+ "so": {
+  "lines": [
+   "The *air fare* rise was",
+   "over thirteen times",
+   "the *rail fare* rise."
+  ],
+  "vo": "The air fare rise was over thirteen times the rail fare rise.",
+  "note": "September 2026 against September 2025, not festival-week fares. Provisional."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "mospi/cpi2024_states_divisions_2026_09",
+    "07.3 Passenger transport services Sep 2026"
+   ]
+  },
+  "title": "All travel fares, *every state*",
+  "sub": "% price rise · year on year · India {india} · Sep 2026",
+  "india_dec": 1,
+  "note": "Fares for all modes, not only air: MoSPI's 'Passenger transport services' (rail, road, air, water). September 2026, provisional.",
+  "check_india": [
+   {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "07.3",
+     "Sep 2026"
+    ],
+    "item_name": "Passenger transport services"
+   }
+  ],
+  "vo": "Fares for all modes of travel, state by state."
+ },
+ "end": {
+  "q": "How are you travelling *home* this time?",
+  "sub": "Comment below.",
+  "vo": "How are you travelling home this time? Comment below."
+ },
+ "tests": [
+  {
+   "says": "the air fare rise was over thirteen times the rail fare rise",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.3.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Airfare"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.1.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Rail fare"
+     }
+    ]
+   },
+   "min": 13.0,
+   "max": 14.0
+  },
+  {
+   "says": "rail rose less than taxi",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.2.2.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Taxi fare"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.1.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Rail fare"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "rail rose less than hotel rooms",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "11.2.0.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Hotel lodging charges"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.1.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Rail fare"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "rail rose less than hired cars",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.2.2.2.02",
+       "Sep 2026"
+      ],
+      "item_name": "Car/bus hired for ceremonial occasion, picnic, etc"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.1.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Rail fare"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "rail rose less than all fares",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3",
+       "Sep 2026"
+      ],
+      "item_name": "Passenger transport services"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "07.3.1.1.2.01",
+       "Sep 2026"
+      ],
+      "item_name": "Rail fare"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  }
+ ],
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: airfare, passenger transport services, rail fare, taxi fare, hotel lodging charges, car/bus hired for ceremonial occasion, picnic. By state: group 'Passenger transport services', eSankhyiki, read 16 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "yt_title": "Going Home for the Holidays: Air Fares Up 29.9% in a Year"
+}

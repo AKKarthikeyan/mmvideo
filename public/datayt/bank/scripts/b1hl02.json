@@ -1,0 +1,114 @@
+{
+ "id": "b1hl02",
+ "type": "pick",
+ "chip": "WHICH IS HIGHER?",
+ "source_short": "Official figures · 4 rounds",
+ "palette": "A",
+ "think": 0.8,
+ "source": "RBI Handbook of Statistics on Indian States. Power available, 2024-25: Central Electricity Authority, Ministry of Power (Table 139). Pulses and cotton, 2024-25: Ministry of Agriculture and Farmers' Welfare (Tables 61, 64). Fish, 2023-24 provisional: Handbook on Fisheries Statistics (Table 93). State totals, not per person.",
+ "rounds": [
+  {
+   "pair": [
+    "Punjab",
+    "Bihar"
+   ],
+   "data": {
+    "rbi": [
+     139,
+     "2024-25"
+    ]
+   },
+   "scale": 0.01,
+   "q": [
+    "Which state had more",
+    "*power available?*"
+   ],
+   "measure": "Power available, total, 2024-25, billion units",
+   "says": [
+    1.7,
+    1.8
+   ],
+   "ask": "Power available, twenty twenty-four twenty-five: Punjab, or Bihar?",
+   "tell": "Punjab. Three quarters more."
+  },
+  {
+   "pair": [
+    "Uttar Pradesh",
+    "Madhya Pradesh"
+   ],
+   "data": {
+    "rbi": [
+     61,
+     "2024-25"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state grows",
+    "*more pulses?*"
+   ],
+   "measure": "Pulses production, total, 2024-25, million tonnes",
+   "says": [
+    1.9,
+    2.1
+   ],
+   "ask": "Which state grows more pulses: Uttar Pradesh, or Madhya Pradesh?",
+   "tell": "Madhya Pradesh. About double."
+  },
+  {
+   "pair": [
+    "Maharashtra",
+    "Odisha"
+   ],
+   "data": {
+    "rbi": [
+     93,
+     "2023-24 (P)"
+    ]
+   },
+   "scale": 1,
+   "q": [
+    "Which state produces",
+    "*more fish?*"
+   ],
+   "measure": "Fish production, total, 2023-24 (provisional), lakh tonnes",
+   "says": [
+    1.55,
+    1.65
+   ],
+   "ask": "Which state produces more fish: Maharashtra, or Odisha?",
+   "tell": "Odisha. Sixty percent more."
+  },
+  {
+   "pair": [
+    "Telangana",
+    "Karnataka"
+   ],
+   "data": {
+    "rbi": [
+     64,
+     "2024-25"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state grows",
+    "*more cotton?*"
+   ],
+   "measure": "Cotton production, total, 2024-25, million bales",
+   "says": [
+    2.4,
+    2.7
+   ],
+   "ask": "Which state grows more cotton: Telangana, or Karnataka?",
+   "tell": "Telangana. Two and a half times."
+  }
+ ],
+ "end": {
+  "q": "How many did *you* get?",
+  "sub": "Which round fooled you?",
+  "note": "State totals, not per person. Pairs, not full rankings.",
+  "vo": "Four pairs, state totals. Which round fooled you?"
+ },
+ "yt_title": "Punjab or Bihar: Which Had More Power Available? 4 Rounds"
+}

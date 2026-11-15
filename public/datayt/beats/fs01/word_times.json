@@ -1,0 +1,945 @@
+{
+ "id": "fs01",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.937,
+   "text": "In the year to September, sugar cost twenty-nine point eight percent more.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "In",
+     "norm": "in",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.42
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 1,
+     "start": 0.42,
+     "end": 0.5
+    },
+    {
+     "w": "year",
+     "norm": "year",
+     "word": 2,
+     "start": 0.5,
+     "end": 0.66
+    },
+    {
+     "w": "to",
+     "norm": "to",
+     "word": 3,
+     "start": 0.66,
+     "end": 0.82
+    },
+    {
+     "w": "September,",
+     "norm": "september",
+     "word": 4,
+     "start": 0.82,
+     "end": 1.46
+    },
+    {
+     "w": "sugar",
+     "norm": "sugar",
+     "word": 5,
+     "start": 1.98,
+     "end": 2.02
+    },
+    {
+     "w": "cost",
+     "norm": "cost",
+     "word": 6,
+     "start": 2.02,
+     "end": 2.56
+    },
+    {
+     "w": "twenty-nine",
+     "norm": "twenty",
+     "word": 7,
+     "start": 2.56,
+     "end": 3.12
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 7,
+     "start": 3.12,
+     "end": 3.32
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 8,
+     "start": 3.32,
+     "end": 3.74
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 9,
+     "start": 3.74,
+     "end": 4.08
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 10,
+     "start": 4.08,
+     "end": 4.44
+    },
+    {
+     "w": "more.",
+     "norm": "more",
+     "word": 11,
+     "start": 4.44,
+     "end": 4.7
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty nine point eight",
+     "value": 29.8,
+     "mantissa": 29.8,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 10,
+     "whisper": 2.56,
+     "onset": 2.7075,
+     "rule": "stop",
+     "how": "burst",
+     "at": 2.8408,
+     "f": 86
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 4.336,
+   "text": "Jaggery rose twenty-two point six percent. All food, seven point seven.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Jaggery",
+     "norm": "jaggery",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.6
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 1,
+     "start": 0.6,
+     "end": 0.84
+    },
+    {
+     "w": "twenty-two",
+     "norm": "twenty",
+     "word": 2,
+     "start": 0.84,
+     "end": 1.14
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 2,
+     "start": 1.14,
+     "end": 1.32
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 3,
+     "start": 1.32,
+     "end": 1.5
+    },
+    {
+     "w": "six",
+     "norm": "six",
+     "word": 4,
+     "start": 1.5,
+     "end": 1.78
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 5,
+     "start": 1.78,
+     "end": 2.34
+    },
+    {
+     "w": "All",
+     "norm": "all",
+     "word": 6,
+     "start": 2.68,
+     "end": 2.84
+    },
+    {
+     "w": "food,",
+     "norm": "food",
+     "word": 7,
+     "start": 2.84,
+     "end": 3.14
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 8,
+     "start": 3.5,
+     "end": 3.66
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 9,
+     "start": 3.66,
+     "end": 3.86
+    },
+    {
+     "w": "seven.",
+     "norm": "seven",
+     "word": 10,
+     "start": 3.86,
+     "end": 4.1
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty two point six",
+     "value": 22.6,
+     "mantissa": 22.6,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 5,
+     "whisper": 0.84,
+     "onset": 0.865,
+     "rule": "stop",
+     "how": "burst",
+     "at": 6.7983,
+     "f": 205
+    },
+    {
+     "text": "seven point seven",
+     "value": 7.7,
+     "mantissa": 7.7,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 9,
+     "w1": 11,
+     "whisper": 3.5,
+     "onset": 3.2975,
+     "rule": "fric",
+     "how": "frication",
+     "at": 9.2308,
+     "f": 278
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 6.06,
+   "text": "Ready-made sweets, with milk or without, rose nine point four percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Ready-made",
+     "norm": "ready",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "made",
+     "norm": "made",
+     "word": 0,
+     "start": 0.58,
+     "end": 0.78
+    },
+    {
+     "w": "sweets,",
+     "norm": "sweets",
+     "word": 1,
+     "start": 0.78,
+     "end": 1.24
+    },
+    {
+     "w": "with",
+     "norm": "with",
+     "word": 2,
+     "start": 1.84,
+     "end": 2.12
+    },
+    {
+     "w": "milk",
+     "norm": "milk",
+     "word": 3,
+     "start": 2.12,
+     "end": 2.52
+    },
+    {
+     "w": "or",
+     "norm": "or",
+     "word": 4,
+     "start": 2.52,
+     "end": 2.9
+    },
+    {
+     "w": "without,",
+     "norm": "without",
+     "word": 5,
+     "start": 2.9,
+     "end": 3.68
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 6,
+     "start": 4.16,
+     "end": 4.36
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 7,
+     "start": 4.36,
+     "end": 4.94
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 8,
+     "start": 4.94,
+     "end": 5.18
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 9,
+     "start": 5.18,
+     "end": 5.38
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 10,
+     "start": 5.38,
+     "end": 5.8
+    }
+   ],
+   "numbers": [
+    {
+     "text": "nine point four",
+     "value": 9.4,
+     "mantissa": 9.4,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 10,
+     "whisper": 4.36,
+     "onset": 4.43,
+     "rule": "weak",
+     "how": "edge",
+     "at": 16.1633,
+     "f": 486
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 19.475,
+   "sec": 4.858,
+   "text": "Ghee rose three point seven percent, and milk four point two.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Ghee",
+     "norm": "ghee",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.8
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 1,
+     "start": 0.8,
+     "end": 1.2
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 2,
+     "start": 1.2,
+     "end": 1.48
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 3,
+     "start": 1.48,
+     "end": 1.72
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 4,
+     "start": 1.72,
+     "end": 2.06
+    },
+    {
+     "w": "percent,",
+     "norm": "percent",
+     "word": 5,
+     "start": 2.06,
+     "end": 2.78
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 6,
+     "start": 2.86,
+     "end": 3.34
+    },
+    {
+     "w": "milk",
+     "norm": "milk",
+     "word": 7,
+     "start": 3.34,
+     "end": 3.58
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 8,
+     "start": 3.58,
+     "end": 4.04
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 9,
+     "start": 4.04,
+     "end": 4.28
+    },
+    {
+     "w": "two.",
+     "norm": "two",
+     "word": 10,
+     "start": 4.28,
+     "end": 4.58
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three point seven",
+     "value": 3.7,
+     "mantissa": 3.7,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 4,
+     "whisper": 1.2,
+     "onset": 1.24,
+     "rule": "fric",
+     "how": "frication",
+     "at": 20.7067,
+     "f": 622
+    },
+    {
+     "text": "four point two",
+     "value": 4.2,
+     "mantissa": 4.2,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 10,
+     "whisper": 3.58,
+     "onset": 3.5,
+     "rule": "fric",
+     "how": "frication",
+     "at": 22.9667,
+     "f": 690
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 25.281,
+   "sec": 4.257,
+   "text": "Sugar rose about three times as much as ready-made sweets.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Sugar",
+     "norm": "sugar",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.94
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 2,
+     "start": 0.94,
+     "end": 1.5
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 3,
+     "start": 1.5,
+     "end": 1.82
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 4,
+     "start": 1.82,
+     "end": 2.2
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 5,
+     "start": 2.2,
+     "end": 2.5
+    },
+    {
+     "w": "much",
+     "norm": "much",
+     "word": 6,
+     "start": 2.5,
+     "end": 2.72
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 7,
+     "start": 2.72,
+     "end": 3.02
+    },
+    {
+     "w": "ready-made",
+     "norm": "ready",
+     "word": 8,
+     "start": 3.02,
+     "end": 3.3
+    },
+    {
+     "w": "made",
+     "norm": "made",
+     "word": 8,
+     "start": 3.3,
+     "end": 3.54
+    },
+    {
+     "w": "sweets.",
+     "norm": "sweets",
+     "word": 9,
+     "start": 3.54,
+     "end": 3.88
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three",
+     "value": 3.0,
+     "mantissa": 3.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 3,
+     "whisper": 1.5,
+     "onset": 1.565,
+     "rule": "fric",
+     "how": "frication",
+     "at": 26.8317,
+     "f": 806
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 31.088,
+   "sec": 3.265,
+   "text": "Now, the food price rise in every state.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Now,",
+     "norm": "now",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.62
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 1,
+     "start": 0.84,
+     "end": 1.0
+    },
+    {
+     "w": "food",
+     "norm": "food",
+     "word": 2,
+     "start": 1.0,
+     "end": 1.18
+    },
+    {
+     "w": "price",
+     "norm": "price",
+     "word": 3,
+     "start": 1.18,
+     "end": 1.66
+    },
+    {
+     "w": "rise",
+     "norm": "rise",
+     "word": 4,
+     "start": 1.66,
+     "end": 2.24
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 5,
+     "start": 2.24,
+     "end": 2.54
+    },
+    {
+     "w": "every",
+     "norm": "every",
+     "word": 6,
+     "start": 2.54,
+     "end": 2.78
+    },
+    {
+     "w": "state.",
+     "norm": "state",
+     "word": 7,
+     "start": 2.78,
+     "end": 2.98
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 34.959,
+   "sec": 3.448,
+   "text": "Which festive sweet do you buy? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Which",
+     "norm": "which",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "festive",
+     "norm": "festive",
+     "word": 1,
+     "start": 0.48,
+     "end": 0.86
+    },
+    {
+     "w": "sweet",
+     "norm": "sweet",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.1
+    },
+    {
+     "w": "do",
+     "norm": "do",
+     "word": 3,
+     "start": 1.1,
+     "end": 1.26
+    },
+    {
+     "w": "you",
+     "norm": "you",
+     "word": 4,
+     "start": 1.26,
+     "end": 1.46
+    },
+    {
+     "w": "buy?",
+     "norm": "buy",
+     "word": 5,
+     "start": 1.46,
+     "end": 2.04
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 6,
+     "start": 2.66,
+     "end": 2.8
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 7,
+     "start": 2.8,
+     "end": 3.14
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 86,
+   "lockHow": "spoken",
+   "lockWord": "twenty nine point eight",
+   "firstNumF": 86,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "29.8%",
+     "spokenF": 86,
+     "word": "twenty nine point eight",
+     "how": "spoken",
+     "lockF": 86
+    },
+    {
+     "role": "line",
+     "text": "2026",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 86
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 205,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+29.8%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+29.8%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+22.6%",
+     "spokenF": 205,
+     "word": "twenty two point six",
+     "how": "spoken",
+     "lockF": 205
+    },
+    {
+     "role": "bar",
+     "text": "+7.7%",
+     "spokenF": 278,
+     "word": "seven point seven",
+     "how": "spoken",
+     "lockF": 278
+    },
+    {
+     "role": "text",
+     "text": "2026",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 180
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 180
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 581,
+   "settleF": 569,
+   "line": 2,
+   "lockF": 486,
+   "lockHow": "spoken",
+   "lockWord": "nine point four",
+   "firstNumF": 486,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+9.4%",
+     "spokenF": 486,
+     "word": "nine point four",
+     "how": "spoken",
+     "lockF": 486
+    },
+    {
+     "role": "bar",
+     "text": "+9.4%",
+     "spokenF": 486,
+     "word": "nine point four",
+     "how": "spoken",
+     "lockF": 486
+    },
+    {
+     "role": "bar",
+     "text": "+9.4%",
+     "spokenF": 486,
+     "word": "nine point four",
+     "how": "spoken",
+     "lockF": 486
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 486
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 581,
+   "f1": 755,
+   "settleF": 743,
+   "line": 3,
+   "lockF": 622,
+   "lockHow": "spoken",
+   "lockWord": "three point seven",
+   "firstNumF": 622,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+3.7%",
+     "spokenF": 622,
+     "word": "three point seven",
+     "how": "spoken",
+     "lockF": 622
+    },
+    {
+     "role": "bar",
+     "text": "+3.7%",
+     "spokenF": 622,
+     "word": "three point seven",
+     "how": "spoken",
+     "lockF": 622
+    },
+    {
+     "role": "bar",
+     "text": "+4.2%",
+     "spokenF": 690,
+     "word": "four point two",
+     "how": "spoken",
+     "lockF": 690
+    },
+    {
+     "role": "bar",
+     "text": "+29.8%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 587
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 622
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "say",
+   "f0": 755,
+   "f1": 929,
+   "settleF": 917,
+   "line": 4,
+   "lockF": 806,
+   "lockHow": "first-number",
+   "lockWord": "three",
+   "firstNumF": 806,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 5,
+   "kind": "map",
+   "f0": 929,
+   "f1": 1045,
+   "settleF": 1033,
+   "line": 5,
+   "lockF": 935,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "mapend",
+   "f0": 1045,
+   "f1": 1161,
+   "settleF": 1149,
+   "line": 6,
+   "lockF": 1051,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

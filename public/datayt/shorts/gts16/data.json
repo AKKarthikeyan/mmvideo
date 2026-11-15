@@ -1,0 +1,277 @@
+{
+ "id": "gts16",
+ "series": "Guess the State",
+ "ind": 14,
+ "label": "Women who have used the internet",
+ "unit": "%",
+ "hook": [
+  "In one state, *fewer than half*",
+  "of women have ever used the internet."
+ ],
+ "q": "Which state?",
+ "title": "Guess the state: fewer than half of women are online \ud83d\uddfa\ufe0f",
+ "answer": "Tripura",
+ "answerName": "Tripura",
+ "options": [
+  "Tripura",
+  "Odisha",
+  "Bihar"
+ ],
+ "optionKeys": [
+  "Tripura",
+  "Odisha",
+  "Bihar"
+ ],
+ "answerIndex": 0,
+ "value": 48.8,
+ "india": 64.3,
+ "india5": 33.3,
+ "values": {
+  "Arunachal Pradesh": 73.4,
+  "Assam": 53.5,
+  "Bihar": 58.4,
+  "Chhattisgarh": 54.4,
+  "Goa": 94.0,
+  "Gujarat": 65.7,
+  "Haryana": 74.0,
+  "Himachal Pradesh": 75.4,
+  "Jharkhand": 68.6,
+  "Karnataka": 57.9,
+  "Kerala": 87.3,
+  "Madhya Pradesh": 62.0,
+  "Maharashtra": 62.6,
+  "Meghalaya": 59.0,
+  "Mizoram": 82.5,
+  "Nagaland": 76.6,
+  "Odisha": 51.8,
+  "Punjab": 74.5,
+  "Chandigarh": 83.9,
+  "Jammu and Kashmir": 63.6,
+  "NCT of Delhi": 82.0,
+  "Puducherry": 66.1,
+  "Andhra Pradesh": 63.6,
+  "Rajasthan": 66.3,
+  "Sikkim": 90.3,
+  "Tamil Nadu": 59.5,
+  "Telangana": 64.8,
+  "Tripura": 48.8,
+  "Uttar Pradesh": 70.0,
+  "Uttarakhand": 76.9,
+  "West Bengal": 59.3,
+  "Andaman and Nicobar Islands": 72.0,
+  "Dadra & Nagar Haveli and Daman & Diu": 78.4,
+  "Ladakh": 78.9,
+  "Lakshadweep": 77.9
+ },
+ "band": {
+  "Arunachal Pradesh": 2,
+  "Assam": 0,
+  "Bihar": 0,
+  "Chhattisgarh": 0,
+  "Goa": 4,
+  "Gujarat": 2,
+  "Haryana": 3,
+  "Himachal Pradesh": 3,
+  "Jharkhand": 2,
+  "Karnataka": 0,
+  "Kerala": 4,
+  "Madhya Pradesh": 1,
+  "Maharashtra": 1,
+  "Meghalaya": 0,
+  "Mizoram": 4,
+  "Nagaland": 3,
+  "Odisha": 0,
+  "Punjab": 3,
+  "Chandigarh": 4,
+  "Jammu and Kashmir": 1,
+  "NCT of Delhi": 4,
+  "Puducherry": 2,
+  "Andhra Pradesh": 1,
+  "Rajasthan": 2,
+  "Sikkim": 4,
+  "Tamil Nadu": 1,
+  "Telangana": 1,
+  "Tripura": 0,
+  "Uttar Pradesh": 2,
+  "Uttarakhand": 3,
+  "West Bengal": 1,
+  "Andaman and Nicobar Islands": 2,
+  "Dadra & Nagar Haveli and Daman & Diu": 3,
+  "Ladakh": 4,
+  "Lakshadweep": 3
+ },
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "palette": "A",
+ "paletteName": "Kadai Chai",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bandLabels": [
+  "< 59.3%",
+  "59.3\u201365.7%",
+  "65.7\u201374%",
+  "74\u201378.9%",
+  "78.9%+"
+ ],
+ "top": [
+  {
+   "name": "Tripura",
+   "key": "Tripura",
+   "v": 48.8
+  },
+  {
+   "name": "Odisha",
+   "key": "Odisha",
+   "v": 51.8
+  },
+  {
+   "name": "Assam",
+   "key": "Assam",
+   "v": 53.5
+  },
+  {
+   "name": "Chhattisgarh",
+   "key": "Chhattisgarh",
+   "v": 54.4
+  },
+  {
+   "name": "Karnataka",
+   "key": "Karnataka",
+   "v": 57.9
+  }
+ ],
+ "other": {
+  "name": "Goa",
+  "v": 94.0
+ },
+ "side": "bottom",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   5.806
+  ],
+  "quiz": [
+   5.806,
+   13.548
+  ],
+  "reveal": [
+   13.548,
+   17.419
+  ],
+  "fill": [
+   17.419,
+   21.29
+  ],
+  "hold": [
+   21.29,
+   25.161
+  ],
+  "top": [
+   25.161,
+   30.968
+  ],
+  "end": [
+   30.968,
+   34.839
+  ]
+ },
+ "total": 35.439,
+ "vo": [
+  {
+   "text": "In one state, fewer than half of women have ever used the internet.",
+   "file": "vo_hook.mp3",
+   "sec": 4.754,
+   "at": 0.15,
+   "sec_name": "hook"
+  },
+  {
+   "text": "Which state? Tripura, Odisha, or Bihar?",
+   "file": "vo_quiz.mp3",
+   "sec": 4.179,
+   "at": 5.956,
+   "sec_name": "quiz"
+  },
+  {
+   "text": "It's Tripura!",
+   "file": "vo_reveal.mp3",
+   "sec": 1.28,
+   "at": 13.698,
+   "sec_name": "reveal"
+  },
+  {
+   "text": "48.8 percent.",
+   "file": "vo_fill.mp3",
+   "sec": 2.638,
+   "at": 17.569,
+   "sec_name": "fill"
+  },
+  {
+   "text": "The India average is 64.3 percent.",
+   "file": "vo_hold.mp3",
+   "sec": 2.638,
+   "at": 21.44,
+   "sec_name": "hold"
+  },
+  {
+   "text": "Next lowest is Odisha, at 51.8 percent.",
+   "file": "vo_top.mp3",
+   "sec": 4.257,
+   "at": 25.311,
+   "sec_name": "top"
+  },
+  {
+   "text": "Where does your state rank? Tell us in the comments.",
+   "file": "vo_end.mp3",
+   "sec": 3.265,
+   "at": 31.118,
+   "sec_name": "end"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "fillAt": {
+  "Tripura": 17.661,
+  "Odisha": 17.727,
+  "Assam": 17.794,
+  "Chhattisgarh": 17.86,
+  "Karnataka": 17.926,
+  "Bihar": 17.993,
+  "Meghalaya": 18.059,
+  "West Bengal": 18.125,
+  "Tamil Nadu": 18.192,
+  "Madhya Pradesh": 18.258,
+  "Maharashtra": 18.325,
+  "Jammu and Kashmir": 18.391,
+  "Andhra Pradesh": 18.457,
+  "Telangana": 18.524,
+  "Gujarat": 18.59,
+  "Puducherry": 18.656,
+  "Rajasthan": 18.723,
+  "Jharkhand": 18.789,
+  "Uttar Pradesh": 18.855,
+  "Andaman and Nicobar Islands": 18.922,
+  "Arunachal Pradesh": 18.988,
+  "Haryana": 19.054,
+  "Punjab": 19.121,
+  "Himachal Pradesh": 19.187,
+  "Nagaland": 19.254,
+  "Uttarakhand": 19.32,
+  "Lakshadweep": 19.386,
+  "Dadra & Nagar Haveli and Daman & Diu": 19.453,
+  "Ladakh": 19.519,
+  "NCT of Delhi": 19.585,
+  "Mizoram": 19.652,
+  "Chandigarh": 19.718,
+  "Kerala": 19.784,
+  "Sikkim": 19.851,
+  "Goa": 19.917
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

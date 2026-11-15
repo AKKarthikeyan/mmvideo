@@ -1,0 +1,552 @@
+{
+ "id": "fa04",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "IIPS · NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicator: women aged 15 to 49 paid in cash for work, as labelled in the fact sheet. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Telangana*, 2023-24: *53%*",
+    "of women paid in cash",
+    "for work. India: *31%*."
+   ],
+   "vo": "In Telangana, fifty-three percent of women worked and were paid in cash.",
+   "geo": "Telangana",
+   "name": "Telangana",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "WOMEN PAID IN CASH FOR WORK, PAST YEAR · NFHS-6",
+   "big": "53.2%",
+   "text": "of women aged 15 to 49 worked in the past year and were paid in cash, 2023-24. Highest of 34 ranked states and UTs. Next: Andhra Pradesh and Tamil Nadu, 48%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "53.2%",
+     "frac": 0.532
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "48.0%",
+     "frac": 0.48
+    }
+   ],
+   "vo": "Fifty-three percent of women in the past year. Highest of thirty-four ranked states.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "RURAL WOMEN, SAME MEASURE · NFHS-6",
+   "big": "58.3%",
+   "text": "of rural women, 2023-24. Highest of 32 ranked states and UTs with rural data. India's rural figure: 31%.",
+   "sub": "Survey estimate, rural column of the NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "58.3%",
+     "frac": 0.583
+    },
+    {
+     "name": "India",
+     "label": "31.2%",
+     "frac": 0.312
+    }
+   ],
+   "vo": "In rural areas it was fifty-eight percent. India's rural was thirty-one.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "EARLIER SURVEY · NFHS-5 (2019-21)",
+   "big": "45.1%",
+   "text": "of women: Telangana led then too. India: 25%.",
+   "sub": "Survey estimate. NFHS-5 figure as printed in the NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "45.1%",
+     "frac": 0.451
+    },
+    {
+     "name": "India",
+     "label": "25.4%",
+     "frac": 0.254
+    }
+   ],
+   "vo": "In the earlier survey Telangana also led at forty-five percent. India was twenty-five.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Lead over the runner-up:",
+    "*7%* in 2019-21 (45% v 42%),",
+    "*11%* in 2023-24 (53% v 48%)."
+   ],
+   "vo": "Its lead over the runner-up grew from seven percent to eleven.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Women paid in cash for work, *every state*",
+   "sub": "% of women aged 15 to 49 · India 30.8% · NFHS-6 (2023-24)",
+   "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Telangana",
+    "Andhra Pradesh"
+   ],
+   "vo": "Every state's figure for women paid in cash for work.",
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "ring": [
+    "Telangana",
+    "Andhra Pradesh"
+   ],
+   "q": "Does *your state* beat 53%?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Does your state beat fifty-three percent?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Jammu and Kashmir",
+   "label": "14.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Ladakh",
+   "label": "16.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.373
+  },
+  {
+   "name": "Bihar",
+   "label": "16.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.428
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "21.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.483
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "23.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.538
+  },
+  {
+   "name": "Tripura",
+   "label": "24.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.593
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "25.0",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.648
+  },
+  {
+   "name": "Nagaland",
+   "label": "25.0",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.703
+  },
+  {
+   "name": "Haryana",
+   "label": "25.1",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.758
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "25.2",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.813
+  },
+  {
+   "name": "Assam",
+   "label": "25.6",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.868
+  },
+  {
+   "name": "Odisha",
+   "label": "26.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Rajasthan",
+   "label": "26.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.978
+  },
+  {
+   "name": "West Bengal",
+   "label": "27.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.033
+  },
+  {
+   "name": "Jharkhand",
+   "label": "27.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.088
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "27.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.143
+  },
+  {
+   "name": "Punjab",
+   "label": "28.8",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.198
+  },
+  {
+   "name": "Chandigarh",
+   "label": "29.7",
+   "bucket": 2,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.254
+  },
+  {
+   "name": "Sikkim",
+   "label": "30.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.309
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "32.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.364
+  },
+  {
+   "name": "Goa",
+   "label": "34.1",
+   "bucket": 2,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.419
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "34.7",
+   "bucket": 3,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 32.474
+  },
+  {
+   "name": "Puducherry",
+   "label": "35.9",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.529
+  },
+  {
+   "name": "Kerala",
+   "label": "36.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.584
+  },
+  {
+   "name": "Gujarat",
+   "label": "36.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.639
+  },
+  {
+   "name": "Mizoram",
+   "label": "38.8",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.694
+  },
+  {
+   "name": "Maharashtra",
+   "label": "39.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.749
+  },
+  {
+   "name": "Karnataka",
+   "label": "40.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.804
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "41.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.859
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "42.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.914
+  },
+  {
+   "name": "Meghalaya",
+   "label": "43.9",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.969
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "48.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.024
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "48.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.079
+  },
+  {
+   "name": "Telangana",
+   "label": "53.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.134
+  }
+ ],
+ "checked": [
+  "Telangana is the highest of 34 with data (53.2%)",
+  "Telangana is the highest of 32 with data (58.3%)",
+  "Telangana is the highest of 34 with data (45.1%)",
+  "Andhra Pradesh 42.1 rounds to 42",
+  "Telangana / Andhra Pradesh = 1.11 (at least 1.105)",
+  "Andhra Pradesh / Telangana = 0.90 (at least 0.8969)",
+  "Telangana / Andhra Pradesh = 1.07 (at least 1.065)",
+  "Andhra Pradesh / Telangana = 0.93 (at least 0.9303)",
+  "Telangana 53.2 rounds to 53",
+  "Andhra Pradesh 48 rounds to 48",
+  "Tamil Nadu 48 rounds to 48",
+  "Telangana 58.3 rounds to 58",
+  "India 31.2 rounds to 31",
+  "Telangana 45.1 rounds to 45",
+  "India 25.4 rounds to 25",
+  "Telangana / Telangana = 1.18 (at least 1.17)",
+  "India 30.8 rounds to 31"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "In Telangana, fifty-three percent of women worked and were paid in cash."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.355,
+   "at": 5.926,
+   "text": "Fifty-three percent of women in the past year. Highest of thirty-four ranked states."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.459,
+   "at": 11.733,
+   "text": "In rural areas it was fifty-eight percent. India's rural was thirty-one."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.937,
+   "at": 19.475,
+   "text": "In the earlier survey Telangana also led at forty-five percent. India was twenty-five."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.97,
+   "at": 25.281,
+   "text": "Its lead over the runner-up grew from seven percent to eleven."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.16,
+   "at": 31.088,
+   "text": "Every state's figure for women paid in cash for work."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.925,
+   "at": 34.959,
+   "text": "Does your state beat fifty-three percent?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Telangana 2023-24: 53% of Women Paid in Cash for Work"
+}

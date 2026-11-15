@@ -1,0 +1,337 @@
+{
+ "id": "hl02",
+ "type": "pick",
+ "chip": "WHICH IS HIGHER?",
+ "sourceShort": "RBI Handbook · 2023-25 · crops: final estimates",
+ "source": "RBI Handbook of Statistics on Indian States. Bank credit to agriculture outstanding, March 2025: Reserve Bank of India (Table 157). Forest cover, ISFR 2023: Forest Survey of India (Table 99, no normalisation factor). Foodgrains, 2024-25 final estimates: Ministry of Agriculture and Farmers' Welfare (Table 62). Foreign tourist visits reported by states, 2024: Ministry of Tourism (Table 182). State totals, not per person.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "n": 1,
+   "of": 4,
+   "lines": [
+    "Which state had more",
+    "*foreign tourist visits?*"
+   ],
+   "measure": "Foreign tourist visits reported by states, 2024, lakh",
+   "pa": {
+    "name": "Rajasthan",
+    "geo": "Rajasthan",
+    "label": "20.7"
+   },
+   "pb": {
+    "name": "West Bengal",
+    "geo": "West Bengal",
+    "label": "31.2"
+   },
+   "win": "b",
+   "big": "+51%",
+   "kind": "pick",
+   "mode": "ask",
+   "pause": 0.8,
+   "vo": "Foreign tourist visits: Rajasthan or West Bengal?",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "n": 1,
+   "of": 4,
+   "lines": [
+    "Which state had more",
+    "*foreign tourist visits?*"
+   ],
+   "measure": "Foreign tourist visits reported by states, 2024, lakh",
+   "pa": {
+    "name": "Rajasthan",
+    "geo": "Rajasthan",
+    "label": "20.7"
+   },
+   "pb": {
+    "name": "West Bengal",
+    "geo": "West Bengal",
+    "label": "31.2"
+   },
+   "win": "b",
+   "big": "+51%",
+   "kind": "pick",
+   "mode": "tell",
+   "vo": "West Bengal. One and a half times.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "n": 2,
+   "of": 4,
+   "lines": [
+    "Which state grew",
+    "*more foodgrains?*"
+   ],
+   "measure": "Foodgrains production, 2024-25, million tonnes",
+   "pa": {
+    "name": "Haryana",
+    "geo": "Haryana",
+    "label": "18.9"
+   },
+   "pb": {
+    "name": "Odisha",
+    "geo": "Odisha",
+    "label": "10.4"
+   },
+   "win": "a",
+   "big": "+82%",
+   "kind": "pick",
+   "mode": "ask",
+   "pause": 0.8,
+   "vo": "Foodgrains: Haryana or Odisha?",
+   "t0": 9.677,
+   "t1": 15.484
+  },
+  {
+   "n": 2,
+   "of": 4,
+   "lines": [
+    "Which state grew",
+    "*more foodgrains?*"
+   ],
+   "measure": "Foodgrains production, 2024-25, million tonnes",
+   "pa": {
+    "name": "Haryana",
+    "geo": "Haryana",
+    "label": "18.9"
+   },
+   "pb": {
+    "name": "Odisha",
+    "geo": "Odisha",
+    "label": "10.4"
+   },
+   "win": "a",
+   "big": "+82%",
+   "kind": "pick",
+   "mode": "tell",
+   "vo": "Haryana. Over eighty percent more.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "n": 3,
+   "of": 4,
+   "lines": [
+    "Which state had more bank",
+    "*credit to agriculture?*"
+   ],
+   "measure": "Bank credit to agriculture, Mar 2025, ₹ '000 crore",
+   "pa": {
+    "name": "West Bengal",
+    "geo": "West Bengal",
+    "label": "62.4"
+   },
+   "pb": {
+    "name": "Kerala",
+    "geo": "Kerala",
+    "label": "131.1"
+   },
+   "win": "b",
+   "big": "+110%",
+   "kind": "pick",
+   "mode": "ask",
+   "pause": 0.8,
+   "vo": "Bank credit to agriculture: West Bengal or Kerala?",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "n": 3,
+   "of": 4,
+   "lines": [
+    "Which state had more bank",
+    "*credit to agriculture?*"
+   ],
+   "measure": "Bank credit to agriculture, Mar 2025, ₹ '000 crore",
+   "pa": {
+    "name": "West Bengal",
+    "geo": "West Bengal",
+    "label": "62.4"
+   },
+   "pb": {
+    "name": "Kerala",
+    "geo": "Kerala",
+    "label": "131.1"
+   },
+   "win": "b",
+   "big": "+110%",
+   "kind": "pick",
+   "mode": "tell",
+   "vo": "Kerala. Just over double.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "n": 4,
+   "of": 4,
+   "lines": [
+    "Which state had more",
+    "*forest cover?*"
+   ],
+   "measure": "Forest cover, ISFR 2023, thousand sq km",
+   "pa": {
+    "name": "Arunachal",
+    "geo": "Arunachal Pradesh",
+    "label": "65.9"
+   },
+   "pb": {
+    "name": "Maharashtra",
+    "geo": "Maharashtra",
+    "label": "50.9"
+   },
+   "win": "a",
+   "big": "+30%",
+   "kind": "pick",
+   "mode": "ask",
+   "pause": 0.8,
+   "vo": "Forest cover: Arunachal Pradesh or Maharashtra?",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "n": 4,
+   "of": 4,
+   "lines": [
+    "Which state had more",
+    "*forest cover?*"
+   ],
+   "measure": "Forest cover, ISFR 2023, thousand sq km",
+   "pa": {
+    "name": "Arunachal",
+    "geo": "Arunachal Pradesh",
+    "label": "65.9"
+   },
+   "pb": {
+    "name": "Maharashtra",
+    "geo": "Maharashtra",
+    "label": "50.9"
+   },
+   "win": "a",
+   "big": "+30%",
+   "kind": "pick",
+   "mode": "tell",
+   "vo": "Arunachal Pradesh. About thirty percent more.",
+   "t0": 34.839,
+   "t1": 38.71
+  },
+  {
+   "q": "Which pair *surprised* you most?",
+   "sub": "Score yourself out of four.",
+   "note": "State totals, not per person. Years differ by round.",
+   "kind": "tally",
+   "vo": "Which pair surprised you most?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "tally": [
+  {
+   "q": "Foreign tourist visits reported by states, 2024, lakh",
+   "win": "West Bengal",
+   "wl": "31.2",
+   "lose": "Rajasthan",
+   "ll": "20.7"
+  },
+  {
+   "q": "Foodgrains production, 2024-25, million tonnes",
+   "win": "Haryana",
+   "wl": "18.9",
+   "lose": "Odisha",
+   "ll": "10.4"
+  },
+  {
+   "q": "Bank credit to agriculture, Mar 2025, ₹ '000 crore",
+   "win": "Kerala",
+   "wl": "131.1",
+   "lose": "West Bengal",
+   "ll": "62.4"
+  },
+  {
+   "q": "Forest cover, ISFR 2023, thousand sq km",
+   "win": "Arunachal",
+   "wl": "65.9",
+   "lose": "Maharashtra",
+   "ll": "50.9"
+  }
+ ],
+ "checked": [
+  "round 1: West Bengal 31.24 against Rajasthan 20.72: 1.51 times, a gap of 5.02 points of the all-India figure",
+  "round 2: Haryana 18902 against Odisha 10397.1: 1.82 times, a gap of 2.38 points of the all-India figure",
+  "round 3: Kerala 131050 against West Bengal 62421: 2.10 times, a gap of 2.84 points of the all-India figure",
+  "round 4: Arunachal Pradesh 65882 against Maharashtra 50859: 1.30 times, a gap of 2.10 points of the all-India figure"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.787,
+   "at": 0.12,
+   "text": "Foreign tourist visits: Rajasthan or West Bengal?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.324,
+   "at": 5.926,
+   "text": "West Bengal. One and a half times."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.186,
+   "at": 9.797,
+   "text": "Foodgrains: Haryana or Odisha?"
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.768,
+   "at": 15.604,
+   "text": "Haryana. Over eighty percent more."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.395,
+   "at": 19.475,
+   "text": "Bank credit to agriculture: West Bengal or Kerala?"
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.507,
+   "at": 25.281,
+   "text": "Kerala. Just over double."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.048,
+   "at": 29.152,
+   "text": "Forest cover: Arunachal Pradesh or Maharashtra?"
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 3.395,
+   "at": 34.959,
+   "text": "Arunachal Pradesh. About thirty percent more."
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 1.88,
+   "at": 38.83,
+   "text": "Which pair surprised you most?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rajasthan or West Bengal: Foreign Tourist Visits? 4 Rounds"
+}

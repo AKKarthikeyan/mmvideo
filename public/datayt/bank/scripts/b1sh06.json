@@ -1,0 +1,654 @@
+{
+ "id": "b1sh06",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "Agriculture Ministry · 2022",
+ "palette": "E",
+ "state": "Uttar Pradesh",
+ "data": {
+  "rbi": [
+   98,
+   "2022"
+  ]
+ },
+ "parts": [
+  "Uttar Pradesh",
+  "West Bengal",
+  "Gujarat"
+ ],
+ "source": "Ministry of Agriculture and Farmers' Welfare (Agriculture Statistics at a Glance), as published in the RBI Handbook of Statistics on Indian States: cold storage capacity (Table 98), 2022 (as on 30 November 2022); total foodgrains (Table 62) and total vegetables (Table 75) production, 2022-23. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* has",
+  "nearly *40%* of India's",
+  "cold storage capacity."
+ ],
+ "hook_vo": "One state has nearly forty percent of India's cold storage capacity.",
+ "grid_caption": "100 squares = India's cold storage capacity, 2022",
+ "reveal": {
+  "sub": "has {share} of India's cold storage capacity: 14.9 million tonnes",
+  "vo": "Uttar Pradesh. Nearly fifteen million tonnes in twenty twenty-two."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S COLD STORAGE · 2022",
+  "vo": "West Bengal sixteen in a hundred, Gujarat ten, all other states thirty-five.",
+  "rest_rounds": 35
+ },
+ "facts": [
+  {
+   "kicker": "UP'S SHARE OF INDIA'S OUTPUT",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        98,
+        "2022"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        75,
+        "2022-23"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of India's vegetables",
+   "bars": [
+    {
+     "name": "Cold storage",
+     "share": {
+      "rbi": [
+       98,
+       "2022"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Foodgrains",
+     "share": {
+      "rbi": [
+       62,
+       "2022-23"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Vegetables",
+     "share": {
+      "rbi": [
+       75,
+       "2022-23"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Cold storage 2022. Foodgrains and vegetables 2022-23.",
+   "vo": "That is more than twice its share of India's foodgrains or vegetables."
+  },
+  {
+   "kicker": "UP VS THE NEXT THREE STATES",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "share": {
+         "rbi": [
+          98,
+          "2022"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "share": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Gujarat"
+           },
+           {
+            "share": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         },
+         {
+          "share": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Gujarat"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "share": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Punjab"
+         },
+         {
+          "share": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Punjab"
+         }
+        ]
+       },
+       {
+        "share": {
+         "rbi": [
+          98,
+          "2022"
+         ]
+        },
+        "state": "Punjab"
+       }
+      ]
+     }
+    ]
+   },
+   "unit": "%",
+   "text": "West Bengal, Gujarat and Punjab together",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "share": {
+      "rbi": [
+       98,
+       "2022"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Next three",
+     "diff": [
+      {
+       "diff": [
+        {
+         "share": {
+          "rbi": [
+           98,
+           "2022"
+          ]
+         },
+         "state": "West Bengal"
+        },
+        {
+         "diff": [
+          {
+           "diff": [
+            {
+             "share": {
+              "rbi": [
+               98,
+               "2022"
+              ]
+             },
+             "state": "Gujarat"
+            },
+            {
+             "share": {
+              "rbi": [
+               98,
+               "2022"
+              ]
+             },
+             "state": "Gujarat"
+            }
+           ]
+          },
+          {
+           "share": {
+            "rbi": [
+             98,
+             "2022"
+            ]
+           },
+           "state": "Gujarat"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "diff": [
+        {
+         "diff": [
+          {
+           "share": {
+            "rbi": [
+             98,
+             "2022"
+            ]
+           },
+           "state": "Punjab"
+          },
+          {
+           "share": {
+            "rbi": [
+             98,
+             "2022"
+            ]
+           },
+           "state": "Punjab"
+          }
+         ]
+        },
+        {
+         "share": {
+          "rbi": [
+           98,
+           "2022"
+          ]
+         },
+         "state": "Punjab"
+        }
+       ]
+      }
+     ],
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Capacity: 14.9 million tonnes against 12.3 million.",
+   "vo": "More than West Bengal, Gujarat and Punjab put together."
+  }
+ ],
+ "tests": [
+  {
+   "says": "nearly forty percent of India's cold storage",
+   "value": {
+    "share": {
+     "rbi": [
+      98,
+      "2022"
+     ]
+    }
+   },
+   "min": 38,
+   "max": 39.99
+  },
+  {
+   "says": "14.9 million tonnes (tonnes / 100,000, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      98,
+      "2022"
+     ]
+    },
+    "scale": 1e-05
+   },
+   "equals": 149
+  },
+  {
+   "says": "nearly fifteen million tonnes",
+   "value": {
+    "data": {
+     "rbi": [
+      98,
+      "2022"
+     ]
+    },
+    "scale": 1e-06
+   },
+   "min": 14.5,
+   "max": 14.99
+  },
+  {
+   "says": "West Bengal sixteen in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      98,
+      "2022"
+     ]
+    },
+    "state": "West Bengal"
+   },
+   "equals": 16
+  },
+  {
+   "says": "Gujarat ten",
+   "value": {
+    "share": {
+     "rbi": [
+      98,
+      "2022"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "equals": 10
+  },
+  {
+   "says": "more than twice its share of foodgrains",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        98,
+        "2022"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        62,
+        "2022-23"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.1,
+   "max": 2.5
+  },
+  {
+   "says": "more than twice its share of vegetables",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        98,
+        "2022"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        75,
+        "2022-23"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.1,
+   "max": 2.6
+  },
+  {
+   "says": "more than the next three together (points)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        98,
+        "2022"
+       ]
+      }
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "share": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "West Bengal"
+         },
+         {
+          "diff": [
+           {
+            "diff": [
+             {
+              "share": {
+               "rbi": [
+                98,
+                "2022"
+               ]
+              },
+              "state": "Gujarat"
+             },
+             {
+              "share": {
+               "rbi": [
+                98,
+                "2022"
+               ]
+              },
+              "state": "Gujarat"
+             }
+            ]
+           },
+           {
+            "share": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "share": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Punjab"
+           },
+           {
+            "share": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Punjab"
+           }
+          ]
+         },
+         {
+          "share": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Punjab"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1,
+   "max": 15
+  },
+  {
+   "says": "next three together 12.3 million tonnes (tonnes / 100,000)",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          98,
+          "2022"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "data": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Gujarat"
+           },
+           {
+            "data": {
+             "rbi": [
+              98,
+              "2022"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         },
+         {
+          "data": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Gujarat"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "data": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Punjab"
+         },
+         {
+          "data": {
+           "rbi": [
+            98,
+            "2022"
+           ]
+          },
+          "state": "Punjab"
+         }
+        ]
+       },
+       {
+        "data": {
+         "rbi": [
+          98,
+          "2022"
+         ]
+        },
+        "state": "Punjab"
+       }
+      ]
+     }
+    ],
+    "scale": 1e-05
+   },
+   "equals": 123
+  },
+  {
+   "says": "size check, not spoken: share far above Uttar Pradesh's share of foodgrains",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        98,
+        "2022"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        62,
+        "2022-23"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 3.0
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   15,
+   30
+  ],
+  "title": "Share of India's cold storage, *every state*",
+  "sub": "% of India's capacity · 2022",
+  "note": "State totals, not per person. Capacity at 30 Nov 2022.",
+  "ring": [
+   "Uttar Pradesh"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "How much cold storage does *your state* have?",
+  "sub": "Comment below.",
+  "vo": "How much cold storage does your state have?"
+ },
+ "yt_title": "Uttar Pradesh Has Nearly 40% of India's Cold Storage"
+}

@@ -1,0 +1,792 @@
+{
+ "id": "cw01",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 3.578,
+   "text": "Coke and Pepsi held ninety-three percent of India's soft drinks.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Coke",
+     "norm": "coke",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.4
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 1,
+     "start": 0.4,
+     "end": 0.54
+    },
+    {
+     "w": "Pepsi",
+     "norm": "pepsi",
+     "word": 2,
+     "start": 0.54,
+     "end": 0.86
+    },
+    {
+     "w": "held",
+     "norm": "held",
+     "word": 3,
+     "start": 0.86,
+     "end": 1.14
+    },
+    {
+     "w": "ninety-three",
+     "norm": "ninety",
+     "word": 4,
+     "start": 1.14,
+     "end": 1.56
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 4,
+     "start": 1.56,
+     "end": 1.68
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 5,
+     "start": 1.68,
+     "end": 2.06
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 6,
+     "start": 2.06,
+     "end": 2.3
+    },
+    {
+     "w": "India's",
+     "norm": "india",
+     "word": 7,
+     "start": 2.3,
+     "end": 2.8
+    },
+    {
+     "w": "soft",
+     "norm": "soft",
+     "word": 8,
+     "start": 2.8,
+     "end": 2.94
+    },
+    {
+     "w": "drinks.",
+     "norm": "drinks",
+     "word": 9,
+     "start": 2.94,
+     "end": 3.18
+    }
+   ],
+   "numbers": [
+    {
+     "text": "ninety three",
+     "value": 93.0,
+     "mantissa": 93.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 1.14,
+     "onset": 1.1025,
+     "rule": "weak",
+     "how": "dip-rise",
+     "at": 1.2358,
+     "f": 38
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 3.578,
+   "text": "Then Reliance brought back Campa, at ten rupees.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Then",
+     "norm": "then",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "Reliance",
+     "norm": "reliance",
+     "word": 1,
+     "start": 0.54,
+     "end": 1.02
+    },
+    {
+     "w": "brought",
+     "norm": "brought",
+     "word": 2,
+     "start": 1.02,
+     "end": 1.4
+    },
+    {
+     "w": "back",
+     "norm": "back",
+     "word": 3,
+     "start": 1.4,
+     "end": 1.72
+    },
+    {
+     "w": "Campa,",
+     "norm": "campa",
+     "word": 4,
+     "start": 1.72,
+     "end": 2.18
+    },
+    {
+     "w": "at",
+     "norm": "at",
+     "word": 5,
+     "start": 2.58,
+     "end": 2.72
+    },
+    {
+     "w": "ten",
+     "norm": "ten",
+     "word": 6,
+     "start": 2.72,
+     "end": 2.96
+    },
+    {
+     "w": "rupees.",
+     "norm": "rupees",
+     "word": 7,
+     "start": 2.96,
+     "end": 3.2
+    }
+   ],
+   "numbers": [
+    {
+     "text": "ten",
+     "value": 10.0,
+     "mantissa": 10.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 6,
+     "w1": 6,
+     "whisper": 2.72,
+     "onset": 2.7175,
+     "rule": "stop",
+     "how": "burst",
+     "at": 8.6508,
+     "f": 260
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 3.866,
+   "text": "With Lahori Zeera, its share doubled to fifteen percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "With",
+     "norm": "with",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "Lahori",
+     "norm": "lahori",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.82
+    },
+    {
+     "w": "Zeera,",
+     "norm": "zeera",
+     "word": 2,
+     "start": 0.82,
+     "end": 1.28
+    },
+    {
+     "w": "its",
+     "norm": "its",
+     "word": 3,
+     "start": 1.56,
+     "end": 1.78
+    },
+    {
+     "w": "share",
+     "norm": "share",
+     "word": 4,
+     "start": 1.78,
+     "end": 2.04
+    },
+    {
+     "w": "doubled",
+     "norm": "doubled",
+     "word": 5,
+     "start": 2.04,
+     "end": 2.38
+    },
+    {
+     "w": "to",
+     "norm": "to",
+     "word": 6,
+     "start": 2.38,
+     "end": 2.66
+    },
+    {
+     "w": "fifteen",
+     "norm": "fifteen",
+     "word": 7,
+     "start": 2.66,
+     "end": 3.1
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 8,
+     "start": 3.1,
+     "end": 3.58
+    }
+   ],
+   "numbers": [
+    {
+     "text": "fifteen",
+     "value": 15.0,
+     "mantissa": 15.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 7,
+     "whisper": 2.66,
+     "onset": 2.485,
+     "rule": "fric",
+     "how": "frication",
+     "at": 14.2183,
+     "f": 428
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 17.539,
+   "sec": 2.533,
+   "text": "Coke and Pepsi fell to eighty-five.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Coke",
+     "norm": "coke",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.4
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 1,
+     "start": 0.4,
+     "end": 0.54
+    },
+    {
+     "w": "Pepsi",
+     "norm": "pepsi",
+     "word": 2,
+     "start": 0.54,
+     "end": 0.88
+    },
+    {
+     "w": "fell",
+     "norm": "fell",
+     "word": 3,
+     "start": 0.88,
+     "end": 1.38
+    },
+    {
+     "w": "to",
+     "norm": "to",
+     "word": 4,
+     "start": 1.38,
+     "end": 1.64
+    },
+    {
+     "w": "eighty-five.",
+     "norm": "eighty",
+     "word": 5,
+     "start": 1.64,
+     "end": 2.0
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 5,
+     "start": 2.0,
+     "end": 2.26
+    }
+   ],
+   "numbers": [
+    {
+     "text": "eighty five",
+     "value": 85.0,
+     "mantissa": 85.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 5,
+     "w1": 6,
+     "whisper": 1.64,
+     "onset": 1.5125,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 19.0458,
+     "f": 573
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 21.41,
+   "sec": 3.186,
+   "text": "Their reply: their own ten-rupee packs.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Their",
+     "norm": "their",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.4
+    },
+    {
+     "w": "reply:",
+     "norm": "reply",
+     "word": 1,
+     "start": 0.4,
+     "end": 0.7
+    },
+    {
+     "w": "their",
+     "norm": "their",
+     "word": 2,
+     "start": 1.2,
+     "end": 1.5
+    },
+    {
+     "w": "own",
+     "norm": "own",
+     "word": 3,
+     "start": 1.5,
+     "end": 1.9
+    },
+    {
+     "w": "ten-rupee",
+     "norm": "ten",
+     "word": 4,
+     "start": 1.9,
+     "end": 2.18
+    },
+    {
+     "w": "rupee",
+     "norm": "rupee",
+     "word": 4,
+     "start": 2.18,
+     "end": 2.48
+    },
+    {
+     "w": "packs.",
+     "norm": "packs",
+     "word": 5,
+     "start": 2.48,
+     "end": 2.82
+    }
+   ],
+   "numbers": [
+    {
+     "text": "ten",
+     "value": 10.0,
+     "mantissa": 10.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 4,
+     "whisper": 1.9,
+     "onset": 1.9475,
+     "rule": "stop",
+     "how": "burst",
+     "at": 23.3475,
+     "f": 701
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 25.281,
+   "sec": 3.16,
+   "text": "The cola war is now fought at ten rupees.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.44
+    },
+    {
+     "w": "cola",
+     "norm": "cola",
+     "word": 1,
+     "start": 0.44,
+     "end": 0.74
+    },
+    {
+     "w": "war",
+     "norm": "war",
+     "word": 2,
+     "start": 0.74,
+     "end": 1.04
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 3,
+     "start": 1.04,
+     "end": 1.36
+    },
+    {
+     "w": "now",
+     "norm": "now",
+     "word": 4,
+     "start": 1.36,
+     "end": 1.62
+    },
+    {
+     "w": "fought",
+     "norm": "fought",
+     "word": 5,
+     "start": 1.62,
+     "end": 1.88
+    },
+    {
+     "w": "at",
+     "norm": "at",
+     "word": 6,
+     "start": 1.88,
+     "end": 2.2
+    },
+    {
+     "w": "ten",
+     "norm": "ten",
+     "word": 7,
+     "start": 2.2,
+     "end": 2.42
+    },
+    {
+     "w": "rupees.",
+     "norm": "rupees",
+     "word": 8,
+     "start": 2.42,
+     "end": 2.76
+    }
+   ],
+   "numbers": [
+    {
+     "text": "ten",
+     "value": 10.0,
+     "mantissa": 10.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 7,
+     "whisper": 2.2,
+     "onset": 2.165,
+     "rule": "stop",
+     "how": "burst",
+     "at": 27.4317,
+     "f": 824
+    }
+   ]
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 29.152,
+   "sec": 2.507,
+   "text": "Which is in your fridge? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Which",
+     "norm": "which",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.58
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 2,
+     "start": 0.58,
+     "end": 0.68
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 3,
+     "start": 0.68,
+     "end": 0.86
+    },
+    {
+     "w": "fridge?",
+     "norm": "fridge",
+     "word": 4,
+     "start": 0.86,
+     "end": 1.12
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 5,
+     "start": 1.8,
+     "end": 1.92
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 6,
+     "start": 1.92,
+     "end": 2.24
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 38,
+   "lockHow": "spoken",
+   "lockWord": "ninety three",
+   "firstNumF": 38,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "93%",
+     "spokenF": 38,
+     "word": "ninety three",
+     "how": "spoken",
+     "lockF": 38
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 260,
+   "lockHow": "spoken",
+   "lockWord": "ten",
+   "firstNumF": 260,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹10",
+     "spokenF": 260,
+     "word": "ten",
+     "how": "spoken",
+     "lockF": 260
+    },
+    {
+     "role": "text",
+     "text": "200 ml",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 260
+    },
+    {
+     "role": "text",
+     "text": "2023",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 260
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 523,
+   "settleF": 511,
+   "line": 2,
+   "lockF": 428,
+   "lockHow": "spoken",
+   "lockWord": "fifteen",
+   "firstNumF": 428,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "15%",
+     "spokenF": 428,
+     "word": "fifteen",
+     "how": "spoken",
+     "lockF": 428
+    },
+    {
+     "role": "bar",
+     "text": "15%",
+     "spokenF": 428,
+     "word": "fifteen",
+     "how": "spoken",
+     "lockF": 428
+    },
+    {
+     "role": "bar",
+     "text": "7%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 428
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 428
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 639,
+   "settleF": 627,
+   "line": 3,
+   "lockF": 573,
+   "lockHow": "spoken",
+   "lockWord": "eighty five",
+   "firstNumF": 573,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "85%",
+     "spokenF": 573,
+     "word": "eighty five",
+     "how": "spoken",
+     "lockF": 573
+    },
+    {
+     "role": "bar",
+     "text": "85%",
+     "spokenF": 573,
+     "word": "eighty five",
+     "how": "spoken",
+     "lockF": 573
+    },
+    {
+     "role": "bar",
+     "text": "93%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 529
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 573
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 639,
+   "f1": 755,
+   "settleF": 743,
+   "line": 4,
+   "lockF": 701,
+   "lockHow": "spoken",
+   "lockWord": "ten",
+   "firstNumF": 701,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹10",
+     "spokenF": 701,
+     "word": "ten",
+     "how": "spoken",
+     "lockF": 701
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 755,
+   "f1": 871,
+   "settleF": 859,
+   "line": 5,
+   "lockF": 824,
+   "lockHow": "spoken",
+   "lockWord": "ten",
+   "firstNumF": 824,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "₹10",
+     "spokenF": 824,
+     "word": "ten",
+     "how": "spoken",
+     "lockF": 824
+    }
+   ]
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 871,
+   "f1": 987,
+   "settleF": 975,
+   "line": 6,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

@@ -1,0 +1,663 @@
+{
+ "id": "pyq-2022-gs2-2",
+ "format": "long-16x9",
+ "target_minutes": 2.2,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/pyq/2022-gs2-2/answer.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "b00",
+   "kind": "pyq_question",
+   "spec": {
+    "credit": "UPSC CSE (Main) 2022 · General Studies Paper II · Q2",
+    "marks": "10 marks",
+    "text": "“Right of movement and residence throughout the territory of India are freely available to the Indian citizens, but these rights are not absolute.” Comment.",
+    "glow": []
+   },
+   "vo": "UPSC, twenty twenty-two. General Studies Paper Two, ten marks, one hundred and fifty words. Movement and residence are free for citizens, but not absolute. Comment. Here's the strange part. The Constitution itself says so, in one clause.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The printed question on a paper card, credit line 'UPSC CSE (Main) 2022, GS Paper II, Q2'. The words 'not absolute' glow (plant).",
+   "beat": "b00",
+   "claims": [
+    "2022-GS2-2-02"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "b01",
+   "kind": "pyq_xray",
+   "spec": {
+    "text": "“Right of movement and residence throughout the territory of India are freely available to the Indian citizens, but these rights are not absolute.” Comment.",
+    "directives": [
+     {
+      "word": "Comment",
+      "meaning": "take and back a position",
+      "key": "x1"
+     }
+    ],
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens",
+      "key": "d1"
+     },
+     {
+      "id": "D2",
+      "label": "The limits",
+      "key": "d2"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view",
+      "key": "d3"
+     }
+    ]
+   },
+   "vo": "Read what it asks. Comment means give a view, and back it. There are three jobs. Show the right is free, for citizens. Show its limits. Then give a verdict with cases.",
+   "reveals": [
+    {
+     "key": "x1",
+     "word": "Comment"
+    },
+    {
+     "key": "d1",
+     "word": "for"
+    },
+    {
+     "key": "d2",
+     "word": "There"
+    },
+    {
+     "key": "d3",
+     "word": "view,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Question X-ray: 'Comment' highlighted; three empty boxes D1 to D3 (plant: they tick at the end).",
+   "beat": "b01",
+   "claims": []
+  },
+  {
+   "id": "s003",
+   "act": "b02",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Free to Move, But Not Absolute (UPSC GS II 2022)",
+    "lines": [
+     {
+      "text": "Article nineteen, one, d and e, gives citizens free movement and residence.",
+      "key": "l1"
+     },
+     {
+      "text": "Article nineteen says all citizens.",
+      "key": "l2"
+     },
+     {
+      "text": "So foreigners cannot claim it.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "Start with the right. Article nineteen, one, d and e, gives citizens free movement and residence. Article nineteen says all citizens. So foreigners cannot claim it.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "right."
+    },
+    {
+     "key": "l2",
+     "word": "gives"
+    },
+    {
+     "key": "l3",
+     "word": "Article"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A map of India with an open road; a 'citizens' badge on Article 19.",
+   "beat": "b02",
+   "claims": [
+    "2022-GS2-2-01",
+    "POL03-A11"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "b03",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Free to Move, But Not Absolute (UPSC GS II 2022)",
+    "lines": [
+     {
+      "text": "But Article nineteen, five, makes it conditional.",
+      "key": "l1"
+     },
+     {
+      "text": "A law may impose reasonable restrictions.",
+      "key": "l2"
+     },
+     {
+      "text": "Two grounds are named: the general public interest, and Scheduled Tribe interests.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "But Article nineteen, five, makes it conditional. A law may impose reasonable restrictions. Two grounds are named: the general public interest, and Scheduled Tribe interests.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "five,"
+    },
+    {
+     "key": "l2",
+     "word": "impose"
+    },
+    {
+     "key": "l3",
+     "word": "named:"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The clause 19(5) as a paper card; the two grounds light up (plant pays off).",
+   "beat": "b03",
+   "claims": [
+    "2022-GS2-2-02"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "b04",
+   "kind": "pyq_card",
+   "spec": {
+    "title": "Free to Move, But Not Absolute (UPSC GS II 2022)",
+    "lines": [
+     {
+      "text": "But courts watch the word reasonable.",
+      "key": "l1"
+     },
+     {
+      "text": "In nineteen fifty-two, Gurbachan Singh upheld externment.",
+      "key": "l2"
+     },
+     {
+      "text": "In nineteen fifty-four, Ebrahim Vazir Mavat did not allow a citizen's removal.",
+      "key": "l3"
+     }
+    ]
+   },
+   "vo": "But courts watch the word reasonable. In nineteen fifty-two, Gurbachan Singh upheld externment. In nineteen fifty-four, Ebrahim Vazir Mavat did not allow a citizen's removal. The test is reasonableness.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "word"
+    },
+    {
+     "key": "l2",
+     "word": "upheld"
+    },
+    {
+     "key": "l3",
+     "word": "Mavat"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two judgment cards, one with a green tick, one with a red cross; a scale of 'reasonable'.",
+   "beat": "b04",
+   "claims": [
+    "2022-GS2-2-05",
+    "2022-GS2-2-07"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "b05",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "Article 19(1)(d) and (e) give citizens, not foreigners, free movement and residence in India."
+     },
+     {
+      "kind": "head",
+      "text": "1. The Constitution's limits"
+     },
+     {
+      "kind": "points",
+      "text": "• _Article 19(5)_: reasonable restrictions in the general public interest or to protect any Scheduled Tribe. • _Emergency_: Article 358 suspends Article 19 during a war or external-aggression Emergency. • Residence: Article 16(3) lets Parliament require it for some posts."
+     },
+     {
+      "kind": "head",
+      "text": "2. What the courts held"
+     },
+     {
+      "kind": "points",
+      "text": "• _Gurbachan Singh_ (1952): externment upheld as a reasonable restriction. • _Ebrahim Vazir Mavat_ (1954): removing a citizen violated Article 19(1)(e). • _Anuradha Bhasin_ (2020): section 144 orders must be necessary and reasoned. • _Maneka Gandhi_ (1978): these freedoms 'are not and cannot be absolute'. • _Amit Sahni_ (2020): a protest cannot block public ways indefinitely."
+     },
+     {
+      "kind": "close",
+      "text": "So the rights are fundamental yet conditional: a restriction must be by law and reasonable."
+     }
+    ],
+    "from": 0,
+    "to": 1,
+    "minutes": [
+     7.0,
+     6.057
+    ],
+    "total": 7,
+    "words0": 0,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "done0": [],
+    "done": [
+     "D1"
+    ],
+    "start": "w"
+   },
+   "vo": "Now we write. One hundred and fifty words, about seven minutes. Open with the right and who holds it. One line.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Now"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The answer sheet; clock 7:00 and word counter 0. The introduction writes in; box D1 fills.",
+   "beat": "b05",
+   "claims": [
+    "2022-GS2-2-01",
+    "POL03-A11"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "b06",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "Article 19(1)(d) and (e) give citizens, not foreigners, free movement and residence in India."
+     },
+     {
+      "kind": "head",
+      "text": "1. The Constitution's limits"
+     },
+     {
+      "kind": "points",
+      "text": "• _Article 19(5)_: reasonable restrictions in the general public interest or to protect any Scheduled Tribe. • _Emergency_: Article 358 suspends Article 19 during a war or external-aggression Emergency. • Residence: Article 16(3) lets Parliament require it for some posts."
+     },
+     {
+      "kind": "head",
+      "text": "2. What the courts held"
+     },
+     {
+      "kind": "points",
+      "text": "• _Gurbachan Singh_ (1952): externment upheld as a reasonable restriction. • _Ebrahim Vazir Mavat_ (1954): removing a citizen violated Article 19(1)(e). • _Anuradha Bhasin_ (2020): section 144 orders must be necessary and reasoned. • _Maneka Gandhi_ (1978): these freedoms 'are not and cannot be absolute'. • _Amit Sahni_ (2020): a protest cannot block public ways indefinitely."
+     },
+     {
+      "kind": "close",
+      "text": "So the rights are fundamental yet conditional: a restriction must be by law and reasonable."
+     }
+    ],
+    "from": 2,
+    "to": 2,
+    "minutes": [
+     6.057,
+     4.119
+    ],
+    "total": 7,
+    "words0": 18,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "done0": [
+     "D1"
+    ],
+    "done": [
+     "D2"
+    ],
+    "start": "w"
+   },
+   "vo": "Section one is the limits. Article nineteen five. Article three fifty-eight in an Emergency. And Article sixteen three on residence for some posts.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 1 writes in; box D2 fills.",
+   "beat": "b06",
+   "claims": [
+    "2022-GS2-2-02",
+    "2022-GS2-2-03",
+    "2022-GS2-2-04"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "b07",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "Article 19(1)(d) and (e) give citizens, not foreigners, free movement and residence in India."
+     },
+     {
+      "kind": "head",
+      "text": "1. The Constitution's limits"
+     },
+     {
+      "kind": "points",
+      "text": "• _Article 19(5)_: reasonable restrictions in the general public interest or to protect any Scheduled Tribe. • _Emergency_: Article 358 suspends Article 19 during a war or external-aggression Emergency. • Residence: Article 16(3) lets Parliament require it for some posts."
+     },
+     {
+      "kind": "head",
+      "text": "2. What the courts held"
+     },
+     {
+      "kind": "points",
+      "text": "• _Gurbachan Singh_ (1952): externment upheld as a reasonable restriction. • _Ebrahim Vazir Mavat_ (1954): removing a citizen violated Article 19(1)(e). • _Anuradha Bhasin_ (2020): section 144 orders must be necessary and reasoned. • _Maneka Gandhi_ (1978): these freedoms 'are not and cannot be absolute'. • _Amit Sahni_ (2020): a protest cannot block public ways indefinitely."
+     },
+     {
+      "kind": "close",
+      "text": "So the rights are fundamental yet conditional: a restriction must be by law and reasonable."
+     }
+    ],
+    "from": 3,
+    "to": 3,
+    "minutes": [
+     4.119,
+     3.857
+    ],
+    "total": 7,
+    "words0": 55,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2"
+    ],
+    "done": [],
+    "start": "w"
+   },
+   "vo": "Section two is the cases. Gurbachan Singh. Ebrahim Vazir Mavat. Anuradha Bhasin, in twenty twenty, on section one forty-four. Each has a year and a holding.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Section"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Section 2 writes in; three case cards stack; box D3 starts to fill.",
+   "beat": "b07",
+   "claims": [
+    "2022-GS2-2-05",
+    "2022-GS2-2-07",
+    "2022-GS2-2-11"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "b08",
+   "kind": "pyq_sheet",
+   "spec": {
+    "blocks": [
+     {
+      "kind": "intro",
+      "text": "Article 19(1)(d) and (e) give citizens, not foreigners, free movement and residence in India."
+     },
+     {
+      "kind": "head",
+      "text": "1. The Constitution's limits"
+     },
+     {
+      "kind": "points",
+      "text": "• _Article 19(5)_: reasonable restrictions in the general public interest or to protect any Scheduled Tribe. • _Emergency_: Article 358 suspends Article 19 during a war or external-aggression Emergency. • Residence: Article 16(3) lets Parliament require it for some posts."
+     },
+     {
+      "kind": "head",
+      "text": "2. What the courts held"
+     },
+     {
+      "kind": "points",
+      "text": "• _Gurbachan Singh_ (1952): externment upheld as a reasonable restriction. • _Ebrahim Vazir Mavat_ (1954): removing a citizen violated Article 19(1)(e). • _Anuradha Bhasin_ (2020): section 144 orders must be necessary and reasoned. • _Maneka Gandhi_ (1978): these freedoms 'are not and cannot be absolute'. • _Amit Sahni_ (2020): a protest cannot block public ways indefinitely."
+     },
+     {
+      "kind": "close",
+      "text": "So the rights are fundamental yet conditional: a restriction must be by law and reasonable."
+     }
+    ],
+    "from": 4,
+    "to": 5,
+    "minutes": [
+     3.857,
+     0.4
+    ],
+    "total": 7,
+    "words0": 60,
+    "budget": 150,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "done0": [
+     "D1",
+     "D2"
+    ],
+    "done": [
+     "D3"
+    ],
+    "start": "w"
+   },
+   "vo": "Close with the verdict. The rights are fundamental yet conditional. A restriction must be by law and reasonable. That is the view the question asks for.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "Close"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The close writes in; all three boxes D1 to D3 tick.",
+   "beat": "b08",
+   "claims": [
+    "2022-GS2-2-02",
+    "2022-GS2-2-05"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "b09",
+   "kind": "pyq_compare",
+   "spec": {
+    "weak": [
+     {
+      "text": "Article 19 rights belong to every person in India, including foreigners.",
+      "miss": "Article 19 says 'All citizens'",
+      "key": "w1"
+     },
+     {
+      "text": "Article 19(5) lets the police stop anyone's movement at will.",
+      "miss": "a restriction must be by law, reasonable and on two named grounds",
+      "key": "w2"
+     },
+     {
+      "text": "Externment was struck down in Gurbachan Singh.",
+      "miss": "the Court upheld it as reasonable",
+      "key": "w3"
+     },
+     {
+      "text": "(no case named)",
+      "miss": "no named source for 'not absolute'",
+      "key": "w4"
+     }
+    ],
+    "heads": [
+     "1. The Constitution's limits",
+     "2. What the courts held"
+    ],
+    "fig": null,
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "title_weak": "THE EASY ANSWER (OURS, FOR COMPARISON)",
+    "title_good": "ONE GOOD ANSWER"
+   },
+   "vo": "Now the easy answer beside it. It says Article nineteen belongs to every person. It says all citizens. It says police can stop anyone at will. It says Gurbachan Singh struck externment down. And it names no case.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "it."
+    },
+    {
+     "key": "w2",
+     "word": "every"
+    },
+    {
+     "key": "w3",
+     "word": "says"
+    },
+    {
+     "key": "w4",
+     "word": "says"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sheets side by side; the weaker one's slips ringed in red with one-line notes.",
+   "beat": "b09",
+   "claims": [
+    "POL03-A11",
+    "2022-GS2-2-02",
+    "2022-GS2-2-05"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "b10",
+   "kind": "pyq_cousins",
+   "spec": {
+    "demands": [
+     {
+      "id": "D1",
+      "label": "Free, for citizens"
+     },
+     {
+      "id": "D2",
+      "label": "The limits"
+     },
+     {
+      "id": "D3",
+      "label": "The courts' view"
+     }
+    ],
+    "cousins": [
+     {
+      "text": "2017 GS II Q12: scope of Fundamental Rights in the light of the Supreme Court's latest privacy judgement",
+      "key": "c1"
+     },
+     {
+      "text": "2021 GS II Q13: distinguishing features of the Right to Equality in the USA and India",
+      "key": "c2"
+     },
+     {
+      "text": "2023 GS II Q12: constitutional perspectives of Gender Justice, with provisions and case laws",
+      "key": "c3"
+     }
+    ],
+    "next": {
+     "text": "The concept episode: Fundamental Rights: what you can actually do with them",
+     "key": "nx"
+    },
+    "title": "SAME FRAME, OTHER YEARS"
+   },
+   "vo": "Here is the payoff. This frame answers its cousins. Twenty seventeen asked about the scope of Fundamental Rights. Twenty twenty-one asked about the Right to Equality. Learn the clause once. The full story gets its own episode in our Polity series.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "answers"
+    },
+    {
+     "key": "c2",
+     "word": "the"
+    },
+    {
+     "key": "c3",
+     "word": "about"
+    },
+    {
+     "key": "nx",
+     "word": "our"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three boxes tick; three cousin question cards slide in; a 'coming in the Polity series' card for POL-03.",
+   "beat": "b10",
+   "claims": [
+    "POL03-A11"
+   ]
+  }
+ ]
+}

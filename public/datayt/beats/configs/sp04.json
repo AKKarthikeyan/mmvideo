@@ -1,0 +1,371 @@
+{
+ "id": "sp04",
+ "type": "versus",
+ "rules": 2,
+ "theme": "power",
+ "chip": "STATE vs STATE",
+ "source_short": "CEA · MOSPI · DoT · 2024-26",
+ "palette": "A",
+ "a": "West Bengal",
+ "b": "Odisha",
+ "source": "Renewable capacity (grid-connected, large hydro excluded) at end-March 2024: MOSPI Energy Statistics via RBI Handbook of Statistics on Indian States (Table 143). Power lost in transmission and distribution 2022-23 (Table 148) and phone connections per 100 people, telecom circles, to Nov 2024 (Table 149). Generation 2024-25: Ministry of Power Lok Sabha reply of 12 Mar 2026 (CEA). 5G: Department of Telecommunications, villages as on 28 Feb 2026. Per-person figures use population projections.",
+ "hook": [
+  "*West Bengal*",
+  "vs *Odisha.*",
+  "5 rounds: power and phones."
+ ],
+ "hook_vo": "West Bengal versus Odisha. Five rounds.",
+ "categories": [
+  {
+   "label": "Renewable power per person",
+   "note": "watts per person · March 2024 · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2022"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2022"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   ],
+   "vo": "Renewable power per person: Odisha by more than double."
+  },
+  {
+   "label": "Villages with 5G",
+   "note": "% of villages · 28 Feb 2026 · higher is better",
+   "unit": "%",
+   "data": {
+    "coverage": "g5_pct"
+   },
+   "vo": "Villages with 5G: West Bengal at seventy-six percent."
+  },
+  {
+   "label": "Electricity generated per person",
+   "note": "kWh a year · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "cea/generation_by_source",
+       "All sources 2024-25"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2025"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "tbl": [
+        "cea/generation_by_source",
+        "All sources 2023-24"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    {
+     "ratio": [
+      {
+       "tbl": [
+        "cea/generation_by_source",
+        "All sources 2022-23"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   ],
+   "vo": "Electricity generated per person: Odisha by two-thirds."
+  },
+  {
+   "label": "Power lost in the wires",
+   "note": "% lost in transmission and distribution · 2022-23 · lower is better",
+   "unit": "%",
+   "data": {
+    "rbi": [
+     148,
+     "2022-23"
+    ]
+   },
+   "better": "low",
+   "also": [
+    {
+     "rbi": [
+      148,
+      "2021-22"
+     ]
+    },
+    {
+     "rbi": [
+      148,
+      "2020-21"
+     ]
+    }
+   ],
+   "vo": "Power lost in wires: West Bengal at eighteen percent."
+  },
+  {
+   "label": "Phone connections per 100 people",
+   "note": "telecom circles · Nov 2024 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     149,
+     "2025 #"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      149,
+      "2024"
+     ]
+    },
+    {
+     "rbi": [
+      149,
+      "2023"
+     ]
+    }
+   ],
+   "vo": "Phone connections per hundred people: Odisha at seventy-eight. Three to two."
+  }
+ ],
+ "tests": [
+  {
+   "says": "renewable power per person: Odisha more than double West Bengal",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Odisha"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.5
+  },
+  {
+   "says": "5G villages: West Bengal seventy-six percent",
+   "value": {
+    "data": {
+     "coverage": "g5_pct"
+    },
+    "state": "West Bengal"
+   },
+   "equals": 76
+  },
+  {
+   "says": "generation per person: Odisha two-thirds above West Bengal",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "cea/generation_by_source",
+          "All sources 2024-25"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Odisha"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "tbl": [
+          "cea/generation_by_source",
+          "All sources 2024-25"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "West Bengal"
+     }
+    ]
+   },
+   "min": 1.64,
+   "max": 1.7
+  },
+  {
+   "says": "power lost: West Bengal eighteen percent",
+   "value": {
+    "data": {
+     "rbi": [
+      148,
+      "2022-23"
+     ]
+    },
+    "state": "West Bengal"
+   },
+   "equals": 18
+  },
+  {
+   "says": "phone connections: Odisha seventy-eight per hundred",
+   "value": {
+    "data": {
+     "rbi": [
+      149,
+      "2025 #"
+     ]
+    },
+    "state": "Odisha"
+   },
+   "equals": 78
+  }
+ ],
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "cea/generation_by_source",
+      "All sources 2024-25"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2025"
+     ]
+    }
+   ],
+   "scale": 1000
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Electricity generated per person, *every state*",
+  "sub": "Odisha 3 · West Bengal 2 · kWh a year · 2024-25",
+  "note": "Electricity generated in the state, all sources, over its projected population (1 March 2025): generated, not used. Both states outlined. Blank: no figure.",
+  "ring": [
+   "West Bengal",
+   "Odisha"
+  ],
+  "vo": "Generated in a state is not the same as used there."
+ },
+ "score": false,
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "West Bengal vs Odisha: 5 Rounds of Power Data ⚡"
+}

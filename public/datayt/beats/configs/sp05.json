@@ -1,0 +1,382 @@
+{
+ "id": "sp05",
+ "type": "paradox",
+ "theme": "women",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "PLFS · NFHS-6 · 2023-24",
+ "palette": "O",
+ "state": "Uttar Pradesh",
+ "source": "Work: women aged 15 and above at work (usual status, unpaid family work counted), rural and urban, Periodic Labour Force Survey, MoSPI; 2023-24 (July to June) and 2025 (January to December, new design). Phones: share of women aged 15 to 49 with a mobile phone they themselves use, NFHS-6 (2023-24) state fact sheets, International Institute for Population Sciences (survey estimates; Lakshadweep is not ranked and Manipur has no NFHS-6 sheet yet).",
+ "hook": [
+  "Share of women, 2023-24:",
+  "*Uttar Pradesh* at work,",
+  "*Bihar* with own phones."
+ ],
+ "hook_vo": "Share of women: Uttar Pradesh leads at work, Bihar on own phones.",
+ "facts": [
+  {
+   "state": "Uttar Pradesh",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Bihar"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15+ were at work, 2023-24. Bihar: 30.1%. India: 40.3%.",
+   "sub": "Survey estimate. PLFS, MoSPI; unpaid work counts.",
+   "vo": "Thirty-four percent of Uttar Pradesh's women were at work. Bihar, thirty."
+  },
+  {
+   "state": "Uttar Pradesh",
+   "kicker": "WOMEN AT WORK · 2025",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2025",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Bihar"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15+, calendar year 2025 (new design). Bihar: 24.0%.",
+   "sub": "Survey estimate. Same order in 2022-23.",
+   "vo": "In twenty twenty-five Uttar Pradesh had thirty-two percent, Bihar twenty-four."
+  },
+  {
+   "state": "Bihar",
+   "kicker": "WOMEN'S OWN PHONES · 2023-24",
+   "data": {
+    "nfhs": 93
+   },
+   "unit": "%",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15 to 49 had a mobile phone they used. Uttar Pradesh: 56.4%. India: 64%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 fact sheets.",
+   "vo": "In Bihar sixty-three percent of women had their own phone, Uttar Pradesh fifty-six."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 34
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 30
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 40
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2025",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 32
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2025",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 24
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "nfhs": 93
+   },
+   "equals": 63
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "nfhs": 93
+   },
+   "equals": 56
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 93
+   },
+   "equals": 64
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2025",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2025",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "nfhs": 93
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "nfhs": 93,
+     "col": 3
+    }
+   },
+   "min": 1.03
+  }
+ ],
+ "tests": [
+  {
+   "says": "Bihar WPR 2023-24 30.1",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "Bihar",
+    "scale": 10
+   },
+   "equals": 301
+  },
+  {
+   "says": "India WPR 2023-24 40.3",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 403
+  },
+  {
+   "says": "Bihar WPR 2025 24.0",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2025",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "Bihar",
+    "scale": 10
+   },
+   "equals": 240
+  },
+  {
+   "says": "Uttar Pradesh phone 56.4",
+   "value": {
+    "data": {
+     "nfhs": 93
+    },
+    "state": "Uttar Pradesh",
+    "scale": 10
+   },
+   "equals": 564
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "b": {
+    "nfhs": 93
+   },
+   "max_abs": 0.3
+  },
+  "lines": [
+   "Across {n} states and UTs,",
+   "women at work and women",
+   "with their own phone were",
+   "*not closely linked*."
+  ],
+  "vo": "Across states, women at work and women's own phones were not closely linked.",
+  "note": "Work counts unpaid family work too. A phone here is one the woman uses herself. The table shows how much, not why."
+ },
+ "map": {
+  "data": {
+   "nfhs": 93
+  },
+  "unit": "%",
+  "title": "Women with a phone they use, *every state*",
+  "sub": "% of women aged 15 to 49 · India {india} · 2023-24",
+  "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+  "ring": [
+   "Uttar Pradesh",
+   "Bihar"
+  ],
+  "vo": "Here is every state: women with a mobile phone they use."
+ },
+ "end": {
+  "q": "Do women in your home have *phones*?",
+  "sub": "Comment below.",
+  "vo": "Do women in your home have phones?"
+ },
+ "yt_title": "Uttar Pradesh Women at Work 33.6%; Bihar Own Phones 62.8%"
+}

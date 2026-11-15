@@ -1,0 +1,65 @@
+{
+ "id": "clue01",
+ "type": "clues",
+ "chip": "5 CLUES",
+ "source_short": "NFHS-6 · DoT",
+ "palette": "C",
+ "state": "Kerala",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets; villages without mobile coverage: Department of Telecommunications, Lok Sabha answer, as on 28 Feb 2026.",
+ "hook": [
+  "Guess the state",
+  "from *5 clues.*"
+ ],
+ "hook_vo": "Can you guess the state from five clues?",
+ "clues": [
+  {
+   "data": {
+    "nfhs": 80
+   },
+   "claim": "highest",
+   "text": "of women have high blood sugar. The highest in India.",
+   "vo": "Clue one. Highest blood sugar among women."
+  },
+  {
+   "data": {
+    "nfhs": 3
+   },
+   "claim": "highest",
+   "text": "of people are 60 or older. India's oldest state.",
+   "vo": "Clue two. India's oldest population."
+  },
+  {
+   "data": {
+    "nfhs": 16
+   },
+   "claim": "lowest",
+   "text": "of young women married before 18. The lowest in India.",
+   "vo": "Clue three. Fewest women married before 18."
+  },
+  {
+   "data": {
+    "nfhs": 15
+   },
+   "claim": "highest",
+   "text": "of men have used the internet. The highest in India.",
+   "vo": "Clue four. The most men online."
+  },
+  {
+   "data": {
+    "coverage": "uncovered"
+   },
+   "unit": "",
+   "text": "villages without a mobile signal.",
+   "vo": "Clue five. Every village has mobile signal.",
+   "big": "ZERO"
+  }
+ ],
+ "reveal_sub": "Oldest, most online, and fully connected.",
+ "recap_vo": "How many clues did you need?",
+ "end": {
+  "q": "How many clues did you need?",
+  "sub": "Comment your number.",
+  "vo": "Comment your number below."
+ },
+ "yt_title": "Guess the Indian state from 5 clues 🧩"
+}

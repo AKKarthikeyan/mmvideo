@@ -1,0 +1,554 @@
+{
+ "id": "vs06",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "sourceShort": "IIPS · PFRDA · UDISE+ · 2023-25",
+ "source": "NFHS-6 (2023-24), IIPS, state fact sheets; survey estimates, and each lead was there in NFHS-5 (2019-21) too: women 15-49 who worked in the past year and were paid in cash; mothers who took iron folic acid for 100 days or more; women 15-24 using hygienic period protection. Atal Pension Yojana sign-ups in the year, women as a share of all, 2024-25 (PFRDA), and girls' Class 9-12 gross enrolment ratio, 2024-25 (UDISE+, Ministry of Education; it can pass 100): RBI Handbook of Statistics on Indian States, Tables 180 and 1.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Gujarat*",
+    "vs *Rajasthan.*",
+    "5 rounds: women and girls."
+   ],
+   "vo": "Gujarat versus Rajasthan. Five rounds.",
+   "spots": [
+    {
+     "geo": "Gujarat",
+     "tone": "a",
+     "name": "Gujarat"
+    },
+    {
+     "geo": "Rajasthan",
+     "tone": "b",
+     "name": "Rajasthan"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "versus",
+   "label": "Women paid in cash for work",
+   "note": "women 15-49 paid in cash · 2023-24 · higher is better",
+   "a": "36.6%",
+   "b": "26.9%",
+   "win": "a",
+   "sa": 1,
+   "sb": 0,
+   "vo": "More women paid in cash: Gujarat.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "versus",
+   "label": "Women in Atal Pension sign-ups",
+   "note": "% of the year's sign-ups · 2024-25 · higher is better",
+   "a": "35.5%",
+   "b": "39.8%",
+   "win": "b",
+   "sa": 1,
+   "sb": 1,
+   "vo": "Women among Atal Pension sign-ups: Rajasthan.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "versus",
+   "label": "Mothers: iron folic acid, 100+ days",
+   "note": "mothers, 100+ days · 2023-24 · higher is better",
+   "a": "71.0%",
+   "b": "41.0%",
+   "win": "a",
+   "sa": 2,
+   "sb": 1,
+   "vo": "Iron for mothers: Gujarat.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "versus",
+   "label": "Hygienic period protection, 15-24",
+   "note": "women 15-24 · 2023-24 · higher is better",
+   "a": "66.9%",
+   "b": "88.5%",
+   "win": "b",
+   "sa": 2,
+   "sb": 2,
+   "vo": "Period protection for young women: Rajasthan.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "versus",
+   "label": "Girls in Class 9-12, enrolment ratio",
+   "note": "gross ratio, can pass 100 · 2024-25 · higher is better",
+   "a": "60.9%",
+   "b": "70.0%",
+   "win": "b",
+   "sa": 2,
+   "sb": 3,
+   "vo": "Girls in Class nine to twelve: Rajasthan.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "map",
+   "title": "Women paid in cash, *every state*",
+   "sub": "Rajasthan 3 · Gujarat 2 · India 30.8%",
+   "note": "Women 15-49 who worked in the past year and were paid in cash, NFHS-6 (2023-24). Both states outlined. Blank: Lakshadweep, Manipur.",
+   "anim": true,
+   "ring": [
+    "Gujarat",
+    "Rajasthan"
+   ],
+   "vo": "Every state: women paid in cash.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "note": "Women 15-49 who worked in the past year and were paid in cash, NFHS-6 (2023-24). Both states outlined. Blank: Lakshadweep, Manipur.",
+   "ring": [
+    "Gujarat",
+    "Rajasthan"
+   ],
+   "q": "Which pair should we compare next?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which pair should we compare next? Comment below.",
+   "t0": 27.097,
+   "t1": 30.968
+  }
+ ],
+ "total": 31.368,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "a": {
+  "name": "Gujarat",
+  "geo": "Gujarat"
+ },
+ "b": {
+  "name": "Rajasthan",
+  "geo": "Rajasthan"
+ },
+ "map": [
+  {
+   "name": "Jammu and Kashmir",
+   "label": "14.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.576
+  },
+  {
+   "name": "Ladakh",
+   "label": "16.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.631
+  },
+  {
+   "name": "Bihar",
+   "label": "16.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.686
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "21.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.741
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "23.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.796
+  },
+  {
+   "name": "Tripura",
+   "label": "24.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 23.851
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "25.0",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 23.906
+  },
+  {
+   "name": "Nagaland",
+   "label": "25.0",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 23.961
+  },
+  {
+   "name": "Haryana",
+   "label": "25.1",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 24.016
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "25.2",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 24.071
+  },
+  {
+   "name": "Assam",
+   "label": "25.6",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 24.126
+  },
+  {
+   "name": "Odisha",
+   "label": "26.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.181
+  },
+  {
+   "name": "Rajasthan",
+   "label": "26.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.236
+  },
+  {
+   "name": "West Bengal",
+   "label": "27.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.291
+  },
+  {
+   "name": "Jharkhand",
+   "label": "27.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.346
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "27.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.401
+  },
+  {
+   "name": "Punjab",
+   "label": "28.8",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 24.456
+  },
+  {
+   "name": "Chandigarh",
+   "label": "29.7",
+   "bucket": 2,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 24.512
+  },
+  {
+   "name": "Sikkim",
+   "label": "30.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 24.567
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "32.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.622
+  },
+  {
+   "name": "Goa",
+   "label": "34.1",
+   "bucket": 2,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 24.677
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "34.7",
+   "bucket": 3,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 24.732
+  },
+  {
+   "name": "Puducherry",
+   "label": "35.9",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 24.787
+  },
+  {
+   "name": "Kerala",
+   "label": "36.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 24.842
+  },
+  {
+   "name": "Gujarat",
+   "label": "36.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.897
+  },
+  {
+   "name": "Mizoram",
+   "label": "38.8",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 24.952
+  },
+  {
+   "name": "Maharashtra",
+   "label": "39.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.007
+  },
+  {
+   "name": "Karnataka",
+   "label": "40.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.062
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "41.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.117
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "42.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.172
+  },
+  {
+   "name": "Meghalaya",
+   "label": "43.9",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 25.227
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "48.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.282
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "48.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.337
+  },
+  {
+   "name": "Telangana",
+   "label": "53.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.392
+  }
+ ],
+ "checked": [
+  "Women paid in cash for work: Gujarat 36.6, Rajasthan 26.9, 36% apart, Gujarat ahead",
+  "  same winner in {'nfhs': 91, 'col': 3}: Gujarat 30.8, Rajasthan 17.4",
+  "Women in Atal Pension sign-ups: Gujarat 35.5352, Rajasthan 39.7862, 12% apart, Rajasthan ahead",
+  "  same winner in {'ratio': [{'rbi': [180, '2023-24 | Female']}, {'add': [{'rbi': [180, '2023-24 | Female']}, {'rbi': [180, '2023-24 | Male']}, {'rbi': [180, '2023-24 | Transgender']}]}], 'scale': 100}: Gujarat 32.7795, Rajasthan 39.9888",
+  "  same winner in {'ratio': [{'rbi': [180, '2022-23 | Female']}, {'add': [{'rbi': [180, '2022-23 | Female']}, {'rbi': [180, '2022-23 | Male']}, {'rbi': [180, '2022-23 | Transgender']}]}], 'scale': 100}: Gujarat 29.7686, Rajasthan 38.8649",
+  "Mothers: iron folic acid, 100+ days: Gujarat 71, Rajasthan 41, 73% apart, Gujarat ahead",
+  "  same winner in {'nfhs': 32, 'col': 3}: Gujarat 60, Rajasthan 33.9",
+  "Hygienic period protection, 15-24: Gujarat 66.9, Rajasthan 88.5, 32% apart, Rajasthan ahead",
+  "  same winner in {'nfhs': 94, 'col': 3}: Gujarat 66.9, Rajasthan 84.3",
+  "Girls in Class 9-12, enrolment ratio: Gujarat 60.9, Rajasthan 70, 15% apart, Rajasthan ahead",
+  "score 2 to 3",
+  "cash pay: Gujarat thirty-seven percent: 36.60",
+  "iron folic acid: Gujarat 1.6 to 1.9 times Rajasthan: 1.73"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.265,
+   "at": 0.12,
+   "text": "Gujarat versus Rajasthan. Five rounds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.847,
+   "at": 3.991,
+   "text": "More women paid in cash: Gujarat."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.03,
+   "at": 7.862,
+   "text": "Women among Atal Pension sign-ups: Rajasthan."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.664,
+   "at": 11.733,
+   "text": "Iron for mothers: Gujarat."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.03,
+   "at": 15.604,
+   "text": "Period protection for young women: Rajasthan."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.239,
+   "at": 19.475,
+   "text": "Girls in Class nine to twelve: Rajasthan."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.664,
+   "at": 23.346,
+   "text": "Every state: women paid in cash."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 3.265,
+   "at": 27.217,
+   "text": "Which pair should we compare next? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Gujarat or Rajasthan: Where Do Women and Girls Do Better?"
+}

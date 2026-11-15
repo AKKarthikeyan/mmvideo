@@ -1,0 +1,185 @@
+{
+ "id": "cn04",
+ "type": "countdown",
+ "rules": 2,
+ "theme": "farm",
+ "chip": "TOP 5",
+ "source_short": "Agriculture Ministry via RBI · 2024-25",
+ "palette": "C",
+ "data": {
+  "ratio": [
+   {
+    "rbi": [
+     62,
+     "2024-25"
+    ]
+   },
+   {
+    "tbl": [
+     "population/projected",
+     "2025"
+    ]
+   }
+  ],
+  "scale": 1000
+ },
+ "unit": " kg",
+ "label": "of foodgrain produced per person, 2024-25",
+ "source": "Ministry of Agriculture and Farmers' Welfare, via RBI Handbook of Statistics on Indian States, Table 62: foodgrain production (rice, wheat, coarse cereals, pulses), 2024-25 final estimates. Divided by each state's projected population on 1 March 2025 (National Commission on Population, 2020). State production over state population: not what people eat. States and UTs with a figure.",
+ "hook": [
+  "Which state *produces*",
+  "the most foodgrain",
+  "per person?"
+ ],
+ "hook_vo": "Which state produces the most foodgrain per person?",
+ "rank_vo": {
+  "5": "Fifth is Chhattisgarh at three hundred sixty-nine.",
+  "4": "Fourth is Madhya Pradesh at five hundred twenty-six.",
+  "3": "Third is Telangana at five hundred sixty-three.",
+  "2": "Second is Haryana at six hundred eleven.",
+  "1": "First is Punjab at over a thousand kilograms."
+ },
+ "tests": [
+  {
+   "says": "fifth: Chhattisgarh three hundred sixty-nine",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    "state": "Chhattisgarh"
+   },
+   "equals": 369
+  },
+  {
+   "says": "fourth: Madhya Pradesh five hundred twenty-six",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    "state": "Madhya Pradesh"
+   },
+   "equals": 526
+  },
+  {
+   "says": "third: Telangana five hundred sixty-three",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    "state": "Telangana"
+   },
+   "equals": 563
+  },
+  {
+   "says": "second: Haryana six hundred eleven",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    "state": "Haryana"
+   },
+   "equals": 611
+  },
+  {
+   "says": "first: Punjab over a thousand",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        62,
+        "2024-25"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 1000
+    },
+    "state": "Punjab"
+   },
+   "min": 1000,
+   "max": 1100
+  }
+ ],
+ "map": {
+  "unit": "",
+  "dec": 0,
+  "title": "Foodgrain per person, *every state*",
+  "sub": "kilograms per person · India {india} · 2024-25",
+  "note": "Foodgrains produced in the state over its projected population (1 March 2025): not what people eat. Top five outlined. Blank: no figure.",
+  "ring": [
+   "Punjab",
+   "Haryana",
+   "Telangana",
+   "Madhya Pradesh",
+   "Chhattisgarh"
+  ],
+  "vo": "Every state, mapped. This counts foodgrain grown, divided by population."
+ },
+ "end": {
+  "q": "Is your state in the top five?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Foodgrain Per Person: India's Top 5 States, 2024-25 🌾"
+}

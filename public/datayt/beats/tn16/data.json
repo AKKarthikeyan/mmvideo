@@ -1,0 +1,608 @@
+{
+ "id": "tn16",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "RBI Handbook · end-March 2015, 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Table 154: credit-deposit ratio by place of utilisation, scheduled commercial banks, as at end-March 2015 to 2025 (credit used in the state as a percentage of deposits; a deposit is counted where the bank office is). India: the all-India row. A ratio, not a verdict on lending.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#C9822F",
+  "#E0BB8E",
+  "#DDD5C8",
+  "#B2818E",
+  "#7A2340"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Assam* lent *₹66* of every",
+    "₹100 deposited, up from",
+    "*₹37* in 2015."
+   ],
+   "vo": "Assam's banks lent sixty-six rupees of every hundred deposited, up from thirty-seven.",
+   "geo": "Assam",
+   "name": "Assam",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Assam",
+   "name": "Assam",
+   "kicker": "LOANS USED PER ₹100 OF DEPOSITS",
+   "big": "+28.8 points",
+   "p0": {
+    "period": "2015",
+    "label": "37.2%",
+    "frac": 0.5636363636363637
+   },
+   "p1": {
+    "period": "2025",
+    "label": "66.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of Assam's deposits (savings in banks), lent as loans used there; 39.9% in 2014. India: *77.1%*.",
+   "vo": "In twenty fifteen: thirty-seven, down from forty. India, seventy-seven.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "Assam",
+   "name": "Assam",
+   "kicker": "LOANS USED PER ₹100 OF DEPOSITS",
+   "big": "+28.8 points",
+   "p0": {
+    "period": "2015",
+    "label": "37.2%",
+    "frac": 0.5636363636363637
+   },
+   "p1": {
+    "period": "2025",
+    "label": "66.0%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of deposits, lent as loans used in the state. India: *80.1%*.",
+   "vo": "In twenty twenty-five: sixty-six. India, eighty.",
+   "t0": 13.548,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Assam",
+   "geo": "Assam",
+   "kicker": "ASSAM'S RATIO AGAINST INDIA'S",
+   "big": "82.4%",
+   "text": "of India's ratio in 2025, up from 48% in 2015",
+   "sub": "Assam's ratio divided by India's, as at end-March.",
+   "bars": [
+    {
+     "name": "2015",
+     "label": "48.2%",
+     "frac": 0.4824902723735409
+    },
+    {
+     "name": "2025",
+     "label": "82.4%",
+     "frac": 0.8239700374531835
+    }
+   ],
+   "vo": "Assam went from under half of India's ratio to eighty-two percent.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Assam's ratio rose in",
+    "*each of the last five years*:",
+    "44% in 2020, 66% in 2025."
+   ],
+   "note": "Scheduled commercial banks: loans used in the state ÷ deposits counted where the bank office is. A ratio can fall while loans grow. Not a verdict.",
+   "vo": "Assam's ratio rose in each of the last five years, to sixty-six.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Loans per ₹100 deposited: *change by state*",
+   "sub": "percentage points · 2015 to 2025 · India +3.0",
+   "note": "Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu. Not a verdict on lending.",
+   "anim": true,
+   "ring": [
+    "Assam"
+   ],
+   "vo": "Here is each state's change over the ten years.",
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#7A2340",
+     "label": "rose"
+    }
+   ],
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu. Not a verdict on lending.",
+   "ring": [
+    "Assam"
+   ],
+   "legend": [
+    {
+     "color": "#C9822F",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#7A2340",
+     "label": "rose"
+    }
+   ],
+   "q": "Find *your state*: up or down?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Find your state: up or down?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "−35.2",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "−16.9",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.497
+  },
+  {
+   "name": "Punjab",
+   "label": "−15.5",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.613
+  },
+  {
+   "name": "Haryana",
+   "label": "−9.0",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.728
+  },
+  {
+   "name": "West Bengal",
+   "label": "−6.0",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.843
+  },
+  {
+   "name": "Karnataka",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.959
+  },
+  {
+   "name": "Puducherry",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.074
+  },
+  {
+   "name": "Goa",
+   "label": "+0.4",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.19
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+2.6",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.305
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+3.0",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.42
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+3.0",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.536
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+3.1",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.651
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "+3.6",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 30.766
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+4.1",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.882
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+5.1",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.997
+  },
+  {
+   "name": "Kerala",
+   "label": "+5.4",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.112
+  },
+  {
+   "name": "Sikkim",
+   "label": "+6.8",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.228
+  },
+  {
+   "name": "Odisha",
+   "label": "+7.1",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.343
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+8.3",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.459
+  },
+  {
+   "name": "Gujarat",
+   "label": "+9.4",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.574
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+10.5",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.689
+  },
+  {
+   "name": "Tripura",
+   "label": "+11.4",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.805
+  },
+  {
+   "name": "Mizoram",
+   "label": "+11.9",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.92
+  },
+  {
+   "name": "Telangana",
+   "label": "+12.7",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.035
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+13.2",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.151
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+13.8",
+   "bucket": 3,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.266
+  },
+  {
+   "name": "Bihar",
+   "label": "+19.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.381
+  },
+  {
+   "name": "Nagaland",
+   "label": "+19.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.497
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+19.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.612
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+24.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.728
+  },
+  {
+   "name": "Assam",
+   "label": "+28.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.843
+  },
+  {
+   "name": "Manipur",
+   "label": "+45.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.958
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+48.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.074
+  }
+ ],
+ "checked": [
+  "Assam: 37.20 in 2015, 66.00 in 2025: +28.80, 1.77 times",
+  "the years just before 2015 do not make it a freak year: measured from 39.90 the change is still +26.10",
+  "the change holds in each of 2023, 2024, 2025: 54.20, 60.60, 66.00",
+  "years = 10",
+  "₹37 in 2015 (hook): 37.20",
+  "₹66 in 2025 (hook): 66.00",
+  "Assam 37.2% in 2015 (tenths): 372.00",
+  "Assam 66.0% in 2025 (tenths): 660.00",
+  "India seventy-seven in 2015: 77.10",
+  "India eighty in 2025: 80.10",
+  "India 77.1% in 2015 (tenths): 771.00",
+  "India 80.1% in 2025 (tenths): 801.00",
+  "Assam's rise +28.8 points (tenths): 288.00",
+  "India's change +3.0 points (tenths), on the map: 30.00",
+  "Assam is 48% of India's ratio in 2015: 48.25",
+  "under half of India's ratio in 2015: 0.48",
+  "Assam is 82% of India's ratio in 2025: 82.40",
+  "44% in 2020, start of the five rises: 44.40",
+  "rose in 2021: 3.70",
+  "rose in 2022: 2.60",
+  "rose in 2023: 3.50",
+  "rose in 2024: 6.40",
+  "rose in 2025: 5.40",
+  "loans per ₹100 of deposits up 1.8 times (tenths): 17.74",
+  "39.9% a year earlier, in 2014 (printed on the 2015 card; 2015 is below it): 399.00",
+  "forty in 2014 (voice: down from forty): 39.90",
+  "2015 is below 2014: 2.70"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.937,
+   "at": 0.12,
+   "text": "Assam's banks lent sixty-six rupees of every hundred deposited, up from thirty-seven."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.825,
+   "at": 5.926,
+   "text": "In twenty fifteen: thirty-seven, down from forty. India, seventy-seven."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.369,
+   "at": 13.668,
+   "text": "In twenty twenty-five: sixty-six. India, eighty."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.466,
+   "at": 17.539,
+   "text": "Assam went from under half of India's ratio to eighty-two percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.858,
+   "at": 23.346,
+   "text": "Assam's ratio rose in each of the last five years, to sixty-six."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.578,
+   "at": 29.152,
+   "text": "Here is each state's change over the ten years."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.377,
+   "at": 34.959,
+   "text": "Find your state: up or down?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Assam: Loans per ₹100 of Deposits, ₹37 to ₹66 in 10 Years"
+}

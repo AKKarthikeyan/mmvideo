@@ -1,0 +1,454 @@
+{
+ "id": "px07",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "MoSPI · PLFS · RBI · 2023-24",
+ "palette": "O",
+ "state": "Tamil Nadu",
+ "source": "Women at work: worker population ratio, women aged 15 and above, usual status (principal and subsidiary), rural and urban together, July 2023 to June 2024, Periodic Labour Force Survey, National Statistics Office, MoSPI (36 states and UTs; all-India 40.3%). Workers include unpaid helpers in a family farm or business. Income: per-capita net state domestic product, current prices, 2023-24, RBI Handbook of Statistics on Indian States, Table 19 (33 states and UTs).",
+ "hook": [
+  "*Tamil Nadu*: women at work",
+  "*18 points* above Haryana's,",
+  "same income, 2023-24."
+ ],
+ "hook_vo": "Tamil Nadu's share of women at work was eighteen points above Haryana's.",
+ "facts": [
+  {
+   "state": "Tamil Nadu",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Haryana"
+   ],
+   "text": "a year. Haryana: ₹3,19,363. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. {n} states and UTs with data.",
+   "vo": "Three lakh thirteen thousand rupees a year, level with Haryana's."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15 and over were working. India: 40%.",
+   "sub": "Survey estimate, usual status. Workers include unpaid family helpers. PLFS, MoSPI. {n} states and UTs with data.",
+   "vo": "Forty-one point five percent of Tamil Nadu's women were working, against India's forty."
+  },
+  {
+   "state": "Haryana",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Tamil Nadu"
+   ],
+   "bar_max": 100,
+   "text": "of women. Tamil Nadu's was 1.8 times that, at the same income.",
+   "sub": "Up from 17% in 2021-22, when Tamil Nadu's was 2.2 times that. 2022-23: 2.0 times.",
+   "vo": "Haryana, at the same income: twenty-three point six percent."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 313329
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 319363
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 40
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 42
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 24
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.75
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 0.5405
+  },
+  {
+   "kind": "round",
+   "state": "Haryana",
+   "data": {
+    "plfs": [
+     "WPR",
+     "2021-22",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 17
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 2.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 0.4348
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.95
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 0.4878
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.755
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Haryana",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 0.5675
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "b": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "max_abs": 0.4
+  },
+  "lines": [
+   "Across {n} states and UTs,",
+   "income and women at work",
+   "were *not closely linked*",
+   "in 2023-24."
+  ],
+  "vo": "Across states, income and women at work were not closely linked."
+ },
+ "map": {
+  "data": {
+   "plfs": [
+    "WPR",
+    "2023-24",
+    "rural + urban",
+    "female"
+   ]
+  },
+  "unit": "%",
+  "title": "Women aged 15+ at work, *every state*",
+  "sub": "% of women aged 15 and over · India {india} · 2023-24",
+  "note": "Survey estimate, usual status; workers include unpaid family helpers. Small UTs rest on small samples. The table shows how much, not why.",
+  "ring": [
+   "Tamil Nadu",
+   "Haryana"
+  ],
+  "vo": "Women aged fifteen and over at work, across all states."
+ },
+ "end": {
+  "q": "What *work* do women near you do?",
+  "sub": "Comment below.",
+  "vo": "What work do women near you do?"
+ },
+ "yt_title": "Share of Women at Work: Tamil Nadu 1.8x Haryana, Same Income"
+}

@@ -1,0 +1,59 @@
+{
+ "id": "vs01",
+ "type": "versus",
+ "chip": "STATE vs STATE",
+ "source_short": "NFHS-6 · 2023-24",
+ "palette": "D",
+ "a": "Tamil Nadu",
+ "b": "Kerala",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets.",
+ "hook": [
+  "*Tamil Nadu*",
+  "vs *Kerala.*",
+  "5 rounds."
+ ],
+ "hook_vo": "Tamil Nadu versus Kerala. Five rounds.",
+ "categories": [
+  {
+   "label": "Women online",
+   "say": "women online",
+   "data": {
+    "nfhs": 14
+   }
+  },
+  {
+   "label": "Women with 10+ years of school",
+   "say": "women with ten years of school",
+   "data": {
+    "nfhs": 12
+   }
+  },
+  {
+   "label": "Stunted children",
+   "say": "stunted children, lower is better",
+   "data": {
+    "nfhs": 69
+   },
+   "better": "low"
+  },
+  {
+   "label": "Homes with health insurance",
+   "say": "health insurance",
+   "data": {
+    "nfhs": 7
+   }
+  },
+  {
+   "label": "Women with their own phone",
+   "say": "women with their own phone",
+   "data": {
+    "nfhs": 93
+   }
+  }
+ ],
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Tamil Nadu vs Kerala: 5 rounds of data ⚔️"
+}

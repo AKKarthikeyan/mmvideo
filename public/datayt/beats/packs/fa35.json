@@ -1,0 +1,38 @@
+{
+ "idea": "Themed weeks, week four, Money day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "At public-sector banks, the gold loans outstanding on 31 March 2026 that were reported for Tamil Nadu were 36.4% of the all-state total, while Tamil Nadu had 5.4% of India's projected population. Against Kerala, Tamil Nadu had 4.9 times the gold loans and 2.1 times the people. Andhra Pradesh's share was 19.7%.",
+  "Per person that is ₹53,085 of public-bank gold loans reported for Tamil Nadu; India, about ₹7,900. Public-sector banks only: the RBI keeps no state figures, and private banks and finance companies are excluded. The answer prints no total, so shares are of its state rows. The amount is the loan book (rupees outstanding), not bad loans and not weight of gold. People are projected population, National Commission on Population (July 2020 edition). The table shows how much, not why."
+ ],
+ "source": "Ministry of Finance, Lok Sabha unstarred question 3648, 10 Aug 2026, Annexure I: gold loans outstanding (the loan book, not bad loans) at public sector banks, by state, 31 March 2026, as reported by the banks. The RBI keeps no state figure; private banks and finance companies are excluded. The answer prints no total: shares are of the state rows (two small UT rows, ₹192 crore, are left out). People: projected population, 1 March 2026, National Commission on Population (July 2020 edition). Rupees, not weight of gold.",
+ "source_short": "Finance Ministry, Lok Sabha, 31 Mar 2026",
+ "question": "Does your family pledge gold?",
+ "tags": [
+  "TamilNadu",
+  "Banking",
+  "GoldLoans"
+ ],
+ "pinned": "Source: Ministry of Finance, Lok Sabha unstarred question 3648, 10 Aug 2026, Annexure I: gold loans outstanding (the loan book, not bad loans) at public sector banks, by state, 31 March 2026, as reported by the banks. The RBI keeps no state figure; private banks and finance companies are excluded. The answer prints no total: shares are of the state rows (two small UT rows, ₹192 crore, are left out). People: projected population, 1 March 2026, National Commission on Population (July 2020 edition). Rupees, not weight of gold. Public-sector banks only. Projected population. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+ "instagram": "At public-sector banks, the gold loans outstanding on 31 March 2026 that were reported for Tamil Nadu were 36.4% of the all-state total, while Tamil Nadu had 5.4% of India's projected population. Against Kerala, Tamil Nadu had 4.9 times the gold loans and 2.1 times the people. Andhra Pradesh's share was 19.7%.",
+ "x": "Gold loans at public-sector banks, 31 March 2026: Tamil Nadu had 36.4% of the total and 5.4% of India's projected population. Against Kerala: 4.9 times the loans, 2.1 times the people. Source: Ministry of Finance, Lok Sabha answer 3648.",
+ "done": [
+  "Numbers editor recomputed with python3 -I from the Lok Sabha table and the projected-population file: Tamil Nadu 4,11,656, Andhra Pradesh 2,22,953, Kerala 83,657 crore; Tamil Nadu 36.37% of the state rows; population on 1 March 2026 Tamil Nadu 77,546 and India 14,25,908 (5.4%); per person ₹53,085 for Tamil Nadu and ₹7,937 for India. Opened the answer's PDF (rendered page and text): Annexure-I is the gold loan outstanding at public sector banks as on 31.3.2026, 37 rows (28 states, 9 UTs), loan book not bad loans.",
+  "Fixed before voicing: India's per-person figure showed ₹7,951 on an older population edition and is now 'about ₹7,900' (7,937 or 7,938 depending on two small UT rows the parser drops); '(2019 report)' became the July 2020 edition; card 1 no longer says 'India's gold loans' (public-sector banks only) and adds 'loans outstanding, not bad loans'; the voice 'Tamil Nadu held 36%' became 'public bank gold loans: thirty-six percent in Tamil Nadu'; the source was rewritten to say what the column counts and leaves out.",
+  "Viewer editor shortened card 3 (96 to 83 characters). The builder ignored 'tests' for fact scripts at the time, so the 36% and 5% shares are pinned by exact numerators and denominators in the checks.",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read Lok Sabha unstarred Q 3648 (10 Aug 2026), Annexure I, p. 3: Tamil Nadu 4,11,656; Andhra Pradesh 2,22,953; Kerala 83,657 crore",
+  "Re-read the National Commission on Population projections, Table 8 (1 March 2026): Tamil Nadu 77,546; India 14,25,908",
+  "Not verified: whether the answer's 'state' is the branch's state or the borrower's address; the Short says 'reported for Tamil Nadu', never 'held by people in'",
+  "On the map Andaman and Nicobar (61,601) and Puducherry (58,634) are above Tamil Nadu per person: do not say 'highest per person' in the caption or in replies",
+  "Freshness: RBI keeps no state series; Moneylife (10 Aug 2026) reports the same answer; check Lok Sabha for a newer state figure on posting day",
+  "Expect Kerala and Tamil Nadu viewers to argue the number (private banks and finance companies are outside it); the card says public-sector banks only",
+  "Scheduling: keep three days from tn41 and px46 (all Tamil Nadu)",
+  "Add the source link to the description"
+ ],
+ "signoff": [
+  "Comparison card, on screen: \"Against Kerala: Tamil Nadu has 4.9 times the gold loans, 2.1 times the people.\" In the voice: \"Four point nine times Kerala's loans, two point one times its people.\" It sets two states side by side on public-sector-bank loans only; AK to approve or cut."
+ ]
+}

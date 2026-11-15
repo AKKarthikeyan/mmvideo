@@ -1,0 +1,184 @@
+#!/usr/bin/env python3
+"""Data YT India Shorts: per-Short data + timeline + original music.
+
+Reads public/datayt/nfhs6/nfhs6_states.json and writes, for each Short in SHORTS:
+  public/datayt/shorts/<id>/data.json   values for every state, colour bands, answer, options, top 5, beats
+  public/datayt/shorts/<id>/music.wav   code-composed score (scripts/datayt/music_shorts.py) synced to the beats
+Run from the repo root: python3 scripts/datayt/build_india_shorts.py [id ...]
+"""
+import json, math, os, sys
+sys.path.insert(0, os.path.dirname(__file__))
+from nfhs6_meta import META, SHORT_NAME
+import music_shorts as M
+import voice_dk as V
+
+DATA = json.load(open("public/datayt/nfhs6/nfhs6_states.json"))["states"]
+NO_RANK = {"India", "Lakshadweep"}
+UTS = {"Andaman and Nicobar Islands", "Chandigarh", "Dadra & Nagar Haveli and Daman & Diu", "Jammu and Kashmir", "Ladakh",
+       "Lakshadweep", "NCT of Delhi", "Puducherry"}
+
+# Guess the State series. side = which end of the ranking the answer sits at.
+SHORTS = [
+    dict(id="gts01", ind=10, answer="Meghalaya", decoys=["Kerala", "Goa"], side="top",
+         hook=["In one state, *2 in 3 homes*", "have a woman who owns a house or land."], q="Which state?",
+         title="Where 2 in 3 homes have a woman who owns home or land 🗺️"),
+    dict(id="gts02", ind=100, answer="Arunachal Pradesh", decoys=["Goa", "Kerala"], side="top",
+         hook=["In one state, nearly", "*1 in 4 women* drink alcohol."], q="Which state?"),
+    dict(id="gts03", ind=99, answer="Mizoram", decoys=["Bihar", "Uttar Pradesh"], side="top",
+         hook=["In one state, nearly", "*3 in 4 men* use tobacco."], q="Which state?"),
+    dict(id="gts04", ind=98, answer="Mizoram", decoys=["Tripura", "Bihar"], side="top",
+         hook=["Here, *6 in 10 women*", "use tobacco."], q="Which state?"),
+    dict(id="gts05", ind=18, answer="Sikkim", decoys=["Kerala", "Goa"], side="bottom", states_only=True,
+         hook=["Of 28 states, in one the average", "woman has just *1 child*."], q="Which state?"),
+    dict(id="gts06", ind=24, answer="Telangana", decoys=["Kerala", "Tamil Nadu"], side="top",
+         hook=["The state where *men*", "get sterilised."], q="Which state?"),
+    dict(id="gts07", ind=39, answer="Jammu and Kashmir", decoys=["Telangana", "Kerala"], side="top",
+         hook=["*9 in 10* private-hospital births", "here are C-sections."], q="Which state?"),
+    dict(id="gts08", ind=17, answer="Bihar", decoys=["Rajasthan", "Uttar Pradesh"], side="top",
+         hook=["*3 in 10 men* here marry", "before 21."], q="Which state?"),
+]
+
+# Beat grid (bars at 124 BPM): hook, quiz, reveal, fill, hold (full India map, AK 9 Oct: +3-4 s), top5, end.
+# These are minimums: a section grows by whole bars when its narration line is longer, so music stays on the grid.
+BARS = [("hook", 2), ("quiz", 2), ("reveal", 2), ("fill", 2), ("hold", 2), ("top", 3), ("end", 2)]
+VO_LEAD = 0.15      # narration starts this long after its section starts
+QUIZ_TAIL = 3       # beats of 3-2-1 countdown at the end of the quiz, kept clear of narration
+
+
+def spoken(v, unit):
+    return f"{v:g} percent" if unit == "%" else f"{v:g}"
+
+
+def vo_script(sh, nm, vals, india, ranked, unit, opts):
+    """One English line per section; a story can override any of them with "vo": {section: text}."""
+    ans, v = nm(sh["answer"]), vals[sh["answer"]]
+    ratio = v / india if india else None
+    second = ranked[1]
+    o = [nm(x) for x in opts]
+    lines = {
+        "hook": " ".join(sh["hook"]).replace("*", ""),
+        "quiz": f"Which state? {o[0]}, {o[1]}, or {o[2]}?",
+        "reveal": f"It's {ans}!",
+        "fill": f"{spoken(v, unit)}.",
+        "hold": (f"{ratio:.1f} times India's {spoken(india, unit)}." if ratio and ratio >= 1.5 else
+                 f"The India average is {spoken(india, unit)}."),
+        "top": (f"Second is {nm(second[1])}, far behind at {spoken(second[0], unit)}." if abs(v - second[0]) >= 10 else
+                f"Second is {nm(second[1])}, at {spoken(second[0], unit)}."),
+        "end": "Where does your state rank? Tell us in the comments.",
+    }
+    lines.update(sh.get("vo", {}))
+    return lines
+# Map palettes (low -> high). A is the brand palette (logo, chrome, default). Shorts rotate A -> E -> D -> C -> O
+# (O = AK's original reference map) in queue order; a config can pin one with "palette": "E".
+# A, E, D, C pass the dataviz ordinal checks (one hue, monotone lightness, light end >= 2:1 on the ground).
+PALETTES = {
+    "A": dict(name="Kadai Chai", bands=["#DA996A", "#C67447", "#AD512F", "#8C352A", "#662125"], accent="#7A2340", accent2="#C9822F"),
+    "E": dict(name="Saffron Kumkum", bands=["#DD9942", "#CC7300", "#B84900", "#9C2200", "#740A00"], accent="#740A00", accent2="#2F8F5B"),
+    "D": dict(name="Indigo Ink", bands=["#9AA7D6", "#7788C9", "#586AB6", "#3F4E97", "#2A366F"], accent="#2A366F", accent2="#E8604C"),
+    "C": dict(name="Monsoon Teal", bands=["#69BAB4", "#3D9E98", "#13817C", "#00635F", "#034643"], accent="#034643", accent2="#E8A33D"),
+    "O": dict(name="Original", bands=["#FBEFD9", "#EFC97A", "#D79A4A", "#B3584D", "#6D2238"], accent="#6D2238", accent2="#D79A4A"),
+}
+ROTATION = ["A", "E", "D", "C", "O"]
+
+
+def num(x):
+    s = str(x)
+    if s.startswith("(") or s in ("*", "na", "-"):
+        return None
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def build(sh, idx=0):
+    k = sh["ind"]; lab = META[k][0]
+    pk = sh.get("palette") or ROTATION[idx % len(ROTATION)]
+    pal = PALETTES[pk]
+    unit = "" if k == 18 else "%"
+    vals = {s: num(r.get(str(k), [None] * 3)[2]) for s, r in DATA.items() if s != "India"}
+    vals = {s: v for s, v in vals.items() if v is not None}
+    skip = NO_RANK | (UTS if sh.get("states_only") else set())
+    ranked = sorted([(v, s) for s, v in vals.items() if s not in skip], reverse=(sh["side"] == "top"))
+    assert ranked[0][1] == sh["answer"], (sh["id"], ranked[:3])
+    india = num(DATA["India"][str(k)][2]); india5 = num(DATA["India"][str(k)][3])
+    # 5 colour bands by rank (quantiles) so every Short gets a full-colour map
+    srt = sorted(vals.values())
+    cuts = [srt[int(len(srt) * q)] for q in (0.2, 0.4, 0.6, 0.8)]
+    band = lambda v: sum(v >= c for c in cuts)
+    opts = [sh["answer"]] + sh["decoys"]
+    opts = [opts[i] for i in ((1, 0, 2) if sh["id"][-1] in "13579" else (2, 1, 0) if sh["id"][-1] in "24" else (0, 2, 1))]
+    nm = lambda s: SHORT_NAME.get(s, s)
+    d = f"public/datayt/shorts/{sh['id']}"
+    os.makedirs(d, exist_ok=True)
+    lines = vo_script(sh, nm, vals, india, ranked, unit, opts)
+    vo = {}
+    for sec, tx in lines.items():
+        if tx:
+            fn, dur = V.say(tx, f"{d}/vo_{sec}", sh.get("voice"))
+            vo[sec] = {"text": tx, "file": fn, "sec": dur}
+    T, t = {}, 0.0
+    for name, nb in BARS:
+        need = vo[name]["sec"] + VO_LEAD + 0.3 if name in vo else 0
+        if name == "quiz":
+            need += QUIZ_TAIL * M.BEAT
+        nb = max(nb, math.ceil(need / M.BAR))
+        T[name] = [round(t, 3), round(t + nb * M.BAR, 3)]; t += nb * M.BAR
+    for sec in vo:
+        vo[sec]["at"] = round(T[sec][0] + VO_LEAD, 3)
+    total = round(t + 0.6, 3)
+    order = sorted(vals, key=lambda s: vals[s])
+    fill_at = {s: round(T["fill"][0] + M.BEAT * 0.5 + i * (M.BAR * 1.2 / len(order)), 3) for i, s in enumerate(order)}
+    out = {"id": sh["id"], "series": "Guess the State", "ind": k, "label": lab, "unit": unit, "hook": sh["hook"], "q": sh["q"],
+           "title": sh.get("title"), "answer": sh["answer"], "answerName": nm(sh["answer"]), "options": [nm(o) for o in opts], "optionKeys": opts,
+           "answerIndex": opts.index(sh["answer"]), "value": vals[sh["answer"]], "india": india, "india5": india5,
+           "values": vals, "band": {s: band(v) for s, v in vals.items()}, "bands": pal["bands"],
+           "palette": pk, "paletteName": pal["name"], "accent": pal["accent"], "accent2": pal["accent2"],
+           "bandLabels": [f"< {cuts[0]:g}{unit}"] + [f"{cuts[i]:g}–{cuts[i + 1]:g}{unit}" for i in range(3)] + [f"{cuts[3]:g}{unit}+"],
+           "top": [{"name": nm(s), "key": s, "v": v} for v, s in ranked[:5]],
+           "other": {"name": nm(ranked[-1][1]), "v": ranked[-1][0]}, "side": sh["side"], "statesOnly": bool(sh.get("states_only")),
+           "t": T, "total": total, "vo": list(vo.values()), "voiceEngine": V.ENGINE, "voice": sh.get("voice") or V.VOICE, "fillAt": fill_at, "fps": 30,
+           "source": "NFHS-6 (2023-24), IIPS · state fact sheets"}
+    for sec, x in vo.items():
+        x["sec_name"] = sec
+    json.dump(out, open(f"{d}/data.json", "w"), indent=1)
+    beat = lambda s, n: T[s][0] + n * M.BEAT
+    qend = T["quiz"][1]
+    ticks = [beat("quiz", i) for i in (0, 1, 2)] + [qend - M.BEAT * (QUIZ_TAIL - i) for i in range(QUIZ_TAIL)] + \
+            list(fill_at.values())[::2] + [beat("top", 1 + i) for i in range(5)]
+    seed = int(sh["id"][-2:])
+    M.make(f"{d}/music.wav", total, seed=seed, hits=[T["reveal"][0], T["end"][0]], ticks=ticks,
+           drop=(T["quiz"][1] - M.BEAT * 2, T["quiz"][1]))
+    print(f"{sh['id']}: {nm(sh['answer'])} {vals[sh['answer']]}{unit} (India {india}{unit}) · {total:.1f}s · options {out['options']}")
+    return out
+
+
+def load_queue():
+    """Configured Shorts = the built-in list + one JSON file per extra Short in public/datayt/shorts/configs/."""
+    import glob
+    extra = [json.load(open(f)) for f in sorted(glob.glob("public/datayt/shorts/configs/*.json"))]
+    seen = {sh["id"] for sh in SHORTS}
+    return SHORTS + [e for e in extra if e["id"] not in seen]
+
+
+def write_registry(ids):
+    lines = ["// Generated by scripts/datayt/build_india_shorts.py: every built Short, for the Remotion registry."]
+    lines += [f'import {i} from "../../public/datayt/shorts/{i}/data.json";' for i in ids]
+    lines += ['import type {ShortData} from "./IndiaShort";', "",
+              f"export const SHORTS = [{', '.join(ids)}] as unknown as ShortData[];", ""]
+    open("src/datayt/shortsData.ts", "w").write("\n".join(lines))
+
+
+if __name__ == "__main__":
+    want = set(sys.argv[1:])
+    reg = []
+    # palette rotation follows posting order in docs/datakadai/ops/QUEUE.md (so consecutive posts never share a palette)
+    import re
+    qtxt = open("docs/datakadai/ops/QUEUE.md").read() if os.path.exists("docs/datakadai/ops/QUEUE.md") else ""
+    order = re.findall(r"^\|\s*\d+\s*\|\s*(\w+)\s*\|", qtxt, re.M)
+    for i, sh in enumerate(load_queue()):
+        if not want or sh["id"] in want:
+            build(sh, order.index(sh["id"]) if sh["id"] in order else i)
+        reg.append({"id": sh["id"]})
+    json.dump(reg, open("public/datayt/shorts/index.json", "w"))
+    write_registry([r["id"] for r in reg if os.path.exists(f"public/datayt/shorts/{r['id']}/data.json")])

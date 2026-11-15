@@ -1,0 +1,549 @@
+{
+ "id": "px67",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "MoSPI · PLFS 2025 · NSE · Aug 2026",
+ "source": "Women in the labour force (working, unpaid family work included, or seeking work): women aged 15+, usual status, rural and urban, Periodic Labour Force Survey, MoSPI; 2025 (January to December, new design) and 2023-24 (July to June). Women among investors: share of NSE unique registered investors with a disclosed gender, by state (PIN code), end-March 2024 and 31 Aug 2026, NSE Market Pulse, Sept 2026, Table 76.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Rajasthan* women: labour",
+    "force rate *above* India's,",
+    "share of NSE investors *below*."
+   ],
+   "vo": "Rajasthan women: labour force rate above India's, share of NSE investors below.",
+   "geo": "Rajasthan",
+   "name": "Rajasthan",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "WOMEN IN THE LABOUR FORCE",
+   "big": "52.3%",
+   "text": "of women aged 15+ worked or looked for work, 2025. Maharashtra: 40%. India: 40%.",
+   "sub": "Labour force: working (unpaid family work too) or seeking work. Labour force survey, Jan-Dec 2025.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "52.3%",
+     "frac": 0.523
+    },
+    {
+     "name": "Maharashtra",
+     "label": "39.9%",
+     "frac": 0.39899999999999997
+    }
+   ],
+   "vo": "Fifty-two percent of women worked or sought work. Maharashtra, forty.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "WOMEN AMONG NSE INVESTORS",
+   "big": "21.1%",
+   "text": "of NSE-registered investors (gender disclosed) were women, 31 Aug 2026. India: 25%.",
+   "sub": "NSE: National Stock Exchange. A state is set by PIN code, not by where investors live.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "21.1%",
+     "frac": 0.42200000000000004
+    },
+    {
+     "name": "Maharashtra",
+     "label": "29.0%",
+     "frac": 0.58
+    }
+   ],
+   "vo": "Women were twenty-one percent of Rajasthan's investors. Maharashtra, twenty-nine.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "MARCH 2024 · THE SAME ORDER",
+   "big": "18.9%",
+   "text": "of Rajasthan's NSE investors were women in March 2024. Maharashtra's share was 1.4 times that.",
+   "sub": "Women in the labour force, 2023-24: Rajasthan 50.9%, Maharashtra 40.1%.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "18.9%",
+     "frac": 0.37799999999999995
+    },
+    {
+     "name": "Maharashtra",
+     "label": "26.4%",
+     "frac": 0.528
+    }
+   ],
+   "vo": "In March twenty twenty-four: nineteen percent, against Maharashtra's twenty-six.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across 34 states and UTs,",
+    "women in the labour force and",
+    "women among investors were",
+    "*not closely linked*."
+   ],
+   "note": "A labour force rate counts work of any kind, unpaid included. An NSE share counts registered investor accounts. The table shows how much, not why.",
+   "vo": "Across states, women's labour force rate and NSE share were not closely linked.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Women among NSE investors, *every state*",
+   "sub": "% of investors · India 25.1% · 31 Aug 2026",
+   "note": "State is set by PIN code. Share of investors whose gender is disclosed. Blank: Ladakh, Dadra and Nagar Haveli and Daman and Diu (not listed).",
+   "anim": true,
+   "ring": [
+    "Rajasthan",
+    "Maharashtra"
+   ],
+   "vo": "Here is every state: women among NSE investors.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "State is set by PIN code. Share of investors whose gender is disclosed. Blank: Ladakh, Dadra and Nagar Haveli and Daman and Diu (not listed).",
+   "ring": [
+    "Rajasthan",
+    "Maharashtra"
+   ],
+   "q": "Does a woman in your family *invest*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Does a woman in your family invest?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "16.2",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Bihar",
+   "label": "16.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.494
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "16.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.606
+  },
+  {
+   "name": "Tripura",
+   "label": "18.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.718
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "19.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.83
+  },
+  {
+   "name": "Rajasthan",
+   "label": "21.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.942
+  },
+  {
+   "name": "Odisha",
+   "label": "21.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.054
+  },
+  {
+   "name": "Jharkhand",
+   "label": "21.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "22.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.278
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "22.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.39
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "23.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.502
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "23.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.614
+  },
+  {
+   "name": "West Bengal",
+   "label": "24.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.726
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "24.5",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.838
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "24.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.95
+  },
+  {
+   "name": "Haryana",
+   "label": "25.5",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.062
+  },
+  {
+   "name": "Telangana",
+   "label": "25.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.174
+  },
+  {
+   "name": "Manipur",
+   "label": "26.5",
+   "bucket": 2,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Meghalaya",
+   "label": "27.5",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.397
+  },
+  {
+   "name": "Punjab",
+   "label": "27.6",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.509
+  },
+  {
+   "name": "Karnataka",
+   "label": "28.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.621
+  },
+  {
+   "name": "Gujarat",
+   "label": "28.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.733
+  },
+  {
+   "name": "Kerala",
+   "label": "28.4",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.845
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "28.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.957
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "28.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.069
+  },
+  {
+   "name": "Maharashtra",
+   "label": "29.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.181
+  },
+  {
+   "name": "Chandigarh",
+   "label": "29.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.293
+  },
+  {
+   "name": "Puducherry",
+   "label": "29.3",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.405
+  },
+  {
+   "name": "Assam",
+   "label": "29.4",
+   "bucket": 4,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.517
+  },
+  {
+   "name": "Nagaland",
+   "label": "30.0",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.629
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "30.7",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.741
+  },
+  {
+   "name": "Sikkim",
+   "label": "31.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.853
+  },
+  {
+   "name": "Mizoram",
+   "label": "33.1",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.965
+  },
+  {
+   "name": "Goa",
+   "label": "33.2",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.077
+  }
+ ],
+ "checked": [
+  "Rajasthan 52.3 rounds to 52",
+  "Maharashtra 39.9 rounds to 40",
+  "India 40 rounds to 40",
+  "Rajasthan 21.1 rounds to 21",
+  "Maharashtra 29 rounds to 29",
+  "India 25.1 rounds to 25",
+  "Rajasthan 18.9 rounds to 19",
+  "Maharashtra 26.4 rounds to 26",
+  "Rajasthan / Maharashtra = 1.31 (at least 1.3)",
+  "Maharashtra / Rajasthan = 1.37 (at least 1.37)",
+  "Maharashtra / Rajasthan = 1.40 (at least 1.35)",
+  "rank correlation across 34 states = -0.03"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.25,
+   "at": 0.12,
+   "text": "Rajasthan women: labour force rate above India's, share of NSE investors below."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.12,
+   "at": 5.926,
+   "text": "Fifty-two percent of women worked or sought work. Maharashtra, forty."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.067,
+   "at": 11.733,
+   "text": "Women were twenty-one percent of Rajasthan's investors. Maharashtra, twenty-nine."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.12,
+   "at": 17.539,
+   "text": "In March twenty twenty-four: nineteen percent, against Maharashtra's twenty-six."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.25,
+   "at": 23.346,
+   "text": "Across states, women's labour force rate and NSE share were not closely linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.623,
+   "at": 29.152,
+   "text": "Here is every state: women among NSE investors."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 34.959,
+   "text": "Does a woman in your family invest?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rajasthan Women: 52% in Labour Force, 21% of NSE Investors"
+}

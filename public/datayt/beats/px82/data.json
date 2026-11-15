@@ -1,0 +1,529 @@
+{
+ "id": "px82",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "MoE · AISHE · 2023-24",
+ "source": "Ministry of Education, All India Survey on Higher Education (AISHE) 2023-24, released July 2026: Table 1 (universities of all types, with 2022-23) and Table 4 (colleges, with 2022-23). Counts are of institutions registered with the survey. Population: National Commission on Population projections, 1 March 2025. State totals, not per person. The table shows how much, not why.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Rajasthan* has *twice* Gujarat's",
+    "colleges for each university:",
+    "*47* against *24*, 2023-24."
+   ],
+   "vo": "Rajasthan had about twice Gujarat's colleges for each university.",
+   "geo": "Rajasthan",
+   "name": "Rajasthan",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "UNIVERSITIES · AISHE 2023-24",
+   "big": "107",
+   "text": "universities of all types in Gujarat. Rajasthan has 93, so Gujarat has 15% more.",
+   "sub": "Registered in AISHE, a survey of higher education. 2022-23: 102 against 91. State totals, not per person.",
+   "bars": [],
+   "vo": "Gujarat had one hundred seven universities. Rajasthan, ninety-three.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "COLLEGES · AISHE 2023-24",
+   "big": "4,344",
+   "text": "colleges in Rajasthan. Gujarat: 2,521, so Rajasthan has 72% more.",
+   "sub": "Registered with AISHE. 2022-23: 3,889 against 2,470. Rajasthan has 13% more projected population.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "4,344",
+     "frac": 0.8688
+    },
+    {
+     "name": "Gujarat",
+     "label": "2,521",
+     "frac": 0.5042
+    }
+   ],
+   "vo": "Rajasthan had seventy-two percent more colleges than Gujarat, with thirteen percent more people.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "COLLEGES FOR EACH UNIVERSITY",
+   "big": "46.7",
+   "text": "colleges for each university in Rajasthan, about twice Gujarat's 24. India: 37.",
+   "sub": "A ratio of two counts, 2023-24. In 2022-23: Rajasthan 43, Gujarat 24. Not a count of affiliations.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "46.7",
+     "frac": 0.778494623655914
+    },
+    {
+     "name": "Gujarat",
+     "label": "23.6",
+     "frac": 0.3926791277258567
+    },
+    {
+     "name": "India",
+     "label": "37.4",
+     "frac": 0.6238169123351436
+    }
+   ],
+   "vo": "Rajasthan had forty-seven colleges for each university. Gujarat, twenty-four.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across 33 states and UTs,",
+    "universities and colleges",
+    "per head were *not linked*."
+   ],
+   "note": "Universities per million projected people against colleges per lakh aged 18-23: rank correlation across 33 states and UTs. The table shows how much, not why.",
+   "vo": "Across the states, universities and colleges per head are not linked.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Colleges for each university, *every state*",
+   "sub": "colleges ÷ universities · India 37.4 · 2023-24",
+   "note": "A ratio of two counts, not affiliations. Blank: Andaman and Nicobar Islands, Lakshadweep, Dadra and Nagar Haveli and Daman and Diu (no university).",
+   "anim": true,
+   "ring": [
+    "Gujarat",
+    "Rajasthan"
+   ],
+   "vo": "Here is every state: colleges for each university.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "A ratio of two counts, not affiliations. Blank: Andaman and Nicobar Islands, Lakshadweep, Dadra and Nagar Haveli and Daman and Diu (no university).",
+   "ring": [
+    "Gujarat",
+    "Rajasthan"
+   ],
+   "q": "Which *college* did you go to?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which college did you go to?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Sikkim",
+   "label": "2.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Ladakh",
+   "label": "2.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.433
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "3.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.549
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "6.3",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.664
+  },
+  {
+   "name": "Meghalaya",
+   "label": "6.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.779
+  },
+  {
+   "name": "Tripura",
+   "label": "6.8",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.895
+  },
+  {
+   "name": "Chandigarh",
+   "label": "8.3",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.01
+  },
+  {
+   "name": "Manipur",
+   "label": "9.7",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.125
+  },
+  {
+   "name": "Jharkhand",
+   "label": "11.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.241
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.2",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.356
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "12.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.471
+  },
+  {
+   "name": "Mizoram",
+   "label": "13.3",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.587
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "13.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.702
+  },
+  {
+   "name": "Goa",
+   "label": "16.5",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.817
+  },
+  {
+   "name": "Puducherry",
+   "label": "18.6",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.933
+  },
+  {
+   "name": "Assam",
+   "label": "19.8",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.048
+  },
+  {
+   "name": "Haryana",
+   "label": "19.8",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.163
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "21.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.279
+  },
+  {
+   "name": "Gujarat",
+   "label": "23.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.394
+  },
+  {
+   "name": "Punjab",
+   "label": "26.3",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.509
+  },
+  {
+   "name": "West Bengal",
+   "label": "26.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.625
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "28.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.74
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "30.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.855
+  },
+  {
+   "name": "Bihar",
+   "label": "32.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.971
+  },
+  {
+   "name": "Odisha",
+   "label": "34.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.086
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "45.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.201
+  },
+  {
+   "name": "Rajasthan",
+   "label": "46.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.317
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "49.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.432
+  },
+  {
+   "name": "Karnataka",
+   "label": "49.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.547
+  },
+  {
+   "name": "Maharashtra",
+   "label": "61.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.663
+  },
+  {
+   "name": "Kerala",
+   "label": "62.6",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.778
+  },
+  {
+   "name": "Telangana",
+   "label": "65.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.893
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "83.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.009
+  }
+ ],
+ "checked": [
+  "Gujarat 107 rounds to 107",
+  "Rajasthan 93 rounds to 93",
+  "India 1289 rounds to 1289",
+  "Rajasthan 4344 rounds to 4344",
+  "Gujarat 2521 rounds to 2521",
+  "India 48246 rounds to 48246",
+  "Gujarat / Rajasthan = 1.15 (at least 1.14)",
+  "Rajasthan / Gujarat = 1.72 (at least 1.72)",
+  "rank correlation across 33 states = -0.03"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.257,
+   "at": 0.12,
+   "text": "Rajasthan had about twice Gujarat's colleges for each university."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.754,
+   "at": 5.926,
+   "text": "Gujarat had one hundred seven universities. Rajasthan, ninety-three."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.537,
+   "at": 11.733,
+   "text": "Rajasthan had seventy-two percent more colleges than Gujarat, with thirteen percent more people."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.858,
+   "at": 19.475,
+   "text": "Rajasthan had forty-seven colleges for each university. Gujarat, twenty-four."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.866,
+   "at": 25.281,
+   "text": "Across the states, universities and colleges per head are not linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.754,
+   "at": 31.088,
+   "text": "Here is every state: colleges for each university."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.436,
+   "at": 36.894,
+   "text": "Which college did you go to?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rajasthan Has 2x Gujarat's Colleges per University, 2023-24"
+}

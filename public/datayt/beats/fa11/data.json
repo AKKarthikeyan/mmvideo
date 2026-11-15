@@ -1,0 +1,558 @@
+{
+ "id": "fa11",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "RBI · Handbook · end-March 2025",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 153 and 154: credit-deposit ratio by place of sanction (where a loan is approved) and by place of utilisation (where it is used), scheduled commercial banks, loans outstanding at end-March 2025. Deposits are counted where the bank office is. Gap = approved minus used, in rupees per ₹100 of deposits (points).",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Maharashtra* banks approved",
+    "*₹12 more* loans than used",
+    "per ₹100 deposited, 2025."
+   ],
+   "vo": "Per hundred deposited, Maharashtra approved twelve rupees more than it used.",
+   "geo": "Maharashtra",
+   "name": "Maharashtra",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "LOANS APPROVED PER ₹100 DEPOSITED",
+   "big": "98.1%",
+   "text": "of deposits held in Maharashtra was approved as loans there. India: 80%.",
+   "sub": "By place of sanction: where a loan is approved. Loans outstanding (not yet repaid), scheduled commercial banks, end-March 2025.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "98.1%",
+     "frac": 0.6131249999999999
+    },
+    {
+     "name": "India",
+     "label": "80.1%",
+     "frac": 0.500625
+    }
+   ],
+   "vo": "Loans approved by Maharashtra's banks stood at ninety-eight percent of deposits.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "LOANS USED PER ₹100 DEPOSITED",
+   "big": "85.7%",
+   "text": "of deposits was used as loans inside Maharashtra. A loan approved in one state can be used in another.",
+   "sub": "By place of utilisation: where a loan is used. India: 80%, the same by definition.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "85.7%",
+     "frac": 0.535625
+    },
+    {
+     "name": "India",
+     "label": "80.1%",
+     "frac": 0.500625
+    }
+   ],
+   "vo": "Loans used inside the state were eighty-six percent of deposits.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "APPROVED MINUS USED · PER ₹100",
+   "big": "12.4",
+   "text": "rupees more approved than used (₹98 against ₹86). The biggest gap of 35 states and UTs.",
+   "sub": "Delhi's gap: 3.7. A gap, not a verdict on lending.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "12.4",
+     "frac": 0.8266666666666661
+    },
+    {
+     "name": "Delhi",
+     "label": "3.7",
+     "frac": 0.24666666666666687
+    }
+   ],
+   "vo": "That gap, twelve point four, was the biggest of any state or territory.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "The biggest gap each year:",
+    "*₹14.6* (2023), *₹14.3* (2024),",
+    "*₹12.4* (2025), per ₹100."
+   ],
+   "vo": "It was the biggest gap in each of the last three years.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Approved minus used loans, *every state*",
+   "sub": "rupees per ₹100 of deposits · India 0 · end-March 2025",
+   "note": "Above zero: more approved than used (Maharashtra, Delhi). Below zero: more used than approved. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "Maharashtra",
+    "NCT of Delhi"
+   ],
+   "vo": "Here is every state: loans approved minus loans used.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Above zero: more approved than used (Maharashtra, Delhi). Below zero: more used than approved. Blank: Dadra and Nagar Haveli and Daman and Diu.",
+   "ring": [
+    "Maharashtra",
+    "NCT of Delhi"
+   ],
+   "q": "Where was your last loan *approved*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where was your last loan approved?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Telangana",
+   "label": "-8.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Gujarat",
+   "label": "-8.7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.556
+  },
+  {
+   "name": "Haryana",
+   "label": "-7.8",
+   "bucket": 0,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 27.664
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "-6.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.773
+  },
+  {
+   "name": "Rajasthan",
+   "label": "-5.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.882
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "-5.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.991
+  },
+  {
+   "name": "Karnataka",
+   "label": "-4.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.099
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "-3.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.208
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "-3.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.317
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "-3.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.426
+  },
+  {
+   "name": "Assam",
+   "label": "-3.3",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 28.534
+  },
+  {
+   "name": "Manipur",
+   "label": "-3.1",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 28.643
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "-3.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.752
+  },
+  {
+   "name": "Chandigarh",
+   "label": "-3.1",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 28.861
+  },
+  {
+   "name": "Odisha",
+   "label": "-2.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.969
+  },
+  {
+   "name": "Punjab",
+   "label": "-2.8",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.078
+  },
+  {
+   "name": "West Bengal",
+   "label": "-2.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.187
+  },
+  {
+   "name": "Puducherry",
+   "label": "-2.6",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.296
+  },
+  {
+   "name": "Tripura",
+   "label": "-2.2",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.404
+  },
+  {
+   "name": "Bihar",
+   "label": "-2.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.513
+  },
+  {
+   "name": "Kerala",
+   "label": "-2.0",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.622
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "-2.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.731
+  },
+  {
+   "name": "Goa",
+   "label": "-1.9",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.839
+  },
+  {
+   "name": "Jharkhand",
+   "label": "-1.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.948
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "-1.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.057
+  },
+  {
+   "name": "Nagaland",
+   "label": "-1.4",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "-1.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.274
+  },
+  {
+   "name": "Ladakh",
+   "label": "-0.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.383
+  },
+  {
+   "name": "Meghalaya",
+   "label": "-0.4",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.492
+  },
+  {
+   "name": "Sikkim",
+   "label": "-0.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.601
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "-0.3",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.709
+  },
+  {
+   "name": "Mizoram",
+   "label": "-0.3",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.818
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "0.0",
+   "bucket": 4,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 30.927
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "3.7",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.036
+  },
+  {
+   "name": "Maharashtra",
+   "label": "12.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.144
+  }
+ ],
+ "checked": [
+  "Maharashtra is the highest of 35 with data (12.4)",
+  "Maharashtra 98.1 rounds to 98",
+  "India 80.1 rounds to 80",
+  "Maharashtra 85.7 rounds to 86",
+  "India 80.1 rounds to 80",
+  "Maharashtra 12.4 rounds to 12",
+  "Maharashtra 124 rounds to 124",
+  "Delhi 37 rounds to 37",
+  "India 0 rounds to 0",
+  "Maharashtra 146 rounds to 146",
+  "Lakshadweep 0 rounds to 0",
+  "Maharashtra 143 rounds to 143",
+  "Lakshadweep 0 rounds to 0"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.466,
+   "at": 0.12,
+   "text": "Per hundred deposited, Maharashtra approved twelve rupees more than it used."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.146,
+   "at": 5.926,
+   "text": "Loans approved by Maharashtra's banks stood at ninety-eight percent of deposits."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.735,
+   "at": 11.733,
+   "text": "Loans used inside the state were eighty-six percent of deposits."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.067,
+   "at": 17.539,
+   "text": "That gap, twelve point four, was the biggest of any state or territory."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.16,
+   "at": 23.346,
+   "text": "It was the biggest gap in each of the last three years."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.31,
+   "at": 27.217,
+   "text": "Here is every state: loans approved minus loans used."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.037,
+   "at": 33.023,
+   "text": "Where was your last loan approved?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Maharashtra: Loans Approved ₹98, Used ₹86 per ₹100 Deposited"
+}

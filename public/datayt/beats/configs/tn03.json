@@ -1,0 +1,303 @@
+{
+ "id": "tn03",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "E",
+ "state": "Andhra Pradesh",
+ "points": [
+  {
+   "data": {
+    "nfhs": 14,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 14
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "WOMEN WHO HAVE USED THE INTERNET",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 who have ever used the internet.",
+ "hook": [
+  "*Andhra Pradesh*: women who",
+  "had used the internet",
+  "*tripled*: 21% to 64%."
+ ],
+ "hook_vo": "In Andhra Pradesh, the share of women who had used the internet tripled.",
+ "then": {
+  "text": "of women aged 15 to 49",
+  "vo": "In the twenty nineteen to twenty-one survey: twenty-one percent."
+ },
+ "now": {
+  "text": "of women aged 15 to 49: *three times* the share.",
+  "vo": "Next survey: sixty-four percent. Three times the share."
+ },
+ "facts": [
+  {
+   "kicker": "THE RISE, IN PERCENTAGE POINTS",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "unit": "",
+   "text": "points: Andhra Pradesh's rise",
+   "bars": [
+    {
+     "name": "Andhra Pradesh",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 14
+       }
+      },
+      {
+       "data": {
+        "nfhs": 14,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 14
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 14,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 50,
+   "sub": "India: 33.3% to 64.3%.",
+   "vo": "India rose thirty-one points. Andhra Pradesh rose almost forty-three."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "In NFHS-5: *12 points*",
+    "below India.",
+    "In NFHS-6: *level.*"
+   ],
+   "note": "Women aged 15 to 49 who have ever used the internet. A survey estimate: small gaps are not differences.",
+   "vo": "It started twelve points below India. It ended level."
+  }
+ ],
+ "tests": [
+  {
+   "says": "21% in NFHS-5",
+   "value": {
+    "data": {
+     "nfhs": 14,
+     "col": 3
+    }
+   },
+   "min": 20.5,
+   "max": 21.49
+  },
+  {
+   "says": "three-fifths; 64% in NFHS-6",
+   "value": {
+    "data": {
+     "nfhs": 14
+    }
+   },
+   "equals": 64
+  },
+  {
+   "says": "three times the share",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 2.9,
+   "max": 3.2
+  },
+  {
+   "says": "India 33.3% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 14,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 333
+  },
+  {
+   "says": "India 64.3% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 14
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 643
+  },
+  {
+   "says": "India rose thirty-one points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 31
+  },
+  {
+   "says": "Andhra Pradesh rose almost forty-three points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 42.5,
+   "max": 42.99
+  },
+  {
+   "says": "twelve points below India in NFHS-5",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 12
+  },
+  {
+   "says": "level with India in NFHS-6: under one point apart",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 14
+      }
+     }
+    ]
+   },
+   "min": -0.99,
+   "max": 0.99
+  },
+  {
+   "says": "tripled",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 2.95,
+   "max": 3.2
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   15,
+   25,
+   32,
+   38
+  ],
+  "title": "Internet use by women: *each state's rise*",
+  "sub": "percentage points · darker = bigger rise · India +31.0",
+  "note": "Women aged 15 to 49 who have ever used the internet. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+  "vo": "Every state shown rose. Here is each rise, in percentage points."
+ },
+ "end": {
+  "q": "Did *your state* rise more than India's 31 points?",
+  "sub": "Comment your state's rise.",
+  "vo": "Did your state rise more than India's thirty-one points?"
+ },
+ "yt_title": "Andhra Pradesh: Women Who Used the Internet, 21% to 64%"
+}

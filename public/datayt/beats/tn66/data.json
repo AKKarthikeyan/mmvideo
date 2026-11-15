@@ -1,0 +1,584 @@
+{
+ "id": "tn66",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Married women aged 15 to 49 who usually take part in three household decisions, alone or with their husband: their own health care, major household purchases and visits to family or relatives. Survey estimates.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#E8604C",
+  "#F0AA9D",
+  "#DDD5C8",
+  "#868CA8",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Karnataka*: wives with a say",
+    "in all three decisions:",
+    "*83%* to *89%*."
+   ],
+   "vo": "Karnataka wives with a say in all three decisions: eighty-three then eighty-nine percent.",
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "WIVES IN HOUSEHOLD DECISIONS",
+   "big": "+6.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "82.7%",
+    "frac": 0.9271300448430493
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "89.2%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of wives aged 15 to 49 took part in all three household decisions. India: *88.7%*.",
+   "vo": "In the twenty nineteen to twenty-one survey: eighty-three percent. India, eighty-nine.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "WIVES IN HOUSEHOLD DECISIONS",
+   "big": "+6.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "82.7%",
+    "frac": 0.9271300448430493
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "89.2%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of wives aged 15 to 49. India: *89.0%*.",
+   "vo": "Next survey: eighty-nine percent. India, also eighty-nine.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "THE RISE, IN PERCENTAGE POINTS",
+   "big": "6.5",
+   "text": "points: Karnataka's rise. India's rise was 0.3.",
+   "sub": "The three: own health care, big household purchases, visits to family. India: 88.7% to 89.0%.",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "6.5",
+     "frac": 0.65
+    },
+    {
+     "name": "India",
+     "label": "0.3",
+     "frac": 0.029999999999999714
+    }
+   ],
+   "vo": "Karnataka rose six point five points. India rose zero point three.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "In 2019-21: *6 points*",
+    "below India.",
+    "In 2023-24: *level.*"
+   ],
+   "note": "Married women aged 15 to 49. Survey estimates: a gap of 0.2 points is not a difference. The table shows how much, not why.",
+   "vo": "It started six points below India. It ended level.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Wives in decisions: *each state's change*",
+   "sub": "percentage points · NFHS-5 to NFHS-6 · India +0.3",
+   "note": "Married women 15-49, survey estimates. Blank: Rajasthan, Uttarakhand (no figure), Lakshadweep (small sample), Manipur (no sheet yet).",
+   "anim": true,
+   "ring": [
+    "Karnataka"
+   ],
+   "vo": "Here is each state's change, in percentage points.",
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell over 3"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose 4+"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Married women 15-49, survey estimates. Blank: Rajasthan, Uttarakhand (no figure), Lakshadweep (small sample), Manipur (no sheet yet).",
+   "ring": [
+    "Karnataka"
+   ],
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell over 3"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1 point"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose 4+"
+    }
+   ],
+   "q": "Who decides in *your* home?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Who decides in your home?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Puducherry",
+   "label": "−8.2",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Assam",
+   "label": "−5.4",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.437
+  },
+  {
+   "name": "Odisha",
+   "label": "−3.0",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.556
+  },
+  {
+   "name": "Meghalaya",
+   "label": "−2.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.675
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "−1.7",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.794
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "−1.6",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.913
+  },
+  {
+   "name": "Bihar",
+   "label": "−1.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.032
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "−1.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.151
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "−1.3",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.27
+  },
+  {
+   "name": "Goa",
+   "label": "−0.6",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.388
+  },
+  {
+   "name": "Mizoram",
+   "label": "−0.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.507
+  },
+  {
+   "name": "Nagaland",
+   "label": "−0.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.626
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.745
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.864
+  },
+  {
+   "name": "West Bengal",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.983
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+0.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 33.102
+  },
+  {
+   "name": "Gujarat",
+   "label": "+1.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+1.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 33.34
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+1.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.459
+  },
+  {
+   "name": "Punjab",
+   "label": "+1.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.578
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+1.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.697
+  },
+  {
+   "name": "Kerala",
+   "label": "+2.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.816
+  },
+  {
+   "name": "Telangana",
+   "label": "+2.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.935
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+3.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.054
+  },
+  {
+   "name": "Haryana",
+   "label": "+3.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 34.172
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+4.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.291
+  },
+  {
+   "name": "Tripura",
+   "label": "+5.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.41
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "+6.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 34.529
+  },
+  {
+   "name": "Karnataka",
+   "label": "+6.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.648
+  },
+  {
+   "name": "Sikkim",
+   "label": "+8.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 34.767
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+9.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.886
+  },
+  {
+   "name": "Ladakh",
+   "label": "+12.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.005
+  }
+ ],
+ "checked": [
+  "Karnataka: 82.70 in NFHS-5 (2019-21), 89.20 in NFHS-6 (2023-24): +6.50, 1.08 times",
+  "83% in NFHS-5 (hook, title, voice): 82.70",
+  "82.7% in NFHS-5 (tenths): 827.00",
+  "89% in NFHS-6 (hook, title, voice): 89.20",
+  "89.2% in NFHS-6 (tenths): 892.00",
+  "India eighty-nine in NFHS-5 (voice): 88.70",
+  "India 88.7% in NFHS-5 (card, tenths): 887.00",
+  "India eighty-nine in NFHS-6 (voice): 89.00",
+  "India 89.0% in NFHS-6 (card, tenths): 890.00",
+  "Karnataka's rise 6.5 points (card, voice): 65.00",
+  "India's rise 0.3 points (card, voice, map sub): 3.00",
+  "6 points below India in NFHS-5 (statement card, voice): 6.00",
+  "level with India in NFHS-6, within half a point (statement card): 0.20",
+  "gap of 0.2 points in NFHS-6 (statement note): 2.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 6.635,
+   "at": 0.12,
+   "text": "Karnataka wives with a say in all three decisions: eighty-three then eighty-nine percent."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.276,
+   "at": 7.862,
+   "text": "In the twenty nineteen to twenty-one survey: eighty-three percent. India, eighty-nine."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.866,
+   "at": 13.668,
+   "text": "Next survey: eighty-nine percent. India, also eighty-nine."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.858,
+   "at": 19.475,
+   "text": "Karnataka rose six point five points. India rose zero point three."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.048,
+   "at": 25.281,
+   "text": "It started six points below India. It ended level."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.623,
+   "at": 31.088,
+   "text": "Here is each state's change, in percentage points."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.436,
+   "at": 36.894,
+   "text": "Who decides in your home?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Karnataka: Wives With a Say in All 3 Decisions, 83% to 89%"
+}

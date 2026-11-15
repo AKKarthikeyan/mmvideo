@@ -1,0 +1,2744 @@
+{
+ "id": "geo07-p2",
+ "format": "long-16x9",
+ "target_minutes": 10.5,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/GEO-07/script_p2.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "full"
+     },
+     {
+      "icon": "postcards",
+      "x": 640,
+      "y": 420,
+      "s": 1.0,
+      "cards": [
+       {
+        "which": "konkan",
+        "key": "k1"
+       },
+       {
+        "which": "thar",
+        "key": "k2"
+       }
+      ]
+     }
+    ],
+    "badges": [
+     {
+      "key": "kb",
+      "lab": "p2_konkan",
+      "caption": "Konkan & Goa",
+      "x": 300,
+      "y": 700,
+      "size": 96
+     },
+     {
+      "key": "wb",
+      "lab": "p2_wraj",
+      "caption": "West Rajasthan",
+      "x": 760,
+      "y": 700,
+      "size": 96
+     }
+    ],
+    "pills": [
+     {
+      "text": "IMD NORMALS",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "In a normal year, Konkan and Goa get more than three hundred centimetres of rain. West Rajasthan gets about thirty-three.",
+   "reveals": [
+    {
+     "key": "k1",
+     "word": "Konkan"
+    },
+    {
+     "key": "kb",
+     "word": "three"
+    },
+    {
+     "key": "k2",
+     "word": "West"
+    },
+    {
+     "key": "wb",
+     "word": "thirty-three."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Rooftop from Part 1, bucket full. Postcards: Konkan in rain, Thar dunes; badges.",
+   "beat": "b00",
+   "claims": [
+    "M056",
+    "M060",
+    "M034"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "full"
+     },
+     {
+      "icon": "postcards",
+      "x": 640,
+      "y": 420,
+      "s": 1.0,
+      "cards": [
+       {
+        "which": "konkan"
+       },
+       {
+        "which": "thar"
+       },
+       {
+        "which": "chennai",
+        "key": "k3",
+        "hl": true
+       }
+      ]
+     }
+    ],
+    "badges": [
+     {
+      "key": "tb",
+      "lab": "p2_tn_half",
+      "caption": "Tamil Nadu",
+      "x": 700,
+      "y": 700,
+      "size": 80
+     }
+    ]
+   },
+   "vo": "And Tamil Nadu? It gets almost half its year's rain from October to December. By then, the monsoon has left most of India.",
+   "reveals": [
+    {
+     "key": "k3",
+     "word": "Tamil"
+    },
+    {
+     "key": "tb",
+     "word": "half"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Chennai postcard under October cloud lights up; badge.",
+   "beat": "b00",
+   "claims": [
+    "M056",
+    "M060",
+    "M034"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b00",
+   "kind": "title",
+   "spec": {
+    "title": "What does a normal monsoon really mean?",
+    "sub": "Monsoon, part two",
+    "chip": "GEOGRAPHY · UPSC"
+   },
+   "vo": "So what does a normal monsoon really mean?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Title card: the question.",
+   "beat": "b00",
+   "claims": [
+    "M056",
+    "M060",
+    "M034"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch1 b01",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "props": [
+     {
+      "icon": "reportcard",
+      "x": 960,
+      "y": 500,
+      "s": 1.4,
+      "box": "NORMAL?",
+      "key": "rc"
+     }
+    ]
+   },
+   "vo": "Every year, India's weather office sums up the whole season in one word. Normal, or not.",
+   "reveals": [
+    {
+     "key": "rc",
+     "word": "word."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A season report card with one box: NORMAL?",
+   "beat": "b01",
+   "claims": [
+    "M044",
+    "M048",
+    "M086"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch1 b01",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "long period average (LPA)",
+      "key": "lp"
+     },
+     {
+      "text": "about {const:87} cm",
+      "key": "lv"
+     },
+     "June–September, all-India · IMD, 1971–2020"
+    ],
+    "accent": [
+     "long period average"
+    ]
+   },
+   "vo": "Its yardstick is called the long period average. For June to September, over all of India, it is about eighty-seven centimetres.",
+   "reveals": [
+    {
+     "key": "lp",
+     "word": "long"
+    },
+    {
+     "key": "lv",
+     "word": "eighty-seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The yardstick card.",
+   "beat": "b01",
+   "claims": [
+    "M044",
+    "M048",
+    "M086"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch1 b01",
+   "kind": "stage",
+   "spec": {
+    "set": "field",
+    "actors": [
+     {
+      "id": "farmer",
+      "who": "farmer",
+      "x": 1200,
+      "y": 960,
+      "h": 600,
+      "pose": "idle"
+     }
+    ],
+    "badges": [
+     {
+      "key": "rf",
+      "lab": "p2_rainfed",
+      "caption": "IMD",
+      "x": 560,
+      "y": 380,
+      "size": 80
+     }
+    ]
+   },
+   "vo": "That word matters. Nearly half of India's farming is rain-fed, watered by rain alone.",
+   "reveals": [
+    {
+     "key": "rf",
+     "word": "rain-fed,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rain-fed field under a dry sky, a farmer looking up.",
+   "beat": "b01",
+   "claims": [
+    "M044",
+    "M048",
+    "M086"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch1 b01",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1300,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "book",
+      "x": 700,
+      "y": 700,
+      "s": 1.6,
+      "enter": "nb"
+     }
+    ],
+    "belt": {
+     "key": "bt"
+    },
+    "pills": [
+     {
+      "text": "WHERE IT LANDS FIRST",
+      "x": 96,
+      "y": 72,
+      "key": "q1"
+     },
+     {
+      "text": "WHERE IT LEAVES LAST",
+      "x": 96,
+      "y": 150,
+      "key": "q2"
+     },
+     {
+      "text": "WHAT 'NORMAL' HIDES",
+      "x": 96,
+      "y": 228,
+      "key": "q3"
+     }
+    ]
+   },
+   "vo": "So we'll follow the monsoon across India. Where it lands first, where it leaves last, and what that one word hides. And we'll keep an eye on the rain belt from part one.",
+   "reveals": [
+    {
+     "key": "nb",
+     "word": "follow"
+    },
+    {
+     "key": "q1",
+     "word": "lands"
+    },
+    {
+     "key": "q2",
+     "word": "leaves"
+    },
+    {
+     "key": "q3",
+     "word": "hides."
+    },
+    {
+     "key": "bt",
+     "word": "belt"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Notebook open on a blank India map; three question pills; the faint glowing belt from Part 1 drifts along the top (plant).",
+   "beat": "b01",
+   "claims": [
+    "M044",
+    "M048",
+    "M086"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b02",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "pins",
+      "items": [
+       {
+        "text": "Kerala?",
+        "key": "p1",
+        "at": "kerala"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Where does it land first? Most of us would say Kerala, on the first of June.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "Kerala,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Atlas map, whole India with the islands; a tentative pin on Kerala.",
+   "beat": "b02",
+   "claims": [
+    "M027",
+    "M031",
+    "M041"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch2 b02",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_andaman",
+        "key": "p2",
+        "at": "andaman",
+        "hl": true
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "But it reaches the Andaman and Nicobar Islands earlier, around the twenty-second of May.",
+   "reveals": [
+    {
+     "key": "p2",
+     "word": "Andaman"
+    }
+   ],
+   "transition": "cut",
+   "visual": "First pin on the Andaman and Nicobar Islands.",
+   "beat": "b02",
+   "claims": [
+    "M027",
+    "M031",
+    "M041"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch2 b02",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "stream-bay",
+      "key": "sb"
+     },
+     {
+      "id": "stream-arabian",
+      "key": "sa"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_andaman",
+        "key": "p3",
+        "at": "andaman"
+       },
+       {
+        "lab": "p2_kerala",
+        "key": "p4",
+        "at": "kerala"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "It arrives at two doors. First the Andaman Sea and the Bay of Bengal, in May. Then Kerala, on the Arabian Sea side, around the first of June. But who decides the exact day it arrives?",
+   "reveals": [
+    {
+     "key": "sb",
+     "word": "Andaman"
+    },
+    {
+     "key": "p3",
+     "word": "Bay"
+    },
+    {
+     "key": "sa",
+     "word": "Then"
+    },
+    {
+     "key": "p4",
+     "word": "Kerala,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two doors: first the Andaman Sea and Bay in May, then Kerala on the Arabian Sea side.",
+   "beat": "b02",
+   "claims": [
+    "M027",
+    "M031",
+    "M041"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "checklist",
+    "chip": "",
+    "title": "IMD: onset over Kerala",
+    "labels": [
+     {
+      "lab": "p2_t1",
+      "key": "c1"
+     },
+     {
+      "lab": "p2_t2",
+      "key": "c2"
+     },
+     {
+      "lab": "p2_t3",
+      "key": "c3"
+     },
+     {
+      "lab": "p2_t4",
+      "key": "c4"
+     },
+     {
+      "lab": "p2_t5",
+      "key": "c5"
+     },
+     {
+      "text": "ONSET DECLARED",
+      "key": "c6"
+     }
+    ]
+   },
+   "vo": "The India Meteorological Department, IMD, uses a test. It starts watching after the tenth of May. It has a list of fourteen weather stations in and near Kerala. The test is passed when six in ten of them get rain on two days in a row. Each needs at least two and a half millimetres a day. The westerly winds must also run deep, and a satellite measure must show deep cloud. Only then does IMD declare the onset over Kerala.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "tenth"
+    },
+    {
+     "key": "c2",
+     "word": "six"
+    },
+    {
+     "key": "c3",
+     "word": "half"
+    },
+    {
+     "key": "c4",
+     "word": "westerly"
+    },
+    {
+     "key": "c5",
+     "word": "satellite"
+    },
+    {
+     "key": "c6",
+     "word": "declare"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Clipboard checklist ticking box by box over a small Kerala map dotted with stations; satellite sees tall cloud.",
+   "beat": "b03",
+   "claims": [
+    "M035",
+    "M037"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch2 b03",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "ELSEWHERE: JUDGEMENT",
+        "key": "jd",
+        "at": "central"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "The Andaman Sea has a test of its own. For the rest of India, IMD uses judgement.",
+   "reveals": [
+    {
+     "key": "jd",
+     "word": "judgement."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The rest of India with a quiet question mark: judgement, not a formula.",
+   "beat": "b03",
+   "claims": [
+    "M035",
+    "M037"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch2 b04",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "branch-arabian",
+      "key": "ba"
+     },
+     {
+      "id": "branch-bay",
+      "key": "bb"
+     }
+    ]
+   },
+   "vo": "Once it lands, the monsoon moves north in two arms. The Arabian Sea branch climbs up the west coast. The Bay of Bengal branch turns north into Bengal and the north-east.",
+   "reveals": [
+    {
+     "key": "ba",
+     "word": "Arabian"
+    },
+    {
+     "key": "bb",
+     "word": "Bay"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two arms of cloud: up the west coast, and north into Bengal and the north-east.",
+   "beat": "b04",
+   "claims": [
+    "M042",
+    "M032",
+    "M038",
+    "M029"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch2 b04",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "branch-arabian",
+      "key": "b2"
+     },
+     {
+      "id": "branch-bay",
+      "key": "b3"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_mumbai",
+        "key": "pm",
+        "at": "mumbai"
+       },
+       {
+        "lab": "p2_delhi",
+        "key": "pd",
+        "at": "delhi"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "It reaches Mumbai around the eleventh of June, and Delhi around the twenty-seventh.",
+   "reveals": [
+    {
+     "key": "b2",
+     "word": "It"
+    },
+    {
+     "key": "b3",
+     "word": "It"
+    },
+    {
+     "key": "pm",
+     "word": "Mumbai"
+    },
+    {
+     "key": "pd",
+     "word": "Delhi"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Pins: Mumbai, Delhi.",
+   "beat": "b04",
+   "claims": [
+    "M042",
+    "M032",
+    "M038",
+    "M029"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch2 b04",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "front",
+      "dir": "north",
+      "steps": [
+       {
+        "key": "f1"
+       },
+       {
+        "key": "f2"
+       },
+       {
+        "key": "f3"
+       },
+       {
+        "key": "f4",
+        "lab": "p2_all"
+       }
+      ]
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "NORTHERN LIMIT OF MONSOON",
+        "key": "nl",
+        "at": "top"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "It does not glide. It moves in surges, and IMD draws its front edge each day. That line is called the northern limit of the monsoon. On average, by the eighth of July, it covers the whole country.",
+   "reveals": [
+    {
+     "key": "f1",
+     "word": "glide."
+    },
+    {
+     "key": "f2",
+     "word": "surges,"
+    },
+    {
+     "key": "f3",
+     "word": "edge"
+    },
+    {
+     "key": "nl",
+     "word": "northern"
+    },
+    {
+     "key": "f4",
+     "word": "eighth"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A dashed front line steps north in jumps, clipped inside India; at the end it covers the whole country.",
+   "beat": "b04",
+   "claims": [
+    "M042",
+    "M032",
+    "M038",
+    "M029"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch2 b05",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "NCERT Class XI: “mid-July”",
+      "key": "mj"
+     },
+     {
+      "text": "old normal · from 1901–1940",
+      "key": "ob"
+     }
+    ],
+    "accent": [
+     "mid-July"
+    ]
+   },
+   "vo": "But open our Class 11 textbook, and it says mid-July for the whole country. That is the old normal, worked out from the years 1901 to 1940.",
+   "reveals": [
+    {
+     "key": "mj",
+     "word": "mid-July"
+    },
+    {
+     "key": "ob",
+     "word": "old"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card with a sticky-note 'old normal'.",
+   "beat": "b05",
+   "claims": [
+    "M028",
+    "M029",
+    "M030",
+    "M040",
+    "M087"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "calendar-flip",
+    "chip": "",
+    "labels": [
+     {
+      "lab": "p2_old_all",
+      "key": "o1"
+     },
+     {
+      "lab": "p2_all",
+      "key": "n1"
+     }
+    ]
+   },
+   "vo": "In 2020, IMD worked out new normal dates from more recent decades. The whole-country date moved a week earlier, from the fifteenth of July to the eighth.",
+   "reveals": [
+    {
+     "key": "o1",
+     "word": "fifteenth"
+    },
+    {
+     "key": "n1",
+     "word": "eighth."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A calendar page flips from 15 to 8 July.",
+   "beat": "b05",
+   "claims": [
+    "M028",
+    "M029",
+    "M030",
+    "M040",
+    "M087"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch2 b05",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "a normal date = an average of many years",
+      "key": "av"
+     },
+     {
+      "text": "2025: whole country by {const:27} June",
+      "key": "y5"
+     }
+    ],
+    "accent": [
+     "average"
+    ]
+   },
+   "vo": "A normal date is only an average. In 2025, it covered the whole country on the twenty-seventh of June.",
+   "reveals": [
+    {
+     "key": "av",
+     "word": "average."
+    },
+    {
+     "key": "y5",
+     "word": "2025,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "One year early: 2025.",
+   "beat": "b05",
+   "claims": [
+    "M028",
+    "M029",
+    "M030",
+    "M040",
+    "M087"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch2 b05",
+   "kind": "stage",
+   "spec": {
+    "set": "field",
+    "sky": "clouds",
+    "actors": [
+     {
+      "id": "farmer",
+      "who": "farmer",
+      "x": 1100,
+      "y": 960,
+      "h": 600,
+      "pose": "sow"
+     }
+    ],
+    "pills": [
+     {
+      "text": "KHARIF: SOWN WITH THE MONSOON",
+      "x": 96,
+      "y": 72,
+      "key": "kh"
+     }
+    ]
+   },
+   "vo": "The dates matter: farmers sow their kharif crops when the monsoon arrives.",
+   "reveals": [
+    {
+     "key": "kh",
+     "word": "kharif"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A farmer sowing in a wet field as clouds arrive.",
+   "beat": "b05",
+   "claims": [
+    "M028",
+    "M029",
+    "M030",
+    "M040",
+    "M087"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch3 b06",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "branch-arabian",
+      "key": "g1"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "WESTERN GHATS",
+        "key": "wg",
+        "at": "westcoast"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Now watch where the rain falls. The Arabian Sea branch runs straight into the Western Ghats.",
+   "reveals": [
+    {
+     "key": "g1",
+     "word": "Arabian"
+    },
+    {
+     "key": "wg",
+     "word": "Ghats."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Arabian Sea branch running into the Western Ghats.",
+   "beat": "b06",
+   "claims": [
+    "M058"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "orographic",
+    "chip": "",
+    "labels": [
+     {
+      "text": "OROGRAPHIC RAIN",
+      "key": "or"
+     },
+     {
+      "lab": "p2_windward",
+      "key": "ww"
+     }
+    ]
+   },
+   "vo": "The moist air is pushed up the slopes. It cools, and its water falls out as rain. Rain made this way, by mountains, is called orographic rain. NCERT puts the windward side at two hundred and fifty to four hundred centimetres.",
+   "reveals": [
+    {
+     "key": "or",
+     "word": "orographic"
+    },
+    {
+     "key": "ww",
+     "word": "windward"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Cross-section of the Ghats: wet wind climbing, cloud piling, rain on the west face.",
+   "beat": "b06",
+   "claims": [
+    "M058"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "orographic",
+    "chip": "",
+    "lee": true,
+    "labels": [
+     {
+      "text": "OROGRAPHIC RAIN",
+      "key": "or2"
+     },
+     {
+      "lab": "p2_windward",
+      "key": "ww2"
+     },
+     {
+      "text": "RAIN SHADOW",
+      "key": "rs"
+     }
+    ]
+   },
+   "vo": "Over the top, the air sinks and warms. Little rain falls east of the Ghats. That dry side is called the rain shadow.",
+   "reveals": [
+    {
+     "key": "or2",
+     "word": "Over"
+    },
+    {
+     "key": "ww2",
+     "word": "Over"
+    },
+    {
+     "key": "rs",
+     "word": "shadow."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Same section; air sliding down the east side, warm and dry: the rain shadow.",
+   "beat": "b06",
+   "claims": [
+    "M058"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "rain-types",
+    "chip": "",
+    "labels": [
+     {
+      "text": "CONVECTIONAL",
+      "key": "r1"
+     },
+     {
+      "text": "OROGRAPHIC",
+      "key": "r2"
+     },
+     {
+      "text": "CYCLONIC",
+      "key": "r3"
+     }
+    ]
+   },
+   "vo": "Textbooks name three kinds of rain. Convectional rain comes from warm air rising by itself. Orographic rain comes from mountains. Cyclonic rain comes from storms.",
+   "reveals": [
+    {
+     "key": "r1",
+     "word": "Convectional"
+    },
+    {
+     "key": "r2",
+     "word": "Orographic"
+    },
+    {
+     "key": "r3",
+     "word": "Cyclonic"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three panels: rising warm bubble, mountain, swirling storm.",
+   "beat": "b07",
+   "claims": [
+    "M059",
+    "M057",
+    "M042",
+    "M113"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch3 b07",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "branch-bay",
+      "key": "bb2"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_cherra",
+        "key": "ch",
+        "at": "cherrapunji",
+        "hl": true
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "The Bay branch meets its own mountains, the hills of the north-east. Cherrapunji, in the Meghalaya hills, gets more than ten metres of rain in a year, says NCERT.",
+   "reveals": [
+    {
+     "key": "bb2",
+     "word": "Bay"
+    },
+    {
+     "key": "ch",
+     "word": "Cherrapunji,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Bay branch meeting the Meghalaya hills; pin on Cherrapunji.",
+   "beat": "b07",
+   "claims": [
+    "M059",
+    "M057",
+    "M042",
+    "M113"
+   ]
+  },
+  {
+   "id": "s025",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "column-house",
+    "chip": "ILLUSTRATION",
+    "labels": [
+     {
+      "lab": "p2_house",
+      "key": "ho"
+     }
+    ]
+   },
+   "vo": "Stack that water up, and it would stand about as tall as a three-storey house.",
+   "reveals": [
+    {
+     "key": "ho",
+     "word": "tall"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A column of water beside a three-storey house, about as tall as its roof.",
+   "beat": "b07",
+   "claims": [
+    "M059",
+    "M057",
+    "M042",
+    "M113"
+   ]
+  },
+  {
+   "id": "s026",
+   "act": "Ch3 b08",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "wetdry",
+      "key": "wd"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_wraj",
+        "key": "w1",
+        "at": "wrajasthan"
+       },
+       {
+        "lab": "p2_konkan",
+        "key": "w2",
+        "at": "konkan"
+       },
+       {
+        "lab": "p2_ninex",
+        "key": "w3",
+        "at": "central"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "But at the other end of the map, little rain falls. West Rajasthan gets about thirty-three centimetres in a whole year. Konkan and Goa get about nine times as much, or more.",
+   "reveals": [
+    {
+     "key": "wd",
+     "word": "other"
+    },
+    {
+     "key": "w1",
+     "word": "thirty-three"
+    },
+    {
+     "key": "w2",
+     "word": "Konkan"
+    },
+    {
+     "key": "w3",
+     "word": "nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The atlas map shades wet to dry (chip ILLUSTRATION); pins West Rajasthan, Konkan; '9×'.",
+   "beat": "b08",
+   "claims": [
+    "M056",
+    "M061",
+    "M042"
+   ]
+  },
+  {
+   "id": "s027",
+   "act": "Ch3 b08",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "wetdry",
+      "key": "wd2"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "text": "?",
+        "key": "tq",
+        "at": "tncoast",
+        "hl": true
+       }
+      ]
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "NCERT: “remains dry”",
+        "key": "nd",
+        "at": "south"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "And look at the south-east coast. Our Class 11 textbook says the Tamil Nadu coast remains dry in this season. Remember that coast. We will come back to it.",
+   "reveals": [
+    {
+     "key": "wd2",
+     "word": "look"
+    },
+    {
+     "key": "tq",
+     "word": "south-east"
+    },
+    {
+     "key": "nd",
+     "word": "dry"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A question-mark pin on the Tamil Nadu coast (plant).",
+   "beat": "b08",
+   "claims": [
+    "M056",
+    "M061",
+    "M042"
+   ]
+  },
+  {
+   "id": "s028",
+   "act": "Ch4 b09",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "rain": "spells",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "idle"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "filling"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ACTIVE SPELL",
+      "x": 96,
+      "y": 72,
+      "key": "as"
+     },
+     {
+      "text": "BREAK",
+      "x": 96,
+      "y": 150,
+      "key": "bk"
+     }
+    ]
+   },
+   "vo": "But even where it rains a lot, it does not rain every day. The monsoon is not one long rain. It comes in spells. Wet spells are called active spells. Dry gaps are called breaks.",
+   "reveals": [
+    {
+     "key": "as",
+     "word": "active"
+    },
+    {
+     "key": "bk",
+     "word": "breaks."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Downpour, then days of sun over the bucket: spells.",
+   "beat": "b09",
+   "claims": [
+    "M066",
+    "M069",
+    "M112"
+   ]
+  },
+  {
+   "id": "s029",
+   "act": "Ch4 b09",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "trough",
+      "key": "tr",
+      "pos": "normal"
+     },
+     {
+      "id": "trough-move",
+      "key": "tm",
+      "to": "north"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "BREAK: TROUGH AT THE FOOTHILLS",
+        "key": "fh",
+        "at": "top"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "In a break, the trough from part one moves north, to the Himalayan foothills. Rain falls off over much of India, and the foothills get heavy rain. But what exactly counts as a break?",
+   "reveals": [
+    {
+     "key": "tr",
+     "word": "trough"
+    },
+    {
+     "key": "tm",
+     "word": "moves"
+    },
+    {
+     "key": "fh",
+     "word": "foothills."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The trough slides north to the Himalayan foothills; rain moves with it.",
+   "beat": "b09",
+   "claims": [
+    "M066",
+    "M069",
+    "M112"
+   ]
+  },
+  {
+   "id": "s030",
+   "act": "Ch4 b10",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "NCERT: rain fails for a week or more",
+      "key": "nw"
+     },
+     {
+      "text": "IMD: the trough and the winds",
+      "key": "iw"
+     }
+    ],
+    "accent": [
+     "IMD"
+    ]
+   },
+   "vo": "Our textbook says a break is when rain fails for a week or more. IMD's test is different. It looks for the trough and the winds, not a count of dry days.",
+   "reveals": [
+    {
+     "key": "nw",
+     "word": "week"
+    },
+    {
+     "key": "iw",
+     "word": "IMD's"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two definitions, side by side.",
+   "beat": "b10",
+   "claims": [
+    "M066",
+    "M067",
+    "M069"
+   ]
+  },
+  {
+   "id": "s031",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "spells",
+    "chip": "ILLUSTRATION",
+    "source": "Rajeevan, Gadgil and Bhate (2010) · 1951–2007",
+    "labels": [
+     {
+      "text": "BREAKS LAST LONGER",
+      "key": "s1"
+     },
+     {
+      "lab": "p2_breakweek",
+      "key": "s2"
+     },
+     {
+      "lab": "p2_nobreak",
+      "key": "s3"
+     },
+     {
+      "text": "MANY BREAK DAYS → POOR SEASON",
+      "key": "s4"
+     }
+    ]
+   },
+   "vo": "A study of the years 1951 to 2007 measured spells by its own rule. Breaks lasted longer than active spells. About a third of breaks lasted a week or more. In about one year in four, July and August had no break at all. And seasons with many break days tend to be poor seasons. So where does most of the rain come from?",
+   "reveals": [
+    {
+     "key": "s1",
+     "word": "longer"
+    },
+    {
+     "key": "s2",
+     "word": "third"
+    },
+    {
+     "key": "s3",
+     "word": "four,"
+    },
+    {
+     "key": "s4",
+     "word": "poor"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Strip calendar of a July (wet blue, breaks sand); a tally of seasons, one in four 'no break'.",
+   "beat": "b10",
+   "claims": [
+    "M066",
+    "M067",
+    "M069"
+   ]
+  },
+  {
+   "id": "s032",
+   "act": "Ch4 b11",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "depression",
+      "key": "dp"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "MONSOON DEPRESSION",
+        "key": "dn",
+        "at": "central"
+       },
+       {
+        "lab": "p2_dep",
+        "key": "d2",
+        "at": "bay"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Much of it comes from low-pressure systems that form over the monsoon. The stronger ones are called monsoon depressions. On average, about two form in each month of the season. They bring most of the monsoon's rain.",
+   "reveals": [
+    {
+     "key": "dp",
+     "word": "low-pressure"
+    },
+    {
+     "key": "dn",
+     "word": "depressions."
+    },
+    {
+     "key": "d2",
+     "word": "two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A slow swirl of cloud crossing the map inland.",
+   "beat": "b11",
+   "claims": [
+    "M071",
+    "M046"
+   ]
+  },
+  {
+   "id": "s033",
+   "act": "Ch4 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "months",
+    "chip": "",
+    "ref": "u7_months",
+    "labels": [
+     {
+      "text": "JULY + AUGUST > ⅗",
+      "key": "ja"
+     }
+    ]
+   },
+   "vo": "July and August are the wettest months. Between them, they bring more than three-fifths of the season's rain.",
+   "reveals": [
+    {
+     "key": "ja",
+     "word": "three-fifths"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Four month bars from IMD's shares; July and August tallest.",
+   "beat": "b11",
+   "claims": [
+    "M071",
+    "M046"
+   ]
+  },
+  {
+   "id": "s034",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "checklist",
+    "chip": "",
+    "title": "IMD: withdrawal",
+    "labels": [
+     {
+      "lab": "p2_wd1",
+      "key": "w1"
+     },
+     {
+      "lab": "p2_wd2",
+      "key": "w2"
+     },
+     {
+      "lab": "p2_wd3",
+      "key": "w3"
+     },
+     {
+      "lab": "p2_wd4",
+      "key": "w4"
+     }
+    ]
+   },
+   "vo": "So how does it leave? The end, like the start, is decided by a test. IMD will not declare a withdrawal before the first of September. North-west India then needs five days without rain, much drier air and a change in the winds.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "September."
+    },
+    {
+     "key": "w2",
+     "word": "five"
+    },
+    {
+     "key": "w3",
+     "word": "drier"
+    },
+    {
+     "key": "w4",
+     "word": "change"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The clipboard again, now for leaving.",
+   "beat": "b12",
+   "claims": [
+    "M036",
+    "M033",
+    "M034"
+   ]
+  },
+  {
+   "id": "s035",
+   "act": "Ch5 b12",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "front",
+      "dir": "south",
+      "steps": [
+       {
+        "key": "r1",
+        "lab": "p2_nw"
+       },
+       {
+        "key": "r2"
+       },
+       {
+        "key": "r3",
+        "lab": "p2_oct15"
+       }
+      ]
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "lab": "p2_nw_old",
+        "key": "ro",
+        "at": "nw"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "On average, the monsoon starts leaving the north-west around the seventeenth of September. Our Class 11 book says it leaves western Rajasthan by the first week of September. Again, that is the old normal. By the fifteenth of October, it has left most of the country.",
+   "reveals": [
+    {
+     "key": "r1",
+     "word": "seventeenth"
+    },
+    {
+     "key": "ro",
+     "word": "first"
+    },
+    {
+     "key": "r2",
+     "word": "old"
+    },
+    {
+     "key": "r3",
+     "word": "fifteenth"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The dashed front line steps back south from the north-west.",
+   "beat": "b12",
+   "claims": [
+    "M036",
+    "M033",
+    "M034"
+   ]
+  },
+  {
+   "id": "s036",
+   "act": "Ch5 b13",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "easterlies",
+      "key": "ea"
+     },
+     {
+      "id": "pins",
+      "items": [
+       {
+        "lab": "p2_nem",
+        "key": "ne",
+        "at": "tncoast",
+        "hl": true
+       }
+      ]
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "lab": "p2_east",
+        "key": "e1",
+        "at": "bay"
+       },
+       {
+        "text": "NORTH-EAST MONSOON · OCT–DEC",
+        "key": "e2",
+        "at": "south"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "But remember that south-east coast. Just as the monsoon leaves, Tamil Nadu's main rain begins. By about the fourteenth of October, easterly winds set in over the south-east. Around the twentieth, IMD's normal date, the north-east monsoon reaches coastal Tamil Nadu. Its season runs from October to December.",
+   "reveals": [
+    {
+     "key": "ea",
+     "word": "easterly"
+    },
+    {
+     "key": "e1",
+     "word": "fourteenth"
+    },
+    {
+     "key": "ne",
+     "word": "twentieth,"
+    },
+    {
+     "key": "e2",
+     "word": "season"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The question-mark pin turns into a cloud; easterly arrows onto the Tamil Nadu coast.",
+   "beat": "b13",
+   "claims": [
+    "M062",
+    "M060",
+    "M061"
+   ]
+  },
+  {
+   "id": "s037",
+   "act": "Ch5 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "jars",
+    "chip": "",
+    "ref": "u7_tn",
+    "labels": [
+     {
+      "text": "JUNE–SEPTEMBER",
+      "key": "j1"
+     },
+     {
+      "text": "RELATIVELY DRY, NOT DRY",
+      "key": "j2"
+     },
+     {
+      "text": "OCTOBER–DECEMBER",
+      "key": "j3"
+     }
+    ]
+   },
+   "vo": "Now that word, dry. From June to September, Tamil Nadu gets about a third of its year's rain. Relatively dry, then, but not dry. From October to December, it gets almost half.",
+   "reveals": [
+    {
+     "key": "j1",
+     "word": "June"
+    },
+    {
+     "key": "j2",
+     "word": "Relatively"
+    },
+    {
+     "key": "j3",
+     "word": "October"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two jars fill side by side, Oct-Dec taller. Values from IMD Chennai (mm).",
+   "beat": "b13",
+   "claims": [
+    "M062",
+    "M060",
+    "M061"
+   ]
+  },
+  {
+   "id": "s038",
+   "act": "Ch5 b14",
+   "kind": "globe",
+   "spec": {
+    "mode": "seasons",
+    "glow": true,
+    "labels": [
+     {
+      "text": "SUMMER: NORTH WITH THE SUN",
+      "key": "sn"
+     }
+    ]
+   },
+   "vo": "Why then? Here the rain belt from part one comes back. In summer, it moved north with the sun.",
+   "reveals": [
+    {
+     "key": "sn",
+     "word": "summer,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The band from Part 1 rides north with the sun.",
+   "beat": "b14",
+   "claims": [
+    "M063",
+    "M095"
+   ]
+  },
+  {
+   "id": "s039",
+   "act": "Ch5 b14",
+   "kind": "globe",
+   "spec": {
+    "mode": "belt-south",
+    "labels": [
+     {
+      "text": "AUTUMN: BACK SOUTH",
+      "key": "bs"
+     },
+     {
+      "text": "BAY STORMS",
+      "key": "st"
+     },
+     {
+      "text": "DECEMBER: FURTHER SOUTH",
+      "key": "dc"
+     }
+    ]
+   },
+   "vo": "In autumn, it slides back south. When the belt and its storms sit over the south, Tamil Nadu gets its rain. Storms from the Bay of Bengal add to it significantly. In December, the belt moves further south, and the rain falls away.",
+   "reveals": [
+    {
+     "key": "bs",
+     "word": "autumn,"
+    },
+    {
+     "key": "st",
+     "word": "Storms"
+    },
+    {
+     "key": "dc",
+     "word": "December,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The band slides back south and settles over south India; Bay storms swirl in; in December it moves on south.",
+   "beat": "b14",
+   "claims": [
+    "M063",
+    "M095"
+   ]
+  },
+  {
+   "id": "s040",
+   "act": "Ch5 b14",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "pins",
+      "items": [
+       {
+        "text": "FIRST: ANDAMAN SEA · MAY",
+        "key": "fa",
+        "at": "andaman"
+       },
+       {
+        "text": "LAST: THE SOUTH · FADES IN DECEMBER",
+        "key": "la",
+        "at": "tncoast"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "So the monsoon lands first on the Andaman Sea in May. And its rains end last in the south, as the north-east monsoon fades in December.",
+   "reveals": [
+    {
+     "key": "fa",
+     "word": "first"
+    },
+    {
+     "key": "la",
+     "word": "last,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two pins close the journey loop.",
+   "beat": "b14",
+   "claims": [
+    "M063",
+    "M095"
+   ]
+  },
+  {
+   "id": "s041",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "bucket-band",
+    "chip": "",
+    "labels": [
+     {
+      "lab": "p2_lpa",
+      "key": "lv2"
+     }
+    ]
+   },
+   "vo": "Now back to that one word, normal. Add up June to September rain over all of India. On average, it comes to about eighty-seven centimetres.",
+   "reveals": [
+    {
+     "key": "lv2",
+     "word": "eighty-seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's bucket on a scale marked in cm, a band drawn around 87.",
+   "beat": "b15",
+   "claims": [
+    "M044",
+    "M081"
+   ]
+  },
+  {
+   "id": "s042",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "bucket-band",
+    "chip": "",
+    "wobble": true,
+    "labels": [
+     {
+      "lab": "p2_lpa",
+      "key": "lv3"
+     },
+     {
+      "lab": "p2_typical",
+      "key": "ty"
+     },
+     {
+      "lab": "p2_worst",
+      "key": "wo"
+     }
+    ]
+   },
+   "vo": "From year to year, it changes less than you might think. The typical swing is about a tenth of the average. The biggest shortfall on record was under thirty percent.",
+   "reveals": [
+    {
+     "key": "lv3",
+     "word": "From"
+    },
+    {
+     "key": "ty",
+     "word": "tenth"
+    },
+    {
+     "key": "wo",
+     "word": "shortfall"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The water level wobbles inside the band.",
+   "beat": "b15",
+   "claims": [
+    "M044",
+    "M081"
+   ]
+  },
+  {
+   "id": "s043",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "rulers",
+    "chip": "",
+    "ref": "u7_norm",
+    "labels": [
+     {
+      "lab": "p2_band_fc",
+      "key": "rf"
+     },
+     {
+      "lab": "p2_band_season",
+      "key": "rs"
+     }
+    ]
+   },
+   "vo": "But here is the catch. IMD uses the word normal on more than one scale. For a forecast, normal means ninety-six to a hundred and four percent of the average. For a finished season over all of India, normal means within ten percent either way.",
+   "reveals": [
+    {
+     "key": "rf",
+     "word": "forecast,"
+    },
+    {
+     "key": "rs",
+     "word": "finished"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Rulers with green 'normal' bands of different widths.",
+   "beat": "b16",
+   "claims": [
+    "M048",
+    "M049",
+    "M050",
+    "M051",
+    "M055"
+   ]
+  },
+  {
+   "id": "s044",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "rulers",
+    "chip": "",
+    "ref": "u7_norm",
+    "marker": true,
+    "labels": [
+     {
+      "lab": "p2_band_fc",
+      "key": "rf2"
+     },
+     {
+      "lab": "p2_band_season",
+      "key": "rs2"
+     },
+     {
+      "lab": "p2_m108",
+      "key": "mk"
+     }
+    ]
+   },
+   "vo": "So IMD's report called the 2025 season, at a hundred and eight percent, normal. On the forecast scale, the same number is above normal.",
+   "reveals": [
+    {
+     "key": "rf2",
+     "word": "So"
+    },
+    {
+     "key": "rs2",
+     "word": "So"
+    },
+    {
+     "key": "mk",
+     "word": "eight"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A marker at 108 sits inside one band and outside the other.",
+   "beat": "b16",
+   "claims": [
+    "M048",
+    "M049",
+    "M050",
+    "M051",
+    "M055"
+   ]
+  },
+  {
+   "id": "s045",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "rulers",
+    "chip": "",
+    "ref": "u7_norm",
+    "third": true,
+    "labels": [
+     {
+      "lab": "p2_band_fc",
+      "key": "rf3"
+     },
+     {
+      "lab": "p2_band_season",
+      "key": "rs3"
+     },
+     {
+      "lab": "p2_band_region",
+      "key": "rr"
+     },
+     {
+      "text": "NAME THE SCALE",
+      "key": "ns"
+     }
+    ]
+   },
+   "vo": "For a district or a state, normal stretches to nineteen percent either way. Each scale answers a different question. So name the scale when you use the word.",
+   "reveals": [
+    {
+     "key": "rf3",
+     "word": "For"
+    },
+    {
+     "key": "rs3",
+     "word": "For"
+    },
+    {
+     "key": "rr",
+     "word": "state,"
+    },
+    {
+     "key": "ns",
+     "word": "name"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A third, wider ruler for a region; 'name the scale'.",
+   "beat": "b16",
+   "claims": [
+    "M048",
+    "M049",
+    "M050",
+    "M051",
+    "M055"
+   ]
+  },
+  {
+   "id": "s046",
+   "act": "Ch6 b17",
+   "kind": "globe",
+   "spec": {
+    "mode": "pacific",
+    "labels": [
+     {
+      "lab": "p2_enso",
+      "key": "en"
+     },
+     {
+      "text": "EL NIÑO",
+      "key": "el"
+     },
+     {
+      "text": "GENERALLY WEAKENS THE MONSOON",
+      "key": "wk"
+     }
+    ]
+   },
+   "vo": "So what pushes a season above or below? The best-known push comes from the Pacific Ocean. Every few years, the eastern Pacific warms up. This is called El Niño. It generally weakens India's monsoon.",
+   "reveals": [
+    {
+     "key": "en",
+     "word": "few"
+    },
+    {
+     "key": "el",
+     "word": "Niño."
+    },
+    {
+     "key": "wk",
+     "word": "weakens"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The globe turns to the Pacific; warm water spreads east toward Peru.",
+   "beat": "b17",
+   "claims": [
+    "M073",
+    "M074",
+    "M075",
+    "M076"
+   ]
+  },
+  {
+   "id": "s047",
+   "act": "Ch6 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "cards",
+    "chip": "",
+    "cards": [
+     {
+      "text": "1982",
+      "key": "y1"
+     },
+     {
+      "text": "1987",
+      "key": "y2"
+     },
+     {
+      "text": "2002",
+      "key": "y3"
+     },
+     {
+      "text": "2009",
+      "key": "y4"
+     },
+     {
+      "text": "2015",
+      "key": "y5"
+     },
+     {
+      "text": "1997: NORMAL",
+      "key": "y6",
+      "good": true
+     }
+    ]
+   },
+   "vo": "The droughts of 1982, 1987, 2002, 2009 and 2015 came in El Niño years. But El Niño is not a verdict. In 1997, a strong El Niño year, India's monsoon was normal.",
+   "reveals": [
+    {
+     "key": "y1",
+     "word": "1982,"
+    },
+    {
+     "key": "y2",
+     "word": "1987,"
+    },
+    {
+     "key": "y3",
+     "word": "2002,"
+    },
+    {
+     "key": "y4",
+     "word": "2009"
+    },
+    {
+     "key": "y5",
+     "word": "2015"
+    },
+    {
+     "key": "y6",
+     "word": "1997,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Five drought-year cards drop; a sixth, 1997, lands face up green.",
+   "beat": "b17",
+   "claims": [
+    "M073",
+    "M074",
+    "M075",
+    "M076"
+   ]
+  },
+  {
+   "id": "s048",
+   "act": "Ch6 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "seesaw",
+    "chip": "ANALOGY",
+    "limit": "the dipole is a difference in sea temperature, not a moving plank",
+    "labels": [
+     {
+      "text": "INDIAN OCEAN DIPOLE",
+      "key": "io"
+     },
+     {
+      "text": "WARM WEST → TENDS TO HELP",
+      "key": "ih"
+     }
+    ]
+   },
+   "vo": "Our own Indian Ocean has a see-saw too, the Indian Ocean Dipole. When its west runs warmer than usual and its east cooler than usual, it tends to help.",
+   "reveals": [
+    {
+     "key": "io",
+     "word": "Dipole."
+    },
+    {
+     "key": "ih",
+     "word": "help."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Indian Ocean as a see-saw, warm on the west.",
+   "beat": "b17",
+   "claims": [
+    "M073",
+    "M074",
+    "M075",
+    "M076"
+   ]
+  },
+  {
+   "id": "s049",
+   "act": "Ch6 b17",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "Exam trap: two NCERT Class XI books disagree",
+      "key": "tp"
+     },
+     {
+      "text": "El Niño = warm water replacing the cold Peruvian current",
+      "key": "rw"
+     }
+    ],
+    "accent": [
+     "warm water"
+    ]
+   },
+   "vo": "An exam trap: our two Class 11 books describe El Niño in opposite ways. The right way round is warm water replacing the cold Peruvian current.",
+   "reveals": [
+    {
+     "key": "tp",
+     "word": "trap:"
+    },
+    {
+     "key": "rw",
+     "word": "right"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: the right way round.",
+   "beat": "b17",
+   "claims": [
+    "M073",
+    "M074",
+    "M075",
+    "M076"
+   ]
+  },
+  {
+   "id": "s050",
+   "act": "Ch6 b18",
+   "kind": "analogy",
+   "spec": {
+    "which": "decades",
+    "chip": "",
+    "ref": "u7_lpa",
+    "labels": [
+     {
+      "text": "NEW NORMAL",
+      "key": "nn"
+     }
+    ]
+   },
+   "vo": "But the average itself is not fixed. In 2022, IMD lowered the normal from about eighty-eight centimetres to under eighty-seven. It used newer decades of data.",
+   "reveals": [
+    {
+     "key": "nn",
+     "word": "lowered"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The ruler gets a new mark, a little lower: 88.1 → 86.9 cm.",
+   "beat": "b18",
+   "claims": [
+    "M044",
+    "M082",
+    "M083"
+   ]
+  },
+  {
+   "id": "s051",
+   "act": "Ch6 b18",
+   "kind": "analogy",
+   "spec": {
+    "which": "decades",
+    "chip": "ILLUSTRATION",
+    "strip": true,
+    "labels": [
+     {
+      "text": "WETTER AND DRIER DECADES",
+      "key": "wd"
+     },
+     {
+      "lab": "p2_dry",
+      "key": "dp"
+     },
+     {
+      "lab": "p2_six",
+      "key": "sx"
+     },
+     {
+      "text": "MORE DRY SPELLS · MORE INTENSE WET SPELLS",
+      "key": "ex"
+     }
+    ]
+   },
+   "vo": "IMD calls this part of a natural cycle of wetter and drier decades. It says India has been in a drier phase since the 1970s. IMD also reports that monsoon rain fell about six percent over fifty years. It reports more dry spells, and more intense wet spells.",
+   "reveals": [
+    {
+     "key": "wd",
+     "word": "natural"
+    },
+    {
+     "key": "dp",
+     "word": "drier"
+    },
+    {
+     "key": "sx",
+     "word": "six"
+    },
+    {
+     "key": "ex",
+     "word": "intense"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A long strip of decades shading wetter and drier in turns.",
+   "beat": "b18",
+   "claims": [
+    "M044",
+    "M082",
+    "M083"
+   ]
+  },
+  {
+   "id": "s052",
+   "act": "Ch6 b18",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "Natural, ours, or both?",
+      "key": "nq"
+     },
+     {
+      "text": "Taken up in the climate change episode",
+      "key": "cc"
+     }
+    ],
+    "accent": [
+     "Natural, ours, or both?"
+    ]
+   },
+   "vo": "How much of this is natural, and how much is our doing? We take that up in the climate change episode.",
+   "reveals": [
+    {
+     "key": "nq",
+     "word": "natural,"
+    },
+    {
+     "key": "cc",
+     "word": "climate"
+    }
+   ],
+   "transition": "cut",
+   "visual": "An open question card: said as unknown.",
+   "beat": "b18",
+   "claims": [
+    "M044",
+    "M082",
+    "M083"
+   ]
+  },
+  {
+   "id": "s053",
+   "act": "Ch7 b19",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "full"
+     }
+    ],
+    "pills": [
+     {
+      "text": "A MAP",
+      "x": 96,
+      "y": 72,
+      "key": "m1"
+     },
+     {
+      "text": "A CALENDAR",
+      "x": 96,
+      "y": 150,
+      "key": "m2"
+     },
+     {
+      "text": "A RHYTHM",
+      "x": 96,
+      "y": 228,
+      "key": "m3"
+     },
+     {
+      "text": "A SCALE",
+      "x": 96,
+      "y": 306,
+      "key": "m4"
+     }
+    ]
+   },
+   "vo": "So what does a normal monsoon really mean? It is one number for all of India, inside a band. That number hides a map: soaked Konkan, dry West Rajasthan. It hides a calendar: the Andaman Sea in May, Tamil Nadu's rain in October and November. It hides a rhythm of active spells and breaks. And the band depends on the scale you read.",
+   "reveals": [
+    {
+     "key": "m1",
+     "word": "map:"
+    },
+    {
+     "key": "m2",
+     "word": "calendar:"
+    },
+    {
+     "key": "m3",
+     "word": "rhythm"
+    },
+    {
+     "key": "m4",
+     "word": "scale"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Payoff: the bucket full; four things the one number hides.",
+   "beat": "b19",
+   "claims": [
+    "M044",
+    "M048",
+    "M049",
+    "M056",
+    "M031",
+    "M027",
+    "M029",
+    "M033",
+    "M058",
+    "M060",
+    "M067",
+    "M073",
+    "M074"
+   ]
+  },
+  {
+   "id": "s054",
+   "act": "Ch7 b19",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "strike": {
+     "text": "normal = one number?",
+     "key": "x"
+    },
+    "lines": [
+     {
+      "text": "Andaman Sea ~22 May · Kerala ~1 June",
+      "key": "n1"
+     },
+     {
+      "text": "Whole India ~8 July · NW withdrawal from ~17 Sept",
+      "key": "n2"
+     },
+     {
+      "text": "Windward Ghats wet · rain shadow dry",
+      "key": "n3"
+     },
+     {
+      "text": "Tamil Nadu: almost ½ from the NE monsoon, Oct–Dec",
+      "key": "n4"
+     },
+     {
+      "text": "All-India normal: 1971–2020 average, ~87 cm",
+      "key": "n5"
+     },
+     {
+      "text": "El Niño usually weakens it, not always",
+      "key": "n6"
+     },
+     {
+      "text": "Normal is a band, not a number",
+      "key": "n7"
+     }
+    ]
+   },
+   "vo": "For the exam, write it this way. The monsoon reaches the Andaman Sea around the twenty-second of May, and Kerala around the first of June. It covers India by about the eighth of July. It starts withdrawing from the north-west around the seventeenth of September. Relief shapes the rain. The windward Western Ghats are wet, and the rain shadow behind them is dry. Tamil Nadu gets almost half its rain from the north-east monsoon, from October to December. The all-India normal is the 1971 to 2020 average, about eighty-seven centimetres. El Niño usually weakens the monsoon, but not every time. Normal is a band, not a number.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "Andaman"
+    },
+    {
+     "key": "n2",
+     "word": "covers"
+    },
+    {
+     "key": "n3",
+     "word": "windward"
+    },
+    {
+     "key": "n4",
+     "word": "Tamil"
+    },
+    {
+     "key": "n5",
+     "word": "all-India"
+    },
+    {
+     "key": "n6",
+     "word": "Niño"
+    },
+    {
+     "key": "n7",
+     "word": "band,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Exam card: 'normal = one number?' struck out; the answer fills the page, one line per sentence.",
+   "beat": "b19",
+   "claims": [
+    "M044",
+    "M048",
+    "M049",
+    "M056",
+    "M031",
+    "M027",
+    "M029",
+    "M033",
+    "M058",
+    "M060",
+    "M067",
+    "M073",
+    "M074"
+   ]
+  },
+  {
+   "id": "s055",
+   "act": "Ch7 b20",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "cheer"
+     }
+    ],
+    "pills": [
+     {
+      "text": "NEXT: JET STREAMS AND THE NORTH'S WINTER RAIN",
+      "x": 96,
+      "y": 72,
+      "key": "nx"
+     }
+    ]
+   },
+   "vo": "In the serial's next episode: the jet streams high above us. And the winter rain that feeds the north's winter crops.",
+   "reveals": [
+    {
+     "key": "nx",
+     "word": "next"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl looks up to a thin fast stream high in the sky.",
+   "beat": "b20",
+   "claims": [
+    "M087"
+   ]
+  }
+ ]
+}

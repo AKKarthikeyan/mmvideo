@@ -1,0 +1,260 @@
+{
+ "id": "fa04",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "IIPS · NFHS-6 (2023-24)",
+ "palette": "C",
+ "state": "Telangana",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicator: women aged 15 to 49 paid in cash for work, as labelled in the fact sheet. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet.",
+ "hook": [
+  "*Telangana*, 2023-24: *53%*",
+  "of women paid in cash",
+  "for work. India: *31%*."
+ ],
+ "hook_vo": "In Telangana, fifty-three percent of women worked and were paid in cash.",
+ "facts": [
+  {
+   "state": "Telangana",
+   "kicker": "WOMEN PAID IN CASH FOR WORK, PAST YEAR · NFHS-6",
+   "data": {
+    "nfhs": 91
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15 to 49 worked in the past year and were paid in cash, 2023-24. Highest of {n} ranked states and UTs. Next: Andhra Pradesh and Tamil Nadu, 48%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets.",
+   "vo": "Fifty-three percent of women in the past year. Highest of thirty-four ranked states."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "RURAL WOMEN, SAME MEASURE · NFHS-6",
+   "data": {
+    "nfhs": 91,
+    "col": 1
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of rural women, 2023-24. Highest of {n} ranked states and UTs with rural data. India's rural figure: 31%.",
+   "sub": "Survey estimate, rural column of the NFHS-6 fact sheets.",
+   "vo": "In rural areas it was fifty-eight percent. India's rural was thirty-one."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "EARLIER SURVEY · NFHS-5 (2019-21)",
+   "data": {
+    "nfhs": 91,
+    "col": 3
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women: Telangana led then too. India: 25%.",
+   "sub": "Survey estimate. NFHS-5 figure as printed in the NFHS-6 fact sheets.",
+   "vo": "In the earlier survey Telangana also led at forty-five percent. India was twenty-five."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 91,
+    "col": 3
+   },
+   "equals": 42
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 91
+    }
+   },
+   "min": 1.105
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 91
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91
+    }
+   },
+   "min": 0.8969
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 91,
+     "col": 3
+    }
+   },
+   "min": 1.065
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 91,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91,
+     "col": 3
+    }
+   },
+   "min": 0.9303
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 91
+   },
+   "equals": 53
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 91
+   },
+   "equals": 48
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "nfhs": 91
+   },
+   "equals": 48
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 91,
+    "col": 1
+   },
+   "equals": 58
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 91,
+    "col": 1
+   },
+   "equals": 31
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 91,
+    "col": 3
+   },
+   "equals": 45
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 91,
+    "col": 3
+   },
+   "equals": 25
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 91,
+     "col": 3
+    }
+   },
+   "min": 1.17
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 91
+   },
+   "equals": 31
+  }
+ ],
+ "so": {
+  "lines": [
+   "Lead over the runner-up:",
+   "*7%* in 2019-21 (45% v 42%),",
+   "*11%* in 2023-24 (53% v 48%)."
+  ],
+  "vo": "Its lead over the runner-up grew from seven percent to eleven."
+ },
+ "map": {
+  "data": {
+   "nfhs": 91
+  },
+  "unit": "%",
+  "title": "Women paid in cash for work, *every state*",
+  "sub": "% of women aged 15 to 49 · India {india} · NFHS-6 (2023-24)",
+  "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+  "ring": [
+   "Telangana",
+   "Andhra Pradesh"
+  ],
+  "vo": "Every state's figure for women paid in cash for work."
+ },
+ "end": {
+  "q": "Does *your state* beat 53%?",
+  "sub": "Comment below.",
+  "vo": "Does your state beat fifty-three percent?"
+ },
+ "yt_title": "Telangana 2023-24: 53% of Women Paid in Cash for Work"
+}

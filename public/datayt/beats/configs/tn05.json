@@ -1,0 +1,432 @@
+{
+ "id": "tn05",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Agriculture Ministry · 2014-15 to 2024-25 (final est.)",
+ "palette": "C",
+ "state": "Chhattisgarh",
+ "table": 80,
+ "from": "2014-15",
+ "to": "2024-25",
+ "measure": "value",
+ "unit": "",
+ "delta": "percent",
+ "kicker": "RICE YIELD · KG A HECTARE",
+ "expect": {
+  "years": 10,
+  "rank_then": 29,
+  "rank_now": 14,
+  "n": 31
+ },
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 80: yield of rice, kg per hectare. 2024-25 figures are the Ministry's final estimates.",
+ "hook": [
+  "*Chhattisgarh*: up *15 places*",
+  "rice yield: 29th to 14th,",
+  "2014-15 to 2024-25."
+ ],
+ "hook_vo": "Chhattisgarh climbed fifteen places in rice yield in ten years.",
+ "then": {
+  "text": "kg a hectare: *29th of 31* states and UTs",
+  "vo": "In twenty fourteen-fifteen: about one point seven tonnes of rice a hectare."
+ },
+ "now": {
+  "text": "14th of 31. India's average: 2,929 kg a hectare.",
+  "vo": "Ten years on: about two point seven tonnes."
+ },
+ "facts": [
+  {
+   "kicker": "RICE YIELD · 2014-15 TO 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "rise in Chhattisgarh's rice yield",
+   "bars": [
+    {
+     "name": "Chhattisgarh",
+     "ratio": [
+      {
+       "diff": [
+        {
+         "data": {
+          "rbi": [
+           80,
+           "2024-25"
+          ]
+         }
+        },
+        {
+         "data": {
+          "rbi": [
+           80,
+           "2014-15"
+          ]
+         }
+        }
+       ]
+      },
+      {
+       "data": {
+        "rbi": [
+         80,
+         "2014-15"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "diff": [
+        {
+         "data": {
+          "rbi": [
+           80,
+           "2024-25"
+          ]
+         },
+         "state": "India"
+        },
+        {
+         "data": {
+          "rbi": [
+           80,
+           "2014-15"
+          ]
+         },
+         "state": "India"
+        }
+       ]
+      },
+      {
+       "data": {
+        "rbi": [
+         80,
+         "2014-15"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 70,
+   "sub": "Single-year figures. India: 2,391 to 2,929 kg a hectare.",
+   "vo": "India's rice yield rose under a quarter. Chhattisgarh's rose by sixty percent."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "The gap to India's average",
+    "shrank from *31%*",
+    "to *9%.*"
+   ],
+   "note": "Yield is rice harvested per hectare sown. Single years swing: 2022-23 to 2024-25 were 2,602, 2,539 and 2,655 kg. The table shows how much, not why.",
+   "vo": "Its gap to India's average yield shrank from thirty-one percent to nine."
+  }
+ ],
+ "tests": [
+  {
+   "says": "1,660 kg a hectare in 2014-15; about 1.7 tonnes",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 1660
+  },
+  {
+   "says": "2,655 kg a hectare in 2024-25; about 2.7 tonnes",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 2655
+  },
+  {
+   "says": "up by three-fifths",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2014-15"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.57,
+   "max": 1.63
+  },
+  {
+   "says": "India's yield rose by under a quarter",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 1.15,
+   "max": 1.2499
+  },
+  {
+   "says": "India 2,391 kg in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2014-15"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 2391
+  },
+  {
+   "says": "India 2,929 kg in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 2929
+  },
+  {
+   "says": "31% below India's average in 2014-15",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 31
+  },
+  {
+   "says": "9% below India's average in 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2024-25"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 9
+  },
+  {
+   "says": "rose by sixty percent",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          80,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        80,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 60
+  },
+  {
+   "says": "2022-23: 2,602 kg",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2022-23"
+     ]
+    }
+   },
+   "equals": 2602
+  },
+  {
+   "says": "2023-24: 2,539 kg",
+   "value": {
+    "data": {
+     "rbi": [
+      80,
+      "2023-24"
+     ]
+    }
+   },
+   "equals": 2539
+  }
+ ],
+ "map": {
+  "bands": [
+   -10,
+   -2,
+   5,
+   25
+  ],
+  "title": "Rice yield: *each state's change*",
+  "sub": "% change in kg a hectare · {from} to {to}",
+  "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh) or no figure. Yield per hectare, not total harvest.",
+  "vo": "Here is every state's change in rice yield over the ten years.",
+  "key": [
+   "fell",
+   "about level",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "How did *your state's* rice yield change?",
+  "sub": "Find it on the map.",
+  "vo": "How did your state's rice yield change?"
+ },
+ "yt_title": "Chhattisgarh Grew 60% More Rice per Hectare in 10 Years"
+}

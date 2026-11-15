@@ -1,0 +1,405 @@
+{
+ "id": "sh02",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "sourceShort": "Agriculture Ministry · 2024-25 final estimates",
+ "source": "Ministry of Agriculture and Farmers' Welfare, 2024-25 final estimates, as published in the RBI Handbook of Statistics on Indian States: cotton (lint) area (Table 77) and production in bales of 170 kg (Table 64). Each share is of the all-India figure in the same table.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Maharashtra*: *36%* of India's",
+    "cotton area, 2024-25:",
+    "*25%* of the crop."
+   ],
+   "vo": "Maharashtra: over a third of India's cotton area, a quarter of the crop.",
+   "geo": "Maharashtra",
+   "name": "Maharashtra",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "grid",
+   "mode": "split",
+   "kicker": "% OF INDIA'S COTTON AREA · 2024-25",
+   "vo": "Gujarat about a fifth, Telangana nearly a sixth, all others twenty-eight percent.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "SHARE OF AREA VS SHARE OF CROP",
+   "big": "24.8%",
+   "text": "of India's cotton crop, in bales",
+   "sub": "Crop in bales of 170 kg, 2024-25 final estimates. The table shows how much, not why.",
+   "bars": [
+    {
+     "name": "Area",
+     "label": "35.9%",
+     "frac": 0.7180675049636003
+    },
+    {
+     "name": "Crop",
+     "label": "24.8%",
+     "frac": 0.49608736315863844
+    }
+   ],
+   "vo": "Per hectare, that is about two-thirds of India's average.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "GUJARAT: AREA VS CROP",
+   "big": "24.1%",
+   "text": "of India's cotton crop. Maharashtra: 24.8%.",
+   "sub": "Crop in bales of 170 kg, 2024-25. Gujarat's share was higher in 2022-23 and 2023-24.",
+   "bars": [
+    {
+     "name": "Area",
+     "label": "20.7%",
+     "frac": 0.41305862273154753
+    },
+    {
+     "name": "Crop",
+     "label": "24.1%",
+     "frac": 0.4815470222916008
+    }
+   ],
+   "vo": "Gujarat has less area but a similar share of the crop.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "map",
+   "title": "Share of India's cotton area, *every state*",
+   "sub": "% of India's area · 2024-25",
+   "note": "State totals, not per person. Blank: no figure in the table.",
+   "anim": true,
+   "ring": [
+    "Maharashtra"
+   ],
+   "vo": "Every state's share of India's cotton area. State totals, not per person.",
+   "t0": 23.226,
+   "t1": 30.968
+  },
+  {
+   "note": "State totals, not per person. Blank: no figure in the table.",
+   "ring": [
+    "Maharashtra"
+   ],
+   "q": "How much cotton area does *your state* have?",
+   "sub": "Find it on the map.",
+   "kind": "mapend",
+   "vo": "How much cotton area does your state have?",
+   "t0": 30.968,
+   "t1": 34.839
+  }
+ ],
+ "total": 35.239,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "grid": {
+  "parts": [
+   {
+    "name": "Maharashtra",
+    "v": 35.903,
+    "label": "35.9",
+    "color": "#740A00"
+   },
+   {
+    "name": "Gujarat",
+    "v": 20.653,
+    "label": "20.7",
+    "color": "#B84900"
+   },
+   {
+    "name": "Telangana",
+    "v": 15.782,
+    "label": "15.8",
+    "color": "#DD9942"
+   },
+   {
+    "name": "All other states",
+    "v": 27.662,
+    "label": "27.7",
+    "color": "#B9A898"
+   }
+  ],
+  "caption": "100 squares = India's cotton area, 2024-25"
+ },
+ "map": [
+  {
+   "name": "Kerala",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 23.576
+  },
+  {
+   "name": "Nagaland",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 23.697
+  },
+  {
+   "name": "West Bengal",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 23.818
+  },
+  {
+   "name": "Tripura",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 23.939
+  },
+  {
+   "name": "Assam",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 24.06
+  },
+  {
+   "name": "Puducherry",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 24.181
+  },
+  {
+   "name": "Meghalaya",
+   "label": "<0.1",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 24.302
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.423
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "0.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.544
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "0.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.665
+  },
+  {
+   "name": "Punjab",
+   "label": "1.4",
+   "bucket": 1,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 24.786
+  },
+  {
+   "name": "Odisha",
+   "label": "2.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 24.907
+  },
+  {
+   "name": "Haryana",
+   "label": "3.5",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 25.028
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "3.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.149
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "4.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.27
+  },
+  {
+   "name": "Rajasthan",
+   "label": "5.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.391
+  },
+  {
+   "name": "Karnataka",
+   "label": "5.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.511
+  },
+  {
+   "name": "Telangana",
+   "label": "15.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.632
+  },
+  {
+   "name": "Gujarat",
+   "label": "20.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.753
+  },
+  {
+   "name": "Maharashtra",
+   "label": "35.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 25.874
+  }
+ ],
+ "checked": [
+  "state rows add up to the all-India row (1.0000)",
+  "Maharashtra is first with 35.90% of the all-India figure",
+  "36% of India's cotton area; over a third: 35.90",
+  "over a third: 35.90",
+  "25% of the crop; a quarter: 24.80",
+  "Maharashtra 24.8% of the crop (tenths): 248.04",
+  "Gujarat twenty-one in a hundred of the area: 20.65",
+  "Telangana sixteen: 15.78",
+  "Gujarat has a similar share of the crop: under one point apart: 0.73",
+  "Gujarat has less area: at least ten points less: 15.25",
+  "size check, not spoken: cotton-area share is far above Maharashtra's share of foodgrain area: 4.21",
+  "per hectare about two-thirds of India's average: crop share over area share: 0.69",
+  "Gujarat about a fifth of the area: 20.65",
+  "Telangana nearly a sixth of the area: 15.78",
+  "Gujarat's crop share was higher in 2022-23: 1.42",
+  "Gujarat's crop share was higher in 2023-24: 3.11"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.623,
+   "at": 0.12,
+   "text": "Maharashtra: over a third of India's cotton area, a quarter of the crop."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.955,
+   "at": 5.926,
+   "text": "Gujarat about a fifth, Telangana nearly a sixth, all others twenty-eight percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.866,
+   "at": 13.668,
+   "text": "Per hectare, that is about two-thirds of India's average."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.16,
+   "at": 19.475,
+   "text": "Gujarat has less area but a similar share of the crop."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.825,
+   "at": 23.346,
+   "text": "Every state's share of India's cotton area. State totals, not per person."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.768,
+   "at": 31.088,
+   "text": "How much cotton area does your state have?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Maharashtra: 36% of India's Cotton Area, 25% of the Crop"
+}

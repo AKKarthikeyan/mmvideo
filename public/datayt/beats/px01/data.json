@@ -1,0 +1,542 @@
+{
+ "id": "px01",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "DoT · 28 Feb 2026",
+ "source": "5G: Dept of Telecommunications, Lok Sabha Starred Q. 470 (25 Mar 2026), Annex II: villages brought under 5G services, as on 28 Feb 2026; villages as per the Registrar General of India. Income: RBI Handbook of Statistics on Indian States, per-capita net state domestic product, current prices, 2024-25 (25 states and UTs with data).",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Bihar:* lowest",
+    "income per person.",
+    "*5G* in 96 of",
+    "100 villages."
+   ],
+   "vo": "Bihar: lowest income per person, yet 5G in ninety-six of a hundred villages.",
+   "geo": "Bihar",
+   "name": "Bihar",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Bihar",
+   "geo": "Bihar",
+   "kicker": "INCOME PER PERSON · 2024-25",
+   "big": "₹69,321",
+   "text": "a year. The lowest of the 25 states and UTs with data.",
+   "sub": "Per-capita net state domestic product, current prices. RBI.",
+   "bars": [],
+   "vo": "Sixty-nine thousand rupees a year, the lowest of the 25 states and territories with data.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Bihar",
+   "geo": "Bihar",
+   "kicker": "VILLAGES WITH 5G · 28 FEB 2026",
+   "big": "95.6%",
+   "text": "of villages brought under 5G services",
+   "sub": "42,902 of 44,888 villages",
+   "bars": [
+    {
+     "name": "Bihar",
+     "label": "95.6%",
+     "frac": 0.956
+    },
+    {
+     "name": "India",
+     "label": "57.0%",
+     "frac": 0.57
+    }
+   ],
+   "vo": "Yet 5G service has reached ninety-six of every hundred villages there.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "VILLAGES WITH 5G · 28 FEB 2026",
+   "big": "19.1%",
+   "text": "of villages. Income per person: over 5 times Bihar's.",
+   "sub": "1,945 of 10,203 villages",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "19.1%",
+     "frac": 0.191
+    },
+    {
+     "name": "India",
+     "label": "57.0%",
+     "frac": 0.57
+    }
+   ],
+   "vo": "Telangana: five times the income, 5G in nineteen of a hundred.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across 25 states,",
+    "income and 5G reach",
+    "are only",
+    "*weakly linked.*"
+   ],
+   "vo": "Income and 5G reach are only weakly linked.",
+   "t0": 23.226,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Villages with 5G, *every state*",
+   "sub": "% of villages · India 57.0% · 28 Feb 2026",
+   "note": "Counts villages brought under 5G services. Not speed. Not how many people use it.",
+   "anim": true,
+   "ring": [
+    "Bihar",
+    "Telangana"
+   ],
+   "vo": "Here is every state. This counts villages brought under 5G service, not speed or how many people use it.",
+   "t0": 27.097,
+   "t1": 34.839
+  },
+  {
+   "note": "Counts villages brought under 5G services. Not speed. Not how many people use it.",
+   "ring": [
+    "Bihar",
+    "Telangana"
+   ],
+   "q": "Where does *your state* stand?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where does your state stand?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Meghalaya",
+   "label": "4.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Odisha",
+   "label": "5.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "6.3",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Mizoram",
+   "label": "8.5",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Ladakh",
+   "label": "9.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "10.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Assam",
+   "label": "14.1",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Nagaland",
+   "label": "18.2",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "18.5",
+   "bucket": 1,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "Telangana",
+   "label": "19.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Manipur",
+   "label": "27.5",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "28.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "Tripura",
+   "label": "37.7",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "45.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "49.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Rajasthan",
+   "label": "50.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "50.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "54.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "56.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "57.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Jharkhand",
+   "label": "59.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Karnataka",
+   "label": "65.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Maharashtra",
+   "label": "69.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "74.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Sikkim",
+   "label": "75.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "West Bengal",
+   "label": "75.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Goa",
+   "label": "78.8",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Gujarat",
+   "label": "85.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Punjab",
+   "label": "93.1",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Kerala",
+   "label": "94.4",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.955
+  },
+  {
+   "name": "Bihar",
+   "label": "95.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.076
+  },
+  {
+   "name": "Haryana",
+   "label": "96.8",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.197
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "98.9",
+   "bucket": 4,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "100",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Puducherry",
+   "label": "100",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.56
+  }
+ ],
+ "checked": [
+  "Bihar is the lowest of 25 with data (₹69,321)",
+  "Bihar 95.6 rounds to 96",
+  "India 57 rounds to 57",
+  "Telangana 19.1 rounds to 19",
+  "Telangana / Bihar = 5.59 (at least 5.0)",
+  "rank correlation across 25 states = 0.19"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.328,
+   "at": 0.12,
+   "text": "Bihar: lowest income per person, yet 5G in ninety-six of a hundred villages."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.146,
+   "at": 5.926,
+   "text": "Sixty-nine thousand rupees a year, the lowest of the 25 states and territories with data."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.858,
+   "at": 11.733,
+   "text": "Yet 5G service has reached ninety-six of every hundred villages there."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.328,
+   "at": 17.539,
+   "text": "Telangana: five times the income, 5G in nineteen of a hundred."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.925,
+   "at": 23.346,
+   "text": "Income and 5G reach are only weakly linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 6.269,
+   "at": 27.217,
+   "text": "Here is every state. This counts villages brought under 5G service, not speed or how many people use it."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.828,
+   "at": 34.959,
+   "text": "Where does your state stand?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Bihar: Lowest Income Per Person, 5G in 96 of 100 Villages"
+}

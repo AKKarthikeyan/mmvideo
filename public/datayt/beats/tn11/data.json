@@ -1,0 +1,606 @@
+{
+ "id": "tn11",
+ "type": "then",
+ "chip": "4 YEARS ON",
+ "sourceShort": "MNRE · Lok Sabha, 4 Feb 2026 · Mar 2021 to Mar 2025",
+ "source": "Ministry of New and Renewable Energy, answer to Lok Sabha Unstarred Question 768, 4 February 2026 (Annexure-I): cumulative installed renewable energy capacity of each state and union territory, in megawatts, as on 31 March 2021 and 31 March 2025. Large hydro is included. Each share is of the all-India total printed in the same table.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#E8A33D",
+  "#F0CC96",
+  "#DDD5C8",
+  "#719490",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Rajasthan* added *30%* of India's",
+    "new installed renewable",
+    "capacity, 2021 to 2025."
+   ],
+   "vo": "Rajasthan added thirty percent of India's new installed renewable capacity.",
+   "geo": "Rajasthan",
+   "name": "Rajasthan",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Rajasthan",
+   "name": "Rajasthan",
+   "kicker": "SHARE OF INDIA'S RENEWABLE CAPACITY",
+   "big": "+7.9 points",
+   "p0": {
+    "period": "March 2021",
+    "label": "7.6%",
+    "frac": 0.49089552291441285
+   },
+   "p1": {
+    "period": "March 2025",
+    "label": "15.5%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of India's capacity: *10,812 MW*",
+   "vo": "In March twenty twenty-one: seven point six percent of India's capacity.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Rajasthan",
+   "name": "Rajasthan",
+   "kicker": "SHARE OF INDIA'S RENEWABLE CAPACITY",
+   "big": "+7.9 points",
+   "p0": {
+    "period": "March 2021",
+    "label": "7.6%",
+    "frac": 0.49089552291441285
+   },
+   "p1": {
+    "period": "March 2025",
+    "label": "15.5%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of India's capacity: *34,136 MW*",
+   "vo": "March twenty twenty-five: fifteen point five percent. Thirty-four thousand megawatts.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Rajasthan",
+   "geo": "Rajasthan",
+   "kicker": "INSTALLED CAPACITY · 2021 TO 2025",
+   "big": "3.2×",
+   "text": "Rajasthan's installed renewable capacity",
+   "sub": "India: 142,013 MW to 220,096 MW.",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "label": "3.2×",
+     "frac": 0.7892904872668752
+    },
+    {
+     "name": "India",
+     "label": "1.5×",
+     "frac": 0.38745916647824447
+    }
+   ],
+   "vo": "India's capacity grew one point five times. Rajasthan's, three point two.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Its share rose in *each* of",
+    "the four years: 11.1%, 13.3%,",
+    "14.2%, then *15.5%*."
+   ],
+   "note": "The 30% on the first card: net added, March 2021 to March 2025, 23,324 of 78,084 MW. Includes large hydro. The table shows how much, not why.",
+   "vo": "The share rose in each of the four years.",
+   "t0": 27.097,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Renewable share: *each state's change*",
+   "sub": "points of India's capacity · March 2021 to March 2025",
+   "note": "State totals incl. large hydro. A lower share can come with more MW. Blank: Ladakh (inside J&K in 2021, so J&K's dip is not like for like), A&N, Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "Rajasthan"
+   ],
+   "vo": "How each state's share of installed capacity moved.",
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "share fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.3 points"
+    },
+    {
+     "color": "#034643",
+     "label": "share rose"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "note": "State totals incl. large hydro. A lower share can come with more MW. Blank: Ladakh (inside J&K in 2021, so J&K's dip is not like for like), A&N, Daman and Diu.",
+   "ring": [
+    "Rajasthan"
+   ],
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "share fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 0.3 points"
+    },
+    {
+     "color": "#034643",
+     "label": "share rose"
+    }
+   ],
+   "q": "Which *renewable* is near your home?",
+   "sub": "Solar, wind or hydro?",
+   "kind": "mapend",
+   "vo": "Which renewable is near your home? Solar, wind or hydro?",
+   "t0": 34.839,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Karnataka",
+   "label": "−2.6",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "−2.1",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.375
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "−2.0",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.431
+  },
+  {
+   "name": "Telangana",
+   "label": "−1.3",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.488
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "−1.0",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.545
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "−0.9",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.601
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "−0.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.658
+  },
+  {
+   "name": "Odisha",
+   "label": "−0.6",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.715
+  },
+  {
+   "name": "Sikkim",
+   "label": "−0.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.772
+  },
+  {
+   "name": "Punjab",
+   "label": "−0.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.828
+  },
+  {
+   "name": "West Bengal",
+   "label": "−0.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.885
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "−0.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.942
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "−0.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.998
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "−0.3",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.055
+  },
+  {
+   "name": "Meghalaya",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.112
+  },
+  {
+   "name": "Assam",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.168
+  },
+  {
+   "name": "Manipur",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.225
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.282
+  },
+  {
+   "name": "Bihar",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.339
+  },
+  {
+   "name": "Mizoram",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.395
+  },
+  {
+   "name": "Jharkhand",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.452
+  },
+  {
+   "name": "Tripura",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 32.509
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 32.565
+  },
+  {
+   "name": "Chandigarh",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 32.622
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.679
+  },
+  {
+   "name": "Puducherry",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.735
+  },
+  {
+   "name": "Goa",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.792
+  },
+  {
+   "name": "Kerala",
+   "label": "0.0",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.849
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.906
+  },
+  {
+   "name": "Haryana",
+   "label": "+0.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.962
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+0.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.019
+  },
+  {
+   "name": "Gujarat",
+   "label": "+4.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.076
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+7.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.132
+  }
+ ],
+ "checked": [
+  "Rajasthan: 7.61 in March 2021, 15.51 in March 2025: +7.90, 2.04 times",
+  "years = 4",
+  "7.6% of India's capacity in March 2021 (tenths): 76.14",
+  "15.5% in March 2025 (tenths): 155.10",
+  "10,812 MW in March 2021: 10812.35",
+  "34,136 MW in March 2025: 34136.34",
+  "share doubled: 2.0 to 2.1 times: 2.04",
+  "India 142,013 MW in March 2021: 142012.61",
+  "India 220,096 MW in March 2025: 220096.35",
+  "India's capacity grew one point five times (tenths): 15.50",
+  "Rajasthan's capacity grew three point two times (tenths): 31.57",
+  "Rajasthan added 23,324 MW: 23323.99",
+  "India added 78,084 MW: 78083.74",
+  "Rajasthan added thirty percent of India's new capacity: 29.87",
+  "share in March 2022 was 11.1% (tenths): 111.44",
+  "share in March 2023 was 13.3% (tenths): 132.60",
+  "share in March 2024 was 14.2% (tenths): 142.22",
+  "the rise holds in every year: March 2022 share is at least 3 points above March 2021: 3.53",
+  "a lower share can come with more megawatts: Karnataka's share fell 2 to 3 points: -2.62",
+  "a lower share can come with more megawatts: Karnataka's capacity grew 1.2 to 1.3 times: 1.25",
+  "the rise holds in 2023: March 2023 share is 5 to 6.5 points above March 2021: 5.65",
+  "the rise holds in 2024: March 2024 share is 6 to 7.5 points above March 2021: 6.61",
+  "Ladakh is printed as 0 MW in March 2021 and 136 MW in March 2022: 136.44",
+  "Jammu and Kashmir fell 110 to 140 MW between March 2021 and March 2022 while Ladakh appeared at 136 MW: the 2021 J&K figure includes Ladakh: -125.50",
+  "Jammu and Kashmir's share fell 0.5 to 1.5 points on the map only because of that split: -0.94"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.336,
+   "at": 0.12,
+   "text": "Rajasthan added thirty percent of India's new installed renewable capacity."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.015,
+   "at": 5.926,
+   "text": "In March twenty twenty-one: seven point six percent of India's capacity."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.668,
+   "at": 11.733,
+   "text": "March twenty twenty-five: fifteen point five percent. Thirty-four thousand megawatts."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.955,
+   "at": 19.475,
+   "text": "India's capacity grew one point five times. Rajasthan's, three point two."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.533,
+   "at": 27.217,
+   "text": "The share rose in each of the four years."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.056,
+   "at": 31.088,
+   "text": "How each state's share of installed capacity moved."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.179,
+   "at": 34.959,
+   "text": "Which renewable is near your home? Solar, wind or hydro?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rajasthan: 30% of India's New Installed Renewable Capacity"
+}

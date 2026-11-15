@@ -1,0 +1,569 @@
+{
+ "id": "fa17",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "MoSPI · Labour Force Survey, 2023-24",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office), Periodic Labour Force Survey, annual reports 2017-18 to 2023-24 (July to June; seven rounds): labour force participation rate, usual status (principal and subsidiary), women aged 15 years and above, rural, urban and together. The labour force is people working, seeking or available for work. Survey estimates; Chandigarh has no rural figure. Later reports are by calendar year (2024, 2025) and are not used here.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Himachal Pradesh*: about",
+    "*2 in 3* women 15+ worked",
+    "or sought work."
+   ],
+   "vo": "In Himachal Pradesh, about two in three women worked or sought work.",
+   "geo": "Himachal Pradesh",
+   "name": "Himachal",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "kicker": "WOMEN IN THE LABOUR FORCE · PLFS",
+   "big": "67.6%",
+   "text": "of women aged 15+ were working or looking for work, 2023-24. India: 42%.",
+   "sub": "Survey estimate. Labour force participation rate, by activity over the past year.",
+   "bars": [
+    {
+     "name": "Himachal",
+     "label": "67.6%",
+     "frac": 0.6759999999999999
+    },
+    {
+     "name": "India",
+     "label": "41.7%",
+     "frac": 0.41700000000000004
+    }
+   ],
+   "vo": "Sixty-eight percent of women worked or looked for work. India, forty-two.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "kicker": "RURAL WOMEN, SAME MEASURE · PLFS",
+   "big": "70.2%",
+   "text": "of rural women aged 15+, 2023-24. India's rural figure: 48%.",
+   "sub": "Survey estimate. Urban women: 45% (India's urban: 28%).",
+   "bars": [
+    {
+     "name": "Himachal",
+     "label": "70.2%",
+     "frac": 0.7020000000000001
+    },
+    {
+     "name": "India",
+     "label": "47.6%",
+     "frac": 0.47600000000000003
+    }
+   ],
+   "vo": "Rural women: seventy percent. India's rural women: forty-eight.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "kicker": "SIX YEARS EARLIER · 2017-18",
+   "big": "49.6%",
+   "text": "of women aged 15+, 2017-18. India: 23%.",
+   "sub": "Survey estimate. First annual round of the survey, July 2017 to June 2018.",
+   "bars": [
+    {
+     "name": "Himachal",
+     "label": "49.6%",
+     "frac": 0.496
+    },
+    {
+     "name": "India",
+     "label": "23.3%",
+     "frac": 0.233
+    }
+   ],
+   "vo": "Six years earlier: fifty percent. India, twenty-three.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Top five among states and UTs,",
+    "in each of seven yearly rounds,",
+    "*2017-18* to *2023-24*."
+   ],
+   "vo": "Top five among states and territories, in each of seven annual rounds.",
+   "t0": 25.161,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Women in the labour force, *every state*",
+   "sub": "% of women aged 15+ · India 41.7% · PLFS 2023-24",
+   "note": "Survey estimates. Labour force: people working, seeking or available for work. Small states and territories have small samples. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Himachal Pradesh"
+   ],
+   "vo": "Every state's figure for women in the labour force.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Survey estimates. Labour force: people working, seeking or available for work. Small states and territories have small samples. The table shows how much, not why.",
+   "ring": [
+    "Himachal Pradesh"
+   ],
+   "q": "How many women in *your family* work?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "How many women in your family work?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "17.1",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "18.5",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.359
+  },
+  {
+   "name": "Haryana",
+   "label": "24.2",
+   "bucket": 0,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.465
+  },
+  {
+   "name": "Goa",
+   "label": "29.3",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 33.57
+  },
+  {
+   "name": "Bihar",
+   "label": "30.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.676
+  },
+  {
+   "name": "Chandigarh",
+   "label": "31.0",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 33.782
+  },
+  {
+   "name": "Punjab",
+   "label": "31.1",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.888
+  },
+  {
+   "name": "Puducherry",
+   "label": "34.2",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.993
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "34.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.099
+  },
+  {
+   "name": "Karnataka",
+   "label": "38.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.205
+  },
+  {
+   "name": "Maharashtra",
+   "label": "40.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.31
+  },
+  {
+   "name": "West Bengal",
+   "label": "40.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.416
+  },
+  {
+   "name": "Kerala",
+   "label": "40.8",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.522
+  },
+  {
+   "name": "Mizoram",
+   "label": "41.7",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 34.628
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "43.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.733
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "44.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.839
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "45.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.945
+  },
+  {
+   "name": "Gujarat",
+   "label": "46.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.051
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "46.3",
+   "bucket": 2,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 35.157
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "46.5",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 35.262
+  },
+  {
+   "name": "Telangana",
+   "label": "46.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.368
+  },
+  {
+   "name": "Tripura",
+   "label": "47.1",
+   "bucket": 2,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 35.474
+  },
+  {
+   "name": "Manipur",
+   "label": "48.7",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 35.58
+  },
+  {
+   "name": "Odisha",
+   "label": "49.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.685
+  },
+  {
+   "name": "Jharkhand",
+   "label": "49.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.791
+  },
+  {
+   "name": "Assam",
+   "label": "50.2",
+   "bucket": 3,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 35.897
+  },
+  {
+   "name": "Rajasthan",
+   "label": "50.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.003
+  },
+  {
+   "name": "Ladakh",
+   "label": "51.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.108
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "52.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.214
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "52.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.32
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "59.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.425
+  },
+  {
+   "name": "Nagaland",
+   "label": "64.3",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 36.531
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "66.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.637
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "67.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.743
+  },
+  {
+   "name": "Sikkim",
+   "label": "68.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 36.849
+  },
+  {
+   "name": "Meghalaya",
+   "label": "71.8",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 36.954
+  }
+ ],
+ "checked": [
+  "Himachal Pradesh 67.6 rounds to 68",
+  "India 41.7 rounds to 42",
+  "Himachal Pradesh 70.2 rounds to 70",
+  "India 47.6 rounds to 48",
+  "Himachal Pradesh 45.1 rounds to 45",
+  "India 28 rounds to 28",
+  "Himachal Pradesh 49.6 rounds to 50",
+  "India 23.3 rounds to 23",
+  "Himachal Pradesh / Dadra & Nagar Haveli = 1.25 (at least 1.03)",
+  "Himachal Pradesh / Andhra Pradesh = 1.47 (at least 1.03)",
+  "Himachal Pradesh / Meghalaya = 1.42 (at least 1.03)",
+  "Himachal Pradesh / Nagaland = 1.32 (at least 1.03)",
+  "Himachal Pradesh / Ladakh = 1.42 (at least 1.03)",
+  "Himachal Pradesh / Ladakh = 1.21 (at least 1.03)",
+  "Himachal Pradesh / Chhattisgarh = 1.14 (at least 1.03)",
+  "Himachal Pradesh 20.28 rounds to 20"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.25,
+   "at": 0.12,
+   "text": "In Himachal Pradesh, about two in three women worked or sought work."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 6.635,
+   "at": 5.926,
+   "text": "Sixty-eight percent of women worked or looked for work. India, forty-two."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.276,
+   "at": 13.668,
+   "text": "Rural women: seventy percent. India's rural women: forty-eight."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.414,
+   "at": 19.475,
+   "text": "Six years earlier: fifty percent. India, twenty-three."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.746,
+   "at": 25.281,
+   "text": "Top five among states and territories, in each of seven annual rounds."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.735,
+   "at": 33.023,
+   "text": "Every state's figure for women in the labour force."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 38.83,
+   "text": "How many women in your family work?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Himachal: About 2 in 3 Women Worked or Sought Work, 2023-24"
+}

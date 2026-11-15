@@ -1,0 +1,521 @@
+{
+ "id": "fa07",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "DASD via Commerce Ministry · 2023-24",
+ "source": "Directorate of Arecanut and Spices Development, as given by the Ministry of Commerce and Industry in its reply to Lok Sabha Unstarred Question No. 1570 of 29 July 2025, Annexure-I: production of spices by state, '000 tonnes. The 2023-24 and 2022-23 columns are used; 2024-25 is an advance estimate there and is not used. 31 states and UTs; the list includes garlic and ginger. State totals, not per-person figures.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Madhya Pradesh*: *3.7*",
+    "million tonnes of spices,",
+    "next state *1.4*, 2023-24."
+   ],
+   "vo": "Madhya Pradesh produced three point seven million tonnes of spices.",
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "SPICE PRODUCTION · 2023-24",
+   "big": "29.8%",
+   "text": "of India's spices: 3,725 of 12,484 thousand tonnes. The highest of 31 states and UTs.",
+   "sub": "By weight, per the Directorate of Arecanut and Spices Development; its list includes garlic and ginger. State totals, not per person.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "29.8%",
+     "frac": 0.7459078723467487
+    },
+    {
+     "name": "Gujarat",
+     "label": "11.5%",
+     "frac": 0.28836882590194785
+    }
+   ],
+   "vo": "Twenty-nine point eight percent of India's spices, highest of thirty-one states and territories.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "THE NEXT TWO STATES · 2023-24",
+   "big": "11.5%",
+   "text": "is Gujarat's share, 1,440 thousand tonnes. Andhra Pradesh was close behind, with 1,321.",
+   "sub": "Spice production, 2023-24, thousand tonnes.",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "label": "11.5%",
+     "frac": 0.28836882590194785
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "10.6%",
+     "frac": 0.2646238276894663
+    }
+   ],
+   "vo": "Gujarat and Andhra Pradesh came next: one point four, one point three million.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "THE YEAR BEFORE · 2022-23",
+   "big": "30.2%",
+   "text": "of India's spices: 3,573 of 11,830 thousand tonnes. Andhra Pradesh was next, 1,579.",
+   "sub": "Same Ministry table, the year before. State totals, not per person.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "30.2%",
+     "frac": 0.7551081105686087
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "13.3%",
+     "frac": 0.3335946851761984
+    }
+   ],
+   "vo": "Twenty twenty-two twenty-three: thirty point two percent, again the highest.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Madhya Pradesh* led in each",
+    "year from 2020-21 to 2023-24,",
+    "at least *twice* the next state."
+   ],
+   "vo": "In all four years, Madhya Pradesh was at least twice the next state.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Share of India's spices, *every state*",
+   "sub": "% of India's spice production · 2023-24",
+   "note": "State totals, not per person. Blank: Delhi, Chandigarh, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu (no row).",
+   "anim": true,
+   "ring": [
+    "Madhya Pradesh",
+    "Gujarat"
+   ],
+   "vo": "Spice production across India, as each state's share.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "State totals, not per person. Blank: Delhi, Chandigarh, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu (no row).",
+   "ring": [
+    "Madhya Pradesh",
+    "Gujarat"
+   ],
+   "q": "Which *spice* can't you cook without?",
+   "sub": "Name it below.",
+   "kind": "mapend",
+   "vo": "Which spice can't you cook without? Name it below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Puducherry",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Goa",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Bihar",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "0.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Tripura",
+   "label": "0.2",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Haryana",
+   "label": "0.3",
+   "bucket": 1,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.4",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "0.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Meghalaya",
+   "label": "0.6",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Manipur",
+   "label": "0.7",
+   "bucket": 2,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Jharkhand",
+   "label": "0.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Mizoram",
+   "label": "0.8",
+   "bucket": 2,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Sikkim",
+   "label": "0.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Punjab",
+   "label": "1.1",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Kerala",
+   "label": "1.2",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "2.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "West Bengal",
+   "label": "2.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "2.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Assam",
+   "label": "3.1",
+   "bucket": 3,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Odisha",
+   "label": "3.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Maharashtra",
+   "label": "4.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Karnataka",
+   "label": "5.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Telangana",
+   "label": "7.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Rajasthan",
+   "label": "8.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "10.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Gujarat",
+   "label": "11.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "29.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.947
+  }
+ ],
+ "checked": [
+  "Madhya Pradesh is the highest of 31 with data (29.8%)",
+  "Madhya Pradesh is the highest of 30 with data (30.2%)",
+  "Madhya Pradesh 3724.7 rounds to 3725",
+  "India 12483.8 rounds to 12484",
+  "Gujarat 1439.97 rounds to 1440",
+  "Andhra Pradesh 1321.4 rounds to 1321",
+  "Rajasthan 1000.5 rounds to 1000",
+  "Madhya Pradesh / Gujarat = 2.59 (at least 2.5)",
+  "Madhya Pradesh / Rajasthan = 2.85 (at least 2.0)",
+  "Madhya Pradesh / Rajasthan = 3.38 (at least 2.0)",
+  "Madhya Pradesh / Andhra Pradesh = 2.26 (at least 2.0)",
+  "Madhya Pradesh / Gujarat = 2.59 (at least 2.0)",
+  "Andhra Pradesh / Rajasthan = 1.32 (at least 1.3)",
+  "Madhya Pradesh 3573.22 rounds to 3573",
+  "India 11830.2 rounds to 11830",
+  "Andhra Pradesh 1578.59 rounds to 1579"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.866,
+   "at": 0.12,
+   "text": "Madhya Pradesh produced three point seven million tonnes of spices."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.955,
+   "at": 5.926,
+   "text": "Twenty-nine point eight percent of India's spices, highest of thirty-one states and territories."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.25,
+   "at": 13.668,
+   "text": "Gujarat and Andhra Pradesh came next: one point four, one point three million."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.067,
+   "at": 19.475,
+   "text": "Twenty twenty-two twenty-three: thirty point two percent, again the highest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.754,
+   "at": 25.281,
+   "text": "In all four years, Madhya Pradesh was at least twice the next state."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.754,
+   "at": 31.088,
+   "text": "Spice production across India, as each state's share."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.265,
+   "at": 36.894,
+   "text": "Which spice can't you cook without? Name it below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4"
+}

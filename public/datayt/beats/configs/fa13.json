@@ -1,0 +1,833 @@
+{
+ "id": "fa13",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "MoSPI · state output by sector · 2023-24",
+ "palette": "E",
+ "state": "Madhya Pradesh",
+ "source": "National Statistics Office, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States 2024-25: gross state value added by economic activity at current prices (base 2011-12), Table 29, agriculture (the table's note: the data pertain to crops), over the state total, Table 25; manufacturing is Table 33. 33 states and UTs have a 2023-24 figure; Gujarat has none. Recent years can be revised. Booked in the state, not what residents earn.",
+ "hook": [
+  "*Madhya Pradesh*: crops *31%*",
+  "of output, *highest* of 33",
+  "states and UTs."
+ ],
+ "hook_vo": "Madhya Pradesh: crops made thirty-one percent of output, the highest.",
+ "facts": [
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "CROPS' SHARE OF OUTPUT · 2023-24",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Tripura"
+   ],
+   "bar_max": 40,
+   "text": "of the state's output (gross value added) came from crops. The highest of {n} states and UTs with data.",
+   "sub": "Current prices. Output booked in the state, not what residents earn. Tripura, next: 24.0%.",
+   "vo": "Thirty-one percent of output from crops. Tripura, next, twenty-four."
+  },
+  {
+   "state": "Uttar Pradesh",
+   "kicker": "SAME MEASURE · UTTAR PRADESH",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Madhya Pradesh"
+   ],
+   "bar_max": 40,
+   "text": "was Uttar Pradesh's crops share in 2023-24. Madhya Pradesh's was *1.9 times* that.",
+   "sub": "Same measure, same year: crops over gross state value added.",
+   "vo": "Uttar Pradesh: sixteen percent. Madhya Pradesh's share was one point nine times that."
+  },
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "TWO YEARS EARLIER · 2021-22",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2021-22"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2021-22"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Tripura"
+   ],
+   "bar_max": 40,
+   "text": "in 2021-22: also the highest, ahead of Tripura. In 2022-23 it was 31.1%, again the highest.",
+   "sub": "Crops' share of gross state value added, current prices.",
+   "vo": "Two years earlier: thirty-two point six percent, also the highest."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Crops added *4.2 times* what",
+   "manufacturing added to the",
+   "state's output, 2023-24."
+  ],
+  "vo": "In Madhya Pradesh, crops added four point two times what manufacturing added."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      29,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      25,
+      "2023-24"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "title": "Crops' share of output, *every state*",
+  "sub": "% of gross state value added · 2023-24",
+  "note": "Agriculture here means crops. Blank: Gujarat (no 2023-24 figure; 10.6% in 2022-23), Lakshadweep, Dadra, Nagar Haveli, Daman and Diu (no row).",
+  "ring": [
+   "Madhya Pradesh",
+   "Tripura"
+  ],
+  "vo": "Crops' share of output in every state with data."
+ },
+ "end": {
+  "q": "How big are *crops* in your state?",
+  "sub": "Comment below.",
+  "vo": "How big are crops in your state?"
+ },
+ "yt_title": "Madhya Pradesh: Crops Made 31% of State Output, 2023-24",
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 31
+  },
+  {
+   "kind": "round",
+   "state": "Tripura",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 24
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 16
+  },
+  {
+   "kind": "round",
+   "state": "Tripura",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 240
+  },
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2021-22"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2021-22"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 326
+  },
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2022-23"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2022-23"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 311
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.85
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 0.513
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.85
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 0.513
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.85
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 0.513
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.25
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.25
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.25
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tripura",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        29,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      29,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      33,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 4.15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      33,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      29,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.2353
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       29,
+       "2022-23"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2022-23"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 106
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      29,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      33,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 3.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      29,
+      "2021-22"
+     ]
+    }
+   },
+   "den": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "rbi": [
+      33,
+      "2021-22"
+     ]
+    }
+   },
+   "min": 3.5
+  }
+ ]
+}

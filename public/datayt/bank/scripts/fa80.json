@@ -1,0 +1,1065 @@
+{
+ "id": "fa80",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "MoHFW · Lok Sabha, 24 Jul 2026",
+ "palette": "D",
+ "state": "Telangana",
+ "source": "Ministry of Health and Family Welfare, Lok Sabha Unstarred Question 1099 of 24 July 2026, Annexure-I: MBBS seats in medical colleges by state and UT, academic years 2023-24 to 2025-26 (2025-26 matches Question 5700 of 27 March 2026). No total is printed: all-India is the sum of the 33 rows (1,28,799 in 2025-26). Population: National Commission on Population projections, 1 March 2024 to 2026. Seat lists change yearly.",
+ "hook": [
+  "*Telangana* had *2.7 times*",
+  "India's MBBS seats per lakh",
+  "people (projected), 2025-26."
+ ],
+ "hook_vo": "Telangana had two point seven times India's seats per lakh.",
+ "facts": [
+  {
+   "state": "Telangana",
+   "kicker": "MBBS SEATS PER LAKH PEOPLE",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       2
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "MBBS seats for every lakh people in Telangana, 2025-26. India: 9.0.",
+   "sub": "1 lakh = 100,000. Seats in medical colleges, 2025-26, over projected population, 1 Mar 2026.",
+   "vo": "Telangana had twenty-five MBBS seats per lakh people. India had nine."
+  },
+  {
+   "state": "Karnataka",
+   "kicker": "MORE SEATS, FEWER PER LAKH",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       2
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "Telangana"
+   ],
+   "bar_max": 30,
+   "text": "per lakh in Karnataka, which has 46% more seats in all (13,944). Telangana: 24.7.",
+   "sub": "Telangana's rate is 22% higher. Seats in all, 2025-26: Karnataka 13,944; Telangana 9,540.",
+   "vo": "Karnataka has more seats in all: twenty per lakh people."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "TWO YEARS EARLIER · 2023-24",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "per lakh in 2023-24, also 2.85 times India's 7.8. In 2024-25 it was 23.6, 2.83 times.",
+   "sub": "Same measure, same list: seats in the academic year over projected population on 1 March 2024.",
+   "vo": "Two years earlier: twenty-two per lakh, and India's was seven point eight."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       2
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 25
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       2
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 9
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U1099#1",
+       2
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 20
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "ls": [
+     "ls18-s8-U1099#1",
+     2
+    ]
+   },
+   "equals": 9540
+  },
+  {
+   "kind": "round",
+   "state": "Karnataka",
+   "data": {
+    "ls": [
+     "ls18-s8-U1099#1",
+     2
+    ]
+   },
+   "equals": 13944
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Karnataka",
+    "data": {
+     "ls": [
+      "ls18-s8-U1099#1",
+      2
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "ls": [
+      "ls18-s8-U1099#1",
+      2
+     ]
+    }
+   },
+   "min": 1.4
+  }
+ ],
+ "so": {
+  "lines": [
+   "Telangana, 2025-26:",
+   "*7.4* of every 100 MBBS seats",
+   "*2.7* of every 100 people"
+  ],
+  "note": "Seats: Lok Sabha answer of 24 July 2026. People: projected, 1 March 2026. The table shows how much, not why.",
+  "vo": "Telangana: seven point four percent of seats, two point seven percent of people."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "ls": [
+      "ls18-s8-U1099#1",
+      2
+     ],
+     "sum": true
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "dec": 1,
+  "title": "MBBS seats per lakh, *every state*",
+  "sub": "per lakh projected population · India {india} · 2025-26",
+  "note": "Seats in medical colleges. Puducherry's 106.6 is a small base. Blank: Ladakh, Lakshadweep, Dadra and Nagar Haveli and Daman and Diu (not listed).",
+  "ring": [
+   "Telangana",
+   "Karnataka"
+  ],
+  "vo": "Here is every state: MBBS seats per lakh people."
+ },
+ "end": {
+  "q": "Who in your family became a *doctor*?",
+  "sub": "Comment below.",
+  "vo": "Who in your family became a doctor?"
+ },
+ "tests": [
+  {
+   "says": "Telangana 24.7 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 247
+  },
+  {
+   "says": "India 9.0 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 90
+  },
+  {
+   "says": "Telangana is 2.7 times India's rate (hook, title)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 27
+  },
+  {
+   "says": "Karnataka 20.2 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 202
+  },
+  {
+   "says": "Karnataka has 46% more seats in all than Telangana",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        2
+       ]
+      },
+      "state": "Telangana"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 146
+  },
+  {
+   "says": "Karnataka has more seats in all in 2023-24 too",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        0
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        0
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 1.3,
+   "max": 1.5
+  },
+  {
+   "says": "Karnataka has more seats in all in 2024-25 too",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        1
+       ]
+      },
+      "state": "Karnataka"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s8-U1099#1",
+        1
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 1.3,
+   "max": 1.5
+  },
+  {
+   "says": "Telangana's rate is 22% higher than Karnataka's",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Karnataka"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 122
+  },
+  {
+   "says": "Telangana's rate is higher than Karnataka's in 2024-25 too",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.2,
+   "max": 1.4
+  },
+  {
+   "says": "Telangana's rate is higher than Karnataka's in 2023-24 too",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Karnataka"
+     }
+    ]
+   },
+   "min": 1.2,
+   "max": 1.4
+  },
+  {
+   "says": "2023-24: Telangana 22.2 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        0
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 222
+  },
+  {
+   "says": "2023-24: Telangana twenty-two (voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        0
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 22
+  },
+  {
+   "says": "2023-24: India 7.8 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        0
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 78
+  },
+  {
+   "says": "2023-24: Telangana is 2.85 times India's (hundredths; 22.2 over the printed 7.8 is 2.85 too)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 285
+  },
+  {
+   "says": "2024-25: Telangana 23.6 per lakh (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "ls": [
+        "ls18-s8-U1099#1",
+        1
+       ],
+       "sum": true
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2025"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 236
+  },
+  {
+   "says": "2024-25: Telangana is 2.83 times India's (hundredths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 283
+  },
+  {
+   "says": "Telangana holds 7.4% of India's MBBS seats, 2025-26 (tenths)",
+   "value": {
+    "share": {
+     "ls": [
+      "ls18-s8-U1099#1",
+      2
+     ],
+     "sum": true
+    },
+    "scale": 10
+   },
+   "equals": 74
+  },
+  {
+   "says": "Telangana holds 2.7% of India's projected people, 1 March 2026 (tenths)",
+   "value": {
+    "share": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 27
+  },
+  {
+   "says": "India's 2025-26 seats sum to 1,28,799",
+   "value": {
+    "data": {
+     "ls": [
+      "ls18-s8-U1099#1",
+      2
+     ],
+     "sum": true
+    },
+    "state": "India"
+   },
+   "equals": 128799
+  },
+  {
+   "says": "2025-26: Telangana is more than 2.5 times India's rate",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          2
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2026"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 3.2
+  },
+  {
+   "says": "2024-25: Telangana is more than 2.5 times India's rate",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          1
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2025"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 3.2
+  },
+  {
+   "says": "2023-24: Telangana is more than 2.5 times India's rate",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "ls": [
+          "ls18-s8-U1099#1",
+          0
+         ],
+         "sum": true
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 3.2
+  }
+ ],
+ "yt_title": "Telangana: 2.7x India's MBBS Seats per Lakh People, 2025-26"
+}

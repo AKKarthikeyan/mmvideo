@@ -1,0 +1,465 @@
+{
+ "id": "tn21",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "A",
+ "state": "Uttar Pradesh",
+ "points": [
+  {
+   "data": {
+    "minus": [
+     {
+      "nfhs": 15,
+      "col": 3
+     },
+     {
+      "nfhs": 14,
+      "col": 3
+     }
+    ]
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "minus": [
+     {
+      "nfhs": 15
+     },
+     {
+      "nfhs": 14
+     }
+    ]
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "",
+ "delta": "points",
+ "kicker": "EVER USED THE INTERNET: MEN'S LEAD",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women and men aged 15 to 49 who have ever used the internet. The gap is the men's share minus the women's share, in percentage points. Survey estimates. Manipur has no NFHS-6 fact sheet yet; Lakshadweep (small sample) is not shown.",
+ "hook": [
+  "*Uttar Pradesh*: men's",
+  "internet lead over women",
+  "fell *28.5* to *11.0* points."
+ ],
+ "hook_vo": "In Uttar Pradesh, the internet gap between men and women shrank sharply.",
+ "then": {
+  "text": "points. Men 59.1%, women 30.6%, aged 15 to 49.",
+  "vo": "Earlier survey: men led women by twenty-eight and a half points."
+ },
+ "now": {
+  "text": "points. Men 81.0%, women 70.0%, aged 15 to 49.",
+  "vo": "Next survey: eleven points. Men eighty-one percent, women seventy."
+ },
+ "facts": [
+  {
+   "kicker": "WHO ROSE MORE, IN POINTS",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "unit": "",
+   "text": "points: women's rise in internet use. Men's rise: 21.9.",
+   "bars": [
+    {
+     "name": "Women",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 14
+       }
+      },
+      {
+       "data": {
+        "nfhs": 14,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "Men",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 15
+       }
+      },
+      {
+       "data": {
+        "nfhs": 15,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Percentage points between the two surveys.",
+   "vo": "Women's internet use rose thirty-nine points. Men's rose twenty-two."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "India's women rose *31.0* points.",
+    "Uttar Pradesh's rose *39.4*,",
+    "about *a quarter* more."
+   ],
+   "note": "Women aged 15 to 49 who have ever used the internet. Survey estimates. The table shows how much, not why.",
+   "vo": "India's women rose thirty-one points. Uttar Pradesh's rose about a quarter more."
+  }
+ ],
+ "tests": [
+  {
+   "says": "women 30.6% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 14,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 306
+  },
+  {
+   "says": "men 59.1% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 15,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 591
+  },
+  {
+   "says": "the gap was 28.5 points in NFHS-5 (tenths): twenty-eight and a half",
+   "value": {
+    "data": {
+     "minus": [
+      {
+       "nfhs": 15,
+       "col": 3
+      },
+      {
+       "nfhs": 14,
+       "col": 3
+      }
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 285
+  },
+  {
+   "says": "women 70.0% in NFHS-6 (tenths); seventy",
+   "value": {
+    "data": {
+     "nfhs": 14
+    },
+    "scale": 10
+   },
+   "equals": 700
+  },
+  {
+   "says": "men 81.0% in NFHS-6 (tenths); eighty-one",
+   "value": {
+    "data": {
+     "nfhs": 15
+    },
+    "scale": 10
+   },
+   "equals": 810
+  },
+  {
+   "says": "eighty-one percent of men in NFHS-6",
+   "value": {
+    "data": {
+     "nfhs": 15
+    }
+   },
+   "equals": 81
+  },
+  {
+   "says": "seventy percent of women in NFHS-6",
+   "value": {
+    "data": {
+     "nfhs": 14
+    }
+   },
+   "equals": 70
+  },
+  {
+   "says": "the gap was 11.0 points in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "minus": [
+      {
+       "nfhs": 15
+      },
+      {
+       "nfhs": 14
+      }
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 110
+  },
+  {
+   "says": "eleven points",
+   "value": {
+    "data": {
+     "minus": [
+      {
+       "nfhs": 15
+      },
+      {
+       "nfhs": 14
+      }
+     ]
+    }
+   },
+   "equals": 11
+  },
+  {
+   "says": "the gap fell 17.5 points, the figure on the card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "minus": [
+        {
+         "nfhs": 15,
+         "col": 3
+        },
+        {
+         "nfhs": 14,
+         "col": 3
+        }
+       ]
+      }
+     },
+     {
+      "data": {
+       "minus": [
+        {
+         "nfhs": 15
+        },
+        {
+         "nfhs": 14
+        }
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 175
+  },
+  {
+   "says": "women's use rose 39.4 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 394
+  },
+  {
+   "says": "women's use rose thirty-nine points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      }
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 39
+  },
+  {
+   "says": "men's use rose 21.9 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 15
+      }
+     },
+     {
+      "data": {
+       "nfhs": 15,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 219
+  },
+  {
+   "says": "men's use rose twenty-two points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 15
+      }
+     },
+     {
+      "data": {
+       "nfhs": 15,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 22
+  },
+  {
+   "says": "India's women: 33.3% to 64.3%, a rise of 31.0 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 310
+  },
+  {
+   "says": "India's women rose thirty-one points",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 14
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 14,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 31
+  },
+  {
+   "says": "Uttar Pradesh's women rose 39.4 points, about a quarter more than India's 31.0: 1.22 to 1.32 times",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 14
+        }
+       },
+       {
+        "data": {
+         "nfhs": 14,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 14
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 14,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.22,
+   "max": 1.32
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -12,
+   -3,
+   3,
+   8
+  ],
+  "title": "Men-women internet gap: *each state's change*",
+  "sub": "percentage points · darker = bigger change",
+  "note": "Survey estimates. A wider gap can come with more women using the internet. Blank: Goa, Sikkim, Ladakh, Mizoram (women not behind in NFHS-5), Manipur, Lakshadweep.",
+  "vo": "Here is how the gap changed in every state.",
+  "key": [
+   "gap narrowed",
+   "within 3 points",
+   "gap widened"
+  ]
+ },
+ "end": {
+  "q": "Has *your state* closed the gap?",
+  "sub": "Find it on the map.",
+  "vo": "Has your state closed the gap?"
+ },
+ "yt_title": "UP: Men's Lead in Ever Using the Internet, 28.5 to 11 Points"
+}

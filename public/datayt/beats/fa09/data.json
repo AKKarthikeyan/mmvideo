@@ -1,0 +1,565 @@
+{
+ "id": "fa09",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "Textiles Ministry · DGCI&S · 2024-25",
+ "source": "Ministry of Textiles, reply to Lok Sabha Unstarred Question No. 5183 of 24 March 2026, Annexure-1: India's textile and apparel exports including handicrafts, by state, value in Rs. lakh, 2020-21 to 2024-25. Source printed under the table: DGCI&S; the total includes unspecified data. The answer does not mark any year provisional or final. State totals, not per-person figures.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Tamil Nadu*: highest in",
+    "textile, apparel export value,",
+    "*5 years running*, 2024-25."
+   ],
+   "vo": "Tamil Nadu led textile and apparel export value five years running.",
+   "geo": "Tamil Nadu",
+   "name": "Tamil Nadu",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "TEXTILE EXPORT VALUE · 2024-25",
+   "big": "21.2%",
+   "text": "of India's textile and apparel export value, with handicrafts, in 2024-25. The highest of the states listed.",
+   "sub": "Export value from DGCI&S, in a Ministry of Textiles Lok Sabha answer (24 Mar 2026); not marked final. State totals, not per person.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "21.2%",
+     "frac": 0.707855313430214
+    },
+    {
+     "name": "Gujarat",
+     "label": "15.7%",
+     "frac": 0.5230963564957292
+    }
+   ],
+   "vo": "Twenty-one percent of India's textile and apparel exports. Highest of any state.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "THE NEXT STATE · GUJARAT",
+   "big": "15.7%",
+   "text": "is Gujarat's share. Tamil Nadu's exports were 35% above Gujarat's.",
+   "sub": "Export value by state, 2024-25.",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "label": "15.7%",
+     "frac": 0.5230963564957292
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "21.2%",
+     "frac": 0.707855313430214
+    }
+   ],
+   "vo": "Gujarat was next. Tamil Nadu's exports were thirty-five percent above Gujarat's.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "FOUR YEARS EARLIER · 2020-21",
+   "big": "19.7%",
+   "text": "of India's textile and apparel export value in 2020-21: also the highest, ahead of Gujarat.",
+   "sub": "Same table, 2020-21 column.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "19.7%",
+     "frac": 0.6561231437986415
+    },
+    {
+     "name": "Gujarat",
+     "label": "16.1%",
+     "frac": 0.5357952016938904
+    }
+   ],
+   "vo": "Four years earlier: nineteen point seven percent.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Tamil Nadu* led Gujarat by",
+    "*at least 18%* in every year,",
+    "2020-21 to 2024-25."
+   ],
+   "vo": "Tamil Nadu stayed at least eighteen percent ahead of Gujarat in every year.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Textile export value, *every state*",
+   "sub": "% of India's textile and apparel export value · 2024-25",
+   "note": "State totals, not per person. Handicrafts included. Export value, 2024-25; the answer does not mark it final.",
+   "anim": true,
+   "ring": [
+    "Tamil Nadu",
+    "Gujarat"
+   ],
+   "vo": "Textile and apparel exports from every state. Find yours.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "State totals, not per person. Handicrafts included. Export value, 2024-25; the answer does not mark it final.",
+   "ring": [
+    "Tamil Nadu",
+    "Gujarat"
+   ],
+   "q": "Where was your *shirt* made?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where was your shirt made?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Mizoram",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.488
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.594
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.699
+  },
+  {
+   "name": "Manipur",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 29.805
+  },
+  {
+   "name": "Sikkim",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.911
+  },
+  {
+   "name": "Tripura",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.017
+  },
+  {
+   "name": "Meghalaya",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.122
+  },
+  {
+   "name": "Nagaland",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.228
+  },
+  {
+   "name": "Ladakh",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.334
+  },
+  {
+   "name": "Assam",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.44
+  },
+  {
+   "name": "Goa",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.545
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.651
+  },
+  {
+   "name": "Chandigarh",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.757
+  },
+  {
+   "name": "Puducherry",
+   "label": "0.0",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.863
+  },
+  {
+   "name": "Jharkhand",
+   "label": "0.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.968
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "0.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.074
+  },
+  {
+   "name": "Bihar",
+   "label": "0.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.18
+  },
+  {
+   "name": "Odisha",
+   "label": "0.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "0.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.391
+  },
+  {
+   "name": "Telangana",
+   "label": "0.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.497
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "0.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.603
+  },
+  {
+   "name": "Kerala",
+   "label": "1.2",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.709
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "1.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.814
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "2.0",
+   "bucket": 3,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 31.92
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "2.9",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.026
+  },
+  {
+   "name": "West Bengal",
+   "label": "3.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.132
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "3.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.237
+  },
+  {
+   "name": "Punjab",
+   "label": "3.7",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.343
+  },
+  {
+   "name": "Rajasthan",
+   "label": "4.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.449
+  },
+  {
+   "name": "Karnataka",
+   "label": "7.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.554
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "10.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.66
+  },
+  {
+   "name": "Maharashtra",
+   "label": "10.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.766
+  },
+  {
+   "name": "Haryana",
+   "label": "10.9",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.872
+  },
+  {
+   "name": "Gujarat",
+   "label": "15.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.977
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "21.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.083
+  }
+ ],
+ "checked": [
+  "Tamil Nadu is the highest of 34 with data (21.2%)",
+  "Tamil Nadu is the highest of 34 with data (19.7%)",
+  "Gujarat / Haryana = 1.44 (at least 1.4)",
+  "Tamil Nadu / Gujarat = 1.35 (at least 1.345)",
+  "Gujarat / Tamil Nadu = 0.74 (at least 0.738)",
+  "Tamil Nadu / Gujarat = 1.22 (at least 1.18)",
+  "Tamil Nadu / Gujarat = 1.19 (at least 1.18)",
+  "Tamil Nadu / Gujarat = 1.59 (at least 1.18)",
+  "Tamil Nadu / Gujarat = 1.25 (at least 1.18)",
+  "Tamil Nadu / Gujarat = 1.35 (at least 1.18)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.735,
+   "at": 0.12,
+   "text": "Tamil Nadu led textile and apparel export value five years running."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.623,
+   "at": 5.926,
+   "text": "Twenty-one percent of India's textile and apparel exports. Highest of any state."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.407,
+   "at": 11.733,
+   "text": "Gujarat was next. Tamil Nadu's exports were thirty-five percent above Gujarat's."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.395,
+   "at": 19.475,
+   "text": "Four years earlier: nineteen point seven percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.866,
+   "at": 23.346,
+   "text": "Tamil Nadu stayed at least eighteen percent ahead of Gujarat in every year."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 29.152,
+   "text": "Textile and apparel exports from every state. Find yours."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.567,
+   "at": 34.959,
+   "text": "Where was your shirt made?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Tamil Nadu: Highest Textile Export Value 5 Years Running"
+}

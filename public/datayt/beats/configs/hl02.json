@@ -1,0 +1,115 @@
+{
+ "id": "hl02",
+ "type": "pick",
+ "rules": 2,
+ "chip": "WHICH IS HIGHER?",
+ "source_short": "RBI Handbook · 2023-25 · crops: final estimates",
+ "palette": "A",
+ "think": 0.8,
+ "source": "RBI Handbook of Statistics on Indian States. Bank credit to agriculture outstanding, March 2025: Reserve Bank of India (Table 157). Forest cover, ISFR 2023: Forest Survey of India (Table 99, no normalisation factor). Foodgrains, 2024-25 final estimates: Ministry of Agriculture and Farmers' Welfare (Table 62). Foreign tourist visits reported by states, 2024: Ministry of Tourism (Table 182). State totals, not per person.",
+ "rounds": [
+  {
+   "pair": [
+    "Rajasthan",
+    "West Bengal"
+   ],
+   "data": {
+    "rbi": [
+     182,
+     "2024"
+    ]
+   },
+   "scale": 1,
+   "q": [
+    "Which state had more",
+    "*foreign tourist visits?*"
+   ],
+   "measure": "Foreign tourist visits reported by states, 2024, lakh",
+   "says": [
+    1.45,
+    1.55
+   ],
+   "ask": "Foreign tourist visits: Rajasthan or West Bengal?",
+   "tell": "West Bengal. One and a half times."
+  },
+  {
+   "pair": [
+    "Haryana",
+    "Odisha"
+   ],
+   "data": {
+    "rbi": [
+     62,
+     "2024-25"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state grew",
+    "*more foodgrains?*"
+   ],
+   "measure": "Foodgrains production, 2024-25, million tonnes",
+   "says": [
+    1.8,
+    1.84
+   ],
+   "ask": "Foodgrains: Haryana or Odisha?",
+   "tell": "Haryana. Over eighty percent more."
+  },
+  {
+   "pair": [
+    "West Bengal",
+    "Kerala"
+   ],
+   "data": {
+    "rbi": [
+     157,
+     "2025"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state had more bank",
+    "*credit to agriculture?*"
+   ],
+   "measure": "Bank credit to agriculture, Mar 2025, ₹ '000 crore",
+   "says": [
+    2.05,
+    2.15
+   ],
+   "ask": "Bank credit to agriculture: West Bengal or Kerala?",
+   "tell": "Kerala. Just over double."
+  },
+  {
+   "pair": [
+    "Arunachal Pradesh",
+    "Maharashtra"
+   ],
+   "data": {
+    "rbi": [
+     99,
+     "2023*"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state had more",
+    "*forest cover?*"
+   ],
+   "measure": "Forest cover, ISFR 2023, thousand sq km",
+   "says": [
+    1.28,
+    1.31
+   ],
+   "ask": "Forest cover: Arunachal Pradesh or Maharashtra?",
+   "tell": "Arunachal Pradesh. About thirty percent more."
+  }
+ ],
+ "end": {
+  "q": "Which pair *surprised* you most?",
+  "sub": "Score yourself out of four.",
+  "note": "State totals, not per person. Years differ by round.",
+  "vo": "Which pair surprised you most?"
+ },
+ "yt_title": "Rajasthan or West Bengal: Foreign Tourist Visits? 4 Rounds"
+}

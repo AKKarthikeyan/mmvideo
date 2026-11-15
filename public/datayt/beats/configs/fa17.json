@@ -1,0 +1,416 @@
+{
+ "id": "fa17",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "MoSPI · Labour Force Survey, 2023-24",
+ "palette": "C",
+ "state": "Himachal Pradesh",
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office), Periodic Labour Force Survey, annual reports 2017-18 to 2023-24 (July to June; seven rounds): labour force participation rate, usual status (principal and subsidiary), women aged 15 years and above, rural, urban and together. The labour force is people working, seeking or available for work. Survey estimates; Chandigarh has no rural figure. Later reports are by calendar year (2024, 2025) and are not used here.",
+ "hook": [
+  "*Himachal Pradesh*: about",
+  "*2 in 3* women 15+ worked",
+  "or sought work."
+ ],
+ "hook_vo": "In Himachal Pradesh, about two in three women worked or sought work.",
+ "facts": [
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "WOMEN IN THE LABOUR FORCE · PLFS",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15+ were working or looking for work, 2023-24. India: 42%.",
+   "sub": "Survey estimate. Labour force participation rate, by activity over the past year.",
+   "vo": "Sixty-eight percent of women worked or looked for work. India, forty-two."
+  },
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "RURAL WOMEN, SAME MEASURE · PLFS",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of rural women aged 15+, 2023-24. India's rural figure: 48%.",
+   "sub": "Survey estimate. Urban women: 45% (India's urban: 28%).",
+   "vo": "Rural women: seventy percent. India's rural women: forty-eight."
+  },
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "SIX YEARS EARLIER · 2017-18",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2017-18",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women aged 15+, 2017-18. India: 23%.",
+   "sub": "Survey estimate. First annual round of the survey, July 2017 to June 2018.",
+   "vo": "Six years earlier: fifty percent. India, twenty-three."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 68
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 42
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "equals": 70
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "equals": 48
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "urban",
+     "female"
+    ]
+   },
+   "equals": 45
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "urban",
+     "female"
+    ]
+   },
+   "equals": 28
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2017-18",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 50
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2017-18",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "equals": 23
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Dadra & Nagar Haveli",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2018-19",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2018-19",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2019-20",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Meghalaya",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2019-20",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2020-21",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Nagaland",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2020-21",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Ladakh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Ladakh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2022-23",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "min": 1.03
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "add": [
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "rural + urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 0.3
+   },
+   "equals": 20
+  }
+ ],
+ "so": {
+  "lines": [
+   "Top five among states and UTs,",
+   "in each of seven yearly rounds,",
+   "*2017-18* to *2023-24*."
+  ],
+  "vo": "Top five among states and territories, in each of seven annual rounds."
+ },
+ "map": {
+  "data": {
+   "plfs": [
+    "LFPR",
+    "2023-24",
+    "rural + urban",
+    "female"
+   ]
+  },
+  "unit": "%",
+  "title": "Women in the labour force, *every state*",
+  "sub": "% of women aged 15+ · India {india} · PLFS 2023-24",
+  "note": "Survey estimates. Labour force: people working, seeking or available for work. Small states and territories have small samples. The table shows how much, not why.",
+  "ring": [
+   "Himachal Pradesh"
+  ],
+  "vo": "Every state's figure for women in the labour force."
+ },
+ "end": {
+  "q": "How many women in *your family* work?",
+  "sub": "Comment below.",
+  "vo": "How many women in your family work?"
+ },
+ "yt_title": "Himachal: About 2 in 3 Women Worked or Sought Work, 2023-24"
+}

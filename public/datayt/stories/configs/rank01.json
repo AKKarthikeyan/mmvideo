@@ -1,0 +1,56 @@
+{
+ "id": "rank01",
+ "type": "ranking",
+ "chip": "RANKED",
+ "source_short": "PLFS · 2025",
+ "unit": "%",
+ "source": "MoSPI (NSO), Periodic Labour Force Survey, calendar year 2025. Unemployment rate, age 15 and above, usual status, rural and urban together.",
+ "data": {
+  "plfs": [
+   "UR",
+   "2025",
+   "rural + urban",
+   "person"
+  ]
+ },
+ "palette": "D",
+ "min_lead": 1.0,
+ "title": [
+  "Where is",
+  "*unemployment*",
+  "highest in India?"
+ ],
+ "title_sub": "Every state and UT, ranked.",
+ "headline": [
+  "Unemployment rate,",
+  "*every state ranked*"
+ ],
+ "sub": "Age 15+, usual status · India 3.1%",
+ "panels": {
+  "map": {
+   "kicker": "From the lowest rate to the highest",
+   "line": "36 states and UTs, *mapped.*"
+  },
+  "top": {
+   "kicker": "Highest unemployment",
+   "line": "Top 5"
+  },
+  "bottom": {
+   "kicker": "Lowest unemployment",
+   "line": "Bottom 5"
+  }
+ },
+ "focus": {},
+ "end": {
+  "q": "Where does your state rank?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Unemployment rate: every Indian state ranked 📊",
+ "vo": {
+  "title": "Where is unemployment highest in India?",
+  "map": "Here is every state and union territory, from the lowest rate to the highest.",
+  "top": "Highest: Andaman and Nicobar, at 10 percent. Then Goa, at 8.3.",
+  "bottom": "Lowest: Gujarat, at 0.9 percent. The India rate is 3.1.",
+  "end": "Where does your state rank? Comment below."
+ }
+}

@@ -1,0 +1,400 @@
+{
+ "id": "fa35",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Min. of Finance · Lok Sabha, 10 Aug 2026",
+ "palette": "A",
+ "state": "Tamil Nadu",
+ "source": "Ministry of Finance, Lok Sabha unstarred question 3648, 10 Aug 2026, Annexure I: gold loans outstanding (the loan book, not bad loans) at public sector banks, by state, 31 March 2026, as reported by the banks. The RBI keeps no state figure; private banks and finance companies are excluded. The answer prints no total: shares are of the state rows (two small UT rows, ₹192 crore, are left out). People: projected population, 1 March 2026, National Commission on Population (July 2020 edition). Rupees, not weight of gold.",
+ "hook": [
+  "*Tamil Nadu*: 5% of people,",
+  "*36%* of public-sector-bank",
+  "gold loans, March 2026."
+ ],
+ "hook_vo": "Tamil Nadu has five percent of people, thirty-six percent of public-bank gold loans.",
+ "facts": [
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SHARE OF PUBLIC-BANK GOLD LOANS",
+   "data": {
+    "ls": [
+     "ls18-s8-U3648#1",
+     0
+    ],
+    "sum": true
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 50,
+   "text": "of the gold loans outstanding at public-sector banks, 31 March 2026.",
+   "sub": "Loans outstanding, not bad loans. Public-sector banks only; the RBI keeps no state figures.",
+   "vo": "Public bank gold loans: thirty-six percent in Tamil Nadu, twenty in Andhra Pradesh."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S PEOPLE",
+   "data": {
+    "tbl": [
+     "population/projected",
+     "2026"
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 50,
+   "text": "of India's people, by projected population on 1 March 2026.",
+   "sub": "Projected population, National Commission on Population (July 2020 report).",
+   "vo": "Its share of India's people was five point four percent."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "GOLD LOANS PER PERSON · ₹",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "unit": "₹",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 60000,
+   "text": "of public-bank gold loans reported for Tamil Nadu, per person. India: about ₹7,900.",
+   "sub": "Loans divided by projected population. Rupees outstanding, not weight of gold.",
+   "vo": "That is fifty-three thousand rupees a person. India, eight thousand."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "ls": [
+     "ls18-s8-U3648#1",
+     0
+    ],
+    "sum": true
+   },
+   "equals": 411656
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s8-U3648#1",
+     0
+    ],
+    "sum": true
+   },
+   "equals": 1131719
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "ls": [
+     "ls18-s8-U3648#1",
+     0
+    ],
+    "sum": true
+   },
+   "equals": 222953
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "ls": [
+     "ls18-s8-U3648#1",
+     0
+    ],
+    "sum": true
+   },
+   "equals": 83657
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "tbl": [
+     "population/projected",
+     "2026"
+    ]
+   },
+   "equals": 77546
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "tbl": [
+     "population/projected",
+     "2026"
+    ]
+   },
+   "equals": 1425908
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "tbl": [
+     "population/projected",
+     "2026"
+    ]
+   },
+   "equals": 53709
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 53
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 8
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 53085
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 10000
+   },
+   "equals": 7937
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s8-U3648#1",
+      0
+     ],
+     "sum": true
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "ls": [
+      "ls18-s8-U3648#1",
+      0
+     ],
+     "sum": true
+    }
+   },
+   "min": 4.9
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   },
+   "min": 2.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s8-U3648#1",
+      0
+     ],
+     "sum": true
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s8-U3648#1",
+      0
+     ],
+     "sum": true
+    }
+   },
+   "min": 1.8
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "ls": [
+       "ls18-s8-U3648#1",
+       0
+      ],
+      "sum": true
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 79
+  }
+ ],
+ "so": {
+  "lines": [
+   "Against Kerala: Tamil Nadu has",
+   "*4.9 times* the gold loans,",
+   "*2.1 times* the people."
+  ],
+  "vo": "Four point nine times Kerala's loans, two point one times its people."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "ls": [
+      "ls18-s8-U3648#1",
+      0
+     ],
+     "sum": true
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   ],
+   "scale": 10000
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Gold loans per person: *every state*",
+  "sub": "₹ per person · India about 7,900 · 31 March 2026",
+  "note": "Public-sector banks only. Projected population. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+  "ring": [
+   "Tamil Nadu",
+   "Andhra Pradesh"
+  ],
+  "vo": "Here is every state: public bank gold loans for each person."
+ },
+ "end": {
+  "q": "Does your family *pledge gold*?",
+  "sub": "Comment below.",
+  "vo": "Does your family pledge gold?"
+ },
+ "yt_title": "Tamil Nadu: 5% of People, 36% of Public Bank Gold Loans"
+}

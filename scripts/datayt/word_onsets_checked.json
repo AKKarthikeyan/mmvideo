@@ -1,0 +1,143 @@
+{
+ "note": "Onsets of every spoken number in the 11 national stories, read by eye (26 Oct 2026) off 1600 px/s spectrograms of the existing narration (pre-emphasised, 6 ms window) with the 2.5 ms energy, 80-1000 Hz and 2.5-8 kHz curves drawn under them. Seconds from the start of the line's mp3 (line-local); key = '<story>|<line index>|<index of the number's first word in the line>'. For a sound shared by two words (was zero, rose zero, on nine) the reading is the middle of the shared sound. word_times.py --check fails if any lock frame is not 0-3 frames after its reading.",
+ "onsets": {
+  "gd01|0|3": 1.157,
+  "gd01|1|4": 2.085,
+  "gd01|2|4": 1.628,
+  "gd01|3|1": 0.555,
+  "gd01|4|3": 2.485,
+  "gd01|5|4": 1.913,
+  "cw01|0|4": 1.095,
+  "cw01|1|6": 2.717,
+  "cw01|2|7": 2.4875,
+  "cw01|3|5": 1.525,
+  "cw01|4|4": 1.948,
+  "cw01|5|7": 2.165,
+  "fm02|0|4": 1.542,
+  "fm02|0|7": 2.343,
+  "fm02|0|10": 3.42,
+  "fm02|1|1": 0.445,
+  "fm02|1|8": 2.778,
+  "fm02|1|10": 3.35,
+  "fm02|2|4": 1.858,
+  "fm02|2|8": 3.555,
+  "fm02|3|4": 2.458,
+  "fm02|3|7": 3.528,
+  "fm02|4|4": 1.397,
+  "fm02|5|2": 0.84,
+  "fm03|0|0": 0.182,
+  "fm03|0|7": 3.215,
+  "fm03|1|1": 0.672,
+  "fm03|1|5": 2.62,
+  "fm03|2|1": 0.598,
+  "fm03|3|2": 0.453,
+  "fm03|4|4": 1.952,
+  "fm03|4|10": 4.388,
+  "fm04|0|5": 2.535,
+  "fm04|1|3": 0.877,
+  "fm04|2|1": 0.973,
+  "fm04|3|6": 3.885,
+  "fm04|4|2": 2.291,
+  "fm05|0|4": 1.3,
+  "fm05|2|0": 0.133,
+  "fm05|2|3": 1.28,
+  "fm05|2|6": 2.165,
+  "fm05|2|10": 3.246,
+  "fm05|3|3": 1.315,
+  "fm05|4|0": 0.172,
+  "fm05|4|5": 1.8,
+  "fm05|6|4": 0.654,
+  "fm01|0|4": 1.74,
+  "fm01|1|0": 0.09,
+  "fm01|1|7": 2.98,
+  "fm01|2|3": 0.71,
+  "fm01|3|5": 2.4,
+  "fs01|0|7": 2.708,
+  "fs01|1|2": 0.866,
+  "fs01|1|9": 3.297,
+  "fs01|2|8": 4.425,
+  "fs01|3|2": 1.24,
+  "fs01|3|8": 3.5,
+  "fs01|4|3": 1.54,
+  "fs02|0|3": 1.085,
+  "fs02|0|8": 3.003,
+  "fs02|1|9": 5.505,
+  "fs02|2|3": 1.615,
+  "fs02|3|2": 0.841,
+  "fs02|3|7": 3.11,
+  "fs02|3|9": 4.215,
+  "fs02|4|4": 1.532,
+  "fs03|0|4": 1.665,
+  "fs03|1|7": 2.648,
+  "fs03|2|3": 1.18,
+  "fs03|2|9": 3.583,
+  "fs03|3|3": 1.275,
+  "fs03|3|9": 3.895,
+  "fs03|4|6": 1.9,
+  "fs04|0|3": 1.005,
+  "fs04|0|10": 3.788,
+  "fs04|1|3": 1.565,
+  "fs04|2|3": 1.38,
+  "fs04|2|8": 3.83,
+  "fs04|3|2": 1.195,
+  "fs04|3|7": 4.015
+ },
+ "alternates": {
+  "gd01|0|3": {
+   "s": 1.18,
+   "why": "the /d/ release of 'hold' at 1.157 runs into a short voiced blip; the th frication itself from about 1.18"
+  },
+  "gd01|4|3": {
+   "s": 2.498,
+   "why": "the vowel's strong onset; the first voiced frames at 2.485"
+  },
+  "cw01|0|4": {
+   "s": 1.14,
+   "why": "whisper's start; the n murmur rises out of the /d/ closure of 'held' at about 1.095"
+  },
+  "cw01|2|7": {
+   "s": 2.5125,
+   "why": "critic's reading (valley + 25% rise); the vowel of 'to' has decayed by 2.4875"
+  },
+  "fm02|1|8": {
+   "s": 2.715,
+   "why": "start of the nasal shared by 'on' and 'nine' (2.715-2.84); the onset is its middle"
+  },
+  "fm02|2|8": {
+   "s": 3.475,
+   "why": "start of the hiss shared by 'was' and 'zero' (3.475-3.632); the onset is its middle"
+  },
+  "fm04|1|3": {
+   "s": 0.865,
+   "why": "the /t/ release of 'about'; the /z/ frication grows from 0.877"
+  },
+  "fm05|3|3": {
+   "s": 1.26,
+   "why": "critic's reading; 1.26 is the /d/ release of 'under' (its /er/ formants run 1.263-1.31), the /f/ starts at 1.315"
+  },
+  "fm01|1|0": {
+   "s": 0.085,
+   "why": "critic-style reading (25% of the rise out of digital silence); the /f/ is audible from about 0.09"
+  },
+  "fm01|3|5": {
+   "s": 2.395,
+   "why": "the /t/ release of 'about'; the /s/ from about 2.40"
+  },
+  "fs01|4|3": {
+   "s": 1.59,
+   "why": "if the 1.54 noise is the /t/ release of 'about' and the blip at 1.57 is epenthetic, th starts at 1.59"
+  },
+  "fs02|3|2": {
+   "s": 0.79,
+   "why": "the /t/ release of 'cost' (0.79), then a voiced blip (0.815-0.835), then the /f/ from 0.841"
+  },
+  "fs04|1|3": {
+   "s": 1.556,
+   "why": "the s-to-f boundary of 'rose four' falls between 1.556 and 1.581"
+  },
+  "fs04|3|2": {
+   "s": 1.205,
+   "why": "the /f/ after the /t/ release of 'cost' at 1.195"
+  }
+ }
+}

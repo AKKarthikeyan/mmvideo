@@ -1,0 +1,247 @@
+{
+ "id": "fa15",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "IIPS · NFHS-6 (2023-24)",
+ "palette": "D",
+ "state": "Kerala",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) India and state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicators: people aged 60 and over, and people under 15, each as a share of the people in the surveyed households. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no figure in the sheets used. Survey estimates, not a census count.",
+ "hook": [
+  "*Kerala* 2023-24, of people:",
+  "*20.7%* were aged 60+;",
+  "*20.3%* were under 15."
+ ],
+ "hook_vo": "Kerala's share aged sixty and over matched its share under fifteen.",
+ "facts": [
+  {
+   "state": "Kerala",
+   "kicker": "PEOPLE AGED 60 AND OVER · NFHS-6",
+   "data": {
+    "nfhs": 3
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "of people were aged 60 or over, 2023-24. Highest of {n} ranked states and UTs. Goa, next: 17.2%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. Lakshadweep (small sample) is not ranked.",
+   "vo": "Twenty-one percent were sixty or older. Highest of thirty-four ranked states and territories."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "CHILDREN UNDER 15 · NFHS-6",
+   "data": {
+    "nfhs": 2
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "of people were under 15, 2023-24: level with the 20.7% aged 60+. India: 25.5%.",
+   "sub": "Survey estimate. Both shares are of the same surveyed households. A gap under one point is level.",
+   "vo": "Children under fifteen: twenty percent, level. India's was twenty-six."
+  },
+  {
+   "state": "Kerala",
+   "kicker": "EARLIER SURVEY · NFHS-5 (2019-21)",
+   "data": {
+    "nfhs": 3,
+    "col": 3
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 30,
+   "text": "aged 60+, against 20.6% under 15: fewer older people than children. India: 11.8%.",
+   "sub": "Survey estimate. NFHS-5 figures as printed in the NFHS-6 fact sheets.",
+   "vo": "Earlier survey: nineteen percent were sixty-plus, twenty-one under fifteen."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 3
+   },
+   "equals": 21
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 2
+   },
+   "equals": 20
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 3
+   },
+   "equals": 13
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 2
+   },
+   "equals": 26
+  },
+  {
+   "kind": "round",
+   "state": "Goa",
+   "data": {
+    "nfhs": 3
+   },
+   "equals": 17
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 3,
+    "col": 3
+   },
+   "equals": 19
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 2,
+    "col": 3
+   },
+   "equals": 21
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 3,
+    "col": 3
+   },
+   "equals": 12
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 3
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 2
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 2
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 3
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 2,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 3,
+     "col": 3
+    }
+   },
+   "min": 1.08
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 3
+    }
+   },
+   "den": {
+    "state": "Goa",
+    "data": {
+     "nfhs": 3
+    }
+   },
+   "min": 1.2
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 3,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "nfhs": 3,
+     "col": 3
+    }
+   },
+   "min": 1.2
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Kerala*: people aged 60+",
+   "and children were *level*.",
+   "India: about *2 to 1*."
+  ],
+  "vo": "Kerala was level. India had about two children for every older person."
+ },
+ "map": {
+  "data": {
+   "nfhs": 3
+  },
+  "unit": "%",
+  "title": "People aged 60 and over, *every state*",
+  "sub": "% of people · India {india} · NFHS-6 (2023-24)",
+  "note": "Survey estimates. Blank: Manipur (no figure) and Lakshadweep (small sample). The survey shows how many, not why.",
+  "ring": [
+   "Kerala",
+   "Goa"
+  ],
+  "vo": "Here is every state's share of people aged sixty and over."
+ },
+ "end": {
+  "q": "Do you live with *grandparents*?",
+  "sub": "Comment below.",
+  "vo": "Do you live with grandparents?"
+ },
+ "yt_title": "Kerala: Share Aged 60+ Matches Share Under 15, 2023-24"
+}

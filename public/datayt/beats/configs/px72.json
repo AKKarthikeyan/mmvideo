@@ -1,0 +1,697 @@
+{
+ "id": "px72",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "Cooperation Ministry · NCD · 1 Mar 2026",
+ "palette": "E",
+ "state": "Telangana",
+ "source": "Ministry of Cooperation, Lok Sabha replies No. 2939 (10 Mar 2026), No. 1500 (9 Dec 2025) and No. 2866 (18 Mar 2025): registered cooperative societies by State/UT, National Cooperative Database (all sectors, functional or not; 2026 table as of 1 Mar 2026). People: National Commission on Population, Projections 2011-2036 (July 2020 edition), 1 Mar 2026. Counts change with each update.",
+ "hook": [
+  "*Telangana* has *3×* Kerala's",
+  "registered cooperatives,",
+  "*7%* more projected people."
+ ],
+ "hook_vo": "Telangana has three times Kerala's registered cooperative societies, with seven percent more people.",
+ "facts": [
+  {
+   "state": "Telangana",
+   "kicker": "REGISTERED COOPERATIVE SOCIETIES",
+   "data": {
+    "tbl": [
+     "evergreen/ls_cooperatives_ncd",
+     "Total number of cooperative societies"
+    ]
+   },
+   "unit": "",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 70000,
+   "text": "societies registered in Telangana. Kerala: 19,652, about a third as many.",
+   "sub": "National Cooperative Database, all sectors; counts change with each update. Not members or money.",
+   "vo": "Telangana: sixty-one thousand societies. Kerala: twenty thousand."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "PROJECTED PEOPLE · 1 MARCH 2026",
+   "data": {
+    "add": [
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 0.001
+   },
+   "unit": "",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 50,
+   "text": "million projected people in Telangana. Kerala: 36.2 million; Telangana has 7% more.",
+   "sub": "Bars in millions. Projections from Census 2011, not a count.",
+   "vo": "Telangana: thirty-nine million people. Kerala: thirty-six."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "SOCIETIES PER LAKH PEOPLE",
+   "data": {
+    "ratio": [
+     {
+      "tbl": [
+       "evergreen/ls_cooperatives_ncd",
+       "Total number of cooperative societies"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2026"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 200,
+   "text": "registered societies per lakh projected people in Telangana. Kerala: 54.3.",
+   "sub": "1 lakh = 100,000 people. Societies ÷ projected population, 1 March 2026.",
+   "vo": "Per lakh people: one hundred fifty-eight. Kerala: fifty-four."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Telangana has three times Kerala's societies (hook, title, voice): 2.95 to 3.15",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 2.95,
+   "max": 3.15
+  },
+  {
+   "says": "3.1 times (tenths, March 2026)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 31
+  },
+  {
+   "says": "3.3 times in the 1 March 2025 count (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s4-U2866#1",
+        0
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s4-U2866#1",
+        0
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 33
+  },
+  {
+   "says": "3.1 times in the Nov 2025 count (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s6-U1500#1",
+        0
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s6-U1500#1",
+        0
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 31
+  },
+  {
+   "says": "at least three times in the 1 March 2025 count",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s4-U2866#1",
+        0
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s4-U2866#1",
+        0
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 3.0,
+   "max": 4.0
+  },
+  {
+   "says": "at least three times in the Nov 2025 count",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s6-U1500#1",
+        0
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s6-U1500#1",
+        0
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 3.0,
+   "max": 3.3
+  },
+  {
+   "says": "at least three times in the 1 March 2026 count",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 3.0,
+   "max": 3.3
+  },
+  {
+   "says": "Telangana 60,858 societies (card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "state": "Telangana"
+   },
+   "equals": 60858
+  },
+  {
+   "says": "Telangana sixty-one thousand (voice)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "scale": 0.001,
+    "state": "Telangana"
+   },
+   "equals": 61
+  },
+  {
+   "says": "Kerala 19,652 societies (card)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "state": "Kerala"
+   },
+   "equals": 19652
+  },
+  {
+   "says": "Kerala twenty thousand (voice)",
+   "value": {
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    "scale": 0.001,
+    "state": "Kerala"
+   },
+   "equals": 20
+  },
+  {
+   "says": "Kerala about a third as many (card): 0.30 to 0.35",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Kerala"
+     },
+     {
+      "data": {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      "state": "Telangana"
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 0.35
+  },
+  {
+   "says": "Telangana 38.6 million projected people (card, tenths)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 0.001
+    },
+    "scale": 10,
+    "state": "Telangana"
+   },
+   "equals": 386
+  },
+  {
+   "says": "Telangana thirty-nine million (voice)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 0.001
+    },
+    "state": "Telangana"
+   },
+   "equals": 39
+  },
+  {
+   "says": "Kerala 36.2 million projected people (card, tenths)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 0.001
+    },
+    "scale": 10,
+    "state": "Kerala"
+   },
+   "equals": 362
+  },
+  {
+   "says": "Kerala thirty-six million (voice)",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 0.001
+    },
+    "state": "Kerala"
+   },
+   "equals": 36
+  },
+  {
+   "says": "7% more people (hook, title, card)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      },
+      "state": "Telangana"
+     },
+     {
+      "data": {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      },
+      "state": "Kerala"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 107
+  },
+  {
+   "says": "Telangana 157.5 societies per lakh people (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10,
+    "state": "Telangana"
+   },
+   "equals": 1575
+  },
+  {
+   "says": "Telangana one hundred fifty-eight (voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Telangana"
+   },
+   "equals": 158
+  },
+  {
+   "says": "Kerala 54.3 societies per lakh people (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10,
+    "state": "Kerala"
+   },
+   "equals": 543
+  },
+  {
+   "says": "Kerala fifty-four (voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "tbl": [
+        "evergreen/ls_cooperatives_ncd",
+        "Total number of cooperative societies"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2026"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Kerala"
+   },
+   "equals": 54
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "ls": [
+      "ls18-s6-U1500#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "ls": [
+      "ls18-s6-U1500#1",
+      0
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "ls": [
+      "ls18-s4-U2866#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "ls": [
+      "ls18-s4-U2866#1",
+      0
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   },
+   "min": 1.06
+  }
+ ],
+ "so": {
+  "lines": [
+   "Telangana against Kerala,",
+   "in three counts since 2025:",
+   "*3.3×*, then *3.1×*, *3.1×*."
+  ],
+  "note": "Lok Sabha replies of 18 Mar 2025, 9 Dec 2025, 10 Mar 2026. Registered societies, not members or money. The table shows how much, not why.",
+  "vo": "In each of three counts: at least three times Kerala's."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "tbl": [
+      "evergreen/ls_cooperatives_ncd",
+      "Total number of cooperative societies"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2026"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Cooperative societies per *lakh people*",
+  "sub": "registered societies · India {india} · 1 March 2026",
+  "note": "Not members or money. Seven north-eastern states other than Assam share one population projection.",
+  "ring": [
+   "Telangana",
+   "Kerala"
+  ],
+  "vo": "Registered societies per lakh people, every state."
+ },
+ "end": {
+  "q": "Is your family in a *cooperative*?",
+  "sub": "Comment below.",
+  "vo": "Is your family in a cooperative?"
+ },
+ "yt_title": "Telangana: 3× Kerala's Registered Co-ops, 7% More People"
+}

@@ -1,0 +1,529 @@
+{
+ "id": "cn09",
+ "type": "countdown",
+ "chip": "TOP 5",
+ "sourceShort": "RBI Handbook · 2022-23 accounts",
+ "source": "RBI Handbook of Statistics on Indian States, Table 175: state governments' social sector expenditure, 2022-23 accounts (the 2023-24 and 2024-25 columns are estimates and are not used), divided by projected population on 1 March 2023 (National Commission on Population, 2020). Blank: five UTs with no row. The table shows how much was spent, not why or with what result.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "State social sector",
+    "spending per person:",
+    "*top 5* states"
+   ],
+   "vo": "Social sector spending per person. The top five.",
+   "spots": [
+    {
+     "geo": "Sikkim",
+     "tone": "a",
+     "name": "Sikkim"
+    },
+    {
+     "geo": "Arunachal Pradesh",
+     "tone": "a",
+     "name": "Arunachal"
+    },
+    {
+     "geo": "Goa",
+     "tone": "a",
+     "name": "Goa"
+    },
+    {
+     "geo": "Mizoram",
+     "tone": "a",
+     "name": "Mizoram"
+    },
+    {
+     "geo": "Himachal Pradesh",
+     "tone": "a",
+     "name": "Himachal"
+    }
+   ],
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "rank",
+   "rank": 5,
+   "name": "Himachal",
+   "geo": "Himachal Pradesh",
+   "big": "29.2k",
+   "frac": 0.48230300083908023,
+   "label": "₹ thousand per person, 2022-23 accounts",
+   "vo": "Fifth is Himachal Pradesh at twenty-nine thousand rupees.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "rank",
+   "rank": 4,
+   "name": "Mizoram",
+   "geo": "Mizoram",
+   "big": "35.7k",
+   "frac": 0.589249212686453,
+   "label": "₹ thousand per person, 2022-23 accounts",
+   "vo": "Fourth is Mizoram at thirty-six thousand rupees.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "rank",
+   "rank": 3,
+   "name": "Goa",
+   "geo": "Goa",
+   "big": "41.8k",
+   "frac": 0.6905556126664306,
+   "label": "₹ thousand per person, 2022-23 accounts",
+   "vo": "Third is Goa at forty-two thousand rupees.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "rank",
+   "rank": 2,
+   "name": "Arunachal",
+   "geo": "Arunachal Pradesh",
+   "big": "56.3k",
+   "frac": 0.9301319814041141,
+   "label": "₹ thousand per person, 2022-23 accounts",
+   "vo": "Second is Arunachal Pradesh at fifty-six thousand rupees.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "rank",
+   "rank": 1,
+   "name": "Sikkim",
+   "geo": "Sikkim",
+   "big": "60.5k",
+   "frac": 1.0,
+   "label": "₹ thousand per person, 2022-23 accounts",
+   "vo": "First is Sikkim at over sixty thousand rupees.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Social sector spending, *every state*",
+   "sub": "₹ thousand per person · 2022-23 accounts",
+   "note": "State governments' social sector spending over projected population, 2022-23. Top five outlined. Blank: five UTs with no row in the table.",
+   "anim": true,
+   "ring": [
+    "Sikkim",
+    "Arunachal Pradesh",
+    "Goa",
+    "Mizoram",
+    "Himachal Pradesh"
+   ],
+   "vo": "This counts rupees spent on the social sector, not results.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "State governments' social sector spending over projected population, 2022-23. Top five outlined. Blank: five UTs with no row in the table.",
+   "ring": [
+    "Sikkim",
+    "Arunachal Pradesh",
+    "Goa",
+    "Mizoram",
+    "Himachal Pradesh"
+   ],
+   "q": "Where does your state stand?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Where does your state stand? Comment below.",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Uttar Pradesh",
+   "label": "9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Bihar",
+   "label": "9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Jharkhand",
+   "label": "10",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Punjab",
+   "label": "11",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "13",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Gujarat",
+   "label": "14",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "West Bengal",
+   "label": "14",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Rajasthan",
+   "label": "14",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "15",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "16",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "16",
+   "bucket": 1,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Maharashtra",
+   "label": "16",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Odisha",
+   "label": "16",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Karnataka",
+   "label": "16",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Kerala",
+   "label": "16",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Assam",
+   "label": "17",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Haryana",
+   "label": "17",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "19",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "Telangana",
+   "label": "20",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "21",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "21",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Puducherry",
+   "label": "23",
+   "bucket": 3,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Tripura",
+   "label": "23",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Meghalaya",
+   "label": "23",
+   "bucket": 3,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Manipur",
+   "label": "24",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Nagaland",
+   "label": "25",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "29",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Mizoram",
+   "label": "36",
+   "bucket": 4,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Goa",
+   "label": "42",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "56",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Sikkim",
+   "label": "61",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 34.947
+  }
+ ],
+ "checked": [
+  "#1 Sikkim 60.508 is 7.5% above #2 Arunachal Pradesh 56.2804, among 31 with data",
+  "#2 Arunachal Pradesh 56.2804 is 34.7% above #3 Goa 41.7841, among 31 with data",
+  "#3 Goa 41.7841 is 17.2% above #4 Mizoram 35.6543, among 31 with data",
+  "#4 Mizoram 35.6543 is 22.2% above #5 Himachal Pradesh 29.1832, among 31 with data",
+  "#5 Himachal Pradesh 29.1832 is 18.4% above #6 Nagaland 24.6574, among 31 with data",
+  "Himachal Pradesh: social sector spending is about twenty-nine thousand rupees a person, 2022-23: 29.18",
+  "Mizoram: about thirty-six thousand rupees a person, 2022-23: 35.65",
+  "Goa: about forty-two thousand rupees a person, 2022-23: 41.78",
+  "Arunachal Pradesh: about fifty-six thousand rupees a person, 2022-23: 56.28",
+  "Sikkim: over sixty thousand rupees a person, 2022-23: 60.51"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.257,
+   "at": 0.12,
+   "text": "Social sector spending per person. The top five."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.336,
+   "at": 5.926,
+   "text": "Fifth is Himachal Pradesh at twenty-nine thousand rupees."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.448,
+   "at": 11.733,
+   "text": "Fourth is Mizoram at thirty-six thousand rupees."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 2.925,
+   "at": 15.604,
+   "text": "Third is Goa at forty-two thousand rupees."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.866,
+   "at": 19.475,
+   "text": "Second is Arunachal Pradesh at fifty-six thousand rupees."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.735,
+   "at": 25.281,
+   "text": "First is Sikkim at over sixty thousand rupees."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 4.257,
+   "at": 31.088,
+   "text": "This counts rupees spent on the social sector, not results."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.324,
+   "at": 36.894,
+   "text": "Where does your state stand? Comment below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Social Sector Spending per Person: Top 5 States, 2022-23"
+}

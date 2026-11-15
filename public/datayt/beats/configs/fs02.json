@@ -1,0 +1,206 @@
+{
+ "type": "basket",
+ "rules": 2,
+ "chip": "FESTIVE ITEMS",
+ "source_short": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "id": "fs02",
+ "palette": "E",
+ "hook": [
+  "Dussehra buys, in a year:",
+  "gold jewellery up *30.9%*,",
+  "cars *4.5%* cheaper."
+ ],
+ "hook_vo": "Gold jewellery up thirty point nine percent; cars four point five percent cheaper.",
+ "items": [
+  {
+   "kicker": "GOLD JEWELLERY · ALL INDIA",
+   "name": "Gold",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "13.2.1.1.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Gold /diamond /platinum jewellery",
+   "sign": true,
+   "text": "for gold, diamond and platinum jewellery.",
+   "compare": [
+    {
+     "name": "Consumer prices",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "00",
+      "Sep 2026"
+     ],
+     "item_name": "CPI (General)"
+    }
+   ],
+   "vo": "This covers gold, diamond and platinum jewellery; prices overall, five point five percent."
+  },
+  {
+   "kicker": "SILVER JEWELLERY · ALL INDIA",
+   "name": "Silver",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "13.2.1.1.1.02",
+    "Sep 2026"
+   ],
+   "item_name": "Silver jewellery",
+   "sign": true,
+   "text": "for silver jewellery, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Gold",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "13.2.1.1.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Gold /diamond /platinum jewellery"
+    }
+   ],
+   "vo": "Silver jewellery rose eighty-seven point eight percent."
+  },
+  {
+   "kicker": "VEHICLES · ALL INDIA",
+   "name": "Cars",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "07.1.1.1.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Motor car and jeep",
+   "sign": true,
+   "text": "for cars and jeeps: cheaper than a year earlier.",
+   "compare": [
+    {
+     "name": "Two-wheeler",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "07.1.2.0.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Motor cycle and scooter"
+    }
+   ],
+   "sub": "Two-wheelers: motorcycles and scooters.",
+   "vo": "Cars cost four point five percent less; two-wheelers, one point seven less."
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Gold jewellery* rose",
+   "over five times as much",
+   "as prices *overall*."
+  ],
+  "vo": "Gold jewellery rose over five times as much as prices overall.",
+  "note": "All-India prices, September 2026 against September 2025. Provisional."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "mospi/cpi2024_states_divisions_2026_09",
+    "13.2 Other personal effects Sep 2026"
+   ]
+  },
+  "title": "Jewellery and personal items, *every state*",
+  "sub": "% price rise · year on year · India {india} · Sep 2026",
+  "india_dec": 1,
+  "note": "MoSPI's group 'Other personal effects': jewellery and watches, with bags and the like. September 2026, provisional.",
+  "check_india": [
+   {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "13.2",
+     "Sep 2026"
+    ],
+    "item_name": "Other personal effects"
+   }
+  ],
+  "vo": "Jewellery and personal items, across all the states."
+ },
+ "end": {
+  "q": "What does your family buy at *Dussehra*?",
+  "sub": "Comment below.",
+  "vo": "What does your family buy at Dussehra? Comment below."
+ },
+ "tests": [
+  {
+   "says": "gold jewellery rose over five times as much as prices overall",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "13.2.1.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Gold /diamond /platinum jewellery"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "00",
+       "Sep 2026"
+      ],
+      "item_name": "CPI (General)"
+     }
+    ]
+   },
+   "min": 5.0,
+   "max": 6.0
+  },
+  {
+   "says": "silver rose more than gold",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "13.2.1.1.1.02",
+       "Sep 2026"
+      ],
+      "item_name": "Silver jewellery"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "13.2.1.1.1.01",
+       "Sep 2026"
+      ],
+      "item_name": "Gold /diamond /platinum jewellery"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "cars cost less than a year earlier",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "07.1.1.1.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Motor car and jeep"
+   },
+   "min": -100,
+   "max": -0.01
+  },
+  {
+   "says": "two-wheelers cost less than a year earlier",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "07.1.2.0.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Motor cycle and scooter"
+   },
+   "min": -100,
+   "max": -0.01
+  }
+ ],
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: gold/diamond/platinum jewellery, silver jewellery, motor car and jeep, motor cycle and scooter, CPI (General). By state: group 'Other personal effects', eSankhyiki, read 16 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "yt_title": "Dussehra Buys: Gold Jewellery Up 30.9% in a Year"
+}

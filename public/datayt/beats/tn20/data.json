@@ -1,0 +1,603 @@
+{
+ "id": "tn20",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Share of babies born in the five years before each survey who were born in a health facility, public or private. 34 states and UTs with a figure in both surveys; Lakshadweep (small sample) is not ranked and Manipur has no figure in the sheets used. Survey estimates.",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#D79A4A",
+  "#E7C79C",
+  "#DDD5C8",
+  "#AB808A",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Uttarakhand*: births in a",
+    "health facility up *5.7 points*,",
+    "2019-21 to 2023-24."
+   ],
+   "vo": "Births in a health facility rose five point seven points in Uttarakhand.",
+   "geo": "Uttarakhand",
+   "name": "Uttarakhand",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Uttarakhand",
+   "name": "Uttarakhand",
+   "kicker": "BORN IN A HEALTH FACILITY",
+   "big": "+5.7 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "83.2%",
+    "frac": 0.935883014623172
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "88.9%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of babies were born in a health facility. India: *88.6%*.",
+   "vo": "Earlier survey: eighty-three point two percent of babies.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "geo": "Uttarakhand",
+   "name": "Uttarakhand",
+   "kicker": "BORN IN A HEALTH FACILITY",
+   "big": "+5.7 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "83.2%",
+    "frac": 0.935883014623172
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "88.9%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of babies were born in a health facility. India: *90.6%*.",
+   "vo": "Next survey: eighty-eight point nine percent. India, ninety point six.",
+   "t0": 9.677,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Uttarakhand",
+   "geo": "Uttarakhand",
+   "kicker": "UTTARAKHAND'S RISE VS INDIA'S",
+   "big": "5.7 pts",
+   "text": "India's rise: 2.0 points. More than twice.",
+   "sub": "Percentage points between the two surveys: Uttarakhand +5.7, India +2.0.",
+   "bars": [
+    {
+     "name": "Uttarakhand",
+     "label": "5.7",
+     "frac": 0.8142857142857147
+    },
+    {
+     "name": "India",
+     "label": "2.0",
+     "frac": 0.2857142857142857
+    }
+   ],
+   "vo": "India rose two points. Uttarakhand rose more than twice as much.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Births outside a facility,",
+    "per 100: *17* in 2019-21 and",
+    "*11* in 2023-24, a third fewer."
+   ],
+   "note": "Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "Births outside a facility fell by a third: seventeen to eleven per hundred.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Births in a facility: *each state's change*",
+   "sub": "percentage points · darker = bigger rise · India +2.0",
+   "note": "Babies born in the 5 years before each survey. Near 100% there is little room to rise. Blank: Manipur (no figure), Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Uttarakhand"
+   ],
+   "vo": "Every state's change in births in a health facility.",
+   "legend": [
+    {
+     "color": "#D79A4A",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within half a point"
+    },
+    {
+     "color": "#6D2238",
+     "label": "rose"
+    }
+   ],
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "note": "Babies born in the 5 years before each survey. Near 100% there is little room to rise. Blank: Manipur (no figure), Lakshadweep (small sample).",
+   "ring": [
+    "Uttarakhand"
+   ],
+   "legend": [
+    {
+     "color": "#D79A4A",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within half a point"
+    },
+    {
+     "color": "#6D2238",
+     "label": "rose"
+    }
+   ],
+   "q": "Where were *you* born?",
+   "sub": "Hospital or home? Comment below.",
+   "kind": "mapend",
+   "vo": "Where were you born? Hospital or home?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "−1.1",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "−0.9",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.437
+  },
+  {
+   "name": "Rajasthan",
+   "label": "−0.8",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.492
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "−0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 29.547
+  },
+  {
+   "name": "Goa",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.602
+  },
+  {
+   "name": "Tripura",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.657
+  },
+  {
+   "name": "Kerala",
+   "label": "−0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.712
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+0.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.767
+  },
+  {
+   "name": "Puducherry",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.822
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+0.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.877
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+1.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.932
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+1.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+1.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 30.042
+  },
+  {
+   "name": "Haryana",
+   "label": "+1.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.097
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+1.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.152
+  },
+  {
+   "name": "Karnataka",
+   "label": "+1.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.207
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+1.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.262
+  },
+  {
+   "name": "Odisha",
+   "label": "+1.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.318
+  },
+  {
+   "name": "Punjab",
+   "label": "+1.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 30.373
+  },
+  {
+   "name": "Telangana",
+   "label": "+1.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.428
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+1.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.483
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+2.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.538
+  },
+  {
+   "name": "Gujarat",
+   "label": "+2.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.593
+  },
+  {
+   "name": "Ladakh",
+   "label": "+2.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.648
+  },
+  {
+   "name": "Sikkim",
+   "label": "+3.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.703
+  },
+  {
+   "name": "West Bengal",
+   "label": "+3.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.758
+  },
+  {
+   "name": "Assam",
+   "label": "+3.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.813
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+3.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.868
+  },
+  {
+   "name": "Bihar",
+   "label": "+4.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.923
+  },
+  {
+   "name": "Mizoram",
+   "label": "+5.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.978
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+5.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.033
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+7.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.088
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+9.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.143
+  },
+  {
+   "name": "Nagaland",
+   "label": "+16.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.198
+  }
+ ],
+ "checked": [
+  "Uttarakhand: 83.20 in NFHS-5 (2019-21), 88.90 in NFHS-6 (2023-24): +5.70, 1.07 times",
+  "Uttarakhand 83.2% in NFHS-5 (tenths): 832.00",
+  "Uttarakhand 88.9% in NFHS-6 (tenths): 889.00",
+  "India 88.6% in NFHS-5 (tenths): 886.00",
+  "India 90.6% in NFHS-6 (tenths): 906.00",
+  "Uttarakhand rose 5.7 points: hook, title and card (tenths): 57.00",
+  "India rose 2.0 points: hook and card (tenths): 20.00",
+  "Uttarakhand rose more than twice as much as India: 2.85",
+  "outside a facility in NFHS-5: 17 of every 100 (16.8): 16.80",
+  "outside a facility in NFHS-6: 11 of every 100 (11.1): 11.10",
+  "births outside a facility fell by a third (0.66 of the earlier figure): 0.66"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.048,
+   "at": 0.12,
+   "text": "Births in a health facility rose five point seven points in Uttarakhand."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.108,
+   "at": 5.926,
+   "text": "Earlier survey: eighty-three point two percent of babies."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 6.426,
+   "at": 9.797,
+   "text": "Next survey: eighty-eight point nine percent. India, ninety point six."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.146,
+   "at": 17.539,
+   "text": "India rose two points. Uttarakhand rose more than twice as much."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.884,
+   "at": 23.346,
+   "text": "Births outside a facility fell by a third: seventeen to eleven per hundred."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 2.768,
+   "at": 29.152,
+   "text": "Every state's change in births in a health facility."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.455,
+   "at": 33.023,
+   "text": "Where were you born? Hospital or home?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Uttarakhand: Babies Born in a Health Facility Up 5.7 Points"
+}

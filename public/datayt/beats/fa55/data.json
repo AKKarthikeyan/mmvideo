@@ -1,0 +1,557 @@
+{
+ "id": "fa55",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "AMFI Sep 2025 · RBI end-March 2025",
+ "source": "Association of Mutual Funds in India (AMFI), Classified Average AUM, State Wise: average assets of all mutual fund schemes, September 2025, on AMFI's state list before its March 2026 revision. RBI Handbook of Statistics on Indian States 2024-25, Table 155: bank deposits, end-March 2025, counted where the bank office is. Two publishers, two dates. AMFI's files do not say how a state is assigned; its Factbook 2026 (p. 51) puts non-individual investors at 52% of Maharashtra's assets, March 2026.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Maharashtra*: *₹60* of",
+    "mutual-fund assets per ₹100",
+    "of bank deposits. India: ₹33."
+   ],
+   "vo": "For every hundred rupees in bank deposits, Maharashtra recorded sixty in mutual funds.",
+   "geo": "Maharashtra",
+   "name": "Maharashtra",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "FUND ASSETS PER ₹100 OF DEPOSITS",
+   "big": "60.2",
+   "text": "rupees of fund assets recorded in Maharashtra per ₹100 of deposits there. Highest of 35.",
+   "sub": "Mutual fund: money pooled by a fund house. Assets: AMFI, Sep 2025. Deposits: RBI, end-March 2025.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "60.2",
+     "frac": 0.8607107088036654
+    },
+    {
+     "name": "India",
+     "label": "33.2",
+     "frac": 0.473785689146046
+    }
+   ],
+   "vo": "Sixty rupees of fund assets per hundred of bank deposits. India, thirty-three.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Gujarat",
+   "geo": "Gujarat",
+   "kicker": "THE NEXT STATE · SAME MEASURE",
+   "big": "43.2",
+   "text": "rupees per ₹100 in Gujarat, the next highest. Maharashtra's is 1.4 times as much.",
+   "sub": "Same measure: fund assets Sep 2025 per ₹100 of bank deposits, end-March 2025.",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "label": "43.2",
+     "frac": 0.6172354296199609
+    },
+    {
+     "name": "India",
+     "label": "33.2",
+     "frac": 0.473785689146046
+    }
+   ],
+   "vo": "Gujarat came next, at forty-three. Maharashtra's was one point four times that.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "A MIDDLE STATE · SAME MEASURE",
+   "big": "15.3",
+   "text": "rupees per ₹100 in Telangana, near the middle of the 35. Maharashtra's is 3.9 times that.",
+   "sub": "Same measure: fund assets Sep 2025 per ₹100 of bank deposits, end-March 2025.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "15.3",
+     "frac": 0.2192128861581852
+    },
+    {
+     "name": "India",
+     "label": "33.2",
+     "frac": 0.473785689146046
+    }
+   ],
+   "vo": "Telangana, near the middle, recorded fifteen. Maharashtra's was three point nine times that.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Highest in each of three",
+    "Septembers: *₹50* (2023), *₹59*,",
+    "*₹60* (2025) per ₹100 of deposits."
+   ],
+   "note": "AMFI's Factbook 2026: investors other than individuals held 52% of the fund assets recorded in Maharashtra, March 2026.",
+   "vo": "It was the highest in each of the three years to twenty twenty-five.",
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "kind": "map",
+   "title": "Fund assets per ₹100 of deposits, *every state*",
+   "sub": "₹ per ₹100 · India 33.2 · assets Sep 2025, deposits end-March 2025",
+   "note": "Not per person. AMFI does not say how a state is assigned, and revised its list in March 2026. Blank: Dadra and Nagar Haveli, Daman and Diu.",
+   "anim": true,
+   "ring": [
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "vo": "Here is every state: fund assets for each hundred of deposits.",
+   "t0": 32.903,
+   "t1": 38.71
+  },
+  {
+   "note": "Not per person. AMFI does not say how a state is assigned, and revised its list in March 2026. Blank: Dadra and Nagar Haveli, Daman and Diu.",
+   "ring": [
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "q": "What is *your state's* number?",
+   "sub": "Find it on the map. Comment below.",
+   "kind": "mapend",
+   "vo": "What is your state's number?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Ladakh",
+   "label": "0.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "2.0",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 33.362
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "5.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.471
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "6.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.579
+  },
+  {
+   "name": "Tripura",
+   "label": "7.6",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.688
+  },
+  {
+   "name": "Mizoram",
+   "label": "8.7",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.797
+  },
+  {
+   "name": "Manipur",
+   "label": "10.2",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.906
+  },
+  {
+   "name": "Kerala",
+   "label": "11.1",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.014
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "12.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.123
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.6",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.232
+  },
+  {
+   "name": "Odisha",
+   "label": "13.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.341
+  },
+  {
+   "name": "Bihar",
+   "label": "13.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.449
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "14.1",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 34.558
+  },
+  {
+   "name": "Puducherry",
+   "label": "14.2",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 34.667
+  },
+  {
+   "name": "Punjab",
+   "label": "14.2",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.776
+  },
+  {
+   "name": "Meghalaya",
+   "label": "14.5",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.885
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "14.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.993
+  },
+  {
+   "name": "Telangana",
+   "label": "15.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.102
+  },
+  {
+   "name": "Sikkim",
+   "label": "15.4",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 35.211
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "17.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.32
+  },
+  {
+   "name": "Assam",
+   "label": "18.0",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 35.428
+  },
+  {
+   "name": "Chandigarh",
+   "label": "18.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 35.537
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "18.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.646
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "18.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.755
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "19.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.864
+  },
+  {
+   "name": "Rajasthan",
+   "label": "20.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.972
+  },
+  {
+   "name": "Jharkhand",
+   "label": "22.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.081
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "24.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.19
+  },
+  {
+   "name": "Karnataka",
+   "label": "28.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.299
+  },
+  {
+   "name": "Haryana",
+   "label": "29.9",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 36.407
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "30.3",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 36.516
+  },
+  {
+   "name": "West Bengal",
+   "label": "30.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.625
+  },
+  {
+   "name": "Goa",
+   "label": "34.0",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 36.734
+  },
+  {
+   "name": "Gujarat",
+   "label": "43.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.842
+  },
+  {
+   "name": "Maharashtra",
+   "label": "60.2",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.951
+  }
+ ],
+ "checked": [
+  "Maharashtra is the highest of 35 with data (60.2)",
+  "Maharashtra 60.2497 rounds to 60",
+  "India 33.165 rounds to 33",
+  "Gujarat 43.2065 rounds to 43",
+  "Maharashtra / Gujarat = 1.39 (at least 1.35)",
+  "Maharashtra / Gujarat = 1.46 (at least 1.4)",
+  "Maharashtra / Gujarat = 1.54 (at least 1.5)",
+  "Maharashtra 58.9002 rounds to 59",
+  "Maharashtra 49.9622 rounds to 50",
+  "Telangana 15.3449 rounds to 15",
+  "Maharashtra / Telangana = 3.93 (at least 3.85)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.146,
+   "at": 0.12,
+   "text": "For every hundred rupees in bank deposits, Maharashtra recorded sixty in mutual funds."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.067,
+   "at": 5.926,
+   "text": "Sixty rupees of fund assets per hundred of bank deposits. India, thirty-three."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 6.191,
+   "at": 11.733,
+   "text": "Gujarat came next, at forty-three. Maharashtra's was one point four times that."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 6.138,
+   "at": 19.475,
+   "text": "Telangana, near the middle, recorded fifteen. Maharashtra's was three point nine times that."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.735,
+   "at": 27.217,
+   "text": "It was the highest in each of the three years to twenty twenty-five."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.519,
+   "at": 33.023,
+   "text": "Here is every state: fund assets for each hundred of deposits."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.645,
+   "at": 38.83,
+   "text": "What is your state's number?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Maharashtra: ₹60 in Mutual Funds per ₹100 in Bank Deposits"
+}

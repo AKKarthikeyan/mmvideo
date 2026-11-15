@@ -1,0 +1,1893 @@
+{
+ "id": "eco16-p1",
+ "format": "long-16x9",
+ "target_minutes": 9.5,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/ECO-16/script_p1.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "phone-pay",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "a fruit cart · a QR code",
+      "key": "fc"
+     }
+    ],
+    "mode": "start"
+   },
+   "vo": "Think of the last time you paid for fruit with your phone. No note changed hands. Yet money moved.",
+   "reveals": [
+    {
+     "key": "fc",
+     "word": "fruit"
+    },
+    {
+     "key": "tap",
+     "word": "phone."
+    },
+    {
+     "key": "nn",
+     "word": "note"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A fruit cart on a market street, a customer taps a phone at the QR code, a soft chime; the hands hold no note; a small balance moves between two phones.",
+   "beat": "b00",
+   "claims": [
+    "ECO16-A08",
+    "ECO16-I02",
+    "ECO16-N55"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "split-bar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_m3cap",
+      "key": "cap"
+     },
+     {
+      "lab": "e16_cash",
+      "key": "lc"
+     },
+     {
+      "lab": "e16_dep",
+      "key": "ld"
+     }
+    ],
+    "ref": "e16_m3",
+    "mode": "hook"
+   },
+   "vo": "Now add up the money in India using M3, which NCERT calls the most commonly used measure. In July 2026, only about thirteen percent of it was notes and coins. The rest was deposits, almost all of them in banks.",
+   "reveals": [
+    {
+     "key": "cap",
+     "word": "M3,"
+    },
+    {
+     "key": "lc",
+     "word": "thirteen"
+    },
+    {
+     "key": "ld",
+     "word": "deposits,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A wide bar of all India's money: a thin slice of notes and coins at the left, a long band of bank deposits.",
+   "beat": "b00",
+   "claims": [
+    "ECO16-A08",
+    "ECO16-I02",
+    "ECO16-N55"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b00",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "What is money, really?",
+      "key": "q1"
+     },
+     {
+      "text": "And who makes it?",
+      "key": "q2"
+     }
+    ],
+    "accent": [
+     "money",
+     "makes"
+    ]
+   },
+   "vo": "So what is money, really? And who makes it?",
+   "reveals": [
+    {
+     "key": "q1",
+     "word": "money,"
+    },
+    {
+     "key": "q2",
+     "word": "who"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The two questions of the series on one card.",
+   "beat": "b00",
+   "claims": [
+    "ECO16-A08",
+    "ECO16-I02",
+    "ECO16-N55"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch1 b01",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "UPSC Economics (optional), Paper I",
+      "key": "s1"
+     },
+     {
+      "text": "“Demand for and Supply of Money”",
+      "key": "s2"
+     }
+    ],
+    "accent": [
+     "Supply of Money"
+    ]
+   },
+   "vo": "This matters for the exam too. The syllabus for the Economics optional paper names the demand for money and the supply of money.",
+   "reveals": [
+    {
+     "key": "s1",
+     "word": "exam"
+    },
+    {
+     "key": "s2",
+     "word": "syllabus"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: the syllabus line, text only.",
+   "beat": "b01",
+   "claims": [
+    "ECO16-P01"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "plan-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Why we want money",
+      "key": "w1"
+     },
+     {
+      "text": "What counts as money",
+      "key": "w2"
+     },
+     {
+      "text": "Who supplies it",
+      "key": "w3"
+     },
+     {
+      "text": "PART 1 · money and its supply",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · how banks create money",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · credit and payments",
+      "key": "p3"
+     }
+    ]
+   },
+   "vo": "So here is our plan. First, why people want money at all. Then what counts as money. Then who supplies it. This is part one of three. Part two asks where a bank's loan money comes from. Part three is about credit and payments.",
+   "reveals": [
+    {
+     "key": "w1",
+     "word": "First,"
+    },
+    {
+     "key": "w2",
+     "word": "counts"
+    },
+    {
+     "key": "w3",
+     "word": "supplies"
+    },
+    {
+     "key": "p1",
+     "word": "three."
+    },
+    {
+     "key": "p2",
+     "word": "loan"
+    },
+    {
+     "key": "p3",
+     "word": "credit"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A notebook page with three numbered boxes; below it a three-stop path, Part 1 lit, Parts 2 and 3 dim.",
+   "beat": "b01",
+   "claims": [
+    "ECO16-P01"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "barter",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT's example",
+      "key": "ex"
+     },
+     {
+      "text": "a shoe-maker wants wheat",
+      "key": "sw"
+     }
+    ],
+    "mode": "stuck"
+   },
+   "vo": "Start with a world without money. NCERT's example is a shoe-maker who wants wheat. Barter works only if the wheat farmer also wants to buy shoes.",
+   "reveals": [
+    {
+     "key": "ex",
+     "word": "NCERT's"
+    },
+    {
+     "key": "sw",
+     "word": "shoe-maker"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A market lane in atlas style: a shoe-maker with shoes, a wheat farmer with sacks; the farmer shakes his head and points to a plough.",
+   "beat": "b02",
+   "claims": [
+    "ECO16-N01",
+    "ECO16-N29"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "barter",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "DOUBLE COINCIDENCE OF WANTS",
+      "key": "dc"
+     },
+     {
+      "text": "a go-between both sides accept",
+      "key": "gb"
+     },
+     {
+      "text": "MONEY",
+      "key": "mo"
+     }
+    ],
+    "mode": "coin"
+   },
+   "vo": "Economists call this a double coincidence of wants. What one person wants to sell must be exactly what the other wants to buy. That is hard to find. So the trade needs a go-between that both sides accept. That go-between is called money.",
+   "reveals": [
+    {
+     "key": "dc",
+     "word": "coincidence"
+    },
+    {
+     "key": "gb",
+     "word": "go-between"
+    },
+    {
+     "key": "mo",
+     "word": "money."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same lane: a coin appears between them and the deal closes.",
+   "beat": "b02",
+   "claims": [
+    "ECO16-N01",
+    "ECO16-N29"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "medium-exchange",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "JOB 1 · MEDIUM OF EXCHANGE",
+      "key": "j1"
+     }
+    ]
+   },
+   "vo": "Money does three jobs. The first is to be a medium of exchange. The shoe-maker sells his shoes for money. Then he buys wheat with that money. Neither needs to want what the other makes.",
+   "reveals": [
+    {
+     "key": "j1",
+     "word": "medium"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The shoe-maker hands over shoes for a coin, then hands the same coin to the farmer for wheat; the coin glows and travels.",
+   "beat": "b03",
+   "claims": [
+    "ECO16-N01",
+    "ECO16-N02"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "unit-shelf",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "JOB 2 · UNIT OF ACCOUNT",
+      "key": "j2"
+     },
+     {
+      "lab": "e16_pen",
+      "key": "pe"
+     },
+     {
+      "lab": "e16_pencil",
+      "key": "pc"
+     },
+     {
+      "lab": "e16_pen5",
+      "key": "p5"
+     }
+    ],
+    "ref": "e16_price"
+   },
+   "vo": "The second job is to be a unit of account. Every price is stated in rupees. NCERT's example: a pen costs ten rupees and a pencil costs two. So one pen is worth five pencils. Prices in rupees let us compare any two goods.",
+   "reveals": [
+    {
+     "key": "j2",
+     "word": "unit"
+    },
+    {
+     "key": "pe",
+     "word": "pen"
+    },
+    {
+     "key": "pc",
+     "word": "pencil"
+    },
+    {
+     "key": "p5",
+     "word": "five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A stationery shelf: a pen with a rupee tag, a pencil with a tag; five pencils balance one pen.",
+   "beat": "b04",
+   "claims": [
+    "ECO16-N02"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "shrinking-basket",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "JOB 3 · STORE OF VALUE",
+      "key": "j3"
+     },
+     {
+      "text": "PURCHASING POWER · what a rupee can buy",
+      "key": "pp"
+     }
+    ]
+   },
+   "vo": "The third job is to be a store of value. A rupee kept today should buy about as much later. But when prices rise, its purchasing power falls. That is what a rupee can buy.",
+   "reveals": [
+    {
+     "key": "j3",
+     "word": "store"
+    },
+    {
+     "key": "pp",
+     "word": "purchasing"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A jar of coins on a shelf; the shopping basket beside it holds less and less as price tags climb year by year.",
+   "beat": "b05",
+   "claims": [
+    "ECO16-N03"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "asset-shelf",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT: the value of money must be sufficiently stable",
+      "key": "st"
+     },
+     {
+      "text": "gold",
+      "key": "ag"
+     },
+     {
+      "text": "land",
+      "key": "al"
+     },
+     {
+      "text": "bonds",
+      "key": "ab"
+     },
+     {
+      "text": "may not be easily converted",
+      "key": "cv"
+     }
+    ],
+    "mode": "stable"
+   },
+   "vo": "NCERT says that, to store value well, the value of money must be sufficiently stable. Gold, land and bonds can store value too. But they may not be easily converted, and they are not accepted everywhere.",
+   "reveals": [
+    {
+     "key": "st",
+     "word": "NCERT"
+    },
+    {
+     "key": "ag",
+     "word": "Gold,"
+    },
+    {
+     "key": "al",
+     "word": "land"
+    },
+    {
+     "key": "ab",
+     "word": "bonds"
+    },
+    {
+     "key": "cv",
+     "word": "easily"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A card for NCERT's line; a gold bar, a plot of land and a bond certificate stand on a shelf, each with a small padlock: slower to spend.",
+   "beat": "b05",
+   "claims": [
+    "ECO16-N03"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "wallet-idle",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "MONEY IN HAND EARNS NOTHING",
+      "key": "wi"
+     }
+    ]
+   },
+   "vo": "So people want money. But money in a pocket earns nothing. How much of it do people hold?",
+   "reveals": [
+    {
+     "key": "wi",
+     "word": "pocket"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A trouser pocket with one coin; a clock ticks; nothing grows.",
+   "beat": "b06",
+   "claims": [
+    "ECO16-N05"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch3 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "sliders",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "DEMAND FOR MONEY",
+      "key": "dm"
+     },
+     {
+      "text": "INCOME",
+      "key": "in"
+     },
+     {
+      "text": "INTEREST RATE",
+      "key": "ir"
+     }
+    ]
+   },
+   "vo": "NCERT gives two forces. The more you spend, the more money you need at hand. So the demand for money rises with income. And when the interest rate rises, people hold less, because money in hand gives up that interest.",
+   "reveals": [
+    {
+     "key": "dm",
+     "word": "demand"
+    },
+    {
+     "key": "in",
+     "word": "income."
+    },
+    {
+     "key": "ir",
+     "word": "interest"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two sliders on a desk: income up, the wallet grows; interest rate up, coins hop from the wallet into a bank passbook.",
+   "beat": "b06",
+   "claims": [
+    "ECO16-N05"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "three-jars",
+    "chip": "OUR PICTURE",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_k1936",
+      "key": "k"
+     },
+     {
+      "text": "TRANSACTIONS · the week's shopping",
+      "key": "j1"
+     },
+     {
+      "text": "PRECAUTIONARY · a bad day",
+      "key": "j2"
+     },
+     {
+      "text": "SPECULATIVE · judging interest rates",
+      "key": "j3"
+     },
+     {
+      "text": "LIQUIDITY PREFERENCE",
+      "key": "lp"
+     }
+    ]
+   },
+   "vo": "In 1936, Keynes split this demand into three motives. The transactions motive: money for the week's shopping and bills. The precautionary motive: money kept for a bad day. The speculative motive: money held to profit from judging the future of interest rates better than the market. Keynes called the whole thing liquidity preference, and NCERT uses that name too.",
+   "reveals": [
+    {
+     "key": "k",
+     "word": "Keynes"
+    },
+    {
+     "key": "j1",
+     "word": "transactions"
+    },
+    {
+     "key": "j2",
+     "word": "precautionary"
+    },
+    {
+     "key": "j3",
+     "word": "speculative"
+    },
+    {
+     "key": "lp",
+     "word": "liquidity"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three jars on a table: a shopping basket, an umbrella, a bond certificate; a plaque KEYNES 1936; a bracket across all three.",
+   "beat": "b07",
+   "claims": [
+    "ECO16-T14",
+    "ECO16-N20"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "bond-seesaw",
+    "chip": "TILT EXAGGERATED",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_b5",
+      "key": "b5"
+     },
+     {
+      "lab": "e16_b6",
+      "key": "b6"
+     },
+     {
+      "text": "BOND PRICE FALLS AS THE RATE RISES",
+      "key": "bp"
+     }
+    ],
+    "ref": "e16_bond"
+   },
+   "vo": "The speculative motive needs one fact. A bond's price falls when interest rates rise. NCERT's worked bond is worth about one hundred and nine rupees at five percent. At six percent, it is worth only about one hundred and seven.",
+   "reveals": [
+    {
+     "key": "bp",
+     "word": "bond's"
+    },
+    {
+     "key": "b5",
+     "word": "five"
+    },
+    {
+     "key": "b6",
+     "word": "six"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bond certificate on a seesaw against a rate dial: dial up, the certificate sinks, the price tag ticks down.",
+   "beat": "b08",
+   "claims": [
+    "ECO16-N21"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch3 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "rate-crowd",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_hi",
+      "key": "hi"
+     },
+     {
+      "text": "buy bonds · hold little money",
+      "key": "bb"
+     },
+     {
+      "lab": "e16_lo",
+      "key": "lo"
+     },
+     {
+      "text": "sell bonds · hold money",
+      "key": "sb"
+     },
+     {
+      "text": "SPECULATIVE DEMAND FALLS AS THE RATE RISES",
+      "key": "fl"
+     }
+    ]
+   },
+   "vo": "When rates are very high, people expect them to fall. They buy bonds and hold little money. When rates are low, more people expect them to rise. They sell bonds and hold money. So speculative demand for money falls as the interest rate rises.",
+   "reveals": [
+    {
+     "key": "hi",
+     "word": "high,"
+    },
+    {
+     "key": "bb",
+     "word": "buy"
+    },
+    {
+     "key": "lo",
+     "word": "low,"
+    },
+    {
+     "key": "sb",
+     "word": "sell"
+    },
+    {
+     "key": "fl",
+     "word": "falls"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two panels: at a high rate, a crowd walks to the bond counter; at a low rate, the crowd walks away from it to their wallets.",
+   "beat": "b08",
+   "claims": [
+    "ECO16-N21"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch3 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "liquidity-tank",
+    "chip": "",
+    "limit": "the picture simplifies: the real rate is set by many things",
+    "labels": [
+     {
+      "text": "INTEREST RATE",
+      "key": "ir"
+     },
+     {
+      "text": "everyone expects it to rise",
+      "key": "ex"
+     },
+     {
+      "text": "extra money just sits",
+      "key": "sit"
+     },
+     {
+      "text": "LIQUIDITY TRAP",
+      "key": "lt"
+     }
+    ]
+   },
+   "vo": "There is a limit to this. Suppose the interest rate is already so low that everyone expects it to rise. Then people simply hold on to money. Hand them more, and it just sits with them. The rate does not fall any further. NCERT calls this a liquidity trap.",
+   "reveals": [
+    {
+     "key": "ir",
+     "word": "interest"
+    },
+    {
+     "key": "ex",
+     "word": "expects"
+    },
+    {
+     "key": "sit",
+     "word": "Hand"
+    },
+    {
+     "key": "lt",
+     "word": "trap."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A tank labelled interest rate with the water at the floor; a pump pours money in; it pools in wallets and the level does not move.",
+   "beat": "b09",
+   "claims": [
+    "ECO16-N22"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch3 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "velocity-street",
+    "chip": "OUR PICTURE",
+    "limit": "velocity is an average; a real note can sit idle",
+    "labels": [
+     {
+      "text": "one ₹100 note",
+      "key": "n0"
+     },
+     {
+      "text": "fruit seller",
+      "key": "n1"
+     },
+     {
+      "text": "milkman",
+      "key": "n2"
+     },
+     {
+      "text": "bus conductor",
+      "key": "n3"
+     }
+    ]
+   },
+   "vo": "There is an older way to see the same idea. Ask how often one rupee is used. Here is a picture, our own. You pay a hundred-rupee note to the fruit seller. She pays it to the milkman. He pays it to the bus conductor.",
+   "reveals": [
+    {
+     "key": "n0",
+     "word": "rupee"
+    },
+    {
+     "key": "n1",
+     "word": "fruit"
+    },
+    {
+     "key": "n2",
+     "word": "milkman."
+    },
+    {
+     "key": "n3",
+     "word": "conductor."
+    }
+   ],
+   "transition": "cut",
+   "visual": "One note travels hand to hand along a street: fruit seller, milkman, bus conductor; a counter ticks.",
+   "beat": "b10",
+   "claims": [
+    "ECO16-N20"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch3 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "formula-card",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "VELOCITY OF CIRCULATION",
+      "key": "vc"
+     },
+     {
+      "text": "Md = k · T",
+      "key": "kt"
+     },
+     {
+      "lab": "e16_vk",
+      "key": "v"
+     }
+    ],
+    "mode": "velocity"
+   },
+   "vo": "The number of times a unit of money changes hands in a period is called its velocity of circulation. NCERT writes the demand for money for payments as k times the value of transactions. It says velocity is one divided by k.",
+   "reveals": [
+    {
+     "key": "vc",
+     "word": "velocity"
+    },
+    {
+     "key": "kt",
+     "word": "k"
+    },
+    {
+     "key": "v",
+     "word": "divided"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A formula card: velocity of circulation; the demand for money for payments as k times the value of transactions; v = 1 over k.",
+   "beat": "b10",
+   "claims": [
+    "ECO16-N20"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch3 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "fisher-scale",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_f1911",
+      "key": "fi"
+     },
+     {
+      "text": "M × V = P × T · IGNOU's simple form",
+      "key": "ig"
+     },
+     {
+      "text": "THE EQUATION OF EXCHANGE",
+      "key": "eq"
+     }
+    ],
+    "mode": "level"
+   },
+   "vo": "In 1911, Irving Fisher linked the money in circulation, bank deposits, the speed of each, and the volume of trade. IGNOU gives a simple form: money times its velocity equals the price level times the number of transactions. That is the equation of exchange.",
+   "reveals": [
+    {
+     "key": "fi",
+     "word": "Fisher"
+    },
+    {
+     "key": "ig",
+     "word": "IGNOU"
+    },
+    {
+     "key": "eq",
+     "word": "equation"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A balance scale: money times speed on one pan, prices times trade on the other, level; a plaque FISHER 1911.",
+   "beat": "b11",
+   "claims": [
+    "ECO16-T10",
+    "ECO16-T11",
+    "ECO16-A13"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch3 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "fisher-scale",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "TRADE FIXED · SPEED STEADY",
+      "key": "fx"
+     },
+     {
+      "lab": "e16_x2",
+      "key": "db"
+     },
+     {
+      "text": "IF EITHER FAILS, THE LINK LOOSENS",
+      "key": "fl"
+     }
+    ],
+    "mode": "double"
+   },
+   "vo": "IGNOU's notes say that if trade is fixed and velocity steady, the price level follows the quantity of money. So in this classical quantity theory, double the money and prices double. If either assumption fails, the price level is unlikely to move in step with the money.",
+   "reveals": [
+    {
+     "key": "fx",
+     "word": "fixed"
+    },
+    {
+     "key": "db",
+     "word": "double"
+    },
+    {
+     "key": "fl",
+     "word": "fails,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The left pan doubles and the price tags double; a flag: only if trade and speed stay fixed; at the end the flag wobbles and the scale tilts loosely.",
+   "beat": "b11",
+   "claims": [
+    "ECO16-T10",
+    "ECO16-T11",
+    "ECO16-A13"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch3 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "cambridge-k",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "CAMBRIDGE",
+      "key": "cb"
+     },
+     {
+      "text": "SHARE OF INCOME KEPT AS MONEY",
+      "key": "sh"
+     },
+     {
+      "lab": "e16_ck",
+      "key": "k"
+     },
+     {
+      "lab": "e16_p1950",
+      "key": "pg"
+     }
+    ]
+   },
+   "vo": "Economists at Cambridge looked from the holder's side. Marshall, Pigou, Robertson and Keynes asked what share of income people choose to keep as money. They called that share k. It is the reciprocal of velocity. In 1950, Pigou wrote that it is a reasonable approximation to say this share falls when the interest rate rises. That is the demand for money we met earlier.",
+   "reveals": [
+    {
+     "key": "cb",
+     "word": "Cambridge"
+    },
+    {
+     "key": "sh",
+     "word": "share"
+    },
+    {
+     "key": "k",
+     "word": "k."
+    },
+    {
+     "key": "pg",
+     "word": "1950,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A wallet beside a salary slip with a dial showing the share kept as cash; the dial shrinks as an interest-rate arrow climbs.",
+   "beat": "b12",
+   "claims": [
+    "ECO16-T12",
+    "ECO16-T13"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch3 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "asset-shelf",
+    "chip": "PER IGNOU",
+    "limit": "",
+    "labels": [
+     {
+      "text": "FRIEDMAN",
+      "key": "fr"
+     },
+     {
+      "text": "MONEY IS ONE ASSET AMONG OTHERS",
+      "key": "as"
+     },
+     {
+      "text": "bonds",
+      "key": "bd"
+     },
+     {
+      "text": "shares",
+      "key": "sh"
+     },
+     {
+      "text": "physical goods",
+      "key": "pg"
+     },
+     {
+      "text": "human wealth",
+      "key": "hw"
+     },
+     {
+      "text": "monetarists: velocity fairly steady",
+      "key": "st"
+     }
+    ],
+    "mode": "friedman"
+   },
+   "vo": "Later, Milton Friedman restated it as a theory of the demand for money. IGNOU's notes say that for him, money is one asset among others. Bonds, shares, physical goods and human wealth are the others. He dropped Keynes's separate motives. Monetarists, who follow him, hold that velocity is fairly steady.",
+   "reveals": [
+    {
+     "key": "fr",
+     "word": "Friedman"
+    },
+    {
+     "key": "as",
+     "word": "asset"
+    },
+    {
+     "key": "bd",
+     "word": "Bonds,"
+    },
+    {
+     "key": "sh",
+     "word": "shares,"
+    },
+    {
+     "key": "pg",
+     "word": "physical"
+    },
+    {
+     "key": "hw",
+     "word": "wealth"
+    },
+    {
+     "key": "st",
+     "word": "steady."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A shelf of assets: cash, a bond, a share, goods, a tool kit for human wealth; a hand weighs each; a plaque FRIEDMAN.",
+   "beat": "b13",
+   "claims": [
+    "ECO16-T15"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch4 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "press-mint",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NOTES · the Reserve Bank only",
+      "key": "rb"
+     },
+     {
+      "lab": "e16_s22",
+      "key": "s2"
+     },
+     {
+      "text": "COINS · the Government of India",
+      "key": "co"
+     },
+     {
+      "lab": "e16_coin",
+      "key": "cn"
+     }
+    ]
+   },
+   "vo": "Now the supply side. Start with what you can touch. Only the Reserve Bank may issue banknotes in India. That is section twenty-two of the RBI Act. Coins come from the Government of India, under the Coinage Act of 2011.",
+   "reveals": [
+    {
+     "key": "rb",
+     "word": "Reserve"
+    },
+    {
+     "key": "s2",
+     "word": "Act."
+    },
+    {
+     "key": "co",
+     "word": "Coins"
+    },
+    {
+     "key": "cn",
+     "word": "2011."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A printing press behind a glass wall, a note emerging with the RBI mark; a mint stamping a coin with the national emblem.",
+   "beat": "b14",
+   "claims": [
+    "ECO16-R11",
+    "ECO16-N23"
+   ]
+  },
+  {
+   "id": "s025",
+   "act": "Ch4 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "fiat-note",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "A NOTE HAS NO VALUE OF ITS OWN",
+      "key": "nv"
+     },
+     {
+      "text": "value = the issuer's guarantee",
+      "key": "gu"
+     },
+     {
+      "text": "FIAT MONEY",
+      "key": "fm"
+     }
+    ]
+   },
+   "vo": "Why do we accept a piece of paper? It has no value of its own. Its value comes from the issuer's guarantee. NCERT calls this fiat money.",
+   "reveals": [
+    {
+     "key": "nv",
+     "word": "paper?"
+    },
+    {
+     "key": "gu",
+     "word": "guarantee."
+    },
+    {
+     "key": "fm",
+     "word": "fiat"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A banknote under a lamp; its value drains out when the guarantee stamp lifts and returns when it is set back.",
+   "beat": "b15",
+   "claims": [
+    "ECO16-N24",
+    "ECO16-R12"
+   ]
+  },
+  {
+   "id": "s026",
+   "act": "Ch4 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "promise-note",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "“I promise to pay the bearer”",
+      "key": "pr"
+     },
+     {
+      "text": "the Reserve Bank's own obligation to the holder",
+      "key": "ob"
+     },
+     {
+      "lab": "e16_s26",
+      "key": "s6"
+     }
+    ]
+   },
+   "vo": "Each note says, I promise to pay the bearer. Those words record the Reserve Bank's own obligation to whoever holds the note.",
+   "reveals": [
+    {
+     "key": "pr",
+     "word": "promise"
+    },
+    {
+     "key": "ob",
+     "word": "obligation"
+    },
+    {
+     "key": "s6",
+     "word": "holds"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A note close up, the promise clause glowing; the glow follows the note hand to hand and back to the RBI building.",
+   "beat": "b15",
+   "claims": [
+    "ECO16-N24",
+    "ECO16-R12"
+   ]
+  },
+  {
+   "id": "s027",
+   "act": "Ch4 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "legal-tender",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "LEGAL TENDER",
+      "key": "lt"
+     },
+     {
+      "text": "every banknote in circulation, anywhere in India",
+      "key": "cr"
+     },
+     {
+      "text": "cannot be refused",
+      "key": "rf"
+     },
+     {
+      "text": "?",
+      "key": "q"
+     }
+    ]
+   },
+   "vo": "Section twenty-six goes further. Every banknote still in circulation is legal tender anywhere in India, guaranteed by the Central Government. Legal tender means it cannot be refused when it is offered in payment. Remember that line. It will matter in a minute.",
+   "reveals": [
+    {
+     "key": "lt",
+     "word": "legal"
+    },
+    {
+     "key": "cr",
+     "word": "circulation"
+    },
+    {
+     "key": "rf",
+     "word": "refused"
+    },
+    {
+     "key": "q",
+     "word": "minute."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A shop counter: a shopkeeper tries to push a note back; a red hand-stop appears over his palm; a small question mark floats (plant: the cheque).",
+   "beat": "b16",
+   "claims": [
+    "ECO16-R11",
+    "ECO16-N24"
+   ]
+  },
+  {
+   "id": "s028",
+   "act": "Ch5 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "deposit-money",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "MONEY IN A BANK ACCOUNT",
+      "key": "bk"
+     },
+     {
+      "text": "take it out on demand",
+      "key": "dm"
+     },
+     {
+      "text": "currency + deposits",
+      "key": "cd"
+     }
+    ]
+   },
+   "vo": "But notes are not the whole story. Money in a bank account that you can take out on demand is money too. NCERT's Class 10 book says modern money is currency plus deposits.",
+   "reveals": [
+    {
+     "key": "bk",
+     "word": "bank"
+    },
+    {
+     "key": "dm",
+     "word": "demand"
+    },
+    {
+     "key": "cd",
+     "word": "currency"
+    }
+   ],
+   "transition": "cut",
+   "visual": "An account balance bar with an arrow: money can be taken out on demand; NCERT's line currency plus deposits.",
+   "beat": "b17",
+   "claims": [
+    "ECO16-N30",
+    "ECO16-N31",
+    "ECO16-N24"
+   ]
+  },
+  {
+   "id": "s029",
+   "act": "Ch5 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "cheque",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "a written order to the bank",
+      "key": "ch"
+     },
+     {
+      "text": "DEMAND DEPOSIT",
+      "key": "dd"
+     },
+     {
+      "text": "payable on demand",
+      "key": "pd"
+     }
+    ]
+   },
+   "vo": "Why? You can pay with it by cheque, a written order to the bank. Such deposits are called demand deposits because they are payable on demand.",
+   "reveals": [
+    {
+     "key": "ch",
+     "word": "cheque,"
+    },
+    {
+     "key": "dd",
+     "word": "called"
+    },
+    {
+     "key": "pd",
+     "word": "payable"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A customer writes a cheque; the money rises out of one account bar and into another.",
+   "beat": "b17",
+   "claims": [
+    "ECO16-N30",
+    "ECO16-N31",
+    "ECO16-N24"
+   ]
+  },
+  {
+   "id": "s030",
+   "act": "Ch5 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "not-tender",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "A CHEQUE CAN BE REFUSED",
+      "key": "rf"
+     },
+     {
+      "text": "DEPOSIT = MONEY",
+      "key": "dm"
+     },
+     {
+      "text": "NOT LEGAL TENDER",
+      "key": "nt"
+     }
+    ]
+   },
+   "vo": "Here is the catch. A cheque can be refused. So a demand deposit is money, but it is not legal tender.",
+   "reveals": [
+    {
+     "key": "rf",
+     "word": "refused."
+    },
+    {
+     "key": "dm",
+     "word": "money,"
+    },
+    {
+     "key": "nt",
+     "word": "tender."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The shopkeeper nods at the cheque but his hand can wave it away; a badge flips: deposit = money, not legal tender.",
+   "beat": "b17",
+   "claims": [
+    "ECO16-N30",
+    "ECO16-N31",
+    "ECO16-N24"
+   ]
+  },
+  {
+   "id": "s031",
+   "act": "Ch5 b18",
+   "kind": "analogy",
+   "spec": {
+    "which": "m-measures",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT's four measures",
+      "key": "nc"
+     },
+     {
+      "text": "M1 · cash with the public + demand deposits",
+      "key": "m1"
+     },
+     {
+      "text": "M3 · M1 + time deposits",
+      "key": "m3"
+     },
+     {
+      "text": "M2 · adds post office savings",
+      "key": "m2"
+     },
+     {
+      "text": "M4 · adds post office deposits",
+      "key": "m4"
+     },
+     {
+      "text": "NARROW MONEY",
+      "key": "nr"
+     },
+     {
+      "text": "BROAD MONEY",
+      "key": "br"
+     },
+     {
+      "text": "M3 · most commonly used",
+      "key": "mc"
+     }
+    ]
+   },
+   "vo": "How do we count it all? NCERT lists four measures of money that the Reserve Bank has published. M1 is cash with the public plus demand deposits. M3 adds time deposits, such as fixed deposits, which have a fixed period to maturity. M2 and M4 add post office deposits. M1 and M2 are narrow money. M3 and M4 are broad money. NCERT calls M3 the most commonly used measure.",
+   "reveals": [
+    {
+     "key": "nc",
+     "word": "NCERT"
+    },
+    {
+     "key": "m1",
+     "word": "M1"
+    },
+    {
+     "key": "m3",
+     "word": "M3"
+    },
+    {
+     "key": "m2",
+     "word": "M2"
+    },
+    {
+     "key": "m4",
+     "word": "M4"
+    },
+    {
+     "key": "nr",
+     "word": "narrow"
+    },
+    {
+     "key": "br",
+     "word": "broad"
+    },
+    {
+     "key": "mc",
+     "word": "commonly"
+    }
+   ],
+   "transition": "cut",
+   "visual": "M1 as a base block with two branches rising from it, M2 and M3; M4 above M3; brackets for narrow and broad; M3 glows.",
+   "beat": "b18",
+   "claims": [
+    "ECO16-N25",
+    "ECO16-R08",
+    "ECO16-N23"
+   ]
+  },
+  {
+   "id": "s032",
+   "act": "Ch5 b19",
+   "kind": "analogy",
+   "spec": {
+    "which": "m3-bar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_m3cap",
+      "key": "cap"
+     },
+     {
+      "lab": "e16_cash",
+      "key": "c"
+     },
+     {
+      "lab": "e16_dd",
+      "key": "d"
+     },
+     {
+      "lab": "e16_td",
+      "key": "t"
+     },
+     {
+      "lab": "e16_oth",
+      "key": "o"
+     },
+     {
+      "lab": "e16_q",
+      "key": "q"
+     }
+    ],
+    "ref": "e16_m3",
+    "mode": "split"
+   },
+   "vo": "Now we can answer the opening question. On the thirty-first of July 2026, M3, a broad measure of money, split as follows. About thirteen percent was cash with the public. About eleven percent was in demand deposits, such as savings and current accounts. About seventy-five and a half percent was in time deposits, such as fixed deposits. The last sliver, under half a percent, was other deposits with the Reserve Bank. So cash and demand deposits together, NCERT's M1, are only about a quarter of it.",
+   "reveals": [
+    {
+     "key": "cap",
+     "word": "M3,"
+    },
+    {
+     "key": "c",
+     "word": "cash"
+    },
+    {
+     "key": "d",
+     "word": "demand"
+    },
+    {
+     "key": "t",
+     "word": "time"
+    },
+    {
+     "key": "o",
+     "word": "sliver,"
+    },
+    {
+     "key": "q",
+     "word": "quarter."
+    }
+   ],
+   "transition": "cut",
+   "visual": "One tall bar fills in: a ribbon of notes, a slightly thinner band of demand deposits, a huge block of time deposits, a hairline of other RBI deposits; a bracket over the bottom two: about a quarter.",
+   "beat": "b19",
+   "claims": [
+    "ECO16-A08",
+    "ECO16-A12",
+    "ECO16-I02"
+   ]
+  },
+  {
+   "id": "s033",
+   "act": "Ch6 b20",
+   "kind": "analogy",
+   "spec": {
+    "which": "base-tower",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "HIGH-POWERED MONEY · currency issued by the central bank",
+      "key": "hp"
+     },
+     {
+      "text": "a basis for credit creation",
+      "key": "ba"
+     },
+     {
+      "lab": "e16_1935",
+      "key": "rb"
+     }
+    ]
+   },
+   "vo": "Cash is small, but it matters. NCERT calls the currency issued by the central bank high-powered money. Held by the public or by banks, it acts as a basis for credit creation. India's central bank, the Reserve Bank, was set up in 1935.",
+   "reveals": [
+    {
+     "key": "hp",
+     "word": "high-powered"
+    },
+    {
+     "key": "ba",
+     "word": "basis"
+    },
+    {
+     "key": "rb",
+     "word": "1935."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A small stone base labelled reserve money with a tall tower of deposits rising beside it; a question mark pulses at the tower's foot.",
+   "beat": "b20",
+   "claims": [
+    "ECO16-N07",
+    "ECO16-A09"
+   ]
+  },
+  {
+   "id": "s034",
+   "act": "Ch6 b20",
+   "kind": "analogy",
+   "spec": {
+    "which": "paise-bar",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_paise",
+      "key": "fp"
+     },
+     {
+      "text": "deposits are most of the money",
+      "key": "dp"
+     },
+     {
+      "text": "HOW DOES CREDIT CREATION WORK?",
+      "key": "q"
+     }
+    ],
+    "ref": "e16_cdr"
+   },
+   "vo": "The public holds only about fifteen paise of cash for every rupee in deposits. But deposits are most of the money. So how does credit creation work?",
+   "reveals": [
+    {
+     "key": "fp",
+     "word": "fifteen"
+    },
+    {
+     "key": "dp",
+     "word": "deposits."
+    },
+    {
+     "key": "q",
+     "word": "creation"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A rupee in deposits beside fifteen paise of coins; a long block of deposits behind; the question grows.",
+   "beat": "b20",
+   "claims": [
+    "ECO16-N07",
+    "ECO16-A09"
+   ]
+  },
+  {
+   "id": "s035",
+   "act": "Ch6 b21",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "strike": {
+     "text": "money = notes and coins?",
+     "key": "x"
+    },
+    "lines": [
+     {
+      "text": "Three jobs: medium of exchange · unit of account · store of value",
+      "key": "n1"
+     },
+     {
+      "text": "Demand for money rises with income, falls as the interest rate rises",
+      "key": "n2"
+     },
+     {
+      "text": "Keynes: transactions · precaution · speculation",
+      "key": "n3"
+     },
+     {
+      "text": "Supply of money = currency + deposits",
+      "key": "n4"
+     },
+     {
+      "text": "Notes: the Reserve Bank · coins: the Government",
+      "key": "n5"
+     },
+     {
+      "text": "Both legal tender (coins up to limits) · a cheque is not",
+      "key": "n6"
+     },
+     {
+      "text": "M3 most commonly used (NCERT) · cash about 13%, July 2026",
+      "key": "n7"
+     }
+    ]
+   },
+   "vo": "For the exam, write it this way. Money does three jobs: medium of exchange, unit of account and store of value. The demand for money rises with income and falls as the interest rate rises. Keynes gave three motives: transactions, precaution and speculation. The money supply is currency plus deposits. Notes come from the Reserve Bank and coins from the Government. Both are legal tender, coins up to set limits. A cheque is not. NCERT calls M3 the most commonly used measure. In July 2026, about thirteen percent of it was cash with the public.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "jobs:"
+    },
+    {
+     "key": "n2",
+     "word": "demand"
+    },
+    {
+     "key": "n3",
+     "word": "Keynes"
+    },
+    {
+     "key": "n4",
+     "word": "supply"
+    },
+    {
+     "key": "n5",
+     "word": "Notes"
+    },
+    {
+     "key": "n6",
+     "word": "tender,"
+    },
+    {
+     "key": "n7",
+     "word": "NCERT"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Exam card: 'money = notes and coins?' struck out; the answer fills the page, one line per sentence.",
+   "beat": "b21",
+   "claims": [
+    "ECO16-N02",
+    "ECO16-N05",
+    "ECO16-T14",
+    "ECO16-N23",
+    "ECO16-N24",
+    "ECO16-N25",
+    "ECO16-A08"
+   ]
+  },
+  {
+   "id": "s036",
+   "act": "Ch6 b22",
+   "kind": "analogy",
+   "spec": {
+    "which": "phone-pay",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "a balance moves from one bank account to another",
+      "key": "bm"
+     }
+    ],
+    "mode": "end"
+   },
+   "vo": "So next time you tap your phone at a fruit cart, remember what moved. Not a note. A balance moving from one bank account to another.",
+   "reveals": [
+    {
+     "key": "bm",
+     "word": "balance"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The phone tap again; the balance glides from one account bar to another.",
+   "beat": "b22",
+   "claims": [
+    "ECO16-N55"
+   ]
+  },
+  {
+   "id": "s037",
+   "act": "Ch6 b22",
+   "kind": "analogy",
+   "spec": {
+    "which": "part2-seam",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "where did that deposit come from?",
+      "key": "wd"
+     },
+     {
+      "text": "PART 2",
+      "key": "p2"
+     },
+     {
+      "text": "what stops a bank lending more?",
+      "key": "lm"
+     }
+    ]
+   },
+   "vo": "But where did that deposit come from? In part two: when a bank gives you a loan, where does the money come from? And what stops it from lending more?",
+   "reveals": [
+    {
+     "key": "wd",
+     "word": "deposit"
+    },
+    {
+     "key": "p2",
+     "word": "two:"
+    },
+    {
+     "key": "lm",
+     "word": "lending"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The account bar's base shows a faint seam that opens: a new block grows out of nowhere. A frame: PART 2.",
+   "beat": "b22",
+   "claims": [
+    "ECO16-N55"
+   ]
+  }
+ ]
+}

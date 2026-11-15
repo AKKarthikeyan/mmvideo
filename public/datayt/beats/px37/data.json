@@ -1,0 +1,579 @@
+{
+ "id": "px37",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "Min. of Finance · Lok Sabha answer, 3 Aug 2026",
+ "source": "Ministry of Finance, Lok Sabha unstarred question 2407, answered 3 Aug 2026, Annexure I: Pradhan Mantri MUDRA Yojana loan accounts and amounts sanctioned, cumulative, 8 Apr 2015 to 26 Jun 2026, in total and for women entrepreneurs, by state, as uploaded by lending institutions to the Mudra portal. Shares are women's accounts and amounts as a share of each state's total. A loan account is not a person. India is the answer's total row.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Delhi*: women took *57%*",
+    "of Mudra loans, *19%* of",
+    "money sanctioned, 2015-26."
+   ],
+   "vo": "Delhi's women took fifty-seven percent of Mudra loans, nineteen percent of the money.",
+   "geo": "NCT of Delhi",
+   "name": "Delhi",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "WOMEN'S SHARE OF LOAN ACCOUNTS",
+   "big": "56.9%",
+   "text": "of Delhi's Mudra loan accounts were women entrepreneurs'. India: 66%.",
+   "sub": "Small business loans, no collateral. Accounts sanctioned 8 Apr 2015 to 26 Jun 2026.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "56.9%",
+     "frac": 0.5689992168614054
+    },
+    {
+     "name": "India",
+     "label": "66.2%",
+     "frac": 0.662165125015437
+    }
+   ],
+   "vo": "Women held fifty-seven percent of Delhi's Mudra loan accounts. India, sixty-six.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "WOMEN'S SHARE OF MONEY SANCTIONED",
+   "big": "19.5%",
+   "text": "of the rupees sanctioned in Delhi went to women's loans. India: 42%.",
+   "sub": "Amount sanctioned, same period. A loan account is not a person.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "19.5%",
+     "frac": 0.19490668483221257
+    },
+    {
+     "name": "India",
+     "label": "42.1%",
+     "frac": 0.42111131668124474
+    }
+   ],
+   "vo": "Women's loans got nineteen percent of the money sanctioned. India, forty-two.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "ACCOUNT SHARE MINUS MONEY SHARE",
+   "big": "37.4",
+   "text": "points between the two shares: the widest of any state or UT. India: 24.",
+   "sub": "Women's share of accounts minus their share of money, 2015-26.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "37.4",
+     "frac": 0.7481850640583856
+    },
+    {
+     "name": "India",
+     "label": "24.1",
+     "frac": 0.48210761666838464
+    }
+   ],
+   "vo": "That gap, thirty-seven points, is the widest of any state or territory.",
+   "t0": 17.419,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Gaps over *27 points*, five states:",
+    "Delhi, Uttarakhand, Rajasthan,",
+    "Maharashtra and Gujarat."
+   ],
+   "note": "",
+   "vo": "Five states have gaps over twenty-seven points.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Account share minus money share: *every state*",
+   "sub": "points · women's Mudra loans · India 24.1 · 2015-26",
+   "note": "Above zero: women's share of accounts exceeds their share of money. Blank: Dadra and Nagar Haveli and Daman and Diu (23.0). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "NCT of Delhi",
+    "Uttarakhand",
+    "Rajasthan",
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "vo": "Here is every state: the gap between accounts and money.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Above zero: women's share of accounts exceeds their share of money. Blank: Dadra and Nagar Haveli and Daman and Diu (23.0). The table shows how much, not why.",
+   "ring": [
+    "NCT of Delhi",
+    "Uttarakhand",
+    "Rajasthan",
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "q": "Know someone with a *Mudra loan*?",
+   "sub": "Tag them below.",
+   "kind": "mapend",
+   "vo": "Know someone with a Mudra loan?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "3.7",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Manipur",
+   "label": "4.5",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 29.491
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "5.4",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.6
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "7.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.708
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "7.8",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.817
+  },
+  {
+   "name": "Sikkim",
+   "label": "8.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.926
+  },
+  {
+   "name": "Ladakh",
+   "label": "9.5",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.035
+  },
+  {
+   "name": "Mizoram",
+   "label": "10.3",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.143
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "12.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.252
+  },
+  {
+   "name": "Bihar",
+   "label": "12.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.361
+  },
+  {
+   "name": "Tripura",
+   "label": "13.6",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.47
+  },
+  {
+   "name": "Chandigarh",
+   "label": "14.3",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.578
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "15.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.687
+  },
+  {
+   "name": "Assam",
+   "label": "16.0",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.796
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "16.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.905
+  },
+  {
+   "name": "Meghalaya",
+   "label": "17.1",
+   "bucket": 2,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.014
+  },
+  {
+   "name": "Nagaland",
+   "label": "20.3",
+   "bucket": 2,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.122
+  },
+  {
+   "name": "Goa",
+   "label": "20.6",
+   "bucket": 2,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.231
+  },
+  {
+   "name": "Puducherry",
+   "label": "20.6",
+   "bucket": 2,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.34
+  },
+  {
+   "name": "Jharkhand",
+   "label": "22.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.449
+  },
+  {
+   "name": "Odisha",
+   "label": "22.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.557
+  },
+  {
+   "name": "West Bengal",
+   "label": "22.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.666
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "23.2",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.775
+  },
+  {
+   "name": "Telangana",
+   "label": "23.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.884
+  },
+  {
+   "name": "Punjab",
+   "label": "24.8",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.993
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "24.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.101
+  },
+  {
+   "name": "Karnataka",
+   "label": "25.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.21
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "25.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.319
+  },
+  {
+   "name": "Kerala",
+   "label": "26.4",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.428
+  },
+  {
+   "name": "Haryana",
+   "label": "26.5",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.536
+  },
+  {
+   "name": "Gujarat",
+   "label": "28.0",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.645
+  },
+  {
+   "name": "Maharashtra",
+   "label": "28.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.754
+  },
+  {
+   "name": "Rajasthan",
+   "label": "29.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.863
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "31.7",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.971
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "37.4",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.08
+  }
+ ],
+ "checked": [
+  "Delhi is the highest of 35 with data (37.4)",
+  "Delhi 56.8999 rounds to 57",
+  "Delhi 568.999 rounds to 569",
+  "India 66.2165 rounds to 66",
+  "India 662.165 rounds to 662",
+  "Delhi 19.4907 rounds to 19",
+  "Delhi 194.907 rounds to 195",
+  "India 42.1111 rounds to 42",
+  "India 421.111 rounds to 421",
+  "Delhi 37.4093 rounds to 37",
+  "Delhi 374.093 rounds to 374",
+  "India 24.1054 rounds to 24",
+  "India 241.054 rounds to 241",
+  "Delhi 18.3378 rounds to 18",
+  "India 37.1142 rounds to 37",
+  "Delhi 45112.6 rounds to 45113",
+  "Delhi 246.009 rounds to 246",
+  "Delhi 3.82436e+06 rounds to 3824355",
+  "Delhi 2.17606e+06 rounds to 2176055",
+  "Delhi / Uttarakhand = 1.18 (at least 1.15)",
+  "Uttarakhand / X = 1.17 (at least 1.0)",
+  "Rajasthan / X = 1.08 (at least 1.0)",
+  "Maharashtra / X = 1.05 (at least 1.0)",
+  "Gujarat / X = 1.04 (at least 1.0)",
+  "X / Haryana = 1.02 (at least 1.0)",
+  "X / Kerala = 1.02 (at least 1.0)",
+  "X 230.31 rounds to 230"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.623,
+   "at": 0.12,
+   "text": "Delhi's women took fifty-seven percent of Mudra loans, nineteen percent of the money."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.355,
+   "at": 5.926,
+   "text": "Women held fifty-seven percent of Delhi's Mudra loan accounts. India, sixty-six."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.597,
+   "at": 11.733,
+   "text": "Women's loans got nineteen percent of the money sanctioned. India, forty-two."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.537,
+   "at": 17.539,
+   "text": "That gap, thirty-seven points, is the widest of any state or territory."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.847,
+   "at": 25.281,
+   "text": "Five states have gaps over twenty-seven points."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.179,
+   "at": 29.152,
+   "text": "Here is every state: the gap between accounts and money."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 34.959,
+   "text": "Know someone with a Mudra loan?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Delhi: Women Hold 57% of Mudra Loans, 19% of the Money"
+}

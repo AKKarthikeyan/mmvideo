@@ -1,0 +1,3305 @@
+{
+ "id": "tn22",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Labour Bureau · rural wages · 2014-15 to 2024-25",
+ "palette": "D",
+ "state": "Karnataka",
+ "points": [
+  {
+   "period": "2014-15",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       113,
+       "2014-15"
+      ]
+     },
+     {
+      "rbi": [
+       112,
+       "2014-15"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  },
+  {
+   "period": "2024-25",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       113,
+       "2024-25"
+      ]
+     },
+     {
+      "rbi": [
+       112,
+       "2024-25"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "FARM PAY AS % OF CONSTRUCTION PAY",
+ "expect": {
+  "years": 10
+ },
+ "source": "Labour Bureau (Ministry of Labour and Employment), Indian Labour Journal, as published in the RBI Handbook of Statistics on Indian States 2024-25 (11 Dec 2025), Tables 112 and 113: average daily wage rates in rural areas, men, general agricultural labourers over construction workers, current rupees. India is the average of all quotations. State figures for 2020-21 cover ten months. Recent years can be revised. Blank on the map: Jammu and Kashmir (boundary changed 2019) and states with no figure for both wages.",
+ "hook": [
+  "*Karnataka*, rural men:",
+  "farm pay *nearly caught up*",
+  "with construction pay: *94%*."
+ ],
+ "hook_vo": "Karnataka's farm pay nearly caught up with construction pay.",
+ "then": {
+  "text": "of the construction wage. Farm *₹205*, construction *₹286* a day",
+  "vo": "In twenty fourteen-fifteen it was seventy-two percent."
+ },
+ "now": {
+  "text": "of the construction wage. Farm *₹454*, construction *₹485* a day",
+  "vo": "Ten years on, it was ninety-four percent of construction pay."
+ },
+ "facts": [
+  {
+   "kicker": "KARNATAKA'S FARM WAGE VS INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of India's average farm labourer wage, in *2024-25*",
+   "bars": [
+    {
+     "name": "2014-15",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2014-15"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2014-15"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2024-25",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2024-25"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2024-25"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 120,
+   "sub": "Each against India in the same year. Construction: 104.1%, then 109.9%.",
+   "vo": "Karnataka's farm wage went from ninety-one to a hundred fourteen percent of India's."
+  },
+  {
+   "kicker": "A STEADY RISE · BY YEAR",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "in 2023-24. Up in *9 of 10* years, level in 2020-21.",
+   "bars": [
+    {
+     "name": "2016-17",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2016-17"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2016-17"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2019-20",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2019-20"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2019-20"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2022-23",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         113,
+         "2022-23"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2022-23"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Farm labourer wage as % of construction wage. 2019-20 and 2020-21: 85.5% both.",
+   "vo": "Up in nine of ten years and level in one."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Karnataka gained *22 points*,",
+    "Kerala *21*: the two biggest;",
+    "all-India gained *9 points*."
+   ],
+   "note": "Points of the construction wage. Kerala: +21.2; all-India: +8.6. Rural men, current rupees. The table shows how much, not why.",
+   "vo": "Karnataka and Kerala gained most. Karnataka's gain was two point six times India's."
+  }
+ ],
+ "tests": [
+  {
+   "says": "72% in 2014-15 (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 72
+  },
+  {
+   "says": "71.7% in 2014-15 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 717
+  },
+  {
+   "says": "94% in 2024-25 (hook, title, voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 94
+  },
+  {
+   "says": "93.7% in 2024-25 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 937
+  },
+  {
+   "says": "the gain is 22.0 points (shift card, tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 220
+  },
+  {
+   "says": "22 points (say card)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 22
+  },
+  {
+   "says": "farm labourer ₹205 a day in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      113,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 205
+  },
+  {
+   "says": "construction worker ₹286 a day in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 286
+  },
+  {
+   "says": "farm labourer ₹454 a day in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      113,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 454
+  },
+  {
+   "says": "construction worker ₹485 a day in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 485
+  },
+  {
+   "says": "up in 2015-16: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2015-16"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2016-17: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2016-17"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2015-16"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2017-18: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2016-17"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2018-19: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2018-19"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2019-20: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2019-20"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2018-19"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "2020-21 is level with 2019-20 (within 0.2 points)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2020-21"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2019-20"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -0.2,
+   "max": 0.2
+  },
+  {
+   "says": "up in 2021-22: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2020-21"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2022-23: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2023-24: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "up in 2024-25: 0.3 to 4.0 points on the year before (a steady rise, no jump)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.3,
+   "max": 4.0
+  },
+  {
+   "says": "85.5% in 2019-20 and in 2020-21 (card sub)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 855
+  },
+  {
+   "says": "85.5% in 2020-21 (card sub)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2020-21"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2020-21"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 855
+  },
+  {
+   "says": "78.7% in 2016-17 (bar, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2016-17"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 787
+  },
+  {
+   "says": "seventy-nine (2016-17)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2016-17"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 79
+  },
+  {
+   "says": "85.5% in 2019-20 (bar, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 855
+  },
+  {
+   "says": "eighty-six (2019-20)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 86
+  },
+  {
+   "says": "88.1% in 2022-23 (bar, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 881
+  },
+  {
+   "says": "eighty-eight (2022-23)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 88
+  },
+  {
+   "says": "90.8% in 2023-24 (big figure, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 908
+  },
+  {
+   "says": "ninety-one (2023-24)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 91
+  },
+  {
+   "says": "the rise holds in 2022-23: at least 79% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 79,
+   "max": 100
+  },
+  {
+   "says": "the rise holds in 2023-24: at least 79% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 79,
+   "max": 100
+  },
+  {
+   "says": "the rise holds in 2024-25: at least 79% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 79,
+   "max": 100
+  },
+  {
+   "says": "2015-16 above the start (75.1%)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2015-16"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2015-16"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 751
+  },
+  {
+   "says": "India 81.7% in 2014-15 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 817
+  },
+  {
+   "says": "India 90.2% in 2024-25 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 902
+  },
+  {
+   "says": "India gained 8.6 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 86
+  },
+  {
+   "says": "India gained 9 points (say card)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 9
+  },
+  {
+   "says": "Karnataka's gain is 2.6 times India's (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2024-25"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2024-25"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2014-15"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2014-15"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       }
+      ],
+      "scale": 1
+     },
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2024-25"
+           ]
+          },
+          "state": "India"
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2024-25"
+           ]
+          },
+          "state": "India"
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2014-15"
+           ]
+          },
+          "state": "India"
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2014-15"
+           ]
+          },
+          "state": "India"
+         }
+        ],
+        "scale": 100
+       }
+      ],
+      "scale": 1
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 26
+  },
+  {
+   "says": "two point six times (2.55 to 2.65)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2024-25"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2024-25"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2014-15"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2014-15"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       }
+      ],
+      "scale": 1
+     },
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2024-25"
+           ]
+          },
+          "state": "India"
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2024-25"
+           ]
+          },
+          "state": "India"
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            113,
+            "2014-15"
+           ]
+          },
+          "state": "India"
+         },
+         {
+          "data": {
+           "rbi": [
+            112,
+            "2014-15"
+           ]
+          },
+          "state": "India"
+         }
+        ],
+        "scale": 100
+       }
+      ],
+      "scale": 1
+     }
+    ]
+   },
+   "min": 2.55,
+   "max": 2.65
+  },
+  {
+   "says": "Kerala gained 21 points (say card)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 21
+  },
+  {
+   "says": "Kerala gained 21.2 points (note, tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 212
+  },
+  {
+   "says": "Kerala gained at least 20 points: with Karnataka, the two biggest",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": 20,
+   "max": 25
+  },
+  {
+   "says": "Andhra Pradesh's farm wage is 2.0 to 2.3 times its 2014-15 level (higher pay)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "Andhra Pradesh"
+     }
+    ],
+    "scale": 1
+   },
+   "min": 2.0,
+   "max": 2.3
+  },
+  {
+   "says": "Andhra Pradesh's ratio fell over the same years (a lower ratio with higher pay)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": -1
+  },
+  {
+   "says": "Andhra Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Assam gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Assam"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Assam"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Assam"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Assam"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Bihar gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Bihar"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Bihar"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Gujarat gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Gujarat"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Haryana gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Haryana"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Haryana"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Haryana"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Haryana"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Himachal Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Jammu and Kashmir gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Madhya Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Maharashtra gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Meghalaya gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Meghalaya"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Meghalaya"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Meghalaya"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Meghalaya"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Odisha gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Odisha"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Odisha"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Punjab gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Punjab"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Punjab"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Punjab"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Punjab"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Rajasthan gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Rajasthan"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Rajasthan"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Rajasthan"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Rajasthan"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Tamil Nadu gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Tamil Nadu"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Tamil Nadu"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Tamil Nadu"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Tamil Nadu"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Tripura gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Tripura"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Tripura"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Tripura"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Tripura"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "Uttar Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "West Bengal gained under 15 points, so Karnataka and Kerala are the two biggest rises",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2024-25"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "West Bengal"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          113,
+          "2014-15"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "West Bengal"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 15
+  },
+  {
+   "says": "91.3% of India's farm wage in 2014-15 (bar, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 913
+  },
+  {
+   "says": "114.1% of India's farm wage in 2024-25 (big figure and bar, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 1141
+  },
+  {
+   "says": "ninety-one percent (voice, 2014-15)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 91
+  },
+  {
+   "says": "a hundred fourteen percent (voice, 2024-25)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 114
+  },
+  {
+   "says": "construction wage 104.1% of India's in 2014-15 (sub, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 1041
+  },
+  {
+   "says": "construction wage 109.9% of India's in 2024-25 (sub, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 1099
+  },
+  {
+   "says": "farm wage was below India's in 2014-15 and above it in 2024-25 (went from 91 to 114): start under 100",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 80,
+   "max": 99.9
+  },
+  {
+   "says": "farm wage above India's in 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 100.1,
+   "max": 130
+  },
+  {
+   "says": "the rise against India's farm wage holds in 2022-23: at least 99% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2022-23"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 99,
+   "max": 130
+  },
+  {
+   "says": "the rise against India's farm wage holds in 2023-24: at least 99% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 99,
+   "max": 130
+  },
+  {
+   "says": "the rise against India's farm wage holds in 2024-25: at least 99% (a third of the gain above the start)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 99,
+   "max": 130
+  },
+  {
+   "says": "farm pay nearly caught up with construction pay (hook): 2024-25 ratio between 90% and just under 100%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        113,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 90,
+   "max": 99.9
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -5,
+   -1.5,
+   1.5,
+   8
+  ],
+  "title": "Farm pay vs construction: *each state's change*",
+  "sub": "points of construction pay · {from} to {to}",
+  "note": "A lower percentage can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no figure for both wages.",
+  "ring": [
+   "Kerala"
+  ],
+  "vo": "Each state's change in farm pay against construction pay.",
+  "key": [
+   "fell 5+",
+   "within 1.5 points",
+   "rose 8+"
+  ]
+ },
+ "end": {
+  "q": "Farm or construction: which did *you* do?",
+  "sub": "Spot your state on the map.",
+  "vo": "Farm or construction: which did you do?"
+ },
+ "yt_title": "Rural Karnataka Men: Farm Labour Pay Hit 94% of Construction"
+}

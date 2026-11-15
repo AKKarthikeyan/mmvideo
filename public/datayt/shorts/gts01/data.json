@@ -1,0 +1,277 @@
+{
+ "id": "gts01",
+ "series": "Guess the State",
+ "ind": 10,
+ "label": "Homes where a woman owns house/land",
+ "unit": "%",
+ "hook": [
+  "In one state, *2 in 3 homes*",
+  "have a woman who owns a house or land."
+ ],
+ "q": "Which state?",
+ "title": "Where 2 in 3 homes have a woman who owns home or land \ud83d\uddfa\ufe0f",
+ "answer": "Meghalaya",
+ "answerName": "Meghalaya",
+ "options": [
+  "Kerala",
+  "Meghalaya",
+  "Goa"
+ ],
+ "optionKeys": [
+  "Kerala",
+  "Meghalaya",
+  "Goa"
+ ],
+ "answerIndex": 1,
+ "value": 65.3,
+ "india": 18.8,
+ "india5": 14.0,
+ "values": {
+  "Arunachal Pradesh": 14.8,
+  "Assam": 9.9,
+  "Bihar": 14.9,
+  "Chhattisgarh": 17.5,
+  "Goa": 21.4,
+  "Gujarat": 16.0,
+  "Haryana": 14.7,
+  "Himachal Pradesh": 18.7,
+  "Jharkhand": 14.5,
+  "Karnataka": 29.5,
+  "Kerala": 34.3,
+  "Madhya Pradesh": 17.3,
+  "Maharashtra": 18.6,
+  "Meghalaya": 65.3,
+  "Mizoram": 16.8,
+  "Nagaland": 11.6,
+  "Odisha": 13.5,
+  "Punjab": 13.4,
+  "Chandigarh": 13.7,
+  "Jammu and Kashmir": 5.0,
+  "NCT of Delhi": 17.7,
+  "Puducherry": 22.8,
+  "Andhra Pradesh": 31.9,
+  "Rajasthan": 13.9,
+  "Sikkim": 9.4,
+  "Tamil Nadu": 17.2,
+  "Telangana": 31.1,
+  "Tripura": 17.7,
+  "Uttar Pradesh": 20.1,
+  "Uttarakhand": 23.7,
+  "West Bengal": 13.0,
+  "Andaman and Nicobar Islands": 13.1,
+  "Dadra & Nagar Haveli and Daman & Diu": 12.1,
+  "Ladakh": 7.1,
+  "Lakshadweep": 53.6
+ },
+ "band": {
+  "Arunachal Pradesh": 2,
+  "Assam": 0,
+  "Bihar": 2,
+  "Chhattisgarh": 2,
+  "Goa": 3,
+  "Gujarat": 2,
+  "Haryana": 1,
+  "Himachal Pradesh": 3,
+  "Jharkhand": 1,
+  "Karnataka": 4,
+  "Kerala": 4,
+  "Madhya Pradesh": 2,
+  "Maharashtra": 3,
+  "Meghalaya": 4,
+  "Mizoram": 2,
+  "Nagaland": 0,
+  "Odisha": 1,
+  "Punjab": 1,
+  "Chandigarh": 1,
+  "Jammu and Kashmir": 0,
+  "NCT of Delhi": 3,
+  "Puducherry": 3,
+  "Andhra Pradesh": 4,
+  "Rajasthan": 1,
+  "Sikkim": 0,
+  "Tamil Nadu": 2,
+  "Telangana": 4,
+  "Tripura": 3,
+  "Uttar Pradesh": 3,
+  "Uttarakhand": 4,
+  "West Bengal": 0,
+  "Andaman and Nicobar Islands": 1,
+  "Dadra & Nagar Haveli and Daman & Diu": 0,
+  "Ladakh": 0,
+  "Lakshadweep": 4
+ },
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "palette": "A",
+ "paletteName": "Kadai Chai",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bandLabels": [
+  "< 13.1%",
+  "13.1\u201314.8%",
+  "14.8\u201317.7%",
+  "17.7\u201323.7%",
+  "23.7%+"
+ ],
+ "top": [
+  {
+   "name": "Meghalaya",
+   "key": "Meghalaya",
+   "v": 65.3
+  },
+  {
+   "name": "Kerala",
+   "key": "Kerala",
+   "v": 34.3
+  },
+  {
+   "name": "Andhra Pradesh",
+   "key": "Andhra Pradesh",
+   "v": 31.9
+  },
+  {
+   "name": "Telangana",
+   "key": "Telangana",
+   "v": 31.1
+  },
+  {
+   "name": "Karnataka",
+   "key": "Karnataka",
+   "v": 29.5
+  }
+ ],
+ "other": {
+  "name": "J&K",
+  "v": 5.0
+ },
+ "side": "top",
+ "statesOnly": false,
+ "t": {
+  "hook": [
+   0.0,
+   5.806
+  ],
+  "quiz": [
+   5.806,
+   11.613
+  ],
+  "reveal": [
+   11.613,
+   15.484
+  ],
+  "fill": [
+   15.484,
+   19.355
+  ],
+  "hold": [
+   19.355,
+   25.161
+  ],
+  "top": [
+   25.161,
+   30.968
+  ],
+  "end": [
+   30.968,
+   34.839
+  ]
+ },
+ "total": 35.439,
+ "vo": [
+  {
+   "text": "In one state, 2 in 3 homes have a woman who owns a house or land.",
+   "file": "vo_hook.mp3",
+   "sec": 4.048,
+   "at": 0.15,
+   "sec_name": "hook"
+  },
+  {
+   "text": "Which state? Kerala, Meghalaya, or Goa?",
+   "file": "vo_quiz.mp3",
+   "sec": 3.448,
+   "at": 5.956,
+   "sec_name": "quiz"
+  },
+  {
+   "text": "It's Meghalaya!",
+   "file": "vo_reveal.mp3",
+   "sec": 1.567,
+   "at": 11.763,
+   "sec_name": "reveal"
+  },
+  {
+   "text": "65.3 percent.",
+   "file": "vo_fill.mp3",
+   "sec": 1.75,
+   "at": 15.634,
+   "sec_name": "fill"
+  },
+  {
+   "text": "3.5 times India's 18.8 percent.",
+   "file": "vo_hold.mp3",
+   "sec": 3.578,
+   "at": 19.505,
+   "sec_name": "hold"
+  },
+  {
+   "text": "Second is Kerala, far behind at 34.3 percent.",
+   "file": "vo_top.mp3",
+   "sec": 4.754,
+   "at": 25.311,
+   "sec_name": "top"
+  },
+  {
+   "text": "Where does your state rank? Tell us in the comments.",
+   "file": "vo_end.mp3",
+   "sec": 2.768,
+   "at": 31.118,
+   "sec_name": "end"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "fillAt": {
+  "Jammu and Kashmir": 15.726,
+  "Ladakh": 15.792,
+  "Sikkim": 15.859,
+  "Assam": 15.925,
+  "Nagaland": 15.991,
+  "Dadra & Nagar Haveli and Daman & Diu": 16.058,
+  "West Bengal": 16.124,
+  "Andaman and Nicobar Islands": 16.19,
+  "Punjab": 16.257,
+  "Odisha": 16.323,
+  "Chandigarh": 16.39,
+  "Rajasthan": 16.456,
+  "Jharkhand": 16.522,
+  "Haryana": 16.589,
+  "Arunachal Pradesh": 16.655,
+  "Bihar": 16.721,
+  "Gujarat": 16.788,
+  "Mizoram": 16.854,
+  "Tamil Nadu": 16.92,
+  "Madhya Pradesh": 16.987,
+  "Chhattisgarh": 17.053,
+  "NCT of Delhi": 17.119,
+  "Tripura": 17.186,
+  "Maharashtra": 17.252,
+  "Himachal Pradesh": 17.319,
+  "Uttar Pradesh": 17.385,
+  "Goa": 17.451,
+  "Puducherry": 17.518,
+  "Uttarakhand": 17.584,
+  "Karnataka": 17.65,
+  "Telangana": 17.717,
+  "Andhra Pradesh": 17.783,
+  "Kerala": 17.849,
+  "Lakshadweep": 17.916,
+  "Meghalaya": 17.982
+ },
+ "fps": 30,
+ "source": "NFHS-6 (2023-24), IIPS \u00b7 state fact sheets"
+}

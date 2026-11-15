@@ -1,0 +1,1302 @@
+{
+ "id": "tn36",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "PFRDA via RBI Handbook · 2015-16, 2024-25",
+ "palette": "E",
+ "state": "Odisha",
+ "points": [
+  {
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "rbi": [
+         180,
+         "2015-16 | Female"
+        ]
+       },
+       {
+        "add": [
+         {
+          "rbi": [
+           180,
+           "2015-16 | Female"
+          ]
+         },
+         {
+          "rbi": [
+           180,
+           "2015-16 | Male"
+          ]
+         }
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "values": {
+       "Andhra Pradesh": 1,
+       "Assam": 1,
+       "Bihar": 1,
+       "Gujarat": 1,
+       "Haryana": 1,
+       "Himachal Pradesh": 1,
+       "Jharkhand": 1,
+       "Madhya Pradesh": 1,
+       "Odisha": 1,
+       "Puducherry": 1,
+       "Punjab": 1,
+       "Rajasthan": 1,
+       "Tamil Nadu": 1,
+       "Tripura": 1,
+       "Uttar Pradesh": 1,
+       "Uttarakhand": 1,
+       "West Bengal": 1
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "period": "2015-16"
+  },
+  {
+   "data": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "rbi": [
+         180,
+         "2024-25 | Female"
+        ]
+       },
+       {
+        "add": [
+         {
+          "rbi": [
+           180,
+           "2024-25 | Female"
+          ]
+         },
+         {
+          "rbi": [
+           180,
+           "2024-25 | Male"
+          ]
+         }
+        ]
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "values": {
+       "Andhra Pradesh": 1,
+       "Assam": 1,
+       "Bihar": 1,
+       "Gujarat": 1,
+       "Haryana": 1,
+       "Himachal Pradesh": 1,
+       "Jharkhand": 1,
+       "Madhya Pradesh": 1,
+       "Odisha": 1,
+       "Puducherry": 1,
+       "Punjab": 1,
+       "Rajasthan": 1,
+       "Tamil Nadu": 1,
+       "Tripura": 1,
+       "Uttar Pradesh": 1,
+       "Uttarakhand": 1,
+       "West Bengal": 1
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "period": "2024-25"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "WOMEN'S SHARE OF ENROLMENTS",
+ "expect": {
+  "years": 9
+ },
+ "source": "PFRDA Handbook of NPS Statistics 2024, via RBI Handbook of Statistics on Indian States 2024-25, Table 180: Atal Pension Yojana enrolments in the year; share = women ÷ (women + men). Also Lok Sabha answer 2656, 9 Mar 2026. Blank: Andaman and Nicobar, Arunachal, Chandigarh, Chhattisgarh, Dadra-Daman-Diu, Delhi, Goa, J&K, Karnataka, Kerala, Ladakh, Lakshadweep, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Telangana.",
+ "hook": [
+  "*Odisha*: women's share of",
+  "pension enrolees, *36%* to",
+  "*67%*, 2015-16 to 2024-25."
+ ],
+ "hook_vo": "Odisha's Atal Pension Yojana: women's share rose from thirty-six to sixty-seven percent.",
+ "then": {
+  "text": "of Odisha's Atal Pension Yojana enrolments were women's: 39,987 of 110,846 women and men.",
+  "vo": "Twenty fifteen sixteen: women were thirty-six percent of Odisha's pension enrolees."
+ },
+ "now": {
+  "text": "of enrolments were women's: 307,791 of 458,317.",
+  "vo": "Twenty twenty-four twenty-five: sixty-seven percent."
+ },
+ "facts": [
+  {
+   "kicker": "ENROLMENTS IN THE YEAR, ODISHA",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2015-16 | Female"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Women's enrolments multiplied 7.7 times in nine years; men's, 2.1 times.",
+   "bars": [
+    {
+     "name": "Women",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         180,
+         "2024-25 | Female"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         180,
+         "2015-16 | Female"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "Men",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         180,
+         "2024-25 | Male"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         180,
+         "2015-16 | Male"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 10,
+   "sub": "Women: 39,987 to 307,791. Men: 70,859 to 150,526. 2015-16 to 2024-25.",
+   "vo": "Women's enrolments multiplied seven point seven times. Men's, two point one."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Women were *more than half*",
+    "of Odisha's enrolees in each",
+    "of the last *four* years."
+   ],
+   "note": "Lok Sabha answer, 2024-25: Odisha 66.5%, India 54.6%. 2025-26 to 31 Jan: Odisha 63.4%.",
+   "vo": "Women have been more than half of Odisha's enrolees for four years."
+  },
+  {
+   "lines": [
+    "In 2024-25, *fewer men*",
+    "enrolled: 187,494 down to",
+    "150,526, a fall of *20%*."
+   ],
+   "note": "Women's enrolments also rose, 265,290 to 307,791, so both moved the share.",
+   "vo": "In twenty twenty-four twenty-five fewer men enrolled: down by a fifth."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -5,
+   -1,
+   1,
+   15
+  ],
+  "title": "Women's share of pension enrolments: *change by state*",
+  "sub": "percentage points · 2015-16 to 2024-25",
+  "note": "Blank: 18 states and UTs where Handbook counts differ from Lok Sabha Q 2656, or the boundary changed (named below). Enrolments in a year.",
+  "vo": "Here is each state's change over the nine years.",
+  "key": [
+   "fell",
+   "within 1 point",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Have you started a *pension*?",
+  "sub": "Comment below.",
+  "vo": "Have you started a pension?"
+ },
+ "tests": [
+  {
+   "says": "36% in 2015-16 (hook)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2015-16 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2015-16 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2015-16 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 36
+  },
+  {
+   "says": "67% in 2024-25 (hook)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2024-25 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "equals": 67
+  },
+  {
+   "says": "36.1% (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2015-16 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2015-16 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2015-16 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 361
+  },
+  {
+   "says": "67.2% (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2024-25 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "scale": 10
+   },
+   "equals": 672
+  },
+  {
+   "says": "rise of 31 points (hook, voice)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2024-25 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2015-16 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2015-16 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2015-16 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ]
+   },
+   "min": 30.5,
+   "max": 31.5
+  },
+  {
+   "says": "rise +31.1 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2024-25 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2015-16 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2015-16 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2015-16 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 311
+  },
+  {
+   "says": "women 39,987 of 110,846 in 2015-16 (card)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2015-16 | Female"
+     ]
+    }
+   },
+   "equals": 39987
+  },
+  {
+   "says": "women 307,791 in 2024-25 (card)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2024-25 | Female"
+     ]
+    }
+   },
+   "equals": 307791
+  },
+  {
+   "says": "men 70,859 in 2015-16 (card)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2015-16 | Male"
+     ]
+    }
+   },
+   "equals": 70859
+  },
+  {
+   "says": "men 150,526 in 2024-25 (card)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2024-25 | Male"
+     ]
+    }
+   },
+   "equals": 150526
+  },
+  {
+   "says": "women and men enrolments 110,846 in 2015-16",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "rbi": [
+        180,
+        "2015-16 | Female"
+       ]
+      },
+      {
+       "rbi": [
+        180,
+        "2015-16 | Male"
+       ]
+      }
+     ]
+    }
+   },
+   "equals": 110846
+  },
+  {
+   "says": "women and men enrolments 458,317 in 2024-25",
+   "value": {
+    "data": {
+     "add": [
+      {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      },
+      {
+       "rbi": [
+        180,
+        "2024-25 | Male"
+       ]
+      }
+     ]
+    }
+   },
+   "equals": 458317
+  },
+  {
+   "says": "women's enrolments up 7.7 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2015-16 | Female"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 77
+  },
+  {
+   "says": "men's enrolments up 2.1 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Male"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2015-16 | Male"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 21
+  },
+  {
+   "says": "men fell in 2024-25 from 2023-24 (187,494 to 150,526)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2023-24 | Male"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Male"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 30000,
+   "max": 40000
+  },
+  {
+   "says": "men 187,494 in 2023-24 (note)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2023-24 | Male"
+     ]
+    }
+   },
+   "equals": 187494
+  },
+  {
+   "says": "half or more in 2018-19",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2018-19 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2018-19 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2018-19 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2019-20",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2019-20 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2019-20 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2019-20 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2020-21",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2020-21 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2020-21 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2020-21 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2021-22",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2021-22 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2021-22 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2021-22 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2022-23 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2022-23 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2022-23 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2023-24 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2023-24 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2023-24 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "half or more in 2024-25",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2024-25 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2024-25 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 50.0,
+   "max": 100
+  },
+  {
+   "says": "2025-26 to 31 Jan: Odisha 63.4% women (Lok Sabha, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#2",
+        3
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#1",
+        3
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 634
+  },
+  {
+   "says": "Lok Sabha 2024-25: Odisha 66.5% women (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#2",
+        2
+       ]
+      }
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#1",
+        2
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 665
+  },
+  {
+   "says": "India 2024-25: 54.6% women (Lok Sabha totals, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#2",
+        2
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "ls": [
+        "ls18-s7-U2656#1",
+        2
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 546
+  },
+  {
+   "says": "men fell by about a fifth in 2024-25 (voice): ratio of 2024-25 to 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Male"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2023-24 | Male"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.79,
+   "max": 0.81
+  },
+  {
+   "says": "men down 20% (screen)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2024-25 | Male"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        180,
+        "2023-24 | Male"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 80
+  },
+  {
+   "says": "women 265,290 in 2023-24 (note)",
+   "value": {
+    "data": {
+     "rbi": [
+      180,
+      "2023-24 | Female"
+     ]
+    }
+   },
+   "equals": 265290
+  },
+  {
+   "says": "more than half in 2021-22 with a margin (voice: last four years)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        180,
+        "2021-22 | Female"
+       ]
+      },
+      {
+       "add": [
+        {
+         "rbi": [
+          180,
+          "2021-22 | Female"
+         ]
+        },
+        {
+         "rbi": [
+          180,
+          "2021-22 | Male"
+         ]
+        }
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 51.0,
+   "max": 100
+  },
+  {
+   "says": "Handbook share within 1 point of the Lok Sabha share, 2022-23 (Odisha cross-check)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2022-23 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2022-23 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2022-23 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#2",
+          0
+         ]
+        }
+       },
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#1",
+          0
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -1.0,
+   "max": 1.0
+  },
+  {
+   "says": "Handbook share within 1 point of the Lok Sabha share, 2023-24 (Odisha cross-check)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2023-24 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2023-24 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2023-24 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#2",
+          1
+         ]
+        }
+       },
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#1",
+          1
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -1.0,
+   "max": 1.0
+  },
+  {
+   "says": "Handbook share within 1 point of the Lok Sabha share, 2024-25 (Odisha cross-check)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          180,
+          "2024-25 | Female"
+         ]
+        },
+        {
+         "add": [
+          {
+           "rbi": [
+            180,
+            "2024-25 | Female"
+           ]
+          },
+          {
+           "rbi": [
+            180,
+            "2024-25 | Male"
+           ]
+          }
+         ]
+        }
+       ],
+       "scale": 100
+      }
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#2",
+          2
+         ]
+        }
+       },
+       {
+        "data": {
+         "ls": [
+          "ls18-s7-U2656#1",
+          2
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -1.0,
+   "max": 1.0
+  }
+ ],
+ "yt_title": "Odisha: Women's Share of Atal Pension Enrolments, 36% to 67%"
+}

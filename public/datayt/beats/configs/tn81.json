@@ -1,0 +1,457 @@
+{
+ "id": "tn81",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "A",
+ "state": "Uttar Pradesh",
+ "points": [
+  {
+   "data": {
+    "nfhs": 44,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 44
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "min_change": 0.05,
+ "kicker": "CHILDREN FULLY VACCINATED",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Children aged 12 to 23 months fully vaccinated, by vaccination card or mother's recall (the sheets also print a card-only figure: India 87.1%). 33 states and UTs with a figure in both surveys; Manipur, Chandigarh and Lakshadweep have none. Survey estimates.",
+ "hook": [
+  "*Uttar Pradesh* 1-year-olds,",
+  "fully vaccinated: gap to India",
+  "*6.7 points*, then *1.2*."
+ ],
+ "hook_vo": "Uttar Pradesh nearly caught up with India on fully vaccinated one-year-olds.",
+ "then": {
+  "text": "of children aged 12 to 23 months were fully vaccinated. India: *{india_then}*.",
+  "vo": "Earlier survey: seventy percent of children. India, seventy-seven."
+ },
+ "now": {
+  "text": "of children aged 12 to 23 months. India: *{india_now}*.",
+  "vo": "Next survey: eighty-one percent. India, eighty-three."
+ },
+ "facts": [
+  {
+   "kicker": "UTTAR PRADESH'S RISE VS INDIA'S",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      }
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "unit": " pts",
+   "text": "India's rise: 6.0 points. Uttar Pradesh's was *1.9 times* that.",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 44
+       }
+      },
+      {
+       "data": {
+        "nfhs": 44,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 44
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 44,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 14,
+   "sub": "Percentage points between the two surveys: Uttar Pradesh +11.5, India +6.0.",
+   "vo": "India rose six points. Uttar Pradesh rose one point nine times as much."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Gap to India's rate:",
+    "*6.7 points* in 2019-21,",
+    "*1.2 points* in 2023-24."
+   ],
+   "note": "Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "The gap to India's rate: six point seven points, then one point two."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -3,
+   -1,
+   1,
+   8
+  ],
+  "title": "Fully vaccinated: *each state's change*",
+  "sub": "percentage points · darker = bigger rise · India +6.0",
+  "note": "Children aged 12 to 23 months, card or mother's recall. Survey estimates. Blank: Manipur (no figure), Chandigarh and Lakshadweep (small sample).",
+  "vo": "Every state's change in children fully vaccinated.",
+  "key": [
+   "fell",
+   "within 1 point",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Do you still have your *vaccine card*?",
+  "sub": "Comment below.",
+  "vo": "Do you still have your vaccine card?"
+ },
+ "tests": [
+  {
+   "says": "Uttar Pradesh 69.9% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 699
+  },
+  {
+   "says": "Uttar Pradesh 81.4% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 44
+    },
+    "scale": 10
+   },
+   "equals": 814
+  },
+  {
+   "says": "India 76.6% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 766
+  },
+  {
+   "says": "India 82.6% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 44
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 826
+  },
+  {
+   "says": "seventy percent in NFHS-5 (voice, 69.9 rounds to 70)",
+   "value": {
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    }
+   },
+   "equals": 70
+  },
+  {
+   "says": "eighty-one percent in NFHS-6 (voice)",
+   "value": {
+    "data": {
+     "nfhs": 44
+    }
+   },
+   "equals": 81
+  },
+  {
+   "says": "India seventy-seven in NFHS-5 (voice, 76.6)",
+   "value": {
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    },
+    "state": "India"
+   },
+   "equals": 77
+  },
+  {
+   "says": "India eighty-three in NFHS-6 (voice, 82.6)",
+   "value": {
+    "data": {
+     "nfhs": 44
+    },
+    "state": "India"
+   },
+   "equals": 83
+  },
+  {
+   "says": "Uttar Pradesh rose 11.5 points: hook, title and card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      }
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 115
+  },
+  {
+   "says": "India rose 6.0 points: card and map (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 60
+  },
+  {
+   "says": "India rose six points (voice)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "equals": 6
+  },
+  {
+   "says": "Uttar Pradesh's rise is 1.9 times India's (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 44
+        }
+       },
+       {
+        "data": {
+         "nfhs": 44,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 44
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 44,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 19
+  },
+  {
+   "says": "Uttar Pradesh rose one point nine times as much as India (voice): between 1.85 and 1.95",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 44
+        }
+       },
+       {
+        "data": {
+         "nfhs": 44,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 44
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 44,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.85,
+   "max": 1.95
+  },
+  {
+   "says": "gap to India in NFHS-5: 6.7 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 67
+  },
+  {
+   "says": "gap to India in NFHS-6: 1.2 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 12
+  },
+  {
+   "says": "Uttar Pradesh was below India in NFHS-5",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "min": 5,
+   "max": 8
+  },
+  {
+   "says": "Uttar Pradesh was still below India in NFHS-6, by a small gap",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 44
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 44
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 2
+  }
+ ],
+ "yt_title": "Uttar Pradesh: 1-Year-Olds Fully Vaccinated Up 11.5 Points"
+}

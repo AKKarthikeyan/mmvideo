@@ -1,0 +1,114 @@
+{
+ "id": "hl01",
+ "type": "pick",
+ "chip": "WHICH IS HIGHER?",
+ "source_short": "Official figures · 4 rounds",
+ "palette": "A",
+ "think": 0.8,
+ "source": "RBI Handbook of Statistics on Indian States. Milk and eggs, 2023-24: Basic Animal Husbandry Statistics (Tables 91, 92). Rice, 2024-25: Ministry of Agriculture and Farmers' Welfare (Table 58). Goods exports, 2023-24: NIRYAT portal, Department of Commerce (Table 181). State totals, not per person.",
+ "rounds": [
+  {
+   "pair": [
+    "Gujarat",
+    "Rajasthan"
+   ],
+   "data": {
+    "rbi": [
+     91,
+     "2023-24"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state produces",
+    "*more milk?*"
+   ],
+   "measure": "Milk production, total, 2023-24, million tonnes",
+   "says": [
+    1.8,
+    1.99
+   ],
+   "ask": "Which state produces more milk: Gujarat, or Rajasthan?",
+   "tell": "Rajasthan. Almost double."
+  },
+  {
+   "pair": [
+    "Telangana",
+    "Punjab"
+   ],
+   "data": {
+    "rbi": [
+     58,
+     "2024-25"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state produces",
+    "*more rice?*"
+   ],
+   "measure": "Rice production, total, 2024-25, million tonnes",
+   "says": [
+    1.2,
+    1.3
+   ],
+   "ask": "Rice: Telangana or Punjab?",
+   "tell": "Telangana. Over a fifth more."
+  },
+  {
+   "pair": [
+    "West Bengal",
+    "Haryana"
+   ],
+   "data": {
+    "rbi": [
+     92,
+     "2023-24"
+    ]
+   },
+   "scale": 0.0001,
+   "q": [
+    "Which state produces",
+    "*more eggs?*"
+   ],
+   "measure": "Egg production, total, 2023-24, billion eggs",
+   "says": [
+    1.85,
+    1.95
+   ],
+   "ask": "Eggs: West Bengal or Haryana?",
+   "tell": "West Bengal. Ninety percent more."
+  },
+  {
+   "pair": [
+    "Maharashtra",
+    "Gujarat"
+   ],
+   "data": {
+    "rbi": [
+     181,
+     "2023-24"
+    ]
+   },
+   "scale": 0.001,
+   "q": [
+    "Which state exports",
+    "*more goods?*"
+   ],
+   "measure": "Goods exports, 2023-24, US$ billion",
+   "says": [
+    1.97,
+    2.03
+   ],
+   "ask": "Goods exports: Maharashtra or Gujarat?",
+   "tell": "Gujarat. Twice as much."
+  }
+ ],
+ "end": {
+  "q": "How many did *you* get?",
+  "sub": "Which round fooled you?",
+  "note": "State totals, not per person. Pairs, not full rankings.",
+  "vo": "Gujarat: behind in milk, ahead in exports. Which round fooled you?"
+ },
+ "yt_title": "Gujarat or Rajasthan: Which Produces More Milk? 4 Rounds"
+}

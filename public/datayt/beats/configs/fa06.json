@@ -1,0 +1,331 @@
+{
+ "id": "fa06",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "Textiles Ministry · Handloom Census 2019-20",
+ "palette": "A",
+ "state": "Assam",
+ "source": "Ministry of Textiles, reply to Lok Sabha Unstarred Question No. 4300 of 19 August 2025, Annexure-1: handloom weavers and allied workers by state, Fourth All India Handloom Census 2019-20 (all-India 26,73,891). Jammu and Kashmir is printed with Ladakh as one row and is not read. Looms: Starred Question No. 237 of 5 August 2025, Annexure-I, which gives no reference year. State totals, not per-person figures.",
+ "hook": [
+  "Of India's handloom weavers,",
+  "*41%* were in *Assam*,",
+  "per Census 2019-20."
+ ],
+ "hook_vo": "Forty-one percent of India's handloom weavers were in Assam.",
+ "facts": [
+  {
+   "state": "Assam",
+   "kicker": "HANDLOOM WEAVERS · CENSUS 2019-20",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     0
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "West Bengal"
+   ],
+   "bar_max": 50,
+   "text": "of India's 26,73,891 handloom weavers: 11,07,428 in Assam. The highest of the states listed.",
+   "sub": "State totals, not per person. Fourth All India Handloom Census 2019-20, in a Ministry of Textiles Lok Sabha answer (19 Aug 2025).",
+   "vo": "Eleven lakh weavers. The highest of any state."
+  },
+  {
+   "state": "West Bengal",
+   "kicker": "WEST BENGAL · CENSUS 2019-20",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     0
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Assam"
+   ],
+   "bar_max": 50,
+   "text": "is West Bengal's share: 3,66,656 weavers. Manipur and Tamil Nadu followed.",
+   "sub": "Share of India's 26,73,891 handloom weavers, 2019-20 Census.",
+   "vo": "West Bengal came next, with thirteen point seven percent."
+  },
+  {
+   "state": "Assam",
+   "kicker": "HANDLOOMS · LOK SABHA, AUG 2025",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     0
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "West Bengal"
+   ],
+   "bar_max": 50,
+   "text": "of India's 28,23,382 handlooms: 12,48,806 in Assam, the highest of the states listed.",
+   "sub": "A second Ministry of Textiles table (Lok Sabha, 5 Aug 2025). It gives no reference year; its worker counts match the 2019-20 Census.",
+   "vo": "The Ministry's loom count put Assam at forty-four percent. West Bengal, ten percent."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Assam",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     0
+    ]
+   },
+   "equals": 1107428
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     0
+    ]
+   },
+   "equals": 2673891
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     0
+    ]
+   },
+   "equals": 366656
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Assam",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Manipur",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "West Bengal",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U4300#1",
+      0
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "round",
+   "state": "Assam",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     0
+    ]
+   },
+   "equals": 1248806
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     0
+    ]
+   },
+   "equals": 2823382
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Assam",
+    "data": {
+     "ls": [
+      "ls18-s5-S237#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "West Bengal",
+    "data": {
+     "ls": [
+      "ls18-s5-S237#1",
+      0
+     ]
+    }
+   },
+   "min": 3.0
+  },
+  {
+   "kind": "round",
+   "state": "West Bengal",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     0
+    ]
+   },
+   "equals": 283404
+  },
+  {
+   "kind": "round",
+   "state": "Assam",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     1
+    ]
+   },
+   "equals": 1283881
+  },
+  {
+   "kind": "round",
+   "state": "Assam",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     2
+    ]
+   },
+   "equals": 1283881
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s5-S237#1",
+     1
+    ]
+   },
+   "equals": 3522512
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s5-U4300#1",
+     2
+    ]
+   },
+   "equals": 3522512
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Three* weavers in Assam",
+   "for every *one* in",
+   "West Bengal."
+  ],
+  "vo": "Three weavers in Assam for every one in West Bengal, the next state."
+ },
+ "map": {
+  "data": {
+   "ls": [
+    "ls18-s5-U4300#1",
+    0
+   ]
+  },
+  "as": "share",
+  "unit": "%",
+  "title": "Share of handloom weavers, *every state*",
+  "sub": "% of India's handloom weavers · 2019-20 Census",
+  "note": "State totals, not per person. Blank: J&K with Ladakh (one printed row); A&N Islands, Chandigarh, Dadra and Nagar Haveli and Daman and Diu, Lakshadweep (no row).",
+  "ring": [
+   "Assam",
+   "West Bengal"
+  ],
+  "vo": "India's handloom weavers on the map by state."
+ },
+ "end": {
+  "q": "What *handloom* cloth is in your home?",
+  "sub": "Saree, shawl or towel?",
+  "vo": "What handloom cloth is in your home? Saree, shawl or towel?"
+ },
+ "yt_title": "Assam: 41% of India's Handloom Weavers, 2019-20 Census"
+}

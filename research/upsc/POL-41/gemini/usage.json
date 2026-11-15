@@ -1,0 +1,146 @@
+[
+ {
+  "step": "research",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 08:57",
+  "usage": {
+   "promptTokenCount": 2803,
+   "candidatesTokenCount": 3673,
+   "totalTokenCount": 14265,
+   "cachedContentTokenCount": 983,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 2803
+    }
+   ],
+   "cacheTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 983
+    }
+   ],
+   "thoughtsTokenCount": 7789,
+   "serviceTier": "standard"
+  }
+ },
+ {
+  "step": "research",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 09:00",
+  "usage": {
+   "promptTokenCount": 31117,
+   "candidatesTokenCount": 11199,
+   "totalTokenCount": 54958,
+   "cachedContentTokenCount": 16899,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 31117
+    }
+   ],
+   "cacheTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 16899
+    }
+   ],
+   "thoughtsTokenCount": 12642,
+   "serviceTier": "standard"
+  }
+ },
+ {
+  "step": "research",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 09:04",
+  "usage": {
+   "promptTokenCount": 29903,
+   "candidatesTokenCount": 8796,
+   "totalTokenCount": 43028,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 29903
+    }
+   ],
+   "thoughtsTokenCount": 4329,
+   "serviceTier": "standard"
+  }
+ },
+ {
+  "step": "search 1",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 09:05",
+  "queries": [],
+  "usage": {
+   "promptTokenCount": 3072,
+   "totalTokenCount": 3072,
+   "cachedContentTokenCount": 1724,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 3072
+    }
+   ],
+   "cacheTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 1724
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ {
+  "step": "search 2",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 09:06",
+  "queries": [],
+  "usage": {
+   "promptTokenCount": 3311,
+   "candidatesTokenCount": 1034,
+   "totalTokenCount": 9675,
+   "cachedContentTokenCount": 2348,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 3311
+    }
+   ],
+   "cacheTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 2348
+    }
+   ],
+   "thoughtsTokenCount": 5330,
+   "serviceTier": "standard"
+  }
+ },
+ {
+  "step": "search 3",
+  "model": "gemini-3.1-pro-preview",
+  "at": "2026-11-03 09:08",
+  "queries": [],
+  "usage": {
+   "promptTokenCount": 1872,
+   "candidatesTokenCount": 1353,
+   "totalTokenCount": 7979,
+   "cachedContentTokenCount": 878,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 1872
+    }
+   ],
+   "cacheTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 878
+    }
+   ],
+   "thoughtsTokenCount": 4754,
+   "serviceTier": "standard"
+  }
+ }
+]

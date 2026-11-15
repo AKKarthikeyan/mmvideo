@@ -1,0 +1,4557 @@
+{
+ "id": "babies",
+ "format": "F8 Then and Now (layer: F13 Scale Shock)",
+ "target_minutes": [
+  8,
+  10
+ ],
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Cold open",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1060,
+      "y": 945,
+      "h": 540
+     }
+    ],
+    "props": [
+     {
+      "icon": "pram",
+      "x": 1520,
+      "y": 700,
+      "s": 1.8,
+      "enter": "pr"
+     }
+    ],
+    "badges": [
+     {
+      "key": "b34",
+      "ref": {
+       "t": "tfr",
+       "state": "Bihar",
+       "s": "nfhs4"
+      },
+      "caption": "children per woman, Bihar, NFHS-4",
+      "x": 1450,
+      "y": 320,
+      "size": 170,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "IS INDIA RUNNING OUT OF BABIES?",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "NFHS = NATIONAL FAMILY HEALTH SURVEY",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "In NFHS-4, the twenty fifteen sixteen survey, Bihar's fertility rate was three point four children per woman.",
+   "reveals": [
+    {
+     "key": "pr",
+     "word": "fertility"
+    },
+    {
+     "key": "b34",
+     "word": "three point four"
+    }
+   ],
+   "transition": "cut",
+   "visual": "From frame 0 the uncle stands in a Bihar home beside a mother, the title question and the spelled-out NFHS sit on pills, and a big circled badge lands on the narrator's number: 3.4 children per woman, an average, not a family.",
+   "hook": true
+  },
+  {
+   "id": "s002",
+   "act": "Cold open",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1060,
+      "y": 945,
+      "h": 540
+     }
+    ],
+    "props": [
+     {
+      "icon": "pram",
+      "x": 1520,
+      "y": 700,
+      "s": 1.8
+     }
+    ],
+    "badges": [
+     {
+      "key": "b27",
+      "ref": {
+       "t": "tfr",
+       "state": "Bihar",
+       "s": "nfhs6"
+      },
+      "caption": "children per woman, Bihar, NFHS-6",
+      "x": 1450,
+      "y": 320,
+      "size": 170,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "AVERAGE PER WOMAN, NOT A FAMILY",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "NFHS-6 FACT SHEETS: PROVISIONAL",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "In NFHS-6, the twenty twenty-three twenty-four survey, it is two point seven.",
+   "reveals": [
+    {
+     "key": "b27",
+     "word": "two point seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Same room, same mother and pram, no extra figures: only the badge changes, to 2.7, under pills that say it is an average per woman and that the NFHS-6 sheets are provisional."
+  },
+  {
+   "id": "s003",
+   "act": "Cold open",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Bihar"
+    ]
+   },
+   "vo": "Bihar is still the highest of all the places surveyed.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The India map fills state by state in the fertility colour scale and Bihar lifts off the map while the others dim."
+  },
+  {
+   "id": "s004",
+   "act": "Cold open",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "house",
+      "x": 990,
+      "y": 770,
+      "s": 1.15
+     },
+     {
+      "icon": "house",
+      "x": 1160,
+      "y": 770,
+      "s": 1.15
+     },
+     {
+      "icon": "house",
+      "x": 1330,
+      "y": 770,
+      "s": 1.15
+     },
+     {
+      "icon": "house",
+      "x": 1500,
+      "y": 770,
+      "s": 1.15
+     },
+     {
+      "icon": "house",
+      "x": 1670,
+      "y": 770,
+      "s": 1.15
+     }
+    ],
+    "badges": [
+     {
+      "key": "n30",
+      "ref": {
+       "t": "stats",
+       "state": "at_or_below_2_1_nfhs6"
+      },
+      "caption": "places",
+      "x": 1040,
+      "y": 250,
+      "size": 190,
+      "accent": "underline",
+      "decimals": 0
+     },
+     {
+      "key": "n35",
+      "ref": {
+       "t": "stats",
+       "state": "n_states"
+      },
+      "caption": "states and UTs",
+      "x": 1560,
+      "y": 310,
+      "size": 140,
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "OF",
+      "x": 1255,
+      "y": 235,
+      "key": "of"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "In thirty of the thirty-five states and union territories in NFHS-6,",
+   "reveals": [
+    {
+     "key": "of",
+     "word": "of"
+    },
+    {
+     "key": "n30",
+     "word": "thirty"
+    },
+    {
+     "key": "n35",
+     "word": "thirty-five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle points at a big 30, a small pill saying OF and a smaller 35, above a row of five little houses: the count of places, shown as one fraction."
+  },
+  {
+   "id": "s005",
+   "act": "Cold open",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "threshold",
+    "threshold": 2.1
+   },
+   "vo": "the rate is at or below two point one, a number demographers call the replacement level.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The map re-colours in two flat colours, the places at or below the replacement line in cool blue and the few above it in warm orange."
+  },
+  {
+   "id": "s006",
+   "act": "Cold open",
+   "kind": "title",
+   "spec": {
+    "title": "Is India running out of babies?",
+    "sub": "Here's the map.",
+    "chip": "DATA KADAI · MAP DEEP DIVE"
+   },
+   "vo": "So what is really happening to India's fertility rate?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A sunburst title card: the uncle and the film's question in big type, 'Here's the map.' under it."
+  },
+  {
+   "id": "s007",
+   "act": "Cold open",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale"
+   },
+   "vo": "The answer depends on where you live, and the map holds some surprises.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The full fertility map fills in again, a wave from north-west to south-east, with its legend."
+  },
+  {
+   "id": "s008",
+   "act": "The magic number",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "ONE NUMBER",
+     "ABOVE ALL: TFR"
+    ],
+    "accent": [
+     "TFR"
+    ],
+    "mascot": true
+   },
+   "vo": "Demographers watch one number above all: the total fertility rate, or TFR.",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": "A solid blue card with big white type, TFR in yellow, and the uncle peeking up in the corner (the section header)."
+  },
+  {
+   "id": "s009",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 760,
+      "y": 945,
+      "h": 560
+     }
+    ],
+    "props": [
+     {
+      "icon": "pram",
+      "x": 1120,
+      "y": 730,
+      "s": 1.9,
+      "enter": "pr"
+     },
+     {
+      "icon": "clock",
+      "x": 1500,
+      "y": 440,
+      "s": 1.6,
+      "enter": "ck"
+     }
+    ],
+    "pills": [
+     {
+      "text": "AVERAGE CHILDREN PER WOMAN",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "It is the average number of children a woman would have by the end of her childbearing years,",
+   "reveals": [
+    {
+     "key": "pr",
+     "word": "children"
+    },
+    {
+     "key": "ck",
+     "word": "end"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A mother alone at home (no host in this one); a pram pops in on 'children' and a clock on 'end', under the pill AVERAGE CHILDREN PER WOMAN."
+  },
+  {
+   "id": "s010",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "clinic",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1080,
+      "y": 945,
+      "h": 540
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 1500,
+      "y": 520,
+      "s": 2.0,
+      "enter": "cal"
+     },
+     {
+      "icon": "book",
+      "x": 1700,
+      "y": 760,
+      "s": 1.5
+     }
+    ],
+    "pills": [
+     {
+      "text": "RATES FROM RECENT YEARS",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "if she had children at the rates measured in the years just before the survey.",
+   "reveals": [
+    {
+     "key": "cal",
+     "word": "years"
+    }
+   ],
+   "transition": "cut",
+   "visual": "In a clinic a big calendar pops in on 'years' beside the mother, under the pill RATES FROM RECENT YEARS."
+  },
+  {
+   "id": "s011",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 560,
+      "y": 945,
+      "h": 520,
+      "enter": "f1"
+     },
+     {
+      "id": "girl",
+      "who": "girl",
+      "x": 760,
+      "y": 950,
+      "h": 390,
+      "enter": "f2"
+     },
+     {
+      "id": "boy",
+      "who": "boy",
+      "x": 910,
+      "y": 955,
+      "h": 340,
+      "enter": "f3"
+     }
+    ],
+    "props": [
+     {
+      "icon": "clock",
+      "x": 1180,
+      "y": 340,
+      "s": 1.6,
+      "enter": "sn"
+     }
+    ],
+    "pills": [
+     {
+      "text": "A SNAPSHOT OF THE RECENT PAST",
+      "x": 96,
+      "y": 72,
+      "key": "ps"
+     },
+     {
+      "text": "NOT A HEADCOUNT",
+      "x": 96,
+      "y": 150,
+      "key": "pn"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "So it is a snapshot of the recent past. It is not a count of how many children each family actually has.",
+   "reveals": [
+    {
+     "key": "sn",
+     "word": "snapshot"
+    },
+    {
+     "key": "ps",
+     "word": "recent"
+    },
+    {
+     "key": "pn",
+     "word": "count"
+    },
+    {
+     "key": "f1",
+     "word": "each"
+    },
+    {
+     "key": "f2",
+     "word": "family"
+    },
+    {
+     "key": "f3",
+     "word": "actually"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle, now on the right, shows a clock for 'a snapshot', then a family pops in on 'each family' under the pill NOT A HEADCOUNT: the picture of what TFR is not."
+  },
+  {
+   "id": "s012",
+   "act": "The magic number",
+   "kind": "replacement",
+   "spec": {
+    "parents": 2,
+    "children": 2,
+    "extra": {
+     "const": 0.1,
+     "key": "ex",
+     "caption": "a little over two"
+    },
+    "line": {
+     "const": 2.1,
+     "key": "ln",
+     "label": "replacement level"
+    }
+   },
+   "vo": "The magic line is two point one. The United Nations says the replacement level is about two point one children per woman:",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "two point one",
+     "nth": 1
+    },
+    {
+     "key": "ex",
+     "word": "two point one",
+     "nth": 2
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two parent figures, an arrow, two children and a sliver of a third captioned 'a little over two', then a bold line sweeps across with a 2.1 badge labelled replacement level."
+  },
+  {
+   "id": "s013",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 760,
+      "y": 945,
+      "h": 560
+     },
+     {
+      "id": "girl",
+      "who": "girl",
+      "x": 1060,
+      "y": 950,
+      "h": 440,
+      "enter": "g"
+     }
+    ],
+    "props": [
+     {
+      "icon": "heart",
+      "x": 1400,
+      "y": 500,
+      "s": 1.7,
+      "enter": "h"
+     },
+     {
+      "icon": "calendar",
+      "x": 1600,
+      "y": 760,
+      "s": 1.5
+     }
+    ],
+    "pills": [
+     {
+      "text": "REPLACED BY A DAUGHTER",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "enough, on average, for a woman to be replaced by a daughter who survives to childbearing age.",
+   "reveals": [
+    {
+     "key": "g",
+     "word": "daughter"
+    },
+    {
+     "key": "h",
+     "word": "survives"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A mother, then a daughter that pops in on 'daughter' and a heart on 'survives' ('a daughter who survives to childbearing age'), under the pill REPLACED BY A DAUGHTER."
+  },
+  {
+   "id": "s014",
+   "act": "The magic number",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "THE KEY WORDS:",
+     "LONG ENOUGH"
+    ],
+    "accent": [
+     "LONG ENOUGH"
+    ]
+   },
+   "vo": "Stay below that line for long enough,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card that lands as the narrator says 'for long enough': THE KEY WORDS and LONG ENOUGH in yellow."
+  },
+  {
+   "id": "s015",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     },
+     {
+      "id": "r1a",
+      "who": "grandmother",
+      "x": 1000,
+      "y": 500,
+      "h": 200,
+      "enter": "r1"
+     },
+     {
+      "id": "r1b",
+      "who": "father",
+      "x": 1170,
+      "y": 500,
+      "h": 205,
+      "enter": "r1"
+     },
+     {
+      "id": "r1c",
+      "who": "mother",
+      "x": 1340,
+      "y": 500,
+      "h": 200,
+      "enter": "r1"
+     },
+     {
+      "id": "r1d",
+      "who": "teacher",
+      "x": 1510,
+      "y": 500,
+      "h": 205,
+      "enter": "r1"
+     },
+     {
+      "id": "r2a",
+      "who": "mother",
+      "x": 1085,
+      "y": 700,
+      "h": 205,
+      "enter": "r2"
+     },
+     {
+      "id": "r2b",
+      "who": "father",
+      "x": 1255,
+      "y": 700,
+      "h": 210,
+      "enter": "r2"
+     },
+     {
+      "id": "r2c",
+      "who": "teacher",
+      "x": 1425,
+      "y": 700,
+      "h": 205,
+      "enter": "r2"
+     },
+     {
+      "id": "r3a",
+      "who": "girl",
+      "x": 1170,
+      "y": 900,
+      "h": 215,
+      "enter": "r3"
+     },
+     {
+      "id": "r3b",
+      "who": "boy",
+      "x": 1340,
+      "y": 900,
+      "h": 200,
+      "enter": "r3"
+     }
+    ],
+    "pills": [
+     {
+      "text": "NO ONE MOVES IN",
+      "x": 96,
+      "y": 72,
+      "key": "nm"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "and if nobody moves in from elsewhere, a country's population eventually starts to shrink.",
+   "reveals": [
+    {
+     "key": "r1",
+     "word": "if"
+    },
+    {
+     "key": "r2",
+     "word": "elsewhere"
+    },
+    {
+     "key": "r3",
+     "word": "starts"
+    },
+    {
+     "key": "nm",
+     "word": "nobody"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A three-rung ladder of generations pops in beside the uncle, four people, then three, then two: each rung has one fewer, with no numbers, under the pill NO ONE MOVES IN."
+  },
+  {
+   "id": "s016",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 1180,
+      "y": 480,
+      "s": 2.3,
+      "enter": "cl"
+     },
+     {
+      "icon": "clock",
+      "x": 1560,
+      "y": 520,
+      "s": 2.3,
+      "enter": "ck"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ONE SURVEY",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "LONG ENOUGH",
+      "x": 96,
+      "y": 150,
+      "key": "le"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "One survey below two point one does not mean a population is shrinking. The key words are \"long enough\".",
+   "reveals": [
+    {
+     "key": "cl",
+     "word": "survey"
+    },
+    {
+     "key": "ck",
+     "word": "key"
+    },
+    {
+     "key": "le",
+     "word": "long"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A single calendar page (one survey) pops in, then a big clock (time) on 'key', and the pill LONG ENOUGH lands on 'long' to repeat the key words the card showed."
+  },
+  {
+   "id": "s017",
+   "act": "The magic number",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale"
+   },
+   "vo": "Every figure for India and its states comes from the National Family Health Survey,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The map of India and its states fills in again as the source of every figure."
+  },
+  {
+   "id": "s018",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "school",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     },
+     {
+      "id": "teacher",
+      "who": "teacher",
+      "x": 1050,
+      "y": 945,
+      "h": 560
+     }
+    ],
+    "props": [
+     {
+      "icon": "hospital",
+      "x": 1400,
+      "y": 520,
+      "s": 2.1,
+      "enter": "hm"
+     },
+     {
+      "icon": "school",
+      "x": 1680,
+      "y": 520,
+      "s": 2.1,
+      "enter": "ii"
+     }
+    ],
+    "pills": [
+     {
+      "text": "HEALTH MINISTRY + IIPS",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "conducted by the health ministry with the International Institute for Population Sciences.",
+   "reveals": [
+    {
+     "key": "hm",
+     "word": "health"
+    },
+    {
+     "key": "ii",
+     "word": "Institute"
+    }
+   ],
+   "transition": "cut",
+   "visual": "In a school set a hospital icon pops in on 'health' (the ministry) and a school icon on 'Institute' (IIPS), under the pill HEALTH MINISTRY + IIPS."
+  },
+  {
+   "id": "s019",
+   "act": "The magic number",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "title": "NFHS-6 fact sheets (provisional)"
+   },
+   "vo": "The sixth round, NFHS-6, covered nearly six point eight lakh households. We use its fact sheets, which are provisional.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The NFHS-6 map again, with its legend headed NFHS-6 fact sheets (provisional): the sixth round's data as one picture."
+  },
+  {
+   "id": "s020",
+   "act": "The magic number",
+   "kind": "stage",
+   "spec": {
+    "set": "clinic",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "scale",
+      "x": 900,
+      "y": 540,
+      "s": 2.3
+     },
+     {
+      "icon": "book",
+      "x": 1250,
+      "y": 620,
+      "s": 1.7
+     }
+    ],
+    "pills": [
+     {
+      "text": "OUR OWN ARITHMETIC",
+      "x": 96,
+      "y": 72,
+      "key": "oa"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "The counts and comparisons are our own arithmetic. We will say so when we go further.",
+   "reveals": [
+    {
+     "key": "oa",
+     "word": "arithmetic"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle on the right beside a balance and a notebook; the pill OUR OWN ARITHMETIC lands as the narrator says it, the hedge made visible."
+  },
+  {
+   "id": "s021",
+   "act": "India crosses the line",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 900,
+      "y": 540,
+      "s": 2.3
+     }
+    ],
+    "badges": [
+     {
+      "key": "b1",
+      "ref": {
+       "t": "tfr_report_2dp",
+       "state": "India",
+       "s": "nfhs1"
+      },
+      "caption": "children per woman",
+      "x": 1330,
+      "y": 300,
+      "size": 180,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "INDIA'S OWN LINE",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "FIRST NFHS ROUND · 1992-93",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Let us follow India's own line. In the first round, in nineteen ninety-two ninety-three, it was three point four.",
+   "reveals": [
+    {
+     "key": "b1",
+     "word": "three point four"
+    }
+   ],
+   "transition": "wipe",
+   "visual": "The uncle opens the chapter with a calendar and a circled badge: India's rate in the first round, 3.4."
+  },
+  {
+   "id": "s022",
+   "act": "India crosses the line",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs3",
+      "state": "India",
+      "key": "p3"
+     },
+     {
+      "survey": "nfhs4",
+      "state": "India",
+      "key": "p4"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    }
+   },
+   "vo": "In NFHS-3, in twenty oh-five oh-six, it was two point seven. In NFHS-4, in twenty fifteen sixteen, it was two point two,",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "NFHS-3"
+    },
+    {
+     "key": "p3",
+     "word": "two point seven"
+    },
+    {
+     "key": "p4",
+     "word": "two point two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A flat line chart draws India's rate at NFHS-3 (2.7) and NFHS-4 (2.2) with the 2.1 replacement line just beneath the second dot."
+  },
+  {
+   "id": "s023",
+   "act": "India crosses the line",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs4",
+      "state": "India",
+      "key": "p4"
+     },
+     {
+      "survey": "nfhs5",
+      "state": "India",
+      "key": "p5"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    },
+    "cross": "cross"
+   },
+   "vo": "just above the line. In NFHS-5, in twenty nineteen twenty-one, it fell to two point zero.",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "line"
+    },
+    {
+     "key": "p4",
+     "word": "above"
+    },
+    {
+     "key": "p5",
+     "word": "two point zero"
+    },
+    {
+     "key": "cross",
+     "word": "fell"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The chart now follows the dot from just above the line down through it to NFHS-5 (2.0), with a hand-drawn circle at the crossing."
+  },
+  {
+   "id": "s024",
+   "act": "India crosses the line",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 700,
+      "y": 470,
+      "s": 2.4,
+      "enter": "cal"
+     }
+    ],
+    "pills": [
+     {
+      "text": "FIRST ROUND BELOW THE LINE",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "That was the first NFHS round to put India below two point one.",
+   "reveals": [
+    {
+     "key": "cal",
+     "word": "first"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle on the right; a big calendar pops in on 'first' under the pill FIRST ROUND BELOW THE LINE."
+  },
+  {
+   "id": "s025",
+   "act": "India crosses the line",
+   "kind": "stage",
+   "spec": {
+    "set": "clinic",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "hospital",
+      "x": 1000,
+      "y": 520,
+      "s": 2.1
+     },
+     {
+      "icon": "calendar",
+      "x": 1650,
+      "y": 760,
+      "s": 1.5
+     }
+    ],
+    "badges": [
+     {
+      "key": "b6",
+      "ref": {
+       "t": "tfr",
+       "state": "India",
+       "s": "nfhs6"
+      },
+      "caption": "India, NFHS-6",
+      "x": 1420,
+      "y": 320,
+      "size": 170,
+      "accent": "underline"
+     }
+    ],
+    "pills": [
+     {
+      "text": "RELEASED MAY 2026",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "NFHS-6, whose results the health ministry released on twenty-nine May twenty twenty-six, shows two point zero again.",
+   "reveals": [
+    {
+     "key": "b6",
+     "word": "two point zero"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A hospital icon for the health ministry and a badge with NFHS-6's India figure, 2.0, under the pill RELEASED MAY 2026."
+  },
+  {
+   "id": "s026",
+   "act": "India crosses the line",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "BUT INDIA IS",
+     "NOT ONE",
+     "NUMBER"
+    ],
+    "accent": [
+     "NOT ONE"
+    ]
+   },
+   "vo": "India's rate stays below the line. But India is not one number.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card, NOT ONE in yellow: the turn from one national number to many."
+  },
+  {
+   "id": "s027",
+   "act": "India crosses the line",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "house",
+      "x": 1000,
+      "y": 640,
+      "s": 1.6
+     },
+     {
+      "icon": "hospital",
+      "x": 1220,
+      "y": 620,
+      "s": 1.6
+     },
+     {
+      "icon": "school",
+      "x": 1440,
+      "y": 640,
+      "s": 1.6
+     }
+    ],
+    "badges": [
+     {
+      "key": "n35",
+      "ref": {
+       "t": "stats",
+       "state": "n_states"
+      },
+      "caption": "covered by NFHS-6",
+      "x": 1480,
+      "y": 320,
+      "size": 170,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "STATES AND UNION TERRITORIES",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "It has thirty-six states and union territories, and the NFHS-6 release covers thirty-five of them.",
+   "reveals": [
+    {
+     "key": "n35",
+     "word": "thirty-five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A house, a hospital and a school stand for the places; a circled 35 pops on 'thirty-five', under the pill STATES AND UNION TERRITORIES."
+  },
+  {
+   "id": "s028",
+   "act": "India crosses the line",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "blank": [
+     "Manipur"
+    ]
+   },
+   "vo": "Manipur is not in the NFHS-6 release. Those thirty-five places live in very different demographic worlds.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The map fills in with Manipur left hatched and noted 'not in NFHS-6 release', while the narrator says the 35 places live in very different worlds."
+  },
+  {
+   "id": "s029",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "threshold",
+    "threshold": 2.1
+   },
+   "vo": "Here is NFHS-6, state by state. Of the thirty-five places, thirty are at or below two point one.",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": "The map fills in two colours: the places at or below the replacement line in cool blue, the few above it in warm orange, with a legend."
+  },
+  {
+   "id": "s030",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "threshold",
+    "threshold": 2.1,
+    "highlight": [
+     "Madhya Pradesh",
+     "Rajasthan"
+    ]
+   },
+   "vo": "Twenty-eight are below it, and two, Madhya Pradesh and Rajasthan, sit right on the line at two point one.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Madhya Pradesh and Rajasthan lift off the two-colour map: the two places that sit right on the line."
+  },
+  {
+   "id": "s031",
+   "act": "The map: two Indias",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "tree",
+      "x": 1000,
+      "y": 640,
+      "s": 2.0
+     },
+     {
+      "icon": "tree",
+      "x": 1680,
+      "y": 650,
+      "s": 1.8
+     }
+    ],
+    "badges": [
+     {
+      "key": "a1",
+      "ref": {
+       "t": "tfr",
+       "state": "Andaman and Nicobar Islands",
+       "s": "nfhs6"
+      },
+      "caption": "Andaman & Nicobar Islands",
+      "x": 1340,
+      "y": 344,
+      "size": 190,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "THE BOTTOM",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "At the bottom, the Andaman and Nicobar Islands read zero point nine,",
+   "reveals": [
+    {
+     "key": "a1",
+     "word": "zero point nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A village set with palm trees; a circled badge lands on 0.9 for the Andaman and Nicobar Islands, under the pill THE BOTTOM."
+  },
+  {
+   "id": "s032",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Andaman and Nicobar Islands",
+     "Sikkim"
+    ],
+    "lists": {
+     "lowest": 2,
+     "key": "low",
+     "show": "low",
+     "low": [
+      "Andaman and Nicobar Islands",
+      "Sikkim"
+     ]
+    }
+   },
+   "vo": "the only place in the survey below one child per woman. Sikkim comes next, at one point zero.",
+   "reveals": [
+    {
+     "key": "low",
+     "word": "one point zero"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The map lifts the Andaman and Nicobar Islands and Sikkim and a LOWEST card slides in listing both with their rates."
+  },
+  {
+   "id": "s033",
+   "act": "The map: two Indias",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "worried",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "tree",
+      "x": 700,
+      "y": 640,
+      "s": 2.0
+     },
+     {
+      "icon": "tree",
+      "x": 1100,
+      "y": 650,
+      "s": 1.8
+     }
+    ],
+    "pills": [
+     {
+      "text": "SMALL SAMPLE",
+      "x": 96,
+      "y": 72,
+      "key": "ss"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "A caution on the islands: their figure rests on about two thousand four hundred women, a small sample.",
+   "reveals": [
+    {
+     "key": "ss",
+     "word": "small"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle on the right looks concerned among palm trees; the pill SMALL SAMPLE lands on 'small'."
+  },
+  {
+   "id": "s034",
+   "act": "The map: two Indias",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "house",
+      "x": 1060,
+      "y": 720,
+      "s": 1.3
+     },
+     {
+      "icon": "house",
+      "x": 1260,
+      "y": 720,
+      "s": 1.3
+     },
+     {
+      "icon": "house",
+      "x": 1460,
+      "y": 720,
+      "s": 1.3
+     },
+     {
+      "icon": "house",
+      "x": 1660,
+      "y": 720,
+      "s": 1.3
+     }
+    ],
+    "badges": [
+     {
+      "key": "bi",
+      "ref": {
+       "t": "tfr",
+       "state": "Bihar",
+       "s": "nfhs6"
+      },
+      "caption": "Bihar",
+      "x": 1010,
+      "y": 262,
+      "size": 170,
+      "accent": "underline"
+     },
+     {
+      "key": "hi",
+      "ref": {
+       "t": "tfr",
+       "state": "Jharkhand",
+       "s": "nfhs6"
+      },
+      "caption": "four places",
+      "x": 1520,
+      "y": 340,
+      "size": 150
+     }
+    ],
+    "pills": [
+     {
+      "text": "THE TOP",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "At the top, Bihar reads two point seven. Four places follow at two point two:",
+   "reveals": [
+    {
+     "key": "bi",
+     "word": "two point seven"
+    },
+    {
+     "key": "hi",
+     "word": "two point two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A badge for Bihar, 2.7, then a second badge, 2.2, for the four places that follow, above a row of four little houses, under the pill THE TOP."
+  },
+  {
+   "id": "s035",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Bihar",
+     "Jharkhand",
+     "Lakshadweep",
+     "Meghalaya",
+     "Uttar Pradesh"
+    ],
+    "lists": {
+     "highest": 5,
+     "key": "high",
+     "show": "high",
+     "high": [
+      "Bihar",
+      "Jharkhand",
+      "Lakshadweep",
+      "Meghalaya",
+      "Uttar Pradesh"
+     ]
+    }
+   },
+   "vo": "Jharkhand, Meghalaya, Uttar Pradesh, and the island territory of Lakshadweep.",
+   "reveals": [
+    {
+     "key": "high",
+     "word": "Jharkhand"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The five places above the line lift off the map and a HIGHEST card slides in listing them."
+  },
+  {
+   "id": "s036",
+   "act": "The map: two Indias",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "house",
+      "x": 940,
+      "y": 690,
+      "s": 1.7,
+      "enter": "h1"
+     },
+     {
+      "icon": "house",
+      "x": 1130,
+      "y": 690,
+      "s": 1.7,
+      "enter": "h2"
+     },
+     {
+      "icon": "house",
+      "x": 1320,
+      "y": 690,
+      "s": 1.7,
+      "enter": "h3"
+     },
+     {
+      "icon": "house",
+      "x": 1510,
+      "y": 690,
+      "s": 1.7,
+      "enter": "h4"
+     },
+     {
+      "icon": "house",
+      "x": 1700,
+      "y": 690,
+      "s": 1.7,
+      "enter": "h5"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ABOVE THE LINE",
+      "x": 96,
+      "y": 72,
+      "key": "pa"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Only five places in the survey are above two point one.",
+   "reveals": [
+    {
+     "key": "h1",
+     "word": "Only"
+    },
+    {
+     "key": "h2",
+     "word": "five"
+    },
+    {
+     "key": "h3",
+     "word": "places"
+    },
+    {
+     "key": "h4",
+     "word": "survey"
+    },
+    {
+     "key": "h5",
+     "word": "above"
+    },
+    {
+     "key": "pa",
+     "word": "are"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Five houses pop in one by one on 'only five places in the survey are above': a literal tally, no digits, under the pill ABOVE THE LINE."
+  },
+  {
+   "id": "s037",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "threshold",
+    "threshold": 2.1,
+    "highlight": [
+     "Andhra Pradesh",
+     "Karnataka",
+     "Kerala",
+     "Tamil Nadu",
+     "Telangana"
+    ]
+   },
+   "vo": "Andhra Pradesh, Karnataka, Kerala, Tamil Nadu and Telangana in the south,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The five southern states named in the sentence lift off the two-colour map."
+  },
+  {
+   "id": "s038",
+   "act": "The map: two Indias",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "badges": [
+     {
+      "key": "w19",
+      "ref": {
+       "t": "tfr",
+       "state": "Gujarat",
+       "s": "nfhs6"
+      },
+      "caption": "or lower",
+      "x": 1450,
+      "y": 344,
+      "size": 190,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "THE WEST",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "GUJARAT",
+      "x": 96,
+      "y": 150,
+      "key": "p1"
+     },
+     {
+      "text": "MAHARASHTRA",
+      "x": 380,
+      "y": 150,
+      "key": "p2"
+     },
+     {
+      "text": "GOA",
+      "x": 820,
+      "y": 150,
+      "key": "p3"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "and Gujarat, Maharashtra and Goa in the west, all read one point nine or lower.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "Gujarat"
+    },
+    {
+     "key": "p2",
+     "word": "Maharashtra"
+    },
+    {
+     "key": "p3",
+     "word": "Goa"
+    },
+    {
+     "key": "w19",
+     "word": "one point nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three pills (GUJARAT, MAHARASHTRA, GOA) pop in as named and a circled 1.9 'or lower' lands, under the pill THE WEST."
+  },
+  {
+   "id": "s039",
+   "act": "The map: two Indias",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Andaman and Nicobar Islands",
+     "Bihar"
+    ],
+    "lists": {
+     "lowest": 1,
+     "highest": 1,
+     "key": "gap",
+     "low": [
+      "Andaman and Nicobar Islands"
+     ],
+     "high": [
+      "Bihar"
+     ],
+     "lowKey": "lo",
+     "highKey": "hi"
+    }
+   },
+   "vo": "Between the lowest, zero point nine, and the highest, two point seven, the gap is one point eight children per woman.",
+   "reveals": [
+    {
+     "key": "lo",
+     "word": "zero point nine"
+    },
+    {
+     "key": "hi",
+     "word": "two point seven"
+    },
+    {
+     "key": "gap",
+     "word": "gap"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The two ends of the map lift off, each with its card, LOWEST 0.9 and HIGHEST 2.7, and the gap between them is the story."
+  },
+  {
+   "id": "s040",
+   "act": "The biggest falls",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 1120,
+      "y": 580,
+      "s": 2.2,
+      "enter": "c5"
+     },
+     {
+      "icon": "calendar",
+      "x": 1560,
+      "y": 580,
+      "s": 2.2,
+      "enter": "c6"
+     }
+    ],
+    "pills": [
+     {
+      "text": "THE BIGGEST FALLS",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "NFHS-5 · 2019-21",
+      "x": 900,
+      "y": 340
+     },
+     {
+      "text": "NFHS-6 · 2023-24",
+      "x": 1340,
+      "y": 340
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Some places moved a lot between NFHS-5, in twenty nineteen twenty-one, and NFHS-6, in twenty twenty-three twenty-four.",
+   "reveals": [
+    {
+     "key": "c5",
+     "word": "NFHS-5"
+    },
+    {
+     "key": "c6",
+     "word": "NFHS-6"
+    }
+   ],
+   "transition": "wipe",
+   "visual": "The chapter opens with the uncle between two calendars that pop in on 'NFHS-5' and 'NFHS-6', each tagged with its years, under the pill THE BIGGEST FALLS."
+  },
+  {
+   "id": "s041",
+   "act": "The biggest falls",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "props": [
+     {
+      "icon": "tree",
+      "x": 960,
+      "y": 640,
+      "s": 2.0
+     },
+     {
+      "icon": "tree",
+      "x": 1720,
+      "y": 640,
+      "s": 1.8
+     }
+    ],
+    "badges": [
+     {
+      "key": "m5",
+      "ref": {
+       "t": "tfr",
+       "state": "Meghalaya",
+       "s": "nfhs5"
+      },
+      "caption": "NFHS-5",
+      "x": 1130,
+      "y": 300,
+      "size": 160
+     },
+     {
+      "key": "m6",
+      "ref": {
+       "t": "tfr",
+       "state": "Meghalaya",
+       "s": "nfhs6"
+      },
+      "caption": "NFHS-6",
+      "x": 1560,
+      "y": 400,
+      "size": 190,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "MEGHALAYA",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Meghalaya fell from two point nine to two point two, the biggest fall in the survey.",
+   "reveals": [
+    {
+     "key": "m5",
+     "word": "two point nine"
+    },
+    {
+     "key": "m6",
+     "word": "two point two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two badges for Meghalaya, NFHS-5 2.9 and then NFHS-6 2.2 circled, under the pill MEGHALAYA."
+  },
+  {
+   "id": "s042",
+   "act": "The biggest falls",
+   "kind": "slope",
+   "spec": {
+    "items": [
+     {
+      "state": "Meghalaya",
+      "surveys": [
+       "nfhs4",
+       "nfhs5",
+       "nfhs6"
+      ],
+      "key": "meg"
+     }
+    ]
+   },
+   "vo": "Back in NFHS-4 it read three point zero, so most of the fall since then came between NFHS-5 and NFHS-6.",
+   "reveals": [
+    {
+     "key": "meg",
+     "word": "three point zero"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A slope line for Meghalaya across NFHS-4, NFHS-5 and NFHS-6 (3.0, 2.9, 2.2) shows how much of the fall came in the last step."
+  },
+  {
+   "id": "s043",
+   "act": "The biggest falls",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "tree",
+      "x": 1000,
+      "y": 640,
+      "s": 1.9
+     },
+     {
+      "icon": "tree",
+      "x": 1720,
+      "y": 650,
+      "s": 1.6
+     }
+    ],
+    "badges": [
+     {
+      "key": "a5",
+      "ref": {
+       "t": "tfr",
+       "state": "Andaman and Nicobar Islands",
+       "s": "nfhs5"
+      },
+      "caption": "NFHS-5",
+      "x": 1180,
+      "y": 300,
+      "size": 160
+     },
+     {
+      "key": "a6",
+      "ref": {
+       "t": "tfr",
+       "state": "Andaman and Nicobar Islands",
+       "s": "nfhs6"
+      },
+      "caption": "NFHS-6",
+      "x": 1560,
+      "y": 400,
+      "size": 190,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ANDAMAN & NICOBAR",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "SMALL SAMPLE",
+      "x": 96,
+      "y": 150,
+      "key": "ss"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "The Andaman and Nicobar Islands fell from one point three to zero point nine, again a small-sample place.",
+   "reveals": [
+    {
+     "key": "a5",
+     "word": "one point three"
+    },
+    {
+     "key": "a6",
+     "word": "zero point nine"
+    },
+    {
+     "key": "ss",
+     "word": "small"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two badges for the Andaman and Nicobar Islands, 1.3 then 0.9 circled, with the pill SMALL SAMPLE landing on 'small-sample'."
+  },
+  {
+   "id": "s044",
+   "act": "The biggest falls",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1000,
+      "y": 945,
+      "h": 520
+     }
+    ],
+    "props": [
+     {
+      "icon": "pram",
+      "x": 1250,
+      "y": 760,
+      "s": 1.6
+     }
+    ],
+    "badges": [
+     {
+      "key": "bi5",
+      "ref": {
+       "t": "tfr",
+       "state": "Bihar",
+       "s": "nfhs5"
+      },
+      "caption": "NFHS-5",
+      "x": 1010,
+      "y": 262,
+      "size": 150
+     },
+     {
+      "key": "bi6",
+      "ref": {
+       "t": "tfr",
+       "state": "Bihar",
+       "s": "nfhs6"
+      },
+      "caption": "NFHS-6",
+      "x": 1520,
+      "y": 330,
+      "size": 180,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "BIHAR: STILL THE HIGHEST",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Bihar, still the highest, fell from three point zero to two point seven.",
+   "reveals": [
+    {
+     "key": "bi5",
+     "word": "three point zero"
+    },
+    {
+     "key": "bi6",
+     "word": "two point seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Back in the Bihar home of the cold open: badges for NFHS-5 (3.0) and NFHS-6 (2.7, circled), under the pill BIHAR: STILL THE HIGHEST."
+  },
+  {
+   "id": "s045",
+   "act": "The biggest falls",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Arunachal Pradesh",
+     "Assam",
+     "Mizoram"
+    ]
+   },
+   "vo": "Arunachal Pradesh, Assam and Mizoram each fell by zero point three on the printed figures.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Arunachal Pradesh, Assam and Mizoram lift off the map: the three places that each fell by about the same step."
+  },
+  {
+   "id": "s046",
+   "act": "The biggest falls",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "worried"
+     }
+    ],
+    "props": [
+     {
+      "icon": "scale",
+      "x": 1300,
+      "y": 520,
+      "s": 2.4,
+      "enter": "sc"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ROUNDED TO ONE DECIMAL",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "SO: ABOUT",
+      "x": 96,
+      "y": 150,
+      "key": "ab"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Those are rounded to one decimal, so read that as about zero point three.",
+   "reveals": [
+    {
+     "key": "sc",
+     "word": "rounded"
+    },
+    {
+     "key": "ab",
+     "word": "about"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A balance pops in on 'rounded' beside a cautious uncle; the pill SO: ABOUT lands on 'about'."
+  },
+  {
+   "id": "s047",
+   "act": "The biggest falls",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs4",
+      "state": "Bihar",
+      "key": "p4"
+     },
+     {
+      "survey": "nfhs5",
+      "state": "Bihar",
+      "key": "p5"
+     },
+     {
+      "survey": "nfhs6",
+      "state": "Bihar",
+      "key": "p6"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    }
+   },
+   "vo": "Bihar went from three point four, to three point zero, to two point seven.",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "Bihar"
+    },
+    {
+     "key": "p4",
+     "word": "three point four"
+    },
+    {
+     "key": "p5",
+     "word": "three point zero"
+    },
+    {
+     "key": "p6",
+     "word": "two point seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A line chart follows Bihar's three dots, 3.4, 3.0 and 2.7, down toward the 2.1 line."
+  },
+  {
+   "id": "s048",
+   "act": "The biggest falls",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs4",
+      "state": "Assam",
+      "key": "p4"
+     },
+     {
+      "survey": "nfhs5",
+      "state": "Assam",
+      "key": "p5"
+     },
+     {
+      "survey": "nfhs6",
+      "state": "Assam",
+      "key": "p6"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    }
+   },
+   "vo": "Assam went from two point two, to one point nine, to one point six.",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "Assam"
+    },
+    {
+     "key": "p4",
+     "word": "two point two"
+    },
+    {
+     "key": "p5",
+     "word": "one point nine"
+    },
+    {
+     "key": "p6",
+     "word": "one point six"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same chart for Assam: 2.2, 1.9 and 1.6, crossing under the 2.1 line."
+  },
+  {
+   "id": "s049",
+   "act": "The biggest falls",
+   "kind": "multiples",
+   "spec": {
+    "states": [
+     "Meghalaya",
+     "Bihar",
+     "Assam"
+    ],
+    "surveys": [
+     "nfhs4",
+     "nfhs5",
+     "nfhs6"
+    ],
+    "key": "all"
+   },
+   "vo": "Meghalaya, Bihar and Assam were each lower in every round.",
+   "reveals": [
+    {
+     "key": "all",
+     "word": "Meghalaya"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three small line charts side by side, Meghalaya, Bihar and Assam, each lower at every survey."
+  },
+  {
+   "id": "s050",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "WHAT GOES WITH",
+     "FEWER BABIES?"
+    ],
+    "accent": [
+     "FEWER BABIES"
+    ],
+    "mascot": true
+   },
+   "vo": "So what do the lower-fertility places have in common?",
+   "reveals": [],
+   "transition": "wipe",
+   "visual": "A solid blue card asking the chapter's question, FEWER BABIES in yellow, the uncle peeking up in the corner."
+  },
+  {
+   "id": "s051",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "title",
+   "spec": {
+    "title": "Our *analysis*, not the survey's.",
+    "sub": "Tested on the NFHS-6 fact sheet figures",
+    "chip": "DATA KADAI · OUR ANALYSIS"
+   },
+   "vo": "We tested two things ourselves, using figures in the same NFHS-6 fact sheets. This part is our analysis, not the survey's.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A sunburst title card with the uncle: OUR ANALYSIS in red, 'not the survey's' under it: the hedge stated as a headline."
+  },
+  {
+   "id": "s052",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "school",
+    "actors": [
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 700,
+      "y": 945,
+      "h": 540
+     },
+     {
+      "id": "girl",
+      "who": "girl",
+      "x": 940,
+      "y": 950,
+      "h": 400
+     }
+    ],
+    "props": [
+     {
+      "icon": "school",
+      "x": 1380,
+      "y": 470,
+      "s": 2.4,
+      "enter": "sc"
+     },
+     {
+      "icon": "book",
+      "x": 1680,
+      "y": 760,
+      "s": 1.5
+     }
+    ],
+    "pills": [
+     {
+      "text": "FIRST: SCHOOLING",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "First, the share of women aged fifteen to forty-nine with ten or more years of schooling.",
+   "reveals": [
+    {
+     "key": "sc",
+     "word": "ten"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A school set with a woman and a girl; a big school icon pops in on 'ten or more years' under the pill FIRST: SCHOOLING."
+  },
+  {
+   "id": "s053",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 800,
+      "y": 945,
+      "h": 560
+     }
+    ],
+    "props": [
+     {
+      "icon": "ring",
+      "x": 1250,
+      "y": 520,
+      "s": 2.4,
+      "enter": "rg"
+     },
+     {
+      "icon": "calendar",
+      "x": 1600,
+      "y": 760,
+      "s": 1.6
+     }
+    ],
+    "pills": [
+     {
+      "text": "SECOND: MARRIED BEFORE EIGHTEEN",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "Second, the share of women aged twenty to twenty-four who were married before eighteen.",
+   "reveals": [
+    {
+     "key": "rg",
+     "word": "married"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A ring icon pops in on 'married' beside a grown woman, under the pill SECOND: MARRIED BEFORE EIGHTEEN."
+  },
+  {
+   "id": "s054",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "school",
+    "actors": [
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 800,
+      "y": 945,
+      "h": 540
+     }
+    ],
+    "props": [
+     {
+      "icon": "school",
+      "x": 1300,
+      "y": 520,
+      "s": 2.5,
+      "enter": "sc"
+     }
+    ],
+    "pills": [
+     {
+      "text": "ACROSS ALL THE PLACES",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "Across all thirty-five places, where more women had ten or more years of schooling,",
+   "reveals": [
+    {
+     "key": "sc",
+     "word": "women"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A woman and a school icon that pops in on 'women', under the pill ACROSS ALL THE PLACES."
+  },
+  {
+   "id": "s055",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "scatter",
+   "spec": {
+    "x": "school10",
+    "y": "tfr6",
+    "label": [],
+    "trend": true,
+    "corr": {
+     "ref": {
+      "t": "stats",
+      "state": "corr_school_tfr6"
+     },
+     "key": "corr"
+    }
+   },
+   "vo": "fertility tends to be lower. The correlation is minus zero point three six.",
+   "reveals": [
+    {
+     "key": "corr",
+     "word": "zero point three six"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A scatter of 35 dots (schooling against fertility) with a falling trend line; a correlation badge lands with -0.36 and the sticker 'Pattern, not proof'."
+  },
+  {
+   "id": "s056",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "kl",
+      "who": "mother",
+      "x": 700,
+      "y": 945,
+      "h": 470
+     },
+     {
+      "id": "bh",
+      "who": "mother",
+      "x": 1220,
+      "y": 945,
+      "h": 470
+     }
+    ],
+    "props": [
+     {
+      "icon": "school",
+      "x": 1640,
+      "y": 520,
+      "s": 2.0
+     }
+    ],
+    "badges": [
+     {
+      "key": "k87",
+      "ref": {
+       "t": "school10",
+       "state": "Kerala",
+       "s": "nfhs6"
+      },
+      "suffix": "%",
+      "caption": "Kerala · schooling",
+      "x": 700,
+      "y": 300,
+      "size": 170,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "TEN OR MORE YEARS OF SCHOOL",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "PATTERN, NOT PROOF",
+      "x": 96,
+      "y": 860
+     },
+     {
+      "text": "BIHAR",
+      "x": 1120,
+      "y": 330
+     }
+    ]
+   },
+   "vo": "In Kerala, eighty-seven percent of women had ten or more years of schooling,",
+   "reveals": [
+    {
+     "key": "k87",
+     "word": "eighty-seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two mothers stand side by side in one street, Kerala and Bihar, same set and same cast; a circled 87% lands over Kerala's mother for schooling."
+  },
+  {
+   "id": "s057",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "kl",
+      "who": "mother",
+      "x": 700,
+      "y": 945,
+      "h": 470
+     },
+     {
+      "id": "bh",
+      "who": "mother",
+      "x": 1220,
+      "y": 945,
+      "h": 470
+     }
+    ],
+    "props": [
+     {
+      "icon": "ring",
+      "x": 1640,
+      "y": 520,
+      "s": 2.0
+     }
+    ],
+    "badges": [
+     {
+      "key": "k3",
+      "ref": {
+       "t": "marriage18",
+       "state": "Kerala",
+       "s": "nfhs6"
+      },
+      "suffix": "%",
+      "caption": "Kerala · child marriage",
+      "x": 700,
+      "y": 300,
+      "size": 170,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "MARRIED BEFORE EIGHTEEN",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "PATTERN, NOT PROOF",
+      "x": 96,
+      "y": 860
+     },
+     {
+      "text": "BIHAR",
+      "x": 1120,
+      "y": 330
+     }
+    ]
+   },
+   "vo": "and three percent of women aged twenty to twenty-four were married before eighteen.",
+   "reveals": [
+    {
+     "key": "k3",
+     "word": "three"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same street and the same two mothers; a circled 3% lands over Kerala's mother for marriage before eighteen."
+  },
+  {
+   "id": "s058",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "kl",
+      "who": "mother",
+      "x": 700,
+      "y": 945,
+      "h": 470
+     },
+     {
+      "id": "bh",
+      "who": "mother",
+      "x": 1220,
+      "y": 945,
+      "h": 470
+     }
+    ],
+    "props": [
+     {
+      "icon": "school",
+      "x": 1680,
+      "y": 700,
+      "s": 1.3
+     },
+     {
+      "icon": "ring",
+      "x": 1680,
+      "y": 880,
+      "s": 1.2
+     }
+    ],
+    "badges": [
+     {
+      "key": "b33",
+      "ref": {
+       "t": "school10",
+       "state": "Bihar",
+       "s": "nfhs6"
+      },
+      "suffix": "%",
+      "caption": "Bihar · schooling",
+      "x": 1100,
+      "y": 270,
+      "size": 150,
+      "decimals": 0
+     },
+     {
+      "key": "b35",
+      "ref": {
+       "t": "marriage18",
+       "state": "Bihar",
+       "s": "nfhs6"
+      },
+      "suffix": "%",
+      "caption": "Bihar · child marriage",
+      "x": 1560,
+      "y": 420,
+      "size": 150,
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "KERALA",
+      "x": 590,
+      "y": 330
+     },
+     {
+      "text": "SAME TWO MEASURES",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "PATTERN, NOT PROOF",
+      "x": 96,
+      "y": 150
+     }
+    ]
+   },
+   "vo": "In Bihar, the figures are thirty-three percent and thirty-five percent.",
+   "reveals": [
+    {
+     "key": "b33",
+     "word": "thirty-three"
+    },
+    {
+     "key": "b35",
+     "word": "thirty-five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same street and the same two mothers; now Bihar's mother gets the two badges, 33% for schooling and 35% for marriage before eighteen."
+  },
+  {
+   "id": "s059",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "scatter",
+   "spec": {
+    "x": "marriage18",
+    "y": "tfr6",
+    "label": [],
+    "trend": true,
+    "corr": {
+     "ref": {
+      "t": "stats",
+      "state": "corr_marriage_tfr6"
+     },
+     "key": "corr"
+    }
+   },
+   "vo": "For child marriage, the link is weaker: plus zero point two nine.",
+   "reveals": [
+    {
+     "key": "corr",
+     "word": "zero point two nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same scatter for child marriage: a rising, looser trend line and a correlation badge with +0.29."
+  },
+  {
+   "id": "s060",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "worried"
+     }
+    ],
+    "props": [
+     {
+      "icon": "scale",
+      "x": 1650,
+      "y": 560,
+      "s": 1.8
+     }
+    ],
+    "badges": [
+     {
+      "key": "n35",
+      "ref": {
+       "t": "stats",
+       "state": "n_states"
+      },
+      "caption": "places only",
+      "x": 1180,
+      "y": 300,
+      "size": 170,
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "COULD PARTLY BE CHANCE",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "bubble": {
+     "who": "uncle",
+     "text": "CHANCE?",
+     "x": 420,
+     "y": 330
+    },
+    "mouth": true
+   },
+   "vo": "With only thirty-five places, a link that weak could partly be chance.",
+   "reveals": [
+    {
+     "key": "n35",
+     "word": "thirty-five"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A cautious uncle with a speech bubble 'CHANCE?' and a badge for the small number of places, 35, under the pill COULD PARTLY BE CHANCE."
+  },
+  {
+   "id": "s061",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 700,
+      "y": 520,
+      "s": 2.0
+     }
+    ],
+    "badges": [
+     {
+      "key": "c5s",
+      "ref": {
+       "t": "stats",
+       "state": "corr_school_tfr5"
+      },
+      "caption": "NFHS-5 schooling link",
+      "x": 1000,
+      "y": 300,
+      "size": 180,
+      "accent": "circle",
+      "decimals": 2
+     }
+    ],
+    "pills": [
+     {
+      "text": "COMPARE WITH NFHS-5",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "PATTERN, NOT PROOF",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Next, compare with NFHS-5. On the same thirty-five places, the schooling link was minus zero point five two,",
+   "reveals": [
+    {
+     "key": "c5s",
+     "word": "zero point five two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A calendar for the earlier survey and a circled badge with the NFHS-5 schooling link, -0.52, under the pill COMPARE WITH NFHS-5."
+  },
+  {
+   "id": "s062",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "ring",
+      "x": 1000,
+      "y": 520,
+      "s": 2.0
+     }
+    ],
+    "badges": [
+     {
+      "key": "c5m",
+      "ref": {
+       "t": "stats",
+       "state": "corr_marriage_tfr5"
+      },
+      "prefix": "+",
+      "caption": "NFHS-5 child marriage link",
+      "x": 1450,
+      "y": 332,
+      "size": 180,
+      "accent": "circle",
+      "decimals": 2
+     }
+    ],
+    "pills": [
+     {
+      "text": "COMPARE WITH NFHS-5",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "BOTH WEAKER NOW",
+      "x": 96,
+      "y": 150,
+      "key": "bw"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "and the child marriage link was plus zero point four six. So both links are weaker in NFHS-6.",
+   "reveals": [
+    {
+     "key": "c5m",
+     "word": "zero point four six"
+    },
+    {
+     "key": "bw",
+     "word": "weaker"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A ring icon and a circled badge with the NFHS-5 child-marriage link, +0.46; the pill BOTH WEAKER NOW lands on 'weaker'."
+  },
+  {
+   "id": "s063",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "highlight": [
+     "Lakshadweep"
+    ]
+   },
+   "vo": "Part of that comes from one small island territory.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Lakshadweep lifts off the map: the one small island territory behind part of the weakening."
+  },
+  {
+   "id": "s064",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1000,
+      "y": 945,
+      "h": 520
+     }
+    ],
+    "props": [
+     {
+      "icon": "tree",
+      "x": 1700,
+      "y": 640,
+      "s": 1.8
+     },
+     {
+      "icon": "school",
+      "x": 1250,
+      "y": 440,
+      "s": 1.6
+     }
+    ],
+    "badges": [
+     {
+      "key": "w",
+      "ref": {
+       "t": "stats",
+       "state": "women_interviewed_nfhs6",
+       "s": "Lakshadweep"
+      },
+      "caption": "women interviewed",
+      "x": 1150,
+      "y": 250,
+      "size": 150,
+      "decimals": 0
+     },
+     {
+      "key": "t",
+      "ref": {
+       "t": "tfr",
+       "state": "Lakshadweep",
+       "s": "nfhs6"
+      },
+      "caption": "fertility rate",
+      "x": 1650,
+      "y": 470,
+      "size": 170,
+      "accent": "circle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "LAKSHADWEEP",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Lakshadweep, where eleven hundred fifty women were interviewed, is among the highest in schooling and reads two point two on fertility.",
+   "reveals": [
+    {
+     "key": "w",
+     "word": "eleven hundred fifty"
+    },
+    {
+     "key": "t",
+     "word": "two point two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Palm trees and a school: a badge for 1,150 women interviewed and a circled 2.2 fertility rate, under the pill LAKSHADWEEP."
+  },
+  {
+   "id": "s065",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "badges": [
+     {
+      "key": "l6",
+      "ref": {
+       "t": "stats",
+       "state": "corr_excl_lakshadweep",
+       "s": "school_tfr6"
+      },
+      "caption": "NFHS-6, without it",
+      "x": 1060,
+      "y": 330,
+      "size": 170,
+      "accent": "circle",
+      "decimals": 2
+     },
+     {
+      "key": "l5",
+      "ref": {
+       "t": "stats",
+       "state": "corr_excl_lakshadweep",
+       "s": "school_tfr5"
+      },
+      "caption": "NFHS-5, same places",
+      "x": 1560,
+      "y": 430,
+      "size": 160,
+      "decimals": 2
+     }
+    ],
+    "pills": [
+     {
+      "text": "WITHOUT LAKSHADWEEP",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Leave it out, and the schooling link is minus zero point four six, against minus zero point five zero in NFHS-5.",
+   "reveals": [
+    {
+     "key": "l6",
+     "word": "zero point four six"
+    },
+    {
+     "key": "l5",
+     "word": "zero point five zero"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two badges with the schooling link without Lakshadweep: -0.46 for NFHS-6 (circled) and -0.50 for NFHS-5, under the pill WITHOUT LAKSHADWEEP."
+  },
+  {
+   "id": "s066",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "idle"
+     }
+    ],
+    "props": [
+     {
+      "icon": "scale",
+      "x": 1300,
+      "y": 540,
+      "s": 2.4
+     }
+    ],
+    "pills": [
+     {
+      "text": "SOFTENED, NOT GONE",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "So the link has softened a little. It has not disappeared.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A balance beside the uncle, the pill SOFTENED, NOT GONE: the link has weakened but is still there."
+  },
+  {
+   "id": "s067",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "A PATTERN,",
+     "NOT PROOF"
+    ],
+    "accent": [
+     "NOT PROOF"
+    ],
+    "mascot": true
+   },
+   "vo": "A word of caution. This is a pattern, not proof that one thing causes the other.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card, NOT PROOF in yellow, the uncle peeking up: the chapter's caution."
+  },
+  {
+   "id": "s068",
+   "act": "What goes with fewer babies? Our analysis",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "title": "Next: the twist"
+   },
+   "vo": "Many other things differ between states, and we did not test them.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The map again, a quiet reminder that many other things differ between places; its legend is headed 'Next: the twist'."
+  },
+  {
+   "id": "s069",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "badges": [
+     {
+      "key": "tw",
+      "text": "THE TWIST",
+      "x": 820,
+      "y": 250,
+      "size": 120,
+      "accent": "underline"
+     },
+     {
+      "key": "n33",
+      "ref": {
+       "t": "stats",
+       "state": "nfhs4_to_nfhs5_incl_manipur",
+       "s": "n_comparable"
+      },
+      "caption": "places compared",
+      "x": 1520,
+      "y": 420,
+      "size": 190,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "MANIPUR INCLUDED",
+      "x": 96,
+      "y": 72,
+      "key": "mi"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Here is the twist. Between NFHS-4 and NFHS-5, of the thirty-three places that can be compared, Manipur included,",
+   "reveals": [
+    {
+     "key": "tw",
+     "word": "twist"
+    },
+    {
+     "key": "mi",
+     "word": "Manipur"
+    },
+    {
+     "key": "n33",
+     "word": "thirty-three"
+    }
+   ],
+   "transition": "wipe",
+   "visual": "A badge THE TWIST lands, then a circled 33 'places compared', under the pill MANIPUR INCLUDED."
+  },
+  {
+   "id": "s070",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     }
+    ],
+    "badges": [
+     {
+      "key": "d14",
+      "ref": {
+       "t": "stats",
+       "state": "nfhs4_to_nfhs5_incl_manipur",
+       "s": "down_by_0_3_or_more"
+      },
+      "caption": "fell by zero point three or more",
+      "x": 1330,
+      "y": 355,
+      "size": 200,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "ON THE PRINTED FIGURES",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "fourteen fell by zero point three or more on the printed figures.",
+   "reveals": [
+    {
+     "key": "d14",
+     "word": "fourteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A big circled 14: the places that fell by 0.3 or more between NFHS-4 and NFHS-5, under the pill ON THE PRINTED FIGURES."
+  },
+  {
+   "id": "s071",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     }
+    ],
+    "badges": [
+     {
+      "key": "s19",
+      "ref": {
+       "t": "stats",
+       "state": "nfhs4_to_nfhs5_incl_manipur",
+       "s": "about_the_same"
+      },
+      "caption": "about the same",
+      "x": 900,
+      "y": 330,
+      "size": 190,
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "NONE ROSE THAT MUCH",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "None rose by that much. The other nineteen were about the same.",
+   "reveals": [
+    {
+     "key": "s19",
+     "word": "nineteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A badge with 19 'about the same', the uncle on the right, under the pill NONE ROSE THAT MUCH."
+  },
+  {
+   "id": "s072",
+   "act": "The twist",
+   "kind": "multiples",
+   "spec": {
+    "states": [
+     "Kerala"
+    ],
+    "surveys": [
+     "nfhs4",
+     "nfhs5"
+    ],
+    "key": "k"
+   },
+   "vo": "Two read slightly higher: Kerala, from one point six to one point eight,",
+   "reveals": [
+    {
+     "key": "k",
+     "word": "one point eight"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A single small line chart for Kerala from NFHS-4 (1.6) to NFHS-5 (1.8): a small step, tagged about the same."
+  },
+  {
+   "id": "s073",
+   "act": "The twist",
+   "kind": "multiples",
+   "spec": {
+    "states": [
+     "Tamil Nadu"
+    ],
+    "surveys": [
+     "nfhs4",
+     "nfhs5"
+    ],
+    "key": "k"
+   },
+   "vo": "and Tamil Nadu, from one point seven to one point eight.",
+   "reveals": [
+    {
+     "key": "k",
+     "word": "one point eight"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The same small chart for Tamil Nadu, 1.7 to 1.8."
+  },
+  {
+   "id": "s074",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "badges": [
+     {
+      "key": "u16",
+      "ref": {
+       "t": "stats",
+       "state": "up"
+      },
+      "caption": "higher, by any amount",
+      "x": 1350,
+      "y": 366,
+      "size": 210,
+      "accent": "circle",
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "ANY DIFFERENCE COUNTED",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "GUESS FIRST: UP OR DOWN?",
+      "x": 96,
+      "y": 150
+     }
+    ],
+    "bubble": {
+     "who": "uncle",
+     "text": "WAIT. UP?",
+     "x": 470,
+     "y": 480
+    },
+    "mouth": true,
+    "camera": {
+     "fx": 1300,
+     "fy": 420,
+     "s0": 1.0,
+     "s1": 1.1
+    }
+   },
+   "vo": "NFHS-6 looks different. In sixteen of the thirty-five places, NFHS-6 is higher than NFHS-5.",
+   "reveals": [
+    {
+     "key": "u16",
+     "word": "sixteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The turn of the film: the uncle's speech bubble says WAIT. UP? and a huge circled 16 lands with 'higher, by any amount', after a GUESS FIRST pill, with the camera pushing in.",
+   "peak": true
+  },
+  {
+   "id": "s075",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "present",
+      "flip": true
+     }
+    ],
+    "badges": [
+     {
+      "key": "d12",
+      "ref": {
+       "t": "stats",
+       "state": "down"
+      },
+      "caption": "lower",
+      "x": 700,
+      "y": 300,
+      "size": 170,
+      "decimals": 0
+     },
+     {
+      "key": "s7",
+      "ref": {
+       "t": "stats",
+       "state": "same"
+      },
+      "caption": "the same",
+      "x": 1130,
+      "y": 400,
+      "size": 170,
+      "decimals": 0
+     }
+    ],
+    "pills": [
+     {
+      "text": "NFHS-6 VS NFHS-5",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "In twelve it is lower, and in seven it is the same.",
+   "reveals": [
+    {
+     "key": "d12",
+     "word": "twelve"
+    },
+    {
+     "key": "s7",
+     "word": "seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two badges land beside the 16: 12 'lower' and 7 'the same', under the pill NFHS-6 VS NFHS-5."
+  },
+  {
+   "id": "s076",
+   "act": "The twist",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "BUT LOOK",
+     "CLOSER"
+    ],
+    "accent": [
+     "CLOSER"
+    ]
+   },
+   "vo": "But look closer. In ten of those sixteen,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card, CLOSER in yellow: the second turn."
+  },
+  {
+   "id": "s077",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "idle"
+     }
+    ],
+    "props": [
+     {
+      "icon": "scale",
+      "x": 1300,
+      "y": 540,
+      "s": 2.4
+     }
+    ],
+    "pills": [
+     {
+      "text": "A TINY STEP",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "ABOUT THE SAME",
+      "x": 96,
+      "y": 150,
+      "key": "ab"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "the difference is just zero point one, and we treat that as about the same.",
+   "reveals": [
+    {
+     "key": "ab",
+     "word": "about"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A balance barely tilting beside the uncle: the pill A TINY STEP, then ABOUT THE SAME lands on 'about'."
+  },
+  {
+   "id": "s078",
+   "act": "The twist",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr_change",
+    "mode": "risers",
+    "title": "Printed figures, all sample sizes"
+   },
+   "vo": "On the printed figures, six places are zero point three or more higher,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The map pulses the six places that rose by 0.3 or more in warm orange rings while the others stay grey; the legend says all sample sizes are included."
+  },
+  {
+   "id": "s079",
+   "act": "The twist",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr_change",
+    "mode": "scale",
+    "highlight": [
+     "Meghalaya",
+     "Andaman and Nicobar Islands",
+     "Arunachal Pradesh",
+     "Assam",
+     "Bihar",
+     "Mizoram"
+    ],
+    "title": "Lifted: the biggest falls"
+   },
+   "vo": "and six are zero point three or more lower.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The six places that fell by 0.3 or more lift off the map (Meghalaya, the Andaman and Nicobar Islands, Arunachal Pradesh, Assam, Bihar, Mizoram) under the legend heading 'Lifted: the biggest falls'."
+  },
+  {
+   "id": "s080",
+   "act": "The twist",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs5",
+      "state": "Jammu and Kashmir",
+      "key": "j5"
+     },
+     {
+      "survey": "nfhs6",
+      "state": "Jammu and Kashmir",
+      "key": "j6"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    }
+   },
+   "vo": "Among places with bigger samples, the largest rise is Jammu and Kashmir: one point four in NFHS-5, one point eight in NFHS-6.",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "Among"
+    },
+    {
+     "key": "j5",
+     "word": "one point four"
+    },
+    {
+     "key": "j6",
+     "word": "one point eight"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A line chart with two dots for Jammu and Kashmir, 1.4 and 1.8, the largest rise among the places with bigger samples."
+  },
+  {
+   "id": "s081",
+   "act": "The twist",
+   "kind": "tfr-line",
+   "spec": {
+    "points": [
+     {
+      "survey": "nfhs4",
+      "state": "Nagaland",
+      "key": "n4"
+     },
+     {
+      "survey": "nfhs5",
+      "state": "Nagaland",
+      "key": "n5"
+     }
+    ],
+    "line": {
+     "const": 2.1,
+     "key": "ln"
+    }
+   },
+   "vo": "Nagaland fell by a full child per woman between NFHS-4 and NFHS-5, from two point seven to one point seven.",
+   "reveals": [
+    {
+     "key": "ln",
+     "word": "Nagaland"
+    },
+    {
+     "key": "n4",
+     "word": "two point seven"
+    },
+    {
+     "key": "n5",
+     "word": "one point seven"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A line chart for Nagaland: 2.7 down to 1.7, a full child per woman, against the 2.1 line."
+  },
+  {
+   "id": "s082",
+   "act": "The twist",
+   "kind": "slope",
+   "spec": {
+    "items": [
+     {
+      "state": "Nagaland",
+      "surveys": [
+       "nfhs4",
+       "nfhs5",
+       "nfhs6"
+      ],
+      "key": "nag"
+     }
+    ]
+   },
+   "vo": "In NFHS-6 it reads two point zero, about zero point three higher.",
+   "reveals": [
+    {
+     "key": "nag",
+     "word": "two point zero"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A slope line for Nagaland's three surveys, 2.7, 1.7 and 2.0: the third dot rises about 0.3."
+  },
+  {
+   "id": "s083",
+   "act": "The twist",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr_change",
+    "mode": "scale",
+    "highlight": [
+     "Chandigarh",
+     "Goa",
+     "Lakshadweep",
+     "Ladakh",
+     "Andaman and Nicobar Islands"
+    ]
+   },
+   "vo": "A few small places also show jumps,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The five small-sample places lift off the map: the places the narrator leaves out."
+  },
+  {
+   "id": "s084",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "worried"
+     }
+    ],
+    "props": [
+     {
+      "icon": "house",
+      "x": 1000,
+      "y": 700,
+      "s": 1.1
+     },
+     {
+      "icon": "house",
+      "x": 1150,
+      "y": 700,
+      "s": 1.1
+     },
+     {
+      "icon": "house",
+      "x": 1300,
+      "y": 700,
+      "s": 1.1
+     },
+     {
+      "icon": "house",
+      "x": 1450,
+      "y": 700,
+      "s": 1.1
+     },
+     {
+      "icon": "house",
+      "x": 1600,
+      "y": 700,
+      "s": 1.1
+     }
+    ],
+    "pills": [
+     {
+      "text": "SMALL SAMPLES",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "LEFT OUT",
+      "x": 96,
+      "y": 150,
+      "key": "lo"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "but their samples run from about eight hundred to two thousand two hundred women, so we leave them out.",
+   "reveals": [
+    {
+     "key": "lo",
+     "word": "leave"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A cautious uncle beside five little houses; the pills SMALL SAMPLES and LEFT OUT (on 'leave')."
+  },
+  {
+   "id": "s085",
+   "act": "The twist",
+   "kind": "multiples",
+   "spec": {
+    "states": [
+     "Kerala",
+     "Tamil Nadu"
+    ],
+    "surveys": [
+     "nfhs4",
+     "nfhs5",
+     "nfhs6"
+    ],
+    "key": "both"
+   },
+   "vo": "Kerala reads one point eight again, and Tamil Nadu one point seven. Both are about the same.",
+   "reveals": [
+    {
+     "key": "both",
+     "word": "Kerala"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two small line charts, Kerala (1.6, 1.8, 1.8) and Tamil Nadu (1.7, 1.8, 1.7): flat, tagged about the same."
+  },
+  {
+   "id": "s086",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "clinic",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "worried"
+     }
+    ],
+    "props": [
+     {
+      "icon": "clock",
+      "x": 1300,
+      "y": 480,
+      "s": 2.4
+     },
+     {
+      "icon": "calendar",
+      "x": 1650,
+      "y": 700,
+      "s": 1.6
+     }
+    ],
+    "bubble": {
+     "who": "uncle",
+     "text": "LEVELLING OFF?",
+     "x": 420,
+     "y": 330
+    },
+    "mouth": true
+   },
+   "vo": "So is India's fall levelling off? One survey cannot tell us.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The uncle's speech bubble asks LEVELLING OFF? beside a clock and a single calendar page: one survey, one snapshot."
+  },
+  {
+   "id": "s087",
+   "act": "The twist",
+   "kind": "stage",
+   "spec": {
+    "set": "school",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 1620,
+      "y": 950,
+      "h": 640,
+      "pose": "point",
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 900,
+      "y": 520,
+      "s": 2.4,
+      "enter": "cl"
+     }
+    ],
+    "pills": [
+     {
+      "text": "PROVISIONAL",
+      "x": 96,
+      "y": 72,
+      "key": "pv"
+     },
+     {
+      "text": "A LATER SURVEY",
+      "x": 96,
+      "y": 150,
+      "key": "ls"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "The NFHS-6 numbers are provisional, and only a later survey can show",
+   "reveals": [
+    {
+     "key": "pv",
+     "word": "provisional"
+    },
+    {
+     "key": "cl",
+     "word": "later"
+    },
+    {
+     "key": "ls",
+     "word": "survey"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle on the right points at a new calendar page that pops in on 'later'; the pills PROVISIONAL and A LATER SURVEY land with the words."
+  },
+  {
+   "id": "s088",
+   "act": "The twist",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "A TURN?",
+     "OR JUST",
+     "NOISE?"
+    ],
+    "accent": [
+     "NOISE"
+    ],
+    "mascot": true
+   },
+   "vo": "whether this is a turn or just noise.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card with the question the film leaves open: A TURN? OR JUST NOISE?, NOISE in yellow, the uncle peeking up."
+  },
+  {
+   "id": "s089",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "clinic",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "clock",
+      "x": 1300,
+      "y": 450,
+      "s": 2.3,
+      "enter": "ck"
+     },
+     {
+      "icon": "hospital",
+      "x": 1650,
+      "y": 620,
+      "s": 1.7
+     }
+    ],
+    "pills": [
+     {
+      "text": "WHY IT MATTERS",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "UNITED NATIONS",
+      "x": 96,
+      "y": 150,
+      "key": "un"
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "Why does this matter? The United Nations notes that in countries below replacement level, population ageing speeds up.",
+   "reveals": [
+    {
+     "key": "un",
+     "word": "United"
+    },
+    {
+     "key": "ck",
+     "word": "ageing"
+    }
+   ],
+   "transition": "wipe",
+   "visual": "The chapter opens in a clinic: a clock pops in on 'ageing', the pills WHY IT MATTERS and UNITED NATIONS."
+  },
+  {
+   "id": "s090",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "father",
+      "who": "father",
+      "x": 700,
+      "y": 945,
+      "h": 580
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 980,
+      "y": 945,
+      "h": 540
+     },
+     {
+      "id": "teacher",
+      "who": "teacher",
+      "x": 1260,
+      "y": 945,
+      "h": 560
+     }
+    ],
+    "props": [
+     {
+      "icon": "clock",
+      "x": 1620,
+      "y": 440,
+      "s": 1.9
+     }
+    ],
+    "pills": [
+     {
+      "text": "WORKING AGE",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "And if fertility keeps falling, then over the long run the share of people of working age shrinks,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A street of working-age adults and a clock, under the pill WORKING AGE."
+  },
+  {
+   "id": "s091",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "city",
+    "actors": [
+     {
+      "id": "father",
+      "who": "father",
+      "x": 640,
+      "y": 945,
+      "h": 580
+     },
+     {
+      "id": "grandmother",
+      "who": "grandmother",
+      "x": 960,
+      "y": 945,
+      "h": 520,
+      "enter": "g1"
+     },
+     {
+      "id": "grandmother2",
+      "who": "grandmother",
+      "x": 1260,
+      "y": 945,
+      "h": 500,
+      "enter": "g2"
+     }
+    ],
+    "pills": [
+     {
+      "text": "OLDER PEOPLE",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "and the share of older people grows.",
+   "reveals": [
+    {
+     "key": "g1",
+     "word": "share"
+    },
+    {
+     "key": "g2",
+     "word": "older"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A father and two grandmothers that pop in on 'share' and 'older', under the pill OLDER PEOPLE."
+  },
+  {
+   "id": "s092",
+   "act": "So what?",
+   "kind": "title",
+   "spec": {
+    "title": "Kerala and Bihar: two age profiles",
+    "sub": "Share of people aged sixty or older",
+    "chip": "NFHS-6 · AGE PROFILES",
+    "notes": "GAP: the age figures are three levels deep in figures.json (age_structure.Kerala.age60plus.nfhs6), so no FigRef can print them. Add flat tables age60plus and under15 shaped like school10, then add the badges listed in STORYBOARD.md section 7."
+   },
+   "vo": "NFHS-6 already shows different age profiles. In Kerala, twenty point seven percent of people are sixty or older.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A sunburst title card with the uncle: Kerala and Bihar, two age profiles, the share of people aged sixty or older."
+  },
+  {
+   "id": "s093",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "village",
+    "actors": [
+     {
+      "id": "grandmother",
+      "who": "grandmother",
+      "x": 900,
+      "y": 945,
+      "h": 540
+     }
+    ],
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 1350,
+      "y": 560,
+      "s": 2.2
+     }
+    ],
+    "pills": [
+     {
+      "text": "BIHAR",
+      "x": 96,
+      "y": 72,
+      "key": "bh"
+     },
+     {
+      "text": "INDIA AS A WHOLE",
+      "x": 96,
+      "y": 150,
+      "key": "in"
+     }
+    ],
+    "notes": "GAP: print age60plus for Bihar and India here once figures.json has a flat age60plus table (STORYBOARD.md section 7)."
+   },
+   "vo": "In Bihar, eleven point five percent. For India as a whole, twelve point nine percent.",
+   "reveals": [
+    {
+     "key": "bh",
+     "word": "Bihar"
+    },
+    {
+     "key": "in",
+     "word": "India"
+    }
+   ],
+   "transition": "cut",
+   "visual": "One grandmother and a calendar; the pills BIHAR and INDIA AS A WHOLE land as named (no digits yet: the table is missing)."
+  },
+  {
+   "id": "s094",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "girl",
+      "who": "girl",
+      "x": 800,
+      "y": 950,
+      "h": 440
+     },
+     {
+      "id": "boy",
+      "who": "boy",
+      "x": 1010,
+      "y": 955,
+      "h": 380
+     }
+    ],
+    "pills": [
+     {
+      "text": "BIHAR: UNDER FIFTEEN",
+      "x": 96,
+      "y": 72,
+      "key": "bh"
+     },
+     {
+      "text": "KERALA",
+      "x": 96,
+      "y": 150,
+      "key": "kl"
+     }
+    ],
+    "notes": "GAP: print under15 for Bihar and Kerala here once figures.json has a flat under15 table (STORYBOARD.md section 7)."
+   },
+   "vo": "At the other end, thirty-five point six percent of people in Bihar are under fifteen, against twenty point three percent in Kerala.",
+   "reveals": [
+    {
+     "key": "bh",
+     "word": "Bihar"
+    },
+    {
+     "key": "kl",
+     "word": "against"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two children; the pills BIHAR: UNDER FIFTEEN and KERALA land as named (no digits yet: the table is missing)."
+  },
+  {
+   "id": "s095",
+   "act": "So what?",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "BELOW THE LINE?",
+     "YES.",
+     "SHRINKING?",
+     "ONE SURVEY CAN'T SAY."
+    ],
+    "accent": [
+     "YES"
+    ],
+    "mascot": true
+   },
+   "vo": "The table shows how much, not why.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A solid blue card that answers the film's question in four short lines (BELOW THE LINE? YES. SHRINKING? ONE SURVEY CAN'T SAY.), the uncle peeking up."
+  },
+  {
+   "id": "s096",
+   "act": "So what?",
+   "kind": "map",
+   "spec": {
+    "metric": "tfr6",
+    "mode": "scale",
+    "title": "Where does your state sit?"
+   },
+   "vo": "So where does your state sit on the map,",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The NFHS-6 map one last time, its legend headed 'Where does your state sit?'."
+  },
+  {
+   "id": "s097",
+   "act": "So what?",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "uncle",
+      "who": "uncle",
+      "x": 300,
+      "y": 950,
+      "h": 640,
+      "pose": "point"
+     },
+     {
+      "id": "mother",
+      "who": "mother",
+      "x": 1000,
+      "y": 945,
+      "h": 540
+     },
+     {
+      "id": "girl",
+      "who": "girl",
+      "x": 1210,
+      "y": 950,
+      "h": 400
+     },
+     {
+      "id": "boy",
+      "who": "boy",
+      "x": 1360,
+      "y": 955,
+      "h": 350
+     },
+     {
+      "id": "baby",
+      "who": "baby",
+      "x": 1490,
+      "y": 960,
+      "h": 210
+     }
+    ],
+    "props": [
+     {
+      "icon": "heart",
+      "x": 1650,
+      "y": 520,
+      "s": 1.8,
+      "enter": "ht"
+     }
+    ],
+    "pills": [
+     {
+      "text": "YOUR STATE, YOUR FAMILY",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "mouth": true
+   },
+   "vo": "and what do you see in your own family? Tell us in the comments.",
+   "reveals": [
+    {
+     "key": "ht",
+     "word": "family"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The uncle points at the viewer beside a family; a heart pops in on 'family', under the pill YOUR STATE, YOUR FAMILY."
+  },
+  {
+   "id": "s098",
+   "act": "So what?",
+   "kind": "end",
+   "spec": {
+    "question": "Is India running out of babies? It depends on where you live.",
+    "sources": [
+     "IIPS, NFHS-6 India and State/UT Fact Sheets, May 2026 (provisional)",
+     "PIB, Ministry of Health and Family Welfare, release of 29 May 2026",
+     "IIPS and MoHFW, NFHS-5 and NFHS-4 India Reports",
+     "IIPS, NFHS-3 India Report (1992-93 and 2005-06 rates)",
+     "UN DESA, total fertility rate methodology sheet",
+     "Lok Sabha Unstarred Question 973, July 2026"
+    ]
+   },
+   "vo": "There is a new India map on Data Kadai to look at next.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The closing scene: the uncle asks the film's question in a speech bubble, a subscribe button rings, the sources sit on a board, and an empty frame waits for YouTube's next-video element."
+  }
+ ]
+}

@@ -1,0 +1,549 @@
+{
+ "id": "px04",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "CEA · RBI · 2023-24",
+ "source": "Electricity: per capita availability of power, kilowatt-hours, 2023-24, Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138 (34 states and UTs; per capita figures use population projections of the Ministry of Health and Family Welfare). Income: per-capita net state domestic product, current prices, 2023-24, same Handbook, Table 19 (33 states and UTs with data).",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Chhattisgarh*: *1.9×* West Bengal's",
+    "available power per person,",
+    "same income, 2023-24."
+   ],
+   "vo": "Chhattisgarh had almost twice West Bengal's power available per person at level income.",
+   "geo": "Chhattisgarh",
+   "name": "Chhattisgarh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Chhattisgarh",
+   "geo": "Chhattisgarh",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹1,48,922",
+   "text": "a year. West Bengal: ₹1,49,515. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Chhattisgarh",
+     "label": "₹1,48,922",
+     "frac": 0.9960338427582517
+    },
+    {
+     "name": "West Bengal",
+     "label": "₹1,49,515",
+     "frac": 1.0
+    }
+   ],
+   "vo": "One lakh forty-nine thousand rupees a year, level with West Bengal.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Chhattisgarh",
+   "geo": "Chhattisgarh",
+   "kicker": "POWER AVAILABLE, KWH A YEAR · 2023-24",
+   "big": "1,321.1",
+   "text": "kilowatt-hours a year available per person. Above India's figure.",
+   "sub": "Per capita availability of power. CEA, via RBI. Not what people use. 34 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Chhattisgarh",
+     "label": "1,321.1",
+     "frac": 0.66055
+    },
+    {
+     "name": "India",
+     "label": "1,168.5",
+     "frac": 0.58425
+    }
+   ],
+   "vo": "Chhattisgarh had thirteen hundred and twenty-one kilowatt-hours available per person, above India's.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "West Bengal",
+   "geo": "West Bengal",
+   "kicker": "POWER AVAILABLE, KWH A YEAR · 2023-24",
+   "big": "681.1",
+   "text": "kilowatt-hours a year: below India's. Chhattisgarh had 1.9 times that, at the same income.",
+   "sub": "The same comparison, 2022-23: 2.0 times. 2024-25: 2.0 times.",
+   "bars": [
+    {
+     "name": "West Bengal",
+     "label": "681.1",
+     "frac": 0.34055
+    },
+    {
+     "name": "Chhattisgarh",
+     "label": "1,321.1",
+     "frac": 0.66055
+    }
+   ],
+   "vo": "West Bengal, same income: six hundred and eighty-one kilowatt-hours.",
+   "t0": 19.355,
+   "t1": 27.097
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Higher-income states tended to",
+    "have more electricity available",
+    "per person in 2023-24.",
+    "*Chhattisgarh* sat above that line."
+   ],
+   "vo": "Higher-income states tended to have more electricity available. Chhattisgarh sat above that line.",
+   "t0": 27.097,
+   "t1": 34.839
+  },
+  {
+   "kind": "map",
+   "title": "Power available per person, *every state*",
+   "sub": "kilowatt-hours a year per person · India 1,168.5 · 2023-24",
+   "note": "Power available to the state, not what people use. Blank: Ladakh and Dadra, Nagar Haveli, Daman and Diu (no row in the table). The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Chhattisgarh",
+    "West Bengal"
+   ],
+   "vo": "Here is every state's figure. It counts power available, not power used.",
+   "t0": 34.839,
+   "t1": 40.645
+  },
+  {
+   "note": "Power available to the state, not what people use. Blank: Ladakh and Dadra, Nagar Haveli, Daman and Diu (no row in the table). The table shows how much, not why.",
+   "ring": [
+    "Chhattisgarh",
+    "West Bengal"
+   ],
+   "q": "Does your state's *power* match its income?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Does your state's power match its income?",
+   "t0": 40.645,
+   "t1": 44.516
+  }
+ ],
+ "total": 44.916,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Manipur",
+   "label": "313.4",
+   "bucket": 0,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 35.189
+  },
+  {
+   "name": "Bihar",
+   "label": "322.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.301
+  },
+  {
+   "name": "Assam",
+   "label": "345.5",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 35.413
+  },
+  {
+   "name": "Jharkhand",
+   "label": "351.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.525
+  },
+  {
+   "name": "Tripura",
+   "label": "407.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 35.637
+  },
+  {
+   "name": "Nagaland",
+   "label": "412",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 35.749
+  },
+  {
+   "name": "Mizoram",
+   "label": "549.3",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 35.861
+  },
+  {
+   "name": "Meghalaya",
+   "label": "618.1",
+   "bucket": 1,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 35.973
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "629.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.085
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "646.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.196
+  },
+  {
+   "name": "West Bengal",
+   "label": "681.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.308
+  },
+  {
+   "name": "Sikkim",
+   "label": "783.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 36.42
+  },
+  {
+   "name": "Kerala",
+   "label": "864.8",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 36.532
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "869.6",
+   "bucket": 1,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 36.644
+  },
+  {
+   "name": "Odisha",
+   "label": "893.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.756
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "918.1",
+   "bucket": 2,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 36.868
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "1,145.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 36.98
+  },
+  {
+   "name": "Rajasthan",
+   "label": "1,318.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.092
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "1,321.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.204
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1,334.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.316
+  },
+  {
+   "name": "Karnataka",
+   "label": "1,387.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.428
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "1,452.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.54
+  },
+  {
+   "name": "Chandigarh",
+   "label": "1,454.1",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 37.652
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "1,507.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.764
+  },
+  {
+   "name": "Maharashtra",
+   "label": "1,637.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.876
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "1,641.3",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 37.988
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "1,662.1",
+   "bucket": 3,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 38.099
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "1,710",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.211
+  },
+  {
+   "name": "Gujarat",
+   "label": "2,038.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.323
+  },
+  {
+   "name": "Puducherry",
+   "label": "2,102.1",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 38.435
+  },
+  {
+   "name": "Haryana",
+   "label": "2,106.7",
+   "bucket": 4,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 38.547
+  },
+  {
+   "name": "Telangana",
+   "label": "2,221.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 38.659
+  },
+  {
+   "name": "Punjab",
+   "label": "2,262.6",
+   "bucket": 4,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 38.771
+  },
+  {
+   "name": "Goa",
+   "label": "3,244.4",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 38.883
+  }
+ ],
+ "checked": [
+  "Chhattisgarh 1321.1 rounds to 1321",
+  "West Bengal 681.1 rounds to 681",
+  "India 1168.5 rounds to 1168",
+  "Chhattisgarh 148922 rounds to 148922",
+  "West Bengal 149515 rounds to 149515",
+  "Chhattisgarh / West Bengal = 1.00 (at least 0.98)",
+  "West Bengal / Chhattisgarh = 1.00 (at least 0.98)",
+  "Chhattisgarh / West Bengal = 1.94 (at least 1.9)",
+  "West Bengal / Chhattisgarh = 0.52 (at least 0.513)",
+  "Chhattisgarh / West Bengal = 2.05 (at least 1.95)",
+  "West Bengal / Chhattisgarh = 0.49 (at least 0.4878)",
+  "Chhattisgarh / West Bengal = 1.98 (at least 1.95)",
+  "West Bengal / Chhattisgarh = 0.50 (at least 0.4878)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.858,
+   "at": 0.12,
+   "text": "Chhattisgarh had almost twice West Bengal's power available per person at level income."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.97,
+   "at": 5.926,
+   "text": "One lakh forty-nine thousand rupees a year, level with West Bengal."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 6.034,
+   "at": 11.733,
+   "text": "Chhattisgarh had thirteen hundred and twenty-one kilowatt-hours available per person, above India's."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.694,
+   "at": 19.475,
+   "text": "West Bengal, same income: six hundred and eighty-one kilowatt-hours."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.746,
+   "at": 27.217,
+   "text": "Higher-income states tended to have more electricity available. Chhattisgarh sat above that line."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.067,
+   "at": 34.959,
+   "text": "Here is every state's figure. It counts power available, not power used."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.455,
+   "at": 40.765,
+   "text": "Does your state's power match its income?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Power Available per Person: Chhattisgarh 1.9x West Bengal"
+}

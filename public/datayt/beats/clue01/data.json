@@ -1,0 +1,200 @@
+{
+ "id": "clue01",
+ "type": "clues",
+ "chip": "5 CLUES",
+ "sourceShort": "NFHS-6 · DoT",
+ "source": "NFHS-6 (2023-24), IIPS · state fact sheets; villages without mobile coverage: Department of Telecommunications, Lok Sabha answer, as on 28 Feb 2026.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Guess the state",
+    "from *5 clues.*"
+   ],
+   "vo": "Can you guess the state from five clues?",
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "kind": "clue",
+   "n": 1,
+   "of": 5,
+   "big": "28.9%",
+   "text": "of women have high blood sugar. The highest in India.",
+   "vo": "Clue one. Highest blood sugar among women.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "kind": "clue",
+   "n": 2,
+   "of": 5,
+   "big": "20.7%",
+   "text": "of people are 60 or older. India's oldest state.",
+   "vo": "Clue two. India's oldest population.",
+   "t0": 7.742,
+   "t1": 11.613
+  },
+  {
+   "kind": "clue",
+   "n": 3,
+   "of": 5,
+   "big": "2.9%",
+   "text": "of young women married before 18. The lowest in India.",
+   "vo": "Clue three. Fewest women married before 18.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "clue",
+   "n": 4,
+   "of": 5,
+   "big": "94.9%",
+   "text": "of men have used the internet. The highest in India.",
+   "vo": "Clue four. The most men online.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "clue",
+   "n": 5,
+   "of": 5,
+   "big": "ZERO",
+   "text": "villages without a mobile signal.",
+   "vo": "Clue five. Every village has mobile signal.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "count",
+   "text": "Which state?",
+   "vo": "Which state is it?",
+   "t0": 23.226,
+   "t1": 25.161
+  },
+  {
+   "kind": "reveal",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "sub": "Oldest, most online, and fully connected.",
+   "vo": "It's Kerala!",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "kind": "recap",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "items": [
+    {
+     "big": "28.9%",
+     "text": "of women have high blood sugar. The highest in India."
+    },
+    {
+     "big": "20.7%",
+     "text": "of people are 60 or older. India's oldest state."
+    },
+    {
+     "big": "2.9%",
+     "text": "of young women married before 18. The lowest in India."
+    },
+    {
+     "big": "94.9%",
+     "text": "of men have used the internet. The highest in India."
+    },
+    {
+     "big": "ZERO",
+     "text": "villages without a mobile signal."
+    }
+   ],
+   "vo": "How many clues did you need?",
+   "t0": 29.032,
+   "t1": 32.903
+  },
+  {
+   "kind": "end",
+   "q": "How many clues did you need?",
+   "sub": "Comment your number.",
+   "vo": "Comment your number below.",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 2.037,
+   "at": 0.12,
+   "text": "Can you guess the state from five clues?"
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.056,
+   "at": 3.991,
+   "text": "Clue one. Highest blood sugar among women."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.369,
+   "at": 7.862,
+   "text": "Clue two. India's oldest population."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.395,
+   "at": 11.733,
+   "text": "Clue three. Fewest women married before 18."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.925,
+   "at": 15.604,
+   "text": "Clue four. The most men online."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 19.475,
+   "text": "Clue five. Every village has mobile signal."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.436,
+   "at": 23.346,
+   "text": "Which state is it?"
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 1.358,
+   "at": 25.281,
+   "text": "It's Kerala!"
+  },
+  {
+   "file": "vo_08.mp3",
+   "sec": 1.645,
+   "at": 29.152,
+   "text": "How many clues did you need?"
+  },
+  {
+   "file": "vo_09.mp3",
+   "sec": 1.28,
+   "at": 33.023,
+   "text": "Comment your number below."
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Guess the Indian state from 5 clues 🧩"
+}

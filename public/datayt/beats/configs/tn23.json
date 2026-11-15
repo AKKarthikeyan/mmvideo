@@ -1,0 +1,446 @@
+{
+ "id": "tn23",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "D",
+ "state": "Jharkhand",
+ "points": [
+  {
+   "data": {
+    "nfhs": 30,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 30
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "expect": {
+  "n": 34
+ },
+ "kicker": "MOTHERS: 4+ PREGNANCY CHECK-UPS",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Mothers with 4+ antenatal care visits (pregnancy check-ups) for a recent birth. 34 states and UTs with a figure in both surveys; Lakshadweep (small sample) is not ranked and Manipur has no figure in the sheets used. Survey estimates.",
+ "hook": [
+  "*Jharkhand* mothers: 4+",
+  "pregnancy check-ups,",
+  "*2 in 5* to *3 in 5*."
+ ],
+ "hook_vo": "Jharkhand mothers' four-plus pregnancy check-ups rose twenty points.",
+ "then": {
+  "text": "of mothers with a recent birth. India: *{india_then}*.",
+  "vo": "Earlier survey: thirty-nine percent."
+ },
+ "now": {
+  "text": "of mothers with a recent birth. India: *{india_now}*.",
+  "vo": "Next survey: fifty-nine percent. India, sixty-five."
+ },
+ "facts": [
+  {
+   "kicker": "JHARKHAND'S RISE VS INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        }
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "as big as India's rise of *6.7 points*",
+   "bars": [
+    {
+     "name": "Jharkhand",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 30
+       }
+      },
+      {
+       "data": {
+        "nfhs": 30,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 30
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 30,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 25,
+   "sub": "Percentage points between the two surveys: Jharkhand +20.3, India +6.7.",
+   "vo": "India rose six point seven points. Jharkhand rose about three times as much."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Jharkhand against India's figure:",
+    "about *two-thirds* in 2019-21,",
+    "about *nine-tenths* in 2023-24."
+   ],
+   "note": "Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "Jharkhand went from two-thirds to nine-tenths of India's."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Jharkhand 38.7% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 30,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 387
+  },
+  {
+   "says": "Jharkhand 59.0% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 30
+    },
+    "scale": 10
+   },
+   "equals": 590
+  },
+  {
+   "says": "India 58.5% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 30,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 585
+  },
+  {
+   "says": "India 65.2% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 30
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 652
+  },
+  {
+   "says": "thirty-nine percent: Jharkhand in NFHS-5 (38.7), voice",
+   "value": {
+    "data": {
+     "nfhs": 30,
+     "col": 3
+    }
+   },
+   "equals": 39
+  },
+  {
+   "says": "fifty-nine percent: Jharkhand in NFHS-6 (59.0), voice",
+   "value": {
+    "data": {
+     "nfhs": 30
+    }
+   },
+   "equals": 59
+  },
+  {
+   "says": "sixty-five: India in NFHS-6 (65.2)",
+   "value": {
+    "data": {
+     "nfhs": 30
+    },
+    "state": "India"
+   },
+   "equals": 65
+  },
+  {
+   "says": "Jharkhand rose 20.3 points (tenths): card and bar",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 30
+      }
+     },
+     {
+      "data": {
+       "nfhs": 30,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 203
+  },
+  {
+   "says": "rose twenty points: hook voice, title (20.3)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 30
+      }
+     },
+     {
+      "data": {
+       "nfhs": 30,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 20
+  },
+  {
+   "says": "India rose 6.7 points (tenths): card, bar, voice and map",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 30
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 30,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 67
+  },
+  {
+   "says": "Jharkhand's rise is about three times India's (3.03)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        }
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 2.8,
+   "max": 3.2
+  },
+  {
+   "says": "the card prints 3.0 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        }
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 30
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 30,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 30
+  },
+  {
+   "says": "Jharkhand is about two-thirds of India's figure in NFHS-5 (0.66)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 30,
+       "col": 3
+      }
+     },
+     {
+      "data": {
+       "nfhs": 30,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.63,
+   "max": 0.7
+  },
+  {
+   "says": "Jharkhand is about nine-tenths of India's figure in NFHS-6 (0.90)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "nfhs": 30
+      }
+     },
+     {
+      "data": {
+       "nfhs": 30
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.88,
+   "max": 0.93
+  },
+  {
+   "says": "2 in 5 (hook): Jharkhand in NFHS-5 is 38.7%, within 2 points of 40%",
+   "value": {
+    "data": {
+     "nfhs": 30,
+     "col": 3
+    }
+   },
+   "min": 38,
+   "max": 42
+  },
+  {
+   "says": "3 in 5 (hook): Jharkhand in NFHS-6 is 59.0%, within 2 points of 60%",
+   "value": {
+    "data": {
+     "nfhs": 30
+    }
+   },
+   "min": 58,
+   "max": 62
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -10,
+   -2,
+   2,
+   10
+  ],
+  "title": "4+ pregnancy check-ups: *each state's change*",
+  "sub": "percentage points · darker = bigger change · India +6.7",
+  "note": "Survey estimates; small places swing more. Blank: Manipur (no figure), Lakshadweep (small sample).",
+  "vo": "Every state's change in mothers with four or more pregnancy check-ups.",
+  "key": [
+   "fell 10+",
+   "within 2 points",
+   "rose 10+"
+  ]
+ },
+ "end": {
+  "q": "How far is your nearest health centre?",
+  "sub": "Spot your state on the map.",
+  "vo": "How far is your nearest health centre? Spot your state on the map."
+ },
+ "yt_title": "Jharkhand: Mothers With 4+ Pregnancy Check-ups Up 20 Points"
+}

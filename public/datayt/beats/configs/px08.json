@@ -1,0 +1,271 @@
+{
+ "id": "px08",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "IIPS · NFHS-6 · RBI · 2023-24",
+ "palette": "C",
+ "state": "Himachal Pradesh",
+ "source": "Schooling: men aged 15 to 49 with 10 or more years of schooling, NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences; the 2019-21 figure is printed beside it. 34 states and UTs ranked; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 fact sheet. Income: per-capita net state domestic product, current prices, 2023-24, RBI Handbook of Statistics on Indian States, Table 19 (33 states and UTs).",
+ "hook": [
+  "*Himachal* men, 2023-24: *76%*",
+  "had 10+ years of school.",
+  "Andhra: same income."
+ ],
+ "hook_vo": "Seventy-six percent of Himachal Pradesh men had ten-plus years of school.",
+ "facts": [
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "text": "a year. Andhra Pradesh: ₹2,37,951. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. {n} states and UTs with data.",
+   "vo": "Income per person: two lakh thirty-five thousand rupees, level with Andhra Pradesh's."
+  },
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "MEN, 10+ YEARS OF SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 13
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of men aged 15 to 49 had 10 or more years of school. India: 55%.",
+   "sub": "Survey estimate. Earlier survey, 2019-21: 71%. IIPS, NFHS-6 state fact sheets. {n} ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "vo": "Himachal Pradesh men: seventy-six percent. India's was fifty-five."
+  },
+  {
+   "state": "Andhra Pradesh",
+   "kicker": "MEN, 10+ YEARS OF SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 13
+   },
+   "unit": "%",
+   "compare": [
+    "Himachal Pradesh"
+   ],
+   "bar_max": 100,
+   "text": "of men. Himachal Pradesh's was 1.3 times that, at the same income.",
+   "sub": "Up from 48% in 2019-21, when Himachal Pradesh's was 1.5 times that.",
+   "vo": "Andhra Pradesh, same income: fifty-nine point five percent, up from forty-eight."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 234721
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 237951
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "nfhs": 13
+   },
+   "equals": 76
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 13
+   },
+   "equals": 55
+  },
+  {
+   "kind": "round",
+   "state": "Himachal Pradesh",
+   "data": {
+    "nfhs": 13,
+    "col": 3
+   },
+   "equals": 71
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 13
+   },
+   "equals": 60
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 13,
+    "col": 3
+   },
+   "equals": 48
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "nfhs": 13
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 13
+    }
+   },
+   "min": 1.25
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 13
+    }
+   },
+   "den": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "nfhs": 13
+    }
+   },
+   "min": 0.7407
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "nfhs": 13,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 13,
+     "col": 3
+    }
+   },
+   "min": 1.45
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 13,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "nfhs": 13,
+     "col": 3
+    }
+   },
+   "min": 0.6452
+  }
+ ],
+ "so": {
+  "lines": [
+   "Men's schooling mostly follows",
+   "income. *Himachal* has more",
+   "than its income predicts."
+  ],
+  "vo": "Men's schooling mostly followed income. Himachal did better than its income predicts."
+ },
+ "map": {
+  "data": {
+   "nfhs": 13
+  },
+  "unit": "%",
+  "title": "Men with 10+ years of school, *every state*",
+  "sub": "% of men aged 15 to 49 · India {india} · 2023-24",
+  "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet). The table shows how much, not why.",
+  "ring": [
+   "Himachal Pradesh",
+   "Andhra Pradesh"
+  ],
+  "vo": "Men with ten-plus years of school in every state."
+ },
+ "end": {
+  "q": "Where did *your* schooling stop?",
+  "sub": "Class 10, 12 or beyond?",
+  "vo": "Where did your schooling stop?"
+ },
+ "yt_title": "Men With 10+ Years of School: Himachal 76%, Andhra 59.5%"
+}

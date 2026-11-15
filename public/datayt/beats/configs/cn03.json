@@ -1,0 +1,33 @@
+{
+ "id": "cn03",
+ "type": "countdown",
+ "theme": "economy",
+ "rules": 1,
+ "chip": "TOP 5",
+ "source_short": "MoSPI · Sep 2026 (provisional)",
+ "palette": "D",
+ "data": {
+  "tbl": [
+   "mospi/cpi2024_states_2026_09",
+   "Food inflation Sep 2026"
+  ]
+ },
+ "unit": "%",
+ "min_lead": 0.5,
+ "label": "food price rise in a year",
+ "source": "MoSPI, National Statistics Office: Consumer Price Index (base 2024=100), food inflation by state, September 2026 over September 2025. Provisional: revised with the October release on 12 Nov 2026. State figures read from MoSPI's eSankhyiki service on 14 Oct 2026. Karnataka (9.0) and Maharashtra (8.9) are level.",
+ "hook": [
+  "Food prices,",
+  "Sept 2026:",
+  "*top 5* states"
+ ],
+ "hook_vo": "Which states saw food prices rise the most in a year?",
+ "map_title": "Food price rise, *every state*",
+ "map_vo": "Every state, mapped. These September figures are provisional.",
+ "end": {
+  "q": "Is your state on the list?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Food Price Rise by State, Sep 2026: Puducherry 11.2%",
+ "rules_note": "rules 1, not 2: the versus and countdown types cannot meet rules 2 in build_beats.py itself (digits in the generated score and rank voice lines, 'Number one', hook not on the map, no closing map and mapend, no tests registered as a finding). Every other house rule passes."
+}

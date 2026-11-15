@@ -1,0 +1,437 @@
+{
+ "id": "fa05",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "RBI · Handbook · end-March 2025",
+ "palette": "O",
+ "state": "Andhra Pradesh",
+ "source": "Reserve Bank of India, Basic Statistical Returns of Scheduled Commercial Banks in India, as published in the RBI Handbook of Statistics on Indian States, Table 154: credit-deposit ratio of scheduled commercial banks by place of utilisation, as at end-March 2019 to 2025 (credit used in the state as a percentage of deposits held in the state).",
+ "hook": [
+  "*Andhra Pradesh*: bank loans",
+  "*157%* of deposits, 2025:",
+  "*1.3×* the next state's."
+ ],
+ "hook_vo": "Andhra Pradesh: loans used were one hundred fifty-seven percent of deposits.",
+ "facts": [
+  {
+   "state": "Andhra Pradesh",
+   "kicker": "LOANS AS A SHARE OF DEPOSITS · END-MARCH 2025",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 200,
+   "text": "credit-deposit ratio: ₹157 of loans used in the state per ₹100 of deposits held there. The highest of {n} states and UTs with data.",
+   "sub": "Scheduled commercial banks, by place of utilisation. A ratio, not a verdict on lending.",
+   "vo": "Highest credit-deposit ratio of thirty-five states and territories. India's was eighty."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "THE NEXT STATES · END-MARCH 2025",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 200,
+   "text": "is Tamil Nadu's ratio, level with Telangana's: the next highest after Andhra Pradesh.",
+   "sub": "Credit-deposit ratio, by place of utilisation.",
+   "vo": "Tamil Nadu and Telangana come next, level with each other."
+  },
+  {
+   "state": "Andhra Pradesh",
+   "kicker": "AT END-MARCH 2019",
+   "data": {
+    "rbi": [
+     154,
+     "2019"
+    ]
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Chandigarh"
+   ],
+   "bar_max": 200,
+   "text": "in 2019: also the highest, ahead of Chandigarh.",
+   "sub": "Credit-deposit ratio, by place of utilisation. At end-March 2018 it was 114%, level with Chandigarh and Telangana.",
+   "vo": "At end-March twenty nineteen it was already the highest: one hundred twenty-four."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "equals": 157
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     154,
+     "2025"
+    ]
+   },
+   "equals": 80
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "rbi": [
+     154,
+     "2019"
+    ]
+   },
+   "equals": 124
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.999
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 0.999
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.3
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2019"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chandigarh",
+    "data": {
+     "rbi": [
+      154,
+      "2019"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2020"
+     ]
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "rbi": [
+      154,
+      "2020"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2021"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2021"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2022"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2022"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2023"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2023"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2024"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2024"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "min": 1.05
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "rbi": [
+     154,
+     "2018"
+    ]
+   },
+   "equals": 114
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2018"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chandigarh",
+    "data": {
+     "rbi": [
+      154,
+      "2018"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      154,
+      "2018"
+     ]
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      154,
+      "2018"
+     ]
+    }
+   },
+   "min": 0.98
+  }
+ ],
+ "so": {
+  "lines": [
+   "Andhra Pradesh was *the highest*",
+   "in each of the *seven years*,",
+   "end-March 2019 to 2025."
+  ],
+  "vo": "Highest in each of the seven years, twenty nineteen to twenty twenty-five."
+ },
+ "map": {
+  "data": {
+   "rbi": [
+    154,
+    "2025"
+   ]
+  },
+  "unit": "%",
+  "title": "Loans as a share of deposits, *every state*",
+  "sub": "% · India {india} · end-March 2025",
+  "note": "Credit-deposit ratio by place of utilisation: 100 means loans equal deposits. Not a verdict on lending. Blank: no figure.",
+  "ring": [
+   "Andhra Pradesh",
+   "Tamil Nadu"
+  ],
+  "vo": "Every state's loans as a share of deposits held."
+ },
+ "end": {
+  "q": "Which side of *100* is your state?",
+  "sub": "Comment below.",
+  "vo": "Which side of one hundred is your state?"
+ },
+ "yt_title": "Andhra Pradesh: Bank Loans Used Were 157% of Deposits, 2025"
+}

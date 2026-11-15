@@ -1,0 +1,184 @@
+{
+ "id": "fa01",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "IIPS · NFHS-6 (2023-24)",
+ "palette": "A",
+ "state": "Meghalaya",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets (total and rural columns), which also print the NFHS-5 (2019-21) figure. Indicator: homes where a woman owns house or land, as labelled in the fact sheet. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet.",
+ "hook": [
+  "*Meghalaya*: *65%* of homes",
+  "had a woman owning house",
+  "or land, 2023-24."
+ ],
+ "hook_vo": "In Meghalaya, sixty-five percent of homes had a woman owning house or land.",
+ "facts": [
+  {
+   "state": "Meghalaya",
+   "kicker": "HOMES WHERE A WOMAN OWNS HOUSE OR LAND · NFHS-6",
+   "data": {
+    "nfhs": 10
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Kerala"
+   ],
+   "bar_max": 100,
+   "text": "of homes, 2023-24. Highest of {n} ranked states and UTs. Next: Kerala, 34%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. Lakshadweep (small sample) is not ranked.",
+   "vo": "Sixty-five percent of homes. Highest of thirty-four ranked states and territories."
+  },
+  {
+   "state": "Meghalaya",
+   "kicker": "RURAL HOMES, SAME MEASURE · NFHS-6",
+   "data": {
+    "nfhs": 10,
+    "col": 1
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of rural homes, 2023-24. Highest of {n} ranked states and UTs with rural data. India's rural figure: 19%.",
+   "sub": "Survey estimate, rural column of the NFHS-6 fact sheets.",
+   "vo": "In rural homes it was seventy-two percent. India's rural figure was nineteen."
+  },
+  {
+   "state": "Meghalaya",
+   "kicker": "THE SURVEY BEFORE · NFHS-5 (2019-21)",
+   "data": {
+    "nfhs": 10,
+    "col": 3
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of homes: Meghalaya was already the highest. India: 14%.",
+   "sub": "Survey estimate. NFHS-5 figure as printed in the NFHS-6 fact sheets.",
+   "vo": "Earlier survey: Meghalaya led at sixty-four percent. India was fourteen."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "nfhs": 10
+   },
+   "equals": 65
+  },
+  {
+   "kind": "round",
+   "state": "Kerala",
+   "data": {
+    "nfhs": 10
+   },
+   "equals": 34
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 10,
+    "col": 1
+   },
+   "equals": 19
+  },
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "nfhs": 10,
+    "col": 1
+   },
+   "equals": 72
+  },
+  {
+   "kind": "round",
+   "state": "Meghalaya",
+   "data": {
+    "nfhs": 10,
+    "col": 3
+   },
+   "equals": 64
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 10,
+    "col": 3
+   },
+   "equals": 14
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 10
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 10
+    }
+   },
+   "min": 1.9
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Meghalaya",
+    "data": {
+     "nfhs": 10,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Kerala",
+    "data": {
+     "nfhs": 10,
+     "col": 3
+    }
+   },
+   "min": 1.9
+  }
+ ],
+ "so": {
+  "lines": [
+   "In both surveys, Meghalaya's",
+   "share was at least",
+   "*1.9 times* Kerala's."
+  ],
+  "vo": "In both surveys, Meghalaya's share was at least one point nine times Kerala's."
+ },
+ "map": {
+  "data": {
+   "nfhs": 10
+  },
+  "unit": "%",
+  "title": "Homes where a woman owns house or land, *every state*",
+  "sub": "% of homes · India {india} · NFHS-6 (2023-24)",
+  "note": "Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+  "ring": [
+   "Meghalaya",
+   "Kerala"
+  ],
+  "vo": "Every state, mapped. These are survey estimates, not a census."
+ },
+ "end": {
+  "q": "Who owns the *house* in your family?",
+  "sub": "Comment below.",
+  "vo": "Who owns the house in your family?"
+ },
+ "yt_title": "Meghalaya 2023-24: Woman Owned House or Land in 65% of Homes"
+}

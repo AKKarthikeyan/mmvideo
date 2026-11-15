@@ -1,0 +1,1229 @@
+{
+ "id": "fa14",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "RBI · State Finances · 2022-23 accounts",
+ "palette": "O",
+ "state": "Delhi",
+ "source": "Reserve Bank of India, State Finances: A Study of Budgets, as published in the RBI Handbook of Statistics on Indian States 2024-25: Table 168, own tax revenue (taxes the state raises itself), over Table 166, revenue expenditure (spending that does not create assets), rupees crore. 2022-23 is the latest year of actual accounts (A) in the Handbook; its 2023-24 and 2024-25 estimates are not used. 31 states and UTs have a figure: the 28 states, Delhi, Jammu and Kashmir, Puducherry. A funding mix, not a grade.",
+ "hook": [
+  "*Delhi*: own taxes covered",
+  "*98%* of day-to-day spending,",
+  "*highest of 31*, 2022-23."
+ ],
+ "hook_vo": "Delhi's own taxes covered ninety-eight percent of day-to-day spending.",
+ "facts": [
+  {
+   "state": "Delhi",
+   "kicker": "OWN TAXES / DAY-TO-DAY SPENDING",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Telangana"
+   ],
+   "bar_max": 100,
+   "text": "of Delhi's day-to-day spending was met by its own taxes. The highest of {n} states and UTs.",
+   "sub": "2022-23 accounts. Day-to-day spending: revenue expenditure, which builds no assets. Telangana: 69.7%. Gujarat: 69.5%.",
+   "vo": "Highest of thirty-one states and territories. Telangana, seventy."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "SAME MEASURE · TAMIL NADU",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Delhi"
+   ],
+   "bar_max": 100,
+   "text": "was Tamil Nadu's figure in 2022-23. Delhi's was *1.8 times* that.",
+   "sub": "Own tax revenue as a share of revenue expenditure, 2022-23 accounts.",
+   "vo": "Tamil Nadu: fifty-four percent. Delhi's was one point eight times that."
+  },
+  {
+   "state": "Delhi",
+   "kicker": "FOUR YEARS EARLIER · 2018-19",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2018-19"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2018-19"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Maharashtra"
+   ],
+   "bar_max": 100,
+   "text": "in 2018-19: also the highest, ahead of Maharashtra. In 2020-21 it was 73%, and still the highest.",
+   "sub": "Own tax revenue as a share of revenue expenditure.",
+   "vo": "Four years earlier: ninety-nine percent, also the highest."
+  }
+ ],
+ "so": {
+  "lines": [
+   "Delhi was *the highest* in each",
+   "of the *19 years* of accounts",
+   "from 2004-05 to 2022-23."
+  ],
+  "vo": "The highest in each of nineteen years of accounts."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      168,
+      "2022-23 (A)"
+     ]
+    },
+    {
+     "rbi": [
+      166,
+      "2022-23 (A)"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "title": "Own taxes as % of spending, *every state*",
+  "sub": "% of revenue expenditure · 2022-23 accounts",
+  "note": "Own taxes: those a state raises itself. A funding mix, not a grade. Blank (no row): A&N Islands, Chandigarh, Ladakh, Lakshadweep, Dadra, Nagar Haveli, Daman and Diu.",
+  "ring": [
+   "Delhi",
+   "Telangana"
+  ],
+  "vo": "Own taxes as a share of spending, in every state."
+ },
+ "end": {
+  "q": "Where does *your state's* money come from?",
+  "sub": "Comment below.",
+  "vo": "Where does your state's money come from?"
+ },
+ "yt_title": "Delhi: Own Taxes Paid 98% of Day-to-Day Spending, 2022-23",
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 98
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 70
+  },
+  {
+   "kind": "round",
+   "state": "Tamil Nadu",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 54
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 695
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2022-23 (A)"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2022-23 (A)"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 697
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2018-19"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2018-19"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 99
+  },
+  {
+   "kind": "round",
+   "state": "Delhi",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       168,
+       "2020-21"
+      ]
+     },
+     {
+      "rbi": [
+       166,
+       "2020-21"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 73
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.75
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 0.5405
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2004-05"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2004-05"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2004-05"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2004-05"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2005-06"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2005-06"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2005-06"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2005-06"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2006-07"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2006-07"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2006-07"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2006-07"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2007-08"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2007-08"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2007-08"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2007-08"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2008-09"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2008-09"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2008-09"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2008-09"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2009-10"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2009-10"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2009-10"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2009-10"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2010-11"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2010-11"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2010-11"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2010-11"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2011-12"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2011-12"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2011-12"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2011-12"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2012-13"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2012-13"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2012-13"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2012-13"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2013-14"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2013-14"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2013-14"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2013-14"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2014-15"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2014-15"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2014-15"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2014-15"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2015-16"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2015-16"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2015-16"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2015-16"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2016-17"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2016-17"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2016-17"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2016-17"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2017-18"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2017-18"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2017-18"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2017-18"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2018-19"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2018-19"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2018-19"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2018-19"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2019-20"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2019-20"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2019-20"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2019-20"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2020-21"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2020-21"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Karnataka",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2020-21"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2020-21"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2021-22"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2021-22"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Delhi",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        168,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "rbi": [
+        166,
+        "2022-23 (A)"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.1
+  }
+ ]
+}

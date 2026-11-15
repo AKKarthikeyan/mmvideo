@@ -1,0 +1,331 @@
+{
+  "id": "tn66",
+  "type": "then",
+  "rules": 2,
+  "chip": "TWO SURVEYS",
+  "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+  "palette": "D",
+  "state": "Karnataka",
+  "points": [
+    {
+      "data": {
+        "nfhs": 90,
+        "col": 3
+      },
+      "period": "NFHS-5 (2019-21)"
+    },
+    {
+      "data": {
+        "nfhs": 90
+      },
+      "period": "NFHS-6 (2023-24)"
+    }
+  ],
+  "measure": "value",
+  "unit": "%",
+  "delta": "points",
+  "min_change": 0.05,
+  "kicker": "WIVES IN HOUSEHOLD DECISIONS",
+  "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Married women aged 15 to 49 who usually take part in three household decisions, alone or with their husband: their own health care, major household purchases and visits to family or relatives. Survey estimates.",
+  "hook": [
+    "*Karnataka*: wives with a say",
+    "in all three decisions:",
+    "*83%* to *89%*."
+  ],
+  "hook_vo": "Karnataka wives with a say in all three decisions: eighty-three then eighty-nine percent.",
+  "then": {
+    "text": "of wives aged 15 to 49 took part in all three household decisions. India: *{india_then}*.",
+    "vo": "In the twenty nineteen to twenty-one survey: eighty-three percent. India, eighty-nine."
+  },
+  "now": {
+    "text": "of wives aged 15 to 49. India: *{india_now}*.",
+    "vo": "Next survey: eighty-nine percent. India, also eighty-nine."
+  },
+  "facts": [
+    {
+      "kicker": "THE RISE, IN PERCENTAGE POINTS",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90
+            }
+          },
+          {
+            "data": {
+              "nfhs": 90,
+              "col": 3
+            }
+          }
+        ]
+      },
+      "unit": "",
+      "text": "points: Karnataka's rise. India's rise was 0.3.",
+      "bars": [
+        {
+          "name": "Karnataka",
+          "diff": [
+            {
+              "data": {
+                "nfhs": 90
+              }
+            },
+            {
+              "data": {
+                "nfhs": 90,
+                "col": 3
+              }
+            }
+          ],
+          "unit": ""
+        },
+        {
+          "name": "India",
+          "diff": [
+            {
+              "data": {
+                "nfhs": 90
+              },
+              "state": "India"
+            },
+            {
+              "data": {
+                "nfhs": 90,
+                "col": 3
+              },
+              "state": "India"
+            }
+          ],
+          "unit": ""
+        }
+      ],
+      "bar_max": 10,
+      "sub": "The three: own health care, big household purchases, visits to family. India: 88.7% to 89.0%.",
+      "vo": "Karnataka rose six point five points. India rose zero point three."
+    }
+  ],
+  "says": [
+    {
+      "lines": [
+        "In 2019-21: *6 points*",
+        "below India.",
+        "In 2023-24: *level.*"
+      ],
+      "note": "Married women aged 15 to 49. Survey estimates: a gap of 0.2 points is not a difference. The table shows how much, not why.",
+      "vo": "It started six points below India. It ended level."
+    }
+  ],
+  "map": {
+    "as": "points",
+    "bands": [
+      -3,
+      -1,
+      1,
+      4
+    ],
+    "title": "Wives in decisions: *each state's change*",
+    "sub": "percentage points · NFHS-5 to NFHS-6 · India +0.3",
+    "note": "Married women 15-49, survey estimates. Blank: Rajasthan, Uttarakhand (no figure), Lakshadweep (small sample), Manipur (no sheet yet).",
+    "vo": "Here is each state's change, in percentage points.",
+    "key": [
+      "fell over 3",
+      "within 1 point",
+      "rose 4+"
+    ]
+  },
+  "end": {
+    "q": "Who decides in *your* home?",
+    "sub": "Comment below.",
+    "vo": "Who decides in your home?"
+  },
+  "yt_title": "Karnataka: Wives With a Say in All 3 Decisions, 83% to 89%",
+  "tests": [
+    {
+      "says": "83% in NFHS-5 (hook, title, voice)",
+      "value": {
+        "data": {
+          "nfhs": 90,
+          "col": 3
+        }
+      },
+      "equals": 83
+    },
+    {
+      "says": "82.7% in NFHS-5 (tenths)",
+      "value": {
+        "data": {
+          "nfhs": 90,
+          "col": 3
+        },
+        "scale": 10
+      },
+      "equals": 827
+    },
+    {
+      "says": "89% in NFHS-6 (hook, title, voice)",
+      "value": {
+        "data": {
+          "nfhs": 90
+        }
+      },
+      "equals": 89
+    },
+    {
+      "says": "89.2% in NFHS-6 (tenths)",
+      "value": {
+        "data": {
+          "nfhs": 90
+        },
+        "scale": 10
+      },
+      "equals": 892
+    },
+    {
+      "says": "India eighty-nine in NFHS-5 (voice)",
+      "value": {
+        "data": {
+          "nfhs": 90,
+          "col": 3
+        },
+        "state": "India"
+      },
+      "equals": 89
+    },
+    {
+      "says": "India 88.7% in NFHS-5 (card, tenths)",
+      "value": {
+        "data": {
+          "nfhs": 90,
+          "col": 3
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 887
+    },
+    {
+      "says": "India eighty-nine in NFHS-6 (voice)",
+      "value": {
+        "data": {
+          "nfhs": 90
+        },
+        "state": "India"
+      },
+      "equals": 89
+    },
+    {
+      "says": "India 89.0% in NFHS-6 (card, tenths)",
+      "value": {
+        "data": {
+          "nfhs": 90
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 890
+    },
+    {
+      "says": "Karnataka's rise 6.5 points (card, voice)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90
+            }
+          },
+          {
+            "data": {
+              "nfhs": 90,
+              "col": 3
+            }
+          }
+        ],
+        "scale": 10
+      },
+      "equals": 65
+    },
+    {
+      "says": "India's rise 0.3 points (card, voice, map sub)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90
+            },
+            "state": "India"
+          },
+          {
+            "data": {
+              "nfhs": 90,
+              "col": 3
+            },
+            "state": "India"
+          }
+        ],
+        "scale": 10
+      },
+      "equals": 3
+    },
+    {
+      "says": "6 points below India in NFHS-5 (statement card, voice)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90,
+              "col": 3
+            },
+            "state": "India"
+          },
+          {
+            "data": {
+              "nfhs": 90,
+              "col": 3
+            }
+          }
+        ]
+      },
+      "equals": 6
+    },
+    {
+      "says": "level with India in NFHS-6, within half a point (statement card)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90
+            }
+          },
+          {
+            "data": {
+              "nfhs": 90
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": -0.5,
+      "max": 0.5
+    },
+    {
+      "says": "gap of 0.2 points in NFHS-6 (statement note)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 90
+            }
+          },
+          {
+            "data": {
+              "nfhs": 90
+            },
+            "state": "India"
+          }
+        ],
+        "scale": 10
+      },
+      "equals": 2
+    }
+  ]
+}

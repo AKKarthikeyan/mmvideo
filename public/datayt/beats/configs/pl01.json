@@ -1,0 +1,116 @@
+{
+ "id": "pl01",
+ "type": "place",
+ "chip": "PLACE STORY",
+ "source_short": "Acts, Gazette and treaty",
+ "palette": "O",
+ "state": "Goa",
+ "map_note": "Map: India's present boundary, for orientation. Daman and Diu not shown.",
+ "source": "Indian Independence Act, 1947. Ministry of External Affairs and Press Information Bureau (Operation Vijay, 19 December 1961). Constitution (Twelfth Amendment) Act, 1962. Government Gazette, Goa, Daman and Diu, 21 January 1967. India-Portugal treaty of 31 December 1974 (UN Treaty Series, vol. 982). Goa, Daman and Diu Reorganisation Act, 1987.",
+ "hook": [
+  "India was independent",
+  "for *14 years* while Goa was",
+  "still under *Portuguese rule.*"
+ ],
+ "hook_vo": "India was independent for fourteen years while Goa was still under Portuguese rule.",
+ "timeline_lead": [
+  "1947"
+ ],
+ "poll": {
+  "a": 172191,
+  "b": 138170,
+  "invalid": 7272,
+  "voted": 317633,
+  "electors": 388392
+ },
+ "spans": [
+  {
+   "says": "independent for 14 years while Goa was under Portuguese rule",
+   "from": "1947-08-15",
+   "to": "1961-12-19",
+   "full_years": 14
+  },
+  {
+   "says": "451 years, the Press Information Bureau's count (1510 to 1961)",
+   "from": "1510",
+   "to": "1961",
+   "about_years": 451
+  },
+  {
+   "says": "13 years after December 1961",
+   "from": "1961-12-19",
+   "to": "1974-12-31",
+   "full_years": 13
+  },
+  {
+   "says": "more than 25 years as a Union territory",
+   "from": "1961-12-20",
+   "to": "1987-05-30",
+   "full_years": 25
+  }
+ ],
+ "events": [
+  {
+   "tick": "1961",
+   "date": "19 DECEMBER 1961",
+   "year": "1961",
+   "head": [
+    "India's armed forces carry out",
+    "*Operation Vijay* in Goa,",
+    "Daman and Diu."
+   ],
+   "stat": "451",
+   "stat_label": "years of Portuguese rule (PIB's count)",
+   "cite": "Goa's public holiday: 19 December. Union territory under the Constitution from 20 December 1961.",
+   "vo": "December nineteen sixty-one: India's armed forces carry out Operation Vijay. Portuguese administration ends. The Constitution counts Goa from the next day."
+  },
+  {
+   "tick": "1967",
+   "date": "16 JANUARY 1967",
+   "year": "1967",
+   "head": [
+    "Opinion poll: merge with",
+    "Maharashtra, or continue",
+    "as a *Union territory?*"
+   ],
+   "stat": "{a_pct}%",
+   "stat_label": "voted to continue",
+   "cite": "To merge: {b_pct}%. Valid votes: {a_n} against {b_n}; shares are our calculation. Government Gazette, 21 January 1967.",
+   "vo": "Nineteen sixty-seven: should Goa merge with Maharashtra? A majority voted to continue as a Union territory."
+  },
+  {
+   "tick": "1974",
+   "date": "31 DECEMBER 1974",
+   "year": "1974",
+   "head": [
+    "India and Portugal sign a treaty.",
+    "Portugal recognises",
+    "*India's sovereignty.*"
+   ],
+   "stat": "13",
+   "stat_label": "years after December 1961",
+   "cite": "Over Goa, Daman, Diu, Dadra and Nagar Haveli. Signed at New Delhi. UN Treaty Series, vol. 982.",
+   "vo": "In nineteen seventy-four, Portugal signed a treaty recognising India's sovereignty."
+  },
+  {
+   "tick": "1987",
+   "date": "30 MAY 1987",
+   "year": "1987",
+   "head": [
+    "Goa becomes a *state.*",
+    "Daman and Diu remain",
+    "a Union territory."
+   ],
+   "stat": "25+",
+   "stat_label": "years as a Union territory",
+   "cite": "Goa, Daman and Diu Reorganisation Act, 1987 (Act 18). India Code.",
+   "vo": "In nineteen eighty-seven, after over twenty-five years as a Union territory, Goa became a state."
+  }
+ ],
+ "end": {
+  "q": "Which place should we trace next?",
+  "sub": "Tell us your state.",
+  "vo": "Which place should we trace next?"
+ },
+ "yt_title": "How Goa Became Part of India: 1947 to 1987"
+}

@@ -1,0 +1,2768 @@
+{
+ "id": "tn71",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Labour Bureau · rural wages · 2014-15, 2024-25",
+ "palette": "C",
+ "state": "Odisha",
+ "points": [
+  {
+   "period": "2014-15",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       112,
+       "2014-15"
+      ]
+     },
+     {
+      "values": {
+       "Andhra Pradesh": 275.0,
+       "Assam": 275.0,
+       "Bihar": 275.0,
+       "Gujarat": 275.0,
+       "Haryana": 275.0,
+       "Himachal Pradesh": 275.0,
+       "Jammu and Kashmir": 275.0,
+       "Karnataka": 275.0,
+       "Kerala": 275.0,
+       "Madhya Pradesh": 275.0,
+       "Maharashtra": 275.0,
+       "Manipur": 275.0,
+       "Meghalaya": 275.0,
+       "Odisha": 275.0,
+       "Punjab": 275.0,
+       "Rajasthan": 275.0,
+       "Tamil Nadu": 275.0,
+       "Tripura": 275.0,
+       "Uttar Pradesh": 275.0,
+       "West Bengal": 275.0,
+       "India": 275.0
+      }
+     }
+    ],
+    "scale": 100
+   }
+  },
+  {
+   "period": "2024-25",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       112,
+       "2024-25"
+      ]
+     },
+     {
+      "values": {
+       "Andhra Pradesh": 441.1,
+       "Assam": 441.1,
+       "Bihar": 441.1,
+       "Gujarat": 441.1,
+       "Haryana": 441.1,
+       "Himachal Pradesh": 441.1,
+       "Jammu and Kashmir": 441.1,
+       "Karnataka": 441.1,
+       "Kerala": 441.1,
+       "Madhya Pradesh": 441.1,
+       "Maharashtra": 441.1,
+       "Manipur": 441.1,
+       "Meghalaya": 441.1,
+       "Odisha": 441.1,
+       "Punjab": 441.1,
+       "Rajasthan": 441.1,
+       "Tamil Nadu": 441.1,
+       "Tripura": 441.1,
+       "Uttar Pradesh": 441.1,
+       "West Bengal": 441.1,
+       "India": 441.1
+      }
+     }
+    ],
+    "scale": 100
+   }
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "MEN'S RURAL CONSTRUCTION PAY",
+ "expect": {
+  "years": 10
+ },
+ "source": "Labour Bureau (Ministry of Labour and Employment), Indian Labour Journal, as published in the RBI Handbook of Statistics on Indian States 2024-25 (11 Dec 2025), Table 112: average daily wage rates in rural areas, men, construction workers, current rupees. India: the average of all quotations. 2020-21 state figures cover ten months. Compared within each year, not adjusted for prices. Recent years can be revised.",
+ "hook": [
+  "*Odisha* rural men's",
+  "construction pay: *72%* of",
+  "India's; *89%* ten years on."
+ ],
+ "hook_vo": "Odisha's rural men's construction pay climbed from seventy-two to eighty-nine percent of India's.",
+ "then": {
+  "text": "of India's average wage. Odisha *₹199* a day, India *₹275*",
+  "vo": "In twenty fourteen-fifteen: seventy-two percent."
+ },
+ "now": {
+  "text": "of India's average wage. Odisha *₹393* a day, India *₹441*",
+  "vo": "Ten years on: eighty-nine percent of it."
+ },
+ "facts": [
+  {
+   "kicker": "ODISHA VS INDIA · YEAR BY YEAR",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "in 2023-24, the year before 89%. Up in 8 of 10 years, level in 1, down 0.4 in 1.",
+   "bars": [
+    {
+     "name": "2016-17",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2016-17"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2016-17"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2019-20",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2019-20"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2019-20"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2022-23",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2022-23"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         112,
+         "2022-23"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Odisha's wage as % of India's, selected years.",
+   "vo": "Up in eight of ten years."
+  },
+  {
+   "kicker": "ALSO UP IN NON-FARM LABOUR",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of India's average for non-farm labourers, 2024-25. It was 71.9% in 2014-15.",
+   "bars": [
+    {
+     "name": "2014-15",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         115,
+         "2014-15"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         115,
+         "2014-15"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2024-25",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         115,
+         "2024-25"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         115,
+         "2024-25"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Rural men, non-agricultural labourers: Odisha's wage as % of India's, same year.",
+   "vo": "Non-farm labourers' pay also reached ninety-one percent, from seventy-two."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Odisha gained *17 points* on",
+    "India: *second-biggest* gain of",
+    "19 states, 2014-15 to 2024-25."
+   ],
+   "note": "Andhra Pradesh: +39; Tripura: +13. Rural men, current rupees, each year against India's. The table shows how much, not why.",
+   "vo": "Odisha's gain of seventeen points was second-biggest of nineteen states."
+  }
+ ],
+ "tests": [
+  {
+   "says": "the India row of 2014-15 typed into the series is 275.0",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 275
+  },
+  {
+   "says": "the India row of 2024-25 typed into the series is 441.1",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 441
+  },
+  {
+   "says": "India 2014-15 to the tenth: 275.0",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 2750
+  },
+  {
+   "says": "India 2024-25 to the tenth: 441.1",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 4411
+  },
+  {
+   "says": "72% in 2014-15 (hook, title, voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 72
+  },
+  {
+   "says": "72.3% in 2014-15 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 723
+  },
+  {
+   "says": "89% in 2024-25 (hook, title, voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 89
+  },
+  {
+   "says": "89.1% in 2024-25 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 891
+  },
+  {
+   "says": "the gain is 16.8 points (shift card, tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 168
+  },
+  {
+   "says": "17 points (say card, voice)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Odisha"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 17
+  },
+  {
+   "says": "Odisha 2014-15 wage on the card: Rs 199",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 199
+  },
+  {
+   "says": "India 2014-15 wage on the card: Rs 275",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2014-15"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 275
+  },
+  {
+   "says": "Odisha 2024-25 wage on the card: Rs 393",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 393
+  },
+  {
+   "says": "India 2024-25 wage on the card: Rs 441",
+   "value": {
+    "data": {
+     "rbi": [
+      112,
+      "2024-25"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 441
+  },
+  {
+   "says": "76% in 2016-17 (card)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2016-17"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 76
+  },
+  {
+   "says": "81% in 2019-20 (card)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2019-20"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 81
+  },
+  {
+   "says": "84% in 2022-23 (card)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2022-23"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 84
+  },
+  {
+   "says": "85% in 2023-24 (card)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        112,
+        "2023-24"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 85
+  },
+  {
+   "says": "2015-16 is up by 0.25 to 4.5 points on 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2016-17 is up by 0.25 to 4.5 points on 2015-16",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2015-16"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2017-18 is up by 0.25 to 4.5 points on 2016-17",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2016-17"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2018-19 is level: within 0.2 points of the year before",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2017-18"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -0.2,
+   "max": 0.2
+  },
+  {
+   "says": "2019-20 is up by 0.25 to 4.5 points on 2018-19",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2018-19"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2020-21 is up by 0.25 to 4.5 points on 2019-20",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2019-20"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2021-22 is up by 0.25 to 4.5 points on 2020-21",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2020-21"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2022-23 is the one dip: down 0.3 to 0.6 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": -0.6,
+   "max": -0.3
+  },
+  {
+   "says": "2023-24 is up by 0.25 to 4.5 points on 2022-23",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2024-25 is up by 0.25 to 4.5 points on 2023-24",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 0.25,
+   "max": 4.5
+  },
+  {
+   "says": "2022-23 is at least 10 points above 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 10,
+   "max": 20
+  },
+  {
+   "says": "2023-24 is at least 10 points above 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 10,
+   "max": 20
+  },
+  {
+   "says": "2024-25 is at least 10 points above 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 10,
+   "max": 20
+  },
+  {
+   "says": "non-farm labourers: 72% in 2014-15 (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 72
+  },
+  {
+   "says": "non-farm labourers: 71.9% in 2014-15 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 719
+  },
+  {
+   "says": "non-farm labourers: 91% in 2024-25 (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 91
+  },
+  {
+   "says": "non-farm labourers: 90.8% in 2024-25 (card, tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        115,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 908
+  },
+  {
+   "says": "non-farm labourers rose by 15 to 25 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 15,
+   "max": 25
+  },
+  {
+   "says": "non-farm labourers: 2022-23 at least 10 points above 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 10,
+   "max": 25
+  },
+  {
+   "says": "non-farm labourers: 2023-24 at least 10 points above 2014-15",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2023-24"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          115,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 10,
+   "max": 25
+  },
+  {
+   "says": "Andhra Pradesh gained 39 points (say card note)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Andhra Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 39
+  },
+  {
+   "says": "Tripura gained 13 points (say card note)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Tripura"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Tripura"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "equals": 13
+  },
+  {
+   "says": "Assam gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Assam"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Assam"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Bihar gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Gujarat gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Gujarat"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Haryana gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Haryana"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Haryana"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Himachal Pradesh gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Himachal Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Karnataka gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Karnataka"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Karnataka"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Kerala gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Kerala"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Madhya Pradesh gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Madhya Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Maharashtra gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Manipur gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Manipur"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Manipur"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Meghalaya gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Meghalaya"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Meghalaya"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Punjab gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Punjab"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Punjab"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Rajasthan gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Rajasthan"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Rajasthan"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Tamil Nadu gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Tamil Nadu"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Tamil Nadu"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "Uttar Pradesh gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "Uttar Pradesh"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "West Bengal gained under 12 points",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "West Bengal"
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 1
+   },
+   "min": -100,
+   "max": 12
+  },
+  {
+   "says": "the one dip is 0.4 points (card: down 0.4 in 1)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2022-23"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          112,
+          "2021-22"
+         ]
+        },
+        "state": "India"
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": -4
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -10,
+   -3,
+   3,
+   12
+  ],
+  "title": "Men's construction pay vs India: *every state*",
+  "sub": "rural men · points of India's wage · {from} to {to}",
+  "note": "A lower figure can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no row. Andhra Pradesh: no separate Telangana row.",
+  "ring": [],
+  "vo": "Each state's change against India's average wage.",
+  "key": [
+   "fell",
+   "within 3 points",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Who built *your* house?",
+  "sub": "Spot your state on the map.",
+  "vo": "Who built your house?"
+ },
+ "yt_title": "Odisha: Men's Rural Construction Wage, 72% to 89% of India's"
+}

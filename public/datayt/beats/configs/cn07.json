@@ -1,0 +1,31 @@
+{
+ "id": "cn07",
+ "type": "countdown",
+ "theme": "school_health",
+ "rules": 1,
+ "chip": "TOP 5",
+ "source_short": "IIPS · NFHS-6 · 2023-24",
+ "palette": "A",
+ "data": {
+  "nfhs": 61
+ },
+ "unit": "%",
+ "min_lead": 3.0,
+ "label": "of babies breastfed within an hour",
+ "source": "International Institute for Population Sciences, NFHS-6 (2023-24) state fact sheets: babies breastfed within one hour of birth, as labelled in the fact sheet. Survey estimates; small places swing more. 34 states and UTs; Lakshadweep (small sample) is not ranked and Manipur has no NFHS-6 sheet yet. Sikkim (68.0) and Andhra Pradesh (67.2) are level, as are Mizoram (63.6) and Ladakh (62.6), sixth.",
+ "hook": [
+  "Where are most babies",
+  "*breastfed* within",
+  "an hour of birth?"
+ ],
+ "hook_vo": "Where are most babies breastfed within an hour of birth?",
+ "map_title": "Breastfed within an hour, *every state*",
+ "map_vo": "Every state, mapped. India: fifty percent.",
+ "end": {
+  "q": "Is your state in the top five?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Babies Breastfed Within an Hour: Kerala 82.3%, Top 5",
+ "rules_note": "rules 1, not 2: the versus and countdown types cannot meet rules 2 in build_beats.py itself (digits in the generated score and rank voice lines, 'Number one', hook not on the map, no closing map and mapend, no tests registered as a finding). Every other house rule passes.",
+ "hold": "HOLD (editor, 22 Oct 2026): rules 2 needs 3% between ranks; Sikkim 68.0 and Andhra Pradesh 67.2 are 1.2% apart and Mizoram 63.6 and Ladakh 62.6 (sixth) 1.6%. Andhra Pradesh's figure is also the lead of sp06 in the same batch (same measure, same state). Do not voice."
+}

@@ -1,0 +1,266 @@
+{
+ "type": "basket",
+ "rules": 2,
+ "chip": "FESTIVE ITEMS",
+ "source_short": "MoSPI CPI · all-India · Sep 2026 (provisional)",
+ "id": "fs04",
+ "palette": "C",
+ "hook": [
+  "Festival shopping:",
+  "coconut oil *29.5%* cheaper,",
+  "sarees up *6.0%* in a year."
+ ],
+ "hook_vo": "Coconut oil cost twenty-nine point five percent less; sarees, six percent more.",
+ "items": [
+  {
+   "kicker": "SAREES · ALL INDIA",
+   "name": "Sarees",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "03.1.2.2.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Saree",
+   "sign": true,
+   "text": "for sarees, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Clothing",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "03.1",
+      "Sep 2026"
+     ],
+     "item_name": "Clothing"
+    }
+   ],
+   "vo": "Clothing overall rose four point three percent."
+  },
+  {
+   "kicker": "FLOWERS AND FRUIT · ALL INDIA",
+   "name": "Flowers",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "09.3.1.2.1.01",
+    "Sep 2026"
+   ],
+   "item_name": "Flower (fresh)",
+   "sign": true,
+   "text": "for fresh flowers, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Bananas",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.6.1.1.01",
+      "Sep 2026"
+     ],
+     "item_name": "Banana"
+    }
+   ],
+   "vo": "Fresh flowers rose four point nine percent; bananas, seven point five."
+  },
+  {
+   "kicker": "COCONUT · ALL INDIA",
+   "name": "Coconut oil",
+   "item": [
+    "mospi/cpi2024_allindia_items_2026_09",
+    "01.1.5.1.1.04",
+    "Sep 2026"
+   ],
+   "item_name": "Coconut oil",
+   "sign": true,
+   "text": "for coconut oil, against Sep 2025.",
+   "compare": [
+    {
+     "name": "Coconut",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.6.1.1.04",
+      "Sep 2026"
+     ],
+     "item_name": "Coconut"
+    },
+    {
+     "name": "Green coconut",
+     "item": [
+      "mospi/cpi2024_allindia_items_2026_09",
+      "01.1.6.1.1.03",
+      "Sep 2026"
+     ],
+     "item_name": "Green coconut"
+    }
+   ],
+   "sub": "Green coconut is a separate item, and it rose.",
+   "vo": "Coconut cost four percent less; green coconut, eight point three percent more."
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Clothes*, *flowers*, *bananas* up;",
+   "*coconut oil* fell the most."
+  ],
+  "vo": "Clothes, flowers and bananas cost more; coconut oil fell the most.",
+  "note": "All-India prices, September 2026 against September 2025. Provisional."
+ },
+ "map": {
+  "data": {
+   "tbl": [
+    "mospi/cpi2024_states_divisions_2026_09",
+    "03 Clothing and footwear Sep 2026"
+   ]
+  },
+  "title": "Clothing price rise, *every state*",
+  "sub": "% price rise · year on year · India {india} · Sep 2026",
+  "india_dec": 1,
+  "note": "Clothing and footwear only, not flowers or coconut. MoSPI's division, by state; clothing alone: 4.3% across India. Sep 2026, provisional.",
+  "check_india": [
+   {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "03",
+     "Sep 2026"
+    ],
+    "item_name": "Clothing and footwear"
+   }
+  ],
+  "vo": "Clothing and footwear prices, in each state."
+ },
+ "end": {
+  "q": "What's on your *festival* list?",
+  "sub": "Comment below.",
+  "vo": "What's on your festival list? Comment below."
+ },
+ "tests": [
+  {
+   "says": "sarees show 6.0%",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "03.1.2.2.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Saree",
+    "scale": 10
+   },
+   "equals": 60
+  },
+  {
+   "says": "coconut oil shows -29.5%",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.5.1.1.04",
+     "Sep 2026"
+    ],
+    "item_name": "Coconut oil",
+    "scale": 10
+   },
+   "equals": -295
+  },
+  {
+   "says": "coconut oil fell more than coconut",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.6.1.1.04",
+       "Sep 2026"
+      ],
+      "item_name": "Coconut"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.5.1.1.04",
+       "Sep 2026"
+      ],
+      "item_name": "Coconut oil"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "coconut oil fell more than green coconut",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.6.1.1.03",
+       "Sep 2026"
+      ],
+      "item_name": "Green coconut"
+     },
+     {
+      "item": [
+       "mospi/cpi2024_allindia_items_2026_09",
+       "01.1.5.1.1.04",
+       "Sep 2026"
+      ],
+      "item_name": "Coconut oil"
+     }
+    ]
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "green coconut rose",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.6.1.1.03",
+     "Sep 2026"
+    ],
+    "item_name": "Green coconut"
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "coconut fell",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.6.1.1.04",
+     "Sep 2026"
+    ],
+    "item_name": "Coconut"
+   },
+   "min": -100,
+   "max": -0.01
+  },
+  {
+   "says": "flowers rose",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "09.3.1.2.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Flower (fresh)"
+   },
+   "min": 0.01,
+   "max": 100
+  },
+  {
+   "says": "bananas rose",
+   "value": {
+    "item": [
+     "mospi/cpi2024_allindia_items_2026_09",
+     "01.1.6.1.1.01",
+     "Sep 2026"
+    ],
+    "item_name": "Banana"
+   },
+   "min": 0.01,
+   "max": 100
+  }
+ ],
+ "source": "MoSPI (National Statistics Office), Consumer Price Index (base 2024=100), September 2026, provisional, year on year. All-India items from MoSPI's eSankhyiki data service, read 15 and 16 Oct 2026: saree, clothing, flower (fresh), banana, coconut oil, coconut, green coconut. By state: division 'Clothing and footwear', eSankhyiki, read 16 Oct 2026. MoSPI cautions that state-level indices may rest on thin samples of price quotations.",
+ "yt_title": "Coconut Oil 29.5% Cheaper, Sarees 6.0% Dearer in a Year"
+}

@@ -1,0 +1,33 @@
+{
+ "idea": "Themed weeks, week four, Markets day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "NSE-registered investors recorded in Assam rose from 2.2 lakh on 31 March 2020 to 29.4 lakh on 31 August 2026, 13.3 times as many. India's count rose 4.4 times. Assam's share of India's registered investors went from 0.7% to 2.2%.",
+  "Most of the rise came by March 2025, 11.4 times the March 2020 count; since then Assam's count rose 16% and India's 20%. A registered investor is a PAN registered with NSE whether or not it has traded, placed in a state by PIN code. It is a small base: Assam has 2.6% of India's projected population. Every state's count rose; 12 smaller states and UTs that NSE groups as Others are blank on the map. 1 lakh = 100 thousand."
+ ],
+ "source": "National Stock Exchange of India, NSE Market Pulse: unique registered investors, distinct PANs registered with NSE whether or not they have traded, placed in a state by PIN code. September 2026 Table 70 for 31 March 2020, 31 March 2025 and 31 August 2026; April 2026 Table 43 for 31 March 2026. 1 lakh = 100 thousand. Population share: National Commission on Population projections (July 2020 edition), 1 March 2020 and 1 July 2026.",
+ "source_short": "NSE, Market Pulse, Mar 2020 to 31 Aug 2026",
+ "question": "Did your state beat India's 4.4 times?",
+ "tags": [
+  "Assam",
+  "Markets",
+  "NSE"
+ ],
+ "pinned": "Source: National Stock Exchange of India, NSE Market Pulse: unique registered investors, distinct PANs registered with NSE whether or not they have traded, placed in a state by PIN code. September 2026 Table 70 for 31 March 2020, 31 March 2025 and 31 August 2026; April 2026 Table 43 for 31 March 2026. 1 lakh = 100 thousand. Population share: National Commission on Population projections (July 2020 edition), 1 March 2020 and 1 July 2026. Every state's count rose. Blank: 12 smaller states and UTs that NSE groups as Others. Map: percent change, March 2020 to Aug 2026.",
+ "instagram": "NSE-registered investors recorded in Assam rose from 2.2 lakh on 31 March 2020 to 29.4 lakh on 31 August 2026, 13.3 times as many. India's count rose 4.4 times. Assam's share of India's registered investors went from 0.7% to 2.2%.",
+ "x": "Assam: NSE-registered investors rose from 2.2 lakh (31 March 2020) to 29.4 lakh (31 Aug 2026), 13.3 times. India: 4.4 times. Source: NSE Market Pulse, Sept 2026 and April 2026.",
+ "done": [
+  "Numbers editor recomputed with python3 -I and read the NSE Market Pulse pages as rendered images: Sept 2026 Table 70 (p. 236) Assam 2,938 and 221 thousand = 13.29 times; India 4.36; March 2025 11.43 times; Assam +16.3% and India +19.9% since March 2025; share 0.71% to 2.17%. The March 2026 bar (2,813) comes from April 2026 Table 43 (p. 178), and the source line, which wrongly said Table 70, was corrected.",
+  "'Then' rule checked by hand: the rise is present at each of the last three dates (11.4, 12.7, 13.3 times) and March 2020 is not a dip (Assam's count was 2.03 times March 2015). The lag since 2025 and the small base are both on screen; Assam's multiple is the largest of the 25 states (next Tripura 9.75) but the Short does not say so.",
+  "Settled the Andhra Pradesh and Madhya Pradesh map cells: the two states' names are swapped only in the April and May 2026 issues; eight other issues agree with the labels used; no cell changed. Viewer editor named the exchange in the hook ('NSE-registered').",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read NSE Market Pulse Sept 2026 p. 236 (Table 70): Assam 2,938 (31 Aug 2026) and 221 (31 Mar 2020); India 1,35,250 and 31,006; and the March 2025 column",
+  "Re-read April 2026 p. 178 (Table 43): Assam 31 Mar 2026 2,813",
+  "Map cells for Andhra Pradesh and Madhya Pradesh rest on the editor's inference from NSE's tables (NSE has printed no correction): MP 518 / 984 / 5,460 and AP 1,002 / 1,581 / 5,137 (FY15 / FY20 / FY25); FY26 for the two stays blank",
+  "Freshness: NSE's October 2026 Market Pulse (data to 30 Sept) is likely within days and may move every figure; this Short names 31 Aug 2026; population is the July 2020 edition",
+  "Scheduling: keep four days from fa50 and px52 (NSE registered investors) and from fa06 (Assam handloom)",
+  "Add the source link to the description"
+ ]
+}

@@ -1,0 +1,935 @@
+{
+ "id": "fm03",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.937,
+   "text": "Three years running, Dhanteras was a top-two day for UPI payments.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Three",
+     "norm": "three",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "years",
+     "norm": "years",
+     "word": 1,
+     "start": 0.48,
+     "end": 0.78
+    },
+    {
+     "w": "running,",
+     "norm": "running",
+     "word": 2,
+     "start": 0.78,
+     "end": 1.28
+    },
+    {
+     "w": "Dhanteras",
+     "norm": "dhanteras",
+     "word": 3,
+     "start": 1.7,
+     "end": 2.24
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 4,
+     "start": 2.24,
+     "end": 2.74
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 5,
+     "start": 2.74,
+     "end": 3.0
+    },
+    {
+     "w": "top-two",
+     "norm": "top",
+     "word": 6,
+     "start": 3.0,
+     "end": 3.2
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 6,
+     "start": 3.2,
+     "end": 3.44
+    },
+    {
+     "w": "day",
+     "norm": "day",
+     "word": 7,
+     "start": 3.44,
+     "end": 3.56
+    },
+    {
+     "w": "for",
+     "norm": "for",
+     "word": 8,
+     "start": 3.56,
+     "end": 3.84
+    },
+    {
+     "w": "UPI",
+     "norm": "upi",
+     "word": 9,
+     "start": 3.84,
+     "end": 4.28
+    },
+    {
+     "w": "payments.",
+     "norm": "payments",
+     "word": 10,
+     "start": 4.28,
+     "end": 4.6
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three",
+     "value": 3.0,
+     "mantissa": 3.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 0,
+     "w1": 0,
+     "whisper": 0.0,
+     "onset": 0.1825,
+     "rule": "fric",
+     "how": "frication",
+     "at": 0.3158,
+     "f": 11
+    },
+    {
+     "text": "two",
+     "value": 2.0,
+     "mantissa": 2.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 7,
+     "whisper": 3.2,
+     "onset": 3.215,
+     "rule": "stop",
+     "how": "burst",
+     "at": 3.3483,
+     "f": 101
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 7.0,
+   "text": "Dhanteras twenty twenty-five: about seventy-five crore UPI payments in a day, October's most.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Dhanteras",
+     "norm": "dhanteras",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.68
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 1,
+     "start": 0.68,
+     "end": 1.08
+    },
+    {
+     "w": "twenty-five:",
+     "norm": "twenty",
+     "word": 2,
+     "start": 1.08,
+     "end": 1.38
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 2,
+     "start": 1.38,
+     "end": 1.9
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 3,
+     "start": 1.9,
+     "end": 2.7
+    },
+    {
+     "w": "seventy-five",
+     "norm": "seventy",
+     "word": 4,
+     "start": 2.7,
+     "end": 3.2
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 4,
+     "start": 3.2,
+     "end": 3.46
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 5,
+     "start": 3.46,
+     "end": 3.84
+    },
+    {
+     "w": "UPI",
+     "norm": "upi",
+     "word": 6,
+     "start": 3.84,
+     "end": 4.3
+    },
+    {
+     "w": "payments",
+     "norm": "payments",
+     "word": 7,
+     "start": 4.3,
+     "end": 4.68
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 8,
+     "start": 4.68,
+     "end": 4.98
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 9,
+     "start": 4.98,
+     "end": 5.1
+    },
+    {
+     "w": "day,",
+     "norm": "day",
+     "word": 10,
+     "start": 5.1,
+     "end": 5.64
+    },
+    {
+     "w": "October's",
+     "norm": "october",
+     "word": 11,
+     "start": 5.78,
+     "end": 6.42
+    },
+    {
+     "w": "most.",
+     "norm": "most",
+     "word": 12,
+     "start": 6.42,
+     "end": 6.68
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty twenty five",
+     "value": 2025.0,
+     "mantissa": 2025.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 1,
+     "w1": 3,
+     "whisper": 0.68,
+     "onset": 0.6725,
+     "rule": "stop",
+     "how": "burst",
+     "at": 6.6058,
+     "f": 199
+    },
+    {
+     "text": "seventy five crore",
+     "value": 750000000.0,
+     "mantissa": 75.0,
+     "scale": 10000000.0,
+     "kind": "number",
+     "w0": 5,
+     "w1": 7,
+     "whisper": 2.7,
+     "onset": 2.62,
+     "rule": "fric",
+     "how": "frication",
+     "at": 8.5533,
+     "f": 258
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 13.668,
+   "sec": 3.369,
+   "text": "In twenty twenty-four, the second-most of its month.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "In",
+     "norm": "in",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 1,
+     "start": 0.48,
+     "end": 1.08
+    },
+    {
+     "w": "twenty-four,",
+     "norm": "twenty",
+     "word": 2,
+     "start": 1.08,
+     "end": 1.34
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 2,
+     "start": 1.34,
+     "end": 1.56
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 3,
+     "start": 2.02,
+     "end": 2.14
+    },
+    {
+     "w": "second-most",
+     "norm": "second",
+     "word": 4,
+     "start": 2.14,
+     "end": 2.34
+    },
+    {
+     "w": "most",
+     "norm": "most",
+     "word": 4,
+     "start": 2.34,
+     "end": 2.56
+    },
+    {
+     "w": "of",
+     "norm": "of",
+     "word": 5,
+     "start": 2.56,
+     "end": 2.72
+    },
+    {
+     "w": "its",
+     "norm": "its",
+     "word": 6,
+     "start": 2.72,
+     "end": 2.86
+    },
+    {
+     "w": "month.",
+     "norm": "month",
+     "word": 7,
+     "start": 2.86,
+     "end": 3.06
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty twenty four",
+     "value": 2024.0,
+     "mantissa": 2024.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 1,
+     "w1": 3,
+     "whisper": 0.48,
+     "onset": 0.6,
+     "rule": "stop",
+     "how": "burst",
+     "at": 14.2667,
+     "f": 429
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 17.539,
+   "sec": 2.455,
+   "text": "And in twenty twenty-three, second again.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "And",
+     "norm": "and",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.42
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 1,
+     "start": 0.42,
+     "end": 0.54
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 2,
+     "start": 0.54,
+     "end": 0.78
+    },
+    {
+     "w": "twenty-three,",
+     "norm": "twenty",
+     "word": 3,
+     "start": 0.78,
+     "end": 1.0
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 3,
+     "start": 1.0,
+     "end": 1.3
+    },
+    {
+     "w": "second",
+     "norm": "second",
+     "word": 4,
+     "start": 1.78,
+     "end": 1.88
+    },
+    {
+     "w": "again.",
+     "norm": "again",
+     "word": 5,
+     "start": 1.88,
+     "end": 2.14
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty twenty three",
+     "value": 2023.0,
+     "mantissa": 2023.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 2,
+     "w1": 4,
+     "whisper": 0.54,
+     "onset": 0.4525,
+     "rule": "stop",
+     "how": "burst",
+     "at": 17.9858,
+     "f": 540
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 21.41,
+   "sec": 5.564,
+   "text": "Diwali day's rupee value: twenty-eight percent below Dhanteras, in twenty twenty-five.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Diwali",
+     "norm": "diwali",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.64
+    },
+    {
+     "w": "day's",
+     "norm": "day",
+     "word": 1,
+     "start": 0.64,
+     "end": 0.92
+    },
+    {
+     "w": "rupee",
+     "norm": "rupee",
+     "word": 2,
+     "start": 0.92,
+     "end": 1.1
+    },
+    {
+     "w": "value:",
+     "norm": "value",
+     "word": 3,
+     "start": 1.1,
+     "end": 1.5
+    },
+    {
+     "w": "twenty-eight",
+     "norm": "twenty",
+     "word": 4,
+     "start": 1.5,
+     "end": 2.4
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 4,
+     "start": 2.4,
+     "end": 2.58
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 5,
+     "start": 2.58,
+     "end": 2.88
+    },
+    {
+     "w": "below",
+     "norm": "below",
+     "word": 6,
+     "start": 2.88,
+     "end": 3.18
+    },
+    {
+     "w": "Dhanteras,",
+     "norm": "dhanteras",
+     "word": 7,
+     "start": 3.18,
+     "end": 3.92
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 8,
+     "start": 4.28,
+     "end": 4.46
+    },
+    {
+     "w": "twenty",
+     "norm": "twenty",
+     "word": 9,
+     "start": 4.46,
+     "end": 4.78
+    },
+    {
+     "w": "twenty-five.",
+     "norm": "twenty",
+     "word": 10,
+     "start": 4.78,
+     "end": 5.1
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 10,
+     "start": 5.1,
+     "end": 5.28
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty eight",
+     "value": 28.0,
+     "mantissa": 28.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 5,
+     "whisper": 1.5,
+     "onset": 1.9525,
+     "rule": "stop",
+     "how": "burst",
+     "at": 23.3525,
+     "f": 701
+    },
+    {
+     "text": "twenty twenty five",
+     "value": 2025.0,
+     "mantissa": 2025.0,
+     "scale": 1.0,
+     "kind": "year",
+     "w0": 10,
+     "w1": 12,
+     "whisper": 4.46,
+     "onset": 4.3875,
+     "rule": "stop",
+     "how": "burst",
+     "at": 25.7875,
+     "f": 774
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 29.152,
+   "sec": 5.25,
+   "text": "By value, Diwali day was lower each year. By payments, it was mixed.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "By",
+     "norm": "by",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.56
+    },
+    {
+     "w": "value,",
+     "norm": "value",
+     "word": 1,
+     "start": 0.56,
+     "end": 1.02
+    },
+    {
+     "w": "Diwali",
+     "norm": "diwali",
+     "word": 2,
+     "start": 1.44,
+     "end": 1.64
+    },
+    {
+     "w": "day",
+     "norm": "day",
+     "word": 3,
+     "start": 1.64,
+     "end": 1.76
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 4,
+     "start": 1.76,
+     "end": 1.98
+    },
+    {
+     "w": "lower",
+     "norm": "lower",
+     "word": 5,
+     "start": 1.98,
+     "end": 2.22
+    },
+    {
+     "w": "each",
+     "norm": "each",
+     "word": 6,
+     "start": 2.22,
+     "end": 2.52
+    },
+    {
+     "w": "year.",
+     "norm": "year",
+     "word": 7,
+     "start": 2.52,
+     "end": 2.76
+    },
+    {
+     "w": "By",
+     "norm": "by",
+     "word": 8,
+     "start": 3.1,
+     "end": 3.38
+    },
+    {
+     "w": "payments,",
+     "norm": "payments",
+     "word": 9,
+     "start": 3.38,
+     "end": 3.82
+    },
+    {
+     "w": "it",
+     "norm": "it",
+     "word": 10,
+     "start": 4.36,
+     "end": 4.38
+    },
+    {
+     "w": "was",
+     "norm": "was",
+     "word": 11,
+     "start": 4.38,
+     "end": 4.6
+    },
+    {
+     "w": "mixed.",
+     "norm": "mixed",
+     "word": 12,
+     "start": 4.6,
+     "end": 4.88
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 34.959,
+   "sec": 3.448,
+   "text": "Do you pay by UPI on Dhanteras? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Do",
+     "norm": "do",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "you",
+     "norm": "you",
+     "word": 1,
+     "start": 0.34,
+     "end": 0.5
+    },
+    {
+     "w": "pay",
+     "norm": "pay",
+     "word": 2,
+     "start": 0.5,
+     "end": 0.66
+    },
+    {
+     "w": "by",
+     "norm": "by",
+     "word": 3,
+     "start": 0.66,
+     "end": 0.98
+    },
+    {
+     "w": "UPI",
+     "norm": "upi",
+     "word": 4,
+     "start": 0.98,
+     "end": 1.5
+    },
+    {
+     "w": "on",
+     "norm": "on",
+     "word": 5,
+     "start": 1.5,
+     "end": 1.72
+    },
+    {
+     "w": "Dhanteras?",
+     "norm": "dhanteras",
+     "word": 6,
+     "start": 1.72,
+     "end": 2.46
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 7,
+     "start": 2.62,
+     "end": 2.88
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 8,
+     "start": 2.88,
+     "end": 3.18
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 11,
+   "lockHow": "first-number",
+   "lockWord": "three",
+   "firstNumF": 11,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 406,
+   "settleF": 394,
+   "line": 1,
+   "lockF": 258,
+   "lockHow": "spoken",
+   "lockWord": "seventy five crore",
+   "firstNumF": 199,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "75.44 crore",
+     "spokenF": 258,
+     "word": "seventy five crore",
+     "how": "spoken",
+     "lockF": 258
+    },
+    {
+     "role": "bar",
+     "text": "75.44 cr",
+     "spokenF": 258,
+     "word": "seventy five crore",
+     "how": "spoken",
+     "lockF": 258
+    },
+    {
+     "role": "bar",
+     "text": "66.78 cr",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 258
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 406,
+   "f1": 523,
+   "settleF": 511,
+   "line": 2,
+   "lockF": 429,
+   "lockHow": "first-number",
+   "lockWord": "twenty twenty four",
+   "firstNumF": 429,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "56.53 crore",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 429
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 639,
+   "settleF": 627,
+   "line": 3,
+   "lockF": 540,
+   "lockHow": "first-number",
+   "lockWord": "twenty twenty three",
+   "firstNumF": 540,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "42.89 crore",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 540
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 639,
+   "f1": 871,
+   "settleF": 859,
+   "line": 4,
+   "lockF": 701,
+   "lockHow": "spoken",
+   "lockWord": "twenty eight",
+   "firstNumF": 701,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "−28%",
+     "spokenF": 701,
+     "word": "twenty eight",
+     "how": "spoken",
+     "lockF": 701
+    },
+    {
+     "role": "bar",
+     "text": "−28%",
+     "spokenF": 701,
+     "word": "twenty eight",
+     "how": "spoken",
+     "lockF": 701
+    },
+    {
+     "role": "bar",
+     "text": "−2%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 645
+    },
+    {
+     "role": "bar",
+     "text": "−40%",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 701
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": 774,
+     "word": "twenty twenty five",
+     "how": "spoken",
+     "lockF": 774
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 871,
+   "f1": 1045,
+   "settleF": 1033,
+   "line": 5,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 1045,
+   "f1": 1161,
+   "settleF": 1149,
+   "line": 6,
+   "lockF": 1051,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

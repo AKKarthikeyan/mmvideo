@@ -1,0 +1,578 @@
+{
+ "id": "fa08",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "Commerce Ministry (DPIIT) · to 30 Jun 2026",
+ "source": "Ministry of Commerce and Industry (DPIIT), reply to Lok Sabha Unstarred Question No. 1446 of 28 July 2026, Annexure-I: entities recognised as startups by DPIIT as on 30 June 2026, by state (all-India 2,40,092). Earlier counts: Unstarred Questions No. 4046 of 17 March 2026 and No. 588 of 3 February 2026. Eligibility was widened on 4 February 2026. A running count that includes entities since closed. State totals, not per-person figures.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Maharashtra* had *1.7×*",
+    "Karnataka's recognised",
+    "start-ups, as on 30 June 2026."
+   ],
+   "vo": "Maharashtra had one point seven times Karnataka's recognised start-ups.",
+   "geo": "Maharashtra",
+   "name": "Maharashtra",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "RECOGNISED START-UPS · TO JUN 2026",
+   "big": "41,440",
+   "text": "entities recognised as start-ups by DPIIT up to 30 June 2026. The highest of the states and UTs listed.",
+   "sub": "State totals, not per person. DPIIT: Department for Promotion of Industry and Internal Trade.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "41,440",
+     "frac": 0.9208888888888889
+    },
+    {
+     "name": "Karnataka",
+     "label": "24,026",
+     "frac": 0.5339111111111111
+    }
+   ],
+   "vo": "Forty-one thousand four hundred forty. The highest of any state.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "THREE MORE STATES OVER 22,000",
+   "big": "24,026",
+   "text": "Karnataka 24,026, Uttar Pradesh 23,678 and Delhi 22,336: the three other states above 22,000.",
+   "sub": "Entities recognised as start-ups by DPIIT, up to 30 June 2026.",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "label": "24,026",
+     "frac": 0.5339111111111111
+    },
+    {
+     "name": "Uttar Pradesh",
+     "label": "23,678",
+     "frac": 0.5261777777777777
+    },
+    {
+     "name": "Delhi",
+     "label": "22,336",
+     "frac": 0.49635555555555555
+    }
+   ],
+   "vo": "Karnataka, Uttar Pradesh and Delhi each had over twenty-two thousand.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Maharashtra",
+   "geo": "Maharashtra",
+   "kicker": "SIX MONTHS EARLIER · 31 DEC 2025",
+   "big": "35,992",
+   "text": "start-ups on 31 December 2025, six months before. Karnataka then: 21,163.",
+   "sub": "Same count, earlier Lok Sabha answer (3 Feb 2026). Eligibility was widened on 4 Feb 2026.",
+   "bars": [
+    {
+     "name": "Maharashtra",
+     "label": "35,992",
+     "frac": 0.7998222222222222
+    },
+    {
+     "name": "Karnataka",
+     "label": "21,163",
+     "frac": 0.47028888888888887
+    }
+   ],
+   "vo": "In December it was thirty-five thousand nine hundred ninety-two, also the highest.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*1.7 times* Karnataka's count",
+    "on each of three dates:",
+    "December, February, June."
+   ],
+   "vo": "One point seven times Karnataka's, on each of three dates.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Recognised start-ups, *every state*",
+   "sub": "entities recognised by DPIIT, up to 30 June 2026",
+   "note": "State totals, not per person. A running count of recognitions; some recognised entities have since closed.",
+   "anim": true,
+   "ring": [
+    "Maharashtra",
+    "Karnataka"
+   ],
+   "vo": "Recognised start-ups in every state, as on thirty June.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "State totals, not per person. A running count of recognitions; some recognised entities have since closed.",
+   "ring": [
+    "Maharashtra",
+    "Karnataka"
+   ],
+   "q": "Which *start-up* began in your city?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Which start-up began in your city?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "3",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Sikkim",
+   "label": "21",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 29.488
+  },
+  {
+   "name": "Ladakh",
+   "label": "25",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.594
+  },
+  {
+   "name": "Mizoram",
+   "label": "78",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 29.699
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "102",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.805
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "102",
+   "bucket": 0,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 29.911
+  },
+  {
+   "name": "Meghalaya",
+   "label": "106",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.017
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "108",
+   "bucket": 0,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.122
+  },
+  {
+   "name": "Nagaland",
+   "label": "131",
+   "bucket": 1,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 30.228
+  },
+  {
+   "name": "Tripura",
+   "label": "233",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 30.334
+  },
+  {
+   "name": "Puducherry",
+   "label": "263",
+   "bucket": 1,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 30.44
+  },
+  {
+   "name": "Manipur",
+   "label": "295",
+   "bucket": 1,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.545
+  },
+  {
+   "name": "Chandigarh",
+   "label": "740",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.651
+  },
+  {
+   "name": "Goa",
+   "label": "861",
+   "bucket": 1,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.757
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "898",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.863
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "1,628",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.968
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1,970",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.074
+  },
+  {
+   "name": "Jharkhand",
+   "label": "2,304",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.18
+  },
+  {
+   "name": "Assam",
+   "label": "2,351",
+   "bucket": 2,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "2,587",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.391
+  },
+  {
+   "name": "Punjab",
+   "label": "2,708",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.497
+  },
+  {
+   "name": "Odisha",
+   "label": "4,123",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.603
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "4,707",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.709
+  },
+  {
+   "name": "Bihar",
+   "label": "5,527",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.814
+  },
+  {
+   "name": "West Bengal",
+   "label": "7,775",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.92
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "8,194",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.026
+  },
+  {
+   "name": "Rajasthan",
+   "label": "8,783",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.132
+  },
+  {
+   "name": "Kerala",
+   "label": "9,092",
+   "bucket": 3,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.237
+  },
+  {
+   "name": "Haryana",
+   "label": "12,482",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.343
+  },
+  {
+   "name": "Telangana",
+   "label": "13,622",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.449
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "15,774",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.554
+  },
+  {
+   "name": "Gujarat",
+   "label": "21,019",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.66
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "22,336",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 32.766
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "23,678",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.872
+  },
+  {
+   "name": "Karnataka",
+   "label": "24,026",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.977
+  },
+  {
+   "name": "Maharashtra",
+   "label": "41,440",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.083
+  }
+ ],
+ "checked": [
+  "Maharashtra is the highest of 35 with data (41,440)",
+  "Maharashtra is the highest of 35 with data (35,992)",
+  "Maharashtra 41440 rounds to 41440",
+  "Karnataka 24026 rounds to 24026",
+  "Uttar Pradesh 23678 rounds to 23678",
+  "Delhi 22336 rounds to 22336",
+  "Delhi / Gujarat = 1.06 (at least 1.05)",
+  "Maharashtra 35992 rounds to 35992",
+  "Karnataka 21163 rounds to 21163",
+  "Maharashtra / Karnataka = 1.72 (at least 1.7)",
+  "Karnataka / Maharashtra = 0.58 (at least 0.571)",
+  "Maharashtra / Karnataka = 1.70 (at least 1.7)",
+  "Karnataka / Maharashtra = 0.59 (at least 0.571)",
+  "Maharashtra / Karnataka = 1.70 (at least 1.7)",
+  "Karnataka / Maharashtra = 0.59 (at least 0.571)",
+  "Maharashtra / Uttar Pradesh = 1.86 (at least 1.6)",
+  "Maharashtra / Uttar Pradesh = 1.69 (at least 1.6)",
+  "Maharashtra / Uttar Pradesh = 1.65 (at least 1.6)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.466,
+   "at": 0.12,
+   "text": "Maharashtra had one point seven times Karnataka's recognised start-ups."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.97,
+   "at": 5.926,
+   "text": "Forty-one thousand four hundred forty. The highest of any state."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.388,
+   "at": 11.733,
+   "text": "Karnataka, Uttar Pradesh and Delhi each had over twenty-two thousand."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.067,
+   "at": 17.539,
+   "text": "In December it was thirty-five thousand nine hundred ninety-two, also the highest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.127,
+   "at": 23.346,
+   "text": "One point seven times Karnataka's, on each of three dates."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.257,
+   "at": 29.152,
+   "text": "Recognised start-ups in every state, as on thirty June."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.906,
+   "at": 34.959,
+   "text": "Which start-up began in your city?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Maharashtra Had 1.7x Karnataka's Recognised Start-ups, 2026"
+}

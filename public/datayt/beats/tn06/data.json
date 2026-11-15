@@ -1,0 +1,568 @@
+{
+ "id": "tn06",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Central Electricity Authority · 2014-15 to 2024-25",
+ "source": "Central Electricity Authority, Ministry of Power, as published in the RBI Handbook of Statistics on Indian States, Table 138: per capita availability of power, kilowatt-hours a year. This is power available (net units), not power used. Per-person figures use the population projections the Handbook cites.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Bihar*: electricity available",
+    "per person *doubled*,",
+    "2014-15 to 2024-25."
+   ],
+   "vo": "Bihar's electricity available per person doubled in ten years.",
+   "geo": "Bihar",
+   "name": "Bihar",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Bihar",
+   "name": "Bihar",
+   "kicker": "POWER AVAILABLE PER PERSON · KWH A YEAR",
+   "big": "2.0×",
+   "p0": {
+    "period": "2014-15",
+    "label": "170.3 kWh",
+    "frac": 0.4952020936318698
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "343.9 kWh",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "a year for each person. *1 kWh* is one unit on a bill.",
+   "vo": "In twenty fourteen-fifteen: about one hundred seventy units a year for each person.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Bihar",
+   "name": "Bihar",
+   "kicker": "POWER AVAILABLE PER PERSON · KWH A YEAR",
+   "big": "2.0×",
+   "p0": {
+    "period": "2014-15",
+    "label": "170.3 kWh",
+    "frac": 0.4952020936318698
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "343.9 kWh",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "a year for each person: *2.0 times* the 2014-15 figure.",
+   "vo": "Ten years on: about three hundred forty-four units.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Bihar",
+   "geo": "Bihar",
+   "kicker": "POWER PER PERSON · 2014-15 TO 2024-25",
+   "big": "2.0×",
+   "text": "Bihar's electricity per person",
+   "sub": "India: 819 to 1,208 kWh a year. +48% against Bihar's +102%.",
+   "bars": [
+    {
+     "name": "Bihar",
+     "label": "2.0×",
+     "frac": 0.8077510275983558
+    },
+    {
+     "name": "India",
+     "label": "1.5×",
+     "frac": 0.5903016978136069
+    }
+   ],
+   "vo": "India's figure rose forty-eight percent. Bihar's rose a hundred and two percent.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Bihar as a share of India's figure:",
+    "*21%* in 2014-15,",
+    "*28%* in 2024-25."
+   ],
+   "note": "Available power per person, not use. Single years: 2022-23 to 2024-25 were 310, 323 and 344 kWh. The table shows how much, not why.",
+   "vo": "Measured against India's figure, Bihar rose from twenty-one percent to twenty-eight.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Power per person: *each state's change*",
+   "sub": "% change in kWh a person · 2014-15 to 2024-25 · India +48%",
+   "note": "Available power per person, not use. Blank: Jammu and Kashmir (boundary changed); Ladakh and Dadra, Nagar Haveli, Daman and Diu (not in the table).",
+   "anim": true,
+   "ring": [
+    "Bihar"
+   ],
+   "vo": "Here is every state's change over the ten years.",
+   "t0": 27.097,
+   "t1": 30.968
+  },
+  {
+   "note": "Available power per person, not use. Blank: Jammu and Kashmir (boundary changed); Ladakh and Dadra, Nagar Haveli, Daman and Diu (not in the table).",
+   "ring": [
+    "Bihar"
+   ],
+   "q": "Did *your state* double too?",
+   "sub": "Find it on the map.",
+   "kind": "mapend",
+   "vo": "Did your state double too?",
+   "t0": 30.968,
+   "t1": 34.839
+  }
+ ],
+ "total": 35.239,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "+7",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+8",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 27.504
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+14",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 27.56
+  },
+  {
+   "name": "Puducherry",
+   "label": "+19",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 27.617
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+24",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.674
+  },
+  {
+   "name": "Nagaland",
+   "label": "+29",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.73
+  },
+  {
+   "name": "Sikkim",
+   "label": "+29",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 27.787
+  },
+  {
+   "name": "Goa",
+   "label": "+30",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 27.844
+  },
+  {
+   "name": "Haryana",
+   "label": "+31",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 27.901
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+33",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.957
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "+34",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 28.014
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+34",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.071
+  },
+  {
+   "name": "Kerala",
+   "label": "+36",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 28.127
+  },
+  {
+   "name": "Gujarat",
+   "label": "+38",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.184
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+38",
+   "bucket": 1,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.241
+  },
+  {
+   "name": "Manipur",
+   "label": "+43",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 28.297
+  },
+  {
+   "name": "Karnataka",
+   "label": "+43",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.354
+  },
+  {
+   "name": "West Bengal",
+   "label": "+43",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.411
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+45",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.468
+  },
+  {
+   "name": "Assam",
+   "label": "+45",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 28.524
+  },
+  {
+   "name": "Punjab",
+   "label": "+49",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 28.581
+  },
+  {
+   "name": "Mizoram",
+   "label": "+50",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.638
+  },
+  {
+   "name": "Odisha",
+   "label": "+53",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.694
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+53",
+   "bucket": 2,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.751
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+56",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.808
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+67",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.864
+  },
+  {
+   "name": "Tripura",
+   "label": "+68",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 28.921
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+71",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.978
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+78",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.035
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+78",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.091
+  },
+  {
+   "name": "Bihar",
+   "label": "+102",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.148
+  },
+  {
+   "name": "Telangana",
+   "label": "+104",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.205
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+118",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 29.261
+  }
+ ],
+ "checked": [
+  "Bihar: 170.30 in 2014-15, 343.90 in 2024-25: +173.60, 2.02 times",
+  "the years just before 2014-15 do not make it a freak year: measured from 170.30 the change is still +173.60",
+  "the change holds in each of 2022-23, 2023-24, 2024-25: 310.30, 322.80, 343.90",
+  "years = 10",
+  "about 170 units (kWh) a person in 2014-15: 170.30",
+  "about 344 units (kWh) a person in 2024-25: 343.90",
+  "doubled: 2.0 times: 2.02",
+  "India 819 kWh in 2014-15: 818.70",
+  "India 1,208 kWh in 2024-25: 1208.20",
+  "India's figure rose forty-eight percent: 47.58",
+  "Bihar's figure rose a hundred and two percent: 101.94",
+  "21% of India's figure in 2014-15: 20.80",
+  "28% of India's figure in 2024-25: 28.46",
+  "2022-23: 310 kWh: 310.30",
+  "2023-24: 323 kWh: 322.80"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.578,
+   "at": 0.12,
+   "text": "Bihar's electricity available per person doubled in ten years."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.675,
+   "at": 5.926,
+   "text": "In twenty fourteen-fifteen: about one hundred seventy units a year for each person."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.239,
+   "at": 11.733,
+   "text": "Ten years on: about three hundred forty-four units."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.257,
+   "at": 15.604,
+   "text": "India's figure rose forty-eight percent. Bihar's rose a hundred and two percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.067,
+   "at": 21.41,
+   "text": "Measured against India's figure, Bihar rose from twenty-one percent to twenty-eight."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.369,
+   "at": 27.217,
+   "text": "Here is every state's change over the ten years."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.567,
+   "at": 31.088,
+   "text": "Did your state double too?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Bihar: Electricity Available per Person Doubled in 10 Years"
+}

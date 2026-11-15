@@ -1,0 +1,840 @@
+{
+ "id": "fa65",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "MoSPI · PLFS · 2023-24",
+ "palette": "C",
+ "state": "Jharkhand",
+ "source": "Ministry of Statistics and Programme Implementation, Periodic Labour Force Survey annual reports: 2021-22 to 2023-24 (July to June); 2024 and 2025 (January to December; 2025 on a new design). Labour force participation rate, usual status (principal and subsidiary), women aged 15 and above, rural and urban: everyone working, unpaid family work included, or seeking work. Survey estimates.",
+ "hook": [
+  "*Jharkhand*: rural women's",
+  "labour force rate *nearly 3×*",
+  "urban women's, 2023-24."
+ ],
+ "hook_vo": "In Jharkhand, rural women's labour force rate was nearly three times urban women's.",
+ "facts": [
+  {
+   "state": "Jharkhand",
+   "kicker": "RURAL WOMEN IN LABOUR FORCE",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of rural women aged 15+ worked or looked for work, 2023-24. India's rural rate: 48%.",
+   "sub": "Labour force: working (unpaid family work too) or seeking work. July 2023 to June 2024.",
+   "vo": "Rural women: fifty-seven percent worked or sought work."
+  },
+  {
+   "state": "Jharkhand",
+   "kicker": "RURAL RATE OVER URBAN RATE",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "urban",
+       "female"
+      ]
+     }
+    ]
+   },
+   "unit": "×",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 3.5,
+   "text": "the urban rate: 57.3% of rural women against 19.4% of urban women. India: 1.7×.",
+   "sub": "Rural women's rate divided by urban women's, same year. Survey estimates.",
+   "vo": "Nearly three times the urban rate. India, one point seven."
+  },
+  {
+   "state": "Jharkhand",
+   "kicker": "LATEST ROUND · 2025",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "urban",
+       "female"
+      ]
+     }
+    ]
+   },
+   "unit": "×",
+   "compare": [
+    "Uttar Pradesh"
+   ],
+   "bar_max": 3.5,
+   "text": "the urban rate in 2025, on a new survey design. Uttar Pradesh: 2.3×. India: 1.7×.",
+   "sub": "January to December 2025: rural 50.0%, urban 18.7%. Earlier: 3.1× in 2022-23, 2.6× in 2021-22.",
+   "vo": "Latest round was two point seven times. Uttar Pradesh was two point three."
+  }
+ ],
+ "so": {
+  "lines": [
+   "In *all five* rounds since",
+   "2021-22, Jharkhand's rural",
+   "women's rate was *2.6 to*",
+   "*3.1×* urban women's."
+  ],
+  "vo": "In Jharkhand all five rounds: two point six to three point one times.",
+  "note": "Rounds: 2021-22, 2022-23, 2023-24 (July to June); 2024, 2025 (January to December). The table shows how much, not why."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "rural",
+      "female"
+     ]
+    },
+    {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "urban",
+      "female"
+     ]
+    }
+   ]
+  },
+  "unit": "×",
+  "dec": 1,
+  "title": "Rural over urban rate, *every state*",
+  "sub": "women aged 15+ in labour force · India {india} · 2023-24",
+  "note": "Rural women's rate divided by urban women's. Survey estimates; small UTs rest on small samples. Blank: Chandigarh (no rural figure).",
+  "ring": [
+   "Jharkhand",
+   "Uttar Pradesh"
+  ],
+  "vo": "Here is every state: the rural rate over the urban rate."
+ },
+ "end": {
+  "q": "Have you worked on a family *farm*?",
+  "sub": "Comment below.",
+  "vo": "Have you worked on a family farm?"
+ },
+ "yt_title": "Jharkhand: Rural Women's Labour Force Rate Nearly 3x Urban",
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "equals": 57
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "plfs": [
+     "LFPR",
+     "2023-24",
+     "rural",
+     "female"
+    ]
+   },
+   "equals": 48
+  },
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "urban",
+       "female"
+      ]
+     }
+    ]
+   },
+   "equals": 3
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 22
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2023-24",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 17
+  },
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 27
+  },
+  {
+   "kind": "round",
+   "state": "Uttar Pradesh",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2025",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 23
+  },
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2022-23",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2022-23",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 31
+  },
+  {
+   "kind": "round",
+   "state": "Jharkhand",
+   "data": {
+    "ratio": [
+     {
+      "plfs": [
+       "LFPR",
+       "2021-22",
+       "rural",
+       "female"
+      ]
+     },
+     {
+      "plfs": [
+       "LFPR",
+       "2021-22",
+       "urban",
+       "female"
+      ]
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 26
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Jharkhand",
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "den": {
+    "state": "Uttar Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 1.3
+  }
+ ],
+ "tests": [
+  {
+   "says": "57.3% of rural women (card text, tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "rural",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 573
+  },
+  {
+   "says": "19.4% of urban women (card text, tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 194
+  },
+  {
+   "says": "India rural 47.6 rounds to 48 (card, voice)",
+   "value": {
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2023-24",
+      "rural",
+      "female"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 48
+  },
+  {
+   "says": "nearly three times: 2023-24 ratio 2.9 or more and under 3.0 (2.954)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.9,
+   "max": 2.999
+  },
+  {
+   "says": "3.0 times (card, tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   },
+   "equals": 30
+  },
+  {
+   "says": "India ratio 1.7 (card, voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "India"
+   },
+   "equals": 17
+  },
+  {
+   "says": "2025 rural 50.0% (card sub)",
+   "value": {
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2025",
+      "rural",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 500
+  },
+  {
+   "says": "2025 urban 18.7% (card sub)",
+   "value": {
+    "data": {
+     "plfs": [
+      "LFPR",
+      "2025",
+      "urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 187
+  },
+  {
+   "says": "2025 ratio 2.7 (card, voice)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   },
+   "equals": 27
+  },
+  {
+   "says": "2022-23 ratio 3.1 (card sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2022-23",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2022-23",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   },
+   "equals": 31
+  },
+  {
+   "says": "2021-22 ratio 2.6 (card sub)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2021-22",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2021-22",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    }
+   },
+   "equals": 26
+  },
+  {
+   "says": "five rounds between 2.6 and 3.1: 2021-22",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2021-22",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2021-22",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.55,
+   "max": 3.15
+  },
+  {
+   "says": "five rounds between 2.6 and 3.1: 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2022-23",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2022-23",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.55,
+   "max": 3.15
+  },
+  {
+   "says": "five rounds between 2.6 and 3.1: 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.55,
+   "max": 3.15
+  },
+  {
+   "says": "five rounds between 2.6 and 3.1: 2024",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2024",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2024",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.55,
+   "max": 3.15
+  },
+  {
+   "says": "five rounds between 2.6 and 3.1: 2025",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "urban",
+        "female"
+       ]
+      }
+     ]
+    }
+   },
+   "min": 2.55,
+   "max": 3.15
+  },
+  {
+   "says": "Uttar Pradesh 2.2 times in 2023-24 (bar)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2023-24",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Uttar Pradesh"
+   },
+   "equals": 22
+  },
+  {
+   "says": "India 1.7 times in 2025 (card text)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "rural",
+        "female"
+       ]
+      },
+      {
+       "plfs": [
+        "LFPR",
+        "2025",
+        "urban",
+        "female"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "India"
+   },
+   "equals": 17
+  }
+ ]
+}

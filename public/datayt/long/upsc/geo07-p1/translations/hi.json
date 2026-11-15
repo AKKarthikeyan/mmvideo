@@ -1,0 +1,476 @@
+{
+ "film": "geo07-p1",
+ "lang": "hi",
+ "status": "DRAFT",
+ "reviewed_by": null,
+ "voice": "Gemini Charon",
+ "scenes": {
+  "s001": {
+   "en": "In Nagpur, a May afternoon averages forty-three degrees Celsius. Rain falls on about four days that month.",
+   "text": "नागपुर में मई की दोपहर औसतन तैंतालीस डिग्री सेल्सियस है। उस महीने बारिश करीब चार दिन।",
+   "est_sec": 6.02,
+   "slot_sec": 6.57,
+   "flag": "",
+   "notes": ""
+  },
+  "s002": {
+   "en": "In July, afternoons average thirty-two degrees. Rain falls on about twenty-one days.",
+   "text": "जुलाई में दोपहर का औसत बत्तीस डिग्री है। बारिश करीब इक्कीस दिन।",
+   "est_sec": 4.42,
+   "slot_sec": 5.37,
+   "flag": "",
+   "notes": ""
+  },
+  "s003": {
+   "en": "So if heat brings the monsoon, why does the rain wait for the cooler months?",
+   "text": "अगर गर्मी मानसून लाती है, तो बारिश ठंडे महीनों तक क्यों रुकती है?",
+   "est_sec": 4.51,
+   "slot_sec": 4.77,
+   "flag": "",
+   "notes": ""
+  },
+  "s004": {
+   "en": "This matters. On average, about three-quarters of India's yearly rain falls from June to September.",
+   "text": "यह अहम है। औसतन, भारत की सालाना बारिश का करीब तीन-चौथाई जून से सितंबर में गिरता है।",
+   "est_sec": 5.58,
+   "slot_sec": 5.83,
+   "flag": "",
+   "notes": ""
+  },
+  "s005": {
+   "en": "Our textbooks give a clear answer for why. Here is the plan. We'll make that answer as strong as we can. Then we'll test it against the record.",
+   "text": "हमारी पाठ्यपुस्तकें इसका साफ़ जवाब देती हैं। योजना यह है। पहले उस जवाब को मज़बूत बनाएँगे। फिर उसे रिकॉर्ड पर परखेंगे।",
+   "est_sec": 8.23,
+   "slot_sec": 8.57,
+   "flag": "",
+   "notes": ""
+  },
+  "s006": {
+   "en": "The textbook answer goes like this. In summer, land heats up faster than the sea. Air over the hot land rises. Cooler, moist air flows in from the sea, and it brings rain.",
+   "text": "पाठ्यपुस्तक का जवाब यह है। गर्मियों में ज़मीन समुद्र से जल्दी गरम होती है। गरम ज़मीन के ऊपर की हवा उठती है। समुद्र से ठंडी, नम हवा अंदर आती है और बारिश लाती है।",
+   "est_sec": 10.8,
+   "slot_sec": 11.07,
+   "flag": "",
+   "notes": ""
+  },
+  "s007": {
+   "en": "Our Class 9 book says the south-west monsoon is mainly caused by this unequal heating.",
+   "text": "कक्षा नौ की किताब कहती है: दक्षिण-पश्चिम मानसून मुख्यतः इस असमान तापन से बनता है।",
+   "est_sec": 5.66,
+   "slot_sec": 6.07,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें।"
+  },
+  "s008": {
+   "en": "It feels right. You can feel it on any beach.",
+   "text": "यह सही लगता है। हर तट पर यह महसूस होता है।",
+   "est_sec": 2.65,
+   "slot_sec": 2.93,
+   "flag": "",
+   "notes": ""
+  },
+  "s009": {
+   "en": "Why does land heat faster? Walk on a beach at noon. The sand burns your feet, but the water stays cool.",
+   "text": "ज़मीन जल्दी गरम क्यों होती है? दोपहर में समुद्र-तट पर चलिए। रेत से पाँव जलते हैं, पर पानी ठंडा रहता है।",
+   "est_sec": 6.9,
+   "slot_sec": 6.9,
+   "flag": "",
+   "notes": ""
+  },
+  "s010": {
+   "en": "Land heats fast and cools fast. Water heats slowly and cools slowly.",
+   "text": "ज़मीन जल्दी गरम और जल्दी ठंडी होती है। पानी धीरे गरम, धीरे ठंडा।",
+   "est_sec": 4.34,
+   "slot_sec": 5.47,
+   "flag": "short",
+   "notes": ""
+  },
+  "s011": {
+   "en": "Why does air move at all? Air has weight. The weight of the air above us is called air pressure.",
+   "text": "हवा चलती ही क्यों है? हवा में वज़न है। हमारे ऊपर की हवा का वज़न वायुदाब कहलाता है।",
+   "est_sec": 5.49,
+   "slot_sec": 5.37,
+   "flag": "",
+   "notes": ""
+  },
+  "s012": {
+   "en": "Over a low-pressure area, air tends to rise. Over a high-pressure area, it tends to sink. Wind blows from high pressure towards low pressure.",
+   "text": "निम्न दाब के ऊपर हवा ऊपर उठती है, ऐसी प्रवृत्ति है। उच्च दाब पर नीचे बैठती है। हवा उच्च दाब से निम्न दाब की ओर चलती है।",
+   "est_sec": 7.88,
+   "slot_sec": 9.57,
+   "flag": "",
+   "notes": ""
+  },
+  "s013": {
+   "en": "The faster pressure changes from place to place, the stronger the wind. That rate of change is the pressure gradient.",
+   "text": "दाब जितनी तेज़ी से जगह-जगह बदलता है, हवा उतनी तेज़ चलती है। बदलाव की यह दर दाब प्रवणता है।",
+   "est_sec": 6.02,
+   "slot_sec": 6.57,
+   "flag": "",
+   "notes": "'दाब प्रवणता' standard NCERT Hindi term."
+  },
+  "s014": {
+   "en": "At the beach, this makes a daily wind. By day, air over the hot sand rises, and cooler air slides in from the sea. That is a sea breeze.",
+   "text": "समुद्र-तट पर इससे रोज़ की हवा बनती है। दिन में गरम रेत के ऊपर की हवा उठती है, और समुद्र से ठंडी हवा आ जाती है। यह समुद्री समीर (sea breeze) है।",
+   "est_sec": 9.29,
+   "slot_sec": 10.87,
+   "flag": "",
+   "notes": ""
+  },
+  "s015": {
+   "en": "At night the land cools faster, and the breeze turns round.",
+   "text": "रात को ज़मीन जल्दी ठंडी होती है, हवा पलट जाती है।",
+   "est_sec": 3.27,
+   "slot_sec": 3.4,
+   "flag": "",
+   "notes": ""
+  },
+  "s016": {
+   "en": "Now make the beach as big as a country.",
+   "text": "अब इस तट को देश जितना बड़ा कर दीजिए।",
+   "est_sec": 2.39,
+   "slot_sec": 2.53,
+   "flag": "",
+   "notes": ""
+  },
+  "s017": {
+   "en": "In 1686, Halley suggested exactly that. In his model, the monsoon was a gigantic land-sea breeze.",
+   "text": "सोलह सौ छियासी में हैली ने ठीक यही सुझाया था। उनके मॉडल में मानसून एक विशालकाय स्थल-समुद्र समीर था।",
+   "est_sec": 6.9,
+   "slot_sec": 8.67,
+   "flag": "short",
+   "notes": ""
+  },
+  "s018": {
+   "en": "In 2018, Gadgil wrote that many papers and most textbooks still treat this heating as the main driver.",
+   "text": "गाडगिल ने दो हज़ार अठारह में लिखा कि कई शोध और अधिकतर किताबें अब भी तापन को मुख्य वजह मानती हैं।",
+   "est_sec": 6.64,
+   "slot_sec": 5.97,
+   "flag": "long",
+   "notes": "Lead: full grammar restored; no gendered verb for Gadgil (3 Nov 2026)."
+  },
+  "s019": {
+   "en": "But look at a map of the monsoon winds. They don't blow straight north into India. They arrive from the south-west. Why?",
+   "text": "मानसूनी हवाओं का नक्शा देखिए। वे सीधे उत्तर की ओर नहीं बहतीं। वे दक्षिण-पश्चिम से आती हैं। क्यों?",
+   "est_sec": 6.64,
+   "slot_sec": 6.5,
+   "flag": "",
+   "notes": ""
+  },
+  "s020": {
+   "en": "Because the Earth spins. Roll a ball across a spinning roundabout, and to the riders it seems to curve.",
+   "text": "पृथ्वी घूमती है। घूमते गोल झूले पर गेंद लुढ़काइए, तो सवारों को वह मुड़ती दिखती है।",
+   "est_sec": 5.66,
+   "slot_sec": 5.7,
+   "flag": "",
+   "notes": ""
+  },
+  "s021": {
+   "en": "On Earth this is the Coriolis force. North of the equator it bends moving air to the right. South of it, to the left. It is strongest at the poles and absent at the equator.",
+   "text": "पृथ्वी पर यह कोरिऑलिस बल है। भूमध्य रेखा के उत्तर में यह चलती हवा को दाईं ओर मोड़ता है। दक्षिण में बाईं ओर। ध्रुवों पर यह सबसे तेज़ है, भूमध्य रेखा पर नहीं होता।",
+   "est_sec": 10.88,
+   "slot_sec": 10.6,
+   "flag": "",
+   "notes": ""
+  },
+  "s022": {
+   "en": "Our monsoon winds start south of the equator as the south-east trade winds. They cross the equator between about forty and sixty degrees east. There they bend to the right. The south-east trades become the south-west monsoon.",
+   "text": "मानसूनी हवाएँ भूमध्य रेखा के दक्षिण में दक्षिण-पूर्वी व्यापारिक पवनें होती हैं। वे लगभग चालीस से साठ डिग्री पूर्व पर रेखा पार कर दाएँ मुड़ती हैं और दक्षिण-पश्चिम मानसून बन जाती हैं।",
+   "est_sec": 12.92,
+   "slot_sec": 12.63,
+   "flag": "",
+   "notes": "Lead: rewritten in full sentences (no clipped grammar), 2 Nov 2026."
+  },
+  "s023": {
+   "en": "So the textbook answer is neat. But does it pass the test? If heat drives the monsoon, more heat should mean more rain.",
+   "text": "किताब का जवाब सुघड़ है। क्या वह खरा उतरता है? गर्मी मानसून चलाती है, तो ज़्यादा गर्मी पर ज़्यादा बारिश होनी चाहिए।",
+   "est_sec": 7.88,
+   "slot_sec": 7.67,
+   "flag": "",
+   "notes": ""
+  },
+  "s024": {
+   "en": "In 1921, Simpson, as Gadgil reports, pointed out three problems. India is much hotter in May, before the monsoon, than in July.",
+   "text": "गाडगिल के अनुसार, उन्नीस सौ इक्कीस में सिम्पसन ने तीन दिक़्क़तें बताईं। मानसून से पहले, मई जुलाई से कहीं ज़्यादा गरम रहता है।",
+   "est_sec": 8.76,
+   "slot_sec": 9.33,
+   "flag": "",
+   "notes": "Lead: rewritten in full sentences (no clipped grammar), 2 Nov 2026."
+  },
+  "s025": {
+   "en": "Simpson said the north-west, where the land is hottest, got no monsoon rain at all. Gadgil's modern maps show hardly any.",
+   "text": "सिम्पसन ने कहा, सबसे गरम उत्तर-पश्चिम में मानसूनी बारिश हुई ही नहीं। गाडगिल के नए नक्शों में यह बहुत कम है।",
+   "est_sec": 7.35,
+   "slot_sec": 8.73,
+   "flag": "",
+   "notes": "Lead: full grammar restored; no gendered verb for Gadgil (3 Nov 2026)."
+  },
+  "s026": {
+   "en": "And in years of poor rain, the land was on average hotter, not cooler.",
+   "text": "और कम बारिश वाले सालों में ज़मीन औसतन ठंडी नहीं, गरम थी।",
+   "est_sec": 3.81,
+   "slot_sec": 4.27,
+   "flag": "",
+   "notes": ""
+  },
+  "s027": {
+   "en": "Nearly a century later, Sulochana Gadgil, of the Indian Institute of Science, checked the record. Gadgil looked at the years 1950 to 2014.",
+   "text": "लगभग सौ साल बाद, भारतीय विज्ञान संस्थान की सुलोचना गाडगिल ने रिकॉर्ड जाँचा। उन्होंने उन्नीस सौ पचास से दो हज़ार चौदह देखे।",
+   "est_sec": 8.67,
+   "slot_sec": 10.97,
+   "flag": "short",
+   "notes": ""
+  },
+  "s028": {
+   "en": "In years when India's June-to-September land temperature was higher, monsoon rain tended to be lower. More heat should mean more rain. In these records, it tended to go the other way.",
+   "text": "जिन सालों भारत का जून-सितंबर ज़मीनी तापमान ऊँचा था, बारिश कम रहने की प्रवृत्ति थी। ज़्यादा गर्मी पर ज़्यादा बारिश होनी चाहिए। रिकॉर्ड में उलटी प्रवृत्ति थी।",
+   "est_sec": 11.06,
+   "slot_sec": 10.77,
+   "flag": "",
+   "notes": ""
+  },
+  "s029": {
+   "en": "But here is the surprise. Our Class 11 textbook already warned us. In its section on the nature of the monsoon, it says no single theory has fully explained it. It says the breakthrough came when scientists studied the whole planet, not just one region.",
+   "text": "पर हैरानी की बात है, कक्षा ग्यारह की किताब पहले ही चेता चुकी है। मानसून की प्रकृति वाले हिस्से में वह कहती है कि कोई एक सिद्धांत इसे पूरी तरह नहीं समझा सका, और सफलता तब मिली जब वैज्ञानिकों ने पूरी पृथ्वी को देखा, एक क्षेत्र को नहीं।",
+   "est_sec": 15.93,
+   "slot_sec": 15.73,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें।"
+  },
+  "s030": {
+   "en": "So is heat useless? Hold that question. First, let's zoom out.",
+   "text": "तो क्या गर्मी बेकार है? सवाल थामिए। पहले ज़रा दूर से देखें।",
+   "est_sec": 3.98,
+   "slot_sec": 4.87,
+   "flag": "",
+   "notes": ""
+  },
+  "s031": {
+   "en": "Remember the very first picture in this video? That white band. Around the tropics runs a band where winds come together and rain falls.",
+   "text": "इस वीडियो की पहली तस्वीर याद है? वह सफ़ेद पट्टी। उष्णकटिबंध के आसपास एक पट्टी है जहाँ हवाएँ मिलती हैं और बारिश होती है।",
+   "est_sec": 8.23,
+   "slot_sec": 8.07,
+   "flag": "",
+   "notes": ""
+  },
+  "s032": {
+   "en": "There, strong heating makes warm, moist air rise, up to about fourteen kilometres. High up, that air flows towards the poles. Near thirty degrees north and south, it sinks and builds high pressure. Then it flows back along the surface towards the equator. These returning winds are the trade winds.",
+   "text": "वहाँ तेज़ गरमी से गरम, नम हवा करीब चौदह किलोमीटर ऊपर उठती है। ऊँचाई पर वह ध्रुवों की ओर बहती है। उत्तर और दक्षिण में करीब तीस डिग्री के पास वह नीचे बैठकर उच्च दाब बनाती है। फिर सतह के साथ भूमध्य रेखा की ओर लौटती है। लौटती इन हवाओं को व्यापारिक पवनें कहते हैं।",
+   "est_sec": 17.61,
+   "slot_sec": 18.93,
+   "flag": "",
+   "notes": ""
+  },
+  "s033": {
+   "en": "Think of a pot of water on a stove. It rises in the middle, spreads, sinks at the sides and flows back. This giant loop is called the Hadley cell.",
+   "text": "चूल्हे पर रखे पानी के बर्तन की सोचिए। पानी बीच में उठता है, फैलता है, किनारों पर बैठता है और लौट आता है। इस विशाल चक्र को हैडली सेल (Hadley cell) कहते हैं।",
+   "est_sec": 10.27,
+   "slot_sec": 10.07,
+   "flag": "",
+   "notes": "'हैडली सेल' / 'हैडली कोष्ठ' both seen; transliteration used."
+  },
+  "s034": {
+   "en": "Where the trade winds from both sides meet, air is forced up. And rising air is what makes cloud and rain. That meeting zone is called the Inter-Tropical Convergence Zone, or ITCZ. It is the planet's rain belt.",
+   "text": "जहाँ दोनों ओर की व्यापारिक पवनें मिलती हैं, हवा ऊपर धकेली जाती है। उठती हवा ही बादल और बारिश बनाती है। इस मिलन क्षेत्र को अंतर-उष्णकटिबंधीय अभिसरण क्षेत्र कहते हैं। यही पृथ्वी की वर्षा पट्टी है।",
+   "est_sec": 13.54,
+   "slot_sec": 13.3,
+   "flag": "",
+   "notes": ""
+  },
+  "s035": {
+   "en": "Here is the key. The belts move with the sun. In our summer they shift north. In our winter they slide back south.",
+   "text": "यही कुंजी है। पट्टियाँ सूरज के साथ खिसकती हैं। गर्मियों में उत्तर जाती हैं, सर्दियों में लौटती हैं।",
+   "est_sec": 6.9,
+   "slot_sec": 6.97,
+   "flag": "",
+   "notes": ""
+  },
+  "s036": {
+   "en": "Our Class 11 book says the most pronounced effect of this shift is seen in the monsoons.",
+   "text": "कक्षा ग्यारह की किताब कहती है, इस खिसकाव का सबसे साफ़ असर मानसूनों में दिखता है।",
+   "est_sec": 5.58,
+   "slot_sec": 5.57,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें।"
+  },
+  "s037": {
+   "en": "NCERT puts the ITCZ near the equator. In July it sits at about twenty to twenty-five degrees north, over the Gangetic plain. There it has a special name: the monsoon trough. So: the sun moves north, the belt moves north, and the rain moves with it.",
+   "text": "एनसीईआरटी इस अभिसरण क्षेत्र को भूमध्य रेखा के पास रखती है। जुलाई में यह गंगा के मैदान के ऊपर, करीब बीस से पच्चीस डिग्री उत्तर पर होता है। वहाँ इसका एक खास नाम है: मानसून द्रोणी (monsoon trough)। यानी सूरज उत्तर गया, पट्टी उत्तर गई, और बारिश उसके साथ चली।",
+   "est_sec": 17.26,
+   "slot_sec": 18.1,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें। ITCZ is said as 'अभिसरण क्षेत्र' after first full mention."
+  },
+  "s038": {
+   "en": "So here is the newer picture. On this view, the monsoon is not India sucking in a sea breeze. It is the tropical rain belt moving north with the sun. It settles over our subcontinent for the season.",
+   "text": "यह नया चित्र है। इस दृष्टि से मानसून भारत का समुद्री समीर खींचना नहीं है। यह उष्णकटिबंधीय वर्षा पट्टी का सूरज के साथ उत्तर खिसकना है। वह मौसम भर हमारे उपमहाद्वीप पर टिकी रहती है।",
+   "est_sec": 12.39,
+   "slot_sec": 12.17,
+   "flag": "",
+   "notes": ""
+  },
+  "s039": {
+   "en": "A 2020 review by Geen and colleagues says theory and observations support this view of monsoons. They call it a shift in the understanding.",
+   "text": "गीन व साथियों की दो हज़ार बीस की समीक्षा कहती है, सिद्धांत व प्रेक्षण इस समझ के पक्ष में हैं। वे इसे समझ का बदलाव कहते हैं।",
+   "est_sec": 8.32,
+   "slot_sec": 8.17,
+   "flag": "",
+   "notes": ""
+  },
+  "s040": {
+   "en": "Gadgil goes further, and argues that the sea-breeze view should be abandoned. Not everyone agrees.",
+   "text": "गाडगिल का तर्क और आगे जाता है: समुद्री समीर वाली सोच छोड़ देनी चाहिए। सब सहमत नहीं।",
+   "est_sec": 5.66,
+   "slot_sec": 6.37,
+   "flag": "",
+   "notes": "Lead: full grammar restored; no gendered verb for Gadgil (3 Nov 2026)."
+  },
+  "s041": {
+   "en": "But does heat play no part at all? Some scientists say it still does. Over the deserts of north-west India and Pakistan, summer heat makes a shallow low called the heat low. It is only about one and a half kilometres deep. IMD links an intense heat low, to some extent, with a good monsoon.",
+   "text": "पर क्या गर्मी की कोई भूमिका नहीं? कुछ वैज्ञानिक कहते हैं कि है। उत्तर-पश्चिम भारत और पाकिस्तान के रेगिस्तानों पर गर्मी एक उथला निम्न दाब बनाती है, हीट लो। यह केवल करीब डेढ़ किलोमीटर गहरा है। भारत मौसम विज्ञान विभाग (IMD) तेज़ हीट लो को कुछ हद तक अच्छे मानसून से जोड़ता है।",
+   "est_sec": 18.67,
+   "slot_sec": 18.4,
+   "flag": "",
+   "notes": "'हीट लो' = Devanagari of English; no standard NCERT Hindi term confirmed (NCERT Hindi may say 'तापीय निम्न दाब'). Check."
+  },
+  "s042": {
+   "en": "Wu and colleagues found something in 2012. Land-sea heating still sets the monsoon south of about twenty degrees north. Gadgil reads the evidence differently. Scientists still argue about how much heat matters.",
+   "text": "वू व साथियों ने दो हज़ार बारह में पाया: करीब बीस डिग्री उत्तर के दक्षिण में स्थल-समुद्र तापन अब भी मानसून तय करता है। साक्ष्य पर गाडगिल की राय अलग है। गर्मी कितनी अहम है, बहस है।",
+   "est_sec": 12.04,
+   "slot_sec": 12.83,
+   "flag": "",
+   "notes": "Lead: full grammar restored; no gendered verb for Gadgil (3 Nov 2026)."
+  },
+  "s043": {
+   "en": "From that heat low, the monsoon trough stretches to the head of the Bay of Bengal. When the trough sits south of its usual place, the monsoon is active over most of India. When it moves north, most of India has break conditions, and the Himalayan foothills get heavy rain. We follow the breaks in part two.",
+   "text": "उस हीट लो से मानसून द्रोणी बंगाल की खाड़ी के सिरे तक फैली है। जब द्रोणी अपनी सामान्य जगह से दक्षिण में हो, तो ज़्यादातर भारत में मानसून सक्रिय रहता है। उत्तर खिसके तो ज़्यादातर भारत में विच्छेद रहता है और हिमालय की तलहटी में भारी बारिश होती है। विच्छेद को हम दूसरे भाग में देखेंगे।",
+   "est_sec": 19.56,
+   "slot_sec": 19.03,
+   "flag": "",
+   "notes": "'विच्छेद' for 'break' (NCERT Hindi: मानसून में विच्छेद / विराम) - check against NCERT Hindi."
+  },
+  "s044": {
+   "en": "Two more parts drive the winds. Far south of the equator sits a high-pressure area called the Mascarene High. When it strengthens, it boosts a fast, low wind that crosses the equator.",
+   "text": "हवाओं के दो हिस्से और हैं। भूमध्य रेखा से बहुत दक्षिण में मस्कारेन हाई नाम का उच्च दाब है। मज़बूत होने पर वह भूमध्य रेखा पार करती तेज़, नीची हवा को बल देता है।",
+   "est_sec": 10.8,
+   "slot_sec": 11.53,
+   "flag": "",
+   "notes": "'मस्कारेन उच्च दाब' used in NCERT Hindi; here 'मस्कारेन हाई' for ear. Check."
+  },
+  "s045": {
+   "en": "That wind is the Somali jet. It blows only about one to one and a half kilometres up. It reaches India's west coast in June, and is strongest in July. When it strengthens, the monsoon strengthens over peninsular India.",
+   "text": "वह हवा सोमाली जेट (Somali jet) है। वह सिर्फ़ एक से डेढ़ किलोमीटर ऊँचाई पर बहती है। जून में पश्चिमी तट पर पहुँचती है, जुलाई में सबसे तेज़ होती है। उसके मज़बूत होने पर प्रायद्वीपीय भारत में मानसून भी मज़बूत होता है।",
+   "est_sec": 14.6,
+   "slot_sec": 14.17,
+   "flag": "",
+   "notes": ""
+  },
+  "s046": {
+   "en": "But one more piece of geography sits in the north. The Himalaya. Our textbook calls it a climatic divide. It shields India from cold northern winds, and traps the monsoon winds inside the subcontinent.",
+   "text": "उत्तर में भूगोल का एक और टुकड़ा है। हिमालय। किताब उसे जलवायु विभाजक कहती है। वह भारत को उत्तर की ठंडी हवाओं से बचाता है, और मानसूनी हवाओं को उपमहाद्वीप के भीतर रोक लेता है।",
+   "est_sec": 11.77,
+   "slot_sec": 11.73,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें।"
+  },
+  "s047": {
+   "en": "North of the Himalaya lies the Tibetan Plateau, rising over four and a half kilometres. How it matters is still argued. IMD's 2025 report calls it both a barrier to the winds and a heat source.",
+   "text": "हिमालय के उत्तर में साढ़े चार किलोमीटर से ऊँचा तिब्बती पठार है। इसके असर पर बहस है। आईएमडी की रिपोर्ट, दो हज़ार पच्चीस, इसे हवाओं की बाधा भी कहती है, गर्मी का स्रोत भी।",
+   "est_sec": 11.42,
+   "slot_sec": 11.27,
+   "flag": "",
+   "notes": ""
+  },
+  "s048": {
+   "en": "Boos and Kuang's models fit another idea. The Himalaya and nearby ranges act as a wall that keeps cold, dry air out. Wu and colleagues argue that plateau heating drives the eastern part of the South Asian monsoon. This one is still open.",
+   "text": "बूस और कुआंग के मॉडल एक और विचार से मेल खाते हैं। हिमालय और आसपास की श्रेणियाँ दीवार की तरह ठंडी, सूखी हवा को बाहर रखती हैं। वू व साथी कहते हैं कि पठार का तापन दक्षिण एशियाई मानसून का पूर्वी हिस्सा चलाता है। यह अब भी खुला है।",
+   "est_sec": 15.22,
+   "slot_sec": 14.93,
+   "flag": "",
+   "notes": ""
+  },
+  "s049": {
+   "en": "One more piece sits very high up. In July, a fast wind blows from east to west high above India. It is the Tropical Easterly Jet, stretching from Vietnam to west Africa, near the latitude of Chennai.",
+   "text": "एक और हिस्सा बहुत ऊँचाई पर है। जुलाई में भारत के ऊपर पूर्व से पश्चिम तेज़ हवा बहती है। यह उष्णकटिबंधीय पूर्वी जेट (Tropical Easterly Jet) है, वियतनाम से पश्चिम अफ़्रीका तक, चेन्नई के अक्षांश के पास।",
+   "est_sec": 13.72,
+   "slot_sec": 13.3,
+   "flag": "",
+   "notes": ""
+  },
+  "s050": {
+   "en": "The monsoon often arrives suddenly, with thunder and lightning. This is called the burst.",
+   "text": "मानसून अक्सर अचानक आता है, गरज और बिजली के साथ। इसे प्रस्फोट (burst) कहते हैं।",
+   "est_sec": 5.22,
+   "slot_sec": 5.57,
+   "flag": "",
+   "notes": "'मानसून प्रस्फोट' - standard NCERT Hindi."
+  },
+  "s051": {
+   "en": "Our textbook says the jet streams changing at this time are held responsible for the burst. A 2007 review lists the jet changes among the circulation changes that come with the onset. It does not say they cause it. Whether the jets trigger the burst is not settled in what we read.",
+   "text": "किताब कहती है कि इस समय बदलती जेट धाराओं को प्रस्फोट का ज़िम्मेदार माना जाता है। दो हज़ार सात की समीक्षा जेट बदलावों को आगमन के परिसंचरण बदलावों में गिनती है, कारण नहीं कहती। जेट प्रस्फोट शुरू करते हैं या नहीं, यह हमारे पढ़े में तय नहीं है।",
+   "est_sec": 16.64,
+   "slot_sec": 16.2,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें।"
+  },
+  "s052": {
+   "en": "So why does the rain wait, if heat brings the monsoon? On the newer view, land heat is not what brings it. On that view, the rain comes when the rain belt arrives overhead, and rising air fills the sky with cloud.",
+   "text": "अगर गर्मी मानसून लाती है, तो बारिश इंतज़ार क्यों करती है? नई दृष्टि में ज़मीन की गर्मी उसे नहीं लाती। उसी दृष्टि में बारिश तब आती है जब वर्षा पट्टी ऊपर पहुँचती है, और उठती हवा आसमान को बादलों से भर देती है।",
+   "est_sec": 14.07,
+   "slot_sec": 13.73,
+   "flag": "",
+   "notes": ""
+  },
+  "s053": {
+   "en": "Our textbook says day temperatures fall by five to eight degrees Celsius between mid-June and mid-July. And Gadgil's maps put the hottest land in the north-west, where there is hardly any monsoon rain. On Gadgil's reading, the rain follows the belt, not the heat.",
+   "text": "किताब कहती है, मध्य जून से मध्य जुलाई तक दिन का तापमान पाँच से आठ डिग्री सेल्सियस गिरता है। गाडगिल के नक्शे में सबसे गरम ज़मीन उत्तर-पश्चिम में है, जहाँ बारिश नाममात्र है। गाडगिल के मत से बारिश गर्मी के नहीं, पट्टी के साथ चलती है।",
+   "est_sec": 15.75,
+   "slot_sec": 15.37,
+   "flag": "",
+   "notes": "NCERT का अंग्रेज़ी संस्करण से अनूदित; NCERT के अपने हिंदी संस्करण से मिलान करें। Lead: rewritten in full sentences (no clipped grammar), 2 Nov 2026."
+  },
+  "s054": {
+   "en": "For the exam, write it this way. The south-east trades cross the equator and become the south-west monsoon. The classic explanation is unequal heating of land and sea. A 2020 review supports seeing the monsoon as the tropical convergence zone shifting north. Over India in July, NCERT calls it the monsoon trough. The heat low, the Mascarene High and the Somali jet are linked to its strength. The Himalaya shield and trap the winds. The roles of the jets and of Tibet are still debated.",
+   "text": "परीक्षा में ऐसे लिखिए। दक्षिण-पूर्वी व्यापारिक पवनें भूमध्य रेखा पार कर दक्षिण-पश्चिम मानसून बनती हैं। पारंपरिक व्याख्या: ज़मीन-समुद्र का असमान तापन। दो हज़ार बीस की समीक्षा मानसून को अभिसरण क्षेत्र के उत्तर खिसकने के रूप में देखने का समर्थन करती है। जुलाई में भारत के ऊपर एनसीईआरटी इसे मानसून द्रोणी कहती है। हीट लो, मस्कारेन हाई और सोमाली जेट इसकी मज़बूती से जुड़े हैं। हिमालय हवाओं को रोकता और फँसाता है। जेट धाराओं और तिब्बत की भूमिका पर बहस है।",
+   "est_sec": 31.59,
+   "slot_sec": 33.5,
+   "flag": "",
+   "notes": ""
+  },
+  "s055": {
+   "en": "In part two, we follow the monsoon across India. Where it lands first, where it reaches last, and what normal rain really means.",
+   "text": "दूसरे भाग में हम मानसून के साथ भारत भर चलेंगे। वह पहले कहाँ पहुँचता है, आख़िर में कहाँ, और सामान्य बारिश वाकई क्या है।",
+   "est_sec": 8.05,
+   "slot_sec": 7.87,
+   "flag": "",
+   "notes": ""
+  }
+ },
+ "glossary": {
+  "Inter-Tropical Convergence Zone (ITCZ)": "अंतर-उष्णकटिबंधीय अभिसरण क्षेत्र",
+  "Coriolis force": "कोरिऑलिस बल",
+  "Hadley cell": "हैडली सेल",
+  "monsoon trough": "मानसून द्रोणी",
+  "pressure gradient": "दाब प्रवणता",
+  "air pressure": "वायुदाब",
+  "low pressure / high pressure": "निम्न दाब / उच्च दाब",
+  "sea breeze": "समुद्री समीर",
+  "trade winds": "व्यापारिक पवनें",
+  "south-west monsoon": "दक्षिण-पश्चिम मानसून",
+  "heat low": "हीट लो (Devanagari of English; unsure)",
+  "Mascarene High": "मस्कारेन हाई (NCERT Hindi: मस्कारेन उच्च दाब; unsure)",
+  "Somali jet": "सोमाली जेट",
+  "Tropical Easterly Jet": "उष्णकटिबंधीय पूर्वी जेट",
+  "jet streams": "जेट धाराएँ",
+  "burst": "मानसून प्रस्फोट",
+  "break": "विच्छेद (unsure; NCERT Hindi may say विराम)",
+  "climatic divide": "जलवायु विभाजक",
+  "Tibetan Plateau": "तिब्बत का पठार",
+  "rain belt": "वर्षा पट्टी",
+  "unequal heating": "असमान तापन",
+  "equator": "भूमध्य रेखा",
+  "IMD": "भारत मौसम विज्ञान विभाग (IMD)",
+  "NCERT": "एनसीईआरटी",
+  "Gangetic plain": "गंगा का मैदान"
+ }
+}

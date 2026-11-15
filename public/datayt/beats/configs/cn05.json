@@ -1,0 +1,492 @@
+{
+ "id": "cn05",
+ "type": "paradox",
+ "rules": 2,
+ "theme": "power",
+ "chip": "DATA PARADOX",
+ "source_short": "CEA · MOSPI via RBI · 2022-24",
+ "palette": "E",
+ "state": "Gujarat",
+ "source": "Power lost in transmission and distribution, 2022-23: Central Electricity Authority, as published in the RBI Handbook of Statistics on Indian States, Table 148 (33 states and UTs with data). Renewable power: grid-connected capacity at end-March 2024 (solar, wind, small hydro, bio-power; large hydro not included), MOSPI Energy Statistics via the same Handbook, Table 143 (35 states and UTs), over projected population on 1 March 2024 (National Commission on Population).",
+ "hook": [
+  "*Gujarat*: *3.1×* Maharashtra's",
+  "renewable power per person,",
+  "same losses, 2022-24."
+ ],
+ "hook_vo": "Gujarat had three times Maharashtra's renewable power per person. Same losses.",
+ "facts": [
+  {
+   "state": "Gujarat",
+   "kicker": "POWER LOST IN WIRES · 2022-23",
+   "data": {
+    "rbi": [
+     148,
+     "2022-23"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Maharashtra"
+   ],
+   "text": "of power lost between plant and user. Maharashtra: 14.8%. Level.",
+   "sub": "Transmission and distribution losses. 2021-22: Gujarat 18.5%, Maharashtra 17.4%. {n} states and UTs with data.",
+   "vo": "Gujarat lost fifteen percent of its power, level with Maharashtra."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "RENEWABLE WATTS PER PERSON · 2024",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "unit": "",
+   "text": "watts of grid-connected renewable power per person. Large hydro is not counted.",
+   "sub": "End-March 2024: solar, wind, small hydro and bio-power. {n} states and UTs with data.",
+   "vo": "Gujarat had three hundred fifty-two watts of renewable power per person."
+  },
+  {
+   "state": "Maharashtra",
+   "kicker": "RENEWABLE WATTS PER PERSON · 2024",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "unit": "",
+   "compare": [
+    "Gujarat"
+   ],
+   "text": "watts per person. Gujarat had 3.1 times that, at the same losses.",
+   "sub": "The same comparison, end-March 2023: 2.7 times. 2022: 2.8 times.",
+   "vo": "Maharashtra had one hundred fourteen watts."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "rbi": [
+     148,
+     "2022-23"
+    ]
+   },
+   "equals": 15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "rbi": [
+      148,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      148,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Maharashtra",
+    "data": {
+     "rbi": [
+      148,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "rbi": [
+      148,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 352
+  },
+  {
+   "kind": "round",
+   "state": "Maharashtra",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 114
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2024"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2024"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 3.09
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2023"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 2.69
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Gujarat",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2022"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2022"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        143,
+        "2022"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2022"
+       ]
+      }
+     ],
+     "scale": 1000
+    }
+   },
+   "min": 2.76
+  }
+ ],
+ "tests": [
+  {
+   "says": "Gujarat has 3.1 times Maharashtra's renewable power per person",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": 3.05,
+   "max": 3.15
+  },
+  {
+   "says": "Gujarat three times Maharashtra (voice)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Gujarat"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          143,
+          "2024"
+         ]
+        },
+        {
+         "tbl": [
+          "population/projected",
+          "2024"
+         ]
+        }
+       ],
+       "scale": 1000
+      },
+      "state": "Maharashtra"
+     }
+    ]
+   },
+   "min": 2.9,
+   "max": 3.2
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "rbi": [
+     148,
+     "2022-23"
+    ]
+   },
+   "b": {
+    "ratio": [
+     {
+      "rbi": [
+       143,
+       "2024"
+      ]
+     },
+     {
+      "tbl": [
+       "population/projected",
+       "2024"
+      ]
+     }
+    ],
+    "scale": 1000
+   },
+   "max_abs": 0.3
+  },
+  "lines": [
+   "Across {n} states, losses and",
+   "renewable power per person",
+   "are only *weakly linked.*",
+   "*Gujarat* sits far above."
+  ],
+  "vo": "Losses and renewable power are only weakly linked. Gujarat sits far above."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      143,
+      "2024"
+     ]
+    },
+    {
+     "tbl": [
+      "population/projected",
+      "2024"
+     ]
+    }
+   ],
+   "scale": 1000
+  },
+  "unit": "",
+  "dec": 0,
+  "title": "Renewable power per person, *every state*",
+  "sub": "watts per person · end-March 2024",
+  "note": "Grid-connected renewable capacity (solar, wind, small hydro, bio); large hydro left out. Both states outlined. The table shows how much, not why.",
+  "ring": [
+   "Gujarat",
+   "Maharashtra"
+  ],
+  "vo": "Here is every state's figure. It counts renewable capacity, not power used."
+ },
+ "end": {
+  "q": "Is your state a *renewable* leader?",
+  "sub": "Comment below.",
+  "vo": "Is your state a renewable leader? Comment below."
+ },
+ "yt_title": "Gujarat vs Maharashtra: Same Power Losses, 3.1x Renewables"
+}

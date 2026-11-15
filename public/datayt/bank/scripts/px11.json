@@ -1,0 +1,429 @@
+{
+ "id": "px11",
+ "type": "paradox",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "IIPS · NFHS-6 · RBI · 2023-24",
+ "palette": "A",
+ "state": "Odisha",
+ "source": "Vaccination: share of children aged 12 to 23 months fully vaccinated (card or mother's recall), NFHS-6 (2023-24) state and India fact sheets, International Institute for Population Sciences; the NFHS-5 (2019-21) figure is printed beside it. 33 states and UTs ranked; Lakshadweep (small sample) is not ranked, Chandigarh and Manipur have no figure. Income: per-capita net state domestic product, current prices, 2023-24, Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Table 19.",
+ "hook": [
+  "Children fully vaccinated:",
+  "*Odisha 91%*, *Chhattisgarh 78%*",
+  "at similar income, 2023-24."
+ ],
+ "hook_vo": "At similar incomes, Odisha had ninety-one percent fully vaccinated and Chhattisgarh seventy-eight.",
+ "facts": [
+  {
+   "state": "Odisha",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "compare": [
+    "Chhattisgarh"
+   ],
+   "text": "a year. Chhattisgarh: ₹1,48,922. Level.",
+   "sub": "Income here is state output per person, at current prices: what is produced in the state, not what residents earn. {n} states and UTs with data.",
+   "vo": "Income per person: one lakh fifty thousand rupees, level with Chhattisgarh's."
+  },
+  {
+   "state": "Odisha",
+   "kicker": "CHILDREN FULLY VACCINATED · NFHS-6",
+   "data": {
+    "nfhs": 44
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of children aged 12 to 23 months were fully vaccinated (card or mother's recall). India: 83%.",
+   "sub": "Survey estimate. Earlier survey, 2019-21: 91%. IIPS, NFHS-6 state fact sheets. {n} ranked states and UTs; Lakshadweep (small sample) is not ranked.",
+   "vo": "Ninety-one percent of Odisha's children. India's was eighty-three."
+  },
+  {
+   "state": "Chhattisgarh",
+   "kicker": "CHILDREN FULLY VACCINATED · NFHS-6",
+   "data": {
+    "nfhs": 44
+   },
+   "unit": "%",
+   "compare": [
+    "Odisha"
+   ],
+   "bar_max": 100,
+   "text": "of children aged 12 to 23 months. Odisha's was 1.2 times that, at a similar income.",
+   "sub": "Survey estimate. In 2019-21: Odisha 91%, Chhattisgarh 80%.",
+   "vo": "Chhattisgarh, at a similar income: seventy-eight percent."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 150414
+  },
+  {
+   "kind": "round",
+   "state": "Chhattisgarh",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "equals": 148922
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2019-20"
+     ]
+    }
+   },
+   "min": 0.97
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 0.96
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2020-21"
+     ]
+    }
+   },
+   "min": 0.96
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "nfhs": 44
+   },
+   "equals": 91
+  },
+  {
+   "kind": "round",
+   "state": "Chhattisgarh",
+   "data": {
+    "nfhs": 44
+   },
+   "equals": 78
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 44
+   },
+   "equals": 83
+  },
+  {
+   "kind": "round",
+   "state": "Odisha",
+   "data": {
+    "nfhs": 44,
+    "col": 3
+   },
+   "equals": 91
+  },
+  {
+   "kind": "round",
+   "state": "Chhattisgarh",
+   "data": {
+    "nfhs": 44,
+    "col": 3
+   },
+   "equals": 80
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "nfhs": 44
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "nfhs": 44
+    }
+   },
+   "min": 1.15
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "nfhs": 44,
+     "col": 3
+    }
+   },
+   "min": 1.13
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2022-23"
+     ]
+    }
+   },
+   "min": 0.98
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "nfhs": 44
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "nfhs": 44
+    }
+   },
+   "min": 0.83
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.96
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Chhattisgarh",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "den": {
+    "state": "Odisha",
+    "data": {
+     "rbi": [
+      19,
+      "2024-25"
+     ]
+    }
+   },
+   "min": 0.96
+  }
+ ],
+ "so": {
+  "lines": [
+   "Odisha ahead of Chhattisgarh:",
+   "*11 points* in 2019-21,",
+   "*13 points* in 2023-24."
+  ],
+  "vo": "Odisha led by eleven points in the earlier survey, thirteen in this one."
+ },
+ "map": {
+  "data": {
+   "nfhs": 44
+  },
+  "unit": "%",
+  "title": "Children fully vaccinated, *every state*",
+  "sub": "% aged 12-23 months (card or recall) · India {india} · 2023-24",
+  "note": "Survey estimates. Blank: Chandigarh and Manipur (no figure), Lakshadweep (small sample). The table shows how much, not why.",
+  "ring": [
+   "Odisha",
+   "Chhattisgarh"
+  ],
+  "vo": "Here is every state's share of children fully vaccinated."
+ },
+ "end": {
+  "q": "Were *you* fully vaccinated as a child?",
+  "sub": "Ask your parents. Comment below.",
+  "vo": "Were you fully vaccinated as a child?"
+ },
+ "yt_title": "Odisha 91%, Chhattisgarh 78% of Children Fully Vaccinated"
+}

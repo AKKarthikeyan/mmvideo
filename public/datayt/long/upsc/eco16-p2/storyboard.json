@@ -1,0 +1,1596 @@
+{
+ "id": "eco16-p2",
+ "format": "long-16x9",
+ "target_minutes": 9.5,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/ECO-16/script_p2.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "deposit-hook",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "e16_h100",
+      "key": "d1"
+     },
+     {
+      "lab": "e16_h20",
+      "key": "k"
+     },
+     {
+      "lab": "e16_h80",
+      "key": "l"
+     },
+     {
+      "lab": "e16_h180",
+      "key": "t"
+     }
+    ],
+    "ref": "e16_p2"
+   },
+   "vo": "A bank takes a hundred rupees from you. NCERT's example says it keeps twenty and lends eighty to someone else. You can still spend your hundred. The borrower can spend eighty. So there is now one hundred and eighty rupees to spend, where there was one hundred. Where did the extra eighty come from?",
+   "reveals": [
+    {
+     "key": "d1",
+     "word": "hundred"
+    },
+    {
+     "key": "k",
+     "word": "twenty"
+    },
+    {
+     "key": "l",
+     "word": "eighty"
+    },
+    {
+     "key": "t",
+     "word": "where"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bank counter: a hand slips a hundred-rupee note across; two account bars: yours stays at 100, a new bar for the borrower grows to 80; a counter reads 180; a question mark between.",
+   "beat": "b00",
+   "claims": [
+    "ECO16-N15",
+    "ECO16-N11"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "plan-steps",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Last time: most money is deposits (M3)",
+      "key": "pr"
+     },
+     {
+      "text": "Who makes the deposits?",
+      "key": "q1"
+     },
+     {
+      "text": "What stops them growing without end?",
+      "key": "q2"
+     }
+    ],
+    "mode": "questions"
+   },
+   "vo": "Last time we saw that, by M3, the broad measure, most of India's money is not cash. It is deposits. So who makes the deposits? And what stops them from growing without end?",
+   "reveals": [
+    {
+     "key": "pr",
+     "word": "M3,"
+    },
+    {
+     "key": "q1",
+     "word": "who"
+    },
+    {
+     "key": "q2",
+     "word": "stops"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A notebook page: last time's finding at the top; two questions written below.",
+   "beat": "b01",
+   "claims": [
+    "ECO16-A08"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "plan-steps",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "1 · a story",
+      "key": "s1"
+     },
+     {
+      "text": "2 · a bank's books",
+      "key": "s2"
+     },
+     {
+      "text": "3 · the limit, and its arithmetic",
+      "key": "s3"
+     },
+     {
+      "text": "4 · does the textbook hold?",
+      "key": "s4"
+     },
+     {
+      "text": "PART 2 of 3",
+      "key": "p2"
+     }
+    ],
+    "mode": "steps"
+   },
+   "vo": "We take it in four steps. A story NCERT tells. A bank's books. The limit, and the arithmetic of the limit. Then an honest question: does the textbook picture match how banks work? This is part two of three.",
+   "reveals": [
+    {
+     "key": "s1",
+     "word": "story"
+    },
+    {
+     "key": "s2",
+     "word": "books."
+    },
+    {
+     "key": "s3",
+     "word": "limit,"
+    },
+    {
+     "key": "s4",
+     "word": "honest"
+    },
+    {
+     "key": "p2",
+     "word": "two"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Four numbered boxes tick in turn; a three-stop path beneath: Part 1 done, Part 2 lit, Part 3.",
+   "beat": "b01",
+   "claims": [
+    "ECO16-A08"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "goldsmith",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT's story of Lala",
+      "key": "nl"
+     },
+     {
+      "text": "gold bars left for safekeeping",
+      "key": "gb"
+     },
+     {
+      "text": "a receipt for each",
+      "key": "rc"
+     },
+     {
+      "text": "receipts used as money",
+      "key": "rm"
+     }
+    ],
+    "mode": "receipts"
+   },
+   "vo": "NCERT tells the story of a goldsmith called Lala. Villagers leave their gold with him for safekeeping. He gives each a receipt. Slowly, the receipts themselves are used as money, because everyone in the village accepts them.",
+   "reveals": [
+    {
+     "key": "nl",
+     "word": "Lala."
+    },
+    {
+     "key": "gb",
+     "word": "gold"
+    },
+    {
+     "key": "rc",
+     "word": "receipt."
+    },
+    {
+     "key": "rm",
+     "word": "money,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A village goldsmith's shop: villagers leave small gold bars; each gets a receipt; at a market stall the receipts pass from hand to hand.",
+   "beat": "b02",
+   "claims": [
+    "ECO16-N09"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "goldsmith",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Ramu asks for 25 kg",
+      "key": "rk"
+     },
+     {
+      "text": "not everyone comes at once",
+      "key": "na"
+     },
+     {
+      "text": "Ali re-deposits the gold",
+      "key": "al"
+     },
+     {
+      "lab": "e16_l125",
+      "key": "t125"
+     }
+    ],
+    "mode": "lend",
+    "ref": "e16_lala"
+   },
+   "vo": "Then a man called Ramu asks Lala for a loan of twenty-five kilograms. Lala decides that not everyone will come for their gold at the same time. So he lends Ramu twenty-five kilograms of the hundred he holds. Ramu pays Ali with that gold, and Ali leaves it with Lala for a receipt. Now the receipts in use add up to one hundred and twenty-five kilograms.",
+   "reveals": [
+    {
+     "key": "rk",
+     "word": "Ramu"
+    },
+    {
+     "key": "na",
+     "word": "decides"
+    },
+    {
+     "key": "al",
+     "word": "Ali"
+    },
+    {
+     "key": "t125",
+     "word": "receipts"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Ramu borrows a bar, pays Ali; Ali leaves it with Lala for a new receipt; the receipt pile in circulation counts up from 100 to 125 kg.",
+   "beat": "b02",
+   "claims": [
+    "ECO16-N09"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "goldsmith",
+    "chip": "NCERT'S STORY",
+    "limit": "",
+    "labels": [
+     {
+      "text": "“money out of thin air”?",
+      "key": "tt"
+     },
+     {
+      "text": "A MADE-UP STORY",
+      "key": "mu"
+     },
+     {
+      "text": "modern banks work the same way (NCERT)",
+      "key": "mb"
+     }
+    ],
+    "mode": "moral"
+   },
+   "vo": "It seems that Lala has created money out of thin air, says NCERT. It is a made-up story, not history. But NCERT says modern banks work the same way.",
+   "reveals": [
+    {
+     "key": "tt",
+     "word": "seems"
+    },
+    {
+     "key": "mu",
+     "word": "made-up"
+    },
+    {
+     "key": "mb",
+     "word": "modern"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The goldsmith's counter with a faint glow around the new receipts; a stamp lands: A MADE-UP STORY; a bank building fades in behind.",
+   "beat": "b02",
+   "claims": [
+    "ECO16-N09"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "queue-calm",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "EVERYONE AT ONCE",
+      "key": "q"
+     },
+     {
+      "text": "not all depositors withdraw together",
+      "key": "nw"
+     },
+     {
+      "text": "keep enough to repay on demand",
+      "key": "kp"
+     },
+     {
+      "text": "CONFIDENCE",
+      "key": "cf"
+     }
+    ]
+   },
+   "vo": "But Lala has a problem. If everyone came for their gold on the same day, he could not pay. NCERT says a bank can lend because it does not expect all depositors to withdraw together. But it must keep enough funds to repay any depositor on demand. Depositors stay only if they are fully confident of getting their money back.",
+   "reveals": [
+    {
+     "key": "q",
+     "word": "same"
+    },
+    {
+     "key": "nw",
+     "word": "together."
+    },
+    {
+     "key": "kp",
+     "word": "enough"
+    },
+    {
+     "key": "cf",
+     "word": "confident"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two panels: a long worried queue at the goldsmith's door; a calm village staying home; a confidence meter.",
+   "beat": "b03",
+   "claims": [
+    "ECO16-N10"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch3 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "ledger",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "BALANCE SHEET",
+      "key": "bs"
+     },
+     {
+      "text": "ASSETS: reserves + loans",
+      "key": "as"
+     },
+     {
+      "text": "LIABILITIES: deposits",
+      "key": "li"
+     },
+     {
+      "text": "reserves = cash + deposits with the RBI",
+      "key": "rv"
+     },
+     {
+      "lab": "e16_h100",
+      "key": "st"
+     }
+    ],
+    "mode": "start"
+   },
+   "vo": "To see the limit, read a bank's books. NCERT's balance sheet has two sides. Assets are what the bank holds: its reserves and its loans. Liabilities are what it owes: its deposits. Reserves are cash plus the bank's deposits with the Reserve Bank. Start with a bank that holds a hundred rupees of deposits and keeps all hundred as reserves. It has lent nothing yet.",
+   "reveals": [
+    {
+     "key": "bs",
+     "word": "sides."
+    },
+    {
+     "key": "as",
+     "word": "Assets"
+    },
+    {
+     "key": "li",
+     "word": "Liabilities"
+    },
+    {
+     "key": "rv",
+     "word": "Reserves"
+    },
+    {
+     "key": "st",
+     "word": "hundred"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A two-sided ledger on a desk: assets (reserves, loans) at the left, liabilities (deposits) at the right; a 100 block in reserves and in deposits; the loans slot empty.",
+   "beat": "b04",
+   "claims": [
+    "ECO16-N12",
+    "ECO16-N13"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch3 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "ledger",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "a loan opens a new deposit",
+      "key": "nd"
+     },
+     {
+      "text": "in the borrower's name",
+      "key": "bn"
+     },
+     {
+      "text": "money supply rises by that deposit",
+      "key": "ms"
+     },
+     {
+      "lab": "e16_h180",
+      "key": "t"
+     }
+    ],
+    "mode": "loan"
+   },
+   "vo": "Now the bank makes a loan. NCERT's answer is plain: it opens a new deposit in the borrower's name. So the money supply rises by that new deposit. In NCERT's example, the borrower's eighty rupees is such a deposit. And your hundred is still there. That is where the extra eighty came from.",
+   "reveals": [
+    {
+     "key": "nd",
+     "word": "opens"
+    },
+    {
+     "key": "bn",
+     "word": "borrower's"
+    },
+    {
+     "key": "ms",
+     "word": "supply"
+    },
+    {
+     "key": "t",
+     "word": "extra"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The ledger again: a new 80 block appears on the deposits side under the borrower's name; the loans slot fills; the original 100 stays; the counter reads 100 to 180.",
+   "beat": "b05",
+   "claims": [
+    "ECO16-N11",
+    "ECO16-N15"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch4 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "vault-crr",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "CASH RESERVE RATIO · CRR",
+      "key": "cr"
+     },
+     {
+      "text": "a share of deposits kept as reserves",
+      "key": "sh"
+     },
+     {
+      "text": "in law: net demand and time liabilities",
+      "key": "nd"
+     },
+     {
+      "text": "a balance with the Reserve Bank",
+      "key": "bk"
+     },
+     {
+      "text": "a legal requirement · stops over-lending",
+      "key": "lg"
+     }
+    ]
+   },
+   "vo": "So what stops a bank from lending without end? The first answer is a rule. NCERT says the Reserve Bank decides what share of deposits every bank must keep as reserves. This is the cash reserve ratio, the CRR. In the rules, that share is counted on a bank's net demand and time liabilities. It is kept as a balance with the Reserve Bank. NCERT says it is a legal requirement, meant to stop over-lending.",
+   "reveals": [
+    {
+     "key": "cr",
+     "word": "CRR."
+    },
+    {
+     "key": "sh",
+     "word": "share"
+    },
+    {
+     "key": "nd",
+     "word": "net"
+    },
+    {
+     "key": "bk",
+     "word": "balance"
+    },
+    {
+     "key": "lg",
+     "word": "legal"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bank vault door with a CRR dial; behind the glass a fixed fraction of the deposit bar is shaded RESERVE; a hand-stop sign: STOP OVER-LENDING.",
+   "beat": "b06",
+   "claims": [
+    "ECO16-N14",
+    "ECO16-R02"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch4 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "rounds-stairs",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "reserve ratio 20%",
+      "key": "rr"
+     },
+     {
+      "text": "deposit 100",
+      "key": "r0"
+     },
+     {
+      "text": "loan 80",
+      "key": "r1"
+     },
+     {
+      "text": "loan 64",
+      "key": "r2"
+     },
+     {
+      "text": "deposits ≈ 500 · reserves 100 · loans 400",
+      "key": "tot"
+     }
+    ],
+    "ref": "e16_rounds"
+   },
+   "vo": "NCERT's example uses a reserve ratio of twenty percent. A hundred rupees is deposited. The bank keeps twenty and lends eighty. NCERT's example has only one bank, so the eighty comes back as a new deposit of eighty. The bank keeps sixteen and lends sixty-four. Round after round, the loans shrink by a fifth. Added up, deposits come to five hundred rupees, with reserves of one hundred and loans of four hundred.",
+   "reveals": [
+    {
+     "key": "rr",
+     "word": "twenty"
+    },
+    {
+     "key": "r0",
+     "word": "deposited."
+    },
+    {
+     "key": "r1",
+     "word": "eighty."
+    },
+    {
+     "key": "r2",
+     "word": "sixty-four."
+    },
+    {
+     "key": "tot",
+     "word": "Added"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A staircase of coin stacks: the first deposit 100, then loans 80, 64 ...; a running total of deposits climbs toward 500; a pie: reserves 100, loans 400.",
+   "beat": "b07",
+   "claims": [
+    "ECO16-N15",
+    "ECO16-A04"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch4 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "gear-multiplier",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "RESERVES · 100",
+      "key": "rs"
+     },
+     {
+      "text": "DEPOSITS · 500",
+      "key": "dp"
+     },
+     {
+      "text": "MONEY MULTIPLIER = 5",
+      "key": "mm"
+     },
+     {
+      "text": "1 ÷ r",
+      "key": "fm"
+     }
+    ],
+    "mode": "plain"
+   },
+   "vo": "Reserves of one hundred rupees created deposits of five hundred. NCERT calls the ratio the money multiplier. Here it is five. It is one divided by the reserve ratio. One divided by point two is five.",
+   "reveals": [
+    {
+     "key": "rs",
+     "word": "Reserves"
+    },
+    {
+     "key": "dp",
+     "word": "deposits"
+    },
+    {
+     "key": "mm",
+     "word": "multiplier."
+    },
+    {
+     "key": "fm",
+     "word": "divided"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A gear train: a small gear (reserves 100) drives a big gear (deposits 500); MULTIPLIER 5; the formula 1 ÷ r slides in.",
+   "beat": "b08",
+   "claims": [
+    "ECO16-N16",
+    "ECO16-A04"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch4 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "gear-multiplier",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "CASH LEAKS OUT",
+      "key": "lk"
+     },
+     {
+      "text": "currency-deposit ratio · cdr",
+      "key": "cd"
+     },
+     {
+      "text": "IGNOU: m = (cdr + 1) ÷ (cdr + rr)",
+      "key": "fm"
+     }
+    ],
+    "mode": "leak"
+   },
+   "vo": "But people also keep some cash in their pockets. That cash leaks out of the process. The currency-deposit ratio is the cash people hold for each rupee of bank deposits. IGNOU counts demand deposits only. Here we count demand and time deposits together, as M3 does. IGNOU shows the multiplier is that ratio plus one, divided by that ratio plus the reserve ratio.",
+   "reveals": [
+    {
+     "key": "lk",
+     "word": "leaks"
+    },
+    {
+     "key": "cd",
+     "word": "currency-deposit"
+    },
+    {
+     "key": "fm",
+     "word": "IGNOU"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The gear train with a leak: coins roll off the big gear into a wallet; the formula card appears.",
+   "beat": "b09",
+   "claims": [
+    "ECO16-T07",
+    "ECO16-A14",
+    "ECO16-A09",
+    "ECO16-A06"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch4 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "gear-multiplier",
+    "chip": "",
+    "limit": "the CRR is not the only limit on real lending",
+    "labels": [
+     {
+      "text": "CRR 3% (3 Nov 2026) → 33",
+      "key": "c33"
+     },
+     {
+      "text": "cash 15 paise per ₹1 of deposits (31 Jul 2026) → 6.4",
+      "key": "c64"
+     },
+     {
+      "text": "TOY CEILINGS · NOT FORECASTS",
+      "key": "toy"
+     }
+    ],
+    "mode": "toy"
+   },
+   "vo": "At the CRR of three percent on the third of November 2026, the plain formula gives thirty-three. In July 2026 the public held about fifteen paise of cash for every rupee of deposits. IGNOU's full formula then gives about six point four. Both are toy ceilings, not forecasts.",
+   "reveals": [
+    {
+     "key": "c33",
+     "word": "thirty-three."
+    },
+    {
+     "key": "c64",
+     "word": "six"
+    },
+    {
+     "key": "toy",
+     "word": "toy"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The multiplier readout shows 33 at the 3% CRR, then drops to 6.4 with the cash leak; a stamp lands: TOY CEILING.",
+   "beat": "b09",
+   "claims": [
+    "ECO16-T07",
+    "ECO16-A14",
+    "ECO16-A09",
+    "ECO16-A06"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch5 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "crr-timeline",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "NCERT Class 10: banks hold about 5% as cash",
+      "key": "n5"
+     },
+     {
+      "text": "CRR 3.00% · 3 Nov 2026",
+      "key": "c3"
+     },
+     {
+      "text": "4.5% until mid-Dec 2024",
+      "key": "c45"
+     },
+     {
+      "text": "4.0% from 28 Dec 2024",
+      "key": "c4"
+     },
+     {
+      "text": "four cuts of 0.25 · Sep to Nov 2025",
+      "key": "cuts"
+     }
+    ]
+   },
+   "vo": "NCERT's Class 10 book says banks hold about five percent of deposits as cash. The legal minimum has since changed. On the third of November 2026, the CRR was three percent. It was four and a half percent until mid-December 2024, and four percent from the end of that month. Then, in four cuts of a quarter point in 2025, the Reserve Bank took it to three percent. The cuts ran from September to November.",
+   "reveals": [
+    {
+     "key": "n5",
+     "word": "five"
+    },
+    {
+     "key": "c3",
+     "word": "CRR"
+    },
+    {
+     "key": "c45",
+     "word": "half"
+    },
+    {
+     "key": "c4",
+     "word": "month."
+    },
+    {
+     "key": "cuts",
+     "word": "cuts"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A dial labelled CRR on a dated timeline: 4.5 to 4.0 in Dec 2024; pause; then 3.75, 3.5, 3.25, 3.0 across Sep to Nov 2025.",
+   "beat": "b10",
+   "claims": [
+    "ECO16-N32",
+    "ECO16-R03",
+    "ECO16-R04",
+    "ECO16-R05",
+    "ECO16-R06",
+    "ECO16-R07"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch5 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "crr-timeline",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "STATUTORY LIQUIDITY RATIO · SLR",
+      "key": "sl"
+     },
+     {
+      "text": "liquid assets: cash, gold, government securities",
+      "key": "la"
+     },
+     {
+      "text": "at least 18% of net demand and time liabilities",
+      "key": "mn"
+     }
+    ],
+    "mode": "slr"
+   },
+   "vo": "Banks must also hold liquid assets, such as cash, gold and government securities. The minimum is eighteen percent of their net demand and time liabilities. That is the statutory liquidity ratio, the SLR.",
+   "reveals": [
+    {
+     "key": "sl",
+     "word": "statutory"
+    },
+    {
+     "key": "la",
+     "word": "liquid"
+    },
+    {
+     "key": "mn",
+     "word": "eighteen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A second vault door, SLR, holding cash, gold bars and government-bond folders.",
+   "beat": "b10",
+   "claims": [
+    "ECO16-N32",
+    "ECO16-R03",
+    "ECO16-R04",
+    "ECO16-R05",
+    "ECO16-R06",
+    "ECO16-R07"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch5 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "rbi-panel",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "RAISE THE CRR → LESS LENDING → LESS MONEY",
+      "key": "up"
+     },
+     {
+      "text": "QUANTITATIVE: CRR · bank rate · bonds",
+      "key": "qn"
+     },
+     {
+      "text": "QUALITATIVE: e.g. moral suasion · margin requirement",
+      "key": "ql"
+     }
+    ]
+   },
+   "vo": "The reserve ratio is one lever. NCERT says that when the Reserve Bank raises it, banks cut their lending, so the money supply falls. NCERT sorts the Reserve Bank's tools in two groups. Quantitative tools change the CRR, the bank rate, or buy and sell bonds. Qualitative tools include moral suasion and the margin requirement.",
+   "reveals": [
+    {
+     "key": "up",
+     "word": "raises"
+    },
+    {
+     "key": "qn",
+     "word": "Quantitative"
+    },
+    {
+     "key": "ql",
+     "word": "Qualitative"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A control panel with five dials in two groups; the CRR dial turns up and a small money bar beside it shrinks.",
+   "beat": "b11",
+   "claims": [
+    "ECO16-N18"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch5 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "omo",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "OPEN MARKET OPERATION",
+      "key": "om"
+     },
+     {
+      "text": "buy a bond → reserves rise",
+      "key": "bu"
+     },
+     {
+      "text": "sell a bond → reserves fall",
+      "key": "se"
+     },
+     {
+      "text": "LENDER OF LAST RESORT",
+      "key": "ll"
+     }
+    ]
+   },
+   "vo": "Take one tool. In an open market operation, the Reserve Bank buys a government bond and pays by cheque. That adds to the banks' reserves and to the money supply. Selling a bond does the opposite. And NCERT calls the Reserve Bank the lender of last resort. It stands ready to lend to banks at all times.",
+   "reveals": [
+    {
+     "key": "om",
+     "word": "open"
+    },
+    {
+     "key": "bu",
+     "word": "buys"
+    },
+    {
+     "key": "se",
+     "word": "Selling"
+    },
+    {
+     "key": "ll",
+     "word": "lender"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A bond passes from a dealer to the RBI building; a cheque flies back into a bank's reserve bar, which rises; the reverse trade makes it fall; a lifebuoy tag.",
+   "beat": "b12",
+   "claims": [
+    "ECO16-N19",
+    "ECO16-N17"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch6 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "two-views",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "TEXTBOOK: reserves → loans → deposits",
+      "key": "tb"
+     },
+     {
+      "text": "BANK OF ENGLAND STAFF, 2014 (UK)",
+      "key": "bo"
+     },
+     {
+      "text": "most money is created when banks make loans",
+      "key": "mc"
+     },
+     {
+      "text": "not simply lending out deposits · not multiplying up reserves",
+      "key": "nm"
+     },
+     {
+      "text": "an article by staff, in the Bank's Quarterly Bulletin",
+      "key": "qb"
+     }
+    ]
+   },
+   "vo": "Now the honest question. Does a bank wait for reserves before it lends? Staff of the Bank of England wrote in 2014 about the modern economy. Most money, they said, is created by commercial banks making loans. Their article is about the UK. They said banks do not simply lend out the deposits savers leave with them. Nor do they multiply up central bank money. This was an article by Bank of England staff, in the Bank's Quarterly Bulletin.",
+   "reveals": [
+    {
+     "key": "tb",
+     "word": "reserves"
+    },
+    {
+     "key": "bo",
+     "word": "Staff"
+    },
+    {
+     "key": "mc",
+     "word": "Most"
+    },
+    {
+     "key": "nm",
+     "word": "do"
+    },
+    {
+     "key": "qb",
+     "word": "article"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two cards face to face: TEXTBOOK (reserves, loans, deposits) and a STAFF ARTICLE (loans, deposits); a plaque: BANK OF ENGLAND STAFF, 2014 (UK).",
+   "beat": "b13",
+   "claims": [
+    "ECO16-T01",
+    "ECO16-T02",
+    "ECO16-T03"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch6 b14",
+   "kind": "analogy",
+   "spec": {
+    "which": "limits-balance",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "BUNDESBANK · MONTHLY REPORT · APRIL 2017 · EURO AREA",
+      "key": "bb"
+     },
+     {
+      "text": "not tied to excess reserves",
+      "key": "ex"
+     },
+     {
+      "text": "PROFIT",
+      "key": "pf"
+     },
+     {
+      "text": "RULES",
+      "key": "ru"
+     },
+     {
+      "text": "DEMAND AND PORTFOLIO CHOICES",
+      "key": "dm"
+     },
+     {
+      "text": "the interest rate policy influences it",
+      "key": "ir"
+     }
+    ]
+   },
+   "vo": "Germany's central bank, the Bundesbank, said something similar in its Monthly Report of April 2017, about the euro area. A bank's ability to lend has nothing to do with whether it already holds excess reserves or deposits. Then what limits it? Its answer: the need to lend profitably, and the rules that regulate banks. Also what households and firms want to borrow and hold. And in normal times, the central bank influences the process through its interest rate policy.",
+   "reveals": [
+    {
+     "key": "bb",
+     "word": "Bundesbank,"
+    },
+    {
+     "key": "ex",
+     "word": "excess"
+    },
+    {
+     "key": "pf",
+     "word": "profitably,"
+    },
+    {
+     "key": "ru",
+     "word": "rules"
+    },
+    {
+     "key": "dm",
+     "word": "households"
+    },
+    {
+     "key": "ir",
+     "word": "interest"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three weights labelled profit, rules, demand pressing on a loan counter; above them a dial: interest rate policy; a plaque for the Bundesbank report.",
+   "beat": "b14",
+   "claims": [
+    "ECO16-T05",
+    "ECO16-T06",
+    "ECO16-T04"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "reserve-world",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "US reserve requirements: zero since 26 Mar 2020",
+      "key": "us"
+     },
+     {
+      "text": "NCERT and IGNOU still teach the multiplier",
+      "key": "mt"
+     }
+    ]
+   },
+   "vo": "Reserve rules are not universal. The United States cut its reserve requirement ratios to zero in March 2020. Yet NCERT and IGNOU still teach the multiplier.",
+   "reveals": [
+    {
+     "key": "us",
+     "word": "States"
+    },
+    {
+     "key": "mt",
+     "word": "teach"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A wall of reserve-ratio dials, one set to zero (US, March 2020); two textbooks on a shelf: NCERT, IGNOU.",
+   "beat": "b15",
+   "claims": [
+    "ECO16-R15",
+    "ECO16-T08",
+    "ECO16-N16",
+    "ECO16-T07"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch6 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "reserve-world",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "EXOGENOUS · the authority fixes it",
+      "key": "ex"
+     },
+     {
+      "text": "ENDOGENOUS · banks, firms and households shape it",
+      "key": "en"
+     },
+     {
+      "text": "the real world: more likely a mix",
+      "key": "mx"
+     },
+     {
+      "text": "NAME THE VIEW",
+      "key": "nv"
+     }
+    ],
+    "mode": "mix"
+   },
+   "vo": "IGNOU adds that in the real world the money supply is more likely a mix. It is partly controlled by the central bank, and partly shaped by firms, households and the banking sector. So when you write the exam answer, name the view you are describing.",
+   "reveals": [
+    {
+     "key": "ex",
+     "word": "controlled"
+    },
+    {
+     "key": "en",
+     "word": "shaped"
+    },
+    {
+     "key": "mx",
+     "word": "mix."
+    },
+    {
+     "key": "nv",
+     "word": "name"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two toolboxes with a bridge between them; a mixing dial in the middle; a notebook tag: NAME THE VIEW.",
+   "beat": "b15",
+   "claims": [
+    "ECO16-R15",
+    "ECO16-T08",
+    "ECO16-N16",
+    "ECO16-T07"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "depression-lines",
+    "chip": "ILLUSTRATION",
+    "limit": "",
+    "labels": [
+     {
+      "text": "US · Mar 1930 to Mar 1933",
+      "key": "us"
+     },
+     {
+      "text": "money about −35%",
+      "key": "mo"
+     },
+     {
+      "text": "monetary base about +20%",
+      "key": "bs"
+     },
+     {
+      "text": "people pulled money out of banks",
+      "key": "pm"
+     },
+     {
+      "text": "banks held large excess reserves",
+      "key": "xr"
+     },
+     {
+      "text": "Friedman and Schwartz, among others",
+      "key": "fs"
+     }
+    ]
+   },
+   "vo": "The multiplier can also shrink. IGNOU recounts that in the United States, between March 1930 and March 1933, money fell about thirty-five percent. Over the same time, the monetary base rose about twenty percent. IGNOU gives two reasons. People pulled money out of banks, and banks held large excess reserves. IGNOU adds an argument. Friedman and Schwartz, among others, argued the fall was one of the major factors in the Depression.",
+   "reveals": [
+    {
+     "key": "us",
+     "word": "States,"
+    },
+    {
+     "key": "mo",
+     "word": "thirty-five"
+    },
+    {
+     "key": "bs",
+     "word": "twenty"
+    },
+    {
+     "key": "pm",
+     "word": "pulled"
+    },
+    {
+     "key": "xr",
+     "word": "excess"
+    },
+    {
+     "key": "fs",
+     "word": "Friedman"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two lines on a sketch chart with no axis numbers: money falling, base rising, a widening gap; a queue at a bank door and a vault of unused cash in two corners.",
+   "beat": "b16",
+   "claims": [
+    "ECO16-T09"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch7 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "deposit-insurance",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "DEPOSIT INSURANCE · DICGC",
+      "key": "di"
+     },
+     {
+      "text": "up to ₹5 lakh per depositor per bank",
+      "key": "cap"
+     },
+     {
+      "text": "principal + interest together",
+      "key": "pi"
+     },
+     {
+      "text": "the bank pays the premium",
+      "key": "pr"
+     },
+     {
+      "text": "stated aim: public confidence, particularly the small depositor",
+      "key": "aim"
+     }
+    ]
+   },
+   "vo": "Which brings us back to confidence. One protection for a depositor is deposit insurance. Each depositor in a bank is insured up to five lakh rupees, for principal and interest together. The cover applies bank by bank, and the bank, not the depositor, pays the premium. The insurer says its aim is to secure public confidence in the banking system, particularly for the small depositor.",
+   "reveals": [
+    {
+     "key": "di",
+     "word": "insurance."
+    },
+    {
+     "key": "cap",
+     "word": "five"
+    },
+    {
+     "key": "pi",
+     "word": "interest"
+    },
+    {
+     "key": "pr",
+     "word": "premium."
+    },
+    {
+     "key": "aim",
+     "word": "aim"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A passbook under a clear umbrella labelled DICGC; a coin stack marked 5 LAKH slides under it; a second panel with the earlier queue and the stated aim.",
+   "beat": "b17",
+   "claims": [
+    "ECO16-R13"
+   ]
+  },
+  {
+   "id": "s025",
+   "act": "Ch7 b18",
+   "kind": "analogy",
+   "spec": {
+    "which": "spread",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "SPREAD = interest charged − interest paid",
+      "key": "sp"
+     },
+     {
+      "text": "lent ₹200 at 5% → ₹10",
+      "key": "ln"
+     },
+     {
+      "text": "deposited ₹200 at 2% → ₹4",
+      "key": "dp"
+     },
+     {
+      "text": "the bank earns ₹6, before its own costs",
+      "key": "ea"
+     },
+     {
+      "text": "savings rate 2.5% · RBI panel · 3 Nov 2026",
+      "key": "sr"
+     }
+    ]
+   },
+   "vo": "And how does a bank earn? It pays depositors less than it charges borrowers. The gap is called the spread. NCERT's Class 7 example: two hundred rupees lent at five percent brings ten rupees. Two hundred rupees deposited at two percent costs four. The bank earns six, before its own costs. On the third of November 2026, the Reserve Bank's rate panel showed savings deposits at two and a half percent.",
+   "reveals": [
+    {
+     "key": "sp",
+     "word": "spread."
+    },
+    {
+     "key": "ln",
+     "word": "five"
+    },
+    {
+     "key": "dp",
+     "word": "two"
+    },
+    {
+     "key": "ea",
+     "word": "earns"
+    },
+    {
+     "key": "sr",
+     "word": "savings"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two coin stacks of the same ₹200: one earns a ₹10 stack on the way out, one costs a ₹4 stack on the way in; the gap, ₹6, glows in the bank's till.",
+   "beat": "b18",
+   "claims": [
+    "ECO16-N08",
+    "ECO16-N47",
+    "ECO16-A11",
+    "ECO16-I05"
+   ]
+  },
+  {
+   "id": "s026",
+   "act": "Ch8 b19",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "strike": {
+     "text": "a bank lends out your deposit?",
+     "key": "x"
+    },
+    "lines": [
+     {
+      "text": "A loan opens a new deposit: lending creates money",
+      "key": "n1"
+     },
+     {
+      "text": "Textbook limit: the reserve ratio · ratio 20% → multiplier 5",
+      "key": "n2"
+     },
+     {
+      "text": "Cash held by the public leaks out: multiplier smaller",
+      "key": "n3"
+     },
+     {
+      "text": "3 Nov 2026: CRR 3% · SLR 18% (RBI)",
+      "key": "n4"
+     },
+     {
+      "text": "Name the view: the Bundesbank; Bank of England staff",
+      "key": "n5"
+     },
+     {
+      "text": "Limits named: profit, regulation, demand for credit · policy rate the ultimate limit (BoE)",
+      "key": "n6"
+     }
+    ]
+   },
+   "vo": "For the exam, write it this way. A bank's loan opens a new deposit, so lending creates money. The limit in the textbook model is the reserve ratio. With a reserve ratio of twenty percent, the multiplier is five. Cash held by the public leaks out of the process, and the multiplier is smaller. On the third of November 2026, the Reserve Bank's CRR was three percent and the SLR eighteen. Name the view. The Bundesbank says lending is limited by profit, regulation and demand for credit. Bank of England staff name profit, regulation, the behaviour of money holders, and monetary policy as the ultimate limit.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "loan"
+    },
+    {
+     "key": "n2",
+     "word": "limit"
+    },
+    {
+     "key": "n3",
+     "word": "Cash"
+    },
+    {
+     "key": "n4",
+     "word": "third"
+    },
+    {
+     "key": "n5",
+     "word": "view."
+    },
+    {
+     "key": "n6",
+     "word": "profit,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Exam card: 'a bank lends out your deposit?' struck out; the answer fills the page, one line per sentence.",
+   "beat": "b19",
+   "claims": [
+    "ECO16-N11",
+    "ECO16-N16",
+    "ECO16-T07",
+    "ECO16-R05",
+    "ECO16-R07",
+    "ECO16-T05",
+    "ECO16-T01",
+    "ECO16-T04",
+    "ECO16-T06"
+   ]
+  },
+  {
+   "id": "s027",
+   "act": "Ch8 b20",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "On NCERT's account, banks create money when they lend",
+      "key": "s1"
+     },
+     {
+      "text": "Central-bank papers name limits such as profit and regulation",
+      "key": "s2"
+     }
+    ],
+    "accent": [
+     "create money",
+     "profit and regulation"
+    ]
+   },
+   "vo": "So, on NCERT's account, banks create money when they lend. Central-bank papers name limits such as profit and regulation.",
+   "reveals": [
+    {
+     "key": "s1",
+     "word": "NCERT's"
+    },
+    {
+     "key": "s2",
+     "word": "Central-bank"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two citation cards, text only.",
+   "beat": "b20",
+   "claims": [
+    "ECO16-N11",
+    "ECO16-T05",
+    "ECO16-T01",
+    "ECO16-T04"
+   ]
+  },
+  {
+   "id": "s028",
+   "act": "Ch8 b20",
+   "kind": "analogy",
+   "spec": {
+    "which": "part3-street",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "who gets a loan?",
+      "key": "wg"
+     },
+     {
+      "text": "at what price?",
+      "key": "pp"
+     },
+     {
+      "text": "who is left out?",
+      "key": "lo"
+     },
+     {
+      "text": "PART 3 · credit in daily life · how the money moves",
+      "key": "p3"
+     }
+    ]
+   },
+   "vo": "But money is not the whole story of credit. Who gets a loan, at what price, and who is left out? In part three: credit in daily life, formal and informal, and how the money moves.",
+   "reveals": [
+    {
+     "key": "wg",
+     "word": "Who"
+    },
+    {
+     "key": "pp",
+     "word": "price,"
+    },
+    {
+     "key": "lo",
+     "word": "left"
+    },
+    {
+     "key": "p3",
+     "word": "three:"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A street scene: a moneylender's table beside a bank counter, a phone tap at a cart; a frame: PART 3.",
+   "beat": "b20",
+   "claims": [
+    "ECO16-N11",
+    "ECO16-T05",
+    "ECO16-T01",
+    "ECO16-T04"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+ "id": "b1px02",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "source_short": "NFHS-6 · RBI · 2023-24",
+ "palette": "E",
+ "state": "Telangana",
+ "source": "Schooling: International Institute for Population Sciences (IIPS), National Family Health Survey NFHS-6 (2023-24), state fact sheets: female population aged 6 and above who ever attended school (a figure is available for 28 states and UTs). Income: RBI Handbook of Statistics on Indian States, per-capita net state domestic product, current prices, 2023-24 (33 states and UTs with data).",
+ "hook": [
+  "*Telangana:* over 5x",
+  "Bihar's income.",
+  "*Lower share* of women",
+  "ever attended school."
+ ],
+ "hook_vo": "Telangana: over five times Bihar's income. Lower share of women ever attended school.",
+ "facts": [
+  {
+   "state": "Telangana",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "data": {
+    "rbi": [
+     19,
+     "2023-24"
+    ]
+   },
+   "unit": "₹",
+   "text": "a year. Over 5 times Bihar's ₹62,201.",
+   "sub": "Per-capita net state domestic product, current prices. RBI.",
+   "vo": "Three lakh forty-eight thousand rupees a year, over five times Bihar's."
+  },
+  {
+   "state": "Telangana",
+   "kicker": "WOMEN AND GIRLS EVER AT SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 9
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women and girls aged 6 and over ever attended school",
+   "sub": "Female population aged 6+. NFHS-6.",
+   "vo": "Yet sixty of every hundred women and girls there ever attended school."
+  },
+  {
+   "state": "Bihar",
+   "kicker": "WOMEN AND GIRLS EVER AT SCHOOL · 2023-24",
+   "data": {
+    "nfhs": 9
+   },
+   "unit": "%",
+   "compare": [
+    "India"
+   ],
+   "bar_max": 100,
+   "text": "of women and girls. Bihar's income per person: under a fifth of Telangana's.",
+   "vo": "Bihar has under a fifth of that income, yet sixty-four of every hundred."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 9
+   },
+   "equals": 60
+  },
+  {
+   "kind": "round",
+   "state": "Bihar",
+   "data": {
+    "nfhs": 9
+   },
+   "equals": 64
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 9
+   },
+   "equals": 74
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "den": {
+    "state": "Bihar",
+    "data": {
+     "rbi": [
+      19,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 5.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Bihar",
+    "data": {
+     "nfhs": 9
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 9
+    }
+   },
+   "min": 1.05
+  }
+ ],
+ "so": {
+  "lines": [
+   "Across states, income and",
+   "women's schooling tend",
+   "to rise together.",
+   "*Telangana* is an exception."
+  ],
+  "vo": "Income and schooling tend to rise together. Telangana is an exception."
+ },
+ "map": {
+  "data": {
+   "nfhs": 9
+  },
+  "unit": "%",
+  "title": "Women and girls *ever at school*",
+  "sub": "% of women and girls aged 6+ · India {india} · NFHS-6 2023-24",
+  "note": "Ever attended school at all. Not years of school. Some states have no figure.",
+  "ring": [
+   "Telangana",
+   "Bihar"
+  ],
+  "vo": "Here is the map. It counts women and girls who ever attended school."
+ },
+ "end": {
+  "q": "Where does *your state* stand?",
+  "sub": "Comment below.",
+  "vo": "Where does your state stand?"
+ },
+ "yt_title": "Telangana: 5x Bihar's Income, Lower Share of Women Schooled"
+}

@@ -1,0 +1,777 @@
+{
+ "id": "tn13",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "MoSPI · Periodic Labour Force Survey, 2017-18 to 2023-24",
+ "palette": "D",
+ "state": "Odisha",
+ "points": [
+  {
+   "data": {
+    "plfs": [
+     "WPR",
+     "2017-18",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "period": "2017-18"
+  },
+  {
+   "data": {
+    "plfs": [
+     "WPR",
+     "2023-24",
+     "rural + urban",
+     "female"
+    ]
+   },
+   "period": "2023-24"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "WOMEN AGED 15+ USUALLY AT WORK",
+ "expect": {
+  "years": 6
+ },
+ "source": "Ministry of Statistics and Programme Implementation (National Statistics Office), Periodic Labour Force Survey, annual reports 2017-18 and 2023-24 (July to June; the first and the last of that series): worker population ratio, usual status (principal and subsidiary), women aged 15 years and above, rural and urban together. The ratio is the share of all women of that age who were working. Survey estimates.",
+ "hook": [
+  "*Odisha*: women 15+ usually",
+  "at work: *18%* in 2017-18,",
+  "*48%* in 2023-24."
+ ],
+ "hook_vo": "Women usually at work in Odisha: eighteen percent, then forty-eight percent.",
+ "then": {
+  "text": "of women aged 15+. India: *22.0%*.",
+  "vo": "In twenty seventeen-eighteen: eighteen point three percent. India, twenty-two."
+ },
+ "now": {
+  "text": "of women aged 15+. India: *40.3%*.",
+  "vo": "Six years on: forty-eight percent. India, forty point three."
+ },
+ "facts": [
+  {
+   "kicker": "RURAL AND URBAN · 2023-24",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural",
+      "female"
+     ]
+    }
+   },
+   "unit": "%",
+   "text": "of rural women aged 15+. Urban: *27.8%*",
+   "bars": [
+    {
+     "name": "Rural",
+     "data": {
+      "plfs": [
+       "WPR",
+       "2023-24",
+       "rural",
+       "female"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Urban",
+     "data": {
+      "plfs": [
+       "WPR",
+       "2023-24",
+       "urban",
+       "female"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 60,
+   "sub": "2017-18: rural 18.9%, urban 14.8%.",
+   "vo": "Rural women: fifty-one point five percent. Urban: twenty-eight."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Odisha went from *3.7 points*",
+    "*below* India's figure to",
+    "*7.7 points above* it."
+   ],
+   "note": "Paid or unpaid work. 2021-22: Odisha 31.4%, India 31.7%. Later, by calendar year: 47.3% (2024), 46.2% (2025, new design). Survey estimates. The table shows how much, not why.",
+   "vo": "Odisha moved from below India's figure to seven point seven points above."
+  }
+ ],
+ "tests": [
+  {
+   "says": "18.3% in 2017-18 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 183
+  },
+  {
+   "says": "eighteen percent in the hook and the title",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "equals": 18
+  },
+  {
+   "says": "48.0% in 2023-24 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 480
+  },
+  {
+   "says": "forty-eight percent in the hook and the title",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    }
+   },
+   "equals": 48
+  },
+  {
+   "says": "India 22.0% in 2017-18 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 220
+  },
+  {
+   "says": "India twenty-two in 2017-18",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 22
+  },
+  {
+   "says": "India 40.3% in 2023-24 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 403
+  },
+  {
+   "says": "India forty in 2023-24 (rounds to 40)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 40
+  },
+  {
+   "says": "Odisha below India in 2017-18 by 3.7 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 37
+  },
+  {
+   "says": "Odisha above India in 2023-24 by 7.7 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 77
+  },
+  {
+   "says": "rural women 51.5% in 2023-24 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "rural",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 515
+  },
+  {
+   "says": "urban women 27.8% in 2023-24 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 278
+  },
+  {
+   "says": "rural women 18.9% in 2017-18 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "rural",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 189
+  },
+  {
+   "says": "urban women 14.8% in 2017-18 (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2017-18",
+      "urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 148
+  },
+  {
+   "says": "calendar year 2024: 47.3% (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2024",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 473
+  },
+  {
+   "says": "calendar year 2025 (new survey design, not strictly comparable): 46.2% (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2025",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 462
+  },
+  {
+   "says": "the rise holds in 2022-23: still 24 to 27 points above 2017-18",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2022-23",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 24,
+   "max": 27
+  },
+  {
+   "says": "calendar year 2024: 27 to 30 points above 2017-18",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2024",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 27,
+   "max": 30
+  },
+  {
+   "says": "calendar year 2025 (new design; information only): 27 to 30 points above 2017-18",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2025",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 27,
+   "max": 30
+  },
+  {
+   "says": "the 2023-24 figure is not a spike: within 3 points of calendar 2024 and 2025 (information only for 2025)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2025",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0,
+   "max": 3
+  },
+  {
+   "says": "India rose 18.3 points, also +18.3 on the map (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 183
+  },
+  {
+   "says": "Odisha rose 29.7 points, the figure on the card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 297
+  },
+  {
+   "says": "the hook says 2.6 times: Odisha's share of women at work (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2023-24",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2017-18",
+        "rural + urban",
+        "female"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 26
+  },
+  {
+   "says": "urban women twenty-eight percent in 2023-24",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2023-24",
+      "urban",
+      "female"
+     ]
+    }
+   },
+   "equals": 28
+  },
+  {
+   "says": "Odisha rose 29.7 points, India 18.3 points: Odisha's rise is 1.5 to 1.8 times India's",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "plfs": [
+          "WPR",
+          "2023-24",
+          "rural + urban",
+          "female"
+         ]
+        }
+       },
+       {
+        "data": {
+         "plfs": [
+          "WPR",
+          "2017-18",
+          "rural + urban",
+          "female"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "plfs": [
+          "WPR",
+          "2023-24",
+          "rural + urban",
+          "female"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "plfs": [
+          "WPR",
+          "2017-18",
+          "rural + urban",
+          "female"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.5,
+   "max": 1.8
+  },
+  {
+   "says": "2021-22: Odisha 31.4% (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 314
+  },
+  {
+   "says": "2021-22: India 31.7% (tenths)",
+   "value": {
+    "data": {
+     "plfs": [
+      "WPR",
+      "2021-22",
+      "rural + urban",
+      "female"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 317
+  },
+  {
+   "says": "2021-22: Odisha level with India, within 1 point",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2021-22",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2021-22",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": -1,
+   "max": 1
+  },
+  {
+   "says": "2022-23: Odisha 7 to 8 points above India (the lead is there in both of the last two July-June rounds)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2022-23",
+        "rural + urban",
+        "female"
+       ]
+      }
+     },
+     {
+      "data": {
+       "plfs": [
+        "WPR",
+        "2022-23",
+        "rural + urban",
+        "female"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 7,
+   "max": 8
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   10,
+   18,
+   25,
+   35
+  ],
+  "title": "Women at work: *each state's change*",
+  "sub": "percentage points · {from} to {to} · India +18.3",
+  "note": "Women aged 15+, survey estimates. Blank: Jammu and Kashmir (boundary changed), Ladakh (no 2017-18 figure), Dadra, Nagar Haveli, Daman and Diu (merged 2020).",
+  "vo": "Women at work: the six-year change in each state.",
+  "key": [
+   "smaller rise",
+   "",
+   "bigger rise"
+  ]
+ },
+ "end": {
+  "q": "What changed for women in *your* area?",
+  "sub": "Spot your state on the map.",
+  "vo": "What changed for women in your area?"
+ },
+ "yt_title": "Odisha: Women 15+ Usually at Work, 18% to 48% in 6 Years"
+}

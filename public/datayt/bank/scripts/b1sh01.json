@@ -1,0 +1,653 @@
+{
+ "id": "b1sh01",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "Animal Husbandry Ministry · 2023-24",
+ "palette": "A",
+ "state": "Rajasthan",
+ "data": {
+  "rbi": [
+   94,
+   "2023-24"
+  ]
+ },
+ "parts": [
+  "Rajasthan",
+  "Jammu and Kashmir",
+  "Gujarat"
+ ],
+ "source": "Ministry of Fisheries, Animal Husbandry and Dairying (Basic Animal Husbandry Statistics), as published in the RBI Handbook of Statistics on Indian States: wool production (Table 94), meat production (Table 90) and milk production (Table 91), all 2023-24. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* produces",
+  "nearly *half* of",
+  "India's wool."
+ ],
+ "hook_vo": "One state produces nearly half of India's wool.",
+ "grid_caption": "100 squares = India's wool output, 2023-24",
+ "reveal": {
+  "sub": "produces {share} of India's wool: 16.0 million kg in 2023-24",
+  "vo": "Rajasthan. Sixteen million kilograms in twenty twenty-three twenty-four."
+ },
+ "split": {
+  "kicker": "% OF INDIA'S WOOL · 2023-24",
+  "vo": "Jammu and Kashmir twenty-three in a hundred, Gujarat six, all other states twenty-three.",
+  "rest_rounds": 23
+ },
+ "facts": [
+  {
+   "kicker": "RAJASTHAN'S SHARE OF INDIA'S OUTPUT",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        94,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        91,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of India's milk",
+   "bars": [
+    {
+     "name": "Wool",
+     "share": {
+      "rbi": [
+       94,
+       "2023-24"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Milk",
+     "share": {
+      "rbi": [
+       91,
+       "2023-24"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Meat",
+     "share": {
+      "rbi": [
+       90,
+       "2023-24"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Milk and meat production, 2023-24.",
+   "vo": "Over three times its milk share, and twenty times its meat share."
+  },
+  {
+   "kicker": "RAJASTHAN VS THE NEXT THREE STATES",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "share": {
+         "rbi": [
+          94,
+          "2023-24"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "share": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Gujarat"
+           },
+           {
+            "share": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         },
+         {
+          "share": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Gujarat"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "share": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Maharashtra"
+         },
+         {
+          "share": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Maharashtra"
+         }
+        ]
+       },
+       {
+        "share": {
+         "rbi": [
+          94,
+          "2023-24"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     }
+    ]
+   },
+   "unit": "%",
+   "text": "Jammu and Kashmir, Gujarat, Maharashtra together",
+   "bars": [
+    {
+     "name": "Rajasthan",
+     "share": {
+      "rbi": [
+       94,
+       "2023-24"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Next three",
+     "diff": [
+      {
+       "diff": [
+        {
+         "share": {
+          "rbi": [
+           94,
+           "2023-24"
+          ]
+         },
+         "state": "Jammu and Kashmir"
+        },
+        {
+         "diff": [
+          {
+           "diff": [
+            {
+             "share": {
+              "rbi": [
+               94,
+               "2023-24"
+              ]
+             },
+             "state": "Gujarat"
+            },
+            {
+             "share": {
+              "rbi": [
+               94,
+               "2023-24"
+              ]
+             },
+             "state": "Gujarat"
+            }
+           ]
+          },
+          {
+           "share": {
+            "rbi": [
+             94,
+             "2023-24"
+            ]
+           },
+           "state": "Gujarat"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "diff": [
+        {
+         "diff": [
+          {
+           "share": {
+            "rbi": [
+             94,
+             "2023-24"
+            ]
+           },
+           "state": "Maharashtra"
+          },
+          {
+           "share": {
+            "rbi": [
+             94,
+             "2023-24"
+            ]
+           },
+           "state": "Maharashtra"
+          }
+         ]
+        },
+        {
+         "share": {
+          "rbi": [
+           94,
+           "2023-24"
+          ]
+         },
+         "state": "Maharashtra"
+        }
+       ]
+      }
+     ],
+     "unit": "%"
+    }
+   ],
+   "bar_max": 50,
+   "sub": "Wool in 2023-24: 16.0 against 11.5 million kg.",
+   "vo": "More than the next three states put together."
+  }
+ ],
+ "tests": [
+  {
+   "says": "nearly half of India's wool",
+   "value": {
+    "share": {
+     "rbi": [
+      94,
+      "2023-24"
+     ]
+    }
+   },
+   "min": 45,
+   "max": 49.99
+  },
+  {
+   "says": "16.0 million kg (thousand kg / 100, one decimal)",
+   "value": {
+    "data": {
+     "rbi": [
+      94,
+      "2023-24"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 160
+  },
+  {
+   "says": "sixteen million kilograms",
+   "value": {
+    "data": {
+     "rbi": [
+      94,
+      "2023-24"
+     ]
+    },
+    "scale": 0.001
+   },
+   "equals": 16
+  },
+  {
+   "says": "Jammu and Kashmir twenty-three in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      94,
+      "2023-24"
+     ]
+    },
+    "state": "Jammu and Kashmir"
+   },
+   "equals": 23
+  },
+  {
+   "says": "Gujarat six",
+   "value": {
+    "share": {
+     "rbi": [
+      94,
+      "2023-24"
+     ]
+    },
+    "state": "Gujarat"
+   },
+   "equals": 6
+  },
+  {
+   "says": "three times its share of India's milk",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        94,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        91,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 3.0,
+   "max": 3.6
+  },
+  {
+   "says": "twenty times its share of India's meat",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        94,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        90,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 19,
+   "max": 21
+  },
+  {
+   "says": "more than the next three states put together (points)",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        94,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "share": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Jammu and Kashmir"
+         },
+         {
+          "diff": [
+           {
+            "diff": [
+             {
+              "share": {
+               "rbi": [
+                94,
+                "2023-24"
+               ]
+              },
+              "state": "Gujarat"
+             },
+             {
+              "share": {
+               "rbi": [
+                94,
+                "2023-24"
+               ]
+              },
+              "state": "Gujarat"
+             }
+            ]
+           },
+           {
+            "share": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "share": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Maharashtra"
+           },
+           {
+            "share": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Maharashtra"
+           }
+          ]
+         },
+         {
+          "share": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Maharashtra"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1,
+   "max": 30
+  },
+  {
+   "says": "next three together 11.5 million kg (thousand kg / 100)",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          94,
+          "2023-24"
+         ]
+        },
+        "state": "Jammu and Kashmir"
+       },
+       {
+        "diff": [
+         {
+          "diff": [
+           {
+            "data": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Gujarat"
+           },
+           {
+            "data": {
+             "rbi": [
+              94,
+              "2023-24"
+             ]
+            },
+            "state": "Gujarat"
+           }
+          ]
+         },
+         {
+          "data": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Gujarat"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "diff": [
+         {
+          "data": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Maharashtra"
+         },
+         {
+          "data": {
+           "rbi": [
+            94,
+            "2023-24"
+           ]
+          },
+          "state": "Maharashtra"
+         }
+        ]
+       },
+       {
+        "data": {
+         "rbi": [
+          94,
+          "2023-24"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     }
+    ],
+    "scale": 0.01
+   },
+   "equals": 115
+  },
+  {
+   "says": "size check, not spoken: wool share is far above Rajasthan's share of meat",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        94,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        90,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 10,
+   "max": 40
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   15,
+   30
+  ],
+  "title": "Share of India's wool, *every state*",
+  "sub": "% of India's production · 2023-24",
+  "note": "State totals, not per person. Blank: not available.",
+  "ring": [
+   "Rajasthan"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "How much wool does *your state* produce?",
+  "sub": "Comment below.",
+  "vo": "How much wool does your state produce?"
+ },
+ "yt_title": "Rajasthan Produces Nearly Half of India's Wool"
+}

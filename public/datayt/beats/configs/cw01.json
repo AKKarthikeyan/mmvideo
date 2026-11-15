@@ -1,0 +1,170 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "cw01",
+ "palette": "E",
+ "theme": "money",
+ "chip": "SOFT DRINKS",
+ "source_short": "NielsenIQ · Jan-Sep 2025",
+ "source": "NielsenIQ data cited by industry sources (ET Retail), as reported by Storyboard18, 25 Nov 2025: India's soft drinks market, January to September 2025 against 2024. Campa relaunch and price: GlobalData, March 2023. NielsenIQ and Reliance Consumer did not comment.",
+ "_len_note": "25 Oct 2026: built to AK's 25-35 s rule. The ₹10 vs ₹20 hook and shopkeeper margins were dropped: Coca-Cola also sells 200 ml at ₹10, and the margin figure has no primary source.",
+ "hook": [
+  "Coke and Pepsi held",
+  "*93%* of India's",
+  "soft drinks"
+ ],
+ "hook_vo": "Coke and Pepsi held ninety-three percent of India's soft drinks.",
+ "cards": [
+  {
+   "kicker": "THE ₹10 BOTTLE · 2023",
+   "name": "Campa",
+   "item": [
+    "softdrinks/share_2025",
+    "campa 200ml",
+    "rupees"
+   ],
+   "item_name": "Campa Cola 200 ml price",
+   "dec": 0,
+   "prefix": "₹",
+   "unit": "",
+   "text": "for 200 ml of Campa, back since March 2023",
+   "sub": "Reliance bought the old brand in August 2022.",
+   "vo": "Then Reliance brought back Campa, at ten rupees."
+  },
+  {
+   "kicker": "CAMPA + LAHORI ZEERA",
+   "name": "Challengers",
+   "item": [
+    "softdrinks/share_2025",
+    "campa lahori 2025",
+    "share %"
+   ],
+   "item_name": "Campa and Lahori Zeera share, Jan-Sep 2025",
+   "dec": 0,
+   "unit": "%",
+   "text": "of soft drinks, Jan to Sep 2025",
+   "bars": [
+    {
+     "name": "Jan-Sep 2025",
+     "item": [
+      "softdrinks/share_2025",
+      "campa lahori 2025",
+      "share %"
+     ]
+    },
+    {
+     "name": "Jan-Sep 2024",
+     "item": [
+      "softdrinks/share_2025",
+      "campa lahori 2024",
+      "share %"
+     ]
+    }
+   ],
+   "vo": "With Lahori Zeera, its share doubled to fifteen percent."
+  },
+  {
+   "kicker": "COCA-COLA + PEPSICO",
+   "name": "Coke + Pepsi",
+   "item": [
+    "softdrinks/share_2025",
+    "coke pepsi 2025",
+    "share %"
+   ],
+   "item_name": "Coca-Cola and PepsiCo share, Jan-Sep 2025",
+   "dec": 0,
+   "unit": "%",
+   "text": "of soft drinks, Jan to Sep 2025",
+   "bars": [
+    {
+     "name": "Jan-Sep 2025",
+     "item": [
+      "softdrinks/share_2025",
+      "coke pepsi 2025",
+      "share %"
+     ]
+    },
+    {
+     "name": "Jan-Sep 2024",
+     "item": [
+      "softdrinks/share_2025",
+      "coke pepsi 2024",
+      "share %"
+     ]
+    }
+   ],
+   "vo": "Coke and Pepsi fell to eighty-five."
+  },
+  {
+   "kicker": "THE REPLY",
+   "name": "Reply",
+   "item": [
+    "softdrinks/share_2025",
+    "majors new pack",
+    "rupees"
+   ],
+   "item_name": "Coca-Cola and PepsiCo new pack price",
+   "dec": 0,
+   "prefix": "₹",
+   "unit": "",
+   "text": "new Coke and Pepsi packs",
+   "sub": "Down from ₹12 and above.",
+   "vo": "Their reply: their own ten-rupee packs."
+  }
+ ],
+ "so": {
+  "lines": [
+   "The cola war",
+   "is now fought",
+   "at *₹10*."
+  ],
+  "vo": "The cola war is now fought at ten rupees.",
+  "note": "NielsenIQ figures as cited by industry sources. Shares are of all soft drinks."
+ },
+ "end": {
+  "q": "Which is in your fridge?",
+  "sub": "Campa, Coke, Pepsi or Thums Up?",
+  "vo": "Which is in your fridge? Comment below."
+ },
+ "free_numbers": [
+  "200",
+  "12"
+ ],
+ "money_tests": [
+  {
+   "says": "Campa and Lahori Zeera's share doubled",
+   "value": {
+    "ratio": [
+     {
+      "item": [
+       "softdrinks/share_2025",
+       "campa lahori 2025",
+       "share %"
+      ]
+     },
+     {
+      "item": [
+       "softdrinks/share_2025",
+       "campa lahori 2024",
+       "share %"
+      ]
+     }
+    ]
+   },
+   "min": 1.9,
+   "max": 2.3
+  },
+  {
+   "says": "Coke and Pepsi held 93% before",
+   "value": {
+    "item": [
+     "softdrinks/share_2025",
+     "coke pepsi 2024",
+     "share %"
+    ]
+   },
+   "equals": 93
+  }
+ ],
+ "yt_title": "The ₹10 Cola War: Campa vs Coke and Pepsi"
+}

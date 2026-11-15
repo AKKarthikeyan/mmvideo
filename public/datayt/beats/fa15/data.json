@@ -1,0 +1,550 @@
+{
+ "id": "fa15",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "IIPS · NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) India and state fact sheets (total, urban and rural columns), which also print the NFHS-5 (2019-21) figure. Indicators: people aged 60 and over, and people under 15, each as a share of the people in the surveyed households. 34 states and UTs with data; Lakshadweep (small sample) is not ranked and Manipur has no figure in the sheets used. Survey estimates, not a census count.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#9AA7D6",
+  "#7788C9",
+  "#586AB6",
+  "#3F4E97",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Kerala* 2023-24, of people:",
+    "*20.7%* were aged 60+;",
+    "*20.3%* were under 15."
+   ],
+   "vo": "Kerala's share aged sixty and over matched its share under fifteen.",
+   "geo": "Kerala",
+   "name": "Kerala",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "PEOPLE AGED 60 AND OVER · NFHS-6",
+   "big": "20.7%",
+   "text": "of people were aged 60 or over, 2023-24. Highest of 34 ranked states and UTs. Goa, next: 17.2%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 state fact sheets. Lakshadweep (small sample) is not ranked.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "20.7%",
+     "frac": 0.69
+    },
+    {
+     "name": "India",
+     "label": "12.9%",
+     "frac": 0.43
+    }
+   ],
+   "vo": "Twenty-one percent were sixty or older. Highest of thirty-four ranked states and territories.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "CHILDREN UNDER 15 · NFHS-6",
+   "big": "20.3%",
+   "text": "of people were under 15, 2023-24: level with the 20.7% aged 60+. India: 25.5%.",
+   "sub": "Survey estimate. Both shares are of the same surveyed households. A gap under one point is level.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "20.3%",
+     "frac": 0.6766666666666666
+    },
+    {
+     "name": "India",
+     "label": "25.5%",
+     "frac": 0.85
+    }
+   ],
+   "vo": "Children under fifteen: twenty percent, level. India's was twenty-six.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "Kerala",
+   "geo": "Kerala",
+   "kicker": "EARLIER SURVEY · NFHS-5 (2019-21)",
+   "big": "18.6%",
+   "text": "aged 60+, against 20.6% under 15: fewer older people than children. India: 11.8%.",
+   "sub": "Survey estimate. NFHS-5 figures as printed in the NFHS-6 fact sheets.",
+   "bars": [
+    {
+     "name": "Kerala",
+     "label": "18.6%",
+     "frac": 0.62
+    },
+    {
+     "name": "India",
+     "label": "11.8%",
+     "frac": 0.39333333333333337
+    }
+   ],
+   "vo": "Earlier survey: nineteen percent were sixty-plus, twenty-one under fifteen.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "*Kerala*: people aged 60+",
+    "and children were *level*.",
+    "India: about *2 to 1*."
+   ],
+   "vo": "Kerala was level. India had about two children for every older person.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "People aged 60 and over, *every state*",
+   "sub": "% of people · India 12.9% · NFHS-6 (2023-24)",
+   "note": "Survey estimates. Blank: Manipur (no figure) and Lakshadweep (small sample). The survey shows how many, not why.",
+   "anim": true,
+   "ring": [
+    "Kerala",
+    "Goa"
+   ],
+   "vo": "Here is every state's share of people aged sixty and over.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Survey estimates. Blank: Manipur (no figure) and Lakshadweep (small sample). The survey shows how many, not why.",
+   "ring": [
+    "Kerala",
+    "Goa"
+   ],
+   "q": "Do you live with *grandparents*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Do you live with grandparents?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "6.0",
+   "bucket": 0,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Meghalaya",
+   "label": "6.8",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 29.494
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "9.4",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.606
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "10.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.718
+  },
+  {
+   "name": "Assam",
+   "label": "10.3",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.83
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "10.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.942
+  },
+  {
+   "name": "Chandigarh",
+   "label": "10.9",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.054
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "11.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Mizoram",
+   "label": "11.4",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.278
+  },
+  {
+   "name": "Bihar",
+   "label": "11.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.39
+  },
+  {
+   "name": "Jharkhand",
+   "label": "11.5",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.502
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "11.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.614
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "11.9",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.726
+  },
+  {
+   "name": "Rajasthan",
+   "label": "12.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.838
+  },
+  {
+   "name": "Haryana",
+   "label": "12.3",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 30.95
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.4",
+   "bucket": 2,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.062
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "12.6",
+   "bucket": 2,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.174
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "12.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Gujarat",
+   "label": "13.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.397
+  },
+  {
+   "name": "Sikkim",
+   "label": "13.2",
+   "bucket": 2,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 31.509
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "13.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.621
+  },
+  {
+   "name": "Telangana",
+   "label": "14.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.733
+  },
+  {
+   "name": "Tripura",
+   "label": "14.1",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.845
+  },
+  {
+   "name": "West Bengal",
+   "label": "14.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.957
+  },
+  {
+   "name": "Maharashtra",
+   "label": "14.4",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.069
+  },
+  {
+   "name": "Punjab",
+   "label": "14.4",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.181
+  },
+  {
+   "name": "Karnataka",
+   "label": "14.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.293
+  },
+  {
+   "name": "Ladakh",
+   "label": "14.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.405
+  },
+  {
+   "name": "Puducherry",
+   "label": "15.2",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.517
+  },
+  {
+   "name": "Odisha",
+   "label": "15.6",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.629
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "16.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.741
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "16.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.853
+  },
+  {
+   "name": "Goa",
+   "label": "17.2",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.965
+  },
+  {
+   "name": "Kerala",
+   "label": "20.7",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.077
+  }
+ ],
+ "checked": [
+  "Kerala is the highest of 34 with data (20.7%)",
+  "Kerala is the highest of 34 with data (18.6%)",
+  "Kerala 20.7 rounds to 21",
+  "Kerala 20.3 rounds to 20",
+  "India 12.9 rounds to 13",
+  "India 25.5 rounds to 26",
+  "Goa 17.2 rounds to 17",
+  "Kerala 18.6 rounds to 19",
+  "Kerala 20.6 rounds to 21",
+  "India 11.8 rounds to 12",
+  "Kerala / Kerala = 1.02 (at least 0.97)",
+  "Kerala / Kerala = 0.98 (at least 0.97)",
+  "Kerala / Kerala = 1.11 (at least 1.08)",
+  "Kerala / Goa = 1.20 (at least 1.2)",
+  "Kerala / Tamil Nadu = 1.25 (at least 1.2)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.97,
+   "at": 0.12,
+   "text": "Kerala's share aged sixty and over matched its share under fifteen."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.937,
+   "at": 5.926,
+   "text": "Twenty-one percent were sixty or older. Highest of thirty-four ranked states and territories."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.179,
+   "at": 11.733,
+   "text": "Children under fifteen: twenty percent, level. India's was twenty-six."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.858,
+   "at": 17.539,
+   "text": "Earlier survey: nineteen percent were sixty-plus, twenty-one under fifteen."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.355,
+   "at": 23.346,
+   "text": "Kerala was level. India had about two children for every older person."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.048,
+   "at": 29.152,
+   "text": "Here is every state's share of people aged sixty and over."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.88,
+   "at": 34.959,
+   "text": "Do you live with grandparents?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Kerala: Share Aged 60+ Matches Share Under 15, 2023-24"
+}

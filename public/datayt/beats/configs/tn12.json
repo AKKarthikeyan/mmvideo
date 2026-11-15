@@ -1,0 +1,508 @@
+{
+ "id": "tn12",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "NSO, MoSPI · output per person, 2011-12 to 2023-24",
+ "palette": "A",
+ "state": "Karnataka",
+ "table": 20,
+ "from": "2011-12",
+ "to": "2023-24",
+ "measure": "value",
+ "unit": "₹",
+ "delta": "times",
+ "kicker": "OUTPUT PER PERSON · 2011-12 PRICES",
+ "expect": {
+  "years": 12
+ },
+ "source": "National Statistics Office, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States, Table 20: per capita net state domestic product at constant prices (base 2011-12), rupees a year. A state average, not household income. Gujarat has no figure for 2023-24; Andhra Pradesh and Telangana are left off the map because the state was split in 2014, and Jammu and Kashmir because its boundary changed in 2019.",
+ "hook": [
+  "*Karnataka* output per person:",
+  "*16% above* Maharashtra, 2023-24;",
+  "*9% below*, 2011-12."
+ ],
+ "hook_vo": "Karnataka rose from nine percent below Maharashtra to sixteen percent above.",
+ "then": {
+  "text": "a year for each person, at *2011-12 prices*",
+  "vo": "In twenty eleven-twelve: about ninety thousand rupees a year for each person."
+ },
+ "now": {
+  "text": "a year for each person: *{times} times* that, same prices",
+  "vo": "Same prices, twelve years on: about one lakh ninety-two thousand rupees."
+ },
+ "facts": [
+  {
+   "kicker": "SAME MEASURE · 2011-12 TO 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Karnataka's real output per person",
+   "bars": [
+    {
+     "name": "Karnataka",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         20,
+         "2023-24"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         20,
+         "2011-12"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "Maharashtra",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         20,
+         "2023-24"
+        ]
+       },
+       "state": "Maharashtra"
+      },
+      {
+       "data": {
+        "rbi": [
+         20,
+         "2011-12"
+        ]
+       },
+       "state": "Maharashtra"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 2.5,
+   "sub": "Maharashtra: ₹99,597 to ₹1,66,013 a year, same prices.",
+   "vo": "Maharashtra's output per person rose one point seven times. Karnataka's, two point one."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Karnataka stayed *at least 15%*",
+    "above Maharashtra in each",
+    "year, 2021-22 to 2023-24."
+   ],
+   "note": "Both at 2011-12 prices. Karnataka, 2021-22 to 2023-24: ₹1,65,517, ₹1,82,371, ₹1,91,970. A state average, not household income. The table shows how much, not why.",
+   "vo": "Karnataka stayed at least fifteen percent above Maharashtra for three years."
+  }
+ ],
+ "tests": [
+  {
+   "says": "about ninety thousand rupees in 2011-12 (thousands)",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2011-12"
+     ]
+    },
+    "scale": 0.001
+   },
+   "equals": 90
+  },
+  {
+   "says": "₹90,263 in 2011-12",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2011-12"
+     ]
+    }
+   },
+   "equals": 90263
+  },
+  {
+   "says": "about one lakh ninety-two thousand rupees in 2023-24 (thousands)",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2023-24"
+     ]
+    },
+    "scale": 0.001
+   },
+   "equals": 192
+  },
+  {
+   "says": "₹1,91,970 in 2023-24",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2023-24"
+     ]
+    }
+   },
+   "equals": 191970
+  },
+  {
+   "says": "more than doubled: 2.0 to 2.3 times",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.3
+  },
+  {
+   "says": "2.1 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 21
+  },
+  {
+   "says": "Maharashtra rose 1.7 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2023-24"
+       ]
+      },
+      "state": "Maharashtra"
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 17
+  },
+  {
+   "says": "Maharashtra ₹99,597 in 2011-12",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2011-12"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 99597
+  },
+  {
+   "says": "Maharashtra ₹1,66,013 in 2023-24",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2023-24"
+     ]
+    },
+    "state": "Maharashtra"
+   },
+   "equals": 166013
+  },
+  {
+   "says": "9% below Maharashtra in 2011-12",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2011-12"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2011-12"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 9
+  },
+  {
+   "says": "16% above Maharashtra in 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2023-24"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2023-24"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 16
+  },
+  {
+   "says": "2021-22: ₹1,65,517",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2021-22"
+     ]
+    }
+   },
+   "equals": 165517
+  },
+  {
+   "says": "2022-23: ₹1,82,371",
+   "value": {
+    "data": {
+     "rbi": [
+      20,
+      "2022-23"
+     ]
+    }
+   },
+   "equals": 182371
+  },
+  {
+   "says": "the rise holds in each of the last three years: 2022-23 is already 2.0 to 2.1 times 2011-12",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2011-12"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.1
+  },
+  {
+   "says": "the lead over Maharashtra holds in 2021-22: Karnataka 15 to 19% above (not a one-year flip)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2021-22"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2021-22"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 15,
+   "max": 19
+  },
+  {
+   "says": "the lead over Maharashtra holds in 2022-23: Karnataka 15 to 19% above (not a one-year flip)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          20,
+          "2022-23"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     },
+     {
+      "data": {
+       "rbi": [
+        20,
+        "2022-23"
+       ]
+      },
+      "state": "Maharashtra"
+     }
+    ],
+    "scale": 100
+   },
+   "min": 15,
+   "max": 19
+  }
+ ],
+ "map": {
+  "bands": [
+   40,
+   55,
+   70,
+   90
+  ],
+  "title": "Output per person: *each state's change*",
+  "sub": "% change at 2011-12 prices · {from} to {to}",
+  "note": "State average, 2011-12 prices. Blank: Andhra Pradesh and Telangana (split 2014), Jammu and Kashmir (boundary changed), Gujarat (no 2023-24 figure).",
+  "vo": "Twelve years of change in output per person by state.",
+  "key": [
+   "smaller rise",
+   "",
+   "bigger rise"
+  ]
+ },
+ "end": {
+  "q": "Who rose *more* than Karnataka?",
+  "sub": "Find it on the map.",
+  "vo": "Who rose more than Karnataka?"
+ },
+ "yt_title": "Karnataka: Real Output per Person Up 2.1 Times in 12 Years"
+}

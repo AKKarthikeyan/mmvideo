@@ -1,0 +1,560 @@
+{
+ "id": "px72",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "Cooperation Ministry · NCD · 1 Mar 2026",
+ "source": "Ministry of Cooperation, Lok Sabha replies No. 2939 (10 Mar 2026), No. 1500 (9 Dec 2025) and No. 2866 (18 Mar 2025): registered cooperative societies by State/UT, National Cooperative Database (all sectors, functional or not; 2026 table as of 1 Mar 2026). People: National Commission on Population, Projections 2011-2036 (July 2020 edition), 1 Mar 2026. Counts change with each update.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Telangana* has *3×* Kerala's",
+    "registered cooperatives,",
+    "*7%* more projected people."
+   ],
+   "vo": "Telangana has three times Kerala's registered cooperative societies, with seven percent more people.",
+   "geo": "Telangana",
+   "name": "Telangana",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "REGISTERED COOPERATIVE SOCIETIES",
+   "big": "60,858",
+   "text": "societies registered in Telangana. Kerala: 19,652, about a third as many.",
+   "sub": "National Cooperative Database, all sectors; counts change with each update. Not members or money.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "60,858",
+     "frac": 0.8694
+    },
+    {
+     "name": "Kerala",
+     "label": "19,652",
+     "frac": 0.2807428571428571
+    }
+   ],
+   "vo": "Telangana: sixty-one thousand societies. Kerala: twenty thousand.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "PROJECTED PEOPLE · 1 MARCH 2026",
+   "big": "38.6",
+   "text": "million projected people in Telangana. Kerala: 36.2 million; Telangana has 7% more.",
+   "sub": "Bars in millions. Projections from Census 2011, not a count.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "38.6",
+     "frac": 0.7727200000000001
+    },
+    {
+     "name": "Kerala",
+     "label": "36.2",
+     "frac": 0.72414
+    }
+   ],
+   "vo": "Telangana: thirty-nine million people. Kerala: thirty-six.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Telangana",
+   "geo": "Telangana",
+   "kicker": "SOCIETIES PER LAKH PEOPLE",
+   "big": "157.5",
+   "text": "registered societies per lakh projected people in Telangana. Kerala: 54.3.",
+   "sub": "1 lakh = 100,000 people. Societies ÷ projected population, 1 March 2026.",
+   "bars": [
+    {
+     "name": "Telangana",
+     "label": "157.5",
+     "frac": 0.7875815301791076
+    },
+    {
+     "name": "Kerala",
+     "label": "54.3",
+     "frac": 0.27138398652194323
+    }
+   ],
+   "vo": "Per lakh people: one hundred fifty-eight. Kerala: fifty-four.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Telangana against Kerala,",
+    "in three counts since 2025:",
+    "*3.3×*, then *3.1×*, *3.1×*."
+   ],
+   "note": "Lok Sabha replies of 18 Mar 2025, 9 Dec 2025, 10 Mar 2026. Registered societies, not members or money. The table shows how much, not why.",
+   "vo": "In each of three counts: at least three times Kerala's.",
+   "t0": 25.161,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Cooperative societies per *lakh people*",
+   "sub": "registered societies · India 59.5 · 1 March 2026",
+   "note": "Not members or money. Seven north-eastern states other than Assam share one population projection.",
+   "anim": true,
+   "ring": [
+    "Telangana",
+    "Kerala"
+   ],
+   "vo": "Registered societies per lakh people, every state.",
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Not members or money. Seven north-eastern states other than Assam share one population projection.",
+   "ring": [
+    "Telangana",
+    "Kerala"
+   ],
+   "q": "Is your family in a *cooperative*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Is your family in a cooperative?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Uttar Pradesh",
+   "label": "17",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Odisha",
+   "label": "18",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.488
+  },
+  {
+   "name": "Bihar",
+   "label": "21",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.594
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "26",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 29.699
+  },
+  {
+   "name": "Puducherry",
+   "label": "26",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 29.805
+  },
+  {
+   "name": "Jharkhand",
+   "label": "30",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.911
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "30",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.017
+  },
+  {
+   "name": "West Bengal",
+   "label": "32",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.122
+  },
+  {
+   "name": "Assam",
+   "label": "34",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 30.228
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "34",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.334
+  },
+  {
+   "name": "Chandigarh",
+   "label": "38",
+   "bucket": 1,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.44
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "38",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.545
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "39",
+   "bucket": 1,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 30.651
+  },
+  {
+   "name": "Rajasthan",
+   "label": "50",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.757
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "53",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.863
+  },
+  {
+   "name": "Kerala",
+   "label": "54",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 30.968
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "60",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.074
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "61",
+   "bucket": 2,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.18
+  },
+  {
+   "name": "Punjab",
+   "label": "63",
+   "bucket": 2,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Karnataka",
+   "label": "68",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.391
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "76",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.497
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "76",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.603
+  },
+  {
+   "name": "Tripura",
+   "label": "77",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.709
+  },
+  {
+   "name": "Ladakh",
+   "label": "90",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.814
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "91",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.92
+  },
+  {
+   "name": "Meghalaya",
+   "label": "100",
+   "bucket": 3,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.026
+  },
+  {
+   "name": "Haryana",
+   "label": "111",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.132
+  },
+  {
+   "name": "Gujarat",
+   "label": "117",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.237
+  },
+  {
+   "name": "Mizoram",
+   "label": "123",
+   "bucket": 3,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.343
+  },
+  {
+   "name": "Telangana",
+   "label": "158",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.449
+  },
+  {
+   "name": "Maharashtra",
+   "label": "175",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.554
+  },
+  {
+   "name": "Nagaland",
+   "label": "347",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.66
+  },
+  {
+   "name": "Goa",
+   "label": "350",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 32.766
+  },
+  {
+   "name": "Manipur",
+   "label": "351",
+   "bucket": 4,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.872
+  },
+  {
+   "name": "Sikkim",
+   "label": "532",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.977
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "551",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 33.083
+  }
+ ],
+ "checked": [
+  "Telangana / Kerala = 3.10 (at least 3.0)",
+  "Telangana / Kerala = 3.09 (at least 3.0)",
+  "Telangana / Kerala = 3.32 (at least 3.0)",
+  "Telangana / Kerala = 1.07 (at least 1.06)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.746,
+   "at": 0.12,
+   "text": "Telangana has three times Kerala's registered cooperative societies, with seven percent more people."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 4.545,
+   "at": 7.862,
+   "text": "Telangana: sixty-one thousand societies. Kerala: twenty thousand."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.388,
+   "at": 13.668,
+   "text": "Telangana: thirty-nine million people. Kerala: thirty-six."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 3.657,
+   "at": 19.475,
+   "text": "Per lakh people: one hundred fifty-eight. Kerala: fifty-four."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.108,
+   "at": 25.281,
+   "text": "In each of three counts: at least three times Kerala's."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.735,
+   "at": 29.152,
+   "text": "Registered societies per lakh people, every state."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.168,
+   "at": 34.959,
+   "text": "Is your family in a cooperative?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Telangana: 3× Kerala's Registered Co-ops, 7% More People"
+}

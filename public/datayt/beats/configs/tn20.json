@@ -1,0 +1,358 @@
+{
+ "id": "tn20",
+ "type": "then",
+ "rules": 2,
+ "chip": "TWO SURVEYS",
+ "source_short": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "palette": "O",
+ "state": "Uttarakhand",
+ "points": [
+  {
+   "data": {
+    "nfhs": 35,
+    "col": 3
+   },
+   "period": "NFHS-5 (2019-21)"
+  },
+  {
+   "data": {
+    "nfhs": 35
+   },
+   "period": "NFHS-6 (2023-24)"
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "min_change": 0.05,
+ "kicker": "BORN IN A HEALTH FACILITY",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Share of babies born in the five years before each survey who were born in a health facility, public or private. 34 states and UTs with a figure in both surveys; Lakshadweep (small sample) is not ranked and Manipur has no figure in the sheets used. Survey estimates.",
+ "hook": [
+  "*Uttarakhand*: births in a",
+  "health facility up *5.7 points*,",
+  "2019-21 to 2023-24."
+ ],
+ "hook_vo": "Births in a health facility rose five point seven points in Uttarakhand.",
+ "then": {
+  "text": "of babies were born in a health facility. India: *{india_then}*.",
+  "vo": "Earlier survey: eighty-three point two percent of babies."
+ },
+ "now": {
+  "text": "of babies were born in a health facility. India: *{india_now}*.",
+  "vo": "Next survey: eighty-eight point nine percent. India, ninety point six."
+ },
+ "facts": [
+  {
+   "kicker": "UTTARAKHAND'S RISE VS INDIA'S",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 35
+      }
+     },
+     {
+      "data": {
+       "nfhs": 35,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "unit": " pts",
+   "text": "India's rise: 2.0 points. More than twice.",
+   "bars": [
+    {
+     "name": "Uttarakhand",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 35
+       }
+      },
+      {
+       "data": {
+        "nfhs": 35,
+        "col": 3
+       }
+      }
+     ],
+     "unit": ""
+    },
+    {
+     "name": "India",
+     "diff": [
+      {
+       "data": {
+        "nfhs": 35
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "nfhs": 35,
+        "col": 3
+       },
+       "state": "India"
+      }
+     ],
+     "unit": ""
+    }
+   ],
+   "bar_max": 7,
+   "sub": "Percentage points between the two surveys: Uttarakhand +5.7, India +2.0.",
+   "vo": "India rose two points. Uttarakhand rose more than twice as much."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Births outside a facility,",
+    "per 100: *17* in 2019-21 and",
+    "*11* in 2023-24, a third fewer."
+   ],
+   "note": "Survey estimates: small gaps are not differences. The survey shows how many, not why.",
+   "vo": "Births outside a facility fell by a third: seventeen to eleven per hundred."
+  }
+ ],
+ "tests": [
+  {
+   "says": "Uttarakhand 83.2% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 35,
+     "col": 3
+    },
+    "scale": 10
+   },
+   "equals": 832
+  },
+  {
+   "says": "Uttarakhand 88.9% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 35
+    },
+    "scale": 10
+   },
+   "equals": 889
+  },
+  {
+   "says": "India 88.6% in NFHS-5 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 35,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 886
+  },
+  {
+   "says": "India 90.6% in NFHS-6 (tenths)",
+   "value": {
+    "data": {
+     "nfhs": 35
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 906
+  },
+  {
+   "says": "Uttarakhand rose 5.7 points: hook, title and card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 35
+      }
+     },
+     {
+      "data": {
+       "nfhs": 35,
+       "col": 3
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 57
+  },
+  {
+   "says": "India rose 2.0 points: hook and card (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "nfhs": 35
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "nfhs": 35,
+       "col": 3
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 20
+  },
+  {
+   "says": "Uttarakhand rose more than twice as much as India",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 35
+        }
+       },
+       {
+        "data": {
+         "nfhs": 35,
+         "col": 3
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "nfhs": 35
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "nfhs": 35,
+         "col": 3
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ]
+   },
+   "min": 2.5,
+   "max": 3.5
+  },
+  {
+   "says": "outside a facility in NFHS-5: 17 of every 100 (16.8)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "values": {
+        "X": 100
+       }
+      },
+      "state": "X"
+     },
+     {
+      "data": {
+       "nfhs": 35,
+       "col": 3
+      }
+     }
+    ]
+   },
+   "equals": 17
+  },
+  {
+   "says": "outside a facility in NFHS-6: 11 of every 100 (11.1)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "values": {
+        "X": 100
+       }
+      },
+      "state": "X"
+     },
+     {
+      "data": {
+       "nfhs": 35
+      }
+     }
+    ]
+   },
+   "equals": 11
+  },
+  {
+   "says": "births outside a facility fell by a third (0.66 of the earlier figure)",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "values": {
+          "X": 100
+         }
+        },
+        "state": "X"
+       },
+       {
+        "data": {
+         "nfhs": 35
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "values": {
+          "X": 100
+         }
+        },
+        "state": "X"
+       },
+       {
+        "data": {
+         "nfhs": 35,
+         "col": 3
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "min": 0.62,
+   "max": 0.7
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -3,
+   -0.5,
+   0.5,
+   4
+  ],
+  "title": "Births in a facility: *each state's change*",
+  "sub": "percentage points · darker = bigger rise · India +2.0",
+  "note": "Babies born in the 5 years before each survey. Near 100% there is little room to rise. Blank: Manipur (no figure), Lakshadweep (small sample).",
+  "vo": "Every state's change in births in a health facility.",
+  "key": [
+   "fell",
+   "within half a point",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Where were *you* born?",
+  "sub": "Hospital or home? Comment below.",
+  "vo": "Where were you born? Hospital or home?"
+ },
+ "yt_title": "Uttarakhand: Babies Born in a Health Facility Up 5.7 Points"
+}

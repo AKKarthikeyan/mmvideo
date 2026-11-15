@@ -1,0 +1,565 @@
+{
+ "id": "tn04",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Households with any usual member covered under a health insurance or financing scheme.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#E8A33D",
+  "#F0CC96",
+  "#DDD5C8",
+  "#719490",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Jammu and Kashmir*: homes with",
+    "someone insured: *14%* (2019-21),",
+    "*96%* (2023-24)."
+   ],
+   "vo": "Jammu and Kashmir: one home in seven had someone insured. Then nearly all.",
+   "geo": "Jammu and Kashmir",
+   "name": "J&K",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Jammu and Kashmir",
+   "name": "J&K",
+   "kicker": "HOMES WITH A MEMBER INSURED",
+   "big": "+82.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "13.8%",
+    "frac": 0.14330218068535827
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "96.3%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of homes had *any member* with health cover",
+   "vo": "In the twenty nineteen to twenty-one survey: fourteen percent of homes.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Jammu and Kashmir",
+   "name": "J&K",
+   "kicker": "HOMES WITH A MEMBER INSURED",
+   "big": "+82.5 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "13.8%",
+    "frac": 0.14330218068535827
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "96.3%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of homes: *seven times* the share.",
+   "vo": "Next survey: ninety-six percent. Seven times the share.",
+   "t0": 11.613,
+   "t1": 17.419
+  },
+  {
+   "kind": "fact",
+   "name": "J&K",
+   "geo": "Jammu and Kashmir",
+   "kicker": "THE RISE, AGAINST INDIA'S",
+   "big": "4.3×",
+   "text": "India's rise in points",
+   "sub": "Rise in percentage points. India: 41.0% to 60.2%.",
+   "bars": [
+    {
+     "name": "J & K",
+     "label": "82.5",
+     "frac": 0.9166666666666666
+    },
+    {
+     "name": "India",
+     "label": "19.2",
+     "frac": 0.21333333333333337
+    }
+   ],
+   "vo": "India rose nineteen points. Jammu and Kashmir rose over four times that.",
+   "t0": 17.419,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Only *two* rose over *75 points*:",
+    "*Jammu and Kashmir* and *Ladakh*.",
+    "No other state rose over *55*."
+   ],
+   "note": "Homes where any usual member has health insurance or a health scheme. Ladakh: 17.1% to 96.0%. The survey shows how many, not why.",
+   "vo": "Only two rose by more than seventy-five points: Jammu and Kashmir and Ladakh.",
+   "t0": 23.226,
+   "t1": 29.032
+  },
+  {
+   "kind": "map",
+   "title": "Health cover: *each state's change*",
+   "sub": "percentage points · NFHS-5 to NFHS-6 · India +19.2",
+   "note": "Homes where any usual member has health insurance or a health scheme. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "Jammu and Kashmir",
+    "Ladakh"
+   ],
+   "vo": "Every state's change between the two surveys, in percentage points.",
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 2 points"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "t0": 29.032,
+   "t1": 34.839
+  },
+  {
+   "note": "Homes where any usual member has health insurance or a health scheme. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "ring": [
+    "Jammu and Kashmir",
+    "Ladakh"
+   ],
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 2 points"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "q": "Did health cover *rise or fall* in your state?",
+   "sub": "Comment your state's change.",
+   "kind": "mapend",
+   "vo": "Did health cover rise or fall in your state?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Tamil Nadu",
+   "label": "−5.4",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Goa",
+   "label": "−1.4",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 29.494
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "−1.3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 29.606
+  },
+  {
+   "name": "Kerala",
+   "label": "−0.7",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 29.718
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+0.9",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.83
+  },
+  {
+   "name": "Assam",
+   "label": "+3.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.942
+  },
+  {
+   "name": "Bihar",
+   "label": "+3.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.054
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+4.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 30.166
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+5.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 30.278
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+7.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 30.39
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+8.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.502
+  },
+  {
+   "name": "Sikkim",
+   "label": "+8.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 30.614
+  },
+  {
+   "name": "Mizoram",
+   "label": "+9.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 30.726
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+10.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.838
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+11.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.95
+  },
+  {
+   "name": "Telangana",
+   "label": "+13.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.062
+  },
+  {
+   "name": "Gujarat",
+   "label": "+13.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.174
+  },
+  {
+   "name": "Puducherry",
+   "label": "+13.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.285
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+15.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.397
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+17.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.509
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+19.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.621
+  },
+  {
+   "name": "Tripura",
+   "label": "+20.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.733
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+21.3",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.845
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+22.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.957
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+22.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.069
+  },
+  {
+   "name": "Punjab",
+   "label": "+24.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.181
+  },
+  {
+   "name": "Karnataka",
+   "label": "+31.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.293
+  },
+  {
+   "name": "Odisha",
+   "label": "+34.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.405
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+35.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.517
+  },
+  {
+   "name": "Haryana",
+   "label": "+42.6",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.629
+  },
+  {
+   "name": "Nagaland",
+   "label": "+44.1",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.741
+  },
+  {
+   "name": "West Bengal",
+   "label": "+54.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.853
+  },
+  {
+   "name": "Ladakh",
+   "label": "+78.9",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.965
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+82.5",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.077
+  }
+ ],
+ "checked": [
+  "Jammu and Kashmir: 13.80 in NFHS-5 (2019-21), 96.30 in NFHS-6 (2023-24): +82.50, 6.98 times",
+  "one home in seven; 14% in NFHS-5: 13.80",
+  "nearly all; 96% in NFHS-6: 96.30",
+  "seven times the share: 6.98",
+  "India 41.0% in NFHS-5 (tenths): 410.00",
+  "India 60.2% in NFHS-6 (tenths): 602.00",
+  "India rose nineteen points: 19.20",
+  "Jammu and Kashmir rose over eighty-two points: 82.50",
+  "over four times India's rise: 4.30",
+  "Ladakh rose over 75 points: 78.90",
+  "Ladakh 17.1% in NFHS-5 (tenths): 171.00",
+  "Ladakh 96.0% in NFHS-6 (tenths): 960.00",
+  "no other state rose over 55 points: West Bengal, the third largest: 54.50",
+  "Tamil Nadu fell: -5.40"
+ ],
+ "vo": [],
+ "voiceEngine": "none",
+ "voice": "",
+ "ytTitle": "J&K: Homes With Any Member Health-Insured, 14% to 96%"
+}

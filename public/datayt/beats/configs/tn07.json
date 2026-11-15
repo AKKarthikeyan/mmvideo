@@ -1,0 +1,584 @@
+{
+ "id": "tn07",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "Agriculture Ministry · 2014-15 to 2024-25 final estimates",
+ "palette": "E",
+ "state": "Gujarat",
+ "table": 61,
+ "from": "2014-15",
+ "to": "2024-25",
+ "measure": "share",
+ "kicker": "SHARE OF INDIA'S PULSES PRODUCTION",
+ "expect": {
+  "years": 10
+ },
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 61: production of pulses, thousand tonnes, shown here in lakh tonnes. Each share is of the all-India figure in the same table. Area is Table 70 and yield is Table 83. The 2024-25 column is the Ministry's final estimate. Left blank on the map: Jammu and Kashmir (boundary changed in 2019); Delhi (no pulses output in 2014-15); not in the table: Ladakh, Chandigarh, Lakshadweep, Andaman and Nicobar Islands, Dadra and Nagar Haveli and Daman and Diu.",
+ "hook": [
+  "*Gujarat*: *3%* of India's pulses",
+  "output in 2014-15.",
+  "*8%* in 2024-25."
+ ],
+ "hook_vo": "Gujarat produced three percent of India's pulses. Ten years on, eight.",
+ "then": {
+  "text": "of India's pulses: *6 lakh tonnes*",
+  "vo": "In twenty fourteen-fifteen: about three percent of India's pulses. Six lakh tonnes."
+ },
+ "now": {
+  "text": "of India's pulses: *20 lakh tonnes*",
+  "vo": "Ten years on: about eight percent. Twenty lakh tonnes."
+ },
+ "facts": [
+  {
+   "kicker": "PULSES OUTPUT · 2014-15 TO 2024-25",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2014-15"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Gujarat's pulses harvest",
+   "bars": [
+    {
+     "name": "Gujarat",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         61,
+         "2024-25"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         61,
+         "2014-15"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "India",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         61,
+         "2024-25"
+        ]
+       },
+       "state": "India"
+      },
+      {
+       "data": {
+        "rbi": [
+         61,
+         "2014-15"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 4,
+   "sub": "India: 172 to 257 lakh tonnes. Gujarat added 17% of the gain. In 2013-14 Gujarat had 7 lakh tonnes, 3.8% of India's.",
+   "vo": "India's harvest grew to one point five times. Gujarat's, to three point five."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "The harvest grew on two counts:",
+    "area *2.2 times*,",
+    "yield per hectare *1.6 times*."
+   ],
+   "note": "Area 591 to 1,320 thousand hectares; yield 972 to 1,532 kg a hectare. Maharashtra gained more points; its 2014-15 share (11.9%) was below 2013-14 (16.5%). The table shows how much, not why.",
+   "vo": "Two point two times the area. One point six times the yield."
+  }
+ ],
+ "tests": [
+  {
+   "says": "about three percent of India's pulses in 2014-15",
+   "value": {
+    "share": {
+     "rbi": [
+      61,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 3
+  },
+  {
+   "says": "about eight percent in 2024-25",
+   "value": {
+    "share": {
+     "rbi": [
+      61,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 8
+  },
+  {
+   "says": "six lakh tonnes in 2014-15 (thousand tonnes / 100)",
+   "value": {
+    "data": {
+     "rbi": [
+      61,
+      "2014-15"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 6
+  },
+  {
+   "says": "twenty lakh tonnes in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      61,
+      "2024-25"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 20
+  },
+  {
+   "says": "Gujarat's harvest three point five times bigger",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 35
+  },
+  {
+   "says": "India's harvest one point five times bigger",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2024-25"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2014-15"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 15
+  },
+  {
+   "says": "India 172 lakh tonnes in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      61,
+      "2014-15"
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 172
+  },
+  {
+   "says": "India 257 lakh tonnes in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      61,
+      "2024-25"
+     ]
+    },
+    "state": "India",
+    "scale": 0.01
+   },
+   "equals": 257
+  },
+  {
+   "says": "Gujarat added 17% of India's gain in pulses",
+   "value": {
+    "ratio": [
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          61,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          61,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "data": {
+         "rbi": [
+          61,
+          "2024-25"
+         ]
+        },
+        "state": "India"
+       },
+       {
+        "data": {
+         "rbi": [
+          61,
+          "2014-15"
+         ]
+        },
+        "state": "India"
+       }
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 17
+  },
+  {
+   "says": "area two point two times (Table 70)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        70,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        70,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 22
+  },
+  {
+   "says": "yield one point six times (Table 83)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2014-15"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 16
+  },
+  {
+   "says": "area 591 thousand hectares in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      70,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 591
+  },
+  {
+   "says": "area 1,320 thousand hectares in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      70,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 1320
+  },
+  {
+   "says": "yield 972 kg a hectare in 2014-15",
+   "value": {
+    "data": {
+     "rbi": [
+      83,
+      "2014-15"
+     ]
+    }
+   },
+   "equals": 972
+  },
+  {
+   "says": "yield 1,532 kg a hectare in 2024-25",
+   "value": {
+    "data": {
+     "rbi": [
+      83,
+      "2024-25"
+     ]
+    }
+   },
+   "equals": 1532
+  },
+  {
+   "says": "2013-14 share 3.8% (the year before the start; tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      61,
+      "2013-14"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 38
+  },
+  {
+   "says": "2013-14 harvest 7 lakh tonnes (thousand tonnes / 100)",
+   "value": {
+    "data": {
+     "rbi": [
+      61,
+      "2013-14"
+     ]
+    },
+    "scale": 0.01
+   },
+   "equals": 7
+  },
+  {
+   "says": "Maharashtra 11.9% in 2014-15 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      61,
+      "2014-15"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 119
+  },
+  {
+   "says": "Maharashtra 16.5% in 2013-14 (tenths)",
+   "value": {
+    "share": {
+     "rbi": [
+      61,
+      "2013-14"
+     ]
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 165
+  },
+  {
+   "says": "Maharashtra gained more points than Gujarat",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "share": {
+         "rbi": [
+          61,
+          "2024-25"
+         ]
+        },
+        "state": "Maharashtra"
+       },
+       {
+        "share": {
+         "rbi": [
+          61,
+          "2014-15"
+         ]
+        },
+        "state": "Maharashtra"
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "share": {
+         "rbi": [
+          61,
+          "2024-25"
+         ]
+        }
+       },
+       {
+        "share": {
+         "rbi": [
+          61,
+          "2014-15"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 10
+  },
+  {
+   "says": "some lost share: Madhya Pradesh's share of India's pulses fell by 6 to 9 points",
+   "value": {
+    "diff": [
+     {
+      "share": {
+       "rbi": [
+        61,
+        "2024-25"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "share": {
+       "rbi": [
+        61,
+        "2014-15"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": -9,
+   "max": -6
+  },
+  {
+   "says": "yet harvested more: Madhya Pradesh's pulses output 1.0 to 1.2 times the 2014-15 figure",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2024-25"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        61,
+        "2014-15"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 1.2
+  }
+ ],
+ "map": {
+  "bands": [
+   -1.5,
+   -0.3,
+   0.3,
+   1.5
+  ],
+  "title": "Share of India's pulses: *who gained, who lost*",
+  "sub": "points of India's production · {from} to {to}",
+  "note": "Lower share can mean more tonnes. State totals, not per person. Blank: Jammu and Kashmir (boundary changed) or no figure.",
+  "vo": "Each state's change in pulses share. Some lost share yet harvested more.",
+  "key": [
+   "lost share",
+   "within 0.3 points",
+   "gained share"
+  ]
+ },
+ "end": {
+  "q": "Which state gained the *most share*?",
+  "sub": "The answer is on the map.",
+  "vo": "Which state gained the most share?"
+ },
+ "yt_title": "Gujarat: Share of India's Pulses Crop, 3% to 8% in 10 Years"
+}

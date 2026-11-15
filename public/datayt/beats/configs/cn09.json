@@ -1,0 +1,185 @@
+{
+ "id": "cn09",
+ "type": "countdown",
+ "rules": 2,
+ "theme": "economy",
+ "chip": "TOP 5",
+ "source_short": "RBI Handbook · 2022-23 accounts",
+ "palette": "C",
+ "data": {
+  "ratio": [
+   {
+    "rbi": [
+     175,
+     "2022-23 (A)"
+    ]
+   },
+   {
+    "tbl": [
+     "population/projected",
+     "2023"
+    ]
+   }
+  ],
+  "scale": 10
+ },
+ "unit": "k",
+ "label": "₹ thousand per person, 2022-23 accounts",
+ "min_gap": 0.03,
+ "rank_vo": {
+  "5": "Fifth is Himachal Pradesh at twenty-nine thousand rupees.",
+  "4": "Fourth is Mizoram at thirty-six thousand rupees.",
+  "3": "Third is Goa at forty-two thousand rupees.",
+  "2": "Second is Arunachal Pradesh at fifty-six thousand rupees.",
+  "1": "First is Sikkim at over sixty thousand rupees."
+ },
+ "tests": [
+  {
+   "says": "Himachal Pradesh: social sector spending is about twenty-nine thousand rupees a person, 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        175,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Himachal Pradesh"
+   },
+   "equals": 29
+  },
+  {
+   "says": "Mizoram: about thirty-six thousand rupees a person, 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        175,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Mizoram"
+   },
+   "equals": 36
+  },
+  {
+   "says": "Goa: about forty-two thousand rupees a person, 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        175,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Goa"
+   },
+   "equals": 42
+  },
+  {
+   "says": "Arunachal Pradesh: about fifty-six thousand rupees a person, 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        175,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "equals": 56
+  },
+  {
+   "says": "Sikkim: over sixty thousand rupees a person, 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        175,
+        "2022-23 (A)"
+       ]
+      },
+      {
+       "tbl": [
+        "population/projected",
+        "2023"
+       ]
+      }
+     ],
+     "scale": 10
+    },
+    "state": "Sikkim"
+   },
+   "min": 60.0,
+   "max": 61.0
+  }
+ ],
+ "source": "RBI Handbook of Statistics on Indian States, Table 175: state governments' social sector expenditure, 2022-23 accounts (the 2023-24 and 2024-25 columns are estimates and are not used), divided by projected population on 1 March 2023 (National Commission on Population, 2020). Blank: five UTs with no row. The table shows how much was spent, not why or with what result.",
+ "hook": [
+  "State social sector",
+  "spending per person:",
+  "*top 5* states"
+ ],
+ "hook_vo": "Social sector spending per person. The top five.",
+ "map": {
+  "title": "Social sector spending, *every state*",
+  "sub": "₹ thousand per person · 2022-23 accounts",
+  "note": "State governments' social sector spending over projected population, 2022-23. Top five outlined. Blank: five UTs with no row in the table.",
+  "ring": [
+   "Sikkim",
+   "Arunachal Pradesh",
+   "Goa",
+   "Mizoram",
+   "Himachal Pradesh"
+  ],
+  "vo": "This counts rupees spent on the social sector, not results.",
+  "dec": 0
+ },
+ "end": {
+  "q": "Where does your state stand?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Social Sector Spending per Person: Top 5 States, 2022-23"
+}

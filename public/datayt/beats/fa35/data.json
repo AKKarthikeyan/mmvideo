@@ -1,0 +1,562 @@
+{
+ "id": "fa35",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "Min. of Finance · Lok Sabha, 10 Aug 2026",
+ "source": "Ministry of Finance, Lok Sabha unstarred question 3648, 10 Aug 2026, Annexure I: gold loans outstanding (the loan book, not bad loans) at public sector banks, by state, 31 March 2026, as reported by the banks. The RBI keeps no state figure; private banks and finance companies are excluded. The answer prints no total: shares are of the state rows (two small UT rows, ₹192 crore, are left out). People: projected population, 1 March 2026, National Commission on Population (July 2020 edition). Rupees, not weight of gold.",
+ "accent": "#7A2340",
+ "accent2": "#C9822F",
+ "bands": [
+  "#DA996A",
+  "#C67447",
+  "#AD512F",
+  "#8C352A",
+  "#662125"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Tamil Nadu*: 5% of people,",
+    "*36%* of public-sector-bank",
+    "gold loans, March 2026."
+   ],
+   "vo": "Tamil Nadu has five percent of people, thirty-six percent of public-bank gold loans.",
+   "geo": "Tamil Nadu",
+   "name": "Tamil Nadu",
+   "t0": 0.0,
+   "t1": 7.742
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SHARE OF PUBLIC-BANK GOLD LOANS",
+   "big": "36.4%",
+   "text": "of the gold loans outstanding at public-sector banks, 31 March 2026.",
+   "sub": "Loans outstanding, not bad loans. Public-sector banks only; the RBI keeps no state figures.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "36.4%",
+     "frac": 0.727487788624342
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "19.7%",
+     "frac": 0.3940075814203193
+    }
+   ],
+   "vo": "Public bank gold loans: thirty-six percent in Tamil Nadu, twenty in Andhra Pradesh.",
+   "t0": 7.742,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "SHARE OF INDIA'S PEOPLE",
+   "big": "5.4%",
+   "text": "of India's people, by projected population on 1 March 2026.",
+   "sub": "Projected population, National Commission on Population (July 2020 report).",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "5.4%",
+     "frac": 0.10876718554072212
+    },
+    {
+     "name": "Andhra Pradesh",
+     "label": "3.8%",
+     "frac": 0.07533305094017285
+    }
+   ],
+   "vo": "Its share of India's people was five point four percent.",
+   "t0": 15.484,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "GOLD LOANS PER PERSON · ₹",
+   "big": "₹53,085",
+   "text": "of public-bank gold loans reported for Tamil Nadu, per person. India: about ₹7,900.",
+   "sub": "Loans divided by projected population. Rupees outstanding, not weight of gold.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "₹53,085",
+     "frac": 0.884756574592285
+    },
+    {
+     "name": "India",
+     "label": "₹7,937",
+     "frac": 0.13228054685155002
+    }
+   ],
+   "vo": "That is fifty-three thousand rupees a person. India, eight thousand.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Against Kerala: Tamil Nadu has",
+    "*4.9 times* the gold loans,",
+    "*2.1 times* the people."
+   ],
+   "note": "",
+   "vo": "Four point nine times Kerala's loans, two point one times its people.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Gold loans per person: *every state*",
+   "sub": "₹ per person · India about 7,900 · 31 March 2026",
+   "note": "Public-sector banks only. Projected population. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Tamil Nadu",
+    "Andhra Pradesh"
+   ],
+   "vo": "Here is every state: public bank gold loans for each person.",
+   "t0": 30.968,
+   "t1": 38.71
+  },
+  {
+   "note": "Public-sector banks only. Projected population. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+   "ring": [
+    "Tamil Nadu",
+    "Andhra Pradesh"
+   ],
+   "q": "Does your family *pledge gold*?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "Does your family pledge gold?",
+   "t0": 38.71,
+   "t1": 42.581
+  }
+ ],
+ "total": 42.981,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Arunachal Pradesh",
+   "label": "0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Mizoram",
+   "label": "1",
+   "bucket": 0,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Ladakh",
+   "label": "7",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Nagaland",
+   "label": "31",
+   "bucket": 0,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Meghalaya",
+   "label": "73",
+   "bucket": 0,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Assam",
+   "label": "170",
+   "bucket": 0,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "Sikkim",
+   "label": "184",
+   "bucket": 0,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Jharkhand",
+   "label": "416",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Bihar",
+   "label": "432",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "608",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "641",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Tripura",
+   "label": "655",
+   "bucket": 1,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "895",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "1,281",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "1,656",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "West Bengal",
+   "label": "1,687",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "2,122",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Rajasthan",
+   "label": "2,356",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "2,538",
+   "bucket": 2,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 33.495
+  },
+  {
+   "name": "Haryana",
+   "label": "2,927",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.616
+  },
+  {
+   "name": "Lakshadweep",
+   "label": "3,000",
+   "bucket": 2,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 33.737
+  },
+  {
+   "name": "Manipur",
+   "label": "3,111",
+   "bucket": 3,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.858
+  },
+  {
+   "name": "Gujarat",
+   "label": "3,156",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.979
+  },
+  {
+   "name": "Maharashtra",
+   "label": "3,535",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.1
+  },
+  {
+   "name": "Odisha",
+   "label": "3,573",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.221
+  },
+  {
+   "name": "Chandigarh",
+   "label": "3,781",
+   "bucket": 3,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 34.342
+  },
+  {
+   "name": "Punjab",
+   "label": "4,169",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 34.463
+  },
+  {
+   "name": "Goa",
+   "label": "14,265",
+   "bucket": 3,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 34.584
+  },
+  {
+   "name": "Karnataka",
+   "label": "14,350",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.705
+  },
+  {
+   "name": "Kerala",
+   "label": "23,105",
+   "bucket": 4,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.826
+  },
+  {
+   "name": "Telangana",
+   "label": "23,914",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.947
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "41,511",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.068
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "53,085",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 35.189
+  },
+  {
+   "name": "Puducherry",
+   "label": "58,634",
+   "bucket": 4,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 35.31
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "61,601",
+   "bucket": 4,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 35.431
+  }
+ ],
+ "checked": [
+  "Tamil Nadu is the highest of 35 with data (36.4%)",
+  "Tamil Nadu 411656 rounds to 411656",
+  "India 1.13172e+06 rounds to 1131719",
+  "Andhra Pradesh 222953 rounds to 222953",
+  "Kerala 83657 rounds to 83657",
+  "Tamil Nadu 77546 rounds to 77546",
+  "India 1.42591e+06 rounds to 1425908",
+  "Andhra Pradesh 53709 rounds to 53709",
+  "Tamil Nadu 53.0854 rounds to 53",
+  "India 7.93683 rounds to 8",
+  "Tamil Nadu 53085.4 rounds to 53085",
+  "India 7936.83 rounds to 7937",
+  "Tamil Nadu / Kerala = 4.92 (at least 4.9)",
+  "Tamil Nadu / Kerala = 2.14 (at least 2.1)",
+  "Tamil Nadu / Andhra Pradesh = 1.85 (at least 1.8)",
+  "India 79.3683 rounds to 79"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.537,
+   "at": 0.12,
+   "text": "Tamil Nadu has five percent of people, thirty-six percent of public-bank gold loans."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.616,
+   "at": 7.862,
+   "text": "Public bank gold loans: thirty-six percent in Tamil Nadu, twenty in Andhra Pradesh."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.265,
+   "at": 15.604,
+   "text": "Its share of India's people was five point four percent."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.336,
+   "at": 19.475,
+   "text": "That is fifty-three thousand rupees a person. India, eight thousand."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.623,
+   "at": 25.281,
+   "text": "Four point nine times Kerala's loans, two point one times its people."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.616,
+   "at": 31.088,
+   "text": "Here is every state: public bank gold loans for each person."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 38.83,
+   "text": "Does your family pledge gold?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Tamil Nadu: 5% of People, 36% of Public Bank Gold Loans"
+}

@@ -1,0 +1,464 @@
+{
+ "id": "fa50",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "NSE · Market Pulse · 31 Aug 2026",
+ "source": "National Stock Exchange of India, NSE Market Pulse, September 2026, Table 70: unique registered investors, distinct PANs registered with NSE, traded or not, not only individuals, placed in a state by PIN code; 31 March 2020 and 31 August 2026. The table lists the 25 states and UTs with most PANs; 12 smaller ones sit in Others. Population: National Commission on Population, Projections 2011-2036 (July 2020 edition), 1 March 2020 and 1 July 2026. Rate = investors / projected population.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#69BAB4",
+  "#3D9E98",
+  "#13817C",
+  "#00635F",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Delhi*: *25* NSE-registered",
+    "investors per 100 projected",
+    "population. India *9.5*."
+   ],
+   "vo": "Delhi had twenty-five registered investors per hundred projected population.",
+   "geo": "NCT of Delhi",
+   "name": "Delhi",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "INVESTORS PER 100 POPULATION",
+   "big": "24.7",
+   "text": "registered in Delhi per 100 projected population. India: 9.5. Highest of the 25 listed by NSE.",
+   "sub": "Registered investor: a PAN registered with NSE, traded or not; not only individuals. 31 Aug 2026; population 1 July 2026.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "24.7",
+     "frac": 0.8238511069947958
+    },
+    {
+     "name": "India",
+     "label": "9.5",
+     "frac": 0.31539951849395503
+    }
+   ],
+   "vo": "Delhi had twenty-five. India had nine point five.",
+   "t0": 5.806,
+   "t1": 9.677
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "THE NEXT TWO · PER 100 POPULATION",
+   "big": "24.7",
+   "text": "Chandigarh and Goa came next. State is set by PIN code, not by who lives there.",
+   "sub": "Registered investors per 100 projected population, 31 Aug 2026.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "24.7",
+     "frac": 0.8238511069947958
+    },
+    {
+     "name": "Chandigarh",
+     "label": "20.6",
+     "frac": 0.6876640419947506
+    },
+    {
+     "name": "Goa",
+     "label": "18.0",
+     "frac": 0.5996252342286071
+    }
+   ],
+   "vo": "Chandigarh was next at twenty-one, then Goa at eighteen.",
+   "t0": 9.677,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Delhi",
+   "geo": "NCT of Delhi",
+   "kicker": "SAME MEASURE · MARCH 2020",
+   "big": "9.2",
+   "text": "per 100 projected population on 31 March 2020. India: 2.3.",
+   "sub": "Registered investors, end-March 2020; population 1 March 2020.",
+   "bars": [
+    {
+     "name": "Delhi",
+     "label": "9.2",
+     "frac": 0.30588157612373923
+    },
+    {
+     "name": "India",
+     "label": "2.3",
+     "frac": 0.07663659138949362
+    }
+   ],
+   "vo": "In March twenty twenty, Delhi's was nine. India's was two point three.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Delhi's rate against India's:",
+    "*4.0 times* in March 2020,",
+    "*2.6 times* in August 2026."
+   ],
+   "note": "",
+   "vo": "The gap to India narrowed from four times to two point six.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Registered investors per 100 *projected population*",
+   "sub": "India 9.5 · 31 Aug 2026 · the 25 states and UTs NSE lists",
+   "note": "PANs by PIN code over projected population. Blank: 12 smaller states and UTs that NSE groups as Others.",
+   "anim": true,
+   "ring": [
+    "NCT of Delhi",
+    "Chandigarh",
+    "Goa"
+   ],
+   "vo": "Here are the states NSE lists: registered investors per hundred projected population.",
+   "t0": 27.097,
+   "t1": 34.839
+  },
+  {
+   "note": "PANs by PIN code over projected population. Blank: 12 smaller states and UTs that NSE groups as Others.",
+   "ring": [
+    "NCT of Delhi",
+    "Chandigarh",
+    "Goa"
+   ],
+   "q": "Is your state *above* India's 9.5?",
+   "sub": "Comment your state's number.",
+   "kind": "mapend",
+   "vo": "Is your state above India's nine point five?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Bihar",
+   "label": "4.8",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "5.3",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Tripura",
+   "label": "5.5",
+   "bucket": 0,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "5.9",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Jharkhand",
+   "label": "6.0",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Odisha",
+   "label": "6.4",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "6.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "7.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Assam",
+   "label": "8.0",
+   "bucket": 1,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "West Bengal",
+   "label": "8.0",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Telangana",
+   "label": "8.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Rajasthan",
+   "label": "9.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "Kerala",
+   "label": "9.6",
+   "bucket": 2,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "9.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "Karnataka",
+   "label": "10.9",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Punjab",
+   "label": "11.5",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "11.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "12.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "12.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Haryana",
+   "label": "14.4",
+   "bucket": 3,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Gujarat",
+   "label": "15.5",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Maharashtra",
+   "label": "16.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Goa",
+   "label": "18.0",
+   "bucket": 4,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Chandigarh",
+   "label": "20.6",
+   "bucket": 4,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "24.7",
+   "bucket": 4,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 30.35
+  }
+ ],
+ "checked": [
+  "Delhi is the highest of 25 with data (24.7)",
+  "Delhi 24.7155 rounds to 25",
+  "Delhi 247.155 rounds to 247",
+  "India 94.6199 rounds to 95",
+  "Chandigarh 20.6299 rounds to 21",
+  "Goa 17.9888 rounds to 18",
+  "Delhi 9.17645 rounds to 9",
+  "Delhi 91.7645 rounds to 92",
+  "India 22.991 rounds to 23",
+  "Chandigarh / Goa = 1.15 (at least 1.1)",
+  "Goa / Maharashtra = 1.12 (at least 1.1)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 5.146,
+   "at": 0.12,
+   "text": "Delhi had twenty-five registered investors per hundred projected population."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.369,
+   "at": 5.926,
+   "text": "Delhi had twenty-five. India had nine point five."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.657,
+   "at": 9.797,
+   "text": "Chandigarh was next at twenty-one, then Goa at eighteen."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 15.604,
+   "text": "In March twenty twenty, Delhi's was nine. India's was two point three."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.048,
+   "at": 21.41,
+   "text": "The gap to India narrowed from four times to two point six."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 6.086,
+   "at": 27.217,
+   "text": "Here are the states NSE lists: registered investors per hundred projected population."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.056,
+   "at": 34.959,
+   "text": "Is your state above India's nine point five?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Delhi: 25 Registered Investors per 100 Projected Population"
+}

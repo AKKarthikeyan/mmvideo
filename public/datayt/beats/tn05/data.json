@@ -1,0 +1,566 @@
+{
+ "id": "tn05",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Agriculture Ministry · 2014-15 to 2024-25 (final est.)",
+ "source": "Ministry of Agriculture and Farmers' Welfare, as published in the RBI Handbook of Statistics on Indian States, Table 80: yield of rice, kg per hectare. 2024-25 figures are the Ministry's final estimates.",
+ "accent": "#034643",
+ "accent2": "#E8A33D",
+ "bands": [
+  "#E8A33D",
+  "#F0CC96",
+  "#DDD5C8",
+  "#719490",
+  "#034643"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Chhattisgarh*: up *15 places*",
+    "rice yield: 29th to 14th,",
+    "2014-15 to 2024-25."
+   ],
+   "vo": "Chhattisgarh climbed fifteen places in rice yield in ten years.",
+   "geo": "Chhattisgarh",
+   "name": "Chhattisgarh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "Chhattisgarh",
+   "name": "Chhattisgarh",
+   "kicker": "RICE YIELD · KG A HECTARE",
+   "big": "+60%",
+   "p0": {
+    "period": "2014-15",
+    "label": "1,660",
+    "frac": 0.6252354048964218
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "2,655",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "kg a hectare: *29th of 31* states and UTs",
+   "vo": "In twenty fourteen-fifteen: about one point seven tonnes of rice a hectare.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "geo": "Chhattisgarh",
+   "name": "Chhattisgarh",
+   "kicker": "RICE YIELD · KG A HECTARE",
+   "big": "+60%",
+   "p0": {
+    "period": "2014-15",
+    "label": "1,660",
+    "frac": 0.6252354048964218
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "2,655",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "14th of 31. India's average: 2,929 kg a hectare.",
+   "vo": "Ten years on: about two point seven tonnes.",
+   "t0": 11.613,
+   "t1": 15.484
+  },
+  {
+   "kind": "fact",
+   "name": "Chhattisgarh",
+   "geo": "Chhattisgarh",
+   "kicker": "RICE YIELD · 2014-15 TO 2024-25",
+   "big": "59.9%",
+   "text": "rise in Chhattisgarh's rice yield",
+   "sub": "Single-year figures. India: 2,391 to 2,929 kg a hectare.",
+   "bars": [
+    {
+     "name": "Chhattisgarh",
+     "label": "59.9%",
+     "frac": 0.8562822719449226
+    },
+    {
+     "name": "India",
+     "label": "22.5%",
+     "frac": 0.32144350839457486
+    }
+   ],
+   "vo": "India's rice yield rose under a quarter. Chhattisgarh's rose by sixty percent.",
+   "t0": 15.484,
+   "t1": 21.29
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "The gap to India's average",
+    "shrank from *31%*",
+    "to *9%.*"
+   ],
+   "note": "Yield is rice harvested per hectare sown. Single years swing: 2022-23 to 2024-25 were 2,602, 2,539 and 2,655 kg. The table shows how much, not why.",
+   "vo": "Its gap to India's average yield shrank from thirty-one percent to nine.",
+   "t0": 21.29,
+   "t1": 27.097
+  },
+  {
+   "kind": "map",
+   "title": "Rice yield: *each state's change*",
+   "sub": "% change in kg a hectare · 2014-15 to 2024-25",
+   "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh) or no figure. Yield per hectare, not total harvest.",
+   "anim": true,
+   "ring": [
+    "Chhattisgarh"
+   ],
+   "vo": "Here is every state's change in rice yield over the ten years.",
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "about level"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "t0": 27.097,
+   "t1": 32.903
+  },
+  {
+   "note": "Blank: boundary changed (Jammu and Kashmir, Ladakh) or no figure. Yield per hectare, not total harvest.",
+   "ring": [
+    "Chhattisgarh"
+   ],
+   "legend": [
+    {
+     "color": "#E8A33D",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "about level"
+    },
+    {
+     "color": "#034643",
+     "label": "rose"
+    }
+   ],
+   "q": "How did *your state's* rice yield change?",
+   "sub": "Find it on the map.",
+   "kind": "mapend",
+   "vo": "How did your state's rice yield change?",
+   "t0": 32.903,
+   "t1": 36.774
+  }
+ ],
+ "total": 37.174,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "NCT of Delhi",
+   "label": "−35",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 27.447
+  },
+  {
+   "name": "Sikkim",
+   "label": "−32",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 27.568
+  },
+  {
+   "name": "Nagaland",
+   "label": "−25",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 27.689
+  },
+  {
+   "name": "Goa",
+   "label": "−18",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 27.81
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "−17",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 27.931
+  },
+  {
+   "name": "Jharkhand",
+   "label": "−15",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.052
+  },
+  {
+   "name": "Puducherry",
+   "label": "−13",
+   "bucket": 0,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 28.173
+  },
+  {
+   "name": "Meghalaya",
+   "label": "−4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 28.294
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.415
+  },
+  {
+   "name": "Kerala",
+   "label": "+3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 28.536
+  },
+  {
+   "name": "Gujarat",
+   "label": "+3",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.657
+  },
+  {
+   "name": "Mizoram",
+   "label": "+4",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 28.778
+  },
+  {
+   "name": "West Bengal",
+   "label": "+5",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 28.899
+  },
+  {
+   "name": "Assam",
+   "label": "+6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 29.02
+  },
+  {
+   "name": "Tripura",
+   "label": "+10",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 29.141
+  },
+  {
+   "name": "Punjab",
+   "label": "+15",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 29.262
+  },
+  {
+   "name": "Telangana",
+   "label": "+16",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.382
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+17",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.503
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+19",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.624
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+20",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.745
+  },
+  {
+   "name": "Haryana",
+   "label": "+21",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 29.866
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+21",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 29.987
+  },
+  {
+   "name": "Odisha",
+   "label": "+25",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.108
+  },
+  {
+   "name": "Karnataka",
+   "label": "+25",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.229
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+30",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.35
+  },
+  {
+   "name": "Bihar",
+   "label": "+31",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.471
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+36",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.592
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+39",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.713
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+60",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 30.834
+  },
+  {
+   "name": "Manipur",
+   "label": "+66",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 30.955
+  }
+ ],
+ "checked": [
+  "Chhattisgarh: 1660.00 in 2014-15, 2655.00 in 2024-25: +995.00, 1.60 times",
+  "the years just before 2014-15 do not make it a freak year: measured from 1766.00 the change is still +889.00",
+  "the change holds in each of 2022-23, 2023-24, 2024-25: 2602.00, 2539.00, 2655.00",
+  "years = 10",
+  "rank_then = 29",
+  "rank_now = 14",
+  "n = 31",
+  "1,660 kg a hectare in 2014-15; about 1.7 tonnes: 1660.00",
+  "2,655 kg a hectare in 2024-25; about 2.7 tonnes: 2655.00",
+  "up by three-fifths: 1.60",
+  "India's yield rose by under a quarter: 1.23",
+  "India 2,391 kg in 2014-15: 2391.00",
+  "India 2,929 kg in 2024-25: 2929.00",
+  "31% below India's average in 2014-15: 30.57",
+  "9% below India's average in 2024-25: 9.35",
+  "rose by sixty percent: 59.94",
+  "2022-23: 2,602 kg: 2602.00",
+  "2023-24: 2,539 kg: 2539.00"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.866,
+   "at": 0.12,
+   "text": "Chhattisgarh climbed fifteen places in rice yield in ten years."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.198,
+   "at": 5.926,
+   "text": "In twenty fourteen-fifteen: about one point seven tonnes of rice a hectare."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.265,
+   "at": 11.733,
+   "text": "Ten years on: about two point seven tonnes."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.198,
+   "at": 15.604,
+   "text": "India's rice yield rose under a quarter. Chhattisgarh's rose by sixty percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 3.97,
+   "at": 21.41,
+   "text": "Its gap to India's average yield shrank from thirty-one percent to nine."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.578,
+   "at": 27.217,
+   "text": "Here is every state's change in rice yield over the ten years."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.533,
+   "at": 33.023,
+   "text": "How did your state's rice yield change?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Chhattisgarh Grew 60% More Rice per Hectare in 10 Years"
+}

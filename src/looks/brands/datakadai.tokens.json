@@ -1,0 +1,85 @@
+{
+ "id": "datakadai",
+ "name": "Data Kadai",
+ "handle": "@DataKadai",
+ "tagline": "India's numbers, served fresh. From official sources.",
+ "palette": {
+  "ground": "#1F1A17",
+  "ink": "#1F1A17",
+  "paper": "#F7F4EE",
+  "accent": "#7A2340",
+  "accent2": "#C9822F",
+  "deep": "#4A1226",
+  "muted": "#7A6F66"
+ },
+ "derived": {
+  "ray": "#6C1D38",
+  "line": "#B9A898",
+  "empty": "#E7DFD3",
+  "softInk": "#4A433E",
+  "accent2Text": "#8A5414",
+  "accent2Light": "#E9B36A",
+  "newsprint": "#EEE8DC",
+  "newsprint2": "#E3DACB"
+ },
+ "_derived_note": "Derived tones of the core palette, named so a look never types a hex: ray (starburst second shade), line (rules), empty (unfilled tiles and map states), softInk (secondary text on paper), accent2Text (amber dark enough for small text on paper), accent2Light (amber on dark grounds, the reversed logo), newsprint and newsprint2 (Dispatch paper). Values are the ones already used by the Data Kadai template (src/datayt/IndiaShort.tsx P) and the looks spec.",
+ "mapRamp": null,
+ "_mapRamp_note": "null: the closing map keeps each story's own five bands from data.json (they are Data Kadai palettes already).",
+ "faces": {
+  "anybody": {"family": "LK Anybody", "file": "fonts/looks/anybody/Anybody-VF.ttf", "format": "truetype", "weight": [100, 900], "stretch": [50, 150], "licence": "SIL OFL 1.1, fonts/looks/anybody/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "plexMono": {"family": "LK Plex Mono", "file": "fonts/looks/ibmplexmono/IBMPlexMono-Bold.ttf", "format": "truetype", "weight": 700, "licence": "SIL OFL 1.1, fonts/looks/ibmplexmono/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "bricolage": {"family": "LK Bricolage", "file": "fonts/looks/bricolagegrotesque/BricolageGrotesque-VF.ttf", "format": "truetype", "weight": [200, 800], "stretch": [75, 100], "licence": "SIL OFL 1.1, fonts/looks/bricolagegrotesque/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "spaceMono": {"family": "LK Space Mono", "file": "fonts/looks/spacemono/SpaceMono-Bold.ttf", "format": "truetype", "weight": 700, "licence": "SIL OFL 1.1, fonts/looks/spacemono/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "newsreader": {"family": "LK Newsreader", "file": "fonts/looks/newsreader/Newsreader-VF.ttf", "format": "truetype", "weight": [200, 800], "licence": "SIL OFL 1.1, fonts/looks/newsreader/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "schibsted": {"family": "LK Schibsted", "file": "fonts/looks/schibstedgrotesk/SchibstedGrotesk-VF.ttf", "format": "truetype", "weight": [400, 900], "licence": "SIL OFL 1.1, fonts/looks/schibstedgrotesk/OFL.txt", "probe": "₹−×%+·0123456789,."},
+  "oswald": {"family": "LK Oswald", "file": "fonts/Oswald-700.woff2", "format": "woff2", "weight": 700, "licence": "SIL OFL 1.1, fonts/OFL-Oswald.txt (latin subset: wordmark letters only)", "probe": "DATAKI"}
+ },
+ "fonts": {
+  "display": {"face": "anybody", "weight": 900, "stretch": 100, "tnum": true, "fallback": "'Arial Black', Impact, sans-serif"},
+  "hero": {"face": "anybody", "weight": 900, "stretch": 100, "tnum": true, "fallback": "'Arial Black', Impact, sans-serif"},
+  "mono": {"face": "plexMono", "weight": 700, "tnum": false, "fallback": "Menlo, monospace"},
+  "serif": {"face": "newsreader", "weight": 560, "tnum": false, "fallback": "Georgia, serif"},
+  "body": {"face": "schibsted", "weight": 700, "tnum": false, "fallback": "'Helvetica Neue', Arial, sans-serif"},
+  "wordmark": {"face": "oswald", "weight": 700, "tnum": false, "fallback": "Impact, 'Arial Narrow', sans-serif"}
+ },
+ "lookFonts": {
+  "counter": {
+   "display": {"face": "bricolage", "weight": 800, "stretch": 80, "tnum": true, "fallback": "'Arial Black', sans-serif"},
+   "hero": {"face": "bricolage", "weight": 800, "stretch": 78, "tnum": true, "fallback": "'Arial Black', sans-serif"},
+   "mono": {"face": "spaceMono", "weight": 700, "tnum": false, "fallback": "Menlo, monospace"}
+  },
+  "dispatch": {
+   "display": {"face": "newsreader", "weight": 560, "tnum": false, "fallback": "Georgia, serif"},
+   "hero": {"face": "newsreader", "weight": 800, "tnum": false, "fallback": "Georgia, serif"}
+  }
+ },
+ "_fonts_note": "Noto Serif Display (the spec's Dispatch serif) has no U+2212 minus, so Dispatch uses Newsreader (OFL, ₹ − × %, tabular digits 0.55 em by default). Every face passes scripts/datayt/look_fonts.py.",
+ "chip": {"bg": "ink", "fg": "paper", "font": "mono", "size": 32, "tracking": 0.06, "radius": 6, "padX": 14, "padY": 6, "upper": true},
+ "safe": {"w": 1080, "h": 1920, "x0": 95, "x1": 850, "y0": 210, "y1": 1480},
+ "_safe_note": "Every word and number inside x 95-850, y 210-1480 at 1080x1920: clear of both YouTube Shorts and Instagram Reels overlays. Grounds may bleed full frame.",
+ "contrast": {
+  "pairs": [
+   {"fg": "paper", "bg": "ink"},
+   {"fg": "ink", "bg": "paper"},
+   {"fg": "paper", "bg": "accent"},
+   {"fg": "accent", "bg": "paper"},
+   {"fg": "ink", "bg": "accent2"},
+   {"fg": "accent2", "bg": "ink"},
+   {"fg": "paper", "bg": "deep"},
+   {"fg": "accent2", "bg": "deep"},
+   {"fg": "accent2", "bg": "accent", "minPx": 200},
+   {"fg": "ink", "bg": "newsprint"},
+   {"fg": "accent", "bg": "newsprint"},
+   {"fg": "accent2Text", "bg": "newsprint"},
+   {"fg": "softInk", "bg": "newsprint"},
+   {"fg": "softInk", "bg": "paper"},
+   {"fg": "accent2Text", "bg": "paper"},
+   {"fg": "muted", "bg": "paper", "minPx": 40},
+   {"fg": "accent2Light", "bg": "ink"},
+   {"fg": "paper", "bg": "ray"}
+  ],
+  "never": [["accent2", "paper"], ["accent2", "newsprint"], ["paper", "accent2"]],
+  "_note": "A pair is allowed at any size when its ratio is 4.5 or more, and only at minPx frame px or larger when it is 3 to 4.5. Ratios are computed (src/looks/brands/contrast.ts, scripts/datayt/look_tokens.py), never typed."
+ },
+ "wordmark": {"parts": ["DATA", "KADAI"], "font": "wordmark", "stacked": false}
+}

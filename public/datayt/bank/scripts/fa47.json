@@ -1,0 +1,601 @@
+{
+ "id": "fa47",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "RBI · Handbook · 2024-25 state estimates",
+ "palette": "C",
+ "state": "Himachal Pradesh",
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Tables 33 and 25: gross state value added (GSVA) from manufacturing, and in total, at current prices, 2022-23 to 2024-25 (NSO/MoSPI series from state estimates). Share = manufacturing ÷ total GSVA. No all-India row is printed. Gujarat, Goa, Sikkim and some UTs have no 2024-25 figure. Not per person.",
+ "hook": [
+  "*Himachal Pradesh*: factories",
+  "made *26.5%* of state output,",
+  "2024-25."
+ ],
+ "hook_vo": "In Himachal Pradesh, factories made twenty-six point five percent of state output.",
+ "facts": [
+  {
+   "state": "Himachal Pradesh",
+   "kicker": "MANUFACTURING SHARE OF OUTPUT · 2024-25",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       33,
+       "2024-25"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2024-25"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Maharashtra"
+   ],
+   "bar_max": 40,
+   "text": "of Himachal's gross state value added came from manufacturing. Maharashtra: 13.8%.",
+   "sub": "Manufacturing ÷ total GSVA, current prices, 2024-25 state estimates.",
+   "vo": "Himachal Pradesh, twenty-six point five percent. Maharashtra, thirteen point eight."
+  },
+  {
+   "state": "Uttarakhand",
+   "kicker": "LEVEL WITH HIMACHAL · 2024-25",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       33,
+       "2024-25"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2024-25"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Himachal Pradesh"
+   ],
+   "bar_max": 40,
+   "text": "is Uttarakhand's manufacturing share: level with Himachal's 26.5%.",
+   "sub": "A gap of 0.4 points. Gujarat, Goa and Sikkim have no 2024-25 figure in the table.",
+   "vo": "Uttarakhand was level, at twenty-six point one."
+  },
+  {
+   "state": "Tamil Nadu",
+   "kicker": "TWO LARGE ECONOMIES · 2024-25",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       33,
+       "2024-25"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2024-25"
+      ]
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "compare": [
+    "Karnataka"
+   ],
+   "bar_max": 40,
+   "text": "is Tamil Nadu's manufacturing share of output. Karnataka: 12.3%.",
+   "sub": "Manufacturing ÷ total GSVA, current prices, 2024-25.",
+   "vo": "Tamil Nadu was eighteen point two. Karnataka, twelve point three."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.9
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Tamil Nadu",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.4
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.8
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Himachal Pradesh",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "den": {
+    "state": "Maharashtra",
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    }
+   },
+   "min": 1.7
+  }
+ ],
+ "so": {
+  "lines": [
+   "Himachal's share, three years:",
+   "*27.0%*, *26.7%*, *26.5%*",
+   "(2022-23 to 2024-25)."
+  ],
+  "vo": "It was twenty-seven percent, twenty-six point seven, then twenty-six point five."
+ },
+ "map": {
+  "data": {
+   "ratio": [
+    {
+     "rbi": [
+      33,
+      "2024-25"
+     ]
+    },
+    {
+     "rbi": [
+      25,
+      "2024-25"
+     ]
+    }
+   ],
+   "scale": 100
+  },
+  "unit": "%",
+  "dec": 1,
+  "title": "Manufacturing share of output, *every state*",
+  "sub": "% of gross state value added · 2024-25",
+  "note": "No all-India figure is printed. Blank: Gujarat, Goa, Sikkim and others with no 2024-25 figure. Estimates. The table shows how much, not why.",
+  "ring": [
+   "Himachal Pradesh",
+   "Uttarakhand"
+  ],
+  "vo": "Here is every state's manufacturing share of output."
+ },
+ "end": {
+  "q": "What does your state *make*?",
+  "sub": "Comment below.",
+  "vo": "What does your state make?"
+ },
+ "tests": [
+  {
+   "says": "Himachal 26.5% (tenths)",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Himachal Pradesh",
+    "scale": 10
+   },
+   "equals": 265
+  },
+  {
+   "says": "Himachal 26.7% in 2023-24",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Himachal Pradesh",
+    "scale": 10
+   },
+   "equals": 267
+  },
+  {
+   "says": "Himachal 27.0% in 2022-23",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Himachal Pradesh",
+    "scale": 10
+   },
+   "equals": 270
+  },
+  {
+   "says": "Maharashtra 13.8%",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Maharashtra",
+    "scale": 10
+   },
+   "equals": 138
+  },
+  {
+   "says": "Uttarakhand 26.1%",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Uttarakhand",
+    "scale": 10
+   },
+   "equals": 261
+  },
+  {
+   "says": "Tamil Nadu 18.2%",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Tamil Nadu",
+    "scale": 10
+   },
+   "equals": 182
+  },
+  {
+   "says": "Karnataka 12.3%",
+   "value": {
+    "data": {
+     "ratio": [
+      {
+       "rbi": [
+        33,
+        "2024-25"
+       ]
+      },
+      {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     ],
+     "scale": 100
+    },
+    "state": "Karnataka",
+    "scale": 10
+   },
+   "equals": 123
+  },
+  {
+   "says": "Uttarakhand level with Himachal: gap 0.4 points, under 1 point",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          33,
+          "2024-25"
+         ]
+        },
+        {
+         "rbi": [
+          25,
+          "2024-25"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          33,
+          "2024-25"
+         ]
+        },
+        {
+         "rbi": [
+          25,
+          "2024-25"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Uttarakhand"
+     }
+    ]
+   },
+   "min": 0.0,
+   "max": 1.0
+  },
+  {
+   "says": "gap of 0.4 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          33,
+          "2024-25"
+         ]
+        },
+        {
+         "rbi": [
+          25,
+          "2024-25"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Himachal Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          33,
+          "2024-25"
+         ]
+        },
+        {
+         "rbi": [
+          25,
+          "2024-25"
+         ]
+        }
+       ],
+       "scale": 100
+      },
+      "state": "Uttarakhand"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 4
+  }
+ ],
+ "yt_title": "Himachal: Factories Made 26.5% of State Output, 2024-25"
+}

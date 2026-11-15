@@ -1,0 +1,623 @@
+{
+  "id": "px61",
+  "type": "paradox",
+  "rules": 2,
+  "chip": "DATA PARADOX",
+  "source_short": "RBI end-March 2025 · NFHS-6 2023-24",
+  "palette": "E",
+  "state": "Gujarat",
+  "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (Dec 2025), Table 152: offices of scheduled commercial banks, end-March 2025, over projected population (National Commission on Population, July 2020 edition, 1 March 2025). Women's own account: IIPS, NFHS-6 (2023-24) and NFHS-5 (2019-21) state fact sheets, women aged 15-49, survey estimates. Seven north-eastern states share one population projection.",
+  "hook": [
+    "More bank offices per person:",
+    "*more women banked?*",
+    "*Gujarat* vs *Jharkhand*."
+  ],
+  "hook_vo": "Gujarat had more bank offices per person. Were Jharkhand's women more often banked?",
+  "facts": [
+    {
+      "state": "Gujarat",
+      "kicker": "BANK OFFICES PER LAKH PEOPLE",
+      "data": {
+        "ratio": [
+          {
+            "rbi": [
+              152,
+              "2025"
+            ]
+          },
+          {
+            "tbl": [
+              "population/projected",
+              "2025"
+            ]
+          }
+        ],
+        "scale": 100
+      },
+      "unit": "",
+      "compare": [
+        "Jharkhand",
+        "India"
+      ],
+      "bar_max": 20,
+      "text": "bank offices for every lakh people in Gujarat: 49% more than Jharkhand's 8.7. India: 11.9.",
+      "sub": "1 lakh = 100,000. End-March 2025.",
+      "vo": "Gujarat had thirteen offices per lakh people, forty-nine percent more than Jharkhand."
+    },
+    {
+      "state": "Jharkhand",
+      "kicker": "WOMEN WITH THEIR OWN ACCOUNT",
+      "data": {
+        "nfhs": 92
+      },
+      "unit": "%",
+      "compare": [
+        "Gujarat",
+        "India"
+      ],
+      "bar_max": 100,
+      "text": "of women aged 15-49 had a bank account they use themselves. Gujarat: 82%. India: 89%.",
+      "sub": "National Family Health Survey 6, 2023-24.",
+      "vo": "Own account: Jharkhand's women ninety-one percent, Gujarat's eighty-two."
+    },
+    {
+      "state": "Jharkhand",
+      "kicker": "THE SURVEY BEFORE · 2019-21",
+      "data": {
+        "nfhs": 92,
+        "col": 3
+      },
+      "unit": "%",
+      "compare": [
+        "Gujarat",
+        "India"
+      ],
+      "bar_max": 100,
+      "text": "of Jharkhand's women, in 2019-21. Gujarat: 70%. India: 79%.",
+      "sub": "National Family Health Survey 5, 2019-21: the same order.",
+      "vo": "In the survey before: eighty percent in Jharkhand, seventy in Gujarat."
+    }
+  ],
+  "checks": [],
+  "so": {
+    "weak_link": {
+      "a": {
+        "ratio": [
+          {
+            "rbi": [
+              152,
+              "2025"
+            ]
+          },
+          {
+            "tbl": [
+              "population/projected",
+              "2025"
+            ]
+          }
+        ],
+        "scale": 100
+      },
+      "b": {
+        "nfhs": 92
+      },
+      "max_abs": 0.3
+    },
+    "lines": [
+      "In 2023-24, across states",
+      "and UTs, offices per person",
+      "and women's own accounts",
+      "were *weakly linked.*"
+    ],
+    "vo": "Across states, offices per person and women's accounts were weakly linked.",
+    "note": "Bank offices at end-March 2025 against NFHS-6 (2023-24). The table shows how much, not why."
+  },
+  "map": {
+    "data": {
+      "ratio": [
+        {
+          "rbi": [
+            152,
+            "2025"
+          ]
+        },
+        {
+          "tbl": [
+            "population/projected",
+            "2025"
+          ]
+        }
+      ],
+      "scale": 100
+    },
+    "unit": "",
+    "dec": 1,
+    "title": "Bank offices per lakh people, *every state*",
+    "sub": "per lakh projected population · India {india} · end-March 2025",
+    "note": "Scheduled commercial banks. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+    "ring": [
+      "Gujarat",
+      "Jharkhand"
+    ],
+    "vo": "Here is every state: bank offices for each lakh people."
+  },
+  "end": {
+    "q": "Which matters more: *offices* or *accounts*?",
+    "sub": "Comment below.",
+    "vo": "Which matters more: offices or accounts?"
+  },
+  "tests": [
+    {
+      "says": "Gujarat 13.0 offices per lakh people (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "rbi": [
+                152,
+                "2025"
+              ]
+            },
+            {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            }
+          ],
+          "scale": 100
+        },
+        "scale": 10
+      },
+      "equals": 130
+    },
+    {
+      "says": "thirteen offices per lakh in Gujarat (voice)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "rbi": [
+                152,
+                "2025"
+              ]
+            },
+            {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            }
+          ],
+          "scale": 100
+        }
+      },
+      "equals": 13
+    },
+    {
+      "says": "Jharkhand 8.7 offices per lakh people (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "rbi": [
+                152,
+                "2025"
+              ]
+            },
+            {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            }
+          ],
+          "scale": 100
+        },
+        "state": "Jharkhand",
+        "scale": 10
+      },
+      "equals": 87
+    },
+    {
+      "says": "India 11.9 offices per lakh people (tenths)",
+      "value": {
+        "data": {
+          "ratio": [
+            {
+              "rbi": [
+                152,
+                "2025"
+              ]
+            },
+            {
+              "tbl": [
+                "population/projected",
+                "2025"
+              ]
+            }
+          ],
+          "scale": 100
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 119
+    },
+    {
+      "says": "49% more bank offices per lakh people than Jharkhand (2025)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2025"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2025"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2025"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2025"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Jharkhand"
+          }
+        ],
+        "scale": 100
+      },
+      "min": 148.5,
+      "max": 150.4
+    },
+    {
+      "says": "2020: Gujarat more than 1.4 times Jharkhand's offices per lakh (holds each year)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2020"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2020"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2020"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2020"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Jharkhand"
+          }
+        ]
+      },
+      "min": 1.4,
+      "max": 1.6
+    },
+    {
+      "says": "2021: Gujarat more than 1.4 times Jharkhand's offices per lakh (holds each year)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2021"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2021"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2021"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2021"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Jharkhand"
+          }
+        ]
+      },
+      "min": 1.4,
+      "max": 1.6
+    },
+    {
+      "says": "2023: Gujarat more than 1.4 times Jharkhand's offices per lakh (holds each year)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2023"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2023"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2023"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2023"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Jharkhand"
+          }
+        ]
+      },
+      "min": 1.4,
+      "max": 1.6
+    },
+    {
+      "says": "2024: Gujarat more than 1.4 times Jharkhand's offices per lakh (holds each year)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2024"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2024"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Gujarat"
+          },
+          {
+            "data": {
+              "ratio": [
+                {
+                  "rbi": [
+                    152,
+                    "2024"
+                  ]
+                },
+                {
+                  "tbl": [
+                    "population/projected",
+                    "2024"
+                  ]
+                }
+              ],
+              "scale": 100
+            },
+            "state": "Jharkhand"
+          }
+        ]
+      },
+      "min": 1.4,
+      "max": 1.6
+    },
+    {
+      "says": "Jharkhand 91% of women with own account (NFHS-6)",
+      "value": {
+        "data": {
+          "nfhs": 92
+        },
+        "state": "Jharkhand"
+      },
+      "equals": 91
+    },
+    {
+      "says": "Gujarat 82% of women with own account (NFHS-6)",
+      "value": {
+        "data": {
+          "nfhs": 92
+        },
+        "state": "Gujarat"
+      },
+      "equals": 82
+    },
+    {
+      "says": "India 89% (NFHS-6)",
+      "value": {
+        "data": {
+          "nfhs": 92
+        },
+        "state": "India"
+      },
+      "equals": 89
+    },
+    {
+      "says": "Jharkhand more than 5 points ahead of Gujarat (NFHS-6; 8.6)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 92
+            },
+            "state": "Jharkhand"
+          },
+          {
+            "data": {
+              "nfhs": 92
+            },
+            "state": "Gujarat"
+          }
+        ]
+      },
+      "min": 5,
+      "max": 12
+    },
+    {
+      "says": "Jharkhand 3% or more above Gujarat in relative terms (NFHS-6)",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "nfhs": 92
+            },
+            "state": "Jharkhand"
+          },
+          {
+            "data": {
+              "nfhs": 92
+            },
+            "state": "Gujarat"
+          }
+        ]
+      },
+      "min": 1.03,
+      "max": 1.2
+    },
+    {
+      "says": "Jharkhand 80% (NFHS-5, 79.6)",
+      "value": {
+        "data": {
+          "nfhs": 92,
+          "col": 3
+        },
+        "state": "Jharkhand"
+      },
+      "equals": 80
+    },
+    {
+      "says": "Gujarat 70% (NFHS-5)",
+      "value": {
+        "data": {
+          "nfhs": 92,
+          "col": 3
+        },
+        "state": "Gujarat"
+      },
+      "equals": 70
+    },
+    {
+      "says": "India 79% (NFHS-5, 78.6)",
+      "value": {
+        "data": {
+          "nfhs": 92,
+          "col": 3
+        },
+        "state": "India"
+      },
+      "equals": 79
+    },
+    {
+      "says": "Jharkhand more than 5 points ahead of Gujarat (NFHS-5; 9.6)",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "nfhs": 92,
+              "col": 3
+            },
+            "state": "Jharkhand"
+          },
+          {
+            "data": {
+              "nfhs": 92,
+              "col": 3
+            },
+            "state": "Gujarat"
+          }
+        ]
+      },
+      "min": 5,
+      "max": 12
+    }
+  ],
+  "yt_title": "Gujarat Has 49% More Bank Offices per Person Than Jharkhand"
+}

@@ -1,0 +1,1285 @@
+{
+ "id": "tn18",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "MoSPI · state output by sector · 2017-18 to 2023-24",
+ "palette": "C",
+ "state": "Uttarakhand",
+ "points": [
+  {
+   "period": "2017-18",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       37,
+       "2017-18"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2017-18"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  },
+  {
+   "period": "2023-24",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       37,
+       "2023-24"
+      ]
+     },
+     {
+      "rbi": [
+       25,
+       "2023-24"
+      ]
+     }
+    ],
+    "scale": 100
+   }
+  }
+ ],
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "CONSTRUCTION'S SHARE OF OUTPUT",
+ "expect": {
+  "years": 6
+ },
+ "source": "National Statistics Office, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States 2024-25: gross state value added by economic activity at current prices (base 2011-12), construction (Table 37) over the state total (Table 25), 2017-18 and 2023-24; constant-price Tables 38 and 26 for the multiples. Recent years can be revised. Gujarat has no 2023-24 figure and Ladakh no 2017-18 figure; Jammu and Kashmir's boundary changed in 2019. Booked in the state, not what residents earn.",
+ "hook": [
+  "*Uttarakhand*: construction",
+  "stayed near *8%* of output,",
+  "then hit *14%* by 2023-24."
+ ],
+ "hook_vo": "Uttarakhand's construction share went from eight to fourteen percent.",
+ "then": {
+  "text": "of Uttarakhand's output was *construction*",
+  "vo": "In twenty seventeen-eighteen: eight percent of output."
+ },
+ "now": {
+  "text": "of its output: *{times}× the 2017-18 share*",
+  "vo": "Six years on: fourteen percent. About one rupee in seven."
+ },
+ "facts": [
+  {
+   "kicker": "REAL OUTPUT · 2017-18 TO 2023-24",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 1
+   },
+   "unit": "×",
+   "text": "Uttarakhand's construction output, at *2011-12 prices*",
+   "bars": [
+    {
+     "name": "Construction",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         38,
+         "2023-24"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         38,
+         "2017-18"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    },
+    {
+     "name": "All output",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         26,
+         "2023-24"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         26,
+         "2017-18"
+        ]
+       }
+      }
+     ],
+     "unit": "×"
+    }
+   ],
+   "bar_max": 3,
+   "sub": "Constant prices: more output, not higher prices. At those prices the share rose too: 7.7% to 12.5%.",
+   "vo": "Real construction output grew one point eight times, all output one point one."
+  },
+  {
+   "kicker": "THE RISE CAME LATE · BY YEAR",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "in 2023-24. Flat near *8%* until 2020-21, then up in each year.",
+   "bars": [
+    {
+     "name": "2020-21",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         37,
+         "2020-21"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         25,
+         "2020-21"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2021-22",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         37,
+         "2021-22"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         25,
+         "2021-22"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2022-23",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         37,
+         "2022-23"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         25,
+         "2022-23"
+        ]
+       }
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 20,
+   "sub": "Construction's share of gross state value added, current prices. 2023-24: 14.0%.",
+   "vo": "Flat near eight percent, then ten, thirteen, fourteen."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Uttarakhand's rise of *6.1 points*",
+    "was the *largest* on the map;",
+    "next was Bihar's 4.3."
+   ],
+   "note": "Current prices. A share of one state's own output. The table shows how much, not why.",
+   "vo": "Uttarakhand's rise was the largest of any state or territory shown."
+  }
+ ],
+ "tests": [
+  {
+   "says": "7.9% in 2017-18 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2017-18"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 79
+  },
+  {
+   "says": "eight percent in the voice line (7.9 rounds to 8)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2017-18"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 8
+  },
+  {
+   "says": "14.0% in 2023-24 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 140
+  },
+  {
+   "says": "fourteen percent in the voice line",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 14
+  },
+  {
+   "says": "1.8 times the 2017-18 share (1.75 to 1.85)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2023-24"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 1.75,
+   "max": 1.85
+  },
+  {
+   "says": "one point eight times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2023-24"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 18
+  },
+  {
+   "says": "about one rupee in seven: total / construction in 2023-24 is 6.5 to 7.5",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2023-24"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 6.5,
+   "max": 7.5
+  },
+  {
+   "says": "real construction output one point eight times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 18
+  },
+  {
+   "says": "all output one point one times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        26,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        26,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 11
+  },
+  {
+   "says": "real share 7.7% in 2017-18 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2017-18"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        26,
+        "2017-18"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 77
+  },
+  {
+   "says": "real share 12.5% in 2023-24 (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        38,
+        "2023-24"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        26,
+        "2023-24"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 125
+  },
+  {
+   "says": "6.1 points rise (tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2023-24"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2023-24"
+         ]
+        }
+       }
+      ],
+      "scale": 1000
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 1000
+     }
+    ]
+   },
+   "equals": 61
+  },
+  {
+   "says": "Bihar rose 4.3 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2023-24"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2023-24"
+         ]
+        },
+        "state": "Bihar"
+       }
+      ],
+      "scale": 1000
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        },
+        "state": "Bihar"
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        },
+        "state": "Bihar"
+       }
+      ],
+      "scale": 1000
+     }
+    ]
+   },
+   "equals": 43
+  },
+  {
+   "says": "the largest rise leads the next (Bihar) by at least 1 point",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2023-24"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2023-24"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2017-18"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2017-18"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2023-24"
+           ]
+          },
+          "state": "Bihar"
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2023-24"
+           ]
+          },
+          "state": "Bihar"
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2017-18"
+           ]
+          },
+          "state": "Bihar"
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2017-18"
+           ]
+          },
+          "state": "Bihar"
+         }
+        ],
+        "scale": 100
+       }
+      ]
+     }
+    ]
+   },
+   "min": 1.0,
+   "max": 3.0
+  },
+  {
+   "says": "the largest rise leads Chhattisgarh (the third) by at least 2 points",
+   "value": {
+    "diff": [
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2023-24"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2023-24"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2017-18"
+           ]
+          }
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2017-18"
+           ]
+          }
+         }
+        ],
+        "scale": 100
+       }
+      ]
+     },
+     {
+      "diff": [
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2023-24"
+           ]
+          },
+          "state": "Chhattisgarh"
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2023-24"
+           ]
+          },
+          "state": "Chhattisgarh"
+         }
+        ],
+        "scale": 100
+       },
+       {
+        "ratio": [
+         {
+          "data": {
+           "rbi": [
+            37,
+            "2017-18"
+           ]
+          },
+          "state": "Chhattisgarh"
+         },
+         {
+          "data": {
+           "rbi": [
+            25,
+            "2017-18"
+           ]
+          },
+          "state": "Chhattisgarh"
+         }
+        ],
+        "scale": 100
+       }
+      ]
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 4.5
+  },
+  {
+   "says": "2020-21: 8.4% (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2020-21"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2020-21"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 84
+  },
+  {
+   "says": "2021-22: 10.1% (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2021-22"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 101
+  },
+  {
+   "says": "2022-23: 13.2% (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 1000
+   },
+   "equals": 132
+  },
+  {
+   "says": "ten percent in the voice line (10.1 in 2021-22)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2021-22"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2021-22"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 10
+  },
+  {
+   "says": "thirteen percent in the voice line (13.2 in 2022-23)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2022-23"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2022-23"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 13
+  },
+  {
+   "says": "the change holds in 2021-22: 2.0 to 2.3 points over the start (a third of the change is 2.0)",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2021-22"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2021-22"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 2.0,
+   "max": 2.3
+  },
+  {
+   "says": "the change holds in 2022-23: 5.0 to 5.4 points over the start",
+   "value": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2022-23"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2022-23"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     {
+      "ratio": [
+       {
+        "data": {
+         "rbi": [
+          37,
+          "2017-18"
+         ]
+        }
+       },
+       {
+        "data": {
+         "rbi": [
+          25,
+          "2017-18"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     }
+    ]
+   },
+   "min": 5.0,
+   "max": 5.4
+  },
+  {
+   "says": "the start is not a dip: 2016-17 share 7.5 to 8.5%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2016-17"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2016-17"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 7.5,
+   "max": 8.5
+  },
+  {
+   "says": "the start is not a dip: 2015-16 share 7.5 to 8.5%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2015-16"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2015-16"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 7.5,
+   "max": 8.5
+  },
+  {
+   "says": "flat before the rise: 2018-19 share 7.8 to 8.6%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2018-19"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2018-19"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 7.8,
+   "max": 8.6
+  },
+  {
+   "says": "flat before the rise: 2019-20 share 7.8 to 8.6%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2019-20"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2019-20"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 7.8,
+   "max": 8.6
+  },
+  {
+   "says": "the rise carries into 2024-25 (advance estimate, 25 states with data): 15 to 16%",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        37,
+        "2024-25"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        25,
+        "2024-25"
+       ]
+      }
+     }
+    ],
+    "scale": 100
+   },
+   "min": 15.0,
+   "max": 16.0
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -2,
+   -0.5,
+   0.5,
+   2
+  ],
+  "title": "Construction share: *each state's change*",
+  "sub": "points of state output · {from} to {to}",
+  "note": "A lower share can come with more construction. Blank: Gujarat, Ladakh (year missing), Jammu and Kashmir; Lakshadweep, Dadra, Nagar Haveli, Daman and Diu (no row).",
+  "vo": "Each state's change in the share of output from construction.",
+  "key": [
+   "smaller share",
+   "within 0.5 points",
+   "bigger share"
+  ]
+ },
+ "end": {
+  "q": "What is being *built* near you?",
+  "sub": "Spot your state on the map.",
+  "vo": "What is being built near you?"
+ },
+ "yt_title": "Uttarakhand: Construction Share of Output Up 1.8x in 6 Years"
+}

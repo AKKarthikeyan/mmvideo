@@ -1,0 +1,328 @@
+{
+ "id": "sp06",
+ "type": "paradox",
+ "theme": "school_health",
+ "rules": 2,
+ "chip": "DATA PARADOX",
+ "source_short": "UDISE+ · NFHS-6 · 2023-25",
+ "palette": "D",
+ "state": "Telangana",
+ "source": "School: Class 9-12 gross enrolment ratio, 2024-25, UDISE+, Ministry of Education, via RBI Handbook of Statistics on Indian States (Table 1); enrolment at any age over the age group, so it can pass 100. Health: children under 3 breastfed within one hour of birth, NFHS-6 (2023-24) and NFHS-5 (2019-21) state fact sheets, International Institute for Population Sciences (survey estimates; Lakshadweep is not ranked and Manipur has no NFHS-6 sheet yet).",
+ "hook": [
+  "*Telangana* leads Class 9-12",
+  "enrolment; *Andhra Pradesh*",
+  "leads early breastfeeding."
+ ],
+ "hook_vo": "Telangana leads Class nine to twelve enrolment. Andhra Pradesh leads early breastfeeding.",
+ "facts": [
+  {
+   "state": "Telangana",
+   "kicker": "CLASS 9-12 ENROLMENT · 2024-25",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "unit": "%",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 100,
+   "text": "Class 9-12 enrolment ratio. Andhra Pradesh: 74.0%. India: 67.6%.",
+   "sub": "UDISE+ 2024-25 via RBI. It can pass 100.",
+   "vo": "Telangana's Class nine to twelve enrolment: eighty-four. Andhra Pradesh, seventy-four."
+  },
+  {
+   "state": "Andhra Pradesh",
+   "kicker": "BREASTFED IN FIRST HOUR · 2023-24",
+   "data": {
+    "nfhs": 61
+   },
+   "unit": "%",
+   "compare": [
+    "Telangana"
+   ],
+   "bar_max": 100,
+   "text": "of children under 3 were breastfed within an hour of birth. Telangana: 57.1%. India: 50.1%.",
+   "sub": "Survey estimate. IIPS, NFHS-6 fact sheets.",
+   "vo": "Breastfed within an hour: Andhra Pradesh sixty-seven percent, Telangana fifty-seven."
+  },
+  {
+   "state": "Andhra Pradesh",
+   "kicker": "EARLIER SURVEY · NFHS-5 (2019-21)",
+   "data": {
+    "nfhs": 61,
+    "col": 3
+   },
+   "unit": "%",
+   "compare": [
+    "Telangana"
+   ],
+   "bar_max": 100,
+   "text": "of children under 3: Andhra Pradesh led then too. Telangana: 37.1%. India: 41.8%.",
+   "sub": "NFHS-5 figure, as printed in the NFHS-6 sheets.",
+   "vo": "Earlier survey: Andhra Pradesh fifty-two percent, Telangana thirty-seven."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "equals": 84
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "equals": 74
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "equals": 68
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 61
+   },
+   "equals": 67
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 61
+   },
+   "equals": 57
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 61
+   },
+   "equals": 50
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "nfhs": 61,
+    "col": 3
+   },
+   "equals": 52
+  },
+  {
+   "kind": "round",
+   "state": "Telangana",
+   "data": {
+    "nfhs": 61,
+    "col": 3
+   },
+   "equals": 37
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "nfhs": 61,
+    "col": 3
+   },
+   "equals": 42
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Telangana",
+    "data": {
+     "rbi": [
+      1,
+      "Secondary (Class IX to XII) | Total"
+     ]
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "rbi": [
+      1,
+      "Secondary (Class IX to XII) | Total"
+     ]
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 61
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 61
+    }
+   },
+   "min": 1.1
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "nfhs": 61,
+     "col": 3
+    }
+   },
+   "den": {
+    "state": "Telangana",
+    "data": {
+     "nfhs": 61,
+     "col": 3
+    }
+   },
+   "min": 1.1
+  }
+ ],
+ "tests": [
+  {
+   "says": "Andhra Pradesh GER 74.0",
+   "value": {
+    "data": {
+     "rbi": [
+      1,
+      "Secondary (Class IX to XII) | Total"
+     ]
+    },
+    "state": "Andhra Pradesh",
+    "scale": 10
+   },
+   "equals": 740
+  },
+  {
+   "says": "India GER 67.6",
+   "value": {
+    "data": {
+     "rbi": [
+      1,
+      "Secondary (Class IX to XII) | Total"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 676
+  },
+  {
+   "says": "Telangana breastfed 57.1",
+   "value": {
+    "data": {
+     "nfhs": 61
+    },
+    "state": "Telangana",
+    "scale": 10
+   },
+   "equals": 571
+  },
+  {
+   "says": "India breastfed 50.1",
+   "value": {
+    "data": {
+     "nfhs": 61
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 501
+  },
+  {
+   "says": "Telangana NFHS-5 37.1",
+   "value": {
+    "data": {
+     "nfhs": 61,
+     "col": 3
+    },
+    "state": "Telangana",
+    "scale": 10
+   },
+   "equals": 371
+  },
+  {
+   "says": "India NFHS-5 41.8",
+   "value": {
+    "data": {
+     "nfhs": 61,
+     "col": 3
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 418
+  }
+ ],
+ "so": {
+  "weak_link": {
+   "a": {
+    "rbi": [
+     1,
+     "Secondary (Class IX to XII) | Total"
+    ]
+   },
+   "b": {
+    "nfhs": 61
+   },
+   "max_abs": 0.3
+  },
+  "lines": [
+   "Across {n} states and UTs,",
+   "school enrolment and early",
+   "breastfeeding were",
+   "*not closely linked*."
+  ],
+  "vo": "Across states, school enrolment and early breastfeeding were not closely linked.",
+  "note": "Enrolment counts pupils at school; breastfeeding counts babies. The table shows how much, not why."
+ },
+ "map": {
+  "data": {
+   "nfhs": 61
+  },
+  "unit": "%",
+  "title": "Breastfed within an hour, *every state*",
+  "sub": "% of babies · India {india} · 2023-24",
+  "note": "Survey estimate. Blank: Lakshadweep (small sample, not ranked) and Manipur (no NFHS-6 fact sheet yet). The table shows how much, not why.",
+  "ring": [
+   "Andhra Pradesh",
+   "Telangana"
+  ],
+  "vo": "Here is every state: babies breastfed within an hour of birth."
+ },
+ "end": {
+  "q": "Which state *surprised* you most?",
+  "sub": "Comment below.",
+  "vo": "Which state surprised you most?"
+ },
+ "yt_title": "Telangana 83.7%, Andhra Pradesh 74.0%: Class 9-12 Enrolment"
+}

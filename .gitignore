@@ -16,3 +16,12 @@ sources/
 *.bak*
 .DS_Store
 .remotion/
+__pycache__/
+*.wav.json
+*.mp3.json
+
+# python bytecode
+*.pyc
+
+# Namakkal effects audition: rebuilt by long_sfx.py make
+public/datayt/sfx/own/_audition.*

@@ -1,0 +1,573 @@
+{
+ "id": "px07",
+ "type": "paradox",
+ "chip": "DATA PARADOX",
+ "sourceShort": "MoSPI · PLFS · RBI · 2023-24",
+ "source": "Women at work: worker population ratio, women aged 15 and above, usual status (principal and subsidiary), rural and urban together, July 2023 to June 2024, Periodic Labour Force Survey, National Statistics Office, MoSPI (36 states and UTs; all-India 40.3%). Workers include unpaid helpers in a family farm or business. Income: per-capita net state domestic product, current prices, 2023-24, RBI Handbook of Statistics on Indian States, Table 19 (33 states and UTs).",
+ "accent": "#6D2238",
+ "accent2": "#D79A4A",
+ "bands": [
+  "#FBEFD9",
+  "#EFC97A",
+  "#D79A4A",
+  "#B3584D",
+  "#6D2238"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Tamil Nadu*: women at work",
+    "*18 points* above Haryana's,",
+    "same income, 2023-24."
+   ],
+   "vo": "Tamil Nadu's share of women at work was eighteen points above Haryana's.",
+   "geo": "Tamil Nadu",
+   "name": "Tamil Nadu",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "INCOME PER PERSON · 2023-24",
+   "big": "₹3,13,329",
+   "text": "a year. Haryana: ₹3,19,363. Level.",
+   "sub": "Income here means net state domestic product per person, current prices: output booked in the state, not what residents earn. 33 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "₹3,13,329",
+     "frac": 0.9811061394087606
+    },
+    {
+     "name": "Haryana",
+     "label": "₹3,19,363",
+     "frac": 1.0
+    }
+   ],
+   "vo": "Three lakh thirteen thousand rupees a year, level with Haryana's.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Tamil Nadu",
+   "geo": "Tamil Nadu",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "big": "41.5%",
+   "text": "of women aged 15 and over were working. India: 40%.",
+   "sub": "Survey estimate, usual status. Workers include unpaid family helpers. PLFS, MoSPI. 36 states and UTs with data.",
+   "bars": [
+    {
+     "name": "Tamil Nadu",
+     "label": "41.5%",
+     "frac": 0.415
+    },
+    {
+     "name": "India",
+     "label": "40.3%",
+     "frac": 0.40299999999999997
+    }
+   ],
+   "vo": "Forty-one point five percent of Tamil Nadu's women were working, against India's forty.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Haryana",
+   "geo": "Haryana",
+   "kicker": "WOMEN AT WORK · 2023-24",
+   "big": "23.6%",
+   "text": "of women. Tamil Nadu's was 1.8 times that, at the same income.",
+   "sub": "Up from 17% in 2021-22, when Tamil Nadu's was 2.2 times that. 2022-23: 2.0 times.",
+   "bars": [
+    {
+     "name": "Haryana",
+     "label": "23.6%",
+     "frac": 0.23600000000000002
+    },
+    {
+     "name": "Tamil Nadu",
+     "label": "41.5%",
+     "frac": 0.415
+    }
+   ],
+   "vo": "Haryana, at the same income: twenty-three point six percent.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Across 33 states and UTs,",
+    "income and women at work",
+    "were *not closely linked*",
+    "in 2023-24."
+   ],
+   "vo": "Across states, income and women at work were not closely linked.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Women aged 15+ at work, *every state*",
+   "sub": "% of women aged 15 and over · India 40.3% · 2023-24",
+   "note": "Survey estimate, usual status; workers include unpaid family helpers. Small UTs rest on small samples. The table shows how much, not why.",
+   "anim": true,
+   "ring": [
+    "Tamil Nadu",
+    "Haryana"
+   ],
+   "vo": "Women aged fifteen and over at work, across all states.",
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Survey estimate, usual status; workers include unpaid family helpers. Small UTs rest on small samples. The table shows how much, not why.",
+   "ring": [
+    "Tamil Nadu",
+    "Haryana"
+   ],
+   "q": "What *work* do women near you do?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "What work do women near you do?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Lakshadweep",
+   "label": "11.3",
+   "bucket": 0,
+   "nudge": [
+    -30,
+    -62
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "18.3",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.424
+  },
+  {
+   "name": "Haryana",
+   "label": "23.6",
+   "bucket": 0,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.529
+  },
+  {
+   "name": "Goa",
+   "label": "24.4",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.635
+  },
+  {
+   "name": "Chandigarh",
+   "label": "26.2",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.741
+  },
+  {
+   "name": "Punjab",
+   "label": "28.9",
+   "bucket": 0,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 31.847
+  },
+  {
+   "name": "Bihar",
+   "label": "30.1",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.952
+  },
+  {
+   "name": "Puducherry",
+   "label": "32.2",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 32.058
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "33.6",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.164
+  },
+  {
+   "name": "Kerala",
+   "label": "36.0",
+   "bucket": 1,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 32.27
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "36.7",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 32.375
+  },
+  {
+   "name": "Karnataka",
+   "label": "37.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.481
+  },
+  {
+   "name": "Maharashtra",
+   "label": "39.1",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.587
+  },
+  {
+   "name": "West Bengal",
+   "label": "39.2",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.692
+  },
+  {
+   "name": "Mizoram",
+   "label": "40.7",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 32.798
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "41.5",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.904
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "43.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.01
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "43.7",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.115
+  },
+  {
+   "name": "Telangana",
+   "label": "44.3",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Manipur",
+   "label": "45.0",
+   "bucket": 2,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 33.327
+  },
+  {
+   "name": "Gujarat",
+   "label": "45.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.432
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "46.0",
+   "bucket": 2,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 33.538
+  },
+  {
+   "name": "Tripura",
+   "label": "46.3",
+   "bucket": 3,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.644
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "47.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.75
+  },
+  {
+   "name": "Ladakh",
+   "label": "47.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.855
+  },
+  {
+   "name": "Odisha",
+   "label": "48.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.961
+  },
+  {
+   "name": "Assam",
+   "label": "48.1",
+   "bucket": 3,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 34.067
+  },
+  {
+   "name": "Rajasthan",
+   "label": "48.9",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.172
+  },
+  {
+   "name": "Jharkhand",
+   "label": "49.6",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.278
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "51.9",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.384
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "58.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.49
+  },
+  {
+   "name": "Nagaland",
+   "label": "59.7",
+   "bucket": 4,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 34.595
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "62.3",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.701
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "62.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.807
+  },
+  {
+   "name": "Meghalaya",
+   "label": "65.9",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 34.913
+  },
+  {
+   "name": "Sikkim",
+   "label": "66.8",
+   "bucket": 4,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 35.018
+  }
+ ],
+ "checked": [
+  "Tamil Nadu 313329 rounds to 313329",
+  "Haryana 319363 rounds to 319363",
+  "Tamil Nadu / Haryana = 0.98 (at least 0.98)",
+  "Haryana / Tamil Nadu = 1.02 (at least 0.98)",
+  "India 40.3 rounds to 40",
+  "Tamil Nadu 41.5 rounds to 42",
+  "Haryana 23.6 rounds to 24",
+  "Tamil Nadu / Haryana = 1.76 (at least 1.75)",
+  "Haryana / Tamil Nadu = 0.57 (at least 0.5405)",
+  "Haryana 17.4 rounds to 17",
+  "Tamil Nadu / Haryana = 2.25 (at least 2.2)",
+  "Haryana / Tamil Nadu = 0.45 (at least 0.4348)",
+  "Tamil Nadu / Haryana = 1.96 (at least 1.95)",
+  "Haryana / Tamil Nadu = 0.51 (at least 0.4878)",
+  "Tamil Nadu / Haryana = 1.76 (at least 1.755)",
+  "Haryana / Tamil Nadu = 0.57 (at least 0.5675)",
+  "rank correlation across 33 states = -0.39"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.97,
+   "at": 0.12,
+   "text": "Tamil Nadu's share of women at work was eighteen points above Haryana's."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 3.97,
+   "at": 5.926,
+   "text": "Three lakh thirteen thousand rupees a year, level with Haryana's."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 5.746,
+   "at": 11.733,
+   "text": "Forty-one point five percent of Tamil Nadu's women were working, against India's forty."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.31,
+   "at": 19.475,
+   "text": "Haryana, at the same income: twenty-three point six percent."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.179,
+   "at": 25.281,
+   "text": "Across states, income and women at work were not closely linked."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 4.257,
+   "at": 31.088,
+   "text": "Women aged fifteen and over at work, across all states."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 2.324,
+   "at": 36.894,
+   "text": "What work do women near you do?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Share of Women at Work: Tamil Nadu 1.8x Haryana, Same Income"
+}

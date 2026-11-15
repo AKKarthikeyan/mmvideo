@@ -1,0 +1,924 @@
+{
+ "id": "fs02",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.597,
+   "text": "Gold jewellery up thirty point nine percent; cars four point five percent cheaper.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Gold",
+     "norm": "gold",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "jewellery",
+     "norm": "jewellery",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.92
+    },
+    {
+     "w": "up",
+     "norm": "up",
+     "word": 2,
+     "start": 0.92,
+     "end": 1.12
+    },
+    {
+     "w": "thirty",
+     "norm": "thirty",
+     "word": 3,
+     "start": 1.12,
+     "end": 1.4
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.4,
+     "end": 1.54
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 5,
+     "start": 1.54,
+     "end": 1.76
+    },
+    {
+     "w": "percent;",
+     "norm": "percent",
+     "word": 6,
+     "start": 1.76,
+     "end": 2.56
+    },
+    {
+     "w": "cars",
+     "norm": "cars",
+     "word": 7,
+     "start": 2.92,
+     "end": 3.0
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 8,
+     "start": 3.0,
+     "end": 3.32
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 9,
+     "start": 3.32,
+     "end": 3.48
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 10,
+     "start": 3.48,
+     "end": 3.76
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 11,
+     "start": 3.76,
+     "end": 4.0
+    },
+    {
+     "w": "cheaper.",
+     "norm": "cheaper",
+     "word": 12,
+     "start": 4.0,
+     "end": 4.32
+    }
+   ],
+   "numbers": [
+    {
+     "text": "thirty point nine",
+     "value": 30.9,
+     "mantissa": 30.9,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 1.12,
+     "onset": 1.0825,
+     "rule": "fric",
+     "how": "frication",
+     "at": 1.2158,
+     "f": 38
+    },
+    {
+     "text": "four point five",
+     "value": 4.5,
+     "mantissa": 4.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 10,
+     "whisper": 3.0,
+     "onset": 3.0025,
+     "rule": "fric",
+     "how": "frication",
+     "at": 3.1358,
+     "f": 95
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 7.288,
+   "text": "This covers gold, diamond and platinum jewellery; prices overall, five point five percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "This",
+     "norm": "this",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "covers",
+     "norm": "covers",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.86
+    },
+    {
+     "w": "gold,",
+     "norm": "gold",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.44
+    },
+    {
+     "w": "diamond",
+     "norm": "diamond",
+     "word": 3,
+     "start": 1.84,
+     "end": 2.16
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 4,
+     "start": 2.16,
+     "end": 2.6
+    },
+    {
+     "w": "platinum",
+     "norm": "platinum",
+     "word": 5,
+     "start": 2.6,
+     "end": 3.18
+    },
+    {
+     "w": "jewellery;",
+     "norm": "jewellery",
+     "word": 6,
+     "start": 3.18,
+     "end": 4.06
+    },
+    {
+     "w": "prices",
+     "norm": "prices",
+     "word": 7,
+     "start": 4.06,
+     "end": 4.54
+    },
+    {
+     "w": "overall,",
+     "norm": "overall",
+     "word": 8,
+     "start": 4.54,
+     "end": 5.3
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 9,
+     "start": 5.74,
+     "end": 6.0
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 10,
+     "start": 6.0,
+     "end": 6.32
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 11,
+     "start": 6.32,
+     "end": 6.66
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 12,
+     "start": 6.66,
+     "end": 7.1
+    }
+   ],
+   "numbers": [
+    {
+     "text": "five point five",
+     "value": 5.5,
+     "mantissa": 5.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 9,
+     "w1": 11,
+     "whisper": 5.74,
+     "onset": 5.515,
+     "rule": "fric",
+     "how": "frication",
+     "at": 11.4483,
+     "f": 345
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 13.668,
+   "sec": 3.578,
+   "text": "Silver jewellery rose eighty-seven point eight percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Silver",
+     "norm": "silver",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.78
+    },
+    {
+     "w": "jewellery",
+     "norm": "jewellery",
+     "word": 1,
+     "start": 0.78,
+     "end": 1.22
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 1.22,
+     "end": 1.58
+    },
+    {
+     "w": "eighty-seven",
+     "norm": "eighty",
+     "word": 3,
+     "start": 1.58,
+     "end": 2.08
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 3,
+     "start": 2.08,
+     "end": 2.36
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 2.36,
+     "end": 2.62
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 5,
+     "start": 2.62,
+     "end": 2.88
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 6,
+     "start": 2.88,
+     "end": 3.26
+    }
+   ],
+   "numbers": [
+    {
+     "text": "eighty seven point eight",
+     "value": 87.8,
+     "mantissa": 87.8,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 6,
+     "whisper": 1.58,
+     "onset": 1.615,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 15.2817,
+     "f": 460
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 19.475,
+   "sec": 5.746,
+   "text": "Cars cost four point five percent less; two-wheelers, one point seven less.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Cars",
+     "norm": "cars",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.46
+    },
+    {
+     "w": "cost",
+     "norm": "cost",
+     "word": 1,
+     "start": 0.46,
+     "end": 0.86
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.22
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 3,
+     "start": 1.22,
+     "end": 1.38
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 4,
+     "start": 1.38,
+     "end": 1.72
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 5,
+     "start": 1.72,
+     "end": 2.08
+    },
+    {
+     "w": "less;",
+     "norm": "less",
+     "word": 6,
+     "start": 2.08,
+     "end": 2.84
+    },
+    {
+     "w": "two-wheelers,",
+     "norm": "two",
+     "word": 7,
+     "start": 3.24,
+     "end": 3.36
+    },
+    {
+     "w": "wheelers",
+     "norm": "wheelers",
+     "word": 7,
+     "start": 3.36,
+     "end": 4.14
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 8,
+     "start": 4.34,
+     "end": 4.56
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 9,
+     "start": 4.56,
+     "end": 4.78
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 10,
+     "start": 4.78,
+     "end": 5.04
+    },
+    {
+     "w": "less.",
+     "norm": "less",
+     "word": 11,
+     "start": 5.04,
+     "end": 5.4
+    }
+   ],
+   "numbers": [
+    {
+     "text": "four point five",
+     "value": 4.5,
+     "mantissa": 4.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 4,
+     "whisper": 0.86,
+     "onset": 0.8125,
+     "rule": "fric",
+     "how": "frication",
+     "at": 20.2792,
+     "f": 610
+    },
+    {
+     "text": "two",
+     "value": 2.0,
+     "mantissa": 2.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 7,
+     "whisper": 3.24,
+     "onset": 3.11,
+     "rule": "stop",
+     "how": "burst",
+     "at": 22.5767,
+     "f": 678
+    },
+    {
+     "text": "one point seven",
+     "value": 1.7,
+     "mantissa": 1.7,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 9,
+     "w1": 11,
+     "whisper": 4.34,
+     "onset": 4.2125,
+     "rule": "weak",
+     "how": "edge",
+     "at": 23.6792,
+     "f": 712
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 27.217,
+   "sec": 3.97,
+   "text": "Gold jewellery rose over five times as much as prices overall.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Gold",
+     "norm": "gold",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.52
+    },
+    {
+     "w": "jewellery",
+     "norm": "jewellery",
+     "word": 1,
+     "start": 0.52,
+     "end": 0.86
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 0.86,
+     "end": 1.18
+    },
+    {
+     "w": "over",
+     "norm": "over",
+     "word": 3,
+     "start": 1.18,
+     "end": 1.6
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 4,
+     "start": 1.6,
+     "end": 2.1
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 5,
+     "start": 2.1,
+     "end": 2.46
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 6,
+     "start": 2.46,
+     "end": 2.6
+    },
+    {
+     "w": "much",
+     "norm": "much",
+     "word": 7,
+     "start": 2.6,
+     "end": 2.76
+    },
+    {
+     "w": "as",
+     "norm": "as",
+     "word": 8,
+     "start": 2.76,
+     "end": 2.94
+    },
+    {
+     "w": "prices",
+     "norm": "prices",
+     "word": 9,
+     "start": 2.94,
+     "end": 3.18
+    },
+    {
+     "w": "overall.",
+     "norm": "overall",
+     "word": 10,
+     "start": 3.18,
+     "end": 3.68
+    }
+   ],
+   "numbers": [
+    {
+     "text": "five",
+     "value": 5.0,
+     "mantissa": 5.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 4,
+     "whisper": 1.6,
+     "onset": 1.56,
+     "rule": "fric",
+     "how": "frication",
+     "at": 28.7933,
+     "f": 865
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 33.023,
+   "sec": 3.657,
+   "text": "Jewellery and personal items, across all the states.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Jewellery",
+     "norm": "jewellery",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.8
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 1,
+     "start": 0.8,
+     "end": 1.02
+    },
+    {
+     "w": "personal",
+     "norm": "personal",
+     "word": 2,
+     "start": 1.02,
+     "end": 1.38
+    },
+    {
+     "w": "items,",
+     "norm": "items",
+     "word": 3,
+     "start": 1.38,
+     "end": 1.92
+    },
+    {
+     "w": "across",
+     "norm": "across",
+     "word": 4,
+     "start": 2.34,
+     "end": 2.64
+    },
+    {
+     "w": "all",
+     "norm": "all",
+     "word": 5,
+     "start": 2.64,
+     "end": 2.96
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 6,
+     "start": 2.96,
+     "end": 3.12
+    },
+    {
+     "w": "states.",
+     "norm": "states",
+     "word": 7,
+     "start": 3.12,
+     "end": 3.3
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 38.83,
+   "sec": 2.977,
+   "text": "What does your family buy at Dussehra? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "What",
+     "norm": "what",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "does",
+     "norm": "does",
+     "word": 1,
+     "start": 0.34,
+     "end": 0.54
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 2,
+     "start": 0.54,
+     "end": 0.74
+    },
+    {
+     "w": "family",
+     "norm": "family",
+     "word": 3,
+     "start": 0.74,
+     "end": 1.06
+    },
+    {
+     "w": "buy",
+     "norm": "buy",
+     "word": 4,
+     "start": 1.06,
+     "end": 1.26
+    },
+    {
+     "w": "at",
+     "norm": "at",
+     "word": 5,
+     "start": 1.26,
+     "end": 1.42
+    },
+    {
+     "w": "Dussehra?",
+     "norm": "dussehra",
+     "word": 6,
+     "start": 1.42,
+     "end": 1.98
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 7,
+     "start": 2.26,
+     "end": 2.42
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 8,
+     "start": 2.42,
+     "end": 2.74
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 38,
+   "lockHow": "spoken",
+   "lockWord": "thirty point nine",
+   "firstNumF": 38,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "30.9%",
+     "spokenF": 38,
+     "word": "thirty point nine",
+     "how": "spoken",
+     "lockF": 38
+    },
+    {
+     "role": "line",
+     "text": "4.5%",
+     "spokenF": 95,
+     "word": "four point five",
+     "how": "spoken",
+     "lockF": 95
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 406,
+   "settleF": 394,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 345,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+30.9%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+30.9%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+5.5%",
+     "spokenF": 345,
+     "word": "five point five",
+     "how": "spoken",
+     "lockF": 345
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 406,
+   "f1": 581,
+   "settleF": 569,
+   "line": 2,
+   "lockF": 460,
+   "lockHow": "spoken",
+   "lockWord": "eighty seven point eight",
+   "firstNumF": 460,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+87.8%",
+     "spokenF": 460,
+     "word": "eighty seven point eight",
+     "how": "spoken",
+     "lockF": 460
+    },
+    {
+     "role": "bar",
+     "text": "+87.8%",
+     "spokenF": 460,
+     "word": "eighty seven point eight",
+     "how": "spoken",
+     "lockF": 460
+    },
+    {
+     "role": "bar",
+     "text": "+30.9%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 412
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 460
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 581,
+   "f1": 813,
+   "settleF": 801,
+   "line": 3,
+   "lockF": 610,
+   "lockHow": "spoken",
+   "lockWord": "four point five",
+   "firstNumF": 610,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "−4.5%",
+     "spokenF": 610,
+     "word": "four point five",
+     "how": "spoken",
+     "lockF": 610
+    },
+    {
+     "role": "bar",
+     "text": "−4.5%",
+     "spokenF": 610,
+     "word": "four point five",
+     "how": "spoken",
+     "lockF": 610
+    },
+    {
+     "role": "bar",
+     "text": "−1.7%",
+     "spokenF": 712,
+     "word": "one point seven",
+     "how": "spoken",
+     "lockF": 712
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "say",
+   "f0": 813,
+   "f1": 987,
+   "settleF": 975,
+   "line": 4,
+   "lockF": 865,
+   "lockHow": "first-number",
+   "lockWord": "five",
+   "firstNumF": 865,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 5,
+   "kind": "map",
+   "f0": 987,
+   "f1": 1161,
+   "settleF": 1149,
+   "line": 5,
+   "lockF": 993,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "mapend",
+   "f0": 1161,
+   "f1": 1277,
+   "settleF": 1265,
+   "line": 6,
+   "lockF": 1167,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

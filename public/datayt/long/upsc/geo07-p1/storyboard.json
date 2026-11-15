@@ -1,0 +1,2305 @@
+{
+ "id": "geo07-p1",
+ "format": "long-16x9",
+ "target_minutes": 10.5,
+ "script": "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/GEO-07/script_p1.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "may",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "idle"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "empty"
+     },
+     {
+      "icon": "thermometer",
+      "x": 250,
+      "y": 560,
+      "s": 2.0,
+      "level": "high"
+     }
+    ],
+    "badges": [
+     {
+      "key": "t5",
+      "ref": {
+       "t": "u7_nagpur",
+       "state": "May",
+       "s": "tmax"
+      },
+      "suffix": "°C",
+      "caption": "May afternoons, Nagpur",
+      "x": 820,
+      "y": 300,
+      "size": 170,
+      "decimals": 1
+     },
+     {
+      "key": "r5",
+      "ref": {
+       "t": "u7_nagpur",
+       "state": "May",
+       "s": "raindays"
+      },
+      "suffix": " days",
+      "caption": "with rain in May",
+      "x": 820,
+      "y": 640,
+      "size": 120,
+      "decimals": 1
+     }
+    ],
+    "pills": [
+     {
+      "text": "IMD NORMALS 1991–2020",
+      "x": 96,
+      "y": 72
+     }
+    ],
+    "intro": "globe-band"
+   },
+   "vo": "In Nagpur, a May afternoon averages forty-three degrees Celsius. Rain falls on about four days that month.",
+   "reveals": [
+    {
+     "key": "t5",
+     "word": "forty-three"
+    },
+    {
+     "key": "r5",
+     "word": "four"
+    }
+   ],
+   "transition": "cut",
+   "visual": "First second, unlabelled: Earth from space with a thin white cloud band near the equator (intro='globe-band', the plant). Cut to a Nagpur rooftop in May: shimmer, empty bucket, thermometer high.",
+   "beat": "b00",
+   "claims": [
+    "M104"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b00",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "filling"
+     },
+     {
+      "icon": "thermometer",
+      "x": 250,
+      "y": 560,
+      "s": 2.0,
+      "level": "mid"
+     }
+    ],
+    "badges": [
+     {
+      "key": "t7",
+      "ref": {
+       "t": "u7_nagpur",
+       "state": "July",
+       "s": "tmax"
+      },
+      "suffix": "°C",
+      "caption": "July afternoons, Nagpur",
+      "x": 820,
+      "y": 300,
+      "size": 170,
+      "decimals": 1
+     },
+     {
+      "key": "r7",
+      "ref": {
+       "t": "u7_nagpur",
+       "state": "July",
+       "s": "raindays"
+      },
+      "suffix": " days",
+      "caption": "with rain in July",
+      "x": 820,
+      "y": 640,
+      "size": 120,
+      "decimals": 1
+     }
+    ],
+    "rain": true
+   },
+   "vo": "In July, afternoons average thirty-two degrees. Rain falls on about twenty-one days.",
+   "reveals": [
+    {
+     "key": "t7",
+     "word": "thirty-two"
+    },
+    {
+     "key": "r7",
+     "word": "twenty-one"
+    }
+   ],
+   "transition": "cut",
+   "visual": "July: grey sky, rain, the bucket filling.",
+   "beat": "b00",
+   "claims": [
+    "M104"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b00",
+   "kind": "title",
+   "spec": {
+    "title": "If heat brings the monsoon, why does the rain wait?",
+    "sub": "Monsoon, part one",
+    "chip": "GEOGRAPHY · UPSC"
+   },
+   "vo": "So if heat brings the monsoon, why does the rain wait for the cooler months?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Title card: the question.",
+   "beat": "b00",
+   "claims": [
+    "M104"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch1 b01",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "props": [
+     {
+      "icon": "calendar",
+      "x": 960,
+      "y": 520,
+      "s": 3.0,
+      "enter": "cal",
+      "hl": true
+     }
+    ],
+    "badges": [
+     {
+      "key": "sw",
+      "ref": {
+       "t": "u7_rain",
+       "state": "India",
+       "s": "sw_share"
+      },
+      "suffix": "%",
+      "caption": "of the year's rain, June–September (IMD normals 1971–2020)",
+      "x": 1420,
+      "y": 420,
+      "size": 170,
+      "decimals": 1
+     }
+    ]
+   },
+   "vo": "This matters. On average, about three-quarters of India's yearly rain falls from June to September.",
+   "reveals": [
+    {
+     "key": "cal",
+     "word": "matters"
+    },
+    {
+     "key": "sw",
+     "word": "three-quarters"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A calendar with June to September glowing; the share badge.",
+   "beat": "b01",
+   "claims": [
+    "M046"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch1 b01",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1300,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "book",
+      "x": 700,
+      "y": 700,
+      "s": 1.6,
+      "enter": "nb"
+     }
+    ],
+    "pills": [
+     {
+      "text": "STEP ONE: MAKE IT STRONG",
+      "x": 96,
+      "y": 72
+     },
+     {
+      "text": "STEP TWO: TEST IT",
+      "x": 96,
+      "y": 150,
+      "key": "p2"
+     }
+    ]
+   },
+   "vo": "Our textbooks give a clear answer for why. Here is the plan. We'll make that answer as strong as we can. Then we'll test it against the record.",
+   "reveals": [
+    {
+     "key": "nb",
+     "word": "textbooks"
+    },
+    {
+     "key": "p2",
+     "word": "test"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid opens a notebook. Two step pills.",
+   "beat": "b01",
+   "claims": [
+    "M046"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b02",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "seabreeze-giant",
+      "key": "g1"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "HOT LAND",
+        "at": "india",
+        "key": "l1"
+       },
+       {
+        "text": "COOLER SEA",
+        "at": "arabian",
+        "key": "l2"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "The textbook answer goes like this. In summer, land heats up faster than the sea. Air over the hot land rises. Cooler, moist air flows in from the sea, and it brings rain.",
+   "reveals": [
+    {
+     "key": "l1",
+     "word": "land"
+    },
+    {
+     "key": "l2",
+     "word": "sea."
+    },
+    {
+     "key": "g1",
+     "word": "flows"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The classic picture: hot land, cooler sea, one big arrow onto India.",
+   "beat": "b02",
+   "claims": [
+    "M003",
+    "M005",
+    "M103"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b02",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "“unequal heating of land and the sea”",
+     {
+      "text": "NCERT, Class {const:9}, page {const:49}",
+      "key": "c9"
+     }
+    ],
+    "accent": [
+     "unequal heating"
+    ]
+   },
+   "vo": "Our Class 9 book says the south-west monsoon is mainly caused by this unequal heating.",
+   "reveals": [
+    {
+     "key": "c9",
+     "word": "Class"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The NCERT words, quoted exactly, as a citation card (never the page).",
+   "beat": "b02",
+   "claims": [
+    "M003",
+    "M005",
+    "M103"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b02",
+   "kind": "notebook",
+   "spec": {
+    "lines": [
+     {
+      "text": "Easy. Land hot, sea cool, wind comes.",
+      "key": "e1"
+     }
+    ],
+    "who": "girl"
+   },
+   "vo": "It feels right. You can feel it on any beach.",
+   "reveals": [
+    {
+     "key": "e1",
+     "word": "right."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid writes 'Easy.' (plant).",
+   "beat": "b02",
+   "claims": [
+    "M003",
+    "M005",
+    "M103"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch2 b03",
+   "kind": "stage",
+   "spec": {
+    "set": "beach",
+    "time": "noon",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 900,
+      "y": 960,
+      "h": 560,
+      "pose": "cheer",
+      "talk": true
+     }
+    ],
+    "bubble": {
+     "text": "Ow, ow, ow!",
+     "x": 900,
+     "y": 380,
+     "key": "ow"
+    }
+   },
+   "vo": "Why does land heat faster? Walk on a beach at noon. The sand burns your feet, but the water stays cool.",
+   "reveals": [
+    {
+     "key": "ow",
+     "word": "burns"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid hops on burning sand, then steps into cool water.",
+   "beat": "b03",
+   "claims": [
+    "M006"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "heat-rates",
+    "chip": "",
+    "labels": [
+     {
+      "text": "LAND: FAST",
+      "key": "a1"
+     },
+     {
+      "text": "WATER: SLOW",
+      "key": "a2"
+     }
+    ]
+   },
+   "vo": "Land heats fast and cools fast. Water heats slowly and cools slowly.",
+   "reveals": [
+    {
+     "key": "a1",
+     "word": "Land"
+    },
+    {
+     "key": "a2",
+     "word": "Water"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two thermometers, land rising fast, water slowly.",
+   "beat": "b03",
+   "claims": [
+    "M006"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "column",
+    "chip": "",
+    "labels": [
+     {
+      "text": "AIR PRESSURE = WEIGHT OF AIR",
+      "key": "c1"
+     }
+    ]
+   },
+   "vo": "Why does air move at all? Air has weight. The weight of the air above us is called air pressure.",
+   "reveals": [
+    {
+     "key": "c1",
+     "word": "pressure."
+    }
+   ],
+   "transition": "cut",
+   "visual": "A column of air pressing on the kid's head.",
+   "beat": "b04",
+   "claims": [
+    "M105",
+    "M103",
+    "M096"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "rooms",
+    "chip": "ANALOGY",
+    "limit": "air is pushed; it does not choose",
+    "labels": [
+     {
+      "text": "LOW: AIR RISES",
+      "key": "lo"
+     },
+     {
+      "text": "HIGH: AIR SINKS",
+      "key": "hi"
+     },
+     {
+      "text": "HIGH → LOW",
+      "key": "hl"
+     }
+    ]
+   },
+   "vo": "Over a low-pressure area, air tends to rise. Over a high-pressure area, it tends to sink. Wind blows from high pressure towards low pressure.",
+   "reveals": [
+    {
+     "key": "lo",
+     "word": "rise."
+    },
+    {
+     "key": "hi",
+     "word": "sink."
+    },
+    {
+     "key": "hl",
+     "word": "towards"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Crowded room and empty room, people drift into the empty one.",
+   "beat": "b04",
+   "claims": [
+    "M105",
+    "M103",
+    "M096"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "gradient",
+    "chip": "",
+    "labels": [
+     {
+      "text": "PRESSURE GRADIENT",
+      "key": "pg"
+     }
+    ]
+   },
+   "vo": "The faster pressure changes from place to place, the stronger the wind. That rate of change is the pressure gradient.",
+   "reveals": [
+    {
+     "key": "pg",
+     "word": "gradient."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Isobars close together (strong wind) and far apart (gentle wind).",
+   "beat": "b04",
+   "claims": [
+    "M105",
+    "M103",
+    "M096"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "breeze",
+    "time": "day",
+    "chip": "",
+    "labels": [
+     {
+      "text": "SEA BREEZE · BY DAY",
+      "key": "sb"
+     }
+    ]
+   },
+   "vo": "At the beach, this makes a daily wind. By day, air over the hot sand rises, and cooler air slides in from the sea. That is a sea breeze.",
+   "reveals": [
+    {
+     "key": "sb",
+     "word": "breeze."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Beach by day: air rises over the sand, sea air slides in.",
+   "beat": "b05",
+   "claims": [
+    "M005"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "breeze",
+    "time": "night",
+    "chip": "",
+    "labels": [
+     {
+      "text": "LAND BREEZE · BY NIGHT",
+      "key": "lb"
+     }
+    ]
+   },
+   "vo": "At night the land cools faster, and the breeze turns round.",
+   "reveals": [
+    {
+     "key": "lb",
+     "word": "round."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Same beach at night, arrow flipped.",
+   "beat": "b05",
+   "claims": [
+    "M005"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch2 b06",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "zoomFromBeach": true,
+    "layers": [
+     {
+      "id": "seabreeze-giant",
+      "key": "g2"
+     }
+    ]
+   },
+   "vo": "Now make the beach as big as a country.",
+   "reveals": [
+    {
+     "key": "g2",
+     "word": "country."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The beach zooms out until it becomes India.",
+   "beat": "b06",
+   "claims": [
+    "M007",
+    "M106"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch2 b06",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "Halley, {const:1686}",
+      "key": "hy"
+     },
+     "“a gigantic land-sea breeze”"
+    ],
+    "accent": [
+     "gigantic land-sea breeze"
+    ]
+   },
+   "vo": "In 1686, Halley suggested exactly that. In his model, the monsoon was a gigantic land-sea breeze.",
+   "reveals": [
+    {
+     "key": "hy",
+     "word": "Halley"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: Halley's model.",
+   "beat": "b06",
+   "claims": [
+    "M007",
+    "M106"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch2 b06",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Gadgil, 2018:",
+     "“many papers and most textbooks”"
+    ],
+    "accent": [
+     "most textbooks"
+    ]
+   },
+   "vo": "In 2018, Gadgil wrote that many papers and most textbooks still treat this heating as the main driver.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Citation card: Gadgil 2018.",
+   "beat": "b06",
+   "claims": [
+    "M007",
+    "M106"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch2 b07",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "monsoon-sw",
+      "key": "sw1"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "FROM THE SOUTH-WEST",
+        "at": "arabian",
+        "key": "l3"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "But look at a map of the monsoon winds. They don't blow straight north into India. They arrive from the south-west. Why?",
+   "reveals": [
+    {
+     "key": "sw1",
+     "word": "map"
+    },
+    {
+     "key": "l3",
+     "word": "south-west."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Monsoon winds arriving from the south-west, not straight north.",
+   "beat": "b07",
+   "claims": [
+    "M096",
+    "M026"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch2 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "roundabout",
+    "chip": "ANALOGY",
+    "limit": "on Earth: zero at the equator, strongest at the poles",
+    "labels": []
+   },
+   "vo": "Because the Earth spins. Roll a ball across a spinning roundabout, and to the riders it seems to curve.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "A roundabout from above; a rolled ball traces a curve.",
+   "beat": "b07",
+   "claims": [
+    "M096",
+    "M026"
+   ]
+  },
+  {
+   "id": "s021",
+   "act": "Ch2 b07",
+   "kind": "globe",
+   "spec": {
+    "mode": "coriolis",
+    "labels": [
+     {
+      "text": "CORIOLIS FORCE",
+      "key": "co"
+     },
+     {
+      "text": "RIGHT (NORTH)",
+      "key": "r"
+     },
+     {
+      "text": "LEFT (SOUTH)",
+      "key": "l"
+     },
+     {
+      "text": "ZERO AT THE EQUATOR",
+      "key": "z"
+     }
+    ]
+   },
+   "vo": "On Earth this is the Coriolis force. North of the equator it bends moving air to the right. South of it, to the left. It is strongest at the poles and absent at the equator.",
+   "reveals": [
+    {
+     "key": "co",
+     "word": "Coriolis"
+    },
+    {
+     "key": "r",
+     "word": "right."
+    },
+    {
+     "key": "l",
+     "word": "left."
+    },
+    {
+     "key": "z",
+     "word": "absent"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Globe: moving-air arrows bending right in the north, left in the south; none at the equator.",
+   "beat": "b07",
+   "claims": [
+    "M096",
+    "M026"
+   ]
+  },
+  {
+   "id": "s022",
+   "act": "Ch2 b07",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "equator",
+      "key": "eq"
+     },
+     {
+      "id": "trades-se",
+      "key": "tr"
+     },
+     {
+      "id": "cross",
+      "key": "cx",
+      "badge": {
+       "lab": "cross",
+       "key": "cx"
+      }
+     },
+     {
+      "id": "bend",
+      "key": "bd"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "SE TRADES → SW MONSOON",
+        "at": "arabian",
+        "key": "ex"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Our monsoon winds start south of the equator as the south-east trade winds. They cross the equator between about forty and sixty degrees east. There they bend to the right. The south-east trades become the south-west monsoon.",
+   "reveals": [
+    {
+     "key": "eq",
+     "word": "equator"
+    },
+    {
+     "key": "tr",
+     "word": "trade"
+    },
+    {
+     "key": "cx",
+     "word": "forty"
+    },
+    {
+     "key": "bd",
+     "word": "bend"
+    },
+    {
+     "key": "ex",
+     "word": "become"
+    }
+   ],
+   "transition": "cut",
+   "visual": "SE trades cross the equator between 40 and 60°E and swing to the south-west. Exam line on screen.",
+   "beat": "b07",
+   "claims": [
+    "M096",
+    "M026"
+   ]
+  },
+  {
+   "id": "s023",
+   "act": "Ch3 b08",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 960,
+      "y": 960,
+      "h": 560,
+      "pose": "idle"
+     }
+    ],
+    "pills": [
+     {
+      "text": "THE TEST: MORE HEAT = MORE RAIN?",
+      "x": 96,
+      "y": 72,
+      "key": "ts"
+     }
+    ]
+   },
+   "vo": "So the textbook answer is neat. But does it pass the test? If heat drives the monsoon, more heat should mean more rain.",
+   "reveals": [
+    {
+     "key": "ts",
+     "word": "test?"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid holds the notebook: the test question.",
+   "beat": "b08",
+   "claims": [
+    "M008",
+    "M102"
+   ]
+  },
+  {
+   "id": "s024",
+   "act": "Ch3 b08",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "may",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present",
+      "talk": true
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "empty"
+     }
+    ],
+    "bubble": {
+     "text": "If heat brings rain, this bucket should be full by now.",
+     "x": 1300,
+     "y": 360,
+     "key": "bk"
+    },
+    "pills": [
+     {
+      "text": "SIMPSON, 1921",
+      "x": 96,
+      "y": 72
+     }
+    ]
+   },
+   "vo": "In 1921, Simpson, as Gadgil reports, pointed out three problems. India is much hotter in May, before the monsoon, than in July.",
+   "reveals": [
+    {
+     "key": "bk",
+     "word": "hotter"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Rooftop in May again: the empty bucket.",
+   "beat": "b08",
+   "claims": [
+    "M008",
+    "M102"
+   ]
+  },
+  {
+   "id": "s025",
+   "act": "Ch3 b08",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "hot-nw",
+      "key": "nw"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "HOTTEST · HARDLY ANY RAIN (GADGIL 2018)",
+        "at": "nw",
+        "key": "l4"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Simpson said the north-west, where the land is hottest, got no monsoon rain at all. Gadgil's modern maps show hardly any.",
+   "reveals": [
+    {
+     "key": "nw",
+     "word": "north-west,"
+    },
+    {
+     "key": "l4",
+     "word": "hardly"
+    }
+   ],
+   "transition": "cut",
+   "visual": "North-west India glowing hot, a near-empty rain gauge.",
+   "beat": "b08",
+   "claims": [
+    "M008",
+    "M102"
+   ]
+  },
+  {
+   "id": "s026",
+   "act": "Ch3 b08",
+   "kind": "stage",
+   "spec": {
+    "set": "void",
+    "pills": [
+     {
+      "text": "POOR-RAIN YEARS: HOTTER",
+      "x": 96,
+      "y": 72,
+      "key": "pr"
+     }
+    ],
+    "props": [
+     {
+      "icon": "thermometer",
+      "x": 960,
+      "y": 560,
+      "s": 2.4,
+      "level": "high"
+     }
+    ]
+   },
+   "vo": "And in years of poor rain, the land was on average hotter, not cooler.",
+   "reveals": [
+    {
+     "key": "pr",
+     "word": "poor"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A thermometer over a dry field.",
+   "beat": "b08",
+   "claims": [
+    "M008",
+    "M102"
+   ]
+  },
+  {
+   "id": "s027",
+   "act": "Ch3 b09",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Sulochana Gadgil",
+     "Indian Institute of Science",
+     "the record, 1950–2014"
+    ]
+   },
+   "vo": "Nearly a century later, Sulochana Gadgil, of the Indian Institute of Science, checked the record. Gadgil looked at the years 1950 to 2014.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Citation card.",
+   "beat": "b09",
+   "claims": [
+    "M009"
+   ]
+  },
+  {
+   "id": "s028",
+   "act": "Ch3 b09",
+   "kind": "sketch",
+   "spec": {
+    "chip": "ILLUSTRATION",
+    "lines": [
+     {
+      "label": "land temperature",
+      "dir": "up",
+      "key": "s1"
+     },
+     {
+      "label": "monsoon rain",
+      "dir": "down",
+      "key": "s2"
+     }
+    ],
+    "caption": "shape only, not the data · Gadgil 2018"
+   },
+   "vo": "In years when India's June-to-September land temperature was higher, monsoon rain tended to be lower. More heat should mean more rain. In these records, it tended to go the other way.",
+   "reveals": [
+    {
+     "key": "s1",
+     "word": "temperature"
+    },
+    {
+     "key": "s2",
+     "word": "lower."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Slow beat: two hand-drawn lines, one rising as the other falls. Hold.",
+   "beat": "b09",
+   "claims": [
+    "M009"
+   ]
+  },
+  {
+   "id": "s029",
+   "act": "Ch3 b10",
+   "kind": "stage",
+   "spec": {
+    "set": "home",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "book",
+      "x": 760,
+      "y": 640,
+      "s": 2.0,
+      "glow": true,
+      "enter": "gl"
+     }
+    ],
+    "pills": [
+     {
+      "text": "“no single theory” · NCERT Class XI",
+      "x": 96,
+      "y": 72,
+      "key": "ns"
+     }
+    ]
+   },
+   "vo": "But here is the surprise. Our Class 11 textbook already warned us. In its section on the nature of the monsoon, it says no single theory has fully explained it. It says the breakthrough came when scientists studied the whole planet, not just one region.",
+   "reveals": [
+    {
+     "key": "gl",
+     "word": "warned"
+    },
+    {
+     "key": "ns",
+     "word": "theory"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid flips the textbook; a small note glows. Citation label only.",
+   "beat": "b10",
+   "claims": [
+    "M004"
+   ]
+  },
+  {
+   "id": "s030",
+   "act": "Ch3 b10",
+   "kind": "globe",
+   "spec": {
+    "mode": "zoomout",
+    "labels": []
+   },
+   "vo": "So is heat useless? Hold that question. First, let's zoom out.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "The camera pulls back from India to the whole Earth.",
+   "beat": "b10",
+   "claims": [
+    "M004"
+   ]
+  },
+  {
+   "id": "s031",
+   "act": "Ch4 b11",
+   "kind": "globe",
+   "spec": {
+    "mode": "band",
+    "glow": true,
+    "labels": [
+     {
+      "text": "WHERE WINDS MEET, RAIN FALLS",
+      "key": "bn"
+     }
+    ]
+   },
+   "vo": "Remember the very first picture in this video? That white band. Around the tropics runs a band where winds come together and rain falls.",
+   "reveals": [
+    {
+     "key": "bn",
+     "word": "band"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The first frame again, now glowing.",
+   "beat": "b11",
+   "claims": [
+    "M107",
+    "M097",
+    "M013"
+   ]
+  },
+  {
+   "id": "s032",
+   "act": "Ch4 b11",
+   "kind": "globe",
+   "spec": {
+    "mode": "hadley",
+    "labels": [
+     {
+      "lab": "rising",
+      "key": "ri"
+     },
+     {
+      "lab": "sinking",
+      "key": "sk"
+     },
+     {
+      "text": "TRADE WINDS",
+      "key": "tw"
+     }
+    ]
+   },
+   "vo": "There, strong heating makes warm, moist air rise, up to about fourteen kilometres. High up, that air flows towards the poles. Near thirty degrees north and south, it sinks and builds high pressure. Then it flows back along the surface towards the equator. These returning winds are the trade winds.",
+   "reveals": [
+    {
+     "key": "ri",
+     "word": "rise,"
+    },
+    {
+     "key": "sk",
+     "word": "thirty"
+    },
+    {
+     "key": "tw",
+     "word": "trade"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Arrows rise at the band, flow out high, sink near 30°, return low.",
+   "beat": "b11",
+   "claims": [
+    "M107",
+    "M097",
+    "M013"
+   ]
+  },
+  {
+   "id": "s033",
+   "act": "Ch4 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "pot",
+    "chip": "ANALOGY",
+    "limit": "the planet's spin bends the returning winds",
+    "labels": [
+     {
+      "text": "HADLEY CELL",
+      "key": "hc"
+     }
+    ]
+   },
+   "vo": "Think of a pot of water on a stove. It rises in the middle, spreads, sinks at the sides and flows back. This giant loop is called the Hadley cell.",
+   "reveals": [
+    {
+     "key": "hc",
+     "word": "Hadley"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A pot on a stove: rising in the middle, sinking at the sides.",
+   "beat": "b11",
+   "claims": [
+    "M107",
+    "M097",
+    "M013"
+   ]
+  },
+  {
+   "id": "s034",
+   "act": "Ch4 b12",
+   "kind": "globe",
+   "spec": {
+    "mode": "itcz",
+    "labels": [
+     {
+      "text": "ITCZ = THE RAIN BELT",
+      "key": "it"
+     }
+    ]
+   },
+   "vo": "Where the trade winds from both sides meet, air is forced up. And rising air is what makes cloud and rain. That meeting zone is called the Inter-Tropical Convergence Zone, or ITCZ. It is the planet's rain belt.",
+   "reveals": [
+    {
+     "key": "it",
+     "word": "ITCZ."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Trade winds from north and south meet; cloud towers grow along the line.",
+   "beat": "b12",
+   "claims": [
+    "M097",
+    "M103",
+    "M013"
+   ]
+  },
+  {
+   "id": "s035",
+   "act": "Ch4 b13",
+   "kind": "globe",
+   "spec": {
+    "mode": "seasons",
+    "labels": [
+     {
+      "text": "THE BELTS FOLLOW THE SUN",
+      "key": "fs"
+     }
+    ]
+   },
+   "vo": "Here is the key. The belts move with the sun. In our summer they shift north. In our winter they slide back south.",
+   "reveals": [
+    {
+     "key": "fs",
+     "word": "sun."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The year runs fast: the sun's overhead spot slides north and south; the belt follows like a shadow.",
+   "beat": "b13",
+   "claims": [
+    "M095",
+    "M098",
+    "M013"
+   ]
+  },
+  {
+   "id": "s036",
+   "act": "Ch4 b13",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "“the most pronounced effect”",
+     "is seen in the monsoons",
+     {
+      "text": "NCERT, Class {const:11}",
+      "key": "c11"
+     }
+    ],
+    "accent": [
+     "most pronounced"
+    ]
+   },
+   "vo": "Our Class 11 book says the most pronounced effect of this shift is seen in the monsoons.",
+   "reveals": [
+    {
+     "key": "c11",
+     "word": "Class"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card.",
+   "beat": "b13",
+   "claims": [
+    "M095",
+    "M098",
+    "M013"
+   ]
+  },
+  {
+   "id": "s037",
+   "act": "Ch4 b13",
+   "kind": "windmap",
+   "spec": {
+    "focus": "asia",
+    "layers": [
+     {
+      "id": "itcz-july",
+      "key": "ij",
+      "badge": {
+       "lab": "itcz_july",
+       "key": "ij"
+      }
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "MONSOON TROUGH",
+        "at": "ganges",
+        "key": "mt"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "NCERT puts the ITCZ near the equator. In July it sits at about twenty to twenty-five degrees north, over the Gangetic plain. There it has a special name: the monsoon trough. So: the sun moves north, the belt moves north, and the rain moves with it.",
+   "reveals": [
+    {
+     "key": "ij",
+     "word": "twenty"
+    },
+    {
+     "key": "mt",
+     "word": "trough."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The belt settles over the Gangetic plain in July.",
+   "beat": "b13",
+   "claims": [
+    "M095",
+    "M098",
+    "M013"
+   ]
+  },
+  {
+   "id": "s038",
+   "act": "Ch5 b14",
+   "kind": "globe",
+   "spec": {
+    "mode": "split",
+    "labels": [
+     {
+      "text": "NEWER VIEW: THE RAIN BELT MOVING NORTH",
+      "key": "nv"
+     }
+    ]
+   },
+   "vo": "So here is the newer picture. On this view, the monsoon is not India sucking in a sea breeze. It is the tropical rain belt moving north with the sun. It settles over our subcontinent for the season.",
+   "reveals": [
+    {
+     "key": "nv",
+     "word": "belt"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Peak. The sea-breeze arrow fades; the glowing belt slides over India pulling the trades. Music rises.",
+   "beat": "b14",
+   "claims": [
+    "M011",
+    "M107",
+    "M010",
+    "M007"
+   ]
+  },
+  {
+   "id": "s039",
+   "act": "Ch5 b14",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Geen and colleagues, 2020:",
+     "“a shift in the understanding”"
+    ],
+    "accent": [
+     "a shift in the understanding"
+    ]
+   },
+   "vo": "A 2020 review by Geen and colleagues says theory and observations support this view of monsoons. They call it a shift in the understanding.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Citation card.",
+   "beat": "b14",
+   "claims": [
+    "M011",
+    "M107",
+    "M010",
+    "M007"
+   ]
+  },
+  {
+   "id": "s040",
+   "act": "Ch5 b14",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Gadgil: abandon the sea-breeze view",
+     "Not everyone agrees"
+    ],
+    "accent": [
+     "Not everyone agrees"
+    ]
+   },
+   "vo": "Gadgil goes further, and argues that the sea-breeze view should be abandoned. Not everyone agrees.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Two views, side by side.",
+   "beat": "b14",
+   "claims": [
+    "M011",
+    "M107",
+    "M010",
+    "M007"
+   ]
+  },
+  {
+   "id": "s041",
+   "act": "Ch5 b15",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "heatlow",
+      "key": "hl"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "lab": "heatlow",
+        "at": "nw",
+        "key": "h1"
+       },
+       {
+        "text": "IMD: linked, to some extent, to a good monsoon",
+        "at": "south",
+        "key": "h2"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "But does heat play no part at all? Some scientists say it still does. Over the deserts of north-west India and Pakistan, summer heat makes a shallow low called the heat low. It is only about one and a half kilometres deep. IMD links an intense heat low, to some extent, with a good monsoon.",
+   "reveals": [
+    {
+     "key": "hl",
+     "word": "heat"
+    },
+    {
+     "key": "h1",
+     "word": "deep."
+    },
+    {
+     "key": "h2",
+     "word": "links"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A shimmering dome over the north-west, a thin swirl near the ground.",
+   "beat": "b15",
+   "claims": [
+    "M015",
+    "M108",
+    "M099",
+    "M010"
+   ]
+  },
+  {
+   "id": "s042",
+   "act": "Ch5 b15",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "lat20",
+      "key": "l20",
+      "badge": {
+       "lab": "lat20",
+       "key": "l20"
+      }
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "WU ET AL. 2012",
+        "at": "south",
+        "key": "wu"
+       },
+       {
+        "text": "GADGIL: READS IT DIFFERENTLY",
+        "at": "nw",
+        "key": "gd"
+       },
+       {
+        "text": "OPEN QUESTION",
+        "at": "top",
+        "key": "oq"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Wu and colleagues found something in 2012. Land-sea heating still sets the monsoon south of about twenty degrees north. Gadgil reads the evidence differently. Scientists still argue about how much heat matters.",
+   "reveals": [
+    {
+     "key": "l20",
+     "word": "twenty"
+    },
+    {
+     "key": "wu",
+     "word": "Wu"
+    },
+    {
+     "key": "gd",
+     "word": "differently."
+    },
+    {
+     "key": "oq",
+     "word": "argue"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The 20°N line; two labelled views; 'open question'.",
+   "beat": "b15",
+   "claims": [
+    "M015",
+    "M108",
+    "M099",
+    "M010"
+   ]
+  },
+  {
+   "id": "s043",
+   "act": "Ch6 b16",
+   "kind": "windmap",
+   "spec": {
+    "focus": "india",
+    "layers": [
+     {
+      "id": "trough",
+      "key": "tg",
+      "pos": "south"
+     },
+     {
+      "id": "trough-move",
+      "key": "tn",
+      "to": "north"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "ACTIVE",
+        "at": "central",
+        "key": "ac"
+       },
+       {
+        "text": "BREAK",
+        "at": "central",
+        "key": "br"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "From that heat low, the monsoon trough stretches to the head of the Bay of Bengal. When the trough sits south of its usual place, the monsoon is active over most of India. When it moves north, most of India has break conditions, and the Himalayan foothills get heavy rain. We follow the breaks in part two.",
+   "reveals": [
+    {
+     "key": "tg",
+     "word": "trough"
+    },
+    {
+     "key": "ac",
+     "word": "active"
+    },
+    {
+     "key": "tn",
+     "word": "north,"
+    },
+    {
+     "key": "br",
+     "word": "break"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The trough line from the heat low to the Bay, sliding south (active) then north (break, rain on the foothills).",
+   "beat": "b16",
+   "claims": [
+    "M016",
+    "M017"
+   ]
+  },
+  {
+   "id": "s044",
+   "act": "Ch6 b17",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "mascarene",
+      "key": "mh",
+      "badge": {
+       "lab": "mascarene",
+       "key": "mh"
+      }
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "MASCARENE HIGH",
+        "at": "mascarene",
+        "key": "ml"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "Two more parts drive the winds. Far south of the equator sits a high-pressure area called the Mascarene High. When it strengthens, it boosts a fast, low wind that crosses the equator.",
+   "reveals": [
+    {
+     "key": "mh",
+     "word": "high-pressure"
+    },
+    {
+     "key": "ml",
+     "word": "Mascarene"
+    }
+   ],
+   "transition": "cut",
+   "visual": "An H near Madagascar.",
+   "beat": "b17",
+   "claims": [
+    "M020",
+    "M018",
+    "M019"
+   ]
+  },
+  {
+   "id": "s045",
+   "act": "Ch6 b17",
+   "kind": "windmap",
+   "spec": {
+    "focus": "ocean",
+    "layers": [
+     {
+      "id": "mascarene",
+      "key": "mh2"
+     },
+     {
+      "id": "somali",
+      "key": "sj"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "lab": "somali",
+        "at": "somali",
+        "key": "sl"
+       },
+       {
+        "text": "JUNE → JULY",
+        "at": "westcoast",
+        "key": "jj"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "That wind is the Somali jet. It blows only about one to one and a half kilometres up. It reaches India's west coast in June, and is strongest in July. When it strengthens, the monsoon strengthens over peninsular India.",
+   "reveals": [
+    {
+     "key": "mh2",
+     "word": "That"
+    },
+    {
+     "key": "sj",
+     "word": "Somali"
+    },
+    {
+     "key": "sl",
+     "word": "half"
+    },
+    {
+     "key": "jj",
+     "word": "June,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A low ribbon of wind up the Somali coast, bending east to India.",
+   "beat": "b17",
+   "claims": [
+    "M020",
+    "M018",
+    "M019"
+   ]
+  },
+  {
+   "id": "s046",
+   "act": "Ch6 b18",
+   "kind": "stage",
+   "spec": {
+    "set": "himalaya",
+    "actors": [],
+    "pills": [
+     {
+      "text": "HIMALAYA: SHIELD + TRAP",
+      "x": 96,
+      "y": 72,
+      "key": "ht"
+     }
+    ]
+   },
+   "vo": "But one more piece of geography sits in the north. The Himalaya. Our textbook calls it a climatic divide. It shields India from cold northern winds, and traps the monsoon winds inside the subcontinent.",
+   "reveals": [
+    {
+     "key": "ht",
+     "word": "divide."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Himalaya rises like a wall; cold air bumps it from the north; clouds pile up on the Indian side.",
+   "beat": "b18",
+   "claims": [
+    "M025",
+    "M111",
+    "M024",
+    "M100",
+    "M099"
+   ]
+  },
+  {
+   "id": "s047",
+   "act": "Ch6 b18",
+   "kind": "windmap",
+   "spec": {
+    "focus": "asia",
+    "layers": [
+     {
+      "id": "tibet",
+      "key": "tb",
+      "badge": {
+       "lab": "tibet",
+       "key": "tb"
+      }
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "IMD 2025: BARRIER + HEAT SOURCE",
+        "at": "tibet",
+        "key": "ib"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "North of the Himalaya lies the Tibetan Plateau, rising over four and a half kilometres. How it matters is still argued. IMD's 2025 report calls it both a barrier to the winds and a heat source.",
+   "reveals": [
+    {
+     "key": "tb",
+     "word": "Tibetan"
+    },
+    {
+     "key": "ib",
+     "word": "barrier"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The plateau shaded; IMD's two roles.",
+   "beat": "b18",
+   "claims": [
+    "M025",
+    "M111",
+    "M024",
+    "M100",
+    "M099"
+   ]
+  },
+  {
+   "id": "s048",
+   "act": "Ch6 b18",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "Boos and Kuang: a wall",
+     "Wu et al.: plateau heating",
+     "Still open"
+    ],
+    "accent": [
+     "Still open"
+    ]
+   },
+   "vo": "Boos and Kuang's models fit another idea. The Himalaya and nearby ranges act as a wall that keeps cold, dry air out. Wu and colleagues argue that plateau heating drives the eastern part of the South Asian monsoon. This one is still open.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Two views, and the unknown shown on screen.",
+   "beat": "b18",
+   "claims": [
+    "M025",
+    "M111",
+    "M024",
+    "M100",
+    "M099"
+   ]
+  },
+  {
+   "id": "s049",
+   "act": "Ch6 b19",
+   "kind": "windmap",
+   "spec": {
+    "focus": "asia",
+    "layers": [
+     {
+      "id": "tej",
+      "key": "tj"
+     },
+     {
+      "id": "labels",
+      "items": [
+       {
+        "text": "TROPICAL EASTERLY JET",
+        "at": "chennai-lat",
+        "key": "tl"
+       }
+      ]
+     }
+    ]
+   },
+   "vo": "One more piece sits very high up. In July, a fast wind blows from east to west high above India. It is the Tropical Easterly Jet, stretching from Vietnam to west Africa, near the latitude of Chennai.",
+   "reveals": [
+    {
+     "key": "tj",
+     "word": "fast"
+    },
+    {
+     "key": "tl",
+     "word": "Tropical"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A thin fast stream high over India near Chennai's latitude.",
+   "beat": "b19",
+   "claims": [
+    "M021",
+    "M043",
+    "M022",
+    "M110"
+   ]
+  },
+  {
+   "id": "s050",
+   "act": "Ch6 b19",
+   "kind": "stage",
+   "spec": {
+    "set": "street",
+    "time": "burst",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "worried"
+     }
+    ],
+    "rain": true,
+    "thunder": true,
+    "pills": [
+     {
+      "text": "THE BURST",
+      "x": 96,
+      "y": 72,
+      "key": "bu"
+     }
+    ]
+   },
+   "vo": "The monsoon often arrives suddenly, with thunder and lightning. This is called the burst.",
+   "reveals": [
+    {
+     "key": "bu",
+     "word": "burst."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The sky splits open in thunder.",
+   "beat": "b19",
+   "claims": [
+    "M021",
+    "M043",
+    "M022",
+    "M110"
+   ]
+  },
+  {
+   "id": "s051",
+   "act": "Ch6 b19",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     "NCERT: jets “held responsible”",
+     "2007 review: not stated as the cause",
+     "Not settled in what we read"
+    ],
+    "accent": [
+     "Not settled"
+    ]
+   },
+   "vo": "Our textbook says the jet streams changing at this time are held responsible for the burst. A 2007 review lists the jet changes among the circulation changes that come with the onset. It does not say they cause it. Whether the jets trigger the burst is not settled in what we read.",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Two sources side by side, and the unknown.",
+   "beat": "b19",
+   "claims": [
+    "M021",
+    "M043",
+    "M022",
+    "M110"
+   ]
+  },
+  {
+   "id": "s052",
+   "act": "Ch7 b20",
+   "kind": "globe",
+   "spec": {
+    "mode": "overhead",
+    "labels": [
+     {
+      "text": "THE RAIN FOLLOWS THE BELT",
+      "key": "rf"
+     }
+    ]
+   },
+   "vo": "So why does the rain wait, if heat brings the monsoon? On the newer view, land heat is not what brings it. On that view, the rain comes when the rain belt arrives overhead, and rising air fills the sky with cloud.",
+   "reveals": [
+    {
+     "key": "rf",
+     "word": "belt"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The belt arrives over India; rising air, towering cloud.",
+   "beat": "b20",
+   "claims": [
+    "M043",
+    "M102",
+    "M010",
+    "M026",
+    "M003",
+    "M011",
+    "M107",
+    "M013",
+    "M015",
+    "M108",
+    "M020",
+    "M018",
+    "M019",
+    "M025",
+    "M022",
+    "M024"
+   ]
+  },
+  {
+   "id": "s053",
+   "act": "Ch7 b20",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "present"
+     }
+    ],
+    "props": [
+     {
+      "icon": "bucket",
+      "x": 1150,
+      "y": 930,
+      "s": 1.3,
+      "state": "full"
+     }
+    ],
+    "rain": true,
+    "pills": [
+     {
+      "lab": "burst_cool",
+      "x": 96,
+      "y": 72,
+      "key": "cl"
+     }
+    ]
+   },
+   "vo": "Our textbook says day temperatures fall by five to eight degrees Celsius between mid-June and mid-July. And Gadgil's maps put the hottest land in the north-west, where there is hardly any monsoon rain. On Gadgil's reading, the rain follows the belt, not the heat.",
+   "reveals": [
+    {
+     "key": "cl",
+     "word": "fall"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The rooftop bucket is full.",
+   "beat": "b20",
+   "claims": [
+    "M043",
+    "M102",
+    "M010",
+    "M026",
+    "M003",
+    "M011",
+    "M107",
+    "M013",
+    "M015",
+    "M108",
+    "M020",
+    "M018",
+    "M019",
+    "M025",
+    "M022",
+    "M024"
+   ]
+  },
+  {
+   "id": "s054",
+   "act": "Ch7 b20",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "strike": {
+     "text": "Easy.",
+     "key": "x"
+    },
+    "lines": [
+     {
+      "text": "SE trades cross the equator → SW monsoon",
+      "key": "n1"
+     },
+     {
+      "text": "Classic view: unequal heating of land and sea",
+      "key": "n2"
+     },
+     {
+      "text": "2020 review: the convergence zone shifts north",
+      "key": "n3"
+     },
+     {
+      "text": "Over India in July: the monsoon trough (NCERT)",
+      "key": "n4"
+     },
+     {
+      "text": "Heat low, Mascarene High, Somali jet: linked to strength",
+      "key": "n5"
+     },
+     {
+      "text": "Himalaya: shield and trap · jets, Tibet: debated",
+      "key": "n6"
+     }
+    ]
+   },
+   "vo": "For the exam, write it this way. The south-east trades cross the equator and become the south-west monsoon. The classic explanation is unequal heating of land and sea. A 2020 review supports seeing the monsoon as the tropical convergence zone shifting north. Over India in July, NCERT calls it the monsoon trough. The heat low, the Mascarene High and the Somali jet are linked to its strength. The Himalaya shield and trap the winds. The roles of the jets and of Tibet are still debated.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "trades"
+    },
+    {
+     "key": "n2",
+     "word": "classic"
+    },
+    {
+     "key": "n3",
+     "word": "review"
+    },
+    {
+     "key": "n4",
+     "word": "NCERT"
+    },
+    {
+     "key": "n5",
+     "word": "linked"
+    },
+    {
+     "key": "n6",
+     "word": "Himalaya"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Payoff: 'Easy.' crossed out; the answer fills the page, one line per sentence.",
+   "beat": "b20",
+   "claims": [
+    "M043",
+    "M102",
+    "M010",
+    "M026",
+    "M003",
+    "M011",
+    "M107",
+    "M013",
+    "M015",
+    "M108",
+    "M020",
+    "M018",
+    "M019",
+    "M025",
+    "M022",
+    "M024"
+   ]
+  },
+  {
+   "id": "s055",
+   "act": "Ch7 b21",
+   "kind": "stage",
+   "spec": {
+    "set": "rooftop",
+    "time": "july",
+    "actors": [
+     {
+      "id": "kid",
+      "who": "girl",
+      "x": 1450,
+      "y": 960,
+      "h": 560,
+      "pose": "cheer"
+     }
+    ],
+    "pills": [
+     {
+      "text": "NEXT: THE MONSOON'S JOURNEY",
+      "x": 96,
+      "y": 72,
+      "key": "nx"
+     }
+    ]
+   },
+   "vo": "In part two, we follow the monsoon across India. Where it lands first, where it reaches last, and what normal rain really means.",
+   "reveals": [
+    {
+     "key": "nx",
+     "word": "part"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The kid closes the notebook and looks up, imagining the belt overhead.",
+   "beat": "b21",
+   "claims": [
+    "M029"
+   ]
+  }
+ ]
+}

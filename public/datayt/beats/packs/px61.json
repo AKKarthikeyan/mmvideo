@@ -1,0 +1,34 @@
+{
+ "idea": "Themed weeks, week five, Money day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "At end-March 2025 Gujarat had 13.0 scheduled commercial bank offices per lakh projected population (1 lakh = 100,000), against 8.7 in Jharkhand: 49% more (India: 11.9). In the 2023-24 survey (NFHS-6), 91% of women aged 15-49 in Jharkhand had a bank account they use themselves, against 82% in Gujarat (India: 89%).",
+  "In the earlier survey (NFHS-5, 2019-21) the order was the same: Jharkhand 80%, Gujarat 70%, India 79%. Jharkhand was more than 5 points ahead of Gujarat in both surveys. Gujarat's offices per lakh people were 1.48 to 1.50 times Jharkhand's in each year from 2020 to 2025. These are rates: in total, at end-March 2025, Gujarat had 9,513 offices and Jharkhand 3,518. Across the states and UTs, offices per person and women's own accounts were weakly linked in 2023-24. Offices are those of scheduled commercial banks; population is projected (National Commission on Population, July 2020 edition), and seven north-eastern states share one projection. The women's figures are survey estimates. The map leaves out Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why."
+ ],
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (Dec 2025), Table 152: offices of scheduled commercial banks, end-March 2025, over projected population (National Commission on Population, July 2020 edition, 1 March 2025). Women's own account: IIPS, NFHS-6 (2023-24) and NFHS-5 (2019-21) state fact sheets, women aged 15-49, survey estimates. Seven north-eastern states share one population projection.",
+ "source_short": "RBI end-March 2025, NFHS-6 2023-24",
+ "question": "Which matters more: offices or accounts?",
+ "tags": [
+  "Gujarat",
+  "Banking",
+  "Women"
+ ],
+ "pinned": "Source: Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (Dec 2025), Table 152: offices of scheduled commercial banks, end-March 2025, over projected population (National Commission on Population, July 2020 edition, 1 March 2025). Women's own account: IIPS, NFHS-6 (2023-24) and NFHS-5 (2019-21) state fact sheets, women aged 15-49, survey estimates. Seven north-eastern states share one population projection. Scheduled commercial banks. Blank: Dadra and Nagar Haveli and Daman and Diu. The table shows how much, not why.",
+ "instagram": "At end-March 2025 Gujarat had 13.0 scheduled commercial bank offices per lakh projected population (1 lakh = 100,000), against 8.7 in Jharkhand: 49% more (India: 11.9). In the 2023-24 survey (NFHS-6), 91% of women aged 15-49 in Jharkhand had a bank account they use themselves, against 82% in Gujarat (India: 89%).",
+ "x": "Gujarat had 13.0 bank offices per lakh people at end-March 2025, 49% more than Jharkhand's 8.7. In NFHS-6 (2023-24), 91% of Jharkhand's women aged 15-49 had a bank account they use themselves, against 82% in Gujarat. Source: RBI, NFHS-6.",
+ "done": [
+  "Writer built the pair from RBI Table 152 offices over projected population and the NFHS-6 and NFHS-5 women's own-account figures, and recomputed them with python3 (Gujarat 1.48 to 1.50 times Jharkhand's offices per lakh in every year 2020 to 2025; rank correlation 0.20 across states in 2023-24). Numbers editor recomputed from the data files and fixed a hook and title that read 'more women with accounts' as a head count (now rates, with 'per person' in the title), the state count on the weak-link card (dropped, because Delhi matches on both sides), the chip period and the source line (publisher named, survey estimates). Viewer editor replaced a hook that copied px09's 'A more X, B more Y' shape with a question hook, moved '49% more' to card 1, explained 'lakh', put 2019-21 in place of 'NFHS-5' on card 3 and dropped 'only' from 'only weakly linked'."
+ ],
+ "open": [
+  "Re-read the six NFHS cells in the PDFs: Gujarat 82.2 / 70.0, Jharkhand 90.8 / 79.6, India 89.0 / 78.6 (the file says some cells were read from OCR or by eye)",
+  "Re-read RBI Table 152, end-March 2025: Gujarat 9,513, Jharkhand 3,518, India 167,806; and NCP Table 8 (1 March 2025): 73,227, 40,461 and 1,413,324 thousand",
+  "RBI's end-March 2026 state tables were not read; the claim cannot flip (the ratio has stayed 1.48 to 1.50 for six years) and the card is dated",
+  "Not claimed: with NFHS-5 the rank correlation is 0.52 (moderate); the weak-link card is dated 2023-24 only",
+  "Scheduling: Gujarat is also px52 (week 4, six days earlier) and px82; NFHS-6 is also tn66 (two days later) and tn81; tn09 used the same NFHS indicator for West Bengal",
+  "Add the source link to the description"
+ ],
+ "signoff": [
+  "Card 2 (Jharkhand 91%, Gujarat 82%, India 89%; voice: \"Own account: Jharkhand's women ninety-one percent, Gujarat's eighty-two.\"): it sets Gujarat's lower figure against Jharkhand's. The wording is 'more ... more', with no rank and no 'only'; AK to sign off.",
+  "Hook, on screen: \"More bank offices per person: more women banked? Gujarat vs Jharkhand.\" (voice: \"Gujarat had more bank offices per person. Were Jharkhand's women more often banked?\"). It is the first question-style hook outside the games; AK's call."
+ ]
+}

@@ -1,0 +1,612 @@
+{
+ "id": "tn09",
+ "type": "then",
+ "chip": "TWO SURVEYS",
+ "sourceShort": "IIPS · NFHS-5 (2019-21), NFHS-6 (2023-24)",
+ "source": "International Institute for Population Sciences, National Family Health Survey: NFHS-6 (2023-24) state fact sheets, which also print the NFHS-5 (2019-21) figure. Women aged 15 to 49 who have a bank or savings account that they themselves use. Ranks are among the 34 states and union territories with a figure in both surveys (Manipur has no NFHS-6 fact sheet; Lakshadweep is not ranked).",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#E8604C",
+  "#F0AA9D",
+  "#DDD5C8",
+  "#868CA8",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*West Bengal*: women's own",
+    "bank accounts up *19 points*,",
+    "2019-21 to 2023-24."
+   ],
+   "vo": "West Bengal's women with own bank accounts rose nineteen points.",
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "kicker": "WOMEN WITH THEIR OWN BANK ACCOUNT",
+   "big": "+18.8 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "76.5%",
+    "frac": 0.8027282266526757
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "95.3%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of women aged 15 to 49. India: *78.6%*.",
+   "vo": "Twenty nineteen to twenty-one: seventy-six point five percent. India, seventy-eight point six.",
+   "t0": 5.806,
+   "t1": 13.548
+  },
+  {
+   "geo": "West Bengal",
+   "name": "West Bengal",
+   "kicker": "WOMEN WITH THEIR OWN BANK ACCOUNT",
+   "big": "+18.8 points",
+   "p0": {
+    "period": "NFHS-5 (2019-21)",
+    "label": "76.5%",
+    "frac": 0.8027282266526757
+   },
+   "p1": {
+    "period": "NFHS-6 (2023-24)",
+    "label": "95.3%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of women aged 15 to 49. India: *89.0%*.",
+   "vo": "Next survey: ninety-five point three percent. India: eighty-nine.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "West Bengal",
+   "geo": "West Bengal",
+   "kicker": "WEST BENGAL'S RISE, AGAINST INDIA'S",
+   "big": "1.8×",
+   "text": "India's rise: 10.4 points",
+   "sub": "Percentage points between the two surveys: West Bengal +18.8, India +10.4.",
+   "bars": [
+    {
+     "name": "West Bengal",
+     "label": "18.8",
+     "frac": 0.7519999999999999
+    },
+    {
+     "name": "India",
+     "label": "10.4",
+     "frac": 0.4160000000000002
+    }
+   ],
+   "vo": "India rose ten point four points. West Bengal, one point eight times that.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Top three in NFHS-6:",
+    "*Ladakh 95.5%*, *West Bengal 95.3%*,",
+    "*Karnataka 94.7%*."
+   ],
+   "note": "NFHS-5: lower half of 34 states and union territories. NFHS-6 fourth: Mizoram, 93.6%. Survey estimates: small gaps are not differences.",
+   "vo": "West Bengal moved from lower half to top three, with Ladakh and Karnataka.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Women's bank accounts: *each state's change*",
+   "sub": "percentage points · darker = bigger rise · India +10.4",
+   "note": "Women aged 15 to 49 with a bank account they use. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "anim": true,
+   "ring": [
+    "West Bengal"
+   ],
+   "vo": "Here is each state's change in women's own bank accounts.",
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "Women aged 15 to 49 with a bank account they use. Survey estimates. Blank: Manipur (no NFHS-6 fact sheet yet) and Lakshadweep (small sample).",
+   "ring": [
+    "West Bengal"
+   ],
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 3 points"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose"
+    }
+   ],
+   "q": "Do you use your *own* bank account?",
+   "sub": "Comment yes or no.",
+   "kind": "mapend",
+   "vo": "Do you use your own bank account?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Tamil Nadu",
+   "label": "−2.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Puducherry",
+   "label": "−0.5",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.43
+  },
+  {
+   "name": "Chandigarh",
+   "label": "+0.6",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.542
+  },
+  {
+   "name": "Goa",
+   "label": "+2.8",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.654
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "+4.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.766
+  },
+  {
+   "name": "Odisha",
+   "label": "+4.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.878
+  },
+  {
+   "name": "Karnataka",
+   "label": "+6.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.99
+  },
+  {
+   "name": "Punjab",
+   "label": "+6.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.102
+  },
+  {
+   "name": "Ladakh",
+   "label": "+7.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.214
+  },
+  {
+   "name": "Dadra & Nagar Haveli and Daman & Diu",
+   "label": "+7.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -84,
+    16
+   ],
+   "at": 32.325
+  },
+  {
+   "name": "Telangana",
+   "label": "+7.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.437
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "+8.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.549
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+8.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.661
+  },
+  {
+   "name": "Rajasthan",
+   "label": "+9.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.773
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "+9.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.885
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "+10.5",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.997
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "+10.8",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.109
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+11.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 33.221
+  },
+  {
+   "name": "Jharkhand",
+   "label": "+11.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.333
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+11.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.445
+  },
+  {
+   "name": "Haryana",
+   "label": "+11.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 33.557
+  },
+  {
+   "name": "Gujarat",
+   "label": "+12.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.669
+  },
+  {
+   "name": "Mizoram",
+   "label": "+12.9",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 33.781
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "+13.0",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.893
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "+13.1",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.005
+  },
+  {
+   "name": "Assam",
+   "label": "+13.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 34.117
+  },
+  {
+   "name": "Kerala",
+   "label": "+13.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 34.228
+  },
+  {
+   "name": "Bihar",
+   "label": "+14.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.34
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "+14.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 34.452
+  },
+  {
+   "name": "Tripura",
+   "label": "+14.7",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 34.564
+  },
+  {
+   "name": "Sikkim",
+   "label": "+15.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 34.676
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "+17.4",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.788
+  },
+  {
+   "name": "West Bengal",
+   "label": "+18.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 34.9
+  },
+  {
+   "name": "Nagaland",
+   "label": "+22.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 35.012
+  }
+ ],
+ "checked": [
+  "West Bengal: 76.50 in NFHS-5 (2019-21), 95.30 in NFHS-6 (2023-24): +18.80, 1.25 times",
+  "rank_then = 25",
+  "rank_now = 2",
+  "n = 34",
+  "seventy-six point five percent in NFHS-5 (tenths): 765.00",
+  "ninety-five point three percent in NFHS-6 (tenths): 953.00",
+  "India 78.6% in NFHS-5 (tenths): 786.00",
+  "India 89.0% in NFHS-6 (tenths): 890.00",
+  "India eighty-nine in NFHS-6: 89.00",
+  "India rose ten point four points, also +10.4 on the map (tenths): 104.00",
+  "West Bengal rose 18.8 points, the bar on the card (tenths): 188.00",
+  "West Bengal's bank accounts rose nineteen points (18.8 rounds to 19), the hook and the title: 18.80",
+  "West Bengal's rise was one point eight times India's (tenths): 18.08",
+  "NFHS-5: West Bengal below India (lower half is also in the rank expectation): 2.10",
+  "top three: ahead of the fourth state, Mizoram, by at least a point (NFHS-6): 1.70",
+  "Mizoram 93.6% in NFHS-6 (tenths): 936.00",
+  "Ladakh 95.5% in NFHS-6 (tenths): 955.00",
+  "West Bengal 95.3% in NFHS-6 (tenths): 953.00",
+  "Karnataka 94.7% in NFHS-6 (tenths): 947.00",
+  "Karnataka is behind West Bengal and ahead of Mizoram: the three ahead of the rest are Ladakh, West Bengal, Karnataka: 1.10"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.466,
+   "at": 0.12,
+   "text": "West Bengal's women with own bank accounts rose nineteen points."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 6.817,
+   "at": 5.926,
+   "text": "Twenty nineteen to twenty-one: seventy-six point five percent. India, seventy-eight point six."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 4.675,
+   "at": 13.668,
+   "text": "Next survey: ninety-five point three percent. India: eighty-nine."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 5.328,
+   "at": 19.475,
+   "text": "India rose ten point four points. West Bengal, one point eight times that."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 4.937,
+   "at": 25.281,
+   "text": "West Bengal moved from lower half to top three, with Ladakh and Karnataka."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.578,
+   "at": 31.088,
+   "text": "Here is each state's change in women's own bank accounts."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 36.894,
+   "text": "Do you use your own bank account?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "West Bengal: Women's Own Bank Accounts Up 19 Points"
+}

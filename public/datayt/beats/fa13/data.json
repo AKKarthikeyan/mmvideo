@@ -1,0 +1,548 @@
+{
+ "id": "fa13",
+ "type": "fact",
+ "chip": "ONE STATE, ONE FACT",
+ "sourceShort": "MoSPI · state output by sector · 2023-24",
+ "source": "National Statistics Office, Ministry of Statistics and Programme Implementation, as published in the RBI Handbook of Statistics on Indian States 2024-25: gross state value added by economic activity at current prices (base 2011-12), Table 29, agriculture (the table's note: the data pertain to crops), over the state total, Table 25; manufacturing is Table 33. 33 states and UTs have a 2023-24 figure; Gujarat has none. Recent years can be revised. Booked in the state, not what residents earn.",
+ "accent": "#740A00",
+ "accent2": "#2F8F5B",
+ "bands": [
+  "#DD9942",
+  "#CC7300",
+  "#B84900",
+  "#9C2200",
+  "#740A00"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Madhya Pradesh*: crops *31%*",
+    "of output, *highest* of 33",
+    "states and UTs."
+   ],
+   "vo": "Madhya Pradesh: crops made thirty-one percent of output, the highest.",
+   "geo": "Madhya Pradesh",
+   "name": "Madhya Pradesh",
+   "t0": 0.0,
+   "t1": 5.806
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "CROPS' SHARE OF OUTPUT · 2023-24",
+   "big": "31.1%",
+   "text": "of the state's output (gross value added) came from crops. The highest of 33 states and UTs with data.",
+   "sub": "Current prices. Output booked in the state, not what residents earn. Tripura, next: 24.0%.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "31.1%",
+     "frac": 0.7773907694966805
+    },
+    {
+     "name": "Tripura",
+     "label": "24.0%",
+     "frac": 0.600732868573459
+    }
+   ],
+   "vo": "Thirty-one percent of output from crops. Tripura, next, twenty-four.",
+   "t0": 5.806,
+   "t1": 11.613
+  },
+  {
+   "kind": "fact",
+   "name": "Uttar Pradesh",
+   "geo": "Uttar Pradesh",
+   "kicker": "SAME MEASURE · UTTAR PRADESH",
+   "big": "16.4%",
+   "text": "was Uttar Pradesh's crops share in 2023-24. Madhya Pradesh's was *1.9 times* that.",
+   "sub": "Same measure, same year: crops over gross state value added.",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "label": "16.4%",
+     "frac": 0.4106472116672363
+    },
+    {
+     "name": "Madhya Pradesh",
+     "label": "31.1%",
+     "frac": 0.7773907694966805
+    }
+   ],
+   "vo": "Uttar Pradesh: sixteen percent. Madhya Pradesh's share was one point nine times that.",
+   "t0": 11.613,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Madhya Pradesh",
+   "geo": "Madhya Pradesh",
+   "kicker": "TWO YEARS EARLIER · 2021-22",
+   "big": "32.6%",
+   "text": "in 2021-22: also the highest, ahead of Tripura. In 2022-23 it was 31.1%, again the highest.",
+   "sub": "Crops' share of gross state value added, current prices.",
+   "bars": [
+    {
+     "name": "Madhya Pradesh",
+     "label": "32.6%",
+     "frac": 0.8148379673560999
+    },
+    {
+     "name": "Tripura",
+     "label": "23.8%",
+     "frac": 0.5940249119923278
+    }
+   ],
+   "vo": "Two years earlier: thirty-two point six percent, also the highest.",
+   "t0": 19.355,
+   "t1": 25.161
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Crops added *4.2 times* what",
+    "manufacturing added to the",
+    "state's output, 2023-24."
+   ],
+   "vo": "In Madhya Pradesh, crops added four point two times what manufacturing added.",
+   "t0": 25.161,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Crops' share of output, *every state*",
+   "sub": "% of gross state value added · 2023-24",
+   "note": "Agriculture here means crops. Blank: Gujarat (no 2023-24 figure; 10.6% in 2022-23), Lakshadweep, Dadra, Nagar Haveli, Daman and Diu (no row).",
+   "anim": true,
+   "ring": [
+    "Madhya Pradesh",
+    "Tripura"
+   ],
+   "vo": "Crops' share of output in every state with data.",
+   "t0": 30.968,
+   "t1": 34.839
+  },
+  {
+   "note": "Agriculture here means crops. Blank: Gujarat (no 2023-24 figure; 10.6% in 2022-23), Lakshadweep, Dadra, Nagar Haveli, Daman and Diu (no row).",
+   "ring": [
+    "Madhya Pradesh",
+    "Tripura"
+   ],
+   "q": "How big are *crops* in your state?",
+   "sub": "Comment below.",
+   "kind": "mapend",
+   "vo": "How big are crops in your state?",
+   "t0": 34.839,
+   "t1": 38.71
+  }
+ ],
+ "total": 39.11,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Chandigarh",
+   "label": "0.0",
+   "bucket": 0,
+   "nudge": [
+    130,
+    -75
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "NCT of Delhi",
+   "label": "0.1",
+   "bucket": 0,
+   "nudge": [
+    -215,
+    -35
+   ],
+   "at": 31.375
+  },
+  {
+   "name": "Puducherry",
+   "label": "1.2",
+   "bucket": 0,
+   "nudge": [
+    96,
+    0
+   ],
+   "at": 31.431
+  },
+  {
+   "name": "Goa",
+   "label": "2.2",
+   "bucket": 0,
+   "nudge": [
+    -82,
+    0
+   ],
+   "at": 31.488
+  },
+  {
+   "name": "Uttarakhand",
+   "label": "3.6",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.545
+  },
+  {
+   "name": "Kerala",
+   "label": "3.7",
+   "bucket": 0,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 31.601
+  },
+  {
+   "name": "Ladakh",
+   "label": "4.2",
+   "bucket": 0,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.658
+  },
+  {
+   "name": "Andaman and Nicobar Islands",
+   "label": "5.5",
+   "bucket": 1,
+   "nudge": [
+    -78,
+    0
+   ],
+   "at": 31.715
+  },
+  {
+   "name": "Mizoram",
+   "label": "5.6",
+   "bucket": 1,
+   "nudge": [
+    72,
+    56
+   ],
+   "at": 31.772
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "6.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.828
+  },
+  {
+   "name": "Maharashtra",
+   "label": "6.7",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.885
+  },
+  {
+   "name": "Telangana",
+   "label": "6.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.942
+  },
+  {
+   "name": "Jharkhand",
+   "label": "6.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.998
+  },
+  {
+   "name": "Sikkim",
+   "label": "6.8",
+   "bucket": 1,
+   "nudge": [
+    0,
+    -62
+   ],
+   "at": 32.055
+  },
+  {
+   "name": "Karnataka",
+   "label": "7.1",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.112
+  },
+  {
+   "name": "Haryana",
+   "label": "8.6",
+   "bucket": 2,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 32.168
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "9.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.225
+  },
+  {
+   "name": "Arunachal Pradesh",
+   "label": "10.6",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.282
+  },
+  {
+   "name": "West Bengal",
+   "label": "10.8",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.339
+  },
+  {
+   "name": "Jammu and Kashmir",
+   "label": "11.0",
+   "bucket": 2,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.395
+  },
+  {
+   "name": "Bihar",
+   "label": "11.5",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.452
+  },
+  {
+   "name": "Chhattisgarh",
+   "label": "11.8",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.509
+  },
+  {
+   "name": "Rajasthan",
+   "label": "12.0",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.565
+  },
+  {
+   "name": "Odisha",
+   "label": "12.7",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.622
+  },
+  {
+   "name": "Nagaland",
+   "label": "12.8",
+   "bucket": 3,
+   "nudge": [
+    78,
+    8
+   ],
+   "at": 32.679
+  },
+  {
+   "name": "Andhra Pradesh",
+   "label": "13.1",
+   "bucket": 3,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.735
+  },
+  {
+   "name": "Punjab",
+   "label": "13.3",
+   "bucket": 3,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.792
+  },
+  {
+   "name": "Meghalaya",
+   "label": "13.7",
+   "bucket": 4,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.849
+  },
+  {
+   "name": "Assam",
+   "label": "14.0",
+   "bucket": 4,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 32.906
+  },
+  {
+   "name": "Manipur",
+   "label": "14.4",
+   "bucket": 4,
+   "nudge": [
+    88,
+    24
+   ],
+   "at": 32.962
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "16.4",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.019
+  },
+  {
+   "name": "Tripura",
+   "label": "24.0",
+   "bucket": 4,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 33.076
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "31.1",
+   "bucket": 4,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.132
+  }
+ ],
+ "checked": [
+  "Madhya Pradesh is the highest of 33 with data (31.1%)",
+  "Madhya Pradesh is the highest of 33 with data (32.6%)",
+  "Madhya Pradesh 31.0956 rounds to 31",
+  "Tripura 24.0293 rounds to 24",
+  "Uttar Pradesh 16.4259 rounds to 16",
+  "Tripura 240.293 rounds to 240",
+  "Madhya Pradesh 325.935 rounds to 326",
+  "Madhya Pradesh 311.024 rounds to 311",
+  "Madhya Pradesh / Uttar Pradesh = 1.87 (at least 1.85)",
+  "Uttar Pradesh / Madhya Pradesh = 0.53 (at least 0.513)",
+  "Madhya Pradesh / Uttar Pradesh = 1.93 (at least 1.85)",
+  "Uttar Pradesh / Madhya Pradesh = 0.52 (at least 0.513)",
+  "Madhya Pradesh / Uttar Pradesh = 1.89 (at least 1.85)",
+  "Uttar Pradesh / Madhya Pradesh = 0.53 (at least 0.513)",
+  "Madhya Pradesh / Tripura = 1.37 (at least 1.25)",
+  "Madhya Pradesh / Tripura = 1.31 (at least 1.25)",
+  "Madhya Pradesh / Tripura = 1.29 (at least 1.25)",
+  "Tripura / Uttar Pradesh = 1.46 (at least 1.4)",
+  "Madhya Pradesh / Madhya Pradesh = 4.22 (at least 4.15)",
+  "Madhya Pradesh / Madhya Pradesh = 0.24 (at least 0.2353)",
+  "Gujarat 106.487 rounds to 106",
+  "Madhya Pradesh / Madhya Pradesh = 3.96 (at least 3.5)",
+  "Madhya Pradesh / Madhya Pradesh = 3.80 (at least 3.5)"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 4.675,
+   "at": 0.12,
+   "text": "Madhya Pradesh: crops made thirty-one percent of output, the highest."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 5.198,
+   "at": 5.926,
+   "text": "Thirty-one percent of output from crops. Tripura, next, twenty-four."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 6.06,
+   "at": 11.733,
+   "text": "Uttar Pradesh: sixteen percent. Madhya Pradesh's share was one point nine times that."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 19.475,
+   "text": "Two years earlier: thirty-two point six percent, also the highest."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 5.198,
+   "at": 25.281,
+   "text": "In Madhya Pradesh, crops added four point two times what manufacturing added."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 3.265,
+   "at": 31.088,
+   "text": "Crops' share of output in every state with data."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 1.959,
+   "at": 34.959,
+   "text": "How big are crops in your state?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Madhya Pradesh: Crops Made 31% of State Output, 2023-24"
+}

@@ -1,0 +1,932 @@
+{
+ "id": "fm01",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 5.459,
+   "text": "Jan Dhan accounts hold three point two one lakh crore rupees. Per account?",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Jan",
+     "norm": "jan",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.56
+    },
+    {
+     "w": "Dhan",
+     "norm": "dhan",
+     "word": 1,
+     "start": 0.56,
+     "end": 0.82
+    },
+    {
+     "w": "accounts",
+     "norm": "accounts",
+     "word": 2,
+     "start": 0.82,
+     "end": 1.3
+    },
+    {
+     "w": "hold",
+     "norm": "hold",
+     "word": 3,
+     "start": 1.3,
+     "end": 1.68
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 4,
+     "start": 1.68,
+     "end": 2.0
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 5,
+     "start": 2.0,
+     "end": 2.32
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 6,
+     "start": 2.32,
+     "end": 2.74
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 7,
+     "start": 2.74,
+     "end": 3.02
+    },
+    {
+     "w": "lakh",
+     "norm": "lakh",
+     "word": 8,
+     "start": 3.02,
+     "end": 3.28
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 9,
+     "start": 3.28,
+     "end": 3.64
+    },
+    {
+     "w": "rupees.",
+     "norm": "rupees",
+     "word": 10,
+     "start": 3.64,
+     "end": 4.12
+    },
+    {
+     "w": "Per",
+     "norm": "per",
+     "word": 11,
+     "start": 4.42,
+     "end": 4.76
+    },
+    {
+     "w": "account?",
+     "norm": "account",
+     "word": 12,
+     "start": 4.76,
+     "end": 5.12
+    }
+   ],
+   "numbers": [
+    {
+     "text": "three point two one lakh crore",
+     "value": 3210000000000.0,
+     "mantissa": 3.21,
+     "scale": 1000000000000.0,
+     "kind": "number",
+     "w0": 4,
+     "w1": 9,
+     "whisper": 1.68,
+     "onset": 1.74,
+     "rule": "fric",
+     "how": "frication",
+     "at": 1.8733,
+     "f": 57
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 7.862,
+   "sec": 4.989,
+   "text": "Fifty-nine point five four crore accounts. Thirty-three point two crore held by women.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Fifty-nine",
+     "norm": "fifty",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 0,
+     "start": 0.58,
+     "end": 0.74
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 1,
+     "start": 0.74,
+     "end": 0.96
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 2,
+     "start": 0.96,
+     "end": 1.3
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 3,
+     "start": 1.3,
+     "end": 1.5
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 4,
+     "start": 1.5,
+     "end": 1.78
+    },
+    {
+     "w": "accounts.",
+     "norm": "accounts",
+     "word": 5,
+     "start": 1.78,
+     "end": 2.48
+    },
+    {
+     "w": "Thirty-three",
+     "norm": "thirty",
+     "word": 6,
+     "start": 2.94,
+     "end": 3.2
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 6,
+     "start": 3.2,
+     "end": 3.38
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 7,
+     "start": 3.38,
+     "end": 3.52
+    },
+    {
+     "w": "two",
+     "norm": "two",
+     "word": 8,
+     "start": 3.52,
+     "end": 3.82
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 9,
+     "start": 3.82,
+     "end": 4.12
+    },
+    {
+     "w": "held",
+     "norm": "held",
+     "word": 10,
+     "start": 4.12,
+     "end": 4.32
+    },
+    {
+     "w": "by",
+     "norm": "by",
+     "word": 11,
+     "start": 4.32,
+     "end": 4.56
+    },
+    {
+     "w": "women.",
+     "norm": "women",
+     "word": 12,
+     "start": 4.56,
+     "end": 4.74
+    }
+   ],
+   "numbers": [
+    {
+     "text": "fifty nine point five four crore",
+     "value": 595400000.0,
+     "mantissa": 59.54,
+     "scale": 10000000.0,
+     "kind": "number",
+     "w0": 0,
+     "w1": 5,
+     "whisper": 0.0,
+     "onset": 0.1025,
+     "rule": "fric",
+     "how": "frication",
+     "at": 7.9692,
+     "f": 240
+    },
+    {
+     "text": "thirty three point two crore",
+     "value": 332000000.0,
+     "mantissa": 33.2,
+     "scale": 10000000.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 11,
+     "whisper": 2.94,
+     "onset": 2.995,
+     "rule": "fric",
+     "how": "frication",
+     "at": 10.8617,
+     "f": 327
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 13.668,
+   "sec": 3.578,
+   "text": "That is about five thousand three hundred and ninety rupees per account.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "That",
+     "norm": "that",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.38
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 1,
+     "start": 0.38,
+     "end": 0.56
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 2,
+     "start": 0.56,
+     "end": 0.92
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 3,
+     "start": 0.92,
+     "end": 0.94
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 4,
+     "start": 0.94,
+     "end": 1.44
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 5,
+     "start": 1.44,
+     "end": 1.6
+    },
+    {
+     "w": "hundred",
+     "norm": "hundred",
+     "word": 6,
+     "start": 1.6,
+     "end": 1.92
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 7,
+     "start": 1.92,
+     "end": 2.08
+    },
+    {
+     "w": "ninety",
+     "norm": "ninety",
+     "word": 8,
+     "start": 2.08,
+     "end": 2.28
+    },
+    {
+     "w": "rupees",
+     "norm": "rupees",
+     "word": 9,
+     "start": 2.28,
+     "end": 2.62
+    },
+    {
+     "w": "per",
+     "norm": "per",
+     "word": 10,
+     "start": 2.62,
+     "end": 2.86
+    },
+    {
+     "w": "account.",
+     "norm": "account",
+     "word": 11,
+     "start": 2.86,
+     "end": 3.22
+    }
+   ],
+   "numbers": [
+    {
+     "text": "five thousand three hundred and ninety",
+     "value": 5390.0,
+     "mantissa": 5390.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 8,
+     "whisper": 0.92,
+     "onset": 0.7125,
+     "rule": "fric",
+     "how": "frication",
+     "at": 14.3792,
+     "f": 433
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 19.475,
+   "sec": 4.937,
+   "text": "Lakshadweep's average is highest, about six and a half times Manipur's, the lowest.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Lakshadweep's",
+     "norm": "lakshadweep",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.88
+    },
+    {
+     "w": "average",
+     "norm": "average",
+     "word": 1,
+     "start": 0.88,
+     "end": 1.08
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 2,
+     "start": 1.08,
+     "end": 1.34
+    },
+    {
+     "w": "highest,",
+     "norm": "highest",
+     "word": 3,
+     "start": 1.34,
+     "end": 1.72
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 4,
+     "start": 2.26,
+     "end": 2.48
+    },
+    {
+     "w": "six",
+     "norm": "six",
+     "word": 5,
+     "start": 2.48,
+     "end": 2.76
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 6,
+     "start": 2.76,
+     "end": 2.9
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 7,
+     "start": 2.9,
+     "end": 3.02
+    },
+    {
+     "w": "half",
+     "norm": "half",
+     "word": 8,
+     "start": 3.02,
+     "end": 3.12
+    },
+    {
+     "w": "times",
+     "norm": "times",
+     "word": 9,
+     "start": 3.12,
+     "end": 3.42
+    },
+    {
+     "w": "Manipur's,",
+     "norm": "manipur",
+     "word": 10,
+     "start": 3.42,
+     "end": 4.2
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 11,
+     "start": 4.22,
+     "end": 4.38
+    },
+    {
+     "w": "lowest.",
+     "norm": "lowest",
+     "word": 12,
+     "start": 4.38,
+     "end": 4.6
+    }
+   ],
+   "numbers": [
+    {
+     "text": "six and a half",
+     "value": 6.5,
+     "mantissa": 6.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 5,
+     "w1": 8,
+     "whisper": 2.48,
+     "onset": 2.3925,
+     "rule": "fric",
+     "how": "frication",
+     "at": 21.8592,
+     "f": 657
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 25.281,
+   "sec": 3.369,
+   "text": "An average includes accounts with little or no money in them.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "An",
+     "norm": "an",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.56
+    },
+    {
+     "w": "average",
+     "norm": "average",
+     "word": 1,
+     "start": 0.56,
+     "end": 0.84
+    },
+    {
+     "w": "includes",
+     "norm": "includes",
+     "word": 2,
+     "start": 0.84,
+     "end": 1.26
+    },
+    {
+     "w": "accounts",
+     "norm": "accounts",
+     "word": 3,
+     "start": 1.26,
+     "end": 1.62
+    },
+    {
+     "w": "with",
+     "norm": "with",
+     "word": 4,
+     "start": 1.62,
+     "end": 1.9
+    },
+    {
+     "w": "little",
+     "norm": "little",
+     "word": 5,
+     "start": 1.9,
+     "end": 2.14
+    },
+    {
+     "w": "or",
+     "norm": "or",
+     "word": 6,
+     "start": 2.14,
+     "end": 2.34
+    },
+    {
+     "w": "no",
+     "norm": "no",
+     "word": 7,
+     "start": 2.34,
+     "end": 2.58
+    },
+    {
+     "w": "money",
+     "norm": "money",
+     "word": 8,
+     "start": 2.58,
+     "end": 2.84
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 9,
+     "start": 2.84,
+     "end": 3.04
+    },
+    {
+     "w": "them.",
+     "norm": "them",
+     "word": 10,
+     "start": 3.04,
+     "end": 3.16
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 29.152,
+   "sec": 3.056,
+   "text": "Now the average balance in every state and territory.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Now",
+     "norm": "now",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.54
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 1,
+     "start": 0.54,
+     "end": 0.94
+    },
+    {
+     "w": "average",
+     "norm": "average",
+     "word": 2,
+     "start": 0.94,
+     "end": 1.16
+    },
+    {
+     "w": "balance",
+     "norm": "balance",
+     "word": 3,
+     "start": 1.16,
+     "end": 1.46
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 4,
+     "start": 1.46,
+     "end": 1.78
+    },
+    {
+     "w": "every",
+     "norm": "every",
+     "word": 5,
+     "start": 1.78,
+     "end": 2.0
+    },
+    {
+     "w": "state",
+     "norm": "state",
+     "word": 6,
+     "start": 2.0,
+     "end": 2.22
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 7,
+     "start": 2.22,
+     "end": 2.48
+    },
+    {
+     "w": "territory.",
+     "norm": "territory",
+     "word": 8,
+     "start": 2.48,
+     "end": 2.74
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 33.023,
+   "sec": 4.179,
+   "text": "Is your state above or below the national average? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Is",
+     "norm": "is",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.38
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 1,
+     "start": 0.38,
+     "end": 0.62
+    },
+    {
+     "w": "state",
+     "norm": "state",
+     "word": 2,
+     "start": 0.62,
+     "end": 0.86
+    },
+    {
+     "w": "above",
+     "norm": "above",
+     "word": 3,
+     "start": 0.86,
+     "end": 1.28
+    },
+    {
+     "w": "or",
+     "norm": "or",
+     "word": 4,
+     "start": 1.28,
+     "end": 1.6
+    },
+    {
+     "w": "below",
+     "norm": "below",
+     "word": 5,
+     "start": 1.6,
+     "end": 1.9
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 6,
+     "start": 1.9,
+     "end": 2.2
+    },
+    {
+     "w": "national",
+     "norm": "national",
+     "word": 7,
+     "start": 2.2,
+     "end": 2.4
+    },
+    {
+     "w": "average?",
+     "norm": "average",
+     "word": 8,
+     "start": 2.4,
+     "end": 2.78
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 9,
+     "start": 3.46,
+     "end": 3.54
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 10,
+     "start": 3.54,
+     "end": 3.88
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 232,
+   "settleF": 220,
+   "line": 0,
+   "lockF": 57,
+   "lockHow": "spoken",
+   "lockWord": "three point two one lakh crore",
+   "firstNumF": 57,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "₹3.21 lakh crore",
+     "spokenF": 57,
+     "word": "three point two one lakh crore",
+     "how": "spoken",
+     "lockF": 57
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 232,
+   "f1": 406,
+   "settleF": 394,
+   "line": 1,
+   "lockF": 240,
+   "lockHow": "spoken",
+   "lockWord": "fifty nine point five four crore",
+   "firstNumF": 240,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "59.54 cr",
+     "spokenF": 240,
+     "word": "fifty nine point five four crore",
+     "how": "spoken",
+     "lockF": 240
+    },
+    {
+     "role": "bar",
+     "text": "59.54 cr",
+     "spokenF": 240,
+     "word": "fifty nine point five four crore",
+     "how": "spoken",
+     "lockF": 240
+    },
+    {
+     "role": "bar",
+     "text": "33.20 cr",
+     "spokenF": 327,
+     "word": "thirty three point two crore",
+     "how": "spoken",
+     "lockF": 327
+    },
+    {
+     "role": "text",
+     "text": "7",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 240
+    },
+    {
+     "role": "text",
+     "text": "2026",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 240
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 406,
+   "f1": 581,
+   "settleF": 569,
+   "line": 2,
+   "lockF": 433,
+   "lockHow": "spoken",
+   "lockWord": "five thousand three hundred and ninety",
+   "firstNumF": 433,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹5,390",
+     "spokenF": 433,
+     "word": "five thousand three hundred and ninety",
+     "how": "spoken",
+     "lockF": 433
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 581,
+   "f1": 755,
+   "settleF": 743,
+   "line": 3,
+   "lockF": 657,
+   "lockHow": "first-number",
+   "lockWord": "six and a half",
+   "firstNumF": 657,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹18,437",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 657
+    },
+    {
+     "role": "bar",
+     "text": "₹18,437",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 657
+    },
+    {
+     "role": "bar",
+     "text": "₹2,823",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 657
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "say",
+   "f0": 755,
+   "f1": 871,
+   "settleF": 859,
+   "line": 4,
+   "lockF": 761,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 5,
+   "kind": "map",
+   "f0": 871,
+   "f1": 987,
+   "settleF": 975,
+   "line": 5,
+   "lockF": 877,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "mapend",
+   "f0": 987,
+   "f1": 1161,
+   "settleF": 1149,
+   "line": 6,
+   "lockF": 993,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": [
+    {
+     "role": "q",
+     "text": "₹5,390",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 993
+    }
+   ]
+  }
+ ]
+}

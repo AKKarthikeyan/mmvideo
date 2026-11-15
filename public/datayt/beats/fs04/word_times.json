@@ -1,0 +1,880 @@
+{
+ "id": "fs04",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 4.937,
+   "text": "Coconut oil cost twenty-nine point five percent less; sarees, six percent more.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Coconut",
+     "norm": "coconut",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.5
+    },
+    {
+     "w": "oil",
+     "norm": "oil",
+     "word": 1,
+     "start": 0.5,
+     "end": 0.76
+    },
+    {
+     "w": "cost",
+     "norm": "cost",
+     "word": 2,
+     "start": 0.76,
+     "end": 1.02
+    },
+    {
+     "w": "twenty-nine",
+     "norm": "twenty",
+     "word": 3,
+     "start": 1.02,
+     "end": 1.38
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 3,
+     "start": 1.38,
+     "end": 1.56
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.56,
+     "end": 1.74
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 5,
+     "start": 1.74,
+     "end": 2.0
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 6,
+     "start": 2.0,
+     "end": 2.28
+    },
+    {
+     "w": "less;",
+     "norm": "less",
+     "word": 7,
+     "start": 2.28,
+     "end": 3.04
+    },
+    {
+     "w": "sarees,",
+     "norm": "sarees",
+     "word": 8,
+     "start": 3.36,
+     "end": 3.86
+    },
+    {
+     "w": "six",
+     "norm": "six",
+     "word": 9,
+     "start": 3.98,
+     "end": 4.14
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 10,
+     "start": 4.14,
+     "end": 4.44
+    },
+    {
+     "w": "more.",
+     "norm": "more",
+     "word": 11,
+     "start": 4.44,
+     "end": 4.66
+    }
+   ],
+   "numbers": [
+    {
+     "text": "twenty nine point five",
+     "value": 29.5,
+     "mantissa": 29.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 6,
+     "whisper": 1.02,
+     "onset": 1.005,
+     "rule": "stop",
+     "how": "burst",
+     "at": 1.1383,
+     "f": 35
+    },
+    {
+     "text": "six",
+     "value": 6.0,
+     "mantissa": 6.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 10,
+     "w1": 10,
+     "whisper": 3.98,
+     "onset": 3.7875,
+     "rule": "fric",
+     "how": "frication",
+     "at": 3.9208,
+     "f": 119
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 3.16,
+   "text": "Clothing overall rose four point three percent.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Clothing",
+     "norm": "clothing",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.74
+    },
+    {
+     "w": "overall",
+     "norm": "overall",
+     "word": 1,
+     "start": 0.74,
+     "end": 1.18
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 1.18,
+     "end": 1.58
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 3,
+     "start": 1.58,
+     "end": 2.04
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 2.04,
+     "end": 2.24
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 5,
+     "start": 2.24,
+     "end": 2.52
+    },
+    {
+     "w": "percent.",
+     "norm": "percent",
+     "word": 6,
+     "start": 2.52,
+     "end": 2.92
+    }
+   ],
+   "numbers": [
+    {
+     "text": "four point three",
+     "value": 4.3,
+     "mantissa": 4.3,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 1.58,
+     "onset": 1.565,
+     "rule": "fric",
+     "how": "frication",
+     "at": 7.4983,
+     "f": 226
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 9.797,
+   "sec": 5.015,
+   "text": "Fresh flowers rose four point nine percent; bananas, seven point five.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Fresh",
+     "norm": "fresh",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.44
+    },
+    {
+     "w": "flowers",
+     "norm": "flowers",
+     "word": 1,
+     "start": 0.44,
+     "end": 0.98
+    },
+    {
+     "w": "rose",
+     "norm": "rose",
+     "word": 2,
+     "start": 0.98,
+     "end": 1.38
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 3,
+     "start": 1.38,
+     "end": 1.8
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.8,
+     "end": 1.94
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 5,
+     "start": 1.94,
+     "end": 2.18
+    },
+    {
+     "w": "percent;",
+     "norm": "percent",
+     "word": 6,
+     "start": 2.18,
+     "end": 2.94
+    },
+    {
+     "w": "bananas,",
+     "norm": "bananas",
+     "word": 7,
+     "start": 3.28,
+     "end": 3.56
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 8,
+     "start": 4.04,
+     "end": 4.2
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 9,
+     "start": 4.2,
+     "end": 4.42
+    },
+    {
+     "w": "five.",
+     "norm": "five",
+     "word": 10,
+     "start": 4.42,
+     "end": 4.72
+    }
+   ],
+   "numbers": [
+    {
+     "text": "four point nine",
+     "value": 4.9,
+     "mantissa": 4.9,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 5,
+     "whisper": 1.38,
+     "onset": 1.39,
+     "rule": "fric",
+     "how": "frication",
+     "at": 11.19,
+     "f": 337
+    },
+    {
+     "text": "seven point five",
+     "value": 7.5,
+     "mantissa": 7.5,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 8,
+     "w1": 10,
+     "whisper": 4.04,
+     "onset": 3.83,
+     "rule": "fric",
+     "how": "frication",
+     "at": 13.63,
+     "f": 410
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 15.604,
+   "sec": 5.25,
+   "text": "Coconut cost four percent less; green coconut, eight point three percent more.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Coconut",
+     "norm": "coconut",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.64
+    },
+    {
+     "w": "cost",
+     "norm": "cost",
+     "word": 1,
+     "start": 0.64,
+     "end": 1.22
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 2,
+     "start": 1.22,
+     "end": 1.5
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 3,
+     "start": 1.5,
+     "end": 1.8
+    },
+    {
+     "w": "less;",
+     "norm": "less",
+     "word": 4,
+     "start": 1.8,
+     "end": 2.4
+    },
+    {
+     "w": "green",
+     "norm": "green",
+     "word": 5,
+     "start": 2.78,
+     "end": 2.94
+    },
+    {
+     "w": "coconut,",
+     "norm": "coconut",
+     "word": 6,
+     "start": 2.94,
+     "end": 3.48
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 7,
+     "start": 3.96,
+     "end": 4.04
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 8,
+     "start": 4.04,
+     "end": 4.2
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 9,
+     "start": 4.2,
+     "end": 4.44
+    },
+    {
+     "w": "percent",
+     "norm": "percent",
+     "word": 10,
+     "start": 4.44,
+     "end": 4.76
+    },
+    {
+     "w": "more.",
+     "norm": "more",
+     "word": 11,
+     "start": 4.76,
+     "end": 4.98
+    }
+   ],
+   "numbers": [
+    {
+     "text": "four",
+     "value": 4.0,
+     "mantissa": 4.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 2,
+     "whisper": 1.22,
+     "onset": 1.1975,
+     "rule": "fric",
+     "how": "frication",
+     "at": 16.7975,
+     "f": 505
+    },
+    {
+     "text": "eight point three",
+     "value": 8.3,
+     "mantissa": 8.3,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 7,
+     "w1": 9,
+     "whisper": 3.96,
+     "onset": 4.0125,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 19.6125,
+     "f": 590
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 21.41,
+   "sec": 4.728,
+   "text": "Clothes, flowers and bananas cost more; coconut oil fell the most.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Clothes,",
+     "norm": "clothes",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "flowers",
+     "norm": "flowers",
+     "word": 1,
+     "start": 0.72,
+     "end": 1.06
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 2,
+     "start": 1.06,
+     "end": 1.28
+    },
+    {
+     "w": "bananas",
+     "norm": "bananas",
+     "word": 3,
+     "start": 1.28,
+     "end": 1.66
+    },
+    {
+     "w": "cost",
+     "norm": "cost",
+     "word": 4,
+     "start": 1.66,
+     "end": 2.02
+    },
+    {
+     "w": "more;",
+     "norm": "more",
+     "word": 5,
+     "start": 2.02,
+     "end": 2.84
+    },
+    {
+     "w": "coconut",
+     "norm": "coconut",
+     "word": 6,
+     "start": 3.08,
+     "end": 3.4
+    },
+    {
+     "w": "oil",
+     "norm": "oil",
+     "word": 7,
+     "start": 3.4,
+     "end": 3.7
+    },
+    {
+     "w": "fell",
+     "norm": "fell",
+     "word": 8,
+     "start": 3.7,
+     "end": 3.92
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 9,
+     "start": 3.92,
+     "end": 4.12
+    },
+    {
+     "w": "most.",
+     "norm": "most",
+     "word": 10,
+     "start": 4.12,
+     "end": 4.42
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 27.217,
+   "sec": 3.448,
+   "text": "Clothing and footwear prices, in each state.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Clothing",
+     "norm": "clothing",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.66
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 1,
+     "start": 0.66,
+     "end": 0.88
+    },
+    {
+     "w": "footwear",
+     "norm": "footwear",
+     "word": 2,
+     "start": 0.88,
+     "end": 1.18
+    },
+    {
+     "w": "prices,",
+     "norm": "prices",
+     "word": 3,
+     "start": 1.18,
+     "end": 1.62
+    },
+    {
+     "w": "in",
+     "norm": "in",
+     "word": 4,
+     "start": 2.22,
+     "end": 2.5
+    },
+    {
+     "w": "each",
+     "norm": "each",
+     "word": 5,
+     "start": 2.5,
+     "end": 2.82
+    },
+    {
+     "w": "state.",
+     "norm": "state",
+     "word": 6,
+     "start": 2.82,
+     "end": 3.1
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 31.088,
+   "sec": 2.768,
+   "text": "What's on your festival list? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "What's",
+     "norm": "what",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.56
+    },
+    {
+     "w": "on",
+     "norm": "on",
+     "word": 1,
+     "start": 0.56,
+     "end": 0.66
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 2,
+     "start": 0.66,
+     "end": 0.88
+    },
+    {
+     "w": "festival",
+     "norm": "festival",
+     "word": 3,
+     "start": 0.88,
+     "end": 1.24
+    },
+    {
+     "w": "list?",
+     "norm": "list",
+     "word": 4,
+     "start": 1.24,
+     "end": 1.56
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 5,
+     "start": 2.04,
+     "end": 2.18
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 6,
+     "start": 2.18,
+     "end": 2.46
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 35,
+   "lockHow": "spoken",
+   "lockWord": "twenty nine point five",
+   "firstNumF": 35,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "29.5%",
+     "spokenF": 35,
+     "word": "twenty nine point five",
+     "how": "spoken",
+     "lockF": 35
+    },
+    {
+     "role": "line",
+     "text": "6.0%",
+     "spokenF": 119,
+     "word": "six",
+     "how": "spoken",
+     "lockF": 119
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 290,
+   "settleF": 278,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 226,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+6.0%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+6.0%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "+4.3%",
+     "spokenF": 226,
+     "word": "four point three",
+     "how": "spoken",
+     "lockF": 226
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 180
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 290,
+   "f1": 465,
+   "settleF": 453,
+   "line": 2,
+   "lockF": 337,
+   "lockHow": "spoken",
+   "lockWord": "four point nine",
+   "firstNumF": 337,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "+4.9%",
+     "spokenF": 337,
+     "word": "four point nine",
+     "how": "spoken",
+     "lockF": 337
+    },
+    {
+     "role": "bar",
+     "text": "+4.9%",
+     "spokenF": 337,
+     "word": "four point nine",
+     "how": "spoken",
+     "lockF": 337
+    },
+    {
+     "role": "bar",
+     "text": "+7.5%",
+     "spokenF": 410,
+     "word": "seven point five",
+     "how": "spoken",
+     "lockF": 410
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 337
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 465,
+   "f1": 639,
+   "settleF": 627,
+   "line": 3,
+   "lockF": 471,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 505,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "−29.5%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 471
+    },
+    {
+     "role": "bar",
+     "text": "−29.5%",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 471
+    },
+    {
+     "role": "bar",
+     "text": "−4.0%",
+     "spokenF": 505,
+     "word": "four",
+     "how": "spoken",
+     "lockF": 505
+    },
+    {
+     "role": "bar",
+     "text": "+8.3%",
+     "spokenF": 590,
+     "word": "eight point three",
+     "how": "spoken",
+     "lockF": 590
+    },
+    {
+     "role": "text",
+     "text": "2025",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 471
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "say",
+   "f0": 639,
+   "f1": 813,
+   "settleF": 801,
+   "line": 4,
+   "lockF": 645,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 5,
+   "kind": "map",
+   "f0": 813,
+   "f1": 929,
+   "settleF": 917,
+   "line": 5,
+   "lockF": 819,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "mapend",
+   "f0": 929,
+   "f1": 1045,
+   "settleF": 1033,
+   "line": 6,
+   "lockF": 935,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

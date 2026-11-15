@@ -1,0 +1,927 @@
+{
+ "id": "fm04",
+ "fps": 30,
+ "made": "2026-10-27",
+ "method": "faster-whisper medium; each number's onset measured on the audio by its first sound (fricative run to the vowel, stop burst, nasal / w boundary, vowel edge), pause-corrected; lock = ceil((round(at*30)/30 + onset + 10 ms after a burst, else 25 ms) * 30)",
+ "lines": [
+  {
+   "file": "vo_00.mp3",
+   "at": 0.12,
+   "sec": 5.146,
+   "text": "The RBI's unclaimed deposits fund: one point one three lakh crore rupees.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "RBI's",
+     "norm": "rbi",
+     "word": 1,
+     "start": 0.48,
+     "end": 1.1
+    },
+    {
+     "w": "unclaimed",
+     "norm": "unclaimed",
+     "word": 2,
+     "start": 1.1,
+     "end": 1.44
+    },
+    {
+     "w": "deposits",
+     "norm": "deposits",
+     "word": 3,
+     "start": 1.44,
+     "end": 1.86
+    },
+    {
+     "w": "fund:",
+     "norm": "fund",
+     "word": 4,
+     "start": 1.86,
+     "end": 2.26
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 5,
+     "start": 2.26,
+     "end": 2.88
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 6,
+     "start": 2.88,
+     "end": 3.26
+    },
+    {
+     "w": "one",
+     "norm": "one",
+     "word": 7,
+     "start": 3.26,
+     "end": 3.56
+    },
+    {
+     "w": "three",
+     "norm": "three",
+     "word": 8,
+     "start": 3.56,
+     "end": 3.8
+    },
+    {
+     "w": "lakh",
+     "norm": "lakh",
+     "word": 9,
+     "start": 3.8,
+     "end": 4.08
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 10,
+     "start": 4.08,
+     "end": 4.44
+    },
+    {
+     "w": "rupees.",
+     "norm": "rupees",
+     "word": 11,
+     "start": 4.44,
+     "end": 4.76
+    }
+   ],
+   "numbers": [
+    {
+     "text": "one point one three lakh crore",
+     "value": 1130000000000.0,
+     "mantissa": 1.13,
+     "scale": 1000000000000.0,
+     "kind": "number",
+     "w0": 5,
+     "w1": 10,
+     "whisper": 2.26,
+     "onset": 2.535,
+     "rule": "weak",
+     "how": "burst",
+     "at": 2.6683,
+     "f": 81
+    }
+   ]
+  },
+  {
+   "file": "vo_01.mp3",
+   "at": 5.926,
+   "sec": 3.97,
+   "text": "Up from about zero point nine eight lakh crore a year before.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Up",
+     "norm": "up",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.42
+    },
+    {
+     "w": "from",
+     "norm": "from",
+     "word": 1,
+     "start": 0.42,
+     "end": 0.66
+    },
+    {
+     "w": "about",
+     "norm": "about",
+     "word": 2,
+     "start": 0.66,
+     "end": 1.12
+    },
+    {
+     "w": "zero",
+     "norm": "zero",
+     "word": 3,
+     "start": 1.12,
+     "end": 1.44
+    },
+    {
+     "w": "point",
+     "norm": "point",
+     "word": 4,
+     "start": 1.44,
+     "end": 1.64
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 5,
+     "start": 1.64,
+     "end": 2.04
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 6,
+     "start": 2.04,
+     "end": 2.3
+    },
+    {
+     "w": "lakh",
+     "norm": "lakh",
+     "word": 7,
+     "start": 2.3,
+     "end": 2.6
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 8,
+     "start": 2.6,
+     "end": 3.0
+    },
+    {
+     "w": "a",
+     "norm": "a",
+     "word": 9,
+     "start": 3.0,
+     "end": 3.12
+    },
+    {
+     "w": "year",
+     "norm": "year",
+     "word": 10,
+     "start": 3.12,
+     "end": 3.28
+    },
+    {
+     "w": "before.",
+     "norm": "before",
+     "word": 11,
+     "start": 3.28,
+     "end": 3.68
+    }
+   ],
+   "numbers": [
+    {
+     "text": "zero point nine eight lakh crore",
+     "value": 980000000000.0,
+     "mantissa": 0.98,
+     "scale": 1000000000000.0,
+     "kind": "number",
+     "w0": 3,
+     "w1": 8,
+     "whisper": 1.12,
+     "onset": 0.8875,
+     "rule": "fric",
+     "how": "frication",
+     "at": 6.8208,
+     "f": 206
+    }
+   ]
+  },
+  {
+   "file": "vo_02.mp3",
+   "at": 11.733,
+   "sec": 4.675,
+   "text": "Untouched ten years, the money moves here. It is still yours.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Untouched",
+     "norm": "untouched",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.78
+    },
+    {
+     "w": "ten",
+     "norm": "ten",
+     "word": 1,
+     "start": 0.78,
+     "end": 1.2
+    },
+    {
+     "w": "years,",
+     "norm": "years",
+     "word": 2,
+     "start": 1.2,
+     "end": 1.64
+    },
+    {
+     "w": "the",
+     "norm": "the",
+     "word": 3,
+     "start": 2.06,
+     "end": 2.16
+    },
+    {
+     "w": "money",
+     "norm": "money",
+     "word": 4,
+     "start": 2.16,
+     "end": 2.36
+    },
+    {
+     "w": "moves",
+     "norm": "moves",
+     "word": 5,
+     "start": 2.36,
+     "end": 2.66
+    },
+    {
+     "w": "here.",
+     "norm": "here",
+     "word": 6,
+     "start": 2.66,
+     "end": 3.0
+    },
+    {
+     "w": "It",
+     "norm": "it",
+     "word": 7,
+     "start": 3.44,
+     "end": 3.56
+    },
+    {
+     "w": "is",
+     "norm": "is",
+     "word": 8,
+     "start": 3.56,
+     "end": 3.82
+    },
+    {
+     "w": "still",
+     "norm": "still",
+     "word": 9,
+     "start": 3.82,
+     "end": 4.0
+    },
+    {
+     "w": "yours.",
+     "norm": "yours",
+     "word": 10,
+     "start": 4.0,
+     "end": 4.26
+    }
+   ],
+   "numbers": [
+    {
+     "text": "ten",
+     "value": 10.0,
+     "mantissa": 10.0,
+     "scale": 1.0,
+     "kind": "number",
+     "w0": 1,
+     "w1": 1,
+     "whisper": 0.78,
+     "onset": 0.975,
+     "rule": "stop",
+     "how": "burst",
+     "at": 12.7083,
+     "f": 382
+    }
+   ]
+  },
+  {
+   "file": "vo_03.mp3",
+   "at": 17.539,
+   "sec": 6.556,
+   "text": "Banks, insurers and funds together returned five thousand seven hundred and seventy-seven crore.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Banks,",
+     "norm": "banks",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.62
+    },
+    {
+     "w": "insurers",
+     "norm": "insurers",
+     "word": 1,
+     "start": 0.98,
+     "end": 1.34
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 2,
+     "start": 1.34,
+     "end": 1.8
+    },
+    {
+     "w": "funds",
+     "norm": "funds",
+     "word": 3,
+     "start": 1.8,
+     "end": 2.22
+    },
+    {
+     "w": "together",
+     "norm": "together",
+     "word": 4,
+     "start": 2.22,
+     "end": 3.24
+    },
+    {
+     "w": "returned",
+     "norm": "returned",
+     "word": 5,
+     "start": 3.24,
+     "end": 3.9
+    },
+    {
+     "w": "five",
+     "norm": "five",
+     "word": 6,
+     "start": 3.9,
+     "end": 4.06
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 7,
+     "start": 4.06,
+     "end": 4.76
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 8,
+     "start": 4.76,
+     "end": 4.9
+    },
+    {
+     "w": "hundred",
+     "norm": "hundred",
+     "word": 9,
+     "start": 4.9,
+     "end": 5.24
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 10,
+     "start": 5.24,
+     "end": 5.36
+    },
+    {
+     "w": "seventy-seven",
+     "norm": "seventy",
+     "word": 11,
+     "start": 5.36,
+     "end": 5.74
+    },
+    {
+     "w": "seven",
+     "norm": "seven",
+     "word": 11,
+     "start": 5.74,
+     "end": 6.0
+    },
+    {
+     "w": "crore.",
+     "norm": "crore",
+     "word": 12,
+     "start": 6.0,
+     "end": 6.4
+    }
+   ],
+   "numbers": [
+    {
+     "text": "five thousand seven hundred and seventy seven crore",
+     "value": 57770000000.0,
+     "mantissa": 5777.0,
+     "scale": 10000000.0,
+     "kind": "number",
+     "w0": 6,
+     "w1": 13,
+     "whisper": 3.9,
+     "onset": 3.89,
+     "rule": "fric",
+     "how": "frication",
+     "at": 21.4233,
+     "f": 644
+    }
+   ]
+  },
+  {
+   "file": "vo_04.mp3",
+   "at": 25.281,
+   "sec": 5.825,
+   "text": "Unclaimed insurance: eight thousand nine hundred and seventy-four crore rupees.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Unclaimed",
+     "norm": "unclaimed",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.7
+    },
+    {
+     "w": "insurance:",
+     "norm": "insurance",
+     "word": 1,
+     "start": 0.7,
+     "end": 1.6
+    },
+    {
+     "w": "eight",
+     "norm": "eight",
+     "word": 2,
+     "start": 2.3,
+     "end": 2.34
+    },
+    {
+     "w": "thousand",
+     "norm": "thousand",
+     "word": 3,
+     "start": 2.34,
+     "end": 2.96
+    },
+    {
+     "w": "nine",
+     "norm": "nine",
+     "word": 4,
+     "start": 2.96,
+     "end": 3.44
+    },
+    {
+     "w": "hundred",
+     "norm": "hundred",
+     "word": 5,
+     "start": 3.44,
+     "end": 3.92
+    },
+    {
+     "w": "and",
+     "norm": "and",
+     "word": 6,
+     "start": 3.92,
+     "end": 4.44
+    },
+    {
+     "w": "seventy-four",
+     "norm": "seventy",
+     "word": 7,
+     "start": 4.44,
+     "end": 4.7
+    },
+    {
+     "w": "four",
+     "norm": "four",
+     "word": 7,
+     "start": 4.7,
+     "end": 4.94
+    },
+    {
+     "w": "crore",
+     "norm": "crore",
+     "word": 8,
+     "start": 4.94,
+     "end": 5.18
+    },
+    {
+     "w": "rupees.",
+     "norm": "rupees",
+     "word": 9,
+     "start": 5.18,
+     "end": 5.48
+    }
+   ],
+   "numbers": [
+    {
+     "text": "eight thousand nine hundred and seventy four crore",
+     "value": 89740000000.0,
+     "mantissa": 8974.0,
+     "scale": 10000000.0,
+     "kind": "number",
+     "w0": 2,
+     "w1": 9,
+     "whisper": 2.3,
+     "onset": 2.29,
+     "rule": "vowel",
+     "how": "edge",
+     "at": 27.5567,
+     "f": 828
+    }
+   ]
+  },
+  {
+   "file": "vo_05.mp3",
+   "at": 33.023,
+   "sec": 5.746,
+   "text": "The RBI's own UDGAM portal searches unclaimed deposits across many banks.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "The",
+     "norm": "the",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.52
+    },
+    {
+     "w": "RBI's",
+     "norm": "rbi",
+     "word": 1,
+     "start": 0.52,
+     "end": 1.14
+    },
+    {
+     "w": "own",
+     "norm": "own",
+     "word": 2,
+     "start": 1.14,
+     "end": 1.3
+    },
+    {
+     "w": "UDGAM",
+     "norm": "udgam",
+     "word": 3,
+     "start": 1.3,
+     "end": 1.98
+    },
+    {
+     "w": "portal",
+     "norm": "portal",
+     "word": 4,
+     "start": 1.98,
+     "end": 2.44
+    },
+    {
+     "w": "searches",
+     "norm": "searches",
+     "word": 5,
+     "start": 2.44,
+     "end": 3.1
+    },
+    {
+     "w": "unclaimed",
+     "norm": "unclaimed",
+     "word": 6,
+     "start": 3.1,
+     "end": 3.66
+    },
+    {
+     "w": "deposits",
+     "norm": "deposits",
+     "word": 7,
+     "start": 3.66,
+     "end": 4.14
+    },
+    {
+     "w": "across",
+     "norm": "across",
+     "word": 8,
+     "start": 4.14,
+     "end": 4.72
+    },
+    {
+     "w": "many",
+     "norm": "many",
+     "word": 9,
+     "start": 4.72,
+     "end": 5.02
+    },
+    {
+     "w": "banks.",
+     "norm": "banks",
+     "word": 10,
+     "start": 5.02,
+     "end": 5.36
+    }
+   ],
+   "numbers": []
+  },
+  {
+   "file": "vo_06.mp3",
+   "at": 40.765,
+   "sec": 3.448,
+   "text": "Has your family ever found forgotten money? Comment below.",
+   "method": "faster-whisper medium",
+   "words": [
+    {
+     "w": "Has",
+     "norm": "has",
+     "word": 0,
+     "start": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "your",
+     "norm": "your",
+     "word": 1,
+     "start": 0.34,
+     "end": 0.58
+    },
+    {
+     "w": "family",
+     "norm": "family",
+     "word": 2,
+     "start": 0.58,
+     "end": 0.92
+    },
+    {
+     "w": "ever",
+     "norm": "ever",
+     "word": 3,
+     "start": 0.92,
+     "end": 1.26
+    },
+    {
+     "w": "found",
+     "norm": "found",
+     "word": 4,
+     "start": 1.26,
+     "end": 1.52
+    },
+    {
+     "w": "forgotten",
+     "norm": "forgotten",
+     "word": 5,
+     "start": 1.52,
+     "end": 1.86
+    },
+    {
+     "w": "money?",
+     "norm": "money",
+     "word": 6,
+     "start": 1.86,
+     "end": 2.26
+    },
+    {
+     "w": "Comment",
+     "norm": "comment",
+     "word": 7,
+     "start": 2.74,
+     "end": 2.86
+    },
+    {
+     "w": "below.",
+     "norm": "below",
+     "word": 8,
+     "start": 2.86,
+     "end": 3.18
+    }
+   ],
+   "numbers": []
+  }
+ ],
+ "beats": [
+  {
+   "i": 0,
+   "kind": "spot",
+   "f0": 0,
+   "f1": 174,
+   "settleF": 162,
+   "line": 0,
+   "lockF": 81,
+   "lockHow": "spoken",
+   "lockWord": "one point one three lakh crore",
+   "firstNumF": 81,
+   "late": false,
+   "numbers": [
+    {
+     "role": "hero",
+     "text": "₹1.13 lakh crore",
+     "spokenF": 81,
+     "word": "one point one three lakh crore",
+     "how": "spoken",
+     "lockF": 81
+    }
+   ]
+  },
+  {
+   "i": 1,
+   "kind": "fact",
+   "f0": 174,
+   "f1": 348,
+   "settleF": 336,
+   "line": 1,
+   "lockF": 180,
+   "lockHow": "said-earlier",
+   "lockWord": null,
+   "firstNumF": 206,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹1.13 lakh cr",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "₹1.13",
+     "spokenF": null,
+     "how": "said-earlier",
+     "lockF": 180
+    },
+    {
+     "role": "bar",
+     "text": "₹0.98",
+     "spokenF": 206,
+     "word": "zero point nine eight lakh crore",
+     "how": "spoken",
+     "lockF": 206
+    },
+    {
+     "role": "text",
+     "text": "31",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 180
+    },
+    {
+     "role": "text",
+     "text": "2026",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 180
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "kind": "fact",
+   "f0": 348,
+   "f1": 523,
+   "settleF": 511,
+   "line": 2,
+   "lockF": 382,
+   "lockHow": "spoken",
+   "lockWord": "ten",
+   "firstNumF": 382,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "10 years",
+     "spokenF": 382,
+     "word": "ten",
+     "how": "spoken",
+     "lockF": 382
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "kind": "fact",
+   "f0": 523,
+   "f1": 755,
+   "settleF": 743,
+   "line": 3,
+   "lockF": 644,
+   "lockHow": "spoken",
+   "lockWord": "five thousand seven hundred and seventy seven crore",
+   "firstNumF": 644,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹5,777 cr",
+     "spokenF": 644,
+     "word": "five thousand seven hundred and seventy seven crore",
+     "how": "spoken",
+     "lockF": 644
+    },
+    {
+     "role": "text",
+     "text": "22.95 lakh",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 644
+    },
+    {
+     "role": "text",
+     "text": "28",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 644
+    },
+    {
+     "role": "text",
+     "text": "2026",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 644
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "kind": "fact",
+   "f0": 755,
+   "f1": 987,
+   "settleF": 975,
+   "line": 4,
+   "lockF": 828,
+   "lockHow": "spoken",
+   "lockWord": "eight thousand nine hundred and seventy four crore",
+   "firstNumF": 828,
+   "late": false,
+   "numbers": [
+    {
+     "role": "big",
+     "text": "₹8,974 cr",
+     "spokenF": 828,
+     "word": "eight thousand nine hundred and seventy four crore",
+     "how": "spoken",
+     "lockF": 828
+    },
+    {
+     "role": "bar",
+     "text": "₹8,974 cr",
+     "spokenF": 828,
+     "word": "eight thousand nine hundred and seventy four crore",
+     "how": "spoken",
+     "lockF": 828
+    },
+    {
+     "role": "bar",
+     "text": "₹3,749 cr",
+     "spokenF": null,
+     "how": "not-spoken",
+     "lockF": 828
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "kind": "say",
+   "f0": 987,
+   "f1": 1219,
+   "settleF": 1207,
+   "line": 5,
+   "lockF": 993,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  },
+  {
+   "i": 6,
+   "kind": "end",
+   "f0": 1219,
+   "f1": 1335,
+   "settleF": 1323,
+   "line": 6,
+   "lockF": 1225,
+   "lockHow": "no-number",
+   "lockWord": null,
+   "firstNumF": null,
+   "late": false,
+   "numbers": []
+  }
+ ]
+}

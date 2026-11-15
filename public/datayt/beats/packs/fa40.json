@@ -1,0 +1,35 @@
+{
+ "idea": "Themed weeks, week four, Economy day: written from the source, then corrected by a numbers editor and a viewer editor before voicing.",
+ "alt_title": "",
+ "description": [
+  "In 2024-25, gross GST collected in Haryana (CGST + SGST + IGST, before refunds) was 9.2% of the state's output, the highest of the 25 states and UTs with both figures. Maharashtra was next at 7.4%; Kerala's figure was 2.6%, so Haryana's was 3.5 times that.",
+  "Haryana's GST was ₹1,11,485 crore and Kerala's ₹33,023 crore, on output of ₹12.1 lakh crore and ₹12.5 lakh crore: level output, 3.4 times the GST. Haryana's rate was 7.2% in 2021-22 and then 8.3%, 8.8% and 9.2%. Imports and cess are left out. GST is recorded where the taxpayer is registered, not who bears it. 2024-25 output is an early estimate. Gujarat, Sikkim, Goa and others are blank on the map because they have no 2024-25 output; none is published for Dadra, Nagar Haveli, Daman and Diu."
+ ],
+ "source": "Ministry of Finance, Lok Sabha unstarred question 1575, 9 Feb 2026, Annexure A: gross domestic GST (CGST + SGST + IGST) in each state, 2024-25, before refunds; imports and cess not included; recorded where the taxpayer is registered. Over state output (GSDP) at current prices, National Statistical Office, via RBI Handbook of Statistics on Indian States 2024-25, Table 21; 2024-25 output is an early estimate. 25 states and UTs have both figures; none is published for Dadra, Nagar Haveli, Daman and Diu.",
+ "source_short": "Finance Ministry, Lok Sabha, 2024-25",
+ "question": "Which state surprised you here?",
+ "tags": [
+  "Haryana",
+  "GST",
+  "Economy"
+ ],
+ "pinned": "Source: Ministry of Finance, Lok Sabha unstarred question 1575, 9 Feb 2026, Annexure A: gross domestic GST (CGST + SGST + IGST) in each state, 2024-25, before refunds; imports and cess not included; recorded where the taxpayer is registered. Over state output (GSDP) at current prices, National Statistical Office, via RBI Handbook of Statistics on Indian States 2024-25, Table 21; 2024-25 output is an early estimate. 25 states and UTs have both figures; none is published for Dadra, Nagar Haveli, Daman and Diu. GST is recorded where the taxpayer is registered, not who bears it. 2024-25 output is an early estimate. Blank: no 2024-25 output, e.g. Gujarat, Sikkim, Goa.",
+ "instagram": "In 2024-25, gross GST collected in Haryana (CGST + SGST + IGST, before refunds) was 9.2% of the state's output, the highest of the 25 states and UTs with both figures. Maharashtra was next at 7.4%; Kerala's figure was 2.6%, so Haryana's was 3.5 times that.",
+ "x": "Haryana, 2024-25: gross GST collected was 9.2% of state output, the highest of 25 states and UTs with data. Kerala: 2.6%. Source: Ministry of Finance, Lok Sabha answer 1575; RBI Handbook of Statistics on Indian States, Table 21.",
+ "done": [
+  "Numbers editor recomputed with python3 -I from the Lok Sabha table and RBI Table 21: Haryana 1,11,485 crore over 121,395,104 lakh = 9.18%; Maharashtra 7.37; Kerala 2.645; Haryana 7.20, 8.27, 8.83, 9.18 over 2021-22 to 2024-25. Opened the Lok Sabha answer's PDF (Q 1575, 9 Feb 2026, Annexure A): summed every state row (15,33,803 against the printed domestic total 15,33,805), so the column is domestic GST only; read the sister answer Q 1430 (CGST, SGST, IGST split; cess in a separate table) and the GST portal's monthly sheet to show it is gross, before refunds, without cess.",
+  "Tested 'highest of 25 with data': for the eight states with no 2024-25 output, even their latest older output cannot reach 9.18% (Andaman and Nicobar by hand); Dadra, Nagar Haveli, Daman and Diu has no output at all, so the claim says 'with data'. A test shows Haryana stays above Maharashtra if Haryana's output were revised up 10%.",
+  "Fixed before voicing: one wording (percent) everywhere; card 1 says what is counted; map note and source rewritten; the title says 'collected'; 2024-25 output called an early estimate. Viewer editor made the hook voice speak 'highest of twenty-five with data' and gave card 1 a different voice line.",
+  "Claude checked every figure quoted in this pack's description, Instagram text, X post and pinned comment against the built data.json (screen text, voice lines and the builder's own checks); none is new."
+ ],
+ "open": [
+  "Re-read Lok Sabha unstarred Q 1575, Annexure A (2024-25): Haryana 1,11,485; Kerala 33,023; Maharashtra 3,33,913; domestic total 15,33,805",
+  "Re-read RBI Handbook Table 21, 2024-25 (Rs lakh): Haryana 121,395,104; Kerala 124,853,301; Maharashtra 453,151,842",
+  "AK decides: 'recorded where the taxpayer is registered' is our reading of GST law (state code in the GSTIN); the answer does not say it and no CBIC sentence was found",
+  "AK decides: Dadra, Nagar Haveli, Daman and Diu has GST of ₹4,406 crore and no output, so it cannot be shown below Haryana; 'highest of 25 with data' is the claim",
+  "Not verified: Andaman and Nicobar's upper bound was done by hand; whether Q 1575's gross figure has any adjustment beyond what the GST portal sheets show",
+  "Freshness: Q 1575 and Q 1430 (9 Feb 2026) are the newest state GST answers, and the 2025-26 column is 'till Jan 26', not a year; the Handbook (11 Dec 2025) does not label 2024-25 output as an estimate, and Maharashtra's has since been revised upward",
+  "Expect comments asking where Gujarat, Goa and Sikkim are (blank, named on the map note)",
+  "Add the source link to the description"
+ ]
+}

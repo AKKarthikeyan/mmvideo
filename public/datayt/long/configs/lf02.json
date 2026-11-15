@@ -1,0 +1,2436 @@
+{
+ "id": "lf02",
+ "title": "Dussehra to Diwali: India's Festival Season in Numbers",
+ "chip": "FESTIVALS · 2026",
+ "source_short": "Official data: Consumer Affairs, MoSPI, NDDB, VAHAN, RBI, India Post, Metro Railway Kolkata, PIB",
+ "source": "Department of Consumer Affairs: daily all-India average retail prices, 16 Oct 2026 (fcainfoweb.nic.in). MoSPI: Consumer Price Index (base 2024), September 2026, provisional (eSankhyiki). NDDB: per capita availability of milk by state, from Basic Animal Husbandry Statistics. MoRTH: VAHAN public dashboard, read 17 Oct 2026. Reserve Bank of India: Holiday Matrix, October 2026; RBI Bulletin, September 2026 and November 2025. Department of Posts: holidays list 2026. Metro Railway, Kolkata: press releases of 28 Sep and 3 Oct 2025. Cabinet: Productivity Linked Bonus, PIB, 14 Oct 2026.",
+ "palette": "C",
+ "tables": {
+  "doca": "consumer_affairs/daily_prices_2026_10_16",
+  "cpi": "mospi/cpi2024_allindia_items_2026_09",
+  "milk": "nddb/milk_percapita_states",
+  "vahan": "vahan/monthly_registrations_2026_10",
+  "metro": "metro_kolkata/puja_2025",
+  "cic": "rbi/currency_2026_09",
+  "bank": "rbi/holiday_matrix_2026_10",
+  "plb": "pib/plb_2026_10",
+  "post": "indiapost/holidays_2026",
+  "greet": "pib/festival_greetings_2022_2025"
+ },
+ "specs": {},
+ "vals": {
+  "hol_all": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@post",
+      "facts",
+      "all india",
+      "holidays"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 14
+  },
+  "hol_sunday": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@post",
+      "facts",
+      "all india",
+      "on a Sunday"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 1
+  },
+  "hol_circles": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@post",
+      "facts",
+      "circles",
+      "Monday 19 Oct"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 13
+  },
+  "tabs": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@post",
+      "facts",
+      "circles",
+      "tabs"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 31
+  },
+  "agartala": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@bank",
+      "items",
+      "Agartala",
+      "holidays"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 6
+  },
+  "kolkata": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@bank",
+      "items",
+      "Kolkata",
+      "holidays"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 5
+  },
+  "mumbai": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@bank",
+      "items",
+      "Mumbai",
+      "holidays"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 2
+  },
+  "delhi": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@bank",
+      "items",
+      "New Delhi",
+      "holidays"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 2
+  },
+  "offices": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@bank",
+      "facts",
+      "offices",
+      "count"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 34
+  },
+  "onion_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Onion",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 52.7
+  },
+  "onion_1y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Onion",
+      "1 year back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 26.88
+  },
+  "onion_2y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Onion",
+      "2 years back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 54.73
+  },
+  "onion_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Onion",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 96.06
+  },
+  "sugar_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Sugar",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 57.82
+  },
+  "sugar_1y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Sugar",
+      "1 year back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 46.6
+  },
+  "sugar_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Sugar",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 24.08
+  },
+  "gur_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Gur",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 66.41
+  },
+  "gur_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Gur",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 15.02
+  },
+  "ghee_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Desi Ghee",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 704.51
+  },
+  "tur_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Tur/Arhar Dal",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 13.74
+  },
+  "mustard_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Mustard Oil (Packed)",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 9.27
+  },
+  "milk_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Milk (₹/ltr)",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 61.44
+  },
+  "milk_1y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Milk (₹/ltr)",
+      "1 year back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 59.36
+  },
+  "potato_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Potato",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 22.65
+  },
+  "potato_1y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Potato",
+      "1 year back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 25.38
+  },
+  "potato_2y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Potato",
+      "2 years back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 37.38
+  },
+  "tomato_now": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Tomato",
+      "today"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 40.74
+  },
+  "tomato_1y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Tomato",
+      "1 year back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 38.65
+  },
+  "tomato_2y": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Tomato",
+      "2 years back"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "paise": true,
+   "equals": 67.96
+  },
+  "sweets": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "01.1.4.7.1.02",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 9.36
+  },
+  "sugar_cpi": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "01.1.8.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 29.8
+  },
+  "gur_cpi": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "01.1.8.1.1.02",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 22.61
+  },
+  "milk_cpi": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "01.1.4.1.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 4.21
+  },
+  "cpi_all": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "00",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 5.54
+  },
+  "air": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "07.3.3.1.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 29.9
+  },
+  "bus": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "07.3.1.2.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 4.05
+  },
+  "rail": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "07.3.1.1.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 2.22
+  },
+  "taxi": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "07.3.2.2.2.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 3.31
+  },
+  "milk_india": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "India"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 471
+  },
+  "milk_2009": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2009-10"
+     ]
+    },
+    "state": "India"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 273
+  },
+  "m_pb": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "Punjab"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 1245
+  },
+  "m_rj": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "Rajasthan"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 1171
+  },
+  "m_hr": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "Haryana"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 1105
+  },
+  "m_ld": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "Lakshadweep"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 15
+  },
+  "m_ar": {
+   "v": {
+    "data": {
+     "tbl": [
+      "@milk",
+      "2023-24"
+     ]
+    },
+    "state": "Arunachal Pradesh"
+   },
+   "dec": 0,
+   "unit": " g",
+   "say_unit": " grams",
+   "equals": 35
+  },
+  "v_oct24": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Oct 2024",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 29.31894
+  },
+  "v_sep25": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Sep 2025",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 19.30637
+  },
+  "v_oct25": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Oct 2025",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 41.70198
+  },
+  "v_nov25": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Nov 2025",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 34.51254
+  },
+  "v_sep26": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Sep 2026",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 25.67144
+  },
+  "v_oct26": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Oct 2026 to 17 Oct",
+        "vehicles"
+       ]
+      }
+     },
+     100000
+    ]
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 11.71371
+  },
+  "v_yoy": {
+   "v": {
+    "diff": [
+     {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Oct 2025",
+          "vehicles"
+         ]
+        }
+       },
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Oct 2024",
+          "vehicles"
+         ]
+        }
+       }
+      ],
+      "scale": 100
+     },
+     100
+    ]
+   },
+   "dec": 0,
+   "unit": "%",
+   "round": 42
+  },
+  "v_ratio": {
+   "v": {
+    "ratio": [
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Oct 2025",
+        "vehicles"
+       ]
+      }
+     },
+     {
+      "data": {
+       "breakdown": [
+        "@vahan",
+        "items",
+        "Sep 2025",
+        "vehicles"
+       ]
+      }
+     }
+    ]
+   },
+   "dec": 1,
+   "unit": "×",
+   "min": 2.15,
+   "max": 2.17
+  },
+  "m_panchami": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@metro",
+      "facts",
+      "panchami 2025",
+      "lakh"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 9.82
+  },
+  "m_prev": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@metro",
+      "facts",
+      "previous record",
+      "lakh"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 9.61
+  },
+  "m_puja": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@metro",
+      "facts",
+      "puja 2025",
+      "lakh"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 46.56
+  },
+  "m_puja24": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@metro",
+      "facts",
+      "puja 2024",
+      "lakh"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 41.15
+  },
+  "cic_sep26": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cic",
+      "facts",
+      "growth",
+      "15 Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 13.2
+  },
+  "cic_aug26": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cic",
+      "facts",
+      "growth",
+      "15 Aug 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 12.4
+  },
+  "cic_oct25": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cic",
+      "facts",
+      "growth",
+      "17 Oct 2025"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 8.8
+  },
+  "cic_nov25": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cic",
+      "facts",
+      "growth",
+      "14 Nov 2025"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 8.1
+  },
+  "plb_cr": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@plb",
+      "facts",
+      "plb",
+      "crore"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": "",
+   "prefix": "₹",
+   "say_unit": " crore rupees",
+   "equals": 2009.61
+  },
+  "plb_lakh": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@plb",
+      "facts",
+      "plb",
+      "lakh staff"
+     ]
+    }
+   },
+   "dec": 2,
+   "unit": " lakh",
+   "say_unit": " lakh",
+   "equals": 11.4
+  },
+  "plb_max": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@plb",
+      "facts",
+      "plb",
+      "max rupees"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "prefix": "₹",
+   "equals": 17951
+  },
+  "plb_days": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@plb",
+      "facts",
+      "plb",
+      "days"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "",
+   "equals": 78
+  },
+  "ghee_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Desi Ghee",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 5.63
+  },
+  "milk_pct": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@doca",
+      "items",
+      "Milk (₹/ltr)",
+      "1 year back change %"
+     ]
+    }
+   },
+   "dec": 0,
+   "unit": "%",
+   "equals": 3.5
+  },
+  "nonmilk": {
+   "v": {
+    "data": {
+     "breakdown": [
+      "@cpi",
+      "items",
+      "01.1.8.9.1.01",
+      "Sep 2026"
+     ]
+    }
+   },
+   "dec": 1,
+   "unit": "%",
+   "equals": 9.44
+  }
+ },
+ "chapters": [
+  {
+   "id": "cold",
+   "title": "Cold open",
+   "label": ""
+  },
+  {
+   "id": "calendar",
+   "title": "The calendar"
+  },
+  {
+   "id": "kitchen",
+   "title": "The kitchen"
+  },
+  {
+   "id": "sweets",
+   "title": "Sweets and milk"
+  },
+  {
+   "id": "vehicles",
+   "title": "Vehicles"
+  },
+  {
+   "id": "travel",
+   "title": "Journeys home"
+  },
+  {
+   "id": "money",
+   "title": "Money"
+  },
+  {
+   "id": "close",
+   "title": "Close"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "cold",
+   "chapter": "cold",
+   "min": 8,
+   "lines": [
+    "Onion: up *{onion_pct}*",
+    "Diwali: on a *Sunday*"
+   ],
+   "vo": [
+    "Onion costs {onion_pct} more than a year ago, and on India Post's all-India list, Diwali falls on a Sunday.",
+    "Here is the festival season in official numbers: dates, kitchen prices, sweets, vehicles, travel and cash."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "calendar",
+   "sub": "Festival days from Dussehra to Christmas, on India Post's list",
+   "vo": [
+    "First, the calendar."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "calendar",
+   "title": "India Post's holiday list for 2026",
+   "tiles": [
+    {
+     "var": "hol_all",
+     "caption": "all-India holidays on the list"
+    },
+    {
+     "var": "hol_sunday",
+     "caption": "of them on a Sunday: Diwali, 8 Nov",
+     "hi": true
+    },
+    {
+     "var": "hol_circles",
+     "caption": "of {tabs} circle lists also mark Monday 19 Oct"
+    }
+   ],
+   "source": "Department of Posts · holidays list 2026, All India and circle tabs · indiapost.gov.in, read 17 Oct 2026",
+   "vo": [
+    "The dates, from India Post's all-India list: Dussehra on Tuesday, the twentieth of October.",
+    "Diwali on Sunday, the eighth of November, nineteen days later.",
+    "Chhath in Bihar on the sixteenth, Guru Nanak's birthday on the twenty-fourth, and Christmas on Friday the twenty-fifth.",
+    "In {hol_circles} of the {tabs} circle lists on India Post's page, Monday the nineteenth is also a holiday."
+   ],
+   "note": "Dussehra Tue 20 Oct · Diwali Sun 8 Nov · Chhath Mon 16 Nov (Bihar) · Guru Nanak's birthday Tue 24 Nov · Christmas Fri 25 Dec"
+  },
+  {
+   "kind": "bars",
+   "chapter": "calendar",
+   "title": "Bank holidays in October 2026: RBI offices with four or more, and two metros",
+   "dec": 0,
+   "unit": "",
+   "sort": "desc",
+   "expect_top": "Agartala",
+   "rows": [
+    {
+     "label": "Agartala",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Agartala",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 6,
+     "hi": true
+    },
+    {
+     "label": "Kolkata",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Kolkata",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 5,
+     "hi": false
+    },
+    {
+     "label": "Bengaluru",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Bengaluru",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Gangtok",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Gangtok",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Guwahati",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Guwahati",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Kochi",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Kochi",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Shimla",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Shimla",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Thiruvananthapuram",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Thiruvananthapuram",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 4,
+     "hi": false
+    },
+    {
+     "label": "Mumbai",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "Mumbai",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 2,
+     "hi": false
+    },
+    {
+     "label": "New Delhi",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@bank",
+        "items",
+        "New Delhi",
+        "holidays"
+       ]
+      }
+     },
+     "equals": 2,
+     "hi": false
+    }
+   ],
+   "caption": "Holidays the RBI lists for each of its {offices} offices. Sundays and second and fourth Saturdays are bank holidays everywhere; the Kolkata and Bengaluru lists include Saturday 10 Oct.",
+   "source": "Reserve Bank of India · Holiday Matrix, October 2026 · rbi.org.in, read 17 Oct 2026",
+   "vo": [
+    "The Reserve Bank publishes a holiday list for each of its offices.",
+    "In October it showed {agartala} at Agartala and {kolkata} at Kolkata, against {mumbai} each at Mumbai and New Delhi."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "kitchen",
+   "sub": "Prices on the same date, three years running",
+   "vo": [
+    "Next, the kitchen."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "kitchen",
+   "title": "Onion, a kilo: all-India average retail price",
+   "a": {
+    "label": "16 Oct 2025",
+    "var": "onion_1y",
+    "sub": "a year earlier"
+   },
+   "b": {
+    "label": "16 Oct 2026",
+    "var": "onion_now",
+    "sub": "the latest daily figure"
+   },
+   "caption": "Up {onion_pct} in a year. Two years earlier, on 16 Oct 2024: {onion_2y}.",
+   "source": "Department of Consumer Affairs · daily retail prices, all-India average · 16 Oct 2026",
+   "vo": [
+    "Every day, the Consumer Affairs department publishes the average retail price of essentials across India.",
+    "On the sixteenth of October, a kilo of onion cost {onion_now}.",
+    "A year earlier, it was {onion_1y}. This year's price is {onion_pct} higher.",
+    "On the same date two years ago: {onion_2y}."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "kitchen",
+   "title": "Price change in one year, selected kitchen items, to 16 Oct 2026",
+   "dec": 0,
+   "unit": "%",
+   "sign": true,
+   "sort": "desc",
+   "expect_top": "Onion",
+   "expect_bottom": "Potato",
+   "rows": [
+    {
+     "label": "Onion",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Onion",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 96.06,
+     "hi": true
+    },
+    {
+     "label": "Sugar",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Sugar",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 24.08
+    },
+    {
+     "label": "Jaggery (gur)",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Gur",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 15.02
+    },
+    {
+     "label": "Tur dal",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Tur/Arhar Dal",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 13.74
+    },
+    {
+     "label": "Mustard oil",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Mustard Oil (Packed)",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 9.27
+    },
+    {
+     "label": "Desi ghee",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Desi Ghee",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 5.63
+    },
+    {
+     "label": "Tomato",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Tomato",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 5.41
+    },
+    {
+     "label": "Milk",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Milk (₹/ltr)",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": 3.5
+    },
+    {
+     "label": "Potato",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@doca",
+        "items",
+        "Potato",
+        "1 year back change %"
+       ]
+      }
+     },
+     "equals": -10.76
+    }
+   ],
+   "caption": "All-India average retail prices on 16 Oct 2026 against 16 Oct 2025. Nine of the items the department prices daily.",
+   "source": "Department of Consumer Affairs · daily retail prices, all-India average · 16 Oct 2026",
+   "vo": [
+    "Here is the change over one year for some festival kitchen items.",
+    "Sugar is up {sugar_pct}, jaggery {gur_pct}, and tur dal {tur_pct}.",
+    "Mustard oil is up {mustard_pct}, desi ghee {ghee_pct}, and milk {milk_pct}.",
+    "A kilo of sugar now costs {sugar_now}."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "kitchen",
+   "title": "Cheaper than two years ago",
+   "tiles": [
+    {
+     "var": "potato_now",
+     "caption": "potato, a kilo, 16 Oct 2026",
+     "hi": true
+    },
+    {
+     "var": "potato_2y",
+     "caption": "potato, 16 Oct 2024"
+    },
+    {
+     "var": "tomato_now",
+     "caption": "tomato, a kilo, 16 Oct 2026",
+     "hi": true
+    },
+    {
+     "var": "tomato_2y",
+     "caption": "tomato, 16 Oct 2024"
+    }
+   ],
+   "source": "Department of Consumer Affairs · daily retail prices, all-India average · 16 Oct 2026",
+   "vo": [
+    "Two vegetables cost less than two years ago.",
+    "Potato, at {potato_now}, is cheaper than a year ago too.",
+    "Tomato, at {tomato_now}, is slightly higher than last year.",
+    "Two years ago, it cost {tomato_2y}."
+   ],
+   "note": "A year earlier, on 16 Oct 2025: potato {potato_1y}, tomato {tomato_1y}."
+  },
+  {
+   "kind": "card",
+   "chapter": "sweets",
+   "sub": "Sugar, sweets and the milk behind them",
+   "vo": [
+    "Then, sweets and milk."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "sweets",
+   "title": "Price rise in a year, September 2026: consumer price index",
+   "dec": 1,
+   "unit": "%",
+   "sort": "desc",
+   "expect_top": "Sugar",
+   "rows": [
+    {
+     "label": "Sugar",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "01.1.8.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 29.8,
+     "hi": true
+    },
+    {
+     "label": "Jaggery (gur)",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "01.1.8.1.1.02",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 22.61
+    },
+    {
+     "label": "Sweets, not milk-based",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "01.1.8.9.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 9.44,
+     "hi": true
+    },
+    {
+     "label": "Milk-based sweets",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "01.1.4.7.1.02",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 9.36,
+     "hi": true
+    },
+    {
+     "label": "All items",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "00",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 5.54
+    },
+    {
+     "label": "Liquid milk",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "01.1.4.1.1.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 4.21
+    }
+   ],
+   "caption": "The Statistics Ministry's index, base 2024, September 2026 against September 2025, provisional. It measures prices differently from the daily retail figures.",
+   "source": "MoSPI · CPI (base 2024), all-India items · Sep 2026 provisional · eSankhyiki portal",
+   "vo": [
+    "Next, sweets, in the Statistics Ministry's price index.",
+    "Ready-made sweets, with milk or without, cost {sweets} more this September than last.",
+    "Sugar in this index: {sugar_cpi}.",
+    "The index measures prices differently from the daily retail figures, so the two sugar numbers differ."
+   ]
+  },
+  {
+   "kind": "map",
+   "chapter": "sweets",
+   "data": {
+    "tbl": [
+     "@milk",
+     "2023-24"
+    ]
+   },
+   "dec": 0,
+   "unit": " g",
+   "title": "Milk produced per person per day, year to March 2024",
+   "sub": "India {milk_india} · grams a day, by state",
+   "key": [
+    "least",
+    "most"
+   ],
+   "note": "Milk produced in a state, divided by its people: not what people drink. Dadra and Nagar Haveli is not shown.",
+   "source": "NDDB · per capita availability of milk by state, from Basic Animal Husbandry Statistics · nddb.coop",
+   "vo": [
+    "Milk goes into many of those sweets. Which state produces the most milk per person?",
+    "Punjab: {m_pb} a day, in the year to March twenty twenty-four.",
+    "This counts milk produced, divided by population. It is not what people drink.",
+    "Then Rajasthan, {m_rj}, and Haryana, {m_hr}.",
+    "India as a whole: {milk_india}.",
+    "The lowest: Lakshadweep, {m_ld}, and Arunachal Pradesh, {m_ar}."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "vehicles",
+   "sub": "Registrations in recent months",
+   "vo": [
+    "Now, vehicles."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "vehicles",
+   "title": "Vehicles registered in India, by month",
+   "dec": 2,
+   "unit": " lakh",
+   "expect_top": "October 2025",
+   "rows": [
+    {
+     "label": "October 2024",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Oct 2024",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 29.31894
+    },
+    {
+     "label": "September 2025",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Sep 2025",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 19.30637
+    },
+    {
+     "label": "October 2025",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Oct 2025",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 41.70198,
+     "hi": true
+    },
+    {
+     "label": "November 2025",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Nov 2025",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 34.51254
+    },
+    {
+     "label": "September 2026",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Sep 2026",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 25.67144
+    },
+    {
+     "label": "October 2026, read 17 Oct",
+     "v": {
+      "ratio": [
+       {
+        "data": {
+         "breakdown": [
+          "@vahan",
+          "items",
+          "Oct 2026 to 17 Oct",
+          "vehicles"
+         ]
+        }
+       },
+       100000
+      ]
+     },
+     "equals": 11.71371
+    }
+   ],
+   "caption": "All vehicle classes, VAHAN dashboard, read 17 Oct 2026; October 2026 was not over. Diwali was on 20 Oct in 2025, and is on 8 Nov in 2026.",
+   "source": "MoRTH · VAHAN public dashboard · read 17 Oct 2026 · Diwali 2025: PIB, 20 Oct 2025",
+   "vo": [
+    "In September twenty twenty-five, {v_sep25} vehicles were registered across India.",
+    "In October, {v_oct25}: more than double.",
+    "That was {v_yoy} more than in October twenty twenty-four, by our arithmetic.",
+    "Diwali fell in October last year. This year it falls in November.",
+    "As of the seventeenth, this October's count stood at {v_oct26}. The month was not over."
+   ]
+  },
+  {
+   "kind": "card",
+   "chapter": "travel",
+   "sub": "Fares, and Durga Puja on the Kolkata Metro",
+   "vo": [
+    "Next, travel."
+   ]
+  },
+  {
+   "kind": "bars",
+   "chapter": "travel",
+   "title": "Fares, price rise in a year, September 2026",
+   "dec": 1,
+   "unit": "%",
+   "sort": "desc",
+   "expect_top": "Air fares",
+   "rows": [
+    {
+     "label": "Air fares",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "07.3.3.1.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 29.9,
+     "hi": true
+    },
+    {
+     "label": "Bus fares, occasional trips",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "07.3.1.2.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 4.05
+    },
+    {
+     "label": "Auto-rickshaw fares",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "07.3.2.9.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 3.96
+    },
+    {
+     "label": "Taxi fares",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "07.3.2.2.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 3.31
+    },
+    {
+     "label": "Rail fares",
+     "v": {
+      "data": {
+       "breakdown": [
+        "@cpi",
+        "items",
+        "07.3.1.1.2.01",
+        "Sep 2026"
+       ]
+      }
+     },
+     "equals": 2.22
+    }
+   ],
+   "caption": "The Statistics Ministry's consumer price index, base 2024, September 2026, provisional.",
+   "source": "MoSPI · CPI (base 2024), all-India items · Sep 2026 provisional · eSankhyiki portal",
+   "vo": [
+    "Air fares in the Statistics Ministry's index were {air} higher in September than a year before.",
+    "Bus fares for occasional trips rose {bus}, and rail fares {rail}."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "travel",
+   "title": "Kolkata Metro at Durga Puja",
+   "tiles": [
+    {
+     "var": "m_panchami",
+     "caption": "more than this on Maha Panchami 2025: a one-day record then",
+     "hi": true
+    },
+    {
+     "var": "m_prev",
+     "caption": "the earlier record, Maha Sashti 2024"
+    },
+    {
+     "var": "m_puja",
+     "caption": "Panchami to Dashami, 2025"
+    }
+   ],
+   "source": "Metro Railway, Kolkata · press releases of 28 Sep and 3 Oct 2025",
+   "vo": [
+    "Take one city.",
+    "Last year on Maha Panchami, the Kolkata Metro carried more than {m_panchami}, a one-day record then.",
+    "The earlier record was {m_prev}, in twenty twenty-four.",
+    "From Panchami to Dashami, {m_puja} rode, against {m_puja24} a year before."
+   ],
+   "note": "Panchami to Dashami, 2024: {m_puja24}. Metro Railway had issued no 2026 Puja figures when this was made."
+  },
+  {
+   "kind": "card",
+   "chapter": "money",
+   "sub": "Cash, and a bonus",
+   "vo": [
+    "And money."
+   ]
+  },
+  {
+   "kind": "compare",
+   "chapter": "money",
+   "title": "Currency in circulation, growth over a year",
+   "a": {
+    "label": "17 Oct 2025",
+    "var": "cic_oct25",
+    "sub": "mid-October last year"
+   },
+   "b": {
+    "label": "15 Sep 2026",
+    "var": "cic_sep26",
+    "sub": "the latest in the RBI Bulletin"
+   },
+   "caption": "{cic_sep26} on 15 Sep 2026, from {cic_aug26} on 15 Aug. The RBI: the highest print in five years.",
+   "source": "Reserve Bank of India · RBI Bulletin, State of the Economy, September 2026 and November 2025",
+   "vo": [
+    "The RBI reports how fast currency in circulation is growing, year on year.",
+    "On the fifteenth of September, growth was {cic_sep26}.",
+    "The month before, it was {cic_aug26}. The RBI calls the September figure the highest in five years.",
+    "In mid-October last year, growth was {cic_oct25}."
+   ]
+  },
+  {
+   "kind": "quote",
+   "chapter": "money",
+   "text": "The moderation of growth in currency in circulation was primarily due to the waning of festive demand.",
+   "by": "Reserve Bank of India, RBI Bulletin, November 2025",
+   "date": "on November 2025, up to the 14th",
+   "verify": [
+    "@cic",
+    "text",
+    "festive"
+   ],
+   "source": "Reserve Bank of India · RBI Bulletin, November 2025, State of the Economy · rbi.org.in",
+   "vo": [
+    "By mid-November last year, growth had eased to {cic_nov25}.",
+    "The RBI's Bulletin put that down to waning festive demand."
+   ]
+  },
+  {
+   "kind": "tiles",
+   "chapter": "money",
+   "title": "Railway staff bonus, approved 14 Oct 2026",
+   "tiles": [
+    {
+     "var": "plb_cr",
+     "caption": "crore in all: {plb_days} days' wages",
+     "hi": true
+    },
+    {
+     "var": "plb_lakh",
+     "caption": "eligible non-gazetted railway employees"
+    },
+    {
+     "var": "plb_max",
+     "caption": "the most one person can get"
+    }
+   ],
+   "source": "Cabinet · Productivity Linked Bonus for railway employees · PIB, 14 Oct 2026",
+   "vo": [
+    "On the fourteenth of October, the Cabinet approved a bonus for railway staff: {plb_days} days' wages.",
+    "The total is {plb_cr}, for about {plb_lakh} eligible staff.",
+    "The most any one person can get is {plb_max}.",
+    "The release says it is paid each year before the Durga Puja and Dussehra holidays."
+   ],
+   "note": "Cabinet decision of 14 Oct 2026, as released by PIB."
+  },
+  {
+   "kind": "tiles",
+   "chapter": "close",
+   "title": "The numbers in this video",
+   "tiles": [
+    {
+     "var": "onion_pct",
+     "caption": "onion retail price, in a year, to 16 Oct",
+     "hi": true
+    },
+    {
+     "var": "sugar_pct",
+     "caption": "sugar retail price, in a year, to 16 Oct"
+    },
+    {
+     "var": "v_ratio",
+     "caption": "vehicles registered, Oct 2025 against Sep 2025"
+    },
+    {
+     "var": "cic_sep26",
+     "caption": "growth of currency in circulation, 15 Sep 2026"
+    }
+   ],
+   "vo": [
+    "So: onion up {onion_pct} in a year and sugar up {sugar_pct}, by the daily retail figures.",
+    "Last October, more than twice September's vehicle registrations.",
+    "And growth in currency in circulation at a five-year high, the RBI says."
+   ]
+  },
+  {
+   "kind": "end",
+   "chapter": "close",
+   "min": 12,
+   "q": "Which price are you *watching* this Diwali?",
+   "next": "Next: gold before Dhanteras.",
+   "source": "Data Kadai · analysed and animated by Data Kadai, with an AI narrator",
+   "vo": [
+    "Every number came from official pages, including the Statistics Ministry, the RBI, India Post and the Cabinet.",
+    "Two comparisons are our own arithmetic.",
+    "Which price are you watching this festival season? Tell us in the comments.",
+    "Next: gold before Dhanteras."
+   ]
+  }
+ ],
+ "tests": [
+  {
+   "says": "Punjab, Rajasthan and Haryana have the most milk per person",
+   "top": [
+    "Punjab",
+    "Rajasthan",
+    "Haryana"
+   ],
+   "of": {
+    "tbl": [
+     "@milk",
+     "2023-24"
+    ]
+   }
+  },
+  {
+   "says": "Lakshadweep and Arunachal Pradesh have the least",
+   "bottom": [
+    "Lakshadweep",
+    "Arunachal Pradesh"
+   ],
+   "of": {
+    "tbl": [
+     "@milk",
+     "2023-24"
+    ]
+   }
+  },
+  {
+   "says": "October 2025 is more than double September 2025",
+   "value": {
+    "val": "v_ratio"
+   },
+   "min": 2
+  },
+  {
+   "says": "potato is cheaper than a year ago",
+   "value": {
+    "diff": [
+     {
+      "val": "potato_now"
+     },
+     {
+      "val": "potato_1y"
+     }
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "potato is cheaper than two years ago",
+   "value": {
+    "diff": [
+     {
+      "val": "potato_now"
+     },
+     {
+      "val": "potato_2y"
+     }
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "tomato is dearer than a year ago",
+   "value": {
+    "diff": [
+     {
+      "val": "tomato_now"
+     },
+     {
+      "val": "tomato_1y"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "tomato is below two years ago",
+   "value": {
+    "diff": [
+     {
+      "val": "tomato_now"
+     },
+     {
+      "val": "tomato_2y"
+     }
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "onion is back near its price of two years ago (within 5%)",
+   "value": {
+    "ratio": [
+     {
+      "val": "onion_now"
+     },
+     {
+      "val": "onion_2y"
+     }
+    ]
+   },
+   "min": 0.95,
+   "max": 1.05
+  },
+  {
+   "says": "jaggery costs more than sugar but rose less",
+   "value": {
+    "diff": [
+     {
+      "val": "gur_now"
+     },
+     {
+      "val": "sugar_now"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "jaggery rose less than sugar",
+   "value": {
+    "diff": [
+     {
+      "val": "gur_pct"
+     },
+     {
+      "val": "sugar_pct"
+     }
+    ]
+   },
+   "max": -0.01
+  },
+  {
+   "says": "Agartala has the most listed holidays of the RBI offices",
+   "value": {
+    "val": "agartala"
+   },
+   "equals": 6
+  },
+  {
+   "says": "New Delhi has as many as Mumbai",
+   "value": {
+    "diff": [
+     {
+      "val": "delhi"
+     },
+     {
+      "val": "mumbai"
+     }
+    ]
+   },
+   "equals": 0
+  },
+  {
+   "says": "air fares rose the most of the fares",
+   "value": {
+    "diff": [
+     {
+      "val": "air"
+     },
+     {
+      "val": "bus"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "currency growth rose from August to September",
+   "value": {
+    "diff": [
+     {
+      "val": "cic_sep26"
+     },
+     {
+      "val": "cic_aug26"
+     }
+    ]
+   },
+   "min": 0.01
+  },
+  {
+   "says": "the RBI says the highest in five years",
+   "text": [
+    "@cic",
+    "text",
+    "five_years"
+   ],
+   "contains": "highest print in past five years"
+  },
+  {
+   "says": "the bonus is paid before the Durga Puja and Dussehra holidays",
+   "text": [
+    "@plb",
+    "text",
+    "timing"
+   ],
+   "contains": "made each year before the Durga Puja/Dusshera holidays"
+  },
+  {
+   "says": "the Panchami figure is a record",
+   "text": [
+    "@metro",
+    "text",
+    "record"
+   ],
+   "contains": "has set a new record"
+  },
+  {
+   "says": "sugar is up almost a quarter (20 to 25%)",
+   "value": {
+    "val": "sugar_pct"
+   },
+   "min": 20,
+   "max": 25
+  },
+  {
+   "says": "Diwali 2025 was on 20 Oct: the PM's greeting on the day",
+   "text": [
+    "@greet",
+    "text",
+    "diwali 2025"
+   ],
+   "contains": "on the occasion of Diwali"
+  },
+  {
+   "says": "milk-based sweets show 9.4% to one place",
+   "value": {
+    "val": "sweets"
+   },
+   "min": 9.35,
+   "max": 9.4499
+  },
+  {
+   "says": "sweets not milk-based show 9.4% to one place",
+   "value": {
+    "val": "nonmilk"
+   },
+   "min": 9.35,
+   "max": 9.4499
+  },
+  {
+   "says": "Diwali is 19 days after Dussehra (20 Oct to 8 Nov)",
+   "value": 19,
+   "equals": 19
+  },
+  {
+   "says": "onion nearly doubled (90 to 100%)",
+   "value": {
+    "val": "onion_pct"
+   },
+   "min": 90,
+   "max": 100
+  }
+ ],
+ "sources": [
+  {
+   "table": "consumer_affairs/daily_prices_2026_10_16",
+   "text": "Department of Consumer Affairs: daily retail prices, 16 Oct 2026"
+  },
+  {
+   "table": "mospi/cpi2024_allindia_items_2026_09",
+   "text": "MoSPI: CPI (base 2024), September 2026, provisional"
+  },
+  {
+   "table": "nddb/milk_percapita_states",
+   "text": "NDDB: milk per person by state, 2023-24"
+  },
+  {
+   "table": "vahan/monthly_registrations_2026_10",
+   "text": "MoRTH VAHAN dashboard; India Post; Metro Railway Kolkata; PIB"
+  },
+  {
+   "table": "rbi/currency_2026_09",
+   "text": "RBI Bulletin, September 2026 and November 2025"
+  }
+ ],
+ "thumb": {
+  "lines": [
+   "Onion",
+   "*{onion_pct}*"
+  ],
+  "sub": "Up in a year · Diwali on a Sunday · the festival season in numbers"
+ },
+ "x_post": {
+  "lines": [
+   "Milk per person a day:",
+   "*Punjab* {m_pb}, India {milk_india}"
+  ]
+ }
+}

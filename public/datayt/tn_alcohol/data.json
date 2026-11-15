@@ -1,0 +1,524 @@
+{
+ "fps": 30,
+ "total": 46.4,
+ "t": {
+  "title": [
+   0.0,
+   3.2
+  ],
+  "draw": [
+   3.2,
+   6.4
+  ],
+  "b0": [
+   6.4,
+   9.6
+  ],
+  "b1": [
+   9.6,
+   12.8
+  ],
+  "b2": [
+   12.8,
+   16.0
+  ],
+  "b3": [
+   16.0,
+   19.2
+  ],
+  "b4": [
+   19.2,
+   22.4
+  ],
+  "all": [
+   22.4,
+   27.2
+  ],
+  "top": [
+   27.2,
+   32.0
+  ],
+  "bottom": [
+   32.0,
+   36.8
+  ],
+  "gap": [
+   36.8,
+   41.6
+  ],
+  "end": [
+   41.6,
+   46.4
+  ]
+ },
+ "buckets": [
+  {
+   "label": "Up to 20.2%",
+   "hi": 20.2,
+   "color": "#FBF1DC",
+   "count": 9
+  },
+  {
+   "label": "20.2 to 22.7%",
+   "hi": 22.7,
+   "color": "#EBC27A",
+   "count": 7
+  },
+  {
+   "label": "22.7 to 25.9%",
+   "hi": 25.9,
+   "color": "#D08D45",
+   "count": 7
+  },
+  {
+   "label": "25.9 to 28.9%",
+   "hi": 28.9,
+   "color": "#A9493F",
+   "count": 8
+  },
+  {
+   "label": "Above 28.9%",
+   "hi": 99,
+   "color": "#6B1E35",
+   "count": 7
+  }
+ ],
+ "districts": [
+  {
+   "name": "Chennai",
+   "v": 16.0,
+   "label": "16.0%",
+   "bucket": 0,
+   "at": 6.8,
+   "nudge": [
+    70,
+    30
+   ]
+  },
+  {
+   "name": "Kanniyakumari",
+   "v": 16.4,
+   "label": "16.4%",
+   "bucket": 0,
+   "at": 7.0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tirunelveli",
+   "v": 17.1,
+   "label": "17.1%",
+   "bucket": 0,
+   "at": 7.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tuticorin",
+   "v": 18.0,
+   "label": "18.0%",
+   "bucket": 0,
+   "at": 7.4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ranipet",
+   "v": 19.3,
+   "label": "19.3%",
+   "bucket": 0,
+   "at": 7.6,
+   "nudge": [
+    45,
+    -85
+   ]
+  },
+  {
+   "name": "Tiruchirappalli",
+   "v": 19.4,
+   "label": "19.4%",
+   "bucket": 0,
+   "at": 7.8,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tenkasi",
+   "v": 19.8,
+   "label": "19.8%",
+   "bucket": 0,
+   "at": 8.0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Coimbatore",
+   "v": 20.2,
+   "label": "20.2%",
+   "bucket": 0,
+   "at": 8.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Vellore",
+   "v": 20.2,
+   "label": "20.2%",
+   "bucket": 0,
+   "at": 8.4,
+   "nudge": [
+    -30,
+    10
+   ]
+  },
+  {
+   "name": "Thiruvallur",
+   "v": 21.2,
+   "label": "21.2%",
+   "bucket": 1,
+   "at": 10.0,
+   "nudge": [
+    -20,
+    -15
+   ]
+  },
+  {
+   "name": "Salem",
+   "v": 21.4,
+   "label": "21.4%",
+   "bucket": 1,
+   "at": 10.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tirupathur",
+   "v": 21.8,
+   "label": "21.8%",
+   "bucket": 1,
+   "at": 10.4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Krishnagiri",
+   "v": 22.2,
+   "label": "22.2%",
+   "bucket": 1,
+   "at": 10.6,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Madurai",
+   "v": 22.3,
+   "label": "22.3%",
+   "bucket": 1,
+   "at": 10.8,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Theni",
+   "v": 22.7,
+   "label": "22.7%",
+   "bucket": 1,
+   "at": 11.0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Virudhunagar",
+   "v": 22.7,
+   "label": "22.7%",
+   "bucket": 1,
+   "at": 11.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Sivaganga",
+   "v": 22.9,
+   "label": "22.9%",
+   "bucket": 2,
+   "at": 13.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Perambalur",
+   "v": 23.5,
+   "label": "23.5%",
+   "bucket": 2,
+   "at": 13.4,
+   "nudge": [
+    -25,
+    0
+   ]
+  },
+  {
+   "name": "Thanjavur",
+   "v": 23.7,
+   "label": "23.7%",
+   "bucket": 2,
+   "at": 13.6,
+   "nudge": [
+    -25,
+    15
+   ]
+  },
+  {
+   "name": "Dindigul",
+   "v": 23.9,
+   "label": "23.9%",
+   "bucket": 2,
+   "at": 13.8,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Chengalpattu",
+   "v": 24.2,
+   "label": "24.2%",
+   "bucket": 2,
+   "at": 14.0,
+   "nudge": [
+    5,
+    10
+   ]
+  },
+  {
+   "name": "Karur",
+   "v": 24.3,
+   "label": "24.3%",
+   "bucket": 2,
+   "at": 14.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ramanathapuram",
+   "v": 25.9,
+   "label": "25.9%",
+   "bucket": 2,
+   "at": 14.4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Pudukkottai",
+   "v": 26.3,
+   "label": "26.3%",
+   "bucket": 3,
+   "at": 16.4,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Erode",
+   "v": 26.5,
+   "label": "26.5%",
+   "bucket": 3,
+   "at": 16.6,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ariyalur",
+   "v": 26.6,
+   "label": "26.6%",
+   "bucket": 3,
+   "at": 16.8,
+   "nudge": [
+    25,
+    10
+   ]
+  },
+  {
+   "name": "Namakkal",
+   "v": 27.2,
+   "label": "27.2%",
+   "bucket": 3,
+   "at": 17.0,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Tiruppur",
+   "v": 27.3,
+   "label": "27.3%",
+   "bucket": 3,
+   "at": 17.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Kanchipuram",
+   "v": 28.5,
+   "label": "28.5%",
+   "bucket": 3,
+   "at": 17.4,
+   "nudge": [
+    0,
+    -10
+   ]
+  },
+  {
+   "name": "Tiruvannamalai",
+   "v": 28.5,
+   "label": "28.5%",
+   "bucket": 3,
+   "at": 17.6,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Kallakurichi",
+   "v": 28.9,
+   "label": "28.9%",
+   "bucket": 3,
+   "at": 17.8,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Cuddalore",
+   "v": 29.1,
+   "label": "29.1%",
+   "bucket": 4,
+   "at": 19.6,
+   "nudge": [
+    30,
+    0
+   ]
+  },
+  {
+   "name": "Villupuram",
+   "v": 29.1,
+   "label": "29.1%",
+   "bucket": 4,
+   "at": 19.8,
+   "nudge": [
+    35,
+    -5
+   ]
+  },
+  {
+   "name": "Nagapattinam",
+   "v": 29.2,
+   "label": "29.2%",
+   "bucket": 4,
+   "at": 20.0,
+   "nudge": [
+    70,
+    40
+   ]
+  },
+  {
+   "name": "The Nilgiris",
+   "v": 29.4,
+   "label": "29.4%",
+   "bucket": 4,
+   "at": 20.2,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Mayiladuthurai",
+   "v": 30.8,
+   "label": "30.8%",
+   "bucket": 4,
+   "at": 20.4,
+   "nudge": [
+    55,
+    5
+   ]
+  },
+  {
+   "name": "Dharmapuri",
+   "v": 30.9,
+   "label": "30.9%",
+   "bucket": 4,
+   "at": 20.6,
+   "nudge": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Thiruvarur",
+   "v": 32.0,
+   "label": "32%+",
+   "bucket": 4,
+   "at": 20.8,
+   "nudge": [
+    -30,
+    5
+   ]
+  }
+ ],
+ "top": [
+  "Thiruvarur",
+  "Dharmapuri",
+  "Mayiladuthurai",
+  "The Nilgiris",
+  "Nagapattinam"
+ ],
+ "bottom": [
+  "Chennai",
+  "Kanniyakumari",
+  "Tirunelveli",
+  "Tuticorin",
+  "Ranipet"
+ ],
+ "approx": true,
+ "hi": "Thiruvarur",
+ "lo": "Chennai",
+ "ratio": 2.0
+}

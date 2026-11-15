@@ -1,0 +1,599 @@
+{
+ "id": "tn16",
+ "type": "then",
+ "rules": 2,
+ "chip": "{years} YEARS ON",
+ "source_short": "RBI Handbook · end-March 2015, 2025",
+ "palette": "A",
+ "state": "Assam",
+ "table": 154,
+ "from": "2015",
+ "to": "2025",
+ "measure": "value",
+ "unit": "%",
+ "delta": "points",
+ "kicker": "LOANS USED PER ₹100 OF DEPOSITS",
+ "expect": {
+  "years": 10
+ },
+ "source": "Reserve Bank of India, Handbook of Statistics on Indian States 2024-25 (December 2025), Table 154: credit-deposit ratio by place of utilisation, scheduled commercial banks, as at end-March 2015 to 2025 (credit used in the state as a percentage of deposits; a deposit is counted where the bank office is). India: the all-India row. A ratio, not a verdict on lending.",
+ "hook": [
+  "*Assam* lent *₹66* of every",
+  "₹100 deposited, up from",
+  "*₹37* in 2015."
+ ],
+ "hook_vo": "Assam's banks lent sixty-six rupees of every hundred deposited, up from thirty-seven.",
+ "then": {
+  "text": "of Assam's deposits (savings in banks), lent as loans used there; 39.9% in 2014. India: *{india_then}*.",
+  "vo": "In twenty fifteen: thirty-seven, down from forty. India, seventy-seven."
+ },
+ "now": {
+  "text": "of deposits, lent as loans used in the state. India: *{india_now}*.",
+  "vo": "In twenty twenty-five: sixty-six. India, eighty."
+ },
+ "facts": [
+  {
+   "kicker": "ASSAM'S RATIO AGAINST INDIA'S",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "unit": "%",
+   "text": "of India's ratio in 2025, up from 48% in 2015",
+   "bars": [
+    {
+     "name": "2015",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         154,
+         "2015"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         154,
+         "2015"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    },
+    {
+     "name": "2025",
+     "ratio": [
+      {
+       "data": {
+        "rbi": [
+         154,
+         "2025"
+        ]
+       }
+      },
+      {
+       "data": {
+        "rbi": [
+         154,
+         "2025"
+        ]
+       },
+       "state": "India"
+      }
+     ],
+     "scale": 100,
+     "unit": "%"
+    }
+   ],
+   "bar_max": 100,
+   "sub": "Assam's ratio divided by India's, as at end-March.",
+   "vo": "Assam went from under half of India's ratio to eighty-two percent."
+  }
+ ],
+ "says": [
+  {
+   "lines": [
+    "Assam's ratio rose in",
+    "*each of the last five years*:",
+    "44% in 2020, 66% in 2025."
+   ],
+   "note": "Scheduled commercial banks: loans used in the state ÷ deposits counted where the bank office is. A ratio can fall while loans grow. Not a verdict.",
+   "vo": "Assam's ratio rose in each of the last five years, to sixty-six."
+  }
+ ],
+ "map": {
+  "as": "points",
+  "bands": [
+   -10,
+   -3,
+   3,
+   15
+  ],
+  "title": "Loans per ₹100 deposited: *change by state*",
+  "sub": "percentage points · 2015 to 2025 · India +3.0",
+  "note": "Blank: Jammu and Kashmir (boundary changed in 2019), Ladakh (no 2015 figure), Dadra and Nagar Haveli and Daman and Diu. Not a verdict on lending.",
+  "vo": "Here is each state's change over the ten years.",
+  "key": [
+   "fell",
+   "within 3 points",
+   "rose"
+  ]
+ },
+ "end": {
+  "q": "Find *your state*: up or down?",
+  "sub": "Comment below.",
+  "vo": "Find your state: up or down?"
+ },
+ "tests": [
+  {
+   "says": "₹37 in 2015 (hook)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2015"
+     ]
+    }
+   },
+   "equals": 37
+  },
+  {
+   "says": "₹66 in 2025 (hook)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    }
+   },
+   "equals": 66
+  },
+  {
+   "says": "Assam 37.2% in 2015 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2015"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 372
+  },
+  {
+   "says": "Assam 66.0% in 2025 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 660
+  },
+  {
+   "says": "India seventy-seven in 2015",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2015"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 77
+  },
+  {
+   "says": "India eighty in 2025",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 80
+  },
+  {
+   "says": "India 77.1% in 2015 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2015"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 771
+  },
+  {
+   "says": "India 80.1% in 2025 (tenths)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2025"
+     ]
+    },
+    "state": "India",
+    "scale": 10
+   },
+   "equals": 801
+  },
+  {
+   "says": "Assam's rise +28.8 points (tenths)",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 288
+  },
+  {
+   "says": "India's change +3.0 points (tenths), on the map",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      },
+      "state": "India"
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 30
+  },
+  {
+   "says": "Assam is 48% of India's ratio in 2015",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 48
+  },
+  {
+   "says": "under half of India's ratio in 2015",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      },
+      "state": "India"
+     }
+    ]
+   },
+   "min": 0.45,
+   "max": 0.499
+  },
+  {
+   "says": "Assam is 82% of India's ratio in 2025",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      },
+      "state": "India"
+     }
+    ],
+    "scale": 100
+   },
+   "equals": 82
+  },
+  {
+   "says": "44% in 2020, start of the five rises",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2020"
+     ]
+    }
+   },
+   "equals": 44
+  },
+  {
+   "says": "rose in 2021",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2021"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2020"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 20
+  },
+  {
+   "says": "rose in 2022",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2022"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2021"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 20
+  },
+  {
+   "says": "rose in 2023",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2023"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2022"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 20
+  },
+  {
+   "says": "rose in 2024",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2024"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2023"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 20
+  },
+  {
+   "says": "rose in 2025",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2024"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 20
+  },
+  {
+   "says": "loans per ₹100 of deposits up 1.8 times (tenths)",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2025"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     }
+    ],
+    "scale": 10
+   },
+   "equals": 18
+  },
+  {
+   "says": "39.9% a year earlier, in 2014 (printed on the 2015 card; 2015 is below it)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2014"
+     ]
+    },
+    "scale": 10
+   },
+   "equals": 399
+  },
+  {
+   "says": "forty in 2014 (voice: down from forty)",
+   "value": {
+    "data": {
+     "rbi": [
+      154,
+      "2014"
+     ]
+    }
+   },
+   "equals": 40
+  },
+  {
+   "says": "2015 is below 2014",
+   "value": {
+    "diff": [
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2014"
+       ]
+      }
+     },
+     {
+      "data": {
+       "rbi": [
+        154,
+        "2015"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 0.5,
+   "max": 10
+  }
+ ],
+ "yt_title": "Assam: Loans per ₹100 of Deposits, ₹37 to ₹66 in 10 Years"
+}

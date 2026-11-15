@@ -1,0 +1,817 @@
+{
+  "id": "px67",
+  "type": "paradox",
+  "rules": 2,
+  "chip": "DATA PARADOX",
+  "source_short": "MoSPI · PLFS 2025 · NSE · Aug 2026",
+  "palette": "A",
+  "state": "Rajasthan",
+  "source": "Women in the labour force (working, unpaid family work included, or seeking work): women aged 15+, usual status, rural and urban, Periodic Labour Force Survey, MoSPI; 2025 (January to December, new design) and 2023-24 (July to June). Women among investors: share of NSE unique registered investors with a disclosed gender, by state (PIN code), end-March 2024 and 31 Aug 2026, NSE Market Pulse, Sept 2026, Table 76.",
+  "hook": [
+    "*Rajasthan* women: labour",
+    "force rate *above* India's,",
+    "share of NSE investors *below*."
+  ],
+  "hook_vo": "Rajasthan women: labour force rate above India's, share of NSE investors below.",
+  "facts": [
+    {
+      "state": "Rajasthan",
+      "kicker": "WOMEN IN THE LABOUR FORCE",
+      "data": {
+        "plfs": [
+          "LFPR",
+          "2025",
+          "rural + urban",
+          "female"
+        ]
+      },
+      "unit": "%",
+      "compare": [
+        "Maharashtra"
+      ],
+      "bar_max": 100,
+      "text": "of women aged 15+ worked or looked for work, 2025. Maharashtra: 40%. India: 40%.",
+      "sub": "Labour force: working (unpaid family work too) or seeking work. Labour force survey, Jan-Dec 2025.",
+      "vo": "Fifty-two percent of women worked or sought work. Maharashtra, forty."
+    },
+    {
+      "state": "Rajasthan",
+      "kicker": "WOMEN AMONG NSE INVESTORS",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY27TD Female (%)"
+        ]
+      },
+      "unit": "%",
+      "compare": [
+        "Maharashtra"
+      ],
+      "bar_max": 50,
+      "text": "of NSE-registered investors (gender disclosed) were women, 31 Aug 2026. India: 25%.",
+      "sub": "NSE: National Stock Exchange. A state is set by PIN code, not by where investors live.",
+      "vo": "Women were twenty-one percent of Rajasthan's investors. Maharashtra, twenty-nine."
+    },
+    {
+      "state": "Rajasthan",
+      "kicker": "MARCH 2024 · THE SAME ORDER",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY24 Female (%)"
+        ]
+      },
+      "unit": "%",
+      "compare": [
+        "Maharashtra"
+      ],
+      "bar_max": 50,
+      "text": "of Rajasthan's NSE investors were women in March 2024. Maharashtra's share was 1.4 times that.",
+      "sub": "Women in the labour force, 2023-24: Rajasthan 50.9%, Maharashtra 40.1%.",
+      "vo": "In March twenty twenty-four: nineteen percent, against Maharashtra's twenty-six."
+    }
+  ],
+  "so": {
+    "weak_link": {
+      "a": {
+        "plfs": [
+          "LFPR",
+          "2025",
+          "rural + urban",
+          "female"
+        ]
+      },
+      "b": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY27TD Female (%)"
+        ]
+      },
+      "max_abs": 0.3
+    },
+    "lines": [
+      "Across {n} states and UTs,",
+      "women in the labour force and",
+      "women among investors were",
+      "*not closely linked*."
+    ],
+    "vo": "Across states, women's labour force rate and NSE share were not closely linked.",
+    "note": "A labour force rate counts work of any kind, unpaid included. An NSE share counts registered investor accounts. The table shows how much, not why."
+  },
+  "map": {
+    "data": {
+      "tbl": [
+        "markets/nse_investor_gender",
+        "FY27TD Female (%)"
+      ]
+    },
+    "unit": "%",
+    "title": "Women among NSE investors, *every state*",
+    "sub": "% of investors · India {india} · 31 Aug 2026",
+    "note": "State is set by PIN code. Share of investors whose gender is disclosed. Blank: Ladakh, Dadra and Nagar Haveli and Daman and Diu (not listed).",
+    "ring": [
+      "Rajasthan",
+      "Maharashtra"
+    ],
+    "vo": "Here is every state: women among NSE investors."
+  },
+  "end": {
+    "q": "Does a woman in your family *invest*?",
+    "sub": "Comment below.",
+    "vo": "Does a woman in your family invest?"
+  },
+  "yt_title": "Rajasthan Women: 52% in Labour Force, 21% of NSE Investors",
+  "checks": [
+    {
+      "kind": "round",
+      "state": "Rajasthan",
+      "data": {
+        "plfs": [
+          "LFPR",
+          "2025",
+          "rural + urban",
+          "female"
+        ]
+      },
+      "equals": 52
+    },
+    {
+      "kind": "round",
+      "state": "Maharashtra",
+      "data": {
+        "plfs": [
+          "LFPR",
+          "2025",
+          "rural + urban",
+          "female"
+        ]
+      },
+      "equals": 40
+    },
+    {
+      "kind": "round",
+      "state": "India",
+      "data": {
+        "plfs": [
+          "LFPR",
+          "2025",
+          "rural + urban",
+          "female"
+        ]
+      },
+      "equals": 40
+    },
+    {
+      "kind": "round",
+      "state": "Rajasthan",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY27TD Female (%)"
+        ]
+      },
+      "equals": 21
+    },
+    {
+      "kind": "round",
+      "state": "Maharashtra",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY27TD Female (%)"
+        ]
+      },
+      "equals": 29
+    },
+    {
+      "kind": "round",
+      "state": "India",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY27TD Female (%)"
+        ]
+      },
+      "equals": 25
+    },
+    {
+      "kind": "round",
+      "state": "Rajasthan",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY24 Female (%)"
+        ]
+      },
+      "equals": 19
+    },
+    {
+      "kind": "round",
+      "state": "Maharashtra",
+      "data": {
+        "tbl": [
+          "markets/nse_investor_gender",
+          "FY24 Female (%)"
+        ]
+      },
+      "equals": 26
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "state": "Rajasthan",
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2025",
+            "rural + urban",
+            "female"
+          ]
+        }
+      },
+      "den": {
+        "state": "Maharashtra",
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2025",
+            "rural + urban",
+            "female"
+          ]
+        }
+      },
+      "min": 1.3
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "state": "Maharashtra",
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY27TD Female (%)"
+          ]
+        }
+      },
+      "den": {
+        "state": "Rajasthan",
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY27TD Female (%)"
+          ]
+        }
+      },
+      "min": 1.37
+    },
+    {
+      "kind": "ratio",
+      "num": {
+        "state": "Maharashtra",
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY24 Female (%)"
+          ]
+        }
+      },
+      "den": {
+        "state": "Rajasthan",
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY24 Female (%)"
+          ]
+        }
+      },
+      "min": 1.35
+    }
+  ],
+  "tests": [
+    {
+      "says": "Rajasthan 52.3% in 2025 (tenths)",
+      "value": {
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2025",
+            "rural + urban",
+            "female"
+          ]
+        },
+        "state": "Rajasthan",
+        "scale": 10
+      },
+      "equals": 523
+    },
+    {
+      "says": "Maharashtra 39.9% in 2025",
+      "value": {
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2025",
+            "rural + urban",
+            "female"
+          ]
+        },
+        "state": "Maharashtra",
+        "scale": 10
+      },
+      "equals": 399
+    },
+    {
+      "says": "India 40.0% in 2025",
+      "value": {
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2025",
+            "rural + urban",
+            "female"
+          ]
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 400
+    },
+    {
+      "says": "Rajasthan 21.1% NSE share",
+      "value": {
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY27TD Female (%)"
+          ]
+        },
+        "state": "Rajasthan",
+        "scale": 10
+      },
+      "equals": 211
+    },
+    {
+      "says": "Maharashtra 29.0% NSE share",
+      "value": {
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY27TD Female (%)"
+          ]
+        },
+        "state": "Maharashtra",
+        "scale": 10
+      },
+      "equals": 290
+    },
+    {
+      "says": "India 25.1% NSE share",
+      "value": {
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY27TD Female (%)"
+          ]
+        },
+        "state": "India",
+        "scale": 10
+      },
+      "equals": 251
+    },
+    {
+      "says": "Rajasthan 50.9% in 2023-24 (card sub)",
+      "value": {
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2023-24",
+            "rural + urban",
+            "female"
+          ]
+        },
+        "state": "Rajasthan",
+        "scale": 10
+      },
+      "equals": 509
+    },
+    {
+      "says": "Maharashtra 40.1% in 2023-24 (card sub)",
+      "value": {
+        "data": {
+          "plfs": [
+            "LFPR",
+            "2023-24",
+            "rural + urban",
+            "female"
+          ]
+        },
+        "state": "Maharashtra",
+        "scale": 10
+      },
+      "equals": 401
+    },
+    {
+      "says": "Rajasthan 18.9% in March 2024 (tenths)",
+      "value": {
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY24 Female (%)"
+          ]
+        },
+        "state": "Rajasthan",
+        "scale": 10
+      },
+      "equals": 189
+    },
+    {
+      "says": "Maharashtra 26.4% in March 2024 (tenths)",
+      "value": {
+        "data": {
+          "tbl": [
+            "markets/nse_investor_gender",
+            "FY24 Female (%)"
+          ]
+        },
+        "state": "Maharashtra",
+        "scale": 10
+      },
+      "equals": 264
+    },
+    {
+      "says": "1.4 times: Maharashtra over Rajasthan, March 2024",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY24 Female (%)"
+              ]
+            },
+            "state": "Maharashtra"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY24 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          }
+        ]
+      },
+      "min": 1.35,
+      "max": 1.45
+    },
+    {
+      "says": "labour force rate above India's by more than a point, 2025",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2025",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2025",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 10,
+      "max": 14
+    },
+    {
+      "says": "labour force rate above India's, 2024",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2024",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2024",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 10,
+      "max": 14
+    },
+    {
+      "says": "labour force rate above India's, 2023-24",
+      "value": {
+        "diff": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2023-24",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2023-24",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 5,
+      "max": 14
+    },
+    {
+      "says": "NSE share below India's (Rajasthan over India), Aug 2026",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY27TD Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY27TD Female (%)"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 0.78,
+      "max": 0.9
+    },
+    {
+      "says": "NSE share below India's, March 2026",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY26 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY26 Female (%)"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 0.78,
+      "max": 0.9
+    },
+    {
+      "says": "NSE share below India's, March 2025",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY25 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY25 Female (%)"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 0.78,
+      "max": 0.9
+    },
+    {
+      "says": "NSE share below India's, March 2024",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY24 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY24 Female (%)"
+              ]
+            },
+            "state": "India"
+          }
+        ]
+      },
+      "min": 0.78,
+      "max": 0.9
+    },
+    {
+      "says": "Maharashtra gap holds: 2025 labour force, Rajasthan over Maharashtra",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2025",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2025",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Maharashtra"
+          }
+        ]
+      },
+      "min": 1.25,
+      "max": 1.4
+    },
+    {
+      "says": "Maharashtra gap holds: 2024 labour force",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2024",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2024",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Maharashtra"
+          }
+        ]
+      },
+      "min": 1.25,
+      "max": 1.4
+    },
+    {
+      "says": "Maharashtra gap holds: 2023-24 labour force",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2023-24",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Rajasthan"
+          },
+          {
+            "data": {
+              "plfs": [
+                "LFPR",
+                "2023-24",
+                "rural + urban",
+                "female"
+              ]
+            },
+            "state": "Maharashtra"
+          }
+        ]
+      },
+      "min": 1.25,
+      "max": 1.4
+    },
+    {
+      "says": "Maharashtra gap holds: March 2025 NSE share",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY25 Female (%)"
+              ]
+            },
+            "state": "Maharashtra"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY25 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          }
+        ]
+      },
+      "min": 1.3,
+      "max": 1.5
+    },
+    {
+      "says": "Maharashtra gap holds: March 2026 NSE share",
+      "value": {
+        "ratio": [
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY26 Female (%)"
+              ]
+            },
+            "state": "Maharashtra"
+          },
+          {
+            "data": {
+              "tbl": [
+                "markets/nse_investor_gender",
+                "FY26 Female (%)"
+              ]
+            },
+            "state": "Rajasthan"
+          }
+        ]
+      },
+      "min": 1.3,
+      "max": 1.5
+    }
+  ]
+}

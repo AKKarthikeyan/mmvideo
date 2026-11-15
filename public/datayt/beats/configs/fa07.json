@@ -1,0 +1,691 @@
+{
+ "id": "fa07",
+ "type": "fact",
+ "rules": 2,
+ "chip": "ONE STATE, ONE FACT",
+ "source_short": "DASD via Commerce Ministry · 2023-24",
+ "palette": "E",
+ "state": "Madhya Pradesh",
+ "source": "Directorate of Arecanut and Spices Development, as given by the Ministry of Commerce and Industry in its reply to Lok Sabha Unstarred Question No. 1570 of 29 July 2025, Annexure-I: production of spices by state, '000 tonnes. The 2023-24 and 2022-23 columns are used; 2024-25 is an advance estimate there and is not used. 31 states and UTs; the list includes garlic and ginger. State totals, not per-person figures.",
+ "hook": [
+  "*Madhya Pradesh*: *3.7*",
+  "million tonnes of spices,",
+  "next state *1.4*, 2023-24."
+ ],
+ "hook_vo": "Madhya Pradesh produced three point seven million tonnes of spices.",
+ "facts": [
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "SPICE PRODUCTION · 2023-24",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Gujarat"
+   ],
+   "bar_max": 40,
+   "text": "of India's spices: 3,725 of 12,484 thousand tonnes. The highest of {n} states and UTs.",
+   "sub": "By weight, per the Directorate of Arecanut and Spices Development; its list includes garlic and ginger. State totals, not per person.",
+   "vo": "Twenty-nine point eight percent of India's spices, highest of thirty-one states and territories."
+  },
+  {
+   "state": "Gujarat",
+   "kicker": "THE NEXT TWO STATES · 2023-24",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "as": "share",
+   "unit": "%",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 40,
+   "text": "is Gujarat's share, 1,440 thousand tonnes. Andhra Pradesh was close behind, with 1,321.",
+   "sub": "Spice production, 2023-24, thousand tonnes.",
+   "vo": "Gujarat and Andhra Pradesh came next: one point four, one point three million."
+  },
+  {
+   "state": "Madhya Pradesh",
+   "kicker": "THE YEAR BEFORE · 2022-23",
+   "data": {
+    "ls": [
+     "ls18-s5-U1570#1",
+     2
+    ]
+   },
+   "as": "share",
+   "unit": "%",
+   "claim": "highest",
+   "compare": [
+    "Andhra Pradesh"
+   ],
+   "bar_max": 40,
+   "text": "of India's spices: 3,573 of 11,830 thousand tonnes. Andhra Pradesh was next, 1,579.",
+   "sub": "Same Ministry table, the year before. State totals, not per person.",
+   "vo": "Twenty twenty-two twenty-three: thirty point two percent, again the highest."
+  }
+ ],
+ "checks": [
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "equals": 3725
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "equals": 12484
+  },
+  {
+   "kind": "round",
+   "state": "Gujarat",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "equals": 1440
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "equals": 1321
+  },
+  {
+   "kind": "round",
+   "state": "Rajasthan",
+   "data": {
+    "values": {
+     "Andhra Pradesh": 1321.403,
+     "Arunachal Pradesh": 63.732,
+     "Assam": 392.403,
+     "Bihar": 17.341,
+     "Chhattisgarh": 13.285,
+     "Goa": 0.366,
+     "Gujarat": 1439.974,
+     "Haryana": 34.925,
+     "Himachal Pradesh": 29.187,
+     "Jammu and Kashmir": 1.227,
+     "Jharkhand": 94.442,
+     "Karnataka": 704.698,
+     "Kerala": 153.054,
+     "Madhya Pradesh": 3724.702,
+     "Maharashtra": 531.765,
+     "Manipur": 90.764,
+     "Meghalaya": 78.907,
+     "Mizoram": 101.207,
+     "Nagaland": 49.734,
+     "Odisha": 478.335,
+     "Punjab": 139.732,
+     "Rajasthan": 1000.495,
+     "Sikkim": 102.975,
+     "Tamil Nadu": 272.848,
+     "Telangana": 930.754,
+     "Tripura": 30.99,
+     "Uttar Pradesh": 337.939,
+     "Uttarakhand": 69.572,
+     "West Bengal": 275.695,
+     "Puducherry": 0.252,
+     "Andaman and Nicobar Islands": 1.084
+    },
+    "india": 12483.787
+   },
+   "equals": 1000
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "values": {
+      "Andhra Pradesh": 1321.403,
+      "Arunachal Pradesh": 63.732,
+      "Assam": 392.403,
+      "Bihar": 17.341,
+      "Chhattisgarh": 13.285,
+      "Goa": 0.366,
+      "Gujarat": 1439.974,
+      "Haryana": 34.925,
+      "Himachal Pradesh": 29.187,
+      "Jammu and Kashmir": 1.227,
+      "Jharkhand": 94.442,
+      "Karnataka": 704.698,
+      "Kerala": 153.054,
+      "Madhya Pradesh": 3724.702,
+      "Maharashtra": 531.765,
+      "Manipur": 90.764,
+      "Meghalaya": 78.907,
+      "Mizoram": 101.207,
+      "Nagaland": 49.734,
+      "Odisha": 478.335,
+      "Punjab": 139.732,
+      "Rajasthan": 1000.495,
+      "Sikkim": 102.975,
+      "Tamil Nadu": 272.848,
+      "Telangana": 930.754,
+      "Tripura": 30.99,
+      "Uttar Pradesh": 337.939,
+      "Uttarakhand": 69.572,
+      "West Bengal": 275.695,
+      "Puducherry": 0.252,
+      "Andaman and Nicobar Islands": 1.084
+     },
+     "india": 12483.787
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "values": {
+      "Andhra Pradesh": 1321.403,
+      "Arunachal Pradesh": 63.732,
+      "Assam": 392.403,
+      "Bihar": 17.341,
+      "Chhattisgarh": 13.285,
+      "Goa": 0.366,
+      "Gujarat": 1439.974,
+      "Haryana": 34.925,
+      "Himachal Pradesh": 29.187,
+      "Jammu and Kashmir": 1.227,
+      "Jharkhand": 94.442,
+      "Karnataka": 704.698,
+      "Kerala": 153.054,
+      "Madhya Pradesh": 3724.702,
+      "Maharashtra": 531.765,
+      "Manipur": 90.764,
+      "Meghalaya": 78.907,
+      "Mizoram": 101.207,
+      "Nagaland": 49.734,
+      "Odisha": 478.335,
+      "Punjab": 139.732,
+      "Rajasthan": 1000.495,
+      "Sikkim": 102.975,
+      "Tamil Nadu": 272.848,
+      "Telangana": 930.754,
+      "Tripura": 30.99,
+      "Uttar Pradesh": 337.939,
+      "Uttarakhand": 69.572,
+      "West Bengal": 275.695,
+      "Puducherry": 0.252,
+      "Andaman and Nicobar Islands": 1.084
+     },
+     "india": 12483.787
+    }
+   },
+   "min": 2.5
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      0
+     ]
+    }
+   },
+   "den": {
+    "state": "Rajasthan",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      0
+     ]
+    }
+   },
+   "min": 2.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      1
+     ]
+    }
+   },
+   "den": {
+    "state": "Rajasthan",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      1
+     ]
+    }
+   },
+   "min": 2.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      2
+     ]
+    }
+   },
+   "den": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      2
+     ]
+    }
+   },
+   "min": 2.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Madhya Pradesh",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      3
+     ]
+    }
+   },
+   "den": {
+    "state": "Gujarat",
+    "data": {
+     "ls": [
+      "ls18-s5-U1570#1",
+      3
+     ]
+    }
+   },
+   "min": 2.0
+  },
+  {
+   "kind": "ratio",
+   "num": {
+    "state": "Andhra Pradesh",
+    "data": {
+     "values": {
+      "Andhra Pradesh": 1321.403,
+      "Arunachal Pradesh": 63.732,
+      "Assam": 392.403,
+      "Bihar": 17.341,
+      "Chhattisgarh": 13.285,
+      "Goa": 0.366,
+      "Gujarat": 1439.974,
+      "Haryana": 34.925,
+      "Himachal Pradesh": 29.187,
+      "Jammu and Kashmir": 1.227,
+      "Jharkhand": 94.442,
+      "Karnataka": 704.698,
+      "Kerala": 153.054,
+      "Madhya Pradesh": 3724.702,
+      "Maharashtra": 531.765,
+      "Manipur": 90.764,
+      "Meghalaya": 78.907,
+      "Mizoram": 101.207,
+      "Nagaland": 49.734,
+      "Odisha": 478.335,
+      "Punjab": 139.732,
+      "Rajasthan": 1000.495,
+      "Sikkim": 102.975,
+      "Tamil Nadu": 272.848,
+      "Telangana": 930.754,
+      "Tripura": 30.99,
+      "Uttar Pradesh": 337.939,
+      "Uttarakhand": 69.572,
+      "West Bengal": 275.695,
+      "Puducherry": 0.252,
+      "Andaman and Nicobar Islands": 1.084
+     },
+     "india": 12483.787
+    }
+   },
+   "den": {
+    "state": "Rajasthan",
+    "data": {
+     "values": {
+      "Andhra Pradesh": 1321.403,
+      "Arunachal Pradesh": 63.732,
+      "Assam": 392.403,
+      "Bihar": 17.341,
+      "Chhattisgarh": 13.285,
+      "Goa": 0.366,
+      "Gujarat": 1439.974,
+      "Haryana": 34.925,
+      "Himachal Pradesh": 29.187,
+      "Jammu and Kashmir": 1.227,
+      "Jharkhand": 94.442,
+      "Karnataka": 704.698,
+      "Kerala": 153.054,
+      "Madhya Pradesh": 3724.702,
+      "Maharashtra": 531.765,
+      "Manipur": 90.764,
+      "Meghalaya": 78.907,
+      "Mizoram": 101.207,
+      "Nagaland": 49.734,
+      "Odisha": 478.335,
+      "Punjab": 139.732,
+      "Rajasthan": 1000.495,
+      "Sikkim": 102.975,
+      "Tamil Nadu": 272.848,
+      "Telangana": 930.754,
+      "Tripura": 30.99,
+      "Uttar Pradesh": 337.939,
+      "Uttarakhand": 69.572,
+      "West Bengal": 275.695,
+      "Puducherry": 0.252,
+      "Andaman and Nicobar Islands": 1.084
+     },
+     "india": 12483.787
+    }
+   },
+   "min": 1.3
+  },
+  {
+   "kind": "round",
+   "state": "Madhya Pradesh",
+   "data": {
+    "ls": [
+     "ls18-s5-U1570#1",
+     2
+    ]
+   },
+   "equals": 3573
+  },
+  {
+   "kind": "round",
+   "state": "India",
+   "data": {
+    "ls": [
+     "ls18-s5-U1570#1",
+     2
+    ]
+   },
+   "equals": 11830
+  },
+  {
+   "kind": "round",
+   "state": "Andhra Pradesh",
+   "data": {
+    "ls": [
+     "ls18-s5-U1570#1",
+     2
+    ]
+   },
+   "equals": 1579
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Madhya Pradesh* led in each",
+   "year from 2020-21 to 2023-24,",
+   "at least *twice* the next state."
+  ],
+  "vo": "In all four years, Madhya Pradesh was at least twice the next state."
+ },
+ "map": {
+  "data": {
+   "values": {
+    "Andhra Pradesh": 1321.403,
+    "Arunachal Pradesh": 63.732,
+    "Assam": 392.403,
+    "Bihar": 17.341,
+    "Chhattisgarh": 13.285,
+    "Goa": 0.366,
+    "Gujarat": 1439.974,
+    "Haryana": 34.925,
+    "Himachal Pradesh": 29.187,
+    "Jammu and Kashmir": 1.227,
+    "Jharkhand": 94.442,
+    "Karnataka": 704.698,
+    "Kerala": 153.054,
+    "Madhya Pradesh": 3724.702,
+    "Maharashtra": 531.765,
+    "Manipur": 90.764,
+    "Meghalaya": 78.907,
+    "Mizoram": 101.207,
+    "Nagaland": 49.734,
+    "Odisha": 478.335,
+    "Punjab": 139.732,
+    "Rajasthan": 1000.495,
+    "Sikkim": 102.975,
+    "Tamil Nadu": 272.848,
+    "Telangana": 930.754,
+    "Tripura": 30.99,
+    "Uttar Pradesh": 337.939,
+    "Uttarakhand": 69.572,
+    "West Bengal": 275.695,
+    "Puducherry": 0.252,
+    "Andaman and Nicobar Islands": 1.084
+   },
+   "india": 12483.787
+  },
+  "as": "share",
+  "unit": "%",
+  "title": "Share of India's spices, *every state*",
+  "sub": "% of India's spice production · 2023-24",
+  "note": "State totals, not per person. Blank: Delhi, Chandigarh, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu (no row).",
+  "ring": [
+   "Madhya Pradesh",
+   "Gujarat"
+  ],
+  "vo": "Spice production across India, as each state's share."
+ },
+ "end": {
+  "q": "Which *spice* can't you cook without?",
+  "sub": "Name it below.",
+  "vo": "Which spice can't you cook without? Name it below."
+ },
+ "yt_title": "Madhya Pradesh: 3.7 Million Tonnes of Spices, Next State 1.4"
+}

@@ -1,0 +1,328 @@
+{
+ "id": "b1sh08",
+ "type": "share",
+ "chip": "SHARE OF INDIA",
+ "source_short": "RBI · end-March 2025",
+ "palette": "C",
+ "state": "Uttar Pradesh",
+ "data": {
+  "rbi": [
+   163,
+   "2025"
+  ]
+ },
+ "parts": [
+  "Uttar Pradesh",
+  "Bihar",
+  "Karnataka"
+ ],
+ "source": "Reserve Bank of India, Basic Statistical Returns of Scheduled Commercial Banks in India, as published in the RBI Handbook of Statistics on Indian States: number of branches of regional rural banks (Table 163) and offices of all scheduled commercial banks (Table 152), as at end-March 2025. Each share is of the all-India figure in the same table.",
+ "hook": [
+  "*One state* has",
+  "one in *five* of India's",
+  "regional rural bank branches."
+ ],
+ "hook_vo": "One state has one in five of India's regional rural bank branches.",
+ "grid_caption": "100 squares = India's regional rural bank branches",
+ "reveal": {
+  "sub": "has {share} of the branches: 4,373 of 22,481 in March 2025",
+  "vo": "Uttar Pradesh. Over four thousand branches in March twenty twenty-five."
+ },
+ "split": {
+  "kicker": "% OF BRANCHES · MARCH 2025",
+  "vo": "Bihar nine in a hundred, Karnataka eight, all other states sixty-three.",
+  "rest_rounds": 63
+ },
+ "facts": [
+  {
+   "kicker": "BRANCH SHARE VS ALL-BANK OFFICE SHARE",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "its share of all bank offices",
+   "bars": [
+    {
+     "name": "Regional rural",
+     "share": {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "All banks",
+     "share": {
+      "rbi": [
+       152,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    }
+   ],
+   "bar_max": 25,
+   "sub": "Branches and offices, end-March 2025.",
+   "vo": "That is one point seven times its share of all bank offices."
+  },
+  {
+   "kicker": "UP VS THE NEXT STATE",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      },
+      "state": "Bihar"
+     }
+    ]
+   },
+   "unit": "×",
+   "text": "Bihar's share of regional rural bank branches",
+   "bars": [
+    {
+     "name": "Uttar Pradesh",
+     "share": {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     "unit": "%"
+    },
+    {
+     "name": "Bihar",
+     "share": {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     "state": "Bihar",
+     "unit": "%"
+    },
+    {
+     "name": "Karnataka",
+     "share": {
+      "rbi": [
+       163,
+       "2025"
+      ]
+     },
+     "state": "Karnataka",
+     "unit": "%"
+    }
+   ],
+   "bar_max": 25,
+   "sub": "Branches: 4,373, 2,118 and 1,755.",
+   "vo": "That is about twice Bihar's share, the next largest."
+  }
+ ],
+ "tests": [
+  {
+   "says": "one in five of India's regional rural bank branches",
+   "value": {
+    "share": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    }
+   },
+   "min": 19,
+   "max": 21
+  },
+  {
+   "says": "4,373 branches",
+   "value": {
+    "data": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    }
+   },
+   "equals": 4373
+  },
+  {
+   "says": "India 22,481 branches",
+   "value": {
+    "data": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    },
+    "state": "India"
+   },
+   "equals": 22481
+  },
+  {
+   "says": "over four thousand branches",
+   "value": {
+    "data": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    }
+   },
+   "min": 4000,
+   "max": 4499
+  },
+  {
+   "says": "Bihar nine in a hundred",
+   "value": {
+    "share": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    },
+    "state": "Bihar"
+   },
+   "equals": 9
+  },
+  {
+   "says": "Karnataka eight",
+   "value": {
+    "share": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 8
+  },
+  {
+   "says": "one point seven times its share of all bank offices",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        152,
+        "2025"
+       ]
+      }
+     }
+    ]
+   },
+   "min": 1.6,
+   "max": 1.75
+  },
+  {
+   "says": "about twice Bihar's share",
+   "value": {
+    "ratio": [
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      }
+     },
+     {
+      "share": {
+       "rbi": [
+        163,
+        "2025"
+       ]
+      },
+      "state": "Bihar"
+     }
+    ]
+   },
+   "min": 1.95,
+   "max": 2.2
+  },
+  {
+   "says": "Bihar 2,118 branches",
+   "value": {
+    "data": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    },
+    "state": "Bihar"
+   },
+   "equals": 2118
+  },
+  {
+   "says": "Karnataka 1,755 branches",
+   "value": {
+    "data": {
+     "rbi": [
+      163,
+      "2025"
+     ]
+    },
+    "state": "Karnataka"
+   },
+   "equals": 1755
+  }
+ ],
+ "map": {
+  "bands": [
+   1,
+   5,
+   8,
+   15
+  ],
+  "title": "Share of regional rural bank branches, *every state*",
+  "sub": "% of India's branches · end-March 2025",
+  "note": "State totals, not per person. Blank: nil or not applicable.",
+  "ring": [
+   "Uttar Pradesh"
+  ],
+  "vo": "Here is every state's share. These are state totals, not per person."
+ },
+ "end": {
+  "q": "How many rural bank branches are in *your state*?",
+  "sub": "Comment below.",
+  "vo": "How many rural bank branches are in your state?"
+ },
+ "yt_title": "Uttar Pradesh Has 1 in 5 Regional Rural Bank Branches"
+}

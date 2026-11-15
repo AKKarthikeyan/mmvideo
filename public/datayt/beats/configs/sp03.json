@@ -1,0 +1,410 @@
+{
+ "id": "sp03",
+ "type": "versus",
+ "rules": 2,
+ "theme": "farm",
+ "chip": "STATE vs STATE",
+ "source_short": "Agriculture Ministry via RBI · 2024-25",
+ "palette": "C",
+ "a": "Rajasthan",
+ "b": "Madhya Pradesh",
+ "source": "Ministry of Agriculture and Farmers' Welfare, via RBI Handbook of Statistics on Indian States. Wheat, pulses and oilseed yield, 2024-25 final estimates (Tables 81, 83, 85); oilseeds are the total of nine oilseeds, so crop mix differs by state. Fruit and vegetables, 2024-25 third advance estimates: production over area (Tables 74, 72, 75, 73). Yield is output per hectare, not a state total.",
+ "hook": [
+  "*Rajasthan*",
+  "vs *Madhya Pradesh.*",
+  "5 farm rounds."
+ ],
+ "hook_vo": "Rajasthan versus Madhya Pradesh. Five farm rounds.",
+ "categories": [
+  {
+   "label": "Fruit yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       74,
+       "2024-25*"
+      ]
+     },
+     {
+      "rbi": [
+       72,
+       "2024-25*"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        74,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        72,
+        "2023-24"
+       ]
+      }
+     ]
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        74,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        72,
+        "2022-23"
+       ]
+      }
+     ]
+    }
+   ],
+   "vo": "Fruit yield: Madhya Pradesh by sixty-five percent."
+  },
+  {
+   "label": "Wheat yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     81,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      81,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      81,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Wheat yield: Rajasthan by an eighth."
+  },
+  {
+   "label": "Pulses yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     83,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      83,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      83,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Pulses yield: Madhya Pradesh by sixty-two percent."
+  },
+  {
+   "label": "Oilseed yield",
+   "note": "kg per hectare · 2024-25 · higher is better",
+   "unit": "",
+   "data": {
+    "rbi": [
+     85,
+     "2024-25"
+    ]
+   },
+   "also": [
+    {
+     "rbi": [
+      85,
+      "2023-24"
+     ]
+    },
+    {
+     "rbi": [
+      85,
+      "2022-23"
+     ]
+    }
+   ],
+   "vo": "Oilseed yield: Rajasthan by forty-two percent."
+  },
+  {
+   "label": "Vegetable yield",
+   "note": "tonnes per hectare · 2024-25 est. · higher is better",
+   "unit": "",
+   "data": {
+    "ratio": [
+     {
+      "rbi": [
+       75,
+       "2024-25*"
+      ]
+     },
+     {
+      "rbi": [
+       73,
+       "2024-25*"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "ratio": [
+      {
+       "rbi": [
+        75,
+        "2023-24"
+       ]
+      },
+      {
+       "rbi": [
+        73,
+        "2023-24"
+       ]
+      }
+     ]
+    },
+    {
+     "ratio": [
+      {
+       "rbi": [
+        75,
+        "2022-23"
+       ]
+      },
+      {
+       "rbi": [
+        73,
+        "2022-23"
+       ]
+      }
+     ]
+    }
+   ],
+   "vo": "Vegetable yield: Madhya Pradesh by forty-five percent. Three to two."
+  }
+ ],
+ "tests": [
+  {
+   "says": "fruit yield: Madhya Pradesh sixty-five percent above Rajasthan",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          74,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          72,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          74,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          72,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.645,
+   "max": 1.66
+  },
+  {
+   "says": "wheat yield: Rajasthan an eighth above Madhya Pradesh",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        81,
+        "2024-25"
+       ]
+      },
+      "state": "Rajasthan"
+     },
+     {
+      "data": {
+       "rbi": [
+        81,
+        "2024-25"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.115,
+   "max": 1.135
+  },
+  {
+   "says": "pulses yield: Madhya Pradesh sixty-two percent above Rajasthan",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2024-25"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "rbi": [
+        83,
+        "2024-25"
+       ]
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.615,
+   "max": 1.63
+  },
+  {
+   "says": "oilseed yield: Rajasthan forty-two percent above Madhya Pradesh",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "rbi": [
+        85,
+        "2024-25"
+       ]
+      },
+      "state": "Rajasthan"
+     },
+     {
+      "data": {
+       "rbi": [
+        85,
+        "2024-25"
+       ]
+      },
+      "state": "Madhya Pradesh"
+     }
+    ]
+   },
+   "min": 1.41,
+   "max": 1.435
+  },
+  {
+   "says": "vegetable yield: Madhya Pradesh forty-five percent above Rajasthan",
+   "value": {
+    "ratio": [
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          75,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          73,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Madhya Pradesh"
+     },
+     {
+      "data": {
+       "ratio": [
+        {
+         "rbi": [
+          75,
+          "2024-25*"
+         ]
+        },
+        {
+         "rbi": [
+          73,
+          "2024-25*"
+         ]
+        }
+       ]
+      },
+      "state": "Rajasthan"
+     }
+    ]
+   },
+   "min": 1.445,
+   "max": 1.465
+  }
+ ],
+ "map": {
+  "data": {
+   "rbi": [
+    83,
+    "2024-25"
+   ]
+  },
+  "unit": "",
+  "title": "Pulses yield, *every state*",
+  "sub": "Madhya Pradesh 3 · Rajasthan 2 · India {india}",
+  "note": "Kilograms per hectare, 2024-25 final estimates. Both states outlined. Blank: states with no figure. The table shows how much, not why.",
+  "ring": [
+   "Madhya Pradesh",
+   "Rajasthan"
+  ],
+  "vo": "Yield is output per hectare, so a bigger state has no edge."
+ },
+ "score": false,
+ "end": {
+  "q": "Which two states next?",
+  "sub": "Comment below."
+ },
+ "yt_title": "Rajasthan vs Madhya Pradesh: 5 Farm Rounds 🚜"
+}

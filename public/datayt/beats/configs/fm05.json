@@ -1,0 +1,276 @@
+{
+ "type": "money",
+ "rules": 2,
+ "id": "fm05",
+ "palette": "A",
+ "chip": "GIFTS AND TAX",
+ "source_short": "Income Tax Department · Income-tax Act, 2025",
+ "hook": [
+  "*Money* gifts from friends:",
+  "above *₹50,000* a year,",
+  "*all* of it taxable"
+ ],
+ "hook_vo": "Friends' money gifts above fifty thousand rupees a year: all of it taxable.",
+ "cards": [
+  {
+   "kicker": "MONEY GIFTS, NON-RELATIVES",
+   "name": "Limit",
+   "item": [
+    "incometax/gift_rules_2026",
+    "limit",
+    "value"
+   ],
+   "dec": 0,
+   "prefix": "₹",
+   "indian": true,
+   "unit": "",
+   "text": "in a tax year, in total. Above it, the whole sum is taxable.",
+   "sub": "New Income-tax Act, 2025. Year 2026-27. A gifted TV is not counted.",
+   "vo": "The limit counts a whole tax year's money gifts from non-relatives."
+  },
+  {
+   "kicker": "THE DEPARTMENT'S OWN EXAMPLE",
+   "name": "Example",
+   "item": [
+    "incometax/gift_rules_2026",
+    "ex_total",
+    "value"
+   ],
+   "dec": 0,
+   "prefix": "₹",
+   "indian": true,
+   "unit": "",
+   "text": "two gifts, all of it taxable",
+   "bars": [
+    {
+     "name": "Gift one",
+     "item": [
+      "incometax/gift_rules_2026",
+      "ex_a",
+      "value"
+     ]
+    },
+    {
+     "name": "Gift two",
+     "item": [
+      "incometax/gift_rules_2026",
+      "ex_b",
+      "value"
+     ]
+    }
+   ],
+   "vo": "Two gifts of twenty-five and twenty-eight thousand: all fifty-three thousand is taxable."
+  },
+  {
+   "kicker": "FROM YOUR EMPLOYER",
+   "name": "Employer",
+   "item": [
+    "incometax/gift_rules_2026",
+    "employer",
+    "value"
+   ],
+   "dec": 0,
+   "prefix": "₹",
+   "indian": true,
+   "unit": "",
+   "text": "a tax year in gifts or vouchers: below it, valued at nil",
+   "sub": "Income-tax Rules, 2026. An older page shows ₹5,000 for gifts in kind.",
+   "vo": "Employer gifts under fifteen thousand rupees a year count as nil value."
+  },
+  {
+   "kicker": "CASH, FROM ONE PERSON",
+   "name": "Cash",
+   "item": [
+    "incometax/gift_rules_2026",
+    "cash",
+    "value"
+   ],
+   "dec": 0,
+   "prefix": "₹",
+   "indian": true,
+   "unit": "",
+   "text": "or more in a day, or for one occasion: only through a bank",
+   "sub": "Cheque, draft or electronic mode. A penalty can equal the sum received.",
+   "vo": "Two lakh or more from one person a day: bank only."
+  }
+ ],
+ "so": {
+  "lines": [
+   "*Relatives* and your",
+   "own wedding: not taxed.",
+   "Diwali: *no* exemption."
+  ],
+  "vo": "Relatives' gifts and your own wedding gifts: not taxed. Diwali: no exemption.",
+  "note": "'Relative' is a list defined in the Act. The department's rules, not advice on anyone's tax."
+ },
+ "end": {
+  "q": "Did you know the ₹50,000 rule?",
+  "sub": "Comment below.",
+  "vo": "Did you know the fifty thousand rupee rule? Comment below."
+ },
+ "free_numbers": [
+  "5,000"
+ ],
+ "money_tests": [
+  {
+   "says": "the example adds up",
+   "value": {
+    "diff": [
+     {
+      "sum": [
+       {
+        "item": [
+         "incometax/gift_rules_2026",
+         "ex_a",
+         "value"
+        ]
+       },
+       {
+        "item": [
+         "incometax/gift_rules_2026",
+         "ex_b",
+         "value"
+        ]
+       }
+      ]
+     },
+     {
+      "item": [
+       "incometax/gift_rules_2026",
+       "ex_total",
+       "value"
+      ]
+     }
+    ]
+   },
+   "equals": 0
+  },
+  {
+   "says": "the example is above the limit",
+   "value": {
+    "diff": [
+     {
+      "item": [
+       "incometax/gift_rules_2026",
+       "ex_total",
+       "value"
+      ]
+     },
+     {
+      "item": [
+       "incometax/gift_rules_2026",
+       "limit",
+       "value"
+      ]
+     }
+    ]
+   },
+   "min": 1
+  },
+  {
+   "says": "the older page's figure is 5,000",
+   "value": {
+    "item": [
+     "incometax/gift_rules_2026",
+     "employer_old",
+     "value"
+    ]
+   },
+   "equals": 5000
+  }
+ ],
+ "quotes": [
+  {
+   "says": "above the limit, the whole sum",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "s92"
+   ],
+   "contains": "any sum of money without consideration, the total of which exceeds Rs. 50000, the whole of such sum"
+  },
+  {
+   "says": "the department's example",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "example"
+   ],
+   "contains": "the entire amount of Rs. 53,000 will be charged to tax"
+  },
+  {
+   "says": "a TV is not counted",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "tv"
+   ],
+   "contains": "Nothing will be charged to tax in respect of a television set received as a gift"
+  },
+  {
+   "says": "employer gifts below Rs 15,000 are nil",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "employer"
+   ],
+   "contains": "below Rs. 15,000 in aggregate during the tax year"
+  },
+  {
+   "says": "the older page shows Rs 5,000 in kind",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "old_employer"
+   ],
+   "contains": "Rs.5,000 if received in kind"
+  },
+  {
+   "says": "cash: Rs 2 lakh or more, a day, a transaction or one occasion",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "s186"
+   ],
+   "contains": "(c) in respect of transactions relating to one event or occasion from a person"
+  },
+  {
+   "says": "penalty may equal the sum",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "s451"
+   ],
+   "contains": "The Assessing Officer may impose on a person, a penalty equal to the sum received"
+  },
+  {
+   "says": "relatives' gifts are not taxed",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "relatives"
+   ],
+   "contains": "Gifts received from relatives are not charged to tax"
+  },
+  {
+   "says": "marriage is the only exempt occasion",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "marriage"
+   ],
+   "contains": "Apart from marriage, there is no other occasion on which a monetary gift received by an individual is not subject to tax"
+  },
+  {
+   "says": "a friend is not a relative",
+   "text": [
+    "incometax/gift_rules_2026",
+    "text",
+    "friends"
+   ],
+   "contains": "A friend is not a 'relative'"
+  }
+ ],
+ "source": "Income Tax Department (incometaxindia.gov.in), read 17 Oct 2026: 'Tax treatment of Gifts Received by an Individual or HUF' (Income-tax Act, 2025, as amended by the Finance Act, 2026); Income-tax Act, 2025, sections 92, 186 and 451; Income-tax Rules, 2026, rule 15(5)(a), Table IV, item 4; threshold-limits page. Rules as printed, not tax advice.",
+ "yt_title": "Diwali Gifts and Tax: The ₹50,000 Rule (2026-27)"
+}

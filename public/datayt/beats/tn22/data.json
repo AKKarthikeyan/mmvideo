@@ -1,0 +1,529 @@
+{
+ "id": "tn22",
+ "type": "then",
+ "chip": "10 YEARS ON",
+ "sourceShort": "Labour Bureau · rural wages · 2014-15 to 2024-25",
+ "source": "Labour Bureau (Ministry of Labour and Employment), Indian Labour Journal, as published in the RBI Handbook of Statistics on Indian States 2024-25 (11 Dec 2025), Tables 112 and 113: average daily wage rates in rural areas, men, general agricultural labourers over construction workers, current rupees. India is the average of all quotations. State figures for 2020-21 cover ten months. Recent years can be revised. Blank on the map: Jammu and Kashmir (boundary changed 2019) and states with no figure for both wages.",
+ "accent": "#2A366F",
+ "accent2": "#E8604C",
+ "bands": [
+  "#E8604C",
+  "#F0AA9D",
+  "#DDD5C8",
+  "#868CA8",
+  "#2A366F"
+ ],
+ "beats": [
+  {
+   "kind": "spot",
+   "lines": [
+    "*Karnataka*, rural men:",
+    "farm pay *nearly caught up*",
+    "with construction pay: *94%*."
+   ],
+   "vo": "Karnataka's farm pay nearly caught up with construction pay.",
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "t0": 0.0,
+   "t1": 3.871
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "FARM PAY AS % OF CONSTRUCTION PAY",
+   "big": "+22.0 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "71.7%",
+    "frac": 0.7647436953481086
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "93.7%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "then",
+   "text": "of the construction wage. Farm *₹205*, construction *₹286* a day",
+   "vo": "In twenty fourteen-fifteen it was seventy-two percent.",
+   "t0": 3.871,
+   "t1": 7.742
+  },
+  {
+   "geo": "Karnataka",
+   "name": "Karnataka",
+   "kicker": "FARM PAY AS % OF CONSTRUCTION PAY",
+   "big": "+22.0 points",
+   "p0": {
+    "period": "2014-15",
+    "label": "71.7%",
+    "frac": 0.7647436953481086
+   },
+   "p1": {
+    "period": "2024-25",
+    "label": "93.7%",
+    "frac": 1.0
+   },
+   "kind": "shift",
+   "mode": "now",
+   "text": "of the construction wage. Farm *₹454*, construction *₹485* a day",
+   "vo": "Ten years on, it was ninety-four percent of construction pay.",
+   "t0": 7.742,
+   "t1": 13.548
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "KARNATAKA'S FARM WAGE VS INDIA'S",
+   "big": "114.1%",
+   "text": "of India's average farm labourer wage, in *2024-25*",
+   "sub": "Each against India in the same year. Construction: 104.1%, then 109.9%.",
+   "bars": [
+    {
+     "name": "2014-15",
+     "label": "91.3%",
+     "frac": 0.7609824873849806
+    },
+    {
+     "name": "2024-25",
+     "label": "114.1%",
+     "frac": 0.951214405360134
+    }
+   ],
+   "vo": "Karnataka's farm wage went from ninety-one to a hundred fourteen percent of India's.",
+   "t0": 13.548,
+   "t1": 19.355
+  },
+  {
+   "kind": "fact",
+   "name": "Karnataka",
+   "geo": "Karnataka",
+   "kicker": "A STEADY RISE · BY YEAR",
+   "big": "90.8%",
+   "text": "in 2023-24. Up in *9 of 10* years, level in 2020-21.",
+   "sub": "Farm labourer wage as % of construction wage. 2019-20 and 2020-21: 85.5% both.",
+   "bars": [
+    {
+     "name": "2016-17",
+     "label": "78.7%",
+     "frac": 0.7874335729915599
+    },
+    {
+     "name": "2019-20",
+     "label": "85.5%",
+     "frac": 0.8553016988869362
+    },
+    {
+     "name": "2022-23",
+     "label": "88.1%",
+     "frac": 0.8805104408352669
+    }
+   ],
+   "vo": "Up in nine of ten years and level in one.",
+   "t0": 19.355,
+   "t1": 23.226
+  },
+  {
+   "kind": "say",
+   "lines": [
+    "Karnataka gained *22 points*,",
+    "Kerala *21*: the two biggest;",
+    "all-India gained *9 points*."
+   ],
+   "note": "Points of the construction wage. Kerala: +21.2; all-India: +8.6. Rural men, current rupees. The table shows how much, not why.",
+   "vo": "Karnataka and Kerala gained most. Karnataka's gain was two point six times India's.",
+   "t0": 23.226,
+   "t1": 30.968
+  },
+  {
+   "kind": "map",
+   "title": "Farm pay vs construction: *each state's change*",
+   "sub": "points of construction pay · 2014-15 to 2024-25",
+   "note": "A lower percentage can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no figure for both wages.",
+   "anim": true,
+   "ring": [
+    "Karnataka",
+    "Kerala"
+   ],
+   "vo": "Each state's change in farm pay against construction pay.",
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell 5+"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1.5 points"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose 8+"
+    }
+   ],
+   "t0": 30.968,
+   "t1": 36.774
+  },
+  {
+   "note": "A lower percentage can come with higher pay. Blank: Jammu and Kashmir (boundary changed 2019) and states with no figure for both wages.",
+   "ring": [
+    "Karnataka",
+    "Kerala"
+   ],
+   "legend": [
+    {
+     "color": "#E8604C",
+     "label": "fell 5+"
+    },
+    {
+     "color": "#DDD5C8",
+     "label": "within 1.5 points"
+    },
+    {
+     "color": "#2A366F",
+     "label": "rose 8+"
+    }
+   ],
+   "q": "Farm or construction: which did *you* do?",
+   "sub": "Spot your state on the map.",
+   "kind": "mapend",
+   "vo": "Farm or construction: which did you do?",
+   "t0": 36.774,
+   "t1": 40.645
+  }
+ ],
+ "total": 41.045,
+ "fps": 30,
+ "beat": 0.4838709677419355,
+ "map": [
+  {
+   "name": "Andhra Pradesh",
+   "label": "−7.7",
+   "bucket": 0,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.318
+  },
+  {
+   "name": "Himachal Pradesh",
+   "label": "−4.9",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.439
+  },
+  {
+   "name": "Tripura",
+   "label": "−4.4",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -32,
+    72
+   ],
+   "at": 31.56
+  },
+  {
+   "name": "Madhya Pradesh",
+   "label": "−3.5",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.681
+  },
+  {
+   "name": "Rajasthan",
+   "label": "−2.3",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 31.802
+  },
+  {
+   "name": "Haryana",
+   "label": "−1.9",
+   "bucket": 1,
+   "dark": false,
+   "nudge": [
+    -8,
+    6
+   ],
+   "at": 31.923
+  },
+  {
+   "name": "West Bengal",
+   "label": "−1.1",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.044
+  },
+  {
+   "name": "Punjab",
+   "label": "+0.2",
+   "bucket": 2,
+   "dark": false,
+   "nudge": [
+    -6,
+    0
+   ],
+   "at": 32.165
+  },
+  {
+   "name": "Uttar Pradesh",
+   "label": "+2.2",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.286
+  },
+  {
+   "name": "Odisha",
+   "label": "+3.3",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.407
+  },
+  {
+   "name": "Bihar",
+   "label": "+5.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.528
+  },
+  {
+   "name": "Tamil Nadu",
+   "label": "+6.4",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.649
+  },
+  {
+   "name": "Meghalaya",
+   "label": "+6.6",
+   "bucket": 3,
+   "dark": true,
+   "nudge": [
+    -76,
+    52
+   ],
+   "at": 32.77
+  },
+  {
+   "name": "Gujarat",
+   "label": "+9.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 32.891
+  },
+  {
+   "name": "Maharashtra",
+   "label": "+10.7",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.012
+  },
+  {
+   "name": "Assam",
+   "label": "+10.8",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -26,
+    -10
+   ],
+   "at": 33.133
+  },
+  {
+   "name": "Kerala",
+   "label": "+21.2",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    -72,
+    30
+   ],
+   "at": 33.253
+  },
+  {
+   "name": "Karnataka",
+   "label": "+22.0",
+   "bucket": 4,
+   "dark": true,
+   "nudge": [
+    0,
+    0
+   ],
+   "at": 33.374
+  }
+ ],
+ "checked": [
+  "Karnataka: 71.66 in 2014-15, 93.71 in 2024-25: +22.05, 1.31 times",
+  "years = 10",
+  "72% in 2014-15 (voice): 71.66",
+  "71.7% in 2014-15 (card, tenths): 716.63",
+  "94% in 2024-25 (hook, title, voice): 93.71",
+  "93.7% in 2024-25 (card, tenths): 937.09",
+  "the gain is 22.0 points (shift card, tenths): 220.46",
+  "22 points (say card): 22.05",
+  "farm labourer ₹205 a day in 2014-15: 205.10",
+  "construction worker ₹286 a day in 2014-15: 286.20",
+  "farm labourer ₹454 a day in 2024-25: 454.30",
+  "construction worker ₹485 a day in 2024-25: 484.80",
+  "up in 2015-16: 0.3 to 4.0 points on the year before (a steady rise, no jump): 3.41",
+  "up in 2016-17: 0.3 to 4.0 points on the year before (a steady rise, no jump): 3.67",
+  "up in 2017-18: 0.3 to 4.0 points on the year before (a steady rise, no jump): 2.35",
+  "up in 2018-19: 0.3 to 4.0 points on the year before (a steady rise, no jump): 3.12",
+  "up in 2019-20: 0.3 to 4.0 points on the year before (a steady rise, no jump): 1.31",
+  "2020-21 is level with 2019-20 (within 0.2 points): -0.08",
+  "up in 2021-22: 0.3 to 4.0 points on the year before (a steady rise, no jump): 1.95",
+  "up in 2022-23: 0.3 to 4.0 points on the year before (a steady rise, no jump): 0.65",
+  "up in 2023-24: 0.3 to 4.0 points on the year before (a steady rise, no jump): 2.73",
+  "up in 2024-25: 0.3 to 4.0 points on the year before (a steady rise, no jump): 2.93",
+  "85.5% in 2019-20 and in 2020-21 (card sub): 855.30",
+  "85.5% in 2020-21 (card sub): 854.53",
+  "78.7% in 2016-17 (bar, tenths): 787.43",
+  "seventy-nine (2016-17): 78.74",
+  "85.5% in 2019-20 (bar, tenths): 855.30",
+  "eighty-six (2019-20): 85.53",
+  "88.1% in 2022-23 (bar, tenths): 880.51",
+  "eighty-eight (2022-23): 88.05",
+  "90.8% in 2023-24 (big figure, tenths): 907.78",
+  "ninety-one (2023-24): 90.78",
+  "the rise holds in 2022-23: at least 79% (a third of the gain above the start): 88.05",
+  "the rise holds in 2023-24: at least 79% (a third of the gain above the start): 90.78",
+  "the rise holds in 2024-25: at least 79% (a third of the gain above the start): 93.71",
+  "2015-16 above the start (75.1%): 750.74",
+  "India 81.7% in 2014-15 (tenths): 816.73",
+  "India 90.2% in 2024-25 (tenths): 902.29",
+  "India gained 8.6 points (tenths): 85.56",
+  "India gained 9 points (say card): 8.56",
+  "Karnataka's gain is 2.6 times India's (tenths): 25.77",
+  "two point six times (2.55 to 2.65): 2.58",
+  "Kerala gained 21 points (say card): 21.17",
+  "Kerala gained 21.2 points (note, tenths): 211.66",
+  "Kerala gained at least 20 points: with Karnataka, the two biggest: 21.17",
+  "Andhra Pradesh's farm wage is 2.0 to 2.3 times its 2014-15 level (higher pay): 2.14",
+  "Andhra Pradesh's ratio fell over the same years (a lower ratio with higher pay): -7.70",
+  "Andhra Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises: -7.70",
+  "Assam gained under 15 points, so Karnataka and Kerala are the two biggest rises: 10.84",
+  "Bihar gained under 15 points, so Karnataka and Kerala are the two biggest rises: 5.62",
+  "Gujarat gained under 15 points, so Karnataka and Kerala are the two biggest rises: 9.74",
+  "Haryana gained under 15 points, so Karnataka and Kerala are the two biggest rises: -1.91",
+  "Himachal Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises: -4.86",
+  "Jammu and Kashmir gained under 15 points, so Karnataka and Kerala are the two biggest rises: 12.00",
+  "Madhya Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises: -3.49",
+  "Maharashtra gained under 15 points, so Karnataka and Kerala are the two biggest rises: 10.66",
+  "Meghalaya gained under 15 points, so Karnataka and Kerala are the two biggest rises: 6.56",
+  "Odisha gained under 15 points, so Karnataka and Kerala are the two biggest rises: 3.27",
+  "Punjab gained under 15 points, so Karnataka and Kerala are the two biggest rises: 0.22",
+  "Rajasthan gained under 15 points, so Karnataka and Kerala are the two biggest rises: -2.25",
+  "Tamil Nadu gained under 15 points, so Karnataka and Kerala are the two biggest rises: 6.39",
+  "Tripura gained under 15 points, so Karnataka and Kerala are the two biggest rises: -4.36",
+  "Uttar Pradesh gained under 15 points, so Karnataka and Kerala are the two biggest rises: 2.20",
+  "West Bengal gained under 15 points, so Karnataka and Kerala are the two biggest rises: -1.10",
+  "91.3% of India's farm wage in 2014-15 (bar, tenths): 913.18",
+  "114.1% of India's farm wage in 2024-25 (big figure and bar, tenths): 1141.46",
+  "ninety-one percent (voice, 2014-15): 91.32",
+  "a hundred fourteen percent (voice, 2024-25): 114.15",
+  "construction wage 104.1% of India's in 2014-15 (sub, tenths): 1040.73",
+  "construction wage 109.9% of India's in 2024-25 (sub, tenths): 1099.07",
+  "farm wage was below India's in 2014-15 and above it in 2024-25 (went from 91 to 114): start under 100: 91.32",
+  "farm wage above India's in 2024-25: 114.15",
+  "the rise against India's farm wage holds in 2022-23: at least 99% (a third of the gain above the start): 109.78",
+  "the rise against India's farm wage holds in 2023-24: at least 99% (a third of the gain above the start): 111.46",
+  "the rise against India's farm wage holds in 2024-25: at least 99% (a third of the gain above the start): 114.15",
+  "farm pay nearly caught up with construction pay (hook): 2024-25 ratio between 90% and just under 100%: 93.71"
+ ],
+ "vo": [
+  {
+   "file": "vo_00.mp3",
+   "sec": 3.16,
+   "at": 0.12,
+   "text": "Karnataka's farm pay nearly caught up with construction pay."
+  },
+  {
+   "file": "vo_01.mp3",
+   "sec": 2.768,
+   "at": 3.991,
+   "text": "In twenty fourteen-fifteen it was seventy-two percent."
+  },
+  {
+   "file": "vo_02.mp3",
+   "sec": 3.735,
+   "at": 7.862,
+   "text": "Ten years on, it was ninety-four percent of construction pay."
+  },
+  {
+   "file": "vo_03.mp3",
+   "sec": 4.545,
+   "at": 13.668,
+   "text": "Karnataka's farm wage went from ninety-one to a hundred fourteen percent of India's."
+  },
+  {
+   "file": "vo_04.mp3",
+   "sec": 2.768,
+   "at": 19.475,
+   "text": "Up in nine of ten years and level in one."
+  },
+  {
+   "file": "vo_05.mp3",
+   "sec": 5.537,
+   "at": 23.346,
+   "text": "Karnataka and Kerala gained most. Karnataka's gain was two point six times India's."
+  },
+  {
+   "file": "vo_06.mp3",
+   "sec": 3.657,
+   "at": 31.088,
+   "text": "Each state's change in farm pay against construction pay."
+  },
+  {
+   "file": "vo_07.mp3",
+   "sec": 2.899,
+   "at": 36.894,
+   "text": "Farm or construction: which did you do?"
+  }
+ ],
+ "voiceEngine": "minimax",
+ "voice": "English_Diligent_Man",
+ "ytTitle": "Rural Karnataka Men: Farm Labour Pay Hit 94% of Construction"
+}

@@ -135,6 +135,54 @@ S["um-parisiman"] = dict(
          ["अब नज़र", "और तब तक"]),
     ])
 
+# Sources for the two Shorts below: docs/SHORTS_BUILT.md.
+S["dk-exports"] = dict(
+    channel="Data Kadai", lang="en-IN", series="The Catch",
+    title="India's exports jumped 45%. A third was fuel",
+    send="The +45% headline was everywhere; almost nobody saw that one item, fuel, made a third of the jump.",
+    beats=[
+        ("b1", [("India's goods exports", "India's goods exports"), ("jumped forty five percent", "jumped *45%*"), ("this October.", "this *October.*")],
+         ["India's goods", "forty five", "this October"]),
+        ("b2", [("What are we selling", "What are we *selling*"), ("so much more of?", "so much more of?")], ["What are we", "so much more"]),
+        ("b3", [("The biggest jump isn't phones.", "The biggest jump? Not *phones.*"), ("Or machines.", "Not *machines.*")],
+         ["The biggest jump", "Or machines"]),
+        ("b4", [("It's fuel.", "It's *fuel.*"), ("Petroleum products,", "Petroleum products,"), ("up a hundred and forty percent.", "up *140%.*")],
+         ["It's fuel", "Petroleum", "a hundred and forty"]),
+        ("b5", [("From three point seven billion dollars", "From *$3.7 billion*"), ("to almost nine.", "to almost *$9 billion.*")],
+         ["From three", "to almost nine"]),
+        ("b6", [("That one item", "That *one item*"), ("is a third of the whole jump.", "is *a third* of the jump.")], ["That one item", "a third"]),
+        ("b7", [("Take out fuel and jewellery,", "Take out *fuel* and *jewellery,*"), ("and exports grew", "and exports grew"),
+                ("thirty three percent.", "*33%.*")],
+         ["Take out", "and exports grew", "thirty three"]),
+        ("b8", [("Still big.", "Still *big.*"), ("Just not forty five.", "Just not *45.*"), ("So when a headline says,", "So when a headline says,")],
+         ["Still big", "Just not", "So when"]),
+    ])
+
+S["ia-sunset"] = dict(
+    channel="Indica Atlas", lang="en-IN", series="Not Where You Think",
+    title="India's sun sets 2 hours apart on one clock",
+    send="Everyone in India uses one clock; few know Arunachal is dark by four while Kutch has sun till six.",
+    beats=[
+        ("b1", [("Just after four,", "Just after *4 PM,*"), ("the sun sets in Arunachal Pradesh.", "the sun sets in *Arunachal.*")],
+         ["Just after", "the sun sets"]),
+        ("b2", [("In Kutch, it's still broad daylight.", "In *Kutch,* still *daylight.*"), ("When does it set there?", "When does it *set?*")],
+         ["In Kutch", "When does"]),
+        ("b3", [("Not at five.", "Not at *five.*"), ("Not even at six.", "Not even at *six.*")], ["Not at five", "Not even"]),
+        ("b4", [("Ten past six.", "*6:11 PM.*"), ("Two hours later,", "*Two hours* later,"), ("on the very same clock.", "on the *same clock.*")],
+         ["Ten past six", "Two hours", "same clock"]),
+        ("b5", [("Because India is almost three thousand kilometres wide,", "India is almost *3,000 km* wide,"),
+                ("but keeps one time zone.", "but keeps *one time zone.*")],
+         ["Because India", "three thousand", "one time"]),
+        ("b6", [("That time is set here,", "That time is set *here,*"), ("at eighty two and a half degrees east,", "at *82.5° east,*"),
+                ("near Mirzapur.", "near *Mirzapur.*")],
+         ["That time", "eighty two", "near Mirzapur"]),
+        ("b7", [("So in British times,", "So in *British times,*"), ("Assam's tea gardens ran an hour ahead.", "Assam's tea gardens ran *1 hour ahead.*"),
+                ("Bagaan time.", "*Bagaan* time.")],
+         ["So in British", "Assam's tea", "an hour ahead", "Bagaan time"]),
+        ("b8", [("Same country. Same clock.", "Same country. *Same clock.*"), ("And every November evening,", "And every *November* evening,")],
+         ["Same country", "And every"]),
+    ])
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):

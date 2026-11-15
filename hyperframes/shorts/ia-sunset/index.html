@@ -1,0 +1,205 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "India's sun sets 2 hours apart on one clock". Reveal Loop Short, 1080 x 1920.
+     The evening of 20 Nov 2026 runs as a time-lapse on one IST clock: night is computed for every point on screen from
+     the sun's position (NOAA solar equations), so the shadow crosses India the way it really does. Two terrain levels
+     (tools/atlas_base.py, z6 and z7; no borders are drawn). Timings come from story.js. Sources: docs/SHORTS_BUILT.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: India's sunset gap</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map, #night, #ov { position: absolute; left: 0; top: 0; }
+      #map { filter: brightness(1.12) saturate(1.06); }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      #clock { position: absolute; right: 60px; top: 262px; text-align: right; white-space: nowrap; }
+      #clock .t { font: 700 150px/1 Oswald, sans-serif; color: #f7f3ea; font-variant-numeric: tabular-nums; -webkit-text-stroke: 10px rgba(4, 10, 18, 0.75); paint-order: stroke fill; }
+      #clock .t span { font-size: 70px; margin-left: 10px; }
+      #clock .l { font: 700 32px/1 Oswald, sans-serif; letter-spacing: 0.16em; color: #f2b233; margin-top: 8px; -webkit-text-stroke: 7px rgba(4, 10, 18, 0.85); paint-order: stroke fill; }
+      #clock2 { position: absolute; right: 60px; top: 500px; text-align: right; white-space: nowrap; opacity: 0; }
+      #clock2 .t { font: 700 110px/1 Oswald, sans-serif; color: #f2b233; font-variant-numeric: tabular-nums; -webkit-text-stroke: 9px rgba(4, 10, 18, 0.8); paint-order: stroke fill; }
+      #clock2 .t span { font-size: 54px; margin-left: 8px; }
+      #clock2 .l { font: 700 30px/1 Oswald, sans-serif; letter-spacing: 0.14em; color: #f7f3ea; margin-top: 8px; -webkit-text-stroke: 7px rgba(4, 10, 18, 0.85); paint-order: stroke fill; }
+      #big { position: absolute; left: 60px; top: 284px; opacity: 0; }
+      #big .n { font: 700 170px/1 Oswald, sans-serif; color: #f2b233; font-variant-numeric: tabular-nums; white-space: nowrap; -webkit-text-stroke: 11px rgba(4, 10, 18, 0.85); paint-order: stroke fill; }
+      #big .l { font: 700 40px/1.1 Oswald, sans-serif; letter-spacing: 0.06em; color: #f7f3ea; margin-top: 8px; white-space: nowrap; -webkit-text-stroke: 7px rgba(4, 10, 18, 0.85); paint-order: stroke fill; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 9px 14px 11px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: #f2b233; }
+      .tag small { display: block; font: 28px/1 Plex, monospace; letter-spacing: 0; margin-top: 7px; }
+      .tag.ghost { background: none; color: rgba(247, 243, 234, 0.85); letter-spacing: 0.3em; font-size: 34px; -webkit-text-stroke: 6px rgba(4, 10, 18, 0.7); paint-order: stroke fill; }
+      #stamp { position: absolute; left: 0; top: 0; font: 700 84px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #ff5a3c; border: 8px solid #ff5a3c; padding: 8px 22px 12px;
+        background: rgba(7, 12, 20, 0.75); opacity: 0; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="33.833" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="night" width="216" height="384" style="width: 1080px; height: 1920px" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs">
+        <div id="s0">Sunset on 20 Nov 2026: our calculation (NOAA solar equations) · Terrain: AWS Terrain Tiles</div>
+        <div id="s1">Dong to Guhar Moti ≈ 2,925 km, our measurement · NCERT: “a time lag of two hours”</div>
+        <div id="s2">NCERT Class 9 Geography, ch. 1: the Standard Meridian of India, 82°30′E, through Mirzapur</div>
+        <div id="s3">Bagaan (tea garden) time, IST + 1 h, from British times: Al Jazeera, 8 Jan 2014 · timeanddate.com</div>
+      </div>
+      <div id="clock"><div class="t" id="ck">4:00<span>PM</span></div><div class="l">IST · ONE CLOCK FOR ALL INDIA</div></div>
+      <div id="clock2"><div class="t" id="ck2">5:00<span>PM</span></div><div class="l">BAGAAN TIME · IST + 1 HOUR</div></div>
+      <div id="big"><div class="n" id="bigN">0 KM</div><div class="l" id="bigL">EAST TO WEST</div></div>
+      <div id="stamp">NOT 5:00</div>
+      <div class="tag acc" id="tDong">ARUNACHAL<small>DONG · SUNSET 4:07 PM</small></div>
+      <div class="tag" id="tKutch">KUTCH<small>GUHAR MOTI · SUNSET 6:11 PM</small></div>
+      <div class="tag" id="tQ">KUTCH: SUNSET?</div>
+      <div class="tag acc" id="t2h">2 H 04 MIN APART</div>
+      <div class="tag acc" id="tMer">82°30′ E</div>
+      <div class="tag" id="tMirz">MIRZAPUR<small>IST IS SET HERE</small></div>
+      <div class="tag acc" id="tTea">ASSAM TEA GARDENS<small>DIBRUGARH · SUNSET 4:17 PM IST</small></div>
+      <div class="tag ghost" id="tIN">INDIA</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, rad = Math.PI / 180;
+      // ---- Mercator
+      const MX = (lon) => (lon + 180) / 360, MY = (lat) => 0.5 - Math.log(Math.tan(Math.PI / 4 + lat * rad / 2)) / (2 * Math.PI);
+      const LON = (x) => x * 360 - 180, LAT = (y) => (2 * Math.atan(Math.exp((0.5 - y) * 2 * Math.PI)) - Math.PI / 2) / rad;
+      const LAYERS = [["wide.webp", [0.640625, 0.328125, 0.8125, 0.546875]], ["india.webp", [0.671875, 0.3828125, 0.78125, 0.4921875]]];
+      const IMG = LAYERS.map(([f]) => { const im = new Image(); im.src = "assets/img/" + f; return im; });
+      const mc = $("map").getContext("2d"); mc.imageSmoothingEnabled = true; mc.imageSmoothingQuality = "high";
+      // ---- the sun on 20 Nov 2026 (NOAA general solar position equations; same as docs/SHORTS_BUILT.md)
+      const DOY = 324, GA = 2 * Math.PI / 365 * (DOY - 1 + 0.5);
+      const EOT = 229.18 * (0.000075 + 0.001868 * Math.cos(GA) - 0.032077 * Math.sin(GA) - 0.014615 * Math.cos(2 * GA) - 0.040849 * Math.sin(2 * GA));
+      const DECL = 0.006918 - 0.399912 * Math.cos(GA) + 0.070257 * Math.sin(GA) - 0.006758 * Math.cos(2 * GA) + 0.000907 * Math.sin(2 * GA) - 0.002697 * Math.cos(3 * GA) + 0.00148 * Math.sin(3 * GA);
+      const SD = Math.sin(DECL), CD = Math.cos(DECL);
+      const elev = (lat, lon, ist) => {        // sun's elevation in degrees at IST minutes after midnight
+        const ha = ((ist - 330 + 4 * lon + EOT) / 4 - 180) * rad;
+        return Math.asin(Math.sin(lat * rad) * SD + Math.cos(lat * rad) * CD * Math.cos(ha)) / rad;
+      };
+      const DONG = [97.02, 28.17], KUTCH = [68.12, 23.70], MIRZ = [82.57, 25.15], DIBRU = [94.91, 27.47];
+      // ---- times
+      const tKutch = B("b2"), tWhen = A("b2", "When does"), tFive = B("b3"), tSix = A("b3", "Not even"), tTen = B("b4"), tTwo = A("b4", "Two hours"),
+        tSame = A("b4", "same clock"), tWide = B("b5"), t3000 = A("b5", "three thousand"), tOne = A("b5", "one time"), tHere = B("b6"), t825 = A("b6", "eighty two"),
+        tMirz = A("b6", "near Mirzapur"), tBrit = B("b7"), tTea = A("b7", "Assam's tea"), tHour = A("b7", "an hour ahead"), tBag = A("b7", "Bagaan time"),
+        tEnd = B("b8"), tEvery = A("b8", "And every");
+      // ---- the IST clock (minutes after midnight: 967 = 4:07 PM Dong, 977 = 4:17 PM Dibrugarh, 1091 = 6:11 PM Guhar Moti), piecewise linear; the evening replays in b7 and rewinds to the start for the loop
+      const CLK = [[0, 961], [A("b1", "the sun sets") + 0.3, 967], [tKutch, 972], [tWhen, 985], [tFive, 1008], [tFive + 0.5, 1020], [tSix - 0.1, 1026], [tSix + 0.6, 1080], [tTen + 0.2, 1086], [tTwo, 1091],
+        [tBrit, 1091], [tBrit + 0.01, 960], [tEnd, 977], [tEnd + 0.5, 977], [D - 0.25, 961], [D + 1, 961]];
+      const clock = (t) => { let i = 0; while (i < CLK.length - 2 && t >= CLK[i + 1][0]) i++; const a = CLK[i], b = CLK[i + 1]; return L(a[1], b[1], Z.io2((t - a[0]) / (b[0] - a[0]))); };
+      const hm = (m) => { m = Math.floor(m); const h = Math.floor(m / 60) % 12 || 12; return `${h}:${String(m % 60).padStart(2, "0")}`; };
+      // ---- camera: [time, lon, lat, width km]
+      const KNE = [93.6, 25.4, 1750], KIN = [82.6, 20.6, 3750], KAS = [94.2, 26.4, 980];
+      const KEYS = [[0, ...KNE], [tKutch + 0.2, ...KNE], [tKutch + 2.1, ...KIN], [tBrit + 0.1, ...KIN], [tTea + 0.2, ...KAS], [tEnd, ...KAS], [tEvery + 0.2, 93.9, 25.6, 1500],
+        [D - 0.3, ...KNE], [D, ...KNE]];
+      function cam(t) {
+        let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
+        const a = KEYS[i], b = KEYS[i + 1], e = Z.io3(C((t - a[0]) / (b[0] - a[0])));
+        return [L(a[1], b[1], e), L(a[2], b[2], e), Math.exp(L(Math.log(a[3]), Math.log(b[3]), e))];
+      }
+      let k = 1, cx = 0, cy = 0;
+      const P = (ll) => [540 + (MX(ll[0]) - cx) * k, 960 + (MY(ll[1]) - cy) * k];
+      const g = $("ov").getContext("2d"), nc = $("night").getContext("2d"), NW = 216, NH = 384, nd = nc.createImageData(NW, NH);
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      function ring(p, t, col, r0 = 13) {
+        const pulse = ((t * 0.8) % 1 + 1) % 1;
+        g.beginPath(); g.arc(p[0], p[1], r0 + 44 * pulse, 0, 7); g.strokeStyle = col.replace("1)", `${1 - pulse})`); g.lineWidth = 5; g.stroke();
+        g.beginPath(); g.arc(p[0], p[1], r0 + 8, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill();
+        g.beginPath(); g.arc(p[0], p[1], r0, 0, 7); g.fillStyle = col; g.fill();
+      }
+      function line(a, b, u, col, w, dash) {
+        const q = [L(a[0], b[0], u), L(a[1], b[1], u)];
+        g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(q[0], q[1]); g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = w + 6; g.setLineDash([]); g.stroke();
+        g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(q[0], q[1]); g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []); g.stroke(); g.setLineDash([]);
+        return q;
+      }
+      H.render = (t) => {
+        const c = cam(t), ist = clock(t);
+        cx = MX(c[0]); cy = MY(c[1]); k = 1080 / (c[2] / (40075.017 * Math.cos(c[1] * rad)));
+        // ---- terrain
+        mc.globalAlpha = 1; mc.fillStyle = "#07101c"; mc.fillRect(0, 0, 1080, 1920);
+        LAYERS.forEach(([f, b], i) => {
+          const im = IMG[i], X0 = 540 + (b[0] - cx) * k, Y0 = 960 + (b[1] - cy) * k, X1 = 540 + (b[2] - cx) * k, Y1 = 960 + (b[3] - cy) * k;
+          const sx = (X1 - X0) / im.naturalWidth, o = i === 0 ? 1 : C((sx - 0.22) / 0.12);
+          const vx0 = Math.max(0, X0), vy0 = Math.max(0, Y0), vx1 = Math.min(1080, X1), vy1 = Math.min(1920, Y1);
+          if (o <= 0 || vx1 <= vx0 || vy1 <= vy0) return;
+          mc.globalAlpha = o;
+          mc.drawImage(im, (vx0 - X0) / sx, (vy0 - Y0) / sx, (vx1 - vx0) / sx, (vy1 - vy0) / sx, vx0, vy0, vx1 - vx0, vy1 - vy0);
+        });
+        mc.globalAlpha = 1;
+        // ---- night, computed per point (1 cell = 5 px): golden hour, civil twilight, then night
+        const nightK = 1 - 0.62 * F(t, tWide + 0.3, tBrit, 0.5);    // lift the night while the map explains the clock
+        const dd = nd.data;
+        for (let y = 0; y < NH; y++) {
+          const lat = LAT(cy + (y * 5 + 2.5 - 960) / k);
+          for (let x = 0; x < NW; x++) {
+            const lon = LON(cx + (x * 5 + 2.5 - 540) / k), e = elev(lat, lon, ist), o = (y * NW + x) * 4;
+            if (e > 0.5) { const gl = C(1 - (e - 0.5) / 7); dd[o] = 255; dd[o + 1] = 150; dd[o + 2] = 60; dd[o + 3] = 255 * 0.2 * gl * gl * nightK; }
+            else { const n = C((0.5 - e) / 7.5); dd[o] = L(110, 6, n); dd[o + 1] = L(52, 12, n); dd[o + 2] = L(70, 32, n); dd[o + 3] = 255 * L(0.42, 0.76, n) * nightK; }
+          }
+        }
+        nc.putImageData(nd, 0, 0);
+        // ---- overlay
+        g.clearRect(0, 0, 1080, 1920);
+        const pD = P(DONG), pK = P(KUTCH), pM = P(MIRZ), pB = P(DIBRU), dSet = ist >= 967, kSet = ist >= 1091;
+        // Dong (Arunachal)
+        ring(pD, t, dSet ? "rgba(242,178,51,1)" : "rgba(247,243,234,1)");
+        const dTag = (t < tKutch + 0.6 && t > 0.9) || (t > tTwo - 0.2 && t < tWide + 0.6) || t > D - 0.6 ? 1 : 0;
+        place("tDong", Math.min(pD[0] - 470, 520), pD[1] - 150, dSet ? dTag * F(t, 0.9, 99, 0.25) : 0);
+        // Kutch
+        if (t > tKutch + 1.3 && t < tBrit + 0.4) ring(pK, t, kSet ? "rgba(242,178,51,1)" : "rgba(247,243,234,1)");
+        place("tQ", pK[0] + 30, pK[1] - 120, F(t, tWhen, tTen + 0.3, 0.25));
+        place("tKutch", pK[0] + 30, pK[1] - 132, kSet ? F(t, tTwo - 0.4, tWide + 0.6, 0.25) : 0);
+        // the stamp on the guesses
+        const st = Math.max(F(t, tFive + 0.1, tSix, 0.1), F(t, tSix + 0.05, tTen, 0.1));
+        $("stamp").textContent = t >= tSix ? "NOT 6:00" : "NOT 5:00";
+        $("stamp").style.opacity = st;
+        const sp = t >= tSix ? tSix + 0.05 : tFive + 0.1;
+        $("stamp").style.transform = `translate(380px, 660px) rotate(-7deg) scale(${1.5 - 0.5 * Z.o3((t - sp) / 0.22)})`;
+        // two hours, then three thousand kilometres, between the two pins
+        const lo = F(t, tTwo - 0.2, tHere + 0.2, 0.3);
+        if (lo > 0) { g.globalAlpha = lo; const u = t < tWide ? 1 : Z.io2((t - t3000 + 0.4) / 1.1); line(pK, pD, t < tWide ? 1 : Math.max(0.02, u), "#f2b233", 7, [20, 13]); g.globalAlpha = 1; }
+        place("t2h", (pK[0] + pD[0]) / 2 - 190, (pK[1] + pD[1]) / 2 + 30, F(t, tTwo, tWide, 0.25));
+        // the standard meridian
+        const mu = Z.io2((t - t825 + 0.3) / 0.9), mo = F(t, t825 - 0.3, tBrit + 0.3, 0.3);
+        if (mo > 0) {
+          const top = P([82.5, 36.2]), bot = P([82.5, 8.2]);
+          g.globalAlpha = mo;
+          line(pM, top, mu, "#f2b233", 6); line(pM, bot, mu, "#f2b233", 6); g.globalAlpha = 1;
+        }
+        place("tMer", pM[0] + 24, P([82.5, 30.5])[1], F(t, t825 + 0.3, tBrit, 0.25));
+        if (t > tMirz - 0.2 && t < tBrit + 0.3) ring(pM, t, "rgba(242,178,51,1)", 12);
+        place("tMirz", pM[0] + 34, pM[1] + 20, F(t, tMirz - 0.5, tBrit + 0.3, 0.25));
+        place("tIN", P([78.6, 21.6])[0] - 120, P([78.6, 21.6])[1], F(t, tWide + 0.4, tBrit, 0.3));
+        // Assam's tea gardens
+        if (t > tTea - 0.2 && t < tEnd + 0.4) ring(pB, t, ist >= 977 ? "rgba(242,178,51,1)" : "rgba(247,243,234,1)");
+        place("tTea", Math.max(60, pB[0] - 520), pB[1] + 60, F(t, tTea + 0.5, tEnd + 0.3, 0.25));
+        // ---- clocks and the big number
+        $("ck").innerHTML = hm(ist) + "<span>PM</span>";
+        const bigOn = F(t, tWide + 0.2, tBrit, 0.25);
+        $("clock").style.opacity = 1 - bigOn;
+        $("ck2").innerHTML = hm(ist + 60) + "<span>PM</span>";
+        $("clock2").style.opacity = F(t, tHour, tEnd + 0.3, 0.25);
+        $("big").style.opacity = bigOn;
+        if (t < tHere) { $("bigN").textContent = Math.round(2925 * Z.io2((t - t3000 + 0.4) / 1.1)).toLocaleString("en-US") + " KM";
+          $("bigL").textContent = t >= tOne ? "ONE TIME ZONE" : "EAST TO WEST"; }
+        else { $("bigN").textContent = "82°30′ E"; $("bigL").textContent = "THE MERIDIAN BEHIND IST"; }
+        // ---- sources
+        const so = [0, 0, 0, 0];
+        so[t < tWide || t >= tEnd ? 0 : t < tHere ? 1 : t < tBrit ? 2 : 3] = 1;
+        so.forEach((o, i) => { $("s" + i).style.opacity = o; });
+        caps(t);
+      };
+      Promise.all(IMG.map((im) => im.decode())).then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

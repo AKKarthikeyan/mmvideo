@@ -1,0 +1,186 @@
+<!doctype html>
+<!-- Data Kadai · The Catch · "India's exports jumped 45%. A third was fuel". Reveal Loop Short, 1080 x 1920.
+     Two stacks of shipping containers, one container ≈ $1 billion of goods exports (rounded, illustration): October 2025
+     and October 2026. The 15 new containers drop in, the fuel ones light up, and fuel and jewellery are then taken out.
+     Every value: PIB, Ministry of Commerce & Industry, 13 Nov 2026 (PRID 2335914). Sources: docs/SHORTS_BUILT.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Data Kadai: October exports</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --acc: #0e7c66; --acc2: #c8431f; --ink: #14161a; --vig: 0.1; background: var(--bg); }
+      #cv { position: absolute; left: 0; top: 0; }
+      .kicker { color: var(--acc); }
+      .src { color: #3d434b; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      #capband .c { color: var(--fg); -webkit-text-stroke: 12px rgba(243, 239, 230, 0.96); text-shadow: none; }
+      #capband .c em { color: var(--acc); }
+      #num { position: absolute; left: 56px; top: 286px; font: 700 190px/1 Oswald, sans-serif; color: var(--acc); font-variant-numeric: tabular-nums; white-space: nowrap; }
+      #num.fuel { color: var(--acc2); }
+      #sub { position: absolute; left: 64px; top: 484px; font: 600 34px/1.15 Inter, sans-serif; color: var(--muted); white-space: nowrap; }
+      .yl { position: absolute; top: 1188px; width: 386px; text-align: center; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: var(--fg); white-space: nowrap; }
+      .yl small { display: block; margin-top: 8px; font: 600 30px/1 Inter, sans-serif; letter-spacing: 0; color: var(--muted); }
+      .tag { position: absolute; left: 0; top: 0; font: 700 36px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #fff; padding: 10px 14px 12px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; margin-top: 6px; font: 600 28px/1 Inter, sans-serif; letter-spacing: 0; }
+      #stamp { position: absolute; left: 600px; top: 330px; font: 700 64px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: var(--acc2); border: 7px solid var(--acc2);
+        padding: 8px 18px 12px; background: rgba(243, 239, 230, 0.9); opacity: 0; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.367" data-width="1080" data-height="1920">
+      <canvas id="cv" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">DATA KADAI · THE CATCH</div>
+      <div class="src" id="srcs">
+        <div id="s0">PIB, Ministry of Commerce, 13 Nov 2026 · goods exports, Oct 2025 vs Oct 2026 · 1 container ≈ $1 billion (rounded, illustration)</div>
+        <div id="s1">PIB, 13 Nov 2026 · increase, Oct 2026 over Oct 2025: engineering goods +$3.37 B, electronic goods +$2.56 B</div>
+        <div id="s2">PIB, 13 Nov 2026 · petroleum products: $3.70 B in Oct 2025, $8.89 B in Oct 2026 (+140.21%)</div>
+        <div id="s3">$5.19 B of the $15.36 B rise in goods exports · our arithmetic on PIB figures</div>
+        <div id="s4">PIB, 13 Nov 2026 · exports without petroleum and gems &amp; jewellery: $28.11 B → $37.38 B · +33%, our arithmetic</div>
+      </div>
+      <div id="num">+0%</div>
+      <div id="sub">GOODS EXPORTS · OCT 2026 vs OCT 2025</div>
+      <div id="stamp">SMALLER</div>
+      <div class="yl" id="y0" style="left: 110px">OCT 2025<small id="v0">$34.1 billion</small></div>
+      <div class="yl" id="y1" style="left: 584px">OCT 2026<small id="v1">$34.1 billion</small></div>
+      <div class="tag" id="tEle" style="background: #2f62a8">ELECTRONICS<small>+$2.6 billion</small></div>
+      <div class="tag" id="tEng" style="background: #4d5c6c">ENGINEERING<small>+$3.4 billion</small></div>
+      <div class="tag" id="tFue" style="background: #c8431f">PETROLEUM PRODUCTS<small>+$5.2 billion</small></div>
+      <div class="tag" id="tF0" style="background: #c8431f">$3.7 B</div>
+      <div class="tag" id="tF1" style="background: #c8431f">$8.9 B</div>
+      <div class="tag" id="tOut" style="background: #14161a">FUEL + JEWELLERY OUT</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // ---- data: PIB 13 Nov 2026, rounded to whole containers ($1 B each)
+      // base (Oct 2025, also the first 34 of Oct 2026), bottom up: other 15 (14.67), engineering 9 (9.37), electronics 4 (4.08),
+      // gems & jewellery 2 (2.29), petroleum 4 (3.70) = 34 (34.11). The rise (15.36): petroleum 5 (5.19), gems 1 (0.92),
+      // electronics 3 (2.56), engineering 3 (3.37), other 3 (3.32) = 15.
+      const BASE = [["oth", 15], ["eng", 9], ["ele", 4], ["gem", 2], ["fue", 4]], JUMP = [["fue", 5], ["gem", 1], ["ele", 3], ["eng", 3], ["oth", 3]];
+      const cats = (spec) => spec.flatMap(([c, n]) => Array(n).fill(c));
+      const BOX = []; // {stack, idx (initial position), cat, jump, j (order in the jump)}
+      cats(BASE).forEach((c, i) => BOX.push({ s: 0, idx: i, cat: c, jump: false }));
+      cats(BASE).forEach((c, i) => BOX.push({ s: 1, idx: i, cat: c, jump: false }));
+      cats(JUMP).forEach((c, j) => BOX.push({ s: 1, idx: 34 + j, cat: c, jump: true, j }));
+      // position after fuel and jewellery are taken out
+      [0, 1].forEach((s) => { let k = 0; BOX.filter((b) => b.s === s).sort((a, b) => a.idx - b.idx)
+        .forEach((b) => { b.out = b.cat === "fue" || b.cat === "gem"; if (!b.out) b.idx2 = k++; }); });
+      // ---- geometry
+      const X0 = [110, 584], CW = 92, CH = 40, GX = 6, GY = 6, GROUND = 1170;
+      const pos = (s, i) => [X0[s] + (i % 4) * (CW + GX), GROUND - (Math.floor(i / 4) + 1) * (CH + GY)];
+      // ---- times
+      const tQ = B("b2"), tB3 = B("b3"), tMach = A("b3", "Or machines"), tFuel = B("b4"), t140 = A("b4", "a hundred and forty"),
+        tFrom = B("b5"), tNine = A("b5", "to almost nine"), tThird = B("b6"), tThird2 = A("b6", "a third"), tTake = B("b7"),
+        tGrew = A("b7", "and exports grew"), t33 = A("b7", "thirty three"), tStill = B("b8"), tEnd = A("b8", "So when");
+      const tFly = tTake + 0.55, tPack = tTake + 1.05, tBack = tEnd + 0.1;
+      const drop = (j) => -0.12 + j * 0.155;          // the first is already falling on frame 1                // jump containers land one by one through the first line
+      const landed = (t) => BOX.filter((b) => b.jump && t >= drop(b.j) + 0.32 && t < tBack + 0.3).length;
+      // ---- colours
+      const COL = { grey: [190, 182, 163], green: [14, 124, 102], pale: [160, 199, 187], blue: [47, 98, 168], slate: [77, 92, 108],
+        fuel: [200, 67, 31], gem: [123, 79, 168], dim: [214, 207, 190] };
+      const mix = (a, b, u) => a.map((v, i) => L(v, b[i], C(u)));
+      function colour(b, t) {
+        let c = b.jump ? COL.green : COL.grey;
+        if (t >= tB3 && t < tEnd) {
+          if (b.jump && b.cat === "ele") c = mix(c, COL.blue, (t - tB3) / 0.25);
+          if (b.jump && b.cat === "eng") c = mix(c, COL.slate, (t - tMach) / 0.25);
+          if (t >= tFuel) {
+            const u = (t - tFuel) / 0.3;
+            if (b.cat === "fue") c = mix(c, COL.fuel, u);
+            else c = mix(c, b.jump ? COL.pale : COL.dim, u);
+            if (t >= tTake && b.cat === "gem") c = mix(c, COL.gem, (t - tTake) / 0.25);
+            if (t >= tGrew && !b.out) c = mix(c, b.jump ? COL.green : COL.grey, (t - tGrew) / 0.3);
+          }
+        }
+        if (t >= tEnd) c = b.jump ? COL.green : COL.grey;
+        return c;
+      }
+      const cv = $("cv"), g = cv.getContext("2d");
+      function box(x, y, c, a, glow) {
+        g.globalAlpha = a;
+        if (glow > 0) { g.shadowColor = `rgba(${COL.fuel.join(",")},${0.55 * glow})`; g.shadowBlur = 26 * glow; }
+        g.fillStyle = `rgb(${c.map(Math.round).join(",")})`; g.fillRect(x, y, CW, CH); g.shadowBlur = 0;
+        g.fillStyle = "rgba(0,0,0,0.13)";                                  // corrugation
+        for (let k = 10; k < CW - 6; k += 9) g.fillRect(x + k, y + 5, 3, CH - 10);
+        g.fillStyle = "rgba(255,255,255,0.22)"; g.fillRect(x, y, CW, 4);   // lit top edge
+        g.fillStyle = "rgba(0,0,0,0.22)"; g.fillRect(x + CW - 14, y + 3, 2, CH - 6); g.fillRect(x, y + CH - 3, CW, 3);
+        g.globalAlpha = 1;
+      }
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const money = (v) => "$" + v.toFixed(1) + " billion";
+      H.render = (t) => {
+        g.clearRect(0, 0, 1080, 1920);
+        // ground and stack shadows
+        g.fillStyle = "rgba(20,22,26,0.18)"; g.fillRect(70, GROUND + 4, 940, 3);
+        const fuelGlow = t >= t140 && t < tGrew ? 0.6 + 0.4 * Math.sin((t - t140) * 6) : 0;
+        for (const b of BOX) {
+          let [x, y] = pos(b.s, b.idx), a = 1;
+          if (b.jump) {                                                 // drop in, and lift out again at the loop point
+            const d0 = drop(b.j), u = Z.o3((t - d0) / 0.32);
+            y -= (1 - u) * 760; a = C((t - d0) / 0.08);
+            if (t >= tBack) { const v = Z.io2((t - tBack - b.j * 0.035) / 0.45); y -= v * 760; a = 1 - C((v - 0.6) / 0.4); }
+          }
+          if (b.out && t >= tFly && t < tBack) {                        // fuel and jewellery fly out sideways
+            const u = Z.io2((t - tFly - (b.s ? 0.08 : 0)) / 0.55);
+            x += (b.s ? 1 : -1) * u * 640; a *= 1 - C((u - 0.5) / 0.5);
+          }
+          if (b.out && t >= tBack) a *= C((t - tBack) / 0.45);           // and come back for the loop
+          if (!b.out && t >= tPack) {                                   // the rest settles down
+            const p2 = pos(b.s, b.idx2), u = Z.io2((t - tPack - (b.idx % 7) * 0.02) / 0.55) * (1 - Z.io2((t - tBack) / 0.55));
+            x = L(x, p2[0], u); y = L(y, p2[1], u);
+          }
+          if (a <= 0) continue;
+          box(x, y, colour(b, t), a, b.cat === "fue" ? fuelGlow : 0);
+        }
+        // ---- the big number
+        let num = "+0%", sub = "GOODS EXPORTS · OCT 2026 vs OCT 2025", fuel = false, size = 190;
+        const n = landed(t);
+        if (t < tFuel || t >= tEnd) num = "+" + Math.round(45 * n / 15) + "%";
+        if (t >= tB3 && t < tFuel) { num = "+45%"; }
+        if (t >= tFuel && t < tFrom) { num = t >= t140 ? "+" + Math.round(140 * C((t - t140) / 0.6)) + "%" : "FUEL"; sub = "PETROLEUM PRODUCTS · OCT 2026 vs OCT 2025"; fuel = true; }
+        if (t >= tFrom && t < tThird) { num = "$3.7B → " + (t >= tNine ? "$8.9B" : "?"); sub = "PETROLEUM PRODUCTS · OCT 2025 → OCT 2026"; fuel = true; size = 150; }
+        if (t >= tThird && t < tTake) { num = t >= tThird2 ? "1/3" : "$5.2B"; sub = t >= tThird2 ? "OF THE WHOLE $15.4 BILLION JUMP" : "OF A $15.4 BILLION JUMP"; fuel = true; }
+        if (t >= tTake && t < tEnd) { num = "+" + Math.round(L(45, 33, Z.io2((t - tGrew) / 0.9))) + "%"; sub = "WITHOUT FUEL & JEWELLERY"; }
+        if (t >= tEnd) sub = "GOODS EXPORTS · OCT 2026 vs OCT 2025";
+        $("num").textContent = num; $("num").className = fuel ? "fuel" : ""; $("num").style.fontSize = size + "px"; $("sub").textContent = sub;
+        // ---- stack labels
+        const packed = C((t - tPack) / 0.5) * (1 - C((t - tBack) / 0.4));
+        $("v0").textContent = packed > 0.5 ? money(28.11) : money(34.11);
+        $("v1").textContent = packed > 0.5 ? money(37.38) : money(34.11 + 15.36 * n / 15);
+        // ---- tags
+        const jumpTop = pos(1, 48)[1];
+        place("tEle", 110, 590, F(t, tB3 + 0.1, tFuel, 0.2));
+        place("tEng", 110, 690, F(t, tMach, tFuel, 0.2));
+        $("stamp").style.opacity = F(t, tMach + 0.45, tFuel, 0.12);
+        $("stamp").style.transform = `rotate(-6deg) scale(${1.5 - 0.5 * Z.o3((t - tMach - 0.45) / 0.22)})`;
+        place("tFue", 110, 610, F(t, tFuel + 0.15, tFrom, 0.2));
+        const f0 = pos(0, 31), f1 = pos(1, 36);
+        place("tF0", f0[0] + 120, f0[1] - 6, F(t, tFrom + 0.1, tThird, 0.2));
+        place("tF1", 360, f1[1] - 6, F(t, tNine, tThird, 0.2));
+        place("tOut", 300, 640, F(t, tTake + 0.2, tGrew + 0.6, 0.2));
+        // a bracket over the jump in b6: 5 of the 15 new containers
+        const br = F(t, tThird + 0.1, tTake, 0.25);
+        if (br > 0) { g.globalAlpha = br; g.strokeStyle = "#c8431f"; g.lineWidth = 6;
+          const top = jumpTop - 10, bot = pos(1, 34)[1] + CH + 8, x = X0[1] - 18;
+          g.beginPath(); g.moveTo(x + 16, top); g.lineTo(x, top); g.lineTo(x, bot); g.lineTo(x + 16, bot); g.stroke(); g.globalAlpha = 1; }
+        // ---- sources
+        const SRC = [[0, tB3], [tB3, tFuel], [tFuel, tThird], [tThird, tTake], [tTake, tEnd], [tEnd, 99]];
+        const so = [0, 0, 0, 0, 0];
+        SRC.forEach(([a, b], i) => { if (t >= a && t < b) so[i === 5 ? 0 : i] = 1; });
+        so.forEach((o, i) => { $("s" + i).style.opacity = o; });
+        caps(t);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

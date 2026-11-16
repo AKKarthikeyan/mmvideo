@@ -13,3 +13,12 @@ Read `CONTRACT_B.md` first; its look, rules and checks apply unchanged.
   `staircases`, `family-jars` (labelled OUR READING), `subsidy-tag`, `pen-chain` (excise, vat), `credit-chain`, `destination-trucks`,
   `outside-glass`, `bags-seesaw`.
 - No map is drawn: State lines are road signs. No brand, logo or real shop; the street light is labelled "an example" (audit b02b.s3).
+
+## Part 2 (builder X2)
+- Composition `LONG-eco12-p2-B` / `-B60`; storyboard and estimated timeline in `public/datayt/long/upsc/eco12-p2/` (20 scenes, 5:57), built by
+  `scripts/upsc/eco12_storyboard.py 2` from `research/upsc/ECO-12/script_p2.py` (draft 2, audit `SCRIPT_P2_AUDIT.md` applied).
+- New (record `scenes/analogy_x2.tsx`, art `analogy_x2_a/b/c.tsx`): `council-table` (guess, seated, together), `two-lists` (locked, open),
+  `amendment-book`, `definition-page`, `excise-cards`, `tax-funnel`, `council-sheet`, `vote-meter`, `padlocks`, `midnight-clock`,
+  `ship-freight`, `shared-pen`. Reused: `series-path`, `title`, `statement`, `notebook`.
+- The vote meter's blocks are drawn from Art. 279A(9)'s shares (E12-D01); the fractions on screen are `f12_` labels. "Before GST" in
+  `two-lists` is labelled OUR SUMMARY, as the audit asked. Chairs carry blank name cards; no party colours, faces or emblems.

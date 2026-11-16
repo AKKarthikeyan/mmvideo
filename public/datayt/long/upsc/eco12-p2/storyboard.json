@@ -1,0 +1,976 @@
+{
+ "id": "eco12-p2",
+ "format": "long-16x9",
+ "target_minutes": 8.0,
+ "script": "research/upsc/ECO-12/script_p2.py",
+ "scenes": [
+  {
+   "id": "s001",
+   "act": "Ch1 b00",
+   "kind": "analogy",
+   "spec": {
+    "which": "council-table",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "THE GST COUNCIL",
+      "key": "gc"
+     },
+     {
+      "text": "THE CENTRE ALONE?",
+      "key": "q1"
+     },
+     {
+      "text": "ALL THE STATES TOGETHER?",
+      "key": "q2"
+     }
+    ],
+    "mode": "guess"
+   },
+   "vo": "The Union Finance Minister and a minister from every State sit at one table, the GST Council. Guess first. Can the Centre alone push a decision through? Can all the States together outvote the Centre?",
+   "reveals": [
+    {
+     "key": "gc",
+     "word": "GST"
+    },
+    {
+     "key": "q1",
+     "word": "alone"
+    },
+    {
+     "key": "q2",
+     "word": "together"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A long table from above: one Union chair, many chairs with blank State name cards; two question cards.",
+   "beat": "b00",
+   "claims": [
+    "E12-C06",
+    "E12-D01"
+   ]
+  },
+  {
+   "id": "s002",
+   "act": "Ch1 b01",
+   "kind": "title",
+   "spec": {
+    "title": "Who decides GST: Delhi or the States?",
+    "sub": "GST and the rest, part two",
+    "chip": "ECONOMY · UPSC"
+   },
+   "vo": "Hold your guess. First, why does this table exist at all?",
+   "reveals": [],
+   "transition": "cut",
+   "visual": "Title card.",
+   "beat": "b01",
+   "claims": [
+    "E12-C01"
+   ]
+  },
+  {
+   "id": "s003",
+   "act": "Ch1 b01",
+   "kind": "analogy",
+   "spec": {
+    "which": "series-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PART 1 · who really pays",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · GST in the Constitution",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · the money",
+      "key": "p3"
+     }
+    ],
+    "mode": "part2"
+   },
+   "vo": "This is part two of three. Part one was who really pays. This part is how the Constitution made one tax possible.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "pays."
+    },
+    {
+     "key": "p2",
+     "word": "Constitution"
+    },
+    {
+     "key": "p3",
+     "word": "three."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three-stop path, the second stop lit.",
+   "beat": "b01",
+   "claims": [
+    "E12-C01"
+   ]
+  },
+  {
+   "id": "s004",
+   "act": "Ch2 b02",
+   "kind": "analogy",
+   "spec": {
+    "which": "two-lists",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "UNION LIST",
+      "key": "ul"
+     },
+     {
+      "text": "STATE LIST",
+      "key": "sl"
+     },
+     {
+      "text": "OUR SUMMARY: excise and services with the Centre · sales with the States",
+      "key": "os"
+     },
+     {
+      "text": "ONE TAX ON THE WHOLE CHAIN?",
+      "key": "gs"
+     }
+    ],
+    "mode": "locked"
+   },
+   "vo": "Before GST, the Constitution gave the Centre and the States separate tax powers. Roughly, before GST the Centre taxed manufacture through excise, and services; the States taxed the sale of goods. That is our summary of the entries the amendment later cut. So one tax on the whole supply chain did not fit into either list.",
+   "reveals": [
+    {
+     "key": "ul",
+     "word": "Centre"
+    },
+    {
+     "key": "sl",
+     "word": "States"
+    },
+    {
+     "key": "os",
+     "word": "summary"
+    },
+    {
+     "key": "gs",
+     "word": "fit"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two locked boxes, UNION LIST and STATE LIST; a long GST card cannot fit into either.",
+   "beat": "b02",
+   "claims": [
+    "E12-C14",
+    "E12-C13"
+   ]
+  },
+  {
+   "id": "s005",
+   "act": "Ch2 b03",
+   "kind": "analogy",
+   "spec": {
+    "which": "amendment-book",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Constitution (101st Amendment) Act, 2016",
+      "key": "am"
+     },
+     {
+      "text": "assent: 8 September 2016",
+      "key": "as"
+     },
+     {
+      "text": "Art. 279A: in force from 12 September",
+      "key": "c1"
+     },
+     {
+      "text": "the other changes: from 16 September",
+      "key": "c2"
+     }
+    ]
+   },
+   "vo": "So Parliament amended the Constitution. The hundred and first Amendment Act received the President's assent on the eighth of September, twenty sixteen. Its GST Council article came into force on the twelfth of September. The other changes to the Constitution followed four days later.",
+   "reveals": [
+    {
+     "key": "am",
+     "word": "hundred"
+    },
+    {
+     "key": "as",
+     "word": "assent"
+    },
+    {
+     "key": "c1",
+     "word": "Council"
+    },
+    {
+     "key": "c2",
+     "word": "later."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The Constitution book opens; a new page is stitched in; two calendar pins.",
+   "beat": "b03",
+   "claims": [
+    "E12-C01",
+    "E12-C02"
+   ]
+  },
+  {
+   "id": "s006",
+   "act": "Ch2 b04",
+   "kind": "analogy",
+   "spec": {
+    "which": "two-lists",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 246A · Parliament and the States both",
+      "key": "a246"
+     },
+     {
+      "text": "inter-State: Parliament only",
+      "key": "is"
+     },
+     {
+      "text": "ART. 269A · collected by the Centre, shared",
+      "key": "a269"
+     }
+    ],
+    "mode": "open"
+   },
+   "vo": "The key new article is two hundred forty-six A. It gives both Parliament and the State legislatures the power to make GST laws. But when a supply crosses a State border, only Parliament can make the law. That inter-State tax is collected by the Centre and shared, under Article two hundred sixty-nine A.",
+   "reveals": [
+    {
+     "key": "a246",
+     "word": "forty-six"
+    },
+    {
+     "key": "is",
+     "word": "border,"
+    },
+    {
+     "key": "a269",
+     "word": "sixty-nine"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The two boxes open into one shared drawer; a truck's tax drops into a second drawer that splits in two.",
+   "beat": "b04",
+   "claims": [
+    "E12-C03",
+    "E12-C04"
+   ]
+  },
+  {
+   "id": "s007",
+   "act": "Ch2 b05",
+   "kind": "analogy",
+   "spec": {
+    "which": "definition-page",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 366(12A) · a tax on the supply of goods, services or both",
+      "key": "df"
+     },
+     {
+      "text": "except alcohol for drinking",
+      "key": "ex"
+     },
+     {
+      "text": "366(26A): services = anything other than goods",
+      "key": "sv"
+     }
+    ]
+   },
+   "vo": "The Constitution also defines GST. It is any tax on the supply of goods, services or both. The one exception is alcohol for drinking. And services are defined simply as anything other than goods.",
+   "reveals": [
+    {
+     "key": "df",
+     "word": "supply"
+    },
+    {
+     "key": "ex",
+     "word": "alcohol"
+    },
+    {
+     "key": "sv",
+     "word": "services"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A dictionary page in the Constitution; one item, a generic bottle, set outside the frame.",
+   "beat": "b05",
+   "claims": [
+    "E12-C11"
+   ]
+  },
+  {
+   "id": "s008",
+   "act": "Ch2 b06",
+   "kind": "analogy",
+   "spec": {
+    "which": "excise-cards",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 268A (service tax): omitted",
+      "key": "om"
+     },
+     {
+      "lab": "f12_excise",
+      "key": "ex"
+     }
+    ]
+   },
+   "vo": "Old powers were cut back. The article for service tax was removed. The Centre's excise now covers only petrol, diesel, crude oil, natural gas, aviation fuel and tobacco products.",
+   "reveals": [
+    {
+     "key": "om",
+     "word": "removed."
+    },
+    {
+     "key": "ex",
+     "word": "petrol,"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Old tax cards fade; six remain under UNION EXCISE: five fuel icons and a tobacco leaf.",
+   "beat": "b06",
+   "claims": [
+    "E12-C13",
+    "E12-C14"
+   ]
+  },
+  {
+   "id": "s009",
+   "act": "Ch3 b07",
+   "kind": "analogy",
+   "spec": {
+    "which": "tax-funnel",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "from the Centre: excise · service tax · extra customs duty",
+      "key": "fc"
+     },
+     {
+      "text": "from the States: VAT · CST · luxury · entry · entertainment …",
+      "key": "fs"
+     },
+     {
+      "lab": "f12_17",
+      "key": "ct"
+     }
+    ]
+   },
+   "vo": "Into GST went a long list. From the Centre, central excise, service tax and the extra customs duty on imports. From the States, VAT, central sales tax, luxury tax, entry tax and entertainment tax, among others. The Finance Ministry counts seventeen taxes and thirteen cesses in all.",
+   "reveals": [
+    {
+     "key": "fc",
+     "word": "Centre,"
+    },
+    {
+     "key": "fs",
+     "word": "States,"
+    },
+    {
+     "key": "ct",
+     "word": "seventeen"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Tax cards from two sides pour into one funnel labelled GST.",
+   "beat": "b07",
+   "claims": [
+    "E12-F01",
+    "E12-F02",
+    "E12-F04"
+   ]
+  },
+  {
+   "id": "s010",
+   "act": "Ch4 b08",
+   "kind": "analogy",
+   "spec": {
+    "which": "council-table",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "ART. 279A · the GST Council",
+      "key": "a279"
+     },
+     {
+      "text": "CHAIR · the Union Finance Minister",
+      "key": "ch"
+     },
+     {
+      "text": "with the Union Minister of State, revenue or finance",
+      "key": "ms"
+     },
+     {
+      "text": "every State: its finance or taxation minister",
+      "key": "st"
+     }
+    ],
+    "mode": "seated"
+   },
+   "vo": "But who recommends the rates for this shared tax? Not Parliament alone, and not any one State. Article two hundred seventy-nine A creates the GST Council. The Union Finance Minister chairs it, with the Union Minister of State in charge of revenue or finance. Every State sends its finance or taxation minister, or another minister it nominates.",
+   "reveals": [
+    {
+     "key": "a279",
+     "word": "seventy-nine"
+    },
+    {
+     "key": "ch",
+     "word": "chairs"
+    },
+    {
+     "key": "ms",
+     "word": "revenue"
+    },
+    {
+     "key": "st",
+     "word": "Every"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The long table again: the Union chair labelled CHAIR; each State chair gets a blank name card.",
+   "beat": "b08",
+   "claims": [
+    "E12-C06"
+   ]
+  },
+  {
+   "id": "s011",
+   "act": "Ch4 b09",
+   "kind": "analogy",
+   "spec": {
+    "which": "council-sheet",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "THE COUNCIL RECOMMENDS",
+      "key": "cr"
+     },
+     {
+      "text": "taxes merged · exemptions · rates · thresholds",
+      "key": "ls"
+     },
+     {
+      "text": "the date for petrol, diesel and three other fuels",
+      "key": "dt"
+     },
+     {
+      "text": "NCERT: One Nation, One Tax, One Market",
+      "key": "nc"
+     },
+     {
+      "text": "the Constitution: a harmonised national market",
+      "key": "cn"
+     }
+    ]
+   },
+   "vo": "The Council recommends almost everything. Which taxes merge, which goods are taxed or exempt, the rates and the thresholds. It also recommends the date from which petrol, diesel and three other fuels enter GST. And it must aim for a harmonised national market. NCERT titles its GST box One Nation, One Tax, One Market. The Constitution's words are harmonised structure and harmonised national market.",
+   "reveals": [
+    {
+     "key": "cr",
+     "word": "recommends"
+    },
+    {
+     "key": "ls",
+     "word": "rates"
+    },
+    {
+     "key": "dt",
+     "word": "date"
+    },
+    {
+     "key": "nc",
+     "word": "NCERT"
+    },
+    {
+     "key": "cn",
+     "word": "Constitution's"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A recommendation sheet with ticked lines; a fuel nozzle with a blank date card; two banners side by side.",
+   "beat": "b09",
+   "claims": [
+    "E12-C07",
+    "E12-C08",
+    "E12-C09",
+    "E12-K04"
+   ]
+  },
+  {
+   "id": "s012",
+   "act": "Ch4 b10",
+   "kind": "analogy",
+   "spec": {
+    "which": "vote-meter",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "lab": "f12_vote",
+      "key": "v"
+     },
+     {
+      "lab": "f12_union",
+      "key": "u"
+     },
+     {
+      "lab": "f12_states",
+      "key": "s"
+     },
+     {
+      "text": "OUR WORKING: neither alone reaches it",
+      "key": "ow"
+     }
+    ]
+   },
+   "vo": "Now your guess. Every decision needs three-fourths of the weighted votes of members present and voting. The Centre's vote counts as one-third. All the States together count as two-thirds. Our working: one-third alone is short of three-fourths. Two-thirds alone is short too. So neither the Centre nor all the States can decide without the other.",
+   "reveals": [
+    {
+     "key": "v",
+     "word": "three-fourths"
+    },
+    {
+     "key": "u",
+     "word": "Centre's"
+    },
+    {
+     "key": "s",
+     "word": "States"
+    },
+    {
+     "key": "ow",
+     "word": "working:"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A vote meter: the Centre's block stops short of the line; the States' block stops short too; together they cross it.",
+   "beat": "b10",
+   "claims": [
+    "E12-D01"
+   ]
+  },
+  {
+   "id": "s013",
+   "act": "Ch4 b11",
+   "kind": "analogy",
+   "spec": {
+    "which": "padlocks",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "half the State legislatures must ratify",
+      "key": "rt"
+     },
+     {
+      "text": "a way to settle Centre-State disputes",
+      "key": "dm"
+     },
+     {
+      "lab": "f12_comp",
+      "key": "cp"
+     },
+     {
+      "text": "PART 3",
+      "key": "p3"
+     }
+    ]
+   },
+   "vo": "The design has more locks. Changing the Council article needs ratification by at least half the State Legislatures, not just Parliament. The Council must also set up a way to settle disputes between the Centre and the States. And the Act promised the States compensation for five years, for any revenue they lost. That story is part three.",
+   "reveals": [
+    {
+     "key": "rt",
+     "word": "ratification"
+    },
+    {
+     "key": "dm",
+     "word": "disputes"
+    },
+    {
+     "key": "cp",
+     "word": "compensation"
+    },
+    {
+     "key": "p3",
+     "word": "three."
+    }
+   ],
+   "transition": "cut",
+   "visual": "Three padlocks on the Council's door; the third tagged PART 3.",
+   "beat": "b11",
+   "claims": [
+    "E12-C16",
+    "E12-C10",
+    "E12-C17"
+   ]
+  },
+  {
+   "id": "s014",
+   "act": "Ch4 b12",
+   "kind": "analogy",
+   "spec": {
+    "which": "midnight-clock",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "1 July 2017 · a midnight session of Parliament",
+      "key": "md"
+     },
+     {
+      "text": "NCERT: the biggest tax reform since Independence",
+      "key": "nc"
+     }
+    ]
+   },
+   "vo": "GST began at midnight, as the first of July twenty seventeen began, in a special midnight session of Parliament. NCERT calls it the biggest tax reform since Independence.",
+   "reveals": [
+    {
+     "key": "md",
+     "word": "midnight,"
+    },
+    {
+     "key": "nc",
+     "word": "biggest"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A clock striking twelve over a generic Parliament building; a calendar page turns.",
+   "beat": "b12",
+   "claims": [
+    "E12-C19",
+    "E12-K01"
+   ]
+  },
+  {
+   "id": "s015",
+   "act": "Ch5 b13",
+   "kind": "analogy",
+   "spec": {
+    "which": "ship-freight",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "Union of India v Mohit Minerals (2022)",
+      "key": "mm"
+     },
+     {
+      "text": "IGST on ocean freight",
+      "key": "ig"
+     },
+     {
+      "text": "STRUCK DOWN",
+      "key": "sd"
+     }
+    ]
+   },
+   "vo": "But is the Council's word law? A case about shipping settled it. Importers were charged IGST on the ocean freight paid by the foreign seller to a shipping line. In twenty twenty-two, the Supreme Court struck that levy down.",
+   "reveals": [
+    {
+     "key": "mm",
+     "word": "shipping."
+    },
+    {
+     "key": "ig",
+     "word": "IGST"
+    },
+    {
+     "key": "sd",
+     "word": "struck"
+    }
+   ],
+   "transition": "cut",
+   "visual": "A cargo ship at sea; a tax tag on its freight is stamped STRUCK DOWN.",
+   "beat": "b13",
+   "claims": [
+    "E12-D07"
+   ]
+  },
+  {
+   "id": "s016",
+   "act": "Ch5 b14",
+   "kind": "statement",
+   "spec": {
+    "lines": [
+     {
+      "text": "The Union argued: recommendations must bind",
+      "key": "ub"
+     },
+     {
+      "text": "The Court: persuasive, not binding",
+      "key": "cp"
+     },
+     {
+      "text": "Proposed Article {const:279}B: dropped",
+      "key": "pb"
+     }
+    ],
+    "accent": [
+     "persuasive, not binding"
+    ]
+   },
+   "vo": "On the way, the Court answered the bigger question. The Union argued the Council's recommendations must bind Parliament and the States, or there would be an impasse. The Court disagreed. It held the recommendations are persuasive, not binding. One reason: Parliament dropped a proposed Article two hundred seventy-nine B. It was an authority to rule on departures from the Council's recommendations. The Court read that as meant to keep recommendations persuasive.",
+   "reveals": [
+    {
+     "key": "ub",
+     "word": "Union"
+    },
+    {
+     "key": "cp",
+     "word": "persuasive,"
+    },
+    {
+     "key": "pb",
+     "word": "dropped"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Citation card: the Union's argument and the Court's holding.",
+   "beat": "b14",
+   "claims": [
+    "E12-D05",
+    "E12-D02",
+    "E12-D03"
+   ]
+  },
+  {
+   "id": "s017",
+   "act": "Ch5 b15",
+   "kind": "analogy",
+   "spec": {
+    "which": "shared-pen",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "rules under the CGST and IGST Acts: bound",
+      "key": "rb"
+     },
+     {
+      "text": "Parliament and the States keep their power to make laws",
+      "key": "lp"
+     },
+     {
+      "text": "federalism as a dialogue",
+      "key": "fd"
+     },
+     {
+      "text": "equal power to legislate on GST",
+      "key": "eq"
+     }
+    ]
+   },
+   "vo": "But the Court drew a line. When the Government makes rules under the CGST and IGST Acts, it is bound by the Council's recommendations. Parliament and the State legislatures keep their own power to make laws. The Court described Indian federalism as a dialogue between cooperative and uncooperative federalism, from collaboration to contestation. It said the Union and the States have equal power to legislate on GST.",
+   "reveals": [
+    {
+     "key": "rb",
+     "word": "rules"
+    },
+    {
+     "key": "lp",
+     "word": "legislatures"
+    },
+    {
+     "key": "fd",
+     "word": "dialogue"
+    },
+    {
+     "key": "eq",
+     "word": "equal"
+    }
+   ],
+   "transition": "cut",
+   "visual": "Two hands on one shared pen over a GST law page, neither above the other; speech bubbles going back and forth.",
+   "beat": "b15",
+   "claims": [
+    "E12-D04",
+    "E12-D06"
+   ]
+  },
+  {
+   "id": "s018",
+   "act": "Ch6 b16",
+   "kind": "analogy",
+   "spec": {
+    "which": "council-table",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "OUR SUMMARY",
+      "key": "os"
+     },
+     {
+      "text": "BOTH TOGETHER · NEITHER ALONE",
+      "key": "bt"
+     },
+     {
+      "text": "each legislature keeps its law-making power",
+      "key": "lk"
+     }
+    ],
+    "mode": "together"
+   },
+   "vo": "So who decides GST, Delhi or the States? Our summary: at the Council, both together and neither alone. And each legislature keeps its own power to make GST laws.",
+   "reveals": [
+    {
+     "key": "os",
+     "word": "summary:"
+    },
+    {
+     "key": "bt",
+     "word": "both"
+    },
+    {
+     "key": "lk",
+     "word": "legislature"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The long table, both sides' hands on the same document.",
+   "beat": "b16",
+   "claims": [
+    "E12-C03",
+    "E12-C04",
+    "E12-C06",
+    "E12-D01",
+    "E12-D02",
+    "E12-D06"
+   ]
+  },
+  {
+   "id": "s019",
+   "act": "Ch6 b16",
+   "kind": "notebook",
+   "spec": {
+    "who": "girl",
+    "lines": [
+     {
+      "text": "101st Amendment: Art. 246A, a shared power",
+      "key": "n1"
+     },
+     {
+      "text": "Art. 269A: inter-State tax, collected by the Centre and shared",
+      "key": "n2"
+     },
+     {
+      "text": "Art. 279A Council: three-fourths vote; Centre one-third, States two-thirds",
+      "key": "n3"
+     },
+     {
+      "text": "Mohit Minerals: persuasive, not binding · cooperative federalism",
+      "key": "n4"
+     }
+    ],
+    "strike": {
+     "text": "Delhi decides",
+     "key": "x"
+    }
+   },
+   "vo": "For the exam, write it this way. The hundred and first Amendment gave Parliament and the States a shared power under two hundred forty-six A. Inter-State supply is taxed by the Centre and shared, under two hundred sixty-nine A. The Council under two hundred seventy-nine A recommends, with a three-fourths weighted vote, Centre one-third, States two-thirds. Mohit Minerals held its recommendations persuasive, not binding. The Court said GST aims at cooperative federalism, and called Indian federalism a dialogue between cooperative and uncooperative federalism.",
+   "reveals": [
+    {
+     "key": "x",
+     "word": "exam,"
+    },
+    {
+     "key": "n1",
+     "word": "hundred"
+    },
+    {
+     "key": "n2",
+     "word": "sixty-nine"
+    },
+    {
+     "key": "n3",
+     "word": "Council"
+    },
+    {
+     "key": "n4",
+     "word": "Mohit"
+    }
+   ],
+   "transition": "cut",
+   "visual": "The girl's notebook: the old guess struck out; the exam lines fill in.",
+   "beat": "b16",
+   "claims": [
+    "E12-C03",
+    "E12-C04",
+    "E12-C06",
+    "E12-D01",
+    "E12-D02",
+    "E12-D06"
+   ]
+  },
+  {
+   "id": "s020",
+   "act": "Ch6 b17",
+   "kind": "analogy",
+   "spec": {
+    "which": "series-path",
+    "chip": "",
+    "limit": "",
+    "labels": [
+     {
+      "text": "PART 1 · who really pays",
+      "key": "p1"
+     },
+     {
+      "text": "PART 2 · GST in the Constitution",
+      "key": "p2"
+     },
+     {
+      "text": "PART 3 · the money",
+      "key": "p3"
+     }
+    ],
+    "mode": "part3"
+   },
+   "vo": "Then came twenty twenty, and the promise of five years of compensation met a pandemic. That is part three.",
+   "reveals": [
+    {
+     "key": "p1",
+     "word": "twenty,"
+    },
+    {
+     "key": "p2",
+     "word": "promise"
+    },
+    {
+     "key": "p3",
+     "word": "three."
+    }
+   ],
+   "transition": "cut",
+   "visual": "The three-stop path, the third stop glowing.",
+   "beat": "b17",
+   "claims": [
+    "E12-C17"
+   ]
+  }
+ ]
+}

@@ -20,7 +20,7 @@ import {KATHA_SCENES} from "./scenes";
 import {Label} from "./stage";
 
 export type KBeat = {key: string; chapter: number; movement: string; speaker: string; say: string; cap?: string; sec: number; audio?: string; scene: any; music?: string; ref?: string | null};
-export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean};
+export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean; lamps?: boolean};   // lamps: false hides the Gita's eighteen lamps
 export const XF = 14;   // dissolve between beats, in frames
 export const beatLen = (b: KBeat) => Math.ceil((b.sec + (b.scene?.type === "title" ? 1.0 : 0.6)) * FPS);
 export const filmLayout = (D: KData) => {
@@ -256,7 +256,7 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
           </Sequence>
         );
       })}
-      <Lamps chapter={b?.chapter || 0} f={f} g={g}/>
+      {D.lamps !== false ? <Lamps chapter={b?.chapter || 0} f={f} g={g}/> : null}
       {line === was ? <Chapter text={line} g={g}/> : <><Chapter text={was} g={g} o={1 - k}/><Chapter text={line} g={g} o={k}/></>}
       {D.music !== "" ? <Audio src={staticFile(D.music || "dharma/tanpura.wav")} loop volume={(fr) => interpolate(fr, [0, 60, total - 90, total], [0, bed, bed, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"})}/> : null}
     </AbsoluteFill>

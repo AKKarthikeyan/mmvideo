@@ -75,12 +75,8 @@ export const surapadman = (w = 0, t = 0): string[] => {
   P.push(smooth([[-154, -292], [-170, -294], [-180, -286], [-172, -280], [-180, -274], [-166, -270], [-152, -274]]));
   P.push(ribbon(cub([50, -316], [70, -288], [74, -256], [62, -230]), 29, 19, 1));
   P.push(ribbon(cub([62, -230], [54, -216], [44, -208], [34, -204]), 19, 14, 1));
-  // the cloak streaming behind
-  {
-    const pts: number[][] = [];
-    for (let i = 0; i <= 12; i++) { const u = i / 12; pts.push([40 + 150 * u + w * 30 * u * u, -318 + 250 * u * u + Math.sin(t * 0.07 + u * 5) * 9 * u]); }
-    P.push(band(pts, 46, 12, 1, "point"));
-  }
+  // a cape from the shoulders to the calf
+  P.push(smooth([[30, -326], [62, -318], [84, -250], [96, -160], [100, -70], [70, -60], [62, -150], [52, -240]]));
   P.push(...mukuta(-1, -396, 1.12, 1.25));
   return P;
 };
@@ -156,4 +152,100 @@ export const seatedMan = (): {paths: string[]; phone: [number, number]} => {
   P.push(ribbon(cub([-58, -192], [-76, -196], [-94, -202], [-110, -208]), 18, 13, 1));
   P.push(smooth([[-108, -216], [-122, -216], [-126, -206], [-118, -198], [-106, -200]]));
   return {paths: P, phone: [-128, -222]};
+};
+
+// ---------- people of the present day (Arun's story): faceless, plain, facing left, standing on y = 0 ----------
+// A man standing (~400 tall). arm: "down" | "point" (the forward arm out, a finger extended) | "bag" (a bag in the rear hand).
+// bow: 0..1, the head and shoulders dropped.
+export const man = (arm: "down" | "point" | "bag" = "down", bow = 0): string[] => {
+  const P: string[] = [], hx = -4 - 14 * bow, hy = -372 + 16 * bow;
+  P.push(smooth([[hx - 22, hy], [hx - 16, hy - 24], [hx + 4, hy - 30], [hx + 22, hy - 18], [hx + 24, hy + 6], [hx + 10, hy + 26], [hx - 10, hy + 24]]));
+  P.push(smooth([[hx - 6, hy + 20], [hx + 14, hy + 16], [14, -326], [-10, -326]]));
+  P.push(smooth([[-40 - 6 * bow, -322 + 6 * bow], [-12, -332], [18, -332], [44, -320], [46, -280], [40, -230], [38, -196], [-34, -196], [-36, -232], [-42, -282]]));
+  P.push(smooth([[-34, -204], [38, -204], [40, -150], [36, -80], [34, -14], [8, -14], [4, -90], [2, -150], [-4, -90], [-10, -14], [-36, -14], [-36, -80], [-36, -150]]));
+  P.push(smooth([[-38, -16], [-8, -16], [-6, 0, "c"], [-58, 0, "c"], [-54, -8]]));
+  P.push(smooth([[8, -16], [36, -16], [38, 0, "c"], [-8, 0, "c"], [-4, -8]]));
+  if (arm === "point") {
+    P.push(ribbon(cub([-32, -316], [-60, -312], [-92, -316], [-124, -322]), 28, 18, 1));
+    P.push(smooth([[-120, -332], [-140, -334], [-172, -330], [-172, -324], [-146, -322], [-150, -314], [-132, -310], [-120, -312]]));
+  } else {
+    P.push(ribbon(cub([-34, -316 + 6 * bow], [-46, -280], [-46, -240], [-40, -200]), 27, 18, 1));
+    P.push(smooth([[-50, -204], [-48, -184], [-38, -178], [-30, -188], [-32, -204]]));
+  }
+  P.push(ribbon(cub([36, -316], [48, -280], [48, -240], [42, -200]), 27, 18, 1));
+  if (arm === "bag") { P.push(`M 30 -196 L 54 -196 L 54 -190 L 78 -190 L 78 -110 L 6 -110 L 6 -190 L 30 -190 Z`); }
+  return P;
+};
+// A woman standing in a sari (~380 tall), the pallu over the shoulder, hair in a knot.
+export const woman = (crown = false): string[] => {
+  const P: string[] = [];
+  P.push(smooth([[-24, -352], [-18, -374], [2, -380], [20, -370], [22, -348], [10, -330], [-10, -332]]));
+  P.push(smooth([[14, -372], [34, -362], [36, -342], [22, -336]]));
+  P.push(smooth([[-8, -334], [10, -336], [12, -312], [-8, -312]]));
+  P.push(smooth([[-34, -306], [-10, -316], [14, -316], [36, -306], [38, -270], [30, -236], [28, -210], [-26, -210], [-28, -238], [-36, -272]]));
+  P.push(smooth([[-28, -216], [30, -216], [44, -160], [56, -90], [66, -20], [70, 0, "c"], [-62, 0, "c"], [-56, -30], [-44, -100], [-34, -160]]));
+  // the pallu falling behind
+  P.push(smooth([[20, -314], [40, -304], [52, -250], [58, -180], [54, -120], [42, -124], [40, -190], [32, -250]]));
+  P.push(ribbon(cub([-30, -300], [-42, -270], [-44, -240], [-36, -206]), 22, 15, 1));
+  if (crown) P.push(...mukuta(-1, -374, 0.8, 0.9));
+  return P;
+};
+// A child (~235 tall). paper: "up" (a sheet held high in both hands) | "down" (the sheet hanging from one hand) | "none".
+// Returns the paths and the sheet's corners (draw the sheet as a pale colour layer).
+export const child = (paper: "up" | "down" | "none" = "none"): {paths: string[]; sheet: number[][] | null} => {
+  const P: string[] = [];
+  P.push(smooth([[-22, -200], [-18, -224], [2, -234], [22, -224], [26, -200], [14, -180], [-10, -180]]));
+  P.push(smooth([[-6, -184], [10, -184], [12, -168], [-8, -168]]));
+  P.push(smooth([[-24, -166], [-8, -172], [12, -172], [26, -166], [28, -130], [24, -96], [-22, -96], [-26, -130]]));
+  P.push(smooth([[-22, -102], [24, -102], [26, -64], [6, -62], [2, -84], [-2, -62], [-24, -64]]));
+  P.push(ribbon(cub([-12, -66], [-13, -44], [-14, -24], [-14, -8]), 15, 11, 1));
+  P.push(ribbon(cub([14, -66], [15, -44], [16, -24], [16, -8]), 15, 11, 1));
+  P.push(smooth([[-22, -9], [-6, -9], [-4, 0, "c"], [-32, 0, "c"]]));
+  P.push(smooth([[8, -9], [24, -9], [26, 0, "c"], [-2, 0, "c"]]));
+  let sheet: number[][] | null = null;
+  if (paper === "up") {
+    P.push(ribbon(cub([-20, -160], [-36, -176], [-48, -200], [-54, -226]), 15, 10, 1));
+    P.push(ribbon(cub([22, -160], [10, -186], [-10, -214], [-30, -232]), 15, 10, 1));
+    sheet = [[-112, -300], [-26, -292], [-32, -222], [-118, -230]];
+  } else {
+    P.push(ribbon(cub([-22, -160], [-30, -136], [-32, -112], [-30, -92]), 15, 10, 1));
+    P.push(ribbon(cub([24, -160], [32, -136], [32, -112], [28, -92]), 15, 10, 1));
+    if (paper === "down") sheet = [[-48, -94], [-18, -94], [-14, -22], [-52, -26]];
+  }
+  return {paths: P, sheet};
+};
+// A man on one knee, at a child's height, the forward arm reaching out. Faces left.
+export const kneeling = (): string[] => {
+  const P: string[] = [];
+  P.push(smooth([[-36, -262], [-30, -286], [-10, -294], [10, -284], [14, -262], [2, -242], [-18, -242]]));
+  P.push(smooth([[-14, -246], [4, -248], [10, -226], [-10, -224]]));
+  P.push(smooth([[-36, -220], [-10, -230], [18, -230], [42, -218], [48, -176], [46, -130], [44, -104], [-24, -104], [-30, -136], [-38, -180]]));
+  // forward thigh level, shin down; rear thigh down, shin along the floor
+  P.push(ribbon(cub([10, -116], [-24, -122], [-60, -120], [-92, -112]), 46, 36, 1));
+  P.push(ribbon(cub([-90, -114], [-94, -80], [-96, -44], [-96, -12]), 36, 22, 1));
+  P.push(smooth([[-110, -14], [-84, -14], [-82, 0, "c"], [-132, 0, "c"], [-128, -6]]));
+  P.push(ribbon(cub([30, -116], [36, -84], [40, -50], [44, -20]), 44, 34, 1));
+  P.push(ribbon(cub([40, -22], [76, -22], [112, -18], [146, -12]), 34, 18, 1));
+  P.push(ribbon(cub([-30, -214], [-54, -200], [-80, -190], [-106, -186]), 25, 16, 1));
+  P.push(smooth([[-104, -194], [-120, -194], [-128, -186], [-118, -178], [-104, -178]]));
+  P.push(ribbon(cub([40, -212], [52, -178], [52, -146], [40, -118]), 25, 17, 1));
+  return P;
+};
+// A Dravida temple tower (gopuram): a stone base with a doorway, tapering storeys, a barrel roof with a row of finials.
+// Foot at (x, y), width w at the base; about 2.3 w tall.
+export const gopuram = (x: number, y: number, w: number, tiers = 9): string[] => {
+  const P: string[] = [], bh = w * 0.42;
+  P.push(`M ${x - w / 2} ${y} L ${x - w / 2} ${y - bh} L ${x + w / 2} ${y - bh} L ${x + w / 2} ${y} L ${x + w * 0.1} ${y} L ${x + w * 0.1} ${y - bh * 0.6} L ${x - w * 0.1} ${y - bh * 0.6} L ${x - w * 0.1} ${y} Z`);
+  let yy = y - bh, ww = w * 0.94;
+  const th = (w * 1.5) / tiers;
+  for (let i = 0; i < tiers; i++) {
+    const w2 = ww * 0.925;
+    P.push(`M ${x - ww / 2 - th * 0.12} ${yy} L ${x - ww / 2 - th * 0.12} ${yy - th * 0.16} L ${x - w2 / 2} ${yy - th * 0.16} L ${x - w2 / 2} ${yy - th} L ${x + w2 / 2} ${yy - th} L ${x + w2 / 2} ${yy - th * 0.16} L ${x + ww / 2 + th * 0.12} ${yy - th * 0.16} L ${x + ww / 2 + th * 0.12} ${yy} Z`);
+    yy -= th; ww = w2;
+  }
+  const rw = ww * 1.06, rh = w * 0.2;
+  P.push(smooth([[x - rw / 2, yy, "c"], [x - rw / 2 - rh * 0.25, yy - rh * 0.55], [x - rw / 2 + rh * 0.3, yy - rh], [x + rw / 2 - rh * 0.3, yy - rh], [x + rw / 2 + rh * 0.25, yy - rh * 0.55], [x + rw / 2, yy, "c"]]));
+  const nk = 7;
+  for (let i = 0; i < nk; i++) { const kx = x - rw * 0.36 + (rw * 0.72 * i) / (nk - 1), ky = yy - rh; P.push(smooth([[kx - 5, ky + 2], [kx - 7, ky - 10], [kx, ky - 26, "c"], [kx + 7, ky - 10], [kx + 5, ky + 2]])); }
+  return P;
 };

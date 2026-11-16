@@ -6,12 +6,12 @@ The scripts are the single source of the words: research/upsc/POL-03/script_p1.p
 applied). This file only cuts beats into scenes. Look: CONTRACT_B.md; this film's new analogy variants: CONTRACT_B_POL03.md (W1-W4).
 Article numbers and years may appear as text; every quantity (%, counts, durations, splits) comes from an f3_ label.
 
-  .venv/bin/python scripts/upsc/pol03_storyboard.py 1      # or 2
+  .venv/bin/python scripts/upsc/pol03_storyboard.py 1      # or 2, or 3 (Part 3, 16 Nov 2026: new art in CONTRACT_B_POL03_P3.md, builder W5)
 """
 import importlib.util, json, os, re, subprocess, sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-MAIN = "/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/POL-03"
+MAIN = os.environ.get("POL03_MAIN") or next((d for d in ("/Volumes/DarwinSSD/DataKadai/mmvideo-dk/research/upsc/POL-03", os.path.join(ROOT, "research/upsc/POL-03")) if os.path.exists(os.path.join(d, "script_p1.py")) or os.path.exists(os.path.join(d, "script_p3.py"))), "")
 FIG = os.path.join(ROOT, "public/datayt/long/upsc/figures.json")
 F3 = {
     "f3_rule": ("THE 50% RULE · DoPT order, 1993", "POL03-C22"),
@@ -147,6 +147,57 @@ P2 = {
           [("p1", "part"), ("p2", "religion,"), ("p3", "Directive")], "The three-stop path, the third stop glowing.")],
 }
 
+P3 = {
+ "b00": [([0, 1, 2], "analogy", A("school-anthem", [L("THEY STOOD · THEY DID NOT SING", "st"), L("EXPELLED", "ex")], mode="shut"),
+          [("st", "sing,"), ("ex", "expelled")], "A school assembly at dawn: rows of generic children standing; three stand still with closed lips; the school gate shuts."),
+         ([3, 4], "title", dict(title="Can a school make you sing?", sub="Fundamental Rights, part three", chip="POLITY · UPSC"), [], "Title card.")],
+ "b01": [([0, 1], "analogy", A("series-path", [L("PART 1 · equality", "p1"), L("PART 2 · freedom", "p2"), L("PART 3 · religion, culture, limits", "p3")], mode="part3"),
+          [("p1", "Hold"), ("p2", "bigger"), ("p3", "last")], "The three-stop path, the third stop lit."),
+         ([2, 3, 4], "analogy", A("two-books", [L("PART III · rights a court enforces", "r3"), L("PART IV · goals no court enforces", "r4"), L("WHICH ONE WINS?", "q")], mode="apart"),
+          [("r3", "Three"), ("r4", "Four"), ("q", "wins?")], "Two books on a desk: PART III with a gavel, PART IV with a compass; they slide towards each other.")],
+ "b02": [([0, 1, 2, 3, 4], "analogy", A("three-verbs", [L("ARTICLE 25 · freedom of conscience", "a25"), L("PROFESS", "v1"), L("PRACTISE", "v2"), L("PROPAGATE", "v3"), L("ALL PERSONS, not only citizens", "ap")], mode="verbs"),
+          [("a25", "twenty-five"), ("v1", "profess,"), ("v2", "practise"), ("v3", "propagate"), ("ap", "persons,")], "A notebook page: PROFESS, PRACTISE, PROPAGATE, each with a small icon; generic people of many kinds below.")],
+ "b03": [([0, 1, 2, 3, 4, 5], "analogy", A("three-verbs", [L("PUBLIC ORDER", "po"), L("MORALITY", "mo"), L("HEALTH", "he"), L("SECULAR ACTIVITY · regulated", "sa"), L("social welfare and reform", "sw"), L("NCERT: sati, bigamy, human sacrifice may be stopped", "nc"), L("NCERT: spreading is allowed · forcing a conversion is not", "fc")], mode="frame"),
+          [("po", "public"), ("mo", "morality"), ("he", "health."), ("sa", "worldly"), ("sw", "welfare"), ("nc", "sati,"), ("fc", "forcing")], "The three verbs inside a frame whose edges read PUBLIC ORDER, MORALITY, HEALTH; a gear SECULAR ACTIVITY turns at the side.")],
+ "b04": [([0, 1, 2, 3, 4, 5], "analogy", A("school-anthem", [L("Bijoe Emmanuel (1986)", "bj"), L("ARTS 19(1)(a) + 25(1) · infringed", "ar"), L("no law makes anyone sing the anthem", "nl")], mode="back"),
+          [("bj", "Supreme"), ("ar", "nineteen,"), ("nl", "law")], "The school gate reopens; the three children walk back in.")],
+ "b05": [([0, 1, 2, 3, 4, 5, 6], "analogy", A("temple-doors", [L("ARTICLE 26 · for groups", "a26"), L("own institutions · own religious affairs · property", "oa"), L("Venkataramana Devaru (1957)", "vd"), L("open to the Hindu public", "hp"), L("own rites kept", "rk")]),
+          [("a26", "twenty-six"), ("oa", "institutions"), ("vd", "fifty-seven,"), ("hp", "Hindu"), ("rk", "rites.")], "A generic temple building with open doors, many people walking in; a small reserved inner space for the denomination's own rites.")],
+ "b06": [([0, 1, 2, 3, 4, 5], "analogy", A("neutral-state", [L("ART. 27 · no tax for one religion", "a27"), L("ART. 28(1) · no religious instruction in wholly State-funded schools", "a28"), L("'SECULAR' · 42nd Amendment, 1976 · in force 1977", "sc"), L("NCERT: India has no official religion", "nr")]),
+          [("a27", "tax"), ("a28", "instruction."), ("sc", "secular"), ("nr", "official")], "A tax receipt with a blank religion line; a State school notice ALL WELCOME; the Preamble page with SECULAR written in.")],
+ "b07": [([0, 1, 2, 3, 4], "analogy", A("scripts-ribbon", [L("ARTICLE 29", "a29"), L("ANY SECTION OF CITIZENS", "as"), L("language · script · culture", "lc"), L("29(2): no denial of admission", "ad")]),
+          [("a29", "twenty-nine"), ("as", "section"), ("lc", "script"), ("ad", "refuse")], "Many scripts on a long ribbon across the screen, generic and varied; a school door with an open sign.")],
+ "b08": [([0, 1, 2, 3, 4], "analogy", A("minority-school", [L("ARTICLE 30", "a30"), L("schools and colleges of their choice", "sc"), L("no discrimination in aid", "ai"), L("'minority': not defined in the text", "nd"), L("NCERT: a group outnumbered", "nc")]),
+          [("a30", "thirty"), ("sc", "colleges"), ("ai", "aid"), ("nd", "defines"), ("nc", "outnumbered.")], "A plain school with a nameplate MANAGED BY A MINORITY; an aid envelope reaches it like any other school; a dictionary page MINORITY, its definition blank.")],
+ "b09": [([0, 1, 2, 3, 4, 5, 6], "statement", S([dict(text="NCERT Class 8: some people feel minority protections may go against secularism", key="n8"), dict(text="Art. 29: no denial of admission on religion, race, caste or language", key="a29"), dict(text="Art. 30: minorities may run their own institutions", key="a30"), dict(text="Both are in the Constitution", key="bo")], ["Both are in the Constitution"]),
+          [("n8", "feel"), ("a29", "bars"), ("a30", "lets"), ("bo", "Both")], "Two equal speech bubbles with no faces, then the Article 29 and 30 cards; neutral.")],
+ "b10": [([0, 1, 2, 3, 4], "analogy", A("court-doors", [L("ARTICLE 32 · going to the Supreme Court is a right", "a32"), L("ORDERS AND WRITS", "wr"), L("ARTICLE 226 · every High Court", "a226"), L("Ambedkar, 9 Dec 1948: 'the very soul … the very heart'", "am")]),
+          [("a32", "thirty-two"), ("wr", "writs"), ("a226", "twenty-six,"), ("am", "Ambedkar")], "A courthouse door ART. 32 with a key turning in it; a smaller door ART. 226; a faceless silhouette at a lectern with a name plaque.")],
+ "b11": [([0, 1, 2, 3, 4, 5], "analogy", A("shelf-fence", [L("ARTS 33-34 · armed forces · martial law", "af"), L("ARTS 31A, 31C · shielded laws", "sh"), L("NINTH SCHEDULE (Art. 31B)", "ns"), L("opened in the basic structure episode", "bs")]),
+          [("af", "armed"), ("sh", "shielded"), ("ns", "Ninth"), ("bs", "episode.")], "The rights shelf with a fence at its edge ARTS 33-34, and a sealed box NINTH SCHEDULE set aside with a tag.")],
+ "b12": [([0, 1, 2, 3, 4, 5, 6], "analogy", A("two-books", [L("ARTICLE 37 · no court can enforce", "a37"), L("FUNDAMENTAL IN GOVERNANCE", "fg"), L("a duty in making laws", "du"), L("GOALS, not rights to sue for", "gl")], mode="compass"),
+          [("a37", "thirty-seven"), ("fg", "governance"), ("du", "duty"), ("gl", "goals")], "The PART IV book opens into a compass; its needle points to a horizon marked GOALS. No gavel on this side.")],
+ "b13": [([0, 1, 2, 3, 4, 5, 6, 7, 8], "analogy", A("goal-signposts", [L("38-39 · livelihood · equal pay", "g1"), L("39 · resources for the common good", "g2"), L("40 · village panchayats", "g3"), L("41 · work · public help", "g4"),
+                                                             L("43 · a living wage", "g5"), L("45 · care for every child below six", "g6"), L("50 · judges separate from the executive", "g7"), L("44 · uniform civil code · 47 · nutrition, health", "g8")]),
+          [("g1", "livelihood"), ("g2", "Resources"), ("g3", "panchayats"), ("g4", "work"), ("g5", "living"), ("g6", "Care"), ("g7", "Judges"), ("g8", "uniform")], "A horizon of signposts, one per goal with its article number, appearing as each is named; text only for Article 44.")],
+ "b14": [([0, 1, 2, 3, 4, 5, 6, 7], "analogy", A("property-plinth", [L("NCERT: zamindari laws opposed as violating property", "zm"), L("PROPERTY · a Part III right until June 1979", "p3"), L("ART. 300A · only by authority of law", "a300")]),
+          [("zm", "zamindari"), ("p3", "June"), ("a300", "hundred")], "The two books collide; a land map between them tears; a card PROPERTY moves from the PART III shelf to a plinth ART. 300A.")],
+ "b15": [([0, 1, 2, 3, 4], "analogy", A("balance", [L("MINERVA MILLS (1980): the balance is a basic feature", "pp")], mode="balanced"),
+          [("pp", "balance")], "The brass balance, PART III and PART IV level."),
+         ([5, 6], "statement", S([dict(text="Property Owners Association (2024), nine judges: Article 31C as upheld in Kesavananda stands", key="po"), dict(text="the wider version of 1976: struck down in Minerva Mills", key="wd")], ["stands"]),
+          [("po", "nine"), ("wd", "wider")], "Citation card.")],
+ "b16": [([0, 1, 2, 3, 4, 5, 6], "notebook", NB([("Art. 51A: eleven duties, ten from 1976", "n1"), ("the eleventh: a child of six to fourteen gets to study", "n2"), ("no court enforces them", "n3"), ("rights do not wait for duties (NCERT)", "n4")]),
+          [("n1", "eleven"), ("n2", "Parents"), ("n3", "enforce"), ("n4", "depend")], "The girl's notebook: a page of duties; a school bag beside the eleventh.")],
+ "b17": [([0, 1, 2, 3], "analogy", A("nhrc-door", [L("NATIONAL HUMAN RIGHTS COMMISSION", "nh"), L("Protection of Human Rights Act, 1993", "pa"), L("INQUIRE · RECOMMEND", "ir"), L("it cannot punish", "cp")]),
+          [("nh", "Commission"), ("pa", "Protection"), ("ir", "recommend."), ("cp", "punish")], "A plain office door; a recommendation letter goes out; no gavel.")],
+ "b18": [([0, 1, 2], "analogy", A("balance", [L("NEITHER SIMPLY WINS · the balance is a basic feature", "pp")], mode="balanced"),
+          [("pp", "balance")], "The balance stays level."),
+         ([3, 4, 5, 6, 7, 8, 9, 10], "notebook", NB([("Arts 25-28: religion, within order, morality, health", "n1"), ("Arts 29-30: culture and minority education", "n2"), ("Art. 32: the remedy is a right · Part IV guides, not enforced", "n3"), ("Minerva Mills: the balance · Art. 300A · eleven duties", "n4")], ("which one wins?", "x")),
+          [("x", "exam,"), ("n1", "twenty-five"), ("n2", "twenty-nine"), ("n3", "thirty-two"), ("n4", "Minerva")], "The girl's notebook: the old question struck out; the exam lines fill in.")],
+ "b19": [([0, 1], "analogy", A("series-path", [L("PART 1 · equality", "p1"), L("PART 2 · freedom", "p2"), L("PART 3 · done · NEXT: the five writs", "p3")], mode="part3"),
+          [("p1", "completes"), ("p2", "Fundamental"), ("p3", "writs")], "The three-stop path, all stops lit; a road sign ahead: THE FIVE WRITS.")],
+}
+
 
 def sentences(t):
     return [s for s in re.split(r"(?<=[.?!])\s+", t.strip()) if s]
@@ -156,7 +207,7 @@ def main():
     part = sys.argv[1]
     script = f"{MAIN}/script_p{part}.py"
     spec = importlib.util.spec_from_file_location("ep", script); mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
-    V, PLAN = mod.V, (P1 if part == "1" else P2)
+    V, PLAN = mod.V, {"1": P1, "2": P2, "3": P3}[part]
     out = os.path.join(ROOT, f"public/datayt/long/upsc/pol03-p{part}/storyboard.json")
     fig = json.load(open(FIG, encoding="utf-8"))
     for k, (txt, cid) in F3.items():

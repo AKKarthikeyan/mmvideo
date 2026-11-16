@@ -146,6 +146,7 @@ Folk art stays as transitions only: the Kaavad doors and the phad pan, as the st
 **Decided:** the Dec–Jan plan (`INNER_CHARIOT_PLAN_DEC_JAN.md`) is the plan in force, over the Mini's 90-day plan (AK, 16 Nov 2026).
 **Decided:** mix both looks, Lamplight for the source and line art for the retelling and the present (AK, 16 Nov 2026; section 5).
 **Decided:** Lamplight's Ramayana figures and other human figures may wear dark colour on costume, ornament and skin tone; faces stay in shadow (AK, 16 Nov 2026; amends the colour clause of rule 5 in `DHARMA_CHANNEL.md`).
+**Decided:** Hanuman carries his mace in every look, Lamplight included, though Valmiki's text does not put one in his hands; it is the attribute rule 5 names for him (AK, 16 Nov 2026).
 
 **Still open:**
 

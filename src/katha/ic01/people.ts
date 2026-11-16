@@ -199,6 +199,7 @@ export const sita = ({dist = 0, still = false, w = 0, t = 0, light = [-1, -0.2]}
 // in shadow with the vanara's muzzle and strong jaw (hanu): a shape, like the men's nose, never an eye or a mouth. Broad
 // chest, a saffron-red short dhoti with a gold waistband, the mace resting on the near shoulder, its head behind the back,
 // the tail rising in an S behind him and curling at the tip; it sways with the walk. mace: false leaves his hands empty.
+// AK, 16 Nov 2026: he keeps the mace in Lamplight too (the source-text look), as his rule-5 attribute.
 export const hanuman = ({dist = 0, still = false, w = 0, t = 0, light = [-1, -0.2], mace = true}: Opt & {mace?: boolean} = {}): Item[] => {
   const L = LOOKS.hanuman;
   const back: string[] = [], body: string[] = [], dress: string[] = [], sash: string[] = [], gold: string[] = [], macep: string[] = [], ribs: string[] = [];

@@ -1,0 +1,60 @@
+{
+ "fetched": "2026-10-21",
+ "sources": {
+  "gita-json": {
+   "base": "https://raw.githubusercontent.com/gita/gita/main/",
+   "licence": "Unlicense (public domain dedication) for the dataset; translations keep their own copyright status",
+   "files": [
+    {
+     "file": "LICENSE",
+     "local": "sources/scripture/gita-json/LICENSE",
+     "bytes": 1211,
+     "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e"
+    },
+    {
+     "file": "data/verse.json",
+     "local": "sources/scripture/gita-json/verse.json",
+     "bytes": 659295,
+     "sha256": "bb599e666e552bd65080f1f8da6d488f067237f64091ab265978861cf3fadec7"
+    },
+    {
+     "file": "data/translation.json",
+     "local": "sources/scripture/gita-json/translation.json",
+     "bytes": 2283371,
+     "sha256": "92354e876e9a48112e352d0c7ed573ef6ebc802f8ef6d3369edf92ede33391e3"
+    },
+    {
+     "file": "data/chapters.json",
+     "local": "sources/scripture/gita-json/chapters.json",
+     "bytes": 44123,
+     "sha256": "d435d980cef34fcb5529b2fa4c3e3ff617df44080094d22481b884299cc14dc9"
+    },
+    {
+     "file": "data/authors.json",
+     "local": "sources/scripture/gita-json/authors.json",
+     "bytes": 1422,
+     "sha256": "a900b3dde9e8c49d838786e2f3aa8bb8c8973f188a045f85b945e73b5648d957"
+    }
+   ],
+   "quotable": {
+    "21": {
+     "name": "Shri Purohit Swami",
+     "year": 1935,
+     "status": "public domain: author died 1941 (India life+60), first published 1935"
+    },
+    "16": {
+     "name": "Swami Sivananda",
+     "year": 1949,
+     "status": "public domain in India since 1 Jan 2024 (author died 1963); may still be protected elsewhere, so quote briefly with attribution"
+    }
+   },
+   "reference_only": {
+    "1": "Swami Ramsukhdas (Gita Press, Hindi; copyrighted)",
+    "17": "Swami Tejomayananda (Chinmaya, Hindi; copyrighted)",
+    "18": "Swami Adidevananda (Ramakrishna Math; copyrighted)",
+    "19": "Swami Gambirananda (Advaita Ashrama; copyrighted)",
+    "20": "Dr. S. Sankaranarayan (copyrighted)"
+   }
+  }
+ }
+}

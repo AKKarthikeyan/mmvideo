@@ -4,6 +4,8 @@ Written 15 Nov 2026, following `INNER_CHARIOT_NORTH_STAR.md`. The cadence AK ask
 
 **This plan replaces the November planner** (`INNER_CHARIOT_NOVEMBER_PLAN.md`, kept for the record). By 15 Nov nothing had been built or published; the IC-01 script is locked; the Mini was unreachable over SSH (`mini-ts` timed out on 15 Nov).
 
+**This plan also wins over the Mini's 90-day plan (AK, 16 Nov 2026).** A parallel track on the Mini (`/Volumes/DarwinSSD/The Inner Chariot/Docs/Content Plan/plan90.md`, from 27 Oct: a Tuesday chapter series, "Translation: ours", Krishna only as symbols) is marked superseded and kept for the record. Its "Gita in 15 Minutes" video is on hold, because it breaks rules 3 and 5 as written. The handover (`/Volumes/DarwinSSD/AGENTS.md` §7) and the channel README point here.
+
 **The upload gate.** No video goes up until a named human reviewer signs it (house rule 8). Nobody is named yet, so **this plan's start date depends on AK naming the reviewer by about 25 Nov.**
 
 **Tags** (unchanged from November): **C** Curiosity · **I** Interest · **E** Engagement · **D** Demand · **G** Gap. The first tag is the main one.

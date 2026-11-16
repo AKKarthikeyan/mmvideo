@@ -136,6 +136,10 @@ Folk art stays as transitions only: the Kaavad doors and the phad pan, as the st
 
 ## 10. Decisions only AK can make
 
+**Decided:** the Dec–Jan plan (`INNER_CHARIOT_PLAN_DEC_JAN.md`) is the plan in force, over the Mini's 90-day plan (AK, 16 Nov 2026).
+
+**Still open:**
+
 1. **Name the human reviewer** (rule 8). **This blocks every upload, including the finished Gita film.**
 2. **Rule 5 and public-domain paintings:** may a public-domain painting that shows a deity's face appear as a "source exhibit"? We recommend no.
 3. **Audio tracks:** Hindi only (house rule 10), or Hindi plus Tamil and Telugu, as AK set for Moat & Margin on 30 Oct?

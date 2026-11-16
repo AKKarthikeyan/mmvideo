@@ -117,7 +117,9 @@ and the text may give Murugan a peacock earlier in the war (Indra as the bird), 
 - **Title:** Why Murugan Rides His Enemy
 - **Alternates:** The Enemy You Must Defeat Is Not Outside You (the draft's) · The Enemy Became the Peacock
 - **Spine:** The spear ended the war, and the enemy was kept.
-- **Length:** about 6:30. **Format:** VoxPlus: a real question by 0:05, a hook at most every 45 seconds.
+- **Length:** about 6:30. **Channel and format:** The Inner Chariot, in the mixed look the North Star sets and
+  `IC01_SCRIPT_v2.md` models. Pacing rule carried over from the channel's older VoxPlus format (`DHARMA_CHANNEL.md`,
+  21 Oct): a real question by 0:05, a hook at most every 45 seconds. To be checked against the North Star on the Air.
 - **Languages:** English original; Tamil and Hindi audio tracks. The Tamil lines on the verse cards are shown, not read
   by the TTS (rule 10); if they must be heard, a human reciter records them. The Tamil and Hindi narration scripts are
   written from the approved English and go to the reviewer with it. Dialogue ("Appa, look") stays natural in each language.

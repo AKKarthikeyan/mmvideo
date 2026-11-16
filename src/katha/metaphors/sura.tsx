@@ -415,7 +415,7 @@ const SuraVerse: React.FC<SceneP> = ({s, n}) => {
       <rect width={W} height={H} fill="#0A0716"/>
       <SoftGlow x={960} y={520} r={900} c0="#3A2244" c1="#140F2C" peak={0.8}/>
       <g opacity={o}>
-        <text x={960} y={330} textAnchor="middle" fontFamily={CAPS} fontSize={30} letterSpacing={8} fill="#D9B26A">{String(s.kicker || "").toUpperCase()}</text>
+        <text x={960} y={330} textAnchor="middle" fontFamily={CAPS} fontSize={30} letterSpacing={8} fill="#D9B26A">{String(s.head || "").toUpperCase()}</text>
         <rect x={660} y={372} width={600} height={1.5} fill="url(#k-fade-h)"/>
         <rect x={420} y={430} width={1080} height={250} fill="none" stroke="#B8862F" strokeWidth={1.5} strokeDasharray="10 10" opacity={0.7}/>
         <text x={960} y={540} textAnchor="middle" fontFamily={CAPS} fontSize={34} letterSpacing={6} fill="#FFE3A3">{String(s.pending || "VERSE TEXT TO BE SET")}</text>

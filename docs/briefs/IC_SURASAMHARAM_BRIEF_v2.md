@@ -7,6 +7,30 @@ once AK approves this script and the checks in section 6 are done.
 Starting point: AK's draft of 16 Nov, "The Enemy You Must Defeat Is Not Outside You" (seven scenes, about six minutes,
 the Arun story). This brief keeps its question and its ending, and changes what the channel rules and the sources require.
 
+## Where it stands (16 Nov 2026, late)
+
+Built in the cloud session, on the Gita kit. Compositions `KT-sura` (English), `KT-sura-ta`, `KT-sura-hi`.
+
+- **Picture:** all 20 beats, animated (AK: the first cut "feels like a slide show").
+- **Voice:** English, Tamil and Hindi, each cut timed to its own voice (`scripts/katha/voice_sura.py`). The three
+  scripts differ in length, so they are three videos, not one video with three audio tracks. **Telugu is written but
+  not voiced:** the voice service refuses Telugu.
+- **Music:** scored in code to follow the film (`scripts/katha/sura_score.py`), replacing the tanpura loop AK called
+  "very bad". Nobody has listened to it in the session.
+- **Verse cards: real text now** (`scripts/katha/sura_verses.json`, with sources).
+  - Tirumurugatruppadai 45–46 and 59–61: Tamil from Project Madurai, matched by eye to the Tamil printed in Chelliah's
+    book; English read from the page scans of J. V. Chelliah, *Pattupattu: Ten Tamil Idylls* (pp. 343 and 345 of the
+    Tamil University reprint, on the Internet Archive). The second card is abridged, with ellipses.
+  - Kanda Puranam, Yuddha Kandam, Surapadman Vathai Padalam, verse 492 (Project Madurai text): the two halves become a
+    rooster and a peacock. English is ours, marked `OUR RENDERING`.
+- **What reading the padalam changed.** Verses 492–499: the two birds come at Murugan still in fury; at his look of
+  grace the enmity leaves (495); he tells the rooster to be his banner (497) and, leaving his earlier mount, rides the
+  peacock (499). Beat 12 now says so. A note in that edition places this padalam on the seventh day onward, so "the
+  festival remembers the war across six days" stays as worded.
+- **Still open:** Chelliah's death year (public-domain status) from a second source; who gives the vel in the text;
+  the Saiva Siddhanta citation; a native listener for Tamil and Hindi; the devotional reviewer; AK's rulings into
+  `DHARMA_CHANNEL.md` and the North Star on the Air.
+
 ## 0. What this session could not reach
 
 This was written in a cloud container, which has no route to the Air or the Mini.

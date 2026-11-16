@@ -76,25 +76,26 @@ export const surapadman = (w = 0, t = 0): string[] => {
   P.push(ribbon(cub([50, -316], [70, -288], [74, -256], [62, -230]), 29, 19, 1));
   P.push(ribbon(cub([62, -230], [54, -216], [44, -208], [34, -204]), 19, 14, 1));
   // a cape from the shoulders to the calf
-  P.push(smooth([[30, -326], [62, -318], [84, -250], [96, -160], [100, -70], [70, -60], [62, -150], [52, -240]]));
+  { const q = (x: number, y: number, u: number): Pt => [x + (Math.sin(t * 0.06 + u * 3) * 10 + w * 14) * u, y];
+    P.push(smooth([q(30, -326, 0), q(62, -318, 0.1), q(84, -250, 0.4), q(96, -160, 0.75), q(100, -70, 1), q(70, -60, 1), q(62, -150, 0.7), q(52, -240, 0.35)])); }
   P.push(...mukuta(-1, -396, 1.12, 1.25));
   return P;
 };
 
 // A peacock standing, facing left. open = false: the train closed, sweeping back to the ground. open = true: the train
 // fanned behind the body. Returns [body paths, eye marks] (the eyes are a colour layer: draw them with rim: false).
-export const peacock = (open = false, t = 0): {body: string[]; eyes: string[]} => {
+export const peacock = (open = false, t = 0, spread = 1): {body: string[]; eyes: string[]} => {
   const B: string[] = [], E: string[] = [];
   const eye = (x: number, y: number, r: number, a = 0) => { const c = Math.cos(a), s = Math.sin(a); const pt = (u: number, v: number) => [x + u * c - v * s, y + u * s + v * c];
     E.push(smooth([pt(-r * 0.75, 0), pt(0, -r), pt(r * 0.75, 0), pt(0, r * 1.15)] as Pt[])); };
   if (open) {
     const cx = 10, cy = -150, n = 23;
     for (let i = 0; i < n; i++) {
-      const u = i / (n - 1), a = Math.PI * (1.08 - 1.16 * u) + Math.sin(t * 0.03 + i) * 0.006, L = 250 + 26 * Math.sin(u * Math.PI);
+      const u = i / (n - 1), a = Math.PI * (0.5 + (0.58 - 1.16 * u) * spread) + Math.sin(t * 0.05 + i) * 0.012, L = (250 + 26 * Math.sin(u * Math.PI)) * (0.55 + 0.45 * spread);
       const ex = cx + Math.cos(a) * L, ey = cy - Math.sin(a) * L;
       B.push(band([[cx, cy], [cx + Math.cos(a) * L * 0.5, cy - Math.sin(a) * L * 0.5], [ex, ey]], 16, 30, 1.6, "round"));
       eye(cx + Math.cos(a) * L * 0.9, cy - Math.sin(a) * L * 0.9, 10, Math.PI / 2 - a);
-      if (i < n - 1) { const a2 = Math.PI * (1.08 - 1.16 * (u + 0.5 / (n - 1))), L2 = L * 0.72; B.push(band([[cx, cy], [cx + Math.cos(a2) * L2, cy - Math.sin(a2) * L2]], 14, 22, 1.4, "round")); eye(cx + Math.cos(a2) * L2 * 0.9, cy - Math.sin(a2) * L2 * 0.9, 8, Math.PI / 2 - a2); }
+      if (i < n - 1) { const a2 = Math.PI * (0.5 + (0.58 - 1.16 * (u + 0.5 / (n - 1))) * spread), L2 = L * 0.72; B.push(band([[cx, cy], [cx + Math.cos(a2) * L2, cy - Math.sin(a2) * L2]], 14, 22, 1.4, "round")); eye(cx + Math.cos(a2) * L2 * 0.9, cy - Math.sin(a2) * L2 * 0.9, 8, Math.PI / 2 - a2); }
     }
   } else {
     // the train: a long tapering sweep to the ground behind, its lower edge feathered
@@ -248,4 +249,15 @@ export const gopuram = (x: number, y: number, w: number, tiers = 9): string[] =>
   const nk = 7;
   for (let i = 0; i < nk; i++) { const kx = x - rw * 0.36 + (rw * 0.72 * i) / (nk - 1), ky = yy - rh; P.push(smooth([[kx - 5, ky + 2], [kx - 7, ky - 10], [kx, ky - 26, "c"], [kx + 7, ky - 10], [kx + 5, ky + 2]])); }
   return P;
+};
+
+// The child with the sheet anywhere between hanging (k = 0) and held high (k = 1): the arms and the sheet move together.
+export const childLift = (k: number): {paths: string[]; sheet: number[][]} => {
+  const base = child("none").paths.slice(0, 8), L = (a: number[], b: number[]) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k];
+  const d1 = [[-22, -160], [-30, -136], [-32, -112], [-30, -92]], u1 = [[-20, -160], [-36, -176], [-48, -200], [-54, -226]];
+  const d2 = [[24, -160], [32, -136], [32, -112], [28, -92]], u2 = [[22, -160], [10, -186], [-10, -214], [-30, -232]];
+  const ds = [[-48, -94], [-18, -94], [-14, -22], [-52, -26]], us = [[-112, -300], [-26, -292], [-32, -222], [-118, -230]];
+  const a1 = d1.map((q, i) => L(q, u1[i])), a2 = d2.map((q, i) => L(q, u2[i]));
+  base.push(ribbon(cub(a1[0], a1[1], a1[2], a1[3]), 15, 10, 1), ribbon(cub(a2[0], a2[1], a2[2], a2[3]), 15, 10, 1));
+  return {paths: base, sheet: ds.map((q, i) => L(q, us[i]))};
 };

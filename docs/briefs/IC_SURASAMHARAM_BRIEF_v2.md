@@ -29,6 +29,8 @@ This was written in a cloud container, which has no route to the Air or the Mini
 | Channel | The Inner Chariot. |
 | Date | **As soon as ready.** No festival tie. |
 | Verse cards | The Tirumurugatruppadai in Chelliah's translation, plus one Kanda Puranam verse in Tamil with our own English headed `OUR RENDERING`. **This extends rule 3.** |
+| Languages | **English, Tamil and Hindi.** English is the original; Tamil and Hindi are audio tracks (`scripts/audio_tracks.py`). Extends rule 10 for this film. |
+| Rule 5, Parvati | **Amended for this video:** Parvati may be drawn in the vel-giving beat, on the same terms (backlit silhouette, faceless, never an image model). This film only. |
 | Structure | **Arun first** (the draft's option C): open on the modern problem, then the story as the answer. |
 
 **To record on the Air** (this session cannot reach those files; the Air's `DHARMA_CHANNEL.md` is newer than GitHub's):
@@ -36,15 +38,17 @@ This was written in a cloud container, which has no route to the Air or the Mini
 - `DHARMA_CHANNEL.md`, rule 5, add: "Extended 16 Nov 2026 (AK): Murugan and Surapadman, for the Surasamharam film, on
   the Ramayana terms. Murugan is known by the vel, the peacock and the rooster banner, with one head; his six faces
   are never drawn and appear only as six flames. Surapadman is a crowned silhouette, then the mango tree, with no demon
-  caricature. The form Murugan shows Surapadman is light only. No other deity is drawn."
+  caricature. Parvati appears in the vel-giving beat of this film only, as a silhouette on the same terms. The form
+  Murugan shows Surapadman is light only. No other deity is drawn, and this amendment covers this film alone."
+- `DHARMA_CHANNEL.md`, rule 10, add: "Surasamharam film (AK, 16 Nov 2026): English original with Tamil and Hindi
+  audio tracks."
 - `DHARMA_CHANNEL.md`, rule 3, add: "Extended 16 Nov 2026 (AK): where no quotable translation exists, a verse may be
   shown in its original script with our own English, headed `OUR RENDERING` and checked by the reviewer. First use:
   the Kanda Puranam verse in the Surasamharam film."
 - `INNER_CHARIOT_NORTH_STAR.md`, section 10 (the decisions): the same two lines, and "Surasamharam film: Inner
   Chariot, Arun-first structure, release when ready."
 
-Still open: a Tamil audio track (rule 10 says English original, Hindi track), and the "Ancient Gods. Modern Problems."
-series, five of whose eight films need Shiva, Ganesha or Devi, whom rule 5 still does not allow.
+Still open: the "Ancient Gods. Modern Problems." series, five of whose eight films need Shiva, Ganesha or Devi, whom rule 5 still does not allow.
 
 ## 2. How the figures are shown
 
@@ -55,6 +59,7 @@ Each is a rim-lit silhouette known by one attribute:
 | Murugan | the vel, upright in his hand | One head, youthful build, faceless. The six faces are never drawn; the six appear only as six flames on the lake at his birth. |
 | His mount and banner | the peacock; the rooster on the banner | Birds, drawn in code like the kit's other birds. |
 | Surapadman | a tall crowned silhouette, then the mango tree in the sea | No demon caricature: no fangs, horns or dark-skin coding. He is a king. Faceless like everyone else. |
+| Parvati | the hand that gives the vel | One beat only (beat 7). A standing silhouette, taller than the child, faceless; no other attribute. |
 | The cosmic form shown to Surapadman | light only | Same treatment as Krishna's form in Gita 11. |
 
 ## 3. Sources: what was checked and what was not
@@ -113,6 +118,9 @@ and the text may give Murugan a peacock earlier in the war (Indra as the bird), 
 - **Alternates:** The Enemy You Must Defeat Is Not Outside You (the draft's) · The Enemy Became the Peacock
 - **Spine:** The spear ended the war, and the enemy was kept.
 - **Length:** about 6:30. **Format:** VoxPlus: a real question by 0:05, a hook at most every 45 seconds.
+- **Languages:** English original; Tamil and Hindi audio tracks. The Tamil lines on the verse cards are shown, not read
+  by the TTS (rule 10); if they must be heard, a human reciter records them. The Tamil and Hindi narration scripts are
+  written from the approved English and go to the reviewer with it. Dialogue ("Appa, look") stays natural in each language.
 - **Looks:** Lamplight (L) for the text's world. Line art on warm paper (P) for the retelling and the present.
   The manuscript card (M) for every verse.
 - **Structure (AK):** Arun first. His evening is the cold open; the story answers the question his night raises; his
@@ -166,7 +174,7 @@ in 2 and paid off in 18.
 | S2 Peacock and banner | L | 4, 16, 19 | Birds in flight only | A standing peacock (tail closed, tail open) and a rooster, drawn in code; banner pole; Murugan with the vel at 19. |
 | S3 Manuscript card, Tamil | M | 5, 10, 13 | Card exists for Devanagari | Tamil font, Tamil corpus entry, source line "J. V. Chelliah, 1946"; the `OUR RENDERING` variant. |
 | S4 The king on the height | L | 6, 15 | `Rimmed`, sky, planes | Surapadman silhouette. |
-| S5 Six flames, and the vel given | L | 7 | Fire and water metaphors | Reeds, six flames merging; Murugan and his mother as two silhouettes, the vel between them. Parvati is not covered by rule 5: she is shown as a hand and a sleeve at the frame edge, or AK extends the rule to her. |
+| S5 Six flames, and the vel given | L | 7 | Fire and water metaphors | Reeds, six flames merging; Murugan and his mother as two silhouettes, the vel between them. Parvati is allowed for this film (AK, 16 Nov). |
 | S6 The war as six lamps | L | 8 | Armies of Kurukshetra, diya | A shore variant of the field; six lamps. |
 | S7 The tree in the sea | L | 9, 11, 12 | Sky, flora | Sea planes, the mango tree, Murugan on the shore, the split, the two birds rising. The film's key scene; build this one first. |
 | S8 Tiruchendur shore | P | 14 | No | A shore, a gopuram outline, a crowd as marks. No deity figure. |

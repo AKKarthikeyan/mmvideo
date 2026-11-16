@@ -4,7 +4,7 @@
   python3 scripts/katha/build_sura.py
 
 The script is section 5 of docs/briefs/IC_SURASAMHARAM_BRIEF_v2.md (approved by AK, 16 Nov 2026): Arun first, the Gita
-film's look throughout. English is the original; the Tamil and Hindi narration are in docs/briefs/IC_SURASAMHARAM_NARRATION_TA_HI.md.
+film's look throughout. English is the original; the Tamil, Hindi and Telugu scripts are in docs/briefs/IC_SURASAMHARAM_NARRATION_TA_HI_TE.md.
 No voice yet: beats are timed at 2.4 words a second plus a breath, and captioned. When MINIMAX_API_KEY is at hand, voice
 each beat to public/katha/sura/<key>.mp3, set "audio" and "sec" from the clip, and rebuild.
 The three verse cards are placeholders (kind suraVerse): rule 2 says nobody types a verse by hand, and the Tamil lines

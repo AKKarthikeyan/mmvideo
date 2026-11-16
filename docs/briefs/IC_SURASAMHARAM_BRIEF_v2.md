@@ -29,7 +29,7 @@ This was written in a cloud container, which has no route to the Air or the Mini
 | Channel | The Inner Chariot. |
 | Date | **As soon as ready.** No festival tie. |
 | Verse cards | The Tirumurugatruppadai in Chelliah's translation, plus one Kanda Puranam verse in Tamil with our own English headed `OUR RENDERING`. **This extends rule 3.** |
-| Languages | **English, Tamil and Hindi.** English is the original; Tamil and Hindi are audio tracks (`scripts/audio_tracks.py`). Extends rule 10 for this film. |
+| Languages | **English, Tamil, Hindi and Telugu.** English is the original; Tamil, Hindi and Telugu are audio tracks (`scripts/audio_tracks.py`), each written from the script for its own listener, not translated line by line (`IC_SURASAMHARAM_NARRATION_TA_HI_TE.md`). Extends rule 10 for this film. |
 | Rule 5, Parvati | **Amended for this video:** Parvati may be drawn in the vel-giving beat, on the same terms (backlit silhouette, faceless, never an image model). This film only. |
 | Look | **The Gita film's visuals** (the Katha kit, `KT-gita`) for the whole film, Arun's scenes included. This sets aside the Lamplight-plus-line-art mix for this film. |
 | Structure | **Arun first** (the draft's option C): open on the modern problem, then the story as the answer. |
@@ -41,8 +41,8 @@ This was written in a cloud container, which has no route to the Air or the Mini
   are never drawn and appear only as six flames. Surapadman is a crowned silhouette, then the mango tree, with no demon
   caricature. Parvati appears in the vel-giving beat of this film only, as a silhouette on the same terms. The form
   Murugan shows Surapadman is light only. No other deity is drawn, and this amendment covers this film alone."
-- `DHARMA_CHANNEL.md`, rule 10, add: "Surasamharam film (AK, 16 Nov 2026): English original with Tamil and Hindi
-  audio tracks."
+- `DHARMA_CHANNEL.md`, rule 10, add: "Surasamharam film (AK, 16 Nov 2026): English original with Tamil, Hindi and
+  Telugu audio tracks, each written from the script for its listener, not translated line by line."
 - `DHARMA_CHANNEL.md`, rule 3, add: "Extended 16 Nov 2026 (AK): where no quotable translation exists, a verse may be
   shown in its original script with our own English, headed `OUR RENDERING` and checked by the reviewer. First use:
   the Kanda Puranam verse in the Surasamharam film."

@@ -558,4 +558,16 @@ export const lotusFlower = ({x, y, h, seed = 13, t = 0, wind = 0}: {x: number; y
   out.push(blob(fx, fy - fh * 0.05, fh * 0.42, fh * 0.2, seed, 8, 0.1));
   return [{d: out.join(" ")}];
 };
-export const FLORA = {peepal, banyan, neem, palmyra, coconut, khejri, deodar, reeds, rice};
+
+// ---------- mango ----------
+// A broad, dense dome on a short stout trunk; long lance leaves hang in whorls at the twig ends (17 Nov 2026, for the
+// Surasamharam film: the tree Surapadman becomes in the sea).
+export const mango = (p0: TreeP): Item[] => {
+  const p = norm(p0, 8), {x, y, h, seed} = p;
+  const fx = x + (rnd(1, seed) - 0.5) * h * 0.03, fy = y - h * 0.27;
+  const wood = trunk(x, y, fx, fy, h * 0.12, h * 0.085, 1.8, seed, 3);
+  const leaf: LeafFn = (lx, ly, a, L, i, out) => { out.push(bladeA(lx, ly, a, L, L * 0.12, 0.07)); };
+  return broadleaf({env: {cx: x, cy: y - h * 0.61, rx: h * 0.56, ryT: h * 0.39, ryB: h * 0.2, lobes: 0.09}, fork: [fx, fy], R: h * 0.062, gap: 1.35, holes: 0.04, backFrac: 0.25, patch: 0.14,
+    limbs: 4, wLimb: h * 0.09, rise: 0.15, n: 18, L: h * 0.06, core: 0.62, droop: 0.75, leaf, flutter: 0.15}, p, wood).items;
+};
+export const FLORA = {peepal, banyan, neem, palmyra, coconut, khejri, deodar, mango, reeds, rice};

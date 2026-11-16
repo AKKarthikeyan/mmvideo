@@ -7,4 +7,5 @@ import {SCENES as threads} from "./threads";
 import {SCENES as paths} from "./paths";
 import {SCENES as cosmos} from "./cosmos";
 import {SCENES as hall} from "./hall";
-export const METAPHORS = {...flame, ...water, ...threads, ...paths, ...cosmos, ...hall};
+import {SCENES as sura} from "./sura";
+export const METAPHORS = {...flame, ...water, ...threads, ...paths, ...cosmos, ...hall, ...sura};

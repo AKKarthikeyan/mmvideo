@@ -19,6 +19,7 @@ Written 15 Nov 2026, following `INNER_CHARIOT_NORTH_STAR.md`. The cadence AK ask
 | `ManuscriptVerse` | Palm-leaf / pothi verse card. The Devanagari line by line, then the English, with the translator's name large; horizontal and vertical versions | Every video and every Short |
 | `InkLine` + `Paper` | A stroke reveal with a varying nib and a gold-leaf fill, on warm paper fibre drawn in code, timed to the voice | The idea beats: the chariot, the anger chain, the two birds, the lake |
 | `Planes` | Four-plane parallax camera with haze and passing foreground | Lamplight story scenes |
+| Line-art adapter | Remotion components over the vendored `line-art-animation` library (gait, day-night palette, the open double-stroke limb), so line art and Lamplight render in one film (AK chose the mix, 16 Nov) | Every "version you know" beat, recaps, Shorts |
 | `ShortStage` | A 9:16 layout: silhouettes restaged as tall medium shots, text kept in a safe zone, one verse or one diagram per Short | All Shorts |
 | IC-01 scenes | Forest hut and the line of light, curlews, the Ahalya grove, the eight-wheeled chest, Kaikeyi's chamber, the road, the golden deer, three lamps; silhouettes of Rama, Lakshmana, Sita, Ahalya, Dasharatha and Kaikeyi, and Valmiki | L2, and reused in L4 and L8 |
 | Corpus | Johnston's Yoga Sutras, Madhavananda's Vivekachudamani, Wilson's Vishnu Purana and Pope's Tirukkural into `corpus.py`. Check the title page of Baij Nath's Ashtavakra Gita | L5, L9, Shorts |

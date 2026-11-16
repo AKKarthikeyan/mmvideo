@@ -43,7 +43,7 @@ This page is the test every video, title and build decision has to pass. **When 
 - **Clip a guru's lecture,** or re-upload anyone's audio.
 - **Cite an unsourced statistic.** About a third of the pasted playbook's numbers turned out to be vendor marketing or untraceable.
 
-## 5. The look: Lamplight, plus ink and manuscript
+## 5. The look: Lamplight and line art, plus the manuscript card
 
 The scout scored six options from 1 to 5 on seven criteria: retention evidence, distinctiveness, fit with rule 5, feasibility in code, 9:16 Shorts, inauthentic-content risk (5 = low risk) and readability.
 
@@ -61,8 +61,15 @@ Retention for each option is judged from view counts against channel size and fr
 | Layer | Used for | Why |
 | --- | --- | --- |
 | **Lamplight silhouettes** (the Gita film's look, kept as the primary) | Story beats: Kurukshetra, the forest hut, the court | Nobody else makes rim-lit landscape cinema. It fits rule 5 by design. It is code-drawn, so it carries no inauthentic-content risk |
-| **Ink on warm paper** (new) | Idea beats: the chariot model, the two birds, the gunas, the anger chain | It is the warm "diagram act" the style guide's colour script already wants. Black or iron-gall ink with gold-leaf fill, drawn as a stroke reveal |
+| **Line art on warm paper** (decided 16 Nov; absorbs "ink on warm paper") | "The version you know", the present day (the viewer's own life), recaps, diagrams, maps; Shorts that tell a story | It reads instantly on a phone and its figures can act: walk, leap, grow, squeeze through a mouth. It is the Sundara Kandam pilot's style, on the MIT `line-art-animation` library (vendored in `src/katha/lineart/vendor`) |
 | **Manuscript verse card** (new; replaces the flat verse card) | Every verse | A palm leaf or pothi page, with the Devanagari first and then the English, and the translator's name large. **This is our signature** |
+
+**The mix (AK, 16 Nov 2026).** After a side-by-side test of the same IC-01 beat in both looks (`The Inner Chariot/Docs/Style test 2026-11-16/` on the Mini), AK chose to use both. The rule that keeps it one channel, not two stitched together:
+- **Lamplight is the source's world:** what the text itself tells (Valmiki's Ayodhya and forest, Kurukshetra, the court). Solemn beats, and every long video's signature moments.
+- **Line art on warm paper is the retelling and the present:** the version people grew up with (the TV serial, later tellings), the viewer's own life ("you at 2 a.m."), recaps, diagrams and maps. Story-for-teens series (Kamban's Sundara Kandam) may stay in line art throughout.
+- **The manuscript card serves both:** every verse, in either look.
+- **Switch only at a boundary,** with one of the kit's transitions (the palm-leaf turn, a lamp flare, a split frame like IC-01's Ahalya). Never cut between looks in the middle of a beat.
+- **Faces:** the line-art figures are faceless for now (a profile, no eye or mouth), the same as rule 5 for silhouettes. Whether simple line faces are allowed is AK's call (section 10).
 
 **Ruled out, and why:**
 - **Parallax over Ravi Varma or miniature paintings:** they show deities' faces, which breaks rule 5. Splitting a painting into layers would need an image model to fill in behind the figures. It is also close to YouTube's "slideshow" category.
@@ -137,10 +144,12 @@ Folk art stays as transitions only: the Kaavad doors and the phad pan, as the st
 ## 10. Decisions only AK can make
 
 **Decided:** the Dec–Jan plan (`INNER_CHARIOT_PLAN_DEC_JAN.md`) is the plan in force, over the Mini's 90-day plan (AK, 16 Nov 2026).
+**Decided:** mix both looks, Lamplight for the source and line art for the retelling and the present (AK, 16 Nov 2026; section 5).
 
 **Still open:**
 
 1. **Name the human reviewer** (rule 8). **This blocks every upload, including the finished Gita film.**
-2. **Rule 5 and public-domain paintings:** may a public-domain painting that shows a deity's face appear as a "source exhibit"? We recommend no.
-3. **Audio tracks:** Hindi only (house rule 10), or Hindi plus Tamil and Telugu, as AK set for Moat & Margin on 30 Oct?
-4. **Narration voice:** the MiniMax voice as now, or a human narrator? Both work (udbhava shows a disclosed synthetic voice can carry it), so this comes down to taste.
+2. **Rule 5 and line-art faces:** may line-art figures (Hanuman, Rama, Sita) have a simple dot eye and mouth, as the Sundara Kandam pilot drew Hanuman? We recommend no for Rama, Sita and Krishna, and asking a devotional reviewer about Hanuman. Until AK rules, they stay faceless.
+3. **Rule 5 and public-domain paintings:** may a public-domain painting that shows a deity's face appear as a "source exhibit"? We recommend no.
+4. **Audio tracks:** Hindi only (house rule 10), or Hindi plus Tamil and Telugu, as AK set for Moat & Margin on 30 Oct?
+5. **Narration voice:** the MiniMax voice as now, or a human narrator? Both work (udbhava shows a disclosed synthetic voice can carry it), so this comes down to taste.

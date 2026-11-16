@@ -246,6 +246,27 @@ Draft 2, 25 Oct 2026. It replaces draft 1 (`IC01_SCRIPT_v1.md`, kept for the rec
    - **Boring alarm, script checks 1 to 10:** pass. The question comes in the first line. Every transition turns on "but" or "so". The planted line pays off. Each scene ends on an idea, not a summary. There's no "we must" or "one should".
    - **To watch on the rough cut:** five OUR NOTE takeaways plus the closing thread. If any feels like a sermon in the voice pass, cut it to its last sentence.
 
+## Which look each section uses (AK chose the mix, 16 Nov 2026)
+Lamplight is Valmiki's world; line art on warm paper is "the version you know" and the present (North Star, section 5). The script's colour script already split it this way.
+
+| Section | Look | Built |
+| --- | --- | --- |
+| 0:00 Cold open: the hut, the line in the dust | **Line art, night palette** (it is the version you know: pale ink on indigo paper, the line glowing gold) | Lamplight version built (`ic01` `hut`); line-art version owed |
+| 0:12 Title | Manuscript title card | — |
+| 0:40 Valmiki, the curlews, the palm leaf | Lamplight | owed |
+| 1:35 Ahalya | **Split frame:** line art left (stone, foot), Lamplight right (grove, mist) | owed |
+| 3:20 The bow: the eight-wheeled chest | Lamplight | owed |
+| 4:40 The oath: Kaikeyi's chamber | Lamplight | owed |
+| 5:45 Sita insists: the doorway and the road | Lamplight | road built (`ic01` `road`); doorway owed |
+| 6:50 The turn: back to the hut, the line stalls | Line art (the TV serial's memory) | owed |
+| 7:05 The deer | Lamplight | owed |
+| 8:50 Three lamps | Lamplight | owed |
+| 9:30 The thread: five icons round the line | Line art (a recap) | owed |
+| 10:25 Close: the hut at dawn, the door open | Lamplight (`hut` scene at dawn, no line) | scene built; dawn variant owed |
+| Every quote | Manuscript card (Griffith, English only) | card built |
+
+Line art needs a Remotion adapter for the vendored library (`src/katha/lineart/vendor`) so both looks render in one pipeline. The line-art road test (`lineart/ic01road` on the Mini) shows the figures: faceless, a profile only.
+
 ## Notes for the build
 Carried from draft 1:
 - **Source lines and titles:** use `corpus.canto()` source lines; never show Griffith's canto titles.

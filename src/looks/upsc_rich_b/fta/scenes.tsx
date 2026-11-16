@@ -15,7 +15,7 @@ const markW = (t: string, s: number) => handWidth(vis(t), s);
 const wordsOf = (t: string) => vis(t).split(/\s+/).filter((w) => /[A-Za-z0-9₹]/.test(w)).length;
 
 type Item = {id: string; kind: "orig" | "new" | "head"; text: string};
-type Op = {op: "write" | "stamp" | "ring" | "gap" | "strike" | "remove" | "insert" | "status" | "note" | "count"; key: string; ids?: string[]; id?: string; to?: string; note?: string};
+type Op = {op: "write" | "stamp" | "ring" | "gap" | "strike" | "remove" | "insert" | "status" | "note" | "count"; key: string; ids?: string[]; id?: string; to?: string; word?: string; note?: string};
 type Note = {kind: "diag" | "gap" | "rubric"; title: string; tag: string; text: string};
 type PageSpec = {stamp: string; items: Item[]; demands: {id: string; label: string}[]; budget: [number, number]; minutes: number;
   notes: Record<string, Note>; ops0: Op[]; ops: Op[]};
@@ -83,9 +83,9 @@ export const FtaPage: React.FC<SceneProps<PageSpec>> = ({f, spec, at}) => {
   }
   const opOf = (kind: Op["op"]) => spec.ops.filter((o) => o.op === kind);
   const status = (id: string) => {
-    let s = "none", t = -1e9;
-    for (const o of all) if (o.op === "status" && o.id === id && f >= T(o) && T(o) >= t) { s = o.to!; t = T(o); }
-    return s;
+    let s = "none", w: string | undefined, t = -1e9;
+    for (const o of all) if (o.op === "status" && o.id === id && f >= T(o) && T(o) >= t) { s = o.to!; w = o.word; t = T(o); }
+    return {s, w};
   };
   const stampA = all.some((o) => o.op === "stamp" && o.done) ? 1 : (() => { const o = opOf("stamp")[0]; return o ? eo(prog(f, at(o.key), 12)) : 0; })();
   const box = (ids: string[]) => {
@@ -146,7 +146,7 @@ export const FtaPage: React.FC<SceneProps<PageSpec>> = ({f, spec, at}) => {
     </svg>}
     <Words x={1300} y={70} words={words} budget={spec.budget} minutes={spec.minutes} pulse={pulse}/>
     <div style={{position: "absolute", left: 1300, top: 300, fontFamily: SANS, fontWeight: 700, fontSize: 20, letterSpacing: "0.16em", color: "#f5e6cc"}}>THE THREE JOBS</div>
-    {spec.demands.map((d, i) => <Job key={d.id} x={1300} y={340 + i * 74} id={d.id} label={d.label} s={status(d.id)}/>)}
+    {spec.demands.map((d, i) => { const st = status(d.id); return <Job key={d.id} x={1300} y={340 + i * 74} id={d.id} label={d.label} s={st.s} word={st.w}/>; })}
     {N && <NoteCard x={1300} y={590} n={N} a={noteA}/>}
     <PaperFinish id="fta-p" vignette={0.3}/>
   </AbsoluteFill>;
@@ -171,7 +171,7 @@ const STATUS: Record<string, {fill: string; stroke: string; word: string; color:
   part: {fill: "#f7e3c4", stroke: AMBER, word: "partial · concept gap", color: "#f2b679"},
   ok: {fill: "#e5f0d8", stroke: GREEN, word: "covered", color: "#b9dc9c"},
 };
-const Job: React.FC<{x: number; y: number; id: string; label: string; s: string}> = ({x, y, id, label, s}) => {
+const Job: React.FC<{x: number; y: number; id: string; label: string; s: string; word?: string}> = ({x, y, id, label, s, word}) => {
   const c = STATUS[s] ?? STATUS.none, z = 42;
   return <div style={{position: "absolute", left: x, top: y, width: 540, display: "flex", gap: 18, alignItems: "flex-start"}}>
     <svg width={z} height={z} style={{flex: "none", marginTop: 2}}>
@@ -182,7 +182,7 @@ const Job: React.FC<{x: number; y: number; id: string; label: string; s: string}
     </svg>
     <div>
       <div style={{fontFamily: SANS, fontWeight: 600, fontSize: 25, color: "#fbefd9", lineHeight: 1.15, textShadow: "0 2px 6px rgba(30,15,5,.7)"}}><span style={{color: "#f2b679", fontWeight: 800}}>{id}</span> {label}</div>
-      {c.word && <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 21, color: c.color, marginTop: 4, textShadow: "0 2px 6px rgba(30,15,5,.7)"}}>{c.word}</div>}
+      {(word ?? c.word) && <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 21, color: c.color, marginTop: 4, textShadow: "0 2px 6px rgba(30,15,5,.7)"}}>{word ?? c.word}</div>}
     </div>
   </div>;
 };

@@ -22,7 +22,7 @@ Also used: `pyq_question`, `pyq_xray`, `pyq_card` (unchanged, from `../pyq/scene
    of earlier scenes, already applied; `ops` play in this scene, each from `at(key)`:
    `write` (ids appear, quickly), `stamp` (the ILLUSTRATIVE stamp), `ring` (a red loop round ids, with an arrow to the note),
    `gap` (an amber bracket and "?" in the margin), `strike` (red line through each row), `remove` (the item collapses),
-   `insert` (the item opens and is written), `status` (a job box turns `miss`, `part` or `ok`), `note` (a note card:
+   `insert` (the item opens and is written), `status` (a job box turns `miss`, `part` or `ok`; optional `word` replaces the status label), `note` (a note card:
    `diag` red, `gap` amber, `rubric` plain), `count` (the word card pulses). The page scrolls to keep the last written line
    in view. The word card counts the words actually on the page.
 2. **fta_transfer** `{label, credit, text, skill, limits, checks, cta}` with keys `q`, `sk`, `lm`, `c1`, `cta`: the fresh

@@ -64,13 +64,14 @@ export const SoftGlow: React.FC<{x: number; y: number; r: number; ry?: number; c
 // Film grain (re-seeded every 2 frames so it lives) and a vignette: the last two layers of every frame.
 // The grain is a 512 px noise texture (public/katha/grain.png), shifted every two frames: no SVG filter, so long renders
 // stay fast and never drop tiles (per-frame turbulence filters made the renderer drop black tiles under load).
-export const Finish: React.FC<{f: number; grain?: number; vig?: number}> = ({f, grain = 0.06, vig = 1}) => {
+// w / h: the frame size (16 Nov 2026: Shorts pass 1080 x 1920; the default is the 1920 x 1080 film frame).
+export const Finish: React.FC<{f: number; grain?: number; vig?: number; w?: number; h?: number}> = ({f, grain = 0.06, vig = 1, w = W, h = H}) => {
   const k = Math.floor(f / 2), ox = (k * 97) % 256, oy = (k * 151) % 256, id = `k-grain-${k % 5}`;
   return (
     <>
       <defs><pattern id={id} patternUnits="userSpaceOnUse" x={-ox} y={-oy} width={256} height={256}><image href={staticFile("katha/grain.png")} width={256} height={256}/></pattern></defs>
-      <rect x={0} y={0} width={W} height={H} fill="url(#k-vig)" opacity={vig}/>
-      <rect x={0} y={0} width={W} height={H} fill={`url(#${id})`} opacity={grain} style={{mixBlendMode: "overlay"}}/>
+      <rect x={0} y={0} width={w} height={h} fill="url(#k-vig)" opacity={vig}/>
+      <rect x={0} y={0} width={w} height={h} fill={`url(#${id})`} opacity={grain} style={{mixBlendMode: "overlay"}}/>
     </>
   );
 };

@@ -12,18 +12,19 @@ import {Rimmed} from "../sil";
 import {palmyra, neem, khejri, reeds, SIL_BACK, SIL_FAR} from "../flora";
 import {smooth, rnd, Pt} from "../geom";
 import {Planes} from "../planes";
-import {ascetic, sita} from "./people";
+import {ascetic, sita, CostumeDefs} from "./people";
 
 const SC = 0.56;                                   // the figures' scale: ~225 px tall, the human-anchor rule (>= 18-20%)
-const STRIDE = 0.115;                              // stride phase per frame (a calm walk: one cycle in ~55 frames)
 
-const Walkers: React.FC<{f: number; x: number; y: number; light: [number, number]; still?: boolean}> = ({f, x, y, light, still}) => {
-  const ph = f * STRIDE, w = 0.3;
+// walked: how far they have come, in scene px (the gait turns it into steps, so no foot ever slides)
+const Walkers: React.FC<{f: number; x: number; y: number; walked: number; light: [number, number]; still?: boolean}> = ({f, x, y, walked, light, still}) => {
+  const d = walked / SC, w = 0.3;
   return (
     <g>
-      <Rimmed transform={`translate(${x - 250} ${y}) scale(${SC})`} paths={ascetic("lakshmana", {ph: ph + 1.9, still, w, t: f})} light={light} w={3}/>
-      <Rimmed transform={`translate(${x - 125} ${y}) scale(${SC})`} paths={sita({ph: ph + 0.9, still, w, t: f})} light={light} w={3}/>
-      <Rimmed transform={`translate(${x} ${y}) scale(${SC})`} paths={ascetic("rama", {ph, still, w, t: f})} light={light} w={3}/>
+      <CostumeDefs light={light}/>
+      <Rimmed transform={`translate(${x - 250} ${y}) scale(${SC})`} paths={ascetic("lakshmana", {dist: d + 61, still, w, t: f, light})} light={light} w={3}/>
+      <Rimmed transform={`translate(${x - 125} ${y}) scale(${SC})`} paths={sita({dist: d + 23, still, w, t: f, light})} light={light} w={3}/>
+      <Rimmed transform={`translate(${x} ${y}) scale(${SC})`} paths={ascetic("rama", {dist: d, still, w, t: f, light})} light={light} w={3}/>
     </g>
   );
 };
@@ -58,7 +59,7 @@ export const RoadScene: React.FC<SceneP> = ({s, n}) => {
           {/* the road: a band of pale dust, lit along its far edge */}
           <path d={`M -400 ${gy - 6} C 800 ${gy - 14} 2000 ${gy - 10} 3400 ${gy - 4} L 3400 ${gy + 44} C 2000 ${gy + 50} 800 ${gy + 46} -400 ${gy + 40} Z`} fill="#2C1C26"/>
           <path d={`M -400 ${gy - 6} C 800 ${gy - 14} 2000 ${gy - 10} 3400 ${gy - 4}`} fill="none" stroke="#C88A5A" strokeWidth={1.4} opacity={0.4}/>
-          <Walkers f={f} x={walk} y={gy + 14} light={light}/>
+          <Walkers f={f} x={walk} y={gy + 14} walked={f * speed} light={light}/>
         </g>},
         {depth: 0.45, node: <Rimmed paths={Array.from({length: 7}, (_, i) => reeds({x: -200 + i * 520 + rnd(i, 9) * 160, y: 1130, h: 260 + rnd(i, 11) * 120, seed: 40 + i, t: f, wind: 0.3, fill: "#0C0610"})).flat()} light={light} w={1.6} rim="#9A6A44" fill="#0C0610"/>},
       ]}/>
@@ -68,12 +69,13 @@ export const RoadScene: React.FC<SceneP> = ({s, n}) => {
 
 // The three figures large on a plain dusk sky (dev sheet): walking at the top row's phase, standing below.
 export const CastScene: React.FC<SceneP> = ({s}) => {
-  const f = useCurrentFrame(), light: [number, number] = [-1, -0.2], ph = (s.ph ?? 0) + f * STRIDE;
+  const f = useCurrentFrame(), light: [number, number] = [-1, -0.2], dist = (s.dist ?? 0) + f * 2.7;
   return (
     <Frame f={f} vig={0.7}>
       <Sky mood="dusk" sun={[960, 980]} sunR={90} f={f} rays={0} horizon={1000} id="cast"/>
+      <CostumeDefs light={light}/>
       {[["rama", 380], ["sita", 960], ["lakshmana", 1540]].map(([who, x]) => (
-        <Rimmed key={who as string} transform={`translate(${x} 1000) scale(2)`} paths={who === "sita" ? sita({ph, still: s.still, t: f}) : ascetic(who as "rama", {ph, still: s.still, t: f})} light={light} w={4} fill={K.sil}/>
+        <Rimmed key={who as string} transform={`translate(${x} 1000) scale(2)`} paths={who === "sita" ? sita({dist, still: s.still, t: f, light}) : ascetic(who as "rama", {dist, still: s.still, t: f, light})} light={light} w={4} fill={K.sil}/>
       ))}
     </Frame>
   );

@@ -12,7 +12,7 @@ import {Rimmed} from "../sil";
 import {palmyra, neem, khejri, reeds, SIL_BACK, SIL_FAR} from "../flora";
 import {smooth, rnd, Pt} from "../geom";
 import {Planes} from "../planes";
-import {ascetic, sita, CostumeDefs} from "./people";
+import {ascetic, sita, hanuman, CostumeDefs} from "./people";
 
 const SC = 0.56;                                   // the figures' scale: ~225 px tall, the human-anchor rule (>= 18-20%)
 
@@ -67,16 +67,21 @@ export const RoadScene: React.FC<SceneP> = ({s, n}) => {
   );
 };
 
-// The three figures large on a plain dusk sky (dev sheet): walking at the top row's phase, standing below.
+// The figures large on a plain dusk sky (dev sheet). s.cast: who stands where (default Rama, Sita, Lakshmana); a name
+// ending in "!" stands still; "hanuman-" is Hanuman without his mace.
 export const CastScene: React.FC<SceneP> = ({s}) => {
   const f = useCurrentFrame(), light: [number, number] = [-1, -0.2], dist = (s.dist ?? 0) + f * 2.7;
+  const cast: string[] = s.cast ?? ["rama", "sita", "lakshmana"];
+  const gap = 1920 / cast.length;
   return (
     <Frame f={f} vig={0.7}>
       <Sky mood="dusk" sun={[960, 980]} sunR={90} f={f} rays={0} horizon={1000} id="cast"/>
       <CostumeDefs light={light}/>
-      {[["rama", 380], ["sita", 960], ["lakshmana", 1540]].map(([who, x]) => (
-        <Rimmed key={who as string} transform={`translate(${x} 1000) scale(2)`} paths={who === "sita" ? sita({dist, still: s.still, t: f, light}) : ascetic(who as "rama", {dist, still: s.still, t: f, light})} light={light} w={4} fill={K.sil}/>
-      ))}
+      {cast.map((c, i) => {
+        const still = s.still || c.endsWith("!"), who = c.replace("!", ""), o = {dist, still, t: f, light};
+        const paths = who === "sita" ? sita(o) : who.startsWith("hanuman") ? hanuman({...o, mace: who !== "hanuman-"}) : ascetic(who as "rama", o);
+        return <Rimmed key={i} transform={`translate(${gap * (i + 0.5) + 20} 1000) scale(${s.scale ?? 2})`} paths={paths} light={light} w={4} fill={K.sil}/>;
+      })}
     </Frame>
   );
 };

@@ -7,7 +7,7 @@ dark shapes rimmed with light, drifting dust, slow camera push-ins, film grain, 
 
 ## Rules (non-negotiable)
 - **Krishna and Arjuna appear only as backlit silhouettes** from `figures.ts` (no face, no features, no colour fill).
-- **Story figures may wear colour** (AK, 16 Nov 2026: `ic01/people.ts`): costume, ornament and skin tone in low-value colours, each lit by a gradient from the light side (`CostumeDefs`), over the dark rimmed silhouette, with gold only as small glints. The face stays in shadow: no eyes, mouth or features (North Star rule 5). Legs walk by the vendored gait solver, so feet never slide.
+- **Story figures may wear colour** (AK, 16 Nov 2026, amending the 25 Oct colour clause of rule 5 in `docs/DHARMA_CHANNEL.md`; Krishna and Arjuna stay uncoloured: `ic01/people.ts`): costume, ornament and skin tone in low-value colours, each lit by a gradient from the light side (`CostumeDefs`), over the dark rimmed silhouette, with gold only as small glints. The face stays in shadow: no eyes, mouth or features (North Star rule 5). Legs walk by the vendored gait solver, so feet never slide.
   Krishna's cosmic form (Gita 11) is shown **only as light**, never as a figure. No other deity is drawn at all.
 - No image model, no photographs. Everything is code-drawn or traced from CC0 models (`sil/LICENSES.md`).
 - Every word on screen comes from the scene's props (`s`), never hard-coded in a scene.

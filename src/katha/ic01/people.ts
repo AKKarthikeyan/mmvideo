@@ -21,16 +21,19 @@ import {gait} from "../lineart/vendor/gait";
 export type Look = {skin: string; cloth: string; cloth2: string; scarf: string; hair: string; gold: string; wood: string};
 // Traditional cues, kept dark: Rama's skin the deep blue-black of shyama, his scarf the yellow of pitambara; Lakshmana in
 // bark cloth with a maroon scarf; Sita in a red sari with a gold border.
-export const LOOKS: Record<"rama" | "lakshmana" | "sita", Look> = {
+// Hanuman: a dark warm rust (the vermilion of temple worship, sunk into shadow), a saffron-red short dhoti, a gold mace.
+export const LOOKS: Record<"rama" | "lakshmana" | "sita" | "hanuman", Look> = {
   rama: {skin: "#1C1E3C", cloth: "#8B5A2B", cloth2: "#6E4422", scarf: "#B8862F", hair: "#120A16", gold: "#D9A441", wood: "#3A2418"},
   lakshmana: {skin: "#2A1A22", cloth: "#7E5630", cloth2: "#5F3F22", scarf: "#6E2430", hair: "#120A16", gold: "#D9A441", wood: "#3A2418"},
   sita: {skin: "#2B1A22", cloth: "#A3262C", cloth2: "#7A1C26", scarf: "#A3262C", hair: "#120A16", gold: "#D9A441", wood: "#3A2418"},
+  hanuman: {skin: "#3E1E18", cloth: "#9A3A1C", cloth2: "#6E2A16", scarf: "#B8862F", hair: "#1E0E10", gold: "#D9A441", wood: "#5A3A16"},
 };
+const MACE = "#9A6A26";                            // Hanuman's mace: an old, dark gold, so only its lit edge shines
 const gid = (c: string, lx: number) => `cg${c.replace("#", "")}${lx < 0 ? "L" : "R"}`;
 // The costume gradients for one shot: light side warm and a little brighter, far side sinking into the silhouette.
 export const CostumeDefs: React.FC<{light: [number, number]; rim?: string}> = ({light, rim = "#FFD38A"}) => {
   const cs = new Set<string>();
-  Object.values(LOOKS).forEach((L) => [L.cloth, L.cloth2, L.scarf].forEach((c) => cs.add(c)));
+  Object.values(LOOKS).forEach((L) => [L.cloth, L.cloth2, L.scarf, MACE].forEach((c) => cs.add(c)));
   const left = light[0] < 0;
   return React.createElement("defs", null, [...cs].map((c) => React.createElement("linearGradient", {key: c, id: gid(c, light[0]), x1: left ? 0 : 1, x2: left ? 1 : 0, y1: 0, y2: 0},
     React.createElement("stop", {offset: 0, stopColor: mixHex(c, rim, 0.22)}),
@@ -188,6 +191,69 @@ export const sita = ({dist = 0, still = false, w = 0, t = 0, light = [-1, -0.2]}
     {d: blouse.join(" "), fill: L.cloth2, rim: false},
     {d: sari.join(" "), fill: cloth(L.cloth, light), rim: false},
     {d: hair.join(" "), fill: L.hair, rim: false},
+    {d: gold.join(" "), fill: L.gold, rim: false},
+  ];
+};
+
+// Hanuman, walking or standing: known by the tail and the mace (rule 5's attribute, AK 25 Oct 2026). The head is a profile
+// in shadow with the vanara's muzzle and strong jaw (hanu): a shape, like the men's nose, never an eye or a mouth. Broad
+// chest, a saffron-red short dhoti with a gold waistband, the mace resting on the near shoulder, its head behind the back,
+// the tail rising in an S behind him and curling at the tip; it sways with the walk. mace: false leaves his hands empty.
+export const hanuman = ({dist = 0, still = false, w = 0, t = 0, light = [-1, -0.2], mace = true}: Opt & {mace?: boolean} = {}): Item[] => {
+  const L = LOOKS.hanuman;
+  const back: string[] = [], body: string[] = [], dress: string[] = [], sash: string[] = [], gold: string[] = [], macep: string[] = [], ribs: string[] = [];
+  const G = legs(MEN, dist, still), dy = G.dy, U = (a: number[][], dx = 0) => pts(a, dx, dy);
+  const hip = G.hip, sh = -318 + dy;
+  const armSw = still ? 0.04 : -G.swing * 0.6;
+  // the tail first, behind everything: from the base of the spine back and up in an S, the tip curling over
+  const sway = Math.sin(t * 0.05) * 6 + (still ? 0 : G.swing * 10) + w * 8;
+  const tc = sampleCubics(U([[-22, -214], [-72, -204], [-116, -238], [-122, -300], [-128, -362], [-100, -424], [-66 + sway * 0.6, -432], [-42 + sway, -436], [-30 + sway, -420], [-42 + sway, -408]]), 16);
+  back.push(ribbon(tc, 16, 6, 1));
+  // the far leg and the far arm (swinging, empty)
+  back.push(ribbon(through(hip, G.far.knee, G.far.ankle), 36, 16, 1), foot(G.far.ankle, G.far.pitch));
+  const fa = limb([-10, sh], 84, -armSw + 0.05, 76, -armSw * 0.6 + 0.2);
+  back.push(ribbon(fa.line, 28, 16, 1), smooth(pts([[-8, 0], [8, -2], [10, 13], [0, 22], [-9, 11]], fa.e[0], fa.e[1])));
+  // the near leg, the head (muzzle and jaw in profile), the neck, the broad torso
+  body.push(ribbon(through(hip, G.near.knee, G.near.ankle), 38, 16, 1), foot(G.near.ankle, G.near.pitch));
+  body.push(smooth(U([[-4, -404], [10, -402], [20, -395], [24, -386], [27, -379], [25, -375], [31, -369], [38, -363], [41, -355], [37, -347], [29, -344], [27, -337], [17, -332], [4, -334], [-8, -340], [-18, -350], [-24, -362], [-27, -378], [-22, -394]])));
+  body.push(smooth(U([[-13, -346], [12, -340], [12, -316], [-15, -318]])));
+  body.push(smooth(U([[-52, -326], [-22, -342], [16, -342], [44, -330], [51, -302], [42, -268], [31, -238], [28, -212], [-28, -212], [-31, -240], [-42, -270], [-54, -300]])));
+  gold.push(circle(-22, -356 + dy, 3.5));                                               // an earring's glint (no ear drawn: a rimmed ear reads as an eye)
+  // the short dhoti to above the knee, its hem swinging with the near knee, a pleat falling in front, a gold waistband
+  const sw = still ? 0 : G.near.knee[0] * 0.08;
+  const dhoti = smooth([...U([[-30, -228], [30, -228], [38, -192]]), ...U([[42 + sw, -150], [10 + sw * 0.5, -146], [-24, -150], [-40, -154]]), ...U([[-36, -194]])]);
+  body.push(dhoti); dress.push(dhoti);
+  const pleat = ribbon(U([[14, -222], [18 + sw * 0.4, -186], [22 + sw * 0.8, -140], [24 + sw, -126]]), 16, 11, 1);
+  body.push(pleat); sash.push(pleat);
+  gold.push(ribbon(U([[-30, -226], [0, -228], [30, -226]]), 8, 8, 1));
+  // the near arm: elbow down, the fist up in front of the chest, holding the mace on the shoulder
+  const na = mace ? limb([22, sh], 78, 0.15, 66, 2.2) : limb([22, sh], 84, armSw + 0.05, 76, armSw * 0.6 + 0.2);
+  body.push(ribbon(na.line, 30, 18, 1));
+  const fist = mace ? [na.e[0] + 2, na.e[1] - 2] : na.e;
+  body.push(smooth(pts([[-10, -10], [9, -12], [13, 4], [4, 13], [-9, 9]], fist[0], fist[1])));
+  const ua = na.line[1], wr = na.line[3];
+  gold.push(ribbon([[ua[0] - 14, ua[1] - 4], [ua[0] + 14, ua[1] + 4]], 7, 7, 1), ribbon([[wr[0] - 10, wr[1] + 8], [wr[0] + 10, wr[1] - 2]], 6, 6, 1));
+  if (mace) {
+    // the shaft from below the fist, over the near shoulder (under the jaw), to the head behind the back
+    const head: [number, number] = [-72, -336 + dy], R = 26, v = [head[0] - fist[0], head[1] - fist[1]];
+    const pom = [fist[0] - v[0] * 0.13, fist[1] - v[1] * 0.13];
+    const shaft = ribbon([pom, fist, [fist[0] + v[0] * 0.5, fist[1] + v[1] * 0.5], head], 10, 12, 1);
+    const ball = circle(head[0], head[1], R), spike = smooth(pts([[-6, 0], [0, -14], [6, 0]], head[0] - R * 0.7, head[1] - R * 0.7));
+    body.push(shaft, ball, spike, circle(pom[0], pom[1], 7)); macep.push(shaft, ball, spike, circle(pom[0], pom[1], 7));
+    // the ridges of the mace's head: meridians from crown to base, like the lobes of a melon
+    for (const k of [-0.62, 0, 0.62]) {
+      const q: number[][] = [];
+      for (let i = 0; i <= 8; i++) { const a = -Math.PI / 2 + (i / 8) * Math.PI; q.push([head[0] + k * R * Math.cos(a), head[1] + R * 0.94 * Math.sin(a)]); }
+      ribs.push(ribbon(q, 2.6, 2.6, 1));
+    }
+  }
+  return [
+    {d: back.join(" "), fill: mixHex(L.skin, "#160C1E", 0.35)},
+    {d: body.join(" "), fill: L.skin},
+    {d: dress.join(" "), fill: cloth(L.cloth, light), rim: false},
+    {d: sash.join(" "), fill: L.cloth2, rim: false},
+    {d: macep.join(" "), fill: cloth(MACE, light), rim: false},
+    {d: ribs.join(" "), fill: "#3A2410", rim: false},
     {d: gold.join(" "), fill: L.gold, rim: false},
   ];
 };

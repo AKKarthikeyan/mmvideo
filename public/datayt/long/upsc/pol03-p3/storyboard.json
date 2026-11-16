@@ -580,16 +580,16 @@
    "spec": {
     "lines": [
      {
-      "text": "NCERT Class 8: some people feel minority protections may go against secularism",
+      "text": "NCERT, Class {const:8}",
       "key": "n8"
      },
      {
-      "text": "Art. 29: no denial of admission on religion, race, caste or language",
-      "key": "a29"
+      "text": "Some people feel minority protections may go against secularism",
+      "key": "sf"
      },
      {
-      "text": "Art. 30: minorities may run their own institutions",
-      "key": "a30"
+      "text": "Arts {const:29} and {const:30}",
+      "key": "a29"
      },
      {
       "text": "Both are in the Constitution",
@@ -604,6 +604,10 @@
    "reveals": [
     {
      "key": "n8",
+     "word": "Eight"
+    },
+    {
+     "key": "sf",
      "word": "feel"
     },
     {
@@ -611,16 +615,12 @@
      "word": "bars"
     },
     {
-     "key": "a30",
-     "word": "lets"
-    },
-    {
      "key": "bo",
      "word": "Both"
     }
    ],
    "transition": "cut",
-   "visual": "Two equal speech bubbles with no faces, then the Article 29 and 30 cards; neutral.",
+   "visual": "Citation card: NCERT's debate line, then our reading of the text; neutral.",
    "beat": "b09",
    "claims": [
     "POL03-F09",
@@ -966,23 +966,31 @@
    "spec": {
     "lines": [
      {
-      "text": "Property Owners Association (2024), nine judges: Article 31C as upheld in Kesavananda stands",
+      "text": "Property Owners Association, {const:2024}",
       "key": "po"
      },
      {
-      "text": "the wider version of 1976: struck down in Minerva Mills",
+      "text": "Nine judges: Article thirty-one C, as upheld in Kesavananda, still stands",
+      "key": "nj"
+     },
+     {
+      "text": "The wider {const:1976} version: struck down in Minerva Mills",
       "key": "wd"
      }
     ],
     "accent": [
-     "stands"
+     "still stands"
     ]
    },
    "vo": "In twenty twenty-four, nine judges held that Article thirty-one C, as the Kesavananda Bharati case upheld it, still stands. The wider version from nineteen seventy-six had been struck down in Minerva Mills.",
    "reveals": [
     {
      "key": "po",
-     "word": "nine"
+     "word": "twenty-four,"
+    },
+    {
+     "key": "nj",
+     "word": "judges"
     },
     {
      "key": "wd",
@@ -1060,7 +1068,7 @@
     "limit": "",
     "labels": [
      {
-      "text": "NATIONAL HUMAN RIGHTS COMMISSION",
+      "text": "National Human Rights Commission",
       "key": "nh"
      },
      {

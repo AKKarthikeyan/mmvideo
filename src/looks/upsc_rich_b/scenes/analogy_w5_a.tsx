@@ -8,9 +8,11 @@ import {eio} from "../kit";
 const GATE_X = 1560, YARD = 760;
 const Gate: React.FC<{open: number}> = ({open}) => {
   const leaf = (dir: -1 | 1) => {
-    const w = 150 * (1 - 0.8 * open);
-    return <g>{Array.from({length: 7}, (_, i) => <rect key={i} x={GATE_X + dir * (6 + (i * w) / 7) - (dir < 0 ? 6 : 0)} y={YARD - 250} width={6} height={250} rx={3} fill="#3b3f48"/>)}
-      <rect x={dir < 0 ? GATE_X - w - 6 : GATE_X} y={YARD - 250} width={w + 6} height={10} fill="#3b3f48"/><rect x={dir < 0 ? GATE_X - w - 6 : GATE_X} y={YARD - 120} width={w + 6} height={8} fill="#3b3f48"/></g>;
+    const w = 156 * (1 - 0.85 * open), x0 = dir < 0 ? GATE_X - w : GATE_X;
+    return <g>
+      {Array.from({length: 6}, (_, i) => { const x = x0 + 8 + (i * (w - 16)) / 5; return <g key={i}><rect x={x - 3} y={YARD - 260} width={6} height={258} rx={3} fill="#3b3f48"/><path d={`M${x - 7},${YARD - 258} L${x},${YARD - 280} L${x + 7},${YARD - 258} Z`} fill="#3b3f48"/></g>; })}
+      <rect x={x0} y={YARD - 246} width={w} height={10} rx={3} fill="#4a4f5a"/><rect x={x0} y={YARD - 130} width={w} height={10} rx={3} fill="#4a4f5a"/><rect x={x0} y={YARD - 24} width={w} height={10} rx={3} fill="#4a4f5a"/>
+    </g>;
   };
   return <g>
     <rect x={GATE_X - 186} y={YARD - 300} width={28} height={300} fill="url(#w5-stoned)"/><rect x={GATE_X + 158} y={YARD - 300} width={28} height={300} fill="url(#w5-stoned)"/>
@@ -46,7 +48,8 @@ export const AnthemArt: React.FC<AP> = (p) => {
       const tx = GATE_X + 260 + k * 80, x = c.x + (tx - c.x) * out, y = c.y + (YARD - 6 - c.y) * out;
       const moving = out > 0.02 && out < 0.98;
       return <g key={k}>
-        <ellipse cx={x} cy={y - c.h * 0.55} rx={46} ry={c.h * 0.62} fill="url(#w5-glow)" opacity={glow * 0.8}/>
+        <ellipse cx={x} cy={y + 4} rx={40} ry={12} fill="none" stroke="#d8682a" strokeWidth={5} opacity={glow}/>
+        <ellipse cx={x} cy={y - c.h * 0.55} rx={50} ry={c.h * 0.66} fill="#fff1c4" opacity={glow * 0.35}/>
         <Person x={x} y={y} h={c.h} f={f} seed={c.seed + 3} walk={moving} flip={mode === "back"}/>
       </g>;
     })}
@@ -71,8 +74,7 @@ export const BooksArt: React.FC<AP> = (p) => {
       <circle cx={1580} cy={300} r={36} fill="#fff1b0" opacity={0.6 + 0.4 * glow}/><circle cx={1580} cy={300} r={120} fill="url(#w5-glow)" opacity={glow}/>
       <Ink x={1520} y={420} t="GOALS" size={34} c="#7a4a26" a={glow}/>
       <Desk y0={560}/>
-      <Book x={300} y={720} w={330} h={220} cover="url(#w5-red)" title="PART III" icon={<Gavel s={0.5}/>} rot={-4}/>
-      <rect x={120} y={600} width={360} height={260} fill="#efe0c2" opacity={0.35}/>
+      <g opacity={0.55}><Book x={300} y={720} w={330} h={220} cover="url(#w5-red)" title="PART III" icon={<Gavel s={0.5}/>} rot={-4}/></g>
       {/* PART IV opens: two page halves on the desk */}
       <g transform="translate(980 760)">
         <Shadow x={0} y={110} rx={420} a={0.3}/>
@@ -138,7 +140,7 @@ export const VerbsArt: React.FC<AP> = (p) => {
     {/* the frame of limits */}
     {frame ? <g>
       {[["po", "M360,150 H1560"], ["mo", "M360,150 V620"], ["he", "M1560,150 V620"], ["po", "M360,620 H1560"]].map(([k, d], i) => (
-        <path key={i} d={d} stroke="url(#w5-brass)" strokeWidth={22} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - fr(k)}/>
+        <path key={i} d={d} stroke="#c99a3a" strokeWidth={22} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - fr(k)}/>
       ))}
       <g transform={`translate(1700 760) rotate(${f * 1.6 * gear})`} opacity={gear}>
         {Array.from({length: 10}, (_, i) => <rect key={i} x={-12} y={-92} width={24} height={30} rx={4} fill="#8a6238" transform={`rotate(${i * 36})`}/>)}

@@ -20,7 +20,7 @@ import {KATHA_SCENES} from "./scenes";
 import {Label} from "./stage";
 
 export type KBeat = {key: string; chapter: number; movement: string; speaker: string; say: string; cap?: string; sec: number; audio?: string; scene: any; music?: string; ref?: string | null};
-export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean; lamps?: boolean};   // lamps: false hides the Gita's eighteen lamps
+export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean; lamps?: boolean; bed?: number; lang?: string};   // bed: the music's level under the voice (default 0.17)   // lamps: false hides the Gita's eighteen lamps
 export const XF = 14;   // dissolve between beats, in frames
 export const beatLen = (b: KBeat) => Math.ceil((b.sec + (b.scene?.type === "title" ? 1.0 : 0.6)) * FPS);
 export const filmLayout = (D: KData) => {
@@ -234,7 +234,7 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
   const lf = f - starts[cur], k = ease(lf, 0, XF);
   const g = Math.max(glare(b, lf, frames[cur] + XF) * k, cur ? glare(D.beats[cur - 1], f - starts[cur - 1], frames[cur - 1] + XF) * (1 - k) : 0);
   const line = lineOf(b), was = cur ? lineOf(D.beats[cur - 1]) : "";   // a changed line crosses over with the dissolve
-  const bed = D.beats.some((x) => x.audio) ? 0.17 : 0.3;   // the tanpura sits lower under a voiced film
+  const bed = D.bed ?? (D.beats.some((x) => x.audio) ? 0.17 : 0.3);   // the tanpura sits lower under a voiced film
   return (
     <AbsoluteFill style={{background: K.night}}>
       <KathaFonts/>

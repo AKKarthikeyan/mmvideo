@@ -13,7 +13,7 @@ import {Rimmed, Item} from "../sil";
 import {mango, reeds} from "../flora";
 import {smooth, rnd, band, Pt} from "../geom";
 import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram} from "../murugan";
-import {CAPS, EN} from "../look";
+import {CAPS, EN, TA} from "../look";
 
 // Motion helpers: every scene moves (AK, 16 Nov 2026: the first cut "feels like a slide show").
 const cl = (v: number) => Math.max(0, Math.min(1, v));
@@ -440,23 +440,22 @@ const SuraDrawing: React.FC<SceneP> = ({s, n}) => {
     </Frame>
   );
 };
-// A verse card whose text is not set yet. Rule 2 (nobody types a verse by hand): the lines come from a checked edition
-// through the corpus. Until then the card names the source and says so.
+// The verse card: the Tamil first, in gold; under it the English, lit line by line; then the source. The text comes from
+// scripts/katha/sura_verses.json through build_sura.py (rule 2: nobody types a verse by hand).
 const SuraVerse: React.FC<SceneP> = ({s, n}) => {
-  const f = useCurrentFrame(), o = Math.min(1, f / 24);
+  const f = useCurrentFrame(), ta: string[] = s.ta || [], en: string[] = s.en || [];
+  const taS = ta.some((l) => l.length > 40) ? 50 : 58, enS = en.some((l) => l.length > 62) ? 36 : 42;
+  const hT = ta.length * taS * 1.5, hE = en.length * enS * 1.42, top = 540 - (hT + 90 + hE) / 2 + 10;
   return (
-    <Frame f={f} zoom={1}>
+    <Frame f={f} zoom={push(f, n, 1, 1.03)}>
       <rect width={W} height={H} fill="#0A0716"/>
-      <SoftGlow x={960} y={520} r={900} c0="#3A2244" c1="#140F2C" peak={0.8}/>
-      <g opacity={o}>
-        <text x={960} y={330} textAnchor="middle" fontFamily={CAPS} fontSize={30} letterSpacing={8} fill="#D9B26A">{String(s.head || "").toUpperCase()}</text>
-        <rect x={660} y={372} width={600} height={1.5} fill="url(#k-fade-h)"/>
-        <rect x={420} y={430} width={1080} height={250} fill="none" stroke="#B8862F" strokeWidth={1.5} strokeDasharray="10 10" opacity={0.7}/>
-        <text x={960} y={540} textAnchor="middle" fontFamily={CAPS} fontSize={34} letterSpacing={6} fill="#FFE3A3">{String(s.pending || "VERSE TEXT TO BE SET")}</text>
-        <text x={960} y={600} textAnchor="middle" fontFamily={EN} fontStyle="italic" fontSize={34} fill="#C9B48A">{String(s.note || "")}</text>
-        <text x={960} y={770} textAnchor="middle" fontFamily={EN} fontStyle="italic" fontSize={40} fill="#F4EBDA">{String(s.gist || "")}</text>
-        <text x={960} y={830} textAnchor="middle" fontFamily={CAPS} fontSize={24} letterSpacing={5} fill="#D9B26A">{String(s.src || "").toUpperCase()}</text>
-      </g>
+      <SoftGlow x={960} y={500} r={1000} c0="#3A2244" c1="#140F2C" peak={0.85}/>
+      <SoftGlow x={960} y={top + hT / 2} r={620} ry={200} c0="#F0A04B" c1="#C2553A" peak={0.14 + 0.03 * Math.sin(f / 30)}/>
+      <text x={960} y={top - 70} textAnchor="middle" fontFamily={CAPS} fontSize={27} letterSpacing={8} fill="#D9B26A" opacity={ez(f, 4, 20)}>{String(s.head || "").toUpperCase()}</text>
+      {ta.map((l, i) => <text key={i} x={960} y={top + taS + i * taS * 1.5} textAnchor="middle" fontFamily={TA} fontWeight={600} fontSize={taS} fill="url(#k-gold)" opacity={ez(f, 10 + i * 14, 24)}>{l}</text>)}
+      <rect x={960 - 300 * ez(f, 30, 40)} y={top + hT + 42} width={600 * ez(f, 30, 40)} height={1.5} fill="url(#k-fade-h)"/>
+      {en.map((l, i) => <text key={i} x={960} y={top + hT + 90 + enS + i * enS * 1.42} textAnchor="middle" fontFamily={EN} fontStyle="italic" fontWeight={500} fontSize={enS} fill="#F4EBDA" opacity={ez(f, 44 + i * 26, 26)}>{l}</text>)}
+      <text x={960} y={Math.min(1000, top + hT + 90 + hE + 76)} textAnchor="middle" fontFamily={CAPS} fontSize={22} letterSpacing={5} fill="#D9B26A" opacity={ez(f, 60 + en.length * 26, 24) * 0.9}>{String(s.src || "").toUpperCase()}</text>
     </Frame>
   );
 };

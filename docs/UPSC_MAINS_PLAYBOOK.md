@@ -1,10 +1,14 @@
 # UPSC Mains channel: growth with Shorts and long videos, and which visual fits which concept
 
-**Draft for AK, 14 Nov 2026.** AK asked how to grow the UPSC Mains channel (Hindi; Geography, Economy and Polity) with
+**Draft for AK, 14 Nov 2026.** AK asked how to grow the UPSC Mains channel (Geography, Economy and Polity) with
 Shorts and long videos, and which visual formats explain exam concepts best. This builds on the Reveal Loop
 ([`SHORTS_FORMAT.md`](SHORTS_FORMAT.md)), the Shorts rules ([`SHORTS_RULES.md`](SHORTS_RULES.md)), the benchmark Short
 `um-parisiman` ([`SHORTS_BENCHMARKS.md`](SHORTS_BENCHMARKS.md)) and the HyperFrames library (`hyperframes/README.md`).
 Everything marked **AK's call** is a proposal, not a rule yet.
+
+**Language, 16 Nov 2026 (AK): the channel is in English.** The Hindi series names, title examples and the Hindi benchmark
+Short below were written when the channel was meant to be Hindi: give each series an English name before its first Short,
+and write `um-parisiman` again as an English loop script (its own script and voice, not a dub; SHORTS_RULES O1).
 
 **Update, 15 Nov 2026 (AK agreed):** the lead long format is now **Fix This Answer** (§3a): an answer repaired on screen,
 then a fresh question that tests whether the viewer can make the same repair. It replaces the copy-review format and the
@@ -109,7 +113,7 @@ and rewrites, so the opening is not a new category: it is **correction that is f
 regular enough to become a habit.**
 
 Limits of that evidence, kept in view: it is qualitative; it comes mostly from English-medium aspirants (our channel is
-meant to be Hindi); YouTube comments could not be read; and we have not opened the cited threads ourselves. Check any
+the channel is in English, so this fits better than first thought); YouTube comments could not be read; and we have not opened the cited threads ourselves. Check any
 thread before quoting it on screen. The four-week pilot below is how we learn whether *our* audience has the same need.
 
 **Who it is for.** An aspirant who knows the topic but cannot yet turn it into a relevant, concise answer.
@@ -143,7 +147,7 @@ Rules:
 - **Never promise to evaluate every subscriber's answer.** Repair a few representative ones fully; give everyone the
   self-check list that ends each episode.
 
-Working titles (from AK's research; Hindi titles once the channel language is settled):
+Working titles (from AK's research):
 1. "You Know the Topic. Why Does Your Answer Still Miss the Question?"
 2. "'Add More Analysis': Watch Us Fix the Actual Paragraph"
 3. "A 150-Word Answer: What Should You Delete?"

@@ -21,7 +21,7 @@ export const vel = (x = 0, y = 0, len = 470, s = 1): string[] => {
 
 // Murugan, young, standing, turned to the left. pose "hold": the vel upright in the forward hand. "thrown": the arm
 // stretched out, the hand open, no vel. w: wind, t: time.
-export const murugan = (pose: "hold" | "thrown" = "hold", w = 0, t = 0): string[] => {
+export const murugan = (pose: "hold" | "thrown" = "hold", w = 0, t = 0, arm = 90, elbow = 0, palm: Hand = "open"): string[] => {
   const P: string[] = [];
   // head in profile (only the line of the profile), neck
   P.push(smooth([[6, -400], [-9, -398], [-18, -391], [-21, -381], [-20, -374], [-25, -366, "c"], [-21, -362], [-21, -355], [-17, -346], [-8, -341], [4, -344], [15, -352], [22, -365], [24, -380], [18, -393]]));
@@ -47,9 +47,9 @@ export const murugan = (pose: "hold" | "thrown" = "hold", w = 0, t = 0): string[
     P.push(smooth([[-98, -300], [-98, -318], [-90, -324], [-80, -320], [-79, -304], [-86, -296]]));
     P.push(...vel(-90, 0, 470));
   } else {
-    // the arm flung out level, the palm open towards the tree
-    P.push(ribbon(cub([-26, -322], [-52, -318], [-78, -318], [-104, -322]), 24, 15, 1));
-    P.push(smooth([[-102, -330], [-116, -336], [-130, -334], [-138, -326], [-128, -324], [-136, -318], [-124, -314], [-108, -313]]));
+    // the free arm, jointed: `arm` is the upper arm's angle from straight down (+ forward), `elbow` the bend
+    const r = limb([-22, -320], arm, 46, arm + elbow, 44, 24, 17, 14);
+    P.push(...r.paths, ...hand(r.end, arm + elbow, palm, 1.05));
   }
   P.push(disc(-46, -302, 5.5));
   // the rear arm, hand on the hip
@@ -84,7 +84,7 @@ export const surapadman = (w = 0, t = 0): string[] => {
 
 // A peacock standing, facing left. open = false: the train closed, sweeping back to the ground. open = true: the train
 // fanned behind the body. Returns [body paths, eye marks] (the eyes are a colour layer: draw them with rim: false).
-export const peacock = (open = false, t = 0, spread = 1): {body: string[]; eyes: string[]} => {
+export const peacock = (open = false, t = 0, spread = 1, step?: number): {body: string[]; eyes: string[]} => {
   const B: string[] = [], E: string[] = [];
   const eye = (x: number, y: number, r: number, a = 0) => { const c = Math.cos(a), s = Math.sin(a); const pt = (u: number, v: number) => [x + u * c - v * s, y + u * s + v * c];
     E.push(smooth([pt(-r * 0.75, 0), pt(0, -r), pt(r * 0.75, 0), pt(0, r * 1.15)] as Pt[])); };
@@ -112,7 +112,10 @@ export const peacock = (open = false, t = 0, spread = 1): {body: string[]; eyes:
   // crest: fine stalks with a bead at each tip
   for (let i = 0; i < 5; i++) { const a = -Math.PI / 2 + (i - 2) * 0.2 + 0.25, x0 = -43, y0 = -302, x1 = x0 + Math.cos(a) * 28, y1 = y0 + Math.sin(a) * 28; B.push(band([[x0, y0], [x1, y1]], 2.4, 1.6, 1, "round")); B.push(disc(x1, y1, 3.3)); }
   // legs
-  for (const lx of [-14, 12]) { B.push(band([[lx, -106], [lx - 3, -50], [lx - 1, -4]], 7, 4.5, 1, "round")); B.push(smooth([[lx - 22, 0], [lx - 6, -8], [lx + 12, 0], [lx - 2, -2]] as Pt[])); }
+  [-14, 12].forEach((lx, j) => {
+    const u = step == null ? 0 : Math.max(0, Math.sin(2 * Math.PI * (step + j * 0.5))), fx = lx - 3 - 26 * u * (step == null ? 0 : Math.cos(2 * Math.PI * (step + j * 0.5)) > 0 ? 1 : 0.4), fy = -4 - 22 * u;
+    B.push(band([[lx, -106], [lx - 8 - 10 * u, -56 - 14 * u], [fx, fy]], 7, 4.5, 1, "round")); B.push(smooth([[fx - 20, fy + 4], [fx - 4, fy - 4], [fx + 12, fy + 4], [fx, fy + 2]] as Pt[]));
+  });
   return {body: B, eyes: E};
 };
 
@@ -178,7 +181,7 @@ export const man = (arm: "down" | "point" | "bag" = "down", bow = 0): string[] =
   return P;
 };
 // A woman standing in a sari (~380 tall), the pallu over the shoulder, hair in a knot.
-export const woman = (crown = false): string[] => {
+export const woman = (crown = false, arm?: number): string[] => {
   const P: string[] = [];
   P.push(smooth([[-24, -352], [-18, -374], [2, -380], [20, -370], [22, -348], [10, -330], [-10, -332]]));
   P.push(smooth([[14, -372], [34, -362], [36, -342], [22, -336]]));
@@ -187,7 +190,8 @@ export const woman = (crown = false): string[] => {
   P.push(smooth([[-28, -216], [30, -216], [44, -160], [56, -90], [66, -20], [70, 0, "c"], [-62, 0, "c"], [-56, -30], [-44, -100], [-34, -160]]));
   // the pallu falling behind
   P.push(smooth([[20, -314], [40, -304], [52, -250], [58, -180], [54, -120], [42, -124], [40, -190], [32, -250]]));
-  P.push(ribbon(cub([-30, -300], [-42, -270], [-44, -240], [-36, -206]), 22, 15, 1));
+  if (arm == null) P.push(ribbon(cub([-30, -300], [-42, -270], [-44, -240], [-36, -206]), 22, 15, 1));
+  else { const r = limb([-26, -302], arm, 54, arm + 12, 50, 21, 15, 12); P.push(...r.paths, ...hand(r.end, arm + 12, "open", 0.95)); }
   if (crown) P.push(...mukuta(-1, -374, 0.8, 0.9));
   return P;
 };
@@ -216,7 +220,7 @@ export const child = (paper: "up" | "down" | "none" = "none"): {paths: string[];
   return {paths: P, sheet};
 };
 // A man on one knee, at a child's height, the forward arm reaching out. Faces left.
-export const kneeling = (): string[] => {
+export const kneeling = (reach = 0): string[] => {
   const P: string[] = [];
   P.push(smooth([[-36, -262], [-30, -286], [-10, -294], [10, -284], [14, -262], [2, -242], [-18, -242]]));
   P.push(smooth([[-14, -246], [4, -248], [10, -226], [-10, -224]]));
@@ -227,8 +231,7 @@ export const kneeling = (): string[] => {
   P.push(smooth([[-110, -14], [-84, -14], [-82, 0, "c"], [-132, 0, "c"], [-128, -6]]));
   P.push(ribbon(cub([30, -116], [36, -84], [40, -50], [44, -20]), 44, 34, 1));
   P.push(ribbon(cub([40, -22], [76, -22], [112, -18], [146, -12]), 34, 18, 1));
-  P.push(ribbon(cub([-30, -214], [-54, -200], [-80, -190], [-106, -186]), 25, 16, 1));
-  P.push(smooth([[-104, -194], [-120, -194], [-128, -186], [-118, -178], [-104, -178]]));
+  { const a = 40 + 48 * reach, r = limb([-28, -212], a, 52, a + 10 + 20 * reach, 50, 25, 18, 14); P.push(...r.paths, ...hand(r.end, a + 10 + 20 * reach, "open")); }
   P.push(ribbon(cub([40, -212], [52, -178], [52, -146], [40, -118]), 25, 17, 1));
   return P;
 };
@@ -260,4 +263,97 @@ export const childLift = (k: number): {paths: string[]; sheet: number[][]} => {
   const a1 = d1.map((q, i) => L(q, u1[i])), a2 = d2.map((q, i) => L(q, u2[i]));
   base.push(ribbon(cub(a1[0], a1[1], a1[2], a1[3]), 15, 10, 1), ribbon(cub(a2[0], a2[1], a2[2], a2[3]), 15, 10, 1));
   return {paths: base, sheet: ds.map((q, i) => L(q, us[i]))};
+};
+
+// ---------- a jointed rig: walk and run cycles and gestures (17 Nov 2026) ----------
+// Angles are in degrees from straight down; + swings forward (the figure faces left, so forward is -x).
+const rad = (d: number) => (d * Math.PI) / 180;
+const along = (p: number[], a: number, L: number): number[] => [p[0] - Math.sin(rad(a)) * L, p[1] + Math.cos(rad(a)) * L];
+const seg = (a: number[], b: number[], wa: number, wb: number) => ribbon([a, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], b], wa, wb, 1, "cw");
+// two segments from p0: the first at angle a1, the second at a2 (absolute); widths at root, joint and tip
+export const limb = (p0: number[], a1: number, L1: number, a2: number, L2: number, w0: number, w1: number, w2: number) => {
+  const j = along(p0, a1, L1), e = along(j, a2, L2);
+  return {paths: [seg(p0, j, w0, w1), seg(j, e, w1, w2), disc(j[0], j[1], w1 / 2), disc(p0[0], p0[1], w0 / 2)], joint: j, end: e};
+};
+export type Hand = "fist" | "open" | "point" | "none";
+// a hand at the end of a forearm pointing at angle a: a fist, an open palm (fingers together) or a pointing finger
+const hand = (p: number[], a: number, kind: Hand, s = 1): string[] => {
+  if (kind === "none") return [];
+  if (kind === "fist") return [disc(p[0], p[1], 9 * s)];
+  const tip = along(p, a, (kind === "point" ? 30 : 22) * s);
+  const palm = ribbon([p, along(p, a, 12 * s), tip], 15 * s, kind === "point" ? 5 * s : 10 * s, 1, "cw");
+  return kind === "point" ? [disc(p[0], p[1], 9 * s), palm] : [palm, disc(p[0], p[1], 7.5 * s)];
+};
+// A gait: the two legs' (thigh, shin) angles and the two arms' (upper, fore) angles at phase ph (0..1), for a walk
+// or a run. Leg A and the opposite arm swing together.
+export const gait = (ph: number, run = false) => {
+  const T = 2 * Math.PI, A = run ? 34 : 24, K = run ? 82 : 52, S = run ? 46 : 20, E = run ? 78 : 18;
+  const leg = (p: number) => { const th = A * Math.sin(T * p); const k = 6 + K * Math.pow(Math.max(0, Math.cos(T * p - 0.35)), 2); return [th, th - k]; };
+  const arm = (p: number) => { const s = -S * Math.sin(T * p); return [s, s + E + (run ? 0 : 10 * Math.max(0, -Math.sin(T * p)))]; };
+  return {legs: [leg(ph), leg(ph + 0.5)], arms: [arm(ph + 0.5), arm(ph)]};
+};
+export type Pose = {
+  walk?: number; run?: boolean;          // a phase (0..1, wraps) to walk or run; omitted = standing
+  bow?: number;                          // 0..1, the head and shoulders down
+  lean?: number;                         // degrees forward from the hips (a run leans ~8)
+  front?: [number, number, Hand?];       // the near arm: upper and fore angles, the hand
+  back?: [number, number, Hand?];        // the far arm
+  bag?: boolean;                         // a bag in the far hand
+};
+const BUILD = {
+  man: {hip: -196, sh: -318, head: [-2, -360], hr: [24, 29], th: 100, sn: 92, ua: 76, fa: 70, w: [32, 25, 18], aw: [24, 17, 13], torso: 38, hs: 1},
+  child: {hip: -96, sh: -166, head: [0, -204], hr: [23, 27], th: 48, sn: 44, ua: 40, fa: 36, w: [16, 12, 9], aw: [13, 10, 8], torso: 24, hs: 0.62},
+};
+// A person, facing left, feet on y = 0. Returns the paths and where the hands are (for a held sheet or a bag).
+export const person = (kind: "man" | "child", p: Pose = {}) => {
+  const B = BUILD[kind], P: string[] = [], bow = p.bow ?? 0;
+  const g = p.walk != null ? gait(p.walk, p.run) : null;
+  const legs = g ? g.legs : [[3, 1], [-3, -2]];
+  // the feet: put the lower foot on the ground (the body rises and falls with the stride)
+  const hipF = [-6 * B.hs, B.hip], hipB = [8 * B.hs, B.hip];
+  const ankles = legs.map((l, i) => along(along(i ? hipB : hipF, l[0], B.th), l[1], B.sn));
+  const drop = -Math.max(ankles[0][1], ankles[1][1]) - 10 * B.hs;
+  const Y = (q: number[]) => [q[0], q[1] + drop];
+  const lean = (p.lean ?? (p.run ? 8 : g ? 3 : 0)) + 14 * bow;
+  // upper body points tilt forward about the hip by `lean`
+  const U = (x: number, y: number): [number, number] => { const r = rad(lean), dy = y - B.hip; return [x + Math.sin(r) * dy, B.hip + dy * Math.cos(r) + drop]; };
+  // legs (the far one first), each with a foot
+  legs.map((l, i) => ({l, i})).reverse().forEach(({l, i}) => {
+    const r = limb(Y(i ? hipB : hipF), l[0], B.th, l[1], B.sn, B.w[0], B.w[1], B.w[2]);
+    P.push(...r.paths);
+    const toe = along(r.end, l[1] + 90 - Math.min(30, Math.max(-10, (l[1] - l[0]) * 0.3)), 30 * B.hs);
+    P.push(ribbon([r.end, [(r.end[0] + toe[0]) / 2, (r.end[1] + toe[1]) / 2 + 2], toe], 16 * B.hs, 9 * B.hs, 1, "cw"));
+  });
+  // hips and torso
+  const t = B.torso;
+  P.push(smooth([U(-t * 0.9, B.sh - 4), U(-t * 0.3, B.sh - 14 * B.hs), U(t * 0.5, B.sh - 14 * B.hs), U(t * 1.05, B.sh), U(t * 1.15, B.sh + (B.hip - B.sh) * 0.35), U(t * 0.95, B.hip + 4), U(-t * 0.9, B.hip + 4), U(-t * 0.95, B.sh + (B.hip - B.sh) * 0.4)], {wind: "cw"}));
+  // neck and head (no features), the head dropping forward with a bow
+  const hx = B.head[0] - 16 * bow * B.hs, hy = B.head[1] + 18 * bow * B.hs, [rx, ry] = B.hr;
+  const N = U(0, B.sh - 6), H = U(hx, hy);
+  P.push(ribbon([N, [(N[0] + H[0]) / 2, (N[1] + H[1]) / 2], H], 20 * B.hs, 18 * B.hs, 1, "cw"));
+  P.push(smooth(Array.from({length: 10}, (_, k) => { const a = (k / 10) * Math.PI * 2; return [H[0] + Math.cos(a) * rx * B.hs * (k > 2 && k < 7 ? 1 : 0.94), H[1] + Math.sin(a) * ry * B.hs] as Pt; }), {wind: "cw"}));
+  // arms
+  const arms = g ? g.arms : [[6, 14], [-4, 8]];
+  const fa = p.front ?? [arms[0][0], arms[0][1], "fist"], ba = p.back ?? [arms[1][0], arms[1][1], "fist"];
+  const shF = U(-6 * B.hs, B.sh + 6 * B.hs), shB = U(10 * B.hs, B.sh + 6 * B.hs);
+  const rb = limb(shB, ba[0] + lean, B.ua, ba[1] + lean, B.fa, B.aw[0], B.aw[1], B.aw[2]);
+  const rf = limb(shF, fa[0] + lean, B.ua, fa[1] + lean, B.fa, B.aw[0], B.aw[1], B.aw[2]);
+  const hb = hand(rb.end, ba[1] + lean, ba[2] ?? "fist", B.hs), hf = hand(rf.end, fa[1] + lean, fa[2] ?? "fist", B.hs);
+  P.unshift(...rb.paths, ...hb);
+  if (p.bag) P.unshift(`M ${rb.end[0] - 30} ${rb.end[1] + 8} h 60 v 70 h -60 Z`, `M ${rb.end[0] - 4} ${rb.end[1] - 2} h 8 v 12 h -8 Z`);
+  P.push(...rf.paths, ...hf);
+  return {paths: P, hands: [rf.end, rb.end]};
+};
+// The child holding up a drawing with both hands (k = 0: the sheet hanging from one hand; 1: held high), walking or
+// running at phase `run`. Returns the paths and the sheet's corners, which follow the hands.
+export const childSheet = (k: number, run?: number) => {
+  const up = (a: number, b: number) => a + (b - a) * k;
+  const front: [number, number, Hand] = [up(8, 150), up(14, 168), "fist"], back: [number, number, Hand] = [up(-4, 140), up(6, 162), "fist"];
+  const g = run != null ? gait(run, true) : null;
+  if (g && k < 0.5) { front[0] = g.arms[0][0]; front[1] = g.arms[0][1]; }
+  const r = person("child", {walk: run, run: run != null, front, back});
+  const [h1, h2] = r.hands;
+  const sheet = k > 0.5 ? [[Math.min(h1[0], h2[0]) - 58, Math.min(h1[1], h2[1]) - 70], [Math.max(h1[0], h2[0]) + 18, Math.min(h1[1], h2[1]) - 66], [Math.max(h1[0], h2[0]) + 14, Math.min(h1[1], h2[1]) + 4], [Math.min(h1[0], h2[0]) - 62, Math.min(h1[1], h2[1])]]
+    : [[h1[0] - 16, h1[1]], [h1[0] + 14, h1[1]], [h1[0] + 18, h1[1] + 70], [h1[0] - 20, h1[1] + 66]];
+  return {paths: r.paths, sheet};
 };

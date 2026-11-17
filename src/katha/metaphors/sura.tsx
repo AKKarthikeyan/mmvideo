@@ -12,7 +12,7 @@ import {Flame, Diya} from "../fire";
 import {Rimmed, Item} from "../sil";
 import {mango, reeds} from "../flora";
 import {smooth, rnd, band, Pt} from "../geom";
-import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram} from "../murugan";
+import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram, person, childSheet} from "../murugan";
 import {CAPS, EN, TA} from "../look";
 
 // Figure colours (17 Nov 2026): deep tones, not black, so figures read on a phone. Faces stay in shadow (no features).
@@ -67,6 +67,8 @@ const SuraTree: React.FC<SceneP> = ({s, n}) => {
       <g clipPath={`url(#st-${side > 0 ? "r" : "l"})`}><Rimmed paths={tree} light={[-side, -0.25]} w={5} rim="#FFE2A6"/></g>
     </g>
   );
+  const armA = throwing ? (f < 16 ? 30 - 80 * ez(f, 0, 16) : -50 + 152 * ez(f, 16, 7)) : 102 - 50 * ez(f, 24, n * 0.6);
+  const armE = throwing ? (f < 16 ? 40 * ez(f, 0, 16) : 40 - 40 * ez(f, 16, 7)) : 6, armH = throwing && f < 20 ? "fist" : "open";
   const fall = ez(f, 14, 80), rise = ez(f, 40, 100), fan = ez(f, 90, 90), grow = after || throwing ? 1 : ez(f, 4, 130);
   const pk = peacock(true, f, 0.15 + 0.85 * fan), rk = rooster(f), hover = Math.sin(f / 22) * 8;
   return (
@@ -113,7 +115,7 @@ const SuraTree: React.FC<SceneP> = ({s, n}) => {
         </g>;
       })() : null}
       {after ? <LightFlash p={0.5 + f / 44} x={TX} y={HOR - 200} r={1500}/> : null}
-      <Rimmed fill={FIG.murugan} paths={murugan(after || throwing ? "thrown" : "hold", 0.5, f)} transform={`translate(${mx} ${my - 62}) scale(${-ms} ${ms})`} light={[-(sun[0] - mx), sun[1] - 700]} w={4 / ms}/>
+      <Rimmed fill={FIG.murugan} paths={after || throwing ? murugan("thrown", 0.5, f, armA, armE, armH) : murugan("hold", 0.5, f)} transform={`translate(${mx} ${my - 62}) scale(${-ms} ${ms})`} light={[-(sun[0] - mx), sun[1] - 700]} w={4 / ms}/>
       <Flock f={f} light={[0, -1]} y={210} count={5} scale={0.26} seed={2}/>
       <Dust f={f} sun={sun} n={120} y0={200} y1={680}/>
     </Frame>
@@ -123,7 +125,7 @@ const SuraTree: React.FC<SceneP> = ({s, n}) => {
 const SuraMurugan: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame();
   const sun: [number, number] = [1010, 640], GY = 880;
-  const pk = peacock(false, f), come = ez(f, 0, 120), pkx = 1560 - 330 * come, pky = come < 1 ? bob(f, 0.9) * 0.8 : 0;
+  const come = ez(f, 0, 120), pk = peacock(false, f, 1, come < 0.98 ? (1560 - (1560 - 330 * come)) / 80 : undefined), pkx = 1560 - 330 * come, pky = come < 1 ? bob(f, 0.9) * 0.8 : 0;
   const L = (x: number): [number, number] => [sun[0] - x, sun[1] - 620];
   // the banner: a pole, a pennant lit through by the sun, the rooster on it
   const px = 560, ptop = 250;
@@ -238,7 +240,7 @@ const SuraOffice: React.FC<SceneP> = ({s, n}) => {
     smooth([[x - 56, FL - 150, "c"], [x - 54, FL - 240], [x - 30, FL - 272], [x + 30, FL - 272], [x + 54, FL - 240], [x + 56, FL - 150, "c"]], {wind: "cw"}), `M ${x - 62} ${FL - 230} h 124 v 230 h -16 v -90 h -92 v 90 h -16 Z`];
   const L = (x: number): [number, number] => [sun[0] - x, sun[1] - 620];
   const inn = ez(f, 0, 50), mx = 1480 - 290 * inn, my = inn < 1 ? bob(f, 1.2) : 0;
-  const jab = f > 50 ? -14 * Math.max(0, Math.sin(f / 5.5)) * (0.5 + 0.5 * Math.sin(f / 37)) : 0;
+  const jab = f > 50 ? 9 * Math.max(0, Math.sin(f / 5.5)) * (0.5 + 0.5 * Math.sin(f / 37)) : 0;
   const bow = ez(f, 46, 150), turn = 10 * ez(f, 50, 40);
   return (
     <Frame f={f} zoom={push(f, n, 1.04, 1.2)} cx={780} cy={600}>
@@ -247,8 +249,8 @@ const SuraOffice: React.FC<SceneP> = ({s, n}) => {
       <SoftGlow x={sun[0]} y={620} r={900} ry={520} c0="#FFD9A0" c1="#C2553A" peak={0.3}/>
       {[270, 1650].map((x, i) => <SoftGlow key={i} x={x} y={FL - 210} r={110} c0="#BFD0FF" c1="#4A62B0" peak={0.22 + 0.08 * rnd(Math.floor(f / 9), i)}/>)}
       <Rimmed paths={[...desk(120, 300), ...back(270, -turn), ...desk(1500, 300), ...back(1650, turn)]} light={[0, -1]} w={3} fill="#0E0816"/>
-      <Rimmed fill={FIG.arun} paths={man("down", bow)} transform={`translate(760 ${FL}) scale(-1.12 ${1.12 * breathe(f)})`} light={[-L(760)[0], L(760)[1]]} w={3.6}/>
-      <Rimmed fill={FIG.boss} paths={man("point", 0)} transform={`translate(${mx + jab} ${FL + my}) scale(1.22)`} light={L(1190)} w={3.4}/>
+      <Rimmed fill={FIG.arun} paths={person("man", {bow, front: [4 + 14 * bow, 10 + 30 * bow, "fist"], back: [-2 + 6 * bow, 6 + 20 * bow, "fist"]}).paths} transform={`translate(760 ${FL}) scale(-1.12 ${1.12 * breathe(f)})`} light={[-L(760)[0], L(760)[1]]} w={3.6}/>
+      <Rimmed fill={FIG.boss} paths={person("man", inn < 1 ? {walk: (1480 - mx) / 190} : {front: [84 + jab * 0.5, 84 + jab, "point"], back: [-6, 4, "fist"], lean: 4}).paths} transform={`translate(${mx} ${FL}) scale(1.22)`} light={L(1190)} w={3.4}/>
       <Dust f={f} sun={sun} n={90} y0={200} y1={860}/>
     </Frame>
   );
@@ -259,7 +261,9 @@ const SuraDoor: React.FC<SceneP> = ({s, n}) => {
   const lift = s.phase ? (s.phase === "down" ? 0 : 1) : ez(f, 34, 22) * (1 - ez(f, n * 0.5, 40));
   const run = ez(f, 8, 44), kx = 1620 - 500 * run, ky = run < 1 ? bob(f, 2) * 1.4 : 0, ks = 1.3;
   const step = ez(f, 0, 60), axx = 480 + 120 * step, ay = step < 1 ? bob(f, 1) : 0;
-  const kid = childLift(lift), sag = 1 - 0.04 * ez(f, n * 0.5, 60);
+  const kid = childSheet(lift, run < 1 ? (1620 - kx) / 120 : undefined), sag = 1 - 0.04 * ez(f, n * 0.5, 60);
+  const no = ez(f, n * 0.32, 8) * (1 - ez(f, n * 0.52, 14)), arunPose = step < 1 ? {walk: (axx - 480) / 170, bag: true} :
+    {bag: true, bow: 0.25 + 0.6 * ez(f, n * 0.5, 50), front: [4 + 70 * no, 12 + 140 * no, no > 0.4 ? "open" : "fist"] as [number, number, "open" | "fist"]};
   return (
     <Frame f={f} zoom={push(f, n, 1.04, 1.18)} cx={980} cy={640}>
       <Room floor={FL} id="dr"/>
@@ -268,9 +272,9 @@ const SuraDoor: React.FC<SceneP> = ({s, n}) => {
       <SoftGlow x={door[0]} y={600} r={900} ry={640} c0="#FFE2A6" c1="#C2553A" peak={0.42}/>
       <SoftGlow x={720} y={FL + 10} r={620} ry={60} c0="#FFE2A6" c1="#C2553A" peak={0.3}/>
       <path d={`M 306 226 H 644 V 900 H 620 V 250 H 330 V 900 H 306 Z`} fill="#07050F"/>
-      <Rimmed fill={FIG.arun} paths={man("bag", 0.3 + 0.6 * ez(f, n * 0.5, 50))} transform={`translate(${axx} ${FL + ay}) scale(-1.2 1.2)`} light={[1, -0.3]} w={3.4}/>
-      <Rimmed fill={FIG.child} paths={kid.paths} transform={`translate(${kx} ${FL + ky}) scale(${ks} ${ks * sag})`} light={[-1, -0.2]} w={3.2}/>
-      <g transform={`translate(${kx} ${FL + ky}) scale(${ks} ${ks * sag})`}><path d={sheetD(kid.sheet)} fill="#F3E6C8" opacity={0.6 + 0.35 * lift}/></g>
+      <Rimmed fill={FIG.arun} paths={person("man", arunPose).paths} transform={`translate(${axx} ${FL}) scale(-1.2 1.2)`} light={[1, -0.3]} w={3.4}/>
+      <Rimmed fill={FIG.child} paths={kid.paths} transform={`translate(${kx} ${FL}) scale(${ks} ${ks * sag})`} light={[-1, -0.2]} w={3.2}/>
+      <g transform={`translate(${kx} ${FL}) scale(${ks} ${ks * sag})`}><path d={sheetD(kid.sheet)} fill="#F3E6C8" opacity={0.6 + 0.35 * lift}/></g>
       <Rimmed paths={[`M 1420 ${FL - 190} H 1760 V ${FL - 172} H 1744 V ${FL} H 1726 V ${FL - 172} H 1454 V ${FL} H 1436 V ${FL - 172} H 1420 Z`, `M 1560 ${FL - 190} h 60 l -10 -60 h -40 Z`]} light={[-1, -0.3]} w={3} fill="#0E0816"/>
       <Dust f={f} sun={door} n={70} y0={260} y1={880}/>
     </Frame>
@@ -322,8 +326,8 @@ const SuraBirth: React.FC<SceneP> = ({s, n}) => {
       {given ? <g>
         <SoftGlow x={960} y={600} r={520} c0="#FFE9B0" c1="#F0A04B" peak={0.6}/>
         <Rimmed paths={[smooth([[300, H + 40, "c"], [360, 900], [700, 868], [1200, 866], [1560, 900], [1640, H + 40, "c"]], {wind: "cw"})]} light={[0, -1]} w={3} fill="#0B0612"/>
-        <Rimmed fill={FIG.woman} paths={woman(true)} transform={`translate(1130 872) scale(1.25)`} light={[-1, -0.3]} point={[-140, -250]} w={3.2}/>
-        <Rimmed fill={FIG.murugan} paths={murugan("thrown", 0.3, f)} transform={`translate(${700 + 90 * ez(f, n * 0.55, 60)} 872) scale(-0.74 0.74)`} light={[1, -0.3]} w={5}/>
+        <Rimmed fill={FIG.woman} paths={woman(true, 62 + 18 * ez(f, n * 0.5, 50))} transform={`translate(1130 872) scale(1.25)`} light={[-1, -0.3]} point={[-140, -250]} w={3.2}/>
+        <Rimmed fill={FIG.murugan} paths={murugan("thrown", 0.3, f, 60 + 92 * ez(f, n * 0.58, 40), 14, "open")} transform={`translate(${700 + 90 * ez(f, n * 0.55, 60)} 872) scale(-0.74 0.74)`} light={[1, -0.3]} w={5}/>
         <SoftGlow x={955} y={520 - 150 * (1 - ez(f, n * 0.55, 90))} r={190 + 40 * Math.sin(f / 12)} c0="#FFFFFF" c1="#FFD38A" peak={0.85} k={3}/>
         <g transform={`translate(955 ${872 - 150 * (1 - ez(f, n * 0.55, 90))})`}>{vel(0, 0, 330, 1.25).map((d, i) => <path key={i} d={d} fill="#FFF3D2"/>)}</g>
       </g> : Array.from({length: 6}, (_, i) => {
@@ -370,6 +374,8 @@ const SuraShore: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), HOR = 620, sun: [number, number] = [1340, 600 - 40 * ez(f, 0, n)];
   const crowd = (y: number, k: number, seed: number) => { const P: string[] = []; let i = 0;
     for (let x = -30; x < W + 30; x += (15 + rnd(i, seed + 3) * 9) * k) { i++; const j = rnd(i, seed), h = (26 + j * 12) * k, xx = x, up = Math.sin(f / 16 + i * 2.3 + seed) * 1.6 * k, yy = y + up;
+      if (rnd(i, seed + 7) > 0.6 && Math.sin(f / 14 + i * 1.3) > 0.2) { const a = 0.25 + 0.2 * rnd(i, seed + 8), up = Math.min(1, (Math.sin(f / 14 + i * 1.3) - 0.2) * 3);
+        P.push(`M ${xx + 4 * k} ${yy - h * 0.55} L ${xx + (4 + 14 * a) * k} ${yy - h * (0.55 + 0.75 * up)} L ${xx + (8 + 14 * a) * k} ${yy - h * (0.55 + 0.75 * up)} L ${xx + 8 * k} ${yy - h * 0.5} Z`); }
       P.push(`M ${xx - 7 * k} ${y + 60} L ${xx - 9.5 * k} ${yy - h * 0.46} Q ${xx - 9 * k} ${yy - h * 0.62} ${xx - 3.4 * k} ${yy - h * 0.66} A ${5.4 * k} ${5.6 * k} 0 1 1 ${xx + 3.4 * k} ${yy - h * 0.66} Q ${xx + 9 * k} ${yy - h * 0.62} ${xx + 9.5 * k} ${yy - h * 0.46} L ${xx + 7 * k} ${y + 60} Z`);
       if (j > 0.86) { const r = 3 * k; P.push(`M ${xx + 8 * k} ${yy - h * 0.5} L ${xx + 12 * k} ${yy - h * 1.05} a ${r} ${r} 0 1 1 ${r * 1.6} ${r * 0.4} L ${xx + 11 * k} ${yy - h * 0.46} Z`); } }
     return P.join(" "); };
@@ -395,8 +401,8 @@ const SuraShore: React.FC<SceneP> = ({s, n}) => {
 // Beat 17: morning. Arun comes down to his son's height; the drawing is lifted again.
 const SuraMorning: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), FL = 900, sun: [number, number] = [520, 520];
-  const kid = childLift(ez(f, n * 0.45, 50)), ks = 1.45, kx = 820;
-  const near = ez(f, 0, 90), ax = 1420 - 220 * near;
+  const kid = childSheet(ez(f, n * 0.45, 50)), ks = 1.45, kx = 820;
+  const wk = Math.max(30, (s.shots?.[1]?.at ?? 0.25) * n), walking = f < wk, wx = 1560 - 300 * (f / wk), ax = 1200;
   return (
     <Frame f={f} zoom={push(f, n, 1.03, 1.2)} cx={980} cy={660}>
       <Room floor={FL} id="mo" c0="#2A1C38" c1="#4A2B4C"/>
@@ -405,7 +411,8 @@ const SuraMorning: React.FC<SceneP> = ({s, n}) => {
       <path d={`M 250 ${FL} L 480 ${FL} L 1500 ${H} L 700 ${H} Z`} fill="#FFE2A6" opacity={0.05 + 0.09 * ez(f, 0, n)}/>
       <Rimmed fill={FIG.child} paths={kid.paths} transform={`translate(${kx} ${FL}) scale(${-ks} ${ks})`} light={[1, -0.3]} w={3}/>
       <g transform={`translate(${kx} ${FL}) scale(${-ks} ${ks})`}><path d={sheetD(kid.sheet)} fill="#F6EAD0"/></g>
-      <Rimmed fill={FIG.arun} paths={kneeling()} transform={`translate(${ax} ${FL}) scale(1.5 ${1.5 * breathe(f)})`} light={[-1, -0.3]} w={2.8}/>
+      {walking ? <Rimmed fill={FIG.arun} paths={person("man", {walk: (1560 - wx) / 250, bow: 0.15}).paths} transform={`translate(${wx} ${FL}) scale(1.32)`} light={[-1, -0.3]} w={3}/>
+        : <Rimmed fill={FIG.arun} paths={kneeling(ez(f, n * 0.42, 40))} transform={`translate(${ax} ${FL}) scale(1.5 ${1.5 * breathe(f)})`} light={[-1, -0.3]} w={2.8}/>}
       <Dust f={f} sun={sun} n={110} y0={200} y1={900}/>
     </Frame>
   );
@@ -476,5 +483,23 @@ const SuraEnd: React.FC<SceneP> = ({s, n}) => {
   );
 };
 
+// A test sheet for the rig: eight phases of a walk, of the child's run, and the gestures (dev only).
+const SuraRig: React.FC<SceneP> = ({s, n}) => {
+  const f = useCurrentFrame();
+  return (
+    <Frame f={f} zoom={1}>
+      <rect width={W} height={H} fill="#E9DFC8"/>
+      {Array.from({length: 8}, (_, i) => <path key={"w" + i} d={person("man", {walk: i / 8}).paths.join(" ")} transform={`translate(${130 + i * 230} 420) scale(0.8)`} fill="#2A2238"/>)}
+      {Array.from({length: 8}, (_, i) => <path key={"r" + i} d={childSheet(0, i / 8).paths.join(" ")} transform={`translate(${130 + i * 230} 700) scale(1)`} fill="#2E4A6A"/>)}
+      <path d={person("man", {front: [85, 85, "point"]}).paths.join(" ")} transform="translate(160 1060) scale(0.7)" fill="#3A2A3A"/>
+      <path d={person("man", {front: [70, 140, "open"], bag: true, bow: 0.3}).paths.join(" ")} transform="translate(420 1060) scale(0.7)" fill="#1E3050"/>
+      <path d={person("man", {bow: 1}).paths.join(" ")} transform="translate(680 1060) scale(0.7)" fill="#1E3050"/>
+      {(() => { const c = childSheet(1); return <g transform="translate(900 1060) scale(1)"><path d={c.paths.join(" ")} fill="#2E4A6A"/><path d={`M ${c.sheet.map((q) => q.join(" ")).join(" L ")} Z`} fill="#FFF"/></g>; })()}
+      <path d={murugan("thrown", 0, 0, -40, 20, "fist").join(" ")} transform="translate(1180 1060) scale(0.7)" fill="#5A1A2E"/>
+      <path d={murugan("thrown", 0, 0, 100, 0, "open").join(" ")} transform="translate(1400 1060) scale(0.7)" fill="#5A1A2E"/>
+      <path d={kneeling(1).join(" ")} transform="translate(1680 1060) scale(0.9)" fill="#1E3050"/>
+    </Frame>
+  );
+};
 export const SCENES: Record<string, React.FC<SceneP>> = {suraTree: SuraTree, suraMurugan: SuraMurugan, suraArun: SuraArun, suraOffice: SuraOffice, suraDoor: SuraDoor, suraKing: SuraKing,
-  suraBirth: SuraBirth, suraWar: SuraWar, suraShore: SuraShore, suraMorning: SuraMorning, suraDrawing: SuraDrawing, suraVerse: SuraVerse, suraEnd: SuraEnd};
+  suraBirth: SuraBirth, suraWar: SuraWar, suraShore: SuraShore, suraMorning: SuraMorning, suraDrawing: SuraDrawing, suraVerse: SuraVerse, suraEnd: SuraEnd, suraRig: SuraRig};

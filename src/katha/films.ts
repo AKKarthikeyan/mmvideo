@@ -4,4 +4,5 @@ import gita from "../../public/katha/gita/data.json";
 import sura from "../../public/katha/sura/data.json";
 import suraTa from "../../public/katha/sura/data-ta.json";
 import suraHi from "../../public/katha/sura/data-hi.json";
-export const FILMS: KData[] = [gita as unknown as KData, sura as unknown as KData, suraTa as unknown as KData, suraHi as unknown as KData];
+import suraTe from "../../public/katha/sura/data-te.json";
+export const FILMS: KData[] = [gita as unknown as KData, sura as unknown as KData, suraTa as unknown as KData, suraHi as unknown as KData, suraTe as unknown as KData];

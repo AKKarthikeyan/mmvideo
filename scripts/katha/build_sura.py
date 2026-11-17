@@ -60,7 +60,7 @@ def build(lang):
         v = V.get(key) if V.get(key, {}).get("text") == say else None
         sec = (v["sec"] + 0.9) if v else round(len(say.split()) / WPS + 1.2, 2)
         b = dict(key=key, chapter=0, movement="", speaker="NARRATOR", say=say, ref=None, sec=round(max(sec, floor), 2), scene=scene)
-        if v: b["audio"] = f"katha/sura/{lang}/{key}.mp3"
+        if v: b["audio"] = f"katha/sura/{lang}/{v.get('file', key + '.mp3')}"
         beats.append(b)
     sfx = "" if lang == "en" else "-" + lang
     score = ROOT / f"public/katha/sura/score{sfx}.wav"
@@ -68,7 +68,8 @@ def build(lang):
     out = ROOT / f"public/katha/sura/data{sfx}.json"; out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(D, ensure_ascii=False, indent=1))
     tot = sum(b["sec"] + 0.6 for b in beats)
-    print(f"wrote {out.relative_to(ROOT)}: {len(beats)} beats, {sum(1 for b in beats if b.get('audio'))} voiced, {int(tot // 60)}:{int(tot % 60):02d}")
+    eng = sorted({V[b["key"]].get("engine", "minimax") for b in beats if b.get("audio")}) or ["none"]
+    print(f"wrote {out.relative_to(ROOT)}: {len(beats)} beats, {sum(1 for b in beats if b.get('audio'))} voiced ({', '.join(eng)}), {int(tot // 60)}:{int(tot % 60):02d}")
 def main():
     for lang in ([a for a in sys.argv[1:] if a in ("en", "ta", "hi", "te")] or ["en"]): build(lang)
 if __name__ == "__main__": main()

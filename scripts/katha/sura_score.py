@@ -157,4 +157,4 @@ def score(lang):
     rms = float(np.sqrt(np.mean(L ** 2)))
     print(f"wrote {out.relative_to(ROOT)}: {total:.0f}s, rms {20 * np.log10(rms):.1f} dBFS")
 if __name__ == "__main__":
-    for lang in ([a for a in sys.argv[1:] if a in ("en", "ta", "hi")] or ["en"]): score(lang)
+    for lang in ([a for a in sys.argv[1:] if a in ("en", "ta", "hi", "te")] or ["en"]): score(lang)

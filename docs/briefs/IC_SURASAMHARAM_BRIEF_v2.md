@@ -12,9 +12,10 @@ the Arun story). This brief keeps its question and its ending, and changes what 
 Built in the cloud session, on the Gita kit. Compositions `KT-sura` (English), `KT-sura-ta`, `KT-sura-hi`.
 
 - **Picture:** all 20 beats, animated (AK: the first cut "feels like a slide show").
-- **Voice:** English, Tamil and Hindi, each cut timed to its own voice (`scripts/katha/voice_sura.py`). The three
-  scripts differ in length, so they are three videos, not one video with three audio tracks. **Telugu is written but
-  not voiced:** the voice service refuses Telugu.
+- **Voice:** each language is its own cut, timed to its own voice (`scripts/katha/voice_sura.py`), because the
+  scripts differ in length. English: MiniMax, the house narrator. **Tamil, Hindi and Telugu: Maya, AK's local voice
+  (AK, 17 Nov 2026).** Maya is on AK's machine, so the cloud cuts of Tamil and Hindi carry MiniMax as a stand-in and
+  Telugu is not voiced. Finish with `scripts/katha/finish_sura_maya.sh` on that machine (`docs/briefs/surasamharam-maya/`).
 - **Music:** scored in code to follow the film (`scripts/katha/sura_score.py`), replacing the tanpura loop AK called
   "very bad". Nobody has listened to it in the session.
 - **Verse cards: real text now** (`scripts/katha/sura_verses.json`, with sources).

@@ -15,6 +15,8 @@ import {smooth, rnd, band, Pt} from "../geom";
 import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram} from "../murugan";
 import {CAPS, EN, TA} from "../look";
 
+// Figure colours (17 Nov 2026): deep tones, not black, so figures read on a phone. Faces stay in shadow (no features).
+const FIG = {murugan: "#5A1A2E", sura: "#2E1A4A", arun: "#1E3050", boss: "#3A2A3A", child: "#2E4A6A", woman: "#5A2440", crowd: "#2A2040", bird: "#1E3A4A"};
 // Motion helpers: every scene moves (AK, 16 Nov 2026: the first cut "feels like a slide show").
 const cl = (v: number) => Math.max(0, Math.min(1, v));
 const ez = (f: number, a: number, d: number) => { const u = cl((f - a) / d); return u * u * (3 - 2 * u); };
@@ -86,8 +88,8 @@ const SuraTree: React.FC<SceneP> = ({s, n}) => {
           {half(-1)}{half(1)}
           {/* the vel stands where the trunk stood; the two birds rise in the light between the halves */}
           <Rimmed paths={vel(0, 0, 250, 1.5)} transform={`translate(${TX} ${HOR + 80})`} light={[0, -1]} w={3} fill="#2A1630" rim="#FFFFFF"/>
-          <Rimmed paths={rk} transform={`translate(${TX - 150 * rise} ${HOR - 40 - (HOR - 370) * rise + hover}) scale(${0.25 + 0.35 * rise})`} light={[1, -0.2]} w={5} fill="#241330"/>
-          <Rimmed paths={[...pk.body, ...pk.eyes.map((d) => ({d, fill: "#4E7FA6", rim: false}) as Item)]} transform={`translate(${TX + 170 * rise} ${HOR - 40 - (HOR - 340) * rise - hover}) scale(${-(0.2 + 0.3 * rise)} ${0.2 + 0.3 * rise})`} light={[1, -0.2]} w={5} fill="#241330"/>
+          <Rimmed paths={rk} transform={`translate(${TX - 150 * rise} ${HOR - 40 - (HOR - 370) * rise + hover}) scale(${0.25 + 0.35 * rise})`} light={[1, -0.2]} w={5} fill="#1E3A4A"/>
+          <Rimmed paths={[...pk.body, ...pk.eyes.map((d) => ({d, fill: "#4E7FA6", rim: false}) as Item)]} transform={`translate(${TX + 170 * rise} ${HOR - 40 - (HOR - 340) * rise - hover}) scale(${-(0.2 + 0.3 * rise)} ${0.2 + 0.3 * rise})`} light={[1, -0.2]} w={5} fill="#1E3A4A"/>
         </g>
       ) : (
         <g>
@@ -111,7 +113,7 @@ const SuraTree: React.FC<SceneP> = ({s, n}) => {
         </g>;
       })() : null}
       {after ? <LightFlash p={0.5 + f / 44} x={TX} y={HOR - 200} r={1500}/> : null}
-      <Rimmed paths={murugan(after || throwing ? "thrown" : "hold", 0.5, f)} transform={`translate(${mx} ${my - 62}) scale(${-ms} ${ms})`} light={[-(sun[0] - mx), sun[1] - 700]} w={4 / ms}/>
+      <Rimmed fill={FIG.murugan} paths={murugan(after || throwing ? "thrown" : "hold", 0.5, f)} transform={`translate(${mx} ${my - 62}) scale(${-ms} ${ms})`} light={[-(sun[0] - mx), sun[1] - 700]} w={4 / ms}/>
       <Flock f={f} light={[0, -1]} y={210} count={5} scale={0.26} seed={2}/>
       <Dust f={f} sun={sun} n={120} y0={200} y1={680}/>
     </Frame>
@@ -140,12 +142,12 @@ const SuraMurugan: React.FC<SceneP> = ({s, n}) => {
       <Rimmed paths={[`M ${px - 5} ${GY - 10} L ${px - 4} ${ptop - 30} L ${px + 4} ${ptop - 30} L ${px + 5} ${GY - 10} Z`, `M ${px + 10} ${ptop - 38} a 10 10 0 1 0 -20 0 a 10 10 0 1 0 20 0 Z`]} light={L(px)} w={3}/>
       <path d={smooth(pen)} fill="#B4472F" opacity={0.92}/>
       <path d={smooth(pen)} fill="none" stroke="#FFD38A" strokeWidth={2.5} opacity={0.8}/>
-      <Rimmed paths={rooster(f)} transform={`translate(${px - 104} ${ptop + 162 + wave(0.4)}) scale(0.52)`} light={[-L(px)[0], L(px)[1]]} w={5} fill="#1A0D1C"/>
+      <Rimmed paths={rooster(f)} transform={`translate(${px - 104} ${ptop + 162 + wave(0.4)}) scale(0.52)`} light={[-L(px)[0], L(px)[1]]} w={5} fill="#3A1A20"/>
       {s.figure !== false ? <g>
         <circle cx={840} cy={GY - 330} r={170} fill="url(#k-halo)" opacity={0.5 + 0.08 * Math.sin(f / 45)}/>
-        <Rimmed paths={murugan("hold", 0.5, f)} transform={`translate(840 ${GY - 22}) scale(-1.02 1.02)`} light={[-L(840)[0], L(840)[1]]} w={4}/>
+        <Rimmed fill={FIG.murugan} paths={murugan("hold", 0.5, f)} transform={`translate(840 ${GY - 22}) scale(-1.02 1.02)`} light={[-L(840)[0], L(840)[1]]} w={4}/>
       </g> : null}
-      <Rimmed paths={[...pk.body, ...pk.eyes.map((d) => ({d, fill: "#3B5C7A", rim: false}) as Item)]} transform={`translate(${pkx} ${GY - 14 + pky}) scale(0.95)`} light={L(1230)} w={4}/>
+      <Rimmed paths={[...pk.body, ...pk.eyes.map((d) => ({d, fill: "#3B5C7A", rim: false}) as Item)]} transform={`translate(${pkx} ${GY - 14 + pky}) scale(0.95)`} light={L(1230)} w={4} fill="#123A4E"/>
       {s.figure !== false ? <SoftGlow x={926} y={GY - 22 - 590} r={60 + 26 * Math.sin(f / 14)} c0="#FFFFFF" c1="#FFD38A" peak={0.7} k={3}/> : null}
       <Flock f={f} light={[0, -1]} y={230} count={6} scale={0.3} seed={5}/>
       <Rimmed paths={[...reeds({x: 120, y: 1080, h: 300, seed: 3, t: f * 2, wind: 0.3}), ...reeds({x: 1800, y: 1090, h: 340, seed: 6, t: f * 2, wind: 0.3})]} light={[0, -1]} w={2.5} fill="#08040C"/>
@@ -168,7 +170,7 @@ const SuraArun: React.FC<SceneP> = ({s, n}) => {
   return (
     <Frame f={f} zoom={push(f, n, 1, 1.16)} cx={ph[0]} cy={ph[1]} vig={1.1}>
       <defs>
-        <linearGradient id="ar-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0A0716"/><stop offset="1" stopColor="#130D22"/></linearGradient>
+        <linearGradient id="ar-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#141A36"/><stop offset="1" stopColor="#202848"/></linearGradient>
         <linearGradient id="ar-win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0E0C27"/><stop offset="0.6" stopColor="#1D1842"/><stop offset="1" stopColor="#56304F"/></linearGradient>
       </defs>
       <rect width={W} height={H} fill="url(#ar-wall)"/>
@@ -181,7 +183,7 @@ const SuraArun: React.FC<SceneP> = ({s, n}) => {
       {[1420, 1510, 1600].map((x) => <rect key={x} x={x - 3} y={170} width={6} height={440} fill="#07050F"/>)}
       <rect x={1330} y={386} width={360} height={6} fill="#07050F"/>
       {/* floor */}
-      <rect x={0} y={FL} width={W} height={H - FL} fill="#06040C"/>
+      <rect x={0} y={FL} width={W} height={H - FL} fill="#10142A"/>
       {/* the phone's light on the air, the wall and the floor */}
       <SoftGlow x={ph[0]} y={ph[1]} r={620} c0={COOL} c1="#4A62B0" peak={0.3 + 0.1 * rnd(Math.floor(f / 38), 9)} k={2.6}/>
       <SoftGlow x={ph[0] - 40} y={FL + 6} r={420} ry={40} c0={COOL} c1="#4A62B0" peak={0.22}/>
@@ -194,7 +196,7 @@ const SuraArun: React.FC<SceneP> = ({s, n}) => {
         smooth([[1040, FL - 150, "c"], [1090, FL - 196 - 5 * Math.sin(f / 34)], [1200, FL - 214 - 8 * Math.sin(f / 34)], [1330, FL - 204 - 8 * Math.sin(f / 34)], [1440, FL - 222 - 6 * Math.sin(f / 34)], [1520, FL - 236], [1580, FL - 218], [1618, FL - 150, "c"]], {wind: "cw"}),
         smooth([[1500, FL - 150, "c"], [1516, FL - 178], [1570, FL - 186], [1622, FL - 172], [1626, FL - 150, "c"]], {wind: "cw"}),
       ]}/>
-      <Rimmed paths={man.paths} transform={`translate(${ax} ${FL}) scale(${sc} ${sc * breathe(f)})`} point={man.phone} light={[-1, 0]} w={4 / sc} rim={COOL} glow={0.5}/>
+      <Rimmed fill={FIG.arun} paths={man.paths} transform={`translate(${ax} ${FL}) scale(${sc} ${sc * breathe(f)})`} point={man.phone} light={[-1, 0]} w={4 / sc} rim={COOL} glow={0.5}/>
       {/* the phone */}
       <g transform={`translate(${ph[0]} ${ph[1]}) rotate(-62)`}><rect x={-20} y={-5} width={40} height={10} rx={3} fill="#F4F8FF"/></g>
       <SoftGlow x={ph[0]} y={ph[1]} r={90} c0="#FFFFFF" c1={COOL} peak={0.9} k={3.4}/>
@@ -218,11 +220,11 @@ const Window: React.FC<{x: number; y: number; w: number; h: number; mood: "dusk"
     <rect x={x} y={y + h * 0.5 - 3} width={w} height={6} fill="#07050F"/>
   </g>
 );
-const Room: React.FC<{floor: number; id: string; c0?: string; c1?: string}> = ({floor, id, c0 = "#120B1E", c1 = "#22142C"}) => (
+const Room: React.FC<{floor: number; id: string; c0?: string; c1?: string}> = ({floor, id, c0 = "#2E2140", c1 = "#4E3150"}) => (
   <g>
     <defs><linearGradient id={`${id}wall`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={c0}/><stop offset="1" stopColor={c1}/></linearGradient></defs>
     <rect width={W} height={H} fill={`url(#${id}wall)`}/>
-    <rect x={0} y={floor} width={W} height={H - floor} fill="#07040D"/>
+    <rect x={0} y={floor} width={W} height={H - floor} fill="#1E1428"/>
   </g>
 );
 const sheetD = (q: number[][]) => `M ${q.map((p) => `${p[0]} ${p[1]}`).join(" L ")} Z`;
@@ -245,8 +247,8 @@ const SuraOffice: React.FC<SceneP> = ({s, n}) => {
       <SoftGlow x={sun[0]} y={620} r={900} ry={520} c0="#FFD9A0" c1="#C2553A" peak={0.3}/>
       {[270, 1650].map((x, i) => <SoftGlow key={i} x={x} y={FL - 210} r={110} c0="#BFD0FF" c1="#4A62B0" peak={0.22 + 0.08 * rnd(Math.floor(f / 9), i)}/>)}
       <Rimmed paths={[...desk(120, 300), ...back(270, -turn), ...desk(1500, 300), ...back(1650, turn)]} light={[0, -1]} w={3} fill="#0E0816"/>
-      <Rimmed paths={man("down", bow)} transform={`translate(760 ${FL}) scale(-1.12 ${1.12 * breathe(f)})`} light={[-L(760)[0], L(760)[1]]} w={3.6}/>
-      <Rimmed paths={man("point", 0)} transform={`translate(${mx + jab} ${FL + my}) scale(1.22)`} light={L(1190)} w={3.4}/>
+      <Rimmed fill={FIG.arun} paths={man("down", bow)} transform={`translate(760 ${FL}) scale(-1.12 ${1.12 * breathe(f)})`} light={[-L(760)[0], L(760)[1]]} w={3.6}/>
+      <Rimmed fill={FIG.boss} paths={man("point", 0)} transform={`translate(${mx + jab} ${FL + my}) scale(1.22)`} light={L(1190)} w={3.4}/>
       <Dust f={f} sun={sun} n={90} y0={200} y1={860}/>
     </Frame>
   );
@@ -266,8 +268,8 @@ const SuraDoor: React.FC<SceneP> = ({s, n}) => {
       <SoftGlow x={door[0]} y={600} r={900} ry={640} c0="#FFE2A6" c1="#C2553A" peak={0.42}/>
       <SoftGlow x={720} y={FL + 10} r={620} ry={60} c0="#FFE2A6" c1="#C2553A" peak={0.3}/>
       <path d={`M 306 226 H 644 V 900 H 620 V 250 H 330 V 900 H 306 Z`} fill="#07050F"/>
-      <Rimmed paths={man("bag", 0.3 + 0.6 * ez(f, n * 0.5, 50))} transform={`translate(${axx} ${FL + ay}) scale(-1.2 1.2)`} light={[1, -0.3]} w={3.4}/>
-      <Rimmed paths={kid.paths} transform={`translate(${kx} ${FL + ky}) scale(${ks} ${ks * sag})`} light={[-1, -0.2]} w={3.2}/>
+      <Rimmed fill={FIG.arun} paths={man("bag", 0.3 + 0.6 * ez(f, n * 0.5, 50))} transform={`translate(${axx} ${FL + ay}) scale(-1.2 1.2)`} light={[1, -0.3]} w={3.4}/>
+      <Rimmed fill={FIG.child} paths={kid.paths} transform={`translate(${kx} ${FL + ky}) scale(${ks} ${ks * sag})`} light={[-1, -0.2]} w={3.2}/>
       <g transform={`translate(${kx} ${FL + ky}) scale(${ks} ${ks * sag})`}><path d={sheetD(kid.sheet)} fill="#F3E6C8" opacity={0.6 + 0.35 * lift}/></g>
       <Rimmed paths={[`M 1420 ${FL - 190} H 1760 V ${FL - 172} H 1744 V ${FL} H 1726 V ${FL - 172} H 1454 V ${FL} H 1436 V ${FL - 172} H 1420 Z`, `M 1560 ${FL - 190} h 60 l -10 -60 h -40 Z`]} light={[-1, -0.3]} w={3} fill="#0E0816"/>
       <Dust f={f} sun={door} n={70} y0={260} y1={880}/>
@@ -283,11 +285,11 @@ const SuraKing: React.FC<SceneP> = ({s, n}) => {
     const m = seatedMan(), sc = 2.5, ox = 1010, oy = 1010;
     return (
       <Frame f={f} zoom={push(f, n, 1, 1.3)} cx={1010} cy={540}>
-        <rect width={W} height={H} fill="#0A0716"/>
-        <SoftGlow x={960} y={560} r={900} c0="#3A2A5C" c1="#140F2C" peak={0.7}/>
+        <rect width={W} height={H} fill="#1A1430"/>
+        <SoftGlow x={960} y={560} r={900} c0="#5A4A8C" c1="#241C4C" peak={0.8}/>
         <Rimmed paths={m.paths} transform={`translate(${ox} ${oy}) scale(${sc})`} light={[-1, -0.5]} w={4 / sc} fill="#241838" rim="#8FA6E0"/>
         <SoftGlow x={990} y={500} r={210 + 30 * Math.sin(f / 16)} c0="#FFD38A" c1="#C2553A" peak={0.75}/>
-        <Rimmed paths={surapadman(0.4, f)} transform={`translate(1000 620) scale(0.5)`} light={[-1, -0.6]} w={7}/>
+        <Rimmed fill={FIG.sura} paths={surapadman(0.4, f)} transform={`translate(1000 620) scale(0.5)`} light={[-1, -0.6]} w={7}/>
         <Rimmed paths={mango({x: 0, y: 0, h: 150, seed: 8, t: f, detail: 0.5})} transform={`translate(1090 622) scale(${0.2 + 0.8 * ez(f, 30, 140)})`} light={[-1, -0.6]} w={2.5}/>
       </Frame>
     );
@@ -301,9 +303,9 @@ const SuraKing: React.FC<SceneP> = ({s, n}) => {
       {/* the worlds below: far lamps in rows, and small bowed figures on a ledge */}
       {Array.from({length: 110}, (_, i) => <circle key={i} cx={80 + rnd(i, 1) * 1000} cy={790 + rnd(i, 2) * 170} r={1.6 + rnd(i, 3) * 2} fill="#FFD38A" opacity={(0.4 + 0.5 * rnd(i, 4)) * (1 - ez(f, 30 + rnd(i, 8) * n * 0.75, 24))}/>)}
       <Rimmed paths={[ridge(930, 50, 9)]} light={[-1, -0.4]} w={3} fill="#150B1C"/>
-      {Array.from({length: 7}, (_, i) => <Rimmed key={i} paths={man("down", ez(f, 20 + i * 14, 50))} transform={`translate(${230 + i * 84} ${918 + 8 * rnd(i, 6)}) scale(-0.34 0.34)`} light={[-1, -0.5]} w={7}/>)}
+      {Array.from({length: 7}, (_, i) => <Rimmed fill={FIG.crowd} key={i} paths={man("down", ez(f, 20 + i * 14, 50))} transform={`translate(${230 + i * 84} ${918 + 8 * rnd(i, 6)}) scale(-0.34 0.34)`} light={[-1, -0.5]} w={7}/>)}
       <Rimmed paths={[smooth([[1040, H + 40, "c"], [1080, 760], [1160, 640], [1260, 600], [1420, 596], [1560, 610], [1700, 600], [1990, 560], [1990, H + 40, "c"]], {wind: "cw"})]} light={[-1, -0.5]} w={4} fill="#0B0612"/>
-      <Rimmed paths={surapadman(0.6, f)} transform={`translate(1400 598) scale(1.06)`} light={[-1, -0.25]} w={4}/>
+      <Rimmed fill={FIG.sura} paths={surapadman(0.6, f)} transform={`translate(1400 598) scale(1.06)`} light={[-1, -0.25]} w={4}/>
       <Dust f={f} sun={sun} n={120} y0={300}/>
     </Frame>
   );
@@ -320,8 +322,8 @@ const SuraBirth: React.FC<SceneP> = ({s, n}) => {
       {given ? <g>
         <SoftGlow x={960} y={600} r={520} c0="#FFE9B0" c1="#F0A04B" peak={0.6}/>
         <Rimmed paths={[smooth([[300, H + 40, "c"], [360, 900], [700, 868], [1200, 866], [1560, 900], [1640, H + 40, "c"]], {wind: "cw"})]} light={[0, -1]} w={3} fill="#0B0612"/>
-        <Rimmed paths={woman(true)} transform={`translate(1130 872) scale(1.25)`} light={[-1, -0.3]} point={[-140, -250]} w={3.2}/>
-        <Rimmed paths={murugan("thrown", 0.3, f)} transform={`translate(${700 + 90 * ez(f, n * 0.55, 60)} 872) scale(-0.74 0.74)`} light={[1, -0.3]} w={5}/>
+        <Rimmed fill={FIG.woman} paths={woman(true)} transform={`translate(1130 872) scale(1.25)`} light={[-1, -0.3]} point={[-140, -250]} w={3.2}/>
+        <Rimmed fill={FIG.murugan} paths={murugan("thrown", 0.3, f)} transform={`translate(${700 + 90 * ez(f, n * 0.55, 60)} 872) scale(-0.74 0.74)`} light={[1, -0.3]} w={5}/>
         <SoftGlow x={955} y={520 - 150 * (1 - ez(f, n * 0.55, 90))} r={190 + 40 * Math.sin(f / 12)} c0="#FFFFFF" c1="#FFD38A" peak={0.85} k={3}/>
         <g transform={`translate(955 ${872 - 150 * (1 - ez(f, n * 0.55, 90))})`}>{vel(0, 0, 330, 1.25).map((d, i) => <path key={i} d={d} fill="#FFF3D2"/>)}</g>
       </g> : Array.from({length: 6}, (_, i) => {
@@ -401,9 +403,9 @@ const SuraMorning: React.FC<SceneP> = ({s, n}) => {
       <Window x={250} y={170} w={560} h={470} mood="dawn" f={f * 2} id="mo" cols={4} sunAt={[0.5, 0.92 - 0.2 * ez(f, 0, n)]}/>
       <SoftGlow x={sun[0]} y={560} r={1100} ry={700} c0="#FFE6B8" c1="#E3967A" peak={0.38 + 0.16 * ez(f, 0, n)}/>
       <path d={`M 250 ${FL} L 480 ${FL} L 1500 ${H} L 700 ${H} Z`} fill="#FFE2A6" opacity={0.05 + 0.09 * ez(f, 0, n)}/>
-      <Rimmed paths={kid.paths} transform={`translate(${kx} ${FL}) scale(${-ks} ${ks})`} light={[1, -0.3]} w={3}/>
+      <Rimmed fill={FIG.child} paths={kid.paths} transform={`translate(${kx} ${FL}) scale(${-ks} ${ks})`} light={[1, -0.3]} w={3}/>
       <g transform={`translate(${kx} ${FL}) scale(${-ks} ${ks})`}><path d={sheetD(kid.sheet)} fill="#F6EAD0"/></g>
-      <Rimmed paths={kneeling()} transform={`translate(${ax} ${FL}) scale(1.5 ${1.5 * breathe(f)})`} light={[-1, -0.3]} w={2.8}/>
+      <Rimmed fill={FIG.arun} paths={kneeling()} transform={`translate(${ax} ${FL}) scale(1.5 ${1.5 * breathe(f)})`} light={[-1, -0.3]} w={2.8}/>
       <Dust f={f} sun={sun} n={110} y0={200} y1={900}/>
     </Frame>
   );

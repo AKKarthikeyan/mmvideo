@@ -20,7 +20,7 @@ import {KATHA_SCENES} from "./scenes";
 import {Label} from "./stage";
 
 export type KBeat = {key: string; chapter: number; movement: string; speaker: string; say: string; cap?: string; sec: number; audio?: string; scene: any; music?: string; ref?: string | null};
-export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean; lamps?: boolean; bed?: number; lang?: string};   // bed: the music's level under the voice (default 0.17)   // lamps: false hides the Gita's eighteen lamps
+export type KData = {id: string; title: string; beats: KBeat[]; music?: string; bell?: string; captions?: boolean; lamps?: boolean; bed?: number; lang?: string; grade?: {b?: number; s?: number; c?: number; lift?: number}; capStyle?: "bold"};   // bed: the music's level under the voice (default 0.17)   // lamps: false hides the Gita's eighteen lamps
 export const XF = 14;   // dissolve between beats, in frames
 export const beatLen = (b: KBeat) => Math.ceil((b.sec + (b.scene?.type === "title" ? 1.0 : 0.6)) * FPS);
 export const filmLayout = (D: KData) => {
@@ -49,8 +49,8 @@ const plateLines = (b: KBeat): string[] => {
 // A clause longer than one caption line (~80 characters at 44 px) is halved where it reads best: at a comma, else before
 // a conjunction or a dash, else at the space nearest the middle; so a cue never wraps to a second line over the shot.
 const CUE_MAX = 80, CONJ = /^(and|but|or|nor|yet|so|that|which|who|when|where|while|as|if|though|until|because)\s/;
-const halve = (p: string): string[] => {
-  if (p.length <= CUE_MAX) return [p];
+const halve = (p: string, max = CUE_MAX): string[] => {
+  if (p.length <= max) return [p];
   const mid = p.length / 2, cand: [number, number][] = [];
   for (const m of p.matchAll(/,\s|\s—\s|\s/g)) {
     const comma = m[0].startsWith(","), i = (m.index ?? 0) + (comma ? 1 : 0);
@@ -60,7 +60,7 @@ const halve = (p: string): string[] => {
   }
   if (!cand.length) return [p];
   const i = cand.sort((a, b) => a[0] - b[0])[0][1];
-  return [...halve(p.slice(0, i).trim()), ...halve(p.slice(i).trim())];
+  return [...halve(p.slice(0, i).trim(), max), ...halve(p.slice(i).trim(), max)];
 };
 // Split a line into caption cues: its sentences (and clauses after ; or :), each long one halved, short neighbours
 // joined up to ~72 characters, so no cue is a stranded word ("Purity,") and none wraps.
@@ -69,23 +69,45 @@ const sentences = (t: string): string[] => {            // split after . ! ? ; :
   for (let i = 0; i < t.length; i++) {
     const c = t[i]; cur += c;
     if (c === "\u201C") q++; else if (c === "\u201D") q = Math.max(0, q - 1);
-    if (!q && /[.!?;:]/.test(c) && t[i + 1] === " " && !/[\u201D"]/.test(t[i + 1])) { out.push(cur.trim()); cur = ""; }
+    if (!q && /[.!?;:।]/.test(c) && t[i + 1] === " " && !/[\u201D"]/.test(t[i + 1])) { out.push(cur.trim()); cur = ""; }
   }
   if (cur.trim()) out.push(cur.trim());
   return out;
 };
-export const cues = (text: string): string[] => {
-  const parts = sentences(String(text).replace(/\s+/g, " ").trim()).flatMap(halve), out: string[] = [];
+export const cues = (text: string, max = CUE_MAX, join = 72): string[] => {
+  const parts = sentences(String(text).replace(/\s+/g, " ").trim().replace(/([।])\s/g, "$1 ")).flatMap((p) => halve(p, max)), out: string[] = [];
   let cur = "";
-  for (const p of parts) { if ((cur + " " + p).trim().length > 72 && cur) { out.push(cur.trim()); cur = p; } else cur = (cur + " " + p).trim(); }
+  for (const p of parts) { if ((cur + " " + p).trim().length > join && cur) { out.push(cur.trim()); cur = p; } else cur = (cur + " " + p).trim(); }
   if (cur) out.push(cur.trim());
   return out;
 };
 // When the narration reaches character i of the line (the captions' clock: cues advance by their share of the text).
 const speechAt = (text: string, i: number, n: number) => XF + (Math.max(0, i) / Math.max(1, String(text).length)) * (n - XF - 10);
-const Caption: React.FC<{b: KBeat; n: number; on: boolean}> = ({b, n, on}) => {
+// The bold caption (17 Nov 2026, AK: "Narration should be seen on screen"; it must read on a phone and across a room):
+// short cues (two lines at most), large semi-bold type in a soft dark band, the word being spoken lit in gold.
+const BoldCaption: React.FC<{b: KBeat; n: number}> = ({b, n}) => {
+  const f = useCurrentFrame();
+  const text = b.cap || b.say, cs = cues(text, 46, 50), tot = cs.reduce((a, c) => a + c.length + 1, 0), span = n - XF - 12;
+  const at = Math.max(0, (f - XF) / span) * tot;          // the character the voice has reached, across the whole line
+  let acc = 0, idx = 0;
+  for (let i = 0; i < cs.length; i++) { if (at >= acc) idx = i; acc += cs[i].length + 1; }
+  const start = cs.slice(0, idx).reduce((a, c) => a + c.length + 1, 0), words = cs[idx].split(" ");
+  const a = ease(f, XF - 2, 10) * (1 - ease(f, n - 12, 10));
+  let w0 = start;
+  return (
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 70, display: "flex", justifyContent: "center", opacity: a}}>
+      <div style={{fontFamily: EN, fontWeight: 600, fontSize: 64, lineHeight: 1.18, maxWidth: 1500, textAlign: "center", padding: "14px 38px 18px", borderRadius: 18,
+        background: "rgba(10,7,22,.62)", boxShadow: "0 0 40px 18px rgba(10,7,22,.35)"}}>
+        {words.map((w, i) => { const s0 = w0; w0 += w.length + 1; const said = at >= s0, now = said && at < w0 - 1;
+          return <span key={i} style={{color: now ? "#FFD27A" : said ? "#FFF6E6" : "rgba(255,246,230,.55)", textShadow: "0 2px 6px rgba(0,0,0,.85)"}}>{w}{i < words.length - 1 ? " " : ""}</span>; })}
+      </div>
+    </div>
+  );
+};
+const Caption: React.FC<{b: KBeat; n: number; on: boolean; bold?: boolean}> = ({b, n, on, bold}) => {
   const f = useCurrentFrame();
   if (!on || b.scene?.type === "verse" || b.scene?.type === "title" || b.scene?.captions === false) return null;
+  if (bold && b.scene?.type !== "end") return <BoldCaption b={b} n={n}/>;
   const cs = cues(b.cap || b.say), tot = cs.reduce((a, c) => a + c.length, 0), span = n - XF - 10;
   let acc = 0, idx = 0;
   for (let i = 0; i < cs.length; i++) { const s0 = XF + (acc / tot) * span; if (f >= s0) idx = i; acc += cs[i].length; }
@@ -243,12 +265,12 @@ export const KathaFilm: React.FC<{D: KData}> = ({D}) => {
         return (
           <Sequence key={bt.key} from={starts[i]} durationInFrames={n} name={`${bt.key} ${bt.scene?.type}`}>
             <Fade tx={transitionFor(D.beats[i - 1], bt)} seed={i}>
-              <S s={bt.scene} n={n}/>
+              <Grade g={bt.scene?.type === "metaphor" ? D.grade : undefined}><Camera shots={bt.scene?.shots} n={n}><S s={bt.scene} n={n}/></Camera></Grade>
               <BeatLabel b={bt} n={n}/>
               <EndStrips b={bt} n={n}/>
               <Scrim b={bt} n={n}/>
               <Plate b={bt} n={n}/>
-              <Caption b={bt} n={n} on={D.captions !== false}/>
+              <Caption b={bt} n={n} on={D.captions !== false} bold={D.capStyle === "bold"}/>
             </Fade>
             {bt.audio ? <Sequence from={XF}><Audio src={staticFile(bt.audio)}/></Sequence> : null}
             {bt.scene?.type === "title" && D.bell !== "" ? <Audio src={staticFile(D.bell || "dharma/bell.wav")} volume={0.45}/> : null}
@@ -282,6 +304,30 @@ const LIGHTS = ["light", "sun-world", "flame-sun"];
 const isCard = (b?: KBeat) => ["verse", "title", "end"].includes(b?.scene?.type);
 const isLight = (b?: KBeat) => b?.scene?.type === "light" || (b?.scene?.type === "metaphor" && LIGHTS.includes(b?.scene?.kind));
 export const transitionFor = (prev: KBeat | undefined, cur: KBeat): Tx => !prev ? "first" : isLight(cur) && !isLight(prev) ? "flash" : isCard(cur) || isCard(prev) ? "dip" : "wipe";
+// A virtual camera over a beat's scene (17 Nov 2026, the Surasamharam film: one shot a beat read as a slide show).
+// shots: [{at, x, y, z, dx?, dy?, dz?}]: from fraction `at` of the beat, frame the point (x, y) of the 1920 x 1080 scene
+// at zoom z, drifting by (dx, dy) and to z * dz over the shot; shots change on a hard cut. The scene is vector, so a
+// close shot stays sharp. Words on screen (captions, plates) sit outside the camera and never move.
+type Shot = {at: number; x: number; y: number; z: number; dx?: number; dy?: number; dz?: number};
+const Camera: React.FC<{shots?: Shot[]; n: number; children: React.ReactNode}> = ({shots, n, children}) => {
+  const f = useCurrentFrame();
+  if (!shots || !shots.length) return <>{children}</>;
+  const u = f / Math.max(1, n);
+  let i = 0; shots.forEach((sh, k) => { if (u >= sh.at) i = k; });
+  const sh = shots[i], end = i + 1 < shots.length ? shots[i + 1].at : 1, p = Math.max(0, Math.min(1, (u - sh.at) / Math.max(0.01, end - sh.at)));
+  const e = p * p * (3 - 2 * p), z = sh.z * (1 + ((sh.dz ?? 1.05) - 1) * e);
+  const cx = Math.max(W / (2 * z), Math.min(W - W / (2 * z), sh.x + (sh.dx ?? 0) * e));
+  const cy = Math.max(H / (2 * z), Math.min(H - H / (2 * z), sh.y + (sh.dy ?? 0) * e));
+  return <AbsoluteFill style={{overflow: "hidden"}}><AbsoluteFill style={{transformOrigin: "0 0", transform: `translate(${W / 2 - cx * z}px, ${H / 2 - cy * z}px) scale(${z})`}}>{children}</AbsoluteFill></AbsoluteFill>;
+};
+// The grade (17 Nov 2026): the first Surasamharam cut averaged a luma of 57 / 255 and read as "a dark movie" on a phone.
+// grade: {b: brightness, s: saturation, lift: a warm tint screened over the shadows (0..1)}.
+const Grade: React.FC<{g?: {b?: number; s?: number; c?: number; lift?: number}; children: React.ReactNode}> = ({g, children}) => {
+  if (!g) return <>{children}</>;
+  return <AbsoluteFill style={{filter: `brightness(${g.b ?? 1}) saturate(${g.s ?? 1}) contrast(${g.c ?? 1})`}}>{children}
+    {g.lift ? <AbsoluteFill style={{background: "radial-gradient(ellipse 90% 85% at 50% 45%, #6E4A7A 0%, #4A3366 60%, #2E2550 100%)", mixBlendMode: "screen", opacity: g.lift}}/> : null}
+  </AbsoluteFill>;
+};
 const Fade: React.FC<{tx: Tx; seed: number; children: React.ReactNode}> = ({tx, seed, children}) => {
   const f = useCurrentFrame();
   if (tx === "first") return <AbsoluteFill style={{opacity: ease(f, 0, 20)}}>{children}</AbsoluteFill>;

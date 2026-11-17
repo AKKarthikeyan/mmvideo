@@ -7,7 +7,7 @@ import {KATHA_FACES} from "./faces";
 
 export const W = 1920, H = 1080, FPS = 30;
 export const SA = "'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif";
-export const EN = "'Cormorant Garamond', 'Noto Serif Tamil', 'Noto Serif Devanagari', 'Noto Serif', Georgia, serif";
+export const EN = "'Cormorant Garamond', 'Noto Serif Tamil', 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Noto Serif', Georgia, serif";
 export const TA = "'Noto Serif Tamil', serif";
 export const CAPS = "'Cinzel', 'Cormorant Garamond', serif";
 export const K = {

@@ -45,6 +45,39 @@ BEATS = [
      "Type: Cormorant Garamond and Cinzel, SIL Open Font License · Music synthesised in code · Made in code with Remotion",
      "Vetri vel! Veera vel!"])),
 ]
+# Shots per beat (17 Nov 2026): wide, medium and close framings of each scene, (x, y, zoom[, dx, dy]) in the scene's
+# 1920 x 1080 coordinates. Cuts fall on the narration's sentence breaks, so a 12 s beat is three or four shots, and the
+# close shots carry the faces-in-shadow figures at a size that reads on a phone.
+SHOTS = {
+ "b01": [(1250, 520, 2.1, -60, 0), (960, 560, 1.15), (760, 560, 2.3, 0, 20), (990, 600, 1.5)],
+ "b02": [(560, 560, 1.9, 30, 0), (1300, 640, 1.7, -160, 0), (1080, 660, 2.3), (820, 600, 1.3)],
+ "b03": [(1100, 600, 1.15), (760, 570, 2.5, 0, 10), (1520, 390, 1.9), (800, 600, 1.7)],
+ "b04": [(1000, 560, 1.1), (430, 360, 2.1, 20, 0), (1300, 720, 1.9, -60, 0), (900, 600, 1.25)],
+ "b06": [(900, 560, 1.15), (1400, 360, 2.0, 0, 30), (520, 860, 2.4, 60, 0), (1300, 520, 1.5)],
+ "b07": [(960, 760, 1.6), (960, 600, 1.1), (900, 640, 2.0, 40, 0)],
+ "b08": [(960, 600, 1.1), (520, 690, 2.2, 80, 0), (1400, 690, 2.2, -80, 0), (960, 900, 2.0)],
+ "b09": [(330, 740, 2.4, 0, -20), (1150, 520, 1.5)],
+ "b11": [(360, 720, 2.3), (1050, 560, 1.4, 60, 0)],
+ "b12": [(1150, 560, 1.15), (1150, 420, 2.0, 0, -40), (330, 760, 2.4), (1150, 640, 2.0), (960, 560, 1.2)],
+ "b14": [(960, 560, 1.1), (380, 460, 2.0, 0, -30), (1250, 900, 2.0, -100, 0), (1100, 620, 1.4)],
+ "b15": [(1000, 560, 1.0), (1000, 600, 2.0), (1000, 560, 1.4)],
+ "b16": [(960, 560, 1.1), (1250, 720, 1.9, -40, 0), (430, 360, 2.0), (960, 560, 1.3)],
+ "b17": [(1000, 640, 1.2), (900, 560, 2.3), (1250, 640, 2.0, -60, 0), (1000, 640, 1.5)],
+ "b18": [(960, 520, 1.0), (930, 470, 1.8), (960, 540, 1.2)],
+ "b19": [(960, 560, 1.1), (850, 500, 2.1, 0, 20), (1230, 760, 2.0), (450, 360, 2.0), (960, 560, 1.15)],
+}
+def shot_list(key, say):
+    F = SHOTS.get(key)
+    if not F: return None
+    cut, acc, tot = [], 0, max(1, len(say))
+    for m in re.finditer(r"[^.?!।]+[.?!।]*", say): acc += len(m.group(0)); cut.append(acc / tot)
+    cut = [c for c in cut[:-1] if 0.08 < c < 0.94]
+    at = [0.0]
+    for j in range(1, len(F)):
+        want = j / len(F); best = min(cut, key=lambda c: abs(c - want)) if cut else want
+        if cut and abs(best - want) < 0.5 / len(F) and best > at[-1] + 0.08: at.append(best); cut.remove(best)
+        else: at.append(max(want, at[-1] + 0.08))
+    return [dict(at=round(a, 3), x=f[0], y=f[1], z=f[2], dx=(f[3] if len(f) > 3 else 0), dy=(f[4] if len(f) > 4 else 0), dz=1.06) for a, f in zip(at, F)]
 HEAD = {"ta": "## Tamil", "hi": "## Hindi", "te": "## Telugu"}
 def narration(lang):
     if lang == "en": return {r[0]: r[1] for r in BEATS}
@@ -60,11 +93,13 @@ def build(lang):
         v = V.get(key) if V.get(key, {}).get("text") == say else None
         sec = (v["sec"] + 0.9) if v else round(len(say.split()) / WPS + 1.2, 2)
         b = dict(key=key, chapter=0, movement="", speaker="NARRATOR", say=say, ref=None, sec=round(max(sec, floor), 2), scene=scene)
+        sh = shot_list(key, say)
+        if sh: scene["shots"] = sh
         if v: b["audio"] = f"katha/sura/{lang}/{v.get('file', key + '.mp3')}"
         beats.append(b)
     sfx = "" if lang == "en" else "-" + lang
     score = ROOT / f"public/katha/sura/score{sfx}.wav"
-    D = dict(id="sura" + sfx, title="Why Murugan Rides His Enemy", beats=beats, music=(f"katha/sura/score{sfx}.wav" if score.exists() else "dharma/tanpura.wav"), bell="", lamps=False, lang=lang, bed=(0.5 if score.exists() else 0.17))
+    D = dict(id="sura" + sfx, title="Why Murugan Rides His Enemy", beats=beats, music=(f"katha/sura/score{sfx}.wav" if score.exists() else "dharma/tanpura.wav"), bell="", lamps=False, lang=lang, grade=dict(b=1.32, s=1.15, c=1.02, lift=0.16), capStyle="bold", bed=(0.5 if score.exists() else 0.17))
     out = ROOT / f"public/katha/sura/data{sfx}.json"; out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(D, ensure_ascii=False, indent=1))
     tot = sum(b["sec"] + 0.6 for b in beats)

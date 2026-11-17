@@ -12,7 +12,7 @@ import {Flame, Diya} from "../fire";
 import {Rimmed, Item} from "../sil";
 import {mango, reeds} from "../flora";
 import {smooth, rnd, band, Pt} from "../geom";
-import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram, person, childSheet} from "../murugan";
+import {murugan, vel, peacock, rooster, seatedMan, surapadman, man, woman, child, childLift, kneeling, gopuram, person, childSheet, type Hand} from "../murugan";
 import {CAPS, EN, TA} from "../look";
 
 // Figure colours (17 Nov 2026): deep tones, not black, so figures read on a phone. Faces stay in shadow (no features).
@@ -161,7 +161,14 @@ const SuraMurugan: React.FC<SceneP> = ({s, n}) => {
 const SuraArun: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame();
   const FL = 900, ax = 900, sc = 1.25;
-  const man = seatedMan(), ph: [number, number] = [ax + man.phone[0] * sc, FL + man.phone[1] * sc];
+  // he scrolls: a thumb's flick every ~38 frames (the screen changes with it); his head sinks as he dozes, then jerks
+  // up and he lifts the phone closer; a slow sigh drops the shoulders.
+  const k = f % 38, flick = k < 8 ? Math.sin((Math.PI * k) / 8) : 0;
+  const cyc = 170, c = f % cyc, nod = c < 130 ? 0.9 * ez(c, 10, 120) : 0.9 * (1 - ez(c, 130, 7));
+  const raise = c >= 130 ? 1 - ez(c, 140, 30) : 0;
+  const man = seatedMan({nod, lift: 5 * flick + 16 * raise, sigh: 0.5 + 0.5 * Math.sin(f / 46)});
+  const ph: [number, number] = [ax + man.phone[0] * sc, FL + man.phone[1] * sc];
+  const ph0: [number, number] = [ax - 128 * sc, FL - 222 * sc];
   const COOL = "#D6E4FF";
   // what scrolls past in the light: a house, a rising step, a plane (drawn, never words)
   const icons = [
@@ -170,7 +177,7 @@ const SuraArun: React.FC<SceneP> = ({s, n}) => {
     "M -26 6 L 22 -8 L 28 -6 L 4 8 L -4 22 L -8 22 L -6 10 L -22 12 Z",
   ];
   return (
-    <Frame f={f} zoom={push(f, n, 1, 1.16)} cx={ph[0]} cy={ph[1]} vig={1.1}>
+    <Frame f={f} zoom={push(f, n, 1, 1.16)} cx={ph0[0]} cy={ph0[1]} vig={1.1}>
       <defs>
         <linearGradient id="ar-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#141A36"/><stop offset="1" stopColor="#202848"/></linearGradient>
         <linearGradient id="ar-win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0E0C27"/><stop offset="0.6" stopColor="#1D1842"/><stop offset="1" stopColor="#56304F"/></linearGradient>
@@ -200,7 +207,7 @@ const SuraArun: React.FC<SceneP> = ({s, n}) => {
       ]}/>
       <Rimmed fill={FIG.arun} paths={man.paths} transform={`translate(${ax} ${FL}) scale(${sc} ${sc * breathe(f)})`} point={man.phone} light={[-1, 0]} w={4 / sc} rim={COOL} glow={0.5}/>
       {/* the phone */}
-      <g transform={`translate(${ph[0]} ${ph[1]}) rotate(-62)`}><rect x={-20} y={-5} width={40} height={10} rx={3} fill="#F4F8FF"/></g>
+      <g transform={`translate(${ph[0]} ${ph[1]}) rotate(${-62 + 5 * flick})`}><rect x={-20} y={-5} width={40} height={10} rx={3} fill="#F4F8FF"/></g>
       <SoftGlow x={ph[0]} y={ph[1]} r={90} c0="#FFFFFF" c1={COOL} peak={0.9} k={3.4}/>
       {icons.map((d, i) => {
         const u = (((f / 150) + i / 3) % 1), y = ph[1] - 70 - u * 260, o = Math.sin(Math.PI * u);
@@ -285,15 +292,18 @@ const SuraKing: React.FC<SceneP> = ({s, n}) => {
   const f = useCurrentFrame(), sun: [number, number] = [620, 700];
   const ridge = (y: number, amp: number, seed: number) => { const pts: Pt[] = [[-60, H + 40, "c"], [-60, y, "c"]]; for (let i = 0; i <= 12; i++) pts.push([-60 + (i * (W + 120)) / 12, y - amp * rnd(i, seed)]); pts.push([W + 60, H + 40, "c"]); return smooth(pts, {wind: "cw"}); };
   const small = s.small === true;   // beat 15: the same figure, small, inside a sleeper's outline
+  // his arm rises over the worlds; as the lamps below go out his open hand closes into a fist and holds
+  const grip = ez(f, 26, 0.6 * n), up = ez(f, 6, 50);
+  const suraArm: [number, number, Hand] = [52 + 40 * up - 8 * grip + 2 * Math.sin(f / 30), 108 - 14 * up + 22 * grip, grip > 0.55 ? "fist" : "open"];
   if (small) {
-    const m = seatedMan(), sc = 2.5, ox = 1010, oy = 1010;
+    const m = seatedMan({nod: 0.4 + 0.4 * Math.sin(f / 60), sigh: 0.5 + 0.5 * Math.sin(f / 46)}), sc = 2.5, ox = 1010, oy = 1010;
     return (
       <Frame f={f} zoom={push(f, n, 1, 1.3)} cx={1010} cy={540}>
         <rect width={W} height={H} fill="#1A1430"/>
         <SoftGlow x={960} y={560} r={900} c0="#5A4A8C" c1="#241C4C" peak={0.8}/>
         <Rimmed paths={m.paths} transform={`translate(${ox} ${oy}) scale(${sc})`} light={[-1, -0.5]} w={4 / sc} fill="#241838" rim="#8FA6E0"/>
         <SoftGlow x={990} y={500} r={210 + 30 * Math.sin(f / 16)} c0="#FFD38A" c1="#C2553A" peak={0.75}/>
-        <Rimmed fill={FIG.sura} paths={surapadman(0.4, f)} transform={`translate(1000 620) scale(0.5)`} light={[-1, -0.6]} w={7}/>
+        <Rimmed fill={FIG.sura} paths={surapadman(0.4, f, suraArm)} transform={`translate(1000 620) scale(0.5)`} light={[-1, -0.6]} w={7}/>
         <Rimmed paths={mango({x: 0, y: 0, h: 150, seed: 8, t: f, detail: 0.5})} transform={`translate(1090 622) scale(${0.2 + 0.8 * ez(f, 30, 140)})`} light={[-1, -0.6]} w={2.5}/>
       </Frame>
     );
@@ -309,7 +319,7 @@ const SuraKing: React.FC<SceneP> = ({s, n}) => {
       <Rimmed paths={[ridge(930, 50, 9)]} light={[-1, -0.4]} w={3} fill="#150B1C"/>
       {Array.from({length: 7}, (_, i) => <Rimmed fill={FIG.crowd} key={i} paths={man("down", ez(f, 20 + i * 14, 50))} transform={`translate(${230 + i * 84} ${918 + 8 * rnd(i, 6)}) scale(-0.34 0.34)`} light={[-1, -0.5]} w={7}/>)}
       <Rimmed paths={[smooth([[1040, H + 40, "c"], [1080, 760], [1160, 640], [1260, 600], [1420, 596], [1560, 610], [1700, 600], [1990, 560], [1990, H + 40, "c"]], {wind: "cw"})]} light={[-1, -0.5]} w={4} fill="#0B0612"/>
-      <Rimmed fill={FIG.sura} paths={surapadman(0.6, f)} transform={`translate(1400 598) scale(1.06)`} light={[-1, -0.25]} w={4}/>
+      <Rimmed fill={FIG.sura} paths={surapadman(0.6, f, suraArm)} transform={`translate(1400 598) scale(1.06)`} light={[-1, -0.25]} w={4}/>
       <Dust f={f} sun={sun} n={120} y0={300}/>
     </Frame>
   );

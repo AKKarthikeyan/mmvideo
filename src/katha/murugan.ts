@@ -61,7 +61,8 @@ export const murugan = (pose: "hold" | "thrown" = "hold", w = 0, t = 0, arm = 90
 };
 
 // Surapadman as a king: tall crown, broad, a mace-less open stance; faceless; no demon features. Facing left.
-export const surapadman = (w = 0, t = 0): string[] => {
+// arm: the outstretched arm as [upper, fore, hand] in rig angles (default: out and down over the worlds, palm open).
+export const surapadman = (w = 0, t = 0, arm: [number, number, Hand?] = [52, 108, "open"]): string[] => {
   const P: string[] = [];
   P.push(smooth([[8, -402], [-10, -400], [-21, -392], [-24, -380], [-23, -372], [-28, -364, "c"], [-23, -359], [-23, -350], [-18, -341], [-8, -337], [6, -341], [18, -350], [26, -364], [28, -381], [21, -395]]));
   P.push(smooth([[-12, -344], [12, -348], [16, -318], [-10, -318]]));
@@ -69,10 +70,8 @@ export const surapadman = (w = 0, t = 0): string[] => {
   P.push(smooth([[-34, -212], [36, -212], [48, -170], [54, -110], [58, -50], [64, -8], [40, -6], [26, -50], [14, -110], [6, -140], [-2, -108], [-14, -50], [-22, -8], [-48, -6], [-44, -52], [-42, -112], [-42, -170]]));
   P.push(smooth([[-50, -10], [-22, -10], [-20, 0, "c"], [-66, 0, "c"], [-62, -4]]));
   P.push(smooth([[38, -10], [64, -10], [66, 0, "c"], [22, 0, "c"], [26, -4]]));
-  // arms: one on the hip, one out over the worlds below
-  P.push(ribbon(cub([-46, -316], [-72, -300], [-92, -282], [-108, -268]), 30, 20, 1));
-  P.push(ribbon(cub([-108, -268], [-126, -270], [-142, -276], [-156, -284]), 20, 15, 1));
-  P.push(smooth([[-154, -292], [-170, -294], [-180, -286], [-172, -280], [-180, -274], [-166, -270], [-152, -274]]));
+  // arms: one on the hip, one out over the worlds below (jointed, so it can rise, sweep and close its fist)
+  { const L = limb([-46, -316], arm[0], 79, arm[1], 50, 30, 20, 15); P.push(...L.paths, ...hand(L.end, arm[1], arm[2] ?? "open", arm[2] === "fist" ? 2.1 : 1.5)); }
   P.push(ribbon(cub([50, -316], [70, -288], [74, -256], [62, -230]), 29, 19, 1));
   P.push(ribbon(cub([62, -230], [54, -216], [44, -208], [34, -204]), 19, 14, 1));
   // a cape from the shoulders to the calf
@@ -140,22 +139,29 @@ export const rooster = (t = 0): string[] => {
 
 // A man sitting on the edge of a bed, bowed over a phone in his hands. Faces left; the seat is at y = -150, feet on
 // y = 0. Returns the paths and the phone's centre (the one light of the shot).
-export const seatedMan = (): {paths: string[]; phone: [number, number]} => {
-  const P: string[] = [];
-  // head bowed, no features; neck
-  P.push(smooth([[-70, -330], [-88, -322], [-96, -304], [-90, -286], [-74, -278], [-56, -284], [-46, -300], [-50, -318]]));
-  P.push(smooth([[-70, -288], [-52, -292], [-40, -270], [-60, -262]]));
+// nod: 0..1, the head sinks toward the chest (dozing). lift: degrees the forearm and phone rise about the elbow
+// (a thumb's flick is a few degrees). sigh: 0..1, the shoulders drop and round.
+export const seatedMan = (o: {nod?: number; lift?: number; sigh?: number} = {}): {paths: string[]; phone: [number, number]} => {
+  const nod = o.nod ?? 0, lift = o.lift ?? 0, sigh = o.sigh ?? 0;
+  const R = (q: Pt[], c: number[], deg: number, dx = 0, dy = 0): Pt[] => { const a = (deg * Math.PI) / 180, co = Math.cos(a), si = Math.sin(a);
+    return q.map((p) => { const x = p[0] - c[0], y = p[1] - c[1]; return [c[0] + x * co - y * si + dx, c[1] + x * si + y * co + dy, ...p.slice(2)] as Pt; }); };
+  const P: string[] = [], neck = [-58, -282], dy = 6 * sigh;
+  // head bowed (further with nod), no features; neck
+  P.push(smooth(R([[-70, -330], [-88, -322], [-96, -304], [-90, -286], [-74, -278], [-56, -284], [-46, -300], [-50, -318]], neck, -26 * nod, -4 * sigh, dy)));
+  P.push(smooth(R([[-70, -288], [-52, -292], [-40, -270], [-60, -262]], neck, -10 * nod, -2 * sigh, dy)));
   // the back curved forward, shoulders rounded
-  P.push(smooth([[-66, -276], [-36, -282], [-6, -266], [16, -232], [26, -190], [26, -150], [-30, -146], [-36, -176], [-50, -210], [-70, -244]]));
+  P.push(smooth([[-66, -276 + dy], [-36, -282 + dy], [-6, -266 + dy * 0.6], [16, -232], [26, -190], [26, -150], [-30, -146], [-36, -176], [-50, -210], [-70, -244 + dy]]));
   // thigh, shin, foot
   P.push(ribbon(cub([4, -164], [-30, -168], [-66, -166], [-100, -160]), 44, 34, 1));
   P.push(ribbon(cub([-98, -162], [-104, -110], [-106, -60], [-106, -12]), 34, 20, 1));
   P.push(smooth([[-120, -14], [-94, -14], [-92, 0, "c"], [-142, 0, "c"], [-138, -6]]));
-  // arm: upper arm down, forearm forward to the phone above the knees
-  P.push(ribbon(cub([-46, -262], [-48, -236], [-52, -212], [-58, -192]), 24, 18, 1));
-  P.push(ribbon(cub([-58, -192], [-76, -196], [-94, -202], [-110, -208]), 18, 13, 1));
-  P.push(smooth([[-108, -216], [-122, -216], [-126, -206], [-118, -198], [-106, -200]]));
-  return {paths: P, phone: [-128, -222]};
+  // arm: upper arm down, forearm forward to the phone above the knees; the forearm turns about the elbow by lift
+  const el = [-58, -192 + dy * 0.5], fa = (q: Pt[]) => R(q.map((p) => [p[0], p[1] + dy * 0.5, ...p.slice(2)] as Pt), el, lift);
+  P.push(ribbon(cub([-46, -262 + dy], [-48, -236], [-52, -212], el), 24, 18, 1));
+  { const q = fa([[-58, -192], [-76, -196], [-94, -202], [-110, -208]]); P.push(ribbon(cub(q[0] as number[], q[1] as number[], q[2] as number[], q[3] as number[]), 18, 13, 1)); }
+  P.push(smooth(fa([[-108, -216], [-122, -216], [-126, -206], [-118, -198], [-106, -200]])));
+  const ph = fa([[-128, -222]])[0];
+  return {paths: P, phone: [ph[0], ph[1]]};
 };
 
 // ---------- people of the present day (Arun's story): faceless, plain, facing left, standing on y = 0 ----------

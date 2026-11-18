@@ -1,0 +1,389 @@
+<!doctype html>
+<!-- India Ledger, gold episode, Act 5: "What the numbers hide". Timings and every number come from act.js, written by
+     tools/il_act5_build.py from scripts/india_ledger_gold.py. Same "Ledger" look as Acts 1 and 2: ruled paper with a red
+     margin, ink, one green channel accent, gold only for the metal (and its price line), red only for the stamp. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>India Ledger Act 5</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="act.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      .ledger { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --kick: #0e7c66; --gold: #b8860b; --red: #c8431f; --card: #fbf8f0; }
+      .ledger #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      .ledger #vig { --vig: 0.07; }
+      #rules { position: absolute; inset: 0;
+        background:
+          linear-gradient(90deg, transparent 148px, rgba(200, 67, 31, 0.55) 148px, rgba(200, 67, 31, 0.55) 150px, transparent 150px,
+                          transparent 156px, rgba(200, 67, 31, 0.55) 156px, rgba(200, 67, 31, 0.55) 158px, transparent 158px),
+          repeating-linear-gradient(180deg, transparent 0 53px, rgba(14, 124, 102, 0.16) 53px 54px); }
+      #stage { position: absolute; inset: 0; }
+      .kicker { left: 200px; color: var(--kick); }
+      #ep { position: absolute; left: 200px; top: 130px; font: 400 28px/1 Plex, monospace; color: var(--muted); letter-spacing: 0.04em; }
+      #title { position: absolute; left: 200px; top: 176px; width: 1060px; font: 700 76px/1.0 Oswald, sans-serif; color: var(--fg); letter-spacing: 0.01em; }
+      #tab { position: absolute; right: 90px; top: 70px; width: 520px; background: var(--card); border: 3px solid var(--fg);
+        box-shadow: 8px 8px 0 rgba(20, 22, 26, 0.12); padding: 16px 22px 18px; }
+      #tab .h { font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.2em; color: var(--kick); }
+      #tab .l { font: 400 28px/1.2 Plex, monospace; color: var(--muted); margin-top: 12px; }
+      #tab .v { font: 700 50px/1 Oswald, sans-serif; color: var(--fg); font-variant-numeric: tabular-nums; margin-top: 4px; }
+      #tab .v.small { font-size: 42px; }
+      #row { position: absolute; left: 200px; right: 90px; bottom: 60px; height: 110px; background: var(--card);
+        border-top: 3px solid var(--fg); border-bottom: 1px solid rgba(20, 22, 26, 0.35); display: grid;
+        grid-template-columns: 300px 1fr 300px 400px; align-items: center; font: 400 28px/1.2 Plex, monospace; color: var(--fg); }
+      #row div { padding: 0 18px; border-right: 1px solid rgba(20, 22, 26, 0.2); white-space: nowrap; line-height: 1.4; overflow: hidden; }
+      #row div:first-child { white-space: normal; }
+      #row div:last-child { border-right: 0; font-size: 28px; color: var(--muted); white-space: normal; }
+      #row .amt { font: 700 34px/1.3 Oswald, sans-serif; color: var(--kick); text-align: right; }
+      #illus { position: absolute; left: 200px; bottom: 22px; font: 400 28px/1 Plex, monospace; color: var(--muted); }
+      .src { right: 90px; bottom: 22px; font-size: 28px; max-width: 1280px; text-align: right; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="120.53" data-width="1920" data-height="1080">
+      <div id="rules" data-layout-ignore></div>
+      <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER</div>
+      <div id="ep">GOLD · EPISODE 1 · ACT 5</div>
+      <div id="title">WHAT THE NUMBERS HIDE</div>
+      <div id="tab">
+        <div class="h">THE TAB</div>
+        <div class="l">OWED ON GOLD BONDS STILL OUT</div>
+        <div class="v" id="tab1"></div>
+        <div id="tab2w"><div class="l" id="tab2l"></div><div class="v small" id="tab2"></div></div>
+      </div>
+      <div id="row"><div id="r0"></div><div id="r1"></div><div class="amt" id="r2"></div><div id="r3"></div></div>
+      <div id="illus">ILLUSTRATION</div>
+      <div class="src" id="src"></div>
+    </div>
+    <script>
+      const N = ACT.n;
+      const H = HF.setup(120.53), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
+      const dur = (id) => B[id].t1 - B[id].t0;
+      const T = (id, o = 0) => B[id].t0 + o, Tf = (id, f) => B[id].t0 + f * (B[id].t1 - B[id].t0);
+      const INK = "#14161a", MUTED = "#4f555e", GOLD = "#b8860b", GOLD2 = "#e2b84a", GOLDT = "#7f5d07", GREEN = "#0e7c66", RED = "#c8431f",
+            GREY = "#b9b09b", GREYT = "#6f6a5e", CARD = "#fbf8f0";
+      const inr = (v) => Math.round(v).toLocaleString("en-IN");
+      const lakh = (cr, d = 2) => `₹${(cr / 100000).toFixed(d)} LAKH CR`;
+      const NS = "http://www.w3.org/2000/svg";
+      const svg = $("stage");
+      const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+      const txt = (s, attrs, parent) => { const e = el("text", attrs, parent); e.textContent = s; return e; };
+      const OS = { "font-family": "Oswald", "font-weight": 700 }, PX = { "font-family": "Plex" }, CV = { "font-family": "Caveat", "font-weight": 600 };
+      const op = (e, v) => e.setAttribute("opacity", v);
+      const note = (s, x, y, size, parent, arrow) => {     // hand-lettered note, optional arrow [x1, y1, x2, y2]
+        const g = el("g", {}, parent);
+        txt(s, { x, y, ...CV, "font-size": size, fill: INK }, g);
+        if (arrow) {
+          const [a, b, c, d] = arrow;
+          el("path", { d: `M ${a} ${b} Q ${(a + c) / 2} ${Math.min(b, d) - 24}, ${c} ${d}`, fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, g);
+          const ang = Math.atan2(d - b, c - a);
+          for (const s2 of [-1, 1]) el("line", { x1: c, y1: d, x2: c - 20 * Math.cos(ang + s2 * 0.5), y2: d - 20 * Math.sin(ang + s2 * 0.5), stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, g);
+        }
+        return g;
+      };
+      const stamp = (text, cx, cy, size, rot) => {
+        const g = el("g", {});
+        txt(text, { x: 0, y: size * 0.36, "text-anchor": "middle", ...OS, "font-size": size, fill: RED, "letter-spacing": 2 }, g);
+        const w = text.length * size * 0.52 + 60;
+        el("rect", { x: -w / 2, y: -size * 0.75, width: w, height: size * 1.5, fill: "none", stroke: RED, "stroke-width": 8 }, g);
+        Object.assign(g.dataset, { cx, cy, rot });
+        return g;
+      };
+      const showStamp = (g, t, at, until = 1e9) => {
+        const u = C((t - at) / 0.22), a = F(t, at, until, 0.25);
+        g.setAttribute("transform", `translate(${g.dataset.cx},${g.dataset.cy}) rotate(${g.dataset.rot}) scale(${u < 1 ? L(2.4, 1, E.o3(u)) : 1})`);
+        g.setAttribute("opacity", a * (u > 0 ? 1 : 0));
+      };
+      const locker = (x, y, s, parent) => {               // Amma's locker, closed
+        const g = el("g", { transform: `translate(${x},${y}) scale(${s})` }, parent);
+        el("rect", { x: 0, y: 0, width: 300, height: 360, rx: 14, fill: "#2f3d38" }, g);
+        el("rect", { x: 18, y: 18, width: 264, height: 324, rx: 8, fill: "#3d4f48", stroke: "#22302b", "stroke-width": 4 }, g);
+        el("circle", { cx: 220, cy: 180, r: 30, fill: "none", stroke: "#a7b3ad", "stroke-width": 7 }, g);
+        el("line", { x1: 220, y1: 154, x2: 220, y2: 206, stroke: "#a7b3ad", "stroke-width": 7 }, g);
+        return g;
+      };
+      const bangleAt = (r, parent) => {                   // a gold bangle centred on (0, 0)
+        const g = el("g", {}, parent);
+        el("circle", { cx: 0, cy: 0, r, fill: "none", stroke: GOLD, "stroke-width": r * 0.36 }, g);
+        el("circle", { cx: 0, cy: 0, r: r * 1.1, fill: "none", stroke: GOLD2, "stroke-width": 4, "stroke-dasharray": `${r * 0.8} 400`, transform: "rotate(-130)" }, g);
+        el("circle", { cx: 0, cy: 0, r: r * 0.84, fill: "none", stroke: "#8a6408", "stroke-width": 3 }, g);
+        return g;
+      };
+      const certificate = (parent, w = 640, h = 400) => { // paper gold, drawn around (0, 0) at its centre
+        const g = el("g", {}, parent);
+        el("rect", { x: -w / 2, y: -h / 2, width: w, height: h, fill: CARD, stroke: GREEN, "stroke-width": 6 }, g);
+        el("rect", { x: -w / 2 + 18, y: -h / 2 + 18, width: w - 36, height: h - 36, fill: "none", stroke: GREEN, "stroke-width": 2 }, g);
+        txt("GOVERNMENT OF INDIA", { x: 0, y: -h / 2 + 76, "text-anchor": "middle", ...PX, "font-size": 28, fill: GREEN, "letter-spacing": 3 }, g);
+        txt("SOVEREIGN GOLD BOND", { x: 0, y: -h / 2 + 170, "text-anchor": "middle", ...OS, "font-size": 56, fill: INK }, g);
+        txt("10 GRAMS", { x: 0, y: -h / 2 + 250, "text-anchor": "middle", ...OS, "font-size": 56, fill: GOLDT }, g);
+        txt("8 YEARS · 2.5% A YEAR", { x: 0, y: -h / 2 + 310, "text-anchor": "middle", ...PX, "font-size": 28, fill: MUTED }, g);
+        return g;
+      };
+      const chip = (s, x, y, w, parent, color = INK) => {
+        const g = el("g", {}, parent);
+        el("rect", { x: x - w / 2, y: y - 50, width: w, height: 100, fill: CARD, stroke: color, "stroke-width": 4 }, g);
+        txt(s, { x, y: y + 14, "text-anchor": "middle", ...OS, "font-size": 42, fill: color }, g);
+        return g;
+      };
+      const arrowR = (x1, x2, y, parent) => {
+        const g = el("g", {}, parent);
+        el("line", { x1, y1: y, x2: x2 - 6, y2: y, stroke: INK, "stroke-width": 5 }, g);
+        el("path", { d: `M ${x2} ${y} l -24 -14 l 0 28 Z`, fill: INK }, g);
+        return g;
+      };
+      const strike = (parent, x1, x2, y) => el("line", { x1, y1: y, x2: x1, y2: y, stroke: INK, "stroke-width": 7, "stroke-linecap": "round", "data-x2": x2 }, parent);
+      const drawStrike = (s, u) => { const x1 = +s.getAttribute("x1"), x2 = +s.dataset.x2; s.setAttribute("x2", L(x1, x2, C(u))); op(s, u > 0 ? 1 : 0); };
+
+      const point = (num, s, parent) => {                 // "1. OWING ISN'T LOSING"
+        const g = el("g", {}, parent);
+        txt(num, { x: 200, y: 370, ...OS, "font-size": 96, fill: GREEN }, g);
+        txt(s, { x: 290, y: 370, ...OS, "font-size": 60, fill: INK }, g);
+        return g;
+      };
+
+      // ---------- A. owing isn't losing ----------
+      const OW = el("g", {});
+      point("1", "OWING ISN'T LOSING", OW);
+      const OX = 200, OWW = 1440, OY = 470;
+      txt("OWED ON THE BONDS STILL OUT, AT TODAY'S PRICE", { x: OX, y: OY - 16, ...PX, "font-size": 28, fill: MUTED }, OW);
+      const owP = el("rect", { x: OX, y: OY, width: 0, height: 110, fill: GREY }, OW);
+      const owG = el("rect", { x: OX + OWW * N.raised_out / N.owed_cr, y: OY, width: 0, height: 110, fill: GREEN }, OW);
+      const owPl = el("g", {}, OW);
+      txt(`₹${inr(N.raised_out)} CR`, { x: OX + 24, y: OY + 70, ...OS, "font-size": 48, fill: INK }, owPl);
+      txt("BORROWED: OWED ON ANY LOAN", { x: OX, y: OY + 150, ...PX, "font-size": 28, fill: MUTED }, owPl);
+      const owGl = el("g", {}, OW);
+      txt(`₹${inr(N.gain_out)} CR`, { x: OX + OWW * N.raised_out / N.owed_cr + 24, y: OY + 70, ...OS, "font-size": 48, fill: CARD }, owGl);
+      txt("GOLD'S RISE ON TOP", { x: OX + OWW * N.raised_out / N.owed_cr, y: OY + 150, ...PX, "font-size": 28, fill: GREEN }, owGl);
+      const owC = el("g", {}, OW);
+      txt("2.5%", { x: 200, y: 790, ...OS, "font-size": 90, fill: GREEN }, owC);
+      txt("WHAT THE BONDS PAID", { x: 204, y: 830, ...PX, "font-size": 28, fill: MUTED }, owC);
+      txt(`≈${Math.round(N.gsec)}%`, { x: 640, y: 790, ...OS, "font-size": 90, fill: GREYT }, owC);
+      txt("A NORMAL 10-YEAR LOAN", { x: 644, y: 830, ...PX, "font-size": 28, fill: MUTED }, owC);
+      const owB = el("g", {}, OW);                                  // bond by bond: 67 small squares
+      const sq = [];
+      for (let i = 0; i < N.n_tr; i++) sq.push(el("rect", { x: 1100 + (i % 17) * 30, y: 690 + Math.floor(i / 17) * 30, width: 22, height: 22, fill: CARD, stroke: GREEN, "stroke-width": 3 }, owB));
+      txt(`BOND BY BOND, ALL ${N.n_tr}`, { x: 1100, y: 670, ...PX, "font-size": 28, fill: MUTED }, owB);
+
+      // ---------- B. the real extra cost ----------
+      const EX = el("g", {});
+      const WX = 200, WS = 1100 / N.gain_all, WY = 400;
+      const wf = [["WHAT GOLD'S RISE COST, ALL 67 BONDS", N.gain_all, 0, GREY], ["MINUS THE INTEREST SAVED (2.5% NOT ≈7%)", N.saved_all, N.gain_all - N.saved_all, GREEN], ["THE REAL EXTRA COST", N.net, 0, INK]]
+        .map(([lab, v, x0, c], i) => {
+          const g = el("g", {}, EX), y = WY + i * 120;
+          txt(lab, { x: WX, y: y + 4, ...PX, "font-size": 28, fill: MUTED }, g);
+          const r = el("rect", { x: WX + x0 * WS, y: y + 18, width: 0, height: 64, fill: c, "fill-opacity": i === 1 ? 0.35 : 1, stroke: i === 1 ? GREEN : "none", "stroke-width": 3, "stroke-dasharray": i === 1 ? "8 6" : "" }, g);
+          const vt = txt(`${i === 1 ? "−" : ""}₹${inr(v)} CR`, { x: WX + (x0 + v) * WS + 20, y: y + 66, ...OS, "font-size": 44, fill: i === 2 ? INK : i === 1 ? GREEN : INK }, g);
+          return { g, r, w: v * WS, vt };
+        });
+      const exBig = el("g", {}, EX);
+      txt(`≈ ₹${inr(N.per_indian)}`, { x: 200, y: 800, ...OS, "font-size": 110, fill: GREEN }, exBig);
+      txt("FOR EVERY INDIAN", { x: 204, y: 846, ...PX, "font-size": 30, fill: MUTED }, exBig);
+      const exRange = txt(`₹${inr(Math.round(N.net_lo / 1000) * 1000)} CR AT ₹${inr(N.lo_price)}/g · ${lakh(N.net_hi)} AT ₹${inr(N.hi_price)}/g`, { x: 760, y: 800, ...PX, "font-size": 28, fill: MUTED }, EX);
+      const nHosp = note("still the price of a lot of hospitals", 760, 860, 54, EX);
+
+      // ---------- C. it wasn't useless ----------
+      const SV = el("g", {});
+      point("2", "IT WASN'T USELESS", SV);
+      const svV = txt("", { x: 200, y: 640, ...OS, "font-size": 200, fill: GREEN }, SV);
+      txt("OF GOLD IMPORTS SAVED IN ONE YEAR, FY 2023–24 (ONE ESTIMATE)", { x: 204, y: 700, ...PX, "font-size": 30, fill: MUTED }, SV);
+
+      // ---------- D. it looked safe at the time ----------
+      const SF = el("g", {});
+      point("3", "IT LOOKED SAFE AT THE TIME", SF);
+      const HB0 = 830, HBT = 520, hbmax = 32000, hbmin = 20000;
+      txt("GOLD IN MUMBAI, ₹ PER 10 g, YEARLY AVERAGE", { x: 200, y: 450, ...PX, "font-size": 28, fill: MUTED }, SF);
+      const hbars = N.handbook.map(([yr, v], i) => {
+        const x = 220 + i * 170, h = (HB0 - HBT) * (v - hbmin) / (hbmax - hbmin), first = yr === "2015–16";
+        const r = el("rect", { x, y: HB0, width: 120, height: 0, rx: 4, fill: first ? GOLD : GREY }, SF);
+        const t = txt(`₹${inr(v)}`, { x: x + 60, y: HB0 - h - 14, "text-anchor": "middle", ...OS, "font-size": 34, fill: first ? GOLDT : INK }, SF);
+        txt(yr, { x: x + 60, y: HB0 + 40, "text-anchor": "middle", ...PX, "font-size": 28, fill: MUTED }, SF);
+        return { r, t, h };
+      });
+      txt("AXIS STARTS AT ₹20,000", { x: 1340, y: 450, "text-anchor": "end", ...PX, "font-size": 28, fill: MUTED }, SF);
+      const nFirst = note("first bond", 600, 520, 50, SF, [690, 532, 762, 600]);
+      const sfX = el("g", {}, SF);
+      txt(`THEN ×${N.x.toFixed(1)}`, { x: 1420, y: 600, ...OS, "font-size": 90, fill: GREEN }, sfX);
+      el("path", { d: "M 1560 800 L 1560 650", stroke: GREEN, "stroke-width": 8 }, sfX);
+      el("path", { d: "M 1560 630 l -22 34 l 44 0 Z", fill: GREEN }, sfX);
+      txt("nobody knew", { x: 1420, y: 860, ...CV, "font-size": 50, fill: INK }, sfX);
+      const nCarat = note("hindsight is 24 carat", 1400, 950, 50, SF);
+
+      // ---------- E. gold doesn't only go up ----------
+      const DP = el("g", {});
+      point("4", "GOLD DOESN'T ONLY GO UP", DP);
+      const S = N.price_series.filter(([d]) => d >= "2019-06-01" && d <= "2024-03-01");
+      const dd0 = Date.parse(S[0][0]), dd1 = Date.parse(S[S.length - 1][0]);
+      const DX = (d) => 260 + (Date.parse(d) - dd0) / (dd1 - dd0) * 1300, DY = (p) => 860 - (p - 3000) / 4000 * 380;
+      txt("RBI ISSUE PRICE OF EACH GOLD BOND, ₹ A GRAM", { x: 260, y: 450, ...PX, "font-size": 28, fill: MUTED }, DP);
+      for (const v of [4000, 5000, 6000]) {
+        el("line", { x1: 260, x2: 1560, y1: DY(v), y2: DY(v), stroke: "rgba(20,22,26,0.14)", "stroke-width": 2 }, DP);
+        txt(`₹${inr(v)}`, { x: 240, y: DY(v) + 10, "text-anchor": "end", ...PX, "font-size": 28, fill: MUTED }, DP);
+      }
+      const dpL = el("path", { d: "M " + S.map(([d, p]) => `${DX(d).toFixed(1)} ${DY(p).toFixed(1)}`).join(" L "), fill: "none", stroke: GOLD, "stroke-width": 6, "stroke-linejoin": "round" }, DP);
+      const dpLen = 2200;
+      const dpHi = S.find(([d, p]) => p === N.dip[0][1]), dpLo = S.find(([d, p]) => p === N.dip[1][1]);
+      const dpM = el("g", {}, DP);
+      el("path", { d: `M ${DX(dpHi[0])} ${DY(dpHi[1]) - 16} L ${DX(dpLo[0])} ${DY(dpLo[1]) - 16}`, stroke: INK, "stroke-width": 4, "stroke-dasharray": "8 6" }, dpM);
+      txt(`${N.dip[0][0].toUpperCase()} ₹${inr(N.dip[0][1])} → ${N.dip[1][0].toUpperCase()} ₹${inr(N.dip[1][1])}`, { x: DX(dpHi[0]) - 20, y: DY(dpHi[1]) - 50, ...OS, "font-size": 36, fill: INK }, dpM);
+      txt(`${Math.round((N.dip[1][1] / N.dip[0][1] - 1) * 100)}%`.replace("-", "−"), { x: DX(dpLo[0]) + 20, y: DY(dpLo[1]) + 60, ...OS, "font-size": 48, fill: INK }, dpM);
+      const dpD = txt("JUL 2024: IMPORT DUTY ON GOLD CUT FROM 15% TO 6%", { x: 260, y: 920, ...PX, "font-size": 28, fill: INK }, DP);
+      const dpB = el("g", {}, DP);
+      txt("THE BILL, EVERY ₹1,000 A GRAM", { x: 1180, y: 520, ...PX, "font-size": 28, fill: MUTED }, dpB);
+      const dpBv = txt("", { x: 1180, y: 590, ...OS, "font-size": 60, fill: INK }, dpB);
+
+      // ---------- F. attempt number three ----------
+      const WG = el("g", {});
+      txt("ATTEMPT NUMBER THREE", { x: 200, y: 370, ...OS, "font-size": 72, fill: GREEN }, WG);
+      txt("WORLD GOLD COUNCIL PROPOSAL, AUG 2026", { x: 204, y: 420, ...PX, "font-size": 30, fill: MUTED }, WG);
+      const wgA = el("g", {}, WG);
+      txt(`${N.wgc[0]}–${N.wgc[1]}%`, { x: 200, y: 600, ...OS, "font-size": 150, fill: INK }, wgA);
+      txt("OF HOUSEHOLD GOLD, INTO THE SYSTEM", { x: 204, y: 650, ...PX, "font-size": 30, fill: MUTED }, wgA);
+      txt(`= ${inr(N.household_t * N.wgc[0] / 100)}–${inr(N.household_t * N.wgc[1] / 100)} TONNES (OUR ARITHMETIC) · PLAN A GOT 31`, { x: 204, y: 700, ...PX, "font-size": 28, fill: GREEN }, wgA);
+      const wgB = txt("+ A NATIONAL GOLD BOARD", { x: 200, y: 790, ...OS, "font-size": 54, fill: INK }, WG);
+      const wgN = el("g", {}, WG);
+      note("1. ask Amma first", 1150, 560, 58, wgN);
+      const wgN2 = note("2. no furnace", 1150, 650, 58, WG);
+      const furn = el("g", {}, WG);
+      el("rect", { x: 1520, y: 600, width: 120, height: 140, rx: 8, fill: "#2a2f33" }, furn);
+      el("rect", { x: 1540, y: 640, width: 80, height: 60, rx: 4, fill: "#14161a" }, furn);
+      const fX = [el("line", { x1: 1500, y1: 590, x2: 1500, y2: 590, stroke: RED, "stroke-width": 9, "stroke-linecap": "round" }, furn),
+                  el("line", { x1: 1660, y1: 590, x2: 1660, y2: 590, stroke: RED, "stroke-width": 9, "stroke-linecap": "round" }, furn)];
+
+      // ---------- G. who was right, and the question again ----------
+      const EN = el("g", {});
+      const lk = el("g", {}, EN);
+      el("rect", { x: 1180, y: 380, width: 380, height: 440, rx: 14, fill: "#2f3d38" }, lk);
+      el("rect", { x: 1200, y: 400, width: 340, height: 400, rx: 8, fill: "#1f2925" }, lk);
+      const enB = el("g", { transform: "translate(1370,600)" }, lk); bangleAt(74, enB);
+      const door = el("g", {}, lk);
+      el("rect", { x: 0, y: 0, width: 340, height: 400, rx: 8, fill: "#3d4f48", stroke: "#22302b", "stroke-width": 4 }, door);
+      el("circle", { cx: 270, cy: 200, r: 34, fill: "none", stroke: "#a7b3ad", "stroke-width": 8 }, door);
+      const verdicts = [["THE BONDHOLDERS", "WON", GREEN], ["THE TAXPAYERS", "PAID", INK], ["YOUR MOTHER", "KEPT HER BANGLE", GOLDT]].map(([a, b, c], i) => {
+        const g = el("g", {}, EN), y = 470 + i * 130;
+        txt(a, { x: 200, y, ...PX, "font-size": 30, fill: MUTED }, g);
+        txt(b, { x: 200, y: y + 64, ...OS, "font-size": 64, fill: c }, g);
+        return g;
+      });
+      const QZ = el("g", {});
+      const Q = N.price_series, q0 = Date.parse(Q[0][0]), q1 = Date.parse(Q[Q.length - 1][0]);
+      const QX = (d) => 200 + (Date.parse(d) - q0) / (q1 - q0) * 1520, QY = (p) => 900 - p / 14000 * 380;
+      const qL = el("path", { d: "M " + Q.map(([d, p]) => `${QX(d).toFixed(1)} ${QY(p).toFixed(1)}`).join(" L "), fill: "none", stroke: GOLD, "stroke-width": 8, "stroke-linejoin": "round" }, QZ);
+      const qT = el("g", {}, QZ);
+      txt("HOW DO YOU LOSE MONEY", { x: 200, y: 330, ...OS, "font-size": 84, fill: INK }, qT);
+      txt("ON GOLD THAT ONLY WENT UP?", { x: 200, y: 420, ...OS, "font-size": 84, fill: INK }, qT);
+      const qS = stamp(`GOLD ×${N.x.toFixed(1)} ↑ · LOST?`, 1250, 640, 60, -4); QZ.appendChild(qS); op(qS, 0);
+      qS.setAttribute("transform", "translate(1250,640) rotate(-4)");
+
+      // ---------- ledger rows (date · entry · amount · source) and source lines ----------
+      const ROWS = [
+        ["real", "per", [N.today_label.toUpperCase(), "REAL EXTRA COST vs NORMAL BORROWING", `₹${inr(N.net)} CR`, `our bond-by-bond estimate, ${N.n_tr} issues vs the 10-year G-sec of each month (FRED)`]],
+        ["per", "two", ["2026", "EXTRA COST PER INDIAN", `≈ ₹${inr(N.per_indian)}`, "142.6 crore people (MoHFW projection) · our arithmetic"]],
+      ];
+      const SRCS = [
+        ["part", "real", `RBI tranche data · our arithmetic at ₹${inr(N.price)}/g · normal loan ≈${N.gsec}% (FRED)`],
+        ["two", "three", "Business Standard, Mar 2024 (one estimate)"],
+        ["three", "four", "RBI Handbook of Statistics on Indian Economy 2019, Table 39 (Mumbai, yearly average)"],
+        ["four", "daily", "RBI issue prices, SGB 2019-20 to 2023-24 · duty cut: PIB, Union Budget 2024–25, from 24 Jul 2024"],
+        ["daily", "wgc", "EDUCATIONAL RESEARCH, NOT INVESTMENT ADVICE · NOT SEBI-REGISTERED"],
+        ["wgc", "right", "World Gold Council, \"Swarnim Udaan 2047\", Aug 2026 · tonnes: our arithmetic on WGC's 31,000 t"],
+        ["q", null, `RBI issue price of each gold bond, then RBI's redemption price, ${N.today_label}`],
+      ];
+      const ILLUS = [["third", "right"], ["right", "q"]];
+
+      const drift = (g, a, b) => { const u = C((t_ - a) / Math.max(1, b - a)); g.setAttribute("transform", `translate(960,600) scale(${1 + 0.03 * u}) translate(-960,-600)`); };
+      const scene = (g, a, b) => { const f = F(t_, a - 0.1, b == null ? 1e9 : b - 0.25, 0.3); op(g, f); if (f > 0) drift(g, a, b == null ? ACT.dur : b); return f > 0; };
+      let t_ = 0;
+      H.render = (t) => {
+        t_ = t;
+        $("title").style.opacity = F(t, 0.0, T("part") - 0.2, 0.3);
+        $("tab1").textContent = lakh(N.owed_cr);
+        $("tab2l").textContent = "REAL EXTRA COST (OUR ESTIMATE)";
+        $("tab2w").style.opacity = F(t, Tf("real", 0.5), T("right") - 0.2, 0.3);
+        $("tab2").textContent = `₹${inr(N.net * E.o3((t - Tf("real", 0.5)) / 1.6))} CR`;
+        $("tab").style.opacity = 1 - F(t, T("q") - 0.2, 1e9, 0.3);
+
+        if (scene(OW, T("one", 0.3), T("real"))) {
+          const u = E.o3((t - T("part", 0.1)) / 1.0);
+          const pw = OWW * N.raised_out / N.owed_cr, gw = OWW * N.gain_out / N.owed_cr;
+          owP.setAttribute("width", pw * u); op(owPl, F(t, Tf("part", 0.5), 1e9, 0.3));
+          const ug = E.o3((t - Tf("part", 0.75)) / 0.8);
+          owG.setAttribute("width", gw * ug); op(owGl, ug > 0.9 ? 1 : 0);
+          op(owC, F(t, T("cheap", 0.2), 1e9, 0.3));
+          op(owB, F(t, T("went", 0.0), 1e9, 0.3));
+          sq.forEach((s, i) => s.setAttribute("fill", t > T("went", 0.3) + i * (0.7 * dur("went")) / sq.length ? GREEN : CARD));
+        }
+        if (scene(EX, T("real"), T("two"))) {
+          wf.forEach((b, i) => {
+            const u = E.o3((t - Tf("real", 0.15 + i * 0.28)) / 0.7);
+            b.r.setAttribute("width", b.w * u); op(b.vt, u > 0.9 ? 1 : 0); op(b.g, u > 0 ? 1 : 0);
+          });
+          op(exBig, F(t, T("per", 0.1), 1e9, 0.3)); op(exRange, F(t, Tf("real", 0.9), 1e9, 0.3));
+          op(nHosp, F(t, Tf("small", 0.45), 1e9, 0.3));
+        }
+        if (scene(SV, T("two"), T("three"))) {
+          svV.textContent = `$${(N.saved_usd * E.io2((t - Tf("saved", 0.3)) / 1.2)).toFixed(1)} BN`;
+        }
+        if (scene(SF, T("three"), T("four"))) {
+          hbars.forEach((b, i) => {
+            const u = E.o3((t - (T("fell", 0.0) + i * 0.45)) / 0.6);
+            b.r.setAttribute("y", HB0 - b.h * u); b.r.setAttribute("height", b.h * u); op(b.t, u > 0.9 ? 1 : 0);
+          });
+          op(nFirst, F(t, T("fell", 1.6), 1e9, 0.3));
+          op(sfX, F(t, T("knew", 0.2), 1e9, 0.3));
+          op(nCarat, F(t, T("carat", 0.1), 1e9, 0.3));
+        }
+        if (scene(DP, T("four"), T("wgc"))) {
+          const u = E.io2((t - Tf("four", 0.2)) / 1.6);
+          dpL.setAttribute("stroke-dasharray", `${dpLen * u} ${dpLen}`);
+          op(dpM, F(t, Tf("four", 0.45), 1e9, 0.3)); op(dpD, F(t, Tf("four", 0.7), 1e9, 0.3));
+          op(dpB, F(t, T("daily", 0.1), 1e9, 0.3));
+          const w = Math.sin((t - T("daily")) * 2.2);
+          dpBv.textContent = `${w >= 0 ? "+" : "−"}₹${inr(Math.abs(N.per1000 * w))} CR`;
+        }
+        if (scene(WG, T("wgc"), T("right"))) {
+          op(wgA, F(t, Tf("wgc", 0.35), 1e9, 0.3)); op(wgB, F(t, Tf("wgc", 0.75), 1e9, 0.3));
+          op(wgN, F(t, Tf("third", 0.3), 1e9, 0.3)); op(wgN2, F(t, Tf("third", 0.7), 1e9, 0.3)); op(furn, F(t, Tf("third", 0.7), 1e9, 0.3));
+          const ux = E.o3((t - Tf("third", 0.8)) / 0.3);
+          fX[0].setAttribute("x2", L(1500, 1660, ux)); fX[0].setAttribute("y2", L(590, 750, ux));
+          fX[1].setAttribute("x2", L(1660, 1500, ux)); fX[1].setAttribute("y2", L(590, 750, ux));
+          fX.forEach((x) => op(x, ux > 0 ? 1 : 0));
+        }
+        if (scene(EN, T("right"), T("q"))) {
+          const sh = E.io2((t - Tf("won", 0.75)) / 0.7);                // the locker door swings shut
+          door.setAttribute("transform", `translate(1200,400) scale(${Math.max(0.02, sh)},1)`);
+          op(door, sh > 0.02 ? 1 : 0);
+          verdicts.forEach((g, i) => op(g, F(t, Tf("won", [0.0, 0.3, 0.6][i]), 1e9, 0.25)));
+        }
+        if (scene(QZ, T("left", 0.3), null)) {
+          const u = E.io2((t - T("left", 0.4)) / 1.8);
+          qL.setAttribute("stroke-dasharray", `${2400 * u} 2400`);
+          op(qT, F(t, T("q", 0.0), 1e9, 0.3));
+          showStamp(qS, t, Tf("q", 0.85));
+        }
+
+        let rowA = 0;
+        for (const [a2, b2, cells] of ROWS) {
+          const f = F(t, T(a2, 0.3), T(b2) - 0.15, 0.3);
+          if (f > 0) { rowA = f; cells.forEach((c, i) => ($(`r${i}`).textContent = c)); }
+        }
+        $("row").style.opacity = rowA;
+        $("row").style.transform = `translateY(${(1 - rowA) * 30}px)`;
+        let sA = 0;
+        for (const [a2, b2, s] of SRCS) { const f = F(t, T(a2, 0.4), b2 ? T(b2) - 0.2 : 1e9, 0.3); if (f > 0) { sA = f; $("src").textContent = s; } }
+        $("src").style.opacity = rowA > 0 ? 0 : sA;
+        let iA = 0;
+        for (const [a2, b2] of ILLUS) iA = Math.max(iA, F(t, T(a2, 0.2), b2 ? T(b2) - 0.2 : 1e9, 0.3));
+        $("illus").style.opacity = rowA > 0 ? 0 : iA;
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

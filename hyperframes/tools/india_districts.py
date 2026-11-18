@@ -18,6 +18,21 @@ CACHE = Path(__file__).resolve().parents[2] / "out" / "hyperframes" / "cache"
 SRC = "https://raw.githubusercontent.com/datta07/INDIAN-SHAPEFILES/master/INDIA/INDIA_DISTRICTS.geojson"
 
 
+# The source spells some letters with symbols (KOLK>TA, DEHRAD@N, BENGAL#RU, B\\DAR) and cuts some Karnataka names
+# short (B, H, KOL). Symbols decode one-for-one; the short names are restored from their Census 2011 district codes,
+# whose centroids check out (0556 at 16.3N 75.6E is Bagalkote, 0581 at 13.2N 78.3E is Kolar, and so on).
+SYMBOLS = str.maketrans({">": "a", "|": "i", "\\": "i", "@": "u", "#": "u"})
+SHORT = {"0556": "Bagalkote", "0555": "Belagavi", "0565": "Ballari", "0578": "Chamarajanagara", "0582": "Chikkaballapura",
+         "0567": "Davanagere", "0562": "Dharwad", "0564": "Haveri", "0574": "Hassan", "0581": "Kolar", "0580": "Yadgir",
+         "0584": "Ramanagara"}
+
+
+def name(p):
+    if p["dist_code"] in SHORT and p["state"] == "KARNATAKA":
+        return SHORT[p["dist_code"]]
+    return (p["district"] or "").translate(SYMBOLS).title()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("out"); ap.add_argument("--eps", type=float, default=0.012)
@@ -42,7 +57,7 @@ def main():
         polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
         rings = [[round(v, 3) for pt in ring for v in pt] for poly in polys for ring in poly if len(ring) > 3]
         c = shape(g).representative_point()
-        d = {"n": (p["district"] or "").title(), "s": (p["state"] or "").title(), "code": p["dist_code"],
+        d = {"n": name(p), "s": (p["state"] or "").title(), "code": p["dist_code"],
              "c": [round(c.x, 3), round(c.y, 3)], "rings": rings}
         if not p["district"]:  # small disputed inter-state patches: kept as unlabelled land so the map has no holes
             d["note"] = p.get("remarks") or "unassigned area"

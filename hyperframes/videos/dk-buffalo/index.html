@@ -59,13 +59,13 @@
     </style>
   </head>
   <body>
-    <div id="root" class="atlas" data-composition-id="main" data-start="0" data-duration="35.5" data-width="1920" data-height="1080">
+    <div id="root" class="atlas" data-composition-id="main" data-start="0" data-duration="44.5" data-width="1920" data-height="1080">
       <canvas id="map" width="1920" height="1080"></canvas>
       <div class="scene" id="s-hook">
         <div id="hTitle"></div><div id="hNum"></div><div id="hSub"></div><div class="chips" id="hChips"></div>
       </div>
       <div class="scene" id="s-growth"><div class="h">FIVE YEARS OF EXPORTS</div><div class="unit">₹ crore, financial years April to March</div><div id="bars"></div></div>
-      <div class="scene" id="s-district"><div class="h">WHERE IT IS MADE</div><div class="unit">Export value by district of origin, FY 2025–26</div><div id="dlist"></div><div id="dleg"></div><div id="dlabs"></div></div>
+      <div class="scene" id="s-district"><div class="h">WHERE IT IS MADE</div><div class="unit">District of origin as declared by exporters · FY 2025–26</div><div id="dlist"></div><div id="dleg"></div><div id="dlabs"></div></div>
       <div class="scene" id="s-ports"><div class="h">WHERE IT LEAVES INDIA</div><div class="unit">Share of export value by Indian port, FY 2025–26</div><div id="prow"></div><div id="plabs"></div></div>
       <div class="scene" id="s-dest"><div class="h">WHO BUYS IT</div><div class="unit">Share of export value by destination, FY 2025–26</div><div id="drow"></div></div>
       <div class="scene" id="s-rank"><div class="h">GROWTH IN 2025–26</div><div class="unit">Change in export value on 2024–25 · exports over ₹20,000 crore</div><div id="rrow"></div></div>
@@ -166,11 +166,12 @@
           f.h = (f.cr / max) * 470;
         });
         if (D.length) {
-          const tot = D.reduce((x, d) => x + d.v, 0);
+          const tot = S.districts.total;
           D.slice(0, 5).forEach((d, i) => {
             $("dlist").insertAdjacentHTML("beforeend", `<div class="row" id="dl${i}" style="top:${300 + i * 112}px"><div class="n">${d.n} <span style="font:400 28px Inter;color:var(--muted)">${d.s}</span></div><div class="p">${(d.v / tot * 100).toFixed(1)}%</div><div class="track"><div class="bfill" id="dlf${i}" style="width:${(d.v / D[0].v) * 100}%"></div></div></div>`);
           });
-          const th = BINS.slice(0, 4).map((b) => inr(dmaxv * b));
+          const sig2 = (v) => { const q = 10 ** Math.max(0, Math.floor(Math.log10(v)) - 1); return Math.round(v / q) * q; };
+          const th = BINS.slice(0, 4).map((b) => inr(sig2(dmaxv * b)));
           $("dleg").innerHTML = [4, 3, 2, 1, 0].map((c, j) => `<span><i style="background:${ramp(c)}"></i>${j === 0 ? th[0] + "+" : j === 4 ? "under " + th[3] : "from " + th[j]}</span>`).join("") +
             `<span><i style="background:${css("--land")};outline:1px solid var(--sline)"></i>no figure</span>`;
         }

@@ -104,14 +104,38 @@ def load():
     return ex[ex.FY.isin(FYS)]
 
 
-# DGCIS district names that differ from the map's (state, district) names, after norm()
-ALIAS = {"NILGIRIS": "THENILGIRIS", "KANCHEEPURAM": "KANCHIPURAM", "TUTICORIN": "THOOTHUKUDI", "TRICHY": "TIRUCHIRAPPALLI",
-         "TIRUCHIRAPALLI": "TIRUCHIRAPPALLI", "KANYAKUMARI": "KANNIYAKUMARI", "VILLUPURAM": "VILUPPURAM",
-         "TIRUVALLUR": "THIRUVALLUR", "THIRUVARUR": "THIRUVARUR", "TIRUVARUR": "THIRUVARUR", "KALLAKURICHI": "KALLAKKURICHI",
-         "TIRUPATTUR": "TIRUPATHUR", "GURGAON": "GURUGRAM", "MEWAT": "NUH", "ALLAHABAD": "PRAYAGRAJ", "FAIZABAD": "AYODHYA",
-         "BANGALORE": "BENGALURUURBAN", "BANGALOREURBAN": "BENGALURUURBAN", "BANGALORERURAL": "BENGALURURURAL",
-         "MYSORE": "MYSURU", "BELGAUM": "BELAGAVI", "GULBARGA": "KALABURAGI", "BELLARY": "BALLARI", "SHIMOGA": "SHIVAMOGGA",
-         "TUMKUR": "TUMAKURU", "BIJAPUR": "VIJAYAPURA", "MUMBAISUBURBAN": "MUMBAISUBURBAN", "AHMEDNAGAR": "AHILYANAGAR"}
+# DGCIS (state, district) spellings that differ from the map's names, each checked against the map's own list.
+# Scoped by state: AURANGABAD is Chhatrapati Sambhajinagar only in Maharashtra (Bihar has its own Aurangabad).
+STATE_ALIAS = {"DADRA,NH,DAMAN,DIU": "Dadra & Nagar Haveli & Daman & Diu"}
+ALIAS = {
+    ("ANDHRA PRADESH", "ANANTAPUR"): "Ananthapuramu", ("ANDHRA PRADESH", "SPSR NELLORE"): "Sri Potti Sriramulu Nellore",
+    ("ANDHRA PRADESH", "VISAKHAPATANAM"): "Visakhapatnam", ("ANDHRA PRADESH", "Y.S.R."): "Ysr Kadapa",
+    ("ASSAM", "KAMRUP"): "Kamrup Rural", ("BIHAR", "PASHCHIM CHAMPARAN"): "Pashchimi Champaran",
+    ("CHHATTISGARH", "DANTEWADA"): "Dakshin Bastar Dantewara", ("DELHI", "SHAHDARA"): "Shahadara", ("GUJARAT", "DOHAD"): "Dahod",
+    ("JHARKHAND", "EAST SINGHBUM"): "East Singhbhum", ("JHARKHAND", "SAHEBGANJ"): "Sahibganj",
+    ("MAHARASHTRA", "AURANGABAD"): "Chhatrapati Sambhajinagar", ("MAHARASHTRA", "RAIGAD"): "Raigarh",
+    ("ODISHA", "BALESHWAR"): "Balasore", ("ODISHA", "JAGATSINGHAPUR"): "Jagatsinghpur", ("ODISHA", "NUAPADA"): "Nuaparha",
+    ("ODISHA", "RAYAGADA"): "Rayagarha", ("PUDUCHERRY", "PONDICHERRY"): "Puducherry", ("PUNJAB", "FEROZEPUR"): "Firozpur",
+    ("PUNJAB", "S.A.S NAGAR"): "Sas Nagar (Sahibzada Ajit Singh Nagar)", ("RAJASTHAN", "CHITTORGARH"): "Chittaurgarh",
+    ("RAJASTHAN", "DHOLPUR"): "Dhaulpur", ("RAJASTHAN", "JHUNJHUNU"): "Jhunjhunun",
+    ("TAMIL NADU", "TUTICORIN"): "Thoothukudi", ("TAMIL NADU", "VILLUPURAM"): "Viluppuram",
+    ("TELANGANA", "JAYASHANKAR BHUPALAPALLY"): "Jayashankar Bhupalpalli", ("UTTAR PRADESH", "MAHARAJGANJ"): "Mahrajganj",
+    ("UTTARAKHAND", "UDAM SINGH NAGAR"): "Udham Singh Nagar",
+    ("WEST BENGAL", "24 PARAGANAS NORTH"): "North Twenty-Four Parganas", ("WEST BENGAL", "24 PARAGANAS SOUTH"): "South 24Parganas",
+    ("WEST BENGAL", "COOCHBEHAR"): "Koch Bihar", ("WEST BENGAL", "DARJEELING"): "Darjiling",
+    ("WEST BENGAL", "DINAJPUR DAKSHIN"): "Dakshin Dinajpur", ("WEST BENGAL", "DINAJPUR UTTAR"): "Uttar Dinajpur",
+    ("WEST BENGAL", "HOOGHLY"): "Hugli", ("WEST BENGAL", "HOWRAH"): "Haora", ("WEST BENGAL", "MEDINIPUR EAST"): "Purba Medinipur",
+    ("WEST BENGAL", "MEDINIPUR WEST"): "Paschim Medinipur", ("WEST BENGAL", "PASCHIM BARDHAMAN"): "Paschim Barddhaman",
+    ("WEST BENGAL", "PURBA BARDHAMAN"): "Purba Barddhaman",
+}
+
+
+# on-screen names where the map's spelling is wrong or too long (the map calls Maharashtra's Raigad "Raigarh")
+DISPLAY = {("Maharashtra", "Raigarh"): "Raigad", ("Andhra Pradesh", "Sri Potti Sriramulu Nellore"): "SPSR Nellore",
+           ("Andhra Pradesh", "Ysr Kadapa"): "YSR Kadapa", ("Andhra Pradesh", "Ntr"): "NTR",
+           ("Punjab", "Sas Nagar (Sahibzada Ajit Singh Nagar)"): "SAS Nagar (Mohali)",
+           ("West Bengal", "South 24Parganas"): "South 24 Parganas", ("West Bengal", "North Twenty-Four Parganas"): "North 24 Parganas"}
+COMPASS = {"North", "South", "East", "West", "Central", "North East", "North West", "South East", "South West"}
 
 
 def norm(name):
@@ -119,7 +143,8 @@ def norm(name):
 
 
 def districts(product):
-    """District rows for a product, matched to the map's districts by state and name. None if there is no district file."""
+    """District rows for a product, matched to the map's districts by state and name. None if there is no district file.
+    Rows DGCIS marks UNSPECIFIED stay off the map; names that match nothing are printed and left off, never guessed."""
     f = CACHE / "district_exports.csv"
     if not f.exists():
         return None
@@ -128,14 +153,25 @@ def districts(product):
         return None
     geo = json.loads((ROOT / "hyperframes" / "shared" / "geo" / "india_districts.js").read_text()[len("window.INDIA = "):-2])
     index = {(norm(d["s"]), norm(d["n"])): i for i, d in enumerate(geo["districts"]) if d["n"]}
-    out, missing = [], []
+    out, missing, unspecified = [], [], 0.0
     for r in rows:
-        k = (norm(r["state"]), ALIAS.get(norm(r["district"]), norm(r["district"])))
-        i = index.get(k)
-        (missing if i is None else out).append({"i": i, "s": r["state"].title(), "n": r["district"].title(), "v": float(r["value_crore"])})
+        st, di = r["state"].strip().upper(), r["district"].strip().upper()
+        if di == "UNSPECIFIED":
+            unspecified += float(r["value_crore"])
+            continue
+        i = index.get((norm(STATE_ALIAS.get(st, st)), norm(ALIAS.get((st, di), di))))
+        if i is None:
+            missing.append({"i": None, "s": st.title(), "n": di.title(), "v": float(r["value_crore"])})
+            continue
+        g = geo["districts"][i]
+        label = DISPLAY.get((g["s"], g["n"]), g["n"])
+        if g["s"] == "Delhi" and g["n"] in COMPASS:
+            label = f"{g['n']} Delhi"
+        out.append({"i": i, "s": g["s"], "n": label, "v": float(r["value_crore"])})
     if missing:
         print(f"  {product}: {len(missing)} district names not on the map:", ", ".join(f"{m['n']} ({m['s']})" for m in missing[:12]))
-    return {"rows": sorted(out, key=lambda d: -d["v"]), "unmatched": missing}
+    return {"rows": sorted(out, key=lambda d: -d["v"]), "unmatched": missing, "unspecified": round(unspecified, 2),
+            "total": round(sum(float(r["value_crore"]) for r in rows), 2)}
 
 
 def product_story(ex, v):
@@ -166,8 +202,7 @@ def product_story(ex, v):
     }
     if dist:
         d0 = dist["rows"][0]
-        mapped = sum(d["v"] for d in dist["rows"])
-        lines["district"] = f"{d0['n']} district alone accounted for {d0['v'] / mapped * 100:.0f}% of the exports with a district on record."
+        lines["district"] = f"{d0['n']} district alone accounted for {d0['v'] / dist['total'] * 100:.0f}% of it."
     return {"mode": "product", "fy": [{"fy": f"FY{str(y - 1)[2:]}-{str(y)[2:]}", "cr": round(by[y])} for y in FYS],
             "cur": round(cur), "prev": round(prev), "growth": round(g, 1), "india": round(india), "share": round(cur / india * 100, 2),
             "tonnes": round(tonnes) if tonnes else None, "ports": [{**p, "pct": round(p["pct"], 1)} for p in ports], "dest": dest,
@@ -202,6 +237,10 @@ def plan(story):
     return out, round(t, 2)
 
 
+def story_has_districts(v):
+    return v.get("mode") != "ranking" and districts(v["product"]) is not None
+
+
 def main():
     want = sys.argv[1:] or list(VIDEOS)
     ex = load()
@@ -209,7 +248,9 @@ def main():
         v = VIDEOS[vid]
         story = {**{k: v[k] for k in ("channel", "theme", "title", "name")},
                  **(ranking_story(ex, v) if v.get("mode") == "ranking" else product_story(ex, v)),
-                 "source": "Data: DGCIS Foreign Trade Data Dissemination Portal (via Vonter/india-export-import, ODbL) · FY = April to March"}
+                 "source": "Data: DGCIS Foreign Trade Data Dissemination Portal (via Vonter/india-export-import, ODbL)"
+                           + (" · districts: DGCIS Export by District of Origin, as declared by exporters" if story_has_districts(v) else "")
+                           + " · FY = April to March"}
         story["scenes"], dur = plan(story)
         d = VID / vid
         d.mkdir(parents=True, exist_ok=True)

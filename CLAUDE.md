@@ -17,3 +17,6 @@
   AK, 18 Nov 2026). Use it for timing, easing, choreography and the 12 principles. Ignore its "Creator MCP" handoff: our
   MP4s are rendered by HyperFrames or Remotion. Optional libraries (Tweakpane, three.quarks, lottie-web) are in
   `hyperframes/shared/vendor/`; the Manim trial is `scripts/manim/` (`docs/TOOLS_RADAR.md`).
+- Machines (AK, 18 Nov 2026): all video production (renders, voice, installs, media files, past and future) lives on
+  the **Mac Mini** only, not on the MacBook Air and not in cloud sessions. Always name the machine ("Mac Mini" or
+  "MacBook Air"); never write just "Mac". The Mac Mini runs on a different Claude account from the cloud sessions.

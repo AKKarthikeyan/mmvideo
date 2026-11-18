@@ -1,5 +1,5 @@
 #!/bin/bash
-# One-time Manim setup on the Mac Mini (Apple silicon or Intel). Needs Homebrew (https://brew.sh).
+# One-time Manim setup on the Mac Mini (the production machine; Apple silicon or Intel). Needs Homebrew (https://brew.sh).
 # Manim 0.22 needs Python 3.11+; macOS's own python3 is 3.9, so this uses Homebrew's Python 3.12.
 set -e
 brew install python@3.12 py3cairo ffmpeg pango pkg-config

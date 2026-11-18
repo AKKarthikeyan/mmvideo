@@ -1,0 +1,178 @@
+// The Inventor's Desk No. 004 "The Clock Inside an Atom" (Now episode, Nolan method, 23 Oct 2026): three clocks (sea 1707,
+// pocket today, lab 2026) are set up, then paid off fast, converging on one rule; the head/feet clocks open and close it
+// (hairpin loop). A tick that speeds up with each era is the audible clock. Facts and sources:
+// docs/inventors_desk/scripts/N2_nuclearclock.md. Until the narration is voiced, timing.json is an estimate and the Short is silent.
+import React from "react";
+import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame} from "remotion";
+import {Ambient, Aside, C, Cam, FPS, H, HEAD, Head, MONO, Mono, Paper, Safe, Source, Spec, Tag, TopBar, W, Zoom, ease, lin, makeCues, useGKFonts, Timing} from "../kit";
+import {Stamp} from "../labgold/art";
+import {AtomDive, HeadFeet, LaserCrystal, MmLayers, PhoneSats, SeaWatch, StormSea, ThreeClocks, TwoLabs} from "./art";
+import S from "./script.json";
+import T from "./timing.json";
+
+const cue = makeCues(T as unknown as Timing);
+const {at, next} = cue;
+const VOICED = !(T as {estimate?: boolean}).estimate;
+export const NUCLEARCLOCK_FRAMES = cue.total + 45;
+
+// the audible clock: ticks speed up era by era (1/s at sea, 2/s Harrison, 4/s caesium, 8/s thorium), and frame the hairpin
+const ticks = (a: number, b: number, perSec: number) => {
+  const out: number[] = []; for (let f = a; f < b; f += Math.round(FPS / perSec)) out.push(f); return out;
+};
+const TICKS: [number, number][] = [
+  ...ticks(0, at("b02"), 1).map((f) => [f, 0.22] as [number, number]),
+  ...ticks(at("b04"), next("b05"), 1).map((f) => [f, 0.2] as [number, number]),
+  ...ticks(at("b10"), next("b10"), 2).map((f) => [f, 0.18] as [number, number]),
+  ...ticks(at("b11"), next("b11"), 4).map((f) => [f, 0.15] as [number, number]),
+  ...ticks(at("b13"), next("b13"), 8).map((f) => [f, 0.12] as [number, number]),
+  ...ticks(at("b16"), NUCLEARCLOCK_FRAMES, 1).map((f) => [f, 0.22] as [number, number]),
+];
+const SFX: [number, string, number][] = [
+  [at("b05", "four British warships"), "sfx_whoosh_deep_kinoton.wav", 0.3],
+  [at("b09", "A clock is only"), "sfx_underline_stroke_zembacraftworks.wav", 0.35],
+  [at("b10", "five seconds"), "sfx_pop_conarb13.wav", 0.3],
+  [at("b13", "to the nucleus"), "sfx_whoosh_cartoony_branrainey.wav", 0.3],
+  [at("b14", "both published"), "sfx_thump_stamp_mpuffenbarger.wav", 0.5],
+  [at("b16", "So yes"), "sfx_coin_ding_greenvwbeetle.wav", 0.3],
+];
+
+/** big rolling tick-rate counter (digits settle from left to right) */
+const Rate: React.FC<{value: string; label: string; f0: number; y: number}> = ({value, label, f0, y}) => {
+  const fr = useCurrentFrame(); const settle = ease(fr, f0, f0 + 24);
+  const shown = value.split("").map((ch, i) => (/\d/.test(ch) && i / value.length > settle ? String((Math.floor(fr * 1.7) + i * 3) % 10) : ch)).join("");
+  return (
+    <div style={{position: "absolute", left: 0, width: W, top: y, textAlign: "center", opacity: lin(fr, f0 - 2, f0 + 6)}}>
+      <div style={{fontFamily: HEAD, fontSize: value.length > 14 ? 62 : 84, color: C.accent, letterSpacing: -1}}>{shown}</div>
+      <div style={{fontFamily: MONO, fontSize: 26, letterSpacing: 3, color: C.ink2, marginTop: 8, textTransform: "uppercase"}}>{label}</div>
+    </div>
+  );
+};
+
+export const NuclearClockShort: React.FC = () => {
+  useGKFonts();
+  const fr = useCurrentFrame(); const t = fr / FPS;
+  const e = (k: string, x: number | string = 0, d = 14) => ease(fr, at(k, x), at(k, x) + d);
+  const src = fr < at("b02") ? "General relativity · JILA, Nature 602, 420 (2022)"
+    : fr < at("b03") ? "Nature, 7 Oct 2026 (Schumm et al.; Ding et al.)"
+    : fr < at("b04") ? "" : fr < at("b06") ? "Scilly 1707 (accounts vary: 1,400–2,000 lost)"
+    : fr < at("b08") ? "Speed of light ≈ 30 cm per nanosecond · GPS"
+    : fr < at("b09") ? "Nature, 7 Oct 2026" : fr < at("b10") ? ""
+    : fr < at("b11") ? "Harrison H4, 1761 trial, Portsmouth → Jamaica"
+    : fr < at("b12") ? "SI second (1967) · Essen & Parry, NPL, 1955"
+    : fr < at("b13") ? "" : fr < at("b14") ? "148 nm → ≈ 2.02 × 10¹⁵ Hz · JILA, Nature 633 (2024)"
+    : fr < at("b15") ? "Nature press release, 8 Oct 2026"
+    : fr < at("b16") ? "Bothwell et al., Nature 602, 420 (2022)" : "g·h/c² for 1.7 m over 80 years ≈ 470 ns";
+
+  return (
+    <AbsoluteFill style={{width: W, height: H, overflow: "hidden"}}>
+      <Paper/>
+      <Ambient tint={C.accent}/>
+      <Safe>
+        {/* b01 the pledge: head ages faster than feet (on screen from frame 0) */}
+        <Cam a={0} b={at("b02")} push={0.05}>
+          <Head text={"Your head ages\n{faster} than\nyour feet"} f0={-20} y={270} size={112}/>
+          <Zoom s={0.95} cx={540} cy={1180} dy={-20}><HeadFeet p={ease(fr, 0, 14)} t={t}/></Zoom>
+        </Cam>
+
+        {/* b02 the news */}
+        <Cam a={at("b02")} b={next("b02")} from="up">
+          <Head text={"The first clocks\nthat tick with an\natom's {centre}"} f0={at("b02") - 2} y={270} size={90}/>
+          <Mono text="October 2026 · Vienna + Beijing" f0={at("b02") + 6} y={600} color={C.ink2}/>
+          <Zoom s={1.0} cx={540} cy={1130} dy={0}><TwoLabs p={e("b02", 0, 14)} t={t}/></Zoom>
+        </Cam>
+
+        {/* b03 follow three clocks */}
+        <Cam a={at("b03")} b={next("b03")}>
+          <Head text={"Follow\n{three} clocks"} f0={at("b03") - 2} y={300} size={120}/>
+          <ThreeClocks p={e("b03", 0, 30)} t={t}/>
+        </Cam>
+
+        {/* b04-b05 clock one: the sea, 1707 */}
+        <Cam a={at("b04")} b={next("b05")} from="left" push={0.04}>
+          <Mono text="Clock one · the sea" f0={at("b04")} y={270} color={C.accent} size={32}/>
+          <Spec big="1707" small="East or west? You need the exact time" f0={at("b04") + 4} y={320} size={190}/>
+          <Zoom s={1.0} cx={540} cy={1200} dy={-30}><StormSea p={e("b04", 0, 14)} t={t} wreck={e("b05", "four British warships", 40)}/></Zoom>
+          <Tag text="1,400+ sailors drowned" f0={at("b05", "fourteen hundred")} x={250} y={620} size={34} accent/>
+        </Cam>
+
+        {/* b06-b07 clock two: your pocket */}
+        <Cam a={at("b06")} b={next("b07")} from="up" push={0.04}>
+          <Mono text="Clock two · your pocket" f0={at("b06")} y={270} color={C.accent} size={32}/>
+          <Head text={"Satellites carry\n{atomic} clocks"} f0={at("b06") + 4} y={330} size={100}/>
+          <Zoom s={1.0} cx={540} cy={1150} dy={-30}><PhoneSats p={e("b06", 0, 14)} t={t} ruler={e("b07", "Light moves", 30)}/></Zoom>
+        </Cam>
+
+        {/* b08 clock three: the lab */}
+        <Cam a={at("b08")} b={next("b08")} from="left">
+          <Mono text="Clock three · the lab" f0={at("b08")} y={270} color={C.accent} size={32}/>
+          <Spec big="2026" small="A laser on a thorium crystal" f0={at("b08") + 4} y={320} size={190}/>
+          <Zoom s={1.0} cx={540} cy={1150} dy={-20}><LaserCrystal p={e("b08", 0, 12)} t={t} on={e("b08", "A laser", 20)}/></Zoom>
+        </Cam>
+
+        {/* b09 the rule */}
+        <Cam a={at("b09")} b={next("b09")} from="up">
+          <Aside text="the rule behind all three:" f0={at("b09") - 2} y={260} size={72}/>
+          <Head text={"A clock is only\nas good as what\n{ticks} inside it"} f0={at("b09", "A clock is only")} y={360} size={96}/>
+          <ThreeClocks p={1} t={t} y={1180} s={0.8}/>
+        </Cam>
+
+        {/* b10 pays clock one: Harrison */}
+        <Cam a={at("b10")} b={next("b10")} from="left">
+          <Spec big="1761" small="John Harrison's sea clock" f0={at("b10") - 2} y={280} size={190}/>
+          <Zoom s={0.9} cx={540} cy={1150} dy={-40}><SeaWatch p={e("b10", 0, 12)} t={t}/></Zoom>
+          <Tag text="−5 seconds in 81 days" f0={at("b10", "five seconds")} x={250} y={1430} size={34} accent/>
+        </Cam>
+
+        {/* b11 pays clock two: caesium */}
+        <Cam a={at("b11")} b={next("b11")} from="up">
+          <Head text={"Atomic clocks\ncount {caesium}"} f0={at("b11") - 2} y={280} size={104}/>
+          <Zoom s={0.8} cx={540} cy={1150} dy={20}><AtomDive p={e("b11", 0, 12)} t={t} jostle={0} zoom={0}/></Zoom>
+          <Rate value="9,192,631,770" label="ticks per second" f0={at("b11", "Nine billion")} y={1360}/>
+        </Cam>
+
+        {/* b12-b13 pays clock three: electrons get jostled, so listen to the nucleus */}
+        <Cam a={at("b12")} b={next("b13")} from="left" push={0.03}>
+          <Head text={"Electrons get\n{pushed} around"} f0={at("b12") - 2} y={280} size={110} o={1 - e("b13", 0, 8)}/>
+          <Head text={"Listen deeper:\nthe {nucleus}"} f0={at("b13") - 2} y={280} size={110}/>
+          <Zoom s={0.9} cx={540} cy={1150} dy={0}><AtomDive p={1} t={t} jostle={e("b12", "pushed around", 10)} zoom={e("b13", "to the nucleus", 30)}/></Zoom>
+          <Rate value="~2,000,000,000,000,000" label="ticks per second" f0={at("b13", "two thousand trillion")} y={1400}/>
+        </Cam>
+
+        {/* b14 where it stands: PUBLISHED, not yet better, could get 10,000x steadier */}
+        <Cam a={at("b14")} b={next("b14")} from="up">
+          <Head text={"Two teams.\nOne {catch}."} f0={at("b14") - 2} y={280} size={130}/>
+          <Stamp text="PUBLISHED" p={ease(fr, at("b14", "both published"), at("b14", "both published") + 8)} x={150} y={640}/>
+          <Mono text="Not yet better than the best atomic clocks" f0={at("b14", "not yet better")} y={980} color={C.ink} size={28}/>
+          <Spec big="~10,000×" small="steadier, Vienna's team says, with more work" f0={at("b14", "ten thousand")} y={1080} size={150} align="center" color={C.accent}/>
+        </Cam>
+
+        {/* b15 the prestige: clocks that feel gravity, 1 mm */}
+        <Cam a={at("b15")} b={next("b15")} from="left">
+          <Head text={"Clocks that\nfeel {gravity}"} f0={at("b15") - 2} y={280} size={130}/>
+          <Mono text="2022: time ran faster 1 mm higher" f0={at("b15", "one millimetre")} y={590} color={C.ink2}/>
+          <Zoom s={1.0} cx={540} cy={1150} dy={0}><MmLayers p={e("b15", 0, 14)} t={t}/></Zoom>
+        </Cam>
+
+        {/* b16 the hairpin: back to the head and feet; loops into b01 */}
+        <Cam a={at("b16")} b={NUCLEARCLOCK_FRAMES + 20} push={0.03} from="up">
+          <Head text={"Your head is\n{older} than\nyour feet"} f0={at("b16") - 2} y={270} size={118}/>
+          <Zoom s={0.95} cx={540} cy={1180} dy={-20}><HeadFeet p={1} t={t}/></Zoom>
+          <Mono text="By ~0.0000005 s over a lifetime" f0={at("b16", "half a millionth")} y={640} color={C.accent} size={30}/>
+          <Mono text="What should we time next?" f0={at("b16", "half a millionth") + 24} y={1560} align="center" size={28} color={C.ink}/>
+        </Cam>
+
+        <TopBar ep={S.ep} product={S.product} total={NUCLEARCLOCK_FRAMES} tag="No. "/>
+        <Source text={src} o={src && fr < at("b16") + 20 ? 1 : 0}/>
+      </Safe>
+
+      {VOICED && <Audio src={staticFile("gadget/nuclearclock/vo.wav")}/>}
+      <Audio src={staticFile("voxplus/audio/music_06_curious_ambience_reg1n0ld.wav")} volume={(f) => 0.08 * lin(f, 0, 15) * (1 - lin(f, NUCLEARCLOCK_FRAMES - 40, NUCLEARCLOCK_FRAMES - 2))}/>
+      {TICKS.map(([f, v], i) => (
+        <Sequence key={`t${i}`} from={Math.max(0, f)} durationInFrames={6}><Audio src={staticFile("gadget/nuclearclock/tick.wav")} volume={v}/></Sequence>
+      ))}
+      {SFX.map(([f, n, v], i) => (
+        <Sequence key={i} from={Math.max(0, f)} durationInFrames={FPS * 3}><Audio src={staticFile(`voxplus/audio/${n}`)} volume={v}/></Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};

@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Sample 16 · Lottie inside HyperFrames: our own "verified" tick (tools/lottie_tick.py), played by lottie-web and seeked
+     frame by frame from the HyperFrames clock (goToAndStop), so out-of-order rendering stays exact. India Ledger look. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Lottie sample</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/lottie.min.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      .ledger { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --kick: #0e7c66; }
+      .ledger #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      .ledger #vig { --vig: 0.07; }
+      #rules { position: absolute; inset: 0; background:
+        linear-gradient(90deg, transparent 148px, rgba(200, 67, 31, 0.55) 148px, rgba(200, 67, 31, 0.55) 150px, transparent 150px),
+        repeating-linear-gradient(180deg, transparent 0 53px, rgba(14, 124, 102, 0.16) 53px 54px); }
+      .kicker { left: 200px; color: var(--kick); }
+      .head { left: 200px; }
+      #tick { position: absolute; left: 260px; top: 330px; width: 420px; height: 420px; }
+      #row { position: absolute; left: 760px; top: 470px; width: 1060px; background: #fbf8f0; border-top: 3px solid var(--fg);
+        padding: 26px 30px; font: 400 34px/1.35 Plex, monospace; color: var(--fg); }
+      #row b { font: 700 46px/1 Oswald, sans-serif; color: var(--kick); letter-spacing: 0.04em; }
+      .src { right: 90px; bottom: 40px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+      <div id="rules" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · SAMPLE 16</div>
+      <div class="head">A LOTTIE ANIMATION, SEEKED FRAME BY FRAME</div>
+      <div id="tick"></div>
+      <div id="row"><b>VERIFIED</b><br />13 NOV 2026 · RBI redemption price ₹14,024/g · checked against the RBI release</div>
+      <div class="src">Animation: our own (tools/lottie_tick.py) · played with lottie-web 5.13.0 (MIT)</div>
+    </div>
+    <script>
+      const H = HF.setup(6), F = HF.fade;
+      window.__timelines.main = H.tl;
+      const anim = lottie.loadAnimation({ container: document.getElementById("tick"), renderer: "svg", loop: false,
+        autoplay: false, path: "assets/data/tick.json" });
+      const row = document.getElementById("row");
+      H.render = (t) => {
+        // the tick runs from 0.4 s at its own 30 fps, then holds its last frame
+        const f = Math.min(anim.totalFrames - 1, Math.max(0, (t - 0.4) * anim.frameRate));
+        anim.goToAndStop(f, true);
+        row.style.opacity = F(t, 1.4, 99, 0.4);
+        row.style.transform = `translateY(${(1 - F(t, 1.4, 99, 0.4)) * 24}px)`;
+        document.querySelector(".head").style.opacity = F(t, 0.1, 99, 0.4);
+      };
+      anim.addEventListener("DOMLoaded", () => H.ready());
+    </script>
+  </body>
+</html>

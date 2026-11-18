@@ -34,8 +34,18 @@ import amckeepss from "../../public/vx/amckeepss/data.json";
 import cablerest from "../../public/vx/cablerest/data.json";
 import lombardfloat from "../../public/vx/lombardfloat/data.json";
 import e2egpu from "../../public/vx/e2egpu/data.json";
+import a01moat from "../../public/vx/a01moat/data.json";
+import d01paint from "../../public/vx/d01paint/data.json";
+import c01visa from "../../public/vx/c01visa/data.json";
+import itcq2 from "../../public/vx/itcq2/data.json";
+import bseq2 from "../../public/vx/bseq2/data.json";
+import nvidiajensen from "../../public/vx/nvidiajensen/data.json";
+import nvidiasa from "../../public/vx/nvidiasa/data.json";
+import nvidiasb from "../../public/vx/nvidiasb/data.json";
+import nvidiasc from "../../public/vx/nvidiasc/data.json";
+import nvidiasd from "../../public/vx/nvidiasd/data.json";
 
-const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu] as unknown as VData[];
+const ALL = [zee, mdr, irdai, pb, anupam, welspun, adani, kpigreen, autoq2, autoq2s, shyam, shyams, ceos, banksq2, jlrs, fcnr, fcnrs, angelone, angelones, jewels, tcsq2, tcsq2s, persistent, persistents, dmartq2, dmartq2s, dmartstory, amckeeps, amckeepss, cablerest, lombardfloat, e2egpu, a01moat, d01paint, c01visa, itcq2, bseq2, nvidiajensen, nvidiasa, nvidiasb, nvidiasc, nvidiasd] as unknown as VData[];
 const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: string}> = {
   zee: {lines: ["ZEE LEARN", "THE GUARANTEE COMES DUE"], stamp: "₹818 CR DEMANDED", clip: "zl_petition"},
   mdr: {lines: ["UPI GETS A PRICE", "0.4% ABOVE ₹2,000"], stamp: "MARGIN ≠ MOAT", clip: "npci_example"},
@@ -45,6 +55,9 @@ const THUMB: Record<string, {lines: [string, string]; stamp: string; clip?: stri
   adani: {lines: ["ADANI SEBI CASE", "SETTLED FOR ₹37 LAKH"], stamp: "CLEAN CHIT?", clip: "ada_noadmit"},
   kpigreen: {lines: ["KPI GREEN BUYS WIND", "₹2,410 CR IN CASH"], stamp: "WHO PAYS?", clip: "kpi_ev"},
   welspun: {lines: ["WELSPUN'S ORDER BOOK", "MOVED TO ARKANSAS"], stamp: "₹25,350 CR → ₹45,000 CR", clip: "wel_protect"},
+  itcq2: {lines: ["REPORTED REVENUE +44%", "PROFIT DOWN 19%"], stamp: "A TAX INSIDE THE NUMBER", clip: "itc_note7"},
+  nvidiajensen: {lines: ["WILL NVIDIA SURVIVE", "WITHOUT JENSEN?"], stamp: "EXPLAINED LIKE YOU ARE 5", clip: "nv_succession"},
+  bseq2: {lines: ["PROFIT +45%", "OPTIONS −24%"], stamp: "IS THE MOAT CRACKING?", clip: "bse_profit"},
 };
 
 // YouTube Guide thumbnails (3 variants per long video for Test & Compare)

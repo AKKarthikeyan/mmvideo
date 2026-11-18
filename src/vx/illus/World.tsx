@@ -6,7 +6,7 @@
 import React from "react";
 import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
 import {SP, P, IStage, IHeading, INote, IStamps, Pop, Icon, StoreIcon, TrolleyIcon, PersonIcon, TFn, fit, clamp01} from "./kit";
-import {COND} from "../../voxkit";
+import {COND, spr} from "../../voxkit";
 
 // ---------- shared helpers ----------
 const WOOD = "#C89B5A", WOOD_LT = "#DDB877";   // the kit's own box colours
@@ -17,7 +17,7 @@ const sum = (a: number[]) => a.reduce((p, c) => p + c, 0);
 const prog = (f: number, start: number, dur: number, ease: (t: number) => number = Easing.out(Easing.cubic)) =>
   interpolate(f, [start, start + Math.max(1, dur)], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease});
 const pop = (f: number, fps: number, start: number, damping = 11, stiffness = 150) =>
-  f < start ? 0 : spring({frame: f - start, fps, config: {damping, stiffness, mass: 0.8}});
+  f < start ? 0 : spr({frame: f - start, fps, config: {damping, stiffness, mass: 0.8}});
 // Frame for an `at`. No `at`, or the number 0, means "on from the start": far enough back that every spring has settled.
 const ON = -1000;
 const when = (T: TFn, x: any) => (x == null || x === 0 ? ON : T(x));

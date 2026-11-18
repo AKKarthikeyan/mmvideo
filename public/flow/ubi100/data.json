@@ -1,0 +1,225 @@
+{
+ "id": "ubi100",
+ "title": "HOW UNION BANK EARNS ON ₹100 · Q1 FY27",
+ "source": "Sources: Union Bank Q1 FY27 investor presentation (15 Jul 2026) p4, p7, p12-15; SBI and ICICI Bank Q1 FY27 presentations.",
+ "nodes": [
+  {
+   "id": "saver",
+   "x": 260,
+   "y": 330,
+   "icon": "saver",
+   "title": "SAVER",
+   "num": "₹100",
+   "sub": "DEPOSITED",
+   "at": "f2|A saver deposits"
+  },
+  {
+   "id": "bank",
+   "x": 740,
+   "y": 330,
+   "icon": "bank",
+   "title": "UNION BANK",
+   "at": "f2|The bank pays"
+  },
+  {
+   "id": "loans",
+   "x": 1210,
+   "y": 330,
+   "icon": "factory",
+   "title": "BORROWERS",
+   "num": "₹83",
+   "sub": "LENT PER ₹100 · EARNS 7.90%",
+   "at": "f3|about eighty three"
+  },
+  {
+   "id": "nim",
+   "x": 1640,
+   "y": 330,
+   "icon": "percent",
+   "title": "NET INTEREST\nMARGIN",
+   "num": "2.80%",
+   "at": "f4|net interest margin"
+  },
+  {
+   "id": "costs",
+   "x": 1640,
+   "y": 690,
+   "icon": "gear",
+   "title": "RUNNING COSTS",
+   "num": "₹45",
+   "sub": "OF EVERY ₹100 EARNED",
+   "at": "f5|Running the bank"
+  },
+  {
+   "id": "bad",
+   "x": 1210,
+   "y": 690,
+   "icon": "warning",
+   "title": "BAD LOANS",
+   "num": "0.38%",
+   "sub": "CREDIT COST",
+   "at": "f5|Bad loans"
+  },
+  {
+   "id": "roa",
+   "x": 740,
+   "y": 690,
+   "icon": "trophy",
+   "title": "RETURN ON\nASSETS",
+   "num": "1.36%",
+   "at": "f6|return on assets"
+  },
+  {
+   "id": "peers",
+   "x": 270,
+   "y": 745,
+   "kind": "panel",
+   "icon": "bars",
+   "title": "COST OF DEPOSITS",
+   "at": "f7|Union pays more",
+   "rows": [
+    {
+     "name": "UNION",
+     "v": 5.05,
+     "label": "5.05%",
+     "hi": true
+    },
+    {
+     "name": "SBI",
+     "v": 4.85,
+     "label": "4.85%"
+    },
+    {
+     "name": "ICICI",
+     "v": 4.41,
+     "label": "4.41%"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "a": "saver",
+   "b": "bank",
+   "label": "PAYS 5.05%",
+   "id": "e1"
+  },
+  {
+   "a": "bank",
+   "b": "loans",
+   "label": "EARNS 7.90%",
+   "id": "e2"
+  },
+  {
+   "a": "loans",
+   "b": "nim",
+   "id": "e3"
+  },
+  {
+   "a": "nim",
+   "b": "costs",
+   "id": "e4"
+  },
+  {
+   "a": "costs",
+   "b": "bad",
+   "id": "e5"
+  },
+  {
+   "a": "bad",
+   "b": "roa",
+   "id": "e6"
+  }
+ ],
+ "highlight": {
+  "at": "f7|The weak link",
+  "edges": [
+   "e1"
+  ],
+  "nodes": [
+   "saver",
+   "bank",
+   "peers"
+  ]
+ },
+ "beats": [
+  {
+   "key": "f1",
+   "say": "Follow one hundred rupees through Union Bank of India, and you'll see where it makes money, and where it's weakest.",
+   "cap": "Follow ₹100 through Union Bank of India, and you'll see where it makes money, and where it's weakest.",
+   "sec": 5.54,
+   "voiced": true,
+   "cues": [
+    "Follow ₹100 through Union Bank of India, and you'll see where it makes money,",
+    "and where it's weakest."
+   ]
+  },
+  {
+   "key": "f2",
+   "say": "A saver deposits a hundred rupees. The bank pays about five rupees a year for it. Its cost of deposits is five point zero five percent.",
+   "cap": "A saver deposits ₹100. The bank pays about ₹5 a year for it. Its cost of deposits is 5.05%.",
+   "sec": 8.04,
+   "voiced": true,
+   "cues": [
+    "A saver deposits ₹100.",
+    "The bank pays about ₹5 a year for it.",
+    "Its cost of deposits is 5.05%."
+   ]
+  },
+  {
+   "key": "f3",
+   "say": "For every hundred rupees of deposits, about eighty three go out as loans, earning seven point nine percent.",
+   "cap": "For every ₹100 of deposits, about ₹83 go out as loans, earning 7.90%.",
+   "sec": 6.14,
+   "voiced": true,
+   "cues": [
+    "For every ₹100 of deposits, about ₹83 go out as loans, earning 7.90%."
+   ]
+  },
+  {
+   "key": "f4",
+   "say": "What it earns minus what it pays is the net interest margin: two point eight percent.",
+   "cap": "What it earns minus what it pays is the net interest margin: 2.80%.",
+   "sec": 5.33,
+   "voiced": true,
+   "cues": [
+    "What it earns minus what it pays is the net interest margin:",
+    "2.80%."
+   ]
+  },
+  {
+   "key": "f5",
+   "say": "Running the bank takes forty five rupees of every hundred it earns. Bad loans cost another point three eight percent of loans.",
+   "cap": "Running the bank takes ₹45 of every ₹100 it earns. Bad loans cost another 0.38% of loans.",
+   "sec": 7.37,
+   "voiced": true,
+   "cues": [
+    "Running the bank takes ₹45 of every ₹100 it earns.",
+    "Bad loans cost another 0.38% of loans."
+   ]
+  },
+  {
+   "key": "f6",
+   "say": "What's left is a return on assets of one point three six percent.",
+   "cap": "What's left is a return on assets of 1.36%.",
+   "sec": 3.87,
+   "voiced": true,
+   "cues": [
+    "What's left is a return on assets of 1.36%."
+   ]
+  },
+  {
+   "key": "f7",
+   "say": "The weak link is the first step. Union pays more for its deposits than SBI, at four point eight five percent, and far more than ICICI Bank, at four point four one. Cheaper money is the moat Union is still building.",
+   "cap": "The weak link is the first step. Union pays more for its deposits than SBI, at 4.85%, and far more than ICICI Bank, at 4.41%. Cheaper money is the moat Union is still building.",
+   "sec": 14.37,
+   "voiced": true,
+   "cues": [
+    "The weak link is the first step.",
+    "Union pays more for its deposits than SBI, at 4.85%,",
+    "and far more than ICICI Bank, at 4.41%.",
+    "Cheaper money is the moat Union is still building."
+   ]
+  }
+ ]
+}

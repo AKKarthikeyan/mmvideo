@@ -13,26 +13,37 @@ and the track must be exactly as long as the English video.
 Translation file: scripts/translations/<id>.<lang>.json  (see docs/AUDIO_TRACKS.md).
 Needs MINIMAX_API_KEY in the environment. Output: out/audio/<id>/ (not in git).
 """
-import audioop, hashlib, json, os, subprocess, sys, time, wave
+import audioop, hashlib, json, os, re, subprocess, sys, time, wave
 from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 FPS = 30
 SR = 44100
-SPEED_MAX = 1.25      # above this a voice sounds rushed: shorten the translation instead
 SLOP = 0.15           # keep this much silence before the next beat starts
 
+# speed_max: above this a voice sounds rushed, so shorten the translation instead. fast: report marks faster beats.
+# pause: (after a sentence, after a comma) in seconds, sent to MiniMax as <#x#> so speed-up cannot swallow them.
+# AK 2 Oct: the Tamil track sounded rushed with no pauses, so Tamil is capped lower and gets explicit pauses.
 LANGS = {
-    "ta": {"name": "Tamil", "boost": "Tamil"},
-    "hi": {"name": "Hindi", "boost": "Hindi"},
+    "ta": {"name": "Tamil", "boost": "Tamil", "speed_max": 1.10, "fast": 1.06, "pause": (0.35, 0.15)},
+    "hi": {"name": "Hindi", "boost": "Hindi", "speed_max": 1.25, "fast": 1.15, "pause": None},
 }
-# Tamil has no native MiniMax voice: use the same English voices as the English videos (scripts/voices.py).
+EMOTIONS = {"happy", "sad", "angry", "fearful", "disgusted", "surprised", "calm"}
+# Default voices. A translation file can override with "voice" (e.g. a cloned native Tamil voice).
+# Tamil has no native MiniMax system voice: the default is the English voice used by the English videos (scripts/voices.py).
 # Hindi has native voices. All must be ear-tested by AK / a native speaker before publishing.
 VOICES = {
     ("ta", "male"): "English_Diligent_Man", ("ta", "female"): "English_captivating_female1",
     ("hi", "male"): "hindi_male_1_v2", ("hi", "female"): "hindi_female_1_v2",
 }
+
+
+# AK 5 Oct: native Indian voices from Sarvam (Bulbul v3). Opt in with `--provider sarvam` (or "provider": "sarvam" in the
+# translation file). Needs SARVAM_API_KEY. Speakers below are first guesses for the ear test; override with `--voice <speaker>`.
+PROVIDER = "minimax"
+SARVAM_CODE = {"ta": "ta-IN", "hi": "hi-IN", "te": "te-IN", "ml": "ml-IN"}
+SARVAM_VOICES = {("ta", "male"): "mani", ("ta", "female"): "kavitha", ("hi", "male"): "shubh", ("hi", "female"): "priya"}
 
 
 def ffmpeg(tool="ffmpeg"):
@@ -70,13 +81,26 @@ def tpath(vid, lang):
 
 
 # ---------- TTS ----------
-def tts(text, voice, lang, speed, path):
+def with_pauses(text, lang):
+    """Explicit pauses after sentences and commas. Only after a non-Latin letter, so "H. H. Brown" or "Mrs. B" keep flowing."""
+    p = LANGS[lang]["pause"]
+    if not p or PROVIDER != "minimax":      # the <#x#> markers are MiniMax syntax
+        return text
+    text = re.sub(r"(?<=[^\x00-\x7F])([.?!])\s+(?=\S)", lambda m: f"{m.group(1)}<#{p[0]}#>", text)
+    return re.sub(r",\s+(?=\S)", f",<#{p[1]}#>", text)
+
+
+def tts(text, voice, lang, speed, path, emotion=None):
     if path.exists():
         return json.load(open(str(path) + ".json"))["sec"]
+    if PROVIDER == "sarvam":
+        return tts_sarvam(text, voice, lang, speed, path)
     key = os.environ["MINIMAX_API_KEY"]
+    vs = {"voice_id": voice, "speed": speed, "vol": 1, "pitch": 0}
+    if emotion:
+        vs["emotion"] = emotion
     body = {"model": "speech-2.6-hd", "text": text.replace("MoatSCORE", "Moat Score"), "stream": False,
-            "language_boost": LANGS[lang]["boost"],
-            "voice_setting": {"voice_id": voice, "speed": speed, "vol": 1, "pitch": 0},
+            "language_boost": LANGS[lang]["boost"], "voice_setting": vs,
             "audio_setting": {"sample_rate": SR, "bitrate": 128000, "format": "mp3", "channel": 1}}
     for attempt in range(6):
         j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": f"Bearer {key}"},
@@ -87,6 +111,32 @@ def tts(text, voice, lang, speed, path):
             json.dump({"sec": sec}, open(str(path) + ".json", "w"))
             return sec
         print("  retry", path.name, j.get("base_resp"))
+        time.sleep(20 * (attempt + 1))        # wait on 429s; never switch provider
+    raise SystemExit("TTS failed: " + path.name)
+
+
+def tts_sarvam(text, speaker, lang, pace, path):
+    """Sarvam Bulbul v3: POST /text-to-speech, base64 audio in `audios[0]`. Max 2500 characters per request."""
+    import base64
+    key = os.environ["SARVAM_API_KEY"]
+    if len(text) > 2500:
+        raise SystemExit(f"{path.name}: {len(text)} characters, Sarvam allows 2500 per call; shorten the beat")
+    body = {"text": text.replace("MoatSCORE", "Moat Score"), "target_language_code": SARVAM_CODE[lang], "speaker": speaker,
+            "model": "bulbul:v3", "pace": pace, "speech_sample_rate": SR, "output_audio_codec": "mp3"}
+    for attempt in range(6):
+        r = requests.post("https://api.sarvam.ai/text-to-speech", headers={"api-subscription-key": key}, json=body, timeout=120)
+        if r.status_code == 422 and "target_language_code" in body:      # the docs name this field `language_code`
+            body["language_code"] = body.pop("target_language_code"); continue
+        if r.status_code == 200 and r.json().get("audios"):
+            path.write_bytes(base64.b64decode("".join(r.json()["audios"])))
+            pr = subprocess.run(ffmpeg("ffprobe") + ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+                                capture_output=True, text=True, cwd=ROOT)
+            sec = float(pr.stdout.strip().splitlines()[-1])
+            json.dump({"sec": sec}, open(str(path) + ".json", "w"))
+            return sec
+        print("  retry", path.name, r.status_code, r.text[:200])
+        if r.status_code in (401, 403):
+            raise SystemExit("Sarvam rejected the key (401/403): check SARVAM_API_KEY")
         time.sleep(20 * (attempt + 1))        # wait on 429s; never switch provider
     raise SystemExit("TTS failed: " + path.name)
 
@@ -119,7 +169,8 @@ def cmd_prep(vid, lang, short):
     print("template:", p, f"({len(tl)} beats). Fill beats.<key> with the spoken translation. Leave _english alone.")
 
 
-def cmd_build(vid, lang, short, gender, video):
+def cmd_build(vid, lang, short, gender, video, provider=None, voice_opt=None):
+    global PROVIDER
     D = load(vid); tl, total = timeline(D, short)
     p = tpath(vid, lang)
     if not p.exists():
@@ -128,25 +179,37 @@ def cmd_build(vid, lang, short, gender, video):
     miss = [b["key"] for b, _, _ in tl if not (tr.get(b["key"]) or "").strip()]
     if miss:
         raise SystemExit(f"{vid}.{lang}: no translation for {miss}")
-    voice = VOICES[(lang, gender)]
-    tag = f"{vid}_{lang}" + (f"_short{short + 1}" if short is not None else "")
-    out = ROOT / "out" / "audio" / vid; cache = out / "cache" / lang; cache.mkdir(parents=True, exist_ok=True)
+    PROVIDER = provider or T.get("provider") or "minimax"
+    if PROVIDER == "sarvam":
+        voice = voice_opt or T.get("voice_sarvam") or SARVAM_VOICES[(lang, gender)]
+    else:
+        voice = voice_opt or T.get("voice") or VOICES[(lang, gender)]
+    emo = T.get("emotion") or {}      # optional {beat_key: emotion}; "_default" applies to the rest; none = model's own choice
+    wrong = {k: e for k, e in emo.items() if e not in EMOTIONS}
+    if wrong:
+        raise SystemExit(f"{vid}.{lang}: unknown emotion {wrong}; use one of {sorted(EMOTIONS)}")
+    L = LANGS[lang]
+    sfx = "" if PROVIDER == "minimax" else f"_{PROVIDER}_{voice}"      # keep providers/voices apart for A/B listening
+    tag = f"{vid}_{lang}{sfx}" + (f"_short{short + 1}" if short is not None else "")
+    out = ROOT / "out" / "audio" / vid; cache = out / "cache" / (lang + sfx); cache.mkdir(parents=True, exist_ok=True)
     buf = bytearray(int(total / FPS * SR) * 2)
     report, bad = [], []
     for b, f, n in tl:
         text = tr[b["key"]].strip(); slot = n / FPS - SLOP
-        h = lambda sp: cache / (b["key"] + "_" + hashlib.md5(f"{text}|{voice}|{sp}".encode()).hexdigest()[:8] + ".mp3")
-        speed = 1.0; sec = tts(text, voice, lang, speed, h(speed))
+        spoken = with_pauses(text, lang); e = emo.get(b["key"], emo.get("_default"))
+        h = lambda sp: cache / (b["key"] + "_" + hashlib.md5(
+            (f"{spoken}|{voice}|{sp}" + (f"|{e}" if e else "")).encode()).hexdigest()[:8] + ".mp3")
+        speed = 1.0; sec = tts(spoken, voice, lang, speed, h(speed), e)
         for _ in range(3):      # speed does not scale linearly (pauses stay), so correct up to 3 times
-            if sec <= slot or speed >= SPEED_MAX:
+            if sec <= slot or speed >= L["speed_max"]:
                 break
-            speed = min(SPEED_MAX, round(speed * sec / slot * 1.03, 2))
-            sec = tts(text, voice, lang, speed, h(speed))
-        status = "TOO LONG" if sec > slot + 0.05 else ("ok, FAST (shorten if you can)" if speed > 1.15 else "ok")
+            speed = min(L["speed_max"], round(speed * sec / slot * 1.03, 2))
+            sec = tts(spoken, voice, lang, speed, h(speed), e)
+        status = "TOO LONG" if sec > slot + 0.05 else ("ok, FAST (shorten if you can)" if speed > L["fast"] else "ok")
         if status != "ok":
             bad.append(b["key"])
         report.append({"key": b["key"], "english_sec": b["sec"], "slot": round(slot, 2), "regional_sec": round(sec, 2),
-                       "speed": speed, "status": status, "text": text})
+                       "speed": speed, "status": status, "emotion": e, "text": text})
         pcm = to_pcm(h(speed)); off = int(f / FPS * SR) * 2
         seg = pcm[: max(0, len(buf) - off)]
         buf[off: off + len(seg)] = audioop.add(bytes(buf[off: off + len(seg)]), seg, 2)
@@ -183,7 +246,7 @@ def main():
     if a[0] == "prep":
         return cmd_prep(a[1], a[2], short)
     if a[0] == "build":
-        return cmd_build(a[1], a[2], short, opt("--gender", "male"), opt("--video"))
+        return cmd_build(a[1], a[2], short, opt("--gender", "male"), opt("--video"), opt("--provider"), opt("--voice"))
     raise SystemExit(__doc__)
 
 

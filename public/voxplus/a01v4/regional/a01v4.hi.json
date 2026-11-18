@@ -1,0 +1,301 @@
+{
+ "video": "a01v4",
+ "title": "What Is a Moat? The $26 Loom That Explains It",
+ "lang": "hi",
+ "status": "DRAFT",
+ "reviewed_by": null,
+ "provider": "sarvam",
+ "model": "bulbul:v4-flash",
+ "voice_sarvam": null,
+ "voice_sarvam_candidates": [
+  "anand_hi_documentary",
+  "mahesh_hi_documentary",
+  "ratan_hi_documentary"
+ ],
+ "previous": "MiniMax speech-2.6-hd hindi_male_1_v2 (AK 18 Oct: try Sarvam Bulbul v4)",
+ "pron": {
+  "Warren Buffett": "वॉरेन बफेट",
+  "Buffett": "बफेट",
+  "Berkshire": "बर्कशायर",
+  "See's": "सीज़",
+  "Buffalo": "बफ़ेलो",
+  "GEICO": "गाइको",
+  "Charlie Munger": "चार्ली मंगर",
+  "Blue Chip Stamps": "ब्लू चिप स्टैम्प्स",
+  "Coke": "कोक",
+  "Nestlé India": "नेस्ले इंडिया",
+  "Nestlé": "नेस्ले",
+  "Maggi": "मैगी",
+  "Nielsen": "नील्सन",
+  "IEX": "आई ई एक्स",
+  "CDSL": "सी डी एस एल",
+  "NSDL": "एन एस डी एल",
+  "SEBI": "सेबी",
+  "Roman Candles": "रोमन कैंडल्स",
+  "Mayo Clinic": "मेयो क्लिनिक",
+  "Asian Paints": "एशियन पेंट्स",
+  "Birla Opus": "बिड़ला ओपस",
+  "Grasim": "ग्रासिम"
+ },
+ "pron_note": "used only when voicing: each Latin name is respelled so the voice says it as an Indian speaker would; the beat text keeps the Latin name (it matches the screen)",
+ "notes": {
+  "status": "DRAFT, machine-written, not reviewed by a native speaker. reviewed_by stays null until AK names the reviewer.",
+  "source": "contentengine/moat60/production/A01/v4/script.md v4.1 (fact-checked 18 Oct 2026); English beat text in _english.<key>.say. Translate only what the English narration says.",
+  "quoted_beats": {
+   "w04": "Buffett quote 'I'll have a Coke' (2004 letter): said as 'Buffett wrote that millions of people just say: ...' plus a faithful translation. 'helped build a moat' is a paraphrase marked 'he wrote'.",
+   "s02": "Buffett quote 'The partnership's moat will go when the surgeon goes.' (2007 letter): English says 'In his words:'; here 'he wrote:' plus a faithful translation. Check that it says the moat GOES WHEN the surgeon goes (not 'may go', not 'also goes because')."
+  },
+  "attributed_paraphrase_beats": {
+   "c03": "'It says' = the 1985 letter says (one See's store's goodwill > what ALL the mill's machinery sold for; the two Buffalo paper routes' goodwill ALSO more than that, not 'equal').",
+   "c04": "Goodwill gloss in our words: 'the extra value a business has because people know and trust it'. Keep it this simple; it is a gloss, not a definition.",
+   "m02": "'That letter says' they were still usable and had cost about 13 million dollars.",
+   "m04": "His letter for 1983: 'especially a good name with customers, built on countless pleasant experiences' (paraphrase).",
+   "m05": "He COMPARED the cost gap to a moat (paraphrase, not a quote).",
+   "n01": "'Buffett wrote that in his letter for 2007' (rivals keep attacking any castle that earns well).",
+   "n03": "'Buffett's picture' (the parade) then 'Our reading: that is life without a moat'.",
+   "w05": "'Nestlé India said ... It says it destroyed over 35,000 tonnes' (company's own words; nothing on food safety, ban or court).",
+   "w06": "'By our count' (about five months); 'Nestlé's report, citing Nielsen'; 'Its chairman credited trust' (attribution to the chairman, not our claim).",
+   "w08": "'its managers said' over 9,000 participants (July 2026).",
+   "w09": "'our article says' twice, then 'So far.'",
+   "w10": "Licence = 'the rule-maker's permission to operate' (our definition); 'Our article calls it borrowed protection'; 'Our article says every one sits with CDSL or NSDL'.",
+   "f01": "'Roman Candles' is Buffett's NAME for something, not a quote.",
+   "f03": "'His letter for 1996': the record of profits had PARTLY charmed him (keep 'partly').",
+   "f04": "'Our first sign ... Our second' (ours), then 'Buffett wrote that such a moat will eventually be no moat at all'.",
+   "s01": "'Buffett wrote' a business that needs a superstar cannot be called great; 'His example'.",
+   "l01": "'Buffett's letter for 2005': each of his businesses grows stronger or weaker daily.",
+   "l02": "'Our articles say' narrow but real moat in its network of shops; 'In 2024, it said' about 1.65 lakh shops (Asian Paints' own statement).",
+   "l03": "'In our July article, it says' (Birla Opus's own claims): ANNOUNCED an investment of 10,000 crore; 137 depots in 11 months.",
+   "l04": "'Grasim ... it says' (industry-wide, about 40 percent more paint in one year); 'Our articles say' it is real, but a rival can go round it; 'Nobody knows the ending yet' (keep it open-ended).",
+   "l05": "'Our article says' SEBI, the rule-maker, cut some fees at a CDSL unit.",
+   "l06": "DRAFT rules that WOULD pool bids (not final); 'On the fifth of October, our check found no final rules'.",
+   "l07": "'Buffett wrote' widening the moat beats quick profits, for his own businesses.",
+   "e01": "'Our reading: that is a moat.' (the See's-to-moat link is ours)."
+  },
+  "our_labels": "Our reading (n02, n03, n05, s02, e01), Our question (c04), We think (c05), In the letters we have (c05, m06), By our count (w06), Our article(s) says (w09, w10, l02, l03, l04, l05), Our first sign / Our second (f04), our check (l06), our three question check (x01), Imagine / Picture = made-up examples (w03, w07). Every one must stay audible as OURS.",
+  "numbers": {
+   "c01": "26 dollars; 1981; 5,000 dollars each",
+   "c02": "50 dollars; 26 dollars each",
+   "c03": "one See's store; two paper routes",
+   "m02": "about 13 million dollars",
+   "m03": "163,122 dollars (said the Indian way: one lakh sixty-three thousand one hundred twenty-two); less than nothing (zero)",
+   "m04": "1983 (letter)",
+   "m05": "1986 (letter)",
+   "m06": "13 letters, 30 times",
+   "n01": "2007 (letter)",
+   "n04": "1972; 25 million dollars; 1999 (letter); 857 million (dollars); before tax",
+   "w01": "five kinds",
+   "w02": "every 100 dollars; 23.5 (twenty-three and a half); about 15 more",
+   "w04": "millions of people; 1993 (letter); about 44 percent",
+   "w05": "June 2015; over 35,000 tonnes",
+   "w06": "about five months; zero; 33.3 in every hundred; about 60",
+   "w08": "July 2026; over 9,000 participants",
+   "w09": "2022",
+   "f02": "1989; 358 million dollars",
+   "f03": "1994; a quarter; 1996 (letter)",
+   "l01": "2005 (letter)",
+   "l02": "2024; about 1.65 lakh shops (Hindi: one lakh sixty-five thousand; Tamil: one point six five lakh, as the English says it)",
+   "l03": "10,000 crore rupees; 137 depots; 11 months",
+   "l04": "one year; about 40 percent",
+   "l05": "35 to 28 rupees; 20 to 5 rupees",
+   "l06": "April 2026; 5 October",
+   "x01": "three questions",
+   "e01": "26 dollars"
+  },
+  "names_to_listen_for": "Warren Buffett, Berkshire, See's, Buffalo, GEICO, Charlie Munger, Blue Chip Stamps, Coke, Nestlé India, Maggi, Nielsen, IEX, CDSL, NSDL, Roman Candles, Mayo Clinic, Asian Paints, Birla Opus, Grasim, SEBI. Written in Latin script so they match the screen; check the voice says them as an Indian speaker would.",
+  "style": "Conversational Hindustani: कंपनी, कस्टमर, प्रॉफ़िट, कॉम्पिटिटर, बिज़नेस, लेटर, मोट. Not Sanskritised. Years said the Hindi way (उन्नीस सौ इक्यासी); dollars as dollars; lakh/crore as said.",
+  "terms": {
+   "moat": "मोट (m01 explains it once as गहरे पानी की खाई around a castle)",
+   "goodwill": "गुडविल (c04 gloss)",
+   "Our reading": "हमारी समझ में",
+   "rival(s)": "कॉम्पिटिटर",
+   "rule-maker": "नियम बनाने वाला",
+   "share of the noodle market": "नूडल्स के बाज़ार में Maggi का हिस्सा (never 'शेयर')",
+   "loom": "लूम, यानी करघा (c01 says it once)",
+   "catch": "पेच"
+  },
+  "check_first": [
+   "s02 and w04 (the two quotes)",
+   "w06 market share must not sound like a share price",
+   "l03/l04 company claims keep 'कंपनी कहती है'",
+   "c01 'लूम, यानी करघा' is a word gloss added for Hindi listeners: keep or drop",
+   "c01 'कुछ नए-से लूम' (fairly new): changed 18 Oct from 'काफ़ी नए', which Whisper heard as 'काफ़ी नहीं' (not) in all four voices tried",
+   "l04 'चालीस परसेंट ज़्यादा पेंट बना सकते थे' = capacity, not sales"
+  ]
+ },
+ "beats": {
+  "c01": "कोई इस मशीन को छब्बीस डॉलर में क्यों बेचेगा? ये एक लूम है, यानी करघा। उन्नीस सौ इक्यासी में, Warren Buffett की कंपनी Berkshire ने कुछ नए-से लूम खरीदे। हर एक पाँच हज़ार डॉलर का।",
+  "c02": "जब Berkshire ने कपड़ा मिल बंद की, तो इन्हें पचास डॉलर में भी किसी ने नहीं खरीदा। ये कबाड़ में बिके, छब्बीस डॉलर प्रति लूम। ये इन्हें हटवाने के खर्च से भी कम था।",
+  "c03": "अब आती है अजीब बात। उसी लेटर में एक कैंडी स्टोर का ज़िक्र है। लेटर कहता है, See's के एक स्टोर की गुडविल, मिल की सारी मशीनों की बिक्री से ज़्यादा थी। Buffalo में अख़बार बाँटने के दो रूट की भी।",
+  "c04": "गुडविल यानी वो एक्स्ट्रा वैल्यू, जो लोगों के जानने और भरोसे से बिज़नेस को मिलती है। हमारा सवाल: कॉम्पिटिटर मशीनें कॉपी कर सकते थे, तो भरोसा क्यों नहीं?",
+  "c05": "एक हिंट: इसे आप छू नहीं सकते। हमें लगता है, इसे बचाने वाली चीज़ का एक शब्द का नाम है। हमारे पास जो लेटर हैं, उनमें ये शब्द पहली बार एक साल बाद आता है, और कैंडी के बारे में नहीं। आख़िर में तीन सवालों का एक चेक भी है।",
+  "m01": "मोट क्या होता है? किले के चारों तरफ़, ये गहरे पानी की खाई है, जो हमलावरों को बाहर रखती है। बिज़नेस में, मोट वो है जो कॉम्पिटिटर्स को सालों तक आपके कस्टमर छीनने नहीं देता।",
+  "m02": "पहले आसान जवाब को हटा देते हैं। क्या मशीनें बेकार थीं? नहीं। उस लेटर के मुताबिक, वो अभी भी काम की थीं, और उन पर क़रीब तेरह मिलियन डॉलर लगे थे।",
+  "m03": "ये सब मिलाकर एक लाख तिरसठ हज़ार एक सौ बाईस डॉलर में बिका। बिक्री का खर्च निकालने के बाद, Berkshire के हाथ ज़ीरो से भी कम आया। तो वैल्यू कहाँ थी?",
+  "m04": "See's को देखिए। उन्नीस सौ तिरासी वाले लेटर में लिखा था कि इसकी एक्स्ट्रा वैल्यू कहाँ से आई। ख़ासकर, कस्टमर्स के बीच अच्छे नाम से, जो अनगिनत अच्छे अनुभवों से बना।",
+  "m05": "अब, उस शब्द की बात। उन्नीस सौ छियासी वाले लेटर में Buffett ने कार इंश्योरेंस कंपनी GEICO के बारे में लिखा। उन्होंने उसकी और कॉम्पिटिटर्स की लागत के फ़र्क़ की तुलना मोट से की।",
+  "m06": "हमारे पास जो लेटर हैं, उनमें ये शब्द पहली बार यहीं आता है। तेरह लेटर में ये शब्द है, कुल तीस बार। तो GEICO के उस फ़र्क़ में क्या था?",
+  "n01": "बिज़नेस को मोट क्यों चाहिए? क्योंकि कमाऊ किले पर कॉम्पिटिटर बार-बार हमला करते हैं। Buffett ने ये दो हज़ार सात के लेटर में लिखा।",
+  "n02": "हमारी समझ में: उस कपड़ा मिल के पास कोई मोट नहीं था। देश-विदेश की कई कॉम्पिटिटर मिलों ने, सस्ता कपड़ा बनाने पर खर्च किया। पर वो बचत सबके लिए कम दाम बन गई। इसलिए प्रॉफ़िट कमज़ोर ही रहा।",
+  "n03": "Buffett की तस्वीर: परेड में भीड़। एक आदमी बेहतर देखने को पंजों पर खड़ा होता है। फिर सब यही करते हैं। किसी को बेहतर नहीं दिखता। हमारी समझ में: बिना मोट की ज़िंदगी यही है।",
+  "n04": "और वो कैंडी स्टोर? उन्नीस सौ बहत्तर में, Buffett और Charlie Munger ने Blue Chip Stamps के ज़रिए See's को खरीदा। उन्होंने पच्चीस मिलियन डॉलर दिए। उन्नीस सौ निन्यानवे वाले लेटर तक, See's आठ सौ सत्तावन मिलियन डॉलर कमा चुकी थी। ये टैक्स से पहले की कमाई थी।",
+  "n05": "एक बिज़नेस कबाड़ बनकर ख़त्म हुआ। दूसरा दशकों तक कमाता रहा। हमारी समझ में: इसीलिए नए लूम को भी कोई खरीदार नहीं मिला। और इसीलिए बिज़नेस को मोट चाहिए।",
+  "w01": "मोट किस चीज़ से बनता है? ऐसी चीज़ से, जिसे कॉम्पिटिटर जल्दी कॉपी नहीं कर सकते। हम मोट को पाँच तरह में बाँटते हैं। कम लागत। ऐसा नाम, जिस पर लोग भरोसा करते हैं। जिसे छोड़ना मुश्किल हो। भीड़। और लाइसेंस।",
+  "w02": "पहली तरह: कम लागत। चलिए, वापस GEICO के फ़र्क़ पर। उस साल कस्टमर्स ने GEICO को जो हर सौ डॉलर दिए, उनमें से सिर्फ़ साढ़े तेईस, पॉलिसी बेचने और क्लेम निपटाने में गए। कई बड़े कॉम्पिटिटर्स में, ये क़रीब पंद्रह ज़्यादा था।",
+  "w03": "दूसरी तरह: भरोसे वाला नाम। सोचिए, आप एक मशहूर मिठाई की दुकान के बगल में अपनी दुकान खोलते हैं। वही चीनी। कम दाम। कौन जीतेगा?",
+  "w04": "Buffett ने लिखा, लाखों लोग बस कहते हैं: मुझे एक Coke दो। उन्नीस सौ तिरानवे के लेटर के मुताबिक, दुनिया के क़रीब चवालीस परसेंट सॉफ़्ट ड्रिंक्स Coke बेचती है। उन्होंने लिखा, इसके नाम ने मोट बनाने में मदद की।",
+  "w05": "क्या एक भरोसेमंद नाम, ग़ायब होकर भी बच सकता है? जून दो हज़ार पंद्रह में, Nestlé India ने कहा कि वो Maggi नूडल्स को दुकानों से हटा रही है। कंपनी कहती है कि उसने पैंतीस हज़ार टन से ज़्यादा नष्ट किए।",
+  "w06": "हमारी गिनती से, क़रीब पाँच महीने बाद Maggi लौटी। Nielsen के हवाले से Nestlé की रिपोर्ट कहती है, उस दिन नूडल्स बाज़ार में Maggi का हिस्सा ज़ीरो था। दिसंबर के आख़िर तक, हर सौ में तैंतीस पॉइंट तीन। अगली रिपोर्ट में, क़रीब साठ। कंपनी के चेयरमैन ने इसका क्रेडिट भरोसे को दिया।",
+  "w07": "तीसरी तरह: जिसे छोड़ना मुश्किल हो। सोचिए, आपको परिवार का बैंक अकाउंट बदलना है। हर सैलरी, बिल और ऐप भी बदलना पड़ेगा। क्या आप ये झंझट उठाएँगे?",
+  "w08": "चौथी तरह: भीड़। IEX बिजली का बाज़ार चलाती है, जहाँ बिजली कंपनियाँ और बड़े खरीदार सौदा करते हैं। जुलाई दो हज़ार छब्बीस में इसके मैनेजर्स ने कहा, नौ हज़ार से ज़्यादा पार्टिसिपेंट्स हैं। कोई कॉम्पिटिटर इसे बस कॉपी क्यों नहीं कर सकता?",
+  "w09": "हमारा आर्टिकल कहता है, कॉम्पिटिटर उस भीड़ को तुरंत कॉपी नहीं कर सकता था। दो हज़ार बाईस में, मज़बूत सपोर्ट वाला एक आया। हमारे आर्टिकल के मुताबिक, वो सबसे व्यस्त बाज़ारों में बराबरी नहीं कर पाया। अब तक।",
+  "w10": "पाँचवीं तरह: लाइसेंस, यानी काम करने के लिए नियम बनाने वाले की इजाज़त। हमारा आर्टिकल इसे उधार की सुरक्षा कहता है। भारत में, आपके शेयर एक डीमैट अकाउंट में रहते हैं, जो एक ऑनलाइन लॉकर है। हमारा आर्टिकल कहता है कि हर डीमैट अकाउंट CDSL या NSDL के पास है। लेकिन नियमों से बने मोट में एक पेच है।",
+  "f01": "नकली मोट को कैसे पहचानें? जिन कंपनियों के मोट नकली निकले, और जल्दी पार हो गए, उनके लिए Buffett का नाम है: Roman Candles। रोमन कैंडल एक आतिशबाज़ी है। पहले चमकती है, फिर ग़ायब हो जाती है।",
+  "f02": "नकली मोट असली कैसे दिखता है? उन्नीस सौ नवासी में, Berkshire ने एक एयरलाइन में तीन सौ अट्ठावन मिलियन डॉलर लगाए।",
+  "f03": "उन्नीस सौ चौरानवे में, एयरलाइन ने उस पैसे की रेगुलर पेमेंट रोक दी। Berkshire ने वैल्यू घटाकर एक चौथाई कर दी। Buffett ने इस पर भरोसा क्यों किया था? उन्नीस सौ छियानवे के लेटर में: एयरलाइन के प्रॉफ़िट के लंबे रिकॉर्ड ने उन्हें कुछ हद तक लुभाया था।",
+  "f04": "नकली मोट की हमारी पहली निशानी: प्रॉफ़िट का लंबा इतिहास। हमारी दूसरी निशानी: ऐसा मोट, जिसे बार-बार दोबारा बनाना पड़े। Buffett ने लिखा कि ऐसा मोट आख़िर में मोट रहता ही नहीं।",
+  "s01": "क्या एक स्टार इंसान मोट हो सकता है? Buffett ने लिखा, जिस बिज़नेस को अच्छा करने को सुपरस्टार चाहिए, उसे ग्रेट नहीं कहा जा सकता। उनकी मिसाल: इलाक़े के सबसे अच्छे ब्रेन सर्जन का क्लिनिक।",
+  "s02": "उन्होंने लिखा: पार्टनरशिप का मोट तब चला जाएगा, जब सर्जन चला जाएगा। Mayo Clinic अलग है। उन्होंने लिखा कि उसका मोट टिका रहता है, भले ही आप उसके बॉस का नाम न बता पाएँ। हमारी समझ में: मोट उस जगह का है।",
+  "l01": "क्या मोट हमेशा टिकता है? नहीं। Buffett ने दो हज़ार पाँच के लेटर में लिखा, उनका हर बिज़नेस हर दिन मज़बूत या कमज़ोर होता है।",
+  "l02": "लेकिन मोट हमले में ही साबित होता है। तो भारत का पेंट बाज़ार देखिए। हमारे आर्टिकल्स कहते हैं, Asian Paints के दुकानों के नेटवर्क में संकरा पर असली मोट है। दो हज़ार चौबीस में कंपनी ने कहा, वो क़रीब एक लाख पैंसठ हज़ार दुकानों तक पहुँची।",
+  "l03": "फिर पैसे वाला एक कॉम्पिटिटर आया: Birla Opus। हमारे जुलाई के आर्टिकल में, कंपनी कहती है कि उसने दस हज़ार करोड़ रुपये के इन्वेस्टमेंट का ऐलान किया। वो ये भी कहती है कि उसने ग्यारह महीनों में एक सौ सैंतीस डिपो बनाए।",
+  "l04": "इसके पीछे की कंपनी Grasim एक आंकड़ा जोड़ती है। उसके मुताबिक, एक साल में बड़े पेंट मेकर मिलकर क़रीब चालीस परसेंट ज़्यादा पेंट बना सकते थे। तो क्या Asian Paints का मोट टिका? हमारे आर्टिकल्स कहते हैं, मोट असली है, पर कॉम्पिटिटर उसके इर्द-गिर्द से निकल सकता है। अंत अभी कोई नहीं जानता।",
+  "l05": "नियमों वाला पेच याद है? हमारा आर्टिकल कहता है कि नियम बनाने वाले SEBI ने, CDSL की एक यूनिट की कुछ फ़ीस घटा दी। एक फ़ीस पैंतीस रुपये से घटकर अट्ठाईस हुई। दूसरी बीस रुपये से घटकर पाँच हुई।",
+  "l06": "और IEX की भीड़ का क्या हुआ, अब तक? अप्रैल दो हज़ार छब्बीस में, भारत के बिजली के नियम बनाने वाले ने ड्राफ़्ट नियम जारी किए। इनमें सभी पावर एक्सचेंजों की बोलियाँ मिलाकर, एक दाम बनाने की बात है। पाँच अक्टूबर को हमारी जाँच में कोई फ़ाइनल नियम नहीं मिले।",
+  "l07": "तो मोट कभी हमेशा के लिए आपका नहीं होता। Buffett ने लिखा कि अपने बिज़नेस के लिए, मोट को चौड़ा करना जल्दी के प्रॉफ़िट से बेहतर है।",
+  "x01": "बिज़नेस को कैसे परखें? हमारा तीन सवालों वाला चेक आज़माइए। एक: क्या पैसे वाला कॉम्पिटिटर, उसे बचाने वाली चीज़ कॉपी कर सकता है? दो: क्या उसे बार-बार बनाना पड़ता है? तीन: क्या वो एक इंसान के साथ चली जाएगी?",
+  "x02": "इसे कपड़ा मिल पर आज़माइए। क्या कॉम्पिटिटर उसकी मशीनें कॉपी कर सकते थे? उन्होंने कीं। मोट नहीं था। अब अपनी गली की किसी दुकान पर आज़माइए।",
+  "x03": "मोट, कॉम्पिटिटर्स को सालों तक आपके कस्टमर छीनने नहीं देता। कॉम्पिटिटर हमला करते रहते हैं, इसलिए मोट चाहिए। ये पाँच तरह का होता है, नकली मोट फीके पड़ते हैं, स्टार इंसान मोट नहीं होता, और कोई मोट हमेशा नहीं टिकता।",
+  "e01": "वापस उस लूम पर। छब्बीस डॉलर। कोई भी कॉम्पिटिटर ऐसी मशीनें खरीद सकता था। कैंडी स्टोर के पास जो था, उसे कोई कॉम्पिटिटर जल्दी कॉपी नहीं कर सकता था। ऐसे कस्टमर, जिन्हें वो पसंद था और जो लौटते रहे। हमारी समझ में: यही मोट है।"
+ },
+ "_english": {
+  "c01": {
+   "say": "Why would anyone sell this machine for twenty six dollars? It is a loom. In nineteen eighty one, Warren Buffett's company, Berkshire, bought some fairly new ones. Five thousand dollars each."
+  },
+  "c02": {
+   "say": "When Berkshire shut its cloth mill, no one would buy them, even at fifty dollars. They went for scrap at twenty six dollars each. Less than it cost to take them away."
+  },
+  "c03": {
+   "say": "Now the strange part. The same letter mentions a candy store. It says one See's store's goodwill was worth more than all the mill's machinery sold for. So was the goodwill of two paper routes in Buffalo."
+  },
+  "c04": {
+   "say": "Goodwill is the extra value a business has because people know and trust it. Our question: why could rivals copy the mill's machines, but not that trust?"
+  },
+  "c05": {
+   "say": "Hint: you cannot touch it. We think what protects it has a one word name. In the letters we have, that word first shows up a year later. Not about candy. A three question check comes last."
+  },
+  "m01": {
+   "say": "What is a moat? Around a castle, it is deep water that keeps attackers out. In business, it is whatever keeps rivals from taking your customers, for years."
+  },
+  "m02": {
+   "say": "First, rule out the easy answer. Were the machines junk? No. That letter says they were still usable, and had cost about thirteen million dollars."
+  },
+  "m03": {
+   "say": "It all fetched one hundred and sixty three thousand, one hundred and twenty two dollars. After the costs of the sale, Berkshire ended up with less than nothing. So where was the value?"
+  },
+  "m04": {
+   "say": "Look at See's. His letter for nineteen eighty three said where its extra value came from. Especially a good name with customers, built on countless pleasant experiences."
+  },
+  "m05": {
+   "say": "Now, the word. In his letter for nineteen eighty six, Buffett wrote about a car insurer, GEICO. He compared the gap between its costs and its rivals' to a moat."
+  },
+  "m06": {
+   "say": "In the letters we have, it first appears here. Thirteen letters use the word, thirty times in all. So what was in GEICO's gap?"
+  },
+  "n01": {
+   "say": "Why does a business need a moat? Because rivals keep attacking any castle that earns well. Buffett wrote that in his letter for two thousand seven."
+  },
+  "n02": {
+   "say": "Our reading: the cloth mill had no moat. Many rival mills, at home and abroad, spent to make cloth more cheaply. But the savings became lower prices for everyone. So profits stayed poor."
+  },
+  "n03": {
+   "say": "Buffett's picture: a crowd at a parade. One person stands on tiptoe to see better. Then everyone does. Nobody sees better. Our reading: that is life without a moat."
+  },
+  "n04": {
+   "say": "And the candy store? In nineteen seventy two, Buffett and Charlie Munger bought See's through Blue Chip Stamps. They paid twenty five million dollars. By his letter for nineteen ninety nine, See's had earned eight hundred and fifty seven million. Before tax."
+  },
+  "n05": {
+   "say": "One business ended as scrap. The other kept earning for decades. Our reading: that is why even new looms found no buyer. And why a business needs a moat."
+  },
+  "w01": {
+   "say": "What is a moat made of? Something rivals cannot copy fast. We sort moats into five kinds. Low cost. A name people trust. Being hard to leave. A crowd. And a licence."
+  },
+  "w02": {
+   "say": "Kind one: low cost. Back to GEICO's gap. Take every hundred dollars customers paid GEICO that year. Just twenty three and a half went on selling policies and handling claims. At many big rivals, it was about fifteen more."
+  },
+  "w03": {
+   "say": "Kind two: a name people trust. Imagine you open a sweet shop beside a famous one. Same sugar. Lower prices. Who wins?"
+  },
+  "w04": {
+   "say": "Millions of people, Buffett wrote, just say: I'll have a Coke. His letter for nineteen ninety three: worldwide, Coke sells about forty four percent of soft drinks. Its name, he wrote, helped build a moat."
+  },
+  "w05": {
+   "say": "Can a trusted name survive vanishing? In June two thousand fifteen, Nestlé India said it was pulling Maggi noodles off the shelves. It says it destroyed over thirty five thousand tonnes."
+  },
+  "w06": {
+   "say": "By our count, about five months later Maggi came back. Nestlé's report, citing Nielsen, puts its share of the noodle market that day at zero. By the end of December, thirty three point three in every hundred. Its next report: about sixty. Its chairman credited trust."
+  },
+  "w07": {
+   "say": "Kind three: being hard to leave. Picture moving your family's bank account. Every salary, bill and app must move too. Would you bother?"
+  },
+  "w08": {
+   "say": "Kind four: a crowd. IEX runs a market where power companies and big buyers trade electricity. In July two thousand twenty six, its managers said it has over nine thousand participants. Why can't a rival just copy that?"
+  },
+  "w09": {
+   "say": "Our article says a rival could not instantly copy that crowd. One with serious backing came in two thousand twenty two. It could not keep up in the busiest markets, our article says. So far."
+  },
+  "w10": {
+   "say": "Kind five: a licence, the rule-maker's permission to operate. Our article calls it borrowed protection. In India, shares you own sit in a demat account, an online locker. Our article says every one sits with CDSL or NSDL. But a moat made of rules has a catch."
+  },
+  "f01": {
+   "say": "How do you spot a fake moat? Buffett's name for companies whose moats proved fake, and were soon crossed: Roman Candles. A Roman candle is a firework. Bright, then gone."
+  },
+  "f02": {
+   "say": "What makes a fake one look real? In nineteen eighty nine, Berkshire put three hundred and fifty eight million dollars into an airline."
+  },
+  "f03": {
+   "say": "In nineteen ninety four, the airline stopped making the regular payments on that money. Berkshire marked it down to a quarter. Why had Buffett trusted it? His letter for nineteen ninety six: the airline's long record of profits had partly charmed him."
+  },
+  "f04": {
+   "say": "Our first sign of a fake moat: a long past of profits. Our second: a moat you must keep rebuilding. Buffett wrote that such a moat will eventually be no moat at all."
+  },
+  "s01": {
+   "say": "Can one star person be a moat? A business that needs a superstar to do well, Buffett wrote, cannot be called great. His example: a clinic led by the area's best brain surgeon."
+  },
+  "s02": {
+   "say": "In his words: The partnership's moat will go when the surgeon goes. The Mayo Clinic is different. Its moat lasts, he wrote, though you cannot name its boss. Our reading: the moat belongs to the place."
+  },
+  "l01": {
+   "say": "Does a moat last forever? No. Buffett's letter for two thousand five: each of his businesses grows stronger or weaker daily."
+  },
+  "l02": {
+   "say": "But a moat only proves itself under attack. So watch Indian paint. Our articles say Asian Paints has a narrow but real moat, in its network of shops. In two thousand twenty four, it said it reached about one point six five lakh shops."
+  },
+  "l03": {
+   "say": "Then a rival with money stepped in: Birla Opus. In our July article, it says it announced an investment of ten thousand crore rupees. It also says it set up one hundred and thirty seven depots in eleven months."
+  },
+  "l04": {
+   "say": "Grasim, the company behind it, adds a number. In one year, it says, big paint makers together could make about forty percent more paint. So did Asian Paints' moat hold? Our articles say it is real, but a rival can go round it. Nobody knows the ending yet."
+  },
+  "l05": {
+   "say": "Remember the catch with rules? Our article says SEBI, the rule-maker, cut some fees at a CDSL unit. One fell from thirty five rupees to twenty eight. Another from twenty rupees to five."
+  },
+  "l06": {
+   "say": "And IEX's crowd, so far? In April two thousand twenty six, India's power rule-maker published draft rules. They would pool all power exchanges' bids into one price. On the fifth of October, our check found no final rules."
+  },
+  "l07": {
+   "say": "So a moat is never yours for good. For his own businesses, Buffett wrote, widening the moat beats quick profits."
+  },
+  "x01": {
+   "say": "How do you test a business? Try our three question check. One: could a rival with money copy what protects it? Two: must it be rebuilt all the time? Three: would it walk out with one person?"
+  },
+  "x02": {
+   "say": "Try it on the cloth mill. Could rivals copy its machines? They did. No moat. Now try it on a shop on your street."
+  },
+  "x03": {
+   "say": "A moat keeps rivals from taking your customers, for years. Rivals keep attacking, so you need one. It comes in five kinds. Fake ones fade. A star person is not one. None lasts forever."
+  },
+  "e01": {
+   "say": "Back to the loom. Twenty six dollars. Any rival could buy machines like it. No rival could copy fast what the candy store had. Customers who liked it, and kept coming back. Our reading: that is a moat."
+  }
+ }
+}

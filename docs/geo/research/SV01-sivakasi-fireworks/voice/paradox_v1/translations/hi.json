@@ -1,0 +1,266 @@
+{
+ "film": "paradox_v1",
+ "lang": "hi",
+ "status": "DRAFT",
+ "reviewed_by": null,
+ "voice": "Gemini Charon",
+ "reviewer_notes": [
+  "CHECK FIRST, quotes and attributions (on screen they stay English; the audio is a faithful translation framed as said by them): Murugan 'chain reaction' (Paradox pf06, Long Road re06); Nehru 'Kutty Japan' (said to have); makers' leader on the Oct 2025 order (ph05, rg05); worker K. Rajkumar to The Hindu (pi04, rh04).",
+  "SENSITIVE: the 19 April 2026 explosion and its toll (pi03, rh03) and the biometric line (pi04, rh04): stated plainly, no added emotion, same attribution as English.",
+  "HEDGES kept, please confirm each survived: 'by the industry's own count / says / estimate', 'is said to', 'local histories treat', 'accounts describe', 'reports say twelve', 'according to the lab', 'the lab's own claim'.",
+  "NUMBERS in words, spoken style: years as short spoken years (nineteen twenty-two style) in ta/te; lakh and crore as people say them. 'Sixty billion rupees' kept (billion said as பில்லியன் / अरब / బిలియన్). 'That is three hundred thousand' dropped in all three (lakh is native); everything else is kept.",
+  "TERMS to check: சரவெடி / लड़ी वाले पटाखे / లడీ టపాకాయలు = 'joined crackers'; மழை மறைவுப் பகுதி / वर्षा-छाया / వర్షచ్ఛాయ = rain shadow; பெங்கால் லைட் / बंगाल लाइट / బెంగాల్ లైట్ for Bengal light; matthaappu kept as the Tamil word in hi/te; கம்பி மத்தாப்பு / फुलझड़ी / కాకరపువ్వొత్తి = sparkler.",
+  "NAMES in the target script, check spelling and pronunciation: Sivakasi, Sattur, Virudhunagar, Ayya Nadar, Shanmuga Nadar, Purna Chandra Roy, Rajarathina Nadar, Arunagiri Nadar, Rengaiah Murugan, Kaaka (crow), Anil (squirrel), CSIR-NEERI, SWAS, SAFAL, STAR, GI tag, QR.",
+  "STATUS: DRAFT. Voiced by Gemini (Hindi) and Maya (Tamil, Telugu). A native speaker must review before any use; reviewed_by stays null until AK names the reviewer."
+ ],
+ "scenes": {
+  "pa01": {
+   "en": "Start with Sivakasi, in far-south Tamil Nadu. It sits in the rain shadow of the western hills. Little rain. Dry soil. Hard farming.",
+   "text": "सिवाकाशी, दक्षिण तमिलनाडु में। पश्चिमी पहाड़ों की वर्षा-छाया में बसा। बारिश कम, मिट्टी सूखी, खेती मुश्किल।"
+  },
+  "pa02": {
+   "en": "And a hundred years ago, it made no fireworks. It didn't even make matches.",
+   "text": "सौ साल पहले यहाँ पटाखे नहीं बनते थे, माचिस भी नहीं।"
+  },
+  "pa03": {
+   "en": "Yet today, by the industry's own count, between eighty and ninety percent of India's fireworks come from here.",
+   "text": "फिर भी आज, उद्योग के अपने हिसाब से, देश की अस्सी से नब्बे प्रतिशत आतिशबाज़ी यहीं की है।"
+  },
+  "pa04": {
+   "en": "A dry town. A craft with no past. And almost every firework in India. All three are true. So how?",
+   "text": "सूखा शहर। बिना परंपरा का हुनर। और देश की लगभग हर आतिशबाज़ी। तीनों सच हैं। पर कैसे?"
+  },
+  "pa05": {
+   "en": "Four pieces answer it. A matchbox. A pair of hands. The sun. And, last, a printing press and a war. One at a time.",
+   "text": "चार कड़ियाँ इसका जवाब देती हैं। एक माचिस। दो हाथ। सूरज। और आख़िर में, एक प्रिंटिंग प्रेस और एक जंग। एक-एक करके।"
+  },
+  "pb01": {
+   "en": "Find India on the globe. Now slide down to its far south, to Tamil Nadu.",
+   "text": "ग्लोब पर भारत देखिए। अब सबसे दक्षिण, तमिलनाडु।"
+  },
+  "pb02": {
+   "en": "Three things to keep in mind. A match. A Bengal light, which is a match that burns in colour. And a firework.",
+   "text": "तीन चीज़ें याद रखिए। माचिस। बंगाल लाइट, यानी रंग में जलने वाली तीली। और आतिशबाज़ी।"
+  },
+  "pc01": {
+   "en": "Go back to nineteen twenty-two. Matches are made in Calcutta, today's Kolkata, or shipped in from abroad.",
+   "text": "उन्नीस सौ बाईस। माचिस कलकत्ता, आज के कोलकाता, में बनती थी, या बाहर से आती थी।"
+  },
+  "pc02": {
+   "en": "Two young men from Sivakasi make that trip. P. Ayya Nadar is about seventeen. A. Shanmuga Nadar is about nineteen.",
+   "text": "सिवाकाशी के दो नौजवान वहाँ जाते हैं। अय्या नाडार करीब सत्रह के, षण्मुग नाडार करीब उन्नीस के।"
+  },
+  "pc03": {
+   "en": "They aren't going to learn fireworks. They're going to learn one thing: how to make a safety match.",
+   "text": "वे आतिशबाज़ी सीखने नहीं जाते। सिर्फ़ एक चीज़ सीखने: सेफ़्टी माचिस बनाना।"
+  },
+  "pc04": {
+   "en": "They stay six to eight months, learning from a match-maker named Purna Chandra Roy.",
+   "text": "छह से आठ महीने, माचिस-निर्माता पूर्ण चंद्र रॉय से सीखते हैं।"
+  },
+  "pc05": {
+   "en": "In nineteen twenty-three they come home with German machines and open a match factory. The South-India Lucifer Match Industry.",
+   "text": "तेईस में जर्मन मशीनें लेकर लौटते हैं और माचिस फ़ैक्ट्री खोलते हैं: साउथ-इंडिया लूसिफ़र मैच इंडस्ट्री।"
+  },
+  "pc06": {
+   "en": "Piece one: a skill. Matches. Not fireworks yet.",
+   "text": "पहली कड़ी: एक हुनर। माचिस। अभी आतिशबाज़ी नहीं।"
+  },
+  "pd01": {
+   "en": "But the heavy German machines are a problem. In a small, remote town, they are costly to run.",
+   "text": "लेकिन भारी जर्मन मशीनें छोटे, दूर के शहर में चलाना महँगा है।"
+  },
+  "pd02": {
+   "en": "So the founders change the plan. They spread the work across the villages around.",
+   "text": "तो वे योजना बदलते हैं। काम आसपास के गाँवों में बाँट देते हैं।"
+  },
+  "pd03": {
+   "en": "And here is the first link back to the dry land. Farming is hard, so many families around need work. Accounts describe plenty of low-cost labour in the villages around Sivakasi, Sattur and Virudhunagar.",
+   "text": "यहीं सूखी ज़मीन से पहली कड़ी जुड़ती है। खेती मुश्किल है, इसलिए आसपास के परिवारों को काम चाहिए। बताया जाता है कि सिवाकाशी, सत्तूर और विरुधुनगर के गाँवों में सस्ते मज़दूर बहुत थे।"
+  },
+  "pd04": {
+   "en": "Families roll, fill and pack by hand, at home. The factory does only the chemical part.",
+   "text": "परिवार घर पर हाथ से रोल, भराई और पैकिंग करते हैं। फ़ैक्ट्री बस रसायन वाला हिस्सा संभालती है।"
+  },
+  "pd05": {
+   "en": "It fits the mood of the time. Mahatma Gandhi is urging Indians to revive village industries.",
+   "text": "उस दौर से मेल भी खाता है: महात्मा गांधी ग्राम उद्योग जगाने को कह रहे थे।"
+  },
+  "pd06": {
+   "en": "Think of many home kitchens feeding one restaurant, instead of one giant kitchen. Cheap to start. Hard to supervise.",
+   "text": "एक बड़ी रसोई की जगह कई घरों की रसोइयाँ एक रेस्तराँ को खाना देती हैं। शुरू करना सस्ता, निगरानी मुश्किल।"
+  },
+  "pd07": {
+   "en": "Piece two: hands. The weak farms supplied them.",
+   "text": "दूसरी कड़ी: हाथ। कमज़ोर खेतों ने ये हाथ दिए।"
+  },
+  "pe01": {
+   "en": "In nineteen twenty-six the two men part ways, and compete. Ayya Nadar's brand is a squirrel, Anil. Shanmuga Nadar's is a crow, Kaaka. A squirrel against a crow.",
+   "text": "छब्बीस में दोनों अलग होकर मुक़ाबले में उतरते हैं। अय्या नाडार का ब्रांड गिलहरी, अनिल। षण्मुग नाडार का कौआ, काका। गिलहरी बनाम कौआ!"
+  },
+  "pe02": {
+   "en": "To stand out, match-makers add something new: sticks that burn in colour. They're called Bengal lights. In Tamil, matthaappu.",
+   "text": "अलग दिखने को माचिस वाले कुछ नया जोड़ते हैं: रंग में जलती तीलियाँ। बंगाल लाइट। तमिल में, मत्थाप्पू।"
+  },
+  "pe03": {
+   "en": "Local histories treat the Bengal light as the stepping stone. A match that burns in colour is already close to a sparkler. And in nineteen thirty-eight, N. R. K. Rajarathina Nadar opens the town's first factory made only for fireworks.",
+   "text": "स्थानीय इतिहास बंगाल लाइट को पहली सीढ़ी मानते हैं। रंगीन तीली फुलझड़ी के पहले ही क़रीब है। और अड़तीस में एन.आर.के. राजरत्न नाडार शहर की पहली सिर्फ़ आतिशबाज़ी की फ़ैक्ट्री खोलते हैं।"
+  },
+  "pe03b": {
+   "en": "So that is how matches became fireworks. Coloured matches led to fireworks. Not a tradition. A chain.",
+   "text": "ऐसे माचिस आतिशबाज़ी बनी। रंगीन तीली से आतिशबाज़ी। परंपरा नहीं, एक कड़ी।"
+  },
+  "pe04": {
+   "en": "And now the dryness that hurt the farms starts to help the factories. Paper tubes and chemicals must dry in the open. Dry, sunny Sivakasi dries them for free.",
+   "text": "अब जो सूखापन खेतों को मारता था, फ़ैक्ट्रियों के काम आता है। काग़ज़ की नलियाँ और रसायन खुले में सूखने चाहिए। धूप वाला सूखा सिवाकाशी उन्हें मुफ़्त सुखा देता है।"
+  },
+  "pe05": {
+   "en": "Piece three: the sun. A curse for the farms. A help for the fireworks.",
+   "text": "तीसरी कड़ी: सूरज। खेतों के लिए श्राप, आतिशबाज़ी के लिए वरदान।"
+  },
+  "pf01": {
+   "en": "Every matchbox and every packet of crackers needs a bright paper label. In the nineteen thirties, those labels come from presses in Bombay, today's Mumbai.",
+   "text": "हर माचिस और पटाखे के पैकेट को रंगीन लेबल चाहिए। तीस के दशक में ये बंबई, यानी आज के मुंबई, के प्रेसों से आते थे।"
+  },
+  "pf02": {
+   "en": "So in nineteen thirty-eight, K. S. A. Arunagiri Nadar sets up a printing press in Sivakasi itself. National Litho Press.",
+   "text": "इसलिए अड़तीस में के.एस.ए. अरुणगिरि नाडार सिवाकाशी में ही प्रेस लगाते हैं: नेशनल लिथो प्रेस।"
+  },
+  "pf03": {
+   "en": "Picture a shop that sells most of its stock in one week, and keeps running out of paper cups from a far-off city. So the owner buys a printer. Then he notices it can print for the other eleven months too.",
+   "text": "सोचिए, एक दुकान माल एक हफ़्ते में बेचती है और कप दूर से मँगाती है, जो ख़त्म होते रहते हैं। मालिक प्रिंटर लाता है; बाक़ी ग्यारह महीने भी वह छाप सकता है!"
+  },
+  "pf04": {
+   "en": "That is Sivakasi's second trick. When the fireworks season ends, the presses keep running. Calendars. Diaries. Notebooks.",
+   "text": "यह सिवाकाशी की दूसरी चाल है। मौसम ख़त्म होने पर भी प्रेस चलते हैं: कैलेंडर, डायरियाँ, कॉपियाँ।"
+  },
+  "pf05": {
+   "en": "Prime Minister Nehru is said to have called the town 'Kutty Japan', Little Japan, for making matches, fireworks and print on its own.",
+   "text": "कहते हैं नेहरू ने इस शहर को 'कुट्टी जापान' कहा, क्योंकि माचिस, आतिशबाज़ी और छपाई सब ख़ुद बनती थी।"
+  },
+  "pf06": {
+   "en": "A historian of the town, Rengaiah Murugan, put it simply: 'As a chain reaction, various allied industries started to mushroom.'",
+   "text": "शहर के इतिहासकार रेंगैया मुरुगन ने कहा: 'शृंखला-प्रतिक्रिया की तरह, कई सहायक उद्योग कुकुरमुत्तों की तरह उग आए।'"
+  },
+  "pg01": {
+   "en": "Now comes the moment that turns a good town into the national one. Nineteen-forty.",
+   "text": "अब वह मोड़ आता है जो एक शहर को राष्ट्रीय बना देता है। उन्नीस सौ चालीस।"
+  },
+  "pg02": {
+   "en": "That year, the Explosives Rules arrive. To make fireworks, you now need a licence.",
+   "text": "उसी साल विस्फोटक नियम आते हैं। आतिशबाज़ी बनाने को अब लाइसेंस चाहिए।"
+  },
+  "pg03": {
+   "en": "Then the Second World War cuts off the fireworks that used to come in from abroad.",
+   "text": "फिर दूसरा विश्व युद्ध विदेशी आतिशबाज़ी रोक देता है।"
+  },
+  "pg04": {
+   "en": "The few licensed makers suddenly have the whole market. By nineteen forty-two, three firms hold licences: National, Standard and Kaliswari.",
+   "text": "चंद लाइसेंस वाले निर्माताओं को अचानक पूरा बाज़ार मिलता है। बयालीस तक तीन के पास लाइसेंस: नेशनल, स्टैंडर्ड, कालीश्वरी।"
+  },
+  "pg05": {
+   "en": "Three licensed factories in nineteen forty-two.",
+   "text": "बयालीस में तीन फ़ैक्ट्रियाँ।"
+  },
+  "pg06": {
+   "en": "By nineteen eighty: a hundred and eighty-nine.",
+   "text": "अस्सी तक: एक सौ नवासी।"
+  },
+  "pg07": {
+   "en": "By two thousand and one: four hundred and fifty.",
+   "text": "साल दो हज़ार एक तक: चार सौ पचास फ़ैक्ट्रियाँ।"
+  },
+  "pg08": {
+   "en": "Today, the industry says, more than a thousand.",
+   "text": "आज, उद्योग के मुताबिक, एक हज़ार से ऊपर।"
+  },
+  "pg09": {
+   "en": "Worth about six thousand crore rupees a year. That is sixty billion rupees.",
+   "text": "साल का करीब छह हज़ार करोड़ रुपये, यानी साठ अरब।"
+  },
+  "pk01": {
+   "en": "So the paradox dissolves. Weak farms gave Sivakasi hands and sun. A matchbox gave it a skill. A press kept it busy all year. And a war gave it a market.",
+   "text": "तो पहेली सुलझ जाती है। कमज़ोर खेतों ने सिवाकाशी को हाथ और धूप दी। माचिस ने हुनर, प्रेस ने साल भर का काम, और जंग ने बाज़ार।"
+  },
+  "pk02": {
+   "en": "But the paradox has a second half. The very things that built the town now put it under pressure.",
+   "text": "लेकिन पहेली का दूसरा हिस्सा भी है। जिसने शहर बनाया, वही अब दबाव डाल रहा है।"
+  },
+  "ph00": {
+   "en": "Today's challenge comes from a new direction. The air.",
+   "text": "आज की चुनौती दूसरी तरफ़ से है: हवा।"
+  },
+  "ph01": {
+   "en": "In October twenty-eighteen, the Supreme Court bans crackers made with barium salts, and joined crackers. The aim is cleaner air in the north.",
+   "text": "अक्तूबर दो हज़ार अठारह में सुप्रीम कोर्ट बेरियम लवण वाले और लड़ी वाले पटाखों पर रोक लगाता है। मक़सद, उत्तर की साफ़ हवा।"
+  },
+  "ph02": {
+   "en": "The industry's answer is the green cracker, developed by a government lab, CSIR-NEERI. Its versions are called SWAS, SAFAL and STAR.",
+   "text": "उद्योग का जवाब: ग्रीन पटाखा, जो सरकारी प्रयोगशाला सी.एस.आई.आर-नीरी ने बनाया। स्वास, सफल और स्टार।"
+  },
+  "ph03": {
+   "en": "Green doesn't mean pollution-free. The lab's own claim is about a third less particle pollution.",
+   "text": "ग्रीन यानी प्रदूषण-मुक्त नहीं। प्रयोगशाला का दावा: कण-प्रदूषण करीब एक तिहाई कम।"
+  },
+  "ph04": {
+   "en": "How? According to the lab, the mix releases water vapour and air as it burns, which helps the dust settle. Picture a tiny mist sprayer inside the shell.",
+   "text": "कैसे? प्रयोगशाला के मुताबिक़, जलते हुए जलवाष्प और हवा निकलती है, जिससे धूल बैठ जाती है। खोल में जैसे नन्हा फुहारा।"
+  },
+  "ph04b": {
+   "en": "Delhi and its surroundings are roughly thirteen percent of national demand, industry associations estimate.",
+   "text": "उद्योग संघों का अनुमान: दिल्ली और आसपास राष्ट्रीय माँग का करीब तेरह प्रतिशत।"
+  },
+  "ph05": {
+   "en": "In October twenty twenty-five, the Court eases the Delhi ban: green crackers only, with QR codes, in fixed time slots. But it comes just before Deepavali. A makers' leader said it comes too close to the festival, yet gives hope for future business.",
+   "text": "अक्तूबर दो हज़ार पच्चीस में अदालत दिल्ली की रोक में ढील देती है: सिर्फ़ ग्रीन पटाखे, क्यूआर कोड के साथ, तय समय में। दिवाली से ठीक पहले। निर्माताओं के एक नेता: त्योहार के बहुत क़रीब है, फिर भी आगे के कारोबार की उम्मीद देता है।"
+  },
+  "ph06": {
+   "en": "So the law gave a ban, then a lab, then a compromise. And a deadline that arrived too late for this season.",
+   "text": "तो क़ानून से पहले रोक, फिर प्रयोगशाला, फिर समझौता। और इस मौसम के लिए देर से आई समय-सीमा।"
+  },
+  "pi01": {
+   "en": "Now go back to the hands. By the industry's count, about three lakh people work in these factories. That is three hundred thousand. Many more work around them.",
+   "text": "अब हाथों पर लौटिए। उद्योग के हिसाब से इन फ़ैक्ट्रियों में करीब तीन लाख लोग काम करते हैं। आसपास और भी कई।"
+  },
+  "pi01b": {
+   "en": "Mixing, filling and threading fuses are still done mostly by hand.",
+   "text": "मिलाना, भरना, बत्ती पिरोना आज भी ज़्यादातर हाथ से।"
+  },
+  "pi01c": {
+   "en": "On paper, a small unit's licence limits how many people may work inside. Reports say twelve.",
+   "text": "काग़ज़ पर, छोटी इकाई के लाइसेंस में काम करने वालों की सीमा है। रिपोर्टें: बारह।"
+  },
+  "pi02": {
+   "en": "Reports describe sheds sub-let to contractors, and crowded verandahs. A gap between the licence and the workplace.",
+   "text": "रिपोर्टें कहती हैं शेड ठेकेदारों को उप-किराये पर, बरामदों में भीड़। लाइसेंस और कार्यस्थल के बीच फ़ासला।"
+  },
+  "pi03": {
+   "en": "On the nineteenth of April, twenty twenty-six, an explosion at a factory near Sivakasi killed twenty-five workers.",
+   "text": "उन्नीस अप्रैल, दो हज़ार छब्बीस को सिवाकाशी के पास एक फ़ैक्ट्री में विस्फोट हुआ। पच्चीस मज़दूर मारे गए।"
+  },
+  "pi04": {
+   "en": "A worker, K. Rajkumar, told The Hindu that with a biometric attendance system, identifying the dead would not have been so hard.",
+   "text": "मज़दूर के. राजकुमार ने द हिंदू को बताया: बायोमेट्रिक हाज़िरी होती तो मृतकों की पहचान इतनी मुश्किल न होती।"
+  },
+  "pi05": {
+   "en": "The choice the founders made in nineteen twenty-three, spread the work across many hands, built the town. Now the same choice needs a new safety answer.",
+   "text": "तेईस में संस्थापकों ने काम को कई हाथों में बाँटने का जो चुनाव किया, उसने शहर बनाया। अब उसी को सुरक्षा का नया जवाब चाहिए।"
+  },
+  "pj00": {
+   "en": "In May twenty twenty-five, the makers' association applied for a GI tag for Sivakasi fireworks. It's a legal label of origin. Their lawyer says it would help curb duplicates.",
+   "text": "मई दो हज़ार पच्चीस में निर्माताओं के संघ ने सिवाकाशी आतिशबाज़ी के लिए जी.आई. टैग माँगा। यह मूल का क़ानूनी लेबल है। उनके वकील के मुताबिक़ इससे नक़ली माल घटेगा।"
+  },
+  "pj01": {
+   "en": "A matchbox. A coloured flame. A printing press. A war. A hundred years.",
+   "text": "एक माचिस। एक रंगीन लौ। एक प्रेस। एक जंग। सौ साल।"
+  },
+  "pj02": {
+   "en": "So India's fireworks sky wasn't made by an ancient tradition. It was made by a town that kept learning.",
+   "text": "तो भारत का आतिशबाज़ी वाला आसमान प्राचीन परंपरा ने नहीं बनाया। सीखते रहने वाले एक शहर ने बनाया।"
+  },
+  "pj03": {
+   "en": "A dry town built an industry out of hands and sun. Its next lesson is how to keep those hands safe.",
+   "text": "एक सूखे शहर ने हाथों और धूप से उद्योग खड़ा किया। उसका अगला सबक़: उन हाथों को सुरक्षित रखना।"
+  }
+ }
+}

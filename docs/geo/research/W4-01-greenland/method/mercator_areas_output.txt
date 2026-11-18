@@ -1,0 +1,18 @@
+India      official  3,287,263 km2 | NE true  3,273,927 km2 (-0.4% vs official) | Mercator apparent    3,936,607 km2 | inflation x1.20
+           extent lat 6.75..37.05  lon 68.14..97.36  NE label point (79.358105, 22.686852)
+Greenland  official  2,166,086 km2 | NE true  2,137,888 km2 (-1.3% vs official) | Mercator apparent   35,108,828 km2 | inflation x16.42
+           extent lat 59.79..83.63  lon -73.06..-11.38  NE label point (-39.335251, 74.319387)
+
+Official: India / Greenland = 1.518; Greenland / India = 0.659; difference = 1,121,177 km2
+NE true:  India / Greenland = 1.531
+Mercator map: Greenland looks 8.92 x India's size (apparent area ratio)
+Mercator inflates Greenland 13.66 x more than it inflates India
+  lat   8.0: linear scale x1.01, area scale x1.02
+  lat  22.7: linear scale x1.08, area scale x1.17
+  lat  37.0: linear scale x1.25, area scale x1.57
+  lat  60.0: linear scale x2.00, area scale x4.00
+  lat  66.6: linear scale x2.52, area scale x6.34
+  lat  70.0: linear scale x2.92, area scale x8.55
+  lat  74.3: linear scale x3.70, area scale x13.66
+  lat  80.0: linear scale x5.76, area scale x33.16
+  lat  83.6: linear scale x8.97, area scale x80.48

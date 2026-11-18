@@ -1,0 +1,193 @@
+{
+ "id": "nvidiasd",
+ "title": "A Denny's, then a strange bet",
+ "chapters": [
+  "Short"
+ ],
+ "shorts": [
+  {
+   "title": "A Denny's, then a strange bet",
+   "beats": [
+    "d1",
+    "d2",
+    "d3",
+    "d4",
+    "d5"
+   ],
+   "hook": "PLANNED AT A DENNY'S. THEN A STRANGE BET."
+  }
+ ],
+ "calm": true,
+ "brand": "Moat Atlas",
+ "timelines": {
+  "NVT": [
+   [
+    "1995",
+    "NV1 CHIP"
+   ],
+   [
+    "1999",
+    "GEFORCE 256"
+   ],
+   [
+    "2006",
+    "CUDA"
+   ],
+   [
+    "2012",
+    "ALEXNET ON 2 NVIDIA GPUS"
+   ],
+   [
+    "2023–26",
+    "AI BOOM"
+   ]
+  ]
+ },
+ "beats": [
+  {
+   "ch": 0,
+   "key": "d1",
+   "say": "NVIDIA was planned at a Denny's. Then its boss made a strange bet.",
+   "cap": "NVIDIA was planned at a Denny's. Then its boss made a strange bet.",
+   "scene": {
+    "type": "pic",
+    "pic": "dennys",
+    "heading": "PHOTO: JEEPERSMEDIA · CC BY",
+    "items": [
+     {
+      "text": "PLANNED AT A DENNY'S",
+      "at": "planned at a Denny's"
+     },
+     {
+      "text": "THEN A STRANGE BET",
+      "at": "strange bet",
+      "red": true
+     }
+    ],
+    "stamps": [
+     {
+      "text": "SOURCE: NVIDIA BLOG, 2023",
+      "at": "NVIDIA was planned"
+     }
+    ]
+   },
+   "sec": 4.47,
+   "cues": [
+    "NVIDIA was planned at a Denny's.",
+    "Then its boss made a strange bet."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "d2",
+   "say": "In nineteen ninety three, Jensen Huang and two friends sketched a chip company over endless coffee. For years it made graphics chips for video games.",
+   "cap": "In 1993, Jensen Huang and two friends sketched a chip company over endless coffee. For years it made graphics chips for video games.",
+   "scene": {
+    "type": "timeline",
+    "events": "NVT",
+    "show": 0,
+    "add": [
+     "graphics chips"
+    ]
+   },
+   "sec": 10.58,
+   "cues": [
+    "In 1993, Jensen Huang and two friends sketched a chip company over endless",
+    "coffee.",
+    "For years it made graphics chips for video games."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "d3",
+   "say": "But Jensen bet the same chips could do huge amounts of maths at once. In two thousand six, NVIDIA released CUDA so programmers could use them that way.",
+   "cap": "But Jensen bet the same chips could do huge amounts of maths at once. In 2006, NVIDIA released CUDA so programmers could use them that way.",
+   "scene": {
+    "type": "pic",
+    "pic": "gtc",
+    "heading": "PHOTO: CHANG_SEN · CC BY",
+    "items": [
+     {
+      "text": "THE BET: MATHS ON CHIPS",
+      "at": "bet the same chips"
+     },
+     {
+      "text": "2006: CUDA",
+      "at": "two thousand six",
+      "red": true
+     }
+    ]
+   },
+   "sec": 9.46,
+   "cues": [
+    "But Jensen bet the same chips could do huge amounts of maths at once.",
+    "In 2006, NVIDIA released CUDA so programmers could use them that way."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "d4",
+   "say": "Later, researchers trained a famous AI program, AlexNet, on two NVIDIA gaming cards. It turned out AI needed exactly that maths.",
+   "cap": "Later, researchers trained a famous AI program, AlexNet, on two NVIDIA gaming cards. It turned out AI needed exactly that maths.",
+   "scene": {
+    "type": "timeline",
+    "events": "NVT",
+    "show": 3,
+    "add": [
+     "AlexNet",
+     "exactly that maths"
+    ],
+    "stamps": [
+     {
+      "text": "SOURCE: NEURIPS 2012 PAPER",
+      "at": "AlexNet"
+     }
+    ]
+   },
+   "sec": 10.06,
+   "cues": [
+    "Later, researchers trained a famous AI program, AlexNet,",
+    "on two NVIDIA gaming cards.",
+    "It turned out AI needed exactly that maths."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "d5",
+   "say": "He didn't just run the kitchen. He picked the menu, twice. So what happens when the chef who picks the menu leaves? Full story on the channel.",
+   "cap": "He didn't just run the kitchen. He picked the menu, twice. So what happens when the chef who picks the menu leaves? Full story on the channel.",
+   "scene": {
+    "type": "kinetic",
+    "lines": [
+     {
+      "t": "HE PICKED THE MENU. TWICE.",
+      "at": "picked the menu",
+      "em": [
+       "MENU",
+       "TWICE"
+      ]
+     },
+     {
+      "t": "WHAT IF HE LEAVES?",
+      "at": "what happens",
+      "em": [
+       "LEAVES"
+      ]
+     },
+     {
+      "t": "FULL STORY ON THE CHANNEL.",
+      "at": "Full story"
+     }
+    ]
+   },
+   "sec": 8.36,
+   "cues": [
+    "He didn't just run the kitchen.",
+    "He picked the menu, twice.",
+    "So what happens when the chef who picks the menu leaves?",
+    "Full story on the channel."
+   ]
+  }
+ ],
+ "clips": {}
+}

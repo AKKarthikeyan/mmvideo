@@ -1,0 +1,4 @@
+# W4-07 conflicts (lite)
+1. **Area.** Same Government of Puducherry family, different numbers: 2011-indicators table Puducherry 293 / Karaikal 160 / Mahe 9 / Yanam 17 / UT 479 (statistics.py.gov.in/selected-socio-economic-indicators-2011); 2014-15 PDF 294 / 157 / 9 / 30 / 490; About page UT 479; Overview page UT 490. No area is used in the Short.
+2. **When Puducherry became officially part of India.** The History page says 1963 after French ratification; the About page says 1954 de facto, 1963 officially. Secondary snippets give a treaty exchange on 16 Aug 1962 (not opened in a primary source). Do not say a de jure year without opening the treaty text.
+3. **Puducherry-Karaikal distance.** About page says about 130 km; our straight line is 113 km; another govt page snippet said 135/160. Different bases (road vs straight line).

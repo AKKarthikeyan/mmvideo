@@ -2,13 +2,13 @@
 // Every scene lays itself out for the current composition size; timings come from phrases in the narration.
 import React from "react";
 import {AbsoluteFill, Audio, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing} from "remotion";
-import {C, COND, TYPE, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
+import {C, COND, TYPE, CALM, BRAND, spr, Drift, Pin, Stage, Stamp, Strip, Tape, TornCard, TypeLabel, VoxDefs, VoxFonts} from "../voxkit";
 import {HDraw, HWrite, sh, RED as HRED} from "../handkit";
 import {ILLUS} from "./illus";
 
 export const FPS = 30;
 export type Beat = {ch: number; key: string; say: string; cap: string; sec: number; cues: string[]; scene: any};
-export type VData = {id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
+export type VData = {calm?: boolean; brand?: string; id: string; title: string; chapters: string[]; shorts: {title: string; beats: string[]; hook?: string; loop?: boolean}[];
   timelines: Record<string, string[][]>; beats: Beat[]; clips: Record<string, {w: number; h: number; hl: number[][]}>};
 
 const isTitle = (b: Beat) => b.scene.type === "title";
@@ -259,7 +259,7 @@ const Table: React.FC<SP> = ({s, n, T}) => {
 const RowIn: React.FC<{start: number; children: React.ReactNode}> = ({start, children}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   if (f < start) return null;
-  const sp = spring({frame: f - start, fps, config: {damping: 14, stiffness: 160}});
+  const sp = spr({frame: f - start, fps, config: {damping: 14, stiffness: 160}});
   return <g transform={`translate(${(1 - sp) * -60} 0)`} opacity={Math.min(1, sp * 1.5)}>{children}</g>;
 };
 
@@ -272,7 +272,7 @@ const Bars: React.FC<SP> = ({s, n, T}) => {
       <Heading text={s.heading}/>
       {rows.map((r: any, i: number) => {
         const st = T(r.at);
-        const sp = f < st ? 0 : (st < 0 ? 1 : spring({frame: f - st, fps, config: {damping: 16, stiffness: 120}}));
+        const sp = f < st ? 0 : (st < 0 ? 1 : spr({frame: f - st, fps, config: {damping: 16, stiffness: 120}}));
         if (L.land) {
           const y = 300 + i * Math.min(150, 540 / k); const bw = 880 * r.v / max;
           return <g key={i}>
@@ -300,7 +300,7 @@ const Timeline: React.FC<SP> = ({s, n, T, D}) => {
   const dot = (i: number, x: number, y: number, children: React.ReactNode) => {
     if (f < at[i]) return (
       <g key={i}><circle cx={x} cy={y} r={14} fill={C.tan} stroke={C.gray} strokeWidth={3} strokeDasharray="5 5"/></g>);
-    const sp = at[i] < 0 ? 1 : spring({frame: f - at[i], fps, config: {damping: 10, stiffness: 170}});
+    const sp = at[i] < 0 ? 1 : spr({frame: f - at[i], fps, config: {damping: 10, stiffness: 170}});
     return <g key={i} transform={`translate(${x} ${y}) scale(${0.4 + 0.6 * sp}) translate(${-x} ${-y})`}>
       <circle cx={x} cy={y} r={16} fill={C.red} stroke={C.ink} strokeWidth={3}/>{children}</g>;
   };
@@ -343,7 +343,7 @@ const List: React.FC<SP> = ({s, n, T}) => {
       <Heading text={s.heading}/>
       {items.map((it: any, i: number) => {
         if (f < times[i]) return null;
-        const sp = spring({frame: f - times[i], fps, config: {damping: 12, stiffness: 160}});
+        const sp = spr({frame: f - times[i], fps, config: {damping: 12, stiffness: 160}});
         const on = i === cur;
         return <g key={i} transform={`translate(${(1 - sp) * -500} 0)`}>
           <rect x={x0} y={y0 + i * rh} width={w} height={rh - 22} fill={on ? C.red : C.white} style={{filter: "url(#vshadow)"}}/>
@@ -386,7 +386,7 @@ const Scores: React.FC<SP> = ({s, n, T}) => {
       <Strip x={L.cx} y={L.top} start={0} text="MOATSCORE" size={L.land ? 70 : 64}/>
       {rows.map(([name, sc], i) => {
         const st = 8 + i * 6; if (f < st) return null;
-        const sp = spring({frame: f - st, fps, config: {damping: 16, stiffness: 140}});
+        const sp = spr({frame: f - st, fps, config: {damping: 16, stiffness: 140}});
         const y = y0 + i * rh; const bw = (w - 470) * (sc / 10);
         return <g key={i}>
           <Big x={x0 + 20} y={y + rh * 0.66} text={name} size={fit(name, Math.max(34, rh * 0.52), 400, 0.5)} anchor="start"/>
@@ -446,7 +446,7 @@ const Kinetic: React.FC<SP> = ({s, n, T}) => {
             <div key={li} style={{display: "flex", flexWrap: "wrap", gap: `0 ${size * 0.26}px`, justifyContent: "center", lineHeight: 1.08, maxWidth: maxW}}>
               {ln.t.split(" ").map((w, i) => {
                 const st = s0 + i * 4;
-                const sp = spring({frame: f - st, fps, config: {damping: 11, stiffness: 170}});
+                const sp = spr({frame: f - st, fps, config: {damping: 11, stiffness: 170}});
                 const em = (ln.em || []).some((e) => w.replace(/[^A-Z0-9&₹]/gi, "").toUpperCase() === e);
                 return <span key={i} style={{fontFamily: COND, fontWeight: 700, fontSize: em ? size * 1.12 : size, color: em ? C.red : C.ink,
                   opacity: f >= st ? 1 : 0, display: "inline-block", transform: `translateY(${(1 - sp) * 50}px) scale(${0.8 + 0.2 * sp})`}}>{w}</span>;
@@ -468,7 +468,7 @@ const League: React.FC<SP> = ({s, n, T}) => {
   const sortT = s.sortAt ? T(s.sortAt) : 1e9;
   const order = rows.map((_, i) => i).sort((a, b) => rows[b].v - rows[a].v);
   const rank = rows.map((_, i) => order.indexOf(i));
-  const sp = f < sortT ? 0 : spring({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
+  const sp = f < sortT ? 0 : spr({frame: f - sortT, fps, config: {damping: 15, stiffness: 110}});
   const maxV = Math.max(...rows.map((r) => Math.abs(r.v)), 1);
   const land = L.land;
   const rh = land ? Math.min(130, 620 / k) : Math.min(300, 1000 / k);
@@ -479,7 +479,7 @@ const League: React.FC<SP> = ({s, n, T}) => {
       <Heading text={s.heading}/>
       {rows.map((r, i) => {
         if (f < times[i]) return null;
-        const g = spring({frame: f - times[i], fps, config: {damping: 16, stiffness: 120}});
+        const g = spr({frame: f - times[i], fps, config: {damping: 16, stiffness: 120}});
         const pos = i + (rank[i] - i) * sp;
         const y = y0 + pos * rh;
         const lead = sp > 0.6 && rank[i] === 0;
@@ -505,16 +505,20 @@ const League: React.FC<SP> = ({s, n, T}) => {
 // text strips drawn in code. Image: public/vx/<id>/pics/<pic>.png (scripts/pics_gen.py).
 const Pic: React.FC<SP> = ({s, n, T, D}) => {
   const L = useL(); const f = useCurrentFrame();
-  const z = interpolate(f, [0, Math.max(1, n)], [1.0, 1.09]);
+  const fo = L.land ? s.focus : s.focusP;   // focusP = portrait (Shorts) window; optional crop window on the photo: {x, y, w, iw, ih} = source x, y, width shown, source size
+  const z = interpolate(f, [0, Math.max(1, n)], [1.0, fo ? 1.03 : 1.09]);
   const items = s.items || []; const k = items.length;
   const gap = L.land ? 150 : 175, fs = L.land ? 78 : 66;
-  const y0 = L.land ? L.H * 0.62 - ((k - 1) * gap) / 2 : L.H * 0.56 - ((k - 1) * gap) / 2;
+  const y0 = (L.land ? s.y0 : s.y0p) ?? (L.land ? L.H * 0.62 - ((k - 1) * gap) / 2 : L.H * 0.56 - ((k - 1) * gap) / 2);
+  const fk = fo ? L.W / fo.w : 1;
   return (
     <svg width={L.W} height={L.H} viewBox={`0 0 ${L.W} ${L.H}`} style={{position: "absolute"}}>
       <VoxDefs/>
       <rect width={L.W} height={L.H} fill={C.ink}/>
       <g transform={`translate(${L.W / 2} ${L.H / 2}) scale(${z}) translate(${-L.W / 2} ${-L.H / 2})`}>
-        <image href={staticFile(`vx/${D.id}/pics/${s.pic}.png`)} x={0} y={0} width={L.W} height={L.H} preserveAspectRatio="xMidYMid slice"/>
+        {fo
+          ? <image href={staticFile(`vx/${D.id}/pics/${s.pic}.png`)} x={-fo.x * fk} y={-fo.y * fk} width={fo.iw * fk} height={fo.ih * fk} preserveAspectRatio="none"/>
+          : <image href={staticFile(`vx/${D.id}/pics/${s.pic}.png`)} x={0} y={0} width={L.W} height={L.H} preserveAspectRatio="xMidYMid slice"/>}
       </g>
       <rect width={L.W} height={L.H} fill="#000" opacity={0.22}/>
       {s.heading ? <Strip x={L.W / 2} y={L.land ? 120 : 260} start={0} text={s.heading} size={L.land ? 44 : 40} fill={C.ink} color={C.white} font={TYPE}/> : null}
@@ -560,7 +564,7 @@ const Furniture: React.FC<{D: VData; beats: Beat[]; starts: number[]; total: num
       })}
       {showTag && <g><rect x={36} y={30} width={D.chapters[ch].length * 15 + 110} height={44} fill={C.ink}/>
         <text x={52} y={61} fontFamily={TYPE} fontSize={24} fill={C.white}>{`CH ${ch} · ${D.chapters[ch].toUpperCase()}`}</text></g>}
-      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">Moat &amp; Margin · from the filings</text>
+      <text x={1880} y={62} fontFamily={TYPE} fontSize={24} fill={C.ink} opacity={0.6} textAnchor="end">{BRAND.name} · from the filings</text>
     </svg>
   );
 };
@@ -585,6 +589,7 @@ export const longLayout = (D: VData) => {
   return {frames, starts, total: frames.reduce((a, b) => a + b, 0)};
 };
 export const VoxLong: React.FC<{D: VData}> = ({D}) => {
+  CALM.on = !!D.calm; BRAND.name = D.brand || "Moat & Margin";
   const {frames, starts, total} = longLayout(D);
   return (
     <AbsoluteFill style={{background: C.tan}}>
@@ -620,9 +625,9 @@ const ShortEndLoop: React.FC = () => (
     <VoxDefs/><Stage w={1080} h={1920}/>
     <rect x={60} y={560} width={960} height={170} fill={C.ink} rx={8}/>
     <text x={540} y={675} fontFamily={COND} fontWeight={700} fontSize={76} textAnchor="middle" fill={C.mustard}>FULL VIDEO: LINKED BELOW</text>
-    <Strip x={540} y={860} start={0} text="MOAT & MARGIN" size={96}/>
+    <Strip x={540} y={860} start={0} text={BRAND.name.toUpperCase()} size={96}/>
     <TypeLabel x={110} y={1060} start={0} text="Educational research, not investment advice." size={30} cps={40}/>
-    <TypeLabel x={110} y={1150} start={0} text="Not a SEBI-registered Research Analyst." size={30} cps={40}/>
+    {BRAND.name === "Moat & Margin" && <TypeLabel x={110} y={1150} start={0} text="Not a SEBI-registered Research Analyst." size={30} cps={40}/>}
   </svg>
 );
 const ShortEnd: React.FC<{title: string}> = ({title}) => {
@@ -631,14 +636,15 @@ const ShortEnd: React.FC<{title: string}> = ({title}) => {
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: "absolute"}}>
       <VoxDefs/><Stage w={1080} h={1920}/>
       <Strip x={540} y={640} start={0} text="FULL STORY · LONG VIDEO" size={70} fill={C.red} color={C.white}/>
-      <Strip x={540} y={800} start={4} text="MOAT & MARGIN" size={96}/>
+      <Strip x={540} y={800} start={4} text={BRAND.name.toUpperCase()} size={96}/>
       <TypeLabel x={110} y={1010} start={10} text="Every figure from primary documents." size={30} cps={4}/>
       <TypeLabel x={110} y={1100} start={20} text="Educational research, not investment advice." size={30} cps={4}/>
-      <TypeLabel x={110} y={1190} start={30} text="Not a SEBI-registered Research Analyst." size={30} cps={4}/>
+      {BRAND.name === "Moat & Margin" && <TypeLabel x={110} y={1190} start={30} text="Not a SEBI-registered Research Analyst." size={30} cps={4}/>}
     </svg>
   );
 };
 export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
+  CALM.on = !!D.calm; BRAND.name = D.brand || "Moat & Margin";
   const {bs, frames} = shortLayout(D, idx);
   let from = 0;
   return (
@@ -650,7 +656,7 @@ export const VoxShort: React.FC<{D: VData; idx: number}> = ({D, idx}) => {
       {D.shorts[idx].hook && !D.shorts[idx].loop && <Sequence from={0} durationInFrames={Math.min(frames[0], 3 * FPS)}><AbsoluteFill><ShortHook text={D.shorts[idx].hook!} n={Math.min(frames[0], 3 * FPS)}/></AbsoluteFill></Sequence>}
       <svg width={1080} height={1920} style={{position: "absolute"}}>
         <text x={540} y={140} fontFamily={COND} fontWeight={700} fontSize={40} textAnchor="middle" fill={C.ink}>{D.shorts[idx].title.toUpperCase()}</text>
-        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">Moat &amp; Margin · from the filings</text>
+        <text x={540} y={1860} fontFamily={TYPE} fontSize={26} fill={C.ink} opacity={0.6} textAnchor="middle">{BRAND.name} · from the filings</text>
         {D.shorts[idx].loop && <text x={540} y={1898} fontFamily={TYPE} fontSize={22} fill={C.ink} opacity={0.6} textAnchor="middle">Educational research, not investment advice · not SEBI-registered</text>}
       </svg>
     </AbsoluteFill>

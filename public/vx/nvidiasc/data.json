@@ -1,0 +1,226 @@
+{
+ "id": "nvidiasc",
+ "title": "NVIDIA's annual report already warned about this",
+ "chapters": [
+  "Short"
+ ],
+ "shorts": [
+  {
+   "title": "NVIDIA's annual report already warned about this",
+   "beats": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5"
+   ],
+   "hook": "NVIDIA'S OWN REPORT WARNED ABOUT THIS"
+  }
+ ],
+ "calm": true,
+ "brand": "Moat Atlas",
+ "timelines": {
+  "NVT": [
+   [
+    "1995",
+    "NV1 CHIP"
+   ],
+   [
+    "1999",
+    "GEFORCE 256"
+   ],
+   [
+    "2006",
+    "CUDA"
+   ],
+   [
+    "2012",
+    "ALEXNET ON 2 NVIDIA GPUS"
+   ],
+   [
+    "2023–26",
+    "AI BOOM"
+   ]
+  ]
+ },
+ "beats": [
+  {
+   "ch": 0,
+   "key": "c1",
+   "say": "NVIDIA's annual report warned about this months before the news broke.",
+   "cap": "NVIDIA's annual report warned about this months before the news broke.",
+   "scene": {
+    "type": "clip",
+    "clip": "nv_succession",
+    "heading": "NVIDIA 10-K FY2026 · FILED 25 FEB 2026",
+    "hl": [
+     "annual report"
+    ]
+   },
+   "sec": 4.34,
+   "cues": [
+    "NVIDIA's annual report warned about this months before the news broke."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c2",
+   "say": "The report lists NVIDIA's executive officers. Jensen Huang is CEO, and he has been since he co-founded the company.",
+   "cap": "The report lists NVIDIA's executive officers. Jensen Huang is CEO, and he has been since he co-founded the company.",
+   "scene": {
+    "type": "table",
+    "heading": "AS LISTED IN THE 10-K · FEB 2026",
+    "cols": [
+     "OFFICER",
+     "ROLE"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "HUANG",
+       "PRESIDENT & CEO"
+      ],
+      "at": "Jensen Huang is CEO"
+     },
+     {
+      "cells": [
+       "KRESS",
+       "EVP & CFO"
+      ],
+      "at": "executive officers"
+     },
+     {
+      "cells": [
+       "PURI",
+       "EVP, WORLDWIDE FIELD OPS"
+      ],
+      "at": "executive officers"
+     },
+     {
+      "cells": [
+       "SHOQUIST",
+       "EVP, OPERATIONS"
+      ],
+      "at": "executive officers"
+     },
+     {
+      "cells": [
+       "TETER",
+       "EVP & GENERAL COUNSEL"
+      ],
+      "at": "executive officers"
+     }
+    ]
+   },
+   "sec": 6.95,
+   "cues": [
+    "The report lists NVIDIA's executive officers.",
+    "Jensen Huang is CEO, and he has been since he co-founded the company."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c3",
+   "say": "Then, on page twenty three, it says the company is highly dependent on its longstanding executive team, and that poor succession planning could hurt its long-term success.",
+   "cap": "Then, on page 23, it says the company is highly dependent on its longstanding executive team, and that poor succession planning could hurt its long-term success.",
+   "scene": {
+    "type": "clip",
+    "clip": "nv_succession",
+    "heading": "NVIDIA 10-K FY2026 · ITEM 1A · PAGE 23",
+    "hl": [
+     "highly dependent"
+    ]
+   },
+   "sec": 9.53,
+   "cues": [
+    "Then, on page 23, it says the company is highly dependent on its longstanding",
+    "executive team, and that poor succession planning could hurt its long-term",
+    "success."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c4",
+   "say": "But the report names no successor. Jensen has said his direct staff is sixty people, and that's how he runs things. So there's no public number two.",
+   "cap": "But the report names no successor. Jensen has said his direct staff is 60 people, and that's how he runs things. So there's no public number two.",
+   "scene": {
+    "type": "pic",
+    "pic": "ceo",
+    "heading": "PHOTO: PESTOVERDE, CC BY 2.0",
+    "items": [
+     {
+      "text": "NO NAMED SUCCESSOR",
+      "at": "names no successor"
+     },
+     {
+      "text": "\"MY DIRECT STAFF IS 60 PEOPLE\"",
+      "at": "his direct staff"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "LEX FRIDMAN #494 · 5:36",
+      "at": "his direct staff"
+     }
+    ]
+   },
+   "sec": 8.15,
+   "cues": [
+    "But the report names no successor.",
+    "Jensen has said his direct staff is 60 people, and that's how he runs things.",
+    "So there's no public number two."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "c5",
+   "say": "The warning came months before the news. Now the question is who is next. The full test is on the channel.",
+   "cap": "The warning came months before the news. Now the question is who is next. The full test is on the channel.",
+   "scene": {
+    "type": "kinetic",
+    "lines": [
+     {
+      "t": "THE WARNING CAME FIRST.",
+      "at": "The warning came",
+      "em": [
+       "FIRST"
+      ]
+     },
+     {
+      "t": "WHO IS NEXT?",
+      "at": "who is next",
+      "em": [
+       "NEXT"
+      ]
+     },
+     {
+      "t": "FULL TEST ON THE CHANNEL.",
+      "at": "The full test"
+     }
+    ]
+   },
+   "sec": 6.35,
+   "cues": [
+    "The warning came months before the news.",
+    "Now the question is who is next.",
+    "The full test is on the channel."
+   ]
+  }
+ ],
+ "clips": {
+  "nv_succession": {
+   "w": 1644,
+   "h": 156,
+   "hl": [
+    [
+     0.2639,
+     0.1852,
+     0.5639,
+     0.2592
+    ]
+   ],
+   "page": 111,
+   "quote": "highly dependent on the services of our longstanding executive team"
+  }
+ }
+}

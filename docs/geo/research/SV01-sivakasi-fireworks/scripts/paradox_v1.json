@@ -1,0 +1,874 @@
+{
+ "id": "SV01-paradox_v1",
+ "ep": "SV01",
+ "product": "General long-form (no channel)",
+ "voice": "male, English, for Indian and global viewers aged 18-35; 'Sivakasi' = SHIV-uh-KAH-see; explain Deepavali, crore and lakh once",
+ "research": "docs/geo/research/SV01-sivakasi-fireworks (claims AK-VERIFIED 1 Nov 2026)",
+ "status": "DRAFT v1 for AK review, 1 Nov 2026. Not voiced.",
+ "format": "F10 The Paradox ('Both are true. How?'), with one F13 scale-shock layer at the money beat. Hidden factors: hands, sun, a skill, a press, a war.",
+ "target_seconds": 533,
+ "beats": [
+  {
+   "key": "pa01",
+   "move": "Fact A",
+   "say": "Start with Sivakasi, in far-south Tamil Nadu. It sits in the rain shadow of the western hills. Little rain. Dry soil. Hard farming.",
+   "caption": "Dry · hard farming",
+   "visual": "Terrain map; rain arrows stop at the ridge (ridge from geodata, arrows tagged artistic)",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.5,
+   "t": 0.0,
+   "words": 23
+  },
+  {
+   "key": "pa02",
+   "move": "Fact A, part 2",
+   "say": "And a hundred years ago, it made no fireworks. It didn't even make matches.",
+   "caption": "Before 1923: none",
+   "visual": "Blank map of the town",
+   "claims": [
+    "C006"
+   ],
+   "pause": 0.5,
+   "t": 10.0,
+   "words": 14
+  },
+  {
+   "key": "pa03",
+   "move": "Fact B (the clash)",
+   "say": "Yet today, by the industry's own count, between eighty and ninety percent of India's fireworks come from here.",
+   "caption": "80-90%",
+   "visual": "Night sky bursts over a single map pin",
+   "claims": [
+    "C002"
+   ],
+   "pause": 0.5,
+   "t": 16.3,
+   "words": 18
+  },
+  {
+   "key": "pa04",
+   "move": "Both are true",
+   "say": "A dry town. A craft with no past. And almost every firework in India. All three are true. So how?",
+   "caption": "HOW?",
+   "visual": "Three facts stack, then a question mark",
+   "claims": [
+    "C001",
+    "C006",
+    "C002"
+   ],
+   "pause": 0.8,
+   "t": 24.3,
+   "words": 20
+  },
+  {
+   "key": "pa05",
+   "move": "Promise",
+   "say": "Four pieces answer it. A matchbox. A pair of hands. The sun. And, last, a printing press and a war. One at a time.",
+   "caption": "MATCHBOX · HANDS · SUN · PRESS+WAR",
+   "visual": "Four icons in a row, dark",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 33.3,
+   "words": 19
+  },
+  {
+   "key": "pb01",
+   "move": "Prime: the globe",
+   "say": "Find India on the globe. Now slide down to its far south, to Tamil Nadu.",
+   "caption": "Tamil Nadu",
+   "visual": "Globe spin, zoom to the southern state",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 41.7,
+   "words": 15
+  },
+  {
+   "key": "pb02",
+   "move": "Name the parts",
+   "say": "Three things to keep in mind. A match. A Bengal light, which is a match that burns in colour. And a firework.",
+   "caption": "Match · Bengal light · Firework",
+   "visual": "Three icons labelled one by one",
+   "claims": [
+    "C013"
+   ],
+   "pause": 0.5,
+   "t": 48.4,
+   "words": 22
+  },
+  {
+   "key": "pc01",
+   "move": "Piece 1: the matchbox",
+   "say": "Go back to nineteen twenty-two. Matches are made in Calcutta, today's Kolkata, or shipped in from abroad.",
+   "caption": "1922 · Calcutta",
+   "visual": "Old-map style India; Calcutta glows",
+   "claims": [
+    "C010"
+   ],
+   "pause": 0.5,
+   "t": 58.0,
+   "words": 17
+  },
+  {
+   "key": "pc02",
+   "move": "The travellers",
+   "say": "Two young men from Sivakasi make that trip. P. Ayya Nadar is about seventeen. A. Shanmuga Nadar is about nineteen.",
+   "caption": "Ayya Nadar · Shanmuga Nadar",
+   "visual": "Two drawn silhouettes at a station (no archival portraits unless the licence is cleared)",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.5,
+   "t": 65.5,
+   "words": 20
+  },
+  {
+   "key": "pc03",
+   "move": "Their goal",
+   "say": "They aren't going to learn fireworks. They're going to learn one thing: how to make a safety match.",
+   "caption": "Goal: the safety match",
+   "visual": "Close-up of a drawn matchbox",
+   "claims": [
+    "C007"
+   ],
+   "pause": 0.5,
+   "t": 74.3,
+   "words": 18
+  },
+  {
+   "key": "pc04",
+   "move": "The apprenticeship",
+   "say": "They stay six to eight months, learning from a match-maker named Purna Chandra Roy.",
+   "caption": "6-8 months",
+   "visual": "Workshop scene, slow",
+   "claims": [
+    "C008"
+   ],
+   "pause": 0.7,
+   "t": 82.3,
+   "words": 14
+  },
+  {
+   "key": "pc05",
+   "move": "Return",
+   "say": "In nineteen twenty-three they come home with German machines and open a match factory. The South-India Lucifer Match Industry.",
+   "caption": "1923 · first match factory",
+   "visual": "Machines arrive by cart; factory sign draws in",
+   "claims": [
+    "C009"
+   ],
+   "pause": 0.5,
+   "t": 88.8,
+   "words": 19
+  },
+  {
+   "key": "pc06",
+   "move": "Recap",
+   "say": "Piece one: a skill. Matches. Not fireworks yet.",
+   "caption": "Piece 1: a skill",
+   "visual": "Icon 1 lights",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 97.1,
+   "words": 8
+  },
+  {
+   "key": "pd01",
+   "move": "Piece 2: the hands",
+   "say": "But the heavy German machines are a problem. In a small, remote town, they are costly to run.",
+   "caption": "Machines: too costly",
+   "visual": "Machine stamped with a cost tag",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 100.9,
+   "words": 18
+  },
+  {
+   "key": "pd02",
+   "move": "The choice",
+   "say": "So the founders change the plan. They spread the work across the villages around.",
+   "caption": "Spread the work",
+   "visual": "Map: lines from the factory to nearby villages",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 108.9,
+   "words": 14
+  },
+  {
+   "key": "pd03",
+   "move": "The link back to Fact A",
+   "say": "And here is the first link back to the dry land. Farming is hard, so many families around need work. Accounts describe plenty of low-cost labour in the villages around Sivakasi, Sattur and Virudhunagar.",
+   "caption": "Weak farms → spare hands",
+   "visual": "Map: village dots connect to the factory",
+   "claims": [
+    "C033",
+    "C001"
+   ],
+   "pause": 0.8,
+   "t": 115.2,
+   "words": 34
+  },
+  {
+   "key": "pd04",
+   "move": "How it worked",
+   "say": "Families roll, fill and pack by hand, at home. The factory does only the chemical part.",
+   "caption": "Hands at home",
+   "visual": "Drawn verandah scene, women and children packing",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 130.0,
+   "words": 16
+  },
+  {
+   "key": "pd05",
+   "move": "Mood of the time",
+   "say": "It fits the mood of the time. Mahatma Gandhi is urging Indians to revive village industries.",
+   "caption": "Village industry",
+   "visual": "Gandhi-era poster style, drawn in code (artistic)",
+   "claims": [
+    "C011"
+   ],
+   "pause": 0.5,
+   "t": 137.2,
+   "words": 16
+  },
+  {
+   "key": "pd06",
+   "move": "Analogy",
+   "say": "Think of many home kitchens feeding one restaurant, instead of one giant kitchen. Cheap to start. Hard to supervise.",
+   "caption": "Many kitchens, one brand",
+   "visual": "Verandahs link to one factory by lines",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "analogy": true,
+   "t": 144.3,
+   "words": 19
+  },
+  {
+   "key": "pd07",
+   "move": "Recap",
+   "say": "Piece two: hands. The weak farms supplied them.",
+   "caption": "Piece 2: hands",
+   "visual": "Icon 2 lights",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 152.6,
+   "words": 8
+  },
+  {
+   "key": "pe01",
+   "move": "Piece 3: colour and sun",
+   "say": "In nineteen twenty-six the two men part ways, and compete. Ayya Nadar's brand is a squirrel, Anil. Shanmuga Nadar's is a crow, Kaaka. A squirrel against a crow.",
+   "caption": "Squirrel vs Crow",
+   "visual": "Two label designs drawn in code, side by side",
+   "claims": [
+    "C012"
+   ],
+   "pause": 0.5,
+   "t": 156.5,
+   "words": 28
+  },
+  {
+   "key": "pe02",
+   "move": "Colour",
+   "say": "To stand out, match-makers add something new: sticks that burn in colour. They're called Bengal lights. In Tamil, matthaappu.",
+   "caption": "Bengal light · matthaappu",
+   "visual": "A match strikes; the flame turns red, then green",
+   "claims": [
+    "C013"
+   ],
+   "pause": 0.5,
+   "t": 168.5,
+   "words": 19
+  },
+  {
+   "key": "pe03",
+   "move": "Stepping stone",
+   "say": "Local histories treat the Bengal light as the stepping stone. A match that burns in colour is already close to a sparkler. And in nineteen thirty-eight, N. R. K. Rajarathina Nadar opens the town's first factory made only for fireworks.",
+   "caption": "1938 · first fireworks factory",
+   "visual": "Match flame grows into a sparkler, then a first firework",
+   "claims": [
+    "C014",
+    "C015"
+   ],
+   "pause": 0.7,
+   "hedge": "'treat ... as' is the hedge until C014 has a source",
+   "t": 176.9,
+   "words": 40
+  },
+  {
+   "key": "pe03b",
+   "move": "Loop closes",
+   "say": "So that is how matches became fireworks. Coloured matches led to fireworks. Not a tradition. A chain.",
+   "caption": "Not a tradition. A chain.",
+   "visual": "First two chain icons light",
+   "claims": [
+    "C006",
+    "C014"
+   ],
+   "pause": 0.8,
+   "t": 194.2,
+   "words": 17
+  },
+  {
+   "key": "pe04",
+   "move": "Second link back to Fact A",
+   "say": "And now the dryness that hurt the farms starts to help the factories. Paper tubes and chemicals must dry in the open. Dry, sunny Sivakasi dries them for free.",
+   "caption": "Dry sun = free drying",
+   "visual": "Drying yard, shadows moving",
+   "claims": [
+    "C031"
+   ],
+   "pause": 0.8,
+   "t": 202.0,
+   "words": 29
+  },
+  {
+   "key": "pe05",
+   "move": "Recap",
+   "say": "Piece three: the sun. A curse for the farms. A help for the fireworks.",
+   "caption": "Piece 3: the sun",
+   "visual": "Icon 3 lights",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 214.8,
+   "words": 14
+  },
+  {
+   "key": "pf01",
+   "move": "Piece 4: the press and the war",
+   "say": "Every matchbox and every packet of crackers needs a bright paper label. In the nineteen thirties, those labels come from presses in Bombay, today's Mumbai.",
+   "caption": "Labels from Bombay",
+   "visual": "Label rolls on a train, Mumbai to Sivakasi",
+   "claims": [
+    "C016"
+   ],
+   "pause": 0.5,
+   "t": 221.1,
+   "words": 25
+  },
+  {
+   "key": "pf02",
+   "move": "Fix",
+   "say": "So in nineteen thirty-eight, K. S. A. Arunagiri Nadar sets up a printing press in Sivakasi itself. National Litho Press.",
+   "caption": "1938 · National Litho Press",
+   "visual": "Press frame draws in",
+   "claims": [
+    "C016"
+   ],
+   "pause": 0.5,
+   "t": 231.9,
+   "words": 20
+  },
+  {
+   "key": "pf03",
+   "move": "Analogy",
+   "say": "Picture a shop that sells most of its stock in one week, and keeps running out of paper cups from a far-off city. So the owner buys a printer. Then he notices it can print for the other eleven months too.",
+   "caption": "One week. Eleven months.",
+   "visual": "Drawn shop; calendar flips",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "analogy": true,
+   "t": 240.7,
+   "words": 41
+  },
+  {
+   "key": "pf04",
+   "move": "Payoff",
+   "say": "That is Sivakasi's second trick. When the fireworks season ends, the presses keep running. Calendars. Diaries. Notebooks.",
+   "caption": "Presses never stop",
+   "visual": "Press output: calendar, diary, notebook",
+   "claims": [
+    "C016",
+    "C021"
+   ],
+   "pause": 0.5,
+   "t": 258.2,
+   "words": 17
+  },
+  {
+   "key": "pf05",
+   "move": "Nickname, hedged",
+   "say": "Prime Minister Nehru is said to have called the town 'Kutty Japan', Little Japan, for making matches, fireworks and print on its own.",
+   "caption": "'Kutty Japan'",
+   "visual": "Nameplate",
+   "claims": [
+    "C019"
+   ],
+   "pause": 0.5,
+   "t": 265.7,
+   "words": 23
+  },
+  {
+   "key": "pf06",
+   "move": "Own words (historian)",
+   "say": "A historian of the town, Rengaiah Murugan, put it simply: 'As a chain reaction, various allied industries started to mushroom.'",
+   "caption": "Chain reaction",
+   "visual": "Quote card over the chain icons",
+   "claims": [
+    "C030"
+   ],
+   "pause": 0.8,
+   "t": 275.7,
+   "words": 21
+  },
+  {
+   "key": "pg01",
+   "move": "Turn",
+   "say": "Now comes the moment that turns a good town into the national one. Nineteen-forty.",
+   "caption": "1940",
+   "visual": "Black beat, then a date",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 285.2,
+   "words": 14
+  },
+  {
+   "key": "pg02",
+   "move": "Rule 1",
+   "say": "That year, the Explosives Rules arrive. To make fireworks, you now need a licence.",
+   "caption": "Licence required",
+   "visual": "Rule document draws in",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.5,
+   "t": 291.5,
+   "words": 14
+  },
+  {
+   "key": "pg03",
+   "move": "Rule 2",
+   "say": "Then the Second World War cuts off the fireworks that used to come in from abroad.",
+   "caption": "Imports stop",
+   "visual": "Sea routes close on the map",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.5,
+   "t": 297.8,
+   "words": 16
+  },
+  {
+   "key": "pg04",
+   "move": "Door open",
+   "say": "The few licensed makers suddenly have the whole market. By nineteen forty-two, three firms hold licences: National, Standard and Kaliswari.",
+   "caption": "National · Standard · Kaliswari",
+   "visual": "Three factory icons",
+   "claims": [
+    "C017"
+   ],
+   "pause": 0.8,
+   "t": 304.9,
+   "words": 20
+  },
+  {
+   "key": "pg05",
+   "move": "Growth 1",
+   "say": "Three licensed factories in nineteen forty-two.",
+   "caption": "1942: 3",
+   "visual": "Bar chart: one bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 314.0,
+   "words": 6
+  },
+  {
+   "key": "pg06",
+   "move": "Growth 2",
+   "say": "By nineteen eighty: a hundred and eighty-nine.",
+   "caption": "1980: 189",
+   "visual": "Bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 317.1,
+   "words": 7
+  },
+  {
+   "key": "pg07",
+   "move": "Growth 3",
+   "say": "By two thousand and one: four hundred and fifty.",
+   "caption": "2001: 450",
+   "visual": "Bar rises",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.6,
+   "t": 320.6,
+   "words": 9
+  },
+  {
+   "key": "pg08",
+   "move": "Growth 4",
+   "say": "Today, the industry says, more than a thousand.",
+   "caption": "Today: 1,000+",
+   "visual": "Bar rises past the frame",
+   "claims": [
+    "C004"
+   ],
+   "pause": 0.6,
+   "t": 324.9,
+   "words": 8
+  },
+  {
+   "key": "pg09",
+   "move": "Scale shock (F13)",
+   "say": "Worth about six thousand crore rupees a year. That is sixty billion rupees.",
+   "caption": "₹6,000 crore a year",
+   "visual": "Counter ticks to 6,000 as the whole chain glows",
+   "claims": [
+    "C003"
+   ],
+   "pause": 1.0,
+   "t": 328.8,
+   "words": 13
+  },
+  {
+   "key": "pk01",
+   "move": "THE CLICK",
+   "say": "So the paradox dissolves. Weak farms gave Sivakasi hands and sun. A matchbox gave it a skill. A press kept it busy all year. And a war gave it a market.",
+   "caption": "HANDS · SUN · SKILL · PRESS · WAR",
+   "visual": "All four icons light, then link to the first three facts",
+   "claims": [
+    "C033",
+    "C031",
+    "C009",
+    "C016",
+    "C017"
+   ],
+   "pause": 1.0,
+   "peak": true,
+   "t": 335.2,
+   "words": 31
+  },
+  {
+   "key": "pk02",
+   "move": "Both true, again",
+   "say": "But the paradox has a second half. The very things that built the town now put it under pressure.",
+   "caption": "The second half",
+   "visual": "Icons flip to a darker tone",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 349.0,
+   "words": 19
+  },
+  {
+   "key": "ph00",
+   "move": "Pressure 1: the court",
+   "say": "Today's challenge comes from a new direction. The air.",
+   "caption": "The air",
+   "visual": "Delhi winter haze (drawn)",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 357.4,
+   "words": 9
+  },
+  {
+   "key": "ph01",
+   "move": "Ban",
+   "say": "In October twenty-eighteen, the Supreme Court bans crackers made with barium salts, and joined crackers. The aim is cleaner air in the north.",
+   "caption": "Oct 2018 · ban",
+   "visual": "Court order frame",
+   "claims": [
+    "C022"
+   ],
+   "pause": 0.5,
+   "t": 361.6,
+   "words": 23
+  },
+  {
+   "key": "ph02",
+   "move": "Response",
+   "say": "The industry's answer is the green cracker, developed by a government lab, CSIR-NEERI. Its versions are called SWAS, SAFAL and STAR.",
+   "caption": "Green crackers",
+   "visual": "Three labels",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "t": 371.6,
+   "words": 21
+  },
+  {
+   "key": "ph03",
+   "move": "Rule out the myth",
+   "say": "Green doesn't mean pollution-free. The lab's own claim is about a third less particle pollution.",
+   "caption": "~30% less. Not zero.",
+   "visual": "Smoke density bars: before, after",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "t": 380.8,
+   "words": 15
+  },
+  {
+   "key": "ph04",
+   "move": "How it works",
+   "say": "How? According to the lab, the mix releases water vapour and air as it burns, which helps the dust settle. Picture a tiny mist sprayer inside the shell.",
+   "caption": "Water vapour settles dust",
+   "visual": "Cutaway of a drawn shell with mist",
+   "claims": [
+    "C023"
+   ],
+   "pause": 0.5,
+   "analogy": true,
+   "t": 387.5,
+   "words": 28
+  },
+  {
+   "key": "ph04b",
+   "move": "Stakes",
+   "say": "Delhi and its surroundings are roughly thirteen percent of national demand, industry associations estimate.",
+   "caption": "Delhi-NCR ≈ 13%",
+   "visual": "Map highlight",
+   "claims": [
+    "C025"
+   ],
+   "pause": 0.5,
+   "t": 399.6,
+   "words": 14
+  },
+  {
+   "key": "ph05",
+   "move": "The real deadline",
+   "say": "In October twenty twenty-five, the Court eases the Delhi ban: green crackers only, with QR codes, in fixed time slots. But it comes just before Deepavali. A makers' leader said it comes too close to the festival, yet gives hope for future business.",
+   "caption": "Oct 2025 · too close to the festival",
+   "visual": "Calendar countdown to Deepavali",
+   "claims": [
+    "C025"
+   ],
+   "pause": 0.8,
+   "t": 405.9,
+   "words": 43
+  },
+  {
+   "key": "ph06",
+   "move": "Recap",
+   "say": "So the law gave a ban, then a lab, then a compromise. And a deadline that arrived too late for this season.",
+   "caption": "Ban · lab · compromise",
+   "visual": "Three steps lit",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 424.5,
+   "words": 22
+  },
+  {
+   "key": "pi01",
+   "move": "Pressure 2: the hands",
+   "say": "Now go back to the hands. By the industry's count, about three lakh people work in these factories. That is three hundred thousand. Many more work around them.",
+   "caption": "~3 lakh workers",
+   "visual": "Drawn crowd leaving a factory gate",
+   "claims": [
+    "C005"
+   ],
+   "pause": 0.5,
+   "t": 434.1,
+   "words": 28
+  },
+  {
+   "key": "pi01b",
+   "move": "Plant pays",
+   "say": "Mixing, filling and threading fuses are still done mostly by hand.",
+   "caption": "Still by hand",
+   "visual": "Hands, close",
+   "claims": [
+    "C029"
+   ],
+   "pause": 0.5,
+   "t": 446.2,
+   "words": 11
+  },
+  {
+   "key": "pi01c",
+   "move": "Optional: the licence cap",
+   "say": "On paper, a small unit's licence limits how many people may work inside. Reports say twelve.",
+   "caption": "Licence cap",
+   "visual": "Floor plan",
+   "claims": [
+    "C027"
+   ],
+   "pause": 0.5,
+   "t": 451.2,
+   "words": 16
+  },
+  {
+   "key": "pi02",
+   "move": "The gap",
+   "say": "Reports describe sheds sub-let to contractors, and crowded verandahs. A gap between the licence and the workplace.",
+   "caption": "Licence ≠ workplace",
+   "visual": "Floor plan with more figures than the cap",
+   "claims": [
+    "C027"
+   ],
+   "pause": 0.5,
+   "t": 458.3,
+   "words": 17
+  },
+  {
+   "key": "pi03",
+   "move": "The day",
+   "say": "On the nineteenth of April, twenty twenty-six, an explosion at a factory near Sivakasi killed twenty-five workers.",
+   "caption": "19 Apr 2026 · 25 killed",
+   "visual": "Sober frame: date, number, a lamp. No gore, no photos",
+   "claims": [
+    "C026"
+   ],
+   "pause": 1.0,
+   "t": 465.9,
+   "words": 17
+  },
+  {
+   "key": "pi04",
+   "move": "A worker's line",
+   "say": "A worker, K. Rajkumar, told The Hindu that with a biometric attendance system, identifying the dead would not have been so hard.",
+   "caption": "Who was inside?",
+   "visual": "Attendance ledger frame",
+   "claims": [
+    "C026"
+   ],
+   "pause": 0.8,
+   "t": 473.9,
+   "words": 22
+  },
+  {
+   "key": "pi05",
+   "move": "Plant pays",
+   "say": "The choice the founders made in nineteen twenty-three, spread the work across many hands, built the town. Now the same choice needs a new safety answer.",
+   "caption": "The same hands",
+   "visual": "Verandah scene from pd04, now with a floor-plan overlay",
+   "claims": [
+    "C011",
+    "C026"
+   ],
+   "pause": 1.0,
+   "t": 483.8,
+   "words": 26
+  },
+  {
+   "key": "pj00",
+   "move": "Where it stands",
+   "say": "In May twenty twenty-five, the makers' association applied for a GI tag for Sivakasi fireworks. It's a legal label of origin. Their lawyer says it would help curb duplicates.",
+   "caption": "GI tag applied · May 2025",
+   "visual": "GI application frame",
+   "claims": [
+    "C024"
+   ],
+   "pause": 0.5,
+   "t": 495.6,
+   "words": 29
+  },
+  {
+   "key": "pj01",
+   "move": "Recap",
+   "say": "A matchbox. A coloured flame. A printing press. A war. A hundred years.",
+   "caption": "Match · colour · press · war",
+   "visual": "Chain icons, all lit",
+   "claims": [],
+   "pause": 0.5,
+   "no_fact": true,
+   "t": 508.1,
+   "words": 13
+  },
+  {
+   "key": "pj02",
+   "move": "Callback",
+   "say": "So India's fireworks sky wasn't made by an ancient tradition. It was made by a town that kept learning.",
+   "caption": "Not tradition. Learning.",
+   "visual": "Night sky from pa03, now with the chain beneath",
+   "claims": [
+    "C006"
+   ],
+   "pause": 0.5,
+   "t": 514.0,
+   "words": 19
+  },
+  {
+   "key": "pj03",
+   "move": "Last line",
+   "say": "A dry town built an industry out of hands and sun. Its next lesson is how to keep those hands safe.",
+   "caption": "",
+   "visual": "One lit match, held; fade to black (loops to the matchbox of pb01 / pc01)",
+   "claims": [],
+   "pause": 1.5,
+   "no_fact": true,
+   "t": 522.3,
+   "words": 21
+  }
+ ],
+ "shorts": [
+  {
+   "name": "P-S1 · A dry town makes most of India's fireworks. How? (spine cut)",
+   "beats": [
+    "pa01",
+    "pa02",
+    "pa03",
+    "pa04",
+    "pd03",
+    "pe04",
+    "pk01"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "pa02",
+     "pa03"
+    ],
+    "M2 Ground": [
+     "pa01"
+    ],
+    "M3 Push": [
+     "pd03"
+    ],
+    "M4 Turn": [
+     "pe04"
+    ],
+    "M5 Echo": [
+     "pk01"
+    ]
+   },
+   "words": 169
+  },
+  {
+   "name": "P-S2 · The sun that failed the farms (chapter cut)",
+   "beats": [
+    "pa01",
+    "pe04",
+    "pe05"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "pa01"
+    ],
+    "M3 Push": [
+     "pe04"
+    ],
+    "M5 Echo": [
+     "pe05"
+    ]
+   },
+   "words": 66
+  }
+ ]
+}

@@ -543,6 +543,157 @@ const V18: React.FC = () => (
 );
 
 
+// ---------- 19-21: d01paint: the dealer's counter ringed by blue water (flat yellow ground, kid-friendly) ----------
+// A sticker paint counter on its island, ringed by blue water; (x, y) is the middle of the island, k its scale.
+const TCounter: React.FC<{x: number; y: number; k?: number; rivals?: boolean}> = ({x, y, k = 1, rivals = false}) => {
+  const SW = 10, WOODC = "#C89B5A", WOODL = "#DDB877", TEAL = "#2E8C8A";
+  const tins = [P.red, MOATBLUE, T.sun, GRASS, P.red, T.sun];
+  return (
+    <g transform={`translate(${x} ${y}) scale(${k})`} strokeLinejoin="round" strokeLinecap="round">
+      {/* water ring and its ripples */}
+      <ellipse cx={14} cy={78} rx={430} ry={150} fill={INK}/>
+      <ellipse cx={0} cy={60} rx={430} ry={150} fill={MOATBLUE} stroke={INK} strokeWidth={SW}/>
+      {[[-310, 110, 90], [190, 150, 110], [260, 0, 70], [-270, 10, 60], [-60, 178, 80]].map((r, i) => <path key={i} d={`M ${r[0]} ${r[1]} q ${r[2] / 2} -16 ${r[2]} 0`} fill="none" stroke={WHITE} strokeWidth={9}/>)}
+      {/* island */}
+      <ellipse cx={0} cy={66} rx={270} ry={78} fill="#B8853F" stroke={INK} strokeWidth={SW}/>
+      <ellipse cx={0} cy={50} rx={270} ry={74} fill={GRASS} stroke={INK} strokeWidth={SW}/>
+      {/* shelf of plain tins (no brand marks) */}
+      <rect x={-200} y={-330} width={400} height={300} fill={WOODL} stroke={INK} strokeWidth={SW}/>
+      {[-220, -120].map((by, r) => <g key={r}>
+        {tins.map((c, i) => <rect key={i} x={-180 + i * 61} y={by - 66} width={48} height={66} rx={5} fill={tins[(i + r * 2) % tins.length]} stroke={INK} strokeWidth={7}/>)}
+        <rect x={-196} y={by} width={392} height={16} fill="#A87C42" stroke={INK} strokeWidth={7}/>
+      </g>)}
+      {/* the shopkeeper: faceless */}
+      <path d="M -50 -40 V -90 C -50 -118 -26 -128 10 -128 C 46 -128 70 -118 70 -90 V -40 Z" fill={TEAL} stroke={INK} strokeWidth={SW}/>
+      <circle cx={10} cy={-170} r={46} fill={INK}/>
+      {/* counter */}
+      <rect x={-240} y={-40} width={480} height={112} fill={WOODC} stroke={INK} strokeWidth={SW}/>
+      {[-200, -60, 80].map((px) => <rect key={px} x={px} y={-16} width={120} height={66} rx={6} fill="none" stroke="#A87C42" strokeWidth={7}/>)}
+      <rect x={-262} y={-66} width={524} height={30} rx={8} fill={WOODL} stroke={INK} strokeWidth={SW}/>
+      {/* tinting machine with its colour cans */}
+      <rect x={-236} y={-250} width={120} height={186} rx={10} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      {[P.red, MOATBLUE, T.sun, GRASS].map((c, i) => <rect key={i} x={-232 + i * 29} y={-300} width={24} height={52} rx={4} fill={c} stroke={INK} strokeWidth={6}/>)}
+      <rect x={-216} y={-196} width={80} height={124} rx={6} fill={P.shade} stroke={INK} strokeWidth={7}/>
+      <rect x={-196} y={-130} width={40} height={52} rx={4} fill={T.coral} stroke={INK} strokeWidth={6}/>
+      {/* till */}
+      <path d="M 140 -66 L 152 -150 H 236 L 248 -66 Z" fill={P.gray} stroke={INK} strokeWidth={SW}/>
+      <rect x={166} y={-186} width={58} height={36} rx={5} fill={INK}/>
+      {/* rivals kept out on the far bank */}
+      {rivals ? [-1, 1].map((sd) => <g key={sd} transform={`translate(${sd * 505} 120) rotate(${sd * 6})`}><StoreIcon size={150} accent={P.gray}/></g>) : null}
+    </g>
+  );
+};
+
+// 19: hard to beat?
+const V19: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={930} cy={430} color={T.yellowHi}/>
+    <TCounter x={930} y={480} k={0.82}/>
+    <Big x={50} y={250} size={170} text="HARD TO"/>
+    <Big x={50} y={470} size={220} fill={P.red} text="BEAT?"/>
+  </g>
+);
+
+// 20: Asian Paints' moat?
+const V20: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={440} cy={480} color={T.yellowHi}/>
+    <TCounter x={430} y={500} k={0.72}/>
+    <Slab x={640} y={110} text="ASIAN PAINTS'" size={96} fill={INK} color={T.sun} edge={WHITE} rot={-3}/>
+    <Big x={985} y={510} size={170} anchor="middle" fill={P.red} text="MOAT?"/>
+  </g>
+);
+
+// 21: not the paint
+const V21: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={640} cy={520} color={T.yellowHi}/>
+    <TCounter x={640} y={520} k={0.6} rivals/>
+    <Big x={640} y={190} size={150} anchor="middle" parts={[["NOT THE ", WHITE], ["PAINT", P.red]]}/>
+  </g>
+);
+
+// ---------- 22-24: c01visa: the toll bridge, a walking Rs 100 note and a thin sliver at the booth (flat yellow ground) ----------
+// The sliver is a picture and never carries a number.
+const TBridge: React.FC<{x: number; y: number; k?: number}> = ({x, y, k = 1}) => {
+  const SW = 10, WOODL = "#DDB877", WOODC = "#C89B5A", EARTH = "#B8853F", STONE = "#EFE6D2";
+  return (
+    <g transform={`translate(${x} ${y}) scale(${k})`} strokeLinejoin="round" strokeLinecap="round">
+      {/* river and ripples */}
+      <rect x={-700} y={70} width={1400} height={260} fill={MOATBLUE} stroke={INK} strokeWidth={SW}/>
+      {[[-330, 150, 110], [180, 200, 130], [330, 120, 80], [-470, 250, 90], [-80, 270, 100]].map((r, i) => <path key={i} d={`M ${r[0]} ${r[1]} q ${r[2] / 2} -18 ${r[2]} 0`} fill="none" stroke={WHITE} strokeWidth={9}/>)}
+      {/* banks */}
+      {[-1, 1].map((sd) => <g key={sd} transform={`scale(${sd} 1)`}>
+        <path d="M -900 -6 H -440 L -380 330 H -900 Z" fill={EARTH} stroke={INK} strokeWidth={SW}/>
+        <rect x={-900} y={-22} width={466} height={30} fill={GRASS} stroke={INK} strokeWidth={SW}/>
+      </g>)}
+      {/* arches and the pier */}
+      {[-1, 1].map((sd) => <path key={sd} transform={`scale(${sd} 1)`} d="M -450 34 H -46 V 120 Q -240 -30 -420 120 Z" fill={STONE} stroke={INK} strokeWidth={SW}/>)}
+      <rect x={-46} y={34} width={92} height={150} fill={STONE} stroke={INK} strokeWidth={SW}/>
+      {/* deck and railing */}
+      <line x1={-470} y1={-62} x2={470} y2={-62} stroke={INK} strokeWidth={9}/>
+      {[-430, -340, -250, 250, 340, 430].map((px) => <line key={px} x1={px} y1={-62} x2={px} y2={0} stroke={INK} strokeWidth={8}/>)}
+      <rect x={-480} y={0} width={960} height={36} fill={WOODL} stroke={INK} strokeWidth={SW}/>
+      {/* the booth */}
+      <rect x={-86} y={-210} width={172} height={210} fill={WHITE} stroke={INK} strokeWidth={SW}/>
+      <rect x={-60} y={-186} width={120} height={72} rx={6} fill={T.sun} stroke={INK} strokeWidth={8}/>
+      <rect x={-86} y={-92} width={172} height={18} fill={P.red} stroke={INK} strokeWidth={7}/>
+      <path d="M -122 -206 L 0 -276 L 122 -206 Z" fill={P.red} stroke={INK} strokeWidth={SW}/>
+      <rect x={-112} y={-362} width={224} height={76} rx={8} fill={P.mustard} stroke={INK} strokeWidth={SW}/>
+      <text x={0} y={-305} fontFamily={COND} fontWeight={700} fontSize={58} textAnchor="middle" fill={INK}>VISA</text>
+      {/* the box at the booth, and one thin sliver dropping in: a picture, no number */}
+      <rect x={100} y={-96} width={104} height={96} rx={8} fill={WOODC} stroke={INK} strokeWidth={SW}/>
+      <rect x={128} y={-104} width={48} height={14} rx={4} fill={INK}/>
+      <rect x={140} y={-214} width={14} height={86} rx={3} fill={T.note} stroke={INK} strokeWidth={6} transform="rotate(14 147 -171)"/>
+      {/* the walking note */}
+      <g transform="translate(-270 -40)">
+        <line x1={-60} y1={40} x2={-80} y2={96} stroke={INK} strokeWidth={14}/>
+        <line x1={60} y1={40} x2={84} y2={96} stroke={INK} strokeWidth={14}/>
+        <rect x={-150} y={-112} width={312} height={156} rx={12} fill={INK}/>
+        <rect x={-162} y={-124} width={312} height={156} rx={12} fill={T.note} stroke={INK} strokeWidth={SW}/>
+        <rect x={-140} y={-102} width={268} height={112} rx={6} fill="none" stroke={INK} strokeWidth={5} opacity={0.45}/>
+        <circle cx={-110} cy={-46} r={22} fill="none" stroke={INK} strokeWidth={5} opacity={0.6}/>
+        <circle cx={98} cy={-46} r={22} fill="none" stroke={INK} strokeWidth={5} opacity={0.6}/>
+        <text x={-6} y={-20} fontFamily={COND} fontWeight={700} fontSize={76} textAnchor="middle" fill={INK}>₹100</text>
+      </g>
+    </g>
+  );
+};
+
+// 22: who pays the toll?
+const V22: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={820} cy={430} color={T.yellowHi}/>
+    <TBridge x={820} y={470} k={0.72}/>
+    <Big x={46} y={160} size={140} text="WHO PAYS"/>
+    <Big x={46} y={300} size={140} fill={P.red} text="THE TOLL?"/>
+  </g>
+);
+
+// 23: a toll on every tap
+const V23: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={640} cy={500} color={T.yellowHi}/>
+    <TBridge x={640} y={530} k={0.62}/>
+    <Big x={640} y={150} size={128} anchor="middle" parts={[["TOLL ON ", WHITE], ["EVERY TAP", P.red]]}/>
+  </g>
+);
+
+// 24: not a bank!
+const V24: React.FC = () => (
+  <g strokeLinejoin="round" strokeLinecap="round">
+    <rect width={TW} height={TH} fill={T.yellow}/>
+    <Rays cx={640} cy={500} color={T.yellowHi}/>
+    <TBridge x={640} y={540} k={0.6}/>
+    <Big x={640} y={170} size={160} anchor="middle" parts={[["NOT A ", WHITE], ["BANK!", P.red]]}/>
+  </g>
+);
+
 export const IllusThumb: React.FC<{v: number}> = ({v}) => {
   useOswald();
   return (
@@ -550,7 +701,7 @@ export const IllusThumb: React.FC<{v: number}> = ({v}) => {
       <VoxFonts/>
       <svg width={TW} height={TH} viewBox={`0 0 ${TW} ${TH}`}>
         <VoxDefs/>
-        {v === 18 ? <V18/> : v === 17 ? <V17/> : v === 16 ? <V16/> : v === 15 ? <V15/> : v === 14 ? <V14/> : v === 13 ? <V13/> : v === 12 ? <V12/> : v === 11 ? <V11/> : v === 10 ? <V10/> : v === 9 ? <V9/> : v === 8 ? <V8/> : v === 7 ? <V7/> : v === 6 ? <V6/> : v === 5 ? <V5/> : v === 4 ? <V4/> : v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
+        {v === 24 ? <V24/> : v === 23 ? <V23/> : v === 22 ? <V22/> : v === 21 ? <V21/> : v === 20 ? <V20/> : v === 19 ? <V19/> : v === 18 ? <V18/> : v === 17 ? <V17/> : v === 16 ? <V16/> : v === 15 ? <V15/> : v === 14 ? <V14/> : v === 13 ? <V13/> : v === 12 ? <V12/> : v === 11 ? <V11/> : v === 10 ? <V10/> : v === 9 ? <V9/> : v === 8 ? <V8/> : v === 7 ? <V7/> : v === 6 ? <V6/> : v === 5 ? <V5/> : v === 4 ? <V4/> : v === 2 ? <V2/> : v === 3 ? <V3/> : <V1/>}
       </svg>
     </AbsoluteFill>
   );

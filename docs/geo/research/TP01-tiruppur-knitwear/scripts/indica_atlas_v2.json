@@ -1,0 +1,927 @@
+{
+ "id": "TP01-indica_atlas-v2",
+ "ep": "TP01",
+ "product": "Indica Atlas (long form)",
+ "voice": "male, English, global ear; say 'Tiruppur' slowly",
+ "research": "docs/geo/research/TP01-tiruppur-knitwear",
+ "status": "DRAFT v2 for AK review, 30 Oct 2026. Not voiced.",
+ "format": "F10 Paradox (with an F5 own-words layer), Indica Atlas G4 'Why Here?' on the scale ladder",
+ "target_seconds": 627,
+ "beats": [
+  {
+   "key": "a01",
+   "move": "Fact A (hook)",
+   "say": "This is Tiruppur, a town in south India. The nearest port city is about a hundred and seventy kilometres away.",
+   "caption": "≈170 km to Kochi",
+   "visual": "Satellite night view; a straight-line ruler draws Tiruppur → Kochi while a counter runs 0 → 170 km",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "a02",
+   "move": "Fact A, part 2",
+   "say": "Its rivers carry water only in the monsoon. And the town had no reliable piped water supply.",
+   "caption": "Rivers: monsoon only",
+   "visual": "Dry riverbed (Noyyal) on satellite; empty tap icon",
+   "claims": [
+    "C143",
+    "C145"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "a03",
+   "move": "Fact B (the clash)",
+   "say": "And yet, for twenty twenty-five to twenty-six, India's government listed Tiruppur first among five hundred and forty-eight exporting districts, for textiles and clothing.",
+   "caption": "No. 1 of 548 districts",
+   "visual": "India map; 548 dots light up, one amber dot rises to the top: Tiruppur. Credit: Ministry of Textiles, PIB, 11 Aug 2026 (DGCIS provisional)",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "a04",
+   "move": "Both are true",
+   "say": "No sea. Little water. The top exporting district for textiles and clothing. All three are true. So how?",
+   "caption": "HOW?",
+   "visual": "Three stamps on the map: ⚓✕ · 💧 · No. 1; then a single question mark",
+   "claims": [
+    "C001",
+    "C142",
+    "C504"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "a05",
+   "move": "Promise",
+   "say": "The answer isn't one lucky break. It's a cotton market, a rule that kept businesses small, and a town that built the things geography didn't give it. One piece at a time.",
+   "caption": "COTTON · SMALL · BUILT",
+   "visual": "Three cards, face down, flipped one by one",
+   "claims": [
+    "C036",
+    "C100",
+    "C161"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b01",
+   "move": "Prime: the globe",
+   "say": "Start with the globe. Find India. Now slide down to its far south.",
+   "caption": "India",
+   "visual": "Orthographic globe → India; one amber highlight; 1.35 s hand-off to the flat map",
+   "no_fact": true,
+   "pause": 0.5
+  },
+  {
+   "key": "b02",
+   "move": "Prime: the neighbour",
+   "say": "Tiruppur sits about forty-three kilometres from Coimbatore, in a straight line. Coimbatore is a city of mills. Hold on to that.",
+   "caption": "≈43 km · Coimbatore",
+   "visual": "Ruler draws Tiruppur → Coimbatore (straight line, labelled 'straight line')",
+   "claims": [
+    "C200",
+    "C515"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b03",
+   "move": "Prime: the place",
+   "say": "Tiruppur has been a district of its own only since two thousand and nine, carved out of Coimbatore and Erode.",
+   "caption": "District since 2009",
+   "visual": "District outlines split apart (labels only; outline marked 'not official' until Survey of India file)",
+   "claims": [
+    "C002",
+    "C003"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b04",
+   "move": "Gap: water",
+   "say": "The land is dry. The UN's industry agency, UNIDO, calls it 'a dry-water-scarce region'.",
+   "caption": "'dry-water-scarce'",
+   "visual": "Satellite in summer tones; quote card with small credit 'UNIDO case study'",
+   "claims": [
+    "C142"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b05",
+   "move": "Gap: water, made human",
+   "say": "So private tankers pumped groundwater and trucked it in. As the water table fell, the tankers drove further. Up to fifty kilometres.",
+   "caption": "Tankers: up to 50 km",
+   "visual": "Animated tanker on a road; odometer ticks to 50 km",
+   "claims": [
+    "C146"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b06",
+   "move": "Gap: cargo",
+   "say": "And the cargo? Goods went out 'through all southern ports and Mumbai'. Exporters 'often missed sailings'.",
+   "caption": "'often missed sailings'",
+   "visual": "Lines fan out from Tiruppur to southern ports and Mumbai; a ship leaves an empty berth",
+   "claims": [
+    "C159"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b07",
+   "move": "Recap + question",
+   "say": "So: no port next door, and little water. Nothing on this map says, build an export town here. So why here?",
+   "caption": "WHY HERE?",
+   "visual": "Zoom back to the bare map; question mark over Tiruppur",
+   "claims": [
+    "C001",
+    "C142"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "c01",
+   "move": "Clue 1",
+   "say": "Go back to eighteen eighty-seven. A district manual calls Tirupur 'a busy railway station, whence a great deal of cotton is despatched'.",
+   "caption": "1887 · cotton",
+   "visual": "Old manual page (rough sketch); steam train with cotton bales",
+   "claims": [
+    "C514"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c02",
+   "move": "Clue 2",
+   "say": "By the nineteen sixties, merchants from mill centres all over India came here in season, to buy a prized local cotton called Cambodia cotton.",
+   "caption": "Cambodia cotton",
+   "visual": "Arrows from across India converge on Tiruppur; cotton boll close-up. Credit: Coimbatore District Gazetteer, 1966",
+   "claims": [
+    "C510"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c03",
+   "move": "Clue 3",
+   "say": "A study of the Tirupur cotton market counted twenty-six ginning factories. Those are the machines that pull the seed out of cotton.",
+   "caption": "26 ginning factories",
+   "visual": "Name the part (T11): seed, fibre, gin; 26 small factory icons fill the town",
+   "claims": [
+    "C515"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c04",
+   "move": "Payoff of b02",
+   "say": "And next door, Coimbatore had forty-two yarn and textile mills, the same study says.",
+   "caption": "42 mills next door",
+   "visual": "Coimbatore lights up with 42 mill icons; yarn lines run to Tiruppur",
+   "claims": [
+    "C515"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c05",
+   "move": "Recap (first piece)",
+   "say": "So Tiruppur had cotton coming in, and yarn being spun next door. UNIDO lists that yarn from Coimbatore's mills as one reason the town grew, along with farm crops that failed.",
+   "caption": "COTTON + YARN",
+   "visual": "Card 1 flips: COTTON",
+   "claims": [
+    "C037"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c06",
+   "move": "Dispute, told as one",
+   "say": "So when did the first knitting unit open? Ask three sources, and you get three dates. Nineteen twenty-five, nineteen thirty-five, and nineteen thirty-seven.",
+   "caption": "1925 · 1935 · 1937",
+   "visual": "Three source cards (TEA · Textile Commissioner · UNIDO), each with its own date",
+   "claims": [
+    "C404",
+    "C033"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c07",
+   "move": "The first people",
+   "say": "A union leader's account says it began with two friends, one small unit, making banians, that is, vests, for the local market.",
+   "caption": "Banian = vest",
+   "visual": "Hand-cranked machine and a white vest only; no faces (dossier §8)",
+   "claims": [
+    "C022",
+    "C024"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "c07o",
+   "move": "Optional: the two friends",
+   "say": "In that account, one of the two friends was Hindu and the other was Muslim.",
+   "caption": "",
+   "visual": "Two hands on one machine; no faces, no religious symbols",
+   "claims": [
+    "C025"
+   ],
+   "pause": 0.5,
+   "optional": true,
+   "ak_check": "t21: founders' religion (rule 4.4). One person's 2004 account; adds warmth but is sensitive. AK decides."
+  },
+  {
+   "key": "c08",
+   "move": "Plant (the odd part)",
+   "say": "Here's the odd part. In the official district gazetteer of nineteen sixty-six, Tiruppur is still a cotton town. Knitting barely gets a line.",
+   "caption": "1966: still a cotton town",
+   "visual": "Gazetteer page; the word 'knitting' found once, tiny",
+   "claims": [
+    "C513"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "c09",
+   "move": "Turn → next loop",
+   "say": "So how does a cotton town end up with thousands of knitting units? The answer starts with a law.",
+   "caption": "A LAW",
+   "visual": "Gavel icon over the cotton map",
+   "claims": [
+    "C009"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "d01",
+   "move": "Rule",
+   "say": "In the early nineteen sixties, a law reserved cotton hosiery knitting for small and cottage units.",
+   "caption": "Small units only",
+   "visual": "One big factory icon fades; small workshop icons appear",
+   "claims": [
+    "C100"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d02",
+   "move": "Consequence",
+   "say": "So anyone with more money did the obvious thing. They split the work into two or three smaller units.",
+   "caption": "1 → 2 or 3",
+   "visual": "One workshop splits into three",
+   "claims": [
+    "C101"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d03",
+   "move": "Second push",
+   "say": "Then, in nineteen seventy-two, an excise duty discouraged making a unit bigger. So firms opened new units instead, often in the same building.",
+   "caption": "1972 excise duty",
+   "visual": "Three nameplates on one building's door",
+   "claims": [
+    "C105"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d04",
+   "move": "Own words",
+   "say": "One study put it plainly: 'the easiest method adopted was to multiply the number of units'.",
+   "caption": "'multiply the number of units'",
+   "visual": "Quote card; small credit 'MIDS working paper'",
+   "claims": [
+    "C103"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d05",
+   "move": "Number, set up",
+   "say": "In nineteen eighty-four, a business magazine wrote it was 'unlikely that there are more than five hundred families in the business'.",
+   "caption": "≈500 families",
+   "visual": "500 small family icons",
+   "claims": [
+    "C104"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d06",
+   "move": "Number, payoff",
+   "say": "Yet official notes from the nineties and the two thousands count about two thousand five hundred knitting units. A few hundred families. Thousands of units.",
+   "caption": "≈2,500 knitting units",
+   "visual": "Family icons each sprout several workshop icons; counter to 2,500",
+   "claims": [
+    "C009",
+    "C010",
+    "C104"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "d07",
+   "move": "Bridge",
+   "say": "Many small units means many small doors in. And that is where the workers come in.",
+   "caption": "",
+   "visual": "Rows of small doors open",
+   "no_fact": true,
+   "pause": 0.5
+  },
+  {
+   "key": "d08",
+   "move": "Name the part",
+   "say": "There's a local word for it. Kashtakkoottu. A skilled worker teams up with people who have money, and takes a share of the profit. Ten to twenty-five percent.",
+   "caption": "Kashtakkoottu · 10–25%",
+   "visual": "Worker + financier icons shake on a split coin",
+   "claims": [
+    "C097"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d09",
+   "move": "Plant pays",
+   "say": "And when a unit fails, its machines don't vanish. They're sold second-hand to the next person starting out.",
+   "caption": "Second-hand machines",
+   "visual": "One machine passes from a closed shutter to a new one",
+   "claims": [
+    "C098"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d10",
+   "move": "Own words",
+   "say": "Researchers wrote that almost all the big names in Tiruppur 'have had very humble beginnings, having been workers themselves'.",
+   "caption": "'workers themselves'",
+   "visual": "Quote card; small credit 'MIDS'",
+   "claims": [
+    "C099"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d10o",
+   "move": "Optional: who owned the units",
+   "say": "Who owned the units changed too. One account says owners from the Chettiar community left after strikes in the nineteen sixties, and Gounder owners rose. Other researchers heard a different version. It's disputed.",
+   "caption": "Disputed",
+   "visual": "Neutral text card only; no community colours on any map (dossier §8)",
+   "claims": [
+    "C107",
+    "C108",
+    "C110",
+    "C111"
+   ],
+   "pause": 0.5,
+   "optional": true,
+   "ak_check": "t45: caste (rule 4.4). Told as a dispute only. AK decides."
+  },
+  {
+   "key": "d11",
+   "move": "The jump",
+   "say": "For decades all this was cottage work: vests and briefs for local shops. Then, from nineteen eighty, the town began selling abroad, mostly through agents in Bombay and Delhi.",
+   "caption": "From 1980: exports",
+   "visual": "Arrows from Tiruppur to Bombay and Delhi, then out to sea",
+   "claims": [
+    "C044",
+    "C045",
+    "C048"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d12",
+   "move": "One thing",
+   "say": "Until nineteen eighty-five, it exported exactly one thing. The T-shirt.",
+   "caption": "Only the T-shirt",
+   "visual": "A single white T-shirt on an empty map",
+   "claims": [
+    "C050"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "d13",
+   "move": "Scale",
+   "say": "Between nineteen eighty-six and nineteen ninety-three, its direct exports grew about thirty-two times in value.",
+   "caption": "≈32× · ₹37.48 cr → ₹1,197.5 cr",
+   "visual": "Bar grows 32× in seven ticks; credit 'TEA table, 1994'",
+   "claims": [
+    "C054",
+    "C055",
+    "C056"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "d14",
+   "move": "People: the strike",
+   "say": "The workshops had their own fight. In nineteen eighty-four, banian workers went on strike for a hundred and twenty-seven days, over wages and dearness allowance.",
+   "caption": "1984 · 127 days",
+   "visual": "Calendar pages turn 127 times; no violence imagery",
+   "claims": [
+    "C116",
+    "C117"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d14o",
+   "move": "Optional: the strike's violence",
+   "say": "The union leader recalls workers being 'harassed, beaten up and sometime even set afire'. That is his account.",
+   "caption": "",
+   "visual": "Black card, quote only, credit 'K. Subbarayan, 2004'",
+   "claims": [
+    "C118"
+   ],
+   "pause": 0.6,
+   "optional": true,
+   "ak_check": "t52: 'set afire' (rule 4.4). One side's recollection; strong image. AK decides."
+  },
+  {
+   "key": "d15",
+   "move": "People: the town-wide deal",
+   "say": "From nineteen eighty-seven, wages were settled for the whole town at once, through a joint committee. In March twenty twenty-six, employers and unions signed the latest town-wide deal.",
+   "caption": "One wage deal for the town",
+   "visual": "Six employer badges and nine union badges around one table",
+   "claims": [
+    "C134",
+    "C138",
+    "C139"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "d16",
+   "move": "Recap (first half)",
+   "say": "So that's the first half of the answer. Cotton and yarn next door. A rule that kept units small. And workers who could become owners.",
+   "caption": "COTTON · SMALL · OWNERS",
+   "visual": "Cards 1 and 2 face up",
+   "claims": [
+    "C037",
+    "C100",
+    "C099"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "e01",
+   "move": "But",
+   "say": "But small units can't build a port. Or a river.",
+   "caption": "",
+   "visual": "Card 3 still face down; empty coast, empty riverbed",
+   "no_fact": true,
+   "pause": 0.8
+  },
+  {
+   "key": "e02",
+   "move": "Try",
+   "say": "In nineteen ninety-four, the exporters' association asked for an inland container terminal, a sewage plant and a telephone exchange. It wrote that it 'has received no reply from authorities'.",
+   "caption": "1994: 'no reply'",
+   "visual": "Three request letters; no reply arrives",
+   "claims": [
+    "C156"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e03",
+   "move": "So",
+   "say": "So the exporters built an export estate of their own at Mudalipalayam. In ten months. 'Self financed by the exporters'.",
+   "caption": "157 units · ₹14 crore",
+   "visual": "Sheds rise in a time-lapse; credit 'TEA, 1994'",
+   "claims": [
+    "C161"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e04",
+   "move": "So, again",
+   "say": "Later came a container freight station, about ten kilometres from town, where customs is done locally.",
+   "caption": "CFS ≈10 km",
+   "visual": "Container stack near town; customs stamp",
+   "claims": [
+    "C157"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e05",
+   "move": "Hook reminder",
+   "say": "That's cargo. Now the water. Remember the tankers driving fifty kilometres?",
+   "caption": "",
+   "visual": "Tanker from b05 returns",
+   "claims": [
+    "C146"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "e06",
+   "move": "Setup",
+   "say": "In Erode district, the Cauvery river meets the Bhavani.",
+   "caption": "Cauvery + Bhavani",
+   "visual": "Map zooms to the confluence; place names only",
+   "claims": [
+    "C148"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e07",
+   "move": "Predict (T3)",
+   "say": "So who brought that water to Tiruppur? Take a guess.",
+   "caption": "Who?",
+   "visual": "Hold on the confluence and Tiruppur, gap between them",
+   "no_fact": true,
+   "pause": 1.2
+  },
+  {
+   "key": "e08",
+   "move": "PEAK: the reveal",
+   "say": "A company whose promoters are a Tamil Nadu government body, a finance company called IL&FS, and the exporters' own association.",
+   "caption": "TWIC · IL&FS · TEA",
+   "visual": "Three logos as plain text badges join; TEA badge glows amber. Music rises",
+   "claims": [
+    "C152"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "e09",
+   "move": "PEAK: the route",
+   "say": "An intake on the Cauvery. A treatment plant nearby. Then a main pipeline, about fifty-three and a half kilometres, to a reservoir at Tiruppur.",
+   "caption": "≈53.5 km",
+   "visual": "Pipeline draws between named places (Anainasuvampalayam → Suriyampalayam → Thiruvachi → Tiruppur); label 'route illustrative'",
+   "claims": [
+    "C402",
+    "C403"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "e10",
+   "move": "PEAK: scale",
+   "say": "It draws about a hundred and eighty-five million litres a day.",
+   "caption": "185 million litres/day",
+   "visual": "Counter; water fills the pipe",
+   "claims": [
+    "C148"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e11",
+   "move": "PEAK: cost",
+   "say": "The project cost about one thousand and twenty-three crore rupees.",
+   "caption": "₹1,023 crore",
+   "visual": "Coin stack beside the pipe",
+   "claims": [
+    "C150"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "e12",
+   "move": "PEAK line",
+   "say": "Read that again. A dry town, whose rivers run only in the monsoon, went and fetched one. And its exporters were among the promoters.",
+   "caption": "A town that fetched a river",
+   "visual": "Hold on the full pipeline at dusk; card 3 flips: BUILT",
+   "claims": [
+    "C142",
+    "C143",
+    "C152"
+   ],
+   "pause": 1.2
+  },
+  {
+   "key": "f01",
+   "move": "But (second)",
+   "say": "But bringing water in was half the story. Getting it out clean was the other half.",
+   "caption": "",
+   "visual": "Pipe reverses: dirty water flows out",
+   "no_fact": true,
+   "pause": 0.6
+  },
+  {
+   "key": "f02",
+   "move": "Name the problem",
+   "say": "Dyeing cloth here used two hundred to four hundred litres of water for every kilo. The international norm is about a hundred and twenty to a hundred and fifty.",
+   "caption": "200–400 L/kg vs 120–150",
+   "visual": "Two buckets side by side; credit 'UNIDO'",
+   "claims": [
+    "C144"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f03",
+   "move": "The other side",
+   "say": "Downstream, a farmers' association on the Noyyal river has fought the polluters in court since two thousand and three.",
+   "caption": "Farmers in court since 2003",
+   "visual": "Farm fields downstream; court pillar icon",
+   "claims": [
+    "C169"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f04",
+   "move": "Deadline",
+   "say": "In two thousand and six, the High Court gave the dye houses a deadline. Zero liquid discharge: treat the waste water and release none of it. By July two thousand and seven.",
+   "caption": "ZLD by 31 Jul 2007",
+   "visual": "Name the part: ZLD = nothing leaves the plant",
+   "claims": [
+    "C170"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f05",
+   "move": "Turn",
+   "say": "In early twenty eleven, the court ordered more than seven hundred dyeing and bleaching units and treatment plants shut.",
+   "caption": "700+ shut",
+   "visual": "Shutters come down across the map",
+   "claims": [
+    "C173"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "f06",
+   "move": "So",
+   "say": "They reopened about a year and a half later, in June twenty twelve, under zero liquid discharge.",
+   "caption": "June 2012: reopened",
+   "visual": "Shutters rise slowly",
+   "claims": [
+    "C178",
+    "C179"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f07",
+   "move": "Built again",
+   "say": "Four hundred and fifty dye units built eighteen shared treatment plants, with money from the Centre too.",
+   "caption": "450 units · 18 plants",
+   "visual": "18 plant icons; small credit 'Ministry of Textiles, Dec 2016'",
+   "claims": [
+    "C180",
+    "C501"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f08",
+   "move": "Industry claim",
+   "say": "Today, the Dyers Association says those plants recover ninety-two percent of the water.",
+   "caption": "92% (Dyers Association)",
+   "visual": "Water loop arrow; credit on screen",
+   "claims": [
+    "C186"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f09",
+   "move": "Twist",
+   "say": "But the same association says more than a lakh tonnes of mixed salt now sit in sheds, and that 'no proper disposal method has been identified so far'.",
+   "caption": "1 lakh tonnes of salt",
+   "visual": "Sheds of white salt; 100,000 counter",
+   "claims": [
+    "C187"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "f10",
+   "move": "Own words",
+   "say": "Back in twenty eleven, D D Basu of the Central Pollution Control Board put it bluntly. 'That is why ZLD at Tirupur was a big mistake.'",
+   "caption": "'a big mistake'",
+   "visual": "Quote card, credit 'D D Basu, CPCB, 2011'",
+   "claims": [
+    "C188"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f11",
+   "move": "Split evidence",
+   "say": "Is the river better? One field report saw black water oozing from the floodgates. Years later, an IIT Madras professor spoke of a 'significant improvement'. The evidence is split.",
+   "caption": "2016 · 2025",
+   "visual": "Split screen: two reports, two dates",
+   "claims": [
+    "C184",
+    "C185"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "g01",
+   "move": "Zoom out",
+   "say": "Zoom out again. For twenty twenty-five to twenty-six, the government counted thirty-eight thousand six hundred and seventy-seven crore rupees of textile and clothing exports from Tiruppur.",
+   "caption": "₹38,677 crore (DGCIS)",
+   "visual": "Map pulls back; counter; credit 'DGCIS provisional, via PIB 11 Aug 2026'",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "g02",
+   "move": "The world link",
+   "say": "Where does India's knitted clothing go? About a third of it, by value, goes to the United States.",
+   "caption": "India knitwear → USA: 32%",
+   "visual": "Great-circle arc India → USA on the globe; caption 'India, HS 61, 2025'",
+   "claims": [
+    "C310"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "g03",
+   "move": "History",
+   "say": "Last year, that market swung hard. For a few months, US duties on Indian goods added up to fifty percent.",
+   "caption": "2025: 50% (ended Feb 2026)",
+   "visual": "Tariff gauge spikes, then drops",
+   "claims": [
+    "C301",
+    "C302"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "g04",
+   "move": "Now",
+   "say": "Today it's a ten percent tariff, on top of the normal duty. And T-shirts are not exempt.",
+   "caption": "Now: +10% (from 24 Jul 2026)",
+   "visual": "Gauge settles at 10; a T-shirt icon under it",
+   "claims": [
+    "C304",
+    "C305"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "g05",
+   "move": "Other doors",
+   "say": "A trade deal with Britain has been in force since July twenty twenty-six. A deal with the European Union is agreed, but not yet in force.",
+   "caption": "UK: in force · EU: not yet",
+   "visual": "Arcs to UK (solid) and EU (dashed)",
+   "claims": [
+    "C307",
+    "C308"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "g06",
+   "move": "Click (T2)",
+   "say": "So how did a town with no port and little water become India's top exporting district for textiles and clothing? It had cotton coming in, and yarn next door. A rule kept units small, so workers could become owners. And whatever it lacked, an estate, a cargo station, even a river, it built or fetched.",
+   "caption": "COTTON · SMALL · BUILT",
+   "visual": "All three cards face up over the map",
+   "claims": [
+    "C037",
+    "C100",
+    "C099",
+    "C161",
+    "C157",
+    "C152",
+    "C504"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "g07",
+   "move": "Echo (callback to a01)",
+   "say": "Look at the map one more time. No port for about a hundred and seventy kilometres. Rivers that run only in the monsoon. And a pipeline the town helped build anyway.",
+   "caption": "",
+   "visual": "Return to the cold-open satellite frame; the pipeline now glows amber",
+   "claims": [
+    "C001",
+    "C143",
+    "C152"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "g08",
+   "move": "End line",
+   "say": "Geography gave Tiruppur its cotton. Everything else, it had to make.",
+   "caption": "",
+   "visual": "Slow push on the town lights; music up; hold 2 s",
+   "claims": [
+    "C036",
+    "C514"
+   ],
+   "pause": 2.0
+  }
+ ],
+ "shorts": [
+  {
+   "name": "S1 · Why is the No. 1 clothing district here? (spine cut, ~45 s)",
+   "beats": [
+    "a01",
+    "a03",
+    "c04",
+    "c05",
+    "e02",
+    "e08",
+    "e09",
+    "g08"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "a01",
+     "a03"
+    ],
+    "M2 Ground": [
+     "c04"
+    ],
+    "M3 Push": [
+     "c05",
+     "e02"
+    ],
+    "M4 Turn": [
+     "e08",
+     "e09"
+    ],
+    "M5 Echo": [
+     "g08"
+    ]
+   }
+  },
+  {
+   "name": "S2 · The dry town that fetched a river (chapter cut, ~40 s)",
+   "beats": [
+    "a02",
+    "b05",
+    "e06",
+    "e07",
+    "e08",
+    "e09",
+    "e12"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "a02"
+    ],
+    "M2 Ground": [
+     "b05"
+    ],
+    "M3 Push": [
+     "e06",
+     "e07"
+    ],
+    "M4 Turn": [
+     "e08",
+     "e09"
+    ],
+    "M5 Echo": [
+     "e12"
+    ]
+   }
+  },
+  {
+   "name": "S3 · The salt behind the clean water (chapter cut, ~45 s)",
+   "beats": [
+    "f02",
+    "f05",
+    "f06",
+    "f08",
+    "f09",
+    "f10"
+   ],
+   "move_map": {
+    "M1 Hook": [
+     "f09"
+    ],
+    "M2 Ground": [
+     "f02"
+    ],
+    "M3 Push": [
+     "f05",
+     "f06"
+    ],
+    "M4 Turn": [
+     "f08",
+     "f09"
+    ],
+    "M5 Echo": [
+     "f10"
+    ]
+   }
+  }
+ ]
+}

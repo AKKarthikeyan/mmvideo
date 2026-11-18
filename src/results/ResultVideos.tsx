@@ -7,6 +7,7 @@ import {AbsoluteFill, Composition, Still} from "remotion";
 import {C, COND, TYPE, VoxFonts} from "../voxkit";
 import {FPS, VData, VoxLong, VoxShort, longLayout, shortLayout} from "../vx/VoxEngine";
 import {NEMPTY, NFPS, ResultNapkin, napkinTotal} from "./ResultNapkin";
+import {PEMPTY, PFPS, ProtoShort, protoTotal} from "../proto/ProtoShort";
 
 const EMPTY: VData = {id: "r-empty", title: "Result", chapters: ["Result"], shorts: [{title: "Result", beats: ["e0"], loop: true}],
   timelines: {}, clips: {}, beats: [{ch: 0, key: "e0", say: "", cap: "", sec: 1, cues: [""], scene: {type: "end", plain: true}}]};
@@ -41,6 +42,9 @@ export const ResultRoot: React.FC = () => (
     {/* The Short in the Napkin Math format (13 Oct 2026 onwards): --props={D, label}; layout comes from resultengine/napkin.py. */}
     <Composition id="RESULT-napkin" component={ResultNapkin as any} defaultProps={{D: NEMPTY, label: "Result"}} fps={NFPS} width={1080} height={1920}
       durationInFrames={napkinTotal(NEMPTY)} calculateMetadata={({props}: any) => ({durationInFrames: napkinTotal(props.D)})}/>
+    {/* Prototype Shorts in twelve story formats (19 Oct 2026): --props={D, label}; scripts from resultengine/proto.py. */}
+    <Composition id="PROTO-short" component={ProtoShort as any} defaultProps={{D: PEMPTY, label: "prototype"}} fps={PFPS} width={1080} height={1920}
+      durationInFrames={protoTotal(PEMPTY)} calculateMetadata={({props}: any) => ({durationInFrames: protoTotal(props.D)})}/>
     <Still id="RESULT-thumb" component={ResultThumb as any} defaultProps={{name: "Company", badge: "+0%", badgeSub: "NET PROFIT|Q2 FY27", line: "Q2 results"}} width={1280} height={720}/>
   </>
 );

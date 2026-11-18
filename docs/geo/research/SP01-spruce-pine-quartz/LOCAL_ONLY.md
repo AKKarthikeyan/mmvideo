@@ -1,0 +1,1 @@
+The copies in sources/ (web pages, PDFs, press releases, filings) are kept on the SSD only, not in git. Some are copyrighted (SEMI release text, company pages, news-hosted copies). Do not commit or publish them.

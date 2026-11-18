@@ -1,0 +1,1041 @@
+{
+ "id": "TP01-ooru_ledger-v2",
+ "ep": "TP01",
+ "product": "Ooru Ledger",
+ "voice": "male",
+ "research": "/Volumes/DarwinSSD/MMVideo/docs/geo/research/TP01-tiruppur-knitwear",
+ "status": "DRAFT v2 for AK review, 30 Oct 2026. Not voiced.",
+ "format": "F2 Long Road (try, but, so); ends on the ledger verdict",
+ "target_seconds": 716,
+ "beats": [
+  {
+   "key": "o01",
+   "move": "hook",
+   "say": "Pick up a plain cotton T-shirt. Who got paid for it? The worker? The owner? The river it was dyed beside?",
+   "caption": "Who got paid?",
+   "visual": "A white T-shirt on a table; its price tag splits into question marks",
+   "no_fact": true,
+   "pause": 0.7
+  },
+  {
+   "key": "o02",
+   "move": "prime",
+   "say": "In twenty twenty-five, twenty-six, the government's list of India's exporting districts had one name at the top. Tiruppur, in Tamil Nadu.",
+   "caption": "No. 1 of 548 districts · 2025-26",
+   "visual": "A long list of district names scrolls; one rises to the top",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "o03",
+   "move": "prime",
+   "say": "Its exports of textiles and garments: about thirty-eight thousand, seven hundred crore rupees, provisionally. More than a hundred crore a day.",
+   "caption": "₹38,677 crore · DGCIS (provisional)",
+   "visual": "Counter ticks up; a day-calendar peels off ₹100 crore at a time",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "o04",
+   "move": "prime",
+   "say": "And it isn't a port. Tiruppur is inland. The nearest port city, Kochi, is about a hundred and seventy kilometres away.",
+   "caption": "Kochi ~170 km (straight line)",
+   "visual": "Map: Tiruppur dot, straight dashed line to Kochi on the coast",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "o05",
+   "move": "plant",
+   "say": "It's dry, too. Its two rivers carry water only in the monsoon.",
+   "caption": "Rivers: monsoon only",
+   "visual": "Map rivers drawn as dotted lines that fill blue, then fade",
+   "claims": [
+    "C143"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "o06",
+   "move": "question",
+   "say": "So how did a dry, inland town get to the top? And when the money comes in, who keeps it?",
+   "caption": "Who keeps the money?",
+   "visual": "A ledger book opens on the town's name",
+   "no_fact": true,
+   "pause": 0.7
+  },
+  {
+   "key": "o07",
+   "move": "promise",
+   "say": "Tiruppur got here in five tries. Each one fixed a problem, and created the next. This is the town's ledger.",
+   "caption": "Try 1 · 2 · 3 · 4 · 5",
+   "visual": "Five empty ledger lines",
+   "no_fact": true,
+   "pause": 0.6
+  },
+  {
+   "key": "t101",
+   "move": "prime",
+   "say": "First, the map. Tiruppur sits in western Tamil Nadu, about forty-three kilometres from Coimbatore.",
+   "caption": "Coimbatore ~43 km",
+   "visual": "Map zoom from India to the two dots",
+   "claims": [
+    "C200"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t103",
+   "move": "try",
+   "say": "Knitting came later, and nobody agrees exactly when. The exporters' association dates the first unit to nineteen twenty-five. The Textile Commissioner says nineteen thirty-five. A UNIDO study says nineteen thirty-seven.",
+   "caption": "1925 (TEA) · 1935 (Textile Commissioner) · 1937 (UNIDO)",
+   "visual": "Three date cards, each with its source stamp; none circled",
+   "claims": [
+    "C404"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t1o1",
+   "move": "try",
+   "say": "A union leader later recalled that the first small unit was opened by two friends in the nineteen thirties, one Hindu and one Muslim.",
+   "caption": "1930s · two friends",
+   "visual": "Two pairs of hands on one hand-cranked machine; no faces",
+   "claims": [
+    "C022",
+    "C025"
+   ],
+   "pause": 0.5,
+   "optional": true,
+   "ak_check": "t21: founders' religion is sensitive (rule 4.4); one oral account, and Chari via Esho lists Baby Knitting's founders as Muslim (K25). Off the main path"
+  },
+  {
+   "key": "t104",
+   "move": "try",
+   "say": "What they made was simple: the banian, the cotton vest. Until about nineteen eighty it stayed a family cottage industry, selling locally.",
+   "caption": "Banian = vest · cottage era to ~1980",
+   "visual": "A plain vest, folded; a family workshop",
+   "claims": [
+    "C024",
+    "C044",
+    "C045"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t106",
+   "move": "but",
+   "say": "But in the early nineteen sixties, a law changed the town's shape. Cotton hosiery knitting was reserved for small-scale and cottage units.",
+   "caption": "Early 1960s · reserved for small units",
+   "visual": "A rubber stamp lands: SMALL UNITS ONLY",
+   "claims": [
+    "C100"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t107",
+   "move": "so",
+   "say": "So anyone with more money didn't build one big factory. They split the work into two or three smaller units.",
+   "caption": "1 firm → 2–3 units",
+   "visual": "One factory outline splits into three small sheds",
+   "claims": [
+    "C101"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t110",
+   "move": "perspective",
+   "say": "In nineteen eighty-four, a business magazine wrote it was 'unlikely that there are more than five hundred families in the business.'",
+   "caption": "~500 families · Business India, 1984",
+   "visual": "Five hundred small house icons",
+   "claims": [
+    "C104"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t111",
+   "move": "perspective",
+   "say": "Ten years later, the exporters counted about two thousand five hundred knitting units.",
+   "caption": "~2,500 knitting units · TEA, 1994",
+   "visual": "The houses sprout units: five per family",
+   "claims": [
+    "C009"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t112",
+   "move": "try",
+   "say": "Small units opened a door. There's a word for it: kashtakkoottu. A skilled worker partners with people who have money, for ten to twenty-five percent of the profit.",
+   "caption": "kashtakkoottu · 10–25% of profit",
+   "visual": "A worker's hand and a financier's hand on one ledger",
+   "claims": [
+    "C097"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t114",
+   "move": "click",
+   "say": "A nineteen ninety-four study found that almost all the big names in Tiruppur had 'very humble beginnings, having been workers themselves.'",
+   "caption": "\"workers themselves\" · MIDS, 1994",
+   "visual": "A worker's silhouette steps into an owner's chair",
+   "claims": [
+    "C099"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t1o2",
+   "move": "dispute",
+   "say": "Who rose and who left is still argued over. One scholar wrote that strikes from nineteen sixty-two led many Chettiar owners to close, and Gounder owners to start small units. Another study heard 'a different version', of only a relative decline.",
+   "caption": "Disputed: who owned the units",
+   "visual": "Two open books side by side, neither on top; no community colours on the map",
+   "claims": [
+    "C107",
+    "C108",
+    "C110",
+    "C111"
+   ],
+   "pause": 0.5,
+   "optional": true,
+   "ak_check": "t45: caste (Chettiar/Gounder) is sensitive (rule 4.4) and DISPUTED (C111); told as a dispute only. Off the main path"
+  },
+  {
+   "key": "t115",
+   "move": "recap",
+   "say": "Ledger line one: in Tiruppur, ownership is spread thin. Lots of small owners, many of them former workers.",
+   "caption": "Line 1 · many small owners",
+   "visual": "Ledger line 1 fills in",
+   "claims": [
+    "C099",
+    "C101"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t116",
+   "move": "bridge",
+   "say": "But a town of owners still needs workers. And in nineteen eighty-four, the workers stopped.",
+   "caption": "1984",
+   "visual": "Machines fall silent",
+   "claims": [
+    "C116"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t202",
+   "move": "prime",
+   "say": "By then it sold abroad, through agents in Bombay and Delhi. Until nineteen eighty-five, just one thing: the T-shirt.",
+   "caption": "Only export: the T-shirt",
+   "visual": "The T-shirt from the open, on a ship's manifest",
+   "claims": [
+    "C048",
+    "C050"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t203",
+   "move": "but",
+   "say": "But in nineteen eighty-four the banian workers walked out. The strike lasted a hundred and twenty-seven days.",
+   "caption": "1984 · 127 days",
+   "visual": "A calendar flipping 127 pages; empty benches",
+   "claims": [
+    "C116"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t204",
+   "move": "but",
+   "say": "The fight was over wage revision, and over dearness allowance, the inflation top-up that hosiery workers did not have.",
+   "caption": "Wages + DA · led by AITUC",
+   "visual": "A pay slip with the DA line blank",
+   "claims": [
+    "C117",
+    "C122"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t2o1",
+   "move": "but",
+   "say": "The union leader, K. Subbarayan, recalled that workers were 'harassed, beaten up and sometime even set afire.' That is his account, given twenty years later.",
+   "caption": "Subbarayan's account, 2004",
+   "visual": "A closed gate at dusk; no people, no violence shown",
+   "claims": [
+    "C118",
+    "C023"
+   ],
+   "pause": 0.6,
+   "optional": true,
+   "ak_check": "t52: 'set afire' is sensitive (rule 4.4); one side's recollection, no record from the time"
+  },
+  {
+   "key": "t207",
+   "move": "so",
+   "say": "In the account of the union leader, K. Subbarayan, the strike ended in a settlement: a fixed dearness allowance.",
+   "caption": "Settled: fixed DA · Subbarayan, 2004",
+   "visual": "The DA line on the pay slip fills in",
+   "claims": [
+    "C120",
+    "C023"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t208",
+   "move": "so",
+   "say": "The employers' side, in a twenty twenty-six account, says Sakthivel and seven export companies 'stepped forward' to implement the government order.",
+   "caption": "Employers' account · TEA, 2026",
+   "visual": "A second pay slip, signed",
+   "claims": [
+    "C121"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t209",
+   "move": "but",
+   "say": "But the win had a cost. A review of one scholar's history says the work then 'shifted rapidly toward contract work', and the workforce became 'differentiated and insecure'.",
+   "caption": "\"contract work\"",
+   "visual": "The single factory floor breaks into many small rooms",
+   "claims": [
+    "C125"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t210",
+   "move": "but",
+   "say": "Other researchers put contract and piece-rate work earlier, in the nineteen sixties.",
+   "caption": "Or: from the 1960s",
+   "visual": "The timeline marker slides back",
+   "claims": [
+    "C127"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t211",
+   "move": "so",
+   "say": "So in nineteen eighty-seven, banian wages moved to one joint committee.",
+   "caption": "1987 · joint committee",
+   "visual": "One table, two sides",
+   "claims": [
+    "C134"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t212",
+   "move": "recap",
+   "say": "Ledger line two: in Tiruppur, the wage is not set factory by factory. It is set across the town.",
+   "caption": "Line 2 · one wage for the town",
+   "visual": "Ledger line 2 fills in",
+   "claims": [
+    "C134"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t301",
+   "move": "try",
+   "say": "With the wage settled, the orders came. In nineteen eighty-six, Tiruppur's direct exports were about thirty-seven crore rupees.",
+   "caption": "1986 · ₹37.5 crore",
+   "visual": "Small stack of cartons",
+   "claims": [
+    "C054"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t302",
+   "move": "try",
+   "say": "By nineteen ninety-three they were about twelve hundred crore. Roughly thirty-two times as much, in seven years.",
+   "caption": "1993 · ₹1,197.5 crore · ×32",
+   "visual": "The stack shoots up the screen",
+   "claims": [
+    "C055",
+    "C056"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t303",
+   "move": "predict",
+   "say": "Quick guess. Did Tiruppur simply make thirty-two times more shirts?",
+   "caption": "×32 more shirts?",
+   "visual": "A question mark over the carton tower",
+   "no_fact": true,
+   "pause": 1.0
+  },
+  {
+   "key": "t304",
+   "move": "turn",
+   "say": "No. The number of pieces rose only about six and a half times.",
+   "caption": "Pieces ×6.45",
+   "visual": "Most of the tower turns from shirts into rupee notes",
+   "claims": [
+    "C057"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t305",
+   "move": "turn",
+   "say": "The rest was price. The average piece went from about one rupee thirty to about six rupees forty: nearly five times as much.",
+   "caption": "₹1.30 → ₹6.43 a piece",
+   "visual": "One shirt, its price tag growing",
+   "claims": [
+    "C058"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t306",
+   "move": "click",
+   "say": "So the boom wasn't only more shirts. It was dearer shirts.",
+   "caption": "More value, not just volume",
+   "visual": "Two bars: pieces short, value tall",
+   "claims": [
+    "C056",
+    "C057",
+    "C058"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t309",
+   "move": "try",
+   "say": "In twenty sixteen the wage bargain became a formal pact between the employers' associations and the unions.",
+   "caption": "2016 · bipartite pact",
+   "visual": "The joint table, now with nameplates",
+   "claims": [
+    "C136"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t310",
+   "move": "try",
+   "say": "That pact gave thirty-three percent over four years: eighteen percent at once, then five, five and five.",
+   "caption": "2016 · +33%: 18 · 5 · 5 · 5",
+   "visual": "A four-step staircase",
+   "claims": [
+    "C137"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t311",
+   "move": "try",
+   "say": "In March twenty twenty-six, six employer associations and nine unions met again.",
+   "caption": "17 Mar 2026 · 6 associations · 9 unions",
+   "visual": "Two columns of names",
+   "claims": [
+    "C139",
+    "C138"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t312",
+   "move": "turn",
+   "say": "The result? Thirty-three percent over four years. Eighteen, then five, five, five. The same shape, ten years on.",
+   "caption": "2026 · +33%: 18 · 5 · 5 · 5",
+   "visual": "The 2026 staircase drops onto the 2016 one: a perfect fit",
+   "claims": [
+    "C138"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t313",
+   "move": "perspective",
+   "say": "For a worker? One union official says a thousand rupees a week was a struggle in the nineteen eighties. Now, on piece rates, people get six to eight thousand.",
+   "caption": "₹1,000 → ₹6,000–8,000 a week · one union official",
+   "visual": "Weekly pay envelopes, then and now",
+   "claims": [
+    "C132"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t314",
+   "move": "recap",
+   "say": "Ledger line three: labour in Tiruppur has one price, and the town agrees it together.",
+   "caption": "Line 3 · one price for labour",
+   "visual": "Ledger line 3 fills in",
+   "claims": [
+    "C138",
+    "C139"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t315",
+   "move": "bridge",
+   "say": "But a town also needs water. And Tiruppur had almost none.",
+   "caption": "Water?",
+   "visual": "The dry riverbed from the open",
+   "claims": [
+    "C142"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t401",
+   "move": "payoff",
+   "say": "Remember those rivers? The Noyyal and the Nallar carry water only in the monsoon.",
+   "caption": "Noyyal · Nallar",
+   "visual": "The dotted rivers again, empty",
+   "claims": [
+    "C143"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t402",
+   "move": "but",
+   "say": "The town had no reliable piped supply. Private tankers pumped groundwater, and as it fell they drove further, up to fifty kilometres.",
+   "caption": "Tankers · up to 50 km",
+   "visual": "A tanker's route stretching outward",
+   "claims": [
+    "C145",
+    "C146"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t404",
+   "move": "but",
+   "say": "In nineteen ninety-four the exporters asked for a container terminal, a sewage plant and a telephone exchange. Their note says the association 'has received no reply from authorities.'",
+   "caption": "1994 · \"no reply\"",
+   "visual": "Three request letters; an empty in-tray",
+   "claims": [
+    "C156"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t405",
+   "move": "so",
+   "say": "So they built their own. The Mudalipalayam export estate went up in ten months, 'self financed by the exporters.'",
+   "caption": "157 units · 10 months · ₹14 crore · self-financed",
+   "visual": "An estate of sheds assembles in fast-forward",
+   "claims": [
+    "C161"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t406",
+   "move": "so",
+   "say": "Then water. In two thousand, a water company signed a thirty-year concession. Among its promoters: the exporters' own association.",
+   "caption": "2000 · 30 years · TWIC + IL&FS + TEA",
+   "visual": "Three logos as plain text blocks join a pipe",
+   "claims": [
+    "C152"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t407",
+   "move": "so",
+   "say": "It draws a hundred and eighty-five million litres a day from the Cauvery, near where the Bhavani joins it.",
+   "caption": "185 MLD · Cauvery",
+   "visual": "Intake on a wide river",
+   "claims": [
+    "C148"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t408",
+   "move": "so",
+   "say": "From its treatment plant, the water travels about fifty-three and a half kilometres to a reservoir at Tiruppur.",
+   "caption": "~53.5 km · route illustrative",
+   "visual": "A line drawn between named places only, labelled illustrative",
+   "claims": [
+    "C403",
+    "C402"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t409",
+   "move": "perspective",
+   "say": "The company puts the project's cost at one thousand and twenty-three crore rupees.",
+   "caption": "₹1,023 crore · NTADCL",
+   "visual": "A price tag on the pipe",
+   "claims": [
+    "C150"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t411",
+   "move": "recap",
+   "say": "Ledger line four: when nobody else built it, the town paid its own way.",
+   "caption": "Line 4 · built it ourselves",
+   "visual": "Ledger line 4 fills in",
+   "claims": [
+    "C152",
+    "C161"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t412",
+   "move": "bridge",
+   "say": "But water that comes in has to go out. And there the town hit its hardest wall.",
+   "caption": "Where does it go?",
+   "visual": "The pipe's other end: a dye vat",
+   "no_fact": true,
+   "pause": 0.7
+  },
+  {
+   "key": "t501",
+   "move": "but",
+   "say": "Dyeing is thirsty. Tiruppur's dyers used two hundred to four hundred litres of water a kilo. The international norm, UNIDO says, was a hundred and twenty to a hundred and fifty.",
+   "caption": "200–400 L/kg · norm 120–150",
+   "visual": "A kilo of cloth beside a wall of water cans",
+   "claims": [
+    "C144"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t503",
+   "move": "but",
+   "say": "Downstream, farmers on the Noyyal went to court. Their association has fought polluters there since two thousand three.",
+   "caption": "Since 2003 · Noyyal farmers",
+   "visual": "A farmer's court file",
+   "claims": [
+    "C169"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t504",
+   "move": "but",
+   "say": "In two thousand six the Madras High Court ordered the units to pay a fine until they reached zero liquid discharge: no wastewater out at all.",
+   "caption": "2006 · ZLD or fine",
+   "visual": "A gavel; the word ZERO",
+   "claims": [
+    "C170"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t506",
+   "move": "midpoint",
+   "say": "Then, in early twenty eleven, the High Court ordered more than seven hundred dyeing and bleaching units and treatment plants shut.",
+   "caption": "2011 · 700+ units shut",
+   "visual": "Hundreds of map dots switch off at once",
+   "claims": [
+    "C173"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "t507",
+   "move": "so",
+   "say": "They reopened in June twenty twelve, about a year and a half later, and at first only at fifteen to thirty percent of capacity.",
+   "caption": "Jun 2012 · 15–30% capacity",
+   "visual": "A few dots flicker back on",
+   "claims": [
+    "C178",
+    "C179"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t508",
+   "move": "so",
+   "say": "To reopen, they had to build. By December twenty sixteen, four hundred and fifty dyeing units had set up eighteen zero-discharge treatment plants.",
+   "caption": "450 units · 18 CETPs",
+   "visual": "Eighteen plants rise on the map",
+   "claims": [
+    "C180"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t509",
+   "move": "perspective",
+   "say": "Their cost: about one thousand and thirteen crore rupees. Almost exactly what the pipeline cost to bring the water in.",
+   "caption": "₹1,013 crore vs ₹1,023 crore",
+   "visual": "Two price tags side by side, nearly equal",
+   "claims": [
+    "C180",
+    "C150"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t511",
+   "move": "so",
+   "say": "And the dyers say it works: about a hundred and thirty million litres treated a day, and ninety-two percent of the water recovered.",
+   "caption": "92% recovered · Dyers Association",
+   "visual": "Clean water pours back into the vats",
+   "claims": [
+    "C186"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t512",
+   "move": "predict",
+   "say": "Zero discharge. Water back, nothing out. So where's the catch?",
+   "caption": "The catch?",
+   "visual": "Slow push in on a closed shed door",
+   "no_fact": true,
+   "pause": 1.2
+  },
+  {
+   "key": "t513",
+   "move": "PEAK",
+   "say": "The salt. The dyers' own association says more than one lakh tonnes of mixed waste salt now sit in sheds at the treatment plants, and that 'no proper disposal method' has been found.",
+   "caption": "1,00,000+ tonnes of salt · in sheds",
+   "visual": "The shed door opens: white mountains under a tin roof",
+   "claims": [
+    "C187"
+   ],
+   "pause": 1.2
+  },
+  {
+   "key": "t514",
+   "move": "PEAK",
+   "say": "Zero liquid discharge was never zero waste. The water is reused. The salt is stored.",
+   "caption": "Zero discharge ≠ zero waste",
+   "visual": "The word ZERO from the court order, now over the salt",
+   "claims": [
+    "C187",
+    "C186"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "t515",
+   "move": "PEAK",
+   "say": "In twenty eleven, an official of the Central Pollution Control Board put it bluntly: 'That is why ZLD at Tirupur was a big mistake.'",
+   "caption": "D D Basu, CPCB, 2011",
+   "visual": "Quote card, text only",
+   "claims": [
+    "C188"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t516",
+   "move": "cost",
+   "say": "The plants' power bill: about thirty crore rupees a month, the dyers say.",
+   "caption": "~₹30 crore a month · Dyers Association",
+   "visual": "An electricity meter spinning",
+   "claims": [
+    "C181"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t517",
+   "move": "cost",
+   "say": "And factory owners said in twenty eleven that zero discharge had raised their costs by twenty-five to thirty percent.",
+   "caption": "Costs +25–30% · owners, 2011",
+   "visual": "A cost bar grows",
+   "claims": [
+    "C183"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t518",
+   "move": "dispute",
+   "say": "Is the river better? The evidence is split: 'black water oozing out of the floodgates' in a twenty sixteen report; 'significant improvement in the water quality', an IIT Madras professor said in twenty twenty-five.",
+   "caption": "2016 field report · 2025 IIT Madras",
+   "visual": "Floodgates: grey water, then clearer (illustrative)",
+   "claims": [
+    "C184",
+    "C185"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t520",
+   "move": "recap",
+   "say": "Ledger line five: the town cleaned up its water, and paid for it. But part of the bill is still sitting in sheds.",
+   "caption": "Line 5 · paid, but the salt stays",
+   "visual": "Ledger line 5 fills in, with a salt-white smudge",
+   "claims": [
+    "C180",
+    "C187"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t601",
+   "move": "bridge",
+   "say": "Which leaves the one bill the town can't set: the one across the sea.",
+   "caption": "The bill abroad",
+   "visual": "Ledger pages turn to a map of the world",
+   "no_fact": true,
+   "pause": 0.6
+  },
+  {
+   "key": "t602",
+   "move": "prime",
+   "say": "In twenty twenty-five, about a third of India's knitted-garment exports went to the United States.",
+   "caption": "India's knitwear → USA: 32.3% (2025)",
+   "visual": "India's knitwear exports as a bar; the US slice lit",
+   "claims": [
+    "C310"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t603",
+   "move": "but",
+   "say": "In August twenty twenty-five the US raised its duty on Indian goods to fifty percent in all. That rate has since gone.",
+   "caption": "Aug 2025 · 50% (history)",
+   "visual": "A 50% stamp, then struck through",
+   "claims": [
+    "C301",
+    "C302"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t604",
+   "move": "but",
+   "say": "Since the twenty-fourth of July twenty twenty-six, the US charges an extra ten percent on Indian products, on top of the normal duty.",
+   "caption": "Since 24 Jul 2026 · +10% (Section 301)",
+   "visual": "A 10% tag at a US port gate",
+   "claims": [
+    "C304"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t605",
+   "move": "so",
+   "say": "Britain's trade deal with India has been in force since July twenty twenty-six.",
+   "caption": "UK deal · in force 15 Jul 2026",
+   "visual": "UK slice of the bar (8.7%) gets a green tick",
+   "claims": [
+    "C307",
+    "C311"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t606",
+   "move": "so",
+   "say": "Europe takes about another thirty percent of India's knitwear. Its deal is concluded, but not yet in force.",
+   "caption": "EU: 30.4% · concluded, not in force",
+   "visual": "EU slice gets a dotted tick",
+   "claims": [
+    "C312",
+    "C308"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t607",
+   "move": "dispute",
+   "say": "And last year? The official figure is the one we started with. The exporters' association has put out three different figures of its own, and nothing we read explains the gap.",
+   "caption": "Official: ₹38,677 cr · TEA: three figures",
+   "visual": "One official number; three TEA cards that don't line up",
+   "claims": [
+    "C504",
+    "C073",
+    "C074",
+    "C075",
+    "C076"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t701",
+   "move": "click",
+   "say": "So, the ledger. Who captures the money?",
+   "caption": "Who captures the money?",
+   "visual": "The ledger, all five lines filled",
+   "no_fact": true,
+   "pause": 0.7
+  },
+  {
+   "key": "t702",
+   "move": "verdict",
+   "say": "The owners and exporters keep what's left after the bills. Many began as workers, and the door stays open.",
+   "caption": "Owners: many ex-workers",
+   "visual": "Owner's chair; the worker silhouette from chapter 1",
+   "claims": [
+    "C099",
+    "C097",
+    "C098"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t703",
+   "move": "verdict",
+   "say": "The workers get a wage the whole town agrees, but much of the work is contract and piece-rate.",
+   "caption": "Workers: one town wage",
+   "visual": "The two staircases",
+   "claims": [
+    "C138",
+    "C125",
+    "C132"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t704",
+   "move": "verdict",
+   "say": "The river and the farmers downstream carried a hidden bill for years, until the courts moved it onto the dyers' books.",
+   "caption": "River: the bill moved",
+   "visual": "The court file closing on the river",
+   "claims": [
+    "C169",
+    "C170",
+    "C173"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t705",
+   "move": "verdict",
+   "say": "And at the US border, a ten percent tariff now sits between the town and its American buyers.",
+   "caption": "US: +10%",
+   "visual": "The 10% tag again",
+   "claims": [
+    "C304",
+    "C310"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t706",
+   "move": "moat",
+   "say": "What protects the town? Not a port, and not cheap water. Its moat is how it organises: thousands of small units, one wage, and water and estates it paid toward.",
+   "caption": "Moat: how the town organises",
+   "visual": "Three icons: many sheds, one table, one pipe",
+   "claims": [
+    "C009",
+    "C134",
+    "C152",
+    "C161"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t707",
+   "move": "margin",
+   "say": "And its margin? We found no published figure for what an exporter keeps on a shirt. What we can see is the bill getting longer: wages, treatment plants, power, tariff.",
+   "caption": "Margin: no public figure · costs rising",
+   "visual": "Four cost lines stacking under a shirt",
+   "claims": [
+    "C138",
+    "C180",
+    "C181",
+    "C304"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "t708",
+   "move": "verdict",
+   "say": "The verdict: a strong moat, built by the town itself. A margin under pressure, from costs at home and a tariff abroad.",
+   "caption": "Moat: strong · Margin: under pressure",
+   "visual": "Ledger stamped with the two words",
+   "claims": [
+    "C161",
+    "C138",
+    "C183",
+    "C304"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "e01",
+   "move": "end",
+   "say": "Pick up that T-shirt again. Its wage was agreed in one room. Its water came through a pipe the town helped build. And its salt is still in a shed in Tiruppur.",
+   "caption": "Tiruppur",
+   "visual": "The T-shirt from the open; behind it, the table, the pipe, the white shed",
+   "claims": [
+    "C138",
+    "C152",
+    "C187"
+   ],
+   "pause": 1.5
+  }
+ ],
+ "shorts": [
+  {
+   "name": "S1 · The same 33% wage deal, ten years apart (~40 s)",
+   "beats": [
+    "t310",
+    "t203",
+    "t211",
+    "t311",
+    "t312"
+   ],
+   "move_map": {
+    "M1 Hook": "t310",
+    "M2 Ground": "t203",
+    "M3 Push": "t211",
+    "M4 Turn": "t311–t312",
+    "M5 Echo": "t312 last line ('The same shape, ten years on') loops to M1"
+   }
+  },
+  {
+   "name": "S2 · The dry town that built its own water (~45 s)",
+   "beats": [
+    "t404",
+    "t401",
+    "t402",
+    "t405",
+    "t406",
+    "t408"
+   ],
+   "move_map": {
+    "M1 Hook": "t404",
+    "M2 Ground": "t401–t402",
+    "M3 Push": "t405",
+    "M4 Turn": "t406 (the exporters are a promoter)",
+    "M5 Echo": "t408, ending on the reservoir 'at Tiruppur'"
+   }
+  },
+  {
+   "name": "S3 · Zero discharge, one lakh tonnes of salt (~45 s)",
+   "beats": [
+    "t506",
+    "t508",
+    "t511",
+    "t512",
+    "t513",
+    "t514"
+   ],
+   "move_map": {
+    "M1 Hook": "t506",
+    "M2 Ground": "t508",
+    "M3 Push": "t511",
+    "M4 Turn": "t512–t513",
+    "M5 Echo": "t514 (ZERO callback to the hook's court order)"
+   }
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, India Ledger, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -10,18 +10,19 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 01 | Satellite before/after, wipe and measured label | Moat Atlas, Indica Atlas | Sentinel-2, Navi Mumbai airport site, Jan 2018 vs Jan 2026 | `samples/s01-satellite` |
 | 02 | 3D terrain flyover with river and pins | Indica Atlas | AWS Terrain Tiles + Natural Earth rivers, Haridwar to Nanda Devi | `samples/s02-terrain` |
 | 03 | Document on a desk: lit page, push-in, highlighter, quote card | Moat & Margin, Moat Atlas | Nomad letter, June 2004 (`public/letters/.../p34.png`) | `samples/s03-desk` |
-| 04 | Money-flow breakdown with a zoom into the small pieces | Moat & Margin, Data Kadai | DMart, Jul–Sep 2026, split from the `dmartstory` video | `samples/s04-money` |
-| 05 | Dot chart: 1,000 dots regroup | Data Kadai | Census of India 1951 and 2011 urban share | `samples/s05-dots` |
+| 04 | Money-flow breakdown with a zoom into the small pieces | Moat & Margin, India Ledger | DMart, Jul–Sep 2026, split from the `dmartstory` video | `samples/s04-money` |
+| 05 | Dot chart: 1,000 dots regroup | India Ledger | Census of India 1951 and 2011 urban share | `samples/s05-dots` |
 | 06 | Wind and flow map, particle trails | Indica Atlas | NOAA GFS 850 hPa, 15 Jul 2025 00 UTC | `samples/s06-wind` |
 | 07 | Globe with arcs and a ranked list | Moat Atlas | India's top five crude suppliers, 2023 (ranking only) | `samples/s07-globe` |
 | 08 | Exploded 3D object with labelled layers | The Inventor Desk | Generic smartphone built from primitives | `samples/s08-exploded` |
 | 09 | Patent-style drawing that draws itself, then lights up | The Inventor Desk | Style sample: drawing redrawn, not an original sheet | `samples/s09-patent` |
 | 10 | Still picture with depth (2.5D parallax) and falling leaves | Inventor Desk, Indica Atlas, Moat & Margin | Style sample: channel illustration (AI-generated) | `samples/s10-parallax` |
 | 11 | Fly-through timeline in 3D space | Inventor Desk, Indica Atlas | Transistor 1947 to iPhone 2007 | `samples/s11-timeline` |
-| 12 | Scale comparison with a log zoom-out | Data Kadai, Moat & Margin | ₹1 lakh crore in ₹500 notes ≈ 200 km (0.1 mm per note assumed) | `samples/s12-scale` |
+| 12 | Scale comparison with a log zoom-out | India Ledger, Moat & Margin | ₹1 lakh crore in ₹500 notes ≈ 200 km (0.1 mm per note assumed) | `samples/s12-scale` |
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
-| 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 15 | 3D data map: states as lit prisms | Indica Atlas, India Ledger | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | A Lottie animation inside HyperFrames, seeked frame by frame | All five | Our own "verified" tick (`tools/lottie_tick.py`), lottie-web 5.13.0 | `samples/s16-lottie` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -81,16 +82,18 @@ and map scenes so far), for testing a whole video in HyperFrames.
 `story.js` per video. `tools/export_videos.py` defines the videos (topic, channel, theme, title) and computes every
 number from DGCIS trade data (principal commodity × destination country × Indian port, monthly, via the ODbL mirror
 github.com/Vonter/india-export-import). Scenes: hook number, five-year growth, district map, exit ports on an
-all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and `kadai` (Data Kadai, warm white).
+all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and `kadai` (India Ledger, warm white; the id is kept from its old name, Data Kadai).
 
 | Video | Channel | Story (FY 2025–26) |
 | --- | --- | --- |
 | `ia-poultry` | Indica Atlas | Poultry exports ₹2,810 crore, nearly double; Namakkal district 50%; 66% left via Kochi and Thoothukudi; UAE 37% |
 | `ia-seafood` | Indica Atlas | Marine products ₹74,521 crore, +19%; West Godavari 11%, East Godavari 10%; Visakhapatnam port 27%; USA 27% |
 | `ia-spices` | Indica Atlas | Spices ₹37,644 crore, flat; Ernakulam 16%, Guntur 12%, Mahesana 9%; Kochi and Nhava Sheva 41%; USA 14% |
-| `dk-phones` | Data Kadai | Phones and telecom gear ₹3.03 lakh crore, +37%; Kanchipuram 45%, Kolar 15%, Gautam Buddha Nagar 13%; USA 58% |
-| `dk-buffalo` | Data Kadai | Buffalo meat ₹45,196 crore, +31%; Ghaziabad 17%, Raigad 13%, Aligarh 12%; Vietnam 18% |
-| `dk-growth` | Data Kadai | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
+| `dk-phones` | India Ledger | Phones and telecom gear ₹3.03 lakh crore, +37%; Kanchipuram 45%, Kolar 15%, Gautam Buddha Nagar 13%; USA 58% |
+| `dk-buffalo` | India Ledger | Buffalo meat ₹45,196 crore, +31%; Ghaziabad 17%, Raigad 13%, Aligarh 12%; Vietnam 18% |
+| `dk-growth` | India Ledger | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
+
+**India Ledger style test** (18 Nov 2026): `videos/il-gold-act1`, Act 1 of the gold episode in the "Ledger" look (ruled paper, red margin, ledger-row lower thirds, the running tab, the audit stamp). Voiced and timed by `tools/il_act1_build.py`; numbers from `scripts/india_ledger_gold.py`. Build: `il_act1_build.py`, `hf.py sync il-gold-act1`, `hf.py render il-gold-act1`, `il_act1_build.py mux`.
 
 ```sh
 python3 hyperframes/tools/dgcis_districts.py Apr-2025 Mar-2026 "POULTRY PRODUCTS" "SPICES" ...   # district rows
@@ -116,6 +119,28 @@ The map source writes some letters as symbols and cuts some Karnataka names shor
 symbols and restores the short names from their Census 2011 codes.
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
+
+## Reveal Loop Shorts (vertical, 1080 × 1920)
+
+`shorts/` holds the benchmark Shorts built in the Reveal Loop format (`docs/SHORTS_FORMAT.md`); scripts, sources and build
+steps are in `docs/SHORTS_BENCHMARKS.md`. `tools/shorts_build.py` holds each script, voices the beats and writes
+`story.js` (timings and captions); the page hangs every picture change on a spoken phrase, so it follows the voice.
+
+| Short | Channel | Picture |
+| --- | --- | --- |
+| `ia-southtip` | Indica Atlas (English, India) | Deep zoom through shaded terrain (z6, z8, z11) into Sentinel-2: Kanyakumari to Indira Point |
+| `um-parisiman` | UPSC Mains (Hindi) | 3D Lok Sabha seat map, people-per-MP dots, freeze timeline, the April 2026 vote |
+| `ma-tsmc` | Moat Atlas (English, US) | Sentinel-2 before/after of TSMC Arizona, investment ladder, per-pixel globe |
+
+```sh
+python3 hyperframes/tools/shorts_build.py story all      # needs a MiniMax key; --no-tts estimates the timings
+python3 hyperframes/tools/hf.py sync shorts
+python3 hyperframes/tools/hf.py render ia-southtip        # then: shorts_build.py mux ia-southtip
+```
+
+Shared: `shared/shorts.css` (layout, caption band, safe areas; Teko and Mukta for Hindi), `shared/lib/shorts.js`,
+`shared/geo/world_land.js` (Natural Earth 1:110m land). `tools/atlas_base.py <zoom> <west> <south> <east> <north> <out.jpg>`
+makes a shaded-relief base map from AWS Terrain Tiles and prints its Mercator bounds for the page.
 
 ## Rules for using these in a published video
 

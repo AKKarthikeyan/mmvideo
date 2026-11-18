@@ -1,5 +1,5 @@
 window.STORY = {
- "channel": "DATA KADAI",
+ "channel": "INDIA LEDGER",
  "theme": "kadai",
  "title": "INDIA'S FASTEST-GROWING BIG EXPORTS",
  "name": "Exports over ₹20,000 crore",

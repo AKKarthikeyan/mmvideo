@@ -1,0 +1,167 @@
+{
+  "id": "headphonejack",
+  "ep": "P03",
+  "version": "v1 research-led draft, 28 Oct 2026 (45 s, F4 Cold Case with a Then-and-Now turn)",
+  "status": "DRAFT for AK review, written from docs/inventors_desk/research/P03-headphone-jack (CLEARED FOR SCRIPTING 28 Oct 2026; G6 pass). Not voiced, not built. Look not chosen: AK picks paper or night look.",
+  "format": "F4 Cold Case",
+  "target_seconds": 45,
+  "title": "The Headphone Jack Is Older Than Radio",
+  "title_options": [
+    "The Headphone Jack Is Older Than Radio",
+    "Your Headphone Jack Started on a Telegraph Desk in 1877",
+    "The Headphone Jack Is Older Than Radio. Then It Came Back to Serve It"
+  ],
+  "first_frame_headline": "1877 · A TELEGRAPH DESK",
+  "product": "CLAIM CHECK · THE HEADPHONE JACK",
+  "voice": "English_Diligent_Man",
+  "research": "docs/inventors_desk/research/P03-headphone-jack",
+  "sources_on_screen": [
+    "The Operator, vol. 7 (1877)",
+    "Prescott, 1878",
+    "US 293,198 and US 234,192 (filed 1879)",
+    "NYT, 11 Jun 1899; Western Electric catalogue, 1908",
+    "GB 12,039 (Marconi), filed 1896",
+    "IEC 60130-8:1969"
+  ],
+  "beats": [
+    {
+      "key": "b01",
+      "beat": "M1 Hook",
+      "say": "The jack your headphones plug into is older than radio.",
+      "pause": 0.5,
+      "claims": [
+        "C001",
+        "C002",
+        "C026"
+      ],
+      "vis": "FROM FRAME 0: a pair of earbuds with the plug about to enter a socket, and a calendar card '1877' beside it. First-frame headline: '1877 · A TELEGRAPH DESK'. The plug tip is drawn large; no text on screen repeats the title. ARTISTIC: the earbuds.",
+      "src_line": "The Operator, vol. 7 (1877)"
+    },
+    {
+      "key": "b02",
+      "beat": "M2 Ground",
+      "say": "It began on a telegraph desk in eighteen seventy-seven, as a spring-jack: a wedge pushed between two pins to break a line.",
+      "pause": 0.5,
+      "claims": [
+        "C001",
+        "C002"
+      ],
+      "vis": "A telegraph switchboard: two brass pins held together by a spring strip; a wedge slides between them and the pins part (Prescott's description, p. 451). Label 'SPRING-JACK'. ARTISTIC: the board's look (no 1877 photograph was found).",
+      "src_line": "Prescott, Electricity and the Electric Telegraph (1878)"
+    },
+    {
+      "key": "b03",
+      "beat": "M3 Push (the but)",
+      "say": "Telephone exchanges borrowed it. But the wedge had to go in a certain way, so inventors made a plain round plug.",
+      "pause": 0.5,
+      "claims": [
+        "C005",
+        "C008",
+        "C009"
+      ],
+      "vis": "The wedge tries to go in sideways and jams; a round plug slides in from any angle. Redraw the real patent figures: Scribner's Fig. 4 (black-handled plug A with a cord) and the Jones exchange desk. Signpost '1879'. ARTISTIC: the jam.",
+      "src_line": "US Patents 293,198 (Scribner) and 234,192 (Jones), both filed Aug 1879"
+    },
+    {
+      "key": "b04",
+      "beat": "M3 Push (so)",
+      "say": "By the century's end, operators plugged their head receivers into jacks.",
+      "pause": 0.5,
+      "claims": [
+        "C013",
+        "C014"
+      ],
+      "vis": "An operator with a head receiver on a band, its cord ending in a plug slid into a row of jacks. Card 'No. 85 plug · operator's head telephone · $1.50' from the 1908 catalogue. ARTISTIC: the operator (no portrait found); draw from the NYT 1899 description.",
+      "src_line": "New York Times, 11 Jun 1899; Western Electric catalogue, 1908"
+    },
+    {
+      "key": "b05",
+      "beat": "M4 Turn (payoff of the hook)",
+      "say": "Marconi's radio patent came in eighteen ninety-six, nearly twenty years later.",
+      "pause": 0.9,
+      "claims": [
+        "C026",
+        "C001",
+        "C016"
+      ],
+      "vis": "THE HOLD. A timeline bar: 1877 (the spring-jack) on the left, 1896 (the radio patent) on the right; the gap lights up '19 YEARS' (our arithmetic). Hold the bar for about 1 s.",
+      "src_line": "GB patent 12,039 (Marconi), filed 2 Jun 1896 (register)"
+    },
+    {
+      "key": "b06",
+      "beat": "M4 Turn (the twist)",
+      "say": "Then radio came back for it. In nineteen sixty-nine, a standard for radio receivers described the small sockets your wired earbuds still use.",
+      "pause": 0.6,
+      "claims": [
+        "C017",
+        "C023"
+      ],
+      "vis": "A radio set drawn flat; a small jack socket on its side; on-screen label '3.5 mm' (data, not spoken) and the standard's title 'IEC 60130-8 · audio circuits in radio receivers · 1969'. The earbud plug from b01 slides in. ARTISTIC: the radio.",
+      "src_line": "IEC 60130-8:1969"
+    },
+    {
+      "key": "b07",
+      "beat": "M5 Echo (callback + question)",
+      "say": "Older than radio, then written into a radio standard. Which old part is hiding in your pocket?",
+      "pause": 1.0,
+      "claims": [
+        "C001",
+        "C017"
+      ],
+      "vis": "The b01 picture again (earbuds, plug, '1877' card), the card now crossed with '1969'. Close on the desk drawer."
+    }
+  ],
+  "words": 115,
+  "est_seconds": 44.2,
+  "review": {
+    "date": "28 Oct 2026",
+    "note": "Story gate S13: one pass each with the Bhagyaraj and Nolan methods (Mode B). Facts locked to ledger IDs; no fact was added.",
+    "bhagyaraj": {
+      "question": "If the jack is older than radio, what did radio do to it?",
+      "scores": {
+        "2 question": 2,
+        "4 ordinary person": 1,
+        "9 the audience holds the secret (the title)": 2,
+        "10 plant/payoff": 2,
+        "11 humour is the plot (the wedge jams)": 2,
+        "12 mirror / 13 object (the earbud plug)": 2
+      },
+      "plants_and_payoffs": [
+        "b02 the wedge that must go in a certain way -> b03 it jams, the round plug fixes it",
+        "b01 earbud plug -> b06 it slides into a radio socket -> b07 the b01 picture returns crossed with 1969",
+        "b01 'older than radio' -> b05 the timeline gap pays it off"
+      ],
+      "heart": "Weakest point: no named person. The operator in the 1899 article (a 'telephone girl') is the human face; the Joneses and Scribner are signatures only. Show the operator with her head receiver for b04 and keep her in the b07 picture.",
+      "applied": "b04 now names her role ('operators'), and b07 keeps the earbud-and-plug object from b01 as the loop."
+    },
+    "nolan": {
+      "theme": "Old parts get new jobs.",
+      "shape": "Hairpin: earbud plug (b01) -> telegraph wedge (b02) -> round plug (b03) -> operator's headset (b04) -> 1896 yardstick (b05) -> radio standard 1969 with the earbud plug sliding in (b06) -> the b01 picture (b07).",
+      "pledge_turn_prestige": {
+        "pledge": "b01-b02: the jack is older than radio, and began on a telegraph desk",
+        "turn": "b05: the date gap proves it (1877 vs 1896)",
+        "prestige": "b06-b07: radio came back for it: the small size was written into a radio standard"
+      },
+      "fair_play": "The twist is planted in b01 ('older than radio') and the answer in b06 uses the same word, radio; no fact is withheld that the viewer needs.",
+      "loop": "b07 repeats b01's picture and line.",
+      "strands": "One strand (1877 -> 1879 -> 1899 -> 1896 -> 1969); b05's 1896 jump is signposted by the timeline bar."
+    },
+    "gates": {
+      "S1 facts": "PASS (research_check.py --script)",
+      "S2 format": "F4 Cold Case with a Then-and-Now turn; the research signal is myths M2/M3 and the 1969 standard (C017)",
+      "S3 question by 6 s": "PASS (b01 claim; the 'how?' follows in b02)",
+      "S4 prime": "PASS (earbuds)",
+      "S5 resolve": "PASS (b05 pays off b01; b06 resolves the twist)",
+      "S6 peak": "PASS: the turn (b06) starts at about 65% of the words",
+      "S7 end": "PASS (callback + a question a child can answer)",
+      "S8 screen text": "PASS (keywords and numbers; '3.5 mm' on screen only)",
+      "S9 numbers": "Three spoken years (1877, 1896, 1969) plus the perspective 'nearly twenty years' (our arithmetic, 1896-1877), one beat carries two numbers (b05) because the second is the perspective",
+      "S10 hedges": "PASS: nothing is stated about the 1950s or the Walkman (unverified); Marconi is '1896 patent', never 'first'; Apple 'courage' is not used",
+      "S11 retell": "The jack your headphones use began on a telegraph desk in 1877; operators plugged headsets into jacks by 1899; radio's first patent came in 1896, and in 1969 the small size was written into a radio standard.",
+      "S12 audience": "PASS",
+      "SH2 words": "115 words (45 s budget 100-120)",
+      "SH3 buts": "One 'But' (b03)",
+      "SH11": "Under 60 s: no copyright audio planned"
+    }
+  }
+}

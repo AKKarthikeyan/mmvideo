@@ -1,5 +1,5 @@
 window.STORY = {
- "channel": "DATA KADAI",
+ "channel": "INDIA LEDGER",
  "theme": "kadai",
  "title": "INDIA'S QUIET MEAT EXPORT",
  "name": "Buffalo meat",

@@ -1,0 +1,219 @@
+{
+ "id": "nvidiasa",
+ "title": "Could NVIDIA survive without Jensen?",
+ "chapters": [
+  "Short"
+ ],
+ "shorts": [
+  {
+   "title": "Could NVIDIA survive without Jensen?",
+   "beats": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5"
+   ],
+   "hook": "COULD NVIDIA SURVIVE WITHOUT JENSEN?"
+  }
+ ],
+ "calm": true,
+ "brand": "Moat Atlas",
+ "timelines": {
+  "NVT": [
+   [
+    "1995",
+    "NV1 CHIP"
+   ],
+   [
+    "1999",
+    "GEFORCE 256"
+   ],
+   [
+    "2006",
+    "CUDA"
+   ],
+   [
+    "2012",
+    "ALEXNET ON 2 NVIDIA GPUS"
+   ],
+   [
+    "2023–26",
+    "AI BOOM"
+   ]
+  ]
+ },
+ "beats": [
+  {
+   "ch": 0,
+   "key": "a1",
+   "say": "NVIDIA is worth about four and a half trillion dollars, and this weekend its board opened an investigation into its boss.",
+   "cap": "NVIDIA is worth about $4.5 trillion, and this weekend its board opened an investigation into its boss.",
+   "scene": {
+    "type": "pic",
+    "pic": "ces",
+    "heading": "PHOTO: PRONOIA, CC0",
+    "focus": {
+     "x": 489,
+     "y": 919,
+     "w": 1000,
+     "iw": 1920,
+     "ih": 1440
+    },
+    "y0": 260,
+    "focusP": {
+     "x": 427,
+     "y": 560,
+     "w": 540,
+     "iw": 1920,
+     "ih": 1440
+    },
+    "y0p": 760,
+    "items": [
+     {
+      "text": "≈ $4.5 TRILLION",
+      "at": "four and a half trillion"
+     },
+     {
+      "text": "BOARD INVESTIGATION",
+      "at": "investigation",
+      "red": true
+     }
+    ]
+   },
+   "sec": 6.48,
+   "cues": [
+    "NVIDIA is worth about $4.5 trillion, and this weekend its board opened an",
+    "investigation into its boss."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "a2",
+   "say": "Nobody has charged him. So here's the real question: could NVIDIA survive without Jensen Huang?",
+   "cap": "Nobody has charged him. So here's the real question: could NVIDIA survive without Jensen Huang?",
+   "scene": {
+    "type": "kinetic",
+    "lines": [
+     {
+      "t": "NO CHARGES.",
+      "at": "Nobody has charged"
+     },
+     {
+      "t": "COULD NVIDIA SURVIVE WITHOUT JENSEN?",
+      "at": "could NVIDIA survive",
+      "em": [
+       "JENSEN"
+      ]
+     }
+    ]
+   },
+   "sec": 7.16,
+   "cues": [
+    "Nobody has charged him.",
+    "So here's the real question:",
+    "could NVIDIA survive without Jensen Huang?"
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "a3",
+   "say": "Treat it like a restaurant losing its head chef. Is the recipe written down? Yes: thirty one thousand of its staff work on research. Are the diners stuck? Mostly: millions of programmers write code for its chips.",
+   "cap": "Treat it like a restaurant losing its head chef. Is the recipe written down? Yes: 31,000 of its staff work on research. Are the diners stuck? Mostly: millions of programmers write code for its chips.",
+   "scene": {
+    "type": "cards",
+    "heading": "ILLUSTRATIVE · OUR VIEW · TWO OF THREE CHECKS",
+    "cards": [
+     {
+      "top": "RECIPE WRITTEN DOWN?",
+      "big": "YES",
+      "sub": "31,000 IN R&D",
+      "at": "Is the recipe written down"
+     },
+     {
+      "top": "DINERS STUCK?",
+      "big": "MOSTLY",
+      "sub": "MILLIONS TIED TO CUDA",
+      "at": "Are the diners stuck",
+      "fill": "mustard"
+     }
+    ]
+   },
+   "sec": 13.16,
+   "cues": [
+    "Treat it like a restaurant losing its head chef.",
+    "Is the recipe written down?",
+    "Yes:",
+    "31,000 of its staff work on research.",
+    "Are the diners stuck?",
+    "Mostly:",
+    "millions of programmers write code for its chips."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "a4",
+   "say": "But is there a second chef? NVIDIA's own annual report says it is highly dependent on its longstanding executive team, and it names no successor.",
+   "cap": "But is there a second chef? NVIDIA's own annual report says it is highly dependent on its longstanding executive team, and it names no successor.",
+   "scene": {
+    "type": "clip",
+    "clip": "nv_succession",
+    "heading": "NVIDIA 10-K FY2026 · ITEM 1A · P.23",
+    "hl": [
+     "highly dependent"
+    ]
+   },
+   "sec": 8.86,
+   "cues": [
+    "But is there a second chef?",
+    "NVIDIA's own annual report says it is highly dependent on its longstanding",
+    "executive team, and it names no successor."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "a5",
+   "say": "So the company would likely survive. The open question: who picks the next dish? The full test is on the channel.",
+   "cap": "So the company would likely survive. The open question: who picks the next dish? The full test is on the channel.",
+   "scene": {
+    "type": "kinetic",
+    "lines": [
+     {
+      "t": "WHO PICKS THE NEXT DISH?",
+      "at": "who picks",
+      "em": [
+       "DISH"
+      ]
+     },
+     {
+      "t": "THE FULL TEST IS ON THE CHANNEL.",
+      "at": "The full test"
+     }
+    ]
+   },
+   "sec": 7.89,
+   "cues": [
+    "So the company would likely survive.",
+    "The open question:",
+    "who picks the next dish?",
+    "The full test is on the channel."
+   ]
+  }
+ ],
+ "clips": {
+  "nv_succession": {
+   "w": 1644,
+   "h": 156,
+   "hl": [
+    [
+     0.2639,
+     0.1852,
+     0.5639,
+     0.2592
+    ]
+   ],
+   "page": 111,
+   "quote": "highly dependent on the services of our longstanding executive team"
+  }
+ }
+}

@@ -13,3 +13,7 @@
 - Shorts and Reels on every channel follow `docs/SHORTS_RULES.md` (AK, 10 Nov 2026; fact-check behind it in
   `docs/SHORTS_FACTCHECK.md`). Write each Short as its own loop script, never a cut-down of long-video beats, and run
   `python3 scripts/shorts_check.py <id>` after the build: fix every FAIL before rendering.
+- Motion design: the LottieFiles motion-design skill is installed at `.claude/skills/motion-design` (MIT, unmodified;
+  AK, 18 Nov 2026). Use it for timing, easing, choreography and the 12 principles. Ignore its "Creator MCP" handoff: our
+  MP4s are rendered by HyperFrames or Remotion. Optional libraries (Tweakpane, three.quarks, lottie-web) are in
+  `hyperframes/shared/vendor/`; the Manim trial is `scripts/manim/` (`docs/TOOLS_RADAR.md`).

@@ -34,6 +34,8 @@ LINKS = {
 # files a Short borrows from a sample, copied at sync time
 SHORT_LINKS = {"um-parisiman/assets/geo3d.js": "samples/s15-seatmap/assets/geo3d.js"}
 PUBLIC_FONTS = ["Oswald-700.woff2", "Virgil-Regular.woff2"]
+# optional libraries (shared/vendor/) a project needs, copied into its assets/lib at sync time
+VENDOR = {"s16-lottie": ["lottie/lottie.min.js"]}
 
 
 def project(name):
@@ -75,6 +77,8 @@ def sync(names):
         for f in PUBLIC_FONTS:
             shutil.copy(ROOT / "public" / "fonts" / f, a / "fonts")
         shutil.copy(LIB / "shared" / "base.css", a / "css")
+        for f in VENDOR.get(n, []):
+            shutil.copy(LIB / "shared" / "vendor" / f, a / "lib")
         shutil.copy(LIB / "shared" / "shorts.css", a / "css")
         if project(n).parent == SHORTS:
             (a / "geo").mkdir(exist_ok=True)

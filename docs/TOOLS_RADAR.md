@@ -8,6 +8,11 @@ GitHub (search API, 18 Nov 2026): stars, licence as GitHub detects it, last push
 are in the post's links**. The "Blender agent" in the post is Scenario's Blender plugin, a paid AI-generation service
 (below). The summary also left out lottie-web, which the post includes.
 
+**Status (18 Nov 2026, AK approved):** motion-design skill installed (`.claude/skills/motion-design`); lottie-web tried
+(sample `s16-lottie`, our own tick animation, seeked frame by frame: works); Manim tried (`scripts/manim/`, renders 1080p:
+works); Tweakpane and three.quarks added for later (`hyperframes/shared/vendor/`). The Mac Mini runs come next: see
+`scripts/manim/README.md`.
+
 **Bottom line:** most of the list is already in our stack. HyperFrames is HTML + GSAP + three.js; we run Remotion 4,
 FFmpeg and MiniMax TTS; faster-whisper checks voice tracks. Worth adding:
 1. **WhisperX**, when AK records his own narration: word-level timings let the picture follow a human voice. Hindi is

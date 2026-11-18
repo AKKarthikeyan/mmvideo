@@ -22,6 +22,7 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
 | 15 | 3D data map: states as lit prisms | Indica Atlas, India Ledger | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 16 | A Lottie animation inside HyperFrames, seeked frame by frame | All five | Our own "verified" tick (`tools/lottie_tick.py`), lottie-web 5.13.0 | `samples/s16-lottie` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 

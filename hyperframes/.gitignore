@@ -1,0 +1,22 @@
+# copied in by tools/hf.py sync (shared/ and public/ are the sources)
+samples/*/assets/lib/
+samples/*/assets/fonts/
+samples/*/assets/css/
+videos/*/assets/
+samples/s03-desk/assets/img/page.png
+samples/s10-parallax/assets/img/scene.jpg
+samples/s13-quote/assets/img/n48_children.png
+samples/s14-notes/assets/img/p99.png
+# HyperFrames working files
+samples/*/.hyperframes/
+samples/*/snap/
+samples/*/render.log
+videos/*/.hyperframes/
+tools/__pycache__/
+# Shorts: shared files copied in by sync; images, story.js and check.json are kept
+shorts/*/assets/lib/
+shorts/*/assets/fonts/
+shorts/*/assets/css/
+shorts/*/assets/geo/
+shorts/um-parisiman/assets/geo3d.js
+shorts/*/.hyperframes/

@@ -1,0 +1,261 @@
+<!doctype html>
+<!-- Export story video. tools/export_videos.py copies this next to a story.js (numbers, scenes, narration lines). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Export story</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/geo/india_districts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      .atlas { --bg: #0b0e13; --fg: #f7f3ea; --muted: #b9c0c8; --acc: #d9a441; --acc2: #e0402f; --land: #182030; --dline: rgba(120, 140, 165, 0.16);
+        --sline: rgba(150, 170, 195, 0.5); --outl: rgba(247, 243, 234, 0.7); --bar: #3a4757; --kick: #d9a441; --chip: #f7f3ea; --chipfg: #0b0e13; }
+      .kadai { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --acc: #0e7c66; --acc2: #c8431f; --land: #e3dccb; --dline: rgba(90, 80, 60, 0.14);
+        --sline: rgba(90, 80, 60, 0.45); --outl: rgba(20, 22, 26, 0.75); --bar: #b9b09b; --kick: #0e7c66; --chip: #14161a; --chipfg: #f3efe6; }
+      #root { background: var(--bg); }
+      .kadai #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      .kadai #vig { --vig: 0.12; }
+      .scene { position: absolute; inset: 0; opacity: 0; }
+      .h { position: absolute; left: 110px; top: 134px; font: 700 66px/1.02 Oswald, sans-serif; letter-spacing: 0.03em; color: var(--fg); }
+      .unit { position: absolute; left: 110px; top: 214px; font: 400 32px/1.2 Inter, sans-serif; color: var(--muted); }
+      /* hook */
+      #hTitle { position: absolute; left: 110px; top: 250px; width: 1700px; font: 700 96px/1 Oswald, sans-serif; letter-spacing: 0.02em; color: var(--fg); }
+      #hNum { position: absolute; left: 104px; top: 470px; font: 700 220px/1 Oswald, sans-serif; color: var(--acc); font-variant-numeric: tabular-nums; white-space: nowrap; }
+      #hSub { position: absolute; left: 112px; top: 712px; font: 400 40px/1.2 Inter, sans-serif; color: var(--muted); }
+      .chips { position: absolute; left: 110px; top: 790px; display: flex; gap: 18px; }
+      .chip { font: 700 36px/1 Oswald, sans-serif; letter-spacing: 0.04em; padding: 12px 18px 14px; background: var(--chip); color: var(--chipfg); white-space: nowrap; }
+      .chip.up { background: var(--acc); color: var(--bg); }
+      .chip.down { background: var(--acc2); color: #fff; }
+      /* bars */
+      .bar { position: absolute; bottom: 220px; background: var(--bar); }
+      .bar.now { background: var(--acc); }
+      .bv { position: absolute; font: 700 44px/1 Oswald, sans-serif; color: var(--fg); text-align: center; white-space: nowrap; }
+      .bl { position: absolute; top: 876px; font: 400 32px/1 Inter, sans-serif; color: var(--muted); text-align: center; }
+      /* map + lists */
+      #map { position: absolute; inset: 0; }
+      .row { position: absolute; left: 110px; width: 780px; }
+      .row .n { font: 700 40px/1.1 Oswald, sans-serif; color: var(--fg); letter-spacing: 0.02em; white-space: nowrap; }
+      .row .p { position: absolute; right: 0; top: 0; font: 700 40px/1.1 Oswald, sans-serif; color: var(--acc); }
+      .row .track { height: 12px; background: var(--dline); margin-top: 10px; }
+      .row .bfill { height: 12px; background: var(--acc); transform-origin: 0 50%; }
+      .plab { position: absolute; font: 700 32px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; letter-spacing: 0.03em;
+        background: var(--bg); padding: 6px 10px 8px; border-left: 5px solid var(--acc); }
+      #dleg { position: absolute; left: 110px; top: 862px; width: 800px; display: flex; flex-wrap: wrap; column-gap: 26px; row-gap: 14px; align-items: center;
+        font: 400 26px/1 Inter, sans-serif; color: var(--muted); }
+      #dleg i { display: inline-block; width: 34px; height: 22px; margin-right: 8px; vertical-align: -4px; }
+      /* ranking */
+      .rk { position: absolute; left: 110px; width: 1700px; }
+      .rk .n { font: 700 46px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .rk .sub { font: 400 30px/1.2 Inter, sans-serif; color: var(--muted); margin-top: 6px; white-space: nowrap; }
+      .rk .g { position: absolute; top: 0; height: 64px; background: var(--bar); transform-origin: 0 50%; }
+      .rk .gv { position: absolute; top: 4px; font: 700 52px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      /* end */
+      #eLine { position: absolute; left: 110px; top: 330px; width: 1600px; font: 700 76px/1.1 Oswald, sans-serif; color: var(--fg); }
+      #eSrc { position: absolute; left: 110px; top: 720px; width: 1500px; font: 400 30px/1.4 Plex, monospace; color: var(--muted); }
+      .cap { opacity: 0; white-space: normal; width: max-content; max-width: 1640px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="atlas" data-composition-id="main" data-start="0" data-duration="25.0" data-width="1920" data-height="1080">
+      <canvas id="map" width="1920" height="1080"></canvas>
+      <div class="scene" id="s-hook">
+        <div id="hTitle"></div><div id="hNum"></div><div id="hSub"></div><div class="chips" id="hChips"></div>
+      </div>
+      <div class="scene" id="s-growth"><div class="h">FIVE YEARS OF EXPORTS</div><div class="unit">₹ crore, financial years April to March</div><div id="bars"></div></div>
+      <div class="scene" id="s-district"><div class="h">WHERE IT IS MADE</div><div class="unit">Export value by district of origin, FY 2025–26</div><div id="dlist"></div><div id="dleg"></div><div id="dlabs"></div></div>
+      <div class="scene" id="s-ports"><div class="h">WHERE IT LEAVES INDIA</div><div class="unit">Share of export value by Indian port, FY 2025–26</div><div id="prow"></div><div id="plabs"></div></div>
+      <div class="scene" id="s-dest"><div class="h">WHO BUYS IT</div><div class="unit">Share of export value by destination, FY 2025–26</div><div id="drow"></div></div>
+      <div class="scene" id="s-rank"><div class="h">GROWTH IN 2025–26</div><div class="unit">Change in export value on 2024–25 · exports over ₹20,000 crore</div><div id="rrow"></div></div>
+      <div class="scene" id="s-end"><div id="eLine"></div><div id="eSrc"></div></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick"></div>
+      <div class="cap" id="cap"></div>
+    </div>
+    <script>
+      const S = window.STORY;
+      const H = HF.setup(S.scenes.reduce((a, s) => a + s.d, 0));
+      window.__timelines.main = H.tl;
+      const E = HF.ease, F = HF.fade, L = HF.lerp;
+      const $ = (id) => document.getElementById(id);
+      $("root").className = S.theme;
+      $("kick").textContent = `${S.channel} · EXPORTS · FY 2025–26`;
+      const css = (v) => getComputedStyle($("root")).getPropertyValue(v).trim();
+      const inr = (cr) => {
+        if (cr >= 100000) return `₹${(cr / 100000).toFixed(2)} lakh crore`;
+        let s = String(Math.round(cr)), head = s.slice(0, -3), tail = s.slice(-3);
+        while (head.length > 2) { tail = head.slice(-2) + "," + tail; head = head.slice(0, -2); }
+        return `₹${head ? head + "," : ""}${tail}${cr >= 1 ? " crore" : ""}`;
+      };
+      const crNum = (cr) => inr(cr).replace(" crore", "");
+      const scene = Object.fromEntries(S.scenes.map((s) => [s.id, s]));
+      const local = (id, t) => (scene[id] ? t - scene[id].t0 : -1);
+      const vis = (id, t) => { const s = scene[id]; if (!s) return 0; const last = S.scenes[S.scenes.length - 1].id === id;
+        return HF.clamp01((t - s.t0) / 0.45) * (last ? 1 : 1 - HF.clamp01((t - (s.t0 + s.d - 0.45)) / 0.45)); };
+
+      // ---------- India map (ports scene), drawn on one canvas
+      const g = $("map").getContext("2d");
+      const K = Math.cos((23 * Math.PI) / 180), SC = 27, MX = 1330, MY = 565;
+      const px = (lon, lat) => [MX + (lon - 82.5) * K * SC, MY - (lat - 22) * SC];
+      const land = new Path2D(), states = new Path2D(), outline = new Path2D();
+      for (const d of window.INDIA.districts) for (const r of d.rings) {
+        for (let i = 0; i < r.length; i += 2) { const [x, y] = px(r[i], r[i + 1]); i ? land.lineTo(x, y) : land.moveTo(x, y); }
+        land.closePath();
+      }
+      const segs = (arr, path) => { for (let i = 0; i < arr.length; i += 4) { const [a, b] = px(arr[i], arr[i + 1]), [c, d] = px(arr[i + 2], arr[i + 3]); path.moveTo(a, b); path.lineTo(c, d); } };
+      segs(window.INDIA.states, states); segs(window.INDIA.outline, outline);
+      // district shading: five classes by share of the top district's value
+      const D = S.districts ? S.districts.rows : [];
+      const dmaxv = D.length ? D[0].v : 1;
+      const BINS = [0.5, 0.15, 0.03, 0.005, 0];
+      const ramp = (k) => { const a = css("--land"), b = css("--acc");
+        const h = (c) => [1, 3, 5].map((j) => parseInt(c.slice(j, j + 2), 16)); const [x, y] = [h(a), h(b)], u = [0.18, 0.36, 0.56, 0.78, 1][k];
+        return `rgb(${x.map((v, j) => Math.round(v + (y[j] - v) * u)).join(",")})`; };
+      const dpaths = D.map((d, rank) => {
+        const path = new Path2D();
+        for (const r of window.INDIA.districts[d.i].rings) {
+          for (let i = 0; i < r.length; i += 2) { const [x, y] = px(r[i], r[i + 1]); i ? path.lineTo(x, y) : path.moveTo(x, y); }
+          path.closePath();
+        }
+        return { path, cls: 4 - BINS.findIndex((b) => d.v / dmaxv >= b), rank };
+      });
+      const drawMap = (a, t, u, da, du) => {
+        g.clearRect(0, 0, 1920, 1080);
+        if (a <= 0) return;
+        g.globalAlpha = a;
+        g.fillStyle = css("--land"); g.fill(land, "evenodd");
+        if (da > 0) for (const d of dpaths) {
+          const k = HF.clamp01((du - 0.6 - (d.rank / Math.max(1, dpaths.length)) * 2.2) / 0.4);
+          if (k <= 0) continue;
+          g.globalAlpha = a * da * k; g.fillStyle = ramp(d.cls); g.fill(d.path, "evenodd");
+        }
+        g.globalAlpha = a;
+        g.strokeStyle = css("--dline"); g.lineWidth = 0.6; g.stroke(land);
+        g.strokeStyle = css("--sline"); g.lineWidth = 1.4; g.stroke(states);
+        g.strokeStyle = css("--outl"); g.lineWidth = 1.8; g.stroke(outline);
+        // port bubbles: area proportional to share
+        (S.ports || []).forEach((p, i) => {
+          if (p.lat == null || u < 0) return;
+          const [x, y] = px(p.lon, p.lat), k = E.back((u - 0.8 - i * 0.35) / 0.6, 1.4);
+          if (k <= 0) return;
+          const r = Math.sqrt(p.pct) * 10.5 * k;
+          g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2);
+          g.fillStyle = css("--acc"); g.globalAlpha = a * 0.32; g.fill();
+          g.globalAlpha = a; g.lineWidth = 3; g.strokeStyle = css("--acc"); g.stroke();
+          g.beginPath(); g.arc(x, y, 5, 0, Math.PI * 2); g.fillStyle = css("--fg"); g.fill();
+        });
+        g.globalAlpha = 1;
+      };
+
+      // ---------- build DOM for the scenes this story uses
+      if (S.mode === "product") {
+        $("hTitle").textContent = S.title;
+        $("hSub").textContent = `${S.name} exported in FY 2025–26`;
+        const up = S.growth >= 0;
+        $("hChips").innerHTML = `<span class="chip ${up ? "up" : "down"}">${up ? "+" : "−"}${Math.abs(S.growth).toFixed(1)}% ON FY 2024–25</span>` +
+          `<span class="chip">${S.share}% OF INDIA'S GOODS EXPORTS</span>`;
+        const max = Math.max(...S.fy.map((f) => f.cr));
+        S.fy.forEach((f, i) => {
+          const x = 300 + i * 290;
+          $("bars").insertAdjacentHTML("beforeend", `<div class="bar${i === S.fy.length - 1 ? " now" : ""}" id="b${i}" style="left:${x}px;width:190px"></div>` +
+            `<div class="bv" id="bv${i}" style="left:${x - 60}px;width:310px">${crNum(f.cr)}</div>` +
+            `<div class="bl" style="left:${x - 60}px;width:310px">${f.fy}</div>`);
+          f.h = (f.cr / max) * 470;
+        });
+        if (D.length) {
+          const tot = D.reduce((x, d) => x + d.v, 0);
+          D.slice(0, 5).forEach((d, i) => {
+            $("dlist").insertAdjacentHTML("beforeend", `<div class="row" id="dl${i}" style="top:${300 + i * 112}px"><div class="n">${d.n} <span style="font:400 28px Inter;color:var(--muted)">${d.s}</span></div><div class="p">${(d.v / tot * 100).toFixed(1)}%</div><div class="track"><div class="bfill" id="dlf${i}" style="width:${(d.v / D[0].v) * 100}%"></div></div></div>`);
+          });
+          const th = BINS.slice(0, 4).map((b) => inr(dmaxv * b));
+          $("dleg").innerHTML = [4, 3, 2, 1, 0].map((c, j) => `<span><i style="background:${ramp(c)}"></i>${j === 0 ? th[0] + "+" : j === 4 ? "under " + th[3] : "from " + th[j]}</span>`).join("") +
+            `<span><i style="background:${css("--land")};outline:1px solid var(--sline)"></i>no figure</span>`;
+        }
+        S.ports = S.ports.slice(0, 4);
+        const pmax = Math.max(...S.ports.map((p) => p.pct));
+        // map labels for the top three: east-coast ports label to the right, the rest to the left; same-side labels kept 52 px apart
+        const labs = S.ports.slice(0, 3).map((p, i) => p.lat == null ? null : { i, p, xy: px(p.lon, p.lat), r: Math.sqrt(p.pct) * 10.5, right: p.lon >= 79 }).filter(Boolean);
+        // a left-hand label that would run into the ranked list (right edge ~920 px) goes to the right instead
+        for (const b of labs) if (!b.right && b.xy[0] - b.r - 14 - (b.p.label.length + 7) * 18 < 940) b.right = true;
+        for (const side of [true, false]) {
+          const l = labs.filter((b) => b.right === side).sort((a, b) => a.xy[1] - b.xy[1]);
+          l.forEach((b, k) => { b.y = b.xy[1] - 24; if (k && b.y < l[k - 1].y + 52) b.y = l[k - 1].y + 52; });
+        }
+        S.ports.forEach((p, i) => {
+          $("prow").insertAdjacentHTML("beforeend", `<div class="row" id="pr${i}" style="top:${300 + i * 118}px"><div class="n">${p.label}</div><div class="p">${p.pct.toFixed(1)}%</div><div class="track"><div class="bfill" id="pf${i}" style="width:${(p.pct / pmax) * 100}%"></div></div></div>`);
+          const b = labs.find((q) => q.i === i);
+          if (b) $("plabs").insertAdjacentHTML("beforeend", `<div class="plab" id="pl${i}" style="${b.right ? `left:${b.xy[0] + b.r + 14}px` : `right:${1920 - b.xy[0] + b.r + 14}px`};top:${b.y}px">${p.label.toUpperCase()} · ${Math.round(p.pct)}%</div>`);
+        });
+        const dmax = Math.max(...S.dest.map((d) => d.pct));
+        const rest = Math.max(0, 100 - S.dest.reduce((a, d) => a + d.pct, 0));
+        [...S.dest, { label: "Rest of the world", pct: rest, rest: true }].forEach((d, i) => {
+          $("drow").insertAdjacentHTML("beforeend", `<div class="row" id="dr${i}" style="top:${290 + i * 96}px;width:1500px"><div class="n" style="${d.rest ? "color:var(--muted)" : ""}">${d.label}</div><div class="p" style="${d.rest ? "color:var(--muted)" : ""}">${d.pct.toFixed(1)}%</div><div class="track"><div class="bfill" id="df${i}" style="width:${(d.pct / Math.max(dmax, rest)) * 100}%;${d.rest ? "background:var(--bar)" : ""}"></div></div></div>`);
+        });
+      } else {
+        $("hTitle").textContent = S.title;
+        $("hSub").textContent = `${S.rows[0].label}: export value, FY 2025–26 on FY 2024–25`;
+        const gmax = Math.max(...S.rows.map((r) => r.gr));
+        S.rows.forEach((r, i) => {
+          const w = (r.gr / gmax) * 620;
+          $("rrow").insertAdjacentHTML("beforeend", `<div class="rk" id="rk${i}" style="top:${290 + i * 112}px"><div class="n">${r.label}</div><div class="sub">${inr(r.prev)} → ${inr(r.cur)}</div>` +
+            `<div class="g" id="rg${i}" style="left:860px;width:${w}px;${i === 0 ? "background:var(--acc)" : ""}"></div><div class="gv" style="left:${880 + w}px">+${r.gr.toFixed(1)}%</div></div>`);
+        });
+      }
+      $("eLine").textContent = S.lines.end;
+      $("eSrc").textContent = S.source;
+
+      H.render = (t) => {
+        for (const s of S.scenes) $(`s-${s.id}`).style.opacity = vis(s.id, t);
+        const cur = S.scenes.find((s) => t >= s.t0 && t < s.t0 + s.d) || S.scenes[S.scenes.length - 1];
+        $("cap").textContent = S.lines[cur.id] || "";
+        $("cap").style.opacity = HF.clamp01((t - cur.t0 - 0.5) / 0.3) * (cur.id === "end" ? 0 : 1);
+        $("kick").style.opacity = F(t, 0.2, 99, 0.5);
+        let u = local("hook", t);
+        if (u >= 0) {
+          $("hNum").textContent = S.mode === "product" ? crNum(S.cur * E.o3((u - 0.6) / 1.8)) + " cr"
+            : `+${(S.rows[0].gr * E.o3((u - 0.6) / 1.8)).toFixed(1)}%`;
+          $("hTitle").style.transform = `translateY(${30 * (1 - E.o3(u / 0.7))}px)`;
+          $("hChips").style.opacity = F(u, 2.6, 99, 0.4);
+          $("hSub").style.opacity = F(u, 1.2, 99, 0.4);
+        }
+        u = local("growth", t);
+        if (S.mode === "product" && u >= 0) S.fy.forEach((f, i) => {
+          const k = E.o3((u - 0.5 - i * 0.35) / 0.8);
+          $(`b${i}`).style.height = `${f.h * k}px`;
+          $(`bv${i}`).style.top = `${1080 - 220 - f.h * k - 60}px`;
+          $(`bv${i}`).style.opacity = F(u, 0.9 + i * 0.35, 99, 0.3);
+        });
+        u = local("ports", t);
+        drawMap(Math.max(vis("ports", t), vis("district", t)), t, vis("ports", t) > 0 ? u : -1, vis("district", t), local("district", t));
+        const du = local("district", t);
+        if (du >= 0) D.slice(0, 5).forEach((d, i) => {
+          $(`dl${i}`).style.opacity = F(du, 1.2 + i * 0.3, 99, 0.3);
+          $(`dlf${i}`).style.transform = `scaleX(${E.o3((du - 1.3 - i * 0.3) / 0.7)})`;
+        });
+        $("dleg").style.opacity = F(du, 2.6, 99, 0.4);
+        if (u >= 0) S.ports.forEach((p, i) => {
+          $(`pr${i}`).style.opacity = F(u, 0.7 + i * 0.3, 99, 0.3);
+          $(`pf${i}`).style.transform = `scaleX(${E.o3((u - 0.8 - i * 0.3) / 0.7)})`;
+          const l = $(`pl${i}`); if (l) l.style.opacity = F(u, 1.4 + i * 0.35, 99, 0.3);
+        });
+        u = local("dest", t);
+        if (u >= 0) document.querySelectorAll("#drow .row").forEach((r, i) => {
+          r.style.opacity = F(u, 0.6 + i * 0.25, 99, 0.3);
+          $(`df${i}`).style.transform = `scaleX(${E.o3((u - 0.7 - i * 0.25) / 0.7)})`;
+        });
+        u = local("rank", t);
+        if (u >= 0) S.rows.forEach((r, i) => {
+          const a = 0.8 + i * 1.6;
+          $(`rk${i}`).style.opacity = F(u, a, 99, 0.35);
+          $(`rg${i}`).style.transform = `scaleX(${E.o3((u - a - 0.2) / 0.8)})`;
+        });
+        u = local("end", t);
+        if (u >= 0) { $("eLine").style.transform = `translateY(${24 * (1 - E.o3(u / 0.7))}px)`; $("eSrc").style.opacity = F(u, 0.8, 99, 0.4); }
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<!-- Sample 07 · Globe with arcs: India's top five crude suppliers by volume, 2023 (ranking only; arc widths are not to scale). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Globe with arcs</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/data/dots.js"></script>
+    <script src="assets/data/land.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1100px 900px at 62% 52%, #121a26 0%, #0b0e13 60%); }
+      #gl { position: absolute; inset: 0; }
+      .head { font-size: 54px; }
+      #scrimL { position: absolute; left: 0; top: 0; width: 1100px; height: 1080px; background: linear-gradient(90deg, rgba(11, 14, 19, 0.9) 0, rgba(11, 14, 19, 0.7) 520px, rgba(11, 14, 19, 0) 1100px); }
+      #scrimB { position: absolute; left: 0; bottom: 0; width: 1920px; height: 260px; background: linear-gradient(rgba(11, 14, 19, 0), rgba(11, 14, 19, 0.75)); }
+      .lb { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.06em;
+        color: #f7f3ea; text-shadow: 0 2px 10px #000; }
+      .lb b { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; border-radius: 50%; background: #d9a441;
+        color: #0b0e13; margin-right: 10px; font-size: 26px; }
+      #lIN { font-size: 40px; color: #d9a441; }
+      #list { position: absolute; left: 110px; top: 300px; }
+      #list .r { font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #f7f3ea; margin-bottom: 26px; opacity: 0; white-space: nowrap; }
+      #list .r span { color: #d9a441; margin-right: 16px; }
+      #list .r small { font: 400 28px/1 Plex, monospace; color: #c8cdd3; letter-spacing: 0; margin-left: 14px; }
+      #lt { font: 400 28px/1.3 Inter, sans-serif; color: #c8cdd3; margin-bottom: 30px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+      <canvas id="gl" class="clip" data-start="0" data-duration="10" data-track-index="1"></canvas>
+      <div id="scrimL" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="labels"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">MOAT ATLAS · ENERGY</div>
+      <div class="head">WHERE INDIA'S CRUDE COMES FROM</div>
+      <div id="list"><div id="lt">Top five suppliers by volume, 2023</div></div>
+      <div class="src">Ranking: MEES, Business Standard (2023 volumes) · arcs not to scale · Map: Natural Earth</div>
+      <div class="cap" id="c1">India buys most of its crude oil from abroad.</div>
+      <div class="cap" id="c2">In 2023, about a third of it came from Russia.</div>
+    </div>
+    <script>window.__S = HF.setup(10); window.__timelines.main = window.__S.tl;</script>
+    <script type="module">
+      import * as THREE from "three";
+      const H = window.__S, E = HF.ease, F = HF.fade;
+      const $ = (id) => document.getElementById(id);
+      const R = 10;
+      const v3 = (lat, lon, r = R) => {
+        const a = (lat * Math.PI) / 180, b = (lon * Math.PI) / 180;
+        return new THREE.Vector3(r * Math.cos(a) * Math.sin(b), r * Math.sin(a), r * Math.cos(a) * Math.cos(b));
+      };
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(1920, 1080, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(30, 1920 / 1080, 1, 200);
+      camera.position.set(0, 0, 35);
+      camera.lookAt(0, 0, 0);
+      const world = new THREE.Group();
+      world.position.set(2.9, 0.1, 0);
+      scene.add(world);
+      const globe = new THREE.Group();
+      world.add(globe);
+
+      // Land texture: equirectangular canvas, u = (lon + 90) / 360 to match v3() on three's sphere UVs.
+      const tc = document.createElement("canvas"); tc.width = 4096; tc.height = 2048;
+      const tg = tc.getContext("2d");
+      tg.fillStyle = "#0c131c"; tg.fillRect(0, 0, 4096, 2048);
+      for (const off of [0, 4096]) {
+        for (const r of window.LAND) {
+          tg.beginPath();
+          r.forEach(([lon, lat], i) => { const x = ((lon + 90) / 360) * 4096 + off, y = ((90 - lat) / 180) * 2048; i ? tg.lineTo(x, y) : tg.moveTo(x, y); });
+          tg.closePath(); tg.fillStyle = "#1c2633"; tg.fill(); tg.strokeStyle = "#4a5b70"; tg.lineWidth = 2.5; tg.stroke();
+        }
+      }
+      const landTex = new THREE.CanvasTexture(tc);
+      landTex.colorSpace = THREE.SRGBColorSpace;
+      landTex.anisotropy = 4;
+      globe.add(new THREE.Mesh(new THREE.SphereGeometry(R * 0.995, 128, 96), new THREE.MeshBasicMaterial({ map: landTex })));
+      // Land as dots
+      const dp = new Float32Array((window.DOTS.length / 2) * 3);
+      for (let i = 0; i < window.DOTS.length; i += 2) { const p = v3(window.DOTS[i], window.DOTS[i + 1], R * 1.001); dp.set([p.x, p.y, p.z], (i / 2) * 3); }
+      const dg = new THREE.BufferGeometry();
+      dg.setAttribute("position", new THREE.BufferAttribute(dp, 3));
+      const dotTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 64; const g = c.getContext("2d");
+        g.fillStyle = "#fff"; g.beginPath(); g.arc(32, 32, 26, 0, Math.PI * 2); g.fill(); return new THREE.CanvasTexture(c); })();
+      const dotMat = new THREE.PointsMaterial({ size: 0.12, map: dotTex, color: 0xe6edf5, transparent: true, alphaTest: 0.3, opacity: 0 });
+      globe.add(new THREE.Points(dg, dotMat));
+      // Atmosphere rim
+      const atm = new THREE.Mesh(new THREE.SphereGeometry(R * 1.12, 96, 64), new THREE.ShaderMaterial({
+        transparent: true, blending: THREE.AdditiveBlending, side: THREE.BackSide, depthWrite: false,
+        uniforms: { k: { value: 0 } },
+        vertexShader: "varying vec3 n; void main(){ n = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }",
+        fragmentShader: "uniform float k; varying vec3 n; void main(){ float i = pow(max(0., 0.72 - dot(n, vec3(0,0,1.))), 3.2); gl_FragColor = vec4(0.45,0.62,0.85,1.) * i * 1.1 * k; }",
+      }));
+      world.add(atm);
+
+      const IN = [21.5, 75.5];
+      const SRC = [
+        ["RUSSIA", 60.35, 28.67, 1.6, "≈ 35%"], ["IRAQ", 30.5, 47.8, 2.3, ""], ["SAUDI ARABIA", 26.64, 50.16, 2.8, ""],
+        ["UAE", 25.12, 56.33, 3.3, ""], ["USA", 27.8, -97.4, 3.8, ""],
+      ];
+      const head = new THREE.SphereGeometry(0.13, 16, 12);
+      const arcs = SRC.map(([name, lat, lon, t0, note], k) => {
+        const a = v3(lat, lon).normalize(), b = v3(...IN).normalize();
+        const ang = a.angleTo(b), pts = [];
+        for (let i = 0; i <= 96; i++) {
+          const s = i / 96, p = a.clone().lerp(b, s).normalize();
+          // slerp for long arcs
+          const q = new THREE.Vector3().copy(a).multiplyScalar(Math.sin((1 - s) * ang) / Math.sin(ang)).add(b.clone().multiplyScalar(Math.sin(s * ang) / Math.sin(ang)));
+          pts.push(q.normalize().multiplyScalar(R * (1.005 + Math.sin(Math.PI * s) * (0.03 + ang * 0.09))));
+        }
+        const curve = new THREE.CatmullRomCurve3(pts);
+        const geo = new THREE.TubeGeometry(curve, 160, k === 0 ? 0.075 : 0.05, 8, false);
+        const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: k === 0 ? 0xf2c25c : 0xd9a441, transparent: true, opacity: 0.95 }));
+        const dot = new THREE.Mesh(head, new THREE.MeshBasicMaterial({ color: 0xfff4d6 }));
+        globe.add(mesh, dot);
+        const lb = document.createElement("div");
+        lb.className = "lb"; lb.innerHTML = `<b>${k + 1}</b>`;
+        $("labels").appendChild(lb);
+        const row = document.createElement("div");
+        row.className = "r"; row.innerHTML = `<span>${k + 1}</span>${name}${note ? `<small>${note}</small>` : ""}`;
+        $("list").appendChild(row);
+        return { curve, mesh, dot, n: geo.index.count, t0, dur: 1.2 + ang * 0.5, lb, row, src: v3(lat, lon, R * 1.02) };
+      });
+      const lIN = document.createElement("div");
+      lIN.className = "lb"; lIN.id = "lIN"; lIN.textContent = "INDIA";
+      $("labels").appendChild(lIN);
+      const pin = new THREE.Mesh(new THREE.RingGeometry(0.22, 0.3, 40), new THREE.MeshBasicMaterial({ color: 0xd9a441, side: THREE.DoubleSide, transparent: true }));
+      const inPos = v3(...IN, R * 1.01);
+      pin.position.copy(inPos); pin.lookAt(inPos.clone().multiplyScalar(2));
+      globe.add(pin);
+
+      const tmp = new THREE.Vector3(), camDir = new THREE.Vector3();
+      const place = (el, local, a, dx = -20, dy = -20) => {
+        tmp.copy(local).applyMatrix4(globe.matrixWorld);
+        const facing = tmp.clone().sub(world.position).normalize().dot(camDir.copy(camera.position).sub(tmp).normalize());
+        tmp.project(camera);
+        el.style.transform = `translate(${((tmp.x + 1) / 2) * 1920 + dx}px, ${((1 - tmp.y) / 2) * 1080 + dy}px)`;
+        el.style.opacity = a * HF.clamp01((facing - 0.05) / 0.15);
+      };
+      H.render = (t) => {
+        const lon = 47 + 13 * E.io2(t / 10), lat = 33 - 3 * E.io2(t / 10);
+        globe.rotation.set((lat * Math.PI) / 180, (-lon * Math.PI) / 180, 0, "XYZ");
+        const z = 1 + 0.06 * E.io2(t / 10);
+        world.scale.setScalar(z);
+        scene.updateMatrixWorld();
+        dotMat.opacity = 0.32 * E.o2((t - 0.1) / 1.0);
+        atm.material.uniforms.k.value = E.o2(t / 1.2);
+        for (const a of arcs) {
+          const u = E.io2((t - a.t0) / a.dur);
+          a.mesh.geometry.setDrawRange(0, Math.floor(a.n * u));
+          a.dot.visible = u > 0 && u < 1;
+          a.dot.position.copy(a.curve.getPoint(u));
+          place(a.lb, a.src, F(t, a.t0 - 0.1, 99, 0.3));
+          a.row.style.opacity = F(t, a.t0, 99, 0.35);
+        }
+        pin.scale.setScalar(1 + 0.35 * Math.abs(Math.sin(t * 3)));
+        pin.material.opacity = F(t, 1.0, 99, 0.4);
+        place(lIN, inPos, F(t, 1.0, 99, 0.4), 26, 10);
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.35, 99, 0.6);
+        $("lt").style.opacity = F(t, 1.3, 99, 0.4);
+        $("c1").style.opacity = F(t, 0.8, 5.2, 0.3);
+        $("c2").style.opacity = F(t, 5.5, 99, 0.3);
+        renderer.render(scene, camera);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

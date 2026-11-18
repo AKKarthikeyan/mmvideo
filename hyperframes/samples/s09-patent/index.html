@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- Sample 09 · Patent-style line drawing that draws itself. The drawing is redrawn for this sample, not an original patent sheet. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Patent line drawing</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: radial-gradient(1300px 900px at 62% 50%, #1a2433 0%, #0d131b 60%, #080b10 100%); }
+      #sheet { position: absolute; left: 1010px; top: 70px; width: 760px; height: 940px; background: #f3eee0;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); transform-origin: 50% 45%; }
+      #sheet::before { content: ""; position: absolute; inset: 22px; border: 2px solid #2a2a2a; outline: 1px solid #2a2a2a; outline-offset: -8px; }
+      #sheet svg { position: absolute; left: 0; top: 0; }
+      .ln { fill: none; stroke: #1c1c1c; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { stroke-width: 1.6; }
+      .num { font: italic 700 34px/1 Playfair, serif; fill: #1c1c1c; opacity: 0; }
+      #fig { font: italic 700 40px/1 Playfair, serif; fill: #1c1c1c; opacity: 0; }
+      #fil { fill: none; stroke: #1c1c1c; stroke-width: 3.4; stroke-linecap: round; }
+      #note { position: absolute; left: 110px; top: 246px; width: 760px; font: 400 32px/1.35 Inter, sans-serif; color: #c8cdd3; }
+      #flag { position: absolute; left: 110px; top: 560px; font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.12em; color: #0b0e13;
+        background: #7fd1ff; padding: 8px 12px 10px; }
+      .src { left: 110px; right: auto; text-align: left; }
+      #warm { position: absolute; inset: 0; opacity: 0; background: radial-gradient(420px 420px at 50% 34%, rgba(255, 176, 74, 0.38), rgba(255, 176, 74, 0) 70%); }
+      #paper-grain { position: absolute; inset: 0; opacity: 0.25; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' seed='3'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.25  0 0 0 0.5 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+      <div id="sheet">
+        <div id="paper-grain"></div>
+        <div id="warm"></div>
+        <svg width="760" height="940" viewBox="0 0 900 1100">
+          <g id="draw">
+            <path class="ln" d="M 450 130 C 610 130 700 250 700 395 C 700 520 610 590 548 660 L 548 735 L 352 735 L 352 660 C 290 590 200 520 200 395 C 200 250 290 130 450 130 Z" />
+            <path class="ln thin" d="M 262 300 C 280 245 320 205 370 185" />
+            <path class="ln thin" d="M 250 360 C 255 330 262 312 272 296" />
+            <path class="ln" d="M 405 735 L 405 610 C 405 568 495 568 495 610 L 495 735" />
+            <path class="ln thin" d="M 425 775 L 425 600 L 425 470" />
+            <path class="ln thin" d="M 475 775 L 475 600 L 475 470" />
+            <path class="ln" d="M 352 735 L 548 735 L 548 880 L 352 880 Z" />
+            <path class="ln thin" d="M 352 760 L 548 775 M 352 790 L 548 805 M 352 820 L 548 835 M 352 850 L 548 865" />
+            <path class="ln" d="M 395 880 L 505 880 L 485 922 L 415 922 Z" />
+            <path class="ln" d="M 418 462 L 432 462 L 432 478 L 418 478 Z M 468 462 L 482 462 L 482 478 L 468 478 Z" />
+          </g>
+          <path id="fil" d="M 425 470 L 425 330 C 425 238 475 238 475 330 L 475 470" />
+          <g id="nums">
+            <path class="ln thin lead" d="M 655 230 L 760 170" /><text class="num" x="770" y="168">A</text>
+            <path class="ln thin lead" d="M 470 262 L 600 330" /><text class="num" x="610" y="346">B</text>
+            <path class="ln thin lead" d="M 425 640 L 300 700" /><text class="num" x="262" y="716">C</text>
+            <path class="ln thin lead" d="M 548 820 L 650 860" /><text class="num" x="660" y="876">D</text>
+          </g>
+          <text id="fig" x="390" y="1010">Fig. 1.</text>
+        </svg>
+      </div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">THE INVENTOR DESK · PATENT FILES</div>
+      <div class="head">THE ELECTRIC LAMP</div>
+      <div id="note">A · glass bulb, emptied of air<br />B · carbon filament<br />C · lead-in wires<br />D · screw base</div>
+      <div id="flag">STYLE SAMPLE · REDRAWN DRAWING</div>
+      <div class="src">Real version: the original patent drawing, traced the same way</div>
+      <div class="cap" id="c1">In January 1880, Thomas Edison was granted a patent for an electric lamp.</div>
+      <div class="cap" id="c2">At its heart: a thin thread of carbon.</div>
+    </div>
+    <script>
+      const H = HF.setup(10), E = HF.ease, F = HF.fade;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const strokes = [...document.querySelectorAll("#draw path")].map((p) => ({ p, n: p.getTotalLength() }));
+      const fil = { p: $("fil"), n: $("fil").getTotalLength() };
+      const leads = [...document.querySelectorAll(".lead")].map((p) => ({ p, n: p.getTotalLength() }));
+      const nums = [...document.querySelectorAll(".num")];
+      for (const s of [...strokes, fil, ...leads]) s.p.style.strokeDasharray = s.n;
+      // draw order and timing: total ink length spread over 0.6 s to 5.2 s, so the pen moves at an even speed
+      const total = strokes.reduce((a, s) => a + s.n, 0) + fil.n;
+      let acc = 0;
+      for (const s of [...strokes.slice(0, 6), fil, ...strokes.slice(6)]) { s.a = 0.6 + (acc / total) * 4.6; acc += s.n; s.b = 0.6 + (acc / total) * 4.6; }
+      H.render = (t) => {
+        for (const s of [...strokes, fil]) s.p.style.strokeDashoffset = s.n * (1 - HF.clamp01((t - s.a) / (s.b - s.a)));
+        leads.forEach((s, i) => { s.p.style.strokeDashoffset = s.n * (1 - E.io2((t - 5.4 - i * 0.25) / 0.35)); });
+        nums.forEach((n, i) => (n.style.opacity = F(t, 5.7 + i * 0.25, 99, 0.3)));
+        $("fig").style.opacity = F(t, 5.2, 99, 0.5);
+        // the lamp lights: filament glows, the sheet warms
+        const glow = E.io2((t - 7.2) / 1.0);
+        $("fil").style.stroke = `rgb(${28 + 227 * glow}, ${28 + 150 * glow}, ${28 + 40 * glow})`;
+        $("fil").style.filter = glow > 0 ? `drop-shadow(0 0 ${6 + 18 * glow}px rgba(255, 170, 60, ${0.9 * glow})) drop-shadow(0 0 ${30 * glow}px rgba(255, 140, 40, ${0.6 * glow}))` : "none";
+        $("warm").style.opacity = glow;
+        $("sheet").style.transform = `rotate(${1.2 - 1.2 * E.io2(t / 10)}deg) scale(${1 + 0.06 * E.io2((t - 6.6) / 3.4)})`;
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.35, 99, 0.6);
+        $("note").style.opacity = F(t, 5.8, 99, 0.5);
+        $("flag").style.opacity = F(t, 0.6, 99, 0.5);
+        $("c1").style.opacity = F(t, 0.8, 6.9, 0.3);
+        $("c2").style.opacity = F(t, 7.2, 99, 0.3);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<!-- Sample 02 · 3D terrain flyover: Ganga from Haridwar into the Garhwal Himalaya. DEM: AWS Terrain Tiles (z9), rivers: Natural Earth. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Terrain flyover</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/data/dem.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/lib/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      #root { background: linear-gradient(#2f4a6b 0%, #7f98b3 38%, #c9d2da 52%, #c9d2da 100%); }
+      #gl { position: absolute; inset: 0; }
+      #scrimT { position: absolute; left: 0; top: 0; width: 1920px; height: 380px; background: linear-gradient(rgba(6, 8, 11, 0.62), rgba(6, 8, 11, 0)); }
+      #scrimB { position: absolute; left: 0; bottom: 0; width: 1920px; height: 260px; background: linear-gradient(rgba(6, 8, 11, 0), rgba(6, 8, 11, 0.6)); }
+      .pin { position: absolute; left: 0; top: 0; opacity: 0; }
+      .pin .stem { position: absolute; left: -1.5px; bottom: 0; width: 3px; height: 120px; background: #f7f3ea; }
+      .pin .dot { position: absolute; left: -9px; bottom: -9px; width: 18px; height: 18px; border-radius: 50%; background: #f7f3ea; box-shadow: 0 0 0 5px rgba(247, 243, 234, 0.3); }
+      .pin .tx { position: absolute; left: -2px; bottom: 120px; white-space: nowrap; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.06em;
+        color: #0b0e13; background: #f7f3ea; padding: 8px 14px 10px; }
+      .pin .tx small { display: block; font: 400 26px/1.1 Plex, monospace; letter-spacing: 0; margin-top: 4px; color: #333; }
+      #pND .tx { background: #d9a441; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="night" data-composition-id="main" data-start="0" data-duration="12" data-width="1920" data-height="1080">
+      <canvas id="gl" class="clip" data-start="0" data-duration="12" data-track-index="1"></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="pin" id="pHW"><div class="stem"></div><div class="dot"></div><div class="tx">HARIDWAR<small>Ganga meets the plains</small></div></div>
+      <div class="pin" id="pGG"><div class="stem"></div><div class="dot"></div><div class="tx">GANGOTRI<small>Bhagirathi valley</small></div></div>
+      <div class="pin" id="pND"><div class="stem"></div><div class="dot"></div><div class="tx">NANDA DEVI<small>7,816 m</small></div></div>
+      <div class="kicker">INDICA ATLAS · TERRAIN</div>
+      <div class="head">WHERE THE GANGA BEGINS</div>
+      <div class="src">Elevation: AWS Terrain Tiles · Rivers: Natural Earth · height ×1.5</div>
+      <div class="cap" id="c1">At Haridwar, the Ganga leaves the mountains.</div>
+      <div class="cap" id="c2">Its source lies far upstream, in the ice above Gangotri.</div>
+    </div>
+    <script>
+      window.__S = HF.setup(12); window.__timelines.main = window.__S.tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      const H = window.__S, E = HF.ease, F = HF.fade, D = window.DEM;
+      const $ = (id) => document.getElementById(id);
+      const raw = Uint8Array.from(atob(D.dem), (c) => c.charCodeAt(0));
+      const hm = new Int16Array(raw.buffer);
+      const LATC = 30.5, LONC = 79.0, KX = 111.32 * Math.cos((LATC * Math.PI) / 180), KZ = 110.57, VX = 1.5;
+      const wx = (lon) => (lon - LONC) * KX, wz = (lat) => -(lat - LATC) * KZ;
+      const W = (D.lon1 - D.lon0) * KX, Hd = (D.lat1 - D.lat0) * KZ;
+      const elev = (lat, lon) => {
+        const fx = ((lon - D.lon0) / (D.lon1 - D.lon0)) * (D.w - 1), fy = ((D.lat1 - lat) / (D.lat1 - D.lat0)) * (D.h - 1);
+        const x = Math.min(D.w - 2, Math.max(0, Math.floor(fx))), y = Math.min(D.h - 2, Math.max(0, Math.floor(fy)));
+        const u = fx - x, v = fy - y, i = y * D.w + x;
+        return (hm[i] * (1 - u) * (1 - v) + hm[i + 1] * u * (1 - v) + hm[i + D.w] * (1 - u) * v + hm[i + D.w + 1] * u * v) / 1000 * VX;
+      };
+
+      const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(1920, 1080, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFShadowMap;
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(0xc9d2da, 70, 330);
+      const camera = new THREE.PerspectiveCamera(42, 1920 / 1080, 0.5, 900);
+
+      // Terrain mesh with hypsometric colours; snow only where it is high and not too steep.
+      const geo = new THREE.PlaneGeometry(W, Hd, D.w - 1, D.h - 1);
+      geo.rotateX(-Math.PI / 2);
+      const P = geo.attributes.position;
+      for (let i = 0; i < P.count; i++) P.setY(i, (hm[i] / 1000) * VX);
+      geo.computeVertexNormals();
+      const N = geo.attributes.normal, cols = new Float32Array(P.count * 3), c = new THREE.Color();
+      const stops = [[0, 0x6e7347], [450, 0x56623a], [1300, 0x4a5233], [2300, 0x6c604a], [3600, 0x857a6b], [4600, 0xa9a39a]];
+      const ramp = (h) => {
+        let k = 0;
+        while (k < stops.length - 1 && h > stops[k + 1][0]) k++;
+        if (k === stops.length - 1) return c.set(stops[k][1]);
+        const [h0, a] = stops[k], [h1, b] = stops[k + 1];
+        return c.set(a).lerp(new THREE.Color(b), (h - h0) / (h1 - h0));
+      };
+      for (let i = 0; i < P.count; i++) {
+        const h = hm[i];
+        ramp(h);
+        const flat = N.getY(i);
+        const snow = THREE.MathUtils.clamp((h - 4300) / 700, 0, 1) * THREE.MathUtils.clamp((flat - 0.55) / 0.25, 0, 1);
+        c.lerp(new THREE.Color(0xf4f6f8), snow);
+        cols.set([c.r, c.g, c.b], i * 3);
+      }
+      geo.setAttribute("color", new THREE.BufferAttribute(cols, 3));
+      const land = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95, metalness: 0 }));
+      land.receiveShadow = land.castShadow = true;
+      scene.add(land);
+      // Plains skirt so the edge of the elevation grid never shows; the grid's southern edge is plains at ~250-300 m.
+      const skirt = new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), new THREE.MeshStandardMaterial({ color: 0x6e7347, roughness: 1 }));
+      skirt.rotation.x = -Math.PI / 2;
+      skirt.position.y = 0.32;
+      skirt.receiveShadow = true;
+      scene.add(skirt);
+
+      scene.add(new THREE.HemisphereLight(0xc8daf0, 0x3a3328, 0.75));
+      const sun = new THREE.DirectionalLight(0xfff1dc, 2.8);
+      sun.position.set(160, 120, 170);
+      sun.castShadow = true;
+      sun.shadow.mapSize.set(2048, 2048);
+      Object.assign(sun.shadow.camera, { left: -170, right: 170, top: 170, bottom: -170, near: 10, far: 600 });
+      sun.shadow.bias = -0.0008;
+      sun.shadow.normalBias = 0.6;
+      scene.add(sun, sun.target);
+
+      // Rivers as glowing tubes laid on the terrain, drawn upstream over time.
+      const rivers = D.rivers.map((r) => {
+        const pts = r.pts.map(([lon, lat]) => new THREE.Vector3(wx(lon), elev(lat, lon) + 0.25, wz(lat)));
+        if (r.name === "Ganges" && pts[0].y > pts[pts.length - 1].y) pts.reverse(); // start at the plains
+        const curve = new THREE.CatmullRomCurve3(pts);
+        const tube = new THREE.TubeGeometry(curve, pts.length * 4, r.name === "Ganges" ? 0.55 : 0.4, 6, false);
+        const m = new THREE.Mesh(tube, new THREE.MeshBasicMaterial({ color: r.name === "Ganges" ? 0x8fd0ff : 0x6aa7d8, fog: true }));
+        scene.add(m);
+        return { m, n: tube.index.count, ganga: r.name === "Ganges" };
+      });
+
+      const PL = {
+        pHW: [29.95, 78.16, 1.5, 6.2], pGG: [30.994, 78.941, 5.6, 9.6], pND: [30.376, 79.971, 8.6, 99],
+      };
+      const keys = (arr) => new THREE.CatmullRomCurve3(arr.map(([x, y, z]) => new THREE.Vector3(x, y, z)));
+      const camPath = keys([[-104, 13, 112], [-92, 13, 88], [-62, 15, 52], [-26, 17, 18], [12, 18, 34], [34, 16, 48]]);
+      const tgtPath = keys([[-62, 2, 20], [-50, 3, -6], [-20, 4, -30], [16, 5, -20], [60, 6, 6], [92, 7, 13]]);
+      const tmp = new THREE.Vector3();
+      H.render = (t) => {
+        const u = E.io2(t / 12);
+        camera.position.copy(camPath.getPoint(u));
+        camera.lookAt(tgtPath.getPoint(u));
+        camera.updateMatrixWorld();
+        for (const r of rivers) r.m.geometry.setDrawRange(0, Math.floor(r.n * (r.ganga ? E.io2((t - 0.8) / 7.5) : E.io2((t - 1.5) / 5))));
+        for (const [id, [lat, lon, a, b]] of Object.entries(PL)) {
+          tmp.set(wx(lon), elev(lat, lon), wz(lat)).project(camera);
+          const el = $(id);
+          el.style.transform = `translate(${((tmp.x + 1) / 2) * 1920}px, ${((1 - tmp.y) / 2) * 1080}px)`;
+          el.style.opacity = tmp.z < 1 ? F(t, a, b, 0.5) : 0;
+        }
+        document.querySelector(".kicker").style.opacity = F(t, 0.2, 99, 0.5);
+        document.querySelector(".head").style.opacity = F(t, 0.35, 99, 0.6);
+        $("c1").style.opacity = F(t, 1.6, 6.0, 0.3);
+        $("c2").style.opacity = F(t, 6.3, 99, 0.3);
+        renderer.render(scene, camera);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

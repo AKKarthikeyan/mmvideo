@@ -40,10 +40,10 @@ Today, it owes about one point seven lakh crore rupees on it.
 Not because anyone stole it. Not because gold crashed.
 Gold went up. That's exactly why it lost.
 
-And this isn't history. Last week, one batch of these bonds paid out three hundred and forty eight percent.
+And this isn't history. Last week, one batch of these bonds paid back four point four times its price.
 And holders can call in another eighty four thousand crore, at the next windows, whenever they choose.
 
-**SCREEN:** +348% (13 NOV 2026) · ₹84,000 CR CALLABLE ⟳
+**SCREEN:** +341% (13 NOV 2026) · ₹84,000 CR CALLABLE ⟳
 **SRC:** RBI press release, 13 Nov 2026 · callable amount: our arithmetic
 
 To see how this happened, start with a number almost nobody has seen.

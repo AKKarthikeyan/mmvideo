@@ -92,6 +92,8 @@ all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and 
 | `dk-buffalo` | India Ledger | Buffalo meat ₹45,196 crore, +31%; UP inland depots (Dadri, Kanpur) 54%; Vietnam 18% |
 | `dk-growth` | India Ledger | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
 
+**India Ledger style test** (18 Nov 2026): `videos/il-gold-act1`, Act 1 of the gold episode in the "Ledger" look (ruled paper, red margin, ledger-row lower thirds, the running tab, the audit stamp). Voiced and timed by `tools/il_act1_build.py`; numbers from `scripts/india_ledger_gold.py`. Build: `il_act1_build.py`, `hf.py sync il-gold-act1`, `hf.py render il-gold-act1`, `il_act1_build.py mux`.
+
 ```sh
 python3 hyperframes/tools/export_videos.py            # rebuild every story.js (downloads the mirror once, ~170 MB)
 python3 hyperframes/tools/hf.py sync videos

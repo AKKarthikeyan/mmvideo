@@ -54,7 +54,7 @@ Status: **✓P** primary source read · **✓S** secondary report of a primary s
 | D23 | Gold isn't a sure thing | ₹31,050 (2012) → ₹31,438 (2018) per 10 g: flat for six years | **VERIFY** | aggregator tables; replace with RBI DBIE or IBJA annual averages |
 | D24 | Household gold | 31,000 t (estimates 23,000–34,600) | ✓P | WGC "Swarnim Udaan 2047", 4 Aug 2026 |
 | D25 | Tax rule | From the 2026 Budget, gains are tax-free only for bonds bought at issue and held to maturity | ✓S | Wikipedia; Business Today |
-| D26 | **Why now:** the bill is arriving | 13 Nov 2026: SGB 2018-19 Series III paid out at ₹14,024/g, sold at ₹3,133 (+348%) | ✓P / ✓S | RBI press release; Angel One |
+| D26 | **Why now:** the bill is arriving | 13 Nov 2026: SGB 2018-19 Series III paid out at ₹14,024/g, sold at ₹3,183 (+341%, 4.4×; +348% for online buyers, who paid ₹3,133) | ✓P | RBI press release; RBI tranche data |
 | D27 | **Why now:** holders can call it in | 32 tranches (59.8 t) are past 5 years and can be cashed at any redemption window: ₹83,897 crore at today's price | ≈ | tranche table; our arithmetic |
 | D28 | **Why now:** the wave ahead | Final maturities at today's price: FY 2028–29 ₹45,370 crore; FY 2029–30 ₹37,914 crore; FY 2031–32 ₹62,177 crore. The 1 Feb 2027 Budget must provide for it | ≈ | tranche table; our arithmetic |
 | D29 | **Why now:** a third try is proposed | WGC's "Swarnim Udaan 2047" (4 Aug 2026) proposes mobilising 10–15% of household gold and a National Gold Board | ✓S | WGC press release; Business Today |
@@ -91,7 +91,7 @@ So it sold her paper gold instead.
 Today, it owes about one point seven lakh crore rupees on it.
 Not because anyone stole it. Not because gold crashed.
 Gold went up. That's exactly why it lost.
-And this isn't history. Last week it paid out 348% on one batch of these bonds,
+And this isn't history. Last week it paid back 4.4 times the price on one batch of these bonds,
 and holders can call in another eighty four thousand crore whenever they like.
 To see how, start with a number almost nobody has seen:
 the gram of gold India digs out of its own ground, for every 445 it buys.

@@ -61,16 +61,19 @@ Status: **✓P** primary source read · **✓S** secondary report of a primary s
 
 ## 3. The long video (≈ 10 min, ≈ 1,400 words)
 
-**Title (54 characters):** The Government Bet Against Your Mother's Gold. It Lost
-**Thumbnail:** a bangle on one side, a gold-bond certificate stamped "₹1.72 LAKH CRORE OWED" on the other.
-**One question:** how do you lose money on gold that only goes up?
+**Title (48 characters):** How Do You Lose Money on Gold That Only Went Up?
+**Alternative (54):** The Government Bet Against Your Mother's Gold. It Lost
+**Thumbnail:** a rising gold line ending in a red loss stamp, a bangle beside it; text "GOLD 5× ↑ · GOVT LOST" (4 words, readable on a phone).
+**One question, asked in the first 3 seconds:** how do you lose money on gold that only went up?
+"Only went up" is the hook's framing: over the bonds' life (2015–2026) gold rose 5.2×, with dips on the way. Act 5 says so
+(gold was flat 2012–18, and fell after the July 2024 duty cut), so the hook never misleads (rule O6).
 
 | Act | Time | Beat (the turn that ends it) | Data | Picture |
 | --- | --- | --- | --- | --- |
 | **1. The paradox** | 0:00–0:45 | Script below. Ends on the question. | D1, D9, D17 | Frame 1: a mother's bangle, then a bond certificate sliding over it |
 | **2. The trap** | 0:45–2:30 | The headline everyone shares: "Gold bonds gave investors 300%!" Turn it round: every rupee of that was paid by someone. The first tranche: ₹2,684 → ₹6,132, 12.9% a year, when a normal government loan cost 7.75%. **But** why did the government need paper gold at all? | D6, D7 | Document close-up (s03) of RBI's redemption notice; two interest-rate bars |
 | **3. The mechanism** | 2:30–6:30 | **(a) The problem:** India mines 1 gram for every 445 it buys; gold is its second-biggest import, paid in dollars. Our map of the 22 entry points. **So** the government tried two plans on the same day in 2015. **(b) Plan A, borrow the real gold:** 31 tonnes in 9 years from 5,693 depositors, what India imports in 16 days. **Because** deposited jewellery is melted. You get back a bar, never your mother's bangle. **(c) Plan B, sell paper gold:** 67 tranches, 147 tonnes, ₹72,274 crore. **And here is the catch:** **the government sold gold it never owned.** It was a loan. The rupees were spent like any borrowing, with a promise to repay at whatever gold costs on the day. That is a bet that gold won't rise much. Gold went from ₹26,840 to about ₹1.40 lakh per 10 g: 5.2×. Amma held the real thing and won both ways. | D2–D5, D16–D21 | Flow map (s07) of imports; timeline (s11) with Plan A's 9-year crawl vs the 16-day counter; money breakdown (s04) of a bond: "your ₹ → the budget → the promise" |
-| **4. Your wallet** | 6:30–8:30 | **The bill:** about 123 tonnes still out, ₹1.72 lakh crore owed; every ₹1,000 on a gram adds ₹12,277 crore. The bonds already repaid cost about 16.5% a year, more than double a normal loan's 7.1%. A reserve fund covers about half. **Who pays:** the budget, so every taxpayer. **Who gains:** bondholders, tax-free if they bought at issue and hold to maturity. **And families now?** They pawn, not sell: bank gold loans doubled to about ₹5.1 lakh crore. The government's own verdict: costly borrowing, imports didn't fall. | D8–D10, D12–D14, D22, D25 | Scale (s12): the ₹12,530 crore per ₹1,000 counter; dot chart (s05): who paid, who gained |
+| **4. Your wallet** | 6:30–8:30 | **The bill:** about 123 tonnes still out, ₹1.72 lakh crore owed; every ₹1,000 on a gram adds ₹12,277 crore. The bonds already repaid cost about 16.5% a year, more than double a normal loan's 7.1%. A reserve fund covers about half. **Who pays:** the budget, so every taxpayer. **Who gains:** bondholders, tax-free if they bought at issue and hold to maturity. **And families now?** They pawn, not sell: bank gold loans doubled to about ₹5.1 lakh crore. The government's own verdict: costly borrowing, imports didn't fall. | D8–D10, D12–D14, D22, D25 | Scale (s12): the ₹12,277 crore per ₹1,000 counter; dot chart (s05): who paid, who gained |
 | **5. What the numbers hide** | 8:30–9:30 | (1) **Owing isn't losing.** Part of the ₹1.72 lakh crore is just the money it borrowed, and it paid only 2.5% interest instead of about 7%. Our bond-by-bond estimate of the real extra cost: about ₹1.06 lakh crore, roughly ₹730 per Indian, at today's price. It rises or falls by ₹12,000 crore with every ₹1,000 on a gram. (2) **It wasn't useless:** one estimate says it saved $3.3 bn of imports in a single year. (3) **It looked safe in 2015:** gold had been flat for six years. (4) The bill moves every day with the price. Then the loop: "If you hold a gold bond, you won this bet. If you pay tax, you're on both sides. So who was right about gold? Because in 2015…" | D11, D15, D23 | Document close-up of the script's assumptions; the bill counter ticking with the price |
 
 Rules: a "but", "so" or "and here's the catch" every 60–90 s; the source on screen for every number; "our arithmetic" or
@@ -80,17 +83,18 @@ finance rules (O5): no buy or sell language, no price forecast, disclaimer on sc
 ### Act 1, word for word (0:00–0:45)
 
 ```
-In 2015, the Government of India made a bet against your mother.
+How do you lose money on gold that only went up?
+The Government of India found a way.
+In 2015, it made a bet against your mother.
 It asked her to hand over her gold. She said no.
-So it sold paper gold instead.
+So it sold her paper gold instead.
 Today, it owes about one point seven lakh crore rupees on it.
 Not because anyone stole it. Not because gold crashed.
-Gold went up. That's exactly why the government lost.
-So how do you lose money on gold that only goes up?
-To answer that, we have to start with a number almost nobody has seen:
-the gram of gold India digs out of its own ground, for every 445 it buys.
-And this isn't history. Last week the government paid out 348% on one batch of these bonds,
+Gold went up. That's exactly why it lost.
+And this isn't history. Last week it paid out 348% on one batch of these bonds,
 and holders can call in another eighty four thousand crore whenever they like.
+To see how, start with a number almost nobody has seen:
+the gram of gold India digs out of its own ground, for every 445 it buys.
 ```
 
 ## 4. The five Shorts
@@ -99,21 +103,22 @@ Series note: Shorts 1, 2 and 5 don't fit India Ledger's three series (Days of Wo
 **AK's call:** add a fourth series for episode Shorts ("Doesn't Add Up": two numbers that shouldn't fit together), or run
 them unlabelled.
 
-### Short 1 · from the long video · "How do you lose money on gold?" (≈ 28 s, 82 words)
+### Short 1 · from the long video · "How do you lose money on gold?" (≈ 29 s, 86 words)
 Data: D2, D3, D8–D10. Visual: frame 1 is a gold-bond certificate with a counter already running.
 ```
-[0.0]  The government owes one point seven lakh crore
-       rupees on gold.                                      ₹1.72 LAKH CRORE OWED
-[3.4]  Not stolen. Not a crash.                            (wrong guesses struck out)
-[5.0]  In 2015 it sold paper gold: bonds that pay you
+[0.0]  How do you lose money on gold that only went up?   GOLD 5× ↑ · LOST?
+[3.0]  Ask the government. It owes one point seven
+       lakh crore rupees on it.                             ₹1.72 LAKH CRORE OWED
+[6.8]  Not stolen. Not a crash.                            (wrong guesses struck out)
+[8.4]  In 2015 it sold paper gold: bonds that pay you
        whatever gold is worth later.                        PAPER GOLD
-[9.6]  But it never bought the gold.                       NO GOLD BOUGHT
-[11.6] It spent the money, like any loan.
-[13.6] Then gold went up more than five times.            ×5.2
-[16.4] So every bond is paid back at today's price.
-[19.4] Every thousand rupees on a gram adds
-       twelve thousand crore.                               +₹1,000/g = +₹12,277 CR
-[24.2] It bet gold wouldn't fly. And that's why            → loops to "The government owes…"
+[12.8] But it never bought the gold.                       NO GOLD BOUGHT
+[14.6] It spent the money, like any loan.
+[16.4] Then gold went up more than five times.            ×5.2
+[19.2] So every bond is paid back at today's price, and
+       every thousand rupees on a gram adds twelve
+       thousand crore.                                      +₹1,000/g = +₹12,277 CR
+[25.8] It bet gold wouldn't rise. That's the answer to     → loops to "How do you lose money…"
 SOURCE: RBI tranche data · bill at ₹14,024/g (RBI, 13 Nov 2026): our arithmetic · not investment advice
 SEND LINE: gold-bond holders and taxpayers both want to know who's paying.
 ```

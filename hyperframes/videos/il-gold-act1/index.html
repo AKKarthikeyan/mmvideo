@@ -177,7 +177,7 @@
       txt(`${N.mined_per} GRAMS BOUGHT FROM ABROAD`, { x: 1626, y: 845, "text-anchor": "end", "font-family": "Oswald", "font-weight": 700, "font-size": 40, fill: "#4f555e" }, DOTS);
 
       const stLoss = stamp("THE GOVERNMENT LOST", 900, 590, 70, -5);
-      const stUp = stamp(`GOLD UP ×${N.x} · GOVERNMENT LOST`, 820, 330, 62, -4);
+      const stUp = stamp(`GOLD UP ×${N.x} · GOVERNMENT LOST`, 760, 275, 62, -4);
       const stPct = stamp(`+${N.s3_pct}%`, 1460, 800, 84, -7);
 
       // ---------- ledger rows (date · entry · amount · source) ----------
@@ -250,6 +250,7 @@
         $("tab").style.opacity = F(t, T("owes", 0.4), 1e9, 0.35);
         $("tab1").textContent = lakh(N.owed_cr * E.o3((t - T("owes", 0.6)) / 1.8));
         $("tab2w").style.opacity = F(t, T("call", 0.3), 1e9, 0.35);
+        $("tab2w").style.display = t < T("call", 0.3) ? "none" : "block";
         $("tab2").textContent = `₹${inr(N.early_cr * E.o3((t - T("call", 0.4)) / 1.6))} CR`;
         // ledger row
         let rowA = 0;

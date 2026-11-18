@@ -66,7 +66,8 @@ def tts_para(text, emotion, path):
             vs["emotion"] = emotion
         body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": "English", "subtitle_enable": True,
                 "voice_setting": vs, "audio_setting": {"sample_rate": SB.SR, "bitrate": 128000, "format": "mp3", "channel": 1}}
-        j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": "Bearer proxy-injected"},
+        key = __import__("os").environ.get("MINIMAX_API_KEY", "proxy-injected")   # Mac Mini: set MINIMAX_API_KEY
+        j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": f"Bearer {key}"},
                           json=body, timeout=180).json()
         d = j.get("data") or {}
         if not d.get("audio"):

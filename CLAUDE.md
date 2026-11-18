@@ -1,6 +1,7 @@
 # Notes for Claude sessions in MMVideo
 
-- Start with `README.md`: what each engine area is, who edits which files, and what stays out of git.
+- Start with `README.md`: what each engine area is, who edits which files, and what stays out of git. On the Mac Mini,
+  read `docs/HANDOFF_MAC_MINI.md` first: setup steps, where the India Ledger gold episode stands, and the open decisions.
 - Premium explainer visuals live in `hyperframes/` (see `hyperframes/README.md`). When a video needs a satellite
   before/after, terrain flyover, document close-up, money breakdown, dot chart, flow map, globe, exploded object,
   patent drawing, photo with depth, timeline, scale comparison, big quote, hand-drawn notes or a 3D data map, start

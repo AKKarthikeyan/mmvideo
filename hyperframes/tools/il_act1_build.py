@@ -153,13 +153,19 @@ def verify():
     from num2words import num2words  # Whisper writes numbers as digits ("2015", "1.7", "84,000"); spell them out to compare
 
     def spell(z):
+        z = re.sub(r"\b(\d{1,2}),(\d\d),(\d{3})\b", lambda m: f"{num2words(int(m[1]))} lakh {num2words(int(m[2] + m[3]))}", z)  # 1,33,000
         z = re.sub(r"(?<=\d),(?=\d{3})", "", z)
         z = re.sub(r"%", " percent", z)                                          # Whisper: 86% -> eighty six percent
         z = re.sub(r"\btons\b", "tonnes", z, flags=re.I)                           # US spelling of the same spoken word
         z = re.sub(r"\b(19|20)(\d\d)\b", lambda m: f"{num2words(int(m[1]))} {num2words(int(m[2]))}", z)   # years: twenty fifteen
         z = re.sub(r"\d+\.\d+", lambda m: num2words(float(m[0])).replace("-", " "), z)
         return re.sub(r"\d+", lambda m: num2words(int(m[0])).replace("-", " "), z)
-    norm = lambda z: re.findall(r"[a-z]+", spell(z).lower().replace(" and ", " "))
+    SAME = {"money lender": "moneylender", "dmat": "demat", "peace": "piece", "jewelry": "jewellery"}  # spellings and homophones
+    def same(z):
+        for k, v in SAME.items():
+            z = re.sub(rf"\b{k}\b", v, z)
+        return z
+    norm = lambda z: re.findall(r"[a-z]+", same(spell(z).lower()).replace(" and ", " "))
     a, b = norm(said), norm(heard)
     missing = [w for w in dict.fromkeys(a) if w not in b]
     print("words in the script not heard:", missing or "none")

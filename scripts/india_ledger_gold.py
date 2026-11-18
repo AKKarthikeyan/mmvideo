@@ -63,6 +63,18 @@ def imports():
             "ports": shares["Port"], "countries": shares["Country"], "n_ports": f.Port.nunique()}
 
 
+def xirr(p0, p1, coupon, years):
+    """Yearly cost of one bond to the government, %: pay p0 in, coupon (% of p0) every half year, p1 back at the end."""
+    def npv(r):
+        n = round(years * 2)
+        return -p0 + sum(p0 * coupon / 200 / (1 + r) ** (k / 2) for k in range(1, n + 1)) + p1 / (1 + r) ** years
+    lo, hi = -0.5, 1.0
+    for _ in range(80):
+        m = (lo + hi) / 2
+        lo, hi = (m, hi) if npv(m) > 0 else (lo, m)
+    return m * 100
+
+
 def sgb_model():
     """Extra cost of each tranche versus borrowing the same rupees with a normal government bond.
 
@@ -87,7 +99,7 @@ def sgb_model():
     t["gold_gain"] = t.units_g * (t.paid_price - t.issue_price) / 1e7
     t["saved"] = t.raised * (t.y - t.c) / 100 * t.years                  # simple interest
     t["extra"] = t.gold_gain - t.saved
-    t["sgb_rate"] = ((t.paid_price / t.issue_price) ** (1 / t.years) - 1) * 100 + t.c   # approx. cost a year to the government
+    t["sgb_rate"] = [xirr(r.issue_price, r.paid_price, r.c, r.years) for r in t.itertuples()]   # cost a year to the government
     assert t.y.notna().all(), "missing yield month"
     print("\n== Sovereign Gold Bonds, bond by bond ==")
     print(f"  {len(t)} tranches, {t.units_g.sum() / 1e6:.2f} t, raised {crore(t.raised.sum())} (RBI: 146.96 t, Rs 72,274 crore)")

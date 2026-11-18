@@ -125,7 +125,7 @@ Not a thousand tonnes. Not a hundred.
 
 **PICTURE:** the counter crawls for nine years and stops.
 **SCREEN:** 31 TONNES · 5,693 DEPOSITORS · 9 YEARS
-**SRC:** Ministry of Finance, Mar 2025 (to Nov 2024)
+**SRC:** Ministry of Finance statement, 25 Mar 2025 (to Nov 2024), as reported
 
 Thirty one tonnes. In nine years. From fewer than six thousand depositors.
 
@@ -152,7 +152,7 @@ It was asking for the bangle from her wedding. The chain her mother gave her. An
 
 You can guess what Amma said. You can probably guess the tone, too.
 
-In March 2025, the government shut the long-term parts of Plan A. Which brings us to Plan B.
+In March 2025, the government shut the long-term parts of Plan A (PIB, 25 Mar 2025). Which brings us to Plan B.
 
 ### Plan B: paper gold (3:50–6:30)
 
@@ -208,15 +208,16 @@ Five times.
 
 **PICTURE:** document close-up of RBI's redemption notice; two bars, 12.9% and 7.75%.
 **SCREEN:** FIRST BOND COST THE GOVT 12.9% A YEAR · A NORMAL LOAN: 7.75%
+**SRC:** RBI issue and redemption prices, interest included · our arithmetic (RBI's own 10.87% counts the price rise only)
 **SRC:** RBI press release 2023–24/1359 · 10-year G-sec, Nov 2015 (FRED)
 
-The very first batch, the government's own number: it cost twelve point nine percent a year.
+The very first batch: counting the interest, it cost the government twelve point nine percent a year.
 A normal loan that month cost seven point seven five.
 
-**SCREEN:** MATURED BONDS: ≈ 16.5% A YEAR vs 7.1% ⟳
+**SCREEN:** MATURED BONDS: ≈ 15.8% A YEAR vs 7.1%
 **SRC:** our bond-by-bond arithmetic, 24 matured issues
 
-Across every bond that's been repaid so far, it works out to about sixteen and a half percent a year.
+Across every bond that's been repaid so far, it works out to about sixteen percent a year.
 More than double a normal loan.
 
 Somewhere, a moneylender is taking notes.

@@ -42,7 +42,7 @@
     </style>
   </head>
   <body>
-    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="103.42" data-width="1920" data-height="1080">
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="100.9" data-width="1920" data-height="1080">
       <div id="rules" data-layout-ignore></div>
       <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
       <div id="vig" data-layout-ignore></div>
@@ -62,7 +62,7 @@
     </div>
     <script>
       const N = ACT.n;
-      const H = HF.setup(103.42), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      const H = HF.setup(100.9), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
@@ -287,7 +287,7 @@
         placePan(panL, lx, ly); placePan(panR, rx, ry);
         gram.setAttribute("opacity", t > Tf("gram", 0.15) ? 1 : 0);
         labL.setAttribute("x", lx); labL.setAttribute("y", ly + DROP + 90); labL.setAttribute("opacity", F(t, Tf("gram", 0.2), 1e9, 0.3));
-        labR.setAttribute("x", rx); labR.setAttribute("y", ry + DROP + 90); labR.setAttribute("opacity", F(t, Tf("gram", 0.85), 1e9, 0.3));
+        labR.setAttribute("x", rx); labR.setAttribute("y", ry + DROP + 90); labR.setAttribute("opacity", F(t, Tf("gram", 0.55), 1e9, 0.3));
         noteG.setAttribute("transform", `translate(${lx - PAN / 2 - 215},${ly + DROP + 12})`);
         noteG.setAttribute("opacity", F(t, Tf("gram", 0.15), 1e9, 0.3));
 
@@ -333,7 +333,7 @@
         MP.setAttribute("opacity", F(t, T("fly") - 0.1, T("dollar") - 0.25, 0.3));
         pdots.forEach((d, i) => d.c.setAttribute("r", d.r * E.back((t - T("fly", 0.3 + i * 0.08)) / 0.5, 1.4)));
         pl.forEach((g, i) => g.setAttribute("opacity", F(t, T("fly", 0.9 + i * 0.12), 1e9, 0.3) * (t > T("swiss", 0.1) ? 0.2 : 1)));
-        bigA.setAttribute("opacity", F(t, Tf("fly", 0.55), T("delhi"), 0.3)); bigAs.setAttribute("opacity", F(t, Tf("fly", 0.55), T("delhi"), 0.3));
+        bigA.setAttribute("opacity", F(t, Tf("fly", 0.3), T("delhi"), 0.3)); bigAs.setAttribute("opacity", F(t, Tf("fly", 0.3), T("delhi"), 0.3));
         const dOn = F(t, Tf("delhi", 0.3), T("swiss") - 0.2, 0.3);
         bigD.setAttribute("opacity", dOn); bigDs.setAttribute("opacity", dOn);
         const pu = ((t - Tf("delhi", 0.3)) % 1.2) / 1.2;

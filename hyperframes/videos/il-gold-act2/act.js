@@ -1,122 +1,122 @@
 window.ACT = {
- "dur": 103.42,
+ "dur": 100.9,
  "beats": [
   {
    "id": "gram",
    "t0": 0.6,
-   "t1": 8.443,
+   "t1": 6.572,
    "say": "For every one gram of gold India digs out of its own ground… it buys four hundred and forty three.",
    "emotion": "auto"
   },
   {
    "id": "mines",
-   "t0": 9.163,
-   "t1": 16.222,
+   "t0": 7.272,
+   "t1": 13.662,
    "say": "India mines about one point six tonnes a year. Last year, it imported seven hundred and twenty one.",
    "emotion": "auto"
   },
   {
    "id": "second",
-   "t0": 16.942,
-   "t1": 20.864,
+   "t0": 14.362,
+   "t1": 19.21,
    "say": "Which makes gold India's second-biggest import. Right after crude oil.",
    "emotion": "auto"
   },
   {
    "id": "oil",
-   "t0": 21.934,
-   "t1": 26.639,
+   "t0": 19.894,
+   "t1": 25.221,
    "say": "We run the country on oil. We run weddings on gold. Priorities.",
    "emotion": "happy"
   },
   {
    "id": "dear",
-   "t0": 27.309,
-   "t1": 35.937,
+   "t0": 25.871,
+   "t1": 34.304,
    "say": "And it's getting expensive. Four years ago, India paid three point four lakh crore rupees, for eight hundred and seventy nine tonnes.",
    "emotion": "auto"
   },
   {
    "id": "less",
-   "t0": 36.907,
-   "t1": 41.613,
+   "t0": 34.904,
+   "t1": 40.727,
    "say": "Last year, it paid six point four lakh crore. For less gold.",
    "emotion": "auto"
   },
   {
    "id": "pct",
-   "t0": 42.333,
-   "t1": 45.862,
+   "t0": 41.427,
+   "t1": 46.898,
    "say": "Eighty six percent more money. Eighteen percent less gold.",
    "emotion": "auto"
   },
   {
    "id": "veg",
-   "t0": 46.382,
-   "t1": 49.127,
+   "t0": 47.398,
+   "t1": 51.06,
    "say": "Like your vegetable vendor. But in tonnes.",
    "emotion": "auto"
   },
   {
    "id": "fly",
-   "t0": 49.797,
-   "t1": 53.719,
+   "t0": 51.748,
+   "t1": 54.957,
    "say": "Most of it doesn't come by ship. It flies in.",
    "emotion": "auto"
   },
   {
    "id": "delhi",
-   "t0": 54.639,
-   "t1": 59.345,
+   "t0": 55.507,
+   "t1": 59.518,
    "say": "More than a third of India's gold lands at one airport. Delhi.",
    "emotion": "auto"
   },
   {
    "id": "swiss",
-   "t0": 60.015,
-   "t1": 65.897,
+   "t0": 60.168,
+   "t1": 65.188,
    "say": "About half of it arrives from Switzerland and the UAE, which refine and trade it.",
    "emotion": "auto"
   },
   {
    "id": "dollar",
-   "t0": 66.617,
-   "t1": 76.029,
+   "t0": 65.888,
+   "t1": 73.631,
    "say": "Every one of those grams is paid for in dollars. And dollars are what a country runs short of, when it imports too much.",
    "emotion": "auto"
   },
   {
    "id": "decide",
-   "t0": 76.699,
-   "t1": 81.405,
+   "t0": 74.307,
+   "t1": 78.154,
    "say": "So in twenty fifteen, the government decided to do something about it.",
    "emotion": "auto"
   },
   {
    "id": "same",
-   "t0": 81.975,
-   "t1": 87.073,
+   "t0": 78.704,
+   "t1": 84.096,
    "say": "On one day, it launched three gold schemes. Two of them matter here.",
    "emotion": "auto"
   },
   {
    "id": "planA",
-   "t0": 87.893,
-   "t1": 91.03,
+   "t0": 84.896,
+   "t1": 88.511,
    "say": "Plan A: borrow the gold that's already here.",
    "emotion": "auto"
   },
   {
    "id": "planB",
-   "t0": 91.7,
-   "t1": 97.582,
+   "t0": 89.198,
+   "t1": 94.718,
    "say": "Plan B: if you can't get the gold… sell people something that feels like gold.",
    "emotion": "auto"
   },
   {
    "id": "target",
-   "t0": 99.102,
-   "t1": 101.847,
+   "t0": 95.618,
+   "t1": 99.333,
    "say": "Both had the same target. Your mother.",
    "emotion": "auto"
   }
@@ -269,5 +269,5 @@ window.ACT = {
   "n_ports": 22,
   "owed_cr": 163842
  },
- "voiced": false
+ "voiced": true
 };

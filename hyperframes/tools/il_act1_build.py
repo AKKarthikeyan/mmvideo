@@ -154,6 +154,8 @@ def verify():
 
     def spell(z):
         z = re.sub(r"(?<=\d),(?=\d{3})", "", z)
+        z = re.sub(r"%", " percent", z)                                          # Whisper: 86% -> eighty six percent
+        z = re.sub(r"\btons\b", "tonnes", z, flags=re.I)                           # US spelling of the same spoken word
         z = re.sub(r"\b(19|20)(\d\d)\b", lambda m: f"{num2words(int(m[1]))} {num2words(int(m[2]))}", z)   # years: twenty fifteen
         z = re.sub(r"\d+\.\d+", lambda m: num2words(float(m[0])).replace("-", " "), z)
         return re.sub(r"\d+", lambda m: num2words(int(m[0])).replace("-", " "), z)

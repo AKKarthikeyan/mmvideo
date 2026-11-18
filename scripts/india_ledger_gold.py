@@ -107,6 +107,15 @@ def sgb_model():
           f" (weighted by rupees; range {m.sgb_rate.min():.1f}-{m.sgb_rate.max():.1f}%)")
     print("  not counted: tax-free gains (lost tax, raises the cost); Rs 50/g online discount (raises it); premature redemptions"
           " paid at earlier, mostly lower prices (lowers it)")
+    # Why now: what can be called in today, and when the rest falls due (at today's price)
+    o2 = o.copy()
+    o2["mat"] = o2.d + pd.DateOffset(years=TERM_YEARS)
+    o2["fy"] = o2.mat.dt.year + (o2.mat.dt.month >= 4)
+    early = o2[o2.d + pd.DateOffset(years=5) <= today]
+    print(f"  can be cashed early right now (5+ years old): {len(early)} tranches, {early.units_g.sum() / 1e6:.1f} t,"
+          f" {crore(early.units_g.sum() * PRICE_TODAY / 1e7)} at today's price")
+    due = o2.groupby("fy").units_g.sum() * PRICE_TODAY / 1e7
+    print("  final maturities at today's price: " + ", ".join(f"FY{fy - 1}-{str(fy)[2:]} {crore(v)}" for fy, v in due.items()))
     big = t.sort_values("extra", ascending=False).head(3)
     print("  costliest tranches: " + "; ".join(f"{r.tranche} ({crore(r.extra)})" for r in big.itertuples()))
 

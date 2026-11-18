@@ -14,6 +14,7 @@ files in other repos. Upload packages and strategy notes live in `darwin-researc
 | Carousels | `src/carousel/`, `public/carousel/<id>/carousel.json` |
 | Shorts and Reels rules, all channels (and the gate that checks a built Short) | `docs/SHORTS_FORMAT.md` (the Reveal Loop), `docs/SHORTS_BENCHMARKS.md` and `hyperframes/shorts/` (three benchmark Shorts), `docs/SHORTS_RULES.md`, `docs/SHORTS_STUDY.md`, `docs/SHORTS_FACTCHECK.md`, `scripts/shorts_check.py`, `scripts/shorts_study/` |
 | India Ledger growth plan (draft for AK) and the fact-check of the playbook behind it | `docs/INDIA_LEDGER_PLAN.md`, `docs/INDIA_LEDGER_FACTCHECK.md`, `docs/INDIA_LEDGER_WEEK1.md` (week of 19 Nov: gold), `docs/INDIA_LEDGER_EP1_SCRIPT.md` (episode 1 script), `scripts/india_ledger_gold.py` (its numbers) |
+| Tools radar: outside AI-video tools checked against our stack, by channel | `docs/TOOLS_RADAR.md` |
 | Premium explainer visuals (HyperFrames library, 15 samples) | `hyperframes/` (`hyperframes/README.md`), `hyperframes/tools/hf.py` |
 
 Two sessions work here: daily-filings videos edit `vx_scripts.py` and `Videos.tsx`; the Letters series edits

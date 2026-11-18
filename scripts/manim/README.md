@@ -5,7 +5,7 @@
 
 **Mac Mini** (Homebrew needed), from the repo root:
 ```sh
-scripts/manim/setup_mac.sh                                                   # once: cairo, pango, ffmpeg, a venv with manim
+scripts/manim/setup_mac.sh     # once: Python 3.12, cairo, pango, ffmpeg, a venv with manim
 ~/.venvs/manim/bin/manim -qh --fps 30 scripts/manim/compounding.py Compounding   # -> media/videos/compounding/1080p30/
 ```
 Verified in the cloud container on 18 Nov 2026: Manim 0.22.1, 1920×1080, 12.7 s. The container needed

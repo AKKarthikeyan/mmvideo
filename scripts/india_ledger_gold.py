@@ -13,24 +13,21 @@ ROOT = Path(__file__).resolve().parents[1]
 PARQUET = ROOT / "out" / "hyperframes" / "cache" / "export-import.parquet"
 
 # --- Typed-in figures, each with its source (checked 18 Nov 2026) ---
+# Bond figures (issued, raised, first tranche, yields) come from the files below, not from typed-in numbers.
 GMS_KG, GMS_DEPOSITORS = 31_164, 5_693          # Ministry of Finance statement, 25 Mar 2025 (to Nov 2024)
-SGB_TONNES_ISSUED, SGB_CRORE_RAISED = 146.96, 72_274   # RBI Annual Report 2023-24; MoF Rajya Sabha reply (67 tranches)
-SGB_TONNES_OUT = 125.3                           # outstanding, 23 Oct 2026 (Free Press Journal; IMPRI says 125.65)
-SGB_FIRST_ISSUE, SGB_FIRST_REDEEM = 2_684, 6_132  # ₹/g, SGB 2015-I, RBI press release 2023-24/1359 (24 Nov 2023)
-SGB_FIRST_RETURN_RBI = 12.9                      # % a year, RBI, as reported by Outlook Money
-GSEC_10Y_NOV2015 = 7.75                          # % monthly average, FRED INDIRLTLT01STM
-SGB_COUPON = 2.5                                 # % a year (2.75% on the first tranches)
-MOF_REDEEMED_PAID, MOF_INTEREST_PAID = 11_801.12, 6_055.39  # ₹ crore to FY 2024-25, MoF (as reported)
 MINE_OUTPUT_T = 1.62                             # India's primary gold output 2024-25 (as reported; Ministry of Mines)
 HOUSEHOLD_T = 31_000                             # WGC "Swarnim Udaan 2047", 4 Aug 2026
 POPULATION_CRORE = 146                           # VERIFY: MoHFW / RBI population projection for 2026
 
-# --- Assumptions for our estimate of the bond cost (state them on screen) ---
-PRICE_G = 12_567          # ₹/g used for "today"; IMPRI's mid-2026 price. Re-run with the IBJA rate on the build day.
-REDEEMED_AVG_ISSUE = 2_950  # ₹/g, rough average issue price of the early tranches already redeemed (2015-17: ₹2,600-3,200)
-GSEC_AVG = 7.2            # % a year, the rate normal government bonds paid on average over 2018-2026 (approximate)
-YEARS_HELD = 6.5          # average years from issue to redemption for the outstanding bonds (early exit after 5)
-
+# --- The bond-by-bond model (D11). Inputs are files in data/india_ledger/ ---
+TRANCHES = ROOT / "data" / "india_ledger" / "sgb_tranches.csv"   # 67 tranches: issue date, issue price, grams sold, redemption
+#   price. From the RBI tranche data as tabled on Wikipedia ("Sovereign Gold Bond", fetched 18 Nov 2026); its totals match
+#   RBI's 146.96 t and Rs 72,274 crore exactly. Redemption prices of matured tranches are RBI final-redemption prices.
+YIELDS = ROOT / "data" / "india_ledger" / "india_10y_yield_fred.csv"  # FRED INDIRLTLT01STM, India 10-year G-sec, monthly
+PRICE_TODAY = 14_024      # Rs/g, RBI final redemption price of SGB 2018-19 Series III, 13 Nov 2026 (IBJA 999 average)
+TODAY = "2026-11-18"
+TERM_YEARS = 8
+COUPON_HIGH_UNTIL = 3     # tranches 1-3 (FY 2015-16) paid 2.75%; from 2016-17 Series I, 2.5%
 
 def crore(x):
     return f"₹{x:,.0f} crore" if x < 100_000 else f"₹{x / 100_000:.2f} lakh crore"
@@ -59,6 +56,61 @@ def imports():
     return b.t
 
 
+def sgb_model():
+    """Extra cost of each tranche versus borrowing the same rupees with a normal government bond.
+
+    For each tranche: what the government pays back above what it raised (gold gain), minus the interest it saved by paying
+    the bond coupon instead of the 10-year G-sec yield of the issue month, for the years the money was held. Matured tranches
+    use their final redemption price and 8 years. Tranches not yet matured are valued as if settled today, at today's
+    RBI price, with interest saved up to today. Premature redemptions (not published by tranche) are treated as still
+    outstanding; they were paid at window prices close to recent prices, so the total moves little.
+    """
+    t = pd.read_csv(TRANCHES)
+    y = pd.read_csv(YIELDS)
+    y.columns = ["date", "y"]
+    y["m"] = pd.to_datetime(y.date).dt.to_period("M")
+    t["d"] = pd.to_datetime(t.issue_date)
+    t["y"] = t.d.dt.to_period("M").map(dict(zip(y.m, y.y)))
+    t["c"] = [2.75 if n <= COUPON_HIGH_UNTIL else 2.5 for n in t.n]
+    today = pd.Timestamp(TODAY)
+    t["matured"] = t.d + pd.DateOffset(years=TERM_YEARS) <= today
+    t["years"] = [TERM_YEARS if m else (today - d).days / 365.25 for m, d in zip(t.matured, t.d)]
+    t["paid_price"] = [r.redemption_price if r.matured else PRICE_TODAY for r in t.itertuples()]
+    t["raised"] = t.units_g * t.issue_price / 1e7                        # Rs crore
+    t["gold_gain"] = t.units_g * (t.paid_price - t.issue_price) / 1e7
+    t["saved"] = t.raised * (t.y - t.c) / 100 * t.years                  # simple interest
+    t["extra"] = t.gold_gain - t.saved
+    t["sgb_rate"] = ((t.paid_price / t.issue_price) ** (1 / t.years) - 1) * 100 + t.c   # approx. cost a year to the government
+    assert t.y.notna().all(), "missing yield month"
+    print("\n== Sovereign Gold Bonds, bond by bond ==")
+    print(f"  {len(t)} tranches, {t.units_g.sum() / 1e6:.2f} t, raised {crore(t.raised.sum())} (RBI: 146.96 t, Rs 72,274 crore)")
+    first = t.iloc[0]
+    print(f"  first tranche: Rs {first.issue_price:,.0f} -> Rs {first.paid_price:,.0f}/g; normal bond that month {first.y:.2f}%")
+    m, o = t[t.matured], t[~t.matured]
+    print(f"  matured and repaid: {len(m)} tranches, {m.units_g.sum() / 1e6:.2f} t; still out (at most): {o.units_g.sum() / 1e6:.2f} t")
+    owed = o.units_g.sum() * PRICE_TODAY / 1e7
+    print(f"  owed on bonds still out, at Rs {PRICE_TODAY:,}/g (RBI, 13 Nov 2026): {crore(owed)}")
+    print(f"  every Rs 1,000 on a gram moves that by {crore(o.units_g.sum() * 1000 / 1e7)}")
+    for name, part in (("already repaid", m), ("still out, settled today", o), ("ALL", t)):
+        print(f"  {name:26s} gold gain {crore(part.gold_gain.sum()):>18s}  interest saved {crore(part.saved.sum()):>16s}"
+              f"  extra cost {crore(part.extra.sum()):>16s}")
+    net = t.extra.sum()
+    print(f"  => the bonds cost about {crore(net)} more than normal borrowing (our estimate), "
+          f"≈ Rs {net * 1e7 / (POPULATION_CRORE * 1e7):,.0f} per Indian")
+    for dp in (-2000, -1000, 1000, 2000):
+        print(f"     at Rs {PRICE_TODAY + dp:,}/g: {crore(net + o.units_g.sum() * dp / 1e7)}")
+    comp = (t.raised * (((1 + t.y / 100) ** t.years) - ((1 + t.c / 100) ** t.years))).sum()
+    print(f"  check, interest saved compounded instead of simple: {crore(comp)} saved -> extra cost {crore(t.gold_gain.sum() - comp)}")
+    w = (m.sgb_rate * m.raised).sum() / m.raised.sum()          # matured only: real money, full 8 years
+    wy = (m.y * m.raised).sum() / m.raised.sum()
+    print(f"  matured bonds (paid in full): the government paid about {w:.1f}% a year vs {wy:.1f}% on normal bonds"
+          f" (weighted by rupees; range {m.sgb_rate.min():.1f}-{m.sgb_rate.max():.1f}%)")
+    print("  not counted: tax-free gains (lost tax, raises the cost); Rs 50/g online discount (raises it); premature redemptions"
+          " paid at earlier, mostly lower prices (lowers it)")
+    big = t.sort_values("extra", ascending=False).head(3)
+    print("  costliest tranches: " + "; ".join(f"{r.tranche} ({crore(r.extra)})" for r in big.itertuples()))
+
+
 def main():
     t26 = imports()
     print("\n== Gold deposit scheme vs imports ==")
@@ -66,25 +118,7 @@ def main():
     print(f"  India imports that much in {GMS_KG / 1000 / t26 * 365:.1f} days (FY26 pace)")
     print(f"  Mines: {MINE_OUTPUT_T} t a year = {MINE_OUTPUT_T / t26 * 100:.2f}% of imports (1 g mined per {t26 / MINE_OUTPUT_T:,.0f} g imported)")
 
-    print("\n== Sovereign Gold Bonds ==")
-    avg_issue = SGB_CRORE_RAISED * 1e7 / (SGB_TONNES_ISSUED * 1e6)
-    print(f"  issued {SGB_TONNES_ISSUED} t for {crore(SGB_CRORE_RAISED)} (average ₹{avg_issue:,.0f}/g)")
-    print(f"  first tranche: ₹{SGB_FIRST_ISSUE:,} -> ₹{SGB_FIRST_REDEEM:,}/g = x{SGB_FIRST_REDEEM / SGB_FIRST_ISSUE:.2f};"
-          f" RBI: {SGB_FIRST_RETURN_RBI}% a year vs {GSEC_10Y_NOV2015}% on a normal 10-year bond that month")
-    owed = SGB_TONNES_OUT * 1e6 * PRICE_G / 1e7
-    print(f"  owed today on {SGB_TONNES_OUT} t at ₹{PRICE_G:,}/g: {crore(owed)}")
-    print(f"  every ₹1,000 on the price of a gram changes it by {crore(SGB_TONNES_OUT * 1e6 * 1000 / 1e7)}")
-    redeemed_t = SGB_TONNES_ISSUED - SGB_TONNES_OUT
-    principal_out = SGB_CRORE_RAISED - redeemed_t * 1e6 * REDEEMED_AVG_ISSUE / 1e7
-    gain_out = owed - principal_out
-    saved_out = principal_out * (GSEC_AVG - SGB_COUPON) / 100 * YEARS_HELD
-    redeemed_extra = MOF_REDEEMED_PAID - redeemed_t * 1e6 * REDEEMED_AVG_ISSUE / 1e7
-    net = gain_out - saved_out + redeemed_extra
-    print(f"  our estimate (approximate): principal still out {crore(principal_out)}; gold gain owed {crore(gain_out)};")
-    print(f"    minus interest saved vs normal bonds {crore(saved_out)}; plus gain already paid on redeemed {crore(redeemed_extra)}")
-    print(f"    = net extra cost ≈ {crore(net)} (range ±25%: {crore(net * 0.75)} to {crore(net * 1.25)})")
-    print(f"    per Indian ({POPULATION_CRORE} crore people): ≈ ₹{net / POPULATION_CRORE * 1e7 / 1e7:,.0f}")
-
+    sgb_model()
 
 if __name__ == "__main__":
     main()

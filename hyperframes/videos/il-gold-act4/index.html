@@ -1,0 +1,380 @@
+<!doctype html>
+<!-- India Ledger, gold episode, Act 4: "Who pays, who gains, and what families do now". Timings and every number come from act.js, written by
+     tools/il_act4_build.py from scripts/india_ledger_gold.py. Same "Ledger" look as Acts 1 and 2: ruled paper with a red
+     margin, ink, one green channel accent, gold only for the metal (and its price line), red only for the stamp. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>India Ledger Act 4</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="act.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      .ledger { --bg: #f3efe6; --fg: #14161a; --muted: #4f555e; --kick: #0e7c66; --gold: #b8860b; --red: #c8431f; --card: #fbf8f0; }
+      .ledger #grain { opacity: 0.1; mix-blend-mode: multiply; }
+      .ledger #vig { --vig: 0.07; }
+      #rules { position: absolute; inset: 0;
+        background:
+          linear-gradient(90deg, transparent 148px, rgba(200, 67, 31, 0.55) 148px, rgba(200, 67, 31, 0.55) 150px, transparent 150px,
+                          transparent 156px, rgba(200, 67, 31, 0.55) 156px, rgba(200, 67, 31, 0.55) 158px, transparent 158px),
+          repeating-linear-gradient(180deg, transparent 0 53px, rgba(14, 124, 102, 0.16) 53px 54px); }
+      #stage { position: absolute; inset: 0; }
+      .kicker { left: 200px; color: var(--kick); }
+      #ep { position: absolute; left: 200px; top: 130px; font: 400 28px/1 Plex, monospace; color: var(--muted); letter-spacing: 0.04em; }
+      #title { position: absolute; left: 200px; top: 176px; width: 1060px; font: 700 76px/1.0 Oswald, sans-serif; color: var(--fg); letter-spacing: 0.01em; }
+      #tab { position: absolute; right: 90px; top: 70px; width: 520px; background: var(--card); border: 3px solid var(--fg);
+        box-shadow: 8px 8px 0 rgba(20, 22, 26, 0.12); padding: 16px 22px 18px; }
+      #tab .h { font: 700 28px/1 Oswald, sans-serif; letter-spacing: 0.2em; color: var(--kick); }
+      #tab .l { font: 400 28px/1.2 Plex, monospace; color: var(--muted); margin-top: 12px; }
+      #tab .v { font: 700 50px/1 Oswald, sans-serif; color: var(--fg); font-variant-numeric: tabular-nums; margin-top: 4px; }
+      #tab .v.small { font-size: 42px; }
+      #row { position: absolute; left: 200px; right: 90px; bottom: 60px; height: 110px; background: var(--card);
+        border-top: 3px solid var(--fg); border-bottom: 1px solid rgba(20, 22, 26, 0.35); display: grid;
+        grid-template-columns: 300px 1fr 300px 400px; align-items: center; font: 400 28px/1.2 Plex, monospace; color: var(--fg); }
+      #row div { padding: 0 18px; border-right: 1px solid rgba(20, 22, 26, 0.2); white-space: nowrap; line-height: 1.4; overflow: hidden; }
+      #row div:first-child { white-space: normal; }
+      #row div:last-child { border-right: 0; font-size: 28px; color: var(--muted); white-space: normal; }
+      #row .amt { font: 700 34px/1.3 Oswald, sans-serif; color: var(--kick); text-align: right; }
+      #illus { position: absolute; left: 200px; bottom: 22px; font: 400 28px/1 Plex, monospace; color: var(--muted); }
+      .src { right: 90px; bottom: 22px; font-size: 28px; max-width: 1280px; text-align: right; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="125.83" data-width="1920" data-height="1080">
+      <div id="rules" data-layout-ignore></div>
+      <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER</div>
+      <div id="ep">GOLD · EPISODE 1 · ACT 4</div>
+      <div id="title">WHO PAYS, WHO GAINS</div>
+      <div id="tab">
+        <div class="h">THE TAB</div>
+        <div class="l">OWED ON GOLD BONDS STILL OUT</div>
+        <div class="v" id="tab1"></div>
+        <div id="tab2w"><div class="l" id="tab2l"></div><div class="v small" id="tab2"></div></div>
+      </div>
+      <div id="row"><div id="r0"></div><div id="r1"></div><div class="amt" id="r2"></div><div id="r3"></div></div>
+      <div id="illus">ILLUSTRATION</div>
+      <div class="src" id="src"></div>
+    </div>
+    <script>
+      const N = ACT.n;
+      const H = HF.setup(125.83), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
+      const dur = (id) => B[id].t1 - B[id].t0;
+      const T = (id, o = 0) => B[id].t0 + o, Tf = (id, f) => B[id].t0 + f * (B[id].t1 - B[id].t0);
+      const INK = "#14161a", MUTED = "#4f555e", GOLD = "#b8860b", GOLD2 = "#e2b84a", GOLDT = "#7f5d07", GREEN = "#0e7c66", RED = "#c8431f",
+            GREY = "#b9b09b", GREYT = "#6f6a5e", CARD = "#fbf8f0";
+      const inr = (v) => Math.round(v).toLocaleString("en-IN");
+      const lakh = (cr, d = 2) => `₹${(cr / 100000).toFixed(d)} LAKH CR`;
+      const NS = "http://www.w3.org/2000/svg";
+      const svg = $("stage");
+      const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+      const txt = (s, attrs, parent) => { const e = el("text", attrs, parent); e.textContent = s; return e; };
+      const OS = { "font-family": "Oswald", "font-weight": 700 }, PX = { "font-family": "Plex" }, CV = { "font-family": "Caveat", "font-weight": 600 };
+      const op = (e, v) => e.setAttribute("opacity", v);
+      const note = (s, x, y, size, parent, arrow) => {     // hand-lettered note, optional arrow [x1, y1, x2, y2]
+        const g = el("g", {}, parent);
+        txt(s, { x, y, ...CV, "font-size": size, fill: INK }, g);
+        if (arrow) {
+          const [a, b, c, d] = arrow;
+          el("path", { d: `M ${a} ${b} Q ${(a + c) / 2} ${Math.min(b, d) - 24}, ${c} ${d}`, fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, g);
+          const ang = Math.atan2(d - b, c - a);
+          for (const s2 of [-1, 1]) el("line", { x1: c, y1: d, x2: c - 20 * Math.cos(ang + s2 * 0.5), y2: d - 20 * Math.sin(ang + s2 * 0.5), stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, g);
+        }
+        return g;
+      };
+      const stamp = (text, cx, cy, size, rot) => {
+        const g = el("g", {});
+        txt(text, { x: 0, y: size * 0.36, "text-anchor": "middle", ...OS, "font-size": size, fill: RED, "letter-spacing": 2 }, g);
+        const w = text.length * size * 0.52 + 60;
+        el("rect", { x: -w / 2, y: -size * 0.75, width: w, height: size * 1.5, fill: "none", stroke: RED, "stroke-width": 8 }, g);
+        Object.assign(g.dataset, { cx, cy, rot });
+        return g;
+      };
+      const showStamp = (g, t, at, until = 1e9) => {
+        const u = C((t - at) / 0.22), a = F(t, at, until, 0.25);
+        g.setAttribute("transform", `translate(${g.dataset.cx},${g.dataset.cy}) rotate(${g.dataset.rot}) scale(${u < 1 ? L(2.4, 1, E.o3(u)) : 1})`);
+        g.setAttribute("opacity", a * (u > 0 ? 1 : 0));
+      };
+      const locker = (x, y, s, parent) => {               // Amma's locker, closed
+        const g = el("g", { transform: `translate(${x},${y}) scale(${s})` }, parent);
+        el("rect", { x: 0, y: 0, width: 300, height: 360, rx: 14, fill: "#2f3d38" }, g);
+        el("rect", { x: 18, y: 18, width: 264, height: 324, rx: 8, fill: "#3d4f48", stroke: "#22302b", "stroke-width": 4 }, g);
+        el("circle", { cx: 220, cy: 180, r: 30, fill: "none", stroke: "#a7b3ad", "stroke-width": 7 }, g);
+        el("line", { x1: 220, y1: 154, x2: 220, y2: 206, stroke: "#a7b3ad", "stroke-width": 7 }, g);
+        return g;
+      };
+      const bangleAt = (r, parent) => {                   // a gold bangle centred on (0, 0)
+        const g = el("g", {}, parent);
+        el("circle", { cx: 0, cy: 0, r, fill: "none", stroke: GOLD, "stroke-width": r * 0.36 }, g);
+        el("circle", { cx: 0, cy: 0, r: r * 1.1, fill: "none", stroke: GOLD2, "stroke-width": 4, "stroke-dasharray": `${r * 0.8} 400`, transform: "rotate(-130)" }, g);
+        el("circle", { cx: 0, cy: 0, r: r * 0.84, fill: "none", stroke: "#8a6408", "stroke-width": 3 }, g);
+        return g;
+      };
+      const certificate = (parent, w = 640, h = 400) => { // paper gold, drawn around (0, 0) at its centre
+        const g = el("g", {}, parent);
+        el("rect", { x: -w / 2, y: -h / 2, width: w, height: h, fill: CARD, stroke: GREEN, "stroke-width": 6 }, g);
+        el("rect", { x: -w / 2 + 18, y: -h / 2 + 18, width: w - 36, height: h - 36, fill: "none", stroke: GREEN, "stroke-width": 2 }, g);
+        txt("GOVERNMENT OF INDIA", { x: 0, y: -h / 2 + 76, "text-anchor": "middle", ...PX, "font-size": 28, fill: GREEN, "letter-spacing": 3 }, g);
+        txt("SOVEREIGN GOLD BOND", { x: 0, y: -h / 2 + 170, "text-anchor": "middle", ...OS, "font-size": 56, fill: INK }, g);
+        txt("10 GRAMS", { x: 0, y: -h / 2 + 250, "text-anchor": "middle", ...OS, "font-size": 56, fill: GOLDT }, g);
+        txt("8 YEARS · 2.5% A YEAR", { x: 0, y: -h / 2 + 310, "text-anchor": "middle", ...PX, "font-size": 28, fill: MUTED }, g);
+        return g;
+      };
+      const chip = (s, x, y, w, parent, color = INK) => {
+        const g = el("g", {}, parent);
+        el("rect", { x: x - w / 2, y: y - 50, width: w, height: 100, fill: CARD, stroke: color, "stroke-width": 4 }, g);
+        txt(s, { x, y: y + 14, "text-anchor": "middle", ...OS, "font-size": 42, fill: color }, g);
+        return g;
+      };
+      const arrowR = (x1, x2, y, parent) => {
+        const g = el("g", {}, parent);
+        el("line", { x1, y1: y, x2: x2 - 6, y2: y, stroke: INK, "stroke-width": 5 }, g);
+        el("path", { d: `M ${x2} ${y} l -24 -14 l 0 28 Z`, fill: INK }, g);
+        return g;
+      };
+      const strike = (parent, x1, x2, y) => el("line", { x1, y1: y, x2: x1, y2: y, stroke: INK, "stroke-width": 7, "stroke-linecap": "round", "data-x2": x2 }, parent);
+      const drawStrike = (s, u) => { const x1 = +s.getAttribute("x1"), x2 = +s.dataset.x2; s.setAttribute("x2", L(x1, x2, C(u))); op(s, u > 0 ? 1 : 0); };
+
+      // ---------- A. the bill, and how it moves with the price of a gram ----------
+      const BL = el("g", {});
+      const blV = txt("", { x: 200, y: 560, ...OS, "font-size": 150, fill: INK }, BL);
+      const blS = txt(`OWED ON ABOUT ${Math.round(N.out_t)} TONNES OF BONDS STILL OUT, AT TODAY'S PRICE`, { x: 204, y: 615, ...PX, "font-size": 30, fill: MUTED }, BL);
+      const MV = el("g", {}, BL);
+      const mvP = txt("", { x: 200, y: 760, ...OS, "font-size": 56, fill: GOLDT }, MV);
+      txt("GOLD, ₹ A GRAM", { x: 204, y: 800, ...PX, "font-size": 28, fill: MUTED }, MV);
+      const mvA = arrowR(640, 760, 740, MV);
+      const mvB = txt("", { x: 800, y: 760, ...OS, "font-size": 56, fill: INK }, MV);
+      txt("WHAT THE GOVERNMENT OWES", { x: 804, y: 800, ...PX, "font-size": 28, fill: MUTED }, MV);
+      const nBlock = el("g", {}, BL); note("North Block checks it", 1290, 650, 54, nBlock); note("before breakfast", 1290, 712, 54, nBlock);
+      const cup = el("g", {}, BL);
+      el("path", { d: "M 1560 520 L 1580 600 L 1660 600 L 1680 520 Z", fill: CARD, stroke: INK, "stroke-width": 5 }, cup);
+      el("path", { d: "M 1680 540 q 34 4 22 36 q -8 16 -30 14", fill: "none", stroke: INK, "stroke-width": 5 }, cup);
+      for (const dx of [0, 24, 48]) el("path", { d: `M ${1592 + dx} 505 q -10 -18 0 -34 q 10 -16 0 -32`, fill: "none", stroke: GREYT, "stroke-width": 4, "stroke-linecap": "round" }, cup);
+
+      // ---------- B. when it falls due: cashable now, then the final maturities ----------
+      const WV = el("g", {});
+      const WB = 820, WT = 470, wmax = Math.max(N.early_cr, ...N.due.map((d) => d[1]));
+      const wcols = [["CASHABLE NOW", N.early_cr, true], ...N.due.map(([fy, v]) => [fy.replace("FY ", "FY"), v, false])];
+      const wbars = wcols.map(([lab, v, now], i) => {
+        const x = 220 + i * 210 + (i > 0 ? 50 : 0), w = 150, h = (WB - WT) * v / wmax;
+        const r = el("rect", { x, y: WB, width: w, height: 0, rx: 4, fill: now ? GREEN : GREY }, WV);
+        const t = txt(`₹${inr(Math.round(v / 1000))}K CR`, { x: x + w / 2, y: WB - h - 16, "text-anchor": "middle", ...OS, "font-size": 34, fill: now ? GREEN : INK }, WV);
+        txt(lab, { x: x + w / 2, y: WB + 40, "text-anchor": "middle", ...PX, "font-size": 28, fill: now ? GREEN : MUTED }, WV);
+        return { r, t, h, lab, now };
+      });
+      el("line", { x1: 220 + 210 - 15 + 25, x2: 220 + 210 - 15 + 25, y1: WT - 20, y2: WB + 10, stroke: "rgba(20,22,26,0.3)", "stroke-width": 3, "stroke-dasharray": "10 8" }, WV);
+      txt("FINAL MATURITIES, AT TODAY'S PRICE", { x: 560, y: 420, ...PX, "font-size": 30, fill: MUTED }, WV);
+      const nHold = note("holders decide when", 200, 380, 50, WV);
+
+      // ---------- B2. the reserve fund ----------
+      const RF = el("g", {});
+      txt("THE FUND SET UP TO REPAY THE BONDS", { x: 200, y: 430, ...PX, "font-size": 32, fill: MUTED }, RF);
+      el("rect", { x: 200, y: 460, width: 1400, height: 120, fill: "none", stroke: INK, "stroke-width": 4 }, RF);
+      const rfF = el("rect", { x: 202, y: 462, width: 0, height: 116, fill: GREEN }, RF);
+      txt("WHAT IT HAD", { x: 230, y: 534, ...OS, "font-size": 40, fill: CARD }, RF);
+      txt("WHAT IS OWED", { x: 1570, y: 534, "text-anchor": "end", ...OS, "font-size": 40, fill: INK }, RF);
+      const rfH = txt("ABOUT HALF, IN 2025", { x: 200, y: 700, ...OS, "font-size": 90, fill: GREEN }, RF);
+      txt("as reported", { x: 204, y: 760, ...CV, "font-size": 48, fill: MUTED }, RF);
+
+      // ---------- C. who pays, who gains, and the overlap ----------
+      const WH = el("g", {});
+      const col = (x, head, a, b, color) => {
+        const g = el("g", {}, WH);
+        txt(head, { x, y: 540, ...OS, "font-size": 80, fill: color }, g);
+        txt(a, { x: x + 4, y: 620, ...OS, "font-size": 48, fill: INK }, g);
+        txt(b, { x: x + 4, y: 680, ...PX, "font-size": 30, fill: MUTED }, g);
+        return g;
+      };
+      const cPay = col(200, "WHO PAYS", "THE BUDGET", "so, every taxpayer", INK);
+      const cGain = col(1000, "WHO GAINS", "THE BONDHOLDERS", "they bought what was offered", GREEN);
+      const cTax = txt("TAX-FREE IF BOUGHT AT ISSUE AND HELD TO MATURITY", { x: 1004, y: 730, ...PX, "font-size": 28, fill: GREEN }, WH);
+      const VN = el("g", {}, WH);
+      const vA = el("circle", { cx: 760, cy: 690, r: 230, fill: "rgba(14,124,102,0.14)", stroke: GREEN, "stroke-width": 5 }, VN);
+      const vB = el("circle", { cx: 1060, cy: 690, r: 230, fill: "rgba(20,22,26,0.07)", stroke: INK, "stroke-width": 5 }, VN);
+      const vAl = txt("WON THE BET", { x: 665, y: 680, "text-anchor": "middle", ...OS, "font-size": 36, fill: GREEN }, VN);
+      txt("bondholders", { x: 665, y: 726, "text-anchor": "middle", ...CV, "font-size": 44, fill: INK }, VN);
+      const vBl = el("g", {}, VN);
+      txt("PAYS FOR IT", { x: 1180, y: 680, "text-anchor": "middle", ...OS, "font-size": 40, fill: INK }, vBl);
+      txt("taxpayers", { x: 1180, y: 726, "text-anchor": "middle", ...CV, "font-size": 44, fill: INK }, vBl);
+      const vC = el("g", {}, VN);
+      txt("BOTH", { x: 910, y: 670, "text-anchor": "middle", ...OS, "font-size": 40, fill: INK }, vC);
+      txt("quite a few", { x: 910, y: 714, "text-anchor": "middle", ...CV, "font-size": 40, fill: INK }, vC);
+      txt("of you", { x: 910, y: 754, "text-anchor": "middle", ...CV, "font-size": 40, fill: INK }, vC);
+
+      // ---------- D. families pawn instead ----------
+      const LN = el("g", {});
+      const LB = 820, LTOP = 430, LW = 260;
+      const lb = [[`JUL 2025`, N.loans_prev, GREY], [`JUL 2026`, N.loans, GREEN]].map(([lab, v, c], i) => {
+        const x = 260 + i * 380, h = (LB - LTOP) * v / N.loans;
+        const r = el("rect", { x, y: LB, width: LW, height: 0, rx: 4, fill: c }, LN);
+        const t = txt(`₹${(v / 100000).toFixed(2)} L CR`, { x: x + LW / 2, y: LB - h - 18, "text-anchor": "middle", ...OS, "font-size": 44, fill: c === GREEN ? GREEN : INK }, LN);
+        txt(lab, { x: x + LW / 2, y: LB + 42, "text-anchor": "middle", ...PX, "font-size": 30, fill: MUTED }, LN);
+        return { r, t, h };
+      });
+      txt("BANK LOANS AGAINST GOLD JEWELLERY", { x: 260, y: 370, ...PX, "font-size": 32, fill: MUTED }, LN);
+      const stL = stamp(`+${Math.round(N.loans_pct)}% IN A YEAR`, 1380, 560, 56, -5); LN.appendChild(stL); op(stL, 0);
+      stL.setAttribute("transform", "translate(1380,560) rotate(-5)");
+      const nPawn = note("won't deposit it. will pawn it.", 1080, 760, 54, LN);
+
+      // ---------- D2. same bangle in, same bangle out ----------
+      const BB = el("g", {});
+      const bank = el("g", {}, BB);
+      el("rect", { x: 830, y: 480, width: 300, height: 260, fill: CARD, stroke: INK, "stroke-width": 5 }, bank);
+      el("path", { d: "M 810 480 L 980 400 L 1150 480 Z", fill: INK }, bank);
+      txt("BANK", { x: 980, y: 630, "text-anchor": "middle", ...OS, "font-size": 60, fill: INK }, bank);
+      const bgl = el("g", {}, BB); bangleAt(62, bgl);
+      const nIn = note("same bangle goes in", 240, 470, 56, BB), nOut = note("same bangle comes out", 1290, 470, 56, BB);
+      const nBaby = note("babysitting, with interest", 760, 860, 52, BB);
+
+      // ---------- E. the government's own verdict, and no new bonds ----------
+      const VD = el("g", {});
+      const quote = el("g", {}, VD);
+      el("rect", { x: 200, y: 330, width: 1080, height: 300, fill: CARD, stroke: INK, "stroke-width": 3 }, quote);
+      txt("“FAIRLY HIGH-COST", { x: 250, y: 440, ...OS, "font-size": 84, fill: INK }, quote);
+      txt("BORROWING”", { x: 250, y: 530, ...OS, "font-size": 84, fill: INK }, quote);
+      txt("— ECONOMIC AFFAIRS SECRETARY, FEB 2025 (AS REPORTED)", { x: 252, y: 595, ...PX, "font-size": 28, fill: MUTED }, quote);
+      const nImp = note("…and imports didn't come down", 1300, 560, 50, VD);
+      const TL = el("g", {}, VD);
+      const d0 = Date.parse("2015-11-01"), d1 = Date.parse(`${N.today_label.slice(-4)}-12-01`);
+      const TX = (d) => 220 + (Date.parse(d) - d0) / (d1 - d0) * 1560, TY = 790;
+      el("line", { x1: 220, x2: 1780, y1: TY, y2: TY, stroke: "rgba(20,22,26,0.4)", "stroke-width": 3 }, TL);
+      for (let y = 2016; y <= +N.today_label.slice(-4); y++) txt(String(y), { x: TX(`${y}-01-01`), y: TY + 46, "text-anchor": "middle", ...PX, "font-size": 28, fill: MUTED }, TL);
+      const idots = N.issues.map((d) => el("circle", { cx: TX(d), cy: TY, r: 9, fill: GREEN, "fill-opacity": 0.75 }, TL));
+      const gapR = el("rect", { x: TX(N.issues[N.issues.length - 1]) + 16, y: TY - 22, width: 0, height: 44, fill: "rgba(20,22,26,0.06)", stroke: GREYT, "stroke-width": 3, "stroke-dasharray": "10 8" }, TL);
+      const gapW = TX("2026-11-19") - TX(N.issues[N.issues.length - 1]) - 16;
+      const gapT = txt("NONE SINCE FEB 2024", { x: TX(N.issues[N.issues.length - 1]) + 16 + gapW / 2, y: TY - 52, "text-anchor": "middle", ...OS, "font-size": 36, fill: INK }, TL);
+      txt("EACH DOT: ONE GOLD BOND ISSUE", { x: 220, y: TY - 52, ...PX, "font-size": 28, fill: MUTED }, TL);
+
+      // ---------- F. before you forward it ----------
+      const SC = el("g", {});
+      const stScam = stamp("SCAM!!", 760, 560, 130, -6); SC.appendChild(stScam); op(stScam, 0);
+      stScam.setAttribute("transform", "translate(760,560) rotate(-6)");
+      const nStop = note("stop.", 1200, 600, 120, SC);
+      const hide = txt("WHAT THE NUMBERS HIDE →", { x: 960, y: 820, "text-anchor": "middle", ...OS, "font-size": 64, fill: GREEN }, SC);
+
+      // ---------- ledger rows (date · entry · amount · source) and source lines ----------
+      const ROWS = [
+        ["out", "moves", [N.today_label.toUpperCase(), "OWED ON GOLD BONDS STILL OUT", lakh(N.owed_cr), `RBI tranche data · our arithmetic at ₹${inr(N.price)}/g`]],
+        ["moves", "cash", ["EVERY ₹1,000 A GRAM", "ADDED TO THE BILL", `₹${inr(N.per1000)} CR`, `${N.out_t} t still out · our arithmetic`]],
+        ["cash", "waves", ["TODAY", "BONDS PAST 5 YEARS: CASHABLE", `₹${inr(N.early_cr)} CR`, "RBI tranche data · our arithmetic at today's price"]],
+        ["loans", "plan", ["31 JUL 2026", "BANK LOANS AGAINST GOLD JEWELLERY", `₹${(N.loans / 100000).toFixed(2)} L CR`, `RBI Bulletin, Sep 2026, p. 119 · +${N.loans_pct}% in a year`]],
+        ["nonew", "scam", [N.last_issue.toUpperCase(), "LAST GOLD BOND ISSUED", `${N.n_tr}`, "RBI tranche data · no issue since"]],
+      ];
+      const SRCS = [
+        ["waves", "fund", "RBI tranche data · final maturities at today's price · our arithmetic"],
+        ["fund", "pays", "Business Today, Apr 2025, as reported"],
+        ["pays", "fam", "Tax rule: Finance Bill 2026, Memorandum, clause 35 (from 1 Apr 2026)"],
+        ["fam", "loans", "RBI Bulletin, Sep 2026, Current Statistics: bank credit by sector"],
+        ["verdict", "nonew", "Ajay Seth, Economic Affairs Secretary, Feb 2025, as reported by ThePrint"],
+      ];
+      const ILLUS = [["block", "cash"], ["plan", "verdict"]];
+
+      const drift = (g, a, b) => { const u = C((t_ - a) / Math.max(1, b - a)); g.setAttribute("transform", `translate(960,600) scale(${1 + 0.03 * u}) translate(-960,-600)`); };
+      const scene = (g, a, b) => { const f = F(t_, a - 0.1, b == null ? 1e9 : b - 0.25, 0.3); op(g, f); if (f > 0) drift(g, a, b == null ? ACT.dur : b); return f > 0; };
+      let t_ = 0;
+      H.render = (t) => {
+        t_ = t;
+        $("title").style.opacity = F(t, 0.2, T("out") - 0.2, 0.4);
+        // the tab: what is owed, then what can be called in now
+        $("tab1").textContent = lakh(N.owed_cr);
+        $("tab2l").textContent = "CASHABLE NOW";
+        $("tab2w").style.opacity = F(t, Tf("cash", 0.3), 1e9, 0.3);
+        $("tab2").textContent = `₹${inr(N.early_cr * E.o3((t - Tf("cash", 0.3)) / 1.6))} CR`;
+
+        // A: the bill, ticking with the price
+        if (scene(BL, T("bill"), T("cash"))) {
+          blV.textContent = lakh(N.owed_cr * E.o3((t - T("out", 0.1)) / 1.8));
+          op(blV, F(t, T("bill", 0.2), 1e9, 0.3)); op(blS, F(t, Tf("out", 0.3), 1e9, 0.3));
+          op(MV, F(t, T("moves", 0.2), 1e9, 0.3));
+          const w = t > Tf("moves", 0.45) ? 0.5 - 0.5 * Math.cos((t - Tf("moves", 0.45)) * 1.6) : 0;   // price swings +0 .. +1,000
+          mvP.textContent = `₹${inr(N.price + 1000 * w)}`;
+          mvB.textContent = lakh(N.owed_cr + N.per1000 * w);
+          op(nBlock, F(t, Tf("block", 0.55), 1e9, 0.3)); op(cup, F(t, Tf("block", 0.6), 1e9, 0.3));
+        }
+
+        // B: what falls due
+        if (scene(WV, T("cash"), T("fund"))) {
+          wbars.forEach((b, i) => {
+            const at = b.now ? T("cash", 0.2) : T("waves", 0.0) + (i - 1) * 0.18;
+            const u = E.o3((t - at) / 0.7);
+            b.r.setAttribute("y", WB - b.h * u); b.r.setAttribute("height", b.h * u);
+            const big = b.lab === "FY2028–29" || b.lab === "FY2031–32";
+            b.r.setAttribute("fill", b.now ? GREEN : (big && t > Tf("waves", 0.4) ? INK : GREY));
+            op(b.t, u > 0.9 ? 1 : 0);
+          });
+          op(nHold, F(t, Tf("cash", 0.75), 1e9, 0.3));
+        }
+        if (scene(RF, T("fund"), T("pays"))) {
+          rfF.setAttribute("width", 698 * E.io2((t - Tf("fund", 0.55)) / 1.0));
+          op(rfH, F(t, Tf("fund", 0.75), 1e9, 0.3));
+        }
+
+        // C: who pays, who gains, both
+        if (scene(WH, T("pays"), T("fam"))) {
+          const cols = F(t, T("pays") - 0.1, T("hold") - 0.1, 0.3);
+          op(cPay, cols * F(t, T("pays", 0.1), 1e9, 0.25)); op(cGain, cols * F(t, T("gains", 0.1), 1e9, 0.25)); op(cTax, cols * F(t, T("tax", 0.1), 1e9, 0.25));
+          op(VN, F(t, T("hold") - 0.1, 1e9, 0.3));
+          op(vA, F(t, T("hold", 0.1), 1e9, 0.3)); op(vAl, F(t, T("hold", 0.1), 1e9, 0.3));
+          const ub = E.o3((t - T("taxp", 0.1)) / 0.8);
+          vB.setAttribute("cx", L(1300, 1060, ub)); op(vB, ub > 0 ? 1 : 0); op(vBl, F(t, Tf("taxp", 0.2), 1e9, 0.3));
+          op(vC, F(t, Tf("taxp", 0.8), 1e9, 0.3));
+        }
+
+        // D: pawn it
+        if (scene(LN, T("fam"), T("plan"))) {
+          lb.forEach((b, i) => {
+            const u = E.o3((t - (i ? Tf("loans", 0.2) : T("loans", 0.0))) / 0.9);
+            b.r.setAttribute("y", LB - b.h * u); b.r.setAttribute("height", b.h * u); op(b.t, u > 0.9 ? 1 : 0);
+          });
+          showStamp(stL, t, Tf("loans", 0.45));
+          op(nPawn, F(t, Tf("fam", 0.55), 1e9, 0.3));
+        }
+        if (scene(BB, T("plan"), T("verdict"))) {
+          const loop = C((t - Tf("plan", 0.3)) / (T("verdict") - 0.4 - Tf("plan", 0.3)));
+          const x = loop < 0.4 ? L(380, 980, E.io2(loop / 0.4)) : loop < 0.6 ? 980 : L(980, 1580, E.io2((loop - 0.6) / 0.4));
+          bgl.setAttribute("transform", `translate(${x},640)`);
+          op(bgl, loop > 0.4 && loop < 0.6 ? 0 : 1);
+          op(nIn, F(t, T("same", 0.0), 1e9, 0.3)); op(nOut, F(t, Tf("same", 0.35), 1e9, 0.3)); op(nBaby, F(t, Tf("plan", 0.6), 1e9, 0.3));
+        }
+
+        // E: the verdict, and the dots that stop
+        if (scene(VD, T("verdict"), T("scam"))) {
+          op(quote, F(t, Tf("verdict", 0.25), 1e9, 0.3)); op(nImp, F(t, Tf("verdict", 0.7), 1e9, 0.3));
+          op(TL, F(t, T("nonew") - 0.1, 1e9, 0.3));
+          idots.forEach((d, i) => op(d, t > T("nonew", 0.1) + i * 1.2 / idots.length ? 1 : 0));
+          gapR.setAttribute("width", gapW * E.io2((t - Tf("nonew", 0.25)) / 0.7)); op(gapT, F(t, Tf("nonew", 0.4), 1e9, 0.3));
+        }
+
+        // F: scam? stop.
+        if (scene(SC, T("scam"), null)) {
+          showStamp(stScam, t, Tf("scam", 0.35));
+          op(nStop, F(t, Tf("scam", 0.85), 1e9, 0.2));
+          op(hide, F(t, T("hide", 0.2), 1e9, 0.3));
+        }
+
+        // ledger row, source line, illustration label
+        let rowA = 0;
+        for (const [a2, b2, cells] of ROWS) {
+          const f = F(t, T(a2, 0.3), T(b2) - 0.15, 0.3);
+          if (f > 0) { rowA = f; cells.forEach((c, i) => ($(`r${i}`).textContent = c)); }
+        }
+        $("row").style.opacity = rowA;
+        $("row").style.transform = `translateY(${(1 - rowA) * 30}px)`;
+        let sA = 0;
+        for (const [a2, b2, s] of SRCS) { const f = F(t, T(a2, 0.4), b2 ? T(b2) - 0.2 : 1e9, 0.3); if (f > 0) { sA = f; $("src").textContent = s; } }
+        $("src").style.opacity = rowA > 0 ? 0 : sA;
+        let iA = 0;
+        for (const [a2, b2] of ILLUS) iA = Math.max(iA, F(t, T(a2, 0.2), b2 ? T(b2) - 0.2 : 1e9, 0.3));
+        $("illus").style.opacity = rowA > 0 ? 0 : iA;
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

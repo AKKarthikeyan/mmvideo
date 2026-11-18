@@ -2,7 +2,7 @@
 
 **AK asked for these on 10 Nov 2026**, starting from a Gemini deep-research report. Every claim in that report was checked
 against primary sources; the verdicts are in [`SHORTS_FACTCHECK.md`](SHORTS_FACTCHECK.md). The rules apply to Moat & Margin,
-Moat Atlas, Indica Atlas, Data Kadai and The Inventor Desk, on YouTube Shorts and Instagram Reels.
+Moat Atlas, Indica Atlas, India Ledger and The Inventor Desk, on YouTube Shorts and Instagram Reels.
 
 **What to make, and how, is in [`SHORTS_FORMAT.md`](SHORTS_FORMAT.md) (the Reveal Loop), built on our own study of
 5,538 Shorts in our genres ([`SHORTS_STUDY.md`](SHORTS_STUDY.md)).** This file holds the rules every Short must meet.
@@ -162,7 +162,7 @@ shares, subscribers, the diagnosis, and the change made in the next one.
 | **Moat & Margin** | Household names and filing surprises: one company's number vs a rival's, a deal vs its own plan, a record with a catch | "X grew 24%. Y? 1.8." · "Signed for ₹50,000 crore. Its own plan? ₹9,500." | The filing itself (clip), counters, league tables; source line always; O5 disclaimer |
 | **Moat Atlas** | Places and infrastructure changing: airports, ports, plants, mines, cities, seen from space | "This was farmland in 2018." | Satellite before/after (s01), terrain (s02); first frame already wiping |
 | **Indica Atlas** | India's geography and trade: where things grow, leave and go; rivers, monsoon, borders | "Two-thirds of India's chicken exports leave from two ports." | Map already zooming on frame 1; exit-port map; wind map (s06) |
-| **Data Kadai** | Everyday numbers at a scale that shocks: prices, exports, population, cities | "₹1 lakh crore in ₹500 notes reaches 200 km." | Scale zoom (s12), dot regroup (s05), money breakdown (s04) |
+| **India Ledger** | Everyday numbers at a scale that shocks: prices, exports, population, cities | "₹1 lakh crore in ₹500 notes reaches 200 km." | Scale zoom (s12), dot regroup (s05), money breakdown (s04) |
 | **The Inventor Desk** | The story behind an everyday object: an accident, a rival, a lost patent | "The man who invented this never earned a rupee from it." | Patent drawing (s13), exploded object (s08), timeline (s11); AI pictures labelled "illustrative" |
 
 From 1 Feb 2027, an existing YPP channel needs **10M qualified Shorts views in the last 90 days** to earn any Shorts revenue,

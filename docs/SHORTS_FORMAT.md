@@ -92,7 +92,7 @@ series, all in the Reveal Loop.
 | | **Megabuild** | A giant Indian project in one verb | "India is [verb]ing a [thing]" |
 | **Indica Atlas** | **Not Where You Think** | A map belief, corrected | "[Place] is WAY further [x] than you think" |
 | | **Leaves From** | Where an everyday Indian product leaves the country, and who buys it | "Two-thirds of India's [x] leaves from two ports" |
-| **Data Kadai** | **Days of Work** | A price measured in days of an average wage | "How many days of work is a [thing]?" |
+| **India Ledger** | **Days of Work** | A price measured in days of an average wage | "How many days of work is a [thing]?" |
 | | **In ₹500 Notes** | A big number made physical | "₹[x] in ₹500 notes reaches [distance]" |
 | | **In Your Pocket** | India's trade story told through an object you own | "India exports ₹3 lakh crore of this" |
 | **UPSC Mains (Hindi)** | **आँकड़ों में संविधान** | One constitutional fact, shown in numbers an answer can use | "लोक सभा की सीटें आज भी 1971 से तय हैं" |
@@ -126,7 +126,7 @@ SOURCE: DMart results, 10 Oct 2026 · split is our arithmetic · Educational res
 SEND LINE: everyone shops at DMart and guesses far too high.
 ```
 
-**Data Kadai · In Your Pocket · "India exports ₹3 lakh crore of this"** (≈ 30 s, 76 words)
+**India Ledger · In Your Pocket · "India exports ₹3 lakh crore of this"** (≈ 30 s, 76 words)
 Data: DGCIS via Vonter/india-export-import, FY 2025–26 (`hyperframes/videos/dk-phones/story.js`).
 Visual: a phone sliding out of a pocket onto the all-India map, then the exit-port map and the destination arcs.
 ```

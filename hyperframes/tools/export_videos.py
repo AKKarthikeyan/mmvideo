@@ -1,4 +1,4 @@
-"""Build the export-story videos (Indica Atlas and Data Kadai) from DGCIS trade data.
+"""Build the export-story videos (Indica Atlas and India Ledger) from DGCIS trade data.
 
 usage: export_videos.py [video id ...]
 For each video in VIDEOS, computes the numbers from the DGCIS commodity x country x port data and writes
@@ -53,12 +53,12 @@ VIDEOS = {
                        title="INDIA'S SEAFOOD COAST"),
     "ia-spices": dict(channel="INDICA ATLAS", theme="atlas", product="SPICES", name="Spices",
                       title="WHERE INDIA'S SPICES SAIL FROM"),
-    # Data Kadai: the numbers
-    "dk-phones": dict(channel="DATA KADAI", theme="kadai", product="TELECOM INSTRUMENTS", name="Phones and telecom equipment",
+    # India Ledger: the numbers
+    "dk-phones": dict(channel="INDIA LEDGER", theme="kadai", product="TELECOM INSTRUMENTS", name="Phones and telecom equipment",
                       title="₹3 LAKH CRORE OF PHONES AND TELECOM GEAR"),
-    "dk-buffalo": dict(channel="DATA KADAI", theme="kadai", product="BUFFALO MEAT", name="Buffalo meat",
+    "dk-buffalo": dict(channel="INDIA LEDGER", theme="kadai", product="BUFFALO MEAT", name="Buffalo meat",
                        title="INDIA'S QUIET MEAT EXPORT"),
-    "dk-growth": dict(channel="DATA KADAI", theme="kadai", mode="ranking", title="INDIA'S FASTEST-GROWING BIG EXPORTS",
+    "dk-growth": dict(channel="INDIA LEDGER", theme="kadai", mode="ranking", title="INDIA'S FASTEST-GROWING BIG EXPORTS",
                       name="Exports over ₹20,000 crore", min_crore=20000, top=6),
 }
 NAMES = {"COPPER AND PRDCTS MADE OF COPR": "Copper and copper products", "TELECOM INSTRUMENTS": "Phones and telecom equipment",

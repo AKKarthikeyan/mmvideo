@@ -2,7 +2,9 @@
 
 AK shared a deep-research playbook for Data Kadai (@DataKadai) on 18 Nov 2026. As with the Gemini report of 10 Nov
 ([`SHORTS_FACTCHECK.md`](SHORTS_FACTCHECK.md)), each claim the plan depends on was checked before anything became a rule.
-The plan built from what survived is [`DATA_KADAI_PLAN.md`](DATA_KADAI_PLAN.md).
+The plan built from what survived is [`INDIA_LEDGER_PLAN.md`](INDIA_LEDGER_PLAN.md).
+The channel was renamed **India Ledger** (@IndiaLedgerOfficial) the same day; this check keeps the old name where it
+quotes the playbook.
 
 **Summary.**
 - **Right, and useful:**

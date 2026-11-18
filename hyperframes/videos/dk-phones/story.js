@@ -1,5 +1,5 @@
 window.STORY = {
- "channel": "DATA KADAI",
+ "channel": "INDIA LEDGER",
  "theme": "kadai",
  "title": "₹3 LAKH CRORE OF PHONES AND TELECOM GEAR",
  "name": "Phones and telecom equipment",

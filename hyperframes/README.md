@@ -1,6 +1,6 @@
 # HyperFrames visual library
 
-Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, Data Kadai, The Inventor Desk and Moat Atlas.
+Fifteen premium explainer visuals for Moat & Margin, Indica Atlas, India Ledger, The Inventor Desk and Moat Atlas.
 Each is a working HyperFrames project (HTML + GSAP, three.js where it is 3D) built on real data, so a new
 video starts from the closest sample instead of a blank page. AK asked on 26 Oct 2026 to keep these and use them
 in future videos. The contact sheet is `stills/contact-sheet.jpg`.
@@ -10,18 +10,18 @@ in future videos. The contact sheet is `stills/contact-sheet.jpg`.
 | 01 | Satellite before/after, wipe and measured label | Moat Atlas, Indica Atlas | Sentinel-2, Navi Mumbai airport site, Jan 2018 vs Jan 2026 | `samples/s01-satellite` |
 | 02 | 3D terrain flyover with river and pins | Indica Atlas | AWS Terrain Tiles + Natural Earth rivers, Haridwar to Nanda Devi | `samples/s02-terrain` |
 | 03 | Document on a desk: lit page, push-in, highlighter, quote card | Moat & Margin, Moat Atlas | Nomad letter, June 2004 (`public/letters/.../p34.png`) | `samples/s03-desk` |
-| 04 | Money-flow breakdown with a zoom into the small pieces | Moat & Margin, Data Kadai | DMart, Jul–Sep 2026, split from the `dmartstory` video | `samples/s04-money` |
-| 05 | Dot chart: 1,000 dots regroup | Data Kadai | Census of India 1951 and 2011 urban share | `samples/s05-dots` |
+| 04 | Money-flow breakdown with a zoom into the small pieces | Moat & Margin, India Ledger | DMart, Jul–Sep 2026, split from the `dmartstory` video | `samples/s04-money` |
+| 05 | Dot chart: 1,000 dots regroup | India Ledger | Census of India 1951 and 2011 urban share | `samples/s05-dots` |
 | 06 | Wind and flow map, particle trails | Indica Atlas | NOAA GFS 850 hPa, 15 Jul 2025 00 UTC | `samples/s06-wind` |
 | 07 | Globe with arcs and a ranked list | Moat Atlas | India's top five crude suppliers, 2023 (ranking only) | `samples/s07-globe` |
 | 08 | Exploded 3D object with labelled layers | The Inventor Desk | Generic smartphone built from primitives | `samples/s08-exploded` |
 | 09 | Patent-style drawing that draws itself, then lights up | The Inventor Desk | Style sample: drawing redrawn, not an original sheet | `samples/s09-patent` |
 | 10 | Still picture with depth (2.5D parallax) and falling leaves | Inventor Desk, Indica Atlas, Moat & Margin | Style sample: channel illustration (AI-generated) | `samples/s10-parallax` |
 | 11 | Fly-through timeline in 3D space | Inventor Desk, Indica Atlas | Transistor 1947 to iPhone 2007 | `samples/s11-timeline` |
-| 12 | Scale comparison with a log zoom-out | Data Kadai, Moat & Margin | ₹1 lakh crore in ₹500 notes ≈ 200 km (0.1 mm per note assumed) | `samples/s12-scale` |
+| 12 | Scale comparison with a log zoom-out | India Ledger, Moat & Margin | ₹1 lakh crore in ₹500 notes ≈ 200 km (0.1 mm per note assumed) | `samples/s12-scale` |
 | 13 | Big-type quote with the original line below | Moat & Margin | Nick Sleep, Nomad letter, June 2004 | `samples/s13-quote` |
 | 14 | Hand-drawn notes over a real page | All five | Nomad letter, June 2006 (`p99.png`) | `samples/s14-notes` |
-| 15 | 3D data map: states as lit prisms | Indica Atlas, Data Kadai | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
+| 15 | 3D data map: states as lit prisms | Indica Atlas, India Ledger | Lok Sabha seats by state (ECI) | `samples/s15-seatmap` |
 
 `samples/cards` makes the numbered title cards for the selection reel.
 
@@ -81,16 +81,16 @@ and map scenes so far), for testing a whole video in HyperFrames.
 `story.js` per video. `tools/export_videos.py` defines the videos (topic, channel, theme, title) and computes every
 number from DGCIS trade data (principal commodity × destination country × Indian port, monthly, via the ODbL mirror
 github.com/Vonter/india-export-import). Scenes: hook number, five-year growth, district map, exit ports on an
-all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and `kadai` (Data Kadai, warm white).
+all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and `kadai` (India Ledger, warm white; the id is kept from its old name, Data Kadai).
 
 | Video | Channel | Story (FY 2025–26) |
 | --- | --- | --- |
 | `ia-poultry` | Indica Atlas | Poultry exports ₹2,810 crore, nearly double; 66% left via Kochi and Thoothukudi; UAE 37% |
 | `ia-seafood` | Indica Atlas | Marine products ₹74,521 crore, +19%; Visakhapatnam 27%; USA 27%, China 18% |
 | `ia-spices` | Indica Atlas | Spices ₹37,644 crore, flat; Kochi and Nhava Sheva 41%; USA 14%, China 12% |
-| `dk-phones` | Data Kadai | Phones and telecom gear ₹3.03 lakh crore, +37%, 5.5× in four years; 69% flown from Chennai and Bengaluru; USA 58% |
-| `dk-buffalo` | Data Kadai | Buffalo meat ₹45,196 crore, +31%; UP inland depots (Dadri, Kanpur) 54%; Vietnam 18% |
-| `dk-growth` | Data Kadai | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
+| `dk-phones` | India Ledger | Phones and telecom gear ₹3.03 lakh crore, +37%, 5.5× in four years; 69% flown from Chennai and Bengaluru; USA 58% |
+| `dk-buffalo` | India Ledger | Buffalo meat ₹45,196 crore, +31%; UP inland depots (Dadri, Kanpur) 54%; Vietnam 18% |
+| `dk-growth` | India Ledger | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
 
 ```sh
 python3 hyperframes/tools/export_videos.py            # rebuild every story.js (downloads the mirror once, ~170 MB)

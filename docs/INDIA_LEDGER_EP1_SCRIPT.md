@@ -259,11 +259,11 @@ If you hold a gold bond: congratulations, you won the bet.
 If you pay income tax: congratulations, you also paid for it.
 
 **PICTURE:** dot chart (s05) — the "idle gold" pile, with a chunk of dots peeling off toward a bank.
-**SCREEN:** GOLD LOANS ≈ ₹5.1 LAKH CRORE · +105% IN A YEAR (MAY 2026)
-**SRC:** RBI sectoral credit data, as reported · VERIFY on the RBI release
+**SCREEN:** GOLD LOANS ≈ ₹5.52 LAKH CRORE · +88% IN A YEAR (JUL 2026)
+**SRC:** RBI Bulletin, Sep 2026, Current Statistics: bank credit by sector, 31 Jul 2026
 
 And families? They still won't deposit their gold. But they will pawn it.
-Bank loans against gold jewellery roughly doubled in a year, to about five lakh crore rupees.
+Bank loans against gold jewellery grew almost ninety percent in a year, to about five and a half lakh crore rupees.
 
 So the Indian family plan is: never sell the gold. Let the bank babysit it for a while.
 Same bangle goes in. Same bangle comes out. That's the whole difference.
@@ -289,10 +289,10 @@ Part of that one point six lakh crore is just the money the government borrowed.
 
 So we went bond by bond, all sixty seven of them, and took that out.
 
-**SCREEN:** REAL EXTRA COST ≈ ₹98,000 CRORE ≈ ₹670 PER INDIAN ⟳
-**SRC:** our bond-by-bond estimate: 67 issues vs the 10-year G-sec yield of each issue month (FRED) · at ₹13,345/g · ₹73,000 crore at ₹11,345/g, ₹1.22 lakh crore at ₹15,345/g · population VERIFY
+**SCREEN:** REAL EXTRA COST ≈ ₹98,000 CRORE ≈ ₹690 PER INDIAN ⟳
+**SRC:** our bond-by-bond estimate: 67 issues vs the 10-year G-sec yield of each issue month (FRED) · at ₹13,345/g · ₹73,000 crore at ₹11,345/g, ₹1.22 lakh crore at ₹15,345/g · per Indian: 142.6 crore people, MoHFW projection for 2026
 
-The real extra cost of the bet, compared with borrowing normally: close to one lakh crore rupees, at today's price. Roughly six hundred and seventy rupees for every Indian.
+The real extra cost of the bet, compared with borrowing normally: close to one lakh crore rupees, at today's price. Almost seven hundred rupees for every Indian.
 Smaller than the headline. Still the price of a lot of hospitals.
 
 Two. It wasn't useless.
@@ -300,8 +300,9 @@ Two. It wasn't useless.
 One estimate says the bonds saved India three point three billion dollars of gold imports in a single year.
 
 Three. It looked safe at the time.
-**SCREEN:** ₹31,050 (2012) → ₹31,438 (2018) · VERIFY
-Gold had gone almost nowhere for six years before the first bond was sold. Nobody knew it would quintuple.
+**SCREEN:** GOLD, ₹ PER 10 g: ₹30,164 (2012–13) → ₹26,534 (2015–16) → ₹31,193 (2018–19)
+**SRC:** RBI Handbook of Statistics on Indian Economy 2019, Table 39 (Mumbai, yearly average)
+In the three years before the first bond was sold, gold actually fell. For three years after, it barely moved. Nobody knew it would then go up five times.
 Hindsight is twenty four carat.
 
 Four. Gold doesn't only go up. It dipped on the way, including when import duty was cut in 2024.
@@ -331,7 +332,7 @@ How do you lose money on gold that only went up?
 ## Before recording
 
 - Every ⟳ figure: re-run `scripts/india_ledger_gold.py` with RBI's latest redemption price and paste its output.
-- Clear the three VERIFY lines (gold loans on the RBI release, the 2012–2018 prices from RBI or IBJA, the population
+- VERIFY lines cleared 18 Nov 2026 (gold loans, 2012–2018 prices, population; see WEEK1 section 2). Earlier note: clear the three VERIFY lines (gold loans on the RBI release, the 2012–2018 prices from RBI or IBJA, the population
   figure) or cut them.
 - Read it aloud once with a stopwatch: Act 3 is the longest, so trim there first if it runs over 10 minutes.
 - Captions: burned in English; Hindi audio track via `scripts/audio_tracks.py` (Hindi first, then Tamil).

@@ -17,7 +17,8 @@ PARQUET = ROOT / "out" / "hyperframes" / "cache" / "export-import.parquet"
 GMS_KG, GMS_DEPOSITORS = 31_164, 5_693          # Ministry of Finance statement, 25 Mar 2025 (to Nov 2024)
 MINE_OUTPUT_T = 1.62                             # India's primary gold output 2024-25 (as reported; Ministry of Mines)
 HOUSEHOLD_T = 31_000                             # WGC "Swarnim Udaan 2047", 4 Aug 2026
-POPULATION_CRORE = 146                           # VERIFY: MoHFW / RBI population projection for 2026
+POPULATION_CRORE = 142.59                        # projected population, 1 Mar 2026: 1,425.90 million. Report of the Technical
+#   Group on Population Projections 2011-2036 (MoHFW, July 2020), as tabled in MoSPI, Women and Men in India 2023, Table 1.1
 
 # --- The bond-by-bond model (D11). Inputs are files in data/india_ledger/ ---
 TRANCHES = ROOT / "data" / "india_ledger" / "sgb_tranches.csv"   # 67 tranches: issue date, issue price, grams sold, redemption

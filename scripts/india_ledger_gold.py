@@ -53,7 +53,9 @@ def imports():
         top = (f.groupby(col)["INR Value"].sum() / tot * 100).sort_values(ascending=False).head(6)
         print(f"  by {col.lower()}: " + ", ".join(f"{k} {v:.1f}%" for k, v in top.items()))
     print(f"  entry points used in FY26: {f.Port.nunique()}")
-    return b.t
+    shares = {col: (f.groupby(col)["INR Value"].sum() / tot * 100).sort_values(ascending=False) for col in ("Port", "Country")}
+    return {"by_fy": by.loc[2022:2026], "t26": b.t, "cr26": b.cr, "share26": share, "rank26": rank,
+            "ports": shares["Port"], "countries": shares["Country"], "n_ports": f.Port.nunique()}
 
 
 def sgb_model():
@@ -118,16 +120,23 @@ def sgb_model():
     print("  final maturities at today's price: " + ", ".join(f"FY{fy - 1}-{str(fy)[2:]} {crore(v)}" for fy, v in due.items()))
     big = t.sort_values("extra", ascending=False).head(3)
     print("  costliest tranches: " + "; ".join(f"{r.tranche} ({crore(r.extra)})" for r in big.itertuples()))
+    return {"tranches": t, "owed": owed, "per1000": o.units_g.sum() * 1000 / 1e7, "net": net,
+            "net_lo": net - o.units_g.sum() * 2000 / 1e7, "net_hi": net + o.units_g.sum() * 2000 / 1e7,
+            "per_indian": net / POPULATION_CRORE, "out_t": o.units_g.sum() / 1e6, "matured_rate": w, "matured_gsec": wy,
+            "early_cr": early.units_g.sum() * PRICE_TODAY / 1e7, "early_t": early.units_g.sum() / 1e6, "due": due,
+            "first": first}
 
 
 def main():
-    t26 = imports()
+    imp = imports()
+    t26 = imp["t26"]
     print("\n== Gold deposit scheme vs imports ==")
     print(f"  {GMS_KG / 1000:.1f} t in 9 years, {GMS_DEPOSITORS:,} depositors = {GMS_KG / 1000 / HOUSEHOLD_T * 100:.2f}% of household gold")
     print(f"  India imports that much in {GMS_KG / 1000 / t26 * 365:.1f} days (FY26 pace)")
     print(f"  Mines: {MINE_OUTPUT_T} t a year = {MINE_OUTPUT_T / t26 * 100:.2f}% of imports (1 g mined per {t26 / MINE_OUTPUT_T:,.0f} g imported)")
 
     sgb_model()
+
 
 if __name__ == "__main__":
     main()

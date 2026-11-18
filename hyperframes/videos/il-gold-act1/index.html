@@ -94,7 +94,7 @@
       const dot1 = el("circle", { cx: X(last[0]), cy: Y(last[1]), r: 12, fill: GOLD, stroke: "#f3efe6", "stroke-width": 4 }, CH);
       const lab0 = txt(`₹${inr(N.first)}`, { x: X(P[0][0]), y: Y(P[0][1]) - 30, "font-family": "Oswald", "font-weight": 700, "font-size": 48, fill: INK }, CH);
       const lab1 = txt(`₹${inr(N.today)}`, { x: X(last[0]) - 28, y: Y(last[1]) + 14, "text-anchor": "end", "font-family": "Oswald", "font-weight": 700, "font-size": 56, fill: INK }, CH);
-      const lab1d = txt("13 NOV 2026", { x: X(last[0]) - 150, y: Y(last[1]) + 58, "text-anchor": "end", "font-family": "Plex", "font-size": 28, fill: "#4f555e" }, CH);
+      const lab1d = txt(N.today_label.toUpperCase(), { x: X(last[0]) - 150, y: Y(last[1]) + 58, "text-anchor": "end", "font-family": "Plex", "font-size": 28, fill: "#4f555e" }, CH);
       const times = txt(`×${N.x}`, { x: (X(P[0][0]) + X(last[0])) / 2 - 40, y: Y(9000), "text-anchor": "middle", "font-family": "Oswald", "font-weight": 700, "font-size": 120, fill: GREEN }, CH);
       const plen = path.getTotalLength(), dlen = Math.hypot(X(last[0]) - X(li[0]), Y(last[1]) - Y(li[1]));
 
@@ -169,7 +169,7 @@
       const clV = txt("₹0", { x: 960, y: 610, "text-anchor": "middle", "font-family": "Oswald", "font-weight": 700, "font-size": 190, fill: GREEN }, CL_);
       txt("CAN BE CASHED AT THE NEXT WINDOWS, WHENEVER HOLDERS CHOOSE", { x: 960, y: 700, "text-anchor": "middle", "font-family": "Plex", "font-size": 32, fill: "#4f555e" }, CL_);
 
-      // ---------- tease of Act 2: 1 gram dug up, 445 bought ----------
+      // ---------- tease of Act 2: 1 gram dug up, the rest bought ----------
       const DOTS = el("g", {});
       const nd = N.mined_per + 1, cols = 40, step = 34;
       const dots = [];
@@ -194,7 +194,7 @@
       const SRCS = [
         ["hook", "bet", `Gold, ₹ per gram: RBI issue price of each of the 67 gold bonds, then RBI's redemption price, ${N.today_label}`],
         ["up", "week", `RBI · ₹${inr(N.first)} (Nov 2015) → ₹${inr(N.today)} (${N.today_label}) · our arithmetic`],
-        ["next", null, "Ministry of Mines 2024–25 (as reported) · DGCIS FY 2025–26 · our arithmetic"],
+        ["next", null, "Ministry of Mines, 2024–25 · DGCIS FY 2025–26 · our arithmetic"],
       ];
 
       H.render = (t) => {

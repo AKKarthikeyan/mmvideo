@@ -15,7 +15,8 @@ PARQUET = ROOT / "out" / "hyperframes" / "cache" / "export-import.parquet"
 # --- Typed-in figures, each with its source (checked 18 Nov 2026) ---
 # Bond figures (issued, raised, first tranche, yields) come from the files below, not from typed-in numbers.
 GMS_KG, GMS_DEPOSITORS = 31_164, 5_693          # Ministry of Finance statement, 25 Mar 2025 (to Nov 2024)
-MINE_OUTPUT_T = 1.62                             # India's primary gold output 2024-25 (as reported; Ministry of Mines)
+MINE_OUTPUT_T = 1.627                            # India gold output 2024-25, "Gold (total)" 1,627 kg: Ministry of Mines, Monthly Summary
+#   April 2025 (dated 30 May 2025), table 2.1, source IBM. (2023-24: 1,583 kg.) Excludes gold refined from imported concentrate
 HOUSEHOLD_T = 31_000                             # WGC "Swarnim Udaan 2047", 4 Aug 2026
 POPULATION_CRORE = 142.59                        # projected population, 1 Mar 2026: 1,425.90 million. Report of the Technical
 #   Group on Population Projections 2011-2036 (MoHFW, July 2020), as tabled in MoSPI, Women and Men in India 2023, Table 1.1

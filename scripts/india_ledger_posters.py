@@ -25,6 +25,7 @@ FONTS = ROOT / "hyperframes" / "shared" / "fonts"
 OSWALD = next(ROOT.glob("hyperframes/videos/*/assets/fonts/Oswald-700.woff2"), None)
 
 BG, INK, MUTED, GREY, GOLD, RED, GRID = "#f3efe6", "#14161a", "#4f555e", "#b9b09b", "#a8780a", "#c8431f", "#ddd5c4"
+GREEN = "#0e7c66"  # channel accent (AK, 18 Nov 2026: keep ledger green). Gold only for things that are gold: price line, mined gram
 SIZES = {"carousel": (1080, 1350), "community": (1080, 1080)}
 CW = 936  # chart width (1080 minus 72px margins)
 
@@ -59,12 +60,12 @@ def hbars(rows, h, unit="%", fmt="{:.1f}"):
         y = i * gap
         w = (CW - 40 - 19 * len(fmt.format(vmax) + unit)) * v / vmax
         out.append(text(0, y + ls, label, ls, INK if hi else MUTED, weight=600 if hi else 400))
-        out.append(f'<rect x="0" y="{y + ls + 10:.1f}" width="{w:.1f}" height="{bh:.1f}" rx="4" fill="{GOLD if hi else GREY}"/>')
+        out.append(f'<rect x="0" y="{y + ls + 10:.1f}" width="{w:.1f}" height="{bh:.1f}" rx="4" fill="{GREEN if hi else GREY}"/>')
         out.append(text(w + 14, y + ls + 10 + bh / 2 + vs * 0.36, fmt.format(v) + unit, vs, INK, weight=700, family="Oswald"))
     return "".join(out)
 
 
-def vbars(cats, vals, h, hi_last=True, color=GOLD, label_fmt="{}", top_pad=56, cw=CW, vsize=32):
+def vbars(cats, vals, h, hi_last=True, color=GREEN, label_fmt="{}", top_pad=56, cw=CW, vsize=32):
     n = len(vals)
     slot = cw / n
     bw = min(110, slot * 0.6)
@@ -111,8 +112,8 @@ def line_chart(t, h):
     return "".join(out)
 
 
-def dots(h, n_big=445):
-    """445 grey dots (imported) and 1 gold dot (mined in India)."""
+def dots(h, n_big):
+    """One grey dot per gram imported (n_big) for the one gram mined in India (gold dot)."""
     cols = 30
     r = 9
     step = CW / cols
@@ -124,7 +125,7 @@ def dots(h, n_big=445):
     rows = (n_big + 1 + cols - 1) // cols
     yb = 20 + rows * step * 0.92 + 30
     out.append(text(0, yb, "● 1 gram dug up in India", 30, INK, weight=600))
-    out.append(text(CW, yb, "445 grams imported ●", 30, MUTED, "end"))
+    out.append(text(CW, yb, f"{n_big} grams imported ●", 30, MUTED, "end"))
     return "".join(out), yb + 20
 
 
@@ -134,7 +135,7 @@ def days_vs_years(h):
            f'<rect x="0" y="{base + 50}" width="{CW}" height="56" rx="4" fill="{GREY}"/>',
            text(20, base + 90, "9 YEARS → 31 TONNES", 34, INK, weight=700, family="Oswald"),
            text(0, base + 190, "India's gold imports, at the FY 2025–26 pace", 28, MUTED),
-           f'<rect x="0" y="{base + 210}" width="{CW * 16 / (9 * 365):.1f}" height="56" rx="4" fill="{GOLD}"/>',
+           f'<rect x="0" y="{base + 210}" width="{CW * 16 / (9 * 365):.1f}" height="56" rx="4" fill="{GREEN}"/>',
            text(26, base + 250, "16 DAYS → 31 TONNES", 34, INK, weight=700, family="Oswald")]
     return "".join(out)
 
@@ -160,10 +161,10 @@ def slides(imp, sgb):
                   note=f"Gold, ₹ per gram: RBI's issue price for each of the 67 gold bonds (2015–24), then RBI's redemption price on {G.PRICE_LABEL}.",
                   stamp=f"THE GOVERNMENT OWES {cr(sgb['owed']).upper()}",
                   src=f"RBI SGB issue and redemption prices · owed: our arithmetic at ₹{G.PRICE_TODAY:,}/g"))
-    S.append(dict(title=f"India digs up 1 gram of gold. It buys {mined_per:,.0f}.",
+    S.append(dict(n_mined=round(mined_per), title=f"India digs up 1 gram of gold. It buys {mined_per:,.0f}.",
                   chart="dots",
-                  note=f"India mined about {G.MINE_OUTPUT_T} tonnes in 2024–25 and imported {t26:,.0f} tonnes in 2025–26.",
-                  src="Ministry of Mines (as reported) · DGCIS FY 2025–26 · our arithmetic"))
+                  note=f"India mined {G.MINE_OUTPUT_T * 1000:,.0f} kg of gold in 2024–25 and imported {t26:,.0f} tonnes in 2025–26.",
+                  src="Ministry of Mines, 2024–25 · DGCIS FY 2025–26 · our arithmetic"))
     S.append(dict(title=f"{(b.cr / a.cr - 1) * 100:.0f}% more money. {abs(b.t / a.t - 1) * 100:.0f}% less gold.",
                   chart=lambda h: two_panels(cats, fy, h),
                   note=f"Gold is India's #{imp['rank26']:.0f} import, after crude oil: {cr(imp['cr26'])}, {imp['share26']:.1f}% of everything India bought in 2025–26.",
@@ -199,12 +200,12 @@ def slides(imp, sgb):
                   bullets=["Owing isn't losing: part of the bill is money it borrowed anyway, and it paid 2.5% interest instead of about 7%.",
                            f"The estimate moves with gold: {cr(sgb['net_lo'])} to {cr(sgb['net_hi'])} if gold moves ₹2,000 a gram.",
                            "It wasn't useless: one estimate says the bonds saved $3.3 billion of gold imports in 2023–24.",
-                           "It looked safe in 2015: gold had gone nowhere for years. Hindsight is 24 carat.",
+                           "It looked safe in 2015: gold had fallen for three years (RBI). Hindsight is 24 carat.",
                            "The bill moves every day with the price of gold."],
                   src="Our bond-by-bond estimate (67 issues) · Business Standard, Mar 2024 · educational research, not investment advice"))
     S.append(dict(kind="end", title="The full story",
                   bullets=["How Do You Lose Money on Gold That Only Went Up?", "Watch on India Ledger · @IndiaLedgerOfficial"],
-                  sources=["RBI: SGB issue and redemption prices, Gold Monetisation Scheme FAQ",
+                  sources=["RBI: SGB issue and redemption prices, Gold Monetisation Scheme FAQ, Handbook of Statistics 2019 (Table 39)",
                            "DGCIS foreign trade data (via Vonter/india-export-import, ODbL)",
                            "Ministry of Finance: Gold Monetisation Scheme statement, Mar 2025",
                            "World Gold Council: household gold, Aug 2026 · Ministry of Mines: output 2024–25",
@@ -214,13 +215,13 @@ def slides(imp, sgb):
 
 
 def two_panels(cats, fy, h):
-    """Tonnes (grey) and ₹ lakh crore (gold) as two small charts, never one dual-axis chart."""
+    """Tonnes (ink) and ₹ lakh crore (green) as two small charts, never one dual-axis chart."""
     half = (CW - 60) / 2
     def panel(vals, color, fmt, title):
         body = vbars(cats, vals, h - 50, hi_last=True, color=color, label_fmt=fmt, cw=half)
         return text(0, 26, title, 28, INK, weight=600) + f'<g transform="translate(0,50)">{body}</g>'
     left = panel([round(v) for v in fy.t], INK, "{:,}", "Tonnes imported")
-    right = panel([round(v / 100000, 2) for v in fy.cr], GOLD, "₹{:.2f}L", "Paid, ₹ lakh crore")
+    right = panel([round(v / 100000, 2) for v in fy.cr], GREEN, "₹{:.2f}L", "Paid, ₹ lakh crore")
     return f'<g>{left}</g><g transform="translate({half + 60},0)">{right}</g>'
 
 
@@ -230,7 +231,7 @@ def page(s, i, n, w, h):
     chart_h = s.get("ch_sq" if sq else "ch", 430 if sq else 580)
     chart_svg = ""
     if s.get("chart") == "dots":
-        body, used = dots(chart_h)
+        body, used = dots(chart_h, s["n_mined"])
         chart_svg = f'<svg width="{CW}" height="{used:.0f}" viewBox="0 0 {CW} {used:.0f}">{body}</svg>'
         if sq:
             chart_svg = f'<svg width="{CW}" height="{chart_h}" viewBox="0 0 {CW} {used:.0f}">{body}</svg>'
@@ -248,7 +249,7 @@ def page(s, i, n, w, h):
 html, body {{ margin: 0; width: {w}px; height: {h}px; background: {BG}; color: {INK}; overflow: hidden; }}
 .p {{ box-sizing: border-box; width: {w}px; height: {h}px; padding: {44 if sq else 60}px 72px {36 if sq else 48}px;
      display: flex; flex-direction: column; gap: {14 if sq else 22}px; position: relative; }}
-.top {{ display: flex; justify-content: space-between; font: 700 {26 if sq else 30}px/1 Oswald; letter-spacing: .08em; color: {GOLD}; }}
+.top {{ display: flex; justify-content: space-between; font: 700 {26 if sq else 30}px/1 Oswald; letter-spacing: .08em; color: {GREEN}; }}
 .top span:last-child {{ color: {MUTED}; }}
 h1 {{ margin: 0; font: 700 {title_px}px/1.02 Oswald; letter-spacing: .01em; text-transform: uppercase; }}
 .note {{ font: 400 {26 if sq else 30}px/1.35 Inter; color: {INK}; }}
@@ -257,7 +258,7 @@ h1 {{ margin: 0; font: 700 {title_px}px/1.02 Oswald; letter-spacing: .01em; text
         border-top: 3px solid {INK}; padding-top: 12px; }}
 .stamp {{ align-self: flex-start; white-space: nowrap; font: 700 {34 if sq else 38}px/1 Oswald; letter-spacing: .03em; color: {RED};
          border: 4px solid {RED}; margin-right: 24px; padding: 10px 16px 12px; transform: rotate(-2deg); }}
-.hero {{ font: 700 {92 if sq else 104}px/1 Oswald; color: {GOLD}; text-transform: uppercase; white-space: nowrap; }}
+.hero {{ font: 700 {92 if sq else 104}px/1 Oswald; color: {GREEN}; text-transform: uppercase; white-space: nowrap; }}
 .row {{ display: flex; justify-content: space-between; align-items: center; }}
 .swipe {{ font: 700 {30 if sq else 36}px/1 Oswald; white-space: nowrap; }}
 ul {{ margin: 0; padding-left: 1.1em; font: 400 {28 if sq else 34}px/1.35 Inter; }} li {{ margin: 0 0 {10 if sq else 18}px; }}
@@ -280,7 +281,7 @@ RENDER_JS = r"""
 const {chromium} = require('playwright');
 (async () => {
   const [dir, w, h, n] = process.argv.slice(2);
-  const b = await chromium.launch();
+  const b = await chromium.launch(process.env.PW_CHANNEL ? {channel: process.env.PW_CHANNEL} : {});
   const p = await b.newPage({viewport: {width: +w, height: +h}, deviceScaleFactor: 1});
   const over = [];
   for (let i = 1; i <= +n; i++) {
@@ -295,6 +296,18 @@ const {chromium} = require('playwright');
   console.log(over.length ? `OVERFLOW on slides ${over.join(', ')}` : 'no overflow');
 })();
 """
+
+
+def node_env():
+    """Mac Mini: Playwright lives outside the repo in ~/.mmvideo-tools and drives the installed Google Chrome (no browser download)."""
+    import os
+    env = dict(os.environ)
+    tools = Path.home() / ".mmvideo-tools" / "node_modules"
+    if tools.exists():
+        env["NODE_PATH"] = str(tools) + (os.pathsep + env["NODE_PATH"] if env.get("NODE_PATH") else "")
+    if Path("/Applications/Google Chrome.app").exists():
+        env.setdefault("PW_CHANNEL", "chrome")
+    return env
 
 
 def main():
@@ -315,7 +328,7 @@ def main():
         shutil.copy(OSWALD, d / "fonts" / "Oswald-700.woff2")
         for i, s in enumerate(S):
             (d / f"{i + 1:02d}.html").write_text(page(s, i, len(S), w, h))
-        r = subprocess.run(["node", str(js), str(d), str(w), str(h), str(len(S))], capture_output=True, text=True)
+        r = subprocess.run(["node", str(js), str(d), str(w), str(h), str(len(S))], capture_output=True, text=True, env=node_env())
         print(name, f"{w}x{h}:", (r.stdout + r.stderr).strip())
     print("written to", OUT)
 

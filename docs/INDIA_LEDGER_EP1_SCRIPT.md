@@ -58,13 +58,13 @@ So how did all this happen? Let's start with a number almost nobody has seen.
 ## ACT 2 · The problem India couldn't dig its way out of (0:50–2:30)
 
 **PICTURE:** a single gram of gold on one side of a scale; on the other, a pile that keeps growing.
-**SCREEN:** 1 g DUG UP · 445 g BOUGHT
-**SRC:** Ministry of Mines 2024–25 (as reported) · DGCIS FY 2025–26 · our arithmetic
+**SCREEN:** 1 g DUG UP · 443 g BOUGHT
+**SRC:** Ministry of Mines, monthly summary, 2024–25 (1,627 kg) · DGCIS FY 2025–26 · our arithmetic
 
 **VO:**
-For every one gram of gold India digs out of its own ground, it buys four hundred and forty five.
+For every one gram of gold India digs out of its own ground, it buys four hundred and forty three.
 
-India mines about one and a half tonnes a year. Last year it imported seven hundred and twenty one.
+India mines about one point six tonnes a year. Last year it imported seven hundred and twenty one.
 
 Which makes gold India's second-biggest import. Right after crude oil.
 
@@ -84,7 +84,7 @@ Eighty six percent more money. Eighteen percent less gold. Like your vegetable v
 **PICTURE:** flow map (s07), lines arriving from Switzerland and the UAE into Indian airports; the dots swell by share.
 **SCREEN:** DELHI AIRPORT 36% · MUMBAI 24% · CHENNAI 14% · GIFT CITY 7%
 
-Most of it doesn't come by ship. It flies in. A third of India's gold lands at one airport: Delhi.
+Most of it doesn't come by ship. It flies in. More than a third of India's gold lands at one airport: Delhi.
 About half of it arrives from Switzerland and the UAE, which refine and trade it.
 
 **SRC:** DGCIS principal commodity × port × country, FY 2025–26 · shares: our arithmetic
@@ -92,9 +92,10 @@ About half of it arrives from Switzerland and the UAE, which refine and trade it
 Every one of those grams is paid for in dollars. And dollars are what a country runs short of when it imports too much.
 
 So in 2015, the government decided to do something about it.
-On the same day, it launched two plans.
+On one day, it launched three gold schemes. Two of them matter here.
 
 **SCREEN:** 5 NOV 2015 · PLAN A · PLAN B
+**SRC:** PIB, Ministry of Finance, 5 Nov 2015 (the third scheme, India Gold Coins, is left out)
 
 Plan A: borrow the gold that's already here.
 Plan B: if you can't get the gold, sell people something that feels like gold.
@@ -336,4 +337,4 @@ How do you lose money on gold that only went up?
   figure) or cut them.
 - Read it aloud once with a stopwatch: Act 3 is the longest, so trim there first if it runs over 10 minutes.
 - Captions: burned in English; Hindi audio track via `scripts/audio_tracks.py` (Hindi first, then Tamil).
-- Chapters: 0:00 The paradox · 0:50 1 gram vs 445 · 2:30 Plan A · 3:50 Plan B · 6:30 Who pays · 8:30 What the numbers hide.
+- Chapters: 0:00 The paradox · 0:50 1 gram vs 443 · 2:30 Plan A · 3:50 Plan B · 6:30 Who pays · 8:30 What the numbers hide.

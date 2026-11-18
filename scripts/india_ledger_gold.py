@@ -24,7 +24,10 @@ TRANCHES = ROOT / "data" / "india_ledger" / "sgb_tranches.csv"   # 67 tranches: 
 #   price. From the RBI tranche data as tabled on Wikipedia ("Sovereign Gold Bond", fetched 18 Nov 2026); its totals match
 #   RBI's 146.96 t and Rs 72,274 crore exactly. Redemption prices of matured tranches are RBI final-redemption prices.
 YIELDS = ROOT / "data" / "india_ledger" / "india_10y_yield_fred.csv"  # FRED INDIRLTLT01STM, India 10-year G-sec, monthly
-PRICE_TODAY = 14_024      # Rs/g, RBI final redemption price of SGB 2018-19 Series III, 13 Nov 2026 (IBJA 999 average)
+PRICE_TODAY = 13_345      # Rs/g, RBI redemption price for the premature redemption of SGB 2020-21 Series II due 19 Nov 2026
+#   (RBI press release of 18 Nov 2026, prid=63996: simple average of IBJA 999 closing prices, 16-18 Nov 2026).
+#   Previous value 14,024 (final redemption of SGB 2018-19 Series III, 13 Nov 2026). Update all three lines together.
+PRICE_DATE, PRICE_LABEL = "2026-11-19", "19 Nov 2026"
 TODAY = "2026-11-18"
 TERM_YEARS = 8
 COUPON_HIGH_UNTIL = 3     # tranches 1-3 (FY 2015-16) paid 2.75%; from 2016-17 Series I, 2.5%
@@ -91,7 +94,7 @@ def sgb_model():
     m, o = t[t.matured], t[~t.matured]
     print(f"  matured and repaid: {len(m)} tranches, {m.units_g.sum() / 1e6:.2f} t; still out (at most): {o.units_g.sum() / 1e6:.2f} t")
     owed = o.units_g.sum() * PRICE_TODAY / 1e7
-    print(f"  owed on bonds still out, at Rs {PRICE_TODAY:,}/g (RBI, 13 Nov 2026): {crore(owed)}")
+    print(f"  owed on bonds still out, at Rs {PRICE_TODAY:,}/g (RBI, {PRICE_LABEL}): {crore(owed)}")
     print(f"  every Rs 1,000 on a gram moves that by {crore(o.units_g.sum() * 1000 / 1e7)}")
     for name, part in (("already repaid", m), ("still out, settled today", o), ("ALL", t)):
         print(f"  {name:26s} gold gain {crore(part.gold_gain.sum()):>18s}  interest saved {crore(part.saved.sum()):>16s}"

@@ -17,11 +17,11 @@ on that gold, and lost**. That story has not been told with the numbers.
 | Test | Pass? | Why |
 | --- | --- | --- |
 | Familiar | Yes | Every family has gold and an opinion on it; "your mother's gold" is recognised in one second |
-| Hidden | Yes | Almost nobody knows that the government sold gold it never owned, or that it owes ₹1.72 lakh crore on it |
+| Hidden | Yes | Almost nobody knows that the government sold gold it never owned, or that it owes ₹1.64 lakh crore on it |
 | Send | Yes | To the family group ("Amma was right"), and by every gold-bond holder ("we're on the winning side") |
 | **Paradox** | Yes | The same rise in the gold price made families richer and the government poorer |
 | **Suspense** | Yes | "How do you lose money on gold that only goes up?" can't be answered from the hook; the answer lands at about 6 minutes |
-| **Why now** | Yes | The payouts have started (D26), ₹84,000 crore can be called in at the holders' choice (D27), the 1 Feb 2027 Budget must provide for the wave ahead (D28), and a third attempt to mobilise household gold is on the table (D29) |
+| **Why now** | Yes | The payouts have started (D26), ₹80,000 crore can be called in at the holders' choice (D27), the 1 Feb 2027 Budget must provide for the wave ahead (D28), and a third attempt to mobilise household gold is on the table (D29) |
 
 ## 2. The data backbone (checked 18 Nov 2026)
 
@@ -37,9 +37,9 @@ Status: **✓P** primary source read · **✓S** secondary report of a primary s
 | D6 | First tranche | Issued ₹2,684/g, redeemed ₹6,132/g (30 Nov 2023); RBI: 12.9% a year | ✓P / ✓S | RBI press release 2023–24/1359; Outlook Money |
 | D7 | What a normal government loan cost that month | 7.75% (10-year bond, Nov 2015 average) | ✓S | FRED series INDIRLTLT01STM |
 | D8 | Still outstanding | At most 122.8 t: 24 tranches (24.19 t) have matured and been repaid. The reported 125.3 t (Free Press Journal, Oct 2026) is stale | ✓S + ≈ | Tranche table `data/india_ledger/sgb_tranches.csv`; our arithmetic |
-| D9 | Owed today | ₹1.72 lakh crore at ₹14,024/g, RBI's final-redemption price of 13 Nov 2026 | ≈ | our arithmetic; re-run with RBI's latest redemption price on the build day |
+| D9 | Owed today | ₹1.64 lakh crore at ₹13,345/g, RBI's redemption price for 19 Nov 2026 (press release of 18 Nov 2026; was ₹1.72 lakh crore at ₹14,024/g on 13 Nov) | ≈ | our arithmetic; re-run with RBI's latest redemption price on the build day |
 | D10 | Sensitivity | Every ₹1,000 on the price of a gram adds ₹12,277 crore | ≈ | our arithmetic |
-| D11 | The real extra cost (vs borrowing normally) | **≈ ₹1.06 lakh crore** at ₹14,024/g (₹82,000 crore at ₹12,024; ₹1.31 lakh crore at ₹16,024); ≈ ₹730 per Indian. Already paid: ₹11,087 crore on the 24 matured tranches. Matured bonds cost the government about 16.5% a year, against 7.1% on normal bonds | ≈ ✓ | Bond-by-bond model in `scripts/india_ledger_gold.py` (checked 18 Nov 2026): 67 tranches, totals match RBI; normal-bond rate = 10-year G-sec yield of each issue month (FRED). Not counted: tax-free gains and the ₹50/g online discount (both raise the cost), early redemptions at lower prices (lower it). Population figure still **VERIFY** |
+| D11 | The real extra cost (vs borrowing normally) | **≈ ₹97,900 crore** at ₹13,345/g (₹73,300 crore at ₹11,345; ₹1.22 lakh crore at ₹15,345); ≈ ₹670 per Indian. Already paid: ₹11,087 crore on the 24 matured tranches. Matured bonds cost the government about 16.5% a year, against 7.1% on normal bonds | ≈ ✓ | Bond-by-bond model in `scripts/india_ledger_gold.py` (checked 18 Nov 2026): 67 tranches, totals match RBI; normal-bond rate = 10-year G-sec yield of each issue month (FRED). Not counted: tax-free gains and the ₹50/g online discount (both raise the cost), early redemptions at lower prices (lower it). Population figure still **VERIFY** |
 | D12 | Already paid to FY 2024–25 | ₹11,801 crore in redemptions, ₹6,055 crore in interest | ✓S | MoF, as reported |
 | D13 | The reserve fund for redemptions | Covers about half of the outstanding bonds (Apr 2025) | ✓S | Business Today |
 | D14 | The government's own verdict | "Fairly high-cost borrowing"; gold imports did not fall as expected (Ajay Seth, Economic Affairs Secretary, Feb 2025); no new issues since Feb 2024 | ✓S | ThePrint; Wikipedia |
@@ -55,7 +55,7 @@ Status: **✓P** primary source read · **✓S** secondary report of a primary s
 | D24 | Household gold | 31,000 t (estimates 23,000–34,600) | ✓P | WGC "Swarnim Udaan 2047", 4 Aug 2026 |
 | D25 | Tax rule | From the 2026 Budget, gains are tax-free only for bonds bought at issue and held to maturity | ✓S | Wikipedia; Business Today |
 | D26 | **Why now:** the bill is arriving | 13 Nov 2026: SGB 2018-19 Series III paid out at ₹14,024/g, sold at ₹3,183 (+341%, 4.4×; +348% for online buyers, who paid ₹3,133) | ✓P | RBI press release; RBI tranche data |
-| D27 | **Why now:** holders can call it in | 32 tranches (59.8 t) are past 5 years and can be cashed at any redemption window: ₹83,897 crore at today's price | ≈ | tranche table; our arithmetic |
+| D27 | **Why now:** holders can call it in | 32 tranches (59.8 t) are past 5 years and can be cashed at any redemption window: ₹79,835 crore at ₹13,345/g (19 Nov 2026) | ≈ | tranche table; our arithmetic |
 | D28 | **Why now:** the wave ahead | Final maturities at today's price: FY 2028–29 ₹45,370 crore; FY 2029–30 ₹37,914 crore; FY 2031–32 ₹62,177 crore. The 1 Feb 2027 Budget must provide for it | ≈ | tranche table; our arithmetic |
 | D29 | **Why now:** a third try is proposed | WGC's "Swarnim Udaan 2047" (4 Aug 2026) proposes mobilising 10–15% of household gold and a National Gold Board | ✓S | WGC press release; Business Today |
 
@@ -73,8 +73,8 @@ Status: **✓P** primary source read · **✓S** secondary report of a primary s
 | **1. The paradox** | 0:00–0:45 | Script below. Ends on the question. | D1, D9, D17 | Frame 1: a mother's bangle, then a bond certificate sliding over it |
 | **2. The trap** | 0:45–2:30 | The headline everyone shares: "Gold bonds gave investors 300%!" Turn it round: every rupee of that was paid by someone. The first tranche: ₹2,684 → ₹6,132, 12.9% a year, when a normal government loan cost 7.75%. **But** why did the government need paper gold at all? | D6, D7 | Document close-up (s03) of RBI's redemption notice; two interest-rate bars |
 | **3. The mechanism** | 2:30–6:30 | **(a) The problem:** India mines 1 gram for every 445 it buys; gold is its second-biggest import, paid in dollars. Our map of the 22 entry points. **So** the government tried two plans on the same day in 2015. **(b) Plan A, borrow the real gold:** 31 tonnes in 9 years from 5,693 depositors, what India imports in 16 days. **Because** deposited jewellery is melted. You get back a bar, never your mother's bangle. **(c) Plan B, sell paper gold:** 67 tranches, 147 tonnes, ₹72,274 crore. **And here is the catch:** **the government sold gold it never owned.** It was a loan. The rupees were spent like any borrowing, with a promise to repay at whatever gold costs on the day. That is a bet that gold won't rise much. Gold went from ₹26,840 to about ₹1.40 lakh per 10 g: 5.2×. Amma held the real thing and won both ways. | D2–D5, D16–D21 | Flow map (s07) of imports; timeline (s11) with Plan A's 9-year crawl vs the 16-day counter; money breakdown (s04) of a bond: "your ₹ → the budget → the promise" |
-| **4. Your wallet** | 6:30–8:30 | **The bill:** about 123 tonnes still out, ₹1.72 lakh crore owed; every ₹1,000 on a gram adds ₹12,277 crore. The bonds already repaid cost about 16.5% a year, more than double a normal loan's 7.1%. A reserve fund covers about half. **Who pays:** the budget, so every taxpayer. **Who gains:** bondholders, tax-free if they bought at issue and hold to maturity. **And families now?** They pawn, not sell: bank gold loans doubled to about ₹5.1 lakh crore. The government's own verdict: costly borrowing, imports didn't fall. | D8–D10, D12–D14, D22, D25 | Scale (s12): the ₹12,277 crore per ₹1,000 counter; dot chart (s05): who paid, who gained |
-| **5. What the numbers hide** | 8:30–9:30 | (1) **Owing isn't losing.** Part of the ₹1.72 lakh crore is just the money it borrowed, and it paid only 2.5% interest instead of about 7%. Our bond-by-bond estimate of the real extra cost: about ₹1.06 lakh crore, roughly ₹730 per Indian, at today's price. It rises or falls by ₹12,000 crore with every ₹1,000 on a gram. (2) **It wasn't useless:** one estimate says it saved $3.3 bn of imports in a single year. (3) **It looked safe in 2015:** gold had been flat for six years. (4) The bill moves every day with the price. Then the loop: "If you hold a gold bond, you won this bet. If you pay tax, you're on both sides. So who was right about gold? Because in 2015…" | D11, D15, D23 | Document close-up of the script's assumptions; the bill counter ticking with the price |
+| **4. Your wallet** | 6:30–8:30 | **The bill:** about 123 tonnes still out, ₹1.64 lakh crore owed; every ₹1,000 on a gram adds ₹12,277 crore. The bonds already repaid cost about 16.5% a year, more than double a normal loan's 7.1%. A reserve fund covers about half. **Who pays:** the budget, so every taxpayer. **Who gains:** bondholders, tax-free if they bought at issue and hold to maturity. **And families now?** They pawn, not sell: bank gold loans doubled to about ₹5.1 lakh crore. The government's own verdict: costly borrowing, imports didn't fall. | D8–D10, D12–D14, D22, D25 | Scale (s12): the ₹12,277 crore per ₹1,000 counter; dot chart (s05): who paid, who gained |
+| **5. What the numbers hide** | 8:30–9:30 | (1) **Owing isn't losing.** Part of the ₹1.64 lakh crore is just the money it borrowed, and it paid only 2.5% interest instead of about 7%. Our bond-by-bond estimate of the real extra cost: close to ₹1 lakh crore (₹97,900 crore), roughly ₹670 per Indian, at today's price. It rises or falls by ₹12,000 crore with every ₹1,000 on a gram. (2) **It wasn't useless:** one estimate says it saved $3.3 bn of imports in a single year. (3) **It looked safe in 2015:** gold had been flat for six years. (4) The bill moves every day with the price. Then the loop: "If you hold a gold bond, you won this bet. If you pay tax, you're on both sides. So who was right about gold? Because in 2015…" | D11, D15, D23 | Document close-up of the script's assumptions; the bill counter ticking with the price |
 
 Rules: a "but", "so" or "and here's the catch" every 60–90 s; the source on screen for every number; "our arithmetic" or
 "our estimate" on every computed figure; non-partisan (the scheme had a real goal and a real counterpoint, D15);
@@ -88,11 +88,11 @@ The Government of India found a way.
 In 2015, it made a bet against your mother.
 It asked her to hand over her gold. She said no.
 So it sold her paper gold instead.
-Today, it owes about one point seven lakh crore rupees on it.
+Today, it owes about one point six lakh crore rupees on it.
 Not because anyone stole it. Not because gold crashed.
 Gold went up. That's exactly why it lost.
 And this isn't history. Last week it paid back 4.4 times the price on one batch of these bonds,
-and holders can call in another eighty four thousand crore whenever they like.
+and holders can call in about eighty thousand crore more whenever they like.
 To see how, start with a number almost nobody has seen:
 the gram of gold India digs out of its own ground, for every 445 it buys.
 ```
@@ -107,19 +107,19 @@ them unlabelled.
 Data: D2, D3, D8–D10. Visual: frame 1 is a gold-bond certificate with a counter already running.
 ```
 [0.0]  How do you lose money on gold that only went up?   GOLD 5× ↑ · LOST?
-[3.0]  Ask the government. It owes one point seven
-       lakh crore rupees on it.                             ₹1.72 LAKH CRORE OWED
+[3.0]  Ask the government. It owes one point six
+       lakh crore rupees on it.                             ₹1.64 LAKH CRORE OWED
 [6.8]  Not stolen. Not a crash.                            (wrong guesses struck out)
 [8.4]  In 2015 it sold paper gold: bonds that pay you
        whatever gold is worth later.                        PAPER GOLD
 [12.8] But it never bought the gold.                       NO GOLD BOUGHT
 [14.6] It spent the money, like any loan.
-[16.4] Then gold went up more than five times.            ×5.2
+[16.4] Then gold went up about five times.                ×5.0
 [19.2] So every bond is paid back at today's price, and
        every thousand rupees on a gram adds twelve
        thousand crore.                                      +₹1,000/g = +₹12,277 CR
 [25.8] It bet gold wouldn't rise. That's the answer to     → loops to "How do you lose money…"
-SOURCE: RBI tranche data · bill at ₹14,024/g (RBI, 13 Nov 2026): our arithmetic · not investment advice
+SOURCE: RBI tranche data · bill at ₹13,345/g (RBI, 19 Nov 2026): our arithmetic · not investment advice
 SEND LINE: gold-bond holders and taxpayers both want to know who's paying.
 ```
 

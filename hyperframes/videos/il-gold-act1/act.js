@@ -1,5 +1,5 @@
 window.ACT = {
- "dur": 56.42,
+ "dur": 55.42,
  "beats": [
   {
    "id": "hook",
@@ -47,41 +47,41 @@ window.ACT = {
    "id": "owes",
    "t0": 20.843,
    "t1": 25.643,
-   "say": "Today, it owes about one point seven lakh crore rupees on that paper.",
+   "say": "Today, it owes about one point six lakh crore rupees on that paper.",
    "emotion": "auto"
   },
   {
    "id": "not",
    "t0": 26.343,
-   "t1": 29.691,
+   "t1": 30.504,
    "say": "Not because anyone stole it. Not because gold crashed.",
    "emotion": "auto"
   },
   {
    "id": "up",
-   "t0": 30.291,
-   "t1": 33.407,
+   "t0": 31.104,
+   "t1": 34.08,
    "say": "Gold went up. And that is exactly why it lost.",
    "emotion": "auto"
   },
   {
    "id": "week",
-   "t0": 34.057,
-   "t1": 42.897,
+   "t0": 34.73,
+   "t1": 42.525,
    "say": "And this isn't history. Just last week, one batch of these bonds paid back four point four times what people paid for it.",
    "emotion": "surprised"
   },
   {
    "id": "call",
-   "t0": 43.447,
-   "t1": 49.419,
-   "say": "And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.",
+   "t0": 43.075,
+   "t1": 48.42,
+   "say": "And holders of the older bonds can cash in about eighty thousand crore rupees more, whenever they choose.",
    "emotion": "surprised"
   },
   {
    "id": "next",
-   "t0": 50.069,
-   "t1": 54.868,
+   "t0": 49.07,
+   "t1": 53.87,
    "say": "So how did all this happen? Let's start with a number almost nobody has seen.",
    "emotion": "auto"
   }
@@ -357,15 +357,16 @@ window.ACT = {
     6263.0
    ],
    [
-    "2026-11-13",
-    14024.0
+    "2026-11-19",
+    13345.0
    ]
   ],
   "first": 2684.0,
-  "today": 14024.0,
-  "x": 5.2,
-  "owed_cr": 172178,
-  "early_cr": 83897,
+  "today": 13345.0,
+  "today_label": "19 Nov 2026",
+  "x": 5.0,
+  "owed_cr": 163842,
+  "early_cr": 79835,
   "s3_issue": 3183.0,
   "s3_redeem": 14024.0,
   "s3_pct": 341,

@@ -82,9 +82,9 @@ def vbars(cats, vals, h, hi_last=True, color=GOLD, label_fmt="{}", top_pad=56, c
 
 
 def line_chart(t, h):
-    """Gold price per gram: RBI's issue price of every bond (2015-24), then RBI's redemption price of 13 Nov 2026."""
+    """Gold price per gram: RBI's issue price of every bond (2015-24), then RBI's latest redemption price."""
     pts = [(d, p) for d, p in zip(pd.to_datetime(t.issue_date), t.issue_price)]
-    pts.append((pd.Timestamp("2026-11-13"), G.PRICE_TODAY))
+    pts.append((pd.Timestamp(G.PRICE_DATE), G.PRICE_TODAY))
     x0, x1 = pd.Timestamp("2015-07-01"), pd.Timestamp("2027-03-01")
     ymax = 15000
     left, base = 124, h - 46
@@ -107,7 +107,7 @@ def line_chart(t, h):
     out.append(text(X(a0), Y(b0) - 22, f"₹{b0:,.0f}", 38, INK, "start", 700, "Oswald"))
     out.append(text(X(a0), Y(b0) + 44, "Nov 2015", 24, MUTED))
     out.append(text(X(a1) - 24, Y(b1) + 12, f"₹{b1:,}", 38, INK, "end", 700, "Oswald"))
-    out.append(text(X(a1) - 110, Y(b1) + 46, "13 Nov 2026", 24, MUTED, "end"))
+    out.append(text(X(a1) - 110, Y(b1) + 46, G.PRICE_LABEL, 24, MUTED, "end"))
     return "".join(out)
 
 
@@ -157,9 +157,9 @@ def slides(imp, sgb):
     S = []
     S.append(dict(kind="cover", title="How do you lose money on gold that only went up?",
                   chart=lambda h: line_chart(sgb["tranches"], h),
-                  note=f"Gold, ₹ per gram: RBI's issue price for each of the 67 gold bonds (2015–24), then RBI's redemption price on 13 Nov 2026.",
+                  note=f"Gold, ₹ per gram: RBI's issue price for each of the 67 gold bonds (2015–24), then RBI's redemption price on {G.PRICE_LABEL}.",
                   stamp=f"THE GOVERNMENT OWES {cr(sgb['owed']).upper()}",
-                  src="RBI SGB issue and redemption prices · owed: our arithmetic at ₹14,024/g"))
+                  src=f"RBI SGB issue and redemption prices · owed: our arithmetic at ₹{G.PRICE_TODAY:,}/g"))
     S.append(dict(title=f"India digs up 1 gram of gold. It buys {mined_per:,.0f}.",
                   chart="dots",
                   note=f"India mined about {G.MINE_OUTPUT_T} tonnes in 2024–25 and imported {t26:,.0f} tonnes in 2025–26.",
@@ -193,7 +193,7 @@ def slides(imp, sgb):
                                         hi_last=False, label_fmt="₹{:,} cr", vsize=27),
                   note=f"Bonds still out, by the financial year they mature, at today's price. {cr(sgb['early_cr'])} of it can already be cashed at the next "
                        f"redemption windows. Every ₹1,000 on a gram adds {cr(sgb['per1000'])}.",
-                  src="RBI tranche data · RBI redemption price ₹14,024/g, 13 Nov 2026 · our arithmetic"))
+                  src=f"RBI tranche data · RBI redemption price ₹{G.PRICE_TODAY:,}/g, {G.PRICE_LABEL} · our arithmetic"))
     S.append(dict(kind="hide", title="What the numbers hide",
                   hero=f"≈ {cr(sgb['net'])}", hero_sub="the real extra cost of the bet, compared with borrowing normally (our estimate)",
                   bullets=["Owing isn't losing: part of the bill is money it borrowed anyway, and it paid 2.5% interest instead of about 7%.",

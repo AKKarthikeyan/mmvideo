@@ -41,11 +41,11 @@ PARAS = [
                ("ask", "<#0.45#>It asked her to hand over her gold."),
                ("no", "<#0.35#>She said no."),
                ("paper", "<#0.6#>So it sold her paper gold instead.")]),
-    (None, [("owes", "Today, it owes about one point seven lakh crore rupees on that paper."),
+    (None, [("owes", "Today, it owes about one point six lakh crore rupees on that paper."),
             ("not", "<#0.6#>Not because anyone stole it. Not because gold crashed."),
             ("up", "<#0.5#>Gold went up. And that is exactly why it lost.")]),
     ("surprised", [("week", "And this isn't history. Just last week, one batch of these bonds paid back four point four times what people paid for it."),
-                   ("call", "<#0.45#>And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.")]),
+                   ("call", "<#0.45#>And holders of the older bonds can cash in about eighty thousand crore rupees more, whenever they choose.")]),
     (None, [("next", "So how did all this happen? Let's start with a number almost nobody has seen.")]),
 ]
 
@@ -92,8 +92,8 @@ def numbers():
     s3 = t[t.tranche.str.contains("2018-19 Series III")].iloc[0]
     return {
         "price": [[d.strftime("%Y-%m-%d"), float(p)] for d, p in zip(pd.to_datetime(t.issue_date), t.issue_price)]
-                 + [["2026-11-13", float(G.PRICE_TODAY)]],
-        "first": float(t.iloc[0].issue_price), "today": float(G.PRICE_TODAY),
+                 + [[G.PRICE_DATE, float(G.PRICE_TODAY)]],
+        "first": float(t.iloc[0].issue_price), "today": float(G.PRICE_TODAY), "today_label": G.PRICE_LABEL,
         "x": round(G.PRICE_TODAY / float(t.iloc[0].issue_price), 1),
         "owed_cr": round(sgb["owed"]), "early_cr": round(sgb["early_cr"]),
         "s3_issue": float(s3.issue_price), "s3_redeem": float(s3.redemption_price),
@@ -150,7 +150,14 @@ def verify():
     heard = " ".join(x.text.strip() for x in segs)
     said = " ".join(say_of(x) for _, parts in PARAS for _, x in parts)
     print("SCRIPT:", said, "\nHEARD: ", heard)
-    norm = lambda z: re.findall(r"[a-z]+", z.lower())
+    from num2words import num2words  # Whisper writes numbers as digits ("2015", "1.7", "84,000"); spell them out to compare
+
+    def spell(z):
+        z = re.sub(r"(?<=\d),(?=\d{3})", "", z)
+        z = re.sub(r"\b(19|20)(\d\d)\b", lambda m: f"{num2words(int(m[1]))} {num2words(int(m[2]))}", z)   # years: twenty fifteen
+        z = re.sub(r"\d+\.\d+", lambda m: num2words(float(m[0])).replace("-", " "), z)
+        return re.sub(r"\d+", lambda m: num2words(int(m[0])).replace("-", " "), z)
+    norm = lambda z: re.findall(r"[a-z]+", spell(z).lower().replace(" and ", " "))
     a, b = norm(said), norm(heard)
     missing = [w for w in dict.fromkeys(a) if w not in b]
     print("words in the script not heard:", missing or "none")

@@ -37,18 +37,18 @@ It asked her to hand over her gold.
 She said no.
 So it sold her paper gold instead.
 
-**SCREEN:** ₹1.72 LAKH CRORE OWED ⟳
-**SRC:** RBI tranche data · at ₹14,024/g (RBI, 13 Nov 2026) · our arithmetic
+**SCREEN:** ₹1.64 LAKH CRORE OWED ⟳
+**SRC:** RBI tranche data · at ₹13,345/g (RBI, 19 Nov 2026) · our arithmetic
 
-Today, it owes about one point seven lakh crore rupees on that paper.
+Today, it owes about one point six lakh crore rupees on that paper.
 
 Not because anyone stole it. Not because gold crashed.
 Gold went up. And that is exactly why it lost.
 
 And this isn't history. Last week, one batch of these bonds paid back four point four times its price.
-And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.
+And holders of the older bonds can cash in about eighty thousand crore rupees more, whenever they choose.
 
-**SCREEN:** +341% (13 NOV 2026) · ₹84,000 CR CALLABLE ⟳
+**SCREEN:** +341% (13 NOV 2026) · ₹80,000 CR CALLABLE ⟳
 **SRC:** RBI press release, 13 Nov 2026 · callable amount: our arithmetic
 
 So how did all this happen? Let's start with a number almost nobody has seen.
@@ -197,13 +197,13 @@ It's a bet that gold won't rise much.
 Against the one asset every Indian mother has been buying since before the government existed.
 
 **PICTURE:** the price line from Nov 2015 to Nov 2026, tracing over the first certificate.
-**SCREEN:** ₹26,840 → ₹1,40,240 PER 10 g · 5.2× ⟳
-**SRC:** RBI issue price, SGB 2015-I · RBI redemption price, 13 Nov 2026
+**SCREEN:** ₹26,840 → ₹1,33,450 PER 10 g · 5.0× ⟳
+**SRC:** RBI issue price, SGB 2015-I · RBI redemption price, 19 Nov 2026
 
 Ten grams cost twenty six thousand eight hundred rupees when the first bond was sold.
-This month: one lakh forty thousand.
+This month: one lakh thirty three thousand.
 
-Five point two times.
+Five times.
 
 **PICTURE:** document close-up of RBI's redemption notice; two bars, 12.9% and 7.75%.
 **SCREEN:** FIRST BOND COST THE GOVT 12.9% A YEAR · A NORMAL LOAN: 7.75%
@@ -230,21 +230,21 @@ She won both ways. She also never had to log into a demat account.
 ## ACT 4 · Who pays, who gains, and what families do now (6:30–8:30)
 
 **PICTURE:** scale (s12), a counter that ticks with the gold price.
-**SCREEN:** ₹1.72 LAKH CRORE OWED · +₹12,277 CR FOR EVERY ₹1,000/g ⟳
-**SRC:** RBI tranche data · our arithmetic at ₹14,024/g
+**SCREEN:** ₹1.64 LAKH CRORE OWED · +₹12,277 CR FOR EVERY ₹1,000/g ⟳
+**SRC:** RBI tranche data · our arithmetic at ₹13,345/g
 
 **VO:**
 So here's the bill.
-About a hundred and twenty three tonnes of these bonds are still out there. At this month's price, the government owes about one point seven lakh crore rupees on them.
+About a hundred and twenty three tonnes of these bonds are still out there. At this month's price, the government owes about one point six lakh crore rupees on them.
 
 And it moves every day. Every time gold goes up by a thousand rupees a gram, the bill goes up by about twelve thousand crore.
 
 Most of us check the gold price before a wedding. Someone in North Block checks it before breakfast.
 
-**SCREEN:** ₹84,000 CR CASHABLE AT THE NEXT WINDOWS · FY 2028–29 ₹45,000 CR · FY 2031–32 ₹62,000 CR ⟳
+**SCREEN:** ₹80,000 CR CASHABLE AT THE NEXT WINDOWS · FY 2028–29 ₹43,000 CR · FY 2031–32 ₹59,000 CR ⟳
 **SRC:** RBI tranche data · our arithmetic at today's price
 
-About eighty four thousand crore of it can be cashed in at the next redemption windows: those bonds are past five years, and the holders decide when.
+About eighty thousand crore of it can be cashed in at the next redemption windows: those bonds are past five years, and the holders decide when.
 The bigger waves come in 2028, and in 2031. The government has set up a fund to pay for it, and in 2025 that fund covered about half.
 
 **SRC:** Business Today, Apr 2025
@@ -285,14 +285,14 @@ But before you forward this video with "SCAM" in capital letters, stop. Because 
 
 **VO:**
 One. Owing isn't losing.
-Part of that one point seven lakh crore is just the money the government borrowed. It would owe that on any loan. And for years it paid two and a half percent instead of seven.
+Part of that one point six lakh crore is just the money the government borrowed. It would owe that on any loan. And for years it paid two and a half percent instead of seven.
 
 So we went bond by bond, all sixty seven of them, and took that out.
 
-**SCREEN:** REAL EXTRA COST ≈ ₹1.06 LAKH CRORE ≈ ₹730 PER INDIAN ⟳
-**SRC:** our bond-by-bond estimate: 67 issues vs the 10-year G-sec yield of each issue month (FRED) · at ₹14,024/g · ₹82,000 crore at ₹12,024/g, ₹1.31 lakh crore at ₹16,024/g · population VERIFY
+**SCREEN:** REAL EXTRA COST ≈ ₹98,000 CRORE ≈ ₹670 PER INDIAN ⟳
+**SRC:** our bond-by-bond estimate: 67 issues vs the 10-year G-sec yield of each issue month (FRED) · at ₹13,345/g · ₹73,000 crore at ₹11,345/g, ₹1.22 lakh crore at ₹15,345/g · population VERIFY
 
-The real extra cost of the bet, compared with borrowing normally: about one lakh crore rupees, at today's price. Roughly seven hundred rupees for every Indian.
+The real extra cost of the bet, compared with borrowing normally: close to one lakh crore rupees, at today's price. Roughly six hundred and seventy rupees for every Indian.
 Smaller than the headline. Still the price of a lot of hospitals.
 
 Two. It wasn't useless.

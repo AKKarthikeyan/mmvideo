@@ -41,7 +41,7 @@
     </style>
   </head>
   <body>
-    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="56.42" data-width="1920" data-height="1080">
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="55.42" data-width="1920" data-height="1080">
       <div id="rules" data-layout-ignore></div>
       <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
       <div id="vig" data-layout-ignore></div>
@@ -61,7 +61,7 @@
     </div>
     <script>
       const D = ACT.dur, N = ACT.n;
-      const H = HF.setup(56.42), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      const H = HF.setup(55.42), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
@@ -75,7 +75,7 @@
       const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
       const txt = (s, attrs, parent) => { const e = el("text", attrs, parent); e.textContent = s; return e; };
 
-      // ---------- chart: gold, ₹ per gram (RBI bond issue prices 2015-24, then RBI's redemption price, 13 Nov 2026) ----------
+      // ---------- chart: gold, ₹ per gram (RBI bond issue prices 2015-24, then RBI's latest redemption price) ----------
       const CH = el("g", {});
       const X0 = Date.parse("2015-07-01"), X1 = Date.parse("2027-03-01"), CL = 300, CR = 1640, CT = 400, CB = 900, YM = 15000;
       const X = (d) => CL + (CR - CL) * (Date.parse(d) - X0) / (X1 - X0), Y = (p) => CB - (CB - CT) * p / YM;
@@ -187,13 +187,13 @@
       // ---------- ledger rows (date · entry · amount · source) ----------
       const ROWS = [
         ["bet", "paper", ["5 NOV 2015", "GOLD BONDS + DEPOSIT SCHEME LAUNCHED", "2 PLANS", "Ministry of Finance / RBI"]],
-        ["owes", "not", ["13 NOV 2026", "OWED ON GOLD BONDS STILL OUT", lakh(N.owed_cr), `RBI tranche data · our arithmetic at RBI's ₹${inr(N.today)}/g`]],
+        ["owes", "not", [N.today_label.toUpperCase(), "OWED ON GOLD BONDS STILL OUT", lakh(N.owed_cr), `RBI tranche data · our arithmetic at RBI's ₹${inr(N.today)}/g`]],
         ["week", "call", ["13 NOV 2026", "SGB 2018-19 SERIES III REPAID", `+${N.s3_pct}%`, `RBI redemption ₹${inr(N.s3_redeem)}/g vs issue ₹${inr(N.s3_issue)}/g`]],
         ["call", "next", ["TODAY", "BONDS PAST 5 YEARS: CASHABLE", `₹${inr(N.early_cr)} CR`, "RBI tranche data · our arithmetic at today's price"]],
       ];
       const SRCS = [
-        ["hook", "bet", "Gold, ₹ per gram: RBI issue price of each of the 67 gold bonds, then RBI's redemption price, 13 Nov 2026"],
-        ["up", "week", `RBI · ₹${inr(N.first)} (Nov 2015) → ₹${inr(N.today)} (13 Nov 2026) · our arithmetic`],
+        ["hook", "bet", `Gold, ₹ per gram: RBI issue price of each of the 67 gold bonds, then RBI's redemption price, ${N.today_label}`],
+        ["up", "week", `RBI · ₹${inr(N.first)} (Nov 2015) → ₹${inr(N.today)} (${N.today_label}) · our arithmetic`],
         ["next", null, "Ministry of Mines 2024–25 (as reported) · DGCIS FY 2025–26 · our arithmetic"],
       ];
 

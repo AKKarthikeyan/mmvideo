@@ -42,7 +42,7 @@
     </style>
   </head>
   <body>
-    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="120.53" data-width="1920" data-height="1080">
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="110.22" data-width="1920" data-height="1080">
       <div id="rules" data-layout-ignore></div>
       <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
       <div id="vig" data-layout-ignore></div>
@@ -62,7 +62,7 @@
     </div>
     <script>
       const N = ACT.n;
-      const H = HF.setup(120.53), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      const H = HF.setup(110.22), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
@@ -174,7 +174,7 @@
 
       // ---------- B. the real extra cost ----------
       const EX = el("g", {});
-      const WX = 200, WS = 1100 / N.gain_all, WY = 400;
+      const WX = 200, WS = 900 / N.gain_all, WY = 470;
       const wf = [["WHAT GOLD'S RISE COST, ALL 67 BONDS", N.gain_all, 0, GREY], ["MINUS THE INTEREST SAVED (2.5% NOT ≈7%)", N.saved_all, N.gain_all - N.saved_all, GREEN], ["THE REAL EXTRA COST", N.net, 0, INK]]
         .map(([lab, v, x0, c], i) => {
           const g = el("g", {}, EX), y = WY + i * 120;
@@ -184,10 +184,10 @@
           return { g, r, w: v * WS, vt };
         });
       const exBig = el("g", {}, EX);
-      txt(`≈ ₹${inr(N.per_indian)}`, { x: 200, y: 800, ...OS, "font-size": 110, fill: GREEN }, exBig);
-      txt("FOR EVERY INDIAN", { x: 204, y: 846, ...PX, "font-size": 30, fill: MUTED }, exBig);
-      const exRange = txt(`₹${inr(Math.round(N.net_lo / 1000) * 1000)} CR AT ₹${inr(N.lo_price)}/g · ${lakh(N.net_hi)} AT ₹${inr(N.hi_price)}/g`, { x: 760, y: 800, ...PX, "font-size": 28, fill: MUTED }, EX);
-      const nHosp = note("still the price of a lot of hospitals", 760, 860, 54, EX);
+      txt(`≈ ₹${inr(N.per_indian)}`, { x: 1400, y: 800, ...OS, "font-size": 110, fill: GREEN }, exBig);
+      txt("FOR EVERY INDIAN", { x: 1404, y: 846, ...PX, "font-size": 30, fill: MUTED }, exBig);
+      const exRange = txt(`₹${inr(Math.round(N.net_lo / 1000) * 1000)} CR AT ₹${inr(N.lo_price)}/g · ${lakh(N.net_hi)} AT ₹${inr(N.hi_price)}/g`, { x: 200, y: 860, ...PX, "font-size": 28, fill: MUTED }, EX);
+      const nHosp = note("still the price of a lot of hospitals", 200, 950, 54, EX);
 
       // ---------- C. it wasn't useless ----------
       const SV = el("g", {});
@@ -236,8 +236,8 @@
       txt(`${Math.round((N.dip[1][1] / N.dip[0][1] - 1) * 100)}%`.replace("-", "−"), { x: DX(dpLo[0]) + 20, y: DY(dpLo[1]) + 60, ...OS, "font-size": 48, fill: INK }, dpM);
       const dpD = txt("JUL 2024: IMPORT DUTY ON GOLD CUT FROM 15% TO 6%", { x: 260, y: 920, ...PX, "font-size": 28, fill: INK }, DP);
       const dpB = el("g", {}, DP);
-      txt("THE BILL, EVERY ₹1,000 A GRAM", { x: 1180, y: 520, ...PX, "font-size": 28, fill: MUTED }, dpB);
-      const dpBv = txt("", { x: 1180, y: 590, ...OS, "font-size": 60, fill: INK }, dpB);
+      txt("THE BILL, EVERY ₹1,000 A GRAM", { x: 1100, y: 880, ...PX, "font-size": 28, fill: MUTED }, dpB);
+      const dpBv = txt("", { x: 1100, y: 945, ...OS, "font-size": 60, fill: INK }, dpB);
 
       // ---------- F. attempt number three ----------
       const WG = el("g", {});
@@ -260,9 +260,9 @@
       // ---------- G. who was right, and the question again ----------
       const EN = el("g", {});
       const lk = el("g", {}, EN);
-      el("rect", { x: 1180, y: 380, width: 380, height: 440, rx: 14, fill: "#2f3d38" }, lk);
-      el("rect", { x: 1200, y: 400, width: 340, height: 400, rx: 8, fill: "#1f2925" }, lk);
-      const enB = el("g", { transform: "translate(1370,600)" }, lk); bangleAt(74, enB);
+      el("rect", { x: 1180, y: 470, width: 380, height: 440, rx: 14, fill: "#2f3d38" }, lk);
+      el("rect", { x: 1200, y: 490, width: 340, height: 400, rx: 8, fill: "#1f2925" }, lk);
+      const enB = el("g", { transform: "translate(1370,690)" }, lk); bangleAt(74, enB);
       const door = el("g", {}, lk);
       el("rect", { x: 0, y: 0, width: 340, height: 400, rx: 8, fill: "#3d4f48", stroke: "#22302b", "stroke-width": 4 }, door);
       el("circle", { cx: 270, cy: 200, r: 34, fill: "none", stroke: "#a7b3ad", "stroke-width": 8 }, door);
@@ -285,13 +285,13 @@
       // ---------- ledger rows (date · entry · amount · source) and source lines ----------
       const ROWS = [
         ["real", "per", [N.today_label.toUpperCase(), "REAL EXTRA COST vs NORMAL BORROWING", `₹${inr(N.net)} CR`, `our bond-by-bond estimate, ${N.n_tr} issues vs the 10-year G-sec of each month (FRED)`]],
-        ["per", "two", ["2026", "EXTRA COST PER INDIAN", `≈ ₹${inr(N.per_indian)}`, "142.6 crore people (MoHFW projection) · our arithmetic"]],
+        ["per", "small", ["2026", "EXTRA COST PER INDIAN", `≈ ₹${inr(N.per_indian)}`, "142.6 crore people (MoHFW projection) · our arithmetic"]],
       ];
       const SRCS = [
         ["part", "real", `RBI tranche data · our arithmetic at ₹${inr(N.price)}/g · normal loan ≈${N.gsec}% (FRED)`],
         ["two", "three", "Business Standard, Mar 2024 (one estimate)"],
         ["three", "four", "RBI Handbook of Statistics on Indian Economy 2019, Table 39 (Mumbai, yearly average)"],
-        ["four", "daily", "RBI issue prices, SGB 2019-20 to 2023-24 · duty cut: PIB, Union Budget 2024–25, from 24 Jul 2024"],
+        ["four", "daily", "RBI issue prices · duty cut: PIB, Budget 2024–25"],
         ["daily", "wgc", "EDUCATIONAL RESEARCH, NOT INVESTMENT ADVICE · NOT SEBI-REGISTERED"],
         ["wgc", "right", "World Gold Council, \"Swarnim Udaan 2047\", Aug 2026 · tonnes: our arithmetic on WGC's 31,000 t"],
         ["q", null, `RBI issue price of each gold bond, then RBI's redemption price, ${N.today_label}`],
@@ -305,7 +305,7 @@
         t_ = t;
         $("title").style.opacity = F(t, 0.0, T("part") - 0.2, 0.3);
         $("tab1").textContent = lakh(N.owed_cr);
-        $("tab2l").textContent = "REAL EXTRA COST (OUR ESTIMATE)";
+        $("tab2l").textContent = "EXTRA COST (OUR ESTIMATE)";
         $("tab2w").style.opacity = F(t, Tf("real", 0.5), T("right") - 0.2, 0.3);
         $("tab2").textContent = `₹${inr(N.net * E.o3((t - Tf("real", 0.5)) / 1.6))} CR`;
         $("tab").style.opacity = 1 - F(t, T("q") - 0.2, 1e9, 0.3);
@@ -358,7 +358,7 @@
         }
         if (scene(EN, T("right"), T("q"))) {
           const sh = E.io2((t - Tf("won", 0.75)) / 0.7);                // the locker door swings shut
-          door.setAttribute("transform", `translate(1200,400) scale(${Math.max(0.02, sh)},1)`);
+          door.setAttribute("transform", `translate(1200,490) scale(${Math.max(0.02, sh)},1)`);
           op(door, sh > 0.02 ? 1 : 0);
           verdicts.forEach((g, i) => op(g, F(t, Tf("won", [0.0, 0.3, 0.6][i]), 1e9, 0.25)));
         }
@@ -366,7 +366,7 @@
           const u = E.io2((t - T("left", 0.4)) / 1.8);
           qL.setAttribute("stroke-dasharray", `${2400 * u} 2400`);
           op(qT, F(t, T("q", 0.0), 1e9, 0.3));
-          showStamp(qS, t, Tf("q", 0.85));
+          showStamp(qS, t, Tf("q", 0.5));
         }
 
         let rowA = 0;

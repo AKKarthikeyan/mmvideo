@@ -299,7 +299,7 @@ Smaller than the headline. Still the price of a lot of hospitals.
 
 Two. It wasn't useless.
 **SRC:** Business Standard, Mar 2024
-One estimate says the bonds saved India three point three billion dollars of gold imports in a single year.
+One estimate says the bonds cut India's gold imports by three point three billion dollars in a single year.
 
 Three. It looked safe at the time.
 **SCREEN:** GOLD, ₹ PER 10 g: ₹30,164 (2012–13) → ₹26,534 (2015–16) → ₹31,193 (2018–19)

@@ -370,7 +370,7 @@ window.ACT = {
   "s3_issue": 3183.0,
   "s3_redeem": 14024.0,
   "s3_pct": 341,
-  "mined_per": 445
+  "mined_per": 443
  },
  "voiced": true
 };

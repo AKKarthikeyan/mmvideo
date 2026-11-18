@@ -1,150 +1,150 @@
 window.ACT = {
- "dur": 120.53,
+ "dur": 110.22,
  "beats": [
   {
    "id": "one",
    "t0": 0.6,
-   "t1": 2.169,
+   "t1": 3.31,
    "say": "One. Owing isn't losing.",
    "emotion": "auto"
   },
   {
    "id": "part",
-   "t0": 2.789,
-   "t1": 11.416,
+   "t0": 3.91,
+   "t1": 10.66,
    "say": "Part of that one point six lakh crore is just the money the government borrowed. It would owe that on any loan.",
    "emotion": "auto"
   },
   {
    "id": "cheap",
-   "t0": 11.936,
-   "t1": 17.034,
+   "t0": 11.16,
+   "t1": 15.773,
    "say": "And for years, it paid two and a half percent instead of seven.",
    "emotion": "auto"
   },
   {
    "id": "went",
-   "t0": 17.754,
-   "t1": 23.636,
+   "t0": 16.508,
+   "t1": 20.901,
    "say": "So we went bond by bond, all sixty seven of them, and took that out.",
    "emotion": "auto"
   },
   {
    "id": "real",
-   "t0": 24.306,
-   "t1": 32.15,
+   "t0": 21.566,
+   "t1": 28.455,
    "say": "The real extra cost of the bet, compared with borrowing normally: close to one lakh crore rupees, at today's price.",
    "emotion": "auto"
   },
   {
    "id": "per",
-   "t0": 32.77,
-   "t1": 35.515,
+   "t0": 29.055,
+   "t1": 31.312,
    "say": "Almost seven hundred rupees for every Indian.",
    "emotion": "auto"
   },
   {
    "id": "small",
-   "t0": 36.235,
-   "t1": 40.941,
+   "t0": 32.012,
+   "t1": 35.673,
    "say": "Smaller than the headline. Still the price of a lot of hospitals.",
    "emotion": "auto"
   },
   {
    "id": "two",
-   "t0": 41.611,
-   "t1": 43.179,
+   "t0": 36.323,
+   "t1": 38.348,
    "say": "Two. It wasn't useless.",
    "emotion": "auto"
   },
   {
    "id": "saved",
-   "t0": 43.699,
-   "t1": 51.15,
-   "say": "One estimate says the bonds saved India three point three billion dollars of gold imports in a single year.",
+   "t0": 38.848,
+   "t1": 45.598,
+   "say": "One estimate says the bonds cut India's gold imports by three point three billion dollars in a single year.",
    "emotion": "auto"
   },
   {
    "id": "three",
-   "t0": 51.82,
-   "t1": 54.565,
+   "t0": 46.248,
+   "t1": 48.725,
    "say": "Three. It looked safe at the time.",
    "emotion": "auto"
   },
   {
    "id": "fell",
-   "t0": 55.185,
-   "t1": 63.028,
+   "t0": 49.325,
+   "t1": 56.714,
    "say": "In the three years before the first bond was sold, gold actually fell. For three years after, it barely moved.",
    "emotion": "auto"
   },
   {
    "id": "knew",
-   "t0": 63.648,
-   "t1": 67.178,
+   "t0": 57.314,
+   "t1": 59.791,
    "say": "Nobody knew it would then go up five times.",
    "emotion": "auto"
   },
   {
    "id": "carat",
-   "t0": 67.848,
-   "t1": 69.809,
+   "t0": 60.441,
+   "t1": 63.011,
    "say": "Hindsight is twenty four carat.",
    "emotion": "happy"
   },
   {
    "id": "four",
-   "t0": 70.479,
-   "t1": 78.714,
+   "t0": 63.661,
+   "t1": 71.761,
    "say": "Four. Gold doesn't only go up. It dipped on the way, including when import duty was cut in twenty twenty four.",
    "emotion": "auto"
   },
   {
    "id": "daily",
-   "t0": 79.334,
-   "t1": 83.255,
+   "t0": 72.361,
+   "t1": 75.791,
    "say": "The bill rises and falls with it, every single day.",
    "emotion": "auto"
   },
   {
    "id": "wgc",
-   "t0": 83.925,
-   "t1": 95.69,
+   "t0": 76.441,
+   "t1": 85.501,
    "say": "Now a new plan is being proposed. The World Gold Council wants India to bring ten to fifteen percent of household gold into the system, with a National Gold Board.",
    "emotion": "auto"
   },
   {
    "id": "third",
-   "t0": 96.96,
-   "t1": 102.45,
+   "t0": 86.151,
+   "t1": 92.305,
    "say": "Attempt number three. Maybe this one asks Amma first. And doesn't bring a furnace.",
    "emotion": "happy"
   },
   {
    "id": "right",
-   "t0": 103.12,
-   "t1": 105.473,
+   "t0": 92.955,
+   "t1": 95.119,
    "say": "So who was right about gold?",
    "emotion": "auto"
   },
   {
    "id": "won",
-   "t0": 106.493,
-   "t1": 111.199,
+   "t0": 95.819,
+   "t1": 101.859,
    "say": "The bondholders won. The taxpayers paid. And your mother kept her bangle.",
    "emotion": "auto"
   },
   {
    "id": "left",
-   "t0": 112.019,
-   "t1": 113.98,
+   "t0": 102.659,
+   "t1": 104.591,
    "say": "Which leaves just one question.",
    "emotion": "auto"
   },
   {
    "id": "q",
-   "t0": 114.65,
-   "t1": 118.964,
+   "t0": 105.241,
+   "t1": 108.67,
    "say": "How do you lose money… on gold that only went up?",
    "emotion": "auto"
   }
@@ -489,5 +489,5 @@ window.ACT = {
   "first": 2684.0,
   "today_label": "19 Nov 2026"
  },
- "voiced": false
+ "voiced": true
 };

@@ -160,7 +160,7 @@ def verify():
         z = re.sub(r"\b(19|20)(\d\d)\b", lambda m: f"{num2words(int(m[1]))} {num2words(int(m[2]))}", z)   # years: twenty fifteen
         z = re.sub(r"\d+\.\d+", lambda m: num2words(float(m[0])).replace("-", " "), z)
         return re.sub(r"\d+", lambda m: num2words(int(m[0])).replace("-", " "), z)
-    SAME = {"money lender": "moneylender", "bond holders": "bondholders", "dmat": "demat", "peace": "piece", "jewelry": "jewellery"}  # spellings and homophones
+    SAME = {"money lender": "moneylender", "bond holders": "bondholders", "karat": "carat", "point five": "and a half", "dmat": "demat", "peace": "piece", "jewelry": "jewellery"}  # spellings and homophones
     def same(z):
         for k, v in SAME.items():
             z = re.sub(rf"\b{k}\b", v, z)

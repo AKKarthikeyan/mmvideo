@@ -39,7 +39,7 @@ A.PARAS = [
             ("per", "<#0.5#>Almost seven hundred rupees for every Indian."),
             ("small", "<#0.6#>Smaller than the headline. Still the price of a lot of hospitals.")]),
     (None, [("two", "Two. It wasn't useless."),
-            ("saved", "<#0.4#>One estimate says the bonds saved India three point three billion dollars of gold imports in a single year.")]),
+            ("saved", "<#0.4#>One estimate says the bonds cut India's gold imports by three point three billion dollars in a single year.")]),
     (None, [("three", "Three. It looked safe at the time."),
             ("fell", "<#0.5#>In the three years before the first bond was sold, gold actually fell. For three years after, it barely moved."),
             ("knew", "<#0.5#>Nobody knew it would then go up five times.")]),

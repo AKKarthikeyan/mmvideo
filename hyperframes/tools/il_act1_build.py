@@ -1,9 +1,10 @@
 """India Ledger style test: Act 1 of the gold episode (docs/INDIA_LEDGER_EP1_SCRIPT.md), voiced and timed to the voice.
 
 usage:
-  python3 hyperframes/tools/il_act1_build.py [--no-tts]     voice each line, write videos/il-gold-act1/act.js and the duration
+  python3 hyperframes/tools/il_act1_build.py              voice the act in paragraphs, write videos/il-gold-act1/act.js
+  python3 hyperframes/tools/il_act1_build.py verify       transcribe the voice track and list any script word not heard
   python3 hyperframes/tools/hf.py sync il-gold-act1 && python3 hyperframes/tools/hf.py render il-gold-act1
-  python3 hyperframes/tools/il_act1_build.py mux            -> out/hyperframes/il-gold-act1-final.mp4 (voice + quiet bed)
+  python3 hyperframes/tools/il_act1_build.py mux          -> out/hyperframes/il-gold-act1-final.mp4 (voice only, no music)
 Every number on screen comes from scripts/india_ledger_gold.py, so the picture cannot disagree with the data.
 """
 import contextlib
@@ -25,25 +26,61 @@ import shorts_build as SB      # noqa: E402  (tts, pcm, write_wav, bed, mux, SR)
 
 ID = "il-gold-act1"
 PROJ = ROOT / "hyperframes" / "videos" / ID
-ADIR = SB.OUT / "shorts_audio" / ID   # mux() reads voice.wav from here
-LANG = "en-IN"
-GAP = 0.28                            # seconds between lines
+ADIR = SB.OUT / "shorts_audio" / ID
+VOICE_ID = "English_Diligent_Man"      # the account's Indian-accent English voice: says lakh and crore the Indian way
+SPEED = 0.94                           # a touch slower than default, for weight
+PARA_GAP = 0.55                        # silence between paragraphs, seconds
 
-# (beat id, what the voice says). Scenes in index.html hang off these ids.
-LINES = [
-    ("hook", "How do you lose money on gold that only went up?"),
-    ("way", "The Government of India found a way."),
-    ("bet", "In twenty fifteen, it made a bet against your mother."),
-    ("ask", "It asked her to hand over her gold."),
-    ("no", "She said no."),
-    ("paper", "So it sold her paper gold instead."),
-    ("owes", "Today, it owes about one point seven lakh crore rupees on it."),
-    ("not", "Not because anyone stole it. Not because gold crashed."),
-    ("up", "Gold went up. That's exactly why it lost."),
-    ("week", "And this isn't history. Last week, one batch of these bonds paid back four point four times its price."),
-    ("call", "And holders can call in another eighty four thousand crore, whenever they choose."),
-    ("next", "To see how this happened, start with a number almost nobody has seen."),
+# Act 1, voiced as five paragraphs so the intonation flows from sentence to sentence (AK, 18 Nov: "complete the
+# sentence properly, with emotional flow"). Each paragraph is one TTS call with one emotion; <#s#> is a pause of s
+# seconds inside it. Scenes in index.html hang off the beat ids.
+PARAS = [
+    (None, [("hook", "How do you lose money… on gold that only went up?"),
+            ("way", "<#0.7#>The Government of India found a way.")]),
+    ("happy", [("bet", "Back in twenty fifteen, it made a bet. Against your mother."),
+               ("ask", "<#0.45#>It asked her to hand over her gold."),
+               ("no", "<#0.35#>She said no."),
+               ("paper", "<#0.6#>So it sold her paper gold instead.")]),
+    (None, [("owes", "Today, it owes about one point seven lakh crore rupees on that paper."),
+            ("not", "<#0.6#>Not because anyone stole it. Not because gold crashed."),
+            ("up", "<#0.5#>Gold went up. And that is exactly why it lost.")]),
+    ("surprised", [("week", "And this isn't history. Just last week, one batch of these bonds paid back four point four times what people paid for it."),
+                   ("call", "<#0.45#>And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.")]),
+    (None, [("next", "So how did all this happen? Let's start with a number almost nobody has seen.")]),
 ]
+
+
+def say_of(text):
+    return re.sub(r"<#[0-9.]+#>", "", text).strip()
+
+
+def tts_para(text, emotion, path):
+    """One MiniMax call for a whole paragraph; returns sentence timings (seconds) from its subtitle file."""
+    import hashlib
+    import requests
+    key = hashlib.sha1(f"{VOICE_ID}|{SPEED}|{emotion}|{text}".encode()).hexdigest()[:10]
+    mp3, sub = path.with_name(f"{path.stem}-{key}.mp3"), path.with_name(f"{path.stem}-{key}.json")
+    if not (mp3.exists() and sub.exists()):
+        vs = {"voice_id": VOICE_ID, "speed": SPEED, "vol": 1, "pitch": 0}
+        if emotion:
+            vs["emotion"] = emotion
+        body = {"model": "speech-2.6-hd", "text": text, "stream": False, "language_boost": "English", "subtitle_enable": True,
+                "voice_setting": vs, "audio_setting": {"sample_rate": SB.SR, "bitrate": 128000, "format": "mp3", "channel": 1}}
+        j = requests.post("https://api.minimax.io/v1/t2a_v2", headers={"Authorization": "Bearer proxy-injected"},
+                          json=body, timeout=180).json()
+        d = j.get("data") or {}
+        if not d.get("audio"):
+            sys.exit(f"MiniMax failed: {j.get('base_resp')}")
+        mp3.write_bytes(bytes.fromhex(d["audio"]))
+        sub.write_text(requests.get(d["subtitle_file"], timeout=60).text, encoding="utf-8")
+    return mp3, json.loads(sub.read_text(encoding="utf-8"))
+
+
+def decode(mp3):
+    """The whole paragraph, untrimmed except for leading silence, so no sentence loses its ending."""
+    raw = __import__("subprocess").run(["ffmpeg", "-v", "error", "-i", str(mp3), "-f", "s16le", "-ac", "1", "-ar", str(SB.SR), "-"],
+                                       capture_output=True, check=True).stdout
+    return np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768
 
 
 def numbers():
@@ -64,40 +101,70 @@ def numbers():
     }
 
 
-def build(use_tts=True):
+def build():
     ADIR.mkdir(parents=True, exist_ok=True)
-    beats, t, chunks = [], 0.6, []          # 0.6 s of picture before the first word
-    chunks.append(np.zeros(int(0.6 * SB.SR), dtype=np.float32))
-    for bid, say in LINES:
-        mp3 = ADIR / f"{bid}.mp3"
-        ok = use_tts and (mp3.exists() or SB.tts(say, LANG, mp3))
-        if ok:
-            a = SB.pcm(mp3)
-            d = len(a) / SB.SR
-        else:
-            a = None
-            d = len(say) / SB.VOICE[LANG]["cps"]
-        beats.append({"id": bid, "t0": round(t, 3), "t1": round(t + d, 3), "say": say})
-        chunks.append(a if a is not None else np.zeros(int(d * SB.SR), dtype=np.float32))
-        chunks.append(np.zeros(int(GAP * SB.SR), dtype=np.float32))
-        t += d + GAP
-    dur = round(t + 1.2, 2)
-    if use_tts:
-        SB.write_wav(ADIR / "voice.wav", np.concatenate(chunks))
-    act = {"dur": dur, "beats": beats, "n": numbers(), "voiced": bool(use_tts)}
+    t, chunks, beats = 0.6, [np.zeros(int(0.6 * SB.SR), dtype=np.float32)], []
+    for pi, (emo, parts) in enumerate(PARAS):
+        text = " ".join(x for _, x in parts)
+        mp3, subs = tts_para(text, emo, ADIR / f"p{pi + 1}.mp3")
+        a = decode(mp3)
+        # assign subtitle segments to beats in order, by their text (character offsets drift around pause markers)
+        norm = lambda z: re.sub(r"[^a-z0-9]", "", z.lower())
+        segs = [(norm(g["text"]), g["time_begin"] / 1000, g["time_end"] / 1000) for g in subs if norm(g["text"])]
+        k = 0
+        for bid, x in parts:
+            want, got, mine = norm(say_of(x)), "", []
+            while k < len(segs) and len(got) < len(want) and want.startswith(got + segs[k][0][: max(1, len(want) - len(got))][:4]):
+                got += segs[k][0]; mine.append(segs[k]); k += 1
+            if not mine or got != want:
+                sys.exit(f"could not time beat {bid!r}: script {want!r} vs subtitles {got!r}")
+            beats.append({"id": bid, "t0": round(t + mine[0][1], 3), "t1": round(t + mine[-1][2], 3), "say": say_of(x),
+                          "emotion": emo or "auto"})
+        chunks.append(a)
+        chunks.append(np.zeros(int(PARA_GAP * SB.SR), dtype=np.float32))
+        t += len(a) / SB.SR + PARA_GAP
+    dur = round(t + 0.9, 2)
+    SB.write_wav(ADIR / "voice.wav", np.concatenate(chunks))
+    act = {"dur": dur, "beats": beats, "n": numbers(), "voiced": True}
     (PROJ / "act.js").write_text("window.ACT = " + json.dumps(act, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
     idx = PROJ / "index.html"
     h = idx.read_text(encoding="utf-8")
     h = re.sub(r'data-duration="[0-9.]+"', f'data-duration="{dur}"', h)
     h = re.sub(r"HF\.setup\([0-9.]+\)", f"HF.setup({dur})", h)
     idx.write_text(h, encoding="utf-8")
-    print(f"{ID}: {len(beats)} lines, {dur:.1f} s", "(voiced)" if use_tts else "(estimated timings)")
+    print(f"{ID}: {len(beats)} beats in {len(PARAS)} paragraphs, {dur:.1f} s")
     for b in beats:
-        print(f"  {b['t0']:6.2f}-{b['t1']:6.2f}  {b['id']:6s} {b['say']}")
+        print(f"  {b['t0']:6.2f}-{b['t1']:6.2f}  {b['id']:6s} [{b['emotion']}] {b['say']}")
+
+
+def verify():
+    """Transcribe the finished voice track paragraph by paragraph, so a dropped or cut-off word shows up."""
+    from faster_whisper import WhisperModel
+    m = WhisperModel("small.en", device="cpu", compute_type="int8")
+    import subprocess
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(ADIR / "voice.wav"), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    audio = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768
+    segs, _ = m.transcribe(audio, language="en", word_timestamps=False)
+    heard = " ".join(x.text.strip() for x in segs)
+    said = " ".join(say_of(x) for _, parts in PARAS for _, x in parts)
+    print("SCRIPT:", said, "\nHEARD: ", heard)
+    norm = lambda z: re.findall(r"[a-z]+", z.lower())
+    a, b = norm(said), norm(heard)
+    missing = [w for w in dict.fromkeys(a) if w not in b]
+    print("words in the script not heard:", missing or "none")
+
+
+def mux():
+    """Voice only, no music (AK, 18 Nov). Loudness-normalised to about -16 LUFS for YouTube."""
+    import subprocess
+    v, out = SB.OUT / f"{ID}.mp4", SB.OUT / f"{ID}-final.mp4"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(v), "-i", str(ADIR / "voice.wav"), "-filter:a",
+                    "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-shortest", "-movflags", "+faststart", str(out)], check=True)
+    print(out)
 
 
 if __name__ == "__main__":
-    if sys.argv[1:2] == ["mux"]:
-        SB.mux(ID)
-    else:
-        build(use_tts="--no-tts" not in sys.argv)
+    cmd = sys.argv[1] if len(sys.argv) > 1 else "build"
+    {"build": build, "verify": verify, "mux": mux}[cmd]()

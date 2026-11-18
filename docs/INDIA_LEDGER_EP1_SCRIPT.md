@@ -6,6 +6,10 @@
 `python3 scripts/india_ledger_gold.py`. On the build day, re-run it with RBI's latest redemption price and update every
 figure marked ⟳.
 
+**Voice (AK, 18 Nov 2026):** no music under the narration. Voice each act as a few paragraphs, not line by line, so the
+intonation runs on from sentence to sentence; mark pauses inside a paragraph and never trim the end of a sentence.
+Act 1 is built this way in `hyperframes/tools/il_act1_build.py` (MiniMax `English_Diligent_Man`, speed 0.94).
+
 **Humour rules:** the joke is on the situation, never on a party, a minister or a viewer. Warm, family-flavoured, one
 line, then straight back to the data. No joke ever changes a number. Every Act ends on a turn ("but", "so", "here's the
 catch").
@@ -27,26 +31,27 @@ The Government of India found a way.
 
 **PICTURE:** a family locker opening; a bangle, a chain, a coin from someone's wedding.
 
-In 2015, it made a bet against your mother.
+Back in 2015, it made a bet. Against your mother.
 
-It asked her to hand over her gold. She said no.
+It asked her to hand over her gold.
+She said no.
 So it sold her paper gold instead.
 
 **SCREEN:** ₹1.72 LAKH CRORE OWED ⟳
 **SRC:** RBI tranche data · at ₹14,024/g (RBI, 13 Nov 2026) · our arithmetic
 
-Today, it owes about one point seven lakh crore rupees on it.
+Today, it owes about one point seven lakh crore rupees on that paper.
 
 Not because anyone stole it. Not because gold crashed.
-Gold went up. That's exactly why it lost.
+Gold went up. And that is exactly why it lost.
 
 And this isn't history. Last week, one batch of these bonds paid back four point four times its price.
-And holders can call in another eighty four thousand crore, at the next windows, whenever they choose.
+And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.
 
 **SCREEN:** +341% (13 NOV 2026) · ₹84,000 CR CALLABLE ⟳
 **SRC:** RBI press release, 13 Nov 2026 · callable amount: our arithmetic
 
-To see how this happened, start with a number almost nobody has seen.
+So how did all this happen? Let's start with a number almost nobody has seen.
 
 ---
 

@@ -41,7 +41,7 @@
     </style>
   </head>
   <body>
-    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="40.22" data-width="1920" data-height="1080">
+    <div id="root" class="ledger" data-composition-id="main" data-start="0" data-duration="56.42" data-width="1920" data-height="1080">
       <div id="rules" data-layout-ignore></div>
       <svg id="stage" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
       <div id="vig" data-layout-ignore></div>
@@ -61,7 +61,7 @@
     </div>
     <script>
       const D = ACT.dur, N = ACT.n;
-      const H = HF.setup(40.22), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      const H = HF.setup(56.42), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
       window.__timelines.main = H.tl;
       const $ = (id) => document.getElementById(id);
       const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
@@ -132,6 +132,10 @@
       el("rect", { x: 1310, y: 450, width: 200, height: 22, rx: 11, fill: INK }, BOX);
       txt("GOLD DEPOSIT", { x: 1410, y: 560, "text-anchor": "middle", "font-family": "Oswald", "font-weight": 700, "font-size": 50, fill: INK }, BOX);
       txt("SCHEME · 2015", { x: 1410, y: 620, "text-anchor": "middle", "font-family": "Plex", "font-size": 30, fill: "#4f555e" }, BOX);
+      const amma = el("g", {}, IL);
+      txt("Amma's locker", { x: 760, y: 330, "font-family": "Caveat", "font-weight": 600, "font-size": 64, fill: INK }, amma);
+      el("path", { d: "M 770 345 C 740 380, 720 395, 690 410", fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, amma);
+      el("path", { d: "M 690 410 l 22 -4 M 690 410 l 6 -20", fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, amma);
       const no = txt("No.", { x: 520, y: 320, "text-anchor": "middle", "font-family": "Caveat", "font-weight": 600, "font-size": 120, fill: INK }, IL);
       const CERT = el("g", { "data-layout-allow-overflow": "" }, IL);                                 // paper gold
       el("rect", { x: 0, y: 0, width: 700, height: 440, fill: CARD, stroke: GREEN, "stroke-width": 6 }, CERT);
@@ -225,8 +229,9 @@
         bangle.setAttribute("opacity", Math.max(open, go * (1 - back)) > 0.05 || t < T("no") ? 1 : 0);
         BOX.setAttribute("opacity", F(t, T("ask"), T("paper", 0.2), 0.35));
         no.setAttribute("opacity", F(t, T("no", 0.15), T("paper"), 0.15));
+        amma.setAttribute("opacity", F(t, T("bet", 0.58 * (t1("bet") - t0("bet"))), T("paper", 0.6), 0.35));
         const cin = E.o3((t - T("paper", 0.2)) / 0.7);
-        CERT.setAttribute("transform", `translate(${L(1980, 960, cin)},${360}) rotate(${L(8, -2, cin)})`);
+        CERT.setAttribute("transform", `translate(${L(2160, 960, cin)},${360}) rotate(${L(8, -2, cin)})`);
         // E: two wrong guesses, struck out on the word
         GU.setAttribute("opacity", F(t, T("not") - 0.05, T("up") - 0.2, 0.3));
         const half = (t1("not") - t0("not")) / 2;
@@ -237,11 +242,14 @@
         }
         // G: last week
         WK.setAttribute("opacity", F(t, T("week") - 0.1, T("call") - 0.25, 0.3));
-        wkB.setAttribute("opacity", F(t, T("week", 1.6), 1e9, 0.3)); wkArr.setAttribute("opacity", F(t, T("week", 1.3), 1e9, 0.3));
-        showStamp(stPct, t, T("week", 3.0), T("call") - 0.25);
+        const wd = t1("week") - t0("week");
+        wkA.setAttribute("opacity", F(t, T("week", 0.25 * wd), 1e9, 0.3));
+        wkArr.setAttribute("opacity", F(t, T("week", 0.5 * wd), 1e9, 0.3)); wkB.setAttribute("opacity", F(t, T("week", 0.62 * wd), 1e9, 0.3));
+        showStamp(stPct, t, T("week", 0.86 * wd), T("call") - 0.25);
         // H: what can be called in
         CL_.setAttribute("opacity", F(t, T("call") - 0.1, T("next") - 0.25, 0.3));
-        clV.textContent = `₹${inr(N.early_cr * E.o3((t - T("call", 0.4)) / 1.6))} CRORE`;
+        const cd = t1("call") - t0("call");
+        clV.textContent = `₹${inr(N.early_cr * E.io2((t - T("call", 0.3)) / (0.8 * cd)))} CRORE`;
         // I: dots
         DOTS.setAttribute("opacity", F(t, T("next") - 0.1, 1e9, 0.3));
         const shown = Math.floor(nd * E.o2((t - T("next", 0.3)) / (t1("next") - t0("next"))));
@@ -251,7 +259,7 @@
         $("tab1").textContent = lakh(N.owed_cr * E.o3((t - T("owes", 0.6)) / 1.8));
         $("tab2w").style.opacity = F(t, T("call", 0.3), 1e9, 0.35);
         $("tab2w").style.display = t < T("call", 0.3) ? "none" : "block";
-        $("tab2").textContent = `₹${inr(N.early_cr * E.o3((t - T("call", 0.4)) / 1.6))} CR`;
+        $("tab2").textContent = `₹${inr(N.early_cr * E.io2((t - T("call", 0.3)) / (0.8 * (t1("call") - t0("call")))))} CR`;
         // ledger row
         let rowA = 0;
         for (const [a, b, cells] of ROWS) {

@@ -1,77 +1,89 @@
 window.ACT = {
- "dur": 40.22,
+ "dur": 56.42,
  "beats": [
   {
    "id": "hook",
    "t0": 0.6,
-   "t1": 2.813,
-   "say": "How do you lose money on gold that only went up?"
+   "t1": 4.761,
+   "say": "How do you lose money… on gold that only went up?",
+   "emotion": "auto"
   },
   {
    "id": "way",
-   "t0": 3.093,
-   "t1": 4.726,
-   "say": "The Government of India found a way."
+   "t0": 5.561,
+   "t1": 7.911,
+   "say": "The Government of India found a way.",
+   "emotion": "auto"
   },
   {
    "id": "bet",
-   "t0": 5.006,
-   "t1": 7.677,
-   "say": "In twenty fifteen, it made a bet against your mother."
+   "t0": 8.561,
+   "t1": 12.454,
+   "say": "Back in twenty fifteen, it made a bet. Against your mother.",
+   "emotion": "happy"
   },
   {
    "id": "ask",
-   "t0": 7.957,
-   "t1": 9.609,
-   "say": "It asked her to hand over her gold."
+   "t0": 13.004,
+   "t1": 15.401,
+   "say": "It asked her to hand over her gold.",
+   "emotion": "happy"
   },
   {
    "id": "no",
-   "t0": 9.889,
-   "t1": 10.78,
-   "say": "She said no."
+   "t0": 15.851,
+   "t1": 16.923,
+   "say": "She said no.",
+   "emotion": "happy"
   },
   {
    "id": "paper",
-   "t0": 11.06,
-   "t1": 13.429,
-   "say": "So it sold her paper gold instead."
+   "t0": 17.623,
+   "t1": 20.193,
+   "say": "So it sold her paper gold instead.",
+   "emotion": "happy"
   },
   {
    "id": "owes",
-   "t0": 13.709,
-   "t1": 18.233,
-   "say": "Today, it owes about one point seven lakh crore rupees on it."
+   "t0": 20.843,
+   "t1": 25.643,
+   "say": "Today, it owes about one point seven lakh crore rupees on that paper.",
+   "emotion": "auto"
   },
   {
    "id": "not",
-   "t0": 18.513,
-   "t1": 21.274,
-   "say": "Not because anyone stole it. Not because gold crashed."
+   "t0": 26.343,
+   "t1": 29.691,
+   "say": "Not because anyone stole it. Not because gold crashed.",
+   "emotion": "auto"
   },
   {
    "id": "up",
-   "t0": 21.554,
-   "t1": 24.068,
-   "say": "Gold went up. That's exactly why it lost."
+   "t0": 30.291,
+   "t1": 33.407,
+   "say": "Gold went up. And that is exactly why it lost.",
+   "emotion": "auto"
   },
   {
    "id": "week",
-   "t0": 24.348,
-   "t1": 30.46,
-   "say": "And this isn't history. Last week, one batch of these bonds paid back four point four times its price."
+   "t0": 34.057,
+   "t1": 42.897,
+   "say": "And this isn't history. Just last week, one batch of these bonds paid back four point four times what people paid for it.",
+   "emotion": "surprised"
   },
   {
    "id": "call",
-   "t0": 30.74,
-   "t1": 34.562,
-   "say": "And holders can call in another eighty four thousand crore, whenever they choose."
+   "t0": 43.447,
+   "t1": 49.419,
+   "say": "And holders of the older bonds can cash in another eighty four thousand crore rupees, whenever they choose.",
+   "emotion": "surprised"
   },
   {
    "id": "next",
-   "t0": 34.842,
-   "t1": 38.743,
-   "say": "To see how this happened, start with a number almost nobody has seen."
+   "t0": 50.069,
+   "t1": 54.868,
+   "say": "So how did all this happen? Let's start with a number almost nobody has seen.",
+   "emotion": "auto"
   }
  ],
  "n": {

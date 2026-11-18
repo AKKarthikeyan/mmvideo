@@ -86,27 +86,37 @@ all-India map, destinations, end card. Themes: `atlas` (Indica Atlas, dark) and 
 
 | Video | Channel | Story (FY 2025–26) |
 | --- | --- | --- |
-| `ia-poultry` | Indica Atlas | Poultry exports ₹2,810 crore, nearly double; 66% left via Kochi and Thoothukudi; UAE 37% |
-| `ia-seafood` | Indica Atlas | Marine products ₹74,521 crore, +19%; Visakhapatnam 27%; USA 27%, China 18% |
-| `ia-spices` | Indica Atlas | Spices ₹37,644 crore, flat; Kochi and Nhava Sheva 41%; USA 14%, China 12% |
-| `dk-phones` | India Ledger | Phones and telecom gear ₹3.03 lakh crore, +37%, 5.5× in four years; 69% flown from Chennai and Bengaluru; USA 58% |
-| `dk-buffalo` | India Ledger | Buffalo meat ₹45,196 crore, +31%; UP inland depots (Dadri, Kanpur) 54%; Vietnam 18% |
+| `ia-poultry` | Indica Atlas | Poultry exports ₹2,810 crore, nearly double; Namakkal district 50%; 66% left via Kochi and Thoothukudi; UAE 37% |
+| `ia-seafood` | Indica Atlas | Marine products ₹74,521 crore, +19%; West Godavari 11%, East Godavari 10%; Visakhapatnam port 27%; USA 27% |
+| `ia-spices` | Indica Atlas | Spices ₹37,644 crore, flat; Ernakulam 16%, Guntur 12%, Mahesana 9%; Kochi and Nhava Sheva 41%; USA 14% |
+| `dk-phones` | India Ledger | Phones and telecom gear ₹3.03 lakh crore, +37%; Kanchipuram 45%, Kolar 15%, Gautam Buddha Nagar 13%; USA 58% |
+| `dk-buffalo` | India Ledger | Buffalo meat ₹45,196 crore, +31%; Ghaziabad 17%, Raigad 13%, Aligarh 12%; Vietnam 18% |
 | `dk-growth` | India Ledger | Fastest-growing exports over ₹20,000 crore: copper +67.5%, phones +36.7%, buffalo meat +31.4% … |
 
 **India Ledger style test** (18 Nov 2026): `videos/il-gold-act1`, Act 1 of the gold episode in the "Ledger" look (ruled paper, red margin, ledger-row lower thirds, the running tab, the audit stamp). Voiced and timed by `tools/il_act1_build.py`; numbers from `scripts/india_ledger_gold.py`. Build: `il_act1_build.py`, `hf.py sync il-gold-act1`, `hf.py render il-gold-act1`, `il_act1_build.py mux`.
 
 ```sh
+python3 hyperframes/tools/dgcis_districts.py Apr-2025 Mar-2026 "POULTRY PRODUCTS" "SPICES" ...   # district rows
 python3 hyperframes/tools/export_videos.py            # rebuild every story.js (downloads the mirror once, ~170 MB)
 python3 hyperframes/tools/hf.py sync videos
 python3 hyperframes/tools/hf.py render ia-poultry     # -> out/hyperframes/ia-poultry.mp4
 ```
 
-**District map.** The mirror has no district of origin. Put DGCIS "Export by District of Origin" figures in
-`out/hyperframes/cache/district_exports.csv` with columns `state,district,commodity,value_crore` (commodity spelled as
-in DGCIS principal commodities, e.g. `POULTRY PRODUCTS`) and rebuild: the "Where it is made" scene appears, shading
-districts on the 820-district map (`shared/geo/india_districts.js`, from `tools/india_districts.py`) with the top five
-listed. Names are matched by state and name with `ALIAS` in `export_videos.py`; unmatched names are printed, never
-guessed. Without the file the scene is left out. A missing district means no reported figure, not zero.
+**District map.** `tools/dgcis_districts.py` asks the DGCIS portal (ftddp.dgciskol.gov.in, which the environment's network
+must allow) for export value by district of origin per principal commodity, the same guest query the portal's
+"Export by State by District of Origin" page makes, and writes `out/hyperframes/cache/district_exports.csv`
+(`state,district,commodity,value_crore,value_usd`). For FY 2025–26 the district rows add up to the national totals
+above. `export_videos.py` then adds the "Where it is made" scene: districts shaded on the 820-district map
+(`shared/geo/india_districts.js`, from `tools/india_districts.py`) and the top five listed with their share of the
+national total. Names are matched by state and name through the state-scoped `ALIAS` table in `export_videos.py` (every
+FY 2025–26 name for these six products matches); unmatched names are printed and left off, never guessed, and rows DGCIS
+marks UNSPECIFIED stay off the map. Without the file the scene is left out. A district with no colour has no reported
+figure, which is not the same as zero. District of origin is what exporters declare on shipping bills and DGCIS does not
+validate it, so a district can stand for a registered office rather than a farm or factory (phones show 5% from South
+West Delhi); the scene says "as declared by exporters".
+
+The map source writes some letters as symbols and cuts some Karnataka names short; `india_districts.py` decodes the
+symbols and restores the short names from their Census 2011 codes.
 
 The videos are silent drafts with captions; voice-over comes from the normal build pipeline.
 

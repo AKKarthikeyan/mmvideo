@@ -10,6 +10,13 @@ ROOT = pathlib.Path("/Volumes/DarwinSSD/MMVideo/public/vx")
 R = pathlib.Path("/Users/akkarthikeyan/jev_full/research")
 ZL = R / "zl"; TH = R / "themes"; AN = R / "anuras"; WS = R / "welspun"; AD = R / "adani"; KG = R / "kpigreen"; AQ = R / "autoq2"; SM = R / "shyammetl"; CE = R / "ceos"; BQ = R / "bankq2"; JD = pathlib.Path("/Users/akkarthikeyan/jev_full/docs"); AO = R / "angelone"; JW = R / "jewellers"; TQ = R / "tcsq2"; PE = R / "persistent"; DM = R / "dmart"; RP = R / "retailpeers"
 CLIPS = {
+  # jioipo (Jio Platforms RHP 14 Oct 2026; PDF page = printed page): p.116, p.33, p.43, p.37, p.164, p.137
+  "jio_objects": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "Prepayment, in full or in part, of certain outstanding borrowings availed by the Material Subsidiary, RJIL", 2, 2, 1),
+  "jio_rrl": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "RRL is the sole distributor of our pre-paid connectivity services. Our revenue from pre-paid connectivity services", 0, 3),
+  "jio_tariff": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "along with other industry participants, implemented a tariff increase", 2, 2),
+  "jio_towers": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "Network Towers are owned by Summit Digitel Infrastructure Limited", 1, 3),
+  "jio_spec": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "Currently, Jio is the only operator in India to have spectrum in low-band", 0, 3),
+  "jio_netdebt": (pathlib.Path("/Users/akkarthikeyan/Documents/research_notes/jio_moat/rhp/jio_cdn_rhp.pdf"), "does not include deferred payment liabilities and lease liabilities", 2, 2),
   "zl_petition": (ZL/"corpaffairs_27092026003206_Upload.pdf", "approximately Rs. 821 crores", 4, 0),
   "zl_june": (ZL/"corpaffairs_17062026180110_Intimation.pdf", "the lender has decided to withdraw the Company Petition", 2, 1),
   "zl_impair": (ZL/"corpaffairs_29072026212228_Outcome_signed.pdf", "In the absence of assessment of impairment of the recoverable amount of Rs. 79,993.47 lakhs, we are unable to comment upon adjustments", 2, 1),
@@ -108,6 +115,9 @@ CLIPS = {
   "vm_festive": (RP/"VMART_01102026185733_BusinessUpdateQ2FY27.pdf", "Navratri", 1, 1),
   "ao_def": (AO/"ANGEL8896_15072026180330_15072026InvestorPresentationAOL.pdf", "MCX for commodity segment", 0, 0),
 }
+
+from vx_mm_clips import CLIPS_EXTRA; CLIPS.update(CLIPS_EXTRA)   # Moat & Margin Nov 2026 modules
+from vx_nvidia import CLIPS_NV; CLIPS.update(CLIPS_NV)   # NVIDIA film (Nov 2026)
 
 def crop(name, pdf, phrase, up, dn, outdir, last=None, col=False):
     d = fitz.open(pdf)
@@ -209,7 +219,7 @@ def main():
             else: b["sec"] = round(tts(b["say"], mp3, V.get("voice", "English_Diligent_Man")), 2); print(" voiced", b["key"], b["sec"])
             b["cues"] = chunks(b["cap"])
         data = {k: V[k] for k in ("id", "title", "chapters", "shorts")}
-        data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
+        data["calm"] = V.get("calm", False); data["brand"] = V.get("brand", "Moat & Margin"); data["timelines"] = V.get("timelines", {}); data["beats"] = V["beats"]; data["clips"] = clips
         json.dump(data, open(out / "data.json", "w"), indent=1, ensure_ascii=False)
         tot = sum(b["sec"] for b in V["beats"])
         print(f"{V['id']}: {len(V['beats'])} beats, {tot/60:.2f} min narration, {len(clips)} clips")

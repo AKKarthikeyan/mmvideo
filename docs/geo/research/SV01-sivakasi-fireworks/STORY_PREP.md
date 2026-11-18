@@ -202,3 +202,9 @@ Checks (claim IDs exist and are AK-VERIFIED; one claim list per beat): both scri
 - Hindi/Telugu keep "matthaappu" as the Tamil word, as in the English.
 
 **Not done:** native-speaker review (every file); listening for pronunciation of the names and numbers (Sivakasi, Nadar, Kaliswari, years); the Tamil/Telugu voice (Maya) was not compared with the English male voice for tone. Sensitive lines to hear first: the 19 April 2026 explosion (pi03 / rh03), the biometric quote, the makers' leader's quote, the Nehru and Murugan quotes.
+
+## 15. Tamil rewritten natively (1 Nov 2026; AK: rewrite for the same length and meaning, not a literal translation)
+
+- `scripts/sivakasi/native_ta.py` / `native_ta.json`: 85 Tamil lines written from the English beat's meaning and its time slot (a letter budget per line from the measured slot and Tamil speech rate of about 0.076 s per letter), in spoken Tamil; `translations.py` uses a `native_<lang>.json` when it exists. Same facts, numbers, names and hedges; native touches: "கல்கத்தா, இப்ப கொல்கத்தா", சரவெடி for joined crackers, காளான் (mushroom) in the Murugan quote, "சாபம் / வரம்" (curse / boon) for the sun, shorter spoken years.
+- Result: 0 lines over the speed cap, and only 3 (Paradox) and 2 (Long Road) lines sped past 1.06x, against 12 and 14 with the literal translation after four shortening rounds. Tracks, music mix, multi-audio MP4s and `review/review_ta_Tamil.csv` are rebuilt from it.
+- Hindi and Telugu are still the literal drafts; their review sheets should not go to reviewers until they are rewritten the same way. The Tamil native text still needs a native reviewer.

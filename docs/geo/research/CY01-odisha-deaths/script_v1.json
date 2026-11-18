@@ -1,0 +1,113 @@
+{
+ "id": "cy01odisha",
+ "ep": "CY01",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/CY01-odisha-deaths",
+ "status": "DRAFT v1 for AK review, 27 Oct 2026. Not voiced. Do not post while IMD's 28 Oct 2026 cyclone warning is live (C052).",
+ "version": "short ~32s, F10 Paradox (Then-and-Now flavour)",
+ "format": "F10 Paradox",
+ "target_seconds": 32,
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "In nineteen ninety-nine, one cyclone killed almost ten thousand people in Odisha.",
+   "caption": "Odisha, 1999: 9,887 dead",
+   "claims": [
+    "C001",
+    "C002"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "Most drowned, as the sea surged far inland.",
+   "caption": "Most deaths: the sea surge",
+   "claims": [
+    "C005",
+    "C006"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "b3",
+   "move": "M3 Push",
+   "say": "Two months later, Odisha set up its own disaster authority.",
+   "caption": "Dec 1999: disaster authority set up",
+   "claims": [
+    "C001",
+    "C011"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b4",
+   "move": "M3 Push",
+   "say": "It built hundreds of cyclone shelters.",
+   "caption": "Hundreds of cyclone shelters",
+   "claims": [
+    "C026",
+    "C040",
+    "C041"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b5",
+   "move": "M3 Push",
+   "say": "In twenty thirteen, Phailin struck, the strongest to hit India since.",
+   "caption": "2013: Phailin",
+   "claims": [
+    "C013",
+    "C014"
+   ],
+   "pause": 0.3
+  },
+  {
+   "key": "b6",
+   "move": "M3 Push",
+   "say": "The order: zero casualties. Nearly a million people were moved out of its way.",
+   "caption": "Order: ZERO CASUALTY · 9.84 lakh moved",
+   "claims": [
+    "C018",
+    "C020"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b7",
+   "move": "M4 Turn",
+   "say": "Twenty-one died in the storm.",
+   "caption": "Phailin: 21 dead",
+   "claims": [
+    "C014",
+    "C015"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "b8",
+   "move": "M5 Echo",
+   "say": "Almost ten thousand, then twenty-one. But the floods that followed killed more than the storm.",
+   "caption": "9,887 → 21 · floods killed more",
+   "claims": [
+    "C002",
+    "C015",
+    "C016"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "b9",
+   "move": "M5 Echo",
+   "say": "Odisha outran the sea. Can it outrun the floods?",
+   "caption": "Outran the sea. The floods?",
+   "claims": [
+    "C016"
+   ],
+   "pause": 1.0
+  }
+ ]
+}

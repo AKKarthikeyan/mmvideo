@@ -1,0 +1,595 @@
+{
+ "id": "SP01",
+ "format": "F7 Follow the Thing + scale ladder",
+ "beats": [
+  {
+   "key": "q001",
+   "act": "hook",
+   "say": "September, twenty twenty-four. A hurricane drops about two feet of rain near a small mountain town in North Carolina.",
+   "claims": [
+    "B-C03"
+   ]
+  },
+  {
+   "key": "q002",
+   "act": "hook",
+   "say": "Why would a storm in this valley matter to the phone in your hand?",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q003",
+   "act": "hook",
+   "say": "You have probably heard that the world's chips depend on Taiwan.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q004",
+   "act": "hook",
+   "say": "That is fair. One industry study, using twenty-nineteen data, found about ninety percent of the most advanced chip-making capacity on that one island.",
+   "claims": [
+    "C-023"
+   ]
+  },
+  {
+   "key": "q005",
+   "act": "hook",
+   "say": "But the crystals those chips are cut from grow in bowls of quartz. And the survey estimates the United States leads the world in producing that quartz, from two companies around Spruce Pine. Almost thirteen thousand kilometres away. Here.",
+   "claims": [
+    "C-029",
+    "A-C01",
+    "C-016",
+    "C-011"
+   ]
+  },
+  {
+   "key": "q006",
+   "act": "hook",
+   "say": "Spruce Pine. About two thousand two hundred people.",
+   "claims": [
+    "A-C13"
+   ]
+  },
+  {
+   "key": "q007",
+   "act": "hook",
+   "say": "Chip sales last year came to nearly eight hundred billion dollars.",
+   "claims": [
+    "C-002"
+   ]
+  },
+  {
+   "key": "q008",
+   "act": "hook",
+   "say": "We read the geological survey, the hurricane report, and the railway's own filings. And three things you may have heard about this town need a closer look.",
+   "claims": [
+    "V-01",
+    "B-C14",
+    "A-C01"
+   ]
+  },
+  {
+   "key": "q009",
+   "act": "hook",
+   "say": "But the real story is stranger. And it starts with a bowl.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q011",
+   "act": "bowl",
+   "say": "This is a single crystal of silicon. One quartz producer, describing how wafers are made, says a full one can weigh over five hundred kilograms and measure more than four metres.",
+   "claims": [
+    "A-C04"
+   ]
+  },
+  {
+   "key": "q012",
+   "act": "bowl",
+   "say": "The same company says one three-hundred-millimetre crystal can make about two million chips.",
+   "claims": [
+    "A-C05"
+   ]
+  },
+  {
+   "key": "q013",
+   "act": "bowl",
+   "say": "So how do you grow one? You start with rock. Ordinary quartz rock is turned into silicon, and the silicon is cleaned until it is almost perfectly pure.",
+   "claims": [
+    "C-017"
+   ]
+  },
+  {
+   "key": "q014",
+   "act": "bowl",
+   "say": "But pure is not enough. A chip needs its silicon as one single crystal. Every atom in line, like tiles on a floor, with almost none out of place.",
+   "claims": [
+    "C-018"
+   ]
+  },
+  {
+   "key": "q015",
+   "act": "bowl",
+   "say": "The trick goes back to a Polish chemist, Jan Czochralski. The story goes that one evening he dipped his pen into molten tin instead of ink. When he lifted it, a thin thread of metal came up with it: a single crystal. He published the method in nineteen eighteen.",
+   "claims": [
+    "A-C16",
+    "A-C15"
+   ]
+  },
+  {
+   "key": "q016",
+   "act": "bowl",
+   "say": "Chip makers still use his idea. So they fill a bowl with chunks of pure silicon, and heat it past fourteen hundred degrees Celsius, until it melts.",
+   "claims": [
+    "C-018",
+    "A-C03"
+   ]
+  },
+  {
+   "key": "q017",
+   "act": "bowl",
+   "say": "They dip a tiny seed crystal into the melt.",
+   "claims": [
+    "C-018"
+   ]
+  },
+  {
+   "key": "q018",
+   "act": "bowl",
+   "say": "Then they pull it up, very slowly, turning it as it rises. And a large crystal grows from the thin seed.",
+   "claims": [
+    "C-018"
+   ]
+  },
+  {
+   "key": "q019",
+   "act": "bowl",
+   "say": "That crystal is sliced into thin discs called wafers, each about a millimetre thick. And chips are built on the wafers.",
+   "claims": [
+    "C-019"
+   ]
+  },
+  {
+   "key": "q020",
+   "act": "bowl",
+   "say": "But go back. Look again at the bowl.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q021",
+   "act": "bowl",
+   "say": "It is called a crucible, and it has a terrible job. It must hold liquid silicon, at extreme heat, for hundreds of hours.",
+   "claims": [
+    "A-C01",
+    "A-C04"
+   ]
+  },
+  {
+   "key": "q022",
+   "act": "bowl",
+   "say": "The crystal has to come out pure and uniform. So the bowl that holds the melt has to be extremely pure too.",
+   "claims": [
+    "A-C01",
+    "A-C02"
+   ]
+  },
+  {
+   "key": "q023",
+   "act": "bowl",
+   "say": "So the bowl is made of quartz: melted, and shaped.",
+   "claims": [
+    "A-C01"
+   ]
+  },
+  {
+   "key": "q024",
+   "act": "bowl",
+   "say": "And not just any quartz. The Geological Survey says the purest products have fewer than ten parts in every million of anything else.",
+   "claims": [
+    "A-C02"
+   ]
+  },
+  {
+   "key": "q025",
+   "act": "bowl",
+   "say": "And how long does a bowl work? That producer says one crucible can pull about eight ingots, over four hundred hours.",
+   "claims": [
+    "A-C04"
+   ]
+  },
+  {
+   "key": "q026",
+   "act": "bowl",
+   "say": "So the first thing you may have heard is wrong. The famous quartz is not inside your phone's chips. It is the bowl they were born in.",
+   "claims": [
+    "A-C01"
+   ]
+  },
+  {
+   "key": "q027",
+   "act": "bowl",
+   "say": "Which raises the next question. If the bowl is that fussy, where does its quartz come from?",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q029",
+   "act": "mountain",
+   "say": "Ordinary quartz is good enough to make the silicon. But quartz pure enough for the bowl is found in only a few places on Earth.",
+   "claims": [
+    "C-017",
+    "C-016"
+   ]
+  },
+  {
+   "key": "q030",
+   "act": "mountain",
+   "say": "The best known of them is here, in the Blue Ridge mountains, around Spruce Pine.",
+   "claims": [
+    "C-011"
+   ]
+  },
+  {
+   "key": "q031",
+   "act": "mountain",
+   "say": "Why here? One company says this district was made about three hundred and eighty million years ago, when Africa collided with North America. Dating of the rocks gives a similar age.",
+   "claims": [
+    "A-C08",
+    "A-C07"
+   ]
+  },
+  {
+   "key": "q032",
+   "act": "mountain",
+   "say": "Deep underneath, molten rock formed. The two companies explain what happened next differently. One says it cooled slowly. The other says there was very little water around to carry impurities in.",
+   "claims": [
+    "A-C08"
+   ]
+  },
+  {
+   "key": "q033",
+   "act": "mountain",
+   "say": "Whichever it was, the result is a rock holding quartz of rare purity.",
+   "claims": [
+    "A-C02",
+    "A-C12"
+   ]
+  },
+  {
+   "key": "q034",
+   "act": "mountain",
+   "say": "The United States Geological Survey puts it at more than ninety-nine point nine nine nine percent pure.",
+   "claims": [
+    "A-C02"
+   ]
+  },
+  {
+   "key": "q035",
+   "act": "mountain",
+   "say": "China has announced large reserves of its own. But in China's first tests, as the survey reports them, the purity came in just below Spruce Pine's.",
+   "claims": [
+    "C-015"
+   ]
+  },
+  {
+   "key": "q036",
+   "act": "mountain",
+   "say": "Back to the one American valley. And in that valley, two companies.",
+   "claims": [
+    "C-011"
+   ]
+  },
+  {
+   "key": "q038",
+   "act": "two",
+   "say": "Sibelco, which sells its quartz under the name Iota. And The Quartz Corp.",
+   "claims": [
+    "A-C11",
+    "A-C12",
+    "C-010"
+   ]
+  },
+  {
+   "key": "q039",
+   "act": "two",
+   "say": "The Geological Survey says that in twenty twenty-five, two companies produced it in the United States, both around Spruce Pine. And for most uses, it says, there is no economic substitute.",
+   "claims": [
+    "C-011",
+    "C-013"
+   ]
+  },
+  {
+   "key": "q040",
+   "act": "two",
+   "say": "Which brings us to the second thing you may have heard. That seventy to ninety percent of the world's supply comes from this one town.",
+   "claims": [
+    "V-01"
+   ]
+  },
+  {
+   "key": "q041",
+   "act": "two",
+   "say": "We could not find that number in any primary source we read. The survey says world production figures are simply not available. It only estimates that the United States leads.",
+   "claims": [
+    "V-01",
+    "C-016"
+   ]
+  },
+  {
+   "key": "q042",
+   "act": "two",
+   "say": "But here are numbers that are official. All the silicon wafers sold last year earned about eleven billion dollars. The chips built on them, nearly eight hundred billion.",
+   "claims": [
+    "C-006",
+    "C-002"
+   ]
+  },
+  {
+   "key": "q043",
+   "act": "two",
+   "say": "And the pure quartz? Take the survey's rounded estimate of tonnes sold, at its very top price, and America's whole supply comes to roughly a billion dollars a year. A speck, holding up a giant.",
+   "claims": [
+    "C-014",
+    "C-002"
+   ]
+  },
+  {
+   "key": "q044",
+   "act": "two",
+   "say": "In November two thousand eight, a fire broke out at one of the plants here. Investigators found no sign of foul play, and recorded the cause as undetermined.",
+   "claims": [
+    "A-C18"
+   ]
+  },
+  {
+   "key": "q045",
+   "act": "two",
+   "say": "So what happens when something hits the speck? Nearly sixteen years later, a hurricane came.",
+   "claims": [
+    "A-C18",
+    "B-C01"
+   ]
+  },
+  {
+   "key": "q047",
+   "act": "storm",
+   "say": "On the night of the twenty-sixth of September, twenty twenty-four, Hurricane Helene came ashore in Florida as a category four storm, and drove north.",
+   "claims": [
+    "B-C01"
+   ]
+  },
+  {
+   "key": "q048",
+   "act": "storm",
+   "say": "In Spruce Pine, both quartz companies had stopped work by the twenty-sixth. The Quartz Corp says it stopped in preparation.",
+   "claims": [
+    "B-C07",
+    "B-C08"
+   ]
+  },
+  {
+   "key": "q049",
+   "act": "storm",
+   "say": "Then the rain came. Gauges six or seven miles from the town measured between twenty-three and twenty-four inches. That is about sixty centimetres of water.",
+   "claims": [
+    "B-C03"
+   ]
+  },
+  {
+   "key": "q050",
+   "act": "storm",
+   "say": "So some rivers and creeks in the county rose to their highest levels in recorded history. Roads and bridges washed out. The power failed.",
+   "claims": [
+    "B-C05",
+    "B-C07"
+   ]
+  },
+  {
+   "key": "q051",
+   "act": "storm",
+   "say": "In the south of this one county: more than two hundred landslides. An estimated hundred thousand trees down. And one person drowned in the river that runs through the valley.",
+   "claims": [
+    "B-C05"
+   ]
+  },
+  {
+   "key": "q052",
+   "act": "storm",
+   "say": "And the railway that follows the river north, through a narrow gorge into Tennessee, was torn apart.",
+   "claims": [
+    "B-C16"
+   ]
+  },
+  {
+   "key": "q053",
+   "act": "storm",
+   "say": "So, the question from the start. Was the quartz gone?",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q054",
+   "act": "storm",
+   "say": "A week later, Sibelco reported its first look at the plants. They had, in its words, only sustained minor damage.",
+   "claims": [
+    "B-C09"
+   ]
+  },
+  {
+   "key": "q055",
+   "act": "storm",
+   "say": "The Quartz Corp said its damage was mostly around side units. Later it said up to a quarter of its workers were out helping the town recover.",
+   "claims": [
+    "B-C12",
+    "B-C13"
+   ]
+  },
+  {
+   "key": "q056",
+   "act": "storm",
+   "say": "About two weeks after the storm, Sibelco said production and shipments had restarted. By late October, The Quartz Corp said its plants were gradually restarting too.",
+   "claims": [
+    "B-C10",
+    "B-C13"
+   ]
+  },
+  {
+   "key": "q057",
+   "act": "storm",
+   "say": "And the companies said there were stocks. The Quartz Corp pointed to safety stocks along the chain, and to raw material held in Norway.",
+   "claims": [
+    "B-C12",
+    "B-C09"
+   ]
+  },
+  {
+   "key": "q058",
+   "act": "storm",
+   "say": "So, by the companies' own accounts, the plants had largely survived. But what broke was everything around them.",
+   "claims": [
+    "B-C09"
+   ]
+  },
+  {
+   "key": "q059",
+   "act": "storm",
+   "say": "About sixty miles of that railway were badly damaged. In the gorge, the track had to be built again, mile by mile.",
+   "claims": [
+    "B-C16"
+   ]
+  },
+  {
+   "key": "q060",
+   "act": "storm",
+   "say": "And here is the third thing you may have heard: that Spruce Pine was cut off from trains for a whole year. But the railway's own notice says limited service north of the town began in the middle of January.",
+   "claims": [
+    "B-C14"
+   ]
+  },
+  {
+   "key": "q061",
+   "act": "storm",
+   "say": "The gorge took far longer. The whole line returned to service on the twenty-fifth of September, twenty twenty-five. Almost exactly one year.",
+   "claims": [
+    "B-C15"
+   ]
+  },
+  {
+   "key": "q062",
+   "act": "storm",
+   "say": "The railway's own filings put the cost at about five hundred and twenty million dollars.",
+   "claims": [
+    "B-C17"
+   ]
+  },
+  {
+   "key": "q063",
+   "act": "storm",
+   "say": "Three things you may have heard. One was wrong, one has no source, and one was only half true.",
+   "claims": [
+    "A-C01",
+    "V-01",
+    "B-C14"
+   ]
+  },
+  {
+   "key": "q065",
+   "act": "lesson",
+   "say": "So was the world lucky? Partly. The storm stopped the quartz for weeks, not for years.",
+   "claims": [
+    "B-C10",
+    "B-C13"
+   ]
+  },
+  {
+   "key": "q066",
+   "act": "lesson",
+   "say": "But look at what one small town needed. Power. Roads. Water. And the people who live there.",
+   "claims": [
+    "B-C09",
+    "B-C22",
+    "B-C05"
+   ]
+  },
+  {
+   "key": "q067",
+   "act": "lesson",
+   "say": "A White House supply-chain review in twenty twenty-one, passing on industry comments, said that wafer-making inputs, including quartz crucibles, were sole-sourced, or not made in the United States.",
+   "claims": [
+    "C-020"
+   ]
+  },
+  {
+   "key": "q068",
+   "act": "lesson",
+   "say": "Sibelco had already announced an estimated two hundred million dollars to double its capacity here, and later put a possible second expansion at around five hundred million.",
+   "claims": [
+    "B-C18",
+    "B-C19"
+   ]
+  },
+  {
+   "key": "q069",
+   "act": "lesson",
+   "say": "Others are trying to catch up. A Chinese producer's annual report lists a sixty-thousand-tonne-a-year project for high-purity quartz sand. And some bowl makers offer bowls lined inside with man-made silica.",
+   "claims": [
+    "A-C19",
+    "A-C20"
+   ]
+  },
+  {
+   "key": "q070",
+   "act": "lesson",
+   "say": "Meanwhile new chip factories keep rising, far from these mountains. India has approved twelve semiconductor units, including a fab at Dholera, in Gujarat.",
+   "claims": [
+    "C-024",
+    "C-025"
+   ]
+  },
+  {
+   "key": "q071",
+   "act": "lesson",
+   "say": "The silicon fab among them will need wafers. And India's solar makers, the government says, still rely substantially on imported wafers. Behind a great many wafers stands a quartz bowl.",
+   "claims": [
+    "C-018",
+    "C-027",
+    "A-C01"
+   ]
+  },
+  {
+   "key": "q072",
+   "act": "lesson",
+   "say": "We tend to picture a chokepoint as a narrow sea, watched by warships.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "q073",
+   "act": "lesson",
+   "say": "This one is a green valley, two mining companies, and about two thousand people.",
+   "claims": [
+    "A-C13",
+    "C-011"
+   ]
+  },
+  {
+   "key": "q074",
+   "act": "lesson",
+   "say": "The most advanced machines on Earth begin in a bowl.",
+   "claims": [
+    "A-C01"
+   ]
+  },
+  {
+   "key": "q075",
+   "act": "lesson",
+   "say": "And the survey estimates the United States leads the world in producing its quartz, and all of that is here, in Spruce Pine.",
+   "claims": [
+    "C-016",
+    "C-011"
+   ]
+  }
+ ]
+}

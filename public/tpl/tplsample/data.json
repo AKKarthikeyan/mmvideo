@@ -1,0 +1,951 @@
+{
+ "id": "tplsample",
+ "title": "Union Bank: Loans Outran Deposits. How Much Room Is Left?",
+ "chapters": [
+  "The page",
+  "The new money",
+  "The cushion",
+  "How much room?",
+  "The other side",
+  "What we know"
+ ],
+ "next_video": "Comparing Banks Without Confusing Growth With Quality",
+ "page": {
+  "w": 595.4,
+  "h": 841.7,
+  "table": [
+   0.0504,
+   0.4318,
+   0.8992,
+   0.2637
+  ],
+  "rows": {
+   "adv": [
+    0.1391,
+    0.4948,
+    0.7937,
+    0.0208
+   ],
+   "dep": [
+    0.1391,
+    0.5094,
+    0.7937,
+    0.0207
+   ]
+  }
+ },
+ "banks": [
+  {
+   "name": "Karnataka",
+   "sym": "KTKBANK",
+   "dep": 11.98,
+   "adv": 24.94,
+   "gap": 12.96,
+   "ldr25": 71.6,
+   "ldr26": 79.9
+  },
+  {
+   "name": "Union Bank",
+   "sym": "UNIONBANK",
+   "dep": 6.87,
+   "adv": 18.53,
+   "gap": 11.66,
+   "ldr25": 79.0,
+   "ldr26": 87.6
+  },
+  {
+   "name": "UCO",
+   "sym": "UCOBANK",
+   "dep": 14.05,
+   "adv": 24.68,
+   "gap": 10.63,
+   "ldr25": 75.5,
+   "ldr26": 82.5
+  },
+  {
+   "name": "Equitas SFB",
+   "sym": "EQUITASBNK",
+   "dep": 19.03,
+   "adv": 29.58,
+   "gap": 10.55,
+   "ldr25": 88.7,
+   "ldr26": 96.6
+  },
+  {
+   "name": "J&K Bank",
+   "sym": "J&KBANK",
+   "dep": 16.29,
+   "adv": 23.72,
+   "gap": 7.43,
+   "ldr25": 71.0,
+   "ldr26": 75.5
+  },
+  {
+   "name": "Capital SFB",
+   "sym": "CAPITALSFB",
+   "dep": 16.25,
+   "adv": 23.37,
+   "gap": 7.12,
+   "ldr25": 84.9,
+   "ldr26": 90.1
+  },
+  {
+   "name": "Punjab & Sind",
+   "sym": "PSB",
+   "dep": 12.98,
+   "adv": 19.37,
+   "gap": 6.39,
+   "ldr25": 77.8,
+   "ldr26": 82.2
+  },
+  {
+   "name": "Canara",
+   "sym": "CANBK",
+   "dep": 13.13,
+   "adv": 19.35,
+   "gap": 6.22,
+   "ldr25": 76.7,
+   "ldr26": 80.9
+  },
+  {
+   "name": "RBL",
+   "sym": "RBLBANK",
+   "dep": 33.95,
+   "adv": 40.09,
+   "gap": 6.14,
+   "ldr25": 87.7,
+   "ldr26": 91.7
+  },
+  {
+   "name": "PNB",
+   "sym": "PNB",
+   "dep": 9.9,
+   "adv": 14.8,
+   "gap": 4.9,
+   "ldr25": 72.3,
+   "ldr26": 75.6
+  },
+  {
+   "name": "Karur Vysya",
+   "sym": "KARURVYSYA",
+   "dep": 15.96,
+   "adv": 20.34,
+   "gap": 4.38,
+   "ldr25": 83.9,
+   "ldr26": 87.1
+  },
+  {
+   "name": "Yes Bank",
+   "sym": "YESBANK",
+   "dep": 19.51,
+   "adv": 23.77,
+   "gap": 4.25,
+   "ldr25": 84.5,
+   "ldr26": 87.5
+  },
+  {
+   "name": "Indian Bank",
+   "sym": "INDIANB",
+   "dep": 12.4,
+   "adv": 16.6,
+   "gap": 4.2,
+   "ldr25": 79.8,
+   "ldr26": 82.8
+  },
+  {
+   "name": "Tamilnad Merc.",
+   "sym": "TMB",
+   "dep": 25.49,
+   "adv": 29.37,
+   "gap": 3.88,
+   "ldr25": 84.7,
+   "ldr26": 87.3
+  },
+  {
+   "name": "CSB",
+   "sym": "CSBBANK",
+   "dep": 18.25,
+   "adv": 22.07,
+   "gap": 3.82,
+   "ldr25": 87.5,
+   "ldr26": 90.4
+  },
+  {
+   "name": "Bandhan",
+   "sym": "BANDHANBNK",
+   "dep": 9.24,
+   "adv": 13.06,
+   "gap": 3.82,
+   "ldr25": 88.6,
+   "ldr26": 91.7
+  },
+  {
+   "name": "Ujjivan SFB",
+   "sym": "UJJIVANSFB",
+   "dep": 29.17,
+   "adv": 32.12,
+   "gap": 2.95,
+   "ldr25": 88.2,
+   "ldr26": 90.2
+  },
+  {
+   "name": "Dhanlaxmi",
+   "sym": "DHANBANK",
+   "dep": 20.15,
+   "adv": 22.29,
+   "gap": 2.14,
+   "ldr25": 76.2,
+   "ldr26": 77.6
+  },
+  {
+   "name": "Bank of Baroda",
+   "sym": "BANKBARODA",
+   "dep": 16.75,
+   "adv": 18.27,
+   "gap": 1.52,
+   "ldr25": 85.3,
+   "ldr26": 86.4
+  },
+  {
+   "name": "IDBI",
+   "sym": "IDBI",
+   "dep": 17.21,
+   "adv": 17.95,
+   "gap": 0.74,
+   "ldr25": 75.9,
+   "ldr26": 76.4
+  },
+  {
+   "name": "ESAF SFB",
+   "sym": "ESAFSFB",
+   "dep": 24.34,
+   "adv": 25.05,
+   "gap": 0.71,
+   "ldr25": 83.6,
+   "ldr26": 84.1
+  },
+  {
+   "name": "South Indian",
+   "sym": "SOUTHBANK",
+   "dep": 18.7,
+   "adv": 18.67,
+   "gap": -0.03,
+   "ldr25": 79.8,
+   "ldr26": 79.8
+  },
+  {
+   "name": "AU SFB",
+   "sym": "AUBANK",
+   "dep": 28.64,
+   "adv": 27.88,
+   "gap": -0.76,
+   "ldr25": 88.7,
+   "ldr26": 88.2
+  },
+  {
+   "name": "Bank of India",
+   "sym": "BANKINDIA",
+   "dep": 21.6,
+   "adv": 20.43,
+   "gap": -1.17,
+   "ldr25": 83.1,
+   "ldr26": 82.3
+  },
+  {
+   "name": "HDFC",
+   "sym": "HDFCBANK",
+   "dep": 18.76,
+   "adv": 16.26,
+   "gap": -2.5,
+   "ldr25": 98.8,
+   "ldr26": 96.8
+  }
+ ],
+ "beats": [
+  {
+   "ch": 0,
+   "key": "u00",
+   "say": "Union Bank of India filed one page on the first of October. Loans, up eighteen and a half percent in a year. Deposits, up less than seven. Is that a warning, or a bank using room it already had?",
+   "cap": "Union Bank of India filed one page on 1 October. Loans, up 18.5% in a year. Deposits, up less than 7%. Is that a warning, or a bank using room it already had?",
+   "scene": {
+    "tpl": "dive",
+    "mode": "in",
+    "stages": [
+     {
+      "level": 0,
+      "at": "Union Bank of India",
+      "label": "25 BANKS · SEP 2026 UPDATES"
+     },
+     {
+      "level": 1,
+      "at": "one page",
+      "label": "1 PAGE · 1 OCT 2026"
+     },
+     {
+      "level": 2,
+      "at": "Loans",
+      "label": "THE TABLE"
+     },
+     {
+      "level": 3,
+      "at": "Deposits",
+      "label": "2 LINES",
+      "hl": [
+       "adv",
+       "dep"
+      ]
+     },
+     {
+      "level": 3,
+      "at": "Is that a warning",
+      "label": "2 LINES",
+      "hl": [
+       "adv",
+       "dep"
+      ],
+      "q": "WARNING OR ROOM?"
+     }
+    ]
+   },
+   "sec": 12.96,
+   "cues": [
+    "Union Bank of India filed one page on 1 October.",
+    "Loans, up 18.5% in a year.",
+    "Deposits, up less than 7%.",
+    "Is that a warning, or a bank using room it already had?"
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "u01",
+   "say": "Deposits are the floor that loans stand on. But most banks don't lend out every rupee of deposits. Some deposits stay unlent, and that leaves room.",
+   "cap": "Deposits are the floor that loans stand on. But most banks don't lend out every rupee of deposits. Some deposits stay unlent, and that leaves room.",
+   "scene": {
+    "tpl": "words",
+    "load": "LOANS",
+    "floor": "DEPOSITS",
+    "loadg": "",
+    "floorg": "",
+    "grow_at": "Deposits are the floor",
+    "cushion_at": "stay unlent"
+   },
+   "sec": 9.46,
+   "cues": [
+    "Deposits are the floor that loans stand on.",
+    "But most banks don't lend out every rupee of deposits.",
+    "Some deposits stay unlent, and that leaves room."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "u02",
+   "say": "Here are the bank's own numbers. Gross advances, eleven lakh fifty five thousand nine hundred and thirty crore rupees, up eighteen point five three percent in a year. Total deposits, thirteen lakh nineteen thousand four hundred and fifty seven crore, up six point eight seven percent.",
+   "cap": "Here are the bank's own numbers. Gross advances: ₹11,55,930 crore, up 18.53% in a year. Total deposits: ₹13,19,457 crore, up 6.87%.",
+   "scene": {
+    "tpl": "dive",
+    "mode": "hold",
+    "stages": [
+     {
+      "level": 3,
+      "at": "Gross advances",
+      "label": "UNION BANK · 1 OCT 2026 · PAGE 1",
+      "hl": [
+       "adv"
+      ],
+      "big": {
+       "row": "adv",
+       "text": "₹11,55,930 CR  ·  +18.53%"
+      }
+     },
+     {
+      "level": 3,
+      "at": "Total deposits",
+      "label": "UNION BANK · 1 OCT 2026 · PAGE 1",
+      "hl": [
+       "adv",
+       "dep"
+      ],
+      "big": {
+       "row": "dep",
+       "text": "₹13,19,457 CR  ·  +6.87%"
+      }
+     }
+    ]
+   },
+   "sec": 18.78,
+   "cues": [
+    "Here are the bank's own numbers.",
+    "Gross advances:",
+    "₹11,55,930 crore, up 18.53% in a year.",
+    "Total deposits:",
+    "₹13,19,457 crore, up 6.87%."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "u03",
+   "say": "Read alone, those two lines can mislead. So the question for this video is not who paid. It's how much room Union Bank had, how much it used, and how much is left. Keep one number in mind. A year ago, Union Bank lent out seventy seven rupees for every hundred it held in deposits in India.",
+   "cap": "Read alone, those two lines can mislead. So the question for this video is not who paid. It's how much room Union Bank had, how much it used, and how much is left. Keep one number in mind. A year ago, Union Bank lent out ₹77 for every ₹100 it held in deposits in India.",
+   "scene": {
+    "tpl": "kinetic",
+    "lines": [
+     "HOW MUCH ROOM?",
+     "HOW MUCH IS LEFT?"
+    ],
+    "at": [
+     "how much room",
+     "how much is left"
+    ],
+    "note": {
+     "text": "REMEMBER: 77.01%",
+     "sub": "CD RATIO · DOMESTIC · 30 SEP 2025",
+     "at": "Keep one number"
+    }
+   },
+   "sec": 16.2,
+   "cues": [
+    "Read alone, those two lines can mislead.",
+    "So the question for this video is not who paid.",
+    "It's how much room Union Bank had, how much it used, and how much is left.",
+    "Keep one number in mind.",
+    "A year ago, Union Bank lent out ₹77 for every ₹100 it held in deposits in",
+    "India."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "u10",
+   "say": "Start with the new money. Over the year, Union Bank's loans grew by one lakh eighty thousand seven hundred and twenty three crore rupees. Its deposits grew by eighty four thousand eight hundred and thirty six crore. Pour the new deposits into the new loans, and the glass is less than half full.",
+   "cap": "Start with the new money. Over the year, Union Bank's loans grew by ₹1,80,723 crore. Its deposits grew by ₹84,836 crore. Pour the new deposits into the new loans, and the glass is less than half full.",
+   "scene": {
+    "tpl": "pour",
+    "glass": "NEW LOANS · ₹1,80,723 CR",
+    "jug": "NEW DEPOSITS · ₹84,836 CR",
+    "fill": 0.46942558501131565,
+    "rest": "₹95,887 CR · NOT FROM NEW DEPOSITS",
+    "glass_at": "loans grew by",
+    "pour_at": "Its deposits grew",
+    "rest_at": "and the glass",
+    "hold": 1.5
+   },
+   "sec": 17.03,
+   "cues": [
+    "Start with the new money.",
+    "Over the year, Union Bank's loans grew by ₹1,80,723 crore.",
+    "Its deposits grew by ₹84,836 crore.",
+    "Pour the new deposits into the new loans,",
+    "and the glass is less than half full."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "u11",
+   "say": "Put another way: for every hundred rupees of new deposits, Union Bank made two hundred and thirteen rupees of new loans. The first hundred is covered by new deposits. The other hundred and thirteen had to come from somewhere.",
+   "cap": "Put another way: for every ₹100 of new deposits, Union Bank made ₹213 of new loans. The first ₹100 is covered by new deposits. The other ₹113 had to come from somewhere.",
+   "scene": {
+    "tpl": "rupee",
+    "step": "split",
+    "coin": "₹100",
+    "other": "₹113",
+    "total": "₹213 OF NEW LOANS",
+    "at": {
+     "walk": "for every hundred rupees",
+     "out": "two hundred and thirteen",
+     "covered": "The first hundred",
+     "other": "other hundred and thirteen"
+    }
+   },
+   "sec": 14.84,
+   "cues": [
+    "Put another way:",
+    "for every ₹100 of new deposits, Union Bank made ₹213 of new loans.",
+    "The first ₹100 is covered by new deposits.",
+    "The other ₹113 had to come from somewhere."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "u12",
+   "say": "A bank has three places to look: borrowings, fresh capital, or deposits it already holds but hasn't lent, usually parked in cash and government bonds. Union Bank had plenty of the third.",
+   "cap": "A bank has three places to look: borrowings, fresh capital, or deposits it already holds but hasn't lent, usually parked in cash and government bonds. Union Bank had plenty of the third.",
+   "scene": {
+    "tpl": "rupee",
+    "step": "doors",
+    "other": "₹113",
+    "lit": 2,
+    "doors": [
+     {
+      "text": "BORROWINGS?",
+      "at": "borrowings"
+     },
+     {
+      "text": "CAPITAL?",
+      "at": "fresh capital"
+     },
+     {
+      "text": "UNLENT DEPOSITS",
+      "at": "deposits it already holds"
+     }
+    ],
+    "stamp": {
+     "text": "THE CUSHION",
+     "at": "plenty of the third"
+    },
+    "hold": 0.8
+   },
+   "sec": 11.47,
+   "cues": [
+    "A bank has three places to look:",
+    "borrowings, fresh capital, or deposits it already holds but hasn't lent,",
+    "usually parked in cash and government bonds.",
+    "Union Bank had plenty of the third."
+   ]
+  },
+  {
+   "ch": 1,
+   "key": "u13",
+   "say": "So how big was that cushion, and how much of it did this year use?",
+   "cap": "So how big was that cushion, and how much of it did this year use?",
+   "scene": {
+    "tpl": "kinetic",
+    "lines": [
+     "HOW BIG?",
+     "HOW MUCH USED?"
+    ],
+    "at": [
+     "how big",
+     "how much of it"
+    ]
+   },
+   "sec": 4.05,
+   "cues": [
+    "So how big was that cushion, and how much of it did this year use?"
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "u20",
+   "say": "The same page gives the numbers for India. In September twenty twenty five, Union Bank held about twelve lakh thirty four thousand crore of deposits, and had lent about nine lakh forty two thousand crore. Roughly two lakh ninety two thousand crore was not lent out.",
+   "cap": "The same page gives the numbers for India. In September 2025, Union Bank held ₹12,34,088 crore of deposits, and had lent ₹9,42,273 crore. ₹2,91,815 crore was not lent out.",
+   "scene": {
+    "tpl": "build",
+    "step": "y1",
+    "dep": [
+     "₹12,34,088 CR",
+     "₹13,18,977 CR"
+    ],
+    "adv": [
+     "₹9,42,273 CR",
+     "₹11,05,807 CR"
+    ],
+    "pool": [
+     "₹2,91,815 CR",
+     "₹2,13,170 CR"
+    ],
+    "y1_at": "In September",
+    "adv_at": "had lent",
+    "pool_at": "was not lent"
+   },
+   "sec": 14.58,
+   "cues": [
+    "The same page gives the numbers for India.",
+    "In September 2025, Union Bank held ₹12,34,088 crore of deposits,",
+    "and had lent ₹9,42,273 crore.",
+    "₹2,91,815 crore was not lent out."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "u21",
+   "say": "A year later, deposits were about thirteen lakh nineteen thousand crore, and loans about eleven lakh six thousand crore. The unlent part had shrunk to about two lakh thirteen thousand crore. That's seventy eight thousand six hundred and forty five crore less, or twenty seven percent. In India, the extra lending came out of that cushion.",
+   "cap": "A year later, deposits were ₹13,18,977 crore, and loans ₹11,05,807 crore. The unlent part had shrunk to ₹2,13,170 crore. That's ₹78,645 crore less, or 27%. In India, the extra lending came out of that cushion.",
+   "scene": {
+    "tpl": "build",
+    "step": "y2",
+    "dep": [
+     "₹12,34,088 CR",
+     "₹13,18,977 CR"
+    ],
+    "adv": [
+     "₹9,42,273 CR",
+     "₹11,05,807 CR"
+    ],
+    "pool": [
+     "₹2,91,815 CR",
+     "₹2,13,170 CR"
+    ],
+    "drop": "−₹78,645 CR · −27%",
+    "y2_at": "A year later",
+    "pool_at": "had shrunk",
+    "drop_at": "seventy eight thousand",
+    "hold": 0.6
+   },
+   "sec": 18.94,
+   "cues": [
+    "A year later, deposits were ₹13,18,977 crore, and loans ₹11,05,807 crore.",
+    "The unlent part had shrunk to ₹2,13,170 crore.",
+    "That's ₹78,645 crore less, or 27%.",
+    "In India, the extra lending came out of that cushion."
+   ]
+  },
+  {
+   "ch": 2,
+   "key": "u22",
+   "say": "One caution. Not all of that cushion is free to lend. By rule, banks must keep part of their deposits as cash reserves and government bonds. So the usable room is smaller than it looks, and this page doesn't say how much smaller.",
+   "cap": "One caution. Not all of that cushion is free to lend. By rule, banks must keep part of their deposits as cash reserves and government bonds. So the usable room is smaller than it looks, and this page doesn't say how much smaller.",
+   "scene": {
+    "tpl": "build",
+    "step": "reserve",
+    "dep": [
+     "₹12,34,088 CR",
+     "₹13,18,977 CR"
+    ],
+    "adv": [
+     "₹9,42,273 CR",
+     "₹11,05,807 CR"
+    ],
+    "pool": [
+     "₹2,91,815 CR",
+     "₹2,13,170 CR"
+    ],
+    "res_at": "By rule",
+    "stamp_at": "doesn't say"
+   },
+   "sec": 12.88,
+   "cues": [
+    "One caution.",
+    "Not all of that cushion is free to lend.",
+    "By rule, banks must keep part of their deposits as cash reserves and",
+    "government bonds.",
+    "So the usable room is smaller than it looks,",
+    "and this page doesn't say how much smaller."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "u30",
+   "say": "So Union Bank wasn't lending money it didn't have. It had the room, and it used it. The bigger question is how much room is left.",
+   "cap": "So Union Bank wasn't lending money it didn't have. It had the room, and it used it. The bigger question is how much room is left.",
+   "scene": {
+    "tpl": "morph",
+    "states": [
+     {
+      "at": "wasn't lending",
+      "kind": "label",
+      "text": "IT HAD THE ROOM"
+     },
+     {
+      "at": "how much room is left",
+      "kind": "label",
+      "text": "HOW MUCH IS LEFT?",
+      "accent": true
+     }
+    ]
+   },
+   "sec": 7.37,
+   "cues": [
+    "So Union Bank wasn't lending money it didn't have.",
+    "It had the room, and it used it.",
+    "The bigger question is how much room is left."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "u31",
+   "say": "The bank's own measure is the credit deposit ratio: loans divided by deposits. For India, it rose from seventy seven point zero one percent to eighty four point three four percent in a single year. That's seven point three three points.",
+   "cap": "The bank's own measure is the credit-deposit ratio: loans divided by deposits. For India, it rose from 77.01% to 84.34% in a single year. That's 7.33 points.",
+   "scene": {
+    "tpl": "morph",
+    "states": [
+     {
+      "at": "credit deposit ratio",
+      "kind": "gauge",
+      "v": 77.01,
+      "label": "CD RATIO · DOMESTIC · SEP 2025"
+     },
+     {
+      "at": "eighty four point three four",
+      "kind": "gauge",
+      "v": 84.34,
+      "from_v": 77.01,
+      "label": "CD RATIO · DOMESTIC · SEP 2026"
+     },
+     {
+      "at": "seven point three three",
+      "kind": "gauge",
+      "v": 84.34,
+      "from_v": 77.01,
+      "label": "+733 BPS IN ONE YEAR",
+      "accent": true
+     }
+    ]
+   },
+   "sec": 15.05,
+   "cues": [
+    "The bank's own measure is the credit-deposit ratio:",
+    "loans divided by deposits.",
+    "For India, it rose from 77.01% to 84.34% in a single year.",
+    "That's 7.33 points."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "u32",
+   "say": "The latest quarter points the same way. Since June, loans grew five point four four percent, and deposits two point eight one.",
+   "cap": "The latest quarter points the same way. Since June, loans grew 5.44%, and deposits 2.81%.",
+   "scene": {
+    "tpl": "morph",
+    "states": [
+     {
+      "at": "The latest quarter",
+      "kind": "bars",
+      "a": 5.44,
+      "b": 2.81,
+      "la": "LOANS · QoQ",
+      "lb": "DEPOSITS · QoQ"
+     }
+    ]
+   },
+   "sec": 7.16,
+   "cues": [
+    "The latest quarter points the same way.",
+    "Since June, loans grew 5.44%, and deposits 2.81%."
+   ]
+  },
+  {
+   "ch": 3,
+   "key": "u33",
+   "say": "Is eighty four percent high? A ratio means little alone. It depends on where the bank started, and where its peers stand.",
+   "cap": "Is 84% high? A ratio means little alone. It depends on where the bank started, and where its peers stand.",
+   "scene": {
+    "tpl": "morph",
+    "states": [
+     {
+      "at": "Is eighty four",
+      "kind": "label",
+      "text": "IS IT HIGH?"
+     },
+     {
+      "at": "where its peers",
+      "kind": "label",
+      "text": "COMPARED WITH WHOM?",
+      "accent": true
+     }
+    ]
+   },
+   "sec": 8.04,
+   "cues": [
+    "Is 84% high?",
+    "A ratio means little alone.",
+    "It depends on where the bank started, and where its peers stand."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "u40",
+   "say": "We lined up the twenty five banks in our September tracker, using our arithmetic on each bank's filed totals: loans divided by deposits, a year ago and now. Union Bank's ratio rose the most of all twenty five, by eight point six points.",
+   "cap": "We lined up the 25 banks in our September tracker, using our arithmetic on each bank's filed totals: loans ÷ deposits, a year ago and now. Union Bank's ratio rose the most of all 25, by 8.6 points.",
+   "scene": {
+    "tpl": "notebook",
+    "step": "ldr_all",
+    "draw_at": "lined up",
+    "rise_at": "rose the most"
+   },
+   "sec": 15.44,
+   "cues": [
+    "We lined up the 25 banks in our September tracker,",
+    "using our arithmetic on each bank's filed totals:",
+    "loans ÷ deposits, a year ago and now.",
+    "Union Bank's ratio rose the most of all 25, by 8.6 points."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "u41",
+   "say": "But it started low. At seventy nine percent a year ago, only eight banks were lower. Today, at eighty seven point six, eight banks are higher. So Union Bank moved from the cautious end to the middle of the pack, not to the edge.",
+   "cap": "But it started low. At 79% a year ago, only 8 banks were lower. Today, at 87.6%, 8 banks are higher. So Union Bank moved from the cautious end to the middle of the pack, not to the edge.",
+   "scene": {
+    "tpl": "notebook",
+    "step": "ldr_union",
+    "low_at": "started low",
+    "now_at": "Today",
+    "mid_at": "middle of the pack",
+    "hold": 0.6
+   },
+   "sec": 14.86,
+   "cues": [
+    "But it started low.",
+    "At 79% a year ago, only 8 banks were lower.",
+    "Today, at 87.6%, 8 banks are higher.",
+    "So Union Bank moved from the cautious end to the middle of the pack,",
+    "not to the edge."
+   ]
+  },
+  {
+   "ch": 4,
+   "key": "u42",
+   "say": "And the deposits it did add were the cheaper kind. Current and savings deposits grew fourteen point six six percent, and their share rose from thirty two point five six to thirty four point nine three percent. These are provisional numbers.",
+   "cap": "And the deposits it did add were the cheaper kind. Current and savings deposits (CASA) grew 14.66%, and their share rose from 32.56% to 34.93%. These are provisional numbers.",
+   "scene": {
+    "tpl": "kinetic",
+    "lines": [
+     "CASA +14.66%",
+     "SHARE 32.56% → 34.93%"
+    ],
+    "at": [
+     "Current and savings",
+     "their share"
+    ],
+    "note": {
+     "text": "PROVISIONAL",
+     "sub": "BEFORE AUDITED RESULTS",
+     "at": "provisional"
+    }
+   },
+   "sec": 13.4,
+   "cues": [
+    "And the deposits it did add were the cheaper kind.",
+    "Current and savings deposits (CASA) grew 14.66%,",
+    "and their share rose from 32.56% to 34.93%.",
+    "These are provisional numbers."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "u50",
+   "say": "So, what we know. Loans outran deposits, but Union Bank started with a cushion and used part of it. It went from lending seventy seven rupees per hundred of deposits to eighty four, in one year.",
+   "cap": "So, what we know. Loans outran deposits, but Union Bank started with a cushion and used part of it. It went from lending ₹77 per ₹100 of deposits to ₹84, in one year.",
+   "scene": {
+    "tpl": "words",
+    "load": "LOANS",
+    "floor": "DEPOSITS",
+    "loadg": "",
+    "floorg": "",
+    "grow_at": "Loans outran",
+    "cushion_at": "started with a cushion",
+    "recall": {
+     "text": "77 → 84",
+     "at": "seventy seven rupees"
+    },
+    "hold": 0.8
+   },
+   "sec": 13.53,
+   "cues": [
+    "So, what we know.",
+    "Loans outran deposits, but Union Bank started with a cushion and used part of",
+    "it.",
+    "It went from lending ₹77 per ₹100 of deposits to ₹84, in one year."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "u51",
+   "say": "What we don't know: how much of the remaining cushion is truly free after reserves, and whether the bank sold bonds or ran down cash to lend.",
+   "cap": "What we don't know: how much of the remaining cushion is truly free after reserves, and whether the bank sold bonds or ran down cash to lend.",
+   "scene": {
+    "tpl": "ledger3",
+    "row": "unknown",
+    "at": "What we don't know",
+    "items": [
+     {
+      "text": "FREE ROOM AFTER RESERVES?",
+      "at": "truly free"
+     },
+     {
+      "text": "BONDS SOLD OR CASH USED?",
+      "at": "sold bonds"
+     }
+    ]
+   },
+   "sec": 9.74,
+   "cues": [
+    "What we don't know:",
+    "how much of the remaining cushion is truly free after reserves,",
+    "and whether the bank sold bonds or ran down cash to lend."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "u52",
+   "say": "What to watch: the full September quarter results. Look at investments, borrowings and the net interest margin, and whether deposit growth starts to catch up with loans.",
+   "cap": "What to watch: the full September-quarter results. Look at investments, borrowings and the net interest margin, and whether deposit growth starts to catch up with loans.",
+   "scene": {
+    "tpl": "ledger3",
+    "row": "monitor",
+    "at": "What to watch",
+    "items": [
+     {
+      "text": "Q2 FY27 RESULTS",
+      "at": "full September"
+     },
+     {
+      "text": "INVESTMENTS · BORROWINGS",
+      "at": "investments, borrowings"
+     },
+     {
+      "text": "NET INTEREST MARGIN",
+      "at": "net interest margin"
+     },
+     {
+      "text": "DEPOSITS CATCHING UP?",
+      "at": "catch up"
+     }
+    ]
+   },
+   "sec": 10.27,
+   "cues": [
+    "What to watch:",
+    "the full September-quarter results.",
+    "Look at investments, borrowings and the net interest margin,",
+    "and whether deposit growth starts to catch up with loans."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "u53",
+   "say": "One page, two lines that don't match, and a cushion that is getting thinner.",
+   "cap": "One page, two lines that don't match, and a cushion that is getting thinner.",
+   "scene": {
+    "tpl": "dive",
+    "mode": "out",
+    "stages": [
+     {
+      "level": 3,
+      "at": "One page",
+      "label": "2 LINES",
+      "hl": [
+       "adv",
+       "dep"
+      ]
+     },
+     {
+      "level": 0,
+      "at": "a cushion",
+      "label": "25 BANKS · SEP 2026 UPDATES"
+     }
+    ]
+   },
+   "sec": 4.54,
+   "cues": [
+    "One page, two lines that don't match, and a cushion that is getting thinner."
+   ]
+  },
+  {
+   "ch": 5,
+   "key": "u60",
+   "say": "Next, we compare banks without confusing growth with quality, and why the fastest grower isn't always the strongest.",
+   "cap": "Next: comparing banks without confusing growth with quality, and why the fastest grower isn't always the strongest.",
+   "scene": {
+    "tpl": "end",
+    "next": "COMPARING BANKS WITHOUT CONFUSING GROWTH WITH QUALITY",
+    "at": "Next"
+   },
+   "sec": 7.44,
+   "cues": [
+    "Next:",
+    "comparing banks without confusing growth with quality,",
+    "and why the fastest grower isn't always the strongest."
+   ]
+  }
+ ]
+}

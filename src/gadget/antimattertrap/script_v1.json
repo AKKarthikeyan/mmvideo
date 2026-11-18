@@ -1,0 +1,195 @@
+{
+  "id": "antimattertrap",
+  "ep": "P02",
+  "version": "v1 research-led draft, 27 Oct 2026 (60 s, F11 Claim Check with the Priscilla twist)",
+  "status": "DRAFT for AK review, written from docs/inventors_desk/research/P02-antimatter-trap (research CLEARED FOR SCRIPTING, 27 Oct 2026: G1-G8 pass, G6 two rounds). Not voiced, not rendered.",
+  "format": "F11 Claim Check (Now), with an F1 Myth Flip turn",
+  "target_seconds": 60,
+  "title": "Physicists Caged a Single Antimatter Particle for Months",
+  "title_options": [
+    "Physicists Caged a Single Antimatter Particle for Months",
+    "Before This Positron, There Was Priscilla (1984)",
+    "The Antimatter Cage Began as a Vacuum Gauge"
+  ],
+  "first_frame_headline": "It vanishes if it touches anything.",
+  "product": "CLAIM CHECK · ANTIMATTER TRAP",
+  "claim_stamp": {
+    "rung": "PUBLISHED",
+    "note": "Peer-reviewed device paper (Phys. Rev. Lett. 137, 173001, 21 Oct 2026). The positron-vs-electron comparison is not measured yet.",
+    "show_at_beat": "b07"
+  },
+  "voice": "English_Diligent_Man",
+  "research": "docs/inventors_desk/research/P02-antimatter-trap",
+  "sources_on_screen": [
+    "Myers et al., Phys. Rev. Lett. 137, 173001 (2026)",
+    "US Patent 2,197,079 (Penning, filed 1936)",
+    "Dehmelt, Physica Scripta T22 (1988)",
+    "Dehmelt, Am. J. Phys. 58 (1990)"
+  ],
+  "beats": [
+    {
+      "key": "b01",
+      "beat": "M1 Hook",
+      "say": "Antimatter vanishes the moment it touches anything. Yet in October twenty twenty-six, physicists reported holding one anti-electron, a positron, for months.",
+      "pause": 0.5,
+      "claims": [
+        "C034",
+        "C002",
+        "C003"
+      ],
+      "vis": "FROM FRAME 0 the hook scene stands on the desk (STORY_FORMAT identity rule): a single glowing dot floats in empty dark space inside a drawn glass-and-steel trap and never touches the edges (C010). A hand-drawn calendar shows 'OCT 2026' and a counter that keeps ticking 'MONTHS'. First-frame headline: 'It vanishes if it touches anything.' ARTISTIC: the dot's look.",
+      "src_line": "Myers et al., Phys. Rev. Lett. 137, 173001 (2026)"
+    },
+    {
+      "key": "b02",
+      "beat": "M2 Ground",
+      "say": "So they built a container with no walls. Magnetic and electric fields hold it in the middle, touching nothing.",
+      "pause": 0.5,
+      "claims": [
+        "C018",
+        "C010"
+      ],
+      "vis": "Cutaway of the trap: field lines as ribbons, end caps and ring as simple discs, the dot bobbing along the axis and turning back before each cap (Dehmelt's Fig. 1 shape). Quote card, attributed: 'a container without walls' (Gabrielse).",
+      "src_line": "Gabrielse, Scientific American, Oct 2026"
+    },
+    {
+      "key": "b03",
+      "beat": "M3 Push 1 (try)",
+      "say": "One ancestor was a vacuum gauge. In nineteen thirty-six, Frans Penning used a magnet to measure almost-empty air.",
+      "pause": 0.5,
+      "claims": [
+        "C040",
+        "C041",
+        "C043",
+        "C044"
+      ],
+      "vis": "Signpost card '1936'. Caption 'one ancestor of the trap (Dehmelt's own account: C052, C064)'. A glass discharge tube between magnet poles (shape of Fig. 1 of US 2,197,079: two parallel plates and a frame anode in a glass bulb); electrons curl in long loops instead of the straight shortcut. ARTISTIC: the lab. No portrait of Penning (none sourced).",
+      "src_line": "US Patent 2,197,079 (Penning, Philips)"
+    },
+    {
+      "key": "b04",
+      "beat": "M3 Push 1 (so)",
+      "say": "Decades later, Dehmelt wrote that he wondered how to hold one electron still, then built a trap from Penning's gauge, and named it after him.",
+      "pause": 0.6,
+      "claims": [
+        "C051",
+        "C052",
+        "C053",
+        "C064"
+      ],
+      "vis": "Signpost 'DECADES LATER · SEATTLE'. A blackboard with a single chalk dot and the words 'Here is an electron...' on a quote card (Dehmelt's recollection of his teacher, C051). The dot slides off the board into the trap drawing from b02; text 'Penning trap'. ARTISTIC: classroom, no face for the teacher. Voice attributes everything to 'Dehmelt wrote' (rule 10.3: his own account, no independent record of the naming).",
+      "src_line": "Dehmelt, Physica Scripta T22 (1988); Am. J. Phys. 58 (1990)"
+    },
+    {
+      "key": "b05",
+      "beat": "M4 Turn (the but)",
+      "say": "But holding one for months is not a first. Dehmelt's lab announced a positron named Priscilla, held in their trap for three months.",
+      "pause": 0.9,
+      "claims": [
+        "C090",
+        "C091"
+      ],
+      "vis": "THE HOLD (peak). Signpost card 'SEATTLE · SEP 15, 1984'. The b01 dot returns wearing a small pet-style name tag 'PRISCILLA' and a '3 MONTHS' counter; let the tag sit for about 1 s. The viewer sees the b01 picture again, 42 years apart (plant and payoff, C11). On-screen quote cards, in this order, both attributed to Dehmelt's 1988 paper (not voiced): (1) the lab's announcement, 'Here, right now, in the center of our Penning trap resides positron Priscilla ... executing simple spontaneous ballet routines for the last 3 months!' (C091); (2) during the b05 pause, '...she never had the chance of trading places with a passing twin.' (C092), with a twin dot drifting past the named dot. If the frame is crowded, cut card (2) first. ARTISTIC: the tag and the twin dot.",
+      "src_line": "Dehmelt, Physica Scripta T22 (1988)"
+    },
+    {
+      "key": "b06",
+      "beat": "M5 Click",
+      "say": "So what is new? Gabrielse's team cooled theirs almost to absolute zero, and can nudge it up one tiny energy step at a time.",
+      "pause": 0.5,
+      "claims": [
+        "C001",
+        "C004",
+        "C012",
+        "C099"
+      ],
+      "vis": "Energy ladder drawn as a short staircase: the dot on the bottom step, a microwave pulse lifts it one step, the staircase glows, then it falls back. Data label '0.3 K' on screen (C004, not spoken). Small tag: 'before: classical motion' (C099).",
+      "src_line": "Myers et al., Phys. Rev. Lett. 137, 173001 (2026)"
+    },
+    {
+      "key": "b07",
+      "beat": "M5 Catch + stamp",
+      "say": "The paper is published. The big test, matching it against an electron, is not done.",
+      "pause": 0.6,
+      "claims": [
+        "C002",
+        "C015",
+        "C016"
+      ],
+      "vis": "Claim stamp slams in (stamp SFX): 'PUBLISHED'. Beside it the tag 'positron vs electron: not measured yet' (C015). The other rungs (REPEATED, ON SALE) stay unlit.",
+      "src_line": "Myers et al., Phys. Rev. Lett. 137, 173001 (2026)"
+    },
+    {
+      "key": "b08",
+      "beat": "M5 Echo (callback + question)",
+      "say": "One particle, caged for months. Priscilla had a name. What would you call this one?",
+      "pause": 1.0,
+      "claims": [
+        "C090"
+      ],
+      "vis": "The hook dot floats in the trap as in b01, now with an empty name tag. The final scene shrinks into the drawer and it shuts (DeskShrink + DeskClose), looping to frame 0. ARTISTIC: the blank tag."
+    }
+  ],
+  "words": 160,
+  "est_seconds": 56.7,
+  "review": {
+    "date": "27 Oct 2026",
+    "note": "Story gate S13: one pass with the Bhagyaraj method and one with the Nolan method (Mode B). Facts locked to ledger IDs; no fact was added. Changes made are listed under 'applied'.",
+    "bhagyaraj": {
+      "question": "If one positron was already held for months in 1984, what did 2026 add?",
+      "scores": {
+        "2 question": 2,
+        "4 ordinary person": 1,
+        "5 other drives story": 1,
+        "8 clock": 1,
+        "9 secret the audience holds": 2,
+        "10 plant/payoff": 2,
+        "11 humour is the story": 2,
+        "12 mirror/13 object (name tag)": 2,
+        "15 joy": 2
+      },
+      "plants_and_payoffs": [
+        "b01 floating dot + 'months' counter -> b05 same picture 42 years earlier",
+        "b01 'touches anything and vanishes' -> b05 twin dot drifts past and Priscilla stays herself (on screen, C092)",
+        "b04 chalk dot -> b01 dot",
+        "b05 name tag 'PRISCILLA' -> b08 blank tag and the viewer's question"
+      ],
+      "heart": "A positron with a pet name; Dehmelt's 'ballet routines' announcement (C091) carries the humour and is on screen at no word cost.",
+      "weakest": "Penning and Dehmelt are voices without faces (no portraits are sourced). The human note is Dehmelt's wondering (C051) and Priscilla's name."
+    },
+    "nolan": {
+      "theme": "What is new is control, not endurance.",
+      "shape": "Hairpin: 2026 dot (b01) -> 1936 gauge -> 1950s trap -> 1984 dot (b05, the same picture) -> 2026 steps (b06) -> blank tag (b08, rhymes with b01).",
+      "pledge_turn_prestige": {
+        "pledge": "b01-b02: one particle held for months in a container with no walls",
+        "turn": "b05: it was already done in 1984",
+        "prestige": "b06-b08: the new part is one-quantum control, and the real test is still ahead"
+      },
+      "fair_play": "The twist is planted in b01 ('reported', 'for months'), b02 (the trap) and b04 (Dehmelt's trap decades earlier); a viewer can replay it and see the clue.",
+      "loop": "b08 ends on the b01 image and re-uses its line 'caged for months'. The desk shrinks and shuts into frame 0.",
+      "strands": "One strand at a time (1936 -> 1959 -> 1984 -> 2026); no cross-cutting, per AK's followability guard."
+    },
+    "applied": [
+      "b03: 'It began as a vacuum gauge' -> 'One ancestor was a vacuum gauge' (the origin is Dehmelt's own account, C052/C064; the Nobel release says Paul's lab built a trap at the same time, C060).",
+      "b05: 'But this is not a first' -> 'But holding one for months is not a first' (the old line did not say what was not a first).",
+      "b05 picture: added the 'ballet routines' announcement card (C091) before the twin card (C092); neither is voiced."
+    ],
+    "gates": {
+      "S1 facts": "PASS (research_check.py --script)",
+      "S2 format": "F11 Claim Check (Now) with an F1 Myth Flip turn: the research signal is myth M1/M2 (the 'first' headline) and the Priscilla claim C090",
+      "S3 question by 6 s": "PASS (b01: how can anything be held that vanishes at a touch?)",
+      "S4 prime": "PASS (the audience knows matter and antimatter annihilate)",
+      "S5 resolve": "PASS (b02 answers the hook; b06-b07 answers 'what is new')",
+      "S6 peak": "PARTIAL: the turn (b05) lands at about half of the runtime, not two thirds, because the second half has to say what is new. Moving it later needs more chase words, and there are none to spare at 160.",
+      "S7 end": "PASS (callback + question)",
+      "S8 screen text": "PASS (keywords and numbers only; quote cards are attributed)",
+      "S9 numbers": "PASS: spoken numbers are 2026, 1936 and three months, one per beat; 1984 and 0.3 K are on screen",
+      "S10 hedges": "PASS: 'reported' (2026 claim), 'Dehmelt wrote' for his own account (C051/C064); the 'pets' line (C097, secondary-only) is not used",
+      "S11 retell": "One positron held for months isn't new (Priscilla, 1984); the trap began with a 1936 vacuum gauge; what's new is reading its energy steps, and the big comparison isn't done.",
+      "S12 audience": "PASS (no fear, gore or cast list; three names)",
+      "SH2 words": "160 words (ceiling 160)",
+      "SH3 buts": "One 'But' (b05)",
+      "SH11": "Under 60 s est.: 56.7 s; no copyrighted audio planned"
+    }
+  }
+}

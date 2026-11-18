@@ -4,6 +4,11 @@
 import React from "react";
 import {interpolate, spring, useCurrentFrame, useVideoConfig, Easing, staticFile} from "remotion";
 
+// calm mode (AK, 10 Nov 2026): opt-in per video (data.json calm=true). No overshoot, no drift, so words and numbers hold still.
+export const CALM = {on: false};
+export const BRAND = {name: "Moat & Margin"};   // per video (data.json brand); the corner chip and end cards read it
+export const spr = (a: any) => spring(CALM.on ? {...a, config: {damping: 60, stiffness: 140, overshootClamping: true}} : a);
+
 export const C = {tan: "#C9BB9C", ink: "#1A1A1A", gray: "#8C8C8C", red: "#D62E1F", mustard: "#D9A441", paper: "#EFE6D2", white: "#F7F3EA"};
 export const COND = "Oswald, Impact, 'Arial Narrow', sans-serif";
 export const TYPE = "'American Typewriter', 'Courier New', monospace";
@@ -53,7 +58,7 @@ export const Stage: React.FC<{w?: number; h?: number}> = ({w = 1080, h = 1920}) 
 // Spring entrance with overshoot, then settle ("cutouts spring up with slight overshoot").
 export const useSpringIn = (start: number, fromY = 120) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const s = spring({frame: f - start, fps, config: {damping: 11, stiffness: 140, mass: 0.8}});
+  const s = spr({frame: f - start, fps, config: {damping: 11, stiffness: 140, mass: 0.8}});
   return {visible: f >= start, s, ty: (1 - s) * fromY, scale: 0.85 + 0.15 * s};
 };
 
@@ -124,8 +129,8 @@ export const Counter: React.FC<{x: number; y: number; start: number; to: number;
 export const Stamp: React.FC<{x: number; y: number; start: number; text: string; rot?: number; size?: number}> = ({x, y, start, text, rot = -10, size = 70}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   if (f < start) return null;
-  const s = spring({frame: f - start, fps, config: {damping: 14, stiffness: 260}});
-  const k = 1.5 - 0.5 * s;
+  const s = spr({frame: f - start, fps, config: {damping: 14, stiffness: 260}});
+  const k = CALM.on ? 1 : 1.5 - 0.5 * s;
   const w = text.length * size * 0.55 + 70, h = size * 1.6;
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${k})`} opacity={0.92}>
@@ -139,7 +144,7 @@ export const Stamp: React.FC<{x: number; y: number; start: number; text: string;
 export const Pin: React.FC<{x: number; y: number; start: number}> = ({x, y, start}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   if (f < start) return null;
-  const s = spring({frame: f - start, fps, config: {damping: 9, stiffness: 180}});
+  const s = spr({frame: f - start, fps, config: {damping: 9, stiffness: 180}});
   const wob = Math.sin((f - start) / 3) * 10 * Math.max(0, 1 - (f - start) / 24);
   return (
     <g transform={`translate(${x} ${y - (1 - s) * 220}) rotate(${wob})`}>
@@ -180,6 +185,7 @@ export const Tape: React.FC<{x: number; y: number; rot?: number; w?: number}> = 
 // Slow 2% camera drift across a beat.
 export const Drift: React.FC<{frames: number; cx?: number; cy?: number; children: React.ReactNode}> = ({frames, cx = 540, cy = 960, children}) => {
   const f = useCurrentFrame();
+  if (CALM.on) return <g>{children}</g>;
   const k = interpolate(f, [0, frames], [1, 1.02]);
   const dx = interpolate(f, [0, frames], [0, -10]);
   return <g transform={`translate(${cx + dx} ${cy}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;

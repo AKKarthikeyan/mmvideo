@@ -1,0 +1,96 @@
+{
+ "id": "w3states",
+ "ep": "W3-13",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/W3-13-states-countries",
+ "status": "DRAFT v1, 9 Nov 2026. States: NCP Technical Group projection (Table 11, 1 July 2026); countries: UN WPP 2024 medium, 1 July 2026. Projections, not counts. UP left out (W3-01 owns it). No GDP.",
+ "version": "short ~30s, F10 Paradox",
+ "format": "F10 Paradox",
+ "target_seconds": 30,
+ "title": "If India's States Were Countries: Bihar ≈ Mexico, Rajasthan ≈ Germany",
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "Take India apart, and twelve of the world's fifty most populous countries would be Indian states.",
+   "caption": "India split into states: 12 of the world's top 50 by people (2026, projected)",
+   "claims": [
+    "C008",
+    "C001"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "Bihar, in eastern India, is projected to have about as many people as Mexico.",
+   "caption": "Bihar 132.9 M ≈ Mexico 133.0 M (2026, projected)",
+   "claims": [
+    "C005",
+    "C001"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b3",
+   "move": "M3 Push",
+   "say": "But Mexico has about twenty times the land.",
+   "caption": "Mexico ≈ 20.7× Bihar's land (Natural Earth measure)",
+   "claims": [
+    "C005"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b4",
+   "move": "M4 Turn",
+   "say": "Maharashtra, in western India, is projected to outnumber Japan.",
+   "caption": "Maharashtra 129.6 M vs Japan 122.4 M (2026, projected)",
+   "claims": [
+    "C004"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b5",
+   "move": "M4 Turn",
+   "say": "In twenty eleven, it was the other way round. Japan has been shrinking.",
+   "caption": "1 July 2011: Maharashtra 11.9% behind Japan (NCP vs UN)",
+   "claims": [
+    "C004"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b6",
+   "move": "M3 Push",
+   "say": "Rajasthan, in north-west India, has about as many people as Germany.",
+   "caption": "Rajasthan 83.9 M ≈ Germany 83.6 M (2026, projected)",
+   "claims": [
+    "C006"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "b7",
+   "move": "M4 Turn",
+   "say": "And almost the same amount of land.",
+   "caption": "Land: 343,697 vs 356,379 km² (Natural Earth measure)",
+   "claims": [
+    "C006"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b8",
+   "move": "M5 Echo",
+   "say": "Twelve of the world's fifty biggest crowds, inside one country.",
+   "caption": "12 of the top 50 · one country (2026, projected)",
+   "claims": [
+    "C008"
+   ],
+   "pause": 1.0
+  }
+ ]
+}

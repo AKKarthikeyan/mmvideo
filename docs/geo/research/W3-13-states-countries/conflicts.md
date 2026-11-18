@@ -1,0 +1,4 @@
+# W3-13-states-countries: conflicts between sources
+
+1. **India's 2026 total: UN vs India's own projection.** UN WPP 2024 (S03) puts India at 1,476.6 million on 1 July 2026; the NCP Technical Group projection (S02) at 1,426.9 million, 3.5% lower [C012]. Neither is a count. Each author gains from its own series: the UN needs one harmonised method for 237 countries; the NCP's figures are the official ones Indian ministries plan with. Handling: states are ranked on the NCP figures as printed (basis A) and again scaled to the UN total (basis B). Every spine pair keeps its order or is "level" on both; Maharashtra vs Mexico flips (behind on A, ahead on B), so it is not claimed.
+2. **Areas.** Our Natural Earth measure (S05) differs from Census 2011 and FAO areas by up to about 1.5% (method/area_ne_pairs_output.txt vs method/pairs_output.txt from the 1 Nov run). No ratio used in the dossier changes at the shown precision.

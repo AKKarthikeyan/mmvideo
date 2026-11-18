@@ -1,0 +1,1133 @@
+{
+ "id": "TP01-data_kadai-v2",
+ "ep": "TP01",
+ "product": "Data Kadai long form",
+ "voice": "male (Data Kadai narrator)",
+ "research": "/Volumes/DarwinSSD/MMVideo/docs/geo/research/TP01-tiruppur-knitwear",
+ "status": "DRAFT v2 for AK review, 30 Oct 2026. Not voiced.",
+ "format": "F11 Claim Check (Story Engine §3), with an F5 own-words layer in chapter 3",
+ "target_seconds": 607,
+ "word_count": 1345,
+ "beats": [
+  {
+   "key": "o01",
+   "chapter": "0 · Cold open",
+   "move": "F11-1 Headline as a scene · M1 hook",
+   "say": "Ninety percent. You will often read that one town in Tamil Nadu, Tiruppur, makes ninety percent of India's knitwear.",
+   "caption": "Tiruppur = *90%* of India's knitwear? · CLAIM",
+   "visual": "100-dot grid of India's knitwear; 90 dots light up; red CLAIM stamp (popular claim, myths M1)",
+   "claims": [
+    "C078",
+    "C080"
+   ],
+   "pause": 0.6,
+   "myth": "M1 (C081 CONTRADICTED; told only as the claim being checked)"
+  },
+  {
+   "key": "o02",
+   "chapter": "0 · Cold open",
+   "move": "T3 predict",
+   "say": "Before we check it, make your own guess. Ninety? More? Less? Hold that number.",
+   "caption": "Your guess?",
+   "visual": "the 90 dots pulse; a blank guess box; 1 s hold",
+   "no_fact": true,
+   "pause": 1.0
+  },
+  {
+   "key": "o03",
+   "chapter": "0 · Cold open",
+   "move": "T16 promise",
+   "say": "We read every share we could find in print, and four export figures for one year.",
+   "caption": "Every share · *four* figures · one year",
+   "visual": "four empty bars slide in, unlabelled",
+   "claims": [
+    "C504",
+    "C073",
+    "C074",
+    "C075"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "o04",
+   "chapter": "0 · Cold open",
+   "move": "Open the gap",
+   "say": "Three of those four come from the same association. And they do not agree.",
+   "caption": "Same association · *don't agree*",
+   "visual": "three of the four bars get the same TEA tag; a question mark",
+   "claims": [
+    "C073",
+    "C074",
+    "C075",
+    "C076"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t01",
+   "chapter": "1 · The town",
+   "move": "F11-2 Old dream · T1 prime",
+   "say": "First, where is it? Tiruppur sits in western Tamil Nadu, about forty three kilometres from Coimbatore in a straight line.",
+   "caption": "Coimbatore → Tiruppur · ~43 km (straight line)",
+   "visual": "India outline zooms to Tamil Nadu; a straight dashed line, Coimbatore to Tiruppur",
+   "claims": [
+    "C200"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t02",
+   "chapter": "1 · The town",
+   "move": "Prime",
+   "say": "And it is inland. The nearest port city, Kochi, is about one hundred and seventy kilometres away.",
+   "caption": "Nearest port city: Kochi · ~170 km",
+   "visual": "straight line west to Kochi; coastline highlighted",
+   "claims": [
+    "C001"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t03",
+   "chapter": "1 · The town",
+   "move": "Breath",
+   "say": "No sea. No port. Keep that in mind.",
+   "caption": "No sea · no port",
+   "visual": "the town dot alone on the map",
+   "no_fact": true,
+   "pause": 0.8
+  },
+  {
+   "key": "t04",
+   "chapter": "1 · The town",
+   "move": "Prime",
+   "say": "Tiruppur became its own district only in two thousand nine, carved out of Coimbatore and Erode.",
+   "caption": "District since 2009",
+   "visual": "district outline split off two neighbours (illustrative outline)",
+   "claims": [
+    "C002",
+    "C003"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t05",
+   "chapter": "1 · The town",
+   "move": "Perspective",
+   "say": "At the twenty eleven census, the district had nearly twenty five lakh people.",
+   "caption": "~24.8 lakh people · Census 2011",
+   "visual": "dot-people fill the district",
+   "claims": [
+    "C004"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t06",
+   "chapter": "1 · The town",
+   "move": "The old trade",
+   "say": "For decades, its workshops made one simple thing: cotton vests and briefs, for Indian buyers.",
+   "caption": "Vests and briefs · local market",
+   "visual": "a hand-cranked knitting machine; a white banian",
+   "claims": [
+    "C045"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "t07",
+   "chapter": "1 · The town",
+   "move": "Plant 1 (three dates)",
+   "say": "So when did the first knitting unit open? It depends on whom you ask.",
+   "caption": "First unit: when?",
+   "visual": "three empty date cards",
+   "claims": [
+    "C404"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "t08",
+   "chapter": "1 · The town",
+   "move": "Plant 1 (three dates)",
+   "say": "Nineteen twenty five, says the exporters' association. Nineteen thirty five, says the Textile Commissioner. Nineteen thirty seven, says a UNIDO study.",
+   "caption": "1925 TEA · 1935 Textile Commr · 1937 UNIDO",
+   "visual": "the three cards flip one by one, each with its source chip; no faces",
+   "claims": [
+    "C404"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "t09",
+   "chapter": "1 · The town",
+   "move": "Recap · plant",
+   "say": "Remember that. In Tiruppur, even the first date comes in three versions.",
+   "caption": "One town · *three* dates",
+   "visual": "the three cards stack",
+   "claims": [
+    "C404"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "r01",
+   "chapter": "2 · The jump",
+   "move": "F11-3 Road",
+   "say": "Until about nineteen eighty, it stayed a cottage industry, selling at home.",
+   "caption": "Cottage industry · until ~1980",
+   "visual": "small home workshops on a street",
+   "claims": [
+    "C044"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r02",
+   "chapter": "2 · The jump",
+   "move": "Road",
+   "say": "Then exports began, mostly through agents in Bombay and Delhi.",
+   "caption": "Exports from 1980 · via Bombay, Delhi",
+   "visual": "arrows from Tiruppur to Bombay and Delhi, then out to sea",
+   "claims": [
+    "C048"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r03",
+   "chapter": "2 · The jump",
+   "move": "Road",
+   "say": "Until nineteen eighty five, the only thing it exported was the T-shirt.",
+   "caption": "Only export till 1985: *T-shirt*",
+   "visual": "one white T-shirt on a hanger",
+   "claims": [
+    "C050"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r04",
+   "chapter": "2 · The jump",
+   "move": "Road",
+   "say": "Here is a table the exporters kept. In nineteen eighty six, direct exports were about thirty seven crore rupees.",
+   "caption": "1986 · ₹37.48 cr · direct",
+   "visual": "a typed 1994 table; one row lights up; source chip TEA table via MIDS",
+   "claims": [
+    "C054"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r05",
+   "chapter": "2 · The jump",
+   "move": "Road",
+   "say": "By nineteen ninety three, about one thousand two hundred crore.",
+   "caption": "1993 · ₹1,197.5 cr · direct",
+   "visual": "the bar shoots up",
+   "claims": [
+    "C055"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r06",
+   "chapter": "2 · The jump",
+   "move": "Perspective",
+   "say": "That is about thirty two times as much, in seven years.",
+   "caption": "~32× in 7 years (calculated)",
+   "visual": "the 1986 bar copied 32 times beside the 1993 bar",
+   "claims": [
+    "C056"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "r07",
+   "chapter": "2 · The jump",
+   "move": "T3 predict",
+   "say": "Now guess. Did the town make thirty two times as many pieces?",
+   "caption": "32× the pieces?",
+   "visual": "a pile of T-shirts with a question mark; 1 s hold",
+   "no_fact": true,
+   "pause": 1.0
+  },
+  {
+   "key": "r08",
+   "chapter": "2 · The jump",
+   "move": "Broken prediction",
+   "say": "No. Pieces grew only about six and a half times.",
+   "caption": "Pieces: ~6.45× (calculated)",
+   "visual": "the T-shirt pile grows far less than the money bar",
+   "claims": [
+    "C057"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r09",
+   "chapter": "2 · The jump",
+   "move": "Click",
+   "say": "So each piece earned more. In nineteen eighty six, about one rupee thirty.",
+   "caption": "1986 · ₹1.30 a piece",
+   "visual": "one T-shirt with a price tag",
+   "claims": [
+    "C058"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "r10",
+   "chapter": "2 · The jump",
+   "move": "Click",
+   "say": "By nineteen ninety three, about six rupees forty, for each piece.",
+   "caption": "1993 · ₹6.43 a piece (calculated)",
+   "visual": "the price tag swells",
+   "claims": [
+    "C058"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "r11",
+   "chapter": "2 · The jump",
+   "move": "Recap · plant 2 (value per piece)",
+   "say": "So the jump was not just more T-shirts. It was more money in each one.",
+   "caption": "More money *per piece*",
+   "visual": "two tags side by side",
+   "claims": [
+    "C056",
+    "C058"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "r12",
+   "chapter": "2 · The jump",
+   "move": "Plant 3 (direct)",
+   "say": "But notice one word in that table. Direct. Direct exports. That word will matter.",
+   "caption": "*Direct* exports",
+   "visual": "the word DIRECT circled on the old table",
+   "claims": [
+    "C054",
+    "C055"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "w01",
+   "chapter": "3 · How the town works",
+   "move": "F11-4 How it works",
+   "say": "Why so many small firms? Partly the law. In the early nineteen sixties, cotton hosiery knitting was reserved for small units.",
+   "caption": "Early 1960s · reserved for small units",
+   "visual": "a rule-book stamp: SMALL UNITS ONLY",
+   "claims": [
+    "C100"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w02",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "So anyone with more money split the work into two or three units.",
+   "caption": "One firm → 2–3 units",
+   "visual": "one factory splits into three",
+   "claims": [
+    "C101"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "w03",
+   "chapter": "3 · How the town works",
+   "move": "F5 layer (own words)",
+   "say": "One study put it plainly: the easiest method adopted was to multiply the number of units.",
+   "caption": "\"multiply the number of units\" · MIDS",
+   "visual": "the three units multiply across the map",
+   "claims": [
+    "C103"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w04",
+   "chapter": "3 · How the town works",
+   "move": "Perspective",
+   "say": "In nineteen eighty four, a business magazine wrote that there were unlikely to be more than five hundred families in the business.",
+   "caption": "≤500 families? · Business India, 1984",
+   "visual": "500 small house icons",
+   "claims": [
+    "C104"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w05",
+   "chapter": "3 · How the town works",
+   "move": "Contrast",
+   "say": "Yet notes from nineteen ninety four and two thousand seven each count about two thousand five hundred knitting units.",
+   "caption": "~2,500 knitting units · 1994, 2007",
+   "visual": "the 500 houses become 2,500 workshop dots",
+   "claims": [
+    "C009",
+    "C010"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "w06",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "And many owners began on the floor. One study says almost all the big names were once workers themselves.",
+   "caption": "Worker → owner · MIDS",
+   "visual": "a worker's apron becomes an owner's ledger (no faces, no community colours)",
+   "claims": [
+    "C099"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w07",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "The town also built what it lacked. In nineteen ninety four, the exporters asked for a container terminal and a sewage plant, and got no reply.",
+   "caption": "1994 · asked · *no reply*",
+   "visual": "a letter with no answer; clock ticks",
+   "claims": [
+    "C156"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w08",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "So they built their own export estate, one hundred and fifty seven units, in ten months, with their own money.",
+   "caption": "157 units · 10 months · self-financed",
+   "visual": "an estate assembles block by block",
+   "claims": [
+    "C161"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w09",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "Water came later: a pipeline carries Cauvery water about fifty three and a half kilometres, from the treatment plant to a reservoir at Tiruppur.",
+   "caption": "~53.5 km pipeline · route illustrative",
+   "visual": "a line drawn only between named places; label: route illustrative",
+   "claims": [
+    "C402",
+    "C403"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w10",
+   "chapter": "3 · How the town works",
+   "move": "How it works",
+   "say": "And the exporters' association is one of the water company's promoters.",
+   "caption": "TEA · a promoter of the water company",
+   "visual": "TEA badge joins TWIC and IL&FS badges",
+   "claims": [
+    "C152"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "w11",
+   "chapter": "3 · How the town works",
+   "move": "Recap",
+   "say": "Thousands of small units, one exporters' association. Now, back to the claim.",
+   "caption": "Small units · one association",
+   "visual": "pull back to the 100-dot grid from the open",
+   "claims": [
+    "C010",
+    "C018"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "s01",
+   "chapter": "4 · The share ladder",
+   "move": "F11-5 The catch",
+   "say": "Ninety percent of India's knitwear? We found five different shares in print. None of them is ninety.",
+   "caption": "5 shares in print · none is 90%",
+   "visual": "five empty rungs of a ladder",
+   "claims": [
+    "C066",
+    "C078",
+    "C406",
+    "C079",
+    "C080"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "s02",
+   "chapter": "4 · The share ladder",
+   "move": "Rung 1",
+   "say": "Nineteen ninety four. The exporters' own note says nearly eighty five percent of India's cotton knitwear exports.",
+   "caption": "1994 · ~85% · cotton knitwear · TEA",
+   "visual": "rung 1 fills",
+   "claims": [
+    "C066"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s03",
+   "chapter": "4 · The share ladder",
+   "move": "Payoff 3 (direct)",
+   "say": "But that counted indirect exports too, the ones that left through Bombay and Delhi. Remember the word direct?",
+   "caption": "Includes *indirect*",
+   "visual": "the circled DIRECT from r12 flips to INDIRECT",
+   "claims": [
+    "C066"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "s04",
+   "chapter": "4 · The share ladder",
+   "move": "Rung 2",
+   "say": "Around two thousand seven, a Textile Commissioner's note says about seventy five percent.",
+   "caption": "c.2007 · ~75% · Textile Commr",
+   "visual": "rung 2 fills",
+   "claims": [
+    "C078"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s05",
+   "chapter": "4 · The share ladder",
+   "move": "Rung 3",
+   "say": "For twenty twenty four twenty five, the association's own table gives sixty eight point six five percent.",
+   "caption": "FY25 · 68.65% · TEA table",
+   "visual": "rung 3 fills",
+   "claims": [
+    "C406"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s06",
+   "chapter": "4 · The share ladder",
+   "move": "Rung 4",
+   "say": "Its releases in mid twenty twenty six say nearly sixty.",
+   "caption": "Jun–Jul 2026 · ~60% · TEA releases",
+   "visual": "rung 4 fills",
+   "claims": [
+    "C079"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s07",
+   "chapter": "4 · The share ladder",
+   "move": "Rung 5",
+   "say": "And in September twenty twenty six, the association secretary's report says fifty four point seven four percent.",
+   "caption": "Sep 2026 · 54.74% · TEA Secretary",
+   "visual": "rung 5 fills; the 90 lit dots fall to 55",
+   "claims": [
+    "C080"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "s08",
+   "chapter": "4 · The share ladder",
+   "move": "T15 perspective",
+   "say": "That is still more than half. About eleven of every twenty rupees of India's knitwear exports.",
+   "caption": "≈ 11 of every ₹20",
+   "visual": "20 coins, 11 lit",
+   "claims": [
+    "C080"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s09",
+   "chapter": "4 · The share ladder",
+   "move": "Widest lens",
+   "say": "Widen the lens to all garments, knitted and woven, and a twenty sixteen ministry release put Tiruppur at twenty two percent.",
+   "caption": "All garments · 22% · Textiles Ministry, 2016",
+   "visual": "a bigger grid: knitted plus woven; 22 dots lit",
+   "claims": [
+    "C503"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "s10",
+   "chapter": "4 · The share ladder",
+   "move": "Recap",
+   "say": "So the share moves, because each source counts something different. More than half of India's knitwear. Not ninety.",
+   "caption": "More than half · *not 90*",
+   "visual": "ladder with all five rungs; CLAIM stamp cracks",
+   "claims": [
+    "C066",
+    "C080"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "f01",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Open loop",
+   "say": "Now the money. How much did Tiruppur export in twenty twenty five twenty six?",
+   "caption": "FY 2025-26 · how much?",
+   "visual": "the four empty bars from the open return",
+   "no_fact": true,
+   "pause": 0.6
+  },
+  {
+   "key": "f02",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 1 (official)",
+   "say": "Start with the government. The Ministry of Textiles lists Tiruppur first among five hundred and forty eight exporting districts.",
+   "caption": "1st of 548 exporting districts · MoT",
+   "visual": "a long list of districts; Tiruppur's row at the top",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f03",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 1 (official)",
+   "say": "Its figure: thirty eight thousand six hundred and seventy seven crore rupees.",
+   "caption": "₹38,677 cr · DGCIS (provisional)",
+   "visual": "bar 1 fills, in government blue",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f04",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Definition",
+   "say": "That counts textiles and ready-made garments, with handicrafts included. And it is provisional.",
+   "caption": "Textiles + garments + handicrafts",
+   "visual": "bar 1 label: what it counts",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f05",
+   "chapter": "5 · Four numbers, one year",
+   "move": "T15 perspective",
+   "say": "That is about one hundred and six crore rupees for every day of the year.",
+   "caption": "≈ ₹106 cr a day (calculated)",
+   "visual": "a calendar page flips; ₹106 cr per page",
+   "claims": [
+    "C504"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "f06",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 2 (TEA)",
+   "say": "Now the exporters' association. In June, reports quoting it said forty two thousand five hundred and forty four crore.",
+   "caption": "₹42,544 cr · TEA, via press (Jun 2026)",
+   "visual": "bar 2 fills, in TEA orange",
+   "claims": [
+    "C073"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "f07",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 2 (TEA)",
+   "say": "Down about five percent on the year before.",
+   "caption": "↓ ~4.9%",
+   "visual": "a small red arrow",
+   "claims": [
+    "C073"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f08",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 3 (TEA)",
+   "say": "Weeks later, the same association announced about forty six thousand crore.",
+   "caption": "~₹46,000 cr · TEA (Jun–Jul 2026)",
+   "visual": "bar 3 fills, also TEA orange",
+   "claims": [
+    "C074"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "f09",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 3 (TEA)",
+   "say": "Up about three percent. And called a record.",
+   "caption": "↑ ~3% · \"record\"",
+   "visual": "a small green arrow; the word record",
+   "claims": [
+    "C074"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "f10",
+   "chapter": "5 · Four numbers, one year",
+   "move": "PEAK (T9) · F11-6 ladder stamp",
+   "say": "Same association. Same year. One figure is a fall. The other is a record.",
+   "caption": "Same year · a *fall* and a *record*",
+   "visual": "bars 2 and 3 side by side, red arrow against green; music rises",
+   "claims": [
+    "C073",
+    "C074",
+    "C076"
+   ],
+   "pause": 1.2,
+   "peak": true
+  },
+  {
+   "key": "f11",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Number 4 (TEA)",
+   "say": "Then, in September, the secretary's report: thirty six thousand eight hundred and ninety one crore, for knitwear.",
+   "caption": "₹36,891 cr · knitwear · TEA Secretary",
+   "visual": "bar 4 fills, TEA orange",
+   "claims": [
+    "C075"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f12",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Work the sum",
+   "say": "Up about two point four percent. Work that backwards, and the year before was about thirty six thousand crore.",
+   "caption": "+2.40% → base ≈ ₹36,000 cr (calculated)",
+   "visual": "a ledger sum runs backwards",
+   "claims": [
+    "C077"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f13",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Work the sum",
+   "say": "Not the forty four thousand seven hundred and forty seven crore the other reports used. A different series altogether.",
+   "caption": "FY25 base in other reports: ₹44,747 cr",
+   "visual": "two base bars that do not match",
+   "claims": [
+    "C077",
+    "C071"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "f14",
+   "chapter": "5 · Four numbers, one year",
+   "move": "The dispute",
+   "say": "We found no page that explains the gap.",
+   "caption": "Reason for the gap: not stated",
+   "visual": "a blank explanation card",
+   "claims": [
+    "C076"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "f15",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Our finding",
+   "say": "Highest to lowest, the association's figures sit about nine thousand crore apart. Nearly a quarter of the government's whole number.",
+   "caption": "Gap ≈ ₹9,100 cr ≈ ¼ of ₹38,677 cr (calculated)",
+   "visual": "the gap cut out and laid against bar 1",
+   "claims": [
+    "C074",
+    "C075",
+    "C504"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "f16",
+   "chapter": "5 · Four numbers, one year",
+   "move": "Recap · payoff 1",
+   "say": "Four numbers for one year. Remember the three dates for the first factory? Same town, same habit of counting differently.",
+   "caption": "4 figures · 1 year · like the *3 dates*",
+   "visual": "the three date cards slide in beside the bars",
+   "claims": [
+    "C504",
+    "C076",
+    "C404"
+   ],
+   "pause": 1.0
+  },
+  {
+   "key": "x01",
+   "chapter": "6 · The world outside",
+   "move": "Turn",
+   "say": "Whatever the count, the money comes from abroad. So where does India's knitwear go?",
+   "caption": "Where does it go?",
+   "visual": "globe turns",
+   "no_fact": true,
+   "pause": 0.5
+  },
+  {
+   "key": "x02",
+   "chapter": "6 · The world outside",
+   "move": "Market",
+   "say": "In twenty twenty five, the United States took about thirty two percent of India's knitted clothing exports.",
+   "caption": "USA · 32.3% · India's HS 61, 2025",
+   "visual": "arc from India to the US",
+   "claims": [
+    "C310"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "x03",
+   "chapter": "6 · The world outside",
+   "move": "Market",
+   "say": "The twenty seven EU countries took about thirty percent.",
+   "caption": "EU-27 · 30.4% · India's HS 61",
+   "visual": "arc to Europe",
+   "claims": [
+    "C312"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "x04",
+   "chapter": "6 · The world outside",
+   "move": "Market",
+   "say": "The UK, about nine percent.",
+   "caption": "UK · 8.7% · India's HS 61",
+   "visual": "arc to the UK",
+   "claims": [
+    "C311"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "x05",
+   "chapter": "6 · The world outside",
+   "move": "Signal",
+   "say": "These are India's figures, not Tiruppur's own.",
+   "caption": "India's figures, not Tiruppur's",
+   "visual": "the arcs start from India, not from the town",
+   "claims": [
+    "C310",
+    "C311",
+    "C312"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "x06",
+   "chapter": "6 · The world outside",
+   "move": "History",
+   "say": "In August twenty twenty five, US duties on Indian goods added up to fifty percent.",
+   "caption": "Aug 2025 · 25% + 25% = 50%",
+   "visual": "a stacked tariff bar",
+   "claims": [
+    "C301"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "x07",
+   "chapter": "6 · The world outside",
+   "move": "History",
+   "say": "By February twenty twenty six, those extra duties had been ended.",
+   "caption": "Feb 2026 · ended",
+   "visual": "the stack dissolves",
+   "claims": [
+    "C302"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "x08",
+   "chapter": "6 · The world outside",
+   "move": "Present rate",
+   "say": "Since the twenty fourth of July twenty twenty six, a ten percent US duty applies, on top of the normal one.",
+   "caption": "From 24 Jul 2026 · +10% (Section 301)",
+   "visual": "a thin 10% bar",
+   "claims": [
+    "C304"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "x09",
+   "chapter": "6 · The world outside",
+   "move": "Present rate",
+   "say": "Knitted T-shirts are not exempt.",
+   "caption": "T-shirts: not exempt",
+   "visual": "the white T-shirt from r03 gets the 10% tag",
+   "claims": [
+    "C305"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "x10",
+   "chapter": "6 · The world outside",
+   "move": "Deals",
+   "say": "Britain's trade deal with India has been in force since the fifteenth of July twenty twenty six.",
+   "caption": "UK deal · in force 15 Jul 2026",
+   "visual": "UK arc turns green",
+   "claims": [
+    "C307"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "x11",
+   "chapter": "6 · The world outside",
+   "move": "Deals",
+   "say": "The EU deal is concluded, but not yet in force.",
+   "caption": "EU deal · concluded, not in force",
+   "visual": "EU arc dotted",
+   "claims": [
+    "C308"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "v01",
+   "chapter": "7 · The verdict",
+   "move": "F11-6 Ladder stamp",
+   "say": "So, the verdict on the headline. Ninety percent? Not supported. The latest share in print is about fifty five.",
+   "caption": "90%? *Not supported* · latest: 54.74%",
+   "visual": "stamp lands: CONTRADICTED",
+   "claims": [
+    "C080",
+    "C078"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "v02",
+   "chapter": "7 · The verdict",
+   "move": "Who captures the money",
+   "say": "Who captures the export money? First, the exporters: an association of one thousand five hundred and twenty two members by September twenty twenty six.",
+   "caption": "TEA · 1,522 members (Sep 2026)",
+   "visual": "member dots fill the town",
+   "claims": [
+    "C020"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "v03",
+   "chapter": "7 · The verdict",
+   "move": "Who captures the money",
+   "say": "Workers' pay is set for the whole town in one deal: thirty three percent over four years, signed in March twenty twenty six.",
+   "caption": "Wage pact · 33% over 4 years · Mar 2026",
+   "visual": "one contract signed by many associations and unions",
+   "claims": [
+    "C138"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "v04",
+   "chapter": "7 · The verdict",
+   "move": "Who pays",
+   "say": "The dyers carried the clean-water bill: about one thousand crore rupees for eighteen treatment plants, by twenty sixteen.",
+   "caption": "~₹1,013 cr · 18 plants · by 2016",
+   "visual": "dyeing vats; a bill",
+   "claims": [
+    "C180"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "v05",
+   "chapter": "7 · The verdict",
+   "move": "Who pays",
+   "say": "And their own association says more than a lakh tonnes of waste salt sit in sheds, with no proper disposal method so far.",
+   "caption": ">1 lakh tonnes of salt · Dyers Assn",
+   "visual": "white salt heaps in sheds",
+   "claims": [
+    "C187"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "v06",
+   "chapter": "7 · The verdict",
+   "move": "Moat",
+   "say": "What protects the town's position? Not the sea; it has none. It is the cluster: thousands of small units, and the estate and water they organised themselves.",
+   "caption": "Moat: the cluster, not the coast",
+   "visual": "map: the town dot, the estate, the pipeline line",
+   "claims": [
+    "C001",
+    "C010",
+    "C161",
+    "C152"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "v07",
+   "chapter": "7 · The verdict",
+   "move": "Margin",
+   "say": "What protects the margin? The early lesson from the table: more money per piece, not just more pieces.",
+   "caption": "Margin: value *per piece*",
+   "visual": "the two price tags from r09–r10 return",
+   "claims": [
+    "C058"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "v08",
+   "chapter": "7 · The verdict",
+   "move": "Margin pressure",
+   "say": "And the pressure is plain: a ten percent US duty on Indian T-shirts, while the British deal is open.",
+   "caption": "US +10% · UK deal open",
+   "visual": "T-shirt with 10% tag; green UK arc",
+   "claims": [
+    "C304",
+    "C305",
+    "C307"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "v09",
+   "chapter": "7 · The verdict",
+   "move": "Stakes",
+   "say": "The association's target is one lakh crore rupees of exports by twenty thirty.",
+   "caption": "Target: ₹1 lakh cr by 2030 · TEA",
+   "visual": "a target line far above the bars",
+   "claims": [
+    "C093"
+   ],
+   "pause": 0.4
+  },
+  {
+   "key": "v10",
+   "chapter": "7 · The verdict",
+   "move": "Our finding",
+   "say": "From forty six thousand crore, that needs about seventeen to twenty one percent growth a year. Faster than any of its three figures for twenty twenty five twenty six.",
+   "caption": "Needs ~17–21% a year (calculated)",
+   "visual": "growth line climbs; FY26 arrows (−4.9%, +3%, +2.4%) sit far below",
+   "claims": [
+    "C094",
+    "C073",
+    "C074",
+    "C075"
+   ],
+   "pause": 0.8
+  },
+  {
+   "key": "e01",
+   "chapter": "8 · End",
+   "move": "F11-7 Callback · loop close",
+   "say": "Remember your guess? Ninety? The latest figure in print is a little over half.",
+   "caption": "Your guess · *54.74%*",
+   "visual": "the 100-dot grid from the open; 55 dots lit",
+   "claims": [
+    "C080"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "e02",
+   "chapter": "8 · End",
+   "move": "Callback · plant 1",
+   "say": "And one town still has three dates for its first unit, and three numbers for one year.",
+   "caption": "3 dates · 3 numbers",
+   "visual": "date cards and TEA bars side by side",
+   "claims": [
+    "C404",
+    "C076"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "e03",
+   "chapter": "8 · End",
+   "move": "Meaningful last line + one question",
+   "say": "So the next time you hear a number about a town, ask one thing first. Whose count is it?",
+   "caption": "Whose count is it?",
+   "visual": "the four bars, each with its source chip; hold",
+   "no_fact": true,
+   "pause": 1.5
+  }
+ ],
+ "shorts": [
+  {
+   "name": "DK-S1 · One town, one year, four export numbers (spine cut, ~32 s)",
+   "beats": [
+    "o04",
+    "f03",
+    "f06",
+    "f08",
+    "f10",
+    "f11",
+    "f14",
+    "e03"
+   ],
+   "move_map": {
+    "M1": "o04 (same association, don't agree)",
+    "M2": "f03 (official ₹38,677 cr, picture carries the town)",
+    "M3": "f06–f08 (but TEA says 42,544, then ~46,000)",
+    "M4": "f10 (a fall and a record, same year)",
+    "M5": "f11+f14 → e03 (a fourth number; whose count is it? loops to 'four numbers')"
+   }
+  },
+  {
+   "name": "DK-S2 · 90% of India's knitwear? The share ladder (chapter cut, ~33 s)",
+   "beats": [
+    "o01",
+    "o02",
+    "s02",
+    "s03",
+    "s07",
+    "s08",
+    "s10"
+   ],
+   "move_map": {
+    "M1": "o01 (90% claim on the dot grid)",
+    "M2": "o02 (your guess)",
+    "M3": "s02–s03 (85%, but that counted indirect exports)",
+    "M4": "s07 (54.74%, Sep 2026)",
+    "M5": "s08+s10 (11 of every 20 rupees; more than half, not ninety: rhymes with the 90 in M1)"
+   }
+  },
+  {
+   "name": "DK-S3 · 32 times the money, 6 times the T-shirts (chapter cut, ~30 s)",
+   "beats": [
+    "r04",
+    "r05",
+    "r06",
+    "r07",
+    "r08",
+    "r09",
+    "r10",
+    "r11"
+   ],
+   "move_map": {
+    "M1": "r06 line as hook (32 times in seven years)",
+    "M2": "r04–r05 (1986 → 1993, direct exports)",
+    "M3": "r07 (but did pieces grow 32 times? predict)",
+    "M4": "r08 (only about 6.5 times)",
+    "M5": "r09–r11 (₹1.30 → ₹6.43 a piece; more money in each one, loops to the T-shirt)"
+   }
+  }
+ ]
+}

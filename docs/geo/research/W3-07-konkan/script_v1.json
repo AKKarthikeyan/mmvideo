@@ -1,0 +1,104 @@
+{
+ "id": "w3konkan",
+ "ep": "W3-07",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/W3-07-konkan",
+ "status": "DRAFT v1, 8 Nov 2026, voiced (trim 1.07). Pitch 'could not be built' dropped (not supported); honest angle is money (C01). verify.md wording fixes 1-4 applied.",
+ "version": "short ~30s, F2 Long Road (G11)",
+ "format": "F2 Long Road",
+ "target_seconds": 30,
+ "title": "India Couldn't Afford This Coast Railway in 1969. It Opened in 1998",
+ "wording_notes": [
+  "One dated refusal only (RS 11 Aug 1969): no 'kept saying' / 'for decades'.",
+  "'to raise the money' attributed to Sida (C10); Sida's 1990 'impossible to raise Rs 10 billion' not used.",
+  "No claim that engineers called it impossible.",
+  "Length 738.941 km (C06), never 760 km.",
+  "Route drawn from approximate station points, labelled 'route simplified'."
+ ],
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "In nineteen sixty-nine, the government told Parliament it couldn't afford it, 'at present'.",
+   "caption": "1969: Govt told Parliament: not possible 'at present' (money)",
+   "claims": [
+    "C01"
+   ],
+   "pause": 0.5
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "A railway down India's western Konkan coast, for about sixty crore rupees.",
+   "caption": "Konkan line · ≈ Rs 60 crore (1969 estimate)",
+   "claims": [
+    "C01"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b3",
+   "move": "M3 Push",
+   "say": "Its first sixty-two kilometres opened only in nineteen eighty-six.",
+   "caption": "First 62 km (Apta–Roha): opened March 1986",
+   "claims": [
+    "C02"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b4",
+   "move": "M4 Turn",
+   "say": "In nineteen ninety, a new company was set up. A Swedish aid review says: to raise the money.",
+   "caption": "1990: Konkan Railway Corporation · Sida: set up to raise the money",
+   "claims": [
+    "C03",
+    "C10"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "b5",
+   "move": "M3 Push",
+   "say": "The deadline: four and a half years. Even the builder called that unrealistic.",
+   "caption": "Target: 4.5 years · KRCL: 'by no means realistic'",
+   "claims": [
+    "C04"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b6",
+   "move": "M4 Turn",
+   "say": "The worst part was tunnelling through soft soil in Goa.",
+   "caption": "Hardest: soft-soil tunnels, mainly in Goa (Sida)",
+   "claims": [
+    "C08"
+   ],
+   "pause": 0.6
+  },
+  {
+   "key": "b7",
+   "move": "M5 Payoff",
+   "say": "The whole line opened on Republic Day, nineteen ninety-eight.",
+   "caption": "Roha–Thokur, 738.941 km · open 26 Jan 1998",
+   "claims": [
+    "C05",
+    "C06"
+   ],
+   "pause": 0.7
+  },
+  {
+   "key": "b8",
+   "move": "M6 Loop",
+   "say": "'Not at present' in sixty-nine. Open end to end by ninety-eight.",
+   "caption": "1969: 'not at present' · 1998: open",
+   "claims": [
+    "C01",
+    "C05"
+   ],
+   "pause": 0.8
+  }
+ ]
+}

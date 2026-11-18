@@ -1,0 +1,45 @@
+{
+ "video": "explainer-vertical",
+ "lang": "hi",
+ "reviewed_by": null,
+ "notes": "DRAFT by Claude 2026-10-02, not reviewed. Built with scripts/audio_tracks_explainer.py (timeline = each beat's explicit frames, back to back, as in src/explainer/MoatExplainer.tsx / MoatVertical.tsx).\nDISCLAIMER BEAT: 'end' is spoken here (unlike the Moat Files). It must stay a faithful, complete disclaimer: educational research, not investment advice. Reviewer to confirm the wording first.\nFILING BEATS: v6 (company documents: results, annual reports, stock exchange filings), v8 (new filings every day, Daily Filing Digest), end ('research from the filings'), and in the vertical cut 'we' (reads each company's own filings). These describe our process; check they claim nothing beyond the English.\nCLAIM BEAT: v7 says about five hundred Indian companies are scored so far and MoatSCORE checks seven kinds of moat; same numbers as English.\nNO buy/sell language. No company named.\nPRONUNCIATION: brand and product names in Latin script (Moat and Margin, MoatSCORE read as Moat Score, Daily Filing Digest), shop A / shop B letters. Listen for odd readings.\nVoice: Tamil uses English_Diligent_Man (no Tamil male preset; ear test for accent); Hindi uses hindi_male_1_v2.\nCompare every beat with the English (_english block), not just for fluency. reviewed_by left null.\n STYLE v2 (AK review 2026-10-02): rewritten in spoken style, simple words, complete sentences; Tamil = spoken Tamil with everyday English loanwords; Hindi = conversational Hindustani (परसेंट, पॉइंट, कस्टमर, कॉम्पिटिटर). Hindi line-by-line check done by Claude (grammar, gender/honorific agreement, meaning vs English); still worth one native-speaker listen before upload.",
+ "beats": {
+  "v1": "एक क़िले को सोचिए। उसके चारों तरफ़ गहरा पानी है, यही मोट है। दुश्मन सीधे दीवार तक नहीं आ सकते।",
+  "k2": "बिज़नेस में भी यही बात है। जो चीज़ कॉम्पिटिटर्स को किसी कंपनी के कस्टमर और प्रॉफ़िट छीनने से रोकती है, वही मोट है।",
+  "v2": "एक आम मिसाल। एक गली में चाय की दो दुकानें हैं। बगल में नई दुकान खुलती है, जो चाय दो रुपये सस्ती बेचती है। दुकान A के कस्टमर वहाँ चले जाते हैं। दुकान B के कस्टमर रुके रहते हैं।",
+  "v4": "बिज़नेस अच्छा कमाए, तो कॉम्पिटिटर्स देखते हैं। वो नक़ल करते हैं, दाम गिराते हैं, और प्रॉफ़िट घटता है। मोट न हो, तो यही होता है।",
+  "k4": "इस साल की कमाई नहीं, देखिए कि कमाई कितने साल चलेगी।",
+  "we": "हम क्या करते हैं? Moat and Margin हर कंपनी की अपनी फ़ाइलिंग पढ़ता है, मोट का स्कोर देता है, और रोज़ बताता है क्या बदला।",
+  "end": "ये है Moat and Margin. सीखने-समझने के लिए रिसर्च, निवेश की सलाह नहीं।"
+ },
+ "_english": {
+  "v1": {
+   "say": "Picture a castle. Around it is a moat: a ring of deep water. Attackers cannot simply walk up to the walls.",
+   "slot_sec": 7.55
+  },
+  "k2": {
+   "say": "In business, a moat is the same idea. It is whatever stops competitors from taking a company's customers, and its profits.",
+   "slot_sec": 8.68
+  },
+  "v2": {
+   "say": "Here is an everyday example. Two tea shops on one street. Then a new shop opens next door, and sells tea two rupees cheaper. Shop A's customers walk over to the new shop. Shop B's customers stay.",
+   "slot_sec": 14.15
+  },
+  "v4": {
+   "say": "When a business earns good profits, rivals notice. They copy it. They cut prices. And the profits shrink. Without a moat, that is what usually happens.",
+   "slot_sec": 10.65
+  },
+  "k4": {
+   "say": "Not how much a company earns this year. But how long it can keep earning.",
+   "slot_sec": 4.45
+  },
+  "we": {
+   "say": "What do we do? Moat and Margin reads each company's own filings, scores its moat, and tells you every day what changed.",
+   "slot_sec": 8.85
+  },
+  "end": {
+   "say": "Moat and Margin. Educational research, not investment advice.",
+   "slot_sec": 5.18
+  }
+ }
+}

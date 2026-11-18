@@ -1,0 +1,79 @@
+{
+ "id": "headphonejack",
+ "ep": "P03",
+ "type": "evergreen",
+ "series": "Claim Check",
+ "method": "F4 Cold Case with a Then-and-Now turn; Bhagyaraj + Nolan review in script_v1.json",
+ "status": "draft for AK review, 28 Oct 2026 (night look, AK's pick). Facts: docs/inventors_desk/research/P03-headphone-jack",
+ "title": "The Headphone Jack Is Older Than Radio",
+ "product": "CLAIM CHECK · THE HEADPHONE JACK",
+ "voice": "English_Diligent_Man",
+ "beats": [
+  {
+   "key": "b01",
+   "say": "The jack your headphones plug into is older than radio.",
+   "pause": 0.5,
+   "claims": [
+    "C001",
+    "C002",
+    "C026"
+   ]
+  },
+  {
+   "key": "b02",
+   "say": "It began on a telegraph desk in eighteen seventy-seven, as a spring-jack: a wedge pushed between two pins to break a line.",
+   "pause": 0.5,
+   "claims": [
+    "C001",
+    "C002"
+   ]
+  },
+  {
+   "key": "b03",
+   "say": "Telephone exchanges borrowed it. But the wedge had to go in a certain way, so inventors made a plain round plug.",
+   "pause": 0.5,
+   "claims": [
+    "C005",
+    "C008",
+    "C009"
+   ]
+  },
+  {
+   "key": "b04",
+   "say": "By the century's end, operators plugged their head receivers into jacks.",
+   "pause": 0.5,
+   "claims": [
+    "C013",
+    "C014"
+   ]
+  },
+  {
+   "key": "b05",
+   "say": "Marconi's radio patent came in eighteen ninety-six, nearly twenty years later.",
+   "pause": 0.9,
+   "claims": [
+    "C026",
+    "C001",
+    "C016"
+   ]
+  },
+  {
+   "key": "b06",
+   "say": "Then radio came back for it. In nineteen sixty-nine, a standard for radio receivers described the small sockets your wired earbuds still use.",
+   "pause": 0.6,
+   "claims": [
+    "C017",
+    "C023"
+   ]
+  },
+  {
+   "key": "b07",
+   "say": "Older than radio, then written into a radio standard. Which old part is hiding in your pocket?",
+   "pause": 1.0,
+   "claims": [
+    "C001",
+    "C017"
+   ]
+  }
+ ]
+}

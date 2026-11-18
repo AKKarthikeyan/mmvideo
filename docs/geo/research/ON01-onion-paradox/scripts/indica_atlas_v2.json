@@ -1,0 +1,664 @@
+{
+ "id": "ON01",
+ "format": "F10 The Paradox + F7 Follow the Thing",
+ "beats": [
+  {
+   "key": "o001",
+   "act": "hook",
+   "say": "April, in the onion fields of Maharashtra, in western India. A farmer pulls up an onion.",
+   "claims": [
+    "A-C19"
+   ]
+  },
+  {
+   "key": "o002",
+   "act": "hook",
+   "say": "A few months earlier, in December twenty twenty-three, India had banned the export of this vegetable.",
+   "claims": [
+    "B-C02"
+   ]
+  },
+  {
+   "key": "o003",
+   "act": "hook",
+   "say": "Not rice. Not wheat. Onions. And the government said the ban was to protect consumers at home.",
+   "claims": [
+    "B-C10"
+   ]
+  },
+  {
+   "key": "o004",
+   "act": "hook",
+   "say": "But its own price fund says that at harvest time, onion prices normally fall steeply. And as stored stocks run down, they climb.",
+   "claims": [
+    "B-C22"
+   ]
+  },
+  {
+   "key": "o005",
+   "act": "hook",
+   "say": "So the same bulb can be cheap when it comes out of the ground, and dear a few months later. In the same year.",
+   "claims": [
+    "B-C22"
+   ]
+  },
+  {
+   "key": "o006",
+   "act": "hook",
+   "say": "How can both be true?",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o007",
+   "act": "hook",
+   "say": "We read the agriculture ministry's crop tables, the government's trade notices, and the Election Commission's results. And three things you may have heard about the onion need a closer look.",
+   "claims": [
+    "A-C02",
+    "B-C02",
+    "C-C01"
+   ]
+  },
+  {
+   "key": "o008",
+   "act": "hook",
+   "say": "The answer is not inside the onion. It is in the map behind it.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o010",
+   "act": "map",
+   "say": "First, the onion itself. An old Ayurvedic text, the Charaka Samhita, already describes it, and calls it good with food.",
+   "claims": [
+    "C-C21"
+   ]
+  },
+  {
+   "key": "o011",
+   "act": "map",
+   "say": "Yet some kitchens leave it out on purpose. A Jain community website explains that pulling up a root kills the whole plant, and many tiny lives with it.",
+   "claims": [
+    "C-C18"
+   ]
+  },
+  {
+   "key": "o012",
+   "act": "map",
+   "say": "So many Jains avoid onion, some more strictly than others. And in some Hindu traditions, onion and garlic count as over-stimulating, and are left out.",
+   "claims": [
+    "C-C18",
+    "C-C15",
+    "C-C16"
+   ]
+  },
+  {
+   "key": "o013",
+   "act": "map",
+   "say": "Essential in one kitchen, avoided in another. But none of that explains why its price can shake a country. For that, you need a map.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o014",
+   "act": "map",
+   "say": "In twenty twenty-four to twenty-five, India grew nearly thirty-one million tonnes of onions.",
+   "claims": [
+    "A-C02"
+   ]
+  },
+  {
+   "key": "o015",
+   "act": "map",
+   "say": "By the count of the UN's food agency, India grew more dry onions than any other country in twenty twenty-three. In its figures for the next year, China edges just ahead.",
+   "claims": [
+    "A-C32"
+   ]
+  },
+  {
+   "key": "o016",
+   "act": "map",
+   "say": "So you might think a crop that big grows all over the country. Look where it grows.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o017",
+   "act": "map",
+   "say": "One state, Maharashtra, grew forty-four percent of it.",
+   "claims": [
+    "A-C04"
+   ]
+  },
+  {
+   "key": "o018",
+   "act": "map",
+   "say": "And almost half of all the land under onions in India is in that one state.",
+   "claims": [
+    "A-C04"
+   ]
+  },
+  {
+   "key": "o019",
+   "act": "map",
+   "say": "Add Madhya Pradesh and Karnataka, and three states grow two thirds of India's onions.",
+   "claims": [
+    "A-C16"
+   ]
+  },
+  {
+   "key": "o020",
+   "act": "map",
+   "say": "Maharashtra does not lead because its fields grow the most. Farms in Madhya Pradesh and Gujarat get far more from each hectare.",
+   "claims": [
+    "A-C17"
+   ]
+  },
+  {
+   "key": "o021",
+   "act": "map",
+   "say": "Maharashtra leads because it plants so much.",
+   "claims": [
+    "A-C04",
+    "A-C17"
+   ]
+  },
+  {
+   "key": "o022",
+   "act": "map",
+   "say": "So the first thing you may have heard is wrong. India eats onions everywhere. It does not grow them everywhere.",
+   "claims": [
+    "A-C04",
+    "A-C16"
+   ]
+  },
+  {
+   "key": "o023",
+   "act": "map",
+   "say": "And in that one state, zoom in to Nashik district.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o024",
+   "act": "map",
+   "say": "But to see why prices swing, it is not enough to ask where onions grow. You have to ask when.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o026",
+   "act": "harvest",
+   "say": "India grows onions in three seasons.",
+   "claims": [
+    "A-C19"
+   ]
+  },
+  {
+   "key": "o027",
+   "act": "harvest",
+   "say": "One crop is planted with the monsoon and comes out from October to December. Another comes out from January to March.",
+   "claims": [
+    "A-C19"
+   ]
+  },
+  {
+   "key": "o028",
+   "act": "harvest",
+   "say": "And then the big one. The spring crop, called rabi, harvested from the end of March to May.",
+   "claims": [
+    "A-C19"
+   ]
+  },
+  {
+   "key": "o029",
+   "act": "harvest",
+   "say": "ICAR, the government's farm research council, says the rabi crop is about sixty percent of India's onions.",
+   "claims": [
+    "A-C21"
+   ]
+  },
+  {
+   "key": "o030",
+   "act": "harvest",
+   "say": "So most of the year's onions arrive in a few months of spring. And they have to last.",
+   "claims": [
+    "A-C21"
+   ]
+  },
+  {
+   "key": "o031",
+   "act": "harvest",
+   "say": "ICAR says the stored rabi crop feeds the country until October or November. A clock of about six months.",
+   "claims": [
+    "A-C21",
+    "A-C22"
+   ]
+  },
+  {
+   "key": "o032",
+   "act": "harvest",
+   "say": "They are kept in ventilated stores like this, open to the air.",
+   "claims": [
+    "A-C24"
+   ]
+  },
+  {
+   "key": "o033",
+   "act": "harvest",
+   "say": "And a stored onion is still alive. It breathes, and it loses water. Temperature and humidity decide how fast it rots, or starts to sprout.",
+   "claims": [
+    "A-C26"
+   ]
+  },
+  {
+   "key": "o034",
+   "act": "harvest",
+   "say": "ICAR says thirty to forty percent of the crop is lost in storage.",
+   "claims": [
+    "A-C23"
+   ]
+  },
+  {
+   "key": "o035",
+   "act": "harvest",
+   "say": "In its own trial, after a hundred and twenty days, ordinary ventilated storage had lost about fifty-five percent.",
+   "claims": [
+    "A-C24"
+   ]
+  },
+  {
+   "key": "o036",
+   "act": "harvest",
+   "say": "So every spring, a farmer here faces the same choice. Sell now, when harvest prices tend to fall. Or store, and hope the price rises faster than the heap shrinks.",
+   "claims": [
+    "B-C22",
+    "A-C24"
+   ]
+  },
+  {
+   "key": "o037",
+   "act": "harvest",
+   "say": "Cold storage cuts the loss. But the same research page says the onions sprout soon after they come out of the cold.",
+   "claims": [
+    "A-C25"
+   ]
+  },
+  {
+   "key": "o038",
+   "act": "harvest",
+   "say": "So here is the dangerous gap. By autumn, the spring stock is running low. And the next crop is still in the ground, through the monsoon.",
+   "claims": [
+    "A-C22"
+   ]
+  },
+  {
+   "key": "o039",
+   "act": "harvest",
+   "say": "If that crop is late, little is left to bridge the gap. In December twenty twenty-three, a delayed crop was one of the reasons the government gave for its export ban.",
+   "claims": [
+    "B-C10"
+   ]
+  },
+  {
+   "key": "o041",
+   "act": "journey",
+   "say": "From the stores, onions go to auction. Lasalgaon, in Nashik district, is one of the country's key onion markets, the government says.",
+   "claims": [
+    "A-C28"
+   ]
+  },
+  {
+   "key": "o042",
+   "act": "journey",
+   "say": "You may have heard it called Asia's biggest onion market. We did not find that title in the government records we read, or on the market's own home page.",
+   "claims": [
+    "L-C01"
+   ]
+  },
+  {
+   "key": "o043",
+   "act": "journey",
+   "say": "So the second thing you may have heard has no source we could find.",
+   "claims": [
+    "L-C01"
+   ]
+  },
+  {
+   "key": "o044",
+   "act": "journey",
+   "say": "Remember the farmer's choice in April? Whatever he chose, his onions now face a long road.",
+   "claims": [
+    "A-C31"
+   ]
+  },
+  {
+   "key": "o045",
+   "act": "journey",
+   "say": "To Delhi, it is about a thousand kilometres in a straight line. To Guwahati, nearly twice that.",
+   "claims": [
+    "A-C31"
+   ]
+  },
+  {
+   "key": "o046",
+   "act": "journey",
+   "say": "So the government has put onions on trains. Yes: onions have their own train. It is called the Kanda Express.",
+   "claims": [
+    "B-C18"
+   ]
+  },
+  {
+   "key": "o047",
+   "act": "journey",
+   "say": "In twenty twenty-five to twenty-six, eighty-six trainloads carried around eighty-eight thousand tonnes, to sixteen cities. More than seven times the year before.",
+   "claims": [
+    "B-C18"
+   ]
+  },
+  {
+   "key": "o048",
+   "act": "journey",
+   "say": "These are onions the government bought and stored itself. In August twenty twenty-six, it announced it would sell them at thirty-five rupees a kilo.",
+   "claims": [
+    "B-C19"
+   ]
+  },
+  {
+   "key": "o049",
+   "act": "journey",
+   "say": "The average retail price across India was then about thirty-eight. The state is moving onions across the map, to flatten the price.",
+   "claims": [
+    "B-C25",
+    "B-C18"
+   ]
+  },
+  {
+   "key": "o051",
+   "act": "border",
+   "say": "Some onions leave India altogether. In twenty twenty-five to twenty-six, India exported about one and a half million tonnes.",
+   "claims": [
+    "B-C12"
+   ]
+  },
+  {
+   "key": "o052",
+   "act": "border",
+   "say": "To Malaysia, the UAE, Sri Lanka, Nepal, Bangladesh, and more.",
+   "claims": [
+    "B-C13"
+   ]
+  },
+  {
+   "key": "o053",
+   "act": "border",
+   "say": "That is only about one onion in twenty that India grows. But for a government watching prices at home, it is a lever.",
+   "claims": [
+    "L-C02"
+   ]
+  },
+  {
+   "key": "o054",
+   "act": "border",
+   "say": "In October twenty twenty-three, it set a minimum export price of eight hundred dollars a tonne.",
+   "claims": [
+    "B-C01"
+   ]
+  },
+  {
+   "key": "o055",
+   "act": "border",
+   "say": "In December, it banned exports outright.",
+   "claims": [
+    "B-C02"
+   ]
+  },
+  {
+   "key": "o056",
+   "act": "border",
+   "say": "Even then, some onions went out, to governments that asked. Bangladesh was allowed fifty thousand tonnes.",
+   "claims": [
+    "B-C03",
+    "B-C05"
+   ]
+  },
+  {
+   "key": "o057",
+   "act": "border",
+   "say": "In May twenty twenty-four, exports reopened, with a minimum price of five hundred and fifty dollars a tonne, and a forty percent export duty.",
+   "claims": [
+    "B-C06",
+    "B-C08"
+   ]
+  },
+  {
+   "key": "o058",
+   "act": "border",
+   "say": "In September, the minimum price went, and the duty was cut to twenty percent. From April twenty twenty-five, the duty went too.",
+   "claims": [
+    "B-C07",
+    "B-C08"
+   ]
+  },
+  {
+   "key": "o059",
+   "act": "border",
+   "say": "The trade ministry's list of notices, which we checked up to November twenty twenty-six, shows no new onion export order since.",
+   "claims": [
+    "B-C16"
+   ]
+  },
+  {
+   "key": "o060",
+   "act": "border",
+   "say": "And look at Bangladesh. In twenty twenty-three to twenty-four, a year of limits, it was still India's biggest buyer: over seven hundred thousand tonnes.",
+   "claims": [
+    "B-C14"
+   ]
+  },
+  {
+   "key": "o061",
+   "act": "border",
+   "say": "In twenty twenty-five to twenty-six, under ninety thousand. The trade figures do not say why.",
+   "claims": [
+    "B-C14"
+   ]
+  },
+  {
+   "key": "o062",
+   "act": "border",
+   "say": "For a grower in Maharashtra, Dhaka or Dubai is just another market. For a government watching prices in Delhi, the same shipment can look like supply leaving the country.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o064",
+   "act": "election",
+   "say": "Why would a government watch onion prices so closely? Go back to nineteen ninety-eight.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o065",
+   "act": "election",
+   "say": "In August that year, a newspaper reported that the commerce minister had ordered a temporary ban on onion exports, and that imports would be considered if prices stayed high.",
+   "claims": [
+    "C-C12"
+   ]
+  },
+  {
+   "key": "o066",
+   "act": "election",
+   "say": "A few months later, Delhi voted for its assembly.",
+   "claims": [
+    "C-C01"
+   ]
+  },
+  {
+   "key": "o067",
+   "act": "election",
+   "say": "In nineteen ninety-three, the BJP had won forty-nine of the seventy seats. In nineteen ninety-eight, Congress won fifty-two, and the BJP fifteen.",
+   "claims": [
+    "C-C03",
+    "C-C01"
+   ]
+  },
+  {
+   "key": "o068",
+   "act": "election",
+   "say": "So did onions bring down a government? A study by three researchers notes that most accounts blame onion prices for the defeat.",
+   "claims": [
+    "C-C10"
+   ]
+  },
+  {
+   "key": "o069",
+   "act": "election",
+   "say": "But an election has many causes, and no record we read can measure the onion's share. So the third thing you may have heard is only half true.",
+   "claims": [
+    "C-C23"
+   ]
+  },
+  {
+   "key": "o070",
+   "act": "election",
+   "say": "What the same study did measure is stranger. It looked at weekly food prices in twenty-eight cities, and found an election pattern in just one food of the sixteen. The onion.",
+   "claims": [
+    "C-C06",
+    "C-C07"
+   ]
+  },
+  {
+   "key": "o071",
+   "act": "election",
+   "say": "Onion prices tended to fall as a state election came near, and to rise after it. The authors point to a trade held in a few hands, but call their evidence only suggestive.",
+   "claims": [
+    "C-C08",
+    "C-C09"
+   ]
+  },
+  {
+   "key": "o073",
+   "act": "paradox",
+   "say": "So, back to the question from the start. How can the onion be cheap and dear in the same year?",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o074",
+   "act": "paradox",
+   "say": "In spring, the rabi harvest pours into the markets. The price fund's own rules say a steep fall at harvest time is normal.",
+   "claims": [
+    "B-C22",
+    "A-C21"
+   ]
+  },
+  {
+   "key": "o075",
+   "act": "paradox",
+   "say": "In March twenty twenty-five, as the new crop came in, the government said mandi prices across India had fallen thirty-nine percent. Shop prices fell ten percent over the month.",
+   "claims": [
+    "B-C24"
+   ]
+  },
+  {
+   "key": "o076",
+   "act": "paradox",
+   "say": "Remember the farmer's choice? Sell now, while harvest prices fall. Or store, and watch the heap get lighter every week.",
+   "claims": [
+    "B-C22",
+    "A-C24",
+    "A-C26"
+   ]
+  },
+  {
+   "key": "o077",
+   "act": "paradox",
+   "say": "Then the stored stock runs down, and the same rules say prices rise. If the next crop is late, families in the cities pay more.",
+   "claims": [
+    "B-C22",
+    "B-C10"
+   ]
+  },
+  {
+   "key": "o078",
+   "act": "paradox",
+   "say": "So the government tries to be the store. It buys onions when there are many, and sells them when there are few.",
+   "claims": [
+    "B-C20",
+    "B-C23"
+   ]
+  },
+  {
+   "key": "o079",
+   "act": "paradox",
+   "say": "From the rabi crop of twenty twenty-four, it bought about four hundred and seventy thousand tonnes.",
+   "claims": [
+    "B-C21",
+    "L-C04"
+   ]
+  },
+  {
+   "key": "o080",
+   "act": "paradox",
+   "say": "And every tool is a choice between two groups. A ban is meant to protect buyers at home. But each onion kept in is one its grower cannot sell abroad.",
+   "claims": [
+    "B-C10"
+   ]
+  },
+  {
+   "key": "o081",
+   "act": "close",
+   "say": "So the onion's power does not come from the bulb. It comes from the map behind it.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o082",
+   "act": "close",
+   "say": "Half the onion land, in one state.",
+   "claims": [
+    "A-C04"
+   ]
+  },
+  {
+   "key": "o083",
+   "act": "close",
+   "say": "Most of the crop, from one spring.",
+   "claims": [
+    "A-C21"
+   ]
+  },
+  {
+   "key": "o084",
+   "act": "close",
+   "say": "Months in stores, where it slowly shrinks.",
+   "claims": [
+    "A-C24"
+   ]
+  },
+  {
+   "key": "o085",
+   "act": "close",
+   "say": "A long road to the cities. And a border that opens and shuts.",
+   "claims": [
+    "A-C31",
+    "B-C02"
+   ]
+  },
+  {
+   "key": "o086",
+   "act": "close",
+   "say": "And at the end of all that, one onion, pulled from a field in Maharashtra in April, lands in a pan in a city kitchen.",
+   "claims": [],
+   "no_fact": true
+  },
+  {
+   "key": "o087",
+   "act": "close",
+   "say": "India's onion paradox is really a geography paradox.",
+   "claims": [],
+   "no_fact": true
+  }
+ ]
+}

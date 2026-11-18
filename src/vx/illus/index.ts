@@ -5,4 +5,7 @@ import {SCENES_MONEY} from "./Money";
 import {SCENES_GROWTH} from "./Growth";
 import {SCENES_COMPARE} from "./Compare";
 import {SCENES_WORLD} from "./World";
-export const ILLUS: Record<string, React.FC<SP>> = {...SCENES_MONEY, ...SCENES_GROWTH, ...SCENES_COMPARE, ...SCENES_WORLD};
+import {SCENES_STORY} from "./Story";
+import {SCENES_SHOP} from "./Shop";
+import {SCENES_BRIDGE} from "./Bridge";
+export const ILLUS: Record<string, React.FC<SP>> = {...SCENES_MONEY, ...SCENES_GROWTH, ...SCENES_COMPARE, ...SCENES_WORLD, ...SCENES_STORY, ...SCENES_SHOP, ...SCENES_BRIDGE};

@@ -295,6 +295,10 @@ if __name__ == "__main__":
     assert len(order) == len(TR), (len(order), len(TR))
     idx = {t: i for i, t in enumerate(order)}
     here = os.path.dirname(os.path.abspath(__file__)); ovs = [json.load(open(os.path.join(here, f), encoding="utf-8")) for f in sorted(os.listdir(here)) if f.startswith("overrides") and f.endswith(".json")]
+    nat = {}
+    for lg in ("ta", "hi", "te"):          # native rewrites (AK 1 Nov 2026): a native_<lang>.json list replaces the literal translation for that language
+        f = os.path.join(here, f"native_{lg}.json")
+        if os.path.exists(f): nat[lg] = json.load(open(f, encoding="utf-8")); assert len(nat[lg]) == len(TR), (lg, len(nat[lg]), len(TR))
     def apply(lang, t):
         for o in ovs: t = o.get(lang, {}).get(t, t)
         return t
@@ -303,6 +307,6 @@ if __name__ == "__main__":
         os.makedirs(f"{R}/{n}/translations", exist_ok=True)
         for lang, k in LANG.items():
             out = {"film": n, "lang": lang, "status": "DRAFT", "reviewed_by": None, "voice": "Gemini Charon" if lang == "hi" else "Maya Siddhant", "reviewer_notes": list(NOTES.values()),
-                   "scenes": {s["id"]: {"en": s["vo"], "text": apply(lang, TR[idx[s["vo"]]][k])} for s in sc}}
+                   "scenes": {s["id"]: {"en": s["vo"], "text": (nat[lang][idx[s["vo"]]] if lang in nat else apply(lang, TR[idx[s["vo"]]][k]))} for s in sc}}
             json.dump(out, open(f"{R}/{n}/translations/{lang}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("wrote", len(TR), "lines x 3 languages x 2 films")

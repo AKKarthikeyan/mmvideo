@@ -1,0 +1,61 @@
+{
+ "id": "velcroglow",
+ "ep": "P01",
+ "product": "HAPPY ACCIDENTS · VELCRO",
+ "voice": "English_Diligent_Man",
+ "research": "docs/inventors_desk/research/P01-velcro",
+ "status": "DRAFT Short for AK review, 27 Oct 2026 (Shorts Engine sample)",
+ "version": "short 30s, F3 Happy Accident",
+ "format": "F3 Happy Accident",
+ "target_seconds": 30,
+ "beats": [
+  {
+   "key": "b01",
+   "move": "M1 Hook",
+   "say": "Velcro exists because someone grabbed the wrong spool.",
+   "pause": 0.4,
+   "claims": [
+    "C040"
+   ]
+  },
+  {
+   "key": "b02",
+   "move": "M2 Ground",
+   "say": "Swiss inventor George de Mestral wanted to copy the tiny hooks on a burr.",
+   "pause": 0.3,
+   "claims": [
+    "C001",
+    "C044",
+    "C045"
+   ]
+  },
+  {
+   "key": "b03",
+   "move": "M3 Push",
+   "say": "But hooks need a thread that bends, then holds its shape once heated.",
+   "pause": 0.3,
+   "claims": [
+    "C046"
+   ]
+  },
+  {
+   "key": "b04",
+   "move": "M4 Turn",
+   "say": "He said a storeroom worker sent the wrong thread by mistake, and the one they ordered would never have worked.",
+   "pause": 0.5,
+   "claims": [
+    "C040"
+   ]
+  },
+  {
+   "key": "b05",
+   "move": "M5 Echo",
+   "say": "One wrong spool. Next time you rip open a strap, thank a storeroom.",
+   "pause": 0.6,
+   "claims": [
+    "C040"
+   ]
+  }
+ ],
+ "words": 68
+}

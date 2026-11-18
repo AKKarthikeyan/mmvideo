@@ -26,6 +26,10 @@ import {BankNapkin2, bkTotal2, BK2, BFPS2} from "./hand/BankNapkins2";
 import {NapkinIntro, napIntroTotal, NIFPS} from "./hand/IntroNapkin";
 import {IllusDev, IllusIcon} from "./vx/illus/Dev";
 import {IllusThumb} from "./vx/illus/Thumb";
+import {TplCompositions} from "./tpl/TplSample";
+import {FlowCompositions} from "./flow/FlowBuild";
+import {PremiumCompositions} from "./premium/Root";
+import {VoxPlusCompositions} from "./voxplus/Root";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -80,5 +84,9 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="ILLUS-icon" component={IllusIcon as any} defaultProps={{name: "store"}} durationInFrames={1} fps={30} width={512} height={512}/>
     <Composition id="ILLUS-thumb" component={IllusThumb as any} defaultProps={{v: 1}} durationInFrames={1} fps={30} width={1280} height={720}/>
     <Composition id="ChannelIntro" component={ChannelIntro} durationInFrames={introTotal} fps={IFPS} width={1920} height={1080}/>
+    <TplCompositions/>
+    <FlowCompositions/>
+    <PremiumCompositions/>
+    <VoxPlusCompositions/>
   </>
 );

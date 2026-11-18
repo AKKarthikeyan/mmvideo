@@ -1,0 +1,213 @@
+{
+ "id": "nvidiasb",
+ "title": "Six million programmers can't easily leave NVIDIA",
+ "chapters": [
+  "Short"
+ ],
+ "shorts": [
+  {
+   "title": "Six million programmers can't easily leave NVIDIA",
+   "beats": [
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5"
+   ],
+   "hook": "6 MILLION CAN'T EASILY LEAVE NVIDIA"
+  }
+ ],
+ "calm": true,
+ "brand": "Moat Atlas",
+ "timelines": {
+  "NVT": [
+   [
+    "1995",
+    "NV1 CHIP"
+   ],
+   [
+    "1999",
+    "GEFORCE 256"
+   ],
+   [
+    "2006",
+    "CUDA"
+   ],
+   [
+    "2012",
+    "ALEXNET ON 2 NVIDIA GPUS"
+   ],
+   [
+    "2023–26",
+    "AI BOOM"
+   ]
+  ]
+ },
+ "beats": [
+  {
+   "ch": 0,
+   "key": "b1",
+   "say": "Six million programmers can't easily leave NVIDIA.",
+   "cap": "Six million programmers can't easily leave NVIDIA.",
+   "scene": {
+    "type": "counter",
+    "heading": "NVIDIA DEVELOPER FORUM · 20 YEARS OF CUDA",
+    "to": 6,
+    "prefix": "≈ ",
+    "suffix": " MILLION",
+    "sub": "PROGRAMMERS TIED TO CUDA",
+    "at": "Six million"
+   },
+   "sec": 4.05,
+   "cues": [
+    "Six million programmers can't easily leave NVIDIA."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "b2",
+   "say": "In two thousand six, NVIDIA released CUDA, software that lets programmers use its chips for heavy maths.",
+   "cap": "In 2006, NVIDIA released CUDA, software that lets programmers use its chips for heavy maths.",
+   "scene": {
+    "type": "strips",
+    "heading": "NVIDIA 10-K FY2026 · ITEM 1",
+    "items": [
+     {
+      "text": "2006",
+      "at": "two thousand six"
+     },
+     {
+      "text": "CUDA",
+      "at": "CUDA",
+      "red": true
+     },
+     {
+      "text": "HEAVY MATHS",
+      "at": "heavy maths"
+     }
+    ]
+   },
+   "sec": 7.08,
+   "cues": [
+    "In 2006, NVIDIA released CUDA, software that lets programmers use its chips",
+    "for heavy maths."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "b3",
+   "say": "Their code is written for NVIDIA chips. Moving it to another company's chips is like moving your whole house to a new city: possible, but slow and expensive.",
+   "cap": "Their code is written for NVIDIA chips. Moving it to another company's chips is like moving your whole house to a new city: possible, but slow and expensive.",
+   "scene": {
+    "type": "clip",
+    "clip": "nv_cuda",
+    "heading": "NVIDIA 10-K FY2026 · ITEM 1",
+    "hl": [
+     "Moving it"
+    ],
+    "stamps": [
+     {
+      "text": "ILLUSTRATIVE: MOVING HOUSE",
+      "at": "moving your whole house"
+     }
+    ]
+   },
+   "sec": 10.11,
+   "cues": [
+    "Their code is written for NVIDIA chips.",
+    "Moving it to another company's chips is like moving your whole house to a new",
+    "city:",
+    "possible, but slow and expensive."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "b4",
+   "say": "Now the twist. Two buyers, never named, made up more than a third of NVIDIA's sales last year: twenty two percent and fourteen.",
+   "cap": "Now the twist. Two buyers, never named, made up more than a third of NVIDIA's sales last year: 22% and 14%.",
+   "scene": {
+    "type": "bars",
+    "heading": "NVIDIA 10-K FY2026 · % OF REVENUE",
+    "rows": [
+     {
+      "name": "BUYER A",
+      "v": 22,
+      "label": "22%",
+      "at": "never named"
+     },
+     {
+      "name": "BUYER B",
+      "v": 14,
+      "label": "14%",
+      "at": "more than a third"
+     }
+    ],
+    "stamps": [
+     {
+      "text": "22% + 14% = 36%: OUR SUM",
+      "at": "more than a third"
+     }
+    ]
+   },
+   "sec": 8.57,
+   "cues": [
+    "Now the twist.",
+    "Two buyers, never named, made up more than a third of NVIDIA's sales last",
+    "year:",
+    "22% and 14%."
+   ]
+  },
+  {
+   "ch": 0,
+   "key": "b5",
+   "say": "Six million can't easily leave. Two buyers carry a third of the sales. Would that hold without Jensen? Our full test is on the channel.",
+   "cap": "Six million can't easily leave. Two buyers carry a third of the sales. Would that hold without Jensen? Our full test is on the channel.",
+   "scene": {
+    "type": "kinetic",
+    "lines": [
+     {
+      "t": "SIX MILLION STUCK.",
+      "at": "Six million can't",
+      "em": [
+       "STUCK"
+      ]
+     },
+     {
+      "t": "TWO BUYERS.",
+      "at": "Two buyers carry",
+      "em": [
+       "TWO"
+      ]
+     },
+     {
+      "t": "FULL TEST ON THE CHANNEL.",
+      "at": "Our full test"
+     }
+    ]
+   },
+   "sec": 8.72,
+   "cues": [
+    "Six million can't easily leave.",
+    "Two buyers carry a third of the sales.",
+    "Would that hold without Jensen?",
+    "Our full test is on the channel."
+   ]
+  }
+ ],
+ "clips": {
+  "nv_cuda": {
+   "w": 1644,
+   "h": 125,
+   "hl": [
+    [
+     0.4526,
+     0.4476,
+     0.4598,
+     0.3222
+    ]
+   ],
+   "page": 92,
+   "quote": "CUDA development platform that runs on all NVIDIA GPUs"
+  }
+ }
+}

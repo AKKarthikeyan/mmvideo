@@ -1,0 +1,85 @@
+{
+ "video": "explainer",
+ "lang": "hi",
+ "reviewed_by": null,
+ "notes": "DRAFT by Claude 2026-10-02, not reviewed. Built with scripts/audio_tracks_explainer.py (timeline = each beat's explicit frames, back to back, as in src/explainer/MoatExplainer.tsx / MoatVertical.tsx).\nDISCLAIMER BEAT: 'end' is spoken here (unlike the Moat Files). It must stay a faithful, complete disclaimer: educational research, not investment advice. Reviewer to confirm the wording first.\nFILING BEATS: v6 (company documents: results, annual reports, stock exchange filings), v8 (new filings every day, Daily Filing Digest), end ('research from the filings'), and in the vertical cut 'we' (reads each company's own filings). These describe our process; check they claim nothing beyond the English.\nCLAIM BEAT: v7 says about five hundred Indian companies are scored so far and MoatSCORE checks seven kinds of moat; same numbers as English.\nNO buy/sell language. No company named.\nPRONUNCIATION: brand and product names in Latin script (Moat and Margin, MoatSCORE read as Moat Score, Daily Filing Digest), shop A / shop B letters. Listen for odd readings.\nVoice: Tamil uses English_Diligent_Man (no Tamil male preset; ear test for accent); Hindi uses hindi_male_1_v2.\nCompare every beat with the English (_english block), not just for fluency. reviewed_by left null.\n STYLE v2 (AK review 2026-10-02): rewritten in spoken style, simple words, complete sentences; Tamil = spoken Tamil with everyday English loanwords; Hindi = conversational Hindustani (परसेंट, पॉइंट, कस्टमर, कॉम्पिटिटर). Hindi line-by-line check done by Claude (grammar, gender/honorific agreement, meaning vs English); still worth one native-speaker listen before upload.",
+ "beats": {
+  "k1": "तीन आसान सवाल। मोट क्या होता है? ये क्यों ज़रूरी है? और हम इसमें क्या करते हैं?",
+  "v1": "एक क़िले को सोचिए। उसके चारों तरफ़ गहरा पानी है, यही मोट है। दुश्मन सीधे दीवार तक नहीं आ सकते।",
+  "k2": "बिज़नेस में भी यही बात है। जो चीज़ कॉम्पिटिटर्स को किसी कंपनी के कस्टमर और प्रॉफ़िट छीनने से रोकती है, वही मोट है।",
+  "v2": "एक आम मिसाल। एक गली में चाय की दो दुकानें हैं। बगल में नई दुकान खुलती है, जो चाय दो रुपये सस्ती बेचती है। दुकान A के कस्टमर वहाँ चले जाते हैं। दुकान B के कस्टमर रुके रहते हैं।",
+  "v3": "दुकान B के कस्टमर क्यों रुके? शायद उसे दूध सबसे सस्ता मिलता है, तो वो दाम में टक्कर दे सकती है। या कस्टमर का लॉयल्टी कार्ड बेकार होगा। या सुबह पाँच बजे बस वही खुलती है। सब मोट हैं।",
+  "k3": "तो मोट क्यों ज़रूरी है?",
+  "v4": "बिज़नेस अच्छा कमाए, तो कॉम्पिटिटर्स देखते हैं। वो नक़ल करते हैं, दाम गिराते हैं, और प्रॉफ़िट घटता है। मोट न हो, तो यही होता है।",
+  "v5": "मोट हो, तो बिज़नेस कई साल अच्छा कमा सकता है। और लंबे निवेशक के लिए यही सबसे बड़ा सवाल है।",
+  "k4": "इस साल की कमाई नहीं, देखिए कि कमाई कितने साल चलेगी।",
+  "k5": "तो हम क्या करते हैं? Moat and Margin भारत की लिस्टेड कंपनियों में मोट ढूँढता है, तीन स्टेप में।",
+  "v6": "पहला स्टेप: पढ़ना। हम हर कंपनी के अपने डॉक्यूमेंट पढ़ते हैं। रिज़ल्ट, सालाना रिपोर्ट, और स्टॉक एक्सचेंज फ़ाइलिंग। अफ़वाह नहीं। टिप्स नहीं।",
+  "v7": "दूसरा स्टेप: स्कोर। हमारा MoatSCORE सात तरह के मोट चेक करता है। जैसे, कस्टमर जो आसानी से कंपनी नहीं बदलते, कॉम्पिटिटर्स से कम लागत, या प्रोडक्ट जो ज़्यादा यूज़र्स से बेहतर होता है। अब तक क़रीब पाँच सौ भारतीय कंपनियों का स्कोर हुआ है।",
+  "v8": "तीसरा स्टेप: नज़र रखना। कंपनियाँ रोज़ फ़ाइलिंग करती हैं। Daily Filing Digest बताता है क्या बदला, और मोट मज़बूत हुआ या कमज़ोर।",
+  "k6": "एक लाइन में: मोट कॉम्पिटिटर्स को बाहर रखता है, और तय करता है प्रॉफ़िट कितना टिकेगा। हम आपके लिए इसे पढ़ते, स्कोर करते और देखते रहते हैं।",
+  "end": "Moat and Margin. फ़ाइलिंग से रिसर्च। ये सीखने के लिए रिसर्च है, निवेश की सलाह नहीं।"
+ },
+ "_english": {
+  "k1": {
+   "say": "Three simple questions. What is a moat? Why does it matter? And what do we do about it?",
+   "slot_sec": 7.45
+  },
+  "v1": {
+   "say": "Picture a castle. Around it is a moat: a ring of deep water. Attackers cannot simply walk up to the walls.",
+   "slot_sec": 7.82
+  },
+  "k2": {
+   "say": "In business, a moat is the same idea. It is whatever stops competitors from taking a company's customers, and its profits.",
+   "slot_sec": 8.95
+  },
+  "v2": {
+   "say": "Here is an everyday example. Two tea shops on one street. Then a new shop opens next door, and sells tea two rupees cheaper. Shop A's customers walk over to the new shop. Shop B's customers stay.",
+   "slot_sec": 14.42
+  },
+  "v3": {
+   "say": "Why does Shop B keep them? Maybe it buys milk cheaper than anyone, so it can match any price. Maybe its regulars would lose their loyalty card. Maybe it is the only shop open at five in the morning. Each of these is a moat.",
+   "slot_sec": 13.98
+  },
+  "k3": {
+   "say": "So why does a moat matter?",
+   "slot_sec": 2.38
+  },
+  "v4": {
+   "say": "When a business earns good profits, rivals notice. They copy it. They cut prices. And the profits shrink. Without a moat, that is what usually happens.",
+   "slot_sec": 10.88
+  },
+  "v5": {
+   "say": "With a moat, a business can keep earning well for many years. And for a long-term investor, that is the question that matters most.",
+   "slot_sec": 8.05
+  },
+  "k4": {
+   "say": "Not how much a company earns this year. But how long it can keep earning.",
+   "slot_sec": 4.68
+  },
+  "k5": {
+   "say": "So what do we do? Moat and Margin looks for moats in Indian listed companies, in three steps.",
+   "slot_sec": 7.05
+  },
+  "v6": {
+   "say": "Step one: read. We read each company's own documents: its results, annual reports and stock exchange filings. Not rumours. Not tips.",
+   "slot_sec": 11.65
+  },
+  "v7": {
+   "say": "Step two: score. Our MoatSCORE checks seven kinds of moat. For example, customers who find it hard to switch, costs lower than rivals, or a product that gets better as more people use it. About five hundred Indian companies are scored so far.",
+   "slot_sec": 16.75
+  },
+  "v8": {
+   "say": "Step three: watch. Companies publish new filings every day. Our Daily Filing Digest tells you what changed, and whether the moat got stronger or weaker.",
+   "slot_sec": 10.02
+  },
+  "k6": {
+   "say": "So, in one line. A moat keeps competitors out. It decides how long profits last. And we read, score and watch it, for you.",
+   "slot_sec": 10.48
+  },
+  "end": {
+   "say": "Moat and Margin. Research from the filings. This is educational research, not investment advice.",
+   "slot_sec": 7.55
+  }
+ }
+}

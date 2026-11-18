@@ -1,0 +1,80 @@
+{
+ "id": "cy04baywhy",
+ "ep": "CY04",
+ "product": "INDICA ATLAS",
+ "voice": "English_Diligent_Man",
+ "research": "docs/geo/research/CY04-bay-why",
+ "status": "v1 + G6 fixes (3 Nov 2026), voiced on the second-plan key at night on AK's word",
+ "version": "short ~30s",
+ "format": "F3 Three Reasons",
+ "target_seconds": 30,
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "say": "More than twice as many cyclones as the Arabian Sea: the Bay of Bengal, from nineteen eighty-two to twenty twenty-four.",
+   "caption": "1982–2024: Bay 120 · Arabian Sea 51 (IMD)",
+   "claims": [
+    "C001"
+   ]
+  },
+  {
+   "key": "b2",
+   "move": "M2 Ground",
+   "say": "This week's Cyclone Murasu is the latest. Why so many, and why so deadly?",
+   "caption": "Severe Cyclonic Storm Murasu · Nov 2026",
+   "claims": [
+    "C002"
+   ]
+  },
+  {
+   "key": "b3",
+   "move": "M3 Build",
+   "say": "One: warmth. The Arabian Sea is cooler, and India's weather office says that holds storms back.",
+   "caption": "1 · Cooler Arabian Sea holds storms back (IMD)",
+   "claims": [
+    "C003"
+   ]
+  },
+  {
+   "key": "b4",
+   "move": "M3 Build",
+   "say": "Two: a lid. After the monsoon, river water caps the north Bay, so storms stir up warm water.",
+   "caption": "2 · Fresh-water lid (north Bay, after the monsoon)",
+   "claims": [
+    "C004"
+   ]
+  },
+  {
+   "key": "b5",
+   "move": "M4 Turn",
+   "say": "Three: the shape. At its head, the Bay narrows like a funnel, over shallow water.",
+   "caption": "3 · At its head: a funnel over shallow water",
+   "claims": [
+    "C005",
+    "C007"
+   ]
+  },
+  {
+   "key": "b6",
+   "move": "M4 Turn",
+   "say": "Storms push the sea in, and it piles up. That surge is the biggest killer.",
+   "caption": "The surge: the biggest killer (IMD)",
+   "claims": [
+    "C006",
+    "C005"
+   ]
+  },
+  {
+   "key": "b7",
+   "move": "M5 Loop",
+   "say": "Warm water breeds them. The funnel makes them deadly.",
+   "caption": "Warm water breeds them. The funnel makes them deadly.",
+   "claims": [
+    "C003",
+    "C005",
+    "C006"
+   ]
+  }
+ ]
+}

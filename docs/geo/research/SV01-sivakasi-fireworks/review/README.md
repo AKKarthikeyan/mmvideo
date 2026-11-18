@@ -11,3 +11,5 @@ What to check, in order:
 5. A line may be reworded, but it must still end in the same time: tell AK the new text and it will be re-voiced and re-fitted.
 
 Rules: the English is the source of truth; no facts added; `reviewed_by` stays empty until AK names the reviewer.
+
+**Update 1 Nov (Tamil):** review_ta_Tamil.csv is now the native Tamil rewrite. review_hi_Hindi.csv and review_te_Telugu.csv are still literal drafts: hold them until Hindi and Telugu are rewritten natively.

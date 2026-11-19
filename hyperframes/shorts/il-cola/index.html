@@ -1,0 +1,120 @@
+<!doctype html>
+<!-- India Ledger · In Your Pocket · "₹10 bottle vs Coke and Pepsi: 93% to 85%". Reveal Loop Short, 1080 x 1920.
+     Shares: NielsenIQ, Jan-Sep 2024 vs Jan-Sep 2025, as reported by Storyboard18 and Trak.in (second-hand; no 2026
+     reading found 19 Nov 2026). Bottles are our own drawings with plain-text names, no brand marks. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>India Ledger: the ten rupee bottle</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/ledger_short.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #share { position: absolute; left: 64px; top: 300px; width: 952px; height: 96px; border: 4px solid var(--fg); background: var(--card); overflow: hidden; }
+      #sBig { position: absolute; left: 0; top: 0; height: 100%; background: #5b5f66; }
+      #sNew { position: absolute; right: 0; top: 0; height: 100%; background: var(--acc); }
+      #sBigL, #sNewL { position: absolute; top: 410px; font: 700 34px/1 Oswald, sans-serif; letter-spacing: .05em; white-space: nowrap; }
+      #sBigL { left: 64px; color: #5b5f66; } #sNewL { right: 64px; color: var(--acc); text-align: right; }
+      #per { position: absolute; left: 64px; top: 460px; font: 400 28px/1 Plex, monospace; color: var(--muted); }
+      #n93 { left: 64px; top: 520px; font-size: 220px; color: #5b5f66; }
+      #n15 { left: 560px; top: 520px; font-size: 220px; }
+      #q { left: 760px; top: 520px; font-size: 260px; }
+      #shelf { position: absolute; left: 50px; top: 1252px; width: 980px; height: 14px; background: var(--fg); }
+      .btl { position: absolute; left: 0; top: 0; width: 128px; height: 352px; opacity: 0; }
+      .btl svg { width: 100%; height: 100%; }
+      #tag10 { position: absolute; left: 0; top: 0; font: 700 120px/1 Oswald, sans-serif; color: var(--card); background: var(--acc); padding: 14px 30px 20px; border-radius: 14px; opacity: 0; white-space: nowrap; }
+      #who1, #who2 { position: absolute; left: 0; top: 0; font: 700 40px/1.1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; opacity: 0; text-align: center; }
+      #who1 small, #who2 small { display: block; font: 400 26px/1.2 Plex, monospace; color: var(--muted); }
+      #fight { left: 64px; top: 560px; font-size: 300px; transform-origin: 0 50%; }
+      #fightL { left: 70px; top: 870px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="27.333" data-width="1080" data-height="1920">
+      <div id="rules" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · IN YOUR POCKET</div>
+      <div class="src" id="srcs" style="top: 166px">
+        <div id="s0">NielsenIQ soft-drink market share, Jan–Sep 2024, as reported by Storyboard18 and Trak.in</div>
+        <div id="s1">NielsenIQ, Jan–Sep 2024 vs Jan–Sep 2025, as reported by Storyboard18 and Trak.in</div>
+        <div id="s2">Reported: the giants brought back ₹10 packs (Storyboard18) · bottles: illustration</div>
+      </div>
+      <div id="share"><div id="sBig"></div><div id="sNew"></div></div>
+      <div id="sBigL">COKE + PEPSI</div>
+      <div id="sNewL">EVERYONE ELSE</div>
+      <div id="per">JAN–SEP 2024</div>
+      <div class="big" id="n93">93%</div>
+      <div class="big acc" id="n15">15%</div>
+      <div class="big acc" id="q">?</div>
+      <div class="big acc" id="fight">₹10</div>
+      <div class="lab" id="fightL">WHERE MOST OF THE FIGHT WAS</div>
+      <div id="shelf"></div>
+      <div id="bottles"></div>
+      <div id="tag10">₹10</div>
+      <div id="who1">CAMPA<small>RELIANCE</small></div>
+      <div id="who2">LAHORI<small>JEERA DRINK</small></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      LS.init();
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, on = LS.on;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const bottle = (id, col, lbl) => { const d = document.createElement("div"); d.className = "btl"; d.id = id;
+        d.innerHTML = LS.ICON.bottle.replace("CLR", col).replace("LBL", lbl).replace('font-size="58"', `font-size="${lbl.length > 4 ? 40 : 58}"`); $("bottles").appendChild(d); return d; };
+      const COLA = "#3a2418";
+      const OLD = [["o0", "COKE"], ["o1", "PEPSI"], ["o2", "COKE"], ["o3", "PEPSI"], ["o4", "COKE"], ["o5", "PEPSI"]].map(([id, l]) => bottle(id, COLA, l));
+      const nb = bottle("n0", "#e9d9a8", "₹10"), cam = bottle("n1", "#5a2a20", "CAMPA"), lah = bottle("n2", "#c9b77a", "LAHORI");
+      const tTwo = A("b1", "sold almost"), t93 = B("b2"), tQ = A("b2", "Could anyone"), t10 = B("b3"), tCam = B("b4"), tLah = A("b4", "And Lahori"),
+        tYr = B("b5"), t7 = A("b5", "Seven percent"), tCP = B("b6"), t85 = A("b6", "Down to"), tFight = B("b7"), tTen = A("b7", "Ten rupees"),
+        tGi = B("b8"), tPk = A("b8", "ten rupee packs"), tNev = B("b9");
+      const ox = (i) => 90 + i * 150;
+      H.render = (t) => {
+        // ---- the share bar: 93/7 -> 85/15
+        const big = t < tYr ? 93 : L(93, 85, Z.io2((t - t7) / 1.0));
+        const nw = 100 - big;
+        const shO = Math.max(F(t, 0, tFight - 0.2, 0.01), F(t, tNev, 99, 0.2)) ;
+        const fill = 1;
+        $("sBig").style.width = (952 - 8) * big / 100 * fill + "px"; $("sNew").style.width = (952 - 8) * nw / 100 * fill + "px";
+        const shareTotal = Math.max(1 - F(t, tFight - 0.2, 99, 0.25), F(t, tNev, 99, 0.25));
+        on($("share"), shareTotal); on($("sBigL"), shareTotal); on($("sNewL"), shareTotal * F(t, t93, 99, 0.2));
+        $("per").textContent = t < t7 + 0.3 || t > tNev ? "JAN–SEP 2024" : "JAN–SEP 2025"; on($("per"), shareTotal);
+        // ---- 93%, the question
+        const n93 = F(t, t93, tYr, 0.2) + F(t, t85, tFight - 0.2, 0.2);
+        $("n93").textContent = t < tYr ? "93%" : "85%"; on($("n93"), Math.min(1, n93), 0, 0, Z.back((t - (t < tYr ? t93 : t85)) / 0.4));
+        on($("q"), F(t, tQ, t10, 0.15), 0, 0, Z.back((t - tQ) / 0.4));
+        const n15 = F(t, t7, tCP, 0.2); $("n15").textContent = t < t7 + 0.6 ? "7%" : "≈15%"; on($("n15"), n15, 0, 0, t < t7 + 0.6 ? 1 : Z.back((t - t7 - 0.6) / 0.4));
+        // ---- the old shelf: six cola bottles, on screen from frame 1 and again for the loop
+        const shelfOld = Math.max(1 - F(t, t10 - 0.1, 99, 0.3), F(t, tGi - 0.1, 99, 0.3));
+        const shrink = Z.io2((t - tPk) / 0.6) * (t < tNev ? 1 : 1 - Z.io2((t - tNev) / 0.5));
+        OLD.forEach((el, i) => {
+          const drop = t < 1 ? Z.back((t + 0.35 - i * 0.12) / 0.5) : 1;
+          const s = 1 - 0.38 * shrink, y = 1252 - 352 * s - 160 * (1 - drop);
+          on(el, shelfOld * C(drop * 3), ox(i) + 64 * (1 - s), y, s);
+          // the tiny ₹10 tag on each shrunk bottle
+        });
+        // ---- the ₹10 bottle, then Campa and Lahori
+        const nO = F(t, t10, tFight - 0.2, 0.2);
+        on(nb, nO * (t < tCam ? 1 : 0), 476, 1252 - 352 * 1.3 - 200 * (1 - Z.back((t - t10) / 0.5)) + 0, 1.3);
+        on($("tag10"), F(t, t10 + 0.3, tCam, 0.15) + F(t, tPk, tNev, 0.15), t < tCam ? 620 : 600, t < tCam ? 700 : 760, t < tCam ? Z.back((t - t10 - 0.3) / 0.4) : Z.back((t - tPk) / 0.4), -6);
+        const cO = F(t, tCam, tFight - 0.2, 0.2), lO = F(t, tLah, tFight - 0.2, 0.2);
+        on(cam, cO, 300, 1252 - 352 * 1.05 - 140 * (1 - Z.back((t - tCam) / 0.5)), 1.05);
+        on(lah, lO, 640, 1252 - 352 * 1.05 - 140 * (1 - Z.back((t - tLah) / 0.5)), 1.05);
+        on($("who1"), F(t, tCam + 0.2, tYr, 0.2), 300, 750); on($("who2"), F(t, tLah + 0.2, tYr, 0.2), 630, 750);
+        // ---- one price
+        const fo = F(t, tFight, tGi, 0.2); on($("fight"), F(t, tFight + 0.2, tGi, 0.15), 0, 0, Z.back((t - tFight - 0.2) / 0.4) * (1 + 0.12 * Math.max(0, 1 - Math.abs(t - tTen) / 0.25))); on($("fightL"), fo);
+        // ---- sources
+        const SRC = [[0, tYr, 0], [tYr, tGi, 1], [tGi, tNev, 2], [tNev, 99, 0]];
+        ["s0", "s1", "s2"].forEach((id) => { $(id).style.opacity = 0; });
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

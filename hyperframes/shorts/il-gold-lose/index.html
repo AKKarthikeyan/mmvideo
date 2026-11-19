@@ -1,0 +1,155 @@
+<!doctype html>
+<!-- India Ledger · Doesn't Add Up · "How do you lose money on gold that only rose?". Reveal Loop Short, 1080 x 1920.
+     Every number from scripts/india_ledger_gold.py at RBI's redemption price of ₹13,345/g (19 Nov 2026): owed ₹1.64 lakh
+     crore on at most 122.8 t still out (D8, D9); +₹1,000/g adds ₹12,277 crore (D10); first tranche ₹2,684/g (D6). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>India Ledger: losing money on gold</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/ledger_short.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      .ico { position: absolute; left: 0; top: 0; opacity: 0; }
+      .ico svg { width: 100%; height: 100%; position: static; }
+      .pb { position: absolute; width: 200px; background: var(--gold); border: 4px solid var(--fg); border-bottom: 0; }
+      .pl { position: absolute; width: 300px; text-align: center; font: 700 44px/1.05 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .pl small { display: block; font: 400 26px/1.2 Plex, monospace; color: var(--muted); }
+      #pbase { position: absolute; left: 150px; top: 1220px; width: 780px; height: 5px; background: var(--fg); }
+      #x5 { left: 64px; top: 250px; font-size: 200px; }
+      #x5l { left: 70px; top: 455px; }
+      #owe { left: 64px; top: 330px; font-size: 150px; }
+      #owel { left: 70px; top: 490px; line-height: 1.15; }
+      #gov { left: 64px; top: 260px; }
+      .guess { position: absolute; left: 140px; font: 700 120px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; opacity: 0; }
+      .guess .strike { left: -16px; top: 58px; width: calc(100% + 32px); }
+      #st1 { left: 150px; top: 820px; } #st2 { left: 180px; top: 440px; } #st3 { left: 150px; top: 330px; }
+      #pays { left: 64px; top: 1080px; width: 952px; white-space: normal; line-height: 1.15; text-align: center; }
+      #loan { left: 64px; top: 330px; }
+      #flow { position: absolute; left: 0; top: 0; }
+      #budget { position: absolute; left: 590px; top: 760px; width: 400px; height: 280px; display: flex; align-items: center; justify-content: center; text-align: center;
+        font: 700 52px/1.05 Oswald, sans-serif; color: var(--card); background: var(--fg); opacity: 0; }
+      .row { position: absolute; left: 64px; width: 952px; height: 120px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; border-bottom: 2px solid rgba(20,22,26,.35);
+        font: 700 66px/1 Oswald, sans-serif; color: var(--fg); opacity: 0; }
+      .row span:last-child { text-align: right; color: var(--acc); }
+      #rowh { position: absolute; left: 64px; top: 300px; width: 952px; display: grid; grid-template-columns: 1fr 1fr; font: 400 28px/1 Plex, monospace; color: var(--muted); opacity: 0; }
+      #rowh span:last-child { text-align: right; }
+      #plus { left: 64px; top: 830px; font-size: 120px; }
+      #plusl { left: 70px; top: 960px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="31.833" data-width="1080" data-height="1920">
+      <div id="rules" data-layout-ignore></div>
+      <canvas id="flow" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · DOESN'T ADD UP</div>
+      <div class="src" id="srcs" style="top: 166px">
+        <div id="s0">RBI: issue price ₹2,684/g (Nov 2015); redemption ₹13,345/g (19 Nov 2026) · ≈5×: our arithmetic</div>
+        <div id="s1">Owed on bonds still out (at most 122.8 t) at ₹13,345/g: our arithmetic from RBI tranche data</div>
+        <div id="s2">Sovereign Gold Bonds: a government loan under the Government Securities Act, 2006 (RBI) · illustration</div>
+        <div id="s3">Each +₹1,000 on a gram: +₹12,277 crore · our arithmetic · not investment advice</div>
+      </div>
+      <div id="bars"></div>
+      <div id="pbase"></div>
+      <div class="big gold" id="x5">≈5×</div>
+      <div class="lab" id="x5l">GOLD PRICE A GRAM, 2015 → 2026</div>
+      <div class="chip" id="gov">GOVERNMENT OF INDIA</div>
+      <div class="big acc" id="owe">₹0</div>
+      <div class="lab" id="owel">LAKH CRORE OWED<br />ON GOLD BONDS STILL OUT</div>
+      <div class="guess" id="g1" style="top: 380px">STOLEN?<div class="strike" id="k1"></div></div>
+      <div class="guess" id="g2" style="top: 560px">A CRASH?<div class="strike" id="k2"></div></div>
+      <div class="lab acc" id="pays">PAYS WHAT GOLD IS WORTH<br />WHEN IT MATURES</div>
+      <div class="stamp" id="st1">NO GOLD BOUGHT</div>
+      <div id="budget">THE BUDGET<br />LIKE ANY LOAN</div>
+      <div id="rowh"><span>GOLD, ₹ A GRAM</span><span>OWED ON BONDS STILL OUT</span></div>
+      <div class="row" id="r0" style="top: 350px"><span>₹13,345</span><span>₹1,63,837 CR</span></div>
+      <div class="row" id="r1" style="top: 480px"><span>₹14,345</span><span>₹1,76,114 CR</span></div>
+      <div class="row" id="r2" style="top: 610px"><span>₹15,345</span><span>₹1,88,391 CR</span></div>
+      <div class="big acc" id="plus">+₹12,277 CR</div>
+      <div class="lab" id="plusl">FOR EVERY ₹1,000 ON A GRAM</div>
+      <div class="stamp" id="st3">RISK: GOVERNMENT</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      LS.init();
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, on = LS.on;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const ico = (id, html, w, h) => { const d = document.createElement("div"); d.className = "ico"; d.id = id; d.style.width = w + "px"; d.style.height = h + "px"; d.innerHTML = html; $("root").insertBefore(d, $("x5")); return d; };
+      const cert = ico("cert", LS.ICON.cert, 780, 540), gbar = ico("gbar", LS.ICON.bar, 420, 196);
+      // price bars: first tranche vs today (two real points; no path drawn between them)
+      const P0 = 2684, P1 = 13345, HMAX = 560;
+      $("bars").innerHTML = `<div class="pb" id="pb0" style="left:240px"></div><div class="pb" id="pb1" style="left:640px"></div>
+        <div class="pl" id="pl0" style="left:190px">₹2,684<small>NOV 2015</small></div><div class="pl" id="pl1" style="left:590px">₹13,345<small>19 NOV 2026</small></div>`;
+      const tAsk = B("b2"), tOwes = A("b2", "It owes"), tNot = B("b3"), tCr = A("b3", "Not a crash"), t15 = B("b4"), tBonds = A("b4", "bonds that"),
+        tNever = B("b5"), tSpent = B("b6"), tGold = B("b7"), t5 = A("b7", "five times"), tSo = B("b8"), tTh = A("b8", "and every thousand"), tAdds = A("b8", "adds twelve"),
+        tKept = B("b9"), tAns = A("b9", "That's the answer");
+      const fg = $("flow").getContext("2d");
+      function priceBars(t, o, u0, u1) {
+        const h0 = HMAX * P0 / P1 * u0, h1 = HMAX * u1;
+        [["pb0", h0], ["pb1", h1]].forEach(([id, h]) => { const el = $(id); el.style.top = 1220 - h + "px"; el.style.height = h + "px"; el.style.opacity = o; });
+        on($("pl0"), o * C(u0 * 2), 0, 1220 - h0 - 120); on($("pl1"), o * C(u1 * 2), 0, 1220 - h1 - 120);
+        $("pbase").style.opacity = o;
+      }
+      H.render = (t) => {
+        fg.clearRect(0, 0, 1080, 1920);
+        // ---- opener (and loop): the two prices rising, ≈5×
+        const open = 1 - F(t, tAsk - 0.2, 99, 0.25), loopO = F(t, tAns, 99, 0.25), gold7 = F(t, tGold, tSo - 0.1, 0.25);
+        const po = Math.max(open, loopO, gold7);
+        const G0 = Z.o3(0.6 / 2.4), grow = t < tAsk ? Z.o3((t + 0.6) / 2.4) : t >= tAns ? G0 * Z.o2(C((t - tAns) / (D - tAns))) : Z.o3((t - tGold) / 1.0);
+        priceBars(t, po, 1, grow);
+        const xo = Math.max(open * F(t, 0.6, 99, 0.2), loopO * F(t, tAns + 0.3, 99, 0.2), F(t, t5, tSo - 0.1, 0.2));
+        on($("x5"), xo, 0, 0, t > tGold && t < tSo ? Z.back((t - t5) / 0.4) : 1); on($("x5l"), xo);
+        // ---- the government owes
+        const ow = F(t, tAsk, tNot - 0.1, 0.2);
+        on($("gov"), ow, 0, 0); on(cert, ow * 0.25 + 0.0 * 0, 150, 760, 1, -4);
+        const ou = Z.o2((t - tOwes) / 2.4); $("owe").textContent = "₹" + (1.64 * ou).toFixed(2);
+        on($("owe"), F(t, tOwes, tNot - 0.1, 0.2)); on($("owel"), F(t, tOwes, tNot - 0.1, 0.2));
+        if (t > tAsk - 0.2 && t < tNot) on(cert, ow, 150, 760 + 20 * (1 - Z.o3((t - tAsk) / 0.5)), 1, -3);
+        // ---- not stolen, not a crash
+        const gs = F(t, tNot, t15 - 0.1, 0.15);
+        on($("g1"), gs); $("k1").style.transform = `scaleX(${Z.o3((t - tNot - 0.35) / 0.25)})`;
+        on($("g2"), F(t, tCr, t15 - 0.1, 0.15)); $("k2").style.transform = `scaleX(${Z.o3((t - tCr - 0.35) / 0.25)})`;
+        // ---- 2015: paper gold
+        const pg = F(t, t15, tNever - 0.05, 0.2);
+        if (t >= t15 - 0.2 && t < tSpent) on(cert, pg, 150, 420 + 30 * (1 - Z.o3((t - t15) / 0.5)), 1, -2);
+        else if (!(t > tAsk - 0.2 && t < tNot)) on(cert, 0);
+        on($("pays"), F(t, tBonds, tNever - 0.05, 0.2));
+        // ---- never bought the gold
+        on(gbar, F(t, tNever - 0.1, tSpent - 0.1, 0.15), 330, 1010); on($("st1"), F(t, tNever + 0.3, tSpent - 0.1, 0.12), 0, 0, 1.6 - 0.6 * Z.o3((t - tNever - 0.3) / 0.25), -7);
+        // ---- spent like any loan: rupees flow from the certificate into the budget
+        const sp = F(t, tSpent, tGold - 0.1, 0.2);
+        if (sp > 0) {
+          on(cert, sp, 40, 520, 0.62, -3);
+          for (let i = 0; i < 9; i++) {
+            const u = ((t - tSpent) * 0.9 + i / 9) % 1, x = L(560, 790, u), y = L(640, 880, u) - 120 * Math.sin(Math.PI * u);
+            fg.globalAlpha = sp * Math.sin(Math.PI * u); fg.fillStyle = LS.C.acc; fg.fillRect(x - 44, y - 24, 88, 48);
+            fg.fillStyle = LS.C.card; fg.font = "700 34px Oswald"; fg.textAlign = "center"; fg.fillText("₹", x, y + 12);
+          }
+          fg.globalAlpha = 1;
+        }
+        on($("budget"), F(t, tSpent + 0.3, tGold - 0.1, 0.2));
+        // ---- the bill table: every ₹1,000 adds ₹12,277 crore
+        const tb = F(t, tSo, tKept - 0.1, 0.2);
+        on($("rowh"), tb); on($("r0"), tb); on($("r1"), F(t, tTh + 0.2, tKept - 0.1, 0.2), 0, 0); on($("r2"), F(t, tAdds, tKept - 0.1, 0.2));
+        on($("plus"), F(t, tAdds + 0.2, tKept - 0.1, 0.2), 0, 0, Z.back((t - tAdds - 0.2) / 0.4)); on($("plusl"), F(t, tAdds + 0.2, tKept - 0.1, 0.2));
+        // ---- kept the risk
+        const kr = F(t, tKept, tAns, 0.2);
+        if (kr > 0) on(cert, kr, 150, 700, 1, -3);
+        on($("st3"), F(t, tKept + 0.3, tAns, 0.12), 0, 0, 1.6 - 0.6 * Z.o3((t - tKept - 0.3) / 0.25), -7);
+        // ---- sources
+        const SRC = [[0, tAsk, 0], [tAsk, t15, 1], [t15, tGold, 2], [tGold, tSo, 0], [tSo, tKept, 3], [tKept, tAns, 2], [tAns, 99, 0]];
+        ["s0", "s1", "s2", "s3"].forEach((id) => { $(id).style.opacity = 0; });
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

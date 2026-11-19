@@ -136,6 +136,117 @@ S["um-parisiman"] = dict(
     ])
 
 
+# ---- India Ledger, week 1 (docs/INDIA_LEDGER_WEEK1.md section 4). Voice only: no music under narration (CLAUDE.md).
+# Short 1 · Doesn't Add Up · gold bonds. Numbers from scripts/india_ledger_gold.py at RBI's ₹13,345/g of 19 Nov 2026.
+S["il-gold-lose"] = dict(
+    channel="India Ledger", lang="en-IN", series="Doesn't Add Up", music=False,
+    title="How do you lose money on gold that only rose?",
+    send="Gold-bond holders and taxpayers both want to know who is paying.",
+    beats=[
+        ("b1", [("How do you lose money", "How do you *lose money*"), ("on gold that only went up?", "on gold that *only went up?*")],
+         ["How do", "on gold"]),
+        ("b2", [("Ask the government.", "Ask the *government.*"), ("It owes one point six four lakh crore rupees on it.", "It owes *₹1.64 lakh crore*")],
+         ["Ask the", "It owes"]),
+        ("b3", [("Not stolen.", "Not *stolen.*"), ("Not a crash.", "Not a *crash.*")], ["Not stolen", "Not a crash"]),
+        ("b4", [("In twenty fifteen, it sold paper gold:", "*2015:* paper gold"),
+                ("bonds that pay you whatever gold is worth later.", "pays what gold is *worth later*")],
+         ["In twenty", "bonds that"]),
+        ("b5", [("But it never bought the gold.", "It never *bought* the gold")], ["But it never"]),
+        ("b6", [("It spent the money, like any loan.", "Spent it, *like a loan*")], ["It spent"]),
+        ("b7", [("Then gold went up about five times.", "Gold went up *about 5×*")], ["Then gold", "five times"]),
+        ("b8", [("So every bond is paid back at today's price,", "Paid back at *today's price*"),
+                ("and every thousand rupees on a gram", "Every *+₹1,000* a gram"), ("adds twelve thousand crore.", "adds *₹12,277 cr*")],
+         ["So every", "and every thousand", "adds twelve"]),
+        ("b9", [("It kept the risk, not the gold.", "It kept the *risk,* not the gold"), ("That's the answer to", "That's the answer to…")],
+         ["It kept", "That's the answer"]),
+    ])
+
+# Short 2 · Doesn't Add Up · the deposit scheme. D16-D18.
+S["il-gold-31t"] = dict(
+    channel="India Ledger", lang="en-IN", series="Doesn't Add Up", music=False,
+    title="31 tonnes in 9 years: the gold India wouldn't lend",
+    send="Every mother would refuse to melt her bangle; now they know why the scheme failed.",
+    beats=[
+        ("b1", [("In twenty fifteen, the government asked Indian families", "*2015:* the government asked"),
+                ("to lend it their gold.", "*Lend us* your gold")],
+         ["In twenty", "to lend"]),
+        ("b2", [("Nine years later, how much had it collected?", "9 years later: *how much?*")], ["Nine years"]),
+        ("b3", [("Not a thousand tonnes.", "Not *1,000 tonnes.*"), ("Not a hundred.", "Not *100.*")], ["Not a thousand", "Not a hundred"]),
+        ("b4", [("Thirty one tonnes.", "*31 tonnes*"), ("From fewer than six thousand depositors.", "from *5,693* depositors")],
+         ["Thirty one", "From fewer"]),
+        ("b5", [("India imports that much gold in about sixteen days.", "India imports that in *16 days*")], ["India imports", "sixteen days"]),
+        ("b6", [("Why so little?", "*Why* so little?")], ["Why so"]),
+        ("b7", [("Deposit your bangle, and it's melted.", "Your bangle? *Melted.*"), ("You get back gold, never the bangle.", "Gold back, *never the bangle*")],
+         ["Deposit", "and it's melted", "You get back"]),
+        ("b8", [("So families said no,", "So families *said no*"), ("and in twenty twenty five, its long deposits closed.", "*2025:* long deposits closed")],
+         ["So families", "and in twenty"]),
+        ("b9", [("Remember,", "Remember…")], ["Remember"]),
+    ])
+
+# Short 3 · In Your Pocket · phones. DGCIS FY 2025-26 (hyperframes/videos/dk-phones/story.js).
+S["il-phones"] = dict(
+    channel="India Ledger", lang="en-IN", series="In Your Pocket", music=False,
+    title="India exports ₹3 lakh crore of this",
+    send="People assume India imports its phones.",
+    beats=[
+        ("b1", [("India now exports", "India now *exports*"), ("three lakh crore rupees of this.", "*₹3 lakh crore* of this")], ["India now", "three lakh"]),
+        ("b2", [("It's in your pocket.", "It's in your *pocket.*")], ["It's in"]),
+        ("b3", [("Phones and telecom gear.", "*Phones* and telecom gear")], ["Phones"]),
+        ("b4", [("Four years ago?", "*Four years* ago?"), ("Fifty five thousand crore.", "*₹55,126 crore*")], ["Four years", "Fifty five"]),
+        ("b5", [("That's five and a half times bigger.", "*5.5×* bigger")], ["five and a half"]),
+        ("b6", [("And most of it doesn't go by ship.", "Not by *ship.*")], ["And most", "by ship"]),
+        ("b7", [("Sixty nine percent flies out", "*69%* flies out"), ("of just two airports:", "of just *two airports*"),
+                ("Chennai and Bengaluru.", "*Chennai* and *Bengaluru*")],
+         ["Sixty nine", "two airports", "Chennai"]),
+        ("b8", [("Who buys it?", "Who *buys* it?"), ("America alone takes fifty eight and a half percent.", "USA alone: *58.5%*")],
+         ["Who buys", "America alone"]),
+        ("b9", [("Made here,", "Made *here,*"), ("flown from the south,", "flown from the *south,*"), ("sold in America.", "sold in *America.*")],
+         ["Made here", "flown from", "sold in"]),
+        ("b10", [("Because", "Because…")], ["Because"]),
+    ])
+
+# Short 4 · In Your Pocket · the ₹10 bottle. NielsenIQ Jan-Sep 2024 vs Jan-Sep 2025, as reported (Storyboard18, Trak.in);
+# no 2026 NielsenIQ reading found 19 Nov 2026.
+S["il-cola"] = dict(
+    channel="India Ledger", lang="en-IN", series="In Your Pocket", music=False,
+    title="₹10 bottle vs Coke and Pepsi: 93% to 85%",
+    send="Everyone has seen Campa in the shop; nobody knows it moved the market.",
+    beats=[
+        ("b1", [("For decades, two companies", "For decades, *two companies*"), ("sold almost every soft drink in India.", "sold almost *every soft drink*")],
+         ["For decades", "sold almost"]),
+        ("b2", [("Ninety three percent of the market.", "*93%* of the market"), ("Could anyone break that?", "Could anyone *break that?*")],
+         ["Ninety three", "Could anyone"]),
+        ("b3", [("Then came a ten rupee bottle.", "Then came a *₹10 bottle*")], ["Then came"]),
+        ("b4", [("Campa, from Reliance.", "*Campa,* from Reliance"), ("And Lahori, a jeera drink.", "*Lahori,* a jeera drink")], ["Campa", "And Lahori"]),
+        ("b5", [("In one year, the two of them doubled.", "In one year: *doubled*"), ("Seven percent, to nearly fifteen.", "*7%* to nearly *15%*")],
+         ["In one year", "Seven percent"]),
+        ("b6", [("Coke and Pepsi?", "Coke and Pepsi?"), ("Down to eighty five.", "Down to *85%*")], ["Coke and", "Down to"]),
+        ("b7", [("Most of the fight was at one price.", "The fight: *one price*"), ("Ten rupees.", "*₹10*")], ["Most of", "Ten rupees"]),
+        ("b8", [("So the giants brought back ten rupee packs.", "Giants bring back *₹10 packs*")], ["So the giants", "ten rupee packs"]),
+        ("b9", [("Something they hadn't needed in years, because", "Not needed *in years,* because…")], ["Something they"]),
+    ])
+
+# Short 5 · Doesn't Add Up · buffalo meat (AK kept it, 19 Nov 2026). DGCIS FY 2025-26 (dk-buffalo, ia-poultry story.js).
+S["il-buffalo"] = dict(
+    channel="India Ledger", lang="en-IN", series="Doesn't Add Up", music=False,
+    title="India's ₹45,000 crore meat export isn't chicken",
+    send="Almost everyone guesses chicken.",
+    beats=[
+        ("b1", [("India's biggest meat export", "India's biggest *meat export*"), ("earns forty five thousand crore rupees a year.", "*₹45,196 crore* a year")],
+         ["India's biggest", "earns forty"]),
+        ("b2", [("Is it chicken?", "Is it *chicken?*"), ("No.", "*No.*")], ["Is it chicken", "No."]),
+        ("b3", [("All poultry together is under three thousand crore.", "All poultry: *under ₹3,000 cr*"), ("This is sixteen times that.", "This is *16×* that")],
+         ["All poultry", "This is sixteen"]),
+        ("b4", [("It's buffalo meat.", "It's *buffalo meat.*"), ("Up thirty one percent in a year.", "*+31%* in a year")], ["It's buffalo", "Up thirty"]),
+        ("b5", [("And most of it isn't cleared at a sea port.", "Not cleared at a *sea port*")], ["And most", "sea port"]),
+        ("b6", [("More than half is cleared at inland depots", "*54%* at inland depots"), ("in Uttar Pradesh: Dadri and Kanpur.", "*Dadri* and *Kanpur,* UP")],
+         ["More than half", "in Uttar Pradesh", "Dadri and"]),
+        ("b7", [("The biggest buyer?", "The biggest *buyer?*"), ("Vietnam.", "*Vietnam:* 18%")], ["The biggest buyer", "Vietnam."]),
+        ("b8", [("Not chicken. Buffalo.", "Not chicken. *Buffalo.*"), ("From U P to Vietnam.", "From *UP* to *Vietnam*"), ("So remember,", "So remember…")],
+         ["Not chicken", "From U P", "So remember"]),
+    ])
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
@@ -287,7 +398,7 @@ def mux(sid):
         sys.exit(f"render first: python3 hyperframes/tools/hf.py render {sid}")
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(v)],
                                capture_output=True, text=True, check=True).stdout)
-    b = bed(dur) * 0.05
+    b = bed(dur) * (0.05 if S[sid].get("music", True) else 0.0)     # music=False: voice only (India Ledger, CLAUDE.md)
     if voice.exists():
         with wave.open(str(voice)) as w:
             a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
@@ -298,7 +409,8 @@ def mux(sid):
         print(f"  {sid}: no voice.wav; muxing the music bed only (silent draft)"); mixd = b
     write_wav(adir / "mix.wav", mixd)
     out = OUT / f"{sid}-final.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(v), "-i", str(adir / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+    norm = [] if S[sid].get("music", True) else ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000"]
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(v), "-i", str(adir / "mix.wav"), *norm, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                     "-shortest", "-movflags", "+faststart", str(out)], check=True)
     print(out)
 

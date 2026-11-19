@@ -100,8 +100,22 @@ the gram of gold India digs out of its own ground, for every 443 it buys.
 ## 4. The five Shorts
 
 Series note: Shorts 1, 2 and 5 don't fit India Ledger's three series (Days of Work, In ₹500 Notes, In Your Pocket).
-**AK's call:** add a fourth series for episode Shorts ("Doesn't Add Up": two numbers that shouldn't fit together), or run
-them unlabelled.
+**Decided (AK, 19 Nov 2026):** a fourth series, **Doesn't Add Up** (two numbers that shouldn't fit together), for Shorts 1, 2
+and 5. Shorts 3 and 4 stay In Your Pocket.
+
+**Built 19 Nov 2026** (all five): `hyperframes/shorts/il-gold-lose`, `il-gold-31t`, `il-phones`, `il-cola`, `il-buffalo`, in
+the Ledger look (`hyperframes/shared/lib/ledger_short.js`). The final wording is in `hyperframes/tools/shorts_build.py`
+(`S["il-…"]`), not the drafts below. Voice: MiniMax English_Diligent_Man, every beat transcribed and matched; sound is voice
+only (`music=False`), loudness −16 LUFS. `shorts_check.py`: no FAIL on any of them. Changes from the drafts, each for accuracy:
+- Short 1: "It bet gold wouldn't rise" became "It kept the risk, not the gold" (a fact, not a motive); owed is said as ₹1.64
+  lakh crore.
+- Short 2: the loop line is "Remember," and the closure is said as "its long deposits closed" (only medium- and long-term
+  deposits closed, PIB 2115009); the stamp says so on screen.
+- Short 3: USA is said as "fifty eight and a half percent" (58.5%, not 58).
+- Short 4: no 2026 NielsenIQ reading found (19 Nov 2026), so Jan–Sep 2024 vs Jan–Sep 2025 stands, "as reported". The giants
+  *brought back* ₹10 packs (they had them before), so the ending is "Something they hadn't needed in years, because".
+- Short 5: "India sells ₹45,000 crore of meat" became "India's biggest meat export earns ₹45,000 crore" (₹45,196 crore is
+  buffalo meat alone, not all meat); chicken is said as "all poultry together"; the loop line is "So remember,".
 
 ### Short 1 · from the long video · "How do you lose money on gold?" (≈ 29 s, 86 words)
 Data: D2, D3, D8–D10. Visual: frame 1 is a gold-bond certificate with a counter already running.
@@ -147,7 +161,7 @@ Ready: the script is the worked example in SHORTS_FORMAT section 7, and its data
 
 ### Short 4 · on its own · In Your Pocket · "₹10 bottle vs Coke and Pepsi: 93% to 85%" (≈ 27 s, 78 words)
 Data: NielsenIQ via Storyboard18 and Trak.in, Jan–Sep 2024 vs Jan–Sep 2025 (second-hand: NielsenIQ declined to comment).
-**VERIFY** whether a 2026 reading exists; if it does, use it and change the dates. It also seeds episode 2.
+Checked 19 Nov 2026: no 2026 NielsenIQ reading found; the 2025 figures stand. It also seeds episode 2.
 ```
 [0.0]  For decades, two companies sold almost every
        soft drink in India.                                 COKE + PEPSI
@@ -167,8 +181,7 @@ SEND LINE: everyone has seen Campa in the shop; nobody knows it moved the market
 ### Short 5 · on its own · "India's ₹45,000 crore meat export isn't chicken" (≈ 26 s, 75 words)
 Data: DGCIS FY 2025–26, already in the repo (`hyperframes/videos/dk-buffalo/story.js`; poultry from
 `hyperframes/videos/ia-poultry/story.js`). 16× is our arithmetic.
-**AK's call:** buffalo meat is a legal export but a sensitive topic. Swap for another product from the same DGCIS data
-if you prefer.
+**Decided (AK, 19 Nov 2026):** keep buffalo meat.
 ```
 [0.0]  India sells forty five thousand crore rupees
        of meat abroad every year.                           ₹45,196 CR

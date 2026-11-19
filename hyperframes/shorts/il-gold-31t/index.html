@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- India Ledger · Doesn't Add Up · "31 tonnes in 9 years: the gold India wouldn't lend". Reveal Loop Short, 1080 x 1920.
+     D16-D18 of docs/INDIA_LEDGER_WEEK1.md: 31,164 kg from 5,693 depositors to Nov 2024 (MoF statement, as reported);
+     deposits melted (RBI FAQ); medium- and long-term deposits closed from 26 Mar 2025 (PIB 2115009); 15.8 days of
+     FY 2025-26 imports (DGCIS; our arithmetic). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>India Ledger: 31 tonnes in 9 years</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/ledger_short.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      .ico { position: absolute; left: 0; top: 0; opacity: 0; }
+      .ico svg { width: 100%; height: 100%; position: static; }
+      #ask { left: 64px; top: 270px; }
+      #yr { left: 64px; top: 360px; font-size: 170px; }
+      #nine { left: 64px; top: 300px; font-size: 150px; }
+      #ninel { left: 70px; top: 460px; }
+      .guess { position: absolute; left: 120px; font: 700 130px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; opacity: 0; }
+      .guess .strike { left: -16px; top: 62px; width: calc(100% + 32px); }
+      #t31 { left: 64px; top: 270px; font-size: 200px; }
+      #t31l { left: 70px; top: 475px; }
+      #dep { left: 64px; top: 1060px; font-size: 110px; }
+      #depl { left: 70px; top: 1175px; }
+      #cal { position: absolute; left: 64px; top: 560px; width: 952px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+      #cal div { height: 110px; border: 3px solid var(--fg); background: var(--card); font: 700 40px/1 Oswald, sans-serif; color: var(--fg); padding: 10px; opacity: 0; }
+      #cal div.on { background: var(--gold); }
+      #d16 { left: 64px; top: 270px; font-size: 200px; }
+      #d16l { left: 70px; top: 475px; }
+      #why { left: 300px; top: 520px; font-size: 360px; }
+      #arrow1, #arrow2 { position: absolute; font: 700 120px/1 Oswald, sans-serif; color: var(--fg); opacity: 0; }
+      #nb { left: 64px; top: 1110px; width: 952px; text-align: center; }
+      #closed { left: 300px; top: 900px; }
+      #cll { left: 64px; top: 300px; line-height: 1.15; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.567" data-width="1080" data-height="1920">
+      <div id="rules" data-layout-ignore></div>
+      <canvas id="fx" width="1080" height="1920" style="position:absolute;left:0;top:0" data-layout-ignore></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · DOESN'T ADD UP</div>
+      <div class="src" id="srcs" style="top: 166px">
+        <div id="s0">Gold Monetisation Scheme, launched 5 Nov 2015 (PIB, Ministry of Finance) · illustration</div>
+        <div id="s1">31,164 kg from 5,693 depositors, Nov 2015 – Nov 2024: Ministry of Finance, 25 Mar 2025, as reported</div>
+        <div id="s2">Imports: 721 t in FY 2025–26 (DGCIS) · 31 t = 15.8 days: our arithmetic</div>
+        <div id="s3">Deposited jewellery is melted after testing; you get gold back, not the piece (RBI FAQ on the scheme)</div>
+        <div id="s4">Medium- and long-term deposits closed from 26 Mar 2025 (PIB, Ministry of Finance, 25 Mar 2025)</div>
+      </div>
+      <div class="chip acc" id="ask">LEND US YOUR GOLD</div>
+      <div class="big" id="yr">2015</div>
+      <div class="big acc" id="nine">9 YEARS →</div>
+      <div class="lab" id="ninel">HOW MUCH GOLD CAME IN?</div>
+      <div class="guess" id="g1" style="top: 640px">1,000 TONNES<div class="strike" id="k1"></div></div>
+      <div class="guess" id="g2" style="top: 820px">100 TONNES<div class="strike" id="k2"></div></div>
+      <div class="big gold" id="t31">31 TONNES</div>
+      <div class="lab" id="t31l">IN NINE YEARS</div>
+      <div class="big acc" id="dep">5,693</div>
+      <div class="lab" id="depl">DEPOSITORS</div>
+      <div id="cal"></div>
+      <div class="big gold" id="d16">≈16 DAYS</div>
+      <div class="lab" id="d16l">OF INDIA'S GOLD IMPORTS</div>
+      <div class="big acc" id="why">?</div>
+      <div id="arrow1">→</div><div id="arrow2">→</div>
+      <div class="lab acc" id="nb">GOLD BACK · NEVER THE BANGLE</div>
+      <div class="stamp" id="closed">CLOSED</div>
+      <div class="lab" id="cll">MEDIUM- AND LONG-TERM DEPOSITS<br />FROM 26 MARCH 2025</div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      LS.init();
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, on = LS.on;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const ico = (id, html, w, h) => { const d = document.createElement("div"); d.className = "ico"; d.id = id; d.style.width = w + "px"; d.style.height = h + "px"; d.innerHTML = html; $("root").insertBefore(d, $("ask")); return d; };
+      const locker = ico("locker", LS.ICON.locker, 420, 490), bangle = ico("bangle", LS.ICON.bangle, 300, 300),
+        flame = ico("flame", LS.ICON.flame, 200, 260), gbar = ico("gbar", LS.ICON.bar, 300, 140);
+      for (let i = 1; i <= 21; i++) $("cal").insertAdjacentHTML("beforeend", `<div id="c${i}">${i}</div>`);
+      // 31 small bars, one a tonne
+      const fx = $("fx").getContext("2d");
+      const tNine = B("b2"), tNotK = B("b3"), tNotH = A("b3", "Not a hundred"), t31 = B("b4"), tFew = A("b4", "From fewer"), tImp = B("b5"), t16 = A("b5", "sixteen days"),
+        tWhy = B("b6"), tDep = B("b7"), tMelt = A("b7", "and it's melted"), tBack = A("b7", "You get back"), tSaid = B("b8"), t25 = A("b8", "and in twenty"), tRem = B("b9");
+      // the opener: a bangle drops into the deposit locker (also the loop end)
+      function opener(t0, t, o) {
+        const u = (t - t0) / 2.6;
+        on(locker, o, 330, 760);
+        const y = L(480, 820, Z.io2(C(u))), sc = 1 - 0.35 * Z.io2(C((u - 0.6) / 0.4));
+        on(bangle, o * (1 - C((u - 0.92) / 0.08)), 390, y, sc);
+        on($("yr"), o * F(t, t0 + 0.1, 99, 0.2)); on($("ask"), o * F(t, t0 + 0.4, 99, 0.2));
+      }
+      H.render = (t) => {
+        fx.clearRect(0, 0, 1080, 1920);
+        const op = 1 - F(t, tNine - 0.15, 99, 0.2), lp = F(t, tRem - 0.1, 99, 0.15);
+        if (t < tNine + 0.1) opener(-0.5, t, op);
+        else if (t > tRem - 0.2) opener(D - 0.5, t, lp);
+        else { on(locker, 0); on(bangle, 0); on($("yr"), 0); on($("ask"), 0); }
+        // ---- nine years later, the guesses
+        const nn = F(t, tNine, t31 - 0.1, 0.2);
+        on($("nine"), nn, 30 * (1 - Z.o3((t - tNine) / 0.4))); on($("ninel"), nn);
+        on($("g1"), F(t, tNotK, t31 - 0.1, 0.15)); $("k1").style.transform = `scaleX(${Z.o3((t - tNotK - 0.5) / 0.25)})`;
+        on($("g2"), F(t, tNotH, t31 - 0.1, 0.15)); $("k2").style.transform = `scaleX(${Z.o3((t - tNotH - 0.45) / 0.25)})`;
+        // ---- 31 tonnes: one small bar a tonne
+        const tt = F(t, t31, tImp + 0.6, 0.2);
+        on($("t31"), tt, 0, 0, Z.back((t - t31) / 0.4)); on($("t31l"), tt);
+        if (tt > 0) {
+          fx.globalAlpha = tt;
+          for (let i = 0; i < 31; i++) {
+            const u = Z.back((t - t31 - 0.1 - i * 0.045) / 0.35), c = i % 8, r = Math.floor(i / 8);
+            if (u <= 0) continue;
+            const x = 110 + c * 108, y = 600 + r * 110 - 60 * (1 - u);
+            fx.fillStyle = LS.C.gold; fx.strokeStyle = LS.C.ink; fx.lineWidth = 4;
+            fx.beginPath(); fx.moveTo(x + 14, y); fx.lineTo(x + 76, y); fx.lineTo(x + 90, y + 56); fx.lineTo(x, y + 56); fx.closePath(); fx.fill(); fx.stroke();
+          }
+          fx.globalAlpha = 1;
+        }
+        on($("dep"), F(t, tFew, tImp, 0.2)); on($("depl"), F(t, tFew, tImp, 0.2));
+        $("dep").textContent = LS.inr(5693 * Z.o2((t - tFew) / 1.2));
+        // ---- 16 days of imports
+        const ci = F(t, tImp + 0.2, tWhy - 0.05, 0.2);
+        $("cal").style.opacity = ci;
+        for (let i = 1; i <= 21; i++) { const el = $("c" + i); el.style.opacity = ci > 0 ? 1 : 0; el.className = t > tImp + 0.4 + i * 0.09 && i <= 16 ? "on" : ""; }
+        on($("d16"), F(t, t16, tWhy - 0.05, 0.2), 0, 0, Z.back((t - t16) / 0.4)); on($("d16l"), F(t, t16, tWhy - 0.05, 0.2));
+        // ---- why
+        on($("why"), F(t, tWhy, tDep, 0.12), 0, 0, Z.back((t - tWhy) / 0.35));
+        // ---- bangle -> melted -> bar
+        const mo = F(t, tDep, tSaid - 0.1, 0.2);
+        if (mo > 0) {
+          const melt = Z.io2((t - tMelt) / 0.6);
+          on(bangle, mo * (1 - 0.6 * melt), 80, 700, 0.9);
+          on(flame, mo * F(t, tMelt - 0.2, 99, 0.2), 440, 720 + 10 * Math.sin(t * 9), 1 + 0.05 * Math.sin(t * 13));
+          on(gbar, mo * F(t, tBack - 0.3, 99, 0.2), 720, 780);
+          on($("arrow1"), mo * F(t, tMelt - 0.2, 99, 0.2), 360, 760); on($("arrow2"), mo * F(t, tBack - 0.3, 99, 0.2), 650, 760);
+          on($("nb"), F(t, tBack, tSaid - 0.1, 0.2));
+        } else { on(flame, 0); on(gbar, 0); on($("arrow1"), 0); on($("arrow2"), 0); on($("nb"), 0); }
+        // ---- closed
+        const cl = F(t, tSaid, tRem - 0.2, 0.2);
+        if (cl > 0) on(locker, cl, 330, 760);
+        on($("cll"), F(t, t25 + 0.3, tRem - 0.2, 0.2)); on($("closed"), F(t, t25 + 0.3, tRem - 0.2, 0.12), 0, 0, 1.6 - 0.6 * Z.o3((t - t25 - 0.3) / 0.25), -7);
+        // ---- sources
+        const SRC = [[0, tNine, 0], [tNine, tImp, 1], [tImp, tDep, 2], [tDep, tSaid, 3], [tSaid, tRem, 4], [tRem, 99, 0]];
+        ["s0", "s1", "s2", "s3", "s4"].forEach((id) => { $(id).style.opacity = 0; });
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<!-- India Ledger · Doesn't Add Up · "India's ₹45,000 crore meat export isn't chicken". Reveal Loop Short, 1080 x 1920.
+     DGCIS principal commodity x port x country, FY 2025-26 (hyperframes/videos/dk-buffalo/story.js; poultry from
+     ia-poultry/story.js): buffalo meat ₹45,196 cr (₹34,392 cr a year before, +31.4%); poultry ₹2,810 cr; 16x: our
+     arithmetic; Dadri inland depots 39.0% + Kanpur inland depots 15.1% = 54.1%; Vietnam 18.4%. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>India Ledger: not chicken</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/ledger_short.js"></script>
+    <script src="assets/geo/world_land.js"></script>
+    <script src="assets/geo/india_districts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #map { position: absolute; left: 0; top: 0; }
+      .ico { position: absolute; left: 0; top: 0; opacity: 0; }
+      .ico svg { width: 100%; height: 100%; position: static; }
+      #val { left: 64px; top: 260px; font-size: 150px; }
+      #vall { left: 70px; top: 415px; }
+      #qbox { position: absolute; left: 0; top: 0; width: 640px; height: 400px; opacity: 0; }
+      #qlbl { position: absolute; left: 0; top: 0; width: 640px; height: 400px; display: flex; align-items: center; justify-content: center;
+        font: 700 76px/1 Oswald, sans-serif; color: var(--card); }
+      #no { left: 560px; top: 760px; }
+      .vb { position: absolute; width: 250px; border: 4px solid var(--fg); border-bottom: 0; }
+      .vl { position: absolute; width: 360px; text-align: center; font: 700 44px/1.05 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .vl small { display: block; font: 400 26px/1.2 Plex, monospace; color: var(--muted); }
+      #vbase { position: absolute; left: 140px; top: 1220px; width: 800px; height: 5px; background: var(--fg); }
+      #x16 { left: 64px; top: 520px; font-size: 200px; }
+      #g31 { left: 64px; top: 520px; font-size: 200px; }
+      #g31l { left: 70px; top: 725px; }
+      #notport { left: 230px; top: 520px; }
+      #p54 { left: 64px; top: 250px; font-size: 200px; }
+      #p54l { left: 70px; top: 455px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 36px/1 Oswald, sans-serif; letter-spacing: .04em; color: var(--card); background: var(--fg); padding: 8px 12px 10px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: var(--acc); }
+      #vn { left: 64px; top: 250px; font-size: 200px; }
+      #vnl { left: 70px; top: 455px; }
+      #rc { position: absolute; left: 64px; top: 280px; font: 700 76px/1.15 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      #rc em { font-style: normal; color: var(--acc); }
+      #rc s { text-decoration-thickness: 9px; text-decoration-color: var(--acc2); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="27.900" data-width="1080" data-height="1920">
+      <div id="rules" data-layout-ignore></div>
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · DOESN'T ADD UP</div>
+      <div class="src" id="srcs" style="top: 166px">
+        <div id="s0">DGCIS principal commodity data, FY 2025–26 (ODbL mirror Vonter/india-export-import) · container: illustration</div>
+        <div id="s1">DGCIS, FY 2025–26: poultry products ₹2,810 crore · 16×: our arithmetic</div>
+        <div id="s2">DGCIS: ₹34,392 crore in FY 2024–25 → ₹45,196 crore in FY 2025–26 · +31%: our arithmetic</div>
+        <div id="s3">DGCIS, exports by port of exit, FY 2025–26 · shares: our arithmetic</div>
+        <div id="s4">DGCIS, exports by country of destination, FY 2025–26</div>
+      </div>
+      <div class="big acc" id="val">₹0</div>
+      <div class="lab" id="vall">CRORE A YEAR · INDIA'S BIGGEST MEAT EXPORT</div>
+      <div id="qbox"></div>
+      <div class="stamp" id="no">NO</div>
+      <div id="vbars"></div>
+      <div id="vbase"></div>
+      <div class="big acc" id="x16">16×</div>
+      <div class="big acc" id="g31">+31%</div>
+      <div class="lab" id="g31l">IN ONE YEAR</div>
+      <div class="stamp" id="notport">NOT A SEA PORT</div>
+      <div class="big acc" id="p54">54%</div>
+      <div class="lab" id="p54l">CLEARED AT INLAND DEPOTS IN UP</div>
+      <div class="tag acc" id="tDa">DADRI · 39%</div>
+      <div class="tag acc" id="tKa">KANPUR · 15%</div>
+      <div class="tag" id="tNS">NHAVA SHEVA SEA PORT · 29%</div>
+      <div class="big acc" id="vn">18%</div>
+      <div class="lab" id="vnl">BOUGHT BY VIETNAM, THE BIGGEST BUYER</div>
+      <div class="tag acc" id="tVN">VIETNAM</div>
+      <div id="rc"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      LS.init();
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, on = LS.on;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const ico = (id, html, w, h) => { const d = document.createElement("div"); d.className = "ico"; d.id = id; d.style.width = w + "px"; d.style.height = h + "px"; d.innerHTML = html; $("root").insertBefore(d, $("val")); return d; };
+      const drum = ico("drum", LS.ICON.drum, 360, 240);
+      // the container: same drawing, its label hidden until the reveal
+      $("qbox").innerHTML = LS.ICON.box.replace("BUFFALO MEAT", "") + '<div id="qlbl">?</div>';
+      $("qbox").querySelector("svg").setAttribute("width", "640"); $("qbox").querySelector("svg").setAttribute("height", "400"); $("qbox").querySelector("svg").style.position = "absolute";
+      const HM = 620;
+      $("vbars").innerHTML = `<div class="vb" id="vb0" style="left:230px;background:#d9a35b"></div><div class="vb" id="vb1" style="left:600px;background:var(--acc)"></div>
+        <div class="vl" id="vl0" style="left:175px">₹2,810 CR<small>ALL POULTRY</small></div><div class="vl" id="vl1" style="left:545px">₹45,196 CR<small>THIS</small></div>`;
+      const tChk = B("b2"), tNo = A("b2", "No."), tPou = B("b3"), t16 = A("b3", "This is sixteen"), tBuf = B("b4"), tUp = A("b4", "Up thirty"),
+        tPort = B("b5"), tSea = A("b5", "sea port"), tHalf = B("b6"), tUP = A("b6", "in Uttar Pradesh"), tDK = A("b6", "Dadri and"),
+        tBuy = B("b7"), tVN = A("b7", "Vietnam."), tNC = B("b8"), tFrom = A("b8", "From U P"), tRem = A("b8", "So remember");
+      const g = $("map").getContext("2d");
+      const BI = { lon0: 67, lon1: 98, lat0: 6, lat1: 36 }, BA = { lon0: 62, lon1: 122, lat0: 0, lat1: 38 };
+      const BOX = { x: 70, y: 540, w: 940, h: 720 };
+      const DADRI = [77.55, 28.55], KANPUR = [80.3, 26.46], NS = [72.95, 18.95], VN = [106.6, 10.8];
+      function container(t, o, lbl, s = 1, y = 760) {
+        on($("qbox"), o, 220, y + 10 * Math.sin(t * 2), s);
+        $("qlbl").textContent = lbl; $("qlbl").style.fontSize = lbl.length > 3 ? "76px" : "200px";
+      }
+      H.render = (t) => {
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- the container with ?: frame 1 and the loop
+        const op = 1 - F(t, tChk - 0.15, 99, 0.2), lp = F(t, tRem - 0.1, 99, 0.2);
+        const vo = Math.max(op, lp, F(t, tBuf, tPort - 0.1, 0.2));
+        const V0 = Z.o2(0.5 / 2.6), vu = t < tChk ? Z.o2((t + 0.5) / 2.6) : t >= tRem - 0.1 ? V0 * Z.o2(C((t - tRem + 0.1) / (D - tRem + 0.1))) : 1;
+        $("val").textContent = "₹" + LS.inr(45196 * vu); on($("val"), vo); on($("vall"), vo);
+        if (t < tChk) container(t, op, "?");
+        else if (t >= tRem - 0.1) container(t, lp, "?");
+        else if (t >= tBuf - 0.1 && t < tPort) container(t, F(t, tBuf - 0.1, tPort - 0.1, 0.2), "BUFFALO MEAT", 1, 830);
+        else on($("qbox"), 0);
+        // ---- is it chicken? no
+        on(drum, F(t, tChk, tPou + 0.2, 0.15), 340, 760, 1.2, -8);
+        on($("no"), F(t, tNo, tPou + 0.2, 0.1), 0, 0, 1.6 - 0.6 * Z.o3((t - tNo) / 0.25), -8);
+        // ---- poultry vs this: 16x
+        const bo = F(t, tPou + 0.1, tBuf - 0.1, 0.2);
+        const h0 = HM * 2810 / 45196 * Z.o3((t - tPou - 0.1) / 0.6), h1 = HM * Z.o3((t - t16 + 0.1) / 0.9);
+        [["vb0", h0], ["vb1", h1]].forEach(([id, h]) => { const el = $(id); el.style.top = 1220 - h + "px"; el.style.height = h + "px"; el.style.opacity = bo; });
+        on($("vl0"), bo, 0, 1220 - h0 - 110); on($("vl1"), bo * F(t, t16, 99, 0.2), 0, 1220 - h1 - 110); $("vbase").style.opacity = bo;
+        on($("x16"), F(t, t16 + 0.5, tBuf - 0.1, 0.2), 0, 0, Z.back((t - t16 - 0.5) / 0.4));
+        // ---- buffalo, +31%
+        on($("g31"), F(t, tUp, tPort - 0.1, 0.2), 0, 0, Z.back((t - tUp) / 0.4)); on($("g31l"), F(t, tUp, tPort - 0.1, 0.2));
+        // ---- the map: not a sea port; inland UP; then Vietnam
+        const mo = F(t, tPort - 0.1, tRem - 0.2, 0.25);
+        if (mo > 0) {
+          const zu = Z.io3((t - tBuy) / 1.1);
+          const P = LS.geo(LS.lerpB(BI, BA, zu), BOX);
+          g.save(); g.beginPath(); g.rect(0, 250, 1080, 1030); g.clip();
+          g.globalAlpha = mo;
+          if (zu > 0.02) LS.world(g, P);
+          const up = F(t, tUP, 99, 0.4);
+          LS.india(g, P, { hi: up > 0 ? { "Uttar Pradesh": up > 0.5 ? "#bfe0d6" : LS.C.land } : {} });
+          const pn = P(...NS), pd = P(...DADRI), pk = P(...KANPUR), pv = P(...VN);
+          if (t < tHalf + 0.3) LS.pin(g, pn, t, LS.C.ink, 11);
+          if (t > tDK - 0.1) { LS.pin(g, pd, t); LS.pin(g, pk, t + 0.4); }
+          if (t > tVN - 0.2) { const u = Z.io2((t - tVN + 0.2) / 1.0); LS.arc(g, pd, pv, u, LS.C.acc, 8, 0.3); if (u >= 1) LS.pin(g, pv, t); }
+          on($("tNS"), mo * F(t, tPort + 0.3, tHalf + 0.3, 0.2), 60, pn[1] + 34);
+          on($("tDa"), mo * F(t, tDK, tBuy, 0.2) * (zu < 0.1 ? 1 : 0), Math.min(pd[0] + 30, 760), pd[1] - 70);
+          on($("tKa"), mo * F(t, tDK + 0.3, tBuy, 0.2) * (zu < 0.1 ? 1 : 0), Math.min(pk[0] + 30, 760), pk[1] - 10);
+          on($("tVN"), mo * F(t, tVN + 0.7, 99, 0.2), pv[0] - 70, pv[1] + 30);
+          g.globalAlpha = 1; g.restore();
+        } else { ["tNS", "tDa", "tKa", "tVN"].forEach((id) => on($(id), 0)); }
+        on($("notport"), F(t, tSea, tHalf, 0.12), 0, 0, 1.6 - 0.6 * Z.o3((t - tSea) / 0.25), -6);
+        const p5 = F(t, tHalf + 0.1, tBuy, 0.2); on($("p54"), p5, 0, 0, Z.back((t - tHalf - 0.1) / 0.4)); on($("p54l"), F(t, tUP, tBuy, 0.2));
+        const vn = F(t, tVN, tNC, 0.2); on($("vn"), vn, 0, 0, Z.back((t - tVN) / 0.4)); on($("vnl"), vn);
+        // ---- recap
+        const rc = F(t, tNC, tRem - 0.1, 0.2);
+        $("rc").innerHTML = `<s>CHICKEN</s><br><em>BUFFALO</em>` + (t > tFrom ? `<br>UP → <em>VIETNAM</em>` : ""); on($("rc"), rc);
+        // ---- sources
+        const SRC = [[0, tPou, 0], [tPou, tBuf, 1], [tBuf, tPort, 2], [tPort, tBuy, 3], [tBuy, tNC, 4], [tNC, tRem, 0], [tRem, 99, 0]];
+        ["s0", "s1", "s2", "s3", "s4"].forEach((id) => { $(id).style.opacity = 0; });
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

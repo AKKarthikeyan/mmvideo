@@ -1,0 +1,183 @@
+<!doctype html>
+<!-- India Ledger · In Your Pocket · "India exports ₹3 lakh crore of this". Reveal Loop Short, 1080 x 1920.
+     Ledger look (shared/lib/ledger_short.js). Numbers: DGCIS FY 2025-26 (hyperframes/videos/dk-phones/story.js).
+     Timings come from story.js (tools/shorts_build.py). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>India Ledger: phones</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/ledger_short.js"></script>
+    <script src="assets/geo/world_land.js"></script>
+    <script src="assets/geo/india_districts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #map { position: absolute; left: 0; top: 0; }
+      #ctr { left: 64px; top: 260px; font-size: 150px; }
+      #ctrlab { left: 70px; top: 418px; }
+      #pocket { left: 240px; top: 860px; width: 600px; height: 520px; }
+      #phone { left: 410px; top: 0; width: 260px; height: 520px; }
+      #tower { left: 640px; top: 640px; width: 260px; height: 390px; }
+      #chipPT { left: 64px; top: 500px; }
+      .bar { position: absolute; width: 140px; bottom: 700px; background: rgba(20,22,26,.18); border: 3px solid var(--fg); border-bottom: 0; transform-origin: 50% 100%; }
+      .bar.hi { background: var(--acc); }
+      .fy { position: absolute; top: 1236px; width: 180px; text-align: center; font: 700 34px/1 Oswald, sans-serif; color: var(--fg); }
+      .bv { position: absolute; width: 220px; text-align: center; font: 700 36px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      #base { position: absolute; left: 80px; top: 1220px; width: 900px; height: 5px; background: var(--fg); }
+      #x55 { left: 64px; top: 250px; font-size: 220px; }
+      #x55lab { left: 70px; top: 470px; }
+      #ship { left: 140px; top: 640px; width: 800px; height: 440px; }
+      #stamp1 { left: 250px; top: 520px; }
+      #p69 { left: 64px; top: 250px; font-size: 200px; }
+      #p69lab { left: 70px; top: 450px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 36px/1 Oswald, sans-serif; letter-spacing: .04em; color: var(--card); background: var(--fg); padding: 8px 12px 10px; white-space: nowrap; opacity: 0; }
+      .tag.acc { background: var(--acc); }
+      #pUSA { left: 64px; top: 250px; font-size: 200px; }
+      #pUSAlab { left: 70px; top: 450px; }
+      .rc { position: absolute; left: 64px; font: 700 64px/1 Oswald, sans-serif; color: var(--fg); white-space: nowrap; }
+      .rc em { font-style: normal; color: var(--acc); }
+      #plane { left: 0; top: 0; width: 110px; height: 110px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="24.867" data-width="1080" data-height="1920">
+      <div id="rules" data-layout-ignore></div>
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker">INDIA LEDGER · IN YOUR POCKET</div>
+      <div class="src" id="srcs" style="top: 166px">
+        <div id="s0">DGCIS principal commodity data, FY 2025–26, phones and telecom equipment (ODbL mirror Vonter/india-export-import)</div>
+        <div id="s1">DGCIS, FY 2021–22 to FY 2025–26 · 5.5×: our arithmetic</div>
+        <div id="s2">DGCIS, exports by port of exit, FY 2025–26 · shares: our arithmetic</div>
+        <div id="s3">DGCIS, exports by country of destination, FY 2025–26</div>
+      </div>
+      <div class="big acc" id="ctr">₹0</div>
+      <div class="lab" id="ctrlab">CRORE OF EXPORTS · FY 2025–26</div>
+      <div class="chip acc" id="chipPT">PHONES + TELECOM GEAR</div>
+      <div id="bars"></div>
+      <div id="base"></div>
+      <div class="big acc" id="x55">5.5×</div>
+      <div class="lab" id="x55lab">BIGGER THAN FY 2021–22</div>
+      <div class="stamp" id="stamp1">NOT BY SHIP</div>
+      <div class="big acc" id="p69">69%</div>
+      <div class="lab" id="p69lab">FLIES OUT OF TWO AIRPORTS</div>
+      <div class="tag acc" id="tCH">CHENNAI AIRPORT · 46%</div>
+      <div class="tag acc" id="tBL">BENGALURU AIRPORT · 23%</div>
+      <div class="big acc" id="pUSA">58.5%</div>
+      <div class="lab" id="pUSAlab">BOUGHT BY THE USA</div>
+      <div class="tag" id="tIN">INDIA</div>
+      <div class="tag acc" id="tUS">USA</div>
+      <div class="rc" id="rc1" style="top: 300px">MADE <em>HERE</em></div>
+      <div class="rc" id="rc2" style="top: 390px">FLOWN FROM THE <em>SOUTH</em></div>
+      <div class="rc" id="rc3" style="top: 480px">SOLD IN <em>AMERICA</em></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      LS.init();
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp, on = LS.on;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // icons
+      const add = (id, html, css) => { const d = document.createElement("div"); d.id = id; d.style.cssText = "position:absolute;left:0;top:0;opacity:0;" + css; d.innerHTML = html; $("root").insertBefore(d, $("ctr")); return d; };
+      add("pocket", LS.ICON.pocket, "width:600px;height:520px");
+      add("phone", LS.ICON.phone, "width:260px;height:520px");
+      add("tower", LS.ICON.tower, "width:240px;height:360px");
+      add("ship", LS.ICON.ship, "width:800px;height:440px");
+      add("plane", LS.ICON.plane, "width:110px;height:110px");
+      document.querySelectorAll("#root > div > svg.ic").forEach((s) => { s.setAttribute("width", "100%"); s.setAttribute("height", "100%"); s.style.position = "static"; });
+      // pocket stays in front of the phone's lower half: draw order pocket after phone
+      $("root").insertBefore($("pocket"), $("ctr"));
+      // bars
+      const FY = [["FY22", 55126], ["FY23", 103849], ["FY24", 142953], ["FY25", 221528], ["FY26", 302805]];
+      const bx = (i) => 110 + i * 180;
+      FY.forEach(([f, v], i) => {
+        $("bars").insertAdjacentHTML("beforeend", `<div class="bar${i === 0 || i === 4 ? " hi" : ""}" id="bar${i}" style="left:${bx(i)}px;top:0;height:0"></div>
+          <div class="fy" id="fy${i}" style="left:${bx(i) - 20}px">${f}</div><div class="bv" id="bv${i}" style="left:${bx(i) - 40}px">₹${LS.inr(v)}</div>`);
+      });
+      // times
+      const tPk = B("b2"), tPh = B("b3"), tFour = B("b4"), t55 = A("b4", "Fifty five"), tX = B("b5"), tShip = B("b6"), tNot = A("b6", "by ship"),
+        t69 = B("b7"), tTwo = A("b7", "two airports"), tCh = A("b7", "Chennai"), tWho = B("b8"), tAm = A("b8", "America alone"),
+        tMade = B("b9"), tFl = A("b9", "flown from"), tSold = A("b9", "sold in"), tBec = B("b10");
+      // map camera: India -> world
+      const BI = { lon0: 67, lon1: 98, lat0: 6, lat1: 36 }, BW = { lon0: -128, lon1: 142, lat0: -8, lat1: 64 };
+      const BOX = { x: 70, y: 520, w: 940, h: 740 };
+      const CHN = [80.17, 12.99], BLR = [77.71, 13.2], USA = [-96, 38.5], IND = [78.5, 22];
+      const g = $("map").getContext("2d");
+      // the pocket-and-phone state, also used for the loop ending
+      function pocketScene(t, o, rise) {
+        on($("pocket"), o, 240, 860);
+        const y = L(860, 520, Z.o3(rise));
+        on($("phone"), o, 410, y, 1, L(-6, 0, Z.o3(rise)));
+      }
+      H.render = (t) => {
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- scene 1: pocket, phone, counter (0 .. b4)
+        const s1 = 1 - F(t, tFour - 0.25, 99, 0.3), sL = F(t, tBec - 0.15, 99, 0.25);
+        if (t < tFour + 0.2) {
+          const zoom = Z.io2((t - tPk) / 0.6), side = Z.io2((t - tPh) / 0.5);
+          pocketScene(t, s1 * (1 - zoom * 0.0), C(t / 3.2));
+          if (t > tPk) { on($("pocket"), s1 * (1 - zoom), 240, 860 + 200 * zoom); on($("phone"), s1, L(410, 410 - 200 * side, zoom), L(360, 560, zoom), L(1, 1.35 - 0.3 * side, zoom)); }
+          on($("tower"), s1 * F(t, tPh + 0.15, 99, 0.3), 680, 640 + 30 * (1 - Z.o3((t - tPh - 0.15) / 0.4)));
+          on($("chipPT"), s1 * F(t, tPh + 0.1, 99, 0.25), 0, 0);
+        } else if (t >= tBec - 0.15) {
+          on($("tower"), 0); on($("chipPT"), 0);
+          pocketScene(t, sL, C((t - tBec + 0.15) / 3.2) * 0 + C((t - tBec) / 3.2));
+        } else { on($("pocket"), 0); on($("phone"), 0); on($("tower"), 0); on($("chipPT"), 0); }
+        const V0 = Z.o2(0.5 / 3.0), cu = Z.o2((t + 0.5) / 3.0), ctrO = Math.max(1 - F(t, tFour - 0.25, 99, 0.3), sL);
+        $("ctr").textContent = "₹" + LS.inr(302805 * (t >= tBec - 0.15 ? V0 * C((t - tBec + 0.15) / (D - tBec + 0.15)) : cu)); on($("ctr"), ctrO); on($("ctrlab"), ctrO);
+        // ---- scene 2: bars (b4 .. b6)
+        const s2 = F(t, tFour - 0.1, tShip - 0.2, 0.3);
+        FY.forEach(([f, v], i) => {
+          const u = Z.o3((t - tFour - 0.15 - i * 0.22) / 0.6), h = 640 * (v / 302805) * u;
+          const el = $("bar" + i); el.style.top = 1220 - h + "px"; el.style.height = h + "px"; el.style.opacity = s2;
+          $("fy" + i).style.opacity = s2;
+          const lab = i === 0 ? F(t, t55, 99, 0.2) : i === 4 ? F(t, tX, 99, 0.2) : 0.0;
+          $("bv" + i).style.top = 1220 - h - 52 + "px"; $("bv" + i).style.opacity = s2 * lab;
+        });
+        $("base").style.opacity = s2;
+        const xo = F(t, tX, tShip - 0.2, 0.25); on($("x55"), xo, 0, 0, Z.back((t - tX) / 0.4)); on($("x55lab"), xo);
+        // ---- scene 3: not by ship (b6)
+        const s3 = F(t, tShip - 0.1, t69 + 0.6, 0.25);
+        on($("ship"), s3, 140 + 30 * Math.sin(t * 2), 640 + 8 * Math.sin(t * 3));
+        on($("stamp1"), F(t, tNot, t69 + 0.6, 0.12), 0, 0, 1.6 - 0.6 * Z.o3((t - tNot) / 0.25), -7);
+        // ---- scene 4: India map, two airports (b7), then the world (b8, b9)
+        const s4 = F(t, t69 + 0.5, tBec - 0.2, 0.3);
+        if (s4 > 0) {
+          const zu = Z.io3((t - tWho) / 1.3);
+          const P = LS.geo(LS.lerpB(BI, BW, zu), BOX);
+          g.globalAlpha = s4;
+          if (zu > 0.02) LS.world(g, P, { land: zu > 0.5 ? LS.C.land : LS.C.land });
+          if (zu < 0.98) { g.globalAlpha = s4 * (1 - zu * 0.6); LS.india(g, P, { hi: { "Tamil Nadu": "#bfe0d6", "Karnataka": "#bfe0d6" } }); }
+          g.globalAlpha = s4;
+          const pc = P(...CHN), pb = P(...BLR), pu = P(...USA), pi = P(...IND);
+          if (t > tTwo - 0.1) { LS.pin(g, pc, t); LS.pin(g, pb, t + 0.4); }
+          // flight lines off the two airports
+          if (t > tCh && t < tWho + 0.4) { const u = Z.o2((t - tCh) / 1.2); LS.arc(g, pc, [pc[0] + 260, pc[1] - 380], u, LS.C.acc, 5, 0.15); LS.arc(g, pb, [pb[0] - 260, pb[1] - 420], u, LS.C.acc, 5, 0.15); }
+          on($("tCH"), s4 * F(t, tCh, tWho, 0.2) * (zu < 0.1 ? 1 : 0), Math.min(pc[0] + 30, 660), pc[1] - 20);
+          on($("tBL"), s4 * F(t, tCh + 0.35, tWho, 0.2) * (zu < 0.1 ? 1 : 0), 60, pb[1] + 40);
+          if (t > tAm - 0.1) { const u = Z.io2((t - tAm + 0.1) / 1.2); const q = LS.arc(g, pc, pu, u, LS.C.acc, 8, 0.32); LS.pin(g, pi, t, LS.C.ink, 10); if (u >= 1) LS.pin(g, pu, t);
+            on($("plane"), s4 * (u < 1 ? 1 : 0), q[0] - 55, q[1] - 55, 0.8, -90); } else on($("plane"), 0);
+          on($("tIN"), s4 * F(t, tWho + 1.2, 99, 0.25), pi[0] - 50, pi[1] + 28);
+          on($("tUS"), s4 * F(t, tAm + 0.9, 99, 0.25), pu[0] - 40, pu[1] + 28);
+          g.globalAlpha = 1;
+        } else { on($("plane"), 0); on($("tIN"), 0); on($("tUS"), 0); on($("tCH"), 0); on($("tBL"), 0); }
+        const o69 = F(t, t69, tWho, 0.2); on($("p69"), o69, 0, 0, Z.back((t - t69) / 0.4)); on($("p69lab"), F(t, tTwo, tWho, 0.2));
+        const oUS = F(t, tAm, tMade, 0.2); on($("pUSA"), oUS, 0, 0, Z.back((t - tAm) / 0.4)); on($("pUSAlab"), oUS);
+        on($("rc1"), F(t, tMade, tBec - 0.2, 0.2), 20 * (1 - Z.o3((t - tMade) / 0.3)));
+        on($("rc2"), F(t, tFl, tBec - 0.2, 0.2), 20 * (1 - Z.o3((t - tFl) / 0.3)));
+        on($("rc3"), F(t, tSold, tBec - 0.2, 0.2), 20 * (1 - Z.o3((t - tSold) / 0.3)));
+        // ---- sources
+        const SRC = [[0, tFour, 0], [tFour, tShip, 1], [tShip, tWho, 2], [tWho, tBec, 3], [tBec, 99, 0]];
+        ["s0", "s1", "s2", "s3"].forEach((id) => { $(id).style.opacity = 0; });
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        caps(t);
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

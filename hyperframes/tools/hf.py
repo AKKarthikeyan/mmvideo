@@ -83,6 +83,8 @@ def sync(names):
         if project(n).parent == SHORTS:
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "world_land.js", a / "geo")
+            if n.startswith("il-"):          # India Ledger Shorts draw India too
+                shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")
         if project(n).parent == VIDEOS:
             (a / "geo").mkdir(exist_ok=True)
             shutil.copy(LIB / "shared" / "geo" / "india_districts.js", a / "geo")

@@ -3,6 +3,7 @@ import React from "react";
 import {Composition} from "remotion";
 import {CATALOG_TOTAL, Catalog} from "./Catalog";
 import {DEMO_TOTAL, DemoReel} from "./DemoReel";
+import {DEPTH_TOTAL, DepthDemo} from "./DepthDemo";   // 2.5D depth kit sample, 21 Nov 2026
 import {A01V4Cold, A01V4_COLD_TOTAL} from "./A01V4Cold";
 import {A01V4Film, FILM_TOTAL} from "./A01V4Film";
 import {A01V4Thumb} from "./A01V4Thumb";
@@ -22,6 +23,7 @@ export const VoxPlusCompositions: React.FC = () => (
     <EternalCompositions/>
     <SwiggyCompositions/>
     <TataMotorsCompositions/>
+    <Composition id="VOXPLUS-depth" component={DepthDemo} durationInFrames={DEPTH_TOTAL} fps={FPS} width={W} height={H}/>
     <Composition id="VOXPLUS-catalog" component={Catalog} durationInFrames={CATALOG_TOTAL} fps={FPS} width={W} height={H}/>
   </>
 );

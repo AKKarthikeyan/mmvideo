@@ -18,6 +18,7 @@ Render: `npx remotion render src/index.ts VOXPLUS-demo out/voxplus/voxplus_demo_
 | fonts.ts | local @fontsource faces + `useVoxFonts()` (call once per composition; blocks the first frame until fonts load) |
 | Texture.tsx | `PaperSurface`, `InkSurface`, `Grain`, `Vignette`, `Halftone`, `Finish` |
 | Camera.tsx | `camAt`, `CamKey`, `camVel`, `Layer` (parallax + rack-focus blur), `DirBlur` (directional whip blur), `CameraRig` |
+| Depth.tsx | 2.5D (21 Nov 2026): `cam3At`, `Stage`, `Plane` (one perspective camera: scale, parallax, depth of field and haze from each plane's height z), `LIGHT`, `Lifted`, `liftShadow`, `liftArc`, `Hinge`, `onTwos`, `drift`, `Boil`, `project`. Rules: `docs/storytelling/VOX_CRAFT.md` section 3. Sample: `VOXPLUS-depth` (DepthDemo.tsx) |
 | Marker.tsx | `Highlight`, `MarkerCircle`, `MarkerUnderline`, `MarkerStrike`, `highlightEnd` |
 | DocPage.tsx | `DocPage`, `docPoint`, `docRectCentre`, `pushToward` |
 | Collage.tsx | `PhotoPrint`, `Sticker`, `StickerLabel`, `TornBlock`, `piecePose` (shared entrance/exit grammar) |

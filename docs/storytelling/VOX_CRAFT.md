@@ -130,8 +130,7 @@ the look.
 
 ## 6. Next steps (suggested; AK to choose)
 
-1. Run `av_check.py` on the next long script before any picture work. If AK agrees, add it to CLAUDE.md next to
-   `shorts_check.py`.
+1. Done (AK, 21 Nov 2026): `av_check.py` is a CLAUDE.md rule; run it on every long script before picture work.
 2. On the Mac Mini: render `VOXPLUS-depth` stills, judge the depth look, then use `Stage`/`Plane` in the next Moat &
    Margin collage scene in place of the hand-set `Layer depth` values.
 3. Convert the next script in another format (Indica Atlas `week*_scripts.md`, the Gita script) to the PICTURE / SCREEN /

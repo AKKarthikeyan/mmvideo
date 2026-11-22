@@ -4,8 +4,9 @@
 - Channel:
 - Question the film answers:
 - Why now:
-- Length: long (8–12 min) / Short / dry run
+- Length: long (8–12 min) / Short / writer chooses (contract 04)
 - Research mode: full / Shorts (2–3 primary sources)
+- Pictures beyond public filings and judgments (photos, people, news images) cleared: (AK fills, or "none needed")
 - Deadline:
 
 ## Where things are
@@ -16,8 +17,8 @@
 | 3 | Article | not started | ARTICLE.md | |
 | 4 | Script | not started | SCRIPT.md, script.json | |
 | 5 | Director: treatment | not started | TREATMENT.md, DIRECTOR_LOG.md | |
-| 5 | Director: animatic (Mac Mini) | not started | out/productions/<id>/animatic.mp4 | |
-| 5 | AK animatic review | not started | | |
+| 5 | Director: animatic, or key-frame board for a Short (Mac Mini) | not started | out/productions/<id>/animatic.mp4 or keyframes/ | |
+| 5 | AK animatic / board review | not started | | |
 | 6 | Build (Mac Mini) | not started | | |
 | 7 | Review (Mac Mini) | not started | REVIEW.md | |
 | 7 | AK final review | not started | | |

@@ -1,4 +1,4 @@
-# The production agents (v1, 22 Nov 2026)
+# The production agents (v1.1, 22 Nov 2026)
 
 Eight roles take a topic to a published film. AK designed the chain (research, article, script, director, reviewer);
 the fact-checker, builder and analytics roles were added from `docs/DIRECTION_RESEARCH.md`. Each role has a contract in
@@ -13,7 +13,7 @@ cloud session, or Claude Code on the Mac Mini on its other account) can run any 
 | 2 | Fact-checker | `contracts/02_factcheck.md` | `verify.md`, gates passed | Cloud or Mac Mini (fresh session) | — |
 | 3 | Article (parallel to 4) | `contracts/03_article.md` | `ARTICLE.md` | Cloud or Mac Mini | Reads it |
 | 4 | Script writer | `contracts/04_script.md` | `SCRIPT.md` + `script.json` with claim IDs | Cloud or Mac Mini | — |
-| 5 | Director (owns the film from step 4) | `contracts/05_director.md` | `TREATMENT.md`, shot list, sound plan, animatic | Treatment: anywhere; animatic: **Mac Mini** | **Reviews the animatic** |
+| 5 | Director (owns the film from step 4) | `contracts/05_director.md` | `TREATMENT.md`, shot list, sound plan, animatic (Short: key-frame board) | Treatment: anywhere; animatic or board: **Mac Mini** | **Reviews the animatic or board** |
 | 6 | Builder | `contracts/06_builder.md` | The film, cut to the real voice | **Mac Mini** | — |
 | 7 | Reviewer | `contracts/07_reviewer.md` | `REVIEW.md`, one fix round | **Mac Mini** | **Reviews the final film** |
 | 8 | Analytics (after publishing) | `contracts/08_analytics.md` | `ANALYTICS.md`, lessons into the rules | Cloud (vidIQ) | Reads the lessons |
@@ -27,13 +27,14 @@ Every film gets `productions/<id>/` (copy `productions/_template/`). `<id>` is s
 
 - `STATUS.md`: which step the film is at, who handed over what, and what is blocked. **Every role reads it first and
   updates it last.**
-- The research itself stays where the channel's rules put it (for example `docs/geo/research/<id>/`); `STATUS.md`
-  links to it.
+- The research itself stays where the channel's rules put it (`COMMON.md` section 1: for example
+  `docs/geo/research/<id>/`, or `productions/<id>/research/` for Moat & Margin); `STATUS.md` links to it.
 - Media (voice, renders, downloads) never goes in git: it lives under `out/` on the Mac Mini (CLAUDE.md).
 
 ## Rules every role follows
 
-- Read `CLAUDE.md`, this file, your contract and the film's `STATUS.md` before anything else.
+- Read `CLAUDE.md`, this file, `COMMON.md` (shared rules: channels, tiers, formats, statuses, PDFs, Mac Mini tooling,
+  Shorts, pictures of documents), your contract and the film's `STATUS.md` before anything else.
 - Rule 0 of research applies to everyone: nothing comes from memory. A fact not in the claims ledger is not used.
 - Stay in your lane: edit only the files your contract lists. Need something from another role? Write it in
   `STATUS.md` under "Blocked" and stop.
@@ -48,14 +49,11 @@ Every film gets `productions/<id>/` (copy `productions/_template/`). `<id>` is s
 - **Cloud session:** paste the same line. Cloud sessions can do roles 1–5 (up to the treatment) and 8; anything that
   renders, voices or mixes is Mac Mini only.
 
-## Tonight's check (22 Nov 2026)
+## Dry run (22 Nov 2026)
 
-A dry run of the chain on one small topic, to see whether the contracts hold up, not to finish a film.
-
-1. AK picks a small Moat & Margin topic (one company, one question).
-2. `productions/<id>/` from the template; fill the brief in `STATUS.md`.
-3. Research in **Shorts mode** (2–3 primary sources, channel rules' Shorts section), so it finishes tonight.
-4. Fact-checker in a **fresh session**.
-5. Article and script, then the director's treatment.
-6. If time allows, on the Mac Mini: style frames and the animatic.
-7. AK notes what broke at each handoff in `STATUS.md` under "Dry-run notes"; the contracts get fixed from those notes.
+Roles 1–5 (up to the treatment) ran on `productions/mm-asianpaints-dealers/` (a 44 s Moat & Margin Short, Shorts-mode
+research). It found 48 problems, listed under "Dry-run notes" in its `STATUS.md`. v1.1 of the contracts and
+`COMMON.md` answer them, with AK's rulings of 22 Nov: Shorts get a short treatment and a key-frame board instead of an
+animatic; `docs/SHORTS_RULES.md` sets Shorts length; the hook is on frame 0 and the reveal is still held; pictures of
+public filings and judgments are cleared by default with crop rules. What is still open for AK is in `COMMON.md`
+section 12. Style frames and the key-frame board for that Short are not made yet.

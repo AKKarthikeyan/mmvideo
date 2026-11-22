@@ -13,7 +13,11 @@
 - Evidence rules (CLAUDE.md): every number from the ledger, shown only when spoken, with its source chip; our arithmetic
   and illustrations labelled.
 - Several builders may split the scenes; each owns only its scene files, as in the Vox+ briefs.
-- Sound per the plan and `docs/DIRECTOR.md` section 6; every music and effect file listed with its licence.
+- Sound per the plan and `docs/DIRECTOR.md` section 6; every music and effect file listed with its licence. A
+  HyperFrames film may borrow the CC0 effects in `public/voxplus/audio` (licences in `src/voxplus/LICENSES.md`).
+- Document close-ups: apply every crop in the shot list; no unspoken or disputed figure on screen
+  (`agents/COMMON.md` section 11).
+- Shorts: run `python3 scripts/shorts_check.py <id>` after the build and fix every FAIL before the final render.
 
 ## Hands over
 - The rendered film under `out/` (not in git), its source files committed, and in `STATUS.md` the render path.

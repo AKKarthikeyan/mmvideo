@@ -8,6 +8,9 @@
   from the matching sample there instead of building from scratch. AK asked for this on 26 Oct 2026.
 - Run `python3 hyperframes/tools/hf.py sync` before checking or rendering a sample; renders go to `out/hyperframes/`.
 - Every visual uses real data with its source on screen; anything illustrative is labelled as such on screen.
+- Every long video and Vox+ film follows `docs/DIRECTOR.md` (AK, 22 Nov 2026): one director per film, a treatment
+  and an animatic that AK reviews before narration is locked, a sound plan, and a full-speed review before delivery.
+  Research behind it: `docs/DIRECTION_RESEARCH.md`.
 - Every Short is built in the Reveal Loop format, `docs/SHORTS_FORMAT.md` (topic test, beat sheet, series per channel).
   The benchmark Shorts to copy from are in `hyperframes/shorts/` (`docs/SHORTS_BENCHMARKS.md`; build with
   `hyperframes/tools/shorts_build.py`).

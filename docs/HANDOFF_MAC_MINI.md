@@ -10,7 +10,8 @@ so you have no memory of that work. Everything you need is in this repo; this fi
 - AK does not want to run commands or search for steps. **Do the setup and the work yourself**; ask AK only for
   decisions and for secrets (the MiniMax key).
 - Every number comes from a source on screen; computed numbers say "our arithmetic"; illustrations say "illustration".
-- No music under narration (AK, 18 Nov). Voice each act as a few paragraphs, so the intonation flows.
+- Music under narration: replaced on 22 Nov by `docs/DIRECTOR.md` section 6 (low, changes with the sections, two planned
+  silences, one peak; otherwise none). Voice each act as a few paragraphs, so the intonation flows.
 
 ## Step 1: set up the Mac Mini (once, in this order)
 1. `git status`: if there are uncommitted changes, stop and ask AK. Then fetch and merge branch

@@ -1,0 +1,122 @@
+{
+ "id": "mm-asianpaints-dealers",
+ "ep": "dry-run",
+ "product": "MOAT & MARGIN",
+ "voice": "English_Diligent_Man",
+ "research": "productions/mm-asianpaints-dealers/research",
+ "status": "DRAFT v1, 22 Nov 2026. Script writer (role 4). Director joins next; narration NOT locked until AK approves the animatic. Not voiced.",
+ "version": "Short ~44 s (40-46 s), Reveal Loop, 120 spoken words, 10 beats",
+ "format": "F1 Myth Flip (series: The Catch)",
+ "target_seconds": 44,
+ "loop": true,
+ "hook_overlay": "STILL A MOAT?",
+ "disclaimer": "Educational research, not investment advice · not SEBI-registered",
+ "send_line": "People forward this because everyone has stood at a paint shop's colour-mixing machine, and nobody knows it turned up in a court case.",
+ "beats": [
+  {
+   "key": "b1",
+   "move": "M1 Hook",
+   "link": "BUT (next: a rival is spending)",
+   "say": "Asian Paints calls its network one of its strongest advantages.",
+   "caption": "'One of our strongest'",
+   "source": "Asian Paints Integrated Annual Report 2025-26",
+   "claims": ["C004"],
+   "pause": 0.5
+  },
+  {
+   "key": "b2",
+   "move": "M1 Foreshadow",
+   "link": "THEREFORE (to judge it, look at how it sells)",
+   "say": "Still a moat? A new rival says it invests aggressively.",
+   "caption": "Rival: 'invest aggressively'",
+   "source": "Grasim Integrated Annual Report 2025-26",
+   "claims": ["C024"],
+   "pause": 0.5
+  },
+  {
+   "key": "b3",
+   "move": "M2 Ground",
+   "link": "THEREFORE",
+   "say": "Asian Paints sells almost all to dealers and distributors. The ten biggest take under one rupee in a hundred.",
+   "caption": "Top 10: 0.9%",
+   "source": "Asian Paints IAR 2025-26, BRSR Principle 9",
+   "claims": ["C002"],
+   "pause": 0.5
+  },
+  {
+   "key": "b4",
+   "move": "M2 Ground (mechanism)",
+   "link": "THEREFORE (that is what the rival did)",
+   "say": "So rivals must win them shop by shop.",
+   "caption": "Shop by shop",
+   "label": "OUR READING",
+   "source": "Our reading of Asian Paints IAR 2025-26",
+   "claims": ["C002"],
+   "pause": 0.5
+  },
+  {
+   "key": "b5",
+   "move": "M3 Push",
+   "link": "BUT (that machine is now in court)",
+   "say": "Grasim says its Birla Opus has over fifty thousand dealers, with compact tinting machines.",
+   "caption": "50,000+ dealers · Grasim says",
+   "source": "Grasim IAR 2025-26",
+   "claims": ["C012", "C013"],
+   "pause": 0.5
+  },
+  {
+   "key": "b6",
+   "move": "M4 Turn (peak starts)",
+   "link": "THEREFORE",
+   "say": "But that machine has ended up in a court judgment.",
+   "caption": "In a court judgment",
+   "source": "Bombay High Court, WP 2887/2025, 11 Sep 2025",
+   "claims": ["C027", "C028"],
+   "pause": 0.6
+  },
+  {
+   "key": "b7",
+   "move": "M4 Turn (PEAK)",
+   "link": "BUT (an allegation is not a finding)",
+   "say": "Grasim alleged Asian Paints directed dealers to return it, or not install it.",
+   "caption": "Allegation only",
+   "source": "Bombay High Court, WP 2887/2025, para 30",
+   "claims": ["C028"],
+   "pause": 0.6
+  },
+  {
+   "key": "b8",
+   "move": "M4 Turn (guard rail)",
+   "link": "THEREFORE (so what does decide it?)",
+   "say": "The regulator's probe order, the court notes, is merely a prima facie opinion.",
+   "caption": "'Merely a prima facie opinion'",
+   "source": "Bombay High Court, WP 2887/2025, paras 34, 39-40",
+   "claims": ["C030", "C031"],
+   "pause": 0.5
+  },
+  {
+   "key": "b9",
+   "move": "M5 Echo (click)",
+   "link": "THEREFORE",
+   "say": "Still a moat? Even Grasim's report says challengers with distribution depth gain most.",
+   "caption": "Brand · capacity · distribution depth",
+   "source": "Grasim IAR 2025-26, Outlook",
+   "claims": ["C025"],
+   "pause": 0.5
+  },
+  {
+   "key": "b10",
+   "move": "M5 Echo (loop line)",
+   "link": "THEREFORE (loops into b1)",
+   "say": "So the counter is still the prize. Which is why",
+   "caption": "The counter",
+   "label": "OUR READING; 'counter' is a metaphor from Asian Paints' 'counter share'",
+   "source": "Asian Paints IAR 2025-26; Grasim IAR 2025-26",
+   "claims": ["C006", "C008", "C025"],
+   "pause": 0.3,
+   "loop": true
+  }
+ ],
+ "title": "Asian Paints' strongest edge has a catch",
+ "title_note": "Two options for AK (AK picks): A 'Asian Paints' strongest edge has a catch' (40 chars, The Catch series); B 'A paint shop machine ended up in court' (38 chars). Not chosen."
+}

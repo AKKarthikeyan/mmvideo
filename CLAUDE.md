@@ -14,10 +14,11 @@
 - Shorts and Reels on every channel follow `docs/SHORTS_RULES.md` (AK, 10 Nov 2026; fact-check behind it in
   `docs/SHORTS_FACTCHECK.md`). Write each Short as its own loop script, never a cut-down of long-video beats, and run
   `python3 scripts/shorts_check.py <id>` after the build: fix every FAIL before rendering.
-- Long-video scripts are written in PICTURE / SCREEN / VO / SRC blocks (`docs/INDIA_LEDGER_EP1_SCRIPT.md` is the model)
-  and checked with `python3 scripts/av_check.py <script.md>` before any picture is built, and again after rewrites:
-  fix every FAIL before animating (AK, 21 Nov 2026; rules in `docs/storytelling/VOX_CRAFT.md`). 2.5D depth uses
-  `src/voxplus/Depth.tsx`.
+- The Vox style is used on **Moat & Margin and India Ledger only** (AK, 22 Nov 2026); the other channels keep their own
+  looks. For those two channels, long-video scripts are written in PICTURE / SCREEN / VO / SRC blocks
+  (`docs/INDIA_LEDGER_EP1_SCRIPT.md` is the model) and checked with `python3 scripts/av_check.py <script.md>` before any
+  picture is built, and again after rewrites: fix every FAIL before animating (AK, 21 Nov 2026; rules in
+  `docs/storytelling/VOX_CRAFT.md`). Their 2.5D depth uses `src/voxplus/Depth.tsx`.
 - Motion design: the LottieFiles motion-design skill is installed at `.claude/skills/motion-design` (MIT, unmodified;
   AK, 18 Nov 2026). Use it for timing, easing, choreography and the 12 principles. Ignore its "Creator MCP" handoff: our
   MP4s are rendered by HyperFrames or Remotion. Optional libraries (Tweakpane, three.quarks, lottie-web) are in

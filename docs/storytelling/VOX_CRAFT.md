@@ -31,7 +31,7 @@ paper motion, camera moves and sound. There were two real gaps, and both now hav
 | Segment into 3–4 chapters | T6, `ChapterCard` | `av_check.py` warns outside 3–6 chapters for 8–12 min |
 | Knaflic: no gridlines, grey + one highlight + one alert colour | ChartBuild (key bar in yellow) | Nothing new; the three-colour rule is already how ChartBuild works |
 | Source on screen for every number | CLAUDE.md rule; SourceTag; ledger in `structure_check.py` | `av_check.py` FAILs a SCREEN number in a scene with no SRC |
-| Six distinct channel looks, not one template | Separate looks exist (section 5) | Section 5 writes them down as a lock |
+| Six distinct channel looks, not one template | Separate looks exist | Vox is for Moat & Margin and India Ledger only (section 5) |
 | India map compliance | Natural Earth India POV; "check every India map by eye" | Keep. Add to the eye check: **Andaman & Nicobar and Lakshadweep are on the map** |
 
 ## 2. The A/V gate (`scripts/av_check.py`)
@@ -103,7 +103,7 @@ Type-checked against Remotion 4.0.529 in the cloud session; look at frames 0, 80
   ship. Keep paper and marker SFX sparse, about one every 10 s (Sound.tsx rule).
 - **150 words a minute.** Our MiniMax voice measures 2.9 words a second, about 174 a minute (`structure_check.py`).
   The study in `docs/geo/research/GEOGRAPHY_YOUTUBE_LANDSCAPE_2026-11-05.md` puts top long-form creators at a median of
-  179 (164–191). Don't slow every channel to 150. Slow down on dense data beats and on The Inner Chariot; hold the frame
+  179 (164–191). Don't slow every channel to 150. Slow down on dense data beats; hold the frame
   rather than the voice (T13: a 0.4–0.6 s pause after each key fact).
 - **12 fps on a 24 fps timeline.** Our films run at 30 or 60 fps. On twos at 30 fps is 15 fps (`step(t, 2)`), which is
   what the kit uses. True 12 fps works only at 60 fps (5-frame holds). Don't use a 2.5-tick step at 30 fps: it gives an
@@ -114,24 +114,22 @@ Type-checked against Remotion 4.0.529 in the cloud session; look at frames 0, 80
   1.35 across 13 tests". Don't plan on them. The YPP change (8,000 hours or 20M Shorts views from 1 Feb 2027) is
   confirmed in `INDIA_LEDGER_FACTCHECK.md`.
 
-## 5. Channel look lock (so six channels never read as one template)
+## 5. Which channels use Vox (AK, 22 Nov 2026)
 
-Each channel keeps its own material, motion and pace. The shared things are the rules (sources, labels, one hero), not
-the look.
+**Vox is used on Moat & Margin and India Ledger only.** The A/V gate, the depth kit and this note apply to those two.
+The other channels (Indica Atlas, UPSC Mains, The Inner Chariot, The Inventor's Desk) keep their own looks and are not
+moved to Vox; the brief's per-channel Vox suggestions for them are not adopted.
+
+The two Vox channels must still not look like one template:
 
 | Channel | Ground and material | Motion grammar | Depth use | Pace |
 | --- | --- | --- | --- | --- |
 | Moat & Margin | Tan paper desk, real filing pages, yellow highlighter (voxplus) | Push into the footnote, marker circle, stepped cut-outs | Document on z 0, clippings at −200, labels lifted | Brisk; hold 4–6 s on the key number |
 | India Ledger | Ruled ledger paper, red margin, audit stamp (`il-gold-act1`) | Ledger rows that total, stamp slams, running tab | Shallow: 2–3 planes; the ledger stays readable | Conversational, family-warm |
-| Indica Atlas | Night or terrain map as one persistent canvas (HyperFrames s02, s06, s15) | One new layer per beat; slow pitched flyover | Map at z 0, pins and photo insets lifted; haze on far terrain | Steady zooms, no whips |
-| UPSC Mains | Cream grid paper, navy causal arrows, one keyword colour | The diagram builds step by step, then the answer skeleton | Almost none: a flat sheet the viewer can copy | Calm; no music in dense parts |
-| The Inner Chariot | Indigo or parchment manuscript, fine geometric SVG, verse badges | Slow drift, no stepping, no whips | Deep but slow: 6–10 s holds, gentle parallax | Unhurried |
-| The Inventor's Desk | Blueprint and patent sheets turning into 3D cutaways (s08, s09, s11) | Draw-on lines, exploded views | Patent sheet on z 0; parts lift off on `liftArc` | Calm, curious |
 
 ## 6. Next steps (suggested; AK to choose)
 
-1. Done (AK, 21 Nov 2026): `av_check.py` is a CLAUDE.md rule; run it on every long script before picture work.
+1. Done (AK, 21–22 Nov 2026): `av_check.py` is a CLAUDE.md rule for Moat & Margin and India Ledger long scripts.
 2. On the Mac Mini: render `VOXPLUS-depth` stills, judge the depth look, then use `Stage`/`Plane` in the next Moat &
    Margin collage scene in place of the hand-set `Layer depth` values.
-3. Convert the next script in another format (Indica Atlas `week*_scripts.md`, the Gita script) to the PICTURE / SCREEN /
-   VO / SRC blocks so the gate can read it.
+3. Write the next Moat & Margin script in the PICTURE / SCREEN / VO / SRC blocks so the gate can read it.

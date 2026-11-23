@@ -11,7 +11,7 @@ AK approves the animatic; facts and claim IDs do not change. Not voiced. Machine
 
 ## Format and length
 
-**A Short: about 44 s (40-46 s at 2.9-3.4 words a second plus 5.0 s of pauses), 120 spoken words, 10 beats, Reveal Loop.**
+**A Short: about 44 s (40-46 s at 2.9-3.4 words a second plus 5.6 s of pauses after the director's T1), 120 spoken words, 10 beats, Reveal Loop.**
 
 Why a Short, not a long film:
 - The research was done in Shorts mode (3 primary sources). A long film (STORY_ENGINE section 6) needs three chapters, each
@@ -48,12 +48,12 @@ other links are logical, and the director should keep them as cuts on the turn.
 |---|---|---|---|---|---|
 | b1 | M1 Hook | Asian Paints calls its network one of its strongest advantages. | Hook overlay from frame 0: **STILL A MOAT?** · caption 'One of our strongest' · src S01 | C004 | BUT: a rival is spending |
 | b2 | M1 Foreshadow | Still a moat? A new rival says it invests aggressively. | Rival: 'invest aggressively' · src S02 | C024 | THEREFORE: to judge it, look at how Asian Paints sells |
-| b3 | M2 Ground | Asian Paints sells almost all to dealers and distributors. The ten biggest take under one rupee in a hundred. | **Top 10: 0.9%** · src S01 BRSR | C002 | THEREFORE |
+| b3 | M2 Ground | Asian Paints sells almost all to dealers and distributors. The ten biggest take under one rupee in a hundred. | **The ten biggest: under ₹1 in ₹100** · src S01 BRSR (caption changed 22 Nov after AK's board review: no unspoken figure on screen) | C002 | THEREFORE |
 | b4 | M2 Ground (mechanism) | So rivals must win them shop by shop. | Shop by shop · label **OUR READING** | C002 (inference, dossier "real story" 1) | THEREFORE: that is what the rival did |
 | b5 | M3 Push | Grasim says its Birla Opus has over fifty thousand dealers, with compact tinting machines. | **50,000+ dealers · Grasim says** · src S02 | C012, C013 | BUT: that machine is now in a court record |
-| b6 | M4 Turn (peak starts) | But that machine has ended up in a court judgment. | In a court judgment · src S03 | C027, C028 | THEREFORE |
+| b6 | M4 Turn (peak starts) | But that machine turned up in a court judgment. | In a court judgment · src S03 | C027, C028 | THEREFORE |
 | b7 | M4 Turn (**PEAK**) | Grasim alleged Asian Paints directed dealers to return it, or not install it. | **Allegation only** · src S03 para 30 | C028 | BUT: an allegation is not a finding |
-| b8 | M4 Turn (guard rail) | The regulator's probe order, the court notes, is merely a prima facie opinion. | 'Merely a prima facie opinion' · src S03 | C030, C031 | THEREFORE: so what decides it? |
+| b8 | M4 Turn (guard rail) | The competition regulator's probe order, the court notes, is merely a prima facie opinion. | 'Merely a prima facie opinion' · src S03 | C030, C031 | THEREFORE: so what decides it? |
 | b9 | M5 Echo (click) | Still a moat? Even Grasim's report says challengers with distribution depth gain most. | Brand · capacity · **distribution depth** · src S02 Outlook | C025 | THEREFORE |
 | b10 | M5 Echo (loop) | So the counter is still the prize. Which is why | The counter · label **OUR READING** ('counter' is a metaphor from Asian Paints' 'counter share') | C006, C008, C025 | THEREFORE: loops into b1 |
 

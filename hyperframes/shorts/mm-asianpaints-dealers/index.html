@@ -1,0 +1,244 @@
+<!doctype html>
+<!-- Moat & Margin · The Catch · "Asian Paints' strongest edge has a catch" (mm-asianpaints-dealers). Reveal Loop Short,
+     1080 x 1920. KEY-FRAME BOARD BUILD (director, 22 Nov 2026): estimated timings, no voice, no music.
+     Look "The evidence desk" (TREATMENT.md): real pages on one desk under one lamp, highlighter yellow (PROPOSED accent,
+     AK to confirm), red only for the court. Page crops come from make_crops.py (assets/img -> out/productions/<id>/crops,
+     not in git): every word the voice does not say is defocused there, not here. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat &amp; Margin: the tinting machine</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/img/crops.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      @font-face { font-family: Playfair; font-style: italic; font-weight: 700; src: url("assets/fonts/playfair-display-latin-700-italic.woff2") format("woff2"); }
+      #root { --bg: #17100b; --acc: #f6d64a; --red: #c62a1f; --paper: #f4efe4;
+        background: radial-gradient(1100px 1500px at 46% 40%, #4a3424 0%, #2a1c13 55%, #130d09 100%); }
+      #wood { position: absolute; inset: 0; opacity: 0.22; mix-blend-mode: overlay;
+        background: repeating-linear-gradient(96deg, rgba(0,0,0,0.0) 0 22px, rgba(0,0,0,0.35) 22px 25px, rgba(255,255,255,0.08) 25px 31px, rgba(0,0,0,0) 31px 58px); }
+      #lamp { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(760px 900px at 50% 42%, rgba(255, 226, 170, 0.16), rgba(255, 226, 170, 0) 70%); }
+      #stage { position: absolute; inset: 0; }
+      .doc { position: absolute; left: 0; top: 0; transform-origin: 0 0; opacity: 0; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4); }
+      .doc img { display: block; }
+      .doc.torn { clip-path: polygon(0 4%, 4% 0, 9% 3%, 15% 0, 22% 2%, 30% 0, 38% 3%, 46% 0, 55% 2%, 63% 0, 71% 3%, 80% 0, 88% 2%, 95% 0, 100% 3%, 100% 96%, 94% 100%, 87% 97%, 79% 100%, 70% 98%, 61% 100%, 52% 97%, 44% 100%, 35% 98%, 26% 100%, 18% 97%, 9% 100%, 0 97%); }
+      .hl { position: absolute; background: rgba(246, 214, 74, 0.62); mix-blend-mode: multiply; border-radius: 6px; width: 0; }
+      .hl.under { background: var(--acc); mix-blend-mode: normal; border-radius: 4px; }
+      .hl.red { background: var(--red); mix-blend-mode: normal; border-radius: 3px; }
+      .chip { font-size: 40px; transform-origin: 0 50%; }
+      .chip.says { background: var(--acc); color: #16120c; }
+      .chip.read { background: #f7f3ea; color: #16120c; }
+      .chip.ill { background: #f7f3ea; color: #16120c; font: 400 25px/1.2 Plex, monospace; letter-spacing: -0.02em; padding: 8px 12px; }
+      #stamp { position: absolute; left: 0; top: 0; font: 700 92px/1 Oswald, sans-serif; letter-spacing: 0.08em; color: var(--red);
+        border: 10px solid var(--red); padding: 10px 26px 14px; opacity: 0; transform-origin: 50% 50%; background: rgba(244, 239, 228, 0.35); }
+      #tag { position: absolute; left: 0; top: 0; font: 700 40px/1.15 Oswald, sans-serif; color: #16120c; background: #f7f3ea; padding: 12px 18px; opacity: 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.45); white-space: nowrap; }
+      #tag small, #cci small { display: block; font: 400 26px/1.3 Plex, monospace; color: #4a4237; }
+      #cci { position: absolute; left: 0; top: 0; font: 700 38px/1.15 Oswald, sans-serif; color: #16120c; background: #f7f3ea; padding: 12px 18px; opacity: 0; white-space: nowrap; }
+      #hook { position: absolute; left: 0; top: 0; font: 700 124px/1 Oswald, sans-serif; color: #16120c; background: var(--acc); padding: 12px 30px 18px; opacity: 0;
+        white-space: nowrap; box-shadow: 0 16px 40px rgba(0,0,0,0.5); transform-origin: 50% 50%; }
+      #quote { position: absolute; left: 70px; top: 0; width: 940px; padding: 34px 40px 30px; background: var(--paper); color: #1a1a1a; opacity: 0;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55); }
+      #quote .q { font: italic 700 78px/1.08 Playfair, serif; }
+      #quote .q em { font-style: italic; background: linear-gradient(transparent 58%, rgba(246, 214, 74, 0.9) 58%); }
+      #quote .by { font: 400 26px/1.35 Plex, monospace; color: #4a4237; margin-top: 18px; }
+      #dots { position: absolute; left: 40px; top: 380px; width: 1000px; height: 860px; background: var(--paper); opacity: 0;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55); }
+      #dots canvas { position: absolute; left: 0; top: 0; }
+      #dots .t { position: absolute; left: 40px; font: 700 40px/1.1 Oswald, sans-serif; color: #16120c; letter-spacing: 0.03em; }
+      #dots .m { position: absolute; left: 40px; font: 400 27px/1.3 Plex, monospace; color: #4a4237; }
+      #ring { position: absolute; left: 0; top: 0; border: 9px solid #1c1a17; border-radius: 50%; opacity: 0; transform: rotate(-6deg); }
+      #callout { position: absolute; left: 0; top: 0; font: 700 58px/1.05 Oswald, sans-serif; color: #f7f3ea; opacity: 0; white-space: nowrap;
+        -webkit-text-stroke: 8px rgba(4, 6, 9, 0.9); paint-order: stroke fill; }
+      #callout em { font-style: normal; color: var(--acc); }
+      #seam { position: absolute; top: 0; width: 6px; height: 1920px; background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.35)); opacity: 0; }
+      #disc { position: absolute; left: 64px; top: 104px; font: 400 22px/1 Plex, monospace; color: rgba(247, 243, 234, 0.62); white-space: nowrap; }
+      .kicker { top: 146px; }
+      .src { top: 190px; }
+      .src > div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      #capband .c { line-height: 1.34; }
+      #capband.onwhite .c { background: rgba(16, 12, 8, 0.86); padding: 6px 0 12px; }  /* review S2 */
+      #capband .c em { color: #16120c; background: var(--acc); -webkit-text-stroke: 0; padding: 0 0.14em; text-shadow: none;
+        -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.967" data-width="1080" data-height="1920">
+      <div id="wood" data-layout-ignore></div>
+      <div id="lamp" data-layout-ignore></div>
+      <div id="stage"></div>
+      <div id="dots"><canvas id="dc" width="1000" height="860"></canvas>
+        <div class="t" style="top: 34px">ASIAN PAINTS' SALES TO DEALERS &amp; DISTRIBUTORS</div>
+        <div class="m" style="top: 744px">■ dark dots = the top 10 dealers' share</div>
+        <div class="m" style="top: 790px">ILLUSTRATIVE · light dots = every other dealer</div>
+      </div>
+      <div id="ring"></div>
+      <div id="callout">TOP 10 DEALERS: <em>UNDER ₹1 IN ₹100</em></div>
+      <div id="seam"></div>
+      <div id="quote"><div class="q">“<em>merely a prima facie opinion</em>”</div>
+        <div class="by">Bombay High Court, para 39, quoting the Supreme Court on CCI probe orders (CCI v. Bharti Airtel)</div></div>
+      <div id="stamp">ALLEGATION</div>
+      <div id="tag">Informant = Grasim<small>(Birla Paints Division), as the court records it</small></div>
+      <div id="cci">CCI = Competition Commission of India<small>the competition regulator; its order started a probe</small></div>
+      <div class="chip says" id="says">GRASIM SAYS</div>
+      <div class="chip read" id="ours">OUR READING</div>
+      <div class="chip ill" id="ctr">"The counter" = our word, from Asian Paints' "counter share"</div>
+      <div id="hook">STILL A MOAT?</div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="disc">Educational research, not investment advice · not SEBI-registered</div>
+      <div class="kicker">MOAT &amp; MARGIN · THE CATCH</div>
+      <div class="src" id="srcs">
+        <div id="s0">Asian Paints Ltd · Integrated Annual Report 2025-26 · MD &amp; CEO's message, pp. 30-31</div>
+        <div id="s1">Grasim Industries Ltd · Integrated Annual Report 2025-26 · Grasim's own words, pp. 20-21</div>
+        <div id="s2">Asian Paints Ltd · Integrated Annual Report 2025-26 · BRSR, Principle 9, p. 324</div>
+        <div id="s3">Our reading of Asian Paints IAR 2025-26, BRSR p. 324 · dots: illustration</div>
+        <div id="s4">Grasim Industries Ltd (Birla Opus) · Integrated Annual Report 2025-26 · top: pp. 20-21 · below: p. 57</div>
+        <div id="s5">Bombay High Court · Asian Paints v. CCI, WP 2887/2025 · judgment of 11 Sep 2025 · p. 29 of 40</div>
+        <div id="s6">Bombay High Court · WP 2887/2025 · para 30: allegations recorded by the court · p. 29 of 40</div>
+        <div id="s7">Bombay High Court · WP 2887/2025 · para 39 · p. 39 of 40</div>
+        <div id="s8">Grasim Industries Ltd · Integrated Annual Report 2025-26 · MD&amp;A, Paints, Outlook, p. 59</div>
+        <div id="s9">Asian Paints Ltd · Integrated Annual Report 2025-26 · Chairman's letter, pp. 24-25</div>
+      </div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, B, E, A, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), CR = window.CROPS, D = S.dur;
+      const el = (tag, cls) => { const e = document.createElement(tag); if (cls) e.className = cls; return e; };
+      const loads = [];
+      const doc = (crop, cls = "") => {
+        const d = el("div", "doc " + cls); d.crop = crop; d.style.width = CR[crop].w + "px"; d.style.height = CR[crop].h + "px";
+        const im = new Image(); im.src = "assets/img/" + crop + ".png"; loads.push(im.decode()); d.appendChild(im); $("stage").appendChild(d); return d;
+      };
+      // place a doc by its on-screen width; o = opacity
+      const place = (d, x, y, w, rot = 0, o = 1) => {
+        const s = w / CR[d.crop].w; d.s = s; d.x = x; d.y = y;
+        d.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${s})`; d.style.opacity = o;
+      };
+      // screen box of a highlight phrase (first line box), for overlays (no rotation)
+      const scr = (d, ph, i = 0) => { const b = CR[d.crop].hl[ph][i]; return [d.x + b[0] * d.s, d.y + b[1] * d.s, d.x + b[2] * d.s, d.y + b[3] * d.s]; };
+      const strokes = (d, phrases, kind = "") => {
+        const out = [];
+        for (const ph of phrases) for (const b of CR[d.crop].hl[ph]) {
+          const h = b[3] - b[1], s = el("div", "hl " + kind);
+          if (kind === "red") { s.style.left = b[0] + "px"; s.style.top = b[3] + 0.06 * h + "px"; s.style.height = 0.13 * h + "px"; }
+          else if (kind === "under") { s.style.left = b[0] + "px"; s.style.top = b[3] + 0.02 * h + "px"; s.style.height = 0.16 * h + "px"; }
+          else { s.style.left = b[0] - 0.12 * h + "px"; s.style.top = b[1] - 0.1 * h + "px"; s.style.height = 1.2 * h + "px"; }
+          s.full = b[2] - b[0] + (kind ? 0 : 0.24 * h); d.appendChild(s); out.push(s);
+        }
+        return out;
+      };
+      const setP = (list, p) => {           // fill the strokes in reading order, p in 0..1 of their total length
+        const tot = list.reduce((a, s) => a + s.full, 0); let left = C(p) * tot;
+        for (const s of list) { const w = Math.min(s.full, left); s.style.width = Math.max(0, w) + "px"; left -= w; }
+      };
+      const on = (e, o, x, y, sc = 1, rot = 0) => { e.style.opacity = o; if (x !== undefined) e.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`; };
+
+      // ---- documents
+      const ap17a = doc("ap17_a"), ap17b = doc("ap17_b"), gr12 = doc("gr12", "torn"), ap164 = doc("ap164");
+      const gr30h = doc("gr30_head"), gr12c = doc("gr12_c012"), gr30b = doc("gr30_body"), hcT = doc("hc29_tint"), hcP = doc("hc29_page");
+      const hc39 = doc("hc39"), gr31 = doc("gr31_outlook"), ap14 = doc("ap14_quote");
+      const sA = [...strokes(ap17a, ["The overall", "network strength remains one of our"]), ...strokes(ap17b, ["strongest competitive advantages."])];
+      const sG12 = strokes(gr12, ["The business continues to invest", "aggressively behind consumer awareness and", "channel engagement."]);
+      const sT1 = strokes(ap164, ["Sales to dealer/distributors as % of total sales"]), sT2 = strokes(ap164, ["Sales to top 10 dealers/distributors as % of total sales to dealers/ distributors"]);
+      const sD1 = strokes(gr12c, ["over 50,000", "dealers"]);
+      // fix round 2 (23 Nov, REVIEW M1): "over 50,000" stays defocused until "fifty" is spoken
+      const fog = (() => { const b = CR[gr12c.crop].hl["over 50,000"][0], hh = b[3] - b[1], f = el("div");
+        f.style.cssText = `position:absolute;left:${b[0] + 0.05 * hh}px;top:${b[1] - 0.3 * hh}px;width:${b[2] - b[0] + 0.25 * hh}px;height:${1.6 * hh}px;`
+          + `backdrop-filter:blur(${0.55 * hh}px);-webkit-backdrop-filter:blur(${0.55 * hh}px);background:rgba(244,239,228,0.35);border-radius:${0.3 * hh}px`;
+        gr12c.appendChild(f); return f; })(), sD2 = strokes(gr30b, ["compact tinting machines"]);
+      const sTi = strokes(hcT, ["the tinting machines"]), sTi2 = strokes(hcP, ["the tinting machines"]);
+      const sRed = strokes(hcP, ["return/ not use or not install"], "red");
+      const s39 = strokes(hc39, ["merely a prima facie opinion"]);
+      const s31 = strokes(gr31, ["brand strength, capacity, and distribution", "depth"], "under");
+      const s14 = strokes(ap14, ["systematically", "enhance our counter share", "across all geographies,"]);
+
+      // ---- dot field: 1,000 dots, 9 dark (top 10 dealers = 0.9 % of sales to dealers), drawn once
+      { const g = $("dc").getContext("2d"); let sd = 7; const r = () => ((sd = (sd * 16807) % 2147483647) / 2147483647);
+        for (let i = 0; i < 1000; i++) {
+          const cx = i % 40, cy = Math.floor(i / 40), top = cx < 3 && cy < 3;
+          const x = 50 + cx * 23.3 + (top ? 0 : (r() - 0.5) * 9), y = 120 + cy * 24.5 + (top ? 0 : (r() - 0.5) * 9);
+          g.beginPath(); g.arc(x, y, top ? 9.5 : 7, 0, 6.283); g.fillStyle = top ? "#16120c" : "rgba(120, 104, 84, 0.55)"; g.fill();
+          if (top) { g.lineWidth = 3; g.strokeStyle = "#e0b92c"; g.stroke(); }
+        } }
+
+      // ---- moments
+      const t2 = B("b2"), t3 = B("b3"), t3c = A("b3", "The ten biggest"), t4 = B("b4"), t5 = B("b5"), t5m = A("b5", "with compact");
+      const tCut = B("b6"), t7 = B("b7"), t7a = A("b7", "alleged"), t8 = B("b8"), t9 = B("b9"), t9d = A("b9", "distribution depth"), t10 = B("b10");
+
+      H.render = (t) => {
+        // A. the claim (b1-b2): Asian Paints' own sentence, two columns joined by one stroke; frame 0 is mid-stroke
+        const aO = 1 - F(t, t3 - 0.2, 99, 0.3);
+        const up = Z.io2((t - t2) / 0.6), sc = L(960, 900, up), ay = L(430, 330, up);
+        place(ap17a, L(60, 90, up), ay, sc, -1.2, aO); place(ap17b, L(60, 90, up), ay + sc * 545 / 2001 + 22, sc, 0.8, aO);
+        setP(sA, 0.34 + t / 2.6);
+        on($("hook"), 1 - F(t, 1.5, 99, 0.35), (1080 - $("hook").offsetWidth) / 2, 1030, 1, -2);
+        // b2: Grasim's clipping drops on the lower half
+        const drop = Z.back((t - t2 - 0.25) / 0.45);
+        place(gr12, 100, 860 - 120 * (1 - drop), 900, 2.4, F(t, t2 + 0.25, t3 - 0.2, 0.12));
+        setP(sG12, (t - t2 - 0.7) / 1.6);
+        // B. the table (b3): row a lit, then 0.9 % circled; FY 2025-26 column only, row b defocused in the crop
+        const tbO = F(t, t3, t4 + 0.3, 0.25), push = Z.io2((t - t3) / 5);
+        place(ap164, L(50, 40, push), L(520, 500, push), L(980, 1000, push), 0, tbO);
+        setP(sT1, (t - t3 - 0.4) / 1.4); setP(sT2, (t - t3c) / 0.5);
+        on($("ring"), 0);   // AK 22 Nov: no circled figure; the 0.9% cell is defocused in the crop
+        on($("callout"), F(t, S.cues["b3:under one"], t4 + 0.2, 0.2), (1080 - $("callout").offsetWidth) / 2, 1010);
+        // C. the dot field (b4): our reading, illustrative
+        on($("dots"), F(t, t4 + 0.1, t5 + 0.2, 0.3), 0, 0);
+        // D. the challenger (b5): Grasim p.57, highlight 50,000 dealers, then compact tinting machines
+        const dO = F(t, t5, tCut + 0.6, 0.25);
+        place(gr30h, 90, 330, 900, 0, 0); place(gr12c, 90, 350, 900, -0.8, dO); place(gr30b, 90, 790, 900, 0, dO);   // AK 22 Nov: count from p.20-21 (C012), machines from p.57 (C013)
+        setP(sD1, (t - S.cues["b5:fifty"]) / 0.6); fog.style.opacity = 1 - C((t - S.cues["b5:fifty"]) / 0.12); setP(sD2, (t - t5m) / 0.9);
+        // E. the signature: word match cut on "tinting machines" (b5 -> b6), then pull back to whose page it is
+        const gb = scr(gr30b, "compact tinting machines"), tb = CR.hc29_tint.hl["the tinting machines"][0];
+        const mS = (gb[3] - gb[1]) / (tb[3] - tb[1]), mx = gb[2] - tb[2] * mS, my = gb[3] - tb[3] * mS;
+        const pb = Z.io3((t - tCut - 0.45) / 1.3), pin = Z.io3((t - t7) / 1.0);
+        const hp = CR.hc29_page.hl["return/ not use or not install"][0];
+        const zS = 980 / (1805 - 455), zx = 50 - 455 * zS, zy = 700 - hp[1] * zS;
+        let cw = L(2001 * mS, 740, pb), cx = L(mx, 170, pb), cy = L(my, 310, pb);
+        if (t >= t7) { cw = L(740, 2001 * zS, pin); cx = L(170, zx, pin); cy = L(310, zy, pin); }
+        const cO = F(t, tCut - 0.05, t8 - 0.1, 0.01) * (1 - F(t, t8 - 0.25, 99, 0.25));
+        place(hcT, cx, cy, cw, 0, cO); place(hcP, cx, cy, cw, 0, cO * F(t, t7a - 0.05, 99, 0.35));
+        setP(sTi, 1); setP(sTi2, 1); setP(sRed, (t - t7a) / 0.7);
+        // the wipe: court page revealed left -> right along the stroke
+        const wipe = Z.io2((t - tCut + 0.05) / 0.4), ex = L(-20, 1100, wipe);
+        hcT.style.clipPath = t < tCut + 0.4 ? `inset(0 ${Math.max(0, 100 - (ex - cx) / (CR.hc29_tint.w * hcT.s) * 100)}% 0 0)` : "none";
+        $("seam").style.left = ex - 6 + "px"; $("seam").style.opacity = t > tCut - 0.05 && t < tCut + 0.38 ? 1 : 0;
+        // F. the reveal (b7): stamp lands on "alleged"; the informant named; stamp stays through b8
+        const st = Z.back((t - t7a + 0.05) / 0.35, 2.2);
+        on($("stamp"), F(t, t7a - 0.05, t9 - 0.2, 0.06), t < t8 ? 330 : -60, t < t8 ? 440 : 640, t < t8 ? L(1.6, 1, st) : 0.62, -9);
+        on($("tag"), F(t, t7a + 0.6, t8 - 0.2, 0.2), 64, 900);
+        // G. the guard rail (b8): page turn to p.39 and the quote card; the regulator named
+        const gO = F(t, t8, t9 - 0.1, 0.2);
+        place(hc39, 50, 300, 980, 0, Math.max(gO, F(t, t8 - 0.25, t9 - 0.1, 0.25))); setP(s39, (t - t8 - 0.5) / 0.8);
+        on($("quote"), F(t, t8 + 1.2, t9 - 0.1, 0.25), 0, 836);
+        on($("cci"), F(t, t8 + 0.3, t9 - 0.1, 0.2), 64, 1166);
+        // H. the echo (b9): Grasim's own Outlook, right column only (the 42 % chart is outside the crop)
+        const hO = F(t, t9, t10 + 0.1, 0.25), hz = Z.io2((t - t9) / 4.7);
+        place(gr31, L(50, 44, hz), L(500, 480, hz), L(1150, 1170, hz), 0, hO); setP(s31, (t - t9d + 0.6) / 1.3);
+        // I. the loop line (b10): Asian Paints' "counter share", our reading
+        const iO = F(t, t10, 99, 0.25);
+        place(ap14, 160, 430, 760, 0, iO); setP(s14, (t - t10 - 0.3) / 1.2);
+        // labels
+        const saysO = Math.max(F(t, t2 + 0.2, t3 - 0.2, 0.12), F(t, t5, tCut, 0.1), F(t, t9, t10, 0.15));
+        const saysPos = t < t3 ? [110, 800, -3] : t < tCut ? [690, 300, -4] : [70, 410, -3];
+        on($("says"), saysO, ...saysPos.slice(0, 2), 1, saysPos[2]);
+        const oursO = Math.max(F(t, t4 + 0.1, t5, 0.15), F(t, t10, 99, 0.15));
+        on($("ours"), oursO, t < t5 ? 690 : 70, t < t5 ? 320 : 310, 1, -3);
+        on($("ctr"), F(t, t10 + 0.25, 99, 0.2), 64, 374, 1, 0);
+        // sources: the page on screen names itself
+        const SRC = [[0, t2 + 0.25, 0], [t2 + 0.25, t3, 1], [t3, t4 + 0.1, 2], [t4 + 0.1, t5, 3], [t5, tCut, 4], [tCut, t7a, 5], [t7a, t8, 6], [t8, t9, 7], [t9, t10, 8], [t10, 99, 9]];
+        for (let i = 0; i < 10; i++) $("s" + i).style.opacity = 0;
+        for (const [a, b, i] of SRC) if (t >= a && t < b) $("s" + i).style.opacity = 1;
+        $("capband").classList.toggle("onwhite", t >= tCut && t < t8); caps(t);
+      };
+      Promise.all(loads).then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

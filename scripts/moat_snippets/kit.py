@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-KIT = Path("/Volumes/DarwinSSD/Moat and Margin/Moat Atlas - Moat Snippets - DRAFT 2026-11-05")
+KIT = Path("/Volumes/DarwinSSD/Moat and Margin/02 Shorts/Moat Atlas - Moat Snippets - DRAFT 2026-11-05")
 VOICE = "MiniMax English_CaptivatingStoryteller"
 NUM = {"A1": 1, "A2": 2, "A3": 3, "A4": 4, "A5": 5, "V1": 6, "V2": 7, "V3": 8, "V4": 9, "V5": 10}
 

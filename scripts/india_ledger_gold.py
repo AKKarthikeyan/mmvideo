@@ -26,11 +26,12 @@ TRANCHES = ROOT / "data" / "india_ledger" / "sgb_tranches.csv"   # 67 tranches: 
 #   price. From the RBI tranche data as tabled on Wikipedia ("Sovereign Gold Bond", fetched 18 Nov 2026); its totals match
 #   RBI's 146.96 t and Rs 72,274 crore exactly. Redemption prices of matured tranches are RBI final-redemption prices.
 YIELDS = ROOT / "data" / "india_ledger" / "india_10y_yield_fred.csv"  # FRED INDIRLTLT01STM, India 10-year G-sec, monthly
-PRICE_TODAY = 13_345      # Rs/g, RBI redemption price for the premature redemption of SGB 2020-21 Series II due 19 Nov 2026
-#   (RBI press release of 18 Nov 2026, prid=63996: simple average of IBJA 999 closing prices, 16-18 Nov 2026).
-#   Previous value 14,024 (final redemption of SGB 2018-19 Series III, 13 Nov 2026). Update all three lines together.
+PRICE_TODAY = 12_953      # Rs/g, IBJA gold 999 closing (PM) rate of 19 Nov 2026, ibjarates.com (read 20 Nov 2026). IBJA is the
+#   price RBI itself uses for SGB redemptions. Gold fell ten trading days in a row: 14,413 on 5 Nov -> 12,953 on 19 Nov.
+#   Earlier values: 13,345 (RBI, premature redemption of SGB 2020-21 Series II, 19 Nov 2026, prid=63996);
+#   14,024 (RBI, final redemption of SGB 2018-19 Series III, 13 Nov 2026). Update all three lines together.
 PRICE_DATE, PRICE_LABEL = "2026-11-19", "19 Nov 2026"
-TODAY = "2026-11-18"
+TODAY = "2026-11-19"
 TERM_YEARS = 8
 COUPON_HIGH_UNTIL = 3     # tranches 1-3 (FY 2015-16) paid 2.75%; from 2016-17 Series I, 2.5%
 

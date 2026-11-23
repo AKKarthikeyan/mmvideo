@@ -1,0 +1,754 @@
+<!doctype html>
+<!-- India Ledger, Episode 2: "Why Is Gold Falling?" Script docs/INDIA_LEDGER_EP2_SCRIPT.md (Draft 5, 24K/22K).
+     Timings and numbers come from act.js (tools/il_ep2_build.py, IBJA series in assets/data/ibja_series.json).
+     Video tags are written by tools/il_ep2_page.py from this file: edit videos/_src/il-gold-ep2.html, never index.html.
+     Look: the India Ledger paper collage of Episode 1 V3 (look and assets only; nothing from that episode is said).
+     No faces. Made-up headline cards, the crowd and the elephants carry the ILLUSTRATIVE label. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>India Ledger Gold Ep2</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="act.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+      @font-face { font-family: Marker; src: url("assets/fonts/permanent-marker-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: Anton; src: url("assets/fonts/anton-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: Elite; src: url("assets/fonts/special-elite-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: Abril; src: url("assets/fonts/abril-fatface-latin-400-normal.woff2") format("woff2"); }
+      .collage { --bg: #e6dcc6; --fg: #17181b; --muted: #4d4a43; --kick: #0e7c66; --gold: #b8860b; --red: #ad3517; --card: #f7f3ea; }
+      #root.collage { background: linear-gradient(rgba(250, 243, 226, 0.5), rgba(250, 243, 226, 0.5)), #e6dcc6 url("assets/textures/gold_light.jpg") center / cover; }
+      .collage #grain { opacity: 0.06; mix-blend-mode: multiply; }
+      .collage #vig { --vig: 0.12; }
+      #stage { position: absolute; inset: 0; z-index: 2; }
+      .layer { position: absolute; inset: 0; opacity: 0; }
+      .e { position: absolute; transform-origin: 50% 50%; }
+      .print { background: #f7f3ea; padding: 14px 14px 16px; box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32), 0 3px 8px rgba(0, 0, 0, 0.25); }
+      .print .im { width: 100%; overflow: hidden; }
+      .print img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; }
+      .print .pcap { margin-top: 12px; padding: 0 4px; font: 400 28px/1.25 Elite, monospace; color: #3b3a36; }
+      .tape { position: absolute; width: 170px; height: 46px; background: rgba(236, 224, 186, 0.82); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18); }
+      .cut { filter: drop-shadow(0 0 0 #fff) drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff) drop-shadow(0 20px 26px rgba(0, 0, 0, 0.35)); }
+      .mk { font-family: Marker; color: var(--red); line-height: 1.05; white-space: nowrap; }
+      .hd { font: 400 64px/1.02 Anton, Oswald, sans-serif; color: var(--fg); letter-spacing: 0.015em; white-space: nowrap; }
+      .sv { font-family: Abril, serif; color: var(--fg); line-height: 1.05; }
+      .px { font: 400 30px/1.3 Elite, monospace; color: var(--muted); }
+      .tag { font: 400 34px/1 Elite, monospace; color: #17181b; background: url("assets/textures/kraft_scrap.png") center / 100% 100% no-repeat; padding: 26px 40px 22px; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25)); white-space: nowrap; width: max-content; }
+      .card { background: #f7f3ea; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25); }
+      .stamp { font: 400 80px/1 Anton, Oswald, sans-serif; color: var(--red); border: 9px solid var(--red); padding: 12px 26px 8px; white-space: nowrap; z-index: 4;
+        letter-spacing: 0.04em; mix-blend-mode: multiply; }
+      .env { width: 620px; height: 400px; background: #d9c59a; box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3); }
+      .env::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 200px; background: #cdb685;
+        clip-path: polygon(0 0, 100% 0, 50% 100%); }
+      .env .a { position: absolute; left: 34px; bottom: 26px; font: 400 76px/1 Anton, Oswald, sans-serif; color: var(--fg); }
+      .env svg { position: absolute; right: 30px; bottom: 20px; }
+      .clip { opacity: 0; }
+      .vprint { background: #f7f3ea; padding: 14px; box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32); z-index: 3; }
+      .vcut { z-index: 3; filter: drop-shadow(0 20px 26px rgba(0, 0, 0, 0.3)); }
+      .vfull { z-index: 1; }
+      #brand { position: absolute; left: 56px; top: 40px; z-index: 5; font: 400 28px/1 Anton, Oswald, sans-serif; letter-spacing: 0.2em; color: #17181b;
+        background: rgba(247, 243, 234, 0.86); padding: 8px 12px 6px; }
+      #illus { position: absolute; right: 40px; top: 104px; z-index: 5; font: 400 28px/1 Elite, monospace; letter-spacing: 0.1em; color: #17181b;
+        background: rgba(247, 243, 234, 0.86); border: 2px solid #17181b; padding: 7px 12px 5px; opacity: 0; }
+      #src { position: absolute; left: 56px; right: 56px; bottom: 26px; z-index: 5; font: 400 28px/1.25 Elite, monospace; color: #33322e;
+        text-align: right; opacity: 0; }
+      #src span { background: rgba(247, 243, 234, 0.88); padding: 4px 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+      #lang { position: absolute; right: 40px; top: 26px; z-index: 6; background: rgba(247,243,234,0.94); border: 3px solid #17181b; border-radius: 14px;
+        padding: 7px 14px 5px; box-shadow: 0 6px 14px rgba(0,0,0,0.22); opacity: 0; transform-origin: 85% 100%; white-space: nowrap;
+        font: 400 28px/1.15 Anton, Oswald, sans-serif; letter-spacing: 0.03em; color: #17181b; }
+      #lang::after { content: ""; position: absolute; right: 36px; bottom: -17px; border: 8px solid transparent; border-top: 10px solid #17181b; }
+      #lang b { font-weight: 400; color: #ad3517; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="collage" data-composition-id="main" data-start="0" data-duration="__DUR__" data-width="1920" data-height="1080">
+<!--MEDIA-->
+      <div id="stage"></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div id="brand">INDIA LEDGER</div>
+      <div id="illus">ILLUSTRATION</div>
+      <div id="lang">AUDIO: <b>HINDI · TAMIL · TELUGU</b></div>
+      <div id="src"><span id="srct"></span></div>
+    </div>
+    <script>
+      /*CLIPS*/
+      const N = ACT.n;
+      const DUR = __DUR__;
+      const H = HF.setup(DUR), E = HF.ease, F = HF.fade, L = HF.lerp, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id);
+      const B = Object.fromEntries(ACT.beats.map((b) => [b.id, b]));
+      const IDS = ACT.beats.map((b) => b.id);
+      const T = (id, o = 0) => B[id].t0 + o, Tf = (id, f) => B[id].t0 + f * (B[id].t1 - B[id].t0);
+      const INK = "#17181b", GOLD = "#b8860b", GOLD2 = "#e2b84a", GOLDT = "#5f4504", GREEN = "#0e7c66", RED = "#ad3517", CARD = "#f7f3ea", GREY = "#9a937f";
+      const inr = (v) => Math.round(v).toLocaleString("en-IN");
+      const NS = "http://www.w3.org/2000/svg";
+      const stage = $("stage");
+
+      // ---------- building blocks ----------
+      const LAY = [], UP = [];
+      const layer = (a, b) => { const d = document.createElement("div"); d.className = "layer"; stage.appendChild(d); const Ly = { d, a, b, items: [] }; LAY.push(Ly); return Ly; };
+      const bgL = (Ly, f, wash = 0.35) => { const d = document.createElement("div"); d.className = "tex"; d.setAttribute("data-layout-ignore", "");
+        d.style.cssText = `position:absolute;inset:0;background:linear-gradient(rgba(250,243,226,${wash}),rgba(250,243,226,${wash})),url("assets/textures/${f}") center / cover`; Ly.d.prepend(d); return d; };
+      const put = (Ly, node, o) => {
+        node.style.left = o.x + "px"; node.style.top = o.y + "px";
+        if (o.w) node.style.width = o.w + "px"; if (o.h) node.style.height = o.h + "px"; else node.style.height = "";
+        Ly.d.appendChild(node);
+        const it = { node, Ly, rot: 0, fx: "pop", ...o }; it.at = o.at ?? Ly.a; Ly.items.push(it); return it;
+      };
+      const div = (cls, html) => { const d = document.createElement("div"); d.className = "e " + cls; if (html != null) d.innerHTML = html; return d; };
+      const print = (Ly, src, o) => {
+        const d = div("print"), w = document.createElement("div"); w.className = "im"; w.style.height = (o.h - 30) + "px";
+        const im = document.createElement("img"); im.src = "assets/img/" + src; if (o.pos) im.style.objectPosition = o.pos;
+        w.appendChild(im); d.appendChild(w);
+        if (o.tape !== false) { const tp = document.createElement("div"); tp.className = "tape"; tp.style.left = (o.w / 2 - 85) + "px"; tp.style.top = "-24px"; tp.style.transform = `rotate(${3 - (o.rot || 0)}deg)`; d.appendChild(tp); }
+        if (o.cap) { const c = document.createElement("div"); c.className = "pcap"; c.innerHTML = o.cap; d.appendChild(c); }
+        const it = put(Ly, d, { fx: "drop", kb: true, ...o, h: 0 }); it.img = im; return it;
+      };
+      const cut = (Ly, src, o) => { const im = document.createElement("img"); im.className = "e cut"; im.src = "assets/img/" + src; return put(Ly, im, { fx: "slam", ...o }); };
+      const textEl = (cls, Ly, s, o) => {
+        const d = div(cls, s); if (o.size) d.style.fontSize = o.size + "px"; if (o.color) d.style.color = o.color;
+        if (o.wrap) { d.style.whiteSpace = "normal"; } if (o.align) d.style.textAlign = o.align; return put(Ly, d, o);
+      };
+      const mk = (Ly, s, o) => textEl("mk", Ly, s, { fx: "wipe", ...o });
+      const hd = (Ly, s, o) => textEl("hd", Ly, s, o);
+      const sv = (Ly, s, o) => textEl("sv", Ly, s, o);
+      const px = (Ly, s, o) => textEl("px", Ly, s, o);
+      const tag = (Ly, s, o) => textEl("tag", Ly, s, { fx: "pop", ...o });
+      const stampE = (Ly, s, o) => { const it = textEl("stamp", Ly, s, { fx: "slam", ...o }); it.node.setAttribute("data-layout-allow-overlap", ""); return it; };
+      const el = (tag2, attrs, parent) => { const e = document.createElementNS(NS, tag2); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+      const st = (s, attrs, parent) => { const e = el("text", attrs, parent); e.textContent = s; return e; };
+      const op = (e, v) => (e.style ? (e.style.opacity = v) : e.setAttribute("opacity", v));
+      const ANT = { "font-family": "Anton, Oswald" }, TYP = { "font-family": "Elite" }, MKR = { "font-family": "Marker" };
+      const svgL = (Ly) => {
+        const s = document.createElementNS(NS, "svg"); s.setAttribute("width", 1920); s.setAttribute("height", 1080); s.setAttribute("viewBox", "0 0 1920 1080");
+        s.setAttribute("class", "e"); s.style.left = "0px"; s.style.top = "0px"; Ly.d.appendChild(s); Ly.items.push({ node: s, Ly, rot: 0, fx: "none", at: Ly.a }); return s;
+      };
+      // an SVG group that pops in at time `at` (scale about its own centre)
+      const POPS = [];
+      const popG = (parent, cx, cy, at, fx = "pop") => { const g = el("g", {}, parent); POPS.push({ g, cx, cy, at, fx }); return g; };
+      const env = (Ly, a, o, draw) => {
+        const d = div("env", `<div class="a">${a}</div>`);
+        const s = document.createElementNS(NS, "svg"); s.setAttribute("width", 300); s.setAttribute("height", 200); s.setAttribute("viewBox", "0 0 300 200"); d.appendChild(s);
+        if (draw) draw(s);
+        return put(Ly, d, { fx: "slideU", ...o });
+      };
+
+      const applyFx = (it, t) => {
+        const u = t - it.at; let o = 1, tr = "", clip = null;
+        switch (it.fx) {
+          case "pop": { const v = E.o3(u / 0.35); o = C(u / 0.2); tr = `scale(${L(1.08, 1, v)})`; break; }
+          case "slam": { const v = C(u / 0.24); o = u >= 0 ? 1 : 0; tr = `scale(${L(1.7, 1, E.o3(v))})`; break; }
+          case "drop": { const v = E.o3(u / 0.55); o = C(u / 0.15); tr = `translateY(${L(-90, 0, v)}px)`; break; }
+          case "slideL": { const v = E.o3(u / 0.6); o = C(u / 0.2); tr = `translateX(${L(-600, 0, v)}px)`; break; }
+          case "slideR": { const v = E.o3(u / 0.6); o = C(u / 0.2); tr = `translateX(${L(600, 0, v)}px)`; break; }
+          case "slideU": { const v = E.o3(u / 0.6); o = C(u / 0.2); tr = `translateY(${L(400, 0, v)}px)`; break; }
+          case "wipe": { const v = E.io2(u / (it.wd || 0.55)); o = u >= 0 ? 1 : 0; clip = `inset(-30% ${((1 - v) * 104).toFixed(2)}% -30% -4%)`; break; }
+          case "fade": o = C(u / 0.4); break;
+          case "none": o = 1; break;
+        }
+        if (it.until != null) o *= 1 - C((t - it.until) / 0.25);
+        it.node.style.opacity = o;
+        it.node.style.transform = `${tr} rotate(${it.rot}deg)`;
+        if (clip !== null) it.node.style.clipPath = clip;
+        if (it.img && it.kb) it.img.style.transform = `scale(${1 + 0.07 * C((t - it.at) / Math.max(1, it.Ly.b - it.at))})`;
+      };
+      const on = (fn) => UP.push(fn);
+
+      // ---------- drawings ----------
+      const goldPath = (pts) => pts.map((p, i) => `${i ? "L" : "M"} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" ");
+      const yearOf = (d) => { const [y, m, dd] = d.split("-").map(Number); return y + (m - 1) / 12 + dd / 365; };
+      const certificate = (Ly, o) => {
+        const h = `<div style="position:absolute;inset:16px;border:2px solid ${GREEN}"></div>
+          <div style="position:absolute;left:0;right:0;top:54px;text-align:center;font:400 30px/1 Elite,monospace;color:${GREEN};letter-spacing:2px">GOVERNMENT OF INDIA</div>
+          <div style="position:absolute;left:0;right:0;top:112px;text-align:center;font:400 62px/1 Anton,Oswald,sans-serif;color:${INK}">SOVEREIGN GOLD BOND</div>
+          <div style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 62px/1 Anton,Oswald,sans-serif;color:${GOLDT}">10 GRAMS</div>
+          <div style="position:absolute;left:0;right:0;top:296px;text-align:center;font:400 30px/1 Elite,monospace;color:#4d4a43">8 YEARS · 2.5% A YEAR</div>`;
+        const d = div("card", h); d.style.border = `6px solid ${GREEN}`;
+        return put(Ly, d, { w: 700, h: 380, fx: "pop", ...o });
+      };
+      const person = (g, x, y, s, fill) => { el("circle", { cx: x, cy: y - 34 * s, r: 11 * s, fill }, g); el("rect", { x: x - 13 * s, y: y - 20 * s, width: 26 * s, height: 38 * s, rx: 10 * s, fill }, g); };
+      const crowd = (svg, x0, y0, cols, rows, dx, dy, s) => {
+        const g = el("g", {}, svg), coins = [];
+        for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+          const x = x0 + c * dx + (r % 2) * dx / 2, y = y0 + r * dy;
+          person(g, x, y, s, r % 3 === 1 ? "#5d5a52" : "#3a3936");
+          coins.push({ e: el("circle", { cx: x + 16 * s, cy: y - 6 * s, r: 8 * s, fill: GOLD2, stroke: GOLDT, "stroke-width": 2 }, g), x, y: y - 6 * s, k: coins.length });
+        }
+        return coins;
+      };
+      const dropCoins = (coins, t, a, span) => coins.forEach((c) => {
+        const at = a + span * ((c.k * 7919) % coins.length) / coins.length, u = E.o3((t - at) / 0.35);
+        c.e.setAttribute("cy", c.y - 60 * (1 - u)); c.e.setAttribute("opacity", t >= at ? 1 : 0);
+      });
+      const lockerSVG = (g, x, y, s) => {
+        el("rect", { x, y, width: 60 * s, height: 72 * s, rx: 4 * s, fill: "#2f3d38" }, g);
+        el("rect", { x: x + 4 * s, y: y + 4 * s, width: 52 * s, height: 64 * s, rx: 2 * s, fill: "#44574f" }, g);
+        el("circle", { cx: x + 44 * s, cy: y + 36 * s, r: 5 * s, fill: "none", stroke: "#b8c2bc", "stroke-width": 1.6 * s }, g);
+      };
+      const bundle = (g, x, y, w = 150, h = 34) => {   // a bundle of Rs 500 notes, drawn (stone grey with a paper band)
+        const b = el("g", {}, g);
+        el("rect", { x, y, width: w, height: h, rx: 3, fill: "#b7ae9b", stroke: "#7a7363", "stroke-width": 2 }, b);
+        el("rect", { x: x + w * 0.42, y, width: w * 0.16, height: h, fill: "#efe6cf" }, b);
+        st("₹500", { x: x + 12, y: y + h * 0.7, ...TYP, "font-size": 18, fill: "#5d5749", "data-layout-ignore": "" }, b);
+        return b;
+      };
+      const bangleSVG = (g, cx, cy, r) => {
+        el("circle", { cx, cy, r, fill: "none", stroke: GOLD, "stroke-width": r * 0.34 }, g);
+        el("circle", { cx, cy, r: r * 1.12, fill: "none", stroke: GOLD2, "stroke-width": 4, "stroke-dasharray": `${r * 0.9} 900`, transform: `rotate(-130 ${cx} ${cy})` }, g);
+      };
+      const barSVG = (g, cx, cy, w) => {
+        el("path", { d: `M ${cx - w / 2} ${cy + w * 0.2} L ${cx - w * 0.38} ${cy - w * 0.2} L ${cx + w * 0.38} ${cy - w * 0.2} L ${cx + w / 2} ${cy + w * 0.2} Z`, fill: GOLD, stroke: GOLDT, "stroke-width": 3 }, g);
+        el("path", { d: `M ${cx - w * 0.38} ${cy - w * 0.2} L ${cx + w * 0.38} ${cy - w * 0.2} L ${cx + w * 0.3} ${cy - w * 0.08} L ${cx - w * 0.3} ${cy - w * 0.08} Z`, fill: GOLD2 }, g);
+      };
+      const bankSVG = (g, cx, cy, s) => {   // a bank: roof, four columns, steps
+        el("path", { d: `M ${cx - 120 * s} ${cy - 60 * s} L ${cx} ${cy - 130 * s} L ${cx + 120 * s} ${cy - 60 * s} Z`, fill: INK }, g);
+        for (let k = 0; k < 4; k++) el("rect", { x: cx - 96 * s + k * 56 * s, y: cy - 52 * s, width: 24 * s, height: 110 * s, fill: "#3a3936" }, g);
+        el("rect", { x: cx - 130 * s, y: cy + 62 * s, width: 260 * s, height: 22 * s, fill: INK }, g);
+      };
+      const coinSVG = (g, cx, cy, r, label) => {
+        el("circle", { cx, cy, r, fill: GOLD2, stroke: GOLDT, "stroke-width": r * 0.12 }, g);
+        el("circle", { cx, cy, r: r * 0.78, fill: "none", stroke: GOLDT, "stroke-width": r * 0.05 }, g);
+        if (label) st(label, { x: cx, y: cy + r * 0.32, "text-anchor": "middle", ...ANT, "font-size": r * 0.85, fill: GOLDT }, g);
+      };
+      const flameSVG = (g, cx, cy, s) => {
+        el("path", { d: `M ${cx} ${cy - 90 * s} C ${cx + 60 * s} ${cy - 30 * s}, ${cx + 55 * s} ${cy + 40 * s}, ${cx} ${cy + 50 * s} C ${cx - 55 * s} ${cy + 40 * s}, ${cx - 60 * s} ${cy - 30 * s}, ${cx} ${cy - 90 * s} Z`, fill: "#e0702a" }, g);
+        el("path", { d: `M ${cx} ${cy - 40 * s} C ${cx + 30 * s} ${cy}, ${cx + 26 * s} ${cy + 36 * s}, ${cx} ${cy + 42 * s} C ${cx - 26 * s} ${cy + 36 * s}, ${cx - 30 * s} ${cy}, ${cx} ${cy - 40 * s} Z`, fill: "#f6c445" }, g);
+      };
+      const lensSVG = (g, cx, cy, s) => {
+        el("line", { x1: cx + 42 * s, y1: cy + 42 * s, x2: cx + 100 * s, y2: cy + 100 * s, stroke: INK, "stroke-width": 18 * s, "stroke-linecap": "round" }, g);
+        el("circle", { cx, cy, r: 60 * s, fill: "rgba(255,255,255,0.35)", stroke: INK, "stroke-width": 12 * s }, g);
+      };
+      const hammerSVG = (g, cx, cy, s) => {
+        el("rect", { x: cx - 8 * s, y: cy - 30 * s, width: 16 * s, height: 120 * s, rx: 6 * s, fill: "#8a6a3a" }, g);
+        el("rect", { x: cx - 50 * s, y: cy - 60 * s, width: 100 * s, height: 40 * s, rx: 6 * s, fill: "#3a3936" }, g);
+      };
+      const phoneSVG = (g, cx, cy, s) => {
+        el("rect", { x: cx - 50 * s, y: cy - 90 * s, width: 100 * s, height: 180 * s, rx: 16 * s, fill: INK }, g);
+        el("rect", { x: cx - 42 * s, y: cy - 76 * s, width: 84 * s, height: 146 * s, rx: 6 * s, fill: "#dfe9e4" }, g);
+        st("₹", { x: cx, y: cy + 20 * s, "text-anchor": "middle", ...ANT, "font-size": 70 * s, fill: GREEN }, g);
+      };
+      const calendarSVG = (g, cx, cy, s, label) => {
+        el("rect", { x: cx - 80 * s, y: cy - 70 * s, width: 160 * s, height: 150 * s, rx: 10 * s, fill: CARD, stroke: INK, "stroke-width": 6 * s }, g);
+        el("rect", { x: cx - 80 * s, y: cy - 70 * s, width: 160 * s, height: 40 * s, fill: RED }, g);
+        st(label, { x: cx, y: cy + 50 * s, "text-anchor": "middle", ...ANT, "font-size": 64 * s, fill: INK }, g);
+      };
+      const barrelSVG = (g, cx, cy, s) => {
+        el("rect", { x: cx - 50 * s, y: cy - 70 * s, width: 100 * s, height: 140 * s, rx: 14 * s, fill: "#2c3a52" }, g);
+        for (const k of [-36, 36]) el("rect", { x: cx - 52 * s, y: cy + k * s - 5 * s, width: 104 * s, height: 10 * s, fill: "#1b2536" }, g);
+      };
+      const cupSVG = (g, cx, cy, s) => {
+        el("path", { d: `M ${cx - 60 * s} ${cy - 40 * s} L ${cx + 60 * s} ${cy - 40 * s} L ${cx + 48 * s} ${cy + 50 * s} L ${cx - 48 * s} ${cy + 50 * s} Z`, fill: CARD, stroke: INK, "stroke-width": 6 * s }, g);
+        el("path", { d: `M ${cx + 58 * s} ${cy - 22 * s} q ${40 * s} ${8 * s} ${8 * s} ${48 * s}`, fill: "none", stroke: INK, "stroke-width": 6 * s }, g);
+        for (const k of [-24, 0, 24]) el("path", { d: `M ${cx + k * s} ${cy - 54 * s} q ${12 * s} ${-20 * s} 0 ${-40 * s} q ${-12 * s} ${-20 * s} 0 ${-40 * s}`, fill: "none", stroke: GREY, "stroke-width": 5 * s, "stroke-linecap": "round" }, g);
+      };
+      const crossSVG = (g, cx, cy, s) => { for (const a of [45, -45]) el("rect", { x: cx - 60 * s, y: cy - 9 * s, width: 120 * s, height: 18 * s, rx: 9 * s, fill: RED, transform: `rotate(${a} ${cx} ${cy})` }, g); };
+      const checkSVG = (g, cx, cy, s) => {
+        el("circle", { cx, cy, r: 46 * s, fill: GREEN }, g);
+        el("path", { d: `M ${cx - 22 * s} ${cy + 2 * s} l ${16 * s} ${18 * s} l ${30 * s} ${-36 * s}`, fill: "none", stroke: CARD, "stroke-width": 10 * s, "stroke-linecap": "round", "stroke-linejoin": "round" }, g);
+      };
+      const arrowSVG = (g, x1, y1, x2, y2, color = INK, w = 8) => {
+        el("line", { x1, y1, x2, y2, stroke: color, "stroke-width": w, "stroke-linecap": "round" }, g);
+        const a = Math.atan2(y2 - y1, x2 - x1);
+        for (const s2 of [-1, 1]) el("line", { x1: x2, y1: y2, x2: x2 - 30 * Math.cos(a + s2 * 0.5), y2: y2 - 30 * Math.sin(a + s2 * 0.5), stroke: color, "stroke-width": w, "stroke-linecap": "round" }, g);
+      };
+      const certSVG = (g, cx, cy, s) => {   // a small paper bond
+        el("rect", { x: cx - 70 * s, y: cy - 50 * s, width: 140 * s, height: 100 * s, fill: CARD, stroke: GREEN, "stroke-width": 6 * s }, g);
+        st("SGB", { x: cx, y: cy + 14 * s, "text-anchor": "middle", ...ANT, "font-size": 40 * s, fill: GOLDT }, g);
+      };
+      const goldChart = (svg, X0, X1, Y0, Y1, vmax, mult) => {
+        const pts = N.price_series.map(([d, v]) => [L(X0, X1, (yearOf(d) - 2015.9) / (2026.9 - 2015.9)), L(Y0, Y1, (v * mult) / vmax)]);
+        el("line", { x1: X0, x2: X1, y1: Y0, y2: Y0, stroke: "rgba(23,24,27,0.45)", "stroke-width": 3 }, svg);
+        st("2015", { x: X0, y: Y0 + 50, ...TYP, "font-size": 32, fill: "#4d4a43", "text-anchor": "middle" }, svg);
+        st("2026", { x: X1, y: Y0 + 50, ...TYP, "font-size": 32, fill: "#4d4a43", "text-anchor": "middle" }, svg);
+        const p = el("path", { d: "", fill: "none", stroke: GOLD, "stroke-width": 12, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+        const dot = el("circle", { r: 16, fill: GOLD2, stroke: GOLDT, "stroke-width": 3 }, svg);
+        const draw = (u) => { const k = Math.max(1, Math.round(C(u) * (pts.length - 1))), sub = pts.slice(0, k + 1); p.setAttribute("d", goldPath(sub)); const q = sub[sub.length - 1]; dot.setAttribute("cx", q[0]); dot.setAttribute("cy", q[1]); return k; };
+        return { pts, draw };
+      };
+
+      // ---------- Episode 2 building blocks ----------
+      const r = Math.round, g1 = (v) => "₹" + inr(v), BLUE = "#24408e";
+      const AUG = r(N.aug), NOW = r(N.now), AUG22 = r(N.aug22), NOW22 = r(N.now22), NOV5 = r(N.nov5);
+      const DAY = (s) => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 864e5;
+      // a ledger card: rows wipe in one at a time; row(...).val is the value span, for live counters
+      const ledger = (Ly, o, title) => {
+        const d = div("card", `<div style="position:absolute;left:34px;right:34px;top:24px;font:400 30px/1 Elite,monospace;letter-spacing:3px;color:#4d4a43;white-space:nowrap">${title}</div>
+          <div style="position:absolute;left:34px;right:34px;top:68px;border-top:3px solid ${INK}"></div>`);
+        const it = put(Ly, d, { fx: "drop", ...o, rot: 0 });
+        let n = 0;
+        it.row = (label, value, at, ro = {}) => {
+          const rw = div("", `<span style="font:400 ${ro.ls || 34}px/1 Elite,monospace;color:#3b3a36;white-space:nowrap">${label}</span><span style="font:400 ${ro.size || 58}px/1 Anton,Oswald,sans-serif;color:${ro.color || INK};white-space:nowrap">${value}</span>`);
+          rw.style.cssText = "display:flex;justify-content:space-between;align-items:center;padding:0 34px;border-bottom:2px solid rgba(14,124,102,0.25)";
+          const ri = put(Ly, rw, { x: o.x, y: o.y + 80 + n++ * 84, w: o.w, h: 84, fx: "wipe", wd: 0.45, at });
+          ri.val = rw.lastChild; return ri;
+        };
+        return it;
+      };
+      const usBond = (Ly, o) => {
+        const h = `<div style="position:absolute;inset:16px;border:2px solid ${BLUE}"></div>
+          <div style="position:absolute;left:0;right:0;top:52px;text-align:center;font:400 30px/1 Elite,monospace;color:${BLUE};letter-spacing:2px">UNITED STATES GOVERNMENT</div>
+          <div style="position:absolute;left:0;right:0;top:108px;text-align:center;font:400 66px/1 Anton,Oswald,sans-serif;color:${INK}">GOVERNMENT BOND</div>
+          <div style="position:absolute;left:0;right:0;top:200px;text-align:center;font:400 56px/1 Anton,Oswald,sans-serif;color:${BLUE}">10 YEARS</div>
+          <div style="position:absolute;left:0;right:0;top:290px;text-align:center;font:400 28px/1 Elite,monospace;color:#4d4a43">PAYS INTEREST EVERY YEAR</div>`;
+        const d = div("card", h); d.style.border = `6px solid ${BLUE}`;
+        return put(Ly, d, { w: 700, h: 370, fx: "pop", ...o });
+      };
+      const docSVG = (g, cx, cy, s, label, col = GREEN) => {
+        el("rect", { x: cx - 70 * s, y: cy - 48 * s, width: 140 * s, height: 96 * s, fill: CARD, stroke: col, "stroke-width": 6 * s }, g);
+        st(label, { x: cx, y: cy + 12 * s, "text-anchor": "middle", ...ANT, "font-size": Math.max(28, 30 * s), fill: col }, g);
+      };
+      const shopSVG = (g, cx, cy, s) => {
+        el("rect", { x: cx - 70 * s, y: cy - 30 * s, width: 140 * s, height: 90 * s, fill: CARD, stroke: INK, "stroke-width": 5 * s }, g);
+        for (let k = 0; k < 5; k++) el("rect", { x: cx - 80 * s + k * 32 * s, y: cy - 62 * s, width: 32 * s, height: 32 * s, fill: k % 2 ? CARD : RED, stroke: INK, "stroke-width": 2 * s }, g);
+        el("rect", { x: cx - 20 * s, y: cy + 10 * s, width: 40 * s, height: 50 * s, fill: INK }, g);
+      };
+      const dollarSVG = (g, cx, cy, s) => {
+        el("rect", { x: cx - 150 * s, y: cy - 70 * s, width: 300 * s, height: 140 * s, rx: 8 * s, fill: "#9cc28a", stroke: "#3f5e33", "stroke-width": 6 * s }, g);
+        el("ellipse", { cx, cy, rx: 46 * s, ry: 52 * s, fill: "#cfe3c3", stroke: "#3f5e33", "stroke-width": 4 * s }, g);
+        st("$", { x: cx, y: cy + 28 * s, "text-anchor": "middle", ...ANT, "font-size": 80 * s, fill: "#26401d" }, g);
+      };
+      const elephantSVG = (g, x, y, s, fill = "#5d5a52") => {
+        el("ellipse", { cx: x, cy: y, rx: 30 * s, ry: 20 * s, fill }, g);
+        el("circle", { cx: x + 30 * s, cy: y - 8 * s, r: 14 * s, fill }, g);
+        el("path", { d: `M ${x + 40 * s} ${y - 4 * s} q ${8 * s} ${18 * s} ${2 * s} ${30 * s}`, fill: "none", stroke: fill, "stroke-width": 6 * s, "stroke-linecap": "round" }, g);
+        for (const dx of [-20, -8, 8, 20]) el("rect", { x: x + (dx - 4) * s, y: y + 10 * s, width: 8 * s, height: 22 * s, fill }, g);
+        el("ellipse", { cx: x + 22 * s, cy: y - 10 * s, rx: 8 * s, ry: 12 * s, fill: "#7a766b" }, g);
+      };
+      const strike = (Ly, o, at) => {   // a red line drawn through words
+        const sl = div("", ""); sl.style.cssText = `background:${RED};border-radius:6px;transform-origin:0 50%`;
+        const it = put(Ly, sl, { ...o, h: 12, fx: "none" });
+        on((t) => { it.node.style.transform = `scaleX(${E.io2((t - at) / 0.4)}) rotate(${o.rot || -2}deg)`; });
+        return it;
+      };
+      const scaleAt = (g, cx, cy, k) => g.setAttribute("transform", `translate(${cx},${cy}) scale(${k}) translate(${-cx},${-cy})`);
+      // IBJA 999 (24K) price per gram, 20 Jul - 20 Nov 2026, from act.js; dEnd stretches the axis past today
+      const ibja = (svg, X0, X1, Y0, Y1, vmin, vmax, dEnd = "2026-11-24", priceTag = false) => {
+        const d0 = DAY(N.series[0][0]), d1 = DAY(dEnd);
+        const xOf = (d) => L(X0, X1, ((typeof d === "number" ? d : DAY(d)) - d0) / (d1 - d0)), yOf = (v) => L(Y0, Y1, (v - vmin) / (vmax - vmin));
+        const pts = N.series.map(([d, v]) => [xOf(d), yOf(v)]);
+        el("line", { x1: X0, x2: X1, y1: Y0, y2: Y0, stroke: "rgba(23,24,27,0.45)", "stroke-width": 3 }, svg);
+        for (const [lab, d] of [["AUG", "2026-08-01"], ["SEP", "2026-09-01"], ["OCT", "2026-10-01"], ["NOV", "2026-11-01"], ["DEC", "2026-12-01"]])
+          if (DAY(d) < d1) st(lab, { x: xOf(d), y: Y0 + 46, ...TYP, "font-size": 30, fill: "#4d4a43", "text-anchor": "middle" }, svg);
+        st("24K · ₹ per gram", { x: X0, y: Y1 - 40, ...TYP, "font-size": 30, fill: "#4d4a43" }, svg);
+        const p = el("path", { d: "", fill: "none", stroke: GOLD, "stroke-width": 10, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+        const dot = el("circle", { r: 14, fill: GOLD2, stroke: GOLDT, "stroke-width": 3 }, svg);
+        const lab = st("", { ...ANT, "font-size": 46, fill: GOLDT }, svg);
+        const drawK = (k) => {
+          k = Math.max(1, Math.min(pts.length - 1, k)); const sub = pts.slice(0, k + 1), q = sub[k];
+          p.setAttribute("d", goldPath(sub)); dot.setAttribute("cx", q[0]); dot.setAttribute("cy", q[1]);
+          if (priceTag) { lab.setAttribute("x", q[0] + 22); lab.setAttribute("y", q[1] - 22); lab.textContent = g1(N.series[k][1]); }
+          return k;
+        };
+        return { xOf, yOf, draw: (u) => drawK(Math.round(C(u) * (pts.length - 1))), drawDay: (dn) => drawK(N.series.filter(([x]) => DAY(x) <= dn).length - 1) };
+      };
+
+      // ====================== 1 · ₹3,800 A GRAM ======================
+      { // the hook, over the molten gold: Rs 3,800 a gram cheaper since August
+        const Ly = layer(T("s1_cheap"), T("s1_up"));
+        tag(Ly, "24 CARAT · SINCE AUGUST", { x: 1060, y: 250, rot: -2, at: T("s1_cheap", 0.4) });
+        stampE(Ly, `−${g1(AUG - NOW)} / g`, { x: 1080, y: 420, rot: -6, at: Tf("s1_cheap", 0.55) });
+      }
+      { // how big the fall is: August, then today
+        const Ly = layer(T("s1_aug"), T("s1_less")); bgL(Ly, "newsprint.jpg", 0.55);
+        const lg = ledger(Ly, { x: 1080, y: 210, w: 760, h: 260, at: T("s1_aug", 0.3) }, "GOLD · 24 CARAT · ONE GRAM");
+        lg.row("AUG 2026", g1(AUG), Tf("s1_aug", 0.55));
+        const rv = lg.row("TODAY", "", T("s1_today", 0.05), { color: RED });
+        on((t) => { rv.val.textContent = g1(L(AUG, NOW, E.io2((t - T("s1_today", 0.05)) / 1.4))); });
+      }
+      { // the loss per gram, per 10 g, and the 22 carat row
+        const Ly = layer(T("s1_less"), T("s2_fact")); bgL(Ly, "newsprint.jpg", 0.55);
+        const lg = ledger(Ly, { x: 130, y: 140, w: 980, h: 340, fx: "fade" }, "24 CARAT (IBJA 999) · ONE GRAM");
+        lg.row("24 AUG 2026", g1(AUG), T("s1_less") - 0.25);
+        lg.row("20 NOV 2026", g1(NOW), T("s1_less") - 0.25, { color: GOLDT });
+        const r3 = lg.row("ON 10 GRAMS", "", Tf("s1_less", 0.5), { color: RED });
+        stampE(Ly, `−${g1(AUG - NOW)} / g`, { x: 1190, y: 200, rot: -6, at: T("s1_less", 0.5) });
+        on((t) => { r3.val.textContent = "−" + g1(10 * (AUG - NOW) * E.io2((t - Tf("s1_less", 0.5)) / 1.2)); });
+        const lg2 = ledger(Ly, { x: 130, y: 600, w: 980, h: 170, at: T("s1_22k", 0.1) }, "22 CARAT (IBJA 916) · MOST JEWELLERY");
+        lg2.row("AUG → NOW", `${g1(AUG22)} → ${g1(NOW22)}`, Tf("s1_22k", 0.3), { size: 50 });
+        tag(Ly, "24K = 999 · 22K = 916", { x: 1220, y: 470, rot: -2, at: Tf("s1_22k", 0.2) });
+        stampE(Ly, `−${g1(AUG22 - NOW22)} / g`, { x: 1220, y: 690, rot: 5, at: Tf("s1_22k", 0.72) });
+      }
+      { // gold should be going up
+        const Ly = layer(T("s1_up"), T("s1_why"));
+        print(Ly, "bars.jpg", { x: 110, y: 210, w: 800, h: 630, rot: -2.5 });
+        const s = svgL(Ly), ga = popG(s, 990, 520, Tf("s1_up", 0.55)); arrowSVG(ga, 990, 720, 990, 330, GOLD, 22);
+        mk(Ly, "should go UP", { x: 1090, y: 150, size: 96, rot: -3, color: GREEN, at: Tf("s1_up", 0.6) });
+        tag(Ly, "WORRIED → BUY GOLD", { x: 1100, y: 380, rot: -2, at: Tf("s1_worry", 0.1) });
+        tag(Ly, "AMERICA: PRICES STILL RISING", { x: 1060, y: 560, rot: 1.5, at: Tf("s1_worry", 0.5) });
+        tag(Ly, "CENTRAL BANKS: BUYING", { x: 1100, y: 740, rot: -1, at: T("s1_usa", 0.15) });
+      }
+      { // ...but it's falling
+        const Ly = layer(T("s1_why"), T("s1_aug")); bgL(Ly, "newsprint.jpg", 0.55);
+        const s = svgL(Ly), ch = ibja(s, 160, 1140, 900, 320, 11500, 16800);
+        stampE(Ly, "BUT IT'S FALLING", { x: 1080, y: 160, rot: -6, at: T("s1_why", 0.0) });
+        mk(Ly, "why?", { x: 1280, y: 360, size: 110, rot: -3, color: INK, at: Tf("s1_why", 0.2) });
+        mk(Ly, "who's selling?", { x: 1280, y: 510, size: 80, rot: -2, color: INK, at: Tf("s1_why", 0.5) });
+        mk(Ly, "why now?", { x: 1280, y: 640, size: 80, rot: -3, color: INK, at: Tf("s1_why", 0.8) });
+        tag(Ly, "THE ANSWER: ONE IDEA", { x: 1240, y: 830, rot: -1.5, at: Tf("s1_end", 0.55) });
+        on((t) => ch.draw(E.io2((t - T("s1_why", 0.1)) / 2.6)));
+      }
+
+      // ====================== 2 · GOLD PAYS YOU NOTHING ======================
+      { const Ly = layer(T("s2_fact"), T("s2_why")); bgL(Ly, "stained.jpg", 0.45);
+        mk(Ly, "one simple fact", { x: 160, y: 110, size: 80, rot: -2, color: INK, at: T("s2_fact", 0.2) });
+        const lg = ledger(Ly, { x: 560, y: 250, w: 1200, h: 420, at: T("s2_fd", 0) }, "₹100 · KEPT FOR ONE YEAR · PAYS YOU");
+        lg.row("IN A BANK FD", "INTEREST", Tf("s2_fd", 0.35), { color: GREEN });
+        lg.row("A SHOP", "RENT", T("s2_shop", 0.1), { color: GREEN });
+        lg.row("A COMPANY'S SHARE", "DIVIDEND", Tf("s2_shop", 0.55), { color: GREEN });
+        const rg = lg.row("GOLD", "", T("s2_gold", 0.1), { color: RED, size: 66 });
+        const s = svgL(Ly), cy = (k) => 250 + 80 + k * 84 + 42;
+        bankSVG(popG(s, 440, cy(0), Tf("s2_fd", 0.3)), 440, cy(0) + 12, 0.3);
+        shopSVG(popG(s, 440, cy(1), T("s2_shop", 0.05)), 440, cy(1) + 4, 0.42);
+        docSVG(popG(s, 440, cy(2), Tf("s2_shop", 0.5)), 440, cy(2), 0.62, "SHARE");
+        barSVG(popG(s, 440, cy(3), T("s2_gold", 0.05)), 440, cy(3) + 4, 130);
+        stampE(Ly, "₹0", { x: 1500, y: 720, rot: -8, at: T("s2_zero", 0.05) });
+        mk(Ly, "gold pays you nothing", { x: 300, y: 800, size: 84, rot: -2, at: Tf("s2_zero", 0.3) });
+        on((t) => { rg.val.textContent = t < Tf("s2_gold", 0.7) ? "…" : "NOTHING EXTRA"; });
+      }
+      { const Ly = layer(T("s2_why"), T("s3_fd")); bgL(Ly, "stained.jpg", 0.45);
+        print(Ly, "bars.jpg", { x: 560, y: 140, w: 760, h: 570, rot: 2 });
+        const s = svgL(Ly), gn = popG(s, 960, 820, Tf("s2_why", 0.6)), yy = (x, o) => 780 + o + 90 * (1 - Math.pow((x - 960) / 520, 2));
+        for (let k = 0; k < 3; k++) el("path", { d: `M 440 ${780 + k * 40} Q 960 ${960 + k * 40} 1480 ${780 + k * 40}`, fill: "none", stroke: INK, "stroke-width": 4 }, gn);
+        for (let k = 0; k <= 13; k++) { const x = 440 + k * 80; el("line", { x1: x, y1: yy(x, 0), x2: x, y2: yy(x, 80), stroke: INK, "stroke-width": 3 }, gn); }
+        mk(Ly, "a safety net", { x: 1380, y: 260, size: 90, rot: -4, color: GREEN, at: Tf("s2_why", 0.7) });
+        stampE(Ly, "NOT FREE", { x: 1380, y: 480, rot: -7, at: Tf("s2_cost", 0.15) });
+        mk(Ly, "costly to hold", { x: 1380, y: 680, size: 76, rot: -3, at: Tf("s2_cost", 0.5) });
+      }
+
+      // ====================== 3 · AMERICA'S FD PAYS MORE NOW ======================
+      { const Ly = layer(T("s3_fd"), T("s3_five")); bgL(Ly, "newsprint.jpg", 0.55);
+        const s = svgL(Ly), g = popG(s, 420, 500, T("s3_fd", 0.1)); bankSVG(g, 420, 540, 1.3);
+        mk(Ly, "India: an FD", { x: 230, y: 720, size: 76, rot: -3, color: INK, at: T("s3_fd", 0.2) });
+        usBond(Ly, { x: 1000, y: 260, rot: 2, at: Tf("s3_fd", 0.35) });
+        mk(Ly, "America: a government bond", { x: 900, y: 720, size: 60, rot: -2, at: Tf("s3_fd", 0.6) });
+      }
+      { // the balance: gold pays ₹0, the bond pays ₹5 per ₹100
+        const Ly = layer(T("s3_five"), T("s3_ago")); bgL(Ly, "newsprint.jpg", 0.55);
+        const s = svgL(Ly), PX = 700, PY = 380, ARM = 400;
+        el("rect", { x: PX - 10, y: PY, width: 20, height: 500, fill: INK }, s);
+        el("path", { d: `M ${PX - 140} 900 L ${PX + 140} 900 L ${PX} 850 Z`, fill: INK }, s);
+        const beam = el("line", { stroke: "#6b5a3a", "stroke-width": 18, "stroke-linecap": "round" }, s);
+        const pans = [0, 1].map(() => { const g = el("g", {}, s);
+          el("line", { x1: 0, y1: 0, x2: -110, y2: 200, stroke: INK, "stroke-width": 3 }, g); el("line", { x1: 0, y1: 0, x2: 110, y2: 200, stroke: INK, "stroke-width": 3 }, g);
+          el("path", { d: "M -140 200 Q 0 260 140 200 Z", fill: "#6b5a3a" }, g); return g; });
+        barSVG(pans[0], 0, 172, 170); st("₹0 A YEAR", { x: 0, y: 320, "text-anchor": "middle", ...ANT, "font-size": 54, fill: RED }, pans[0]);
+        docSVG(pans[1], 0, 150, 1.1, "US BOND", BLUE); st("≈ ₹5 A YEAR", { x: 0, y: 320, "text-anchor": "middle", ...ANT, "font-size": 54, fill: GREEN }, pans[1]);
+        const lg = ledger(Ly, { x: 1240, y: 270, w: 620, h: 340, at: Tf("s3_five", 0.5) }, "PER ₹100 LENT · A YEAR");
+        lg.row("US BOND PAYS", "≈ ₹5", Tf("s3_five", 0.6), { color: GREEN });
+        lg.row("AFTER US PRICE RISE", "≈ ₹3", T("s3_three", 0.3), { color: GREEN });
+        lg.row("GOLD PAYS", "₹0", T("s3_miss", 0.3), { color: RED });
+        stampE(Ly, "YOU MISS ₹3 A YEAR", { x: 1180, y: 720, rot: -5, at: Tf("s3_miss", 0.6) });
+        on((t) => {
+          const th = 7 * E.io2((t - Tf("s3_five", 0.55)) / 1.0) * Math.PI / 180;
+          const lx = PX - ARM * Math.cos(th), ly = PY - ARM * Math.sin(th), rx = PX + ARM * Math.cos(th), ry = PY + ARM * Math.sin(th);
+          beam.setAttribute("x1", lx); beam.setAttribute("y1", ly); beam.setAttribute("x2", rx); beam.setAttribute("y2", ry);
+          pans[0].setAttribute("transform", `translate(${lx},${ly})`); pans[1].setAttribute("transform", `translate(${rx},${ry})`);
+          pans[0].setAttribute("opacity", F(t, T("s3_five", 0.1), 1e9, 0.3)); pans[1].setAttribute("opacity", F(t, Tf("s3_five", 0.3), 1e9, 0.3));
+        });
+      }
+      { const Ly = layer(T("s3_ago"), T("s3_why")); bgL(Ly, "stained.jpg", 0.45);
+        const lg = ledger(Ly, { x: 200, y: 200, w: 1000, h: 260, fx: "fade" }, "US BOND AFTER PRICE RISE · PER ₹100");
+        lg.row("A FEW YEARS AGO", "≈ ₹0", Tf("s3_ago", 0.2), { color: GREY });
+        lg.row("TODAY", "≈ ₹3", T("s3_today", 0.1), { color: GREEN });
+        mk(Ly, "keeping gold: cheap", { x: 230, y: 580, size: 80, rot: -2, color: INK, at: Tf("s3_ago", 0.6), until: T("s3_today", 0.2) });
+        mk(Ly, "keeping gold: costly", { x: 230, y: 580, size: 80, rot: -2, at: Tf("s3_today", 0.25) });
+        const s = svgL(Ly), gb = el("g", {}, s); barSVG(gb, 0, 0, 220);
+        mk(Ly, "some stop keeping it", { x: 1240, y: 820, size: 64, rot: -3, at: Tf("s3_today", 0.75) });
+        on((t) => { const u = E.io2((t - Tf("s3_today", 0.7)) / 1.2); gb.setAttribute("transform", `translate(${L(1500, 2100, u)},${L(560, 520, u)}) rotate(${u * 20})`); });
+      }
+      { // America's RBI
+        const Ly = layer(T("s3_why"), T("s4_cut")); bgL(Ly, "newsprint.jpg", 0.55);
+        mk(Ly, "why is America paying so much?", { x: 160, y: 120, size: 64, rot: -2, color: INK, at: T("s3_why", 0.1), until: T("s4_rbi") });
+        print(Ly, "fed.jpg", { x: 1000, y: 250, w: 800, h: 620, rot: 2.5, fx: "slideR", at: Tf("s3_why", 0.55), cap: "THE FEDERAL RESERVE · WASHINGTON" });
+        print(Ly, "rbi.jpg", { x: 110, y: 280, w: 760, h: 590, rot: -2.5, at: T("s4_rbi", 0.1), cap: "RESERVE BANK OF INDIA · MUMBAI" });
+        mk(Ly, "=", { x: 885, y: 440, size: 200, rot: 0, at: Tf("s4_rbi", 0.6) });
+        tag(Ly, "AMERICA'S RBI", { x: 1200, y: 130, rot: -2, at: Tf("s4_rbi", 0.75) });
+      }
+
+      // ====================== 4 · AMERICA'S RBI CHANGED ITS MIND ======================
+      { const Ly = layer(T("s4_cut"), T("s4_sep")); bgL(Ly, "stained.jpg", 0.45);
+        tag(Ly, "START OF 2026: A CUT EXPECTED", { x: 160, y: 130, rot: -2, at: T("s4_cut", 0.2) });
+        const s = svgL(Ly);
+        const a = popG(s, 360, 560, Tf("s4_cut", 0.25)); arrowSVG(a, 360, 400, 360, 680, GREEN, 24);
+        st("RATES", { x: 360, y: 780, "text-anchor": "middle", ...ANT, "font-size": 60, fill: INK }, a);
+        const b = popG(s, 900, 560, Tf("s4_cut", 0.4)); docSVG(b, 900, 540, 1.5, "US BOND", BLUE);
+        st("PAYS LESS", { x: 900, y: 780, "text-anchor": "middle", ...ANT, "font-size": 60, fill: INK }, b);
+        const c = popG(s, 1460, 560, Tf("s4_cut", 0.55)); barSVG(c, 1400, 600, 240); arrowSVG(c, 1600, 680, 1600, 400, GOLD, 22);
+        st("GOLD LOOKS BETTER", { x: 1460, y: 780, "text-anchor": "middle", ...ANT, "font-size": 60, fill: GOLDT }, c);
+        for (const [x1, at] of [[520, 0.32], [1080, 0.48]]) arrowSVG(popG(s, x1 + 70, 560, Tf("s4_cut", at)), x1, 560, x1 + 140, 560, INK, 8);
+        stampE(Ly, "RECORD", { x: 1380, y: 170, rot: -5, at: Tf("s4_cut", 0.86) });
+      }
+      { // the year on the gold line, with the Fed's decisions pinned to it
+        const Ly = layer(T("s4_sep"), T("s5_dollar")); bgL(Ly, "newsprint.jpg", 0.55);
+        const s = svgL(Ly), ch = ibja(s, 150, 1700, 920, 360, 11500, 16800, "2026-12-14", true);
+        const pin = (d, y, at, color = RED) => { const x = ch.xOf(d), g = popG(s, x, y, at); el("line", { x1: x, x2: x, y1: y + 20, y2: 920, stroke: color, "stroke-width": 4, "stroke-dasharray": "10 10" }, g); return x; };
+        const xS = pin("2026-09-16", 240, Tf("s4_sep", 0.7)), xO = pin("2026-10-28", 300, Tf("s4_oct", 0.3)), xN = pin("2026-11-18", 210, Tf("s4_min", 0.4));
+        stampE(Ly, "SEP: RATES UP", { x: xS - 330, y: 160, rot: -4, at: Tf("s4_sep", 0.72) });
+        mk(Ly, "Oct: 2 wanted more", { x: xO - 360, y: 270, size: 52, rot: -2, color: INK, at: Tf("s4_oct", 0.35) });
+        mk(Ly, "18 Nov: more rises likely", { x: xN - 300, y: 120, size: 52, rot: -2, color: INK, at: Tf("s4_min", 0.45) });
+        mk(Ly, "the opposite", { x: 200, y: 980, size: 60, rot: -2, at: Tf("s4_opp", 0.4) });
+        const xD = ch.xOf("2026-12-09"), gc = popG(s, xD, 560, Tf("s4_dec", 0.2), "slam"); calendarSVG(gc, xD, 560, 0.9, "9 DEC");
+        el("ellipse", { cx: xD, cy: 570, rx: 120, ry: 110, fill: "none", stroke: RED, "stroke-width": 6 }, gc);
+        mk(Ly, "next decision", { x: xD - 190, y: 700, size: 50, rot: -3, at: Tf("s4_dec", 0.35) });
+        const keys = [[T("s4_sep", 0), DAY("2026-07-20")], [Tf("s4_sep", 0.7), DAY("2026-09-16")], [Tf("s4_oct", 0.3), DAY("2026-10-28")], [Tf("s4_min", 0.4), DAY("2026-11-18")], [T("s4_opp", 0.2), DAY("2026-11-20")]];
+        on((t) => { let dn = keys[0][1]; for (let k = 1; k < keys.length; k++) if (t > keys[k - 1][0]) dn = L(keys[k - 1][1], keys[k][1], E.io2((t - keys[k - 1][0]) / (keys[k][0] - keys[k - 1][0]))); ch.drawDay(dn); });
+      }
+
+      // ====================== 5 · THE DOLLAR, AND OUR RUPEE ======================
+      { const Ly = layer(T("s5_dollar"), T("s5_rupee")); bgL(Ly, "stained.jpg", 0.45);
+        mk(Ly, "push no. 2: the dollar", { x: 160, y: 110, size: 72, rot: -2, color: INK, at: T("s5_dollar", 0.1) });
+        const s = svgL(Ly), gd = el("g", {}, s); dollarSVG(gd, 620, 540, 1.3);
+        const coins = []; for (let k = 0; k < 10; k++) { const c = el("g", {}, s); coinSVG(c, 0, 0, 22, ""); coins.push(c); }
+        const gb = el("g", {}, s); barSVG(gb, 1450, 560, 300);
+        stampE(Ly, "COSTLIER", { x: 1280, y: 300, rot: -6, at: Tf("s5_cost", 0.3) });
+        mk(Ly, "buy less", { x: 1300, y: 720, size: 72, rot: -3, at: Tf("s5_cost", 0.6) });
+        tag(Ly, "DOLLAR: STRONGEST SINCE MAY 2025", { x: 300, y: 860, rot: -2, at: T("s5_may", 0.3) });
+        on((t) => {
+          const u = E.io2((t - Tf("s5_usd", 0.45)) / 1.6); scaleAt(gd, 620, 540, L(0.75, 1.35, u)); op(gd, F(t, T("s5_dollar", 0.3), 1e9, 0.3));
+          coins.forEach((c, k) => { const a = (k / 10) * Math.PI * 2, v = C(((t - Tf("s5_usd", 0.4) - k * 0.15) % 1.5) / 1.5), on2 = t > Tf("s5_usd", 0.4) + k * 0.15 && t < T("s5_cost");
+            c.setAttribute("transform", `translate(${620 + Math.cos(a) * 520 * (1 - v)},${540 + Math.sin(a) * 380 * (1 - v)})`); c.setAttribute("opacity", on2 ? 1 - v * 0.6 : 0); });
+          scaleAt(gb, 1450, 560, L(1, 0.6, E.io2((t - Tf("s5_cost", 0.2)) / 1.0)));
+        });
+      }
+      { const Ly = layer(T("s5_rupee"), T("s5_nov")); bgL(Ly, "newsprint.jpg", 0.55);
+        print(Ly, "plane_dusk.jpg", { x: 110, y: 170, w: 860, h: 496, rot: -2 });
+        mk(Ly, "priced in $", { x: 160, y: 740, size: 72, rot: -3, color: INK, at: T("s5_rupee", 0.1) });
+        mk(Ly, "we pay in ₹", { x: 520, y: 860, size: 72, rot: -3, at: Tf("s5_rupee", 0.5) });
+        const lg = ledger(Ly, { x: 1080, y: 220, w: 760, h: 420, at: T("s5_price", 0.0) }, "OUR PRICE, ROUGHLY");
+        lg.row("WORLD PRICE", "$", Tf("s5_price", 0.15));
+        lg.row("CHANGED INTO RUPEES", "→ ₹", Tf("s5_price", 0.35));
+        lg.row("+ TAX ON GOLD COMING IN", "+ TAX", Tf("s5_price", 0.62), { ls: 30 });
+        lg.row("= OUR PRICE", "₹ / GRAM", Tf("s5_price", 0.85), { color: GOLDT });
+      }
+      { const Ly = layer(T("s5_nov"), T("s5_15")); bgL(Ly, "stained.jpg", 0.45);
+        const s = svgL(Ly);
+        const a = popG(s, 500, 540, Tf("s5_nov", 0.08)); coinSVG(a, 480, 560, 120, "₹"); arrowSVG(a, 660, 650, 660, 420, GREEN, 20);
+        mk(Ly, "rupee stronger", { x: 300, y: 760, size: 64, rot: -3, color: GREEN, at: Tf("s5_nov", 0.12) });
+        const b = popG(s, 1250, 540, Tf("s5_nov", 0.35)); barSVG(b, 1180, 580, 260); arrowSVG(b, 1390, 430, 1390, 670, RED, 20);
+        mk(Ly, "gold falls faster here", { x: 1000, y: 760, size: 64, rot: -3, at: Tf("s5_nov", 0.38) });
+        hd(Ly, `−${Math.abs(N.india_nov)}%`, { x: 1060, y: 150, size: 180, color: RED, at: Tf("s5_nov", 0.75) });
+        px(Ly, "gold in India, 1–12 Nov 2026", { x: 1066, y: 880, at: Tf("s5_nov", 0.8), fx: "fade" });
+      }
+      { const Ly = layer(T("s5_15"), T("s6_run")); bgL(Ly, "newsprint.jpg", 0.55);
+        const lg = ledger(Ly, { x: 260, y: 220, w: 1100, h: 340, fx: "fade" }, "24 CARAT (IBJA 999) · ONE GRAM");
+        lg.row("5 NOV 2026", g1(NOV5), T("s5_15", 0.05));
+        const rv = lg.row("20 NOV 2026", "", Tf("s5_15", 0.3), { color: GOLDT });
+        const rt = lg.row("IN 15 DAYS", "", Tf("s5_15", 0.55), { color: RED });
+        stampE(Ly, `−${g1(NOV5 - NOW)} / g`, { x: 1150, y: 640, rot: -6, at: Tf("s5_15", 0.8) });
+        on((t) => { rv.val.textContent = g1(L(NOV5, NOW, E.io2((t - Tf("s5_15", 0.3)) / 1.0))); rt.val.textContent = "−" + g1((NOV5 - NOW) * E.io2((t - Tf("s5_15", 0.55)) / 0.8)); });
+      }
+
+      // ====================== 6 · SO WHO IS BUYING? (THE PEAK) ======================
+      { const Ly = layer(T("s6_run"), T("s6_guess")); bgL(Ly, "stained.jpg", 0.45);
+        const s = svgL(Ly), gb = el("g", {}, s); barSVG(gb, 190, 640, 240);
+        const fig = [];
+        for (let rr = 0; rr < 5; rr++) for (let c = 0; c < 15; c++) { const g = el("g", {}, s); person(g, 0, 0, 1.3, rr % 3 === 1 ? "#5d5a52" : "#3a3936"); fig.push({ g, x: 400 + c * 80 + (rr % 2) * 40, y: 440 + rr * 110, k: (c * 7 + rr * 13) % 17 }); }
+        mk(Ly, "everyone running away?", { x: 700, y: 150, size: 84, rot: -3, color: INK, at: Tf("s6_run", 0.3) });
+        on((t) => fig.forEach((f) => { const u = E.o3(C((t - Tf("s6_run", 0.25) - f.k * 0.05) / 1.6)); f.g.setAttribute("transform", `translate(${f.x + 900 * u},${f.y})`); f.g.setAttribute("opacity", 1 - u); }));
+      }
+      { const Ly = layer(T("s6_guess"), T("s6_more")); bgL(Ly, "newsprint.jpg", 0.55);
+        print(Ly, "rbi.jpg", { x: 120, y: 200, w: 760, h: 590, rot: -2.5, cap: "THE RBI · ONE OF THE WORLD'S CENTRAL BANKS" });
+        mk(Ly, "take a guess", { x: 1060, y: 160, size: 84, rot: -3, at: Tf("s6_guess", 0.12) });
+        hd(Ly, "JUL–SEP 2026", { x: 1060, y: 320, size: 80, at: Tf("s6_guess", 0.4) });
+        px(Ly, "central banks bought gold…", { x: 1066, y: 430, at: Tf("s6_guess", 0.45), fx: "fade" });
+        tag(Ly, "MORE?", { x: 1080, y: 560, rot: -3, size: 64, at: Tf("s6_guess", 0.72) });
+        tag(Ly, "LESS?", { x: 1460, y: 610, rot: 3, size: 64, at: Tf("s6_guess", 0.8) });
+      }
+      { const Ly = layer(T("s6_more"), T("s6_two")); bgL(Ly, "newsprint.jpg", 0.55);
+        stampE(Ly, "MORE", { x: 160, y: 130, rot: -6, at: T("s6_more", 0.05) });
+        hd(Ly, `${N.cb_t} TONNES`, { x: 160, y: 300, size: 150, color: GOLDT, at: Tf("s6_more", 0.12) });
+        px(Ly, "central banks · in three months", { x: 166, y: 480, at: Tf("s6_more", 0.15), fx: "fade" });
+        const s = svgL(Ly);
+        for (let k = 0; k < N.elephants && k < 64; k++) { const c = k % 12, rr = Math.floor(k / 12), x = 1010 + c * 72, y = 220 + rr * 96;
+          elephantSVG(popG(s, x, y, Tf("s6_more", 0.38) + k * 0.03), x, y, 0.95); }
+        mk(Ly, "≈ 60 elephants", { x: 1120, y: 740, size: 72, rot: -3, color: INK, at: Tf("s6_more", 0.55) });
+        stampE(Ly, `+${N.cb_pct}%`, { x: 220, y: 640, rot: -5, at: Tf("s6_more", 0.8) });
+        px(Ly, "vs a year before", { x: 230, y: 800, at: Tf("s6_more", 0.82), fx: "fade" });
+      }
+      { // two kinds of gold owners
+        const Ly = layer(T("s6_two"), T("s6_answer")); bgL(Ly, "stained.jpg", 0.45);
+        mk(Ly, "two kinds of gold owners", { x: 480, y: 90, size: 72, rot: -2, color: INK, at: T("s6_two", 0.3) });
+        put(Ly, div("card", ""), { x: 110, y: 240, w: 820, h: 720, rot: -1.2, fx: "slideL", at: T("s6_fast", 0) });
+        put(Ly, div("card", ""), { x: 990, y: 240, w: 820, h: 720, rot: 1.2, fx: "slideR", at: T("s6_slow", 0) });
+        hd(Ly, "FAST MONEY", { x: 170, y: 280, size: 90, color: RED, at: T("s6_fast", 0.1) });
+        px(Ly, "traders · big funds", { x: 176, y: 400, at: Tf("s6_fast", 0.15), fx: "fade" });
+        px(Ly, "move money every day", { x: 176, y: 450, at: Tf("s6_fast", 0.22), fx: "fade" });
+        tag(Ly, "MANY BORROW TO BUY", { x: 170, y: 520, rot: -2, at: Tf("s6_fast", 0.4) });
+        const s = svgL(Ly), stair = el("path", { d: "", fill: "none", stroke: RED, "stroke-width": 10, "stroke-linejoin": "round" }, s);
+        const SP = []; for (let k = 0; k <= 6; k++) { SP.push([200 + k * 100, 660 + k * 40]); SP.push([200 + (k + 1) * 100, 660 + k * 40]); }
+        mk(Ly, "sell, fast", { x: 560, y: 600, size: 56, rot: -3, at: Tf("s6_fast", 0.86) });
+        mk(Ly, "forced to sell more", { x: 180, y: 880, size: 52, rot: -2, at: Tf("s6_forced", 0.45) });
+        hd(Ly, "SLOW MONEY", { x: 1050, y: 280, size: 90, color: GREEN, at: T("s6_slow", 0.1) });
+        px(Ly, "central banks, like our RBI", { x: 1056, y: 400, at: Tf("s6_slow", 0.15), fx: "fade" });
+        px(Ly, "save gold for the long run", { x: 1056, y: 450, at: Tf("s6_slow", 0.25), fx: "fade" });
+        const gl = popG(s, 1400, 700, Tf("s6_slow", 0.3)); lockerSVG(gl, 1200, 560, 3.2); barSVG(gl, 1580, 760, 150); barSVG(gl, 1640, 700, 150);
+        stampE(Ly, "DECIDING THE PRICE", { x: 160, y: 650, rot: -7, at: Tf("s6_now", 0.3) });
+        on((t) => { const u = C((t - Tf("s6_fast", 0.85)) / 0.8) * 0.4 + C((t - Tf("s6_forced", 0.2)) / 2.0) * 0.6, n = Math.max(1, Math.round(u * (SP.length - 1)));
+          stair.setAttribute("d", u > 0 ? goldPath(SP.slice(0, n + 1)) : ""); });
+      }
+      { // the answer
+        const Ly = layer(T("s6_answer"), T("s7_home")); bgL(Ly, "newsprint.jpg", 0.55);
+        mk(Ly, "the world got safer", { x: 300, y: 170, size: 84, rot: -2, color: INK, at: Tf("s6_answer", 0.45) });
+        strike(Ly, { x: 290, y: 225, w: 820, rot: -2 }, Tf("s6_answer", 0.85));
+        const s = svgL(Ly), gb = popG(s, 520, 620, T("s6_paying", 0.1)); bankSVG(gb, 520, 640, 1.4);
+        const cs = []; for (let k = 0; k < 5; k++) { const c = el("g", {}, s); coinSVG(c, 0, 0, 30, "₹"); cs.push(c); }
+        sv(Ly, "Money in the bank<br>started paying again.", { x: 860, y: 430, size: 92, w: 980, wrap: true, at: T("s6_paying", 0.2) });
+        mk(Ly, "fast money noticed first", { x: 860, y: 820, size: 64, rot: -2, at: T("s6_first", 0.1) });
+        on((t) => cs.forEach((c, k) => { const u = C(((t - T("s6_paying", 0.6) - k * 0.35) % 1.75) / 1.2), on2 = t > T("s6_paying", 0.6) + k * 0.35;
+          c.setAttribute("transform", `translate(${440 + k * 40},${L(780, 900, E.io2(u))})`); c.setAttribute("opacity", on2 && u < 1 ? 1 : 0); }));
+      }
+
+      // ====================== 7 · INDIAN FAMILIES AND GOLD ======================
+      { const Ly = layer(T("s7_home"), T("s7_light")); bgL(Ly, "stained.jpg", 0.45);
+        mk(Ly, "back home", { x: 160, y: 120, size: 96, rot: -3, color: INK, at: T("s7_home", 0.1) });
+        const s = svgL(Ly), bars = [];
+        for (const [row, n] of [[0, 4], [1, 3], [2, 2], [3, 1]]) for (let k = 0; k < n; k++) { const g = el("g", {}, s); barSVG(g, 300 + row * 85 + k * 170, 860 - row * 80, 150); bars.push(g); }
+        hd(Ly, `${N.india_pct}%`, { x: 1100, y: 280, size: 220, color: RED, at: Tf("s7_less", 0.75) });
+        px(Ly, "India · gold in grams · Jul–Sep", { x: 1106, y: 540, at: Tf("s7_less", 0.8), fx: "fade" });
+        px(Ly, "vs a year before", { x: 1106, y: 590, at: Tf("s7_less", 0.82), fx: "fade" });
+        on((t) => bars.forEach((g, k) => g.setAttribute("opacity", k >= 7 ? 1 - C((t - Tf("s7_less", 0.8)) / 0.6) : 1)));
+      }
+      { const Ly = layer(T("s7_light"), T("s7_wait")); bgL(Ly, "stained.jpg", 0.45);
+        const s = svgL(Ly);
+        const gA = popG(s, 380, 330, T("s7_light", 0.2)); barSVG(gA, 380, 340, 280);
+        const gB = popG(s, 820, 350, Tf("s7_light", 0.6)); barSVG(gB, 820, 360, 130);
+        arrowSVG(popG(s, 600, 345, Tf("s7_light", 0.5)), 540, 345, 700, 345, INK, 8);
+        mk(Ly, "lighter, smaller pieces", { x: 1000, y: 280, size: 72, rot: -3, at: Tf("s7_light", 0.55) });
+        const lg = ledger(Ly, { x: 260, y: 560, w: 1400, h: 260, at: T("s7_fest", 0.2) }, "FESTIVE SEASON 2026 · VS A YEAR BEFORE");
+        lg.row("RUPEES SPENT ON GOLD", `+${N.fest[0]} TO ${N.fest[1]}%`, Tf("s7_fest", 0.55), { color: GREEN });
+        lg.row("GRAMS BOUGHT", "ABOUT THE SAME", Tf("s7_fest", 0.82));
+      }
+      { const Ly = layer(T("s7_wait"), T("s8_hide")); bgL(Ly, "newsprint.jpg", 0.55);
+        print(Ly, "bars.jpg", { x: 160, y: 200, w: 760, h: 570, rot: -2 });
+        const pt = tag(Ly, "", { x: 1060, y: 260, rot: -4, size: 60, at: T("s7_wait", 0.1) });
+        mk(Ly, "cheaper: yes", { x: 1080, y: 450, size: 80, rot: -3, color: GREEN, at: Tf("s7_wait", 0.3) });
+        mk(Ly, "lowest? nobody knows", { x: 1000, y: 640, size: 80, rot: -3, at: Tf("s7_wait", 0.7) });
+        on((t) => { pt.node.textContent = `24K ${g1(L(AUG, NOW, E.io2((t - T("s7_wait", 0.3)) / 1.4)))} / g`; });
+      }
+
+      // ====================== 8 · READ THE FINE PRINT ======================
+      { const Ly = layer(T("s8_hide"), T("s8_est")); bgL(Ly, "newspaper_folded.jpg", 0.4);
+        tag(Ly, "THE FINE PRINT", { x: 160, y: 120, rot: -2, at: T("s8_hide", 0.1) });
+        const s = svgL(Ly); lensSVG(popG(s, 1650, 220, T("s8_hide", 0.3)), 1620, 200, 1.1);
+        const hl = div("card", `<div style="position:absolute;left:0;right:0;top:22px;text-align:center;font:400 28px/1 Elite,monospace;letter-spacing:4px;color:#4d4a43">ILLUSTRATIVE HEADLINE</div>
+          <div style="position:absolute;left:30px;right:30px;top:76px;border-top:3px double ${INK}"></div>
+          <div style="position:absolute;left:30px;right:30px;top:110px;text-align:center;font:400 84px/1.05 Abril,serif;color:${INK}">GOLD CRASHES<br>BY A THIRD</div>`);
+        put(Ly, hl, { x: 140, y: 300, w: 820, h: 340, rot: -2, fx: "drop", at: T("s8_units", 0.05) });
+        const gc = popG(s, 550, 470, Tf("s8_units", 0.4)); el("ellipse", { cx: 550, cy: 470, rx: 430, ry: 200, fill: "none", stroke: RED, "stroke-width": 7 }, gc);
+        mk(Ly, "$ per ounce, abroad", { x: 220, y: 720, size: 64, rot: -3, at: Tf("s8_units", 0.42) });
+        mk(Ly, "≠", { x: 1000, y: 380, size: 160, rot: 0, at: Tf("s8_units", 0.6) });
+        const lg = ledger(Ly, { x: 1160, y: 330, w: 680, h: 260, at: Tf("s8_units", 0.62) }, "YOUR PRICE · 24K · ₹ PER GRAM");
+        lg.row("AUG → NOW", `−${(100 * (AUG - NOW) / AUG).toFixed(0)}%`, Tf("s8_units", 0.72), { color: RED });
+        lg.row("NOT", "A THIRD", Tf("s8_units", 0.85));
+      }
+      { const Ly = layer(T("s8_est"), T("s9_where")); bgL(Ly, "newsprint.jpg", 0.55);
+        hd(Ly, `${N.cb_t} TONNES`, { x: 160, y: 150, size: 110, color: GOLDT, fx: "fade" });
+        px(Ly, "central banks · Jul–Sep 2026", { x: 166, y: 290, fx: "fade" });
+        const s = svgL(Ly), qs = [];
+        for (let k = 0; k < 60; k++) { const c = k % 15, rr = Math.floor(k / 15); el("rect", { x: 170 + c * 60, y: 400 + rr * 60, width: 50, height: 50, fill: GOLD, stroke: GOLDT, "stroke-width": 2 }, s); }
+        mk(Ly, "not every country reports every tonne", { x: 160, y: 700, size: 56, rot: -2, color: INK, at: Tf("s8_est", 0.2) });
+        stampE(Ly, "PART ESTIMATED", { x: 1100, y: 420, rot: -6, at: Tf("s8_est", 0.6) });
+      }
+
+      // ====================== 9 · WHAT TO WATCH, AND THE CLOSE ======================
+      { const Ly = layer(T("s9_where"), T("s9_three")); bgL(Ly, "stained.jpg", 0.45);
+        mk(Ly, "nobody knows", { x: 200, y: 140, size: 96, rot: -3, color: INK, at: Tf("s9_where", 0.25) });
+        const pc = div("card", `<div style="position:absolute;left:0;right:0;top:60px;text-align:center;font:400 72px/1.15 Anton,Oswald,sans-serif;color:${INK}">“GOLD WILL HIT<br>₹ ____ BY ____”</div>`);
+        put(Ly, pc, { x: 560, y: 360, w: 800, h: 300, rot: 2, at: Tf("s9_where", 0.5) });
+        stampE(Ly, "LYING", { x: 820, y: 460, rot: -8, at: Tf("s9_where", 0.82) });
+      }
+      { const Ly = layer(T("s9_three"), T("s9_idea")); bgL(Ly, "newsprint.jpg", 0.55);
+        mk(Ly, "watch three things", { x: 160, y: 110, size: 84, rot: -2, color: INK, at: T("s9_three", 0.1) });
+        const lg = ledger(Ly, { x: 420, y: 260, w: 1360, h: 350, at: Tf("s9_three", 0.4) }, "WHAT TO WATCH");
+        lg.row("1 · AMERICA'S RBI", "9 DECEMBER", T("s9_one", 0.1), { color: RED });
+        lg.row("2 · THE DOLLAR", "WEAKER?", T("s9_two", 0.1), { color: BLUE });
+        lg.row("3 · THE SLOW MONEY", "STILL BUYING?", T("s9_slow", 0.1), { color: GREEN });
+        const s = svgL(Ly), cy = (k) => 260 + 80 + k * 84 + 42;
+        calendarSVG(popG(s, 320, cy(0), T("s9_one", 0.05)), 320, cy(0) - 4, 0.46, "9");
+        dollarSVG(popG(s, 320, cy(1), T("s9_two", 0.05)), 320, cy(1), 0.42);
+        lockerSVG(popG(s, 320, cy(2), T("s9_slow", 0.05)), 300, cy(2) - 34, 0.95);
+        mk(Ly, "rates up again: bad for gold · done: helps", { x: 420, y: 680, size: 48, rot: -1.5, at: Tf("s9_one", 0.5), until: T("s9_two") });
+        mk(Ly, "weaker dollar: room to breathe", { x: 420, y: 680, size: 48, rot: -1.5, at: Tf("s9_two", 0.4), until: T("s9_slow") });
+        mk(Ly, "quietly collecting what others drop", { x: 420, y: 680, size: 48, rot: -1.5, at: Tf("s9_slow", 0.55) });
+      }
+      { // back to the gold: it pays nothing
+        const Ly = layer(T("s9_idea"), T("s9_harder"));
+        stampE(Ly, "GOLD: ₹0 A YEAR", { x: 560, y: 400, rot: -5, at: Tf("s9_idea", 0.6) });
+        tag(Ly, "BANK: ₹0 TOO? FINE.", { x: 640, y: 700, rot: -2, at: T("s9_fine", 0.2) });
+      }
+      { // the close and the end card
+        const Ly = layer(T("s9_harder"), DUR + 1); bgL(Ly, "newsprint.jpg", 0.55);
+        const lg = ledger(Ly, { x: 140, y: 200, w: 820, h: 260, fx: "fade" }, "PER ₹100 · EVERY YEAR");
+        lg.row("US BOND", "≈ ₹5", T("s9_harder", 0.2), { color: GREEN });
+        lg.row("GOLD", "₹0", Tf("s9_harder", 0.35), { color: RED });
+        mk(Ly, "gold has to work much harder", { x: 140, y: 560, size: 64, rot: -2, at: Tf("s9_harder", 0.55) });
+        const E2 = B.s9_harder.t1;
+        sv(Ly, "Why Is Gold Falling?", { x: 1060, y: 220, size: 100, w: 760, wrap: true, at: E2 + 0.3 });
+        mk(Ly, "the bank pays again", { x: 1080, y: 520, size: 64, rot: -3, color: GREEN, at: E2 + 0.6 });
+        px(Ly, "Educational research, not investment advice. Not SEBI-registered. Voice: AI.", { x: 140, y: 940, at: E2 + 0.5, fx: "fade" });
+      }
+      on((t) => POPS.forEach((p) => {
+        const u = t - p.at, v = p.fx === "slam" ? E.o3(C(u / 0.24)) : E.back(C(u / 0.45));
+        const sc = p.fx === "slam" ? L(1.8, 1, v) : L(0.4, 1, v);
+        p.g.setAttribute("opacity", u >= 0 ? (p.fx === "slam" ? 1 : C(u / 0.2)) : 0);
+        p.g.setAttribute("transform", `translate(${p.cx},${p.cy}) scale(${sc}) translate(${-p.cx},${-p.cy})`);
+      }));
+
+      // ---------- source lines (beat from, beat to, text) ----------
+      const SRCS = [
+        ["s1_cheap", "s1_up", "IBJA gold 999 (24K), 24 Aug and 20 Nov 2026 · our arithmetic · Footage: François Nguyen, CC BY 2.0"],
+        ["s1_aug", "s1_less", "IBJA gold 999 (24K), 24 Aug and 20 Nov 2026"],
+        ["s1_less", "s2_fact", "IBJA gold 999 (24K) and 916 (22K), 24 Aug and 20 Nov 2026, before GST and making charges · our arithmetic"],
+        ["s1_up", "s1_why", "Photo: Stevebidmead, CC0"],
+        ["s1_why", "s1_aug", "IBJA gold 999 (24K), 20 Jul – 20 Nov 2026"],
+        ["s2_why", "s3_fd", "Photo: Stevebidmead, CC0"],
+        ["s3_five", "s3_ago", "FRED: US 10-year bond (DGS10) ≈ 5.1%; after US price rise (DFII10) ≈ 2.9%, 13–18 Nov 2026 · ₹100 framing: our arithmetic"],
+        ["s3_ago", "s3_why", "FRED: DFII10, US 10-year bond after price rise"],
+        ["s3_why", "s4_rbi", "Photo: Federal Reserve (public domain)"],
+        ["s4_rbi", "s4_cut", "Photos: Federal Reserve (public domain) · DesiBoy101, CC BY 4.0"],
+        ["s4_sep", "s5_dollar", "Federal Reserve: statements of 16 Sep and 28 Oct 2026, minutes released 18 Nov 2026 · IBJA gold 999 (24K)"],
+        ["s5_dollar", "s5_rupee", "FRED: broad dollar index (DTWEXBGS), 13 Nov 2026"],
+        ["s5_rupee", "s5_price", "Photo: Rajarshi Mitra, CC BY 2.0"],
+        ["s5_nov", "s5_15", "World Gold Council, India market update, 17 Nov 2026"],
+        ["s5_15", "s6_run", "IBJA gold 999 (24K), 5 and 20 Nov 2026 · our arithmetic"],
+        ["s6_guess", "s6_more", "Photo: DesiBoy101, CC BY 4.0"],
+        ["s6_more", "s6_two", "World Gold Council, Gold Demand Trends Q3 2026 · elephants: our arithmetic, about 5 tonnes each"],
+        ["s7_less", "s7_light", "World Gold Council, India Focus Q3 2026"],
+        ["s7_fest", "s7_wait", "World Gold Council, India market update, 17 Nov 2026"],
+        ["s7_wait", "s8_hide", "Photo: Stevebidmead, CC0 · IBJA gold 999 (24K)"],
+        ["s8_units", "s8_est", "Headline: our illustration · IBJA gold 999 (24K), 24 Aug and 20 Nov 2026 · our arithmetic"],
+        ["s8_est", "s9_where", "World Gold Council, Gold Demand Trends Q3 2026"],
+        ["s9_one", "s9_two", "Federal Reserve: meeting calendar, 8–9 Dec 2026"],
+        ["s9_idea", "s9_harder", "Footage: François Nguyen, CC BY 2.0"],
+      ];
+      const ILL = [["s6_run", "s6_guess"], ["s6_more", "s6_two"], ["s8_units", "s8_est"]];
+      $("illus").textContent = "ILLUSTRATIVE";
+
+      H.render = (t) => {
+        for (const Ly of LAY) {
+          const f = F(t, Ly.a - 0.2, Ly.b - 0.2, 0.25);
+          Ly.d.style.opacity = f;
+          if (f <= 0) continue;
+          Ly.d.style.transform = `scale(${1 + 0.03 * C((t - Ly.a) / Math.max(1, Ly.b - Ly.a))})`;
+          for (const it of Ly.items) applyFx(it, t);
+        }
+        for (const fn of UP) fn(t);
+        for (const c of window.CLIPS) { const e = $(c.id); e.style.opacity = F(t, c.s, c.s + c.d - 0.3, 0.3); }
+        let iA = 0;
+        for (const [a, b] of ILL) iA = Math.max(iA, F(t, T(a, 0.2), T(b) - 0.2, 0.3));
+        $("illus").style.opacity = iA;
+        let sA = 0, sT = "";
+        for (const [a, b, s] of SRCS) { const f = F(t, T(a, 0.3), b ? T(b) - 0.2 : 1e9, 0.3); if (f > 0) { sA = f; sT = s; } }
+        // language badge (AK, 20 Nov): 15 s on, 15 s off, from 0:30 until the end card
+        const lu = t - 30, ph = ((lu % 30) + 30) % 30, lOn = t >= 30 && t < T("s9_harder") - 1 ? F(ph, 0, 14.6, 0.4) : 0;
+        $("lang").style.opacity = lOn; $("lang").style.transform = `scale(${L(0.85, 1, E.back(C(ph / 0.45)))})`;
+        $("src").style.opacity = sA; $("srct").textContent = sA > 0 ? sT : "";
+      };
+      H.ready();
+    </script>
+  </body>
+</html>

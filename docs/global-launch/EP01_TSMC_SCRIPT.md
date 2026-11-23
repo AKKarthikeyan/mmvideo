@@ -3,15 +3,17 @@
 **Title:** How Does TSMC Make Money? Explained Simply  
 **Question the video answers:** How does a company that runs factories keep half of every dollar it sells?  
 **Template:** the Moat 60 template of "What Is a Moat in Business?" (Vox engine, illustrated scenes, castle through-line, one made-up example, 3-question moat test, recap)  
-**Voice:** MiniMax synthetic voice (English_Diligent_Man)  
+**Voice:** MiniMax synthetic voice (English_CaptivatingStoryteller, US accent; AK 4 Nov 2026)  
 **Length:** about 3.9 min (estimated; real timing comes from the voice)  
 **Status:** draft. Nothing is voiced or rendered for publishing yet.
 
+**Updated 6 Nov 2026 with the source check (EP01_TSMC_VERIFY.md); $51 is the net profit margin (51.1%), gross margin is 66.4%.**
+
 **Before you approve, please check:**
 1. **Figures.** They came from search excerpts of TSMC's 3Q26 release, because the filing PDFs couldn't be opened here. Each needs reading off the 3Q26 management report. The platform split (68 / 21 / 11) and the year-ago 57 are the weakest: they come from a third-party graphic.
-2. **Beat s42 has placeholder reasons.** The reasons for the margin dip need filling from the earnings call, in TSMC's own words.
+2. **Beat s42** reasons now filled from TSMC's 3Q26 call (CFO prepared remarks); see EP01_TSMC_VERIFY.md.
 3. **The moat-test verdict in t61** ("a wide moat, that must be dug again") is our reading, and it's labelled that way on screen.
-4. **Customers named in w02** (Apple, Nvidia): confirm both are named in TSMC's or the companies' own filings.
+4. **Customers named in w02:** AK (7 Nov 2026) keeps Apple in. The re-read (EP01_TSMC_REREAD.md) found no TSMC document naming Apple; its safest wording is "Big names in phones and AI design chips." Final choice is AK's. Open: no TSMC or Apple filing names Apple as a TSMC customer (TSMC's 20-F anonymises customers); Nvidia's own 10-K names TSMC. Keep as a plain description, not a sourced figure.
 
 Each beat below shows the spoken words (numerals written as figures, as they'll appear in the captions) and what's on screen.
 
@@ -44,12 +46,12 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 **p10** · about 13 s  
 > Who pays TSMC? Mostly companies that make chips for AI and data centres. Of every $100, about $68 came from them. Smartphones paid about $21. Everything else, about $11.
 
-*On screen:* a $100 note cut into pieces (WHO PAID TSMC'S $100): AI CHIP MAKERS $68; SMARTPHONES $21; EVERYTHING ELSE $11
+*On screen:* a $100 note cut into pieces (WHO PAID TSMC'S $100): AI AND DATA-CENTRE CHIPS (HPC) $68; SMARTPHONES $21; EVERYTHING ELSE $11
 
 **p11** · about 10 s  
-> A year ago, AI chip makers paid about $57 of every $100. Now, $68. So the castle now stands on AI. Why does that help TSMC keep more?
+> A year ago, high-performance computing, mostly AI and data centres, paid about $57 of every $100. Now, $68. So the castle now stands on AI. Why does that help TSMC keep more?
 
-*On screen:* two money piles (AI CHIP MAKERS' SHARE): A YEAR AGO $57; NOW $68; stamp: WHY DOES IT HELP?
+*On screen:* two money piles (HIGH-PERFORMANCE COMPUTING SHARE): A YEAR AGO $57; NOW $68; stamp: WHY DOES IT HELP?
 
 
 ## 2. How much does TSMC keep?
@@ -60,12 +62,12 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 *On screen:* a $100 note; guesses struck out ($10?, $25?); the slice kept: $46 a year ago, $51 now
 
 **k21** · about 10 s  
-> Follow $100. Making the chips takes about $33. Running the company takes about $8. Tax takes about $8 more. $51 is left (our arithmetic; tax is after interest income).
+> Follow $100. Making the chips takes about $34. Running the company takes about $8. Interest and other gains add about $2. Tax takes about $10. About $51 is left. (Our arithmetic, pieces rounded, so it looks a dollar short.)
 
-*On screen:* a $100 note cut into pieces ($100 OF SALES, CUT UP): MAKING THE CHIPS $33; RUNNING THE COMPANY $8; TAX $8; KEPT $51
+*On screen:* a $100 note cut into pieces ($100 OF SALES, CUT UP): MAKING THE CHIPS $34; RUNNING THE COMPANY $8; INTEREST AND OTHER GAINS +$2; TAX $10; KEPT $51 (51.1 EXACT; PIECES ROUNDED)
 
 **k22** · about 6 s  
-> And the share it keeps is growing. In a year, sales grew by half (+50.9%). Profit grew by two thirds (+68.7%, in Taiwan dollars).
+> And the share it keeps is growing. In a year, sales grew by half (+50.9%). Profit grew by more than two thirds (+68.7%). Both figures in Taiwan dollars.
 
 *On screen:* two rising pillars (IN ONE YEAR): SALES +51%; PROFIT +69%; gap: "PROFIT GREW FASTER"
 
@@ -78,9 +80,9 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 *On screen:* castle, flag "TSMC", stamp: SMALLER = HARDER
 
 **c31** · about 13 s  
-> Of every $100 of chips TSMC sold, $33 were the 3-nanometre size. $28 were 5. $10 were 7. The newest, 2, is already $8. Older sizes: $21.
+> Of every $100 of wafers TSMC sold, $33 were the 3-nanometre size. $28 were 5. $10 were 7. The newest, 2, is already $8. Older sizes: $21.
 
-*On screen:* bars (OF EVERY $100 OF CHIPS SOLD): 2nm · NEWEST $8; 3nm $33; 5nm $28; 7nm $10; OLDER $21
+*On screen:* bars (OF EVERY $100 OF WAFER REVENUE): 2nm · NEWEST $8; 3nm $33; 5nm $28; 7nm $10; OLDER $21
 
 **c32** · about 12 s  
 > Add up the newest four: $79 of every $100. That is the water around the castle. A new chip factory costs billions of dollars. And it takes years to run one well.
@@ -91,9 +93,9 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 ## 4. Why did TSMC's margin slip?
 
 **s40** · about 10 s  
-> Why did TSMC's margin slip? Because costs grew faster than sales, against April to June. Sales grew 17.6%. Profit grew only 8.0%.
+> Why did TSMC's margin slip? Because the cost of making chips grew faster than sales, against April to June. Sales grew 17.6%. The cost of making chips grew 22.4%. Profit grew 8.0%, held down because April to June had a gain of about NT$67 billion, mostly from shares in another chip firm, that did not repeat.
 
-*On screen:* two rising pillars (AGAINST APRIL TO JUNE 2026): SALES +17.6%; PROFIT +8%; gap: "COSTS GREW FASTER"
+*On screen:* two rising pillars (AGAINST APRIL TO JUNE 2026): SALES +17.6%; COST OF MAKING CHIPS +22.4%; NET PROFIT +8.0% (APR–JUN HAD ONE-OFF GAINS, NT$67BN)
 
 **s41** · about 11 s  
 > The gross margin is what is left after making the chips. It fell from about 67.7% to 66.4%. Small, on a very big base.
@@ -101,9 +103,9 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 *On screen:* two money piles (GROSS MARGIN): APR–JUN 67.7%; JUL–SEP 66.4%; stamp: SMALL, ON A BIG BASE
 
 **s42** · about 7 s  
-> What made costs grow? On its earnings call, TSMC named its reasons. Reason one. Reason two. Reason three.
+> What made costs grow? On its call, TSMC gave one main reason for the dip: its new 2-nanometre chips earn less at first. Operating costs also rose, mostly research. Next quarter, the 2-nanometre ramp-up and its overseas fabs weigh on margin again. Overseas fabs cost more: about 2 points of margin in 2026.
 
-*On screen:* handwritten list "TSMC's reasons:": FILL: reason one; FILL: reason two; FILL: reason three
+*On screen:* handwritten list "TSMC's reasons:": NEW 2NM CHIPS EARN LESS AT FIRST; OPERATING COSTS ROSE, MOSTLY RESEARCH (NT$89BN vs 73BN, FROM THE REPORT); OVERSEAS FABS ≈2 PTS IN 2026
 
 
 ## 5. What does TSMC expect next?
@@ -132,12 +134,12 @@ Each beat below shows the spoken words (numerals written as figures, as they'll 
 *On screen:* castle, flag "TSMC", shields: COPY IT? VERY HARD; REBUILD IT? YES; ONE PERSON? NO, stamp: DUG AGAIN AND AGAIN, tag "OUR READING · NOT INVESTMENT ADVICE"
 
 **t62** · about 10 s  
-> Three numbers to watch next time. Does the 2-nanometre share keep growing? Does the margin land in the guide? Do AI chip makers stay above two thirds?
+> Three numbers to watch next time. Does the 2-nanometre share keep growing? Does the margin land in the guide? Does high-performance computing stay above two thirds?
 
-*On screen:* handwritten list "Watch next time:": 2nm share: $8 today; Margin inside 65–67%?; AI makers above ⅔?
+*On screen:* handwritten list "Watch next time:": 2nm share: $8 today; Margin inside 65–67%?; HPC above ⅔?
 
 **t63** · about 19 s  
-> Quick recap. What does TSMC do? Makes chips others design. Who pays? Mostly AI chip makers. What does it keep? $51 of every $100. Why can't rivals copy it? The newest chips are hard to make. The slip? Costs grew faster. Next? About the same. The test? A wide moat, dug again.
+> Quick recap. What does TSMC do? Makes chips others design. Who pays? Mostly high-performance computing, AI and data centres. What does it keep? $51 of every $100. Why can't rivals copy it? The newest chips are hard to make. The slip? Chip-making cost grew faster than sales, as new 2-nanometre chips start low. Next? About the same. The test? A wide moat, dug again.
 
 *On screen:* castle, flag "RECAP"
 

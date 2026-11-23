@@ -37,7 +37,7 @@ _TSMC_DOLLAR = [dict(key="make", label="MAKING THE CHIPS", v=33, text="$33", ico
                 dict(key="run", label="RUNNING THE COMPANY", v=8, text="$8", icon="person", color="orange"),
                 dict(key="tax", label="TAX", v=8, text="$8", icon="tag", color="gray"),
                 dict(key="kept", label="KEPT", v=51, text="$51", icon="coin", color="gold")]
-MA_TSMC = dict(id="tsmc3q26", title="How Does TSMC Make Money? Explained Simply", voice="English_Diligent_Man",
+MA_TSMC = dict(id="tsmc3q26", title="How Does TSMC Make Money? Explained Simply", voice="English_CaptivatingStoryteller",
   keyword="TSMC", cur="$", brand=ATLAS,
   spine="How does a company that runs factories keep half of every dollar it sells?",
   next_video="Your Netflix Subscription: Where Does the Money Go?",

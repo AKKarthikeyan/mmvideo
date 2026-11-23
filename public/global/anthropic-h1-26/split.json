@@ -1,0 +1,99 @@
+{
+ "id": "anthropic-h1-26",
+ "company": "Anthropic",
+ "period": "Calendar H1 2026 · Jan–Jun",
+ "source": "Anthropic, PBC Form S-1, filed with the US SEC 26 Oct 2026",
+ "asOf": "26 Oct 2026",
+ "cur": "US$",
+ "unit": "B",
+ "decimals": 2,
+ "tol": 0.005,
+ "title": "Where each dollar Anthropic spent went",
+ "notes": [
+  "Each coin is one cent of operating spending. Cents rounded so they add up to exactly 100.",
+  "Operating expenses by nature, six months to 30 Jun 2026: compute and infrastructure $8,945M; sales, marketing and partnerships $3,168M; personnel $3,152M; other operating and administrative $1,714M; total $16,979M. Revenue $16,286M."
+ ],
+ "whole": {
+  "label": "operating spending",
+  "value": 16.979,
+  "status": "verified"
+ },
+ "parts": [
+  {
+   "label": "computing power",
+   "value": 8.945,
+   "kind": "spend",
+   "status": "verified"
+  },
+  {
+   "label": "sales, marketing, partners",
+   "value": 3.168,
+   "kind": "spend2",
+   "status": "verified"
+  },
+  {
+   "label": "its people",
+   "value": 3.152,
+   "kind": "spend2",
+   "status": "verified"
+  },
+  {
+   "label": "everything else",
+   "value": 1.714,
+   "kind": "neutral",
+   "status": "verified"
+  }
+ ],
+ "beats": [
+  {
+   "sec": 4.0,
+   "upto": 0,
+   "caption": "53¢ of every dollar Anthropic spent went to computing power."
+  },
+  {
+   "sec": 3.0,
+   "upto": 1,
+   "caption": "19¢ to sales, marketing and partners."
+  },
+  {
+   "sec": 3.0,
+   "upto": 2,
+   "caption": "18¢ to its people."
+  },
+  {
+   "sec": 3.0,
+   "upto": 3,
+   "caption": "10¢ to everything else."
+  },
+  {
+   "sec": 4.5,
+   "upto": 3,
+   "caption": "In all: $1.04 spent for every $1 of revenue, Jan–Jun 2026."
+  },
+  {
+   "sec": 4.0,
+   "upto": 3,
+   "caption": "A year earlier: $2.84 for every $1."
+  },
+  {
+   "sec": 5.0,
+   "upto": 3,
+   "caption": "The moat: customers from a year ago now spend about 9× as much."
+  },
+  {
+   "sec": 5.0,
+   "upto": 3,
+   "caption": "The catch, in its own filing: they stay while its models lead."
+  },
+  {
+   "sec": 5.0,
+   "upto": 3,
+   "caption": "Moat: strong, but rebuilt with every model. Margin: near break-even."
+  },
+  {
+   "sec": 3.5,
+   "caption": "What to watch: compute's share of each dollar in the next filing."
+  }
+ ],
+ "hook": "Anthropic spent $1.04|for every $1 it earned"
+}

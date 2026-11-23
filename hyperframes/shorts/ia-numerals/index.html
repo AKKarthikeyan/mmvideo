@@ -1,0 +1,131 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "Arabic numerals? Europe's 1202 book calls them Indian". Reveal Loop Short, 1080 x 1920.
+     One camera move: Pisa (Leonardo, 1202) -> a measured great-circle line -> near Peshawar (Bakhshali manuscript) -> wide
+     -> back to Pisa. Pins and one measured line only; no borders, no country fills. The line is a straight-line distance,
+     labelled "not the route". City points: Natural Earth 10m. Gap and distance: our measurement
+     (docs/geo/research/W4-03-numerals/method). The dot is drawn by us, not the Bodleian's photo. Quotes: our translations. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: the nine figures of the Indians</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 700px; background: linear-gradient(rgba(7, 16, 28, 0.92), rgba(7, 16, 28, 0.75) 55%, rgba(7, 16, 28, 0)); }
+      #head { position: absolute; left: 0; width: 1080px; top: 300px; text-align: center; }
+      #headLab { position: static; display: block; font-size: 52px; }
+      #headLab b { color: var(--acc); font-weight: inherit; }
+      #headBig { position: static; display: block; font-size: 132px; line-height: 1; margin-top: 10px; letter-spacing: 0.04em; }
+      .pan { position: absolute; left: 64px; top: 300px; width: 950px; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 46px; }
+      .pan .big { position: static; display: block; font-size: 104px; line-height: 1; margin-top: 8px; }
+      .note, .by { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 12px; }
+      .qt { font: 700 60px/1.12 Oswald, sans-serif; color: #f7f3ea; letter-spacing: 0.01em; }
+      .qt em { font-style: normal; color: var(--acc); }
+      #dotRow { display: flex; align-items: center; gap: 34px; margin-top: 6px; }
+      #dotRow i { display: block; width: 46px; height: 46px; border-radius: 50%; background: #f2b233; box-shadow: 0 0 30px rgba(242, 178, 51, 0.7); }
+      #dotRow span { font: 700 96px/1 Oswald, sans-serif; color: #f7f3ea; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="35.067" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div><div id="s5"></div></div>
+      <div id="head"><span class="lab" id="headLab">“ARABIC” NUMERALS<b id="qm">?</b></span><span class="big" id="headBig">0123456789</span></div>
+      <div class="pan" id="q1"><div class="qt">“The nine figures of the <em>Indians</em> are these”</div><div class="by">Leonardo of Pisa, Liber abaci (1202), chapter 1 · Latin “Nouem figure indorum hee sunt” · our translation</div></div>
+      <div class="pan" id="q2"><div class="qt">“…and this sign <em>0</em>, which in Arabic is called <em>zephirum</em>”</div><div class="by">Leonardo of Pisa, Liber abaci, chapter 1 · our translation</div></div>
+      <div class="pan" id="q3"><div class="qt">“…the numbering of the <em>Indians</em> by nine letters”</div><div class="by">Latin al-Khwarizmi, Cambridge MS Ii.6.5 · a Latin version of an Arabic-language text · our translation</div></div>
+      <div class="pan" id="pDot"><span class="lab">A DOT FOR ZERO, HUNDREDS OF TIMES</span><div id="dotRow"><i></i><span>→ 0</span></div><div class="note">Today's 0 “evolved from a dot”, the Bodleian says · dot drawn by us</div></div>
+      <div class="pan" id="pAge"><span class="lab">SOME LEAVES, AS EARLY AS</span><span class="big" id="ageBig">3RD–4TH CENTURY</span><div class="note">Bodleian Libraries' 2017 radiocarbon test · the holder's dating</div></div>
+      <div class="pan" id="pGap"><span class="lab">BEFORE LEONARDO'S 1202 BOOK</span><span class="big" style="font-size:86px">ABOUT 800–1,000 YEARS</span><div class="note">our measurement</div></div>
+      <div class="pan" id="q4"><div class="qt">“…a public <em>scribe</em> in the customs house … for the Pisan merchants”</div><div class="by">Leonardo of Pisa, Liber abaci, prologue, on his father · our translation</div></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // Natural Earth 10m populated places (method/numerals_measure_output.txt)
+      const PISA = [10.4, 43.7205], PESH = [71.5331, 34.007];
+      const SRC = { s0: "Shaded relief: AWS Terrain Tiles · city points: Natural Earth · no borders drawn",
+        s1: "Leonardo of Pisa, Liber abaci, 1202 · ed. B. Boncompagni, Rome 1857",
+        s2: "Latin al-Khwarizmi, Cambridge MS Ii.6.5 · ed. B. Boncompagni, Rome 1857",
+        s3: "Bodleian Libraries, Oxford, 2017 radiocarbon test · found near Peshawar, today's Pakistan",
+        s4: "Gap and distance: our measurement · the line is a straight line, not the route",
+        s5: "Leonardo of Pisa, Liber abaci, prologue · ed. B. Boncompagni, Rome 1857" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tPisa", "acc", "PISA<small>Leonardo of Pisa, 1202</small>"); mk("tPesh", "acc", "NEAR HERE: BAKHSHALI<small>manuscript found 1881 · today's Pakistan</small>");
+      mk("tKm", "", "5,280 KM<small>straight line · our measurement · not the route</small>");
+      const M = ATLAS.create("map", [["assets/img/n4.jpg", [0.375, 0.125, 0.875, 0.625]], ["assets/img/n6a.jpg", [0.5, 0.296875, 0.5625, 0.421875]],
+        ["assets/img/n6b.jpg", [0.671875, 0.34375, 0.734375, 0.4375]]]);
+      const g = $("ov").getContext("2d");
+      const tRight = Q("right"), tNq = Q("nq"), tLeo = Q("leo"), tEur = Q("eur"), tCh1 = Q("ch1"), tZero = Q("zero"), tAlk = Q("alk"), tPesh = Q("pesh"), tDot = Q("dot"),
+        tBod = Q("bod"), tCent = Q("cent"), tGap = Q("gap"), tBoy = Q("boy"), tEnd = Q("end");
+      const CP = [10.4, 42.5], CK = [71.53, 32.9];
+      const KEYS = [[0, ...CP, 1500], [tPesh, ...CP, 1300], [tPesh + 1.0, 41, 38, 5200], [tPesh + 2.1, ...CK, 1350], [tGap, ...CK, 1250], [tGap + 1.6, 41, 38, 7200],
+        [tBoy, 41, 38, 7000], [tBoy + 2.2, ...CP, 1350], [D - 0.05, ...CP, 1500], [D, ...CP, 1500]];
+      // great circle between two [lon, lat] points
+      const rad = Math.PI / 180, V = (p) => [Math.cos(p[1] * rad) * Math.cos(p[0] * rad), Math.cos(p[1] * rad) * Math.sin(p[0] * rad), Math.sin(p[1] * rad)];
+      const va = V(PISA), vb = V(PESH), om = Math.acos(va[0] * vb[0] + va[1] * vb[1] + va[2] * vb[2]);
+      const GC = Array.from({ length: 61 }, (_, i) => { const f = i / 60, a = Math.sin((1 - f) * om) / Math.sin(om), b = Math.sin(f * om) / Math.sin(om);
+        const x = a * va[0] + b * vb[0], y = a * va[1] + b * vb[1], z = a * va[2] + b * vb[2]; return [Math.atan2(y, x) / rad, Math.atan2(z, Math.hypot(x, y)) / rad]; });
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const side = (el, p, s) => { const w = el.offsetWidth, h = el.offsetHeight, dy = s.includes("u") ? -h - 6 : s.includes("d") ? 10 : -h / 2;
+        return [s[0] === "l" ? p[0] - w - 24 : p[0] + 24, p[1] + dy]; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (p, t0, a) => { const u = C(t0 / 0.6); if (u > 0 && u < 1) { g.beginPath(); g.arc(p[0], p[1], 14 + 50 * u, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - u) * a})`; g.lineWidth = 5; g.stroke(); } };
+      const clampX = (x, el) => Math.max(40, Math.min(x, 1040 - el.offsetWidth));
+      H.render = (t) => {
+        const cam = ATLAS.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- the measured line, drawn as the camera flies east; gone again before the loop
+        const lu = Z.io2((t - tPesh) / 2.1), lo = F(t, tPesh, tEnd - 0.4, 0.3);
+        if (lu > 0 && lo > 0) { const P = GC.map(M.P), n = Math.max(1, Math.round(lu * 60));
+          g.beginPath(); for (let i = 0; i <= n; i++) (i ? g.lineTo(P[i][0], P[i][1]) : g.moveTo(P[i][0], P[i][1]));
+          g.globalAlpha = lo; g.lineJoin = g.lineCap = "round"; g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = 13; g.stroke();
+          g.strokeStyle = "#f7f3ea"; g.lineWidth = 5; g.setLineDash([18, 14]); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+          const m = P[30], el = $("tKm"); place("tKm", clampX(m[0] - el.offsetWidth / 2, el), m[1] - el.offsetHeight - 40, F(t, tGap + 1.2, tBoy + 0.6, 0.25));
+        } else place("tKm", 0, 0, 0);
+        // ---- pins
+        const pP = M.P(PISA), oP = F(t, tLeo, tEnd - 0.3, 0.3);
+        if (oP > 0) { ring(pP, t - tLeo, oP); ring(pP, t - tBoy - 2.0, oP); dot(pP, "#f2b233", 13, oP); }
+        const ePisa = $("tPisa"), sp = side(ePisa, pP, "ru"); place("tPisa", clampX(sp[0], ePisa), sp[1], oP);
+        const pK = M.P(PESH), oK = F(t, tPesh + 1.6, tEnd - 0.3, 0.3);
+        if (oK > 0) { ring(pK, t - tPesh - 1.8, oK); dot(pK, "#f2b233", 13, oK); }
+        const ePesh = $("tPesh"), sk = side(ePesh, pK, "lu"); place("tPesh", clampX(sk[0], ePesh), sk[1], oK * F(t, tPesh + 1.8, tGap + 1.0, 0.25));
+        // ---- panels: head on the first and last beat (same frame at both ends), quote cards and numbers between
+        $("head").style.opacity = t < tLeo ? 1 - C((t - tLeo + 0.3) / 0.3) : F(t, tEnd, 99, 0.3);
+        $("qm").style.opacity = t < tLeo ? C((t - tRight) / 0.2) : 0;
+        $("headBig").style.color = t < tNq + 0.4 && t > tRight ? "#f2b233" : "";
+        $("q1").style.opacity = F(t, tCh1, tZero, 0.25); $("q2").style.opacity = F(t, tZero, tAlk, 0.25); $("q3").style.opacity = F(t, tAlk, tPesh + 0.4, 0.25);
+        $("pDot").style.opacity = F(t, tDot, tBod, 0.25); $("pAge").style.opacity = F(t, tBod, tGap, 0.25); $("ageBig").style.opacity = F(t, tCent, 99, 0.2);
+        $("pGap").style.opacity = F(t, tGap + 0.3, tBoy, 0.25); $("q4").style.opacity = F(t, tBoy + 0.4, tEnd, 0.25);
+        // ---- source lines
+        $("s0").style.opacity = t < tLeo ? 1 : F(t, tEnd, 99, 0.3); $("s1").style.opacity = F(t, tLeo, tAlk, 0.15); $("s2").style.opacity = F(t, tAlk, tPesh, 0.15);
+        $("s3").style.opacity = F(t, tPesh, tGap, 0.15); $("s4").style.opacity = F(t, tGap, tBoy, 0.15); $("s5").style.opacity = F(t, tBoy, tEnd, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

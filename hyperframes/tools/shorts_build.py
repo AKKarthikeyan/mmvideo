@@ -310,6 +310,12 @@ S["mm-hundred"] = dict(
     ])
 
 
+# One file per Short (AK, 14 Nov 2026: Indica Atlas Week 4 is built by several builders at once, so a new Short keeps
+# its script in shorts/<id>/script.py, which sets S["<id>"] = dict(...) exactly like the entries above).
+for _f in sorted(SHORTS.glob("*/script.py")):
+    exec(compile(_f.read_text(encoding="utf-8"), str(_f), "exec"), globals())
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path, tweak=None):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))

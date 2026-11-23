@@ -1,0 +1,136 @@
+<!doctype html>
+<!-- Data Kadai · DRAFT 16 Nov 2026 · "India's gold imports tripled in October. They also fell about 63%. Both are true."
+     Number-led Short, 1080 x 1920, no map, Data Kadai mat-green look (as dk-pocket). Two contradicting headlines (hook),
+     three bars (Sep 2026, Oct 2026, Oct 2025; US$ value), Axis Bank's view (attributed), dollars-not-tonnes card, two rules, loop.
+     Claim ids G1-G4 as in script.py. Never: tonnes as a measure, "record", a single cause as fact, a forecast. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Data Kadai: Gold Paradox</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --mat: #17352f; --cream: #f2ead8; --gold: #e2b54a; --up: #6fd39a; --dn: #e8452c; --acc: #e2b54a;
+        background: radial-gradient(120% 70% at 50% 35%, #1f4740, #0c1f1b 72%); }
+      #strip { position: absolute; left: 64px; top: 196px; width: 952px; padding: 10px 16px; background: var(--cream); color: #1b1a17;
+        font: 600 23px/1.3 Plex, monospace; letter-spacing: -0.02em; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35); }
+      #strip b { font-weight: 700; }
+      .pan { position: absolute; left: 64px; top: 360px; width: 952px; opacity: 0; }
+      .pan .lab, .pan .big { position: static; display: block; }
+      .pan .lab { font-size: 44px; white-space: normal; }
+      .pan .big { font-size: 150px; line-height: 1; margin-top: 8px; }
+      .pan .big.sm { font-size: 104px; white-space: normal; line-height: 1.02; }
+      .note { font: 28px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(242, 234, 216, 0.85); margin-top: 14px; }
+      .news { position: relative; background: var(--cream); color: #1b1a17; padding: 22px 28px 26px; margin-top: 30px; opacity: 0;
+        box-shadow: 0 8px 0 rgba(0, 0, 0, 0.35); }
+      .news .mast { font: 600 24px/1 Plex, monospace; letter-spacing: 0.08em; border-bottom: 3px solid #1b1a17; padding-bottom: 10px; color: #4a463e; }
+      .news .hl { font: 700 74px/1.02 Oswald, sans-serif; letter-spacing: 0.01em; margin-top: 14px; }
+      .news .hl em { font-style: normal; }
+      #n1 { transform: rotate(-1.2deg); } #n2 { transform: rotate(1deg); }
+      .stamp { position: absolute; font: 700 92px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: var(--gold); border: 8px solid var(--gold);
+        padding: 8px 24px 14px; transform: rotate(-8deg); opacity: 0; background: rgba(12, 31, 27, 0.82); white-space: nowrap; }
+      .row { position: relative; height: 150px; margin-top: 22px; }
+      .row .k { font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; }
+      .row .bar { position: absolute; left: 0; top: 54px; height: 64px; width: 0; background: var(--gold); }
+      .row .v { position: absolute; top: 60px; font: 700 48px/1 Oswald, sans-serif; white-space: nowrap; }
+      .ann { position: absolute; font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.03em; padding: 8px 14px 10px; background: var(--cream); color: #1b1a17; white-space: nowrap; opacity: 0; }
+      .ann.acc { background: var(--gold); }
+      .ann.up { background: var(--up); }
+      .ann.dn { background: var(--dn); color: #fff; }
+      .card { background: var(--cream); color: #1b1a17; padding: 24px 28px 28px; margin-top: 28px; opacity: 0; box-shadow: 0 8px 0 rgba(0, 0, 0, 0.35); }
+      .card .t { font: 700 64px/1.05 Oswald, sans-serif; }
+      .card .s { font: 600 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: #4a463e; margin-top: 10px; }
+      .rule { font: 700 76px/1.05 Oswald, sans-serif; margin-top: 34px; opacity: 0; }
+      .rule span { color: var(--gold); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.833" data-width="1080" data-height="1920">
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">DATA KADAI · COMPARED WITH WHAT?</div>
+      <div id="strip"><b>SOURCE</b> · news reports quoting Commerce Ministry data · India's gold imports, US$ value · Oct 2026 figures are estimates</div>
+
+      <!-- b1, b2 + loop end: two headlines (G1+G3, G1+G2), "both true", "compared with what?" -->
+      <div class="pan" id="hk" style="opacity:1">
+        <div class="news" id="n1"><div class="mast">HEADLINE 1 · OCTOBER 2026</div><div class="hl">GOLD IMPORTS <em style="color:#1d8a4e">ABOUT TRIPLE ▲</em></div></div>
+        <div class="news" id="n2"><div class="mast">HEADLINE 2 · OCTOBER 2026</div><div class="hl">GOLD IMPORTS <em style="color:var(--dn)">FALL ABOUT 63% ▼</em></div></div>
+        <div style="position:relative;height:260px">
+          <div class="stamp" id="both" style="left:250px;top:40px">BOTH TRUE</div>
+          <div class="big sm" id="what" style="position:absolute;left:0;top:40px;opacity:0;color:var(--gold)">COMPARED WITH WHAT?</div>
+        </div>
+      </div>
+
+      <!-- b3-b7: G3, G1, G2 bars (US$ billion) -->
+      <div class="pan" id="bars"><span class="lab">INDIA'S GOLD IMPORTS · US$ VALUE</span>
+        <div class="row" id="rSep"><div class="k">SEP 2026</div><div class="bar" id="bSep" style="background:rgba(242,234,216,0.6)"></div><div class="v" id="vSep">≈ $1.8 bn</div></div>
+        <div class="row" id="rOct"><div class="k">OCT 2026 <span style="font:600 26px Inter,sans-serif;letter-spacing:0">(estimated)</span></div><div class="bar" id="bOct"></div><div class="v" id="vOct">$5.51 bn</div></div>
+        <div class="row" id="rLy"><div class="k">OCT 2025</div><div class="bar" id="bLy" style="background:#8fb8ff"></div><div class="v" id="vLy">$14.72 bn</div></div>
+        <div style="position:relative;height:220px">
+          <div class="ann up" id="a3" style="left:0;top:24px">OCT vs SEP · ABOUT 3×</div>
+          <div class="ann dn" id="a63" style="left:0;top:24px">OCT vs OCT · DOWN ABOUT 63%</div>
+          <div class="ann acc" id="a23" style="left:0;top:100px">NEARLY TWO-THIRDS LOWER</div>
+        </div>
+      </div>
+
+      <!-- b8: G4, Axis Bank's view, attributed -->
+      <div class="pan" id="why"><span class="lab">WHY THE JUMP FROM SEPTEMBER?</span>
+        <div class="card" id="cAx"><div class="t">AXIS BANK'S VIEW: FESTIVE BUYING PICKED UP LATE</div><div class="s">as quoted by Business Today, 14 Nov 2026 · a view, not a settled cause</div></div>
+        <div class="card" id="cPr"><div class="t">HIGHER GOLD PRICES RAISE THE DOLLAR BILL</div><div class="s">same source</div></div>
+      </div>
+
+      <!-- b9: [frame] dollars, not tonnes -->
+      <div class="pan" id="usd"><span class="lab">WHAT THESE FIGURES MEASURE</span>
+        <span class="big" style="color:var(--gold);font-size:190px">$ VALUE</span>
+        <span class="big sm" style="text-decoration:line-through;text-decoration-thickness:10px;color:rgba(242,234,216,0.55)">TONNES</span>
+        <div class="note">no tonnage is published in these sources</div></div>
+
+      <!-- b10: [frame] the rules -->
+      <div class="pan" id="rules"><span class="lab" style="color:var(--gold)">TWO RULES TO KEEP</span>
+        <div class="rule" id="r1">1 · CHECK THE <span>COMPARISON PERIOD</span></div>
+        <div class="rule" id="r2">2 · <span>VALUE</span> IS NOT <span>VOLUME</span></div></div>
+
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const cu = {}; ["hook", "fell", "both", "what", "sep", "oct", "x3", "ly", "ly2", "dn", "two3", "why", "axis", "price", "usd",
+        "rules", "r1", "r2", "end"].forEach((k) => (cu[k] = Q(k)));
+      const op = (id, v) => { $(id).style.opacity = v; };
+      const grow = (id, w, t0, d = 0.7) => { $(id).style.width = Math.round(w * Z.o3((t_ - t0) / d)) + "px"; };
+      const BW = 700, MAX = 14.72;                      // longest bar = Oct 2025; values sit right of their bar
+      const place = (b, v) => { $(v).style.left = (parseFloat($(b).style.width) + 20) + "px"; };
+      let t_ = 0;
+      H.render = (t) => {
+        t_ = t;
+        // hook (0 -> sep) and the loop return (end -> D): two headlines, "both true", "compared with what?"
+        op("hk", Math.max(1 - C((t - cu.sep) / 0.25), C((t - cu.end) / 0.3)));
+        const lp = t >= cu.end;
+        op("n1", lp ? C((t - cu.end) / 0.3) : C(t / 0.2)); op("n2", lp ? 0 : C((t - cu.fell) / 0.3));
+        op("both", lp ? 0 : F(t, cu.both, cu.what, 0.2)); op("what", lp ? 0 : C((t - cu.what) / 0.3));
+        // bars
+        op("bars", F(t, cu.sep, cu.why, 0.25));
+        grow("bSep", BW * 1.8 / MAX, cu.sep); grow("bOct", BW * 5.51 / MAX, cu.oct); grow("bLy", BW, cu.ly2, 0.9);
+        place("bSep", "vSep"); place("bOct", "vOct"); place("bLy", "vLy");
+        op("vSep", C((t - cu.sep - 0.3) / 0.3)); op("rOct", C((t - cu.oct) / 0.3)); op("vOct", C((t - cu.oct - 0.3) / 0.3));
+        op("rLy", t < cu.ly ? 0 : C((t - cu.ly) / 0.3)); op("vLy", C((t - cu.ly2 - 0.4) / 0.3));
+        op("rSep", t < cu.ly ? 1 : 0.3);                  // year-on-year: September steps back
+        op("a3", F(t, cu.x3, cu.ly, 0.25)); op("a63", C((t - cu.dn) / 0.3)); op("a23", C((t - cu.two3) / 0.3));
+        // Axis Bank's view
+        op("why", F(t, cu.why, cu.usd, 0.25)); op("cAx", C((t - cu.axis) / 0.3)); op("cPr", C((t - cu.price) / 0.3));
+        // dollars, not tonnes
+        op("usd", F(t, cu.usd, cu.rules, 0.25));
+        // rules
+        op("rules", F(t, cu.rules, cu.end, 0.25)); op("r1", C((t - cu.r1) / 0.3)); op("r2", C((t - cu.r2) / 0.3));
+        caps(t);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

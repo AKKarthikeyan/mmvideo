@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "Mumbai was seven islands. One held out to 1838". Reveal Loop Short, 1080 x 1920.
+     One camera move over the island city, south to Colaba and back. Wide base: AWS Terrain Tiles (atlas_base.py); city layer: Sentinel-2 S2C_43QBB/43QBA_20260225 true colour, darkened.
+     Pins only for Colaba and Mahim Causeway (OSM Nominatim, the only sourced points), plus the measured line (our
+     measurement, docs/geo/research/W4-08-bombay/method). No island outlines and no borders are drawn; Worli, Mazagon and
+     Parel are not pinned. Grose gets no year; the Vellard is not "the first wall"; the Hornby story keeps "reportedly". -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: Mumbai's seven islands</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(7, 16, 28, 0.9), rgba(7, 16, 28, 0.72) 55%, rgba(7, 16, 28, 0)); }
+      .pan { position: absolute; top: 300px; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 46px; }
+      .pan .big { position: static; display: block; font-size: 140px; line-height: 1; margin-top: 6px; }
+      .pan .note { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      #head, #isl { right: 56px; text-align: right; }
+      #wall, #gov { left: 64px; }
+      #gov .big { font-size: 96px; }
+      #quote { position: absolute; left: 64px; top: 300px; width: 900px; opacity: 0; }
+      #quoteTx { font: 700 62px/1.12 Oswald, sans-serif; color: #f7f3ea; letter-spacing: 0.01em; }
+      #quoteTx em { font-style: normal; color: var(--acc); }
+      #quoteBy { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="34.133" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div><div id="s5"></div></div>
+      <div class="pan" id="head"><span class="lab">MUMBAI WAS ONCE</span><span class="big">7 ISLANDS</span></div>
+      <div class="pan" id="wall"><span class="lab">THE HORNBY VELLARD</span><span class="big" id="wallBig">1784</span><div class="note" id="wallNote">finished · shut the sea out</div></div>
+      <div class="pan" id="gov"><span class="lab">GOVERNOR WILLIAM HORNBY</span><span class="big" id="govBig">NO PERMISSION</span><div class="note" id="govNote">reportedly · and he pocketed the order suspending him</div></div>
+      <div class="pan" id="isl"><span class="lab">STILL AN ISLAND UNTIL</span><span class="big" id="islBig">1838</span><div class="note" id="islNote">1784 → 1838: 54 years after the Vellard</div></div>
+      <div id="quote"><div id="quoteTx">“…the sea <em>almost divided the island in two</em>…”</div><div id="quoteBy">A visitor, Grose, quoted in the 1909 Gazetteer</div></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // OSM Nominatim points (ODbL), as used in the research method (method/felt.py). The only sourced coordinates.
+      const COLABA = [72.8212466, 18.9253590], MAHIM = [72.8383531, 19.0482597];
+      const SRC = { s0: "Seven islands: Gazetteer of Bombay City and Island, 1909 · MCGM City Profile, 2011",
+        s1: "Points: OpenStreetMap Nominatim (ODbL) · 13.8 km straight line: our measurement · Sentinel-2, 25 Feb 2026",
+        s2: "Quote: Grose, quoted in the Gazetteer of Bombay City and Island, 1909",
+        s3: "Vellard finished 1784: Gazetteer of Bombay City and Island, 1909 · MCGM City Profile, 2011",
+        s4: "Hornby story, reportedly: Gazetteer, 1909, quoting Maclean's Guide to Bombay",
+        s5: "Colaba Causeway, 1838: Gazetteer, 1909 · MCGM City Profile, 2011 · 54 years: our arithmetic" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tMah", "", "MAHIM<small>Mahim Causeway</small>"); mk("tCol", "acc", "COLABA"); mk("tKm", "acc", "13.8 KM<small>straight line · our measurement</small>");
+      mk("tApart", "acc", "STILL APART<small>joined by causeway, 1838</small>");
+      const M = ATLAS.create("map", [["assets/img/m10.jpg", [0.70117188, 0.4453125, 0.70410156, 0.44726562]],
+        ["assets/img/s2_mumbai.jpg", [0.70205556, 0.44572776, 0.70263889, 0.44663857]]]);
+      const g = $("ov").getContext("2d");
+      const tLong = Q("long"), tNq = Q("nq"), tMah = Q("mahim"), tCol = Q("colaba"), tKm = Q("km"), tTide = Q("tide"), tWall = Q("wall"), t84 = Q("y84"),
+        tGov = Q("gov"), tPerm = Q("perm"), tPock = Q("pocket"), tBut = Q("but"), tCol2 = Q("col2"), t38 = Q("y38"), t54 = Q("y54"), tEnd = Q("end"), tOut = tEnd - 0.6;
+      const WIDE = [72.845, 19.013, 16.3], SOUTH = [72.842, 19.015, 15.8], COL = [72.832, 18.94, 8];
+      const KEYS = [[0, ...WIDE], [tNq, ...WIDE], [tBut, ...SOUTH], [tCol2 + 0.6, ...COL], [tOut, ...COL], [D - 0.05, ...WIDE], [D, ...WIDE]];
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (p, t0, a) => { const u = C(t0 / 0.6); if (u > 0 && u < 1) { g.beginPath(); g.arc(p[0], p[1], 14 + 50 * u, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - u) * a})`; g.lineWidth = 5; g.stroke(); } };
+      H.render = (t) => {
+        const cam = ATLAS.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        const pM = M.P(MAHIM), pC = M.P(COLABA);
+        // ---- the measured line, Mahim Causeway to Colaba (drawn on "km", stays until the loop)
+        const lo = F(t, tKm, tOut + 0.4, 0.25), lu = Z.io2((t - tKm) / 0.9);
+        if (lo > 0 && lu > 0) { const q = [L(pM[0], pC[0], lu), L(pM[1], pC[1], lu)];
+          g.globalAlpha = lo; g.lineCap = "round"; g.beginPath(); g.moveTo(pM[0], pM[1]); g.lineTo(q[0], q[1]);
+          g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = 13; g.stroke(); g.strokeStyle = "#f2b233"; g.lineWidth = 6; g.setLineDash([18, 12]); g.stroke(); g.setLineDash([]); g.globalAlpha = 1; }
+        // ---- pins
+        const om = F(t, tMah, tOut + 0.4, 0.25), oc = F(t, tCol, 99, 0.25) * (t > tOut ? 1 - C((t - tOut) / 0.4) : 1);
+        if (om > 0) { ring(pM, t - tMah, om); dot(pM, "#f7f3ea", 12, om); }
+        if (oc > 0) { ring(pC, t - tCol, oc); ring(pC, t - tCol2, oc); dot(pC, "#f2b233", 13, oc); }
+        place("tMah", pM[0] + 26, pM[1] - 30, om); place("tCol", pC[0] + 26, pC[1] - 22, oc * (t < tBut ? 1 : 1 - C((t - tBut) / 0.25)));
+        place("tKm", L(pM[0], pC[0], 0.5) + 70, L(pM[1], pC[1], 0.5) - 40, F(t, tKm + 0.6, tTide, 0.25));
+        place("tApart", pC[0] + 26, pC[1] - 34, F(t, tCol2, tOut + 0.2, 0.25));
+        // ---- panels and source lines
+        $("head").style.opacity = F(t, 0, tMah, 0.25);
+        $("quote").style.opacity = F(t, tTide, tWall, 0.25);
+        $("wall").style.opacity = F(t, tWall, tGov, 0.25); $("wallBig").style.opacity = F(t, t84, 99, 0.2); $("wallNote").style.opacity = F(t, t84, 99, 0.2);
+        $("gov").style.opacity = F(t, tGov, tBut, 0.25); $("govBig").style.opacity = F(t, tPerm, 99, 0.2); $("govNote").style.opacity = F(t, tPock, 99, 0.2);
+        $("isl").style.opacity = F(t, tBut, tOut + 0.2, 0.25); $("islBig").style.opacity = F(t, t38, 99, 0.2); $("islNote").style.opacity = F(t, t54, 99, 0.2);
+        $("s0").style.opacity = t < tMah ? 1 : F(t, tOut + 0.8, 99, 0.3); $("s1").style.opacity = F(t, tMah, tTide, 0.15); $("s2").style.opacity = F(t, tTide, tWall, 0.15);
+        $("s3").style.opacity = F(t, tWall, tGov, 0.15); $("s4").style.opacity = F(t, tGov, tBut, 0.15); $("s5").style.opacity = F(t, tBut, tOut + 0.8, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

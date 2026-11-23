@@ -1,0 +1,155 @@
+<!doctype html>
+<!-- Indica Atlas · DRAFT 16 Nov 2026 · "The detour became the main road" (Hormuz -> Bab el-Mandeb). Map Short, 1080 x 1920.
+     Two gates on one map: Hormuz (out of the Gulf) and Bab el-Mandeb (out of the Red Sea). A stream of tanker dots on each
+     route; its density follows the EIA quarterly figures (no number is drawn twice in one beat). Hormuz Q4 2025 -> Q2 2026,
+     the reported cause (attributed), where Hormuz crude went (EIA, 1H 2025, its own beats), then Bab el-Mandeb Q4 2025 ->
+     Q2 2026, then both gates again for the loop. Base maps: AWS Terrain Tiles shaded relief (atlas_base.py), same as
+     ia-babelmandeb. Routes are schematic. Pins and labels only: no borders are drawn. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: Hormuz and Bab el-Mandeb</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(7, 16, 28, 0.9), rgba(7, 16, 28, 0.72) 55%, rgba(7, 16, 28, 0)); }
+      .pan { position: absolute; right: 56px; top: 300px; width: 960px; text-align: right; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 44px; }
+      .pan .big { position: static; display: block; font-size: 140px; line-height: 1; margin-top: 6px; }
+      .pan .big.sm { font-size: 92px; }
+      .pan .note { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 28px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      .tag.blu { background: #6fc3ff; }
+      .tag.dim { background: rgba(7, 16, 28, 0.78); color: #f7f3ea; font-size: 30px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="49.967" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · GATES OF THE SEA</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div><div id="s5"></div></div>
+      <div class="pan" id="p1"><span class="lab">TWO SEA GATES</span><span class="big sm">TWO DIFFERENT GATES</span></div>
+      <div class="pan" id="p2"><span class="lab">HORMUZ</span><span class="big sm">THE MAIN ROAD FOR OIL?</span></div>
+      <div class="pan" id="p2b"><span class="lab">HORMUZ</span><span class="big sm">IT WAS</span></div>
+      <div class="pan" id="p3"><span class="lab">OIL THROUGH HORMUZ, OCT–DEC 2025</span><span class="big">≈ 21.6M</span><div class="note">barrels a day, Q4 2025 · EIA Short-Term Energy Outlook</div></div>
+      <div class="pan" id="p4"><span class="lab">OIL THROUGH HORMUZ, APR–JUN 2026</span><span class="big">≈ 4.9M</span><div class="note">barrels a day, Q2 2026 · EIA Short-Term Energy Outlook</div></div>
+      <div class="pan" id="p5"><span class="lab">WHY?</span><span class="big sm">WAR ON IRAN</span><div class="note">reports say it began 28 Feb 2026; Iran announced the strait closed (reported dates for the announcement differ)</div></div>
+      <div class="pan" id="p6"><span class="lab">HORMUZ CRUDE TO ASIA, JAN–JUN 2025</span><span class="big">89%</span><div class="note">share of crude oil through Hormuz, 1H 2025 · EIA</div></div>
+      <div class="pan" id="p7"><span class="lab">CHINA · INDIA · JAPAN · S KOREA</span><span class="big">74%</span><div class="note">share of Hormuz crude, 1H 2025 · EIA</div></div>
+      <div class="pan" id="p8"><span class="lab">BAB EL-MANDEB, OCT–DEC 2025</span><span class="big">≈ 5.4M</span><div class="note">barrels a day of petroleum liquids, Q4 2025 · EIA STEO</div></div>
+      <div class="pan" id="p9"><span class="lab">BAB EL-MANDEB, APR–JUN 2026</span><span class="big">≈ 8.1M</span><div class="note">barrels a day of petroleum liquids, Q2 2026 · EIA STEO</div></div>
+      <div class="pan" id="p10"><span class="lab">THE DETOUR</span><span class="big sm">BECAME THE MAIN ROAD</span><div class="note">Apr–Jun 2026 · EIA STEO</div></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, A = ATLAS;
+      const SRC = { s0: "Map: shaded relief, AWS Terrain Tiles · routes drawn schematically · no borders drawn",
+        s1: "Oil through Hormuz, Q4 2025 and Q2 2026: U.S. EIA, Short-Term Energy Outlook (Aug 2026)",
+        s2: "Reports: bne IntelliNews and others, Feb–Mar 2026 · dates of the closure announcement differ",
+        s3: "Hormuz crude by destination, 1H 2025: U.S. EIA, World Oil Transit Chokepoints",
+        s4: "Petroleum liquids through Bab el-Mandeb, Q4 2025 and Q2 2026: U.S. EIA, Short-Term Energy Outlook",
+        s5: "Q2 2026: U.S. EIA, Short-Term Energy Outlook" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      // places (lon, lat): plain map geography
+      const GATE = [43.4, 12.62], HORM = [56.4, 26.55];
+      const LAB = [
+        ["tHor", "acc", "STRAIT OF HORMUZ<small>out of the Gulf</small>", HORM, 40, -80], ["tBab", "acc", "BAB EL-MANDEB<small>out of the Red Sea</small>", GATE, 170, -75],
+        ["tGul", "dim", "THE GULF", [50.6, 27.6], 0, -40], ["tRed", "dim", "RED SEA", [38.4, 19.6], 0, 0], ["tAra", "dim", "ARABIAN SEA", [63, 15], 0, 0],
+        ["tGoa", "dim", "GULF OF ADEN", [49, 12.8], 0, 40], ["tInd", "blu", "INDIA", [77.5, 21], 0, 0],
+        ["tAsia", "acc", "→ CHINA · JAPAN · S KOREA", [89, 7.5], -60, 0],
+      ];
+      LAB.forEach(([id, cls, html]) => mk(id, cls, html));
+      // routes (schematic, over water): RH out of the Gulf through Hormuz; RE on toward Asia; RB Gulf of Aden -> gate -> Red Sea
+      const RH = [[50.3, 27.0], [52.5, 26.7], [55.0, 26.3], [56.3, 26.55], [56.9, 26.2], [57.5, 25.2], [59.0, 24.0], [61.5, 22.8], [64, 21]];
+      const RE = [[59.0, 24.0], [64, 21.3], [69.5, 17.5], [74.5, 10], [79.5, 5.6], [84, 5.8], [89.5, 7.6]];
+      const RB = [[57, 14.5], [51.5, 12.4], [46, 12.0], [44.2, 12.3], [43.45, 12.5], [43.15, 12.75], [42.85, 13.3], [42.2, 14.4], [40.9, 16.4], [38.4, 20.4], [36.1, 24.3], [34.4, 26.8]];
+      const cum = (R) => R.reduce((a, p, i) => (a.push(i ? a[i - 1] + A.hav(R[i - 1], p) : 0), a), []);
+      const KH = cum(RH), KE = cum(RE), KB = cum(RB);
+      const along = (R, K, d) => { const out = [R[0]]; let i = 1;
+        for (; i < R.length && K[i] <= d; i++) out.push(R[i]);
+        if (i < R.length) { const u = (d - K[i - 1]) / (K[i] - K[i - 1]); out.push([L(R[i - 1][0], R[i][0], u), L(R[i - 1][1], R[i][1], u)]); }
+        return out; };
+      const M = A.create("map", [["assets/img/w4.jpg", [0.375, 0.3125, 0.75, 0.6875]], ["assets/img/r6.jpg", [0.578125, 0.390625, 0.6875, 0.484375]],
+        ["assets/img/g8.jpg", [0.61328125, 0.45703125, 0.62890625, 0.47265625]]]);
+      const g = $("ov").getContext("2d");
+      const cu = {}; ["two", "hormuz", "bab", "main", "right", "nq", "eia", "thru", "q4", "q2", "low", "why", "war", "ann", "east", "asia", "h1", "four", "pct",
+        "other", "bq4", "bfive", "bq2", "beight", "detour", "end"].forEach((k) => (cu[k] = Q(k)));
+      const WIDE = [50, 19.8, 3100], HZ = [56.6, 25.2, 1500], AS = [67, 17, 4600], BM = [41.5, 16.5, 2500];
+      const KEYS = [[0, ...WIDE], [cu.hormuz, ...WIDE], [cu.hormuz + 1.0, 55.5, 24.5, 2000], [cu.bab, 55.5, 24.5, 2000], [cu.bab + 1.0, 44, 15, 2000],
+        [cu.main - 0.1, 44, 15, 2000], [cu.main + 0.9, 54.5, 24.5, 2300], [cu.eia, 54.5, 24.5, 2300], [cu.eia + 1.2, ...HZ], [cu.why, ...HZ],
+        [cu.war + 0.8, 56.4, 26.2, 900], [cu.east - 0.1, 56.4, 26.2, 900], [cu.east + 1.3, ...AS], [cu.pct, ...AS], [cu.pct + 1.2, 70, 15, 5200],
+        [cu.other, 70, 15, 5200], [cu.other + 1.3, ...BM], [cu.bq2, ...BM], [cu.bq2 + 1.2, 42.3, 14.2, 1600], [cu.detour - 0.1, 42.3, 14.2, 1600],
+        [cu.detour + 1.1, ...WIDE], [D, ...WIDE]];
+      const line = (pts, col, w, a, dash) => { if (a <= 0 || pts.length < 2) return; const P = pts.map(M.P); g.globalAlpha = a; g.beginPath();
+        P.forEach((p, i) => (i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]))); g.lineJoin = g.lineCap = "round";
+        g.setLineDash([]); g.strokeStyle = "rgba(4,8,14,0.55)"; g.lineWidth = w + 6; g.stroke();
+        g.setLineDash(dash || []); g.strokeStyle = col; g.lineWidth = w; g.stroke(); g.setLineDash([]); g.globalAlpha = 1; };
+      const dot = (ll, col, r, a) => { if (a <= 0) return; const p = M.P(ll); g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill();
+        g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (ll, km, col, a, dash) => { if (a <= 0) return; line(A.circle(ll, km, 90), col, 5, a, dash || [10, 8]); };
+      const place = (id, ll, dx, dy, o) => { const el = $(id); el.style.opacity = o; if (o <= 0) return; const p = M.P(ll);
+        const x = Math.min(Math.max(p[0] + dx - el.offsetWidth / 2, 30), 1050 - el.offsetWidth); el.style.transform = `translate(${Math.round(x)}px, ${Math.round(p[1] + dy - el.offsetHeight / 2)}px)`; };
+      const any = (t, ...w) => Math.max(0, ...w.map(([a, b]) => F(t, a, b, 0.3)));
+      let t_ = 0;
+      const win = (id, a, b) => { $(id).style.opacity = F(t_, a, b, 0.25); };
+      // a stream of tanker dots moving along a route: n dots, so a busier gate shows more ships (schematic, not to scale)
+      const stream = (R, K, n, a, speed) => { if (a <= 0 || n <= 0) return; const len = K[K.length - 1];
+        for (let i = 0; i < n; i++) { const u = (t_ * speed + i / n) % 1; dot(along(R, K, u * len).pop(), "#f7f3ea", 8, a); } };
+      H.render = (t) => {
+        t_ = t; const cam = A.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- the two routes, always on; each brightens while its gate is the subject
+        const hOn = any(t, [cu.hormuz, cu.bab], [cu.main, cu.other]) , bOn = any(t, [cu.bab, cu.main], [cu.other, cu.detour]);
+        const both = any(t, [-1, cu.hormuz], [cu.detour, D + 1]);
+        line(RH, "#f2b233", 6, 0.45 + 0.55 * Math.max(hOn, both));
+        line(RB, "#f2b233", 6, 0.45 + 0.55 * Math.max(bOn, both));
+        // ---- where Hormuz crude went (1H 2025): a blue arrow east, its own beats only
+        const re = C((t - cu.east) / 1.4), rea = F(t, cu.east, cu.other, 0.3);
+        if (re > 0) line(along(RE, KE, Z.io2(re) * KE[KE.length - 1]), "#6fc3ff", 7, rea);
+        // ---- tanker streams: Hormuz busy in Q4 2025, thin in Q2 2026; Bab el-Mandeb thinner in Q4 2025, busier in Q2 2026
+        const nH = t < cu.q2 + 0.3 ? 14 : 3, nB = t < cu.bq2 + 0.3 ? 5 : 9;
+        stream(RH, KH, nH, F(t, cu.eia, cu.east, 0.3), 0.06);
+        stream(RB, KB, nB, F(t, cu.bq4, cu.end, 0.3), 0.035);
+        stream(RH, KH, 3, F(t, cu.detour, cu.end, 0.3), 0.06);
+        // ---- gate rings
+        ring(HORM, 90, "#f2b233", any(t, [cu.hormuz, cu.main], [cu.detour, D + 1]));
+        ring(GATE, 90, "#f2b233", any(t, [cu.bab, cu.main], [cu.detour, D + 1]));
+        ring(HORM, 60, "#ff6b5a", F(t, cu.ann, cu.east, 0.3), [6, 6]);
+        dot(HORM, "#f2b233", 10, 1); dot(GATE, "#f2b233", 10, 1);
+        // ---- labels
+        const L1 = { tHor: [[-1, cu.bab + 0.6], [cu.main, cu.east], [cu.detour, D + 1]], tBab: [[-1, cu.hormuz], [cu.bab, cu.main + 0.6], [cu.other, D + 1]],
+          tGul: [[cu.hormuz, cu.bab], [cu.thru, cu.why]], tRed: [[cu.bab, cu.main], [cu.bq4, cu.detour]], tAra: [[cu.main, cu.eia]], tGoa: [[cu.bq4, cu.bq2]],
+          tInd: [[cu.east + 0.6, cu.other]], tAsia: [[cu.asia, cu.other]] };
+        LAB.forEach(([id, , , ll, dx, dy]) => place(id, ll, dx, dy, any(t, ...(L1[id] || []))));
+        // ---- panels and source lines
+        win("p1", -1, cu.main); win("p2", cu.main, cu.nq); win("p2b", cu.nq, cu.eia); win("p3", cu.eia, cu.q2); win("p4", cu.q2, cu.why);
+        win("p5", cu.why, cu.east); win("p6", cu.east, cu.four); win("p7", cu.four, cu.other); win("p8", cu.other + 0.4, cu.bq2); win("p9", cu.bq2, cu.detour);
+        win("p10", cu.detour, D + 1);
+        $("s0").style.opacity = any(t, [-1, cu.eia]); $("s1").style.opacity = F(t, cu.eia, cu.why, 0.15); $("s2").style.opacity = F(t, cu.why, cu.east, 0.15);
+        $("s3").style.opacity = F(t, cu.east, cu.other, 0.15); $("s4").style.opacity = F(t, cu.other, cu.detour, 0.15); $("s5").style.opacity = F(t, cu.detour, D + 1, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

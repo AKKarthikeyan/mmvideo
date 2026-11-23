@@ -1,0 +1,142 @@
+<!doctype html>
+<!-- Moat & Margin · DRAFT 16 Nov 2026 · "Patanjali Foods' sales grew 16%. Profit fell 19%. Where did the profit go?"
+     Number-led finance Short, 1080 x 1920, no map. Big numbers (hook), revenue, two segment bars (edible oil vs FMCG),
+     FMCG share of revenue vs share of EBITDA, FMCG segment result last year vs this year, margin and moat verdicts, loop.
+     Every figure on screen is exact, from Patanjali Foods' results filing of 14 Nov 2026 (Outcome.pdf), quarter ended
+     30 Sep 2026 (Q2 FY27). Claim ids P1-P6 as in script.py. Never: net profit and EBITDA in one comparison; any
+     edible-oil segment-profit figure. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Moat &amp; Margin: Patanjali Foods Q2</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; --up: #57d38c; --dn: #ff5a4e; background: radial-gradient(120% 70% at 50% 35%, #142033, #07090d 70%); }
+      #strip { position: absolute; left: 64px; top: 196px; width: 952px; padding: 10px 16px; background: #f7f3ea; color: #07090d;
+        font: 600 23px/1.3 Plex, monospace; letter-spacing: -0.02em; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35); }
+      #strip b { font-weight: 700; }
+      .pan { position: absolute; left: 64px; top: 360px; width: 952px; opacity: 0; }
+      .pan .lab, .pan .big { position: static; display: block; }
+      .pan .lab { font-size: 44px; white-space: normal; }
+      .pan .big { font-size: 150px; line-height: 1; margin-top: 8px; }
+      .pan .big.sm { font-size: 96px; white-space: normal; line-height: 1.02; }
+      .note { font: 28px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 14px; }
+      .row { position: relative; height: 150px; margin-top: 26px; }
+      .row .k { font: 700 40px/1 Oswald, sans-serif; letter-spacing: 0.05em; }
+      .row .bar { position: absolute; left: 0; top: 54px; height: 64px; width: 0; background: var(--acc); }
+      .row .v { position: absolute; top: 60px; font: 700 48px/1 Oswald, sans-serif; white-space: nowrap; }
+      .ann { position: absolute; font: 700 38px/1 Oswald, sans-serif; letter-spacing: 0.03em; padding: 8px 14px 10px; background: #f7f3ea; color: #07090d; white-space: nowrap; opacity: 0; }
+      .ann.acc { background: var(--acc); }
+      .ann.up { background: var(--up); }
+      .ann.dn { background: var(--dn); color: #fff; }
+      .hrow { display: flex; align-items: baseline; justify-content: space-between; margin-top: 18px; opacity: 0; }
+      .hrow .lab { font-size: 56px; }
+      .hrow .big { font-size: 170px; }
+      .share { position: relative; height: 120px; margin-top: 20px; }
+      .share .k { font: 600 30px/1 Inter, sans-serif; letter-spacing: 0.02em; }
+      .share .tr { position: absolute; left: 0; top: 44px; width: 952px; height: 56px; background: rgba(247, 243, 234, 0.14); }
+      .share .fi { position: absolute; left: 0; top: 0; height: 56px; width: 0; background: var(--acc); }
+      .share .v { position: absolute; top: 4px; font: 700 46px/1 Oswald, sans-serif; color: #f7f3ea; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.567" data-width="1080" data-height="1920">
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">MOAT &amp; MARGIN · WHERE DID THE PROFIT GO?</div>
+      <div id="strip"><b>FILING</b> · Patanjali Foods results (Outcome.pdf), 14 Nov 2026 · quarter ended 30 Sep 2026 (Q2 FY27) · consolidated</div>
+
+      <!-- b1 + loop end: P1, P2 -->
+      <div class="pan" id="hk" style="opacity:1">
+        <div class="hrow" id="h1"><span class="lab">SALES</span><span class="big" style="color:var(--up)">+15.55%</span></div>
+        <div class="hrow" id="h2"><span class="lab">NET PROFIT</span><span class="big" style="color:var(--dn)">−18.76%</span></div>
+        <div class="hrow" id="h3" style="justify-content:center"><span class="big" style="font-size:240px">?</span></div>
+      </div>
+      <!-- b2: P1 -->
+      <div class="pan" id="rev"><span class="lab">REVENUE FROM OPERATIONS</span><span class="big" style="font-size:132px">₹11,322.58 cr</span>
+        <div class="note">vs ₹9,798.84 cr a year earlier · +15.55%</div>
+        <div class="ann acc" id="aJul" style="position:relative;display:inline-block;margin-top:26px">JUL–SEP 2026 · Q2 FY27</div></div>
+      <!-- b3-b6: P3, P4, P6 -->
+      <div class="pan" id="segs"><span class="lab">REVENUE BY SEGMENT · JUL–SEP 2026</span>
+        <div class="row" id="rOil"><div class="k">EDIBLE OIL</div><div class="bar" id="bOil"></div><div class="v" id="vOil">₹8,532.25 cr</div></div>
+        <div class="row" id="rFm"><div class="k">FMCG <span style="font:600 28px Inter,sans-serif;letter-spacing:0">(the branded side)</span></div><div class="bar" id="bFm" style="background:#6fc3ff"></div><div class="v" id="vFm">₹2,923.48 cr</div></div>
+        <div style="position:relative;height:250px">
+          <div class="ann up" id="aUp22" style="left:0;top:20px">EDIBLE OIL REVENUE +22.39%</div>
+          <div class="ann" id="aOilM" style="left:0;top:90px">EDIBLE OIL EBITDA MARGIN 3.00%</div>
+          <div class="ann acc" id="aFmM" style="left:0;top:160px">FMCG EBITDA MARGIN 7.57%</div>
+          <div class="ann" id="aFlat" style="left:0;top:20px">FMCG ₹2,914.24 → ₹2,923.48 cr</div>
+          <div class="ann acc" id="aFlat2" style="left:0;top:90px">+0.31% · FLAT</div>
+        </div>
+        <div id="share" style="opacity:0">
+          <div class="share"><div class="k">FMCG SHARE OF REVENUE</div><div class="tr"><div class="fi" id="fRev"></div><div class="v" id="vRev">25.50%</div></div></div>
+          <div class="share"><div class="k">FMCG SHARE OF EBITDA (ex unallocable)</div><div class="tr"><div class="fi" id="fEb"></div><div class="v" id="vEb">45.04%</div></div></div>
+        </div>
+      </div>
+      <!-- b7: P4, P5 -->
+      <div class="pan" id="sr"><span class="lab">FMCG SEGMENT RESULT</span><div class="note" style="margin-top:4px">before finance cost and tax · FMCG sales +0.31%</div>
+        <div class="row"><div class="k">JUL–SEP 2025</div><div class="bar" id="bLy" style="background:rgba(247,243,234,0.55)"></div><div class="v" id="vLy">₹341.63 cr</div></div>
+        <div class="row"><div class="k">JUL–SEP 2026</div><div class="bar" id="bTy" style="background:var(--dn)"></div><div class="v" id="vTy">₹207.90 cr</div></div>
+        <div class="big" id="b39" style="position:static;display:block;color:var(--dn);font-size:150px;margin-top:20px;opacity:0">≈ −39%</div>
+        <div class="ann" id="aNot" style="position:relative;display:inline-block;margin-top:14px">NOT THE ONLY REASON</div><br />
+        <div class="ann acc" id="aBig" style="position:relative;display:inline-block;margin-top:14px">BIGGEST DROP IN THE SEGMENT TABLE</div>
+      </div>
+      <!-- b8: P4, P5 margin verdict -->
+      <div class="pan" id="mv"><span class="lab" style="color:var(--acc)">MARGIN VERDICT</span><span class="big sm" id="mv2" style="opacity:0">THE BRANDED SIDE EARNED LESS</span>
+        <div class="note" id="mv3" style="opacity:0">on the same sales: FMCG sales +0.31%, FMCG segment result ≈ −39%</div></div>
+      <!-- b9: [frame] moat verdict -->
+      <div class="pan" id="mo"><span class="lab" style="color:var(--acc)">MOAT VERDICT</span><span class="big sm" id="mo2" style="opacity:0">ONE QUARTER CAN'T SETTLE IT</span>
+        <div class="ann acc" id="mo3" style="position:relative;display:inline-block;margin-top:30px">WATCH: DOES THE FMCG MARGIN COME BACK?</div></div>
+
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      const cu = {}; ["hook", "fell", "where", "sales", "jul", "two", "oil", "up22", "thin", "fmcg", "rich", "quarter", "half", "flat", "stayed",
+        "same", "drop", "table", "big", "mv", "less", "same2", "moat", "one", "watch", "end"].forEach((k) => (cu[k] = Q(k)));
+      const op = (id, v) => { $(id).style.opacity = v; };
+      const grow = (id, w, t0, d = 0.7) => { $(id).style.width = Math.round(w * Z.o3((t_ - t0) / d)) + "px"; };
+      const BW = 700;                                   // longest bar; values sit to the right of their bar
+      let t_ = 0;
+      H.render = (t) => {
+        t_ = t;
+        // hook (0 -> sales) and the loop return (end -> D): sales up, net profit down, "?"
+        const hk = Math.max(1 - C((t - cu.sales) / 0.25), C((t - cu.end) / 0.3));
+        op("hk", hk);
+        op("h1", t < cu.end ? 1 : C((t - cu.end) / 0.3)); op("h2", t < cu.end ? C((t - cu.fell) / 0.3) : 0); op("h3", t < cu.end ? C((t - cu.where) / 0.3) : 0);
+        // revenue
+        op("rev", F(t, cu.sales, cu.two, 0.25)); op("aJul", C((t - cu.jul) / 0.3));
+        // segments: bars grow at "two engines"; focus moves oil -> FMCG
+        op("segs", F(t, cu.two, cu.same, 0.25));
+        grow("bOil", BW, cu.two); grow("bFm", BW * 2923.48 / 8532.25, cu.two + 0.2);
+        $("vOil").style.left = (parseFloat($("bOil").style.width) + 20) + "px"; $("vFm").style.left = (parseFloat($("bFm").style.width) + 20) + "px";
+        const oilF = t < cu.oil ? 1 : t < cu.fmcg ? 1 : 0.35, fmF = t < cu.oil ? 1 : t < cu.fmcg ? 0.35 : 1;
+        op("rOil", oilF); op("rFm", fmF);
+        op("aUp22", F(t, cu.up22, cu.fmcg, 0.25)); op("aOilM", F(t, cu.thin, cu.fmcg, 0.25)); op("aFmM", F(t, cu.rich, cu.quarter, 0.25));
+        op("aFlat", F(t, cu.flat, cu.same, 0.25)); op("aFlat2", F(t, cu.stayed, cu.same, 0.25));
+        op("share", F(t, cu.quarter, cu.flat, 0.25));
+        $("fRev").style.width = Math.round(952 * 0.255 * Z.o3((t - cu.quarter) / 0.7)) + "px";
+        $("fEb").style.width = Math.round(952 * 0.4504 * Z.o3((t - cu.half) / 0.7)) + "px";
+        op("vEb", C((t - cu.half) / 0.3));
+        $("vRev").style.left = (parseFloat($("fRev").style.width) + 16) + "px"; $("vEb").style.left = (parseFloat($("fEb").style.width) + 16) + "px";
+        // FMCG segment result, last year vs this year
+        op("sr", F(t, cu.same, cu.mv, 0.25));
+        grow("bLy", BW, cu.same); grow("bTy", BW * 207.90 / 341.63, cu.drop);
+        $("vLy").style.left = (parseFloat($("bLy").style.width) + 20) + "px"; $("vTy").style.left = (parseFloat($("bTy").style.width) + 20) + "px";
+        op("vTy", C((t - cu.drop) / 0.3)); op("b39", C((t - cu.drop - 0.6) / 0.3));
+        op("aNot", C((t - cu.table) / 0.3)); op("aBig", C((t - cu.big) / 0.3));
+        // verdicts
+        op("mv", F(t, cu.mv, cu.moat, 0.25)); op("mv2", C((t - cu.less) / 0.3)); op("mv3", C((t - cu.same2) / 0.3));
+        op("mo", F(t, cu.moat, cu.end, 0.25)); op("mo2", C((t - cu.one) / 0.3)); op("mo3", C((t - cu.watch) / 0.3));
+        caps(t);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

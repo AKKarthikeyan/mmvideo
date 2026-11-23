@@ -1,0 +1,162 @@
+<!doctype html>
+<!-- The UPSC Mains · DRAFT 16 Nov 2026 · "Three gates on a blank map" (Hormuz, Bab el-Mandeb, Suez). Map recall Short, 1080 x 1920.
+     Blank map with three "?" pins and a 3-2-1 recall count; each gate is revealed with the two water bodies it joins;
+     then why India cares (Gulf oil -> west coast via Hormuz; India -> Europe via Bab el-Mandeb and Suez), the EIA
+     Suez/SUMED scenario estimate (round the Cape), a one-line mains takeaway, and back to the blank map for the loop.
+     Base maps: AWS Terrain Tiles shaded relief, copied from ia-hormuzshift. Routes are schematic. No borders are drawn. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>The UPSC Mains: three sea gates</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(7, 16, 28, 0.9), rgba(7, 16, 28, 0.72) 55%, rgba(7, 16, 28, 0)); }
+      .pan { position: absolute; right: 56px; top: 300px; width: 960px; text-align: right; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 44px; }
+      .pan .big { position: static; display: block; font-size: 140px; line-height: 1; margin-top: 6px; }
+      .pan .big.sm { font-size: 92px; }
+      .pan .big.xs { font-size: 64px; line-height: 1.1; }
+      .pan .note { font: 28px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 28px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      .tag.blu { background: #6fc3ff; }
+      .tag.q { background: #f2b233; font-size: 64px; padding: 6px 22px 10px; }
+      .tag.dim { background: rgba(7, 16, 28, 0.78); color: #f7f3ea; font-size: 30px; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="45.000" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">THE UPSC MAINS · BLANK MAP · GS-II · GS-III</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div></div>
+      <div class="pan" id="p1"><span class="lab">MAP DRILL</span><span class="big sm">PLACE THE 3 SEA GATES</span></div>
+      <div class="pan" id="p3n"><span class="lab">RECALL</span><span class="big">3</span></div>
+      <div class="pan" id="p2n"><span class="lab">RECALL</span><span class="big">2</span></div>
+      <div class="pan" id="p1n"><span class="lab">RECALL</span><span class="big">1</span></div>
+      <div class="pan" id="pg1"><span class="lab">GATE 1</span><span class="big sm">STRAIT OF HORMUZ</span><div class="note">joins the Persian Gulf and the Gulf of Oman · between Iran and Oman</div></div>
+      <div class="pan" id="pg2"><span class="lab">GATE 2</span><span class="big sm">BAB EL-MANDEB</span><div class="note">joins the Red Sea and the Gulf of Aden · between Yemen and Djibouti</div></div>
+      <div class="pan" id="pg3"><span class="lab">GATE 3</span><span class="big sm">SUEZ CANAL</span><div class="note">joins the Red Sea and the Mediterranean · Egypt</div></div>
+      <div class="pan" id="pw"><span class="lab">WHY INDIA CARES</span><span class="big sm">GULF OIL → HORMUZ</span><div class="note">oil sailing straight from the Gulf to India's west coast</div></div>
+      <div class="pan" id="pe"><span class="lab">INDIA → EUROPE · SHORT ROUTE</span><span class="big xs">BAB EL-MANDEB<br />THEN SUEZ</span></div>
+      <div class="pan" id="px"><span class="lab">WITHOUT SUEZ · ROUND THE CAPE</span><span class="big">≈ +15 DAYS</span><div class="note">Arabian Sea to Europe if the Suez Canal and SUMED pipeline closed · EIA estimate for that scenario</div></div>
+      <div class="pan" id="pm"><span class="lab">MAINS LINE</span><span class="big xs">HORMUZ → GULF OIL<br />BAB EL-MANDEB + SUEZ → EUROPE</span><div class="note">GS-II: international relations, West Asia · GS-III: economic and maritime security</div></div>
+      <div class="pan" id="pa"><span class="lab">BLANK MAP</span><span class="big sm">NOW PLACE THEM AGAIN</span></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur, A = ATLAS;
+      const SRC = { s0: "Map: shaded relief, AWS Terrain Tiles · routes drawn schematically · no borders drawn",
+        s1: "Routes drawn schematically · no borders drawn",
+        s2: "Suez/SUMED closure scenario, Arabian Sea to Europe round the Cape: U.S. EIA, World Oil Transit Chokepoints" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      // places (lon, lat): plain map geography
+      const HORM = [56.4, 26.55], GATE = [43.4, 12.62], SUEZ = [32.4, 30.5];
+      const LAB = [
+        ["q1", "q", "?", HORM, 0, -95], ["q2", "q", "?", GATE, 0, -95], ["q3", "q", "?", SUEZ, 0, -95],
+        ["tHor", "acc", "STRAIT OF HORMUZ<small>Persian Gulf ↔ Gulf of Oman</small>", HORM, 40, -90],
+        ["tBab", "acc", "BAB EL-MANDEB<small>Red Sea ↔ Gulf of Aden</small>", GATE, 60, -90],
+        ["tSue", "acc", "SUEZ CANAL<small>Red Sea ↔ Mediterranean</small>", SUEZ, 150, -80],
+        ["tPG", "dim", "PERSIAN GULF", [51.2, 27.4], 0, 0], ["tGO", "dim", "GULF OF OMAN", [59.3, 24.0], 0, 40],
+        ["tIran", "dim", "IRAN", [55.5, 30.2], 0, 0], ["tOman", "dim", "OMAN", [57.3, 21.6], 0, 0],
+        ["tRed", "dim", "RED SEA", [40.4, 16.4], 0, 0], ["tRed2", "dim", "RED SEA", [35.4, 25.8], 0, 0], ["tGA", "dim", "GULF OF ADEN", [48.3, 12.9], 0, 40],
+        ["tYem", "dim", "YEMEN", [46.5, 15.6], 0, 0], ["tDji", "dim", "DJIBOUTI", [42.6, 11.6], -40, 50],
+        ["tMed", "dim", "MEDITERRANEAN", [31.0, 32.9], 0, 0], ["tEgy", "dim", "EGYPT", [29.6, 26.8], 0, 0],
+        ["tInd", "blu", "INDIA", [77.5, 21], 0, 0], ["tEu", "blu", "← TO EUROPE", [29.5, 33.6], 0, -40],
+        ["tCape", "dim", "↓ ROUND THE CAPE", [51.5, 1], 0, 0],
+      ];
+      LAB.forEach(([id, cls, html]) => mk(id, cls, html));
+      // routes (schematic, over water): RO Gulf -> Hormuz -> India's west coast; RU India -> Bab el-Mandeb -> Suez -> Mediterranean;
+      // RC the long way, Gulf of Aden south toward the Cape (dashed)
+      const RO = [[50.3, 27.0], [52.5, 26.7], [55.0, 26.3], [56.3, 26.55], [56.9, 26.2], [57.5, 25.2], [59.0, 24.0], [63, 22.4], [67.5, 21.0], [71.6, 19.4]];
+      const RU = [[71.6, 18.6], [66, 15.2], [57, 13.6], [51.5, 12.4], [46, 12.0], [44.2, 12.3], [43.45, 12.5], [43.15, 12.75], [42.85, 13.3], [42.2, 14.4],
+        [40.9, 16.4], [38.4, 20.4], [36.1, 24.3], [34.4, 26.8], [33.7, 27.7], [33.0, 28.9], [32.55, 29.9], [32.35, 30.6], [32.3, 31.3], [31.2, 32.3], [28.5, 33.4]];
+      const RC = [[51.5, 12.4], [52.6, 10.8], [52.2, 4], [48, -4], [44.5, -10], [42, -16]];
+      const cum = (R) => R.reduce((a, p, i) => (a.push(i ? a[i - 1] + A.hav(R[i - 1], p) : 0), a), []);
+      const KO = cum(RO), KU = cum(RU), KC = cum(RC);
+      const along = (R, K, d) => { const out = [R[0]]; let i = 1;
+        for (; i < R.length && K[i] <= d; i++) out.push(R[i]);
+        if (i < R.length) { const u = (d - K[i - 1]) / (K[i] - K[i - 1]); out.push([L(R[i - 1][0], R[i][0], u), L(R[i - 1][1], R[i][1], u)]); }
+        return out; };
+      const M = A.create("map", [["assets/img/w4.jpg", [0.375, 0.3125, 0.75, 0.6875]], ["assets/img/r6.jpg", [0.578125, 0.390625, 0.6875, 0.484375]],
+        ["assets/img/g8.jpg", [0.61328125, 0.45703125, 0.62890625, 0.47265625]]]);
+      const g = $("ov").getContext("2d");
+      const cu = {}; ["three", "blank", "c3", "c2", "c1", "g1", "hj", "ho", "hb", "g2", "bj", "bb", "g3", "sj", "why", "oil", "ph", "eu", "via", "then",
+        "eia", "fift", "ase", "mains", "hfor", "efor", "again"].forEach((k) => (cu[k] = Q(k)));
+      const ALL = [45, 23, 3900], HZ = [56.6, 25.6, 1400], BM = [43.6, 14, 1400], SZ = [33, 28.6, 1500], IN = [62, 21.5, 3400],
+        EU = [50, 21, 4700], CP = [46, 10, 5600];
+      const KEYS = [[0, ...ALL], [cu.c1 + 0.5, ...ALL], [cu.g1 + 0.9, ...HZ], [cu.g2 - 0.1, ...HZ], [cu.g2 + 1.0, ...BM], [cu.g3 - 0.1, ...BM],
+        [cu.g3 + 1.0, ...SZ], [cu.why - 0.1, ...SZ], [cu.why + 1.1, ...IN], [cu.eu - 0.1, ...IN], [cu.eu + 1.1, ...EU], [cu.eia - 0.1, ...EU],
+        [cu.eia + 1.1, ...CP], [cu.mains - 0.1, ...CP], [cu.mains + 1.0, ...ALL], [D, ...ALL]];
+      const line = (pts, col, w, a, dash) => { if (a <= 0 || pts.length < 2) return; const P = pts.map(M.P); g.globalAlpha = a; g.beginPath();
+        P.forEach((p, i) => (i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]))); g.lineJoin = g.lineCap = "round";
+        g.setLineDash([]); g.strokeStyle = "rgba(4,8,14,0.55)"; g.lineWidth = w + 6; g.stroke();
+        g.setLineDash(dash || []); g.strokeStyle = col; g.lineWidth = w; g.stroke(); g.setLineDash([]); g.globalAlpha = 1; };
+      const dot = (ll, col, r, a) => { if (a <= 0) return; const p = M.P(ll); g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill();
+        g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (ll, km, col, a, dash) => { if (a <= 0) return; line(A.circle(ll, km, 90), col, 5, a, dash || [10, 8]); };
+      const place = (id, ll, dx, dy, o) => { const el = $(id); el.style.opacity = o; if (o <= 0) return; const p = M.P(ll);
+        const x = Math.min(Math.max(p[0] + dx - el.offsetWidth / 2, 30), 1050 - el.offsetWidth); el.style.transform = `translate(${Math.round(x)}px, ${Math.round(p[1] + dy - el.offsetHeight / 2)}px)`; };
+      const any = (t, ...w) => Math.max(0, ...w.map(([a, b]) => F(t, a, b, 0.3)));
+      let t_ = 0;
+      const win = (id, a, b) => { $(id).style.opacity = F(t_, a, b, 0.25); };
+      // a route drawn in from its start at time t0 over sec seconds, shown until t1
+      const grow = (R, K, t0, sec, t1, col, w, dash) => { const u = C((t_ - t0) / sec); if (u <= 0) return;
+        line(along(R, K, Z.io2(u) * K[K.length - 1]), col, w, F(t_, t0, t1, 0.3), dash); };
+      H.render = (t) => {
+        t_ = t; const cam = A.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- routes: oil to India (Hormuz), India to Europe (Bab el-Mandeb + Suez), the long way round the Cape (dashed)
+        grow(RO, KO, cu.oil, 1.6, cu.eu + 0.4, "#f2b233", 7);
+        grow(RU, KU, cu.eu, 2.2, cu.mains, "#6fc3ff", 7);
+        grow(RC, KC, cu.fift, 1.4, cu.mains, "#ff6b5a", 6, [14, 10]);
+        grow(RO, KO, cu.hfor, 0.9, cu.again, "#f2b233", 7);
+        grow(RU, KU, cu.efor, 1.2, cu.again, "#6fc3ff", 7);
+        // ---- gate rings: each pulses at its reveal; all three on for the takeaway
+        const pulse = (a) => 0.6 + 0.4 * Math.abs(Math.sin(t * 3.2)) * a;
+        ring(HORM, 70, "#f2b233", any(t, [cu.g1, cu.g2], [cu.ph - 0.2, cu.eu], [cu.hfor, cu.again]));
+        ring(GATE, 70, "#f2b233", any(t, [cu.g2, cu.g3], [cu.via, cu.then + 0.6], [cu.efor, cu.again]));
+        ring(SUEZ, 70, "#f2b233", any(t, [cu.g3, cu.why], [cu.then, cu.eia], [cu.efor, cu.again]));
+        // pins: "?" pins while blank (start, and again at the loop), then the gate dot
+        const blank = any(t, [-1, cu.g1], [cu.again, D + 1]);
+        [HORM, GATE, SUEZ].forEach((p) => dot(p, blank > 0.5 ? "#f7f3ea" : "#f2b233", 11, 1));
+        if (blank > 0) [HORM, GATE, SUEZ].forEach((p) => ring(p, 45, "#f7f3ea", blank * pulse(1), [6, 6]));
+        // ---- labels
+        const L1 = { q1: [[-1, cu.g1], [cu.again, D + 1]], q2: [[-1, cu.g1], [cu.again, D + 1]], q3: [[-1, cu.g1], [cu.again, D + 1]],
+          tHor: [[cu.g1 + 0.4, cu.g2], [cu.mains, cu.again]], tBab: [[cu.g2 + 0.4, cu.g3], [cu.mains, cu.again]], tSue: [[cu.g3 + 0.4, cu.why], [cu.mains, cu.again]],
+          tPG: [[cu.hj, cu.g2]], tGO: [[cu.ho, cu.g2]], tIran: [[cu.hb, cu.g2]], tOman: [[cu.hb + 0.3, cu.g2]],
+          tRed: [[cu.bj, cu.g3]], tRed2: [[cu.sj, cu.why]], tGA: [[cu.bj + 0.5, cu.g3]], tYem: [[cu.bb, cu.g3]], tDji: [[cu.bb + 0.3, cu.g3]],
+          tMed: [[cu.sj + 0.4, cu.why]], tEgy: [[cu.g3 + 0.6, cu.why]],
+          tInd: [[cu.why + 0.8, cu.eia]], tEu: [[cu.then, cu.eia + 0.6]], tCape: [[cu.fift + 0.8, cu.mains]] };
+        LAB.forEach(([id, , , ll, dx, dy]) => place(id, ll, dx, dy, any(t, ...(L1[id] || []))));
+        // ---- panels and source lines
+        win("p1", -1, cu.c3); win("p3n", cu.c3, cu.c2); win("p2n", cu.c2, cu.c1); win("p1n", cu.c1, cu.g1);
+        win("pg1", cu.g1, cu.g2); win("pg2", cu.g2, cu.g3); win("pg3", cu.g3, cu.why); win("pw", cu.why, cu.eu); win("pe", cu.eu, cu.eia);
+        win("px", cu.eia, cu.mains); win("pm", cu.mains, cu.again); win("pa", cu.again, D + 1);
+        $("s0").style.opacity = any(t, [-1, cu.why]); $("s1").style.opacity = any(t, [cu.why, cu.eia], [cu.mains, D + 1]);
+        $("s2").style.opacity = F(t, cu.eia, cu.mains, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<!-- Indica Atlas · F14 "Build It" TEST · 1080 x 1920. One growing 2D cutaway (elevation cut through the middle of the
+     hall), drawn in SVG, that only ever grows; the "camera" is one eased transform on the world group. One hard cut, at
+     b5 (the sultan). Proportions for drawing only (Cousens 1916): hall 135 ft 5 in square inside, pendentives from 57 ft,
+     gallery 109 ft 6 in up and about 11 ft wide, dome 124 ft 5 in inside / 144 ft outside, vault under the hall floor.
+     World units are feet, y up from the hall floor. On-screen numbers: only "38 M" and "10+". The name is held to b9.
+     Corner towers are plain shafts: no storey bands or window rows (the storey count is disputed). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: Build It test</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #sky { position: absolute; inset: 0; background: linear-gradient(#060d18, #0f1f33 40%, #2a3b50 64%, #2a3b50); }
+      #warm { position: absolute; inset: 0; opacity: 0; background: linear-gradient(#1d1420, #5a2f26 36%, #c8692e 60%, #e9a64a 64%); }
+      svg.lay { position: absolute; left: 0; top: 0; }
+      #dim { position: absolute; inset: 0; background: rgba(4, 6, 9, 0.64); opacity: 0; }
+      #hs use { filter: brightness(1.18) drop-shadow(0 0 8px #f2b233) drop-shadow(0 0 22px rgba(242, 178, 51, 0.75)); }
+      #scrimT { height: 420px; }
+      #scrimB { opacity: 0.55; }
+      .ink { stroke: #1b140e; stroke-width: calc(3px * var(--k, 0.2)); stroke-linejoin: round; stroke-linecap: round; }
+      .thin { stroke: rgba(27, 20, 14, 0.55); stroke-width: calc(1.6px * var(--k, 0.2)); fill: none; }
+      .pill { position: absolute; left: 0; top: 0; font: 700 56px/1 Oswald, sans-serif; letter-spacing: 0.06em; color: #07090d; background: #f2b233;
+        padding: 12px 30px 14px; border-radius: 999px; white-space: nowrap; opacity: 0; box-shadow: 0 0 0 7px rgba(7, 9, 13, 0.55), 0 0 40px rgba(242, 178, 51, 0.6); }
+      #n38 { position: absolute; left: 0; top: 0; font: 700 132px/1 Oswald, sans-serif; color: #f2b233; white-space: nowrap; opacity: 0;
+        -webkit-text-stroke: 10px rgba(4, 6, 9, 0.9); paint-order: stroke fill; font-variant-numeric: tabular-nums; }
+      #echo { position: absolute; left: 0; top: 0; text-align: center; opacity: 0; }
+      #echoLab { font: 600 30px/1 Inter, sans-serif; letter-spacing: 0.2em; color: #f7f3ea; }
+      #echoN { font: 700 104px/1 Oswald, sans-serif; color: #f2b233; -webkit-text-stroke: 9px rgba(4, 6, 9, 0.9); paint-order: stroke fill; margin-top: 6px; font-variant-numeric: tabular-nums; }
+      #card { position: absolute; left: 0; width: 1080px; top: 262px; text-align: center; opacity: 0; }
+      #cardName { font: 700 168px/1 Oswald, sans-serif; letter-spacing: 0.04em; color: #f7f3ea; -webkit-text-stroke: 12px rgba(4, 6, 9, 0.85); paint-order: stroke fill; }
+      #cardSub { font: 600 40px/1.2 Inter, sans-serif; color: #f2b233; margin-top: 18px; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8); }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+      #sul { opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration='58.200' data-width="1080" data-height="1920">
+      <div id="sky" data-layout-ignore></div>
+      <div id="warm" data-layout-ignore></div>
+      <svg id="sc" class="lay" width="1080" height="1920" data-layout-ignore>
+        <defs>
+          <filter id="ink" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="5" />
+            <feDisplacementMap in="SourceGraphic" scale="4" xChannelSelector="R" yChannelSelector="G" /></filter>
+          <clipPath id="cpW"><rect id="cpWr" x="-90" y="0" width="180" height="0" /></clipPath>
+          <clipPath id="cpM"><rect id="cpMr" x="-90" y="57" width="180" height="0" /></clipPath>
+          <clipPath id="cpT"><rect id="cpTr" x="-120" y="0" width="240" height="0" /></clipPath>
+          <clipPath id="cpI"><rect x="-67.7" y="0" width="135.4" height="109.5" /><path d="M-62.2 109.5 A62.2 62.2 0 0 0 62.2 109.5 Z" /></clipPath>
+        </defs>
+        <g filter="url(#ink)"><g id="cam">
+          <g id="soil"></g>
+          <g id="towers" clip-path="url(#cpT)"></g>
+          <g id="walls" clip-path="url(#cpW)"></g>
+          <g id="lattice"></g>
+          <g id="ghost"></g>
+          <g id="dome"></g>
+          <g id="mass" clip-path="url(#cpM)"></g>
+          <g id="gallery"></g>
+          <g id="tombs"></g>
+          <g id="vault"></g>
+          <g id="ripples" clip-path="url(#cpI)"></g>
+          <g id="sound"></g>
+          <g id="ruler"></g>
+          <g id="arrows"></g>
+        </g></g>
+      </svg>
+      <div id="dim" data-layout-ignore></div>
+      <svg id="hs" class="lay" width="1080" height="1920" data-layout-ignore>
+        <g filter="url(#ink)"><g id="hcam">
+          <use id="uW" href="#walls" opacity="0" /><use id="uD" href="#dome" opacity="0" /><use id="uL" href="#lattice" opacity="0" /><use id="uG" href="#gallery" opacity="0" />
+        </g></g>
+      </svg>
+      <svg id="inset" class="lay" width="1080" height="1920" data-layout-ignore><g id="ins" transform="translate(790 292)" opacity="0"></g></svg>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <svg id="sul" class="lay" width="1080" height="1920" data-layout-ignore></svg>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="pill" id="pCube">CUBE</div><div class="pill" id="pDome">DOME</div><div class="pill" id="pPend">PENDENTIVES</div><div class="pill" id="pGal">GALLERY</div>
+      <div id="n38">0 M</div>
+      <div id="echo"><div id="echoLab">ECHOES</div><div id="echoN">1</div></div>
+      <div id="card"><div id="cardName">GOL GUMBAZ</div><div id="cardSub">Vijayapura, Karnataka · mid-17th century CE</div></div>
+      <div class="kicker" id="kick">INDICA ATLAS · BUILD IT</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div><div id="s5"></div><div id="s6"></div></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const END = 58.2; window.STORY.dur = Math.max(window.STORY.dur, END);     // hold the reveal card (B11)
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), NS = "http://www.w3.org/2000/svg";
+      const el = (par, tag, at) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); $(par).appendChild(e); return e; };
+      const SRC = { s0: "Square hall, no pillar inside: Cousens, ASI 1916 · ASI Dharwad Circle · simplified drawing",
+        s1: "Eight crossing arches: ASI Dharwad Circle · pendentives: Cousens, ASI 1916",
+        s2: "Masonry weight acting inwards: Fergusson, History of Indian and Eastern Architecture",
+        s3: "Reign, and “seems to have died” while plastering: Cousens, ASI 1916",
+        s4: "Inner diameter: Cousens, ASI 1916 · ASI Dharwad Circle",
+        s5: "Whisper, echo, real graves in the vault: Cousens, ASI 1916 (as reported)",
+        s6: "Cousens, ASI 1916 · Fergusson · ASI Dharwad Circle · simplified drawing" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const INK = "#1b140e", CUT = "#eadfc8", CUT2 = "#d6bf95", FAR = "#6e6152", RED = "#ff5a3c", ACC = "#f2b233";
+      const WI = 67.7, WO = 79.7, WT = 118, SPR = 109.5, RI = 62.2, RO = 72, GE = 51.2;   // feet
+      // ---- soil (warm Deccan bands) and ground line
+      [[0, -9, "#a06c42"], [-9, -26, "#8c5c39"], [-26, -52, "#774c30"], [-52, -95, "#633e28"], [-95, -600, "#4e3020"]].forEach(([a, b, c]) => el("soil", "rect", { x: -3000, y: b, width: 6000, height: a - b, fill: c }));
+      for (let i = 0; i < 90; i++) { const x = ((i * 137.5) % 600) - 300, y = -4 - ((i * 53.3) % 120); el("soil", "ellipse", { cx: x, cy: y, rx: 1.4 + (i % 3) * 0.6, ry: 0.8 + (i % 2) * 0.4, fill: "rgba(30,18,10,0.35)" }); }
+      el("soil", "line", { x1: -3000, y1: 0, x2: 3000, y2: 0, class: "ink" });
+      // ---- corner towers (far plane, plain octagonal shafts, small domed caps; rise after the sultan cut, done before the clap)
+      [-1, 1].forEach((sd) => { const x0 = sd * WO, x1 = sd * (WO + 20), xm = (x0 + x1) / 2;
+        el("towers", "rect", { x: Math.min(x0, x1), y: 0, width: 20, height: 150, fill: "#8a7c68", class: "ink" });
+        [0.25, 0.75].forEach((f) => el("towers", "line", { x1: L(x0, x1, f), y1: 0, x2: L(x0, x1, f), y2: 150, class: "thin" }));
+        el("towers", "path", { d: `M${xm - 10} 150 A10 10 0 0 0 ${xm + 10} 150 Z`, fill: "#a29276", class: "ink" });
+        el("towers", "line", { x1: xm, y1: 160, x2: xm, y2: 165, class: "ink" }); });
+      // ---- walls: far wall (shaded, behind) and the two cut walls, with courses
+      el("walls", "rect", { x: -WI, y: 0, width: 2 * WI, height: WT, fill: FAR });
+      for (let y = 6; y < WT; y += 6) el("walls", "line", { x1: -WI, y1: y, x2: WI, y2: y, stroke: "rgba(20,14,10,0.25)", "stroke-width": "calc(1.2px * var(--k))" });
+      el("walls", "line", { x1: -WI, y1: WT, x2: WI, y2: WT, class: "ink" });
+      [-1, 1].forEach((sd) => { el("walls", "rect", { x: sd < 0 ? -WO : WI, y: 0, width: WO - WI, height: WT, fill: CUT, class: "ink" });
+        for (let y = 6, r = 0; y < WT; y += 6, r++) { el("walls", "line", { x1: sd * WI, y1: y, x2: sd * WO, y2: y, class: "thin" });
+          const xj = sd * (WI + (r % 2 ? 4 : 8)); el("walls", "line", { x1: xj, y1: y - 6, x2: xj, y2: y, class: "thin" }); } });
+      // ---- eight crossing arches on the far wall (drawn one by one)
+      const ARC = []; for (let i = 0; i < 8; i++) { const w = 2 * WI * 0.5, x0 = -WI + i * (2 * WI - w) / 7, xm = x0 + w / 2, x1 = x0 + w, h = 44;
+        ARC.push(el("lattice", "path", { d: `M${x0} 57 C${x0} ${57 + h * 0.6} ${xm - w * 0.22} ${57 + h * 0.95} ${xm} ${57 + h} C${xm + w * 0.22} ${57 + h * 0.95} ${x1} ${57 + h * 0.6} ${x1} 57`,
+          fill: "none", stroke: "#e9d9b4", "stroke-width": "calc(4px * var(--k))", "stroke-linecap": "round", pathLength: 1, "stroke-dasharray": "1 1", "stroke-dashoffset": 1 })); }
+      // ---- ghost pillars, struck out
+      const GP = [-38, 0, 38].map((x) => [el("ghost", "rect", { x: x - 3.5, y: 0, width: 7, height: WT, fill: "rgba(247,243,234,0.08)", stroke: "rgba(247,243,234,0.7)", "stroke-width": "calc(2.5px * var(--k))", "stroke-dasharray": "3 2.5" }),
+        el("ghost", "line", { x1: x - 11, y1: 30, x2: x + 11, y2: 88, stroke: RED, "stroke-width": "calc(9px * var(--k))", "stroke-linecap": "round", pathLength: 1, "stroke-dasharray": "1 1", "stroke-dashoffset": 1 })]);
+      // ---- dome: inner shade, cut shell, finial, drawn outline
+      const domeIn = el("dome", "path", { d: `M${-RI} ${SPR} A${RI} ${RI} 0 0 0 ${RI} ${SPR} Z`, fill: "#4a3f35", opacity: 0 });
+      const domeShell = el("dome", "path", { d: `M${-RO} ${SPR} A${RO} ${RO} 0 0 0 ${RO} ${SPR} L${RI} ${SPR} A${RI} ${RI} 0 0 1 ${-RI} ${SPR} Z`, fill: CUT, opacity: 0 });
+      const fin = el("dome", "path", { d: `M-2.5 ${SPR + RO} L0 ${SPR + RO + 10} L2.5 ${SPR + RO} Z`, fill: CUT, class: "ink", opacity: 0 });
+      const domeLine = el("dome", "path", { d: `M${-RO} ${SPR} A${RO} ${RO} 0 0 0 ${RO} ${SPR} M${RI} ${SPR} A${RI} ${RI} 0 0 1 ${-RI} ${SPR}`, fill: "none", class: "ink", pathLength: 1, "stroke-dasharray": "1 1", "stroke-dashoffset": 1 });
+      // ---- the mass of arch masonry, overhanging inward, and its top: the gallery
+      [-1, 1].forEach((sd) => el("mass", "path", { d: `M${sd * WI} 57 L${sd * WI} ${SPR} L${sd * GE} ${SPR} C${sd * GE} 92 ${sd * 62} 70 ${sd * WI} 57 Z`, fill: CUT2, class: "ink" }));
+      [-1, 1].forEach((sd) => { for (let y = 63; y < SPR; y += 6) el("mass", "line", { x1: sd * WI, y1: y, x2: sd * (GE + 2), y2: y, class: "thin" }); });
+      [-1, 1].forEach((sd) => { el("gallery", "rect", { x: sd < 0 ? -RI : GE, y: SPR - 0.5, width: RI - GE, height: 2.6, fill: ACC, class: "ink" });
+        el("gallery", "line", { x1: sd * GE, y1: SPR + 2, x2: sd * GE, y2: SPR + 5.5, class: "ink" }); el("gallery", "line", { x1: sd * GE, y1: SPR + 5.5, x2: sd * (GE + 4), y2: SPR + 5.5, class: "ink" }); });
+      // ---- stand-in tombs on the floor; the vault below
+      const TS = [], TO = [];
+      el("tombs", "rect", { x: -22, y: 0, width: 44, height: 2.5, fill: CUT, class: "ink" });
+      [-12, 0, 12].forEach((x, i) => { const d = `M${x - 3.5} 2.5 L${x - 3.5} ${6.5 + (i === 1) * 1.5} Q${x} ${8.5 + (i === 1) * 1.5} ${x + 3.5} ${6.5 + (i === 1) * 1.5} L${x + 3.5} 2.5 Z`;
+        TS.push(el("tombs", "path", { d, fill: "#f3ead6", class: "ink" })); TO.push(el("tombs", "path", { d, fill: "none", stroke: "#f7f3ea", "stroke-width": "calc(2.5px * var(--k))", "stroke-dasharray": "1.2 1", opacity: 0 })); });
+      const vBox = el("vault", "rect", { x: -64, y: -17, width: 128, height: 15, fill: "#1a120c", class: "ink" });
+      const vGlow = el("vault", "rect", { x: -64, y: -17, width: 128, height: 15, fill: ACC, opacity: 0 });
+      [-12, 0, 12].forEach((x) => el("vault", "rect", { x: x - 4, y: -15.5, width: 8, height: 3.2, fill: "#3a2a1c", class: "ink" }));
+      // ---- clap ripples, sound line, ruler, arrows
+      const RIP = []; for (let i = 0; i < 11; i++) RIP.push(el("ripples", "circle", { cx: 0, cy: 6, r: 1, fill: "none", stroke: ACC, "stroke-width": "calc(5px * var(--k))", opacity: 0 }));
+      const SNDN = 34, SND = []; for (let i = 0; i <= SNDN; i++) { const a = Math.PI * (1 - i / SNDN); SND.push(el("sound", "circle", { cx: (GE + RI) / 2 * Math.cos(a), cy: SPR + 2 + 16 * Math.sin(a), r: 0.9, fill: ACC, opacity: 0 })); }
+      const sndHead = el("sound", "circle", { cx: 0, cy: 0, r: 2.2, fill: "#fff6d8", opacity: 0 });
+      const RY = 114, rul = el("ruler", "rect", { x: -RI, y: RY - 1.3, width: 0, height: 2.6, fill: ACC, class: "ink" });
+      const RT = []; for (let m = 0; m <= 38; m += 2) RT.push([-RI + m * 3.2808, el("ruler", "line", { x1: -RI + m * 3.2808, y1: RY + 1.3, x2: -RI + m * 3.2808, y2: RY + (m % 10 ? 3.2 : 5.5), class: "ink", opacity: 0 })]);
+      const capL = el("ruler", "line", { x1: -RI, y1: RY - 4, x2: -RI, y2: RY + 4, class: "ink" }), capR = el("ruler", "line", { x1: RI, y1: RY - 4, x2: RI, y2: RY + 4, class: "ink", opacity: 0 });
+      const AR = [0, 1, 2, 3].map(() => el("arrows", "path", { d: "", fill: RED, stroke: "#07090d", "stroke-width": "calc(3px * var(--k))", "stroke-linejoin": "round" }));
+      const arrowD = (x0, x1, y) => { const dir = Math.sign(x1 - x0), len = Math.abs(x1 - x0), hl = Math.min(9, len * 0.6), xs = x1 - dir * hl;
+        return `M${x0} ${y - 1.8} L${xs} ${y - 1.8} L${xs} ${y - 5.5} L${x1} ${y} L${xs} ${y + 5.5} L${xs} ${y + 1.8} L${x0} ${y + 1.8} Z`; };
+      // ---- plan-view inset (screen space): square hall, round dome, eight crossing arches
+      el("ins", "rect", { x: 0, y: 0, width: 250, height: 280, rx: 14, fill: "rgba(7,9,13,0.82)", stroke: "rgba(247,243,234,0.5)", "stroke-width": 2 });
+      const T = el("ins", "text", { x: 125, y: 36, "text-anchor": "middle", fill: "rgba(247,243,234,0.85)", style: "font: 600 22px Inter, sans-serif; letter-spacing: 0.25em" }); T.textContent = "PLAN";
+      const cx0 = 125, cy0 = 160, R = 98, sq = `M${cx0 - R} ${cy0 - R} H${cx0 + R} V${cy0 + R} H${cx0 - R} Z`, circ = `M${cx0 + R} ${cy0} A${R} ${R} 0 1 0 ${cx0 - R} ${cy0} A${R} ${R} 0 1 0 ${cx0 + R} ${cy0} Z`;
+      const insRed = el("ins", "path", { d: sq + circ, "fill-rule": "evenodd", fill: RED, opacity: 0 });
+      const insFill = el("ins", "path", { d: sq + circ, "fill-rule": "evenodd", fill: CUT2, opacity: 0 });
+      el("ins", "path", { d: sq, fill: "none", stroke: "#f7f3ea", "stroke-width": 7 });
+      const insCirc = el("ins", "path", { d: circ, fill: "none", stroke: "#f7f3ea", "stroke-width": 3, "stroke-dasharray": "8 7" });
+      const IL = []; { const v1 = [0, 1, 2, 3].map((k) => [cx0 + R * Math.cos(k * Math.PI / 2), cy0 + R * Math.sin(k * Math.PI / 2)]), v2 = [0, 1, 2, 3].map((k) => [cx0 + R * Math.cos(Math.PI / 4 + k * Math.PI / 2), cy0 + R * Math.sin(Math.PI / 4 + k * Math.PI / 2)]);
+        for (let k = 0; k < 4; k++) [v1, v2].forEach((v) => IL.push(el("ins", "line", { x1: v[k][0], y1: v[k][1], x2: v[(k + 1) % 4][0], y2: v[(k + 1) % 4][1], stroke: ACC, "stroke-width": 4, "stroke-linecap": "round", pathLength: 1, "stroke-dasharray": "1 1", "stroke-dashoffset": 1 }))); }
+      // ---- the human round (one hard cut): a sultan beside a half-plastered wall. Stylised, no face detail.
+      el("sul", "rect", { x: 0, y: 0, width: 1080, height: 1920, fill: "#1b1410" });
+      el("sul", "rect", { x: 0, y: 0, width: 1080, height: 1190, fill: "url(#sulG)" });
+      { const d = el("sul", "defs", {}), g = document.createElementNS(NS, "radialGradient"); g.id = "sulG"; g.setAttribute("cx", "0.45"); g.setAttribute("cy", "0.55"); g.setAttribute("r", "0.7");
+        [["0", "#4a3626"], ["1", "#120d0a"]].forEach(([o, c]) => { const s = document.createElementNS(NS, "stop"); s.setAttribute("offset", o); s.setAttribute("stop-color", c); g.appendChild(s); }); d.appendChild(g); }
+      [[1190, 1240, "#a06c42"], [1240, 1330, "#8c5c39"], [1330, 1920, "#633e28"]].forEach(([a, b, c]) => el("sul", "rect", { x: 0, y: a, width: 1080, height: b - a, fill: c }));
+      el("sul", "line", { x1: 0, y1: 1190, x2: 1080, y2: 1190, stroke: INK, "stroke-width": 4 });
+      el("sul", "rect", { x: 500, y: 330, width: 520, height: 860, fill: "#8a7a64", stroke: INK, "stroke-width": 4 });
+      for (let y = 330 + 48, r = 0; y < 1190; y += 48, r++) { el("sul", "line", { x1: 500, y1: y, x2: 1020, y2: y, stroke: "rgba(27,20,14,0.6)", "stroke-width": 2.5 });
+        for (let x = 500 + (r % 2 ? 40 : 80); x < 1020; x += 96) el("sul", "line", { x1: x, y1: y - 48, x2: x, y2: y, stroke: "rgba(27,20,14,0.6)", "stroke-width": 2.5 }); }
+      const plaster = el("sul", "path", { d: "", fill: "#efe6d2", stroke: INK, "stroke-width": 3 });
+      const fig = el("sul", "g", {});
+      const figP = [["path", { d: "M222 860 L354 860 L410 1186 L170 1186 Z", fill: "#2f5d50" }], ["rect", { x: 196, y: 958, width: 186, height: 26, fill: ACC }],
+        ["path", { d: "M176 1150 L404 1150 L410 1186 L170 1186 Z", fill: ACC }], ["path", { d: "M330 880 L452 936 L444 962 L318 920 Z", fill: "#2f5d50" }],
+        ["rect", { x: 266, y: 822, width: 28, height: 42, fill: "#a87452" }], ["circle", { cx: 280, cy: 790, r: 42, fill: "#a87452" }],
+        ["ellipse", { cx: 280, cy: 744, rx: 64, ry: 40, fill: "#efe6d2" }], ["path", { d: "M292 712 Q312 664 300 640 Q326 670 306 714 Z", fill: ACC }]];
+      figP.forEach(([tag, at]) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); e.setAttribute("stroke", INK); e.setAttribute("stroke-width", 4); fig.appendChild(e); });
+      // ---- cues and camera
+      const tWalls = Q("walls"), tCube = Q("cube"), tPillar = Q("pillar"), tCover = Q("cover"), tDome = Q("dome"), tRound = Q("round"), tSquare = Q("square"), tArches = Q("arches"),
+        tCircle = Q("circle"), tPend = Q("pend"), tPush = Q("push"), tMass = Q("mass"), tInward = Q("inward"), tBack = Q("back"), tGal = Q("gal"), tReign = Q("reign"),
+        tSultan = Q("sultan"), tPlaster = Q("plaster"), tRuler = Q("ruler"), tN38 = Q("n38"), tWhisper = Q("whisper"), tHeard = Q("heard"), tClap = Q("clap"),
+        tTombs = Q("tombs"), tVault = Q("vault"), tCong = Q("cong"), tName = Q("name"), D = S.dur, tDie = tSultan + 1.0;
+      // camera [t, cx, cy, scale]: subject fills ~80-90% of the width; the finial (y 191.5) stays >= ~310 px (below the source line)
+      const K = [[0, 0, 34, 5.9], [tCube, 0, 48, 5.7], [tPillar, 0, 60, 5.6], [tCover, 0, 76, 5.55], [tDome + 0.3, 0, 80, 5.6], [tRound, 0, 84, 5.8],
+        [tArches, 8, 86, 5.95], [tPend + 1.4, 8, 88, 6.0], [tPush, 0, 66, 5.0], [tInward, 0, 68, 5.1], [tGal + 1.6, 0, 76, 5.5],
+        [tRuler, 0, 92, 6.2], [tN38 + 1.4, 0, 91, 6.0], [tWhisper + 0.2, 0, 88, 5.45], [tClap, 0, 84, 5.4], [tTombs - 0.2, 0, 63, 5.0], [tVault - 0.3, 0, 52, 4.65],
+        [tCong, 0, 60, 4.8], [tName - 0.4, 0, 96, 4.4], [D, 0, 97, 4.3]];
+      const cam = (t) => { let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++; const a = K[i], b = K[i + 1], u = Z.io2((t - a[0]) / (b[0] - a[0])); return [L(a[1], b[1], u), L(a[2], b[2], u), L(a[3], b[3], u)]; };
+      const pill = (id, p, tc, t1) => { const e = $(id), o = F(t, tc, t1, 0.2); e.style.opacity = o; if (o > 0) e.style.transform = `translate(${Math.round(p[0] - e.offsetWidth / 2)}px, ${Math.round(p[1] - e.offsetHeight / 2)}px) scale(${0.6 + 0.4 * Z.back((t - tc) / 0.35)})`; };
+      let t = 0;
+      const HI = [["uW", "pCube", () => tCube, [0, 62]], ["uD", "pDome", () => tDome, [0, 142]], ["uL", "pPend", () => tPend, [0, 52]], ["uG", "pGal", () => tGal, [-30, 128]]];
+      H.render = (tt) => {
+        t = tt; const [cx, cy, s] = cam(t), P = (x, y) => [540 + s * (x - cx), 960 - s * (y - cy)];
+        const tr = `translate(${540 - s * cx} ${960 + s * cy}) scale(${s} ${-s})`; $("cam").setAttribute("transform", tr); $("hcam").setAttribute("transform", tr);
+        $("root").style.setProperty("--k", (1 / s).toFixed(4));
+        // b1: walls rise course by course
+        const hc = C((t - 0.25) / (tCube - 0.55)) * 20, k = Math.floor(hc), wh = Math.min(WT, 6 * (k + Z.o3((hc - k) * 3)));
+        $("cpWr").setAttribute("height", Math.max(0.01, wh + 0.5));
+        // b2: ghost pillars struck out; dome outline rises then fills
+        const gpo = F(t, tPillar - 0.1, tDome - 0.4, 0.3);
+        GP.forEach(([r, l], i) => { r.setAttribute("opacity", gpo); l.setAttribute("opacity", gpo); l.setAttribute("stroke-dashoffset", 1 - Z.o3((t - tPillar - 0.55 - i * 0.12) / 0.3)); });
+        domeLine.setAttribute("stroke-dashoffset", 1 - Z.io2((t - tCover) / Math.max(0.6, tDome - tCover - 0.1)));
+        const df = C((t - tDome + 0.3) / 0.5); domeShell.setAttribute("opacity", df); domeIn.setAttribute("opacity", df); fin.setAttribute("opacity", df);
+        // b3: the mismatch, then eight arches one by one
+        $("ins").setAttribute("opacity", F(t, tRound - 0.2, tPush - 0.3, 0.35));
+        const cr = C((t - tCircle) / 0.7);
+        insRed.setAttribute("opacity", C((t - tSquare + 0.3) / 0.3) * (1 - cr) * (0.75 + 0.25 * Math.sin(t * 9)));
+        insFill.setAttribute("opacity", cr); insCirc.setAttribute("stroke", cr > 0.5 ? ACC : "#f7f3ea"); insCirc.setAttribute("stroke-dasharray", cr > 0.5 ? "none" : "8 7");
+        const dA = (tCircle - tArches) / 8;
+        for (let i = 0; i < 8; i++) { const u = Z.o3((t - tArches - i * dA) / (dA * 1.3)); ARC[i].setAttribute("stroke-dashoffset", 1 - u); IL[i].setAttribute("stroke-dashoffset", 1 - u); }
+        // b4: walls pushed out; the mass shades in; arrows turn inward; the gallery
+        $("cpMr").setAttribute("height", Math.max(0.01, (SPR - 57 + 0.5) * Z.io2((t - tMass) / 1.6)));
+        const ao = F(t, tPush, tInward, 0.25), au = Z.o3((t - tPush) / 0.6), ai = F(t, tInward, tGal + 0.2, 0.3), iu = Z.o3((t - tInward) / 0.6), pb = 3 * Math.max(0, Math.sin(C((t - tBack) / 0.8) * Math.PI * 2));
+        AR[0].setAttribute("d", arrowD(-62, L(-62, -101, au), 104)); AR[1].setAttribute("d", arrowD(62, L(62, 101, au), 104));
+        AR[2].setAttribute("d", arrowD(-104, L(-104, -71 + pb, iu), 84)); AR[3].setAttribute("d", arrowD(104, L(104, 71 - pb, iu), 84));
+        AR[0].setAttribute("opacity", ao); AR[1].setAttribute("opacity", ao); AR[2].setAttribute("opacity", ai); AR[3].setAttribute("opacity", ai);
+        $("gallery").setAttribute("opacity", F(t, tGal - 0.15, 99, 0.25));
+        // "This is" treatment: dim, glow, pill
+        let dim = 0;
+        HI.forEach(([u, p, tf, a]) => { const tc = tf(), o = F(t, tc, tc + 1.45, 0.22); dim = Math.max(dim, o); $(u).setAttribute("opacity", o); pill(p, P(a[0], a[1]), tc, tc + 1.45); });
+        $("dim").style.opacity = dim;
+        // b5: the one hard cut
+        const onS = t >= tReign && t < tRuler; $("sul").style.opacity = onS ? 1 : 0;
+        if (onS) { const xp = L(770, 700, Z.o2((t - tReign) / (tDie - tReign))), w = (y) => xp + 10 * Math.sin(y * 0.05);
+          let d = `M1020 330 L${w(330)} 330`; for (let y = 360; y <= 1190; y += 30) d += ` L${w(y)} ${y}`; plaster.setAttribute("d", d + " L1020 1190 Z");
+          const fd = C((t - tDie) / 0.9); fig.setAttribute("opacity", 1 - 0.7 * fd); fig.setAttribute("stroke-dasharray", fd > 0.5 ? "10 8" : "none"); }
+        // b6: ruler across the inside of the dome at its base
+        const ro = F(t, tRuler + 0.05, tWhisper + 0.1, 0.3), ru = Z.io2((t - tN38 + 0.5) / 1.4);
+        $("ruler").setAttribute("opacity", ro); rul.setAttribute("width", Math.max(0.01, 2 * RI * ru));
+        RT.forEach(([x, l]) => l.setAttribute("opacity", x <= -RI + 2 * RI * ru + 0.01 ? 1 : 0)); capR.setAttribute("opacity", ru >= 0.999 ? 1 : 0);
+        const n = $("n38"), pn = P(0, RY + 11); n.textContent = Math.round(38 * ru) + " M"; n.style.opacity = ro * C((t - tN38 + 0.6) / 0.2);
+        if (ro > 0) n.style.transform = `translate(${Math.round(pn[0] - n.offsetWidth / 2)}px, ${Math.round(pn[1] - n.offsetHeight)}px)`;
+        // b7: a whisper travels round the gallery to the far side
+        const so = F(t, tWhisper + 0.15, tClap - 0.1, 0.25), su = Z.io2((t - tWhisper - 0.3) / (tHeard - tWhisper + 1.1));
+        SND.forEach((c, i) => c.setAttribute("opacity", i / SNDN <= su ? so * (i % 2 ? 0.55 : 1) : 0));
+        { const a = Math.PI * (1 - su); sndHead.setAttribute("cx", (GE + RI) / 2 * Math.cos(a)); sndHead.setAttribute("cy", SPR + 2 + 16 * Math.sin(a)); sndHead.setAttribute("opacity", so * (su > 0 && su < 1 ? 1 : 0)); }
+        // b8: a clap that returns more than ten times; stand-in tombs; the vault
+        let kk = 0; RIP.forEach((c, i) => { const t0 = tClap + 0.2 + i * 0.26, u = (t - t0) / 1.15; if (t >= t0) kk = i + 1;
+          c.setAttribute("opacity", u > 0 && u < 1 && t < tTombs + 0.3 ? (1 - u) * 0.95 : 0); c.setAttribute("r", 4 + 150 * Math.max(0, u)); });
+        const eo = F(t, tClap + 0.2, tTombs + 0.4, 0.2), pe = P(0, 150); $("echo").style.opacity = eo; $("echoN").textContent = kk >= 11 ? "10+" : String(Math.max(1, kk));
+        if (eo > 0) $("echo").style.transform = `translate(${Math.round(pe[0] - $("echo").offsetWidth / 2)}px, ${Math.round(pe[1] - $("echo").offsetHeight / 2)}px)`;
+        const to = F(t, tTombs - 0.15, 99, 0.25), tf = C((t - tTombs - 1.05) / 0.6); $("tombs").setAttribute("opacity", to);
+        TS.forEach((e) => e.setAttribute("opacity", 1 - tf)); TO.forEach((e) => e.setAttribute("opacity", tf));
+        $("vault").setAttribute("opacity", F(t, tVault - 0.3, 99, 0.4)); vGlow.setAttribute("opacity", 0.5 * C((t - tVault - 0.2) / 0.8));
+        $("vault").style.filter = t > tVault ? `drop-shadow(0 0 ${Math.round(18 * C((t - tVault - 0.2) / 0.8))}px rgba(242,178,51,0.8))` : "none";
+        // towers rise after the cut back from the sultan, finished before the clap
+        $("cpTr").setAttribute("height", Math.max(0.01, 168 * Z.io2((t - tRuler - 0.4) / 5.0)));
+        // b9: pull back, warm light, the name
+        const w = C((t - tCong) / 1.6); $("warm").style.opacity = w * 0.9; $("sc").style.filter = `brightness(${1 + 0.12 * w}) saturate(${1 + 0.25 * w})`;
+        const co = F(t, tName - 0.05, 99, 0.2); $("card").style.opacity = co; $("card").style.transform = `scale(${0.85 + 0.15 * Z.back((t - tName) / 0.4)})`;
+        // source lines, one per beat
+        const sv = [[0, tRound], [tRound, tPush], [tPush, tReign], [tReign, tRuler], [tRuler, tWhisper], [tWhisper, tCong], [tCong, 99]];
+        sv.forEach(([a, b], i) => { $("s" + i).style.opacity = i === 0 ? (t < b ? 1 : 0) : (t >= a && t < b ? 1 : 0); });
+        caps(t);
+      };
+      document.fonts.ready.then(() => H.ready());
+    </script>
+  </body>
+</html>

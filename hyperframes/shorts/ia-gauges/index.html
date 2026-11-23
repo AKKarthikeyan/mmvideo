@@ -1,0 +1,142 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "India's trains: one track width? There are four". Reveal Loop Short, 1080 x 1920.
+     Main picture: a drawing to scale (ours) of the four track widths in the Railways' own classification
+     (MoSPI Year Book ch.19: 1,676 / 1,000 / 762 / 610 mm), measured between the inner faces of the rails.
+     One camera move on the map only where a claim is about a place: wide India -> Bombay (first passenger train,
+     Bombay-Thane 1853, C12) -> wide India again. Pins only; no borders, no rail lines (no gauge geometry was sourced).
+     1,066 mm and 2.75x: our measurement (docs/geo/research/W4-06-gauges/method). Heritage-line gauges not named (C10). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: four track widths</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 700px; background: linear-gradient(rgba(7, 16, 28, 0.92), rgba(7, 16, 28, 0.75) 55%, rgba(7, 16, 28, 0)); }
+      #head { position: absolute; left: 0; width: 1080px; top: 300px; text-align: center; }
+      #headLab { position: static; display: block; font-size: 52px; }
+      #headBig { position: static; display: block; font-size: 120px; line-height: 1; margin-top: 10px; }
+      #headBig b { color: var(--acc); font-weight: inherit; }
+      .pan { position: absolute; left: 64px; top: 300px; width: 950px; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 46px; }
+      .pan .big { position: static; display: block; font-size: 104px; line-height: 1; margin-top: 8px; }
+      .note, .by { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 12px; }
+      .qt { font: 700 60px/1.12 Oswald, sans-serif; color: #f7f3ea; letter-spacing: 0.01em; }
+      .qt em { font-style: normal; color: var(--acc); }
+      #plate { position: absolute; left: 50px; top: 620px; width: 980px; height: 530px; border-radius: 18px; background: rgba(5, 10, 18, 0.86);
+        box-shadow: 0 0 0 2px rgba(247, 243, 234, 0.12); opacity: 0; }
+      #plateCap { position: absolute; left: 80px; top: 1100px; width: 920px; font: 22px/1.2 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.8); opacity: 0; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="37.3" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="plate" data-layout-ignore></div>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div></div>
+      <div id="head"><span class="lab" id="headLab">EVERY INDIAN TRAIN</span><span class="big" id="headBig">ONE TRACK WIDTH<b id="qm">?</b></span></div>
+      <div class="pan" id="pCls"><span class="lab">THE RAILWAYS' OWN CLASSIFICATION</span><span class="big">3 GAUGE CLASSES</span></div>
+      <div class="pan" id="pFour"><span class="lab">THREE CLASSES, BUT</span><span class="big">4 WIDTHS</span><div class="note">MoSPI Year Book · the 2026 Government list also names standard gauge, 1.43 m</div></div>
+      <div class="pan" id="pDiff"><span class="lab">WIDEST VS NARROWEST</span><span class="big">1,066 MM WIDER</span><div class="note">2.75 times as wide · our measurement</div></div>
+      <div class="pan" id="pFirst"><span class="lab">THE FIRST LINES</span><span class="big">BROAD GAUGE</span><div class="note">5 ft 6 in · PIB backgrounder, 15 Apr 2026</div></div>
+      <div class="pan" id="p71"><span class="lab">METRE GAUGE, SECOND STANDARD</span><span class="big">1871</span><div class="note">“officially adopted” · PIB backgrounder, 15 Apr 2026</div></div>
+      <div class="pan" id="q1"><div class="qt">“For developing <em>poor areas</em> and for bringing merchandise to the main railways”</div><div class="by">On the narrower gauges · PIB backgrounder, 15 Apr 2026</div></div>
+      <div class="pan" id="pUni"><span class="lab">PROJECT UNIGAUGE · LAUNCHED</span><span class="big">1 APRIL 1992</span></div>
+      <div class="pan" id="p13"><span class="lab">CONVERTED BY 2007</span><span class="big">OVER 13,000 KM</span><div class="note">metre and narrow to broad · the Ministry's own figure, Feb 2007</div></div>
+      <div class="pan" id="pStill"><span class="lab">STILL LISTED, APRIL 2026</span><span class="big" style="font-size:84px">BROAD · METRE · NARROW</span><div class="note">“has the following categories of track” · plus standard gauge, 1.43 m · Government of India</div></div>
+      <div id="plateCap" data-layout-ignore>DRAWING TO SCALE, OURS · width between the inner faces of the rails · MoSPI Year Book</div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // Natural Earth 10m populated places (method/gauge_numbers_output.txt)
+      const MUM = [72.876, 19.068];
+      const SRC = { s0: "Shaded relief: AWS Terrain Tiles · no borders drawn · drawing ours",
+        s1: "Gauges: Statistical Year Book India, ch.19 Railways, MoSPI · difference: our measurement",
+        s2: "PIB backgrounder “From Steam to Speed”, 15 Apr 2026 · city point: Natural Earth",
+        s3: "Ministry of Railways via PIB, 21 Feb 2007 · the Ministry's figure",
+        s4: "PIB backgrounder “From Steam to Speed”, Government of India, 15 Apr 2026" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tMum", "acc", "BOMBAY → THANE<small>first passenger train · 16 April 1853</small>");
+      const M = ATLAS.create("map", [["assets/img/g4.jpg", [0.625, 0.3125, 0.8125, 0.5625]], ["assets/img/g5.jpg", [0.65625, 0.375, 0.78125, 0.5]],
+        ["assets/img/g7.jpg", [0.6953125, 0.4375, 0.7109375, 0.453125]]]);
+      const g = $("ov").getContext("2d");
+      const tOne = Q("one"), tRight = Q("right"), tNq = Q("nq"), tCls = Q("cls"), tFour = Q("four"), tBg = Q("bg"), tMg = Q("mg"), tNg1 = Q("ng1"), tNg2 = Q("ng2"),
+        tWide = Q("wide"), tFirst = Q("first"), tM71 = Q("m71"), tPoor = Q("poor"), tUni = Q("uni"), tK13 = Q("k13"), tY26 = Q("y26"), tEnd = Q("end");
+      const CW = [80.5, 22.5], CM = [72.9, 17.6];
+      const KEYS = [[0, ...CW, 3700], [tFirst, ...CW, 3500], [tFirst + 1.8, ...CM, 700], [tUni, ...CM, 650], [tUni + 1.8, ...CW, 3500], [D - 0.05, ...CW, 3700], [D, ...CW, 3700]];
+      // the four widths (mm, MoSPI), drawn at 0.5 px per mm, inner rail faces centred on x = 540
+      const K = 0.5, ROWS = [[1676, "BROAD", "1,676 MM", () => tBg], [1000, "METRE", "1,000 MM", () => tMg], [762, "NARROW", "762 MM", () => tNg1], [610, "NARROW", "610 MM", () => tNg2]];
+      const rowY = (i) => 720 + i * 115;
+      const rail = (x, y, a) => { g.globalAlpha = a; g.fillStyle = "#c9ced6"; g.fillRect(x, y - 18, 22, 36); g.fillStyle = "#8f96a1"; g.fillRect(x - 7, y + 14, 36, 8); g.globalAlpha = 1; };
+      const track = (mm, y, a, col) => { if (a <= 0) return; const w = mm * K, x0 = 540 - w / 2, x1 = 540 + w / 2;
+        g.globalAlpha = a * 0.9; g.fillStyle = "#5a4634"; g.fillRect(x0 - 70, y + 22, w + 140, 16); g.globalAlpha = 1;
+        rail(x0 - 22, y, a); rail(x1, y, a);
+        g.globalAlpha = a; g.strokeStyle = col; g.lineWidth = 3; g.beginPath(); g.moveTo(x0, y - 30); g.lineTo(x1, y - 30); g.stroke();
+        g.beginPath(); g.moveTo(x0, y - 38); g.lineTo(x0, y - 22); g.moveTo(x1, y - 38); g.lineTo(x1, y - 22); g.stroke(); g.globalAlpha = 1; };
+      const label = (txt, num, y, a) => { if (a <= 0) return; g.globalAlpha = a; g.textBaseline = "alphabetic";
+        g.font = "700 30px Oswald"; g.fillStyle = "#f7f3ea"; g.textAlign = "left"; g.fillText(txt, 90, y - 40);
+        g.fillStyle = "#f2b233"; g.textAlign = "right"; g.fillText(num, 990, y - 40); g.textAlign = "left"; g.globalAlpha = 1; };
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (p, t0, a) => { const u = C(t0 / 0.6); if (u > 0 && u < 1) { g.beginPath(); g.arc(p[0], p[1], 14 + 50 * u, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - u) * a})`; g.lineWidth = 5; g.stroke(); } };
+      H.render = (t) => {
+        const cam = ATLAS.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        // ---- the drawing: on from "one track" to the map beat, off on the map, back for 2026, gone before the loop
+        const pa = Math.min(F(t, tOne, tEnd - 0.3, 0.3), 1 - F(t, tFirst + 0.2, tY26, 0.35));
+        $("plate").style.opacity = pa; $("plateCap").style.opacity = pa * F(t, tBg, 99, 0.25);
+        if (pa > 0) {
+          ROWS.forEach(([mm, nm, num, tc], i) => {
+            const y = rowY(i), lab = i === 0 ? F(t, tBg, 99, 0.25) : 1;
+            const a = i === 0 ? pa : pa * F(t, tc(), 99, 0.25);
+            const hi = t > tc() && t < tc() + 1.0 ? "#f2b233" : "rgba(247,243,234,0.7)";
+            track(mm, y, a, i === 0 && t < tBg ? "rgba(247,243,234,0.7)" : hi); label(nm, num, y, a * lab);
+          });
+          // the difference: dashed guides from the narrowest's inner faces up to the widest, 1,066 mm = 2 x 533 mm
+          const da = pa * F(t, tWide, tFirst + 0.4, 0.3);
+          if (da > 0) { g.globalAlpha = da; g.setLineDash([10, 8]); g.strokeStyle = "#f2b233"; g.lineWidth = 3;
+            [540 - 152.5, 540 + 152.5].forEach((x) => { g.beginPath(); g.moveTo(x, rowY(3) - 22); g.lineTo(x, rowY(0) - 22); g.stroke(); }); g.setLineDash([]);
+            g.fillStyle = "rgba(242,178,51,0.28)"; g.fillRect(540 - 419, rowY(0) - 26, 419 - 152.5, 10); g.fillRect(540 + 152.5, rowY(0) - 26, 419 - 152.5, 10); g.globalAlpha = 1; }
+        }
+        // ---- the one map claim: Bombay, first passenger train
+        const pM = M.P(MUM), oM = F(t, tFirst + 1.4, tUni + 0.6, 0.3);
+        if (oM > 0) { ring(pM, t - tFirst - 1.5, oM); dot(pM, "#f2b233", 13, oM); }
+        const eM = $("tMum"); place("tMum", Math.max(40, Math.min(pM[0] + 26, 1040 - eM.offsetWidth)), pM[1] - eM.offsetHeight - 14, oM);
+        // ---- panels: head on the first and last beat (same frame at both ends)
+        $("head").style.opacity = t < tCls ? 1 - C((t - tCls + 0.3) / 0.3) : F(t, tEnd, 99, 0.3);
+        $("qm").style.opacity = t < tCls ? C((t - tRight) / 0.2) : 0;
+        $("headBig").style.color = t < tNq + 0.4 && t > tNq ? "#f2b233" : "";
+        $("pCls").style.opacity = F(t, tCls, tFour, 0.2); $("pFour").style.opacity = F(t, tFour, tWide, 0.2); $("pDiff").style.opacity = F(t, tWide, tFirst, 0.25);
+        $("pFirst").style.opacity = F(t, tFirst, tM71, 0.25); $("p71").style.opacity = F(t, tM71, tPoor, 0.25); $("q1").style.opacity = F(t, tPoor, tUni, 0.25);
+        $("pUni").style.opacity = F(t, tUni, tK13, 0.25); $("p13").style.opacity = F(t, tK13, tY26, 0.25); $("pStill").style.opacity = F(t, tY26, tEnd, 0.25);
+        // ---- source lines
+        $("s0").style.opacity = t < tCls ? 1 : F(t, tEnd, 99, 0.3); $("s1").style.opacity = F(t, tCls, tFirst, 0.15); $("s2").style.opacity = F(t, tFirst, tUni, 0.15);
+        $("s3").style.opacity = F(t, tUni, tY26, 0.15); $("s4").style.opacity = F(t, tY26, tEnd, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

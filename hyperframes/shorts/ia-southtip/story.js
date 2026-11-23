@@ -3,13 +3,13 @@ window.STORY = {
  "channel": "Indica Atlas",
  "lang": "en-IN",
  "title": "Kanyakumari is NOT India's southern tip",
- "dur": 30.567,
+ "dur": 31.8,
  "voiced": true,
  "beats": [
   {
    "id": "b1",
    "t0": 0.0,
-   "sec": 3.784,
+   "sec": 4.094,
    "say": "This is Kanyakumari. The southern tip of India. Right?",
    "ev": [
     "This is",
@@ -19,8 +19,8 @@ window.STORY = {
   },
   {
    "id": "b2",
-   "t0": 3.904,
-   "sec": 0.643,
+   "t0": 4.214,
+   "sec": 0.717,
    "say": "Not quite.",
    "ev": [
     "Not quite"
@@ -28,8 +28,8 @@ window.STORY = {
   },
   {
    "id": "b3",
-   "t0": 4.667,
-   "sec": 1.601,
+   "t0": 5.051,
+   "sec": 1.333,
    "say": "It's the tip of the mainland.",
    "ev": [
     "It's the tip"
@@ -37,8 +37,8 @@ window.STORY = {
   },
   {
    "id": "b4",
-   "t0": 6.388,
-   "sec": 5.188,
+   "t0": 6.504,
+   "sec": 5.2,
    "say": "The real southern tip is eighteen hundred kilometres away. Past Sri Lanka, across the Bay of Bengal.",
    "ev": [
     "The real",
@@ -49,8 +49,8 @@ window.STORY = {
   },
   {
    "id": "b5",
-   "t0": 11.696,
-   "sec": 3.353,
+   "t0": 11.824,
+   "sec": 3.144,
    "say": "This is Indira Point, on Great Nicobar Island.",
    "ev": [
     "This is Indira",
@@ -59,8 +59,8 @@ window.STORY = {
   },
   {
    "id": "b6",
-   "t0": 15.169,
-   "sec": 5.532,
+   "t0": 15.089,
+   "sec": 6.994,
    "say": "From here, Indonesia is just a hundred and sixty kilometres away. Eleven times closer than Kanyakumari.",
    "ev": [
     "From here",
@@ -70,8 +70,8 @@ window.STORY = {
   },
   {
    "id": "b7",
-   "t0": 20.82,
-   "sec": 6.879,
+   "t0": 22.203,
+   "sec": 6.661,
    "say": "In two thousand four, the earthquake sank this coast by about four metres. Its lighthouse still stands.",
    "ev": [
     "In two thousand",
@@ -81,8 +81,8 @@ window.STORY = {
   },
   {
    "id": "b8",
-   "t0": 27.82,
-   "sec": 2.608,
+   "t0": 28.984,
+   "sec": 2.67,
    "say": "So the next time someone points to the bottom of the map and says,",
    "ev": [
     "So the next",
@@ -93,113 +93,114 @@ window.STORY = {
  "caps": [
   {
    "t0": 0.0,
-   "t1": 1.455,
+   "t1": 1.575,
    "html": "This is <em>Kanyakumari.</em>"
   },
   {
-   "t0": 1.455,
-   "t1": 3.347,
+   "t0": 1.575,
+   "t1": 3.622,
    "html": "The southern tip of <em>India.</em>"
   },
   {
-   "t0": 3.347,
-   "t1": 3.904,
+   "t0": 3.622,
+   "t1": 4.214,
    "html": "<em>Right?</em>"
   },
   {
-   "t0": 3.904,
-   "t1": 4.667,
+   "t0": 4.214,
+   "t1": 5.051,
    "html": "<em>Not quite.</em>"
   },
   {
-   "t0": 4.667,
-   "t1": 6.388,
+   "t0": 5.051,
+   "t1": 6.504,
    "html": "It's the tip of the <em>mainland.</em>"
   },
   {
-   "t0": 6.388,
-   "t1": 7.511,
+   "t0": 6.504,
+   "t1": 7.63,
    "html": "The <em>real</em> southern tip"
   },
   {
-   "t0": 7.511,
-   "t1": 9.437,
+   "t0": 7.63,
+   "t1": 9.56,
    "html": "is <em>1,800 km</em> away."
   },
   {
-   "t0": 9.437,
-   "t1": 10.239,
+   "t0": 9.56,
+   "t1": 10.364,
    "html": "Past Sri Lanka,"
   },
   {
-   "t0": 10.239,
-   "t1": 11.696,
+   "t0": 10.364,
+   "t1": 11.824,
    "html": "across the <em>Bay of Bengal.</em>"
   },
   {
-   "t0": 11.696,
-   "t1": 13.261,
+   "t0": 11.824,
+   "t1": 13.292,
    "html": "This is <em>Indira Point,</em>"
   },
   {
-   "t0": 13.261,
-   "t1": 15.169,
+   "t0": 13.292,
+   "t1": 15.089,
    "html": "on Great Nicobar Island."
   },
   {
-   "t0": 15.169,
-   "t1": 16.275,
+   "t0": 15.089,
+   "t1": 16.488,
    "html": "From here, <em>Indonesia</em>"
   },
   {
-   "t0": 16.275,
-   "t1": 18.709,
+   "t0": 16.488,
+   "t1": 19.565,
    "html": "is just <em>160 km</em> away."
   },
   {
-   "t0": 18.709,
-   "t1": 19.76,
+   "t0": 19.565,
+   "t1": 20.894,
    "html": "<em>11 times</em> closer"
   },
   {
-   "t0": 19.76,
-   "t1": 20.82,
+   "t0": 20.894,
+   "t1": 22.203,
    "html": "than Kanyakumari."
   },
   {
-   "t0": 20.82,
-   "t1": 22.265,
+   "t0": 22.203,
+   "t1": 23.602,
    "html": "In <em>2004,</em>"
   },
   {
-   "t0": 22.265,
-   "t1": 24.329,
+   "t0": 23.602,
+   "t1": 25.6,
    "html": "the earthquake sank this coast"
   },
   {
-   "t0": 24.329,
-   "t1": 25.774,
+   "t0": 25.6,
+   "t1": 26.999,
    "html": "by about <em>4 metres.</em>"
   },
   {
-   "t0": 25.774,
-   "t1": 27.82,
+   "t0": 26.999,
+   "t1": 28.984,
    "html": "Its lighthouse <em>still stands.</em>"
   },
   {
-   "t0": 27.82,
-   "t1": 28.472,
+   "t0": 28.984,
+   "t1": 29.651,
    "html": "So the next time"
   },
   {
-   "t0": 28.472,
-   "t1": 30.061,
+   "t0": 29.651,
+   "t1": 31.278,
    "html": "someone points to the <em>bottom of the map</em>"
   },
   {
-   "t0": 30.061,
-   "t1": 30.547,
+   "t0": 31.278,
+   "t1": 31.774,
    "html": "and says,"
   }
- ]
+ ],
+ "cues": {}
 };

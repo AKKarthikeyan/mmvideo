@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "At Varanasi, the Ganga runs north". Reveal Loop Short, 1080 x 1920.
+     One camera move from the whole river down to Varanasi and back. River line: Natural Earth 1:10m (generalised, so
+     the line and the arrow are labelled approximate). Lengths and bearings are our measurement
+     (docs/geo/research/W4-02-ganga/method). No borders are drawn. The belief line is credited to the district page. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: the Ganga at Varanasi</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(7, 16, 28, 0.9), rgba(7, 16, 28, 0.72) 55%, rgba(7, 16, 28, 0)); }
+      #head { position: absolute; right: 56px; top: 300px; text-align: right; }
+      #headLab { position: static; display: block; font-size: 44px; }
+      #headBig { position: static; display: block; font-size: 150px; line-height: 1; margin-top: 6px; }
+      #eq { position: absolute; left: 64px; top: 300px; opacity: 0; }
+      #eqLab { position: static; display: block; font-size: 50px; }
+      #eqBig { position: static; display: block; font-size: 96px; line-height: 1; margin-top: 8px; }
+      #eqNote, #quoteBy { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      #quote { position: absolute; left: 64px; top: 300px; width: 900px; opacity: 0; }
+      #quoteTx { font: 700 62px/1.12 Oswald, sans-serif; color: #f7f3ea; letter-spacing: 0.01em; }
+      #quoteTx em { font-style: normal; color: var(--acc); }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.267" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div></div>
+      <div id="head"><span class="lab" id="headLab">HIMALAYA → BAY OF BENGAL</span><span class="big" id="headBig">2,525 KM</span></div>
+      <div id="eq"><span class="lab" id="eqLab">LEFT BANK + WEST BANK</span><span class="big" id="eqBig">= FLOWING NORTH</span><div id="eqNote">our inference from the two pages</div></div>
+      <div id="quote"><div id="quoteTx">“…<em>believed</em> to have the power to wash away the sins…”</div><div id="quoteBy">A belief, in the words of the Varanasi district website</div></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // Natural Earth 1:10m Ganges centre line, source to delta (thinned away from Varanasi). K = index in this list.
+      const RIV = [[79.8407,30.8885],[79.8185,30.8029],[79.8379,30.7400],[79.8689,30.7008],[79.8339,30.6483],[79.7793,30.5955],[79.6850,30.5001],[79.5688,30.5668],[79.4094,30.4391],[79.3131,30.3721],[79.2689,30.3045],[79.1780,30.2822],[79.1370,30.3043],[78.8783,30.2647],[78.7797,30.2381],[78.7420,30.2325],[78.6426,30.2045],[78.5864,30.0729],[78.4634,30.0729],[78.4221,30.1221],[78.3579,30.1335],[78.2858,30.0965],[78.1641,29.9499],[78.1904,29.7927],[78.1072,29.6546],[78.0693,29.6409],[77.9905,29.5720],[78.0524,29.4348],[78.0621,29.3638],[78.1035,29.2785],[78.1150,29.2119],[78.0885,29.1531],[78.0720,28.9913],[78.1038,28.8973],[78.1004,28.8563],[78.0959,28.8285],[78.1187,28.8143],[78.1270,28.7999],[78.1314,28.7700],[78.1657,28.7192],[78.1760,28.6205],[78.2724,28.4348],[78.2720,28.4150],[78.2683,28.3810],[78.2809,28.3448],[78.3008,28.2962],[78.3738,28.2298],[78.4561,28.1264],[78.5567,28.0397],[78.6041,28.0075],[78.7117,27.9689],[78.8061,27.9415],[78.9459,27.8726],[79.0328,27.8316],[79.1555,27.8179],[79.1692,27.7838],[79.1970,27.6993],[79.3320,27.6368],[79.4647,27.5865],[79.5286,27.5504],[79.5617,27.4869],[79.6111,27.4378],[79.6316,27.3409],[79.6900,27.2664],[79.8190,27.1569],[79.8648,27.1395],[79.9902,27.0496],[80.0073,26.9957],[80.0899,26.8969],[80.1217,26.7814],[80.1861,26.7074],[80.2621,26.6299],[80.3179,26.5374],[80.3477,26.4884],[80.5099,26.3810],[80.5538,26.2520],[80.5949,26.2215],[80.5949,26.1837],[80.6731,26.1148],[80.7283,26.1116],[80.7656,26.0912],[80.7979,26.0491],[80.8324,26.0479],[80.9258,26.0666],[81.0328,26.0610],[81.0904,25.9841],[81.1873,25.9553],[81.2437,25.8604],[81.3668,25.7808],[81.4005,25.7495],[81.3828,25.6821],[81.4788,25.6319],[81.5261,25.6093],[81.5662,25.5840],[81.6428,25.5548],[81.6841,25.5158],[81.7559,25.4913],[81.8858,25.5129],[81.9046,25.4584],[81.9375,25.3445],[82.0094,25.3271],[82.0752,25.3166],[82.1124,25.2756],[82.1917,25.3147],[82.2175,25.2804],[82.1962,25.2188],[82.2365,25.1857],[82.2254,25.2203],[82.2539,25.2577],[82.2661,25.2706],[82.2906,25.2756],[82.3124,25.2631],[82.3276,25.2151],[82.3489,25.2142],[82.3604,25.2249],[82.3723,25.2532],[82.3831,25.2620],[82.3972,25.2608],[82.4141,25.2526],[82.4302,25.2415],[82.4414,25.2312],[82.4770,25.1861],[82.4968,25.1699],[82.5272,25.1595],[82.5510,25.1578],[82.5782,25.1612],[82.5928,25.1732],[82.5676,25.2178],[82.5859,25.2250],[82.6152,25.2242],[82.6370,25.2203],[82.6848,25.1937],[82.7301,25.1560],[82.7786,25.1249],[82.8355,25.1186],[82.8710,25.1372],[82.9204,25.1946],[82.9619,25.2067],[82.9959,25.2049],[83.0083,25.2107],[83.0199,25.2278],[83.0251,25.2462],[83.0234,25.2624],[83.0165,25.2767],[83.0063,25.2893],[83.0415,25.3231],[83.1349,25.3264],[83.1714,25.3513],[83.1798,25.3789],[83.1778,25.4103],[83.1631,25.4361],[83.1338,25.4469],[83.1231,25.4522],[83.1305,25.4641],[83.1539,25.4844],[83.1616,25.4949],[83.1743,25.5195],[83.1856,25.5295],[83.2126,25.5352],[83.2335,25.5247],[83.2533,25.5098],[83.2909,25.4979],[83.3117,25.4791],[83.3259,25.4749],[83.3421,25.4779],[83.3683,25.4913],[83.3831,25.4947],[83.4094,25.4870],[83.4367,25.4672],[83.4829,25.4230],[83.5073,25.4069],[83.5300,25.4019],[83.5439,25.4116],[83.5413,25.4395],[83.5032,25.4890],[83.4909,25.5171],[83.5103,25.5295],[83.5364,25.5346],[83.5588,25.5478],[83.5996,25.5841],[83.6171,25.5977],[83.6340,25.6040],[83.6642,25.6114],[83.6930,25.6147],[83.7057,25.6083],[83.7112,25.6013],[83.7232,25.5948],[83.7350,25.5865],[83.7405,25.5738],[83.7451,25.5510],[83.7494,25.5378],[83.7535,25.5295],[83.7720,25.5173],[83.7935,25.5159],[83.8397,25.5220],[83.8809,25.5220],[83.8977,25.5240],[83.9043,25.5296],[83.9084,25.5382],[84.0581,25.6738],[84.2174,25.7136],[84.2725,25.6929],[84.3560,25.7606],[84.4380,25.7188],[84.4988,25.6991],[84.6173,25.7023],[84.7285,25.7497],[84.8814,25.7076],[84.9963,25.7349],[85.1240,25.6592],[85.2099,25.6262],[85.2520,25.6031],[85.2993,25.5460],[85.3881,25.5084],[85.5597,25.5235],[85.6519,25.4634],[85.7560,25.5146],[85.9464,25.4128],[86.0392,25.3304],[86.1622,25.3262],[86.2412,25.3302],[86.3062,25.2927],[86.4461,25.3619],[86.5344,25.4829],[86.5796,25.3751],[86.6939,25.2564],[86.8585,25.3406],[86.9742,25.2893],[87.0878,25.2559],[87.1471,25.2352],[87.2385,25.2750],[87.3316,25.3873],[87.3723,25.3933],[87.4783,25.4038],[87.5181,25.3714],[87.5497,25.3153],[87.5886,25.2769],[87.7261,25.2517],[87.7788,25.2276],[87.7732,25.1846],[87.7763,25.1248],[87.7809,25.0899],[87.8355,25.0472],[87.9131,25.0037],[87.9543,24.9876],[87.9370,24.9088],[87.9111,24.8444],[87.9595,24.7172],[88.0567,24.6343],[88.0847,24.5419],[88.1113,24.5021],[88.1712,24.4637],[88.2509,24.4722],[88.2929,24.4806],[88.3217,24.4628],[88.4053,24.3717],[88.5061,24.3580],[88.7371,24.2873],[88.7493,24.2235],[88.7322,24.1824],[88.7825,24.1358],[88.8428,24.1232],[88.9412,24.1719],[88.9767,24.1560],[89.0366,24.0953],[89.0519,24.0623],[89.0698,24.0275],[89.0776,23.9859],[89.0887,23.9772]];
+      const K461 = 139, K467 = 145, K460 = 138, K480 = 158, VNS = [82.998094, 25.331936];
+      const SRC = { s0: "Source to sea, about 2,525 km: Central Water Commission, Govt of India · River line: Natural Earth, approximate",
+        s1: "Left bank: Central Water Commission, Govt of India (cwc.gov.in)",
+        s2: "West bank: Varanasi district administration (varanasi.nic.in)",
+        s3: "Direction and lengths: Natural Earth river line, our measurement · approximate",
+        s4: "Quote: Varanasi district administration, History page (varanasi.nic.in)" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, cls, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag " + cls; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tHim", "", "HIMALAYA"); mk("tSea", "", "BAY OF BENGAL"); mk("tSE", "acc", "SOUTH-EAST<small>overall · our measurement</small>");
+      mk("tVns", "acc", "VARANASI"); mk("tLeft", "", "LEFT BANK<small>Central Water Commission</small>"); mk("tWest", "", "WEST BANK<small>Varanasi district website</small>");
+      mk("tN", "acc", "NORTH<small>arrow approximate</small>"); mk("tTow", "", "↑ TOWARDS THE HIMALAYA"); mk("tFif", "acc", "ABOUT 15 KM<small>our measurement</small>");
+      mk("t58", "", "58 KM OF RIVER<small>our measurement</small>"); mk("t37", "acc", "37 KM<small>further north</small>"); mk("tEast", "", "THEN EAST AGAIN →");
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]], ["assets/img/g8.jpg", [0.71484375, 0.40625, 0.75390625, 0.44140625]],
+        ["assets/img/g10.jpg", [0.7265625, 0.423828125, 0.734375, 0.4296875]], ["assets/img/g12.jpg", [0.72998046875, 0.42626953125, 0.731689453125, 0.427978515625]]]);
+      const g = $("ov").getContext("2d");
+      const tSea = Q("sea"), tAway = Q("away"), tNq = Q("nq"), tCwc = Q("cwc"), tLeft = Q("left"), tDist = Q("dist"), tWest = Q("west"), tMeans = Q("means"), tNorth = Q("north"),
+        tTow = Q("tow"), tFif = Q("fif"), t58 = Q("r58"), t37 = Q("n37"), tEast = Q("east"), tBel = Q("belief"), tEnd = Q("end"), tOut = tEnd - 1.0;
+      const WIDE = [84.5, 25.4, 1500], CITY = [83.03, 25.245, 75], BEND = [83.08, 25.24, 110], FAR = [83.25, 25.15, 180];
+      const KEYS = [[0, 84.5, 25.4, 1500], [tNq, 84.42, 25.4, 1420], [tCwc + 2.2, ...CITY], [t58, ...CITY], [t37 - 0.2, ...BEND], [tEast, ...BEND], [tEast + 1.2, ...FAR], [tOut, ...FAR], [D - 0.05, ...WIDE], [D, ...WIDE]];
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const side = (el, p, s) => { const w = el.offsetWidth, h = el.offsetHeight, dy = s.includes("u") ? -h - 6 : s.includes("d") ? 10 : -h / 2;
+        return [s[0] === "l" ? p[0] - w - 24 : p[0] + 24, p[1] + dy]; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (p, t0, a) => { const u = C((t0) / 0.6); if (u > 0 && u < 1) { g.beginPath(); g.arc(p[0], p[1], 14 + 50 * u, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - u) * a})`; g.lineWidth = 5; g.stroke(); } };
+      const path = (P, a, b) => { g.beginPath(); for (let i = a; i <= b; i++) (i === a ? g.moveTo(P[i][0], P[i][1]) : g.lineTo(P[i][0], P[i][1])); };
+      const stroke = (col, w, a = 1, dash, off = 0) => { g.globalAlpha = a; g.strokeStyle = col; g.lineWidth = w; g.lineJoin = g.lineCap = "round"; g.setLineDash(dash || []); g.lineDashOffset = off; g.stroke(); g.setLineDash([]); g.globalAlpha = 1; };
+      const arrow = (a, b, u, col, w, alpha = 1) => { if (u <= 0 || alpha <= 0) return; const q = [L(a[0], b[0], u), L(a[1], b[1], u)], an = Math.atan2(b[1] - a[1], b[0] - a[0]), h = 3.2 * w;
+        g.globalAlpha = alpha; g.lineCap = "butt";
+        [["rgba(4,8,14,0.6)", w + 8], [col, w]].forEach(([c, lw]) => { g.strokeStyle = c; g.fillStyle = c; g.lineWidth = lw; g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(q[0] - Math.cos(an) * h * 0.8, q[1] - Math.sin(an) * h * 0.8); g.stroke();
+          const e = lw - w; g.beginPath(); g.moveTo(q[0] + Math.cos(an) * e, q[1] + Math.sin(an) * e); g.lineTo(q[0] - Math.cos(an - 0.5) * (h + e), q[1] - Math.sin(an - 0.5) * (h + e)); g.lineTo(q[0] - Math.cos(an + 0.5) * (h + e), q[1] - Math.sin(an + 0.5) * (h + e)); g.closePath(); g.fill(); });
+        g.globalAlpha = 1; };
+      H.render = (t) => {
+        const cam = ATLAS.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        const P = RIV.map(M.P), near = C(Math.log(1500 / cam[2]) / Math.log(1500 / 110)), wide = 1 - C((near - 0.12) / 0.3), w = L(7, 15, near);
+        // ---- the river: a steady line, with dashes that drift downstream (a whole number of dash lengths per loop)
+        path(P, 0, P.length - 1); stroke("rgba(4,8,14,0.55)", w + 7); stroke("#6fc3ff", w);
+        stroke("#eaf6ff", w * 0.42, 0.9, [w * 2.2, w * 3.8], -(t / D) * 14 * w * 6);
+        // ---- whole river: source, sea, overall heading
+        const pA = P[0], pZ = P[P.length - 1];
+        if (wide > 0) {
+          dot(pA, "#f7f3ea", 11, wide); dot(pZ, "#f7f3ea", 11, wide); ring(pA, t - 0.05, wide); ring(pZ, t - tSea, wide);
+          const o = [70, -70], se = wide * (t < tNq + 1 ? F(t, tAway, 99, 0.25) : 0);
+          arrow([pA[0] + o[0], pA[1] + o[1]], [pZ[0] + o[0], pZ[1] + o[1]], Z.io2((t - tAway) / 0.9), "#f2b233", 9, se);
+          place("tSE", (pA[0] + pZ[0]) / 2 + 60, (pA[1] + pZ[1]) / 2 - 150, se);
+        } else place("tSE", 0, 0, 0);
+        place("tHim", ...side($("tHim"), pA, "ru"), wide); place("tSea", ...side($("tSea"), pZ, "ld"), wide);
+        $("head").style.opacity = wide;
+        // ---- Varanasi
+        const pV = M.P(VNS), cv = F(t, tCwc + 0.9, tOut + 0.6, 0.3);
+        if (cv > 0) { ring(pV, t - tCwc - 0.9, cv); dot(pV, "#f2b233", 13, cv); }
+        place("tVns", ...side($("tVns"), pV, "lu"), cv);
+        const bank = M.P([83.0, 25.262]), oL = F(t, tLeft, t58, 0.2), oW = F(t, tWest, t58, 0.2);
+        place("tLeft", bank[0] - $("tLeft").offsetWidth - 24, bank[1] - 86, oL); place("tWest", bank[0] - $("tWest").offsetWidth - 24, bank[1] + 2, oW);
+        // ---- the northward reach (vertices 461-467), then the 58 km run (460-480)
+        const run = F(t, t58, tOut + 0.4, 0.3), nor = F(t, tNorth, tOut + 0.4, 0.3);
+        if (run > 0) { path(P, K460, K480); stroke("#ffd98a", w + 2, run * 0.9); }
+        if (nor > 0) { path(P, K461, K467); g.shadowColor = "#f2b233"; g.shadowBlur = 24; stroke("#f2b233", w + 3, nor); g.shadowBlur = 0; }
+        const a0 = [P[K461][0] + 110, P[K461][1]], a1 = [L(P[K461][0], P[K467][0], 0.8) + 110, L(P[K461][1], P[K467][1], 0.8)], ao = F(t, tNorth, t58 + 0.2, 0.25);
+        arrow(a0, a1, Z.io2((t - tNorth) / 0.8), "#f2b233", 12, ao);
+        const am = [(a0[0] + a1[0]) / 2 + 40, (a0[1] + a1[1]) / 2];
+        place("tN", am[0], am[1] - 96, ao * C((t - tNorth - 0.3) / 0.2)); place("tFif", am[0], am[1] + 4, F(t, tFif, t58 + 0.2, 0.2));
+        place("tTow", pV[0] - 340, pV[1] - 150, F(t, tTow, t58, 0.2));
+        place("t58", ...side($("t58"), P[K460 + 14], "l"), F(t, t58 + 0.5, tEast, 0.25));
+        // ---- 37 km further north: a bracket from the run's first latitude to its last
+        const bo = F(t, t37, tEast + 0.3, 0.25), bx = Math.max(P[K480][0], P[K460][0]) + 170, y0 = P[K460][1], y1 = P[K480][1], bu = Z.io2((t - t37) / 0.7);
+        if (bo > 0) { g.globalAlpha = bo; g.strokeStyle = "rgba(247,243,234,0.7)"; g.lineWidth = 3; g.setLineDash([8, 8]);
+          g.beginPath(); g.moveTo(P[K460][0], y0); g.lineTo(bx + 20, y0); g.moveTo(P[K480][0], y1); g.lineTo(bx + 20, y1); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+          arrow([bx, y0], [bx, y1], bu, "#f2b233", 10, bo); }
+        place("t37", bx + 26, (y0 + y1) / 2 - 38, bo * C((bu - 0.5) / 0.3));
+        const pe = side($("tEast"), P[K480 + 10], "ru"); place("tEast", Math.min(pe[0], 1030 - $("tEast").offsetWidth), pe[1], F(t, tEast, tOut + 0.2, 0.25));
+        // ---- panels and source lines
+        $("eq").style.opacity = F(t, tMeans, t58, 0.25); $("eqBig").style.opacity = F(t, tNorth, 99, 0.2); $("eqNote").style.opacity = F(t, tNorth, 99, 0.2);
+        $("quote").style.opacity = F(t, tBel, tOut + 0.2, 0.25);
+        $("s0").style.opacity = t < tCwc ? 1 : F(t, tOut + 0.8, 99, 0.3); $("s1").style.opacity = F(t, tCwc, tDist, 0.15); $("s2").style.opacity = F(t, tDist, tMeans, 0.15);
+        $("s3").style.opacity = F(t, tMeans, tBel, 0.15); $("s4").style.opacity = F(t, tBel, tOut + 0.8, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

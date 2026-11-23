@@ -196,6 +196,11 @@ Anna and Thambi are illustrated characters, not real people. Educational, not in
     altered="No (a plainly animated cartoon; nothing in it looks like real footage of a real person or event)",
     voice="Narration: synthetic voices (one voice, pitched two ways). Characters are illustrations drawn in code.", lang="English (India)")
 
+# One file per Short (14 Nov 2026): shorts/<id>/kit.py sets KITS["<id>"] = dict(...) like the entries above.
+from pathlib import Path as _P
+for _f in sorted((_P(__file__).resolve().parents[1] / "shorts").glob("*/kit.py")):
+    exec(compile(_f.read_text(encoding="utf-8"), str(_f), "exec"), globals())
+
 def srt_time(s):
     ms = int(round(s * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); sec, ms = divmod(ms, 1000)
     return f"{h:02}:{m:02}:{sec:02},{ms:03}"

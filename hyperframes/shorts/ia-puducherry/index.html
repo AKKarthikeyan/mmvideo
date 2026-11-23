@@ -1,0 +1,115 @@
+<!doctype html>
+<!-- Indica Atlas · Not Where You Think · "Puducherry is not one place: it's four pieces". Reveal Loop Short, 1080 x 1920.
+     ⚑ internal borders: NO borders and NO territory outlines are drawn. Only four town pins (Natural Earth for Puducherry,
+     OpenStreetMap town points for Karaikal, Mahe, Yanam) and one measured straight line (our measurement,
+     docs/geo/research/W4-07-puducherry/method). Every place statement is the Government of Puducherry's own wording. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Indica Atlas: Puducherry in four pieces</title>
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/hf.js"></script>
+    <script src="assets/lib/shorts.js"></script>
+    <script src="assets/lib/atlas.js"></script>
+    <script src="story.js"></script>
+    <link rel="stylesheet" href="assets/css/shorts.css" />
+    <style>
+      #root { --acc: #f2b233; background: #07101c; }
+      #map { position: absolute; left: 0; top: 0; filter: brightness(1.16) saturate(1.08); }
+      #ov { position: absolute; left: 0; top: 0; }
+      #scrimT { height: 640px; background: linear-gradient(rgba(7, 16, 28, 0.9), rgba(7, 16, 28, 0.72) 55%, rgba(7, 16, 28, 0)); }
+      .pan { position: absolute; right: 56px; top: 290px; text-align: right; opacity: 0; }
+      .pan .lab { position: static; display: block; font-size: 44px; }
+      .pan .big { position: static; display: block; font-size: 140px; line-height: 1; margin-top: 6px; }
+      .pan .note { font: 26px/1.3 Plex, monospace; letter-spacing: -0.02em; color: rgba(247, 243, 234, 0.85); margin-top: 10px; }
+      .tag { position: absolute; left: 0; top: 0; font: 700 34px/1 Oswald, sans-serif; letter-spacing: 0.05em; color: #07090d; background: #f7f3ea; padding: 7px 12px 8px; white-space: nowrap; opacity: 0; }
+      .tag small { display: block; font: 600 21px/1 Inter, sans-serif; letter-spacing: 0.02em; margin-top: 5px; color: #2a2f38; }
+      .tag.acc { background: #f2b233; }
+      #tLine { background: rgba(7, 16, 28, 0.85); color: #f2b233; }
+      #tLine small { color: rgba(247, 243, 234, 0.85); }
+      #srcs div { position: absolute; left: 0; top: 0; width: 940px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36.467" data-width="1080" data-height="1920">
+      <canvas id="map" width="1080" height="1920" data-layout-ignore></canvas>
+      <canvas id="ov" width="1080" height="1920" data-layout-ignore></canvas>
+      <div id="scrimT" data-layout-ignore></div>
+      <div id="scrimB" data-layout-ignore></div>
+      <div id="vig" data-layout-ignore></div>
+      <div id="grain" data-layout-ignore></div>
+      <div class="kicker" id="kick">INDICA ATLAS · NOT WHERE YOU THINK</div>
+      <div class="src" id="srcs"><div id="s0"></div><div id="s1"></div><div id="s2"></div><div id="s3"></div><div id="s4"></div></div>
+      <div class="pan" id="p1"><span class="lab">PUDUCHERRY</span><span class="big">ONE TOWN?</span></div>
+      <div class="pan" id="p2"><span class="lab">ONE UNION TERRITORY</span><span class="big">4 PIECES</span><div class="note">former French establishments</div></div>
+      <div class="pan" id="p3"><span class="lab">SCATTERED ACROSS</span><span class="big">3 STATES</span><div class="note">Tamil Nadu · Kerala · Andhra Pradesh</div></div>
+      <div class="pan" id="p4"><span class="lab">MAHE → YANAM</span><span class="big">≈910 KM</span><div class="note">straight line · our measurement</div></div>
+      <div class="pan" id="p5"><span class="lab">ONE UNION TERRITORY</span><span class="big">ONE GOVERNMENT</span><div class="note">Puducherry · Karaikal · Mahe · Yanam</div></div>
+      <div class="pan" id="p6"><span class="lab">HANDED TO INDIA, IN PRACTICE</span><span class="big">1 NOV 1954</span><div class="note">"de facto", says the Govt of Puducherry</div></div>
+      <div id="tags"></div>
+      <div id="capband"></div>
+    </div>
+    <script>
+      const { H, Q, caps, S } = SH.init(), Z = HF.ease, F = HF.fade, C = HF.clamp01, L = HF.lerp;
+      window.__timelines.main = H.tl;
+      const $ = (id) => document.getElementById(id), D = S.dur;
+      // Town points (dossier "Reveal Loop material"; method/pondy_distances.py): Natural Earth (PDY), OpenStreetMap (others).
+      const PDY = [79.830, 11.935], KKL = [79.838, 10.916], MAH = [75.536, 11.702], YNM = [82.211, 16.739];
+      const SRC = { s0: "Town points: Natural Earth, OpenStreetMap · no borders drawn",
+        s1: "Government of Puducherry, About Puducherry (py.gov.in)",
+        s2: "Straight line between town points: our measurement",
+        s3: "Government of Puducherry, About Puducherry (py.gov.in) · distance: our measurement",
+        s4: "Government of Puducherry, History page (py.gov.in)" };
+      Object.keys(SRC).forEach((k) => { $(k).textContent = SRC[k]; });
+      const mk = (id, html) => { const el = document.createElement("div"); el.id = id; el.className = "tag"; el.innerHTML = html; $("tags").appendChild(el); return el; };
+      mk("tP", "PUDUCHERRY<small>Tamil Nadu on three sides</small>"); mk("tK", "KARAIKAL<small>about 130 km south</small>");
+      mk("tM", "MAHE<small>Malabar coast · surrounded by Kerala</small>"); mk("tY", "YANAM<small>beside East Godavari, Andhra Pradesh</small>");
+      mk("tLine", "≈910 KM<small>straight line · our measurement</small>");
+      const M = ATLAS.create("map", [["assets/atlas/in6.jpg", [0.625, 0.28125, 0.8125, 0.546875]], ["assets/img/p8.jpg", [0.703125, 0.4453125, 0.73828125, 0.48046875]]]);
+      const g = $("ov").getContext("2d");
+      const tCoast = Q("coast"), tNq = Q("nq"), tGov = Q("gov"), tFour = Q("four"), tPdy = Q("pdy"), tKkl = Q("kkl"), tAcross = Q("across"), tMahe = Q("mahe"),
+        tNe = Q("ne"), tYnm = Q("yanam"), tOne = Q("one"), tThree = Q("three"), tKm = Q("km"), tDist = Q("dist"), tFr = Q("fr"), tEnd = Q("end"), tOut = tEnd - 1.0;
+      const START = [79.95, 11.55, 520], WIDE = [78.9, 13.06, 1400], COAST = [79.95, 11.1, 430], WEST = [77.4, 11.25, 800];
+      const KEYS = [[0, ...START], [tNq, 79.95, 11.5, 470], [tFour + 0.8, ...WIDE], [tPdy, ...WIDE], [tPdy + 1.3, ...COAST], [tAcross, ...COAST], [tMahe + 0.4, ...WEST],
+        [tNe, ...WEST], [tYnm + 0.4, ...WIDE], [tOut, 78.95, 13.0, 1320], [D - 0.05, ...START], [D, ...START]];
+      const place = (id, x, y, o) => { const el = $(id); el.style.opacity = o; if (o > 0) el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`; };
+      const side = (el, p, s) => { const w = el.offsetWidth, h = el.offsetHeight; const r = p[0] + 24; return [s === "l" || r + w > 1036 ? p[0] - w - 24 : r, p[1] - h / 2]; };
+      const dot = (p, col, r = 12, a = 1) => { g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], r + 7, 0, 7); g.fillStyle = "rgba(4,8,14,0.6)"; g.fill(); g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fillStyle = col; g.fill(); g.globalAlpha = 1; };
+      const ring = (p, t0, a) => { const u = C(t0 / 0.6); if (u > 0 && u < 1) { g.beginPath(); g.arc(p[0], p[1], 14 + 50 * u, 0, 7); g.strokeStyle = `rgba(242,178,51,${(1 - u) * a})`; g.lineWidth = 5; g.stroke(); } };
+      const halo = (p, a) => { if (a <= 0) return; g.globalAlpha = a; g.beginPath(); g.arc(p[0], p[1], 30, 0, 7); g.strokeStyle = "#f2b233"; g.lineWidth = 5; g.stroke(); g.globalAlpha = 1; };
+      // pins: [point, tag id, side, appears at, its own beat (descriptor shown) from, to]
+      const PINS = [[PDY, "tP", "r", -1, tPdy, tKkl], [KKL, "tK", "r", tFour + 0.15, tKkl, tAcross], [MAH, "tM", "r", tFour + 0.4, tMahe, tNe], [YNM, "tY", "l", tFour + 0.65, tYnm, tOne]];
+      H.render = (t) => {
+        const cam = ATLAS.keys(KEYS, t); M.cam(cam[0], cam[1], cam[2]); M.draw();
+        g.clearRect(0, 0, 1080, 1920);
+        const dI = F(t, tDist, tFr, 0.25);
+        // ---- the measured straight line, Mahe to Yanam
+        const pm = M.P(MAH), py = M.P(YNM), lo = F(t, tKm, tOut + 0.3, 0.25), lu = Z.io2((t - tKm) / 0.9);
+        if (lo > 0 && lu > 0) { const q = [L(pm[0], py[0], lu), L(pm[1], py[1], lu)];
+          g.globalAlpha = lo; g.lineCap = "round"; g.beginPath(); g.moveTo(pm[0], pm[1]); g.lineTo(q[0], q[1]); g.strokeStyle = "rgba(4,8,14,0.6)"; g.lineWidth = 14; g.stroke();
+          g.setLineDash([22, 14]); g.strokeStyle = "#f2b233"; g.lineWidth = 7; g.stroke(); g.setLineDash([]); g.globalAlpha = 1; }
+        const mid = [(pm[0] + py[0]) / 2, (pm[1] + py[1]) / 2];
+        place("tLine", mid[0] + 30, mid[1] - 20, lo * C((lu - 0.6) / 0.3));
+        // ---- the four pins
+        PINS.forEach(([pt, id, sd, ta, b0, b1], i) => {
+          const p = M.P(pt), a = i === 0 ? 1 : F(t, ta, tOut + 0.6, 0.25), own = F(t, b0, b1, 0.2);
+          const dim = i === 1 ? 1 - 0.65 * dI : 1;
+          if (a > 0) { ring(p, t - (i === 0 ? tGov : ta), a); if (i === 0) ring(p, t - tPdy, 1); if (i > 0) ring(p, t - b0, a);
+            dot(p, own > 0.5 ? "#f2b233" : "#f7f3ea", 12, a * dim); if (i !== 1) halo(p, dI * a); }
+          const el = $(id); el.classList.toggle("acc", own > 0.5); el.querySelector("small").style.display = own > 0.01 ? "block" : "none";
+          el.querySelector("small").style.opacity = own;
+          place(id, ...side(el, p, sd), a * dim);
+        });
+        // ---- panels and source lines
+        $("p1").style.opacity = t < tGov ? 1 - C((t - tNq) / 0.25) : F(t, tOut + 0.6, 99, 0.3);
+        const X = 0.3; $("p2").style.opacity = F(t, tFour, tPdy, 0.25); $("p3").style.opacity = F(t, tOne, tKm, 0.25); $("p4").style.opacity = F(t, tKm + X, tDist, 0.25);
+        $("p5").style.opacity = F(t, tDist + X, tFr, 0.25); $("p6").style.opacity = F(t, tFr + X, tOut + 0.4, 0.25);
+        $("s0").style.opacity = t < tGov ? 1 : F(t, tOut + 0.8, 99, 0.3); $("s1").style.opacity = F(t, tGov + 0.2, tKm, 0.15); $("s2").style.opacity = F(t, tKm + 0.2, tDist, 0.15);
+        $("s3").style.opacity = F(t, tDist + 0.2, tFr, 0.15); $("s4").style.opacity = F(t, tFr + 0.2, tOut + 0.8, 0.15);
+        caps(t);
+      };
+      M.ready.then(() => document.fonts.ready).then(() => H.ready());
+    </script>
+  </body>
+</html>

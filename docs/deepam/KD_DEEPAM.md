@@ -2,14 +2,15 @@
 
 **AK, 24 Nov 2026.** A 15 s vertical Short in a hand-inked animation look: bold brush lines, hard black shadows and fast
 cinematic shots. The colours are blue, black and red, and yellow is kept for the deepam and fire only. The theme is the
-Thiruvannamalai Maha Deepam and Shiva as the light without beginning or end. **Channel: not chosen yet (AK's call).**
+Thiruvannamalai Maha Deepam and Shiva as the light without beginning or end. **Channel: The Inner Chariot. No voice**
+(AK, 24 Nov 2026): the lines are on-screen text over the picture, with our own music bed as the only sound.
 
 Everything below runs on the **Mac Mini** (CLAUDE.md: no media is made in cloud sessions). The cloud session wrote the
 script and the tools, and it tested the grade and cut on synthetic test patterns only.
 
-## Script (Reveal Loop; `S["kd-deepam"]` in `hyperframes/tools/shorts_build.py`)
+## Script (Reveal Loop, text on screen; `S["kd-deepam"]` in `hyperframes/tools/shorts_build.py`)
 
-| Beat | Voice | Picture (`scripts/deepam/film.py`) |
+| Beat | On-screen text | Picture (`scripts/deepam/film.py`) |
 | --- | --- | --- |
 | b1 | A whole mountain becomes a lamp. | k1: Arunachala at night, the summit fire flares, red gopurams below, push-in |
 | b2 | Why this hill? | k2: devotees from behind, joined hands raised, clay lamps |
@@ -27,11 +28,11 @@ first frame, so the loop has no visible cut.
   of fire (Shiva Purana; Arunachala Mahatmyam)". The story is told as legend. No date or number is claimed, so the Short
   can be reposted in later years. The ink style is not realistic, so YouTube's "altered or synthetic" label is not needed
   (SHORTS_RULES O2), but the on-screen "Illustration" label stays.
-- **Gate:** `shorts_check.py` passes with no FAIL. S1 warns (under 20 s) because AK asked for 15 s. The timings are
-  estimates until the voice is built. **The voiced length must be at least 15.0 s (H1).** If it comes out shorter, set
-  the voice speed lower or add a word to b2 ("So why this hill?").
-- **Title** (42 characters): "The hill that is a flame: Karthigai Deepam". English voice (`en-IN`). A native Tamil
-  version would reach further (SHORTS_RULES K6) and needs a Tamil voice and a Tamil font: AK's call.
+- **Gate:** `shorts_check.py` passes with no FAIL. S1 warns (under 20 s) because AK asked for 15 s. With no voice, the
+  timings come from reading pace (15 characters a second, 2–4 words per caption) and are final. Going without a voice
+  is AK's call against SHORTS_RULES H2 (voice from frame 1); the text is on screen from frame 1 instead.
+- **Title** (42 characters): "The hill that is a flame: Karthigai Deepam". The text is in English. A Tamil-text
+  version needs only a Tamil font and the lines translated (no voice now): AK's call.
 
 ## Look
 
@@ -49,18 +50,17 @@ first frame, so the loop has no visible cut.
 
 ```bash
 git pull
-python3 hyperframes/tools/shorts_build.py story kd-deepam      # voice (MiniMax, 06:45-22:10 IST) + real timings
-python3 hyperframes/tools/shorts_build.py verify kd-deepam     # optional: check that "Thiruvannamalai" is said right
-python3 hyperframes/tools/shorts_build.py check kd-deepam      # must show no FAIL (length >= 15.0 s)
+python3 hyperframes/tools/shorts_build.py story kd-deepam      # timings at reading pace (no voice; already in git)
+python3 hyperframes/tools/shorts_build.py check kd-deepam      # must show no FAIL
 zsh -lic 'python3 scripts/deepam/film.py img'                  # 7 stills -> public/deepam/img/  (look at them first)
 zsh -lic 'python3 scripts/deepam/film.py clip'                 # 7 clips (costs money; DEEPAM_RES=768P is cheaper)
 python3 scripts/deepam/film.py grade
 python3 scripts/deepam/film.py cut                             # -> out/hyperframes/kd-deepam.mp4 (picture only)
-python3 hyperframes/tools/shorts_build.py mux kd-deepam        # + voice + our own music bed -> kd-deepam-final.mp4
+python3 hyperframes/tools/shorts_build.py mux kd-deepam        # + our own music bed -> kd-deepam-final.mp4
 ```
 
 To redo one shot, delete its still or clip and run `img k6` / `clip k6`, then `grade k6` and `cut`. The cut points come
-from the voiced timings in `hyperframes/shorts/kd-deepam/story.js`, so run `cut` again after any re-voice. Every number
+from the timings in `hyperframes/shorts/kd-deepam/story.js`, so run `cut` again after changing a line. Every number
 of seconds a beat takes from a clip is set in `PLAN` in `film.py`. `cut` stops with a message if a beat needs more than a
 6 s clip has.
 

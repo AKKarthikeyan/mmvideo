@@ -2,7 +2,7 @@
 """Karthigai Deepam ink Short (kd-deepam): Arunachala, the pillar of fire, Shiva without end. 1080 x 1920, about 15 s.
 
 AK, 24 Nov 2026: a 15-second hand-inked animation (look: bold brush ink, hard black shadows, fast cinematic shots) in
-blue, black and red, with yellow kept for the deepam and fire only. Script and timings: S["kd-deepam"] in
+blue, black and red, with yellow kept for the deepam and fire only. No voice: the lines are on-screen text. Script and timings: S["kd-deepam"] in
 hyperframes/tools/shorts_build.py. Runbook and shot list: docs/deepam/KD_DEEPAM.md. Runs on the Mac Mini only.
 
   zsh -lic 'python3 scripts/deepam/film.py img'      # 7 stills, MiniMax image-01 (review them before the next step)
@@ -10,7 +10,8 @@ hyperframes/tools/shorts_build.py. Runbook and shot list: docs/deepam/KD_DEEPAM.
   python3 scripts/deepam/film.py grade               # map every clip onto the 4-colour ink palette
   python3 scripts/deepam/film.py cut                 # cut the graded clips to the voiced beats, add grain, captions and
                                                      # the on-screen label -> out/hyperframes/kd-deepam.mp4 (no sound)
-Then `python3 hyperframes/tools/shorts_build.py mux kd-deepam` adds the voice and music bed -> kd-deepam-final.mp4.
+Then `python3 hyperframes/tools/shorts_build.py mux kd-deepam` adds our music bed (no voice: AK, 24 Nov 2026)
+-> kd-deepam-final.mp4. Channel: The Inner Chariot.
 `img` and `clip` take shot names (k1 k6 ...) to redo only those; delete the old file first. DEEPAM_RES=768P halves the
 clip cost (default 1080P). Media goes to public/deepam/ (stills are kept in git, clips are not)."""
 import base64, json, os, socket, subprocess, sys, time, pathlib, tempfile
@@ -295,7 +296,7 @@ def cut():
     OUT.mkdir(parents=True, exist_ok=True); out = OUT / f"{SID}.mp4"
     ff(*args, "-filter_complex", ";".join(fc), "-map", f"[{last}]", "-r", FPS, "-frames:v", round(st["dur"] * FPS),
        "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p", "-movflags", "+faststart", out)
-    print(out, f"({st['dur']:.2f} s, {len(segs)} cuts{'' if st.get('voiced') else ', ESTIMATED timings: voice it first'})")
+    print(out, f"({st['dur']:.2f} s, {len(segs)} cuts{'' if st.get('voiced') or st.get('silent') else ', ESTIMATED timings: voice it first'})")
 
 
 def main():

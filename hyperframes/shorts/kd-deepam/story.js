@@ -1,10 +1,11 @@
 window.STORY = {
  "id": "kd-deepam",
- "channel": "TBD",
+ "channel": "The Inner Chariot",
  "lang": "en-IN",
  "title": "The hill that is a flame: Karthigai Deepam",
  "dur": 15.733,
  "voiced": false,
+ "silent": true,
  "beats": [
   {
    "id": "b1",

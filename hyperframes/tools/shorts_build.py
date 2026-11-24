@@ -247,12 +247,13 @@ S["il-buffalo"] = dict(
     ])
 
 # Karthigai Deepam · ink animation, 15 s (AK, 24 Nov 2026). Picture: scripts/deepam/film.py (MiniMax image-01 + Hailuo-02,
-# graded to blue/black/red with yellow for fire only), not a HyperFrames page. Channel not chosen yet: AK's call.
+# graded to blue/black/red with yellow for fire only), not a HyperFrames page. The Inner Chariot, no voice (AK, 24 Nov 2026):
+# the lines are on-screen text over the picture and our music bed, timed at reading pace (`voice=False`).
 # The story is the legend of the pillar of fire (Shiva Purana, Vidyeshvara Samhita; Arunachala Mahatmyam, Skanda Purana),
 # labelled on screen as legend and illustration. No date or number is claimed, so it stays true every year.
 # WARN S1 (under 20 s) kept on purpose: AK asked for 15 s. The voiced length must stay at or over 15.0 s (H1).
 S["kd-deepam"] = dict(
-    channel="TBD", lang="en-IN", series="Karthigai Deepam",
+    channel="The Inner Chariot", lang="en-IN", series="Karthigai Deepam", voice=False,
     title="The hill that is a flame: Karthigai Deepam",
     send="Tamil families forward it on Deepam day: everyone knows the lamp on the hill, few can say why that hill.",
     beats=[
@@ -326,6 +327,8 @@ def cap_html(c):
 
 def story(sid, use_tts=True, clips_dir=None):
     sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]
+    if sp.get("voice") is False:              # a text-only Short: lines are read on screen, timed at cps
+        use_tts = False; clips_dir = None
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
     beats = []; caps = []; t = 0.0; voiced = use_tts; clips = []
     says = [" ".join(c[0] for c in chunks) for _, chunks, _ in sp["beats"]]
@@ -368,7 +371,8 @@ def story(sid, use_tts=True, clips_dir=None):
         beats.append(dict(id=bid, t0=round(t, 3), sec=round(sec, 3), say=say, ev=ev))
         clips.append((t, a)); t += sec + GAP
     dur = math.ceil(t * 30) / 30
-    st = dict(id=sid, channel=sp["channel"], lang=lang, title=sp["title"], dur=round(dur, 3), voiced=bool(voiced), beats=beats, caps=caps)
+    st = dict(id=sid, channel=sp["channel"], lang=lang, title=sp["title"], dur=round(dur, 3), voiced=bool(voiced),
+              silent=sp.get("voice") is False, beats=beats, caps=caps)
     d = SHORTS / sid; d.mkdir(parents=True, exist_ok=True)
     (d / "story.js").write_text("window.STORY = " + json.dumps(st, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
     # timings in the shape scripts/shorts_check.py reads
@@ -384,7 +388,7 @@ def story(sid, use_tts=True, clips_dir=None):
     else:
         (adir / "voice.wav").unlink(missing_ok=True)
     words = sum(len(b["say"].split()) for b in beats)
-    print(f"{sid}: {dur:.1f} s, {words} words, {words / dur * 60:.0f} wpm, {'voiced' if voiced else 'ESTIMATED, silent'}")
+    print(f"{sid}: {dur:.1f} s, {words} words, {words / dur * 60:.0f} wpm, {'voiced' if voiced else 'text only, no voice (by design)' if sp.get('voice') is False else 'ESTIMATED, silent'}")
     idx = d / "index.html"
     if idx.exists():                         # keep data-duration in step with the story
         h = idx.read_text(encoding="utf-8")
@@ -419,6 +423,8 @@ def mux(sid):
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(v)],
                                capture_output=True, text=True, check=True).stdout)
     b = bed(dur) * (0.05 if S[sid].get("music", True) else 0.0)     # music=False: voice only (India Ledger, CLAUDE.md)
+    if S[sid].get("voice") is False:                                 # text-only Short: the music is the whole soundtrack
+        b = bed(dur) * 0.5
     if voice.exists():
         with wave.open(str(voice)) as w:
             a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768

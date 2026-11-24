@@ -48,7 +48,7 @@ def project(name):
 def ids(args):
     names = sorted(p.name for p in SAMPLES.iterdir() if p.is_dir() and p.name.startswith("s"))
     vids = sorted(p.name for p in VIDEOS.iterdir() if p.is_dir() and not p.name.startswith("_")) if VIDEOS.exists() else []
-    shorts = sorted(p.name for p in SHORTS.iterdir() if p.is_dir() and not p.name.startswith("_")) if SHORTS.exists() else []
+    shorts = sorted(p.name for p in SHORTS.iterdir() if p.is_dir() and not p.name.startswith("_") and (p / "index.html").exists()) if SHORTS.exists() else []  # kd-deepam is cut by scripts/deepam/film.py
     if args == ["videos"]:
         return vids
     if args == ["shorts"]:

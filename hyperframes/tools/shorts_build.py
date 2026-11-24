@@ -246,6 +246,26 @@ S["il-buffalo"] = dict(
          ["Not chicken", "From U P", "So remember"]),
     ])
 
+# Karthigai Deepam · ink animation, 15 s (AK, 24 Nov 2026). Picture: scripts/deepam/film.py (MiniMax image-01 + Hailuo-02,
+# graded to blue/black/red with yellow for fire only), not a HyperFrames page. Channel not chosen yet: AK's call.
+# The story is the legend of the pillar of fire (Shiva Purana, Vidyeshvara Samhita; Arunachala Mahatmyam, Skanda Purana),
+# labelled on screen as legend and illustration. No date or number is claimed, so it stays true every year.
+# WARN S1 (under 20 s) kept on purpose: AK asked for 15 s. The voiced length must stay at or over 15.0 s (H1).
+S["kd-deepam"] = dict(
+    channel="TBD", lang="en-IN", series="Karthigai Deepam",
+    title="The hill that is a flame: Karthigai Deepam",
+    send="Tamil families forward it on Deepam day: everyone knows the lamp on the hill, few can say why that hill.",
+    beats=[
+        ("b1", [("A whole mountain", "A whole *mountain*"), ("becomes a lamp.", "becomes a *lamp.*")], ["A whole", "becomes"]),
+        ("b2", [("Why this hill?", "*Why* this hill?")], ["Why this"]),
+        ("b3", [("Brahma flew up", "Brahma flew *up*"), ("as a swan.", "as a *swan.*")], ["Brahma flew"]),
+        ("b4", [("Vishnu dug down", "Vishnu dug *down*"), ("as a boar.", "as a *boar.*")], ["Vishnu dug"]),
+        ("b5", [("To find where", "To find *where*"), ("the fire ends.", "the *fire* ends.")], ["To find"]),
+        ("b6", [("Neither could.", "*Neither* could."), ("Shiva has no end.", "Shiva has *no end.*")], ["Neither", "Shiva has"]),
+        ("b7", [("That fire? It's this hill.", "That fire? It's *this hill.*"), ("So every Karthigai,", "So every *Karthigai,*"),
+                ("in Thiruvannamalai,", "in *Thiruvannamalai,*")], ["That fire", "So every"]),
+    ])
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):

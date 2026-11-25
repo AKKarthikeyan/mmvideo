@@ -17,9 +17,11 @@ clip cost (default 1080P). Media goes to public/deepam/ (stills are kept in git,
 import base64, json, os, socket, subprocess, sys, time, pathlib, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-SID = "kd-deepam"
+SID = os.environ.get("DEEPAM_FILM", "kd-deepam")       # kd-deepam (15 s) or kd-deepam60 (the 60 s story)
 MEDIA = pathlib.Path(os.environ.get("DEEPAM_MEDIA", ROOT / "public/deepam"))
-IMG, CLIP, GRADED = MEDIA / "img", MEDIA / "clip", MEDIA / "graded"
+IMG = MEDIA / "img"
+CLIP = MEDIA / os.environ.get("DEEPAM_CLIP", "clip")        # clip3d: the Blender renders (blender/deepam3d.py)
+GRADED = MEDIA / os.environ.get("DEEPAM_GRADED", "graded")
 STORY = ROOT / "hyperframes/shorts" / SID / "story.js"
 OUT = ROOT / "out/hyperframes"
 API = "https://api.minimax.io/v1"
@@ -48,6 +50,15 @@ MOTION = (" Hand-drawn 2D animation in the exact ink graphic-novel style and col
           "Energetic cinematic camera. No text, captions or letters anywhere in the frame.")
 SHIVA = ("Lord Shiva with blue skin, long matted dark hair piled high with a crescent moon in it, a third eye on the forehead, "
          "a cobra coiled around the neck, rudraksha beads, a trident (trishul) at his side, a serene, majestic, compassionate face")
+
+BRAHMA = ("Lord Brahma, the Hindu creator god: an old man with a long white beard and four faces on one head (three "
+          "visible), a tall golden crown, crimson red robes, holding a palm-leaf manuscript")
+VISHNU = ("Lord Vishnu, the Hindu god: a young man with deep blue skin, a tall golden crown, crimson and indigo silk dhoti, "
+          "holding a conch and a spinning discus")
+THAZHAMPOO = ("a single thalampoo (screwpine) flower: a long, narrow, pale cream-white bud shaped like a closed corn "
+              "husk or a slender boat, made of a few long pointed cream petals tightly wrapped together, as long as a forearm")
+INDIAN = ("Indian Hindu mythology art, South Indian temple painting subject; not Chinese, not Japanese, no East Asian "
+          "faces, clothes or architecture")
 
 # shot: (still prompt, motion prompt). All portrait 9:16.
 SHOTS = {
@@ -80,13 +91,38 @@ SHOTS = {
            "hill Arunachala forming from the fire, glowing yellow embers drifting, deep indigo night sky, black ink earth, "
            "a crimson red glow at the base",
            "The pillar of fire sinks and settles, hardening into the dark shape of the hill, embers drifting upward, a glow staying on the summit."),
+    # ---- kd-deepam60 only (the 60 s story, docs/deepam/TREATMENT_60.md). One subject per shot: image-01 drifted to an
+    # East Asian look and lost the flower when a prompt held many elements (first try, 24 Nov 2026).
+    "k8": (f"Hindu mythology scene: {BRAHMA} on the left and {VISHNU} on the right stand face to face in profile, arguing "
+           "angrily, each pointing a finger at the other, against a black starry void with a crimson red glow between them",
+           "The two gods argue fiercely, pointing and gesturing at each other, robes flowing; the camera slowly pushes in between them."),
+    "k9": ("A gigantic vertical pillar of roaring golden fire erupts in the centre of the frame from the bottom edge to the "
+           "top edge, splitting a deep indigo night sky in two; at the bottom left and bottom right two tiny dark silhouettes "
+           "of Indian gods are thrown back by the blast; black ink shockwave rings, crimson red sparks",
+           "The pillar of fire erupts and blazes brighter, shockwave rings spreading outward, sparks flying; fast push-in on the fire."),
+    "k10": (f"{VISHNU}, standing alone, eyes closed, head bowed, both palms pressed together in namaste at his chest, humble "
+            "and truthful; warm golden firelight on his blue face from the right; black background; medium shot",
+            "Vishnu bows his head slowly with palms joined, golden firelight flickering on his face; very slow push-in."),
+    "k11": (f"{THAZHAMPOO}, falling through the black night sky, turning slowly, beside a towering wall of golden fire on the "
+            "left side of the frame; sparks drifting; the flower is the main subject, large, in the centre",
+            "The long pale flower tumbles slowly downward through the dark beside the fire, turning gently, sparks drifting past."),
+    # k12 (Brahma holding up the flower) was dropped after three tries: image-01 kept drawing him as an East Asian sage
+    # with seal stamps and writing. "He made it lie" uses a punch-in on Brahma's face in k8 instead.
+    "k13": ("Seen from behind: two small kneeling Hindu gods in silhouette, one in crimson red robes (Brahma) and one with "
+            "blue skin (Vishnu), palms joined, before a gigantic towering column of golden fire that fills the frame; inside "
+            "the fire the faint giant outline of Lord Shiva with blue skin and a trident",
+            "The two small gods bow low before the towering fire, which pulses and roars above them; the camera slowly tilts up the column."),
+    "k14": (f"Low ground-level view of dark stone temple steps: {THAZHAMPOO} lies discarded and wilting in the foreground "
+            "shadow; in the background a black stone Shiva lingam with small Indian clay oil lamps (agal vilakku) glowing "
+            "golden around it; a crimson red South Indian temple wall behind",
+            "The clay lamps around the lingam flicker warmly while the cast-aside flower stays in shadow; a slow sideways track."),
 }
 
 # What the picture shows while each beat is spoken: {beat: {event phrase: (shot, start second in the clip or None)}}.
 # None continues the shot from where it was last cut. "k1r" plays k1 backwards and ends on the clip second that b1
 # starts on, so the last frame of the Short is its first frame (the loop).
 K1_START = 1.0
-PLAN = {
+PLAN15 = {
     "b1": {"A whole": ("k1", K1_START)},
     "b2": {"Why this": ("k2", 0.6)},
     "b3": {"Brahma flew": ("k3", 0.6)},
@@ -95,8 +131,24 @@ PLAN = {
     "b6": {"Neither": ("k5", None), "Shiva has": ("k6", 0.8)},
     "b7": {"That fire": ("k7", 0.8), "So every": ("k1r", None)},
 }
+# kd-deepam60: a third value is a punch-in (zoom, x centre, y centre), so one clip gives a wide and a close shot.
+PLAN60 = {
+    "b1": {"A whole": ("k1", K1_START), "And one": ("k11", 1.6, (1.3, 0.55, 0.42))},
+    "b2": {"Why": ("k8", 0.5), "Who is": ("k8", None, (1.35, 0.5, 0.45))},
+    "b3": {"A pillar": ("k9", 0.4), "Find its": ("k5", 0.6)},
+    "b4": {"Brahma flew": ("k3", 0.6), "Vishnu dug": ("k4", 0.6)},
+    "b5": {"But the fire": ("k5", 3.2, (1.3, 0.5, 0.3)), "Vishnu came": ("k10", 0.4)},
+    "b6": {"Brahma saw": ("k11", 2.3, (1.1, 0.55, 0.5)), "He made": ("k8", 1.0, (1.8, 0.33, 0.38))},
+    "b7": {"But the fire": ("k6", 0.2, (1.7, 0.5, 0.22)), "Shiva stepped": ("k6", 1.6)},
+    "b8": {"No worship": ("k13", 0.4), "No thalampoo": ("k14", 0.5, (1.12, 0.55, 0.5)), "Vishnu told": ("k10", 2.6, (1.3, 0.5, 0.4))},
+    "b9": {"They begged": ("k13", 2.7, (1.25, 0.5, 0.6)), "It cooled": ("k7", 0.8)},
+    "b10": {"So every": ("k2", 0.6), "in Thiru": ("k1r", None)},
+}
+PLAN = PLAN60 if SID == "kd-deepam60" else PLAN15
 KICKER = "KARTHIGAI DEEPAM · THIRUVANNAMALAI"
 LABEL = "Illustration · the legend of the pillar of fire (Shiva Purana; Arunachala Mahatmyam)"
+if SID == "kd-deepam60":
+    LABEL = "Illustration · legend (Shiva Purana, Vidyeshvara Samhita; Arunachala Mahatmyam)"
 
 
 # ---- MiniMax -------------------------------------------------------------------------------------------------------
@@ -116,7 +168,7 @@ def make_images(names):
         out = IMG / f"{sh}.jpeg"
         if out.exists():
             continue
-        body = {"model": "image-01", "prompt": f"{SHOTS[sh][0]}. {LOOK}. {NOTEXT}", "width": W, "height": H,
+        body = {"model": "image-01", "prompt": f"{SHOTS[sh][0]}. {LOOK}. {INDIAN + '. ' if int(sh[1:]) > 7 else ''}{NOTEXT}", "width": W, "height": H,
                 "response_format": "base64", "n": 1, "prompt_optimizer": False}
         for attempt in range(6):
             j = rq.post(f"{API}/image_generation", headers=hdr(), json=body, timeout=240).json()
@@ -182,11 +234,98 @@ def grade(names):
         src = CLIP / f"{sh}.mp4"
         if not src.exists():
             raise SystemExit(f"no clip {src}: run `film.py clip` first")
+        if CLIP.name == "clip3d":            # Blender renders are already drawn in the palette: fit only, no snapping
+            ff("-i", src, "-vf", f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}",
+               "-an", "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", GRADED / f"{sh}.mp4")
+            print(" fitted", sh, flush=True); continue
         ff("-i", src, "-i", pal, "-filter_complex",
            f"[0:v]fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},"
            "hqdn3d=2:2:5:5,eq=contrast=1.12:saturation=1.3[v];[v][1:v]paletteuse=dither=none",
            "-an", "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", GRADED / f"{sh}.mp4")
         print(" graded", sh, flush=True)
+
+
+def anim(names):
+    """Animatic stand-in (DIRECTOR.md step 4): a shot that has a still but no clip yet becomes a 6 s slow push on the
+    still, graded like a clip. `grade <shot>` after `clip <shot>` replaces it with the real clip."""
+    GRADED.mkdir(parents=True, exist_ok=True); pal = palette_png()
+    for sh in names:
+        if (CLIP / f"{sh}.mp4").exists():
+            continue
+        src = IMG / f"{sh}.jpeg"
+        if not src.exists():
+            raise SystemExit(f"no still {src}: run `film.py img {sh}` first")
+        ff("-loop", "1", "-i", src, "-i", pal, "-filter_complex",
+           f"[0:v]scale={W * 2}:{H * 2},zoompan=z='1+0.0006*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={6 * FPS}:s={W}x{H}:fps={FPS},"
+           "eq=contrast=1.12:saturation=1.3[v];[v][1:v]paletteuse=dither=none",
+           "-frames:v", 6 * FPS, "-an", "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", GRADED / f"{sh}.mp4")
+        print(" animatic still", sh, flush=True)
+
+
+def sound():
+    """Our own score for kd-deepam60, following DIRECTOR.md section 6 (no voice, so the music carries the feeling):
+    the pad changes with each section, a drum on the pillar, a chase pulse, a thin uneasy drone under the lie, two
+    planned silences (after the hook, and just before the fire opens), one peak (temple bell and drum on Shiva),
+    then calm and the same level at both ends so the loop does not jump. Everything is synthesised here: nothing to
+    license. Writes out/hyperframes/kd-deepam60-final.mp4 (about -14 LUFS)."""
+    import numpy as np
+    sys.path.insert(0, str(ROOT / "hyperframes/tools"))
+    from shorts_build import bed, write_wav, SR
+    st = load_story(); dur = st["dur"]; n = int(dur * SR); t = np.arange(n) / SR
+    beat = {b["id"]: b for b in st["beats"]}
+
+    def at(bid, phrase=None):
+        b = beat[bid]
+        if not phrase:
+            return b["t0"]
+        return b["t0"] + b["sec"] * b["say"].lower().find(phrase.lower()) / len(b["say"])
+
+    def env(points):                      # piecewise-linear level over time
+        xs, ys = zip(*points); return np.interp(t, xs, ys).astype(np.float32)
+
+    low, high = bed(dur, 146.83), bed(dur, 220.0)            # D pad; A pad for the climb and the peak
+    uneasy = bed(dur, 155.56)                                  # a semitone off D: under the lie only
+    s1, s2 = at("b2"), at("b7")                                # the two planned silences end here
+    pillar, peak, lie = at("b3"), at("b7", "Shiva stepped"), at("b6", "He made")
+    mix = (low * env([(0, .30), (s1 - .5, .30), (s1 - .45, 0), (s1, 0), (s1 + .3, .28), (pillar, .30), (at("b4"), .40),
+                      (at("b5"), .25), (at("b6"), .12), (s2 - .7, .10), (s2 - .65, 0), (s2 + .2, 0), (peak, .30),
+                      (at("b8"), .32), (at("b9"), .28), (dur - .5, .30), (dur, .30)])
+           + high * env([(0, 0), (pillar, 0), (pillar + .4, .22), (at("b5"), .18), (at("b5") + 1, 0), (peak - .1, 0),
+                         (peak, .40), (peak + 3, .30), (at("b9"), .10), (at("b10"), 0), (dur, 0)])
+           + uneasy * env([(0, 0), (at("b6"), 0), (lie, .16), (s2 - .7, .16), (s2 - .65, 0), (dur, 0)]))
+
+    def drum(t0, g=1.0, f0=95, f1=42, d=.55):
+        i = int(t0 * SR); k = np.arange(int(d * SR)) / SR
+        x = np.sin(2 * np.pi * (f1 * k + (f0 - f1) * .06 * (1 - np.exp(-k / .06)))) * np.exp(-k / (d / 4))
+        x[: int(.004 * SR)] += np.random.default_rng(1).normal(0, .5, int(.004 * SR))
+        j = min(n, i + len(x)); mix[i:j] += g * x[: j - i]
+
+    def bell(t0, g=1.0, f=392.0, d=4.0):    # a temple bell: inharmonic partials, long decay
+        i = int(t0 * SR); k = np.arange(int(d * SR)) / SR
+        x = sum(a * np.sin(2 * np.pi * f * r * k) * np.exp(-k / (d * dd)) for r, a, dd in
+                [(1, 1, .45), (2.76, .5, .25), (5.4, .3, .12), (8.93, .15, .07)])
+        j = min(n, i + len(x)); mix[i:j] += g * x[: j - i] / 2
+
+    bell(0.02, .35)                                            # the hill lamp
+    drum(pillar, 1.0); drum(pillar + .35, .5)                  # the pillar splits the sky
+    t4, t5 = at("b4"), at("b5")
+    for k in np.arange(t4, t5 - .2, .5):                       # the chase: a pulse under the swan and the boar
+        drum(k, .32, 80, 50, .3)
+    drum(peak - .02, 1.2, 110, 40, .9); bell(peak, .9, 293.66, 5.5)   # the one peak: Shiva
+    bell(at("b8", "Vishnu told"), .25, 440.0, 3.0)             # the blessing
+    drum(at("b9", "It cooled"), .6, 70, 36, 1.2)               # the fire settles into the hill
+    mix /= np.max(np.abs(mix)) / .9
+    adir = OUT / "shorts_audio" / SID; adir.mkdir(parents=True, exist_ok=True)
+    write_wav(adir / "score.wav", mix)
+    v = OUT / f"{SID}.mp4"; out = OUT / f"{SID}-final.mp4"
+    m = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(adir / "score.wav"), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json",
+                        "-f", "null", "-"], capture_output=True, text=True).stderr          # two-pass loudnorm: measure first
+    j = json.loads(m[m.rindex("{"): m.rindex("}") + 1])
+    ln = (f"loudnorm=I=-14:TP=-1.5:LRA=11:linear=true:measured_I={j['input_i']}:measured_TP={j['input_tp']}:"
+          f"measured_LRA={j['input_lra']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}")
+    ff("-i", v, "-i", adir / "score.wav", "-af", ln, "-ar", "48000", "-c:v", "copy",
+       "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out)
+    print(out, f"(score: silences at {s1 - .45:.1f} s and {s2 - .65:.1f} s, peak at {peak:.1f} s)")
 
 
 def font(name, size):
@@ -261,13 +400,14 @@ def parts(st):
             segs.append([round(t * FPS), round(t1 * FPS), how])
     segs[0][0] = 0; segs[-1][1] = total
     cursor = {}; out = []
-    for f0, f1, (shot, start) in segs:
+    for f0, f1, how in segs:
+        shot, start, zoom = (tuple(how) + (None,))[:3]
         n = f1 - f0
         if shot == "k1r":                    # backwards, landing on b1's first frame
-            out.append(("k1", round(K1_START * FPS), n, True)); continue
+            out.append(("k1", round(K1_START * FPS), n, True, None)); continue
         s = round(start * FPS) if start is not None else cursor[shot]
-        out.append((shot, s, n, False)); cursor[shot] = s + n
-    for shot, s, n, _ in out:
+        out.append((shot, s, n, False, zoom)); cursor[shot] = s + n
+    for shot, s, n, _, _ in out:
         if s + n > 6 * FPS - 2:
             raise SystemExit(f"{shot} needs frames {s}-{s + n}, past the end of a 6 s clip: move its start earlier")
     return out
@@ -280,10 +420,15 @@ def cut():
     for i, c in enumerate(st["caps"]):
         p = tmp / f"cap{i:02d}.png"; caption_png(c["html"], p); caps.append((p, c["t0"], c["t1"]))
     args, fc = [], []
-    for i, (shot, s, n, rev) in enumerate(segs):
+    for i, (shot, s, n, rev, zoom) in enumerate(segs):
         args += ["-i", GRADED / f"{shot}.mp4"]
-        fc.append(f"[{i}:v]trim=start_frame={s}:end_frame={s + n},setpts=PTS-STARTPTS{',reverse' if rev else ''},"
-                  f"fps={FPS},format=yuv420p[p{i}]")
+        z = ""
+        if zoom:                             # punch-in: crop around (x, y) and scale back up, still on the palette
+            k, cx, cy = zoom; cw, ch = round(W / k) // 2 * 2, round(H / k) // 2 * 2
+            z = (f",crop={cw}:{ch}:{round(min(max(cx * W - cw / 2, 0), W - cw))}:{round(min(max(cy * H - ch / 2, 0), H - ch))}"
+                 f",scale={W}:{H}:flags=neighbor")
+        fc.append(f"[{i}:v]trim=start_frame={s}:end_frame={s + n},setpts=PTS-STARTPTS{',reverse' if rev else ''}{z},"
+                  f"fps={FPS},setsar=1,format=yuv420p[p{i}]")
     fc.append("".join(f"[p{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=0[base]")
     # paper grain that moves every frame, and a soft vignette, as in a printed ink frame
     fc.append("[base]noise=alls=14:allf=t+u,vignette=angle=PI/5[g0]")
@@ -301,7 +446,8 @@ def cut():
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    names = sys.argv[2:] or list(SHOTS)
+    used = sorted({("k1" if h[0] == "k1r" else h[0]) for b in PLAN.values() for h in b.values()}, key=lambda x: int(x[1:]))
+    names = sys.argv[2:] or used          # by default, only the shots this film uses
     for n in names:
         if n not in SHOTS:
             sys.exit(f"no shot {n}; have {', '.join(SHOTS)}")
@@ -313,6 +459,10 @@ def main():
         grade(names)
     elif cmd == "cut":
         cut()
+    elif cmd == "anim":
+        anim(names)
+    elif cmd == "sound":
+        sound()
     else:
         sys.exit(__doc__)
 

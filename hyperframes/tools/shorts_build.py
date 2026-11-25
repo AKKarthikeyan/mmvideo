@@ -268,6 +268,38 @@ S["kd-deepam"] = dict(
     ])
 
 
+# kd-deepam60: the 60 s story version of kd-deepam (AK, 24 Nov 2026: "up to 60 sec, short story, use our Director engine").
+# Same look, shots k1-k7 reused, k8-k14 new. Text only, read at 12 characters a second (slower than the 15 s cut: this
+# one is a story to follow, AK's followable-pacing rule). Treatment: docs/deepam/TREATMENT_60.md. Legend from the Shiva
+# Purana (Vidyeshvara Samhita: the pillar, the ketaki/thalampoo witness and the curses) and the Arunachala Mahatmyam
+# (the fire becomes the hill), labelled on screen as legend and illustration.
+S["kd-deepam60"] = dict(
+    channel="The Inner Chariot", lang="en-IN", series="Karthigai Deepam", voice=False, cps=12.0,
+    title="Why Shiva never gets this flower",
+    send="The flower every Tamil home knows, and the reason it is never offered to Shiva: a story to forward on Deepam day.",
+    beats=[
+        ("b1", [("A whole mountain", "A whole *mountain*"), ("becomes a lamp.", "becomes a *lamp.*"),
+                ("And one flower", "And one *flower*"), ("is never offered to Shiva.", "is *never* offered to Shiva.")], ["A whole", "And one"]),
+        ("b2", [("Why? It began", "*Why?* It began"), ("with Brahma and Vishnu.", "with *Brahma* and *Vishnu.*"),
+                ("Who is greater?", "Who is *greater?*")], ["Why", "Who is"]),
+        ("b3", [("A pillar of fire", "A pillar of *fire*"), ("split the sky.", "split the *sky.*"),
+                ("Find its end, and you win.", "Find its *end,* and you win.")], ["A pillar", "Find its"]),
+        ("b4", [("Brahma flew up", "Brahma flew *up*"), ("as a swan.", "as a *swan.*"),
+                ("Vishnu dug down", "Vishnu dug *down*"), ("as a boar.", "as a *boar.*")], ["Brahma flew", "Vishnu dug"]),
+        ("b5", [("But the fire never ended.", "But the fire *never ended.*"), ("Vishnu came back:", "Vishnu came *back:*"),
+                ("I could not find it.", "I could *not* find it.")], ["But the fire", "Vishnu came"]),
+        ("b6", [("Brahma saw a flower falling,", "Brahma saw a *flower* falling,"), ("a thalampoo.", "a *thalampoo.*"),
+                ("He made it lie:", "He made it *lie:*"), ("He reached the top.", "He reached the *top.*")], ["Brahma saw", "He made"]),
+        ("b7", [("But the fire opened.", "But the fire *opened.*"), ("Shiva stepped out.", "*Shiva* stepped out."),
+                ("Shiva has no end.", "Shiva has *no end.*")], ["But the fire", "Shiva stepped"]),
+        ("b8", [("No worship for Brahma.", "No *worship* for Brahma."), ("No thalampoo for Shiva.", "No *thalampoo* for Shiva."),
+                ("Vishnu told the truth.", "Vishnu told the *truth.*"), ("He was blessed.", "He was *blessed.*")], ["No worship", "No thalampoo", "Vishnu told"]),
+        ("b9", [("They begged the fire", "They *begged* the fire"), ("to become small.", "to become *small.*"),
+                ("It cooled into this hill.", "It cooled into *this hill.*")], ["They begged", "It cooled"]),
+        ("b10", [("So every Karthigai,", "So every *Karthigai,*"), ("in Thiruvannamalai,", "in *Thiruvannamalai,*")], ["So every", "in Thiru"]),
+    ])
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 def tts(text, lang, path):
     cmd = os.environ.get("SHORTS_TTS_CMD_" + lang.upper().replace("-", "_"))
@@ -326,7 +358,7 @@ def cap_html(c):
 
 
 def story(sid, use_tts=True, clips_dir=None):
-    sp = S[sid]; lang = sp["lang"]; cps = VOICE[lang]["cps"]
+    sp = S[sid]; lang = sp["lang"]; cps = sp.get("cps") or VOICE[lang]["cps"]   # cps: a text-only Short may set its own reading pace
     if sp.get("voice") is False:              # a text-only Short: lines are read on screen, timed at cps
         use_tts = False; clips_dir = None
     adir = OUT / "shorts_audio" / sid; adir.mkdir(parents=True, exist_ok=True)
